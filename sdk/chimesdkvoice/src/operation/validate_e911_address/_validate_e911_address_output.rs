@@ -3,7 +3,16 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ValidateE911AddressOutput {
-    /// <p>Number indicating the result of address validation. <code>0</code> means the address was perfect as-is and successfully validated. <code>1</code> means the address was corrected. <code>2</code> means the address sent was not close enough and was not validated.</p>
+    /// <p>Number indicating the result of address validation.</p>
+    /// <p>Each possible result is defined as follows:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>0</code> - Address validation succeeded.</p></li>
+    /// <li>
+    /// <p><code>1</code> - Address validation succeeded. The address was a close enough match and has been corrected as part of the address object.</p></li>
+    /// <li>
+    /// <p><code>2</code> - Address validation failed. You should re-submit the validation request with candidates from the <code>CandidateAddressList</code> result, if it's a close match.</p></li>
+    /// </ul>
     pub validation_result: i32,
     /// <p>The ID that represents the address.</p>
     pub address_external_id: ::std::option::Option<::std::string::String>,
@@ -14,7 +23,16 @@ pub struct ValidateE911AddressOutput {
     _request_id: Option<String>,
 }
 impl ValidateE911AddressOutput {
-    /// <p>Number indicating the result of address validation. <code>0</code> means the address was perfect as-is and successfully validated. <code>1</code> means the address was corrected. <code>2</code> means the address sent was not close enough and was not validated.</p>
+    /// <p>Number indicating the result of address validation.</p>
+    /// <p>Each possible result is defined as follows:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>0</code> - Address validation succeeded.</p></li>
+    /// <li>
+    /// <p><code>1</code> - Address validation succeeded. The address was a close enough match and has been corrected as part of the address object.</p></li>
+    /// <li>
+    /// <p><code>2</code> - Address validation failed. You should re-submit the validation request with candidates from the <code>CandidateAddressList</code> result, if it's a close match.</p></li>
+    /// </ul>
     pub fn validation_result(&self) -> i32 {
         self.validation_result
     }
@@ -56,17 +74,44 @@ pub struct ValidateE911AddressOutputBuilder {
     _request_id: Option<String>,
 }
 impl ValidateE911AddressOutputBuilder {
-    /// <p>Number indicating the result of address validation. <code>0</code> means the address was perfect as-is and successfully validated. <code>1</code> means the address was corrected. <code>2</code> means the address sent was not close enough and was not validated.</p>
+    /// <p>Number indicating the result of address validation.</p>
+    /// <p>Each possible result is defined as follows:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>0</code> - Address validation succeeded.</p></li>
+    /// <li>
+    /// <p><code>1</code> - Address validation succeeded. The address was a close enough match and has been corrected as part of the address object.</p></li>
+    /// <li>
+    /// <p><code>2</code> - Address validation failed. You should re-submit the validation request with candidates from the <code>CandidateAddressList</code> result, if it's a close match.</p></li>
+    /// </ul>
     pub fn validation_result(mut self, input: i32) -> Self {
         self.validation_result = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Number indicating the result of address validation. <code>0</code> means the address was perfect as-is and successfully validated. <code>1</code> means the address was corrected. <code>2</code> means the address sent was not close enough and was not validated.</p>
+    /// <p>Number indicating the result of address validation.</p>
+    /// <p>Each possible result is defined as follows:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>0</code> - Address validation succeeded.</p></li>
+    /// <li>
+    /// <p><code>1</code> - Address validation succeeded. The address was a close enough match and has been corrected as part of the address object.</p></li>
+    /// <li>
+    /// <p><code>2</code> - Address validation failed. You should re-submit the validation request with candidates from the <code>CandidateAddressList</code> result, if it's a close match.</p></li>
+    /// </ul>
     pub fn set_validation_result(mut self, input: ::std::option::Option<i32>) -> Self {
         self.validation_result = input;
         self
     }
-    /// <p>Number indicating the result of address validation. <code>0</code> means the address was perfect as-is and successfully validated. <code>1</code> means the address was corrected. <code>2</code> means the address sent was not close enough and was not validated.</p>
+    /// <p>Number indicating the result of address validation.</p>
+    /// <p>Each possible result is defined as follows:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>0</code> - Address validation succeeded.</p></li>
+    /// <li>
+    /// <p><code>1</code> - Address validation succeeded. The address was a close enough match and has been corrected as part of the address object.</p></li>
+    /// <li>
+    /// <p><code>2</code> - Address validation failed. You should re-submit the validation request with candidates from the <code>CandidateAddressList</code> result, if it's a close match.</p></li>
+    /// </ul>
     pub fn get_validation_result(&self) -> &::std::option::Option<i32> {
         &self.validation_result
     }

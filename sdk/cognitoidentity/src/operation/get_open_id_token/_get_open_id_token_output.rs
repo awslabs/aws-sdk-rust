@@ -2,7 +2,7 @@
 
 /// <p>Returned in response to a successful GetOpenIdToken request.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct GetOpenIdTokenOutput {
     /// <p>A unique identifier in the format REGION:GUID. Note that the IdentityId returned may not match the one passed on input.</p>
     pub identity_id: ::std::option::Option<::std::string::String>,
@@ -20,6 +20,15 @@ impl GetOpenIdTokenOutput {
         self.token.as_deref()
     }
 }
+impl ::std::fmt::Debug for GetOpenIdTokenOutput {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("GetOpenIdTokenOutput");
+        formatter.field("identity_id", &self.identity_id);
+        formatter.field("token", &"*** Sensitive Data Redacted ***");
+        formatter.field("_request_id", &self._request_id);
+        formatter.finish()
+    }
+}
 impl ::aws_types::request_id::RequestId for GetOpenIdTokenOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
@@ -33,7 +42,7 @@ impl GetOpenIdTokenOutput {
 }
 
 /// A builder for [`GetOpenIdTokenOutput`](crate::operation::get_open_id_token::GetOpenIdTokenOutput).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct GetOpenIdTokenOutputBuilder {
     pub(crate) identity_id: ::std::option::Option<::std::string::String>,
@@ -85,5 +94,14 @@ impl GetOpenIdTokenOutputBuilder {
             token: self.token,
             _request_id: self._request_id,
         }
+    }
+}
+impl ::std::fmt::Debug for GetOpenIdTokenOutputBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("GetOpenIdTokenOutputBuilder");
+        formatter.field("identity_id", &self.identity_id);
+        formatter.field("token", &"*** Sensitive Data Redacted ***");
+        formatter.field("_request_id", &self._request_id);
+        formatter.finish()
     }
 }

@@ -24,6 +24,11 @@ pub struct UpdatePipeInput {
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The logging configuration settings for the pipe.</p>
     pub log_configuration: ::std::option::Option<crate::types::PipeLogConfigurationParameters>,
+    /// <p>The identifier of the KMS customer managed key for EventBridge to use, if you choose to use a customer managed key to encrypt pipe data. The identifier can be the key Amazon Resource Name (ARN), KeyId, key alias, or key alias ARN.</p>
+    /// <p>To update a pipe that is using the default Amazon Web Services owned key to use a customer managed key instead, or update a pipe that is using a customer managed key to use a different customer managed key, specify a customer managed key identifier.</p>
+    /// <p>To update a pipe that is using a customer managed key to use the default Amazon Web Services owned key, specify an empty string.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/getting-started.html">Managing keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    pub kms_key_identifier: ::std::option::Option<::std::string::String>,
 }
 impl UpdatePipeInput {
     /// <p>The name of the pipe.</p>
@@ -67,6 +72,13 @@ impl UpdatePipeInput {
     pub fn log_configuration(&self) -> ::std::option::Option<&crate::types::PipeLogConfigurationParameters> {
         self.log_configuration.as_ref()
     }
+    /// <p>The identifier of the KMS customer managed key for EventBridge to use, if you choose to use a customer managed key to encrypt pipe data. The identifier can be the key Amazon Resource Name (ARN), KeyId, key alias, or key alias ARN.</p>
+    /// <p>To update a pipe that is using the default Amazon Web Services owned key to use a customer managed key instead, or update a pipe that is using a customer managed key to use a different customer managed key, specify a customer managed key identifier.</p>
+    /// <p>To update a pipe that is using a customer managed key to use the default Amazon Web Services owned key, specify an empty string.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/getting-started.html">Managing keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    pub fn kms_key_identifier(&self) -> ::std::option::Option<&str> {
+        self.kms_key_identifier.as_deref()
+    }
 }
 impl ::std::fmt::Debug for UpdatePipeInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -81,6 +93,7 @@ impl ::std::fmt::Debug for UpdatePipeInput {
         formatter.field("target_parameters", &self.target_parameters);
         formatter.field("role_arn", &self.role_arn);
         formatter.field("log_configuration", &self.log_configuration);
+        formatter.field("kms_key_identifier", &self.kms_key_identifier);
         formatter.finish()
     }
 }
@@ -105,6 +118,7 @@ pub struct UpdatePipeInputBuilder {
     pub(crate) target_parameters: ::std::option::Option<crate::types::PipeTargetParameters>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) log_configuration: ::std::option::Option<crate::types::PipeLogConfigurationParameters>,
+    pub(crate) kms_key_identifier: ::std::option::Option<::std::string::String>,
 }
 impl UpdatePipeInputBuilder {
     /// <p>The name of the pipe.</p>
@@ -252,6 +266,29 @@ impl UpdatePipeInputBuilder {
     pub fn get_log_configuration(&self) -> &::std::option::Option<crate::types::PipeLogConfigurationParameters> {
         &self.log_configuration
     }
+    /// <p>The identifier of the KMS customer managed key for EventBridge to use, if you choose to use a customer managed key to encrypt pipe data. The identifier can be the key Amazon Resource Name (ARN), KeyId, key alias, or key alias ARN.</p>
+    /// <p>To update a pipe that is using the default Amazon Web Services owned key to use a customer managed key instead, or update a pipe that is using a customer managed key to use a different customer managed key, specify a customer managed key identifier.</p>
+    /// <p>To update a pipe that is using a customer managed key to use the default Amazon Web Services owned key, specify an empty string.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/getting-started.html">Managing keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    pub fn kms_key_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.kms_key_identifier = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The identifier of the KMS customer managed key for EventBridge to use, if you choose to use a customer managed key to encrypt pipe data. The identifier can be the key Amazon Resource Name (ARN), KeyId, key alias, or key alias ARN.</p>
+    /// <p>To update a pipe that is using the default Amazon Web Services owned key to use a customer managed key instead, or update a pipe that is using a customer managed key to use a different customer managed key, specify a customer managed key identifier.</p>
+    /// <p>To update a pipe that is using a customer managed key to use the default Amazon Web Services owned key, specify an empty string.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/getting-started.html">Managing keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    pub fn set_kms_key_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.kms_key_identifier = input;
+        self
+    }
+    /// <p>The identifier of the KMS customer managed key for EventBridge to use, if you choose to use a customer managed key to encrypt pipe data. The identifier can be the key Amazon Resource Name (ARN), KeyId, key alias, or key alias ARN.</p>
+    /// <p>To update a pipe that is using the default Amazon Web Services owned key to use a customer managed key instead, or update a pipe that is using a customer managed key to use a different customer managed key, specify a customer managed key identifier.</p>
+    /// <p>To update a pipe that is using a customer managed key to use the default Amazon Web Services owned key, specify an empty string.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/getting-started.html">Managing keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    pub fn get_kms_key_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_identifier
+    }
     /// Consumes the builder and constructs a [`UpdatePipeInput`](crate::operation::update_pipe::UpdatePipeInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::update_pipe::UpdatePipeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_pipe::UpdatePipeInput {
@@ -265,6 +302,7 @@ impl UpdatePipeInputBuilder {
             target_parameters: self.target_parameters,
             role_arn: self.role_arn,
             log_configuration: self.log_configuration,
+            kms_key_identifier: self.kms_key_identifier,
         })
     }
 }
@@ -281,6 +319,7 @@ impl ::std::fmt::Debug for UpdatePipeInputBuilder {
         formatter.field("target_parameters", &self.target_parameters);
         formatter.field("role_arn", &self.role_arn);
         formatter.field("log_configuration", &self.log_configuration);
+        formatter.field("kms_key_identifier", &self.kms_key_identifier);
         formatter.finish()
     }
 }

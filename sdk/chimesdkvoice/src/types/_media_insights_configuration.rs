@@ -4,13 +4,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct MediaInsightsConfiguration {
-    /// <p>Denotes the configration as enabled or disabled.</p>
+    /// <p>Denotes the configuration as enabled or disabled.</p>
     pub disabled: ::std::option::Option<bool>,
     /// <p>The configuration's ARN.</p>
     pub configuration_arn: ::std::option::Option<::std::string::String>,
 }
 impl MediaInsightsConfiguration {
-    /// <p>Denotes the configration as enabled or disabled.</p>
+    /// <p>Denotes the configuration as enabled or disabled.</p>
     pub fn disabled(&self) -> ::std::option::Option<bool> {
         self.disabled
     }
@@ -42,17 +42,17 @@ pub struct MediaInsightsConfigurationBuilder {
     pub(crate) configuration_arn: ::std::option::Option<::std::string::String>,
 }
 impl MediaInsightsConfigurationBuilder {
-    /// <p>Denotes the configration as enabled or disabled.</p>
+    /// <p>Denotes the configuration as enabled or disabled.</p>
     pub fn disabled(mut self, input: bool) -> Self {
         self.disabled = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Denotes the configration as enabled or disabled.</p>
+    /// <p>Denotes the configuration as enabled or disabled.</p>
     pub fn set_disabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.disabled = input;
         self
     }
-    /// <p>Denotes the configration as enabled or disabled.</p>
+    /// <p>Denotes the configuration as enabled or disabled.</p>
     pub fn get_disabled(&self) -> &::std::option::Option<bool> {
         &self.disabled
     }

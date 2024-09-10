@@ -12,7 +12,7 @@ pub struct AwsApiCallAction {
     pub service_name: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the API call originated from a remote IP address (<code>remoteip</code>) or from a DNS domain (<code>domain</code>).</p>
     pub caller_type: ::std::option::Option<::std::string::String>,
-    /// <p>Provided if <code>CallerType</code> is <code>remoteIp</code>. Provides information about the remote IP address that the API call originated from.</p>
+    /// <p>Provided if <code>CallerType</code> is <code>remoteip</code>. Provides information about the remote IP address that the API call originated from.</p>
     pub remote_ip_details: ::std::option::Option<crate::types::ActionRemoteIpDetails>,
     /// <p>Provided if <code>CallerType</code> is <code>domain</code>. Provides information about the DNS domain that the API call originated from.</p>
     pub domain_details: ::std::option::Option<crate::types::AwsApiCallActionDomainDetails>,
@@ -64,7 +64,7 @@ impl AwsApiCallAction {
     pub fn caller_type(&self) -> ::std::option::Option<&str> {
         self.caller_type.as_deref()
     }
-    /// <p>Provided if <code>CallerType</code> is <code>remoteIp</code>. Provides information about the remote IP address that the API call originated from.</p>
+    /// <p>Provided if <code>CallerType</code> is <code>remoteip</code>. Provides information about the remote IP address that the API call originated from.</p>
     pub fn remote_ip_details(&self) -> ::std::option::Option<&crate::types::ActionRemoteIpDetails> {
         self.remote_ip_details.as_ref()
     }
@@ -180,17 +180,17 @@ impl AwsApiCallActionBuilder {
     pub fn get_caller_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.caller_type
     }
-    /// <p>Provided if <code>CallerType</code> is <code>remoteIp</code>. Provides information about the remote IP address that the API call originated from.</p>
+    /// <p>Provided if <code>CallerType</code> is <code>remoteip</code>. Provides information about the remote IP address that the API call originated from.</p>
     pub fn remote_ip_details(mut self, input: crate::types::ActionRemoteIpDetails) -> Self {
         self.remote_ip_details = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Provided if <code>CallerType</code> is <code>remoteIp</code>. Provides information about the remote IP address that the API call originated from.</p>
+    /// <p>Provided if <code>CallerType</code> is <code>remoteip</code>. Provides information about the remote IP address that the API call originated from.</p>
     pub fn set_remote_ip_details(mut self, input: ::std::option::Option<crate::types::ActionRemoteIpDetails>) -> Self {
         self.remote_ip_details = input;
         self
     }
-    /// <p>Provided if <code>CallerType</code> is <code>remoteIp</code>. Provides information about the remote IP address that the API call originated from.</p>
+    /// <p>Provided if <code>CallerType</code> is <code>remoteip</code>. Provides information about the remote IP address that the API call originated from.</p>
     pub fn get_remote_ip_details(&self) -> &::std::option::Option<crate::types::ActionRemoteIpDetails> {
         &self.remote_ip_details
     }

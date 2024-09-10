@@ -38,6 +38,9 @@ pub struct DescribePipeOutput {
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The logging configuration settings for the pipe.</p>
     pub log_configuration: ::std::option::Option<crate::types::PipeLogConfiguration>,
+    /// <p>The identifier of the KMS customer managed key for EventBridge to use to encrypt pipe data, if one has been specified.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-encryption.html">Data encryption in EventBridge</a> in the <i>Amazon EventBridge User Guide</i>.</p>
+    pub kms_key_identifier: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribePipeOutput {
@@ -110,6 +113,11 @@ impl DescribePipeOutput {
     pub fn log_configuration(&self) -> ::std::option::Option<&crate::types::PipeLogConfiguration> {
         self.log_configuration.as_ref()
     }
+    /// <p>The identifier of the KMS customer managed key for EventBridge to use to encrypt pipe data, if one has been specified.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-encryption.html">Data encryption in EventBridge</a> in the <i>Amazon EventBridge User Guide</i>.</p>
+    pub fn kms_key_identifier(&self) -> ::std::option::Option<&str> {
+        self.kms_key_identifier.as_deref()
+    }
 }
 impl ::std::fmt::Debug for DescribePipeOutput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -131,6 +139,7 @@ impl ::std::fmt::Debug for DescribePipeOutput {
         formatter.field("creation_time", &self.creation_time);
         formatter.field("last_modified_time", &self.last_modified_time);
         formatter.field("log_configuration", &self.log_configuration);
+        formatter.field("kms_key_identifier", &self.kms_key_identifier);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
@@ -168,6 +177,7 @@ pub struct DescribePipeOutputBuilder {
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) log_configuration: ::std::option::Option<crate::types::PipeLogConfiguration>,
+    pub(crate) kms_key_identifier: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribePipeOutputBuilder {
@@ -418,6 +428,23 @@ impl DescribePipeOutputBuilder {
     pub fn get_log_configuration(&self) -> &::std::option::Option<crate::types::PipeLogConfiguration> {
         &self.log_configuration
     }
+    /// <p>The identifier of the KMS customer managed key for EventBridge to use to encrypt pipe data, if one has been specified.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-encryption.html">Data encryption in EventBridge</a> in the <i>Amazon EventBridge User Guide</i>.</p>
+    pub fn kms_key_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.kms_key_identifier = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The identifier of the KMS customer managed key for EventBridge to use to encrypt pipe data, if one has been specified.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-encryption.html">Data encryption in EventBridge</a> in the <i>Amazon EventBridge User Guide</i>.</p>
+    pub fn set_kms_key_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.kms_key_identifier = input;
+        self
+    }
+    /// <p>The identifier of the KMS customer managed key for EventBridge to use to encrypt pipe data, if one has been specified.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-encryption.html">Data encryption in EventBridge</a> in the <i>Amazon EventBridge User Guide</i>.</p>
+    pub fn get_kms_key_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_identifier
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -447,6 +474,7 @@ impl DescribePipeOutputBuilder {
             creation_time: self.creation_time,
             last_modified_time: self.last_modified_time,
             log_configuration: self.log_configuration,
+            kms_key_identifier: self.kms_key_identifier,
             _request_id: self._request_id,
         }
     }
@@ -471,6 +499,7 @@ impl ::std::fmt::Debug for DescribePipeOutputBuilder {
         formatter.field("creation_time", &self.creation_time);
         formatter.field("last_modified_time", &self.last_modified_time);
         formatter.field("log_configuration", &self.log_configuration);
+        formatter.field("kms_key_identifier", &self.kms_key_identifier);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }

@@ -22,6 +22,7 @@ impl super::Client {
     ///   - [`creation_time(Option<DateTime>)`](crate::operation::describe_pipe::DescribePipeOutput::creation_time): <p>The time the pipe was created.</p>
     ///   - [`last_modified_time(Option<DateTime>)`](crate::operation::describe_pipe::DescribePipeOutput::last_modified_time): <p>When the pipe was last updated, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
     ///   - [`log_configuration(Option<PipeLogConfiguration>)`](crate::operation::describe_pipe::DescribePipeOutput::log_configuration): <p>The logging configuration settings for the pipe.</p>
+    ///   - [`kms_key_identifier(Option<String>)`](crate::operation::describe_pipe::DescribePipeOutput::kms_key_identifier): <p>The identifier of the KMS customer managed key for EventBridge to use to encrypt pipe data, if one has been specified.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-encryption.html">Data encryption in EventBridge</a> in the <i>Amazon EventBridge User Guide</i>.</p>
     /// - On failure, responds with [`SdkError<DescribePipeError>`](crate::operation::describe_pipe::DescribePipeError)
     pub fn describe_pipe(&self) -> crate::operation::describe_pipe::builders::DescribePipeFluentBuilder {
         crate::operation::describe_pipe::builders::DescribePipeFluentBuilder::new(self.handle.clone())

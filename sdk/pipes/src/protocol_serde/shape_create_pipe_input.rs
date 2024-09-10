@@ -18,42 +18,45 @@ pub fn ser_create_pipe_input_input(
         crate::protocol_serde::shape_pipe_enrichment_parameters::ser_pipe_enrichment_parameters(&mut object_5, var_4)?;
         object_5.finish();
     }
-    if let Some(var_6) = &input.log_configuration {
+    if let Some(var_6) = &input.kms_key_identifier {
+        object.key("KmsKeyIdentifier").string(var_6.as_str());
+    }
+    if let Some(var_7) = &input.log_configuration {
         #[allow(unused_mut)]
-        let mut object_7 = object.key("LogConfiguration").start_object();
-        crate::protocol_serde::shape_pipe_log_configuration_parameters::ser_pipe_log_configuration_parameters(&mut object_7, var_6)?;
-        object_7.finish();
+        let mut object_8 = object.key("LogConfiguration").start_object();
+        crate::protocol_serde::shape_pipe_log_configuration_parameters::ser_pipe_log_configuration_parameters(&mut object_8, var_7)?;
+        object_8.finish();
     }
-    if let Some(var_8) = &input.role_arn {
-        object.key("RoleArn").string(var_8.as_str());
+    if let Some(var_9) = &input.role_arn {
+        object.key("RoleArn").string(var_9.as_str());
     }
-    if let Some(var_9) = &input.source {
-        object.key("Source").string(var_9.as_str());
+    if let Some(var_10) = &input.source {
+        object.key("Source").string(var_10.as_str());
     }
-    if let Some(var_10) = &input.source_parameters {
+    if let Some(var_11) = &input.source_parameters {
         #[allow(unused_mut)]
-        let mut object_11 = object.key("SourceParameters").start_object();
-        crate::protocol_serde::shape_pipe_source_parameters::ser_pipe_source_parameters(&mut object_11, var_10)?;
-        object_11.finish();
+        let mut object_12 = object.key("SourceParameters").start_object();
+        crate::protocol_serde::shape_pipe_source_parameters::ser_pipe_source_parameters(&mut object_12, var_11)?;
+        object_12.finish();
     }
-    if let Some(var_12) = &input.tags {
+    if let Some(var_13) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_13 = object.key("Tags").start_object();
-        for (key_14, value_15) in var_12 {
+        let mut object_14 = object.key("Tags").start_object();
+        for (key_15, value_16) in var_13 {
             {
-                object_13.key(key_14.as_str()).string(value_15.as_str());
+                object_14.key(key_15.as_str()).string(value_16.as_str());
             }
         }
-        object_13.finish();
+        object_14.finish();
     }
-    if let Some(var_16) = &input.target {
-        object.key("Target").string(var_16.as_str());
+    if let Some(var_17) = &input.target {
+        object.key("Target").string(var_17.as_str());
     }
-    if let Some(var_17) = &input.target_parameters {
+    if let Some(var_18) = &input.target_parameters {
         #[allow(unused_mut)]
-        let mut object_18 = object.key("TargetParameters").start_object();
-        crate::protocol_serde::shape_pipe_target_parameters::ser_pipe_target_parameters(&mut object_18, var_17)?;
-        object_18.finish();
+        let mut object_19 = object.key("TargetParameters").start_object();
+        crate::protocol_serde::shape_pipe_target_parameters::ser_pipe_target_parameters(&mut object_19, var_18)?;
+        object_19.finish();
     }
     Ok(())
 }

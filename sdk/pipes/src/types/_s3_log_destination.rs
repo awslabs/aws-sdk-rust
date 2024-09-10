@@ -12,14 +12,7 @@ pub struct S3LogDestination {
     /// <p>The Amazon Web Services account that owns the Amazon S3 bucket to which EventBridge delivers the log records for the pipe.</p>
     pub bucket_owner: ::std::option::Option<::std::string::String>,
     /// <p>The format EventBridge uses for the log records.</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>json</code>: JSON</p></li>
-    /// <li>
-    /// <p><code>plain</code>: Plain text</p></li>
-    /// <li>
-    /// <p><code>w3c</code>: <a href="https://www.w3.org/TR/WD-logfile">W3C extended logging file format</a></p></li>
-    /// </ul>
+    /// <p>EventBridge currently only supports <code>json</code> formatting.</p>
     pub output_format: ::std::option::Option<crate::types::S3OutputFormat>,
 }
 impl S3LogDestination {
@@ -37,14 +30,7 @@ impl S3LogDestination {
         self.bucket_owner.as_deref()
     }
     /// <p>The format EventBridge uses for the log records.</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>json</code>: JSON</p></li>
-    /// <li>
-    /// <p><code>plain</code>: Plain text</p></li>
-    /// <li>
-    /// <p><code>w3c</code>: <a href="https://www.w3.org/TR/WD-logfile">W3C extended logging file format</a></p></li>
-    /// </ul>
+    /// <p>EventBridge currently only supports <code>json</code> formatting.</p>
     pub fn output_format(&self) -> ::std::option::Option<&crate::types::S3OutputFormat> {
         self.output_format.as_ref()
     }
@@ -112,40 +98,19 @@ impl S3LogDestinationBuilder {
         &self.bucket_owner
     }
     /// <p>The format EventBridge uses for the log records.</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>json</code>: JSON</p></li>
-    /// <li>
-    /// <p><code>plain</code>: Plain text</p></li>
-    /// <li>
-    /// <p><code>w3c</code>: <a href="https://www.w3.org/TR/WD-logfile">W3C extended logging file format</a></p></li>
-    /// </ul>
+    /// <p>EventBridge currently only supports <code>json</code> formatting.</p>
     pub fn output_format(mut self, input: crate::types::S3OutputFormat) -> Self {
         self.output_format = ::std::option::Option::Some(input);
         self
     }
     /// <p>The format EventBridge uses for the log records.</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>json</code>: JSON</p></li>
-    /// <li>
-    /// <p><code>plain</code>: Plain text</p></li>
-    /// <li>
-    /// <p><code>w3c</code>: <a href="https://www.w3.org/TR/WD-logfile">W3C extended logging file format</a></p></li>
-    /// </ul>
+    /// <p>EventBridge currently only supports <code>json</code> formatting.</p>
     pub fn set_output_format(mut self, input: ::std::option::Option<crate::types::S3OutputFormat>) -> Self {
         self.output_format = input;
         self
     }
     /// <p>The format EventBridge uses for the log records.</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>json</code>: JSON</p></li>
-    /// <li>
-    /// <p><code>plain</code>: Plain text</p></li>
-    /// <li>
-    /// <p><code>w3c</code>: <a href="https://www.w3.org/TR/WD-logfile">W3C extended logging file format</a></p></li>
-    /// </ul>
+    /// <p>EventBridge currently only supports <code>json</code> formatting.</p>
     pub fn get_output_format(&self) -> &::std::option::Option<crate::types::S3OutputFormat> {
         &self.output_format
     }
