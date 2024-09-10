@@ -10,7 +10,6 @@ use aws_smithy_types::primitive::Parse;
 use aws_smithy_types::DateTime;
 use http_02x::header::{HeaderMap, HeaderName, HeaderValue};
 use std::borrow::Cow;
-use std::convert::TryFrom;
 use std::error::Error;
 use std::fmt;
 use std::str::FromStr;
