@@ -18,23 +18,29 @@ pub fn ser_topic_replication(
         crate::protocol_serde::shape_replication_starting_position::ser_replication_starting_position(&mut object_5, var_4)?;
         object_5.finish();
     }
-    if let Some(var_6) = &input.topics_to_exclude {
-        let mut array_7 = object.key("topicsToExclude").start_array();
-        for item_8 in var_6 {
-            {
-                array_7.value().string(item_8.as_str());
-            }
-        }
-        array_7.finish();
+    if let Some(var_6) = &input.topic_name_configuration {
+        #[allow(unused_mut)]
+        let mut object_7 = object.key("topicNameConfiguration").start_object();
+        crate::protocol_serde::shape_replication_topic_name_configuration::ser_replication_topic_name_configuration(&mut object_7, var_6)?;
+        object_7.finish();
     }
-    if let Some(var_9) = &input.topics_to_replicate {
-        let mut array_10 = object.key("topicsToReplicate").start_array();
-        for item_11 in var_9 {
+    if let Some(var_8) = &input.topics_to_exclude {
+        let mut array_9 = object.key("topicsToExclude").start_array();
+        for item_10 in var_8 {
             {
-                array_10.value().string(item_11.as_str());
+                array_9.value().string(item_10.as_str());
             }
         }
-        array_10.finish();
+        array_9.finish();
+    }
+    if let Some(var_11) = &input.topics_to_replicate {
+        let mut array_12 = object.key("topicsToReplicate").start_array();
+        for item_13 in var_11 {
+            {
+                array_12.value().string(item_13.as_str());
+            }
+        }
+        array_12.finish();
     }
     Ok(())
 }
@@ -69,6 +75,11 @@ where
                         "startingPosition" => {
                             builder = builder.set_starting_position(
                                 crate::protocol_serde::shape_replication_starting_position::de_replication_starting_position(tokens)?,
+                            );
+                        }
+                        "topicNameConfiguration" => {
+                            builder = builder.set_topic_name_configuration(
+                                crate::protocol_serde::shape_replication_topic_name_configuration::de_replication_topic_name_configuration(tokens)?,
                             );
                         }
                         "topicsToExclude" => {

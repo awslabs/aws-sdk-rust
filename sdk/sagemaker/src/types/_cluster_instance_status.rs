@@ -12,6 +12,7 @@
 /// ```text
 /// # let clusterinstancestatus = unimplemented!();
 /// match clusterinstancestatus {
+///     ClusterInstanceStatus::DeepHealthCheckInProgress => { /* ... */ },
 ///     ClusterInstanceStatus::Failure => { /* ... */ },
 ///     ClusterInstanceStatus::Pending => { /* ... */ },
 ///     ClusterInstanceStatus::Running => { /* ... */ },
@@ -45,6 +46,8 @@
 )]
 pub enum ClusterInstanceStatus {
     #[allow(missing_docs)] // documentation missing in model
+    DeepHealthCheckInProgress,
+    #[allow(missing_docs)] // documentation missing in model
     Failure,
     #[allow(missing_docs)] // documentation missing in model
     Pending,
@@ -61,6 +64,7 @@ pub enum ClusterInstanceStatus {
 impl ::std::convert::From<&str> for ClusterInstanceStatus {
     fn from(s: &str) -> Self {
         match s {
+            "DeepHealthCheckInProgress" => ClusterInstanceStatus::DeepHealthCheckInProgress,
             "Failure" => ClusterInstanceStatus::Failure,
             "Pending" => ClusterInstanceStatus::Pending,
             "Running" => ClusterInstanceStatus::Running,
@@ -81,6 +85,7 @@ impl ClusterInstanceStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            ClusterInstanceStatus::DeepHealthCheckInProgress => "DeepHealthCheckInProgress",
             ClusterInstanceStatus::Failure => "Failure",
             ClusterInstanceStatus::Pending => "Pending",
             ClusterInstanceStatus::Running => "Running",
@@ -91,7 +96,14 @@ impl ClusterInstanceStatus {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Failure", "Pending", "Running", "ShuttingDown", "SystemUpdating"]
+        &[
+            "DeepHealthCheckInProgress",
+            "Failure",
+            "Pending",
+            "Running",
+            "ShuttingDown",
+            "SystemUpdating",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for ClusterInstanceStatus {
@@ -114,6 +126,7 @@ impl ClusterInstanceStatus {
 impl ::std::fmt::Display for ClusterInstanceStatus {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            ClusterInstanceStatus::DeepHealthCheckInProgress => write!(f, "DeepHealthCheckInProgress"),
             ClusterInstanceStatus::Failure => write!(f, "Failure"),
             ClusterInstanceStatus::Pending => write!(f, "Pending"),
             ClusterInstanceStatus::Running => write!(f, "Running"),

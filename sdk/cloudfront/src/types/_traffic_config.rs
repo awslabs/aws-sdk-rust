@@ -86,7 +86,7 @@ impl TrafficConfigBuilder {
     }
     /// Consumes the builder and constructs a [`TrafficConfig`](crate::types::TrafficConfig).
     /// This method will fail if any of the following fields are not set:
-    /// - [`r#type`](crate::types::builders::TrafficConfigBuilder::r#type)
+    /// - [`r#type`](crate::types::builders::TrafficConfigBuilder::type)
     pub fn build(self) -> ::std::result::Result<crate::types::TrafficConfig, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::TrafficConfig {
             single_weight_config: self.single_weight_config,

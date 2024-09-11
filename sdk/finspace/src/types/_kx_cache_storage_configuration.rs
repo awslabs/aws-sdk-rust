@@ -112,7 +112,7 @@ impl KxCacheStorageConfigurationBuilder {
     }
     /// Consumes the builder and constructs a [`KxCacheStorageConfiguration`](crate::types::KxCacheStorageConfiguration).
     /// This method will fail if any of the following fields are not set:
-    /// - [`r#type`](crate::types::builders::KxCacheStorageConfigurationBuilder::r#type)
+    /// - [`r#type`](crate::types::builders::KxCacheStorageConfigurationBuilder::type)
     /// - [`size`](crate::types::builders::KxCacheStorageConfigurationBuilder::size)
     pub fn build(self) -> ::std::result::Result<crate::types::KxCacheStorageConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::KxCacheStorageConfiguration {

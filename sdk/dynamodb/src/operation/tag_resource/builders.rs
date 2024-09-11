@@ -23,6 +23,12 @@ impl crate::operation::tag_resource::builders::TagResourceInputBuilder {
 /// Fluent builder constructing a request to `TagResource`.
 ///
 /// <p>Associate a set of tags with an Amazon DynamoDB resource. You can then activate these user-defined tags so that they appear on the Billing and Cost Management console for cost allocation tracking. You can call TagResource up to five times per second, per account.</p>
+/// <ul>
+/// <li>
+/// <p><code>TagResource</code> is an asynchronous operation. If you issue a <code>ListTagsOfResource</code> request immediately after a <code>TagResource</code> request, DynamoDB might return your previous tag set, if there was one, or an empty tag set. This is because <code>ListTagsOfResource</code> uses an eventually consistent query, and the metadata for your tags or table might not be available at that moment. Wait for a few seconds, and then try the <code>ListTagsOfResource</code> request again.</p></li>
+/// <li>
+/// <p>The application or removal of tags using <code>TagResource</code> and <code>UntagResource</code> APIs is eventually consistent. <code>ListTagsOfResource</code> API will only reflect the changes after a few seconds.</p></li>
+/// </ul>
 /// <p>For an overview on tagging DynamoDB resources, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Tagging.html">Tagging for DynamoDB</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct TagResourceFluentBuilder {

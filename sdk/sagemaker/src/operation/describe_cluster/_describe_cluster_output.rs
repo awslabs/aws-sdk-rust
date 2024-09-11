@@ -17,6 +17,10 @@ pub struct DescribeClusterOutput {
     pub instance_groups: ::std::option::Option<::std::vec::Vec<crate::types::ClusterInstanceGroupDetails>>,
     /// <p>Specifies an Amazon Virtual Private Cloud (VPC) that your SageMaker jobs, hosted models, and compute resources have access to. You can control access to and from your resources by configuring a VPC. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/infrastructure-give-access.html">Give SageMaker Access to Resources in your Amazon VPC</a>.</p>
     pub vpc_config: ::std::option::Option<crate::types::VpcConfig>,
+    /// <p>The type of orchestrator used for the SageMaker HyperPod cluster.</p>
+    pub orchestrator: ::std::option::Option<crate::types::ClusterOrchestrator>,
+    /// <p>The node recovery mode configured for the SageMaker HyperPod cluster.</p>
+    pub node_recovery: ::std::option::Option<crate::types::ClusterNodeRecovery>,
     _request_id: Option<String>,
 }
 impl DescribeClusterOutput {
@@ -50,6 +54,14 @@ impl DescribeClusterOutput {
     pub fn vpc_config(&self) -> ::std::option::Option<&crate::types::VpcConfig> {
         self.vpc_config.as_ref()
     }
+    /// <p>The type of orchestrator used for the SageMaker HyperPod cluster.</p>
+    pub fn orchestrator(&self) -> ::std::option::Option<&crate::types::ClusterOrchestrator> {
+        self.orchestrator.as_ref()
+    }
+    /// <p>The node recovery mode configured for the SageMaker HyperPod cluster.</p>
+    pub fn node_recovery(&self) -> ::std::option::Option<&crate::types::ClusterNodeRecovery> {
+        self.node_recovery.as_ref()
+    }
 }
 impl ::aws_types::request_id::RequestId for DescribeClusterOutput {
     fn request_id(&self) -> Option<&str> {
@@ -74,6 +86,8 @@ pub struct DescribeClusterOutputBuilder {
     pub(crate) failure_message: ::std::option::Option<::std::string::String>,
     pub(crate) instance_groups: ::std::option::Option<::std::vec::Vec<crate::types::ClusterInstanceGroupDetails>>,
     pub(crate) vpc_config: ::std::option::Option<crate::types::VpcConfig>,
+    pub(crate) orchestrator: ::std::option::Option<crate::types::ClusterOrchestrator>,
+    pub(crate) node_recovery: ::std::option::Option<crate::types::ClusterNodeRecovery>,
     _request_id: Option<String>,
 }
 impl DescribeClusterOutputBuilder {
@@ -183,6 +197,34 @@ impl DescribeClusterOutputBuilder {
     pub fn get_vpc_config(&self) -> &::std::option::Option<crate::types::VpcConfig> {
         &self.vpc_config
     }
+    /// <p>The type of orchestrator used for the SageMaker HyperPod cluster.</p>
+    pub fn orchestrator(mut self, input: crate::types::ClusterOrchestrator) -> Self {
+        self.orchestrator = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The type of orchestrator used for the SageMaker HyperPod cluster.</p>
+    pub fn set_orchestrator(mut self, input: ::std::option::Option<crate::types::ClusterOrchestrator>) -> Self {
+        self.orchestrator = input;
+        self
+    }
+    /// <p>The type of orchestrator used for the SageMaker HyperPod cluster.</p>
+    pub fn get_orchestrator(&self) -> &::std::option::Option<crate::types::ClusterOrchestrator> {
+        &self.orchestrator
+    }
+    /// <p>The node recovery mode configured for the SageMaker HyperPod cluster.</p>
+    pub fn node_recovery(mut self, input: crate::types::ClusterNodeRecovery) -> Self {
+        self.node_recovery = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The node recovery mode configured for the SageMaker HyperPod cluster.</p>
+    pub fn set_node_recovery(mut self, input: ::std::option::Option<crate::types::ClusterNodeRecovery>) -> Self {
+        self.node_recovery = input;
+        self
+    }
+    /// <p>The node recovery mode configured for the SageMaker HyperPod cluster.</p>
+    pub fn get_node_recovery(&self) -> &::std::option::Option<crate::types::ClusterNodeRecovery> {
+        &self.node_recovery
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -202,6 +244,8 @@ impl DescribeClusterOutputBuilder {
             failure_message: self.failure_message,
             instance_groups: self.instance_groups,
             vpc_config: self.vpc_config,
+            orchestrator: self.orchestrator,
+            node_recovery: self.node_recovery,
             _request_id: self._request_id,
         }
     }

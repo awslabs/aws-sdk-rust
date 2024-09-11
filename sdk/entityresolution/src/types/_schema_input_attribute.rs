@@ -167,7 +167,7 @@ impl SchemaInputAttributeBuilder {
     /// Consumes the builder and constructs a [`SchemaInputAttribute`](crate::types::SchemaInputAttribute).
     /// This method will fail if any of the following fields are not set:
     /// - [`field_name`](crate::types::builders::SchemaInputAttributeBuilder::field_name)
-    /// - [`r#type`](crate::types::builders::SchemaInputAttributeBuilder::r#type)
+    /// - [`r#type`](crate::types::builders::SchemaInputAttributeBuilder::type)
     pub fn build(self) -> ::std::result::Result<crate::types::SchemaInputAttribute, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::SchemaInputAttribute {
             field_name: self.field_name.ok_or_else(|| {

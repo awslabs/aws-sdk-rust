@@ -158,7 +158,7 @@ impl EngineTranscribeMedicalSettingsBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`language_code`](crate::types::builders::EngineTranscribeMedicalSettingsBuilder::language_code)
     /// - [`specialty`](crate::types::builders::EngineTranscribeMedicalSettingsBuilder::specialty)
-    /// - [`r#type`](crate::types::builders::EngineTranscribeMedicalSettingsBuilder::r#type)
+    /// - [`r#type`](crate::types::builders::EngineTranscribeMedicalSettingsBuilder::type)
     pub fn build(self) -> ::std::result::Result<crate::types::EngineTranscribeMedicalSettings, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::EngineTranscribeMedicalSettings {
             language_code: self.language_code.ok_or_else(|| {

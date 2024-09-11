@@ -7,6 +7,7 @@
 //! ```sh
 //! RUSTFLAGS="--cfg smoketests" cargo test.
 //! ```
+//!
 use aws_sdk_sfn::{config, Client};
 /// Smoke tests for the `list_activities` operation
 #[::tokio::test]

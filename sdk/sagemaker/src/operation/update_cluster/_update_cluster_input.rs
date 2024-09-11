@@ -7,6 +7,8 @@ pub struct UpdateClusterInput {
     pub cluster_name: ::std::option::Option<::std::string::String>,
     /// <p>Specify the instance groups to update.</p>
     pub instance_groups: ::std::option::Option<::std::vec::Vec<crate::types::ClusterInstanceGroupSpecification>>,
+    /// <p>The node recovery mode to be applied to the SageMaker HyperPod cluster.</p>
+    pub node_recovery: ::std::option::Option<crate::types::ClusterNodeRecovery>,
 }
 impl UpdateClusterInput {
     /// <p>Specify the name of the SageMaker HyperPod cluster you want to update.</p>
@@ -18,6 +20,10 @@ impl UpdateClusterInput {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_groups.is_none()`.
     pub fn instance_groups(&self) -> &[crate::types::ClusterInstanceGroupSpecification] {
         self.instance_groups.as_deref().unwrap_or_default()
+    }
+    /// <p>The node recovery mode to be applied to the SageMaker HyperPod cluster.</p>
+    pub fn node_recovery(&self) -> ::std::option::Option<&crate::types::ClusterNodeRecovery> {
+        self.node_recovery.as_ref()
     }
 }
 impl UpdateClusterInput {
@@ -33,6 +39,7 @@ impl UpdateClusterInput {
 pub struct UpdateClusterInputBuilder {
     pub(crate) cluster_name: ::std::option::Option<::std::string::String>,
     pub(crate) instance_groups: ::std::option::Option<::std::vec::Vec<crate::types::ClusterInstanceGroupSpecification>>,
+    pub(crate) node_recovery: ::std::option::Option<crate::types::ClusterNodeRecovery>,
 }
 impl UpdateClusterInputBuilder {
     /// <p>Specify the name of the SageMaker HyperPod cluster you want to update.</p>
@@ -70,6 +77,20 @@ impl UpdateClusterInputBuilder {
     pub fn get_instance_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ClusterInstanceGroupSpecification>> {
         &self.instance_groups
     }
+    /// <p>The node recovery mode to be applied to the SageMaker HyperPod cluster.</p>
+    pub fn node_recovery(mut self, input: crate::types::ClusterNodeRecovery) -> Self {
+        self.node_recovery = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The node recovery mode to be applied to the SageMaker HyperPod cluster.</p>
+    pub fn set_node_recovery(mut self, input: ::std::option::Option<crate::types::ClusterNodeRecovery>) -> Self {
+        self.node_recovery = input;
+        self
+    }
+    /// <p>The node recovery mode to be applied to the SageMaker HyperPod cluster.</p>
+    pub fn get_node_recovery(&self) -> &::std::option::Option<crate::types::ClusterNodeRecovery> {
+        &self.node_recovery
+    }
     /// Consumes the builder and constructs a [`UpdateClusterInput`](crate::operation::update_cluster::UpdateClusterInput).
     pub fn build(
         self,
@@ -77,6 +98,7 @@ impl UpdateClusterInputBuilder {
         ::std::result::Result::Ok(crate::operation::update_cluster::UpdateClusterInput {
             cluster_name: self.cluster_name,
             instance_groups: self.instance_groups,
+            node_recovery: self.node_recovery,
         })
     }
 }

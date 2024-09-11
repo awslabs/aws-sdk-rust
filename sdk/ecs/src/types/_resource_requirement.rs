@@ -78,7 +78,7 @@ impl ResourceRequirementBuilder {
     /// Consumes the builder and constructs a [`ResourceRequirement`](crate::types::ResourceRequirement).
     /// This method will fail if any of the following fields are not set:
     /// - [`value`](crate::types::builders::ResourceRequirementBuilder::value)
-    /// - [`r#type`](crate::types::builders::ResourceRequirementBuilder::r#type)
+    /// - [`r#type`](crate::types::builders::ResourceRequirementBuilder::type)
     pub fn build(self) -> ::std::result::Result<crate::types::ResourceRequirement, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ResourceRequirement {
             value: self.value.ok_or_else(|| {

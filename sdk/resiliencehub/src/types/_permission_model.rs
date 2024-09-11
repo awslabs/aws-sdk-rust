@@ -164,7 +164,7 @@ impl PermissionModelBuilder {
     }
     /// Consumes the builder and constructs a [`PermissionModel`](crate::types::PermissionModel).
     /// This method will fail if any of the following fields are not set:
-    /// - [`r#type`](crate::types::builders::PermissionModelBuilder::r#type)
+    /// - [`r#type`](crate::types::builders::PermissionModelBuilder::type)
     pub fn build(self) -> ::std::result::Result<crate::types::PermissionModel, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::PermissionModel {
             r#type: self.r#type.ok_or_else(|| {

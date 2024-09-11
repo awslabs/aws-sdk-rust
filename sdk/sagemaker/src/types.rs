@@ -367,7 +367,11 @@ pub use crate::types::_edge_preset_deployment_type::EdgePresetDeploymentType;
 
 pub use crate::types::_git_config_for_update::GitConfigForUpdate;
 
+pub use crate::types::_cluster_node_recovery::ClusterNodeRecovery;
+
 pub use crate::types::_cluster_instance_group_specification::ClusterInstanceGroupSpecification;
+
+pub use crate::types::_deep_health_check_type::DeepHealthCheckType;
 
 pub use crate::types::_cluster_instance_storage_config::ClusterInstanceStorageConfig;
 
@@ -1631,6 +1635,10 @@ pub use crate::types::_cluster_node_details::ClusterNodeDetails;
 
 pub use crate::types::_cluster_instance_placement::ClusterInstancePlacement;
 
+pub use crate::types::_cluster_orchestrator::ClusterOrchestrator;
+
+pub use crate::types::_cluster_orchestrator_eks_config::ClusterOrchestratorEksConfig;
+
 pub use crate::types::_cluster_instance_group_details::ClusterInstanceGroupDetails;
 
 pub use crate::types::_auto_ml_compute_config::AutoMlComputeConfig;
@@ -2035,7 +2043,13 @@ mod _cluster_life_cycle_config;
 
 mod _cluster_node_details;
 
+mod _cluster_node_recovery;
+
 mod _cluster_node_summary;
+
+mod _cluster_orchestrator;
+
+mod _cluster_orchestrator_eks_config;
 
 mod _cluster_sort_by;
 
@@ -2134,6 +2148,8 @@ mod _debug_hook_config;
 mod _debug_rule_configuration;
 
 mod _debug_rule_evaluation_status;
+
+mod _deep_health_check_type;
 
 mod _default_ebs_storage_settings;
 

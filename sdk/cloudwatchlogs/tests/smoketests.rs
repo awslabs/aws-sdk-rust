@@ -7,6 +7,7 @@
 //! ```sh
 //! RUSTFLAGS="--cfg smoketests" cargo test.
 //! ```
+//!
 use aws_sdk_cloudwatchlogs::{config, Client};
 /// Smoke tests for the `describe_log_groups` operation
 #[::tokio::test]

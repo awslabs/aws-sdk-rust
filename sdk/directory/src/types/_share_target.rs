@@ -68,7 +68,7 @@ impl ShareTargetBuilder {
     /// Consumes the builder and constructs a [`ShareTarget`](crate::types::ShareTarget).
     /// This method will fail if any of the following fields are not set:
     /// - [`id`](crate::types::builders::ShareTargetBuilder::id)
-    /// - [`r#type`](crate::types::builders::ShareTargetBuilder::r#type)
+    /// - [`r#type`](crate::types::builders::ShareTargetBuilder::type)
     pub fn build(self) -> ::std::result::Result<crate::types::ShareTarget, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ShareTarget {
             id: self.id.ok_or_else(|| {

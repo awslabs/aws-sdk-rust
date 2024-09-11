@@ -55,7 +55,7 @@ impl CacheConfigBuilder {
     }
     /// Consumes the builder and constructs a [`CacheConfig`](crate::types::CacheConfig).
     /// This method will fail if any of the following fields are not set:
-    /// - [`r#type`](crate::types::builders::CacheConfigBuilder::r#type)
+    /// - [`r#type`](crate::types::builders::CacheConfigBuilder::type)
     pub fn build(self) -> ::std::result::Result<crate::types::CacheConfig, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CacheConfig {
             r#type: self.r#type.ok_or_else(|| {

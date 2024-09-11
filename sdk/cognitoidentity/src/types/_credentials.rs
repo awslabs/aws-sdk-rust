@@ -2,7 +2,7 @@
 
 /// <p>Credentials for the provided identity ID.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct Credentials {
     /// <p>The Access Key portion of the credentials.</p>
     pub access_key_id: ::std::option::Option<::std::string::String>,
@@ -31,6 +31,16 @@ impl Credentials {
         self.expiration.as_ref()
     }
 }
+impl ::std::fmt::Debug for Credentials {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("Credentials");
+        formatter.field("access_key_id", &self.access_key_id);
+        formatter.field("secret_key", &"*** Sensitive Data Redacted ***");
+        formatter.field("session_token", &self.session_token);
+        formatter.field("expiration", &self.expiration);
+        formatter.finish()
+    }
+}
 impl Credentials {
     /// Creates a new builder-style object to manufacture [`Credentials`](crate::types::Credentials).
     pub fn builder() -> crate::types::builders::CredentialsBuilder {
@@ -39,7 +49,7 @@ impl Credentials {
 }
 
 /// A builder for [`Credentials`](crate::types::Credentials).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct CredentialsBuilder {
     pub(crate) access_key_id: ::std::option::Option<::std::string::String>,
@@ -112,5 +122,15 @@ impl CredentialsBuilder {
             session_token: self.session_token,
             expiration: self.expiration,
         }
+    }
+}
+impl ::std::fmt::Debug for CredentialsBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("CredentialsBuilder");
+        formatter.field("access_key_id", &self.access_key_id);
+        formatter.field("secret_key", &"*** Sensitive Data Redacted ***");
+        formatter.field("session_token", &self.session_token);
+        formatter.field("expiration", &self.expiration);
+        formatter.finish()
     }
 }

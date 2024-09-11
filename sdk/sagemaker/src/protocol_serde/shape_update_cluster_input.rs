@@ -18,5 +18,8 @@ pub fn ser_update_cluster_input_input(
         }
         array_3.finish();
     }
+    if let Some(var_6) = &input.node_recovery {
+        object.key("NodeRecovery").string(var_6.as_str());
+    }
     Ok(())
 }

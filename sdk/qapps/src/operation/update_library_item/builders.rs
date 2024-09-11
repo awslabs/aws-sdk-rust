@@ -22,7 +22,7 @@ impl crate::operation::update_library_item::builders::UpdateLibraryItemInputBuil
 }
 /// Fluent builder constructing a request to `UpdateLibraryItem`.
 ///
-/// <p>Updates the metadata and status of a library item for an Amazon Q App.</p>
+/// <p>Updates the library item for an Amazon Q App.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateLibraryItemFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

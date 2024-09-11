@@ -149,7 +149,7 @@ impl DeploymentControllerBuilder {
     }
     /// Consumes the builder and constructs a [`DeploymentController`](crate::types::DeploymentController).
     /// This method will fail if any of the following fields are not set:
-    /// - [`r#type`](crate::types::builders::DeploymentControllerBuilder::r#type)
+    /// - [`r#type`](crate::types::builders::DeploymentControllerBuilder::type)
     pub fn build(self) -> ::std::result::Result<crate::types::DeploymentController, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::DeploymentController {
             r#type: self.r#type.ok_or_else(|| {

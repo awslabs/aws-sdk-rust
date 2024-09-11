@@ -67,7 +67,7 @@ impl ImageFileBuilder {
     /// Consumes the builder and constructs a [`ImageFile`](crate::types::ImageFile).
     /// This method will fail if any of the following fields are not set:
     /// - [`data`](crate::types::builders::ImageFileBuilder::data)
-    /// - [`r#type`](crate::types::builders::ImageFileBuilder::r#type)
+    /// - [`r#type`](crate::types::builders::ImageFileBuilder::type)
     pub fn build(self) -> ::std::result::Result<crate::types::ImageFile, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ImageFile {
             data: self.data.ok_or_else(|| {

@@ -7,6 +7,7 @@
 //! ```sh
 //! RUSTFLAGS="--cfg smoketests" cargo test.
 //! ```
+//!
 use aws_sdk_acm::{config, Client};
 /// Smoke tests for the `get_certificate` operation
 #[::tokio::test]

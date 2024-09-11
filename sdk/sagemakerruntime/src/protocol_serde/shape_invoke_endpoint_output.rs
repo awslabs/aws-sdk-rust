@@ -5,6 +5,13 @@ pub(crate) fn de_body_payload(
     (!body.is_empty()).then(|| Ok(::aws_smithy_types::Blob::new(body))).transpose()
 }
 
+pub(crate) fn de_closed_session_id_header(
+    header_map: &::aws_smithy_runtime_api::http::Headers,
+) -> ::std::result::Result<::std::option::Option<::std::string::String>, ::aws_smithy_http::header::ParseError> {
+    let headers = header_map.get_all("X-Amzn-SageMaker-Closed-Session-Id");
+    ::aws_smithy_http::header::one_or_none(headers)
+}
+
 pub(crate) fn de_content_type_header(
     header_map: &::aws_smithy_runtime_api::http::Headers,
 ) -> ::std::result::Result<::std::option::Option<::std::string::String>, ::aws_smithy_http::header::ParseError> {
@@ -23,5 +30,12 @@ pub(crate) fn de_invoked_production_variant_header(
     header_map: &::aws_smithy_runtime_api::http::Headers,
 ) -> ::std::result::Result<::std::option::Option<::std::string::String>, ::aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("x-Amzn-Invoked-Production-Variant");
+    ::aws_smithy_http::header::one_or_none(headers)
+}
+
+pub(crate) fn de_new_session_id_header(
+    header_map: &::aws_smithy_runtime_api::http::Headers,
+) -> ::std::result::Result<::std::option::Option<::std::string::String>, ::aws_smithy_http::header::ParseError> {
+    let headers = header_map.get_all("X-Amzn-SageMaker-New-Session-Id");
     ::aws_smithy_http::header::one_or_none(headers)
 }

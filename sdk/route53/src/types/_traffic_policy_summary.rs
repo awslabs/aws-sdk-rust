@@ -136,7 +136,7 @@ impl TrafficPolicySummaryBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`id`](crate::types::builders::TrafficPolicySummaryBuilder::id)
     /// - [`name`](crate::types::builders::TrafficPolicySummaryBuilder::name)
-    /// - [`r#type`](crate::types::builders::TrafficPolicySummaryBuilder::r#type)
+    /// - [`r#type`](crate::types::builders::TrafficPolicySummaryBuilder::type)
     /// - [`latest_version`](crate::types::builders::TrafficPolicySummaryBuilder::latest_version)
     /// - [`traffic_policy_count`](crate::types::builders::TrafficPolicySummaryBuilder::traffic_policy_count)
     pub fn build(self) -> ::std::result::Result<crate::types::TrafficPolicySummary, ::aws_smithy_types::error::operation::BuildError> {

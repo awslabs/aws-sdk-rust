@@ -122,17 +122,17 @@ impl GetVoiceToneAnalysisTaskFluentBuilder {
     pub fn get_voice_connector_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_voice_connector_id()
     }
-    /// <p>The ID of the voice tone anlysis task.</p>
+    /// <p>The ID of the voice tone analysis task.</p>
     pub fn voice_tone_analysis_task_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.voice_tone_analysis_task_id(input.into());
         self
     }
-    /// <p>The ID of the voice tone anlysis task.</p>
+    /// <p>The ID of the voice tone analysis task.</p>
     pub fn set_voice_tone_analysis_task_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_voice_tone_analysis_task_id(input);
         self
     }
-    /// <p>The ID of the voice tone anlysis task.</p>
+    /// <p>The ID of the voice tone analysis task.</p>
     pub fn get_voice_tone_analysis_task_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_voice_tone_analysis_task_id()
     }

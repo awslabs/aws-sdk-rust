@@ -20,7 +20,7 @@ convert-streams = ["aws-smithy-async", "futures-core"]
 [dependencies.aws-smithy-types]
 path = "../aws-smithy-types"
 optional = true
-version = "1.2.4"
+version = "1.2.6"
 
 [dependencies.aws-smithy-async]
 path = "../aws-smithy-async"

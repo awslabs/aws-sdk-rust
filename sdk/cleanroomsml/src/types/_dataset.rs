@@ -66,7 +66,7 @@ impl DatasetBuilder {
     }
     /// Consumes the builder and constructs a [`Dataset`](crate::types::Dataset).
     /// This method will fail if any of the following fields are not set:
-    /// - [`r#type`](crate::types::builders::DatasetBuilder::r#type)
+    /// - [`r#type`](crate::types::builders::DatasetBuilder::type)
     pub fn build(self) -> ::std::result::Result<crate::types::Dataset, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Dataset {
             r#type: self.r#type.ok_or_else(|| {

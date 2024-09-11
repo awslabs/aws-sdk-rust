@@ -7,6 +7,7 @@
 //! ```sh
 //! RUSTFLAGS="--cfg smoketests" cargo test.
 //! ```
+//!
 use aws_sdk_route53::{config, Client};
 /// Smoke tests for the `get_hosted_zone` operation
 #[::tokio::test]

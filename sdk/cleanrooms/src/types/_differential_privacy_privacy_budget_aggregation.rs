@@ -88,7 +88,7 @@ impl DifferentialPrivacyPrivacyBudgetAggregationBuilder {
     }
     /// Consumes the builder and constructs a [`DifferentialPrivacyPrivacyBudgetAggregation`](crate::types::DifferentialPrivacyPrivacyBudgetAggregation).
     /// This method will fail if any of the following fields are not set:
-    /// - [`r#type`](crate::types::builders::DifferentialPrivacyPrivacyBudgetAggregationBuilder::r#type)
+    /// - [`r#type`](crate::types::builders::DifferentialPrivacyPrivacyBudgetAggregationBuilder::type)
     /// - [`max_count`](crate::types::builders::DifferentialPrivacyPrivacyBudgetAggregationBuilder::max_count)
     /// - [`remaining_count`](crate::types::builders::DifferentialPrivacyPrivacyBudgetAggregationBuilder::remaining_count)
     pub fn build(

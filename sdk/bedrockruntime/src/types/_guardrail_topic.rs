@@ -90,7 +90,7 @@ impl GuardrailTopicBuilder {
     /// Consumes the builder and constructs a [`GuardrailTopic`](crate::types::GuardrailTopic).
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::GuardrailTopicBuilder::name)
-    /// - [`r#type`](crate::types::builders::GuardrailTopicBuilder::r#type)
+    /// - [`r#type`](crate::types::builders::GuardrailTopicBuilder::type)
     /// - [`action`](crate::types::builders::GuardrailTopicBuilder::action)
     pub fn build(self) -> ::std::result::Result<crate::types::GuardrailTopic, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::GuardrailTopic {

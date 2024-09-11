@@ -32,6 +32,20 @@ pub fn de_update_library_item_http_error(
             };
             tmp
         }),
+        "ConflictException" => crate::operation::update_library_item::UpdateLibraryItemError::ConflictException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ConflictExceptionBuilder::default();
+                output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::update_library_item::UpdateLibraryItemError::unhandled)?;
+                let output = output.meta(generic);
+                crate::serde_util::conflict_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::update_library_item::UpdateLibraryItemError::unhandled)?
+            };
+            tmp
+        }),
         "InternalServerException" => crate::operation::update_library_item::UpdateLibraryItemError::InternalServerException({
             #[allow(unused_mut)]
             let mut tmp = {
@@ -213,6 +227,9 @@ pub(crate) fn de_update_library_item(
                 }
                 "isRatedByUser" => {
                     builder = builder.set_is_rated_by_user(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                }
+                "isVerified" => {
+                    builder = builder.set_is_verified(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                 }
                 "libraryItemId" => {
                     builder = builder.set_library_item_id(

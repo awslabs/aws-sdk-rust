@@ -7,6 +7,7 @@
 //! ```sh
 //! RUSTFLAGS="--cfg smoketests" cargo test.
 //! ```
+//!
 use aws_sdk_ssm::{config, Client};
 /// Smoke tests for the `list_documents` operation
 #[::tokio::test]

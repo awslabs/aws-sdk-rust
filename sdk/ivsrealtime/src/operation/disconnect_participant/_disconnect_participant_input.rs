@@ -5,7 +5,7 @@
 pub struct DisconnectParticipantInput {
     /// <p>ARN of the stage to which the participant is attached.</p>
     pub stage_arn: ::std::option::Option<::std::string::String>,
-    /// <p>Identifier of the participant to be disconnected. This is assigned by IVS and returned by <code>CreateParticipantToken</code>.</p>
+    /// <p>Identifier of the participant to be disconnected. IVS assigns this; it is returned by <code>CreateParticipantToken</code> (for streams using WebRTC ingest) or <code>CreateIngestConfiguration</code> (for streams using RTMP ingest).</p>
     pub participant_id: ::std::option::Option<::std::string::String>,
     /// <p>Description of why this participant is being disconnected.</p>
     pub reason: ::std::option::Option<::std::string::String>,
@@ -15,7 +15,7 @@ impl DisconnectParticipantInput {
     pub fn stage_arn(&self) -> ::std::option::Option<&str> {
         self.stage_arn.as_deref()
     }
-    /// <p>Identifier of the participant to be disconnected. This is assigned by IVS and returned by <code>CreateParticipantToken</code>.</p>
+    /// <p>Identifier of the participant to be disconnected. IVS assigns this; it is returned by <code>CreateParticipantToken</code> (for streams using WebRTC ingest) or <code>CreateIngestConfiguration</code> (for streams using RTMP ingest).</p>
     pub fn participant_id(&self) -> ::std::option::Option<&str> {
         self.participant_id.as_deref()
     }
@@ -55,18 +55,18 @@ impl DisconnectParticipantInputBuilder {
     pub fn get_stage_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.stage_arn
     }
-    /// <p>Identifier of the participant to be disconnected. This is assigned by IVS and returned by <code>CreateParticipantToken</code>.</p>
+    /// <p>Identifier of the participant to be disconnected. IVS assigns this; it is returned by <code>CreateParticipantToken</code> (for streams using WebRTC ingest) or <code>CreateIngestConfiguration</code> (for streams using RTMP ingest).</p>
     /// This field is required.
     pub fn participant_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.participant_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Identifier of the participant to be disconnected. This is assigned by IVS and returned by <code>CreateParticipantToken</code>.</p>
+    /// <p>Identifier of the participant to be disconnected. IVS assigns this; it is returned by <code>CreateParticipantToken</code> (for streams using WebRTC ingest) or <code>CreateIngestConfiguration</code> (for streams using RTMP ingest).</p>
     pub fn set_participant_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.participant_id = input;
         self
     }
-    /// <p>Identifier of the participant to be disconnected. This is assigned by IVS and returned by <code>CreateParticipantToken</code>.</p>
+    /// <p>Identifier of the participant to be disconnected. IVS assigns this; it is returned by <code>CreateParticipantToken</code> (for streams using WebRTC ingest) or <code>CreateIngestConfiguration</code> (for streams using RTMP ingest).</p>
     pub fn get_participant_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.participant_id
     }

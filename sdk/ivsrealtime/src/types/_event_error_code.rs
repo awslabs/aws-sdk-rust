@@ -12,9 +12,17 @@
 /// ```text
 /// # let eventerrorcode = unimplemented!();
 /// match eventerrorcode {
+///     EventErrorCode::BitrateExceeded => { /* ... */ },
 ///     EventErrorCode::InsufficientCapabilities => { /* ... */ },
+///     EventErrorCode::InvalidAudioCodec => { /* ... */ },
+///     EventErrorCode::InvalidProtocol => { /* ... */ },
+///     EventErrorCode::InvalidStreamKey => { /* ... */ },
+///     EventErrorCode::InvalidVideoCodec => { /* ... */ },
 ///     EventErrorCode::PublisherNotFound => { /* ... */ },
 ///     EventErrorCode::QuotaExceeded => { /* ... */ },
+///     EventErrorCode::ResolutionExceeded => { /* ... */ },
+///     EventErrorCode::ReuseOfStreamKey => { /* ... */ },
+///     EventErrorCode::StreamDurationExceeded => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -43,11 +51,27 @@
 )]
 pub enum EventErrorCode {
     #[allow(missing_docs)] // documentation missing in model
+    BitrateExceeded,
+    #[allow(missing_docs)] // documentation missing in model
     InsufficientCapabilities,
+    #[allow(missing_docs)] // documentation missing in model
+    InvalidAudioCodec,
+    #[allow(missing_docs)] // documentation missing in model
+    InvalidProtocol,
+    #[allow(missing_docs)] // documentation missing in model
+    InvalidStreamKey,
+    #[allow(missing_docs)] // documentation missing in model
+    InvalidVideoCodec,
     #[allow(missing_docs)] // documentation missing in model
     PublisherNotFound,
     #[allow(missing_docs)] // documentation missing in model
     QuotaExceeded,
+    #[allow(missing_docs)] // documentation missing in model
+    ResolutionExceeded,
+    #[allow(missing_docs)] // documentation missing in model
+    ReuseOfStreamKey,
+    #[allow(missing_docs)] // documentation missing in model
+    StreamDurationExceeded,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -55,9 +79,17 @@ pub enum EventErrorCode {
 impl ::std::convert::From<&str> for EventErrorCode {
     fn from(s: &str) -> Self {
         match s {
+            "BITRATE_EXCEEDED" => EventErrorCode::BitrateExceeded,
             "INSUFFICIENT_CAPABILITIES" => EventErrorCode::InsufficientCapabilities,
+            "INVALID_AUDIO_CODEC" => EventErrorCode::InvalidAudioCodec,
+            "INVALID_PROTOCOL" => EventErrorCode::InvalidProtocol,
+            "INVALID_STREAM_KEY" => EventErrorCode::InvalidStreamKey,
+            "INVALID_VIDEO_CODEC" => EventErrorCode::InvalidVideoCodec,
             "PUBLISHER_NOT_FOUND" => EventErrorCode::PublisherNotFound,
             "QUOTA_EXCEEDED" => EventErrorCode::QuotaExceeded,
+            "RESOLUTION_EXCEEDED" => EventErrorCode::ResolutionExceeded,
+            "REUSE_OF_STREAM_KEY" => EventErrorCode::ReuseOfStreamKey,
+            "STREAM_DURATION_EXCEEDED" => EventErrorCode::StreamDurationExceeded,
             other => EventErrorCode::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -73,15 +105,35 @@ impl EventErrorCode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            EventErrorCode::BitrateExceeded => "BITRATE_EXCEEDED",
             EventErrorCode::InsufficientCapabilities => "INSUFFICIENT_CAPABILITIES",
+            EventErrorCode::InvalidAudioCodec => "INVALID_AUDIO_CODEC",
+            EventErrorCode::InvalidProtocol => "INVALID_PROTOCOL",
+            EventErrorCode::InvalidStreamKey => "INVALID_STREAM_KEY",
+            EventErrorCode::InvalidVideoCodec => "INVALID_VIDEO_CODEC",
             EventErrorCode::PublisherNotFound => "PUBLISHER_NOT_FOUND",
             EventErrorCode::QuotaExceeded => "QUOTA_EXCEEDED",
+            EventErrorCode::ResolutionExceeded => "RESOLUTION_EXCEEDED",
+            EventErrorCode::ReuseOfStreamKey => "REUSE_OF_STREAM_KEY",
+            EventErrorCode::StreamDurationExceeded => "STREAM_DURATION_EXCEEDED",
             EventErrorCode::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["INSUFFICIENT_CAPABILITIES", "PUBLISHER_NOT_FOUND", "QUOTA_EXCEEDED"]
+        &[
+            "BITRATE_EXCEEDED",
+            "INSUFFICIENT_CAPABILITIES",
+            "INVALID_AUDIO_CODEC",
+            "INVALID_PROTOCOL",
+            "INVALID_STREAM_KEY",
+            "INVALID_VIDEO_CODEC",
+            "PUBLISHER_NOT_FOUND",
+            "QUOTA_EXCEEDED",
+            "RESOLUTION_EXCEEDED",
+            "REUSE_OF_STREAM_KEY",
+            "STREAM_DURATION_EXCEEDED",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for EventErrorCode {
@@ -104,9 +156,17 @@ impl EventErrorCode {
 impl ::std::fmt::Display for EventErrorCode {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            EventErrorCode::BitrateExceeded => write!(f, "BITRATE_EXCEEDED"),
             EventErrorCode::InsufficientCapabilities => write!(f, "INSUFFICIENT_CAPABILITIES"),
+            EventErrorCode::InvalidAudioCodec => write!(f, "INVALID_AUDIO_CODEC"),
+            EventErrorCode::InvalidProtocol => write!(f, "INVALID_PROTOCOL"),
+            EventErrorCode::InvalidStreamKey => write!(f, "INVALID_STREAM_KEY"),
+            EventErrorCode::InvalidVideoCodec => write!(f, "INVALID_VIDEO_CODEC"),
             EventErrorCode::PublisherNotFound => write!(f, "PUBLISHER_NOT_FOUND"),
             EventErrorCode::QuotaExceeded => write!(f, "QUOTA_EXCEEDED"),
+            EventErrorCode::ResolutionExceeded => write!(f, "RESOLUTION_EXCEEDED"),
+            EventErrorCode::ReuseOfStreamKey => write!(f, "REUSE_OF_STREAM_KEY"),
+            EventErrorCode::StreamDurationExceeded => write!(f, "STREAM_DURATION_EXCEEDED"),
             EventErrorCode::Unknown(value) => write!(f, "{}", value),
         }
     }

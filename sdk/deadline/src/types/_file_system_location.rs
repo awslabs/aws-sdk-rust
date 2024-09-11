@@ -101,7 +101,7 @@ impl FileSystemLocationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::FileSystemLocationBuilder::name)
     /// - [`path`](crate::types::builders::FileSystemLocationBuilder::path)
-    /// - [`r#type`](crate::types::builders::FileSystemLocationBuilder::r#type)
+    /// - [`r#type`](crate::types::builders::FileSystemLocationBuilder::type)
     pub fn build(self) -> ::std::result::Result<crate::types::FileSystemLocation, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::FileSystemLocation {
             name: self.name.ok_or_else(|| {

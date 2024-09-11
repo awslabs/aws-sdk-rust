@@ -150,7 +150,7 @@ impl SectionalElementBuilder {
     }
     /// Consumes the builder and constructs a [`SectionalElement`](crate::types::SectionalElement).
     /// This method will fail if any of the following fields are not set:
-    /// - [`r#type`](crate::types::builders::SectionalElementBuilder::r#type)
+    /// - [`r#type`](crate::types::builders::SectionalElementBuilder::type)
     pub fn build(self) -> ::std::result::Result<crate::types::SectionalElement, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::SectionalElement {
             r#type: self.r#type.ok_or_else(|| {

@@ -92,7 +92,7 @@ impl HttpPackageConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`path`](crate::types::builders::HttpPackageConfigurationBuilder::path)
     /// - [`source_group`](crate::types::builders::HttpPackageConfigurationBuilder::source_group)
-    /// - [`r#type`](crate::types::builders::HttpPackageConfigurationBuilder::r#type)
+    /// - [`r#type`](crate::types::builders::HttpPackageConfigurationBuilder::type)
     pub fn build(self) -> ::std::result::Result<crate::types::HttpPackageConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::HttpPackageConfiguration {
             path: self.path.ok_or_else(|| {

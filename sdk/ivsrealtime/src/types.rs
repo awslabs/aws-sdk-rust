@@ -7,6 +7,12 @@ pub use crate::types::_auto_participant_recording_configuration::AutoParticipant
 
 pub use crate::types::_participant_recording_media_type::ParticipantRecordingMediaType;
 
+pub use crate::types::_ingest_configuration::IngestConfiguration;
+
+pub use crate::types::_ingest_configuration_state::IngestConfigurationState;
+
+pub use crate::types::_ingest_protocol::IngestProtocol;
+
 pub use crate::types::_composition::Composition;
 
 pub use crate::types::_destination::Destination;
@@ -67,6 +73,8 @@ pub use crate::types::_event_error_code::EventErrorCode;
 
 pub use crate::types::_event_name::EventName;
 
+pub use crate::types::_ingest_configuration_summary::IngestConfigurationSummary;
+
 pub use crate::types::_encoder_configuration_summary::EncoderConfigurationSummary;
 
 pub use crate::types::_composition_summary::CompositionSummary;
@@ -80,6 +88,8 @@ pub use crate::types::_storage_configuration::StorageConfiguration;
 pub use crate::types::_stage_session::StageSession;
 
 pub use crate::types::_participant::Participant;
+
+pub use crate::types::_participant_protocol::ParticipantProtocol;
 
 pub use crate::types::_encoder_configuration::EncoderConfiguration;
 
@@ -123,9 +133,19 @@ mod _event_name;
 
 mod _grid_configuration;
 
+mod _ingest_configuration;
+
+mod _ingest_configuration_state;
+
+mod _ingest_configuration_summary;
+
+mod _ingest_protocol;
+
 mod _layout_configuration;
 
 mod _participant;
+
+mod _participant_protocol;
 
 mod _participant_recording_filter_by_recording_state;
 

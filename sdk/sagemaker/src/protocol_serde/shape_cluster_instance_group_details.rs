@@ -66,6 +66,11 @@ where
                                 crate::protocol_serde::shape_cluster_instance_storage_configs::de_cluster_instance_storage_configs(tokens)?,
                             );
                         }
+                        "OnStartDeepHealthChecks" => {
+                            builder = builder.set_on_start_deep_health_checks(
+                                crate::protocol_serde::shape_on_start_deep_health_checks::de_on_start_deep_health_checks(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

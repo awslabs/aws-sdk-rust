@@ -342,7 +342,7 @@ impl OrganizationRecommendationSummaryBuilder {
     /// Consumes the builder and constructs a [`OrganizationRecommendationSummary`](crate::types::OrganizationRecommendationSummary).
     /// This method will fail if any of the following fields are not set:
     /// - [`id`](crate::types::builders::OrganizationRecommendationSummaryBuilder::id)
-    /// - [`r#type`](crate::types::builders::OrganizationRecommendationSummaryBuilder::r#type)
+    /// - [`r#type`](crate::types::builders::OrganizationRecommendationSummaryBuilder::type)
     /// - [`status`](crate::types::builders::OrganizationRecommendationSummaryBuilder::status)
     /// - [`pillars`](crate::types::builders::OrganizationRecommendationSummaryBuilder::pillars)
     /// - [`source`](crate::types::builders::OrganizationRecommendationSummaryBuilder::source)

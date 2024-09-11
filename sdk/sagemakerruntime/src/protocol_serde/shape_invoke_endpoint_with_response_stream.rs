@@ -261,5 +261,18 @@ pub fn ser_invoke_endpoint_with_response_stream_headers(
             builder = builder.header("X-Amzn-SageMaker-Inference-Component", header_value);
         }
     }
+    if let ::std::option::Option::Some(inner_15) = &input.session_id {
+        let formatted_16 = inner_15.as_str();
+        if !formatted_16.is_empty() {
+            let header_value = formatted_16;
+            let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+                ::aws_smithy_types::error::operation::BuildError::invalid_field(
+                    "session_id",
+                    format!("`{}` cannot be used as a header value: {}", &header_value, err),
+                )
+            })?;
+            builder = builder.header("X-Amzn-SageMaker-Session-Id", header_value);
+        }
+    }
     Ok(builder)
 }

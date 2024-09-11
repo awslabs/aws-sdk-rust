@@ -99,7 +99,7 @@ impl ParameterDetailBuilder {
     }
     /// Consumes the builder and constructs a [`ParameterDetail`](crate::types::ParameterDetail).
     /// This method will fail if any of the following fields are not set:
-    /// - [`r#type`](crate::types::builders::ParameterDetailBuilder::r#type)
+    /// - [`r#type`](crate::types::builders::ParameterDetailBuilder::type)
     pub fn build(self) -> ::std::result::Result<crate::types::ParameterDetail, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ParameterDetail {
             description: self.description,

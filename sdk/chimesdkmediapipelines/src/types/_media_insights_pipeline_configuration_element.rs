@@ -254,7 +254,7 @@ impl MediaInsightsPipelineConfigurationElementBuilder {
     }
     /// Consumes the builder and constructs a [`MediaInsightsPipelineConfigurationElement`](crate::types::MediaInsightsPipelineConfigurationElement).
     /// This method will fail if any of the following fields are not set:
-    /// - [`r#type`](crate::types::builders::MediaInsightsPipelineConfigurationElementBuilder::r#type)
+    /// - [`r#type`](crate::types::builders::MediaInsightsPipelineConfigurationElementBuilder::type)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::types::MediaInsightsPipelineConfigurationElement, ::aws_smithy_types::error::operation::BuildError> {

@@ -7,6 +7,7 @@
 //! ```sh
 //! RUSTFLAGS="--cfg smoketests" cargo test.
 //! ```
+//!
 use aws_sdk_kinesis::{config, Client};
 /// Smoke tests for the `describe_stream` operation
 #[::tokio::test]

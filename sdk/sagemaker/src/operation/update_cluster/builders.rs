@@ -141,4 +141,18 @@ impl UpdateClusterFluentBuilder {
     pub fn get_instance_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ClusterInstanceGroupSpecification>> {
         self.inner.get_instance_groups()
     }
+    /// <p>The node recovery mode to be applied to the SageMaker HyperPod cluster.</p>
+    pub fn node_recovery(mut self, input: crate::types::ClusterNodeRecovery) -> Self {
+        self.inner = self.inner.node_recovery(input);
+        self
+    }
+    /// <p>The node recovery mode to be applied to the SageMaker HyperPod cluster.</p>
+    pub fn set_node_recovery(mut self, input: ::std::option::Option<crate::types::ClusterNodeRecovery>) -> Self {
+        self.inner = self.inner.set_node_recovery(input);
+        self
+    }
+    /// <p>The node recovery mode to be applied to the SageMaker HyperPod cluster.</p>
+    pub fn get_node_recovery(&self) -> &::std::option::Option<crate::types::ClusterNodeRecovery> {
+        self.inner.get_node_recovery()
+    }
 }

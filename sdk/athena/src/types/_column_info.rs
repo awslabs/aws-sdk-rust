@@ -237,7 +237,7 @@ impl ColumnInfoBuilder {
     /// Consumes the builder and constructs a [`ColumnInfo`](crate::types::ColumnInfo).
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::ColumnInfoBuilder::name)
-    /// - [`r#type`](crate::types::builders::ColumnInfoBuilder::r#type)
+    /// - [`r#type`](crate::types::builders::ColumnInfoBuilder::type)
     pub fn build(self) -> ::std::result::Result<crate::types::ColumnInfo, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ColumnInfo {
             catalog_name: self.catalog_name,

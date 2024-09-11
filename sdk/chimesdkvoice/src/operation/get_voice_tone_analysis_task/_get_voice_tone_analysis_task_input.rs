@@ -5,7 +5,7 @@
 pub struct GetVoiceToneAnalysisTaskInput {
     /// <p>The Voice Connector ID.</p>
     pub voice_connector_id: ::std::option::Option<::std::string::String>,
-    /// <p>The ID of the voice tone anlysis task.</p>
+    /// <p>The ID of the voice tone analysis task.</p>
     pub voice_tone_analysis_task_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether the voice being analyzed is the caller (originator) or the callee (responder).</p>
     pub is_caller: ::std::option::Option<bool>,
@@ -15,7 +15,7 @@ impl GetVoiceToneAnalysisTaskInput {
     pub fn voice_connector_id(&self) -> ::std::option::Option<&str> {
         self.voice_connector_id.as_deref()
     }
-    /// <p>The ID of the voice tone anlysis task.</p>
+    /// <p>The ID of the voice tone analysis task.</p>
     pub fn voice_tone_analysis_task_id(&self) -> ::std::option::Option<&str> {
         self.voice_tone_analysis_task_id.as_deref()
     }
@@ -55,18 +55,18 @@ impl GetVoiceToneAnalysisTaskInputBuilder {
     pub fn get_voice_connector_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.voice_connector_id
     }
-    /// <p>The ID of the voice tone anlysis task.</p>
+    /// <p>The ID of the voice tone analysis task.</p>
     /// This field is required.
     pub fn voice_tone_analysis_task_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.voice_tone_analysis_task_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the voice tone anlysis task.</p>
+    /// <p>The ID of the voice tone analysis task.</p>
     pub fn set_voice_tone_analysis_task_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.voice_tone_analysis_task_id = input;
         self
     }
-    /// <p>The ID of the voice tone anlysis task.</p>
+    /// <p>The ID of the voice tone analysis task.</p>
     pub fn get_voice_tone_analysis_task_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.voice_tone_analysis_task_id
     }

@@ -165,6 +165,13 @@ pub(crate) fn de_describe_pipe(
                         crate::protocol_serde::shape_pipe_enrichment_parameters::de_pipe_enrichment_parameters(tokens)?,
                     );
                 }
+                "KmsKeyIdentifier" => {
+                    builder = builder.set_kms_key_identifier(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
                 "LastModifiedTime" => {
                     builder = builder.set_last_modified_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                         tokens.next(),

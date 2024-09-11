@@ -95,7 +95,7 @@ impl WirelessGatewayLogOptionBuilder {
     }
     /// Consumes the builder and constructs a [`WirelessGatewayLogOption`](crate::types::WirelessGatewayLogOption).
     /// This method will fail if any of the following fields are not set:
-    /// - [`r#type`](crate::types::builders::WirelessGatewayLogOptionBuilder::r#type)
+    /// - [`r#type`](crate::types::builders::WirelessGatewayLogOptionBuilder::type)
     /// - [`log_level`](crate::types::builders::WirelessGatewayLogOptionBuilder::log_level)
     pub fn build(self) -> ::std::result::Result<crate::types::WirelessGatewayLogOption, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::WirelessGatewayLogOption {

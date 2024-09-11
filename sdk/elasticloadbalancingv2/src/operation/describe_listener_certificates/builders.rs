@@ -110,6 +110,12 @@ impl DescribeListenerCertificatesFluentBuilder {
         self.config_override = config_override;
         self
     }
+    /// Create a paginator for this request
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::describe_listener_certificates::paginator::DescribeListenerCertificatesPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
+    pub fn into_paginator(self) -> crate::operation::describe_listener_certificates::paginator::DescribeListenerCertificatesPaginator {
+        crate::operation::describe_listener_certificates::paginator::DescribeListenerCertificatesPaginator::new(self.handle, self.inner)
+    }
     /// <p>The Amazon Resource Names (ARN) of the listener.</p>
     pub fn listener_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.listener_arn(input.into());

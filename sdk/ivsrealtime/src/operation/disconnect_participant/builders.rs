@@ -22,7 +22,7 @@ impl crate::operation::disconnect_participant::builders::DisconnectParticipantIn
 }
 /// Fluent builder constructing a request to `DisconnectParticipant`.
 ///
-/// <p>Disconnects a specified participant and revokes the participant permanently from a specified stage.</p>
+/// <p>Disconnects a specified participant from a specified stage. If the participant is publishing using an <code>IngestConfiguration</code>, DisconnectParticipant also updates the <code>stageArn</code> in the IngestConfiguration to be an empty string.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DisconnectParticipantFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -122,17 +122,17 @@ impl DisconnectParticipantFluentBuilder {
     pub fn get_stage_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_stage_arn()
     }
-    /// <p>Identifier of the participant to be disconnected. This is assigned by IVS and returned by <code>CreateParticipantToken</code>.</p>
+    /// <p>Identifier of the participant to be disconnected. IVS assigns this; it is returned by <code>CreateParticipantToken</code> (for streams using WebRTC ingest) or <code>CreateIngestConfiguration</code> (for streams using RTMP ingest).</p>
     pub fn participant_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.participant_id(input.into());
         self
     }
-    /// <p>Identifier of the participant to be disconnected. This is assigned by IVS and returned by <code>CreateParticipantToken</code>.</p>
+    /// <p>Identifier of the participant to be disconnected. IVS assigns this; it is returned by <code>CreateParticipantToken</code> (for streams using WebRTC ingest) or <code>CreateIngestConfiguration</code> (for streams using RTMP ingest).</p>
     pub fn set_participant_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_participant_id(input);
         self
     }
-    /// <p>Identifier of the participant to be disconnected. This is assigned by IVS and returned by <code>CreateParticipantToken</code>.</p>
+    /// <p>Identifier of the participant to be disconnected. IVS assigns this; it is returned by <code>CreateParticipantToken</code> (for streams using WebRTC ingest) or <code>CreateIngestConfiguration</code> (for streams using RTMP ingest).</p>
     pub fn get_participant_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_participant_id()
     }

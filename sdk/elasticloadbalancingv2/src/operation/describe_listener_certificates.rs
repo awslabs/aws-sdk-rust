@@ -360,3 +360,6 @@ mod _describe_listener_certificates_output;
 
 /// Builders
 pub mod builders;
+
+/// Paginator for this operation
+pub mod paginator;

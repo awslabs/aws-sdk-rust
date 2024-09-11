@@ -65,7 +65,7 @@ impl SampleBuilder {
     }
     /// Consumes the builder and constructs a [`Sample`](crate::types::Sample).
     /// This method will fail if any of the following fields are not set:
-    /// - [`r#type`](crate::types::builders::SampleBuilder::r#type)
+    /// - [`r#type`](crate::types::builders::SampleBuilder::type)
     pub fn build(self) -> ::std::result::Result<crate::types::Sample, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Sample {
             size: self.size,

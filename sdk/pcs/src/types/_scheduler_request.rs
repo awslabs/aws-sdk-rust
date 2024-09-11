@@ -67,7 +67,7 @@ impl SchedulerRequestBuilder {
     }
     /// Consumes the builder and constructs a [`SchedulerRequest`](crate::types::SchedulerRequest).
     /// This method will fail if any of the following fields are not set:
-    /// - [`r#type`](crate::types::builders::SchedulerRequestBuilder::r#type)
+    /// - [`r#type`](crate::types::builders::SchedulerRequestBuilder::type)
     /// - [`version`](crate::types::builders::SchedulerRequestBuilder::version)
     pub fn build(self) -> ::std::result::Result<crate::types::SchedulerRequest, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::SchedulerRequest {

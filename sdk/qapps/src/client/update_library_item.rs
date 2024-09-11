@@ -20,6 +20,7 @@ impl super::Client {
     ///   - [`rating_count(i32)`](crate::operation::update_library_item::UpdateLibraryItemOutput::rating_count): <p>The number of ratings the library item has received.</p>
     ///   - [`is_rated_by_user(Option<bool>)`](crate::operation::update_library_item::UpdateLibraryItemOutput::is_rated_by_user): <p>Whether the current user has rated the library item.</p>
     ///   - [`user_count(Option<i32>)`](crate::operation::update_library_item::UpdateLibraryItemOutput::user_count): <p>The number of users who have the associated Q App.</p>
+    ///   - [`is_verified(Option<bool>)`](crate::operation::update_library_item::UpdateLibraryItemOutput::is_verified): <p>Indicates whether the library item has been verified.</p>
     /// - On failure, responds with [`SdkError<UpdateLibraryItemError>`](crate::operation::update_library_item::UpdateLibraryItemError)
     pub fn update_library_item(&self) -> crate::operation::update_library_item::builders::UpdateLibraryItemFluentBuilder {
         crate::operation::update_library_item::builders::UpdateLibraryItemFluentBuilder::new(self.handle.clone())

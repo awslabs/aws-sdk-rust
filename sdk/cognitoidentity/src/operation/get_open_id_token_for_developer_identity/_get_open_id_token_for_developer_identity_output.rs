@@ -2,7 +2,7 @@
 
 /// <p>Returned in response to a successful <code>GetOpenIdTokenForDeveloperIdentity</code> request.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct GetOpenIdTokenForDeveloperIdentityOutput {
     /// <p>A unique identifier in the format REGION:GUID.</p>
     pub identity_id: ::std::option::Option<::std::string::String>,
@@ -20,6 +20,15 @@ impl GetOpenIdTokenForDeveloperIdentityOutput {
         self.token.as_deref()
     }
 }
+impl ::std::fmt::Debug for GetOpenIdTokenForDeveloperIdentityOutput {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("GetOpenIdTokenForDeveloperIdentityOutput");
+        formatter.field("identity_id", &self.identity_id);
+        formatter.field("token", &"*** Sensitive Data Redacted ***");
+        formatter.field("_request_id", &self._request_id);
+        formatter.finish()
+    }
+}
 impl ::aws_types::request_id::RequestId for GetOpenIdTokenForDeveloperIdentityOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
@@ -33,7 +42,7 @@ impl GetOpenIdTokenForDeveloperIdentityOutput {
 }
 
 /// A builder for [`GetOpenIdTokenForDeveloperIdentityOutput`](crate::operation::get_open_id_token_for_developer_identity::GetOpenIdTokenForDeveloperIdentityOutput).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct GetOpenIdTokenForDeveloperIdentityOutputBuilder {
     pub(crate) identity_id: ::std::option::Option<::std::string::String>,
@@ -85,5 +94,14 @@ impl GetOpenIdTokenForDeveloperIdentityOutputBuilder {
             token: self.token,
             _request_id: self._request_id,
         }
+    }
+}
+impl ::std::fmt::Debug for GetOpenIdTokenForDeveloperIdentityOutputBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("GetOpenIdTokenForDeveloperIdentityOutputBuilder");
+        formatter.field("identity_id", &self.identity_id);
+        formatter.field("token", &"*** Sensitive Data Redacted ***");
+        formatter.field("_request_id", &self._request_id);
+        formatter.finish()
     }
 }

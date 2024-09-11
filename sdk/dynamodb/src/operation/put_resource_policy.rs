@@ -262,7 +262,16 @@ pub enum PutResourcePolicyError {
     /// <p>The operation tried to access a nonexistent resource-based policy.</p>
     /// <p>If you specified an <code>ExpectedRevisionId</code>, it's possible that a policy is present for the resource but its revision ID didn't match the expected value.</p>
     PolicyNotFoundException(crate::types::error::PolicyNotFoundException),
-    /// <p>The operation conflicts with the resource's availability. For example, you attempted to recreate an existing table, or tried to delete a table currently in the <code>CREATING</code> state.</p>
+    /// <p>The operation conflicts with the resource's availability. For example:</p>
+    /// <ul>
+    /// <li>
+    /// <p>You attempted to recreate an existing table.</p></li>
+    /// <li>
+    /// <p>You tried to delete a table currently in the <code>CREATING</code> state.</p></li>
+    /// <li>
+    /// <p>You tried to update a resource that was already being updated.</p></li>
+    /// </ul>
+    /// <p>When appropriate, wait for the ongoing update to complete and attempt the request again.</p>
     ResourceInUseException(crate::types::error::ResourceInUseException),
     /// <p>The operation tried to access a nonexistent table or index. The resource might not be specified correctly, or its status might not be <code>ACTIVE</code>.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),

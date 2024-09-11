@@ -211,7 +211,7 @@ impl JobEntryBuilder {
     /// - [`created_at`](crate::types::builders::JobEntryBuilder::created_at)
     /// - [`id`](crate::types::builders::JobEntryBuilder::id)
     /// - [`state`](crate::types::builders::JobEntryBuilder::state)
-    /// - [`r#type`](crate::types::builders::JobEntryBuilder::r#type)
+    /// - [`r#type`](crate::types::builders::JobEntryBuilder::type)
     /// - [`updated_at`](crate::types::builders::JobEntryBuilder::updated_at)
     pub fn build(self) -> ::std::result::Result<crate::types::JobEntry, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::JobEntry {

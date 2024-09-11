@@ -7,6 +7,7 @@
 //! ```sh
 //! RUSTFLAGS="--cfg smoketests" cargo test.
 //! ```
+//!
 use aws_sdk_glue::{config, Client};
 /// Smoke tests for the `get_catalog_import_status` operation
 #[::tokio::test]

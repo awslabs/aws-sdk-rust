@@ -60,7 +60,16 @@ pub enum Error {
     ReplicaNotFoundException(crate::types::error::ReplicaNotFoundException),
     /// <p>Throughput exceeds the current throughput quota for your account. Please contact <a href="https://aws.amazon.com/support">Amazon Web Services Support</a> to request a quota increase.</p>
     RequestLimitExceeded(crate::types::error::RequestLimitExceeded),
-    /// <p>The operation conflicts with the resource's availability. For example, you attempted to recreate an existing table, or tried to delete a table currently in the <code>CREATING</code> state.</p>
+    /// <p>The operation conflicts with the resource's availability. For example:</p>
+    /// <ul>
+    /// <li>
+    /// <p>You attempted to recreate an existing table.</p></li>
+    /// <li>
+    /// <p>You tried to delete a table currently in the <code>CREATING</code> state.</p></li>
+    /// <li>
+    /// <p>You tried to update a resource that was already being updated.</p></li>
+    /// </ul>
+    /// <p>When appropriate, wait for the ongoing update to complete and attempt the request again.</p>
     ResourceInUseException(crate::types::error::ResourceInUseException),
     /// <p>The operation tried to access a nonexistent table or index. The resource might not be specified correctly, or its status might not be <code>ACTIVE</code>.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),

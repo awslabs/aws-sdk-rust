@@ -7,6 +7,7 @@
 //! ```sh
 //! RUSTFLAGS="--cfg smoketests" cargo test.
 //! ```
+//!
 use aws_sdk_route53domains::{config, Client};
 /// Smoke tests for the `get_domain_detail` operation
 #[::tokio::test]

@@ -29,7 +29,7 @@ pub(crate) struct Handle {
 ///
 /// Occasionally, SDKs may have additional service-specific values that can be set on the [`Config`] that
 /// is absent from [`SdkConfig`], or slightly different settings for a specific client may be desired.
-/// The [`Builder`] struct implements `From<&SdkConfig>`, so setting these specific settings can be
+/// The [`Builder`](crate::config::Builder) struct implements `From<&SdkConfig>`, so setting these specific settings can be
 /// done as follows:
 ///
 /// ```rust,no_run
@@ -204,6 +204,8 @@ mod tag_resource;
 mod untag_resource;
 
 mod update_library_item;
+
+mod update_library_item_metadata;
 
 mod update_q_app;
 

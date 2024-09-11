@@ -157,7 +157,7 @@ impl AnalysisRuleBuilder {
     /// Consumes the builder and constructs a [`AnalysisRule`](crate::types::AnalysisRule).
     /// This method will fail if any of the following fields are not set:
     /// - [`collaboration_id`](crate::types::builders::AnalysisRuleBuilder::collaboration_id)
-    /// - [`r#type`](crate::types::builders::AnalysisRuleBuilder::r#type)
+    /// - [`r#type`](crate::types::builders::AnalysisRuleBuilder::type)
     /// - [`name`](crate::types::builders::AnalysisRuleBuilder::name)
     /// - [`create_time`](crate::types::builders::AnalysisRuleBuilder::create_time)
     /// - [`update_time`](crate::types::builders::AnalysisRuleBuilder::update_time)

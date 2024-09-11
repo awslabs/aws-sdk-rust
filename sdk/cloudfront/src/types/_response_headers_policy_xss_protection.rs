@@ -129,7 +129,7 @@ impl ResponseHeadersPolicyXssProtectionBuilder {
     }
     /// Consumes the builder and constructs a [`ResponseHeadersPolicyXssProtection`](crate::types::ResponseHeadersPolicyXssProtection).
     /// This method will fail if any of the following fields are not set:
-    /// - [`r#override`](crate::types::builders::ResponseHeadersPolicyXssProtectionBuilder::r#override)
+    /// - [`r#override`](crate::types::builders::ResponseHeadersPolicyXssProtectionBuilder::override)
     /// - [`protection`](crate::types::builders::ResponseHeadersPolicyXssProtectionBuilder::protection)
     pub fn build(self) -> ::std::result::Result<crate::types::ResponseHeadersPolicyXssProtection, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ResponseHeadersPolicyXssProtection {

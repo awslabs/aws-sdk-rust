@@ -11,6 +11,10 @@ pub struct CreateClusterInput {
     pub vpc_config: ::std::option::Option<crate::types::VpcConfig>,
     /// <p>Custom tags for managing the SageMaker HyperPod cluster as an Amazon Web Services resource. You can add tags to your cluster in the same way you add them in other Amazon Web Services services that support tagging. To learn more about tagging Amazon Web Services resources in general, see <a href="https://docs.aws.amazon.com/tag-editor/latest/userguide/tagging.html">Tagging Amazon Web Services Resources User Guide</a>.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    /// <p>The type of orchestrator to use for the SageMaker HyperPod cluster. Currently, the only supported value is <code>"eks"</code>, which is to use an Amazon Elastic Kubernetes Service (EKS) cluster as the orchestrator.</p>
+    pub orchestrator: ::std::option::Option<crate::types::ClusterOrchestrator>,
+    /// <p>The node recovery mode for the SageMaker HyperPod cluster. When set to <code>Automatic</code>, SageMaker HyperPod will automatically reboot or replace faulty nodes when issues are detected. When set to <code>None</code>, cluster administrators will need to manually manage any faulty cluster instances.</p>
+    pub node_recovery: ::std::option::Option<crate::types::ClusterNodeRecovery>,
 }
 impl CreateClusterInput {
     /// <p>The name for the new SageMaker HyperPod cluster.</p>
@@ -33,6 +37,14 @@ impl CreateClusterInput {
     pub fn tags(&self) -> &[crate::types::Tag] {
         self.tags.as_deref().unwrap_or_default()
     }
+    /// <p>The type of orchestrator to use for the SageMaker HyperPod cluster. Currently, the only supported value is <code>"eks"</code>, which is to use an Amazon Elastic Kubernetes Service (EKS) cluster as the orchestrator.</p>
+    pub fn orchestrator(&self) -> ::std::option::Option<&crate::types::ClusterOrchestrator> {
+        self.orchestrator.as_ref()
+    }
+    /// <p>The node recovery mode for the SageMaker HyperPod cluster. When set to <code>Automatic</code>, SageMaker HyperPod will automatically reboot or replace faulty nodes when issues are detected. When set to <code>None</code>, cluster administrators will need to manually manage any faulty cluster instances.</p>
+    pub fn node_recovery(&self) -> ::std::option::Option<&crate::types::ClusterNodeRecovery> {
+        self.node_recovery.as_ref()
+    }
 }
 impl CreateClusterInput {
     /// Creates a new builder-style object to manufacture [`CreateClusterInput`](crate::operation::create_cluster::CreateClusterInput).
@@ -49,6 +61,8 @@ pub struct CreateClusterInputBuilder {
     pub(crate) instance_groups: ::std::option::Option<::std::vec::Vec<crate::types::ClusterInstanceGroupSpecification>>,
     pub(crate) vpc_config: ::std::option::Option<crate::types::VpcConfig>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) orchestrator: ::std::option::Option<crate::types::ClusterOrchestrator>,
+    pub(crate) node_recovery: ::std::option::Option<crate::types::ClusterNodeRecovery>,
 }
 impl CreateClusterInputBuilder {
     /// <p>The name for the new SageMaker HyperPod cluster.</p>
@@ -120,6 +134,34 @@ impl CreateClusterInputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }
+    /// <p>The type of orchestrator to use for the SageMaker HyperPod cluster. Currently, the only supported value is <code>"eks"</code>, which is to use an Amazon Elastic Kubernetes Service (EKS) cluster as the orchestrator.</p>
+    pub fn orchestrator(mut self, input: crate::types::ClusterOrchestrator) -> Self {
+        self.orchestrator = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The type of orchestrator to use for the SageMaker HyperPod cluster. Currently, the only supported value is <code>"eks"</code>, which is to use an Amazon Elastic Kubernetes Service (EKS) cluster as the orchestrator.</p>
+    pub fn set_orchestrator(mut self, input: ::std::option::Option<crate::types::ClusterOrchestrator>) -> Self {
+        self.orchestrator = input;
+        self
+    }
+    /// <p>The type of orchestrator to use for the SageMaker HyperPod cluster. Currently, the only supported value is <code>"eks"</code>, which is to use an Amazon Elastic Kubernetes Service (EKS) cluster as the orchestrator.</p>
+    pub fn get_orchestrator(&self) -> &::std::option::Option<crate::types::ClusterOrchestrator> {
+        &self.orchestrator
+    }
+    /// <p>The node recovery mode for the SageMaker HyperPod cluster. When set to <code>Automatic</code>, SageMaker HyperPod will automatically reboot or replace faulty nodes when issues are detected. When set to <code>None</code>, cluster administrators will need to manually manage any faulty cluster instances.</p>
+    pub fn node_recovery(mut self, input: crate::types::ClusterNodeRecovery) -> Self {
+        self.node_recovery = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The node recovery mode for the SageMaker HyperPod cluster. When set to <code>Automatic</code>, SageMaker HyperPod will automatically reboot or replace faulty nodes when issues are detected. When set to <code>None</code>, cluster administrators will need to manually manage any faulty cluster instances.</p>
+    pub fn set_node_recovery(mut self, input: ::std::option::Option<crate::types::ClusterNodeRecovery>) -> Self {
+        self.node_recovery = input;
+        self
+    }
+    /// <p>The node recovery mode for the SageMaker HyperPod cluster. When set to <code>Automatic</code>, SageMaker HyperPod will automatically reboot or replace faulty nodes when issues are detected. When set to <code>None</code>, cluster administrators will need to manually manage any faulty cluster instances.</p>
+    pub fn get_node_recovery(&self) -> &::std::option::Option<crate::types::ClusterNodeRecovery> {
+        &self.node_recovery
+    }
     /// Consumes the builder and constructs a [`CreateClusterInput`](crate::operation::create_cluster::CreateClusterInput).
     pub fn build(
         self,
@@ -129,6 +171,8 @@ impl CreateClusterInputBuilder {
             instance_groups: self.instance_groups,
             vpc_config: self.vpc_config,
             tags: self.tags,
+            orchestrator: self.orchestrator,
+            node_recovery: self.node_recovery,
         })
     }
 }

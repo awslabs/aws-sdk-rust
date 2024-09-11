@@ -113,6 +113,42 @@ impl From<crate::operation::create_encoder_configuration::CreateEncoderConfigura
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_ingest_configuration::CreateIngestConfigurationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_ingest_configuration::CreateIngestConfigurationError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_ingest_configuration::CreateIngestConfigurationError> for Error {
+    fn from(err: crate::operation::create_ingest_configuration::CreateIngestConfigurationError) -> Self {
+        match err {
+            crate::operation::create_ingest_configuration::CreateIngestConfigurationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::create_ingest_configuration::CreateIngestConfigurationError::PendingVerification(inner) => {
+                Error::PendingVerification(inner)
+            }
+            crate::operation::create_ingest_configuration::CreateIngestConfigurationError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::create_ingest_configuration::CreateIngestConfigurationError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::create_ingest_configuration::CreateIngestConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_participant_token::CreateParticipantTokenError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -256,6 +292,45 @@ impl From<crate::operation::delete_encoder_configuration::DeleteEncoderConfigura
                 Error::ValidationException(inner)
             }
             crate::operation::delete_encoder_configuration::DeleteEncoderConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_ingest_configuration::DeleteIngestConfigurationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_ingest_configuration::DeleteIngestConfigurationError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_ingest_configuration::DeleteIngestConfigurationError> for Error {
+    fn from(err: crate::operation::delete_ingest_configuration::DeleteIngestConfigurationError) -> Self {
+        match err {
+            crate::operation::delete_ingest_configuration::DeleteIngestConfigurationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::delete_ingest_configuration::DeleteIngestConfigurationError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::delete_ingest_configuration::DeleteIngestConfigurationError::PendingVerification(inner) => {
+                Error::PendingVerification(inner)
+            }
+            crate::operation::delete_ingest_configuration::DeleteIngestConfigurationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_ingest_configuration::DeleteIngestConfigurationError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::delete_ingest_configuration::DeleteIngestConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -448,6 +523,36 @@ impl From<crate::operation::get_encoder_configuration::GetEncoderConfigurationEr
                 Error::ValidationException(inner)
             }
             crate::operation::get_encoder_configuration::GetEncoderConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_ingest_configuration::GetIngestConfigurationError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_ingest_configuration::GetIngestConfigurationError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_ingest_configuration::GetIngestConfigurationError> for Error {
+    fn from(err: crate::operation::get_ingest_configuration::GetIngestConfigurationError) -> Self {
+        match err {
+            crate::operation::get_ingest_configuration::GetIngestConfigurationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_ingest_configuration::GetIngestConfigurationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_ingest_configuration::GetIngestConfigurationError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_ingest_configuration::GetIngestConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -679,6 +784,36 @@ impl From<crate::operation::list_encoder_configurations::ListEncoderConfiguratio
                 Error::ValidationException(inner)
             }
             crate::operation::list_encoder_configurations::ListEncoderConfigurationsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_ingest_configurations::ListIngestConfigurationsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_ingest_configurations::ListIngestConfigurationsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_ingest_configurations::ListIngestConfigurationsError> for Error {
+    fn from(err: crate::operation::list_ingest_configurations::ListIngestConfigurationsError) -> Self {
+        match err {
+            crate::operation::list_ingest_configurations::ListIngestConfigurationsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_ingest_configurations::ListIngestConfigurationsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_ingest_configurations::ListIngestConfigurationsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -973,6 +1108,45 @@ impl From<crate::operation::untag_resource::UntagResourceError> for Error {
             crate::operation::untag_resource::UntagResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::untag_resource::UntagResourceError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::untag_resource::UntagResourceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_ingest_configuration::UpdateIngestConfigurationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_ingest_configuration::UpdateIngestConfigurationError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_ingest_configuration::UpdateIngestConfigurationError> for Error {
+    fn from(err: crate::operation::update_ingest_configuration::UpdateIngestConfigurationError) -> Self {
+        match err {
+            crate::operation::update_ingest_configuration::UpdateIngestConfigurationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::update_ingest_configuration::UpdateIngestConfigurationError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::update_ingest_configuration::UpdateIngestConfigurationError::PendingVerification(inner) => {
+                Error::PendingVerification(inner)
+            }
+            crate::operation::update_ingest_configuration::UpdateIngestConfigurationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_ingest_configuration::UpdateIngestConfigurationError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::update_ingest_configuration::UpdateIngestConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

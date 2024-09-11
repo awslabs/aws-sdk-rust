@@ -15,6 +15,10 @@ pub struct InvokeEndpointOutput {
     /// <p>The code in your model is responsible for setting or updating any custom attributes in the response. If your code does not set this value in the response, an empty value is returned. For example, if a custom attribute represents the trace ID, your model can prepend the custom attribute with <code>Trace ID:</code> in your post-processing function.</p>
     /// <p>This feature is currently supported in the Amazon Web Services SDKs but not in the Amazon SageMaker Python SDK.</p>
     pub custom_attributes: ::std::option::Option<::std::string::String>,
+    /// <p>If you created a stateful session with your request, the ID and expiration time that the model assigns to that session.</p>
+    pub new_session_id: ::std::option::Option<::std::string::String>,
+    /// <p>If you closed a stateful session with your request, the ID of that session.</p>
+    pub closed_session_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl InvokeEndpointOutput {
@@ -38,6 +42,14 @@ impl InvokeEndpointOutput {
     pub fn custom_attributes(&self) -> ::std::option::Option<&str> {
         self.custom_attributes.as_deref()
     }
+    /// <p>If you created a stateful session with your request, the ID and expiration time that the model assigns to that session.</p>
+    pub fn new_session_id(&self) -> ::std::option::Option<&str> {
+        self.new_session_id.as_deref()
+    }
+    /// <p>If you closed a stateful session with your request, the ID of that session.</p>
+    pub fn closed_session_id(&self) -> ::std::option::Option<&str> {
+        self.closed_session_id.as_deref()
+    }
 }
 impl ::std::fmt::Debug for InvokeEndpointOutput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -46,6 +58,8 @@ impl ::std::fmt::Debug for InvokeEndpointOutput {
         formatter.field("content_type", &self.content_type);
         formatter.field("invoked_production_variant", &self.invoked_production_variant);
         formatter.field("custom_attributes", &"*** Sensitive Data Redacted ***");
+        formatter.field("new_session_id", &self.new_session_id);
+        formatter.field("closed_session_id", &self.closed_session_id);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
@@ -70,6 +84,8 @@ pub struct InvokeEndpointOutputBuilder {
     pub(crate) content_type: ::std::option::Option<::std::string::String>,
     pub(crate) invoked_production_variant: ::std::option::Option<::std::string::String>,
     pub(crate) custom_attributes: ::std::option::Option<::std::string::String>,
+    pub(crate) new_session_id: ::std::option::Option<::std::string::String>,
+    pub(crate) closed_session_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl InvokeEndpointOutputBuilder {
@@ -142,6 +158,34 @@ impl InvokeEndpointOutputBuilder {
     pub fn get_custom_attributes(&self) -> &::std::option::Option<::std::string::String> {
         &self.custom_attributes
     }
+    /// <p>If you created a stateful session with your request, the ID and expiration time that the model assigns to that session.</p>
+    pub fn new_session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.new_session_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>If you created a stateful session with your request, the ID and expiration time that the model assigns to that session.</p>
+    pub fn set_new_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.new_session_id = input;
+        self
+    }
+    /// <p>If you created a stateful session with your request, the ID and expiration time that the model assigns to that session.</p>
+    pub fn get_new_session_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.new_session_id
+    }
+    /// <p>If you closed a stateful session with your request, the ID of that session.</p>
+    pub fn closed_session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.closed_session_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>If you closed a stateful session with your request, the ID of that session.</p>
+    pub fn set_closed_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.closed_session_id = input;
+        self
+    }
+    /// <p>If you closed a stateful session with your request, the ID of that session.</p>
+    pub fn get_closed_session_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.closed_session_id
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -158,6 +202,8 @@ impl InvokeEndpointOutputBuilder {
             content_type: self.content_type,
             invoked_production_variant: self.invoked_production_variant,
             custom_attributes: self.custom_attributes,
+            new_session_id: self.new_session_id,
+            closed_session_id: self.closed_session_id,
             _request_id: self._request_id,
         }
     }
@@ -169,6 +215,8 @@ impl ::std::fmt::Debug for InvokeEndpointOutputBuilder {
         formatter.field("content_type", &self.content_type);
         formatter.field("invoked_production_variant", &self.invoked_production_variant);
         formatter.field("custom_attributes", &"*** Sensitive Data Redacted ***");
+        formatter.field("new_session_id", &self.new_session_id);
+        formatter.field("closed_session_id", &self.closed_session_id);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }

@@ -351,7 +351,7 @@ impl DataSourceSummaryBuilder {
     /// - [`environment_id`](crate::types::builders::DataSourceSummaryBuilder::environment_id)
     /// - [`data_source_id`](crate::types::builders::DataSourceSummaryBuilder::data_source_id)
     /// - [`name`](crate::types::builders::DataSourceSummaryBuilder::name)
-    /// - [`r#type`](crate::types::builders::DataSourceSummaryBuilder::r#type)
+    /// - [`r#type`](crate::types::builders::DataSourceSummaryBuilder::type)
     /// - [`status`](crate::types::builders::DataSourceSummaryBuilder::status)
     pub fn build(self) -> ::std::result::Result<crate::types::DataSourceSummary, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::DataSourceSummary {

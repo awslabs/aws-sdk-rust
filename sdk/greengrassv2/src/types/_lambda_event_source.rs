@@ -98,7 +98,7 @@ impl LambdaEventSourceBuilder {
     /// Consumes the builder and constructs a [`LambdaEventSource`](crate::types::LambdaEventSource).
     /// This method will fail if any of the following fields are not set:
     /// - [`topic`](crate::types::builders::LambdaEventSourceBuilder::topic)
-    /// - [`r#type`](crate::types::builders::LambdaEventSourceBuilder::r#type)
+    /// - [`r#type`](crate::types::builders::LambdaEventSourceBuilder::type)
     pub fn build(self) -> ::std::result::Result<crate::types::LambdaEventSource, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::LambdaEventSource {
             topic: self.topic.ok_or_else(|| {

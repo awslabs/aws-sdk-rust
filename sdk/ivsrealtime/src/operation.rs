@@ -4,6 +4,9 @@ pub use ::aws_types::request_id::RequestId;
 /// Types for the `CreateEncoderConfiguration` operation.
 pub mod create_encoder_configuration;
 
+/// Types for the `CreateIngestConfiguration` operation.
+pub mod create_ingest_configuration;
+
 /// Types for the `CreateParticipantToken` operation.
 pub mod create_participant_token;
 
@@ -15,6 +18,9 @@ pub mod create_storage_configuration;
 
 /// Types for the `DeleteEncoderConfiguration` operation.
 pub mod delete_encoder_configuration;
+
+/// Types for the `DeleteIngestConfiguration` operation.
+pub mod delete_ingest_configuration;
 
 /// Types for the `DeletePublicKey` operation.
 pub mod delete_public_key;
@@ -33,6 +39,9 @@ pub mod get_composition;
 
 /// Types for the `GetEncoderConfiguration` operation.
 pub mod get_encoder_configuration;
+
+/// Types for the `GetIngestConfiguration` operation.
+pub mod get_ingest_configuration;
 
 /// Types for the `GetParticipant` operation.
 pub mod get_participant;
@@ -57,6 +66,9 @@ pub mod list_compositions;
 
 /// Types for the `ListEncoderConfigurations` operation.
 pub mod list_encoder_configurations;
+
+/// Types for the `ListIngestConfigurations` operation.
+pub mod list_ingest_configurations;
 
 /// Types for the `ListParticipantEvents` operation.
 pub mod list_participant_events;
@@ -90,6 +102,9 @@ pub mod tag_resource;
 
 /// Types for the `UntagResource` operation.
 pub mod untag_resource;
+
+/// Types for the `UpdateIngestConfiguration` operation.
+pub mod update_ingest_configuration;
 
 /// Types for the `UpdateStage` operation.
 pub mod update_stage;

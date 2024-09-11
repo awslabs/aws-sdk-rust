@@ -96,7 +96,7 @@ impl AnalysisTemplateValidationStatusDetailBuilder {
     }
     /// Consumes the builder and constructs a [`AnalysisTemplateValidationStatusDetail`](crate::types::AnalysisTemplateValidationStatusDetail).
     /// This method will fail if any of the following fields are not set:
-    /// - [`r#type`](crate::types::builders::AnalysisTemplateValidationStatusDetailBuilder::r#type)
+    /// - [`r#type`](crate::types::builders::AnalysisTemplateValidationStatusDetailBuilder::type)
     /// - [`status`](crate::types::builders::AnalysisTemplateValidationStatusDetailBuilder::status)
     pub fn build(
         self,

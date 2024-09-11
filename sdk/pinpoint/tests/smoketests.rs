@@ -7,6 +7,7 @@
 //! ```sh
 //! RUSTFLAGS="--cfg smoketests" cargo test.
 //! ```
+//!
 use aws_sdk_pinpoint::{config, Client};
 /// Smoke tests for the `get_app` operation
 #[::tokio::test]

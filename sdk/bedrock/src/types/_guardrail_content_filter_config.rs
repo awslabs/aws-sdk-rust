@@ -100,7 +100,7 @@ impl GuardrailContentFilterConfigBuilder {
     }
     /// Consumes the builder and constructs a [`GuardrailContentFilterConfig`](crate::types::GuardrailContentFilterConfig).
     /// This method will fail if any of the following fields are not set:
-    /// - [`r#type`](crate::types::builders::GuardrailContentFilterConfigBuilder::r#type)
+    /// - [`r#type`](crate::types::builders::GuardrailContentFilterConfigBuilder::type)
     /// - [`input_strength`](crate::types::builders::GuardrailContentFilterConfigBuilder::input_strength)
     /// - [`output_strength`](crate::types::builders::GuardrailContentFilterConfigBuilder::output_strength)
     pub fn build(self) -> ::std::result::Result<crate::types::GuardrailContentFilterConfig, ::aws_smithy_types::error::operation::BuildError> {

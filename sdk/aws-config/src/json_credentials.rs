@@ -8,7 +8,6 @@ use aws_smithy_json::deserialize::{json_token_iter, EscapeError, Token};
 use aws_smithy_types::date_time::Format;
 use aws_smithy_types::DateTime;
 use std::borrow::Cow;
-use std::convert::TryFrom;
 use std::error::Error;
 use std::fmt::{self, Display, Formatter};
 use std::time::SystemTime;

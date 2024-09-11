@@ -17,6 +17,8 @@ pub struct CreateLibraryItemOutput {
     pub updated_by: ::std::option::Option<::std::string::String>,
     /// <p>The number of ratings the library item has received from users.</p>
     pub rating_count: i32,
+    /// <p>Indicates whether the library item has been verified.</p>
+    pub is_verified: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }
 impl CreateLibraryItemOutput {
@@ -51,6 +53,10 @@ impl CreateLibraryItemOutput {
     pub fn rating_count(&self) -> i32 {
         self.rating_count
     }
+    /// <p>Indicates whether the library item has been verified.</p>
+    pub fn is_verified(&self) -> ::std::option::Option<bool> {
+        self.is_verified
+    }
 }
 impl ::aws_types::request_id::RequestId for CreateLibraryItemOutput {
     fn request_id(&self) -> Option<&str> {
@@ -75,6 +81,7 @@ pub struct CreateLibraryItemOutputBuilder {
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated_by: ::std::option::Option<::std::string::String>,
     pub(crate) rating_count: ::std::option::Option<i32>,
+    pub(crate) is_verified: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }
 impl CreateLibraryItemOutputBuilder {
@@ -181,6 +188,20 @@ impl CreateLibraryItemOutputBuilder {
     pub fn get_rating_count(&self) -> &::std::option::Option<i32> {
         &self.rating_count
     }
+    /// <p>Indicates whether the library item has been verified.</p>
+    pub fn is_verified(mut self, input: bool) -> Self {
+        self.is_verified = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether the library item has been verified.</p>
+    pub fn set_is_verified(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.is_verified = input;
+        self
+    }
+    /// <p>Indicates whether the library item has been verified.</p>
+    pub fn get_is_verified(&self) -> &::std::option::Option<bool> {
+        &self.is_verified
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -233,6 +254,7 @@ impl CreateLibraryItemOutputBuilder {
                     "rating_count was not specified but it is required when building CreateLibraryItemOutput",
                 )
             })?,
+            is_verified: self.is_verified,
             _request_id: self._request_id,
         })
     }

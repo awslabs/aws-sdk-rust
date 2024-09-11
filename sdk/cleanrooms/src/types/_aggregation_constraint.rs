@@ -91,7 +91,7 @@ impl AggregationConstraintBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`column_name`](crate::types::builders::AggregationConstraintBuilder::column_name)
     /// - [`minimum`](crate::types::builders::AggregationConstraintBuilder::minimum)
-    /// - [`r#type`](crate::types::builders::AggregationConstraintBuilder::r#type)
+    /// - [`r#type`](crate::types::builders::AggregationConstraintBuilder::type)
     pub fn build(self) -> ::std::result::Result<crate::types::AggregationConstraint, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AggregationConstraint {
             column_name: self.column_name.ok_or_else(|| {

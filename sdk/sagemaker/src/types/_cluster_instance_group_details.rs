@@ -20,6 +20,8 @@ pub struct ClusterInstanceGroupDetails {
     pub threads_per_core: ::std::option::Option<i32>,
     /// <p>The additional storage configurations for the instances in the SageMaker HyperPod cluster instance group.</p>
     pub instance_storage_configs: ::std::option::Option<::std::vec::Vec<crate::types::ClusterInstanceStorageConfig>>,
+    /// <p>A flag indicating whether deep health checks should be performed when the cluster instance group is created or updated.</p>
+    pub on_start_deep_health_checks: ::std::option::Option<::std::vec::Vec<crate::types::DeepHealthCheckType>>,
 }
 impl ClusterInstanceGroupDetails {
     /// <p>The number of instances that are currently in the instance group of a SageMaker HyperPod cluster.</p>
@@ -56,6 +58,12 @@ impl ClusterInstanceGroupDetails {
     pub fn instance_storage_configs(&self) -> &[crate::types::ClusterInstanceStorageConfig] {
         self.instance_storage_configs.as_deref().unwrap_or_default()
     }
+    /// <p>A flag indicating whether deep health checks should be performed when the cluster instance group is created or updated.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.on_start_deep_health_checks.is_none()`.
+    pub fn on_start_deep_health_checks(&self) -> &[crate::types::DeepHealthCheckType] {
+        self.on_start_deep_health_checks.as_deref().unwrap_or_default()
+    }
 }
 impl ClusterInstanceGroupDetails {
     /// Creates a new builder-style object to manufacture [`ClusterInstanceGroupDetails`](crate::types::ClusterInstanceGroupDetails).
@@ -76,6 +84,7 @@ pub struct ClusterInstanceGroupDetailsBuilder {
     pub(crate) execution_role: ::std::option::Option<::std::string::String>,
     pub(crate) threads_per_core: ::std::option::Option<i32>,
     pub(crate) instance_storage_configs: ::std::option::Option<::std::vec::Vec<crate::types::ClusterInstanceStorageConfig>>,
+    pub(crate) on_start_deep_health_checks: ::std::option::Option<::std::vec::Vec<crate::types::DeepHealthCheckType>>,
 }
 impl ClusterInstanceGroupDetailsBuilder {
     /// <p>The number of instances that are currently in the instance group of a SageMaker HyperPod cluster.</p>
@@ -196,6 +205,26 @@ impl ClusterInstanceGroupDetailsBuilder {
     pub fn get_instance_storage_configs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ClusterInstanceStorageConfig>> {
         &self.instance_storage_configs
     }
+    /// Appends an item to `on_start_deep_health_checks`.
+    ///
+    /// To override the contents of this collection use [`set_on_start_deep_health_checks`](Self::set_on_start_deep_health_checks).
+    ///
+    /// <p>A flag indicating whether deep health checks should be performed when the cluster instance group is created or updated.</p>
+    pub fn on_start_deep_health_checks(mut self, input: crate::types::DeepHealthCheckType) -> Self {
+        let mut v = self.on_start_deep_health_checks.unwrap_or_default();
+        v.push(input);
+        self.on_start_deep_health_checks = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A flag indicating whether deep health checks should be performed when the cluster instance group is created or updated.</p>
+    pub fn set_on_start_deep_health_checks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DeepHealthCheckType>>) -> Self {
+        self.on_start_deep_health_checks = input;
+        self
+    }
+    /// <p>A flag indicating whether deep health checks should be performed when the cluster instance group is created or updated.</p>
+    pub fn get_on_start_deep_health_checks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DeepHealthCheckType>> {
+        &self.on_start_deep_health_checks
+    }
     /// Consumes the builder and constructs a [`ClusterInstanceGroupDetails`](crate::types::ClusterInstanceGroupDetails).
     pub fn build(self) -> crate::types::ClusterInstanceGroupDetails {
         crate::types::ClusterInstanceGroupDetails {
@@ -207,6 +236,7 @@ impl ClusterInstanceGroupDetailsBuilder {
             execution_role: self.execution_role,
             threads_per_core: self.threads_per_core,
             instance_storage_configs: self.instance_storage_configs,
+            on_start_deep_health_checks: self.on_start_deep_health_checks,
         }
     }
 }

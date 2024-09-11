@@ -7,6 +7,7 @@
 //! ```sh
 //! RUSTFLAGS="--cfg smoketests" cargo test.
 //! ```
+//!
 use aws_sdk_lightsail::{config, Client};
 /// Smoke tests for the `get_active_names` operation
 #[::tokio::test]

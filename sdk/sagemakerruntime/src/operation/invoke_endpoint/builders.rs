@@ -280,4 +280,39 @@ impl InvokeEndpointFluentBuilder {
     pub fn get_inference_component_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_inference_component_name()
     }
+    /// <p>Creates a stateful session or identifies an existing one. You can do one of the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Create a stateful session by specifying the value <code>NEW_SESSION</code>.</p></li>
+    /// <li>
+    /// <p>Send your request to an existing stateful session by specifying the ID of that session.</p></li>
+    /// </ul>
+    /// <p>With a stateful session, you can send multiple requests to a stateful model. When you create a session with a stateful model, the model must create the session ID and set the expiration time. The model must also provide that information in the response to your request. You can get the ID and timestamp from the <code>NewSessionId</code> response parameter. For any subsequent request where you specify that session ID, SageMaker routes the request to the same instance that supports the session.</p>
+    pub fn session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.session_id(input.into());
+        self
+    }
+    /// <p>Creates a stateful session or identifies an existing one. You can do one of the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Create a stateful session by specifying the value <code>NEW_SESSION</code>.</p></li>
+    /// <li>
+    /// <p>Send your request to an existing stateful session by specifying the ID of that session.</p></li>
+    /// </ul>
+    /// <p>With a stateful session, you can send multiple requests to a stateful model. When you create a session with a stateful model, the model must create the session ID and set the expiration time. The model must also provide that information in the response to your request. You can get the ID and timestamp from the <code>NewSessionId</code> response parameter. For any subsequent request where you specify that session ID, SageMaker routes the request to the same instance that supports the session.</p>
+    pub fn set_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_session_id(input);
+        self
+    }
+    /// <p>Creates a stateful session or identifies an existing one. You can do one of the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Create a stateful session by specifying the value <code>NEW_SESSION</code>.</p></li>
+    /// <li>
+    /// <p>Send your request to an existing stateful session by specifying the ID of that session.</p></li>
+    /// </ul>
+    /// <p>With a stateful session, you can send multiple requests to a stateful model. When you create a session with a stateful model, the model must create the session ID and set the expiration time. The model must also provide that information in the response to your request. You can get the ID and timestamp from the <code>NewSessionId</code> response parameter. For any subsequent request where you specify that session ID, SageMaker routes the request to the same instance that supports the session.</p>
+    pub fn get_session_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_session_id()
+    }
 }

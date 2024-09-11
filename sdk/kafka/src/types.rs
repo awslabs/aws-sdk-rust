@@ -171,6 +171,10 @@ pub use crate::types::_replication_info_description::ReplicationInfoDescription;
 
 pub use crate::types::_topic_replication::TopicReplication;
 
+pub use crate::types::_replication_topic_name_configuration::ReplicationTopicNameConfiguration;
+
+pub use crate::types::_replication_topic_name_configuration_type::ReplicationTopicNameConfigurationType;
+
 pub use crate::types::_replication_starting_position::ReplicationStartingPosition;
 
 pub use crate::types::_replication_starting_position_type::ReplicationStartingPositionType;
@@ -338,6 +342,10 @@ mod _replication_starting_position;
 mod _replication_starting_position_type;
 
 mod _replication_state_info;
+
+mod _replication_topic_name_configuration;
+
+mod _replication_topic_name_configuration_type;
 
 mod _replicator_state;
 

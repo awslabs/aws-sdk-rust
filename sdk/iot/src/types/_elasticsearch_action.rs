@@ -142,7 +142,7 @@ impl ElasticsearchActionBuilder {
     /// - [`role_arn`](crate::types::builders::ElasticsearchActionBuilder::role_arn)
     /// - [`endpoint`](crate::types::builders::ElasticsearchActionBuilder::endpoint)
     /// - [`index`](crate::types::builders::ElasticsearchActionBuilder::index)
-    /// - [`r#type`](crate::types::builders::ElasticsearchActionBuilder::r#type)
+    /// - [`r#type`](crate::types::builders::ElasticsearchActionBuilder::type)
     /// - [`id`](crate::types::builders::ElasticsearchActionBuilder::id)
     pub fn build(self) -> ::std::result::Result<crate::types::ElasticsearchAction, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ElasticsearchAction {

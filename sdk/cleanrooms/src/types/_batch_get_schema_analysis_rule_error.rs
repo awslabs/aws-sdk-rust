@@ -114,7 +114,7 @@ impl BatchGetSchemaAnalysisRuleErrorBuilder {
     /// Consumes the builder and constructs a [`BatchGetSchemaAnalysisRuleError`](crate::types::BatchGetSchemaAnalysisRuleError).
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::BatchGetSchemaAnalysisRuleErrorBuilder::name)
-    /// - [`r#type`](crate::types::builders::BatchGetSchemaAnalysisRuleErrorBuilder::r#type)
+    /// - [`r#type`](crate::types::builders::BatchGetSchemaAnalysisRuleErrorBuilder::type)
     /// - [`code`](crate::types::builders::BatchGetSchemaAnalysisRuleErrorBuilder::code)
     /// - [`message`](crate::types::builders::BatchGetSchemaAnalysisRuleErrorBuilder::message)
     pub fn build(self) -> ::std::result::Result<crate::types::BatchGetSchemaAnalysisRuleError, ::aws_smithy_types::error::operation::BuildError> {

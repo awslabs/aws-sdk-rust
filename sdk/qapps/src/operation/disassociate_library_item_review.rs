@@ -255,6 +255,8 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DisassociateL
 pub enum DisassociateLibraryItemReviewError {
     /// <p>The client is not authorized to perform the requested operation.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
+    /// <p>The requested operation could not be completed due to a conflict with the current state of the resource.</p>
+    ConflictException(crate::types::error::ConflictException),
     /// <p>An internal service error occurred while processing the request.</p>
     InternalServerException(crate::types::error::InternalServerException),
     /// <p>The requested resource could not be found.</p>
@@ -301,6 +303,7 @@ impl DisassociateLibraryItemReviewError {
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::AccessDeniedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::ConflictException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InternalServerException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ResourceNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ServiceQuotaExceededException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -313,6 +316,10 @@ impl DisassociateLibraryItemReviewError {
     /// Returns `true` if the error kind is `DisassociateLibraryItemReviewError::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(self, Self::AccessDeniedException(_))
+    }
+    /// Returns `true` if the error kind is `DisassociateLibraryItemReviewError::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(self, Self::ConflictException(_))
     }
     /// Returns `true` if the error kind is `DisassociateLibraryItemReviewError::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
@@ -343,6 +350,7 @@ impl ::std::error::Error for DisassociateLibraryItemReviewError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
             Self::AccessDeniedException(_inner) => ::std::option::Option::Some(_inner),
+            Self::ConflictException(_inner) => ::std::option::Option::Some(_inner),
             Self::InternalServerException(_inner) => ::std::option::Option::Some(_inner),
             Self::ResourceNotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::ServiceQuotaExceededException(_inner) => ::std::option::Option::Some(_inner),
@@ -357,6 +365,7 @@ impl ::std::fmt::Display for DisassociateLibraryItemReviewError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
             Self::AccessDeniedException(_inner) => _inner.fmt(f),
+            Self::ConflictException(_inner) => _inner.fmt(f),
             Self::InternalServerException(_inner) => _inner.fmt(f),
             Self::ResourceNotFoundException(_inner) => _inner.fmt(f),
             Self::ServiceQuotaExceededException(_inner) => _inner.fmt(f),
@@ -389,6 +398,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for DisassociateL
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::AccessDeniedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ConflictException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InternalServerException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ResourceNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ServiceQuotaExceededException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

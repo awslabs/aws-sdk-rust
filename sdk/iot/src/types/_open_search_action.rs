@@ -140,7 +140,7 @@ impl OpenSearchActionBuilder {
     /// - [`role_arn`](crate::types::builders::OpenSearchActionBuilder::role_arn)
     /// - [`endpoint`](crate::types::builders::OpenSearchActionBuilder::endpoint)
     /// - [`index`](crate::types::builders::OpenSearchActionBuilder::index)
-    /// - [`r#type`](crate::types::builders::OpenSearchActionBuilder::r#type)
+    /// - [`r#type`](crate::types::builders::OpenSearchActionBuilder::type)
     /// - [`id`](crate::types::builders::OpenSearchActionBuilder::id)
     pub fn build(self) -> ::std::result::Result<crate::types::OpenSearchAction, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::OpenSearchAction {

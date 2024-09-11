@@ -230,7 +230,7 @@ impl CodegenGenericDataRelationshipTypeBuilder {
     }
     /// Consumes the builder and constructs a [`CodegenGenericDataRelationshipType`](crate::types::CodegenGenericDataRelationshipType).
     /// This method will fail if any of the following fields are not set:
-    /// - [`r#type`](crate::types::builders::CodegenGenericDataRelationshipTypeBuilder::r#type)
+    /// - [`r#type`](crate::types::builders::CodegenGenericDataRelationshipTypeBuilder::type)
     /// - [`related_model_name`](crate::types::builders::CodegenGenericDataRelationshipTypeBuilder::related_model_name)
     pub fn build(self) -> ::std::result::Result<crate::types::CodegenGenericDataRelationshipType, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CodegenGenericDataRelationshipType {

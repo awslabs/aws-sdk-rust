@@ -484,7 +484,7 @@ impl FindingBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`finding_arn`](crate::types::builders::FindingBuilder::finding_arn)
     /// - [`aws_account_id`](crate::types::builders::FindingBuilder::aws_account_id)
-    /// - [`r#type`](crate::types::builders::FindingBuilder::r#type)
+    /// - [`r#type`](crate::types::builders::FindingBuilder::type)
     /// - [`description`](crate::types::builders::FindingBuilder::description)
     /// - [`severity`](crate::types::builders::FindingBuilder::severity)
     /// - [`first_observed_at`](crate::types::builders::FindingBuilder::first_observed_at)

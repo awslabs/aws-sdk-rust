@@ -36,5 +36,14 @@ pub fn ser_create_cluster_input_input(
         }
         array_9.finish();
     }
+    if let Some(var_12) = &input.orchestrator {
+        #[allow(unused_mut)]
+        let mut object_13 = object.key("Orchestrator").start_object();
+        crate::protocol_serde::shape_cluster_orchestrator::ser_cluster_orchestrator(&mut object_13, var_12)?;
+        object_13.finish();
+    }
+    if let Some(var_14) = &input.node_recovery {
+        object.key("NodeRecovery").string(var_14.as_str());
+    }
     Ok(())
 }

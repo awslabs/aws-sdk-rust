@@ -27,6 +27,8 @@ pub struct GetLibraryItemOutput {
     pub is_rated_by_user: ::std::option::Option<bool>,
     /// <p>The number of users who have associated the Q App with their account.</p>
     pub user_count: ::std::option::Option<i32>,
+    /// <p>Indicates whether the library item has been verified.</p>
+    pub is_verified: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }
 impl GetLibraryItemOutput {
@@ -83,6 +85,10 @@ impl GetLibraryItemOutput {
     pub fn user_count(&self) -> ::std::option::Option<i32> {
         self.user_count
     }
+    /// <p>Indicates whether the library item has been verified.</p>
+    pub fn is_verified(&self) -> ::std::option::Option<bool> {
+        self.is_verified
+    }
 }
 impl ::aws_types::request_id::RequestId for GetLibraryItemOutput {
     fn request_id(&self) -> Option<&str> {
@@ -112,6 +118,7 @@ pub struct GetLibraryItemOutputBuilder {
     pub(crate) rating_count: ::std::option::Option<i32>,
     pub(crate) is_rated_by_user: ::std::option::Option<bool>,
     pub(crate) user_count: ::std::option::Option<i32>,
+    pub(crate) is_verified: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }
 impl GetLibraryItemOutputBuilder {
@@ -296,6 +303,20 @@ impl GetLibraryItemOutputBuilder {
     pub fn get_user_count(&self) -> &::std::option::Option<i32> {
         &self.user_count
     }
+    /// <p>Indicates whether the library item has been verified.</p>
+    pub fn is_verified(mut self, input: bool) -> Self {
+        self.is_verified = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether the library item has been verified.</p>
+    pub fn set_is_verified(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.is_verified = input;
+        self
+    }
+    /// <p>Indicates whether the library item has been verified.</p>
+    pub fn get_is_verified(&self) -> &::std::option::Option<bool> {
+        &self.is_verified
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -371,6 +392,7 @@ impl GetLibraryItemOutputBuilder {
             })?,
             is_rated_by_user: self.is_rated_by_user,
             user_count: self.user_count,
+            is_verified: self.is_verified,
             _request_id: self._request_id,
         })
     }

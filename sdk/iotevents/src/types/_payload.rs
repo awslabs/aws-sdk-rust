@@ -94,7 +94,7 @@ impl PayloadBuilder {
     /// Consumes the builder and constructs a [`Payload`](crate::types::Payload).
     /// This method will fail if any of the following fields are not set:
     /// - [`content_expression`](crate::types::builders::PayloadBuilder::content_expression)
-    /// - [`r#type`](crate::types::builders::PayloadBuilder::r#type)
+    /// - [`r#type`](crate::types::builders::PayloadBuilder::type)
     pub fn build(self) -> ::std::result::Result<crate::types::Payload, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Payload {
             content_expression: self.content_expression.ok_or_else(|| {

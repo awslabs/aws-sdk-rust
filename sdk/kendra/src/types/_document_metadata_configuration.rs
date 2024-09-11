@@ -110,7 +110,7 @@ impl DocumentMetadataConfigurationBuilder {
     /// Consumes the builder and constructs a [`DocumentMetadataConfiguration`](crate::types::DocumentMetadataConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::DocumentMetadataConfigurationBuilder::name)
-    /// - [`r#type`](crate::types::builders::DocumentMetadataConfigurationBuilder::r#type)
+    /// - [`r#type`](crate::types::builders::DocumentMetadataConfigurationBuilder::type)
     pub fn build(self) -> ::std::result::Result<crate::types::DocumentMetadataConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::DocumentMetadataConfiguration {
             name: self.name.ok_or_else(|| {

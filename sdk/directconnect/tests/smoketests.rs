@@ -7,8 +7,22 @@
 //! ```sh
 //! RUSTFLAGS="--cfg smoketests" cargo test.
 //! ```
+//!
 use aws_sdk_directconnect::{config, Client};
 /// Smoke tests for the `describe_connections` operation
+#[::tokio::test]
+async fn test_describe_connections_success() {
+    let config = ::aws_config::load_defaults(config::BehaviorVersion::latest()).await;
+    let conf = config::Config::from(&config)
+        .to_builder()
+        .region(config::Region::new("us-west-2"))
+        .use_dual_stack(false)
+        .use_fips(false)
+        .build();
+    let client = Client::from_conf(conf);
+    let res = client.describe_connections().send().await;
+    res.expect("request should succeed");
+}
 #[::tokio::test]
 async fn test_describe_connections_failure() {
     let config = ::aws_config::load_defaults(config::BehaviorVersion::latest()).await;
@@ -25,17 +39,4 @@ async fn test_describe_connections_failure() {
         .send()
         .await;
     res.expect_err("request should fail");
-}
-#[::tokio::test]
-async fn test_describe_connections_success() {
-    let config = ::aws_config::load_defaults(config::BehaviorVersion::latest()).await;
-    let conf = config::Config::from(&config)
-        .to_builder()
-        .region(config::Region::new("us-west-2"))
-        .use_dual_stack(false)
-        .use_fips(false)
-        .build();
-    let client = Client::from_conf(conf);
-    let res = client.describe_connections().send().await;
-    res.expect("request should succeed");
 }

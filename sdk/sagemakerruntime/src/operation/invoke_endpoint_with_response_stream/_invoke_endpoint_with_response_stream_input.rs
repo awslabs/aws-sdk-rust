@@ -25,6 +25,9 @@ pub struct InvokeEndpointWithResponseStreamInput {
     pub inference_id: ::std::option::Option<::std::string::String>,
     /// <p>If the endpoint hosts one or more inference components, this parameter specifies the name of inference component to invoke for a streaming response.</p>
     pub inference_component_name: ::std::option::Option<::std::string::String>,
+    /// <p>The ID of a stateful session to handle your request.</p>
+    /// <p>You can't create a stateful session by using the <code>InvokeEndpointWithResponseStream</code> action. Instead, you can create one by using the <code> <code>InvokeEndpoint</code> </code> action. In your request, you specify <code>NEW_SESSION</code> for the <code>SessionId</code> request parameter. The response to that request provides the session ID for the <code>NewSessionId</code> response parameter.</p>
+    pub session_id: ::std::option::Option<::std::string::String>,
 }
 impl InvokeEndpointWithResponseStreamInput {
     /// <p>The name of the endpoint that you specified when you created the endpoint using the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpoint.html">CreateEndpoint</a> API.</p>
@@ -67,6 +70,11 @@ impl InvokeEndpointWithResponseStreamInput {
     pub fn inference_component_name(&self) -> ::std::option::Option<&str> {
         self.inference_component_name.as_deref()
     }
+    /// <p>The ID of a stateful session to handle your request.</p>
+    /// <p>You can't create a stateful session by using the <code>InvokeEndpointWithResponseStream</code> action. Instead, you can create one by using the <code> <code>InvokeEndpoint</code> </code> action. In your request, you specify <code>NEW_SESSION</code> for the <code>SessionId</code> request parameter. The response to that request provides the session ID for the <code>NewSessionId</code> response parameter.</p>
+    pub fn session_id(&self) -> ::std::option::Option<&str> {
+        self.session_id.as_deref()
+    }
 }
 impl ::std::fmt::Debug for InvokeEndpointWithResponseStreamInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -80,6 +88,7 @@ impl ::std::fmt::Debug for InvokeEndpointWithResponseStreamInput {
         formatter.field("target_container_hostname", &self.target_container_hostname);
         formatter.field("inference_id", &self.inference_id);
         formatter.field("inference_component_name", &self.inference_component_name);
+        formatter.field("session_id", &self.session_id);
         formatter.finish()
     }
 }
@@ -103,6 +112,7 @@ pub struct InvokeEndpointWithResponseStreamInputBuilder {
     pub(crate) target_container_hostname: ::std::option::Option<::std::string::String>,
     pub(crate) inference_id: ::std::option::Option<::std::string::String>,
     pub(crate) inference_component_name: ::std::option::Option<::std::string::String>,
+    pub(crate) session_id: ::std::option::Option<::std::string::String>,
 }
 impl InvokeEndpointWithResponseStreamInputBuilder {
     /// <p>The name of the endpoint that you specified when you created the endpoint using the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpoint.html">CreateEndpoint</a> API.</p>
@@ -245,6 +255,23 @@ impl InvokeEndpointWithResponseStreamInputBuilder {
     pub fn get_inference_component_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.inference_component_name
     }
+    /// <p>The ID of a stateful session to handle your request.</p>
+    /// <p>You can't create a stateful session by using the <code>InvokeEndpointWithResponseStream</code> action. Instead, you can create one by using the <code> <code>InvokeEndpoint</code> </code> action. In your request, you specify <code>NEW_SESSION</code> for the <code>SessionId</code> request parameter. The response to that request provides the session ID for the <code>NewSessionId</code> response parameter.</p>
+    pub fn session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.session_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of a stateful session to handle your request.</p>
+    /// <p>You can't create a stateful session by using the <code>InvokeEndpointWithResponseStream</code> action. Instead, you can create one by using the <code> <code>InvokeEndpoint</code> </code> action. In your request, you specify <code>NEW_SESSION</code> for the <code>SessionId</code> request parameter. The response to that request provides the session ID for the <code>NewSessionId</code> response parameter.</p>
+    pub fn set_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.session_id = input;
+        self
+    }
+    /// <p>The ID of a stateful session to handle your request.</p>
+    /// <p>You can't create a stateful session by using the <code>InvokeEndpointWithResponseStream</code> action. Instead, you can create one by using the <code> <code>InvokeEndpoint</code> </code> action. In your request, you specify <code>NEW_SESSION</code> for the <code>SessionId</code> request parameter. The response to that request provides the session ID for the <code>NewSessionId</code> response parameter.</p>
+    pub fn get_session_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.session_id
+    }
     /// Consumes the builder and constructs a [`InvokeEndpointWithResponseStreamInput`](crate::operation::invoke_endpoint_with_response_stream::InvokeEndpointWithResponseStreamInput).
     pub fn build(
         self,
@@ -263,6 +290,7 @@ impl InvokeEndpointWithResponseStreamInputBuilder {
                 target_container_hostname: self.target_container_hostname,
                 inference_id: self.inference_id,
                 inference_component_name: self.inference_component_name,
+                session_id: self.session_id,
             },
         )
     }
@@ -279,6 +307,7 @@ impl ::std::fmt::Debug for InvokeEndpointWithResponseStreamInputBuilder {
         formatter.field("target_container_hostname", &self.target_container_hostname);
         formatter.field("inference_id", &self.inference_id);
         formatter.field("inference_component_name", &self.inference_component_name);
+        formatter.field("session_id", &self.session_id);
         formatter.finish()
     }
 }

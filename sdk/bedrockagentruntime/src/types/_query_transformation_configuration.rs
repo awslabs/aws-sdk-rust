@@ -44,7 +44,7 @@ impl QueryTransformationConfigurationBuilder {
     }
     /// Consumes the builder and constructs a [`QueryTransformationConfiguration`](crate::types::QueryTransformationConfiguration).
     /// This method will fail if any of the following fields are not set:
-    /// - [`r#type`](crate::types::builders::QueryTransformationConfigurationBuilder::r#type)
+    /// - [`r#type`](crate::types::builders::QueryTransformationConfigurationBuilder::type)
     pub fn build(self) -> ::std::result::Result<crate::types::QueryTransformationConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::QueryTransformationConfiguration {
             r#type: self.r#type.ok_or_else(|| {

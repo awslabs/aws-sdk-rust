@@ -182,7 +182,7 @@ impl TopBottomRankedComputationBuilder {
     /// Consumes the builder and constructs a [`TopBottomRankedComputation`](crate::types::TopBottomRankedComputation).
     /// This method will fail if any of the following fields are not set:
     /// - [`computation_id`](crate::types::builders::TopBottomRankedComputationBuilder::computation_id)
-    /// - [`r#type`](crate::types::builders::TopBottomRankedComputationBuilder::r#type)
+    /// - [`r#type`](crate::types::builders::TopBottomRankedComputationBuilder::type)
     pub fn build(self) -> ::std::result::Result<crate::types::TopBottomRankedComputation, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::TopBottomRankedComputation {
             computation_id: self.computation_id.ok_or_else(|| {

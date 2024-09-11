@@ -154,7 +154,7 @@ impl ChatEventBuilder {
     }
     /// Consumes the builder and constructs a [`ChatEvent`](crate::types::ChatEvent).
     /// This method will fail if any of the following fields are not set:
-    /// - [`r#type`](crate::types::builders::ChatEventBuilder::r#type)
+    /// - [`r#type`](crate::types::builders::ChatEventBuilder::type)
     pub fn build(self) -> ::std::result::Result<crate::types::ChatEvent, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ChatEvent {
             r#type: self.r#type.ok_or_else(|| {

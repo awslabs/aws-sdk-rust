@@ -16,12 +16,12 @@ http = "0.2.9"
 [dev-dependencies.aws-config]
 path = "../../sdk/aws-config"
 default-features = false
-version = "1.5.5"
+version = "1.5.6"
 
 [dev-dependencies.aws-sdk-s3]
 path = "../../sdk/s3"
 default-features = false
-version = "1.48.0"
+version = "1.49.0"
 
 [dev-dependencies.aws-smithy-async]
 path = "../../sdk/aws-smithy-async"

@@ -185,7 +185,7 @@ impl ListVectorEnrichmentJobOutputConfigBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`arn`](crate::types::builders::ListVectorEnrichmentJobOutputConfigBuilder::arn)
     /// - [`name`](crate::types::builders::ListVectorEnrichmentJobOutputConfigBuilder::name)
-    /// - [`r#type`](crate::types::builders::ListVectorEnrichmentJobOutputConfigBuilder::r#type)
+    /// - [`r#type`](crate::types::builders::ListVectorEnrichmentJobOutputConfigBuilder::type)
     /// - [`creation_time`](crate::types::builders::ListVectorEnrichmentJobOutputConfigBuilder::creation_time)
     /// - [`duration_in_seconds`](crate::types::builders::ListVectorEnrichmentJobOutputConfigBuilder::duration_in_seconds)
     /// - [`status`](crate::types::builders::ListVectorEnrichmentJobOutputConfigBuilder::status)

@@ -73,7 +73,7 @@ impl UserBuilder {
     /// Consumes the builder and constructs a [`User`](crate::types::User).
     /// This method will fail if any of the following fields are not set:
     /// - [`id`](crate::types::builders::UserBuilder::id)
-    /// - [`r#type`](crate::types::builders::UserBuilder::r#type)
+    /// - [`r#type`](crate::types::builders::UserBuilder::type)
     pub fn build(self) -> ::std::result::Result<crate::types::User, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::User {
             id: self.id.ok_or_else(|| {

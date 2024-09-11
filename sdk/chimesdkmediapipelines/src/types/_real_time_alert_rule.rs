@@ -107,7 +107,7 @@ impl RealTimeAlertRuleBuilder {
     }
     /// Consumes the builder and constructs a [`RealTimeAlertRule`](crate::types::RealTimeAlertRule).
     /// This method will fail if any of the following fields are not set:
-    /// - [`r#type`](crate::types::builders::RealTimeAlertRuleBuilder::r#type)
+    /// - [`r#type`](crate::types::builders::RealTimeAlertRuleBuilder::type)
     pub fn build(self) -> ::std::result::Result<crate::types::RealTimeAlertRule, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::RealTimeAlertRule {
             r#type: self.r#type.ok_or_else(|| {

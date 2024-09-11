@@ -34,6 +34,20 @@ pub fn de_disassociate_library_item_review_http_error(
             };
             tmp
         }),
+        "ConflictException" => crate::operation::disassociate_library_item_review::DisassociateLibraryItemReviewError::ConflictException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ConflictExceptionBuilder::default();
+                output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::disassociate_library_item_review::DisassociateLibraryItemReviewError::unhandled)?;
+                let output = output.meta(generic);
+                crate::serde_util::conflict_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::disassociate_library_item_review::DisassociateLibraryItemReviewError::unhandled)?
+            };
+            tmp
+        }),
         "InternalServerException" => {
             crate::operation::disassociate_library_item_review::DisassociateLibraryItemReviewError::InternalServerException({
                 #[allow(unused_mut)]

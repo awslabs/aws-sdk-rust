@@ -44,7 +44,7 @@ impl GuardrailManagedWordsBuilder {
     }
     /// Consumes the builder and constructs a [`GuardrailManagedWords`](crate::types::GuardrailManagedWords).
     /// This method will fail if any of the following fields are not set:
-    /// - [`r#type`](crate::types::builders::GuardrailManagedWordsBuilder::r#type)
+    /// - [`r#type`](crate::types::builders::GuardrailManagedWordsBuilder::type)
     pub fn build(self) -> ::std::result::Result<crate::types::GuardrailManagedWords, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::GuardrailManagedWords {
             r#type: self.r#type.ok_or_else(|| {

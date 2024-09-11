@@ -44,7 +44,7 @@ impl ListInsightsOngoingStatusFilterBuilder {
     }
     /// Consumes the builder and constructs a [`ListInsightsOngoingStatusFilter`](crate::types::ListInsightsOngoingStatusFilter).
     /// This method will fail if any of the following fields are not set:
-    /// - [`r#type`](crate::types::builders::ListInsightsOngoingStatusFilterBuilder::r#type)
+    /// - [`r#type`](crate::types::builders::ListInsightsOngoingStatusFilterBuilder::type)
     pub fn build(self) -> ::std::result::Result<crate::types::ListInsightsOngoingStatusFilter, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ListInsightsOngoingStatusFilter {
             r#type: self.r#type.ok_or_else(|| {

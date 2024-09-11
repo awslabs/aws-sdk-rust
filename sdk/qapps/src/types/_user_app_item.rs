@@ -18,6 +18,8 @@ pub struct UserAppItem {
     pub can_edit: ::std::option::Option<bool>,
     /// <p>The status of the user's association with the Q App.</p>
     pub status: ::std::option::Option<::std::string::String>,
+    /// <p>Indicates whether the Q App has been verified.</p>
+    pub is_verified: bool,
 }
 impl UserAppItem {
     /// <p>The unique identifier of the Q App.</p>
@@ -51,6 +53,10 @@ impl UserAppItem {
     pub fn status(&self) -> ::std::option::Option<&str> {
         self.status.as_deref()
     }
+    /// <p>Indicates whether the Q App has been verified.</p>
+    pub fn is_verified(&self) -> bool {
+        self.is_verified
+    }
 }
 impl UserAppItem {
     /// Creates a new builder-style object to manufacture [`UserAppItem`](crate::types::UserAppItem).
@@ -70,6 +76,7 @@ pub struct UserAppItemBuilder {
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) can_edit: ::std::option::Option<bool>,
     pub(crate) status: ::std::option::Option<::std::string::String>,
+    pub(crate) is_verified: ::std::option::Option<bool>,
 }
 impl UserAppItemBuilder {
     /// <p>The unique identifier of the Q App.</p>
@@ -174,6 +181,20 @@ impl UserAppItemBuilder {
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.status
     }
+    /// <p>Indicates whether the Q App has been verified.</p>
+    pub fn is_verified(mut self, input: bool) -> Self {
+        self.is_verified = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether the Q App has been verified.</p>
+    pub fn set_is_verified(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.is_verified = input;
+        self
+    }
+    /// <p>Indicates whether the Q App has been verified.</p>
+    pub fn get_is_verified(&self) -> &::std::option::Option<bool> {
+        &self.is_verified
+    }
     /// Consumes the builder and constructs a [`UserAppItem`](crate::types::UserAppItem).
     /// This method will fail if any of the following fields are not set:
     /// - [`app_id`](crate::types::builders::UserAppItemBuilder::app_id)
@@ -209,6 +230,7 @@ impl UserAppItemBuilder {
             })?,
             can_edit: self.can_edit,
             status: self.status,
+            is_verified: self.is_verified.unwrap_or_default(),
         })
     }
 }
