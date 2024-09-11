@@ -142,17 +142,17 @@ impl ListOfferingsFluentBuilder {
     pub fn get_channel_configuration(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_channel_configuration()
     }
-    /// Filter by codec, 'AVC', 'HEVC', 'MPEG2', 'AUDIO', or 'LINK'
+    /// Filter by codec, 'AVC', 'HEVC', 'MPEG2', 'AUDIO', 'LINK', or 'AV1'
     pub fn codec(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.codec(input.into());
         self
     }
-    /// Filter by codec, 'AVC', 'HEVC', 'MPEG2', 'AUDIO', or 'LINK'
+    /// Filter by codec, 'AVC', 'HEVC', 'MPEG2', 'AUDIO', 'LINK', or 'AV1'
     pub fn set_codec(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_codec(input);
         self
     }
-    /// Filter by codec, 'AVC', 'HEVC', 'MPEG2', 'AUDIO', or 'LINK'
+    /// Filter by codec, 'AVC', 'HEVC', 'MPEG2', 'AUDIO', 'LINK', or 'AV1'
     pub fn get_codec(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_codec()
     }

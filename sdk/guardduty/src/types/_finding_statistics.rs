@@ -4,13 +4,57 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FindingStatistics {
-    /// <p>Represents a map of severity to count statistics for a set of findings.</p>
+    /// <p>Represents a list of map of severity to count statistics for a set of findings.</p>
+    #[deprecated(note = "This parameter is deprecated. Please set GroupBy to 'SEVERITY' to return GroupedBySeverity instead.")]
     pub count_by_severity: ::std::option::Option<::std::collections::HashMap<::std::string::String, i32>>,
+    /// <p>Represents a list of map of accounts with a findings count associated with each account.</p>
+    pub grouped_by_account: ::std::option::Option<::std::vec::Vec<crate::types::AccountStatistics>>,
+    /// <p>Represents a list of map of dates with a count of total findings generated on each date per severity level.</p>
+    pub grouped_by_date: ::std::option::Option<::std::vec::Vec<crate::types::DateStatistics>>,
+    /// <p>Represents a list of map of finding types with a count of total findings generated for each type.</p>
+    /// <p>Based on the <code>orderBy</code> parameter, this request returns either the most occurring finding types or the least occurring finding types. If the <code>orderBy</code> parameter is <code>ASC</code>, this will represent the least occurring finding types in your account; otherwise, this will represent the most occurring finding types. The default value of <code>orderBy</code> is <code>DESC</code>.</p>
+    pub grouped_by_finding_type: ::std::option::Option<::std::vec::Vec<crate::types::FindingTypeStatistics>>,
+    /// <p>Represents a list of map of top resources with a count of total findings.</p>
+    pub grouped_by_resource: ::std::option::Option<::std::vec::Vec<crate::types::ResourceStatistics>>,
+    /// <p>Represents a list of map of total findings for each severity level.</p>
+    pub grouped_by_severity: ::std::option::Option<::std::vec::Vec<crate::types::SeverityStatistics>>,
 }
 impl FindingStatistics {
-    /// <p>Represents a map of severity to count statistics for a set of findings.</p>
+    /// <p>Represents a list of map of severity to count statistics for a set of findings.</p>
+    #[deprecated(note = "This parameter is deprecated. Please set GroupBy to 'SEVERITY' to return GroupedBySeverity instead.")]
     pub fn count_by_severity(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, i32>> {
         self.count_by_severity.as_ref()
+    }
+    /// <p>Represents a list of map of accounts with a findings count associated with each account.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.grouped_by_account.is_none()`.
+    pub fn grouped_by_account(&self) -> &[crate::types::AccountStatistics] {
+        self.grouped_by_account.as_deref().unwrap_or_default()
+    }
+    /// <p>Represents a list of map of dates with a count of total findings generated on each date per severity level.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.grouped_by_date.is_none()`.
+    pub fn grouped_by_date(&self) -> &[crate::types::DateStatistics] {
+        self.grouped_by_date.as_deref().unwrap_or_default()
+    }
+    /// <p>Represents a list of map of finding types with a count of total findings generated for each type.</p>
+    /// <p>Based on the <code>orderBy</code> parameter, this request returns either the most occurring finding types or the least occurring finding types. If the <code>orderBy</code> parameter is <code>ASC</code>, this will represent the least occurring finding types in your account; otherwise, this will represent the most occurring finding types. The default value of <code>orderBy</code> is <code>DESC</code>.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.grouped_by_finding_type.is_none()`.
+    pub fn grouped_by_finding_type(&self) -> &[crate::types::FindingTypeStatistics] {
+        self.grouped_by_finding_type.as_deref().unwrap_or_default()
+    }
+    /// <p>Represents a list of map of top resources with a count of total findings.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.grouped_by_resource.is_none()`.
+    pub fn grouped_by_resource(&self) -> &[crate::types::ResourceStatistics] {
+        self.grouped_by_resource.as_deref().unwrap_or_default()
+    }
+    /// <p>Represents a list of map of total findings for each severity level.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.grouped_by_severity.is_none()`.
+    pub fn grouped_by_severity(&self) -> &[crate::types::SeverityStatistics] {
+        self.grouped_by_severity.as_deref().unwrap_or_default()
     }
 }
 impl FindingStatistics {
@@ -25,32 +69,148 @@ impl FindingStatistics {
 #[non_exhaustive]
 pub struct FindingStatisticsBuilder {
     pub(crate) count_by_severity: ::std::option::Option<::std::collections::HashMap<::std::string::String, i32>>,
+    pub(crate) grouped_by_account: ::std::option::Option<::std::vec::Vec<crate::types::AccountStatistics>>,
+    pub(crate) grouped_by_date: ::std::option::Option<::std::vec::Vec<crate::types::DateStatistics>>,
+    pub(crate) grouped_by_finding_type: ::std::option::Option<::std::vec::Vec<crate::types::FindingTypeStatistics>>,
+    pub(crate) grouped_by_resource: ::std::option::Option<::std::vec::Vec<crate::types::ResourceStatistics>>,
+    pub(crate) grouped_by_severity: ::std::option::Option<::std::vec::Vec<crate::types::SeverityStatistics>>,
 }
 impl FindingStatisticsBuilder {
     /// Adds a key-value pair to `count_by_severity`.
     ///
     /// To override the contents of this collection use [`set_count_by_severity`](Self::set_count_by_severity).
     ///
-    /// <p>Represents a map of severity to count statistics for a set of findings.</p>
+    /// <p>Represents a list of map of severity to count statistics for a set of findings.</p>
+    #[deprecated(note = "This parameter is deprecated. Please set GroupBy to 'SEVERITY' to return GroupedBySeverity instead.")]
     pub fn count_by_severity(mut self, k: impl ::std::convert::Into<::std::string::String>, v: i32) -> Self {
         let mut hash_map = self.count_by_severity.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.count_by_severity = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>Represents a map of severity to count statistics for a set of findings.</p>
+    /// <p>Represents a list of map of severity to count statistics for a set of findings.</p>
+    #[deprecated(note = "This parameter is deprecated. Please set GroupBy to 'SEVERITY' to return GroupedBySeverity instead.")]
     pub fn set_count_by_severity(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, i32>>) -> Self {
         self.count_by_severity = input;
         self
     }
-    /// <p>Represents a map of severity to count statistics for a set of findings.</p>
+    /// <p>Represents a list of map of severity to count statistics for a set of findings.</p>
+    #[deprecated(note = "This parameter is deprecated. Please set GroupBy to 'SEVERITY' to return GroupedBySeverity instead.")]
     pub fn get_count_by_severity(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, i32>> {
         &self.count_by_severity
+    }
+    /// Appends an item to `grouped_by_account`.
+    ///
+    /// To override the contents of this collection use [`set_grouped_by_account`](Self::set_grouped_by_account).
+    ///
+    /// <p>Represents a list of map of accounts with a findings count associated with each account.</p>
+    pub fn grouped_by_account(mut self, input: crate::types::AccountStatistics) -> Self {
+        let mut v = self.grouped_by_account.unwrap_or_default();
+        v.push(input);
+        self.grouped_by_account = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Represents a list of map of accounts with a findings count associated with each account.</p>
+    pub fn set_grouped_by_account(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AccountStatistics>>) -> Self {
+        self.grouped_by_account = input;
+        self
+    }
+    /// <p>Represents a list of map of accounts with a findings count associated with each account.</p>
+    pub fn get_grouped_by_account(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AccountStatistics>> {
+        &self.grouped_by_account
+    }
+    /// Appends an item to `grouped_by_date`.
+    ///
+    /// To override the contents of this collection use [`set_grouped_by_date`](Self::set_grouped_by_date).
+    ///
+    /// <p>Represents a list of map of dates with a count of total findings generated on each date per severity level.</p>
+    pub fn grouped_by_date(mut self, input: crate::types::DateStatistics) -> Self {
+        let mut v = self.grouped_by_date.unwrap_or_default();
+        v.push(input);
+        self.grouped_by_date = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Represents a list of map of dates with a count of total findings generated on each date per severity level.</p>
+    pub fn set_grouped_by_date(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DateStatistics>>) -> Self {
+        self.grouped_by_date = input;
+        self
+    }
+    /// <p>Represents a list of map of dates with a count of total findings generated on each date per severity level.</p>
+    pub fn get_grouped_by_date(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DateStatistics>> {
+        &self.grouped_by_date
+    }
+    /// Appends an item to `grouped_by_finding_type`.
+    ///
+    /// To override the contents of this collection use [`set_grouped_by_finding_type`](Self::set_grouped_by_finding_type).
+    ///
+    /// <p>Represents a list of map of finding types with a count of total findings generated for each type.</p>
+    /// <p>Based on the <code>orderBy</code> parameter, this request returns either the most occurring finding types or the least occurring finding types. If the <code>orderBy</code> parameter is <code>ASC</code>, this will represent the least occurring finding types in your account; otherwise, this will represent the most occurring finding types. The default value of <code>orderBy</code> is <code>DESC</code>.</p>
+    pub fn grouped_by_finding_type(mut self, input: crate::types::FindingTypeStatistics) -> Self {
+        let mut v = self.grouped_by_finding_type.unwrap_or_default();
+        v.push(input);
+        self.grouped_by_finding_type = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Represents a list of map of finding types with a count of total findings generated for each type.</p>
+    /// <p>Based on the <code>orderBy</code> parameter, this request returns either the most occurring finding types or the least occurring finding types. If the <code>orderBy</code> parameter is <code>ASC</code>, this will represent the least occurring finding types in your account; otherwise, this will represent the most occurring finding types. The default value of <code>orderBy</code> is <code>DESC</code>.</p>
+    pub fn set_grouped_by_finding_type(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FindingTypeStatistics>>) -> Self {
+        self.grouped_by_finding_type = input;
+        self
+    }
+    /// <p>Represents a list of map of finding types with a count of total findings generated for each type.</p>
+    /// <p>Based on the <code>orderBy</code> parameter, this request returns either the most occurring finding types or the least occurring finding types. If the <code>orderBy</code> parameter is <code>ASC</code>, this will represent the least occurring finding types in your account; otherwise, this will represent the most occurring finding types. The default value of <code>orderBy</code> is <code>DESC</code>.</p>
+    pub fn get_grouped_by_finding_type(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FindingTypeStatistics>> {
+        &self.grouped_by_finding_type
+    }
+    /// Appends an item to `grouped_by_resource`.
+    ///
+    /// To override the contents of this collection use [`set_grouped_by_resource`](Self::set_grouped_by_resource).
+    ///
+    /// <p>Represents a list of map of top resources with a count of total findings.</p>
+    pub fn grouped_by_resource(mut self, input: crate::types::ResourceStatistics) -> Self {
+        let mut v = self.grouped_by_resource.unwrap_or_default();
+        v.push(input);
+        self.grouped_by_resource = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Represents a list of map of top resources with a count of total findings.</p>
+    pub fn set_grouped_by_resource(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceStatistics>>) -> Self {
+        self.grouped_by_resource = input;
+        self
+    }
+    /// <p>Represents a list of map of top resources with a count of total findings.</p>
+    pub fn get_grouped_by_resource(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceStatistics>> {
+        &self.grouped_by_resource
+    }
+    /// Appends an item to `grouped_by_severity`.
+    ///
+    /// To override the contents of this collection use [`set_grouped_by_severity`](Self::set_grouped_by_severity).
+    ///
+    /// <p>Represents a list of map of total findings for each severity level.</p>
+    pub fn grouped_by_severity(mut self, input: crate::types::SeverityStatistics) -> Self {
+        let mut v = self.grouped_by_severity.unwrap_or_default();
+        v.push(input);
+        self.grouped_by_severity = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Represents a list of map of total findings for each severity level.</p>
+    pub fn set_grouped_by_severity(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SeverityStatistics>>) -> Self {
+        self.grouped_by_severity = input;
+        self
+    }
+    /// <p>Represents a list of map of total findings for each severity level.</p>
+    pub fn get_grouped_by_severity(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SeverityStatistics>> {
+        &self.grouped_by_severity
     }
     /// Consumes the builder and constructs a [`FindingStatistics`](crate::types::FindingStatistics).
     pub fn build(self) -> crate::types::FindingStatistics {
         crate::types::FindingStatistics {
             count_by_severity: self.count_by_severity,
+            grouped_by_account: self.grouped_by_account,
+            grouped_by_date: self.grouped_by_date,
+            grouped_by_finding_type: self.grouped_by_finding_type,
+            grouped_by_resource: self.grouped_by_resource,
+            grouped_by_severity: self.grouped_by_severity,
         }
     }
 }

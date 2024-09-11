@@ -22,6 +22,8 @@ pub struct UpdateInputInput {
     pub sources: ::std::option::Option<::std::vec::Vec<crate::types::InputSourceRequest>>,
     /// The settings associated with an SRT input.
     pub srt_settings: ::std::option::Option<crate::types::SrtSettingsRequest>,
+    /// Multicast Input settings.
+    pub multicast_settings: ::std::option::Option<crate::types::MulticastSettingsUpdateRequest>,
 }
 impl UpdateInputInput {
     /// Destination settings for PUSH type inputs.
@@ -70,6 +72,10 @@ impl UpdateInputInput {
     pub fn srt_settings(&self) -> ::std::option::Option<&crate::types::SrtSettingsRequest> {
         self.srt_settings.as_ref()
     }
+    /// Multicast Input settings.
+    pub fn multicast_settings(&self) -> ::std::option::Option<&crate::types::MulticastSettingsUpdateRequest> {
+        self.multicast_settings.as_ref()
+    }
 }
 impl UpdateInputInput {
     /// Creates a new builder-style object to manufacture [`UpdateInputInput`](crate::operation::update_input::UpdateInputInput).
@@ -91,6 +97,7 @@ pub struct UpdateInputInputBuilder {
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) sources: ::std::option::Option<::std::vec::Vec<crate::types::InputSourceRequest>>,
     pub(crate) srt_settings: ::std::option::Option<crate::types::SrtSettingsRequest>,
+    pub(crate) multicast_settings: ::std::option::Option<crate::types::MulticastSettingsUpdateRequest>,
 }
 impl UpdateInputInputBuilder {
     /// Appends an item to `destinations`.
@@ -250,6 +257,20 @@ impl UpdateInputInputBuilder {
     pub fn get_srt_settings(&self) -> &::std::option::Option<crate::types::SrtSettingsRequest> {
         &self.srt_settings
     }
+    /// Multicast Input settings.
+    pub fn multicast_settings(mut self, input: crate::types::MulticastSettingsUpdateRequest) -> Self {
+        self.multicast_settings = ::std::option::Option::Some(input);
+        self
+    }
+    /// Multicast Input settings.
+    pub fn set_multicast_settings(mut self, input: ::std::option::Option<crate::types::MulticastSettingsUpdateRequest>) -> Self {
+        self.multicast_settings = input;
+        self
+    }
+    /// Multicast Input settings.
+    pub fn get_multicast_settings(&self) -> &::std::option::Option<crate::types::MulticastSettingsUpdateRequest> {
+        &self.multicast_settings
+    }
     /// Consumes the builder and constructs a [`UpdateInputInput`](crate::operation::update_input::UpdateInputInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::update_input::UpdateInputInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_input::UpdateInputInput {
@@ -262,6 +283,7 @@ impl UpdateInputInputBuilder {
             role_arn: self.role_arn,
             sources: self.sources,
             srt_settings: self.srt_settings,
+            multicast_settings: self.multicast_settings,
         })
     }
 }

@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateFilterInput {
-    /// <p>The ID of the detector belonging to the GuardDuty account that you want to create a filter for.</p>
+    /// <p>The detector ID associated with the GuardDuty account for which you want to create a filter.</p>
     pub detector_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the filter. Valid characters include period (.), underscore (_), dash (-), and alphanumeric characters. A whitespace is considered to be an invalid character.</p>
     pub name: ::std::option::Option<::std::string::String>,
@@ -225,7 +225,7 @@ pub struct CreateFilterInput {
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateFilterInput {
-    /// <p>The ID of the detector belonging to the GuardDuty account that you want to create a filter for.</p>
+    /// <p>The detector ID associated with the GuardDuty account for which you want to create a filter.</p>
     pub fn detector_id(&self) -> ::std::option::Option<&str> {
         self.detector_id.as_deref()
     }
@@ -483,18 +483,18 @@ pub struct CreateFilterInputBuilder {
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateFilterInputBuilder {
-    /// <p>The ID of the detector belonging to the GuardDuty account that you want to create a filter for.</p>
+    /// <p>The detector ID associated with the GuardDuty account for which you want to create a filter.</p>
     /// This field is required.
     pub fn detector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.detector_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the detector belonging to the GuardDuty account that you want to create a filter for.</p>
+    /// <p>The detector ID associated with the GuardDuty account for which you want to create a filter.</p>
     pub fn set_detector_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.detector_id = input;
         self
     }
-    /// <p>The ID of the detector belonging to the GuardDuty account that you want to create a filter for.</p>
+    /// <p>The detector ID associated with the GuardDuty account for which you want to create a filter.</p>
     pub fn get_detector_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.detector_id
     }

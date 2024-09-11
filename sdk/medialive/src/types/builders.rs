@@ -7,6 +7,16 @@ pub use crate::types::_renewal_settings::RenewalSettingsBuilder;
 
 pub use crate::types::_validation_error::ValidationErrorBuilder;
 
+pub use crate::types::_node_interface_mapping::NodeInterfaceMappingBuilder;
+
+pub use crate::types::_route::RouteBuilder;
+
+pub use crate::types::_ip_pool::IpPoolBuilder;
+
+pub use crate::types::_route_update_request::RouteUpdateRequestBuilder;
+
+pub use crate::types::_ip_pool_update_request::IpPoolUpdateRequestBuilder;
+
 pub use crate::types::_multiplex_program::MultiplexProgramBuilder;
 
 pub use crate::types::_multiplex_program_pipeline_detail::MultiplexProgramPipelineDetailBuilder;
@@ -53,6 +63,10 @@ pub use crate::types::_input_device_media_connect_configurable_settings::InputDe
 
 pub use crate::types::_input::InputBuilder;
 
+pub use crate::types::_multicast_settings::MulticastSettingsBuilder;
+
+pub use crate::types::_multicast_source::MulticastSourceBuilder;
+
 pub use crate::types::_srt_settings::SrtSettingsBuilder;
 
 pub use crate::types::_srt_caller_source::SrtCallerSourceBuilder;
@@ -67,7 +81,13 @@ pub use crate::types::_input_device_settings::InputDeviceSettingsBuilder;
 
 pub use crate::types::_input_destination::InputDestinationBuilder;
 
+pub use crate::types::_input_destination_route::InputDestinationRouteBuilder;
+
 pub use crate::types::_input_destination_vpc::InputDestinationVpcBuilder;
+
+pub use crate::types::_multicast_settings_update_request::MulticastSettingsUpdateRequestBuilder;
+
+pub use crate::types::_multicast_source_update_request::MulticastSourceUpdateRequestBuilder;
 
 pub use crate::types::_srt_settings_request::SrtSettingsRequestBuilder;
 
@@ -83,9 +103,21 @@ pub use crate::types::_input_device_request::InputDeviceRequestBuilder;
 
 pub use crate::types::_input_destination_request::InputDestinationRequestBuilder;
 
+pub use crate::types::_input_request_destination_route::InputRequestDestinationRouteBuilder;
+
 pub use crate::types::_event_bridge_rule_template_target::EventBridgeRuleTemplateTargetBuilder;
 
+pub use crate::types::_cluster_network_settings::ClusterNetworkSettingsBuilder;
+
+pub use crate::types::_interface_mapping::InterfaceMappingBuilder;
+
+pub use crate::types::_cluster_network_settings_update_request::ClusterNetworkSettingsUpdateRequestBuilder;
+
+pub use crate::types::_interface_mapping_update_request::InterfaceMappingUpdateRequestBuilder;
+
 pub use crate::types::_channel::ChannelBuilder;
+
+pub use crate::types::_describe_anywhere_settings::DescribeAnywhereSettingsBuilder;
 
 pub use crate::types::_vpc_output_settings_description::VpcOutputSettingsDescriptionBuilder;
 
@@ -112,6 +144,8 @@ pub use crate::types::_video_selector_color_space_settings::VideoSelectorColorSp
 pub use crate::types::_hdr10_settings::Hdr10SettingsBuilder;
 
 pub use crate::types::_network_input_settings::NetworkInputSettingsBuilder;
+
+pub use crate::types::_multicast_input_settings::MulticastInputSettingsBuilder;
 
 pub use crate::types::_hls_input_settings::HlsInputSettingsBuilder;
 
@@ -175,9 +209,19 @@ pub use crate::types::_video_description::VideoDescriptionBuilder;
 
 pub use crate::types::_video_codec_settings::VideoCodecSettingsBuilder;
 
-pub use crate::types::_mpeg2_settings::Mpeg2SettingsBuilder;
+pub use crate::types::_av1_settings::Av1SettingsBuilder;
 
 pub use crate::types::_timecode_burnin_settings::TimecodeBurninSettingsBuilder;
+
+pub use crate::types::_av1_color_space_settings::Av1ColorSpaceSettingsBuilder;
+
+pub use crate::types::_rec709_settings::Rec709SettingsBuilder;
+
+pub use crate::types::_rec601_settings::Rec601SettingsBuilder;
+
+pub use crate::types::_color_space_passthrough_settings::ColorSpacePassthroughSettingsBuilder;
+
+pub use crate::types::_mpeg2_settings::Mpeg2SettingsBuilder;
 
 pub use crate::types::_mpeg2_filter_settings::Mpeg2FilterSettingsBuilder;
 
@@ -189,13 +233,7 @@ pub use crate::types::_h265_filter_settings::H265FilterSettingsBuilder;
 
 pub use crate::types::_h265_color_space_settings::H265ColorSpaceSettingsBuilder;
 
-pub use crate::types::_rec709_settings::Rec709SettingsBuilder;
-
-pub use crate::types::_rec601_settings::Rec601SettingsBuilder;
-
 pub use crate::types::_dolby_vision81_settings::DolbyVision81SettingsBuilder;
-
-pub use crate::types::_color_space_passthrough_settings::ColorSpacePassthroughSettingsBuilder;
 
 pub use crate::types::_h264_settings::H264SettingsBuilder;
 
@@ -213,11 +251,7 @@ pub use crate::types::_output::OutputBuilder;
 
 pub use crate::types::_output_settings::OutputSettingsBuilder;
 
-pub use crate::types::_cmaf_ingest_output_settings::CmafIngestOutputSettingsBuilder;
-
-pub use crate::types::_udp_output_settings::UdpOutputSettingsBuilder;
-
-pub use crate::types::_fec_output_settings::FecOutputSettingsBuilder;
+pub use crate::types::_srt_output_settings::SrtOutputSettingsBuilder;
 
 pub use crate::types::_output_location_ref::OutputLocationRefBuilder;
 
@@ -230,6 +264,12 @@ pub use crate::types::_dvb_tdt_settings::DvbTdtSettingsBuilder;
 pub use crate::types::_dvb_sdt_settings::DvbSdtSettingsBuilder;
 
 pub use crate::types::_dvb_nit_settings::DvbNitSettingsBuilder;
+
+pub use crate::types::_cmaf_ingest_output_settings::CmafIngestOutputSettingsBuilder;
+
+pub use crate::types::_udp_output_settings::UdpOutputSettingsBuilder;
+
+pub use crate::types::_fec_output_settings::FecOutputSettingsBuilder;
 
 pub use crate::types::_rtmp_output_settings::RtmpOutputSettingsBuilder;
 
@@ -264,6 +304,8 @@ pub use crate::types::_archive_container_settings::ArchiveContainerSettingsBuild
 pub use crate::types::_raw_settings::RawSettingsBuilder;
 
 pub use crate::types::_output_group_settings::OutputGroupSettingsBuilder;
+
+pub use crate::types::_srt_group_settings::SrtGroupSettingsBuilder;
 
 pub use crate::types::_cmaf_ingest_group_settings::CmafIngestGroupSettingsBuilder;
 
@@ -411,6 +453,8 @@ pub use crate::types::_channel_egress_endpoint::ChannelEgressEndpointBuilder;
 
 pub use crate::types::_output_destination::OutputDestinationBuilder;
 
+pub use crate::types::_srt_output_destination_settings::SrtOutputDestinationSettingsBuilder;
+
 pub use crate::types::_output_destination_settings::OutputDestinationSettingsBuilder;
 
 pub use crate::types::_multiplex_program_channel_destination_settings::MultiplexProgramChannelDestinationSettingsBuilder;
@@ -435,6 +479,10 @@ pub use crate::types::_signal_map_summary::SignalMapSummaryBuilder;
 
 pub use crate::types::_offering::OfferingBuilder;
 
+pub use crate::types::_describe_node_summary::DescribeNodeSummaryBuilder;
+
+pub use crate::types::_describe_network_summary::DescribeNetworkSummaryBuilder;
+
 pub use crate::types::_multiplex_program_summary::MultiplexProgramSummaryBuilder;
 
 pub use crate::types::_multiplex_summary::MultiplexSummaryBuilder;
@@ -449,11 +497,15 @@ pub use crate::types::_event_bridge_rule_template_summary::EventBridgeRuleTempla
 
 pub use crate::types::_event_bridge_rule_template_group_summary::EventBridgeRuleTemplateGroupSummaryBuilder;
 
+pub use crate::types::_describe_cluster_summary::DescribeClusterSummaryBuilder;
+
 pub use crate::types::_cloud_watch_alarm_template_summary::CloudWatchAlarmTemplateSummaryBuilder;
 
 pub use crate::types::_cloud_watch_alarm_template_group_summary::CloudWatchAlarmTemplateGroupSummaryBuilder;
 
 pub use crate::types::_channel_summary::ChannelSummaryBuilder;
+
+pub use crate::types::_describe_channel_placement_group_summary::DescribeChannelPlacementGroupSummaryBuilder;
 
 pub use crate::types::_thumbnail_detail::ThumbnailDetailBuilder;
 
@@ -517,7 +569,23 @@ pub use crate::types::_hls_timed_metadata_schedule_action_settings::HlsTimedMeta
 
 pub use crate::types::_hls_id3_segment_tagging_schedule_action_settings::HlsId3SegmentTaggingScheduleActionSettingsBuilder;
 
+pub use crate::types::_node_interface_mapping_create_request::NodeInterfaceMappingCreateRequestBuilder;
+
+pub use crate::types::_route_create_request::RouteCreateRequestBuilder;
+
+pub use crate::types::_ip_pool_create_request::IpPoolCreateRequestBuilder;
+
+pub use crate::types::_multicast_settings_create_request::MulticastSettingsCreateRequestBuilder;
+
+pub use crate::types::_multicast_source_create_request::MulticastSourceCreateRequestBuilder;
+
 pub use crate::types::_input_vpc_request::InputVpcRequestBuilder;
+
+pub use crate::types::_cluster_network_settings_create_request::ClusterNetworkSettingsCreateRequestBuilder;
+
+pub use crate::types::_interface_mapping_create_request::InterfaceMappingCreateRequestBuilder;
+
+pub use crate::types::_anywhere_settings::AnywhereSettingsBuilder;
 
 pub use crate::types::_vpc_output_settings::VpcOutputSettingsBuilder;
 

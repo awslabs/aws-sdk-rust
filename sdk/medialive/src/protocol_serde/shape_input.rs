@@ -103,6 +103,16 @@ where
                         "srtSettings" => {
                             builder = builder.set_srt_settings(crate::protocol_serde::shape_srt_settings::de_srt_settings(tokens)?);
                         }
+                        "inputNetworkLocation" => {
+                            builder = builder.set_input_network_location(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::InputNetworkLocation::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "multicastSettings" => {
+                            builder = builder.set_multicast_settings(crate::protocol_serde::shape_multicast_settings::de_multicast_settings(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

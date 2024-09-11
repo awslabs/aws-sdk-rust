@@ -99,6 +99,8 @@ pub struct ListFindingsInput {
     /// <p>service.archived</p>
     /// <p>When this attribute is set to 'true', only archived findings are listed. When it's set to 'false', only unarchived findings are listed. When this attribute is not set, all existing findings are listed.</p></li>
     /// <li>
+    /// <p>service.ebsVolumeScanDetails.scanId</p></li>
+    /// <li>
     /// <p>service.resourceRole</p></li>
     /// <li>
     /// <p>severity</p></li>
@@ -214,6 +216,8 @@ impl ListFindingsInput {
     /// <li>
     /// <p>service.archived</p>
     /// <p>When this attribute is set to 'true', only archived findings are listed. When it's set to 'false', only unarchived findings are listed. When this attribute is not set, all existing findings are listed.</p></li>
+    /// <li>
+    /// <p>service.ebsVolumeScanDetails.scanId</p></li>
     /// <li>
     /// <p>service.resourceRole</p></li>
     /// <li>
@@ -367,6 +371,8 @@ impl ListFindingsInputBuilder {
     /// <p>service.archived</p>
     /// <p>When this attribute is set to 'true', only archived findings are listed. When it's set to 'false', only unarchived findings are listed. When this attribute is not set, all existing findings are listed.</p></li>
     /// <li>
+    /// <p>service.ebsVolumeScanDetails.scanId</p></li>
+    /// <li>
     /// <p>service.resourceRole</p></li>
     /// <li>
     /// <p>severity</p></li>
@@ -474,6 +480,8 @@ impl ListFindingsInputBuilder {
     /// <p>service.archived</p>
     /// <p>When this attribute is set to 'true', only archived findings are listed. When it's set to 'false', only unarchived findings are listed. When this attribute is not set, all existing findings are listed.</p></li>
     /// <li>
+    /// <p>service.ebsVolumeScanDetails.scanId</p></li>
+    /// <li>
     /// <p>service.resourceRole</p></li>
     /// <li>
     /// <p>severity</p></li>
@@ -580,6 +588,8 @@ impl ListFindingsInputBuilder {
     /// <li>
     /// <p>service.archived</p>
     /// <p>When this attribute is set to 'true', only archived findings are listed. When it's set to 'false', only unarchived findings are listed. When this attribute is not set, all existing findings are listed.</p></li>
+    /// <li>
+    /// <p>service.ebsVolumeScanDetails.scanId</p></li>
     /// <li>
     /// <p>service.resourceRole</p></li>
     /// <li>

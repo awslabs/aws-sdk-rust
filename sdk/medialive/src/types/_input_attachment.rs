@@ -12,6 +12,8 @@ pub struct InputAttachment {
     pub input_id: ::std::option::Option<::std::string::String>,
     /// Settings of an input (caption selector, etc.)
     pub input_settings: ::std::option::Option<crate::types::InputSettings>,
+    /// Optional assignment of an input to a logical interface on the Node. Only applies to on premises channels.
+    pub logical_interface_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl InputAttachment {
     /// User-specified settings for defining what the conditions are for declaring the input unhealthy and failing over to a different input.
@@ -30,6 +32,12 @@ impl InputAttachment {
     pub fn input_settings(&self) -> ::std::option::Option<&crate::types::InputSettings> {
         self.input_settings.as_ref()
     }
+    /// Optional assignment of an input to a logical interface on the Node. Only applies to on premises channels.
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.logical_interface_names.is_none()`.
+    pub fn logical_interface_names(&self) -> &[::std::string::String] {
+        self.logical_interface_names.as_deref().unwrap_or_default()
+    }
 }
 impl InputAttachment {
     /// Creates a new builder-style object to manufacture [`InputAttachment`](crate::types::InputAttachment).
@@ -46,6 +54,7 @@ pub struct InputAttachmentBuilder {
     pub(crate) input_attachment_name: ::std::option::Option<::std::string::String>,
     pub(crate) input_id: ::std::option::Option<::std::string::String>,
     pub(crate) input_settings: ::std::option::Option<crate::types::InputSettings>,
+    pub(crate) logical_interface_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl InputAttachmentBuilder {
     /// User-specified settings for defining what the conditions are for declaring the input unhealthy and failing over to a different input.
@@ -104,6 +113,26 @@ impl InputAttachmentBuilder {
     pub fn get_input_settings(&self) -> &::std::option::Option<crate::types::InputSettings> {
         &self.input_settings
     }
+    /// Appends an item to `logical_interface_names`.
+    ///
+    /// To override the contents of this collection use [`set_logical_interface_names`](Self::set_logical_interface_names).
+    ///
+    /// Optional assignment of an input to a logical interface on the Node. Only applies to on premises channels.
+    pub fn logical_interface_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.logical_interface_names.unwrap_or_default();
+        v.push(input.into());
+        self.logical_interface_names = ::std::option::Option::Some(v);
+        self
+    }
+    /// Optional assignment of an input to a logical interface on the Node. Only applies to on premises channels.
+    pub fn set_logical_interface_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.logical_interface_names = input;
+        self
+    }
+    /// Optional assignment of an input to a logical interface on the Node. Only applies to on premises channels.
+    pub fn get_logical_interface_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.logical_interface_names
+    }
     /// Consumes the builder and constructs a [`InputAttachment`](crate::types::InputAttachment).
     pub fn build(self) -> crate::types::InputAttachment {
         crate::types::InputAttachment {
@@ -111,6 +140,7 @@ impl InputAttachmentBuilder {
             input_attachment_name: self.input_attachment_name,
             input_id: self.input_id,
             input_settings: self.input_settings,
+            logical_interface_names: self.logical_interface_names,
         }
     }
 }

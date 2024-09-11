@@ -16,6 +16,7 @@
 ///     InputType::InputDevice => { /* ... */ },
 ///     InputType::Mediaconnect => { /* ... */ },
 ///     InputType::Mp4File => { /* ... */ },
+///     InputType::Multicast => { /* ... */ },
 ///     InputType::RtmpPull => { /* ... */ },
 ///     InputType::RtmpPush => { /* ... */ },
 ///     InputType::RtpPush => { /* ... */ },
@@ -59,6 +60,8 @@ pub enum InputType {
     #[allow(missing_docs)] // documentation missing in model
     Mp4File,
     #[allow(missing_docs)] // documentation missing in model
+    Multicast,
+    #[allow(missing_docs)] // documentation missing in model
     RtmpPull,
     #[allow(missing_docs)] // documentation missing in model
     RtmpPush,
@@ -83,6 +86,7 @@ impl ::std::convert::From<&str> for InputType {
             "INPUT_DEVICE" => InputType::InputDevice,
             "MEDIACONNECT" => InputType::Mediaconnect,
             "MP4_FILE" => InputType::Mp4File,
+            "MULTICAST" => InputType::Multicast,
             "RTMP_PULL" => InputType::RtmpPull,
             "RTMP_PUSH" => InputType::RtmpPush,
             "RTP_PUSH" => InputType::RtpPush,
@@ -109,6 +113,7 @@ impl InputType {
             InputType::InputDevice => "INPUT_DEVICE",
             InputType::Mediaconnect => "MEDIACONNECT",
             InputType::Mp4File => "MP4_FILE",
+            InputType::Multicast => "MULTICAST",
             InputType::RtmpPull => "RTMP_PULL",
             InputType::RtmpPush => "RTMP_PUSH",
             InputType::RtpPush => "RTP_PUSH",
@@ -126,6 +131,7 @@ impl InputType {
             "INPUT_DEVICE",
             "MEDIACONNECT",
             "MP4_FILE",
+            "MULTICAST",
             "RTMP_PULL",
             "RTMP_PUSH",
             "RTP_PUSH",
@@ -160,6 +166,7 @@ impl ::std::fmt::Display for InputType {
             InputType::InputDevice => write!(f, "INPUT_DEVICE"),
             InputType::Mediaconnect => write!(f, "MEDIACONNECT"),
             InputType::Mp4File => write!(f, "MP4_FILE"),
+            InputType::Multicast => write!(f, "MULTICAST"),
             InputType::RtmpPull => write!(f, "RTMP_PULL"),
             InputType::RtmpPush => write!(f, "RTMP_PUSH"),
             InputType::RtpPush => write!(f, "RTP_PUSH"),

@@ -25,6 +25,7 @@ impl super::Client {
     ///   - [`state(Option<ChannelState>)`](crate::operation::restart_channel_pipelines::RestartChannelPipelinesOutput::state): Placeholder documentation for ChannelState
     ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::restart_channel_pipelines::RestartChannelPipelinesOutput::tags): A collection of key-value pairs.
     ///   - [`vpc(Option<VpcOutputSettingsDescription>)`](crate::operation::restart_channel_pipelines::RestartChannelPipelinesOutput::vpc): Settings for VPC output
+    ///   - [`anywhere_settings(Option<DescribeAnywhereSettings>)`](crate::operation::restart_channel_pipelines::RestartChannelPipelinesOutput::anywhere_settings): Anywhere settings for this channel.
     /// - On failure, responds with [`SdkError<RestartChannelPipelinesError>`](crate::operation::restart_channel_pipelines::RestartChannelPipelinesError)
     pub fn restart_channel_pipelines(&self) -> crate::operation::restart_channel_pipelines::builders::RestartChannelPipelinesFluentBuilder {
         crate::operation::restart_channel_pipelines::builders::RestartChannelPipelinesFluentBuilder::new(self.handle.clone())

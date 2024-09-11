@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeOrganizationConfigurationInput {
-    /// <p>The ID of the detector to retrieve information about the delegated administrator from.</p>
+    /// <p>The detector ID of the delegated administrator for which you need to retrieve the information.</p>
     pub detector_id: ::std::option::Option<::std::string::String>,
     /// <p>You can use this parameter to indicate the maximum number of items that you want in the response.</p>
     pub max_results: ::std::option::Option<i32>,
@@ -11,7 +11,7 @@ pub struct DescribeOrganizationConfigurationInput {
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl DescribeOrganizationConfigurationInput {
-    /// <p>The ID of the detector to retrieve information about the delegated administrator from.</p>
+    /// <p>The detector ID of the delegated administrator for which you need to retrieve the information.</p>
     pub fn detector_id(&self) -> ::std::option::Option<&str> {
         self.detector_id.as_deref()
     }
@@ -40,18 +40,18 @@ pub struct DescribeOrganizationConfigurationInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl DescribeOrganizationConfigurationInputBuilder {
-    /// <p>The ID of the detector to retrieve information about the delegated administrator from.</p>
+    /// <p>The detector ID of the delegated administrator for which you need to retrieve the information.</p>
     /// This field is required.
     pub fn detector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.detector_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the detector to retrieve information about the delegated administrator from.</p>
+    /// <p>The detector ID of the delegated administrator for which you need to retrieve the information.</p>
     pub fn set_detector_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.detector_id = input;
         self
     }
-    /// <p>The ID of the detector to retrieve information about the delegated administrator from.</p>
+    /// <p>The detector ID of the delegated administrator for which you need to retrieve the information.</p>
     pub fn get_detector_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.detector_id
     }

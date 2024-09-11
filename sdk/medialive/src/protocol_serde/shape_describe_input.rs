@@ -187,6 +187,13 @@ pub(crate) fn de_describe_input(
                     builder = builder
                         .set_input_devices(crate::protocol_serde::shape_list_of_input_device_settings::de_list_of_input_device_settings(tokens)?);
                 }
+                "inputNetworkLocation" => {
+                    builder = builder.set_input_network_location(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::InputNetworkLocation::from(u.as_ref())))
+                            .transpose()?,
+                    );
+                }
                 "inputPartnerIds" => {
                     builder = builder.set_input_partner_ids(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens)?);
                 }
@@ -201,6 +208,9 @@ pub(crate) fn de_describe_input(
                     builder = builder.set_media_connect_flows(
                         crate::protocol_serde::shape_list_of_media_connect_flow::de_list_of_media_connect_flow(tokens)?,
                     );
+                }
+                "multicastSettings" => {
+                    builder = builder.set_multicast_settings(crate::protocol_serde::shape_multicast_settings::de_multicast_settings(tokens)?);
                 }
                 "name" => {
                     builder = builder.set_name(

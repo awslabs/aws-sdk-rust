@@ -341,6 +341,15 @@ pub(crate) fn input_location_correct_errors(
     builder
 }
 
+pub(crate) fn multicast_source_correct_errors(
+    mut builder: crate::types::builders::MulticastSourceBuilder,
+) -> crate::types::builders::MulticastSourceBuilder {
+    if builder.url.is_none() {
+        builder.url = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn output_group_correct_errors(mut builder: crate::types::builders::OutputGroupBuilder) -> crate::types::builders::OutputGroupBuilder {
     if builder.output_group_settings.is_none() {
         builder.output_group_settings = {
@@ -534,6 +543,16 @@ pub(crate) fn audio_selector_correct_errors(
 ) -> crate::types::builders::AudioSelectorBuilder {
     if builder.name.is_none() {
         builder.name = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn av1_settings_correct_errors(mut builder: crate::types::builders::Av1SettingsBuilder) -> crate::types::builders::Av1SettingsBuilder {
+    if builder.framerate_denominator.is_none() {
+        builder.framerate_denominator = Some(Default::default())
+    }
+    if builder.framerate_numerator.is_none() {
+        builder.framerate_numerator = Some(Default::default())
     }
     builder
 }
@@ -836,6 +855,24 @@ pub(crate) fn scte35_descriptor_settings_correct_errors(
         builder.segmentation_descriptor_scte35_descriptor_settings = {
             let builder = crate::types::builders::Scte35SegmentationDescriptorBuilder::default();
             Some(crate::serde_util::scte35_segmentation_descriptor_correct_errors(builder).build())
+        }
+    }
+    builder
+}
+
+pub(crate) fn srt_output_settings_correct_errors(
+    mut builder: crate::types::builders::SrtOutputSettingsBuilder,
+) -> crate::types::builders::SrtOutputSettingsBuilder {
+    if builder.container_settings.is_none() {
+        builder.container_settings = {
+            let builder = crate::types::builders::UdpContainerSettingsBuilder::default();
+            Some(builder.build())
+        }
+    }
+    if builder.destination.is_none() {
+        builder.destination = {
+            let builder = crate::types::builders::OutputLocationRefBuilder::default();
+            Some(builder.build())
         }
     }
     builder

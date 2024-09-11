@@ -104,6 +104,11 @@ where
                             builder = builder
                                 .set_vpc(crate::protocol_serde::shape_vpc_output_settings_description::de_vpc_output_settings_description(tokens)?);
                         }
+                        "anywhereSettings" => {
+                            builder = builder.set_anywhere_settings(
+                                crate::protocol_serde::shape_describe_anywhere_settings::de_describe_anywhere_settings(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

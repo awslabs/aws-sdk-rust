@@ -17,6 +17,25 @@ where
                         "countBySeverity" => {
                             builder = builder.set_count_by_severity(crate::protocol_serde::shape_count_by_severity::de_count_by_severity(tokens)?);
                         }
+                        "groupedByAccount" => {
+                            builder = builder.set_grouped_by_account(crate::protocol_serde::shape_grouped_by_account::de_grouped_by_account(tokens)?);
+                        }
+                        "groupedByDate" => {
+                            builder = builder.set_grouped_by_date(crate::protocol_serde::shape_grouped_by_date::de_grouped_by_date(tokens)?);
+                        }
+                        "groupedByFindingType" => {
+                            builder = builder.set_grouped_by_finding_type(
+                                crate::protocol_serde::shape_grouped_by_finding_type::de_grouped_by_finding_type(tokens)?,
+                            );
+                        }
+                        "groupedByResource" => {
+                            builder =
+                                builder.set_grouped_by_resource(crate::protocol_serde::shape_grouped_by_resource::de_grouped_by_resource(tokens)?);
+                        }
+                        "groupedBySeverity" => {
+                            builder =
+                                builder.set_grouped_by_severity(crate::protocol_serde::shape_grouped_by_severity::de_grouped_by_severity(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

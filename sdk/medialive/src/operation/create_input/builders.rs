@@ -306,4 +306,32 @@ impl CreateInputFluentBuilder {
     pub fn get_srt_settings(&self) -> &::std::option::Option<crate::types::SrtSettingsRequest> {
         self.inner.get_srt_settings()
     }
+    /// The location of this input. AWS, for an input existing in the AWS Cloud, On-Prem for an input in a customer network.
+    pub fn input_network_location(mut self, input: crate::types::InputNetworkLocation) -> Self {
+        self.inner = self.inner.input_network_location(input);
+        self
+    }
+    /// The location of this input. AWS, for an input existing in the AWS Cloud, On-Prem for an input in a customer network.
+    pub fn set_input_network_location(mut self, input: ::std::option::Option<crate::types::InputNetworkLocation>) -> Self {
+        self.inner = self.inner.set_input_network_location(input);
+        self
+    }
+    /// The location of this input. AWS, for an input existing in the AWS Cloud, On-Prem for an input in a customer network.
+    pub fn get_input_network_location(&self) -> &::std::option::Option<crate::types::InputNetworkLocation> {
+        self.inner.get_input_network_location()
+    }
+    /// Multicast Input settings.
+    pub fn multicast_settings(mut self, input: crate::types::MulticastSettingsCreateRequest) -> Self {
+        self.inner = self.inner.multicast_settings(input);
+        self
+    }
+    /// Multicast Input settings.
+    pub fn set_multicast_settings(mut self, input: ::std::option::Option<crate::types::MulticastSettingsCreateRequest>) -> Self {
+        self.inner = self.inner.set_multicast_settings(input);
+        self
+    }
+    /// Multicast Input settings.
+    pub fn get_multicast_settings(&self) -> &::std::option::Option<crate::types::MulticastSettingsCreateRequest> {
+        self.inner.get_multicast_settings()
+    }
 }

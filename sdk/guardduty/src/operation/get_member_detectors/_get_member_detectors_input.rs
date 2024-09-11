@@ -5,7 +5,7 @@
 pub struct GetMemberDetectorsInput {
     /// <p>The detector ID for the administrator account.</p>
     pub detector_id: ::std::option::Option<::std::string::String>,
-    /// <p>The account ID of the member account.</p>
+    /// <p>A list of member account IDs.</p>
     pub account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl GetMemberDetectorsInput {
@@ -13,7 +13,7 @@ impl GetMemberDetectorsInput {
     pub fn detector_id(&self) -> ::std::option::Option<&str> {
         self.detector_id.as_deref()
     }
-    /// <p>The account ID of the member account.</p>
+    /// <p>A list of member account IDs.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.account_ids.is_none()`.
     pub fn account_ids(&self) -> &[::std::string::String] {
@@ -54,19 +54,19 @@ impl GetMemberDetectorsInputBuilder {
     ///
     /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
     ///
-    /// <p>The account ID of the member account.</p>
+    /// <p>A list of member account IDs.</p>
     pub fn account_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.account_ids.unwrap_or_default();
         v.push(input.into());
         self.account_ids = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The account ID of the member account.</p>
+    /// <p>A list of member account IDs.</p>
     pub fn set_account_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.account_ids = input;
         self
     }
-    /// <p>The account ID of the member account.</p>
+    /// <p>A list of member account IDs.</p>
     pub fn get_account_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.account_ids
     }

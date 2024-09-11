@@ -38,6 +38,10 @@ pub struct Input {
     pub r#type: ::std::option::Option<crate::types::InputType>,
     /// The settings associated with an SRT input.
     pub srt_settings: ::std::option::Option<crate::types::SrtSettings>,
+    /// The location of this input. AWS, for an input existing in the AWS Cloud, On-Prem for an input in a customer network.
+    pub input_network_location: ::std::option::Option<crate::types::InputNetworkLocation>,
+    /// Multicast Input settings.
+    pub multicast_settings: ::std::option::Option<crate::types::MulticastSettings>,
 }
 impl Input {
     /// The Unique ARN of the input (generated, immutable).
@@ -122,6 +126,14 @@ impl Input {
     pub fn srt_settings(&self) -> ::std::option::Option<&crate::types::SrtSettings> {
         self.srt_settings.as_ref()
     }
+    /// The location of this input. AWS, for an input existing in the AWS Cloud, On-Prem for an input in a customer network.
+    pub fn input_network_location(&self) -> ::std::option::Option<&crate::types::InputNetworkLocation> {
+        self.input_network_location.as_ref()
+    }
+    /// Multicast Input settings.
+    pub fn multicast_settings(&self) -> ::std::option::Option<&crate::types::MulticastSettings> {
+        self.multicast_settings.as_ref()
+    }
 }
 impl Input {
     /// Creates a new builder-style object to manufacture [`Input`](crate::types::Input).
@@ -151,6 +163,8 @@ pub struct InputBuilder {
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) r#type: ::std::option::Option<crate::types::InputType>,
     pub(crate) srt_settings: ::std::option::Option<crate::types::SrtSettings>,
+    pub(crate) input_network_location: ::std::option::Option<crate::types::InputNetworkLocation>,
+    pub(crate) multicast_settings: ::std::option::Option<crate::types::MulticastSettings>,
 }
 impl InputBuilder {
     /// The Unique ARN of the input (generated, immutable).
@@ -439,6 +453,34 @@ impl InputBuilder {
     pub fn get_srt_settings(&self) -> &::std::option::Option<crate::types::SrtSettings> {
         &self.srt_settings
     }
+    /// The location of this input. AWS, for an input existing in the AWS Cloud, On-Prem for an input in a customer network.
+    pub fn input_network_location(mut self, input: crate::types::InputNetworkLocation) -> Self {
+        self.input_network_location = ::std::option::Option::Some(input);
+        self
+    }
+    /// The location of this input. AWS, for an input existing in the AWS Cloud, On-Prem for an input in a customer network.
+    pub fn set_input_network_location(mut self, input: ::std::option::Option<crate::types::InputNetworkLocation>) -> Self {
+        self.input_network_location = input;
+        self
+    }
+    /// The location of this input. AWS, for an input existing in the AWS Cloud, On-Prem for an input in a customer network.
+    pub fn get_input_network_location(&self) -> &::std::option::Option<crate::types::InputNetworkLocation> {
+        &self.input_network_location
+    }
+    /// Multicast Input settings.
+    pub fn multicast_settings(mut self, input: crate::types::MulticastSettings) -> Self {
+        self.multicast_settings = ::std::option::Option::Some(input);
+        self
+    }
+    /// Multicast Input settings.
+    pub fn set_multicast_settings(mut self, input: ::std::option::Option<crate::types::MulticastSettings>) -> Self {
+        self.multicast_settings = input;
+        self
+    }
+    /// Multicast Input settings.
+    pub fn get_multicast_settings(&self) -> &::std::option::Option<crate::types::MulticastSettings> {
+        &self.multicast_settings
+    }
     /// Consumes the builder and constructs a [`Input`](crate::types::Input).
     pub fn build(self) -> crate::types::Input {
         crate::types::Input {
@@ -459,6 +501,8 @@ impl InputBuilder {
             tags: self.tags,
             r#type: self.r#type,
             srt_settings: self.srt_settings,
+            input_network_location: self.input_network_location,
+            multicast_settings: self.multicast_settings,
         }
     }
 }

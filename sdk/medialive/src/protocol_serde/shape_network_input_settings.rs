@@ -12,6 +12,12 @@ pub fn ser_network_input_settings(
     if let Some(var_3) = &input.server_validation {
         object.key("serverValidation").string(var_3.as_str());
     }
+    if let Some(var_4) = &input.multicast_input_settings {
+        #[allow(unused_mut)]
+        let mut object_5 = object.key("multicastInputSettings").start_object();
+        crate::protocol_serde::shape_multicast_input_settings::ser_multicast_input_settings(&mut object_5, var_4)?;
+        object_5.finish();
+    }
     Ok(())
 }
 
@@ -38,6 +44,11 @@ where
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| crate::types::NetworkInputServerValidation::from(u.as_ref())))
                                     .transpose()?,
+                            );
+                        }
+                        "multicastInputSettings" => {
+                            builder = builder.set_multicast_input_settings(
+                                crate::protocol_serde::shape_multicast_input_settings::de_multicast_input_settings(tokens)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

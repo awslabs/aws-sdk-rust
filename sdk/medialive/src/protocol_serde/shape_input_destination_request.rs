@@ -6,5 +6,23 @@ pub fn ser_input_destination_request(
     if let Some(var_1) = &input.stream_name {
         object.key("streamName").string(var_1.as_str());
     }
+    if let Some(var_2) = &input.network {
+        object.key("network").string(var_2.as_str());
+    }
+    if let Some(var_3) = &input.network_routes {
+        let mut array_4 = object.key("networkRoutes").start_array();
+        for item_5 in var_3 {
+            {
+                #[allow(unused_mut)]
+                let mut object_6 = array_4.value().start_object();
+                crate::protocol_serde::shape_input_request_destination_route::ser_input_request_destination_route(&mut object_6, item_5)?;
+                object_6.finish();
+            }
+        }
+        array_4.finish();
+    }
+    if let Some(var_7) = &input.static_ip_address {
+        object.key("staticIpAddress").string(var_7.as_str());
+    }
     Ok(())
 }

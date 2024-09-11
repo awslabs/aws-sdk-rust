@@ -6,7 +6,7 @@
 pub struct ListReservationsInput {
     /// Filter by channel class, 'STANDARD' or 'SINGLE_PIPELINE'
     pub channel_class: ::std::option::Option<::std::string::String>,
-    /// Filter by codec, 'AVC', 'HEVC', 'MPEG2', 'AUDIO', or 'LINK'
+    /// Filter by codec, 'AVC', 'HEVC', 'MPEG2', 'AUDIO', 'LINK', or 'AV1'
     pub codec: ::std::option::Option<::std::string::String>,
     /// Placeholder documentation for MaxResults
     pub max_results: ::std::option::Option<i32>,
@@ -30,7 +30,7 @@ impl ListReservationsInput {
     pub fn channel_class(&self) -> ::std::option::Option<&str> {
         self.channel_class.as_deref()
     }
-    /// Filter by codec, 'AVC', 'HEVC', 'MPEG2', 'AUDIO', or 'LINK'
+    /// Filter by codec, 'AVC', 'HEVC', 'MPEG2', 'AUDIO', 'LINK', or 'AV1'
     pub fn codec(&self) -> ::std::option::Option<&str> {
         self.codec.as_deref()
     }
@@ -104,17 +104,17 @@ impl ListReservationsInputBuilder {
     pub fn get_channel_class(&self) -> &::std::option::Option<::std::string::String> {
         &self.channel_class
     }
-    /// Filter by codec, 'AVC', 'HEVC', 'MPEG2', 'AUDIO', or 'LINK'
+    /// Filter by codec, 'AVC', 'HEVC', 'MPEG2', 'AUDIO', 'LINK', or 'AV1'
     pub fn codec(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.codec = ::std::option::Option::Some(input.into());
         self
     }
-    /// Filter by codec, 'AVC', 'HEVC', 'MPEG2', 'AUDIO', or 'LINK'
+    /// Filter by codec, 'AVC', 'HEVC', 'MPEG2', 'AUDIO', 'LINK', or 'AV1'
     pub fn set_codec(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.codec = input;
         self
     }
-    /// Filter by codec, 'AVC', 'HEVC', 'MPEG2', 'AUDIO', or 'LINK'
+    /// Filter by codec, 'AVC', 'HEVC', 'MPEG2', 'AUDIO', 'LINK', or 'AV1'
     pub fn get_codec(&self) -> &::std::option::Option<::std::string::String> {
         &self.codec
     }

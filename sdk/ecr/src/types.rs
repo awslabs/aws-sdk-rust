@@ -262,5 +262,5 @@ mod _vulnerable_package;
 /// Builders
 pub mod builders;
 
-/// Error types that Amazon EC2 Container Registry can respond with.
+/// Error types that Amazon Elastic Container Registry can respond with.
 pub mod error;

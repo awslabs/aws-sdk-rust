@@ -148,6 +148,22 @@ pub trait Waiters {
     fn wait_until_channel_running(&self) -> crate::waiters::channel_running::ChannelRunningFluentBuilder;
     /// Wait until a channel has is stopped
     fn wait_until_channel_stopped(&self) -> crate::waiters::channel_stopped::ChannelStoppedFluentBuilder;
+    /// Wait until the channel placement group has been assigned
+    fn wait_until_channel_placement_group_assigned(
+        &self,
+    ) -> crate::waiters::channel_placement_group_assigned::ChannelPlacementGroupAssignedFluentBuilder;
+    /// Wait until the channel placement group has been deleted
+    fn wait_until_channel_placement_group_deleted(
+        &self,
+    ) -> crate::waiters::channel_placement_group_deleted::ChannelPlacementGroupDeletedFluentBuilder;
+    /// Wait until the channel placement group has been unassigned
+    fn wait_until_channel_placement_group_unassigned(
+        &self,
+    ) -> crate::waiters::channel_placement_group_unassigned::ChannelPlacementGroupUnassignedFluentBuilder;
+    /// Wait until a cluster has been created
+    fn wait_until_cluster_created(&self) -> crate::waiters::cluster_created::ClusterCreatedFluentBuilder;
+    /// Wait until a cluster has been deleted
+    fn wait_until_cluster_deleted(&self) -> crate::waiters::cluster_deleted::ClusterDeletedFluentBuilder;
     /// Wait until an input has been attached
     fn wait_until_input_attached(&self) -> crate::waiters::input_attached::InputAttachedFluentBuilder;
     /// Wait until an input has been deleted
@@ -162,6 +178,10 @@ pub trait Waiters {
     fn wait_until_multiplex_running(&self) -> crate::waiters::multiplex_running::MultiplexRunningFluentBuilder;
     /// Wait until a multiplex has is stopped
     fn wait_until_multiplex_stopped(&self) -> crate::waiters::multiplex_stopped::MultiplexStoppedFluentBuilder;
+    /// Wait until a node has been deregistered
+    fn wait_until_node_deregistered(&self) -> crate::waiters::node_deregistered::NodeDeregisteredFluentBuilder;
+    /// Wait until a node has been registered
+    fn wait_until_node_registered(&self) -> crate::waiters::node_registered::NodeRegisteredFluentBuilder;
     /// Wait until a signal map has been created
     fn wait_until_signal_map_created(&self) -> crate::waiters::signal_map_created::SignalMapCreatedFluentBuilder;
     /// Wait until a signal map's monitor has been deleted
@@ -184,6 +204,27 @@ impl Waiters for Client {
     fn wait_until_channel_stopped(&self) -> crate::waiters::channel_stopped::ChannelStoppedFluentBuilder {
         crate::waiters::channel_stopped::ChannelStoppedFluentBuilder::new(self.handle.clone())
     }
+    fn wait_until_channel_placement_group_assigned(
+        &self,
+    ) -> crate::waiters::channel_placement_group_assigned::ChannelPlacementGroupAssignedFluentBuilder {
+        crate::waiters::channel_placement_group_assigned::ChannelPlacementGroupAssignedFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_channel_placement_group_deleted(
+        &self,
+    ) -> crate::waiters::channel_placement_group_deleted::ChannelPlacementGroupDeletedFluentBuilder {
+        crate::waiters::channel_placement_group_deleted::ChannelPlacementGroupDeletedFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_channel_placement_group_unassigned(
+        &self,
+    ) -> crate::waiters::channel_placement_group_unassigned::ChannelPlacementGroupUnassignedFluentBuilder {
+        crate::waiters::channel_placement_group_unassigned::ChannelPlacementGroupUnassignedFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_cluster_created(&self) -> crate::waiters::cluster_created::ClusterCreatedFluentBuilder {
+        crate::waiters::cluster_created::ClusterCreatedFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_cluster_deleted(&self) -> crate::waiters::cluster_deleted::ClusterDeletedFluentBuilder {
+        crate::waiters::cluster_deleted::ClusterDeletedFluentBuilder::new(self.handle.clone())
+    }
     fn wait_until_input_attached(&self) -> crate::waiters::input_attached::InputAttachedFluentBuilder {
         crate::waiters::input_attached::InputAttachedFluentBuilder::new(self.handle.clone())
     }
@@ -204,6 +245,12 @@ impl Waiters for Client {
     }
     fn wait_until_multiplex_stopped(&self) -> crate::waiters::multiplex_stopped::MultiplexStoppedFluentBuilder {
         crate::waiters::multiplex_stopped::MultiplexStoppedFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_node_deregistered(&self) -> crate::waiters::node_deregistered::NodeDeregisteredFluentBuilder {
+        crate::waiters::node_deregistered::NodeDeregisteredFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_node_registered(&self) -> crate::waiters::node_registered::NodeRegisteredFluentBuilder {
+        crate::waiters::node_registered::NodeRegisteredFluentBuilder::new(self.handle.clone())
     }
     fn wait_until_signal_map_created(&self) -> crate::waiters::signal_map_created::SignalMapCreatedFluentBuilder {
         crate::waiters::signal_map_created::SignalMapCreatedFluentBuilder::new(self.handle.clone())
@@ -251,9 +298,13 @@ mod claim_device;
 
 mod create_channel;
 
+mod create_channel_placement_group;
+
 mod create_cloud_watch_alarm_template;
 
 mod create_cloud_watch_alarm_template_group;
+
+mod create_cluster;
 
 mod create_event_bridge_rule_template;
 
@@ -266,6 +317,12 @@ mod create_input_security_group;
 mod create_multiplex;
 
 mod create_multiplex_program;
+
+mod create_network;
+
+mod create_node;
+
+mod create_node_registration_script;
 
 mod create_partner_input;
 
@@ -302,9 +359,13 @@ pub mod customize;
 
 mod delete_channel;
 
+mod delete_channel_placement_group;
+
 mod delete_cloud_watch_alarm_template;
 
 mod delete_cloud_watch_alarm_template_group;
+
+mod delete_cluster;
 
 mod delete_event_bridge_rule_template;
 
@@ -318,6 +379,10 @@ mod delete_multiplex;
 
 mod delete_multiplex_program;
 
+mod delete_network;
+
+mod delete_node;
+
 mod delete_reservation;
 
 mod delete_schedule;
@@ -330,6 +395,10 @@ mod describe_account_configuration;
 
 mod describe_channel;
 
+mod describe_channel_placement_group;
+
+mod describe_cluster;
+
 mod describe_input;
 
 mod describe_input_device;
@@ -341,6 +410,10 @@ mod describe_input_security_group;
 mod describe_multiplex;
 
 mod describe_multiplex_program;
+
+mod describe_network;
+
+mod describe_node;
 
 mod describe_offering;
 
@@ -360,11 +433,15 @@ mod get_event_bridge_rule_template_group;
 
 mod get_signal_map;
 
+mod list_channel_placement_groups;
+
 mod list_channels;
 
 mod list_cloud_watch_alarm_template_groups;
 
 mod list_cloud_watch_alarm_templates;
+
+mod list_clusters;
 
 mod list_event_bridge_rule_template_groups;
 
@@ -381,6 +458,10 @@ mod list_inputs;
 mod list_multiplex_programs;
 
 mod list_multiplexes;
+
+mod list_networks;
+
+mod list_nodes;
 
 mod list_offerings;
 
@@ -426,9 +507,13 @@ mod update_channel;
 
 mod update_channel_class;
 
+mod update_channel_placement_group;
+
 mod update_cloud_watch_alarm_template;
 
 mod update_cloud_watch_alarm_template_group;
+
+mod update_cluster;
 
 mod update_event_bridge_rule_template;
 
@@ -443,5 +528,11 @@ mod update_input_security_group;
 mod update_multiplex;
 
 mod update_multiplex_program;
+
+mod update_network;
+
+mod update_node;
+
+mod update_node_state;
 
 mod update_reservation;

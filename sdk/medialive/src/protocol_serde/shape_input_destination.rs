@@ -38,6 +38,18 @@ where
                         "vpc" => {
                             builder = builder.set_vpc(crate::protocol_serde::shape_input_destination_vpc::de_input_destination_vpc(tokens)?);
                         }
+                        "network" => {
+                            builder = builder.set_network(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "networkRoutes" => {
+                            builder = builder.set_network_routes(
+                                crate::protocol_serde::shape_list_of_input_destination_route::de_list_of_input_destination_route(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

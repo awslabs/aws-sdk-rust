@@ -24,6 +24,17 @@ pub struct BotLocaleImportSpecification {
     /// </ul>
     pub nlu_intent_confidence_threshold: ::std::option::Option<f64>,
     /// <p>Defines settings for using an Amazon Polly voice to communicate with a user.</p>
+    /// <p>Valid values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>standard</code></p></li>
+    /// <li>
+    /// <p><code>neural</code></p></li>
+    /// <li>
+    /// <p><code>long-form</code></p></li>
+    /// <li>
+    /// <p><code>generative</code></p></li>
+    /// </ul>
     pub voice_settings: ::std::option::Option<crate::types::VoiceSettings>,
 }
 impl BotLocaleImportSpecification {
@@ -58,6 +69,17 @@ impl BotLocaleImportSpecification {
         self.nlu_intent_confidence_threshold
     }
     /// <p>Defines settings for using an Amazon Polly voice to communicate with a user.</p>
+    /// <p>Valid values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>standard</code></p></li>
+    /// <li>
+    /// <p><code>neural</code></p></li>
+    /// <li>
+    /// <p><code>long-form</code></p></li>
+    /// <li>
+    /// <p><code>generative</code></p></li>
+    /// </ul>
     pub fn voice_settings(&self) -> ::std::option::Option<&crate::types::VoiceSettings> {
         self.voice_settings.as_ref()
     }
@@ -173,16 +195,49 @@ impl BotLocaleImportSpecificationBuilder {
         &self.nlu_intent_confidence_threshold
     }
     /// <p>Defines settings for using an Amazon Polly voice to communicate with a user.</p>
+    /// <p>Valid values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>standard</code></p></li>
+    /// <li>
+    /// <p><code>neural</code></p></li>
+    /// <li>
+    /// <p><code>long-form</code></p></li>
+    /// <li>
+    /// <p><code>generative</code></p></li>
+    /// </ul>
     pub fn voice_settings(mut self, input: crate::types::VoiceSettings) -> Self {
         self.voice_settings = ::std::option::Option::Some(input);
         self
     }
     /// <p>Defines settings for using an Amazon Polly voice to communicate with a user.</p>
+    /// <p>Valid values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>standard</code></p></li>
+    /// <li>
+    /// <p><code>neural</code></p></li>
+    /// <li>
+    /// <p><code>long-form</code></p></li>
+    /// <li>
+    /// <p><code>generative</code></p></li>
+    /// </ul>
     pub fn set_voice_settings(mut self, input: ::std::option::Option<crate::types::VoiceSettings>) -> Self {
         self.voice_settings = input;
         self
     }
     /// <p>Defines settings for using an Amazon Polly voice to communicate with a user.</p>
+    /// <p>Valid values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>standard</code></p></li>
+    /// <li>
+    /// <p><code>neural</code></p></li>
+    /// <li>
+    /// <p><code>long-form</code></p></li>
+    /// <li>
+    /// <p><code>generative</code></p></li>
+    /// </ul>
     pub fn get_voice_settings(&self) -> &::std::option::Option<crate::types::VoiceSettings> {
         &self.voice_settings
     }

@@ -108,17 +108,17 @@ impl CreateThreatIntelSetFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The unique ID of the detector of the GuardDuty account that you want to create a threatIntelSet for.</p>
+    /// <p>The unique ID of the detector of the GuardDuty account for which you want to create a <code>ThreatIntelSet</code>.</p>
     pub fn detector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.detector_id(input.into());
         self
     }
-    /// <p>The unique ID of the detector of the GuardDuty account that you want to create a threatIntelSet for.</p>
+    /// <p>The unique ID of the detector of the GuardDuty account for which you want to create a <code>ThreatIntelSet</code>.</p>
     pub fn set_detector_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_detector_id(input);
         self
     }
-    /// <p>The unique ID of the detector of the GuardDuty account that you want to create a threatIntelSet for.</p>
+    /// <p>The unique ID of the detector of the GuardDuty account for which you want to create a <code>ThreatIntelSet</code>.</p>
     pub fn get_detector_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_detector_id()
     }

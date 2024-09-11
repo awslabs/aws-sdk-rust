@@ -27,6 +27,12 @@ pub fn ser_video_codec_settings(
         crate::protocol_serde::shape_mpeg2_settings::ser_mpeg2_settings(&mut object_8, var_7)?;
         object_8.finish();
     }
+    if let Some(var_9) = &input.av1_settings {
+        #[allow(unused_mut)]
+        let mut object_10 = object.key("av1Settings").start_object();
+        crate::protocol_serde::shape_av1_settings::ser_av1_settings(&mut object_10, var_9)?;
+        object_10.finish();
+    }
     Ok(())
 }
 
@@ -57,6 +63,9 @@ where
                         }
                         "mpeg2Settings" => {
                             builder = builder.set_mpeg2_settings(crate::protocol_serde::shape_mpeg2_settings::de_mpeg2_settings(tokens)?);
+                        }
+                        "av1Settings" => {
+                            builder = builder.set_av1_settings(crate::protocol_serde::shape_av1_settings::de_av1_settings(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

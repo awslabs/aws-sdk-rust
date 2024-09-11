@@ -25,11 +25,17 @@ pub mod claim_device;
 /// Types for the `CreateChannel` operation.
 pub mod create_channel;
 
+/// Types for the `CreateChannelPlacementGroup` operation.
+pub mod create_channel_placement_group;
+
 /// Types for the `CreateCloudWatchAlarmTemplate` operation.
 pub mod create_cloud_watch_alarm_template;
 
 /// Types for the `CreateCloudWatchAlarmTemplateGroup` operation.
 pub mod create_cloud_watch_alarm_template_group;
+
+/// Types for the `CreateCluster` operation.
+pub mod create_cluster;
 
 /// Types for the `CreateEventBridgeRuleTemplate` operation.
 pub mod create_event_bridge_rule_template;
@@ -49,6 +55,15 @@ pub mod create_multiplex;
 /// Types for the `CreateMultiplexProgram` operation.
 pub mod create_multiplex_program;
 
+/// Types for the `CreateNetwork` operation.
+pub mod create_network;
+
+/// Types for the `CreateNode` operation.
+pub mod create_node;
+
+/// Types for the `CreateNodeRegistrationScript` operation.
+pub mod create_node_registration_script;
+
 /// Types for the `CreatePartnerInput` operation.
 pub mod create_partner_input;
 
@@ -61,11 +76,17 @@ pub mod create_tags;
 /// Types for the `DeleteChannel` operation.
 pub mod delete_channel;
 
+/// Types for the `DeleteChannelPlacementGroup` operation.
+pub mod delete_channel_placement_group;
+
 /// Types for the `DeleteCloudWatchAlarmTemplate` operation.
 pub mod delete_cloud_watch_alarm_template;
 
 /// Types for the `DeleteCloudWatchAlarmTemplateGroup` operation.
 pub mod delete_cloud_watch_alarm_template_group;
+
+/// Types for the `DeleteCluster` operation.
+pub mod delete_cluster;
 
 /// Types for the `DeleteEventBridgeRuleTemplate` operation.
 pub mod delete_event_bridge_rule_template;
@@ -85,6 +106,12 @@ pub mod delete_multiplex;
 /// Types for the `DeleteMultiplexProgram` operation.
 pub mod delete_multiplex_program;
 
+/// Types for the `DeleteNetwork` operation.
+pub mod delete_network;
+
+/// Types for the `DeleteNode` operation.
+pub mod delete_node;
+
 /// Types for the `DeleteReservation` operation.
 pub mod delete_reservation;
 
@@ -103,6 +130,12 @@ pub mod describe_account_configuration;
 /// Types for the `DescribeChannel` operation.
 pub mod describe_channel;
 
+/// Types for the `DescribeChannelPlacementGroup` operation.
+pub mod describe_channel_placement_group;
+
+/// Types for the `DescribeCluster` operation.
+pub mod describe_cluster;
+
 /// Types for the `DescribeInput` operation.
 pub mod describe_input;
 
@@ -120,6 +153,12 @@ pub mod describe_multiplex;
 
 /// Types for the `DescribeMultiplexProgram` operation.
 pub mod describe_multiplex_program;
+
+/// Types for the `DescribeNetwork` operation.
+pub mod describe_network;
+
+/// Types for the `DescribeNode` operation.
+pub mod describe_node;
 
 /// Types for the `DescribeOffering` operation.
 pub mod describe_offering;
@@ -148,6 +187,9 @@ pub mod get_event_bridge_rule_template_group;
 /// Types for the `GetSignalMap` operation.
 pub mod get_signal_map;
 
+/// Types for the `ListChannelPlacementGroups` operation.
+pub mod list_channel_placement_groups;
+
 /// Types for the `ListChannels` operation.
 pub mod list_channels;
 
@@ -156,6 +198,9 @@ pub mod list_cloud_watch_alarm_template_groups;
 
 /// Types for the `ListCloudWatchAlarmTemplates` operation.
 pub mod list_cloud_watch_alarm_templates;
+
+/// Types for the `ListClusters` operation.
+pub mod list_clusters;
 
 /// Types for the `ListEventBridgeRuleTemplateGroups` operation.
 pub mod list_event_bridge_rule_template_groups;
@@ -180,6 +225,12 @@ pub mod list_multiplex_programs;
 
 /// Types for the `ListMultiplexes` operation.
 pub mod list_multiplexes;
+
+/// Types for the `ListNetworks` operation.
+pub mod list_networks;
+
+/// Types for the `ListNodes` operation.
+pub mod list_nodes;
 
 /// Types for the `ListOfferings` operation.
 pub mod list_offerings;
@@ -247,11 +298,17 @@ pub mod update_channel;
 /// Types for the `UpdateChannelClass` operation.
 pub mod update_channel_class;
 
+/// Types for the `UpdateChannelPlacementGroup` operation.
+pub mod update_channel_placement_group;
+
 /// Types for the `UpdateCloudWatchAlarmTemplate` operation.
 pub mod update_cloud_watch_alarm_template;
 
 /// Types for the `UpdateCloudWatchAlarmTemplateGroup` operation.
 pub mod update_cloud_watch_alarm_template_group;
+
+/// Types for the `UpdateCluster` operation.
+pub mod update_cluster;
 
 /// Types for the `UpdateEventBridgeRuleTemplate` operation.
 pub mod update_event_bridge_rule_template;
@@ -273,6 +330,15 @@ pub mod update_multiplex;
 
 /// Types for the `UpdateMultiplexProgram` operation.
 pub mod update_multiplex_program;
+
+/// Types for the `UpdateNetwork` operation.
+pub mod update_network;
+
+/// Types for the `UpdateNode` operation.
+pub mod update_node;
+
+/// Types for the `UpdateNodeState` operation.
+pub mod update_node_state;
 
 /// Types for the `UpdateReservation` operation.
 pub mod update_reservation;

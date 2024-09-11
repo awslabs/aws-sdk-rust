@@ -42,6 +42,18 @@ pub fn ser_output_destination(
         }
         array_9.finish();
     }
+    if let Some(var_12) = &input.srt_settings {
+        let mut array_13 = object.key("srtSettings").start_array();
+        for item_14 in var_12 {
+            {
+                #[allow(unused_mut)]
+                let mut object_15 = array_13.value().start_object();
+                crate::protocol_serde::shape_srt_output_destination_settings::ser_srt_output_destination_settings(&mut object_15, item_14)?;
+                object_15.finish();
+            }
+        }
+        array_13.finish();
+    }
     Ok(())
 }
 
@@ -80,6 +92,13 @@ where
                         "settings" => {
                             builder = builder.set_settings(
                                 crate::protocol_serde::shape_list_of_output_destination_settings::de_list_of_output_destination_settings(tokens)?,
+                            );
+                        }
+                        "srtSettings" => {
+                            builder = builder.set_srt_settings(
+                                crate::protocol_serde::shape_list_of_srt_output_destination_settings::de_list_of_srt_output_destination_settings(
+                                    tokens,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

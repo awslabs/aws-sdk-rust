@@ -22,7 +22,8 @@ impl crate::operation::get_findings_statistics::builders::GetFindingsStatisticsI
 }
 /// Fluent builder constructing a request to `GetFindingsStatistics`.
 ///
-/// <p>Lists Amazon GuardDuty findings statistics for the specified detector ID.</p>
+/// <p>Lists GuardDuty findings statistics for the specified detector ID.</p>
+/// <p>You must provide either <code>findingStatisticTypes</code> or <code>groupBy</code> parameter, and not both. You can use the <code>maxResults</code> and <code>orderBy</code> parameters only when using <code>groupBy</code>.</p>
 /// <p>There might be regional differences because some flags might not be available in all the Regions where GuardDuty is currently supported. For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions and endpoints</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetFindingsStatisticsFluentBuilder {
@@ -109,17 +110,17 @@ impl GetFindingsStatisticsFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The ID of the detector that specifies the GuardDuty service whose findings' statistics you want to retrieve.</p>
+    /// <p>The ID of the detector whose findings statistics you want to retrieve.</p>
     pub fn detector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.detector_id(input.into());
         self
     }
-    /// <p>The ID of the detector that specifies the GuardDuty service whose findings' statistics you want to retrieve.</p>
+    /// <p>The ID of the detector whose findings statistics you want to retrieve.</p>
     pub fn set_detector_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_detector_id(input);
         self
     }
-    /// <p>The ID of the detector that specifies the GuardDuty service whose findings' statistics you want to retrieve.</p>
+    /// <p>The ID of the detector whose findings statistics you want to retrieve.</p>
     pub fn get_detector_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_detector_id()
     }
@@ -129,16 +130,19 @@ impl GetFindingsStatisticsFluentBuilder {
     /// To override the contents of this collection use [`set_finding_statistic_types`](Self::set_finding_statistic_types).
     ///
     /// <p>The types of finding statistics to retrieve.</p>
+    #[deprecated(note = "This parameter is deprecated, please use GroupBy instead")]
     pub fn finding_statistic_types(mut self, input: crate::types::FindingStatisticType) -> Self {
         self.inner = self.inner.finding_statistic_types(input);
         self
     }
     /// <p>The types of finding statistics to retrieve.</p>
+    #[deprecated(note = "This parameter is deprecated, please use GroupBy instead")]
     pub fn set_finding_statistic_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FindingStatisticType>>) -> Self {
         self.inner = self.inner.set_finding_statistic_types(input);
         self
     }
     /// <p>The types of finding statistics to retrieve.</p>
+    #[deprecated(note = "This parameter is deprecated, please use GroupBy instead")]
     pub fn get_finding_statistic_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FindingStatisticType>> {
         self.inner.get_finding_statistic_types()
     }
@@ -155,5 +159,53 @@ impl GetFindingsStatisticsFluentBuilder {
     /// <p>Represents the criteria that is used for querying findings.</p>
     pub fn get_finding_criteria(&self) -> &::std::option::Option<crate::types::FindingCriteria> {
         self.inner.get_finding_criteria()
+    }
+    /// <p>Displays the findings statistics grouped by one of the listed valid values.</p>
+    pub fn group_by(mut self, input: crate::types::GroupByType) -> Self {
+        self.inner = self.inner.group_by(input);
+        self
+    }
+    /// <p>Displays the findings statistics grouped by one of the listed valid values.</p>
+    pub fn set_group_by(mut self, input: ::std::option::Option<crate::types::GroupByType>) -> Self {
+        self.inner = self.inner.set_group_by(input);
+        self
+    }
+    /// <p>Displays the findings statistics grouped by one of the listed valid values.</p>
+    pub fn get_group_by(&self) -> &::std::option::Option<crate::types::GroupByType> {
+        self.inner.get_group_by()
+    }
+    /// <p>Displays the sorted findings in the requested order. The default value of <code>orderBy</code> is <code>DESC</code>.</p>
+    /// <p>You can use this parameter only with the <code>groupBy</code> parameter.</p>
+    pub fn order_by(mut self, input: crate::types::OrderBy) -> Self {
+        self.inner = self.inner.order_by(input);
+        self
+    }
+    /// <p>Displays the sorted findings in the requested order. The default value of <code>orderBy</code> is <code>DESC</code>.</p>
+    /// <p>You can use this parameter only with the <code>groupBy</code> parameter.</p>
+    pub fn set_order_by(mut self, input: ::std::option::Option<crate::types::OrderBy>) -> Self {
+        self.inner = self.inner.set_order_by(input);
+        self
+    }
+    /// <p>Displays the sorted findings in the requested order. The default value of <code>orderBy</code> is <code>DESC</code>.</p>
+    /// <p>You can use this parameter only with the <code>groupBy</code> parameter.</p>
+    pub fn get_order_by(&self) -> &::std::option::Option<crate::types::OrderBy> {
+        self.inner.get_order_by()
+    }
+    /// <p>The maximum number of results to be returned in the response. The default value is 25.</p>
+    /// <p>You can use this parameter only with the <code>groupBy</code> parameter.</p>
+    pub fn max_results(mut self, input: i32) -> Self {
+        self.inner = self.inner.max_results(input);
+        self
+    }
+    /// <p>The maximum number of results to be returned in the response. The default value is 25.</p>
+    /// <p>You can use this parameter only with the <code>groupBy</code> parameter.</p>
+    pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.inner = self.inner.set_max_results(input);
+        self
+    }
+    /// <p>The maximum number of results to be returned in the response. The default value is 25.</p>
+    /// <p>You can use this parameter only with the <code>groupBy</code> parameter.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
 }

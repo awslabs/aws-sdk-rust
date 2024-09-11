@@ -22,7 +22,7 @@ impl crate::operation::retrieve_and_generate::builders::RetrieveAndGenerateInput
 }
 /// Fluent builder constructing a request to `RetrieveAndGenerate`.
 ///
-/// <p>Queries a knowledge base and generates responses based on the retrieved results. The response only cites sources that are relevant to the query.</p>
+/// <p>Queries a knowledge base and generates responses based on the retrieved results and using the specified foundation model or <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference.html">inference profile</a>. The response only cites sources that are relevant to the query.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RetrieveAndGenerateFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

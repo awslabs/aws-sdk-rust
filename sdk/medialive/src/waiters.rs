@@ -6,11 +6,26 @@ pub mod channel_created;
 /// Supporting types for the `channel_deleted` waiter.
 pub mod channel_deleted;
 
+/// Supporting types for the `channel_placement_group_assigned` waiter.
+pub mod channel_placement_group_assigned;
+
+/// Supporting types for the `channel_placement_group_deleted` waiter.
+pub mod channel_placement_group_deleted;
+
+/// Supporting types for the `channel_placement_group_unassigned` waiter.
+pub mod channel_placement_group_unassigned;
+
 /// Supporting types for the `channel_running` waiter.
 pub mod channel_running;
 
 /// Supporting types for the `channel_stopped` waiter.
 pub mod channel_stopped;
+
+/// Supporting types for the `cluster_created` waiter.
+pub mod cluster_created;
+
+/// Supporting types for the `cluster_deleted` waiter.
+pub mod cluster_deleted;
 
 /// Supporting types for the `input_attached` waiter.
 pub mod input_attached;
@@ -32,6 +47,12 @@ pub mod multiplex_running;
 
 /// Supporting types for the `multiplex_stopped` waiter.
 pub mod multiplex_stopped;
+
+/// Supporting types for the `node_deregistered` waiter.
+pub mod node_deregistered;
+
+/// Supporting types for the `node_registered` waiter.
+pub mod node_registered;
 
 /// Supporting types for the `signal_map_created` waiter.
 pub mod signal_map_created;

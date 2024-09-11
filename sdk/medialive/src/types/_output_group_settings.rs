@@ -22,6 +22,8 @@ pub struct OutputGroupSettings {
     pub udp_group_settings: ::std::option::Option<crate::types::UdpGroupSettings>,
     /// Cmaf Ingest Group Settings
     pub cmaf_ingest_group_settings: ::std::option::Option<crate::types::CmafIngestGroupSettings>,
+    /// Srt Group Settings
+    pub srt_group_settings: ::std::option::Option<crate::types::SrtGroupSettings>,
 }
 impl OutputGroupSettings {
     /// Archive Group Settings
@@ -60,6 +62,10 @@ impl OutputGroupSettings {
     pub fn cmaf_ingest_group_settings(&self) -> ::std::option::Option<&crate::types::CmafIngestGroupSettings> {
         self.cmaf_ingest_group_settings.as_ref()
     }
+    /// Srt Group Settings
+    pub fn srt_group_settings(&self) -> ::std::option::Option<&crate::types::SrtGroupSettings> {
+        self.srt_group_settings.as_ref()
+    }
 }
 impl OutputGroupSettings {
     /// Creates a new builder-style object to manufacture [`OutputGroupSettings`](crate::types::OutputGroupSettings).
@@ -81,6 +87,7 @@ pub struct OutputGroupSettingsBuilder {
     pub(crate) rtmp_group_settings: ::std::option::Option<crate::types::RtmpGroupSettings>,
     pub(crate) udp_group_settings: ::std::option::Option<crate::types::UdpGroupSettings>,
     pub(crate) cmaf_ingest_group_settings: ::std::option::Option<crate::types::CmafIngestGroupSettings>,
+    pub(crate) srt_group_settings: ::std::option::Option<crate::types::SrtGroupSettings>,
 }
 impl OutputGroupSettingsBuilder {
     /// Archive Group Settings
@@ -209,6 +216,20 @@ impl OutputGroupSettingsBuilder {
     pub fn get_cmaf_ingest_group_settings(&self) -> &::std::option::Option<crate::types::CmafIngestGroupSettings> {
         &self.cmaf_ingest_group_settings
     }
+    /// Srt Group Settings
+    pub fn srt_group_settings(mut self, input: crate::types::SrtGroupSettings) -> Self {
+        self.srt_group_settings = ::std::option::Option::Some(input);
+        self
+    }
+    /// Srt Group Settings
+    pub fn set_srt_group_settings(mut self, input: ::std::option::Option<crate::types::SrtGroupSettings>) -> Self {
+        self.srt_group_settings = input;
+        self
+    }
+    /// Srt Group Settings
+    pub fn get_srt_group_settings(&self) -> &::std::option::Option<crate::types::SrtGroupSettings> {
+        &self.srt_group_settings
+    }
     /// Consumes the builder and constructs a [`OutputGroupSettings`](crate::types::OutputGroupSettings).
     pub fn build(self) -> crate::types::OutputGroupSettings {
         crate::types::OutputGroupSettings {
@@ -221,6 +242,7 @@ impl OutputGroupSettingsBuilder {
             rtmp_group_settings: self.rtmp_group_settings,
             udp_group_settings: self.udp_group_settings,
             cmaf_ingest_group_settings: self.cmaf_ingest_group_settings,
+            srt_group_settings: self.srt_group_settings,
         }
     }
 }

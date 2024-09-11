@@ -227,7 +227,6 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | Amazon DynamoDB | [aws-sdk-dynamodb](https://crates.io/crates/aws-sdk-dynamodb) ([docs](https://docs.rs/aws-sdk-dynamodb)) |
 | Amazon DynamoDB Accelerator (DAX) | [aws-sdk-dax](https://crates.io/crates/aws-sdk-dax) ([docs](https://docs.rs/aws-sdk-dax)) |
 | Amazon DynamoDB Streams | [aws-sdk-dynamodbstreams](https://crates.io/crates/aws-sdk-dynamodbstreams) ([docs](https://docs.rs/aws-sdk-dynamodbstreams)) |
-| Amazon EC2 Container Registry | [aws-sdk-ecr](https://crates.io/crates/aws-sdk-ecr) ([docs](https://docs.rs/aws-sdk-ecr)) |
 | Amazon EC2 Container Service | [aws-sdk-ecs](https://crates.io/crates/aws-sdk-ecs) ([docs](https://docs.rs/aws-sdk-ecs)) |
 | Amazon EKS Auth | [aws-sdk-eksauth](https://crates.io/crates/aws-sdk-eksauth) ([docs](https://docs.rs/aws-sdk-eksauth)) |
 | Amazon EMR | [aws-sdk-emr](https://crates.io/crates/aws-sdk-emr) ([docs](https://docs.rs/aws-sdk-emr)) |
@@ -236,6 +235,7 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | Amazon Elastic  Inference | [aws-sdk-elasticinference](https://crates.io/crates/aws-sdk-elasticinference) ([docs](https://docs.rs/aws-sdk-elasticinference)) |
 | Amazon Elastic Block Store | [aws-sdk-ebs](https://crates.io/crates/aws-sdk-ebs) ([docs](https://docs.rs/aws-sdk-ebs)) |
 | Amazon Elastic Compute Cloud | [aws-sdk-ec2](https://crates.io/crates/aws-sdk-ec2) ([docs](https://docs.rs/aws-sdk-ec2)) |
+| Amazon Elastic Container Registry | [aws-sdk-ecr](https://crates.io/crates/aws-sdk-ecr) ([docs](https://docs.rs/aws-sdk-ecr)) |
 | Amazon Elastic Container Registry Public | [aws-sdk-ecrpublic](https://crates.io/crates/aws-sdk-ecrpublic) ([docs](https://docs.rs/aws-sdk-ecrpublic)) |
 | Amazon Elastic File System | [aws-sdk-efs](https://crates.io/crates/aws-sdk-efs) ([docs](https://docs.rs/aws-sdk-efs)) |
 | Amazon Elastic Kubernetes Service | [aws-sdk-eks](https://crates.io/crates/aws-sdk-eks) ([docs](https://docs.rs/aws-sdk-eks)) |

@@ -18,5 +18,17 @@ pub fn ser_get_findings_statistics_input_input(
         }
         array_4.finish();
     }
+    if let Some(var_6) = &input.group_by {
+        object.key("groupBy").string(var_6.as_str());
+    }
+    if let Some(var_7) = &input.max_results {
+        object.key("maxResults").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_7).into()),
+        );
+    }
+    if let Some(var_8) = &input.order_by {
+        object.key("orderBy").string(var_8.as_str());
+    }
     Ok(())
 }

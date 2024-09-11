@@ -22,7 +22,7 @@ impl crate::operation::create_publishing_destination::builders::CreatePublishing
 }
 /// Fluent builder constructing a request to `CreatePublishingDestination`.
 ///
-/// <p>Creates a publishing destination to export findings to. The resource to export findings to must exist before you use this operation.</p>
+/// <p>Creates a publishing destination where you can export your GuardDuty findings. Before you start exporting the findings, the destination resource must exist.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreatePublishingDestinationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

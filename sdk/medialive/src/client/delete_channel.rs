@@ -23,6 +23,7 @@ impl super::Client {
     ///   - [`state(Option<ChannelState>)`](crate::operation::delete_channel::DeleteChannelOutput::state): Placeholder documentation for ChannelState
     ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::delete_channel::DeleteChannelOutput::tags): A collection of key-value pairs.
     ///   - [`vpc(Option<VpcOutputSettingsDescription>)`](crate::operation::delete_channel::DeleteChannelOutput::vpc): Settings for VPC output
+    ///   - [`anywhere_settings(Option<DescribeAnywhereSettings>)`](crate::operation::delete_channel::DeleteChannelOutput::anywhere_settings): Anywhere settings for this channel.
     /// - On failure, responds with [`SdkError<DeleteChannelError>`](crate::operation::delete_channel::DeleteChannelError)
     pub fn delete_channel(&self) -> crate::operation::delete_channel::builders::DeleteChannelFluentBuilder {
         crate::operation::delete_channel::builders::DeleteChannelFluentBuilder::new(self.handle.clone())

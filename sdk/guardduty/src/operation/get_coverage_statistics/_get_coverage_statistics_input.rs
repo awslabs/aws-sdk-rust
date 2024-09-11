@@ -3,19 +3,19 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetCoverageStatisticsInput {
-    /// <p>The unique ID of the GuardDuty detector associated to the coverage statistics.</p>
+    /// <p>The unique ID of the GuardDuty detector.</p>
     pub detector_id: ::std::option::Option<::std::string::String>,
-    /// <p>Represents the criteria used to filter the coverage statistics</p>
+    /// <p>Represents the criteria used to filter the coverage statistics.</p>
     pub filter_criteria: ::std::option::Option<crate::types::CoverageFilterCriteria>,
     /// <p>Represents the statistics type used to aggregate the coverage details.</p>
     pub statistics_type: ::std::option::Option<::std::vec::Vec<crate::types::CoverageStatisticsType>>,
 }
 impl GetCoverageStatisticsInput {
-    /// <p>The unique ID of the GuardDuty detector associated to the coverage statistics.</p>
+    /// <p>The unique ID of the GuardDuty detector.</p>
     pub fn detector_id(&self) -> ::std::option::Option<&str> {
         self.detector_id.as_deref()
     }
-    /// <p>Represents the criteria used to filter the coverage statistics</p>
+    /// <p>Represents the criteria used to filter the coverage statistics.</p>
     pub fn filter_criteria(&self) -> ::std::option::Option<&crate::types::CoverageFilterCriteria> {
         self.filter_criteria.as_ref()
     }
@@ -42,32 +42,32 @@ pub struct GetCoverageStatisticsInputBuilder {
     pub(crate) statistics_type: ::std::option::Option<::std::vec::Vec<crate::types::CoverageStatisticsType>>,
 }
 impl GetCoverageStatisticsInputBuilder {
-    /// <p>The unique ID of the GuardDuty detector associated to the coverage statistics.</p>
+    /// <p>The unique ID of the GuardDuty detector.</p>
     /// This field is required.
     pub fn detector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.detector_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique ID of the GuardDuty detector associated to the coverage statistics.</p>
+    /// <p>The unique ID of the GuardDuty detector.</p>
     pub fn set_detector_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.detector_id = input;
         self
     }
-    /// <p>The unique ID of the GuardDuty detector associated to the coverage statistics.</p>
+    /// <p>The unique ID of the GuardDuty detector.</p>
     pub fn get_detector_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.detector_id
     }
-    /// <p>Represents the criteria used to filter the coverage statistics</p>
+    /// <p>Represents the criteria used to filter the coverage statistics.</p>
     pub fn filter_criteria(mut self, input: crate::types::CoverageFilterCriteria) -> Self {
         self.filter_criteria = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Represents the criteria used to filter the coverage statistics</p>
+    /// <p>Represents the criteria used to filter the coverage statistics.</p>
     pub fn set_filter_criteria(mut self, input: ::std::option::Option<crate::types::CoverageFilterCriteria>) -> Self {
         self.filter_criteria = input;
         self
     }
-    /// <p>Represents the criteria used to filter the coverage statistics</p>
+    /// <p>Represents the criteria used to filter the coverage statistics.</p>
     pub fn get_filter_criteria(&self) -> &::std::option::Option<crate::types::CoverageFilterCriteria> {
         &self.filter_criteria
     }
