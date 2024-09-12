@@ -13,13 +13,15 @@ pub use crate::types::error::_glue_encryption_exception::GlueEncryptionException
 
 pub use crate::types::error::_operation_not_supported_exception::OperationNotSupportedExceptionBuilder;
 
+pub use crate::types::error::_validation_exception::ValidationExceptionBuilder;
+
+pub use crate::types::error::_throttling_exception::ThrottlingExceptionBuilder;
+
 pub use crate::types::error::_access_denied_exception::AccessDeniedExceptionBuilder;
 
 pub use crate::types::error::_resource_number_limit_exceeded_exception::ResourceNumberLimitExceededExceptionBuilder;
 
 pub use crate::types::error::_resource_not_ready_exception::ResourceNotReadyExceptionBuilder;
-
-pub use crate::types::error::_validation_exception::ValidationExceptionBuilder;
 
 pub use crate::types::error::_already_exists_exception::AlreadyExistsExceptionBuilder;
 

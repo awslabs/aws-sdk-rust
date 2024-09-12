@@ -9,6 +9,18 @@ pub fn ser_table_optimizer_configuration(
     if let Some(var_2) = &input.enabled {
         object.key("enabled").boolean(*var_2);
     }
+    if let Some(var_3) = &input.retention_configuration {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("retentionConfiguration").start_object();
+        crate::protocol_serde::shape_retention_configuration::ser_retention_configuration(&mut object_4, var_3)?;
+        object_4.finish();
+    }
+    if let Some(var_5) = &input.orphan_file_deletion_configuration {
+        #[allow(unused_mut)]
+        let mut object_6 = object.key("orphanFileDeletionConfiguration").start_object();
+        crate::protocol_serde::shape_orphan_file_deletion_configuration::ser_orphan_file_deletion_configuration(&mut object_6, var_5)?;
+        object_6.finish();
+    }
     Ok(())
 }
 
@@ -36,6 +48,16 @@ where
                         }
                         "enabled" => {
                             builder = builder.set_enabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
+                        "retentionConfiguration" => {
+                            builder = builder.set_retention_configuration(
+                                crate::protocol_serde::shape_retention_configuration::de_retention_configuration(tokens)?,
+                            );
+                        }
+                        "orphanFileDeletionConfiguration" => {
+                            builder = builder.set_orphan_file_deletion_configuration(
+                                crate::protocol_serde::shape_orphan_file_deletion_configuration::de_orphan_file_deletion_configuration(tokens)?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

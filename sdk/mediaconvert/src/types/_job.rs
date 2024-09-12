@@ -26,6 +26,10 @@ pub struct Job {
     pub hop_destinations: ::std::option::Option<::std::vec::Vec<crate::types::HopDestination>>,
     /// A portion of the job's ARN, unique within your AWS Elemental MediaConvert resources
     pub id: ::std::option::Option<::std::string::String>,
+    /// The Job engine version that you requested for your job. Valid versions are in a YYYY-MM-DD format.
+    pub job_engine_version_requested: ::std::option::Option<::std::string::String>,
+    /// The Job engine version that your job used. Job engine versions are in a YYYY-MM-DD format. When you request an expired version, the response for this property will be empty. Requests to create jobs with an expired version result in a regular job, as if no specific Job engine version was requested. When you request an invalid version, the response for this property will be empty. Requests to create jobs with an invalid version result in a 400 error message, and no job is created.
+    pub job_engine_version_used: ::std::option::Option<::std::string::String>,
     /// An estimate of how far your job has progressed. This estimate is shown as a percentage of the total time from when your job leaves its queue to when your output files appear in your output Amazon S3 bucket. AWS Elemental MediaConvert provides jobPercentComplete in CloudWatch STATUS_UPDATE events and in the response to GetJob and ListJobs requests. The jobPercentComplete estimate is reliable for the following input containers: Quicktime, Transport Stream, MP4, and MXF. For some jobs, the service can't provide information about job progress. In those cases, jobPercentComplete returns a null value.
     pub job_percent_complete: ::std::option::Option<i32>,
     /// The job template that the job is created from, if it is created from a job template.
@@ -105,6 +109,14 @@ impl Job {
     /// A portion of the job's ARN, unique within your AWS Elemental MediaConvert resources
     pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
+    }
+    /// The Job engine version that you requested for your job. Valid versions are in a YYYY-MM-DD format.
+    pub fn job_engine_version_requested(&self) -> ::std::option::Option<&str> {
+        self.job_engine_version_requested.as_deref()
+    }
+    /// The Job engine version that your job used. Job engine versions are in a YYYY-MM-DD format. When you request an expired version, the response for this property will be empty. Requests to create jobs with an expired version result in a regular job, as if no specific Job engine version was requested. When you request an invalid version, the response for this property will be empty. Requests to create jobs with an invalid version result in a 400 error message, and no job is created.
+    pub fn job_engine_version_used(&self) -> ::std::option::Option<&str> {
+        self.job_engine_version_used.as_deref()
     }
     /// An estimate of how far your job has progressed. This estimate is shown as a percentage of the total time from when your job leaves its queue to when your output files appear in your output Amazon S3 bucket. AWS Elemental MediaConvert provides jobPercentComplete in CloudWatch STATUS_UPDATE events and in the response to GetJob and ListJobs requests. The jobPercentComplete estimate is reliable for the following input containers: Quicktime, Transport Stream, MP4, and MXF. For some jobs, the service can't provide information about job progress. In those cases, jobPercentComplete returns a null value.
     pub fn job_percent_complete(&self) -> ::std::option::Option<i32> {
@@ -199,6 +211,8 @@ pub struct JobBuilder {
     pub(crate) error_message: ::std::option::Option<::std::string::String>,
     pub(crate) hop_destinations: ::std::option::Option<::std::vec::Vec<crate::types::HopDestination>>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
+    pub(crate) job_engine_version_requested: ::std::option::Option<::std::string::String>,
+    pub(crate) job_engine_version_used: ::std::option::Option<::std::string::String>,
     pub(crate) job_percent_complete: ::std::option::Option<i32>,
     pub(crate) job_template: ::std::option::Option<::std::string::String>,
     pub(crate) messages: ::std::option::Option<crate::types::JobMessages>,
@@ -376,6 +390,34 @@ impl JobBuilder {
     /// A portion of the job's ARN, unique within your AWS Elemental MediaConvert resources
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
+    }
+    /// The Job engine version that you requested for your job. Valid versions are in a YYYY-MM-DD format.
+    pub fn job_engine_version_requested(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.job_engine_version_requested = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// The Job engine version that you requested for your job. Valid versions are in a YYYY-MM-DD format.
+    pub fn set_job_engine_version_requested(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.job_engine_version_requested = input;
+        self
+    }
+    /// The Job engine version that you requested for your job. Valid versions are in a YYYY-MM-DD format.
+    pub fn get_job_engine_version_requested(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_engine_version_requested
+    }
+    /// The Job engine version that your job used. Job engine versions are in a YYYY-MM-DD format. When you request an expired version, the response for this property will be empty. Requests to create jobs with an expired version result in a regular job, as if no specific Job engine version was requested. When you request an invalid version, the response for this property will be empty. Requests to create jobs with an invalid version result in a 400 error message, and no job is created.
+    pub fn job_engine_version_used(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.job_engine_version_used = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// The Job engine version that your job used. Job engine versions are in a YYYY-MM-DD format. When you request an expired version, the response for this property will be empty. Requests to create jobs with an expired version result in a regular job, as if no specific Job engine version was requested. When you request an invalid version, the response for this property will be empty. Requests to create jobs with an invalid version result in a 400 error message, and no job is created.
+    pub fn set_job_engine_version_used(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.job_engine_version_used = input;
+        self
+    }
+    /// The Job engine version that your job used. Job engine versions are in a YYYY-MM-DD format. When you request an expired version, the response for this property will be empty. Requests to create jobs with an expired version result in a regular job, as if no specific Job engine version was requested. When you request an invalid version, the response for this property will be empty. Requests to create jobs with an invalid version result in a 400 error message, and no job is created.
+    pub fn get_job_engine_version_used(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_engine_version_used
     }
     /// An estimate of how far your job has progressed. This estimate is shown as a percentage of the total time from when your job leaves its queue to when your output files appear in your output Amazon S3 bucket. AWS Elemental MediaConvert provides jobPercentComplete in CloudWatch STATUS_UPDATE events and in the response to GetJob and ListJobs requests. The jobPercentComplete estimate is reliable for the following input containers: Quicktime, Transport Stream, MP4, and MXF. For some jobs, the service can't provide information about job progress. In those cases, jobPercentComplete returns a null value.
     pub fn job_percent_complete(mut self, input: i32) -> Self {
@@ -644,6 +686,8 @@ impl JobBuilder {
             error_message: self.error_message,
             hop_destinations: self.hop_destinations,
             id: self.id,
+            job_engine_version_requested: self.job_engine_version_requested,
+            job_engine_version_used: self.job_engine_version_used,
             job_percent_complete: self.job_percent_complete,
             job_template: self.job_template,
             messages: self.messages,

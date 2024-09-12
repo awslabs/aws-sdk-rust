@@ -22,7 +22,7 @@ impl crate::operation::admin_set_user_mfa_preference::builders::AdminSetUserMfaP
 }
 /// Fluent builder constructing a request to `AdminSetUserMFAPreference`.
 ///
-/// <p>The user's multi-factor authentication (MFA) preference, including which MFA options are activated, and if any are preferred. Only one factor can be set as preferred. The preferred MFA factor will be used to authenticate a user if multiple factors are activated. If multiple options are activated and no preference is set, a challenge to choose an MFA option will be returned during sign-in.</p><note>
+/// <p>Sets the user's multi-factor authentication (MFA) preference, including which MFA options are activated, and if any are preferred. Only one factor can be set as preferred. The preferred MFA factor will be used to authenticate a user if multiple factors are activated. If multiple options are activated and no preference is set, a challenge to choose an MFA option will be returned during sign-in.</p><note>
 /// <p>Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests for this API operation. For this operation, you must use IAM credentials to authorize requests, and you must grant yourself the corresponding IAM permission in a policy.</p>
 /// <p class="title"><b>Learn more</b></p>
 /// <ul>
@@ -117,33 +117,47 @@ impl AdminSetUserMFAPreferenceFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The SMS text message MFA settings.</p>
+    /// <p>User preferences for SMS message MFA. Activates or deactivates SMS MFA and sets it as the preferred MFA method when multiple methods are available.</p>
     pub fn sms_mfa_settings(mut self, input: crate::types::SmsMfaSettingsType) -> Self {
         self.inner = self.inner.sms_mfa_settings(input);
         self
     }
-    /// <p>The SMS text message MFA settings.</p>
+    /// <p>User preferences for SMS message MFA. Activates or deactivates SMS MFA and sets it as the preferred MFA method when multiple methods are available.</p>
     pub fn set_sms_mfa_settings(mut self, input: ::std::option::Option<crate::types::SmsMfaSettingsType>) -> Self {
         self.inner = self.inner.set_sms_mfa_settings(input);
         self
     }
-    /// <p>The SMS text message MFA settings.</p>
+    /// <p>User preferences for SMS message MFA. Activates or deactivates SMS MFA and sets it as the preferred MFA method when multiple methods are available.</p>
     pub fn get_sms_mfa_settings(&self) -> &::std::option::Option<crate::types::SmsMfaSettingsType> {
         self.inner.get_sms_mfa_settings()
     }
-    /// <p>The time-based one-time password software token MFA settings.</p>
+    /// <p>User preferences for time-based one-time password (TOTP) MFA. Activates or deactivates TOTP MFA and sets it as the preferred MFA method when multiple methods are available.</p>
     pub fn software_token_mfa_settings(mut self, input: crate::types::SoftwareTokenMfaSettingsType) -> Self {
         self.inner = self.inner.software_token_mfa_settings(input);
         self
     }
-    /// <p>The time-based one-time password software token MFA settings.</p>
+    /// <p>User preferences for time-based one-time password (TOTP) MFA. Activates or deactivates TOTP MFA and sets it as the preferred MFA method when multiple methods are available.</p>
     pub fn set_software_token_mfa_settings(mut self, input: ::std::option::Option<crate::types::SoftwareTokenMfaSettingsType>) -> Self {
         self.inner = self.inner.set_software_token_mfa_settings(input);
         self
     }
-    /// <p>The time-based one-time password software token MFA settings.</p>
+    /// <p>User preferences for time-based one-time password (TOTP) MFA. Activates or deactivates TOTP MFA and sets it as the preferred MFA method when multiple methods are available.</p>
     pub fn get_software_token_mfa_settings(&self) -> &::std::option::Option<crate::types::SoftwareTokenMfaSettingsType> {
         self.inner.get_software_token_mfa_settings()
+    }
+    /// <p>User preferences for email message MFA. Activates or deactivates email MFA and sets it as the preferred MFA method when multiple methods are available. To activate this setting, <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-advanced-security.html"> advanced security features</a> must be active in your user pool.</p>
+    pub fn email_mfa_settings(mut self, input: crate::types::EmailMfaSettingsType) -> Self {
+        self.inner = self.inner.email_mfa_settings(input);
+        self
+    }
+    /// <p>User preferences for email message MFA. Activates or deactivates email MFA and sets it as the preferred MFA method when multiple methods are available. To activate this setting, <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-advanced-security.html"> advanced security features</a> must be active in your user pool.</p>
+    pub fn set_email_mfa_settings(mut self, input: ::std::option::Option<crate::types::EmailMfaSettingsType>) -> Self {
+        self.inner = self.inner.set_email_mfa_settings(input);
+        self
+    }
+    /// <p>User preferences for email message MFA. Activates or deactivates email MFA and sets it as the preferred MFA method when multiple methods are available. To activate this setting, <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-advanced-security.html"> advanced security features</a> must be active in your user pool.</p>
+    pub fn get_email_mfa_settings(&self) -> &::std::option::Option<crate::types::EmailMfaSettingsType> {
+        self.inner.get_email_mfa_settings()
     }
     /// <p>The username of the user that you want to query or modify. The value of this parameter is typically your user's username, but it can be any of their alias attributes. If <code>username</code> isn't an alias attribute in your user pool, this value must be the <code>sub</code> of a local user or the username of a user from a third-party IdP.</p>
     pub fn username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -159,17 +173,17 @@ impl AdminSetUserMFAPreferenceFluentBuilder {
     pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_username()
     }
-    /// <p>The user pool ID.</p>
+    /// <p>The ID of the user pool where you want to set a user's MFA preferences.</p>
     pub fn user_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.user_pool_id(input.into());
         self
     }
-    /// <p>The user pool ID.</p>
+    /// <p>The ID of the user pool where you want to set a user's MFA preferences.</p>
     pub fn set_user_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_user_pool_id(input);
         self
     }
-    /// <p>The user pool ID.</p>
+    /// <p>The ID of the user pool where you want to set a user's MFA preferences.</p>
     pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_user_pool_id()
     }

@@ -14,6 +14,8 @@ pub struct InstanceFleetModifyConfig {
     pub target_spot_capacity: ::std::option::Option<i32>,
     /// <p>The resize specification for the instance fleet.</p>
     pub resize_specifications: ::std::option::Option<crate::types::InstanceFleetResizingSpecifications>,
+    /// <p>An array of InstanceTypeConfig objects that specify how Amazon EMR provisions Amazon EC2 instances when it fulfills On-Demand and Spot capacities. For more information, see <a href="https://docs.aws.amazon.com/emr/latest/APIReference/API_InstanceTypeConfig.html">InstanceTypeConfig</a>.</p>
+    pub instance_type_configs: ::std::option::Option<::std::vec::Vec<crate::types::InstanceTypeConfig>>,
 }
 impl InstanceFleetModifyConfig {
     /// <p>A unique identifier for the instance fleet.</p>
@@ -32,6 +34,12 @@ impl InstanceFleetModifyConfig {
     pub fn resize_specifications(&self) -> ::std::option::Option<&crate::types::InstanceFleetResizingSpecifications> {
         self.resize_specifications.as_ref()
     }
+    /// <p>An array of InstanceTypeConfig objects that specify how Amazon EMR provisions Amazon EC2 instances when it fulfills On-Demand and Spot capacities. For more information, see <a href="https://docs.aws.amazon.com/emr/latest/APIReference/API_InstanceTypeConfig.html">InstanceTypeConfig</a>.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_type_configs.is_none()`.
+    pub fn instance_type_configs(&self) -> &[crate::types::InstanceTypeConfig] {
+        self.instance_type_configs.as_deref().unwrap_or_default()
+    }
 }
 impl InstanceFleetModifyConfig {
     /// Creates a new builder-style object to manufacture [`InstanceFleetModifyConfig`](crate::types::InstanceFleetModifyConfig).
@@ -48,6 +56,7 @@ pub struct InstanceFleetModifyConfigBuilder {
     pub(crate) target_on_demand_capacity: ::std::option::Option<i32>,
     pub(crate) target_spot_capacity: ::std::option::Option<i32>,
     pub(crate) resize_specifications: ::std::option::Option<crate::types::InstanceFleetResizingSpecifications>,
+    pub(crate) instance_type_configs: ::std::option::Option<::std::vec::Vec<crate::types::InstanceTypeConfig>>,
 }
 impl InstanceFleetModifyConfigBuilder {
     /// <p>A unique identifier for the instance fleet.</p>
@@ -107,6 +116,26 @@ impl InstanceFleetModifyConfigBuilder {
     pub fn get_resize_specifications(&self) -> &::std::option::Option<crate::types::InstanceFleetResizingSpecifications> {
         &self.resize_specifications
     }
+    /// Appends an item to `instance_type_configs`.
+    ///
+    /// To override the contents of this collection use [`set_instance_type_configs`](Self::set_instance_type_configs).
+    ///
+    /// <p>An array of InstanceTypeConfig objects that specify how Amazon EMR provisions Amazon EC2 instances when it fulfills On-Demand and Spot capacities. For more information, see <a href="https://docs.aws.amazon.com/emr/latest/APIReference/API_InstanceTypeConfig.html">InstanceTypeConfig</a>.</p>
+    pub fn instance_type_configs(mut self, input: crate::types::InstanceTypeConfig) -> Self {
+        let mut v = self.instance_type_configs.unwrap_or_default();
+        v.push(input);
+        self.instance_type_configs = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>An array of InstanceTypeConfig objects that specify how Amazon EMR provisions Amazon EC2 instances when it fulfills On-Demand and Spot capacities. For more information, see <a href="https://docs.aws.amazon.com/emr/latest/APIReference/API_InstanceTypeConfig.html">InstanceTypeConfig</a>.</p>
+    pub fn set_instance_type_configs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceTypeConfig>>) -> Self {
+        self.instance_type_configs = input;
+        self
+    }
+    /// <p>An array of InstanceTypeConfig objects that specify how Amazon EMR provisions Amazon EC2 instances when it fulfills On-Demand and Spot capacities. For more information, see <a href="https://docs.aws.amazon.com/emr/latest/APIReference/API_InstanceTypeConfig.html">InstanceTypeConfig</a>.</p>
+    pub fn get_instance_type_configs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceTypeConfig>> {
+        &self.instance_type_configs
+    }
     /// Consumes the builder and constructs a [`InstanceFleetModifyConfig`](crate::types::InstanceFleetModifyConfig).
     pub fn build(self) -> crate::types::InstanceFleetModifyConfig {
         crate::types::InstanceFleetModifyConfig {
@@ -114,6 +143,7 @@ impl InstanceFleetModifyConfigBuilder {
             target_on_demand_capacity: self.target_on_demand_capacity,
             target_spot_capacity: self.target_spot_capacity,
             resize_specifications: self.resize_specifications,
+            instance_type_configs: self.instance_type_configs,
         }
     }
 }

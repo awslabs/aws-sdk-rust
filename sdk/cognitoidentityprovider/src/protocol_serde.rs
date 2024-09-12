@@ -569,6 +569,10 @@ pub(crate) mod shape_domain_description_type;
 
 pub(crate) mod shape_email_configuration_type;
 
+pub(crate) mod shape_email_mfa_config_type;
+
+pub(crate) mod shape_email_mfa_settings_type;
+
 pub(crate) mod shape_group_list_type;
 
 pub(crate) mod shape_group_type;

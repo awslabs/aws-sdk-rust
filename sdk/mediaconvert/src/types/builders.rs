@@ -281,6 +281,10 @@ pub use crate::types::_video_selector::VideoSelectorBuilder;
 
 pub use crate::types::_video_overlay::VideoOverlayBuilder;
 
+pub use crate::types::_video_overlay_transition::VideoOverlayTransitionBuilder;
+
+pub use crate::types::_video_overlay_position::VideoOverlayPositionBuilder;
+
 pub use crate::types::_video_overlay_input::VideoOverlayInputBuilder;
 
 pub use crate::types::_video_overlay_input_clipping::VideoOverlayInputClippingBuilder;
@@ -356,6 +360,8 @@ pub use crate::types::_video_detail::VideoDetailBuilder;
 pub use crate::types::_job_messages::JobMessagesBuilder;
 
 pub use crate::types::_policy::PolicyBuilder;
+
+pub use crate::types::_job_engine_version::JobEngineVersionBuilder;
 
 pub use crate::types::_resource_tags::ResourceTagsBuilder;
 

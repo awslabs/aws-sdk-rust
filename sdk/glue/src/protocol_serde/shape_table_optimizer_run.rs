@@ -43,6 +43,17 @@ where
                                     .transpose()?,
                             );
                         }
+                        "compactionMetrics" => {
+                            builder = builder.set_compaction_metrics(crate::protocol_serde::shape_compaction_metrics::de_compaction_metrics(tokens)?);
+                        }
+                        "retentionMetrics" => {
+                            builder = builder.set_retention_metrics(crate::protocol_serde::shape_retention_metrics::de_retention_metrics(tokens)?);
+                        }
+                        "orphanFileDeletionMetrics" => {
+                            builder = builder.set_orphan_file_deletion_metrics(
+                                crate::protocol_serde::shape_orphan_file_deletion_metrics::de_orphan_file_deletion_metrics(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

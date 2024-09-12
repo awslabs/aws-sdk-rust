@@ -4,6 +4,8 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FileSourceSettings {
+    /// Choose whether to limit the byte rate at which your SCC input captions are inserted into your output. To not limit the caption rate: We recommend that you keep the default value, Disabled. MediaConvert inserts captions in your output according to the byte rates listed in the EIA-608 specification, typically 2 or 3 caption bytes per frame depending on your output frame rate. To limit your output caption rate: Choose Enabled. Choose this option if your downstream systems require a maximum of 2 caption bytes per frame. Note that this setting has no effect when your output frame rate is 30 or 60.
+    pub byte_rate_limit: ::std::option::Option<crate::types::CaptionSourceByteRateLimit>,
     /// Specify whether this set of input captions appears in your outputs in both 608 and 708 format. If you choose Upconvert, MediaConvert includes the captions data in two ways: it passes the 608 data through using the 608 compatibility bytes fields of the 708 wrapper, and it also translates the 608 data into 708.
     pub convert608_to708: ::std::option::Option<crate::types::FileSourceConvert608To708>,
     /// Choose the presentation style of your input SCC captions. To use the same presentation style as your input: Keep the default value, Disabled. To convert paint-on captions to pop-on: Choose Enabled. We also recommend that you choose Enabled if you notice additional repeated lines in your output captions.
@@ -18,6 +20,10 @@ pub struct FileSourceSettings {
     pub time_delta_units: ::std::option::Option<crate::types::FileSourceTimeDeltaUnits>,
 }
 impl FileSourceSettings {
+    /// Choose whether to limit the byte rate at which your SCC input captions are inserted into your output. To not limit the caption rate: We recommend that you keep the default value, Disabled. MediaConvert inserts captions in your output according to the byte rates listed in the EIA-608 specification, typically 2 or 3 caption bytes per frame depending on your output frame rate. To limit your output caption rate: Choose Enabled. Choose this option if your downstream systems require a maximum of 2 caption bytes per frame. Note that this setting has no effect when your output frame rate is 30 or 60.
+    pub fn byte_rate_limit(&self) -> ::std::option::Option<&crate::types::CaptionSourceByteRateLimit> {
+        self.byte_rate_limit.as_ref()
+    }
     /// Specify whether this set of input captions appears in your outputs in both 608 and 708 format. If you choose Upconvert, MediaConvert includes the captions data in two ways: it passes the 608 data through using the 608 compatibility bytes fields of the 708 wrapper, and it also translates the 608 data into 708.
     pub fn convert608_to708(&self) -> ::std::option::Option<&crate::types::FileSourceConvert608To708> {
         self.convert608_to708.as_ref()
@@ -54,6 +60,7 @@ impl FileSourceSettings {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct FileSourceSettingsBuilder {
+    pub(crate) byte_rate_limit: ::std::option::Option<crate::types::CaptionSourceByteRateLimit>,
     pub(crate) convert608_to708: ::std::option::Option<crate::types::FileSourceConvert608To708>,
     pub(crate) convert_paint_to_pop: ::std::option::Option<crate::types::CaptionSourceConvertPaintOnToPopOn>,
     pub(crate) framerate: ::std::option::Option<crate::types::CaptionSourceFramerate>,
@@ -62,6 +69,20 @@ pub struct FileSourceSettingsBuilder {
     pub(crate) time_delta_units: ::std::option::Option<crate::types::FileSourceTimeDeltaUnits>,
 }
 impl FileSourceSettingsBuilder {
+    /// Choose whether to limit the byte rate at which your SCC input captions are inserted into your output. To not limit the caption rate: We recommend that you keep the default value, Disabled. MediaConvert inserts captions in your output according to the byte rates listed in the EIA-608 specification, typically 2 or 3 caption bytes per frame depending on your output frame rate. To limit your output caption rate: Choose Enabled. Choose this option if your downstream systems require a maximum of 2 caption bytes per frame. Note that this setting has no effect when your output frame rate is 30 or 60.
+    pub fn byte_rate_limit(mut self, input: crate::types::CaptionSourceByteRateLimit) -> Self {
+        self.byte_rate_limit = ::std::option::Option::Some(input);
+        self
+    }
+    /// Choose whether to limit the byte rate at which your SCC input captions are inserted into your output. To not limit the caption rate: We recommend that you keep the default value, Disabled. MediaConvert inserts captions in your output according to the byte rates listed in the EIA-608 specification, typically 2 or 3 caption bytes per frame depending on your output frame rate. To limit your output caption rate: Choose Enabled. Choose this option if your downstream systems require a maximum of 2 caption bytes per frame. Note that this setting has no effect when your output frame rate is 30 or 60.
+    pub fn set_byte_rate_limit(mut self, input: ::std::option::Option<crate::types::CaptionSourceByteRateLimit>) -> Self {
+        self.byte_rate_limit = input;
+        self
+    }
+    /// Choose whether to limit the byte rate at which your SCC input captions are inserted into your output. To not limit the caption rate: We recommend that you keep the default value, Disabled. MediaConvert inserts captions in your output according to the byte rates listed in the EIA-608 specification, typically 2 or 3 caption bytes per frame depending on your output frame rate. To limit your output caption rate: Choose Enabled. Choose this option if your downstream systems require a maximum of 2 caption bytes per frame. Note that this setting has no effect when your output frame rate is 30 or 60.
+    pub fn get_byte_rate_limit(&self) -> &::std::option::Option<crate::types::CaptionSourceByteRateLimit> {
+        &self.byte_rate_limit
+    }
     /// Specify whether this set of input captions appears in your outputs in both 608 and 708 format. If you choose Upconvert, MediaConvert includes the captions data in two ways: it passes the 608 data through using the 608 compatibility bytes fields of the 708 wrapper, and it also translates the 608 data into 708.
     pub fn convert608_to708(mut self, input: crate::types::FileSourceConvert608To708) -> Self {
         self.convert608_to708 = ::std::option::Option::Some(input);
@@ -149,6 +170,7 @@ impl FileSourceSettingsBuilder {
     /// Consumes the builder and constructs a [`FileSourceSettings`](crate::types::FileSourceSettings).
     pub fn build(self) -> crate::types::FileSourceSettings {
         crate::types::FileSourceSettings {
+            byte_rate_limit: self.byte_rate_limit,
             convert608_to708: self.convert608_to708,
             convert_paint_to_pop: self.convert_paint_to_pop,
             framerate: self.framerate,

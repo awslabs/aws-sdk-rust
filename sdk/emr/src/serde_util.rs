@@ -193,15 +193,6 @@ pub(crate) fn on_demand_provisioning_specification_correct_errors(
     builder
 }
 
-pub(crate) fn on_demand_resizing_specification_correct_errors(
-    mut builder: crate::types::builders::OnDemandResizingSpecificationBuilder,
-) -> crate::types::builders::OnDemandResizingSpecificationBuilder {
-    if builder.timeout_duration_minutes.is_none() {
-        builder.timeout_duration_minutes = Some(Default::default())
-    }
-    builder
-}
-
 pub(crate) fn scaling_action_correct_errors(
     mut builder: crate::types::builders::ScalingActionBuilder,
 ) -> crate::types::builders::ScalingActionBuilder {
@@ -234,15 +225,6 @@ pub(crate) fn spot_provisioning_specification_correct_errors(
     }
     if builder.timeout_action.is_none() {
         builder.timeout_action = "no value was set".parse::<crate::types::SpotProvisioningTimeoutAction>().ok()
-    }
-    builder
-}
-
-pub(crate) fn spot_resizing_specification_correct_errors(
-    mut builder: crate::types::builders::SpotResizingSpecificationBuilder,
-) -> crate::types::builders::SpotResizingSpecificationBuilder {
-    if builder.timeout_duration_minutes.is_none() {
-        builder.timeout_duration_minutes = Some(Default::default())
     }
     builder
 }

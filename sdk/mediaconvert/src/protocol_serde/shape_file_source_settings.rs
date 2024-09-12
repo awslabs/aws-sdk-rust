@@ -3,29 +3,32 @@ pub fn ser_file_source_settings(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::FileSourceSettings,
 ) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.convert608_to708 {
-        object.key("convert608To708").string(var_1.as_str());
+    if let Some(var_1) = &input.byte_rate_limit {
+        object.key("byteRateLimit").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.convert_paint_to_pop {
-        object.key("convertPaintToPop").string(var_2.as_str());
+    if let Some(var_2) = &input.convert608_to708 {
+        object.key("convert608To708").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.framerate {
+    if let Some(var_3) = &input.convert_paint_to_pop {
+        object.key("convertPaintToPop").string(var_3.as_str());
+    }
+    if let Some(var_4) = &input.framerate {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("framerate").start_object();
-        crate::protocol_serde::shape_caption_source_framerate::ser_caption_source_framerate(&mut object_4, var_3)?;
-        object_4.finish();
+        let mut object_5 = object.key("framerate").start_object();
+        crate::protocol_serde::shape_caption_source_framerate::ser_caption_source_framerate(&mut object_5, var_4)?;
+        object_5.finish();
     }
-    if let Some(var_5) = &input.source_file {
-        object.key("sourceFile").string(var_5.as_str());
+    if let Some(var_6) = &input.source_file {
+        object.key("sourceFile").string(var_6.as_str());
     }
-    if let Some(var_6) = &input.time_delta {
+    if let Some(var_7) = &input.time_delta {
         object.key("timeDelta").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_6).into()),
+            ::aws_smithy_types::Number::NegInt((*var_7).into()),
         );
     }
-    if let Some(var_7) = &input.time_delta_units {
-        object.key("timeDeltaUnits").string(var_7.as_str());
+    if let Some(var_8) = &input.time_delta_units {
+        object.key("timeDeltaUnits").string(var_8.as_str());
     }
     Ok(())
 }
@@ -45,6 +48,13 @@ where
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "byteRateLimit" => {
+                            builder = builder.set_byte_rate_limit(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CaptionSourceByteRateLimit::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         "convert608To708" => {
                             builder = builder.set_convert608_to708(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

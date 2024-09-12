@@ -24,12 +24,72 @@ pub fn de_batch_get_table_optimizer_http_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
+        "AccessDeniedException" => crate::operation::batch_get_table_optimizer::BatchGetTableOptimizerError::AccessDeniedException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::AccessDeniedExceptionBuilder::default();
+                output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::batch_get_table_optimizer::BatchGetTableOptimizerError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "EntityNotFoundException" => crate::operation::batch_get_table_optimizer::BatchGetTableOptimizerError::EntityNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::EntityNotFoundExceptionBuilder::default();
+                output = crate::protocol_serde::shape_entity_not_found_exception::de_entity_not_found_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::batch_get_table_optimizer::BatchGetTableOptimizerError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "InternalServiceException" => crate::operation::batch_get_table_optimizer::BatchGetTableOptimizerError::InternalServiceException({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::InternalServiceExceptionBuilder::default();
                 output = crate::protocol_serde::shape_internal_service_exception::de_internal_service_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::batch_get_table_optimizer::BatchGetTableOptimizerError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "InvalidInputException" => crate::operation::batch_get_table_optimizer::BatchGetTableOptimizerError::InvalidInputException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidInputExceptionBuilder::default();
+                output = crate::protocol_serde::shape_invalid_input_exception::de_invalid_input_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::batch_get_table_optimizer::BatchGetTableOptimizerError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ThrottlingException" => crate::operation::batch_get_table_optimizer::BatchGetTableOptimizerError::ThrottlingException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ThrottlingExceptionBuilder::default();
+                output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output)
                     .map_err(crate::operation::batch_get_table_optimizer::BatchGetTableOptimizerError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()

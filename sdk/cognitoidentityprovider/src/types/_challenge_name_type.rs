@@ -16,6 +16,7 @@
 ///     ChallengeNameType::CustomChallenge => { /* ... */ },
 ///     ChallengeNameType::DevicePasswordVerifier => { /* ... */ },
 ///     ChallengeNameType::DeviceSrpAuth => { /* ... */ },
+///     ChallengeNameType::EmailOtp => { /* ... */ },
 ///     ChallengeNameType::MfaSetup => { /* ... */ },
 ///     ChallengeNameType::NewPasswordRequired => { /* ... */ },
 ///     ChallengeNameType::PasswordVerifier => { /* ... */ },
@@ -58,6 +59,8 @@ pub enum ChallengeNameType {
     #[allow(missing_docs)] // documentation missing in model
     DeviceSrpAuth,
     #[allow(missing_docs)] // documentation missing in model
+    EmailOtp,
+    #[allow(missing_docs)] // documentation missing in model
     MfaSetup,
     #[allow(missing_docs)] // documentation missing in model
     NewPasswordRequired,
@@ -80,6 +83,7 @@ impl ::std::convert::From<&str> for ChallengeNameType {
             "CUSTOM_CHALLENGE" => ChallengeNameType::CustomChallenge,
             "DEVICE_PASSWORD_VERIFIER" => ChallengeNameType::DevicePasswordVerifier,
             "DEVICE_SRP_AUTH" => ChallengeNameType::DeviceSrpAuth,
+            "EMAIL_OTP" => ChallengeNameType::EmailOtp,
             "MFA_SETUP" => ChallengeNameType::MfaSetup,
             "NEW_PASSWORD_REQUIRED" => ChallengeNameType::NewPasswordRequired,
             "PASSWORD_VERIFIER" => ChallengeNameType::PasswordVerifier,
@@ -105,6 +109,7 @@ impl ChallengeNameType {
             ChallengeNameType::CustomChallenge => "CUSTOM_CHALLENGE",
             ChallengeNameType::DevicePasswordVerifier => "DEVICE_PASSWORD_VERIFIER",
             ChallengeNameType::DeviceSrpAuth => "DEVICE_SRP_AUTH",
+            ChallengeNameType::EmailOtp => "EMAIL_OTP",
             ChallengeNameType::MfaSetup => "MFA_SETUP",
             ChallengeNameType::NewPasswordRequired => "NEW_PASSWORD_REQUIRED",
             ChallengeNameType::PasswordVerifier => "PASSWORD_VERIFIER",
@@ -121,6 +126,7 @@ impl ChallengeNameType {
             "CUSTOM_CHALLENGE",
             "DEVICE_PASSWORD_VERIFIER",
             "DEVICE_SRP_AUTH",
+            "EMAIL_OTP",
             "MFA_SETUP",
             "NEW_PASSWORD_REQUIRED",
             "PASSWORD_VERIFIER",
@@ -154,6 +160,7 @@ impl ::std::fmt::Display for ChallengeNameType {
             ChallengeNameType::CustomChallenge => write!(f, "CUSTOM_CHALLENGE"),
             ChallengeNameType::DevicePasswordVerifier => write!(f, "DEVICE_PASSWORD_VERIFIER"),
             ChallengeNameType::DeviceSrpAuth => write!(f, "DEVICE_SRP_AUTH"),
+            ChallengeNameType::EmailOtp => write!(f, "EMAIL_OTP"),
             ChallengeNameType::MfaSetup => write!(f, "MFA_SETUP"),
             ChallengeNameType::NewPasswordRequired => write!(f, "NEW_PASSWORD_REQUIRED"),
             ChallengeNameType::PasswordVerifier => write!(f, "PASSWORD_VERIFIER"),

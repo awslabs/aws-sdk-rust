@@ -15,8 +15,14 @@ pub fn ser_set_user_mfa_preference_input_input(
         crate::protocol_serde::shape_software_token_mfa_settings_type::ser_software_token_mfa_settings_type(&mut object_4, var_3)?;
         object_4.finish();
     }
-    if let Some(var_5) = &input.access_token {
-        object.key("AccessToken").string(var_5.as_str());
+    if let Some(var_5) = &input.email_mfa_settings {
+        #[allow(unused_mut)]
+        let mut object_6 = object.key("EmailMfaSettings").start_object();
+        crate::protocol_serde::shape_email_mfa_settings_type::ser_email_mfa_settings_type(&mut object_6, var_5)?;
+        object_6.finish();
+    }
+    if let Some(var_7) = &input.access_token {
+        object.key("AccessToken").string(var_7.as_str());
     }
     Ok(())
 }

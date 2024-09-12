@@ -27,7 +27,7 @@ impl crate::operation::respond_to_auth_challenge::builders::RespondToAuthChallen
 /// <p>Amazon Cognito doesn't evaluate Identity and Access Management (IAM) policies in requests for this API operation. For this operation, you can't use IAM credentials to authorize requests, and you can't grant IAM permissions in policies. For more information about authorization models in Amazon Cognito, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using the Amazon Cognito user pools API and user pool endpoints</a>.</p>
 /// </note> <note>
 /// <p>This action might generate an SMS text message. Starting June 1, 2021, US telecom carriers require you to register an origination phone number before you can send SMS messages to US phone numbers. If you use SMS text messages in Amazon Cognito, you must register a phone number with <a href="https://console.aws.amazon.com/pinpoint/home/">Amazon Pinpoint</a>. Amazon Cognito uses the registered number automatically. Otherwise, Amazon Cognito users who must receive SMS messages might not be able to sign up, activate their accounts, or sign in.</p>
-/// <p>If you have never used SMS text messages with Amazon Cognito or any other Amazon Web Services service, Amazon Simple Notification Service might place your account in the SMS sandbox. In <i> <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox mode</a> </i>, you can send messages only to verified phone numbers. After you test your app while in the sandbox environment, you can move out of the sandbox and into production. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-sms-settings.html"> SMS message settings for Amazon Cognito user pools</a> in the <i>Amazon Cognito Developer Guide</i>.</p>
+/// <p>If you have never used SMS text messages with Amazon Cognito or any other Amazon Web Servicesservice, Amazon Simple Notification Service might place your account in the SMS sandbox. In <i> <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox mode</a> </i>, you can send messages only to verified phone numbers. After you test your app while in the sandbox environment, you can move out of the sandbox and into production. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-sms-settings.html"> SMS message settings for Amazon Cognito user pools</a> in the <i>Amazon Cognito Developer Guide</i>.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RespondToAuthChallengeFluentBuilder {
@@ -172,12 +172,19 @@ impl RespondToAuthChallengeFluentBuilder {
     /// SMS_MFA
     /// </dt>
     /// <dd>
-    /// <p><code>"ChallengeName": "SMS_MFA", "ChallengeResponses": {"SMS_MFA_CODE": "\[SMS_code\]", "USERNAME": "\[username\]"}</code></p>
+    /// <p><code>"ChallengeName": "SMS_MFA", "ChallengeResponses": {"SMS_MFA_CODE": "\[code\]", "USERNAME": "\[username\]"}</code></p>
+    /// </dd>
+    /// <dt>
+    /// EMAIL_OTP
+    /// </dt>
+    /// <dd>
+    /// <p><code>"ChallengeName": "EMAIL_OTP", "ChallengeResponses": {"EMAIL_OTP_CODE": "\[code\]", "USERNAME": "\[username\]"}</code></p>
     /// </dd>
     /// <dt>
     /// PASSWORD_VERIFIER
     /// </dt>
     /// <dd>
+    /// <p>This challenge response is part of the SRP flow. Amazon Cognito requires that your application respond to this challenge within a few seconds. When the response time exceeds this period, your user pool returns a <code>NotAuthorizedException</code> error.</p>
     /// <p><code>"ChallengeName": "PASSWORD_VERIFIER", "ChallengeResponses": {"PASSWORD_CLAIM_SIGNATURE": "\[claim_signature\]", "PASSWORD_CLAIM_SECRET_BLOCK": "\[secret_block\]", "TIMESTAMP": \[timestamp\], "USERNAME": "\[username\]"}</code></p>
     /// <p>Add <code>"DEVICE_KEY"</code> when you sign in with a remembered device.</p>
     /// </dd>
@@ -245,12 +252,19 @@ impl RespondToAuthChallengeFluentBuilder {
     /// SMS_MFA
     /// </dt>
     /// <dd>
-    /// <p><code>"ChallengeName": "SMS_MFA", "ChallengeResponses": {"SMS_MFA_CODE": "\[SMS_code\]", "USERNAME": "\[username\]"}</code></p>
+    /// <p><code>"ChallengeName": "SMS_MFA", "ChallengeResponses": {"SMS_MFA_CODE": "\[code\]", "USERNAME": "\[username\]"}</code></p>
+    /// </dd>
+    /// <dt>
+    /// EMAIL_OTP
+    /// </dt>
+    /// <dd>
+    /// <p><code>"ChallengeName": "EMAIL_OTP", "ChallengeResponses": {"EMAIL_OTP_CODE": "\[code\]", "USERNAME": "\[username\]"}</code></p>
     /// </dd>
     /// <dt>
     /// PASSWORD_VERIFIER
     /// </dt>
     /// <dd>
+    /// <p>This challenge response is part of the SRP flow. Amazon Cognito requires that your application respond to this challenge within a few seconds. When the response time exceeds this period, your user pool returns a <code>NotAuthorizedException</code> error.</p>
     /// <p><code>"ChallengeName": "PASSWORD_VERIFIER", "ChallengeResponses": {"PASSWORD_CLAIM_SIGNATURE": "\[claim_signature\]", "PASSWORD_CLAIM_SECRET_BLOCK": "\[secret_block\]", "TIMESTAMP": \[timestamp\], "USERNAME": "\[username\]"}</code></p>
     /// <p>Add <code>"DEVICE_KEY"</code> when you sign in with a remembered device.</p>
     /// </dd>
@@ -317,12 +331,19 @@ impl RespondToAuthChallengeFluentBuilder {
     /// SMS_MFA
     /// </dt>
     /// <dd>
-    /// <p><code>"ChallengeName": "SMS_MFA", "ChallengeResponses": {"SMS_MFA_CODE": "\[SMS_code\]", "USERNAME": "\[username\]"}</code></p>
+    /// <p><code>"ChallengeName": "SMS_MFA", "ChallengeResponses": {"SMS_MFA_CODE": "\[code\]", "USERNAME": "\[username\]"}</code></p>
+    /// </dd>
+    /// <dt>
+    /// EMAIL_OTP
+    /// </dt>
+    /// <dd>
+    /// <p><code>"ChallengeName": "EMAIL_OTP", "ChallengeResponses": {"EMAIL_OTP_CODE": "\[code\]", "USERNAME": "\[username\]"}</code></p>
     /// </dd>
     /// <dt>
     /// PASSWORD_VERIFIER
     /// </dt>
     /// <dd>
+    /// <p>This challenge response is part of the SRP flow. Amazon Cognito requires that your application respond to this challenge within a few seconds. When the response time exceeds this period, your user pool returns a <code>NotAuthorizedException</code> error.</p>
     /// <p><code>"ChallengeName": "PASSWORD_VERIFIER", "ChallengeResponses": {"PASSWORD_CLAIM_SIGNATURE": "\[claim_signature\]", "PASSWORD_CLAIM_SECRET_BLOCK": "\[secret_block\]", "TIMESTAMP": \[timestamp\], "USERNAME": "\[username\]"}</code></p>
     /// <p>Add <code>"DEVICE_KEY"</code> when you sign in with a remembered device.</p>
     /// </dd>

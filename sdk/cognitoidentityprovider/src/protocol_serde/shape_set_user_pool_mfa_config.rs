@@ -207,6 +207,10 @@ pub(crate) fn de_set_user_pool_mfa_config(
                         crate::protocol_serde::shape_software_token_mfa_config_type::de_software_token_mfa_config_type(tokens)?,
                     );
                 }
+                "EmailMfaConfiguration" => {
+                    builder =
+                        builder.set_email_mfa_configuration(crate::protocol_serde::shape_email_mfa_config_type::de_email_mfa_config_type(tokens)?);
+                }
                 "MfaConfiguration" => {
                     builder = builder.set_mfa_configuration(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

@@ -13,13 +13,15 @@ pub use crate::types::error::_glue_encryption_exception::GlueEncryptionException
 
 pub use crate::types::error::_operation_not_supported_exception::OperationNotSupportedException;
 
+pub use crate::types::error::_validation_exception::ValidationException;
+
+pub use crate::types::error::_throttling_exception::ThrottlingException;
+
 pub use crate::types::error::_access_denied_exception::AccessDeniedException;
 
 pub use crate::types::error::_resource_number_limit_exceeded_exception::ResourceNumberLimitExceededException;
 
 pub use crate::types::error::_resource_not_ready_exception::ResourceNotReadyException;
-
-pub use crate::types::error::_validation_exception::ValidationException;
 
 pub use crate::types::error::_already_exists_exception::AlreadyExistsException;
 
@@ -138,6 +140,8 @@ mod _scheduler_not_running_exception;
 mod _scheduler_running_exception;
 
 mod _scheduler_transitioning_exception;
+
+mod _throttling_exception;
 
 mod _validation_exception;
 

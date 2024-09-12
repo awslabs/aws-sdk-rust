@@ -21,7 +21,19 @@
 pub struct DbParameterGroupStatus {
     /// <p>The name of the DB parameter group.</p>
     pub db_parameter_group_name: ::std::option::Option<::std::string::String>,
-    /// <p>The status of parameter updates.</p>
+    /// <p>The status of parameter updates. Valid values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>applying</code>: The parameter group change is being applied to the database.</p></li>
+    /// <li>
+    /// <p><code>failed-to-apply</code>: The parameter group is in an invalid state.</p></li>
+    /// <li>
+    /// <p><code>in-sync</code>: The parameter group change is synchronized with the database.</p></li>
+    /// <li>
+    /// <p><code>pending-database-upgrade</code>: The parameter group change will be applied after the DB instance is upgraded.</p></li>
+    /// <li>
+    /// <p><code>pending-reboot</code>: The parameter group change will be applied after the DB instance reboots.</p></li>
+    /// </ul>
     pub parameter_apply_status: ::std::option::Option<::std::string::String>,
 }
 impl DbParameterGroupStatus {
@@ -29,7 +41,19 @@ impl DbParameterGroupStatus {
     pub fn db_parameter_group_name(&self) -> ::std::option::Option<&str> {
         self.db_parameter_group_name.as_deref()
     }
-    /// <p>The status of parameter updates.</p>
+    /// <p>The status of parameter updates. Valid values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>applying</code>: The parameter group change is being applied to the database.</p></li>
+    /// <li>
+    /// <p><code>failed-to-apply</code>: The parameter group is in an invalid state.</p></li>
+    /// <li>
+    /// <p><code>in-sync</code>: The parameter group change is synchronized with the database.</p></li>
+    /// <li>
+    /// <p><code>pending-database-upgrade</code>: The parameter group change will be applied after the DB instance is upgraded.</p></li>
+    /// <li>
+    /// <p><code>pending-reboot</code>: The parameter group change will be applied after the DB instance reboots.</p></li>
+    /// </ul>
     pub fn parameter_apply_status(&self) -> ::std::option::Option<&str> {
         self.parameter_apply_status.as_deref()
     }
@@ -63,17 +87,53 @@ impl DbParameterGroupStatusBuilder {
     pub fn get_db_parameter_group_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.db_parameter_group_name
     }
-    /// <p>The status of parameter updates.</p>
+    /// <p>The status of parameter updates. Valid values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>applying</code>: The parameter group change is being applied to the database.</p></li>
+    /// <li>
+    /// <p><code>failed-to-apply</code>: The parameter group is in an invalid state.</p></li>
+    /// <li>
+    /// <p><code>in-sync</code>: The parameter group change is synchronized with the database.</p></li>
+    /// <li>
+    /// <p><code>pending-database-upgrade</code>: The parameter group change will be applied after the DB instance is upgraded.</p></li>
+    /// <li>
+    /// <p><code>pending-reboot</code>: The parameter group change will be applied after the DB instance reboots.</p></li>
+    /// </ul>
     pub fn parameter_apply_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parameter_apply_status = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The status of parameter updates.</p>
+    /// <p>The status of parameter updates. Valid values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>applying</code>: The parameter group change is being applied to the database.</p></li>
+    /// <li>
+    /// <p><code>failed-to-apply</code>: The parameter group is in an invalid state.</p></li>
+    /// <li>
+    /// <p><code>in-sync</code>: The parameter group change is synchronized with the database.</p></li>
+    /// <li>
+    /// <p><code>pending-database-upgrade</code>: The parameter group change will be applied after the DB instance is upgraded.</p></li>
+    /// <li>
+    /// <p><code>pending-reboot</code>: The parameter group change will be applied after the DB instance reboots.</p></li>
+    /// </ul>
     pub fn set_parameter_apply_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.parameter_apply_status = input;
         self
     }
-    /// <p>The status of parameter updates.</p>
+    /// <p>The status of parameter updates. Valid values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>applying</code>: The parameter group change is being applied to the database.</p></li>
+    /// <li>
+    /// <p><code>failed-to-apply</code>: The parameter group is in an invalid state.</p></li>
+    /// <li>
+    /// <p><code>in-sync</code>: The parameter group change is synchronized with the database.</p></li>
+    /// <li>
+    /// <p><code>pending-database-upgrade</code>: The parameter group change will be applied after the DB instance is upgraded.</p></li>
+    /// <li>
+    /// <p><code>pending-reboot</code>: The parameter group change will be applied after the DB instance reboots.</p></li>
+    /// </ul>
     pub fn get_parameter_apply_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.parameter_apply_status
     }

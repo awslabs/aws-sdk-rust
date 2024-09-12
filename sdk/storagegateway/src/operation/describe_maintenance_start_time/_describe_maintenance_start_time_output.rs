@@ -31,9 +31,9 @@ pub struct DescribeMaintenanceStartTimeOutput {
     /// <p>A value that indicates the time zone that is set for the gateway. The start time and day of week specified should be in the time zone of the gateway.</p>
     pub timezone: ::std::option::Option<::std::string::String>,
     /// <p>A set of variables indicating the software update preferences for the gateway.</p>
-    /// <p>Includes <code>AutomaticUpdatePolicy</code> field with the following inputs:</p>
+    /// <p>Includes <code>AutomaticUpdatePolicy</code> parameter with the following inputs:</p>
     /// <p><code>ALL_VERSIONS</code> - Enables regular gateway maintenance updates.</p>
-    /// <p><code>EMERGENCY_VERSIONS_ONLY</code> - Disables regular gateway maintenance updates.</p>
+    /// <p><code>EMERGENCY_VERSIONS_ONLY</code> - Disables regular gateway maintenance updates. The gateway will still receive emergency version updates on rare occasions if necessary to remedy highly critical security or durability issues. You will be notified before an emergency version update is applied. These updates are applied during your gateway's scheduled maintenance window.</p>
     pub software_update_preferences: ::std::option::Option<crate::types::SoftwareUpdatePreferences>,
     _request_id: Option<String>,
 }
@@ -63,9 +63,9 @@ impl DescribeMaintenanceStartTimeOutput {
         self.timezone.as_deref()
     }
     /// <p>A set of variables indicating the software update preferences for the gateway.</p>
-    /// <p>Includes <code>AutomaticUpdatePolicy</code> field with the following inputs:</p>
+    /// <p>Includes <code>AutomaticUpdatePolicy</code> parameter with the following inputs:</p>
     /// <p><code>ALL_VERSIONS</code> - Enables regular gateway maintenance updates.</p>
-    /// <p><code>EMERGENCY_VERSIONS_ONLY</code> - Disables regular gateway maintenance updates.</p>
+    /// <p><code>EMERGENCY_VERSIONS_ONLY</code> - Disables regular gateway maintenance updates. The gateway will still receive emergency version updates on rare occasions if necessary to remedy highly critical security or durability issues. You will be notified before an emergency version update is applied. These updates are applied during your gateway's scheduled maintenance window.</p>
     pub fn software_update_preferences(&self) -> ::std::option::Option<&crate::types::SoftwareUpdatePreferences> {
         self.software_update_preferences.as_ref()
     }
@@ -181,25 +181,25 @@ impl DescribeMaintenanceStartTimeOutputBuilder {
         &self.timezone
     }
     /// <p>A set of variables indicating the software update preferences for the gateway.</p>
-    /// <p>Includes <code>AutomaticUpdatePolicy</code> field with the following inputs:</p>
+    /// <p>Includes <code>AutomaticUpdatePolicy</code> parameter with the following inputs:</p>
     /// <p><code>ALL_VERSIONS</code> - Enables regular gateway maintenance updates.</p>
-    /// <p><code>EMERGENCY_VERSIONS_ONLY</code> - Disables regular gateway maintenance updates.</p>
+    /// <p><code>EMERGENCY_VERSIONS_ONLY</code> - Disables regular gateway maintenance updates. The gateway will still receive emergency version updates on rare occasions if necessary to remedy highly critical security or durability issues. You will be notified before an emergency version update is applied. These updates are applied during your gateway's scheduled maintenance window.</p>
     pub fn software_update_preferences(mut self, input: crate::types::SoftwareUpdatePreferences) -> Self {
         self.software_update_preferences = ::std::option::Option::Some(input);
         self
     }
     /// <p>A set of variables indicating the software update preferences for the gateway.</p>
-    /// <p>Includes <code>AutomaticUpdatePolicy</code> field with the following inputs:</p>
+    /// <p>Includes <code>AutomaticUpdatePolicy</code> parameter with the following inputs:</p>
     /// <p><code>ALL_VERSIONS</code> - Enables regular gateway maintenance updates.</p>
-    /// <p><code>EMERGENCY_VERSIONS_ONLY</code> - Disables regular gateway maintenance updates.</p>
+    /// <p><code>EMERGENCY_VERSIONS_ONLY</code> - Disables regular gateway maintenance updates. The gateway will still receive emergency version updates on rare occasions if necessary to remedy highly critical security or durability issues. You will be notified before an emergency version update is applied. These updates are applied during your gateway's scheduled maintenance window.</p>
     pub fn set_software_update_preferences(mut self, input: ::std::option::Option<crate::types::SoftwareUpdatePreferences>) -> Self {
         self.software_update_preferences = input;
         self
     }
     /// <p>A set of variables indicating the software update preferences for the gateway.</p>
-    /// <p>Includes <code>AutomaticUpdatePolicy</code> field with the following inputs:</p>
+    /// <p>Includes <code>AutomaticUpdatePolicy</code> parameter with the following inputs:</p>
     /// <p><code>ALL_VERSIONS</code> - Enables regular gateway maintenance updates.</p>
-    /// <p><code>EMERGENCY_VERSIONS_ONLY</code> - Disables regular gateway maintenance updates.</p>
+    /// <p><code>EMERGENCY_VERSIONS_ONLY</code> - Disables regular gateway maintenance updates. The gateway will still receive emergency version updates on rare occasions if necessary to remedy highly critical security or durability issues. You will be notified before an emergency version update is applied. These updates are applied during your gateway's scheduled maintenance window.</p>
     pub fn get_software_update_preferences(&self) -> &::std::option::Option<crate::types::SoftwareUpdatePreferences> {
         &self.software_update_preferences
     }

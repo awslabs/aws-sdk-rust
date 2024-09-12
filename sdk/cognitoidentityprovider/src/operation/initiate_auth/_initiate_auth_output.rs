@@ -10,7 +10,9 @@ pub struct InitiateAuthOutput {
     /// </note>
     /// <ul>
     /// <li>
-    /// <p><code>SMS_MFA</code>: Next challenge is to supply an <code>SMS_MFA_CODE</code>, delivered via SMS.</p></li>
+    /// <p><code>SMS_MFA</code>: Next challenge is to supply an <code>SMS_MFA_CODE</code>that your user pool delivered in an SMS message.</p></li>
+    /// <li>
+    /// <p><code>EMAIL_OTP</code>: Next challenge is to supply an <code>EMAIL_OTP_CODE</code> that your user pool delivered in an email message.</p></li>
     /// <li>
     /// <p><code>PASSWORD_VERIFIER</code>: Next challenge is to supply <code>PASSWORD_CLAIM_SIGNATURE</code>, <code>PASSWORD_CLAIM_SECRET_BLOCK</code>, and <code>TIMESTAMP</code> after the client-side SRP calculations.</p></li>
     /// <li>
@@ -45,7 +47,9 @@ impl InitiateAuthOutput {
     /// </note>
     /// <ul>
     /// <li>
-    /// <p><code>SMS_MFA</code>: Next challenge is to supply an <code>SMS_MFA_CODE</code>, delivered via SMS.</p></li>
+    /// <p><code>SMS_MFA</code>: Next challenge is to supply an <code>SMS_MFA_CODE</code>that your user pool delivered in an SMS message.</p></li>
+    /// <li>
+    /// <p><code>EMAIL_OTP</code>: Next challenge is to supply an <code>EMAIL_OTP_CODE</code> that your user pool delivered in an email message.</p></li>
     /// <li>
     /// <p><code>PASSWORD_VERIFIER</code>: Next challenge is to supply <code>PASSWORD_CLAIM_SIGNATURE</code>, <code>PASSWORD_CLAIM_SECRET_BLOCK</code>, and <code>TIMESTAMP</code> after the client-side SRP calculations.</p></li>
     /// <li>
@@ -120,7 +124,9 @@ impl InitiateAuthOutputBuilder {
     /// </note>
     /// <ul>
     /// <li>
-    /// <p><code>SMS_MFA</code>: Next challenge is to supply an <code>SMS_MFA_CODE</code>, delivered via SMS.</p></li>
+    /// <p><code>SMS_MFA</code>: Next challenge is to supply an <code>SMS_MFA_CODE</code>that your user pool delivered in an SMS message.</p></li>
+    /// <li>
+    /// <p><code>EMAIL_OTP</code>: Next challenge is to supply an <code>EMAIL_OTP_CODE</code> that your user pool delivered in an email message.</p></li>
     /// <li>
     /// <p><code>PASSWORD_VERIFIER</code>: Next challenge is to supply <code>PASSWORD_CLAIM_SIGNATURE</code>, <code>PASSWORD_CLAIM_SECRET_BLOCK</code>, and <code>TIMESTAMP</code> after the client-side SRP calculations.</p></li>
     /// <li>
@@ -148,7 +154,9 @@ impl InitiateAuthOutputBuilder {
     /// </note>
     /// <ul>
     /// <li>
-    /// <p><code>SMS_MFA</code>: Next challenge is to supply an <code>SMS_MFA_CODE</code>, delivered via SMS.</p></li>
+    /// <p><code>SMS_MFA</code>: Next challenge is to supply an <code>SMS_MFA_CODE</code>that your user pool delivered in an SMS message.</p></li>
+    /// <li>
+    /// <p><code>EMAIL_OTP</code>: Next challenge is to supply an <code>EMAIL_OTP_CODE</code> that your user pool delivered in an email message.</p></li>
     /// <li>
     /// <p><code>PASSWORD_VERIFIER</code>: Next challenge is to supply <code>PASSWORD_CLAIM_SIGNATURE</code>, <code>PASSWORD_CLAIM_SECRET_BLOCK</code>, and <code>TIMESTAMP</code> after the client-side SRP calculations.</p></li>
     /// <li>
@@ -176,7 +184,9 @@ impl InitiateAuthOutputBuilder {
     /// </note>
     /// <ul>
     /// <li>
-    /// <p><code>SMS_MFA</code>: Next challenge is to supply an <code>SMS_MFA_CODE</code>, delivered via SMS.</p></li>
+    /// <p><code>SMS_MFA</code>: Next challenge is to supply an <code>SMS_MFA_CODE</code>that your user pool delivered in an SMS message.</p></li>
+    /// <li>
+    /// <p><code>EMAIL_OTP</code>: Next challenge is to supply an <code>EMAIL_OTP_CODE</code> that your user pool delivered in an email message.</p></li>
     /// <li>
     /// <p><code>PASSWORD_VERIFIER</code>: Next challenge is to supply <code>PASSWORD_CLAIM_SIGNATURE</code>, <code>PASSWORD_CLAIM_SECRET_BLOCK</code>, and <code>TIMESTAMP</code> after the client-side SRP calculations.</p></li>
     /// <li>

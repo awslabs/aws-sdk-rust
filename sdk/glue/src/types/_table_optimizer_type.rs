@@ -13,6 +13,8 @@
 /// # let tableoptimizertype = unimplemented!();
 /// match tableoptimizertype {
 ///     TableOptimizerType::Compaction => { /* ... */ },
+///     TableOptimizerType::OrphanFileDeletion => { /* ... */ },
+///     TableOptimizerType::Retention => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -42,6 +44,10 @@
 pub enum TableOptimizerType {
     #[allow(missing_docs)] // documentation missing in model
     Compaction,
+    #[allow(missing_docs)] // documentation missing in model
+    OrphanFileDeletion,
+    #[allow(missing_docs)] // documentation missing in model
+    Retention,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -50,6 +56,8 @@ impl ::std::convert::From<&str> for TableOptimizerType {
     fn from(s: &str) -> Self {
         match s {
             "compaction" => TableOptimizerType::Compaction,
+            "orphan_file_deletion" => TableOptimizerType::OrphanFileDeletion,
+            "retention" => TableOptimizerType::Retention,
             other => TableOptimizerType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -66,12 +74,14 @@ impl TableOptimizerType {
     pub fn as_str(&self) -> &str {
         match self {
             TableOptimizerType::Compaction => "compaction",
+            TableOptimizerType::OrphanFileDeletion => "orphan_file_deletion",
+            TableOptimizerType::Retention => "retention",
             TableOptimizerType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["compaction"]
+        &["compaction", "orphan_file_deletion", "retention"]
     }
 }
 impl ::std::convert::AsRef<str> for TableOptimizerType {
@@ -95,6 +105,8 @@ impl ::std::fmt::Display for TableOptimizerType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             TableOptimizerType::Compaction => write!(f, "compaction"),
+            TableOptimizerType::OrphanFileDeletion => write!(f, "orphan_file_deletion"),
+            TableOptimizerType::Retention => write!(f, "retention"),
             TableOptimizerType::Unknown(value) => write!(f, "{}", value),
         }
     }

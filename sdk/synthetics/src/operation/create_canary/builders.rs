@@ -309,24 +309,49 @@ impl CreateCanaryFluentBuilder {
         self.inner.get_vpc_config()
     }
     ///
+    /// Appends an item to `ResourcesToReplicateTags`.
+    ///
+    /// To override the contents of this collection use [`set_resources_to_replicate_tags`](Self::set_resources_to_replicate_tags).
+    ///
+    /// <p>To have the tags that you apply to this canary also be applied to the Lambda function that the canary uses, specify this parameter with the value <code>lambda-function</code>.</p>
+    /// <p>If you specify this parameter and don't specify any tags in the <code>Tags</code> parameter, the canary creation fails.</p>
+    pub fn resources_to_replicate_tags(mut self, input: crate::types::ResourceToTag) -> Self {
+        self.inner = self.inner.resources_to_replicate_tags(input);
+        self
+    }
+    /// <p>To have the tags that you apply to this canary also be applied to the Lambda function that the canary uses, specify this parameter with the value <code>lambda-function</code>.</p>
+    /// <p>If you specify this parameter and don't specify any tags in the <code>Tags</code> parameter, the canary creation fails.</p>
+    pub fn set_resources_to_replicate_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceToTag>>) -> Self {
+        self.inner = self.inner.set_resources_to_replicate_tags(input);
+        self
+    }
+    /// <p>To have the tags that you apply to this canary also be applied to the Lambda function that the canary uses, specify this parameter with the value <code>lambda-function</code>.</p>
+    /// <p>If you specify this parameter and don't specify any tags in the <code>Tags</code> parameter, the canary creation fails.</p>
+    pub fn get_resources_to_replicate_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceToTag>> {
+        self.inner.get_resources_to_replicate_tags()
+    }
+    ///
     /// Adds a key-value pair to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>A list of key-value pairs to associate with the canary. You can associate as many as 50 tags with a canary.</p>
     /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions, by granting a user permission to access or change only the resources that have certain tag values.</p>
+    /// <p>To have the tags that you apply to this canary also be applied to the Lambda function that the canary uses, specify this parameter with the value <code>lambda-function</code>.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>A list of key-value pairs to associate with the canary. You can associate as many as 50 tags with a canary.</p>
     /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions, by granting a user permission to access or change only the resources that have certain tag values.</p>
+    /// <p>To have the tags that you apply to this canary also be applied to the Lambda function that the canary uses, specify this parameter with the value <code>lambda-function</code>.</p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>A list of key-value pairs to associate with the canary. You can associate as many as 50 tags with a canary.</p>
     /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions, by granting a user permission to access or change only the resources that have certain tag values.</p>
+    /// <p>To have the tags that you apply to this canary also be applied to the Lambda function that the canary uses, specify this parameter with the value <code>lambda-function</code>.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }

@@ -47,6 +47,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "EncryptionType" => {
+                            builder = builder.set_encryption_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::EncryptionType::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         "KMSEncrypted" => {
                             builder = builder.set_kms_encrypted(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }

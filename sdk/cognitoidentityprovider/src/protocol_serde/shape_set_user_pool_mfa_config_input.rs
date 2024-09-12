@@ -18,8 +18,14 @@ pub fn ser_set_user_pool_mfa_config_input_input(
         crate::protocol_serde::shape_software_token_mfa_config_type::ser_software_token_mfa_config_type(&mut object_5, var_4)?;
         object_5.finish();
     }
-    if let Some(var_6) = &input.mfa_configuration {
-        object.key("MfaConfiguration").string(var_6.as_str());
+    if let Some(var_6) = &input.email_mfa_configuration {
+        #[allow(unused_mut)]
+        let mut object_7 = object.key("EmailMfaConfiguration").start_object();
+        crate::protocol_serde::shape_email_mfa_config_type::ser_email_mfa_config_type(&mut object_7, var_6)?;
+        object_7.finish();
+    }
+    if let Some(var_8) = &input.mfa_configuration {
+        object.key("MfaConfiguration").string(var_8.as_str());
     }
     Ok(())
 }

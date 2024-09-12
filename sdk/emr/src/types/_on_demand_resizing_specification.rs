@@ -6,11 +6,23 @@
 pub struct OnDemandResizingSpecification {
     /// <p>On-Demand resize timeout in minutes. If On-Demand Instances are not provisioned within this time, the resize workflow stops. The minimum value is 5 minutes, and the maximum value is 10,080 minutes (7 days). The timeout applies to all resize workflows on the Instance Fleet. The resize could be triggered by Amazon EMR Managed Scaling or by the customer (via Amazon EMR Console, Amazon EMR CLI modify-instance-fleet or Amazon EMR SDK ModifyInstanceFleet API) or by Amazon EMR due to Amazon EC2 Spot Reclamation.</p>
     pub timeout_duration_minutes: ::std::option::Option<i32>,
+    /// <p>Specifies the allocation strategy to use to launch On-Demand instances during a resize. The default is <code>lowest-price</code>.</p>
+    pub allocation_strategy: ::std::option::Option<crate::types::OnDemandProvisioningAllocationStrategy>,
+    /// <p>Describes the strategy for using unused Capacity Reservations for fulfilling On-Demand capacity.</p>
+    pub capacity_reservation_options: ::std::option::Option<crate::types::OnDemandCapacityReservationOptions>,
 }
 impl OnDemandResizingSpecification {
     /// <p>On-Demand resize timeout in minutes. If On-Demand Instances are not provisioned within this time, the resize workflow stops. The minimum value is 5 minutes, and the maximum value is 10,080 minutes (7 days). The timeout applies to all resize workflows on the Instance Fleet. The resize could be triggered by Amazon EMR Managed Scaling or by the customer (via Amazon EMR Console, Amazon EMR CLI modify-instance-fleet or Amazon EMR SDK ModifyInstanceFleet API) or by Amazon EMR due to Amazon EC2 Spot Reclamation.</p>
     pub fn timeout_duration_minutes(&self) -> ::std::option::Option<i32> {
         self.timeout_duration_minutes
+    }
+    /// <p>Specifies the allocation strategy to use to launch On-Demand instances during a resize. The default is <code>lowest-price</code>.</p>
+    pub fn allocation_strategy(&self) -> ::std::option::Option<&crate::types::OnDemandProvisioningAllocationStrategy> {
+        self.allocation_strategy.as_ref()
+    }
+    /// <p>Describes the strategy for using unused Capacity Reservations for fulfilling On-Demand capacity.</p>
+    pub fn capacity_reservation_options(&self) -> ::std::option::Option<&crate::types::OnDemandCapacityReservationOptions> {
+        self.capacity_reservation_options.as_ref()
     }
 }
 impl OnDemandResizingSpecification {
@@ -25,10 +37,11 @@ impl OnDemandResizingSpecification {
 #[non_exhaustive]
 pub struct OnDemandResizingSpecificationBuilder {
     pub(crate) timeout_duration_minutes: ::std::option::Option<i32>,
+    pub(crate) allocation_strategy: ::std::option::Option<crate::types::OnDemandProvisioningAllocationStrategy>,
+    pub(crate) capacity_reservation_options: ::std::option::Option<crate::types::OnDemandCapacityReservationOptions>,
 }
 impl OnDemandResizingSpecificationBuilder {
     /// <p>On-Demand resize timeout in minutes. If On-Demand Instances are not provisioned within this time, the resize workflow stops. The minimum value is 5 minutes, and the maximum value is 10,080 minutes (7 days). The timeout applies to all resize workflows on the Instance Fleet. The resize could be triggered by Amazon EMR Managed Scaling or by the customer (via Amazon EMR Console, Amazon EMR CLI modify-instance-fleet or Amazon EMR SDK ModifyInstanceFleet API) or by Amazon EMR due to Amazon EC2 Spot Reclamation.</p>
-    /// This field is required.
     pub fn timeout_duration_minutes(mut self, input: i32) -> Self {
         self.timeout_duration_minutes = ::std::option::Option::Some(input);
         self
@@ -42,10 +55,40 @@ impl OnDemandResizingSpecificationBuilder {
     pub fn get_timeout_duration_minutes(&self) -> &::std::option::Option<i32> {
         &self.timeout_duration_minutes
     }
+    /// <p>Specifies the allocation strategy to use to launch On-Demand instances during a resize. The default is <code>lowest-price</code>.</p>
+    pub fn allocation_strategy(mut self, input: crate::types::OnDemandProvisioningAllocationStrategy) -> Self {
+        self.allocation_strategy = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies the allocation strategy to use to launch On-Demand instances during a resize. The default is <code>lowest-price</code>.</p>
+    pub fn set_allocation_strategy(mut self, input: ::std::option::Option<crate::types::OnDemandProvisioningAllocationStrategy>) -> Self {
+        self.allocation_strategy = input;
+        self
+    }
+    /// <p>Specifies the allocation strategy to use to launch On-Demand instances during a resize. The default is <code>lowest-price</code>.</p>
+    pub fn get_allocation_strategy(&self) -> &::std::option::Option<crate::types::OnDemandProvisioningAllocationStrategy> {
+        &self.allocation_strategy
+    }
+    /// <p>Describes the strategy for using unused Capacity Reservations for fulfilling On-Demand capacity.</p>
+    pub fn capacity_reservation_options(mut self, input: crate::types::OnDemandCapacityReservationOptions) -> Self {
+        self.capacity_reservation_options = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Describes the strategy for using unused Capacity Reservations for fulfilling On-Demand capacity.</p>
+    pub fn set_capacity_reservation_options(mut self, input: ::std::option::Option<crate::types::OnDemandCapacityReservationOptions>) -> Self {
+        self.capacity_reservation_options = input;
+        self
+    }
+    /// <p>Describes the strategy for using unused Capacity Reservations for fulfilling On-Demand capacity.</p>
+    pub fn get_capacity_reservation_options(&self) -> &::std::option::Option<crate::types::OnDemandCapacityReservationOptions> {
+        &self.capacity_reservation_options
+    }
     /// Consumes the builder and constructs a [`OnDemandResizingSpecification`](crate::types::OnDemandResizingSpecification).
     pub fn build(self) -> crate::types::OnDemandResizingSpecification {
         crate::types::OnDemandResizingSpecification {
             timeout_duration_minutes: self.timeout_duration_minutes,
+            allocation_strategy: self.allocation_strategy,
+            capacity_reservation_options: self.capacity_reservation_options,
         }
     }
 }

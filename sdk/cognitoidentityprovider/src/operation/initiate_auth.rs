@@ -249,6 +249,8 @@ pub enum InitiateAuthError {
     ForbiddenException(crate::types::error::ForbiddenException),
     /// <p>This exception is thrown when Amazon Cognito encounters an internal error.</p>
     InternalErrorException(crate::types::error::InternalErrorException),
+    /// <p>This exception is thrown when Amazon Cognito isn't allowed to use your email identity. HTTP status code: 400.</p>
+    InvalidEmailRoleAccessPolicyException(crate::types::error::InvalidEmailRoleAccessPolicyException),
     /// <p>This exception is thrown when Amazon Cognito encounters an invalid Lambda response.</p>
     InvalidLambdaResponseException(crate::types::error::InvalidLambdaResponseException),
     /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid parameter.</p>
@@ -310,6 +312,7 @@ impl InitiateAuthError {
         match self {
             Self::ForbiddenException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InternalErrorException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InvalidEmailRoleAccessPolicyException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidLambdaResponseException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidParameterException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidSmsRoleAccessPolicyException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -333,6 +336,10 @@ impl InitiateAuthError {
     /// Returns `true` if the error kind is `InitiateAuthError::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(self, Self::InternalErrorException(_))
+    }
+    /// Returns `true` if the error kind is `InitiateAuthError::InvalidEmailRoleAccessPolicyException`.
+    pub fn is_invalid_email_role_access_policy_exception(&self) -> bool {
+        matches!(self, Self::InvalidEmailRoleAccessPolicyException(_))
     }
     /// Returns `true` if the error kind is `InitiateAuthError::InvalidLambdaResponseException`.
     pub fn is_invalid_lambda_response_exception(&self) -> bool {
@@ -392,6 +399,7 @@ impl ::std::error::Error for InitiateAuthError {
         match self {
             Self::ForbiddenException(_inner) => ::std::option::Option::Some(_inner),
             Self::InternalErrorException(_inner) => ::std::option::Option::Some(_inner),
+            Self::InvalidEmailRoleAccessPolicyException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidLambdaResponseException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidParameterException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidSmsRoleAccessPolicyException(_inner) => ::std::option::Option::Some(_inner),
@@ -414,6 +422,7 @@ impl ::std::fmt::Display for InitiateAuthError {
         match self {
             Self::ForbiddenException(_inner) => _inner.fmt(f),
             Self::InternalErrorException(_inner) => _inner.fmt(f),
+            Self::InvalidEmailRoleAccessPolicyException(_inner) => _inner.fmt(f),
             Self::InvalidLambdaResponseException(_inner) => _inner.fmt(f),
             Self::InvalidParameterException(_inner) => _inner.fmt(f),
             Self::InvalidSmsRoleAccessPolicyException(_inner) => _inner.fmt(f),
@@ -450,6 +459,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for InitiateAuthE
         match self {
             Self::ForbiddenException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InternalErrorException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidEmailRoleAccessPolicyException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidLambdaResponseException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidParameterException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidSmsRoleAccessPolicyException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

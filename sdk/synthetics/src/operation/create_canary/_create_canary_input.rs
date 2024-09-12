@@ -42,8 +42,12 @@ pub struct CreateCanaryInput {
     pub runtime_version: ::std::option::Option<::std::string::String>,
     /// <p>If this canary is to test an endpoint in a VPC, this structure contains information about the subnet and security groups of the VPC endpoint. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_VPC.html"> Running a Canary in a VPC</a>.</p>
     pub vpc_config: ::std::option::Option<crate::types::VpcConfigInput>,
+    /// <p>To have the tags that you apply to this canary also be applied to the Lambda function that the canary uses, specify this parameter with the value <code>lambda-function</code>.</p>
+    /// <p>If you specify this parameter and don't specify any tags in the <code>Tags</code> parameter, the canary creation fails.</p>
+    pub resources_to_replicate_tags: ::std::option::Option<::std::vec::Vec<crate::types::ResourceToTag>>,
     /// <p>A list of key-value pairs to associate with the canary. You can associate as many as 50 tags with a canary.</p>
     /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions, by granting a user permission to access or change only the resources that have certain tag values.</p>
+    /// <p>To have the tags that you apply to this canary also be applied to the Lambda function that the canary uses, specify this parameter with the value <code>lambda-function</code>.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>A structure that contains the configuration for canary artifacts, including the encryption-at-rest settings for artifacts that the canary uploads to Amazon S3.</p>
     pub artifact_config: ::std::option::Option<crate::types::ArtifactConfigInput>,
@@ -108,8 +112,16 @@ impl CreateCanaryInput {
     pub fn vpc_config(&self) -> ::std::option::Option<&crate::types::VpcConfigInput> {
         self.vpc_config.as_ref()
     }
+    /// <p>To have the tags that you apply to this canary also be applied to the Lambda function that the canary uses, specify this parameter with the value <code>lambda-function</code>.</p>
+    /// <p>If you specify this parameter and don't specify any tags in the <code>Tags</code> parameter, the canary creation fails.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resources_to_replicate_tags.is_none()`.
+    pub fn resources_to_replicate_tags(&self) -> &[crate::types::ResourceToTag] {
+        self.resources_to_replicate_tags.as_deref().unwrap_or_default()
+    }
     /// <p>A list of key-value pairs to associate with the canary. You can associate as many as 50 tags with a canary.</p>
     /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions, by granting a user permission to access or change only the resources that have certain tag values.</p>
+    /// <p>To have the tags that you apply to this canary also be applied to the Lambda function that the canary uses, specify this parameter with the value <code>lambda-function</code>.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
@@ -139,6 +151,7 @@ pub struct CreateCanaryInputBuilder {
     pub(crate) failure_retention_period_in_days: ::std::option::Option<i32>,
     pub(crate) runtime_version: ::std::option::Option<::std::string::String>,
     pub(crate) vpc_config: ::std::option::Option<crate::types::VpcConfigInput>,
+    pub(crate) resources_to_replicate_tags: ::std::option::Option<::std::vec::Vec<crate::types::ResourceToTag>>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) artifact_config: ::std::option::Option<crate::types::ArtifactConfigInput>,
 }
@@ -346,12 +359,36 @@ impl CreateCanaryInputBuilder {
     pub fn get_vpc_config(&self) -> &::std::option::Option<crate::types::VpcConfigInput> {
         &self.vpc_config
     }
+    /// Appends an item to `resources_to_replicate_tags`.
+    ///
+    /// To override the contents of this collection use [`set_resources_to_replicate_tags`](Self::set_resources_to_replicate_tags).
+    ///
+    /// <p>To have the tags that you apply to this canary also be applied to the Lambda function that the canary uses, specify this parameter with the value <code>lambda-function</code>.</p>
+    /// <p>If you specify this parameter and don't specify any tags in the <code>Tags</code> parameter, the canary creation fails.</p>
+    pub fn resources_to_replicate_tags(mut self, input: crate::types::ResourceToTag) -> Self {
+        let mut v = self.resources_to_replicate_tags.unwrap_or_default();
+        v.push(input);
+        self.resources_to_replicate_tags = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>To have the tags that you apply to this canary also be applied to the Lambda function that the canary uses, specify this parameter with the value <code>lambda-function</code>.</p>
+    /// <p>If you specify this parameter and don't specify any tags in the <code>Tags</code> parameter, the canary creation fails.</p>
+    pub fn set_resources_to_replicate_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceToTag>>) -> Self {
+        self.resources_to_replicate_tags = input;
+        self
+    }
+    /// <p>To have the tags that you apply to this canary also be applied to the Lambda function that the canary uses, specify this parameter with the value <code>lambda-function</code>.</p>
+    /// <p>If you specify this parameter and don't specify any tags in the <code>Tags</code> parameter, the canary creation fails.</p>
+    pub fn get_resources_to_replicate_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceToTag>> {
+        &self.resources_to_replicate_tags
+    }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>A list of key-value pairs to associate with the canary. You can associate as many as 50 tags with a canary.</p>
     /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions, by granting a user permission to access or change only the resources that have certain tag values.</p>
+    /// <p>To have the tags that you apply to this canary also be applied to the Lambda function that the canary uses, specify this parameter with the value <code>lambda-function</code>.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
@@ -360,12 +397,14 @@ impl CreateCanaryInputBuilder {
     }
     /// <p>A list of key-value pairs to associate with the canary. You can associate as many as 50 tags with a canary.</p>
     /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions, by granting a user permission to access or change only the resources that have certain tag values.</p>
+    /// <p>To have the tags that you apply to this canary also be applied to the Lambda function that the canary uses, specify this parameter with the value <code>lambda-function</code>.</p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>A list of key-value pairs to associate with the canary. You can associate as many as 50 tags with a canary.</p>
     /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions, by granting a user permission to access or change only the resources that have certain tag values.</p>
+    /// <p>To have the tags that you apply to this canary also be applied to the Lambda function that the canary uses, specify this parameter with the value <code>lambda-function</code>.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
@@ -398,6 +437,7 @@ impl CreateCanaryInputBuilder {
             failure_retention_period_in_days: self.failure_retention_period_in_days,
             runtime_version: self.runtime_version,
             vpc_config: self.vpc_config,
+            resources_to_replicate_tags: self.resources_to_replicate_tags,
             tags: self.tags,
             artifact_config: self.artifact_config,
         })

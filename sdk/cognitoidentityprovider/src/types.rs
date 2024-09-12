@@ -103,9 +103,13 @@ pub use crate::types::_analytics_metadata_type::AnalyticsMetadataType;
 
 pub use crate::types::_mfa_option_type::MfaOptionType;
 
+pub use crate::types::_email_mfa_config_type::EmailMfaConfigType;
+
 pub use crate::types::_software_token_mfa_config_type::SoftwareTokenMfaConfigType;
 
 pub use crate::types::_sms_mfa_config_type::SmsMfaConfigType;
+
+pub use crate::types::_email_mfa_settings_type::EmailMfaSettingsType;
 
 pub use crate::types::_software_token_mfa_settings_type::SoftwareTokenMfaSettingsType;
 
@@ -308,6 +312,10 @@ mod _domain_description_type;
 mod _domain_status_type;
 
 mod _email_configuration_type;
+
+mod _email_mfa_config_type;
+
+mod _email_mfa_settings_type;
 
 mod _email_sending_account_type;
 

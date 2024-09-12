@@ -184,7 +184,7 @@ impl UpdateMaintenanceStartTimeFluentBuilder {
     /// <p>A set of variables indicating the software update preferences for the gateway.</p>
     /// <p>Includes <code>AutomaticUpdatePolicy</code> field with the following inputs:</p>
     /// <p><code>ALL_VERSIONS</code> - Enables regular gateway maintenance updates.</p>
-    /// <p><code>EMERGENCY_VERSIONS_ONLY</code> - Disables regular gateway maintenance updates.</p>
+    /// <p><code>EMERGENCY_VERSIONS_ONLY</code> - Disables regular gateway maintenance updates. The gateway will still receive emergency version updates on rare occasions if necessary to remedy highly critical security or durability issues. You will be notified before an emergency version update is applied. These updates are applied during your gateway's scheduled maintenance window.</p>
     pub fn software_update_preferences(mut self, input: crate::types::SoftwareUpdatePreferences) -> Self {
         self.inner = self.inner.software_update_preferences(input);
         self
@@ -192,7 +192,7 @@ impl UpdateMaintenanceStartTimeFluentBuilder {
     /// <p>A set of variables indicating the software update preferences for the gateway.</p>
     /// <p>Includes <code>AutomaticUpdatePolicy</code> field with the following inputs:</p>
     /// <p><code>ALL_VERSIONS</code> - Enables regular gateway maintenance updates.</p>
-    /// <p><code>EMERGENCY_VERSIONS_ONLY</code> - Disables regular gateway maintenance updates.</p>
+    /// <p><code>EMERGENCY_VERSIONS_ONLY</code> - Disables regular gateway maintenance updates. The gateway will still receive emergency version updates on rare occasions if necessary to remedy highly critical security or durability issues. You will be notified before an emergency version update is applied. These updates are applied during your gateway's scheduled maintenance window.</p>
     pub fn set_software_update_preferences(mut self, input: ::std::option::Option<crate::types::SoftwareUpdatePreferences>) -> Self {
         self.inner = self.inner.set_software_update_preferences(input);
         self
@@ -200,7 +200,7 @@ impl UpdateMaintenanceStartTimeFluentBuilder {
     /// <p>A set of variables indicating the software update preferences for the gateway.</p>
     /// <p>Includes <code>AutomaticUpdatePolicy</code> field with the following inputs:</p>
     /// <p><code>ALL_VERSIONS</code> - Enables regular gateway maintenance updates.</p>
-    /// <p><code>EMERGENCY_VERSIONS_ONLY</code> - Disables regular gateway maintenance updates.</p>
+    /// <p><code>EMERGENCY_VERSIONS_ONLY</code> - Disables regular gateway maintenance updates. The gateway will still receive emergency version updates on rare occasions if necessary to remedy highly critical security or durability issues. You will be notified before an emergency version update is applied. These updates are applied during your gateway's scheduled maintenance window.</p>
     pub fn get_software_update_preferences(&self) -> &::std::option::Option<crate::types::SoftwareUpdatePreferences> {
         self.inner.get_software_update_preferences()
     }

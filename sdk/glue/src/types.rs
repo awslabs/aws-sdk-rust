@@ -39,6 +39,14 @@ pub use crate::types::_trigger_update::TriggerUpdate;
 
 pub use crate::types::_table_optimizer_configuration::TableOptimizerConfiguration;
 
+pub use crate::types::_orphan_file_deletion_configuration::OrphanFileDeletionConfiguration;
+
+pub use crate::types::_iceberg_orphan_file_deletion_configuration::IcebergOrphanFileDeletionConfiguration;
+
+pub use crate::types::_retention_configuration::RetentionConfiguration;
+
+pub use crate::types::_iceberg_retention_configuration::IcebergRetentionConfiguration;
+
 pub use crate::types::_table_optimizer_type::TableOptimizerType;
 
 pub use crate::types::_view_update_action::ViewUpdateAction;
@@ -525,6 +533,18 @@ pub use crate::types::_usage_profile_definition::UsageProfileDefinition;
 
 pub use crate::types::_table_optimizer_run::TableOptimizerRun;
 
+pub use crate::types::_orphan_file_deletion_metrics::OrphanFileDeletionMetrics;
+
+pub use crate::types::_iceberg_orphan_file_deletion_metrics::IcebergOrphanFileDeletionMetrics;
+
+pub use crate::types::_retention_metrics::RetentionMetrics;
+
+pub use crate::types::_iceberg_retention_metrics::IcebergRetentionMetrics;
+
+pub use crate::types::_compaction_metrics::CompactionMetrics;
+
+pub use crate::types::_iceberg_compaction_metrics::IcebergCompactionMetrics;
+
 pub use crate::types::_run_metrics::RunMetrics;
 
 pub use crate::types::_table_optimizer_event_type::TableOptimizerEventType;
@@ -995,6 +1015,8 @@ mod _column_statistics_task_run;
 
 mod _column_statistics_type;
 
+mod _compaction_metrics;
+
 mod _comparator;
 
 mod _compatibility;
@@ -1249,7 +1271,17 @@ mod _hudi_target;
 
 mod _hudi_target_compression_type;
 
+mod _iceberg_compaction_metrics;
+
 mod _iceberg_input;
+
+mod _iceberg_orphan_file_deletion_configuration;
+
+mod _iceberg_orphan_file_deletion_metrics;
+
+mod _iceberg_retention_configuration;
+
+mod _iceberg_retention_metrics;
 
 mod _iceberg_target;
 
@@ -1385,6 +1417,10 @@ mod _oracle_sql_catalog_target;
 
 mod _order;
 
+mod _orphan_file_deletion_configuration;
+
+mod _orphan_file_deletion_metrics;
+
 mod _other_metadata_value_list_item;
 
 mod _param_type;
@@ -1470,6 +1506,10 @@ mod _resource_state;
 mod _resource_type;
 
 mod _resource_uri;
+
+mod _retention_configuration;
+
+mod _retention_metrics;
 
 mod _run_identifier;
 

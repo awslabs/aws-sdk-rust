@@ -80,6 +80,21 @@ pub fn de_delete_table_optimizer_http_error(
             }
             tmp
         }),
+        "ThrottlingException" => crate::operation::delete_table_optimizer::DeleteTableOptimizerError::ThrottlingException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ThrottlingExceptionBuilder::default();
+                output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::delete_table_optimizer::DeleteTableOptimizerError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::operation::delete_table_optimizer::DeleteTableOptimizerError::generic(generic),
     })
 }

@@ -27,6 +27,14 @@ impl ListTableOptimizerRunsPaginator {
         self
     }
 
+    /// Create a flattened paginator
+    ///
+    /// This paginator automatically flattens results using `table_optimizer_runs`. Queries to the underlying service
+    /// are dispatched lazily.
+    pub fn items(self) -> crate::operation::list_table_optimizer_runs::paginator::ListTableOptimizerRunsPaginatorItems {
+        crate::operation::list_table_optimizer_runs::paginator::ListTableOptimizerRunsPaginatorItems(self)
+    }
+
     /// Stop paginating when the service returns the same pagination token twice in a row.
     ///
     /// Defaults to true.
@@ -106,5 +114,36 @@ impl ListTableOptimizerRunsPaginator {
                 })
             },
         ))
+    }
+}
+
+/// Flattened paginator for `ListTableOptimizerRunsPaginator`
+///
+/// This is created with [`.items()`](ListTableOptimizerRunsPaginator::items)
+pub struct ListTableOptimizerRunsPaginatorItems(ListTableOptimizerRunsPaginator);
+
+impl ListTableOptimizerRunsPaginatorItems {
+    /// Create the pagination stream
+    ///
+    /// _Note_: No requests will be dispatched until the stream is used
+    /// (e.g. with the [`.next().await`](aws_smithy_async::future::pagination_stream::PaginationStream::next) method).
+    ///
+    /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](aws_smithy_async::future::pagination_stream::PaginationStream::collect).
+    pub fn send(
+        self,
+    ) -> ::aws_smithy_async::future::pagination_stream::PaginationStream<
+        ::std::result::Result<
+            crate::types::TableOptimizerRun,
+            ::aws_smithy_runtime_api::client::result::SdkError<
+                crate::operation::list_table_optimizer_runs::ListTableOptimizerRunsError,
+                ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
+            >,
+        >,
+    > {
+        ::aws_smithy_async::future::pagination_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_list_table_optimizer_runs_output_output_table_optimizer_runs(page)
+                .unwrap_or_default()
+                .into_iter()
+        })
     }
 }

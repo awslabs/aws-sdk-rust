@@ -23,6 +23,14 @@ pub use crate::types::_trigger_update::TriggerUpdateBuilder;
 
 pub use crate::types::_table_optimizer_configuration::TableOptimizerConfigurationBuilder;
 
+pub use crate::types::_orphan_file_deletion_configuration::OrphanFileDeletionConfigurationBuilder;
+
+pub use crate::types::_iceberg_orphan_file_deletion_configuration::IcebergOrphanFileDeletionConfigurationBuilder;
+
+pub use crate::types::_retention_configuration::RetentionConfigurationBuilder;
+
+pub use crate::types::_iceberg_retention_configuration::IcebergRetentionConfigurationBuilder;
+
 pub use crate::types::_table_input::TableInputBuilder;
 
 pub use crate::types::_view_definition_input::ViewDefinitionInputBuilder;
@@ -394,6 +402,18 @@ pub use crate::types::_encryption_at_rest::EncryptionAtRestBuilder;
 pub use crate::types::_usage_profile_definition::UsageProfileDefinitionBuilder;
 
 pub use crate::types::_table_optimizer_run::TableOptimizerRunBuilder;
+
+pub use crate::types::_orphan_file_deletion_metrics::OrphanFileDeletionMetricsBuilder;
+
+pub use crate::types::_iceberg_orphan_file_deletion_metrics::IcebergOrphanFileDeletionMetricsBuilder;
+
+pub use crate::types::_retention_metrics::RetentionMetricsBuilder;
+
+pub use crate::types::_iceberg_retention_metrics::IcebergRetentionMetricsBuilder;
+
+pub use crate::types::_compaction_metrics::CompactionMetricsBuilder;
+
+pub use crate::types::_iceberg_compaction_metrics::IcebergCompactionMetricsBuilder;
 
 pub use crate::types::_run_metrics::RunMetricsBuilder;
 
