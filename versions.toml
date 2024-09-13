@@ -70,9 +70,9 @@ model_hash = 'b09b164e9949d95279b977fd962cc347c565b275f84f50e5501256a4d663a525'
 
 [crates.aws-sdk-amplify]
 category = 'AwsSdk'
-version = '1.45.0'
-source_hash = 'e15ba274680011015feb756ac0448f383b56241f145b323424ec628a999ee2e9'
-model_hash = '27563a04e27dc5b27d9bad8ecf063c6063cc0fe83814b1e165b083d73c2ce77c'
+version = '1.45.1'
+source_hash = 'ffeffa73496b6cc217d42bec9528a1ffa562df32cffe4346a632bcae26ace616'
+model_hash = 'fbd81530124c2b2d85f41580057f724c76559e4ca1fe3cedf9cef0565d656724'
 
 [crates.aws-sdk-amplifybackend]
 category = 'AwsSdk'
@@ -1138,15 +1138,15 @@ model_hash = 'd5188ed4e7d4519292d5c875131c9c126b458f156a01dff216fe1d53b8aa5727'
 
 [crates.aws-sdk-ivs]
 category = 'AwsSdk'
-version = '1.46.0'
-source_hash = 'f7ae24524ddb63b816cef8bd67f5d8a59c6cdfcb03abf555c498be20482d6fdd'
-model_hash = 'b129b493dcba1cc014811c2cd904925aad0277bc49a4c896fceec65da589fc61'
+version = '1.46.1'
+source_hash = '1932d30ab0e49f924a63257f66226358f760b772e6a3e9e1682e51915709873a'
+model_hash = '1a0ce39901805df899ca3631be8dfd8f4e505e6b18f3b76b63be3041da3af66b'
 
 [crates.aws-sdk-ivschat]
 category = 'AwsSdk'
-version = '1.43.0'
-source_hash = '4f8107453fb217a1a12e9eb67b6aa1820cc7059515ce13afdf2c4769a9a4a38f'
-model_hash = 'bb10a8c215b5d248e5a848b2558b67f0242354a09b9a029e9919aec208130b92'
+version = '1.43.1'
+source_hash = 'd99405f8c1147751795458d27e44a4af7d7b6c4612e267dc4050152c2153be74'
+model_hash = '8b1d12eaea48deeed8e7048d8b61c17cfc1d620a6f71e3b4db6ab4bce3970b78'
 
 [crates.aws-sdk-ivsrealtime]
 category = 'AwsSdk'
@@ -2487,16 +2487,7 @@ source_hash = 'db7face08f400b930054e717f7ee7a6a153796d82cbf0529f5a8846e4ed9ca67'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = 'e73be5cd8fa313370338d1d6cd7c32fffb873cc96e2d73ed45f7f44f06b00c50'
-
-[release]
-tag = 'release-2024-09-12'
-
 [release.crates]
-aws-sdk-cognitoidentityprovider = '1.50.0'
-aws-sdk-elasticloadbalancingv2 = '1.47.0'
-aws-sdk-emr = '1.46.0'
-aws-sdk-glue = '1.60.0'
-aws-sdk-mediaconvert = '1.48.0'
-aws-sdk-rds = '1.53.1'
-aws-sdk-storagegateway = '1.46.0'
-aws-sdk-synthetics = '1.43.0'
+aws-sdk-amplify = '1.45.1'
+aws-sdk-ivs = '1.46.1'
+aws-sdk-ivschat = '1.43.1'
