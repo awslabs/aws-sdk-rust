@@ -45,5 +45,11 @@ pub fn ser_create_model_invocation_job_input_input(
             ::aws_smithy_types::Number::NegInt((*var_13).into()),
         );
     }
+    if let Some(var_14) = &input.vpc_config {
+        #[allow(unused_mut)]
+        let mut object_15 = object.key("vpcConfig").start_object();
+        crate::protocol_serde::shape_vpc_config::ser_vpc_config(&mut object_15, var_14)?;
+        object_15.finish();
+    }
     Ok(())
 }

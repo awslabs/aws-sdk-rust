@@ -9,6 +9,9 @@ pub fn ser_model_invocation_job_s3_input_data_config(
     {
         object.key("s3Uri").string(input.s3_uri.as_str());
     }
+    if let Some(var_2) = &input.s3_bucket_owner {
+        object.key("s3BucketOwner").string(var_2.as_str());
+    }
     Ok(())
 }
 
@@ -36,6 +39,13 @@ where
                         }
                         "s3Uri" => {
                             builder = builder.set_s3_uri(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "s3BucketOwner" => {
+                            builder = builder.set_s3_bucket_owner(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,

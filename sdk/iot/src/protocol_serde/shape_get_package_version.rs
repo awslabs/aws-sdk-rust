@@ -111,6 +111,11 @@ pub(crate) fn de_get_package_version(
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                "artifact" => {
+                    builder = builder.set_artifact(crate::protocol_serde::shape_package_version_artifact::de_package_version_artifact(
+                        tokens,
+                    )?);
+                }
                 "attributes" => {
                     builder = builder.set_attributes(crate::protocol_serde::shape_resource_attributes::de_resource_attributes(tokens)?);
                 }
@@ -151,6 +156,23 @@ pub(crate) fn de_get_package_version(
                     builder = builder.set_package_version_arn(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
+                "recipe" => {
+                    builder = builder.set_recipe(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
+                "sbom" => {
+                    builder = builder.set_sbom(crate::protocol_serde::shape_sbom::de_sbom(tokens)?);
+                }
+                "sbomValidationStatus" => {
+                    builder = builder.set_sbom_validation_status(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::SbomValidationStatus::from(u.as_ref())))
                             .transpose()?,
                     );
                 }

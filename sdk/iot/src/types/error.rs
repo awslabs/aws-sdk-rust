@@ -17,6 +17,8 @@ pub use crate::types::error::_resource_not_found_exception::ResourceNotFoundExce
 
 pub use crate::types::error::_version_conflict_exception::VersionConflictException;
 
+pub use crate::types::error::_limit_exceeded_exception::LimitExceededException;
+
 pub use crate::types::error::_validation_exception::ValidationException;
 
 pub use crate::types::error::_internal_server_exception::InternalServerException;
@@ -32,8 +34,6 @@ pub use crate::types::error::_index_not_ready_exception::IndexNotReadyException;
 pub use crate::types::error::_certificate_validation_exception::CertificateValidationException;
 
 pub use crate::types::error::_certificate_state_exception::CertificateStateException;
-
-pub use crate::types::error::_limit_exceeded_exception::LimitExceededException;
 
 pub use crate::types::error::_transfer_conflict_exception::TransferConflictException;
 

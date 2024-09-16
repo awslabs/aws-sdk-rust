@@ -95,6 +95,9 @@ where
                                 )?,
                             );
                         }
+                        "vpcConfig" => {
+                            builder = builder.set_vpc_config(crate::protocol_serde::shape_vpc_config::de_vpc_config(tokens)?);
+                        }
                         "timeoutDurationInHours" => {
                             builder = builder.set_timeout_duration_in_hours(
                                 ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?

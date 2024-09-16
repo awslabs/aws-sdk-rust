@@ -6,18 +6,27 @@ pub fn ser_update_package_version_input_input(
     if let Some(var_1) = &input.action {
         object.key("action").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.attributes {
+    if let Some(var_2) = &input.artifact {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("attributes").start_object();
-        for (key_4, value_5) in var_2 {
-            {
-                object_3.key(key_4.as_str()).string(value_5.as_str());
-            }
-        }
+        let mut object_3 = object.key("artifact").start_object();
+        crate::protocol_serde::shape_package_version_artifact::ser_package_version_artifact(&mut object_3, var_2)?;
         object_3.finish();
     }
-    if let Some(var_6) = &input.description {
-        object.key("description").string(var_6.as_str());
+    if let Some(var_4) = &input.attributes {
+        #[allow(unused_mut)]
+        let mut object_5 = object.key("attributes").start_object();
+        for (key_6, value_7) in var_4 {
+            {
+                object_5.key(key_6.as_str()).string(value_7.as_str());
+            }
+        }
+        object_5.finish();
+    }
+    if let Some(var_8) = &input.description {
+        object.key("description").string(var_8.as_str());
+    }
+    if let Some(var_9) = &input.recipe {
+        object.key("recipe").string(var_9.as_str());
     }
     Ok(())
 }

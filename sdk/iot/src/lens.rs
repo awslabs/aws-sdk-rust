@@ -389,6 +389,16 @@ pub(crate) fn reflens_list_role_aliases_output_output_next_marker(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_sbom_validation_results_output_output_next_token(
+    input: &crate::operation::list_sbom_validation_results::ListSbomValidationResultsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_scheduled_audits_output_output_next_token(
     input: &crate::operation::list_scheduled_audits::ListScheduledAuditsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -973,6 +983,16 @@ pub(crate) fn lens_list_role_aliases_output_output_role_aliases(
     input: crate::operation::list_role_aliases::ListRoleAliasesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<::std::string::String>> {
     let input = match input.role_aliases {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_sbom_validation_results_output_output_validation_result_summaries(
+    input: crate::operation::list_sbom_validation_results::ListSbomValidationResultsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::SbomValidationResultSummary>> {
+    let input = match input.validation_result_summaries {
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,
     };

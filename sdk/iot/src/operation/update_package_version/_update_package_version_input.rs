@@ -13,8 +13,12 @@ pub struct UpdatePackageVersionInput {
     /// <p><b>Note:</b> Attributes can be updated only when the package version is in a draft state.</p>
     /// <p>The combined size of all the attributes on a package version is limited to 3KB.</p>
     pub attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>The various components that make up a software package version.</p>
+    pub artifact: ::std::option::Option<crate::types::PackageVersionArtifact>,
     /// <p>The status that the package version should be assigned. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/preparing-to-use-software-package-catalog.html#package-version-lifecycle">Package version lifecycle</a>.</p>
     pub action: ::std::option::Option<crate::types::PackageVersionAction>,
+    /// <p>The inline job document associated with a software package version used for a quick job deployment via IoT Jobs.</p>
+    pub recipe: ::std::option::Option<::std::string::String>,
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
@@ -37,9 +41,17 @@ impl UpdatePackageVersionInput {
     pub fn attributes(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.attributes.as_ref()
     }
+    /// <p>The various components that make up a software package version.</p>
+    pub fn artifact(&self) -> ::std::option::Option<&crate::types::PackageVersionArtifact> {
+        self.artifact.as_ref()
+    }
     /// <p>The status that the package version should be assigned. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/preparing-to-use-software-package-catalog.html#package-version-lifecycle">Package version lifecycle</a>.</p>
     pub fn action(&self) -> ::std::option::Option<&crate::types::PackageVersionAction> {
         self.action.as_ref()
+    }
+    /// <p>The inline job document associated with a software package version used for a quick job deployment via IoT Jobs.</p>
+    pub fn recipe(&self) -> ::std::option::Option<&str> {
+        self.recipe.as_deref()
     }
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
@@ -53,7 +65,9 @@ impl ::std::fmt::Debug for UpdatePackageVersionInput {
         formatter.field("version_name", &self.version_name);
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("attributes", &"*** Sensitive Data Redacted ***");
+        formatter.field("artifact", &self.artifact);
         formatter.field("action", &self.action);
+        formatter.field("recipe", &"*** Sensitive Data Redacted ***");
         formatter.field("client_token", &self.client_token);
         formatter.finish()
     }
@@ -73,7 +87,9 @@ pub struct UpdatePackageVersionInputBuilder {
     pub(crate) version_name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) artifact: ::std::option::Option<crate::types::PackageVersionArtifact>,
     pub(crate) action: ::std::option::Option<crate::types::PackageVersionAction>,
+    pub(crate) recipe: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl UpdatePackageVersionInputBuilder {
@@ -147,6 +163,20 @@ impl UpdatePackageVersionInputBuilder {
     pub fn get_attributes(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.attributes
     }
+    /// <p>The various components that make up a software package version.</p>
+    pub fn artifact(mut self, input: crate::types::PackageVersionArtifact) -> Self {
+        self.artifact = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The various components that make up a software package version.</p>
+    pub fn set_artifact(mut self, input: ::std::option::Option<crate::types::PackageVersionArtifact>) -> Self {
+        self.artifact = input;
+        self
+    }
+    /// <p>The various components that make up a software package version.</p>
+    pub fn get_artifact(&self) -> &::std::option::Option<crate::types::PackageVersionArtifact> {
+        &self.artifact
+    }
     /// <p>The status that the package version should be assigned. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/preparing-to-use-software-package-catalog.html#package-version-lifecycle">Package version lifecycle</a>.</p>
     pub fn action(mut self, input: crate::types::PackageVersionAction) -> Self {
         self.action = ::std::option::Option::Some(input);
@@ -160,6 +190,20 @@ impl UpdatePackageVersionInputBuilder {
     /// <p>The status that the package version should be assigned. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/preparing-to-use-software-package-catalog.html#package-version-lifecycle">Package version lifecycle</a>.</p>
     pub fn get_action(&self) -> &::std::option::Option<crate::types::PackageVersionAction> {
         &self.action
+    }
+    /// <p>The inline job document associated with a software package version used for a quick job deployment via IoT Jobs.</p>
+    pub fn recipe(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.recipe = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The inline job document associated with a software package version used for a quick job deployment via IoT Jobs.</p>
+    pub fn set_recipe(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.recipe = input;
+        self
+    }
+    /// <p>The inline job document associated with a software package version used for a quick job deployment via IoT Jobs.</p>
+    pub fn get_recipe(&self) -> &::std::option::Option<::std::string::String> {
+        &self.recipe
     }
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -185,7 +229,9 @@ impl UpdatePackageVersionInputBuilder {
             version_name: self.version_name,
             description: self.description,
             attributes: self.attributes,
+            artifact: self.artifact,
             action: self.action,
+            recipe: self.recipe,
             client_token: self.client_token,
         })
     }
@@ -197,7 +243,9 @@ impl ::std::fmt::Debug for UpdatePackageVersionInputBuilder {
         formatter.field("version_name", &self.version_name);
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("attributes", &"*** Sensitive Data Redacted ***");
+        formatter.field("artifact", &self.artifact);
         formatter.field("action", &self.action);
+        formatter.field("recipe", &"*** Sensitive Data Redacted ***");
         formatter.field("client_token", &self.client_token);
         formatter.finish()
     }

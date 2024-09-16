@@ -3,28 +3,37 @@ pub fn ser_create_package_version_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_package_version::CreatePackageVersionInput,
 ) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.attributes {
+    if let Some(var_1) = &input.artifact {
         #[allow(unused_mut)]
-        let mut object_2 = object.key("attributes").start_object();
-        for (key_3, value_4) in var_1 {
-            {
-                object_2.key(key_3.as_str()).string(value_4.as_str());
-            }
-        }
+        let mut object_2 = object.key("artifact").start_object();
+        crate::protocol_serde::shape_package_version_artifact::ser_package_version_artifact(&mut object_2, var_1)?;
         object_2.finish();
     }
-    if let Some(var_5) = &input.description {
-        object.key("description").string(var_5.as_str());
-    }
-    if let Some(var_6) = &input.tags {
+    if let Some(var_3) = &input.attributes {
         #[allow(unused_mut)]
-        let mut object_7 = object.key("tags").start_object();
-        for (key_8, value_9) in var_6 {
+        let mut object_4 = object.key("attributes").start_object();
+        for (key_5, value_6) in var_3 {
             {
-                object_7.key(key_8.as_str()).string(value_9.as_str());
+                object_4.key(key_5.as_str()).string(value_6.as_str());
             }
         }
-        object_7.finish();
+        object_4.finish();
+    }
+    if let Some(var_7) = &input.description {
+        object.key("description").string(var_7.as_str());
+    }
+    if let Some(var_8) = &input.recipe {
+        object.key("recipe").string(var_8.as_str());
+    }
+    if let Some(var_9) = &input.tags {
+        #[allow(unused_mut)]
+        let mut object_10 = object.key("tags").start_object();
+        for (key_11, value_12) in var_9 {
+            {
+                object_10.key(key_11.as_str()).string(value_12.as_str());
+            }
+        }
+        object_10.finish();
     }
     Ok(())
 }

@@ -12,6 +12,10 @@ pub struct CreatePackageVersionInput {
     /// <p>Metadata that can be used to define a package version’s configuration. For example, the S3 file location, configuration options that are being sent to the device or fleet.</p>
     /// <p>The combined size of all the attributes on a package version is limited to 3KB.</p>
     pub attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>The various build components created during the build process such as libraries and configuration files that make up a software package version.</p>
+    pub artifact: ::std::option::Option<crate::types::PackageVersionArtifact>,
+    /// <p>The inline job document associated with a software package version used for a quick job deployment via IoT Jobs.</p>
+    pub recipe: ::std::option::Option<::std::string::String>,
     /// <p>Metadata that can be used to manage the package version.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
@@ -35,6 +39,14 @@ impl CreatePackageVersionInput {
     pub fn attributes(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.attributes.as_ref()
     }
+    /// <p>The various build components created during the build process such as libraries and configuration files that make up a software package version.</p>
+    pub fn artifact(&self) -> ::std::option::Option<&crate::types::PackageVersionArtifact> {
+        self.artifact.as_ref()
+    }
+    /// <p>The inline job document associated with a software package version used for a quick job deployment via IoT Jobs.</p>
+    pub fn recipe(&self) -> ::std::option::Option<&str> {
+        self.recipe.as_deref()
+    }
     /// <p>Metadata that can be used to manage the package version.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
@@ -51,6 +63,8 @@ impl ::std::fmt::Debug for CreatePackageVersionInput {
         formatter.field("version_name", &self.version_name);
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("attributes", &"*** Sensitive Data Redacted ***");
+        formatter.field("artifact", &self.artifact);
+        formatter.field("recipe", &"*** Sensitive Data Redacted ***");
         formatter.field("tags", &self.tags);
         formatter.field("client_token", &self.client_token);
         formatter.finish()
@@ -71,6 +85,8 @@ pub struct CreatePackageVersionInputBuilder {
     pub(crate) version_name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) artifact: ::std::option::Option<crate::types::PackageVersionArtifact>,
+    pub(crate) recipe: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
@@ -142,6 +158,34 @@ impl CreatePackageVersionInputBuilder {
     pub fn get_attributes(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.attributes
     }
+    /// <p>The various build components created during the build process such as libraries and configuration files that make up a software package version.</p>
+    pub fn artifact(mut self, input: crate::types::PackageVersionArtifact) -> Self {
+        self.artifact = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The various build components created during the build process such as libraries and configuration files that make up a software package version.</p>
+    pub fn set_artifact(mut self, input: ::std::option::Option<crate::types::PackageVersionArtifact>) -> Self {
+        self.artifact = input;
+        self
+    }
+    /// <p>The various build components created during the build process such as libraries and configuration files that make up a software package version.</p>
+    pub fn get_artifact(&self) -> &::std::option::Option<crate::types::PackageVersionArtifact> {
+        &self.artifact
+    }
+    /// <p>The inline job document associated with a software package version used for a quick job deployment via IoT Jobs.</p>
+    pub fn recipe(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.recipe = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The inline job document associated with a software package version used for a quick job deployment via IoT Jobs.</p>
+    pub fn set_recipe(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.recipe = input;
+        self
+    }
+    /// <p>The inline job document associated with a software package version used for a quick job deployment via IoT Jobs.</p>
+    pub fn get_recipe(&self) -> &::std::option::Option<::std::string::String> {
+        &self.recipe
+    }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -186,6 +230,8 @@ impl CreatePackageVersionInputBuilder {
             version_name: self.version_name,
             description: self.description,
             attributes: self.attributes,
+            artifact: self.artifact,
+            recipe: self.recipe,
             tags: self.tags,
             client_token: self.client_token,
         })
@@ -198,6 +244,8 @@ impl ::std::fmt::Debug for CreatePackageVersionInputBuilder {
         formatter.field("version_name", &self.version_name);
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("attributes", &"*** Sensitive Data Redacted ***");
+        formatter.field("artifact", &self.artifact);
+        formatter.field("recipe", &"*** Sensitive Data Redacted ***");
         formatter.field("tags", &self.tags);
         formatter.field("client_token", &self.client_token);
         formatter.finish()

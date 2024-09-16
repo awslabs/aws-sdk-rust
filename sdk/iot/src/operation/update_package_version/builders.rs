@@ -176,6 +176,20 @@ impl UpdatePackageVersionFluentBuilder {
     pub fn get_attributes(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_attributes()
     }
+    /// <p>The various components that make up a software package version.</p>
+    pub fn artifact(mut self, input: crate::types::PackageVersionArtifact) -> Self {
+        self.inner = self.inner.artifact(input);
+        self
+    }
+    /// <p>The various components that make up a software package version.</p>
+    pub fn set_artifact(mut self, input: ::std::option::Option<crate::types::PackageVersionArtifact>) -> Self {
+        self.inner = self.inner.set_artifact(input);
+        self
+    }
+    /// <p>The various components that make up a software package version.</p>
+    pub fn get_artifact(&self) -> &::std::option::Option<crate::types::PackageVersionArtifact> {
+        self.inner.get_artifact()
+    }
     /// <p>The status that the package version should be assigned. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/preparing-to-use-software-package-catalog.html#package-version-lifecycle">Package version lifecycle</a>.</p>
     pub fn action(mut self, input: crate::types::PackageVersionAction) -> Self {
         self.inner = self.inner.action(input);
@@ -189,6 +203,20 @@ impl UpdatePackageVersionFluentBuilder {
     /// <p>The status that the package version should be assigned. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/preparing-to-use-software-package-catalog.html#package-version-lifecycle">Package version lifecycle</a>.</p>
     pub fn get_action(&self) -> &::std::option::Option<crate::types::PackageVersionAction> {
         self.inner.get_action()
+    }
+    /// <p>The inline job document associated with a software package version used for a quick job deployment via IoT Jobs.</p>
+    pub fn recipe(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.recipe(input.into());
+        self
+    }
+    /// <p>The inline job document associated with a software package version used for a quick job deployment via IoT Jobs.</p>
+    pub fn set_recipe(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_recipe(input);
+        self
+    }
+    /// <p>The inline job document associated with a software package version used for a quick job deployment via IoT Jobs.</p>
+    pub fn get_recipe(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_recipe()
     }
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

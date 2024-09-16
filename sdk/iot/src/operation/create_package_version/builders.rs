@@ -173,6 +173,34 @@ impl CreatePackageVersionFluentBuilder {
     pub fn get_attributes(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_attributes()
     }
+    /// <p>The various build components created during the build process such as libraries and configuration files that make up a software package version.</p>
+    pub fn artifact(mut self, input: crate::types::PackageVersionArtifact) -> Self {
+        self.inner = self.inner.artifact(input);
+        self
+    }
+    /// <p>The various build components created during the build process such as libraries and configuration files that make up a software package version.</p>
+    pub fn set_artifact(mut self, input: ::std::option::Option<crate::types::PackageVersionArtifact>) -> Self {
+        self.inner = self.inner.set_artifact(input);
+        self
+    }
+    /// <p>The various build components created during the build process such as libraries and configuration files that make up a software package version.</p>
+    pub fn get_artifact(&self) -> &::std::option::Option<crate::types::PackageVersionArtifact> {
+        self.inner.get_artifact()
+    }
+    /// <p>The inline job document associated with a software package version used for a quick job deployment via IoT Jobs.</p>
+    pub fn recipe(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.recipe(input.into());
+        self
+    }
+    /// <p>The inline job document associated with a software package version used for a quick job deployment via IoT Jobs.</p>
+    pub fn set_recipe(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_recipe(input);
+        self
+    }
+    /// <p>The inline job document associated with a software package version used for a quick job deployment via IoT Jobs.</p>
+    pub fn get_recipe(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_recipe()
+    }
     ///
     /// Adds a key-value pair to `tags`.
     ///

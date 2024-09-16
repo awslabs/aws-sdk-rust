@@ -29,6 +29,8 @@ pub use crate::types::_alert_target::AlertTargetBuilder;
 
 pub use crate::types::_provisioning_hook::ProvisioningHookBuilder;
 
+pub use crate::types::_package_version_artifact::PackageVersionArtifactBuilder;
+
 pub use crate::types::_version_update_by_jobs_config::VersionUpdateByJobsConfigBuilder;
 
 pub use crate::types::_mitigation_action_params::MitigationActionParamsBuilder;
@@ -245,6 +247,8 @@ pub use crate::types::_security_profile_identifier::SecurityProfileIdentifierBui
 
 pub use crate::types::_scheduled_audit_metadata::ScheduledAuditMetadataBuilder;
 
+pub use crate::types::_sbom_validation_result_summary::SbomValidationResultSummaryBuilder;
+
 pub use crate::types::_related_resource::RelatedResourceBuilder;
 
 pub use crate::types::_provisioning_template_version_summary::ProvisioningTemplateVersionSummaryBuilder;
@@ -322,6 +326,8 @@ pub use crate::types::_topic_rule::TopicRuleBuilder;
 pub use crate::types::_statistics::StatisticsBuilder;
 
 pub use crate::types::_percent_pair::PercentPairBuilder;
+
+pub use crate::types::_sbom::SbomBuilder;
 
 pub use crate::types::_ota_update_info::OtaUpdateInfoBuilder;
 

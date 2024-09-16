@@ -123,4 +123,18 @@ impl DescribeJobFluentBuilder {
     pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_job_id()
     }
+    /// <p>A flag that provides a view of the job document before and after the substitution parameters have been resolved with their exact values.</p>
+    pub fn before_substitution(mut self, input: bool) -> Self {
+        self.inner = self.inner.before_substitution(input);
+        self
+    }
+    /// <p>A flag that provides a view of the job document before and after the substitution parameters have been resolved with their exact values.</p>
+    pub fn set_before_substitution(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_before_substitution(input);
+        self
+    }
+    /// <p>A flag that provides a view of the job document before and after the substitution parameters have been resolved with their exact values.</p>
+    pub fn get_before_substitution(&self) -> &::std::option::Option<bool> {
+        self.inner.get_before_substitution()
+    }
 }

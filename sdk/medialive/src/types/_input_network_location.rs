@@ -13,7 +13,6 @@
 /// # let inputnetworklocation = unimplemented!();
 /// match inputnetworklocation {
 ///     InputNetworkLocation::Aws => { /* ... */ },
-///     InputNetworkLocation::OnPremise => { /* ... */ },
 ///     InputNetworkLocation::OnPremises => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -46,8 +45,6 @@ pub enum InputNetworkLocation {
     #[allow(missing_docs)] // documentation missing in model
     Aws,
     #[allow(missing_docs)] // documentation missing in model
-    OnPremise,
-    #[allow(missing_docs)] // documentation missing in model
     OnPremises,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -57,7 +54,6 @@ impl ::std::convert::From<&str> for InputNetworkLocation {
     fn from(s: &str) -> Self {
         match s {
             "AWS" => InputNetworkLocation::Aws,
-            "ON_PREMISE" => InputNetworkLocation::OnPremise,
             "ON_PREMISES" => InputNetworkLocation::OnPremises,
             other => InputNetworkLocation::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -75,14 +71,13 @@ impl InputNetworkLocation {
     pub fn as_str(&self) -> &str {
         match self {
             InputNetworkLocation::Aws => "AWS",
-            InputNetworkLocation::OnPremise => "ON_PREMISE",
             InputNetworkLocation::OnPremises => "ON_PREMISES",
             InputNetworkLocation::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AWS", "ON_PREMISE", "ON_PREMISES"]
+        &["AWS", "ON_PREMISES"]
     }
 }
 impl ::std::convert::AsRef<str> for InputNetworkLocation {
@@ -106,7 +101,6 @@ impl ::std::fmt::Display for InputNetworkLocation {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             InputNetworkLocation::Aws => write!(f, "AWS"),
-            InputNetworkLocation::OnPremise => write!(f, "ON_PREMISE"),
             InputNetworkLocation::OnPremises => write!(f, "ON_PREMISES"),
             InputNetworkLocation::Unknown(value) => write!(f, "{}", value),
         }
