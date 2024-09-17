@@ -21,6 +21,10 @@ pub use crate::types::error::_code_storage_exceeded_exception::CodeStorageExceed
 
 pub use crate::types::error::_resource_in_use_exception::ResourceInUseExceptionBuilder;
 
+pub use crate::types::error::_public_policy_exception::PublicPolicyExceptionBuilder;
+
+pub use crate::types::error::_policy_length_exceeded_exception::PolicyLengthExceededExceptionBuilder;
+
 pub use crate::types::error::_unsupported_media_type_exception::UnsupportedMediaTypeExceptionBuilder;
 
 pub use crate::types::error::_subnet_ip_address_limit_reached_exception::SubnetIpAddressLimitReachedExceptionBuilder;
@@ -72,5 +76,3 @@ pub use crate::types::error::_ec2_throttled_exception::Ec2ThrottledExceptionBuil
 pub use crate::types::error::_ec2_access_denied_exception::Ec2AccessDeniedExceptionBuilder;
 
 pub use crate::types::error::_provisioned_concurrency_config_not_found_exception::ProvisionedConcurrencyConfigNotFoundExceptionBuilder;
-
-pub use crate::types::error::_policy_length_exceeded_exception::PolicyLengthExceededExceptionBuilder;

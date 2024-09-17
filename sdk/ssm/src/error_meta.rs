@@ -263,7 +263,7 @@ pub enum Error {
     SubTypeCountLimitExceededException(crate::types::error::SubTypeCountLimitExceededException),
     /// <p>You specified the <code>Safe</code> option for the DeregisterTargetFromMaintenanceWindow operation, but the target is still referenced in a task.</p>
     TargetInUseException(crate::types::error::TargetInUseException),
-    /// <p>The specified target managed node for the session isn't fully configured for use with Session Manager. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-getting-started.html">Getting started with Session Manager</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. This error is also returned if you attempt to start a session on a managed node that is located in a different account or Region</p>
+    /// <p>The specified target managed node for the session isn't fully configured for use with Session Manager. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-getting-started.html">Setting up Session Manager</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. This error is also returned if you attempt to start a session on a managed node that is located in a different account or Region</p>
     TargetNotConnected(crate::types::error::TargetNotConnected),
     /// <p>The <code>Targets</code> parameter includes too many tags. Remove one or more tags and try the command again.</p>
     TooManyTagsError(crate::types::error::TooManyTagsError),

@@ -12,14 +12,14 @@ pub struct CreatePatchBaselineInput {
     /// <p>A set of rules used to include patches in the baseline.</p>
     pub approval_rules: ::std::option::Option<crate::types::PatchRuleGroup>,
     /// <p>A list of explicitly approved patches for the baseline.</p>
-    /// <p>For information about accepted formats for lists of approved patches and rejected patches, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">About package name formats for approved and rejected patch lists</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    /// <p>For information about accepted formats for lists of approved patches and rejected patches, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">Package name formats for approved and rejected patch lists</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub approved_patches: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Defines the compliance level for approved patches. When an approved patch is reported as missing, this value describes the severity of the compliance violation. The default value is <code>UNSPECIFIED</code>.</p>
     pub approved_patches_compliance_level: ::std::option::Option<crate::types::PatchComplianceLevel>,
     /// <p>Indicates whether the list of approved patches includes non-security updates that should be applied to the managed nodes. The default value is <code>false</code>. Applies to Linux managed nodes only.</p>
     pub approved_patches_enable_non_security: ::std::option::Option<bool>,
     /// <p>A list of explicitly rejected patches for the baseline.</p>
-    /// <p>For information about accepted formats for lists of approved patches and rejected patches, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">About package name formats for approved and rejected patch lists</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    /// <p>For information about accepted formats for lists of approved patches and rejected patches, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">Package name formats for approved and rejected patch lists</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub rejected_patches: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The action for Patch Manager to take on patches included in the <code>RejectedPackages</code> list.</p>
     /// <dl>
@@ -73,7 +73,7 @@ impl CreatePatchBaselineInput {
         self.approval_rules.as_ref()
     }
     /// <p>A list of explicitly approved patches for the baseline.</p>
-    /// <p>For information about accepted formats for lists of approved patches and rejected patches, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">About package name formats for approved and rejected patch lists</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    /// <p>For information about accepted formats for lists of approved patches and rejected patches, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">Package name formats for approved and rejected patch lists</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.approved_patches.is_none()`.
     pub fn approved_patches(&self) -> &[::std::string::String] {
@@ -88,7 +88,7 @@ impl CreatePatchBaselineInput {
         self.approved_patches_enable_non_security
     }
     /// <p>A list of explicitly rejected patches for the baseline.</p>
-    /// <p>For information about accepted formats for lists of approved patches and rejected patches, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">About package name formats for approved and rejected patch lists</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    /// <p>For information about accepted formats for lists of approved patches and rejected patches, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">Package name formats for approved and rejected patch lists</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.rejected_patches.is_none()`.
     pub fn rejected_patches(&self) -> &[::std::string::String] {
@@ -230,7 +230,7 @@ impl CreatePatchBaselineInputBuilder {
     /// To override the contents of this collection use [`set_approved_patches`](Self::set_approved_patches).
     ///
     /// <p>A list of explicitly approved patches for the baseline.</p>
-    /// <p>For information about accepted formats for lists of approved patches and rejected patches, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">About package name formats for approved and rejected patch lists</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    /// <p>For information about accepted formats for lists of approved patches and rejected patches, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">Package name formats for approved and rejected patch lists</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub fn approved_patches(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.approved_patches.unwrap_or_default();
         v.push(input.into());
@@ -238,13 +238,13 @@ impl CreatePatchBaselineInputBuilder {
         self
     }
     /// <p>A list of explicitly approved patches for the baseline.</p>
-    /// <p>For information about accepted formats for lists of approved patches and rejected patches, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">About package name formats for approved and rejected patch lists</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    /// <p>For information about accepted formats for lists of approved patches and rejected patches, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">Package name formats for approved and rejected patch lists</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub fn set_approved_patches(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.approved_patches = input;
         self
     }
     /// <p>A list of explicitly approved patches for the baseline.</p>
-    /// <p>For information about accepted formats for lists of approved patches and rejected patches, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">About package name formats for approved and rejected patch lists</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    /// <p>For information about accepted formats for lists of approved patches and rejected patches, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">Package name formats for approved and rejected patch lists</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub fn get_approved_patches(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.approved_patches
     }
@@ -281,7 +281,7 @@ impl CreatePatchBaselineInputBuilder {
     /// To override the contents of this collection use [`set_rejected_patches`](Self::set_rejected_patches).
     ///
     /// <p>A list of explicitly rejected patches for the baseline.</p>
-    /// <p>For information about accepted formats for lists of approved patches and rejected patches, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">About package name formats for approved and rejected patch lists</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    /// <p>For information about accepted formats for lists of approved patches and rejected patches, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">Package name formats for approved and rejected patch lists</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub fn rejected_patches(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.rejected_patches.unwrap_or_default();
         v.push(input.into());
@@ -289,13 +289,13 @@ impl CreatePatchBaselineInputBuilder {
         self
     }
     /// <p>A list of explicitly rejected patches for the baseline.</p>
-    /// <p>For information about accepted formats for lists of approved patches and rejected patches, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">About package name formats for approved and rejected patch lists</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    /// <p>For information about accepted formats for lists of approved patches and rejected patches, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">Package name formats for approved and rejected patch lists</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub fn set_rejected_patches(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.rejected_patches = input;
         self
     }
     /// <p>A list of explicitly rejected patches for the baseline.</p>
-    /// <p>For information about accepted formats for lists of approved patches and rejected patches, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">About package name formats for approved and rejected patch lists</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    /// <p>For information about accepted formats for lists of approved patches and rejected patches, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">Package name formats for approved and rejected patch lists</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub fn get_rejected_patches(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.rejected_patches
     }

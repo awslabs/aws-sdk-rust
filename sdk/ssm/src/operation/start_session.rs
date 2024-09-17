@@ -248,7 +248,7 @@ pub enum StartSessionError {
     InternalServerError(crate::types::error::InternalServerError),
     /// <p>The specified SSM document doesn't exist.</p>
     InvalidDocument(crate::types::error::InvalidDocument),
-    /// <p>The specified target managed node for the session isn't fully configured for use with Session Manager. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-getting-started.html">Getting started with Session Manager</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. This error is also returned if you attempt to start a session on a managed node that is located in a different account or Region</p>
+    /// <p>The specified target managed node for the session isn't fully configured for use with Session Manager. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-getting-started.html">Setting up Session Manager</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. This error is also returned if you attempt to start a session on a managed node that is located in a different account or Region</p>
     TargetNotConnected(crate::types::error::TargetNotConnected),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

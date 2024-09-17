@@ -45,16 +45,16 @@ pub struct CommandPlugin {
     /// <p>(Deprecated) You can no longer specify this parameter. The system ignores it. Instead, Amazon Web Services Systems Manager automatically determines the S3 bucket region.</p>
     pub output_s3_region: ::std::option::Option<::std::string::String>,
     /// <p>The S3 bucket where the responses to the command executions should be stored. This was requested when issuing the command. For example, in the following response:</p>
-    /// <p><code>doc-example-bucket/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-02573cafcfEXAMPLE/awsrunShellScript</code></p>
-    /// <p><code>doc-example-bucket</code> is the name of the S3 bucket;</p>
-    /// <p><code>ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix</code> is the name of the S3 prefix;</p>
+    /// <p><code>amzn-s3-demo-bucket/my-prefix/i-02573cafcfEXAMPLE/awsrunShellScript</code></p>
+    /// <p><code>amzn-s3-demo-bucket</code> is the name of the S3 bucket;</p>
+    /// <p><code>my-prefix</code> is the name of the S3 prefix;</p>
     /// <p><code>i-02573cafcfEXAMPLE</code> is the managed node ID;</p>
     /// <p><code>awsrunShellScript</code> is the name of the plugin.</p>
     pub output_s3_bucket_name: ::std::option::Option<::std::string::String>,
     /// <p>The S3 directory path inside the bucket where the responses to the command executions should be stored. This was requested when issuing the command. For example, in the following response:</p>
-    /// <p><code>doc-example-bucket/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-02573cafcfEXAMPLE/awsrunShellScript</code></p>
-    /// <p><code>doc-example-bucket</code> is the name of the S3 bucket;</p>
-    /// <p><code>ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix</code> is the name of the S3 prefix;</p>
+    /// <p><code>amzn-s3-demo-bucket/my-prefix/i-02573cafcfEXAMPLE/awsrunShellScript</code></p>
+    /// <p><code>amzn-s3-demo-bucket</code> is the name of the S3 bucket;</p>
+    /// <p><code>my-prefix</code> is the name of the S3 prefix;</p>
     /// <p><code>i-02573cafcfEXAMPLE</code> is the managed node ID;</p>
     /// <p><code>awsrunShellScript</code> is the name of the plugin.</p>
     pub output_s3_key_prefix: ::std::option::Option<::std::string::String>,
@@ -121,18 +121,18 @@ impl CommandPlugin {
         self.output_s3_region.as_deref()
     }
     /// <p>The S3 bucket where the responses to the command executions should be stored. This was requested when issuing the command. For example, in the following response:</p>
-    /// <p><code>doc-example-bucket/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-02573cafcfEXAMPLE/awsrunShellScript</code></p>
-    /// <p><code>doc-example-bucket</code> is the name of the S3 bucket;</p>
-    /// <p><code>ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix</code> is the name of the S3 prefix;</p>
+    /// <p><code>amzn-s3-demo-bucket/my-prefix/i-02573cafcfEXAMPLE/awsrunShellScript</code></p>
+    /// <p><code>amzn-s3-demo-bucket</code> is the name of the S3 bucket;</p>
+    /// <p><code>my-prefix</code> is the name of the S3 prefix;</p>
     /// <p><code>i-02573cafcfEXAMPLE</code> is the managed node ID;</p>
     /// <p><code>awsrunShellScript</code> is the name of the plugin.</p>
     pub fn output_s3_bucket_name(&self) -> ::std::option::Option<&str> {
         self.output_s3_bucket_name.as_deref()
     }
     /// <p>The S3 directory path inside the bucket where the responses to the command executions should be stored. This was requested when issuing the command. For example, in the following response:</p>
-    /// <p><code>doc-example-bucket/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-02573cafcfEXAMPLE/awsrunShellScript</code></p>
-    /// <p><code>doc-example-bucket</code> is the name of the S3 bucket;</p>
-    /// <p><code>ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix</code> is the name of the S3 prefix;</p>
+    /// <p><code>amzn-s3-demo-bucket/my-prefix/i-02573cafcfEXAMPLE/awsrunShellScript</code></p>
+    /// <p><code>amzn-s3-demo-bucket</code> is the name of the S3 bucket;</p>
+    /// <p><code>my-prefix</code> is the name of the S3 prefix;</p>
     /// <p><code>i-02573cafcfEXAMPLE</code> is the managed node ID;</p>
     /// <p><code>awsrunShellScript</code> is the name of the plugin.</p>
     pub fn output_s3_key_prefix(&self) -> ::std::option::Option<&str> {
@@ -365,9 +365,9 @@ impl CommandPluginBuilder {
         &self.output_s3_region
     }
     /// <p>The S3 bucket where the responses to the command executions should be stored. This was requested when issuing the command. For example, in the following response:</p>
-    /// <p><code>doc-example-bucket/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-02573cafcfEXAMPLE/awsrunShellScript</code></p>
-    /// <p><code>doc-example-bucket</code> is the name of the S3 bucket;</p>
-    /// <p><code>ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix</code> is the name of the S3 prefix;</p>
+    /// <p><code>amzn-s3-demo-bucket/my-prefix/i-02573cafcfEXAMPLE/awsrunShellScript</code></p>
+    /// <p><code>amzn-s3-demo-bucket</code> is the name of the S3 bucket;</p>
+    /// <p><code>my-prefix</code> is the name of the S3 prefix;</p>
     /// <p><code>i-02573cafcfEXAMPLE</code> is the managed node ID;</p>
     /// <p><code>awsrunShellScript</code> is the name of the plugin.</p>
     pub fn output_s3_bucket_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -375,9 +375,9 @@ impl CommandPluginBuilder {
         self
     }
     /// <p>The S3 bucket where the responses to the command executions should be stored. This was requested when issuing the command. For example, in the following response:</p>
-    /// <p><code>doc-example-bucket/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-02573cafcfEXAMPLE/awsrunShellScript</code></p>
-    /// <p><code>doc-example-bucket</code> is the name of the S3 bucket;</p>
-    /// <p><code>ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix</code> is the name of the S3 prefix;</p>
+    /// <p><code>amzn-s3-demo-bucket/my-prefix/i-02573cafcfEXAMPLE/awsrunShellScript</code></p>
+    /// <p><code>amzn-s3-demo-bucket</code> is the name of the S3 bucket;</p>
+    /// <p><code>my-prefix</code> is the name of the S3 prefix;</p>
     /// <p><code>i-02573cafcfEXAMPLE</code> is the managed node ID;</p>
     /// <p><code>awsrunShellScript</code> is the name of the plugin.</p>
     pub fn set_output_s3_bucket_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -385,18 +385,18 @@ impl CommandPluginBuilder {
         self
     }
     /// <p>The S3 bucket where the responses to the command executions should be stored. This was requested when issuing the command. For example, in the following response:</p>
-    /// <p><code>doc-example-bucket/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-02573cafcfEXAMPLE/awsrunShellScript</code></p>
-    /// <p><code>doc-example-bucket</code> is the name of the S3 bucket;</p>
-    /// <p><code>ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix</code> is the name of the S3 prefix;</p>
+    /// <p><code>amzn-s3-demo-bucket/my-prefix/i-02573cafcfEXAMPLE/awsrunShellScript</code></p>
+    /// <p><code>amzn-s3-demo-bucket</code> is the name of the S3 bucket;</p>
+    /// <p><code>my-prefix</code> is the name of the S3 prefix;</p>
     /// <p><code>i-02573cafcfEXAMPLE</code> is the managed node ID;</p>
     /// <p><code>awsrunShellScript</code> is the name of the plugin.</p>
     pub fn get_output_s3_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.output_s3_bucket_name
     }
     /// <p>The S3 directory path inside the bucket where the responses to the command executions should be stored. This was requested when issuing the command. For example, in the following response:</p>
-    /// <p><code>doc-example-bucket/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-02573cafcfEXAMPLE/awsrunShellScript</code></p>
-    /// <p><code>doc-example-bucket</code> is the name of the S3 bucket;</p>
-    /// <p><code>ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix</code> is the name of the S3 prefix;</p>
+    /// <p><code>amzn-s3-demo-bucket/my-prefix/i-02573cafcfEXAMPLE/awsrunShellScript</code></p>
+    /// <p><code>amzn-s3-demo-bucket</code> is the name of the S3 bucket;</p>
+    /// <p><code>my-prefix</code> is the name of the S3 prefix;</p>
     /// <p><code>i-02573cafcfEXAMPLE</code> is the managed node ID;</p>
     /// <p><code>awsrunShellScript</code> is the name of the plugin.</p>
     pub fn output_s3_key_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -404,9 +404,9 @@ impl CommandPluginBuilder {
         self
     }
     /// <p>The S3 directory path inside the bucket where the responses to the command executions should be stored. This was requested when issuing the command. For example, in the following response:</p>
-    /// <p><code>doc-example-bucket/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-02573cafcfEXAMPLE/awsrunShellScript</code></p>
-    /// <p><code>doc-example-bucket</code> is the name of the S3 bucket;</p>
-    /// <p><code>ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix</code> is the name of the S3 prefix;</p>
+    /// <p><code>amzn-s3-demo-bucket/my-prefix/i-02573cafcfEXAMPLE/awsrunShellScript</code></p>
+    /// <p><code>amzn-s3-demo-bucket</code> is the name of the S3 bucket;</p>
+    /// <p><code>my-prefix</code> is the name of the S3 prefix;</p>
     /// <p><code>i-02573cafcfEXAMPLE</code> is the managed node ID;</p>
     /// <p><code>awsrunShellScript</code> is the name of the plugin.</p>
     pub fn set_output_s3_key_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -414,9 +414,9 @@ impl CommandPluginBuilder {
         self
     }
     /// <p>The S3 directory path inside the bucket where the responses to the command executions should be stored. This was requested when issuing the command. For example, in the following response:</p>
-    /// <p><code>doc-example-bucket/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-02573cafcfEXAMPLE/awsrunShellScript</code></p>
-    /// <p><code>doc-example-bucket</code> is the name of the S3 bucket;</p>
-    /// <p><code>ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix</code> is the name of the S3 prefix;</p>
+    /// <p><code>amzn-s3-demo-bucket/my-prefix/i-02573cafcfEXAMPLE/awsrunShellScript</code></p>
+    /// <p><code>amzn-s3-demo-bucket</code> is the name of the S3 bucket;</p>
+    /// <p><code>my-prefix</code> is the name of the S3 prefix;</p>
     /// <p><code>i-02573cafcfEXAMPLE</code> is the managed node ID;</p>
     /// <p><code>awsrunShellScript</code> is the name of the plugin.</p>
     pub fn get_output_s3_key_prefix(&self) -> &::std::option::Option<::std::string::String> {

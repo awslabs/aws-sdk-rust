@@ -13,7 +13,7 @@ pub struct PatchComplianceData {
     /// <p>The severity of the patch such as <code>Critical</code>, <code>Important</code>, and <code>Moderate</code>.</p>
     pub severity: ::std::string::String,
     /// <p>The state of the patch on the managed node, such as INSTALLED or FAILED.</p>
-    /// <p>For descriptions of each patch state, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-compliance-about.html#sysman-compliance-monitor-patch">About patch compliance</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    /// <p>For descriptions of each patch state, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/compliance-about.html#compliance-monitor-patch">About patch compliance</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub state: crate::types::PatchComplianceDataState,
     /// <p>The date/time the patch was installed on the managed node. Not all operating systems provide this level of information.</p>
     pub installed_time: ::aws_smithy_types::DateTime,
@@ -44,7 +44,7 @@ impl PatchComplianceData {
         self.severity.deref()
     }
     /// <p>The state of the patch on the managed node, such as INSTALLED or FAILED.</p>
-    /// <p>For descriptions of each patch state, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-compliance-about.html#sysman-compliance-monitor-patch">About patch compliance</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    /// <p>For descriptions of each patch state, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/compliance-about.html#compliance-monitor-patch">About patch compliance</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub fn state(&self) -> &crate::types::PatchComplianceDataState {
         &self.state
     }
@@ -140,20 +140,20 @@ impl PatchComplianceDataBuilder {
         &self.severity
     }
     /// <p>The state of the patch on the managed node, such as INSTALLED or FAILED.</p>
-    /// <p>For descriptions of each patch state, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-compliance-about.html#sysman-compliance-monitor-patch">About patch compliance</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    /// <p>For descriptions of each patch state, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/compliance-about.html#compliance-monitor-patch">About patch compliance</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     /// This field is required.
     pub fn state(mut self, input: crate::types::PatchComplianceDataState) -> Self {
         self.state = ::std::option::Option::Some(input);
         self
     }
     /// <p>The state of the patch on the managed node, such as INSTALLED or FAILED.</p>
-    /// <p>For descriptions of each patch state, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-compliance-about.html#sysman-compliance-monitor-patch">About patch compliance</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    /// <p>For descriptions of each patch state, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/compliance-about.html#compliance-monitor-patch">About patch compliance</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::PatchComplianceDataState>) -> Self {
         self.state = input;
         self
     }
     /// <p>The state of the patch on the managed node, such as INSTALLED or FAILED.</p>
-    /// <p>For descriptions of each patch state, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-compliance-about.html#sysman-compliance-monitor-patch">About patch compliance</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    /// <p>For descriptions of each patch state, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/compliance-about.html#compliance-monitor-patch">About patch compliance</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::PatchComplianceDataState> {
         &self.state
     }

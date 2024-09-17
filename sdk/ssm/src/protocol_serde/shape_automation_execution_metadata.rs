@@ -161,6 +161,13 @@ where
                                 crate::protocol_serde::shape_alarm_state_information_list::de_alarm_state_information_list(tokens)?,
                             );
                         }
+                        "TargetLocationsURL" => {
+                            builder = builder.set_target_locations_url(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "AutomationSubtype" => {
                             builder = builder.set_automation_subtype(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

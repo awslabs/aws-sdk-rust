@@ -71,6 +71,8 @@ pub use crate::types::_allowed_publishers::AllowedPublishersBuilder;
 
 pub use crate::types::_alias_routing_configuration::AliasRoutingConfigurationBuilder;
 
+pub use crate::types::_public_access_block_config::PublicAccessBlockConfigBuilder;
+
 pub use crate::types::_layer_version_content_output::LayerVersionContentOutputBuilder;
 
 pub use crate::types::_layer_version_content_input::LayerVersionContentInputBuilder;

@@ -8,9 +8,9 @@
 pub struct Ulimit {
     /// <p>The <code>type</code> of the <code>ulimit</code>.</p>
     pub name: crate::types::UlimitName,
-    /// <p>The soft limit for the <code>ulimit</code> type.</p>
+    /// <p>The soft limit for the <code>ulimit</code> type. The value can be specified in bytes, seconds, or as a count, depending on the <code>type</code> of the <code>ulimit</code>.</p>
     pub soft_limit: i32,
-    /// <p>The hard limit for the <code>ulimit</code> type.</p>
+    /// <p>The hard limit for the <code>ulimit</code> type. The value can be specified in bytes, seconds, or as a count, depending on the <code>type</code> of the <code>ulimit</code>.</p>
     pub hard_limit: i32,
 }
 impl Ulimit {
@@ -18,11 +18,11 @@ impl Ulimit {
     pub fn name(&self) -> &crate::types::UlimitName {
         &self.name
     }
-    /// <p>The soft limit for the <code>ulimit</code> type.</p>
+    /// <p>The soft limit for the <code>ulimit</code> type. The value can be specified in bytes, seconds, or as a count, depending on the <code>type</code> of the <code>ulimit</code>.</p>
     pub fn soft_limit(&self) -> i32 {
         self.soft_limit
     }
-    /// <p>The hard limit for the <code>ulimit</code> type.</p>
+    /// <p>The hard limit for the <code>ulimit</code> type. The value can be specified in bytes, seconds, or as a count, depending on the <code>type</code> of the <code>ulimit</code>.</p>
     pub fn hard_limit(&self) -> i32 {
         self.hard_limit
     }
@@ -58,33 +58,33 @@ impl UlimitBuilder {
     pub fn get_name(&self) -> &::std::option::Option<crate::types::UlimitName> {
         &self.name
     }
-    /// <p>The soft limit for the <code>ulimit</code> type.</p>
+    /// <p>The soft limit for the <code>ulimit</code> type. The value can be specified in bytes, seconds, or as a count, depending on the <code>type</code> of the <code>ulimit</code>.</p>
     /// This field is required.
     pub fn soft_limit(mut self, input: i32) -> Self {
         self.soft_limit = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The soft limit for the <code>ulimit</code> type.</p>
+    /// <p>The soft limit for the <code>ulimit</code> type. The value can be specified in bytes, seconds, or as a count, depending on the <code>type</code> of the <code>ulimit</code>.</p>
     pub fn set_soft_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.soft_limit = input;
         self
     }
-    /// <p>The soft limit for the <code>ulimit</code> type.</p>
+    /// <p>The soft limit for the <code>ulimit</code> type. The value can be specified in bytes, seconds, or as a count, depending on the <code>type</code> of the <code>ulimit</code>.</p>
     pub fn get_soft_limit(&self) -> &::std::option::Option<i32> {
         &self.soft_limit
     }
-    /// <p>The hard limit for the <code>ulimit</code> type.</p>
+    /// <p>The hard limit for the <code>ulimit</code> type. The value can be specified in bytes, seconds, or as a count, depending on the <code>type</code> of the <code>ulimit</code>.</p>
     /// This field is required.
     pub fn hard_limit(mut self, input: i32) -> Self {
         self.hard_limit = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The hard limit for the <code>ulimit</code> type.</p>
+    /// <p>The hard limit for the <code>ulimit</code> type. The value can be specified in bytes, seconds, or as a count, depending on the <code>type</code> of the <code>ulimit</code>.</p>
     pub fn set_hard_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.hard_limit = input;
         self
     }
-    /// <p>The hard limit for the <code>ulimit</code> type.</p>
+    /// <p>The hard limit for the <code>ulimit</code> type. The value can be specified in bytes, seconds, or as a count, depending on the <code>type</code> of the <code>ulimit</code>.</p>
     pub fn get_hard_limit(&self) -> &::std::option::Option<i32> {
         &self.hard_limit
     }

@@ -86,7 +86,7 @@ pub struct RestoreDbInstanceToPointInTimeInput {
     /// <p>This setting doesn't apply to RDS Custom.</p>
     pub auto_minor_version_upgrade: ::std::option::Option<bool>,
     /// <p>The license model information for the restored DB instance.</p><note>
-    /// <p>License models for RDS for Db2 require additional configuration. The Bring Your Own License (BYOL) model requires a custom parameter group. The Db2 license through Amazon Web Services Marketplace model requires an Amazon Web Services Marketplace subscription. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/db2-licensing.html">RDS for Db2 licensing options</a> in the <i>Amazon RDS User Guide</i>.</p>
+    /// <p>License models for RDS for Db2 require additional configuration. The Bring Your Own License (BYOL) model requires a custom parameter group and an Amazon Web Services License Manager self-managed license. The Db2 license through Amazon Web Services Marketplace model requires an Amazon Web Services Marketplace subscription. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/db2-licensing.html">Amazon RDS for Db2 licensing options</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// </note>
     /// <p>This setting doesn't apply to Amazon Aurora or RDS Custom DB instances.</p>
     /// <p>Valid Values:</p>
@@ -439,7 +439,7 @@ impl RestoreDbInstanceToPointInTimeInput {
         self.auto_minor_version_upgrade
     }
     /// <p>The license model information for the restored DB instance.</p><note>
-    /// <p>License models for RDS for Db2 require additional configuration. The Bring Your Own License (BYOL) model requires a custom parameter group. The Db2 license through Amazon Web Services Marketplace model requires an Amazon Web Services Marketplace subscription. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/db2-licensing.html">RDS for Db2 licensing options</a> in the <i>Amazon RDS User Guide</i>.</p>
+    /// <p>License models for RDS for Db2 require additional configuration. The Bring Your Own License (BYOL) model requires a custom parameter group and an Amazon Web Services License Manager self-managed license. The Db2 license through Amazon Web Services Marketplace model requires an Amazon Web Services Marketplace subscription. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/db2-licensing.html">Amazon RDS for Db2 licensing options</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// </note>
     /// <p>This setting doesn't apply to Amazon Aurora or RDS Custom DB instances.</p>
     /// <p>Valid Values:</p>
@@ -1159,7 +1159,7 @@ impl RestoreDbInstanceToPointInTimeInputBuilder {
         &self.auto_minor_version_upgrade
     }
     /// <p>The license model information for the restored DB instance.</p><note>
-    /// <p>License models for RDS for Db2 require additional configuration. The Bring Your Own License (BYOL) model requires a custom parameter group. The Db2 license through Amazon Web Services Marketplace model requires an Amazon Web Services Marketplace subscription. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/db2-licensing.html">RDS for Db2 licensing options</a> in the <i>Amazon RDS User Guide</i>.</p>
+    /// <p>License models for RDS for Db2 require additional configuration. The Bring Your Own License (BYOL) model requires a custom parameter group and an Amazon Web Services License Manager self-managed license. The Db2 license through Amazon Web Services Marketplace model requires an Amazon Web Services Marketplace subscription. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/db2-licensing.html">Amazon RDS for Db2 licensing options</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// </note>
     /// <p>This setting doesn't apply to Amazon Aurora or RDS Custom DB instances.</p>
     /// <p>Valid Values:</p>
@@ -1183,7 +1183,7 @@ impl RestoreDbInstanceToPointInTimeInputBuilder {
         self
     }
     /// <p>The license model information for the restored DB instance.</p><note>
-    /// <p>License models for RDS for Db2 require additional configuration. The Bring Your Own License (BYOL) model requires a custom parameter group. The Db2 license through Amazon Web Services Marketplace model requires an Amazon Web Services Marketplace subscription. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/db2-licensing.html">RDS for Db2 licensing options</a> in the <i>Amazon RDS User Guide</i>.</p>
+    /// <p>License models for RDS for Db2 require additional configuration. The Bring Your Own License (BYOL) model requires a custom parameter group and an Amazon Web Services License Manager self-managed license. The Db2 license through Amazon Web Services Marketplace model requires an Amazon Web Services Marketplace subscription. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/db2-licensing.html">Amazon RDS for Db2 licensing options</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// </note>
     /// <p>This setting doesn't apply to Amazon Aurora or RDS Custom DB instances.</p>
     /// <p>Valid Values:</p>
@@ -1207,7 +1207,7 @@ impl RestoreDbInstanceToPointInTimeInputBuilder {
         self
     }
     /// <p>The license model information for the restored DB instance.</p><note>
-    /// <p>License models for RDS for Db2 require additional configuration. The Bring Your Own License (BYOL) model requires a custom parameter group. The Db2 license through Amazon Web Services Marketplace model requires an Amazon Web Services Marketplace subscription. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/db2-licensing.html">RDS for Db2 licensing options</a> in the <i>Amazon RDS User Guide</i>.</p>
+    /// <p>License models for RDS for Db2 require additional configuration. The Bring Your Own License (BYOL) model requires a custom parameter group and an Amazon Web Services License Manager self-managed license. The Db2 license through Amazon Web Services Marketplace model requires an Amazon Web Services Marketplace subscription. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/db2-licensing.html">Amazon RDS for Db2 licensing options</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// </note>
     /// <p>This setting doesn't apply to Amazon Aurora or RDS Custom DB instances.</p>
     /// <p>Valid Values:</p>

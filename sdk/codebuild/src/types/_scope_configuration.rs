@@ -4,24 +4,24 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ScopeConfiguration {
-    /// <p>The name of either the enterprise or organization that will send webhook events to CodeBuild, depending on if the webhook is a global or organization webhook respectively.</p>
+    /// <p>The name of either the group, enterprise, or organization that will send webhook events to CodeBuild, depending on the type of webhook.</p>
     pub name: ::std::string::String,
-    /// <p>The domain of the GitHub Enterprise organization. Note that this parameter is only required if your project's source type is GITHUB_ENTERPRISE</p>
+    /// <p>The domain of the GitHub Enterprise organization or the GitLab Self Managed group. Note that this parameter is only required if your project's source type is GITHUB_ENTERPRISE or GITLAB_SELF_MANAGED.</p>
     pub domain: ::std::option::Option<::std::string::String>,
-    /// <p>The type of scope for a GitHub webhook.</p>
+    /// <p>The type of scope for a GitHub or GitLab webhook.</p>
     pub scope: crate::types::WebhookScopeType,
 }
 impl ScopeConfiguration {
-    /// <p>The name of either the enterprise or organization that will send webhook events to CodeBuild, depending on if the webhook is a global or organization webhook respectively.</p>
+    /// <p>The name of either the group, enterprise, or organization that will send webhook events to CodeBuild, depending on the type of webhook.</p>
     pub fn name(&self) -> &str {
         use std::ops::Deref;
         self.name.deref()
     }
-    /// <p>The domain of the GitHub Enterprise organization. Note that this parameter is only required if your project's source type is GITHUB_ENTERPRISE</p>
+    /// <p>The domain of the GitHub Enterprise organization or the GitLab Self Managed group. Note that this parameter is only required if your project's source type is GITHUB_ENTERPRISE or GITLAB_SELF_MANAGED.</p>
     pub fn domain(&self) -> ::std::option::Option<&str> {
         self.domain.as_deref()
     }
-    /// <p>The type of scope for a GitHub webhook.</p>
+    /// <p>The type of scope for a GitHub or GitLab webhook.</p>
     pub fn scope(&self) -> &crate::types::WebhookScopeType {
         &self.scope
     }
@@ -42,47 +42,47 @@ pub struct ScopeConfigurationBuilder {
     pub(crate) scope: ::std::option::Option<crate::types::WebhookScopeType>,
 }
 impl ScopeConfigurationBuilder {
-    /// <p>The name of either the enterprise or organization that will send webhook events to CodeBuild, depending on if the webhook is a global or organization webhook respectively.</p>
+    /// <p>The name of either the group, enterprise, or organization that will send webhook events to CodeBuild, depending on the type of webhook.</p>
     /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of either the enterprise or organization that will send webhook events to CodeBuild, depending on if the webhook is a global or organization webhook respectively.</p>
+    /// <p>The name of either the group, enterprise, or organization that will send webhook events to CodeBuild, depending on the type of webhook.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p>The name of either the enterprise or organization that will send webhook events to CodeBuild, depending on if the webhook is a global or organization webhook respectively.</p>
+    /// <p>The name of either the group, enterprise, or organization that will send webhook events to CodeBuild, depending on the type of webhook.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>The domain of the GitHub Enterprise organization. Note that this parameter is only required if your project's source type is GITHUB_ENTERPRISE</p>
+    /// <p>The domain of the GitHub Enterprise organization or the GitLab Self Managed group. Note that this parameter is only required if your project's source type is GITHUB_ENTERPRISE or GITLAB_SELF_MANAGED.</p>
     pub fn domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The domain of the GitHub Enterprise organization. Note that this parameter is only required if your project's source type is GITHUB_ENTERPRISE</p>
+    /// <p>The domain of the GitHub Enterprise organization or the GitLab Self Managed group. Note that this parameter is only required if your project's source type is GITHUB_ENTERPRISE or GITLAB_SELF_MANAGED.</p>
     pub fn set_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain = input;
         self
     }
-    /// <p>The domain of the GitHub Enterprise organization. Note that this parameter is only required if your project's source type is GITHUB_ENTERPRISE</p>
+    /// <p>The domain of the GitHub Enterprise organization or the GitLab Self Managed group. Note that this parameter is only required if your project's source type is GITHUB_ENTERPRISE or GITLAB_SELF_MANAGED.</p>
     pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
         &self.domain
     }
-    /// <p>The type of scope for a GitHub webhook.</p>
+    /// <p>The type of scope for a GitHub or GitLab webhook.</p>
     /// This field is required.
     pub fn scope(mut self, input: crate::types::WebhookScopeType) -> Self {
         self.scope = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of scope for a GitHub webhook.</p>
+    /// <p>The type of scope for a GitHub or GitLab webhook.</p>
     pub fn set_scope(mut self, input: ::std::option::Option<crate::types::WebhookScopeType>) -> Self {
         self.scope = input;
         self
     }
-    /// <p>The type of scope for a GitHub webhook.</p>
+    /// <p>The type of scope for a GitHub or GitLab webhook.</p>
     pub fn get_scope(&self) -> &::std::option::Option<crate::types::WebhookScopeType> {
         &self.scope
     }

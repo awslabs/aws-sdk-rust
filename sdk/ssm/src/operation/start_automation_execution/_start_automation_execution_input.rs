@@ -16,16 +16,19 @@ pub struct StartAutomationExecutionInput {
     /// <p>The name of the parameter used as the target resource for the rate-controlled execution. Required if you specify targets.</p>
     pub target_parameter_name: ::std::option::Option<::std::string::String>,
     /// <p>A key-value mapping to target resources. Required if you specify TargetParameterName.</p>
+    /// <p>If both this parameter and the <code>TargetLocation:Targets</code> parameter are supplied, <code>TargetLocation:Targets</code> takes precedence.</p>
     pub targets: ::std::option::Option<::std::vec::Vec<crate::types::Target>>,
     /// <p>A key-value mapping of document parameters to target resources. Both Targets and TargetMaps can't be specified together.</p>
     pub target_maps:
         ::std::option::Option<::std::vec::Vec<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>>,
     /// <p>The maximum number of targets allowed to run this task in parallel. You can specify a number, such as 10, or a percentage, such as 10%. The default value is <code>10</code>.</p>
+    /// <p>If both this parameter and the <code>TargetLocation:TargetsMaxConcurrency</code> are supplied, <code>TargetLocation:TargetsMaxConcurrency</code> takes precedence.</p>
     pub max_concurrency: ::std::option::Option<::std::string::String>,
     /// <p>The number of errors that are allowed before the system stops running the automation on additional targets. You can specify either an absolute number of errors, for example 10, or a percentage of the target set, for example 10%. If you specify 3, for example, the system stops running the automation when the fourth error is received. If you specify 0, then the system stops running the automation on additional targets after the first error result is returned. If you run an automation on 50 resources and set max-errors to 10%, then the system stops running the automation on additional targets when the sixth error is received.</p>
     /// <p>Executions that are already running an automation when max-errors is reached are allowed to complete, but some of these executions may fail as well. If you need to ensure that there won't be more than max-errors failed executions, set max-concurrency to 1 so the executions proceed one at a time.</p>
+    /// <p>If this parameter and the <code>TargetLocation:TargetsMaxErrors</code> parameter are both supplied, <code>TargetLocation:TargetsMaxErrors</code> takes precedence.</p>
     pub max_errors: ::std::option::Option<::std::string::String>,
-    /// <p>A location is a combination of Amazon Web Services Regions and/or Amazon Web Services accounts where you want to run the automation. Use this operation to start an automation in multiple Amazon Web Services Regions and multiple Amazon Web Services accounts. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Running Automation workflows in multiple Amazon Web Services Regions and Amazon Web Services accounts</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    /// <p>A location is a combination of Amazon Web Services Regions and/or Amazon Web Services accounts where you want to run the automation. Use this operation to start an automation in multiple Amazon Web Services Regions and multiple Amazon Web Services accounts. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Running automations in multiple Amazon Web Services Regions and accounts</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub target_locations: ::std::option::Option<::std::vec::Vec<crate::types::TargetLocation>>,
     /// <p>Optional metadata that you assign to a resource. You can specify a maximum of five tags for an automation. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag an automation to identify an environment or operating system. In this case, you could specify the following key-value pairs:</p>
     /// <ul>
@@ -39,6 +42,8 @@ pub struct StartAutomationExecutionInput {
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The CloudWatch alarm you want to apply to your automation.</p>
     pub alarm_configuration: ::std::option::Option<crate::types::AlarmConfiguration>,
+    /// <p>Specify a publicly accessible URL for a file that contains the <code>TargetLocations</code> body. Currently, only files in presigned Amazon S3 buckets are supported.</p>
+    pub target_locations_url: ::std::option::Option<::std::string::String>,
 }
 impl StartAutomationExecutionInput {
     /// <p>The name of the SSM document to run. This can be a public document or a custom document. To run a shared document belonging to another account, specify the document ARN. For more information about how to use shared documents, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/documents-ssm-sharing.html">Sharing SSM documents</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
@@ -66,6 +71,7 @@ impl StartAutomationExecutionInput {
         self.target_parameter_name.as_deref()
     }
     /// <p>A key-value mapping to target resources. Required if you specify TargetParameterName.</p>
+    /// <p>If both this parameter and the <code>TargetLocation:Targets</code> parameter are supplied, <code>TargetLocation:Targets</code> takes precedence.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.targets.is_none()`.
     pub fn targets(&self) -> &[crate::types::Target] {
@@ -78,15 +84,17 @@ impl StartAutomationExecutionInput {
         self.target_maps.as_deref().unwrap_or_default()
     }
     /// <p>The maximum number of targets allowed to run this task in parallel. You can specify a number, such as 10, or a percentage, such as 10%. The default value is <code>10</code>.</p>
+    /// <p>If both this parameter and the <code>TargetLocation:TargetsMaxConcurrency</code> are supplied, <code>TargetLocation:TargetsMaxConcurrency</code> takes precedence.</p>
     pub fn max_concurrency(&self) -> ::std::option::Option<&str> {
         self.max_concurrency.as_deref()
     }
     /// <p>The number of errors that are allowed before the system stops running the automation on additional targets. You can specify either an absolute number of errors, for example 10, or a percentage of the target set, for example 10%. If you specify 3, for example, the system stops running the automation when the fourth error is received. If you specify 0, then the system stops running the automation on additional targets after the first error result is returned. If you run an automation on 50 resources and set max-errors to 10%, then the system stops running the automation on additional targets when the sixth error is received.</p>
     /// <p>Executions that are already running an automation when max-errors is reached are allowed to complete, but some of these executions may fail as well. If you need to ensure that there won't be more than max-errors failed executions, set max-concurrency to 1 so the executions proceed one at a time.</p>
+    /// <p>If this parameter and the <code>TargetLocation:TargetsMaxErrors</code> parameter are both supplied, <code>TargetLocation:TargetsMaxErrors</code> takes precedence.</p>
     pub fn max_errors(&self) -> ::std::option::Option<&str> {
         self.max_errors.as_deref()
     }
-    /// <p>A location is a combination of Amazon Web Services Regions and/or Amazon Web Services accounts where you want to run the automation. Use this operation to start an automation in multiple Amazon Web Services Regions and multiple Amazon Web Services accounts. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Running Automation workflows in multiple Amazon Web Services Regions and Amazon Web Services accounts</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    /// <p>A location is a combination of Amazon Web Services Regions and/or Amazon Web Services accounts where you want to run the automation. Use this operation to start an automation in multiple Amazon Web Services Regions and multiple Amazon Web Services accounts. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Running automations in multiple Amazon Web Services Regions and accounts</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.target_locations.is_none()`.
     pub fn target_locations(&self) -> &[crate::types::TargetLocation] {
@@ -109,6 +117,10 @@ impl StartAutomationExecutionInput {
     /// <p>The CloudWatch alarm you want to apply to your automation.</p>
     pub fn alarm_configuration(&self) -> ::std::option::Option<&crate::types::AlarmConfiguration> {
         self.alarm_configuration.as_ref()
+    }
+    /// <p>Specify a publicly accessible URL for a file that contains the <code>TargetLocations</code> body. Currently, only files in presigned Amazon S3 buckets are supported.</p>
+    pub fn target_locations_url(&self) -> ::std::option::Option<&str> {
+        self.target_locations_url.as_deref()
     }
 }
 impl StartAutomationExecutionInput {
@@ -136,6 +148,7 @@ pub struct StartAutomationExecutionInputBuilder {
     pub(crate) target_locations: ::std::option::Option<::std::vec::Vec<crate::types::TargetLocation>>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) alarm_configuration: ::std::option::Option<crate::types::AlarmConfiguration>,
+    pub(crate) target_locations_url: ::std::option::Option<::std::string::String>,
 }
 impl StartAutomationExecutionInputBuilder {
     /// <p>The name of the SSM document to run. This can be a public document or a custom document. To run a shared document belonging to another account, specify the document ARN. For more information about how to use shared documents, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/documents-ssm-sharing.html">Sharing SSM documents</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
@@ -239,6 +252,7 @@ impl StartAutomationExecutionInputBuilder {
     /// To override the contents of this collection use [`set_targets`](Self::set_targets).
     ///
     /// <p>A key-value mapping to target resources. Required if you specify TargetParameterName.</p>
+    /// <p>If both this parameter and the <code>TargetLocation:Targets</code> parameter are supplied, <code>TargetLocation:Targets</code> takes precedence.</p>
     pub fn targets(mut self, input: crate::types::Target) -> Self {
         let mut v = self.targets.unwrap_or_default();
         v.push(input);
@@ -246,11 +260,13 @@ impl StartAutomationExecutionInputBuilder {
         self
     }
     /// <p>A key-value mapping to target resources. Required if you specify TargetParameterName.</p>
+    /// <p>If both this parameter and the <code>TargetLocation:Targets</code> parameter are supplied, <code>TargetLocation:Targets</code> takes precedence.</p>
     pub fn set_targets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Target>>) -> Self {
         self.targets = input;
         self
     }
     /// <p>A key-value mapping to target resources. Required if you specify TargetParameterName.</p>
+    /// <p>If both this parameter and the <code>TargetLocation:Targets</code> parameter are supplied, <code>TargetLocation:Targets</code> takes precedence.</p>
     pub fn get_targets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Target>> {
         &self.targets
     }
@@ -280,33 +296,39 @@ impl StartAutomationExecutionInputBuilder {
         &self.target_maps
     }
     /// <p>The maximum number of targets allowed to run this task in parallel. You can specify a number, such as 10, or a percentage, such as 10%. The default value is <code>10</code>.</p>
+    /// <p>If both this parameter and the <code>TargetLocation:TargetsMaxConcurrency</code> are supplied, <code>TargetLocation:TargetsMaxConcurrency</code> takes precedence.</p>
     pub fn max_concurrency(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.max_concurrency = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The maximum number of targets allowed to run this task in parallel. You can specify a number, such as 10, or a percentage, such as 10%. The default value is <code>10</code>.</p>
+    /// <p>If both this parameter and the <code>TargetLocation:TargetsMaxConcurrency</code> are supplied, <code>TargetLocation:TargetsMaxConcurrency</code> takes precedence.</p>
     pub fn set_max_concurrency(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.max_concurrency = input;
         self
     }
     /// <p>The maximum number of targets allowed to run this task in parallel. You can specify a number, such as 10, or a percentage, such as 10%. The default value is <code>10</code>.</p>
+    /// <p>If both this parameter and the <code>TargetLocation:TargetsMaxConcurrency</code> are supplied, <code>TargetLocation:TargetsMaxConcurrency</code> takes precedence.</p>
     pub fn get_max_concurrency(&self) -> &::std::option::Option<::std::string::String> {
         &self.max_concurrency
     }
     /// <p>The number of errors that are allowed before the system stops running the automation on additional targets. You can specify either an absolute number of errors, for example 10, or a percentage of the target set, for example 10%. If you specify 3, for example, the system stops running the automation when the fourth error is received. If you specify 0, then the system stops running the automation on additional targets after the first error result is returned. If you run an automation on 50 resources and set max-errors to 10%, then the system stops running the automation on additional targets when the sixth error is received.</p>
     /// <p>Executions that are already running an automation when max-errors is reached are allowed to complete, but some of these executions may fail as well. If you need to ensure that there won't be more than max-errors failed executions, set max-concurrency to 1 so the executions proceed one at a time.</p>
+    /// <p>If this parameter and the <code>TargetLocation:TargetsMaxErrors</code> parameter are both supplied, <code>TargetLocation:TargetsMaxErrors</code> takes precedence.</p>
     pub fn max_errors(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.max_errors = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The number of errors that are allowed before the system stops running the automation on additional targets. You can specify either an absolute number of errors, for example 10, or a percentage of the target set, for example 10%. If you specify 3, for example, the system stops running the automation when the fourth error is received. If you specify 0, then the system stops running the automation on additional targets after the first error result is returned. If you run an automation on 50 resources and set max-errors to 10%, then the system stops running the automation on additional targets when the sixth error is received.</p>
     /// <p>Executions that are already running an automation when max-errors is reached are allowed to complete, but some of these executions may fail as well. If you need to ensure that there won't be more than max-errors failed executions, set max-concurrency to 1 so the executions proceed one at a time.</p>
+    /// <p>If this parameter and the <code>TargetLocation:TargetsMaxErrors</code> parameter are both supplied, <code>TargetLocation:TargetsMaxErrors</code> takes precedence.</p>
     pub fn set_max_errors(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.max_errors = input;
         self
     }
     /// <p>The number of errors that are allowed before the system stops running the automation on additional targets. You can specify either an absolute number of errors, for example 10, or a percentage of the target set, for example 10%. If you specify 3, for example, the system stops running the automation when the fourth error is received. If you specify 0, then the system stops running the automation on additional targets after the first error result is returned. If you run an automation on 50 resources and set max-errors to 10%, then the system stops running the automation on additional targets when the sixth error is received.</p>
     /// <p>Executions that are already running an automation when max-errors is reached are allowed to complete, but some of these executions may fail as well. If you need to ensure that there won't be more than max-errors failed executions, set max-concurrency to 1 so the executions proceed one at a time.</p>
+    /// <p>If this parameter and the <code>TargetLocation:TargetsMaxErrors</code> parameter are both supplied, <code>TargetLocation:TargetsMaxErrors</code> takes precedence.</p>
     pub fn get_max_errors(&self) -> &::std::option::Option<::std::string::String> {
         &self.max_errors
     }
@@ -314,19 +336,19 @@ impl StartAutomationExecutionInputBuilder {
     ///
     /// To override the contents of this collection use [`set_target_locations`](Self::set_target_locations).
     ///
-    /// <p>A location is a combination of Amazon Web Services Regions and/or Amazon Web Services accounts where you want to run the automation. Use this operation to start an automation in multiple Amazon Web Services Regions and multiple Amazon Web Services accounts. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Running Automation workflows in multiple Amazon Web Services Regions and Amazon Web Services accounts</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    /// <p>A location is a combination of Amazon Web Services Regions and/or Amazon Web Services accounts where you want to run the automation. Use this operation to start an automation in multiple Amazon Web Services Regions and multiple Amazon Web Services accounts. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Running automations in multiple Amazon Web Services Regions and accounts</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub fn target_locations(mut self, input: crate::types::TargetLocation) -> Self {
         let mut v = self.target_locations.unwrap_or_default();
         v.push(input);
         self.target_locations = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A location is a combination of Amazon Web Services Regions and/or Amazon Web Services accounts where you want to run the automation. Use this operation to start an automation in multiple Amazon Web Services Regions and multiple Amazon Web Services accounts. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Running Automation workflows in multiple Amazon Web Services Regions and Amazon Web Services accounts</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    /// <p>A location is a combination of Amazon Web Services Regions and/or Amazon Web Services accounts where you want to run the automation. Use this operation to start an automation in multiple Amazon Web Services Regions and multiple Amazon Web Services accounts. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Running automations in multiple Amazon Web Services Regions and accounts</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub fn set_target_locations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TargetLocation>>) -> Self {
         self.target_locations = input;
         self
     }
-    /// <p>A location is a combination of Amazon Web Services Regions and/or Amazon Web Services accounts where you want to run the automation. Use this operation to start an automation in multiple Amazon Web Services Regions and multiple Amazon Web Services accounts. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Running Automation workflows in multiple Amazon Web Services Regions and Amazon Web Services accounts</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    /// <p>A location is a combination of Amazon Web Services Regions and/or Amazon Web Services accounts where you want to run the automation. Use this operation to start an automation in multiple Amazon Web Services Regions and multiple Amazon Web Services accounts. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Running automations in multiple Amazon Web Services Regions and accounts</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub fn get_target_locations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TargetLocation>> {
         &self.target_locations
     }
@@ -388,6 +410,20 @@ impl StartAutomationExecutionInputBuilder {
     pub fn get_alarm_configuration(&self) -> &::std::option::Option<crate::types::AlarmConfiguration> {
         &self.alarm_configuration
     }
+    /// <p>Specify a publicly accessible URL for a file that contains the <code>TargetLocations</code> body. Currently, only files in presigned Amazon S3 buckets are supported.</p>
+    pub fn target_locations_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.target_locations_url = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Specify a publicly accessible URL for a file that contains the <code>TargetLocations</code> body. Currently, only files in presigned Amazon S3 buckets are supported.</p>
+    pub fn set_target_locations_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.target_locations_url = input;
+        self
+    }
+    /// <p>Specify a publicly accessible URL for a file that contains the <code>TargetLocations</code> body. Currently, only files in presigned Amazon S3 buckets are supported.</p>
+    pub fn get_target_locations_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_locations_url
+    }
     /// Consumes the builder and constructs a [`StartAutomationExecutionInput`](crate::operation::start_automation_execution::StartAutomationExecutionInput).
     pub fn build(
         self,
@@ -409,6 +445,7 @@ impl StartAutomationExecutionInputBuilder {
             target_locations: self.target_locations,
             tags: self.tags,
             alarm_configuration: self.alarm_configuration,
+            target_locations_url: self.target_locations_url,
         })
     }
 }

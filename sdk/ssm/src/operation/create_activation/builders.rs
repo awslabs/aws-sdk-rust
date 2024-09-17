@@ -22,7 +22,7 @@ impl crate::operation::create_activation::builders::CreateActivationInputBuilder
 }
 /// Fluent builder constructing a request to `CreateActivation`.
 ///
-/// <p>Generates an activation code and activation ID you can use to register your on-premises servers, edge devices, or virtual machine (VM) with Amazon Web Services Systems Manager. Registering these machines with Systems Manager makes it possible to manage them using Systems Manager capabilities. You use the activation code and ID when installing SSM Agent on machines in your hybrid environment. For more information about requirements for managing on-premises machines using Systems Manager, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-managedinstances.html">Setting up Amazon Web Services Systems Manager for hybrid and multicloud environments</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p><note>
+/// <p>Generates an activation code and activation ID you can use to register your on-premises servers, edge devices, or virtual machine (VM) with Amazon Web Services Systems Manager. Registering these machines with Systems Manager makes it possible to manage them using Systems Manager capabilities. You use the activation code and ID when installing SSM Agent on machines in your hybrid environment. For more information about requirements for managing on-premises machines using Systems Manager, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-hybrid-multicloud.html">Using Amazon Web Services Systems Manager in hybrid and multicloud environments</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p><note>
 /// <p>Amazon Elastic Compute Cloud (Amazon EC2) instances, edge devices, and on-premises servers and VMs that are configured for Systems Manager are all called <i>managed nodes</i>.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -150,21 +150,21 @@ impl CreateActivationFluentBuilder {
     pub fn get_default_instance_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_default_instance_name()
     }
-    /// <p>The name of the Identity and Access Management (IAM) role that you want to assign to the managed node. This IAM role must provide AssumeRole permissions for the Amazon Web Services Systems Manager service principal <code>ssm.amazonaws.com</code>. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-service-role.html">Create an IAM service role for a hybrid and multicloud environment</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p><note>
+    /// <p>The name of the Identity and Access Management (IAM) role that you want to assign to the managed node. This IAM role must provide AssumeRole permissions for the Amazon Web Services Systems Manager service principal <code>ssm.amazonaws.com</code>. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/hybrid-multicloud-service-role.html">Create the IAM service role required for Systems Manager in a hybrid and multicloud environments</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p><note>
     /// <p>You can't specify an IAM service-linked role for this parameter. You must create a unique role.</p>
     /// </note>
     pub fn iam_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.iam_role(input.into());
         self
     }
-    /// <p>The name of the Identity and Access Management (IAM) role that you want to assign to the managed node. This IAM role must provide AssumeRole permissions for the Amazon Web Services Systems Manager service principal <code>ssm.amazonaws.com</code>. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-service-role.html">Create an IAM service role for a hybrid and multicloud environment</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p><note>
+    /// <p>The name of the Identity and Access Management (IAM) role that you want to assign to the managed node. This IAM role must provide AssumeRole permissions for the Amazon Web Services Systems Manager service principal <code>ssm.amazonaws.com</code>. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/hybrid-multicloud-service-role.html">Create the IAM service role required for Systems Manager in a hybrid and multicloud environments</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p><note>
     /// <p>You can't specify an IAM service-linked role for this parameter. You must create a unique role.</p>
     /// </note>
     pub fn set_iam_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_iam_role(input);
         self
     }
-    /// <p>The name of the Identity and Access Management (IAM) role that you want to assign to the managed node. This IAM role must provide AssumeRole permissions for the Amazon Web Services Systems Manager service principal <code>ssm.amazonaws.com</code>. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-service-role.html">Create an IAM service role for a hybrid and multicloud environment</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p><note>
+    /// <p>The name of the Identity and Access Management (IAM) role that you want to assign to the managed node. This IAM role must provide AssumeRole permissions for the Amazon Web Services Systems Manager service principal <code>ssm.amazonaws.com</code>. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/hybrid-multicloud-service-role.html">Create the IAM service role required for Systems Manager in a hybrid and multicloud environments</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p><note>
     /// <p>You can't specify an IAM service-linked role for this parameter. You must create a unique role.</p>
     /// </note>
     pub fn get_iam_role(&self) -> &::std::option::Option<::std::string::String> {
@@ -184,17 +184,17 @@ impl CreateActivationFluentBuilder {
     pub fn get_registration_limit(&self) -> &::std::option::Option<i32> {
         self.inner.get_registration_limit()
     }
-    /// <p>The date by which this activation request should expire, in timestamp format, such as "2021-07-07T00:00:00". You can specify a date up to 30 days in advance. If you don't provide an expiration date, the activation code expires in 24 hours.</p>
+    /// <p>The date by which this activation request should expire, in timestamp format, such as "2024-07-07T00:00:00". You can specify a date up to 30 days in advance. If you don't provide an expiration date, the activation code expires in 24 hours.</p>
     pub fn expiration_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.expiration_date(input);
         self
     }
-    /// <p>The date by which this activation request should expire, in timestamp format, such as "2021-07-07T00:00:00". You can specify a date up to 30 days in advance. If you don't provide an expiration date, the activation code expires in 24 hours.</p>
+    /// <p>The date by which this activation request should expire, in timestamp format, such as "2024-07-07T00:00:00". You can specify a date up to 30 days in advance. If you don't provide an expiration date, the activation code expires in 24 hours.</p>
     pub fn set_expiration_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_expiration_date(input);
         self
     }
-    /// <p>The date by which this activation request should expire, in timestamp format, such as "2021-07-07T00:00:00". You can specify a date up to 30 days in advance. If you don't provide an expiration date, the activation code expires in 24 hours.</p>
+    /// <p>The date by which this activation request should expire, in timestamp format, such as "2024-07-07T00:00:00". You can specify a date up to 30 days in advance. If you don't provide an expiration date, the activation code expires in 24 hours.</p>
     pub fn get_expiration_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_expiration_date()
     }

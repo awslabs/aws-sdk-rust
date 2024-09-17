@@ -59,6 +59,8 @@ pub struct AutomationExecution {
     pub alarm_configuration: ::std::option::Option<crate::types::AlarmConfiguration>,
     /// <p>The CloudWatch alarm that was invoked by the automation.</p>
     pub triggered_alarms: ::std::option::Option<::std::vec::Vec<crate::types::AlarmStateInformation>>,
+    /// <p>A publicly accessible URL for a file that contains the <code>TargetLocations</code> body. Currently, only files in presigned Amazon S3 buckets are supported</p>
+    pub target_locations_url: ::std::option::Option<::std::string::String>,
     /// <p>The subtype of the Automation operation. Currently, the only supported value is <code>ChangeRequest</code>.</p>
     pub automation_subtype: ::std::option::Option<crate::types::AutomationSubtype>,
     /// <p>The date and time the Automation operation is scheduled to start.</p>
@@ -195,6 +197,10 @@ impl AutomationExecution {
     pub fn triggered_alarms(&self) -> &[crate::types::AlarmStateInformation] {
         self.triggered_alarms.as_deref().unwrap_or_default()
     }
+    /// <p>A publicly accessible URL for a file that contains the <code>TargetLocations</code> body. Currently, only files in presigned Amazon S3 buckets are supported</p>
+    pub fn target_locations_url(&self) -> ::std::option::Option<&str> {
+        self.target_locations_url.as_deref()
+    }
     /// <p>The subtype of the Automation operation. Currently, the only supported value is <code>ChangeRequest</code>.</p>
     pub fn automation_subtype(&self) -> ::std::option::Option<&crate::types::AutomationSubtype> {
         self.automation_subtype.as_ref()
@@ -267,6 +273,7 @@ pub struct AutomationExecutionBuilder {
     pub(crate) progress_counters: ::std::option::Option<crate::types::ProgressCounters>,
     pub(crate) alarm_configuration: ::std::option::Option<crate::types::AlarmConfiguration>,
     pub(crate) triggered_alarms: ::std::option::Option<::std::vec::Vec<crate::types::AlarmStateInformation>>,
+    pub(crate) target_locations_url: ::std::option::Option<::std::string::String>,
     pub(crate) automation_subtype: ::std::option::Option<crate::types::AutomationSubtype>,
     pub(crate) scheduled_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) runbooks: ::std::option::Option<::std::vec::Vec<crate::types::Runbook>>,
@@ -709,6 +716,20 @@ impl AutomationExecutionBuilder {
     pub fn get_triggered_alarms(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AlarmStateInformation>> {
         &self.triggered_alarms
     }
+    /// <p>A publicly accessible URL for a file that contains the <code>TargetLocations</code> body. Currently, only files in presigned Amazon S3 buckets are supported</p>
+    pub fn target_locations_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.target_locations_url = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>A publicly accessible URL for a file that contains the <code>TargetLocations</code> body. Currently, only files in presigned Amazon S3 buckets are supported</p>
+    pub fn set_target_locations_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.target_locations_url = input;
+        self
+    }
+    /// <p>A publicly accessible URL for a file that contains the <code>TargetLocations</code> body. Currently, only files in presigned Amazon S3 buckets are supported</p>
+    pub fn get_target_locations_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_locations_url
+    }
     /// <p>The subtype of the Automation operation. Currently, the only supported value is <code>ChangeRequest</code>.</p>
     pub fn automation_subtype(mut self, input: crate::types::AutomationSubtype) -> Self {
         self.automation_subtype = ::std::option::Option::Some(input);
@@ -860,6 +881,7 @@ impl AutomationExecutionBuilder {
             progress_counters: self.progress_counters,
             alarm_configuration: self.alarm_configuration,
             triggered_alarms: self.triggered_alarms,
+            target_locations_url: self.target_locations_url,
             automation_subtype: self.automation_subtype,
             scheduled_time: self.scheduled_time,
             runbooks: self.runbooks,

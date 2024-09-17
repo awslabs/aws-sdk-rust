@@ -14,6 +14,7 @@
 /// match webhookscopetype {
 ///     WebhookScopeType::GithubGlobal => { /* ... */ },
 ///     WebhookScopeType::GithubOrganization => { /* ... */ },
+///     WebhookScopeType::GitlabGroup => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -45,6 +46,8 @@ pub enum WebhookScopeType {
     GithubGlobal,
     #[allow(missing_docs)] // documentation missing in model
     GithubOrganization,
+    #[allow(missing_docs)] // documentation missing in model
+    GitlabGroup,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -54,6 +57,7 @@ impl ::std::convert::From<&str> for WebhookScopeType {
         match s {
             "GITHUB_GLOBAL" => WebhookScopeType::GithubGlobal,
             "GITHUB_ORGANIZATION" => WebhookScopeType::GithubOrganization,
+            "GITLAB_GROUP" => WebhookScopeType::GitlabGroup,
             other => WebhookScopeType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -71,12 +75,13 @@ impl WebhookScopeType {
         match self {
             WebhookScopeType::GithubGlobal => "GITHUB_GLOBAL",
             WebhookScopeType::GithubOrganization => "GITHUB_ORGANIZATION",
+            WebhookScopeType::GitlabGroup => "GITLAB_GROUP",
             WebhookScopeType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["GITHUB_GLOBAL", "GITHUB_ORGANIZATION"]
+        &["GITHUB_GLOBAL", "GITHUB_ORGANIZATION", "GITLAB_GROUP"]
     }
 }
 impl ::std::convert::AsRef<str> for WebhookScopeType {
@@ -101,6 +106,7 @@ impl ::std::fmt::Display for WebhookScopeType {
         match self {
             WebhookScopeType::GithubGlobal => write!(f, "GITHUB_GLOBAL"),
             WebhookScopeType::GithubOrganization => write!(f, "GITHUB_ORGANIZATION"),
+            WebhookScopeType::GitlabGroup => write!(f, "GITLAB_GROUP"),
             WebhookScopeType::Unknown(value) => write!(f, "{}", value),
         }
     }

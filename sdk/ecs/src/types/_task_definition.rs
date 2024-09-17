@@ -39,7 +39,7 @@ pub struct TaskDefinition {
     /// <p>This parameter isn't supported for tasks run on Fargate.</p>
     /// </note>
     pub placement_constraints: ::std::option::Option<::std::vec::Vec<crate::types::TaskDefinitionPlacementConstraint>>,
-    /// <p>The task launch types the task definition validated against during task definition registration. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    /// <p>Amazon ECS validates the task definition parameters with those supported by the launch type. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     pub compatibilities: ::std::option::Option<::std::vec::Vec<crate::types::Compatibility>>,
     /// <p>The operating system that your task definitions are running on. A platform family is specified only for tasks using the Fargate launch type.</p>
     /// <p>When you specify a task in a service, this value must match the <code>runtimePlatform</code> value of the service.</p>
@@ -192,7 +192,7 @@ impl TaskDefinition {
     pub fn placement_constraints(&self) -> &[crate::types::TaskDefinitionPlacementConstraint] {
         self.placement_constraints.as_deref().unwrap_or_default()
     }
-    /// <p>The task launch types the task definition validated against during task definition registration. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    /// <p>Amazon ECS validates the task definition parameters with those supported by the launch type. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.compatibilities.is_none()`.
     pub fn compatibilities(&self) -> &[crate::types::Compatibility] {
@@ -572,19 +572,19 @@ impl TaskDefinitionBuilder {
     ///
     /// To override the contents of this collection use [`set_compatibilities`](Self::set_compatibilities).
     ///
-    /// <p>The task launch types the task definition validated against during task definition registration. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    /// <p>Amazon ECS validates the task definition parameters with those supported by the launch type. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     pub fn compatibilities(mut self, input: crate::types::Compatibility) -> Self {
         let mut v = self.compatibilities.unwrap_or_default();
         v.push(input);
         self.compatibilities = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The task launch types the task definition validated against during task definition registration. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    /// <p>Amazon ECS validates the task definition parameters with those supported by the launch type. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     pub fn set_compatibilities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Compatibility>>) -> Self {
         self.compatibilities = input;
         self
     }
-    /// <p>The task launch types the task definition validated against during task definition registration. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    /// <p>Amazon ECS validates the task definition parameters with those supported by the launch type. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     pub fn get_compatibilities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Compatibility>> {
         &self.compatibilities
     }

@@ -34,6 +34,10 @@ pub struct EnhancedImageScanFinding {
     pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>The date and time the finding was last updated at.</p>
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>Details on whether a fix is available through a version update. This value can be <code>YES</code>, <code>NO</code>, or <code>PARTIAL</code>. A <code>PARTIAL</code> fix means that some, but not all, of the packages identified in the finding have fixes available through updated versions.</p>
+    pub fix_available: ::std::option::Option<::std::string::String>,
+    /// <p>If a finding discovered in your environment has an exploit available.</p>
+    pub exploit_available: ::std::option::Option<::std::string::String>,
 }
 impl EnhancedImageScanFinding {
     /// <p>The Amazon Web Services account ID associated with the image.</p>
@@ -98,6 +102,14 @@ impl EnhancedImageScanFinding {
     pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
+    /// <p>Details on whether a fix is available through a version update. This value can be <code>YES</code>, <code>NO</code>, or <code>PARTIAL</code>. A <code>PARTIAL</code> fix means that some, but not all, of the packages identified in the finding have fixes available through updated versions.</p>
+    pub fn fix_available(&self) -> ::std::option::Option<&str> {
+        self.fix_available.as_deref()
+    }
+    /// <p>If a finding discovered in your environment has an exploit available.</p>
+    pub fn exploit_available(&self) -> ::std::option::Option<&str> {
+        self.exploit_available.as_deref()
+    }
 }
 impl EnhancedImageScanFinding {
     /// Creates a new builder-style object to manufacture [`EnhancedImageScanFinding`](crate::types::EnhancedImageScanFinding).
@@ -125,6 +137,8 @@ pub struct EnhancedImageScanFindingBuilder {
     pub(crate) title: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<::std::string::String>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) fix_available: ::std::option::Option<::std::string::String>,
+    pub(crate) exploit_available: ::std::option::Option<::std::string::String>,
 }
 impl EnhancedImageScanFindingBuilder {
     /// <p>The Amazon Web Services account ID associated with the image.</p>
@@ -343,6 +357,34 @@ impl EnhancedImageScanFindingBuilder {
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.updated_at
     }
+    /// <p>Details on whether a fix is available through a version update. This value can be <code>YES</code>, <code>NO</code>, or <code>PARTIAL</code>. A <code>PARTIAL</code> fix means that some, but not all, of the packages identified in the finding have fixes available through updated versions.</p>
+    pub fn fix_available(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.fix_available = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Details on whether a fix is available through a version update. This value can be <code>YES</code>, <code>NO</code>, or <code>PARTIAL</code>. A <code>PARTIAL</code> fix means that some, but not all, of the packages identified in the finding have fixes available through updated versions.</p>
+    pub fn set_fix_available(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.fix_available = input;
+        self
+    }
+    /// <p>Details on whether a fix is available through a version update. This value can be <code>YES</code>, <code>NO</code>, or <code>PARTIAL</code>. A <code>PARTIAL</code> fix means that some, but not all, of the packages identified in the finding have fixes available through updated versions.</p>
+    pub fn get_fix_available(&self) -> &::std::option::Option<::std::string::String> {
+        &self.fix_available
+    }
+    /// <p>If a finding discovered in your environment has an exploit available.</p>
+    pub fn exploit_available(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.exploit_available = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>If a finding discovered in your environment has an exploit available.</p>
+    pub fn set_exploit_available(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.exploit_available = input;
+        self
+    }
+    /// <p>If a finding discovered in your environment has an exploit available.</p>
+    pub fn get_exploit_available(&self) -> &::std::option::Option<::std::string::String> {
+        &self.exploit_available
+    }
     /// Consumes the builder and constructs a [`EnhancedImageScanFinding`](crate::types::EnhancedImageScanFinding).
     pub fn build(self) -> crate::types::EnhancedImageScanFinding {
         crate::types::EnhancedImageScanFinding {
@@ -361,6 +403,8 @@ impl EnhancedImageScanFindingBuilder {
             title: self.title,
             r#type: self.r#type,
             updated_at: self.updated_at,
+            fix_available: self.fix_available,
+            exploit_available: self.exploit_available,
         }
     }
 }

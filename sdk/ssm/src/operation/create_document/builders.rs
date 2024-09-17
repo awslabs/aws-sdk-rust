@@ -22,7 +22,7 @@ impl crate::operation::create_document::builders::CreateDocumentInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateDocument`.
 ///
-/// <p>Creates a Amazon Web Services Systems Manager (SSM document). An SSM document defines the actions that Systems Manager performs on your managed nodes. For more information about SSM documents, including information about supported schemas, features, and syntax, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-ssm-docs.html">Amazon Web Services Systems Manager Documents</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+/// <p>Creates a Amazon Web Services Systems Manager (SSM document). An SSM document defines the actions that Systems Manager performs on your managed nodes. For more information about SSM documents, including information about supported schemas, features, and syntax, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/documents.html">Amazon Web Services Systems Manager Documents</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateDocumentFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
