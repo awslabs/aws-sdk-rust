@@ -31,7 +31,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-pcaconnectorscep = "1.12.1"
+//! aws-sdk-pcaconnectorscep = "1.13.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
