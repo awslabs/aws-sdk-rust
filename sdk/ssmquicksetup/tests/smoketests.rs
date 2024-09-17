@@ -5,7 +5,7 @@
 //! they are disabled by default. To enable them, run the tests with
 //!
 //! ```sh
-//! RUSTFLAGS="--cfg smoketests" cargo test.
+//! RUSTFLAGS="--cfg smoketests" cargo test
 //! ```
 //!
 use aws_sdk_ssmquicksetup::{config, Client};
@@ -15,7 +15,7 @@ async fn test_get_configuration_manager_failure() {
     let config = ::aws_config::load_defaults(config::BehaviorVersion::latest()).await;
     let conf = config::Config::from(&config)
         .to_builder()
-        .region(config::Region::new("us-east-1"))
+        .region(::aws_types::region::Region::new("us-east-1"))
         .use_dual_stack(false)
         .use_fips(false)
         .build();
@@ -37,7 +37,7 @@ async fn test_list_configuration_managers_success() {
     let config = ::aws_config::load_defaults(config::BehaviorVersion::latest()).await;
     let conf = config::Config::from(&config)
         .to_builder()
-        .region(config::Region::new("us-east-1"))
+        .region(::aws_types::region::Region::new("us-east-1"))
         .use_dual_stack(false)
         .use_fips(false)
         .build();
@@ -51,7 +51,7 @@ async fn test_list_quick_setup_types_success() {
     let config = ::aws_config::load_defaults(config::BehaviorVersion::latest()).await;
     let conf = config::Config::from(&config)
         .to_builder()
-        .region(config::Region::new("us-east-1"))
+        .region(::aws_types::region::Region::new("us-east-1"))
         .use_dual_stack(false)
         .use_fips(false)
         .build();
