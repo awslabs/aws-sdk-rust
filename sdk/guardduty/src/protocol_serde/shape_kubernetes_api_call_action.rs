@@ -28,7 +28,7 @@ where
                                     .transpose()?,
                             );
                         }
-                        "sourceIps" => {
+                        "sourceIPs" => {
                             builder = builder.set_source_ips(crate::protocol_serde::shape_source_ips::de_source_ips(tokens)?);
                         }
                         "userAgent" => {

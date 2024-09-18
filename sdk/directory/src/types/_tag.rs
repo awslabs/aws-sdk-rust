@@ -4,18 +4,18 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Tag {
-    /// <p>Required name of the tag. The string value can be Unicode characters and cannot be prefixed with "aws:". The string can contain only the set of Unicode letters, digits, white-space, '_', '.', '/', '=', '+', '-' (Java regex: "^(\[\\p{L}\\p{Z}\\p{N}_.:/=+\\-\]*)$").</p>
+    /// <p>Required name of the tag. The string value can be Unicode characters and cannot be prefixed with "aws:". The string can contain only the set of Unicode letters, digits, white-space, '_', '.', '/', '=', '+', '-', ':', '@'(Java regex: "^(\[\\p{L}\\p{Z}\\p{N}_.:/=+\\-\]*)$").</p>
     pub key: ::std::string::String,
-    /// <p>The optional value of the tag. The string value can be Unicode characters. The string can contain only the set of Unicode letters, digits, white-space, '_', '.', '/', '=', '+', '-' (Java regex: "^(\[\\p{L}\\p{Z}\\p{N}_.:/=+\\-\]*)$").</p>
+    /// <p>The optional value of the tag. The string value can be Unicode characters. The string can contain only the set of Unicode letters, digits, white-space, '_', '.', '/', '=', '+', '-', ':', '@' (Java regex: "^(\[\\p{L}\\p{Z}\\p{N}_.:/=+\\-\]*)$").</p>
     pub value: ::std::string::String,
 }
 impl Tag {
-    /// <p>Required name of the tag. The string value can be Unicode characters and cannot be prefixed with "aws:". The string can contain only the set of Unicode letters, digits, white-space, '_', '.', '/', '=', '+', '-' (Java regex: "^(\[\\p{L}\\p{Z}\\p{N}_.:/=+\\-\]*)$").</p>
+    /// <p>Required name of the tag. The string value can be Unicode characters and cannot be prefixed with "aws:". The string can contain only the set of Unicode letters, digits, white-space, '_', '.', '/', '=', '+', '-', ':', '@'(Java regex: "^(\[\\p{L}\\p{Z}\\p{N}_.:/=+\\-\]*)$").</p>
     pub fn key(&self) -> &str {
         use std::ops::Deref;
         self.key.deref()
     }
-    /// <p>The optional value of the tag. The string value can be Unicode characters. The string can contain only the set of Unicode letters, digits, white-space, '_', '.', '/', '=', '+', '-' (Java regex: "^(\[\\p{L}\\p{Z}\\p{N}_.:/=+\\-\]*)$").</p>
+    /// <p>The optional value of the tag. The string value can be Unicode characters. The string can contain only the set of Unicode letters, digits, white-space, '_', '.', '/', '=', '+', '-', ':', '@' (Java regex: "^(\[\\p{L}\\p{Z}\\p{N}_.:/=+\\-\]*)$").</p>
     pub fn value(&self) -> &str {
         use std::ops::Deref;
         self.value.deref()
@@ -36,33 +36,33 @@ pub struct TagBuilder {
     pub(crate) value: ::std::option::Option<::std::string::String>,
 }
 impl TagBuilder {
-    /// <p>Required name of the tag. The string value can be Unicode characters and cannot be prefixed with "aws:". The string can contain only the set of Unicode letters, digits, white-space, '_', '.', '/', '=', '+', '-' (Java regex: "^(\[\\p{L}\\p{Z}\\p{N}_.:/=+\\-\]*)$").</p>
+    /// <p>Required name of the tag. The string value can be Unicode characters and cannot be prefixed with "aws:". The string can contain only the set of Unicode letters, digits, white-space, '_', '.', '/', '=', '+', '-', ':', '@'(Java regex: "^(\[\\p{L}\\p{Z}\\p{N}_.:/=+\\-\]*)$").</p>
     /// This field is required.
     pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Required name of the tag. The string value can be Unicode characters and cannot be prefixed with "aws:". The string can contain only the set of Unicode letters, digits, white-space, '_', '.', '/', '=', '+', '-' (Java regex: "^(\[\\p{L}\\p{Z}\\p{N}_.:/=+\\-\]*)$").</p>
+    /// <p>Required name of the tag. The string value can be Unicode characters and cannot be prefixed with "aws:". The string can contain only the set of Unicode letters, digits, white-space, '_', '.', '/', '=', '+', '-', ':', '@'(Java regex: "^(\[\\p{L}\\p{Z}\\p{N}_.:/=+\\-\]*)$").</p>
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key = input;
         self
     }
-    /// <p>Required name of the tag. The string value can be Unicode characters and cannot be prefixed with "aws:". The string can contain only the set of Unicode letters, digits, white-space, '_', '.', '/', '=', '+', '-' (Java regex: "^(\[\\p{L}\\p{Z}\\p{N}_.:/=+\\-\]*)$").</p>
+    /// <p>Required name of the tag. The string value can be Unicode characters and cannot be prefixed with "aws:". The string can contain only the set of Unicode letters, digits, white-space, '_', '.', '/', '=', '+', '-', ':', '@'(Java regex: "^(\[\\p{L}\\p{Z}\\p{N}_.:/=+\\-\]*)$").</p>
     pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
         &self.key
     }
-    /// <p>The optional value of the tag. The string value can be Unicode characters. The string can contain only the set of Unicode letters, digits, white-space, '_', '.', '/', '=', '+', '-' (Java regex: "^(\[\\p{L}\\p{Z}\\p{N}_.:/=+\\-\]*)$").</p>
+    /// <p>The optional value of the tag. The string value can be Unicode characters. The string can contain only the set of Unicode letters, digits, white-space, '_', '.', '/', '=', '+', '-', ':', '@' (Java regex: "^(\[\\p{L}\\p{Z}\\p{N}_.:/=+\\-\]*)$").</p>
     /// This field is required.
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The optional value of the tag. The string value can be Unicode characters. The string can contain only the set of Unicode letters, digits, white-space, '_', '.', '/', '=', '+', '-' (Java regex: "^(\[\\p{L}\\p{Z}\\p{N}_.:/=+\\-\]*)$").</p>
+    /// <p>The optional value of the tag. The string value can be Unicode characters. The string can contain only the set of Unicode letters, digits, white-space, '_', '.', '/', '=', '+', '-', ':', '@' (Java regex: "^(\[\\p{L}\\p{Z}\\p{N}_.:/=+\\-\]*)$").</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
     }
-    /// <p>The optional value of the tag. The string value can be Unicode characters. The string can contain only the set of Unicode letters, digits, white-space, '_', '.', '/', '=', '+', '-' (Java regex: "^(\[\\p{L}\\p{Z}\\p{N}_.:/=+\\-\]*)$").</p>
+    /// <p>The optional value of the tag. The string value can be Unicode characters. The string can contain only the set of Unicode letters, digits, white-space, '_', '.', '/', '=', '+', '-', ':', '@' (Java regex: "^(\[\\p{L}\\p{Z}\\p{N}_.:/=+\\-\]*)$").</p>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
         &self.value
     }

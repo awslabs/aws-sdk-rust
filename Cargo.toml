@@ -2,10 +2,10 @@
 resolver = "2"
 exclude = [
     "examples/webassembly",
-    "examples/lambda",
-    "examples/test-utils",
-    "examples/cross_service",
     "examples/examples",
+    "examples/cross_service",
+    "examples/test-utils",
+    "examples/lambda",
     "tests/webassembly",
     "tests/no-default-features"
 ]
@@ -151,6 +151,7 @@ members = [
     "sdk/devopsguru",
     "sdk/directconnect",
     "sdk/directory",
+    "sdk/directoryservicedata",
     "sdk/dlm",
     "sdk/docdb",
     "sdk/docdbelastic",

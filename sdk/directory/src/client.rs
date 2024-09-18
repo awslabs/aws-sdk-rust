@@ -213,6 +213,8 @@ mod describe_conditional_forwarders;
 
 mod describe_directories;
 
+mod describe_directory_data_access;
+
 mod describe_domain_controllers;
 
 mod describe_event_topics;
@@ -233,6 +235,8 @@ mod describe_update_directory;
 
 mod disable_client_authentication;
 
+mod disable_directory_data_access;
+
 mod disable_ldaps;
 
 mod disable_radius;
@@ -240,6 +244,8 @@ mod disable_radius;
 mod disable_sso;
 
 mod enable_client_authentication;
+
+mod enable_directory_data_access;
 
 mod enable_ldaps;
 

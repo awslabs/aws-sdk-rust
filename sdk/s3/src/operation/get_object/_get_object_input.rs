@@ -109,7 +109,7 @@ pub struct GetObjectInput {
     /// <p>The account ID of the expected bucket owner. If the account ID that you provide does not match the actual owner of the bucket, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub expected_bucket_owner: ::std::option::Option<::std::string::String>,
     /// <p>To retrieve the checksum, this mode must be enabled.</p>
-    /// <p>In addition, if you enable checksum mode and the object is uploaded with a <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_Checksum.html">checksum</a> and encrypted with an Key Management Service (KMS) key, you must have permission to use the <code>kms:Decrypt</code> action to retrieve the checksum.</p>
+    /// <p><b>General purpose buckets</b> - In addition, if you enable checksum mode and the object is uploaded with a <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_Checksum.html">checksum</a> and encrypted with an Key Management Service (KMS) key, you must have permission to use the <code>kms:Decrypt</code> action to retrieve the checksum.</p>
     pub checksum_mode: ::std::option::Option<crate::types::ChecksumMode>,
 }
 impl GetObjectInput {
@@ -259,7 +259,7 @@ impl GetObjectInput {
         self.expected_bucket_owner.as_deref()
     }
     /// <p>To retrieve the checksum, this mode must be enabled.</p>
-    /// <p>In addition, if you enable checksum mode and the object is uploaded with a <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_Checksum.html">checksum</a> and encrypted with an Key Management Service (KMS) key, you must have permission to use the <code>kms:Decrypt</code> action to retrieve the checksum.</p>
+    /// <p><b>General purpose buckets</b> - In addition, if you enable checksum mode and the object is uploaded with a <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_Checksum.html">checksum</a> and encrypted with an Key Management Service (KMS) key, you must have permission to use the <code>kms:Decrypt</code> action to retrieve the checksum.</p>
     pub fn checksum_mode(&self) -> ::std::option::Option<&crate::types::ChecksumMode> {
         self.checksum_mode.as_ref()
     }
@@ -803,19 +803,19 @@ impl GetObjectInputBuilder {
         &self.expected_bucket_owner
     }
     /// <p>To retrieve the checksum, this mode must be enabled.</p>
-    /// <p>In addition, if you enable checksum mode and the object is uploaded with a <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_Checksum.html">checksum</a> and encrypted with an Key Management Service (KMS) key, you must have permission to use the <code>kms:Decrypt</code> action to retrieve the checksum.</p>
+    /// <p><b>General purpose buckets</b> - In addition, if you enable checksum mode and the object is uploaded with a <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_Checksum.html">checksum</a> and encrypted with an Key Management Service (KMS) key, you must have permission to use the <code>kms:Decrypt</code> action to retrieve the checksum.</p>
     pub fn checksum_mode(mut self, input: crate::types::ChecksumMode) -> Self {
         self.checksum_mode = ::std::option::Option::Some(input);
         self
     }
     /// <p>To retrieve the checksum, this mode must be enabled.</p>
-    /// <p>In addition, if you enable checksum mode and the object is uploaded with a <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_Checksum.html">checksum</a> and encrypted with an Key Management Service (KMS) key, you must have permission to use the <code>kms:Decrypt</code> action to retrieve the checksum.</p>
+    /// <p><b>General purpose buckets</b> - In addition, if you enable checksum mode and the object is uploaded with a <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_Checksum.html">checksum</a> and encrypted with an Key Management Service (KMS) key, you must have permission to use the <code>kms:Decrypt</code> action to retrieve the checksum.</p>
     pub fn set_checksum_mode(mut self, input: ::std::option::Option<crate::types::ChecksumMode>) -> Self {
         self.checksum_mode = input;
         self
     }
     /// <p>To retrieve the checksum, this mode must be enabled.</p>
-    /// <p>In addition, if you enable checksum mode and the object is uploaded with a <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_Checksum.html">checksum</a> and encrypted with an Key Management Service (KMS) key, you must have permission to use the <code>kms:Decrypt</code> action to retrieve the checksum.</p>
+    /// <p><b>General purpose buckets</b> - In addition, if you enable checksum mode and the object is uploaded with a <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_Checksum.html">checksum</a> and encrypted with an Key Management Service (KMS) key, you must have permission to use the <code>kms:Decrypt</code> action to retrieve the checksum.</p>
     pub fn get_checksum_mode(&self) -> &::std::option::Option<crate::types::ChecksumMode> {
         &self.checksum_mode
     }

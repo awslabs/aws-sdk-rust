@@ -5,7 +5,7 @@
 pub struct DisableClientAuthenticationInput {
     /// <p>The identifier of the directory</p>
     pub directory_id: ::std::option::Option<::std::string::String>,
-    /// <p>The type of client authentication to disable. Currently, only the parameter, <code>SmartCard</code> is supported.</p>
+    /// <p>The type of client authentication to disable. Currently the only parameter <code>"SmartCard"</code> is supported.</p>
     pub r#type: ::std::option::Option<crate::types::ClientAuthenticationType>,
 }
 impl DisableClientAuthenticationInput {
@@ -13,7 +13,7 @@ impl DisableClientAuthenticationInput {
     pub fn directory_id(&self) -> ::std::option::Option<&str> {
         self.directory_id.as_deref()
     }
-    /// <p>The type of client authentication to disable. Currently, only the parameter, <code>SmartCard</code> is supported.</p>
+    /// <p>The type of client authentication to disable. Currently the only parameter <code>"SmartCard"</code> is supported.</p>
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::ClientAuthenticationType> {
         self.r#type.as_ref()
     }
@@ -48,18 +48,18 @@ impl DisableClientAuthenticationInputBuilder {
     pub fn get_directory_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.directory_id
     }
-    /// <p>The type of client authentication to disable. Currently, only the parameter, <code>SmartCard</code> is supported.</p>
+    /// <p>The type of client authentication to disable. Currently the only parameter <code>"SmartCard"</code> is supported.</p>
     /// This field is required.
     pub fn r#type(mut self, input: crate::types::ClientAuthenticationType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of client authentication to disable. Currently, only the parameter, <code>SmartCard</code> is supported.</p>
+    /// <p>The type of client authentication to disable. Currently the only parameter <code>"SmartCard"</code> is supported.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::ClientAuthenticationType>) -> Self {
         self.r#type = input;
         self
     }
-    /// <p>The type of client authentication to disable. Currently, only the parameter, <code>SmartCard</code> is supported.</p>
+    /// <p>The type of client authentication to disable. Currently the only parameter <code>"SmartCard"</code> is supported.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::ClientAuthenticationType> {
         &self.r#type
     }

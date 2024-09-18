@@ -122,17 +122,17 @@ impl DisableClientAuthenticationFluentBuilder {
     pub fn get_directory_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_directory_id()
     }
-    /// <p>The type of client authentication to disable. Currently, only the parameter, <code>SmartCard</code> is supported.</p>
+    /// <p>The type of client authentication to disable. Currently the only parameter <code>"SmartCard"</code> is supported.</p>
     pub fn r#type(mut self, input: crate::types::ClientAuthenticationType) -> Self {
         self.inner = self.inner.r#type(input);
         self
     }
-    /// <p>The type of client authentication to disable. Currently, only the parameter, <code>SmartCard</code> is supported.</p>
+    /// <p>The type of client authentication to disable. Currently the only parameter <code>"SmartCard"</code> is supported.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::ClientAuthenticationType>) -> Self {
         self.inner = self.inner.set_type(input);
         self
     }
-    /// <p>The type of client authentication to disable. Currently, only the parameter, <code>SmartCard</code> is supported.</p>
+    /// <p>The type of client authentication to disable. Currently the only parameter <code>"SmartCard"</code> is supported.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::ClientAuthenticationType> {
         self.inner.get_type()
     }

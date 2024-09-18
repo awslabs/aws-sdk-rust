@@ -137,17 +137,17 @@ impl CreateTrustFluentBuilder {
     pub fn get_remote_domain_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_remote_domain_name()
     }
-    /// <p>The trust password. The must be the same password that was used when creating the trust relationship on the external domain.</p>
+    /// <p>The trust password. The trust password must be the same password that was used when creating the trust relationship on the external domain.</p>
     pub fn trust_password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.trust_password(input.into());
         self
     }
-    /// <p>The trust password. The must be the same password that was used when creating the trust relationship on the external domain.</p>
+    /// <p>The trust password. The trust password must be the same password that was used when creating the trust relationship on the external domain.</p>
     pub fn set_trust_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_trust_password(input);
         self
     }
-    /// <p>The trust password. The must be the same password that was used when creating the trust relationship on the external domain.</p>
+    /// <p>The trust password. The trust password must be the same password that was used when creating the trust relationship on the external domain.</p>
     pub fn get_trust_password(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_trust_password()
     }

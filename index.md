@@ -56,6 +56,7 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | AWS Device Farm | [aws-sdk-devicefarm](https://crates.io/crates/aws-sdk-devicefarm) ([docs](https://docs.rs/aws-sdk-devicefarm)) |
 | AWS Direct Connect | [aws-sdk-directconnect](https://crates.io/crates/aws-sdk-directconnect) ([docs](https://docs.rs/aws-sdk-directconnect)) |
 | AWS Directory Service | [aws-sdk-directory](https://crates.io/crates/aws-sdk-directory) ([docs](https://docs.rs/aws-sdk-directory)) |
+| AWS Directory Service Data | [aws-sdk-directoryservicedata](https://crates.io/crates/aws-sdk-directoryservicedata) ([docs](https://docs.rs/aws-sdk-directoryservicedata)) |
 | AWS EC2 Instance Connect | [aws-sdk-ec2instanceconnect](https://crates.io/crates/aws-sdk-ec2instanceconnect) ([docs](https://docs.rs/aws-sdk-ec2instanceconnect)) |
 | AWS Elastic Beanstalk | [aws-sdk-elasticbeanstalk](https://crates.io/crates/aws-sdk-elasticbeanstalk) ([docs](https://docs.rs/aws-sdk-elasticbeanstalk)) |
 | AWS Elemental MediaConvert | [aws-sdk-mediaconvert](https://crates.io/crates/aws-sdk-mediaconvert) ([docs](https://docs.rs/aws-sdk-mediaconvert)) |

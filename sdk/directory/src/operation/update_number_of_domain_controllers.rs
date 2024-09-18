@@ -260,7 +260,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for UpdateNumberO
 pub enum UpdateNumberOfDomainControllersError {
     /// <p>A client exception has occurred.</p>
     ClientException(crate::types::error::ClientException),
-    /// <p>The specified directory is unavailable or could not be found.</p>
+    /// <p>The specified directory is unavailable.</p>
     DirectoryUnavailableException(crate::types::error::DirectoryUnavailableException),
     /// <p>The maximum allowed number of domain controllers per directory was exceeded. The default limit per directory is 20 domain controllers.</p>
     DomainControllerLimitExceededException(crate::types::error::DomainControllerLimitExceededException),

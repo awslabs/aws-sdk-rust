@@ -20,7 +20,9 @@ pub struct ReplicationRule {
     pub status: crate::types::ReplicationRuleStatus,
     /// <p>A container that describes additional filters for identifying the source objects that you want to replicate. You can choose to enable or disable the replication of these objects. Currently, Amazon S3 supports only the filter that you can specify for objects created with server-side encryption using a customer managed key stored in Amazon Web Services Key Management Service (SSE-KMS).</p>
     pub source_selection_criteria: ::std::option::Option<crate::types::SourceSelectionCriteria>,
-    /// <p>Optional configuration to replicate existing source bucket objects. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-what-is-isnot-replicated.html#existing-object-replication">Replicating Existing Objects</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Optional configuration to replicate existing source bucket objects.</p><note>
+    /// <p>This parameter is no longer supported. To replicate existing objects, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-batch-replication-batch.html">Replicating existing objects with S3 Batch Replication</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// </note>
     pub existing_object_replication: ::std::option::Option<crate::types::ExistingObjectReplication>,
     /// <p>A container for information about the replication destination and its configurations including enabling the S3 Replication Time Control (S3 RTC).</p>
     pub destination: ::std::option::Option<crate::types::Destination>,
@@ -59,7 +61,9 @@ impl ReplicationRule {
     pub fn source_selection_criteria(&self) -> ::std::option::Option<&crate::types::SourceSelectionCriteria> {
         self.source_selection_criteria.as_ref()
     }
-    /// <p>Optional configuration to replicate existing source bucket objects. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-what-is-isnot-replicated.html#existing-object-replication">Replicating Existing Objects</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Optional configuration to replicate existing source bucket objects.</p><note>
+    /// <p>This parameter is no longer supported. To replicate existing objects, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-batch-replication-batch.html">Replicating existing objects with S3 Batch Replication</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// </note>
     pub fn existing_object_replication(&self) -> ::std::option::Option<&crate::types::ExistingObjectReplication> {
         self.existing_object_replication.as_ref()
     }
@@ -194,17 +198,23 @@ impl ReplicationRuleBuilder {
     pub fn get_source_selection_criteria(&self) -> &::std::option::Option<crate::types::SourceSelectionCriteria> {
         &self.source_selection_criteria
     }
-    /// <p>Optional configuration to replicate existing source bucket objects. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-what-is-isnot-replicated.html#existing-object-replication">Replicating Existing Objects</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Optional configuration to replicate existing source bucket objects.</p><note>
+    /// <p>This parameter is no longer supported. To replicate existing objects, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-batch-replication-batch.html">Replicating existing objects with S3 Batch Replication</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// </note>
     pub fn existing_object_replication(mut self, input: crate::types::ExistingObjectReplication) -> Self {
         self.existing_object_replication = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Optional configuration to replicate existing source bucket objects. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-what-is-isnot-replicated.html#existing-object-replication">Replicating Existing Objects</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Optional configuration to replicate existing source bucket objects.</p><note>
+    /// <p>This parameter is no longer supported. To replicate existing objects, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-batch-replication-batch.html">Replicating existing objects with S3 Batch Replication</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// </note>
     pub fn set_existing_object_replication(mut self, input: ::std::option::Option<crate::types::ExistingObjectReplication>) -> Self {
         self.existing_object_replication = input;
         self
     }
-    /// <p>Optional configuration to replicate existing source bucket objects. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-what-is-isnot-replicated.html#existing-object-replication">Replicating Existing Objects</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Optional configuration to replicate existing source bucket objects.</p><note>
+    /// <p>This parameter is no longer supported. To replicate existing objects, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-batch-replication-batch.html">Replicating existing objects with S3 Batch Replication</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// </note>
     pub fn get_existing_object_replication(&self) -> &::std::option::Option<crate::types::ExistingObjectReplication> {
         &self.existing_object_replication
     }

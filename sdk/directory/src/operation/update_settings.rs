@@ -252,7 +252,7 @@ pub enum UpdateSettingsError {
     ClientException(crate::types::error::ClientException),
     /// <p>The specified directory does not exist in the system.</p>
     DirectoryDoesNotExistException(crate::types::error::DirectoryDoesNotExistException),
-    /// <p>The specified directory is unavailable or could not be found.</p>
+    /// <p>The specified directory is unavailable.</p>
     DirectoryUnavailableException(crate::types::error::DirectoryUnavailableException),
     /// <p>The specified directory setting is not compatible with other settings.</p>
     IncompatibleSettingsException(crate::types::error::IncompatibleSettingsException),

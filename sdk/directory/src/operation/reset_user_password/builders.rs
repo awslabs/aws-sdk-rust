@@ -22,7 +22,7 @@ impl crate::operation::reset_user_password::builders::ResetUserPasswordInputBuil
 }
 /// Fluent builder constructing a request to `ResetUserPassword`.
 ///
-/// <p>Resets the password for any user in your Managed Microsoft AD or Simple AD directory.</p>
+/// <p>Resets the password for any user in your Managed Microsoft AD or Simple AD directory. Disabled users will become enabled and can be authenticated following the API call.</p>
 /// <p>You can reset the password for any user in your directory with the following exceptions:</p>
 /// <ul>
 /// <li>

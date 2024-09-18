@@ -9,7 +9,7 @@ pub struct CreateTrustInput {
     pub directory_id: ::std::option::Option<::std::string::String>,
     /// <p>The Fully Qualified Domain Name (FQDN) of the external domain for which to create the trust relationship.</p>
     pub remote_domain_name: ::std::option::Option<::std::string::String>,
-    /// <p>The trust password. The must be the same password that was used when creating the trust relationship on the external domain.</p>
+    /// <p>The trust password. The trust password must be the same password that was used when creating the trust relationship on the external domain.</p>
     pub trust_password: ::std::option::Option<::std::string::String>,
     /// <p>The direction of the trust relationship.</p>
     pub trust_direction: ::std::option::Option<crate::types::TrustDirection>,
@@ -29,7 +29,7 @@ impl CreateTrustInput {
     pub fn remote_domain_name(&self) -> ::std::option::Option<&str> {
         self.remote_domain_name.as_deref()
     }
-    /// <p>The trust password. The must be the same password that was used when creating the trust relationship on the external domain.</p>
+    /// <p>The trust password. The trust password must be the same password that was used when creating the trust relationship on the external domain.</p>
     pub fn trust_password(&self) -> ::std::option::Option<&str> {
         self.trust_password.as_deref()
     }
@@ -115,18 +115,18 @@ impl CreateTrustInputBuilder {
     pub fn get_remote_domain_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.remote_domain_name
     }
-    /// <p>The trust password. The must be the same password that was used when creating the trust relationship on the external domain.</p>
+    /// <p>The trust password. The trust password must be the same password that was used when creating the trust relationship on the external domain.</p>
     /// This field is required.
     pub fn trust_password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.trust_password = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The trust password. The must be the same password that was used when creating the trust relationship on the external domain.</p>
+    /// <p>The trust password. The trust password must be the same password that was used when creating the trust relationship on the external domain.</p>
     pub fn set_trust_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.trust_password = input;
         self
     }
-    /// <p>The trust password. The must be the same password that was used when creating the trust relationship on the external domain.</p>
+    /// <p>The trust password. The trust password must be the same password that was used when creating the trust relationship on the external domain.</p>
     pub fn get_trust_password(&self) -> &::std::option::Option<::std::string::String> {
         &self.trust_password
     }

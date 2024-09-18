@@ -22,7 +22,7 @@ impl crate::operation::update_rule_set::builders::UpdateRuleSetInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateRuleSet`.
 ///
-/// <p>&gt;Update attributes of an already provisioned rule set.</p>
+/// <p>Update attributes of an already provisioned rule set.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateRuleSetFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

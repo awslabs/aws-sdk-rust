@@ -463,6 +463,8 @@ pub(crate) mod shape_keys;
 
 pub(crate) mod shape_match_options;
 
+pub(crate) mod shape_reserved_capacity_details;
+
 pub(crate) mod shape_target_instance;
 
 pub(crate) mod shape_values;
@@ -470,6 +472,8 @@ pub(crate) mod shape_values;
 pub(crate) mod shape_cost_category_split_charge_rule_parameter_values_list;
 
 pub(crate) mod shape_disk_resource_utilization;
+
+pub(crate) mod shape_dynamo_db_capacity_details;
 
 pub(crate) mod shape_ebs_resource_utilization;
 

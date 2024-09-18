@@ -303,6 +303,8 @@ pub(crate) mod shape_create_bucket_output;
 
 pub(crate) mod shape_create_multipart_upload_output;
 
+pub(crate) mod shape_create_session_output;
+
 pub(crate) mod shape_delete_object_output;
 
 pub(crate) mod shape_delete_object_tagging_output;

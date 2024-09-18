@@ -16,8 +16,8 @@ pub struct GetDimensionValuesInput {
     /// <p>AZ - The Availability Zone. An example is <code>us-east-1a</code>.</p></li>
     /// <li>
     /// <p>BILLING_ENTITY - The Amazon Web Services seller that your account is with. Possible values are the following:</p>
-    /// <p>- Amazon Web Services(Amazon Web Services): The entity that sells Amazon Web Services.</p>
-    /// <p>- AISPL (Amazon Internet Services Pvt. Ltd.): The local Indian entity that's an acting reseller for Amazon Web Services in India.</p>
+    /// <p>- Amazon Web Services(Amazon Web Services): The entity that sells Amazon Web Servicesservices.</p>
+    /// <p>- AISPL (Amazon Internet Services Pvt. Ltd.): The local Indian entity that's an acting reseller for Amazon Web Servicesservices in India.</p>
     /// <p>- Amazon Web Services Marketplace: The entity that supports the sale of solutions that are built on Amazon Web Services by third-party software providers.</p></li>
     /// <li>
     /// <p>CACHE_ENGINE - The Amazon ElastiCache operating system. Examples are Windows or Linux.</p></li>
@@ -204,8 +204,8 @@ impl GetDimensionValuesInput {
     /// <p>AZ - The Availability Zone. An example is <code>us-east-1a</code>.</p></li>
     /// <li>
     /// <p>BILLING_ENTITY - The Amazon Web Services seller that your account is with. Possible values are the following:</p>
-    /// <p>- Amazon Web Services(Amazon Web Services): The entity that sells Amazon Web Services.</p>
-    /// <p>- AISPL (Amazon Internet Services Pvt. Ltd.): The local Indian entity that's an acting reseller for Amazon Web Services in India.</p>
+    /// <p>- Amazon Web Services(Amazon Web Services): The entity that sells Amazon Web Servicesservices.</p>
+    /// <p>- AISPL (Amazon Internet Services Pvt. Ltd.): The local Indian entity that's an acting reseller for Amazon Web Servicesservices in India.</p>
     /// <p>- Amazon Web Services Marketplace: The entity that supports the sale of solutions that are built on Amazon Web Services by third-party software providers.</p></li>
     /// <li>
     /// <p>CACHE_ENGINE - The Amazon ElastiCache operating system. Examples are Windows or Linux.</p></li>
@@ -456,8 +456,8 @@ impl GetDimensionValuesInputBuilder {
     /// <p>AZ - The Availability Zone. An example is <code>us-east-1a</code>.</p></li>
     /// <li>
     /// <p>BILLING_ENTITY - The Amazon Web Services seller that your account is with. Possible values are the following:</p>
-    /// <p>- Amazon Web Services(Amazon Web Services): The entity that sells Amazon Web Services.</p>
-    /// <p>- AISPL (Amazon Internet Services Pvt. Ltd.): The local Indian entity that's an acting reseller for Amazon Web Services in India.</p>
+    /// <p>- Amazon Web Services(Amazon Web Services): The entity that sells Amazon Web Servicesservices.</p>
+    /// <p>- AISPL (Amazon Internet Services Pvt. Ltd.): The local Indian entity that's an acting reseller for Amazon Web Servicesservices in India.</p>
     /// <p>- Amazon Web Services Marketplace: The entity that supports the sale of solutions that are built on Amazon Web Services by third-party software providers.</p></li>
     /// <li>
     /// <p>CACHE_ENGINE - The Amazon ElastiCache operating system. Examples are Windows or Linux.</p></li>
@@ -553,8 +553,8 @@ impl GetDimensionValuesInputBuilder {
     /// <p>AZ - The Availability Zone. An example is <code>us-east-1a</code>.</p></li>
     /// <li>
     /// <p>BILLING_ENTITY - The Amazon Web Services seller that your account is with. Possible values are the following:</p>
-    /// <p>- Amazon Web Services(Amazon Web Services): The entity that sells Amazon Web Services.</p>
-    /// <p>- AISPL (Amazon Internet Services Pvt. Ltd.): The local Indian entity that's an acting reseller for Amazon Web Services in India.</p>
+    /// <p>- Amazon Web Services(Amazon Web Services): The entity that sells Amazon Web Servicesservices.</p>
+    /// <p>- AISPL (Amazon Internet Services Pvt. Ltd.): The local Indian entity that's an acting reseller for Amazon Web Servicesservices in India.</p>
     /// <p>- Amazon Web Services Marketplace: The entity that supports the sale of solutions that are built on Amazon Web Services by third-party software providers.</p></li>
     /// <li>
     /// <p>CACHE_ENGINE - The Amazon ElastiCache operating system. Examples are Windows or Linux.</p></li>
@@ -650,8 +650,8 @@ impl GetDimensionValuesInputBuilder {
     /// <p>AZ - The Availability Zone. An example is <code>us-east-1a</code>.</p></li>
     /// <li>
     /// <p>BILLING_ENTITY - The Amazon Web Services seller that your account is with. Possible values are the following:</p>
-    /// <p>- Amazon Web Services(Amazon Web Services): The entity that sells Amazon Web Services.</p>
-    /// <p>- AISPL (Amazon Internet Services Pvt. Ltd.): The local Indian entity that's an acting reseller for Amazon Web Services in India.</p>
+    /// <p>- Amazon Web Services(Amazon Web Services): The entity that sells Amazon Web Servicesservices.</p>
+    /// <p>- AISPL (Amazon Internet Services Pvt. Ltd.): The local Indian entity that's an acting reseller for Amazon Web Servicesservices in India.</p>
     /// <p>- Amazon Web Services Marketplace: The entity that supports the sale of solutions that are built on Amazon Web Services by third-party software providers.</p></li>
     /// <li>
     /// <p>CACHE_ENGINE - The Amazon ElastiCache operating system. Examples are Windows or Linux.</p></li>

@@ -24,6 +24,8 @@ pub struct EcsTaskDetails {
     pub containers: ::std::option::Option<::std::vec::Vec<crate::types::Container>>,
     /// <p>The name of the task group that's associated with the task.</p>
     pub group: ::std::option::Option<::std::string::String>,
+    /// <p>A capacity on which the task is running. For example, <code>Fargate</code> and <code>EC2</code>.</p>
+    pub launch_type: ::std::option::Option<::std::string::String>,
 }
 impl EcsTaskDetails {
     /// <p>The Amazon Resource Name (ARN) of the task.</p>
@@ -72,6 +74,10 @@ impl EcsTaskDetails {
     pub fn group(&self) -> ::std::option::Option<&str> {
         self.group.as_deref()
     }
+    /// <p>A capacity on which the task is running. For example, <code>Fargate</code> and <code>EC2</code>.</p>
+    pub fn launch_type(&self) -> ::std::option::Option<&str> {
+        self.launch_type.as_deref()
+    }
 }
 impl EcsTaskDetails {
     /// Creates a new builder-style object to manufacture [`EcsTaskDetails`](crate::types::EcsTaskDetails).
@@ -94,6 +100,7 @@ pub struct EcsTaskDetailsBuilder {
     pub(crate) volumes: ::std::option::Option<::std::vec::Vec<crate::types::Volume>>,
     pub(crate) containers: ::std::option::Option<::std::vec::Vec<crate::types::Container>>,
     pub(crate) group: ::std::option::Option<::std::string::String>,
+    pub(crate) launch_type: ::std::option::Option<::std::string::String>,
 }
 impl EcsTaskDetailsBuilder {
     /// <p>The Amazon Resource Name (ARN) of the task.</p>
@@ -254,6 +261,20 @@ impl EcsTaskDetailsBuilder {
     pub fn get_group(&self) -> &::std::option::Option<::std::string::String> {
         &self.group
     }
+    /// <p>A capacity on which the task is running. For example, <code>Fargate</code> and <code>EC2</code>.</p>
+    pub fn launch_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.launch_type = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>A capacity on which the task is running. For example, <code>Fargate</code> and <code>EC2</code>.</p>
+    pub fn set_launch_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.launch_type = input;
+        self
+    }
+    /// <p>A capacity on which the task is running. For example, <code>Fargate</code> and <code>EC2</code>.</p>
+    pub fn get_launch_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.launch_type
+    }
     /// Consumes the builder and constructs a [`EcsTaskDetails`](crate::types::EcsTaskDetails).
     pub fn build(self) -> crate::types::EcsTaskDetails {
         crate::types::EcsTaskDetails {
@@ -267,6 +288,7 @@ impl EcsTaskDetailsBuilder {
             volumes: self.volumes,
             containers: self.containers,
             group: self.group,
+            launch_type: self.launch_type,
         }
     }
 }
