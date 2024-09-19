@@ -9,6 +9,12 @@ pub fn ser_multiplex_output_settings(
         crate::protocol_serde::shape_output_location_ref::ser_output_location_ref(&mut object_2, var_1)?;
         object_2.finish();
     }
+    if let Some(var_3) = &input.container_settings {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("containerSettings").start_object();
+        crate::protocol_serde::shape_multiplex_container_settings::ser_multiplex_container_settings(&mut object_4, var_3)?;
+        object_4.finish();
+    }
     Ok(())
 }
 
@@ -29,6 +35,11 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "destination" => {
                             builder = builder.set_destination(crate::protocol_serde::shape_output_location_ref::de_output_location_ref(tokens)?);
+                        }
+                        "containerSettings" => {
+                            builder = builder.set_container_settings(
+                                crate::protocol_serde::shape_multiplex_container_settings::de_multiplex_container_settings(tokens)?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

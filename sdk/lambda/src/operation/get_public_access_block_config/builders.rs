@@ -22,6 +22,9 @@ impl crate::operation::get_public_access_block_config::builders::GetPublicAccess
 }
 /// Fluent builder constructing a request to `GetPublicAccessBlockConfig`.
 ///
+/// <note>
+/// <p>The option to configure public-access settings, and to use the PutPublicAccessBlock and GetPublicAccessBlock APIs, won't be available in all Amazon Web Services Regions until September 30, 2024.</p>
+/// </note>
 /// <p>Retrieve the public-access settings for a function.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetPublicAccessBlockConfigFluentBuilder {

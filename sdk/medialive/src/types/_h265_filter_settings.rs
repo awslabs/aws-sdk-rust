@@ -6,11 +6,17 @@
 pub struct H265FilterSettings {
     /// Temporal Filter Settings
     pub temporal_filter_settings: ::std::option::Option<crate::types::TemporalFilterSettings>,
+    /// Bandwidth Reduction Filter Settings
+    pub bandwidth_reduction_filter_settings: ::std::option::Option<crate::types::BandwidthReductionFilterSettings>,
 }
 impl H265FilterSettings {
     /// Temporal Filter Settings
     pub fn temporal_filter_settings(&self) -> ::std::option::Option<&crate::types::TemporalFilterSettings> {
         self.temporal_filter_settings.as_ref()
+    }
+    /// Bandwidth Reduction Filter Settings
+    pub fn bandwidth_reduction_filter_settings(&self) -> ::std::option::Option<&crate::types::BandwidthReductionFilterSettings> {
+        self.bandwidth_reduction_filter_settings.as_ref()
     }
 }
 impl H265FilterSettings {
@@ -25,6 +31,7 @@ impl H265FilterSettings {
 #[non_exhaustive]
 pub struct H265FilterSettingsBuilder {
     pub(crate) temporal_filter_settings: ::std::option::Option<crate::types::TemporalFilterSettings>,
+    pub(crate) bandwidth_reduction_filter_settings: ::std::option::Option<crate::types::BandwidthReductionFilterSettings>,
 }
 impl H265FilterSettingsBuilder {
     /// Temporal Filter Settings
@@ -41,10 +48,25 @@ impl H265FilterSettingsBuilder {
     pub fn get_temporal_filter_settings(&self) -> &::std::option::Option<crate::types::TemporalFilterSettings> {
         &self.temporal_filter_settings
     }
+    /// Bandwidth Reduction Filter Settings
+    pub fn bandwidth_reduction_filter_settings(mut self, input: crate::types::BandwidthReductionFilterSettings) -> Self {
+        self.bandwidth_reduction_filter_settings = ::std::option::Option::Some(input);
+        self
+    }
+    /// Bandwidth Reduction Filter Settings
+    pub fn set_bandwidth_reduction_filter_settings(mut self, input: ::std::option::Option<crate::types::BandwidthReductionFilterSettings>) -> Self {
+        self.bandwidth_reduction_filter_settings = input;
+        self
+    }
+    /// Bandwidth Reduction Filter Settings
+    pub fn get_bandwidth_reduction_filter_settings(&self) -> &::std::option::Option<crate::types::BandwidthReductionFilterSettings> {
+        &self.bandwidth_reduction_filter_settings
+    }
     /// Consumes the builder and constructs a [`H265FilterSettings`](crate::types::H265FilterSettings).
     pub fn build(self) -> crate::types::H265FilterSettings {
         crate::types::H265FilterSettings {
             temporal_filter_settings: self.temporal_filter_settings,
+            bandwidth_reduction_filter_settings: self.bandwidth_reduction_filter_settings,
         }
     }
 }

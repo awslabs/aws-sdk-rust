@@ -445,6 +445,12 @@ pub use crate::types::_h265_flicker_aq::H265FlickerAq;
 
 pub use crate::types::_h265_filter_settings::H265FilterSettings;
 
+pub use crate::types::_bandwidth_reduction_filter_settings::BandwidthReductionFilterSettings;
+
+pub use crate::types::_bandwidth_reduction_filter_strength::BandwidthReductionFilterStrength;
+
+pub use crate::types::_bandwidth_reduction_post_filter_sharpening::BandwidthReductionPostFilterSharpening;
+
 pub use crate::types::_h265_color_space_settings::H265ColorSpaceSettings;
 
 pub use crate::types::_dolby_vision81_settings::DolbyVision81Settings;
@@ -586,6 +592,10 @@ pub use crate::types::_rtmp_output_settings::RtmpOutputSettings;
 pub use crate::types::_rtmp_output_certificate_mode::RtmpOutputCertificateMode;
 
 pub use crate::types::_multiplex_output_settings::MultiplexOutputSettings;
+
+pub use crate::types::_multiplex_container_settings::MultiplexContainerSettings;
+
+pub use crate::types::_multiplex_m2ts_settings::MultiplexM2tsSettings;
 
 pub use crate::types::_ms_smooth_output_settings::MsSmoothOutputSettings;
 
@@ -1353,6 +1363,12 @@ mod _avail_configuration;
 
 mod _avail_settings;
 
+mod _bandwidth_reduction_filter_settings;
+
+mod _bandwidth_reduction_filter_strength;
+
+mod _bandwidth_reduction_post_filter_sharpening;
+
 mod _batch_failed_result_model;
 
 mod _batch_schedule_action_create_request;
@@ -2081,7 +2097,11 @@ mod _multicast_source_update_request;
 
 mod _multiplex;
 
+mod _multiplex_container_settings;
+
 mod _multiplex_group_settings;
+
+mod _multiplex_m2ts_settings;
 
 mod _multiplex_media_connect_output_destination_settings;
 

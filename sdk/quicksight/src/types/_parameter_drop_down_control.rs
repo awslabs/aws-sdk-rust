@@ -18,6 +18,8 @@ pub struct ParameterDropDownControl {
     pub selectable_values: ::std::option::Option<crate::types::ParameterSelectableValues>,
     /// <p>The values that are displayed in a control can be configured to only show values that are valid based on what's selected in other controls.</p>
     pub cascading_control_configuration: ::std::option::Option<crate::types::CascadingControlConfiguration>,
+    /// <p>The visibility configuration of the Apply button on a <code>ParameterDropDownControl</code>.</p>
+    pub commit_mode: ::std::option::Option<crate::types::CommitMode>,
 }
 impl ParameterDropDownControl {
     /// <p>The ID of the <code>ParameterDropDownControl</code>.</p>
@@ -51,6 +53,10 @@ impl ParameterDropDownControl {
     pub fn cascading_control_configuration(&self) -> ::std::option::Option<&crate::types::CascadingControlConfiguration> {
         self.cascading_control_configuration.as_ref()
     }
+    /// <p>The visibility configuration of the Apply button on a <code>ParameterDropDownControl</code>.</p>
+    pub fn commit_mode(&self) -> ::std::option::Option<&crate::types::CommitMode> {
+        self.commit_mode.as_ref()
+    }
 }
 impl ParameterDropDownControl {
     /// Creates a new builder-style object to manufacture [`ParameterDropDownControl`](crate::types::ParameterDropDownControl).
@@ -70,6 +76,7 @@ pub struct ParameterDropDownControlBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::SheetControlListType>,
     pub(crate) selectable_values: ::std::option::Option<crate::types::ParameterSelectableValues>,
     pub(crate) cascading_control_configuration: ::std::option::Option<crate::types::CascadingControlConfiguration>,
+    pub(crate) commit_mode: ::std::option::Option<crate::types::CommitMode>,
 }
 impl ParameterDropDownControlBuilder {
     /// <p>The ID of the <code>ParameterDropDownControl</code>.</p>
@@ -173,6 +180,20 @@ impl ParameterDropDownControlBuilder {
     pub fn get_cascading_control_configuration(&self) -> &::std::option::Option<crate::types::CascadingControlConfiguration> {
         &self.cascading_control_configuration
     }
+    /// <p>The visibility configuration of the Apply button on a <code>ParameterDropDownControl</code>.</p>
+    pub fn commit_mode(mut self, input: crate::types::CommitMode) -> Self {
+        self.commit_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The visibility configuration of the Apply button on a <code>ParameterDropDownControl</code>.</p>
+    pub fn set_commit_mode(mut self, input: ::std::option::Option<crate::types::CommitMode>) -> Self {
+        self.commit_mode = input;
+        self
+    }
+    /// <p>The visibility configuration of the Apply button on a <code>ParameterDropDownControl</code>.</p>
+    pub fn get_commit_mode(&self) -> &::std::option::Option<crate::types::CommitMode> {
+        &self.commit_mode
+    }
     /// Consumes the builder and constructs a [`ParameterDropDownControl`](crate::types::ParameterDropDownControl).
     /// This method will fail if any of the following fields are not set:
     /// - [`parameter_control_id`](crate::types::builders::ParameterDropDownControlBuilder::parameter_control_id)
@@ -202,6 +223,7 @@ impl ParameterDropDownControlBuilder {
             r#type: self.r#type,
             selectable_values: self.selectable_values,
             cascading_control_configuration: self.cascading_control_configuration,
+            commit_mode: self.commit_mode,
         })
     }
 }

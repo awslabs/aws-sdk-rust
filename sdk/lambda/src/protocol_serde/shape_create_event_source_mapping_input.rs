@@ -128,19 +128,29 @@ pub fn ser_create_event_source_mapping_input_input(
             .key("StartingPositionTimestamp")
             .date_time(var_36, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
-    if let Some(var_37) = &input.topics {
-        let mut array_38 = object.key("Topics").start_array();
-        for item_39 in var_37 {
+    if let Some(var_37) = &input.tags {
+        #[allow(unused_mut)]
+        let mut object_38 = object.key("Tags").start_object();
+        for (key_39, value_40) in var_37 {
             {
-                array_38.value().string(item_39.as_str());
+                object_38.key(key_39.as_str()).string(value_40.as_str());
             }
         }
-        array_38.finish();
+        object_38.finish();
     }
-    if let Some(var_40) = &input.tumbling_window_in_seconds {
+    if let Some(var_41) = &input.topics {
+        let mut array_42 = object.key("Topics").start_array();
+        for item_43 in var_41 {
+            {
+                array_42.value().string(item_43.as_str());
+            }
+        }
+        array_42.finish();
+    }
+    if let Some(var_44) = &input.tumbling_window_in_seconds {
         object.key("TumblingWindowInSeconds").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_40).into()),
+            ::aws_smithy_types::Number::NegInt((*var_44).into()),
         );
     }
     Ok(())

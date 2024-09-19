@@ -294,6 +294,8 @@ pub enum RemovePermissionError {
     /// <p><b>For all other API operations:</b> Call <code>GetFunction</code> or <code>GetAlias</code> to retrieve the latest RevisionId for your resource.</p></li>
     /// </ul>
     PreconditionFailedException(crate::types::error::PreconditionFailedException),
+    /// <p>Lambda prevented your policy from being created because it would grant public access to your function. If you intended to create a public policy, use the <code>PutPublicAccessBlockConfig</code> API action to configure your function's public-access settings to allow public policies.</p>
+    PublicPolicyException(crate::types::error::PublicPolicyException),
     /// <p>The resource specified in the request does not exist.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>The Lambda service encountered an internal error.</p>
@@ -335,6 +337,7 @@ impl RemovePermissionError {
         match self {
             Self::InvalidParameterValueException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::PreconditionFailedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::PublicPolicyException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ResourceNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ServiceException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::TooManyRequestsException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -348,6 +351,10 @@ impl RemovePermissionError {
     /// Returns `true` if the error kind is `RemovePermissionError::PreconditionFailedException`.
     pub fn is_precondition_failed_exception(&self) -> bool {
         matches!(self, Self::PreconditionFailedException(_))
+    }
+    /// Returns `true` if the error kind is `RemovePermissionError::PublicPolicyException`.
+    pub fn is_public_policy_exception(&self) -> bool {
+        matches!(self, Self::PublicPolicyException(_))
     }
     /// Returns `true` if the error kind is `RemovePermissionError::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
@@ -367,6 +374,7 @@ impl ::std::error::Error for RemovePermissionError {
         match self {
             Self::InvalidParameterValueException(_inner) => ::std::option::Option::Some(_inner),
             Self::PreconditionFailedException(_inner) => ::std::option::Option::Some(_inner),
+            Self::PublicPolicyException(_inner) => ::std::option::Option::Some(_inner),
             Self::ResourceNotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::ServiceException(_inner) => ::std::option::Option::Some(_inner),
             Self::TooManyRequestsException(_inner) => ::std::option::Option::Some(_inner),
@@ -379,6 +387,7 @@ impl ::std::fmt::Display for RemovePermissionError {
         match self {
             Self::InvalidParameterValueException(_inner) => _inner.fmt(f),
             Self::PreconditionFailedException(_inner) => _inner.fmt(f),
+            Self::PublicPolicyException(_inner) => _inner.fmt(f),
             Self::ResourceNotFoundException(_inner) => _inner.fmt(f),
             Self::ServiceException(_inner) => _inner.fmt(f),
             Self::TooManyRequestsException(_inner) => _inner.fmt(f),
@@ -405,6 +414,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for RemovePermiss
         match self {
             Self::InvalidParameterValueException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::PreconditionFailedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::PublicPolicyException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ResourceNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ServiceException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::TooManyRequestsException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

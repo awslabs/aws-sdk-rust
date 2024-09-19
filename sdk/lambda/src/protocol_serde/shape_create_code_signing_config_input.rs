@@ -18,5 +18,15 @@ pub fn ser_create_code_signing_config_input_input(
     if let Some(var_5) = &input.description {
         object.key("Description").string(var_5.as_str());
     }
+    if let Some(var_6) = &input.tags {
+        #[allow(unused_mut)]
+        let mut object_7 = object.key("Tags").start_object();
+        for (key_8, value_9) in var_6 {
+            {
+                object_7.key(key_8.as_str()).string(value_9.as_str());
+            }
+        }
+        object_7.finish();
+    }
     Ok(())
 }

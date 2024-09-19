@@ -22,6 +22,9 @@ impl crate::operation::put_resource_policy::builders::PutResourcePolicyInputBuil
 }
 /// Fluent builder constructing a request to `PutResourcePolicy`.
 ///
+/// <note>
+/// <p>The option to create and modify full JSON resource-based policies, and to use the PutResourcePolicy, GetResourcePolicy, and DeleteResourcePolicy APIs, won't be available in all Amazon Web Services Regions until September 30, 2024.</p>
+/// </note>
 /// <p>Adds a <a href="https://docs.aws.amazon.com/lambda/latest/dg/access-control-resource-based.html">resource-based policy</a> to a function. You can use resource-based policies to grant access to other <a href="https://docs.aws.amazon.com/lambda/latest/dg/permissions-function-cross-account.html">Amazon Web Services accounts</a>, <a href="https://docs.aws.amazon.com/lambda/latest/dg/permissions-function-organization.html">organizations</a>, or <a href="https://docs.aws.amazon.com/lambda/latest/dg/permissions-function-services.html">services</a>. Resource-based policies apply to a single function, version, or alias.</p><important>
 /// <p>Adding a resource-based policy using this API action replaces any existing policy you've previously created. This means that if you've previously added resource-based permissions to a function using the <code>AddPermission</code> action, those permissions will be overwritten by your new policy.</p>
 /// </important>

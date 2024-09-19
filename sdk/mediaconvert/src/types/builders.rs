@@ -207,6 +207,8 @@ pub use crate::types::_ms_smooth_encryption_settings::MsSmoothEncryptionSettings
 
 pub use crate::types::_speke_key_provider::SpekeKeyProviderBuilder;
 
+pub use crate::types::_encryption_contract_configuration::EncryptionContractConfigurationBuilder;
+
 pub use crate::types::_destination_settings::DestinationSettingsBuilder;
 
 pub use crate::types::_s3_destination_settings::S3DestinationSettingsBuilder;

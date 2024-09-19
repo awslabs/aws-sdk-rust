@@ -188,6 +188,13 @@ pub(crate) fn de_create_event_source_mapping(
                             .transpose()?,
                     );
                 }
+                "EventSourceMappingArn" => {
+                    builder = builder.set_event_source_mapping_arn(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
                 "FilterCriteria" => {
                     builder = builder.set_filter_criteria(crate::protocol_serde::shape_filter_criteria::de_filter_criteria(tokens)?);
                 }

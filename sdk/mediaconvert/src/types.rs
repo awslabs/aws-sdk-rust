@@ -833,6 +833,12 @@ pub use crate::types::_ms_smooth_encryption_settings::MsSmoothEncryptionSettings
 
 pub use crate::types::_speke_key_provider::SpekeKeyProvider;
 
+pub use crate::types::_encryption_contract_configuration::EncryptionContractConfiguration;
+
+pub use crate::types::_preset_speke20_video::PresetSpeke20Video;
+
+pub use crate::types::_preset_speke20_audio::PresetSpeke20Audio;
+
 pub use crate::types::_destination_settings::DestinationSettings;
 
 pub use crate::types::_s3_destination_settings::S3DestinationSettings;
@@ -1655,6 +1661,8 @@ mod _embedded_terminate_captions;
 
 mod _embedded_timecode_override;
 
+mod _encryption_contract_configuration;
+
 mod _endpoint;
 
 mod _esam_manifest_confirm_condition_notification;
@@ -2164,6 +2172,10 @@ mod _preset;
 mod _preset_list_by;
 
 mod _preset_settings;
+
+mod _preset_speke20_audio;
+
+mod _preset_speke20_video;
 
 mod _pricing_plan;
 

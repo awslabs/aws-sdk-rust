@@ -22,7 +22,7 @@ impl crate::operation::list_tags::builders::ListTagsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListTags`.
 ///
-/// <p>Returns a function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/tagging.html">tags</a>. You can also view tags with <code>GetFunction</code>.</p>
+/// <p>Returns a function, event source mapping, or code signing configuration's <a href="https://docs.aws.amazon.com/lambda/latest/dg/tagging.html">tags</a>. You can also view funciton tags with <code>GetFunction</code>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListTagsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -99,17 +99,17 @@ impl ListTagsFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The function's Amazon Resource Name (ARN). Note: Lambda does not support adding tags to aliases or versions.</p>
+    /// <p>The resource's Amazon Resource Name (ARN). Note: Lambda does not support adding tags to function aliases or versions.</p>
     pub fn resource(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource(input.into());
         self
     }
-    /// <p>The function's Amazon Resource Name (ARN). Note: Lambda does not support adding tags to aliases or versions.</p>
+    /// <p>The resource's Amazon Resource Name (ARN). Note: Lambda does not support adding tags to function aliases or versions.</p>
     pub fn set_resource(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource(input);
         self
     }
-    /// <p>The function's Amazon Resource Name (ARN). Note: Lambda does not support adding tags to aliases or versions.</p>
+    /// <p>The resource's Amazon Resource Name (ARN). Note: Lambda does not support adding tags to function aliases or versions.</p>
     pub fn get_resource(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_resource()
     }

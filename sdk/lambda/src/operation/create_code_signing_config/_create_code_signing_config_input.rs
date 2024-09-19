@@ -9,6 +9,8 @@ pub struct CreateCodeSigningConfigInput {
     pub allowed_publishers: ::std::option::Option<crate::types::AllowedPublishers>,
     /// <p>The code signing policies define the actions to take if the validation checks fail.</p>
     pub code_signing_policies: ::std::option::Option<crate::types::CodeSigningPolicies>,
+    /// <p>A list of tags to add to the code signing configuration.</p>
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateCodeSigningConfigInput {
     /// <p>Descriptive name for this code signing configuration.</p>
@@ -22,6 +24,10 @@ impl CreateCodeSigningConfigInput {
     /// <p>The code signing policies define the actions to take if the validation checks fail.</p>
     pub fn code_signing_policies(&self) -> ::std::option::Option<&crate::types::CodeSigningPolicies> {
         self.code_signing_policies.as_ref()
+    }
+    /// <p>A list of tags to add to the code signing configuration.</p>
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.tags.as_ref()
     }
 }
 impl CreateCodeSigningConfigInput {
@@ -38,6 +44,7 @@ pub struct CreateCodeSigningConfigInputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) allowed_publishers: ::std::option::Option<crate::types::AllowedPublishers>,
     pub(crate) code_signing_policies: ::std::option::Option<crate::types::CodeSigningPolicies>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateCodeSigningConfigInputBuilder {
     /// <p>Descriptive name for this code signing configuration.</p>
@@ -83,6 +90,26 @@ impl CreateCodeSigningConfigInputBuilder {
     pub fn get_code_signing_policies(&self) -> &::std::option::Option<crate::types::CodeSigningPolicies> {
         &self.code_signing_policies
     }
+    /// Adds a key-value pair to `tags`.
+    ///
+    /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+    ///
+    /// <p>A list of tags to add to the code signing configuration.</p>
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut hash_map = self.tags.unwrap_or_default();
+        hash_map.insert(k.into(), v.into());
+        self.tags = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>A list of tags to add to the code signing configuration.</p>
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input;
+        self
+    }
+    /// <p>A list of tags to add to the code signing configuration.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.tags
+    }
     /// Consumes the builder and constructs a [`CreateCodeSigningConfigInput`](crate::operation::create_code_signing_config::CreateCodeSigningConfigInput).
     pub fn build(
         self,
@@ -94,6 +121,7 @@ impl CreateCodeSigningConfigInputBuilder {
             description: self.description,
             allowed_publishers: self.allowed_publishers,
             code_signing_policies: self.code_signing_policies,
+            tags: self.tags,
         })
     }
 }

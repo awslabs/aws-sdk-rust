@@ -61,6 +61,14 @@ pub use crate::types::_browser_settings::BrowserSettings;
 
 pub use crate::types::_browser_settings_summary::BrowserSettingsSummary;
 
+pub use crate::types::_session_summary::SessionSummary;
+
+pub use crate::types::_session_status::SessionStatus;
+
+pub use crate::types::_session_sort_by::SessionSortBy;
+
+pub use crate::types::_session::Session;
+
 mod _authentication_type;
 
 mod _browser_settings;
@@ -104,6 +112,14 @@ mod _portal_status;
 mod _portal_summary;
 
 mod _renderer_type;
+
+mod _session;
+
+mod _session_sort_by;
+
+mod _session_status;
+
+mod _session_summary;
 
 mod _tag;
 

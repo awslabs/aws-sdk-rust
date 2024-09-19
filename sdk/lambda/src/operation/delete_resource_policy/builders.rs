@@ -22,6 +22,9 @@ impl crate::operation::delete_resource_policy::builders::DeleteResourcePolicyInp
 }
 /// Fluent builder constructing a request to `DeleteResourcePolicy`.
 ///
+/// <note>
+/// <p>The option to create and modify full JSON resource-based policies, and to use the PutResourcePolicy, GetResourcePolicy, and DeleteResourcePolicy APIs, won't be available in all Amazon Web Services Regions until September 30, 2024.</p>
+/// </note>
 /// <p>Deletes a <a href="https://docs.aws.amazon.com/lambda/latest/dg/access-control-resource-based.html">resource-based policy</a> from a function.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteResourcePolicyFluentBuilder {

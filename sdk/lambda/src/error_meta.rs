@@ -267,6 +267,7 @@ impl From<crate::operation::add_permission::AddPermissionError> for Error {
             }
             crate::operation::add_permission::AddPermissionError::PolicyLengthExceededException(inner) => Error::PolicyLengthExceededException(inner),
             crate::operation::add_permission::AddPermissionError::PreconditionFailedException(inner) => Error::PreconditionFailedException(inner),
+            crate::operation::add_permission::AddPermissionError::PublicPolicyException(inner) => Error::PublicPolicyException(inner),
             crate::operation::add_permission::AddPermissionError::ResourceConflictException(inner) => Error::ResourceConflictException(inner),
             crate::operation::add_permission::AddPermissionError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::add_permission::AddPermissionError::ServiceException(inner) => Error::ServiceException(inner),
@@ -2494,6 +2495,7 @@ impl From<crate::operation::remove_permission::RemovePermissionError> for Error 
             crate::operation::remove_permission::RemovePermissionError::PreconditionFailedException(inner) => {
                 Error::PreconditionFailedException(inner)
             }
+            crate::operation::remove_permission::RemovePermissionError::PublicPolicyException(inner) => Error::PublicPolicyException(inner),
             crate::operation::remove_permission::RemovePermissionError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::remove_permission::RemovePermissionError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::remove_permission::RemovePermissionError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),

@@ -21,6 +21,9 @@ pub fn ser_filter_date_time_picker_control(
     if let Some(var_3) = &input.r#type {
         object.key("Type").string(var_3.as_str());
     }
+    if let Some(var_4) = &input.commit_mode {
+        object.key("CommitMode").string(var_4.as_str());
+    }
     Ok(())
 }
 
@@ -70,6 +73,13 @@ where
                                 builder = builder.set_type(
                                     ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                         .map(|s| s.to_unescaped().map(|u| crate::types::SheetControlDateTimePickerType::from(u.as_ref())))
+                                        .transpose()?,
+                                );
+                            }
+                            "CommitMode" => {
+                                builder = builder.set_commit_mode(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| crate::types::CommitMode::from(u.as_ref())))
                                         .transpose()?,
                                 );
                             }

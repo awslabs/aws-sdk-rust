@@ -6,11 +6,17 @@
 pub struct MultiplexOutputSettings {
     /// Destination is a Multiplex.
     pub destination: ::std::option::Option<crate::types::OutputLocationRef>,
+    /// Multiplex Container Settings
+    pub container_settings: ::std::option::Option<crate::types::MultiplexContainerSettings>,
 }
 impl MultiplexOutputSettings {
     /// Destination is a Multiplex.
     pub fn destination(&self) -> ::std::option::Option<&crate::types::OutputLocationRef> {
         self.destination.as_ref()
+    }
+    /// Multiplex Container Settings
+    pub fn container_settings(&self) -> ::std::option::Option<&crate::types::MultiplexContainerSettings> {
+        self.container_settings.as_ref()
     }
 }
 impl MultiplexOutputSettings {
@@ -25,6 +31,7 @@ impl MultiplexOutputSettings {
 #[non_exhaustive]
 pub struct MultiplexOutputSettingsBuilder {
     pub(crate) destination: ::std::option::Option<crate::types::OutputLocationRef>,
+    pub(crate) container_settings: ::std::option::Option<crate::types::MultiplexContainerSettings>,
 }
 impl MultiplexOutputSettingsBuilder {
     /// Destination is a Multiplex.
@@ -42,10 +49,25 @@ impl MultiplexOutputSettingsBuilder {
     pub fn get_destination(&self) -> &::std::option::Option<crate::types::OutputLocationRef> {
         &self.destination
     }
+    /// Multiplex Container Settings
+    pub fn container_settings(mut self, input: crate::types::MultiplexContainerSettings) -> Self {
+        self.container_settings = ::std::option::Option::Some(input);
+        self
+    }
+    /// Multiplex Container Settings
+    pub fn set_container_settings(mut self, input: ::std::option::Option<crate::types::MultiplexContainerSettings>) -> Self {
+        self.container_settings = input;
+        self
+    }
+    /// Multiplex Container Settings
+    pub fn get_container_settings(&self) -> &::std::option::Option<crate::types::MultiplexContainerSettings> {
+        &self.container_settings
+    }
     /// Consumes the builder and constructs a [`MultiplexOutputSettings`](crate::types::MultiplexOutputSettings).
     pub fn build(self) -> crate::types::MultiplexOutputSettings {
         crate::types::MultiplexOutputSettings {
             destination: self.destination,
+            container_settings: self.container_settings,
         }
     }
 }

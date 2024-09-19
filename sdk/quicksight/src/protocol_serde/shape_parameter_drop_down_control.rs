@@ -33,6 +33,9 @@ pub fn ser_parameter_drop_down_control(
         crate::protocol_serde::shape_cascading_control_configuration::ser_cascading_control_configuration(&mut object_7, var_6)?;
         object_7.finish();
     }
+    if let Some(var_8) = &input.commit_mode {
+        object.key("CommitMode").string(var_8.as_str());
+    }
     Ok(())
 }
 
@@ -92,6 +95,13 @@ where
                         "CascadingControlConfiguration" => {
                             builder = builder.set_cascading_control_configuration(
                                 crate::protocol_serde::shape_cascading_control_configuration::de_cascading_control_configuration(tokens)?,
+                            );
+                        }
+                        "CommitMode" => {
+                            builder = builder.set_commit_mode(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CommitMode::from(u.as_ref())))
+                                    .transpose()?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

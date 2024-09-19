@@ -361,6 +361,8 @@ pub use crate::types::_update_xml_classifier_request::UpdateXmlClassifierRequest
 
 pub use crate::types::_update_grok_classifier_request::UpdateGrokClassifierRequestBuilder;
 
+pub use crate::types::_test_connection_input::TestConnectionInputBuilder;
+
 pub use crate::types::_data_source::DataSourceBuilder;
 
 pub use crate::types::_glue_table::GlueTableBuilder;

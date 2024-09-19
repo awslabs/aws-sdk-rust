@@ -164,6 +164,15 @@ pub(crate) fn get_trust_store_certificate_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn list_sessions_output_output_correct_errors(
+    mut builder: crate::operation::list_sessions::builders::ListSessionsOutputBuilder,
+) -> crate::operation::list_sessions::builders::ListSessionsOutputBuilder {
+    if builder.sessions.is_none() {
+        builder.sessions = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn list_trust_store_certificates_output_output_correct_errors(
     mut builder: crate::operation::list_trust_store_certificates::builders::ListTrustStoreCertificatesOutputBuilder,
 ) -> crate::operation::list_trust_store_certificates::builders::ListTrustStoreCertificatesOutputBuilder {

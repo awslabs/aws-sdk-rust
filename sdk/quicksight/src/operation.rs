@@ -322,6 +322,9 @@ pub mod list_folder_members;
 /// Types for the `ListFolders` operation.
 pub mod list_folders;
 
+/// Types for the `ListFoldersForResource` operation.
+pub mod list_folders_for_resource;
+
 /// Types for the `ListGroupMemberships` operation.
 pub mod list_group_memberships;
 

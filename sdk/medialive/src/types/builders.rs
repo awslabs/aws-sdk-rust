@@ -231,6 +231,8 @@ pub use crate::types::_h265_settings::H265SettingsBuilder;
 
 pub use crate::types::_h265_filter_settings::H265FilterSettingsBuilder;
 
+pub use crate::types::_bandwidth_reduction_filter_settings::BandwidthReductionFilterSettingsBuilder;
+
 pub use crate::types::_h265_color_space_settings::H265ColorSpaceSettingsBuilder;
 
 pub use crate::types::_dolby_vision81_settings::DolbyVision81SettingsBuilder;
@@ -274,6 +276,10 @@ pub use crate::types::_fec_output_settings::FecOutputSettingsBuilder;
 pub use crate::types::_rtmp_output_settings::RtmpOutputSettingsBuilder;
 
 pub use crate::types::_multiplex_output_settings::MultiplexOutputSettingsBuilder;
+
+pub use crate::types::_multiplex_container_settings::MultiplexContainerSettingsBuilder;
+
+pub use crate::types::_multiplex_m2ts_settings::MultiplexM2tsSettingsBuilder;
 
 pub use crate::types::_ms_smooth_output_settings::MsSmoothOutputSettingsBuilder;
 

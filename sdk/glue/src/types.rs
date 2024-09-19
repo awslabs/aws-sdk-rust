@@ -469,6 +469,10 @@ pub use crate::types::_update_xml_classifier_request::UpdateXmlClassifierRequest
 
 pub use crate::types::_update_grok_classifier_request::UpdateGrokClassifierRequest;
 
+pub use crate::types::_federation_source_error_code::FederationSourceErrorCode;
+
+pub use crate::types::_test_connection_input::TestConnectionInput;
+
 pub use crate::types::_data_source::DataSource;
 
 pub use crate::types::_glue_table::GlueTable;
@@ -662,8 +666,6 @@ pub use crate::types::_workflow::Workflow;
 pub use crate::types::_blueprint_details::BlueprintDetails;
 
 pub use crate::types::_user_defined_function::UserDefinedFunction;
-
-pub use crate::types::_federation_source_error_code::FederationSourceErrorCode;
 
 pub use crate::types::_column_row_filter::ColumnRowFilter;
 
@@ -1702,6 +1704,8 @@ mod _task_run_sort_criteria;
 mod _task_status_type;
 
 mod _task_type;
+
+mod _test_connection_input;
 
 mod _timestamp_filter;
 

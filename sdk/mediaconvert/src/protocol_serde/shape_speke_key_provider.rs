@@ -6,20 +6,26 @@ pub fn ser_speke_key_provider(
     if let Some(var_1) = &input.certificate_arn {
         object.key("certificateArn").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.resource_id {
-        object.key("resourceId").string(var_2.as_str());
+    if let Some(var_2) = &input.encryption_contract_configuration {
+        #[allow(unused_mut)]
+        let mut object_3 = object.key("encryptionContractConfiguration").start_object();
+        crate::protocol_serde::shape_encryption_contract_configuration::ser_encryption_contract_configuration(&mut object_3, var_2)?;
+        object_3.finish();
     }
-    if let Some(var_3) = &input.system_ids {
-        let mut array_4 = object.key("systemIds").start_array();
-        for item_5 in var_3 {
+    if let Some(var_4) = &input.resource_id {
+        object.key("resourceId").string(var_4.as_str());
+    }
+    if let Some(var_5) = &input.system_ids {
+        let mut array_6 = object.key("systemIds").start_array();
+        for item_7 in var_5 {
             {
-                array_4.value().string(item_5.as_str());
+                array_6.value().string(item_7.as_str());
             }
         }
-        array_4.finish();
+        array_6.finish();
     }
-    if let Some(var_6) = &input.url {
-        object.key("url").string(var_6.as_str());
+    if let Some(var_8) = &input.url {
+        object.key("url").string(var_8.as_str());
     }
     Ok(())
 }
@@ -44,6 +50,11 @@ where
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
+                            );
+                        }
+                        "encryptionContractConfiguration" => {
+                            builder = builder.set_encryption_contract_configuration(
+                                crate::protocol_serde::shape_encryption_contract_configuration::de_encryption_contract_configuration(tokens)?,
                             );
                         }
                         "resourceId" => {

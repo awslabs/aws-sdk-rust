@@ -551,6 +551,8 @@ pub(crate) mod shape_static_key_provider;
 
 pub(crate) mod shape_video_detail;
 
+pub(crate) mod shape_encryption_contract_configuration;
+
 pub(crate) mod shape_list_of_automated_abr_rule;
 
 pub(crate) mod shape_list_of_caption_description;

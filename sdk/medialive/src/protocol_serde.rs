@@ -1051,6 +1051,8 @@ pub(crate) mod shape_audio_dolby_e_decode;
 
 pub(crate) mod shape_audio_track;
 
+pub(crate) mod shape_bandwidth_reduction_filter_settings;
+
 pub(crate) mod shape_caption_rectangle;
 
 pub(crate) mod shape_color_space_passthrough_settings;
@@ -1079,6 +1081,8 @@ pub(crate) mod shape_list_of_hls_ad_markers;
 
 pub(crate) mod shape_list_of_rtmp_ad_markers;
 
+pub(crate) mod shape_multiplex_container_settings;
+
 pub(crate) mod shape_rec601_settings;
 
 pub(crate) mod shape_rec709_settings;
@@ -1104,6 +1108,8 @@ pub(crate) mod shape_frame_capture_hls_settings;
 pub(crate) mod shape_list_of_input_channel_level;
 
 pub(crate) mod shape_m2ts_settings;
+
+pub(crate) mod shape_multiplex_m2ts_settings;
 
 pub(crate) mod shape_raw_settings;
 

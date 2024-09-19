@@ -19,7 +19,7 @@ pub struct AddPermissionInput {
     pub statement_id: ::std::option::Option<::std::string::String>,
     /// <p>The action that the principal can use on the function. For example, <code>lambda:InvokeFunction</code> or <code>lambda:GetFunction</code>.</p>
     pub action: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Web Servicesservice or Amazon Web Services account that invokes the function. If you specify a service, use <code>SourceArn</code> or <code>SourceAccount</code> to limit who can invoke the function through that service.</p>
+    /// <p>The Amazon Web Servicesservice, Amazon Web Services account, IAM user, or IAM role that invokes the function. If you specify a service, use <code>SourceArn</code> or <code>SourceAccount</code> to limit who can invoke the function through that service.</p>
     pub principal: ::std::option::Option<::std::string::String>,
     /// <p>For Amazon Web Servicesservices, the ARN of the Amazon Web Services resource that invokes the function. For example, an Amazon S3 bucket or Amazon SNS topic.</p>
     /// <p>Note that Lambda configures the comparison using the <code>StringLike</code> operator.</p>
@@ -60,7 +60,7 @@ impl AddPermissionInput {
     pub fn action(&self) -> ::std::option::Option<&str> {
         self.action.as_deref()
     }
-    /// <p>The Amazon Web Servicesservice or Amazon Web Services account that invokes the function. If you specify a service, use <code>SourceArn</code> or <code>SourceAccount</code> to limit who can invoke the function through that service.</p>
+    /// <p>The Amazon Web Servicesservice, Amazon Web Services account, IAM user, or IAM role that invokes the function. If you specify a service, use <code>SourceArn</code> or <code>SourceAccount</code> to limit who can invoke the function through that service.</p>
     pub fn principal(&self) -> ::std::option::Option<&str> {
         self.principal.as_deref()
     }
@@ -193,18 +193,18 @@ impl AddPermissionInputBuilder {
     pub fn get_action(&self) -> &::std::option::Option<::std::string::String> {
         &self.action
     }
-    /// <p>The Amazon Web Servicesservice or Amazon Web Services account that invokes the function. If you specify a service, use <code>SourceArn</code> or <code>SourceAccount</code> to limit who can invoke the function through that service.</p>
+    /// <p>The Amazon Web Servicesservice, Amazon Web Services account, IAM user, or IAM role that invokes the function. If you specify a service, use <code>SourceArn</code> or <code>SourceAccount</code> to limit who can invoke the function through that service.</p>
     /// This field is required.
     pub fn principal(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.principal = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Web Servicesservice or Amazon Web Services account that invokes the function. If you specify a service, use <code>SourceArn</code> or <code>SourceAccount</code> to limit who can invoke the function through that service.</p>
+    /// <p>The Amazon Web Servicesservice, Amazon Web Services account, IAM user, or IAM role that invokes the function. If you specify a service, use <code>SourceArn</code> or <code>SourceAccount</code> to limit who can invoke the function through that service.</p>
     pub fn set_principal(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.principal = input;
         self
     }
-    /// <p>The Amazon Web Servicesservice or Amazon Web Services account that invokes the function. If you specify a service, use <code>SourceArn</code> or <code>SourceAccount</code> to limit who can invoke the function through that service.</p>
+    /// <p>The Amazon Web Servicesservice, Amazon Web Services account, IAM user, or IAM role that invokes the function. If you specify a service, use <code>SourceArn</code> or <code>SourceAccount</code> to limit who can invoke the function through that service.</p>
     pub fn get_principal(&self) -> &::std::option::Option<::std::string::String> {
         &self.principal
     }

@@ -601,6 +601,9 @@ pub mod stop_workflow_run;
 /// Types for the `TagResource` operation.
 pub mod tag_resource;
 
+/// Types for the `TestConnection` operation.
+pub mod test_connection;
+
 /// Types for the `UntagResource` operation.
 pub mod untag_resource;
 

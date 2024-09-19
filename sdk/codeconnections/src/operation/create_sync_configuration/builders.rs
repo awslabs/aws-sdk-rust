@@ -220,4 +220,18 @@ impl CreateSyncConfigurationFluentBuilder {
     pub fn get_trigger_resource_update_on(&self) -> &::std::option::Option<crate::types::TriggerResourceUpdateOn> {
         self.inner.get_trigger_resource_update_on()
     }
+    /// <p>A toggle that specifies whether to enable or disable pull request comments for the sync configuration to be created.</p>
+    pub fn pull_request_comment(mut self, input: crate::types::PullRequestComment) -> Self {
+        self.inner = self.inner.pull_request_comment(input);
+        self
+    }
+    /// <p>A toggle that specifies whether to enable or disable pull request comments for the sync configuration to be created.</p>
+    pub fn set_pull_request_comment(mut self, input: ::std::option::Option<crate::types::PullRequestComment>) -> Self {
+        self.inner = self.inner.set_pull_request_comment(input);
+        self
+    }
+    /// <p>A toggle that specifies whether to enable or disable pull request comments for the sync configuration to be created.</p>
+    pub fn get_pull_request_comment(&self) -> &::std::option::Option<crate::types::PullRequestComment> {
+        self.inner.get_pull_request_comment()
+    }
 }

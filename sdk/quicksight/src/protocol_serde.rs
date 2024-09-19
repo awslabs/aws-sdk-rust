@@ -237,6 +237,8 @@ pub(crate) mod shape_list_folder_members;
 
 pub(crate) mod shape_list_folders;
 
+pub(crate) mod shape_list_folders_for_resource;
+
 pub(crate) mod shape_list_group_memberships;
 
 pub(crate) mod shape_list_groups;
@@ -674,6 +676,8 @@ pub(crate) mod shape_folder_member_list;
 pub(crate) mod shape_folder_search_filter;
 
 pub(crate) mod shape_folder_summary_list;
+
+pub(crate) mod shape_folders_for_resource_arn_list;
 
 pub(crate) mod shape_group;
 

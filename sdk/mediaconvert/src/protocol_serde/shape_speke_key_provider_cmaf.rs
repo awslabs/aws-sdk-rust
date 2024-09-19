@@ -15,20 +15,26 @@ pub fn ser_speke_key_provider_cmaf(
         }
         array_3.finish();
     }
-    if let Some(var_5) = &input.hls_signaled_system_ids {
-        let mut array_6 = object.key("hlsSignaledSystemIds").start_array();
-        for item_7 in var_5 {
+    if let Some(var_5) = &input.encryption_contract_configuration {
+        #[allow(unused_mut)]
+        let mut object_6 = object.key("encryptionContractConfiguration").start_object();
+        crate::protocol_serde::shape_encryption_contract_configuration::ser_encryption_contract_configuration(&mut object_6, var_5)?;
+        object_6.finish();
+    }
+    if let Some(var_7) = &input.hls_signaled_system_ids {
+        let mut array_8 = object.key("hlsSignaledSystemIds").start_array();
+        for item_9 in var_7 {
             {
-                array_6.value().string(item_7.as_str());
+                array_8.value().string(item_9.as_str());
             }
         }
-        array_6.finish();
+        array_8.finish();
     }
-    if let Some(var_8) = &input.resource_id {
-        object.key("resourceId").string(var_8.as_str());
+    if let Some(var_10) = &input.resource_id {
+        object.key("resourceId").string(var_10.as_str());
     }
-    if let Some(var_9) = &input.url {
-        object.key("url").string(var_9.as_str());
+    if let Some(var_11) = &input.url {
+        object.key("url").string(var_11.as_str());
     }
     Ok(())
 }
@@ -59,6 +65,11 @@ where
                             builder = builder.set_dash_signaled_system_ids(
                                     crate::protocol_serde::shape_list_of_string_min36_max36_pattern09a_faf809a_faf409a_faf409a_faf409a_faf12::de_list_of_string_min36_max36_pattern09a_faf809a_faf409a_faf409a_faf409a_faf12(tokens)?
                                 );
+                        }
+                        "encryptionContractConfiguration" => {
+                            builder = builder.set_encryption_contract_configuration(
+                                crate::protocol_serde::shape_encryption_contract_configuration::de_encryption_contract_configuration(tokens)?,
+                            );
                         }
                         "hlsSignaledSystemIds" => {
                             builder = builder.set_hls_signaled_system_ids(

@@ -6,6 +6,8 @@
 pub struct SpekeKeyProvider {
     /// If you want your key provider to encrypt the content keys that it provides to MediaConvert, set up a certificate with a master key using AWS Certificate Manager. Specify the certificate's Amazon Resource Name (ARN) here.
     pub certificate_arn: ::std::option::Option<::std::string::String>,
+    /// Specify the SPEKE version, either v1.0 or v2.0, that MediaConvert uses when encrypting your output. For more information, see: https://docs.aws.amazon.com/speke/latest/documentation/speke-api-specification.html To use SPEKE v1.0: Leave blank. To use SPEKE v2.0: Specify a SPEKE v2.0 video preset and a SPEKE v2.0 audio preset.
+    pub encryption_contract_configuration: ::std::option::Option<crate::types::EncryptionContractConfiguration>,
     /// Specify the resource ID that your SPEKE-compliant key provider uses to identify this content.
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// Relates to SPEKE implementation. DRM system identifiers. DASH output groups support a max of two system ids. Other group types support one system id. See https://dashif.org/identifiers/content_protection/ for more details.
@@ -17,6 +19,10 @@ impl SpekeKeyProvider {
     /// If you want your key provider to encrypt the content keys that it provides to MediaConvert, set up a certificate with a master key using AWS Certificate Manager. Specify the certificate's Amazon Resource Name (ARN) here.
     pub fn certificate_arn(&self) -> ::std::option::Option<&str> {
         self.certificate_arn.as_deref()
+    }
+    /// Specify the SPEKE version, either v1.0 or v2.0, that MediaConvert uses when encrypting your output. For more information, see: https://docs.aws.amazon.com/speke/latest/documentation/speke-api-specification.html To use SPEKE v1.0: Leave blank. To use SPEKE v2.0: Specify a SPEKE v2.0 video preset and a SPEKE v2.0 audio preset.
+    pub fn encryption_contract_configuration(&self) -> ::std::option::Option<&crate::types::EncryptionContractConfiguration> {
+        self.encryption_contract_configuration.as_ref()
     }
     /// Specify the resource ID that your SPEKE-compliant key provider uses to identify this content.
     pub fn resource_id(&self) -> ::std::option::Option<&str> {
@@ -45,6 +51,7 @@ impl SpekeKeyProvider {
 #[non_exhaustive]
 pub struct SpekeKeyProviderBuilder {
     pub(crate) certificate_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) encryption_contract_configuration: ::std::option::Option<crate::types::EncryptionContractConfiguration>,
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
     pub(crate) system_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) url: ::std::option::Option<::std::string::String>,
@@ -63,6 +70,20 @@ impl SpekeKeyProviderBuilder {
     /// If you want your key provider to encrypt the content keys that it provides to MediaConvert, set up a certificate with a master key using AWS Certificate Manager. Specify the certificate's Amazon Resource Name (ARN) here.
     pub fn get_certificate_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.certificate_arn
+    }
+    /// Specify the SPEKE version, either v1.0 or v2.0, that MediaConvert uses when encrypting your output. For more information, see: https://docs.aws.amazon.com/speke/latest/documentation/speke-api-specification.html To use SPEKE v1.0: Leave blank. To use SPEKE v2.0: Specify a SPEKE v2.0 video preset and a SPEKE v2.0 audio preset.
+    pub fn encryption_contract_configuration(mut self, input: crate::types::EncryptionContractConfiguration) -> Self {
+        self.encryption_contract_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// Specify the SPEKE version, either v1.0 or v2.0, that MediaConvert uses when encrypting your output. For more information, see: https://docs.aws.amazon.com/speke/latest/documentation/speke-api-specification.html To use SPEKE v1.0: Leave blank. To use SPEKE v2.0: Specify a SPEKE v2.0 video preset and a SPEKE v2.0 audio preset.
+    pub fn set_encryption_contract_configuration(mut self, input: ::std::option::Option<crate::types::EncryptionContractConfiguration>) -> Self {
+        self.encryption_contract_configuration = input;
+        self
+    }
+    /// Specify the SPEKE version, either v1.0 or v2.0, that MediaConvert uses when encrypting your output. For more information, see: https://docs.aws.amazon.com/speke/latest/documentation/speke-api-specification.html To use SPEKE v1.0: Leave blank. To use SPEKE v2.0: Specify a SPEKE v2.0 video preset and a SPEKE v2.0 audio preset.
+    pub fn get_encryption_contract_configuration(&self) -> &::std::option::Option<crate::types::EncryptionContractConfiguration> {
+        &self.encryption_contract_configuration
     }
     /// Specify the resource ID that your SPEKE-compliant key provider uses to identify this content.
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -116,6 +137,7 @@ impl SpekeKeyProviderBuilder {
     pub fn build(self) -> crate::types::SpekeKeyProvider {
         crate::types::SpekeKeyProvider {
             certificate_arn: self.certificate_arn,
+            encryption_contract_configuration: self.encryption_contract_configuration,
             resource_id: self.resource_id,
             system_ids: self.system_ids,
             url: self.url,

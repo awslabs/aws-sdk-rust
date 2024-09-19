@@ -18,6 +18,9 @@ pub fn ser_default_filter_drop_down_control_options(
         crate::protocol_serde::shape_filter_selectable_values::ser_filter_selectable_values(&mut object_5, var_4)?;
         object_5.finish();
     }
+    if let Some(var_6) = &input.commit_mode {
+        object.key("CommitMode").string(var_6.as_str());
+    }
     Ok(())
 }
 
@@ -51,6 +54,13 @@ where
                         "SelectableValues" => {
                             builder = builder.set_selectable_values(
                                 crate::protocol_serde::shape_filter_selectable_values::de_filter_selectable_values(tokens)?,
+                            );
+                        }
+                        "CommitMode" => {
+                            builder = builder.set_commit_mode(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CommitMode::from(u.as_ref())))
+                                    .transpose()?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

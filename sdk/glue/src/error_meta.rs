@@ -6457,6 +6457,38 @@ impl From<crate::operation::tag_resource::TagResourceError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::test_connection::TestConnectionError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::test_connection::TestConnectionError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::test_connection::TestConnectionError> for Error {
+    fn from(err: crate::operation::test_connection::TestConnectionError) -> Self {
+        match err {
+            crate::operation::test_connection::TestConnectionError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::test_connection::TestConnectionError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::test_connection::TestConnectionError::EntityNotFoundException(inner) => Error::EntityNotFoundException(inner),
+            crate::operation::test_connection::TestConnectionError::FederationSourceException(inner) => Error::FederationSourceException(inner),
+            crate::operation::test_connection::TestConnectionError::GlueEncryptionException(inner) => Error::GlueEncryptionException(inner),
+            crate::operation::test_connection::TestConnectionError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::test_connection::TestConnectionError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::test_connection::TestConnectionError::OperationTimeoutException(inner) => Error::OperationTimeoutException(inner),
+            crate::operation::test_connection::TestConnectionError::ResourceNumberLimitExceededException(inner) => {
+                Error::ResourceNumberLimitExceededException(inner)
+            }
+            crate::operation::test_connection::TestConnectionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::untag_resource::UntagResourceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

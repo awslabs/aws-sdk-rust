@@ -1106,6 +1106,32 @@ impl From<crate::operation::disassociate_user_settings::DisassociateUserSettings
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::expire_session::ExpireSessionError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::expire_session::ExpireSessionError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::expire_session::ExpireSessionError> for Error {
+    fn from(err: crate::operation::expire_session::ExpireSessionError) -> Self {
+        match err {
+            crate::operation::expire_session::ExpireSessionError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::expire_session::ExpireSessionError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::expire_session::ExpireSessionError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::expire_session::ExpireSessionError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::expire_session::ExpireSessionError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::expire_session::ExpireSessionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_browser_settings::GetBrowserSettingsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1294,6 +1320,32 @@ impl From<crate::operation::get_portal_service_provider_metadata::GetPortalServi
             crate::operation::get_portal_service_provider_metadata::GetPortalServiceProviderMetadataError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_session::GetSessionError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_session::GetSessionError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_session::GetSessionError> for Error {
+    fn from(err: crate::operation::get_session::GetSessionError) -> Self {
+        match err {
+            crate::operation::get_session::GetSessionError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_session::GetSessionError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_session::GetSessionError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_session::GetSessionError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_session::GetSessionError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_session::GetSessionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1567,6 +1619,32 @@ impl From<crate::operation::list_portals::ListPortalsError> for Error {
             crate::operation::list_portals::ListPortalsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_portals::ListPortalsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_portals::ListPortalsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_sessions::ListSessionsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_sessions::ListSessionsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_sessions::ListSessionsError> for Error {
+    fn from(err: crate::operation::list_sessions::ListSessionsError) -> Self {
+        match err {
+            crate::operation::list_sessions::ListSessionsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_sessions::ListSessionsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_sessions::ListSessionsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_sessions::ListSessionsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_sessions::ListSessionsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_sessions::ListSessionsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

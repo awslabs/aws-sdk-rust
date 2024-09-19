@@ -423,6 +423,8 @@ pub(crate) mod shape_stop_workflow_run;
 
 pub(crate) mod shape_tag_resource;
 
+pub(crate) mod shape_test_connection;
+
 pub(crate) mod shape_untag_resource;
 
 pub(crate) mod shape_update_blueprint;
@@ -946,6 +948,8 @@ pub(crate) mod shape_stop_trigger_input;
 pub(crate) mod shape_stop_workflow_run_input;
 
 pub(crate) mod shape_tag_resource_input;
+
+pub(crate) mod shape_test_connection_input;
 
 pub(crate) mod shape_throttling_exception;
 

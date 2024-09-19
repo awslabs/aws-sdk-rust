@@ -181,6 +181,13 @@ where
                             builder = builder
                                 .set_filter_criteria_error(crate::protocol_serde::shape_filter_criteria_error::de_filter_criteria_error(tokens)?);
                         }
+                        "EventSourceMappingArn" => {
+                            builder = builder.set_event_source_mapping_arn(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

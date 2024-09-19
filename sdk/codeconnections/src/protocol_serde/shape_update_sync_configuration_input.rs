@@ -27,5 +27,8 @@ pub fn ser_update_sync_configuration_input_input(
     if let Some(var_8) = &input.trigger_resource_update_on {
         object.key("TriggerResourceUpdateOn").string(var_8.as_str());
     }
+    if let Some(var_9) = &input.pull_request_comment {
+        object.key("PullRequestComment").string(var_9.as_str());
+    }
     Ok(())
 }

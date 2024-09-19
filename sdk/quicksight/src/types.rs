@@ -261,6 +261,8 @@ pub use crate::types::_default_filter_control_options::DefaultFilterControlOptio
 
 pub use crate::types::_default_relative_date_time_control_options::DefaultRelativeDateTimeControlOptions;
 
+pub use crate::types::_commit_mode::CommitMode;
+
 pub use crate::types::_relative_date_time_control_display_options::RelativeDateTimeControlDisplayOptions;
 
 pub use crate::types::_sheet_control_info_icon_label_options::SheetControlInfoIconLabelOptions;
@@ -2466,6 +2468,8 @@ mod _combo_chart_field_wells;
 mod _combo_chart_sort_configuration;
 
 mod _combo_chart_visual;
+
+mod _commit_mode;
 
 mod _comparative_order;
 
