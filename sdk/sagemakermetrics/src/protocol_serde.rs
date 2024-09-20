@@ -23,6 +23,8 @@ pub fn parse_http_error_metadata(
     crate::json_errors::parse_error_metadata(response_body, response_headers)
 }
 
+pub(crate) mod shape_batch_get_metrics;
+
 pub(crate) mod shape_batch_put_metrics;
 
 pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
@@ -33,10 +35,22 @@ pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
     }
 }
 
+pub(crate) mod shape_batch_get_metrics_input;
+
 pub(crate) mod shape_batch_put_metrics_input;
 
 pub(crate) mod shape_batch_put_metrics_error_list;
 
+pub(crate) mod shape_metric_query;
+
+pub(crate) mod shape_metric_query_result_list;
+
 pub(crate) mod shape_raw_metric_data;
 
 pub(crate) mod shape_batch_put_metrics_error;
+
+pub(crate) mod shape_metric_query_result;
+
+pub(crate) mod shape_metric_values;
+
+pub(crate) mod shape_x_axis_values;

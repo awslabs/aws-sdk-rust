@@ -160,6 +160,8 @@ impl Builder {
         builder.set_timeout_config(config_bag.load::<::aws_smithy_types::timeout::TimeoutConfig>().cloned());
         builder.set_retry_partition(config_bag.load::<::aws_smithy_runtime::client::retries::RetryPartition>().cloned());
         builder.set_app_name(config_bag.load::<::aws_types::app_name::AppName>().cloned());
+        builder.set_account_id(config_bag.load::<crate::config::AccountId>().map(|ty| ty.0.clone()));
+        builder.set_account_id_endpoint_mode(config_bag.load::<crate::config::AccountIdEndpointMode>().map(|ty| ty.0.clone()));
         builder.set_endpoint_url(config_bag.load::<::aws_types::endpoint_config::EndpointUrl>().map(|ty| ty.0.clone()));
         builder.set_use_dual_stack(config_bag.load::<::aws_types::endpoint_config::UseDualStack>().map(|ty| ty.0));
         builder.set_use_fips(config_bag.load::<::aws_types::endpoint_config::UseFips>().map(|ty| ty.0));
@@ -904,6 +906,27 @@ impl Builder {
         self.config.store_or_unset(gen);
         self
     }
+    /// The AWS AccountId used for the request.
+    pub fn account_id(mut self, account_id: impl Into<::std::string::String>) -> Self {
+        self.set_account_id(Some(account_id.into()));
+        self
+    }
+    /// The AWS AccountId used for the request.
+    pub fn set_account_id(&mut self, account_id: Option<::std::string::String>) -> &mut Self {
+        self.config.store_or_unset(account_id.map(crate::config::AccountId));
+        self
+    }
+    /// The AccountId Endpoint Mode.
+    pub fn account_id_endpoint_mode(mut self, account_id_endpoint_mode: impl Into<::std::string::String>) -> Self {
+        self.set_account_id_endpoint_mode(Some(account_id_endpoint_mode.into()));
+        self
+    }
+    /// The AccountId Endpoint Mode.
+    pub fn set_account_id_endpoint_mode(&mut self, account_id_endpoint_mode: Option<::std::string::String>) -> &mut Self {
+        self.config
+            .store_or_unset(account_id_endpoint_mode.map(crate::config::AccountIdEndpointMode));
+        self
+    }
     /// Sets the endpoint URL used to communicate with this service
 
     /// Note: this is used in combination with other endpoint rules, e.g. an API that applies a host-label prefix
@@ -1338,6 +1361,18 @@ pub use ::aws_smithy_runtime_api::client::interceptors::SharedInterceptor;
 pub use ::aws_types::region::Region;
 
 pub use ::aws_credential_types::provider::SharedCredentialsProvider;
+
+#[derive(Debug, Clone)]
+pub(crate) struct AccountId(pub(crate) String);
+impl ::aws_smithy_types::config_bag::Storable for AccountId {
+    type Storer = ::aws_smithy_types::config_bag::StoreReplace<Self>;
+}
+
+#[derive(Debug, Clone)]
+pub(crate) struct AccountIdEndpointMode(pub(crate) String);
+impl ::aws_smithy_types::config_bag::Storable for AccountIdEndpointMode {
+    type Storer = ::aws_smithy_types::config_bag::StoreReplace<Self>;
+}
 
 pub use ::aws_smithy_runtime_api::client::http::HttpClient;
 

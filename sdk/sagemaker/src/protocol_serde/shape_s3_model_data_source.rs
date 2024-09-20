@@ -24,6 +24,9 @@ pub fn ser_s3_model_data_source(
         crate::protocol_serde::shape_inference_hub_access_config::ser_inference_hub_access_config(&mut object_7, var_6)?;
         object_7.finish();
     }
+    if let Some(var_8) = &input.manifest_s3_uri {
+        object.key("ManifestS3Uri").string(var_8.as_str());
+    }
     Ok(())
 }
 
@@ -70,6 +73,13 @@ where
                         "HubAccessConfig" => {
                             builder = builder.set_hub_access_config(
                                 crate::protocol_serde::shape_inference_hub_access_config::de_inference_hub_access_config(tokens)?,
+                            );
+                        }
+                        "ManifestS3Uri" => {
+                            builder = builder.set_manifest_s3_uri(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

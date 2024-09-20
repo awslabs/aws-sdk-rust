@@ -2,3 +2,7 @@
 pub use crate::types::_batch_put_metrics_error::BatchPutMetricsErrorBuilder;
 
 pub use crate::types::_raw_metric_data::RawMetricDataBuilder;
+
+pub use crate::types::_metric_query_result::MetricQueryResultBuilder;
+
+pub use crate::types::_metric_query::MetricQueryBuilder;

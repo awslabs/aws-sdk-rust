@@ -22,7 +22,7 @@ impl crate::operation::batch_put_metrics::builders::BatchPutMetricsInputBuilder 
 }
 /// Fluent builder constructing a request to `BatchPutMetrics`.
 ///
-/// <p>Used to ingest training metrics into SageMaker. These metrics can be visualized in SageMaker Studio and retrieved with the <code>GetMetrics</code> API.</p>
+/// <p>Used to ingest training metrics into SageMaker. These metrics can be visualized in SageMaker Studio.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct BatchPutMetricsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl BatchPutMetricsFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name of the Trial Component to associate with the metrics.</p>
+    /// <p>The name of the Trial Component to associate with the metrics. The Trial Component name must be entirely lowercase.</p>
     pub fn trial_component_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.trial_component_name(input.into());
         self
     }
-    /// <p>The name of the Trial Component to associate with the metrics.</p>
+    /// <p>The name of the Trial Component to associate with the metrics. The Trial Component name must be entirely lowercase.</p>
     pub fn set_trial_component_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_trial_component_name(input);
         self
     }
-    /// <p>The name of the Trial Component to associate with the metrics.</p>
+    /// <p>The name of the Trial Component to associate with the metrics. The Trial Component name must be entirely lowercase.</p>
     pub fn get_trial_component_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_trial_component_name()
     }

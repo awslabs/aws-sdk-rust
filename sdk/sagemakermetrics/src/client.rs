@@ -136,6 +136,8 @@ impl Client {
     }
 }
 
+mod batch_get_metrics;
+
 mod batch_put_metrics;
 
 /// Operation customization and supporting types.
@@ -149,7 +151,7 @@ mod batch_put_metrics;
 /// # let client: aws_sdk_sagemakermetrics::Client = unimplemented!();
 /// use ::http::header::{HeaderName, HeaderValue};
 ///
-/// let result = client.batch_put_metrics()
+/// let result = client.batch_get_metrics()
 ///     .customize()
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value

@@ -17,3 +17,5 @@ pub(crate) static DEFAULT_PARTITION_RESOLVER: ::once_cell::sync::Lazy<crate::end
 pub(crate) mod diagnostic;
 
 pub(crate) mod partition;
+
+pub(crate) mod host;
