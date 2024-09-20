@@ -2493,6 +2493,10 @@ source_hash = 'db7face08f400b930054e717f7ee7a6a153796d82cbf0529f5a8846e4ed9ca67'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = 'e73be5cd8fa313370338d1d6cd7c32fffb873cc96e2d73ed45f7f44f06b00c50'
+
+[release]
+tag = 'release-2024-09-20'
+
 [release.crates]
 aws-sdk-dynamodb = '1.47.0'
 aws-sdk-neptune = '1.45.0'
