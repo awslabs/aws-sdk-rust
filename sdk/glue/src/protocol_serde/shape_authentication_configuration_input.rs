@@ -6,14 +6,14 @@ pub fn ser_authentication_configuration_input(
     if let Some(var_1) = &input.authentication_type {
         object.key("AuthenticationType").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.secret_arn {
-        object.key("SecretArn").string(var_2.as_str());
-    }
-    if let Some(var_3) = &input.o_auth2_properties {
+    if let Some(var_2) = &input.o_auth2_properties {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("OAuth2Properties").start_object();
-        crate::protocol_serde::shape_o_auth2_properties_input::ser_o_auth2_properties_input(&mut object_4, var_3)?;
-        object_4.finish();
+        let mut object_3 = object.key("OAuth2Properties").start_object();
+        crate::protocol_serde::shape_o_auth2_properties_input::ser_o_auth2_properties_input(&mut object_3, var_2)?;
+        object_3.finish();
+    }
+    if let Some(var_4) = &input.secret_arn {
+        object.key("SecretArn").string(var_4.as_str());
     }
     Ok(())
 }

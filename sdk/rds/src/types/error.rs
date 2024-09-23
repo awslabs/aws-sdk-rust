@@ -165,8 +165,6 @@ pub use crate::types::error::_db_subnet_quota_exceeded_fault::DbSubnetQuotaExcee
 
 pub use crate::types::error::_shared_snapshot_quota_exceeded_fault::SharedSnapshotQuotaExceededFault;
 
-pub use crate::types::error::_invalid_max_acu_fault::InvalidMaxAcuFault;
-
 pub use crate::types::error::_db_shard_group_already_exists_fault::DbShardGroupAlreadyExistsFault;
 
 pub use crate::types::error::_invalid_db_proxy_endpoint_state_fault::InvalidDbProxyEndpointStateFault;
@@ -500,8 +498,6 @@ mod _invalid_export_task_state_fault;
 mod _invalid_global_cluster_state_fault;
 
 mod _invalid_integration_state_fault;
-
-mod _invalid_max_acu_fault;
 
 mod _invalid_option_group_state_fault;
 

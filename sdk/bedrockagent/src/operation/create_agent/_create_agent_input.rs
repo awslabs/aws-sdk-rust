@@ -9,7 +9,7 @@ pub struct CreateAgentInput {
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>Instructions that tell the agent what it should do and how it should interact with users.</p>
     pub instruction: ::std::option::Option<::std::string::String>,
-    /// <p>The foundation model to be used for orchestration by the agent you create.</p>
+    /// <p>The Amazon Resource Name (ARN) of the foundation model to be used for orchestration by the agent you create.</p>
     pub foundation_model: ::std::option::Option<::std::string::String>,
     /// <p>A description of the agent.</p>
     pub description: ::std::option::Option<::std::string::String>,
@@ -42,7 +42,7 @@ impl CreateAgentInput {
     pub fn instruction(&self) -> ::std::option::Option<&str> {
         self.instruction.as_deref()
     }
-    /// <p>The foundation model to be used for orchestration by the agent you create.</p>
+    /// <p>The Amazon Resource Name (ARN) of the foundation model to be used for orchestration by the agent you create.</p>
     pub fn foundation_model(&self) -> ::std::option::Option<&str> {
         self.foundation_model.as_deref()
     }
@@ -166,17 +166,17 @@ impl CreateAgentInputBuilder {
     pub fn get_instruction(&self) -> &::std::option::Option<::std::string::String> {
         &self.instruction
     }
-    /// <p>The foundation model to be used for orchestration by the agent you create.</p>
+    /// <p>The Amazon Resource Name (ARN) of the foundation model to be used for orchestration by the agent you create.</p>
     pub fn foundation_model(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.foundation_model = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The foundation model to be used for orchestration by the agent you create.</p>
+    /// <p>The Amazon Resource Name (ARN) of the foundation model to be used for orchestration by the agent you create.</p>
     pub fn set_foundation_model(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.foundation_model = input;
         self
     }
-    /// <p>The foundation model to be used for orchestration by the agent you create.</p>
+    /// <p>The Amazon Resource Name (ARN) of the foundation model to be used for orchestration by the agent you create.</p>
     pub fn get_foundation_model(&self) -> &::std::option::Option<::std::string::String> {
         &self.foundation_model
     }

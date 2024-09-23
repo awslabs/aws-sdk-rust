@@ -40,6 +40,9 @@ pub mod list_indexes;
 /// Types for the `ListIndexesForMembers` operation.
 pub mod list_indexes_for_members;
 
+/// Types for the `ListResources` operation.
+pub mod list_resources;
+
 /// Types for the `ListSupportedResourceTypes` operation.
 pub mod list_supported_resource_types;
 

@@ -16,6 +16,7 @@
 ///     JobRunState::Cancelling => { /* ... */ },
 ///     JobRunState::Failed => { /* ... */ },
 ///     JobRunState::Pending => { /* ... */ },
+///     JobRunState::Queued => { /* ... */ },
 ///     JobRunState::Running => { /* ... */ },
 ///     JobRunState::Scheduled => { /* ... */ },
 ///     JobRunState::Submitted => { /* ... */ },
@@ -56,6 +57,8 @@ pub enum JobRunState {
     #[allow(missing_docs)] // documentation missing in model
     Pending,
     #[allow(missing_docs)] // documentation missing in model
+    Queued,
+    #[allow(missing_docs)] // documentation missing in model
     Running,
     #[allow(missing_docs)] // documentation missing in model
     Scheduled,
@@ -74,6 +77,7 @@ impl ::std::convert::From<&str> for JobRunState {
             "CANCELLING" => JobRunState::Cancelling,
             "FAILED" => JobRunState::Failed,
             "PENDING" => JobRunState::Pending,
+            "QUEUED" => JobRunState::Queued,
             "RUNNING" => JobRunState::Running,
             "SCHEDULED" => JobRunState::Scheduled,
             "SUBMITTED" => JobRunState::Submitted,
@@ -97,6 +101,7 @@ impl JobRunState {
             JobRunState::Cancelling => "CANCELLING",
             JobRunState::Failed => "FAILED",
             JobRunState::Pending => "PENDING",
+            JobRunState::Queued => "QUEUED",
             JobRunState::Running => "RUNNING",
             JobRunState::Scheduled => "SCHEDULED",
             JobRunState::Submitted => "SUBMITTED",
@@ -111,6 +116,7 @@ impl JobRunState {
             "CANCELLING",
             "FAILED",
             "PENDING",
+            "QUEUED",
             "RUNNING",
             "SCHEDULED",
             "SUBMITTED",
@@ -142,6 +148,7 @@ impl ::std::fmt::Display for JobRunState {
             JobRunState::Cancelling => write!(f, "CANCELLING"),
             JobRunState::Failed => write!(f, "FAILED"),
             JobRunState::Pending => write!(f, "PENDING"),
+            JobRunState::Queued => write!(f, "QUEUED"),
             JobRunState::Running => write!(f, "RUNNING"),
             JobRunState::Scheduled => write!(f, "SCHEDULED"),
             JobRunState::Submitted => write!(f, "SUBMITTED"),

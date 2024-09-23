@@ -42,6 +42,9 @@ where
                             builder = builder
                                 .set_connection_properties(crate::protocol_serde::shape_connection_properties::de_connection_properties(tokens)?);
                         }
+                        "AthenaProperties" => {
+                            builder = builder.set_athena_properties(crate::protocol_serde::shape_property_map::de_property_map(tokens)?);
+                        }
                         "PhysicalConnectionRequirements" => {
                             builder = builder.set_physical_connection_requirements(
                                 crate::protocol_serde::shape_physical_connection_requirements::de_physical_connection_requirements(tokens)?,

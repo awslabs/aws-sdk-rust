@@ -333,4 +333,18 @@ impl UpdateApplicationFluentBuilder {
     pub fn get_monitoring_configuration(&self) -> &::std::option::Option<crate::types::MonitoringConfiguration> {
         self.inner.get_monitoring_configuration()
     }
+    /// <p>The scheduler configuration for batch and streaming jobs running on this application. Supported with release labels emr-7.0.0 and above.</p>
+    pub fn scheduler_configuration(mut self, input: crate::types::SchedulerConfiguration) -> Self {
+        self.inner = self.inner.scheduler_configuration(input);
+        self
+    }
+    /// <p>The scheduler configuration for batch and streaming jobs running on this application. Supported with release labels emr-7.0.0 and above.</p>
+    pub fn set_scheduler_configuration(mut self, input: ::std::option::Option<crate::types::SchedulerConfiguration>) -> Self {
+        self.inner = self.inner.set_scheduler_configuration(input);
+        self
+    }
+    /// <p>The scheduler configuration for batch and streaming jobs running on this application. Supported with release labels emr-7.0.0 and above.</p>
+    pub fn get_scheduler_configuration(&self) -> &::std::option::Option<crate::types::SchedulerConfiguration> {
+        self.inner.get_scheduler_configuration()
+    }
 }

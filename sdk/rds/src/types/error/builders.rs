@@ -165,8 +165,6 @@ pub use crate::types::error::_db_subnet_quota_exceeded_fault::DbSubnetQuotaExcee
 
 pub use crate::types::error::_shared_snapshot_quota_exceeded_fault::SharedSnapshotQuotaExceededFaultBuilder;
 
-pub use crate::types::error::_invalid_max_acu_fault::InvalidMaxAcuFaultBuilder;
-
 pub use crate::types::error::_db_shard_group_already_exists_fault::DbShardGroupAlreadyExistsFaultBuilder;
 
 pub use crate::types::error::_invalid_db_proxy_endpoint_state_fault::InvalidDbProxyEndpointStateFaultBuilder;

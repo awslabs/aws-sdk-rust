@@ -247,8 +247,6 @@ pub enum CreateDBShardGroupError {
     DbShardGroupAlreadyExistsFault(crate::types::error::DbShardGroupAlreadyExistsFault),
     /// <p>The requested operation can't be performed while the cluster is in this state.</p>
     InvalidDbClusterStateFault(crate::types::error::InvalidDbClusterStateFault),
-    /// <p>The maximum capacity of the DB shard group must be 48-7168 Aurora capacity units (ACUs).</p>
-    InvalidMaxAcuFault(crate::types::error::InvalidMaxAcuFault),
     /// <p>The DB subnet group doesn't cover all Availability Zones after it's created because of users' change.</p>
     InvalidVpcNetworkStateFault(crate::types::error::InvalidVpcNetworkStateFault),
     /// <p>The maximum number of DB shard groups for your Amazon Web Services account in the specified Amazon Web Services Region has been reached.</p>
@@ -291,7 +289,6 @@ impl CreateDBShardGroupError {
             Self::DbClusterNotFoundFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::DbShardGroupAlreadyExistsFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidDbClusterStateFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
-            Self::InvalidMaxAcuFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidVpcNetworkStateFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::MaxDbShardGroupLimitReached(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::UnsupportedDbEngineVersionFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -309,10 +306,6 @@ impl CreateDBShardGroupError {
     /// Returns `true` if the error kind is `CreateDBShardGroupError::InvalidDbClusterStateFault`.
     pub fn is_invalid_db_cluster_state_fault(&self) -> bool {
         matches!(self, Self::InvalidDbClusterStateFault(_))
-    }
-    /// Returns `true` if the error kind is `CreateDBShardGroupError::InvalidMaxAcuFault`.
-    pub fn is_invalid_max_acu_fault(&self) -> bool {
-        matches!(self, Self::InvalidMaxAcuFault(_))
     }
     /// Returns `true` if the error kind is `CreateDBShardGroupError::InvalidVpcNetworkStateFault`.
     pub fn is_invalid_vpc_network_state_fault(&self) -> bool {
@@ -333,7 +326,6 @@ impl ::std::error::Error for CreateDBShardGroupError {
             Self::DbClusterNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
             Self::DbShardGroupAlreadyExistsFault(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidDbClusterStateFault(_inner) => ::std::option::Option::Some(_inner),
-            Self::InvalidMaxAcuFault(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidVpcNetworkStateFault(_inner) => ::std::option::Option::Some(_inner),
             Self::MaxDbShardGroupLimitReached(_inner) => ::std::option::Option::Some(_inner),
             Self::UnsupportedDbEngineVersionFault(_inner) => ::std::option::Option::Some(_inner),
@@ -347,7 +339,6 @@ impl ::std::fmt::Display for CreateDBShardGroupError {
             Self::DbClusterNotFoundFault(_inner) => _inner.fmt(f),
             Self::DbShardGroupAlreadyExistsFault(_inner) => _inner.fmt(f),
             Self::InvalidDbClusterStateFault(_inner) => _inner.fmt(f),
-            Self::InvalidMaxAcuFault(_inner) => _inner.fmt(f),
             Self::InvalidVpcNetworkStateFault(_inner) => _inner.fmt(f),
             Self::MaxDbShardGroupLimitReached(_inner) => _inner.fmt(f),
             Self::UnsupportedDbEngineVersionFault(_inner) => _inner.fmt(f),
@@ -375,7 +366,6 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for CreateDBShard
             Self::DbClusterNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::DbShardGroupAlreadyExistsFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidDbClusterStateFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::InvalidMaxAcuFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidVpcNetworkStateFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::MaxDbShardGroupLimitReached(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::UnsupportedDbEngineVersionFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

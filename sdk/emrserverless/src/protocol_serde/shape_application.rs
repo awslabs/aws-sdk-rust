@@ -130,6 +130,11 @@ where
                                 crate::protocol_serde::shape_interactive_configuration::de_interactive_configuration(tokens)?,
                             );
                         }
+                        "schedulerConfiguration" => {
+                            builder = builder.set_scheduler_configuration(
+                                crate::protocol_serde::shape_scheduler_configuration::de_scheduler_configuration(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

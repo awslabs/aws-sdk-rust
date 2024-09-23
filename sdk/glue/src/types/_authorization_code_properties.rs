@@ -2,7 +2,7 @@
 
 /// <p>The set of properties required for the the OAuth2 <code>AUTHORIZATION_CODE</code> grant type workflow.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct AuthorizationCodeProperties {
     /// <p>An authorization code to be used in the third leg of the <code>AUTHORIZATION_CODE</code> grant workflow. This is a single-use code which becomes invalid once exchanged for an access token, thus it is acceptable to have this value as a request parameter.</p>
     pub authorization_code: ::std::option::Option<::std::string::String>,
@@ -19,6 +19,14 @@ impl AuthorizationCodeProperties {
         self.redirect_uri.as_deref()
     }
 }
+impl ::std::fmt::Debug for AuthorizationCodeProperties {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("AuthorizationCodeProperties");
+        formatter.field("authorization_code", &"*** Sensitive Data Redacted ***");
+        formatter.field("redirect_uri", &self.redirect_uri);
+        formatter.finish()
+    }
+}
 impl AuthorizationCodeProperties {
     /// Creates a new builder-style object to manufacture [`AuthorizationCodeProperties`](crate::types::AuthorizationCodeProperties).
     pub fn builder() -> crate::types::builders::AuthorizationCodePropertiesBuilder {
@@ -27,7 +35,7 @@ impl AuthorizationCodeProperties {
 }
 
 /// A builder for [`AuthorizationCodeProperties`](crate::types::AuthorizationCodeProperties).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct AuthorizationCodePropertiesBuilder {
     pub(crate) authorization_code: ::std::option::Option<::std::string::String>,
@@ -68,5 +76,13 @@ impl AuthorizationCodePropertiesBuilder {
             authorization_code: self.authorization_code,
             redirect_uri: self.redirect_uri,
         }
+    }
+}
+impl ::std::fmt::Debug for AuthorizationCodePropertiesBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("AuthorizationCodePropertiesBuilder");
+        formatter.field("authorization_code", &"*** Sensitive Data Redacted ***");
+        formatter.field("redirect_uri", &self.redirect_uri);
+        formatter.finish()
     }
 }

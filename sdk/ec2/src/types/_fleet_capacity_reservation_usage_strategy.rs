@@ -12,7 +12,9 @@
 /// ```text
 /// # let fleetcapacityreservationusagestrategy = unimplemented!();
 /// match fleetcapacityreservationusagestrategy {
+///     FleetCapacityReservationUsageStrategy::None => { /* ... */ },
 ///     FleetCapacityReservationUsageStrategy::UseCapacityReservationsFirst => { /* ... */ },
+///     FleetCapacityReservationUsageStrategy::UseCapacityReservationsOnly => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -41,7 +43,11 @@
 )]
 pub enum FleetCapacityReservationUsageStrategy {
     #[allow(missing_docs)] // documentation missing in model
+    None,
+    #[allow(missing_docs)] // documentation missing in model
     UseCapacityReservationsFirst,
+    #[allow(missing_docs)] // documentation missing in model
+    UseCapacityReservationsOnly,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -49,7 +55,9 @@ pub enum FleetCapacityReservationUsageStrategy {
 impl ::std::convert::From<&str> for FleetCapacityReservationUsageStrategy {
     fn from(s: &str) -> Self {
         match s {
+            "none" => FleetCapacityReservationUsageStrategy::None,
             "use-capacity-reservations-first" => FleetCapacityReservationUsageStrategy::UseCapacityReservationsFirst,
+            "use-capacity-reservations-only" => FleetCapacityReservationUsageStrategy::UseCapacityReservationsOnly,
             other => FleetCapacityReservationUsageStrategy::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -65,13 +73,15 @@ impl FleetCapacityReservationUsageStrategy {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            FleetCapacityReservationUsageStrategy::None => "none",
             FleetCapacityReservationUsageStrategy::UseCapacityReservationsFirst => "use-capacity-reservations-first",
+            FleetCapacityReservationUsageStrategy::UseCapacityReservationsOnly => "use-capacity-reservations-only",
             FleetCapacityReservationUsageStrategy::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["use-capacity-reservations-first"]
+        &["none", "use-capacity-reservations-first", "use-capacity-reservations-only"]
     }
 }
 impl ::std::convert::AsRef<str> for FleetCapacityReservationUsageStrategy {
@@ -94,7 +104,9 @@ impl FleetCapacityReservationUsageStrategy {
 impl ::std::fmt::Display for FleetCapacityReservationUsageStrategy {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            FleetCapacityReservationUsageStrategy::None => write!(f, "none"),
             FleetCapacityReservationUsageStrategy::UseCapacityReservationsFirst => write!(f, "use-capacity-reservations-first"),
+            FleetCapacityReservationUsageStrategy::UseCapacityReservationsOnly => write!(f, "use-capacity-reservations-only"),
             FleetCapacityReservationUsageStrategy::Unknown(value) => write!(f, "{}", value),
         }
     }

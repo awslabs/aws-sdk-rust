@@ -217,8 +217,6 @@ pub enum Error {
     InvalidGlobalClusterStateFault(crate::types::error::InvalidGlobalClusterStateFault),
     /// <p>The integration is in an invalid state and can't perform the requested operation.</p>
     InvalidIntegrationStateFault(crate::types::error::InvalidIntegrationStateFault),
-    /// <p>The maximum capacity of the DB shard group must be 48-7168 Aurora capacity units (ACUs).</p>
-    InvalidMaxAcuFault(crate::types::error::InvalidMaxAcuFault),
     /// <p>The option group isn't in the <i>available</i> state.</p>
     InvalidOptionGroupStateFault(crate::types::error::InvalidOptionGroupStateFault),
     /// <p>The operation can't be performed because another operation is in progress.</p>
@@ -413,7 +411,6 @@ impl ::std::fmt::Display for Error {
             Error::InvalidExportTaskStateFault(inner) => inner.fmt(f),
             Error::InvalidGlobalClusterStateFault(inner) => inner.fmt(f),
             Error::InvalidIntegrationStateFault(inner) => inner.fmt(f),
-            Error::InvalidMaxAcuFault(inner) => inner.fmt(f),
             Error::InvalidOptionGroupStateFault(inner) => inner.fmt(f),
             Error::InvalidResourceStateFault(inner) => inner.fmt(f),
             Error::InvalidRestoreFault(inner) => inner.fmt(f),
@@ -579,7 +576,6 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::InvalidExportTaskStateFault(inner) => inner.meta(),
             Self::InvalidGlobalClusterStateFault(inner) => inner.meta(),
             Self::InvalidIntegrationStateFault(inner) => inner.meta(),
-            Self::InvalidMaxAcuFault(inner) => inner.meta(),
             Self::InvalidOptionGroupStateFault(inner) => inner.meta(),
             Self::InvalidResourceStateFault(inner) => inner.meta(),
             Self::InvalidRestoreFault(inner) => inner.meta(),
@@ -1657,7 +1653,6 @@ impl From<crate::operation::create_db_shard_group::CreateDBShardGroupError> for 
             crate::operation::create_db_shard_group::CreateDBShardGroupError::InvalidDbClusterStateFault(inner) => {
                 Error::InvalidDbClusterStateFault(inner)
             }
-            crate::operation::create_db_shard_group::CreateDBShardGroupError::InvalidMaxAcuFault(inner) => Error::InvalidMaxAcuFault(inner),
             crate::operation::create_db_shard_group::CreateDBShardGroupError::InvalidVpcNetworkStateFault(inner) => {
                 Error::InvalidVpcNetworkStateFault(inner)
             }
@@ -4597,7 +4592,6 @@ impl From<crate::operation::modify_db_shard_group::ModifyDBShardGroupError> for 
             crate::operation::modify_db_shard_group::ModifyDBShardGroupError::InvalidDbClusterStateFault(inner) => {
                 Error::InvalidDbClusterStateFault(inner)
             }
-            crate::operation::modify_db_shard_group::ModifyDBShardGroupError::InvalidMaxAcuFault(inner) => Error::InvalidMaxAcuFault(inner),
             crate::operation::modify_db_shard_group::ModifyDBShardGroupError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -6412,7 +6406,6 @@ impl ::std::error::Error for Error {
             Error::InvalidExportTaskStateFault(inner) => inner.source(),
             Error::InvalidGlobalClusterStateFault(inner) => inner.source(),
             Error::InvalidIntegrationStateFault(inner) => inner.source(),
-            Error::InvalidMaxAcuFault(inner) => inner.source(),
             Error::InvalidOptionGroupStateFault(inner) => inner.source(),
             Error::InvalidResourceStateFault(inner) => inner.source(),
             Error::InvalidRestoreFault(inner) => inner.source(),
@@ -6564,7 +6557,6 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::InvalidExportTaskStateFault(e) => e.request_id(),
             Self::InvalidGlobalClusterStateFault(e) => e.request_id(),
             Self::InvalidIntegrationStateFault(e) => e.request_id(),
-            Self::InvalidMaxAcuFault(e) => e.request_id(),
             Self::InvalidOptionGroupStateFault(e) => e.request_id(),
             Self::InvalidResourceStateFault(e) => e.request_id(),
             Self::InvalidRestoreFault(e) => e.request_id(),

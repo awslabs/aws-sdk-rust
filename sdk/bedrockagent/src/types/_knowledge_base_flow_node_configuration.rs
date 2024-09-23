@@ -6,7 +6,7 @@
 pub struct KnowledgeBaseFlowNodeConfiguration {
     /// <p>The unique identifier of the knowledge base to query.</p>
     pub knowledge_base_id: ::std::string::String,
-    /// <p>The unique identifier of the model to use to generate a response from the query results. Omit this field if you want to return the retrieved results as an array.</p>
+    /// <p>The unique identifier of the model or <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference.html">inference profile</a> to use to generate a response from the query results. Omit this field if you want to return the retrieved results as an array.</p>
     pub model_id: ::std::option::Option<::std::string::String>,
 }
 impl KnowledgeBaseFlowNodeConfiguration {
@@ -15,7 +15,7 @@ impl KnowledgeBaseFlowNodeConfiguration {
         use std::ops::Deref;
         self.knowledge_base_id.deref()
     }
-    /// <p>The unique identifier of the model to use to generate a response from the query results. Omit this field if you want to return the retrieved results as an array.</p>
+    /// <p>The unique identifier of the model or <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference.html">inference profile</a> to use to generate a response from the query results. Omit this field if you want to return the retrieved results as an array.</p>
     pub fn model_id(&self) -> ::std::option::Option<&str> {
         self.model_id.as_deref()
     }
@@ -50,17 +50,17 @@ impl KnowledgeBaseFlowNodeConfigurationBuilder {
     pub fn get_knowledge_base_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.knowledge_base_id
     }
-    /// <p>The unique identifier of the model to use to generate a response from the query results. Omit this field if you want to return the retrieved results as an array.</p>
+    /// <p>The unique identifier of the model or <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference.html">inference profile</a> to use to generate a response from the query results. Omit this field if you want to return the retrieved results as an array.</p>
     pub fn model_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier of the model to use to generate a response from the query results. Omit this field if you want to return the retrieved results as an array.</p>
+    /// <p>The unique identifier of the model or <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference.html">inference profile</a> to use to generate a response from the query results. Omit this field if you want to return the retrieved results as an array.</p>
     pub fn set_model_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model_id = input;
         self
     }
-    /// <p>The unique identifier of the model to use to generate a response from the query results. Omit this field if you want to return the retrieved results as an array.</p>
+    /// <p>The unique identifier of the model or <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference.html">inference profile</a> to use to generate a response from the query results. Omit this field if you want to return the retrieved results as an array.</p>
     pub fn get_model_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.model_id
     }

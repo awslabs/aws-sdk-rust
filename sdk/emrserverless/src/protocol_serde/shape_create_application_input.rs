@@ -82,31 +82,37 @@ pub fn ser_create_application_input_input(
         }
         array_25.finish();
     }
-    if let Some(var_28) = &input.tags {
+    if let Some(var_28) = &input.scheduler_configuration {
         #[allow(unused_mut)]
-        let mut object_29 = object.key("tags").start_object();
-        for (key_30, value_31) in var_28 {
-            {
-                object_29.key(key_30.as_str()).string(value_31.as_str());
-            }
-        }
+        let mut object_29 = object.key("schedulerConfiguration").start_object();
+        crate::protocol_serde::shape_scheduler_configuration::ser_scheduler_configuration(&mut object_29, var_28)?;
         object_29.finish();
     }
-    if let Some(var_32) = &input.r#type {
-        object.key("type").string(var_32.as_str());
-    }
-    if let Some(var_33) = &input.worker_type_specifications {
+    if let Some(var_30) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_34 = object.key("workerTypeSpecifications").start_object();
-        for (key_35, value_36) in var_33 {
+        let mut object_31 = object.key("tags").start_object();
+        for (key_32, value_33) in var_30 {
             {
-                #[allow(unused_mut)]
-                let mut object_37 = object_34.key(key_35.as_str()).start_object();
-                crate::protocol_serde::shape_worker_type_specification_input::ser_worker_type_specification_input(&mut object_37, value_36)?;
-                object_37.finish();
+                object_31.key(key_32.as_str()).string(value_33.as_str());
             }
         }
-        object_34.finish();
+        object_31.finish();
+    }
+    if let Some(var_34) = &input.r#type {
+        object.key("type").string(var_34.as_str());
+    }
+    if let Some(var_35) = &input.worker_type_specifications {
+        #[allow(unused_mut)]
+        let mut object_36 = object.key("workerTypeSpecifications").start_object();
+        for (key_37, value_38) in var_35 {
+            {
+                #[allow(unused_mut)]
+                let mut object_39 = object_36.key(key_37.as_str()).start_object();
+                crate::protocol_serde::shape_worker_type_specification_input::ser_worker_type_specification_input(&mut object_39, value_38)?;
+                object_39.finish();
+            }
+        }
+        object_36.finish();
     }
     Ok(())
 }

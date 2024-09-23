@@ -247,8 +247,6 @@ pub enum ModifyDBShardGroupError {
     DbShardGroupNotFoundFault(crate::types::error::DbShardGroupNotFoundFault),
     /// <p>The requested operation can't be performed while the cluster is in this state.</p>
     InvalidDbClusterStateFault(crate::types::error::InvalidDbClusterStateFault),
-    /// <p>The maximum capacity of the DB shard group must be 48-7168 Aurora capacity units (ACUs).</p>
-    InvalidMaxAcuFault(crate::types::error::InvalidMaxAcuFault),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \
     variable wildcard pattern and check `.code()`:
@@ -285,7 +283,6 @@ impl ModifyDBShardGroupError {
             Self::DbShardGroupAlreadyExistsFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::DbShardGroupNotFoundFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidDbClusterStateFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
-            Self::InvalidMaxAcuFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
     }
@@ -301,10 +298,6 @@ impl ModifyDBShardGroupError {
     pub fn is_invalid_db_cluster_state_fault(&self) -> bool {
         matches!(self, Self::InvalidDbClusterStateFault(_))
     }
-    /// Returns `true` if the error kind is `ModifyDBShardGroupError::InvalidMaxAcuFault`.
-    pub fn is_invalid_max_acu_fault(&self) -> bool {
-        matches!(self, Self::InvalidMaxAcuFault(_))
-    }
 }
 impl ::std::error::Error for ModifyDBShardGroupError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
@@ -312,7 +305,6 @@ impl ::std::error::Error for ModifyDBShardGroupError {
             Self::DbShardGroupAlreadyExistsFault(_inner) => ::std::option::Option::Some(_inner),
             Self::DbShardGroupNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidDbClusterStateFault(_inner) => ::std::option::Option::Some(_inner),
-            Self::InvalidMaxAcuFault(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
         }
     }
@@ -323,7 +315,6 @@ impl ::std::fmt::Display for ModifyDBShardGroupError {
             Self::DbShardGroupAlreadyExistsFault(_inner) => _inner.fmt(f),
             Self::DbShardGroupNotFoundFault(_inner) => _inner.fmt(f),
             Self::InvalidDbClusterStateFault(_inner) => _inner.fmt(f),
-            Self::InvalidMaxAcuFault(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
                     write!(f, "unhandled error ({code})")
@@ -348,7 +339,6 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for ModifyDBShard
             Self::DbShardGroupAlreadyExistsFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::DbShardGroupNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidDbClusterStateFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::InvalidMaxAcuFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,
         }
     }

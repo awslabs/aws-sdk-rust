@@ -79,18 +79,24 @@ pub fn ser_update_application_input_input(
         }
         array_24.finish();
     }
-    if let Some(var_27) = &input.worker_type_specifications {
+    if let Some(var_27) = &input.scheduler_configuration {
         #[allow(unused_mut)]
-        let mut object_28 = object.key("workerTypeSpecifications").start_object();
-        for (key_29, value_30) in var_27 {
+        let mut object_28 = object.key("schedulerConfiguration").start_object();
+        crate::protocol_serde::shape_scheduler_configuration::ser_scheduler_configuration(&mut object_28, var_27)?;
+        object_28.finish();
+    }
+    if let Some(var_29) = &input.worker_type_specifications {
+        #[allow(unused_mut)]
+        let mut object_30 = object.key("workerTypeSpecifications").start_object();
+        for (key_31, value_32) in var_29 {
             {
                 #[allow(unused_mut)]
-                let mut object_31 = object_28.key(key_29.as_str()).start_object();
-                crate::protocol_serde::shape_worker_type_specification_input::ser_worker_type_specification_input(&mut object_31, value_30)?;
-                object_31.finish();
+                let mut object_33 = object_30.key(key_31.as_str()).start_object();
+                crate::protocol_serde::shape_worker_type_specification_input::ser_worker_type_specification_input(&mut object_33, value_32)?;
+                object_33.finish();
             }
         }
-        object_28.finish();
+        object_30.finish();
     }
     Ok(())
 }

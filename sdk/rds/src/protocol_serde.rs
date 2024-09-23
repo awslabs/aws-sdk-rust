@@ -889,8 +889,6 @@ pub(crate) mod shape_invalid_global_cluster_state_fault;
 
 pub(crate) mod shape_invalid_integration_state_fault;
 
-pub(crate) mod shape_invalid_max_acu_fault;
-
 pub(crate) mod shape_invalid_option_group_state_fault;
 
 pub(crate) mod shape_invalid_resource_state_fault;

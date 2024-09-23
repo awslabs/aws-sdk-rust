@@ -8,6 +8,42 @@ pub struct DataCatalogSummary {
     pub catalog_name: ::std::option::Option<::std::string::String>,
     /// <p>The data catalog type.</p>
     pub r#type: ::std::option::Option<crate::types::DataCatalogType>,
+    /// <p>The status of the creation or deletion of the data catalog.</p>
+    /// <ul>
+    /// <li>
+    /// <p>The <code>LAMBDA</code>, <code>GLUE</code>, and <code>HIVE</code> data catalog types are created synchronously. Their status is either <code>CREATE_COMPLETE</code> or <code>CREATE_FAILED</code>.</p></li>
+    /// <li>
+    /// <p>The <code>FEDERATED</code> data catalog type is created asynchronously.</p></li>
+    /// </ul>
+    /// <p>Data catalog creation status:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>CREATE_IN_PROGRESS</code>: Federated data catalog creation in progress.</p></li>
+    /// <li>
+    /// <p><code>CREATE_COMPLETE</code>: Data catalog creation complete.</p></li>
+    /// <li>
+    /// <p><code>CREATE_FAILED</code>: Data catalog could not be created.</p></li>
+    /// <li>
+    /// <p><code>CREATE_FAILED_CLEANUP_IN_PROGRESS</code>: Federated data catalog creation failed and is being removed.</p></li>
+    /// <li>
+    /// <p><code>CREATE_FAILED_CLEANUP_COMPLETE</code>: Federated data catalog creation failed and was removed.</p></li>
+    /// <li>
+    /// <p><code>CREATE_FAILED_CLEANUP_FAILED</code>: Federated data catalog creation failed but could not be removed.</p></li>
+    /// </ul>
+    /// <p>Data catalog deletion status:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DELETE_IN_PROGRESS</code>: Federated data catalog deletion in progress.</p></li>
+    /// <li>
+    /// <p><code>DELETE_COMPLETE</code>: Federated data catalog deleted.</p></li>
+    /// <li>
+    /// <p><code>DELETE_FAILED</code>: Federated data catalog could not be deleted.</p></li>
+    /// </ul>
+    pub status: ::std::option::Option<crate::types::DataCatalogStatus>,
+    /// <p>The type of connection for a <code>FEDERATED</code> data catalog (for example, <code>REDSHIFT</code>, <code>MYSQL</code>, or <code>SQLSERVER</code>). For information about individual connectors, see <a href="https://docs.aws.amazon.com/athena/latest/ug/connectors-available.html">Available data source connectors</a>.</p>
+    pub connection_type: ::std::option::Option<crate::types::ConnectionType>,
+    /// <p>Text of the error that occurred during data catalog creation or deletion.</p>
+    pub error: ::std::option::Option<::std::string::String>,
 }
 impl DataCatalogSummary {
     /// <p>The name of the data catalog. The catalog name is unique for the Amazon Web Services account and can use a maximum of 127 alphanumeric, underscore, at sign, or hyphen characters. The remainder of the length constraint of 256 is reserved for use by Athena.</p>
@@ -17,6 +53,48 @@ impl DataCatalogSummary {
     /// <p>The data catalog type.</p>
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::DataCatalogType> {
         self.r#type.as_ref()
+    }
+    /// <p>The status of the creation or deletion of the data catalog.</p>
+    /// <ul>
+    /// <li>
+    /// <p>The <code>LAMBDA</code>, <code>GLUE</code>, and <code>HIVE</code> data catalog types are created synchronously. Their status is either <code>CREATE_COMPLETE</code> or <code>CREATE_FAILED</code>.</p></li>
+    /// <li>
+    /// <p>The <code>FEDERATED</code> data catalog type is created asynchronously.</p></li>
+    /// </ul>
+    /// <p>Data catalog creation status:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>CREATE_IN_PROGRESS</code>: Federated data catalog creation in progress.</p></li>
+    /// <li>
+    /// <p><code>CREATE_COMPLETE</code>: Data catalog creation complete.</p></li>
+    /// <li>
+    /// <p><code>CREATE_FAILED</code>: Data catalog could not be created.</p></li>
+    /// <li>
+    /// <p><code>CREATE_FAILED_CLEANUP_IN_PROGRESS</code>: Federated data catalog creation failed and is being removed.</p></li>
+    /// <li>
+    /// <p><code>CREATE_FAILED_CLEANUP_COMPLETE</code>: Federated data catalog creation failed and was removed.</p></li>
+    /// <li>
+    /// <p><code>CREATE_FAILED_CLEANUP_FAILED</code>: Federated data catalog creation failed but could not be removed.</p></li>
+    /// </ul>
+    /// <p>Data catalog deletion status:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DELETE_IN_PROGRESS</code>: Federated data catalog deletion in progress.</p></li>
+    /// <li>
+    /// <p><code>DELETE_COMPLETE</code>: Federated data catalog deleted.</p></li>
+    /// <li>
+    /// <p><code>DELETE_FAILED</code>: Federated data catalog could not be deleted.</p></li>
+    /// </ul>
+    pub fn status(&self) -> ::std::option::Option<&crate::types::DataCatalogStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The type of connection for a <code>FEDERATED</code> data catalog (for example, <code>REDSHIFT</code>, <code>MYSQL</code>, or <code>SQLSERVER</code>). For information about individual connectors, see <a href="https://docs.aws.amazon.com/athena/latest/ug/connectors-available.html">Available data source connectors</a>.</p>
+    pub fn connection_type(&self) -> ::std::option::Option<&crate::types::ConnectionType> {
+        self.connection_type.as_ref()
+    }
+    /// <p>Text of the error that occurred during data catalog creation or deletion.</p>
+    pub fn error(&self) -> ::std::option::Option<&str> {
+        self.error.as_deref()
     }
 }
 impl DataCatalogSummary {
@@ -32,6 +110,9 @@ impl DataCatalogSummary {
 pub struct DataCatalogSummaryBuilder {
     pub(crate) catalog_name: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::DataCatalogType>,
+    pub(crate) status: ::std::option::Option<crate::types::DataCatalogStatus>,
+    pub(crate) connection_type: ::std::option::Option<crate::types::ConnectionType>,
+    pub(crate) error: ::std::option::Option<::std::string::String>,
 }
 impl DataCatalogSummaryBuilder {
     /// <p>The name of the data catalog. The catalog name is unique for the Amazon Web Services account and can use a maximum of 127 alphanumeric, underscore, at sign, or hyphen characters. The remainder of the length constraint of 256 is reserved for use by Athena.</p>
@@ -62,11 +143,146 @@ impl DataCatalogSummaryBuilder {
     pub fn get_type(&self) -> &::std::option::Option<crate::types::DataCatalogType> {
         &self.r#type
     }
+    /// <p>The status of the creation or deletion of the data catalog.</p>
+    /// <ul>
+    /// <li>
+    /// <p>The <code>LAMBDA</code>, <code>GLUE</code>, and <code>HIVE</code> data catalog types are created synchronously. Their status is either <code>CREATE_COMPLETE</code> or <code>CREATE_FAILED</code>.</p></li>
+    /// <li>
+    /// <p>The <code>FEDERATED</code> data catalog type is created asynchronously.</p></li>
+    /// </ul>
+    /// <p>Data catalog creation status:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>CREATE_IN_PROGRESS</code>: Federated data catalog creation in progress.</p></li>
+    /// <li>
+    /// <p><code>CREATE_COMPLETE</code>: Data catalog creation complete.</p></li>
+    /// <li>
+    /// <p><code>CREATE_FAILED</code>: Data catalog could not be created.</p></li>
+    /// <li>
+    /// <p><code>CREATE_FAILED_CLEANUP_IN_PROGRESS</code>: Federated data catalog creation failed and is being removed.</p></li>
+    /// <li>
+    /// <p><code>CREATE_FAILED_CLEANUP_COMPLETE</code>: Federated data catalog creation failed and was removed.</p></li>
+    /// <li>
+    /// <p><code>CREATE_FAILED_CLEANUP_FAILED</code>: Federated data catalog creation failed but could not be removed.</p></li>
+    /// </ul>
+    /// <p>Data catalog deletion status:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DELETE_IN_PROGRESS</code>: Federated data catalog deletion in progress.</p></li>
+    /// <li>
+    /// <p><code>DELETE_COMPLETE</code>: Federated data catalog deleted.</p></li>
+    /// <li>
+    /// <p><code>DELETE_FAILED</code>: Federated data catalog could not be deleted.</p></li>
+    /// </ul>
+    pub fn status(mut self, input: crate::types::DataCatalogStatus) -> Self {
+        self.status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The status of the creation or deletion of the data catalog.</p>
+    /// <ul>
+    /// <li>
+    /// <p>The <code>LAMBDA</code>, <code>GLUE</code>, and <code>HIVE</code> data catalog types are created synchronously. Their status is either <code>CREATE_COMPLETE</code> or <code>CREATE_FAILED</code>.</p></li>
+    /// <li>
+    /// <p>The <code>FEDERATED</code> data catalog type is created asynchronously.</p></li>
+    /// </ul>
+    /// <p>Data catalog creation status:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>CREATE_IN_PROGRESS</code>: Federated data catalog creation in progress.</p></li>
+    /// <li>
+    /// <p><code>CREATE_COMPLETE</code>: Data catalog creation complete.</p></li>
+    /// <li>
+    /// <p><code>CREATE_FAILED</code>: Data catalog could not be created.</p></li>
+    /// <li>
+    /// <p><code>CREATE_FAILED_CLEANUP_IN_PROGRESS</code>: Federated data catalog creation failed and is being removed.</p></li>
+    /// <li>
+    /// <p><code>CREATE_FAILED_CLEANUP_COMPLETE</code>: Federated data catalog creation failed and was removed.</p></li>
+    /// <li>
+    /// <p><code>CREATE_FAILED_CLEANUP_FAILED</code>: Federated data catalog creation failed but could not be removed.</p></li>
+    /// </ul>
+    /// <p>Data catalog deletion status:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DELETE_IN_PROGRESS</code>: Federated data catalog deletion in progress.</p></li>
+    /// <li>
+    /// <p><code>DELETE_COMPLETE</code>: Federated data catalog deleted.</p></li>
+    /// <li>
+    /// <p><code>DELETE_FAILED</code>: Federated data catalog could not be deleted.</p></li>
+    /// </ul>
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::DataCatalogStatus>) -> Self {
+        self.status = input;
+        self
+    }
+    /// <p>The status of the creation or deletion of the data catalog.</p>
+    /// <ul>
+    /// <li>
+    /// <p>The <code>LAMBDA</code>, <code>GLUE</code>, and <code>HIVE</code> data catalog types are created synchronously. Their status is either <code>CREATE_COMPLETE</code> or <code>CREATE_FAILED</code>.</p></li>
+    /// <li>
+    /// <p>The <code>FEDERATED</code> data catalog type is created asynchronously.</p></li>
+    /// </ul>
+    /// <p>Data catalog creation status:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>CREATE_IN_PROGRESS</code>: Federated data catalog creation in progress.</p></li>
+    /// <li>
+    /// <p><code>CREATE_COMPLETE</code>: Data catalog creation complete.</p></li>
+    /// <li>
+    /// <p><code>CREATE_FAILED</code>: Data catalog could not be created.</p></li>
+    /// <li>
+    /// <p><code>CREATE_FAILED_CLEANUP_IN_PROGRESS</code>: Federated data catalog creation failed and is being removed.</p></li>
+    /// <li>
+    /// <p><code>CREATE_FAILED_CLEANUP_COMPLETE</code>: Federated data catalog creation failed and was removed.</p></li>
+    /// <li>
+    /// <p><code>CREATE_FAILED_CLEANUP_FAILED</code>: Federated data catalog creation failed but could not be removed.</p></li>
+    /// </ul>
+    /// <p>Data catalog deletion status:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DELETE_IN_PROGRESS</code>: Federated data catalog deletion in progress.</p></li>
+    /// <li>
+    /// <p><code>DELETE_COMPLETE</code>: Federated data catalog deleted.</p></li>
+    /// <li>
+    /// <p><code>DELETE_FAILED</code>: Federated data catalog could not be deleted.</p></li>
+    /// </ul>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::DataCatalogStatus> {
+        &self.status
+    }
+    /// <p>The type of connection for a <code>FEDERATED</code> data catalog (for example, <code>REDSHIFT</code>, <code>MYSQL</code>, or <code>SQLSERVER</code>). For information about individual connectors, see <a href="https://docs.aws.amazon.com/athena/latest/ug/connectors-available.html">Available data source connectors</a>.</p>
+    pub fn connection_type(mut self, input: crate::types::ConnectionType) -> Self {
+        self.connection_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The type of connection for a <code>FEDERATED</code> data catalog (for example, <code>REDSHIFT</code>, <code>MYSQL</code>, or <code>SQLSERVER</code>). For information about individual connectors, see <a href="https://docs.aws.amazon.com/athena/latest/ug/connectors-available.html">Available data source connectors</a>.</p>
+    pub fn set_connection_type(mut self, input: ::std::option::Option<crate::types::ConnectionType>) -> Self {
+        self.connection_type = input;
+        self
+    }
+    /// <p>The type of connection for a <code>FEDERATED</code> data catalog (for example, <code>REDSHIFT</code>, <code>MYSQL</code>, or <code>SQLSERVER</code>). For information about individual connectors, see <a href="https://docs.aws.amazon.com/athena/latest/ug/connectors-available.html">Available data source connectors</a>.</p>
+    pub fn get_connection_type(&self) -> &::std::option::Option<crate::types::ConnectionType> {
+        &self.connection_type
+    }
+    /// <p>Text of the error that occurred during data catalog creation or deletion.</p>
+    pub fn error(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.error = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Text of the error that occurred during data catalog creation or deletion.</p>
+    pub fn set_error(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.error = input;
+        self
+    }
+    /// <p>Text of the error that occurred during data catalog creation or deletion.</p>
+    pub fn get_error(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error
+    }
     /// Consumes the builder and constructs a [`DataCatalogSummary`](crate::types::DataCatalogSummary).
     pub fn build(self) -> crate::types::DataCatalogSummary {
         crate::types::DataCatalogSummary {
             catalog_name: self.catalog_name,
             r#type: self.r#type,
+            status: self.status,
+            connection_type: self.connection_type,
+            error: self.error,
         }
     }
 }

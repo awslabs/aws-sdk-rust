@@ -1617,6 +1617,8 @@ pub(crate) mod shape_principal_permissions;
 
 pub(crate) mod shape_principal_permissions_list;
 
+pub(crate) mod shape_property_map;
+
 pub(crate) mod shape_public_keys_list;
 
 pub(crate) mod shape_recipe;

@@ -10,7 +10,7 @@ pub struct GetDomainNameOutput {
     pub certificate_name: ::std::option::Option<::std::string::String>,
     /// <p>The reference to an Amazon Web Services-managed certificate that will be used by edge-optimized endpoint for this domain name. Certificate Manager is the only supported source.</p>
     pub certificate_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The timestamp when the certificate that was used by edge-optimized endpoint for this domain name was uploaded.</p>
+    /// <p>The timestamp when the certificate that was used by edge-optimized endpoint for this domain name was uploaded. API Gateway doesn't change this value if you update the certificate.</p>
     pub certificate_upload_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The domain name associated with the regional endpoint for this custom domain name. You set up this association by adding a DNS record that points the custom domain name to this regional domain name. The regional domain name is returned by API Gateway when you create a regional endpoint.</p>
     pub regional_domain_name: ::std::option::Option<::std::string::String>,
@@ -53,7 +53,7 @@ impl GetDomainNameOutput {
     pub fn certificate_arn(&self) -> ::std::option::Option<&str> {
         self.certificate_arn.as_deref()
     }
-    /// <p>The timestamp when the certificate that was used by edge-optimized endpoint for this domain name was uploaded.</p>
+    /// <p>The timestamp when the certificate that was used by edge-optimized endpoint for this domain name was uploaded. API Gateway doesn't change this value if you update the certificate.</p>
     pub fn certificate_upload_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.certificate_upload_date.as_ref()
     }
@@ -188,17 +188,17 @@ impl GetDomainNameOutputBuilder {
     pub fn get_certificate_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.certificate_arn
     }
-    /// <p>The timestamp when the certificate that was used by edge-optimized endpoint for this domain name was uploaded.</p>
+    /// <p>The timestamp when the certificate that was used by edge-optimized endpoint for this domain name was uploaded. API Gateway doesn't change this value if you update the certificate.</p>
     pub fn certificate_upload_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.certificate_upload_date = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The timestamp when the certificate that was used by edge-optimized endpoint for this domain name was uploaded.</p>
+    /// <p>The timestamp when the certificate that was used by edge-optimized endpoint for this domain name was uploaded. API Gateway doesn't change this value if you update the certificate.</p>
     pub fn set_certificate_upload_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.certificate_upload_date = input;
         self
     }
-    /// <p>The timestamp when the certificate that was used by edge-optimized endpoint for this domain name was uploaded.</p>
+    /// <p>The timestamp when the certificate that was used by edge-optimized endpoint for this domain name was uploaded. API Gateway doesn't change this value if you update the certificate.</p>
     pub fn get_certificate_upload_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.certificate_upload_date
     }

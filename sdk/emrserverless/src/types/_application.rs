@@ -46,6 +46,8 @@ pub struct Application {
     pub monitoring_configuration: ::std::option::Option<crate::types::MonitoringConfiguration>,
     /// <p>The interactive configuration object that enables the interactive use cases for an application.</p>
     pub interactive_configuration: ::std::option::Option<crate::types::InteractiveConfiguration>,
+    /// <p>The scheduler configuration for batch and streaming jobs running on this application. Supported with release labels emr-7.0.0 and above.</p>
+    pub scheduler_configuration: ::std::option::Option<crate::types::SchedulerConfiguration>,
 }
 impl Application {
     /// <p>The ID of the application.</p>
@@ -142,6 +144,10 @@ impl Application {
     pub fn interactive_configuration(&self) -> ::std::option::Option<&crate::types::InteractiveConfiguration> {
         self.interactive_configuration.as_ref()
     }
+    /// <p>The scheduler configuration for batch and streaming jobs running on this application. Supported with release labels emr-7.0.0 and above.</p>
+    pub fn scheduler_configuration(&self) -> ::std::option::Option<&crate::types::SchedulerConfiguration> {
+        self.scheduler_configuration.as_ref()
+    }
 }
 impl Application {
     /// Creates a new builder-style object to manufacture [`Application`](crate::types::Application).
@@ -176,6 +182,7 @@ pub struct ApplicationBuilder {
     pub(crate) runtime_configuration: ::std::option::Option<::std::vec::Vec<crate::types::Configuration>>,
     pub(crate) monitoring_configuration: ::std::option::Option<crate::types::MonitoringConfiguration>,
     pub(crate) interactive_configuration: ::std::option::Option<crate::types::InteractiveConfiguration>,
+    pub(crate) scheduler_configuration: ::std::option::Option<crate::types::SchedulerConfiguration>,
 }
 impl ApplicationBuilder {
     /// <p>The ID of the application.</p>
@@ -517,6 +524,20 @@ impl ApplicationBuilder {
     pub fn get_interactive_configuration(&self) -> &::std::option::Option<crate::types::InteractiveConfiguration> {
         &self.interactive_configuration
     }
+    /// <p>The scheduler configuration for batch and streaming jobs running on this application. Supported with release labels emr-7.0.0 and above.</p>
+    pub fn scheduler_configuration(mut self, input: crate::types::SchedulerConfiguration) -> Self {
+        self.scheduler_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The scheduler configuration for batch and streaming jobs running on this application. Supported with release labels emr-7.0.0 and above.</p>
+    pub fn set_scheduler_configuration(mut self, input: ::std::option::Option<crate::types::SchedulerConfiguration>) -> Self {
+        self.scheduler_configuration = input;
+        self
+    }
+    /// <p>The scheduler configuration for batch and streaming jobs running on this application. Supported with release labels emr-7.0.0 and above.</p>
+    pub fn get_scheduler_configuration(&self) -> &::std::option::Option<crate::types::SchedulerConfiguration> {
+        &self.scheduler_configuration
+    }
     /// Consumes the builder and constructs a [`Application`](crate::types::Application).
     /// This method will fail if any of the following fields are not set:
     /// - [`application_id`](crate::types::builders::ApplicationBuilder::application_id)
@@ -584,6 +605,7 @@ impl ApplicationBuilder {
             runtime_configuration: self.runtime_configuration,
             monitoring_configuration: self.monitoring_configuration,
             interactive_configuration: self.interactive_configuration,
+            scheduler_configuration: self.scheduler_configuration,
         })
     }
 }

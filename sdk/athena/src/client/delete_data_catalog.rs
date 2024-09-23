@@ -4,7 +4,8 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`name(impl Into<String>)`](crate::operation::delete_data_catalog::builders::DeleteDataCatalogFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::delete_data_catalog::builders::DeleteDataCatalogFluentBuilder::set_name):<br>required: **true**<br><p>The name of the data catalog to delete.</p><br>
-    /// - On success, responds with [`DeleteDataCatalogOutput`](crate::operation::delete_data_catalog::DeleteDataCatalogOutput)
+    /// - On success, responds with [`DeleteDataCatalogOutput`](crate::operation::delete_data_catalog::DeleteDataCatalogOutput) with field(s):
+    ///   - [`data_catalog(Option<DataCatalog>)`](crate::operation::delete_data_catalog::DeleteDataCatalogOutput::data_catalog): <p>Contains information about a data catalog in an Amazon Web Services account.</p><note>  <p>In the Athena console, data catalogs are listed as "data sources" on the <b>Data sources</b> page under the <b>Data source name</b> column.</p> </note>
     /// - On failure, responds with [`SdkError<DeleteDataCatalogError>`](crate::operation::delete_data_catalog::DeleteDataCatalogError)
     pub fn delete_data_catalog(&self) -> crate::operation::delete_data_catalog::builders::DeleteDataCatalogFluentBuilder {
         crate::operation::delete_data_catalog::builders::DeleteDataCatalogFluentBuilder::new(self.handle.clone())

@@ -5,7 +5,7 @@
 pub struct CreateDataCatalogInput {
     /// <p>The name of the data catalog to create. The catalog name must be unique for the Amazon Web Services account and can use a maximum of 127 alphanumeric, underscore, at sign, or hyphen characters. The remainder of the length constraint of 256 is reserved for use by Athena.</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>The type of data catalog to create: <code>LAMBDA</code> for a federated catalog, <code>HIVE</code> for an external hive metastore, or <code>GLUE</code> for an Glue Data Catalog.</p>
+    /// <p>The type of data catalog to create: <code>LAMBDA</code> for a federated catalog, <code>GLUE</code> for an Glue Data Catalog, and <code>HIVE</code> for an external Apache Hive metastore. <code>FEDERATED</code> is a federated catalog for which Athena creates the connection and the Lambda function for you based on the parameters that you pass.</p>
     pub r#type: ::std::option::Option<crate::types::DataCatalogType>,
     /// <p>A description of the data catalog to be created.</p>
     pub description: ::std::option::Option<::std::string::String>,
@@ -31,6 +31,18 @@ pub struct CreateDataCatalogInput {
     /// <li>
     /// <p>The <code>GLUE</code> data catalog type also applies to the default <code>AwsDataCatalog</code> that already exists in your account, of which you can have only one and cannot modify.</p></li>
     /// </ul></li>
+    /// <li>
+    /// <p>The <code>FEDERATED</code> data catalog type uses one of the following parameters, but not both. Use <code>connection-arn</code> for an existing Glue connection. Use <code>connection-type</code> and <code>connection-properties</code> to specify the configuration setting for a new connection.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>connection-arn:<i><glue_connection_arn_to_reuse></glue_connection_arn_to_reuse></i> </code></p></li>
+    /// <li>
+    /// <p><code>lambda-role-arn</code> (optional): The execution role to use for the Lambda function. If not provided, one is created.</p></li>
+    /// <li>
+    /// <p><code>connection-type:MYSQL|REDSHIFT|...., connection-properties:"<i><json_string></json_string></i>"</code></p>
+    /// <p>For <i> <code><json_string></json_string></code> </i>, use escaped JSON text, as in the following example.</p>
+    /// <p><code>"{\"spill_bucket\":\"my_spill\",\"spill_prefix\":\"athena-spill\",\"host\":\"abc12345.snowflakecomputing.com\",\"port\":\"1234\",\"warehouse\":\"DEV_WH\",\"database\":\"TEST\",\"schema\":\"PUBLIC\",\"SecretArn\":\"arn:aws:secretsmanager:ap-south-1:111122223333:secret:snowflake-XHb67j\"}"</code></p></li>
+    /// </ul></li>
     /// </ul>
     pub parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>A list of comma separated tags to add to the data catalog that is created.</p>
@@ -41,7 +53,7 @@ impl CreateDataCatalogInput {
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The type of data catalog to create: <code>LAMBDA</code> for a federated catalog, <code>HIVE</code> for an external hive metastore, or <code>GLUE</code> for an Glue Data Catalog.</p>
+    /// <p>The type of data catalog to create: <code>LAMBDA</code> for a federated catalog, <code>GLUE</code> for an Glue Data Catalog, and <code>HIVE</code> for an external Apache Hive metastore. <code>FEDERATED</code> is a federated catalog for which Athena creates the connection and the Lambda function for you based on the parameters that you pass.</p>
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::DataCatalogType> {
         self.r#type.as_ref()
     }
@@ -70,6 +82,18 @@ impl CreateDataCatalogInput {
     /// <ul>
     /// <li>
     /// <p>The <code>GLUE</code> data catalog type also applies to the default <code>AwsDataCatalog</code> that already exists in your account, of which you can have only one and cannot modify.</p></li>
+    /// </ul></li>
+    /// <li>
+    /// <p>The <code>FEDERATED</code> data catalog type uses one of the following parameters, but not both. Use <code>connection-arn</code> for an existing Glue connection. Use <code>connection-type</code> and <code>connection-properties</code> to specify the configuration setting for a new connection.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>connection-arn:<i><glue_connection_arn_to_reuse></glue_connection_arn_to_reuse></i> </code></p></li>
+    /// <li>
+    /// <p><code>lambda-role-arn</code> (optional): The execution role to use for the Lambda function. If not provided, one is created.</p></li>
+    /// <li>
+    /// <p><code>connection-type:MYSQL|REDSHIFT|...., connection-properties:"<i><json_string></json_string></i>"</code></p>
+    /// <p>For <i> <code><json_string></json_string></code> </i>, use escaped JSON text, as in the following example.</p>
+    /// <p><code>"{\"spill_bucket\":\"my_spill\",\"spill_prefix\":\"athena-spill\",\"host\":\"abc12345.snowflakecomputing.com\",\"port\":\"1234\",\"warehouse\":\"DEV_WH\",\"database\":\"TEST\",\"schema\":\"PUBLIC\",\"SecretArn\":\"arn:aws:secretsmanager:ap-south-1:111122223333:secret:snowflake-XHb67j\"}"</code></p></li>
     /// </ul></li>
     /// </ul>
     pub fn parameters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -115,18 +139,18 @@ impl CreateDataCatalogInputBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>The type of data catalog to create: <code>LAMBDA</code> for a federated catalog, <code>HIVE</code> for an external hive metastore, or <code>GLUE</code> for an Glue Data Catalog.</p>
+    /// <p>The type of data catalog to create: <code>LAMBDA</code> for a federated catalog, <code>GLUE</code> for an Glue Data Catalog, and <code>HIVE</code> for an external Apache Hive metastore. <code>FEDERATED</code> is a federated catalog for which Athena creates the connection and the Lambda function for you based on the parameters that you pass.</p>
     /// This field is required.
     pub fn r#type(mut self, input: crate::types::DataCatalogType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of data catalog to create: <code>LAMBDA</code> for a federated catalog, <code>HIVE</code> for an external hive metastore, or <code>GLUE</code> for an Glue Data Catalog.</p>
+    /// <p>The type of data catalog to create: <code>LAMBDA</code> for a federated catalog, <code>GLUE</code> for an Glue Data Catalog, and <code>HIVE</code> for an external Apache Hive metastore. <code>FEDERATED</code> is a federated catalog for which Athena creates the connection and the Lambda function for you based on the parameters that you pass.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::DataCatalogType>) -> Self {
         self.r#type = input;
         self
     }
-    /// <p>The type of data catalog to create: <code>LAMBDA</code> for a federated catalog, <code>HIVE</code> for an external hive metastore, or <code>GLUE</code> for an Glue Data Catalog.</p>
+    /// <p>The type of data catalog to create: <code>LAMBDA</code> for a federated catalog, <code>GLUE</code> for an Glue Data Catalog, and <code>HIVE</code> for an external Apache Hive metastore. <code>FEDERATED</code> is a federated catalog for which Athena creates the connection and the Lambda function for you based on the parameters that you pass.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::DataCatalogType> {
         &self.r#type
     }
@@ -170,6 +194,18 @@ impl CreateDataCatalogInputBuilder {
     /// <li>
     /// <p>The <code>GLUE</code> data catalog type also applies to the default <code>AwsDataCatalog</code> that already exists in your account, of which you can have only one and cannot modify.</p></li>
     /// </ul></li>
+    /// <li>
+    /// <p>The <code>FEDERATED</code> data catalog type uses one of the following parameters, but not both. Use <code>connection-arn</code> for an existing Glue connection. Use <code>connection-type</code> and <code>connection-properties</code> to specify the configuration setting for a new connection.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>connection-arn:<i><glue_connection_arn_to_reuse></glue_connection_arn_to_reuse></i> </code></p></li>
+    /// <li>
+    /// <p><code>lambda-role-arn</code> (optional): The execution role to use for the Lambda function. If not provided, one is created.</p></li>
+    /// <li>
+    /// <p><code>connection-type:MYSQL|REDSHIFT|...., connection-properties:"<i><json_string></json_string></i>"</code></p>
+    /// <p>For <i> <code><json_string></json_string></code> </i>, use escaped JSON text, as in the following example.</p>
+    /// <p><code>"{\"spill_bucket\":\"my_spill\",\"spill_prefix\":\"athena-spill\",\"host\":\"abc12345.snowflakecomputing.com\",\"port\":\"1234\",\"warehouse\":\"DEV_WH\",\"database\":\"TEST\",\"schema\":\"PUBLIC\",\"SecretArn\":\"arn:aws:secretsmanager:ap-south-1:111122223333:secret:snowflake-XHb67j\"}"</code></p></li>
+    /// </ul></li>
     /// </ul>
     pub fn parameters(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.parameters.unwrap_or_default();
@@ -199,6 +235,18 @@ impl CreateDataCatalogInputBuilder {
     /// <li>
     /// <p>The <code>GLUE</code> data catalog type also applies to the default <code>AwsDataCatalog</code> that already exists in your account, of which you can have only one and cannot modify.</p></li>
     /// </ul></li>
+    /// <li>
+    /// <p>The <code>FEDERATED</code> data catalog type uses one of the following parameters, but not both. Use <code>connection-arn</code> for an existing Glue connection. Use <code>connection-type</code> and <code>connection-properties</code> to specify the configuration setting for a new connection.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>connection-arn:<i><glue_connection_arn_to_reuse></glue_connection_arn_to_reuse></i> </code></p></li>
+    /// <li>
+    /// <p><code>lambda-role-arn</code> (optional): The execution role to use for the Lambda function. If not provided, one is created.</p></li>
+    /// <li>
+    /// <p><code>connection-type:MYSQL|REDSHIFT|...., connection-properties:"<i><json_string></json_string></i>"</code></p>
+    /// <p>For <i> <code><json_string></json_string></code> </i>, use escaped JSON text, as in the following example.</p>
+    /// <p><code>"{\"spill_bucket\":\"my_spill\",\"spill_prefix\":\"athena-spill\",\"host\":\"abc12345.snowflakecomputing.com\",\"port\":\"1234\",\"warehouse\":\"DEV_WH\",\"database\":\"TEST\",\"schema\":\"PUBLIC\",\"SecretArn\":\"arn:aws:secretsmanager:ap-south-1:111122223333:secret:snowflake-XHb67j\"}"</code></p></li>
+    /// </ul></li>
     /// </ul>
     pub fn set_parameters(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.parameters = input;
@@ -225,6 +273,18 @@ impl CreateDataCatalogInputBuilder {
     /// <ul>
     /// <li>
     /// <p>The <code>GLUE</code> data catalog type also applies to the default <code>AwsDataCatalog</code> that already exists in your account, of which you can have only one and cannot modify.</p></li>
+    /// </ul></li>
+    /// <li>
+    /// <p>The <code>FEDERATED</code> data catalog type uses one of the following parameters, but not both. Use <code>connection-arn</code> for an existing Glue connection. Use <code>connection-type</code> and <code>connection-properties</code> to specify the configuration setting for a new connection.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>connection-arn:<i><glue_connection_arn_to_reuse></glue_connection_arn_to_reuse></i> </code></p></li>
+    /// <li>
+    /// <p><code>lambda-role-arn</code> (optional): The execution role to use for the Lambda function. If not provided, one is created.</p></li>
+    /// <li>
+    /// <p><code>connection-type:MYSQL|REDSHIFT|...., connection-properties:"<i><json_string></json_string></i>"</code></p>
+    /// <p>For <i> <code><json_string></json_string></code> </i>, use escaped JSON text, as in the following example.</p>
+    /// <p><code>"{\"spill_bucket\":\"my_spill\",\"spill_prefix\":\"athena-spill\",\"host\":\"abc12345.snowflakecomputing.com\",\"port\":\"1234\",\"warehouse\":\"DEV_WH\",\"database\":\"TEST\",\"schema\":\"PUBLIC\",\"SecretArn\":\"arn:aws:secretsmanager:ap-south-1:111122223333:secret:snowflake-XHb67j\"}"</code></p></li>
     /// </ul></li>
     /// </ul>
     pub fn get_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {

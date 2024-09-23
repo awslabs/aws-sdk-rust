@@ -26,6 +26,14 @@ pub fn ser_modify_db_shard_group_input_input_input(
             ::aws_smithy_types::Number::Float((*var_6).into()),
         );
     }
+    #[allow(unused_mut)]
+    let mut scope_7 = writer.prefix("ComputeRedundancy");
+    if let Some(var_8) = &input.compute_redundancy {
+        scope_7.number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_8).into()),
+        );
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

@@ -115,6 +115,8 @@ pub(crate) mod shape_network_configuration;
 
 pub(crate) mod shape_retry_policy;
 
+pub(crate) mod shape_scheduler_configuration;
+
 pub(crate) mod shape_tag_map;
 
 pub(crate) mod shape_worker_type_specification_input;

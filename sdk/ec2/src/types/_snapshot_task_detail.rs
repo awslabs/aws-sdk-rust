@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct SnapshotTaskDetail {
-    /// <p>The description of the snapshot.</p>
+    /// <p>The description of the disk image being imported.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The size of the disk in the snapshot, in GiB.</p>
     pub disk_image_size: ::std::option::Option<f64>,
@@ -28,7 +28,7 @@ pub struct SnapshotTaskDetail {
     pub user_bucket: ::std::option::Option<crate::types::UserBucketDetails>,
 }
 impl SnapshotTaskDetail {
-    /// <p>The description of the snapshot.</p>
+    /// <p>The description of the disk image being imported.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
@@ -114,17 +114,17 @@ pub struct SnapshotTaskDetailBuilder {
     pub(crate) user_bucket: ::std::option::Option<crate::types::UserBucketDetails>,
 }
 impl SnapshotTaskDetailBuilder {
-    /// <p>The description of the snapshot.</p>
+    /// <p>The description of the disk image being imported.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The description of the snapshot.</p>
+    /// <p>The description of the disk image being imported.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
-    /// <p>The description of the snapshot.</p>
+    /// <p>The description of the disk image being imported.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }

@@ -8,7 +8,7 @@ pub struct PromptFlowNodeInlineConfiguration {
     pub template_type: crate::types::PromptTemplateType,
     /// <p>Contains a prompt and variables in the prompt that can be replaced with values at runtime.</p>
     pub template_configuration: ::std::option::Option<crate::types::PromptTemplateConfiguration>,
-    /// <p>The unique identifier of the model to run inference with.</p>
+    /// <p>The unique identifier of the model or <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference.html">inference profile</a> to run inference with.</p>
     pub model_id: ::std::string::String,
     /// <p>Contains inference configurations for the prompt.</p>
     pub inference_configuration: ::std::option::Option<crate::types::PromptInferenceConfiguration>,
@@ -22,7 +22,7 @@ impl PromptFlowNodeInlineConfiguration {
     pub fn template_configuration(&self) -> ::std::option::Option<&crate::types::PromptTemplateConfiguration> {
         self.template_configuration.as_ref()
     }
-    /// <p>The unique identifier of the model to run inference with.</p>
+    /// <p>The unique identifier of the model or <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference.html">inference profile</a> to run inference with.</p>
     pub fn model_id(&self) -> &str {
         use std::ops::Deref;
         self.model_id.deref()
@@ -79,18 +79,18 @@ impl PromptFlowNodeInlineConfigurationBuilder {
     pub fn get_template_configuration(&self) -> &::std::option::Option<crate::types::PromptTemplateConfiguration> {
         &self.template_configuration
     }
-    /// <p>The unique identifier of the model to run inference with.</p>
+    /// <p>The unique identifier of the model or <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference.html">inference profile</a> to run inference with.</p>
     /// This field is required.
     pub fn model_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier of the model to run inference with.</p>
+    /// <p>The unique identifier of the model or <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference.html">inference profile</a> to run inference with.</p>
     pub fn set_model_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model_id = input;
         self
     }
-    /// <p>The unique identifier of the model to run inference with.</p>
+    /// <p>The unique identifier of the model or <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference.html">inference profile</a> to run inference with.</p>
     pub fn get_model_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.model_id
     }
