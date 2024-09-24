@@ -6,6 +6,8 @@
 pub enum RuleStringToEvaluate {
     /// <p>The email attribute to evaluate in a string condition expression.</p>
     Attribute(crate::types::RuleStringEmailAttribute),
+    /// <p>The email MIME X-Header attribute to evaluate in a string condition expression.</p>
+    MimeHeaderAttribute(::std::string::String),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
     ///
@@ -17,7 +19,6 @@ pub enum RuleStringToEvaluate {
     Unknown,
 }
 impl RuleStringToEvaluate {
-    #[allow(irrefutable_let_patterns)]
     /// Tries to convert the enum instance into [`Attribute`](crate::types::RuleStringToEvaluate::Attribute), extracting the inner [`RuleStringEmailAttribute`](crate::types::RuleStringEmailAttribute).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_attribute(&self) -> ::std::result::Result<&crate::types::RuleStringEmailAttribute, &Self> {
@@ -30,6 +31,19 @@ impl RuleStringToEvaluate {
     /// Returns true if this is a [`Attribute`](crate::types::RuleStringToEvaluate::Attribute).
     pub fn is_attribute(&self) -> bool {
         self.as_attribute().is_ok()
+    }
+    /// Tries to convert the enum instance into [`MimeHeaderAttribute`](crate::types::RuleStringToEvaluate::MimeHeaderAttribute), extracting the inner [`String`](::std::string::String).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_mime_header_attribute(&self) -> ::std::result::Result<&::std::string::String, &Self> {
+        if let RuleStringToEvaluate::MimeHeaderAttribute(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`MimeHeaderAttribute`](crate::types::RuleStringToEvaluate::MimeHeaderAttribute).
+    pub fn is_mime_header_attribute(&self) -> bool {
+        self.as_mime_header_attribute().is_ok()
     }
     /// Returns true if the enum instance is the `Unknown` variant.
     pub fn is_unknown(&self) -> bool {

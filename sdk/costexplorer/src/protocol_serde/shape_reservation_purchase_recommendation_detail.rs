@@ -143,6 +143,39 @@ where
                                     .transpose()?,
                             );
                         }
+                        "ReservedCapacityDetails" => {
+                            builder = builder.set_reserved_capacity_details(
+                                crate::protocol_serde::shape_reserved_capacity_details::de_reserved_capacity_details(tokens)?,
+                            );
+                        }
+                        "RecommendedNumberOfCapacityUnitsToPurchase" => {
+                            builder = builder.set_recommended_number_of_capacity_units_to_purchase(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "MinimumNumberOfCapacityUnitsUsedPerHour" => {
+                            builder = builder.set_minimum_number_of_capacity_units_used_per_hour(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "MaximumNumberOfCapacityUnitsUsedPerHour" => {
+                            builder = builder.set_maximum_number_of_capacity_units_used_per_hour(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "AverageNumberOfCapacityUnitsUsedPerHour" => {
+                            builder = builder.set_average_number_of_capacity_units_used_per_hour(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

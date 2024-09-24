@@ -70,7 +70,7 @@ pub struct HealthCheck {
     /// <p><code>\[ "CMD-SHELL", "curl -f http://localhost/ || exit 1" \]</code></p>
     /// <p>You don't include the double quotes and brackets when you use the Amazon Web Services Management Console.</p>
     /// <p><code> CMD-SHELL, curl -f http://localhost/ || exit 1</code></p>
-    /// <p>An exit code of 0 indicates success, and non-zero exit code indicates failure. For more information, see <code>HealthCheck</code> in tthe docker conainer create command</p>
+    /// <p>An exit code of 0 indicates success, and non-zero exit code indicates failure. For more information, see <code>HealthCheck</code> in the docker container create command</p>
     pub command: ::std::vec::Vec<::std::string::String>,
     /// <p>The time period in seconds between each health check execution. You may specify between 5 and 300 seconds. The default value is 30 seconds.</p>
     pub interval: ::std::option::Option<i32>,
@@ -89,7 +89,7 @@ impl HealthCheck {
     /// <p><code>\[ "CMD-SHELL", "curl -f http://localhost/ || exit 1" \]</code></p>
     /// <p>You don't include the double quotes and brackets when you use the Amazon Web Services Management Console.</p>
     /// <p><code> CMD-SHELL, curl -f http://localhost/ || exit 1</code></p>
-    /// <p>An exit code of 0 indicates success, and non-zero exit code indicates failure. For more information, see <code>HealthCheck</code> in tthe docker conainer create command</p>
+    /// <p>An exit code of 0 indicates success, and non-zero exit code indicates failure. For more information, see <code>HealthCheck</code> in the docker container create command</p>
     pub fn command(&self) -> &[::std::string::String] {
         use std::ops::Deref;
         self.command.deref()
@@ -140,7 +140,7 @@ impl HealthCheckBuilder {
     /// <p><code>\[ "CMD-SHELL", "curl -f http://localhost/ || exit 1" \]</code></p>
     /// <p>You don't include the double quotes and brackets when you use the Amazon Web Services Management Console.</p>
     /// <p><code> CMD-SHELL, curl -f http://localhost/ || exit 1</code></p>
-    /// <p>An exit code of 0 indicates success, and non-zero exit code indicates failure. For more information, see <code>HealthCheck</code> in tthe docker conainer create command</p>
+    /// <p>An exit code of 0 indicates success, and non-zero exit code indicates failure. For more information, see <code>HealthCheck</code> in the docker container create command</p>
     pub fn command(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.command.unwrap_or_default();
         v.push(input.into());
@@ -152,7 +152,7 @@ impl HealthCheckBuilder {
     /// <p><code>\[ "CMD-SHELL", "curl -f http://localhost/ || exit 1" \]</code></p>
     /// <p>You don't include the double quotes and brackets when you use the Amazon Web Services Management Console.</p>
     /// <p><code> CMD-SHELL, curl -f http://localhost/ || exit 1</code></p>
-    /// <p>An exit code of 0 indicates success, and non-zero exit code indicates failure. For more information, see <code>HealthCheck</code> in tthe docker conainer create command</p>
+    /// <p>An exit code of 0 indicates success, and non-zero exit code indicates failure. For more information, see <code>HealthCheck</code> in the docker container create command</p>
     pub fn set_command(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.command = input;
         self
@@ -162,7 +162,7 @@ impl HealthCheckBuilder {
     /// <p><code>\[ "CMD-SHELL", "curl -f http://localhost/ || exit 1" \]</code></p>
     /// <p>You don't include the double quotes and brackets when you use the Amazon Web Services Management Console.</p>
     /// <p><code> CMD-SHELL, curl -f http://localhost/ || exit 1</code></p>
-    /// <p>An exit code of 0 indicates success, and non-zero exit code indicates failure. For more information, see <code>HealthCheck</code> in tthe docker conainer create command</p>
+    /// <p>An exit code of 0 indicates success, and non-zero exit code indicates failure. For more information, see <code>HealthCheck</code> in the docker container create command</p>
     pub fn get_command(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.command
     }

@@ -14,6 +14,7 @@
 /// match workspaceimageerrordetailcode {
 ///     WorkspaceImageErrorDetailCode::AdditionalDrivesAttached => { /* ... */ },
 ///     WorkspaceImageErrorDetailCode::AntiVirusInstalled => { /* ... */ },
+///     WorkspaceImageErrorDetailCode::AppxPackagesInstalled => { /* ... */ },
 ///     WorkspaceImageErrorDetailCode::AutoLogonEnabled => { /* ... */ },
 ///     WorkspaceImageErrorDetailCode::AutoMountDisabled => { /* ... */ },
 ///     WorkspaceImageErrorDetailCode::AzureDomainJoined => { /* ... */ },
@@ -32,7 +33,9 @@
 ///     WorkspaceImageErrorDetailCode::PendingReboot => { /* ... */ },
 ///     WorkspaceImageErrorDetailCode::RealtimeUniversalDisabled => { /* ... */ },
 ///     WorkspaceImageErrorDetailCode::SixtyFourBitOs => { /* ... */ },
+///     WorkspaceImageErrorDetailCode::ReservedStorageInUse => { /* ... */ },
 ///     WorkspaceImageErrorDetailCode::UefiNotSupported => { /* ... */ },
+///     WorkspaceImageErrorDetailCode::UnknownError => { /* ... */ },
 ///     WorkspaceImageErrorDetailCode::VmwareToolsInstalled => { /* ... */ },
 ///     WorkspaceImageErrorDetailCode::WindowsUpdatesEnabled => { /* ... */ },
 ///     WorkspaceImageErrorDetailCode::WorkspacesByolAccountDisabled => { /* ... */ },
@@ -70,6 +73,8 @@ pub enum WorkspaceImageErrorDetailCode {
     #[allow(missing_docs)] // documentation missing in model
     AntiVirusInstalled,
     #[allow(missing_docs)] // documentation missing in model
+    AppxPackagesInstalled,
+    #[allow(missing_docs)] // documentation missing in model
     AutoLogonEnabled,
     #[allow(missing_docs)] // documentation missing in model
     AutoMountDisabled,
@@ -106,7 +111,11 @@ pub enum WorkspaceImageErrorDetailCode {
     #[allow(missing_docs)] // documentation missing in model
     SixtyFourBitOs,
     #[allow(missing_docs)] // documentation missing in model
+    ReservedStorageInUse,
+    #[allow(missing_docs)] // documentation missing in model
     UefiNotSupported,
+    #[allow(missing_docs)] // documentation missing in model
+    UnknownError,
     #[allow(missing_docs)] // documentation missing in model
     VmwareToolsInstalled,
     #[allow(missing_docs)] // documentation missing in model
@@ -126,6 +135,7 @@ impl ::std::convert::From<&str> for WorkspaceImageErrorDetailCode {
         match s {
             "AdditionalDrivesAttached" => WorkspaceImageErrorDetailCode::AdditionalDrivesAttached,
             "AntiVirusInstalled" => WorkspaceImageErrorDetailCode::AntiVirusInstalled,
+            "AppXPackagesInstalled" => WorkspaceImageErrorDetailCode::AppxPackagesInstalled,
             "AutoLogonEnabled" => WorkspaceImageErrorDetailCode::AutoLogonEnabled,
             "AutoMountDisabled" => WorkspaceImageErrorDetailCode::AutoMountDisabled,
             "AzureDomainJoined" => WorkspaceImageErrorDetailCode::AzureDomainJoined,
@@ -144,7 +154,9 @@ impl ::std::convert::From<&str> for WorkspaceImageErrorDetailCode {
             "PendingReboot" => WorkspaceImageErrorDetailCode::PendingReboot,
             "RealTimeUniversalDisabled" => WorkspaceImageErrorDetailCode::RealtimeUniversalDisabled,
             "Requires64BitOS" => WorkspaceImageErrorDetailCode::SixtyFourBitOs,
+            "ReservedStorageInUse" => WorkspaceImageErrorDetailCode::ReservedStorageInUse,
             "UEFINotSupported" => WorkspaceImageErrorDetailCode::UefiNotSupported,
+            "UnknownError" => WorkspaceImageErrorDetailCode::UnknownError,
             "VMWareToolsInstalled" => WorkspaceImageErrorDetailCode::VmwareToolsInstalled,
             "WindowsUpdatesEnabled" => WorkspaceImageErrorDetailCode::WindowsUpdatesEnabled,
             "WorkspacesBYOLAccountDisabled" => WorkspaceImageErrorDetailCode::WorkspacesByolAccountDisabled,
@@ -167,6 +179,7 @@ impl WorkspaceImageErrorDetailCode {
         match self {
             WorkspaceImageErrorDetailCode::AdditionalDrivesAttached => "AdditionalDrivesAttached",
             WorkspaceImageErrorDetailCode::AntiVirusInstalled => "AntiVirusInstalled",
+            WorkspaceImageErrorDetailCode::AppxPackagesInstalled => "AppXPackagesInstalled",
             WorkspaceImageErrorDetailCode::AutoLogonEnabled => "AutoLogonEnabled",
             WorkspaceImageErrorDetailCode::AutoMountDisabled => "AutoMountDisabled",
             WorkspaceImageErrorDetailCode::AzureDomainJoined => "AzureDomainJoined",
@@ -185,7 +198,9 @@ impl WorkspaceImageErrorDetailCode {
             WorkspaceImageErrorDetailCode::PendingReboot => "PendingReboot",
             WorkspaceImageErrorDetailCode::RealtimeUniversalDisabled => "RealTimeUniversalDisabled",
             WorkspaceImageErrorDetailCode::SixtyFourBitOs => "Requires64BitOS",
+            WorkspaceImageErrorDetailCode::ReservedStorageInUse => "ReservedStorageInUse",
             WorkspaceImageErrorDetailCode::UefiNotSupported => "UEFINotSupported",
+            WorkspaceImageErrorDetailCode::UnknownError => "UnknownError",
             WorkspaceImageErrorDetailCode::VmwareToolsInstalled => "VMWareToolsInstalled",
             WorkspaceImageErrorDetailCode::WindowsUpdatesEnabled => "WindowsUpdatesEnabled",
             WorkspaceImageErrorDetailCode::WorkspacesByolAccountDisabled => "WorkspacesBYOLAccountDisabled",
@@ -199,6 +214,7 @@ impl WorkspaceImageErrorDetailCode {
         &[
             "AdditionalDrivesAttached",
             "AntiVirusInstalled",
+            "AppXPackagesInstalled",
             "AutoLogonEnabled",
             "AutoMountDisabled",
             "AzureDomainJoined",
@@ -217,7 +233,9 @@ impl WorkspaceImageErrorDetailCode {
             "PendingReboot",
             "RealTimeUniversalDisabled",
             "Requires64BitOS",
+            "ReservedStorageInUse",
             "UEFINotSupported",
+            "UnknownError",
             "VMWareToolsInstalled",
             "WindowsUpdatesEnabled",
             "WorkspacesBYOLAccountDisabled",
@@ -248,6 +266,7 @@ impl ::std::fmt::Display for WorkspaceImageErrorDetailCode {
         match self {
             WorkspaceImageErrorDetailCode::AdditionalDrivesAttached => write!(f, "AdditionalDrivesAttached"),
             WorkspaceImageErrorDetailCode::AntiVirusInstalled => write!(f, "AntiVirusInstalled"),
+            WorkspaceImageErrorDetailCode::AppxPackagesInstalled => write!(f, "AppXPackagesInstalled"),
             WorkspaceImageErrorDetailCode::AutoLogonEnabled => write!(f, "AutoLogonEnabled"),
             WorkspaceImageErrorDetailCode::AutoMountDisabled => write!(f, "AutoMountDisabled"),
             WorkspaceImageErrorDetailCode::AzureDomainJoined => write!(f, "AzureDomainJoined"),
@@ -266,7 +285,9 @@ impl ::std::fmt::Display for WorkspaceImageErrorDetailCode {
             WorkspaceImageErrorDetailCode::PendingReboot => write!(f, "PendingReboot"),
             WorkspaceImageErrorDetailCode::RealtimeUniversalDisabled => write!(f, "RealTimeUniversalDisabled"),
             WorkspaceImageErrorDetailCode::SixtyFourBitOs => write!(f, "Requires64BitOS"),
+            WorkspaceImageErrorDetailCode::ReservedStorageInUse => write!(f, "ReservedStorageInUse"),
             WorkspaceImageErrorDetailCode::UefiNotSupported => write!(f, "UEFINotSupported"),
+            WorkspaceImageErrorDetailCode::UnknownError => write!(f, "UnknownError"),
             WorkspaceImageErrorDetailCode::VmwareToolsInstalled => write!(f, "VMWareToolsInstalled"),
             WorkspaceImageErrorDetailCode::WindowsUpdatesEnabled => write!(f, "WindowsUpdatesEnabled"),
             WorkspaceImageErrorDetailCode::WorkspacesByolAccountDisabled => write!(f, "WorkspacesBYOLAccountDisabled"),

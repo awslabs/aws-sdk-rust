@@ -142,6 +142,8 @@ mod add_thing_to_billing_group;
 
 mod add_thing_to_thing_group;
 
+mod associate_sbom_with_package_version;
+
 mod associate_targets_with_job;
 
 mod attach_policy;
@@ -405,6 +407,8 @@ mod detach_thing_principal;
 
 mod disable_topic_rule;
 
+mod disassociate_sbom_from_package_version;
+
 mod enable_topic_rule;
 
 mod get_behavior_model_training_summaries;
@@ -524,6 +528,8 @@ mod list_provisioning_templates;
 mod list_related_resources_for_audit_finding;
 
 mod list_role_aliases;
+
+mod list_sbom_validation_results;
 
 mod list_scheduled_audits;
 

@@ -6,14 +6,35 @@ pub fn ser_video_overlay(
     if let Some(var_1) = &input.end_timecode {
         object.key("endTimecode").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.input {
+    if let Some(var_2) = &input.initial_position {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("input").start_object();
-        crate::protocol_serde::shape_video_overlay_input::ser_video_overlay_input(&mut object_3, var_2)?;
+        let mut object_3 = object.key("initialPosition").start_object();
+        crate::protocol_serde::shape_video_overlay_position::ser_video_overlay_position(&mut object_3, var_2)?;
         object_3.finish();
     }
-    if let Some(var_4) = &input.start_timecode {
-        object.key("startTimecode").string(var_4.as_str());
+    if let Some(var_4) = &input.input {
+        #[allow(unused_mut)]
+        let mut object_5 = object.key("input").start_object();
+        crate::protocol_serde::shape_video_overlay_input::ser_video_overlay_input(&mut object_5, var_4)?;
+        object_5.finish();
+    }
+    if let Some(var_6) = &input.playback {
+        object.key("playback").string(var_6.as_str());
+    }
+    if let Some(var_7) = &input.start_timecode {
+        object.key("startTimecode").string(var_7.as_str());
+    }
+    if let Some(var_8) = &input.transitions {
+        let mut array_9 = object.key("transitions").start_array();
+        for item_10 in var_8 {
+            {
+                #[allow(unused_mut)]
+                let mut object_11 = array_9.value().start_object();
+                crate::protocol_serde::shape_video_overlay_transition::ser_video_overlay_transition(&mut object_11, item_10)?;
+                object_11.finish();
+            }
+        }
+        array_9.finish();
     }
     Ok(())
 }
@@ -40,14 +61,30 @@ where
                                     .transpose()?,
                             );
                         }
+                        "initialPosition" => {
+                            builder =
+                                builder.set_initial_position(crate::protocol_serde::shape_video_overlay_position::de_video_overlay_position(tokens)?);
+                        }
                         "input" => {
                             builder = builder.set_input(crate::protocol_serde::shape_video_overlay_input::de_video_overlay_input(tokens)?);
+                        }
+                        "playback" => {
+                            builder = builder.set_playback(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::VideoOverlayPlayBackMode::from(u.as_ref())))
+                                    .transpose()?,
+                            );
                         }
                         "startTimecode" => {
                             builder = builder.set_start_timecode(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
+                            );
+                        }
+                        "transitions" => {
+                            builder = builder.set_transitions(
+                                crate::protocol_serde::shape_list_of_video_overlay_transition::de_list_of_video_overlay_transition(tokens)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

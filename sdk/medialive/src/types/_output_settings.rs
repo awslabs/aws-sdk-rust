@@ -22,6 +22,8 @@ pub struct OutputSettings {
     pub udp_output_settings: ::std::option::Option<crate::types::UdpOutputSettings>,
     /// Cmaf Ingest Output Settings
     pub cmaf_ingest_output_settings: ::std::option::Option<crate::types::CmafIngestOutputSettings>,
+    /// Srt Output Settings
+    pub srt_output_settings: ::std::option::Option<crate::types::SrtOutputSettings>,
 }
 impl OutputSettings {
     /// Archive Output Settings
@@ -60,6 +62,10 @@ impl OutputSettings {
     pub fn cmaf_ingest_output_settings(&self) -> ::std::option::Option<&crate::types::CmafIngestOutputSettings> {
         self.cmaf_ingest_output_settings.as_ref()
     }
+    /// Srt Output Settings
+    pub fn srt_output_settings(&self) -> ::std::option::Option<&crate::types::SrtOutputSettings> {
+        self.srt_output_settings.as_ref()
+    }
 }
 impl OutputSettings {
     /// Creates a new builder-style object to manufacture [`OutputSettings`](crate::types::OutputSettings).
@@ -81,6 +87,7 @@ pub struct OutputSettingsBuilder {
     pub(crate) rtmp_output_settings: ::std::option::Option<crate::types::RtmpOutputSettings>,
     pub(crate) udp_output_settings: ::std::option::Option<crate::types::UdpOutputSettings>,
     pub(crate) cmaf_ingest_output_settings: ::std::option::Option<crate::types::CmafIngestOutputSettings>,
+    pub(crate) srt_output_settings: ::std::option::Option<crate::types::SrtOutputSettings>,
 }
 impl OutputSettingsBuilder {
     /// Archive Output Settings
@@ -209,6 +216,20 @@ impl OutputSettingsBuilder {
     pub fn get_cmaf_ingest_output_settings(&self) -> &::std::option::Option<crate::types::CmafIngestOutputSettings> {
         &self.cmaf_ingest_output_settings
     }
+    /// Srt Output Settings
+    pub fn srt_output_settings(mut self, input: crate::types::SrtOutputSettings) -> Self {
+        self.srt_output_settings = ::std::option::Option::Some(input);
+        self
+    }
+    /// Srt Output Settings
+    pub fn set_srt_output_settings(mut self, input: ::std::option::Option<crate::types::SrtOutputSettings>) -> Self {
+        self.srt_output_settings = input;
+        self
+    }
+    /// Srt Output Settings
+    pub fn get_srt_output_settings(&self) -> &::std::option::Option<crate::types::SrtOutputSettings> {
+        &self.srt_output_settings
+    }
     /// Consumes the builder and constructs a [`OutputSettings`](crate::types::OutputSettings).
     pub fn build(self) -> crate::types::OutputSettings {
         crate::types::OutputSettings {
@@ -221,6 +242,7 @@ impl OutputSettingsBuilder {
             rtmp_output_settings: self.rtmp_output_settings,
             udp_output_settings: self.udp_output_settings,
             cmaf_ingest_output_settings: self.cmaf_ingest_output_settings,
+            srt_output_settings: self.srt_output_settings,
         }
     }
 }

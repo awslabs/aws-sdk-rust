@@ -39,6 +39,8 @@ pub use crate::types::_job_run_summary::JobRunSummary;
 
 pub use crate::types::_application::Application;
 
+pub use crate::types::_scheduler_configuration::SchedulerConfiguration;
+
 pub use crate::types::_interactive_configuration::InteractiveConfiguration;
 
 pub use crate::types::_worker_type_specification::WorkerTypeSpecification;
@@ -120,6 +122,8 @@ mod _resource_utilization;
 mod _retry_policy;
 
 mod _s3_monitoring_configuration;
+
+mod _scheduler_configuration;
 
 mod _spark_submit;
 

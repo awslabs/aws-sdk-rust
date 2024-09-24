@@ -73,6 +73,8 @@ pub(crate) mod shape_describe_conditional_forwarders;
 
 pub(crate) mod shape_describe_directories;
 
+pub(crate) mod shape_describe_directory_data_access;
+
 pub(crate) mod shape_describe_domain_controllers;
 
 pub(crate) mod shape_describe_event_topics;
@@ -93,6 +95,8 @@ pub(crate) mod shape_describe_update_directory;
 
 pub(crate) mod shape_disable_client_authentication;
 
+pub(crate) mod shape_disable_directory_data_access;
+
 pub(crate) mod shape_disable_ldaps;
 
 pub(crate) mod shape_disable_radius;
@@ -100,6 +104,8 @@ pub(crate) mod shape_disable_radius;
 pub(crate) mod shape_disable_sso;
 
 pub(crate) mod shape_enable_client_authentication;
+
+pub(crate) mod shape_enable_directory_data_access;
 
 pub(crate) mod shape_enable_ldaps;
 
@@ -229,6 +235,8 @@ pub(crate) mod shape_describe_conditional_forwarders_input;
 
 pub(crate) mod shape_describe_directories_input;
 
+pub(crate) mod shape_describe_directory_data_access_input;
+
 pub(crate) mod shape_describe_domain_controllers_input;
 
 pub(crate) mod shape_describe_event_topics_input;
@@ -263,6 +271,8 @@ pub(crate) mod shape_directory_unavailable_exception;
 
 pub(crate) mod shape_disable_client_authentication_input;
 
+pub(crate) mod shape_disable_directory_data_access_input;
+
 pub(crate) mod shape_disable_ldaps_input;
 
 pub(crate) mod shape_disable_radius_input;
@@ -272,6 +282,8 @@ pub(crate) mod shape_disable_sso_input;
 pub(crate) mod shape_domain_controller_limit_exceeded_exception;
 
 pub(crate) mod shape_enable_client_authentication_input;
+
+pub(crate) mod shape_enable_directory_data_access_input;
 
 pub(crate) mod shape_enable_ldaps_input;
 

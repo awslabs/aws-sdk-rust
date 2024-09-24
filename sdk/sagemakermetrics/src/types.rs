@@ -5,11 +5,35 @@ pub use crate::types::_put_metrics_error_code::PutMetricsErrorCode;
 
 pub use crate::types::_raw_metric_data::RawMetricData;
 
+pub use crate::types::_metric_query_result::MetricQueryResult;
+
+pub use crate::types::_metric_query_result_status::MetricQueryResultStatus;
+
+pub use crate::types::_metric_query::MetricQuery;
+
+pub use crate::types::_x_axis_type::XAxisType;
+
+pub use crate::types::_period::Period;
+
+pub use crate::types::_metric_statistic::MetricStatistic;
+
 mod _batch_put_metrics_error;
+
+mod _metric_query;
+
+mod _metric_query_result;
+
+mod _metric_query_result_status;
+
+mod _metric_statistic;
+
+mod _period;
 
 mod _put_metrics_error_code;
 
 mod _raw_metric_data;
+
+mod _x_axis_type;
 
 /// Builders
 pub mod builders;

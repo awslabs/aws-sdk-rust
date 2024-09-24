@@ -19,6 +19,8 @@ pub struct UpdateSyncConfigurationInput {
     pub publish_deployment_status: ::std::option::Option<crate::types::PublishDeploymentStatus>,
     /// <p>When to trigger Git sync to begin the stack update.</p>
     pub trigger_resource_update_on: ::std::option::Option<crate::types::TriggerResourceUpdateOn>,
+    /// <p>TA toggle that specifies whether to enable or disable pull request comments for the sync configuration to be updated.</p>
+    pub pull_request_comment: ::std::option::Option<crate::types::PullRequestComment>,
 }
 impl UpdateSyncConfigurationInput {
     /// <p>The branch for the sync configuration to be updated.</p>
@@ -53,6 +55,10 @@ impl UpdateSyncConfigurationInput {
     pub fn trigger_resource_update_on(&self) -> ::std::option::Option<&crate::types::TriggerResourceUpdateOn> {
         self.trigger_resource_update_on.as_ref()
     }
+    /// <p>TA toggle that specifies whether to enable or disable pull request comments for the sync configuration to be updated.</p>
+    pub fn pull_request_comment(&self) -> ::std::option::Option<&crate::types::PullRequestComment> {
+        self.pull_request_comment.as_ref()
+    }
 }
 impl UpdateSyncConfigurationInput {
     /// Creates a new builder-style object to manufacture [`UpdateSyncConfigurationInput`](crate::operation::update_sync_configuration::UpdateSyncConfigurationInput).
@@ -73,6 +79,7 @@ pub struct UpdateSyncConfigurationInputBuilder {
     pub(crate) sync_type: ::std::option::Option<crate::types::SyncConfigurationType>,
     pub(crate) publish_deployment_status: ::std::option::Option<crate::types::PublishDeploymentStatus>,
     pub(crate) trigger_resource_update_on: ::std::option::Option<crate::types::TriggerResourceUpdateOn>,
+    pub(crate) pull_request_comment: ::std::option::Option<crate::types::PullRequestComment>,
 }
 impl UpdateSyncConfigurationInputBuilder {
     /// <p>The branch for the sync configuration to be updated.</p>
@@ -189,6 +196,20 @@ impl UpdateSyncConfigurationInputBuilder {
     pub fn get_trigger_resource_update_on(&self) -> &::std::option::Option<crate::types::TriggerResourceUpdateOn> {
         &self.trigger_resource_update_on
     }
+    /// <p>TA toggle that specifies whether to enable or disable pull request comments for the sync configuration to be updated.</p>
+    pub fn pull_request_comment(mut self, input: crate::types::PullRequestComment) -> Self {
+        self.pull_request_comment = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>TA toggle that specifies whether to enable or disable pull request comments for the sync configuration to be updated.</p>
+    pub fn set_pull_request_comment(mut self, input: ::std::option::Option<crate::types::PullRequestComment>) -> Self {
+        self.pull_request_comment = input;
+        self
+    }
+    /// <p>TA toggle that specifies whether to enable or disable pull request comments for the sync configuration to be updated.</p>
+    pub fn get_pull_request_comment(&self) -> &::std::option::Option<crate::types::PullRequestComment> {
+        &self.pull_request_comment
+    }
     /// Consumes the builder and constructs a [`UpdateSyncConfigurationInput`](crate::operation::update_sync_configuration::UpdateSyncConfigurationInput).
     pub fn build(
         self,
@@ -205,6 +226,7 @@ impl UpdateSyncConfigurationInputBuilder {
             sync_type: self.sync_type,
             publish_deployment_status: self.publish_deployment_status,
             trigger_resource_update_on: self.trigger_resource_update_on,
+            pull_request_comment: self.pull_request_comment,
         })
     }
 }

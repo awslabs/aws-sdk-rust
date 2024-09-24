@@ -12,6 +12,9 @@ pub fn ser_default_date_time_picker_control_options(
         crate::protocol_serde::shape_date_time_picker_control_display_options::ser_date_time_picker_control_display_options(&mut object_3, var_2)?;
         object_3.finish();
     }
+    if let Some(var_4) = &input.commit_mode {
+        object.key("CommitMode").string(var_4.as_str());
+    }
     Ok(())
 }
 
@@ -41,6 +44,13 @@ where
                             "DisplayOptions" => {
                                 builder = builder.set_display_options(
                                     crate::protocol_serde::shape_date_time_picker_control_display_options::de_date_time_picker_control_display_options(tokens)?
+                                );
+                            }
+                            "CommitMode" => {
+                                builder = builder.set_commit_mode(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| crate::types::CommitMode::from(u.as_ref())))
+                                        .transpose()?,
                                 );
                             }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

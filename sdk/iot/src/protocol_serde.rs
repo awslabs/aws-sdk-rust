@@ -29,6 +29,8 @@ pub(crate) mod shape_add_thing_to_billing_group;
 
 pub(crate) mod shape_add_thing_to_thing_group;
 
+pub(crate) mod shape_associate_sbom_with_package_version;
+
 pub(crate) mod shape_associate_targets_with_job;
 
 pub(crate) mod shape_attach_policy;
@@ -271,6 +273,8 @@ pub(crate) mod shape_detach_thing_principal;
 
 pub(crate) mod shape_disable_topic_rule;
 
+pub(crate) mod shape_disassociate_sbom_from_package_version;
+
 pub(crate) mod shape_enable_topic_rule;
 
 pub(crate) mod shape_get_behavior_model_training_summaries;
@@ -390,6 +394,8 @@ pub(crate) mod shape_list_provisioning_templates;
 pub(crate) mod shape_list_related_resources_for_audit_finding;
 
 pub(crate) mod shape_list_role_aliases;
+
+pub(crate) mod shape_list_sbom_validation_results;
 
 pub(crate) mod shape_list_scheduled_audits;
 
@@ -554,6 +560,8 @@ pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
         data
     }
 }
+
+pub(crate) mod shape_associate_sbom_with_package_version_input;
 
 pub(crate) mod shape_associate_targets_with_job_input;
 
@@ -985,6 +993,8 @@ pub(crate) mod shape_outgoing_certificates;
 
 pub(crate) mod shape_package_summary_list;
 
+pub(crate) mod shape_package_version_artifact;
+
 pub(crate) mod shape_package_version_summary_list;
 
 pub(crate) mod shape_percentiles;
@@ -1022,6 +1032,10 @@ pub(crate) mod shape_role_alias_description;
 pub(crate) mod shape_role_aliases;
 
 pub(crate) mod shape_s3_file_url_list;
+
+pub(crate) mod shape_sbom;
+
+pub(crate) mod shape_sbom_validation_result_summary_list;
 
 pub(crate) mod shape_scheduled_audit_metadata_list;
 
@@ -1262,6 +1276,8 @@ pub(crate) mod shape_retry_criteria;
 pub(crate) mod shape_retry_criteria_list;
 
 pub(crate) mod shape_s3_location;
+
+pub(crate) mod shape_sbom_validation_result_summary;
 
 pub(crate) mod shape_scheduled_audit_metadata;
 

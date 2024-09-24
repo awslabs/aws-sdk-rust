@@ -14,6 +14,8 @@ pub struct DefaultDateTimePickerControlOptions {
     pub r#type: ::std::option::Option<crate::types::SheetControlDateTimePickerType>,
     /// <p>The display options of a control.</p>
     pub display_options: ::std::option::Option<crate::types::DateTimePickerControlDisplayOptions>,
+    /// <p>The visibility configuration of the Apply button on a <code>DateTimePickerControl</code>.</p>
+    pub commit_mode: ::std::option::Option<crate::types::CommitMode>,
 }
 impl DefaultDateTimePickerControlOptions {
     /// <p>The date time picker type of the <code>DefaultDateTimePickerControlOptions</code>. Choose one of the following options:</p>
@@ -30,6 +32,10 @@ impl DefaultDateTimePickerControlOptions {
     pub fn display_options(&self) -> ::std::option::Option<&crate::types::DateTimePickerControlDisplayOptions> {
         self.display_options.as_ref()
     }
+    /// <p>The visibility configuration of the Apply button on a <code>DateTimePickerControl</code>.</p>
+    pub fn commit_mode(&self) -> ::std::option::Option<&crate::types::CommitMode> {
+        self.commit_mode.as_ref()
+    }
 }
 impl DefaultDateTimePickerControlOptions {
     /// Creates a new builder-style object to manufacture [`DefaultDateTimePickerControlOptions`](crate::types::DefaultDateTimePickerControlOptions).
@@ -44,6 +50,7 @@ impl DefaultDateTimePickerControlOptions {
 pub struct DefaultDateTimePickerControlOptionsBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::SheetControlDateTimePickerType>,
     pub(crate) display_options: ::std::option::Option<crate::types::DateTimePickerControlDisplayOptions>,
+    pub(crate) commit_mode: ::std::option::Option<crate::types::CommitMode>,
 }
 impl DefaultDateTimePickerControlOptionsBuilder {
     /// <p>The date time picker type of the <code>DefaultDateTimePickerControlOptions</code>. Choose one of the following options:</p>
@@ -92,11 +99,26 @@ impl DefaultDateTimePickerControlOptionsBuilder {
     pub fn get_display_options(&self) -> &::std::option::Option<crate::types::DateTimePickerControlDisplayOptions> {
         &self.display_options
     }
+    /// <p>The visibility configuration of the Apply button on a <code>DateTimePickerControl</code>.</p>
+    pub fn commit_mode(mut self, input: crate::types::CommitMode) -> Self {
+        self.commit_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The visibility configuration of the Apply button on a <code>DateTimePickerControl</code>.</p>
+    pub fn set_commit_mode(mut self, input: ::std::option::Option<crate::types::CommitMode>) -> Self {
+        self.commit_mode = input;
+        self
+    }
+    /// <p>The visibility configuration of the Apply button on a <code>DateTimePickerControl</code>.</p>
+    pub fn get_commit_mode(&self) -> &::std::option::Option<crate::types::CommitMode> {
+        &self.commit_mode
+    }
     /// Consumes the builder and constructs a [`DefaultDateTimePickerControlOptions`](crate::types::DefaultDateTimePickerControlOptions).
     pub fn build(self) -> crate::types::DefaultDateTimePickerControlOptions {
         crate::types::DefaultDateTimePickerControlOptions {
             r#type: self.r#type,
             display_options: self.display_options,
+            commit_mode: self.commit_mode,
         }
     }
 }

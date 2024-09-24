@@ -224,6 +224,9 @@ pub(crate) fn de_get_model_invocation_job(
                             .transpose()?,
                     );
                 }
+                "vpcConfig" => {
+                    builder = builder.set_vpc_config(crate::protocol_serde::shape_vpc_config::de_vpc_config(tokens)?);
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

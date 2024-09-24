@@ -347,6 +347,8 @@ pub use crate::types::_h264_scene_change_detect::H264SceneChangeDetect;
 
 pub use crate::types::_h264_scan_type_conversion_mode::H264ScanTypeConversionMode;
 
+pub use crate::types::_h264_saliency_aware_encoding::H264SaliencyAwareEncoding;
+
 pub use crate::types::_h264_repeat_pps::H264RepeatPps;
 
 pub use crate::types::_h264_rate_control_mode::H264RateControlMode;
@@ -831,6 +833,12 @@ pub use crate::types::_ms_smooth_encryption_settings::MsSmoothEncryptionSettings
 
 pub use crate::types::_speke_key_provider::SpekeKeyProvider;
 
+pub use crate::types::_encryption_contract_configuration::EncryptionContractConfiguration;
+
+pub use crate::types::_preset_speke20_video::PresetSpeke20Video;
+
+pub use crate::types::_preset_speke20_audio::PresetSpeke20Audio;
+
 pub use crate::types::_destination_settings::DestinationSettings;
 
 pub use crate::types::_s3_destination_settings::S3DestinationSettings;
@@ -1053,6 +1061,14 @@ pub use crate::types::_alpha_behavior::AlphaBehavior;
 
 pub use crate::types::_video_overlay::VideoOverlay;
 
+pub use crate::types::_video_overlay_transition::VideoOverlayTransition;
+
+pub use crate::types::_video_overlay_position::VideoOverlayPosition;
+
+pub use crate::types::_video_overlay_unit::VideoOverlayUnit;
+
+pub use crate::types::_video_overlay_play_back_mode::VideoOverlayPlayBackMode;
+
 pub use crate::types::_video_overlay_input::VideoOverlayInput;
 
 pub use crate::types::_input_timecode_source::InputTimecodeSource;
@@ -1092,6 +1108,8 @@ pub use crate::types::_caption_source_framerate::CaptionSourceFramerate;
 pub use crate::types::_caption_source_convert_paint_on_to_pop_on::CaptionSourceConvertPaintOnToPopOn;
 
 pub use crate::types::_file_source_convert608_to708::FileSourceConvert608To708;
+
+pub use crate::types::_caption_source_byte_rate_limit::CaptionSourceByteRateLimit;
 
 pub use crate::types::_embedded_source_settings::EmbeddedSourceSettings;
 
@@ -1190,6 +1208,8 @@ pub use crate::types::_order::Order;
 pub use crate::types::_policy::Policy;
 
 pub use crate::types::_input_policy::InputPolicy;
+
+pub use crate::types::_job_engine_version::JobEngineVersion;
 
 pub use crate::types::_resource_tags::ResourceTags;
 
@@ -1382,6 +1402,8 @@ mod _caption_destination_settings;
 mod _caption_destination_type;
 
 mod _caption_selector;
+
+mod _caption_source_byte_rate_limit;
 
 mod _caption_source_convert_paint_on_to_pop_on;
 
@@ -1639,6 +1661,8 @@ mod _embedded_terminate_captions;
 
 mod _embedded_timecode_override;
 
+mod _encryption_contract_configuration;
+
 mod _endpoint;
 
 mod _esam_manifest_confirm_condition_notification;
@@ -1704,6 +1728,8 @@ mod _h264_qvbr_settings;
 mod _h264_rate_control_mode;
 
 mod _h264_repeat_pps;
+
+mod _h264_saliency_aware_encoding;
 
 mod _h264_scan_type_conversion_mode;
 
@@ -1896,6 +1922,8 @@ mod _input_video_generator;
 mod _insertable_image;
 
 mod _job;
+
+mod _job_engine_version;
 
 mod _job_messages;
 
@@ -2145,6 +2173,10 @@ mod _preset_list_by;
 
 mod _preset_settings;
 
+mod _preset_speke20_audio;
+
+mod _preset_speke20_video;
+
 mod _pricing_plan;
 
 mod _prores_chroma_sampling;
@@ -2306,6 +2338,14 @@ mod _video_overlay;
 mod _video_overlay_input;
 
 mod _video_overlay_input_clipping;
+
+mod _video_overlay_play_back_mode;
+
+mod _video_overlay_position;
+
+mod _video_overlay_transition;
+
+mod _video_overlay_unit;
 
 mod _video_preprocessor;
 

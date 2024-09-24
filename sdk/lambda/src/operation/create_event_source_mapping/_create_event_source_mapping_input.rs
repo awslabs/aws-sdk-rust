@@ -74,6 +74,8 @@ pub struct CreateEventSourceMappingInput {
     pub bisect_batch_on_function_error: ::std::option::Option<bool>,
     /// <p>(Kinesis and DynamoDB Streams only) Discard records after the specified number of retries. The default value is infinite (-1). When set to infinite (-1), failed records are retried until the record expires.</p>
     pub maximum_retry_attempts: ::std::option::Option<i32>,
+    /// <p>A list of tags to apply to the event source mapping.</p>
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>(Kinesis and DynamoDB Streams only) The duration in seconds of a processing window for DynamoDB and Kinesis Streams event sources. A value of 0 seconds indicates no tumbling window.</p>
     pub tumbling_window_in_seconds: ::std::option::Option<i32>,
     /// <p>The name of the Kafka topic.</p>
@@ -195,6 +197,10 @@ impl CreateEventSourceMappingInput {
     pub fn maximum_retry_attempts(&self) -> ::std::option::Option<i32> {
         self.maximum_retry_attempts
     }
+    /// <p>A list of tags to apply to the event source mapping.</p>
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.tags.as_ref()
+    }
     /// <p>(Kinesis and DynamoDB Streams only) The duration in seconds of a processing window for DynamoDB and Kinesis Streams event sources. A value of 0 seconds indicates no tumbling window.</p>
     pub fn tumbling_window_in_seconds(&self) -> ::std::option::Option<i32> {
         self.tumbling_window_in_seconds
@@ -272,6 +278,7 @@ pub struct CreateEventSourceMappingInputBuilder {
     pub(crate) maximum_record_age_in_seconds: ::std::option::Option<i32>,
     pub(crate) bisect_batch_on_function_error: ::std::option::Option<bool>,
     pub(crate) maximum_retry_attempts: ::std::option::Option<i32>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) tumbling_window_in_seconds: ::std::option::Option<i32>,
     pub(crate) topics: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) queues: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -603,6 +610,26 @@ impl CreateEventSourceMappingInputBuilder {
     pub fn get_maximum_retry_attempts(&self) -> &::std::option::Option<i32> {
         &self.maximum_retry_attempts
     }
+    /// Adds a key-value pair to `tags`.
+    ///
+    /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+    ///
+    /// <p>A list of tags to apply to the event source mapping.</p>
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut hash_map = self.tags.unwrap_or_default();
+        hash_map.insert(k.into(), v.into());
+        self.tags = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>A list of tags to apply to the event source mapping.</p>
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input;
+        self
+    }
+    /// <p>A list of tags to apply to the event source mapping.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.tags
+    }
     /// <p>(Kinesis and DynamoDB Streams only) The duration in seconds of a processing window for DynamoDB and Kinesis Streams event sources. A value of 0 seconds indicates no tumbling window.</p>
     pub fn tumbling_window_in_seconds(mut self, input: i32) -> Self {
         self.tumbling_window_in_seconds = ::std::option::Option::Some(input);
@@ -811,6 +838,7 @@ impl CreateEventSourceMappingInputBuilder {
             maximum_record_age_in_seconds: self.maximum_record_age_in_seconds,
             bisect_batch_on_function_error: self.bisect_batch_on_function_error,
             maximum_retry_attempts: self.maximum_retry_attempts,
+            tags: self.tags,
             tumbling_window_in_seconds: self.tumbling_window_in_seconds,
             topics: self.topics,
             queues: self.queues,

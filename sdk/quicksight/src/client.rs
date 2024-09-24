@@ -377,6 +377,8 @@ mod list_folder_members;
 
 mod list_folders;
 
+mod list_folders_for_resource;
+
 mod list_group_memberships;
 
 mod list_groups;

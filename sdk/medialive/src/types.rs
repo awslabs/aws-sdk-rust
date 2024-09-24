@@ -31,6 +31,28 @@ pub use crate::types::_offering_duration_units::OfferingDurationUnits;
 
 pub use crate::types::_validation_error::ValidationError;
 
+pub use crate::types::_node_state::NodeState;
+
+pub use crate::types::_node_role::NodeRole;
+
+pub use crate::types::_node_interface_mapping::NodeInterfaceMapping;
+
+pub use crate::types::_network_interface_mode::NetworkInterfaceMode;
+
+pub use crate::types::_node_connection_state::NodeConnectionState;
+
+pub use crate::types::_update_node_state_shape::UpdateNodeStateShape;
+
+pub use crate::types::_network_state::NetworkState;
+
+pub use crate::types::_route::Route;
+
+pub use crate::types::_ip_pool::IpPool;
+
+pub use crate::types::_route_update_request::RouteUpdateRequest;
+
+pub use crate::types::_ip_pool_update_request::IpPoolUpdateRequest;
+
 pub use crate::types::_multiplex_program::MultiplexProgram;
 
 pub use crate::types::_multiplex_program_pipeline_detail::MultiplexProgramPipelineDetail;
@@ -109,6 +131,12 @@ pub use crate::types::_input_device_media_connect_configurable_settings::InputDe
 
 pub use crate::types::_input::Input;
 
+pub use crate::types::_multicast_settings::MulticastSettings;
+
+pub use crate::types::_multicast_source::MulticastSource;
+
+pub use crate::types::_input_network_location::InputNetworkLocation;
+
 pub use crate::types::_srt_settings::SrtSettings;
 
 pub use crate::types::_srt_caller_source::SrtCallerSource;
@@ -133,7 +161,13 @@ pub use crate::types::_input_class::InputClass;
 
 pub use crate::types::_input_destination::InputDestination;
 
+pub use crate::types::_input_destination_route::InputDestinationRoute;
+
 pub use crate::types::_input_destination_vpc::InputDestinationVpc;
+
+pub use crate::types::_multicast_settings_update_request::MulticastSettingsUpdateRequest;
+
+pub use crate::types::_multicast_source_update_request::MulticastSourceUpdateRequest;
 
 pub use crate::types::_srt_settings_request::SrtSettingsRequest;
 
@@ -149,9 +183,23 @@ pub use crate::types::_input_device_request::InputDeviceRequest;
 
 pub use crate::types::_input_destination_request::InputDestinationRequest;
 
+pub use crate::types::_input_request_destination_route::InputRequestDestinationRoute;
+
 pub use crate::types::_event_bridge_rule_template_event_type::EventBridgeRuleTemplateEventType;
 
 pub use crate::types::_event_bridge_rule_template_target::EventBridgeRuleTemplateTarget;
+
+pub use crate::types::_cluster_state::ClusterState;
+
+pub use crate::types::_cluster_network_settings::ClusterNetworkSettings;
+
+pub use crate::types::_interface_mapping::InterfaceMapping;
+
+pub use crate::types::_cluster_type::ClusterType;
+
+pub use crate::types::_cluster_network_settings_update_request::ClusterNetworkSettingsUpdateRequest;
+
+pub use crate::types::_interface_mapping_update_request::InterfaceMappingUpdateRequest;
 
 pub use crate::types::_cloud_watch_alarm_template_treat_missing_data::CloudWatchAlarmTemplateTreatMissingData;
 
@@ -161,7 +209,11 @@ pub use crate::types::_cloud_watch_alarm_template_statistic::CloudWatchAlarmTemp
 
 pub use crate::types::_cloud_watch_alarm_template_comparison_operator::CloudWatchAlarmTemplateComparisonOperator;
 
+pub use crate::types::_channel_placement_group_state::ChannelPlacementGroupState;
+
 pub use crate::types::_channel::Channel;
+
+pub use crate::types::_describe_anywhere_settings::DescribeAnywhereSettings;
 
 pub use crate::types::_vpc_output_settings_description::VpcOutputSettingsDescription;
 
@@ -208,6 +260,8 @@ pub use crate::types::_input_source_end_behavior::InputSourceEndBehavior;
 pub use crate::types::_smpte2038_data_preference::Smpte2038DataPreference;
 
 pub use crate::types::_network_input_settings::NetworkInputSettings;
+
+pub use crate::types::_multicast_input_settings::MulticastInputSettings;
 
 pub use crate::types::_network_input_server_validation::NetworkInputServerValidation;
 
@@ -305,13 +359,35 @@ pub use crate::types::_video_description_respond_to_afd::VideoDescriptionRespond
 
 pub use crate::types::_video_codec_settings::VideoCodecSettings;
 
-pub use crate::types::_mpeg2_settings::Mpeg2Settings;
+pub use crate::types::_av1_settings::Av1Settings;
 
 pub use crate::types::_timecode_burnin_settings::TimecodeBurninSettings;
 
 pub use crate::types::_timecode_burnin_position::TimecodeBurninPosition;
 
 pub use crate::types::_timecode_burnin_font_size::TimecodeBurninFontSize;
+
+pub use crate::types::_av1_scene_change_detect::Av1SceneChangeDetect;
+
+pub use crate::types::_av1_look_ahead_rate_control::Av1LookAheadRateControl;
+
+pub use crate::types::_av1_level::Av1Level;
+
+pub use crate::types::_av1_gop_size_units::Av1GopSizeUnits;
+
+pub use crate::types::_fixed_afd::FixedAfd;
+
+pub use crate::types::_av1_color_space_settings::Av1ColorSpaceSettings;
+
+pub use crate::types::_rec709_settings::Rec709Settings;
+
+pub use crate::types::_rec601_settings::Rec601Settings;
+
+pub use crate::types::_color_space_passthrough_settings::ColorSpacePassthroughSettings;
+
+pub use crate::types::_afd_signaling::AfdSignaling;
+
+pub use crate::types::_mpeg2_settings::Mpeg2Settings;
 
 pub use crate::types::_mpeg2_timecode_insertion_behavior::Mpeg2TimecodeInsertionBehavior;
 
@@ -320,8 +396,6 @@ pub use crate::types::_mpeg2_sub_gop_length::Mpeg2SubGopLength;
 pub use crate::types::_mpeg2_scan_type::Mpeg2ScanType;
 
 pub use crate::types::_mpeg2_gop_size_units::Mpeg2GopSizeUnits;
-
-pub use crate::types::_fixed_afd::FixedAfd;
 
 pub use crate::types::_mpeg2_filter_settings::Mpeg2FilterSettings;
 
@@ -336,8 +410,6 @@ pub use crate::types::_mpeg2_display_ratio::Mpeg2DisplayRatio;
 pub use crate::types::_mpeg2_color_space::Mpeg2ColorSpace;
 
 pub use crate::types::_mpeg2_color_metadata::Mpeg2ColorMetadata;
-
-pub use crate::types::_afd_signaling::AfdSignaling;
 
 pub use crate::types::_mpeg2_adaptive_quantization::Mpeg2AdaptiveQuantization;
 
@@ -373,15 +445,15 @@ pub use crate::types::_h265_flicker_aq::H265FlickerAq;
 
 pub use crate::types::_h265_filter_settings::H265FilterSettings;
 
+pub use crate::types::_bandwidth_reduction_filter_settings::BandwidthReductionFilterSettings;
+
+pub use crate::types::_bandwidth_reduction_filter_strength::BandwidthReductionFilterStrength;
+
+pub use crate::types::_bandwidth_reduction_post_filter_sharpening::BandwidthReductionPostFilterSharpening;
+
 pub use crate::types::_h265_color_space_settings::H265ColorSpaceSettings;
 
-pub use crate::types::_rec709_settings::Rec709Settings;
-
-pub use crate::types::_rec601_settings::Rec601Settings;
-
 pub use crate::types::_dolby_vision81_settings::DolbyVision81Settings;
-
-pub use crate::types::_color_space_passthrough_settings::ColorSpacePassthroughSettings;
 
 pub use crate::types::_h265_color_metadata::H265ColorMetadata;
 
@@ -451,13 +523,9 @@ pub use crate::types::_output::Output;
 
 pub use crate::types::_output_settings::OutputSettings;
 
-pub use crate::types::_cmaf_ingest_output_settings::CmafIngestOutputSettings;
+pub use crate::types::_srt_output_settings::SrtOutputSettings;
 
-pub use crate::types::_udp_output_settings::UdpOutputSettings;
-
-pub use crate::types::_fec_output_settings::FecOutputSettings;
-
-pub use crate::types::_fec_output_include_fec::FecOutputIncludeFec;
+pub use crate::types::_srt_encryption_type::SrtEncryptionType;
 
 pub use crate::types::_output_location_ref::OutputLocationRef;
 
@@ -511,11 +579,23 @@ pub use crate::types::_m2ts_arib::M2tsArib;
 
 pub use crate::types::_m2ts_absent_input_audio_behavior::M2tsAbsentInputAudioBehavior;
 
+pub use crate::types::_cmaf_ingest_output_settings::CmafIngestOutputSettings;
+
+pub use crate::types::_udp_output_settings::UdpOutputSettings;
+
+pub use crate::types::_fec_output_settings::FecOutputSettings;
+
+pub use crate::types::_fec_output_include_fec::FecOutputIncludeFec;
+
 pub use crate::types::_rtmp_output_settings::RtmpOutputSettings;
 
 pub use crate::types::_rtmp_output_certificate_mode::RtmpOutputCertificateMode;
 
 pub use crate::types::_multiplex_output_settings::MultiplexOutputSettings;
+
+pub use crate::types::_multiplex_container_settings::MultiplexContainerSettings;
+
+pub use crate::types::_multiplex_m2ts_settings::MultiplexM2tsSettings;
 
 pub use crate::types::_ms_smooth_output_settings::MsSmoothOutputSettings;
 
@@ -569,6 +649,10 @@ pub use crate::types::_raw_settings::RawSettings;
 
 pub use crate::types::_output_group_settings::OutputGroupSettings;
 
+pub use crate::types::_srt_group_settings::SrtGroupSettings;
+
+pub use crate::types::_input_loss_action_for_udp_out::InputLossActionForUdpOut;
+
 pub use crate::types::_cmaf_ingest_group_settings::CmafIngestGroupSettings;
 
 pub use crate::types::_cmaf_ingest_segment_length_units::CmafIngestSegmentLengthUnits;
@@ -580,8 +664,6 @@ pub use crate::types::_cmaf_nielsen_id3_behavior::CmafNielsenId3Behavior;
 pub use crate::types::_udp_group_settings::UdpGroupSettings;
 
 pub use crate::types::_udp_timed_metadata_id3_frame::UdpTimedMetadataId3Frame;
-
-pub use crate::types::_input_loss_action_for_udp_out::InputLossActionForUdpOut;
 
 pub use crate::types::_rtmp_group_settings::RtmpGroupSettings;
 
@@ -965,6 +1047,8 @@ pub use crate::types::_channel_egress_endpoint::ChannelEgressEndpoint;
 
 pub use crate::types::_output_destination::OutputDestination;
 
+pub use crate::types::_srt_output_destination_settings::SrtOutputDestinationSettings;
+
 pub use crate::types::_output_destination_settings::OutputDestinationSettings;
 
 pub use crate::types::_multiplex_program_channel_destination_settings::MultiplexProgramChannelDestinationSettings;
@@ -999,6 +1083,10 @@ pub use crate::types::_signal_map_summary::SignalMapSummary;
 
 pub use crate::types::_offering::Offering;
 
+pub use crate::types::_describe_node_summary::DescribeNodeSummary;
+
+pub use crate::types::_describe_network_summary::DescribeNetworkSummary;
+
 pub use crate::types::_multiplex_program_summary::MultiplexProgramSummary;
 
 pub use crate::types::_multiplex_summary::MultiplexSummary;
@@ -1015,11 +1103,15 @@ pub use crate::types::_event_bridge_rule_template_summary::EventBridgeRuleTempla
 
 pub use crate::types::_event_bridge_rule_template_group_summary::EventBridgeRuleTemplateGroupSummary;
 
+pub use crate::types::_describe_cluster_summary::DescribeClusterSummary;
+
 pub use crate::types::_cloud_watch_alarm_template_summary::CloudWatchAlarmTemplateSummary;
 
 pub use crate::types::_cloud_watch_alarm_template_group_summary::CloudWatchAlarmTemplateGroupSummary;
 
 pub use crate::types::_channel_summary::ChannelSummary;
+
+pub use crate::types::_describe_channel_placement_group_summary::DescribeChannelPlacementGroupSummary;
 
 pub use crate::types::_thumbnail_detail::ThumbnailDetail;
 
@@ -1109,7 +1201,23 @@ pub use crate::types::_content_type::ContentType;
 
 pub use crate::types::_accept_header::AcceptHeader;
 
+pub use crate::types::_node_interface_mapping_create_request::NodeInterfaceMappingCreateRequest;
+
+pub use crate::types::_route_create_request::RouteCreateRequest;
+
+pub use crate::types::_ip_pool_create_request::IpPoolCreateRequest;
+
+pub use crate::types::_multicast_settings_create_request::MulticastSettingsCreateRequest;
+
+pub use crate::types::_multicast_source_create_request::MulticastSourceCreateRequest;
+
 pub use crate::types::_input_vpc_request::InputVpcRequest;
+
+pub use crate::types::_cluster_network_settings_create_request::ClusterNetworkSettingsCreateRequest;
+
+pub use crate::types::_interface_mapping_create_request::InterfaceMappingCreateRequest;
+
+pub use crate::types::_anywhere_settings::AnywhereSettings;
 
 pub use crate::types::_vpc_output_settings::VpcOutputSettings;
 
@@ -1168,6 +1276,8 @@ mod _afd_signaling;
 mod _algorithm;
 
 mod _ancillary_source_settings;
+
+mod _anywhere_settings;
 
 mod _archive_cdn_settings;
 
@@ -1233,6 +1343,18 @@ mod _authentication_scheme;
 
 mod _automatic_input_failover_settings;
 
+mod _av1_color_space_settings;
+
+mod _av1_gop_size_units;
+
+mod _av1_level;
+
+mod _av1_look_ahead_rate_control;
+
+mod _av1_scene_change_detect;
+
+mod _av1_settings;
+
 mod _avail_blanking;
 
 mod _avail_blanking_state;
@@ -1240,6 +1362,12 @@ mod _avail_blanking_state;
 mod _avail_configuration;
 
 mod _avail_settings;
+
+mod _bandwidth_reduction_filter_settings;
+
+mod _bandwidth_reduction_filter_strength;
+
+mod _bandwidth_reduction_post_filter_sharpening;
 
 mod _batch_failed_result_model;
 
@@ -1297,6 +1425,8 @@ mod _channel_egress_endpoint;
 
 mod _channel_pipeline_id_to_restart;
 
+mod _channel_placement_group_state;
+
 mod _channel_state;
 
 mod _channel_summary;
@@ -1312,6 +1442,16 @@ mod _cloud_watch_alarm_template_summary;
 mod _cloud_watch_alarm_template_target_resource_type;
 
 mod _cloud_watch_alarm_template_treat_missing_data;
+
+mod _cluster_network_settings;
+
+mod _cluster_network_settings_create_request;
+
+mod _cluster_network_settings_update_request;
+
+mod _cluster_state;
+
+mod _cluster_type;
 
 mod _cmaf_ingest_group_settings;
 
@@ -1334,6 +1474,16 @@ mod _content_type;
 mod _dash_role_audio;
 
 mod _dash_role_caption;
+
+mod _describe_anywhere_settings;
+
+mod _describe_channel_placement_group_summary;
+
+mod _describe_cluster_summary;
+
+mod _describe_network_summary;
+
+mod _describe_node_summary;
 
 mod _device_settings_sync_state;
 
@@ -1687,6 +1837,8 @@ mod _input_destination;
 
 mod _input_destination_request;
 
+mod _input_destination_route;
+
 mod _input_destination_vpc;
 
 mod _input_device_active_input;
@@ -1755,9 +1907,13 @@ mod _input_loss_image_type;
 
 mod _input_maximum_bitrate;
 
+mod _input_network_location;
+
 mod _input_preference;
 
 mod _input_prepare_schedule_action_settings;
+
+mod _input_request_destination_route;
 
 mod _input_resolution;
 
@@ -1790,6 +1946,18 @@ mod _input_vpc_request;
 mod _input_whitelist_rule;
 
 mod _input_whitelist_rule_cidr;
+
+mod _interface_mapping;
+
+mod _interface_mapping_create_request;
+
+mod _interface_mapping_update_request;
+
+mod _ip_pool;
+
+mod _ip_pool_create_request;
+
+mod _ip_pool_update_request;
 
 mod _key_provider_settings;
 
@@ -1913,9 +2081,27 @@ mod _ms_smooth_h265_packaging_type;
 
 mod _ms_smooth_output_settings;
 
+mod _multicast_input_settings;
+
+mod _multicast_settings;
+
+mod _multicast_settings_create_request;
+
+mod _multicast_settings_update_request;
+
+mod _multicast_source;
+
+mod _multicast_source_create_request;
+
+mod _multicast_source_update_request;
+
 mod _multiplex;
 
+mod _multiplex_container_settings;
+
 mod _multiplex_group_settings;
+
+mod _multiplex_m2ts_settings;
 
 mod _multiplex_media_connect_output_destination_settings;
 
@@ -1953,6 +2139,10 @@ mod _network_input_server_validation;
 
 mod _network_input_settings;
 
+mod _network_interface_mode;
+
+mod _network_state;
+
 mod _nielsen_cbet;
 
 mod _nielsen_configuration;
@@ -1968,6 +2158,16 @@ mod _nielsen_watermarks_cbet_stepaside;
 mod _nielsen_watermarks_distribution_types;
 
 mod _nielsen_watermarks_settings;
+
+mod _node_connection_state;
+
+mod _node_interface_mapping;
+
+mod _node_interface_mapping_create_request;
+
+mod _node_role;
+
+mod _node_state;
 
 mod _offering;
 
@@ -2038,6 +2238,12 @@ mod _reservation_special_feature;
 mod _reservation_state;
 
 mod _reservation_video_quality;
+
+mod _route;
+
+mod _route_create_request;
+
+mod _route_update_request;
 
 mod _rtmp_ad_markers;
 
@@ -2151,6 +2357,14 @@ mod _srt_caller_source;
 
 mod _srt_caller_source_request;
 
+mod _srt_encryption_type;
+
+mod _srt_group_settings;
+
+mod _srt_output_destination_settings;
+
+mod _srt_output_settings;
+
 mod _srt_settings;
 
 mod _srt_settings_request;
@@ -2216,6 +2430,8 @@ mod _udp_group_settings;
 mod _udp_output_settings;
 
 mod _udp_timed_metadata_id3_frame;
+
+mod _update_node_state_shape;
 
 mod _validation_error;
 

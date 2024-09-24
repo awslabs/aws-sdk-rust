@@ -21,6 +21,15 @@ pub fn ser_input_attachment(
         crate::protocol_serde::shape_input_settings::ser_input_settings(&mut object_6, var_5)?;
         object_6.finish();
     }
+    if let Some(var_7) = &input.logical_interface_names {
+        let mut array_8 = object.key("logicalInterfaceNames").start_array();
+        for item_9 in var_7 {
+            {
+                array_8.value().string(item_9.as_str());
+            }
+        }
+        array_8.finish();
+    }
     Ok(())
 }
 
@@ -60,6 +69,9 @@ where
                         }
                         "inputSettings" => {
                             builder = builder.set_input_settings(crate::protocol_serde::shape_input_settings::de_input_settings(tokens)?);
+                        }
+                        "logicalInterfaceNames" => {
+                            builder = builder.set_logical_interface_names(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

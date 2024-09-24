@@ -12,6 +12,8 @@ pub struct VideoCodecSettings {
     pub h265_settings: ::std::option::Option<crate::types::H265Settings>,
     /// Mpeg2 Settings
     pub mpeg2_settings: ::std::option::Option<crate::types::Mpeg2Settings>,
+    /// Av1 Settings
+    pub av1_settings: ::std::option::Option<crate::types::Av1Settings>,
 }
 impl VideoCodecSettings {
     /// Frame Capture Settings
@@ -30,6 +32,10 @@ impl VideoCodecSettings {
     pub fn mpeg2_settings(&self) -> ::std::option::Option<&crate::types::Mpeg2Settings> {
         self.mpeg2_settings.as_ref()
     }
+    /// Av1 Settings
+    pub fn av1_settings(&self) -> ::std::option::Option<&crate::types::Av1Settings> {
+        self.av1_settings.as_ref()
+    }
 }
 impl VideoCodecSettings {
     /// Creates a new builder-style object to manufacture [`VideoCodecSettings`](crate::types::VideoCodecSettings).
@@ -46,6 +52,7 @@ pub struct VideoCodecSettingsBuilder {
     pub(crate) h264_settings: ::std::option::Option<crate::types::H264Settings>,
     pub(crate) h265_settings: ::std::option::Option<crate::types::H265Settings>,
     pub(crate) mpeg2_settings: ::std::option::Option<crate::types::Mpeg2Settings>,
+    pub(crate) av1_settings: ::std::option::Option<crate::types::Av1Settings>,
 }
 impl VideoCodecSettingsBuilder {
     /// Frame Capture Settings
@@ -104,6 +111,20 @@ impl VideoCodecSettingsBuilder {
     pub fn get_mpeg2_settings(&self) -> &::std::option::Option<crate::types::Mpeg2Settings> {
         &self.mpeg2_settings
     }
+    /// Av1 Settings
+    pub fn av1_settings(mut self, input: crate::types::Av1Settings) -> Self {
+        self.av1_settings = ::std::option::Option::Some(input);
+        self
+    }
+    /// Av1 Settings
+    pub fn set_av1_settings(mut self, input: ::std::option::Option<crate::types::Av1Settings>) -> Self {
+        self.av1_settings = input;
+        self
+    }
+    /// Av1 Settings
+    pub fn get_av1_settings(&self) -> &::std::option::Option<crate::types::Av1Settings> {
+        &self.av1_settings
+    }
     /// Consumes the builder and constructs a [`VideoCodecSettings`](crate::types::VideoCodecSettings).
     pub fn build(self) -> crate::types::VideoCodecSettings {
         crate::types::VideoCodecSettings {
@@ -111,6 +132,7 @@ impl VideoCodecSettingsBuilder {
             h264_settings: self.h264_settings,
             h265_settings: self.h265_settings,
             mpeg2_settings: self.mpeg2_settings,
+            av1_settings: self.av1_settings,
         }
     }
 }

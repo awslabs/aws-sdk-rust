@@ -3,13 +3,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateSampleFindingsInput {
-    /// <p>The ID of the detector to create sample findings for.</p>
+    /// <p>The ID of the detector for which you need to create sample findings.</p>
     pub detector_id: ::std::option::Option<::std::string::String>,
     /// <p>The types of sample findings to generate.</p>
     pub finding_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl CreateSampleFindingsInput {
-    /// <p>The ID of the detector to create sample findings for.</p>
+    /// <p>The ID of the detector for which you need to create sample findings.</p>
     pub fn detector_id(&self) -> ::std::option::Option<&str> {
         self.detector_id.as_deref()
     }
@@ -35,18 +35,18 @@ pub struct CreateSampleFindingsInputBuilder {
     pub(crate) finding_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl CreateSampleFindingsInputBuilder {
-    /// <p>The ID of the detector to create sample findings for.</p>
+    /// <p>The ID of the detector for which you need to create sample findings.</p>
     /// This field is required.
     pub fn detector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.detector_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the detector to create sample findings for.</p>
+    /// <p>The ID of the detector for which you need to create sample findings.</p>
     pub fn set_detector_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.detector_id = input;
         self
     }
-    /// <p>The ID of the detector to create sample findings for.</p>
+    /// <p>The ID of the detector for which you need to create sample findings.</p>
     pub fn get_detector_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.detector_id
     }

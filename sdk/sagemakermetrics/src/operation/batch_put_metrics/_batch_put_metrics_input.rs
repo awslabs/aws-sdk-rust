@@ -3,13 +3,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchPutMetricsInput {
-    /// <p>The name of the Trial Component to associate with the metrics.</p>
+    /// <p>The name of the Trial Component to associate with the metrics. The Trial Component name must be entirely lowercase.</p>
     pub trial_component_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of raw metric values to put.</p>
     pub metric_data: ::std::option::Option<::std::vec::Vec<crate::types::RawMetricData>>,
 }
 impl BatchPutMetricsInput {
-    /// <p>The name of the Trial Component to associate with the metrics.</p>
+    /// <p>The name of the Trial Component to associate with the metrics. The Trial Component name must be entirely lowercase.</p>
     pub fn trial_component_name(&self) -> ::std::option::Option<&str> {
         self.trial_component_name.as_deref()
     }
@@ -35,18 +35,18 @@ pub struct BatchPutMetricsInputBuilder {
     pub(crate) metric_data: ::std::option::Option<::std::vec::Vec<crate::types::RawMetricData>>,
 }
 impl BatchPutMetricsInputBuilder {
-    /// <p>The name of the Trial Component to associate with the metrics.</p>
+    /// <p>The name of the Trial Component to associate with the metrics. The Trial Component name must be entirely lowercase.</p>
     /// This field is required.
     pub fn trial_component_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.trial_component_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the Trial Component to associate with the metrics.</p>
+    /// <p>The name of the Trial Component to associate with the metrics. The Trial Component name must be entirely lowercase.</p>
     pub fn set_trial_component_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.trial_component_name = input;
         self
     }
-    /// <p>The name of the Trial Component to associate with the metrics.</p>
+    /// <p>The name of the Trial Component to associate with the metrics. The Trial Component name must be entirely lowercase.</p>
     pub fn get_trial_component_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.trial_component_name
     }

@@ -19,12 +19,19 @@ pub struct RespondToAuthChallengeInput {
     /// SMS_MFA
     /// </dt>
     /// <dd>
-    /// <p><code>"ChallengeName": "SMS_MFA", "ChallengeResponses": {"SMS_MFA_CODE": "\[SMS_code\]", "USERNAME": "\[username\]"}</code></p>
+    /// <p><code>"ChallengeName": "SMS_MFA", "ChallengeResponses": {"SMS_MFA_CODE": "\[code\]", "USERNAME": "\[username\]"}</code></p>
+    /// </dd>
+    /// <dt>
+    /// EMAIL_OTP
+    /// </dt>
+    /// <dd>
+    /// <p><code>"ChallengeName": "EMAIL_OTP", "ChallengeResponses": {"EMAIL_OTP_CODE": "\[code\]", "USERNAME": "\[username\]"}</code></p>
     /// </dd>
     /// <dt>
     /// PASSWORD_VERIFIER
     /// </dt>
     /// <dd>
+    /// <p>This challenge response is part of the SRP flow. Amazon Cognito requires that your application respond to this challenge within a few seconds. When the response time exceeds this period, your user pool returns a <code>NotAuthorizedException</code> error.</p>
     /// <p><code>"ChallengeName": "PASSWORD_VERIFIER", "ChallengeResponses": {"PASSWORD_CLAIM_SIGNATURE": "\[claim_signature\]", "PASSWORD_CLAIM_SECRET_BLOCK": "\[secret_block\]", "TIMESTAMP": \[timestamp\], "USERNAME": "\[username\]"}</code></p>
     /// <p>Add <code>"DEVICE_KEY"</code> when you sign in with a remembered device.</p>
     /// </dd>
@@ -118,12 +125,19 @@ impl RespondToAuthChallengeInput {
     /// SMS_MFA
     /// </dt>
     /// <dd>
-    /// <p><code>"ChallengeName": "SMS_MFA", "ChallengeResponses": {"SMS_MFA_CODE": "\[SMS_code\]", "USERNAME": "\[username\]"}</code></p>
+    /// <p><code>"ChallengeName": "SMS_MFA", "ChallengeResponses": {"SMS_MFA_CODE": "\[code\]", "USERNAME": "\[username\]"}</code></p>
+    /// </dd>
+    /// <dt>
+    /// EMAIL_OTP
+    /// </dt>
+    /// <dd>
+    /// <p><code>"ChallengeName": "EMAIL_OTP", "ChallengeResponses": {"EMAIL_OTP_CODE": "\[code\]", "USERNAME": "\[username\]"}</code></p>
     /// </dd>
     /// <dt>
     /// PASSWORD_VERIFIER
     /// </dt>
     /// <dd>
+    /// <p>This challenge response is part of the SRP flow. Amazon Cognito requires that your application respond to this challenge within a few seconds. When the response time exceeds this period, your user pool returns a <code>NotAuthorizedException</code> error.</p>
     /// <p><code>"ChallengeName": "PASSWORD_VERIFIER", "ChallengeResponses": {"PASSWORD_CLAIM_SIGNATURE": "\[claim_signature\]", "PASSWORD_CLAIM_SECRET_BLOCK": "\[secret_block\]", "TIMESTAMP": \[timestamp\], "USERNAME": "\[username\]"}</code></p>
     /// <p>Add <code>"DEVICE_KEY"</code> when you sign in with a remembered device.</p>
     /// </dd>
@@ -295,12 +309,19 @@ impl RespondToAuthChallengeInputBuilder {
     /// SMS_MFA
     /// </dt>
     /// <dd>
-    /// <p><code>"ChallengeName": "SMS_MFA", "ChallengeResponses": {"SMS_MFA_CODE": "\[SMS_code\]", "USERNAME": "\[username\]"}</code></p>
+    /// <p><code>"ChallengeName": "SMS_MFA", "ChallengeResponses": {"SMS_MFA_CODE": "\[code\]", "USERNAME": "\[username\]"}</code></p>
+    /// </dd>
+    /// <dt>
+    /// EMAIL_OTP
+    /// </dt>
+    /// <dd>
+    /// <p><code>"ChallengeName": "EMAIL_OTP", "ChallengeResponses": {"EMAIL_OTP_CODE": "\[code\]", "USERNAME": "\[username\]"}</code></p>
     /// </dd>
     /// <dt>
     /// PASSWORD_VERIFIER
     /// </dt>
     /// <dd>
+    /// <p>This challenge response is part of the SRP flow. Amazon Cognito requires that your application respond to this challenge within a few seconds. When the response time exceeds this period, your user pool returns a <code>NotAuthorizedException</code> error.</p>
     /// <p><code>"ChallengeName": "PASSWORD_VERIFIER", "ChallengeResponses": {"PASSWORD_CLAIM_SIGNATURE": "\[claim_signature\]", "PASSWORD_CLAIM_SECRET_BLOCK": "\[secret_block\]", "TIMESTAMP": \[timestamp\], "USERNAME": "\[username\]"}</code></p>
     /// <p>Add <code>"DEVICE_KEY"</code> when you sign in with a remembered device.</p>
     /// </dd>
@@ -370,12 +391,19 @@ impl RespondToAuthChallengeInputBuilder {
     /// SMS_MFA
     /// </dt>
     /// <dd>
-    /// <p><code>"ChallengeName": "SMS_MFA", "ChallengeResponses": {"SMS_MFA_CODE": "\[SMS_code\]", "USERNAME": "\[username\]"}</code></p>
+    /// <p><code>"ChallengeName": "SMS_MFA", "ChallengeResponses": {"SMS_MFA_CODE": "\[code\]", "USERNAME": "\[username\]"}</code></p>
+    /// </dd>
+    /// <dt>
+    /// EMAIL_OTP
+    /// </dt>
+    /// <dd>
+    /// <p><code>"ChallengeName": "EMAIL_OTP", "ChallengeResponses": {"EMAIL_OTP_CODE": "\[code\]", "USERNAME": "\[username\]"}</code></p>
     /// </dd>
     /// <dt>
     /// PASSWORD_VERIFIER
     /// </dt>
     /// <dd>
+    /// <p>This challenge response is part of the SRP flow. Amazon Cognito requires that your application respond to this challenge within a few seconds. When the response time exceeds this period, your user pool returns a <code>NotAuthorizedException</code> error.</p>
     /// <p><code>"ChallengeName": "PASSWORD_VERIFIER", "ChallengeResponses": {"PASSWORD_CLAIM_SIGNATURE": "\[claim_signature\]", "PASSWORD_CLAIM_SECRET_BLOCK": "\[secret_block\]", "TIMESTAMP": \[timestamp\], "USERNAME": "\[username\]"}</code></p>
     /// <p>Add <code>"DEVICE_KEY"</code> when you sign in with a remembered device.</p>
     /// </dd>
@@ -442,12 +470,19 @@ impl RespondToAuthChallengeInputBuilder {
     /// SMS_MFA
     /// </dt>
     /// <dd>
-    /// <p><code>"ChallengeName": "SMS_MFA", "ChallengeResponses": {"SMS_MFA_CODE": "\[SMS_code\]", "USERNAME": "\[username\]"}</code></p>
+    /// <p><code>"ChallengeName": "SMS_MFA", "ChallengeResponses": {"SMS_MFA_CODE": "\[code\]", "USERNAME": "\[username\]"}</code></p>
+    /// </dd>
+    /// <dt>
+    /// EMAIL_OTP
+    /// </dt>
+    /// <dd>
+    /// <p><code>"ChallengeName": "EMAIL_OTP", "ChallengeResponses": {"EMAIL_OTP_CODE": "\[code\]", "USERNAME": "\[username\]"}</code></p>
     /// </dd>
     /// <dt>
     /// PASSWORD_VERIFIER
     /// </dt>
     /// <dd>
+    /// <p>This challenge response is part of the SRP flow. Amazon Cognito requires that your application respond to this challenge within a few seconds. When the response time exceeds this period, your user pool returns a <code>NotAuthorizedException</code> error.</p>
     /// <p><code>"ChallengeName": "PASSWORD_VERIFIER", "ChallengeResponses": {"PASSWORD_CLAIM_SIGNATURE": "\[claim_signature\]", "PASSWORD_CLAIM_SECRET_BLOCK": "\[secret_block\]", "TIMESTAMP": \[timestamp\], "USERNAME": "\[username\]"}</code></p>
     /// <p>Add <code>"DEVICE_KEY"</code> when you sign in with a remembered device.</p>
     /// </dd>

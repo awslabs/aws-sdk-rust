@@ -115,6 +115,10 @@ pub use crate::types::_reservation_purchase_recommendation_summary::ReservationP
 
 pub use crate::types::_reservation_purchase_recommendation_detail::ReservationPurchaseRecommendationDetailBuilder;
 
+pub use crate::types::_reserved_capacity_details::ReservedCapacityDetailsBuilder;
+
+pub use crate::types::_dynamo_db_capacity_details::DynamoDbCapacityDetailsBuilder;
+
 pub use crate::types::_instance_details::InstanceDetailsBuilder;
 
 pub use crate::types::_memory_db_instance_details::MemoryDbInstanceDetailsBuilder;

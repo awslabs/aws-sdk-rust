@@ -2028,7 +2028,7 @@
                 "modelArn": {
                     "target": "com.amazonaws.bedrockagent#BedrockModelArn",
                     "traits": {
-                        "smithy.api#documentation": "<p>The model's ARN.</p>",
+                        "smithy.api#documentation": "<p>The ARN of the foundation model or <a href=\"https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference.html\">inference profile</a>.</p>",
                         "smithy.api#required": {}
                     }
                 },
@@ -2040,7 +2040,7 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "<p>Settings for a foundation model used to parse documents for a data source.</p>"
+                "smithy.api#documentation": "<p>Settings for a foundation model or <a href=\"https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference.html\">inference profile</a> used to parse documents for a data source.</p>"
             }
         },
         "com.amazonaws.bedrockagent#BedrockModelArn": {
@@ -2050,7 +2050,7 @@
                     "min": 1,
                     "max": 2048
                 },
-                "smithy.api#pattern": "^arn:aws(-[^:]+)?:bedrock:[a-z0-9-]{1,20}::foundation-model/([a-z0-9-]{1,63}[.]{1}[a-z0-9-]{1,63}([.]?[a-z0-9-]{1,63})([:][a-z0-9-]{1,63}){0,2})$"
+                "smithy.api#pattern": "^arn:aws(-[^:]+)?:bedrock:[a-z0-9-]{1,20}::foundation-model/([a-z0-9-]{1,63}[.]{1}[a-z0-9-]{1,63}([.]?[a-z0-9-]{1,63})([:][a-z0-9-]{1,63}){0,2})|(arn:aws(|-us-gov|-cn|-iso|-iso-b):bedrock:(|[0-9a-z-]{1,20}):(|[0-9]{12}):inference-profile/[a-zA-Z0-9-:.]+)$"
             }
         },
         "com.amazonaws.bedrockagent#BucketOwnerAccountId": {
@@ -2617,7 +2617,7 @@
                 "foundationModel": {
                     "target": "com.amazonaws.bedrockagent#ModelIdentifier",
                     "traits": {
-                        "smithy.api#documentation": "<p>The foundation model to be used for orchestration by the agent you create.</p>"
+                        "smithy.api#documentation": "<p>The Amazon Resource Name (ARN) of the foundation model to be used for orchestration by the agent you create.</p>"
                     }
                 },
                 "description": {
@@ -8104,9 +8104,9 @@
                     }
                 },
                 "modelId": {
-                    "target": "com.amazonaws.bedrockagent#ModelIdentifier",
+                    "target": "com.amazonaws.bedrockagent#KnowledgeBaseModelIdentifier",
                     "traits": {
-                        "smithy.api#documentation": "<p>The unique identifier of the model to use to generate a response from the query results. Omit this field if you want to return the retrieved results as an array.</p>"
+                        "smithy.api#documentation": "<p>The unique identifier of the model or <a href=\"https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference.html\">inference profile</a> to use to generate a response from the query results. Omit this field if you want to return the retrieved results as an array.</p>"
                     }
                 }
             },
@@ -8121,6 +8121,16 @@
                     "max": 10
                 },
                 "smithy.api#pattern": "^[0-9a-zA-Z]+$"
+            }
+        },
+        "com.amazonaws.bedrockagent#KnowledgeBaseModelIdentifier": {
+            "type": "string",
+            "traits": {
+                "smithy.api#length": {
+                    "min": 1,
+                    "max": 2048
+                },
+                "smithy.api#pattern": "^(arn:aws(-[^:]+)?:bedrock:[a-z0-9-]{1,20}:(([0-9]{12}:custom-model/[a-z0-9-]{1,63}[.]{1}[a-z0-9-]{1,63}/[a-z0-9]{12})|(:foundation-model/[a-z0-9-]{1,63}[.]{1}[a-z0-9-]{1,63}([.:]?[a-z0-9-]{1,63}))|([0-9]{12}:provisioned-model/[a-z0-9]{12})))|([a-z0-9-]{1,63}[.]{1}[a-z0-9-]{1,63}([.:]?[a-z0-9-]{1,63}))|(([0-9a-zA-Z][_-]?)+)|(arn:aws(|-us-gov|-cn|-iso|-iso-b):bedrock:(|[0-9a-z-]{1,20}):(|[0-9]{12}):(model-gateway|inference-profile)/[a-zA-Z0-9-:.]+)|([a-zA-Z0-9-:.]+)$"
             }
         },
         "com.amazonaws.bedrockagent#KnowledgeBaseResource": {
@@ -9950,7 +9960,7 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "<p>Settings for parsing document contents. By default, the service converts the contents of each\n    document into text before splitting it into chunks. To improve processing of PDF files with tables and images,\n    you can configure the data source to convert the pages of text into images and use a model to describe the\n    contents of each page.</p>\n         <p>To use a model to parse PDF documents, set the parsing strategy to <code>BEDROCK_FOUNDATION_MODEL</code> and\n    specify the model to use by ARN. You can also override the default parsing prompt with instructions for how\n    to interpret images and tables in your documents. The following models are supported.</p>\n         <ul>\n            <li>\n               <p>Anthropic Claude 3 Sonnet - <code>anthropic.claude-3-sonnet-20240229-v1:0</code>\n               </p>\n            </li>\n            <li>\n               <p>Anthropic Claude 3 Haiku - <code>anthropic.claude-3-haiku-20240307-v1:0</code>\n               </p>\n            </li>\n         </ul>\n         <p>You can get the ARN of a model with the <a href=\"https://docs.aws.amazon.com/bedrock/latest/APIReference/API_ListFoundationModels.html\">ListFoundationModels</a> action. Standard model usage\n    charges apply for the foundation model parsing strategy.</p>"
+                "smithy.api#documentation": "<p>Settings for parsing document contents. By default, the service converts the contents of each\n    document into text before splitting it into chunks. To improve processing of PDF files with tables and images,\n    you can configure the data source to convert the pages of text into images and use a model to describe the\n    contents of each page.</p>\n         <p>To use a model to parse PDF documents, set the parsing strategy to <code>BEDROCK_FOUNDATION_MODEL</code> and\n      specify the model or <a href=\"https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference.html\">inference profile</a> to use by ARN. You can also override the default parsing prompt with instructions for how\n    to interpret images and tables in your documents. The following models are supported.</p>\n         <ul>\n            <li>\n               <p>Anthropic Claude 3 Sonnet - <code>anthropic.claude-3-sonnet-20240229-v1:0</code>\n               </p>\n            </li>\n            <li>\n               <p>Anthropic Claude 3 Haiku - <code>anthropic.claude-3-haiku-20240307-v1:0</code>\n               </p>\n            </li>\n         </ul>\n         <p>You can get the ARN of a model with the <a href=\"https://docs.aws.amazon.com/bedrock/latest/APIReference/API_ListFoundationModels.html\">ListFoundationModels</a> action. Standard model usage\n    charges apply for the foundation model parsing strategy.</p>"
             }
         },
         "com.amazonaws.bedrockagent#ParsingPrompt": {
@@ -10405,7 +10415,7 @@
                 "modelId": {
                     "target": "com.amazonaws.bedrockagent#PromptModelIdentifier",
                     "traits": {
-                        "smithy.api#documentation": "<p>The unique identifier of the model to run inference with.</p>",
+                        "smithy.api#documentation": "<p>The unique identifier of the model or <a href=\"https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference.html\">inference profile</a> to run inference with.</p>",
                         "smithy.api#required": {}
                     }
                 },
@@ -10577,7 +10587,7 @@
                     "min": 1,
                     "max": 2048
                 },
-                "smithy.api#pattern": "^(arn:aws(-[^:]+)?:bedrock:[a-z0-9-]{1,20}:(([0-9]{12}:custom-model/[a-z0-9-]{1,63}[.]{1}[a-z0-9-]{1,63}/[a-z0-9]{12})|(:foundation-model/[a-z0-9-]{1,63}[.]{1}[a-z0-9-]{1,63}([.:]?[a-z0-9-]{1,63}))|([0-9]{12}:provisioned-model/[a-z0-9]{12})))|([a-z0-9-]{1,63}[.]{1}[a-z0-9-]{1,63}([.:]?[a-z0-9-]{1,63}))|(([0-9a-zA-Z][_-]?)+)$"
+                "smithy.api#pattern": "^(arn:aws(-[^:]+)?:bedrock:[a-z0-9-]{1,20}:(([0-9]{12}:custom-model/[a-z0-9-]{1,63}[.]{1}[a-z0-9-]{1,63}/[a-z0-9]{12})|(:foundation-model/[a-z0-9-]{1,63}[.]{1}[a-z0-9-]{1,63}([.:]?[a-z0-9-]{1,63}))|([0-9]{12}:provisioned-model/[a-z0-9]{12})))|([a-z0-9-]{1,63}[.]{1}[a-z0-9-]{1,63}([.:]?[a-z0-9-]{1,63}))|(([0-9a-zA-Z][_-]?)+)|(arn:aws(|-us-gov|-cn|-iso|-iso-b):bedrock:(|[0-9a-z-]{1,20}):(|[0-9]{12}):(model-gateway|inference-profile)/[a-zA-Z0-9-:.]+)|([a-zA-Z0-9-:.]+)$"
             }
         },
         "com.amazonaws.bedrockagent#PromptModelInferenceConfiguration": {
@@ -10637,7 +10647,7 @@
                 "overrideLambda": {
                     "target": "com.amazonaws.bedrockagent#LambdaArn",
                     "traits": {
-                        "smithy.api#documentation": "<p>The ARN of the Lambda function to use when parsing the raw foundation model output in parts of the agent sequence. If you specify this field, at least one of the <code>promptConfigurations</code> must contain a <code>parserMode</code> value that is set to <code>OVERRIDDEN</code>. For more information, see <a href=\"https://docs.aws.amazon.com/bedrock/latest/userguide/lambda-parser.html\">Parser Lambda function in Agents for Amazon Bedrock</a>.</p>"
+                        "smithy.api#documentation": "<p>The ARN of the Lambda function to use when parsing the raw foundation model output in parts of the agent sequence. If you specify this field, at least one of the <code>promptConfigurations</code> must contain a <code>parserMode</code> value that is set to <code>OVERRIDDEN</code>. For more information, see <a href=\"https://docs.aws.amazon.com/bedrock/latest/userguide/lambda-parser.html\">Parser Lambda function in Amazon Bedrock Agents</a>.</p>"
                     }
                 }
             },
@@ -10843,7 +10853,7 @@
                 "modelId": {
                     "target": "com.amazonaws.bedrockagent#PromptModelIdentifier",
                     "traits": {
-                        "smithy.api#documentation": "<p>The unique identifier of the model with which to run inference on the prompt.</p>"
+                        "smithy.api#documentation": "<p>The unique identifier of the model or <a href=\"https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference.html\">inference profile</a> with which to run inference on the prompt.</p>"
                     }
                 },
                 "inferenceConfiguration": {

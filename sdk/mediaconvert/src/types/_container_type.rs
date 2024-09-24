@@ -21,6 +21,7 @@
 ///     ContainerType::Mp4 => { /* ... */ },
 ///     ContainerType::Mpd => { /* ... */ },
 ///     ContainerType::Mxf => { /* ... */ },
+///     ContainerType::Ogg => { /* ... */ },
 ///     ContainerType::Raw => { /* ... */ },
 ///     ContainerType::Webm => { /* ... */ },
 ///     ContainerType::Y4M => { /* ... */ },
@@ -70,6 +71,8 @@ pub enum ContainerType {
     #[allow(missing_docs)] // documentation missing in model
     Mxf,
     #[allow(missing_docs)] // documentation missing in model
+    Ogg,
+    #[allow(missing_docs)] // documentation missing in model
     Raw,
     #[allow(missing_docs)] // documentation missing in model
     Webm,
@@ -91,6 +94,7 @@ impl ::std::convert::From<&str> for ContainerType {
             "MP4" => ContainerType::Mp4,
             "MPD" => ContainerType::Mpd,
             "MXF" => ContainerType::Mxf,
+            "OGG" => ContainerType::Ogg,
             "RAW" => ContainerType::Raw,
             "WEBM" => ContainerType::Webm,
             "Y4M" => ContainerType::Y4M,
@@ -118,6 +122,7 @@ impl ContainerType {
             ContainerType::Mp4 => "MP4",
             ContainerType::Mpd => "MPD",
             ContainerType::Mxf => "MXF",
+            ContainerType::Ogg => "OGG",
             ContainerType::Raw => "RAW",
             ContainerType::Webm => "WEBM",
             ContainerType::Y4M => "Y4M",
@@ -126,7 +131,9 @@ impl ContainerType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CMFC", "F4V", "ISMV", "M2TS", "M3U8", "MOV", "MP4", "MPD", "MXF", "RAW", "WEBM", "Y4M"]
+        &[
+            "CMFC", "F4V", "ISMV", "M2TS", "M3U8", "MOV", "MP4", "MPD", "MXF", "OGG", "RAW", "WEBM", "Y4M",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for ContainerType {
@@ -158,6 +165,7 @@ impl ::std::fmt::Display for ContainerType {
             ContainerType::Mp4 => write!(f, "MP4"),
             ContainerType::Mpd => write!(f, "MPD"),
             ContainerType::Mxf => write!(f, "MXF"),
+            ContainerType::Ogg => write!(f, "OGG"),
             ContainerType::Raw => write!(f, "RAW"),
             ContainerType::Webm => write!(f, "WEBM"),
             ContainerType::Y4M => write!(f, "Y4M"),

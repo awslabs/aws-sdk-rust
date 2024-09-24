@@ -47,6 +47,22 @@ pub fn de_initiate_auth_http_error(
             }
             tmp
         }),
+        "InvalidEmailRoleAccessPolicyException" => {
+            crate::operation::initiate_auth::InitiateAuthError::InvalidEmailRoleAccessPolicyException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InvalidEmailRoleAccessPolicyExceptionBuilder::default();
+                    output = crate::protocol_serde::shape_invalid_email_role_access_policy_exception::de_invalid_email_role_access_policy_exception_json_err(_response_body, output).map_err(crate::operation::initiate_auth::InitiateAuthError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         "InvalidLambdaResponseException" => crate::operation::initiate_auth::InitiateAuthError::InvalidLambdaResponseException({
             #[allow(unused_mut)]
             let mut tmp = {

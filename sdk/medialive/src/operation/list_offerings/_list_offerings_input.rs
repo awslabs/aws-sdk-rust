@@ -8,7 +8,7 @@ pub struct ListOfferingsInput {
     pub channel_class: ::std::option::Option<::std::string::String>,
     /// Filter to offerings that match the configuration of an existing channel, e.g. '2345678' (a channel ID)
     pub channel_configuration: ::std::option::Option<::std::string::String>,
-    /// Filter by codec, 'AVC', 'HEVC', 'MPEG2', 'AUDIO', or 'LINK'
+    /// Filter by codec, 'AVC', 'HEVC', 'MPEG2', 'AUDIO', 'LINK', or 'AV1'
     pub codec: ::std::option::Option<::std::string::String>,
     /// Filter by offering duration, e.g. '12'
     pub duration: ::std::option::Option<::std::string::String>,
@@ -38,7 +38,7 @@ impl ListOfferingsInput {
     pub fn channel_configuration(&self) -> ::std::option::Option<&str> {
         self.channel_configuration.as_deref()
     }
-    /// Filter by codec, 'AVC', 'HEVC', 'MPEG2', 'AUDIO', or 'LINK'
+    /// Filter by codec, 'AVC', 'HEVC', 'MPEG2', 'AUDIO', 'LINK', or 'AV1'
     pub fn codec(&self) -> ::std::option::Option<&str> {
         self.codec.as_deref()
     }
@@ -132,17 +132,17 @@ impl ListOfferingsInputBuilder {
     pub fn get_channel_configuration(&self) -> &::std::option::Option<::std::string::String> {
         &self.channel_configuration
     }
-    /// Filter by codec, 'AVC', 'HEVC', 'MPEG2', 'AUDIO', or 'LINK'
+    /// Filter by codec, 'AVC', 'HEVC', 'MPEG2', 'AUDIO', 'LINK', or 'AV1'
     pub fn codec(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.codec = ::std::option::Option::Some(input.into());
         self
     }
-    /// Filter by codec, 'AVC', 'HEVC', 'MPEG2', 'AUDIO', or 'LINK'
+    /// Filter by codec, 'AVC', 'HEVC', 'MPEG2', 'AUDIO', 'LINK', or 'AV1'
     pub fn set_codec(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.codec = input;
         self
     }
-    /// Filter by codec, 'AVC', 'HEVC', 'MPEG2', 'AUDIO', or 'LINK'
+    /// Filter by codec, 'AVC', 'HEVC', 'MPEG2', 'AUDIO', 'LINK', or 'AV1'
     pub fn get_codec(&self) -> &::std::option::Option<::std::string::String> {
         &self.codec
     }

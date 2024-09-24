@@ -11,9 +11,17 @@ pub struct TableOptimizerRun {
     /// <p>Represents the epoch timestamp at which the compaction job ended.</p>
     pub end_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A <code>RunMetrics</code> object containing metrics for the optimizer run.</p>
+    /// <p>This member is deprecated. See the individual metric members for compaction, retention, and orphan file deletion.</p>
+    #[deprecated(note = "Metrics has been replaced by optimizer type specific metrics such as IcebergCompactionMetrics")]
     pub metrics: ::std::option::Option<crate::types::RunMetrics>,
     /// <p>An error that occured during the optimizer run.</p>
     pub error: ::std::option::Option<::std::string::String>,
+    /// <p>A <code>CompactionMetrics</code> object containing metrics for the optimizer run.</p>
+    pub compaction_metrics: ::std::option::Option<crate::types::CompactionMetrics>,
+    /// <p>A <code>RetentionMetrics</code> object containing metrics for the optimizer run.</p>
+    pub retention_metrics: ::std::option::Option<crate::types::RetentionMetrics>,
+    /// <p>An <code>OrphanFileDeletionMetrics</code> object containing metrics for the optimizer run.</p>
+    pub orphan_file_deletion_metrics: ::std::option::Option<crate::types::OrphanFileDeletionMetrics>,
 }
 impl TableOptimizerRun {
     /// <p>An event type representing the status of the table optimizer run.</p>
@@ -29,12 +37,26 @@ impl TableOptimizerRun {
         self.end_timestamp.as_ref()
     }
     /// <p>A <code>RunMetrics</code> object containing metrics for the optimizer run.</p>
+    /// <p>This member is deprecated. See the individual metric members for compaction, retention, and orphan file deletion.</p>
+    #[deprecated(note = "Metrics has been replaced by optimizer type specific metrics such as IcebergCompactionMetrics")]
     pub fn metrics(&self) -> ::std::option::Option<&crate::types::RunMetrics> {
         self.metrics.as_ref()
     }
     /// <p>An error that occured during the optimizer run.</p>
     pub fn error(&self) -> ::std::option::Option<&str> {
         self.error.as_deref()
+    }
+    /// <p>A <code>CompactionMetrics</code> object containing metrics for the optimizer run.</p>
+    pub fn compaction_metrics(&self) -> ::std::option::Option<&crate::types::CompactionMetrics> {
+        self.compaction_metrics.as_ref()
+    }
+    /// <p>A <code>RetentionMetrics</code> object containing metrics for the optimizer run.</p>
+    pub fn retention_metrics(&self) -> ::std::option::Option<&crate::types::RetentionMetrics> {
+        self.retention_metrics.as_ref()
+    }
+    /// <p>An <code>OrphanFileDeletionMetrics</code> object containing metrics for the optimizer run.</p>
+    pub fn orphan_file_deletion_metrics(&self) -> ::std::option::Option<&crate::types::OrphanFileDeletionMetrics> {
+        self.orphan_file_deletion_metrics.as_ref()
     }
 }
 impl TableOptimizerRun {
@@ -53,6 +75,9 @@ pub struct TableOptimizerRunBuilder {
     pub(crate) end_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) metrics: ::std::option::Option<crate::types::RunMetrics>,
     pub(crate) error: ::std::option::Option<::std::string::String>,
+    pub(crate) compaction_metrics: ::std::option::Option<crate::types::CompactionMetrics>,
+    pub(crate) retention_metrics: ::std::option::Option<crate::types::RetentionMetrics>,
+    pub(crate) orphan_file_deletion_metrics: ::std::option::Option<crate::types::OrphanFileDeletionMetrics>,
 }
 impl TableOptimizerRunBuilder {
     /// <p>An event type representing the status of the table optimizer run.</p>
@@ -98,16 +123,22 @@ impl TableOptimizerRunBuilder {
         &self.end_timestamp
     }
     /// <p>A <code>RunMetrics</code> object containing metrics for the optimizer run.</p>
+    /// <p>This member is deprecated. See the individual metric members for compaction, retention, and orphan file deletion.</p>
+    #[deprecated(note = "Metrics has been replaced by optimizer type specific metrics such as IcebergCompactionMetrics")]
     pub fn metrics(mut self, input: crate::types::RunMetrics) -> Self {
         self.metrics = ::std::option::Option::Some(input);
         self
     }
     /// <p>A <code>RunMetrics</code> object containing metrics for the optimizer run.</p>
+    /// <p>This member is deprecated. See the individual metric members for compaction, retention, and orphan file deletion.</p>
+    #[deprecated(note = "Metrics has been replaced by optimizer type specific metrics such as IcebergCompactionMetrics")]
     pub fn set_metrics(mut self, input: ::std::option::Option<crate::types::RunMetrics>) -> Self {
         self.metrics = input;
         self
     }
     /// <p>A <code>RunMetrics</code> object containing metrics for the optimizer run.</p>
+    /// <p>This member is deprecated. See the individual metric members for compaction, retention, and orphan file deletion.</p>
+    #[deprecated(note = "Metrics has been replaced by optimizer type specific metrics such as IcebergCompactionMetrics")]
     pub fn get_metrics(&self) -> &::std::option::Option<crate::types::RunMetrics> {
         &self.metrics
     }
@@ -125,6 +156,48 @@ impl TableOptimizerRunBuilder {
     pub fn get_error(&self) -> &::std::option::Option<::std::string::String> {
         &self.error
     }
+    /// <p>A <code>CompactionMetrics</code> object containing metrics for the optimizer run.</p>
+    pub fn compaction_metrics(mut self, input: crate::types::CompactionMetrics) -> Self {
+        self.compaction_metrics = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A <code>CompactionMetrics</code> object containing metrics for the optimizer run.</p>
+    pub fn set_compaction_metrics(mut self, input: ::std::option::Option<crate::types::CompactionMetrics>) -> Self {
+        self.compaction_metrics = input;
+        self
+    }
+    /// <p>A <code>CompactionMetrics</code> object containing metrics for the optimizer run.</p>
+    pub fn get_compaction_metrics(&self) -> &::std::option::Option<crate::types::CompactionMetrics> {
+        &self.compaction_metrics
+    }
+    /// <p>A <code>RetentionMetrics</code> object containing metrics for the optimizer run.</p>
+    pub fn retention_metrics(mut self, input: crate::types::RetentionMetrics) -> Self {
+        self.retention_metrics = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A <code>RetentionMetrics</code> object containing metrics for the optimizer run.</p>
+    pub fn set_retention_metrics(mut self, input: ::std::option::Option<crate::types::RetentionMetrics>) -> Self {
+        self.retention_metrics = input;
+        self
+    }
+    /// <p>A <code>RetentionMetrics</code> object containing metrics for the optimizer run.</p>
+    pub fn get_retention_metrics(&self) -> &::std::option::Option<crate::types::RetentionMetrics> {
+        &self.retention_metrics
+    }
+    /// <p>An <code>OrphanFileDeletionMetrics</code> object containing metrics for the optimizer run.</p>
+    pub fn orphan_file_deletion_metrics(mut self, input: crate::types::OrphanFileDeletionMetrics) -> Self {
+        self.orphan_file_deletion_metrics = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>An <code>OrphanFileDeletionMetrics</code> object containing metrics for the optimizer run.</p>
+    pub fn set_orphan_file_deletion_metrics(mut self, input: ::std::option::Option<crate::types::OrphanFileDeletionMetrics>) -> Self {
+        self.orphan_file_deletion_metrics = input;
+        self
+    }
+    /// <p>An <code>OrphanFileDeletionMetrics</code> object containing metrics for the optimizer run.</p>
+    pub fn get_orphan_file_deletion_metrics(&self) -> &::std::option::Option<crate::types::OrphanFileDeletionMetrics> {
+        &self.orphan_file_deletion_metrics
+    }
     /// Consumes the builder and constructs a [`TableOptimizerRun`](crate::types::TableOptimizerRun).
     pub fn build(self) -> crate::types::TableOptimizerRun {
         crate::types::TableOptimizerRun {
@@ -133,6 +206,9 @@ impl TableOptimizerRunBuilder {
             end_timestamp: self.end_timestamp,
             metrics: self.metrics,
             error: self.error,
+            compaction_metrics: self.compaction_metrics,
+            retention_metrics: self.retention_metrics,
+            orphan_file_deletion_metrics: self.orphan_file_deletion_metrics,
         }
     }
 }

@@ -6,11 +6,17 @@
 pub struct SpotResizingSpecification {
     /// <p>Spot resize timeout in minutes. If Spot Instances are not provisioned within this time, the resize workflow will stop provisioning of Spot instances. Minimum value is 5 minutes and maximum value is 10,080 minutes (7 days). The timeout applies to all resize workflows on the Instance Fleet. The resize could be triggered by Amazon EMR Managed Scaling or by the customer (via Amazon EMR Console, Amazon EMR CLI modify-instance-fleet or Amazon EMR SDK ModifyInstanceFleet API) or by Amazon EMR due to Amazon EC2 Spot Reclamation.</p>
     pub timeout_duration_minutes: ::std::option::Option<i32>,
+    /// <p>Specifies the allocation strategy to use to launch Spot instances during a resize. If you run Amazon EMR releases 6.9.0 or higher, the default is <code>price-capacity-optimized</code>. If you run Amazon EMR releases 6.8.0 or lower, the default is <code>capacity-optimized</code>.</p>
+    pub allocation_strategy: ::std::option::Option<crate::types::SpotProvisioningAllocationStrategy>,
 }
 impl SpotResizingSpecification {
     /// <p>Spot resize timeout in minutes. If Spot Instances are not provisioned within this time, the resize workflow will stop provisioning of Spot instances. Minimum value is 5 minutes and maximum value is 10,080 minutes (7 days). The timeout applies to all resize workflows on the Instance Fleet. The resize could be triggered by Amazon EMR Managed Scaling or by the customer (via Amazon EMR Console, Amazon EMR CLI modify-instance-fleet or Amazon EMR SDK ModifyInstanceFleet API) or by Amazon EMR due to Amazon EC2 Spot Reclamation.</p>
     pub fn timeout_duration_minutes(&self) -> ::std::option::Option<i32> {
         self.timeout_duration_minutes
+    }
+    /// <p>Specifies the allocation strategy to use to launch Spot instances during a resize. If you run Amazon EMR releases 6.9.0 or higher, the default is <code>price-capacity-optimized</code>. If you run Amazon EMR releases 6.8.0 or lower, the default is <code>capacity-optimized</code>.</p>
+    pub fn allocation_strategy(&self) -> ::std::option::Option<&crate::types::SpotProvisioningAllocationStrategy> {
+        self.allocation_strategy.as_ref()
     }
 }
 impl SpotResizingSpecification {
@@ -25,10 +31,10 @@ impl SpotResizingSpecification {
 #[non_exhaustive]
 pub struct SpotResizingSpecificationBuilder {
     pub(crate) timeout_duration_minutes: ::std::option::Option<i32>,
+    pub(crate) allocation_strategy: ::std::option::Option<crate::types::SpotProvisioningAllocationStrategy>,
 }
 impl SpotResizingSpecificationBuilder {
     /// <p>Spot resize timeout in minutes. If Spot Instances are not provisioned within this time, the resize workflow will stop provisioning of Spot instances. Minimum value is 5 minutes and maximum value is 10,080 minutes (7 days). The timeout applies to all resize workflows on the Instance Fleet. The resize could be triggered by Amazon EMR Managed Scaling or by the customer (via Amazon EMR Console, Amazon EMR CLI modify-instance-fleet or Amazon EMR SDK ModifyInstanceFleet API) or by Amazon EMR due to Amazon EC2 Spot Reclamation.</p>
-    /// This field is required.
     pub fn timeout_duration_minutes(mut self, input: i32) -> Self {
         self.timeout_duration_minutes = ::std::option::Option::Some(input);
         self
@@ -42,10 +48,25 @@ impl SpotResizingSpecificationBuilder {
     pub fn get_timeout_duration_minutes(&self) -> &::std::option::Option<i32> {
         &self.timeout_duration_minutes
     }
+    /// <p>Specifies the allocation strategy to use to launch Spot instances during a resize. If you run Amazon EMR releases 6.9.0 or higher, the default is <code>price-capacity-optimized</code>. If you run Amazon EMR releases 6.8.0 or lower, the default is <code>capacity-optimized</code>.</p>
+    pub fn allocation_strategy(mut self, input: crate::types::SpotProvisioningAllocationStrategy) -> Self {
+        self.allocation_strategy = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies the allocation strategy to use to launch Spot instances during a resize. If you run Amazon EMR releases 6.9.0 or higher, the default is <code>price-capacity-optimized</code>. If you run Amazon EMR releases 6.8.0 or lower, the default is <code>capacity-optimized</code>.</p>
+    pub fn set_allocation_strategy(mut self, input: ::std::option::Option<crate::types::SpotProvisioningAllocationStrategy>) -> Self {
+        self.allocation_strategy = input;
+        self
+    }
+    /// <p>Specifies the allocation strategy to use to launch Spot instances during a resize. If you run Amazon EMR releases 6.9.0 or higher, the default is <code>price-capacity-optimized</code>. If you run Amazon EMR releases 6.8.0 or lower, the default is <code>capacity-optimized</code>.</p>
+    pub fn get_allocation_strategy(&self) -> &::std::option::Option<crate::types::SpotProvisioningAllocationStrategy> {
+        &self.allocation_strategy
+    }
     /// Consumes the builder and constructs a [`SpotResizingSpecification`](crate::types::SpotResizingSpecification).
     pub fn build(self) -> crate::types::SpotResizingSpecification {
         crate::types::SpotResizingSpecification {
             timeout_duration_minutes: self.timeout_duration_minutes,
+            allocation_strategy: self.allocation_strategy,
         }
     }
 }

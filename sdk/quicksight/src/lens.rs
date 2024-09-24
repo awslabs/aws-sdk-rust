@@ -109,6 +109,16 @@ pub(crate) fn reflens_list_folders_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_folders_for_resource_output_output_next_token(
+    input: &crate::operation::list_folders_for_resource::ListFoldersForResourceOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_group_memberships_output_output_next_token(
     input: &crate::operation::list_group_memberships::ListGroupMembershipsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -433,6 +443,16 @@ pub(crate) fn lens_list_folders_output_output_folder_summary_list(
     input: crate::operation::list_folders::ListFoldersOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::FolderSummary>> {
     let input = match input.folder_summary_list {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_folders_for_resource_output_output_folders(
+    input: crate::operation::list_folders_for_resource::ListFoldersForResourceOutput,
+) -> ::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    let input = match input.folders {
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,
     };

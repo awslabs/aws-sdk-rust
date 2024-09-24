@@ -57,6 +57,12 @@ pub fn ser_output_settings(
         crate::protocol_serde::shape_cmaf_ingest_output_settings::ser_cmaf_ingest_output_settings(&mut object_18, var_17)?;
         object_18.finish();
     }
+    if let Some(var_19) = &input.srt_output_settings {
+        #[allow(unused_mut)]
+        let mut object_20 = object.key("srtOutputSettings").start_object();
+        crate::protocol_serde::shape_srt_output_settings::ser_srt_output_settings(&mut object_20, var_19)?;
+        object_20.finish();
+    }
     Ok(())
 }
 
@@ -116,6 +122,10 @@ where
                             builder = builder.set_cmaf_ingest_output_settings(
                                 crate::protocol_serde::shape_cmaf_ingest_output_settings::de_cmaf_ingest_output_settings(tokens)?,
                             );
+                        }
+                        "srtOutputSettings" => {
+                            builder =
+                                builder.set_srt_output_settings(crate::protocol_serde::shape_srt_output_settings::de_srt_output_settings(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

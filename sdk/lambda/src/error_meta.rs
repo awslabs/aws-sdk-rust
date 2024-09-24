@@ -59,6 +59,8 @@ pub enum Error {
     PreconditionFailedException(crate::types::error::PreconditionFailedException),
     /// <p>The specified configuration does not exist.</p>
     ProvisionedConcurrencyConfigNotFoundException(crate::types::error::ProvisionedConcurrencyConfigNotFoundException),
+    /// <p>Lambda prevented your policy from being created because it would grant public access to your function. If you intended to create a public policy, use the <code>PutPublicAccessBlockConfig</code> API action to configure your function's public-access settings to allow public policies.</p>
+    PublicPolicyException(crate::types::error::PublicPolicyException),
     /// <p>Lambda has detected your function being invoked in a recursive loop with other Amazon Web Services resources and stopped your function's invocation.</p>
     RecursiveInvocationException(crate::types::error::RecursiveInvocationException),
     /// <p>The request payload exceeded the <code>Invoke</code> request body JSON input quota. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html">Lambda quotas</a>.</p>
@@ -122,6 +124,7 @@ impl ::std::fmt::Display for Error {
             Error::PolicyLengthExceededException(inner) => inner.fmt(f),
             Error::PreconditionFailedException(inner) => inner.fmt(f),
             Error::ProvisionedConcurrencyConfigNotFoundException(inner) => inner.fmt(f),
+            Error::PublicPolicyException(inner) => inner.fmt(f),
             Error::RecursiveInvocationException(inner) => inner.fmt(f),
             Error::RequestTooLargeException(inner) => inner.fmt(f),
             Error::ResourceConflictException(inner) => inner.fmt(f),
@@ -181,6 +184,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::PolicyLengthExceededException(inner) => inner.meta(),
             Self::PreconditionFailedException(inner) => inner.meta(),
             Self::ProvisionedConcurrencyConfigNotFoundException(inner) => inner.meta(),
+            Self::PublicPolicyException(inner) => inner.meta(),
             Self::RecursiveInvocationException(inner) => inner.meta(),
             Self::RequestTooLargeException(inner) => inner.meta(),
             Self::ResourceConflictException(inner) => inner.meta(),
@@ -263,6 +267,7 @@ impl From<crate::operation::add_permission::AddPermissionError> for Error {
             }
             crate::operation::add_permission::AddPermissionError::PolicyLengthExceededException(inner) => Error::PolicyLengthExceededException(inner),
             crate::operation::add_permission::AddPermissionError::PreconditionFailedException(inner) => Error::PreconditionFailedException(inner),
+            crate::operation::add_permission::AddPermissionError::PublicPolicyException(inner) => Error::PublicPolicyException(inner),
             crate::operation::add_permission::AddPermissionError::ResourceConflictException(inner) => Error::ResourceConflictException(inner),
             crate::operation::add_permission::AddPermissionError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::add_permission::AddPermissionError::ServiceException(inner) => Error::ServiceException(inner),
@@ -806,6 +811,43 @@ impl From<crate::operation::delete_provisioned_concurrency_config::DeleteProvisi
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_resource_policy::DeleteResourcePolicyError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_resource_policy::DeleteResourcePolicyError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_resource_policy::DeleteResourcePolicyError> for Error {
+    fn from(err: crate::operation::delete_resource_policy::DeleteResourcePolicyError) -> Self {
+        match err {
+            crate::operation::delete_resource_policy::DeleteResourcePolicyError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::delete_resource_policy::DeleteResourcePolicyError::PreconditionFailedException(inner) => {
+                Error::PreconditionFailedException(inner)
+            }
+            crate::operation::delete_resource_policy::DeleteResourcePolicyError::ResourceConflictException(inner) => {
+                Error::ResourceConflictException(inner)
+            }
+            crate::operation::delete_resource_policy::DeleteResourcePolicyError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_resource_policy::DeleteResourcePolicyError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::delete_resource_policy::DeleteResourcePolicyError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::delete_resource_policy::DeleteResourcePolicyError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_account_settings::GetAccountSettingsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1312,6 +1354,71 @@ impl From<crate::operation::get_provisioned_concurrency_config::GetProvisionedCo
             crate::operation::get_provisioned_concurrency_config::GetProvisionedConcurrencyConfigError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::get_provisioned_concurrency_config::GetProvisionedConcurrencyConfigError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::get_provisioned_concurrency_config::GetProvisionedConcurrencyConfigError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_public_access_block_config::GetPublicAccessBlockConfigError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_public_access_block_config::GetPublicAccessBlockConfigError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_public_access_block_config::GetPublicAccessBlockConfigError> for Error {
+    fn from(err: crate::operation::get_public_access_block_config::GetPublicAccessBlockConfigError) -> Self {
+        match err {
+            crate::operation::get_public_access_block_config::GetPublicAccessBlockConfigError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::get_public_access_block_config::GetPublicAccessBlockConfigError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_public_access_block_config::GetPublicAccessBlockConfigError::ServiceException(inner) => {
+                Error::ServiceException(inner)
+            }
+            crate::operation::get_public_access_block_config::GetPublicAccessBlockConfigError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::get_public_access_block_config::GetPublicAccessBlockConfigError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_resource_policy::GetResourcePolicyError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_resource_policy::GetResourcePolicyError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_resource_policy::GetResourcePolicyError> for Error {
+    fn from(err: crate::operation::get_resource_policy::GetResourcePolicyError) -> Self {
+        match err {
+            crate::operation::get_resource_policy::GetResourcePolicyError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::get_resource_policy::GetResourcePolicyError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_resource_policy::GetResourcePolicyError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::get_resource_policy::GetResourcePolicyError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::get_resource_policy::GetResourcePolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2205,6 +2312,84 @@ impl From<crate::operation::put_provisioned_concurrency_config::PutProvisionedCo
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_public_access_block_config::PutPublicAccessBlockConfigError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_public_access_block_config::PutPublicAccessBlockConfigError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::put_public_access_block_config::PutPublicAccessBlockConfigError> for Error {
+    fn from(err: crate::operation::put_public_access_block_config::PutPublicAccessBlockConfigError) -> Self {
+        match err {
+            crate::operation::put_public_access_block_config::PutPublicAccessBlockConfigError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::put_public_access_block_config::PutPublicAccessBlockConfigError::ResourceConflictException(inner) => {
+                Error::ResourceConflictException(inner)
+            }
+            crate::operation::put_public_access_block_config::PutPublicAccessBlockConfigError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::put_public_access_block_config::PutPublicAccessBlockConfigError::ServiceException(inner) => {
+                Error::ServiceException(inner)
+            }
+            crate::operation::put_public_access_block_config::PutPublicAccessBlockConfigError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::put_public_access_block_config::PutPublicAccessBlockConfigError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_resource_policy::PutResourcePolicyError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_resource_policy::PutResourcePolicyError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::put_resource_policy::PutResourcePolicyError> for Error {
+    fn from(err: crate::operation::put_resource_policy::PutResourcePolicyError) -> Self {
+        match err {
+            crate::operation::put_resource_policy::PutResourcePolicyError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::put_resource_policy::PutResourcePolicyError::PolicyLengthExceededException(inner) => {
+                Error::PolicyLengthExceededException(inner)
+            }
+            crate::operation::put_resource_policy::PutResourcePolicyError::PreconditionFailedException(inner) => {
+                Error::PreconditionFailedException(inner)
+            }
+            crate::operation::put_resource_policy::PutResourcePolicyError::PublicPolicyException(inner) => Error::PublicPolicyException(inner),
+            crate::operation::put_resource_policy::PutResourcePolicyError::ResourceConflictException(inner) => {
+                Error::ResourceConflictException(inner)
+            }
+            crate::operation::put_resource_policy::PutResourcePolicyError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::put_resource_policy::PutResourcePolicyError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::put_resource_policy::PutResourcePolicyError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::put_resource_policy::PutResourcePolicyError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_runtime_management_config::PutRuntimeManagementConfigError, R>>
     for Error
 where
@@ -2310,6 +2495,7 @@ impl From<crate::operation::remove_permission::RemovePermissionError> for Error 
             crate::operation::remove_permission::RemovePermissionError::PreconditionFailedException(inner) => {
                 Error::PreconditionFailedException(inner)
             }
+            crate::operation::remove_permission::RemovePermissionError::PublicPolicyException(inner) => Error::PublicPolicyException(inner),
             crate::operation::remove_permission::RemovePermissionError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::remove_permission::RemovePermissionError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::remove_permission::RemovePermissionError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
@@ -2714,6 +2900,7 @@ impl ::std::error::Error for Error {
             Error::PolicyLengthExceededException(inner) => inner.source(),
             Error::PreconditionFailedException(inner) => inner.source(),
             Error::ProvisionedConcurrencyConfigNotFoundException(inner) => inner.source(),
+            Error::PublicPolicyException(inner) => inner.source(),
             Error::RecursiveInvocationException(inner) => inner.source(),
             Error::RequestTooLargeException(inner) => inner.source(),
             Error::ResourceConflictException(inner) => inner.source(),
@@ -2759,6 +2946,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::PolicyLengthExceededException(e) => e.request_id(),
             Self::PreconditionFailedException(e) => e.request_id(),
             Self::ProvisionedConcurrencyConfigNotFoundException(e) => e.request_id(),
+            Self::PublicPolicyException(e) => e.request_id(),
             Self::RecursiveInvocationException(e) => e.request_id(),
             Self::RequestTooLargeException(e) => e.request_id(),
             Self::ResourceConflictException(e) => e.request_id(),

@@ -57,6 +57,8 @@ pub struct CreateGlobalClusterInput {
     /// <p>Can't be specified if <code>SourceDBClusterIdentifier</code> is specified. In this case, Amazon Aurora uses the setting from the source DB cluster.</p></li>
     /// </ul>
     pub storage_encrypted: ::std::option::Option<bool>,
+    /// <p>Tags to assign to the global cluster.</p>
+    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateGlobalClusterInput {
     /// <p>The cluster identifier for this global database cluster. This parameter is stored as a lowercase string.</p>
@@ -129,6 +131,12 @@ impl CreateGlobalClusterInput {
     pub fn storage_encrypted(&self) -> ::std::option::Option<bool> {
         self.storage_encrypted
     }
+    /// <p>Tags to assign to the global cluster.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
+    }
 }
 impl CreateGlobalClusterInput {
     /// Creates a new builder-style object to manufacture [`CreateGlobalClusterInput`](crate::operation::create_global_cluster::CreateGlobalClusterInput).
@@ -149,6 +157,7 @@ pub struct CreateGlobalClusterInputBuilder {
     pub(crate) deletion_protection: ::std::option::Option<bool>,
     pub(crate) database_name: ::std::option::Option<::std::string::String>,
     pub(crate) storage_encrypted: ::std::option::Option<bool>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateGlobalClusterInputBuilder {
     /// <p>The cluster identifier for this global database cluster. This parameter is stored as a lowercase string.</p>
@@ -377,6 +386,26 @@ impl CreateGlobalClusterInputBuilder {
     pub fn get_storage_encrypted(&self) -> &::std::option::Option<bool> {
         &self.storage_encrypted
     }
+    /// Appends an item to `tags`.
+    ///
+    /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+    ///
+    /// <p>Tags to assign to the global cluster.</p>
+    pub fn tags(mut self, input: crate::types::Tag) -> Self {
+        let mut v = self.tags.unwrap_or_default();
+        v.push(input);
+        self.tags = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Tags to assign to the global cluster.</p>
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input;
+        self
+    }
+    /// <p>Tags to assign to the global cluster.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// Consumes the builder and constructs a [`CreateGlobalClusterInput`](crate::operation::create_global_cluster::CreateGlobalClusterInput).
     pub fn build(
         self,
@@ -391,6 +420,7 @@ impl CreateGlobalClusterInputBuilder {
             deletion_protection: self.deletion_protection,
             database_name: self.database_name,
             storage_encrypted: self.storage_encrypted,
+            tags: self.tags,
         })
     }
 }

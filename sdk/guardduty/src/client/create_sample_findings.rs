@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`CreateSampleFindings`](crate::operation::create_sample_findings::builders::CreateSampleFindingsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`detector_id(impl Into<String>)`](crate::operation::create_sample_findings::builders::CreateSampleFindingsFluentBuilder::detector_id) / [`set_detector_id(Option<String>)`](crate::operation::create_sample_findings::builders::CreateSampleFindingsFluentBuilder::set_detector_id):<br>required: **true**<br><p>The ID of the detector to create sample findings for.</p><br>
+    ///   - [`detector_id(impl Into<String>)`](crate::operation::create_sample_findings::builders::CreateSampleFindingsFluentBuilder::detector_id) / [`set_detector_id(Option<String>)`](crate::operation::create_sample_findings::builders::CreateSampleFindingsFluentBuilder::set_detector_id):<br>required: **true**<br><p>The ID of the detector for which you need to create sample findings.</p><br>
     ///   - [`finding_types(impl Into<String>)`](crate::operation::create_sample_findings::builders::CreateSampleFindingsFluentBuilder::finding_types) / [`set_finding_types(Option<Vec::<String>>)`](crate::operation::create_sample_findings::builders::CreateSampleFindingsFluentBuilder::set_finding_types):<br>required: **false**<br><p>The types of sample findings to generate.</p><br>
     /// - On success, responds with [`CreateSampleFindingsOutput`](crate::operation::create_sample_findings::CreateSampleFindingsOutput)
     /// - On failure, responds with [`SdkError<CreateSampleFindingsError>`](crate::operation::create_sample_findings::CreateSampleFindingsError)

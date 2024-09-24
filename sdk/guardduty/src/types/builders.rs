@@ -171,6 +171,16 @@ pub use crate::types::_create_s3_bucket_resource::CreateS3BucketResourceBuilder;
 
 pub use crate::types::_finding_statistics::FindingStatisticsBuilder;
 
+pub use crate::types::_severity_statistics::SeverityStatisticsBuilder;
+
+pub use crate::types::_resource_statistics::ResourceStatisticsBuilder;
+
+pub use crate::types::_finding_type_statistics::FindingTypeStatisticsBuilder;
+
+pub use crate::types::_date_statistics::DateStatisticsBuilder;
+
+pub use crate::types::_account_statistics::AccountStatisticsBuilder;
+
 pub use crate::types::_finding::FindingBuilder;
 
 pub use crate::types::_service::ServiceBuilder;

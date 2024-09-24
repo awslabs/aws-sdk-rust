@@ -5,10 +5,12 @@
 pub struct SetUserPoolMfaConfigInput {
     /// <p>The user pool ID.</p>
     pub user_pool_id: ::std::option::Option<::std::string::String>,
-    /// <p>The SMS text message MFA configuration.</p>
+    /// <p>Configures user pool SMS messages for MFA. Sets the message template and the SMS message sending configuration for Amazon SNS.</p>
     pub sms_mfa_configuration: ::std::option::Option<crate::types::SmsMfaConfigType>,
-    /// <p>The software token MFA configuration.</p>
+    /// <p>Configures a user pool for time-based one-time password (TOTP) MFA. Enables or disables TOTP.</p>
     pub software_token_mfa_configuration: ::std::option::Option<crate::types::SoftwareTokenMfaConfigType>,
+    /// <p>Configures user pool email messages for MFA. Sets the subject and body of the email message template for MFA messages. To activate this setting, <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-advanced-security.html"> advanced security features</a> must be active in your user pool.</p>
+    pub email_mfa_configuration: ::std::option::Option<crate::types::EmailMfaConfigType>,
     /// <p>The MFA configuration. If you set the MfaConfiguration value to ‘ON’, only users who have set up an MFA factor can sign in. To learn more, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-mfa.html">Adding Multi-Factor Authentication (MFA) to a user pool</a>. Valid values include:</p>
     /// <ul>
     /// <li>
@@ -25,13 +27,17 @@ impl SetUserPoolMfaConfigInput {
     pub fn user_pool_id(&self) -> ::std::option::Option<&str> {
         self.user_pool_id.as_deref()
     }
-    /// <p>The SMS text message MFA configuration.</p>
+    /// <p>Configures user pool SMS messages for MFA. Sets the message template and the SMS message sending configuration for Amazon SNS.</p>
     pub fn sms_mfa_configuration(&self) -> ::std::option::Option<&crate::types::SmsMfaConfigType> {
         self.sms_mfa_configuration.as_ref()
     }
-    /// <p>The software token MFA configuration.</p>
+    /// <p>Configures a user pool for time-based one-time password (TOTP) MFA. Enables or disables TOTP.</p>
     pub fn software_token_mfa_configuration(&self) -> ::std::option::Option<&crate::types::SoftwareTokenMfaConfigType> {
         self.software_token_mfa_configuration.as_ref()
+    }
+    /// <p>Configures user pool email messages for MFA. Sets the subject and body of the email message template for MFA messages. To activate this setting, <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-advanced-security.html"> advanced security features</a> must be active in your user pool.</p>
+    pub fn email_mfa_configuration(&self) -> ::std::option::Option<&crate::types::EmailMfaConfigType> {
+        self.email_mfa_configuration.as_ref()
     }
     /// <p>The MFA configuration. If you set the MfaConfiguration value to ‘ON’, only users who have set up an MFA factor can sign in. To learn more, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-mfa.html">Adding Multi-Factor Authentication (MFA) to a user pool</a>. Valid values include:</p>
     /// <ul>
@@ -60,6 +66,7 @@ pub struct SetUserPoolMfaConfigInputBuilder {
     pub(crate) user_pool_id: ::std::option::Option<::std::string::String>,
     pub(crate) sms_mfa_configuration: ::std::option::Option<crate::types::SmsMfaConfigType>,
     pub(crate) software_token_mfa_configuration: ::std::option::Option<crate::types::SoftwareTokenMfaConfigType>,
+    pub(crate) email_mfa_configuration: ::std::option::Option<crate::types::EmailMfaConfigType>,
     pub(crate) mfa_configuration: ::std::option::Option<crate::types::UserPoolMfaType>,
 }
 impl SetUserPoolMfaConfigInputBuilder {
@@ -78,33 +85,47 @@ impl SetUserPoolMfaConfigInputBuilder {
     pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.user_pool_id
     }
-    /// <p>The SMS text message MFA configuration.</p>
+    /// <p>Configures user pool SMS messages for MFA. Sets the message template and the SMS message sending configuration for Amazon SNS.</p>
     pub fn sms_mfa_configuration(mut self, input: crate::types::SmsMfaConfigType) -> Self {
         self.sms_mfa_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The SMS text message MFA configuration.</p>
+    /// <p>Configures user pool SMS messages for MFA. Sets the message template and the SMS message sending configuration for Amazon SNS.</p>
     pub fn set_sms_mfa_configuration(mut self, input: ::std::option::Option<crate::types::SmsMfaConfigType>) -> Self {
         self.sms_mfa_configuration = input;
         self
     }
-    /// <p>The SMS text message MFA configuration.</p>
+    /// <p>Configures user pool SMS messages for MFA. Sets the message template and the SMS message sending configuration for Amazon SNS.</p>
     pub fn get_sms_mfa_configuration(&self) -> &::std::option::Option<crate::types::SmsMfaConfigType> {
         &self.sms_mfa_configuration
     }
-    /// <p>The software token MFA configuration.</p>
+    /// <p>Configures a user pool for time-based one-time password (TOTP) MFA. Enables or disables TOTP.</p>
     pub fn software_token_mfa_configuration(mut self, input: crate::types::SoftwareTokenMfaConfigType) -> Self {
         self.software_token_mfa_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The software token MFA configuration.</p>
+    /// <p>Configures a user pool for time-based one-time password (TOTP) MFA. Enables or disables TOTP.</p>
     pub fn set_software_token_mfa_configuration(mut self, input: ::std::option::Option<crate::types::SoftwareTokenMfaConfigType>) -> Self {
         self.software_token_mfa_configuration = input;
         self
     }
-    /// <p>The software token MFA configuration.</p>
+    /// <p>Configures a user pool for time-based one-time password (TOTP) MFA. Enables or disables TOTP.</p>
     pub fn get_software_token_mfa_configuration(&self) -> &::std::option::Option<crate::types::SoftwareTokenMfaConfigType> {
         &self.software_token_mfa_configuration
+    }
+    /// <p>Configures user pool email messages for MFA. Sets the subject and body of the email message template for MFA messages. To activate this setting, <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-advanced-security.html"> advanced security features</a> must be active in your user pool.</p>
+    pub fn email_mfa_configuration(mut self, input: crate::types::EmailMfaConfigType) -> Self {
+        self.email_mfa_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Configures user pool email messages for MFA. Sets the subject and body of the email message template for MFA messages. To activate this setting, <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-advanced-security.html"> advanced security features</a> must be active in your user pool.</p>
+    pub fn set_email_mfa_configuration(mut self, input: ::std::option::Option<crate::types::EmailMfaConfigType>) -> Self {
+        self.email_mfa_configuration = input;
+        self
+    }
+    /// <p>Configures user pool email messages for MFA. Sets the subject and body of the email message template for MFA messages. To activate this setting, <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-advanced-security.html"> advanced security features</a> must be active in your user pool.</p>
+    pub fn get_email_mfa_configuration(&self) -> &::std::option::Option<crate::types::EmailMfaConfigType> {
+        &self.email_mfa_configuration
     }
     /// <p>The MFA configuration. If you set the MfaConfiguration value to ‘ON’, only users who have set up an MFA factor can sign in. To learn more, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-mfa.html">Adding Multi-Factor Authentication (MFA) to a user pool</a>. Valid values include:</p>
     /// <ul>
@@ -153,6 +174,7 @@ impl SetUserPoolMfaConfigInputBuilder {
             user_pool_id: self.user_pool_id,
             sms_mfa_configuration: self.sms_mfa_configuration,
             software_token_mfa_configuration: self.software_token_mfa_configuration,
+            email_mfa_configuration: self.email_mfa_configuration,
             mfa_configuration: self.mfa_configuration,
         })
     }

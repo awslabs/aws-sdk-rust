@@ -259,4 +259,18 @@ impl UpdateInputFluentBuilder {
     pub fn get_srt_settings(&self) -> &::std::option::Option<crate::types::SrtSettingsRequest> {
         self.inner.get_srt_settings()
     }
+    /// Multicast Input settings.
+    pub fn multicast_settings(mut self, input: crate::types::MulticastSettingsUpdateRequest) -> Self {
+        self.inner = self.inner.multicast_settings(input);
+        self
+    }
+    /// Multicast Input settings.
+    pub fn set_multicast_settings(mut self, input: ::std::option::Option<crate::types::MulticastSettingsUpdateRequest>) -> Self {
+        self.inner = self.inner.set_multicast_settings(input);
+        self
+    }
+    /// Multicast Input settings.
+    pub fn get_multicast_settings(&self) -> &::std::option::Option<crate::types::MulticastSettingsUpdateRequest> {
+        self.inner.get_multicast_settings()
+    }
 }

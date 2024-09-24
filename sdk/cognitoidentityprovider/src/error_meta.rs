@@ -657,6 +657,9 @@ impl From<crate::operation::admin_initiate_auth::AdminInitiateAuthError> for Err
     fn from(err: crate::operation::admin_initiate_auth::AdminInitiateAuthError) -> Self {
         match err {
             crate::operation::admin_initiate_auth::AdminInitiateAuthError::InternalErrorException(inner) => Error::InternalErrorException(inner),
+            crate::operation::admin_initiate_auth::AdminInitiateAuthError::InvalidEmailRoleAccessPolicyException(inner) => {
+                Error::InvalidEmailRoleAccessPolicyException(inner)
+            }
             crate::operation::admin_initiate_auth::AdminInitiateAuthError::InvalidLambdaResponseException(inner) => {
                 Error::InvalidLambdaResponseException(inner)
             }
@@ -1001,6 +1004,9 @@ impl From<crate::operation::admin_respond_to_auth_challenge::AdminRespondToAuthC
             }
             crate::operation::admin_respond_to_auth_challenge::AdminRespondToAuthChallengeError::InternalErrorException(inner) => {
                 Error::InternalErrorException(inner)
+            }
+            crate::operation::admin_respond_to_auth_challenge::AdminRespondToAuthChallengeError::InvalidEmailRoleAccessPolicyException(inner) => {
+                Error::InvalidEmailRoleAccessPolicyException(inner)
             }
             crate::operation::admin_respond_to_auth_challenge::AdminRespondToAuthChallengeError::InvalidLambdaResponseException(inner) => {
                 Error::InvalidLambdaResponseException(inner)
@@ -2910,6 +2916,9 @@ impl From<crate::operation::initiate_auth::InitiateAuthError> for Error {
         match err {
             crate::operation::initiate_auth::InitiateAuthError::ForbiddenException(inner) => Error::ForbiddenException(inner),
             crate::operation::initiate_auth::InitiateAuthError::InternalErrorException(inner) => Error::InternalErrorException(inner),
+            crate::operation::initiate_auth::InitiateAuthError::InvalidEmailRoleAccessPolicyException(inner) => {
+                Error::InvalidEmailRoleAccessPolicyException(inner)
+            }
             crate::operation::initiate_auth::InitiateAuthError::InvalidLambdaResponseException(inner) => Error::InvalidLambdaResponseException(inner),
             crate::operation::initiate_auth::InitiateAuthError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
             crate::operation::initiate_auth::InitiateAuthError::InvalidSmsRoleAccessPolicyException(inner) => {
@@ -3333,6 +3342,9 @@ impl From<crate::operation::respond_to_auth_challenge::RespondToAuthChallengeErr
             crate::operation::respond_to_auth_challenge::RespondToAuthChallengeError::ForbiddenException(inner) => Error::ForbiddenException(inner),
             crate::operation::respond_to_auth_challenge::RespondToAuthChallengeError::InternalErrorException(inner) => {
                 Error::InternalErrorException(inner)
+            }
+            crate::operation::respond_to_auth_challenge::RespondToAuthChallengeError::InvalidEmailRoleAccessPolicyException(inner) => {
+                Error::InvalidEmailRoleAccessPolicyException(inner)
             }
             crate::operation::respond_to_auth_challenge::RespondToAuthChallengeError::InvalidLambdaResponseException(inner) => {
                 Error::InvalidLambdaResponseException(inner)

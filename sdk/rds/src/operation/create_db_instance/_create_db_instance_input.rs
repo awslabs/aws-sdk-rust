@@ -290,6 +290,8 @@ pub struct CreateDbInstanceInput {
     /// <li>
     /// <p><code>custom-sqlserver-web</code> (for RDS Custom for SQL Server DB instances)</p></li>
     /// <li>
+    /// <p><code>custom-sqlserver-dev</code> (for RDS Custom for SQL Server DB instances)</p></li>
+    /// <li>
     /// <p><code>db2-ae</code></p></li>
     /// <li>
     /// <p><code>db2-se</code></p></li>
@@ -379,8 +381,6 @@ pub struct CreateDbInstanceInput {
     /// <ul>
     /// <li>
     /// <p>Must match the name of an existing DB subnet group.</p></li>
-    /// <li>
-    /// <p>Must not be <code>default</code>.</p></li>
     /// </ul>
     /// <p>Example: <code>mydbsubnetgroup</code></p>
     pub db_subnet_group_name: ::std::option::Option<::std::string::String>,
@@ -531,7 +531,7 @@ pub struct CreateDbInstanceInput {
     /// <p>If you create an RDS Custom DB instance, you must set <code>AutoMinorVersionUpgrade</code> to <code>false</code>.</p>
     pub auto_minor_version_upgrade: ::std::option::Option<bool>,
     /// <p>The license model information for this DB instance.</p><note>
-    /// <p>License models for RDS for Db2 require additional configuration. The Bring Your Own License (BYOL) model requires a custom parameter group. The Db2 license through Amazon Web Services Marketplace model requires an Amazon Web Services Marketplace subscription. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/db2-licensing.html">RDS for Db2 licensing options</a> in the <i>Amazon RDS User Guide</i>.</p>
+    /// <p>License models for RDS for Db2 require additional configuration. The Bring Your Own License (BYOL) model requires a custom parameter group and an Amazon Web Services License Manager self-managed license. The Db2 license through Amazon Web Services Marketplace model requires an Amazon Web Services Marketplace subscription. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/db2-licensing.html">Amazon RDS for Db2 licensing options</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>The default for RDS for Db2 is <code>bring-your-own-license</code>.</p>
     /// </note>
     /// <p>This setting doesn't apply to Amazon Aurora or RDS Custom DB instances.</p>
@@ -1136,6 +1136,8 @@ impl CreateDbInstanceInput {
     /// <li>
     /// <p><code>custom-sqlserver-web</code> (for RDS Custom for SQL Server DB instances)</p></li>
     /// <li>
+    /// <p><code>custom-sqlserver-dev</code> (for RDS Custom for SQL Server DB instances)</p></li>
+    /// <li>
     /// <p><code>db2-ae</code></p></li>
     /// <li>
     /// <p><code>db2-se</code></p></li>
@@ -1241,8 +1243,6 @@ impl CreateDbInstanceInput {
     /// <ul>
     /// <li>
     /// <p>Must match the name of an existing DB subnet group.</p></li>
-    /// <li>
-    /// <p>Must not be <code>default</code>.</p></li>
     /// </ul>
     /// <p>Example: <code>mydbsubnetgroup</code></p>
     pub fn db_subnet_group_name(&self) -> ::std::option::Option<&str> {
@@ -1411,7 +1411,7 @@ impl CreateDbInstanceInput {
         self.auto_minor_version_upgrade
     }
     /// <p>The license model information for this DB instance.</p><note>
-    /// <p>License models for RDS for Db2 require additional configuration. The Bring Your Own License (BYOL) model requires a custom parameter group. The Db2 license through Amazon Web Services Marketplace model requires an Amazon Web Services Marketplace subscription. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/db2-licensing.html">RDS for Db2 licensing options</a> in the <i>Amazon RDS User Guide</i>.</p>
+    /// <p>License models for RDS for Db2 require additional configuration. The Bring Your Own License (BYOL) model requires a custom parameter group and an Amazon Web Services License Manager self-managed license. The Db2 license through Amazon Web Services Marketplace model requires an Amazon Web Services Marketplace subscription. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/db2-licensing.html">Amazon RDS for Db2 licensing options</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>The default for RDS for Db2 is <code>bring-your-own-license</code>.</p>
     /// </note>
     /// <p>This setting doesn't apply to Amazon Aurora or RDS Custom DB instances.</p>
@@ -2739,6 +2739,8 @@ impl CreateDbInstanceInputBuilder {
     /// <li>
     /// <p><code>custom-sqlserver-web</code> (for RDS Custom for SQL Server DB instances)</p></li>
     /// <li>
+    /// <p><code>custom-sqlserver-dev</code> (for RDS Custom for SQL Server DB instances)</p></li>
+    /// <li>
     /// <p><code>db2-ae</code></p></li>
     /// <li>
     /// <p><code>db2-se</code></p></li>
@@ -2793,6 +2795,8 @@ impl CreateDbInstanceInputBuilder {
     /// <li>
     /// <p><code>custom-sqlserver-web</code> (for RDS Custom for SQL Server DB instances)</p></li>
     /// <li>
+    /// <p><code>custom-sqlserver-dev</code> (for RDS Custom for SQL Server DB instances)</p></li>
+    /// <li>
     /// <p><code>db2-ae</code></p></li>
     /// <li>
     /// <p><code>db2-se</code></p></li>
@@ -2845,6 +2849,8 @@ impl CreateDbInstanceInputBuilder {
     /// <p><code>custom-sqlserver-se</code> (for RDS Custom for SQL Server DB instances)</p></li>
     /// <li>
     /// <p><code>custom-sqlserver-web</code> (for RDS Custom for SQL Server DB instances)</p></li>
+    /// <li>
+    /// <p><code>custom-sqlserver-dev</code> (for RDS Custom for SQL Server DB instances)</p></li>
     /// <li>
     /// <p><code>db2-ae</code></p></li>
     /// <li>
@@ -3103,8 +3109,6 @@ impl CreateDbInstanceInputBuilder {
     /// <ul>
     /// <li>
     /// <p>Must match the name of an existing DB subnet group.</p></li>
-    /// <li>
-    /// <p>Must not be <code>default</code>.</p></li>
     /// </ul>
     /// <p>Example: <code>mydbsubnetgroup</code></p>
     pub fn db_subnet_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -3116,8 +3120,6 @@ impl CreateDbInstanceInputBuilder {
     /// <ul>
     /// <li>
     /// <p>Must match the name of an existing DB subnet group.</p></li>
-    /// <li>
-    /// <p>Must not be <code>default</code>.</p></li>
     /// </ul>
     /// <p>Example: <code>mydbsubnetgroup</code></p>
     pub fn set_db_subnet_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -3129,8 +3131,6 @@ impl CreateDbInstanceInputBuilder {
     /// <ul>
     /// <li>
     /// <p>Must match the name of an existing DB subnet group.</p></li>
-    /// <li>
-    /// <p>Must not be <code>default</code>.</p></li>
     /// </ul>
     /// <p>Example: <code>mydbsubnetgroup</code></p>
     pub fn get_db_subnet_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -3639,7 +3639,7 @@ impl CreateDbInstanceInputBuilder {
         &self.auto_minor_version_upgrade
     }
     /// <p>The license model information for this DB instance.</p><note>
-    /// <p>License models for RDS for Db2 require additional configuration. The Bring Your Own License (BYOL) model requires a custom parameter group. The Db2 license through Amazon Web Services Marketplace model requires an Amazon Web Services Marketplace subscription. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/db2-licensing.html">RDS for Db2 licensing options</a> in the <i>Amazon RDS User Guide</i>.</p>
+    /// <p>License models for RDS for Db2 require additional configuration. The Bring Your Own License (BYOL) model requires a custom parameter group and an Amazon Web Services License Manager self-managed license. The Db2 license through Amazon Web Services Marketplace model requires an Amazon Web Services Marketplace subscription. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/db2-licensing.html">Amazon RDS for Db2 licensing options</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>The default for RDS for Db2 is <code>bring-your-own-license</code>.</p>
     /// </note>
     /// <p>This setting doesn't apply to Amazon Aurora or RDS Custom DB instances.</p>
@@ -3663,7 +3663,7 @@ impl CreateDbInstanceInputBuilder {
         self
     }
     /// <p>The license model information for this DB instance.</p><note>
-    /// <p>License models for RDS for Db2 require additional configuration. The Bring Your Own License (BYOL) model requires a custom parameter group. The Db2 license through Amazon Web Services Marketplace model requires an Amazon Web Services Marketplace subscription. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/db2-licensing.html">RDS for Db2 licensing options</a> in the <i>Amazon RDS User Guide</i>.</p>
+    /// <p>License models for RDS for Db2 require additional configuration. The Bring Your Own License (BYOL) model requires a custom parameter group and an Amazon Web Services License Manager self-managed license. The Db2 license through Amazon Web Services Marketplace model requires an Amazon Web Services Marketplace subscription. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/db2-licensing.html">Amazon RDS for Db2 licensing options</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>The default for RDS for Db2 is <code>bring-your-own-license</code>.</p>
     /// </note>
     /// <p>This setting doesn't apply to Amazon Aurora or RDS Custom DB instances.</p>
@@ -3687,7 +3687,7 @@ impl CreateDbInstanceInputBuilder {
         self
     }
     /// <p>The license model information for this DB instance.</p><note>
-    /// <p>License models for RDS for Db2 require additional configuration. The Bring Your Own License (BYOL) model requires a custom parameter group. The Db2 license through Amazon Web Services Marketplace model requires an Amazon Web Services Marketplace subscription. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/db2-licensing.html">RDS for Db2 licensing options</a> in the <i>Amazon RDS User Guide</i>.</p>
+    /// <p>License models for RDS for Db2 require additional configuration. The Bring Your Own License (BYOL) model requires a custom parameter group and an Amazon Web Services License Manager self-managed license. The Db2 license through Amazon Web Services Marketplace model requires an Amazon Web Services Marketplace subscription. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/db2-licensing.html">Amazon RDS for Db2 licensing options</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>The default for RDS for Db2 is <code>bring-your-own-license</code>.</p>
     /// </note>
     /// <p>This setting doesn't apply to Amazon Aurora or RDS Custom DB instances.</p>

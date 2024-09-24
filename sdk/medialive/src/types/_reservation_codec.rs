@@ -13,6 +13,7 @@
 /// # let reservationcodec = unimplemented!();
 /// match reservationcodec {
 ///     ReservationCodec::Audio => { /* ... */ },
+///     ReservationCodec::Av1 => { /* ... */ },
 ///     ReservationCodec::Avc => { /* ... */ },
 ///     ReservationCodec::Hevc => { /* ... */ },
 ///     ReservationCodec::Link => { /* ... */ },
@@ -38,7 +39,7 @@
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
-/// Codec, 'MPEG2', 'AVC', 'HEVC', or 'AUDIO'
+/// Codec, 'MPEG2', 'AVC', 'HEVC', 'AUDIO', 'LINK', or 'AV1'
 #[non_exhaustive]
 #[derive(
     ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
@@ -46,6 +47,8 @@
 pub enum ReservationCodec {
     #[allow(missing_docs)] // documentation missing in model
     Audio,
+    #[allow(missing_docs)] // documentation missing in model
+    Av1,
     #[allow(missing_docs)] // documentation missing in model
     Avc,
     #[allow(missing_docs)] // documentation missing in model
@@ -62,6 +65,7 @@ impl ::std::convert::From<&str> for ReservationCodec {
     fn from(s: &str) -> Self {
         match s {
             "AUDIO" => ReservationCodec::Audio,
+            "AV1" => ReservationCodec::Av1,
             "AVC" => ReservationCodec::Avc,
             "HEVC" => ReservationCodec::Hevc,
             "LINK" => ReservationCodec::Link,
@@ -82,6 +86,7 @@ impl ReservationCodec {
     pub fn as_str(&self) -> &str {
         match self {
             ReservationCodec::Audio => "AUDIO",
+            ReservationCodec::Av1 => "AV1",
             ReservationCodec::Avc => "AVC",
             ReservationCodec::Hevc => "HEVC",
             ReservationCodec::Link => "LINK",
@@ -91,7 +96,7 @@ impl ReservationCodec {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AUDIO", "AVC", "HEVC", "LINK", "MPEG2"]
+        &["AUDIO", "AV1", "AVC", "HEVC", "LINK", "MPEG2"]
     }
 }
 impl ::std::convert::AsRef<str> for ReservationCodec {
@@ -115,6 +120,7 @@ impl ::std::fmt::Display for ReservationCodec {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ReservationCodec::Audio => write!(f, "AUDIO"),
+            ReservationCodec::Av1 => write!(f, "AV1"),
             ReservationCodec::Avc => write!(f, "AVC"),
             ReservationCodec::Hevc => write!(f, "HEVC"),
             ReservationCodec::Link => write!(f, "LINK"),

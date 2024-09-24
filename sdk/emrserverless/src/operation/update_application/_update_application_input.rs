@@ -32,6 +32,8 @@ pub struct UpdateApplicationInput {
     pub runtime_configuration: ::std::option::Option<::std::vec::Vec<crate::types::Configuration>>,
     /// <p>The configuration setting for monitoring.</p>
     pub monitoring_configuration: ::std::option::Option<crate::types::MonitoringConfiguration>,
+    /// <p>The scheduler configuration for batch and streaming jobs running on this application. Supported with release labels emr-7.0.0 and above.</p>
+    pub scheduler_configuration: ::std::option::Option<crate::types::SchedulerConfiguration>,
 }
 impl UpdateApplicationInput {
     /// <p>The ID of the application to update.</p>
@@ -96,6 +98,10 @@ impl UpdateApplicationInput {
     pub fn monitoring_configuration(&self) -> ::std::option::Option<&crate::types::MonitoringConfiguration> {
         self.monitoring_configuration.as_ref()
     }
+    /// <p>The scheduler configuration for batch and streaming jobs running on this application. Supported with release labels emr-7.0.0 and above.</p>
+    pub fn scheduler_configuration(&self) -> ::std::option::Option<&crate::types::SchedulerConfiguration> {
+        self.scheduler_configuration.as_ref()
+    }
 }
 impl UpdateApplicationInput {
     /// Creates a new builder-style object to manufacture [`UpdateApplicationInput`](crate::operation::update_application::UpdateApplicationInput).
@@ -123,6 +129,7 @@ pub struct UpdateApplicationInputBuilder {
     pub(crate) release_label: ::std::option::Option<::std::string::String>,
     pub(crate) runtime_configuration: ::std::option::Option<::std::vec::Vec<crate::types::Configuration>>,
     pub(crate) monitoring_configuration: ::std::option::Option<crate::types::MonitoringConfiguration>,
+    pub(crate) scheduler_configuration: ::std::option::Option<crate::types::SchedulerConfiguration>,
 }
 impl UpdateApplicationInputBuilder {
     /// <p>The ID of the application to update.</p>
@@ -355,6 +362,20 @@ impl UpdateApplicationInputBuilder {
     pub fn get_monitoring_configuration(&self) -> &::std::option::Option<crate::types::MonitoringConfiguration> {
         &self.monitoring_configuration
     }
+    /// <p>The scheduler configuration for batch and streaming jobs running on this application. Supported with release labels emr-7.0.0 and above.</p>
+    pub fn scheduler_configuration(mut self, input: crate::types::SchedulerConfiguration) -> Self {
+        self.scheduler_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The scheduler configuration for batch and streaming jobs running on this application. Supported with release labels emr-7.0.0 and above.</p>
+    pub fn set_scheduler_configuration(mut self, input: ::std::option::Option<crate::types::SchedulerConfiguration>) -> Self {
+        self.scheduler_configuration = input;
+        self
+    }
+    /// <p>The scheduler configuration for batch and streaming jobs running on this application. Supported with release labels emr-7.0.0 and above.</p>
+    pub fn get_scheduler_configuration(&self) -> &::std::option::Option<crate::types::SchedulerConfiguration> {
+        &self.scheduler_configuration
+    }
     /// Consumes the builder and constructs a [`UpdateApplicationInput`](crate::operation::update_application::UpdateApplicationInput).
     pub fn build(
         self,
@@ -374,6 +395,7 @@ impl UpdateApplicationInputBuilder {
             release_label: self.release_label,
             runtime_configuration: self.runtime_configuration,
             monitoring_configuration: self.monitoring_configuration,
+            scheduler_configuration: self.scheduler_configuration,
         })
     }
 }

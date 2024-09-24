@@ -80,6 +80,8 @@ pub struct ConnectionInput {
     pub match_criteria: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>These key-value pairs define parameters for the connection.</p>
     pub connection_properties: ::std::collections::HashMap<crate::types::ConnectionPropertyKey, ::std::string::String>,
+    /// <p>This field is not currently used.</p>
+    pub athena_properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The physical connection requirements, such as virtual private cloud (VPC) and <code>SecurityGroup</code>, that are needed to successfully make this connection.</p>
     pub physical_connection_requirements: ::std::option::Option<crate::types::PhysicalConnectionRequirements>,
     /// <p>The authentication properties of the connection. Used for a Salesforce connection.</p>
@@ -177,6 +179,10 @@ impl ConnectionInput {
     pub fn connection_properties(&self) -> &::std::collections::HashMap<crate::types::ConnectionPropertyKey, ::std::string::String> {
         &self.connection_properties
     }
+    /// <p>This field is not currently used.</p>
+    pub fn athena_properties(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.athena_properties.as_ref()
+    }
     /// <p>The physical connection requirements, such as virtual private cloud (VPC) and <code>SecurityGroup</code>, that are needed to successfully make this connection.</p>
     pub fn physical_connection_requirements(&self) -> ::std::option::Option<&crate::types::PhysicalConnectionRequirements> {
         self.physical_connection_requirements.as_ref()
@@ -206,6 +212,7 @@ pub struct ConnectionInputBuilder {
     pub(crate) connection_type: ::std::option::Option<crate::types::ConnectionType>,
     pub(crate) match_criteria: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) connection_properties: ::std::option::Option<::std::collections::HashMap<crate::types::ConnectionPropertyKey, ::std::string::String>>,
+    pub(crate) athena_properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) physical_connection_requirements: ::std::option::Option<crate::types::PhysicalConnectionRequirements>,
     pub(crate) authentication_configuration: ::std::option::Option<crate::types::AuthenticationConfigurationInput>,
     pub(crate) validate_credentials: ::std::option::Option<bool>,
@@ -498,6 +505,33 @@ impl ConnectionInputBuilder {
     ) -> &::std::option::Option<::std::collections::HashMap<crate::types::ConnectionPropertyKey, ::std::string::String>> {
         &self.connection_properties
     }
+    /// Adds a key-value pair to `athena_properties`.
+    ///
+    /// To override the contents of this collection use [`set_athena_properties`](Self::set_athena_properties).
+    ///
+    /// <p>This field is not currently used.</p>
+    pub fn athena_properties(
+        mut self,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        let mut hash_map = self.athena_properties.unwrap_or_default();
+        hash_map.insert(k.into(), v.into());
+        self.athena_properties = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>This field is not currently used.</p>
+    pub fn set_athena_properties(
+        mut self,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    ) -> Self {
+        self.athena_properties = input;
+        self
+    }
+    /// <p>This field is not currently used.</p>
+    pub fn get_athena_properties(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.athena_properties
+    }
     /// <p>The physical connection requirements, such as virtual private cloud (VPC) and <code>SecurityGroup</code>, that are needed to successfully make this connection.</p>
     pub fn physical_connection_requirements(mut self, input: crate::types::PhysicalConnectionRequirements) -> Self {
         self.physical_connection_requirements = ::std::option::Option::Some(input);
@@ -567,6 +601,7 @@ impl ConnectionInputBuilder {
                     "connection_properties was not specified but it is required when building ConnectionInput",
                 )
             })?,
+            athena_properties: self.athena_properties,
             physical_connection_requirements: self.physical_connection_requirements,
             authentication_configuration: self.authentication_configuration,
             validate_credentials: self.validate_credentials.unwrap_or_default(),

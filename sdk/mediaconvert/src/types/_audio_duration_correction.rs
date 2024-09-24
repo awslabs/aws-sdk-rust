@@ -14,6 +14,7 @@
 /// match audiodurationcorrection {
 ///     AudioDurationCorrection::Auto => { /* ... */ },
 ///     AudioDurationCorrection::Disabled => { /* ... */ },
+///     AudioDurationCorrection::Force => { /* ... */ },
 ///     AudioDurationCorrection::Frame => { /* ... */ },
 ///     AudioDurationCorrection::Track => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -37,7 +38,7 @@
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
-/// Apply audio timing corrections to help synchronize audio and video in your output. To apply timing corrections, your input must meet the following requirements: * Container: MP4, or MOV, with an accurate time-to-sample (STTS) table. * Audio track: AAC. Choose from the following audio timing correction settings: * Disabled (Default): Apply no correction. * Auto: Recommended for most inputs. MediaConvert analyzes the audio timing in your input and determines which correction setting to use, if needed. * Track: Adjust the duration of each audio frame by a constant amount to align the audio track length with STTS duration. Track-level correction does not affect pitch, and is recommended for tonal audio content such as music. * Frame: Adjust the duration of each audio frame by a variable amount to align audio frames with STTS timestamps. No corrections are made to already-aligned frames. Frame-level correction may affect the pitch of corrected frames, and is recommended for atonal audio content such as speech or percussion.
+/// Apply audio timing corrections to help synchronize audio and video in your output. To apply timing corrections, your input must meet the following requirements: * Container: MP4, or MOV, with an accurate time-to-sample (STTS) table. * Audio track: AAC. Choose from the following audio timing correction settings: * Disabled (Default): Apply no correction. * Auto: Recommended for most inputs. MediaConvert analyzes the audio timing in your input and determines which correction setting to use, if needed. * Track: Adjust the duration of each audio frame by a constant amount to align the audio track length with STTS duration. Track-level correction does not affect pitch, and is recommended for tonal audio content such as music. * Frame: Adjust the duration of each audio frame by a variable amount to align audio frames with STTS timestamps. No corrections are made to already-aligned frames. Frame-level correction may affect the pitch of corrected frames, and is recommended for atonal audio content such as speech or percussion. * Force: Apply audio duration correction, either Track or Frame depending on your input, regardless of the accuracy of your input's STTS table. Your output audio and video may not be aligned or it may contain audio artifacts.
 #[non_exhaustive]
 #[derive(
     ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
@@ -47,6 +48,8 @@ pub enum AudioDurationCorrection {
     Auto,
     #[allow(missing_docs)] // documentation missing in model
     Disabled,
+    #[allow(missing_docs)] // documentation missing in model
+    Force,
     #[allow(missing_docs)] // documentation missing in model
     Frame,
     #[allow(missing_docs)] // documentation missing in model
@@ -60,6 +63,7 @@ impl ::std::convert::From<&str> for AudioDurationCorrection {
         match s {
             "AUTO" => AudioDurationCorrection::Auto,
             "DISABLED" => AudioDurationCorrection::Disabled,
+            "FORCE" => AudioDurationCorrection::Force,
             "FRAME" => AudioDurationCorrection::Frame,
             "TRACK" => AudioDurationCorrection::Track,
             other => AudioDurationCorrection::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -79,6 +83,7 @@ impl AudioDurationCorrection {
         match self {
             AudioDurationCorrection::Auto => "AUTO",
             AudioDurationCorrection::Disabled => "DISABLED",
+            AudioDurationCorrection::Force => "FORCE",
             AudioDurationCorrection::Frame => "FRAME",
             AudioDurationCorrection::Track => "TRACK",
             AudioDurationCorrection::Unknown(value) => value.as_str(),
@@ -86,7 +91,7 @@ impl AudioDurationCorrection {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AUTO", "DISABLED", "FRAME", "TRACK"]
+        &["AUTO", "DISABLED", "FORCE", "FRAME", "TRACK"]
     }
 }
 impl ::std::convert::AsRef<str> for AudioDurationCorrection {
@@ -111,6 +116,7 @@ impl ::std::fmt::Display for AudioDurationCorrection {
         match self {
             AudioDurationCorrection::Auto => write!(f, "AUTO"),
             AudioDurationCorrection::Disabled => write!(f, "DISABLED"),
+            AudioDurationCorrection::Force => write!(f, "FORCE"),
             AudioDurationCorrection::Frame => write!(f, "FRAME"),
             AudioDurationCorrection::Track => write!(f, "TRACK"),
             AudioDurationCorrection::Unknown(value) => write!(f, "{}", value),

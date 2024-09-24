@@ -252,7 +252,7 @@ pub enum EnableLDAPSError {
     ClientException(crate::types::error::ClientException),
     /// <p>The specified directory does not exist in the system.</p>
     DirectoryDoesNotExistException(crate::types::error::DirectoryDoesNotExistException),
-    /// <p>The specified directory is unavailable or could not be found.</p>
+    /// <p>The specified directory is unavailable.</p>
     DirectoryUnavailableException(crate::types::error::DirectoryUnavailableException),
     /// <p>The LDAP activities could not be performed because they are limited by the LDAPS status.</p>
     InvalidLdapsStatusException(crate::types::error::InvalidLdapsStatusException),

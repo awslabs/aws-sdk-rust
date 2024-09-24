@@ -235,6 +235,18 @@ pub use crate::types::_ip_set_format::IpSetFormat;
 
 pub use crate::types::_finding_statistics::FindingStatistics;
 
+pub use crate::types::_severity_statistics::SeverityStatistics;
+
+pub use crate::types::_resource_statistics::ResourceStatistics;
+
+pub use crate::types::_finding_type_statistics::FindingTypeStatistics;
+
+pub use crate::types::_date_statistics::DateStatistics;
+
+pub use crate::types::_account_statistics::AccountStatistics;
+
+pub use crate::types::_group_by_type::GroupByType;
+
 pub use crate::types::_finding_statistic_type::FindingStatisticType;
 
 pub use crate::types::_finding::Finding;
@@ -479,6 +491,8 @@ mod _account_free_trial_info;
 
 mod _account_level_permissions;
 
+mod _account_statistics;
+
 mod _action;
 
 mod _addon_details;
@@ -565,6 +579,8 @@ mod _data_source_status;
 
 mod _data_sources_free_trial;
 
+mod _date_statistics;
+
 mod _default_server_side_encryption;
 
 mod _destination;
@@ -637,6 +653,8 @@ mod _finding_statistic_type;
 
 mod _finding_statistics;
 
+mod _finding_type_statistics;
+
 mod _flow_logs_configuration_result;
 
 mod _free_trial_feature_configuration_result;
@@ -644,6 +662,8 @@ mod _free_trial_feature_configuration_result;
 mod _free_trial_feature_result;
 
 mod _geo_location;
+
+mod _group_by_type;
 
 mod _highest_severity_threat_details;
 
@@ -831,6 +851,8 @@ mod _resource;
 
 mod _resource_details;
 
+mod _resource_statistics;
+
 mod _resource_type;
 
 mod _runtime_context;
@@ -882,6 +904,8 @@ mod _security_group;
 mod _service;
 
 mod _service_additional_info;
+
+mod _severity_statistics;
 
 mod _sort_criteria;
 

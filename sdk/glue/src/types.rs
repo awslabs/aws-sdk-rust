@@ -39,6 +39,14 @@ pub use crate::types::_trigger_update::TriggerUpdate;
 
 pub use crate::types::_table_optimizer_configuration::TableOptimizerConfiguration;
 
+pub use crate::types::_orphan_file_deletion_configuration::OrphanFileDeletionConfiguration;
+
+pub use crate::types::_iceberg_orphan_file_deletion_configuration::IcebergOrphanFileDeletionConfiguration;
+
+pub use crate::types::_retention_configuration::RetentionConfiguration;
+
+pub use crate::types::_iceberg_retention_configuration::IcebergRetentionConfiguration;
+
 pub use crate::types::_table_optimizer_type::TableOptimizerType;
 
 pub use crate::types::_view_update_action::ViewUpdateAction;
@@ -461,6 +469,10 @@ pub use crate::types::_update_xml_classifier_request::UpdateXmlClassifierRequest
 
 pub use crate::types::_update_grok_classifier_request::UpdateGrokClassifierRequest;
 
+pub use crate::types::_federation_source_error_code::FederationSourceErrorCode;
+
+pub use crate::types::_test_connection_input::TestConnectionInput;
+
 pub use crate::types::_data_source::DataSource;
 
 pub use crate::types::_glue_table::GlueTable;
@@ -524,6 +536,18 @@ pub use crate::types::_catalog_encryption_mode::CatalogEncryptionMode;
 pub use crate::types::_usage_profile_definition::UsageProfileDefinition;
 
 pub use crate::types::_table_optimizer_run::TableOptimizerRun;
+
+pub use crate::types::_orphan_file_deletion_metrics::OrphanFileDeletionMetrics;
+
+pub use crate::types::_iceberg_orphan_file_deletion_metrics::IcebergOrphanFileDeletionMetrics;
+
+pub use crate::types::_retention_metrics::RetentionMetrics;
+
+pub use crate::types::_iceberg_retention_metrics::IcebergRetentionMetrics;
+
+pub use crate::types::_compaction_metrics::CompactionMetrics;
+
+pub use crate::types::_iceberg_compaction_metrics::IcebergCompactionMetrics;
 
 pub use crate::types::_run_metrics::RunMetrics;
 
@@ -642,8 +666,6 @@ pub use crate::types::_workflow::Workflow;
 pub use crate::types::_blueprint_details::BlueprintDetails;
 
 pub use crate::types::_user_defined_function::UserDefinedFunction;
-
-pub use crate::types::_federation_source_error_code::FederationSourceErrorCode;
 
 pub use crate::types::_column_row_filter::ColumnRowFilter;
 
@@ -995,6 +1017,8 @@ mod _column_statistics_task_run;
 
 mod _column_statistics_type;
 
+mod _compaction_metrics;
+
 mod _comparator;
 
 mod _compatibility;
@@ -1249,7 +1273,17 @@ mod _hudi_target;
 
 mod _hudi_target_compression_type;
 
+mod _iceberg_compaction_metrics;
+
 mod _iceberg_input;
+
+mod _iceberg_orphan_file_deletion_configuration;
+
+mod _iceberg_orphan_file_deletion_metrics;
+
+mod _iceberg_retention_configuration;
+
+mod _iceberg_retention_metrics;
 
 mod _iceberg_target;
 
@@ -1385,6 +1419,10 @@ mod _oracle_sql_catalog_target;
 
 mod _order;
 
+mod _orphan_file_deletion_configuration;
+
+mod _orphan_file_deletion_metrics;
+
 mod _other_metadata_value_list_item;
 
 mod _param_type;
@@ -1470,6 +1508,10 @@ mod _resource_state;
 mod _resource_type;
 
 mod _resource_uri;
+
+mod _retention_configuration;
+
+mod _retention_metrics;
 
 mod _run_identifier;
 
@@ -1662,6 +1704,8 @@ mod _task_run_sort_criteria;
 mod _task_status_type;
 
 mod _task_type;
+
+mod _test_connection_input;
 
 mod _timestamp_filter;
 

@@ -3,21 +3,27 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct SetUserMfaPreferenceInput {
-    /// <p>The SMS text message multi-factor authentication (MFA) settings.</p>
+    /// <p>User preferences for SMS message MFA. Activates or deactivates SMS MFA and sets it as the preferred MFA method when multiple methods are available.</p>
     pub sms_mfa_settings: ::std::option::Option<crate::types::SmsMfaSettingsType>,
-    /// <p>The time-based one-time password (TOTP) software token MFA settings.</p>
+    /// <p>User preferences for time-based one-time password (TOTP) MFA. Activates or deactivates TOTP MFA and sets it as the preferred MFA method when multiple methods are available.</p>
     pub software_token_mfa_settings: ::std::option::Option<crate::types::SoftwareTokenMfaSettingsType>,
+    /// <p>User preferences for email message MFA. Activates or deactivates email MFA and sets it as the preferred MFA method when multiple methods are available. To activate this setting, <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-advanced-security.html"> advanced security features</a> must be active in your user pool.</p>
+    pub email_mfa_settings: ::std::option::Option<crate::types::EmailMfaSettingsType>,
     /// <p>A valid access token that Amazon Cognito issued to the user whose MFA preference you want to set.</p>
     pub access_token: ::std::option::Option<::std::string::String>,
 }
 impl SetUserMfaPreferenceInput {
-    /// <p>The SMS text message multi-factor authentication (MFA) settings.</p>
+    /// <p>User preferences for SMS message MFA. Activates or deactivates SMS MFA and sets it as the preferred MFA method when multiple methods are available.</p>
     pub fn sms_mfa_settings(&self) -> ::std::option::Option<&crate::types::SmsMfaSettingsType> {
         self.sms_mfa_settings.as_ref()
     }
-    /// <p>The time-based one-time password (TOTP) software token MFA settings.</p>
+    /// <p>User preferences for time-based one-time password (TOTP) MFA. Activates or deactivates TOTP MFA and sets it as the preferred MFA method when multiple methods are available.</p>
     pub fn software_token_mfa_settings(&self) -> ::std::option::Option<&crate::types::SoftwareTokenMfaSettingsType> {
         self.software_token_mfa_settings.as_ref()
+    }
+    /// <p>User preferences for email message MFA. Activates or deactivates email MFA and sets it as the preferred MFA method when multiple methods are available. To activate this setting, <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-advanced-security.html"> advanced security features</a> must be active in your user pool.</p>
+    pub fn email_mfa_settings(&self) -> ::std::option::Option<&crate::types::EmailMfaSettingsType> {
+        self.email_mfa_settings.as_ref()
     }
     /// <p>A valid access token that Amazon Cognito issued to the user whose MFA preference you want to set.</p>
     pub fn access_token(&self) -> ::std::option::Option<&str> {
@@ -29,6 +35,7 @@ impl ::std::fmt::Debug for SetUserMfaPreferenceInput {
         let mut formatter = f.debug_struct("SetUserMfaPreferenceInput");
         formatter.field("sms_mfa_settings", &self.sms_mfa_settings);
         formatter.field("software_token_mfa_settings", &self.software_token_mfa_settings);
+        formatter.field("email_mfa_settings", &self.email_mfa_settings);
         formatter.field("access_token", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
@@ -46,36 +53,51 @@ impl SetUserMfaPreferenceInput {
 pub struct SetUserMfaPreferenceInputBuilder {
     pub(crate) sms_mfa_settings: ::std::option::Option<crate::types::SmsMfaSettingsType>,
     pub(crate) software_token_mfa_settings: ::std::option::Option<crate::types::SoftwareTokenMfaSettingsType>,
+    pub(crate) email_mfa_settings: ::std::option::Option<crate::types::EmailMfaSettingsType>,
     pub(crate) access_token: ::std::option::Option<::std::string::String>,
 }
 impl SetUserMfaPreferenceInputBuilder {
-    /// <p>The SMS text message multi-factor authentication (MFA) settings.</p>
+    /// <p>User preferences for SMS message MFA. Activates or deactivates SMS MFA and sets it as the preferred MFA method when multiple methods are available.</p>
     pub fn sms_mfa_settings(mut self, input: crate::types::SmsMfaSettingsType) -> Self {
         self.sms_mfa_settings = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The SMS text message multi-factor authentication (MFA) settings.</p>
+    /// <p>User preferences for SMS message MFA. Activates or deactivates SMS MFA and sets it as the preferred MFA method when multiple methods are available.</p>
     pub fn set_sms_mfa_settings(mut self, input: ::std::option::Option<crate::types::SmsMfaSettingsType>) -> Self {
         self.sms_mfa_settings = input;
         self
     }
-    /// <p>The SMS text message multi-factor authentication (MFA) settings.</p>
+    /// <p>User preferences for SMS message MFA. Activates or deactivates SMS MFA and sets it as the preferred MFA method when multiple methods are available.</p>
     pub fn get_sms_mfa_settings(&self) -> &::std::option::Option<crate::types::SmsMfaSettingsType> {
         &self.sms_mfa_settings
     }
-    /// <p>The time-based one-time password (TOTP) software token MFA settings.</p>
+    /// <p>User preferences for time-based one-time password (TOTP) MFA. Activates or deactivates TOTP MFA and sets it as the preferred MFA method when multiple methods are available.</p>
     pub fn software_token_mfa_settings(mut self, input: crate::types::SoftwareTokenMfaSettingsType) -> Self {
         self.software_token_mfa_settings = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The time-based one-time password (TOTP) software token MFA settings.</p>
+    /// <p>User preferences for time-based one-time password (TOTP) MFA. Activates or deactivates TOTP MFA and sets it as the preferred MFA method when multiple methods are available.</p>
     pub fn set_software_token_mfa_settings(mut self, input: ::std::option::Option<crate::types::SoftwareTokenMfaSettingsType>) -> Self {
         self.software_token_mfa_settings = input;
         self
     }
-    /// <p>The time-based one-time password (TOTP) software token MFA settings.</p>
+    /// <p>User preferences for time-based one-time password (TOTP) MFA. Activates or deactivates TOTP MFA and sets it as the preferred MFA method when multiple methods are available.</p>
     pub fn get_software_token_mfa_settings(&self) -> &::std::option::Option<crate::types::SoftwareTokenMfaSettingsType> {
         &self.software_token_mfa_settings
+    }
+    /// <p>User preferences for email message MFA. Activates or deactivates email MFA and sets it as the preferred MFA method when multiple methods are available. To activate this setting, <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-advanced-security.html"> advanced security features</a> must be active in your user pool.</p>
+    pub fn email_mfa_settings(mut self, input: crate::types::EmailMfaSettingsType) -> Self {
+        self.email_mfa_settings = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>User preferences for email message MFA. Activates or deactivates email MFA and sets it as the preferred MFA method when multiple methods are available. To activate this setting, <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-advanced-security.html"> advanced security features</a> must be active in your user pool.</p>
+    pub fn set_email_mfa_settings(mut self, input: ::std::option::Option<crate::types::EmailMfaSettingsType>) -> Self {
+        self.email_mfa_settings = input;
+        self
+    }
+    /// <p>User preferences for email message MFA. Activates or deactivates email MFA and sets it as the preferred MFA method when multiple methods are available. To activate this setting, <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-advanced-security.html"> advanced security features</a> must be active in your user pool.</p>
+    pub fn get_email_mfa_settings(&self) -> &::std::option::Option<crate::types::EmailMfaSettingsType> {
+        &self.email_mfa_settings
     }
     /// <p>A valid access token that Amazon Cognito issued to the user whose MFA preference you want to set.</p>
     /// This field is required.
@@ -100,6 +122,7 @@ impl SetUserMfaPreferenceInputBuilder {
         ::std::result::Result::Ok(crate::operation::set_user_mfa_preference::SetUserMfaPreferenceInput {
             sms_mfa_settings: self.sms_mfa_settings,
             software_token_mfa_settings: self.software_token_mfa_settings,
+            email_mfa_settings: self.email_mfa_settings,
             access_token: self.access_token,
         })
     }
@@ -109,6 +132,7 @@ impl ::std::fmt::Debug for SetUserMfaPreferenceInputBuilder {
         let mut formatter = f.debug_struct("SetUserMfaPreferenceInputBuilder");
         formatter.field("sms_mfa_settings", &self.sms_mfa_settings);
         formatter.field("software_token_mfa_settings", &self.software_token_mfa_settings);
+        formatter.field("email_mfa_settings", &self.email_mfa_settings);
         formatter.field("access_token", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }

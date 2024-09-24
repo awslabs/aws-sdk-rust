@@ -192,6 +192,11 @@ pub(crate) fn de_restart_channel_pipelines(
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                "anywhereSettings" => {
+                    builder = builder.set_anywhere_settings(crate::protocol_serde::shape_describe_anywhere_settings::de_describe_anywhere_settings(
+                        tokens,
+                    )?);
+                }
                 "arn" => {
                     builder = builder.set_arn(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

@@ -38,6 +38,27 @@ where
                         "Parameters" => {
                             builder = builder.set_parameters(crate::protocol_serde::shape_parameters_map::de_parameters_map(tokens)?);
                         }
+                        "Status" => {
+                            builder = builder.set_status(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::DataCatalogStatus::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "ConnectionType" => {
+                            builder = builder.set_connection_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::ConnectionType::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "Error" => {
+                            builder = builder.set_error(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

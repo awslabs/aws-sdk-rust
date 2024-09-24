@@ -114,17 +114,17 @@ impl ListPublishingDestinationsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_publishing_destinations::paginator::ListPublishingDestinationsPaginator {
         crate::operation::list_publishing_destinations::paginator::ListPublishingDestinationsPaginator::new(self.handle, self.inner)
     }
-    /// <p>The ID of the detector to retrieve publishing destinations for.</p>
+    /// <p>The detector ID for which you want to retrieve the publishing destination.</p>
     pub fn detector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.detector_id(input.into());
         self
     }
-    /// <p>The ID of the detector to retrieve publishing destinations for.</p>
+    /// <p>The detector ID for which you want to retrieve the publishing destination.</p>
     pub fn set_detector_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_detector_id(input);
         self
     }
-    /// <p>The ID of the detector to retrieve publishing destinations for.</p>
+    /// <p>The detector ID for which you want to retrieve the publishing destination.</p>
     pub fn get_detector_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_detector_id()
     }

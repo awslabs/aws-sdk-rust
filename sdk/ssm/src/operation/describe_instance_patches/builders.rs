@@ -148,7 +148,7 @@ impl DescribeInstancePatchesFluentBuilder {
     /// <li>
     /// <p><b> <code>State</code> </b></p>
     /// <p>Sample values: <code>Installed</code> | <code>InstalledOther</code> | <code>InstalledPendingReboot</code></p>
-    /// <p>For lists of all <code>State</code> values, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-compliance-states.html">Understanding patch compliance state values</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p></li>
+    /// <p>For lists of all <code>State</code> values, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-compliance-states.html">Patch compliance state values</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p></li>
     /// </ul>
     pub fn filters(mut self, input: crate::types::PatchOrchestratorFilter) -> Self {
         self.inner = self.inner.filters(input);
@@ -169,7 +169,7 @@ impl DescribeInstancePatchesFluentBuilder {
     /// <li>
     /// <p><b> <code>State</code> </b></p>
     /// <p>Sample values: <code>Installed</code> | <code>InstalledOther</code> | <code>InstalledPendingReboot</code></p>
-    /// <p>For lists of all <code>State</code> values, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-compliance-states.html">Understanding patch compliance state values</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p></li>
+    /// <p>For lists of all <code>State</code> values, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-compliance-states.html">Patch compliance state values</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p></li>
     /// </ul>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PatchOrchestratorFilter>>) -> Self {
         self.inner = self.inner.set_filters(input);
@@ -190,7 +190,7 @@ impl DescribeInstancePatchesFluentBuilder {
     /// <li>
     /// <p><b> <code>State</code> </b></p>
     /// <p>Sample values: <code>Installed</code> | <code>InstalledOther</code> | <code>InstalledPendingReboot</code></p>
-    /// <p>For lists of all <code>State</code> values, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-compliance-states.html">Understanding patch compliance state values</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p></li>
+    /// <p>For lists of all <code>State</code> values, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-compliance-states.html">Patch compliance state values</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p></li>
     /// </ul>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PatchOrchestratorFilter>> {
         self.inner.get_filters()

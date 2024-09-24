@@ -10,7 +10,7 @@ pub struct Anomaly {
     pub anomaly_start_date: ::std::option::Option<::std::string::String>,
     /// <p>The last day the anomaly is detected.</p>
     pub anomaly_end_date: ::std::option::Option<::std::string::String>,
-    /// <p>The dimension for the anomaly (for example, an Amazon Web Service in a service monitor).</p>
+    /// <p>The dimension for the anomaly (for example, an Amazon Web Servicesservice in a service monitor).</p>
     pub dimension_value: ::std::option::Option<::std::string::String>,
     /// <p>The list of identified root causes for the anomaly.</p>
     pub root_causes: ::std::option::Option<::std::vec::Vec<crate::types::RootCause>>,
@@ -37,7 +37,7 @@ impl Anomaly {
     pub fn anomaly_end_date(&self) -> ::std::option::Option<&str> {
         self.anomaly_end_date.as_deref()
     }
-    /// <p>The dimension for the anomaly (for example, an Amazon Web Service in a service monitor).</p>
+    /// <p>The dimension for the anomaly (for example, an Amazon Web Servicesservice in a service monitor).</p>
     pub fn dimension_value(&self) -> ::std::option::Option<&str> {
         self.dimension_value.as_deref()
     }
@@ -130,17 +130,17 @@ impl AnomalyBuilder {
     pub fn get_anomaly_end_date(&self) -> &::std::option::Option<::std::string::String> {
         &self.anomaly_end_date
     }
-    /// <p>The dimension for the anomaly (for example, an Amazon Web Service in a service monitor).</p>
+    /// <p>The dimension for the anomaly (for example, an Amazon Web Servicesservice in a service monitor).</p>
     pub fn dimension_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dimension_value = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The dimension for the anomaly (for example, an Amazon Web Service in a service monitor).</p>
+    /// <p>The dimension for the anomaly (for example, an Amazon Web Servicesservice in a service monitor).</p>
     pub fn set_dimension_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dimension_value = input;
         self
     }
-    /// <p>The dimension for the anomaly (for example, an Amazon Web Service in a service monitor).</p>
+    /// <p>The dimension for the anomaly (for example, an Amazon Web Servicesservice in a service monitor).</p>
     pub fn get_dimension_value(&self) -> &::std::option::Option<::std::string::String> {
         &self.dimension_value
     }

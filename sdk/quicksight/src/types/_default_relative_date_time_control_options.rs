@@ -6,11 +6,17 @@
 pub struct DefaultRelativeDateTimeControlOptions {
     /// <p>The display options of a control.</p>
     pub display_options: ::std::option::Option<crate::types::RelativeDateTimeControlDisplayOptions>,
+    /// <p>The visibility configuration of the Apply button on a <code>RelativeDateTimeControl</code>.</p>
+    pub commit_mode: ::std::option::Option<crate::types::CommitMode>,
 }
 impl DefaultRelativeDateTimeControlOptions {
     /// <p>The display options of a control.</p>
     pub fn display_options(&self) -> ::std::option::Option<&crate::types::RelativeDateTimeControlDisplayOptions> {
         self.display_options.as_ref()
+    }
+    /// <p>The visibility configuration of the Apply button on a <code>RelativeDateTimeControl</code>.</p>
+    pub fn commit_mode(&self) -> ::std::option::Option<&crate::types::CommitMode> {
+        self.commit_mode.as_ref()
     }
 }
 impl DefaultRelativeDateTimeControlOptions {
@@ -25,6 +31,7 @@ impl DefaultRelativeDateTimeControlOptions {
 #[non_exhaustive]
 pub struct DefaultRelativeDateTimeControlOptionsBuilder {
     pub(crate) display_options: ::std::option::Option<crate::types::RelativeDateTimeControlDisplayOptions>,
+    pub(crate) commit_mode: ::std::option::Option<crate::types::CommitMode>,
 }
 impl DefaultRelativeDateTimeControlOptionsBuilder {
     /// <p>The display options of a control.</p>
@@ -41,10 +48,25 @@ impl DefaultRelativeDateTimeControlOptionsBuilder {
     pub fn get_display_options(&self) -> &::std::option::Option<crate::types::RelativeDateTimeControlDisplayOptions> {
         &self.display_options
     }
+    /// <p>The visibility configuration of the Apply button on a <code>RelativeDateTimeControl</code>.</p>
+    pub fn commit_mode(mut self, input: crate::types::CommitMode) -> Self {
+        self.commit_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The visibility configuration of the Apply button on a <code>RelativeDateTimeControl</code>.</p>
+    pub fn set_commit_mode(mut self, input: ::std::option::Option<crate::types::CommitMode>) -> Self {
+        self.commit_mode = input;
+        self
+    }
+    /// <p>The visibility configuration of the Apply button on a <code>RelativeDateTimeControl</code>.</p>
+    pub fn get_commit_mode(&self) -> &::std::option::Option<crate::types::CommitMode> {
+        &self.commit_mode
+    }
     /// Consumes the builder and constructs a [`DefaultRelativeDateTimeControlOptions`](crate::types::DefaultRelativeDateTimeControlOptions).
     pub fn build(self) -> crate::types::DefaultRelativeDateTimeControlOptions {
         crate::types::DefaultRelativeDateTimeControlOptions {
             display_options: self.display_options,
+            commit_mode: self.commit_mode,
         }
     }
 }

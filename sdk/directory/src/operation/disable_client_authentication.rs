@@ -256,7 +256,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DisableClient
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum DisableClientAuthenticationError {
-    /// <p>Client authentication is not available in this region at this time.</p>
+    /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>A client exception has occurred.</p>
     ClientException(crate::types::error::ClientException),

@@ -61,9 +61,13 @@ pub use crate::types::_analytics_metadata_type::AnalyticsMetadataTypeBuilder;
 
 pub use crate::types::_mfa_option_type::MfaOptionTypeBuilder;
 
+pub use crate::types::_email_mfa_config_type::EmailMfaConfigTypeBuilder;
+
 pub use crate::types::_software_token_mfa_config_type::SoftwareTokenMfaConfigTypeBuilder;
 
 pub use crate::types::_sms_mfa_config_type::SmsMfaConfigTypeBuilder;
+
+pub use crate::types::_email_mfa_settings_type::EmailMfaSettingsTypeBuilder;
 
 pub use crate::types::_software_token_mfa_settings_type::SoftwareTokenMfaSettingsTypeBuilder;
 

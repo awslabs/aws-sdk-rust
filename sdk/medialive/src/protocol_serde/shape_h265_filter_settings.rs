@@ -9,6 +9,12 @@ pub fn ser_h265_filter_settings(
         crate::protocol_serde::shape_temporal_filter_settings::ser_temporal_filter_settings(&mut object_2, var_1)?;
         object_2.finish();
     }
+    if let Some(var_3) = &input.bandwidth_reduction_filter_settings {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("bandwidthReductionFilterSettings").start_object();
+        crate::protocol_serde::shape_bandwidth_reduction_filter_settings::ser_bandwidth_reduction_filter_settings(&mut object_4, var_3)?;
+        object_4.finish();
+    }
     Ok(())
 }
 
@@ -30,6 +36,11 @@ where
                         "temporalFilterSettings" => {
                             builder = builder.set_temporal_filter_settings(
                                 crate::protocol_serde::shape_temporal_filter_settings::de_temporal_filter_settings(tokens)?,
+                            );
+                        }
+                        "bandwidthReductionFilterSettings" => {
+                            builder = builder.set_bandwidth_reduction_filter_settings(
+                                crate::protocol_serde::shape_bandwidth_reduction_filter_settings::de_bandwidth_reduction_filter_settings(tokens)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

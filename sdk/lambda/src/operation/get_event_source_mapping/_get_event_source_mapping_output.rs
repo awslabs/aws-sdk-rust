@@ -69,6 +69,8 @@ pub struct GetEventSourceMappingOutput {
     pub kms_key_arn: ::std::option::Option<::std::string::String>,
     /// <p>An object that contains details about an error related to filter criteria encryption.</p>
     pub filter_criteria_error: ::std::option::Option<crate::types::FilterCriteriaError>,
+    /// <p>The Amazon Resource Name (ARN) of the event source mapping.</p>
+    pub event_source_mapping_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetEventSourceMappingOutput {
@@ -203,6 +205,10 @@ impl GetEventSourceMappingOutput {
     pub fn filter_criteria_error(&self) -> ::std::option::Option<&crate::types::FilterCriteriaError> {
         self.filter_criteria_error.as_ref()
     }
+    /// <p>The Amazon Resource Name (ARN) of the event source mapping.</p>
+    pub fn event_source_mapping_arn(&self) -> ::std::option::Option<&str> {
+        self.event_source_mapping_arn.as_deref()
+    }
 }
 impl ::aws_types::request_id::RequestId for GetEventSourceMappingOutput {
     fn request_id(&self) -> Option<&str> {
@@ -249,6 +255,7 @@ pub struct GetEventSourceMappingOutputBuilder {
     pub(crate) document_db_event_source_config: ::std::option::Option<crate::types::DocumentDbEventSourceConfig>,
     pub(crate) kms_key_arn: ::std::option::Option<::std::string::String>,
     pub(crate) filter_criteria_error: ::std::option::Option<crate::types::FilterCriteriaError>,
+    pub(crate) event_source_mapping_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetEventSourceMappingOutputBuilder {
@@ -712,6 +719,20 @@ impl GetEventSourceMappingOutputBuilder {
     pub fn get_filter_criteria_error(&self) -> &::std::option::Option<crate::types::FilterCriteriaError> {
         &self.filter_criteria_error
     }
+    /// <p>The Amazon Resource Name (ARN) of the event source mapping.</p>
+    pub fn event_source_mapping_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.event_source_mapping_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the event source mapping.</p>
+    pub fn set_event_source_mapping_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.event_source_mapping_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the event source mapping.</p>
+    pub fn get_event_source_mapping_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_source_mapping_arn
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -753,6 +774,7 @@ impl GetEventSourceMappingOutputBuilder {
             document_db_event_source_config: self.document_db_event_source_config,
             kms_key_arn: self.kms_key_arn,
             filter_criteria_error: self.filter_criteria_error,
+            event_source_mapping_arn: self.event_source_mapping_arn,
             _request_id: self._request_id,
         }
     }

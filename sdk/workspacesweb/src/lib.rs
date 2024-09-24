@@ -31,7 +31,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-workspacesweb = "1.44.0"
+//! aws-sdk-workspacesweb = "1.46.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
@@ -148,14 +148,14 @@ pub use config::Config;
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`ListTagsForResource`](crate::operation::list_tags_for_resource) operation has
-/// a [`Client::list_tags_for_resource`], function which returns a builder for that operation.
+/// For example, the [`ExpireSession`](crate::operation::expire_session) operation has
+/// a [`Client::expire_session`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.list_tags_for_resource()
-///     .resource_arn("example")
+/// let result = client.expire_session()
+///     .portal_id("example")
 ///     .send()
 ///     .await;
 /// ```

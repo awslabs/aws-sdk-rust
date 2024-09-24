@@ -13,13 +13,15 @@ pub use crate::types::error::_glue_encryption_exception::GlueEncryptionException
 
 pub use crate::types::error::_operation_not_supported_exception::OperationNotSupportedException;
 
+pub use crate::types::error::_validation_exception::ValidationException;
+
+pub use crate::types::error::_throttling_exception::ThrottlingException;
+
 pub use crate::types::error::_access_denied_exception::AccessDeniedException;
 
 pub use crate::types::error::_resource_number_limit_exceeded_exception::ResourceNumberLimitExceededException;
 
 pub use crate::types::error::_resource_not_ready_exception::ResourceNotReadyException;
-
-pub use crate::types::error::_validation_exception::ValidationException;
 
 pub use crate::types::error::_already_exists_exception::AlreadyExistsException;
 
@@ -32,6 +34,10 @@ pub use crate::types::error::_scheduler_transitioning_exception::SchedulerTransi
 pub use crate::types::error::_crawler_running_exception::CrawlerRunningException;
 
 pub use crate::types::error::_illegal_blueprint_state_exception::IllegalBlueprintStateException;
+
+pub use crate::types::error::_federation_source_exception::FederationSourceException;
+
+pub use crate::types::error::_conflict_exception::ConflictException;
 
 pub use crate::types::error::_illegal_workflow_state_exception::IllegalWorkflowStateException;
 
@@ -51,8 +57,6 @@ pub use crate::types::error::_concurrent_runs_exceeded_exception::ConcurrentRuns
 
 pub use crate::types::error::_ml_transform_not_ready_exception::MlTransformNotReadyException;
 
-pub use crate::types::error::_conflict_exception::ConflictException;
-
 pub use crate::types::error::_scheduler_running_exception::SchedulerRunningException;
 
 pub use crate::types::error::_no_schedule_exception::NoScheduleException;
@@ -64,8 +68,6 @@ pub use crate::types::error::_condition_check_failure_exception::ConditionCheckF
 pub use crate::types::error::_permission_type_mismatch_exception::PermissionTypeMismatchException;
 
 pub use crate::types::error::_federation_source_retryable_exception::FederationSourceRetryableException;
-
-pub use crate::types::error::_federation_source_exception::FederationSourceException;
 
 pub use crate::types::error::_invalid_state_exception::InvalidStateException;
 
@@ -138,6 +140,8 @@ mod _scheduler_not_running_exception;
 mod _scheduler_running_exception;
 
 mod _scheduler_transitioning_exception;
+
+mod _throttling_exception;
 
 mod _validation_exception;
 

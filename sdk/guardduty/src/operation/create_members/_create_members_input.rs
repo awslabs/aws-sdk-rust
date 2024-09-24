@@ -3,13 +3,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateMembersInput {
-    /// <p>The unique ID of the detector of the GuardDuty account that you want to associate member accounts with.</p>
+    /// <p>The unique ID of the detector of the GuardDuty account for which you want to associate member accounts.</p>
     pub detector_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of account ID and email address pairs of the accounts that you want to associate with the GuardDuty administrator account.</p>
     pub account_details: ::std::option::Option<::std::vec::Vec<crate::types::AccountDetail>>,
 }
 impl CreateMembersInput {
-    /// <p>The unique ID of the detector of the GuardDuty account that you want to associate member accounts with.</p>
+    /// <p>The unique ID of the detector of the GuardDuty account for which you want to associate member accounts.</p>
     pub fn detector_id(&self) -> ::std::option::Option<&str> {
         self.detector_id.as_deref()
     }
@@ -35,18 +35,18 @@ pub struct CreateMembersInputBuilder {
     pub(crate) account_details: ::std::option::Option<::std::vec::Vec<crate::types::AccountDetail>>,
 }
 impl CreateMembersInputBuilder {
-    /// <p>The unique ID of the detector of the GuardDuty account that you want to associate member accounts with.</p>
+    /// <p>The unique ID of the detector of the GuardDuty account for which you want to associate member accounts.</p>
     /// This field is required.
     pub fn detector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.detector_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique ID of the detector of the GuardDuty account that you want to associate member accounts with.</p>
+    /// <p>The unique ID of the detector of the GuardDuty account for which you want to associate member accounts.</p>
     pub fn set_detector_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.detector_id = input;
         self
     }
-    /// <p>The unique ID of the detector of the GuardDuty account that you want to associate member accounts with.</p>
+    /// <p>The unique ID of the detector of the GuardDuty account for which you want to associate member accounts.</p>
     pub fn get_detector_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.detector_id
     }

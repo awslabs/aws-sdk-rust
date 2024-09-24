@@ -11,9 +11,9 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct KnowledgeBaseRetrieveAndGenerateConfiguration {
-    /// <p>The unique identifier of the knowledge base that is queried and the foundation model used for generation.</p>
+    /// <p>The unique identifier of the knowledge base that is queried.</p>
     pub knowledge_base_id: ::std::string::String,
-    /// <p>The ARN of the foundation model used to generate a response.</p>
+    /// <p>The ARN of the foundation model or <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference.html">inference profile</a> used to generate a response.</p>
     pub model_arn: ::std::string::String,
     /// <p>Contains configurations for how to retrieve and return the knowledge base query.</p>
     pub retrieval_configuration: ::std::option::Option<crate::types::KnowledgeBaseRetrievalConfiguration>,
@@ -23,12 +23,12 @@ pub struct KnowledgeBaseRetrieveAndGenerateConfiguration {
     pub orchestration_configuration: ::std::option::Option<crate::types::OrchestrationConfiguration>,
 }
 impl KnowledgeBaseRetrieveAndGenerateConfiguration {
-    /// <p>The unique identifier of the knowledge base that is queried and the foundation model used for generation.</p>
+    /// <p>The unique identifier of the knowledge base that is queried.</p>
     pub fn knowledge_base_id(&self) -> &str {
         use std::ops::Deref;
         self.knowledge_base_id.deref()
     }
-    /// <p>The ARN of the foundation model used to generate a response.</p>
+    /// <p>The ARN of the foundation model or <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference.html">inference profile</a> used to generate a response.</p>
     pub fn model_arn(&self) -> &str {
         use std::ops::Deref;
         self.model_arn.deref()
@@ -64,33 +64,33 @@ pub struct KnowledgeBaseRetrieveAndGenerateConfigurationBuilder {
     pub(crate) orchestration_configuration: ::std::option::Option<crate::types::OrchestrationConfiguration>,
 }
 impl KnowledgeBaseRetrieveAndGenerateConfigurationBuilder {
-    /// <p>The unique identifier of the knowledge base that is queried and the foundation model used for generation.</p>
+    /// <p>The unique identifier of the knowledge base that is queried.</p>
     /// This field is required.
     pub fn knowledge_base_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.knowledge_base_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier of the knowledge base that is queried and the foundation model used for generation.</p>
+    /// <p>The unique identifier of the knowledge base that is queried.</p>
     pub fn set_knowledge_base_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.knowledge_base_id = input;
         self
     }
-    /// <p>The unique identifier of the knowledge base that is queried and the foundation model used for generation.</p>
+    /// <p>The unique identifier of the knowledge base that is queried.</p>
     pub fn get_knowledge_base_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.knowledge_base_id
     }
-    /// <p>The ARN of the foundation model used to generate a response.</p>
+    /// <p>The ARN of the foundation model or <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference.html">inference profile</a> used to generate a response.</p>
     /// This field is required.
     pub fn model_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the foundation model used to generate a response.</p>
+    /// <p>The ARN of the foundation model or <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference.html">inference profile</a> used to generate a response.</p>
     pub fn set_model_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model_arn = input;
         self
     }
-    /// <p>The ARN of the foundation model used to generate a response.</p>
+    /// <p>The ARN of the foundation model or <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference.html">inference profile</a> used to generate a response.</p>
     pub fn get_model_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.model_arn
     }

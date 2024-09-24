@@ -24,5 +24,17 @@ pub fn ser_instance_fleet_modify_config(
         crate::protocol_serde::shape_instance_fleet_resizing_specifications::ser_instance_fleet_resizing_specifications(&mut object_5, var_4)?;
         object_5.finish();
     }
+    if let Some(var_6) = &input.instance_type_configs {
+        let mut array_7 = object.key("InstanceTypeConfigs").start_array();
+        for item_8 in var_6 {
+            {
+                #[allow(unused_mut)]
+                let mut object_9 = array_7.value().start_object();
+                crate::protocol_serde::shape_instance_type_config::ser_instance_type_config(&mut object_9, item_8)?;
+                object_9.finish();
+            }
+        }
+        array_7.finish();
+    }
     Ok(())
 }

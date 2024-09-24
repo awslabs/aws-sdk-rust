@@ -69,21 +69,6 @@ pub fn de_create_db_shard_group_http_error(
             }
             tmp
         }),
-        "InvalidMaxAcu" => crate::operation::create_db_shard_group::CreateDBShardGroupError::InvalidMaxAcuFault({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::InvalidMaxAcuFaultBuilder::default();
-                output = crate::protocol_serde::shape_invalid_max_acu_fault::de_invalid_max_acu_fault_xml_err(_response_body, output)
-                    .map_err(crate::operation::create_db_shard_group::CreateDBShardGroupError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
         "InvalidVPCNetworkStateFault" => crate::operation::create_db_shard_group::CreateDBShardGroupError::InvalidVpcNetworkStateFault({
             #[allow(unused_mut)]
             let mut tmp = {
@@ -309,6 +294,19 @@ pub fn de_create_db_shard_group(
                     )
                 ;
                 builder = builder.set_endpoint(var_9);
+            }
+            ,
+            s if s.matches("DBShardGroupArn") /* DBShardGroupArn com.amazonaws.rds.synthetic#CreateDBShardGroupOutput$DBShardGroupArn */ =>  {
+                let var_10 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_db_shard_group_arn(var_10);
             }
             ,
             _ => {}

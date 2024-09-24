@@ -9,6 +9,15 @@ pub fn ser_on_demand_resizing_specification(
             ::aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
+    if let Some(var_2) = &input.allocation_strategy {
+        object.key("AllocationStrategy").string(var_2.as_str());
+    }
+    if let Some(var_3) = &input.capacity_reservation_options {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("CapacityReservationOptions").start_object();
+        crate::protocol_serde::shape_on_demand_capacity_reservation_options::ser_on_demand_capacity_reservation_options(&mut object_4, var_3)?;
+        object_4.finish();
+    }
     Ok(())
 }
 
@@ -34,6 +43,23 @@ where
                                     .transpose()?,
                             );
                         }
+                        "AllocationStrategy" => {
+                            builder = builder.set_allocation_strategy(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| {
+                                        s.to_unescaped()
+                                            .map(|u| crate::types::OnDemandProvisioningAllocationStrategy::from(u.as_ref()))
+                                    })
+                                    .transpose()?,
+                            );
+                        }
+                        "CapacityReservationOptions" => {
+                            builder = builder.set_capacity_reservation_options(
+                                crate::protocol_serde::shape_on_demand_capacity_reservation_options::de_on_demand_capacity_reservation_options(
+                                    tokens,
+                                )?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {
@@ -44,7 +70,7 @@ where
                     }
                 }
             }
-            Ok(Some(crate::serde_util::on_demand_resizing_specification_correct_errors(builder).build()))
+            Ok(Some(builder.build()))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

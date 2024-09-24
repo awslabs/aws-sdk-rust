@@ -27,52 +27,55 @@ pub fn ser_create_job_input_input(
         }
         array_6.finish();
     }
-    if let Some(var_9) = &input.job_template {
-        object.key("jobTemplate").string(var_9.as_str());
+    if let Some(var_9) = &input.job_engine_version {
+        object.key("jobEngineVersion").string(var_9.as_str());
     }
-    if let Some(var_10) = &input.priority {
+    if let Some(var_10) = &input.job_template {
+        object.key("jobTemplate").string(var_10.as_str());
+    }
+    if let Some(var_11) = &input.priority {
         object.key("priority").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_10).into()),
+            ::aws_smithy_types::Number::NegInt((*var_11).into()),
         );
     }
-    if let Some(var_11) = &input.queue {
-        object.key("queue").string(var_11.as_str());
+    if let Some(var_12) = &input.queue {
+        object.key("queue").string(var_12.as_str());
     }
-    if let Some(var_12) = &input.role {
-        object.key("role").string(var_12.as_str());
+    if let Some(var_13) = &input.role {
+        object.key("role").string(var_13.as_str());
     }
-    if let Some(var_13) = &input.settings {
+    if let Some(var_14) = &input.settings {
         #[allow(unused_mut)]
-        let mut object_14 = object.key("settings").start_object();
-        crate::protocol_serde::shape_job_settings::ser_job_settings(&mut object_14, var_13)?;
-        object_14.finish();
+        let mut object_15 = object.key("settings").start_object();
+        crate::protocol_serde::shape_job_settings::ser_job_settings(&mut object_15, var_14)?;
+        object_15.finish();
     }
-    if let Some(var_15) = &input.simulate_reserved_queue {
-        object.key("simulateReservedQueue").string(var_15.as_str());
+    if let Some(var_16) = &input.simulate_reserved_queue {
+        object.key("simulateReservedQueue").string(var_16.as_str());
     }
-    if let Some(var_16) = &input.status_update_interval {
-        object.key("statusUpdateInterval").string(var_16.as_str());
+    if let Some(var_17) = &input.status_update_interval {
+        object.key("statusUpdateInterval").string(var_17.as_str());
     }
-    if let Some(var_17) = &input.tags {
+    if let Some(var_18) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_18 = object.key("tags").start_object();
-        for (key_19, value_20) in var_17 {
+        let mut object_19 = object.key("tags").start_object();
+        for (key_20, value_21) in var_18 {
             {
-                object_18.key(key_19.as_str()).string(value_20.as_str());
+                object_19.key(key_20.as_str()).string(value_21.as_str());
             }
         }
-        object_18.finish();
+        object_19.finish();
     }
-    if let Some(var_21) = &input.user_metadata {
+    if let Some(var_22) = &input.user_metadata {
         #[allow(unused_mut)]
-        let mut object_22 = object.key("userMetadata").start_object();
-        for (key_23, value_24) in var_21 {
+        let mut object_23 = object.key("userMetadata").start_object();
+        for (key_24, value_25) in var_22 {
             {
-                object_22.key(key_23.as_str()).string(value_24.as_str());
+                object_23.key(key_24.as_str()).string(value_25.as_str());
             }
         }
-        object_22.finish();
+        object_23.finish();
     }
     Ok(())
 }

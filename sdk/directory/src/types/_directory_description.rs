@@ -36,7 +36,7 @@ pub struct DirectoryDescription {
     pub launch_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time that the stage was last updated.</p>
     pub stage_last_updated_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The directory size.</p>
+    /// <p>The directory type.</p>
     pub r#type: ::std::option::Option<crate::types::DirectoryType>,
     /// <p>A <code>DirectoryVpcSettingsDescription</code> object that contains additional information about a directory. This member is only present if the directory is a Simple AD or Managed Microsoft AD directory.</p>
     pub vpc_settings: ::std::option::Option<crate::types::DirectoryVpcSettingsDescription>,
@@ -124,7 +124,7 @@ impl DirectoryDescription {
     pub fn stage_last_updated_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.stage_last_updated_date_time.as_ref()
     }
-    /// <p>The directory size.</p>
+    /// <p>The directory type.</p>
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::DirectoryType> {
         self.r#type.as_ref()
     }
@@ -462,17 +462,17 @@ impl DirectoryDescriptionBuilder {
     pub fn get_stage_last_updated_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.stage_last_updated_date_time
     }
-    /// <p>The directory size.</p>
+    /// <p>The directory type.</p>
     pub fn r#type(mut self, input: crate::types::DirectoryType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The directory size.</p>
+    /// <p>The directory type.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::DirectoryType>) -> Self {
         self.r#type = input;
         self
     }
-    /// <p>The directory size.</p>
+    /// <p>The directory type.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::DirectoryType> {
         &self.r#type
     }

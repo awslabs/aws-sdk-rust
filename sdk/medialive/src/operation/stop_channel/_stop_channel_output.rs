@@ -40,6 +40,8 @@ pub struct StopChannelOutput {
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// Settings for VPC output
     pub vpc: ::std::option::Option<crate::types::VpcOutputSettingsDescription>,
+    /// Anywhere settings for this channel.
+    pub anywhere_settings: ::std::option::Option<crate::types::DescribeAnywhereSettings>,
     _request_id: Option<String>,
 }
 impl StopChannelOutput {
@@ -123,6 +125,10 @@ impl StopChannelOutput {
     pub fn vpc(&self) -> ::std::option::Option<&crate::types::VpcOutputSettingsDescription> {
         self.vpc.as_ref()
     }
+    /// Anywhere settings for this channel.
+    pub fn anywhere_settings(&self) -> ::std::option::Option<&crate::types::DescribeAnywhereSettings> {
+        self.anywhere_settings.as_ref()
+    }
 }
 impl ::aws_types::request_id::RequestId for StopChannelOutput {
     fn request_id(&self) -> Option<&str> {
@@ -158,6 +164,7 @@ pub struct StopChannelOutputBuilder {
     pub(crate) state: ::std::option::Option<crate::types::ChannelState>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) vpc: ::std::option::Option<crate::types::VpcOutputSettingsDescription>,
+    pub(crate) anywhere_settings: ::std::option::Option<crate::types::DescribeAnywhereSettings>,
     _request_id: Option<String>,
 }
 impl StopChannelOutputBuilder {
@@ -443,6 +450,20 @@ impl StopChannelOutputBuilder {
     pub fn get_vpc(&self) -> &::std::option::Option<crate::types::VpcOutputSettingsDescription> {
         &self.vpc
     }
+    /// Anywhere settings for this channel.
+    pub fn anywhere_settings(mut self, input: crate::types::DescribeAnywhereSettings) -> Self {
+        self.anywhere_settings = ::std::option::Option::Some(input);
+        self
+    }
+    /// Anywhere settings for this channel.
+    pub fn set_anywhere_settings(mut self, input: ::std::option::Option<crate::types::DescribeAnywhereSettings>) -> Self {
+        self.anywhere_settings = input;
+        self
+    }
+    /// Anywhere settings for this channel.
+    pub fn get_anywhere_settings(&self) -> &::std::option::Option<crate::types::DescribeAnywhereSettings> {
+        &self.anywhere_settings
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -473,6 +494,7 @@ impl StopChannelOutputBuilder {
             state: self.state,
             tags: self.tags,
             vpc: self.vpc,
+            anywhere_settings: self.anywhere_settings,
             _request_id: self._request_id,
         }
     }

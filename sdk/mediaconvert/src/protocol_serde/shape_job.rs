@@ -84,6 +84,20 @@ where
                                     .transpose()?,
                             );
                         }
+                        "jobEngineVersionRequested" => {
+                            builder = builder.set_job_engine_version_requested(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "jobEngineVersionUsed" => {
+                            builder = builder.set_job_engine_version_used(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "jobPercentComplete" => {
                             builder = builder.set_job_percent_complete(
                                 ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?

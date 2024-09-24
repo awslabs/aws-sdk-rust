@@ -5,12 +5,20 @@
 pub struct GetFindingsStatisticsOutput {
     /// <p>The finding statistics object.</p>
     pub finding_statistics: ::std::option::Option<crate::types::FindingStatistics>,
+    /// <p>The pagination parameter to be used on the next list operation to retrieve more items.</p>
+    /// <p>This parameter is currently not supported.</p>
+    pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetFindingsStatisticsOutput {
     /// <p>The finding statistics object.</p>
     pub fn finding_statistics(&self) -> ::std::option::Option<&crate::types::FindingStatistics> {
         self.finding_statistics.as_ref()
+    }
+    /// <p>The pagination parameter to be used on the next list operation to retrieve more items.</p>
+    /// <p>This parameter is currently not supported.</p>
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
+        self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetFindingsStatisticsOutput {
@@ -30,6 +38,7 @@ impl GetFindingsStatisticsOutput {
 #[non_exhaustive]
 pub struct GetFindingsStatisticsOutputBuilder {
     pub(crate) finding_statistics: ::std::option::Option<crate::types::FindingStatistics>,
+    pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetFindingsStatisticsOutputBuilder {
@@ -48,6 +57,23 @@ impl GetFindingsStatisticsOutputBuilder {
     pub fn get_finding_statistics(&self) -> &::std::option::Option<crate::types::FindingStatistics> {
         &self.finding_statistics
     }
+    /// <p>The pagination parameter to be used on the next list operation to retrieve more items.</p>
+    /// <p>This parameter is currently not supported.</p>
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The pagination parameter to be used on the next list operation to retrieve more items.</p>
+    /// <p>This parameter is currently not supported.</p>
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.next_token = input;
+        self
+    }
+    /// <p>The pagination parameter to be used on the next list operation to retrieve more items.</p>
+    /// <p>This parameter is currently not supported.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -61,6 +87,7 @@ impl GetFindingsStatisticsOutputBuilder {
     pub fn build(self) -> crate::operation::get_findings_statistics::GetFindingsStatisticsOutput {
         crate::operation::get_findings_statistics::GetFindingsStatisticsOutput {
             finding_statistics: self.finding_statistics,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }

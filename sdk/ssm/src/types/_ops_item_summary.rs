@@ -16,7 +16,7 @@ pub struct OpsItemSummary {
     pub priority: ::std::option::Option<i32>,
     /// <p>The impacted Amazon Web Services resource.</p>
     pub source: ::std::option::Option<::std::string::String>,
-    /// <p>The OpsItem status. Status can be <code>Open</code>, <code>In Progress</code>, or <code>Resolved</code>.</p>
+    /// <p>The OpsItem status.</p>
     pub status: ::std::option::Option<crate::types::OpsItemStatus>,
     /// <p>The ID of the OpsItem.</p>
     pub ops_item_id: ::std::option::Option<::std::string::String>,
@@ -75,7 +75,7 @@ impl OpsItemSummary {
     pub fn source(&self) -> ::std::option::Option<&str> {
         self.source.as_deref()
     }
-    /// <p>The OpsItem status. Status can be <code>Open</code>, <code>In Progress</code>, or <code>Resolved</code>.</p>
+    /// <p>The OpsItem status.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::OpsItemStatus> {
         self.status.as_ref()
     }
@@ -245,17 +245,17 @@ impl OpsItemSummaryBuilder {
     pub fn get_source(&self) -> &::std::option::Option<::std::string::String> {
         &self.source
     }
-    /// <p>The OpsItem status. Status can be <code>Open</code>, <code>In Progress</code>, or <code>Resolved</code>.</p>
+    /// <p>The OpsItem status.</p>
     pub fn status(mut self, input: crate::types::OpsItemStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The OpsItem status. Status can be <code>Open</code>, <code>In Progress</code>, or <code>Resolved</code>.</p>
+    /// <p>The OpsItem status.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::OpsItemStatus>) -> Self {
         self.status = input;
         self
     }
-    /// <p>The OpsItem status. Status can be <code>Open</code>, <code>In Progress</code>, or <code>Resolved</code>.</p>
+    /// <p>The OpsItem status.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::OpsItemStatus> {
         &self.status
     }

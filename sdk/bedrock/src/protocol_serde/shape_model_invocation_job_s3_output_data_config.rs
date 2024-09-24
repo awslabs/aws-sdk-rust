@@ -9,6 +9,9 @@ pub fn ser_model_invocation_job_s3_output_data_config(
     if let Some(var_1) = &input.s3_encryption_key_id {
         object.key("s3EncryptionKeyId").string(var_1.as_str());
     }
+    if let Some(var_2) = &input.s3_bucket_owner {
+        object.key("s3BucketOwner").string(var_2.as_str());
+    }
     Ok(())
 }
 
@@ -36,6 +39,13 @@ where
                         }
                         "s3EncryptionKeyId" => {
                             builder = builder.set_s3_encryption_key_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "s3BucketOwner" => {
+                            builder = builder.set_s3_bucket_owner(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,

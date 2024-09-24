@@ -16,6 +16,8 @@ pub struct DefaultFilterDropDownControlOptions {
     pub r#type: ::std::option::Option<crate::types::SheetControlListType>,
     /// <p>A list of selectable values that are used in a control.</p>
     pub selectable_values: ::std::option::Option<crate::types::FilterSelectableValues>,
+    /// <p>The visibility configuration of the Apply button on a <code>FilterDropDownControl</code>.</p>
+    pub commit_mode: ::std::option::Option<crate::types::CommitMode>,
 }
 impl DefaultFilterDropDownControlOptions {
     /// <p>The display options of a control.</p>
@@ -36,6 +38,10 @@ impl DefaultFilterDropDownControlOptions {
     pub fn selectable_values(&self) -> ::std::option::Option<&crate::types::FilterSelectableValues> {
         self.selectable_values.as_ref()
     }
+    /// <p>The visibility configuration of the Apply button on a <code>FilterDropDownControl</code>.</p>
+    pub fn commit_mode(&self) -> ::std::option::Option<&crate::types::CommitMode> {
+        self.commit_mode.as_ref()
+    }
 }
 impl DefaultFilterDropDownControlOptions {
     /// Creates a new builder-style object to manufacture [`DefaultFilterDropDownControlOptions`](crate::types::DefaultFilterDropDownControlOptions).
@@ -51,6 +57,7 @@ pub struct DefaultFilterDropDownControlOptionsBuilder {
     pub(crate) display_options: ::std::option::Option<crate::types::DropDownControlDisplayOptions>,
     pub(crate) r#type: ::std::option::Option<crate::types::SheetControlListType>,
     pub(crate) selectable_values: ::std::option::Option<crate::types::FilterSelectableValues>,
+    pub(crate) commit_mode: ::std::option::Option<crate::types::CommitMode>,
 }
 impl DefaultFilterDropDownControlOptionsBuilder {
     /// <p>The display options of a control.</p>
@@ -113,12 +120,27 @@ impl DefaultFilterDropDownControlOptionsBuilder {
     pub fn get_selectable_values(&self) -> &::std::option::Option<crate::types::FilterSelectableValues> {
         &self.selectable_values
     }
+    /// <p>The visibility configuration of the Apply button on a <code>FilterDropDownControl</code>.</p>
+    pub fn commit_mode(mut self, input: crate::types::CommitMode) -> Self {
+        self.commit_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The visibility configuration of the Apply button on a <code>FilterDropDownControl</code>.</p>
+    pub fn set_commit_mode(mut self, input: ::std::option::Option<crate::types::CommitMode>) -> Self {
+        self.commit_mode = input;
+        self
+    }
+    /// <p>The visibility configuration of the Apply button on a <code>FilterDropDownControl</code>.</p>
+    pub fn get_commit_mode(&self) -> &::std::option::Option<crate::types::CommitMode> {
+        &self.commit_mode
+    }
     /// Consumes the builder and constructs a [`DefaultFilterDropDownControlOptions`](crate::types::DefaultFilterDropDownControlOptions).
     pub fn build(self) -> crate::types::DefaultFilterDropDownControlOptions {
         crate::types::DefaultFilterDropDownControlOptions {
             display_options: self.display_options,
             r#type: self.r#type,
             selectable_values: self.selectable_values,
+            commit_mode: self.commit_mode,
         }
     }
 }

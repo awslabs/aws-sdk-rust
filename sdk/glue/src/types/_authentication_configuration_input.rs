@@ -6,23 +6,23 @@
 pub struct AuthenticationConfigurationInput {
     /// <p>A structure containing the authentication configuration in the CreateConnection request.</p>
     pub authentication_type: ::std::option::Option<crate::types::AuthenticationType>,
-    /// <p>The secret manager ARN to store credentials in the CreateConnection request.</p>
-    pub secret_arn: ::std::option::Option<::std::string::String>,
     /// <p>The properties for OAuth2 authentication in the CreateConnection request.</p>
     pub o_auth2_properties: ::std::option::Option<crate::types::OAuth2PropertiesInput>,
+    /// <p>The secret manager ARN to store credentials in the CreateConnection request.</p>
+    pub secret_arn: ::std::option::Option<::std::string::String>,
 }
 impl AuthenticationConfigurationInput {
     /// <p>A structure containing the authentication configuration in the CreateConnection request.</p>
     pub fn authentication_type(&self) -> ::std::option::Option<&crate::types::AuthenticationType> {
         self.authentication_type.as_ref()
     }
-    /// <p>The secret manager ARN to store credentials in the CreateConnection request.</p>
-    pub fn secret_arn(&self) -> ::std::option::Option<&str> {
-        self.secret_arn.as_deref()
-    }
     /// <p>The properties for OAuth2 authentication in the CreateConnection request.</p>
     pub fn o_auth2_properties(&self) -> ::std::option::Option<&crate::types::OAuth2PropertiesInput> {
         self.o_auth2_properties.as_ref()
+    }
+    /// <p>The secret manager ARN to store credentials in the CreateConnection request.</p>
+    pub fn secret_arn(&self) -> ::std::option::Option<&str> {
+        self.secret_arn.as_deref()
     }
 }
 impl AuthenticationConfigurationInput {
@@ -37,8 +37,8 @@ impl AuthenticationConfigurationInput {
 #[non_exhaustive]
 pub struct AuthenticationConfigurationInputBuilder {
     pub(crate) authentication_type: ::std::option::Option<crate::types::AuthenticationType>,
-    pub(crate) secret_arn: ::std::option::Option<::std::string::String>,
     pub(crate) o_auth2_properties: ::std::option::Option<crate::types::OAuth2PropertiesInput>,
+    pub(crate) secret_arn: ::std::option::Option<::std::string::String>,
 }
 impl AuthenticationConfigurationInputBuilder {
     /// <p>A structure containing the authentication configuration in the CreateConnection request.</p>
@@ -55,20 +55,6 @@ impl AuthenticationConfigurationInputBuilder {
     pub fn get_authentication_type(&self) -> &::std::option::Option<crate::types::AuthenticationType> {
         &self.authentication_type
     }
-    /// <p>The secret manager ARN to store credentials in the CreateConnection request.</p>
-    pub fn secret_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.secret_arn = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>The secret manager ARN to store credentials in the CreateConnection request.</p>
-    pub fn set_secret_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.secret_arn = input;
-        self
-    }
-    /// <p>The secret manager ARN to store credentials in the CreateConnection request.</p>
-    pub fn get_secret_arn(&self) -> &::std::option::Option<::std::string::String> {
-        &self.secret_arn
-    }
     /// <p>The properties for OAuth2 authentication in the CreateConnection request.</p>
     pub fn o_auth2_properties(mut self, input: crate::types::OAuth2PropertiesInput) -> Self {
         self.o_auth2_properties = ::std::option::Option::Some(input);
@@ -83,12 +69,26 @@ impl AuthenticationConfigurationInputBuilder {
     pub fn get_o_auth2_properties(&self) -> &::std::option::Option<crate::types::OAuth2PropertiesInput> {
         &self.o_auth2_properties
     }
+    /// <p>The secret manager ARN to store credentials in the CreateConnection request.</p>
+    pub fn secret_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.secret_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The secret manager ARN to store credentials in the CreateConnection request.</p>
+    pub fn set_secret_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.secret_arn = input;
+        self
+    }
+    /// <p>The secret manager ARN to store credentials in the CreateConnection request.</p>
+    pub fn get_secret_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.secret_arn
+    }
     /// Consumes the builder and constructs a [`AuthenticationConfigurationInput`](crate::types::AuthenticationConfigurationInput).
     pub fn build(self) -> crate::types::AuthenticationConfigurationInput {
         crate::types::AuthenticationConfigurationInput {
             authentication_type: self.authentication_type,
-            secret_arn: self.secret_arn,
             o_auth2_properties: self.o_auth2_properties,
+            secret_arn: self.secret_arn,
         }
     }
 }

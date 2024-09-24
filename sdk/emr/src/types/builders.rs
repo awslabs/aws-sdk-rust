@@ -43,13 +43,13 @@ pub use crate::types::_instance_fleet_resizing_specifications::InstanceFleetResi
 
 pub use crate::types::_on_demand_resizing_specification::OnDemandResizingSpecificationBuilder;
 
+pub use crate::types::_on_demand_capacity_reservation_options::OnDemandCapacityReservationOptionsBuilder;
+
 pub use crate::types::_spot_resizing_specification::SpotResizingSpecificationBuilder;
 
 pub use crate::types::_instance_fleet_provisioning_specifications::InstanceFleetProvisioningSpecificationsBuilder;
 
 pub use crate::types::_on_demand_provisioning_specification::OnDemandProvisioningSpecificationBuilder;
-
-pub use crate::types::_on_demand_capacity_reservation_options::OnDemandCapacityReservationOptionsBuilder;
 
 pub use crate::types::_spot_provisioning_specification::SpotProvisioningSpecificationBuilder;
 

@@ -265,6 +265,8 @@ pub enum AdminRespondToAuthChallengeError {
     ExpiredCodeException(crate::types::error::ExpiredCodeException),
     /// <p>This exception is thrown when Amazon Cognito encounters an internal error.</p>
     InternalErrorException(crate::types::error::InternalErrorException),
+    /// <p>This exception is thrown when Amazon Cognito isn't allowed to use your email identity. HTTP status code: 400.</p>
+    InvalidEmailRoleAccessPolicyException(crate::types::error::InvalidEmailRoleAccessPolicyException),
     /// <p>This exception is thrown when Amazon Cognito encounters an invalid Lambda response.</p>
     InvalidLambdaResponseException(crate::types::error::InvalidLambdaResponseException),
     /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid parameter.</p>
@@ -336,6 +338,7 @@ impl AdminRespondToAuthChallengeError {
             Self::CodeMismatchException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ExpiredCodeException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InternalErrorException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InvalidEmailRoleAccessPolicyException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidLambdaResponseException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidParameterException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidPasswordException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -371,6 +374,10 @@ impl AdminRespondToAuthChallengeError {
     /// Returns `true` if the error kind is `AdminRespondToAuthChallengeError::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(self, Self::InternalErrorException(_))
+    }
+    /// Returns `true` if the error kind is `AdminRespondToAuthChallengeError::InvalidEmailRoleAccessPolicyException`.
+    pub fn is_invalid_email_role_access_policy_exception(&self) -> bool {
+        matches!(self, Self::InvalidEmailRoleAccessPolicyException(_))
     }
     /// Returns `true` if the error kind is `AdminRespondToAuthChallengeError::InvalidLambdaResponseException`.
     pub fn is_invalid_lambda_response_exception(&self) -> bool {
@@ -448,6 +455,7 @@ impl ::std::error::Error for AdminRespondToAuthChallengeError {
             Self::CodeMismatchException(_inner) => ::std::option::Option::Some(_inner),
             Self::ExpiredCodeException(_inner) => ::std::option::Option::Some(_inner),
             Self::InternalErrorException(_inner) => ::std::option::Option::Some(_inner),
+            Self::InvalidEmailRoleAccessPolicyException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidLambdaResponseException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidParameterException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidPasswordException(_inner) => ::std::option::Option::Some(_inner),
@@ -476,6 +484,7 @@ impl ::std::fmt::Display for AdminRespondToAuthChallengeError {
             Self::CodeMismatchException(_inner) => _inner.fmt(f),
             Self::ExpiredCodeException(_inner) => _inner.fmt(f),
             Self::InternalErrorException(_inner) => _inner.fmt(f),
+            Self::InvalidEmailRoleAccessPolicyException(_inner) => _inner.fmt(f),
             Self::InvalidLambdaResponseException(_inner) => _inner.fmt(f),
             Self::InvalidParameterException(_inner) => _inner.fmt(f),
             Self::InvalidPasswordException(_inner) => _inner.fmt(f),
@@ -518,6 +527,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for AdminRespondT
             Self::CodeMismatchException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ExpiredCodeException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InternalErrorException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidEmailRoleAccessPolicyException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidLambdaResponseException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidParameterException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidPasswordException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

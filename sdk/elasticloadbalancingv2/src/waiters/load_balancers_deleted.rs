@@ -62,8 +62,8 @@ impl LoadBalancersDeletedFluentBuilder {
             if crate::waiters::matchers::match_describe_load_balancers_c74fe109e496dabfe(result) {
                 return ::aws_smithy_runtime::client::waiters::AcceptorState::Retry;
             }
-            // Matches: {"errorType":"LoadBalancerNotFoundException"}
-            if crate::waiters::matchers::match_describe_load_balancers_3a5df4444a7ade137(result) {
+            // Matches: {"errorType":"LoadBalancerNotFound"}
+            if crate::waiters::matchers::match_describe_load_balancers_5d8e90ea6f1c3cb8d(result) {
                 return ::aws_smithy_runtime::client::waiters::AcceptorState::Success;
             }
             ::aws_smithy_runtime::client::waiters::AcceptorState::NoAcceptorsMatched

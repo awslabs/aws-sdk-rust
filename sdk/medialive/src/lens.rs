@@ -9,6 +9,16 @@ pub(crate) fn reflens_describe_schedule_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_channel_placement_groups_output_output_next_token(
+    input: &crate::operation::list_channel_placement_groups::ListChannelPlacementGroupsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_channels_output_output_next_token(
     input: &crate::operation::list_channels::ListChannelsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -31,6 +41,16 @@ pub(crate) fn reflens_list_cloud_watch_alarm_template_groups_output_output_next_
 
 pub(crate) fn reflens_list_cloud_watch_alarm_templates_output_output_next_token(
     input: &crate::operation::list_cloud_watch_alarm_templates::ListCloudWatchAlarmTemplatesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_clusters_output_output_next_token(
+    input: &crate::operation::list_clusters::ListClustersOutput,
 ) -> ::std::option::Option<&::std::string::String> {
     let input = match &input.next_token {
         ::std::option::Option::None => return ::std::option::Option::None,
@@ -119,6 +139,26 @@ pub(crate) fn reflens_list_multiplexes_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_networks_output_output_next_token(
+    input: &crate::operation::list_networks::ListNetworksOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_nodes_output_output_next_token(
+    input: &crate::operation::list_nodes::ListNodesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_offerings_output_output_next_token(
     input: &crate::operation::list_offerings::ListOfferingsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -159,6 +199,16 @@ pub(crate) fn lens_describe_schedule_output_output_schedule_actions(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn lens_list_channel_placement_groups_output_output_channel_placement_groups(
+    input: crate::operation::list_channel_placement_groups::ListChannelPlacementGroupsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::DescribeChannelPlacementGroupSummary>> {
+    let input = match input.channel_placement_groups {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_list_channels_output_output_channels(
     input: crate::operation::list_channels::ListChannelsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ChannelSummary>> {
@@ -183,6 +233,16 @@ pub(crate) fn lens_list_cloud_watch_alarm_templates_output_output_cloud_watch_al
     input: crate::operation::list_cloud_watch_alarm_templates::ListCloudWatchAlarmTemplatesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::CloudWatchAlarmTemplateSummary>> {
     let input = match input.cloud_watch_alarm_templates {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_clusters_output_output_clusters(
+    input: crate::operation::list_clusters::ListClustersOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::DescribeClusterSummary>> {
+    let input = match input.clusters {
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,
     };
@@ -263,6 +323,26 @@ pub(crate) fn lens_list_multiplexes_output_output_multiplexes(
     input: crate::operation::list_multiplexes::ListMultiplexesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::MultiplexSummary>> {
     let input = match input.multiplexes {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_networks_output_output_networks(
+    input: crate::operation::list_networks::ListNetworksOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::DescribeNetworkSummary>> {
+    let input = match input.networks {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_nodes_output_output_nodes(
+    input: crate::operation::list_nodes::ListNodesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::DescribeNodeSummary>> {
+    let input = match input.nodes {
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,
     };

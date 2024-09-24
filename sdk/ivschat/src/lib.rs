@@ -37,11 +37,11 @@
 //!
 //! __Tagging__
 //!
-//! A _tag_ is a metadata label that you assign to an AWS resource. A tag comprises a _key_ and a _value_, both set by you. For example, you might set a tag as topic:nature to label a particular video category. See [Tagging AWS Resources](https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html) for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS Chat has no service-specific constraints beyond what is documented there.
+//! A _tag_ is a metadata label that you assign to an AWS resource. A tag comprises a _key_ and a _value_, both set by you. For example, you might set a tag as topic:nature to label a particular video category. See [Best practices and strategies](https://docs.aws.amazon.com/tag-editor/latest/userguide/best-practices-and-strats.html) in _Tagging Amazon Web Services Resources and Tag Editor_ for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS Chat has no service-specific constraints beyond what is documented there.
 //!
 //! Tags can help you identify and organize your AWS resources. For example, you can use the same tag for different resources to indicate that they are related. You can also use tags to manage access (see [Access Tags](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html)).
 //!
-//! The Amazon IVS Chat API has these tag-related endpoints: TagResource, UntagResource, and ListTagsForResource. The following resource supports tagging: Room.
+//! The Amazon IVS Chat API has these tag-related operations: TagResource, UntagResource, and ListTagsForResource. The following resource supports tagging: Room.
 //!
 //! At most 50 tags can be applied to a resource.
 //!
@@ -51,7 +51,7 @@
 //!   - _Authentication_ is about verifying identity. Requests to the Amazon IVS Chat API must be signed to verify your identity.
 //!   - _Authorization_ is about granting permissions. Your IAM roles need to have permissions for Amazon IVS Chat API requests.
 //!
-//! Users (viewers) connect to a room using secure access tokens that you create using the CreateChatToken endpoint through the AWS SDK. You call CreateChatToken for every user’s chat session, passing identity and authorization information about the user.
+//! Users (viewers) connect to a room using secure access tokens that you create using the CreateChatToken operation through the AWS SDK. You call CreateChatToken for every user’s chat session, passing identity and authorization information about the user.
 //!
 //! __Signing API Requests__
 //!
@@ -79,7 +79,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-ivschat = "1.43.0"
+//! aws-sdk-ivschat = "1.44.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

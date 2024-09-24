@@ -108,17 +108,17 @@ impl CreateSampleFindingsFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The ID of the detector to create sample findings for.</p>
+    /// <p>The ID of the detector for which you need to create sample findings.</p>
     pub fn detector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.detector_id(input.into());
         self
     }
-    /// <p>The ID of the detector to create sample findings for.</p>
+    /// <p>The ID of the detector for which you need to create sample findings.</p>
     pub fn set_detector_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_detector_id(input);
         self
     }
-    /// <p>The ID of the detector to create sample findings for.</p>
+    /// <p>The ID of the detector for which you need to create sample findings.</p>
     pub fn get_detector_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_detector_id()
     }

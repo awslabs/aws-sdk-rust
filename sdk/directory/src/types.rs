@@ -97,6 +97,8 @@ pub use crate::types::_domain_controller::DomainController;
 
 pub use crate::types::_domain_controller_status::DomainControllerStatus;
 
+pub use crate::types::_data_access_status::DataAccessStatus;
+
 pub use crate::types::_directory_description::DirectoryDescription;
 
 pub use crate::types::_regions_info::RegionsInfo;
@@ -154,6 +156,8 @@ mod _client_cert_auth_settings;
 mod _computer;
 
 mod _conditional_forwarder;
+
+mod _data_access_status;
 
 mod _directory_configuration_status;
 

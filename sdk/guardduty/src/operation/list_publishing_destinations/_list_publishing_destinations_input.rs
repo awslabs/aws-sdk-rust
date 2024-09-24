@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListPublishingDestinationsInput {
-    /// <p>The ID of the detector to retrieve publishing destinations for.</p>
+    /// <p>The detector ID for which you want to retrieve the publishing destination.</p>
     pub detector_id: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return in the response.</p>
     pub max_results: ::std::option::Option<i32>,
@@ -11,7 +11,7 @@ pub struct ListPublishingDestinationsInput {
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListPublishingDestinationsInput {
-    /// <p>The ID of the detector to retrieve publishing destinations for.</p>
+    /// <p>The detector ID for which you want to retrieve the publishing destination.</p>
     pub fn detector_id(&self) -> ::std::option::Option<&str> {
         self.detector_id.as_deref()
     }
@@ -40,18 +40,18 @@ pub struct ListPublishingDestinationsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListPublishingDestinationsInputBuilder {
-    /// <p>The ID of the detector to retrieve publishing destinations for.</p>
+    /// <p>The detector ID for which you want to retrieve the publishing destination.</p>
     /// This field is required.
     pub fn detector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.detector_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the detector to retrieve publishing destinations for.</p>
+    /// <p>The detector ID for which you want to retrieve the publishing destination.</p>
     pub fn set_detector_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.detector_id = input;
         self
     }
-    /// <p>The ID of the detector to retrieve publishing destinations for.</p>
+    /// <p>The detector ID for which you want to retrieve the publishing destination.</p>
     pub fn get_detector_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.detector_id
     }

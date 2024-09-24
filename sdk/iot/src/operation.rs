@@ -10,6 +10,9 @@ pub mod add_thing_to_billing_group;
 /// Types for the `AddThingToThingGroup` operation.
 pub mod add_thing_to_thing_group;
 
+/// Types for the `AssociateSbomWithPackageVersion` operation.
+pub mod associate_sbom_with_package_version;
+
 /// Types for the `AssociateTargetsWithJob` operation.
 pub mod associate_targets_with_job;
 
@@ -364,6 +367,9 @@ pub mod detach_thing_principal;
 /// Types for the `DisableTopicRule` operation.
 pub mod disable_topic_rule;
 
+/// Types for the `DisassociateSbomFromPackageVersion` operation.
+pub mod disassociate_sbom_from_package_version;
+
 /// Types for the `EnableTopicRule` operation.
 pub mod enable_topic_rule;
 
@@ -543,6 +549,9 @@ pub mod list_related_resources_for_audit_finding;
 
 /// Types for the `ListRoleAliases` operation.
 pub mod list_role_aliases;
+
+/// Types for the `ListSbomValidationResults` operation.
+pub mod list_sbom_validation_results;
 
 /// Types for the `ListScheduledAudits` operation.
 pub mod list_scheduled_audits;

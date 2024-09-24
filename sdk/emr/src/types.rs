@@ -61,12 +61,6 @@ pub use crate::types::_instance_fleet_resizing_specifications::InstanceFleetResi
 
 pub use crate::types::_on_demand_resizing_specification::OnDemandResizingSpecification;
 
-pub use crate::types::_spot_resizing_specification::SpotResizingSpecification;
-
-pub use crate::types::_instance_fleet_provisioning_specifications::InstanceFleetProvisioningSpecifications;
-
-pub use crate::types::_on_demand_provisioning_specification::OnDemandProvisioningSpecification;
-
 pub use crate::types::_on_demand_capacity_reservation_options::OnDemandCapacityReservationOptions;
 
 pub use crate::types::_on_demand_capacity_reservation_preference::OnDemandCapacityReservationPreference;
@@ -75,9 +69,15 @@ pub use crate::types::_on_demand_capacity_reservation_usage_strategy::OnDemandCa
 
 pub use crate::types::_on_demand_provisioning_allocation_strategy::OnDemandProvisioningAllocationStrategy;
 
-pub use crate::types::_spot_provisioning_specification::SpotProvisioningSpecification;
+pub use crate::types::_spot_resizing_specification::SpotResizingSpecification;
 
 pub use crate::types::_spot_provisioning_allocation_strategy::SpotProvisioningAllocationStrategy;
+
+pub use crate::types::_instance_fleet_provisioning_specifications::InstanceFleetProvisioningSpecifications;
+
+pub use crate::types::_on_demand_provisioning_specification::OnDemandProvisioningSpecification;
+
+pub use crate::types::_spot_provisioning_specification::SpotProvisioningSpecification;
 
 pub use crate::types::_spot_provisioning_timeout_action::SpotProvisioningTimeoutAction;
 

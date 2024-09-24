@@ -170,17 +170,17 @@ impl CreateAgentFluentBuilder {
     pub fn get_instruction(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_instruction()
     }
-    /// <p>The foundation model to be used for orchestration by the agent you create.</p>
+    /// <p>The Amazon Resource Name (ARN) of the foundation model to be used for orchestration by the agent you create.</p>
     pub fn foundation_model(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.foundation_model(input.into());
         self
     }
-    /// <p>The foundation model to be used for orchestration by the agent you create.</p>
+    /// <p>The Amazon Resource Name (ARN) of the foundation model to be used for orchestration by the agent you create.</p>
     pub fn set_foundation_model(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_foundation_model(input);
         self
     }
-    /// <p>The foundation model to be used for orchestration by the agent you create.</p>
+    /// <p>The Amazon Resource Name (ARN) of the foundation model to be used for orchestration by the agent you create.</p>
     pub fn get_foundation_model(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_foundation_model()
     }

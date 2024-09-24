@@ -9,6 +9,16 @@ pub struct ModifyDbShardGroupInput {
     pub max_acu: ::std::option::Option<f64>,
     /// <p>The minimum capacity of the DB shard group in Aurora capacity units (ACUs).</p>
     pub min_acu: ::std::option::Option<f64>,
+    /// <p>Specifies whether to create standby DB shard groups for the DB shard group. Valid values are the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>0 - Creates a DB shard group without a standby DB shard group. This is the default value.</p></li>
+    /// <li>
+    /// <p>1 - Creates a DB shard group with a standby DB shard group in a different Availability Zone (AZ).</p></li>
+    /// <li>
+    /// <p>2 - Creates a DB shard group with two standby DB shard groups in two different AZs.</p></li>
+    /// </ul>
+    pub compute_redundancy: ::std::option::Option<i32>,
 }
 impl ModifyDbShardGroupInput {
     /// <p>The name of the DB shard group to modify.</p>
@@ -22,6 +32,18 @@ impl ModifyDbShardGroupInput {
     /// <p>The minimum capacity of the DB shard group in Aurora capacity units (ACUs).</p>
     pub fn min_acu(&self) -> ::std::option::Option<f64> {
         self.min_acu
+    }
+    /// <p>Specifies whether to create standby DB shard groups for the DB shard group. Valid values are the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>0 - Creates a DB shard group without a standby DB shard group. This is the default value.</p></li>
+    /// <li>
+    /// <p>1 - Creates a DB shard group with a standby DB shard group in a different Availability Zone (AZ).</p></li>
+    /// <li>
+    /// <p>2 - Creates a DB shard group with two standby DB shard groups in two different AZs.</p></li>
+    /// </ul>
+    pub fn compute_redundancy(&self) -> ::std::option::Option<i32> {
+        self.compute_redundancy
     }
 }
 impl ModifyDbShardGroupInput {
@@ -38,6 +60,7 @@ pub struct ModifyDbShardGroupInputBuilder {
     pub(crate) db_shard_group_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) max_acu: ::std::option::Option<f64>,
     pub(crate) min_acu: ::std::option::Option<f64>,
+    pub(crate) compute_redundancy: ::std::option::Option<i32>,
 }
 impl ModifyDbShardGroupInputBuilder {
     /// <p>The name of the DB shard group to modify.</p>
@@ -83,6 +106,44 @@ impl ModifyDbShardGroupInputBuilder {
     pub fn get_min_acu(&self) -> &::std::option::Option<f64> {
         &self.min_acu
     }
+    /// <p>Specifies whether to create standby DB shard groups for the DB shard group. Valid values are the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>0 - Creates a DB shard group without a standby DB shard group. This is the default value.</p></li>
+    /// <li>
+    /// <p>1 - Creates a DB shard group with a standby DB shard group in a different Availability Zone (AZ).</p></li>
+    /// <li>
+    /// <p>2 - Creates a DB shard group with two standby DB shard groups in two different AZs.</p></li>
+    /// </ul>
+    pub fn compute_redundancy(mut self, input: i32) -> Self {
+        self.compute_redundancy = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether to create standby DB shard groups for the DB shard group. Valid values are the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>0 - Creates a DB shard group without a standby DB shard group. This is the default value.</p></li>
+    /// <li>
+    /// <p>1 - Creates a DB shard group with a standby DB shard group in a different Availability Zone (AZ).</p></li>
+    /// <li>
+    /// <p>2 - Creates a DB shard group with two standby DB shard groups in two different AZs.</p></li>
+    /// </ul>
+    pub fn set_compute_redundancy(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.compute_redundancy = input;
+        self
+    }
+    /// <p>Specifies whether to create standby DB shard groups for the DB shard group. Valid values are the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>0 - Creates a DB shard group without a standby DB shard group. This is the default value.</p></li>
+    /// <li>
+    /// <p>1 - Creates a DB shard group with a standby DB shard group in a different Availability Zone (AZ).</p></li>
+    /// <li>
+    /// <p>2 - Creates a DB shard group with two standby DB shard groups in two different AZs.</p></li>
+    /// </ul>
+    pub fn get_compute_redundancy(&self) -> &::std::option::Option<i32> {
+        &self.compute_redundancy
+    }
     /// Consumes the builder and constructs a [`ModifyDbShardGroupInput`](crate::operation::modify_db_shard_group::ModifyDbShardGroupInput).
     pub fn build(
         self,
@@ -92,6 +153,7 @@ impl ModifyDbShardGroupInputBuilder {
             db_shard_group_identifier: self.db_shard_group_identifier,
             max_acu: self.max_acu,
             min_acu: self.min_acu,
+            compute_redundancy: self.compute_redundancy,
         })
     }
 }

@@ -250,7 +250,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for AddIpRoutesEn
 pub enum AddIpRoutesError {
     /// <p>A client exception has occurred.</p>
     ClientException(crate::types::error::ClientException),
-    /// <p>The specified directory is unavailable or could not be found.</p>
+    /// <p>The specified directory is unavailable.</p>
     DirectoryUnavailableException(crate::types::error::DirectoryUnavailableException),
     /// <p>The specified entity already exists.</p>
     EntityAlreadyExistsException(crate::types::error::EntityAlreadyExistsException),

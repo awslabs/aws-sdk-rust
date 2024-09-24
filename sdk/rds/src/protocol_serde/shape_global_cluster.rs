@@ -161,6 +161,16 @@ pub fn de_global_cluster(
                 builder = builder.set_failover_state(var_12);
             }
             ,
+            s if s.matches("TagList") /* TagList com.amazonaws.rds#GlobalCluster$TagList */ =>  {
+                let var_13 =
+                    Some(
+                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_tag_list(var_13);
+            }
+            ,
             _ => {}
         }
     }

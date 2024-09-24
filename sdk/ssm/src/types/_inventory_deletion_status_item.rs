@@ -14,7 +14,7 @@ pub struct InventoryDeletionStatusItem {
     pub last_status: ::std::option::Option<crate::types::InventoryDeletionStatus>,
     /// <p>Information about the status.</p>
     pub last_status_message: ::std::option::Option<::std::string::String>,
-    /// <p>Information about the delete operation. For more information about this summary, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-custom.html#sysman-inventory-delete">Understanding the delete inventory summary</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    /// <p>Information about the delete operation. For more information about this summary, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/inventory-custom.html#delete-custom-inventory">Understanding the delete inventory summary</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub deletion_summary: ::std::option::Option<crate::types::InventoryDeletionSummary>,
     /// <p>The UTC timestamp of when the last status report.</p>
     pub last_status_update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -40,7 +40,7 @@ impl InventoryDeletionStatusItem {
     pub fn last_status_message(&self) -> ::std::option::Option<&str> {
         self.last_status_message.as_deref()
     }
-    /// <p>Information about the delete operation. For more information about this summary, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-custom.html#sysman-inventory-delete">Understanding the delete inventory summary</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    /// <p>Information about the delete operation. For more information about this summary, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/inventory-custom.html#delete-custom-inventory">Understanding the delete inventory summary</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub fn deletion_summary(&self) -> ::std::option::Option<&crate::types::InventoryDeletionSummary> {
         self.deletion_summary.as_ref()
     }
@@ -139,17 +139,17 @@ impl InventoryDeletionStatusItemBuilder {
     pub fn get_last_status_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.last_status_message
     }
-    /// <p>Information about the delete operation. For more information about this summary, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-custom.html#sysman-inventory-delete">Understanding the delete inventory summary</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    /// <p>Information about the delete operation. For more information about this summary, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/inventory-custom.html#delete-custom-inventory">Understanding the delete inventory summary</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub fn deletion_summary(mut self, input: crate::types::InventoryDeletionSummary) -> Self {
         self.deletion_summary = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Information about the delete operation. For more information about this summary, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-custom.html#sysman-inventory-delete">Understanding the delete inventory summary</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    /// <p>Information about the delete operation. For more information about this summary, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/inventory-custom.html#delete-custom-inventory">Understanding the delete inventory summary</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub fn set_deletion_summary(mut self, input: ::std::option::Option<crate::types::InventoryDeletionSummary>) -> Self {
         self.deletion_summary = input;
         self
     }
-    /// <p>Information about the delete operation. For more information about this summary, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-custom.html#sysman-inventory-delete">Understanding the delete inventory summary</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    /// <p>Information about the delete operation. For more information about this summary, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/inventory-custom.html#delete-custom-inventory">Understanding the delete inventory summary</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub fn get_deletion_summary(&self) -> &::std::option::Option<crate::types::InventoryDeletionSummary> {
         &self.deletion_summary
     }

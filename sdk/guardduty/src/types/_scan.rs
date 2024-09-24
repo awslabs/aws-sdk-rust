@@ -6,7 +6,7 @@
 pub struct Scan {
     /// <p>The unique ID of the detector that the request is associated with.</p>
     pub detector_id: ::std::option::Option<::std::string::String>,
-    /// <p>The unique detector ID of the administrator account that the request is associated with. Note that this value will be the same as the one used for <code>DetectorId</code> if the account is an administrator.</p>
+    /// <p>The unique detector ID of the administrator account that the request is associated with. If the account is an administrator, the <code>AdminDetectorId</code> will be the same as the one used for <code>DetectorId</code>.</p>
     pub admin_detector_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique scan ID associated with a scan entry.</p>
     pub scan_id: ::std::option::Option<::std::string::String>,
@@ -40,7 +40,7 @@ impl Scan {
     pub fn detector_id(&self) -> ::std::option::Option<&str> {
         self.detector_id.as_deref()
     }
-    /// <p>The unique detector ID of the administrator account that the request is associated with. Note that this value will be the same as the one used for <code>DetectorId</code> if the account is an administrator.</p>
+    /// <p>The unique detector ID of the administrator account that the request is associated with. If the account is an administrator, the <code>AdminDetectorId</code> will be the same as the one used for <code>DetectorId</code>.</p>
     pub fn admin_detector_id(&self) -> ::std::option::Option<&str> {
         self.admin_detector_id.as_deref()
     }
@@ -141,17 +141,17 @@ impl ScanBuilder {
     pub fn get_detector_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.detector_id
     }
-    /// <p>The unique detector ID of the administrator account that the request is associated with. Note that this value will be the same as the one used for <code>DetectorId</code> if the account is an administrator.</p>
+    /// <p>The unique detector ID of the administrator account that the request is associated with. If the account is an administrator, the <code>AdminDetectorId</code> will be the same as the one used for <code>DetectorId</code>.</p>
     pub fn admin_detector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.admin_detector_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique detector ID of the administrator account that the request is associated with. Note that this value will be the same as the one used for <code>DetectorId</code> if the account is an administrator.</p>
+    /// <p>The unique detector ID of the administrator account that the request is associated with. If the account is an administrator, the <code>AdminDetectorId</code> will be the same as the one used for <code>DetectorId</code>.</p>
     pub fn set_admin_detector_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.admin_detector_id = input;
         self
     }
-    /// <p>The unique detector ID of the administrator account that the request is associated with. Note that this value will be the same as the one used for <code>DetectorId</code> if the account is an administrator.</p>
+    /// <p>The unique detector ID of the administrator account that the request is associated with. If the account is an administrator, the <code>AdminDetectorId</code> will be the same as the one used for <code>DetectorId</code>.</p>
     pub fn get_admin_detector_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.admin_detector_id
     }

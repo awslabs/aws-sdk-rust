@@ -286,6 +286,56 @@ impl From<crate::operation::add_thing_to_thing_group::AddThingToThingGroupError>
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::associate_sbom_with_package_version::AssociateSbomWithPackageVersionError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::associate_sbom_with_package_version::AssociateSbomWithPackageVersionError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::associate_sbom_with_package_version::AssociateSbomWithPackageVersionError> for Error {
+    fn from(err: crate::operation::associate_sbom_with_package_version::AssociateSbomWithPackageVersionError) -> Self {
+        match err {
+            crate::operation::associate_sbom_with_package_version::AssociateSbomWithPackageVersionError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::associate_sbom_with_package_version::AssociateSbomWithPackageVersionError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::associate_sbom_with_package_version::AssociateSbomWithPackageVersionError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::associate_sbom_with_package_version::AssociateSbomWithPackageVersionError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::associate_sbom_with_package_version::AssociateSbomWithPackageVersionError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::associate_sbom_with_package_version::AssociateSbomWithPackageVersionError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::associate_sbom_with_package_version::AssociateSbomWithPackageVersionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::associate_targets_with_job::AssociateTargetsWithJobError, R>>
     for Error
 where
@@ -4330,6 +4380,55 @@ impl From<crate::operation::disable_topic_rule::DisableTopicRuleError> for Error
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::disassociate_sbom_from_package_version::DisassociateSbomFromPackageVersionError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::disassociate_sbom_from_package_version::DisassociateSbomFromPackageVersionError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::disassociate_sbom_from_package_version::DisassociateSbomFromPackageVersionError> for Error {
+    fn from(err: crate::operation::disassociate_sbom_from_package_version::DisassociateSbomFromPackageVersionError) -> Self {
+        match err {
+            crate::operation::disassociate_sbom_from_package_version::DisassociateSbomFromPackageVersionError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::disassociate_sbom_from_package_version::DisassociateSbomFromPackageVersionError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::disassociate_sbom_from_package_version::DisassociateSbomFromPackageVersionError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::disassociate_sbom_from_package_version::DisassociateSbomFromPackageVersionError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::disassociate_sbom_from_package_version::DisassociateSbomFromPackageVersionError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::disassociate_sbom_from_package_version::DisassociateSbomFromPackageVersionError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::enable_topic_rule::EnableTopicRuleError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -6245,6 +6344,42 @@ impl From<crate::operation::list_role_aliases::ListRoleAliasesError> for Error {
             crate::operation::list_role_aliases::ListRoleAliasesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_role_aliases::ListRoleAliasesError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
             crate::operation::list_role_aliases::ListRoleAliasesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_sbom_validation_results::ListSbomValidationResultsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_sbom_validation_results::ListSbomValidationResultsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_sbom_validation_results::ListSbomValidationResultsError> for Error {
+    fn from(err: crate::operation::list_sbom_validation_results::ListSbomValidationResultsError) -> Self {
+        match err {
+            crate::operation::list_sbom_validation_results::ListSbomValidationResultsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_sbom_validation_results::ListSbomValidationResultsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_sbom_validation_results::ListSbomValidationResultsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_sbom_validation_results::ListSbomValidationResultsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_sbom_validation_results::ListSbomValidationResultsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -8634,6 +8769,7 @@ impl From<crate::operation::update_stream::UpdateStreamError> for Error {
         match err {
             crate::operation::update_stream::UpdateStreamError::InternalFailureException(inner) => Error::InternalFailureException(inner),
             crate::operation::update_stream::UpdateStreamError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::update_stream::UpdateStreamError::LimitExceededException(inner) => Error::LimitExceededException(inner),
             crate::operation::update_stream::UpdateStreamError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::update_stream::UpdateStreamError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
             crate::operation::update_stream::UpdateStreamError::ThrottlingException(inner) => Error::ThrottlingException(inner),

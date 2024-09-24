@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum Error {
-    /// <p>Client authentication is not available in this region at this time.</p>
+    /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>An authentication error occurred.</p>
     AuthenticationFailedException(crate::types::error::AuthenticationFailedException),
@@ -29,7 +29,7 @@ pub enum Error {
     DirectoryLimitExceededException(crate::types::error::DirectoryLimitExceededException),
     /// <p>The specified directory has not been shared with this Amazon Web Services account.</p>
     DirectoryNotSharedException(crate::types::error::DirectoryNotSharedException),
-    /// <p>The specified directory is unavailable or could not be found.</p>
+    /// <p>The specified directory is unavailable.</p>
     DirectoryUnavailableException(crate::types::error::DirectoryUnavailableException),
     /// <p>The maximum allowed number of domain controllers per directory was exceeded. The default limit per directory is 20 domain controllers.</p>
     DomainControllerLimitExceededException(crate::types::error::DomainControllerLimitExceededException),
@@ -1006,6 +1006,49 @@ impl From<crate::operation::describe_directories::DescribeDirectoriesError> for 
         }
     }
 }
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_directory_data_access::DescribeDirectoryDataAccessError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_directory_data_access::DescribeDirectoryDataAccessError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_directory_data_access::DescribeDirectoryDataAccessError> for Error {
+    fn from(err: crate::operation::describe_directory_data_access::DescribeDirectoryDataAccessError) -> Self {
+        match err {
+            crate::operation::describe_directory_data_access::DescribeDirectoryDataAccessError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::describe_directory_data_access::DescribeDirectoryDataAccessError::ClientException(inner) => {
+                Error::ClientException(inner)
+            }
+            crate::operation::describe_directory_data_access::DescribeDirectoryDataAccessError::DirectoryDoesNotExistException(inner) => {
+                Error::DirectoryDoesNotExistException(inner)
+            }
+            crate::operation::describe_directory_data_access::DescribeDirectoryDataAccessError::ServiceException(inner) => {
+                Error::ServiceException(inner)
+            }
+            crate::operation::describe_directory_data_access::DescribeDirectoryDataAccessError::UnsupportedOperationException(inner) => {
+                Error::UnsupportedOperationException(inner)
+            }
+            crate::operation::describe_directory_data_access::DescribeDirectoryDataAccessError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_domain_controllers::DescribeDomainControllersError, R>>
     for Error
 where
@@ -1348,6 +1391,49 @@ impl From<crate::operation::disable_client_authentication::DisableClientAuthenti
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::disable_directory_data_access::DisableDirectoryDataAccessError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::disable_directory_data_access::DisableDirectoryDataAccessError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::disable_directory_data_access::DisableDirectoryDataAccessError> for Error {
+    fn from(err: crate::operation::disable_directory_data_access::DisableDirectoryDataAccessError) -> Self {
+        match err {
+            crate::operation::disable_directory_data_access::DisableDirectoryDataAccessError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::disable_directory_data_access::DisableDirectoryDataAccessError::ClientException(inner) => Error::ClientException(inner),
+            crate::operation::disable_directory_data_access::DisableDirectoryDataAccessError::DirectoryDoesNotExistException(inner) => {
+                Error::DirectoryDoesNotExistException(inner)
+            }
+            crate::operation::disable_directory_data_access::DisableDirectoryDataAccessError::DirectoryInDesiredStateException(inner) => {
+                Error::DirectoryInDesiredStateException(inner)
+            }
+            crate::operation::disable_directory_data_access::DisableDirectoryDataAccessError::DirectoryUnavailableException(inner) => {
+                Error::DirectoryUnavailableException(inner)
+            }
+            crate::operation::disable_directory_data_access::DisableDirectoryDataAccessError::ServiceException(inner) => {
+                Error::ServiceException(inner)
+            }
+            crate::operation::disable_directory_data_access::DisableDirectoryDataAccessError::UnsupportedOperationException(inner) => {
+                Error::UnsupportedOperationException(inner)
+            }
+            crate::operation::disable_directory_data_access::DisableDirectoryDataAccessError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::disable_ldaps::DisableLDAPSError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1466,6 +1552,47 @@ impl From<crate::operation::enable_client_authentication::EnableClientAuthentica
                 Error::UnsupportedOperationException(inner)
             }
             crate::operation::enable_client_authentication::EnableClientAuthenticationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::enable_directory_data_access::EnableDirectoryDataAccessError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::enable_directory_data_access::EnableDirectoryDataAccessError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::enable_directory_data_access::EnableDirectoryDataAccessError> for Error {
+    fn from(err: crate::operation::enable_directory_data_access::EnableDirectoryDataAccessError) -> Self {
+        match err {
+            crate::operation::enable_directory_data_access::EnableDirectoryDataAccessError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::enable_directory_data_access::EnableDirectoryDataAccessError::ClientException(inner) => Error::ClientException(inner),
+            crate::operation::enable_directory_data_access::EnableDirectoryDataAccessError::DirectoryDoesNotExistException(inner) => {
+                Error::DirectoryDoesNotExistException(inner)
+            }
+            crate::operation::enable_directory_data_access::EnableDirectoryDataAccessError::DirectoryInDesiredStateException(inner) => {
+                Error::DirectoryInDesiredStateException(inner)
+            }
+            crate::operation::enable_directory_data_access::EnableDirectoryDataAccessError::DirectoryUnavailableException(inner) => {
+                Error::DirectoryUnavailableException(inner)
+            }
+            crate::operation::enable_directory_data_access::EnableDirectoryDataAccessError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::enable_directory_data_access::EnableDirectoryDataAccessError::UnsupportedOperationException(inner) => {
+                Error::UnsupportedOperationException(inner)
+            }
+            crate::operation::enable_directory_data_access::EnableDirectoryDataAccessError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

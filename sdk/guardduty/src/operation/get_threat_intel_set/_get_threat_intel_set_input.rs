@@ -3,13 +3,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetThreatIntelSetInput {
-    /// <p>The unique ID of the detector that the threatIntelSet is associated with.</p>
+    /// <p>The unique ID of the detector that is associated with the threatIntelSet.</p>
     pub detector_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique ID of the threatIntelSet that you want to get.</p>
     pub threat_intel_set_id: ::std::option::Option<::std::string::String>,
 }
 impl GetThreatIntelSetInput {
-    /// <p>The unique ID of the detector that the threatIntelSet is associated with.</p>
+    /// <p>The unique ID of the detector that is associated with the threatIntelSet.</p>
     pub fn detector_id(&self) -> ::std::option::Option<&str> {
         self.detector_id.as_deref()
     }
@@ -33,18 +33,18 @@ pub struct GetThreatIntelSetInputBuilder {
     pub(crate) threat_intel_set_id: ::std::option::Option<::std::string::String>,
 }
 impl GetThreatIntelSetInputBuilder {
-    /// <p>The unique ID of the detector that the threatIntelSet is associated with.</p>
+    /// <p>The unique ID of the detector that is associated with the threatIntelSet.</p>
     /// This field is required.
     pub fn detector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.detector_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique ID of the detector that the threatIntelSet is associated with.</p>
+    /// <p>The unique ID of the detector that is associated with the threatIntelSet.</p>
     pub fn set_detector_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.detector_id = input;
         self
     }
-    /// <p>The unique ID of the detector that the threatIntelSet is associated with.</p>
+    /// <p>The unique ID of the detector that is associated with the threatIntelSet.</p>
     pub fn get_detector_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.detector_id
     }

@@ -8,7 +8,7 @@ pub struct LinuxParameters {
     /// <p>For tasks that use the Fargate launch type, <code>capabilities</code> is supported for all platform versions but the <code>add</code> parameter is only supported if using platform version 1.4.0 or later.</p>
     /// </note>
     pub capabilities: ::std::option::Option<crate::types::KernelCapabilities>,
-    /// <p>Any host devices to expose to the container. This parameter maps to <code>Devices</code> in tthe docker conainer create command and the <code>--device</code> option to docker run.</p><note>
+    /// <p>Any host devices to expose to the container. This parameter maps to <code>Devices</code> in the docker container create command and the <code>--device</code> option to docker run.</p><note>
     /// <p>If you're using tasks that use the Fargate launch type, the <code>devices</code> parameter isn't supported.</p>
     /// </note>
     pub devices: ::std::option::Option<::std::vec::Vec<crate::types::Device>>,
@@ -41,7 +41,7 @@ impl LinuxParameters {
     pub fn capabilities(&self) -> ::std::option::Option<&crate::types::KernelCapabilities> {
         self.capabilities.as_ref()
     }
-    /// <p>Any host devices to expose to the container. This parameter maps to <code>Devices</code> in tthe docker conainer create command and the <code>--device</code> option to docker run.</p><note>
+    /// <p>Any host devices to expose to the container. This parameter maps to <code>Devices</code> in the docker container create command and the <code>--device</code> option to docker run.</p><note>
     /// <p>If you're using tasks that use the Fargate launch type, the <code>devices</code> parameter isn't supported.</p>
     /// </note>
     ///
@@ -127,7 +127,7 @@ impl LinuxParametersBuilder {
     ///
     /// To override the contents of this collection use [`set_devices`](Self::set_devices).
     ///
-    /// <p>Any host devices to expose to the container. This parameter maps to <code>Devices</code> in tthe docker conainer create command and the <code>--device</code> option to docker run.</p><note>
+    /// <p>Any host devices to expose to the container. This parameter maps to <code>Devices</code> in the docker container create command and the <code>--device</code> option to docker run.</p><note>
     /// <p>If you're using tasks that use the Fargate launch type, the <code>devices</code> parameter isn't supported.</p>
     /// </note>
     pub fn devices(mut self, input: crate::types::Device) -> Self {
@@ -136,14 +136,14 @@ impl LinuxParametersBuilder {
         self.devices = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Any host devices to expose to the container. This parameter maps to <code>Devices</code> in tthe docker conainer create command and the <code>--device</code> option to docker run.</p><note>
+    /// <p>Any host devices to expose to the container. This parameter maps to <code>Devices</code> in the docker container create command and the <code>--device</code> option to docker run.</p><note>
     /// <p>If you're using tasks that use the Fargate launch type, the <code>devices</code> parameter isn't supported.</p>
     /// </note>
     pub fn set_devices(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Device>>) -> Self {
         self.devices = input;
         self
     }
-    /// <p>Any host devices to expose to the container. This parameter maps to <code>Devices</code> in tthe docker conainer create command and the <code>--device</code> option to docker run.</p><note>
+    /// <p>Any host devices to expose to the container. This parameter maps to <code>Devices</code> in the docker container create command and the <code>--device</code> option to docker run.</p><note>
     /// <p>If you're using tasks that use the Fargate launch type, the <code>devices</code> parameter isn't supported.</p>
     /// </note>
     pub fn get_devices(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Device>> {

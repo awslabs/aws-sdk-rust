@@ -71,6 +71,8 @@ pub enum Error {
     SchedulerRunningException(crate::types::error::SchedulerRunningException),
     /// <p>The specified scheduler is transitioning.</p>
     SchedulerTransitioningException(crate::types::error::SchedulerTransitioningException),
+    /// <p>The throttling threshhold was exceeded.</p>
+    ThrottlingException(crate::types::error::ThrottlingException),
     /// <p>A value could not be validated.</p>
     ValidationException(crate::types::error::ValidationException),
     /// <p>There was a version conflict.</p>
@@ -121,6 +123,7 @@ impl ::std::fmt::Display for Error {
             Error::SchedulerNotRunningException(inner) => inner.fmt(f),
             Error::SchedulerRunningException(inner) => inner.fmt(f),
             Error::SchedulerTransitioningException(inner) => inner.fmt(f),
+            Error::ThrottlingException(inner) => inner.fmt(f),
             Error::ValidationException(inner) => inner.fmt(f),
             Error::VersionMismatchException(inner) => inner.fmt(f),
             Error::Unhandled(_) => {
@@ -178,6 +181,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::SchedulerNotRunningException(inner) => inner.meta(),
             Self::SchedulerRunningException(inner) => inner.meta(),
             Self::SchedulerTransitioningException(inner) => inner.meta(),
+            Self::ThrottlingException(inner) => inner.meta(),
             Self::ValidationException(inner) => inner.meta(),
             Self::VersionMismatchException(inner) => inner.meta(),
             Self::Unhandled(inner) => &inner.meta,
@@ -574,9 +578,19 @@ where
 impl From<crate::operation::batch_get_table_optimizer::BatchGetTableOptimizerError> for Error {
     fn from(err: crate::operation::batch_get_table_optimizer::BatchGetTableOptimizerError) -> Self {
         match err {
+            crate::operation::batch_get_table_optimizer::BatchGetTableOptimizerError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::batch_get_table_optimizer::BatchGetTableOptimizerError::EntityNotFoundException(inner) => {
+                Error::EntityNotFoundException(inner)
+            }
             crate::operation::batch_get_table_optimizer::BatchGetTableOptimizerError::InternalServiceException(inner) => {
                 Error::InternalServiceException(inner)
             }
+            crate::operation::batch_get_table_optimizer::BatchGetTableOptimizerError::InvalidInputException(inner) => {
+                Error::InvalidInputException(inner)
+            }
+            crate::operation::batch_get_table_optimizer::BatchGetTableOptimizerError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::batch_get_table_optimizer::BatchGetTableOptimizerError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -1520,6 +1534,8 @@ impl From<crate::operation::create_table_optimizer::CreateTableOptimizerError> f
                 Error::InternalServiceException(inner)
             }
             crate::operation::create_table_optimizer::CreateTableOptimizerError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::create_table_optimizer::CreateTableOptimizerError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_table_optimizer::CreateTableOptimizerError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::create_table_optimizer::CreateTableOptimizerError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -2338,6 +2354,7 @@ impl From<crate::operation::delete_table_optimizer::DeleteTableOptimizerError> f
                 Error::InternalServiceException(inner)
             }
             crate::operation::delete_table_optimizer::DeleteTableOptimizerError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::delete_table_optimizer::DeleteTableOptimizerError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::delete_table_optimizer::DeleteTableOptimizerError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -4089,6 +4106,7 @@ impl From<crate::operation::get_table_optimizer::GetTableOptimizerError> for Err
             crate::operation::get_table_optimizer::GetTableOptimizerError::EntityNotFoundException(inner) => Error::EntityNotFoundException(inner),
             crate::operation::get_table_optimizer::GetTableOptimizerError::InternalServiceException(inner) => Error::InternalServiceException(inner),
             crate::operation::get_table_optimizer::GetTableOptimizerError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::get_table_optimizer::GetTableOptimizerError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::get_table_optimizer::GetTableOptimizerError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -5250,6 +5268,8 @@ impl From<crate::operation::list_table_optimizer_runs::ListTableOptimizerRunsErr
             crate::operation::list_table_optimizer_runs::ListTableOptimizerRunsError::InvalidInputException(inner) => {
                 Error::InvalidInputException(inner)
             }
+            crate::operation::list_table_optimizer_runs::ListTableOptimizerRunsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_table_optimizer_runs::ListTableOptimizerRunsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_table_optimizer_runs::ListTableOptimizerRunsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -6437,6 +6457,38 @@ impl From<crate::operation::tag_resource::TagResourceError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::test_connection::TestConnectionError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::test_connection::TestConnectionError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::test_connection::TestConnectionError> for Error {
+    fn from(err: crate::operation::test_connection::TestConnectionError) -> Self {
+        match err {
+            crate::operation::test_connection::TestConnectionError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::test_connection::TestConnectionError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::test_connection::TestConnectionError::EntityNotFoundException(inner) => Error::EntityNotFoundException(inner),
+            crate::operation::test_connection::TestConnectionError::FederationSourceException(inner) => Error::FederationSourceException(inner),
+            crate::operation::test_connection::TestConnectionError::GlueEncryptionException(inner) => Error::GlueEncryptionException(inner),
+            crate::operation::test_connection::TestConnectionError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::test_connection::TestConnectionError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::test_connection::TestConnectionError::OperationTimeoutException(inner) => Error::OperationTimeoutException(inner),
+            crate::operation::test_connection::TestConnectionError::ResourceNumberLimitExceededException(inner) => {
+                Error::ResourceNumberLimitExceededException(inner)
+            }
+            crate::operation::test_connection::TestConnectionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::untag_resource::UntagResourceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -7080,6 +7132,9 @@ impl From<crate::operation::update_table_optimizer::UpdateTableOptimizerError> f
     fn from(err: crate::operation::update_table_optimizer::UpdateTableOptimizerError) -> Self {
         match err {
             crate::operation::update_table_optimizer::UpdateTableOptimizerError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_table_optimizer::UpdateTableOptimizerError::ConcurrentModificationException(inner) => {
+                Error::ConcurrentModificationException(inner)
+            }
             crate::operation::update_table_optimizer::UpdateTableOptimizerError::EntityNotFoundException(inner) => {
                 Error::EntityNotFoundException(inner)
             }
@@ -7087,6 +7142,8 @@ impl From<crate::operation::update_table_optimizer::UpdateTableOptimizerError> f
                 Error::InternalServiceException(inner)
             }
             crate::operation::update_table_optimizer::UpdateTableOptimizerError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::update_table_optimizer::UpdateTableOptimizerError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_table_optimizer::UpdateTableOptimizerError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::update_table_optimizer::UpdateTableOptimizerError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -7258,6 +7315,7 @@ impl ::std::error::Error for Error {
             Error::SchedulerNotRunningException(inner) => inner.source(),
             Error::SchedulerRunningException(inner) => inner.source(),
             Error::SchedulerTransitioningException(inner) => inner.source(),
+            Error::ThrottlingException(inner) => inner.source(),
             Error::ValidationException(inner) => inner.source(),
             Error::VersionMismatchException(inner) => inner.source(),
             Error::Unhandled(inner) => ::std::option::Option::Some(&*inner.source),
@@ -7301,6 +7359,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::SchedulerNotRunningException(e) => e.request_id(),
             Self::SchedulerRunningException(e) => e.request_id(),
             Self::SchedulerTransitioningException(e) => e.request_id(),
+            Self::ThrottlingException(e) => e.request_id(),
             Self::ValidationException(e) => e.request_id(),
             Self::VersionMismatchException(e) => e.request_id(),
             Self::Unhandled(e) => e.meta.request_id(),

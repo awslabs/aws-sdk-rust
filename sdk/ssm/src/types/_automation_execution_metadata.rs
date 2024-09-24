@@ -47,12 +47,14 @@ pub struct AutomationExecutionMetadata {
     pub max_errors: ::std::option::Option<::std::string::String>,
     /// <p>The list of execution outputs as defined in the Automation runbook.</p>
     pub target: ::std::option::Option<::std::string::String>,
-    /// <p>Use this filter with <code>DescribeAutomationExecutions</code>. Specify either Local or CrossAccount. CrossAccount is an Automation that runs in multiple Amazon Web Services Regions and Amazon Web Services accounts. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Running Automation workflows in multiple Amazon Web Services Regions and accounts</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    /// <p>Use this filter with <code>DescribeAutomationExecutions</code>. Specify either Local or CrossAccount. CrossAccount is an Automation that runs in multiple Amazon Web Services Regions and Amazon Web Services accounts. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Running automations in multiple Amazon Web Services Regions and accounts</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub automation_type: ::std::option::Option<crate::types::AutomationType>,
     /// <p>The details for the CloudWatch alarm applied to your automation.</p>
     pub alarm_configuration: ::std::option::Option<crate::types::AlarmConfiguration>,
     /// <p>The CloudWatch alarm that was invoked by the automation.</p>
     pub triggered_alarms: ::std::option::Option<::std::vec::Vec<crate::types::AlarmStateInformation>>,
+    /// <p>A publicly accessible URL for a file that contains the <code>TargetLocations</code> body. Currently, only files in presigned Amazon S3 buckets are supported</p>
+    pub target_locations_url: ::std::option::Option<::std::string::String>,
     /// <p>The subtype of the Automation operation. Currently, the only supported value is <code>ChangeRequest</code>.</p>
     pub automation_subtype: ::std::option::Option<crate::types::AutomationSubtype>,
     /// <p>The date and time the Automation operation is scheduled to start.</p>
@@ -157,7 +159,7 @@ impl AutomationExecutionMetadata {
     pub fn target(&self) -> ::std::option::Option<&str> {
         self.target.as_deref()
     }
-    /// <p>Use this filter with <code>DescribeAutomationExecutions</code>. Specify either Local or CrossAccount. CrossAccount is an Automation that runs in multiple Amazon Web Services Regions and Amazon Web Services accounts. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Running Automation workflows in multiple Amazon Web Services Regions and accounts</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    /// <p>Use this filter with <code>DescribeAutomationExecutions</code>. Specify either Local or CrossAccount. CrossAccount is an Automation that runs in multiple Amazon Web Services Regions and Amazon Web Services accounts. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Running automations in multiple Amazon Web Services Regions and accounts</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub fn automation_type(&self) -> ::std::option::Option<&crate::types::AutomationType> {
         self.automation_type.as_ref()
     }
@@ -170,6 +172,10 @@ impl AutomationExecutionMetadata {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.triggered_alarms.is_none()`.
     pub fn triggered_alarms(&self) -> &[crate::types::AlarmStateInformation] {
         self.triggered_alarms.as_deref().unwrap_or_default()
+    }
+    /// <p>A publicly accessible URL for a file that contains the <code>TargetLocations</code> body. Currently, only files in presigned Amazon S3 buckets are supported</p>
+    pub fn target_locations_url(&self) -> ::std::option::Option<&str> {
+        self.target_locations_url.as_deref()
     }
     /// <p>The subtype of the Automation operation. Currently, the only supported value is <code>ChangeRequest</code>.</p>
     pub fn automation_subtype(&self) -> ::std::option::Option<&crate::types::AutomationSubtype> {
@@ -236,6 +242,7 @@ pub struct AutomationExecutionMetadataBuilder {
     pub(crate) automation_type: ::std::option::Option<crate::types::AutomationType>,
     pub(crate) alarm_configuration: ::std::option::Option<crate::types::AlarmConfiguration>,
     pub(crate) triggered_alarms: ::std::option::Option<::std::vec::Vec<crate::types::AlarmStateInformation>>,
+    pub(crate) target_locations_url: ::std::option::Option<::std::string::String>,
     pub(crate) automation_subtype: ::std::option::Option<crate::types::AutomationSubtype>,
     pub(crate) scheduled_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) runbooks: ::std::option::Option<::std::vec::Vec<crate::types::Runbook>>,
@@ -564,17 +571,17 @@ impl AutomationExecutionMetadataBuilder {
     pub fn get_target(&self) -> &::std::option::Option<::std::string::String> {
         &self.target
     }
-    /// <p>Use this filter with <code>DescribeAutomationExecutions</code>. Specify either Local or CrossAccount. CrossAccount is an Automation that runs in multiple Amazon Web Services Regions and Amazon Web Services accounts. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Running Automation workflows in multiple Amazon Web Services Regions and accounts</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    /// <p>Use this filter with <code>DescribeAutomationExecutions</code>. Specify either Local or CrossAccount. CrossAccount is an Automation that runs in multiple Amazon Web Services Regions and Amazon Web Services accounts. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Running automations in multiple Amazon Web Services Regions and accounts</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub fn automation_type(mut self, input: crate::types::AutomationType) -> Self {
         self.automation_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Use this filter with <code>DescribeAutomationExecutions</code>. Specify either Local or CrossAccount. CrossAccount is an Automation that runs in multiple Amazon Web Services Regions and Amazon Web Services accounts. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Running Automation workflows in multiple Amazon Web Services Regions and accounts</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    /// <p>Use this filter with <code>DescribeAutomationExecutions</code>. Specify either Local or CrossAccount. CrossAccount is an Automation that runs in multiple Amazon Web Services Regions and Amazon Web Services accounts. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Running automations in multiple Amazon Web Services Regions and accounts</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub fn set_automation_type(mut self, input: ::std::option::Option<crate::types::AutomationType>) -> Self {
         self.automation_type = input;
         self
     }
-    /// <p>Use this filter with <code>DescribeAutomationExecutions</code>. Specify either Local or CrossAccount. CrossAccount is an Automation that runs in multiple Amazon Web Services Regions and Amazon Web Services accounts. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Running Automation workflows in multiple Amazon Web Services Regions and accounts</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    /// <p>Use this filter with <code>DescribeAutomationExecutions</code>. Specify either Local or CrossAccount. CrossAccount is an Automation that runs in multiple Amazon Web Services Regions and Amazon Web Services accounts. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Running automations in multiple Amazon Web Services Regions and accounts</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub fn get_automation_type(&self) -> &::std::option::Option<crate::types::AutomationType> {
         &self.automation_type
     }
@@ -611,6 +618,20 @@ impl AutomationExecutionMetadataBuilder {
     /// <p>The CloudWatch alarm that was invoked by the automation.</p>
     pub fn get_triggered_alarms(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AlarmStateInformation>> {
         &self.triggered_alarms
+    }
+    /// <p>A publicly accessible URL for a file that contains the <code>TargetLocations</code> body. Currently, only files in presigned Amazon S3 buckets are supported</p>
+    pub fn target_locations_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.target_locations_url = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>A publicly accessible URL for a file that contains the <code>TargetLocations</code> body. Currently, only files in presigned Amazon S3 buckets are supported</p>
+    pub fn set_target_locations_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.target_locations_url = input;
+        self
+    }
+    /// <p>A publicly accessible URL for a file that contains the <code>TargetLocations</code> body. Currently, only files in presigned Amazon S3 buckets are supported</p>
+    pub fn get_target_locations_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_locations_url
     }
     /// <p>The subtype of the Automation operation. Currently, the only supported value is <code>ChangeRequest</code>.</p>
     pub fn automation_subtype(mut self, input: crate::types::AutomationSubtype) -> Self {
@@ -735,6 +756,7 @@ impl AutomationExecutionMetadataBuilder {
             automation_type: self.automation_type,
             alarm_configuration: self.alarm_configuration,
             triggered_alarms: self.triggered_alarms,
+            target_locations_url: self.target_locations_url,
             automation_subtype: self.automation_subtype,
             scheduled_time: self.scheduled_time,
             runbooks: self.runbooks,

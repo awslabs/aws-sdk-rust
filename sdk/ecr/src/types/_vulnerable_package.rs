@@ -20,6 +20,8 @@ pub struct VulnerablePackage {
     pub source_layer_hash: ::std::option::Option<::std::string::String>,
     /// <p>The version of the vulnerable package.</p>
     pub version: ::std::option::Option<::std::string::String>,
+    /// <p>The version of the package that contains the vulnerability fix.</p>
+    pub fixed_in_version: ::std::option::Option<::std::string::String>,
 }
 impl VulnerablePackage {
     /// <p>The architecture of the vulnerable package.</p>
@@ -54,6 +56,10 @@ impl VulnerablePackage {
     pub fn version(&self) -> ::std::option::Option<&str> {
         self.version.as_deref()
     }
+    /// <p>The version of the package that contains the vulnerability fix.</p>
+    pub fn fixed_in_version(&self) -> ::std::option::Option<&str> {
+        self.fixed_in_version.as_deref()
+    }
 }
 impl VulnerablePackage {
     /// Creates a new builder-style object to manufacture [`VulnerablePackage`](crate::types::VulnerablePackage).
@@ -74,6 +80,7 @@ pub struct VulnerablePackageBuilder {
     pub(crate) release: ::std::option::Option<::std::string::String>,
     pub(crate) source_layer_hash: ::std::option::Option<::std::string::String>,
     pub(crate) version: ::std::option::Option<::std::string::String>,
+    pub(crate) fixed_in_version: ::std::option::Option<::std::string::String>,
 }
 impl VulnerablePackageBuilder {
     /// <p>The architecture of the vulnerable package.</p>
@@ -188,6 +195,20 @@ impl VulnerablePackageBuilder {
     pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.version
     }
+    /// <p>The version of the package that contains the vulnerability fix.</p>
+    pub fn fixed_in_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.fixed_in_version = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The version of the package that contains the vulnerability fix.</p>
+    pub fn set_fixed_in_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.fixed_in_version = input;
+        self
+    }
+    /// <p>The version of the package that contains the vulnerability fix.</p>
+    pub fn get_fixed_in_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.fixed_in_version
+    }
     /// Consumes the builder and constructs a [`VulnerablePackage`](crate::types::VulnerablePackage).
     pub fn build(self) -> crate::types::VulnerablePackage {
         crate::types::VulnerablePackage {
@@ -199,6 +220,7 @@ impl VulnerablePackageBuilder {
             release: self.release,
             source_layer_hash: self.source_layer_hash,
             version: self.version,
+            fixed_in_version: self.fixed_in_version,
         }
     }
 }

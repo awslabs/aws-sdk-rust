@@ -45,6 +45,8 @@ pub use crate::types::_provisioning_hook::ProvisioningHook;
 
 pub use crate::types::_package_version_action::PackageVersionAction;
 
+pub use crate::types::_package_version_artifact::PackageVersionArtifact;
+
 pub use crate::types::_version_update_by_jobs_config::VersionUpdateByJobsConfig;
 
 pub use crate::types::_mitigation_action_params::MitigationActionParams;
@@ -339,6 +341,12 @@ pub use crate::types::_security_profile_identifier::SecurityProfileIdentifier;
 
 pub use crate::types::_scheduled_audit_metadata::ScheduledAuditMetadata;
 
+pub use crate::types::_sbom_validation_result_summary::SbomValidationResultSummary;
+
+pub use crate::types::_sbom_validation_error_code::SbomValidationErrorCode;
+
+pub use crate::types::_sbom_validation_result::SbomValidationResult;
+
 pub use crate::types::_related_resource::RelatedResource;
 
 pub use crate::types::_resource_type::ResourceType;
@@ -448,6 +456,10 @@ pub use crate::types::_topic_rule::TopicRule;
 pub use crate::types::_statistics::Statistics;
 
 pub use crate::types::_percent_pair::PercentPair;
+
+pub use crate::types::_sbom_validation_status::SbomValidationStatus;
+
+pub use crate::types::_sbom::Sbom;
 
 pub use crate::types::_ota_update_info::OtaUpdateInfo;
 
@@ -937,6 +949,8 @@ mod _package_summary;
 
 mod _package_version_action;
 
+mod _package_version_artifact;
+
 mod _package_version_status;
 
 mod _package_version_summary;
@@ -996,6 +1010,16 @@ mod _s3_destination;
 mod _s3_location;
 
 mod _salesforce_action;
+
+mod _sbom;
+
+mod _sbom_validation_error_code;
+
+mod _sbom_validation_result;
+
+mod _sbom_validation_result_summary;
+
+mod _sbom_validation_status;
 
 mod _scheduled_audit_metadata;
 

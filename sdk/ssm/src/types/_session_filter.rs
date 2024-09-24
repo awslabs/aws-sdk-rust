@@ -9,9 +9,9 @@ pub struct SessionFilter {
     /// <p>The filter value. Valid values for each filter key are as follows:</p>
     /// <ul>
     /// <li>
-    /// <p>InvokedAfter: Specify a timestamp to limit your results. For example, specify 2018-08-29T00:00:00Z to see sessions that started August 29, 2018, and later.</p></li>
+    /// <p>InvokedAfter: Specify a timestamp to limit your results. For example, specify 2024-08-29T00:00:00Z to see sessions that started August 29, 2024, and later.</p></li>
     /// <li>
-    /// <p>InvokedBefore: Specify a timestamp to limit your results. For example, specify 2018-08-29T00:00:00Z to see sessions that started before August 29, 2018.</p></li>
+    /// <p>InvokedBefore: Specify a timestamp to limit your results. For example, specify 2024-08-29T00:00:00Z to see sessions that started before August 29, 2024.</p></li>
     /// <li>
     /// <p>Target: Specify a managed node to which session connections have been made.</p></li>
     /// <li>
@@ -45,9 +45,9 @@ impl SessionFilter {
     /// <p>The filter value. Valid values for each filter key are as follows:</p>
     /// <ul>
     /// <li>
-    /// <p>InvokedAfter: Specify a timestamp to limit your results. For example, specify 2018-08-29T00:00:00Z to see sessions that started August 29, 2018, and later.</p></li>
+    /// <p>InvokedAfter: Specify a timestamp to limit your results. For example, specify 2024-08-29T00:00:00Z to see sessions that started August 29, 2024, and later.</p></li>
     /// <li>
-    /// <p>InvokedBefore: Specify a timestamp to limit your results. For example, specify 2018-08-29T00:00:00Z to see sessions that started before August 29, 2018.</p></li>
+    /// <p>InvokedBefore: Specify a timestamp to limit your results. For example, specify 2024-08-29T00:00:00Z to see sessions that started before August 29, 2024.</p></li>
     /// <li>
     /// <p>Target: Specify a managed node to which session connections have been made.</p></li>
     /// <li>
@@ -109,9 +109,9 @@ impl SessionFilterBuilder {
     /// <p>The filter value. Valid values for each filter key are as follows:</p>
     /// <ul>
     /// <li>
-    /// <p>InvokedAfter: Specify a timestamp to limit your results. For example, specify 2018-08-29T00:00:00Z to see sessions that started August 29, 2018, and later.</p></li>
+    /// <p>InvokedAfter: Specify a timestamp to limit your results. For example, specify 2024-08-29T00:00:00Z to see sessions that started August 29, 2024, and later.</p></li>
     /// <li>
-    /// <p>InvokedBefore: Specify a timestamp to limit your results. For example, specify 2018-08-29T00:00:00Z to see sessions that started before August 29, 2018.</p></li>
+    /// <p>InvokedBefore: Specify a timestamp to limit your results. For example, specify 2024-08-29T00:00:00Z to see sessions that started before August 29, 2024.</p></li>
     /// <li>
     /// <p>Target: Specify a managed node to which session connections have been made.</p></li>
     /// <li>
@@ -143,9 +143,9 @@ impl SessionFilterBuilder {
     /// <p>The filter value. Valid values for each filter key are as follows:</p>
     /// <ul>
     /// <li>
-    /// <p>InvokedAfter: Specify a timestamp to limit your results. For example, specify 2018-08-29T00:00:00Z to see sessions that started August 29, 2018, and later.</p></li>
+    /// <p>InvokedAfter: Specify a timestamp to limit your results. For example, specify 2024-08-29T00:00:00Z to see sessions that started August 29, 2024, and later.</p></li>
     /// <li>
-    /// <p>InvokedBefore: Specify a timestamp to limit your results. For example, specify 2018-08-29T00:00:00Z to see sessions that started before August 29, 2018.</p></li>
+    /// <p>InvokedBefore: Specify a timestamp to limit your results. For example, specify 2024-08-29T00:00:00Z to see sessions that started before August 29, 2024.</p></li>
     /// <li>
     /// <p>Target: Specify a managed node to which session connections have been made.</p></li>
     /// <li>
@@ -176,9 +176,9 @@ impl SessionFilterBuilder {
     /// <p>The filter value. Valid values for each filter key are as follows:</p>
     /// <ul>
     /// <li>
-    /// <p>InvokedAfter: Specify a timestamp to limit your results. For example, specify 2018-08-29T00:00:00Z to see sessions that started August 29, 2018, and later.</p></li>
+    /// <p>InvokedAfter: Specify a timestamp to limit your results. For example, specify 2024-08-29T00:00:00Z to see sessions that started August 29, 2024, and later.</p></li>
     /// <li>
-    /// <p>InvokedBefore: Specify a timestamp to limit your results. For example, specify 2018-08-29T00:00:00Z to see sessions that started before August 29, 2018.</p></li>
+    /// <p>InvokedBefore: Specify a timestamp to limit your results. For example, specify 2024-08-29T00:00:00Z to see sessions that started before August 29, 2024.</p></li>
     /// <li>
     /// <p>Target: Specify a managed node to which session connections have been made.</p></li>
     /// <li>

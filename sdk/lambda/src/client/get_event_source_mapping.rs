@@ -34,6 +34,7 @@ impl super::Client {
     ///   - [`document_db_event_source_config(Option<DocumentDbEventSourceConfig>)`](crate::operation::get_event_source_mapping::GetEventSourceMappingOutput::document_db_event_source_config): <p>Specific configuration settings for a DocumentDB event source.</p>
     ///   - [`kms_key_arn(Option<String>)`](crate::operation::get_event_source_mapping::GetEventSourceMappingOutput::kms_key_arn): <p>The ARN of the Key Management Service (KMS) customer managed key that Lambda uses to encrypt your function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html#filtering-basics">filter criteria</a>.</p>
     ///   - [`filter_criteria_error(Option<FilterCriteriaError>)`](crate::operation::get_event_source_mapping::GetEventSourceMappingOutput::filter_criteria_error): <p>An object that contains details about an error related to filter criteria encryption.</p>
+    ///   - [`event_source_mapping_arn(Option<String>)`](crate::operation::get_event_source_mapping::GetEventSourceMappingOutput::event_source_mapping_arn): <p>The Amazon Resource Name (ARN) of the event source mapping.</p>
     /// - On failure, responds with [`SdkError<GetEventSourceMappingError>`](crate::operation::get_event_source_mapping::GetEventSourceMappingError)
     pub fn get_event_source_mapping(&self) -> crate::operation::get_event_source_mapping::builders::GetEventSourceMappingFluentBuilder {
         crate::operation::get_event_source_mapping::builders::GetEventSourceMappingFluentBuilder::new(self.handle.clone())

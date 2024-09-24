@@ -22,7 +22,7 @@ impl crate::operation::get_detector::builders::GetDetectorInputBuilder {
 }
 /// Fluent builder constructing a request to `GetDetector`.
 ///
-/// <p>Retrieves an Amazon GuardDuty detector specified by the detectorId.</p>
+/// <p>Retrieves a GuardDuty detector specified by the detectorId.</p>
 /// <p>There might be regional differences because some data sources might not be available in all the Amazon Web Services Regions where GuardDuty is presently supported. For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions and endpoints</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetDetectorFluentBuilder {

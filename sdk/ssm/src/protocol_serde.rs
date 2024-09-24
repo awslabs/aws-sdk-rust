@@ -1387,6 +1387,8 @@ pub(crate) mod shape_command_plugin;
 
 pub(crate) mod shape_document_review_comment_list;
 
+pub(crate) mod shape_exclude_accounts;
+
 pub(crate) mod shape_instance_association_status_aggregated_count;
 
 pub(crate) mod shape_inventory_item_attribute;

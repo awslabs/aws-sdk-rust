@@ -245,6 +245,19 @@ pub fn de_delete_db_shard_group(
                 builder = builder.set_endpoint(var_9);
             }
             ,
+            s if s.matches("DBShardGroupArn") /* DBShardGroupArn com.amazonaws.rds.synthetic#DeleteDBShardGroupOutput$DBShardGroupArn */ =>  {
+                let var_10 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_db_shard_group_arn(var_10);
+            }
+            ,
             _ => {}
         }
         }

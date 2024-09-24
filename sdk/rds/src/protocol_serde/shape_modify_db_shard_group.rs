@@ -70,21 +70,6 @@ pub fn de_modify_db_shard_group_http_error(
             }
             tmp
         }),
-        "InvalidMaxAcu" => crate::operation::modify_db_shard_group::ModifyDBShardGroupError::InvalidMaxAcuFault({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::InvalidMaxAcuFaultBuilder::default();
-                output = crate::protocol_serde::shape_invalid_max_acu_fault::de_invalid_max_acu_fault_xml_err(_response_body, output)
-                    .map_err(crate::operation::modify_db_shard_group::ModifyDBShardGroupError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
         _ => crate::operation::modify_db_shard_group::ModifyDBShardGroupError::generic(generic),
     })
 }
@@ -258,6 +243,19 @@ pub fn de_modify_db_shard_group(
                     )
                 ;
                 builder = builder.set_endpoint(var_9);
+            }
+            ,
+            s if s.matches("DBShardGroupArn") /* DBShardGroupArn com.amazonaws.rds.synthetic#ModifyDBShardGroupOutput$DBShardGroupArn */ =>  {
+                let var_10 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_db_shard_group_arn(var_10);
             }
             ,
             _ => {}

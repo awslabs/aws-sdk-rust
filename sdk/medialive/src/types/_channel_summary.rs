@@ -36,6 +36,8 @@ pub struct ChannelSummary {
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// Settings for any VPC outputs.
     pub vpc: ::std::option::Option<crate::types::VpcOutputSettingsDescription>,
+    /// AnywhereSettings settings for this channel.
+    pub anywhere_settings: ::std::option::Option<crate::types::DescribeAnywhereSettings>,
 }
 impl ChannelSummary {
     /// The unique arn of the channel.
@@ -108,6 +110,10 @@ impl ChannelSummary {
     pub fn vpc(&self) -> ::std::option::Option<&crate::types::VpcOutputSettingsDescription> {
         self.vpc.as_ref()
     }
+    /// AnywhereSettings settings for this channel.
+    pub fn anywhere_settings(&self) -> ::std::option::Option<&crate::types::DescribeAnywhereSettings> {
+        self.anywhere_settings.as_ref()
+    }
 }
 impl ChannelSummary {
     /// Creates a new builder-style object to manufacture [`ChannelSummary`](crate::types::ChannelSummary).
@@ -136,6 +142,7 @@ pub struct ChannelSummaryBuilder {
     pub(crate) state: ::std::option::Option<crate::types::ChannelState>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) vpc: ::std::option::Option<crate::types::VpcOutputSettingsDescription>,
+    pub(crate) anywhere_settings: ::std::option::Option<crate::types::DescribeAnywhereSettings>,
 }
 impl ChannelSummaryBuilder {
     /// The unique arn of the channel.
@@ -386,6 +393,20 @@ impl ChannelSummaryBuilder {
     pub fn get_vpc(&self) -> &::std::option::Option<crate::types::VpcOutputSettingsDescription> {
         &self.vpc
     }
+    /// AnywhereSettings settings for this channel.
+    pub fn anywhere_settings(mut self, input: crate::types::DescribeAnywhereSettings) -> Self {
+        self.anywhere_settings = ::std::option::Option::Some(input);
+        self
+    }
+    /// AnywhereSettings settings for this channel.
+    pub fn set_anywhere_settings(mut self, input: ::std::option::Option<crate::types::DescribeAnywhereSettings>) -> Self {
+        self.anywhere_settings = input;
+        self
+    }
+    /// AnywhereSettings settings for this channel.
+    pub fn get_anywhere_settings(&self) -> &::std::option::Option<crate::types::DescribeAnywhereSettings> {
+        &self.anywhere_settings
+    }
     /// Consumes the builder and constructs a [`ChannelSummary`](crate::types::ChannelSummary).
     pub fn build(self) -> crate::types::ChannelSummary {
         crate::types::ChannelSummary {
@@ -405,6 +426,7 @@ impl ChannelSummaryBuilder {
             state: self.state,
             tags: self.tags,
             vpc: self.vpc,
+            anywhere_settings: self.anywhere_settings,
         }
     }
 }

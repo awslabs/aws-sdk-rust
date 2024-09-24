@@ -23,7 +23,6 @@ impl crate::operation::cancel_conversion_task::builders::CancelConversionTaskInp
 /// Fluent builder constructing a request to `CancelConversionTask`.
 ///
 /// <p>Cancels an active conversion task. The task can be the import of an instance or volume. The action removes all artifacts of the conversion, including a partially uploaded volume or instance. If the conversion is complete or is in the process of transferring the final disk image, the command fails and returns an exception.</p>
-/// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/CommandLineReference/ec2-cli-vmimport-export.html">Importing a Virtual Machine Using the Amazon EC2 CLI</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CancelConversionTaskFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

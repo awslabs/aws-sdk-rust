@@ -145,6 +145,177 @@ pub(crate) fn match_describe_channel_788667cd7ad1cc1c2(
         .unwrap_or_default()
 }
 
+/// Matcher union: {"output":{"path":"State","expected":"ASSIGNED","comparator":"stringEquals"}}
+pub(crate) fn match_describe_channel_placement_group_65f6239a250abd320(
+    _result: ::std::result::Result<
+        &crate::operation::describe_channel_placement_group::DescribeChannelPlacementGroupOutput,
+        &crate::operation::describe_channel_placement_group::DescribeChannelPlacementGroupError,
+    >,
+) -> bool {
+    fn path_traversal<'a>(
+        _output: &'a crate::operation::describe_channel_placement_group::DescribeChannelPlacementGroupOutput,
+    ) -> ::std::option::Option<&'a crate::types::ChannelPlacementGroupState> {
+        let _fld_1 = _output.state.as_ref()?;
+        ::std::option::Option::Some(_fld_1)
+    }
+    _result
+        .as_ref()
+        .ok()
+        .and_then(|output| path_traversal(output))
+        .map(|value| {
+            let _tmp_2 = value.as_str();
+            let right = "ASSIGNED";
+            let _cmp_1 = _tmp_2 == right;
+            _cmp_1
+        })
+        .unwrap_or_default()
+}
+
+/// Matcher union: {"output":{"path":"State","expected":"ASSIGNING","comparator":"stringEquals"}}
+pub(crate) fn match_describe_channel_placement_group_ffa533990d90c0d8b(
+    _result: ::std::result::Result<
+        &crate::operation::describe_channel_placement_group::DescribeChannelPlacementGroupOutput,
+        &crate::operation::describe_channel_placement_group::DescribeChannelPlacementGroupError,
+    >,
+) -> bool {
+    fn path_traversal<'a>(
+        _output: &'a crate::operation::describe_channel_placement_group::DescribeChannelPlacementGroupOutput,
+    ) -> ::std::option::Option<&'a crate::types::ChannelPlacementGroupState> {
+        let _fld_1 = _output.state.as_ref()?;
+        ::std::option::Option::Some(_fld_1)
+    }
+    _result
+        .as_ref()
+        .ok()
+        .and_then(|output| path_traversal(output))
+        .map(|value| {
+            let _tmp_2 = value.as_str();
+            let right = "ASSIGNING";
+            let _cmp_1 = _tmp_2 == right;
+            _cmp_1
+        })
+        .unwrap_or_default()
+}
+
+/// Matcher union: {"errorType":"InternalServerErrorException"}
+pub(crate) fn match_describe_channel_placement_group_23a4ee68df28eed70(
+    _result: ::std::result::Result<
+        &crate::operation::describe_channel_placement_group::DescribeChannelPlacementGroupOutput,
+        &crate::operation::describe_channel_placement_group::DescribeChannelPlacementGroupError,
+    >,
+) -> bool {
+    if let ::std::result::Result::Err(err) = _result {
+        if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(err) {
+            return code == "InternalServerErrorException";
+        }
+    }
+    false
+}
+
+/// Matcher union: {"output":{"path":"State","expected":"DELETED","comparator":"stringEquals"}}
+pub(crate) fn match_describe_channel_placement_group_dae4612b5507a5589(
+    _result: ::std::result::Result<
+        &crate::operation::describe_channel_placement_group::DescribeChannelPlacementGroupOutput,
+        &crate::operation::describe_channel_placement_group::DescribeChannelPlacementGroupError,
+    >,
+) -> bool {
+    fn path_traversal<'a>(
+        _output: &'a crate::operation::describe_channel_placement_group::DescribeChannelPlacementGroupOutput,
+    ) -> ::std::option::Option<&'a crate::types::ChannelPlacementGroupState> {
+        let _fld_1 = _output.state.as_ref()?;
+        ::std::option::Option::Some(_fld_1)
+    }
+    _result
+        .as_ref()
+        .ok()
+        .and_then(|output| path_traversal(output))
+        .map(|value| {
+            let _tmp_2 = value.as_str();
+            let right = "DELETED";
+            let _cmp_1 = _tmp_2 == right;
+            _cmp_1
+        })
+        .unwrap_or_default()
+}
+
+/// Matcher union: {"output":{"path":"State","expected":"DELETING","comparator":"stringEquals"}}
+pub(crate) fn match_describe_channel_placement_group_788667cd7ad1cc1c2(
+    _result: ::std::result::Result<
+        &crate::operation::describe_channel_placement_group::DescribeChannelPlacementGroupOutput,
+        &crate::operation::describe_channel_placement_group::DescribeChannelPlacementGroupError,
+    >,
+) -> bool {
+    fn path_traversal<'a>(
+        _output: &'a crate::operation::describe_channel_placement_group::DescribeChannelPlacementGroupOutput,
+    ) -> ::std::option::Option<&'a crate::types::ChannelPlacementGroupState> {
+        let _fld_1 = _output.state.as_ref()?;
+        ::std::option::Option::Some(_fld_1)
+    }
+    _result
+        .as_ref()
+        .ok()
+        .and_then(|output| path_traversal(output))
+        .map(|value| {
+            let _tmp_2 = value.as_str();
+            let right = "DELETING";
+            let _cmp_1 = _tmp_2 == right;
+            _cmp_1
+        })
+        .unwrap_or_default()
+}
+
+/// Matcher union: {"output":{"path":"State","expected":"UNASSIGNED","comparator":"stringEquals"}}
+pub(crate) fn match_describe_channel_placement_group_f69454c852f8805b8(
+    _result: ::std::result::Result<
+        &crate::operation::describe_channel_placement_group::DescribeChannelPlacementGroupOutput,
+        &crate::operation::describe_channel_placement_group::DescribeChannelPlacementGroupError,
+    >,
+) -> bool {
+    fn path_traversal<'a>(
+        _output: &'a crate::operation::describe_channel_placement_group::DescribeChannelPlacementGroupOutput,
+    ) -> ::std::option::Option<&'a crate::types::ChannelPlacementGroupState> {
+        let _fld_1 = _output.state.as_ref()?;
+        ::std::option::Option::Some(_fld_1)
+    }
+    _result
+        .as_ref()
+        .ok()
+        .and_then(|output| path_traversal(output))
+        .map(|value| {
+            let _tmp_2 = value.as_str();
+            let right = "UNASSIGNED";
+            let _cmp_1 = _tmp_2 == right;
+            _cmp_1
+        })
+        .unwrap_or_default()
+}
+
+/// Matcher union: {"output":{"path":"State","expected":"UNASSIGNING","comparator":"stringEquals"}}
+pub(crate) fn match_describe_channel_placement_group_2d78a9e2e1bb3ee88(
+    _result: ::std::result::Result<
+        &crate::operation::describe_channel_placement_group::DescribeChannelPlacementGroupOutput,
+        &crate::operation::describe_channel_placement_group::DescribeChannelPlacementGroupError,
+    >,
+) -> bool {
+    fn path_traversal<'a>(
+        _output: &'a crate::operation::describe_channel_placement_group::DescribeChannelPlacementGroupOutput,
+    ) -> ::std::option::Option<&'a crate::types::ChannelPlacementGroupState> {
+        let _fld_1 = _output.state.as_ref()?;
+        ::std::option::Option::Some(_fld_1)
+    }
+    _result
+        .as_ref()
+        .ok()
+        .and_then(|output| path_traversal(output))
+        .map(|value| {
+            let _tmp_2 = value.as_str();
+            let right = "UNASSIGNING";
+            let _cmp_1 = _tmp_2 == right;
+            _cmp_1
+        })
+        .unwrap_or_default()
+}
+
 /// Matcher union: {"output":{"path":"State","expected":"RUNNING","comparator":"stringEquals"}}
 pub(crate) fn match_describe_channel_4ad6a60d9048c7d92(
     _result: ::std::result::Result<
@@ -217,6 +388,151 @@ pub(crate) fn match_describe_channel_b656d56ada3218574(
         .map(|value| {
             let _tmp_2 = value.as_str();
             let right = "STOPPING";
+            let _cmp_1 = _tmp_2 == right;
+            _cmp_1
+        })
+        .unwrap_or_default()
+}
+
+/// Matcher union: {"output":{"path":"State","expected":"ACTIVE","comparator":"stringEquals"}}
+pub(crate) fn match_describe_cluster_a84ba26c6d32fa04e(
+    _result: ::std::result::Result<
+        &crate::operation::describe_cluster::DescribeClusterOutput,
+        &crate::operation::describe_cluster::DescribeClusterError,
+    >,
+) -> bool {
+    fn path_traversal<'a>(
+        _output: &'a crate::operation::describe_cluster::DescribeClusterOutput,
+    ) -> ::std::option::Option<&'a crate::types::ClusterState> {
+        let _fld_1 = _output.state.as_ref()?;
+        ::std::option::Option::Some(_fld_1)
+    }
+    _result
+        .as_ref()
+        .ok()
+        .and_then(|output| path_traversal(output))
+        .map(|value| {
+            let _tmp_2 = value.as_str();
+            let right = "ACTIVE";
+            let _cmp_1 = _tmp_2 == right;
+            _cmp_1
+        })
+        .unwrap_or_default()
+}
+
+/// Matcher union: {"output":{"path":"State","expected":"CREATING","comparator":"stringEquals"}}
+pub(crate) fn match_describe_cluster_8866bdf154f29ea53(
+    _result: ::std::result::Result<
+        &crate::operation::describe_cluster::DescribeClusterOutput,
+        &crate::operation::describe_cluster::DescribeClusterError,
+    >,
+) -> bool {
+    fn path_traversal<'a>(
+        _output: &'a crate::operation::describe_cluster::DescribeClusterOutput,
+    ) -> ::std::option::Option<&'a crate::types::ClusterState> {
+        let _fld_1 = _output.state.as_ref()?;
+        ::std::option::Option::Some(_fld_1)
+    }
+    _result
+        .as_ref()
+        .ok()
+        .and_then(|output| path_traversal(output))
+        .map(|value| {
+            let _tmp_2 = value.as_str();
+            let right = "CREATING";
+            let _cmp_1 = _tmp_2 == right;
+            _cmp_1
+        })
+        .unwrap_or_default()
+}
+
+/// Matcher union: {"errorType":"InternalServerErrorException"}
+pub(crate) fn match_describe_cluster_23a4ee68df28eed70(
+    _result: ::std::result::Result<
+        &crate::operation::describe_cluster::DescribeClusterOutput,
+        &crate::operation::describe_cluster::DescribeClusterError,
+    >,
+) -> bool {
+    if let ::std::result::Result::Err(err) = _result {
+        if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(err) {
+            return code == "InternalServerErrorException";
+        }
+    }
+    false
+}
+
+/// Matcher union: {"output":{"path":"State","expected":"CREATE_FAILED","comparator":"stringEquals"}}
+pub(crate) fn match_describe_cluster_8659e07b86810791e(
+    _result: ::std::result::Result<
+        &crate::operation::describe_cluster::DescribeClusterOutput,
+        &crate::operation::describe_cluster::DescribeClusterError,
+    >,
+) -> bool {
+    fn path_traversal<'a>(
+        _output: &'a crate::operation::describe_cluster::DescribeClusterOutput,
+    ) -> ::std::option::Option<&'a crate::types::ClusterState> {
+        let _fld_1 = _output.state.as_ref()?;
+        ::std::option::Option::Some(_fld_1)
+    }
+    _result
+        .as_ref()
+        .ok()
+        .and_then(|output| path_traversal(output))
+        .map(|value| {
+            let _tmp_2 = value.as_str();
+            let right = "CREATE_FAILED";
+            let _cmp_1 = _tmp_2 == right;
+            _cmp_1
+        })
+        .unwrap_or_default()
+}
+
+/// Matcher union: {"output":{"path":"State","expected":"DELETED","comparator":"stringEquals"}}
+pub(crate) fn match_describe_cluster_dae4612b5507a5589(
+    _result: ::std::result::Result<
+        &crate::operation::describe_cluster::DescribeClusterOutput,
+        &crate::operation::describe_cluster::DescribeClusterError,
+    >,
+) -> bool {
+    fn path_traversal<'a>(
+        _output: &'a crate::operation::describe_cluster::DescribeClusterOutput,
+    ) -> ::std::option::Option<&'a crate::types::ClusterState> {
+        let _fld_1 = _output.state.as_ref()?;
+        ::std::option::Option::Some(_fld_1)
+    }
+    _result
+        .as_ref()
+        .ok()
+        .and_then(|output| path_traversal(output))
+        .map(|value| {
+            let _tmp_2 = value.as_str();
+            let right = "DELETED";
+            let _cmp_1 = _tmp_2 == right;
+            _cmp_1
+        })
+        .unwrap_or_default()
+}
+
+/// Matcher union: {"output":{"path":"State","expected":"DELETING","comparator":"stringEquals"}}
+pub(crate) fn match_describe_cluster_788667cd7ad1cc1c2(
+    _result: ::std::result::Result<
+        &crate::operation::describe_cluster::DescribeClusterOutput,
+        &crate::operation::describe_cluster::DescribeClusterError,
+    >,
+) -> bool {
+    fn path_traversal<'a>(
+        _output: &'a crate::operation::describe_cluster::DescribeClusterOutput,
+    ) -> ::std::option::Option<&'a crate::types::ClusterState> {
+        let _fld_1 = _output.state.as_ref()?;
+        ::std::option::Option::Some(_fld_1)
+    }
+    _result
+        .as_ref()
+        .ok()
+        .and_then(|output| path_traversal(output))
+        .map(|value| {
+            let _tmp_2 = value.as_str();
+            let right = "DELETING";
             let _cmp_1 = _tmp_2 == right;
             _cmp_1
         })
@@ -557,6 +873,156 @@ pub(crate) fn match_describe_multiplex_b656d56ada3218574(
         .map(|value| {
             let _tmp_2 = value.as_str();
             let right = "STOPPING";
+            let _cmp_1 = _tmp_2 == right;
+            _cmp_1
+        })
+        .unwrap_or_default()
+}
+
+/// Matcher union: {"output":{"path":"State","expected":"DEREGISTERED","comparator":"stringEquals"}}
+pub(crate) fn match_describe_node_06597b0a2a5d8d9f7(
+    _result: ::std::result::Result<&crate::operation::describe_node::DescribeNodeOutput, &crate::operation::describe_node::DescribeNodeError>,
+) -> bool {
+    fn path_traversal<'a>(_output: &'a crate::operation::describe_node::DescribeNodeOutput) -> ::std::option::Option<&'a crate::types::NodeState> {
+        let _fld_1 = _output.state.as_ref()?;
+        ::std::option::Option::Some(_fld_1)
+    }
+    _result
+        .as_ref()
+        .ok()
+        .and_then(|output| path_traversal(output))
+        .map(|value| {
+            let _tmp_2 = value.as_str();
+            let right = "DEREGISTERED";
+            let _cmp_1 = _tmp_2 == right;
+            _cmp_1
+        })
+        .unwrap_or_default()
+}
+
+/// Matcher union: {"output":{"path":"State","expected":"DEREGISTERING","comparator":"stringEquals"}}
+pub(crate) fn match_describe_node_3e9be9f5a4deb6660(
+    _result: ::std::result::Result<&crate::operation::describe_node::DescribeNodeOutput, &crate::operation::describe_node::DescribeNodeError>,
+) -> bool {
+    fn path_traversal<'a>(_output: &'a crate::operation::describe_node::DescribeNodeOutput) -> ::std::option::Option<&'a crate::types::NodeState> {
+        let _fld_1 = _output.state.as_ref()?;
+        ::std::option::Option::Some(_fld_1)
+    }
+    _result
+        .as_ref()
+        .ok()
+        .and_then(|output| path_traversal(output))
+        .map(|value| {
+            let _tmp_2 = value.as_str();
+            let right = "DEREGISTERING";
+            let _cmp_1 = _tmp_2 == right;
+            _cmp_1
+        })
+        .unwrap_or_default()
+}
+
+/// Matcher union: {"output":{"path":"State","expected":"DRAINING","comparator":"stringEquals"}}
+pub(crate) fn match_describe_node_dd607625ac5a1d33f(
+    _result: ::std::result::Result<&crate::operation::describe_node::DescribeNodeOutput, &crate::operation::describe_node::DescribeNodeError>,
+) -> bool {
+    fn path_traversal<'a>(_output: &'a crate::operation::describe_node::DescribeNodeOutput) -> ::std::option::Option<&'a crate::types::NodeState> {
+        let _fld_1 = _output.state.as_ref()?;
+        ::std::option::Option::Some(_fld_1)
+    }
+    _result
+        .as_ref()
+        .ok()
+        .and_then(|output| path_traversal(output))
+        .map(|value| {
+            let _tmp_2 = value.as_str();
+            let right = "DRAINING";
+            let _cmp_1 = _tmp_2 == right;
+            _cmp_1
+        })
+        .unwrap_or_default()
+}
+
+/// Matcher union: {"errorType":"InternalServerErrorException"}
+pub(crate) fn match_describe_node_23a4ee68df28eed70(
+    _result: ::std::result::Result<&crate::operation::describe_node::DescribeNodeOutput, &crate::operation::describe_node::DescribeNodeError>,
+) -> bool {
+    if let ::std::result::Result::Err(err) = _result {
+        if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(err) {
+            return code == "InternalServerErrorException";
+        }
+    }
+    false
+}
+
+/// Matcher union: {"output":{"path":"State","expected":"ACTIVE","comparator":"stringEquals"}}
+pub(crate) fn match_describe_node_a84ba26c6d32fa04e(
+    _result: ::std::result::Result<&crate::operation::describe_node::DescribeNodeOutput, &crate::operation::describe_node::DescribeNodeError>,
+) -> bool {
+    fn path_traversal<'a>(_output: &'a crate::operation::describe_node::DescribeNodeOutput) -> ::std::option::Option<&'a crate::types::NodeState> {
+        let _fld_1 = _output.state.as_ref()?;
+        ::std::option::Option::Some(_fld_1)
+    }
+    _result
+        .as_ref()
+        .ok()
+        .and_then(|output| path_traversal(output))
+        .map(|value| {
+            let _tmp_2 = value.as_str();
+            let right = "ACTIVE";
+            let _cmp_1 = _tmp_2 == right;
+            _cmp_1
+        })
+        .unwrap_or_default()
+}
+
+/// Matcher union: {"output":{"path":"State","expected":"REGISTERING","comparator":"stringEquals"}}
+pub(crate) fn match_describe_node_b991fca22b435da4a(
+    _result: ::std::result::Result<&crate::operation::describe_node::DescribeNodeOutput, &crate::operation::describe_node::DescribeNodeError>,
+) -> bool {
+    fn path_traversal<'a>(_output: &'a crate::operation::describe_node::DescribeNodeOutput) -> ::std::option::Option<&'a crate::types::NodeState> {
+        let _fld_1 = _output.state.as_ref()?;
+        ::std::option::Option::Some(_fld_1)
+    }
+    _result
+        .as_ref()
+        .ok()
+        .and_then(|output| path_traversal(output))
+        .map(|value| {
+            let _tmp_2 = value.as_str();
+            let right = "REGISTERING";
+            let _cmp_1 = _tmp_2 == right;
+            _cmp_1
+        })
+        .unwrap_or_default()
+}
+
+/// Matcher union: {"errorType":"NotFoundException"}
+pub(crate) fn match_describe_node_bcffe71d9077ffaa1(
+    _result: ::std::result::Result<&crate::operation::describe_node::DescribeNodeOutput, &crate::operation::describe_node::DescribeNodeError>,
+) -> bool {
+    if let ::std::result::Result::Err(err) = _result {
+        if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(err) {
+            return code == "NotFoundException";
+        }
+    }
+    false
+}
+
+/// Matcher union: {"output":{"path":"State","expected":"REGISTRATION_FAILED","comparator":"stringEquals"}}
+pub(crate) fn match_describe_node_03b1de16da9ae81c6(
+    _result: ::std::result::Result<&crate::operation::describe_node::DescribeNodeOutput, &crate::operation::describe_node::DescribeNodeError>,
+) -> bool {
+    fn path_traversal<'a>(_output: &'a crate::operation::describe_node::DescribeNodeOutput) -> ::std::option::Option<&'a crate::types::NodeState> {
+        let _fld_1 = _output.state.as_ref()?;
+        ::std::option::Option::Some(_fld_1)
+    }
+    _result
+        .as_ref()
+        .ok()
+        .and_then(|output| path_traversal(output))
+        .map(|value| {
+            let _tmp_2 = value.as_str();
+            let right = "REGISTRATION_FAILED";
             let _cmp_1 = _tmp_2 == right;
             _cmp_1
         })

@@ -539,6 +539,16 @@ pub(crate) fn lens_list_schemas_output_output_schemas(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn lens_list_table_optimizer_runs_output_output_table_optimizer_runs(
+    input: crate::operation::list_table_optimizer_runs::ListTableOptimizerRunsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::TableOptimizerRun>> {
+    let input = match input.table_optimizer_runs {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_list_triggers_output_output_trigger_names(
     input: crate::operation::list_triggers::ListTriggersOutput,
 ) -> ::std::option::Option<::std::vec::Vec<::std::string::String>> {

@@ -23,6 +23,7 @@ impl super::Client {
     ///   - [`state(Option<ChannelState>)`](crate::operation::start_channel::StartChannelOutput::state): Placeholder documentation for ChannelState
     ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::start_channel::StartChannelOutput::tags): A collection of key-value pairs.
     ///   - [`vpc(Option<VpcOutputSettingsDescription>)`](crate::operation::start_channel::StartChannelOutput::vpc): Settings for VPC output
+    ///   - [`anywhere_settings(Option<DescribeAnywhereSettings>)`](crate::operation::start_channel::StartChannelOutput::anywhere_settings): Anywhere settings for this channel.
     /// - On failure, responds with [`SdkError<StartChannelError>`](crate::operation::start_channel::StartChannelError)
     pub fn start_channel(&self) -> crate::operation::start_channel::builders::StartChannelFluentBuilder {
         crate::operation::start_channel::builders::StartChannelFluentBuilder::new(self.handle.clone())

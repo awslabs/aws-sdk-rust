@@ -108,17 +108,17 @@ impl UpdateFindingsFeedbackFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The ID of the detector associated with the findings to update feedback for.</p>
+    /// <p>The ID of the detector that is associated with the findings for which you want to update the feedback.</p>
     pub fn detector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.detector_id(input.into());
         self
     }
-    /// <p>The ID of the detector associated with the findings to update feedback for.</p>
+    /// <p>The ID of the detector that is associated with the findings for which you want to update the feedback.</p>
     pub fn set_detector_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_detector_id(input);
         self
     }
-    /// <p>The ID of the detector associated with the findings to update feedback for.</p>
+    /// <p>The ID of the detector that is associated with the findings for which you want to update the feedback.</p>
     pub fn get_detector_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_detector_id()
     }

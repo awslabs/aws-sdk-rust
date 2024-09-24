@@ -634,6 +634,9 @@
                     "target": "com.amazonaws.glue#TagResource"
                 },
                 {
+                    "target": "com.amazonaws.glue#TestConnection"
+                },
+                {
                     "target": "com.amazonaws.glue#UntagResource"
                 },
                 {
@@ -2462,16 +2465,16 @@
                         "smithy.api#documentation": "<p>A structure containing the authentication configuration in the CreateConnection request.</p>"
                     }
                 },
-                "SecretArn": {
-                    "target": "com.amazonaws.glue#SecretArn",
-                    "traits": {
-                        "smithy.api#documentation": "<p>The secret manager ARN to store credentials in the CreateConnection request.</p>"
-                    }
-                },
                 "OAuth2Properties": {
                     "target": "com.amazonaws.glue#OAuth2PropertiesInput",
                     "traits": {
                         "smithy.api#documentation": "<p>The properties for OAuth2 authentication in the CreateConnection request.</p>"
+                    }
+                },
+                "SecretArn": {
+                    "target": "com.amazonaws.glue#SecretArn",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The secret manager ARN to store credentials in the CreateConnection request.</p>"
                     }
                 }
             },
@@ -2509,7 +2512,8 @@
                     "min": 1,
                     "max": 4096
                 },
-                "smithy.api#pattern": "^\\S+$"
+                "smithy.api#pattern": "^\\S+$",
+                "smithy.api#sensitive": {}
             }
         },
         "com.amazonaws.glue#AuthorizationCodeProperties": {
@@ -3540,7 +3544,19 @@
             },
             "errors": [
                 {
+                    "target": "com.amazonaws.glue#AccessDeniedException"
+                },
+                {
+                    "target": "com.amazonaws.glue#EntityNotFoundException"
+                },
+                {
                     "target": "com.amazonaws.glue#InternalServiceException"
+                },
+                {
+                    "target": "com.amazonaws.glue#InvalidInputException"
+                },
+                {
+                    "target": "com.amazonaws.glue#ThrottlingException"
                 }
             ],
             "traits": {
@@ -4015,7 +4031,7 @@
                 "tableOptimizer": {
                     "target": "com.amazonaws.glue#TableOptimizer",
                     "traits": {
-                        "smithy.api#documentation": "<p>A <code>TableOptimizer</code> object that contains details on the configuration and last run of a table optimzer.</p>"
+                        "smithy.api#documentation": "<p>A <code>TableOptimizer</code> object that contains details on the configuration and last run of a table optimizer.</p>"
                     }
                 }
             },
@@ -6472,6 +6488,20 @@
                 "smithy.api#pattern": "^[\\u0020-\\uD7FF\\uE000-\\uFFFD\\uD800\\uDC00-\\uDBFF\\uDFFF\\t]*$"
             }
         },
+        "com.amazonaws.glue#CompactionMetrics": {
+            "type": "structure",
+            "members": {
+                "IcebergMetrics": {
+                    "target": "com.amazonaws.glue#IcebergCompactionMetrics",
+                    "traits": {
+                        "smithy.api#documentation": "<p>A structure containing the Iceberg compaction metrics for the optimizer run.</p>"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>A structure that contains compaction metrics for the optimizer run.</p>"
+            }
+        },
         "com.amazonaws.glue#Comparator": {
             "type": "enum",
             "members": {
@@ -6831,6 +6861,12 @@
                         "smithy.api#documentation": "<p>These key-value pairs define parameters for the connection:</p>\n         <ul>\n            <li>\n               <p>\n                  <code>HOST</code> - The host URI: either the\n        fully qualified domain name (FQDN) or the IPv4 address of\n        the database host.</p>\n            </li>\n            <li>\n               <p>\n                  <code>PORT</code> - The port number, between\n        1024 and 65535, of the port on which the database host is\n        listening for database connections.</p>\n            </li>\n            <li>\n               <p>\n                  <code>USER_NAME</code> -  The name under which\n        to log in to the database. The value string for <code>USER_NAME</code> is \"<code>USERNAME</code>\".</p>\n            </li>\n            <li>\n               <p>\n                  <code>PASSWORD</code> - A password,\n        if one is used, for the user name.</p>\n            </li>\n            <li>\n               <p>\n                  <code>ENCRYPTED_PASSWORD</code> - When you enable connection password protection by setting <code>ConnectionPasswordEncryption</code> in the Data Catalog encryption settings, this field stores the encrypted password.</p>\n            </li>\n            <li>\n               <p>\n                  <code>JDBC_DRIVER_JAR_URI</code> - The Amazon Simple Storage Service (Amazon S3) path of the\n          JAR file that contains the JDBC driver to use.</p>\n            </li>\n            <li>\n               <p>\n                  <code>JDBC_DRIVER_CLASS_NAME</code> - The class name of the JDBC driver to use.</p>\n            </li>\n            <li>\n               <p>\n                  <code>JDBC_ENGINE</code> - The name of the JDBC engine to use.</p>\n            </li>\n            <li>\n               <p>\n                  <code>JDBC_ENGINE_VERSION</code> - The version of the JDBC engine to use.</p>\n            </li>\n            <li>\n               <p>\n                  <code>CONFIG_FILES</code> - (Reserved for future use.)</p>\n            </li>\n            <li>\n               <p>\n                  <code>INSTANCE_ID</code> - The instance ID to use.</p>\n            </li>\n            <li>\n               <p>\n                  <code>JDBC_CONNECTION_URL</code> - The URL for connecting to a JDBC data source.</p>\n            </li>\n            <li>\n               <p>\n                  <code>JDBC_ENFORCE_SSL</code> - A Boolean string (true, false) specifying whether Secure\n          Sockets Layer (SSL) with hostname matching is enforced for the JDBC connection on the\n          client. The default is false.</p>\n            </li>\n            <li>\n               <p>\n                  <code>CUSTOM_JDBC_CERT</code> - An Amazon S3 location specifying the customer's root certificate. Glue uses this root certificate to validate the customer’s certificate when connecting to the customer database. Glue only handles X.509 certificates. The certificate provided must be DER-encoded and supplied in Base64 encoding PEM format.</p>\n            </li>\n            <li>\n               <p>\n                  <code>SKIP_CUSTOM_JDBC_CERT_VALIDATION</code> - By default, this is <code>false</code>. Glue validates the Signature algorithm and Subject Public Key Algorithm for the customer certificate. The only permitted algorithms for the Signature algorithm are SHA256withRSA, SHA384withRSA or SHA512withRSA. For the Subject Public Key Algorithm, the key length must be at least 2048. You can set the value of this property to <code>true</code> to skip Glue’s validation of the customer certificate.</p>\n            </li>\n            <li>\n               <p>\n                  <code>CUSTOM_JDBC_CERT_STRING</code> - A custom JDBC certificate string which is used for domain match or distinguished name match to prevent a man-in-the-middle attack. In Oracle database, this is used as the <code>SSL_SERVER_CERT_DN</code>; in Microsoft SQL Server, this is used as the <code>hostNameInCertificate</code>.</p>\n            </li>\n            <li>\n               <p>\n                  <code>CONNECTION_URL</code> - The URL for connecting to a general (non-JDBC) data source.</p>\n            </li>\n            <li>\n               <p>\n                  <code>SECRET_ID</code> - The secret ID used for the secret manager of credentials.</p>\n            </li>\n            <li>\n               <p>\n                  <code>CONNECTOR_URL</code> - The connector URL for a MARKETPLACE or CUSTOM connection.</p>\n            </li>\n            <li>\n               <p>\n                  <code>CONNECTOR_TYPE</code> - The connector type for a MARKETPLACE or CUSTOM connection.</p>\n            </li>\n            <li>\n               <p>\n                  <code>CONNECTOR_CLASS_NAME</code> - The connector class name for a MARKETPLACE or CUSTOM connection.</p>\n            </li>\n            <li>\n               <p>\n                  <code>KAFKA_BOOTSTRAP_SERVERS</code> - A comma-separated list of host and port pairs that are the addresses of the Apache Kafka brokers in a Kafka cluster to which a Kafka client will connect to and bootstrap itself.</p>\n            </li>\n            <li>\n               <p>\n                  <code>KAFKA_SSL_ENABLED</code> - Whether to enable or disable SSL on an Apache Kafka connection. Default value is \"true\".</p>\n            </li>\n            <li>\n               <p>\n                  <code>KAFKA_CUSTOM_CERT</code> - The Amazon S3 URL for the private CA cert file (.pem format). The default is an empty string.</p>\n            </li>\n            <li>\n               <p>\n                  <code>KAFKA_SKIP_CUSTOM_CERT_VALIDATION</code> - Whether to skip the validation of the CA cert file or not. Glue validates for three algorithms: SHA256withRSA, SHA384withRSA and SHA512withRSA. Default value is \"false\".</p>\n            </li>\n            <li>\n               <p>\n                  <code>KAFKA_CLIENT_KEYSTORE</code> - The Amazon S3 location of the client keystore file for Kafka client side authentication (Optional).</p>\n            </li>\n            <li>\n               <p>\n                  <code>KAFKA_CLIENT_KEYSTORE_PASSWORD</code> - The password to access the provided keystore (Optional).</p>\n            </li>\n            <li>\n               <p>\n                  <code>KAFKA_CLIENT_KEY_PASSWORD</code> - A keystore can consist of multiple keys, so this is the password to access the client key to be used with the Kafka server side key (Optional).</p>\n            </li>\n            <li>\n               <p>\n                  <code>ENCRYPTED_KAFKA_CLIENT_KEYSTORE_PASSWORD</code> - The encrypted version of the Kafka client keystore password (if the user has the Glue encrypt passwords setting selected).</p>\n            </li>\n            <li>\n               <p>\n                  <code>ENCRYPTED_KAFKA_CLIENT_KEY_PASSWORD</code> - The encrypted version of the Kafka client key password (if the user has the Glue encrypt passwords setting selected).</p>\n            </li>\n            <li>\n               <p>\n                  <code>KAFKA_SASL_MECHANISM</code> - <code>\"SCRAM-SHA-512\"</code>, <code>\"GSSAPI\"</code>, <code>\"AWS_MSK_IAM\"</code>, or <code>\"PLAIN\"</code>. These are the supported <a href=\"https://www.iana.org/assignments/sasl-mechanisms/sasl-mechanisms.xhtml\">SASL Mechanisms</a>.</p>\n            </li>\n            <li>\n               <p>\n                  <code>KAFKA_SASL_PLAIN_USERNAME</code> - A plaintext username used to authenticate with the \"PLAIN\" mechanism.</p>\n            </li>\n            <li>\n               <p>\n                  <code>KAFKA_SASL_PLAIN_PASSWORD</code> - A plaintext password used to authenticate with the \"PLAIN\" mechanism.</p>\n            </li>\n            <li>\n               <p>\n                  <code>ENCRYPTED_KAFKA_SASL_PLAIN_PASSWORD</code> - The encrypted version of the Kafka SASL PLAIN password (if the user has the Glue encrypt passwords setting selected).</p>\n            </li>\n            <li>\n               <p>\n                  <code>KAFKA_SASL_SCRAM_USERNAME</code> - A plaintext username used to authenticate with the \"SCRAM-SHA-512\" mechanism.</p>\n            </li>\n            <li>\n               <p>\n                  <code>KAFKA_SASL_SCRAM_PASSWORD</code> - A plaintext password used to authenticate with the \"SCRAM-SHA-512\" mechanism.</p>\n            </li>\n            <li>\n               <p>\n                  <code>ENCRYPTED_KAFKA_SASL_SCRAM_PASSWORD</code> - The encrypted version of the Kafka SASL SCRAM password (if the user has the Glue encrypt passwords setting selected).</p>\n            </li>\n            <li>\n               <p>\n                  <code>KAFKA_SASL_SCRAM_SECRETS_ARN</code> - The Amazon Resource Name of a secret in Amazon Web Services Secrets Manager.</p>\n            </li>\n            <li>\n               <p>\n                  <code>KAFKA_SASL_GSSAPI_KEYTAB</code> - The S3 location of a Kerberos <code>keytab</code> file. A keytab stores long-term keys for one or more principals. For more information, see <a href=\"https://web.mit.edu/kerberos/krb5-latest/doc/basic/keytab_def.html\">MIT Kerberos Documentation: Keytab</a>.</p>\n            </li>\n            <li>\n               <p>\n                  <code>KAFKA_SASL_GSSAPI_KRB5_CONF</code> - The S3 location of a Kerberos <code>krb5.conf</code> file. A krb5.conf stores Kerberos configuration information, such as the location of the KDC server. For more information, see <a href=\"https://web.mit.edu/kerberos/krb5-1.12/doc/admin/conf_files/krb5_conf.html\">MIT Kerberos Documentation: krb5.conf</a>.</p>\n            </li>\n            <li>\n               <p>\n                  <code>KAFKA_SASL_GSSAPI_SERVICE</code> - The Kerberos service name, as set with <code>sasl.kerberos.service.name</code> in your <a href=\"https://kafka.apache.org/documentation/#brokerconfigs_sasl.kerberos.service.name\">Kafka Configuration</a>.</p>\n            </li>\n            <li>\n               <p>\n                  <code>KAFKA_SASL_GSSAPI_PRINCIPAL</code> - The name of the Kerberos princial used by Glue. For more information, see <a href=\"https://kafka.apache.org/documentation/#security_sasl_kerberos_clientconfig\">Kafka Documentation: Configuring Kafka Brokers</a>.</p>\n            </li>\n            <li>\n               <p>\n                  <code>ROLE_ARN</code> - The role to be used for running queries.</p>\n            </li>\n            <li>\n               <p>\n                  <code>REGION</code> - The Amazon Web Services Region where queries will be run.</p>\n            </li>\n            <li>\n               <p>\n                  <code>WORKGROUP_NAME</code> - The name of an Amazon Redshift serverless workgroup or Amazon Athena workgroup in which queries will run.</p>\n            </li>\n            <li>\n               <p>\n                  <code>CLUSTER_IDENTIFIER</code> - The cluster identifier of an Amazon Redshift cluster in which queries will run.</p>\n            </li>\n            <li>\n               <p>\n                  <code>DATABASE</code> - The Amazon Redshift database that you are connecting to.</p>\n            </li>\n         </ul>"
                     }
                 },
+                "AthenaProperties": {
+                    "target": "com.amazonaws.glue#PropertyMap",
+                    "traits": {
+                        "smithy.api#documentation": "<p>This field is not currently used.</p>"
+                    }
+                },
                 "PhysicalConnectionRequirements": {
                     "target": "com.amazonaws.glue#PhysicalConnectionRequirements",
                     "traits": {
@@ -6918,6 +6954,12 @@
                     "traits": {
                         "smithy.api#documentation": "<p>These key-value pairs define parameters for the connection.</p>",
                         "smithy.api#required": {}
+                    }
+                },
+                "AthenaProperties": {
+                    "target": "com.amazonaws.glue#PropertyMap",
+                    "traits": {
+                        "smithy.api#documentation": "<p>This field is not currently used.</p>"
                     }
                 },
                 "PhysicalConnectionRequirements": {
@@ -10221,6 +10263,12 @@
                 },
                 {
                     "target": "com.amazonaws.glue#InvalidInputException"
+                },
+                {
+                    "target": "com.amazonaws.glue#ThrottlingException"
+                },
+                {
+                    "target": "com.amazonaws.glue#ValidationException"
                 }
             ],
             "traits": {
@@ -13530,6 +13578,9 @@
                 },
                 {
                     "target": "com.amazonaws.glue#InvalidInputException"
+                },
+                {
+                    "target": "com.amazonaws.glue#ThrottlingException"
                 }
             ],
             "traits": {
@@ -20055,6 +20106,9 @@
                 },
                 {
                     "target": "com.amazonaws.glue#InvalidInputException"
+                },
+                {
+                    "target": "com.amazonaws.glue#ThrottlingException"
                 }
             ],
             "traits": {
@@ -22151,6 +22205,42 @@
                 "smithy.api#pattern": "^arn:aws(-(cn|us-gov|iso(-[bef])?))?:iam::[0-9]{12}:role/.+$"
             }
         },
+        "com.amazonaws.glue#IcebergCompactionMetrics": {
+            "type": "structure",
+            "members": {
+                "NumberOfBytesCompacted": {
+                    "target": "com.amazonaws.glue#metricCounts",
+                    "traits": {
+                        "smithy.api#default": 0,
+                        "smithy.api#documentation": "<p>The number of bytes removed by the compaction job run.</p>"
+                    }
+                },
+                "NumberOfFilesCompacted": {
+                    "target": "com.amazonaws.glue#metricCounts",
+                    "traits": {
+                        "smithy.api#default": 0,
+                        "smithy.api#documentation": "<p>The number of files removed by the compaction job run.</p>"
+                    }
+                },
+                "NumberOfDpus": {
+                    "target": "com.amazonaws.glue#dpuCounts",
+                    "traits": {
+                        "smithy.api#default": 0,
+                        "smithy.api#documentation": "<p>The number of DPU hours consumed by the job.</p>"
+                    }
+                },
+                "JobDurationInHour": {
+                    "target": "com.amazonaws.glue#dpuDurationInHour",
+                    "traits": {
+                        "smithy.api#default": 0,
+                        "smithy.api#documentation": "<p>The duration of the job in hours.</p>"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>Compaction metrics for Iceberg for the optimizer run.</p>"
+            }
+        },
         "com.amazonaws.glue#IcebergInput": {
             "type": "structure",
             "members": {
@@ -22170,6 +22260,124 @@
             },
             "traits": {
                 "smithy.api#documentation": "<p>A structure that defines an Apache Iceberg metadata table to create in the catalog.</p>"
+            }
+        },
+        "com.amazonaws.glue#IcebergOrphanFileDeletionConfiguration": {
+            "type": "structure",
+            "members": {
+                "orphanFileRetentionPeriodInDays": {
+                    "target": "com.amazonaws.glue#NullableInteger",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The number of days that orphan files should be retained before file deletion. If an input is not provided, the default value 3 will be used.</p>"
+                    }
+                },
+                "location": {
+                    "target": "com.amazonaws.glue#MessageString",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Specifies a directory in which to look for files (defaults to the table's location). You may choose a sub-directory rather than the top-level table location.</p>"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>The configuration for an Iceberg orphan file deletion optimizer.</p>"
+            }
+        },
+        "com.amazonaws.glue#IcebergOrphanFileDeletionMetrics": {
+            "type": "structure",
+            "members": {
+                "NumberOfOrphanFilesDeleted": {
+                    "target": "com.amazonaws.glue#metricCounts",
+                    "traits": {
+                        "smithy.api#default": 0,
+                        "smithy.api#documentation": "<p>The number of orphan files deleted by the orphan file deletion job run.</p>"
+                    }
+                },
+                "NumberOfDpus": {
+                    "target": "com.amazonaws.glue#dpuCounts",
+                    "traits": {
+                        "smithy.api#default": 0,
+                        "smithy.api#documentation": "<p>The number of DPU hours consumed by the job.</p>"
+                    }
+                },
+                "JobDurationInHour": {
+                    "target": "com.amazonaws.glue#dpuDurationInHour",
+                    "traits": {
+                        "smithy.api#default": 0,
+                        "smithy.api#documentation": "<p>The duration of the job in hours.</p>"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>Orphan file deletion metrics for Iceberg for the optimizer run.</p>"
+            }
+        },
+        "com.amazonaws.glue#IcebergRetentionConfiguration": {
+            "type": "structure",
+            "members": {
+                "snapshotRetentionPeriodInDays": {
+                    "target": "com.amazonaws.glue#NullableInteger",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The number of days to retain the Iceberg snapshots. If an input is not provided, the corresponding Iceberg table configuration field will be used or if not present, the default value 5 will be used.</p>"
+                    }
+                },
+                "numberOfSnapshotsToRetain": {
+                    "target": "com.amazonaws.glue#NullableInteger",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The number of Iceberg snapshots to retain within the retention period. If an input is not provided, the corresponding Iceberg table configuration field will be used or if not present, the default value 1 will be used.</p>"
+                    }
+                },
+                "cleanExpiredFiles": {
+                    "target": "com.amazonaws.glue#NullableBoolean",
+                    "traits": {
+                        "smithy.api#documentation": "<p>If set to false, snapshots are only deleted from table metadata, and the underlying data and metadata files are not deleted.</p>"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>The configuration for an Iceberg snapshot retention optimizer.</p>"
+            }
+        },
+        "com.amazonaws.glue#IcebergRetentionMetrics": {
+            "type": "structure",
+            "members": {
+                "NumberOfDataFilesDeleted": {
+                    "target": "com.amazonaws.glue#metricCounts",
+                    "traits": {
+                        "smithy.api#default": 0,
+                        "smithy.api#documentation": "<p>The number of data files deleted by the retention job run.</p>"
+                    }
+                },
+                "NumberOfManifestFilesDeleted": {
+                    "target": "com.amazonaws.glue#metricCounts",
+                    "traits": {
+                        "smithy.api#default": 0,
+                        "smithy.api#documentation": "<p>The number of manifest files deleted by the retention job run.</p>"
+                    }
+                },
+                "NumberOfManifestListsDeleted": {
+                    "target": "com.amazonaws.glue#metricCounts",
+                    "traits": {
+                        "smithy.api#default": 0,
+                        "smithy.api#documentation": "<p>The number of manifest lists deleted by the retention job run.</p>"
+                    }
+                },
+                "NumberOfDpus": {
+                    "target": "com.amazonaws.glue#dpuCounts",
+                    "traits": {
+                        "smithy.api#default": 0,
+                        "smithy.api#documentation": "<p>The number of DPU hours consumed by the job.</p>"
+                    }
+                },
+                "JobDurationInHour": {
+                    "target": "com.amazonaws.glue#dpuDurationInHour",
+                    "traits": {
+                        "smithy.api#default": 0,
+                        "smithy.api#documentation": "<p>The duration of the job in hours.</p>"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>Snapshot retention metrics for Iceberg for the optimizer run.</p>"
             }
         },
         "com.amazonaws.glue#IcebergTarget": {
@@ -25875,6 +26083,12 @@
                 },
                 {
                     "target": "com.amazonaws.glue#InvalidInputException"
+                },
+                {
+                    "target": "com.amazonaws.glue#ThrottlingException"
+                },
+                {
+                    "target": "com.amazonaws.glue#ValidationException"
                 }
             ],
             "traits": {
@@ -25882,6 +26096,7 @@
                 "smithy.api#paginated": {
                     "inputToken": "NextToken",
                     "outputToken": "NextToken",
+                    "items": "TableOptimizerRuns",
                     "pageSize": "MaxResults"
                 }
             }
@@ -27736,6 +27951,34 @@
                 "target": "com.amazonaws.glue#Order"
             }
         },
+        "com.amazonaws.glue#OrphanFileDeletionConfiguration": {
+            "type": "structure",
+            "members": {
+                "icebergConfiguration": {
+                    "target": "com.amazonaws.glue#IcebergOrphanFileDeletionConfiguration",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The configuration for an Iceberg orphan file deletion optimizer.</p>"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>The configuration for an orphan file deletion optimizer.</p>"
+            }
+        },
+        "com.amazonaws.glue#OrphanFileDeletionMetrics": {
+            "type": "structure",
+            "members": {
+                "IcebergMetrics": {
+                    "target": "com.amazonaws.glue#IcebergOrphanFileDeletionMetrics",
+                    "traits": {
+                        "smithy.api#documentation": "<p>A structure containing the Iceberg orphan file deletion metrics for the optimizer run.</p>"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>A structure that contains orphan file deletion metrics for the optimizer run.</p>"
+            }
+        },
         "com.amazonaws.glue#OtherMetadataValueList": {
             "type": "list",
             "member": {
@@ -28642,6 +28885,24 @@
                 "smithy.api#documentation": "<p>Specifies the job and session values that an admin configures in an Glue usage profile.</p>"
             }
         },
+        "com.amazonaws.glue#PropertyKey": {
+            "type": "string",
+            "traits": {
+                "smithy.api#length": {
+                    "min": 1,
+                    "max": 128
+                }
+            }
+        },
+        "com.amazonaws.glue#PropertyMap": {
+            "type": "map",
+            "key": {
+                "target": "com.amazonaws.glue#PropertyKey"
+            },
+            "value": {
+                "target": "com.amazonaws.glue#PropertyValue"
+            }
+        },
         "com.amazonaws.glue#PropertyPredicate": {
             "type": "structure",
             "members": {
@@ -28666,6 +28927,15 @@
             },
             "traits": {
                 "smithy.api#documentation": "<p>Defines a property predicate.</p>"
+            }
+        },
+        "com.amazonaws.glue#PropertyValue": {
+            "type": "string",
+            "traits": {
+                "smithy.api#length": {
+                    "min": 1,
+                    "max": 2048
+                }
             }
         },
         "com.amazonaws.glue#PublicKeysList": {
@@ -30151,6 +30421,34 @@
                 "smithy.api#output": {}
             }
         },
+        "com.amazonaws.glue#RetentionConfiguration": {
+            "type": "structure",
+            "members": {
+                "icebergConfiguration": {
+                    "target": "com.amazonaws.glue#IcebergRetentionConfiguration",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The configuration for an Iceberg snapshot retention optimizer.</p>"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>The configuration for a snapshot retention optimizer.</p>"
+            }
+        },
+        "com.amazonaws.glue#RetentionMetrics": {
+            "type": "structure",
+            "members": {
+                "IcebergMetrics": {
+                    "target": "com.amazonaws.glue#IcebergRetentionMetrics",
+                    "traits": {
+                        "smithy.api#documentation": "<p>A structure containing the Iceberg retention metrics for the optimizer run.</p>"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>A structure that contains retention metrics for the optimizer run.</p>"
+            }
+        },
         "com.amazonaws.glue#Role": {
             "type": "string"
         },
@@ -30230,7 +30528,7 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "<p>Metrics for the optimizer run.</p>"
+                "smithy.api#documentation": "<p>Metrics for the optimizer run.</p>\n         <p>This structure is deprecated. See the individual metric members for compaction, retention, and orphan file deletion.</p>"
             }
         },
         "com.amazonaws.glue#RunStatement": {
@@ -35248,7 +35546,7 @@
                 "type": {
                     "target": "com.amazonaws.glue#TableOptimizerType",
                     "traits": {
-                        "smithy.api#documentation": "<p>The type of table optimizer. Currently, the only valid value is <code>compaction</code>.</p>"
+                        "smithy.api#documentation": "<p>The type of table optimizer. The valid values are:</p>\n         <ul>\n            <li>\n               <p>\n                  <code>compaction</code>: for managing compaction with a table optimizer.</p>\n            </li>\n            <li>\n               <p>\n                  <code>retention</code>: for managing the retention of snapshot with a table optimizer.</p>\n            </li>\n            <li>\n               <p>\n                  <code>orphan_file_deletion</code>: for managing the deletion of orphan files with a table optimizer.</p>\n            </li>\n         </ul>"
                     }
                 },
                 "configuration": {
@@ -35280,7 +35578,19 @@
                 "enabled": {
                     "target": "com.amazonaws.glue#NullableBoolean",
                     "traits": {
-                        "smithy.api#documentation": "<p>Whether table optimization is enabled. </p>"
+                        "smithy.api#documentation": "<p>Whether table optimization is enabled.</p>"
+                    }
+                },
+                "retentionConfiguration": {
+                    "target": "com.amazonaws.glue#RetentionConfiguration",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The configuration for a snapshot retention optimizer.</p>"
+                    }
+                },
+                "orphanFileDeletionConfiguration": {
+                    "target": "com.amazonaws.glue#OrphanFileDeletionConfiguration",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The configuration for an orphan file deletion optimizer.</p>"
                     }
                 }
             },
@@ -35341,13 +35651,34 @@
                 "metrics": {
                     "target": "com.amazonaws.glue#RunMetrics",
                     "traits": {
-                        "smithy.api#documentation": "<p>A <code>RunMetrics</code> object containing metrics for the optimizer run.</p>"
+                        "smithy.api#deprecated": {
+                            "message": "Metrics has been replaced by optimizer type specific metrics such as IcebergCompactionMetrics"
+                        },
+                        "smithy.api#documentation": "<p>A <code>RunMetrics</code> object containing metrics for the optimizer run.</p>\n         <p>This member is deprecated. See the individual metric members for compaction, retention, and orphan file deletion.</p>"
                     }
                 },
                 "error": {
                     "target": "com.amazonaws.glue#MessageString",
                     "traits": {
                         "smithy.api#documentation": "<p>An error that occured during the optimizer run.</p>"
+                    }
+                },
+                "compactionMetrics": {
+                    "target": "com.amazonaws.glue#CompactionMetrics",
+                    "traits": {
+                        "smithy.api#documentation": "<p>A <code>CompactionMetrics</code> object containing metrics for the optimizer run.</p>"
+                    }
+                },
+                "retentionMetrics": {
+                    "target": "com.amazonaws.glue#RetentionMetrics",
+                    "traits": {
+                        "smithy.api#documentation": "<p>A <code>RetentionMetrics</code> object containing metrics for the optimizer run.</p>"
+                    }
+                },
+                "orphanFileDeletionMetrics": {
+                    "target": "com.amazonaws.glue#OrphanFileDeletionMetrics",
+                    "traits": {
+                        "smithy.api#documentation": "<p>An <code>OrphanFileDeletionMetrics</code> object containing metrics for the optimizer run.</p>"
                     }
                 }
             },
@@ -35371,6 +35702,18 @@
                     "target": "smithy.api#Unit",
                     "traits": {
                         "smithy.api#enumValue": "compaction"
+                    }
+                },
+                "RETENTION": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "retention"
+                    }
+                },
+                "ORPHAN_FILE_DELETION": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "orphan_file_deletion"
                     }
                 }
             }
@@ -35927,6 +36270,117 @@
                         "smithy.api#enumValue": "FIND_MATCHES"
                     }
                 }
+            }
+        },
+        "com.amazonaws.glue#TestConnection": {
+            "type": "operation",
+            "input": {
+                "target": "com.amazonaws.glue#TestConnectionRequest"
+            },
+            "output": {
+                "target": "com.amazonaws.glue#TestConnectionResponse"
+            },
+            "errors": [
+                {
+                    "target": "com.amazonaws.glue#AccessDeniedException"
+                },
+                {
+                    "target": "com.amazonaws.glue#ConflictException"
+                },
+                {
+                    "target": "com.amazonaws.glue#EntityNotFoundException"
+                },
+                {
+                    "target": "com.amazonaws.glue#FederationSourceException"
+                },
+                {
+                    "target": "com.amazonaws.glue#GlueEncryptionException"
+                },
+                {
+                    "target": "com.amazonaws.glue#InternalServiceException"
+                },
+                {
+                    "target": "com.amazonaws.glue#InvalidInputException"
+                },
+                {
+                    "target": "com.amazonaws.glue#OperationTimeoutException"
+                },
+                {
+                    "target": "com.amazonaws.glue#ResourceNumberLimitExceededException"
+                }
+            ],
+            "traits": {
+                "smithy.api#documentation": "<p>Tests a connection to a service to validate the service credentials that you provide.</p>\n         <p>You can either provide an existing connection name or a <code>TestConnectionInput</code> for testing a non-existing connection input. Providing both at the same time will cause an error.</p>\n         <p>If the action is successful, the service sends back an HTTP 200 response.</p>"
+            }
+        },
+        "com.amazonaws.glue#TestConnectionInput": {
+            "type": "structure",
+            "members": {
+                "ConnectionType": {
+                    "target": "com.amazonaws.glue#ConnectionType",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The type of connection to test. This operation is only available for the <code>JDBC</code> or <code>SALESFORCE</code> connection types.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "ConnectionProperties": {
+                    "target": "com.amazonaws.glue#ConnectionProperties",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The key-value pairs that define parameters for the connection.</p>\n         <p>JDBC connections use the following connection properties:</p>\n         <ul>\n            <li>\n               <p>Required: All of (<code>HOST</code>, <code>PORT</code>, <code>JDBC_ENGINE</code>) or <code>JDBC_CONNECTION_URL</code>.</p>\n            </li>\n            <li>\n               <p>Required: All of (<code>USERNAME</code>, <code>PASSWORD</code>) or <code>SECRET_ID</code>.</p>\n            </li>\n            <li>\n               <p>Optional: <code>JDBC_ENFORCE_SSL</code>, <code>CUSTOM_JDBC_CERT</code>, <code>CUSTOM_JDBC_CERT_STRING</code>, <code>SKIP_CUSTOM_JDBC_CERT_VALIDATION</code>. These parameters are used to configure SSL with JDBC.</p>\n            </li>\n         </ul>\n         <p>SALESFORCE connections require the <code>AuthenticationConfiguration</code> member to be configured.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "AuthenticationConfiguration": {
+                    "target": "com.amazonaws.glue#AuthenticationConfigurationInput",
+                    "traits": {
+                        "smithy.api#documentation": "<p>A structure containing the authentication configuration in the TestConnection request. Required for a connection to Salesforce using OAuth authentication.</p>"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>A structure that is used to specify testing a connection to a service.</p>"
+            }
+        },
+        "com.amazonaws.glue#TestConnectionRequest": {
+            "type": "structure",
+            "members": {
+                "ConnectionName": {
+                    "target": "com.amazonaws.glue#NameString",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Optional. The name of the connection to test. If only name is provided, the operation will get the connection and use that for testing.</p>"
+                    }
+                },
+                "TestConnectionInput": {
+                    "target": "com.amazonaws.glue#TestConnectionInput",
+                    "traits": {
+                        "smithy.api#documentation": "<p>A structure that is used to specify testing a connection to a service.</p>"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#input": {}
+            }
+        },
+        "com.amazonaws.glue#TestConnectionResponse": {
+            "type": "structure",
+            "members": {},
+            "traits": {
+                "smithy.api#output": {}
+            }
+        },
+        "com.amazonaws.glue#ThrottlingException": {
+            "type": "structure",
+            "members": {
+                "Message": {
+                    "target": "com.amazonaws.glue#MessageString",
+                    "traits": {
+                        "smithy.api#documentation": "<p>A message describing the problem.</p>"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>The throttling threshhold was exceeded.</p>",
+                "smithy.api#error": "client"
             }
         },
         "com.amazonaws.glue#Timeout": {
@@ -38373,6 +38827,9 @@
                     "target": "com.amazonaws.glue#AccessDeniedException"
                 },
                 {
+                    "target": "com.amazonaws.glue#ConcurrentModificationException"
+                },
+                {
                     "target": "com.amazonaws.glue#EntityNotFoundException"
                 },
                 {
@@ -38380,6 +38837,12 @@
                 },
                 {
                     "target": "com.amazonaws.glue#InvalidInputException"
+                },
+                {
+                    "target": "com.amazonaws.glue#ThrottlingException"
+                },
+                {
+                    "target": "com.amazonaws.glue#ValidationException"
                 }
             ],
             "traits": {
@@ -39777,6 +40240,24 @@
                 "smithy.api#length": {
                     "min": 1
                 }
+            }
+        },
+        "com.amazonaws.glue#dpuCounts": {
+            "type": "integer",
+            "traits": {
+                "smithy.api#default": 0
+            }
+        },
+        "com.amazonaws.glue#dpuDurationInHour": {
+            "type": "double",
+            "traits": {
+                "smithy.api#default": 0
+            }
+        },
+        "com.amazonaws.glue#metricCounts": {
+            "type": "long",
+            "traits": {
+                "smithy.api#default": 0
             }
         },
         "com.amazonaws.glue#tableNameString": {

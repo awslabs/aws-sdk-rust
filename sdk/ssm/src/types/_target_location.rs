@@ -16,6 +16,17 @@ pub struct TargetLocation {
     pub execution_role_name: ::std::option::Option<::std::string::String>,
     /// <p>The details for the CloudWatch alarm you want to apply to an automation or command.</p>
     pub target_location_alarm_configuration: ::std::option::Option<crate::types::AlarmConfiguration>,
+    /// <p>Indicates whether to include child organizational units (OUs) that are children of the targeted OUs. The default is <code>false</code>.</p>
+    pub include_child_organization_units: bool,
+    /// <p>Amazon Web Services accounts or organizational units to exclude as expanded targets.</p>
+    pub exclude_accounts: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>A list of key-value mappings to target resources. If you specify values for this data type, you must also specify a value for <code>TargetParameterName</code>.</p>
+    /// <p>This <code>Targets</code> parameter takes precedence over the <code>StartAutomationExecution:Targets</code> parameter if both are supplied.</p>
+    pub targets: ::std::option::Option<::std::vec::Vec<crate::types::Target>>,
+    /// <p>The maximum number of targets allowed to run this task in parallel. This <code>TargetsMaxConcurrency</code> takes precedence over the <code>StartAutomationExecution:MaxConcurrency</code> parameter if both are supplied.</p>
+    pub targets_max_concurrency: ::std::option::Option<::std::string::String>,
+    /// <p>The maximum number of errors that are allowed before the system stops running the automation on additional targets. This <code>TargetsMaxErrors</code> parameter takes precedence over the <code>StartAutomationExecution:MaxErrors</code> parameter if both are supplied.</p>
+    pub targets_max_errors: ::std::option::Option<::std::string::String>,
 }
 impl TargetLocation {
     /// <p>The Amazon Web Services accounts targeted by the current Automation execution.</p>
@@ -46,6 +57,31 @@ impl TargetLocation {
     pub fn target_location_alarm_configuration(&self) -> ::std::option::Option<&crate::types::AlarmConfiguration> {
         self.target_location_alarm_configuration.as_ref()
     }
+    /// <p>Indicates whether to include child organizational units (OUs) that are children of the targeted OUs. The default is <code>false</code>.</p>
+    pub fn include_child_organization_units(&self) -> bool {
+        self.include_child_organization_units
+    }
+    /// <p>Amazon Web Services accounts or organizational units to exclude as expanded targets.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.exclude_accounts.is_none()`.
+    pub fn exclude_accounts(&self) -> &[::std::string::String] {
+        self.exclude_accounts.as_deref().unwrap_or_default()
+    }
+    /// <p>A list of key-value mappings to target resources. If you specify values for this data type, you must also specify a value for <code>TargetParameterName</code>.</p>
+    /// <p>This <code>Targets</code> parameter takes precedence over the <code>StartAutomationExecution:Targets</code> parameter if both are supplied.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.targets.is_none()`.
+    pub fn targets(&self) -> &[crate::types::Target] {
+        self.targets.as_deref().unwrap_or_default()
+    }
+    /// <p>The maximum number of targets allowed to run this task in parallel. This <code>TargetsMaxConcurrency</code> takes precedence over the <code>StartAutomationExecution:MaxConcurrency</code> parameter if both are supplied.</p>
+    pub fn targets_max_concurrency(&self) -> ::std::option::Option<&str> {
+        self.targets_max_concurrency.as_deref()
+    }
+    /// <p>The maximum number of errors that are allowed before the system stops running the automation on additional targets. This <code>TargetsMaxErrors</code> parameter takes precedence over the <code>StartAutomationExecution:MaxErrors</code> parameter if both are supplied.</p>
+    pub fn targets_max_errors(&self) -> ::std::option::Option<&str> {
+        self.targets_max_errors.as_deref()
+    }
 }
 impl TargetLocation {
     /// Creates a new builder-style object to manufacture [`TargetLocation`](crate::types::TargetLocation).
@@ -64,6 +100,11 @@ pub struct TargetLocationBuilder {
     pub(crate) target_location_max_errors: ::std::option::Option<::std::string::String>,
     pub(crate) execution_role_name: ::std::option::Option<::std::string::String>,
     pub(crate) target_location_alarm_configuration: ::std::option::Option<crate::types::AlarmConfiguration>,
+    pub(crate) include_child_organization_units: ::std::option::Option<bool>,
+    pub(crate) exclude_accounts: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) targets: ::std::option::Option<::std::vec::Vec<crate::types::Target>>,
+    pub(crate) targets_max_concurrency: ::std::option::Option<::std::string::String>,
+    pub(crate) targets_max_errors: ::std::option::Option<::std::string::String>,
 }
 impl TargetLocationBuilder {
     /// Appends an item to `accounts`.
@@ -162,6 +203,91 @@ impl TargetLocationBuilder {
     pub fn get_target_location_alarm_configuration(&self) -> &::std::option::Option<crate::types::AlarmConfiguration> {
         &self.target_location_alarm_configuration
     }
+    /// <p>Indicates whether to include child organizational units (OUs) that are children of the targeted OUs. The default is <code>false</code>.</p>
+    pub fn include_child_organization_units(mut self, input: bool) -> Self {
+        self.include_child_organization_units = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether to include child organizational units (OUs) that are children of the targeted OUs. The default is <code>false</code>.</p>
+    pub fn set_include_child_organization_units(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.include_child_organization_units = input;
+        self
+    }
+    /// <p>Indicates whether to include child organizational units (OUs) that are children of the targeted OUs. The default is <code>false</code>.</p>
+    pub fn get_include_child_organization_units(&self) -> &::std::option::Option<bool> {
+        &self.include_child_organization_units
+    }
+    /// Appends an item to `exclude_accounts`.
+    ///
+    /// To override the contents of this collection use [`set_exclude_accounts`](Self::set_exclude_accounts).
+    ///
+    /// <p>Amazon Web Services accounts or organizational units to exclude as expanded targets.</p>
+    pub fn exclude_accounts(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.exclude_accounts.unwrap_or_default();
+        v.push(input.into());
+        self.exclude_accounts = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Amazon Web Services accounts or organizational units to exclude as expanded targets.</p>
+    pub fn set_exclude_accounts(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.exclude_accounts = input;
+        self
+    }
+    /// <p>Amazon Web Services accounts or organizational units to exclude as expanded targets.</p>
+    pub fn get_exclude_accounts(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.exclude_accounts
+    }
+    /// Appends an item to `targets`.
+    ///
+    /// To override the contents of this collection use [`set_targets`](Self::set_targets).
+    ///
+    /// <p>A list of key-value mappings to target resources. If you specify values for this data type, you must also specify a value for <code>TargetParameterName</code>.</p>
+    /// <p>This <code>Targets</code> parameter takes precedence over the <code>StartAutomationExecution:Targets</code> parameter if both are supplied.</p>
+    pub fn targets(mut self, input: crate::types::Target) -> Self {
+        let mut v = self.targets.unwrap_or_default();
+        v.push(input);
+        self.targets = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of key-value mappings to target resources. If you specify values for this data type, you must also specify a value for <code>TargetParameterName</code>.</p>
+    /// <p>This <code>Targets</code> parameter takes precedence over the <code>StartAutomationExecution:Targets</code> parameter if both are supplied.</p>
+    pub fn set_targets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Target>>) -> Self {
+        self.targets = input;
+        self
+    }
+    /// <p>A list of key-value mappings to target resources. If you specify values for this data type, you must also specify a value for <code>TargetParameterName</code>.</p>
+    /// <p>This <code>Targets</code> parameter takes precedence over the <code>StartAutomationExecution:Targets</code> parameter if both are supplied.</p>
+    pub fn get_targets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Target>> {
+        &self.targets
+    }
+    /// <p>The maximum number of targets allowed to run this task in parallel. This <code>TargetsMaxConcurrency</code> takes precedence over the <code>StartAutomationExecution:MaxConcurrency</code> parameter if both are supplied.</p>
+    pub fn targets_max_concurrency(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.targets_max_concurrency = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The maximum number of targets allowed to run this task in parallel. This <code>TargetsMaxConcurrency</code> takes precedence over the <code>StartAutomationExecution:MaxConcurrency</code> parameter if both are supplied.</p>
+    pub fn set_targets_max_concurrency(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.targets_max_concurrency = input;
+        self
+    }
+    /// <p>The maximum number of targets allowed to run this task in parallel. This <code>TargetsMaxConcurrency</code> takes precedence over the <code>StartAutomationExecution:MaxConcurrency</code> parameter if both are supplied.</p>
+    pub fn get_targets_max_concurrency(&self) -> &::std::option::Option<::std::string::String> {
+        &self.targets_max_concurrency
+    }
+    /// <p>The maximum number of errors that are allowed before the system stops running the automation on additional targets. This <code>TargetsMaxErrors</code> parameter takes precedence over the <code>StartAutomationExecution:MaxErrors</code> parameter if both are supplied.</p>
+    pub fn targets_max_errors(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.targets_max_errors = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The maximum number of errors that are allowed before the system stops running the automation on additional targets. This <code>TargetsMaxErrors</code> parameter takes precedence over the <code>StartAutomationExecution:MaxErrors</code> parameter if both are supplied.</p>
+    pub fn set_targets_max_errors(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.targets_max_errors = input;
+        self
+    }
+    /// <p>The maximum number of errors that are allowed before the system stops running the automation on additional targets. This <code>TargetsMaxErrors</code> parameter takes precedence over the <code>StartAutomationExecution:MaxErrors</code> parameter if both are supplied.</p>
+    pub fn get_targets_max_errors(&self) -> &::std::option::Option<::std::string::String> {
+        &self.targets_max_errors
+    }
     /// Consumes the builder and constructs a [`TargetLocation`](crate::types::TargetLocation).
     pub fn build(self) -> crate::types::TargetLocation {
         crate::types::TargetLocation {
@@ -171,6 +297,11 @@ impl TargetLocationBuilder {
             target_location_max_errors: self.target_location_max_errors,
             execution_role_name: self.execution_role_name,
             target_location_alarm_configuration: self.target_location_alarm_configuration,
+            include_child_organization_units: self.include_child_organization_units.unwrap_or_default(),
+            exclude_accounts: self.exclude_accounts,
+            targets: self.targets,
+            targets_max_concurrency: self.targets_max_concurrency,
+            targets_max_errors: self.targets_max_errors,
         }
     }
 }

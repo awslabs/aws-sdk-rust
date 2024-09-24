@@ -403,6 +403,16 @@ pub(crate) mod shape_finding;
 
 pub(crate) mod shape_flow_logs_configuration_result;
 
+pub(crate) mod shape_grouped_by_account;
+
+pub(crate) mod shape_grouped_by_date;
+
+pub(crate) mod shape_grouped_by_finding_type;
+
+pub(crate) mod shape_grouped_by_resource;
+
+pub(crate) mod shape_grouped_by_severity;
+
 pub(crate) mod shape_invitation;
 
 pub(crate) mod shape_kubernetes_configuration;
@@ -467,15 +477,21 @@ pub(crate) mod shape_usage_resource_result_list;
 
 pub(crate) mod shape_usage_top_accounts_result_list;
 
+pub(crate) mod shape_account_statistics;
+
 pub(crate) mod shape_coverage_filter_condition;
 
 pub(crate) mod shape_coverage_resource_details;
 
 pub(crate) mod shape_data_sources_free_trial;
 
+pub(crate) mod shape_date_statistics;
+
 pub(crate) mod shape_detector_additional_configuration_results;
 
 pub(crate) mod shape_filter_condition;
+
+pub(crate) mod shape_finding_type_statistics;
 
 pub(crate) mod shape_free_trial_feature_configurations_results;
 
@@ -503,6 +519,8 @@ pub(crate) mod shape_resource;
 
 pub(crate) mod shape_resource_details;
 
+pub(crate) mod shape_resource_statistics;
+
 pub(crate) mod shape_scan_condition_pair;
 
 pub(crate) mod shape_scan_ec2_instance_with_findings;
@@ -512,6 +530,8 @@ pub(crate) mod shape_scan_ec2_instance_with_findings_result;
 pub(crate) mod shape_scan_result_details;
 
 pub(crate) mod shape_service;
+
+pub(crate) mod shape_severity_statistics;
 
 pub(crate) mod shape_trigger_details;
 

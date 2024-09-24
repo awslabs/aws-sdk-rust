@@ -115,17 +115,17 @@ impl DescribeOrganizationConfigurationFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::describe_organization_configuration::paginator::DescribeOrganizationConfigurationPaginator {
         crate::operation::describe_organization_configuration::paginator::DescribeOrganizationConfigurationPaginator::new(self.handle, self.inner)
     }
-    /// <p>The ID of the detector to retrieve information about the delegated administrator from.</p>
+    /// <p>The detector ID of the delegated administrator for which you need to retrieve the information.</p>
     pub fn detector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.detector_id(input.into());
         self
     }
-    /// <p>The ID of the detector to retrieve information about the delegated administrator from.</p>
+    /// <p>The detector ID of the delegated administrator for which you need to retrieve the information.</p>
     pub fn set_detector_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_detector_id(input);
         self
     }
-    /// <p>The ID of the detector to retrieve information about the delegated administrator from.</p>
+    /// <p>The detector ID of the delegated administrator for which you need to retrieve the information.</p>
     pub fn get_detector_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_detector_id()
     }

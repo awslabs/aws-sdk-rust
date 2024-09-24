@@ -33,6 +33,8 @@ pub struct CreateChannelInput {
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// Settings for the VPC outputs
     pub vpc: ::std::option::Option<crate::types::VpcOutputSettings>,
+    /// The Elemental Anywhere settings for this channel.
+    pub anywhere_settings: ::std::option::Option<crate::types::AnywhereSettings>,
 }
 impl CreateChannelInput {
     /// Specification of CDI inputs for this channel
@@ -96,6 +98,10 @@ impl CreateChannelInput {
     pub fn vpc(&self) -> ::std::option::Option<&crate::types::VpcOutputSettings> {
         self.vpc.as_ref()
     }
+    /// The Elemental Anywhere settings for this channel.
+    pub fn anywhere_settings(&self) -> ::std::option::Option<&crate::types::AnywhereSettings> {
+        self.anywhere_settings.as_ref()
+    }
 }
 impl CreateChannelInput {
     /// Creates a new builder-style object to manufacture [`CreateChannelInput`](crate::operation::create_channel::CreateChannelInput).
@@ -122,6 +128,7 @@ pub struct CreateChannelInputBuilder {
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) vpc: ::std::option::Option<crate::types::VpcOutputSettings>,
+    pub(crate) anywhere_settings: ::std::option::Option<crate::types::AnywhereSettings>,
 }
 impl CreateChannelInputBuilder {
     /// Specification of CDI inputs for this channel
@@ -341,6 +348,20 @@ impl CreateChannelInputBuilder {
     pub fn get_vpc(&self) -> &::std::option::Option<crate::types::VpcOutputSettings> {
         &self.vpc
     }
+    /// The Elemental Anywhere settings for this channel.
+    pub fn anywhere_settings(mut self, input: crate::types::AnywhereSettings) -> Self {
+        self.anywhere_settings = ::std::option::Option::Some(input);
+        self
+    }
+    /// The Elemental Anywhere settings for this channel.
+    pub fn set_anywhere_settings(mut self, input: ::std::option::Option<crate::types::AnywhereSettings>) -> Self {
+        self.anywhere_settings = input;
+        self
+    }
+    /// The Elemental Anywhere settings for this channel.
+    pub fn get_anywhere_settings(&self) -> &::std::option::Option<crate::types::AnywhereSettings> {
+        &self.anywhere_settings
+    }
     /// Consumes the builder and constructs a [`CreateChannelInput`](crate::operation::create_channel::CreateChannelInput).
     pub fn build(
         self,
@@ -360,6 +381,7 @@ impl CreateChannelInputBuilder {
             role_arn: self.role_arn,
             tags: self.tags,
             vpc: self.vpc,
+            anywhere_settings: self.anywhere_settings,
         })
     }
 }

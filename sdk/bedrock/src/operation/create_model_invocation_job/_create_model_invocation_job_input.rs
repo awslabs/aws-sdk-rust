@@ -15,6 +15,8 @@ pub struct CreateModelInvocationJobInput {
     pub input_data_config: ::std::option::Option<crate::types::ModelInvocationJobInputDataConfig>,
     /// <p>Details about the location of the output of the batch inference job.</p>
     pub output_data_config: ::std::option::Option<crate::types::ModelInvocationJobOutputDataConfig>,
+    /// <p>The configuration of the Virtual Private Cloud (VPC) for the data in the batch inference job. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/batch-inference-vpc">Protect batch inference jobs using a VPC</a>.</p>
+    pub vpc_config: ::std::option::Option<crate::types::VpcConfig>,
     /// <p>The number of hours after which to force the batch inference job to time out.</p>
     pub timeout_duration_in_hours: ::std::option::Option<i32>,
     /// <p>Any tags to associate with the batch inference job. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/tagging.html">Tagging Amazon Bedrock resources</a>.</p>
@@ -45,6 +47,10 @@ impl CreateModelInvocationJobInput {
     pub fn output_data_config(&self) -> ::std::option::Option<&crate::types::ModelInvocationJobOutputDataConfig> {
         self.output_data_config.as_ref()
     }
+    /// <p>The configuration of the Virtual Private Cloud (VPC) for the data in the batch inference job. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/batch-inference-vpc">Protect batch inference jobs using a VPC</a>.</p>
+    pub fn vpc_config(&self) -> ::std::option::Option<&crate::types::VpcConfig> {
+        self.vpc_config.as_ref()
+    }
     /// <p>The number of hours after which to force the batch inference job to time out.</p>
     pub fn timeout_duration_in_hours(&self) -> ::std::option::Option<i32> {
         self.timeout_duration_in_hours
@@ -73,6 +79,7 @@ pub struct CreateModelInvocationJobInputBuilder {
     pub(crate) model_id: ::std::option::Option<::std::string::String>,
     pub(crate) input_data_config: ::std::option::Option<crate::types::ModelInvocationJobInputDataConfig>,
     pub(crate) output_data_config: ::std::option::Option<crate::types::ModelInvocationJobOutputDataConfig>,
+    pub(crate) vpc_config: ::std::option::Option<crate::types::VpcConfig>,
     pub(crate) timeout_duration_in_hours: ::std::option::Option<i32>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
@@ -166,6 +173,20 @@ impl CreateModelInvocationJobInputBuilder {
     pub fn get_output_data_config(&self) -> &::std::option::Option<crate::types::ModelInvocationJobOutputDataConfig> {
         &self.output_data_config
     }
+    /// <p>The configuration of the Virtual Private Cloud (VPC) for the data in the batch inference job. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/batch-inference-vpc">Protect batch inference jobs using a VPC</a>.</p>
+    pub fn vpc_config(mut self, input: crate::types::VpcConfig) -> Self {
+        self.vpc_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration of the Virtual Private Cloud (VPC) for the data in the batch inference job. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/batch-inference-vpc">Protect batch inference jobs using a VPC</a>.</p>
+    pub fn set_vpc_config(mut self, input: ::std::option::Option<crate::types::VpcConfig>) -> Self {
+        self.vpc_config = input;
+        self
+    }
+    /// <p>The configuration of the Virtual Private Cloud (VPC) for the data in the batch inference job. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/batch-inference-vpc">Protect batch inference jobs using a VPC</a>.</p>
+    pub fn get_vpc_config(&self) -> &::std::option::Option<crate::types::VpcConfig> {
+        &self.vpc_config
+    }
     /// <p>The number of hours after which to force the batch inference job to time out.</p>
     pub fn timeout_duration_in_hours(mut self, input: i32) -> Self {
         self.timeout_duration_in_hours = ::std::option::Option::Some(input);
@@ -214,6 +235,7 @@ impl CreateModelInvocationJobInputBuilder {
             model_id: self.model_id,
             input_data_config: self.input_data_config,
             output_data_config: self.output_data_config,
+            vpc_config: self.vpc_config,
             timeout_duration_in_hours: self.timeout_duration_in_hours,
             tags: self.tags,
         })

@@ -108,31 +108,31 @@ impl GetCoverageStatisticsFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The unique ID of the GuardDuty detector associated to the coverage statistics.</p>
+    /// <p>The unique ID of the GuardDuty detector.</p>
     pub fn detector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.detector_id(input.into());
         self
     }
-    /// <p>The unique ID of the GuardDuty detector associated to the coverage statistics.</p>
+    /// <p>The unique ID of the GuardDuty detector.</p>
     pub fn set_detector_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_detector_id(input);
         self
     }
-    /// <p>The unique ID of the GuardDuty detector associated to the coverage statistics.</p>
+    /// <p>The unique ID of the GuardDuty detector.</p>
     pub fn get_detector_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_detector_id()
     }
-    /// <p>Represents the criteria used to filter the coverage statistics</p>
+    /// <p>Represents the criteria used to filter the coverage statistics.</p>
     pub fn filter_criteria(mut self, input: crate::types::CoverageFilterCriteria) -> Self {
         self.inner = self.inner.filter_criteria(input);
         self
     }
-    /// <p>Represents the criteria used to filter the coverage statistics</p>
+    /// <p>Represents the criteria used to filter the coverage statistics.</p>
     pub fn set_filter_criteria(mut self, input: ::std::option::Option<crate::types::CoverageFilterCriteria>) -> Self {
         self.inner = self.inner.set_filter_criteria(input);
         self
     }
-    /// <p>Represents the criteria used to filter the coverage statistics</p>
+    /// <p>Represents the criteria used to filter the coverage statistics.</p>
     pub fn get_filter_criteria(&self) -> &::std::option::Option<crate::types::CoverageFilterCriteria> {
         self.inner.get_filter_criteria()
     }

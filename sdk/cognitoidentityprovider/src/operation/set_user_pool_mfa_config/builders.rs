@@ -24,7 +24,7 @@ impl crate::operation::set_user_pool_mfa_config::builders::SetUserPoolMfaConfigI
 ///
 /// <p>Sets the user pool multi-factor authentication (MFA) configuration.</p><note>
 /// <p>This action might generate an SMS text message. Starting June 1, 2021, US telecom carriers require you to register an origination phone number before you can send SMS messages to US phone numbers. If you use SMS text messages in Amazon Cognito, you must register a phone number with <a href="https://console.aws.amazon.com/pinpoint/home/">Amazon Pinpoint</a>. Amazon Cognito uses the registered number automatically. Otherwise, Amazon Cognito users who must receive SMS messages might not be able to sign up, activate their accounts, or sign in.</p>
-/// <p>If you have never used SMS text messages with Amazon Cognito or any other Amazon Web Services service, Amazon Simple Notification Service might place your account in the SMS sandbox. In <i> <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox mode</a> </i>, you can send messages only to verified phone numbers. After you test your app while in the sandbox environment, you can move out of the sandbox and into production. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-sms-settings.html"> SMS message settings for Amazon Cognito user pools</a> in the <i>Amazon Cognito Developer Guide</i>.</p>
+/// <p>If you have never used SMS text messages with Amazon Cognito or any other Amazon Web Servicesservice, Amazon Simple Notification Service might place your account in the SMS sandbox. In <i> <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox mode</a> </i>, you can send messages only to verified phone numbers. After you test your app while in the sandbox environment, you can move out of the sandbox and into production. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-sms-settings.html"> SMS message settings for Amazon Cognito user pools</a> in the <i>Amazon Cognito Developer Guide</i>.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SetUserPoolMfaConfigFluentBuilder {
@@ -125,33 +125,47 @@ impl SetUserPoolMfaConfigFluentBuilder {
     pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_user_pool_id()
     }
-    /// <p>The SMS text message MFA configuration.</p>
+    /// <p>Configures user pool SMS messages for MFA. Sets the message template and the SMS message sending configuration for Amazon SNS.</p>
     pub fn sms_mfa_configuration(mut self, input: crate::types::SmsMfaConfigType) -> Self {
         self.inner = self.inner.sms_mfa_configuration(input);
         self
     }
-    /// <p>The SMS text message MFA configuration.</p>
+    /// <p>Configures user pool SMS messages for MFA. Sets the message template and the SMS message sending configuration for Amazon SNS.</p>
     pub fn set_sms_mfa_configuration(mut self, input: ::std::option::Option<crate::types::SmsMfaConfigType>) -> Self {
         self.inner = self.inner.set_sms_mfa_configuration(input);
         self
     }
-    /// <p>The SMS text message MFA configuration.</p>
+    /// <p>Configures user pool SMS messages for MFA. Sets the message template and the SMS message sending configuration for Amazon SNS.</p>
     pub fn get_sms_mfa_configuration(&self) -> &::std::option::Option<crate::types::SmsMfaConfigType> {
         self.inner.get_sms_mfa_configuration()
     }
-    /// <p>The software token MFA configuration.</p>
+    /// <p>Configures a user pool for time-based one-time password (TOTP) MFA. Enables or disables TOTP.</p>
     pub fn software_token_mfa_configuration(mut self, input: crate::types::SoftwareTokenMfaConfigType) -> Self {
         self.inner = self.inner.software_token_mfa_configuration(input);
         self
     }
-    /// <p>The software token MFA configuration.</p>
+    /// <p>Configures a user pool for time-based one-time password (TOTP) MFA. Enables or disables TOTP.</p>
     pub fn set_software_token_mfa_configuration(mut self, input: ::std::option::Option<crate::types::SoftwareTokenMfaConfigType>) -> Self {
         self.inner = self.inner.set_software_token_mfa_configuration(input);
         self
     }
-    /// <p>The software token MFA configuration.</p>
+    /// <p>Configures a user pool for time-based one-time password (TOTP) MFA. Enables or disables TOTP.</p>
     pub fn get_software_token_mfa_configuration(&self) -> &::std::option::Option<crate::types::SoftwareTokenMfaConfigType> {
         self.inner.get_software_token_mfa_configuration()
+    }
+    /// <p>Configures user pool email messages for MFA. Sets the subject and body of the email message template for MFA messages. To activate this setting, <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-advanced-security.html"> advanced security features</a> must be active in your user pool.</p>
+    pub fn email_mfa_configuration(mut self, input: crate::types::EmailMfaConfigType) -> Self {
+        self.inner = self.inner.email_mfa_configuration(input);
+        self
+    }
+    /// <p>Configures user pool email messages for MFA. Sets the subject and body of the email message template for MFA messages. To activate this setting, <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-advanced-security.html"> advanced security features</a> must be active in your user pool.</p>
+    pub fn set_email_mfa_configuration(mut self, input: ::std::option::Option<crate::types::EmailMfaConfigType>) -> Self {
+        self.inner = self.inner.set_email_mfa_configuration(input);
+        self
+    }
+    /// <p>Configures user pool email messages for MFA. Sets the subject and body of the email message template for MFA messages. To activate this setting, <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-advanced-security.html"> advanced security features</a> must be active in your user pool.</p>
+    pub fn get_email_mfa_configuration(&self) -> &::std::option::Option<crate::types::EmailMfaConfigType> {
+        self.inner.get_email_mfa_configuration()
     }
     /// <p>The MFA configuration. If you set the MfaConfiguration value to ‘ON’, only users who have set up an MFA factor can sign in. To learn more, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-mfa.html">Adding Multi-Factor Authentication (MFA) to a user pool</a>. Valid values include:</p>
     /// <ul>

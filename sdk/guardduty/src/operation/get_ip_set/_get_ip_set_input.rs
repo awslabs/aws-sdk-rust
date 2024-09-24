@@ -3,13 +3,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetIpSetInput {
-    /// <p>The unique ID of the detector that the IPSet is associated with.</p>
+    /// <p>The unique ID of the detector that is associated with the IPSet.</p>
     pub detector_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique ID of the IPSet to retrieve.</p>
     pub ip_set_id: ::std::option::Option<::std::string::String>,
 }
 impl GetIpSetInput {
-    /// <p>The unique ID of the detector that the IPSet is associated with.</p>
+    /// <p>The unique ID of the detector that is associated with the IPSet.</p>
     pub fn detector_id(&self) -> ::std::option::Option<&str> {
         self.detector_id.as_deref()
     }
@@ -33,18 +33,18 @@ pub struct GetIpSetInputBuilder {
     pub(crate) ip_set_id: ::std::option::Option<::std::string::String>,
 }
 impl GetIpSetInputBuilder {
-    /// <p>The unique ID of the detector that the IPSet is associated with.</p>
+    /// <p>The unique ID of the detector that is associated with the IPSet.</p>
     /// This field is required.
     pub fn detector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.detector_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique ID of the detector that the IPSet is associated with.</p>
+    /// <p>The unique ID of the detector that is associated with the IPSet.</p>
     pub fn set_detector_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.detector_id = input;
         self
     }
-    /// <p>The unique ID of the detector that the IPSet is associated with.</p>
+    /// <p>The unique ID of the detector that is associated with the IPSet.</p>
     pub fn get_detector_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.detector_id
     }

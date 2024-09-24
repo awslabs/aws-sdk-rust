@@ -15,6 +15,8 @@ pub use crate::types::_case_sensitivity::CaseSensitivity;
 
 pub use crate::types::_object_acl::ObjectAcl;
 
+pub use crate::types::_encryption_type::EncryptionType;
+
 pub use crate::types::_nfs_file_share_defaults::NfsFileShareDefaults;
 
 pub use crate::types::_software_update_preferences::SoftwareUpdatePreferences;
@@ -112,6 +114,8 @@ mod _chap_info;
 mod _devicei_scsi_attributes;
 
 mod _disk;
+
+mod _encryption_type;
 
 mod _endpoint_network_configuration;
 

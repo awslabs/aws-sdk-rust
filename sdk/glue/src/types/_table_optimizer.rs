@@ -4,7 +4,15 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TableOptimizer {
-    /// <p>The type of table optimizer. Currently, the only valid value is <code>compaction</code>.</p>
+    /// <p>The type of table optimizer. The valid values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>compaction</code>: for managing compaction with a table optimizer.</p></li>
+    /// <li>
+    /// <p><code>retention</code>: for managing the retention of snapshot with a table optimizer.</p></li>
+    /// <li>
+    /// <p><code>orphan_file_deletion</code>: for managing the deletion of orphan files with a table optimizer.</p></li>
+    /// </ul>
     pub r#type: ::std::option::Option<crate::types::TableOptimizerType>,
     /// <p>A <code>TableOptimizerConfiguration</code> object that was specified when creating or updating a table optimizer.</p>
     pub configuration: ::std::option::Option<crate::types::TableOptimizerConfiguration>,
@@ -12,7 +20,15 @@ pub struct TableOptimizer {
     pub last_run: ::std::option::Option<crate::types::TableOptimizerRun>,
 }
 impl TableOptimizer {
-    /// <p>The type of table optimizer. Currently, the only valid value is <code>compaction</code>.</p>
+    /// <p>The type of table optimizer. The valid values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>compaction</code>: for managing compaction with a table optimizer.</p></li>
+    /// <li>
+    /// <p><code>retention</code>: for managing the retention of snapshot with a table optimizer.</p></li>
+    /// <li>
+    /// <p><code>orphan_file_deletion</code>: for managing the deletion of orphan files with a table optimizer.</p></li>
+    /// </ul>
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::TableOptimizerType> {
         self.r#type.as_ref()
     }
@@ -41,17 +57,41 @@ pub struct TableOptimizerBuilder {
     pub(crate) last_run: ::std::option::Option<crate::types::TableOptimizerRun>,
 }
 impl TableOptimizerBuilder {
-    /// <p>The type of table optimizer. Currently, the only valid value is <code>compaction</code>.</p>
+    /// <p>The type of table optimizer. The valid values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>compaction</code>: for managing compaction with a table optimizer.</p></li>
+    /// <li>
+    /// <p><code>retention</code>: for managing the retention of snapshot with a table optimizer.</p></li>
+    /// <li>
+    /// <p><code>orphan_file_deletion</code>: for managing the deletion of orphan files with a table optimizer.</p></li>
+    /// </ul>
     pub fn r#type(mut self, input: crate::types::TableOptimizerType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of table optimizer. Currently, the only valid value is <code>compaction</code>.</p>
+    /// <p>The type of table optimizer. The valid values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>compaction</code>: for managing compaction with a table optimizer.</p></li>
+    /// <li>
+    /// <p><code>retention</code>: for managing the retention of snapshot with a table optimizer.</p></li>
+    /// <li>
+    /// <p><code>orphan_file_deletion</code>: for managing the deletion of orphan files with a table optimizer.</p></li>
+    /// </ul>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::TableOptimizerType>) -> Self {
         self.r#type = input;
         self
     }
-    /// <p>The type of table optimizer. Currently, the only valid value is <code>compaction</code>.</p>
+    /// <p>The type of table optimizer. The valid values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>compaction</code>: for managing compaction with a table optimizer.</p></li>
+    /// <li>
+    /// <p><code>retention</code>: for managing the retention of snapshot with a table optimizer.</p></li>
+    /// <li>
+    /// <p><code>orphan_file_deletion</code>: for managing the deletion of orphan files with a table optimizer.</p></li>
+    /// </ul>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::TableOptimizerType> {
         &self.r#type
     }

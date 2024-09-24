@@ -57,6 +57,8 @@ pub use crate::types::_runtime_version::RuntimeVersion;
 
 pub use crate::types::_canary_last_run::CanaryLastRun;
 
+pub use crate::types::_resource_to_tag::ResourceToTag;
+
 mod _artifact_config_input;
 
 mod _artifact_config_output;
@@ -102,6 +104,8 @@ mod _encryption_mode;
 mod _group;
 
 mod _group_summary;
+
+mod _resource_to_tag;
 
 mod _runtime_version;
 

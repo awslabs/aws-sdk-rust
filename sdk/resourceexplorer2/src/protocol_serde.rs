@@ -49,6 +49,8 @@ pub(crate) mod shape_list_indexes;
 
 pub(crate) mod shape_list_indexes_for_members;
 
+pub(crate) mod shape_list_resources;
+
 pub(crate) mod shape_list_supported_resource_types;
 
 pub(crate) mod shape_list_tags_for_resource;
@@ -96,6 +98,8 @@ pub(crate) mod shape_internal_server_exception;
 pub(crate) mod shape_list_indexes_for_members_input;
 
 pub(crate) mod shape_list_indexes_input;
+
+pub(crate) mod shape_list_resources_input;
 
 pub(crate) mod shape_list_supported_resource_types_input;
 

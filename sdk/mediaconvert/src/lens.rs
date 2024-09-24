@@ -49,6 +49,16 @@ pub(crate) fn reflens_list_queues_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_versions_output_output_next_token(
+    input: &crate::operation::list_versions::ListVersionsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_search_jobs_output_output_next_token(
     input: &crate::operation::search_jobs::SearchJobsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -103,6 +113,16 @@ pub(crate) fn lens_list_queues_output_output_queues(
     input: crate::operation::list_queues::ListQueuesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Queue>> {
     let input = match input.queues {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_versions_output_output_versions(
+    input: crate::operation::list_versions::ListVersionsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::JobEngineVersion>> {
+    let input = match input.versions {
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,
     };

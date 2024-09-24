@@ -33,6 +33,8 @@ pub use crate::types::_job_run_summary::JobRunSummaryBuilder;
 
 pub use crate::types::_application::ApplicationBuilder;
 
+pub use crate::types::_scheduler_configuration::SchedulerConfigurationBuilder;
+
 pub use crate::types::_interactive_configuration::InteractiveConfigurationBuilder;
 
 pub use crate::types::_worker_type_specification::WorkerTypeSpecificationBuilder;

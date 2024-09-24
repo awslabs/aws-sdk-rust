@@ -9,107 +9,110 @@ pub fn ser_create_smb_file_share_input_input(
     if let Some(var_2) = &input.gateway_arn {
         object.key("GatewayARN").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.kms_encrypted {
-        object.key("KMSEncrypted").boolean(*var_3);
+    if let Some(var_3) = &input.encryption_type {
+        object.key("EncryptionType").string(var_3.as_str());
     }
-    if let Some(var_4) = &input.kms_key {
-        object.key("KMSKey").string(var_4.as_str());
+    if let Some(var_4) = &input.kms_encrypted {
+        object.key("KMSEncrypted").boolean(*var_4);
     }
-    if let Some(var_5) = &input.role {
-        object.key("Role").string(var_5.as_str());
+    if let Some(var_5) = &input.kms_key {
+        object.key("KMSKey").string(var_5.as_str());
     }
-    if let Some(var_6) = &input.location_arn {
-        object.key("LocationARN").string(var_6.as_str());
+    if let Some(var_6) = &input.role {
+        object.key("Role").string(var_6.as_str());
     }
-    if let Some(var_7) = &input.default_storage_class {
-        object.key("DefaultStorageClass").string(var_7.as_str());
+    if let Some(var_7) = &input.location_arn {
+        object.key("LocationARN").string(var_7.as_str());
     }
-    if let Some(var_8) = &input.object_acl {
-        object.key("ObjectACL").string(var_8.as_str());
+    if let Some(var_8) = &input.default_storage_class {
+        object.key("DefaultStorageClass").string(var_8.as_str());
     }
-    if let Some(var_9) = &input.read_only {
-        object.key("ReadOnly").boolean(*var_9);
+    if let Some(var_9) = &input.object_acl {
+        object.key("ObjectACL").string(var_9.as_str());
     }
-    if let Some(var_10) = &input.guess_mime_type_enabled {
-        object.key("GuessMIMETypeEnabled").boolean(*var_10);
+    if let Some(var_10) = &input.read_only {
+        object.key("ReadOnly").boolean(*var_10);
     }
-    if let Some(var_11) = &input.requester_pays {
-        object.key("RequesterPays").boolean(*var_11);
+    if let Some(var_11) = &input.guess_mime_type_enabled {
+        object.key("GuessMIMETypeEnabled").boolean(*var_11);
     }
-    if let Some(var_12) = &input.smbacl_enabled {
-        object.key("SMBACLEnabled").boolean(*var_12);
+    if let Some(var_12) = &input.requester_pays {
+        object.key("RequesterPays").boolean(*var_12);
     }
-    if let Some(var_13) = &input.access_based_enumeration {
-        object.key("AccessBasedEnumeration").boolean(*var_13);
+    if let Some(var_13) = &input.smbacl_enabled {
+        object.key("SMBACLEnabled").boolean(*var_13);
     }
-    if let Some(var_14) = &input.admin_user_list {
-        let mut array_15 = object.key("AdminUserList").start_array();
-        for item_16 in var_14 {
+    if let Some(var_14) = &input.access_based_enumeration {
+        object.key("AccessBasedEnumeration").boolean(*var_14);
+    }
+    if let Some(var_15) = &input.admin_user_list {
+        let mut array_16 = object.key("AdminUserList").start_array();
+        for item_17 in var_15 {
             {
-                array_15.value().string(item_16.as_str());
+                array_16.value().string(item_17.as_str());
             }
         }
-        array_15.finish();
+        array_16.finish();
     }
-    if let Some(var_17) = &input.valid_user_list {
-        let mut array_18 = object.key("ValidUserList").start_array();
-        for item_19 in var_17 {
+    if let Some(var_18) = &input.valid_user_list {
+        let mut array_19 = object.key("ValidUserList").start_array();
+        for item_20 in var_18 {
             {
-                array_18.value().string(item_19.as_str());
+                array_19.value().string(item_20.as_str());
             }
         }
-        array_18.finish();
+        array_19.finish();
     }
-    if let Some(var_20) = &input.invalid_user_list {
-        let mut array_21 = object.key("InvalidUserList").start_array();
-        for item_22 in var_20 {
+    if let Some(var_21) = &input.invalid_user_list {
+        let mut array_22 = object.key("InvalidUserList").start_array();
+        for item_23 in var_21 {
             {
-                array_21.value().string(item_22.as_str());
+                array_22.value().string(item_23.as_str());
             }
         }
-        array_21.finish();
+        array_22.finish();
     }
-    if let Some(var_23) = &input.audit_destination_arn {
-        object.key("AuditDestinationARN").string(var_23.as_str());
+    if let Some(var_24) = &input.audit_destination_arn {
+        object.key("AuditDestinationARN").string(var_24.as_str());
     }
-    if let Some(var_24) = &input.authentication {
-        object.key("Authentication").string(var_24.as_str());
+    if let Some(var_25) = &input.authentication {
+        object.key("Authentication").string(var_25.as_str());
     }
-    if let Some(var_25) = &input.case_sensitivity {
-        object.key("CaseSensitivity").string(var_25.as_str());
+    if let Some(var_26) = &input.case_sensitivity {
+        object.key("CaseSensitivity").string(var_26.as_str());
     }
-    if let Some(var_26) = &input.tags {
-        let mut array_27 = object.key("Tags").start_array();
-        for item_28 in var_26 {
+    if let Some(var_27) = &input.tags {
+        let mut array_28 = object.key("Tags").start_array();
+        for item_29 in var_27 {
             {
                 #[allow(unused_mut)]
-                let mut object_29 = array_27.value().start_object();
-                crate::protocol_serde::shape_tag::ser_tag(&mut object_29, item_28)?;
-                object_29.finish();
+                let mut object_30 = array_28.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_30, item_29)?;
+                object_30.finish();
             }
         }
-        array_27.finish();
+        array_28.finish();
     }
-    if let Some(var_30) = &input.file_share_name {
-        object.key("FileShareName").string(var_30.as_str());
+    if let Some(var_31) = &input.file_share_name {
+        object.key("FileShareName").string(var_31.as_str());
     }
-    if let Some(var_31) = &input.cache_attributes {
+    if let Some(var_32) = &input.cache_attributes {
         #[allow(unused_mut)]
-        let mut object_32 = object.key("CacheAttributes").start_object();
-        crate::protocol_serde::shape_cache_attributes::ser_cache_attributes(&mut object_32, var_31)?;
-        object_32.finish();
+        let mut object_33 = object.key("CacheAttributes").start_object();
+        crate::protocol_serde::shape_cache_attributes::ser_cache_attributes(&mut object_33, var_32)?;
+        object_33.finish();
     }
-    if let Some(var_33) = &input.notification_policy {
-        object.key("NotificationPolicy").string(var_33.as_str());
+    if let Some(var_34) = &input.notification_policy {
+        object.key("NotificationPolicy").string(var_34.as_str());
     }
-    if let Some(var_34) = &input.vpc_endpoint_dns_name {
-        object.key("VPCEndpointDNSName").string(var_34.as_str());
+    if let Some(var_35) = &input.vpc_endpoint_dns_name {
+        object.key("VPCEndpointDNSName").string(var_35.as_str());
     }
-    if let Some(var_35) = &input.bucket_region {
-        object.key("BucketRegion").string(var_35.as_str());
+    if let Some(var_36) = &input.bucket_region {
+        object.key("BucketRegion").string(var_36.as_str());
     }
-    if let Some(var_36) = &input.oplocks_enabled {
-        object.key("OplocksEnabled").boolean(*var_36);
+    if let Some(var_37) = &input.oplocks_enabled {
+        object.key("OplocksEnabled").boolean(*var_37);
     }
     Ok(())
 }

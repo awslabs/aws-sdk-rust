@@ -6,9 +6,9 @@ pub(crate) struct Handle {
     pub(crate) runtime_plugins: ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugins,
 }
 
-/// Client for Amazon EC2 Container Registry
+/// Client for Amazon Elastic Container Registry
 ///
-/// Client for invoking operations on Amazon EC2 Container Registry. Each operation on Amazon EC2 Container Registry is a method on this
+/// Client for invoking operations on Amazon Elastic Container Registry. Each operation on Amazon Elastic Container Registry is a method on this
 /// this struct. `.send()` MUST be invoked on the generated operations to dispatch the request to the service.
 /// ## Constructing a `Client`
 ///

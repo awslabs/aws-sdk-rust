@@ -21,6 +21,9 @@ pub fn ser_filter_relative_date_time_control(
         )?;
         object_2.finish();
     }
+    if let Some(var_3) = &input.commit_mode {
+        object.key("CommitMode").string(var_3.as_str());
+    }
     Ok(())
 }
 
@@ -64,6 +67,13 @@ where
                             builder = builder.set_display_options(
                                     crate::protocol_serde::shape_relative_date_time_control_display_options::de_relative_date_time_control_display_options(tokens)?
                                 );
+                        }
+                        "CommitMode" => {
+                            builder = builder.set_commit_mode(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CommitMode::from(u.as_ref())))
+                                    .transpose()?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

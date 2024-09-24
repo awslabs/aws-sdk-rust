@@ -35,6 +35,24 @@ pub fn de_update_table_optimizer_http_error(
             }
             tmp
         }),
+        "ConcurrentModificationException" => crate::operation::update_table_optimizer::UpdateTableOptimizerError::ConcurrentModificationException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ConcurrentModificationExceptionBuilder::default();
+                output = crate::protocol_serde::shape_concurrent_modification_exception::de_concurrent_modification_exception_json_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::update_table_optimizer::UpdateTableOptimizerError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "EntityNotFoundException" => crate::operation::update_table_optimizer::UpdateTableOptimizerError::EntityNotFoundException({
             #[allow(unused_mut)]
             let mut tmp = {
@@ -71,6 +89,36 @@ pub fn de_update_table_optimizer_http_error(
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::InvalidInputExceptionBuilder::default();
                 output = crate::protocol_serde::shape_invalid_input_exception::de_invalid_input_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::update_table_optimizer::UpdateTableOptimizerError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ThrottlingException" => crate::operation::update_table_optimizer::UpdateTableOptimizerError::ThrottlingException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ThrottlingExceptionBuilder::default();
+                output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::update_table_optimizer::UpdateTableOptimizerError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ValidationException" => crate::operation::update_table_optimizer::UpdateTableOptimizerError::ValidationException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ValidationExceptionBuilder::default();
+                output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output)
                     .map_err(crate::operation::update_table_optimizer::UpdateTableOptimizerError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()

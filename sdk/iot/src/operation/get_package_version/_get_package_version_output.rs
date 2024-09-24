@@ -13,6 +13,8 @@ pub struct GetPackageVersionOutput {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Metadata that were added to the package version that can be used to define a package version’s configuration.</p>
     pub attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>The various components that make up a software package version.</p>
+    pub artifact: ::std::option::Option<crate::types::PackageVersionArtifact>,
     /// <p>The status associated to the package version. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/preparing-to-use-software-package-catalog.html#package-version-lifecycle">Package version lifecycle</a>.</p>
     pub status: ::std::option::Option<crate::types::PackageVersionStatus>,
     /// <p>Error reason for a package version failure during creation or update.</p>
@@ -21,6 +23,12 @@ pub struct GetPackageVersionOutput {
     pub creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date when the package version was last updated.</p>
     pub last_modified_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The software bill of materials for a software package version.</p>
+    pub sbom: ::std::option::Option<crate::types::Sbom>,
+    /// <p>The status of the validation for a new software bill of materials added to a software package version.</p>
+    pub sbom_validation_status: ::std::option::Option<crate::types::SbomValidationStatus>,
+    /// <p>The inline job document associated with a software package version used for a quick job deployment via IoT Jobs.</p>
+    pub recipe: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetPackageVersionOutput {
@@ -44,6 +52,10 @@ impl GetPackageVersionOutput {
     pub fn attributes(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.attributes.as_ref()
     }
+    /// <p>The various components that make up a software package version.</p>
+    pub fn artifact(&self) -> ::std::option::Option<&crate::types::PackageVersionArtifact> {
+        self.artifact.as_ref()
+    }
     /// <p>The status associated to the package version. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/preparing-to-use-software-package-catalog.html#package-version-lifecycle">Package version lifecycle</a>.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::PackageVersionStatus> {
         self.status.as_ref()
@@ -60,6 +72,18 @@ impl GetPackageVersionOutput {
     pub fn last_modified_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_modified_date.as_ref()
     }
+    /// <p>The software bill of materials for a software package version.</p>
+    pub fn sbom(&self) -> ::std::option::Option<&crate::types::Sbom> {
+        self.sbom.as_ref()
+    }
+    /// <p>The status of the validation for a new software bill of materials added to a software package version.</p>
+    pub fn sbom_validation_status(&self) -> ::std::option::Option<&crate::types::SbomValidationStatus> {
+        self.sbom_validation_status.as_ref()
+    }
+    /// <p>The inline job document associated with a software package version used for a quick job deployment via IoT Jobs.</p>
+    pub fn recipe(&self) -> ::std::option::Option<&str> {
+        self.recipe.as_deref()
+    }
 }
 impl ::std::fmt::Debug for GetPackageVersionOutput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -69,10 +93,14 @@ impl ::std::fmt::Debug for GetPackageVersionOutput {
         formatter.field("version_name", &self.version_name);
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("attributes", &"*** Sensitive Data Redacted ***");
+        formatter.field("artifact", &self.artifact);
         formatter.field("status", &self.status);
         formatter.field("error_reason", &self.error_reason);
         formatter.field("creation_date", &self.creation_date);
         formatter.field("last_modified_date", &self.last_modified_date);
+        formatter.field("sbom", &self.sbom);
+        formatter.field("sbom_validation_status", &self.sbom_validation_status);
+        formatter.field("recipe", &"*** Sensitive Data Redacted ***");
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
@@ -98,10 +126,14 @@ pub struct GetPackageVersionOutputBuilder {
     pub(crate) version_name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) artifact: ::std::option::Option<crate::types::PackageVersionArtifact>,
     pub(crate) status: ::std::option::Option<crate::types::PackageVersionStatus>,
     pub(crate) error_reason: ::std::option::Option<::std::string::String>,
     pub(crate) creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_modified_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) sbom: ::std::option::Option<crate::types::Sbom>,
+    pub(crate) sbom_validation_status: ::std::option::Option<crate::types::SbomValidationStatus>,
+    pub(crate) recipe: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetPackageVersionOutputBuilder {
@@ -181,6 +213,20 @@ impl GetPackageVersionOutputBuilder {
     pub fn get_attributes(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.attributes
     }
+    /// <p>The various components that make up a software package version.</p>
+    pub fn artifact(mut self, input: crate::types::PackageVersionArtifact) -> Self {
+        self.artifact = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The various components that make up a software package version.</p>
+    pub fn set_artifact(mut self, input: ::std::option::Option<crate::types::PackageVersionArtifact>) -> Self {
+        self.artifact = input;
+        self
+    }
+    /// <p>The various components that make up a software package version.</p>
+    pub fn get_artifact(&self) -> &::std::option::Option<crate::types::PackageVersionArtifact> {
+        &self.artifact
+    }
     /// <p>The status associated to the package version. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/preparing-to-use-software-package-catalog.html#package-version-lifecycle">Package version lifecycle</a>.</p>
     pub fn status(mut self, input: crate::types::PackageVersionStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -237,6 +283,48 @@ impl GetPackageVersionOutputBuilder {
     pub fn get_last_modified_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_modified_date
     }
+    /// <p>The software bill of materials for a software package version.</p>
+    pub fn sbom(mut self, input: crate::types::Sbom) -> Self {
+        self.sbom = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The software bill of materials for a software package version.</p>
+    pub fn set_sbom(mut self, input: ::std::option::Option<crate::types::Sbom>) -> Self {
+        self.sbom = input;
+        self
+    }
+    /// <p>The software bill of materials for a software package version.</p>
+    pub fn get_sbom(&self) -> &::std::option::Option<crate::types::Sbom> {
+        &self.sbom
+    }
+    /// <p>The status of the validation for a new software bill of materials added to a software package version.</p>
+    pub fn sbom_validation_status(mut self, input: crate::types::SbomValidationStatus) -> Self {
+        self.sbom_validation_status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The status of the validation for a new software bill of materials added to a software package version.</p>
+    pub fn set_sbom_validation_status(mut self, input: ::std::option::Option<crate::types::SbomValidationStatus>) -> Self {
+        self.sbom_validation_status = input;
+        self
+    }
+    /// <p>The status of the validation for a new software bill of materials added to a software package version.</p>
+    pub fn get_sbom_validation_status(&self) -> &::std::option::Option<crate::types::SbomValidationStatus> {
+        &self.sbom_validation_status
+    }
+    /// <p>The inline job document associated with a software package version used for a quick job deployment via IoT Jobs.</p>
+    pub fn recipe(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.recipe = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The inline job document associated with a software package version used for a quick job deployment via IoT Jobs.</p>
+    pub fn set_recipe(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.recipe = input;
+        self
+    }
+    /// <p>The inline job document associated with a software package version used for a quick job deployment via IoT Jobs.</p>
+    pub fn get_recipe(&self) -> &::std::option::Option<::std::string::String> {
+        &self.recipe
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -254,10 +342,14 @@ impl GetPackageVersionOutputBuilder {
             version_name: self.version_name,
             description: self.description,
             attributes: self.attributes,
+            artifact: self.artifact,
             status: self.status,
             error_reason: self.error_reason,
             creation_date: self.creation_date,
             last_modified_date: self.last_modified_date,
+            sbom: self.sbom,
+            sbom_validation_status: self.sbom_validation_status,
+            recipe: self.recipe,
             _request_id: self._request_id,
         }
     }
@@ -270,10 +362,14 @@ impl ::std::fmt::Debug for GetPackageVersionOutputBuilder {
         formatter.field("version_name", &self.version_name);
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("attributes", &"*** Sensitive Data Redacted ***");
+        formatter.field("artifact", &self.artifact);
         formatter.field("status", &self.status);
         formatter.field("error_reason", &self.error_reason);
         formatter.field("creation_date", &self.creation_date);
         formatter.field("last_modified_date", &self.last_modified_date);
+        formatter.field("sbom", &self.sbom);
+        formatter.field("sbom_validation_status", &self.sbom_validation_status);
+        formatter.field("recipe", &"*** Sensitive Data Redacted ***");
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }

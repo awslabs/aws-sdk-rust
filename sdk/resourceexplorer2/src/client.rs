@@ -189,6 +189,8 @@ mod list_indexes;
 
 mod list_indexes_for_members;
 
+mod list_resources;
+
 mod list_supported_resource_types;
 
 mod list_tags_for_resource;

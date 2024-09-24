@@ -67,6 +67,9 @@ pub mod list_queues;
 /// Types for the `ListTagsForResource` operation.
 pub mod list_tags_for_resource;
 
+/// Types for the `ListVersions` operation.
+pub mod list_versions;
+
 /// Types for the `PutPolicy` operation.
 pub mod put_policy;
 

@@ -423,6 +423,8 @@ pub(crate) mod shape_stop_workflow_run;
 
 pub(crate) mod shape_tag_resource;
 
+pub(crate) mod shape_test_connection;
+
 pub(crate) mod shape_untag_resource;
 
 pub(crate) mod shape_update_blueprint;
@@ -946,6 +948,10 @@ pub(crate) mod shape_stop_trigger_input;
 pub(crate) mod shape_stop_workflow_run_input;
 
 pub(crate) mod shape_tag_resource_input;
+
+pub(crate) mod shape_test_connection_input;
+
+pub(crate) mod shape_throttling_exception;
 
 pub(crate) mod shape_untag_resource_input;
 
@@ -1589,6 +1595,8 @@ pub(crate) mod shape_oracle_sql_catalog_target;
 
 pub(crate) mod shape_orchestration_arguments_map;
 
+pub(crate) mod shape_orphan_file_deletion_configuration;
+
 pub(crate) mod shape_parameters_map;
 
 pub(crate) mod shape_partition_error;
@@ -1609,6 +1617,8 @@ pub(crate) mod shape_principal_permissions;
 
 pub(crate) mod shape_principal_permissions_list;
 
+pub(crate) mod shape_property_map;
+
 pub(crate) mod shape_public_keys_list;
 
 pub(crate) mod shape_recipe;
@@ -1626,6 +1636,8 @@ pub(crate) mod shape_rename_field;
 pub(crate) mod shape_resource_uri;
 
 pub(crate) mod shape_resource_uri_list;
+
+pub(crate) mod shape_retention_configuration;
 
 pub(crate) mod shape_s3_catalog_delta_source;
 
@@ -1751,6 +1763,8 @@ pub(crate) mod shape_code_gen_node_args;
 
 pub(crate) mod shape_column_importance_list;
 
+pub(crate) mod shape_compaction_metrics;
+
 pub(crate) mod shape_condition_list;
 
 pub(crate) mod shape_confusion_matrix;
@@ -1790,6 +1804,10 @@ pub(crate) mod shape_glue_schema;
 pub(crate) mod shape_glue_table_additional_options;
 
 pub(crate) mod shape_hudi_target_list;
+
+pub(crate) mod shape_iceberg_orphan_file_deletion_configuration;
+
+pub(crate) mod shape_iceberg_retention_configuration;
 
 pub(crate) mod shape_iceberg_target_list;
 
@@ -1831,6 +1849,8 @@ pub(crate) mod shape_order;
 
 pub(crate) mod shape_order_list;
 
+pub(crate) mod shape_orphan_file_deletion_metrics;
+
 pub(crate) mod shape_other_metadata_value_list;
 
 pub(crate) mod shape_predecessor;
@@ -1840,6 +1860,8 @@ pub(crate) mod shape_recipe_reference;
 pub(crate) mod shape_recipe_step;
 
 pub(crate) mod shape_reference_datasets_list;
+
+pub(crate) mod shape_retention_metrics;
 
 pub(crate) mod shape_run_identifier;
 
@@ -1912,6 +1934,12 @@ pub(crate) mod shape_edge;
 pub(crate) mod shape_filter_value;
 
 pub(crate) mod shape_glue_studio_schema_column;
+
+pub(crate) mod shape_iceberg_compaction_metrics;
+
+pub(crate) mod shape_iceberg_orphan_file_deletion_metrics;
+
+pub(crate) mod shape_iceberg_retention_metrics;
 
 pub(crate) mod shape_key_schema_element;
 

@@ -12,6 +12,8 @@
 /// ```text
 /// # let voiceengine = unimplemented!();
 /// match voiceengine {
+///     VoiceEngine::Generative => { /* ... */ },
+///     VoiceEngine::LongForm => { /* ... */ },
 ///     VoiceEngine::Neural => { /* ... */ },
 ///     VoiceEngine::Standard => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -42,6 +44,10 @@
 )]
 pub enum VoiceEngine {
     #[allow(missing_docs)] // documentation missing in model
+    Generative,
+    #[allow(missing_docs)] // documentation missing in model
+    LongForm,
+    #[allow(missing_docs)] // documentation missing in model
     Neural,
     #[allow(missing_docs)] // documentation missing in model
     Standard,
@@ -52,6 +58,8 @@ pub enum VoiceEngine {
 impl ::std::convert::From<&str> for VoiceEngine {
     fn from(s: &str) -> Self {
         match s {
+            "generative" => VoiceEngine::Generative,
+            "long-form" => VoiceEngine::LongForm,
             "neural" => VoiceEngine::Neural,
             "standard" => VoiceEngine::Standard,
             other => VoiceEngine::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -69,6 +77,8 @@ impl VoiceEngine {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            VoiceEngine::Generative => "generative",
+            VoiceEngine::LongForm => "long-form",
             VoiceEngine::Neural => "neural",
             VoiceEngine::Standard => "standard",
             VoiceEngine::Unknown(value) => value.as_str(),
@@ -76,7 +86,7 @@ impl VoiceEngine {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["neural", "standard"]
+        &["generative", "long-form", "neural", "standard"]
     }
 }
 impl ::std::convert::AsRef<str> for VoiceEngine {
@@ -99,6 +109,8 @@ impl VoiceEngine {
 impl ::std::fmt::Display for VoiceEngine {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            VoiceEngine::Generative => write!(f, "generative"),
+            VoiceEngine::LongForm => write!(f, "long-form"),
             VoiceEngine::Neural => write!(f, "neural"),
             VoiceEngine::Standard => write!(f, "standard"),
             VoiceEngine::Unknown(value) => write!(f, "{}", value),

@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateIpSetInput {
-    /// <p>The unique ID of the detector of the GuardDuty account that you want to create an IPSet for.</p>
+    /// <p>The unique ID of the detector of the GuardDuty account for which you want to create an IPSet.</p>
     pub detector_id: ::std::option::Option<::std::string::String>,
     /// <p>The user-friendly name to identify the IPSet.</p>
     /// <p>Allowed characters are alphanumeric, whitespace, dash (-), and underscores (_).</p>
@@ -20,7 +20,7 @@ pub struct CreateIpSetInput {
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateIpSetInput {
-    /// <p>The unique ID of the detector of the GuardDuty account that you want to create an IPSet for.</p>
+    /// <p>The unique ID of the detector of the GuardDuty account for which you want to create an IPSet.</p>
     pub fn detector_id(&self) -> ::std::option::Option<&str> {
         self.detector_id.as_deref()
     }
@@ -70,18 +70,18 @@ pub struct CreateIpSetInputBuilder {
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateIpSetInputBuilder {
-    /// <p>The unique ID of the detector of the GuardDuty account that you want to create an IPSet for.</p>
+    /// <p>The unique ID of the detector of the GuardDuty account for which you want to create an IPSet.</p>
     /// This field is required.
     pub fn detector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.detector_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique ID of the detector of the GuardDuty account that you want to create an IPSet for.</p>
+    /// <p>The unique ID of the detector of the GuardDuty account for which you want to create an IPSet.</p>
     pub fn set_detector_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.detector_id = input;
         self
     }
-    /// <p>The unique ID of the detector of the GuardDuty account that you want to create an IPSet for.</p>
+    /// <p>The unique ID of the detector of the GuardDuty account for which you want to create an IPSet.</p>
     pub fn get_detector_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.detector_id
     }

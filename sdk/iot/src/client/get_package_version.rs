@@ -11,10 +11,14 @@ impl super::Client {
     ///   - [`version_name(Option<String>)`](crate::operation::get_package_version::GetPackageVersionOutput::version_name): <p>The name of the package version.</p>
     ///   - [`description(Option<String>)`](crate::operation::get_package_version::GetPackageVersionOutput::description): <p>The package version description.</p>
     ///   - [`attributes(Option<HashMap::<String, String>>)`](crate::operation::get_package_version::GetPackageVersionOutput::attributes): <p>Metadata that were added to the package version that can be used to define a package version’s configuration.</p>
+    ///   - [`artifact(Option<PackageVersionArtifact>)`](crate::operation::get_package_version::GetPackageVersionOutput::artifact): <p>The various components that make up a software package version.</p>
     ///   - [`status(Option<PackageVersionStatus>)`](crate::operation::get_package_version::GetPackageVersionOutput::status): <p>The status associated to the package version. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/preparing-to-use-software-package-catalog.html#package-version-lifecycle">Package version lifecycle</a>.</p>
     ///   - [`error_reason(Option<String>)`](crate::operation::get_package_version::GetPackageVersionOutput::error_reason): <p>Error reason for a package version failure during creation or update.</p>
     ///   - [`creation_date(Option<DateTime>)`](crate::operation::get_package_version::GetPackageVersionOutput::creation_date): <p>The date when the package version was created.</p>
     ///   - [`last_modified_date(Option<DateTime>)`](crate::operation::get_package_version::GetPackageVersionOutput::last_modified_date): <p>The date when the package version was last updated.</p>
+    ///   - [`sbom(Option<Sbom>)`](crate::operation::get_package_version::GetPackageVersionOutput::sbom): <p>The software bill of materials for a software package version.</p>
+    ///   - [`sbom_validation_status(Option<SbomValidationStatus>)`](crate::operation::get_package_version::GetPackageVersionOutput::sbom_validation_status): <p>The status of the validation for a new software bill of materials added to a software package version.</p>
+    ///   - [`recipe(Option<String>)`](crate::operation::get_package_version::GetPackageVersionOutput::recipe): <p>The inline job document associated with a software package version used for a quick job deployment via IoT Jobs.</p>
     /// - On failure, responds with [`SdkError<GetPackageVersionError>`](crate::operation::get_package_version::GetPackageVersionError)
     pub fn get_package_version(&self) -> crate::operation::get_package_version::builders::GetPackageVersionFluentBuilder {
         crate::operation::get_package_version::builders::GetPackageVersionFluentBuilder::new(self.handle.clone())

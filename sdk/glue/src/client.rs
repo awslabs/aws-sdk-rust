@@ -563,6 +563,8 @@ mod stop_workflow_run;
 
 mod tag_resource;
 
+mod test_connection;
+
 mod untag_resource;
 
 mod update_blueprint;

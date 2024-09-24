@@ -36,6 +36,38 @@ pub fn ser_target_location(
         crate::protocol_serde::shape_alarm_configuration::ser_alarm_configuration(&mut object_11, var_10)?;
         object_11.finish();
     }
+    if input.include_child_organization_units {
+        object
+            .key("IncludeChildOrganizationUnits")
+            .boolean(input.include_child_organization_units);
+    }
+    if let Some(var_12) = &input.exclude_accounts {
+        let mut array_13 = object.key("ExcludeAccounts").start_array();
+        for item_14 in var_12 {
+            {
+                array_13.value().string(item_14.as_str());
+            }
+        }
+        array_13.finish();
+    }
+    if let Some(var_15) = &input.targets {
+        let mut array_16 = object.key("Targets").start_array();
+        for item_17 in var_15 {
+            {
+                #[allow(unused_mut)]
+                let mut object_18 = array_16.value().start_object();
+                crate::protocol_serde::shape_target::ser_target(&mut object_18, item_17)?;
+                object_18.finish();
+            }
+        }
+        array_16.finish();
+    }
+    if let Some(var_19) = &input.targets_max_concurrency {
+        object.key("TargetsMaxConcurrency").string(var_19.as_str());
+    }
+    if let Some(var_20) = &input.targets_max_errors {
+        object.key("TargetsMaxErrors").string(var_20.as_str());
+    }
     Ok(())
 }
 
@@ -84,6 +116,30 @@ where
                         "TargetLocationAlarmConfiguration" => {
                             builder = builder.set_target_location_alarm_configuration(
                                 crate::protocol_serde::shape_alarm_configuration::de_alarm_configuration(tokens)?,
+                            );
+                        }
+                        "IncludeChildOrganizationUnits" => {
+                            builder = builder
+                                .set_include_child_organization_units(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
+                        "ExcludeAccounts" => {
+                            builder = builder.set_exclude_accounts(crate::protocol_serde::shape_exclude_accounts::de_exclude_accounts(tokens)?);
+                        }
+                        "Targets" => {
+                            builder = builder.set_targets(crate::protocol_serde::shape_targets::de_targets(tokens)?);
+                        }
+                        "TargetsMaxConcurrency" => {
+                            builder = builder.set_targets_max_concurrency(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "TargetsMaxErrors" => {
+                            builder = builder.set_targets_max_errors(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

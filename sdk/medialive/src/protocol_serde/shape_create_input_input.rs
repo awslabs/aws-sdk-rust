@@ -27,72 +27,81 @@ pub fn ser_create_input_input_input(
         }
         array_6.finish();
     }
-    if let Some(var_9) = &input.input_security_groups {
-        let mut array_10 = object.key("inputSecurityGroups").start_array();
-        for item_11 in var_9 {
+    if let Some(var_9) = &input.input_network_location {
+        object.key("inputNetworkLocation").string(var_9.as_str());
+    }
+    if let Some(var_10) = &input.input_security_groups {
+        let mut array_11 = object.key("inputSecurityGroups").start_array();
+        for item_12 in var_10 {
             {
-                array_10.value().string(item_11.as_str());
+                array_11.value().string(item_12.as_str());
             }
         }
-        array_10.finish();
+        array_11.finish();
     }
-    if let Some(var_12) = &input.media_connect_flows {
-        let mut array_13 = object.key("mediaConnectFlows").start_array();
-        for item_14 in var_12 {
-            {
-                #[allow(unused_mut)]
-                let mut object_15 = array_13.value().start_object();
-                crate::protocol_serde::shape_media_connect_flow_request::ser_media_connect_flow_request(&mut object_15, item_14)?;
-                object_15.finish();
-            }
-        }
-        array_13.finish();
-    }
-    if let Some(var_16) = &input.name {
-        object.key("name").string(var_16.as_str());
-    }
-    if let Some(var_17) = &input.request_id {
-        object.key("requestId").string(var_17.as_str());
-    }
-    if let Some(var_18) = &input.role_arn {
-        object.key("roleArn").string(var_18.as_str());
-    }
-    if let Some(var_19) = &input.sources {
-        let mut array_20 = object.key("sources").start_array();
-        for item_21 in var_19 {
+    if let Some(var_13) = &input.media_connect_flows {
+        let mut array_14 = object.key("mediaConnectFlows").start_array();
+        for item_15 in var_13 {
             {
                 #[allow(unused_mut)]
-                let mut object_22 = array_20.value().start_object();
-                crate::protocol_serde::shape_input_source_request::ser_input_source_request(&mut object_22, item_21)?;
-                object_22.finish();
+                let mut object_16 = array_14.value().start_object();
+                crate::protocol_serde::shape_media_connect_flow_request::ser_media_connect_flow_request(&mut object_16, item_15)?;
+                object_16.finish();
             }
         }
-        array_20.finish();
+        array_14.finish();
     }
-    if let Some(var_23) = &input.srt_settings {
+    if let Some(var_17) = &input.multicast_settings {
         #[allow(unused_mut)]
-        let mut object_24 = object.key("srtSettings").start_object();
-        crate::protocol_serde::shape_srt_settings_request::ser_srt_settings_request(&mut object_24, var_23)?;
-        object_24.finish();
+        let mut object_18 = object.key("multicastSettings").start_object();
+        crate::protocol_serde::shape_multicast_settings_create_request::ser_multicast_settings_create_request(&mut object_18, var_17)?;
+        object_18.finish();
     }
-    if let Some(var_25) = &input.tags {
-        #[allow(unused_mut)]
-        let mut object_26 = object.key("tags").start_object();
-        for (key_27, value_28) in var_25 {
+    if let Some(var_19) = &input.name {
+        object.key("name").string(var_19.as_str());
+    }
+    if let Some(var_20) = &input.request_id {
+        object.key("requestId").string(var_20.as_str());
+    }
+    if let Some(var_21) = &input.role_arn {
+        object.key("roleArn").string(var_21.as_str());
+    }
+    if let Some(var_22) = &input.sources {
+        let mut array_23 = object.key("sources").start_array();
+        for item_24 in var_22 {
             {
-                object_26.key(key_27.as_str()).string(value_28.as_str());
+                #[allow(unused_mut)]
+                let mut object_25 = array_23.value().start_object();
+                crate::protocol_serde::shape_input_source_request::ser_input_source_request(&mut object_25, item_24)?;
+                object_25.finish();
             }
         }
-        object_26.finish();
+        array_23.finish();
     }
-    if let Some(var_29) = &input.r#type {
-        object.key("type").string(var_29.as_str());
-    }
-    if let Some(var_30) = &input.vpc {
+    if let Some(var_26) = &input.srt_settings {
         #[allow(unused_mut)]
-        let mut object_31 = object.key("vpc").start_object();
-        crate::protocol_serde::shape_input_vpc_request::ser_input_vpc_request(&mut object_31, var_30)?;
-        object_31.finish();
+        let mut object_27 = object.key("srtSettings").start_object();
+        crate::protocol_serde::shape_srt_settings_request::ser_srt_settings_request(&mut object_27, var_26)?;
+        object_27.finish();
+    }
+    if let Some(var_28) = &input.tags {
+        #[allow(unused_mut)]
+        let mut object_29 = object.key("tags").start_object();
+        for (key_30, value_31) in var_28 {
+            {
+                object_29.key(key_30.as_str()).string(value_31.as_str());
+            }
+        }
+        object_29.finish();
+    }
+    if let Some(var_32) = &input.r#type {
+        object.key("type").string(var_32.as_str());
+    }
+    if let Some(var_33) = &input.vpc {
+        #[allow(unused_mut)]
+        let mut object_34 = object.key("vpc").start_object();
+        crate::protocol_serde::shape_input_vpc_request::ser_input_vpc_request(&mut object_34, var_33)?;
+        object_34.finish();
     }
     Ok(())
 }

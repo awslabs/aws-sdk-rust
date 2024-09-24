@@ -108,17 +108,17 @@ impl CreateFilterFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The ID of the detector belonging to the GuardDuty account that you want to create a filter for.</p>
+    /// <p>The detector ID associated with the GuardDuty account for which you want to create a filter.</p>
     pub fn detector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.detector_id(input.into());
         self
     }
-    /// <p>The ID of the detector belonging to the GuardDuty account that you want to create a filter for.</p>
+    /// <p>The detector ID associated with the GuardDuty account for which you want to create a filter.</p>
     pub fn set_detector_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_detector_id(input);
         self
     }
-    /// <p>The ID of the detector belonging to the GuardDuty account that you want to create a filter for.</p>
+    /// <p>The detector ID associated with the GuardDuty account for which you want to create a filter.</p>
     pub fn get_detector_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_detector_id()
     }

@@ -10,7 +10,7 @@ pub struct BatchTableOptimizer {
     pub database_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the table.</p>
     pub table_name: ::std::option::Option<::std::string::String>,
-    /// <p>A <code>TableOptimizer</code> object that contains details on the configuration and last run of a table optimzer.</p>
+    /// <p>A <code>TableOptimizer</code> object that contains details on the configuration and last run of a table optimizer.</p>
     pub table_optimizer: ::std::option::Option<crate::types::TableOptimizer>,
 }
 impl BatchTableOptimizer {
@@ -26,7 +26,7 @@ impl BatchTableOptimizer {
     pub fn table_name(&self) -> ::std::option::Option<&str> {
         self.table_name.as_deref()
     }
-    /// <p>A <code>TableOptimizer</code> object that contains details on the configuration and last run of a table optimzer.</p>
+    /// <p>A <code>TableOptimizer</code> object that contains details on the configuration and last run of a table optimizer.</p>
     pub fn table_optimizer(&self) -> ::std::option::Option<&crate::types::TableOptimizer> {
         self.table_optimizer.as_ref()
     }
@@ -90,17 +90,17 @@ impl BatchTableOptimizerBuilder {
     pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.table_name
     }
-    /// <p>A <code>TableOptimizer</code> object that contains details on the configuration and last run of a table optimzer.</p>
+    /// <p>A <code>TableOptimizer</code> object that contains details on the configuration and last run of a table optimizer.</p>
     pub fn table_optimizer(mut self, input: crate::types::TableOptimizer) -> Self {
         self.table_optimizer = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A <code>TableOptimizer</code> object that contains details on the configuration and last run of a table optimzer.</p>
+    /// <p>A <code>TableOptimizer</code> object that contains details on the configuration and last run of a table optimizer.</p>
     pub fn set_table_optimizer(mut self, input: ::std::option::Option<crate::types::TableOptimizer>) -> Self {
         self.table_optimizer = input;
         self
     }
-    /// <p>A <code>TableOptimizer</code> object that contains details on the configuration and last run of a table optimzer.</p>
+    /// <p>A <code>TableOptimizer</code> object that contains details on the configuration and last run of a table optimizer.</p>
     pub fn get_table_optimizer(&self) -> &::std::option::Option<crate::types::TableOptimizer> {
         &self.table_optimizer
     }

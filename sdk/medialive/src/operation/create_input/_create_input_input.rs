@@ -28,6 +28,10 @@ pub struct CreateInputInput {
     pub vpc: ::std::option::Option<crate::types::InputVpcRequest>,
     /// The settings associated with an SRT input.
     pub srt_settings: ::std::option::Option<crate::types::SrtSettingsRequest>,
+    /// The location of this input. AWS, for an input existing in the AWS Cloud, On-Prem for an input in a customer network.
+    pub input_network_location: ::std::option::Option<crate::types::InputNetworkLocation>,
+    /// Multicast Input settings.
+    pub multicast_settings: ::std::option::Option<crate::types::MulticastSettingsCreateRequest>,
 }
 impl CreateInputInput {
     /// Destination settings for PUSH type inputs.
@@ -88,6 +92,14 @@ impl CreateInputInput {
     pub fn srt_settings(&self) -> ::std::option::Option<&crate::types::SrtSettingsRequest> {
         self.srt_settings.as_ref()
     }
+    /// The location of this input. AWS, for an input existing in the AWS Cloud, On-Prem for an input in a customer network.
+    pub fn input_network_location(&self) -> ::std::option::Option<&crate::types::InputNetworkLocation> {
+        self.input_network_location.as_ref()
+    }
+    /// Multicast Input settings.
+    pub fn multicast_settings(&self) -> ::std::option::Option<&crate::types::MulticastSettingsCreateRequest> {
+        self.multicast_settings.as_ref()
+    }
 }
 impl CreateInputInput {
     /// Creates a new builder-style object to manufacture [`CreateInputInput`](crate::operation::create_input::CreateInputInput).
@@ -112,6 +124,8 @@ pub struct CreateInputInputBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::InputType>,
     pub(crate) vpc: ::std::option::Option<crate::types::InputVpcRequest>,
     pub(crate) srt_settings: ::std::option::Option<crate::types::SrtSettingsRequest>,
+    pub(crate) input_network_location: ::std::option::Option<crate::types::InputNetworkLocation>,
+    pub(crate) multicast_settings: ::std::option::Option<crate::types::MulticastSettingsCreateRequest>,
 }
 impl CreateInputInputBuilder {
     /// Appends an item to `destinations`.
@@ -318,6 +332,34 @@ impl CreateInputInputBuilder {
     pub fn get_srt_settings(&self) -> &::std::option::Option<crate::types::SrtSettingsRequest> {
         &self.srt_settings
     }
+    /// The location of this input. AWS, for an input existing in the AWS Cloud, On-Prem for an input in a customer network.
+    pub fn input_network_location(mut self, input: crate::types::InputNetworkLocation) -> Self {
+        self.input_network_location = ::std::option::Option::Some(input);
+        self
+    }
+    /// The location of this input. AWS, for an input existing in the AWS Cloud, On-Prem for an input in a customer network.
+    pub fn set_input_network_location(mut self, input: ::std::option::Option<crate::types::InputNetworkLocation>) -> Self {
+        self.input_network_location = input;
+        self
+    }
+    /// The location of this input. AWS, for an input existing in the AWS Cloud, On-Prem for an input in a customer network.
+    pub fn get_input_network_location(&self) -> &::std::option::Option<crate::types::InputNetworkLocation> {
+        &self.input_network_location
+    }
+    /// Multicast Input settings.
+    pub fn multicast_settings(mut self, input: crate::types::MulticastSettingsCreateRequest) -> Self {
+        self.multicast_settings = ::std::option::Option::Some(input);
+        self
+    }
+    /// Multicast Input settings.
+    pub fn set_multicast_settings(mut self, input: ::std::option::Option<crate::types::MulticastSettingsCreateRequest>) -> Self {
+        self.multicast_settings = input;
+        self
+    }
+    /// Multicast Input settings.
+    pub fn get_multicast_settings(&self) -> &::std::option::Option<crate::types::MulticastSettingsCreateRequest> {
+        &self.multicast_settings
+    }
     /// Consumes the builder and constructs a [`CreateInputInput`](crate::operation::create_input::CreateInputInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_input::CreateInputInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_input::CreateInputInput {
@@ -333,6 +375,8 @@ impl CreateInputInputBuilder {
             r#type: self.r#type,
             vpc: self.vpc,
             srt_settings: self.srt_settings,
+            input_network_location: self.input_network_location,
+            multicast_settings: self.multicast_settings,
         })
     }
 }

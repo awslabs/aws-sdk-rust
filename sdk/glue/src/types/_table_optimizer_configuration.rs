@@ -8,6 +8,10 @@ pub struct TableOptimizerConfiguration {
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Whether table optimization is enabled.</p>
     pub enabled: ::std::option::Option<bool>,
+    /// <p>The configuration for a snapshot retention optimizer.</p>
+    pub retention_configuration: ::std::option::Option<crate::types::RetentionConfiguration>,
+    /// <p>The configuration for an orphan file deletion optimizer.</p>
+    pub orphan_file_deletion_configuration: ::std::option::Option<crate::types::OrphanFileDeletionConfiguration>,
 }
 impl TableOptimizerConfiguration {
     /// <p>A role passed by the caller which gives the service permission to update the resources associated with the optimizer on the caller's behalf.</p>
@@ -17,6 +21,14 @@ impl TableOptimizerConfiguration {
     /// <p>Whether table optimization is enabled.</p>
     pub fn enabled(&self) -> ::std::option::Option<bool> {
         self.enabled
+    }
+    /// <p>The configuration for a snapshot retention optimizer.</p>
+    pub fn retention_configuration(&self) -> ::std::option::Option<&crate::types::RetentionConfiguration> {
+        self.retention_configuration.as_ref()
+    }
+    /// <p>The configuration for an orphan file deletion optimizer.</p>
+    pub fn orphan_file_deletion_configuration(&self) -> ::std::option::Option<&crate::types::OrphanFileDeletionConfiguration> {
+        self.orphan_file_deletion_configuration.as_ref()
     }
 }
 impl TableOptimizerConfiguration {
@@ -32,6 +44,8 @@ impl TableOptimizerConfiguration {
 pub struct TableOptimizerConfigurationBuilder {
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) enabled: ::std::option::Option<bool>,
+    pub(crate) retention_configuration: ::std::option::Option<crate::types::RetentionConfiguration>,
+    pub(crate) orphan_file_deletion_configuration: ::std::option::Option<crate::types::OrphanFileDeletionConfiguration>,
 }
 impl TableOptimizerConfigurationBuilder {
     /// <p>A role passed by the caller which gives the service permission to update the resources associated with the optimizer on the caller's behalf.</p>
@@ -62,11 +76,41 @@ impl TableOptimizerConfigurationBuilder {
     pub fn get_enabled(&self) -> &::std::option::Option<bool> {
         &self.enabled
     }
+    /// <p>The configuration for a snapshot retention optimizer.</p>
+    pub fn retention_configuration(mut self, input: crate::types::RetentionConfiguration) -> Self {
+        self.retention_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration for a snapshot retention optimizer.</p>
+    pub fn set_retention_configuration(mut self, input: ::std::option::Option<crate::types::RetentionConfiguration>) -> Self {
+        self.retention_configuration = input;
+        self
+    }
+    /// <p>The configuration for a snapshot retention optimizer.</p>
+    pub fn get_retention_configuration(&self) -> &::std::option::Option<crate::types::RetentionConfiguration> {
+        &self.retention_configuration
+    }
+    /// <p>The configuration for an orphan file deletion optimizer.</p>
+    pub fn orphan_file_deletion_configuration(mut self, input: crate::types::OrphanFileDeletionConfiguration) -> Self {
+        self.orphan_file_deletion_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration for an orphan file deletion optimizer.</p>
+    pub fn set_orphan_file_deletion_configuration(mut self, input: ::std::option::Option<crate::types::OrphanFileDeletionConfiguration>) -> Self {
+        self.orphan_file_deletion_configuration = input;
+        self
+    }
+    /// <p>The configuration for an orphan file deletion optimizer.</p>
+    pub fn get_orphan_file_deletion_configuration(&self) -> &::std::option::Option<crate::types::OrphanFileDeletionConfiguration> {
+        &self.orphan_file_deletion_configuration
+    }
     /// Consumes the builder and constructs a [`TableOptimizerConfiguration`](crate::types::TableOptimizerConfiguration).
     pub fn build(self) -> crate::types::TableOptimizerConfiguration {
         crate::types::TableOptimizerConfiguration {
             role_arn: self.role_arn,
             enabled: self.enabled,
+            retention_configuration: self.retention_configuration,
+            orphan_file_deletion_configuration: self.orphan_file_deletion_configuration,
         }
     }
 }

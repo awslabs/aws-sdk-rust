@@ -10,7 +10,7 @@ pub struct RadiusSettings {
     pub radius_port: ::std::option::Option<i32>,
     /// <p>The amount of time, in seconds, to wait for the RADIUS server to respond.</p>
     pub radius_timeout: ::std::option::Option<i32>,
-    /// <p>The maximum number of times that communication with the RADIUS server is attempted.</p>
+    /// <p>The maximum number of times that communication with the RADIUS server is retried after the initial attempt.</p>
     pub radius_retries: i32,
     /// <p>Required for enabling RADIUS on the directory.</p>
     pub shared_secret: ::std::option::Option<::std::string::String>,
@@ -36,7 +36,7 @@ impl RadiusSettings {
     pub fn radius_timeout(&self) -> ::std::option::Option<i32> {
         self.radius_timeout
     }
-    /// <p>The maximum number of times that communication with the RADIUS server is attempted.</p>
+    /// <p>The maximum number of times that communication with the RADIUS server is retried after the initial attempt.</p>
     pub fn radius_retries(&self) -> i32 {
         self.radius_retries
     }
@@ -140,17 +140,17 @@ impl RadiusSettingsBuilder {
     pub fn get_radius_timeout(&self) -> &::std::option::Option<i32> {
         &self.radius_timeout
     }
-    /// <p>The maximum number of times that communication with the RADIUS server is attempted.</p>
+    /// <p>The maximum number of times that communication with the RADIUS server is retried after the initial attempt.</p>
     pub fn radius_retries(mut self, input: i32) -> Self {
         self.radius_retries = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The maximum number of times that communication with the RADIUS server is attempted.</p>
+    /// <p>The maximum number of times that communication with the RADIUS server is retried after the initial attempt.</p>
     pub fn set_radius_retries(mut self, input: ::std::option::Option<i32>) -> Self {
         self.radius_retries = input;
         self
     }
-    /// <p>The maximum number of times that communication with the RADIUS server is attempted.</p>
+    /// <p>The maximum number of times that communication with the RADIUS server is retried after the initial attempt.</p>
     pub fn get_radius_retries(&self) -> &::std::option::Option<i32> {
         &self.radius_retries
     }

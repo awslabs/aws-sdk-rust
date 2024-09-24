@@ -150,41 +150,44 @@ pub fn ser_h264_settings(
     if let Some(var_35) = &input.repeat_pps {
         object.key("repeatPps").string(var_35.as_str());
     }
-    if let Some(var_36) = &input.scan_type_conversion_mode {
-        object.key("scanTypeConversionMode").string(var_36.as_str());
+    if let Some(var_36) = &input.saliency_aware_encoding {
+        object.key("saliencyAwareEncoding").string(var_36.as_str());
     }
-    if let Some(var_37) = &input.scene_change_detect {
-        object.key("sceneChangeDetect").string(var_37.as_str());
+    if let Some(var_37) = &input.scan_type_conversion_mode {
+        object.key("scanTypeConversionMode").string(var_37.as_str());
     }
-    if let Some(var_38) = &input.slices {
+    if let Some(var_38) = &input.scene_change_detect {
+        object.key("sceneChangeDetect").string(var_38.as_str());
+    }
+    if let Some(var_39) = &input.slices {
         object.key("slices").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_38).into()),
+            ::aws_smithy_types::Number::NegInt((*var_39).into()),
         );
     }
-    if let Some(var_39) = &input.slow_pal {
-        object.key("slowPal").string(var_39.as_str());
+    if let Some(var_40) = &input.slow_pal {
+        object.key("slowPal").string(var_40.as_str());
     }
-    if let Some(var_40) = &input.softness {
+    if let Some(var_41) = &input.softness {
         object.key("softness").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_40).into()),
+            ::aws_smithy_types::Number::NegInt((*var_41).into()),
         );
     }
-    if let Some(var_41) = &input.spatial_adaptive_quantization {
-        object.key("spatialAdaptiveQuantization").string(var_41.as_str());
+    if let Some(var_42) = &input.spatial_adaptive_quantization {
+        object.key("spatialAdaptiveQuantization").string(var_42.as_str());
     }
-    if let Some(var_42) = &input.syntax {
-        object.key("syntax").string(var_42.as_str());
+    if let Some(var_43) = &input.syntax {
+        object.key("syntax").string(var_43.as_str());
     }
-    if let Some(var_43) = &input.telecine {
-        object.key("telecine").string(var_43.as_str());
+    if let Some(var_44) = &input.telecine {
+        object.key("telecine").string(var_44.as_str());
     }
-    if let Some(var_44) = &input.temporal_adaptive_quantization {
-        object.key("temporalAdaptiveQuantization").string(var_44.as_str());
+    if let Some(var_45) = &input.temporal_adaptive_quantization {
+        object.key("temporalAdaptiveQuantization").string(var_45.as_str());
     }
-    if let Some(var_45) = &input.unregistered_sei_timecode {
-        object.key("unregisteredSeiTimecode").string(var_45.as_str());
+    if let Some(var_46) = &input.unregistered_sei_timecode {
+        object.key("unregisteredSeiTimecode").string(var_46.as_str());
     }
     Ok(())
 }
@@ -423,6 +426,13 @@ where
                             builder = builder.set_repeat_pps(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| crate::types::H264RepeatPps::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "saliencyAwareEncoding" => {
+                            builder = builder.set_saliency_aware_encoding(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::H264SaliencyAwareEncoding::from(u.as_ref())))
                                     .transpose()?,
                             );
                         }

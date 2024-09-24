@@ -67,6 +67,8 @@ pub(crate) mod shape_list_queues;
 
 pub(crate) mod shape_list_tags_for_resource;
 
+pub(crate) mod shape_list_versions;
+
 pub(crate) mod shape_put_policy;
 
 pub(crate) mod shape_search_jobs;
@@ -141,6 +143,8 @@ pub(crate) mod shape_list_of_endpoint;
 
 pub(crate) mod shape_list_of_job;
 
+pub(crate) mod shape_list_of_job_engine_version;
+
 pub(crate) mod shape_list_of_job_template;
 
 pub(crate) mod shape_list_of_preset;
@@ -178,6 +182,8 @@ pub(crate) mod shape_extended_data_services;
 pub(crate) mod shape_input;
 
 pub(crate) mod shape_input_template;
+
+pub(crate) mod shape_job_engine_version;
 
 pub(crate) mod shape_job_messages;
 
@@ -407,6 +413,10 @@ pub(crate) mod shape_vc3_settings;
 
 pub(crate) mod shape_video_overlay_input;
 
+pub(crate) mod shape_video_overlay_position;
+
+pub(crate) mod shape_video_overlay_transition;
+
 pub(crate) mod shape_vorbis_settings;
 
 pub(crate) mod shape_vp8_settings;
@@ -541,6 +551,8 @@ pub(crate) mod shape_static_key_provider;
 
 pub(crate) mod shape_video_detail;
 
+pub(crate) mod shape_encryption_contract_configuration;
+
 pub(crate) mod shape_list_of_automated_abr_rule;
 
 pub(crate) mod shape_list_of_caption_description;
@@ -564,6 +576,8 @@ pub(crate) mod shape_list_of_output_channel_mapping;
 pub(crate) mod shape_list_of_string_min1;
 
 pub(crate) mod shape_list_of_teletext_page_type;
+
+pub(crate) mod shape_list_of_video_overlay_transition;
 
 pub(crate) mod shape_s3_destination_access_control;
 

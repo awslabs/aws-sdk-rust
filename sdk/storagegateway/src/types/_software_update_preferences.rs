@@ -6,13 +6,13 @@
 pub struct SoftwareUpdatePreferences {
     /// <p>Indicates the automatic update policy for a gateway.</p>
     /// <p><code>ALL_VERSIONS</code> - Enables regular gateway maintenance updates.</p>
-    /// <p><code>EMERGENCY_VERSIONS_ONLY</code> - Disables regular gateway maintenance updates.</p>
+    /// <p><code>EMERGENCY_VERSIONS_ONLY</code> - Disables regular gateway maintenance updates. The gateway will still receive emergency version updates on rare occasions if necessary to remedy highly critical security or durability issues. You will be notified before an emergency version update is applied. These updates are applied during your gateway's scheduled maintenance window.</p>
     pub automatic_update_policy: ::std::option::Option<crate::types::AutomaticUpdatePolicy>,
 }
 impl SoftwareUpdatePreferences {
     /// <p>Indicates the automatic update policy for a gateway.</p>
     /// <p><code>ALL_VERSIONS</code> - Enables regular gateway maintenance updates.</p>
-    /// <p><code>EMERGENCY_VERSIONS_ONLY</code> - Disables regular gateway maintenance updates.</p>
+    /// <p><code>EMERGENCY_VERSIONS_ONLY</code> - Disables regular gateway maintenance updates. The gateway will still receive emergency version updates on rare occasions if necessary to remedy highly critical security or durability issues. You will be notified before an emergency version update is applied. These updates are applied during your gateway's scheduled maintenance window.</p>
     pub fn automatic_update_policy(&self) -> ::std::option::Option<&crate::types::AutomaticUpdatePolicy> {
         self.automatic_update_policy.as_ref()
     }
@@ -33,21 +33,21 @@ pub struct SoftwareUpdatePreferencesBuilder {
 impl SoftwareUpdatePreferencesBuilder {
     /// <p>Indicates the automatic update policy for a gateway.</p>
     /// <p><code>ALL_VERSIONS</code> - Enables regular gateway maintenance updates.</p>
-    /// <p><code>EMERGENCY_VERSIONS_ONLY</code> - Disables regular gateway maintenance updates.</p>
+    /// <p><code>EMERGENCY_VERSIONS_ONLY</code> - Disables regular gateway maintenance updates. The gateway will still receive emergency version updates on rare occasions if necessary to remedy highly critical security or durability issues. You will be notified before an emergency version update is applied. These updates are applied during your gateway's scheduled maintenance window.</p>
     pub fn automatic_update_policy(mut self, input: crate::types::AutomaticUpdatePolicy) -> Self {
         self.automatic_update_policy = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates the automatic update policy for a gateway.</p>
     /// <p><code>ALL_VERSIONS</code> - Enables regular gateway maintenance updates.</p>
-    /// <p><code>EMERGENCY_VERSIONS_ONLY</code> - Disables regular gateway maintenance updates.</p>
+    /// <p><code>EMERGENCY_VERSIONS_ONLY</code> - Disables regular gateway maintenance updates. The gateway will still receive emergency version updates on rare occasions if necessary to remedy highly critical security or durability issues. You will be notified before an emergency version update is applied. These updates are applied during your gateway's scheduled maintenance window.</p>
     pub fn set_automatic_update_policy(mut self, input: ::std::option::Option<crate::types::AutomaticUpdatePolicy>) -> Self {
         self.automatic_update_policy = input;
         self
     }
     /// <p>Indicates the automatic update policy for a gateway.</p>
     /// <p><code>ALL_VERSIONS</code> - Enables regular gateway maintenance updates.</p>
-    /// <p><code>EMERGENCY_VERSIONS_ONLY</code> - Disables regular gateway maintenance updates.</p>
+    /// <p><code>EMERGENCY_VERSIONS_ONLY</code> - Disables regular gateway maintenance updates. The gateway will still receive emergency version updates on rare occasions if necessary to remedy highly critical security or durability issues. You will be notified before an emergency version update is applied. These updates are applied during your gateway's scheduled maintenance window.</p>
     pub fn get_automatic_update_policy(&self) -> &::std::option::Option<crate::types::AutomaticUpdatePolicy> {
         &self.automatic_update_policy
     }

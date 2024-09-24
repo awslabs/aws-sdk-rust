@@ -12,6 +12,8 @@ pub struct OutputDestination {
     pub multiplex_settings: ::std::option::Option<crate::types::MultiplexProgramChannelDestinationSettings>,
     /// Destination settings for a standard output; one destination for each redundant encoder.
     pub settings: ::std::option::Option<::std::vec::Vec<crate::types::OutputDestinationSettings>>,
+    /// SRT settings for an SRT output; one destination for each redundant encoder.
+    pub srt_settings: ::std::option::Option<::std::vec::Vec<crate::types::SrtOutputDestinationSettings>>,
 }
 impl OutputDestination {
     /// User-specified id. This is used in an output group or an output.
@@ -34,6 +36,12 @@ impl OutputDestination {
     pub fn settings(&self) -> &[crate::types::OutputDestinationSettings] {
         self.settings.as_deref().unwrap_or_default()
     }
+    /// SRT settings for an SRT output; one destination for each redundant encoder.
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.srt_settings.is_none()`.
+    pub fn srt_settings(&self) -> &[crate::types::SrtOutputDestinationSettings] {
+        self.srt_settings.as_deref().unwrap_or_default()
+    }
 }
 impl OutputDestination {
     /// Creates a new builder-style object to manufacture [`OutputDestination`](crate::types::OutputDestination).
@@ -50,6 +58,7 @@ pub struct OutputDestinationBuilder {
     pub(crate) media_package_settings: ::std::option::Option<::std::vec::Vec<crate::types::MediaPackageOutputDestinationSettings>>,
     pub(crate) multiplex_settings: ::std::option::Option<crate::types::MultiplexProgramChannelDestinationSettings>,
     pub(crate) settings: ::std::option::Option<::std::vec::Vec<crate::types::OutputDestinationSettings>>,
+    pub(crate) srt_settings: ::std::option::Option<::std::vec::Vec<crate::types::SrtOutputDestinationSettings>>,
 }
 impl OutputDestinationBuilder {
     /// User-specified id. This is used in an output group or an output.
@@ -123,6 +132,26 @@ impl OutputDestinationBuilder {
     pub fn get_settings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OutputDestinationSettings>> {
         &self.settings
     }
+    /// Appends an item to `srt_settings`.
+    ///
+    /// To override the contents of this collection use [`set_srt_settings`](Self::set_srt_settings).
+    ///
+    /// SRT settings for an SRT output; one destination for each redundant encoder.
+    pub fn srt_settings(mut self, input: crate::types::SrtOutputDestinationSettings) -> Self {
+        let mut v = self.srt_settings.unwrap_or_default();
+        v.push(input);
+        self.srt_settings = ::std::option::Option::Some(v);
+        self
+    }
+    /// SRT settings for an SRT output; one destination for each redundant encoder.
+    pub fn set_srt_settings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SrtOutputDestinationSettings>>) -> Self {
+        self.srt_settings = input;
+        self
+    }
+    /// SRT settings for an SRT output; one destination for each redundant encoder.
+    pub fn get_srt_settings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SrtOutputDestinationSettings>> {
+        &self.srt_settings
+    }
     /// Consumes the builder and constructs a [`OutputDestination`](crate::types::OutputDestination).
     pub fn build(self) -> crate::types::OutputDestination {
         crate::types::OutputDestination {
@@ -130,6 +159,7 @@ impl OutputDestinationBuilder {
             media_package_settings: self.media_package_settings,
             multiplex_settings: self.multiplex_settings,
             settings: self.settings,
+            srt_settings: self.srt_settings,
         }
     }
 }

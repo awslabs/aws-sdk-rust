@@ -1,6 +1,6 @@
 # aws-sdk-pcaconnectorscep
 
-Connector for SCEP (Preview) creates a connector between Amazon Web Services Private CA and your SCEP-enabled clients and devices. For more information, see [Connector for SCEP](https://docs.aws.amazon.com/privateca/latest/userguide/scep-connector.html) in the _Amazon Web Services Private CA User Guide_.
+Connector for SCEP creates a connector between Amazon Web Services Private CA and your SCEP-enabled clients and devices. For more information, see [Connector for SCEP](https://docs.aws.amazon.com/privateca/latest/userguide/scep-connector.htmlconnector-for-scep.html) in the _Amazon Web Services Private CA User Guide_.
 
 ## Getting Started
 
@@ -14,7 +14,7 @@ your project, add the following to your **Cargo.toml** file:
 ```toml
 [dependencies]
 aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-aws-sdk-pcaconnectorscep = "1.12.0"
+aws-sdk-pcaconnectorscep = "1.13.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

@@ -142,7 +142,7 @@ impl DescribeMaintenanceWindowExecutionsFluentBuilder {
     /// <li>
     /// <p>Key. A string between 1 and 128 characters. Supported keys include <code>ExecutedBefore</code> and <code>ExecutedAfter</code>.</p></li>
     /// <li>
-    /// <p>Values. An array of strings, each between 1 and 256 characters. Supported values are date/time strings in a valid ISO 8601 date/time format, such as <code>2021-11-04T05:00:00Z</code>.</p></li>
+    /// <p>Values. An array of strings, each between 1 and 256 characters. Supported values are date/time strings in a valid ISO 8601 date/time format, such as <code>2024-11-04T05:00:00Z</code>.</p></li>
     /// </ul>
     pub fn filters(mut self, input: crate::types::MaintenanceWindowFilter) -> Self {
         self.inner = self.inner.filters(input);
@@ -153,7 +153,7 @@ impl DescribeMaintenanceWindowExecutionsFluentBuilder {
     /// <li>
     /// <p>Key. A string between 1 and 128 characters. Supported keys include <code>ExecutedBefore</code> and <code>ExecutedAfter</code>.</p></li>
     /// <li>
-    /// <p>Values. An array of strings, each between 1 and 256 characters. Supported values are date/time strings in a valid ISO 8601 date/time format, such as <code>2021-11-04T05:00:00Z</code>.</p></li>
+    /// <p>Values. An array of strings, each between 1 and 256 characters. Supported values are date/time strings in a valid ISO 8601 date/time format, such as <code>2024-11-04T05:00:00Z</code>.</p></li>
     /// </ul>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MaintenanceWindowFilter>>) -> Self {
         self.inner = self.inner.set_filters(input);
@@ -164,7 +164,7 @@ impl DescribeMaintenanceWindowExecutionsFluentBuilder {
     /// <li>
     /// <p>Key. A string between 1 and 128 characters. Supported keys include <code>ExecutedBefore</code> and <code>ExecutedAfter</code>.</p></li>
     /// <li>
-    /// <p>Values. An array of strings, each between 1 and 256 characters. Supported values are date/time strings in a valid ISO 8601 date/time format, such as <code>2021-11-04T05:00:00Z</code>.</p></li>
+    /// <p>Values. An array of strings, each between 1 and 256 characters. Supported values are date/time strings in a valid ISO 8601 date/time format, such as <code>2024-11-04T05:00:00Z</code>.</p></li>
     /// </ul>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MaintenanceWindowFilter>> {
         self.inner.get_filters()

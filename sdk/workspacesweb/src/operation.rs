@@ -85,6 +85,9 @@ pub mod disassociate_user_access_logging_settings;
 /// Types for the `DisassociateUserSettings` operation.
 pub mod disassociate_user_settings;
 
+/// Types for the `ExpireSession` operation.
+pub mod expire_session;
+
 /// Types for the `GetBrowserSettings` operation.
 pub mod get_browser_settings;
 
@@ -102,6 +105,9 @@ pub mod get_portal;
 
 /// Types for the `GetPortalServiceProviderMetadata` operation.
 pub mod get_portal_service_provider_metadata;
+
+/// Types for the `GetSession` operation.
+pub mod get_session;
 
 /// Types for the `GetTrustStore` operation.
 pub mod get_trust_store;
@@ -129,6 +135,9 @@ pub mod list_network_settings;
 
 /// Types for the `ListPortals` operation.
 pub mod list_portals;
+
+/// Types for the `ListSessions` operation.
+pub mod list_sessions;
 
 /// Types for the `ListTagsForResource` operation.
 pub mod list_tags_for_resource;

@@ -150,4 +150,42 @@ impl ModifyDBShardGroupFluentBuilder {
     pub fn get_min_acu(&self) -> &::std::option::Option<f64> {
         self.inner.get_min_acu()
     }
+    /// <p>Specifies whether to create standby DB shard groups for the DB shard group. Valid values are the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>0 - Creates a DB shard group without a standby DB shard group. This is the default value.</p></li>
+    /// <li>
+    /// <p>1 - Creates a DB shard group with a standby DB shard group in a different Availability Zone (AZ).</p></li>
+    /// <li>
+    /// <p>2 - Creates a DB shard group with two standby DB shard groups in two different AZs.</p></li>
+    /// </ul>
+    pub fn compute_redundancy(mut self, input: i32) -> Self {
+        self.inner = self.inner.compute_redundancy(input);
+        self
+    }
+    /// <p>Specifies whether to create standby DB shard groups for the DB shard group. Valid values are the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>0 - Creates a DB shard group without a standby DB shard group. This is the default value.</p></li>
+    /// <li>
+    /// <p>1 - Creates a DB shard group with a standby DB shard group in a different Availability Zone (AZ).</p></li>
+    /// <li>
+    /// <p>2 - Creates a DB shard group with two standby DB shard groups in two different AZs.</p></li>
+    /// </ul>
+    pub fn set_compute_redundancy(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.inner = self.inner.set_compute_redundancy(input);
+        self
+    }
+    /// <p>Specifies whether to create standby DB shard groups for the DB shard group. Valid values are the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>0 - Creates a DB shard group without a standby DB shard group. This is the default value.</p></li>
+    /// <li>
+    /// <p>1 - Creates a DB shard group with a standby DB shard group in a different Availability Zone (AZ).</p></li>
+    /// <li>
+    /// <p>2 - Creates a DB shard group with two standby DB shard groups in two different AZs.</p></li>
+    /// </ul>
+    pub fn get_compute_redundancy(&self) -> &::std::option::Option<i32> {
+        self.inner.get_compute_redundancy()
+    }
 }

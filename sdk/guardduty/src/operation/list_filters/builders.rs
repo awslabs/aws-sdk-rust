@@ -114,17 +114,17 @@ impl ListFiltersFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_filters::paginator::ListFiltersPaginator {
         crate::operation::list_filters::paginator::ListFiltersPaginator::new(self.handle, self.inner)
     }
-    /// <p>The unique ID of the detector that the filter is associated with.</p>
+    /// <p>The unique ID of the detector that is associated with the filter.</p>
     pub fn detector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.detector_id(input.into());
         self
     }
-    /// <p>The unique ID of the detector that the filter is associated with.</p>
+    /// <p>The unique ID of the detector that is associated with the filter.</p>
     pub fn set_detector_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_detector_id(input);
         self
     }
-    /// <p>The unique ID of the detector that the filter is associated with.</p>
+    /// <p>The unique ID of the detector that is associated with the filter.</p>
     pub fn get_detector_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_detector_id()
     }

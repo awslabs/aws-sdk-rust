@@ -76,6 +76,9 @@ pub mod describe_conditional_forwarders;
 /// Types for the `DescribeDirectories` operation.
 pub mod describe_directories;
 
+/// Types for the `DescribeDirectoryDataAccess` operation.
+pub mod describe_directory_data_access;
+
 /// Types for the `DescribeDomainControllers` operation.
 pub mod describe_domain_controllers;
 
@@ -106,6 +109,9 @@ pub mod describe_update_directory;
 /// Types for the `DisableClientAuthentication` operation.
 pub mod disable_client_authentication;
 
+/// Types for the `DisableDirectoryDataAccess` operation.
+pub mod disable_directory_data_access;
+
 /// Types for the `DisableLDAPS` operation.
 pub mod disable_ldaps;
 
@@ -117,6 +123,9 @@ pub mod disable_sso;
 
 /// Types for the `EnableClientAuthentication` operation.
 pub mod enable_client_authentication;
+
+/// Types for the `EnableDirectoryDataAccess` operation.
+pub mod enable_directory_data_access;
 
 /// Types for the `EnableLDAPS` operation.
 pub mod enable_ldaps;

@@ -52,6 +52,12 @@ pub struct JobRun {
     pub attempt_created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time of when the job run attempt was last updated.</p>
     pub attempt_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The date and time when the job moved to the RUNNING state.</p>
+    pub started_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The date and time when the job was terminated.</p>
+    pub ended_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The total time for a job in the QUEUED state in milliseconds.</p>
+    pub queued_duration_milliseconds: ::std::option::Option<i64>,
 }
 impl JobRun {
     /// <p>The ID of the application the job is running on.</p>
@@ -157,6 +163,18 @@ impl JobRun {
     pub fn attempt_updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.attempt_updated_at.as_ref()
     }
+    /// <p>The date and time when the job moved to the RUNNING state.</p>
+    pub fn started_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.started_at.as_ref()
+    }
+    /// <p>The date and time when the job was terminated.</p>
+    pub fn ended_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.ended_at.as_ref()
+    }
+    /// <p>The total time for a job in the QUEUED state in milliseconds.</p>
+    pub fn queued_duration_milliseconds(&self) -> ::std::option::Option<i64> {
+        self.queued_duration_milliseconds
+    }
 }
 impl JobRun {
     /// Creates a new builder-style object to manufacture [`JobRun`](crate::types::JobRun).
@@ -193,6 +211,9 @@ pub struct JobRunBuilder {
     pub(crate) attempt: ::std::option::Option<i32>,
     pub(crate) attempt_created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) attempt_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) started_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) ended_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) queued_duration_milliseconds: ::std::option::Option<i64>,
 }
 impl JobRunBuilder {
     /// <p>The ID of the application the job is running on.</p>
@@ -548,6 +569,48 @@ impl JobRunBuilder {
     pub fn get_attempt_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.attempt_updated_at
     }
+    /// <p>The date and time when the job moved to the RUNNING state.</p>
+    pub fn started_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.started_at = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The date and time when the job moved to the RUNNING state.</p>
+    pub fn set_started_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.started_at = input;
+        self
+    }
+    /// <p>The date and time when the job moved to the RUNNING state.</p>
+    pub fn get_started_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.started_at
+    }
+    /// <p>The date and time when the job was terminated.</p>
+    pub fn ended_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.ended_at = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The date and time when the job was terminated.</p>
+    pub fn set_ended_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.ended_at = input;
+        self
+    }
+    /// <p>The date and time when the job was terminated.</p>
+    pub fn get_ended_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.ended_at
+    }
+    /// <p>The total time for a job in the QUEUED state in milliseconds.</p>
+    pub fn queued_duration_milliseconds(mut self, input: i64) -> Self {
+        self.queued_duration_milliseconds = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The total time for a job in the QUEUED state in milliseconds.</p>
+    pub fn set_queued_duration_milliseconds(mut self, input: ::std::option::Option<i64>) -> Self {
+        self.queued_duration_milliseconds = input;
+        self
+    }
+    /// <p>The total time for a job in the QUEUED state in milliseconds.</p>
+    pub fn get_queued_duration_milliseconds(&self) -> &::std::option::Option<i64> {
+        &self.queued_duration_milliseconds
+    }
     /// Consumes the builder and constructs a [`JobRun`](crate::types::JobRun).
     /// This method will fail if any of the following fields are not set:
     /// - [`application_id`](crate::types::builders::JobRunBuilder::application_id)
@@ -636,6 +699,9 @@ impl JobRunBuilder {
             attempt: self.attempt,
             attempt_created_at: self.attempt_created_at,
             attempt_updated_at: self.attempt_updated_at,
+            started_at: self.started_at,
+            ended_at: self.ended_at,
+            queued_duration_milliseconds: self.queued_duration_milliseconds,
         })
     }
 }

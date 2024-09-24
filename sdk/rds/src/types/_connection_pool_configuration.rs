@@ -22,7 +22,7 @@ pub struct ConnectionPoolConfiguration {
     /// <p>Must be between 0 and the value of <code>MaxConnectionsPercent</code>.</p></li>
     /// </ul>
     pub max_idle_connections_percent: ::std::option::Option<i32>,
-    /// <p>The number of seconds for a proxy to wait for a connection to become available in the connection pool. This setting only applies when the proxy has opened its maximum number of connections and all connections are busy with client sessions. For an unlimited wait time, specify <code>0</code>.</p>
+    /// <p>The number of seconds for a proxy to wait for a connection to become available in the connection pool. This setting only applies when the proxy has opened its maximum number of connections and all connections are busy with client sessions.</p>
     /// <p>Default: <code>120</code></p>
     /// <p>Constraints:</p>
     /// <ul>
@@ -60,7 +60,7 @@ impl ConnectionPoolConfiguration {
     pub fn max_idle_connections_percent(&self) -> ::std::option::Option<i32> {
         self.max_idle_connections_percent
     }
-    /// <p>The number of seconds for a proxy to wait for a connection to become available in the connection pool. This setting only applies when the proxy has opened its maximum number of connections and all connections are busy with client sessions. For an unlimited wait time, specify <code>0</code>.</p>
+    /// <p>The number of seconds for a proxy to wait for a connection to become available in the connection pool. This setting only applies when the proxy has opened its maximum number of connections and all connections are busy with client sessions.</p>
     /// <p>Default: <code>120</code></p>
     /// <p>Constraints:</p>
     /// <ul>
@@ -171,7 +171,7 @@ impl ConnectionPoolConfigurationBuilder {
     pub fn get_max_idle_connections_percent(&self) -> &::std::option::Option<i32> {
         &self.max_idle_connections_percent
     }
-    /// <p>The number of seconds for a proxy to wait for a connection to become available in the connection pool. This setting only applies when the proxy has opened its maximum number of connections and all connections are busy with client sessions. For an unlimited wait time, specify <code>0</code>.</p>
+    /// <p>The number of seconds for a proxy to wait for a connection to become available in the connection pool. This setting only applies when the proxy has opened its maximum number of connections and all connections are busy with client sessions.</p>
     /// <p>Default: <code>120</code></p>
     /// <p>Constraints:</p>
     /// <ul>
@@ -182,7 +182,7 @@ impl ConnectionPoolConfigurationBuilder {
         self.connection_borrow_timeout = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of seconds for a proxy to wait for a connection to become available in the connection pool. This setting only applies when the proxy has opened its maximum number of connections and all connections are busy with client sessions. For an unlimited wait time, specify <code>0</code>.</p>
+    /// <p>The number of seconds for a proxy to wait for a connection to become available in the connection pool. This setting only applies when the proxy has opened its maximum number of connections and all connections are busy with client sessions.</p>
     /// <p>Default: <code>120</code></p>
     /// <p>Constraints:</p>
     /// <ul>
@@ -193,7 +193,7 @@ impl ConnectionPoolConfigurationBuilder {
         self.connection_borrow_timeout = input;
         self
     }
-    /// <p>The number of seconds for a proxy to wait for a connection to become available in the connection pool. This setting only applies when the proxy has opened its maximum number of connections and all connections are busy with client sessions. For an unlimited wait time, specify <code>0</code>.</p>
+    /// <p>The number of seconds for a proxy to wait for a connection to become available in the connection pool. This setting only applies when the proxy has opened its maximum number of connections and all connections are busy with client sessions.</p>
     /// <p>Default: <code>120</code></p>
     /// <p>Constraints:</p>
     /// <ul>

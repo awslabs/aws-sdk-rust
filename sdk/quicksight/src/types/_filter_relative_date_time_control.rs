@@ -12,6 +12,8 @@ pub struct FilterRelativeDateTimeControl {
     pub source_filter_id: ::std::string::String,
     /// <p>The display options of a control.</p>
     pub display_options: ::std::option::Option<crate::types::RelativeDateTimeControlDisplayOptions>,
+    /// <p>The visibility configuration of the Apply button on a <code>FilterRelativeDateTimeControl</code>.</p>
+    pub commit_mode: ::std::option::Option<crate::types::CommitMode>,
 }
 impl FilterRelativeDateTimeControl {
     /// <p>The ID of the <code>FilterTextAreaControl</code>.</p>
@@ -33,6 +35,10 @@ impl FilterRelativeDateTimeControl {
     pub fn display_options(&self) -> ::std::option::Option<&crate::types::RelativeDateTimeControlDisplayOptions> {
         self.display_options.as_ref()
     }
+    /// <p>The visibility configuration of the Apply button on a <code>FilterRelativeDateTimeControl</code>.</p>
+    pub fn commit_mode(&self) -> ::std::option::Option<&crate::types::CommitMode> {
+        self.commit_mode.as_ref()
+    }
 }
 impl FilterRelativeDateTimeControl {
     /// Creates a new builder-style object to manufacture [`FilterRelativeDateTimeControl`](crate::types::FilterRelativeDateTimeControl).
@@ -49,6 +55,7 @@ pub struct FilterRelativeDateTimeControlBuilder {
     pub(crate) title: ::std::option::Option<::std::string::String>,
     pub(crate) source_filter_id: ::std::option::Option<::std::string::String>,
     pub(crate) display_options: ::std::option::Option<crate::types::RelativeDateTimeControlDisplayOptions>,
+    pub(crate) commit_mode: ::std::option::Option<crate::types::CommitMode>,
 }
 impl FilterRelativeDateTimeControlBuilder {
     /// <p>The ID of the <code>FilterTextAreaControl</code>.</p>
@@ -110,6 +117,20 @@ impl FilterRelativeDateTimeControlBuilder {
     pub fn get_display_options(&self) -> &::std::option::Option<crate::types::RelativeDateTimeControlDisplayOptions> {
         &self.display_options
     }
+    /// <p>The visibility configuration of the Apply button on a <code>FilterRelativeDateTimeControl</code>.</p>
+    pub fn commit_mode(mut self, input: crate::types::CommitMode) -> Self {
+        self.commit_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The visibility configuration of the Apply button on a <code>FilterRelativeDateTimeControl</code>.</p>
+    pub fn set_commit_mode(mut self, input: ::std::option::Option<crate::types::CommitMode>) -> Self {
+        self.commit_mode = input;
+        self
+    }
+    /// <p>The visibility configuration of the Apply button on a <code>FilterRelativeDateTimeControl</code>.</p>
+    pub fn get_commit_mode(&self) -> &::std::option::Option<crate::types::CommitMode> {
+        &self.commit_mode
+    }
     /// Consumes the builder and constructs a [`FilterRelativeDateTimeControl`](crate::types::FilterRelativeDateTimeControl).
     /// This method will fail if any of the following fields are not set:
     /// - [`filter_control_id`](crate::types::builders::FilterRelativeDateTimeControlBuilder::filter_control_id)
@@ -136,6 +157,7 @@ impl FilterRelativeDateTimeControlBuilder {
                 )
             })?,
             display_options: self.display_options,
+            commit_mode: self.commit_mode,
         })
     }
 }

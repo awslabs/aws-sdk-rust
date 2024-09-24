@@ -177,6 +177,10 @@ pub use crate::types::_reservation_purchase_recommendation_summary::ReservationP
 
 pub use crate::types::_reservation_purchase_recommendation_detail::ReservationPurchaseRecommendationDetail;
 
+pub use crate::types::_reserved_capacity_details::ReservedCapacityDetails;
+
+pub use crate::types::_dynamo_db_capacity_details::DynamoDbCapacityDetails;
+
 pub use crate::types::_instance_details::InstanceDetails;
 
 pub use crate::types::_memory_db_instance_details::MemoryDbInstanceDetails;
@@ -329,6 +333,8 @@ mod _dimension_values_with_attributes;
 
 mod _disk_resource_utilization;
 
+mod _dynamo_db_capacity_details;
+
 mod _ebs_resource_utilization;
 
 mod _ec2_instance_details;
@@ -414,6 +420,8 @@ mod _reservation_purchase_recommendation_metadata;
 mod _reservation_purchase_recommendation_summary;
 
 mod _reservation_utilization_group;
+
+mod _reserved_capacity_details;
 
 mod _resource_details;
 

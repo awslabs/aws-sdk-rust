@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VideoOverlayInput {
-    /// Specify the input file S3, HTTP, or HTTPS URI for your video overlay. For consistency in color and formatting in your output video image, we recommend that you specify a video with similar characteristics as the underlying input video.
+    /// Specify the input file S3, HTTP, or HTTPS URL for your video overlay. To specify one or more Transitions for your base input video instead: Leave blank.
     pub file_input: ::std::option::Option<::std::string::String>,
     /// Specify one or more clips to use from your video overlay. When you include an input clip, you must also specify its start timecode, end timecode, or both start and end timecode.
     pub input_clippings: ::std::option::Option<::std::vec::Vec<crate::types::VideoOverlayInputClipping>>,
@@ -14,7 +14,7 @@ pub struct VideoOverlayInput {
     pub timecode_start: ::std::option::Option<::std::string::String>,
 }
 impl VideoOverlayInput {
-    /// Specify the input file S3, HTTP, or HTTPS URI for your video overlay. For consistency in color and formatting in your output video image, we recommend that you specify a video with similar characteristics as the underlying input video.
+    /// Specify the input file S3, HTTP, or HTTPS URL for your video overlay. To specify one or more Transitions for your base input video instead: Leave blank.
     pub fn file_input(&self) -> ::std::option::Option<&str> {
         self.file_input.as_deref()
     }
@@ -50,17 +50,17 @@ pub struct VideoOverlayInputBuilder {
     pub(crate) timecode_start: ::std::option::Option<::std::string::String>,
 }
 impl VideoOverlayInputBuilder {
-    /// Specify the input file S3, HTTP, or HTTPS URI for your video overlay. For consistency in color and formatting in your output video image, we recommend that you specify a video with similar characteristics as the underlying input video.
+    /// Specify the input file S3, HTTP, or HTTPS URL for your video overlay. To specify one or more Transitions for your base input video instead: Leave blank.
     pub fn file_input(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_input = ::std::option::Option::Some(input.into());
         self
     }
-    /// Specify the input file S3, HTTP, or HTTPS URI for your video overlay. For consistency in color and formatting in your output video image, we recommend that you specify a video with similar characteristics as the underlying input video.
+    /// Specify the input file S3, HTTP, or HTTPS URL for your video overlay. To specify one or more Transitions for your base input video instead: Leave blank.
     pub fn set_file_input(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.file_input = input;
         self
     }
-    /// Specify the input file S3, HTTP, or HTTPS URI for your video overlay. For consistency in color and formatting in your output video image, we recommend that you specify a video with similar characteristics as the underlying input video.
+    /// Specify the input file S3, HTTP, or HTTPS URL for your video overlay. To specify one or more Transitions for your base input video instead: Leave blank.
     pub fn get_file_input(&self) -> &::std::option::Option<::std::string::String> {
         &self.file_input
     }

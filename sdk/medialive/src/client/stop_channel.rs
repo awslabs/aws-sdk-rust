@@ -23,6 +23,7 @@ impl super::Client {
     ///   - [`state(Option<ChannelState>)`](crate::operation::stop_channel::StopChannelOutput::state): Placeholder documentation for ChannelState
     ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::stop_channel::StopChannelOutput::tags): A collection of key-value pairs.
     ///   - [`vpc(Option<VpcOutputSettingsDescription>)`](crate::operation::stop_channel::StopChannelOutput::vpc): Settings for VPC output
+    ///   - [`anywhere_settings(Option<DescribeAnywhereSettings>)`](crate::operation::stop_channel::StopChannelOutput::anywhere_settings): Anywhere settings for this channel.
     /// - On failure, responds with [`SdkError<StopChannelError>`](crate::operation::stop_channel::StopChannelError)
     pub fn stop_channel(&self) -> crate::operation::stop_channel::builders::StopChannelFluentBuilder {
         crate::operation::stop_channel::builders::StopChannelFluentBuilder::new(self.handle.clone())

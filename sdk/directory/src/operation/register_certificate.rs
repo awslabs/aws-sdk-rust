@@ -263,7 +263,7 @@ pub enum RegisterCertificateError {
     ClientException(crate::types::error::ClientException),
     /// <p>The specified directory does not exist in the system.</p>
     DirectoryDoesNotExistException(crate::types::error::DirectoryDoesNotExistException),
-    /// <p>The specified directory is unavailable or could not be found.</p>
+    /// <p>The specified directory is unavailable.</p>
     DirectoryUnavailableException(crate::types::error::DirectoryUnavailableException),
     /// <p>The certificate PEM that was provided has incorrect encoding.</p>
     InvalidCertificateException(crate::types::error::InvalidCertificateException),

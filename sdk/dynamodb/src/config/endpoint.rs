@@ -1083,6 +1083,875 @@ mod test {
         let error = endpoint.expect_err("expected error: Invalid Configuration: Missing Region [Missing region]");
         assert_eq!(format!("{}", error), "Invalid Configuration: Missing Region")
     }
+
+    /// For custom endpoint with account ID available, FIPS enabled, and DualStack enabled
+    #[test]
+    fn test_56() {
+        let params = crate::config::endpoint::Params::builder()
+            .account_id("012345678901".to_string())
+            .use_fips(true)
+            .use_dual_stack(true)
+            .endpoint("https://example.com".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let error = endpoint.expect_err("expected error: Invalid Configuration: FIPS and custom endpoint are not supported [For custom endpoint with account ID available, FIPS enabled, and DualStack enabled]");
+        assert_eq!(format!("{}", error), "Invalid Configuration: FIPS and custom endpoint are not supported")
+    }
+
+    /// For custom endpoint with account ID available, FIPS enabled, and DualStack disabled
+    #[test]
+    fn test_57() {
+        let params = crate::config::endpoint::Params::builder()
+            .account_id("012345678901".to_string())
+            .use_fips(true)
+            .use_dual_stack(false)
+            .endpoint("https://example.com".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let error = endpoint.expect_err("expected error: Invalid Configuration: FIPS and custom endpoint are not supported [For custom endpoint with account ID available, FIPS enabled, and DualStack disabled]");
+        assert_eq!(format!("{}", error), "Invalid Configuration: FIPS and custom endpoint are not supported")
+    }
+
+    /// For custom endpoint with account ID available, FIPS disabled, and DualStack enabled
+    #[test]
+    fn test_58() {
+        let params = crate::config::endpoint::Params::builder()
+            .account_id("012345678901".to_string())
+            .use_fips(false)
+            .use_dual_stack(true)
+            .endpoint("https://example.com".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let error = endpoint.expect_err("expected error: Invalid Configuration: Dualstack and custom endpoint are not supported [For custom endpoint with account ID available, FIPS disabled, and DualStack enabled]");
+        assert_eq!(
+            format!("{}", error),
+            "Invalid Configuration: Dualstack and custom endpoint are not supported"
+        )
+    }
+
+    /// For custom endpoint with account ID available, FIPS disabled, and DualStack disabled
+    #[test]
+    fn test_59() {
+        let params = crate::config::endpoint::Params::builder()
+            .account_id("012345678901".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .endpoint("https://example.com".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://example.com");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder().url("https://example.com").build()
+        );
+    }
+
+    /// For custom endpoint with empty account ID available, FIPS disabled, and DualStack disabled
+    #[test]
+    fn test_60() {
+        let params = crate::config::endpoint::Params::builder()
+            .account_id("".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .endpoint("https://example.com".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://example.com");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder().url("https://example.com").build()
+        );
+    }
+
+    /// For region local with account ID available, FIPS enabled, and DualStack enabled
+    #[test]
+    fn test_61() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("local".to_string())
+            .account_id("012345678901".to_string())
+            .use_fips(true)
+            .use_dual_stack(true)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let error = endpoint.expect_err("expected error: Invalid Configuration: FIPS and local endpoint are not supported [For region local with account ID available, FIPS enabled, and DualStack enabled]");
+        assert_eq!(format!("{}", error), "Invalid Configuration: FIPS and local endpoint are not supported")
+    }
+
+    /// For region local with account ID available, FIPS enabled, and DualStack disabled
+    #[test]
+    fn test_62() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("local".to_string())
+            .account_id("012345678901".to_string())
+            .use_fips(true)
+            .use_dual_stack(false)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let error = endpoint.expect_err("expected error: Invalid Configuration: FIPS and local endpoint are not supported [For region local with account ID available, FIPS enabled, and DualStack disabled]");
+        assert_eq!(format!("{}", error), "Invalid Configuration: FIPS and local endpoint are not supported")
+    }
+
+    /// For region local with account ID available, FIPS disabled, and DualStack enabled
+    #[test]
+    fn test_63() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("local".to_string())
+            .account_id("012345678901".to_string())
+            .use_fips(false)
+            .use_dual_stack(true)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let error = endpoint.expect_err("expected error: Invalid Configuration: Dualstack and local endpoint are not supported [For region local with account ID available, FIPS disabled, and DualStack enabled]");
+        assert_eq!(
+            format!("{}", error),
+            "Invalid Configuration: Dualstack and local endpoint are not supported"
+        )
+    }
+
+    /// For region local with account ID available, FIPS disabled, and DualStack disabled
+    #[test]
+    fn test_64() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("local".to_string())
+            .account_id("012345678901".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: http://localhost:8000");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("http://localhost:8000")
+                .property(
+                    "authSchemes",
+                    vec![::aws_smithy_types::Document::from({
+                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                        out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
+                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
+                        out
+                    })]
+                )
+                .build()
+        );
+    }
+
+    /// For region local with empty account ID available, FIPS disabled, and DualStack disabled
+    #[test]
+    fn test_65() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("local".to_string())
+            .account_id("".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: http://localhost:8000");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("http://localhost:8000")
+                .property(
+                    "authSchemes",
+                    vec![::aws_smithy_types::Document::from({
+                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                        out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
+                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
+                        out
+                    })]
+                )
+                .build()
+        );
+    }
+
+    /// For AccountIdEndpointMode required and no AccountId set
+    #[test]
+    fn test_66() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-east-1".to_string())
+            .account_id_endpoint_mode("required".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let error = endpoint.expect_err("expected error: AccountIdEndpointMode is required but no AccountID was provided or able to be loaded. [For AccountIdEndpointMode required and no AccountId set]");
+        assert_eq!(
+            format!("{}", error),
+            "AccountIdEndpointMode is required but no AccountID was provided or able to be loaded."
+        )
+    }
+
+    /// For region us-east-1 with account ID available, FIPS enabled, and DualStack enabled
+    #[test]
+    fn test_67() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-east-1".to_string())
+            .account_id("012345678901".to_string())
+            .use_fips(true)
+            .use_dual_stack(true)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://dynamodb-fips.us-east-1.api.aws");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://dynamodb-fips.us-east-1.api.aws")
+                .build()
+        );
+    }
+
+    /// For region us-east-1 with account ID available, FIPS enabled, and DualStack disabled
+    #[test]
+    fn test_68() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-east-1".to_string())
+            .account_id("012345678901".to_string())
+            .use_fips(true)
+            .use_dual_stack(false)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://dynamodb-fips.us-east-1.amazonaws.com");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://dynamodb-fips.us-east-1.amazonaws.com")
+                .build()
+        );
+    }
+
+    /// For region us-east-1 with account ID available, AccountIdEndpointMode preferred, FIPS enabled, and DualStack disabled
+    #[test]
+    fn test_69() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-east-1".to_string())
+            .account_id("012345678901".to_string())
+            .account_id_endpoint_mode("preferred".to_string())
+            .use_fips(true)
+            .use_dual_stack(false)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://dynamodb-fips.us-east-1.amazonaws.com");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://dynamodb-fips.us-east-1.amazonaws.com")
+                .build()
+        );
+    }
+
+    /// For region us-east-1 with account ID available, AccountIdEndpointMode required, FIPS enabled, and DualStack disabled
+    #[test]
+    fn test_70() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-east-1".to_string())
+            .account_id("012345678901".to_string())
+            .account_id_endpoint_mode("required".to_string())
+            .use_fips(true)
+            .use_dual_stack(false)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://dynamodb-fips.us-east-1.amazonaws.com");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://dynamodb-fips.us-east-1.amazonaws.com")
+                .build()
+        );
+    }
+
+    /// For region us-east-1 with account ID available, FIPS disabled, and DualStack enabled
+    #[test]
+    fn test_71() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-east-1".to_string())
+            .account_id("012345678901".to_string())
+            .use_fips(false)
+            .use_dual_stack(true)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://dynamodb.us-east-1.api.aws");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://dynamodb.us-east-1.api.aws")
+                .build()
+        );
+    }
+
+    /// For region us-east-1 with account ID available, FIPS disabled, and DualStack enabled
+    #[test]
+    fn test_72() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-east-1".to_string())
+            .account_id("012345678901".to_string())
+            .use_fips(false)
+            .use_dual_stack(true)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://dynamodb.us-east-1.api.aws");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://dynamodb.us-east-1.api.aws")
+                .build()
+        );
+    }
+
+    /// For region us-east-1 with account ID available, AccountIdEndpointMode preferred, FIPS disabled, and DualStack enabled
+    #[test]
+    fn test_73() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-east-1".to_string())
+            .account_id("012345678901".to_string())
+            .account_id_endpoint_mode("preferred".to_string())
+            .use_fips(false)
+            .use_dual_stack(true)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://dynamodb.us-east-1.api.aws");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://dynamodb.us-east-1.api.aws")
+                .build()
+        );
+    }
+
+    /// For region us-east-1 with account ID available, AccountIdEndpointMode disabled, FIPS disabled, and DualStack enabled
+    #[test]
+    fn test_74() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-east-1".to_string())
+            .account_id("012345678901".to_string())
+            .account_id_endpoint_mode("disabled".to_string())
+            .use_fips(false)
+            .use_dual_stack(true)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://dynamodb.us-east-1.api.aws");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://dynamodb.us-east-1.api.aws")
+                .build()
+        );
+    }
+
+    /// For region us-east-1 with account ID available, AccountIdEndpointMode required, FIPS disabled, and DualStack enabled
+    #[test]
+    fn test_75() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-east-1".to_string())
+            .account_id("012345678901".to_string())
+            .account_id_endpoint_mode("required".to_string())
+            .use_fips(false)
+            .use_dual_stack(true)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://dynamodb.us-east-1.api.aws");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://dynamodb.us-east-1.api.aws")
+                .build()
+        );
+    }
+
+    /// For region us-east-1 with account ID available, AccountIdEndpointMode preferred, FIPS disabled, and DualStack disabled
+    #[test]
+    fn test_76() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-east-1".to_string())
+            .account_id("012345678901".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .account_id_endpoint_mode("preferred".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://012345678901.ddb.us-east-1.amazonaws.com");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://012345678901.ddb.us-east-1.amazonaws.com")
+                .build()
+        );
+    }
+
+    /// For region us-east-1 with account ID available, AccountIdEndpointMode required, FIPS disabled, and DualStack disabled
+    #[test]
+    fn test_77() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-east-1".to_string())
+            .account_id("012345678901".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .account_id_endpoint_mode("required".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://012345678901.ddb.us-east-1.amazonaws.com");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://012345678901.ddb.us-east-1.amazonaws.com")
+                .build()
+        );
+    }
+
+    /// For region us-east-1 with account ID available, AccountIdEndpointMode disabled, FIPS disabled, and DualStack disabled
+    #[test]
+    fn test_78() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-east-1".to_string())
+            .account_id("012345678901".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .account_id_endpoint_mode("disabled".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://dynamodb.us-east-1.amazonaws.com");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://dynamodb.us-east-1.amazonaws.com")
+                .build()
+        );
+    }
+
+    /// For region us-east-1 with empty account ID, FIPS disabled, and DualStack disabled
+    #[test]
+    fn test_79() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-east-1".to_string())
+            .account_id("".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let error = endpoint.expect_err("expected error: Credentials-sourced account ID parameter is invalid [For region us-east-1 with empty account ID, FIPS disabled, and DualStack disabled]");
+        assert_eq!(format!("{}", error), "Credentials-sourced account ID parameter is invalid")
+    }
+
+    /// For region cn-north-1 with account ID available, FIPS enabled, and DualStack enabled
+    #[test]
+    fn test_80() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("cn-north-1".to_string())
+            .account_id("012345678901".to_string())
+            .use_fips(true)
+            .use_dual_stack(true)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://dynamodb-fips.cn-north-1.api.amazonwebservices.com.cn");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://dynamodb-fips.cn-north-1.api.amazonwebservices.com.cn")
+                .build()
+        );
+    }
+
+    /// For region cn-north-1 with account ID available, FIPS enabled, and DualStack disabled
+    #[test]
+    fn test_81() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("cn-north-1".to_string())
+            .account_id("012345678901".to_string())
+            .use_fips(true)
+            .use_dual_stack(false)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://dynamodb-fips.cn-north-1.amazonaws.com.cn");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://dynamodb-fips.cn-north-1.amazonaws.com.cn")
+                .build()
+        );
+    }
+
+    /// For region cn-north-1 with account ID available, FIPS disabled, and DualStack enabled
+    #[test]
+    fn test_82() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("cn-north-1".to_string())
+            .account_id("012345678901".to_string())
+            .use_fips(false)
+            .use_dual_stack(true)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://dynamodb.cn-north-1.api.amazonwebservices.com.cn");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://dynamodb.cn-north-1.api.amazonwebservices.com.cn")
+                .build()
+        );
+    }
+
+    /// For region cn-north-1 with account ID available, FIPS disabled, and DualStack disabled
+    #[test]
+    fn test_83() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("cn-north-1".to_string())
+            .account_id("012345678901".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://dynamodb.cn-north-1.amazonaws.com.cn");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://dynamodb.cn-north-1.amazonaws.com.cn")
+                .build()
+        );
+    }
+
+    /// For region cn-north-1 with account ID available, AccountIdEndpointMode preferred, FIPS disabled, and DualStack disabled
+    #[test]
+    fn test_84() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("cn-north-1".to_string())
+            .account_id("012345678901".to_string())
+            .account_id_endpoint_mode("preferred".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://dynamodb.cn-north-1.amazonaws.com.cn");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://dynamodb.cn-north-1.amazonaws.com.cn")
+                .build()
+        );
+    }
+
+    /// For region cn-north-1 with account ID available, AccountIdEndpointMode disabled, FIPS disabled, and DualStack disabled
+    #[test]
+    fn test_85() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("cn-north-1".to_string())
+            .account_id("012345678901".to_string())
+            .account_id_endpoint_mode("disabled".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://dynamodb.cn-north-1.amazonaws.com.cn");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://dynamodb.cn-north-1.amazonaws.com.cn")
+                .build()
+        );
+    }
+
+    /// For region cn-north-1 with account ID available, AccountIdEndpointMode required, FIPS disabled, and DualStack disabled
+    #[test]
+    fn test_86() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("cn-north-1".to_string())
+            .account_id("012345678901".to_string())
+            .account_id_endpoint_mode("required".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://dynamodb.cn-north-1.amazonaws.com.cn");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://dynamodb.cn-north-1.amazonaws.com.cn")
+                .build()
+        );
+    }
+
+    /// For region cn-north-1 with empty account ID available, FIPS disabled, and DualStack disabled
+    #[test]
+    fn test_87() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("cn-north-1".to_string())
+            .account_id("".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://dynamodb.cn-north-1.amazonaws.com.cn");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://dynamodb.cn-north-1.amazonaws.com.cn")
+                .build()
+        );
+    }
+
+    /// For region us-iso-east-1 with account ID available, FIPS enabled, and DualStack enabled
+    #[test]
+    fn test_88() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-iso-east-1".to_string())
+            .account_id("012345678901".to_string())
+            .use_fips(true)
+            .use_dual_stack(true)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let error = endpoint.expect_err("expected error: FIPS and DualStack are enabled, but this partition does not support one or both [For region us-iso-east-1 with account ID available, FIPS enabled, and DualStack enabled]");
+        assert_eq!(
+            format!("{}", error),
+            "FIPS and DualStack are enabled, but this partition does not support one or both"
+        )
+    }
+
+    /// For region us-iso-east-1 with account ID available, FIPS enabled, and DualStack disabled
+    #[test]
+    fn test_89() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-iso-east-1".to_string())
+            .account_id("012345678901".to_string())
+            .use_fips(true)
+            .use_dual_stack(false)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://dynamodb-fips.us-iso-east-1.c2s.ic.gov");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://dynamodb-fips.us-iso-east-1.c2s.ic.gov")
+                .build()
+        );
+    }
+
+    /// For region us-iso-east-1 with account ID available, FIPS disabled, and DualStack enabled
+    #[test]
+    fn test_90() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-iso-east-1".to_string())
+            .account_id("012345678901".to_string())
+            .use_fips(false)
+            .use_dual_stack(true)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let error = endpoint.expect_err("expected error: DualStack is enabled but this partition does not support DualStack [For region us-iso-east-1 with account ID available, FIPS disabled, and DualStack enabled]");
+        assert_eq!(format!("{}", error), "DualStack is enabled but this partition does not support DualStack")
+    }
+
+    /// For region us-iso-east-1 with account ID available, FIPS disabled, and DualStack disabled
+    #[test]
+    fn test_91() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-iso-east-1".to_string())
+            .account_id("012345678901".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://dynamodb.us-iso-east-1.c2s.ic.gov");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://dynamodb.us-iso-east-1.c2s.ic.gov")
+                .build()
+        );
+    }
+
+    /// For region us-iso-east-1 with empty account ID available, FIPS disabled, and DualStack disabled
+    #[test]
+    fn test_92() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-iso-east-1".to_string())
+            .account_id("".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://dynamodb.us-iso-east-1.c2s.ic.gov");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://dynamodb.us-iso-east-1.c2s.ic.gov")
+                .build()
+        );
+    }
+
+    /// For region us-gov-east-1 with account ID available, FIPS enabled, and DualStack enabled
+    #[test]
+    fn test_93() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-gov-east-1".to_string())
+            .account_id("012345678901".to_string())
+            .use_fips(true)
+            .use_dual_stack(true)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://dynamodb-fips.us-gov-east-1.api.aws");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://dynamodb-fips.us-gov-east-1.api.aws")
+                .build()
+        );
+    }
+
+    /// For region us-gov-east-1 with account ID available, FIPS enabled, and DualStack disabled
+    #[test]
+    fn test_94() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-gov-east-1".to_string())
+            .account_id("012345678901".to_string())
+            .use_fips(true)
+            .use_dual_stack(false)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://dynamodb.us-gov-east-1.amazonaws.com");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://dynamodb.us-gov-east-1.amazonaws.com")
+                .build()
+        );
+    }
+
+    /// For region us-gov-east-1 with account ID available, FIPS disabled, and DualStack enabled
+    #[test]
+    fn test_95() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-gov-east-1".to_string())
+            .account_id("012345678901".to_string())
+            .use_fips(false)
+            .use_dual_stack(true)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://dynamodb.us-gov-east-1.api.aws");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://dynamodb.us-gov-east-1.api.aws")
+                .build()
+        );
+    }
+
+    /// For region us-gov-east-1 with account ID available, FIPS disabled, and DualStack disabled
+    #[test]
+    fn test_96() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-gov-east-1".to_string())
+            .account_id("012345678901".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://dynamodb.us-gov-east-1.amazonaws.com");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://dynamodb.us-gov-east-1.amazonaws.com")
+                .build()
+        );
+    }
+
+    /// For region us-gov-east-1 with empty account ID available, FIPS disabled, and DualStack disabled
+    #[test]
+    fn test_97() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-gov-east-1".to_string())
+            .account_id("".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://dynamodb.us-gov-east-1.amazonaws.com");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://dynamodb.us-gov-east-1.amazonaws.com")
+                .build()
+        );
+    }
 }
 
 /// Endpoint resolver trait specific to Amazon DynamoDB
@@ -1163,6 +2032,10 @@ pub struct Params {
     pub(crate) use_fips: bool,
     /// Override the endpoint used to send this request
     pub(crate) endpoint: ::std::option::Option<::std::string::String>,
+    /// The AWS AccountId used for the request.
+    pub(crate) account_id: ::std::option::Option<::std::string::String>,
+    /// The AccountId Endpoint Mode.
+    pub(crate) account_id_endpoint_mode: ::std::option::Option<::std::string::String>,
 }
 impl Params {
     /// Create a builder for [`Params`]
@@ -1185,6 +2058,14 @@ impl Params {
     pub fn endpoint(&self) -> ::std::option::Option<&str> {
         self.endpoint.as_deref()
     }
+    /// The AWS AccountId used for the request.
+    pub fn account_id(&self) -> ::std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// The AccountId Endpoint Mode.
+    pub fn account_id_endpoint_mode(&self) -> ::std::option::Option<&str> {
+        self.account_id_endpoint_mode.as_deref()
+    }
 }
 
 /// Builder for [`Params`]
@@ -1194,6 +2075,8 @@ pub struct ParamsBuilder {
     use_dual_stack: ::std::option::Option<bool>,
     use_fips: ::std::option::Option<bool>,
     endpoint: ::std::option::Option<::std::string::String>,
+    account_id: ::std::option::Option<::std::string::String>,
+    account_id_endpoint_mode: ::std::option::Option<::std::string::String>,
 }
 impl ParamsBuilder {
     /// Consume this builder, creating [`Params`].
@@ -1211,6 +2094,8 @@ impl ParamsBuilder {
                     .or_else(|| Some(false))
                     .ok_or_else(|| crate::config::endpoint::InvalidParams::missing("use_fips"))?,
                 endpoint: self.endpoint,
+                account_id: self.account_id,
+                account_id_endpoint_mode: self.account_id_endpoint_mode,
             },
         )
     }
@@ -1276,6 +2161,36 @@ impl ParamsBuilder {
     /// Override the endpoint used to send this request
     pub fn set_endpoint(mut self, param: Option<::std::string::String>) -> Self {
         self.endpoint = param;
+        self
+    }
+    /// Sets the value for account_id
+    ///
+    /// The AWS AccountId used for the request.
+    pub fn account_id(mut self, value: impl Into<::std::string::String>) -> Self {
+        self.account_id = Some(value.into());
+        self
+    }
+
+    /// Sets the value for account_id
+    ///
+    /// The AWS AccountId used for the request.
+    pub fn set_account_id(mut self, param: Option<::std::string::String>) -> Self {
+        self.account_id = param;
+        self
+    }
+    /// Sets the value for account_id_endpoint_mode
+    ///
+    /// The AccountId Endpoint Mode.
+    pub fn account_id_endpoint_mode(mut self, value: impl Into<::std::string::String>) -> Self {
+        self.account_id_endpoint_mode = Some(value.into());
+        self
+    }
+
+    /// Sets the value for account_id_endpoint_mode
+    ///
+    /// The AccountId Endpoint Mode.
+    pub fn set_account_id_endpoint_mode(mut self, param: Option<::std::string::String>) -> Self {
+        self.account_id_endpoint_mode = param;
         self
     }
 }

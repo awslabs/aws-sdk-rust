@@ -11,6 +11,8 @@ pub struct CreateJobInput {
     pub client_request_token: ::std::option::Option<::std::string::String>,
     /// Optional. Use queue hopping to avoid overly long waits in the backlog of the queue that you submit your job to. Specify an alternate queue and the maximum time that your job will wait in the initial queue before hopping. For more information about this feature, see the AWS Elemental MediaConvert User Guide.
     pub hop_destinations: ::std::option::Option<::std::vec::Vec<crate::types::HopDestination>>,
+    /// Use Job engine versions to run jobs for your production workflow on one version, while you test and validate the latest version. To specify a Job engine version: Enter a date in a YYYY-MM-DD format. For a list of valid Job engine versions, submit a ListVersions request. To not specify a Job engine version: Leave blank.
+    pub job_engine_version: ::std::option::Option<::std::string::String>,
     /// Optional. When you create a job, you can either specify a job template or specify the transcoding settings individually.
     pub job_template: ::std::option::Option<::std::string::String>,
     /// Optional. Specify the relative priority for this job. In any given queue, the service begins processing the job with the highest value first. When more than one job has the same priority, the service begins processing the job that you submitted first. If you don't specify a priority, the service uses the default value 0.
@@ -48,6 +50,10 @@ impl CreateJobInput {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.hop_destinations.is_none()`.
     pub fn hop_destinations(&self) -> &[crate::types::HopDestination] {
         self.hop_destinations.as_deref().unwrap_or_default()
+    }
+    /// Use Job engine versions to run jobs for your production workflow on one version, while you test and validate the latest version. To specify a Job engine version: Enter a date in a YYYY-MM-DD format. For a list of valid Job engine versions, submit a ListVersions request. To not specify a Job engine version: Leave blank.
+    pub fn job_engine_version(&self) -> ::std::option::Option<&str> {
+        self.job_engine_version.as_deref()
     }
     /// Optional. When you create a job, you can either specify a job template or specify the transcoding settings individually.
     pub fn job_template(&self) -> ::std::option::Option<&str> {
@@ -101,6 +107,7 @@ pub struct CreateJobInputBuilder {
     pub(crate) billing_tags_source: ::std::option::Option<crate::types::BillingTagsSource>,
     pub(crate) client_request_token: ::std::option::Option<::std::string::String>,
     pub(crate) hop_destinations: ::std::option::Option<::std::vec::Vec<crate::types::HopDestination>>,
+    pub(crate) job_engine_version: ::std::option::Option<::std::string::String>,
     pub(crate) job_template: ::std::option::Option<::std::string::String>,
     pub(crate) priority: ::std::option::Option<i32>,
     pub(crate) queue: ::std::option::Option<::std::string::String>,
@@ -173,6 +180,20 @@ impl CreateJobInputBuilder {
     /// Optional. Use queue hopping to avoid overly long waits in the backlog of the queue that you submit your job to. Specify an alternate queue and the maximum time that your job will wait in the initial queue before hopping. For more information about this feature, see the AWS Elemental MediaConvert User Guide.
     pub fn get_hop_destinations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::HopDestination>> {
         &self.hop_destinations
+    }
+    /// Use Job engine versions to run jobs for your production workflow on one version, while you test and validate the latest version. To specify a Job engine version: Enter a date in a YYYY-MM-DD format. For a list of valid Job engine versions, submit a ListVersions request. To not specify a Job engine version: Leave blank.
+    pub fn job_engine_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.job_engine_version = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// Use Job engine versions to run jobs for your production workflow on one version, while you test and validate the latest version. To specify a Job engine version: Enter a date in a YYYY-MM-DD format. For a list of valid Job engine versions, submit a ListVersions request. To not specify a Job engine version: Leave blank.
+    pub fn set_job_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.job_engine_version = input;
+        self
+    }
+    /// Use Job engine versions to run jobs for your production workflow on one version, while you test and validate the latest version. To specify a Job engine version: Enter a date in a YYYY-MM-DD format. For a list of valid Job engine versions, submit a ListVersions request. To not specify a Job engine version: Leave blank.
+    pub fn get_job_engine_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_engine_version
     }
     /// Optional. When you create a job, you can either specify a job template or specify the transcoding settings individually.
     pub fn job_template(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -324,6 +345,7 @@ impl CreateJobInputBuilder {
             billing_tags_source: self.billing_tags_source,
             client_request_token: self.client_request_token,
             hop_destinations: self.hop_destinations,
+            job_engine_version: self.job_engine_version,
             job_template: self.job_template,
             priority: self.priority,
             queue: self.queue,

@@ -110,6 +110,8 @@ pub struct Connection {
     /// <p><code>DATABASE</code> - The Amazon Redshift database that you are connecting to.</p></li>
     /// </ul>
     pub connection_properties: ::std::option::Option<::std::collections::HashMap<crate::types::ConnectionPropertyKey, ::std::string::String>>,
+    /// <p>This field is not currently used.</p>
+    pub athena_properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The physical connection requirements, such as virtual private cloud (VPC) and <code>SecurityGroup</code>, that are needed to make this connection successfully.</p>
     pub physical_connection_requirements: ::std::option::Option<crate::types::PhysicalConnectionRequirements>,
     /// <p>The timestamp of the time that this connection definition was created.</p>
@@ -248,6 +250,10 @@ impl Connection {
     ) -> ::std::option::Option<&::std::collections::HashMap<crate::types::ConnectionPropertyKey, ::std::string::String>> {
         self.connection_properties.as_ref()
     }
+    /// <p>This field is not currently used.</p>
+    pub fn athena_properties(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.athena_properties.as_ref()
+    }
     /// <p>The physical connection requirements, such as virtual private cloud (VPC) and <code>SecurityGroup</code>, that are needed to make this connection successfully.</p>
     pub fn physical_connection_requirements(&self) -> ::std::option::Option<&crate::types::PhysicalConnectionRequirements> {
         self.physical_connection_requirements.as_ref()
@@ -297,6 +303,7 @@ pub struct ConnectionBuilder {
     pub(crate) connection_type: ::std::option::Option<crate::types::ConnectionType>,
     pub(crate) match_criteria: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) connection_properties: ::std::option::Option<::std::collections::HashMap<crate::types::ConnectionPropertyKey, ::std::string::String>>,
+    pub(crate) athena_properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) physical_connection_requirements: ::std::option::Option<crate::types::PhysicalConnectionRequirements>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -682,6 +689,33 @@ impl ConnectionBuilder {
     ) -> &::std::option::Option<::std::collections::HashMap<crate::types::ConnectionPropertyKey, ::std::string::String>> {
         &self.connection_properties
     }
+    /// Adds a key-value pair to `athena_properties`.
+    ///
+    /// To override the contents of this collection use [`set_athena_properties`](Self::set_athena_properties).
+    ///
+    /// <p>This field is not currently used.</p>
+    pub fn athena_properties(
+        mut self,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        let mut hash_map = self.athena_properties.unwrap_or_default();
+        hash_map.insert(k.into(), v.into());
+        self.athena_properties = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>This field is not currently used.</p>
+    pub fn set_athena_properties(
+        mut self,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    ) -> Self {
+        self.athena_properties = input;
+        self
+    }
+    /// <p>This field is not currently used.</p>
+    pub fn get_athena_properties(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.athena_properties
+    }
     /// <p>The physical connection requirements, such as virtual private cloud (VPC) and <code>SecurityGroup</code>, that are needed to make this connection successfully.</p>
     pub fn physical_connection_requirements(mut self, input: crate::types::PhysicalConnectionRequirements) -> Self {
         self.physical_connection_requirements = ::std::option::Option::Some(input);
@@ -802,6 +836,7 @@ impl ConnectionBuilder {
             connection_type: self.connection_type,
             match_criteria: self.match_criteria,
             connection_properties: self.connection_properties,
+            athena_properties: self.athena_properties,
             physical_connection_requirements: self.physical_connection_requirements,
             creation_time: self.creation_time,
             last_updated_time: self.last_updated_time,

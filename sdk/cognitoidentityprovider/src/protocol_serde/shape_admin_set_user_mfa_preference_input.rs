@@ -15,11 +15,17 @@ pub fn ser_admin_set_user_mfa_preference_input_input(
         crate::protocol_serde::shape_software_token_mfa_settings_type::ser_software_token_mfa_settings_type(&mut object_4, var_3)?;
         object_4.finish();
     }
-    if let Some(var_5) = &input.username {
-        object.key("Username").string(var_5.as_str());
+    if let Some(var_5) = &input.email_mfa_settings {
+        #[allow(unused_mut)]
+        let mut object_6 = object.key("EmailMfaSettings").start_object();
+        crate::protocol_serde::shape_email_mfa_settings_type::ser_email_mfa_settings_type(&mut object_6, var_5)?;
+        object_6.finish();
     }
-    if let Some(var_6) = &input.user_pool_id {
-        object.key("UserPoolId").string(var_6.as_str());
+    if let Some(var_7) = &input.username {
+        object.key("Username").string(var_7.as_str());
+    }
+    if let Some(var_8) = &input.user_pool_id {
+        object.key("UserPoolId").string(var_8.as_str());
     }
     Ok(())
 }

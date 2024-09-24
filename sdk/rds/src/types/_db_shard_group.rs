@@ -13,14 +13,14 @@ pub struct DbShardGroup {
     pub max_acu: ::std::option::Option<f64>,
     /// <p>The minimum capacity of the DB shard group in Aurora capacity units (ACUs).</p>
     pub min_acu: ::std::option::Option<f64>,
-    /// <p>Specifies whether to create standby instances for the DB shard group. Valid values are the following:</p>
+    /// <p>Specifies whether to create standby DB shard groups for the DB shard group. Valid values are the following:</p>
     /// <ul>
     /// <li>
-    /// <p>0 - Creates a single, primary DB instance for each physical shard. This is the default value, and the only one supported for the preview.</p></li>
+    /// <p>0 - Creates a DB shard group without a standby DB shard group. This is the default value.</p></li>
     /// <li>
-    /// <p>1 - Creates a primary DB instance and a standby instance in a different Availability Zone (AZ) for each physical shard.</p></li>
+    /// <p>1 - Creates a DB shard group with a standby DB shard group in a different Availability Zone (AZ).</p></li>
     /// <li>
-    /// <p>2 - Creates a primary DB instance and two standby instances in different AZs for each physical shard.</p></li>
+    /// <p>2 - Creates a DB shard group with two standby DB shard groups in two different AZs.</p></li>
     /// </ul>
     pub compute_redundancy: ::std::option::Option<i32>,
     /// <p>The status of the DB shard group.</p>
@@ -33,6 +33,8 @@ pub struct DbShardGroup {
     pub publicly_accessible: ::std::option::Option<bool>,
     /// <p>The connection endpoint for the DB shard group.</p>
     pub endpoint: ::std::option::Option<::std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) for the DB shard group.</p>
+    pub db_shard_group_arn: ::std::option::Option<::std::string::String>,
 }
 impl DbShardGroup {
     /// <p>The Amazon Web Services Region-unique, immutable identifier for the DB shard group.</p>
@@ -55,14 +57,14 @@ impl DbShardGroup {
     pub fn min_acu(&self) -> ::std::option::Option<f64> {
         self.min_acu
     }
-    /// <p>Specifies whether to create standby instances for the DB shard group. Valid values are the following:</p>
+    /// <p>Specifies whether to create standby DB shard groups for the DB shard group. Valid values are the following:</p>
     /// <ul>
     /// <li>
-    /// <p>0 - Creates a single, primary DB instance for each physical shard. This is the default value, and the only one supported for the preview.</p></li>
+    /// <p>0 - Creates a DB shard group without a standby DB shard group. This is the default value.</p></li>
     /// <li>
-    /// <p>1 - Creates a primary DB instance and a standby instance in a different Availability Zone (AZ) for each physical shard.</p></li>
+    /// <p>1 - Creates a DB shard group with a standby DB shard group in a different Availability Zone (AZ).</p></li>
     /// <li>
-    /// <p>2 - Creates a primary DB instance and two standby instances in different AZs for each physical shard.</p></li>
+    /// <p>2 - Creates a DB shard group with two standby DB shard groups in two different AZs.</p></li>
     /// </ul>
     pub fn compute_redundancy(&self) -> ::std::option::Option<i32> {
         self.compute_redundancy
@@ -82,6 +84,10 @@ impl DbShardGroup {
     /// <p>The connection endpoint for the DB shard group.</p>
     pub fn endpoint(&self) -> ::std::option::Option<&str> {
         self.endpoint.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) for the DB shard group.</p>
+    pub fn db_shard_group_arn(&self) -> ::std::option::Option<&str> {
+        self.db_shard_group_arn.as_deref()
     }
 }
 impl DbShardGroup {
@@ -104,6 +110,7 @@ pub struct DbShardGroupBuilder {
     pub(crate) status: ::std::option::Option<::std::string::String>,
     pub(crate) publicly_accessible: ::std::option::Option<bool>,
     pub(crate) endpoint: ::std::option::Option<::std::string::String>,
+    pub(crate) db_shard_group_arn: ::std::option::Option<::std::string::String>,
 }
 impl DbShardGroupBuilder {
     /// <p>The Amazon Web Services Region-unique, immutable identifier for the DB shard group.</p>
@@ -176,40 +183,40 @@ impl DbShardGroupBuilder {
     pub fn get_min_acu(&self) -> &::std::option::Option<f64> {
         &self.min_acu
     }
-    /// <p>Specifies whether to create standby instances for the DB shard group. Valid values are the following:</p>
+    /// <p>Specifies whether to create standby DB shard groups for the DB shard group. Valid values are the following:</p>
     /// <ul>
     /// <li>
-    /// <p>0 - Creates a single, primary DB instance for each physical shard. This is the default value, and the only one supported for the preview.</p></li>
+    /// <p>0 - Creates a DB shard group without a standby DB shard group. This is the default value.</p></li>
     /// <li>
-    /// <p>1 - Creates a primary DB instance and a standby instance in a different Availability Zone (AZ) for each physical shard.</p></li>
+    /// <p>1 - Creates a DB shard group with a standby DB shard group in a different Availability Zone (AZ).</p></li>
     /// <li>
-    /// <p>2 - Creates a primary DB instance and two standby instances in different AZs for each physical shard.</p></li>
+    /// <p>2 - Creates a DB shard group with two standby DB shard groups in two different AZs.</p></li>
     /// </ul>
     pub fn compute_redundancy(mut self, input: i32) -> Self {
         self.compute_redundancy = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies whether to create standby instances for the DB shard group. Valid values are the following:</p>
+    /// <p>Specifies whether to create standby DB shard groups for the DB shard group. Valid values are the following:</p>
     /// <ul>
     /// <li>
-    /// <p>0 - Creates a single, primary DB instance for each physical shard. This is the default value, and the only one supported for the preview.</p></li>
+    /// <p>0 - Creates a DB shard group without a standby DB shard group. This is the default value.</p></li>
     /// <li>
-    /// <p>1 - Creates a primary DB instance and a standby instance in a different Availability Zone (AZ) for each physical shard.</p></li>
+    /// <p>1 - Creates a DB shard group with a standby DB shard group in a different Availability Zone (AZ).</p></li>
     /// <li>
-    /// <p>2 - Creates a primary DB instance and two standby instances in different AZs for each physical shard.</p></li>
+    /// <p>2 - Creates a DB shard group with two standby DB shard groups in two different AZs.</p></li>
     /// </ul>
     pub fn set_compute_redundancy(mut self, input: ::std::option::Option<i32>) -> Self {
         self.compute_redundancy = input;
         self
     }
-    /// <p>Specifies whether to create standby instances for the DB shard group. Valid values are the following:</p>
+    /// <p>Specifies whether to create standby DB shard groups for the DB shard group. Valid values are the following:</p>
     /// <ul>
     /// <li>
-    /// <p>0 - Creates a single, primary DB instance for each physical shard. This is the default value, and the only one supported for the preview.</p></li>
+    /// <p>0 - Creates a DB shard group without a standby DB shard group. This is the default value.</p></li>
     /// <li>
-    /// <p>1 - Creates a primary DB instance and a standby instance in a different Availability Zone (AZ) for each physical shard.</p></li>
+    /// <p>1 - Creates a DB shard group with a standby DB shard group in a different Availability Zone (AZ).</p></li>
     /// <li>
-    /// <p>2 - Creates a primary DB instance and two standby instances in different AZs for each physical shard.</p></li>
+    /// <p>2 - Creates a DB shard group with two standby DB shard groups in two different AZs.</p></li>
     /// </ul>
     pub fn get_compute_redundancy(&self) -> &::std::option::Option<i32> {
         &self.compute_redundancy
@@ -268,6 +275,20 @@ impl DbShardGroupBuilder {
     pub fn get_endpoint(&self) -> &::std::option::Option<::std::string::String> {
         &self.endpoint
     }
+    /// <p>The Amazon Resource Name (ARN) for the DB shard group.</p>
+    pub fn db_shard_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.db_shard_group_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) for the DB shard group.</p>
+    pub fn set_db_shard_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.db_shard_group_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) for the DB shard group.</p>
+    pub fn get_db_shard_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.db_shard_group_arn
+    }
     /// Consumes the builder and constructs a [`DbShardGroup`](crate::types::DbShardGroup).
     pub fn build(self) -> crate::types::DbShardGroup {
         crate::types::DbShardGroup {
@@ -280,6 +301,7 @@ impl DbShardGroupBuilder {
             status: self.status,
             publicly_accessible: self.publicly_accessible,
             endpoint: self.endpoint,
+            db_shard_group_arn: self.db_shard_group_arn,
         }
     }
 }

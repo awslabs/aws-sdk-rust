@@ -48,6 +48,34 @@ pub fn de_create_session_http_response(
         let mut output = crate::operation::create_session::builders::CreateSessionOutputBuilder::default();
         output = crate::protocol_serde::shape_create_session::de_create_session(_response_body, output)
             .map_err(crate::operation::create_session::CreateSessionError::unhandled)?;
+        output = output.set_bucket_key_enabled(
+            crate::protocol_serde::shape_create_session_output::de_bucket_key_enabled_header(_response_headers).map_err(|_| {
+                crate::operation::create_session::CreateSessionError::unhandled(
+                    "Failed to parse BucketKeyEnabled from header `x-amz-server-side-encryption-bucket-key-enabled",
+                )
+            })?,
+        );
+        output = output.set_ssekms_encryption_context(
+            crate::protocol_serde::shape_create_session_output::de_ssekms_encryption_context_header(_response_headers).map_err(|_| {
+                crate::operation::create_session::CreateSessionError::unhandled(
+                    "Failed to parse SSEKMSEncryptionContext from header `x-amz-server-side-encryption-context",
+                )
+            })?,
+        );
+        output = output.set_ssekms_key_id(
+            crate::protocol_serde::shape_create_session_output::de_ssekms_key_id_header(_response_headers).map_err(|_| {
+                crate::operation::create_session::CreateSessionError::unhandled(
+                    "Failed to parse SSEKMSKeyId from header `x-amz-server-side-encryption-aws-kms-key-id",
+                )
+            })?,
+        );
+        output = output.set_server_side_encryption(
+            crate::protocol_serde::shape_create_session_output::de_server_side_encryption_header(_response_headers).map_err(|_| {
+                crate::operation::create_session::CreateSessionError::unhandled(
+                    "Failed to parse ServerSideEncryption from header `x-amz-server-side-encryption",
+                )
+            })?,
+        );
         output._set_extended_request_id(crate::s3_request_id::RequestIdExt::extended_request_id(_response_headers).map(str::to_string));
         output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         crate::serde_util::create_session_output_output_correct_errors(output).build()
@@ -71,6 +99,59 @@ pub fn ser_create_session_headers(
             builder = builder.header("x-amz-create-session-mode", header_value);
         }
     }
+    if let ::std::option::Option::Some(inner_3) = &input.server_side_encryption {
+        let formatted_4 = inner_3.as_str();
+        if !formatted_4.is_empty() {
+            let header_value = formatted_4;
+            let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+                ::aws_smithy_types::error::operation::BuildError::invalid_field(
+                    "server_side_encryption",
+                    format!("`{}` cannot be used as a header value: {}", &header_value, err),
+                )
+            })?;
+            builder = builder.header("x-amz-server-side-encryption", header_value);
+        }
+    }
+    if let ::std::option::Option::Some(inner_5) = &input.ssekms_key_id {
+        let formatted_6 = inner_5.as_str();
+        if !formatted_6.is_empty() {
+            let header_value = formatted_6;
+            let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+                ::aws_smithy_types::error::operation::BuildError::invalid_field(
+                    "ssekms_key_id",
+                    format!("`{}` cannot be used as a header value: {}", &"*** Sensitive Data Redacted ***", err),
+                )
+            })?;
+            builder = builder.header("x-amz-server-side-encryption-aws-kms-key-id", header_value);
+        }
+    }
+    if let ::std::option::Option::Some(inner_7) = &input.ssekms_encryption_context {
+        let formatted_8 = inner_7.as_str();
+        if !formatted_8.is_empty() {
+            let header_value = formatted_8;
+            let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+                ::aws_smithy_types::error::operation::BuildError::invalid_field(
+                    "ssekms_encryption_context",
+                    format!("`{}` cannot be used as a header value: {}", &"*** Sensitive Data Redacted ***", err),
+                )
+            })?;
+            builder = builder.header("x-amz-server-side-encryption-context", header_value);
+        }
+    }
+    if let ::std::option::Option::Some(inner_9) = &input.bucket_key_enabled {
+        let mut encoder = ::aws_smithy_types::primitive::Encoder::from(*inner_9);
+        let formatted_10 = encoder.encode();
+        if !formatted_10.is_empty() {
+            let header_value = formatted_10;
+            let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+                ::aws_smithy_types::error::operation::BuildError::invalid_field(
+                    "bucket_key_enabled",
+                    format!("`{}` cannot be used as a header value: {}", &header_value, err),
+                )
+            })?;
+            builder = builder.header("x-amz-server-side-encryption-bucket-key-enabled", header_value);
+        }
+    }
     Ok(builder)
 }
 
@@ -88,13 +169,13 @@ pub fn de_create_session(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Credentials") /* Credentials com.amazonaws.s3.synthetic#CreateSessionOutput$Credentials */ =>  {
-                let var_3 =
+                let var_11 =
                     Some(
                         crate::protocol_serde::shape_session_credentials::de_session_credentials(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_credentials(var_3);
+                builder = builder.set_credentials(var_11);
             }
             ,
             _ => {}

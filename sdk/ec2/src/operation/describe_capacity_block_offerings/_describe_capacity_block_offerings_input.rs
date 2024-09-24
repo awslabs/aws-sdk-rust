@@ -90,7 +90,6 @@ impl DescribeCapacityBlockOfferingsInputBuilder {
         &self.dry_run
     }
     /// <p>The type of instance for which the Capacity Block offering reserves capacity.</p>
-    /// This field is required.
     pub fn instance_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_type = ::std::option::Option::Some(input.into());
         self
@@ -105,7 +104,6 @@ impl DescribeCapacityBlockOfferingsInputBuilder {
         &self.instance_type
     }
     /// <p>The number of instances for which to reserve capacity.</p>
-    /// This field is required.
     pub fn instance_count(mut self, input: i32) -> Self {
         self.instance_count = ::std::option::Option::Some(input);
         self

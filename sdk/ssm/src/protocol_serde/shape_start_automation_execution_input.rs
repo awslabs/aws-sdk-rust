@@ -104,5 +104,8 @@ pub fn ser_start_automation_execution_input_input(
         crate::protocol_serde::shape_alarm_configuration::ser_alarm_configuration(&mut object_35, var_34)?;
         object_35.finish();
     }
+    if let Some(var_36) = &input.target_locations_url {
+        object.key("TargetLocationsURL").string(var_36.as_str());
+    }
     Ok(())
 }
