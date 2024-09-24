@@ -1962,7 +1962,6 @@ impl HumanTaskConfigBuilder {
     /// <li>
     /// <p><code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-Adjustment3DPointCloudSemanticSegmentation</code></p></li>
     /// </ul>
-    /// This field is required.
     pub fn pre_human_task_lambda_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pre_human_task_lambda_arn = ::std::option::Option::Some(input.into());
         self
@@ -3325,7 +3324,6 @@ impl HumanTaskConfigBuilder {
         &self.max_concurrent_task_count
     }
     /// <p>Configures how labels are consolidated across human workers.</p>
-    /// This field is required.
     pub fn annotation_consolidation_config(mut self, input: crate::types::AnnotationConsolidationConfig) -> Self {
         self.annotation_consolidation_config = ::std::option::Option::Some(input);
         self

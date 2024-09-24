@@ -81,6 +81,8 @@ pub use crate::types::_spend_limit_name::SpendLimitName;
 
 pub use crate::types::_sender_id_information::SenderIdInformation;
 
+pub use crate::types::_owner::Owner;
+
 pub use crate::types::_sender_id_filter::SenderIdFilter;
 
 pub use crate::types::_sender_id_filter_name::SenderIdFilterName;
@@ -256,6 +258,8 @@ mod _opted_out_filter_name;
 mod _opted_out_number_information;
 
 mod _origination_identity_metadata;
+
+mod _owner;
 
 mod _phone_number_filter;
 

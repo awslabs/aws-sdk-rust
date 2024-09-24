@@ -21,5 +21,8 @@ pub fn ser_describe_opt_out_lists_input_input(
             ::aws_smithy_types::Number::NegInt((*var_5).into()),
         );
     }
+    if let Some(var_6) = &input.owner {
+        object.key("Owner").string(var_6.as_str());
+    }
     Ok(())
 }

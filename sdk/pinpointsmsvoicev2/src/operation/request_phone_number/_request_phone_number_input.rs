@@ -11,9 +11,13 @@ pub struct RequestPhoneNumberInput {
     pub number_capabilities: ::std::option::Option<::std::vec::Vec<crate::types::NumberCapability>>,
     /// <p>The type of phone number to request.</p>
     pub number_type: ::std::option::Option<crate::types::RequestableNumberType>,
-    /// <p>The name of the OptOutList to associate with the phone number. You can use the OptOutListName or OptOutListArn.</p>
+    /// <p>The name of the OptOutList to associate with the phone number. You can use the OptOutListName or OptOutListArn.</p><important>
+    /// <p>If you are using a shared AWS End User Messaging SMS and Voice resource then you must use the full Amazon Resource Name(ARN).</p>
+    /// </important>
     pub opt_out_list_name: ::std::option::Option<::std::string::String>,
-    /// <p>The pool to associated with the phone number. You can use the PoolId or PoolArn.</p>
+    /// <p>The pool to associated with the phone number. You can use the PoolId or PoolArn.</p><important>
+    /// <p>If you are using a shared AWS End User Messaging SMS and Voice resource then you must use the full Amazon Resource Name(ARN).</p>
+    /// </important>
     pub pool_id: ::std::option::Option<::std::string::String>,
     /// <p>Use this field to attach your phone number for an external registration process.</p>
     pub registration_id: ::std::option::Option<::std::string::String>,
@@ -43,11 +47,15 @@ impl RequestPhoneNumberInput {
     pub fn number_type(&self) -> ::std::option::Option<&crate::types::RequestableNumberType> {
         self.number_type.as_ref()
     }
-    /// <p>The name of the OptOutList to associate with the phone number. You can use the OptOutListName or OptOutListArn.</p>
+    /// <p>The name of the OptOutList to associate with the phone number. You can use the OptOutListName or OptOutListArn.</p><important>
+    /// <p>If you are using a shared AWS End User Messaging SMS and Voice resource then you must use the full Amazon Resource Name(ARN).</p>
+    /// </important>
     pub fn opt_out_list_name(&self) -> ::std::option::Option<&str> {
         self.opt_out_list_name.as_deref()
     }
-    /// <p>The pool to associated with the phone number. You can use the PoolId or PoolArn.</p>
+    /// <p>The pool to associated with the phone number. You can use the PoolId or PoolArn.</p><important>
+    /// <p>If you are using a shared AWS End User Messaging SMS and Voice resource then you must use the full Amazon Resource Name(ARN).</p>
+    /// </important>
     pub fn pool_id(&self) -> ::std::option::Option<&str> {
         self.pool_id.as_deref()
     }
@@ -158,31 +166,43 @@ impl RequestPhoneNumberInputBuilder {
     pub fn get_number_type(&self) -> &::std::option::Option<crate::types::RequestableNumberType> {
         &self.number_type
     }
-    /// <p>The name of the OptOutList to associate with the phone number. You can use the OptOutListName or OptOutListArn.</p>
+    /// <p>The name of the OptOutList to associate with the phone number. You can use the OptOutListName or OptOutListArn.</p><important>
+    /// <p>If you are using a shared AWS End User Messaging SMS and Voice resource then you must use the full Amazon Resource Name(ARN).</p>
+    /// </important>
     pub fn opt_out_list_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.opt_out_list_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the OptOutList to associate with the phone number. You can use the OptOutListName or OptOutListArn.</p>
+    /// <p>The name of the OptOutList to associate with the phone number. You can use the OptOutListName or OptOutListArn.</p><important>
+    /// <p>If you are using a shared AWS End User Messaging SMS and Voice resource then you must use the full Amazon Resource Name(ARN).</p>
+    /// </important>
     pub fn set_opt_out_list_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.opt_out_list_name = input;
         self
     }
-    /// <p>The name of the OptOutList to associate with the phone number. You can use the OptOutListName or OptOutListArn.</p>
+    /// <p>The name of the OptOutList to associate with the phone number. You can use the OptOutListName or OptOutListArn.</p><important>
+    /// <p>If you are using a shared AWS End User Messaging SMS and Voice resource then you must use the full Amazon Resource Name(ARN).</p>
+    /// </important>
     pub fn get_opt_out_list_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.opt_out_list_name
     }
-    /// <p>The pool to associated with the phone number. You can use the PoolId or PoolArn.</p>
+    /// <p>The pool to associated with the phone number. You can use the PoolId or PoolArn.</p><important>
+    /// <p>If you are using a shared AWS End User Messaging SMS and Voice resource then you must use the full Amazon Resource Name(ARN).</p>
+    /// </important>
     pub fn pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pool_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The pool to associated with the phone number. You can use the PoolId or PoolArn.</p>
+    /// <p>The pool to associated with the phone number. You can use the PoolId or PoolArn.</p><important>
+    /// <p>If you are using a shared AWS End User Messaging SMS and Voice resource then you must use the full Amazon Resource Name(ARN).</p>
+    /// </important>
     pub fn set_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pool_id = input;
         self
     }
-    /// <p>The pool to associated with the phone number. You can use the PoolId or PoolArn.</p>
+    /// <p>The pool to associated with the phone number. You can use the PoolId or PoolArn.</p><important>
+    /// <p>If you are using a shared AWS End User Messaging SMS and Voice resource then you must use the full Amazon Resource Name(ARN).</p>
+    /// </important>
     pub fn get_pool_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.pool_id
     }

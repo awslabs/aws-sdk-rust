@@ -532,6 +532,7 @@ impl From<crate::operation::get_resource_policy::GetResourcePolicyError> for Err
         match err {
             crate::operation::get_resource_policy::GetResourcePolicyError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::get_resource_policy::GetResourcePolicyError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
+            crate::operation::get_resource_policy::GetResourcePolicyError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
             crate::operation::get_resource_policy::GetResourcePolicyError::LimitExceededException(inner) => Error::LimitExceededException(inner),
             crate::operation::get_resource_policy::GetResourcePolicyError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)

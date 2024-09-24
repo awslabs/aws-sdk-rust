@@ -36,5 +36,8 @@ pub fn ser_describe_sender_ids_input_input(
             ::aws_smithy_types::Number::NegInt((*var_10).into()),
         );
     }
+    if let Some(var_11) = &input.owner {
+        object.key("Owner").string(var_11.as_str());
+    }
     Ok(())
 }

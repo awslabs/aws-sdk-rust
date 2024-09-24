@@ -75,6 +75,8 @@ pub(crate) mod shape_delete_registration_attachment;
 
 pub(crate) mod shape_delete_registration_field_value;
 
+pub(crate) mod shape_delete_resource_policy;
+
 pub(crate) mod shape_delete_text_message_spend_limit_override;
 
 pub(crate) mod shape_delete_verified_destination_number;
@@ -127,6 +129,8 @@ pub(crate) mod shape_discard_registration_version;
 
 pub(crate) mod shape_get_protect_configuration_country_rule_set;
 
+pub(crate) mod shape_get_resource_policy;
+
 pub(crate) mod shape_list_pool_origination_identities;
 
 pub(crate) mod shape_list_registration_associations;
@@ -138,6 +142,8 @@ pub(crate) mod shape_put_keyword;
 pub(crate) mod shape_put_opted_out_number;
 
 pub(crate) mod shape_put_registration_field_value;
+
+pub(crate) mod shape_put_resource_policy;
 
 pub(crate) mod shape_release_phone_number;
 
@@ -247,6 +253,8 @@ pub(crate) mod shape_delete_registration_field_value_input;
 
 pub(crate) mod shape_delete_registration_input;
 
+pub(crate) mod shape_delete_resource_policy_input;
+
 pub(crate) mod shape_delete_verified_destination_number_input;
 
 pub(crate) mod shape_describe_account_attributes_input;
@@ -295,6 +303,8 @@ pub(crate) mod shape_discard_registration_version_input;
 
 pub(crate) mod shape_get_protect_configuration_country_rule_set_input;
 
+pub(crate) mod shape_get_resource_policy_input;
+
 pub(crate) mod shape_internal_server_exception;
 
 pub(crate) mod shape_list_pool_origination_identities_input;
@@ -308,6 +318,8 @@ pub(crate) mod shape_put_keyword_input;
 pub(crate) mod shape_put_opted_out_number_input;
 
 pub(crate) mod shape_put_registration_field_value_input;
+
+pub(crate) mod shape_put_resource_policy_input;
 
 pub(crate) mod shape_release_phone_number_input;
 

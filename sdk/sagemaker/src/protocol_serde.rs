@@ -2759,7 +2759,13 @@ pub(crate) mod shape_generative_ai_settings;
 
 pub(crate) mod shape_hidden_app_types_list;
 
+pub(crate) mod shape_hidden_instance_types_list;
+
 pub(crate) mod shape_hidden_ml_tools_list;
+
+pub(crate) mod shape_hidden_sage_maker_image;
+
+pub(crate) mod shape_hidden_sage_maker_image_version_aliases_list;
 
 pub(crate) mod shape_holiday_config;
 
@@ -3088,6 +3094,8 @@ pub(crate) mod shape_parent;
 pub(crate) mod shape_processing_job;
 
 pub(crate) mod shape_trial_component_simple_summary;
+
+pub(crate) mod shape_version_aliases_list;
 
 pub(crate) mod shape_customized_metric_specification;
 

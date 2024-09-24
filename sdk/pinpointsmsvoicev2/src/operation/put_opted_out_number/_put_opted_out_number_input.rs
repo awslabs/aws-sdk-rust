@@ -3,13 +3,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutOptedOutNumberInput {
-    /// <p>The OptOutListName or OptOutListArn to add the phone number to.</p>
+    /// <p>The OptOutListName or OptOutListArn to add the phone number to.</p><important>
+    /// <p>If you are using a shared AWS End User Messaging SMS and Voice resource then you must use the full Amazon Resource Name(ARN).</p>
+    /// </important>
     pub opt_out_list_name: ::std::option::Option<::std::string::String>,
     /// <p>The phone number to add to the OptOutList in E.164 format.</p>
     pub opted_out_number: ::std::option::Option<::std::string::String>,
 }
 impl PutOptedOutNumberInput {
-    /// <p>The OptOutListName or OptOutListArn to add the phone number to.</p>
+    /// <p>The OptOutListName or OptOutListArn to add the phone number to.</p><important>
+    /// <p>If you are using a shared AWS End User Messaging SMS and Voice resource then you must use the full Amazon Resource Name(ARN).</p>
+    /// </important>
     pub fn opt_out_list_name(&self) -> ::std::option::Option<&str> {
         self.opt_out_list_name.as_deref()
     }
@@ -33,18 +37,24 @@ pub struct PutOptedOutNumberInputBuilder {
     pub(crate) opted_out_number: ::std::option::Option<::std::string::String>,
 }
 impl PutOptedOutNumberInputBuilder {
-    /// <p>The OptOutListName or OptOutListArn to add the phone number to.</p>
+    /// <p>The OptOutListName or OptOutListArn to add the phone number to.</p><important>
+    /// <p>If you are using a shared AWS End User Messaging SMS and Voice resource then you must use the full Amazon Resource Name(ARN).</p>
+    /// </important>
     /// This field is required.
     pub fn opt_out_list_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.opt_out_list_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The OptOutListName or OptOutListArn to add the phone number to.</p>
+    /// <p>The OptOutListName or OptOutListArn to add the phone number to.</p><important>
+    /// <p>If you are using a shared AWS End User Messaging SMS and Voice resource then you must use the full Amazon Resource Name(ARN).</p>
+    /// </important>
     pub fn set_opt_out_list_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.opt_out_list_name = input;
         self
     }
-    /// <p>The OptOutListName or OptOutListArn to add the phone number to.</p>
+    /// <p>The OptOutListName or OptOutListArn to add the phone number to.</p><important>
+    /// <p>If you are using a shared AWS End User Messaging SMS and Voice resource then you must use the full Amazon Resource Name(ARN).</p>
+    /// </important>
     pub fn get_opt_out_list_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.opt_out_list_name
     }

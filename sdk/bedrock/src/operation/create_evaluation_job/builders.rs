@@ -211,17 +211,17 @@ impl CreateEvaluationJobFluentBuilder {
     pub fn get_evaluation_config(&self) -> &::std::option::Option<crate::types::EvaluationConfig> {
         self.inner.get_evaluation_config()
     }
-    /// <p>Specify the models you want to use in your model evaluation job. Automatic model evaluation jobs support a single model, and model evaluation job that use human workers support two models.</p>
+    /// <p>Specify the models you want to use in your model evaluation job. Automatic model evaluation jobs support a single model or <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference.html">inference profile</a>, and model evaluation job that use human workers support two models or inference profiles.</p>
     pub fn inference_config(mut self, input: crate::types::EvaluationInferenceConfig) -> Self {
         self.inner = self.inner.inference_config(input);
         self
     }
-    /// <p>Specify the models you want to use in your model evaluation job. Automatic model evaluation jobs support a single model, and model evaluation job that use human workers support two models.</p>
+    /// <p>Specify the models you want to use in your model evaluation job. Automatic model evaluation jobs support a single model or <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference.html">inference profile</a>, and model evaluation job that use human workers support two models or inference profiles.</p>
     pub fn set_inference_config(mut self, input: ::std::option::Option<crate::types::EvaluationInferenceConfig>) -> Self {
         self.inner = self.inner.set_inference_config(input);
         self
     }
-    /// <p>Specify the models you want to use in your model evaluation job. Automatic model evaluation jobs support a single model, and model evaluation job that use human workers support two models.</p>
+    /// <p>Specify the models you want to use in your model evaluation job. Automatic model evaluation jobs support a single model or <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference.html">inference profile</a>, and model evaluation job that use human workers support two models or inference profiles.</p>
     pub fn get_inference_config(&self) -> &::std::option::Option<crate::types::EvaluationInferenceConfig> {
         self.inner.get_inference_config()
     }

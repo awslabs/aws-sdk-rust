@@ -23,6 +23,7 @@
 ///     MlTools::JumpStart => { /* ... */ },
 ///     MlTools::ModelEvaluation => { /* ... */ },
 ///     MlTools::Models => { /* ... */ },
+///     MlTools::PerformanceEvaluation => { /* ... */ },
 ///     MlTools::Pipelines => { /* ... */ },
 ///     MlTools::Projects => { /* ... */ },
 ///     MlTools::Training => { /* ... */ },
@@ -76,6 +77,8 @@ pub enum MlTools {
     #[allow(missing_docs)] // documentation missing in model
     Models,
     #[allow(missing_docs)] // documentation missing in model
+    PerformanceEvaluation,
+    #[allow(missing_docs)] // documentation missing in model
     Pipelines,
     #[allow(missing_docs)] // documentation missing in model
     Projects,
@@ -99,6 +102,7 @@ impl ::std::convert::From<&str> for MlTools {
             "JumpStart" => MlTools::JumpStart,
             "ModelEvaluation" => MlTools::ModelEvaluation,
             "Models" => MlTools::Models,
+            "PerformanceEvaluation" => MlTools::PerformanceEvaluation,
             "Pipelines" => MlTools::Pipelines,
             "Projects" => MlTools::Projects,
             "Training" => MlTools::Training,
@@ -128,6 +132,7 @@ impl MlTools {
             MlTools::JumpStart => "JumpStart",
             MlTools::ModelEvaluation => "ModelEvaluation",
             MlTools::Models => "Models",
+            MlTools::PerformanceEvaluation => "PerformanceEvaluation",
             MlTools::Pipelines => "Pipelines",
             MlTools::Projects => "Projects",
             MlTools::Training => "Training",
@@ -148,6 +153,7 @@ impl MlTools {
             "JumpStart",
             "ModelEvaluation",
             "Models",
+            "PerformanceEvaluation",
             "Pipelines",
             "Projects",
             "Training",
@@ -185,6 +191,7 @@ impl ::std::fmt::Display for MlTools {
             MlTools::JumpStart => write!(f, "JumpStart"),
             MlTools::ModelEvaluation => write!(f, "ModelEvaluation"),
             MlTools::Models => write!(f, "Models"),
+            MlTools::PerformanceEvaluation => write!(f, "PerformanceEvaluation"),
             MlTools::Pipelines => write!(f, "Pipelines"),
             MlTools::Projects => write!(f, "Projects"),
             MlTools::Training => write!(f, "Training"),

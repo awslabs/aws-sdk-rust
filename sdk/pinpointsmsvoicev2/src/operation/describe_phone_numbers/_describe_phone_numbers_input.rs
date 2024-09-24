@@ -3,7 +3,9 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribePhoneNumbersInput {
-    /// <p>The unique identifier of phone numbers to find information about. This is an array of strings that can be either the PhoneNumberId or PhoneNumberArn.</p>
+    /// <p>The unique identifier of phone numbers to find information about. This is an array of strings that can be either the PhoneNumberId or PhoneNumberArn.</p><important>
+    /// <p>If you are using a shared AWS End User Messaging SMS and Voice resource then you must use the full Amazon Resource Name(ARN).</p>
+    /// </important>
     pub phone_number_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>An array of PhoneNumberFilter objects to filter the results.</p>
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::PhoneNumberFilter>>,
@@ -11,9 +13,13 @@ pub struct DescribePhoneNumbersInput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return per each request.</p>
     pub max_results: ::std::option::Option<i32>,
+    /// <p>Use <code>SELF</code> to filter the list of phone numbers to ones your account owns or use <code>SHARED</code> to filter on phone numbers shared with your account. The <code>Owner</code> and <code>PhoneNumberIds</code> parameters can't be used at the same time.</p>
+    pub owner: ::std::option::Option<crate::types::Owner>,
 }
 impl DescribePhoneNumbersInput {
-    /// <p>The unique identifier of phone numbers to find information about. This is an array of strings that can be either the PhoneNumberId or PhoneNumberArn.</p>
+    /// <p>The unique identifier of phone numbers to find information about. This is an array of strings that can be either the PhoneNumberId or PhoneNumberArn.</p><important>
+    /// <p>If you are using a shared AWS End User Messaging SMS and Voice resource then you must use the full Amazon Resource Name(ARN).</p>
+    /// </important>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.phone_number_ids.is_none()`.
     pub fn phone_number_ids(&self) -> &[::std::string::String] {
@@ -33,6 +39,10 @@ impl DescribePhoneNumbersInput {
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
+    /// <p>Use <code>SELF</code> to filter the list of phone numbers to ones your account owns or use <code>SHARED</code> to filter on phone numbers shared with your account. The <code>Owner</code> and <code>PhoneNumberIds</code> parameters can't be used at the same time.</p>
+    pub fn owner(&self) -> ::std::option::Option<&crate::types::Owner> {
+        self.owner.as_ref()
+    }
 }
 impl DescribePhoneNumbersInput {
     /// Creates a new builder-style object to manufacture [`DescribePhoneNumbersInput`](crate::operation::describe_phone_numbers::DescribePhoneNumbersInput).
@@ -49,25 +59,32 @@ pub struct DescribePhoneNumbersInputBuilder {
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::PhoneNumberFilter>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
+    pub(crate) owner: ::std::option::Option<crate::types::Owner>,
 }
 impl DescribePhoneNumbersInputBuilder {
     /// Appends an item to `phone_number_ids`.
     ///
     /// To override the contents of this collection use [`set_phone_number_ids`](Self::set_phone_number_ids).
     ///
-    /// <p>The unique identifier of phone numbers to find information about. This is an array of strings that can be either the PhoneNumberId or PhoneNumberArn.</p>
+    /// <p>The unique identifier of phone numbers to find information about. This is an array of strings that can be either the PhoneNumberId or PhoneNumberArn.</p><important>
+    /// <p>If you are using a shared AWS End User Messaging SMS and Voice resource then you must use the full Amazon Resource Name(ARN).</p>
+    /// </important>
     pub fn phone_number_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.phone_number_ids.unwrap_or_default();
         v.push(input.into());
         self.phone_number_ids = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The unique identifier of phone numbers to find information about. This is an array of strings that can be either the PhoneNumberId or PhoneNumberArn.</p>
+    /// <p>The unique identifier of phone numbers to find information about. This is an array of strings that can be either the PhoneNumberId or PhoneNumberArn.</p><important>
+    /// <p>If you are using a shared AWS End User Messaging SMS and Voice resource then you must use the full Amazon Resource Name(ARN).</p>
+    /// </important>
     pub fn set_phone_number_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.phone_number_ids = input;
         self
     }
-    /// <p>The unique identifier of phone numbers to find information about. This is an array of strings that can be either the PhoneNumberId or PhoneNumberArn.</p>
+    /// <p>The unique identifier of phone numbers to find information about. This is an array of strings that can be either the PhoneNumberId or PhoneNumberArn.</p><important>
+    /// <p>If you are using a shared AWS End User Messaging SMS and Voice resource then you must use the full Amazon Resource Name(ARN).</p>
+    /// </important>
     pub fn get_phone_number_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.phone_number_ids
     }
@@ -119,6 +136,20 @@ impl DescribePhoneNumbersInputBuilder {
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
+    /// <p>Use <code>SELF</code> to filter the list of phone numbers to ones your account owns or use <code>SHARED</code> to filter on phone numbers shared with your account. The <code>Owner</code> and <code>PhoneNumberIds</code> parameters can't be used at the same time.</p>
+    pub fn owner(mut self, input: crate::types::Owner) -> Self {
+        self.owner = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Use <code>SELF</code> to filter the list of phone numbers to ones your account owns or use <code>SHARED</code> to filter on phone numbers shared with your account. The <code>Owner</code> and <code>PhoneNumberIds</code> parameters can't be used at the same time.</p>
+    pub fn set_owner(mut self, input: ::std::option::Option<crate::types::Owner>) -> Self {
+        self.owner = input;
+        self
+    }
+    /// <p>Use <code>SELF</code> to filter the list of phone numbers to ones your account owns or use <code>SHARED</code> to filter on phone numbers shared with your account. The <code>Owner</code> and <code>PhoneNumberIds</code> parameters can't be used at the same time.</p>
+    pub fn get_owner(&self) -> &::std::option::Option<crate::types::Owner> {
+        &self.owner
+    }
     /// Consumes the builder and constructs a [`DescribePhoneNumbersInput`](crate::operation::describe_phone_numbers::DescribePhoneNumbersInput).
     pub fn build(
         self,
@@ -129,6 +160,7 @@ impl DescribePhoneNumbersInputBuilder {
             filters: self.filters,
             next_token: self.next_token,
             max_results: self.max_results,
+            owner: self.owner,
         })
     }
 }

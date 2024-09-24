@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum EvaluationModelConfig {
-    /// <p>Defines the Amazon Bedrock model and inference parameters you want used.</p>
+    /// <p>Defines the Amazon Bedrock model or inference profile and inference parameters you want used.</p>
     BedrockModel(crate::types::EvaluationBedrockModel),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant

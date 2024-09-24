@@ -3,15 +3,21 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeOptOutListsInput {
-    /// <p>The OptOutLists to show the details of. This is an array of strings that can be either the OptOutListName or OptOutListArn.</p>
+    /// <p>The OptOutLists to show the details of. This is an array of strings that can be either the OptOutListName or OptOutListArn.</p><important>
+    /// <p>If you are using a shared AWS End User Messaging SMS and Voice resource then you must use the full Amazon Resource Name(ARN).</p>
+    /// </important>
     pub opt_out_list_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return per each request.</p>
     pub max_results: ::std::option::Option<i32>,
+    /// <p>Use <code>SELF</code> to filter the list of Opt-Out List to ones your account owns or use <code>SHARED</code> to filter on Opt-Out List shared with your account. The <code>Owner</code> and <code>OptOutListNames</code> parameters can't be used at the same time.</p>
+    pub owner: ::std::option::Option<crate::types::Owner>,
 }
 impl DescribeOptOutListsInput {
-    /// <p>The OptOutLists to show the details of. This is an array of strings that can be either the OptOutListName or OptOutListArn.</p>
+    /// <p>The OptOutLists to show the details of. This is an array of strings that can be either the OptOutListName or OptOutListArn.</p><important>
+    /// <p>If you are using a shared AWS End User Messaging SMS and Voice resource then you must use the full Amazon Resource Name(ARN).</p>
+    /// </important>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.opt_out_list_names.is_none()`.
     pub fn opt_out_list_names(&self) -> &[::std::string::String] {
@@ -24,6 +30,10 @@ impl DescribeOptOutListsInput {
     /// <p>The maximum number of results to return per each request.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
+    }
+    /// <p>Use <code>SELF</code> to filter the list of Opt-Out List to ones your account owns or use <code>SHARED</code> to filter on Opt-Out List shared with your account. The <code>Owner</code> and <code>OptOutListNames</code> parameters can't be used at the same time.</p>
+    pub fn owner(&self) -> ::std::option::Option<&crate::types::Owner> {
+        self.owner.as_ref()
     }
 }
 impl DescribeOptOutListsInput {
@@ -40,25 +50,32 @@ pub struct DescribeOptOutListsInputBuilder {
     pub(crate) opt_out_list_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
+    pub(crate) owner: ::std::option::Option<crate::types::Owner>,
 }
 impl DescribeOptOutListsInputBuilder {
     /// Appends an item to `opt_out_list_names`.
     ///
     /// To override the contents of this collection use [`set_opt_out_list_names`](Self::set_opt_out_list_names).
     ///
-    /// <p>The OptOutLists to show the details of. This is an array of strings that can be either the OptOutListName or OptOutListArn.</p>
+    /// <p>The OptOutLists to show the details of. This is an array of strings that can be either the OptOutListName or OptOutListArn.</p><important>
+    /// <p>If you are using a shared AWS End User Messaging SMS and Voice resource then you must use the full Amazon Resource Name(ARN).</p>
+    /// </important>
     pub fn opt_out_list_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.opt_out_list_names.unwrap_or_default();
         v.push(input.into());
         self.opt_out_list_names = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The OptOutLists to show the details of. This is an array of strings that can be either the OptOutListName or OptOutListArn.</p>
+    /// <p>The OptOutLists to show the details of. This is an array of strings that can be either the OptOutListName or OptOutListArn.</p><important>
+    /// <p>If you are using a shared AWS End User Messaging SMS and Voice resource then you must use the full Amazon Resource Name(ARN).</p>
+    /// </important>
     pub fn set_opt_out_list_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.opt_out_list_names = input;
         self
     }
-    /// <p>The OptOutLists to show the details of. This is an array of strings that can be either the OptOutListName or OptOutListArn.</p>
+    /// <p>The OptOutLists to show the details of. This is an array of strings that can be either the OptOutListName or OptOutListArn.</p><important>
+    /// <p>If you are using a shared AWS End User Messaging SMS and Voice resource then you must use the full Amazon Resource Name(ARN).</p>
+    /// </important>
     pub fn get_opt_out_list_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.opt_out_list_names
     }
@@ -90,6 +107,20 @@ impl DescribeOptOutListsInputBuilder {
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
+    /// <p>Use <code>SELF</code> to filter the list of Opt-Out List to ones your account owns or use <code>SHARED</code> to filter on Opt-Out List shared with your account. The <code>Owner</code> and <code>OptOutListNames</code> parameters can't be used at the same time.</p>
+    pub fn owner(mut self, input: crate::types::Owner) -> Self {
+        self.owner = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Use <code>SELF</code> to filter the list of Opt-Out List to ones your account owns or use <code>SHARED</code> to filter on Opt-Out List shared with your account. The <code>Owner</code> and <code>OptOutListNames</code> parameters can't be used at the same time.</p>
+    pub fn set_owner(mut self, input: ::std::option::Option<crate::types::Owner>) -> Self {
+        self.owner = input;
+        self
+    }
+    /// <p>Use <code>SELF</code> to filter the list of Opt-Out List to ones your account owns or use <code>SHARED</code> to filter on Opt-Out List shared with your account. The <code>Owner</code> and <code>OptOutListNames</code> parameters can't be used at the same time.</p>
+    pub fn get_owner(&self) -> &::std::option::Option<crate::types::Owner> {
+        &self.owner
+    }
     /// Consumes the builder and constructs a [`DescribeOptOutListsInput`](crate::operation::describe_opt_out_lists::DescribeOptOutListsInput).
     pub fn build(
         self,
@@ -99,6 +130,7 @@ impl DescribeOptOutListsInputBuilder {
             opt_out_list_names: self.opt_out_list_names,
             next_token: self.next_token,
             max_results: self.max_results,
+            owner: self.owner,
         })
     }
 }

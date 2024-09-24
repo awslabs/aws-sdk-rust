@@ -79,6 +79,9 @@ pub mod delete_registration_attachment;
 /// Types for the `DeleteRegistrationFieldValue` operation.
 pub mod delete_registration_field_value;
 
+/// Types for the `DeleteResourcePolicy` operation.
+pub mod delete_resource_policy;
+
 /// Types for the `DeleteTextMessageSpendLimitOverride` operation.
 pub mod delete_text_message_spend_limit_override;
 
@@ -157,6 +160,9 @@ pub mod discard_registration_version;
 /// Types for the `GetProtectConfigurationCountryRuleSet` operation.
 pub mod get_protect_configuration_country_rule_set;
 
+/// Types for the `GetResourcePolicy` operation.
+pub mod get_resource_policy;
+
 /// Types for the `ListPoolOriginationIdentities` operation.
 pub mod list_pool_origination_identities;
 
@@ -174,6 +180,9 @@ pub mod put_opted_out_number;
 
 /// Types for the `PutRegistrationFieldValue` operation.
 pub mod put_registration_field_value;
+
+/// Types for the `PutResourcePolicy` operation.
+pub mod put_resource_policy;
 
 /// Types for the `ReleasePhoneNumber` operation.
 pub mod release_phone_number;

@@ -39,6 +39,12 @@ pub use crate::types::_auto_mount_home_efs::AutoMountHomeEfs;
 
 pub use crate::types::_studio_web_portal_settings::StudioWebPortalSettings;
 
+pub use crate::types::_hidden_sage_maker_image::HiddenSageMakerImage;
+
+pub use crate::types::_sage_maker_image_name::SageMakerImageName;
+
+pub use crate::types::_app_instance_type::AppInstanceType;
+
 pub use crate::types::_app_type::AppType;
 
 pub use crate::types::_ml_tools::MlTools;
@@ -70,8 +76,6 @@ pub use crate::types::_code_repository::CodeRepository;
 pub use crate::types::_custom_image::CustomImage;
 
 pub use crate::types::_resource_spec::ResourceSpec;
-
-pub use crate::types::_app_instance_type::AppInstanceType;
 
 pub use crate::types::_code_editor_app_settings::CodeEditorAppSettings;
 
@@ -2369,6 +2373,8 @@ mod _git_config;
 
 mod _git_config_for_update;
 
+mod _hidden_sage_maker_image;
+
 mod _holiday_config_attributes;
 
 mod _hub_content_dependency;
@@ -3204,6 +3210,8 @@ mod _s3_model_data_type;
 mod _s3_presign;
 
 mod _s3_storage_config;
+
+mod _sage_maker_image_name;
 
 mod _sagemaker_servicecatalog_status;
 

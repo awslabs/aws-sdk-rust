@@ -108,17 +108,23 @@ impl UpdatePoolFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The unique identifier of the pool to update. Valid values are either the PoolId or PoolArn.</p>
+    /// <p>The unique identifier of the pool to update. Valid values are either the PoolId or PoolArn.</p><important>
+    /// <p>If you are using a shared AWS End User Messaging SMS and Voice resource then you must use the full Amazon Resource Name(ARN).</p>
+    /// </important>
     pub fn pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.pool_id(input.into());
         self
     }
-    /// <p>The unique identifier of the pool to update. Valid values are either the PoolId or PoolArn.</p>
+    /// <p>The unique identifier of the pool to update. Valid values are either the PoolId or PoolArn.</p><important>
+    /// <p>If you are using a shared AWS End User Messaging SMS and Voice resource then you must use the full Amazon Resource Name(ARN).</p>
+    /// </important>
     pub fn set_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_pool_id(input);
         self
     }
-    /// <p>The unique identifier of the pool to update. Valid values are either the PoolId or PoolArn.</p>
+    /// <p>The unique identifier of the pool to update. Valid values are either the PoolId or PoolArn.</p><important>
+    /// <p>If you are using a shared AWS End User Messaging SMS and Voice resource then you must use the full Amazon Resource Name(ARN).</p>
+    /// </important>
     pub fn get_pool_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_pool_id()
     }
@@ -178,17 +184,23 @@ impl UpdatePoolFluentBuilder {
     pub fn get_self_managed_opt_outs_enabled(&self) -> &::std::option::Option<bool> {
         self.inner.get_self_managed_opt_outs_enabled()
     }
-    /// <p>The OptOutList to associate with the pool. Valid values are either OptOutListName or OptOutListArn.</p>
+    /// <p>The OptOutList to associate with the pool. Valid values are either OptOutListName or OptOutListArn.</p><important>
+    /// <p>If you are using a shared AWS End User Messaging SMS and Voice resource then you must use the full Amazon Resource Name(ARN).</p>
+    /// </important>
     pub fn opt_out_list_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.opt_out_list_name(input.into());
         self
     }
-    /// <p>The OptOutList to associate with the pool. Valid values are either OptOutListName or OptOutListArn.</p>
+    /// <p>The OptOutList to associate with the pool. Valid values are either OptOutListName or OptOutListArn.</p><important>
+    /// <p>If you are using a shared AWS End User Messaging SMS and Voice resource then you must use the full Amazon Resource Name(ARN).</p>
+    /// </important>
     pub fn set_opt_out_list_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_opt_out_list_name(input);
         self
     }
-    /// <p>The OptOutList to associate with the pool. Valid values are either OptOutListName or OptOutListArn.</p>
+    /// <p>The OptOutList to associate with the pool. Valid values are either OptOutListName or OptOutListArn.</p><important>
+    /// <p>If you are using a shared AWS End User Messaging SMS and Voice resource then you must use the full Amazon Resource Name(ARN).</p>
+    /// </important>
     pub fn get_opt_out_list_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_opt_out_list_name()
     }

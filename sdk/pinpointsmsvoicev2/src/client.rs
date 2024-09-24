@@ -215,6 +215,8 @@ mod delete_registration_attachment;
 
 mod delete_registration_field_value;
 
+mod delete_resource_policy;
+
 mod delete_text_message_spend_limit_override;
 
 mod delete_verified_destination_number;
@@ -267,6 +269,8 @@ mod discard_registration_version;
 
 mod get_protect_configuration_country_rule_set;
 
+mod get_resource_policy;
+
 mod list_pool_origination_identities;
 
 mod list_registration_associations;
@@ -278,6 +282,8 @@ mod put_keyword;
 mod put_opted_out_number;
 
 mod put_registration_field_value;
+
+mod put_resource_policy;
 
 mod release_phone_number;
 

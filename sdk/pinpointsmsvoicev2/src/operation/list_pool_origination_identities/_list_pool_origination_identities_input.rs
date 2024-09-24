@@ -3,7 +3,9 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListPoolOriginationIdentitiesInput {
-    /// <p>The unique identifier for the pool. This value can be either the PoolId or PoolArn.</p>
+    /// <p>The unique identifier for the pool. This value can be either the PoolId or PoolArn.</p><important>
+    /// <p>If you are using a shared AWS End User Messaging SMS and Voice resource then you must use the full Amazon Resource Name(ARN).</p>
+    /// </important>
     pub pool_id: ::std::option::Option<::std::string::String>,
     /// <p>An array of PoolOriginationIdentitiesFilter objects to filter the results..</p>
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::PoolOriginationIdentitiesFilter>>,
@@ -13,7 +15,9 @@ pub struct ListPoolOriginationIdentitiesInput {
     pub max_results: ::std::option::Option<i32>,
 }
 impl ListPoolOriginationIdentitiesInput {
-    /// <p>The unique identifier for the pool. This value can be either the PoolId or PoolArn.</p>
+    /// <p>The unique identifier for the pool. This value can be either the PoolId or PoolArn.</p><important>
+    /// <p>If you are using a shared AWS End User Messaging SMS and Voice resource then you must use the full Amazon Resource Name(ARN).</p>
+    /// </important>
     pub fn pool_id(&self) -> ::std::option::Option<&str> {
         self.pool_id.as_deref()
     }
@@ -49,18 +53,24 @@ pub struct ListPoolOriginationIdentitiesInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
 }
 impl ListPoolOriginationIdentitiesInputBuilder {
-    /// <p>The unique identifier for the pool. This value can be either the PoolId or PoolArn.</p>
+    /// <p>The unique identifier for the pool. This value can be either the PoolId or PoolArn.</p><important>
+    /// <p>If you are using a shared AWS End User Messaging SMS and Voice resource then you must use the full Amazon Resource Name(ARN).</p>
+    /// </important>
     /// This field is required.
     pub fn pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pool_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier for the pool. This value can be either the PoolId or PoolArn.</p>
+    /// <p>The unique identifier for the pool. This value can be either the PoolId or PoolArn.</p><important>
+    /// <p>If you are using a shared AWS End User Messaging SMS and Voice resource then you must use the full Amazon Resource Name(ARN).</p>
+    /// </important>
     pub fn set_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pool_id = input;
         self
     }
-    /// <p>The unique identifier for the pool. This value can be either the PoolId or PoolArn.</p>
+    /// <p>The unique identifier for the pool. This value can be either the PoolId or PoolArn.</p><important>
+    /// <p>If you are using a shared AWS End User Messaging SMS and Voice resource then you must use the full Amazon Resource Name(ARN).</p>
+    /// </important>
     pub fn get_pool_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.pool_id
     }

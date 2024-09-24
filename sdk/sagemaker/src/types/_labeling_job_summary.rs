@@ -210,7 +210,6 @@ impl LabelingJobSummaryBuilder {
         &self.workteam_arn
     }
     /// <p>The Amazon Resource Name (ARN) of a Lambda function. The function is run before each data object is sent to a worker.</p>
-    /// This field is required.
     pub fn pre_human_task_lambda_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pre_human_task_lambda_arn = ::std::option::Option::Some(input.into());
         self

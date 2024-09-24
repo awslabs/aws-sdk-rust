@@ -8,6 +8,10 @@ pub struct StudioWebPortalSettings {
     pub hidden_ml_tools: ::std::option::Option<::std::vec::Vec<crate::types::MlTools>>,
     /// <p>The <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/studio-updated-apps.html">Applications supported in Studio</a> that are hidden from the Studio left navigation pane.</p>
     pub hidden_app_types: ::std::option::Option<::std::vec::Vec<crate::types::AppType>>,
+    /// <p>The instance types you are hiding from the Studio user interface.</p>
+    pub hidden_instance_types: ::std::option::Option<::std::vec::Vec<crate::types::AppInstanceType>>,
+    /// <p>The version aliases you are hiding from the Studio user interface.</p>
+    pub hidden_sage_maker_image_version_aliases: ::std::option::Option<::std::vec::Vec<crate::types::HiddenSageMakerImage>>,
 }
 impl StudioWebPortalSettings {
     /// <p>The machine learning tools that are hidden from the Studio left navigation pane.</p>
@@ -21,6 +25,18 @@ impl StudioWebPortalSettings {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.hidden_app_types.is_none()`.
     pub fn hidden_app_types(&self) -> &[crate::types::AppType] {
         self.hidden_app_types.as_deref().unwrap_or_default()
+    }
+    /// <p>The instance types you are hiding from the Studio user interface.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.hidden_instance_types.is_none()`.
+    pub fn hidden_instance_types(&self) -> &[crate::types::AppInstanceType] {
+        self.hidden_instance_types.as_deref().unwrap_or_default()
+    }
+    /// <p>The version aliases you are hiding from the Studio user interface.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.hidden_sage_maker_image_version_aliases.is_none()`.
+    pub fn hidden_sage_maker_image_version_aliases(&self) -> &[crate::types::HiddenSageMakerImage] {
+        self.hidden_sage_maker_image_version_aliases.as_deref().unwrap_or_default()
     }
 }
 impl StudioWebPortalSettings {
@@ -36,6 +52,8 @@ impl StudioWebPortalSettings {
 pub struct StudioWebPortalSettingsBuilder {
     pub(crate) hidden_ml_tools: ::std::option::Option<::std::vec::Vec<crate::types::MlTools>>,
     pub(crate) hidden_app_types: ::std::option::Option<::std::vec::Vec<crate::types::AppType>>,
+    pub(crate) hidden_instance_types: ::std::option::Option<::std::vec::Vec<crate::types::AppInstanceType>>,
+    pub(crate) hidden_sage_maker_image_version_aliases: ::std::option::Option<::std::vec::Vec<crate::types::HiddenSageMakerImage>>,
 }
 impl StudioWebPortalSettingsBuilder {
     /// Appends an item to `hidden_ml_tools`.
@@ -78,11 +96,56 @@ impl StudioWebPortalSettingsBuilder {
     pub fn get_hidden_app_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AppType>> {
         &self.hidden_app_types
     }
+    /// Appends an item to `hidden_instance_types`.
+    ///
+    /// To override the contents of this collection use [`set_hidden_instance_types`](Self::set_hidden_instance_types).
+    ///
+    /// <p>The instance types you are hiding from the Studio user interface.</p>
+    pub fn hidden_instance_types(mut self, input: crate::types::AppInstanceType) -> Self {
+        let mut v = self.hidden_instance_types.unwrap_or_default();
+        v.push(input);
+        self.hidden_instance_types = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The instance types you are hiding from the Studio user interface.</p>
+    pub fn set_hidden_instance_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AppInstanceType>>) -> Self {
+        self.hidden_instance_types = input;
+        self
+    }
+    /// <p>The instance types you are hiding from the Studio user interface.</p>
+    pub fn get_hidden_instance_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AppInstanceType>> {
+        &self.hidden_instance_types
+    }
+    /// Appends an item to `hidden_sage_maker_image_version_aliases`.
+    ///
+    /// To override the contents of this collection use [`set_hidden_sage_maker_image_version_aliases`](Self::set_hidden_sage_maker_image_version_aliases).
+    ///
+    /// <p>The version aliases you are hiding from the Studio user interface.</p>
+    pub fn hidden_sage_maker_image_version_aliases(mut self, input: crate::types::HiddenSageMakerImage) -> Self {
+        let mut v = self.hidden_sage_maker_image_version_aliases.unwrap_or_default();
+        v.push(input);
+        self.hidden_sage_maker_image_version_aliases = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The version aliases you are hiding from the Studio user interface.</p>
+    pub fn set_hidden_sage_maker_image_version_aliases(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::HiddenSageMakerImage>>,
+    ) -> Self {
+        self.hidden_sage_maker_image_version_aliases = input;
+        self
+    }
+    /// <p>The version aliases you are hiding from the Studio user interface.</p>
+    pub fn get_hidden_sage_maker_image_version_aliases(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::HiddenSageMakerImage>> {
+        &self.hidden_sage_maker_image_version_aliases
+    }
     /// Consumes the builder and constructs a [`StudioWebPortalSettings`](crate::types::StudioWebPortalSettings).
     pub fn build(self) -> crate::types::StudioWebPortalSettings {
         crate::types::StudioWebPortalSettings {
             hidden_ml_tools: self.hidden_ml_tools,
             hidden_app_types: self.hidden_app_types,
+            hidden_instance_types: self.hidden_instance_types,
+            hidden_sage_maker_image_version_aliases: self.hidden_sage_maker_image_version_aliases,
         }
     }
 }

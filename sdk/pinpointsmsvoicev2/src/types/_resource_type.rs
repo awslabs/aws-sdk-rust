@@ -19,6 +19,7 @@
 ///     ResourceType::OptOutList => { /* ... */ },
 ///     ResourceType::OptedOutNumber => { /* ... */ },
 ///     ResourceType::PhoneNumber => { /* ... */ },
+///     ResourceType::Policy => { /* ... */ },
 ///     ResourceType::Pool => { /* ... */ },
 ///     ResourceType::ProtectConfiguration => { /* ... */ },
 ///     ResourceType::Registration => { /* ... */ },
@@ -67,6 +68,8 @@ pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     PhoneNumber,
     #[allow(missing_docs)] // documentation missing in model
+    Policy,
+    #[allow(missing_docs)] // documentation missing in model
     Pool,
     #[allow(missing_docs)] // documentation missing in model
     ProtectConfiguration,
@@ -92,6 +95,7 @@ impl ::std::convert::From<&str> for ResourceType {
             "opt-out-list" => ResourceType::OptOutList,
             "opted-out-number" => ResourceType::OptedOutNumber,
             "phone-number" => ResourceType::PhoneNumber,
+            "policy" => ResourceType::Policy,
             "pool" => ResourceType::Pool,
             "protect-configuration" => ResourceType::ProtectConfiguration,
             "registration" => ResourceType::Registration,
@@ -120,6 +124,7 @@ impl ResourceType {
             ResourceType::OptOutList => "opt-out-list",
             ResourceType::OptedOutNumber => "opted-out-number",
             ResourceType::PhoneNumber => "phone-number",
+            ResourceType::Policy => "policy",
             ResourceType::Pool => "pool",
             ResourceType::ProtectConfiguration => "protect-configuration",
             ResourceType::Registration => "registration",
@@ -139,6 +144,7 @@ impl ResourceType {
             "opt-out-list",
             "opted-out-number",
             "phone-number",
+            "policy",
             "pool",
             "protect-configuration",
             "registration",
@@ -175,6 +181,7 @@ impl ::std::fmt::Display for ResourceType {
             ResourceType::OptOutList => write!(f, "opt-out-list"),
             ResourceType::OptedOutNumber => write!(f, "opted-out-number"),
             ResourceType::PhoneNumber => write!(f, "phone-number"),
+            ResourceType::Policy => write!(f, "policy"),
             ResourceType::Pool => write!(f, "pool"),
             ResourceType::ProtectConfiguration => write!(f, "protect-configuration"),
             ResourceType::Registration => write!(f, "registration"),

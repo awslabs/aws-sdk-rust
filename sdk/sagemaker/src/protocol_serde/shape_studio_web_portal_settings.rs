@@ -21,6 +21,27 @@ pub fn ser_studio_web_portal_settings(
         }
         array_5.finish();
     }
+    if let Some(var_7) = &input.hidden_instance_types {
+        let mut array_8 = object.key("HiddenInstanceTypes").start_array();
+        for item_9 in var_7 {
+            {
+                array_8.value().string(item_9.as_str());
+            }
+        }
+        array_8.finish();
+    }
+    if let Some(var_10) = &input.hidden_sage_maker_image_version_aliases {
+        let mut array_11 = object.key("HiddenSageMakerImageVersionAliases").start_array();
+        for item_12 in var_10 {
+            {
+                #[allow(unused_mut)]
+                let mut object_13 = array_11.value().start_object();
+                crate::protocol_serde::shape_hidden_sage_maker_image::ser_hidden_sage_maker_image(&mut object_13, item_12)?;
+                object_13.finish();
+            }
+        }
+        array_11.finish();
+    }
     Ok(())
 }
 
@@ -46,6 +67,16 @@ where
                         "HiddenAppTypes" => {
                             builder =
                                 builder.set_hidden_app_types(crate::protocol_serde::shape_hidden_app_types_list::de_hidden_app_types_list(tokens)?);
+                        }
+                        "HiddenInstanceTypes" => {
+                            builder = builder.set_hidden_instance_types(
+                                crate::protocol_serde::shape_hidden_instance_types_list::de_hidden_instance_types_list(tokens)?,
+                            );
+                        }
+                        "HiddenSageMakerImageVersionAliases" => {
+                            builder = builder.set_hidden_sage_maker_image_version_aliases(
+                                    crate::protocol_serde::shape_hidden_sage_maker_image_version_aliases_list::de_hidden_sage_maker_image_version_aliases_list(tokens)?
+                                );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

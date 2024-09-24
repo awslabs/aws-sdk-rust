@@ -121,17 +121,23 @@ impl DescribeSenderIdsFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_sender_ids`](Self::set_sender_ids).
     ///
-    /// <p>An array of SenderIdAndCountry objects to search for.</p>
+    /// <p>An array of SenderIdAndCountry objects to search for.</p><important>
+    /// <p>If you are using a shared AWS End User Messaging SMS and Voice resource then you must use the full Amazon Resource Name(ARN).</p>
+    /// </important>
     pub fn sender_ids(mut self, input: crate::types::SenderIdAndCountry) -> Self {
         self.inner = self.inner.sender_ids(input);
         self
     }
-    /// <p>An array of SenderIdAndCountry objects to search for.</p>
+    /// <p>An array of SenderIdAndCountry objects to search for.</p><important>
+    /// <p>If you are using a shared AWS End User Messaging SMS and Voice resource then you must use the full Amazon Resource Name(ARN).</p>
+    /// </important>
     pub fn set_sender_ids(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SenderIdAndCountry>>) -> Self {
         self.inner = self.inner.set_sender_ids(input);
         self
     }
-    /// <p>An array of SenderIdAndCountry objects to search for.</p>
+    /// <p>An array of SenderIdAndCountry objects to search for.</p><important>
+    /// <p>If you are using a shared AWS End User Messaging SMS and Voice resource then you must use the full Amazon Resource Name(ARN).</p>
+    /// </important>
     pub fn get_sender_ids(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SenderIdAndCountry>> {
         self.inner.get_sender_ids()
     }
@@ -181,5 +187,19 @@ impl DescribeSenderIdsFluentBuilder {
     /// <p>The maximum number of results to return per each request.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
+    }
+    /// <p>Use <code>SELF</code> to filter the list of Sender Ids to ones your account owns or use <code>SHARED</code> to filter on Sender Ids shared with your account. The <code>Owner</code> and <code>SenderIds</code> parameters can't be used at the same time.</p>
+    pub fn owner(mut self, input: crate::types::Owner) -> Self {
+        self.inner = self.inner.owner(input);
+        self
+    }
+    /// <p>Use <code>SELF</code> to filter the list of Sender Ids to ones your account owns or use <code>SHARED</code> to filter on Sender Ids shared with your account. The <code>Owner</code> and <code>SenderIds</code> parameters can't be used at the same time.</p>
+    pub fn set_owner(mut self, input: ::std::option::Option<crate::types::Owner>) -> Self {
+        self.inner = self.inner.set_owner(input);
+        self
+    }
+    /// <p>Use <code>SELF</code> to filter the list of Sender Ids to ones your account owns or use <code>SHARED</code> to filter on Sender Ids shared with your account. The <code>Owner</code> and <code>SenderIds</code> parameters can't be used at the same time.</p>
+    pub fn get_owner(&self) -> &::std::option::Option<crate::types::Owner> {
+        self.inner.get_owner()
     }
 }

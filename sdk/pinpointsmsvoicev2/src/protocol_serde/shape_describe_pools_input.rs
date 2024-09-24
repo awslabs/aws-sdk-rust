@@ -33,5 +33,8 @@ pub fn ser_describe_pools_input_input(
             ::aws_smithy_types::Number::NegInt((*var_9).into()),
         );
     }
+    if let Some(var_10) = &input.owner {
+        object.key("Owner").string(var_10.as_str());
+    }
     Ok(())
 }

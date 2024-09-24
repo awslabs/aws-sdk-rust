@@ -36,6 +36,7 @@ impl crate::operation::create_stream::builders::CreateStreamInputBuilder {
 /// <p>For the default shard limit for an Amazon Web Services account, see <a href="https://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html">Amazon Kinesis Data Streams Limits</a> in the <i>Amazon Kinesis Data Streams Developer Guide</i>. To increase this limit, <a href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">contact Amazon Web Services Support</a>.</p>
 /// <p>You can use <code>DescribeStreamSummary</code> to check the stream status, which is returned in <code>StreamStatus</code>.</p>
 /// <p><code>CreateStream</code> has a limit of five transactions per second per account.</p>
+/// <p>You can add tags to the stream when making a <code>CreateStream</code> request by setting the <code>Tags</code> parameter. If you pass <code>Tags</code> parameter, in addition to having <code>kinesis:createStream</code> permission, you must also have <code>kinesis:addTagsToStream</code> permission for the stream that will be created. Tags will take effect from the <code>CREATING</code> status of the stream.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateStreamFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -162,5 +163,24 @@ impl CreateStreamFluentBuilder {
     /// <p>Indicates the capacity mode of the data stream. Currently, in Kinesis Data Streams, you can choose between an <b>on-demand</b> capacity mode and a <b>provisioned</b> capacity mode for your data streams.</p>
     pub fn get_stream_mode_details(&self) -> &::std::option::Option<crate::types::StreamModeDetails> {
         self.inner.get_stream_mode_details()
+    }
+    ///
+    /// Adds a key-value pair to `Tags`.
+    ///
+    /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+    ///
+    /// <p>A set of up to 10 key-value pairs to use to create the tags.</p>
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.tags(k.into(), v.into());
+        self
+    }
+    /// <p>A set of up to 10 key-value pairs to use to create the tags.</p>
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
+        self.inner = self.inner.set_tags(input);
+        self
+    }
+    /// <p>A set of up to 10 key-value pairs to use to create the tags.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.inner.get_tags()
     }
 }

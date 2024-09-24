@@ -2341,9 +2341,6 @@ pub(crate) fn human_task_config_correct_errors(
             Some(builder.build())
         }
     }
-    if builder.pre_human_task_lambda_arn.is_none() {
-        builder.pre_human_task_lambda_arn = Some(Default::default())
-    }
     if builder.task_title.is_none() {
         builder.task_title = Some(Default::default())
     }
@@ -2355,12 +2352,6 @@ pub(crate) fn human_task_config_correct_errors(
     }
     if builder.task_time_limit_in_seconds.is_none() {
         builder.task_time_limit_in_seconds = Some(Default::default())
-    }
-    if builder.annotation_consolidation_config.is_none() {
-        builder.annotation_consolidation_config = {
-            let builder = crate::types::builders::AnnotationConsolidationConfigBuilder::default();
-            Some(crate::serde_util::annotation_consolidation_config_correct_errors(builder).build())
-        }
     }
     builder
 }
@@ -3229,15 +3220,6 @@ pub(crate) fn resource_limits_correct_errors(
     builder
 }
 
-pub(crate) fn annotation_consolidation_config_correct_errors(
-    mut builder: crate::types::builders::AnnotationConsolidationConfigBuilder,
-) -> crate::types::builders::AnnotationConsolidationConfigBuilder {
-    if builder.annotation_consolidation_lambda_arn.is_none() {
-        builder.annotation_consolidation_lambda_arn = Some(Default::default())
-    }
-    builder
-}
-
 pub(crate) fn processing_cluster_config_correct_errors(
     mut builder: crate::types::builders::ProcessingClusterConfigBuilder,
 ) -> crate::types::builders::ProcessingClusterConfigBuilder {
@@ -3313,6 +3295,15 @@ pub(crate) fn algorithm_summary_correct_errors(
     }
     if builder.algorithm_status.is_none() {
         builder.algorithm_status = "no value was set".parse::<crate::types::AlgorithmStatus>().ok()
+    }
+    builder
+}
+
+pub(crate) fn annotation_consolidation_config_correct_errors(
+    mut builder: crate::types::builders::AnnotationConsolidationConfigBuilder,
+) -> crate::types::builders::AnnotationConsolidationConfigBuilder {
+    if builder.annotation_consolidation_lambda_arn.is_none() {
+        builder.annotation_consolidation_lambda_arn = Some(Default::default())
     }
     builder
 }
@@ -4234,9 +4225,6 @@ pub(crate) fn labeling_job_summary_correct_errors(
     }
     if builder.workteam_arn.is_none() {
         builder.workteam_arn = Some(Default::default())
-    }
-    if builder.pre_human_task_lambda_arn.is_none() {
-        builder.pre_human_task_lambda_arn = Some(Default::default())
     }
     builder
 }
