@@ -22,7 +22,7 @@ impl crate::operation::start_event_data_store_ingestion::builders::StartEventDat
 }
 /// Fluent builder constructing a request to `StartEventDataStoreIngestion`.
 ///
-/// <p>Starts the ingestion of live events on an event data store specified as either an ARN or the ID portion of the ARN. To start ingestion, the event data store <code>Status</code> must be <code>STOPPED_INGESTION</code> and the <code>eventCategory</code> must be <code>Management</code>, <code>Data</code>, or <code>ConfigurationItem</code>.</p>
+/// <p>Starts the ingestion of live events on an event data store specified as either an ARN or the ID portion of the ARN. To start ingestion, the event data store <code>Status</code> must be <code>STOPPED_INGESTION</code> and the <code>eventCategory</code> must be <code>Management</code>, <code>Data</code>, <code>NetworkActivity</code>, or <code>ConfigurationItem</code>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartEventDataStoreIngestionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

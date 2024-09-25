@@ -10,7 +10,7 @@ pub struct CreateDataRepositoryAssociationInput {
     /// <p>If you specify only a forward slash (<code>/</code>) as the file system path, you can link only one data repository to the file system. You can only specify "/" as the file system path for the first data repository associated with a file system.</p>
     /// </note>
     pub file_system_path: ::std::option::Option<::std::string::String>,
-    /// <p>The path to the Amazon S3 data repository that will be linked to the file system. The path can be an S3 bucket or prefix in the format <code>s3://myBucket/myPrefix/</code>. This path specifies where in the S3 data repository files will be imported from or exported to.</p>
+    /// <p>The path to the Amazon S3 data repository that will be linked to the file system. The path can be an S3 bucket or prefix in the format <code>s3://bucket-name/prefix/</code> (where <code>prefix</code> is optional). This path specifies where in the S3 data repository files will be imported from or exported to.</p>
     pub data_repository_path: ::std::option::Option<::std::string::String>,
     /// <p>Set to <code>true</code> to run an import data repository task to import metadata from the data repository to the file system after the data repository association is created. Default is <code>false</code>.</p>
     pub batch_import_meta_data_on_create: ::std::option::Option<bool>,
@@ -36,7 +36,7 @@ impl CreateDataRepositoryAssociationInput {
     pub fn file_system_path(&self) -> ::std::option::Option<&str> {
         self.file_system_path.as_deref()
     }
-    /// <p>The path to the Amazon S3 data repository that will be linked to the file system. The path can be an S3 bucket or prefix in the format <code>s3://myBucket/myPrefix/</code>. This path specifies where in the S3 data repository files will be imported from or exported to.</p>
+    /// <p>The path to the Amazon S3 data repository that will be linked to the file system. The path can be an S3 bucket or prefix in the format <code>s3://bucket-name/prefix/</code> (where <code>prefix</code> is optional). This path specifies where in the S3 data repository files will be imported from or exported to.</p>
     pub fn data_repository_path(&self) -> ::std::option::Option<&str> {
         self.data_repository_path.as_deref()
     }
@@ -123,18 +123,18 @@ impl CreateDataRepositoryAssociationInputBuilder {
     pub fn get_file_system_path(&self) -> &::std::option::Option<::std::string::String> {
         &self.file_system_path
     }
-    /// <p>The path to the Amazon S3 data repository that will be linked to the file system. The path can be an S3 bucket or prefix in the format <code>s3://myBucket/myPrefix/</code>. This path specifies where in the S3 data repository files will be imported from or exported to.</p>
+    /// <p>The path to the Amazon S3 data repository that will be linked to the file system. The path can be an S3 bucket or prefix in the format <code>s3://bucket-name/prefix/</code> (where <code>prefix</code> is optional). This path specifies where in the S3 data repository files will be imported from or exported to.</p>
     /// This field is required.
     pub fn data_repository_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_repository_path = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The path to the Amazon S3 data repository that will be linked to the file system. The path can be an S3 bucket or prefix in the format <code>s3://myBucket/myPrefix/</code>. This path specifies where in the S3 data repository files will be imported from or exported to.</p>
+    /// <p>The path to the Amazon S3 data repository that will be linked to the file system. The path can be an S3 bucket or prefix in the format <code>s3://bucket-name/prefix/</code> (where <code>prefix</code> is optional). This path specifies where in the S3 data repository files will be imported from or exported to.</p>
     pub fn set_data_repository_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_repository_path = input;
         self
     }
-    /// <p>The path to the Amazon S3 data repository that will be linked to the file system. The path can be an S3 bucket or prefix in the format <code>s3://myBucket/myPrefix/</code>. This path specifies where in the S3 data repository files will be imported from or exported to.</p>
+    /// <p>The path to the Amazon S3 data repository that will be linked to the file system. The path can be an S3 bucket or prefix in the format <code>s3://bucket-name/prefix/</code> (where <code>prefix</code> is optional). This path specifies where in the S3 data repository files will be imported from or exported to.</p>
     pub fn get_data_repository_path(&self) -> &::std::option::Option<::std::string::String> {
         &self.data_repository_path
     }

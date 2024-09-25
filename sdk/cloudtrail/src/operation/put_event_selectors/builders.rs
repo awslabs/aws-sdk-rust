@@ -22,12 +22,24 @@ impl crate::operation::put_event_selectors::builders::PutEventSelectorsInputBuil
 }
 /// Fluent builder constructing a request to `PutEventSelectors`.
 ///
-/// <p>Configures an event selector or advanced event selectors for your trail. Use event selectors or advanced event selectors to specify management and data event settings for your trail. If you want your trail to log Insights events, be sure the event selector enables logging of the Insights event types you want configured for your trail. For more information about logging Insights events, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-insights-events-with-cloudtrail.html">Logging Insights events</a> in the <i>CloudTrail User Guide</i>. By default, trails created without specific event selectors are configured to log all read and write management events, and no data events.</p>
+/// <p>Configures event selectors (also referred to as <i>basic event selectors</i>) or advanced event selectors for your trail. You can use either <code>AdvancedEventSelectors</code> or <code>EventSelectors</code>, but not both. If you apply <code>AdvancedEventSelectors</code> to a trail, any existing <code>EventSelectors</code> are overwritten.</p>
+/// <p>You can use <code>AdvancedEventSelectors</code> to log management events, data events for all resource types, and network activity events.</p>
+/// <p>You can use <code>EventSelectors</code> to log management events and data events for the following resource types:</p>
+/// <ul>
+/// <li>
+/// <p><code>AWS::DynamoDB::Table</code></p></li>
+/// <li>
+/// <p><code>AWS::Lambda::Function</code></p></li>
+/// <li>
+/// <p><code>AWS::S3::Object</code></p></li>
+/// </ul>
+/// <p>You can't use <code>EventSelectors</code> to log network activity events.</p>
+/// <p>If you want your trail to log Insights events, be sure the event selector or advanced event selector enables logging of the Insights event types you want configured for your trail. For more information about logging Insights events, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-insights-events-with-cloudtrail.html">Logging Insights events</a> in the <i>CloudTrail User Guide</i>. By default, trails created without specific event selectors are configured to log all read and write management events, and no data events or network activity events.</p>
 /// <p>When an event occurs in your account, CloudTrail evaluates the event selectors or advanced event selectors in all trails. For each trail, if the event matches any event selector, the trail processes and logs the event. If the event doesn't match any event selector, the trail doesn't log the event.</p>
 /// <p>Example</p>
 /// <ol>
 /// <li>
-/// <p>You create an event selector for a trail and specify that you want write-only events.</p></li>
+/// <p>You create an event selector for a trail and specify that you want to log write-only events.</p></li>
 /// <li>
 /// <p>The EC2 <code>GetConsoleOutput</code> and <code>RunInstances</code> API operations occur in your account.</p></li>
 /// <li>
@@ -38,8 +50,8 @@ impl crate::operation::put_event_selectors::builders::PutEventSelectorsInputBuil
 /// <p>The <code>GetConsoleOutput</code> is a read-only event that doesn't match your event selector. The trail doesn't log the event.</p></li>
 /// </ol>
 /// <p>The <code>PutEventSelectors</code> operation must be called from the Region in which the trail was created; otherwise, an <code>InvalidHomeRegionException</code> exception is thrown.</p>
-/// <p>You can configure up to five event selectors for each trail. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-events-with-cloudtrail.html">Logging management events</a>, <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Logging data events</a>, and <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/WhatIsCloudTrail-Limits.html">Quotas in CloudTrail</a> in the <i>CloudTrail User Guide</i>.</p>
-/// <p>You can add advanced event selectors, and conditions for your advanced event selectors, up to a maximum of 500 values for all conditions and selectors on a trail. You can use either <code>AdvancedEventSelectors</code> or <code>EventSelectors</code>, but not both. If you apply <code>AdvancedEventSelectors</code> to a trail, any existing <code>EventSelectors</code> are overwritten. For more information about advanced event selectors, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Logging data events</a> in the <i>CloudTrail User Guide</i>.</p>
+/// <p>You can configure up to five event selectors for each trail.</p>
+/// <p>You can add advanced event selectors, and conditions for your advanced event selectors, up to a maximum of 500 values for all conditions and selectors on a trail. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-events-with-cloudtrail.html">Logging management events</a>, <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Logging data events</a>, <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-network-events-with-cloudtrail.html">Logging network activity events</a>, and <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/WhatIsCloudTrail-Limits.html">Quotas in CloudTrail</a> in the <i>CloudTrail User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutEventSelectorsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -186,17 +198,47 @@ impl PutEventSelectorsFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_event_selectors`](Self::set_event_selectors).
     ///
-    /// <p>Specifies the settings for your event selectors. You can configure up to five event selectors for a trail. You can use either <code>EventSelectors</code> or <code>AdvancedEventSelectors</code> in a <code>PutEventSelectors</code> request, but not both. If you apply <code>EventSelectors</code> to a trail, any existing <code>AdvancedEventSelectors</code> are overwritten.</p>
+    /// <p>Specifies the settings for your event selectors. You can use event selectors to log management events and data events for the following resource types:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>AWS::DynamoDB::Table</code></p></li>
+    /// <li>
+    /// <p><code>AWS::Lambda::Function</code></p></li>
+    /// <li>
+    /// <p><code>AWS::S3::Object</code></p></li>
+    /// </ul>
+    /// <p>You can't use event selectors to log network activity events.</p>
+    /// <p>You can configure up to five event selectors for a trail. You can use either <code>EventSelectors</code> or <code>AdvancedEventSelectors</code> in a <code>PutEventSelectors</code> request, but not both. If you apply <code>EventSelectors</code> to a trail, any existing <code>AdvancedEventSelectors</code> are overwritten.</p>
     pub fn event_selectors(mut self, input: crate::types::EventSelector) -> Self {
         self.inner = self.inner.event_selectors(input);
         self
     }
-    /// <p>Specifies the settings for your event selectors. You can configure up to five event selectors for a trail. You can use either <code>EventSelectors</code> or <code>AdvancedEventSelectors</code> in a <code>PutEventSelectors</code> request, but not both. If you apply <code>EventSelectors</code> to a trail, any existing <code>AdvancedEventSelectors</code> are overwritten.</p>
+    /// <p>Specifies the settings for your event selectors. You can use event selectors to log management events and data events for the following resource types:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>AWS::DynamoDB::Table</code></p></li>
+    /// <li>
+    /// <p><code>AWS::Lambda::Function</code></p></li>
+    /// <li>
+    /// <p><code>AWS::S3::Object</code></p></li>
+    /// </ul>
+    /// <p>You can't use event selectors to log network activity events.</p>
+    /// <p>You can configure up to five event selectors for a trail. You can use either <code>EventSelectors</code> or <code>AdvancedEventSelectors</code> in a <code>PutEventSelectors</code> request, but not both. If you apply <code>EventSelectors</code> to a trail, any existing <code>AdvancedEventSelectors</code> are overwritten.</p>
     pub fn set_event_selectors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EventSelector>>) -> Self {
         self.inner = self.inner.set_event_selectors(input);
         self
     }
-    /// <p>Specifies the settings for your event selectors. You can configure up to five event selectors for a trail. You can use either <code>EventSelectors</code> or <code>AdvancedEventSelectors</code> in a <code>PutEventSelectors</code> request, but not both. If you apply <code>EventSelectors</code> to a trail, any existing <code>AdvancedEventSelectors</code> are overwritten.</p>
+    /// <p>Specifies the settings for your event selectors. You can use event selectors to log management events and data events for the following resource types:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>AWS::DynamoDB::Table</code></p></li>
+    /// <li>
+    /// <p><code>AWS::Lambda::Function</code></p></li>
+    /// <li>
+    /// <p><code>AWS::S3::Object</code></p></li>
+    /// </ul>
+    /// <p>You can't use event selectors to log network activity events.</p>
+    /// <p>You can configure up to five event selectors for a trail. You can use either <code>EventSelectors</code> or <code>AdvancedEventSelectors</code> in a <code>PutEventSelectors</code> request, but not both. If you apply <code>EventSelectors</code> to a trail, any existing <code>AdvancedEventSelectors</code> are overwritten.</p>
     pub fn get_event_selectors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EventSelector>> {
         self.inner.get_event_selectors()
     }
@@ -205,17 +247,20 @@ impl PutEventSelectorsFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_advanced_event_selectors`](Self::set_advanced_event_selectors).
     ///
-    /// <p>Specifies the settings for advanced event selectors. You can add advanced event selectors, and conditions for your advanced event selectors, up to a maximum of 500 values for all conditions and selectors on a trail. You can use either <code>AdvancedEventSelectors</code> or <code>EventSelectors</code>, but not both. If you apply <code>AdvancedEventSelectors</code> to a trail, any existing <code>EventSelectors</code> are overwritten. For more information about advanced event selectors, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Logging data events</a> in the <i>CloudTrail User Guide</i>.</p>
+    /// <p>Specifies the settings for advanced event selectors. You can use advanced event selectors to log management events, data events for all resource types, and network activity events.</p>
+    /// <p>You can add advanced event selectors, and conditions for your advanced event selectors, up to a maximum of 500 values for all conditions and selectors on a trail. You can use either <code>AdvancedEventSelectors</code> or <code>EventSelectors</code>, but not both. If you apply <code>AdvancedEventSelectors</code> to a trail, any existing <code>EventSelectors</code> are overwritten. For more information about advanced event selectors, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Logging data events</a> and <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-network-events-with-cloudtrail.html">Logging network activity events</a> in the <i>CloudTrail User Guide</i>.</p>
     pub fn advanced_event_selectors(mut self, input: crate::types::AdvancedEventSelector) -> Self {
         self.inner = self.inner.advanced_event_selectors(input);
         self
     }
-    /// <p>Specifies the settings for advanced event selectors. You can add advanced event selectors, and conditions for your advanced event selectors, up to a maximum of 500 values for all conditions and selectors on a trail. You can use either <code>AdvancedEventSelectors</code> or <code>EventSelectors</code>, but not both. If you apply <code>AdvancedEventSelectors</code> to a trail, any existing <code>EventSelectors</code> are overwritten. For more information about advanced event selectors, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Logging data events</a> in the <i>CloudTrail User Guide</i>.</p>
+    /// <p>Specifies the settings for advanced event selectors. You can use advanced event selectors to log management events, data events for all resource types, and network activity events.</p>
+    /// <p>You can add advanced event selectors, and conditions for your advanced event selectors, up to a maximum of 500 values for all conditions and selectors on a trail. You can use either <code>AdvancedEventSelectors</code> or <code>EventSelectors</code>, but not both. If you apply <code>AdvancedEventSelectors</code> to a trail, any existing <code>EventSelectors</code> are overwritten. For more information about advanced event selectors, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Logging data events</a> and <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-network-events-with-cloudtrail.html">Logging network activity events</a> in the <i>CloudTrail User Guide</i>.</p>
     pub fn set_advanced_event_selectors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AdvancedEventSelector>>) -> Self {
         self.inner = self.inner.set_advanced_event_selectors(input);
         self
     }
-    /// <p>Specifies the settings for advanced event selectors. You can add advanced event selectors, and conditions for your advanced event selectors, up to a maximum of 500 values for all conditions and selectors on a trail. You can use either <code>AdvancedEventSelectors</code> or <code>EventSelectors</code>, but not both. If you apply <code>AdvancedEventSelectors</code> to a trail, any existing <code>EventSelectors</code> are overwritten. For more information about advanced event selectors, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Logging data events</a> in the <i>CloudTrail User Guide</i>.</p>
+    /// <p>Specifies the settings for advanced event selectors. You can use advanced event selectors to log management events, data events for all resource types, and network activity events.</p>
+    /// <p>You can add advanced event selectors, and conditions for your advanced event selectors, up to a maximum of 500 values for all conditions and selectors on a trail. You can use either <code>AdvancedEventSelectors</code> or <code>EventSelectors</code>, but not both. If you apply <code>AdvancedEventSelectors</code> to a trail, any existing <code>EventSelectors</code> are overwritten. For more information about advanced event selectors, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Logging data events</a> and <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-network-events-with-cloudtrail.html">Logging network activity events</a> in the <i>CloudTrail User Guide</i>.</p>
     pub fn get_advanced_event_selectors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AdvancedEventSelector>> {
         self.inner.get_advanced_event_selectors()
     }

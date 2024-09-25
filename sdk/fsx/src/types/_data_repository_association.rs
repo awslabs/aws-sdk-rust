@@ -53,9 +53,9 @@ pub struct DataRepositoryAssociation {
     /// <p>If you are using the <code>DataRepositorySubdirectories</code> parameter, the path is the domain name of the NFS file system in the format <code>nfs://filer-domain-name</code>, which indicates the root of the subdirectories specified with the <code>DataRepositorySubdirectories</code> parameter.</p></li>
     /// </ul></li>
     /// <li>
-    /// <p>For Amazon File Cache, the path can be an S3 bucket or prefix in the format <code>s3://myBucket/myPrefix/</code>.</p></li>
+    /// <p>For Amazon File Cache, the path can be an S3 bucket or prefix in the format <code>s3://bucket-name/prefix/</code> (where <code>prefix</code> is optional).</p></li>
     /// <li>
-    /// <p>For Amazon FSx for Lustre, the path can be an S3 bucket or prefix in the format <code>s3://myBucket/myPrefix/</code>.</p></li>
+    /// <p>For Amazon FSx for Lustre, the path can be an S3 bucket or prefix in the format <code>s3://bucket-name/prefix/</code> (where <code>prefix</code> is optional).</p></li>
     /// </ul>
     pub data_repository_path: ::std::option::Option<::std::string::String>,
     /// <p>A boolean flag indicating whether an import data repository task to import metadata should run after the data repository association is created. The task runs if this flag is set to <code>true</code>.</p><note>
@@ -137,9 +137,9 @@ impl DataRepositoryAssociation {
     /// <p>If you are using the <code>DataRepositorySubdirectories</code> parameter, the path is the domain name of the NFS file system in the format <code>nfs://filer-domain-name</code>, which indicates the root of the subdirectories specified with the <code>DataRepositorySubdirectories</code> parameter.</p></li>
     /// </ul></li>
     /// <li>
-    /// <p>For Amazon File Cache, the path can be an S3 bucket or prefix in the format <code>s3://myBucket/myPrefix/</code>.</p></li>
+    /// <p>For Amazon File Cache, the path can be an S3 bucket or prefix in the format <code>s3://bucket-name/prefix/</code> (where <code>prefix</code> is optional).</p></li>
     /// <li>
-    /// <p>For Amazon FSx for Lustre, the path can be an S3 bucket or prefix in the format <code>s3://myBucket/myPrefix/</code>.</p></li>
+    /// <p>For Amazon FSx for Lustre, the path can be an S3 bucket or prefix in the format <code>s3://bucket-name/prefix/</code> (where <code>prefix</code> is optional).</p></li>
     /// </ul>
     pub fn data_repository_path(&self) -> ::std::option::Option<&str> {
         self.data_repository_path.as_deref()
@@ -367,9 +367,9 @@ impl DataRepositoryAssociationBuilder {
     /// <p>If you are using the <code>DataRepositorySubdirectories</code> parameter, the path is the domain name of the NFS file system in the format <code>nfs://filer-domain-name</code>, which indicates the root of the subdirectories specified with the <code>DataRepositorySubdirectories</code> parameter.</p></li>
     /// </ul></li>
     /// <li>
-    /// <p>For Amazon File Cache, the path can be an S3 bucket or prefix in the format <code>s3://myBucket/myPrefix/</code>.</p></li>
+    /// <p>For Amazon File Cache, the path can be an S3 bucket or prefix in the format <code>s3://bucket-name/prefix/</code> (where <code>prefix</code> is optional).</p></li>
     /// <li>
-    /// <p>For Amazon FSx for Lustre, the path can be an S3 bucket or prefix in the format <code>s3://myBucket/myPrefix/</code>.</p></li>
+    /// <p>For Amazon FSx for Lustre, the path can be an S3 bucket or prefix in the format <code>s3://bucket-name/prefix/</code> (where <code>prefix</code> is optional).</p></li>
     /// </ul>
     pub fn data_repository_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_repository_path = ::std::option::Option::Some(input.into());
@@ -386,9 +386,9 @@ impl DataRepositoryAssociationBuilder {
     /// <p>If you are using the <code>DataRepositorySubdirectories</code> parameter, the path is the domain name of the NFS file system in the format <code>nfs://filer-domain-name</code>, which indicates the root of the subdirectories specified with the <code>DataRepositorySubdirectories</code> parameter.</p></li>
     /// </ul></li>
     /// <li>
-    /// <p>For Amazon File Cache, the path can be an S3 bucket or prefix in the format <code>s3://myBucket/myPrefix/</code>.</p></li>
+    /// <p>For Amazon File Cache, the path can be an S3 bucket or prefix in the format <code>s3://bucket-name/prefix/</code> (where <code>prefix</code> is optional).</p></li>
     /// <li>
-    /// <p>For Amazon FSx for Lustre, the path can be an S3 bucket or prefix in the format <code>s3://myBucket/myPrefix/</code>.</p></li>
+    /// <p>For Amazon FSx for Lustre, the path can be an S3 bucket or prefix in the format <code>s3://bucket-name/prefix/</code> (where <code>prefix</code> is optional).</p></li>
     /// </ul>
     pub fn set_data_repository_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_repository_path = input;
@@ -405,9 +405,9 @@ impl DataRepositoryAssociationBuilder {
     /// <p>If you are using the <code>DataRepositorySubdirectories</code> parameter, the path is the domain name of the NFS file system in the format <code>nfs://filer-domain-name</code>, which indicates the root of the subdirectories specified with the <code>DataRepositorySubdirectories</code> parameter.</p></li>
     /// </ul></li>
     /// <li>
-    /// <p>For Amazon File Cache, the path can be an S3 bucket or prefix in the format <code>s3://myBucket/myPrefix/</code>.</p></li>
+    /// <p>For Amazon File Cache, the path can be an S3 bucket or prefix in the format <code>s3://bucket-name/prefix/</code> (where <code>prefix</code> is optional).</p></li>
     /// <li>
-    /// <p>For Amazon FSx for Lustre, the path can be an S3 bucket or prefix in the format <code>s3://myBucket/myPrefix/</code>.</p></li>
+    /// <p>For Amazon FSx for Lustre, the path can be an S3 bucket or prefix in the format <code>s3://bucket-name/prefix/</code> (where <code>prefix</code> is optional).</p></li>
     /// </ul>
     pub fn get_data_repository_path(&self) -> &::std::option::Option<::std::string::String> {
         &self.data_repository_path

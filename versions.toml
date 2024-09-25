@@ -418,9 +418,9 @@ model_hash = 'd47b34a47470d77273ac364c1ce141ff9ff69dde0b023433fd97645c7e5f4fbc'
 
 [crates.aws-sdk-cloudtrail]
 category = 'AwsSdk'
-version = '1.46.0'
-source_hash = 'e4da315cd6818cce318b4e0cc956e2bf2da0dbf819da815b4524bb6ab6066990'
-model_hash = 'e9e73287b9149b41b2eb473261b0cbe4ddb9751a33d5636eef4d58ce8c6e7d32'
+version = '1.46.1'
+source_hash = 'da2448eb624ca54045061a0477e37d079044ae6626b3d21679a0e6ee58f5466f'
+model_hash = '932553adcd1cabe50f79d64520400d5f5bbae3161e503d6c5db192fa3b7176cf'
 
 [crates.aws-sdk-cloudtraildata]
 category = 'AwsSdk'
@@ -754,9 +754,9 @@ model_hash = '5ec7004d46e2bb30c8d974da3846e960c6d52a00307ee4cc8a62b95566a1fc84'
 
 [crates.aws-sdk-ec2]
 category = 'AwsSdk'
-version = '1.74.0'
-source_hash = 'a67dbf1c48b7c69ebcf6b4148757a308e46d1543b2182d17915fa70d54dcd24b'
-model_hash = '76d7b8ea60664129f0de992a7f7cfc45a5adeca50e92692fb2dc056e26e510ed'
+version = '1.74.1'
+source_hash = '239e3c3feaede9a2146beb04e42ac24bafb33d3b0dde91a44f5b6eff144ddf8e'
+model_hash = '6a671dfa96681e53d3962ef8481b17af1920a136b6e6ceb6c02cbe7645af6683'
 
 [crates.aws-sdk-ec2instanceconnect]
 category = 'AwsSdk'
@@ -934,9 +934,9 @@ model_hash = '4a7fa6312753c4f167f61399f428b49f35283a29bf54f8c0c128ff96dac00471'
 
 [crates.aws-sdk-fsx]
 category = 'AwsSdk'
-version = '1.47.0'
-source_hash = '15d3edfae2a45d6defa93bdbfe97dfd53c062665bf2701abcd5afa44c7d422c8'
-model_hash = 'c013a59895050bac5e624c0faf8a4d81b09e7a3578d65068bc765f5ac7abd1e8'
+version = '1.47.1'
+source_hash = '6d0b51ee6aa1b6ad98935234902d312e0ba3b267f3dd9d397501577d382860aa'
+model_hash = 'd6fa85ebaefe26e1ca14e9948c1492a66a993d62bc9cbd57e2593c3e59b8631f'
 
 [crates.aws-sdk-gamelift]
 category = 'AwsSdk'
@@ -2493,13 +2493,7 @@ source_hash = 'db7face08f400b930054e717f7ee7a6a153796d82cbf0529f5a8846e4ed9ca67'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = 'e73be5cd8fa313370338d1d6cd7c32fffb873cc96e2d73ed45f7f44f06b00c50'
-
-[release]
-tag = 'release-2024-09-24'
-
 [release.crates]
-aws-sdk-bedrock = '1.52.0'
-aws-sdk-budgets = '1.44.0'
-aws-sdk-kinesis = '1.45.0'
-aws-sdk-pinpointsmsvoicev2 = '1.45.0'
-aws-sdk-sagemaker = '1.75.0'
+aws-sdk-cloudtrail = '1.46.1'
+aws-sdk-ec2 = '1.74.1'
+aws-sdk-fsx = '1.47.1'
