@@ -314,6 +314,20 @@ impl CreateDomainFluentBuilder {
     pub fn get_app_security_group_management(&self) -> &::std::option::Option<crate::types::AppSecurityGroupManagement> {
         self.inner.get_app_security_group_management()
     }
+    /// <p>Indicates whether custom tag propagation is supported for the domain. Defaults to <code>DISABLED</code>.</p>
+    pub fn tag_propagation(mut self, input: crate::types::TagPropagation) -> Self {
+        self.inner = self.inner.tag_propagation(input);
+        self
+    }
+    /// <p>Indicates whether custom tag propagation is supported for the domain. Defaults to <code>DISABLED</code>.</p>
+    pub fn set_tag_propagation(mut self, input: ::std::option::Option<crate::types::TagPropagation>) -> Self {
+        self.inner = self.inner.set_tag_propagation(input);
+        self
+    }
+    /// <p>Indicates whether custom tag propagation is supported for the domain. Defaults to <code>DISABLED</code>.</p>
+    pub fn get_tag_propagation(&self) -> &::std::option::Option<crate::types::TagPropagation> {
+        self.inner.get_tag_propagation()
+    }
     /// <p>The default settings used to create a space.</p>
     pub fn default_space_settings(mut self, input: crate::types::DefaultSpaceSettings) -> Self {
         self.inner = self.inner.default_space_settings(input);

@@ -11,6 +11,10 @@ pub struct ConfiguredTeam {
     pub team_id: ::std::string::String,
     /// <p>The name of the Microsoft Teams Team.</p>
     pub team_name: ::std::option::Option<::std::string::String>,
+    /// <p>Either <code>ENABLED</code> or <code>DISABLED</code>. The resource returns <code>DISABLED</code> if the organization's AWS Chatbot policy has explicitly denied that configuration. For example, if Amazon Chime is disabled.</p>
+    pub state: ::std::option::Option<::std::string::String>,
+    /// <p>Provided if State is <code>DISABLED</code>. Provides context as to why the resource is disabled.</p>
+    pub state_reason: ::std::option::Option<::std::string::String>,
 }
 impl ConfiguredTeam {
     /// <p>The ID of the Microsoft Teams tenant.</p>
@@ -28,6 +32,14 @@ impl ConfiguredTeam {
     pub fn team_name(&self) -> ::std::option::Option<&str> {
         self.team_name.as_deref()
     }
+    /// <p>Either <code>ENABLED</code> or <code>DISABLED</code>. The resource returns <code>DISABLED</code> if the organization's AWS Chatbot policy has explicitly denied that configuration. For example, if Amazon Chime is disabled.</p>
+    pub fn state(&self) -> ::std::option::Option<&str> {
+        self.state.as_deref()
+    }
+    /// <p>Provided if State is <code>DISABLED</code>. Provides context as to why the resource is disabled.</p>
+    pub fn state_reason(&self) -> ::std::option::Option<&str> {
+        self.state_reason.as_deref()
+    }
 }
 impl ConfiguredTeam {
     /// Creates a new builder-style object to manufacture [`ConfiguredTeam`](crate::types::ConfiguredTeam).
@@ -43,6 +55,8 @@ pub struct ConfiguredTeamBuilder {
     pub(crate) tenant_id: ::std::option::Option<::std::string::String>,
     pub(crate) team_id: ::std::option::Option<::std::string::String>,
     pub(crate) team_name: ::std::option::Option<::std::string::String>,
+    pub(crate) state: ::std::option::Option<::std::string::String>,
+    pub(crate) state_reason: ::std::option::Option<::std::string::String>,
 }
 impl ConfiguredTeamBuilder {
     /// <p>The ID of the Microsoft Teams tenant.</p>
@@ -92,6 +106,34 @@ impl ConfiguredTeamBuilder {
     pub fn get_team_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.team_name
     }
+    /// <p>Either <code>ENABLED</code> or <code>DISABLED</code>. The resource returns <code>DISABLED</code> if the organization's AWS Chatbot policy has explicitly denied that configuration. For example, if Amazon Chime is disabled.</p>
+    pub fn state(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.state = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Either <code>ENABLED</code> or <code>DISABLED</code>. The resource returns <code>DISABLED</code> if the organization's AWS Chatbot policy has explicitly denied that configuration. For example, if Amazon Chime is disabled.</p>
+    pub fn set_state(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.state = input;
+        self
+    }
+    /// <p>Either <code>ENABLED</code> or <code>DISABLED</code>. The resource returns <code>DISABLED</code> if the organization's AWS Chatbot policy has explicitly denied that configuration. For example, if Amazon Chime is disabled.</p>
+    pub fn get_state(&self) -> &::std::option::Option<::std::string::String> {
+        &self.state
+    }
+    /// <p>Provided if State is <code>DISABLED</code>. Provides context as to why the resource is disabled.</p>
+    pub fn state_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.state_reason = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Provided if State is <code>DISABLED</code>. Provides context as to why the resource is disabled.</p>
+    pub fn set_state_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.state_reason = input;
+        self
+    }
+    /// <p>Provided if State is <code>DISABLED</code>. Provides context as to why the resource is disabled.</p>
+    pub fn get_state_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.state_reason
+    }
     /// Consumes the builder and constructs a [`ConfiguredTeam`](crate::types::ConfiguredTeam).
     /// This method will fail if any of the following fields are not set:
     /// - [`tenant_id`](crate::types::builders::ConfiguredTeamBuilder::tenant_id)
@@ -111,6 +153,8 @@ impl ConfiguredTeamBuilder {
                 )
             })?,
             team_name: self.team_name,
+            state: self.state,
+            state_reason: self.state_reason,
         })
     }
 }

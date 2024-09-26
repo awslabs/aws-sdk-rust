@@ -32,6 +32,10 @@ pub struct TeamsChannelConfiguration {
     pub user_authorization_required: ::std::option::Option<bool>,
     /// <p>A map of tags assigned to a resource. A tag is a string-to-string map of key-value pairs.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    /// <p>Either <code>ENABLED</code> or <code>DISABLED</code>. The resource returns <code>DISABLED</code> if the organization's AWS Chatbot policy has explicitly denied that configuration. For example, if Amazon Chime is disabled.</p>
+    pub state: ::std::option::Option<::std::string::String>,
+    /// <p>Provided if State is <code>DISABLED</code>. Provides context as to why the resource is disabled.</p>
+    pub state_reason: ::std::option::Option<::std::string::String>,
 }
 impl TeamsChannelConfiguration {
     /// <p>The ID of the Microsoft Teams channel.</p>
@@ -98,6 +102,14 @@ impl TeamsChannelConfiguration {
     pub fn tags(&self) -> &[crate::types::Tag] {
         self.tags.as_deref().unwrap_or_default()
     }
+    /// <p>Either <code>ENABLED</code> or <code>DISABLED</code>. The resource returns <code>DISABLED</code> if the organization's AWS Chatbot policy has explicitly denied that configuration. For example, if Amazon Chime is disabled.</p>
+    pub fn state(&self) -> ::std::option::Option<&str> {
+        self.state.as_deref()
+    }
+    /// <p>Provided if State is <code>DISABLED</code>. Provides context as to why the resource is disabled.</p>
+    pub fn state_reason(&self) -> ::std::option::Option<&str> {
+        self.state_reason.as_deref()
+    }
 }
 impl ::std::fmt::Debug for TeamsChannelConfiguration {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -115,6 +127,8 @@ impl ::std::fmt::Debug for TeamsChannelConfiguration {
         formatter.field("guardrail_policy_arns", &self.guardrail_policy_arns);
         formatter.field("user_authorization_required", &self.user_authorization_required);
         formatter.field("tags", &self.tags);
+        formatter.field("state", &self.state);
+        formatter.field("state_reason", &self.state_reason);
         formatter.finish()
     }
 }
@@ -142,6 +156,8 @@ pub struct TeamsChannelConfigurationBuilder {
     pub(crate) guardrail_policy_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) user_authorization_required: ::std::option::Option<bool>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) state: ::std::option::Option<::std::string::String>,
+    pub(crate) state_reason: ::std::option::Option<::std::string::String>,
 }
 impl TeamsChannelConfigurationBuilder {
     /// <p>The ID of the Microsoft Teams channel.</p>
@@ -355,6 +371,34 @@ impl TeamsChannelConfigurationBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }
+    /// <p>Either <code>ENABLED</code> or <code>DISABLED</code>. The resource returns <code>DISABLED</code> if the organization's AWS Chatbot policy has explicitly denied that configuration. For example, if Amazon Chime is disabled.</p>
+    pub fn state(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.state = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Either <code>ENABLED</code> or <code>DISABLED</code>. The resource returns <code>DISABLED</code> if the organization's AWS Chatbot policy has explicitly denied that configuration. For example, if Amazon Chime is disabled.</p>
+    pub fn set_state(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.state = input;
+        self
+    }
+    /// <p>Either <code>ENABLED</code> or <code>DISABLED</code>. The resource returns <code>DISABLED</code> if the organization's AWS Chatbot policy has explicitly denied that configuration. For example, if Amazon Chime is disabled.</p>
+    pub fn get_state(&self) -> &::std::option::Option<::std::string::String> {
+        &self.state
+    }
+    /// <p>Provided if State is <code>DISABLED</code>. Provides context as to why the resource is disabled.</p>
+    pub fn state_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.state_reason = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Provided if State is <code>DISABLED</code>. Provides context as to why the resource is disabled.</p>
+    pub fn set_state_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.state_reason = input;
+        self
+    }
+    /// <p>Provided if State is <code>DISABLED</code>. Provides context as to why the resource is disabled.</p>
+    pub fn get_state_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.state_reason
+    }
     /// Consumes the builder and constructs a [`TeamsChannelConfiguration`](crate::types::TeamsChannelConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`channel_id`](crate::types::builders::TeamsChannelConfigurationBuilder::channel_id)
@@ -408,6 +452,8 @@ impl TeamsChannelConfigurationBuilder {
             guardrail_policy_arns: self.guardrail_policy_arns,
             user_authorization_required: self.user_authorization_required,
             tags: self.tags,
+            state: self.state,
+            state_reason: self.state_reason,
         })
     }
 }
@@ -427,6 +473,8 @@ impl ::std::fmt::Debug for TeamsChannelConfigurationBuilder {
         formatter.field("guardrail_policy_arns", &self.guardrail_policy_arns);
         formatter.field("user_authorization_required", &self.user_authorization_required);
         formatter.field("tags", &self.tags);
+        formatter.field("state", &self.state);
+        formatter.field("state_reason", &self.state_reason);
         formatter.finish()
     }
 }

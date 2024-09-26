@@ -117,8 +117,6 @@ pub use crate::types::_alias_routing_configuration::AliasRoutingConfiguration;
 
 pub use crate::types::_update_runtime_on::UpdateRuntimeOn;
 
-pub use crate::types::_public_access_block_config::PublicAccessBlockConfig;
-
 pub use crate::types::_provisioned_concurrency_status_enum::ProvisionedConcurrencyStatusEnum;
 
 pub use crate::types::_recursive_loop::RecursiveLoop;
@@ -284,8 +282,6 @@ mod _package_type;
 mod _provisioned_concurrency_config_list_item;
 
 mod _provisioned_concurrency_status_enum;
-
-mod _public_access_block_config;
 
 mod _recursive_loop;
 

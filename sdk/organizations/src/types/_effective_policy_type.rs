@@ -14,6 +14,7 @@
 /// match effectivepolicytype {
 ///     EffectivePolicyType::AiservicesOptOutPolicy => { /* ... */ },
 ///     EffectivePolicyType::BackupPolicy => { /* ... */ },
+///     EffectivePolicyType::ChatbotPolicy => { /* ... */ },
 ///     EffectivePolicyType::TagPolicy => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -47,6 +48,8 @@ pub enum EffectivePolicyType {
     #[allow(missing_docs)] // documentation missing in model
     BackupPolicy,
     #[allow(missing_docs)] // documentation missing in model
+    ChatbotPolicy,
+    #[allow(missing_docs)] // documentation missing in model
     TagPolicy,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -57,6 +60,7 @@ impl ::std::convert::From<&str> for EffectivePolicyType {
         match s {
             "AISERVICES_OPT_OUT_POLICY" => EffectivePolicyType::AiservicesOptOutPolicy,
             "BACKUP_POLICY" => EffectivePolicyType::BackupPolicy,
+            "CHATBOT_POLICY" => EffectivePolicyType::ChatbotPolicy,
             "TAG_POLICY" => EffectivePolicyType::TagPolicy,
             other => EffectivePolicyType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -75,13 +79,14 @@ impl EffectivePolicyType {
         match self {
             EffectivePolicyType::AiservicesOptOutPolicy => "AISERVICES_OPT_OUT_POLICY",
             EffectivePolicyType::BackupPolicy => "BACKUP_POLICY",
+            EffectivePolicyType::ChatbotPolicy => "CHATBOT_POLICY",
             EffectivePolicyType::TagPolicy => "TAG_POLICY",
             EffectivePolicyType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AISERVICES_OPT_OUT_POLICY", "BACKUP_POLICY", "TAG_POLICY"]
+        &["AISERVICES_OPT_OUT_POLICY", "BACKUP_POLICY", "CHATBOT_POLICY", "TAG_POLICY"]
     }
 }
 impl ::std::convert::AsRef<str> for EffectivePolicyType {
@@ -106,6 +111,7 @@ impl ::std::fmt::Display for EffectivePolicyType {
         match self {
             EffectivePolicyType::AiservicesOptOutPolicy => write!(f, "AISERVICES_OPT_OUT_POLICY"),
             EffectivePolicyType::BackupPolicy => write!(f, "BACKUP_POLICY"),
+            EffectivePolicyType::ChatbotPolicy => write!(f, "CHATBOT_POLICY"),
             EffectivePolicyType::TagPolicy => write!(f, "TAG_POLICY"),
             EffectivePolicyType::Unknown(value) => write!(f, "{}", value),
         }

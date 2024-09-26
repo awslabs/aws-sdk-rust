@@ -52,6 +52,8 @@ pub struct DescribeDomainOutput {
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The entity that creates and manages the required security groups for inter-app communication in <code>VPCOnly</code> mode. Required when <code>CreateDomain.AppNetworkAccessType</code> is <code>VPCOnly</code> and <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code> is provided.</p>
     pub app_security_group_management: ::std::option::Option<crate::types::AppSecurityGroupManagement>,
+    /// <p>Indicates whether custom tag propagation is supported for the domain.</p>
+    pub tag_propagation: ::std::option::Option<crate::types::TagPropagation>,
     /// <p>The default settings used to create a space.</p>
     pub default_space_settings: ::std::option::Option<crate::types::DefaultSpaceSettings>,
     _request_id: Option<String>,
@@ -150,6 +152,10 @@ impl DescribeDomainOutput {
     pub fn app_security_group_management(&self) -> ::std::option::Option<&crate::types::AppSecurityGroupManagement> {
         self.app_security_group_management.as_ref()
     }
+    /// <p>Indicates whether custom tag propagation is supported for the domain.</p>
+    pub fn tag_propagation(&self) -> ::std::option::Option<&crate::types::TagPropagation> {
+        self.tag_propagation.as_ref()
+    }
     /// <p>The default settings used to create a space.</p>
     pub fn default_space_settings(&self) -> ::std::option::Option<&crate::types::DefaultSpaceSettings> {
         self.default_space_settings.as_ref()
@@ -192,6 +198,7 @@ pub struct DescribeDomainOutputBuilder {
     pub(crate) vpc_id: ::std::option::Option<::std::string::String>,
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) app_security_group_management: ::std::option::Option<crate::types::AppSecurityGroupManagement>,
+    pub(crate) tag_propagation: ::std::option::Option<crate::types::TagPropagation>,
     pub(crate) default_space_settings: ::std::option::Option<crate::types::DefaultSpaceSettings>,
     _request_id: Option<String>,
 }
@@ -517,6 +524,20 @@ impl DescribeDomainOutputBuilder {
     pub fn get_app_security_group_management(&self) -> &::std::option::Option<crate::types::AppSecurityGroupManagement> {
         &self.app_security_group_management
     }
+    /// <p>Indicates whether custom tag propagation is supported for the domain.</p>
+    pub fn tag_propagation(mut self, input: crate::types::TagPropagation) -> Self {
+        self.tag_propagation = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether custom tag propagation is supported for the domain.</p>
+    pub fn set_tag_propagation(mut self, input: ::std::option::Option<crate::types::TagPropagation>) -> Self {
+        self.tag_propagation = input;
+        self
+    }
+    /// <p>Indicates whether custom tag propagation is supported for the domain.</p>
+    pub fn get_tag_propagation(&self) -> &::std::option::Option<crate::types::TagPropagation> {
+        &self.tag_propagation
+    }
     /// <p>The default settings used to create a space.</p>
     pub fn default_space_settings(mut self, input: crate::types::DefaultSpaceSettings) -> Self {
         self.default_space_settings = ::std::option::Option::Some(input);
@@ -564,6 +585,7 @@ impl DescribeDomainOutputBuilder {
             vpc_id: self.vpc_id,
             kms_key_id: self.kms_key_id,
             app_security_group_management: self.app_security_group_management,
+            tag_propagation: self.tag_propagation,
             default_space_settings: self.default_space_settings,
             _request_id: self._request_id,
         }

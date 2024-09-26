@@ -20,6 +20,10 @@ pub struct ChimeWebhookConfiguration {
     pub logging_level: ::std::option::Option<::std::string::String>,
     /// <p>A map of tags assigned to a resource. A tag is a string-to-string map of key-value pairs.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    /// <p>Either <code>ENABLED</code> or <code>DISABLED</code>. The resource returns <code>DISABLED</code> if the organization's AWS Chatbot policy has explicitly denied that configuration. For example, if Amazon Chime is disabled.</p>
+    pub state: ::std::option::Option<::std::string::String>,
+    /// <p>Provided if State is <code>DISABLED</code>. Provides context as to why the resource is disabled.</p>
+    pub state_reason: ::std::option::Option<::std::string::String>,
 }
 impl ChimeWebhookConfiguration {
     /// <p>A description of the webhook. We recommend using the convention <code>RoomName/WebhookName</code>.</p>
@@ -58,6 +62,14 @@ impl ChimeWebhookConfiguration {
     pub fn tags(&self) -> &[crate::types::Tag] {
         self.tags.as_deref().unwrap_or_default()
     }
+    /// <p>Either <code>ENABLED</code> or <code>DISABLED</code>. The resource returns <code>DISABLED</code> if the organization's AWS Chatbot policy has explicitly denied that configuration. For example, if Amazon Chime is disabled.</p>
+    pub fn state(&self) -> ::std::option::Option<&str> {
+        self.state.as_deref()
+    }
+    /// <p>Provided if State is <code>DISABLED</code>. Provides context as to why the resource is disabled.</p>
+    pub fn state_reason(&self) -> ::std::option::Option<&str> {
+        self.state_reason.as_deref()
+    }
 }
 impl ::std::fmt::Debug for ChimeWebhookConfiguration {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -69,6 +81,8 @@ impl ::std::fmt::Debug for ChimeWebhookConfiguration {
         formatter.field("configuration_name", &self.configuration_name);
         formatter.field("logging_level", &self.logging_level);
         formatter.field("tags", &self.tags);
+        formatter.field("state", &self.state);
+        formatter.field("state_reason", &self.state_reason);
         formatter.finish()
     }
 }
@@ -90,6 +104,8 @@ pub struct ChimeWebhookConfigurationBuilder {
     pub(crate) configuration_name: ::std::option::Option<::std::string::String>,
     pub(crate) logging_level: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) state: ::std::option::Option<::std::string::String>,
+    pub(crate) state_reason: ::std::option::Option<::std::string::String>,
 }
 impl ChimeWebhookConfigurationBuilder {
     /// <p>A description of the webhook. We recommend using the convention <code>RoomName/WebhookName</code>.</p>
@@ -211,6 +227,34 @@ impl ChimeWebhookConfigurationBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }
+    /// <p>Either <code>ENABLED</code> or <code>DISABLED</code>. The resource returns <code>DISABLED</code> if the organization's AWS Chatbot policy has explicitly denied that configuration. For example, if Amazon Chime is disabled.</p>
+    pub fn state(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.state = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Either <code>ENABLED</code> or <code>DISABLED</code>. The resource returns <code>DISABLED</code> if the organization's AWS Chatbot policy has explicitly denied that configuration. For example, if Amazon Chime is disabled.</p>
+    pub fn set_state(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.state = input;
+        self
+    }
+    /// <p>Either <code>ENABLED</code> or <code>DISABLED</code>. The resource returns <code>DISABLED</code> if the organization's AWS Chatbot policy has explicitly denied that configuration. For example, if Amazon Chime is disabled.</p>
+    pub fn get_state(&self) -> &::std::option::Option<::std::string::String> {
+        &self.state
+    }
+    /// <p>Provided if State is <code>DISABLED</code>. Provides context as to why the resource is disabled.</p>
+    pub fn state_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.state_reason = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Provided if State is <code>DISABLED</code>. Provides context as to why the resource is disabled.</p>
+    pub fn set_state_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.state_reason = input;
+        self
+    }
+    /// <p>Provided if State is <code>DISABLED</code>. Provides context as to why the resource is disabled.</p>
+    pub fn get_state_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.state_reason
+    }
     /// Consumes the builder and constructs a [`ChimeWebhookConfiguration`](crate::types::ChimeWebhookConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`webhook_description`](crate::types::builders::ChimeWebhookConfigurationBuilder::webhook_description)
@@ -246,6 +290,8 @@ impl ChimeWebhookConfigurationBuilder {
             configuration_name: self.configuration_name,
             logging_level: self.logging_level,
             tags: self.tags,
+            state: self.state,
+            state_reason: self.state_reason,
         })
     }
 }
@@ -259,6 +305,8 @@ impl ::std::fmt::Debug for ChimeWebhookConfigurationBuilder {
         formatter.field("configuration_name", &self.configuration_name);
         formatter.field("logging_level", &self.logging_level);
         formatter.field("tags", &self.tags);
+        formatter.field("state", &self.state);
+        formatter.field("state_reason", &self.state_reason);
         formatter.finish()
     }
 }

@@ -206,6 +206,13 @@ pub(crate) fn de_describe_domain(
                             .transpose()?,
                     );
                 }
+                "TagPropagation" => {
+                    builder = builder.set_tag_propagation(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::TagPropagation::from(u.as_ref())))
+                            .transpose()?,
+                    );
+                }
                 "DefaultSpaceSettings" => {
                     builder =
                         builder.set_default_space_settings(crate::protocol_serde::shape_default_space_settings::de_default_space_settings(tokens)?);

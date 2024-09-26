@@ -235,4 +235,18 @@ impl UpdateDomainFluentBuilder {
     pub fn get_app_network_access_type(&self) -> &::std::option::Option<crate::types::AppNetworkAccessType> {
         self.inner.get_app_network_access_type()
     }
+    /// <p>Indicates whether custom tag propagation is supported for the domain. Defaults to <code>DISABLED</code>.</p>
+    pub fn tag_propagation(mut self, input: crate::types::TagPropagation) -> Self {
+        self.inner = self.inner.tag_propagation(input);
+        self
+    }
+    /// <p>Indicates whether custom tag propagation is supported for the domain. Defaults to <code>DISABLED</code>.</p>
+    pub fn set_tag_propagation(mut self, input: ::std::option::Option<crate::types::TagPropagation>) -> Self {
+        self.inner = self.inner.set_tag_propagation(input);
+        self
+    }
+    /// <p>Indicates whether custom tag propagation is supported for the domain. Defaults to <code>DISABLED</code>.</p>
+    pub fn get_tag_propagation(&self) -> &::std::option::Option<crate::types::TagPropagation> {
+        self.inner.get_tag_propagation()
+    }
 }

@@ -22,7 +22,7 @@ impl crate::operation::remove_permission::builders::RemovePermissionInputBuilder
 }
 /// Fluent builder constructing a request to `RemovePermission`.
 ///
-/// <p>Revokes function-use permission from an Amazon Web Servicesservice or another Amazon Web Services account. You can get the ID of the statement from the output of <code>GetPolicy</code>.</p>
+/// <p>Revokes function-use permission from an Amazon Web Services service or another Amazon Web Services account. You can get the ID of the statement from the output of <code>GetPolicy</code>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RemovePermissionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

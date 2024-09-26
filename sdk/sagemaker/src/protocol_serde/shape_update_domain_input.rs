@@ -39,5 +39,8 @@ pub fn ser_update_domain_input_input(
     if let Some(var_12) = &input.app_network_access_type {
         object.key("AppNetworkAccessType").string(var_12.as_str());
     }
+    if let Some(var_13) = &input.tag_propagation {
+        object.key("TagPropagation").string(var_13.as_str());
+    }
     Ok(())
 }

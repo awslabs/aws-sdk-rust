@@ -57,8 +57,6 @@ pub(crate) mod shape_delete_layer_version;
 
 pub(crate) mod shape_delete_provisioned_concurrency_config;
 
-pub(crate) mod shape_delete_resource_policy;
-
 pub(crate) mod shape_get_account_settings;
 
 pub(crate) mod shape_get_alias;
@@ -90,10 +88,6 @@ pub(crate) mod shape_get_layer_version_policy;
 pub(crate) mod shape_get_policy;
 
 pub(crate) mod shape_get_provisioned_concurrency_config;
-
-pub(crate) mod shape_get_public_access_block_config;
-
-pub(crate) mod shape_get_resource_policy;
 
 pub(crate) mod shape_get_runtime_management_config;
 
@@ -146,10 +140,6 @@ pub(crate) mod shape_put_function_event_invoke_config;
 pub(crate) mod shape_put_function_recursion_config;
 
 pub(crate) mod shape_put_provisioned_concurrency_config;
-
-pub(crate) mod shape_put_public_access_block_config;
-
-pub(crate) mod shape_put_resource_policy;
 
 pub(crate) mod shape_put_runtime_management_config;
 
@@ -251,8 +241,6 @@ pub(crate) mod shape_precondition_failed_exception;
 
 pub(crate) mod shape_provisioned_concurrency_config_not_found_exception;
 
-pub(crate) mod shape_public_policy_exception;
-
 pub(crate) mod shape_publish_layer_version_input;
 
 pub(crate) mod shape_publish_version_input;
@@ -266,10 +254,6 @@ pub(crate) mod shape_put_function_event_invoke_config_input;
 pub(crate) mod shape_put_function_recursion_config_input;
 
 pub(crate) mod shape_put_provisioned_concurrency_config_input;
-
-pub(crate) mod shape_put_public_access_block_config_input;
-
-pub(crate) mod shape_put_resource_policy_input;
 
 pub(crate) mod shape_put_runtime_management_config_input;
 
@@ -404,8 +388,6 @@ pub(crate) mod shape_layers_reference_list;
 pub(crate) mod shape_logging_config;
 
 pub(crate) mod shape_provisioned_concurrency_config_list;
-
-pub(crate) mod shape_public_access_block_config;
 
 pub(crate) mod shape_queues;
 

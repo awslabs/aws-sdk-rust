@@ -20,8 +20,8 @@
 //! Amazon RDS provides an HTTP endpoint to run SQL statements on an Amazon Aurora DB cluster. To run these statements, you use the RDS Data API (Data API).
 //!
 //! Data API is available with the following types of Aurora databases:
-//!   - Aurora PostgreSQL - Serverless v2, Serverless v1, and provisioned
-//!   - Aurora MySQL - Serverless v1 only
+//!   - Aurora PostgreSQL - Serverless v2, provisioned, and Serverless v1
+//!   - Aurora MySQL - Serverless v2, provisioned, and Serverless v1
 //!
 //! For more information about the Data API, see [Using RDS Data API](https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html) in the _Amazon Aurora User Guide_.
 //!
@@ -37,7 +37,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-rdsdata = "1.43.0"
+//! aws-sdk-rdsdata = "1.43.1"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

@@ -347,6 +347,8 @@ pub use crate::types::_variant_property::VariantProperty;
 
 pub use crate::types::_variant_property_type::VariantPropertyType;
 
+pub use crate::types::_tag_propagation::TagPropagation;
+
 pub use crate::types::_app_network_access_type::AppNetworkAccessType;
 
 pub use crate::types::_default_space_settings::DefaultSpaceSettings;
@@ -3354,6 +3356,8 @@ mod _tabular_job_config;
 mod _tabular_resolved_attributes;
 
 mod _tag;
+
+mod _tag_propagation;
 
 mod _target_device;
 

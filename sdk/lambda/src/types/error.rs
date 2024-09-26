@@ -21,10 +21,6 @@ pub use crate::types::error::_code_storage_exceeded_exception::CodeStorageExceed
 
 pub use crate::types::error::_resource_in_use_exception::ResourceInUseException;
 
-pub use crate::types::error::_public_policy_exception::PublicPolicyException;
-
-pub use crate::types::error::_policy_length_exceeded_exception::PolicyLengthExceededException;
-
 pub use crate::types::error::_unsupported_media_type_exception::UnsupportedMediaTypeException;
 
 pub use crate::types::error::_subnet_ip_address_limit_reached_exception::SubnetIpAddressLimitReachedException;
@@ -170,6 +166,8 @@ impl ::aws_types::request_id::RequestId for crate::types::error::InvokeWithRespo
 
 pub use crate::types::error::_provisioned_concurrency_config_not_found_exception::ProvisionedConcurrencyConfigNotFoundException;
 
+pub use crate::types::error::_policy_length_exceeded_exception::PolicyLengthExceededException;
+
 mod _code_signing_config_not_found_exception;
 
 mod _code_storage_exceeded_exception;
@@ -219,8 +217,6 @@ mod _policy_length_exceeded_exception;
 mod _precondition_failed_exception;
 
 mod _provisioned_concurrency_config_not_found_exception;
-
-mod _public_policy_exception;
 
 mod _recursive_invocation_exception;
 

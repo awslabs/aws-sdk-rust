@@ -51,21 +51,6 @@ pub fn de_remove_permission_http_error(
             }
             tmp
         }),
-        "PublicPolicyException" => crate::operation::remove_permission::RemovePermissionError::PublicPolicyException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::PublicPolicyExceptionBuilder::default();
-                output = crate::protocol_serde::shape_public_policy_exception::de_public_policy_exception_json_err(_response_body, output)
-                    .map_err(crate::operation::remove_permission::RemovePermissionError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
         "ResourceNotFoundException" => crate::operation::remove_permission::RemovePermissionError::ResourceNotFoundException({
             #[allow(unused_mut)]
             let mut tmp = {

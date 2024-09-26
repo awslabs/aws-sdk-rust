@@ -276,8 +276,6 @@ pub enum AddPermissionError {
     /// <p><b>For all other API operations:</b> Call <code>GetFunction</code> or <code>GetAlias</code> to retrieve the latest RevisionId for your resource.</p></li>
     /// </ul>
     PreconditionFailedException(crate::types::error::PreconditionFailedException),
-    /// <p>Lambda prevented your policy from being created because it would grant public access to your function. If you intended to create a public policy, use the <code>PutPublicAccessBlockConfig</code> API action to configure your function's public-access settings to allow public policies.</p>
-    PublicPolicyException(crate::types::error::PublicPolicyException),
     /// <p>The resource already exists, or another operation is in progress.</p>
     ResourceConflictException(crate::types::error::ResourceConflictException),
     /// <p>The resource specified in the request does not exist.</p>
@@ -322,7 +320,6 @@ impl AddPermissionError {
             Self::InvalidParameterValueException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::PolicyLengthExceededException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::PreconditionFailedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
-            Self::PublicPolicyException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ResourceConflictException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ResourceNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ServiceException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -341,10 +338,6 @@ impl AddPermissionError {
     /// Returns `true` if the error kind is `AddPermissionError::PreconditionFailedException`.
     pub fn is_precondition_failed_exception(&self) -> bool {
         matches!(self, Self::PreconditionFailedException(_))
-    }
-    /// Returns `true` if the error kind is `AddPermissionError::PublicPolicyException`.
-    pub fn is_public_policy_exception(&self) -> bool {
-        matches!(self, Self::PublicPolicyException(_))
     }
     /// Returns `true` if the error kind is `AddPermissionError::ResourceConflictException`.
     pub fn is_resource_conflict_exception(&self) -> bool {
@@ -369,7 +362,6 @@ impl ::std::error::Error for AddPermissionError {
             Self::InvalidParameterValueException(_inner) => ::std::option::Option::Some(_inner),
             Self::PolicyLengthExceededException(_inner) => ::std::option::Option::Some(_inner),
             Self::PreconditionFailedException(_inner) => ::std::option::Option::Some(_inner),
-            Self::PublicPolicyException(_inner) => ::std::option::Option::Some(_inner),
             Self::ResourceConflictException(_inner) => ::std::option::Option::Some(_inner),
             Self::ResourceNotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::ServiceException(_inner) => ::std::option::Option::Some(_inner),
@@ -384,7 +376,6 @@ impl ::std::fmt::Display for AddPermissionError {
             Self::InvalidParameterValueException(_inner) => _inner.fmt(f),
             Self::PolicyLengthExceededException(_inner) => _inner.fmt(f),
             Self::PreconditionFailedException(_inner) => _inner.fmt(f),
-            Self::PublicPolicyException(_inner) => _inner.fmt(f),
             Self::ResourceConflictException(_inner) => _inner.fmt(f),
             Self::ResourceNotFoundException(_inner) => _inner.fmt(f),
             Self::ServiceException(_inner) => _inner.fmt(f),
@@ -413,7 +404,6 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for AddPermission
             Self::InvalidParameterValueException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::PolicyLengthExceededException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::PreconditionFailedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::PublicPolicyException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ResourceConflictException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ResourceNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ServiceException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

@@ -25,6 +25,8 @@ pub struct UpdateDomainInput {
     /// </ul>
     /// <p>This configuration can only be modified if there are no apps in the <code>InService</code>, <code>Pending</code>, or <code>Deleting</code> state. The configuration cannot be updated if <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code> is already set or <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code> is provided as part of the same request.</p>
     pub app_network_access_type: ::std::option::Option<crate::types::AppNetworkAccessType>,
+    /// <p>Indicates whether custom tag propagation is supported for the domain. Defaults to <code>DISABLED</code>.</p>
+    pub tag_propagation: ::std::option::Option<crate::types::TagPropagation>,
 }
 impl UpdateDomainInput {
     /// <p>The ID of the domain to be updated.</p>
@@ -65,6 +67,10 @@ impl UpdateDomainInput {
     pub fn app_network_access_type(&self) -> ::std::option::Option<&crate::types::AppNetworkAccessType> {
         self.app_network_access_type.as_ref()
     }
+    /// <p>Indicates whether custom tag propagation is supported for the domain. Defaults to <code>DISABLED</code>.</p>
+    pub fn tag_propagation(&self) -> ::std::option::Option<&crate::types::TagPropagation> {
+        self.tag_propagation.as_ref()
+    }
 }
 impl UpdateDomainInput {
     /// Creates a new builder-style object to manufacture [`UpdateDomainInput`](crate::operation::update_domain::UpdateDomainInput).
@@ -84,6 +90,7 @@ pub struct UpdateDomainInputBuilder {
     pub(crate) default_space_settings: ::std::option::Option<crate::types::DefaultSpaceSettings>,
     pub(crate) subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) app_network_access_type: ::std::option::Option<crate::types::AppNetworkAccessType>,
+    pub(crate) tag_propagation: ::std::option::Option<crate::types::TagPropagation>,
 }
 impl UpdateDomainInputBuilder {
     /// <p>The ID of the domain to be updated.</p>
@@ -215,6 +222,20 @@ impl UpdateDomainInputBuilder {
     pub fn get_app_network_access_type(&self) -> &::std::option::Option<crate::types::AppNetworkAccessType> {
         &self.app_network_access_type
     }
+    /// <p>Indicates whether custom tag propagation is supported for the domain. Defaults to <code>DISABLED</code>.</p>
+    pub fn tag_propagation(mut self, input: crate::types::TagPropagation) -> Self {
+        self.tag_propagation = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether custom tag propagation is supported for the domain. Defaults to <code>DISABLED</code>.</p>
+    pub fn set_tag_propagation(mut self, input: ::std::option::Option<crate::types::TagPropagation>) -> Self {
+        self.tag_propagation = input;
+        self
+    }
+    /// <p>Indicates whether custom tag propagation is supported for the domain. Defaults to <code>DISABLED</code>.</p>
+    pub fn get_tag_propagation(&self) -> &::std::option::Option<crate::types::TagPropagation> {
+        &self.tag_propagation
+    }
     /// Consumes the builder and constructs a [`UpdateDomainInput`](crate::operation::update_domain::UpdateDomainInput).
     pub fn build(
         self,
@@ -227,6 +248,7 @@ impl UpdateDomainInputBuilder {
             default_space_settings: self.default_space_settings,
             subnet_ids: self.subnet_ids,
             app_network_access_type: self.app_network_access_type,
+            tag_propagation: self.tag_propagation,
         })
     }
 }
