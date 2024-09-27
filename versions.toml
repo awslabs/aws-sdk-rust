@@ -2,7 +2,7 @@ smithy_rs_revision = 'e96640bd33df40026447b9e3f826144f8e3c7724'
 aws_doc_sdk_examples_revision = '6eb03e5476ee55df5872b8a8de90b235a3503145'
 
 [manual_interventions]
-crates_to_remove = []
+crates_to_remove = ["aws-sdk-worklink"]
 [crates.aws-config]
 category = 'AwsRuntime'
 version = '1.5.6'
