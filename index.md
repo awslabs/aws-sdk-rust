@@ -336,7 +336,6 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | Amazon Verified Permissions | [aws-sdk-verifiedpermissions](https://crates.io/crates/aws-sdk-verifiedpermissions) ([docs](https://docs.rs/aws-sdk-verifiedpermissions)) |
 | Amazon Voice ID | [aws-sdk-voiceid](https://crates.io/crates/aws-sdk-voiceid) ([docs](https://docs.rs/aws-sdk-voiceid)) |
 | Amazon WorkDocs | [aws-sdk-workdocs](https://crates.io/crates/aws-sdk-workdocs) ([docs](https://docs.rs/aws-sdk-workdocs)) |
-| Amazon WorkLink | [aws-sdk-worklink](https://crates.io/crates/aws-sdk-worklink) ([docs](https://docs.rs/aws-sdk-worklink)) |
 | Amazon WorkMail | [aws-sdk-workmail](https://crates.io/crates/aws-sdk-workmail) ([docs](https://docs.rs/aws-sdk-workmail)) |
 | Amazon WorkMail Message Flow | [aws-sdk-workmailmessageflow](https://crates.io/crates/aws-sdk-workmailmessageflow) ([docs](https://docs.rs/aws-sdk-workmailmessageflow)) |
 | Amazon WorkSpaces | [aws-sdk-workspaces](https://crates.io/crates/aws-sdk-workspaces) ([docs](https://docs.rs/aws-sdk-workspaces)) |

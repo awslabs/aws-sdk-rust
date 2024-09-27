@@ -12,7 +12,7 @@ serde_json = "1.0.120"
 tracing = "0.1.40"
 tracing-subscriber = "0.3.18"
 aws-config= { version = "1.5.6", path = "../../../sdk/aws-config" }
-aws-sdk-bedrockruntime= { version = "1.50.0", path = "../../../sdk/bedrockruntime" }
+aws-sdk-bedrockruntime= { version = "1.51.0", path = "../../../sdk/bedrockruntime" }
 aws-smithy-runtime-api= { version = "1.7.2", path = "../../../sdk/aws-smithy-runtime-api" }
 aws-smithy-types= { version = "1.2.6", path = "../../../sdk/aws-smithy-types" }
 

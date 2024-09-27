@@ -2,12 +2,12 @@
 resolver = "2"
 exclude = [
     "examples/cross_service",
+    "examples/lambda",
     "examples/examples",
     "examples/webassembly",
     "examples/test-utils",
-    "examples/lambda",
-    "tests/webassembly",
-    "tests/no-default-features"
+    "tests/no-default-features",
+    "tests/webassembly"
 ]
 members = [
     "sdk/accessanalyzer",
@@ -419,7 +419,6 @@ members = [
     "sdk/wellarchitected",
     "sdk/wisdom",
     "sdk/workdocs",
-    "sdk/worklink",
     "sdk/workmail",
     "sdk/workmailmessageflow",
     "sdk/workspaces",
