@@ -6,5 +6,8 @@ pub fn ser_put_configuration_set_tracking_options_input_input(
     if let Some(var_1) = &input.custom_redirect_domain {
         object.key("CustomRedirectDomain").string(var_1.as_str());
     }
+    if let Some(var_2) = &input.https_policy {
+        object.key("HttpsPolicy").string(var_2.as_str());
+    }
     Ok(())
 }

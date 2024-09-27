@@ -22,6 +22,8 @@ pub struct ListIntegrationItem {
     pub workflow_id: ::std::option::Option<::std::string::String>,
     /// <p>Boolean that shows if the Flow that's associated with the Integration is created in Amazon Appflow, or with ObjectTypeName equals _unstructured via API/CLI in flowDefinition.</p>
     pub is_unstructured: ::std::option::Option<bool>,
+    /// <p>The Amazon Resource Name (ARN) of the IAM role. The Integration uses this role to make Customer Profiles requests on your behalf.</p>
+    pub role_arn: ::std::option::Option<::std::string::String>,
 }
 impl ListIntegrationItem {
     /// <p>The unique name of the domain.</p>
@@ -62,6 +64,10 @@ impl ListIntegrationItem {
     pub fn is_unstructured(&self) -> ::std::option::Option<bool> {
         self.is_unstructured
     }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role. The Integration uses this role to make Customer Profiles requests on your behalf.</p>
+    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
 }
 impl ListIntegrationItem {
     /// Creates a new builder-style object to manufacture [`ListIntegrationItem`](crate::types::ListIntegrationItem).
@@ -83,6 +89,7 @@ pub struct ListIntegrationItemBuilder {
     pub(crate) object_type_names: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) workflow_id: ::std::option::Option<::std::string::String>,
     pub(crate) is_unstructured: ::std::option::Option<bool>,
+    pub(crate) role_arn: ::std::option::Option<::std::string::String>,
 }
 impl ListIntegrationItemBuilder {
     /// <p>The unique name of the domain.</p>
@@ -234,6 +241,20 @@ impl ListIntegrationItemBuilder {
     pub fn get_is_unstructured(&self) -> &::std::option::Option<bool> {
         &self.is_unstructured
     }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role. The Integration uses this role to make Customer Profiles requests on your behalf.</p>
+    pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.role_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role. The Integration uses this role to make Customer Profiles requests on your behalf.</p>
+    pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.role_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role. The Integration uses this role to make Customer Profiles requests on your behalf.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
+    }
     /// Consumes the builder and constructs a [`ListIntegrationItem`](crate::types::ListIntegrationItem).
     /// This method will fail if any of the following fields are not set:
     /// - [`domain_name`](crate::types::builders::ListIntegrationItemBuilder::domain_name)
@@ -271,6 +292,7 @@ impl ListIntegrationItemBuilder {
             object_type_names: self.object_type_names,
             workflow_id: self.workflow_id,
             is_unstructured: self.is_unstructured,
+            role_arn: self.role_arn,
         })
     }
 }

@@ -22,7 +22,10 @@ impl crate::operation::get_finding_aggregator::builders::GetFindingAggregatorInp
 }
 /// Fluent builder constructing a request to `GetFindingAggregator`.
 ///
-/// <p>Returns the current finding aggregation configuration.</p>
+/// <note>
+/// <p>The <i>aggregation Region</i> is now called the <i>home Region</i>.</p>
+/// </note>
+/// <p>Returns the current configuration in the calling account for cross-Region aggregation. A finding aggregator is a resource that establishes the home Region and any linked Regions.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetFindingAggregatorFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

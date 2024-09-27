@@ -22,7 +22,7 @@ pub struct AwsRdsDbInstanceDetails {
     /// <p><b>MySQL, MariaDB, SQL Server, PostgreSQL</b></p>
     /// <p>Contains the name of the initial database of this instance that was provided at create time, if one was specified when the DB instance was created. This same name is returned for the life of the DB instance.</p>
     /// <p><b>Oracle</b></p>
-    /// <p>Contains the Oracle System ID (SID) of the created DB instance. Not shown when the returned parameters do not apply to an Oracle DB instance.</p>
+    /// <p>Contains the Oracle System ID (SID) of the created DB instance. Not shown when the returned parameters don't apply to an Oracle DB instance.</p>
     pub db_name: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the DB instance has deletion protection enabled.</p>
     /// <p>When deletion protection is enabled, the database cannot be deleted.</p>
@@ -205,7 +205,7 @@ impl AwsRdsDbInstanceDetails {
     /// <p><b>MySQL, MariaDB, SQL Server, PostgreSQL</b></p>
     /// <p>Contains the name of the initial database of this instance that was provided at create time, if one was specified when the DB instance was created. This same name is returned for the life of the DB instance.</p>
     /// <p><b>Oracle</b></p>
-    /// <p>Contains the Oracle System ID (SID) of the created DB instance. Not shown when the returned parameters do not apply to an Oracle DB instance.</p>
+    /// <p>Contains the Oracle System ID (SID) of the created DB instance. Not shown when the returned parameters don't apply to an Oracle DB instance.</p>
     pub fn db_name(&self) -> ::std::option::Option<&str> {
         self.db_name.as_deref()
     }
@@ -651,7 +651,7 @@ impl AwsRdsDbInstanceDetailsBuilder {
     /// <p><b>MySQL, MariaDB, SQL Server, PostgreSQL</b></p>
     /// <p>Contains the name of the initial database of this instance that was provided at create time, if one was specified when the DB instance was created. This same name is returned for the life of the DB instance.</p>
     /// <p><b>Oracle</b></p>
-    /// <p>Contains the Oracle System ID (SID) of the created DB instance. Not shown when the returned parameters do not apply to an Oracle DB instance.</p>
+    /// <p>Contains the Oracle System ID (SID) of the created DB instance. Not shown when the returned parameters don't apply to an Oracle DB instance.</p>
     pub fn db_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_name = ::std::option::Option::Some(input.into());
         self
@@ -660,7 +660,7 @@ impl AwsRdsDbInstanceDetailsBuilder {
     /// <p><b>MySQL, MariaDB, SQL Server, PostgreSQL</b></p>
     /// <p>Contains the name of the initial database of this instance that was provided at create time, if one was specified when the DB instance was created. This same name is returned for the life of the DB instance.</p>
     /// <p><b>Oracle</b></p>
-    /// <p>Contains the Oracle System ID (SID) of the created DB instance. Not shown when the returned parameters do not apply to an Oracle DB instance.</p>
+    /// <p>Contains the Oracle System ID (SID) of the created DB instance. Not shown when the returned parameters don't apply to an Oracle DB instance.</p>
     pub fn set_db_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_name = input;
         self
@@ -669,7 +669,7 @@ impl AwsRdsDbInstanceDetailsBuilder {
     /// <p><b>MySQL, MariaDB, SQL Server, PostgreSQL</b></p>
     /// <p>Contains the name of the initial database of this instance that was provided at create time, if one was specified when the DB instance was created. This same name is returned for the life of the DB instance.</p>
     /// <p><b>Oracle</b></p>
-    /// <p>Contains the Oracle System ID (SID) of the created DB instance. Not shown when the returned parameters do not apply to an Oracle DB instance.</p>
+    /// <p>Contains the Oracle System ID (SID) of the created DB instance. Not shown when the returned parameters don't apply to an Oracle DB instance.</p>
     pub fn get_db_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.db_name
     }

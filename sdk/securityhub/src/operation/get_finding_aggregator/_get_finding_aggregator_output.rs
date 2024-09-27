@@ -5,7 +5,7 @@
 pub struct GetFindingAggregatorOutput {
     /// <p>The ARN of the finding aggregator.</p>
     pub finding_aggregator_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The aggregation Region.</p>
+    /// <p>The home Region. Findings generated in linked Regions are replicated and sent to the home Region.</p>
     pub finding_aggregation_region: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether to link all Regions, all Regions except for a list of excluded Regions, or a list of included Regions.</p>
     pub region_linking_mode: ::std::option::Option<::std::string::String>,
@@ -18,7 +18,7 @@ impl GetFindingAggregatorOutput {
     pub fn finding_aggregator_arn(&self) -> ::std::option::Option<&str> {
         self.finding_aggregator_arn.as_deref()
     }
-    /// <p>The aggregation Region.</p>
+    /// <p>The home Region. Findings generated in linked Regions are replicated and sent to the home Region.</p>
     pub fn finding_aggregation_region(&self) -> ::std::option::Option<&str> {
         self.finding_aggregation_region.as_deref()
     }
@@ -70,17 +70,17 @@ impl GetFindingAggregatorOutputBuilder {
     pub fn get_finding_aggregator_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.finding_aggregator_arn
     }
-    /// <p>The aggregation Region.</p>
+    /// <p>The home Region. Findings generated in linked Regions are replicated and sent to the home Region.</p>
     pub fn finding_aggregation_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.finding_aggregation_region = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The aggregation Region.</p>
+    /// <p>The home Region. Findings generated in linked Regions are replicated and sent to the home Region.</p>
     pub fn set_finding_aggregation_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.finding_aggregation_region = input;
         self
     }
-    /// <p>The aggregation Region.</p>
+    /// <p>The home Region. Findings generated in linked Regions are replicated and sent to the home Region.</p>
     pub fn get_finding_aggregation_region(&self) -> &::std::option::Option<::std::string::String> {
         &self.finding_aggregation_region
     }

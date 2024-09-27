@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetInsightsInput {
-    /// <p>The ARNs of the insights to describe. If you do not provide any insight ARNs, then <code>GetInsights</code> returns all of your custom insights. It does not return any managed insights.</p>
+    /// <p>The ARNs of the insights to describe. If you don't provide any insight ARNs, then <code>GetInsights</code> returns all of your custom insights. It does not return any managed insights.</p>
     pub insight_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The token that is required for pagination. On your first call to the <code>GetInsights</code> operation, set the value of this parameter to <code>NULL</code>.</p>
     /// <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
@@ -12,7 +12,7 @@ pub struct GetInsightsInput {
     pub max_results: ::std::option::Option<i32>,
 }
 impl GetInsightsInput {
-    /// <p>The ARNs of the insights to describe. If you do not provide any insight ARNs, then <code>GetInsights</code> returns all of your custom insights. It does not return any managed insights.</p>
+    /// <p>The ARNs of the insights to describe. If you don't provide any insight ARNs, then <code>GetInsights</code> returns all of your custom insights. It does not return any managed insights.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.insight_arns.is_none()`.
     pub fn insight_arns(&self) -> &[::std::string::String] {
@@ -48,19 +48,19 @@ impl GetInsightsInputBuilder {
     ///
     /// To override the contents of this collection use [`set_insight_arns`](Self::set_insight_arns).
     ///
-    /// <p>The ARNs of the insights to describe. If you do not provide any insight ARNs, then <code>GetInsights</code> returns all of your custom insights. It does not return any managed insights.</p>
+    /// <p>The ARNs of the insights to describe. If you don't provide any insight ARNs, then <code>GetInsights</code> returns all of your custom insights. It does not return any managed insights.</p>
     pub fn insight_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.insight_arns.unwrap_or_default();
         v.push(input.into());
         self.insight_arns = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The ARNs of the insights to describe. If you do not provide any insight ARNs, then <code>GetInsights</code> returns all of your custom insights. It does not return any managed insights.</p>
+    /// <p>The ARNs of the insights to describe. If you don't provide any insight ARNs, then <code>GetInsights</code> returns all of your custom insights. It does not return any managed insights.</p>
     pub fn set_insight_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.insight_arns = input;
         self
     }
-    /// <p>The ARNs of the insights to describe. If you do not provide any insight ARNs, then <code>GetInsights</code> returns all of your custom insights. It does not return any managed insights.</p>
+    /// <p>The ARNs of the insights to describe. If you don't provide any insight ARNs, then <code>GetInsights</code> returns all of your custom insights. It does not return any managed insights.</p>
     pub fn get_insight_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.insight_arns
     }

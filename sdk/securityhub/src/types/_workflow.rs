@@ -19,7 +19,7 @@ pub struct Workflow {
     /// <li>
     /// <p><code>NOTIFIED</code> - Indicates that you notified the resource owner about the security issue. Used when the initial reviewer is not the resource owner, and needs intervention from the resource owner.</p></li>
     /// <li>
-    /// <p><code>SUPPRESSED</code> - Indicates that you reviewed the finding and do not believe that any action is needed. The finding is no longer updated.</p></li>
+    /// <p><code>SUPPRESSED</code> - Indicates that you reviewed the finding and don't believe that any action is needed. The finding is no longer updated.</p></li>
     /// <li>
     /// <p><code>RESOLVED</code> - The finding was reviewed and remediated and is now considered resolved.</p></li>
     /// </ul>
@@ -41,7 +41,7 @@ impl Workflow {
     /// <li>
     /// <p><code>NOTIFIED</code> - Indicates that you notified the resource owner about the security issue. Used when the initial reviewer is not the resource owner, and needs intervention from the resource owner.</p></li>
     /// <li>
-    /// <p><code>SUPPRESSED</code> - Indicates that you reviewed the finding and do not believe that any action is needed. The finding is no longer updated.</p></li>
+    /// <p><code>SUPPRESSED</code> - Indicates that you reviewed the finding and don't believe that any action is needed. The finding is no longer updated.</p></li>
     /// <li>
     /// <p><code>RESOLVED</code> - The finding was reviewed and remediated and is now considered resolved.</p></li>
     /// </ul>
@@ -78,7 +78,7 @@ impl WorkflowBuilder {
     /// <li>
     /// <p><code>NOTIFIED</code> - Indicates that you notified the resource owner about the security issue. Used when the initial reviewer is not the resource owner, and needs intervention from the resource owner.</p></li>
     /// <li>
-    /// <p><code>SUPPRESSED</code> - Indicates that you reviewed the finding and do not believe that any action is needed. The finding is no longer updated.</p></li>
+    /// <p><code>SUPPRESSED</code> - Indicates that you reviewed the finding and don't believe that any action is needed. The finding is no longer updated.</p></li>
     /// <li>
     /// <p><code>RESOLVED</code> - The finding was reviewed and remediated and is now considered resolved.</p></li>
     /// </ul>
@@ -101,7 +101,7 @@ impl WorkflowBuilder {
     /// <li>
     /// <p><code>NOTIFIED</code> - Indicates that you notified the resource owner about the security issue. Used when the initial reviewer is not the resource owner, and needs intervention from the resource owner.</p></li>
     /// <li>
-    /// <p><code>SUPPRESSED</code> - Indicates that you reviewed the finding and do not believe that any action is needed. The finding is no longer updated.</p></li>
+    /// <p><code>SUPPRESSED</code> - Indicates that you reviewed the finding and don't believe that any action is needed. The finding is no longer updated.</p></li>
     /// <li>
     /// <p><code>RESOLVED</code> - The finding was reviewed and remediated and is now considered resolved.</p></li>
     /// </ul>
@@ -124,7 +124,7 @@ impl WorkflowBuilder {
     /// <li>
     /// <p><code>NOTIFIED</code> - Indicates that you notified the resource owner about the security issue. Used when the initial reviewer is not the resource owner, and needs intervention from the resource owner.</p></li>
     /// <li>
-    /// <p><code>SUPPRESSED</code> - Indicates that you reviewed the finding and do not believe that any action is needed. The finding is no longer updated.</p></li>
+    /// <p><code>SUPPRESSED</code> - Indicates that you reviewed the finding and don't believe that any action is needed. The finding is no longer updated.</p></li>
     /// <li>
     /// <p><code>RESOLVED</code> - The finding was reviewed and remediated and is now considered resolved.</p></li>
     /// </ul>

@@ -6,7 +6,7 @@
 pub struct StandardsControlAssociationSummary {
     /// <p>The Amazon Resource Name (ARN) of a standard.</p>
     pub standards_arn: ::std::option::Option<::std::string::String>,
-    /// <p>A unique standard-agnostic identifier for a control. Values for this field typically consist of an Amazon Web Servicesservice and a number, such as APIGateway.5. This field doesn't reference a specific standard.</p>
+    /// <p>A unique standard-agnostic identifier for a control. Values for this field typically consist of an Amazon Web Services service and a number, such as APIGateway.5. This field doesn't reference a specific standard.</p>
     pub security_control_id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of a control, such as <code>arn:aws:securityhub:eu-central-1:123456789012:security-control/S3.1</code>. This parameter doesn't mention a specific standard.</p>
     pub security_control_arn: ::std::option::Option<::std::string::String>,
@@ -28,7 +28,7 @@ impl StandardsControlAssociationSummary {
     pub fn standards_arn(&self) -> ::std::option::Option<&str> {
         self.standards_arn.as_deref()
     }
-    /// <p>A unique standard-agnostic identifier for a control. Values for this field typically consist of an Amazon Web Servicesservice and a number, such as APIGateway.5. This field doesn't reference a specific standard.</p>
+    /// <p>A unique standard-agnostic identifier for a control. Values for this field typically consist of an Amazon Web Services service and a number, such as APIGateway.5. This field doesn't reference a specific standard.</p>
     pub fn security_control_id(&self) -> ::std::option::Option<&str> {
         self.security_control_id.as_deref()
     }
@@ -100,18 +100,18 @@ impl StandardsControlAssociationSummaryBuilder {
     pub fn get_standards_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.standards_arn
     }
-    /// <p>A unique standard-agnostic identifier for a control. Values for this field typically consist of an Amazon Web Servicesservice and a number, such as APIGateway.5. This field doesn't reference a specific standard.</p>
+    /// <p>A unique standard-agnostic identifier for a control. Values for this field typically consist of an Amazon Web Services service and a number, such as APIGateway.5. This field doesn't reference a specific standard.</p>
     /// This field is required.
     pub fn security_control_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.security_control_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A unique standard-agnostic identifier for a control. Values for this field typically consist of an Amazon Web Servicesservice and a number, such as APIGateway.5. This field doesn't reference a specific standard.</p>
+    /// <p>A unique standard-agnostic identifier for a control. Values for this field typically consist of an Amazon Web Services service and a number, such as APIGateway.5. This field doesn't reference a specific standard.</p>
     pub fn set_security_control_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.security_control_id = input;
         self
     }
-    /// <p>A unique standard-agnostic identifier for a control. Values for this field typically consist of an Amazon Web Servicesservice and a number, such as APIGateway.5. This field doesn't reference a specific standard.</p>
+    /// <p>A unique standard-agnostic identifier for a control. Values for this field typically consist of an Amazon Web Services service and a number, such as APIGateway.5. This field doesn't reference a specific standard.</p>
     pub fn get_security_control_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.security_control_id
     }

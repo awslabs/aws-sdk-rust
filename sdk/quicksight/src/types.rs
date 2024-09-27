@@ -1381,6 +1381,8 @@ pub use crate::types::_day_of_week::DayOfWeek;
 
 pub use crate::types::_refresh_interval::RefreshInterval;
 
+pub use crate::types::_personalization_mode::PersonalizationMode;
+
 pub use crate::types::_successful_key_registration_entry::SuccessfulKeyRegistrationEntry;
 
 pub use crate::types::_failed_key_registration_entry::FailedKeyRegistrationEntry;
@@ -3346,6 +3348,8 @@ mod _percentile_aggregation;
 mod _period_over_period_computation;
 
 mod _period_to_date_computation;
+
+mod _personalization_mode;
 
 mod _physical_table;
 

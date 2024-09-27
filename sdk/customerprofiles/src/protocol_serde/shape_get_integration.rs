@@ -167,6 +167,13 @@ pub(crate) fn de_get_integration(
                 "ObjectTypeNames" => {
                     builder = builder.set_object_type_names(crate::protocol_serde::shape_object_type_names::de_object_type_names(tokens)?);
                 }
+                "RoleArn" => {
+                    builder = builder.set_role_arn(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
                 "Tags" => {
                     builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens)?);
                 }

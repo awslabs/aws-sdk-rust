@@ -42,7 +42,7 @@ pub struct AwsEcsServiceDetails {
     pub role: ::std::option::Option<::std::string::String>,
     /// <p>The scheduling strategy to use for the service.</p>
     /// <p>The <code>REPLICA</code> scheduling strategy places and maintains the desired number of tasks across the cluster. By default, the service scheduler spreads tasks across Availability Zones. Task placement strategies and constraints are used to customize task placement decisions.</p>
-    /// <p>The <code>DAEMON</code> scheduling strategy deploys exactly one task on each active container instance that meets all of the task placement constraints that are specified in the cluster. The service scheduler also evaluates the task placement constraints for running tasks and stops tasks that do not meet the placement constraints.</p>
+    /// <p>The <code>DAEMON</code> scheduling strategy deploys exactly one task on each active container instance that meets all of the task placement constraints that are specified in the cluster. The service scheduler also evaluates the task placement constraints for running tasks and stops tasks that don't meet the placement constraints.</p>
     /// <p>Valid values: <code>REPLICA</code> | <code>DAEMON</code></p>
     pub scheduling_strategy: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the service.</p>
@@ -136,7 +136,7 @@ impl AwsEcsServiceDetails {
     }
     /// <p>The scheduling strategy to use for the service.</p>
     /// <p>The <code>REPLICA</code> scheduling strategy places and maintains the desired number of tasks across the cluster. By default, the service scheduler spreads tasks across Availability Zones. Task placement strategies and constraints are used to customize task placement decisions.</p>
-    /// <p>The <code>DAEMON</code> scheduling strategy deploys exactly one task on each active container instance that meets all of the task placement constraints that are specified in the cluster. The service scheduler also evaluates the task placement constraints for running tasks and stops tasks that do not meet the placement constraints.</p>
+    /// <p>The <code>DAEMON</code> scheduling strategy deploys exactly one task on each active container instance that meets all of the task placement constraints that are specified in the cluster. The service scheduler also evaluates the task placement constraints for running tasks and stops tasks that don't meet the placement constraints.</p>
     /// <p>Valid values: <code>REPLICA</code> | <code>DAEMON</code></p>
     pub fn scheduling_strategy(&self) -> ::std::option::Option<&str> {
         self.scheduling_strategy.as_deref()
@@ -477,7 +477,7 @@ impl AwsEcsServiceDetailsBuilder {
     }
     /// <p>The scheduling strategy to use for the service.</p>
     /// <p>The <code>REPLICA</code> scheduling strategy places and maintains the desired number of tasks across the cluster. By default, the service scheduler spreads tasks across Availability Zones. Task placement strategies and constraints are used to customize task placement decisions.</p>
-    /// <p>The <code>DAEMON</code> scheduling strategy deploys exactly one task on each active container instance that meets all of the task placement constraints that are specified in the cluster. The service scheduler also evaluates the task placement constraints for running tasks and stops tasks that do not meet the placement constraints.</p>
+    /// <p>The <code>DAEMON</code> scheduling strategy deploys exactly one task on each active container instance that meets all of the task placement constraints that are specified in the cluster. The service scheduler also evaluates the task placement constraints for running tasks and stops tasks that don't meet the placement constraints.</p>
     /// <p>Valid values: <code>REPLICA</code> | <code>DAEMON</code></p>
     pub fn scheduling_strategy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.scheduling_strategy = ::std::option::Option::Some(input.into());
@@ -485,7 +485,7 @@ impl AwsEcsServiceDetailsBuilder {
     }
     /// <p>The scheduling strategy to use for the service.</p>
     /// <p>The <code>REPLICA</code> scheduling strategy places and maintains the desired number of tasks across the cluster. By default, the service scheduler spreads tasks across Availability Zones. Task placement strategies and constraints are used to customize task placement decisions.</p>
-    /// <p>The <code>DAEMON</code> scheduling strategy deploys exactly one task on each active container instance that meets all of the task placement constraints that are specified in the cluster. The service scheduler also evaluates the task placement constraints for running tasks and stops tasks that do not meet the placement constraints.</p>
+    /// <p>The <code>DAEMON</code> scheduling strategy deploys exactly one task on each active container instance that meets all of the task placement constraints that are specified in the cluster. The service scheduler also evaluates the task placement constraints for running tasks and stops tasks that don't meet the placement constraints.</p>
     /// <p>Valid values: <code>REPLICA</code> | <code>DAEMON</code></p>
     pub fn set_scheduling_strategy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.scheduling_strategy = input;
@@ -493,7 +493,7 @@ impl AwsEcsServiceDetailsBuilder {
     }
     /// <p>The scheduling strategy to use for the service.</p>
     /// <p>The <code>REPLICA</code> scheduling strategy places and maintains the desired number of tasks across the cluster. By default, the service scheduler spreads tasks across Availability Zones. Task placement strategies and constraints are used to customize task placement decisions.</p>
-    /// <p>The <code>DAEMON</code> scheduling strategy deploys exactly one task on each active container instance that meets all of the task placement constraints that are specified in the cluster. The service scheduler also evaluates the task placement constraints for running tasks and stops tasks that do not meet the placement constraints.</p>
+    /// <p>The <code>DAEMON</code> scheduling strategy deploys exactly one task on each active container instance that meets all of the task placement constraints that are specified in the cluster. The service scheduler also evaluates the task placement constraints for running tasks and stops tasks that don't meet the placement constraints.</p>
     /// <p>Valid values: <code>REPLICA</code> | <code>DAEMON</code></p>
     pub fn get_scheduling_strategy(&self) -> &::std::option::Option<::std::string::String> {
         &self.scheduling_strategy

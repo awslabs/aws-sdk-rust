@@ -6,6 +6,9 @@ pub fn ser_tracking_options(
     {
         object.key("CustomRedirectDomain").string(input.custom_redirect_domain.as_str());
     }
+    if let Some(var_1) = &input.https_policy {
+        object.key("HttpsPolicy").string(var_1.as_str());
+    }
     Ok(())
 }
 
@@ -28,6 +31,13 @@ where
                             builder = builder.set_custom_redirect_domain(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "HttpsPolicy" => {
+                            builder = builder.set_https_policy(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::HttpsPolicy::from(u.as_ref())))
                                     .transpose()?,
                             );
                         }

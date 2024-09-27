@@ -3152,6 +3152,44 @@ impl From<crate::operation::describe_namespace::DescribeNamespaceError> for Erro
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_q_personalization_configuration::DescribeQPersonalizationConfigurationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_q_personalization_configuration::DescribeQPersonalizationConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_q_personalization_configuration::DescribeQPersonalizationConfigurationError> for Error {
+    fn from(err: crate::operation::describe_q_personalization_configuration::DescribeQPersonalizationConfigurationError) -> Self {
+        match err {
+            crate::operation::describe_q_personalization_configuration::DescribeQPersonalizationConfigurationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::describe_q_personalization_configuration::DescribeQPersonalizationConfigurationError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::describe_q_personalization_configuration::DescribeQPersonalizationConfigurationError::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::operation::describe_q_personalization_configuration::DescribeQPersonalizationConfigurationError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::describe_q_personalization_configuration::DescribeQPersonalizationConfigurationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::describe_q_personalization_configuration::DescribeQPersonalizationConfigurationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::describe_q_personalization_configuration::DescribeQPersonalizationConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_refresh_schedule::DescribeRefreshScheduleError, R>>
     for Error
 where
@@ -6302,6 +6340,61 @@ impl From<crate::operation::update_public_sharing_settings::UpdatePublicSharingS
                 Error::UnsupportedPricingPlanException(inner)
             }
             crate::operation::update_public_sharing_settings::UpdatePublicSharingSettingsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_q_personalization_configuration::UpdateQPersonalizationConfigurationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_q_personalization_configuration::UpdateQPersonalizationConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_q_personalization_configuration::UpdateQPersonalizationConfigurationError> for Error {
+    fn from(err: crate::operation::update_q_personalization_configuration::UpdateQPersonalizationConfigurationError) -> Self {
+        match err {
+            crate::operation::update_q_personalization_configuration::UpdateQPersonalizationConfigurationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::update_q_personalization_configuration::UpdateQPersonalizationConfigurationError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::update_q_personalization_configuration::UpdateQPersonalizationConfigurationError::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
+            crate::operation::update_q_personalization_configuration::UpdateQPersonalizationConfigurationError::InvalidParameterValueException(
+                inner,
+            ) => Error::InvalidParameterValueException(inner),
+            crate::operation::update_q_personalization_configuration::UpdateQPersonalizationConfigurationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_q_personalization_configuration::UpdateQPersonalizationConfigurationError::ResourceUnavailableException(
+                inner,
+            ) => Error::ResourceUnavailableException(inner),
+            crate::operation::update_q_personalization_configuration::UpdateQPersonalizationConfigurationError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::update_q_personalization_configuration::UpdateQPersonalizationConfigurationError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }

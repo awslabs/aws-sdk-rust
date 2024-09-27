@@ -22,7 +22,7 @@ impl crate::operation::list_finding_aggregators::builders::ListFindingAggregator
 }
 /// Fluent builder constructing a request to `ListFindingAggregators`.
 ///
-/// <p>If finding aggregation is enabled, then <code>ListFindingAggregators</code> returns the ARN of the finding aggregator. You can run this operation from any Region.</p>
+/// <p>If cross-Region aggregation is enabled, then <code>ListFindingAggregators</code> returns the Amazon Resource Name (ARN) of the finding aggregator. You can run this operation from any Amazon Web Services Region.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListFindingAggregatorsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

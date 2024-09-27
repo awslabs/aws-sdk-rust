@@ -8,7 +8,7 @@ pub struct AwsBackupBackupVaultDetails {
     pub backup_vault_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the Amazon Web Services account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
     pub backup_vault_name: ::std::option::Option<::std::string::String>,
-    /// <p>The unique ARN associated with the server-side encryption key. You can specify a key to encrypt your backups from services that support full Backup management. If you do not specify a key, Backup creates an KMS key for you by default.</p>
+    /// <p>The unique ARN associated with the server-side encryption key. You can specify a key to encrypt your backups from services that support full Backup management. If you don't specify a key, Backup creates an KMS key for you by default.</p>
     pub encryption_key_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon SNS event notifications for the specified backup vault.</p>
     pub notifications: ::std::option::Option<crate::types::AwsBackupBackupVaultNotificationsDetails>,
@@ -24,7 +24,7 @@ impl AwsBackupBackupVaultDetails {
     pub fn backup_vault_name(&self) -> ::std::option::Option<&str> {
         self.backup_vault_name.as_deref()
     }
-    /// <p>The unique ARN associated with the server-side encryption key. You can specify a key to encrypt your backups from services that support full Backup management. If you do not specify a key, Backup creates an KMS key for you by default.</p>
+    /// <p>The unique ARN associated with the server-side encryption key. You can specify a key to encrypt your backups from services that support full Backup management. If you don't specify a key, Backup creates an KMS key for you by default.</p>
     pub fn encryption_key_arn(&self) -> ::std::option::Option<&str> {
         self.encryption_key_arn.as_deref()
     }
@@ -83,17 +83,17 @@ impl AwsBackupBackupVaultDetailsBuilder {
     pub fn get_backup_vault_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.backup_vault_name
     }
-    /// <p>The unique ARN associated with the server-side encryption key. You can specify a key to encrypt your backups from services that support full Backup management. If you do not specify a key, Backup creates an KMS key for you by default.</p>
+    /// <p>The unique ARN associated with the server-side encryption key. You can specify a key to encrypt your backups from services that support full Backup management. If you don't specify a key, Backup creates an KMS key for you by default.</p>
     pub fn encryption_key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.encryption_key_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique ARN associated with the server-side encryption key. You can specify a key to encrypt your backups from services that support full Backup management. If you do not specify a key, Backup creates an KMS key for you by default.</p>
+    /// <p>The unique ARN associated with the server-side encryption key. You can specify a key to encrypt your backups from services that support full Backup management. If you don't specify a key, Backup creates an KMS key for you by default.</p>
     pub fn set_encryption_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.encryption_key_arn = input;
         self
     }
-    /// <p>The unique ARN associated with the server-side encryption key. You can specify a key to encrypt your backups from services that support full Backup management. If you do not specify a key, Backup creates an KMS key for you by default.</p>
+    /// <p>The unique ARN associated with the server-side encryption key. You can specify a key to encrypt your backups from services that support full Backup management. If you don't specify a key, Backup creates an KMS key for you by default.</p>
     pub fn get_encryption_key_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.encryption_key_arn
     }

@@ -22,18 +22,21 @@ pub fn ser_put_integration_input_input(
         }
         object_5.finish();
     }
-    if let Some(var_8) = &input.tags {
+    if let Some(var_8) = &input.role_arn {
+        object.key("RoleArn").string(var_8.as_str());
+    }
+    if let Some(var_9) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_9 = object.key("Tags").start_object();
-        for (key_10, value_11) in var_8 {
+        let mut object_10 = object.key("Tags").start_object();
+        for (key_11, value_12) in var_9 {
             {
-                object_9.key(key_10.as_str()).string(value_11.as_str());
+                object_10.key(key_11.as_str()).string(value_12.as_str());
             }
         }
-        object_9.finish();
+        object_10.finish();
     }
-    if let Some(var_12) = &input.uri {
-        object.key("Uri").string(var_12.as_str());
+    if let Some(var_13) = &input.uri {
+        object.key("Uri").string(var_13.as_str());
     }
     Ok(())
 }

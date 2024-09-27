@@ -25,7 +25,7 @@ pub struct Compliance {
     pub related_requirements: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Typically used to provide a list of reasons for the value of <code>Status</code>.</p>
     pub status_reasons: ::std::option::Option<::std::vec::Vec<crate::types::StatusReason>>,
-    /// <p>Typically provides the unique identifier of a control across standards. For Security Hub controls, this field consists of an Amazon Web Servicesservice and a unique number, such as <code>APIGateway.5</code>.</p>
+    /// <p>Typically provides the unique identifier of a control across standards. For Security Hub controls, this field consists of an Amazon Web Services service and a unique number, such as <code>APIGateway.5</code>.</p>
     pub security_control_id: ::std::option::Option<::std::string::String>,
     /// <p>Typically provides an array of enabled security standards in which a security control is currently enabled.</p>
     pub associated_standards: ::std::option::Option<::std::vec::Vec<crate::types::AssociatedStandard>>,
@@ -64,7 +64,7 @@ impl Compliance {
     pub fn status_reasons(&self) -> &[crate::types::StatusReason] {
         self.status_reasons.as_deref().unwrap_or_default()
     }
-    /// <p>Typically provides the unique identifier of a control across standards. For Security Hub controls, this field consists of an Amazon Web Servicesservice and a unique number, such as <code>APIGateway.5</code>.</p>
+    /// <p>Typically provides the unique identifier of a control across standards. For Security Hub controls, this field consists of an Amazon Web Services service and a unique number, such as <code>APIGateway.5</code>.</p>
     pub fn security_control_id(&self) -> ::std::option::Option<&str> {
         self.security_control_id.as_deref()
     }
@@ -199,17 +199,17 @@ impl ComplianceBuilder {
     pub fn get_status_reasons(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StatusReason>> {
         &self.status_reasons
     }
-    /// <p>Typically provides the unique identifier of a control across standards. For Security Hub controls, this field consists of an Amazon Web Servicesservice and a unique number, such as <code>APIGateway.5</code>.</p>
+    /// <p>Typically provides the unique identifier of a control across standards. For Security Hub controls, this field consists of an Amazon Web Services service and a unique number, such as <code>APIGateway.5</code>.</p>
     pub fn security_control_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.security_control_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Typically provides the unique identifier of a control across standards. For Security Hub controls, this field consists of an Amazon Web Servicesservice and a unique number, such as <code>APIGateway.5</code>.</p>
+    /// <p>Typically provides the unique identifier of a control across standards. For Security Hub controls, this field consists of an Amazon Web Services service and a unique number, such as <code>APIGateway.5</code>.</p>
     pub fn set_security_control_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.security_control_id = input;
         self
     }
-    /// <p>Typically provides the unique identifier of a control across standards. For Security Hub controls, this field consists of an Amazon Web Servicesservice and a unique number, such as <code>APIGateway.5</code>.</p>
+    /// <p>Typically provides the unique identifier of a control across standards. For Security Hub controls, this field consists of an Amazon Web Services service and a unique number, such as <code>APIGateway.5</code>.</p>
     pub fn get_security_control_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.security_control_id
     }

@@ -136,4 +136,18 @@ impl PutConfigurationSetTrackingOptionsFluentBuilder {
     pub fn get_custom_redirect_domain(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_custom_redirect_domain()
     }
+    /// <p>The https policy to use for tracking open and click events. If the value is OPTIONAL or HttpsPolicy is not specified, the open trackers use HTTP and click tracker use the original protocol of the link. If the value is REQUIRE, both open and click tracker uses HTTPS and if the value is REQUIRE_OPEN_ONLY open tracker uses HTTPS and link tracker is same as original protocol of the link.</p>
+    pub fn https_policy(mut self, input: crate::types::HttpsPolicy) -> Self {
+        self.inner = self.inner.https_policy(input);
+        self
+    }
+    /// <p>The https policy to use for tracking open and click events. If the value is OPTIONAL or HttpsPolicy is not specified, the open trackers use HTTP and click tracker use the original protocol of the link. If the value is REQUIRE, both open and click tracker uses HTTPS and if the value is REQUIRE_OPEN_ONLY open tracker uses HTTPS and link tracker is same as original protocol of the link.</p>
+    pub fn set_https_policy(mut self, input: ::std::option::Option<crate::types::HttpsPolicy>) -> Self {
+        self.inner = self.inner.set_https_policy(input);
+        self
+    }
+    /// <p>The https policy to use for tracking open and click events. If the value is OPTIONAL or HttpsPolicy is not specified, the open trackers use HTTP and click tracker use the original protocol of the link. If the value is REQUIRE, both open and click tracker uses HTTPS and if the value is REQUIRE_OPEN_ONLY open tracker uses HTTPS and link tracker is same as original protocol of the link.</p>
+    pub fn get_https_policy(&self) -> &::std::option::Option<crate::types::HttpsPolicy> {
+        self.inner.get_https_policy()
+    }
 }

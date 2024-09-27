@@ -23,7 +23,7 @@ impl crate::operation::batch_update_findings::builders::BatchUpdateFindingsInput
 /// Fluent builder constructing a request to `BatchUpdateFindings`.
 ///
 /// <p>Used by Security Hub customers to update information about their investigation into a finding. Requested by administrator accounts or member accounts. Administrator accounts can update findings for their account and their member accounts. Member accounts can update findings for their account.</p>
-/// <p>Updates from <code>BatchUpdateFindings</code> do not affect the value of <code>UpdatedAt</code> for a finding.</p>
+/// <p>Updates from <code>BatchUpdateFindings</code> don't affect the value of <code>UpdatedAt</code> for a finding.</p>
 /// <p>Administrator and member accounts can use <code>BatchUpdateFindings</code> to update the following finding fields and objects.</p>
 /// <ul>
 /// <li>

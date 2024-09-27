@@ -8,6 +8,8 @@ pub struct PutConfigurationSetTrackingOptionsInput {
     pub configuration_set_name: ::std::option::Option<::std::string::String>,
     /// <p>The domain to use to track open and click events.</p>
     pub custom_redirect_domain: ::std::option::Option<::std::string::String>,
+    /// <p>The https policy to use for tracking open and click events. If the value is OPTIONAL or HttpsPolicy is not specified, the open trackers use HTTP and click tracker use the original protocol of the link. If the value is REQUIRE, both open and click tracker uses HTTPS and if the value is REQUIRE_OPEN_ONLY open tracker uses HTTPS and link tracker is same as original protocol of the link.</p>
+    pub https_policy: ::std::option::Option<crate::types::HttpsPolicy>,
 }
 impl PutConfigurationSetTrackingOptionsInput {
     /// <p>The name of the configuration set.</p>
@@ -17,6 +19,10 @@ impl PutConfigurationSetTrackingOptionsInput {
     /// <p>The domain to use to track open and click events.</p>
     pub fn custom_redirect_domain(&self) -> ::std::option::Option<&str> {
         self.custom_redirect_domain.as_deref()
+    }
+    /// <p>The https policy to use for tracking open and click events. If the value is OPTIONAL or HttpsPolicy is not specified, the open trackers use HTTP and click tracker use the original protocol of the link. If the value is REQUIRE, both open and click tracker uses HTTPS and if the value is REQUIRE_OPEN_ONLY open tracker uses HTTPS and link tracker is same as original protocol of the link.</p>
+    pub fn https_policy(&self) -> ::std::option::Option<&crate::types::HttpsPolicy> {
+        self.https_policy.as_ref()
     }
 }
 impl PutConfigurationSetTrackingOptionsInput {
@@ -32,6 +38,7 @@ impl PutConfigurationSetTrackingOptionsInput {
 pub struct PutConfigurationSetTrackingOptionsInputBuilder {
     pub(crate) configuration_set_name: ::std::option::Option<::std::string::String>,
     pub(crate) custom_redirect_domain: ::std::option::Option<::std::string::String>,
+    pub(crate) https_policy: ::std::option::Option<crate::types::HttpsPolicy>,
 }
 impl PutConfigurationSetTrackingOptionsInputBuilder {
     /// <p>The name of the configuration set.</p>
@@ -63,6 +70,20 @@ impl PutConfigurationSetTrackingOptionsInputBuilder {
     pub fn get_custom_redirect_domain(&self) -> &::std::option::Option<::std::string::String> {
         &self.custom_redirect_domain
     }
+    /// <p>The https policy to use for tracking open and click events. If the value is OPTIONAL or HttpsPolicy is not specified, the open trackers use HTTP and click tracker use the original protocol of the link. If the value is REQUIRE, both open and click tracker uses HTTPS and if the value is REQUIRE_OPEN_ONLY open tracker uses HTTPS and link tracker is same as original protocol of the link.</p>
+    pub fn https_policy(mut self, input: crate::types::HttpsPolicy) -> Self {
+        self.https_policy = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The https policy to use for tracking open and click events. If the value is OPTIONAL or HttpsPolicy is not specified, the open trackers use HTTP and click tracker use the original protocol of the link. If the value is REQUIRE, both open and click tracker uses HTTPS and if the value is REQUIRE_OPEN_ONLY open tracker uses HTTPS and link tracker is same as original protocol of the link.</p>
+    pub fn set_https_policy(mut self, input: ::std::option::Option<crate::types::HttpsPolicy>) -> Self {
+        self.https_policy = input;
+        self
+    }
+    /// <p>The https policy to use for tracking open and click events. If the value is OPTIONAL or HttpsPolicy is not specified, the open trackers use HTTP and click tracker use the original protocol of the link. If the value is REQUIRE, both open and click tracker uses HTTPS and if the value is REQUIRE_OPEN_ONLY open tracker uses HTTPS and link tracker is same as original protocol of the link.</p>
+    pub fn get_https_policy(&self) -> &::std::option::Option<crate::types::HttpsPolicy> {
+        &self.https_policy
+    }
     /// Consumes the builder and constructs a [`PutConfigurationSetTrackingOptionsInput`](crate::operation::put_configuration_set_tracking_options::PutConfigurationSetTrackingOptionsInput).
     pub fn build(
         self,
@@ -74,6 +95,7 @@ impl PutConfigurationSetTrackingOptionsInputBuilder {
             crate::operation::put_configuration_set_tracking_options::PutConfigurationSetTrackingOptionsInput {
                 configuration_set_name: self.configuration_set_name,
                 custom_redirect_domain: self.custom_redirect_domain,
+                https_policy: self.https_policy,
             },
         )
     }

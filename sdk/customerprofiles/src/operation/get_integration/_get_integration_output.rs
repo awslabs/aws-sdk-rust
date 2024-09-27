@@ -21,6 +21,8 @@ pub struct GetIntegrationOutput {
     pub workflow_id: ::std::option::Option<::std::string::String>,
     /// <p>Boolean that shows if the Flow that's associated with the Integration is created in Amazon Appflow, or with ObjectTypeName equals _unstructured via API/CLI in flowDefinition.</p>
     pub is_unstructured: ::std::option::Option<bool>,
+    /// <p>The Amazon Resource Name (ARN) of the IAM role. The Integration uses this role to make Customer Profiles requests on your behalf.</p>
+    pub role_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetIntegrationOutput {
@@ -62,6 +64,10 @@ impl GetIntegrationOutput {
     pub fn is_unstructured(&self) -> ::std::option::Option<bool> {
         self.is_unstructured
     }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role. The Integration uses this role to make Customer Profiles requests on your behalf.</p>
+    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
 }
 impl ::aws_types::request_id::RequestId for GetIntegrationOutput {
     fn request_id(&self) -> Option<&str> {
@@ -88,6 +94,7 @@ pub struct GetIntegrationOutputBuilder {
     pub(crate) object_type_names: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) workflow_id: ::std::option::Option<::std::string::String>,
     pub(crate) is_unstructured: ::std::option::Option<bool>,
+    pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetIntegrationOutputBuilder {
@@ -240,6 +247,20 @@ impl GetIntegrationOutputBuilder {
     pub fn get_is_unstructured(&self) -> &::std::option::Option<bool> {
         &self.is_unstructured
     }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role. The Integration uses this role to make Customer Profiles requests on your behalf.</p>
+    pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.role_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role. The Integration uses this role to make Customer Profiles requests on your behalf.</p>
+    pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.role_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role. The Integration uses this role to make Customer Profiles requests on your behalf.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -288,6 +309,7 @@ impl GetIntegrationOutputBuilder {
             object_type_names: self.object_type_names,
             workflow_id: self.workflow_id,
             is_unstructured: self.is_unstructured,
+            role_arn: self.role_arn,
             _request_id: self._request_id,
         })
     }

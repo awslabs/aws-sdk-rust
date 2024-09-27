@@ -321,6 +321,8 @@ mod describe_key_registration;
 
 mod describe_namespace;
 
+mod describe_q_personalization_configuration;
+
 mod describe_refresh_schedule;
 
 mod describe_role_custom_permission;
@@ -490,6 +492,8 @@ mod update_ip_restriction;
 mod update_key_registration;
 
 mod update_public_sharing_settings;
+
+mod update_q_personalization_configuration;
 
 mod update_refresh_schedule;
 

@@ -23,7 +23,7 @@ impl crate::operation::get_findings::builders::GetFindingsInputBuilder {
 /// Fluent builder constructing a request to `GetFindings`.
 ///
 /// <p>Returns a list of findings that match the specified criteria.</p>
-/// <p>If finding aggregation is enabled, then when you call <code>GetFindings</code> from the aggregation Region, the results include all of the matching findings from both the aggregation Region and the linked Regions.</p>
+/// <p>If cross-Region aggregation is enabled, then when you call <code>GetFindings</code> from the home Region, the results include all of the matching findings from both the home Region and linked Regions.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetFindingsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

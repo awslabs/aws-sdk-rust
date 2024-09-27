@@ -181,6 +181,8 @@ pub(crate) mod shape_describe_key_registration;
 
 pub(crate) mod shape_describe_namespace;
 
+pub(crate) mod shape_describe_q_personalization_configuration;
+
 pub(crate) mod shape_describe_refresh_schedule;
 
 pub(crate) mod shape_describe_role_custom_permission;
@@ -350,6 +352,8 @@ pub(crate) mod shape_update_ip_restriction;
 pub(crate) mod shape_update_key_registration;
 
 pub(crate) mod shape_update_public_sharing_settings;
+
+pub(crate) mod shape_update_q_personalization_configuration;
 
 pub(crate) mod shape_update_refresh_schedule;
 
@@ -534,6 +538,8 @@ pub(crate) mod shape_update_ip_restriction_input;
 pub(crate) mod shape_update_key_registration_input;
 
 pub(crate) mod shape_update_public_sharing_settings_input;
+
+pub(crate) mod shape_update_q_personalization_configuration_input;
 
 pub(crate) mod shape_update_refresh_schedule_input;
 

@@ -85,6 +85,8 @@ pub use crate::types::_feature_status::FeatureStatus;
 
 pub use crate::types::_dashboard_options::DashboardOptions;
 
+pub use crate::types::_https_policy::HttpsPolicy;
+
 pub use crate::types::_tls_policy::TlsPolicy;
 
 pub use crate::types::_vdm_attributes::VdmAttributes;
@@ -388,6 +390,8 @@ mod _feature_status;
 mod _guardian_attributes;
 
 mod _guardian_options;
+
+mod _https_policy;
 
 mod _identity_info;
 

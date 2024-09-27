@@ -15,6 +15,8 @@ pub struct PutIntegrationInput {
     pub flow_definition: ::std::option::Option<crate::types::FlowDefinition>,
     /// <p>A map in which each key is an event type from an external application such as Segment or Shopify, and each value is an <code>ObjectTypeName</code> (template) used to ingest the event. It supports the following event types: <code>SegmentIdentify</code>, <code>ShopifyCreateCustomers</code>, <code>ShopifyUpdateCustomers</code>, <code>ShopifyCreateDraftOrders</code>, <code>ShopifyUpdateDraftOrders</code>, <code>ShopifyCreateOrders</code>, and <code>ShopifyUpdatedOrders</code>.</p>
     pub object_type_names: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>The Amazon Resource Name (ARN) of the IAM role. The Integration uses this role to make Customer Profiles requests on your behalf.</p>
+    pub role_arn: ::std::option::Option<::std::string::String>,
 }
 impl PutIntegrationInput {
     /// <p>The unique name of the domain.</p>
@@ -41,6 +43,10 @@ impl PutIntegrationInput {
     pub fn object_type_names(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.object_type_names.as_ref()
     }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role. The Integration uses this role to make Customer Profiles requests on your behalf.</p>
+    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
 }
 impl ::std::fmt::Debug for PutIntegrationInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -51,6 +57,7 @@ impl ::std::fmt::Debug for PutIntegrationInput {
         formatter.field("tags", &self.tags);
         formatter.field("flow_definition", &"*** Sensitive Data Redacted ***");
         formatter.field("object_type_names", &self.object_type_names);
+        formatter.field("role_arn", &self.role_arn);
         formatter.finish()
     }
 }
@@ -71,6 +78,7 @@ pub struct PutIntegrationInputBuilder {
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) flow_definition: ::std::option::Option<crate::types::FlowDefinition>,
     pub(crate) object_type_names: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) role_arn: ::std::option::Option<::std::string::String>,
 }
 impl PutIntegrationInputBuilder {
     /// <p>The unique name of the domain.</p>
@@ -177,6 +185,20 @@ impl PutIntegrationInputBuilder {
     pub fn get_object_type_names(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.object_type_names
     }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role. The Integration uses this role to make Customer Profiles requests on your behalf.</p>
+    pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.role_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role. The Integration uses this role to make Customer Profiles requests on your behalf.</p>
+    pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.role_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role. The Integration uses this role to make Customer Profiles requests on your behalf.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
+    }
     /// Consumes the builder and constructs a [`PutIntegrationInput`](crate::operation::put_integration::PutIntegrationInput).
     pub fn build(
         self,
@@ -188,6 +210,7 @@ impl PutIntegrationInputBuilder {
             tags: self.tags,
             flow_definition: self.flow_definition,
             object_type_names: self.object_type_names,
+            role_arn: self.role_arn,
         })
     }
 }
@@ -200,6 +223,7 @@ impl ::std::fmt::Debug for PutIntegrationInputBuilder {
         formatter.field("tags", &self.tags);
         formatter.field("flow_definition", &"*** Sensitive Data Redacted ***");
         formatter.field("object_type_names", &self.object_type_names);
+        formatter.field("role_arn", &self.role_arn);
         formatter.finish()
     }
 }

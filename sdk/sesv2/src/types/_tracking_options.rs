@@ -7,12 +7,18 @@
 pub struct TrackingOptions {
     /// <p>The domain to use for tracking open and click events.</p>
     pub custom_redirect_domain: ::std::string::String,
+    /// <p>The https policy to use for tracking open and click events.</p>
+    pub https_policy: ::std::option::Option<crate::types::HttpsPolicy>,
 }
 impl TrackingOptions {
     /// <p>The domain to use for tracking open and click events.</p>
     pub fn custom_redirect_domain(&self) -> &str {
         use std::ops::Deref;
         self.custom_redirect_domain.deref()
+    }
+    /// <p>The https policy to use for tracking open and click events.</p>
+    pub fn https_policy(&self) -> ::std::option::Option<&crate::types::HttpsPolicy> {
+        self.https_policy.as_ref()
     }
 }
 impl TrackingOptions {
@@ -27,6 +33,7 @@ impl TrackingOptions {
 #[non_exhaustive]
 pub struct TrackingOptionsBuilder {
     pub(crate) custom_redirect_domain: ::std::option::Option<::std::string::String>,
+    pub(crate) https_policy: ::std::option::Option<crate::types::HttpsPolicy>,
 }
 impl TrackingOptionsBuilder {
     /// <p>The domain to use for tracking open and click events.</p>
@@ -44,6 +51,20 @@ impl TrackingOptionsBuilder {
     pub fn get_custom_redirect_domain(&self) -> &::std::option::Option<::std::string::String> {
         &self.custom_redirect_domain
     }
+    /// <p>The https policy to use for tracking open and click events.</p>
+    pub fn https_policy(mut self, input: crate::types::HttpsPolicy) -> Self {
+        self.https_policy = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The https policy to use for tracking open and click events.</p>
+    pub fn set_https_policy(mut self, input: ::std::option::Option<crate::types::HttpsPolicy>) -> Self {
+        self.https_policy = input;
+        self
+    }
+    /// <p>The https policy to use for tracking open and click events.</p>
+    pub fn get_https_policy(&self) -> &::std::option::Option<crate::types::HttpsPolicy> {
+        &self.https_policy
+    }
     /// Consumes the builder and constructs a [`TrackingOptions`](crate::types::TrackingOptions).
     /// This method will fail if any of the following fields are not set:
     /// - [`custom_redirect_domain`](crate::types::builders::TrackingOptionsBuilder::custom_redirect_domain)
@@ -55,6 +76,7 @@ impl TrackingOptionsBuilder {
                     "custom_redirect_domain was not specified but it is required when building TrackingOptions",
                 )
             })?,
+            https_policy: self.https_policy,
         })
     }
 }

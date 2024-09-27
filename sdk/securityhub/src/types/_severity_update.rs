@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SeverityUpdate {
     /// <p>The normalized severity for the finding. This attribute is to be deprecated in favor of <code>Label</code>.</p>
-    /// <p>If you provide <code>Normalized</code> and do not provide <code>Label</code>, <code>Label</code> is set automatically as follows.</p>
+    /// <p>If you provide <code>Normalized</code> and don't provide <code>Label</code>, <code>Label</code> is set automatically as follows.</p>
     /// <ul>
     /// <li>
     /// <p>0 - <code>INFORMATIONAL</code></p></li>
@@ -38,7 +38,7 @@ pub struct SeverityUpdate {
 }
 impl SeverityUpdate {
     /// <p>The normalized severity for the finding. This attribute is to be deprecated in favor of <code>Label</code>.</p>
-    /// <p>If you provide <code>Normalized</code> and do not provide <code>Label</code>, <code>Label</code> is set automatically as follows.</p>
+    /// <p>If you provide <code>Normalized</code> and don't provide <code>Label</code>, <code>Label</code> is set automatically as follows.</p>
     /// <ul>
     /// <li>
     /// <p>0 - <code>INFORMATIONAL</code></p></li>
@@ -92,7 +92,7 @@ pub struct SeverityUpdateBuilder {
 }
 impl SeverityUpdateBuilder {
     /// <p>The normalized severity for the finding. This attribute is to be deprecated in favor of <code>Label</code>.</p>
-    /// <p>If you provide <code>Normalized</code> and do not provide <code>Label</code>, <code>Label</code> is set automatically as follows.</p>
+    /// <p>If you provide <code>Normalized</code> and don't provide <code>Label</code>, <code>Label</code> is set automatically as follows.</p>
     /// <ul>
     /// <li>
     /// <p>0 - <code>INFORMATIONAL</code></p></li>
@@ -110,7 +110,7 @@ impl SeverityUpdateBuilder {
         self
     }
     /// <p>The normalized severity for the finding. This attribute is to be deprecated in favor of <code>Label</code>.</p>
-    /// <p>If you provide <code>Normalized</code> and do not provide <code>Label</code>, <code>Label</code> is set automatically as follows.</p>
+    /// <p>If you provide <code>Normalized</code> and don't provide <code>Label</code>, <code>Label</code> is set automatically as follows.</p>
     /// <ul>
     /// <li>
     /// <p>0 - <code>INFORMATIONAL</code></p></li>
@@ -128,7 +128,7 @@ impl SeverityUpdateBuilder {
         self
     }
     /// <p>The normalized severity for the finding. This attribute is to be deprecated in favor of <code>Label</code>.</p>
-    /// <p>If you provide <code>Normalized</code> and do not provide <code>Label</code>, <code>Label</code> is set automatically as follows.</p>
+    /// <p>If you provide <code>Normalized</code> and don't provide <code>Label</code>, <code>Label</code> is set automatically as follows.</p>
     /// <ul>
     /// <li>
     /// <p>0 - <code>INFORMATIONAL</code></p></li>

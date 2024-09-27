@@ -21,7 +21,7 @@ pub struct WorkflowUpdate {
     /// <li>
     /// <p><code>RESOLVED</code> - The finding was reviewed and remediated and is now considered resolved.</p></li>
     /// <li>
-    /// <p><code>SUPPRESSED</code> - Indicates that you reviewed the finding and do not believe that any action is needed. The finding is no longer updated.</p></li>
+    /// <p><code>SUPPRESSED</code> - Indicates that you reviewed the finding and don't believe that any action is needed. The finding is no longer updated.</p></li>
     /// </ul>
     pub status: ::std::option::Option<crate::types::WorkflowStatus>,
 }
@@ -43,7 +43,7 @@ impl WorkflowUpdate {
     /// <li>
     /// <p><code>RESOLVED</code> - The finding was reviewed and remediated and is now considered resolved.</p></li>
     /// <li>
-    /// <p><code>SUPPRESSED</code> - Indicates that you reviewed the finding and do not believe that any action is needed. The finding is no longer updated.</p></li>
+    /// <p><code>SUPPRESSED</code> - Indicates that you reviewed the finding and don't believe that any action is needed. The finding is no longer updated.</p></li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&crate::types::WorkflowStatus> {
         self.status.as_ref()
@@ -80,7 +80,7 @@ impl WorkflowUpdateBuilder {
     /// <li>
     /// <p><code>RESOLVED</code> - The finding was reviewed and remediated and is now considered resolved.</p></li>
     /// <li>
-    /// <p><code>SUPPRESSED</code> - Indicates that you reviewed the finding and do not believe that any action is needed. The finding is no longer updated.</p></li>
+    /// <p><code>SUPPRESSED</code> - Indicates that you reviewed the finding and don't believe that any action is needed. The finding is no longer updated.</p></li>
     /// </ul>
     pub fn status(mut self, input: crate::types::WorkflowStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -103,7 +103,7 @@ impl WorkflowUpdateBuilder {
     /// <li>
     /// <p><code>RESOLVED</code> - The finding was reviewed and remediated and is now considered resolved.</p></li>
     /// <li>
-    /// <p><code>SUPPRESSED</code> - Indicates that you reviewed the finding and do not believe that any action is needed. The finding is no longer updated.</p></li>
+    /// <p><code>SUPPRESSED</code> - Indicates that you reviewed the finding and don't believe that any action is needed. The finding is no longer updated.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::WorkflowStatus>) -> Self {
         self.status = input;
@@ -126,7 +126,7 @@ impl WorkflowUpdateBuilder {
     /// <li>
     /// <p><code>RESOLVED</code> - The finding was reviewed and remediated and is now considered resolved.</p></li>
     /// <li>
-    /// <p><code>SUPPRESSED</code> - Indicates that you reviewed the finding and do not believe that any action is needed. The finding is no longer updated.</p></li>
+    /// <p><code>SUPPRESSED</code> - Indicates that you reviewed the finding and don't believe that any action is needed. The finding is no longer updated.</p></li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::WorkflowStatus> {
         &self.status

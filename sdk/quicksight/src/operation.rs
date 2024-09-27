@@ -238,6 +238,9 @@ pub mod describe_key_registration;
 /// Types for the `DescribeNamespace` operation.
 pub mod describe_namespace;
 
+/// Types for the `DescribeQPersonalizationConfiguration` operation.
+pub mod describe_q_personalization_configuration;
+
 /// Types for the `DescribeRefreshSchedule` operation.
 pub mod describe_refresh_schedule;
 
@@ -492,6 +495,9 @@ pub mod update_key_registration;
 
 /// Types for the `UpdatePublicSharingSettings` operation.
 pub mod update_public_sharing_settings;
+
+/// Types for the `UpdateQPersonalizationConfiguration` operation.
+pub mod update_q_personalization_configuration;
 
 /// Types for the `UpdateRefreshSchedule` operation.
 pub mod update_refresh_schedule;

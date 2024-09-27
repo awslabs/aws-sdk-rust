@@ -12,7 +12,7 @@ pub struct RouteSetDetails {
     pub destination_cidr_block: ::std::option::Option<::std::string::String>,
     /// <p>The IPv6 CIDR block used for the destination match.</p>
     pub destination_ipv6_cidr_block: ::std::option::Option<::std::string::String>,
-    /// <p>The prefix of the destination Amazon Web Servicesservice.</p>
+    /// <p>The prefix of the destination Amazon Web Services service.</p>
     pub destination_prefix_list_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the egress-only internet gateway.</p>
     pub egress_only_internet_gateway_id: ::std::option::Option<::std::string::String>,
@@ -54,7 +54,7 @@ impl RouteSetDetails {
     pub fn destination_ipv6_cidr_block(&self) -> ::std::option::Option<&str> {
         self.destination_ipv6_cidr_block.as_deref()
     }
-    /// <p>The prefix of the destination Amazon Web Servicesservice.</p>
+    /// <p>The prefix of the destination Amazon Web Services service.</p>
     pub fn destination_prefix_list_id(&self) -> ::std::option::Option<&str> {
         self.destination_prefix_list_id.as_deref()
     }
@@ -188,17 +188,17 @@ impl RouteSetDetailsBuilder {
     pub fn get_destination_ipv6_cidr_block(&self) -> &::std::option::Option<::std::string::String> {
         &self.destination_ipv6_cidr_block
     }
-    /// <p>The prefix of the destination Amazon Web Servicesservice.</p>
+    /// <p>The prefix of the destination Amazon Web Services service.</p>
     pub fn destination_prefix_list_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_prefix_list_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The prefix of the destination Amazon Web Servicesservice.</p>
+    /// <p>The prefix of the destination Amazon Web Services service.</p>
     pub fn set_destination_prefix_list_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination_prefix_list_id = input;
         self
     }
-    /// <p>The prefix of the destination Amazon Web Servicesservice.</p>
+    /// <p>The prefix of the destination Amazon Web Services service.</p>
     pub fn get_destination_prefix_list_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.destination_prefix_list_id
     }
