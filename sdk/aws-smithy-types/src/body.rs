@@ -234,6 +234,11 @@ impl SdkBody {
         })
     }
 
+    /// Return `true` if this SdkBody is streaming, `false` if it is in-memory.
+    pub fn is_streaming(&self) -> bool {
+        matches!(self.inner, Inner::Dyn { .. })
+    }
+
     /// Return the length, in bytes, of this SdkBody. If this returns `None`, then the body does not
     /// have a known length.
     pub fn content_length(&self) -> Option<u64> {
