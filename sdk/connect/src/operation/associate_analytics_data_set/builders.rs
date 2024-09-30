@@ -22,7 +22,6 @@ impl crate::operation::associate_analytics_data_set::builders::AssociateAnalytic
 }
 /// Fluent builder constructing a request to `AssociateAnalyticsDataSet`.
 ///
-/// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
 /// <p>Associates the specified dataset for a Amazon Connect instance with the target account. You can associate only one dataset in a single call.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AssociateAnalyticsDataSetFluentBuilder {

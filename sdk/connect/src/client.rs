@@ -553,6 +553,8 @@ mod start_contact_recording;
 
 mod start_contact_streaming;
 
+mod start_outbound_chat_contact;
+
 mod start_outbound_voice_contact;
 
 mod start_task_contact;

@@ -6991,6 +6991,49 @@ impl From<crate::operation::start_contact_streaming::StartContactStreamingError>
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_outbound_chat_contact::StartOutboundChatContactError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_outbound_chat_contact::StartOutboundChatContactError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::start_outbound_chat_contact::StartOutboundChatContactError> for Error {
+    fn from(err: crate::operation::start_outbound_chat_contact::StartOutboundChatContactError) -> Self {
+        match err {
+            crate::operation::start_outbound_chat_contact::StartOutboundChatContactError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::start_outbound_chat_contact::StartOutboundChatContactError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::start_outbound_chat_contact::StartOutboundChatContactError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::start_outbound_chat_contact::StartOutboundChatContactError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::start_outbound_chat_contact::StartOutboundChatContactError::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::operation::start_outbound_chat_contact::StartOutboundChatContactError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::start_outbound_chat_contact::StartOutboundChatContactError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::start_outbound_chat_contact::StartOutboundChatContactError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_outbound_voice_contact::StartOutboundVoiceContactError, R>>
     for Error
 where

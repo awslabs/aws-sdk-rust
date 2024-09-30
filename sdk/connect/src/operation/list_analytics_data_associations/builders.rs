@@ -22,7 +22,6 @@ impl crate::operation::list_analytics_data_associations::builders::ListAnalytics
 }
 /// Fluent builder constructing a request to `ListAnalyticsDataAssociations`.
 ///
-/// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
 /// <p>Lists the association status of requested dataset ID for a given Amazon Connect instance.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListAnalyticsDataAssociationsFluentBuilder {

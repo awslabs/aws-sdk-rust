@@ -206,4 +206,46 @@ impl CreateGroupFluentBuilder {
     pub fn get_configuration(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GroupConfigurationItem>> {
         self.inner.get_configuration()
     }
+    /// <p>The critical rank of the application group on a scale of 1 to 10, with a rank of 1 being the most critical, and a rank of 10 being least critical.</p>
+    pub fn criticality(mut self, input: i32) -> Self {
+        self.inner = self.inner.criticality(input);
+        self
+    }
+    /// <p>The critical rank of the application group on a scale of 1 to 10, with a rank of 1 being the most critical, and a rank of 10 being least critical.</p>
+    pub fn set_criticality(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.inner = self.inner.set_criticality(input);
+        self
+    }
+    /// <p>The critical rank of the application group on a scale of 1 to 10, with a rank of 1 being the most critical, and a rank of 10 being least critical.</p>
+    pub fn get_criticality(&self) -> &::std::option::Option<i32> {
+        self.inner.get_criticality()
+    }
+    /// <p>A name, email address or other identifier for the person or group who is considered as the owner of this application group within your organization.</p>
+    pub fn owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.owner(input.into());
+        self
+    }
+    /// <p>A name, email address or other identifier for the person or group who is considered as the owner of this application group within your organization.</p>
+    pub fn set_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_owner(input);
+        self
+    }
+    /// <p>A name, email address or other identifier for the person or group who is considered as the owner of this application group within your organization.</p>
+    pub fn get_owner(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_owner()
+    }
+    /// <p>The name of the application group, which you can change at any time.</p>
+    pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.display_name(input.into());
+        self
+    }
+    /// <p>The name of the application group, which you can change at any time.</p>
+    pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_display_name(input);
+        self
+    }
+    /// <p>The name of the application group, which you can change at any time.</p>
+    pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_display_name()
+    }
 }

@@ -10,7 +10,7 @@ pub struct ServiceQuotaExceededException {
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The resource type of the resource referenced in the failed request.</p>
     pub resource_type: crate::types::ResourceType,
-    /// <p>The code for the Amazon Web Service that owns the quota.</p>
+    /// <p>The code for the Amazon Web Services service that owns the quota.</p>
     pub service_code: ::std::option::Option<::std::string::String>,
     /// <p>The quota code recognized by the Amazon Web Services Service Quotas service.</p>
     pub quota_code: ::std::option::Option<::std::string::String>,
@@ -25,7 +25,7 @@ impl ServiceQuotaExceededException {
     pub fn resource_type(&self) -> &crate::types::ResourceType {
         &self.resource_type
     }
-    /// <p>The code for the Amazon Web Service that owns the quota.</p>
+    /// <p>The code for the Amazon Web Services service that owns the quota.</p>
     pub fn service_code(&self) -> ::std::option::Option<&str> {
         self.service_code.as_deref()
     }
@@ -124,17 +124,17 @@ impl ServiceQuotaExceededExceptionBuilder {
     pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ResourceType> {
         &self.resource_type
     }
-    /// <p>The code for the Amazon Web Service that owns the quota.</p>
+    /// <p>The code for the Amazon Web Services service that owns the quota.</p>
     pub fn service_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_code = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The code for the Amazon Web Service that owns the quota.</p>
+    /// <p>The code for the Amazon Web Services service that owns the quota.</p>
     pub fn set_service_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_code = input;
         self
     }
-    /// <p>The code for the Amazon Web Service that owns the quota.</p>
+    /// <p>The code for the Amazon Web Services service that owns the quota.</p>
     pub fn get_service_code(&self) -> &::std::option::Option<::std::string::String> {
         &self.service_code
     }

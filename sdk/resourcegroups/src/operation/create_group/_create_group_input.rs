@@ -17,6 +17,12 @@ pub struct CreateGroupInput {
     /// <p>A resource group can contain either a <code>Configuration</code> or a <code>ResourceQuery</code>, but not both.</p>
     /// </note>
     pub configuration: ::std::option::Option<::std::vec::Vec<crate::types::GroupConfigurationItem>>,
+    /// <p>The critical rank of the application group on a scale of 1 to 10, with a rank of 1 being the most critical, and a rank of 10 being least critical.</p>
+    pub criticality: ::std::option::Option<i32>,
+    /// <p>A name, email address or other identifier for the person or group who is considered as the owner of this application group within your organization.</p>
+    pub owner: ::std::option::Option<::std::string::String>,
+    /// <p>The name of the application group, which you can change at any time.</p>
+    pub display_name: ::std::option::Option<::std::string::String>,
 }
 impl CreateGroupInput {
     /// <p>The name of the group, which is the identifier of the group in other operations. You can't change the name of a resource group after you create it. A resource group name can consist of letters, numbers, hyphens, periods, and underscores. The name cannot start with <code>AWS</code>, <code>aws</code>, or any other possible capitalization; these are reserved. A resource group name must be unique within each Amazon Web Services Region in your Amazon Web Services account.</p>
@@ -45,6 +51,18 @@ impl CreateGroupInput {
     pub fn configuration(&self) -> &[crate::types::GroupConfigurationItem] {
         self.configuration.as_deref().unwrap_or_default()
     }
+    /// <p>The critical rank of the application group on a scale of 1 to 10, with a rank of 1 being the most critical, and a rank of 10 being least critical.</p>
+    pub fn criticality(&self) -> ::std::option::Option<i32> {
+        self.criticality
+    }
+    /// <p>A name, email address or other identifier for the person or group who is considered as the owner of this application group within your organization.</p>
+    pub fn owner(&self) -> ::std::option::Option<&str> {
+        self.owner.as_deref()
+    }
+    /// <p>The name of the application group, which you can change at any time.</p>
+    pub fn display_name(&self) -> ::std::option::Option<&str> {
+        self.display_name.as_deref()
+    }
 }
 impl CreateGroupInput {
     /// Creates a new builder-style object to manufacture [`CreateGroupInput`](crate::operation::create_group::CreateGroupInput).
@@ -62,6 +80,9 @@ pub struct CreateGroupInputBuilder {
     pub(crate) resource_query: ::std::option::Option<crate::types::ResourceQuery>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) configuration: ::std::option::Option<::std::vec::Vec<crate::types::GroupConfigurationItem>>,
+    pub(crate) criticality: ::std::option::Option<i32>,
+    pub(crate) owner: ::std::option::Option<::std::string::String>,
+    pub(crate) display_name: ::std::option::Option<::std::string::String>,
 }
 impl CreateGroupInputBuilder {
     /// <p>The name of the group, which is the identifier of the group in other operations. You can't change the name of a resource group after you create it. A resource group name can consist of letters, numbers, hyphens, periods, and underscores. The name cannot start with <code>AWS</code>, <code>aws</code>, or any other possible capitalization; these are reserved. A resource group name must be unique within each Amazon Web Services Region in your Amazon Web Services account.</p>
@@ -159,6 +180,48 @@ impl CreateGroupInputBuilder {
     pub fn get_configuration(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GroupConfigurationItem>> {
         &self.configuration
     }
+    /// <p>The critical rank of the application group on a scale of 1 to 10, with a rank of 1 being the most critical, and a rank of 10 being least critical.</p>
+    pub fn criticality(mut self, input: i32) -> Self {
+        self.criticality = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The critical rank of the application group on a scale of 1 to 10, with a rank of 1 being the most critical, and a rank of 10 being least critical.</p>
+    pub fn set_criticality(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.criticality = input;
+        self
+    }
+    /// <p>The critical rank of the application group on a scale of 1 to 10, with a rank of 1 being the most critical, and a rank of 10 being least critical.</p>
+    pub fn get_criticality(&self) -> &::std::option::Option<i32> {
+        &self.criticality
+    }
+    /// <p>A name, email address or other identifier for the person or group who is considered as the owner of this application group within your organization.</p>
+    pub fn owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.owner = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>A name, email address or other identifier for the person or group who is considered as the owner of this application group within your organization.</p>
+    pub fn set_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.owner = input;
+        self
+    }
+    /// <p>A name, email address or other identifier for the person or group who is considered as the owner of this application group within your organization.</p>
+    pub fn get_owner(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owner
+    }
+    /// <p>The name of the application group, which you can change at any time.</p>
+    pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.display_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of the application group, which you can change at any time.</p>
+    pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.display_name = input;
+        self
+    }
+    /// <p>The name of the application group, which you can change at any time.</p>
+    pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.display_name
+    }
     /// Consumes the builder and constructs a [`CreateGroupInput`](crate::operation::create_group::CreateGroupInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_group::CreateGroupInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_group::CreateGroupInput {
@@ -167,6 +230,9 @@ impl CreateGroupInputBuilder {
             resource_query: self.resource_query,
             tags: self.tags,
             configuration: self.configuration,
+            criticality: self.criticality,
+            owner: self.owner,
+            display_name: self.display_name,
         })
     }
 }

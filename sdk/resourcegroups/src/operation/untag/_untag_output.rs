@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UntagOutput {
-    /// <p>The ARN of the resource group from which tags have been removed.</p>
+    /// <p>The Amazon resource name (ARN) of the resource group from which tags have been removed.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The keys of the tags that were removed.</p>
     pub keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl UntagOutput {
-    /// <p>The ARN of the resource group from which tags have been removed.</p>
+    /// <p>The Amazon resource name (ARN) of the resource group from which tags have been removed.</p>
     pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
@@ -42,17 +42,17 @@ pub struct UntagOutputBuilder {
     _request_id: Option<String>,
 }
 impl UntagOutputBuilder {
-    /// <p>The ARN of the resource group from which tags have been removed.</p>
+    /// <p>The Amazon resource name (ARN) of the resource group from which tags have been removed.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the resource group from which tags have been removed.</p>
+    /// <p>The Amazon resource name (ARN) of the resource group from which tags have been removed.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
-    /// <p>The ARN of the resource group from which tags have been removed.</p>
+    /// <p>The Amazon resource name (ARN) of the resource group from which tags have been removed.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }

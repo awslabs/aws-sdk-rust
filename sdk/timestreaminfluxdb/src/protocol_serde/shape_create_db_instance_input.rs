@@ -73,5 +73,11 @@ pub fn ser_create_db_instance_input_input(
         }
         object_21.finish();
     }
+    if let Some(var_24) = &input.port {
+        object.key("port").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_24).into()),
+        );
+    }
     Ok(())
 }

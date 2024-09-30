@@ -22,7 +22,7 @@ impl crate::operation::tag::builders::TagInputBuilder {
 }
 /// Fluent builder constructing a request to `Tag`.
 ///
-/// <p>Adds tags to a resource group with the specified ARN. Existing tags on a resource group are not changed if they are not specified in the request parameters.</p><important>
+/// <p>Adds tags to a resource group with the specified Amazon resource name (ARN). Existing tags on a resource group are not changed if they are not specified in the request parameters.</p><important>
 /// <p>Do not store personally identifiable information (PII) or other confidential or sensitive information in tags. We use tags to provide you with billing and administration services. Tags are not intended to be used for private or sensitive data.</p>
 /// </important>
 /// <p><b>Minimum permissions</b></p>
@@ -101,17 +101,17 @@ impl TagFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The ARN of the resource group to which to add tags.</p>
+    /// <p>The Amazon resource name (ARN) of the resource group to which to add tags.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.arn(input.into());
         self
     }
-    /// <p>The ARN of the resource group to which to add tags.</p>
+    /// <p>The Amazon resource name (ARN) of the resource group to which to add tags.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_arn(input);
         self
     }
-    /// <p>The ARN of the resource group to which to add tags.</p>
+    /// <p>The Amazon resource name (ARN) of the resource group to which to add tags.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_arn()
     }

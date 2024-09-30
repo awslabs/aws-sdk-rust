@@ -114,17 +114,17 @@ impl UngroupResourcesFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name or the ARN of the resource group from which to remove the resources.</p>
+    /// <p>The name or the Amazon resource name (ARN) of the resource group from which to remove the resources.</p>
     pub fn group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.group(input.into());
         self
     }
-    /// <p>The name or the ARN of the resource group from which to remove the resources.</p>
+    /// <p>The name or the Amazon resource name (ARN) of the resource group from which to remove the resources.</p>
     pub fn set_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_group(input);
         self
     }
-    /// <p>The name or the ARN of the resource group from which to remove the resources.</p>
+    /// <p>The name or the Amazon resource name (ARN) of the resource group from which to remove the resources.</p>
     pub fn get_group(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_group()
     }
@@ -133,17 +133,17 @@ impl UngroupResourcesFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_resource_arns`](Self::set_resource_arns).
     ///
-    /// <p>The ARNs of the resources to be removed from the group.</p>
+    /// <p>The Amazon resource names (ARNs) of the resources to be removed from the group.</p>
     pub fn resource_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_arns(input.into());
         self
     }
-    /// <p>The ARNs of the resources to be removed from the group.</p>
+    /// <p>The Amazon resource names (ARNs) of the resources to be removed from the group.</p>
     pub fn set_resource_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_resource_arns(input);
         self
     }
-    /// <p>The ARNs of the resources to be removed from the group.</p>
+    /// <p>The Amazon resource names (ARNs) of the resources to be removed from the group.</p>
     pub fn get_resource_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_resource_arns()
     }

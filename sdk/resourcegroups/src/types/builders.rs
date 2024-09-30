@@ -19,6 +19,10 @@ pub use crate::types::_group_configuration_item::GroupConfigurationItemBuilder;
 
 pub use crate::types::_group_configuration_parameter::GroupConfigurationParameterBuilder;
 
+pub use crate::types::_tag_sync_task_item::TagSyncTaskItemBuilder;
+
+pub use crate::types::_list_tag_sync_tasks_filter::ListTagSyncTasksFilterBuilder;
+
 pub use crate::types::_group_identifier::GroupIdentifierBuilder;
 
 pub use crate::types::_group_filter::GroupFilterBuilder;
@@ -28,5 +32,9 @@ pub use crate::types::_list_group_resources_item::ListGroupResourcesItemBuilder;
 pub use crate::types::_resource_status::ResourceStatusBuilder;
 
 pub use crate::types::_resource_filter::ResourceFilterBuilder;
+
+pub use crate::types::_grouping_statuses_item::GroupingStatusesItemBuilder;
+
+pub use crate::types::_list_grouping_statuses_filter::ListGroupingStatusesFilterBuilder;
 
 pub use crate::types::_group_configuration::GroupConfigurationBuilder;

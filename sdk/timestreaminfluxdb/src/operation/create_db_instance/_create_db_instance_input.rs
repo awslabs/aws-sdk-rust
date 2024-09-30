@@ -42,6 +42,11 @@ pub struct CreateDbInstanceInput {
     pub log_delivery_configuration: ::std::option::Option<crate::types::LogDeliveryConfiguration>,
     /// <p>A list of key-value pairs to associate with the DB instance.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>The port number on which InfluxDB accepts connections.</p>
+    /// <p>Valid Values: 1024-65535</p>
+    /// <p>Default: 8086</p>
+    /// <p>Constraints: The value can't be 2375-2376, 7788-7799, 8090, or 51678-51680</p>
+    pub port: ::std::option::Option<i32>,
 }
 impl CreateDbInstanceInput {
     /// <p>The name that uniquely identifies the DB instance when interacting with the Amazon Timestream for InfluxDB API and CLI commands. This name will also be a prefix included in the endpoint. DB instance names must be unique per customer and per region.</p>
@@ -117,6 +122,13 @@ impl CreateDbInstanceInput {
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
+    /// <p>The port number on which InfluxDB accepts connections.</p>
+    /// <p>Valid Values: 1024-65535</p>
+    /// <p>Default: 8086</p>
+    /// <p>Constraints: The value can't be 2375-2376, 7788-7799, 8090, or 51678-51680</p>
+    pub fn port(&self) -> ::std::option::Option<i32> {
+        self.port
+    }
 }
 impl ::std::fmt::Debug for CreateDbInstanceInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -136,6 +148,7 @@ impl ::std::fmt::Debug for CreateDbInstanceInput {
         formatter.field("deployment_type", &self.deployment_type);
         formatter.field("log_delivery_configuration", &self.log_delivery_configuration);
         formatter.field("tags", &self.tags);
+        formatter.field("port", &self.port);
         formatter.finish()
     }
 }
@@ -165,6 +178,7 @@ pub struct CreateDbInstanceInputBuilder {
     pub(crate) deployment_type: ::std::option::Option<crate::types::DeploymentType>,
     pub(crate) log_delivery_configuration: ::std::option::Option<crate::types::LogDeliveryConfiguration>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) port: ::std::option::Option<i32>,
 }
 impl CreateDbInstanceInputBuilder {
     /// <p>The name that uniquely identifies the DB instance when interacting with the Amazon Timestream for InfluxDB API and CLI commands. This name will also be a prefix included in the endpoint. DB instance names must be unique per customer and per region.</p>
@@ -426,6 +440,29 @@ impl CreateDbInstanceInputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
+    /// <p>The port number on which InfluxDB accepts connections.</p>
+    /// <p>Valid Values: 1024-65535</p>
+    /// <p>Default: 8086</p>
+    /// <p>Constraints: The value can't be 2375-2376, 7788-7799, 8090, or 51678-51680</p>
+    pub fn port(mut self, input: i32) -> Self {
+        self.port = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The port number on which InfluxDB accepts connections.</p>
+    /// <p>Valid Values: 1024-65535</p>
+    /// <p>Default: 8086</p>
+    /// <p>Constraints: The value can't be 2375-2376, 7788-7799, 8090, or 51678-51680</p>
+    pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.port = input;
+        self
+    }
+    /// <p>The port number on which InfluxDB accepts connections.</p>
+    /// <p>Valid Values: 1024-65535</p>
+    /// <p>Default: 8086</p>
+    /// <p>Constraints: The value can't be 2375-2376, 7788-7799, 8090, or 51678-51680</p>
+    pub fn get_port(&self) -> &::std::option::Option<i32> {
+        &self.port
+    }
     /// Consumes the builder and constructs a [`CreateDbInstanceInput`](crate::operation::create_db_instance::CreateDbInstanceInput).
     pub fn build(
         self,
@@ -446,6 +483,7 @@ impl CreateDbInstanceInputBuilder {
             deployment_type: self.deployment_type,
             log_delivery_configuration: self.log_delivery_configuration,
             tags: self.tags,
+            port: self.port,
         })
     }
 }
@@ -467,6 +505,7 @@ impl ::std::fmt::Debug for CreateDbInstanceInputBuilder {
         formatter.field("deployment_type", &self.deployment_type);
         formatter.field("log_delivery_configuration", &self.log_delivery_configuration);
         formatter.field("tags", &self.tags);
+        formatter.field("port", &self.port);
         formatter.finish()
     }
 }

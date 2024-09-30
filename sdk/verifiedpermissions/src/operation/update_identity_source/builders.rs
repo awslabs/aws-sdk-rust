@@ -138,26 +138,17 @@ impl UpdateIdentitySourceFluentBuilder {
     pub fn get_identity_source_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_identity_source_id()
     }
-    /// <p>Specifies the details required to communicate with the identity provider (IdP) associated with this identity source.</p><note>
-    /// <p>At this time, the only valid member of this structure is a Amazon Cognito user pool configuration.</p>
-    /// <p>You must specify a <code>userPoolArn</code>, and optionally, a <code>ClientId</code>.</p>
-    /// </note>
+    /// <p>Specifies the details required to communicate with the identity provider (IdP) associated with this identity source.</p>
     pub fn update_configuration(mut self, input: crate::types::UpdateConfiguration) -> Self {
         self.inner = self.inner.update_configuration(input);
         self
     }
-    /// <p>Specifies the details required to communicate with the identity provider (IdP) associated with this identity source.</p><note>
-    /// <p>At this time, the only valid member of this structure is a Amazon Cognito user pool configuration.</p>
-    /// <p>You must specify a <code>userPoolArn</code>, and optionally, a <code>ClientId</code>.</p>
-    /// </note>
+    /// <p>Specifies the details required to communicate with the identity provider (IdP) associated with this identity source.</p>
     pub fn set_update_configuration(mut self, input: ::std::option::Option<crate::types::UpdateConfiguration>) -> Self {
         self.inner = self.inner.set_update_configuration(input);
         self
     }
-    /// <p>Specifies the details required to communicate with the identity provider (IdP) associated with this identity source.</p><note>
-    /// <p>At this time, the only valid member of this structure is a Amazon Cognito user pool configuration.</p>
-    /// <p>You must specify a <code>userPoolArn</code>, and optionally, a <code>ClientId</code>.</p>
-    /// </note>
+    /// <p>Specifies the details required to communicate with the identity provider (IdP) associated with this identity source.</p>
     pub fn get_update_configuration(&self) -> &::std::option::Option<crate::types::UpdateConfiguration> {
         self.inner.get_update_configuration()
     }

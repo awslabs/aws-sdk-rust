@@ -27,6 +27,12 @@ pub use crate::types::_group_configuration_item::GroupConfigurationItem;
 
 pub use crate::types::_group_configuration_parameter::GroupConfigurationParameter;
 
+pub use crate::types::_tag_sync_task_item::TagSyncTaskItem;
+
+pub use crate::types::_tag_sync_task_status::TagSyncTaskStatus;
+
+pub use crate::types::_list_tag_sync_tasks_filter::ListTagSyncTasksFilter;
+
 pub use crate::types::_group_identifier::GroupIdentifier;
 
 pub use crate::types::_group_filter::GroupFilter;
@@ -42,6 +48,16 @@ pub use crate::types::_resource_status_value::ResourceStatusValue;
 pub use crate::types::_resource_filter::ResourceFilter;
 
 pub use crate::types::_resource_filter_name::ResourceFilterName;
+
+pub use crate::types::_grouping_statuses_item::GroupingStatusesItem;
+
+pub use crate::types::_grouping_status::GroupingStatus;
+
+pub use crate::types::_grouping_type::GroupingType;
+
+pub use crate::types::_list_grouping_statuses_filter::ListGroupingStatusesFilter;
+
+pub use crate::types::_list_grouping_statuses_filter_name::ListGroupingStatusesFilterName;
 
 pub use crate::types::_group_configuration::GroupConfiguration;
 
@@ -73,7 +89,19 @@ mod _group_lifecycle_events_status;
 
 mod _group_query;
 
+mod _grouping_status;
+
+mod _grouping_statuses_item;
+
+mod _grouping_type;
+
 mod _list_group_resources_item;
+
+mod _list_grouping_statuses_filter;
+
+mod _list_grouping_statuses_filter_name;
+
+mod _list_tag_sync_tasks_filter;
 
 mod _pending_resource;
 
@@ -94,6 +122,10 @@ mod _resource_query;
 mod _resource_status;
 
 mod _resource_status_value;
+
+mod _tag_sync_task_item;
+
+mod _tag_sync_task_status;
 
 /// Builders
 pub mod builders;

@@ -3,17 +3,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UngroupResourcesInput {
-    /// <p>The name or the ARN of the resource group from which to remove the resources.</p>
+    /// <p>The name or the Amazon resource name (ARN) of the resource group from which to remove the resources.</p>
     pub group: ::std::option::Option<::std::string::String>,
-    /// <p>The ARNs of the resources to be removed from the group.</p>
+    /// <p>The Amazon resource names (ARNs) of the resources to be removed from the group.</p>
     pub resource_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl UngroupResourcesInput {
-    /// <p>The name or the ARN of the resource group from which to remove the resources.</p>
+    /// <p>The name or the Amazon resource name (ARN) of the resource group from which to remove the resources.</p>
     pub fn group(&self) -> ::std::option::Option<&str> {
         self.group.as_deref()
     }
-    /// <p>The ARNs of the resources to be removed from the group.</p>
+    /// <p>The Amazon resource names (ARNs) of the resources to be removed from the group.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_arns.is_none()`.
     pub fn resource_arns(&self) -> &[::std::string::String] {
@@ -35,18 +35,18 @@ pub struct UngroupResourcesInputBuilder {
     pub(crate) resource_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl UngroupResourcesInputBuilder {
-    /// <p>The name or the ARN of the resource group from which to remove the resources.</p>
+    /// <p>The name or the Amazon resource name (ARN) of the resource group from which to remove the resources.</p>
     /// This field is required.
     pub fn group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name or the ARN of the resource group from which to remove the resources.</p>
+    /// <p>The name or the Amazon resource name (ARN) of the resource group from which to remove the resources.</p>
     pub fn set_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.group = input;
         self
     }
-    /// <p>The name or the ARN of the resource group from which to remove the resources.</p>
+    /// <p>The name or the Amazon resource name (ARN) of the resource group from which to remove the resources.</p>
     pub fn get_group(&self) -> &::std::option::Option<::std::string::String> {
         &self.group
     }
@@ -54,19 +54,19 @@ impl UngroupResourcesInputBuilder {
     ///
     /// To override the contents of this collection use [`set_resource_arns`](Self::set_resource_arns).
     ///
-    /// <p>The ARNs of the resources to be removed from the group.</p>
+    /// <p>The Amazon resource names (ARNs) of the resources to be removed from the group.</p>
     pub fn resource_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.resource_arns.unwrap_or_default();
         v.push(input.into());
         self.resource_arns = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The ARNs of the resources to be removed from the group.</p>
+    /// <p>The Amazon resource names (ARNs) of the resources to be removed from the group.</p>
     pub fn set_resource_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.resource_arns = input;
         self
     }
-    /// <p>The ARNs of the resources to be removed from the group.</p>
+    /// <p>The Amazon resource names (ARNs) of the resources to be removed from the group.</p>
     pub fn get_resource_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.resource_arns
     }

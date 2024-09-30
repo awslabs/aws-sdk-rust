@@ -173,15 +173,17 @@ pub use crate::types::_participant_capabilities::ParticipantCapabilitiesBuilder;
 
 pub use crate::types::_answer_machine_detection_config::AnswerMachineDetectionConfigBuilder;
 
+pub use crate::types::_chat_message::ChatMessageBuilder;
+
+pub use crate::types::_segment_attribute_value::SegmentAttributeValueBuilder;
+
+pub use crate::types::_endpoint::EndpointBuilder;
+
 pub use crate::types::_chat_streaming_configuration::ChatStreamingConfigurationBuilder;
 
 pub use crate::types::_voice_recording_configuration::VoiceRecordingConfigurationBuilder;
 
-pub use crate::types::_segment_attribute_value::SegmentAttributeValueBuilder;
-
 pub use crate::types::_persistent_chat::PersistentChatBuilder;
-
-pub use crate::types::_chat_message::ChatMessageBuilder;
 
 pub use crate::types::_upload_url_metadata::UploadUrlMetadataBuilder;
 
@@ -582,8 +584,6 @@ pub use crate::types::_failed_request::FailedRequestBuilder;
 pub use crate::types::_successful_request::SuccessfulRequestBuilder;
 
 pub use crate::types::_contact_data_request::ContactDataRequestBuilder;
-
-pub use crate::types::_endpoint::EndpointBuilder;
 
 pub use crate::types::_attached_file_error::AttachedFileErrorBuilder;
 

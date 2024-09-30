@@ -250,3 +250,13 @@ pub(crate) fn s3_configuration_correct_errors(
     }
     builder
 }
+
+pub(crate) fn duration_correct_errors(mut builder: crate::types::builders::DurationBuilder) -> crate::types::builders::DurationBuilder {
+    if builder.duration_type.is_none() {
+        builder.duration_type = "no value was set".parse::<crate::types::DurationType>().ok()
+    }
+    if builder.value.is_none() {
+        builder.value = Some(Default::default())
+    }
+    builder
+}

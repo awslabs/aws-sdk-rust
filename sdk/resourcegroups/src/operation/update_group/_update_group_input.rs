@@ -6,10 +6,16 @@ pub struct UpdateGroupInput {
     /// <p>Don't use this parameter. Use <code>Group</code> instead.</p>
     #[deprecated(note = "This field is deprecated, use Group instead.")]
     pub group_name: ::std::option::Option<::std::string::String>,
-    /// <p>The name or the ARN of the resource group to modify.</p>
+    /// <p>The name or the ARN of the resource group to update.</p>
     pub group: ::std::option::Option<::std::string::String>,
     /// <p>The new description that you want to update the resource group with. Descriptions can contain letters, numbers, hyphens, underscores, periods, and spaces.</p>
     pub description: ::std::option::Option<::std::string::String>,
+    /// <p>The critical rank of the application group on a scale of 1 to 10, with a rank of 1 being the most critical, and a rank of 10 being least critical.</p>
+    pub criticality: ::std::option::Option<i32>,
+    /// <p>A name, email address or other identifier for the person or group who is considered as the owner of this application group within your organization.</p>
+    pub owner: ::std::option::Option<::std::string::String>,
+    /// <p>The name of the application group, which you can change at any time.</p>
+    pub display_name: ::std::option::Option<::std::string::String>,
 }
 impl UpdateGroupInput {
     /// <p>Don't use this parameter. Use <code>Group</code> instead.</p>
@@ -17,13 +23,25 @@ impl UpdateGroupInput {
     pub fn group_name(&self) -> ::std::option::Option<&str> {
         self.group_name.as_deref()
     }
-    /// <p>The name or the ARN of the resource group to modify.</p>
+    /// <p>The name or the ARN of the resource group to update.</p>
     pub fn group(&self) -> ::std::option::Option<&str> {
         self.group.as_deref()
     }
     /// <p>The new description that you want to update the resource group with. Descriptions can contain letters, numbers, hyphens, underscores, periods, and spaces.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
+    }
+    /// <p>The critical rank of the application group on a scale of 1 to 10, with a rank of 1 being the most critical, and a rank of 10 being least critical.</p>
+    pub fn criticality(&self) -> ::std::option::Option<i32> {
+        self.criticality
+    }
+    /// <p>A name, email address or other identifier for the person or group who is considered as the owner of this application group within your organization.</p>
+    pub fn owner(&self) -> ::std::option::Option<&str> {
+        self.owner.as_deref()
+    }
+    /// <p>The name of the application group, which you can change at any time.</p>
+    pub fn display_name(&self) -> ::std::option::Option<&str> {
+        self.display_name.as_deref()
     }
 }
 impl UpdateGroupInput {
@@ -40,6 +58,9 @@ pub struct UpdateGroupInputBuilder {
     pub(crate) group_name: ::std::option::Option<::std::string::String>,
     pub(crate) group: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) criticality: ::std::option::Option<i32>,
+    pub(crate) owner: ::std::option::Option<::std::string::String>,
+    pub(crate) display_name: ::std::option::Option<::std::string::String>,
 }
 impl UpdateGroupInputBuilder {
     /// <p>Don't use this parameter. Use <code>Group</code> instead.</p>
@@ -59,17 +80,17 @@ impl UpdateGroupInputBuilder {
     pub fn get_group_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.group_name
     }
-    /// <p>The name or the ARN of the resource group to modify.</p>
+    /// <p>The name or the ARN of the resource group to update.</p>
     pub fn group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name or the ARN of the resource group to modify.</p>
+    /// <p>The name or the ARN of the resource group to update.</p>
     pub fn set_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.group = input;
         self
     }
-    /// <p>The name or the ARN of the resource group to modify.</p>
+    /// <p>The name or the ARN of the resource group to update.</p>
     pub fn get_group(&self) -> &::std::option::Option<::std::string::String> {
         &self.group
     }
@@ -87,12 +108,57 @@ impl UpdateGroupInputBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
+    /// <p>The critical rank of the application group on a scale of 1 to 10, with a rank of 1 being the most critical, and a rank of 10 being least critical.</p>
+    pub fn criticality(mut self, input: i32) -> Self {
+        self.criticality = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The critical rank of the application group on a scale of 1 to 10, with a rank of 1 being the most critical, and a rank of 10 being least critical.</p>
+    pub fn set_criticality(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.criticality = input;
+        self
+    }
+    /// <p>The critical rank of the application group on a scale of 1 to 10, with a rank of 1 being the most critical, and a rank of 10 being least critical.</p>
+    pub fn get_criticality(&self) -> &::std::option::Option<i32> {
+        &self.criticality
+    }
+    /// <p>A name, email address or other identifier for the person or group who is considered as the owner of this application group within your organization.</p>
+    pub fn owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.owner = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>A name, email address or other identifier for the person or group who is considered as the owner of this application group within your organization.</p>
+    pub fn set_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.owner = input;
+        self
+    }
+    /// <p>A name, email address or other identifier for the person or group who is considered as the owner of this application group within your organization.</p>
+    pub fn get_owner(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owner
+    }
+    /// <p>The name of the application group, which you can change at any time.</p>
+    pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.display_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of the application group, which you can change at any time.</p>
+    pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.display_name = input;
+        self
+    }
+    /// <p>The name of the application group, which you can change at any time.</p>
+    pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.display_name
+    }
     /// Consumes the builder and constructs a [`UpdateGroupInput`](crate::operation::update_group::UpdateGroupInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::update_group::UpdateGroupInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_group::UpdateGroupInput {
             group_name: self.group_name,
             group: self.group,
             description: self.description,
+            criticality: self.criticality,
+            owner: self.owner,
+            display_name: self.display_name,
         })
     }
 }

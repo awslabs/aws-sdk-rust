@@ -23,6 +23,8 @@ pub fn parse_http_error_metadata(
     crate::json_errors::parse_error_metadata(response_body, response_headers)
 }
 
+pub(crate) mod shape_cancel_tag_sync_task;
+
 pub(crate) mod shape_create_group;
 
 pub(crate) mod shape_delete_group;
@@ -35,17 +37,25 @@ pub(crate) mod shape_get_group_configuration;
 
 pub(crate) mod shape_get_group_query;
 
+pub(crate) mod shape_get_tag_sync_task;
+
 pub(crate) mod shape_get_tags;
 
 pub(crate) mod shape_group_resources;
 
 pub(crate) mod shape_list_group_resources;
 
+pub(crate) mod shape_list_grouping_statuses;
+
 pub(crate) mod shape_list_groups;
+
+pub(crate) mod shape_list_tag_sync_tasks;
 
 pub(crate) mod shape_put_group_configuration;
 
 pub(crate) mod shape_search_resources;
+
+pub(crate) mod shape_start_tag_sync_task;
 
 pub(crate) mod shape_tag;
 
@@ -69,6 +79,8 @@ pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
 
 pub(crate) mod shape_bad_request_exception;
 
+pub(crate) mod shape_cancel_tag_sync_task_input;
+
 pub(crate) mod shape_create_group_input;
 
 pub(crate) mod shape_delete_group_input;
@@ -81,13 +93,19 @@ pub(crate) mod shape_get_group_input;
 
 pub(crate) mod shape_get_group_query_input;
 
+pub(crate) mod shape_get_tag_sync_task_input;
+
 pub(crate) mod shape_group_resources_input;
 
 pub(crate) mod shape_internal_server_error_exception;
 
 pub(crate) mod shape_list_group_resources_input;
 
+pub(crate) mod shape_list_grouping_statuses_input;
+
 pub(crate) mod shape_list_groups_input;
+
+pub(crate) mod shape_list_tag_sync_tasks_input;
 
 pub(crate) mod shape_method_not_allowed_exception;
 
@@ -96,6 +114,8 @@ pub(crate) mod shape_not_found_exception;
 pub(crate) mod shape_put_group_configuration_input;
 
 pub(crate) mod shape_search_resources_input;
+
+pub(crate) mod shape_start_tag_sync_task_input;
 
 pub(crate) mod shape_tag_input;
 
@@ -131,7 +151,13 @@ pub(crate) mod shape_group_list;
 
 pub(crate) mod shape_group_query;
 
+pub(crate) mod shape_grouping_statuses_list;
+
 pub(crate) mod shape_list_group_resources_item_list;
+
+pub(crate) mod shape_list_grouping_statuses_filter;
+
+pub(crate) mod shape_list_tag_sync_tasks_filter;
 
 pub(crate) mod shape_pending_resource_list;
 
@@ -147,7 +173,11 @@ pub(crate) mod shape_resource_query;
 
 pub(crate) mod shape_tag_key_list;
 
+pub(crate) mod shape_tag_sync_task_list;
+
 pub(crate) mod shape_tags;
+
+pub(crate) mod shape_application_tag;
 
 pub(crate) mod shape_failed_resource;
 
@@ -157,6 +187,8 @@ pub(crate) mod shape_group_configuration_parameter;
 
 pub(crate) mod shape_group_identifier;
 
+pub(crate) mod shape_grouping_statuses_item;
+
 pub(crate) mod shape_list_group_resources_item;
 
 pub(crate) mod shape_pending_resource;
@@ -164,6 +196,8 @@ pub(crate) mod shape_pending_resource;
 pub(crate) mod shape_query_error;
 
 pub(crate) mod shape_resource_identifier;
+
+pub(crate) mod shape_tag_sync_task_item;
 
 pub(crate) mod shape_resource_status;
 

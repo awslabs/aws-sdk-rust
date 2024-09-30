@@ -10,6 +10,7 @@ impl super::Client {
     ///   - [`arn(String)`](crate::operation::get_db_instance::GetDbInstanceOutput::arn): <p>The Amazon Resource Name (ARN) of the DB instance.</p>
     ///   - [`status(Option<Status>)`](crate::operation::get_db_instance::GetDbInstanceOutput::status): <p>The status of the DB instance.</p>
     ///   - [`endpoint(Option<String>)`](crate::operation::get_db_instance::GetDbInstanceOutput::endpoint): <p>The endpoint used to connect to InfluxDB. The default InfluxDB port is 8086.</p>
+    ///   - [`port(Option<i32>)`](crate::operation::get_db_instance::GetDbInstanceOutput::port): <p>The port number on which InfluxDB accepts connections.</p>
     ///   - [`db_instance_type(Option<DbInstanceType>)`](crate::operation::get_db_instance::GetDbInstanceOutput::db_instance_type): <p>The Timestream for InfluxDB instance type that InfluxDB runs on.</p>
     ///   - [`db_storage_type(Option<DbStorageType>)`](crate::operation::get_db_instance::GetDbInstanceOutput::db_storage_type): <p>The Timestream for InfluxDB DB storage type that InfluxDB stores data on.</p>
     ///   - [`allocated_storage(Option<i32>)`](crate::operation::get_db_instance::GetDbInstanceOutput::allocated_storage): <p>The amount of storage allocated for your DB storage type (in gibibytes).</p>

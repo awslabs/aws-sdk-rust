@@ -31,7 +31,7 @@ impl crate::operation::create_identity_source::builders::CreateIdentitySourceInp
 /// <li>
 /// <p>Amazon Cognito user pool: <code>Namespace::\[Entity type\]::\[User pool ID\]|\[user principal attribute\]</code>, for example <code>MyCorp::User::us-east-1_EXAMPLE|a1b2c3d4-5678-90ab-cdef-EXAMPLE11111</code>.</p></li>
 /// <li>
-/// <p>OpenID Connect (OIDC) provider: <code>Namespace::\[Entity type\]::\[principalIdClaim\]|\[user principal attribute\]</code>, for example <code>MyCorp::User::MyOIDCProvider|a1b2c3d4-5678-90ab-cdef-EXAMPLE22222</code>.</p></li>
+/// <p>OpenID Connect (OIDC) provider: <code>Namespace::\[Entity type\]::\[entityIdPrefix\]|\[user principal attribute\]</code>, for example <code>MyCorp::User::MyOIDCProvider|a1b2c3d4-5678-90ab-cdef-EXAMPLE22222</code>.</p></li>
 /// </ul>
 /// </note> <note>
 /// <p>Verified Permissions is <i> <a href="https://wikipedia.org/wiki/Eventual_consistency">eventually consistent</a> </i>. It can take a few seconds for a new or changed element to propagate through the service and be visible in the results of other Verified Permissions operations.</p>

@@ -267,19 +267,23 @@ pub use crate::types::_traffic_type::TrafficType;
 
 pub use crate::types::_answer_machine_detection_config::AnswerMachineDetectionConfig;
 
+pub use crate::types::_chat_message::ChatMessage;
+
+pub use crate::types::_segment_attribute_value::SegmentAttributeValue;
+
+pub use crate::types::_endpoint::Endpoint;
+
+pub use crate::types::_endpoint_type::EndpointType;
+
 pub use crate::types::_chat_streaming_configuration::ChatStreamingConfiguration;
 
 pub use crate::types::_voice_recording_configuration::VoiceRecordingConfiguration;
 
 pub use crate::types::_voice_recording_track::VoiceRecordingTrack;
 
-pub use crate::types::_segment_attribute_value::SegmentAttributeValue;
-
 pub use crate::types::_persistent_chat::PersistentChat;
 
 pub use crate::types::_rehydration_type::RehydrationType;
-
-pub use crate::types::_chat_message::ChatMessage;
 
 pub use crate::types::_upload_url_metadata::UploadUrlMetadata;
 
@@ -804,10 +808,6 @@ pub use crate::types::_failure_reason_code::FailureReasonCode;
 pub use crate::types::_successful_request::SuccessfulRequest;
 
 pub use crate::types::_contact_data_request::ContactDataRequest;
-
-pub use crate::types::_endpoint::Endpoint;
-
-pub use crate::types::_endpoint_type::EndpointType;
 
 pub use crate::types::_attached_file_error::AttachedFileError;
 

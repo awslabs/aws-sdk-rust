@@ -4,13 +4,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourceIdentifier {
-    /// <p>The ARN of a resource.</p>
+    /// <p>The Amazon resource name (ARN) of a resource.</p>
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>The resource type of a resource, such as <code>AWS::EC2::Instance</code>.</p>
     pub resource_type: ::std::option::Option<::std::string::String>,
 }
 impl ResourceIdentifier {
-    /// <p>The ARN of a resource.</p>
+    /// <p>The Amazon resource name (ARN) of a resource.</p>
     pub fn resource_arn(&self) -> ::std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
@@ -34,17 +34,17 @@ pub struct ResourceIdentifierBuilder {
     pub(crate) resource_type: ::std::option::Option<::std::string::String>,
 }
 impl ResourceIdentifierBuilder {
-    /// <p>The ARN of a resource.</p>
+    /// <p>The Amazon resource name (ARN) of a resource.</p>
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of a resource.</p>
+    /// <p>The Amazon resource name (ARN) of a resource.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_arn = input;
         self
     }
-    /// <p>The ARN of a resource.</p>
+    /// <p>The Amazon resource name (ARN) of a resource.</p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_arn
     }

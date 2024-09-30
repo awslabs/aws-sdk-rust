@@ -6,14 +6,14 @@
 pub struct ThrottlingException {
     #[allow(missing_docs)] // documentation missing in model
     pub message: ::std::string::String,
-    /// <p>The code for the Amazon Web Service that owns the quota.</p>
+    /// <p>The code for the Amazon Web Services service that owns the quota.</p>
     pub service_code: ::std::option::Option<::std::string::String>,
     /// <p>The quota code recognized by the Amazon Web Services Service Quotas service.</p>
     pub quota_code: ::std::option::Option<::std::string::String>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
 impl ThrottlingException {
-    /// <p>The code for the Amazon Web Service that owns the quota.</p>
+    /// <p>The code for the Amazon Web Services service that owns the quota.</p>
     pub fn service_code(&self) -> ::std::option::Option<&str> {
         self.service_code.as_deref()
     }
@@ -85,17 +85,17 @@ impl ThrottlingExceptionBuilder {
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.message
     }
-    /// <p>The code for the Amazon Web Service that owns the quota.</p>
+    /// <p>The code for the Amazon Web Services service that owns the quota.</p>
     pub fn service_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_code = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The code for the Amazon Web Service that owns the quota.</p>
+    /// <p>The code for the Amazon Web Services service that owns the quota.</p>
     pub fn set_service_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_code = input;
         self
     }
-    /// <p>The code for the Amazon Web Service that owns the quota.</p>
+    /// <p>The code for the Amazon Web Services service that owns the quota.</p>
     pub fn get_service_code(&self) -> &::std::option::Option<::std::string::String> {
         &self.service_code
     }

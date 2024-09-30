@@ -4,8 +4,47 @@ pub use ::aws_types::request_id::RequestId;
 /// Types for the `CreateBillOfMaterialsImportJob` operation.
 pub mod create_bill_of_materials_import_job;
 
+/// Types for the `CreateDataIntegrationFlow` operation.
+pub mod create_data_integration_flow;
+
+/// Types for the `CreateDataLakeDataset` operation.
+pub mod create_data_lake_dataset;
+
+/// Types for the `DeleteDataIntegrationFlow` operation.
+pub mod delete_data_integration_flow;
+
+/// Types for the `DeleteDataLakeDataset` operation.
+pub mod delete_data_lake_dataset;
+
 /// Types for the `GetBillOfMaterialsImportJob` operation.
 pub mod get_bill_of_materials_import_job;
 
+/// Types for the `GetDataIntegrationFlow` operation.
+pub mod get_data_integration_flow;
+
+/// Types for the `GetDataLakeDataset` operation.
+pub mod get_data_lake_dataset;
+
+/// Types for the `ListDataIntegrationFlows` operation.
+pub mod list_data_integration_flows;
+
+/// Types for the `ListDataLakeDatasets` operation.
+pub mod list_data_lake_datasets;
+
+/// Types for the `ListTagsForResource` operation.
+pub mod list_tags_for_resource;
+
 /// Types for the `SendDataIntegrationEvent` operation.
 pub mod send_data_integration_event;
+
+/// Types for the `TagResource` operation.
+pub mod tag_resource;
+
+/// Types for the `UntagResource` operation.
+pub mod untag_resource;
+
+/// Types for the `UpdateDataIntegrationFlow` operation.
+pub mod update_data_integration_flow;
+
+/// Types for the `UpdateDataLakeDataset` operation.
+pub mod update_data_lake_dataset;

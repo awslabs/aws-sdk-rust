@@ -131,17 +131,17 @@ impl GetGroupQueryFluentBuilder {
     pub fn get_group_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_group_name()
     }
-    /// <p>The name or the ARN of the resource group to query.</p>
+    /// <p>The name or the Amazon resource name (ARN) of the resource group to query.</p>
     pub fn group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.group(input.into());
         self
     }
-    /// <p>The name or the ARN of the resource group to query.</p>
+    /// <p>The name or the Amazon resource name (ARN) of the resource group to query.</p>
     pub fn set_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_group(input);
         self
     }
-    /// <p>The name or the ARN of the resource group to query.</p>
+    /// <p>The name or the Amazon resource name (ARN) of the resource group to query.</p>
     pub fn get_group(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_group()
     }

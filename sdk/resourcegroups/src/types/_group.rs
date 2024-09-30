@@ -10,15 +10,23 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Group {
-    /// <p>The ARN of the resource group.</p>
+    /// <p>The Amazon resource name (ARN) of the resource group.</p>
     pub group_arn: ::std::string::String,
     /// <p>The name of the resource group.</p>
     pub name: ::std::string::String,
     /// <p>The description of the resource group.</p>
     pub description: ::std::option::Option<::std::string::String>,
+    /// <p>The critical rank of the application group on a scale of 1 to 10, with a rank of 1 being the most critical, and a rank of 10 being least critical.</p>
+    pub criticality: ::std::option::Option<i32>,
+    /// <p>A name, email address or other identifier for the person or group who is considered as the owner of this application group within your organization.</p>
+    pub owner: ::std::option::Option<::std::string::String>,
+    /// <p>The name of the application group, which you can change at any time.</p>
+    pub display_name: ::std::option::Option<::std::string::String>,
+    /// <p>A tag that defines the application group membership. This tag is only supported for application groups.</p>
+    pub application_tag: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl Group {
-    /// <p>The ARN of the resource group.</p>
+    /// <p>The Amazon resource name (ARN) of the resource group.</p>
     pub fn group_arn(&self) -> &str {
         use std::ops::Deref;
         self.group_arn.deref()
@@ -31,6 +39,22 @@ impl Group {
     /// <p>The description of the resource group.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
+    }
+    /// <p>The critical rank of the application group on a scale of 1 to 10, with a rank of 1 being the most critical, and a rank of 10 being least critical.</p>
+    pub fn criticality(&self) -> ::std::option::Option<i32> {
+        self.criticality
+    }
+    /// <p>A name, email address or other identifier for the person or group who is considered as the owner of this application group within your organization.</p>
+    pub fn owner(&self) -> ::std::option::Option<&str> {
+        self.owner.as_deref()
+    }
+    /// <p>The name of the application group, which you can change at any time.</p>
+    pub fn display_name(&self) -> ::std::option::Option<&str> {
+        self.display_name.as_deref()
+    }
+    /// <p>A tag that defines the application group membership. This tag is only supported for application groups.</p>
+    pub fn application_tag(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.application_tag.as_ref()
     }
 }
 impl Group {
@@ -47,20 +71,24 @@ pub struct GroupBuilder {
     pub(crate) group_arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) criticality: ::std::option::Option<i32>,
+    pub(crate) owner: ::std::option::Option<::std::string::String>,
+    pub(crate) display_name: ::std::option::Option<::std::string::String>,
+    pub(crate) application_tag: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl GroupBuilder {
-    /// <p>The ARN of the resource group.</p>
+    /// <p>The Amazon resource name (ARN) of the resource group.</p>
     /// This field is required.
     pub fn group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the resource group.</p>
+    /// <p>The Amazon resource name (ARN) of the resource group.</p>
     pub fn set_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.group_arn = input;
         self
     }
-    /// <p>The ARN of the resource group.</p>
+    /// <p>The Amazon resource name (ARN) of the resource group.</p>
     pub fn get_group_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.group_arn
     }
@@ -93,6 +121,75 @@ impl GroupBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
+    /// <p>The critical rank of the application group on a scale of 1 to 10, with a rank of 1 being the most critical, and a rank of 10 being least critical.</p>
+    pub fn criticality(mut self, input: i32) -> Self {
+        self.criticality = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The critical rank of the application group on a scale of 1 to 10, with a rank of 1 being the most critical, and a rank of 10 being least critical.</p>
+    pub fn set_criticality(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.criticality = input;
+        self
+    }
+    /// <p>The critical rank of the application group on a scale of 1 to 10, with a rank of 1 being the most critical, and a rank of 10 being least critical.</p>
+    pub fn get_criticality(&self) -> &::std::option::Option<i32> {
+        &self.criticality
+    }
+    /// <p>A name, email address or other identifier for the person or group who is considered as the owner of this application group within your organization.</p>
+    pub fn owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.owner = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>A name, email address or other identifier for the person or group who is considered as the owner of this application group within your organization.</p>
+    pub fn set_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.owner = input;
+        self
+    }
+    /// <p>A name, email address or other identifier for the person or group who is considered as the owner of this application group within your organization.</p>
+    pub fn get_owner(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owner
+    }
+    /// <p>The name of the application group, which you can change at any time.</p>
+    pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.display_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of the application group, which you can change at any time.</p>
+    pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.display_name = input;
+        self
+    }
+    /// <p>The name of the application group, which you can change at any time.</p>
+    pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.display_name
+    }
+    /// Adds a key-value pair to `application_tag`.
+    ///
+    /// To override the contents of this collection use [`set_application_tag`](Self::set_application_tag).
+    ///
+    /// <p>A tag that defines the application group membership. This tag is only supported for application groups.</p>
+    pub fn application_tag(
+        mut self,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        let mut hash_map = self.application_tag.unwrap_or_default();
+        hash_map.insert(k.into(), v.into());
+        self.application_tag = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>A tag that defines the application group membership. This tag is only supported for application groups.</p>
+    pub fn set_application_tag(
+        mut self,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    ) -> Self {
+        self.application_tag = input;
+        self
+    }
+    /// <p>A tag that defines the application group membership. This tag is only supported for application groups.</p>
+    pub fn get_application_tag(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.application_tag
+    }
     /// Consumes the builder and constructs a [`Group`](crate::types::Group).
     /// This method will fail if any of the following fields are not set:
     /// - [`group_arn`](crate::types::builders::GroupBuilder::group_arn)
@@ -112,6 +209,10 @@ impl GroupBuilder {
                 )
             })?,
             description: self.description,
+            criticality: self.criticality,
+            owner: self.owner,
+            display_name: self.display_name,
+            application_tag: self.application_tag,
         })
     }
 }

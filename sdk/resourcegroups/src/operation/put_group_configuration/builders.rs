@@ -114,17 +114,17 @@ impl PutGroupConfigurationFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name or ARN of the resource group with the configuration that you want to update.</p>
+    /// <p>The name or Amazon resource name (ARN) of the resource group with the configuration that you want to update.</p>
     pub fn group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.group(input.into());
         self
     }
-    /// <p>The name or ARN of the resource group with the configuration that you want to update.</p>
+    /// <p>The name or Amazon resource name (ARN) of the resource group with the configuration that you want to update.</p>
     pub fn set_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_group(input);
         self
     }
-    /// <p>The name or ARN of the resource group with the configuration that you want to update.</p>
+    /// <p>The name or Amazon resource name (ARN) of the resource group with the configuration that you want to update.</p>
     pub fn get_group(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_group()
     }

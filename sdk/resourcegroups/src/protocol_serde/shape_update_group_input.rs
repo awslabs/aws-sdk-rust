@@ -3,14 +3,26 @@ pub fn ser_update_group_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_group::UpdateGroupInput,
 ) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.description {
-        object.key("Description").string(var_1.as_str());
+    if let Some(var_1) = &input.criticality {
+        object.key("Criticality").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_1).into()),
+        );
     }
-    if let Some(var_2) = &input.group {
-        object.key("Group").string(var_2.as_str());
+    if let Some(var_2) = &input.description {
+        object.key("Description").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.group_name {
-        object.key("GroupName").string(var_3.as_str());
+    if let Some(var_3) = &input.display_name {
+        object.key("DisplayName").string(var_3.as_str());
+    }
+    if let Some(var_4) = &input.group {
+        object.key("Group").string(var_4.as_str());
+    }
+    if let Some(var_5) = &input.group_name {
+        object.key("GroupName").string(var_5.as_str());
+    }
+    if let Some(var_6) = &input.owner {
+        object.key("Owner").string(var_6.as_str());
     }
     Ok(())
 }

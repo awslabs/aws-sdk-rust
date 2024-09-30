@@ -6,17 +6,41 @@
 pub struct GroupIdentifier {
     /// <p>The name of the resource group.</p>
     pub group_name: ::std::option::Option<::std::string::String>,
-    /// <p>The ARN of the resource group.</p>
+    /// <p>The Amazon resource name (ARN) of the resource group.</p>
     pub group_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The description of the application group.</p>
+    pub description: ::std::option::Option<::std::string::String>,
+    /// <p>The critical rank of the application group on a scale of 1 to 10, with a rank of 1 being the most critical, and a rank of 10 being least critical.</p>
+    pub criticality: ::std::option::Option<i32>,
+    /// <p>A name, email address or other identifier for the person or group who is considered as the owner of this group within your organization.</p>
+    pub owner: ::std::option::Option<::std::string::String>,
+    /// <p>The name of the application group, which you can change at any time.</p>
+    pub display_name: ::std::option::Option<::std::string::String>,
 }
 impl GroupIdentifier {
     /// <p>The name of the resource group.</p>
     pub fn group_name(&self) -> ::std::option::Option<&str> {
         self.group_name.as_deref()
     }
-    /// <p>The ARN of the resource group.</p>
+    /// <p>The Amazon resource name (ARN) of the resource group.</p>
     pub fn group_arn(&self) -> ::std::option::Option<&str> {
         self.group_arn.as_deref()
+    }
+    /// <p>The description of the application group.</p>
+    pub fn description(&self) -> ::std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The critical rank of the application group on a scale of 1 to 10, with a rank of 1 being the most critical, and a rank of 10 being least critical.</p>
+    pub fn criticality(&self) -> ::std::option::Option<i32> {
+        self.criticality
+    }
+    /// <p>A name, email address or other identifier for the person or group who is considered as the owner of this group within your organization.</p>
+    pub fn owner(&self) -> ::std::option::Option<&str> {
+        self.owner.as_deref()
+    }
+    /// <p>The name of the application group, which you can change at any time.</p>
+    pub fn display_name(&self) -> ::std::option::Option<&str> {
+        self.display_name.as_deref()
     }
 }
 impl GroupIdentifier {
@@ -32,6 +56,10 @@ impl GroupIdentifier {
 pub struct GroupIdentifierBuilder {
     pub(crate) group_name: ::std::option::Option<::std::string::String>,
     pub(crate) group_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) criticality: ::std::option::Option<i32>,
+    pub(crate) owner: ::std::option::Option<::std::string::String>,
+    pub(crate) display_name: ::std::option::Option<::std::string::String>,
 }
 impl GroupIdentifierBuilder {
     /// <p>The name of the resource group.</p>
@@ -48,25 +76,85 @@ impl GroupIdentifierBuilder {
     pub fn get_group_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.group_name
     }
-    /// <p>The ARN of the resource group.</p>
+    /// <p>The Amazon resource name (ARN) of the resource group.</p>
     pub fn group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the resource group.</p>
+    /// <p>The Amazon resource name (ARN) of the resource group.</p>
     pub fn set_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.group_arn = input;
         self
     }
-    /// <p>The ARN of the resource group.</p>
+    /// <p>The Amazon resource name (ARN) of the resource group.</p>
     pub fn get_group_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.group_arn
+    }
+    /// <p>The description of the application group.</p>
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The description of the application group.</p>
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.description = input;
+        self
+    }
+    /// <p>The description of the application group.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
+    /// <p>The critical rank of the application group on a scale of 1 to 10, with a rank of 1 being the most critical, and a rank of 10 being least critical.</p>
+    pub fn criticality(mut self, input: i32) -> Self {
+        self.criticality = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The critical rank of the application group on a scale of 1 to 10, with a rank of 1 being the most critical, and a rank of 10 being least critical.</p>
+    pub fn set_criticality(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.criticality = input;
+        self
+    }
+    /// <p>The critical rank of the application group on a scale of 1 to 10, with a rank of 1 being the most critical, and a rank of 10 being least critical.</p>
+    pub fn get_criticality(&self) -> &::std::option::Option<i32> {
+        &self.criticality
+    }
+    /// <p>A name, email address or other identifier for the person or group who is considered as the owner of this group within your organization.</p>
+    pub fn owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.owner = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>A name, email address or other identifier for the person or group who is considered as the owner of this group within your organization.</p>
+    pub fn set_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.owner = input;
+        self
+    }
+    /// <p>A name, email address or other identifier for the person or group who is considered as the owner of this group within your organization.</p>
+    pub fn get_owner(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owner
+    }
+    /// <p>The name of the application group, which you can change at any time.</p>
+    pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.display_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of the application group, which you can change at any time.</p>
+    pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.display_name = input;
+        self
+    }
+    /// <p>The name of the application group, which you can change at any time.</p>
+    pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.display_name
     }
     /// Consumes the builder and constructs a [`GroupIdentifier`](crate::types::GroupIdentifier).
     pub fn build(self) -> crate::types::GroupIdentifier {
         crate::types::GroupIdentifier {
             group_name: self.group_name,
             group_arn: self.group_arn,
+            description: self.description,
+            criticality: self.criticality,
+            owner: self.owner,
+            display_name: self.display_name,
         }
     }
 }

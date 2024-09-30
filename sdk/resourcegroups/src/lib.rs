@@ -26,7 +26,7 @@
 //! Resource Groups uses a REST-compliant API that you can use to perform the following types of operations.
 //!   - Create, Read, Update, and Delete (CRUD) operations on resource groups and resource query entities
 //!   - Applying, editing, and removing tags from resource groups
-//!   - Resolving resource group member ARNs so they can be returned as search results
+//!   - Resolving resource group member Amazon resource names (ARN)s so they can be returned as search results
 //!   - Getting data about resources that are members of a group
 //!   - Searching Amazon Web Services resources based on a resource query
 //!
@@ -42,7 +42,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-resourcegroups = "1.45.0"
+//! aws-sdk-resourcegroups = "1.46.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
@@ -159,14 +159,14 @@ pub use config::Config;
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`CreateGroup`](crate::operation::create_group) operation has
-/// a [`Client::create_group`], function which returns a builder for that operation.
+/// For example, the [`CancelTagSyncTask`](crate::operation::cancel_tag_sync_task) operation has
+/// a [`Client::cancel_tag_sync_task`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.create_group()
-///     .name("example")
+/// let result = client.cancel_tag_sync_task()
+///     .task_arn("example")
 ///     .send()
 ///     .await;
 /// ```

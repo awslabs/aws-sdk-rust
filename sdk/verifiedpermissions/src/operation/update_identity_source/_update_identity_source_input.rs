@@ -7,10 +7,7 @@ pub struct UpdateIdentitySourceInput {
     pub policy_store_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the ID of the identity source that you want to update.</p>
     pub identity_source_id: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies the details required to communicate with the identity provider (IdP) associated with this identity source.</p><note>
-    /// <p>At this time, the only valid member of this structure is a Amazon Cognito user pool configuration.</p>
-    /// <p>You must specify a <code>userPoolArn</code>, and optionally, a <code>ClientId</code>.</p>
-    /// </note>
+    /// <p>Specifies the details required to communicate with the identity provider (IdP) associated with this identity source.</p>
     pub update_configuration: ::std::option::Option<crate::types::UpdateConfiguration>,
     /// <p>Specifies the data type of principals generated for identities authenticated by the identity source.</p>
     pub principal_entity_type: ::std::option::Option<::std::string::String>,
@@ -24,10 +21,7 @@ impl UpdateIdentitySourceInput {
     pub fn identity_source_id(&self) -> ::std::option::Option<&str> {
         self.identity_source_id.as_deref()
     }
-    /// <p>Specifies the details required to communicate with the identity provider (IdP) associated with this identity source.</p><note>
-    /// <p>At this time, the only valid member of this structure is a Amazon Cognito user pool configuration.</p>
-    /// <p>You must specify a <code>userPoolArn</code>, and optionally, a <code>ClientId</code>.</p>
-    /// </note>
+    /// <p>Specifies the details required to communicate with the identity provider (IdP) associated with this identity source.</p>
     pub fn update_configuration(&self) -> ::std::option::Option<&crate::types::UpdateConfiguration> {
         self.update_configuration.as_ref()
     }
@@ -93,27 +87,18 @@ impl UpdateIdentitySourceInputBuilder {
     pub fn get_identity_source_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.identity_source_id
     }
-    /// <p>Specifies the details required to communicate with the identity provider (IdP) associated with this identity source.</p><note>
-    /// <p>At this time, the only valid member of this structure is a Amazon Cognito user pool configuration.</p>
-    /// <p>You must specify a <code>userPoolArn</code>, and optionally, a <code>ClientId</code>.</p>
-    /// </note>
+    /// <p>Specifies the details required to communicate with the identity provider (IdP) associated with this identity source.</p>
     /// This field is required.
     pub fn update_configuration(mut self, input: crate::types::UpdateConfiguration) -> Self {
         self.update_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies the details required to communicate with the identity provider (IdP) associated with this identity source.</p><note>
-    /// <p>At this time, the only valid member of this structure is a Amazon Cognito user pool configuration.</p>
-    /// <p>You must specify a <code>userPoolArn</code>, and optionally, a <code>ClientId</code>.</p>
-    /// </note>
+    /// <p>Specifies the details required to communicate with the identity provider (IdP) associated with this identity source.</p>
     pub fn set_update_configuration(mut self, input: ::std::option::Option<crate::types::UpdateConfiguration>) -> Self {
         self.update_configuration = input;
         self
     }
-    /// <p>Specifies the details required to communicate with the identity provider (IdP) associated with this identity source.</p><note>
-    /// <p>At this time, the only valid member of this structure is a Amazon Cognito user pool configuration.</p>
-    /// <p>You must specify a <code>userPoolArn</code>, and optionally, a <code>ClientId</code>.</p>
-    /// </note>
+    /// <p>Specifies the details required to communicate with the identity provider (IdP) associated with this identity source.</p>
     pub fn get_update_configuration(&self) -> &::std::option::Option<crate::types::UpdateConfiguration> {
         &self.update_configuration
     }

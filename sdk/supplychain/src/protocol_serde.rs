@@ -25,9 +25,35 @@ pub fn parse_http_error_metadata(
 
 pub(crate) mod shape_create_bill_of_materials_import_job;
 
+pub(crate) mod shape_create_data_integration_flow;
+
+pub(crate) mod shape_create_data_lake_dataset;
+
+pub(crate) mod shape_delete_data_integration_flow;
+
+pub(crate) mod shape_delete_data_lake_dataset;
+
 pub(crate) mod shape_get_bill_of_materials_import_job;
 
+pub(crate) mod shape_get_data_integration_flow;
+
+pub(crate) mod shape_get_data_lake_dataset;
+
+pub(crate) mod shape_list_data_integration_flows;
+
+pub(crate) mod shape_list_data_lake_datasets;
+
+pub(crate) mod shape_list_tags_for_resource;
+
 pub(crate) mod shape_send_data_integration_event;
+
+pub(crate) mod shape_tag_resource;
+
+pub(crate) mod shape_untag_resource;
+
+pub(crate) mod shape_update_data_integration_flow;
+
+pub(crate) mod shape_update_data_lake_dataset;
 
 pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
     if data.is_empty() {
@@ -43,6 +69,10 @@ pub(crate) mod shape_conflict_exception;
 
 pub(crate) mod shape_create_bill_of_materials_import_job_input;
 
+pub(crate) mod shape_create_data_integration_flow_input;
+
+pub(crate) mod shape_create_data_lake_dataset_input;
+
 pub(crate) mod shape_internal_server_exception;
 
 pub(crate) mod shape_resource_not_found_exception;
@@ -51,8 +81,52 @@ pub(crate) mod shape_send_data_integration_event_input;
 
 pub(crate) mod shape_service_quota_exceeded_exception;
 
+pub(crate) mod shape_tag_resource_input;
+
 pub(crate) mod shape_throttling_exception;
+
+pub(crate) mod shape_update_data_integration_flow_input;
+
+pub(crate) mod shape_update_data_lake_dataset_input;
 
 pub(crate) mod shape_validation_exception;
 
 pub(crate) mod shape_bill_of_materials_import_job;
+
+pub(crate) mod shape_data_integration_flow;
+
+pub(crate) mod shape_data_integration_flow_list;
+
+pub(crate) mod shape_data_integration_flow_source;
+
+pub(crate) mod shape_data_integration_flow_target;
+
+pub(crate) mod shape_data_integration_flow_transformation;
+
+pub(crate) mod shape_data_lake_dataset;
+
+pub(crate) mod shape_data_lake_dataset_list;
+
+pub(crate) mod shape_data_lake_dataset_schema;
+
+pub(crate) mod shape_tag_map;
+
+pub(crate) mod shape_data_integration_flow_dataset_source_configuration;
+
+pub(crate) mod shape_data_integration_flow_dataset_target_configuration;
+
+pub(crate) mod shape_data_integration_flow_s3_source_configuration;
+
+pub(crate) mod shape_data_integration_flow_s3_target_configuration;
+
+pub(crate) mod shape_data_integration_flow_source_list;
+
+pub(crate) mod shape_data_integration_flow_sql_transformation_configuration;
+
+pub(crate) mod shape_data_lake_dataset_schema_field;
+
+pub(crate) mod shape_data_integration_flow_dataset_options;
+
+pub(crate) mod shape_data_integration_flow_s3_options;
+
+pub(crate) mod shape_data_lake_dataset_schema_field_list;

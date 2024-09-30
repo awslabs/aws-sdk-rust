@@ -121,6 +121,172 @@ impl From<crate::operation::create_bill_of_materials_import_job::CreateBillOfMat
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_data_integration_flow::CreateDataIntegrationFlowError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_data_integration_flow::CreateDataIntegrationFlowError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_data_integration_flow::CreateDataIntegrationFlowError> for Error {
+    fn from(err: crate::operation::create_data_integration_flow::CreateDataIntegrationFlowError) -> Self {
+        match err {
+            crate::operation::create_data_integration_flow::CreateDataIntegrationFlowError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::create_data_integration_flow::CreateDataIntegrationFlowError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::create_data_integration_flow::CreateDataIntegrationFlowError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::create_data_integration_flow::CreateDataIntegrationFlowError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::create_data_integration_flow::CreateDataIntegrationFlowError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::create_data_integration_flow::CreateDataIntegrationFlowError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::create_data_integration_flow::CreateDataIntegrationFlowError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::create_data_integration_flow::CreateDataIntegrationFlowError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_data_lake_dataset::CreateDataLakeDatasetError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_data_lake_dataset::CreateDataLakeDatasetError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_data_lake_dataset::CreateDataLakeDatasetError> for Error {
+    fn from(err: crate::operation::create_data_lake_dataset::CreateDataLakeDatasetError) -> Self {
+        match err {
+            crate::operation::create_data_lake_dataset::CreateDataLakeDatasetError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::create_data_lake_dataset::CreateDataLakeDatasetError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_data_lake_dataset::CreateDataLakeDatasetError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::create_data_lake_dataset::CreateDataLakeDatasetError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::create_data_lake_dataset::CreateDataLakeDatasetError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_data_lake_dataset::CreateDataLakeDatasetError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_data_lake_dataset::CreateDataLakeDatasetError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::create_data_lake_dataset::CreateDataLakeDatasetError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_data_integration_flow::DeleteDataIntegrationFlowError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_data_integration_flow::DeleteDataIntegrationFlowError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_data_integration_flow::DeleteDataIntegrationFlowError> for Error {
+    fn from(err: crate::operation::delete_data_integration_flow::DeleteDataIntegrationFlowError) -> Self {
+        match err {
+            crate::operation::delete_data_integration_flow::DeleteDataIntegrationFlowError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::delete_data_integration_flow::DeleteDataIntegrationFlowError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::delete_data_integration_flow::DeleteDataIntegrationFlowError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_data_integration_flow::DeleteDataIntegrationFlowError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::delete_data_integration_flow::DeleteDataIntegrationFlowError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::delete_data_integration_flow::DeleteDataIntegrationFlowError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::delete_data_integration_flow::DeleteDataIntegrationFlowError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::delete_data_integration_flow::DeleteDataIntegrationFlowError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_data_lake_dataset::DeleteDataLakeDatasetError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_data_lake_dataset::DeleteDataLakeDatasetError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_data_lake_dataset::DeleteDataLakeDatasetError> for Error {
+    fn from(err: crate::operation::delete_data_lake_dataset::DeleteDataLakeDatasetError) -> Self {
+        match err {
+            crate::operation::delete_data_lake_dataset::DeleteDataLakeDatasetError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::delete_data_lake_dataset::DeleteDataLakeDatasetError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::delete_data_lake_dataset::DeleteDataLakeDatasetError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_data_lake_dataset::DeleteDataLakeDatasetError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_data_lake_dataset::DeleteDataLakeDatasetError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_data_lake_dataset::DeleteDataLakeDatasetError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::delete_data_lake_dataset::DeleteDataLakeDatasetError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::delete_data_lake_dataset::DeleteDataLakeDatasetError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R>
     From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_bill_of_materials_import_job::GetBillOfMaterialsImportJobError, R>>
     for Error
@@ -170,6 +336,190 @@ impl From<crate::operation::get_bill_of_materials_import_job::GetBillOfMaterials
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_data_integration_flow::GetDataIntegrationFlowError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_data_integration_flow::GetDataIntegrationFlowError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_data_integration_flow::GetDataIntegrationFlowError> for Error {
+    fn from(err: crate::operation::get_data_integration_flow::GetDataIntegrationFlowError) -> Self {
+        match err {
+            crate::operation::get_data_integration_flow::GetDataIntegrationFlowError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_data_integration_flow::GetDataIntegrationFlowError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_data_integration_flow::GetDataIntegrationFlowError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_data_integration_flow::GetDataIntegrationFlowError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_data_integration_flow::GetDataIntegrationFlowError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_data_integration_flow::GetDataIntegrationFlowError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::get_data_integration_flow::GetDataIntegrationFlowError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::get_data_integration_flow::GetDataIntegrationFlowError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_data_lake_dataset::GetDataLakeDatasetError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_data_lake_dataset::GetDataLakeDatasetError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_data_lake_dataset::GetDataLakeDatasetError> for Error {
+    fn from(err: crate::operation::get_data_lake_dataset::GetDataLakeDatasetError) -> Self {
+        match err {
+            crate::operation::get_data_lake_dataset::GetDataLakeDatasetError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_data_lake_dataset::GetDataLakeDatasetError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_data_lake_dataset::GetDataLakeDatasetError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_data_lake_dataset::GetDataLakeDatasetError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_data_lake_dataset::GetDataLakeDatasetError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_data_lake_dataset::GetDataLakeDatasetError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::get_data_lake_dataset::GetDataLakeDatasetError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::get_data_lake_dataset::GetDataLakeDatasetError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_data_integration_flows::ListDataIntegrationFlowsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_data_integration_flows::ListDataIntegrationFlowsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_data_integration_flows::ListDataIntegrationFlowsError> for Error {
+    fn from(err: crate::operation::list_data_integration_flows::ListDataIntegrationFlowsError) -> Self {
+        match err {
+            crate::operation::list_data_integration_flows::ListDataIntegrationFlowsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_data_integration_flows::ListDataIntegrationFlowsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_data_integration_flows::ListDataIntegrationFlowsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_data_integration_flows::ListDataIntegrationFlowsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_data_integration_flows::ListDataIntegrationFlowsError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::list_data_integration_flows::ListDataIntegrationFlowsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_data_integration_flows::ListDataIntegrationFlowsError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::list_data_integration_flows::ListDataIntegrationFlowsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_data_lake_datasets::ListDataLakeDatasetsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_data_lake_datasets::ListDataLakeDatasetsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_data_lake_datasets::ListDataLakeDatasetsError> for Error {
+    fn from(err: crate::operation::list_data_lake_datasets::ListDataLakeDatasetsError) -> Self {
+        match err {
+            crate::operation::list_data_lake_datasets::ListDataLakeDatasetsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_data_lake_datasets::ListDataLakeDatasetsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_data_lake_datasets::ListDataLakeDatasetsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_data_lake_datasets::ListDataLakeDatasetsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_data_lake_datasets::ListDataLakeDatasetsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_data_lake_datasets::ListDataLakeDatasetsError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::list_data_lake_datasets::ListDataLakeDatasetsError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::list_data_lake_datasets::ListDataLakeDatasetsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_tags_for_resource::ListTagsForResourceError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_tags_for_resource::ListTagsForResourceError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_tags_for_resource::ListTagsForResourceError> for Error {
+    fn from(err: crate::operation::list_tags_for_resource::ListTagsForResourceError) -> Self {
+        match err {
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::send_data_integration_event::SendDataIntegrationEventError, R>>
     for Error
 where
@@ -210,6 +560,145 @@ impl From<crate::operation::send_data_integration_event::SendDataIntegrationEven
                 Error::ValidationException(inner)
             }
             crate::operation::send_data_integration_event::SendDataIntegrationEventError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::tag_resource::TagResourceError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::tag_resource::TagResourceError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::tag_resource::TagResourceError> for Error {
+    fn from(err: crate::operation::tag_resource::TagResourceError) -> Self {
+        match err {
+            crate::operation::tag_resource::TagResourceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::tag_resource::TagResourceError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::tag_resource::TagResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::tag_resource::TagResourceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::tag_resource::TagResourceError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::tag_resource::TagResourceError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::tag_resource::TagResourceError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::tag_resource::TagResourceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::untag_resource::UntagResourceError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::untag_resource::UntagResourceError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::untag_resource::UntagResourceError> for Error {
+    fn from(err: crate::operation::untag_resource::UntagResourceError) -> Self {
+        match err {
+            crate::operation::untag_resource::UntagResourceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::untag_resource::UntagResourceError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::untag_resource::UntagResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::untag_resource::UntagResourceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::untag_resource::UntagResourceError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::untag_resource::UntagResourceError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::untag_resource::UntagResourceError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::untag_resource::UntagResourceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_data_integration_flow::UpdateDataIntegrationFlowError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_data_integration_flow::UpdateDataIntegrationFlowError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_data_integration_flow::UpdateDataIntegrationFlowError> for Error {
+    fn from(err: crate::operation::update_data_integration_flow::UpdateDataIntegrationFlowError) -> Self {
+        match err {
+            crate::operation::update_data_integration_flow::UpdateDataIntegrationFlowError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::update_data_integration_flow::UpdateDataIntegrationFlowError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::update_data_integration_flow::UpdateDataIntegrationFlowError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_data_integration_flow::UpdateDataIntegrationFlowError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::update_data_integration_flow::UpdateDataIntegrationFlowError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::update_data_integration_flow::UpdateDataIntegrationFlowError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::update_data_integration_flow::UpdateDataIntegrationFlowError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::update_data_integration_flow::UpdateDataIntegrationFlowError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_data_lake_dataset::UpdateDataLakeDatasetError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_data_lake_dataset::UpdateDataLakeDatasetError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_data_lake_dataset::UpdateDataLakeDatasetError> for Error {
+    fn from(err: crate::operation::update_data_lake_dataset::UpdateDataLakeDatasetError) -> Self {
+        match err {
+            crate::operation::update_data_lake_dataset::UpdateDataLakeDatasetError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::update_data_lake_dataset::UpdateDataLakeDatasetError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::update_data_lake_dataset::UpdateDataLakeDatasetError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_data_lake_dataset::UpdateDataLakeDatasetError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_data_lake_dataset::UpdateDataLakeDatasetError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_data_lake_dataset::UpdateDataLakeDatasetError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::update_data_lake_dataset::UpdateDataLakeDatasetError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::update_data_lake_dataset::UpdateDataLakeDatasetError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

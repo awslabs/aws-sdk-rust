@@ -15,27 +15,39 @@ pub fn ser_create_group_input_input(
         }
         array_2.finish();
     }
-    if let Some(var_5) = &input.description {
-        object.key("Description").string(var_5.as_str());
+    if let Some(var_5) = &input.criticality {
+        object.key("Criticality").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_5).into()),
+        );
     }
-    if let Some(var_6) = &input.name {
-        object.key("Name").string(var_6.as_str());
+    if let Some(var_6) = &input.description {
+        object.key("Description").string(var_6.as_str());
     }
-    if let Some(var_7) = &input.resource_query {
+    if let Some(var_7) = &input.display_name {
+        object.key("DisplayName").string(var_7.as_str());
+    }
+    if let Some(var_8) = &input.name {
+        object.key("Name").string(var_8.as_str());
+    }
+    if let Some(var_9) = &input.owner {
+        object.key("Owner").string(var_9.as_str());
+    }
+    if let Some(var_10) = &input.resource_query {
         #[allow(unused_mut)]
-        let mut object_8 = object.key("ResourceQuery").start_object();
-        crate::protocol_serde::shape_resource_query::ser_resource_query(&mut object_8, var_7)?;
-        object_8.finish();
+        let mut object_11 = object.key("ResourceQuery").start_object();
+        crate::protocol_serde::shape_resource_query::ser_resource_query(&mut object_11, var_10)?;
+        object_11.finish();
     }
-    if let Some(var_9) = &input.tags {
+    if let Some(var_12) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_10 = object.key("Tags").start_object();
-        for (key_11, value_12) in var_9 {
+        let mut object_13 = object.key("Tags").start_object();
+        for (key_14, value_15) in var_12 {
             {
-                object_10.key(key_11.as_str()).string(value_12.as_str());
+                object_13.key(key_14.as_str()).string(value_15.as_str());
             }
         }
-        object_10.finish();
+        object_13.finish();
     }
     Ok(())
 }

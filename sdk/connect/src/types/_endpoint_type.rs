@@ -12,6 +12,7 @@
 /// ```text
 /// # let endpointtype = unimplemented!();
 /// match endpointtype {
+///     EndpointType::ConnectPhonenumberArn => { /* ... */ },
 ///     EndpointType::ContactFlow => { /* ... */ },
 ///     EndpointType::TelephoneNumber => { /* ... */ },
 ///     EndpointType::Voip => { /* ... */ },
@@ -43,6 +44,8 @@
 )]
 pub enum EndpointType {
     #[allow(missing_docs)] // documentation missing in model
+    ConnectPhonenumberArn,
+    #[allow(missing_docs)] // documentation missing in model
     ContactFlow,
     #[allow(missing_docs)] // documentation missing in model
     TelephoneNumber,
@@ -55,6 +58,7 @@ pub enum EndpointType {
 impl ::std::convert::From<&str> for EndpointType {
     fn from(s: &str) -> Self {
         match s {
+            "CONNECT_PHONENUMBER_ARN" => EndpointType::ConnectPhonenumberArn,
             "CONTACT_FLOW" => EndpointType::ContactFlow,
             "TELEPHONE_NUMBER" => EndpointType::TelephoneNumber,
             "VOIP" => EndpointType::Voip,
@@ -73,6 +77,7 @@ impl EndpointType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            EndpointType::ConnectPhonenumberArn => "CONNECT_PHONENUMBER_ARN",
             EndpointType::ContactFlow => "CONTACT_FLOW",
             EndpointType::TelephoneNumber => "TELEPHONE_NUMBER",
             EndpointType::Voip => "VOIP",
@@ -81,7 +86,7 @@ impl EndpointType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CONTACT_FLOW", "TELEPHONE_NUMBER", "VOIP"]
+        &["CONNECT_PHONENUMBER_ARN", "CONTACT_FLOW", "TELEPHONE_NUMBER", "VOIP"]
     }
 }
 impl ::std::convert::AsRef<str> for EndpointType {
@@ -104,6 +109,7 @@ impl EndpointType {
 impl ::std::fmt::Display for EndpointType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            EndpointType::ConnectPhonenumberArn => write!(f, "CONNECT_PHONENUMBER_ARN"),
             EndpointType::ContactFlow => write!(f, "CONTACT_FLOW"),
             EndpointType::TelephoneNumber => write!(f, "TELEPHONE_NUMBER"),
             EndpointType::Voip => write!(f, "VOIP"),

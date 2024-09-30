@@ -13,6 +13,9 @@
 /// # let groupfiltername = unimplemented!();
 /// match groupfiltername {
 ///     GroupFilterName::ConfigurationType => { /* ... */ },
+///     GroupFilterName::Criticality => { /* ... */ },
+///     GroupFilterName::DisplayName => { /* ... */ },
+///     GroupFilterName::Owner => { /* ... */ },
 ///     GroupFilterName::ResourceType => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -44,6 +47,12 @@ pub enum GroupFilterName {
     #[allow(missing_docs)] // documentation missing in model
     ConfigurationType,
     #[allow(missing_docs)] // documentation missing in model
+    Criticality,
+    #[allow(missing_docs)] // documentation missing in model
+    DisplayName,
+    #[allow(missing_docs)] // documentation missing in model
+    Owner,
+    #[allow(missing_docs)] // documentation missing in model
     ResourceType,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -53,6 +62,9 @@ impl ::std::convert::From<&str> for GroupFilterName {
     fn from(s: &str) -> Self {
         match s {
             "configuration-type" => GroupFilterName::ConfigurationType,
+            "criticality" => GroupFilterName::Criticality,
+            "display-name" => GroupFilterName::DisplayName,
+            "owner" => GroupFilterName::Owner,
             "resource-type" => GroupFilterName::ResourceType,
             other => GroupFilterName::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -70,13 +82,16 @@ impl GroupFilterName {
     pub fn as_str(&self) -> &str {
         match self {
             GroupFilterName::ConfigurationType => "configuration-type",
+            GroupFilterName::Criticality => "criticality",
+            GroupFilterName::DisplayName => "display-name",
+            GroupFilterName::Owner => "owner",
             GroupFilterName::ResourceType => "resource-type",
             GroupFilterName::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["configuration-type", "resource-type"]
+        &["configuration-type", "criticality", "display-name", "owner", "resource-type"]
     }
 }
 impl ::std::convert::AsRef<str> for GroupFilterName {
@@ -100,6 +115,9 @@ impl ::std::fmt::Display for GroupFilterName {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             GroupFilterName::ConfigurationType => write!(f, "configuration-type"),
+            GroupFilterName::Criticality => write!(f, "criticality"),
+            GroupFilterName::DisplayName => write!(f, "display-name"),
+            GroupFilterName::Owner => write!(f, "owner"),
             GroupFilterName::ResourceType => write!(f, "resource-type"),
             GroupFilterName::Unknown(value) => write!(f, "{}", value),
         }

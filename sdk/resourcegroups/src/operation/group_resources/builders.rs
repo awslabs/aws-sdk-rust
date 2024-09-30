@@ -23,14 +23,16 @@ impl crate::operation::group_resources::builders::GroupResourcesInputBuilder {
 /// Fluent builder constructing a request to `GroupResources`.
 ///
 /// <p>Adds the specified resources to the specified group.</p><important>
-/// <p>You can use this operation with only resource groups that are configured with the following types:</p>
+/// <p>You can only use this operation with the following groups:</p>
 /// <ul>
 /// <li>
 /// <p><code>AWS::EC2::HostManagement</code></p></li>
 /// <li>
 /// <p><code>AWS::EC2::CapacityReservationPool</code></p></li>
+/// <li>
+/// <p><code>AWS::ResourceGroups::ApplicationGroup</code></p></li>
 /// </ul>
-/// <p>Other resource group type and resource types aren't currently supported by this operation.</p>
+/// <p>Other resource group types and resource types are not currently supported by this operation.</p>
 /// </important>
 /// <p><b>Minimum permissions</b></p>
 /// <p>To run this command, you must have the following permissions:</p>
@@ -123,17 +125,17 @@ impl GroupResourcesFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name or the ARN of the resource group to add resources to.</p>
+    /// <p>The name or the Amazon resource name (ARN) of the resource group to add resources to.</p>
     pub fn group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.group(input.into());
         self
     }
-    /// <p>The name or the ARN of the resource group to add resources to.</p>
+    /// <p>The name or the Amazon resource name (ARN) of the resource group to add resources to.</p>
     pub fn set_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_group(input);
         self
     }
-    /// <p>The name or the ARN of the resource group to add resources to.</p>
+    /// <p>The name or the Amazon resource name (ARN) of the resource group to add resources to.</p>
     pub fn get_group(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_group()
     }
@@ -142,17 +144,17 @@ impl GroupResourcesFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_resource_arns`](Self::set_resource_arns).
     ///
-    /// <p>The list of ARNs of the resources to be added to the group.</p>
+    /// <p>The list of Amazon resource names (ARNs) of the resources to be added to the group.</p>
     pub fn resource_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_arns(input.into());
         self
     }
-    /// <p>The list of ARNs of the resources to be added to the group.</p>
+    /// <p>The list of Amazon resource names (ARNs) of the resources to be added to the group.</p>
     pub fn set_resource_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_resource_arns(input);
         self
     }
-    /// <p>The list of ARNs of the resources to be added to the group.</p>
+    /// <p>The list of Amazon resource names (ARNs) of the resources to be added to the group.</p>
     pub fn get_resource_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_resource_arns()
     }

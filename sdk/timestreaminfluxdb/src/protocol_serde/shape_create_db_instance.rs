@@ -196,6 +196,13 @@ pub(crate) fn de_create_db_instance(
                             .transpose()?,
                     );
                 }
+                "port" => {
+                    builder = builder.set_port(
+                        ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                            .map(i32::try_from)
+                            .transpose()?,
+                    );
+                }
                 "dbInstanceType" => {
                     builder = builder.set_db_instance_type(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

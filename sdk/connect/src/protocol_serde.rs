@@ -413,6 +413,8 @@ pub(crate) mod shape_start_contact_recording;
 
 pub(crate) mod shape_start_contact_streaming;
 
+pub(crate) mod shape_start_outbound_chat_contact;
+
 pub(crate) mod shape_start_outbound_voice_contact;
 
 pub(crate) mod shape_start_task_contact;
@@ -761,6 +763,8 @@ pub(crate) mod shape_start_contact_recording_input;
 
 pub(crate) mod shape_start_contact_streaming_input;
 
+pub(crate) mod shape_start_outbound_chat_contact_input;
+
 pub(crate) mod shape_start_outbound_voice_contact_input;
 
 pub(crate) mod shape_start_task_contact_input;
@@ -974,6 +978,8 @@ pub(crate) mod shape_default_vocabulary_list;
 pub(crate) mod shape_disconnect_reason;
 
 pub(crate) mod shape_download_url_metadata;
+
+pub(crate) mod shape_endpoint;
 
 pub(crate) mod shape_error_results;
 
@@ -1322,8 +1328,6 @@ pub(crate) mod shape_distribution;
 pub(crate) mod shape_distribution_list;
 
 pub(crate) mod shape_end_associated_tasks_action_definition;
-
-pub(crate) mod shape_endpoint;
 
 pub(crate) mod shape_error_result;
 

@@ -586,6 +586,9 @@ pub mod start_contact_recording;
 /// Types for the `StartContactStreaming` operation.
 pub mod start_contact_streaming;
 
+/// Types for the `StartOutboundChatContact` operation.
+pub mod start_outbound_chat_contact;
+
 /// Types for the `StartOutboundVoiceContact` operation.
 pub mod start_outbound_voice_contact;
 

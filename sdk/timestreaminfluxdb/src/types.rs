@@ -5,6 +5,10 @@ pub use crate::types::_parameters::Parameters;
 
 pub use crate::types::_influx_dbv2_parameters::InfluxDBv2Parameters;
 
+pub use crate::types::_duration::Duration;
+
+pub use crate::types::_duration_type::DurationType;
+
 pub use crate::types::_tracing_type::TracingType;
 
 pub use crate::types::_log_level::LogLevel;
@@ -34,6 +38,10 @@ mod _db_parameter_group_summary;
 mod _db_storage_type;
 
 mod _deployment_type;
+
+mod _duration;
+
+mod _duration_type;
 
 mod _influx_dbv2_parameters;
 

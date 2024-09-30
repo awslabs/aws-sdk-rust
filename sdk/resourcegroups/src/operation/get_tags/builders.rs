@@ -22,7 +22,7 @@ impl crate::operation::get_tags::builders::GetTagsInputBuilder {
 }
 /// Fluent builder constructing a request to `GetTags`.
 ///
-/// <p>Returns a list of tags that are associated with a resource group, specified by an ARN.</p>
+/// <p>Returns a list of tags that are associated with a resource group, specified by an Amazon resource name (ARN).</p>
 /// <p><b>Minimum permissions</b></p>
 /// <p>To run this command, you must have the following permissions:</p>
 /// <ul>
@@ -105,17 +105,17 @@ impl GetTagsFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The ARN of the resource group whose tags you want to retrieve.</p>
+    /// <p>The Amazon resource name (ARN) of the resource group whose tags you want to retrieve.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.arn(input.into());
         self
     }
-    /// <p>The ARN of the resource group whose tags you want to retrieve.</p>
+    /// <p>The Amazon resource name (ARN) of the resource group whose tags you want to retrieve.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_arn(input);
         self
     }
-    /// <p>The ARN of the resource group whose tags you want to retrieve.</p>
+    /// <p>The Amazon resource name (ARN) of the resource group whose tags you want to retrieve.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_arn()
     }

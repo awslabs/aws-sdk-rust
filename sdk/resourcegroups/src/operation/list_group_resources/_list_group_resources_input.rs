@@ -8,7 +8,7 @@ pub struct ListGroupResourcesInput {
     /// </important>
     #[deprecated(note = "This field is deprecated, use Group instead.")]
     pub group_name: ::std::option::Option<::std::string::String>,
-    /// <p>The name or the ARN of the resource group</p>
+    /// <p>The name or the Amazon resource name (ARN) of the resource group.</p>
     pub group: ::std::option::Option<::std::string::String>,
     /// <p>Filters, formatted as <code>ResourceFilter</code> objects, that you want to apply to a <code>ListGroupResources</code> operation. Filters the results to include only those of the specified resource types.</p>
     /// <ul>
@@ -32,7 +32,7 @@ impl ListGroupResourcesInput {
     pub fn group_name(&self) -> ::std::option::Option<&str> {
         self.group_name.as_deref()
     }
-    /// <p>The name or the ARN of the resource group</p>
+    /// <p>The name or the Amazon resource name (ARN) of the resource group.</p>
     pub fn group(&self) -> ::std::option::Option<&str> {
         self.group.as_deref()
     }
@@ -99,17 +99,17 @@ impl ListGroupResourcesInputBuilder {
     pub fn get_group_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.group_name
     }
-    /// <p>The name or the ARN of the resource group</p>
+    /// <p>The name or the Amazon resource name (ARN) of the resource group.</p>
     pub fn group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name or the ARN of the resource group</p>
+    /// <p>The name or the Amazon resource name (ARN) of the resource group.</p>
     pub fn set_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.group = input;
         self
     }
-    /// <p>The name or the ARN of the resource group</p>
+    /// <p>The name or the Amazon resource name (ARN) of the resource group.</p>
     pub fn get_group(&self) -> &::std::option::Option<::std::string::String> {
         &self.group
     }

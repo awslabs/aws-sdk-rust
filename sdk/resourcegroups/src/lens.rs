@@ -9,8 +9,28 @@ pub(crate) fn reflens_list_group_resources_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_grouping_statuses_output_output_next_token(
+    input: &crate::operation::list_grouping_statuses::ListGroupingStatusesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_groups_output_output_next_token(
     input: &crate::operation::list_groups::ListGroupsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_tag_sync_tasks_output_output_next_token(
+    input: &crate::operation::list_tag_sync_tasks::ListTagSyncTasksOutput,
 ) -> ::std::option::Option<&::std::string::String> {
     let input = match &input.next_token {
         ::std::option::Option::None => return ::std::option::Option::None,
@@ -39,10 +59,30 @@ pub(crate) fn lens_list_group_resources_output_output_resource_identifiers(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn lens_list_grouping_statuses_output_output_grouping_statuses(
+    input: crate::operation::list_grouping_statuses::ListGroupingStatusesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::GroupingStatusesItem>> {
+    let input = match input.grouping_statuses {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_list_groups_output_output_group_identifiers(
     input: crate::operation::list_groups::ListGroupsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::GroupIdentifier>> {
     let input = match input.group_identifiers {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_tag_sync_tasks_output_output_tag_sync_tasks(
+    input: crate::operation::list_tag_sync_tasks::ListTagSyncTasksOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::TagSyncTaskItem>> {
+    let input = match input.tag_sync_tasks {
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,
     };

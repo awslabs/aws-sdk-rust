@@ -9,7 +9,7 @@ For more information about Resource Groups, see the [Resource Groups User Guide]
 Resource Groups uses a REST-compliant API that you can use to perform the following types of operations.
   - Create, Read, Update, and Delete (CRUD) operations on resource groups and resource query entities
   - Applying, editing, and removing tags from resource groups
-  - Resolving resource group member ARNs so they can be returned as search results
+  - Resolving resource group member Amazon resource names (ARN)s so they can be returned as search results
   - Getting data about resources that are members of a group
   - Searching Amazon Web Services resources based on a resource query
 
@@ -25,7 +25,7 @@ your project, add the following to your **Cargo.toml** file:
 ```toml
 [dependencies]
 aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-aws-sdk-resourcegroups = "1.45.0"
+aws-sdk-resourcegroups = "1.46.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

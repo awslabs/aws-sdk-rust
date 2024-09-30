@@ -14,6 +14,8 @@ pub struct DbInstanceSummary {
     pub status: ::std::option::Option<crate::types::Status>,
     /// <p>The endpoint used to connect to InfluxDB. The default InfluxDB port is 8086.</p>
     pub endpoint: ::std::option::Option<::std::string::String>,
+    /// <p>The port number on which InfluxDB accepts connections.</p>
+    pub port: ::std::option::Option<i32>,
     /// <p>The Timestream for InfluxDB instance type to run InfluxDB on.</p>
     pub db_instance_type: ::std::option::Option<crate::types::DbInstanceType>,
     /// <p>The storage type for your DB instance.</p>
@@ -46,6 +48,10 @@ impl DbInstanceSummary {
     /// <p>The endpoint used to connect to InfluxDB. The default InfluxDB port is 8086.</p>
     pub fn endpoint(&self) -> ::std::option::Option<&str> {
         self.endpoint.as_deref()
+    }
+    /// <p>The port number on which InfluxDB accepts connections.</p>
+    pub fn port(&self) -> ::std::option::Option<i32> {
+        self.port
     }
     /// <p>The Timestream for InfluxDB instance type to run InfluxDB on.</p>
     pub fn db_instance_type(&self) -> ::std::option::Option<&crate::types::DbInstanceType> {
@@ -80,6 +86,7 @@ pub struct DbInstanceSummaryBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::Status>,
     pub(crate) endpoint: ::std::option::Option<::std::string::String>,
+    pub(crate) port: ::std::option::Option<i32>,
     pub(crate) db_instance_type: ::std::option::Option<crate::types::DbInstanceType>,
     pub(crate) db_storage_type: ::std::option::Option<crate::types::DbStorageType>,
     pub(crate) allocated_storage: ::std::option::Option<i32>,
@@ -158,6 +165,20 @@ impl DbInstanceSummaryBuilder {
     /// <p>The endpoint used to connect to InfluxDB. The default InfluxDB port is 8086.</p>
     pub fn get_endpoint(&self) -> &::std::option::Option<::std::string::String> {
         &self.endpoint
+    }
+    /// <p>The port number on which InfluxDB accepts connections.</p>
+    pub fn port(mut self, input: i32) -> Self {
+        self.port = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The port number on which InfluxDB accepts connections.</p>
+    pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.port = input;
+        self
+    }
+    /// <p>The port number on which InfluxDB accepts connections.</p>
+    pub fn get_port(&self) -> &::std::option::Option<i32> {
+        &self.port
     }
     /// <p>The Timestream for InfluxDB instance type to run InfluxDB on.</p>
     pub fn db_instance_type(mut self, input: crate::types::DbInstanceType) -> Self {
@@ -242,6 +263,7 @@ impl DbInstanceSummaryBuilder {
             })?,
             status: self.status,
             endpoint: self.endpoint,
+            port: self.port,
             db_instance_type: self.db_instance_type,
             db_storage_type: self.db_storage_type,
             allocated_storage: self.allocated_storage,

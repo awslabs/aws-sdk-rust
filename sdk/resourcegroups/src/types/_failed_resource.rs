@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FailedResource {
-    /// <p>The ARN of the resource that failed to be added or removed.</p>
+    /// <p>The Amazon resource name (ARN) of the resource that failed to be added or removed.</p>
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>The error message text associated with the failure.</p>
     pub error_message: ::std::option::Option<::std::string::String>,
@@ -12,7 +12,7 @@ pub struct FailedResource {
     pub error_code: ::std::option::Option<::std::string::String>,
 }
 impl FailedResource {
-    /// <p>The ARN of the resource that failed to be added or removed.</p>
+    /// <p>The Amazon resource name (ARN) of the resource that failed to be added or removed.</p>
     pub fn resource_arn(&self) -> ::std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
@@ -41,17 +41,17 @@ pub struct FailedResourceBuilder {
     pub(crate) error_code: ::std::option::Option<::std::string::String>,
 }
 impl FailedResourceBuilder {
-    /// <p>The ARN of the resource that failed to be added or removed.</p>
+    /// <p>The Amazon resource name (ARN) of the resource that failed to be added or removed.</p>
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the resource that failed to be added or removed.</p>
+    /// <p>The Amazon resource name (ARN) of the resource that failed to be added or removed.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_arn = input;
         self
     }
-    /// <p>The ARN of the resource that failed to be added or removed.</p>
+    /// <p>The Amazon resource name (ARN) of the resource that failed to be added or removed.</p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_arn
     }

@@ -5,7 +5,7 @@
 /// <li>
 /// <p>Sentiment scores have a minimum value of -5 and maximum value of 5.</p></li>
 /// <li>
-/// <p>Duration labels, such as <code>NON_TALK_TIME</code>, <code>CONTACT_DURATION</code>, <code>AGENT_INTERACTION_DURATION</code>, <code>CUSTOMER_HOLD_TIME</code> have a minimum value of 0 and maximum value of 28800.</p></li>
+/// <p>Duration labels, such as <code>NON_TALK_TIME</code>, <code>CONTACT_DURATION</code>, <code>AGENT_INTERACTION_DURATION</code>, <code>CUSTOMER_HOLD_TIME</code> have a minimum value of 0 and maximum value of 63072000.</p></li>
 /// <li>
 /// <p>Percentages have a minimum value of 0 and maximum value of 100.</p></li>
 /// <li>

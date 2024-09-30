@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`group_name(impl Into<String>)`](crate::operation::delete_group::builders::DeleteGroupFluentBuilder::group_name) / [`set_group_name(Option<String>)`](crate::operation::delete_group::builders::DeleteGroupFluentBuilder::set_group_name):<br>required: **false**<br><p>Deprecated - don't use this parameter. Use <code>Group</code> instead.</p><br>
-    ///   - [`group(impl Into<String>)`](crate::operation::delete_group::builders::DeleteGroupFluentBuilder::group) / [`set_group(Option<String>)`](crate::operation::delete_group::builders::DeleteGroupFluentBuilder::set_group):<br>required: **false**<br><p>The name or the ARN of the resource group to delete.</p><br>
+    ///   - [`group(impl Into<String>)`](crate::operation::delete_group::builders::DeleteGroupFluentBuilder::group) / [`set_group(Option<String>)`](crate::operation::delete_group::builders::DeleteGroupFluentBuilder::set_group):<br>required: **false**<br><p>The name or the Amazon resource name (ARN) of the resource group to delete.</p><br>
     /// - On success, responds with [`DeleteGroupOutput`](crate::operation::delete_group::DeleteGroupOutput) with field(s):
     ///   - [`group(Option<Group>)`](crate::operation::delete_group::DeleteGroupOutput::group): <p>A full description of the deleted resource group.</p>
     /// - On failure, responds with [`SdkError<DeleteGroupError>`](crate::operation::delete_group::DeleteGroupError)

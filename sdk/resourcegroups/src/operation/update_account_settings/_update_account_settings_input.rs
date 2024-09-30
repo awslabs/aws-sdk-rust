@@ -4,10 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateAccountSettingsInput {
     /// <p>Specifies whether you want to turn <a href="https://docs.aws.amazon.com/ARG/latest/userguide/monitor-groups.html">group lifecycle events</a> on or off.</p>
+    /// <p>You can't turn on group lifecycle events if your resource groups quota is greater than 2,000.</p>
     pub group_lifecycle_events_desired_status: ::std::option::Option<crate::types::GroupLifecycleEventsDesiredStatus>,
 }
 impl UpdateAccountSettingsInput {
     /// <p>Specifies whether you want to turn <a href="https://docs.aws.amazon.com/ARG/latest/userguide/monitor-groups.html">group lifecycle events</a> on or off.</p>
+    /// <p>You can't turn on group lifecycle events if your resource groups quota is greater than 2,000.</p>
     pub fn group_lifecycle_events_desired_status(&self) -> ::std::option::Option<&crate::types::GroupLifecycleEventsDesiredStatus> {
         self.group_lifecycle_events_desired_status.as_ref()
     }
@@ -27,11 +29,13 @@ pub struct UpdateAccountSettingsInputBuilder {
 }
 impl UpdateAccountSettingsInputBuilder {
     /// <p>Specifies whether you want to turn <a href="https://docs.aws.amazon.com/ARG/latest/userguide/monitor-groups.html">group lifecycle events</a> on or off.</p>
+    /// <p>You can't turn on group lifecycle events if your resource groups quota is greater than 2,000.</p>
     pub fn group_lifecycle_events_desired_status(mut self, input: crate::types::GroupLifecycleEventsDesiredStatus) -> Self {
         self.group_lifecycle_events_desired_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies whether you want to turn <a href="https://docs.aws.amazon.com/ARG/latest/userguide/monitor-groups.html">group lifecycle events</a> on or off.</p>
+    /// <p>You can't turn on group lifecycle events if your resource groups quota is greater than 2,000.</p>
     pub fn set_group_lifecycle_events_desired_status(
         mut self,
         input: ::std::option::Option<crate::types::GroupLifecycleEventsDesiredStatus>,
@@ -40,6 +44,7 @@ impl UpdateAccountSettingsInputBuilder {
         self
     }
     /// <p>Specifies whether you want to turn <a href="https://docs.aws.amazon.com/ARG/latest/userguide/monitor-groups.html">group lifecycle events</a> on or off.</p>
+    /// <p>You can't turn on group lifecycle events if your resource groups quota is greater than 2,000.</p>
     pub fn get_group_lifecycle_events_desired_status(&self) -> &::std::option::Option<crate::types::GroupLifecycleEventsDesiredStatus> {
         &self.group_lifecycle_events_desired_status
     }

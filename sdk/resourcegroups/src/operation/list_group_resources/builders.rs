@@ -22,7 +22,7 @@ impl crate::operation::list_group_resources::builders::ListGroupResourcesInputBu
 }
 /// Fluent builder constructing a request to `ListGroupResources`.
 ///
-/// <p>Returns a list of ARNs of the resources that are members of a specified resource group.</p>
+/// <p>Returns a list of Amazon resource names (ARNs) of the resources that are members of a specified resource group.</p>
 /// <p><b>Minimum permissions</b></p>
 /// <p>To run this command, you must have the following permissions:</p>
 /// <ul>
@@ -149,17 +149,17 @@ impl ListGroupResourcesFluentBuilder {
     pub fn get_group_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_group_name()
     }
-    /// <p>The name or the ARN of the resource group</p>
+    /// <p>The name or the Amazon resource name (ARN) of the resource group.</p>
     pub fn group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.group(input.into());
         self
     }
-    /// <p>The name or the ARN of the resource group</p>
+    /// <p>The name or the Amazon resource name (ARN) of the resource group.</p>
     pub fn set_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_group(input);
         self
     }
-    /// <p>The name or the ARN of the resource group</p>
+    /// <p>The name or the Amazon resource name (ARN) of the resource group.</p>
     pub fn get_group(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_group()
     }

@@ -12,9 +12,9 @@ pub struct PolicyItem {
     /// <p>The type of the policy. This is one of the following values:</p>
     /// <ul>
     /// <li>
-    /// <p><code>static</code></p></li>
+    /// <p><code>STATIC</code></p></li>
     /// <li>
-    /// <p><code>templateLinked</code></p></li>
+    /// <p><code>TEMPLATE_LINKED</code></p></li>
     /// </ul>
     pub policy_type: crate::types::PolicyType,
     /// <p>The principal associated with the policy.</p>
@@ -46,9 +46,9 @@ impl PolicyItem {
     /// <p>The type of the policy. This is one of the following values:</p>
     /// <ul>
     /// <li>
-    /// <p><code>static</code></p></li>
+    /// <p><code>STATIC</code></p></li>
     /// <li>
-    /// <p><code>templateLinked</code></p></li>
+    /// <p><code>TEMPLATE_LINKED</code></p></li>
     /// </ul>
     pub fn policy_type(&self) -> &crate::types::PolicyType {
         &self.policy_type
@@ -140,9 +140,9 @@ impl PolicyItemBuilder {
     /// <p>The type of the policy. This is one of the following values:</p>
     /// <ul>
     /// <li>
-    /// <p><code>static</code></p></li>
+    /// <p><code>STATIC</code></p></li>
     /// <li>
-    /// <p><code>templateLinked</code></p></li>
+    /// <p><code>TEMPLATE_LINKED</code></p></li>
     /// </ul>
     /// This field is required.
     pub fn policy_type(mut self, input: crate::types::PolicyType) -> Self {
@@ -152,9 +152,9 @@ impl PolicyItemBuilder {
     /// <p>The type of the policy. This is one of the following values:</p>
     /// <ul>
     /// <li>
-    /// <p><code>static</code></p></li>
+    /// <p><code>STATIC</code></p></li>
     /// <li>
-    /// <p><code>templateLinked</code></p></li>
+    /// <p><code>TEMPLATE_LINKED</code></p></li>
     /// </ul>
     pub fn set_policy_type(mut self, input: ::std::option::Option<crate::types::PolicyType>) -> Self {
         self.policy_type = input;
@@ -163,9 +163,9 @@ impl PolicyItemBuilder {
     /// <p>The type of the policy. This is one of the following values:</p>
     /// <ul>
     /// <li>
-    /// <p><code>static</code></p></li>
+    /// <p><code>STATIC</code></p></li>
     /// <li>
-    /// <p><code>templateLinked</code></p></li>
+    /// <p><code>TEMPLATE_LINKED</code></p></li>
     /// </ul>
     pub fn get_policy_type(&self) -> &::std::option::Option<crate::types::PolicyType> {
         &self.policy_type

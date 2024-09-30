@@ -110,3 +110,5 @@ pub(crate) mod shape_db_parameter_group_summary;
 pub(crate) mod shape_influx_dbv2_parameters;
 
 pub(crate) mod shape_s3_configuration;
+
+pub(crate) mod shape_duration;

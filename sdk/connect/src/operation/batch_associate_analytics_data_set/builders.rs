@@ -22,7 +22,6 @@ impl crate::operation::batch_associate_analytics_data_set::builders::BatchAssoci
 }
 /// Fluent builder constructing a request to `BatchAssociateAnalyticsDataSet`.
 ///
-/// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
 /// <p>Associates a list of analytics datasets for a given Amazon Connect instance to a target account. You can associate multiple datasets in a single call.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct BatchAssociateAnalyticsDataSetFluentBuilder {

@@ -3,13 +3,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TagInput {
-    /// <p>The ARN of the resource group to which to add tags.</p>
+    /// <p>The Amazon resource name (ARN) of the resource group to which to add tags.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The tags to add to the specified resource group. A tag is a string-to-string map of key-value pairs.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl TagInput {
-    /// <p>The ARN of the resource group to which to add tags.</p>
+    /// <p>The Amazon resource name (ARN) of the resource group to which to add tags.</p>
     pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
@@ -33,18 +33,18 @@ pub struct TagInputBuilder {
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl TagInputBuilder {
-    /// <p>The ARN of the resource group to which to add tags.</p>
+    /// <p>The Amazon resource name (ARN) of the resource group to which to add tags.</p>
     /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the resource group to which to add tags.</p>
+    /// <p>The Amazon resource name (ARN) of the resource group to which to add tags.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
-    /// <p>The ARN of the resource group to which to add tags.</p>
+    /// <p>The Amazon resource name (ARN) of the resource group to which to add tags.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }

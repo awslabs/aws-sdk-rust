@@ -68,6 +68,37 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::cancel_tag_sync_task::CancelTagSyncTaskError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::cancel_tag_sync_task::CancelTagSyncTaskError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::cancel_tag_sync_task::CancelTagSyncTaskError> for Error {
+    fn from(err: crate::operation::cancel_tag_sync_task::CancelTagSyncTaskError) -> Self {
+        match err {
+            crate::operation::cancel_tag_sync_task::CancelTagSyncTaskError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::cancel_tag_sync_task::CancelTagSyncTaskError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::cancel_tag_sync_task::CancelTagSyncTaskError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::cancel_tag_sync_task::CancelTagSyncTaskError::MethodNotAllowedException(inner) => {
+                Error::MethodNotAllowedException(inner)
+            }
+            crate::operation::cancel_tag_sync_task::CancelTagSyncTaskError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::cancel_tag_sync_task::CancelTagSyncTaskError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::cancel_tag_sync_task::CancelTagSyncTaskError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_group::CreateGroupError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -269,6 +300,36 @@ impl From<crate::operation::get_tags::GetTagsError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_tag_sync_task::GetTagSyncTaskError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_tag_sync_task::GetTagSyncTaskError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_tag_sync_task::GetTagSyncTaskError> for Error {
+    fn from(err: crate::operation::get_tag_sync_task::GetTagSyncTaskError) -> Self {
+        match err {
+            crate::operation::get_tag_sync_task::GetTagSyncTaskError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::get_tag_sync_task::GetTagSyncTaskError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::get_tag_sync_task::GetTagSyncTaskError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::get_tag_sync_task::GetTagSyncTaskError::MethodNotAllowedException(inner) => Error::MethodNotAllowedException(inner),
+            crate::operation::get_tag_sync_task::GetTagSyncTaskError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_tag_sync_task::GetTagSyncTaskError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::get_tag_sync_task::GetTagSyncTaskError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::get_tag_sync_task::GetTagSyncTaskError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::group_resources::GroupResourcesError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -293,6 +354,38 @@ impl From<crate::operation::group_resources::GroupResourcesError> for Error {
             crate::operation::group_resources::GroupResourcesError::NotFoundException(inner) => Error::NotFoundException(inner),
             crate::operation::group_resources::GroupResourcesError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::group_resources::GroupResourcesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_grouping_statuses::ListGroupingStatusesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_grouping_statuses::ListGroupingStatusesError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_grouping_statuses::ListGroupingStatusesError> for Error {
+    fn from(err: crate::operation::list_grouping_statuses::ListGroupingStatusesError) -> Self {
+        match err {
+            crate::operation::list_grouping_statuses::ListGroupingStatusesError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::list_grouping_statuses::ListGroupingStatusesError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::list_grouping_statuses::ListGroupingStatusesError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::list_grouping_statuses::ListGroupingStatusesError::MethodNotAllowedException(inner) => {
+                Error::MethodNotAllowedException(inner)
+            }
+            crate::operation::list_grouping_statuses::ListGroupingStatusesError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::list_grouping_statuses::ListGroupingStatusesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -353,6 +446,35 @@ impl From<crate::operation::list_groups::ListGroupsError> for Error {
             crate::operation::list_groups::ListGroupsError::MethodNotAllowedException(inner) => Error::MethodNotAllowedException(inner),
             crate::operation::list_groups::ListGroupsError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::list_groups::ListGroupsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_tag_sync_tasks::ListTagSyncTasksError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_tag_sync_tasks::ListTagSyncTasksError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_tag_sync_tasks::ListTagSyncTasksError> for Error {
+    fn from(err: crate::operation::list_tag_sync_tasks::ListTagSyncTasksError) -> Self {
+        match err {
+            crate::operation::list_tag_sync_tasks::ListTagSyncTasksError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::list_tag_sync_tasks::ListTagSyncTasksError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::list_tag_sync_tasks::ListTagSyncTasksError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::list_tag_sync_tasks::ListTagSyncTasksError::MethodNotAllowedException(inner) => Error::MethodNotAllowedException(inner),
+            crate::operation::list_tag_sync_tasks::ListTagSyncTasksError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::list_tag_sync_tasks::ListTagSyncTasksError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::list_tag_sync_tasks::ListTagSyncTasksError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -417,6 +539,36 @@ impl From<crate::operation::search_resources::SearchResourcesError> for Error {
             crate::operation::search_resources::SearchResourcesError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::search_resources::SearchResourcesError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
             crate::operation::search_resources::SearchResourcesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_tag_sync_task::StartTagSyncTaskError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_tag_sync_task::StartTagSyncTaskError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::start_tag_sync_task::StartTagSyncTaskError> for Error {
+    fn from(err: crate::operation::start_tag_sync_task::StartTagSyncTaskError) -> Self {
+        match err {
+            crate::operation::start_tag_sync_task::StartTagSyncTaskError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::start_tag_sync_task::StartTagSyncTaskError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::start_tag_sync_task::StartTagSyncTaskError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::start_tag_sync_task::StartTagSyncTaskError::MethodNotAllowedException(inner) => Error::MethodNotAllowedException(inner),
+            crate::operation::start_tag_sync_task::StartTagSyncTaskError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::start_tag_sync_task::StartTagSyncTaskError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::start_tag_sync_task::StartTagSyncTaskError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::start_tag_sync_task::StartTagSyncTaskError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

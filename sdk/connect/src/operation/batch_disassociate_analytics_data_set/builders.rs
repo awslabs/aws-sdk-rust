@@ -22,7 +22,6 @@ impl crate::operation::batch_disassociate_analytics_data_set::builders::BatchDis
 }
 /// Fluent builder constructing a request to `BatchDisassociateAnalyticsDataSet`.
 ///
-/// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
 /// <p>Removes a list of analytics datasets associated with a given Amazon Connect instance. You can disassociate multiple datasets in a single call.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct BatchDisassociateAnalyticsDataSetFluentBuilder {

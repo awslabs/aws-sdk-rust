@@ -9,6 +9,12 @@ pub struct UpdateDbInstanceInput {
     pub log_delivery_configuration: ::std::option::Option<crate::types::LogDeliveryConfiguration>,
     /// <p>The id of the DB parameter group to assign to your DB instance. DB parameter groups specify how the database is configured. For example, DB parameter groups can specify the limit for query concurrency.</p>
     pub db_parameter_group_identifier: ::std::option::Option<::std::string::String>,
+    /// <p>The port number on which InfluxDB accepts connections.</p>
+    /// <p>If you change the Port value, your database restarts immediately.</p>
+    /// <p>Valid Values: 1024-65535</p>
+    /// <p>Default: 8086</p>
+    /// <p>Constraints: The value can't be 2375-2376, 7788-7799, 8090, or 51678-51680</p>
+    pub port: ::std::option::Option<i32>,
     /// <p>The Timestream for InfluxDB DB instance type to run InfluxDB on.</p>
     pub db_instance_type: ::std::option::Option<crate::types::DbInstanceType>,
     /// <p>Specifies whether the DB instance will be deployed as a standalone instance or with a Multi-AZ standby for high availability.</p>
@@ -26,6 +32,14 @@ impl UpdateDbInstanceInput {
     /// <p>The id of the DB parameter group to assign to your DB instance. DB parameter groups specify how the database is configured. For example, DB parameter groups can specify the limit for query concurrency.</p>
     pub fn db_parameter_group_identifier(&self) -> ::std::option::Option<&str> {
         self.db_parameter_group_identifier.as_deref()
+    }
+    /// <p>The port number on which InfluxDB accepts connections.</p>
+    /// <p>If you change the Port value, your database restarts immediately.</p>
+    /// <p>Valid Values: 1024-65535</p>
+    /// <p>Default: 8086</p>
+    /// <p>Constraints: The value can't be 2375-2376, 7788-7799, 8090, or 51678-51680</p>
+    pub fn port(&self) -> ::std::option::Option<i32> {
+        self.port
     }
     /// <p>The Timestream for InfluxDB DB instance type to run InfluxDB on.</p>
     pub fn db_instance_type(&self) -> ::std::option::Option<&crate::types::DbInstanceType> {
@@ -50,6 +64,7 @@ pub struct UpdateDbInstanceInputBuilder {
     pub(crate) identifier: ::std::option::Option<::std::string::String>,
     pub(crate) log_delivery_configuration: ::std::option::Option<crate::types::LogDeliveryConfiguration>,
     pub(crate) db_parameter_group_identifier: ::std::option::Option<::std::string::String>,
+    pub(crate) port: ::std::option::Option<i32>,
     pub(crate) db_instance_type: ::std::option::Option<crate::types::DbInstanceType>,
     pub(crate) deployment_type: ::std::option::Option<crate::types::DeploymentType>,
 }
@@ -97,6 +112,32 @@ impl UpdateDbInstanceInputBuilder {
     pub fn get_db_parameter_group_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.db_parameter_group_identifier
     }
+    /// <p>The port number on which InfluxDB accepts connections.</p>
+    /// <p>If you change the Port value, your database restarts immediately.</p>
+    /// <p>Valid Values: 1024-65535</p>
+    /// <p>Default: 8086</p>
+    /// <p>Constraints: The value can't be 2375-2376, 7788-7799, 8090, or 51678-51680</p>
+    pub fn port(mut self, input: i32) -> Self {
+        self.port = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The port number on which InfluxDB accepts connections.</p>
+    /// <p>If you change the Port value, your database restarts immediately.</p>
+    /// <p>Valid Values: 1024-65535</p>
+    /// <p>Default: 8086</p>
+    /// <p>Constraints: The value can't be 2375-2376, 7788-7799, 8090, or 51678-51680</p>
+    pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.port = input;
+        self
+    }
+    /// <p>The port number on which InfluxDB accepts connections.</p>
+    /// <p>If you change the Port value, your database restarts immediately.</p>
+    /// <p>Valid Values: 1024-65535</p>
+    /// <p>Default: 8086</p>
+    /// <p>Constraints: The value can't be 2375-2376, 7788-7799, 8090, or 51678-51680</p>
+    pub fn get_port(&self) -> &::std::option::Option<i32> {
+        &self.port
+    }
     /// <p>The Timestream for InfluxDB DB instance type to run InfluxDB on.</p>
     pub fn db_instance_type(mut self, input: crate::types::DbInstanceType) -> Self {
         self.db_instance_type = ::std::option::Option::Some(input);
@@ -133,6 +174,7 @@ impl UpdateDbInstanceInputBuilder {
             identifier: self.identifier,
             log_delivery_configuration: self.log_delivery_configuration,
             db_parameter_group_identifier: self.db_parameter_group_identifier,
+            port: self.port,
             db_instance_type: self.db_instance_type,
             deployment_type: self.deployment_type,
         })

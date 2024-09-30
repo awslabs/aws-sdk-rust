@@ -24,6 +24,87 @@ pub struct InfluxDBv2Parameters {
     /// <p>Disable the HTTP /metrics endpoint which exposes <a href="https://docs.influxdata.com/influxdb/v2/reference/internals/metrics/">internal InfluxDB metrics</a>.</p>
     /// <p>Default: false</p>
     pub metrics_disabled: ::std::option::Option<bool>,
+    /// <p>Maximum duration the server should keep established connections alive while waiting for new requests. Set to 0 for no timeout.</p>
+    /// <p>Default: 3 minutes</p>
+    pub http_idle_timeout: ::std::option::Option<crate::types::Duration>,
+    /// <p>Maximum duration the server should try to read HTTP headers for new requests. Set to 0 for no timeout.</p>
+    /// <p>Default: 10 seconds</p>
+    pub http_read_header_timeout: ::std::option::Option<crate::types::Duration>,
+    /// <p>Maximum duration the server should try to read the entirety of new requests. Set to 0 for no timeout.</p>
+    /// <p>Default: 0</p>
+    pub http_read_timeout: ::std::option::Option<crate::types::Duration>,
+    /// <p>Maximum duration the server should spend processing and responding to write requests. Set to 0 for no timeout.</p>
+    /// <p>Default: 0</p>
+    pub http_write_timeout: ::std::option::Option<crate::types::Duration>,
+    /// <p>Maximum number of group by time buckets a SELECT statement can create. 0 allows an unlimited number of buckets.</p>
+    /// <p>Default: 0</p>
+    pub influxql_max_select_buckets: ::std::option::Option<i64>,
+    /// <p>Maximum number of points a SELECT statement can process. 0 allows an unlimited number of points. InfluxDB checks the point count every second (so queries exceeding the maximum aren’t immediately aborted).</p>
+    /// <p>Default: 0</p>
+    pub influxql_max_select_point: ::std::option::Option<i64>,
+    /// <p>Maximum number of series a SELECT statement can return. 0 allows an unlimited number of series.</p>
+    /// <p>Default: 0</p>
+    pub influxql_max_select_series: ::std::option::Option<i64>,
+    /// <p>Disable the /debug/pprof HTTP endpoint. This endpoint provides runtime profiling data and can be helpful when debugging.</p>
+    /// <p>Default: false</p>
+    pub pprof_disabled: ::std::option::Option<bool>,
+    /// <p>Initial bytes of memory allocated for a query.</p>
+    /// <p>Default: 0</p>
+    pub query_initial_memory_bytes: ::std::option::Option<i64>,
+    /// <p>Maximum number of queries allowed in execution queue. When queue limit is reached, new queries are rejected. Setting to 0 allows an unlimited number of queries in the queue.</p>
+    /// <p>Default: 0</p>
+    pub query_max_memory_bytes: ::std::option::Option<i64>,
+    /// <p>Maximum bytes of memory allowed for a single query. Must be greater or equal to queryInitialMemoryBytes.</p>
+    /// <p>Default: 0</p>
+    pub query_memory_bytes: ::std::option::Option<i64>,
+    /// <p>Specifies the Time to Live (TTL) in minutes for newly created user sessions.</p>
+    /// <p>Default: 60</p>
+    pub session_length: ::std::option::Option<i32>,
+    /// <p>Disables automatically extending a user’s session TTL on each request. By default, every request sets the session’s expiration time to five minutes from now. When disabled, sessions expire after the specified <a href="https://docs.influxdata.com/influxdb/v2/reference/config-options/#session-length">session length</a> and the user is redirected to the login page, even if recently active.</p>
+    /// <p>Default: false</p>
+    pub session_renew_disabled: ::std::option::Option<bool>,
+    /// <p>Maximum size (in bytes) a shard’s cache can reach before it starts rejecting writes. Must be greater than storageCacheSnapShotMemorySize and lower than instance’s total memory capacity. We recommend setting it to below 15% of the total memory capacity.</p>
+    /// <p>Default: 1073741824</p>
+    pub storage_cache_max_memory_size: ::std::option::Option<i64>,
+    /// <p>Size (in bytes) at which the storage engine will snapshot the cache and write it to a TSM file to make more memory available. Must not be greater than storageCacheMaxMemorySize.</p>
+    /// <p>Default: 26214400</p>
+    pub storage_cache_snapshot_memory_size: ::std::option::Option<i64>,
+    /// <p>Duration at which the storage engine will snapshot the cache and write it to a new TSM file if the shard hasn’t received writes or deletes.</p>
+    /// <p>Default: 10 minutes</p>
+    pub storage_cache_snapshot_write_cold_duration: ::std::option::Option<crate::types::Duration>,
+    /// <p>Duration at which the storage engine will compact all TSM files in a shard if it hasn't received writes or deletes.</p>
+    /// <p>Default: 4 hours</p>
+    pub storage_compact_full_write_cold_duration: ::std::option::Option<crate::types::Duration>,
+    /// <p>Rate limit (in bytes per second) that TSM compactions can write to disk.</p>
+    /// <p>Default: 50331648</p>
+    pub storage_compact_throughput_burst: ::std::option::Option<i64>,
+    /// <p>Maximum number of full and level compactions that can run concurrently. A value of 0 results in 50% of runtime.GOMAXPROCS(0) used at runtime. Any number greater than zero limits compactions to that value. This setting does not apply to cache snapshotting.</p>
+    /// <p>Default: 0</p>
+    pub storage_max_concurrent_compactions: ::std::option::Option<i32>,
+    /// <p>Size (in bytes) at which an index write-ahead log (WAL) file will compact into an index file. Lower sizes will cause log files to be compacted more quickly and result in lower heap usage at the expense of write throughput.</p>
+    /// <p>Default: 1048576</p>
+    pub storage_max_index_log_file_size: ::std::option::Option<i64>,
+    /// <p>Skip field size validation on incoming write requests.</p>
+    /// <p>Default: false</p>
+    pub storage_no_validate_field_size: ::std::option::Option<bool>,
+    /// <p>Interval of retention policy enforcement checks. Must be greater than 0.</p>
+    /// <p>Default: 30 minutes</p>
+    pub storage_retention_check_interval: ::std::option::Option<crate::types::Duration>,
+    /// <p>Maximum number of snapshot compactions that can run concurrently across all series partitions in a database.</p>
+    /// <p>Default: 0</p>
+    pub storage_series_file_max_concurrent_snapshot_compactions: ::std::option::Option<i32>,
+    /// <p>Size of the internal cache used in the TSI index to store previously calculated series results. Cached results are returned quickly rather than needing to be recalculated when a subsequent query with the same tag key/value predicate is executed. Setting this value to 0 will disable the cache and may decrease query performance.</p>
+    /// <p>Default: 100</p>
+    pub storage_series_id_set_cache_size: ::std::option::Option<i64>,
+    /// <p>Maximum number writes to the WAL directory to attempt at the same time. Setting this value to 0 results in number of processing units available x2.</p>
+    /// <p>Default: 0</p>
+    pub storage_wal_max_concurrent_writes: ::std::option::Option<i32>,
+    /// <p>Maximum amount of time a write request to the WAL directory will wait when the <a href="https://docs.influxdata.com/influxdb/v2/reference/config-options/#storage-wal-max-concurrent-writes">maximum number of concurrent active writes to the WAL directory has been met</a>. Set to 0 to disable the timeout.</p>
+    /// <p>Default: 10 minutes</p>
+    pub storage_wal_max_write_delay: ::std::option::Option<crate::types::Duration>,
+    /// <p>Disable the InfluxDB user interface (UI). The UI is enabled by default.</p>
+    /// <p>Default: false</p>
+    pub ui_disabled: ::std::option::Option<bool>,
 }
 impl InfluxDBv2Parameters {
     /// <p>Include option to show detailed logs for Flux queries.</p>
@@ -60,6 +141,141 @@ impl InfluxDBv2Parameters {
     pub fn metrics_disabled(&self) -> ::std::option::Option<bool> {
         self.metrics_disabled
     }
+    /// <p>Maximum duration the server should keep established connections alive while waiting for new requests. Set to 0 for no timeout.</p>
+    /// <p>Default: 3 minutes</p>
+    pub fn http_idle_timeout(&self) -> ::std::option::Option<&crate::types::Duration> {
+        self.http_idle_timeout.as_ref()
+    }
+    /// <p>Maximum duration the server should try to read HTTP headers for new requests. Set to 0 for no timeout.</p>
+    /// <p>Default: 10 seconds</p>
+    pub fn http_read_header_timeout(&self) -> ::std::option::Option<&crate::types::Duration> {
+        self.http_read_header_timeout.as_ref()
+    }
+    /// <p>Maximum duration the server should try to read the entirety of new requests. Set to 0 for no timeout.</p>
+    /// <p>Default: 0</p>
+    pub fn http_read_timeout(&self) -> ::std::option::Option<&crate::types::Duration> {
+        self.http_read_timeout.as_ref()
+    }
+    /// <p>Maximum duration the server should spend processing and responding to write requests. Set to 0 for no timeout.</p>
+    /// <p>Default: 0</p>
+    pub fn http_write_timeout(&self) -> ::std::option::Option<&crate::types::Duration> {
+        self.http_write_timeout.as_ref()
+    }
+    /// <p>Maximum number of group by time buckets a SELECT statement can create. 0 allows an unlimited number of buckets.</p>
+    /// <p>Default: 0</p>
+    pub fn influxql_max_select_buckets(&self) -> ::std::option::Option<i64> {
+        self.influxql_max_select_buckets
+    }
+    /// <p>Maximum number of points a SELECT statement can process. 0 allows an unlimited number of points. InfluxDB checks the point count every second (so queries exceeding the maximum aren’t immediately aborted).</p>
+    /// <p>Default: 0</p>
+    pub fn influxql_max_select_point(&self) -> ::std::option::Option<i64> {
+        self.influxql_max_select_point
+    }
+    /// <p>Maximum number of series a SELECT statement can return. 0 allows an unlimited number of series.</p>
+    /// <p>Default: 0</p>
+    pub fn influxql_max_select_series(&self) -> ::std::option::Option<i64> {
+        self.influxql_max_select_series
+    }
+    /// <p>Disable the /debug/pprof HTTP endpoint. This endpoint provides runtime profiling data and can be helpful when debugging.</p>
+    /// <p>Default: false</p>
+    pub fn pprof_disabled(&self) -> ::std::option::Option<bool> {
+        self.pprof_disabled
+    }
+    /// <p>Initial bytes of memory allocated for a query.</p>
+    /// <p>Default: 0</p>
+    pub fn query_initial_memory_bytes(&self) -> ::std::option::Option<i64> {
+        self.query_initial_memory_bytes
+    }
+    /// <p>Maximum number of queries allowed in execution queue. When queue limit is reached, new queries are rejected. Setting to 0 allows an unlimited number of queries in the queue.</p>
+    /// <p>Default: 0</p>
+    pub fn query_max_memory_bytes(&self) -> ::std::option::Option<i64> {
+        self.query_max_memory_bytes
+    }
+    /// <p>Maximum bytes of memory allowed for a single query. Must be greater or equal to queryInitialMemoryBytes.</p>
+    /// <p>Default: 0</p>
+    pub fn query_memory_bytes(&self) -> ::std::option::Option<i64> {
+        self.query_memory_bytes
+    }
+    /// <p>Specifies the Time to Live (TTL) in minutes for newly created user sessions.</p>
+    /// <p>Default: 60</p>
+    pub fn session_length(&self) -> ::std::option::Option<i32> {
+        self.session_length
+    }
+    /// <p>Disables automatically extending a user’s session TTL on each request. By default, every request sets the session’s expiration time to five minutes from now. When disabled, sessions expire after the specified <a href="https://docs.influxdata.com/influxdb/v2/reference/config-options/#session-length">session length</a> and the user is redirected to the login page, even if recently active.</p>
+    /// <p>Default: false</p>
+    pub fn session_renew_disabled(&self) -> ::std::option::Option<bool> {
+        self.session_renew_disabled
+    }
+    /// <p>Maximum size (in bytes) a shard’s cache can reach before it starts rejecting writes. Must be greater than storageCacheSnapShotMemorySize and lower than instance’s total memory capacity. We recommend setting it to below 15% of the total memory capacity.</p>
+    /// <p>Default: 1073741824</p>
+    pub fn storage_cache_max_memory_size(&self) -> ::std::option::Option<i64> {
+        self.storage_cache_max_memory_size
+    }
+    /// <p>Size (in bytes) at which the storage engine will snapshot the cache and write it to a TSM file to make more memory available. Must not be greater than storageCacheMaxMemorySize.</p>
+    /// <p>Default: 26214400</p>
+    pub fn storage_cache_snapshot_memory_size(&self) -> ::std::option::Option<i64> {
+        self.storage_cache_snapshot_memory_size
+    }
+    /// <p>Duration at which the storage engine will snapshot the cache and write it to a new TSM file if the shard hasn’t received writes or deletes.</p>
+    /// <p>Default: 10 minutes</p>
+    pub fn storage_cache_snapshot_write_cold_duration(&self) -> ::std::option::Option<&crate::types::Duration> {
+        self.storage_cache_snapshot_write_cold_duration.as_ref()
+    }
+    /// <p>Duration at which the storage engine will compact all TSM files in a shard if it hasn't received writes or deletes.</p>
+    /// <p>Default: 4 hours</p>
+    pub fn storage_compact_full_write_cold_duration(&self) -> ::std::option::Option<&crate::types::Duration> {
+        self.storage_compact_full_write_cold_duration.as_ref()
+    }
+    /// <p>Rate limit (in bytes per second) that TSM compactions can write to disk.</p>
+    /// <p>Default: 50331648</p>
+    pub fn storage_compact_throughput_burst(&self) -> ::std::option::Option<i64> {
+        self.storage_compact_throughput_burst
+    }
+    /// <p>Maximum number of full and level compactions that can run concurrently. A value of 0 results in 50% of runtime.GOMAXPROCS(0) used at runtime. Any number greater than zero limits compactions to that value. This setting does not apply to cache snapshotting.</p>
+    /// <p>Default: 0</p>
+    pub fn storage_max_concurrent_compactions(&self) -> ::std::option::Option<i32> {
+        self.storage_max_concurrent_compactions
+    }
+    /// <p>Size (in bytes) at which an index write-ahead log (WAL) file will compact into an index file. Lower sizes will cause log files to be compacted more quickly and result in lower heap usage at the expense of write throughput.</p>
+    /// <p>Default: 1048576</p>
+    pub fn storage_max_index_log_file_size(&self) -> ::std::option::Option<i64> {
+        self.storage_max_index_log_file_size
+    }
+    /// <p>Skip field size validation on incoming write requests.</p>
+    /// <p>Default: false</p>
+    pub fn storage_no_validate_field_size(&self) -> ::std::option::Option<bool> {
+        self.storage_no_validate_field_size
+    }
+    /// <p>Interval of retention policy enforcement checks. Must be greater than 0.</p>
+    /// <p>Default: 30 minutes</p>
+    pub fn storage_retention_check_interval(&self) -> ::std::option::Option<&crate::types::Duration> {
+        self.storage_retention_check_interval.as_ref()
+    }
+    /// <p>Maximum number of snapshot compactions that can run concurrently across all series partitions in a database.</p>
+    /// <p>Default: 0</p>
+    pub fn storage_series_file_max_concurrent_snapshot_compactions(&self) -> ::std::option::Option<i32> {
+        self.storage_series_file_max_concurrent_snapshot_compactions
+    }
+    /// <p>Size of the internal cache used in the TSI index to store previously calculated series results. Cached results are returned quickly rather than needing to be recalculated when a subsequent query with the same tag key/value predicate is executed. Setting this value to 0 will disable the cache and may decrease query performance.</p>
+    /// <p>Default: 100</p>
+    pub fn storage_series_id_set_cache_size(&self) -> ::std::option::Option<i64> {
+        self.storage_series_id_set_cache_size
+    }
+    /// <p>Maximum number writes to the WAL directory to attempt at the same time. Setting this value to 0 results in number of processing units available x2.</p>
+    /// <p>Default: 0</p>
+    pub fn storage_wal_max_concurrent_writes(&self) -> ::std::option::Option<i32> {
+        self.storage_wal_max_concurrent_writes
+    }
+    /// <p>Maximum amount of time a write request to the WAL directory will wait when the <a href="https://docs.influxdata.com/influxdb/v2/reference/config-options/#storage-wal-max-concurrent-writes">maximum number of concurrent active writes to the WAL directory has been met</a>. Set to 0 to disable the timeout.</p>
+    /// <p>Default: 10 minutes</p>
+    pub fn storage_wal_max_write_delay(&self) -> ::std::option::Option<&crate::types::Duration> {
+        self.storage_wal_max_write_delay.as_ref()
+    }
+    /// <p>Disable the InfluxDB user interface (UI). The UI is enabled by default.</p>
+    /// <p>Default: false</p>
+    pub fn ui_disabled(&self) -> ::std::option::Option<bool> {
+        self.ui_disabled
+    }
 }
 impl InfluxDBv2Parameters {
     /// Creates a new builder-style object to manufacture [`InfluxDBv2Parameters`](crate::types::InfluxDBv2Parameters).
@@ -79,6 +295,33 @@ pub struct InfluxDBv2ParametersBuilder {
     pub(crate) query_queue_size: ::std::option::Option<i32>,
     pub(crate) tracing_type: ::std::option::Option<crate::types::TracingType>,
     pub(crate) metrics_disabled: ::std::option::Option<bool>,
+    pub(crate) http_idle_timeout: ::std::option::Option<crate::types::Duration>,
+    pub(crate) http_read_header_timeout: ::std::option::Option<crate::types::Duration>,
+    pub(crate) http_read_timeout: ::std::option::Option<crate::types::Duration>,
+    pub(crate) http_write_timeout: ::std::option::Option<crate::types::Duration>,
+    pub(crate) influxql_max_select_buckets: ::std::option::Option<i64>,
+    pub(crate) influxql_max_select_point: ::std::option::Option<i64>,
+    pub(crate) influxql_max_select_series: ::std::option::Option<i64>,
+    pub(crate) pprof_disabled: ::std::option::Option<bool>,
+    pub(crate) query_initial_memory_bytes: ::std::option::Option<i64>,
+    pub(crate) query_max_memory_bytes: ::std::option::Option<i64>,
+    pub(crate) query_memory_bytes: ::std::option::Option<i64>,
+    pub(crate) session_length: ::std::option::Option<i32>,
+    pub(crate) session_renew_disabled: ::std::option::Option<bool>,
+    pub(crate) storage_cache_max_memory_size: ::std::option::Option<i64>,
+    pub(crate) storage_cache_snapshot_memory_size: ::std::option::Option<i64>,
+    pub(crate) storage_cache_snapshot_write_cold_duration: ::std::option::Option<crate::types::Duration>,
+    pub(crate) storage_compact_full_write_cold_duration: ::std::option::Option<crate::types::Duration>,
+    pub(crate) storage_compact_throughput_burst: ::std::option::Option<i64>,
+    pub(crate) storage_max_concurrent_compactions: ::std::option::Option<i32>,
+    pub(crate) storage_max_index_log_file_size: ::std::option::Option<i64>,
+    pub(crate) storage_no_validate_field_size: ::std::option::Option<bool>,
+    pub(crate) storage_retention_check_interval: ::std::option::Option<crate::types::Duration>,
+    pub(crate) storage_series_file_max_concurrent_snapshot_compactions: ::std::option::Option<i32>,
+    pub(crate) storage_series_id_set_cache_size: ::std::option::Option<i64>,
+    pub(crate) storage_wal_max_concurrent_writes: ::std::option::Option<i32>,
+    pub(crate) storage_wal_max_write_delay: ::std::option::Option<crate::types::Duration>,
+    pub(crate) ui_disabled: ::std::option::Option<bool>,
 }
 impl InfluxDBv2ParametersBuilder {
     /// <p>Include option to show detailed logs for Flux queries.</p>
@@ -197,6 +440,465 @@ impl InfluxDBv2ParametersBuilder {
     pub fn get_metrics_disabled(&self) -> &::std::option::Option<bool> {
         &self.metrics_disabled
     }
+    /// <p>Maximum duration the server should keep established connections alive while waiting for new requests. Set to 0 for no timeout.</p>
+    /// <p>Default: 3 minutes</p>
+    pub fn http_idle_timeout(mut self, input: crate::types::Duration) -> Self {
+        self.http_idle_timeout = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Maximum duration the server should keep established connections alive while waiting for new requests. Set to 0 for no timeout.</p>
+    /// <p>Default: 3 minutes</p>
+    pub fn set_http_idle_timeout(mut self, input: ::std::option::Option<crate::types::Duration>) -> Self {
+        self.http_idle_timeout = input;
+        self
+    }
+    /// <p>Maximum duration the server should keep established connections alive while waiting for new requests. Set to 0 for no timeout.</p>
+    /// <p>Default: 3 minutes</p>
+    pub fn get_http_idle_timeout(&self) -> &::std::option::Option<crate::types::Duration> {
+        &self.http_idle_timeout
+    }
+    /// <p>Maximum duration the server should try to read HTTP headers for new requests. Set to 0 for no timeout.</p>
+    /// <p>Default: 10 seconds</p>
+    pub fn http_read_header_timeout(mut self, input: crate::types::Duration) -> Self {
+        self.http_read_header_timeout = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Maximum duration the server should try to read HTTP headers for new requests. Set to 0 for no timeout.</p>
+    /// <p>Default: 10 seconds</p>
+    pub fn set_http_read_header_timeout(mut self, input: ::std::option::Option<crate::types::Duration>) -> Self {
+        self.http_read_header_timeout = input;
+        self
+    }
+    /// <p>Maximum duration the server should try to read HTTP headers for new requests. Set to 0 for no timeout.</p>
+    /// <p>Default: 10 seconds</p>
+    pub fn get_http_read_header_timeout(&self) -> &::std::option::Option<crate::types::Duration> {
+        &self.http_read_header_timeout
+    }
+    /// <p>Maximum duration the server should try to read the entirety of new requests. Set to 0 for no timeout.</p>
+    /// <p>Default: 0</p>
+    pub fn http_read_timeout(mut self, input: crate::types::Duration) -> Self {
+        self.http_read_timeout = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Maximum duration the server should try to read the entirety of new requests. Set to 0 for no timeout.</p>
+    /// <p>Default: 0</p>
+    pub fn set_http_read_timeout(mut self, input: ::std::option::Option<crate::types::Duration>) -> Self {
+        self.http_read_timeout = input;
+        self
+    }
+    /// <p>Maximum duration the server should try to read the entirety of new requests. Set to 0 for no timeout.</p>
+    /// <p>Default: 0</p>
+    pub fn get_http_read_timeout(&self) -> &::std::option::Option<crate::types::Duration> {
+        &self.http_read_timeout
+    }
+    /// <p>Maximum duration the server should spend processing and responding to write requests. Set to 0 for no timeout.</p>
+    /// <p>Default: 0</p>
+    pub fn http_write_timeout(mut self, input: crate::types::Duration) -> Self {
+        self.http_write_timeout = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Maximum duration the server should spend processing and responding to write requests. Set to 0 for no timeout.</p>
+    /// <p>Default: 0</p>
+    pub fn set_http_write_timeout(mut self, input: ::std::option::Option<crate::types::Duration>) -> Self {
+        self.http_write_timeout = input;
+        self
+    }
+    /// <p>Maximum duration the server should spend processing and responding to write requests. Set to 0 for no timeout.</p>
+    /// <p>Default: 0</p>
+    pub fn get_http_write_timeout(&self) -> &::std::option::Option<crate::types::Duration> {
+        &self.http_write_timeout
+    }
+    /// <p>Maximum number of group by time buckets a SELECT statement can create. 0 allows an unlimited number of buckets.</p>
+    /// <p>Default: 0</p>
+    pub fn influxql_max_select_buckets(mut self, input: i64) -> Self {
+        self.influxql_max_select_buckets = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Maximum number of group by time buckets a SELECT statement can create. 0 allows an unlimited number of buckets.</p>
+    /// <p>Default: 0</p>
+    pub fn set_influxql_max_select_buckets(mut self, input: ::std::option::Option<i64>) -> Self {
+        self.influxql_max_select_buckets = input;
+        self
+    }
+    /// <p>Maximum number of group by time buckets a SELECT statement can create. 0 allows an unlimited number of buckets.</p>
+    /// <p>Default: 0</p>
+    pub fn get_influxql_max_select_buckets(&self) -> &::std::option::Option<i64> {
+        &self.influxql_max_select_buckets
+    }
+    /// <p>Maximum number of points a SELECT statement can process. 0 allows an unlimited number of points. InfluxDB checks the point count every second (so queries exceeding the maximum aren’t immediately aborted).</p>
+    /// <p>Default: 0</p>
+    pub fn influxql_max_select_point(mut self, input: i64) -> Self {
+        self.influxql_max_select_point = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Maximum number of points a SELECT statement can process. 0 allows an unlimited number of points. InfluxDB checks the point count every second (so queries exceeding the maximum aren’t immediately aborted).</p>
+    /// <p>Default: 0</p>
+    pub fn set_influxql_max_select_point(mut self, input: ::std::option::Option<i64>) -> Self {
+        self.influxql_max_select_point = input;
+        self
+    }
+    /// <p>Maximum number of points a SELECT statement can process. 0 allows an unlimited number of points. InfluxDB checks the point count every second (so queries exceeding the maximum aren’t immediately aborted).</p>
+    /// <p>Default: 0</p>
+    pub fn get_influxql_max_select_point(&self) -> &::std::option::Option<i64> {
+        &self.influxql_max_select_point
+    }
+    /// <p>Maximum number of series a SELECT statement can return. 0 allows an unlimited number of series.</p>
+    /// <p>Default: 0</p>
+    pub fn influxql_max_select_series(mut self, input: i64) -> Self {
+        self.influxql_max_select_series = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Maximum number of series a SELECT statement can return. 0 allows an unlimited number of series.</p>
+    /// <p>Default: 0</p>
+    pub fn set_influxql_max_select_series(mut self, input: ::std::option::Option<i64>) -> Self {
+        self.influxql_max_select_series = input;
+        self
+    }
+    /// <p>Maximum number of series a SELECT statement can return. 0 allows an unlimited number of series.</p>
+    /// <p>Default: 0</p>
+    pub fn get_influxql_max_select_series(&self) -> &::std::option::Option<i64> {
+        &self.influxql_max_select_series
+    }
+    /// <p>Disable the /debug/pprof HTTP endpoint. This endpoint provides runtime profiling data and can be helpful when debugging.</p>
+    /// <p>Default: false</p>
+    pub fn pprof_disabled(mut self, input: bool) -> Self {
+        self.pprof_disabled = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Disable the /debug/pprof HTTP endpoint. This endpoint provides runtime profiling data and can be helpful when debugging.</p>
+    /// <p>Default: false</p>
+    pub fn set_pprof_disabled(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.pprof_disabled = input;
+        self
+    }
+    /// <p>Disable the /debug/pprof HTTP endpoint. This endpoint provides runtime profiling data and can be helpful when debugging.</p>
+    /// <p>Default: false</p>
+    pub fn get_pprof_disabled(&self) -> &::std::option::Option<bool> {
+        &self.pprof_disabled
+    }
+    /// <p>Initial bytes of memory allocated for a query.</p>
+    /// <p>Default: 0</p>
+    pub fn query_initial_memory_bytes(mut self, input: i64) -> Self {
+        self.query_initial_memory_bytes = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Initial bytes of memory allocated for a query.</p>
+    /// <p>Default: 0</p>
+    pub fn set_query_initial_memory_bytes(mut self, input: ::std::option::Option<i64>) -> Self {
+        self.query_initial_memory_bytes = input;
+        self
+    }
+    /// <p>Initial bytes of memory allocated for a query.</p>
+    /// <p>Default: 0</p>
+    pub fn get_query_initial_memory_bytes(&self) -> &::std::option::Option<i64> {
+        &self.query_initial_memory_bytes
+    }
+    /// <p>Maximum number of queries allowed in execution queue. When queue limit is reached, new queries are rejected. Setting to 0 allows an unlimited number of queries in the queue.</p>
+    /// <p>Default: 0</p>
+    pub fn query_max_memory_bytes(mut self, input: i64) -> Self {
+        self.query_max_memory_bytes = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Maximum number of queries allowed in execution queue. When queue limit is reached, new queries are rejected. Setting to 0 allows an unlimited number of queries in the queue.</p>
+    /// <p>Default: 0</p>
+    pub fn set_query_max_memory_bytes(mut self, input: ::std::option::Option<i64>) -> Self {
+        self.query_max_memory_bytes = input;
+        self
+    }
+    /// <p>Maximum number of queries allowed in execution queue. When queue limit is reached, new queries are rejected. Setting to 0 allows an unlimited number of queries in the queue.</p>
+    /// <p>Default: 0</p>
+    pub fn get_query_max_memory_bytes(&self) -> &::std::option::Option<i64> {
+        &self.query_max_memory_bytes
+    }
+    /// <p>Maximum bytes of memory allowed for a single query. Must be greater or equal to queryInitialMemoryBytes.</p>
+    /// <p>Default: 0</p>
+    pub fn query_memory_bytes(mut self, input: i64) -> Self {
+        self.query_memory_bytes = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Maximum bytes of memory allowed for a single query. Must be greater or equal to queryInitialMemoryBytes.</p>
+    /// <p>Default: 0</p>
+    pub fn set_query_memory_bytes(mut self, input: ::std::option::Option<i64>) -> Self {
+        self.query_memory_bytes = input;
+        self
+    }
+    /// <p>Maximum bytes of memory allowed for a single query. Must be greater or equal to queryInitialMemoryBytes.</p>
+    /// <p>Default: 0</p>
+    pub fn get_query_memory_bytes(&self) -> &::std::option::Option<i64> {
+        &self.query_memory_bytes
+    }
+    /// <p>Specifies the Time to Live (TTL) in minutes for newly created user sessions.</p>
+    /// <p>Default: 60</p>
+    pub fn session_length(mut self, input: i32) -> Self {
+        self.session_length = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies the Time to Live (TTL) in minutes for newly created user sessions.</p>
+    /// <p>Default: 60</p>
+    pub fn set_session_length(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.session_length = input;
+        self
+    }
+    /// <p>Specifies the Time to Live (TTL) in minutes for newly created user sessions.</p>
+    /// <p>Default: 60</p>
+    pub fn get_session_length(&self) -> &::std::option::Option<i32> {
+        &self.session_length
+    }
+    /// <p>Disables automatically extending a user’s session TTL on each request. By default, every request sets the session’s expiration time to five minutes from now. When disabled, sessions expire after the specified <a href="https://docs.influxdata.com/influxdb/v2/reference/config-options/#session-length">session length</a> and the user is redirected to the login page, even if recently active.</p>
+    /// <p>Default: false</p>
+    pub fn session_renew_disabled(mut self, input: bool) -> Self {
+        self.session_renew_disabled = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Disables automatically extending a user’s session TTL on each request. By default, every request sets the session’s expiration time to five minutes from now. When disabled, sessions expire after the specified <a href="https://docs.influxdata.com/influxdb/v2/reference/config-options/#session-length">session length</a> and the user is redirected to the login page, even if recently active.</p>
+    /// <p>Default: false</p>
+    pub fn set_session_renew_disabled(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.session_renew_disabled = input;
+        self
+    }
+    /// <p>Disables automatically extending a user’s session TTL on each request. By default, every request sets the session’s expiration time to five minutes from now. When disabled, sessions expire after the specified <a href="https://docs.influxdata.com/influxdb/v2/reference/config-options/#session-length">session length</a> and the user is redirected to the login page, even if recently active.</p>
+    /// <p>Default: false</p>
+    pub fn get_session_renew_disabled(&self) -> &::std::option::Option<bool> {
+        &self.session_renew_disabled
+    }
+    /// <p>Maximum size (in bytes) a shard’s cache can reach before it starts rejecting writes. Must be greater than storageCacheSnapShotMemorySize and lower than instance’s total memory capacity. We recommend setting it to below 15% of the total memory capacity.</p>
+    /// <p>Default: 1073741824</p>
+    pub fn storage_cache_max_memory_size(mut self, input: i64) -> Self {
+        self.storage_cache_max_memory_size = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Maximum size (in bytes) a shard’s cache can reach before it starts rejecting writes. Must be greater than storageCacheSnapShotMemorySize and lower than instance’s total memory capacity. We recommend setting it to below 15% of the total memory capacity.</p>
+    /// <p>Default: 1073741824</p>
+    pub fn set_storage_cache_max_memory_size(mut self, input: ::std::option::Option<i64>) -> Self {
+        self.storage_cache_max_memory_size = input;
+        self
+    }
+    /// <p>Maximum size (in bytes) a shard’s cache can reach before it starts rejecting writes. Must be greater than storageCacheSnapShotMemorySize and lower than instance’s total memory capacity. We recommend setting it to below 15% of the total memory capacity.</p>
+    /// <p>Default: 1073741824</p>
+    pub fn get_storage_cache_max_memory_size(&self) -> &::std::option::Option<i64> {
+        &self.storage_cache_max_memory_size
+    }
+    /// <p>Size (in bytes) at which the storage engine will snapshot the cache and write it to a TSM file to make more memory available. Must not be greater than storageCacheMaxMemorySize.</p>
+    /// <p>Default: 26214400</p>
+    pub fn storage_cache_snapshot_memory_size(mut self, input: i64) -> Self {
+        self.storage_cache_snapshot_memory_size = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Size (in bytes) at which the storage engine will snapshot the cache and write it to a TSM file to make more memory available. Must not be greater than storageCacheMaxMemorySize.</p>
+    /// <p>Default: 26214400</p>
+    pub fn set_storage_cache_snapshot_memory_size(mut self, input: ::std::option::Option<i64>) -> Self {
+        self.storage_cache_snapshot_memory_size = input;
+        self
+    }
+    /// <p>Size (in bytes) at which the storage engine will snapshot the cache and write it to a TSM file to make more memory available. Must not be greater than storageCacheMaxMemorySize.</p>
+    /// <p>Default: 26214400</p>
+    pub fn get_storage_cache_snapshot_memory_size(&self) -> &::std::option::Option<i64> {
+        &self.storage_cache_snapshot_memory_size
+    }
+    /// <p>Duration at which the storage engine will snapshot the cache and write it to a new TSM file if the shard hasn’t received writes or deletes.</p>
+    /// <p>Default: 10 minutes</p>
+    pub fn storage_cache_snapshot_write_cold_duration(mut self, input: crate::types::Duration) -> Self {
+        self.storage_cache_snapshot_write_cold_duration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Duration at which the storage engine will snapshot the cache and write it to a new TSM file if the shard hasn’t received writes or deletes.</p>
+    /// <p>Default: 10 minutes</p>
+    pub fn set_storage_cache_snapshot_write_cold_duration(mut self, input: ::std::option::Option<crate::types::Duration>) -> Self {
+        self.storage_cache_snapshot_write_cold_duration = input;
+        self
+    }
+    /// <p>Duration at which the storage engine will snapshot the cache and write it to a new TSM file if the shard hasn’t received writes or deletes.</p>
+    /// <p>Default: 10 minutes</p>
+    pub fn get_storage_cache_snapshot_write_cold_duration(&self) -> &::std::option::Option<crate::types::Duration> {
+        &self.storage_cache_snapshot_write_cold_duration
+    }
+    /// <p>Duration at which the storage engine will compact all TSM files in a shard if it hasn't received writes or deletes.</p>
+    /// <p>Default: 4 hours</p>
+    pub fn storage_compact_full_write_cold_duration(mut self, input: crate::types::Duration) -> Self {
+        self.storage_compact_full_write_cold_duration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Duration at which the storage engine will compact all TSM files in a shard if it hasn't received writes or deletes.</p>
+    /// <p>Default: 4 hours</p>
+    pub fn set_storage_compact_full_write_cold_duration(mut self, input: ::std::option::Option<crate::types::Duration>) -> Self {
+        self.storage_compact_full_write_cold_duration = input;
+        self
+    }
+    /// <p>Duration at which the storage engine will compact all TSM files in a shard if it hasn't received writes or deletes.</p>
+    /// <p>Default: 4 hours</p>
+    pub fn get_storage_compact_full_write_cold_duration(&self) -> &::std::option::Option<crate::types::Duration> {
+        &self.storage_compact_full_write_cold_duration
+    }
+    /// <p>Rate limit (in bytes per second) that TSM compactions can write to disk.</p>
+    /// <p>Default: 50331648</p>
+    pub fn storage_compact_throughput_burst(mut self, input: i64) -> Self {
+        self.storage_compact_throughput_burst = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Rate limit (in bytes per second) that TSM compactions can write to disk.</p>
+    /// <p>Default: 50331648</p>
+    pub fn set_storage_compact_throughput_burst(mut self, input: ::std::option::Option<i64>) -> Self {
+        self.storage_compact_throughput_burst = input;
+        self
+    }
+    /// <p>Rate limit (in bytes per second) that TSM compactions can write to disk.</p>
+    /// <p>Default: 50331648</p>
+    pub fn get_storage_compact_throughput_burst(&self) -> &::std::option::Option<i64> {
+        &self.storage_compact_throughput_burst
+    }
+    /// <p>Maximum number of full and level compactions that can run concurrently. A value of 0 results in 50% of runtime.GOMAXPROCS(0) used at runtime. Any number greater than zero limits compactions to that value. This setting does not apply to cache snapshotting.</p>
+    /// <p>Default: 0</p>
+    pub fn storage_max_concurrent_compactions(mut self, input: i32) -> Self {
+        self.storage_max_concurrent_compactions = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Maximum number of full and level compactions that can run concurrently. A value of 0 results in 50% of runtime.GOMAXPROCS(0) used at runtime. Any number greater than zero limits compactions to that value. This setting does not apply to cache snapshotting.</p>
+    /// <p>Default: 0</p>
+    pub fn set_storage_max_concurrent_compactions(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.storage_max_concurrent_compactions = input;
+        self
+    }
+    /// <p>Maximum number of full and level compactions that can run concurrently. A value of 0 results in 50% of runtime.GOMAXPROCS(0) used at runtime. Any number greater than zero limits compactions to that value. This setting does not apply to cache snapshotting.</p>
+    /// <p>Default: 0</p>
+    pub fn get_storage_max_concurrent_compactions(&self) -> &::std::option::Option<i32> {
+        &self.storage_max_concurrent_compactions
+    }
+    /// <p>Size (in bytes) at which an index write-ahead log (WAL) file will compact into an index file. Lower sizes will cause log files to be compacted more quickly and result in lower heap usage at the expense of write throughput.</p>
+    /// <p>Default: 1048576</p>
+    pub fn storage_max_index_log_file_size(mut self, input: i64) -> Self {
+        self.storage_max_index_log_file_size = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Size (in bytes) at which an index write-ahead log (WAL) file will compact into an index file. Lower sizes will cause log files to be compacted more quickly and result in lower heap usage at the expense of write throughput.</p>
+    /// <p>Default: 1048576</p>
+    pub fn set_storage_max_index_log_file_size(mut self, input: ::std::option::Option<i64>) -> Self {
+        self.storage_max_index_log_file_size = input;
+        self
+    }
+    /// <p>Size (in bytes) at which an index write-ahead log (WAL) file will compact into an index file. Lower sizes will cause log files to be compacted more quickly and result in lower heap usage at the expense of write throughput.</p>
+    /// <p>Default: 1048576</p>
+    pub fn get_storage_max_index_log_file_size(&self) -> &::std::option::Option<i64> {
+        &self.storage_max_index_log_file_size
+    }
+    /// <p>Skip field size validation on incoming write requests.</p>
+    /// <p>Default: false</p>
+    pub fn storage_no_validate_field_size(mut self, input: bool) -> Self {
+        self.storage_no_validate_field_size = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Skip field size validation on incoming write requests.</p>
+    /// <p>Default: false</p>
+    pub fn set_storage_no_validate_field_size(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.storage_no_validate_field_size = input;
+        self
+    }
+    /// <p>Skip field size validation on incoming write requests.</p>
+    /// <p>Default: false</p>
+    pub fn get_storage_no_validate_field_size(&self) -> &::std::option::Option<bool> {
+        &self.storage_no_validate_field_size
+    }
+    /// <p>Interval of retention policy enforcement checks. Must be greater than 0.</p>
+    /// <p>Default: 30 minutes</p>
+    pub fn storage_retention_check_interval(mut self, input: crate::types::Duration) -> Self {
+        self.storage_retention_check_interval = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Interval of retention policy enforcement checks. Must be greater than 0.</p>
+    /// <p>Default: 30 minutes</p>
+    pub fn set_storage_retention_check_interval(mut self, input: ::std::option::Option<crate::types::Duration>) -> Self {
+        self.storage_retention_check_interval = input;
+        self
+    }
+    /// <p>Interval of retention policy enforcement checks. Must be greater than 0.</p>
+    /// <p>Default: 30 minutes</p>
+    pub fn get_storage_retention_check_interval(&self) -> &::std::option::Option<crate::types::Duration> {
+        &self.storage_retention_check_interval
+    }
+    /// <p>Maximum number of snapshot compactions that can run concurrently across all series partitions in a database.</p>
+    /// <p>Default: 0</p>
+    pub fn storage_series_file_max_concurrent_snapshot_compactions(mut self, input: i32) -> Self {
+        self.storage_series_file_max_concurrent_snapshot_compactions = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Maximum number of snapshot compactions that can run concurrently across all series partitions in a database.</p>
+    /// <p>Default: 0</p>
+    pub fn set_storage_series_file_max_concurrent_snapshot_compactions(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.storage_series_file_max_concurrent_snapshot_compactions = input;
+        self
+    }
+    /// <p>Maximum number of snapshot compactions that can run concurrently across all series partitions in a database.</p>
+    /// <p>Default: 0</p>
+    pub fn get_storage_series_file_max_concurrent_snapshot_compactions(&self) -> &::std::option::Option<i32> {
+        &self.storage_series_file_max_concurrent_snapshot_compactions
+    }
+    /// <p>Size of the internal cache used in the TSI index to store previously calculated series results. Cached results are returned quickly rather than needing to be recalculated when a subsequent query with the same tag key/value predicate is executed. Setting this value to 0 will disable the cache and may decrease query performance.</p>
+    /// <p>Default: 100</p>
+    pub fn storage_series_id_set_cache_size(mut self, input: i64) -> Self {
+        self.storage_series_id_set_cache_size = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Size of the internal cache used in the TSI index to store previously calculated series results. Cached results are returned quickly rather than needing to be recalculated when a subsequent query with the same tag key/value predicate is executed. Setting this value to 0 will disable the cache and may decrease query performance.</p>
+    /// <p>Default: 100</p>
+    pub fn set_storage_series_id_set_cache_size(mut self, input: ::std::option::Option<i64>) -> Self {
+        self.storage_series_id_set_cache_size = input;
+        self
+    }
+    /// <p>Size of the internal cache used in the TSI index to store previously calculated series results. Cached results are returned quickly rather than needing to be recalculated when a subsequent query with the same tag key/value predicate is executed. Setting this value to 0 will disable the cache and may decrease query performance.</p>
+    /// <p>Default: 100</p>
+    pub fn get_storage_series_id_set_cache_size(&self) -> &::std::option::Option<i64> {
+        &self.storage_series_id_set_cache_size
+    }
+    /// <p>Maximum number writes to the WAL directory to attempt at the same time. Setting this value to 0 results in number of processing units available x2.</p>
+    /// <p>Default: 0</p>
+    pub fn storage_wal_max_concurrent_writes(mut self, input: i32) -> Self {
+        self.storage_wal_max_concurrent_writes = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Maximum number writes to the WAL directory to attempt at the same time. Setting this value to 0 results in number of processing units available x2.</p>
+    /// <p>Default: 0</p>
+    pub fn set_storage_wal_max_concurrent_writes(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.storage_wal_max_concurrent_writes = input;
+        self
+    }
+    /// <p>Maximum number writes to the WAL directory to attempt at the same time. Setting this value to 0 results in number of processing units available x2.</p>
+    /// <p>Default: 0</p>
+    pub fn get_storage_wal_max_concurrent_writes(&self) -> &::std::option::Option<i32> {
+        &self.storage_wal_max_concurrent_writes
+    }
+    /// <p>Maximum amount of time a write request to the WAL directory will wait when the <a href="https://docs.influxdata.com/influxdb/v2/reference/config-options/#storage-wal-max-concurrent-writes">maximum number of concurrent active writes to the WAL directory has been met</a>. Set to 0 to disable the timeout.</p>
+    /// <p>Default: 10 minutes</p>
+    pub fn storage_wal_max_write_delay(mut self, input: crate::types::Duration) -> Self {
+        self.storage_wal_max_write_delay = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Maximum amount of time a write request to the WAL directory will wait when the <a href="https://docs.influxdata.com/influxdb/v2/reference/config-options/#storage-wal-max-concurrent-writes">maximum number of concurrent active writes to the WAL directory has been met</a>. Set to 0 to disable the timeout.</p>
+    /// <p>Default: 10 minutes</p>
+    pub fn set_storage_wal_max_write_delay(mut self, input: ::std::option::Option<crate::types::Duration>) -> Self {
+        self.storage_wal_max_write_delay = input;
+        self
+    }
+    /// <p>Maximum amount of time a write request to the WAL directory will wait when the <a href="https://docs.influxdata.com/influxdb/v2/reference/config-options/#storage-wal-max-concurrent-writes">maximum number of concurrent active writes to the WAL directory has been met</a>. Set to 0 to disable the timeout.</p>
+    /// <p>Default: 10 minutes</p>
+    pub fn get_storage_wal_max_write_delay(&self) -> &::std::option::Option<crate::types::Duration> {
+        &self.storage_wal_max_write_delay
+    }
+    /// <p>Disable the InfluxDB user interface (UI). The UI is enabled by default.</p>
+    /// <p>Default: false</p>
+    pub fn ui_disabled(mut self, input: bool) -> Self {
+        self.ui_disabled = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Disable the InfluxDB user interface (UI). The UI is enabled by default.</p>
+    /// <p>Default: false</p>
+    pub fn set_ui_disabled(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.ui_disabled = input;
+        self
+    }
+    /// <p>Disable the InfluxDB user interface (UI). The UI is enabled by default.</p>
+    /// <p>Default: false</p>
+    pub fn get_ui_disabled(&self) -> &::std::option::Option<bool> {
+        &self.ui_disabled
+    }
     /// Consumes the builder and constructs a [`InfluxDBv2Parameters`](crate::types::InfluxDBv2Parameters).
     pub fn build(self) -> crate::types::InfluxDBv2Parameters {
         crate::types::InfluxDBv2Parameters {
@@ -207,6 +909,33 @@ impl InfluxDBv2ParametersBuilder {
             query_queue_size: self.query_queue_size,
             tracing_type: self.tracing_type,
             metrics_disabled: self.metrics_disabled,
+            http_idle_timeout: self.http_idle_timeout,
+            http_read_header_timeout: self.http_read_header_timeout,
+            http_read_timeout: self.http_read_timeout,
+            http_write_timeout: self.http_write_timeout,
+            influxql_max_select_buckets: self.influxql_max_select_buckets,
+            influxql_max_select_point: self.influxql_max_select_point,
+            influxql_max_select_series: self.influxql_max_select_series,
+            pprof_disabled: self.pprof_disabled,
+            query_initial_memory_bytes: self.query_initial_memory_bytes,
+            query_max_memory_bytes: self.query_max_memory_bytes,
+            query_memory_bytes: self.query_memory_bytes,
+            session_length: self.session_length,
+            session_renew_disabled: self.session_renew_disabled,
+            storage_cache_max_memory_size: self.storage_cache_max_memory_size,
+            storage_cache_snapshot_memory_size: self.storage_cache_snapshot_memory_size,
+            storage_cache_snapshot_write_cold_duration: self.storage_cache_snapshot_write_cold_duration,
+            storage_compact_full_write_cold_duration: self.storage_compact_full_write_cold_duration,
+            storage_compact_throughput_burst: self.storage_compact_throughput_burst,
+            storage_max_concurrent_compactions: self.storage_max_concurrent_compactions,
+            storage_max_index_log_file_size: self.storage_max_index_log_file_size,
+            storage_no_validate_field_size: self.storage_no_validate_field_size,
+            storage_retention_check_interval: self.storage_retention_check_interval,
+            storage_series_file_max_concurrent_snapshot_compactions: self.storage_series_file_max_concurrent_snapshot_compactions,
+            storage_series_id_set_cache_size: self.storage_series_id_set_cache_size,
+            storage_wal_max_concurrent_writes: self.storage_wal_max_concurrent_writes,
+            storage_wal_max_write_delay: self.storage_wal_max_write_delay,
+            ui_disabled: self.ui_disabled,
         }
     }
 }

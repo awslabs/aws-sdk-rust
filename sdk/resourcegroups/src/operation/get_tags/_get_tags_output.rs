@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetTagsOutput {
-    /// <p>The ARN of the tagged resource group.</p>
+    /// <p>TheAmazon resource name (ARN) of the tagged resource group.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The tags associated with the specified resource group.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetTagsOutput {
-    /// <p>The ARN of the tagged resource group.</p>
+    /// <p>TheAmazon resource name (ARN) of the tagged resource group.</p>
     pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
@@ -40,17 +40,17 @@ pub struct GetTagsOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetTagsOutputBuilder {
-    /// <p>The ARN of the tagged resource group.</p>
+    /// <p>TheAmazon resource name (ARN) of the tagged resource group.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the tagged resource group.</p>
+    /// <p>TheAmazon resource name (ARN) of the tagged resource group.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
-    /// <p>The ARN of the tagged resource group.</p>
+    /// <p>TheAmazon resource name (ARN) of the tagged resource group.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }

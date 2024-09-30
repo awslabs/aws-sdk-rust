@@ -59,14 +59,14 @@ pub(crate) struct Handle {
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`CreateGroup`](crate::operation::create_group) operation has
-/// a [`Client::create_group`], function which returns a builder for that operation.
+/// For example, the [`CancelTagSyncTask`](crate::operation::cancel_tag_sync_task) operation has
+/// a [`Client::cancel_tag_sync_task`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.create_group()
-///     .name("example")
+/// let result = client.cancel_tag_sync_task()
+///     .task_arn("example")
 ///     .send()
 ///     .await;
 /// ```
@@ -136,6 +136,8 @@ impl Client {
     }
 }
 
+mod cancel_tag_sync_task;
+
 mod create_group;
 
 /// Operation customization and supporting types.
@@ -149,7 +151,7 @@ mod create_group;
 /// # let client: aws_sdk_resourcegroups::Client = unimplemented!();
 /// use ::http::header::{HeaderName, HeaderValue};
 ///
-/// let result = client.create_group()
+/// let result = client.cancel_tag_sync_task()
 ///     .customize()
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
@@ -175,17 +177,25 @@ mod get_group_configuration;
 
 mod get_group_query;
 
+mod get_tag_sync_task;
+
 mod get_tags;
 
 mod group_resources;
 
 mod list_group_resources;
 
+mod list_grouping_statuses;
+
 mod list_groups;
+
+mod list_tag_sync_tasks;
 
 mod put_group_configuration;
 
 mod search_resources;
+
+mod start_tag_sync_task;
 
 mod tag;
 

@@ -3,28 +3,28 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GroupResourcesOutput {
-    /// <p>A list of ARNs of the resources that this operation successfully added to the group.</p>
+    /// <p>A list of Amazon resource names (ARNs) of the resources that this operation successfully added to the group.</p>
     pub succeeded: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>A list of ARNs of any resources that this operation failed to add to the group.</p>
+    /// <p>A list of Amazon resource names (ARNs) of any resources that this operation failed to add to the group.</p>
     pub failed: ::std::option::Option<::std::vec::Vec<crate::types::FailedResource>>,
-    /// <p>A list of ARNs of any resources that this operation is still in the process adding to the group. These pending additions continue asynchronously. You can check the status of pending additions by using the <code> <code>ListGroupResources</code> </code> operation, and checking the <code>Resources</code> array in the response and the <code>Status</code> field of each object in that array.</p>
+    /// <p>A list of Amazon resource names (ARNs) of any resources that this operation is still in the process adding to the group. These pending additions continue asynchronously. You can check the status of pending additions by using the <code> <code>ListGroupResources</code> </code> operation, and checking the <code>Resources</code> array in the response and the <code>Status</code> field of each object in that array.</p>
     pub pending: ::std::option::Option<::std::vec::Vec<crate::types::PendingResource>>,
     _request_id: Option<String>,
 }
 impl GroupResourcesOutput {
-    /// <p>A list of ARNs of the resources that this operation successfully added to the group.</p>
+    /// <p>A list of Amazon resource names (ARNs) of the resources that this operation successfully added to the group.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.succeeded.is_none()`.
     pub fn succeeded(&self) -> &[::std::string::String] {
         self.succeeded.as_deref().unwrap_or_default()
     }
-    /// <p>A list of ARNs of any resources that this operation failed to add to the group.</p>
+    /// <p>A list of Amazon resource names (ARNs) of any resources that this operation failed to add to the group.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.failed.is_none()`.
     pub fn failed(&self) -> &[crate::types::FailedResource] {
         self.failed.as_deref().unwrap_or_default()
     }
-    /// <p>A list of ARNs of any resources that this operation is still in the process adding to the group. These pending additions continue asynchronously. You can check the status of pending additions by using the <code> <code>ListGroupResources</code> </code> operation, and checking the <code>Resources</code> array in the response and the <code>Status</code> field of each object in that array.</p>
+    /// <p>A list of Amazon resource names (ARNs) of any resources that this operation is still in the process adding to the group. These pending additions continue asynchronously. You can check the status of pending additions by using the <code> <code>ListGroupResources</code> </code> operation, and checking the <code>Resources</code> array in the response and the <code>Status</code> field of each object in that array.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.pending.is_none()`.
     pub fn pending(&self) -> &[crate::types::PendingResource] {
@@ -57,19 +57,19 @@ impl GroupResourcesOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_succeeded`](Self::set_succeeded).
     ///
-    /// <p>A list of ARNs of the resources that this operation successfully added to the group.</p>
+    /// <p>A list of Amazon resource names (ARNs) of the resources that this operation successfully added to the group.</p>
     pub fn succeeded(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.succeeded.unwrap_or_default();
         v.push(input.into());
         self.succeeded = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of ARNs of the resources that this operation successfully added to the group.</p>
+    /// <p>A list of Amazon resource names (ARNs) of the resources that this operation successfully added to the group.</p>
     pub fn set_succeeded(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.succeeded = input;
         self
     }
-    /// <p>A list of ARNs of the resources that this operation successfully added to the group.</p>
+    /// <p>A list of Amazon resource names (ARNs) of the resources that this operation successfully added to the group.</p>
     pub fn get_succeeded(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.succeeded
     }
@@ -77,19 +77,19 @@ impl GroupResourcesOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_failed`](Self::set_failed).
     ///
-    /// <p>A list of ARNs of any resources that this operation failed to add to the group.</p>
+    /// <p>A list of Amazon resource names (ARNs) of any resources that this operation failed to add to the group.</p>
     pub fn failed(mut self, input: crate::types::FailedResource) -> Self {
         let mut v = self.failed.unwrap_or_default();
         v.push(input);
         self.failed = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of ARNs of any resources that this operation failed to add to the group.</p>
+    /// <p>A list of Amazon resource names (ARNs) of any resources that this operation failed to add to the group.</p>
     pub fn set_failed(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FailedResource>>) -> Self {
         self.failed = input;
         self
     }
-    /// <p>A list of ARNs of any resources that this operation failed to add to the group.</p>
+    /// <p>A list of Amazon resource names (ARNs) of any resources that this operation failed to add to the group.</p>
     pub fn get_failed(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FailedResource>> {
         &self.failed
     }
@@ -97,19 +97,19 @@ impl GroupResourcesOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_pending`](Self::set_pending).
     ///
-    /// <p>A list of ARNs of any resources that this operation is still in the process adding to the group. These pending additions continue asynchronously. You can check the status of pending additions by using the <code> <code>ListGroupResources</code> </code> operation, and checking the <code>Resources</code> array in the response and the <code>Status</code> field of each object in that array.</p>
+    /// <p>A list of Amazon resource names (ARNs) of any resources that this operation is still in the process adding to the group. These pending additions continue asynchronously. You can check the status of pending additions by using the <code> <code>ListGroupResources</code> </code> operation, and checking the <code>Resources</code> array in the response and the <code>Status</code> field of each object in that array.</p>
     pub fn pending(mut self, input: crate::types::PendingResource) -> Self {
         let mut v = self.pending.unwrap_or_default();
         v.push(input);
         self.pending = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of ARNs of any resources that this operation is still in the process adding to the group. These pending additions continue asynchronously. You can check the status of pending additions by using the <code> <code>ListGroupResources</code> </code> operation, and checking the <code>Resources</code> array in the response and the <code>Status</code> field of each object in that array.</p>
+    /// <p>A list of Amazon resource names (ARNs) of any resources that this operation is still in the process adding to the group. These pending additions continue asynchronously. You can check the status of pending additions by using the <code> <code>ListGroupResources</code> </code> operation, and checking the <code>Resources</code> array in the response and the <code>Status</code> field of each object in that array.</p>
     pub fn set_pending(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PendingResource>>) -> Self {
         self.pending = input;
         self
     }
-    /// <p>A list of ARNs of any resources that this operation is still in the process adding to the group. These pending additions continue asynchronously. You can check the status of pending additions by using the <code> <code>ListGroupResources</code> </code> operation, and checking the <code>Resources</code> array in the response and the <code>Status</code> field of each object in that array.</p>
+    /// <p>A list of Amazon resource names (ARNs) of any resources that this operation is still in the process adding to the group. These pending additions continue asynchronously. You can check the status of pending additions by using the <code> <code>ListGroupResources</code> </code> operation, and checking the <code>Resources</code> array in the response and the <code>Status</code> field of each object in that array.</p>
     pub fn get_pending(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PendingResource>> {
         &self.pending
     }

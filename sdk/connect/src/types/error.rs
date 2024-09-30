@@ -37,9 +37,9 @@ pub use crate::types::error::_outbound_contact_not_permitted_exception::Outbound
 
 pub use crate::types::error::_destination_not_allowed_exception::DestinationNotAllowedException;
 
-pub use crate::types::error::_maximum_result_returned_exception::MaximumResultReturnedException;
-
 pub use crate::types::error::_conflict_exception::ConflictException;
+
+pub use crate::types::error::_maximum_result_returned_exception::MaximumResultReturnedException;
 
 pub use crate::types::error::_resource_not_ready_exception::ResourceNotReadyException;
 

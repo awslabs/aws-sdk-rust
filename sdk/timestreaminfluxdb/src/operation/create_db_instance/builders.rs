@@ -360,4 +360,27 @@ impl CreateDbInstanceFluentBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
+    /// <p>The port number on which InfluxDB accepts connections.</p>
+    /// <p>Valid Values: 1024-65535</p>
+    /// <p>Default: 8086</p>
+    /// <p>Constraints: The value can't be 2375-2376, 7788-7799, 8090, or 51678-51680</p>
+    pub fn port(mut self, input: i32) -> Self {
+        self.inner = self.inner.port(input);
+        self
+    }
+    /// <p>The port number on which InfluxDB accepts connections.</p>
+    /// <p>Valid Values: 1024-65535</p>
+    /// <p>Default: 8086</p>
+    /// <p>Constraints: The value can't be 2375-2376, 7788-7799, 8090, or 51678-51680</p>
+    pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.inner = self.inner.set_port(input);
+        self
+    }
+    /// <p>The port number on which InfluxDB accepts connections.</p>
+    /// <p>Valid Values: 1024-65535</p>
+    /// <p>Default: 8086</p>
+    /// <p>Constraints: The value can't be 2375-2376, 7788-7799, 8090, or 51678-51680</p>
+    pub fn get_port(&self) -> &::std::option::Option<i32> {
+        self.inner.get_port()
+    }
 }

@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutGroupConfigurationInput {
-    /// <p>The name or ARN of the resource group with the configuration that you want to update.</p>
+    /// <p>The name or Amazon resource name (ARN) of the resource group with the configuration that you want to update.</p>
     pub group: ::std::option::Option<::std::string::String>,
     /// <p>The new configuration to associate with the specified group. A configuration associates the resource group with an Amazon Web Services service and specifies how the service can interact with the resources in the group. A configuration is an array of <code>GroupConfigurationItem</code> elements.</p>
     /// <p>For information about the syntax of a service configuration, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for Resource Groups</a>.</p><note>
@@ -12,7 +12,7 @@ pub struct PutGroupConfigurationInput {
     pub configuration: ::std::option::Option<::std::vec::Vec<crate::types::GroupConfigurationItem>>,
 }
 impl PutGroupConfigurationInput {
-    /// <p>The name or ARN of the resource group with the configuration that you want to update.</p>
+    /// <p>The name or Amazon resource name (ARN) of the resource group with the configuration that you want to update.</p>
     pub fn group(&self) -> ::std::option::Option<&str> {
         self.group.as_deref()
     }
@@ -41,17 +41,17 @@ pub struct PutGroupConfigurationInputBuilder {
     pub(crate) configuration: ::std::option::Option<::std::vec::Vec<crate::types::GroupConfigurationItem>>,
 }
 impl PutGroupConfigurationInputBuilder {
-    /// <p>The name or ARN of the resource group with the configuration that you want to update.</p>
+    /// <p>The name or Amazon resource name (ARN) of the resource group with the configuration that you want to update.</p>
     pub fn group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name or ARN of the resource group with the configuration that you want to update.</p>
+    /// <p>The name or Amazon resource name (ARN) of the resource group with the configuration that you want to update.</p>
     pub fn set_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.group = input;
         self
     }
-    /// <p>The name or ARN of the resource group with the configuration that you want to update.</p>
+    /// <p>The name or Amazon resource name (ARN) of the resource group with the configuration that you want to update.</p>
     pub fn get_group(&self) -> &::std::option::Option<::std::string::String> {
         &self.group
     }
