@@ -22,7 +22,7 @@ impl crate::operation::list_ingestion_jobs::builders::ListIngestionJobsInputBuil
 }
 /// Fluent builder constructing a request to `ListIngestionJobs`.
 ///
-/// <p>Lists the ingestion jobs for a data source and information about each of them.</p>
+/// <p>Lists the data ingestion jobs for a data source. The list also includes information about each job.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListIngestionJobsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -114,31 +114,31 @@ impl ListIngestionJobsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_ingestion_jobs::paginator::ListIngestionJobsPaginator {
         crate::operation::list_ingestion_jobs::paginator::ListIngestionJobsPaginator::new(self.handle, self.inner)
     }
-    /// <p>The unique identifier of the knowledge base for which to return ingestion jobs.</p>
+    /// <p>The unique identifier of the knowledge base for the list of data ingestion jobs.</p>
     pub fn knowledge_base_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.knowledge_base_id(input.into());
         self
     }
-    /// <p>The unique identifier of the knowledge base for which to return ingestion jobs.</p>
+    /// <p>The unique identifier of the knowledge base for the list of data ingestion jobs.</p>
     pub fn set_knowledge_base_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_knowledge_base_id(input);
         self
     }
-    /// <p>The unique identifier of the knowledge base for which to return ingestion jobs.</p>
+    /// <p>The unique identifier of the knowledge base for the list of data ingestion jobs.</p>
     pub fn get_knowledge_base_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_knowledge_base_id()
     }
-    /// <p>The unique identifier of the data source for which to return ingestion jobs.</p>
+    /// <p>The unique identifier of the data source for the list of data ingestion jobs.</p>
     pub fn data_source_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.data_source_id(input.into());
         self
     }
-    /// <p>The unique identifier of the data source for which to return ingestion jobs.</p>
+    /// <p>The unique identifier of the data source for the list of data ingestion jobs.</p>
     pub fn set_data_source_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_data_source_id(input);
         self
     }
-    /// <p>The unique identifier of the data source for which to return ingestion jobs.</p>
+    /// <p>The unique identifier of the data source for the list of data ingestion jobs.</p>
     pub fn get_data_source_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_data_source_id()
     }
@@ -147,31 +147,31 @@ impl ListIngestionJobsFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>Contains a definition of a filter for which to filter the results.</p>
+    /// <p>Contains information about the filters for filtering the data.</p>
     pub fn filters(mut self, input: crate::types::IngestionJobFilter) -> Self {
         self.inner = self.inner.filters(input);
         self
     }
-    /// <p>Contains a definition of a filter for which to filter the results.</p>
+    /// <p>Contains information about the filters for filtering the data.</p>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IngestionJobFilter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
-    /// <p>Contains a definition of a filter for which to filter the results.</p>
+    /// <p>Contains information about the filters for filtering the data.</p>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IngestionJobFilter>> {
         self.inner.get_filters()
     }
-    /// <p>Contains details about how to sort the results.</p>
+    /// <p>Contains details about how to sort the data.</p>
     pub fn sort_by(mut self, input: crate::types::IngestionJobSortBy) -> Self {
         self.inner = self.inner.sort_by(input);
         self
     }
-    /// <p>Contains details about how to sort the results.</p>
+    /// <p>Contains details about how to sort the data.</p>
     pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::IngestionJobSortBy>) -> Self {
         self.inner = self.inner.set_sort_by(input);
         self
     }
-    /// <p>Contains details about how to sort the results.</p>
+    /// <p>Contains details about how to sort the data.</p>
     pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::IngestionJobSortBy> {
         self.inner.get_sort_by()
     }

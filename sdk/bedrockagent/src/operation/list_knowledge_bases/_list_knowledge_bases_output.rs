@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListKnowledgeBasesOutput {
-    /// <p>A list of objects, each of which contains information about a knowledge base.</p>
+    /// <p>A list of knowledge bases with information about each knowledge base.</p>
     pub knowledge_base_summaries: ::std::vec::Vec<crate::types::KnowledgeBaseSummary>,
     /// <p>If the total number of results is greater than the <code>maxResults</code> value provided in the request, use this token when making another request in the <code>nextToken</code> field to return the next batch of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListKnowledgeBasesOutput {
-    /// <p>A list of objects, each of which contains information about a knowledge base.</p>
+    /// <p>A list of knowledge bases with information about each knowledge base.</p>
     pub fn knowledge_base_summaries(&self) -> &[crate::types::KnowledgeBaseSummary] {
         use std::ops::Deref;
         self.knowledge_base_summaries.deref()
@@ -45,19 +45,19 @@ impl ListKnowledgeBasesOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_knowledge_base_summaries`](Self::set_knowledge_base_summaries).
     ///
-    /// <p>A list of objects, each of which contains information about a knowledge base.</p>
+    /// <p>A list of knowledge bases with information about each knowledge base.</p>
     pub fn knowledge_base_summaries(mut self, input: crate::types::KnowledgeBaseSummary) -> Self {
         let mut v = self.knowledge_base_summaries.unwrap_or_default();
         v.push(input);
         self.knowledge_base_summaries = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of objects, each of which contains information about a knowledge base.</p>
+    /// <p>A list of knowledge bases with information about each knowledge base.</p>
     pub fn set_knowledge_base_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::KnowledgeBaseSummary>>) -> Self {
         self.knowledge_base_summaries = input;
         self
     }
-    /// <p>A list of objects, each of which contains information about a knowledge base.</p>
+    /// <p>A list of knowledge bases with information about each knowledge base.</p>
     pub fn get_knowledge_base_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::KnowledgeBaseSummary>> {
         &self.knowledge_base_summaries
     }

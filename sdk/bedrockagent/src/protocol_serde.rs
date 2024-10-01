@@ -123,6 +123,8 @@ pub(crate) mod shape_prepare_flow;
 
 pub(crate) mod shape_start_ingestion_job;
 
+pub(crate) mod shape_stop_ingestion_job;
+
 pub(crate) mod shape_tag_resource;
 
 pub(crate) mod shape_untag_resource;

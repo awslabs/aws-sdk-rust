@@ -108,17 +108,17 @@ impl GetKnowledgeBaseFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The unique identifier of the knowledge base for which to get information.</p>
+    /// <p>The unique identifier of the knowledge base you want to get information on.</p>
     pub fn knowledge_base_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.knowledge_base_id(input.into());
         self
     }
-    /// <p>The unique identifier of the knowledge base for which to get information.</p>
+    /// <p>The unique identifier of the knowledge base you want to get information on.</p>
     pub fn set_knowledge_base_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_knowledge_base_id(input);
         self
     }
-    /// <p>The unique identifier of the knowledge base for which to get information.</p>
+    /// <p>The unique identifier of the knowledge base you want to get information on.</p>
     pub fn get_knowledge_base_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_knowledge_base_id()
     }

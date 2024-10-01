@@ -268,9 +268,9 @@ model_hash = 'ee7ce05f4abd326f5f12963fd62c955e02472620764afac6b47e091ec56f6361'
 
 [crates.aws-sdk-bedrockagent]
 category = 'AwsSdk'
-version = '1.53.0'
-source_hash = '34a6a838658c39387b9cfc6f1b56c5d4b0251f6b2142e30d2d7fd2b9d31b33e3'
-model_hash = '1871f5e80f296dd82564db9e3536bc723f733ccb05af785d1ece531d10c92104'
+version = '1.54.0'
+source_hash = '1de63315c3d2676d487e3152b7ecd463961b50f396625050b4a46a5ccfcab6eb'
+model_hash = 'cb98a09817562e78993dfeaf573cc43c28036572b92d6c424cb314247c24417c'
 
 [crates.aws-sdk-bedrockagentruntime]
 category = 'AwsSdk'
@@ -448,9 +448,9 @@ model_hash = '482e7e24cc72eb1e503dbf493b8e9b8de103aa731879ed652845184f4a6e3707'
 
 [crates.aws-sdk-codeartifact]
 category = 'AwsSdk'
-version = '1.46.0'
-source_hash = '7e6c1ee614bf86d66f1c0ea5db4b7f3180a7a60390a086d2787d274ab7140b9a'
-model_hash = '887fa8d62137a444faf49b35c87c543efb59d1b15a0f07414312be2410eb6c6c'
+version = '1.47.0'
+source_hash = '017045172ef8151e54c97251098d5f44f8b8c8978400dc3f80ea2ce9450443b4'
+model_hash = 'b4b741370ba8961708abf7da89928b5db646fa8d605805dbd8d0138d0ff1955f'
 
 [crates.aws-sdk-codebuild]
 category = 'AwsSdk'
@@ -1786,9 +1786,9 @@ model_hash = '33137a772550764a4312631b5ad37b61e0232d622a5d0bca86b20efd5bb76105'
 
 [crates.aws-sdk-rds]
 category = 'AwsSdk'
-version = '1.57.0'
-source_hash = '57e2d66ca254d684c8f130a02d0ed7b80821d728cabe3a7b8eef3e40bd938c7b'
-model_hash = 'c576c8546e6c5185912a10f4d3f492b38bbd99db0dbd8ceda941c155121c3487'
+version = '1.58.0'
+source_hash = '8ff01ee6ebee3bf30574b197b2b262de4bc767b826e1edea386f171f68d74590'
+model_hash = 'e68ef5a21a4d5151b992967b3c47393077c136d6b17592993d0877c70e508efe'
 
 [crates.aws-sdk-rdsdata]
 category = 'AwsSdk'
@@ -2487,16 +2487,7 @@ source_hash = 'e229261bc0f8ca2575df733f699c55d19b49a32c3a09e2e37b8192c2ec424edb'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = 'd4495c0ccf3d7620d84e271073e7db354cf2cd07962d32ac4f1a8f34a03327cb'
-
-[release]
-tag = 'release-2024-09-30'
-
 [release.crates]
-aws-sdk-bedrock = '1.54.0'
-aws-sdk-clouddirectory = '1.44.1'
-aws-sdk-connect = '1.65.0'
-aws-sdk-pricing = '1.46.1'
-aws-sdk-resourcegroups = '1.46.0'
-aws-sdk-supplychain = '1.36.0'
-aws-sdk-timestreaminfluxdb = '1.28.0'
-aws-sdk-verifiedpermissions = '1.50.1'
+aws-sdk-bedrockagent = '1.54.0'
+aws-sdk-codeartifact = '1.47.0'
+aws-sdk-rds = '1.58.0'

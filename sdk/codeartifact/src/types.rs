@@ -81,6 +81,8 @@ pub use crate::types::_associated_package::AssociatedPackage;
 
 pub use crate::types::_package_group_association_type::PackageGroupAssociationType;
 
+pub use crate::types::_endpoint_type::EndpointType;
+
 pub use crate::types::_package_version_description::PackageVersionDescription;
 
 pub use crate::types::_license_info::LicenseInfo;
@@ -104,6 +106,8 @@ mod _domain_entry_point;
 mod _domain_status;
 
 mod _domain_summary;
+
+mod _endpoint_type;
 
 mod _external_connection_status;
 

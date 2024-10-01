@@ -182,4 +182,18 @@ impl GetRepositoryEndpointFluentBuilder {
     pub fn get_format(&self) -> &::std::option::Option<crate::types::PackageFormat> {
         self.inner.get_format()
     }
+    /// <p>A string that specifies the type of endpoint.</p>
+    pub fn endpoint_type(mut self, input: crate::types::EndpointType) -> Self {
+        self.inner = self.inner.endpoint_type(input);
+        self
+    }
+    /// <p>A string that specifies the type of endpoint.</p>
+    pub fn set_endpoint_type(mut self, input: ::std::option::Option<crate::types::EndpointType>) -> Self {
+        self.inner = self.inner.set_endpoint_type(input);
+        self
+    }
+    /// <p>A string that specifies the type of endpoint.</p>
+    pub fn get_endpoint_type(&self) -> &::std::option::Option<crate::types::EndpointType> {
+        self.inner.get_endpoint_type()
+    }
 }

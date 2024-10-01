@@ -668,6 +668,18 @@ pub(crate) fn start_ingestion_job_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn stop_ingestion_job_output_output_correct_errors(
+    mut builder: crate::operation::stop_ingestion_job::builders::StopIngestionJobOutputBuilder,
+) -> crate::operation::stop_ingestion_job::builders::StopIngestionJobOutputBuilder {
+    if builder.ingestion_job.is_none() {
+        builder.ingestion_job = {
+            let builder = crate::types::builders::IngestionJobBuilder::default();
+            crate::serde_util::ingestion_job_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
 pub(crate) fn update_agent_output_output_correct_errors(
     mut builder: crate::operation::update_agent::builders::UpdateAgentOutputBuilder,
 ) -> crate::operation::update_agent::builders::UpdateAgentOutputBuilder {

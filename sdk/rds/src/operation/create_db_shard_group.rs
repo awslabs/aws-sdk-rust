@@ -251,6 +251,8 @@ pub enum CreateDBShardGroupError {
     InvalidVpcNetworkStateFault(crate::types::error::InvalidVpcNetworkStateFault),
     /// <p>The maximum number of DB shard groups for your Amazon Web Services account in the specified Amazon Web Services Region has been reached.</p>
     MaxDbShardGroupLimitReached(crate::types::error::MaxDbShardGroupLimitReached),
+    /// <p>The network type is invalid for the DB instance. Valid nework type values are <code>IPV4</code> and <code>DUAL</code>.</p>
+    NetworkTypeNotSupported(crate::types::error::NetworkTypeNotSupported),
     /// <p>The specified DB engine version isn't supported for Aurora Limitless Database.</p>
     UnsupportedDbEngineVersionFault(crate::types::error::UnsupportedDbEngineVersionFault),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
@@ -291,6 +293,7 @@ impl CreateDBShardGroupError {
             Self::InvalidDbClusterStateFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidVpcNetworkStateFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::MaxDbShardGroupLimitReached(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::NetworkTypeNotSupported(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::UnsupportedDbEngineVersionFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
@@ -315,6 +318,10 @@ impl CreateDBShardGroupError {
     pub fn is_max_db_shard_group_limit_reached(&self) -> bool {
         matches!(self, Self::MaxDbShardGroupLimitReached(_))
     }
+    /// Returns `true` if the error kind is `CreateDBShardGroupError::NetworkTypeNotSupported`.
+    pub fn is_network_type_not_supported(&self) -> bool {
+        matches!(self, Self::NetworkTypeNotSupported(_))
+    }
     /// Returns `true` if the error kind is `CreateDBShardGroupError::UnsupportedDbEngineVersionFault`.
     pub fn is_unsupported_db_engine_version_fault(&self) -> bool {
         matches!(self, Self::UnsupportedDbEngineVersionFault(_))
@@ -328,6 +335,7 @@ impl ::std::error::Error for CreateDBShardGroupError {
             Self::InvalidDbClusterStateFault(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidVpcNetworkStateFault(_inner) => ::std::option::Option::Some(_inner),
             Self::MaxDbShardGroupLimitReached(_inner) => ::std::option::Option::Some(_inner),
+            Self::NetworkTypeNotSupported(_inner) => ::std::option::Option::Some(_inner),
             Self::UnsupportedDbEngineVersionFault(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
         }
@@ -341,6 +349,7 @@ impl ::std::fmt::Display for CreateDBShardGroupError {
             Self::InvalidDbClusterStateFault(_inner) => _inner.fmt(f),
             Self::InvalidVpcNetworkStateFault(_inner) => _inner.fmt(f),
             Self::MaxDbShardGroupLimitReached(_inner) => _inner.fmt(f),
+            Self::NetworkTypeNotSupported(_inner) => _inner.fmt(f),
             Self::UnsupportedDbEngineVersionFault(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
@@ -368,6 +377,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for CreateDBShard
             Self::InvalidDbClusterStateFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidVpcNetworkStateFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::MaxDbShardGroupLimitReached(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::NetworkTypeNotSupported(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::UnsupportedDbEngineVersionFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,
         }

@@ -16,6 +16,14 @@ pub struct RepositoryExternalConnectionInfo {
     /// <p><code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR file.</p></li>
     /// <li>
     /// <p><code>nuget</code>: A NuGet package.</p></li>
+    /// <li>
+    /// <p><code>generic</code>: A generic package.</p></li>
+    /// <li>
+    /// <p><code>ruby</code>: A Ruby package.</p></li>
+    /// <li>
+    /// <p><code>swift</code>: A Swift package.</p></li>
+    /// <li>
+    /// <p><code>cargo</code>: A Cargo package.</p></li>
     /// </ul>
     pub package_format: ::std::option::Option<crate::types::PackageFormat>,
     /// <p>The status of the external connection of a repository. There is one valid value, <code>Available</code>.</p>
@@ -36,6 +44,14 @@ impl RepositoryExternalConnectionInfo {
     /// <p><code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR file.</p></li>
     /// <li>
     /// <p><code>nuget</code>: A NuGet package.</p></li>
+    /// <li>
+    /// <p><code>generic</code>: A generic package.</p></li>
+    /// <li>
+    /// <p><code>ruby</code>: A Ruby package.</p></li>
+    /// <li>
+    /// <p><code>swift</code>: A Swift package.</p></li>
+    /// <li>
+    /// <p><code>cargo</code>: A Cargo package.</p></li>
     /// </ul>
     pub fn package_format(&self) -> ::std::option::Option<&crate::types::PackageFormat> {
         self.package_format.as_ref()
@@ -85,6 +101,14 @@ impl RepositoryExternalConnectionInfoBuilder {
     /// <p><code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR file.</p></li>
     /// <li>
     /// <p><code>nuget</code>: A NuGet package.</p></li>
+    /// <li>
+    /// <p><code>generic</code>: A generic package.</p></li>
+    /// <li>
+    /// <p><code>ruby</code>: A Ruby package.</p></li>
+    /// <li>
+    /// <p><code>swift</code>: A Swift package.</p></li>
+    /// <li>
+    /// <p><code>cargo</code>: A Cargo package.</p></li>
     /// </ul>
     pub fn package_format(mut self, input: crate::types::PackageFormat) -> Self {
         self.package_format = ::std::option::Option::Some(input);
@@ -100,6 +124,14 @@ impl RepositoryExternalConnectionInfoBuilder {
     /// <p><code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR file.</p></li>
     /// <li>
     /// <p><code>nuget</code>: A NuGet package.</p></li>
+    /// <li>
+    /// <p><code>generic</code>: A generic package.</p></li>
+    /// <li>
+    /// <p><code>ruby</code>: A Ruby package.</p></li>
+    /// <li>
+    /// <p><code>swift</code>: A Swift package.</p></li>
+    /// <li>
+    /// <p><code>cargo</code>: A Cargo package.</p></li>
     /// </ul>
     pub fn set_package_format(mut self, input: ::std::option::Option<crate::types::PackageFormat>) -> Self {
         self.package_format = input;
@@ -115,6 +147,14 @@ impl RepositoryExternalConnectionInfoBuilder {
     /// <p><code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR file.</p></li>
     /// <li>
     /// <p><code>nuget</code>: A NuGet package.</p></li>
+    /// <li>
+    /// <p><code>generic</code>: A generic package.</p></li>
+    /// <li>
+    /// <p><code>ruby</code>: A Ruby package.</p></li>
+    /// <li>
+    /// <p><code>swift</code>: A Swift package.</p></li>
+    /// <li>
+    /// <p><code>cargo</code>: A Cargo package.</p></li>
     /// </ul>
     pub fn get_package_format(&self) -> &::std::option::Option<crate::types::PackageFormat> {
         &self.package_format

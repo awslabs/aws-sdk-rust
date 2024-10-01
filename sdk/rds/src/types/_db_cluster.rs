@@ -205,6 +205,8 @@ pub struct DbCluster {
     /// <p>The storage throughput for the DB cluster. The throughput is automatically set based on the IOPS that you provision, and is not configurable.</p>
     /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
     pub storage_throughput: ::std::option::Option<i32>,
+    /// <p>The scalability mode of the Aurora DB cluster. When set to <code>limitless</code>, the cluster operates as an Aurora Limitless Database. When set to <code>standard</code> (the default), the cluster uses normal DB instance creation.</p>
+    pub cluster_scalability_type: ::std::option::Option<crate::types::ClusterScalabilityType>,
     /// <p>The details of the DB instance’s server certificate.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
     pub certificate_details: ::std::option::Option<crate::types::CertificateDetails>,
@@ -588,6 +590,10 @@ impl DbCluster {
     pub fn storage_throughput(&self) -> ::std::option::Option<i32> {
         self.storage_throughput
     }
+    /// <p>The scalability mode of the Aurora DB cluster. When set to <code>limitless</code>, the cluster operates as an Aurora Limitless Database. When set to <code>standard</code> (the default), the cluster uses normal DB instance creation.</p>
+    pub fn cluster_scalability_type(&self) -> ::std::option::Option<&crate::types::ClusterScalabilityType> {
+        self.cluster_scalability_type.as_ref()
+    }
     /// <p>The details of the DB instance’s server certificate.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
     pub fn certificate_details(&self) -> ::std::option::Option<&crate::types::CertificateDetails> {
@@ -688,6 +694,7 @@ pub struct DbClusterBuilder {
     pub(crate) aws_backup_recovery_point_arn: ::std::option::Option<::std::string::String>,
     pub(crate) limitless_database: ::std::option::Option<crate::types::LimitlessDatabase>,
     pub(crate) storage_throughput: ::std::option::Option<i32>,
+    pub(crate) cluster_scalability_type: ::std::option::Option<crate::types::ClusterScalabilityType>,
     pub(crate) certificate_details: ::std::option::Option<crate::types::CertificateDetails>,
     pub(crate) engine_lifecycle_support: ::std::option::Option<::std::string::String>,
 }
@@ -1979,6 +1986,20 @@ impl DbClusterBuilder {
     pub fn get_storage_throughput(&self) -> &::std::option::Option<i32> {
         &self.storage_throughput
     }
+    /// <p>The scalability mode of the Aurora DB cluster. When set to <code>limitless</code>, the cluster operates as an Aurora Limitless Database. When set to <code>standard</code> (the default), the cluster uses normal DB instance creation.</p>
+    pub fn cluster_scalability_type(mut self, input: crate::types::ClusterScalabilityType) -> Self {
+        self.cluster_scalability_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The scalability mode of the Aurora DB cluster. When set to <code>limitless</code>, the cluster operates as an Aurora Limitless Database. When set to <code>standard</code> (the default), the cluster uses normal DB instance creation.</p>
+    pub fn set_cluster_scalability_type(mut self, input: ::std::option::Option<crate::types::ClusterScalabilityType>) -> Self {
+        self.cluster_scalability_type = input;
+        self
+    }
+    /// <p>The scalability mode of the Aurora DB cluster. When set to <code>limitless</code>, the cluster operates as an Aurora Limitless Database. When set to <code>standard</code> (the default), the cluster uses normal DB instance creation.</p>
+    pub fn get_cluster_scalability_type(&self) -> &::std::option::Option<crate::types::ClusterScalabilityType> {
+        &self.cluster_scalability_type
+    }
     /// <p>The details of the DB instance’s server certificate.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
     pub fn certificate_details(mut self, input: crate::types::CertificateDetails) -> Self {
@@ -2094,6 +2115,7 @@ impl DbClusterBuilder {
             aws_backup_recovery_point_arn: self.aws_backup_recovery_point_arn,
             limitless_database: self.limitless_database,
             storage_throughput: self.storage_throughput,
+            cluster_scalability_type: self.cluster_scalability_type,
             certificate_details: self.certificate_details,
             engine_lifecycle_support: self.engine_lifecycle_support,
         }

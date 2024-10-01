@@ -35,6 +35,9 @@ pub struct CreateDbShardGroupOutput {
     pub endpoint: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the DB shard group.</p>
     pub db_shard_group_arn: ::std::option::Option<::std::string::String>,
+    /// <p>A list of tags.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS resources</a> in the <i>Amazon RDS User Guide</i> or <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_Tagging.html">Tagging Amazon Aurora and Amazon RDS resources</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    pub tag_list: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     _request_id: Option<String>,
 }
 impl CreateDbShardGroupOutput {
@@ -90,6 +93,13 @@ impl CreateDbShardGroupOutput {
     pub fn db_shard_group_arn(&self) -> ::std::option::Option<&str> {
         self.db_shard_group_arn.as_deref()
     }
+    /// <p>A list of tags.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS resources</a> in the <i>Amazon RDS User Guide</i> or <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_Tagging.html">Tagging Amazon Aurora and Amazon RDS resources</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_list.is_none()`.
+    pub fn tag_list(&self) -> &[crate::types::Tag] {
+        self.tag_list.as_deref().unwrap_or_default()
+    }
 }
 impl ::aws_types::request_id::RequestId for CreateDbShardGroupOutput {
     fn request_id(&self) -> Option<&str> {
@@ -117,6 +127,7 @@ pub struct CreateDbShardGroupOutputBuilder {
     pub(crate) publicly_accessible: ::std::option::Option<bool>,
     pub(crate) endpoint: ::std::option::Option<::std::string::String>,
     pub(crate) db_shard_group_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) tag_list: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     _request_id: Option<String>,
 }
 impl CreateDbShardGroupOutputBuilder {
@@ -296,6 +307,29 @@ impl CreateDbShardGroupOutputBuilder {
     pub fn get_db_shard_group_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.db_shard_group_arn
     }
+    /// Appends an item to `tag_list`.
+    ///
+    /// To override the contents of this collection use [`set_tag_list`](Self::set_tag_list).
+    ///
+    /// <p>A list of tags.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS resources</a> in the <i>Amazon RDS User Guide</i> or <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_Tagging.html">Tagging Amazon Aurora and Amazon RDS resources</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    pub fn tag_list(mut self, input: crate::types::Tag) -> Self {
+        let mut v = self.tag_list.unwrap_or_default();
+        v.push(input);
+        self.tag_list = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of tags.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS resources</a> in the <i>Amazon RDS User Guide</i> or <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_Tagging.html">Tagging Amazon Aurora and Amazon RDS resources</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    pub fn set_tag_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tag_list = input;
+        self
+    }
+    /// <p>A list of tags.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS resources</a> in the <i>Amazon RDS User Guide</i> or <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_Tagging.html">Tagging Amazon Aurora and Amazon RDS resources</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    pub fn get_tag_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tag_list
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -318,6 +352,7 @@ impl CreateDbShardGroupOutputBuilder {
             publicly_accessible: self.publicly_accessible,
             endpoint: self.endpoint,
             db_shard_group_arn: self.db_shard_group_arn,
+            tag_list: self.tag_list,
             _request_id: self._request_id,
         }
     }

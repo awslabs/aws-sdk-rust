@@ -2,94 +2,94 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetIngestionJobInput {
-    /// <p>The unique identifier of the knowledge base for the data ingestion job you want to get information on.</p>
+pub struct StopIngestionJobInput {
+    /// <p>The unique identifier of the knowledge base for the data ingestion job you want to stop.</p>
     pub knowledge_base_id: ::std::option::Option<::std::string::String>,
-    /// <p>The unique identifier of the data source for the data ingestion job you want to get information on.</p>
+    /// <p>The unique identifier of the data source for the data ingestion job you want to stop.</p>
     pub data_source_id: ::std::option::Option<::std::string::String>,
-    /// <p>The unique identifier of the data ingestion job you want to get information on.</p>
+    /// <p>The unique identifier of the data ingestion job you want to stop.</p>
     pub ingestion_job_id: ::std::option::Option<::std::string::String>,
 }
-impl GetIngestionJobInput {
-    /// <p>The unique identifier of the knowledge base for the data ingestion job you want to get information on.</p>
+impl StopIngestionJobInput {
+    /// <p>The unique identifier of the knowledge base for the data ingestion job you want to stop.</p>
     pub fn knowledge_base_id(&self) -> ::std::option::Option<&str> {
         self.knowledge_base_id.as_deref()
     }
-    /// <p>The unique identifier of the data source for the data ingestion job you want to get information on.</p>
+    /// <p>The unique identifier of the data source for the data ingestion job you want to stop.</p>
     pub fn data_source_id(&self) -> ::std::option::Option<&str> {
         self.data_source_id.as_deref()
     }
-    /// <p>The unique identifier of the data ingestion job you want to get information on.</p>
+    /// <p>The unique identifier of the data ingestion job you want to stop.</p>
     pub fn ingestion_job_id(&self) -> ::std::option::Option<&str> {
         self.ingestion_job_id.as_deref()
     }
 }
-impl GetIngestionJobInput {
-    /// Creates a new builder-style object to manufacture [`GetIngestionJobInput`](crate::operation::get_ingestion_job::GetIngestionJobInput).
-    pub fn builder() -> crate::operation::get_ingestion_job::builders::GetIngestionJobInputBuilder {
-        crate::operation::get_ingestion_job::builders::GetIngestionJobInputBuilder::default()
+impl StopIngestionJobInput {
+    /// Creates a new builder-style object to manufacture [`StopIngestionJobInput`](crate::operation::stop_ingestion_job::StopIngestionJobInput).
+    pub fn builder() -> crate::operation::stop_ingestion_job::builders::StopIngestionJobInputBuilder {
+        crate::operation::stop_ingestion_job::builders::StopIngestionJobInputBuilder::default()
     }
 }
 
-/// A builder for [`GetIngestionJobInput`](crate::operation::get_ingestion_job::GetIngestionJobInput).
+/// A builder for [`StopIngestionJobInput`](crate::operation::stop_ingestion_job::StopIngestionJobInput).
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
-pub struct GetIngestionJobInputBuilder {
+pub struct StopIngestionJobInputBuilder {
     pub(crate) knowledge_base_id: ::std::option::Option<::std::string::String>,
     pub(crate) data_source_id: ::std::option::Option<::std::string::String>,
     pub(crate) ingestion_job_id: ::std::option::Option<::std::string::String>,
 }
-impl GetIngestionJobInputBuilder {
-    /// <p>The unique identifier of the knowledge base for the data ingestion job you want to get information on.</p>
+impl StopIngestionJobInputBuilder {
+    /// <p>The unique identifier of the knowledge base for the data ingestion job you want to stop.</p>
     /// This field is required.
     pub fn knowledge_base_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.knowledge_base_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier of the knowledge base for the data ingestion job you want to get information on.</p>
+    /// <p>The unique identifier of the knowledge base for the data ingestion job you want to stop.</p>
     pub fn set_knowledge_base_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.knowledge_base_id = input;
         self
     }
-    /// <p>The unique identifier of the knowledge base for the data ingestion job you want to get information on.</p>
+    /// <p>The unique identifier of the knowledge base for the data ingestion job you want to stop.</p>
     pub fn get_knowledge_base_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.knowledge_base_id
     }
-    /// <p>The unique identifier of the data source for the data ingestion job you want to get information on.</p>
+    /// <p>The unique identifier of the data source for the data ingestion job you want to stop.</p>
     /// This field is required.
     pub fn data_source_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_source_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier of the data source for the data ingestion job you want to get information on.</p>
+    /// <p>The unique identifier of the data source for the data ingestion job you want to stop.</p>
     pub fn set_data_source_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_source_id = input;
         self
     }
-    /// <p>The unique identifier of the data source for the data ingestion job you want to get information on.</p>
+    /// <p>The unique identifier of the data source for the data ingestion job you want to stop.</p>
     pub fn get_data_source_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.data_source_id
     }
-    /// <p>The unique identifier of the data ingestion job you want to get information on.</p>
+    /// <p>The unique identifier of the data ingestion job you want to stop.</p>
     /// This field is required.
     pub fn ingestion_job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ingestion_job_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier of the data ingestion job you want to get information on.</p>
+    /// <p>The unique identifier of the data ingestion job you want to stop.</p>
     pub fn set_ingestion_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ingestion_job_id = input;
         self
     }
-    /// <p>The unique identifier of the data ingestion job you want to get information on.</p>
+    /// <p>The unique identifier of the data ingestion job you want to stop.</p>
     pub fn get_ingestion_job_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.ingestion_job_id
     }
-    /// Consumes the builder and constructs a [`GetIngestionJobInput`](crate::operation::get_ingestion_job::GetIngestionJobInput).
+    /// Consumes the builder and constructs a [`StopIngestionJobInput`](crate::operation::stop_ingestion_job::StopIngestionJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_ingestion_job::GetIngestionJobInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_ingestion_job::GetIngestionJobInput {
+    ) -> ::std::result::Result<crate::operation::stop_ingestion_job::StopIngestionJobInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::stop_ingestion_job::StopIngestionJobInput {
             knowledge_base_id: self.knowledge_base_id,
             data_source_id: self.data_source_id,
             ingestion_job_id: self.ingestion_job_id,

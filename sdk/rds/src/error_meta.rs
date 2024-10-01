@@ -1659,6 +1659,7 @@ impl From<crate::operation::create_db_shard_group::CreateDBShardGroupError> for 
             crate::operation::create_db_shard_group::CreateDBShardGroupError::MaxDbShardGroupLimitReached(inner) => {
                 Error::MaxDbShardGroupLimitReached(inner)
             }
+            crate::operation::create_db_shard_group::CreateDBShardGroupError::NetworkTypeNotSupported(inner) => Error::NetworkTypeNotSupported(inner),
             crate::operation::create_db_shard_group::CreateDBShardGroupError::UnsupportedDbEngineVersionFault(inner) => {
                 Error::UnsupportedDbEngineVersionFault(inner)
             }

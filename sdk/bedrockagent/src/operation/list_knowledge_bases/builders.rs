@@ -22,7 +22,7 @@ impl crate::operation::list_knowledge_bases::builders::ListKnowledgeBasesInputBu
 }
 /// Fluent builder constructing a request to `ListKnowledgeBases`.
 ///
-/// <p>Lists the knowledge bases in an account and information about each of them.</p>
+/// <p>Lists the knowledge bases in an account. The list also includesinformation about each knowledge base.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListKnowledgeBasesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -73,6 +73,8 @@ pub use crate::types::_restore_window::RestoreWindow;
 
 pub use crate::types::_db_cluster::DbCluster;
 
+pub use crate::types::_cluster_scalability_type::ClusterScalabilityType;
+
 pub use crate::types::_limitless_database::LimitlessDatabase;
 
 pub use crate::types::_limitless_database_status::LimitlessDatabaseStatus;
@@ -328,6 +330,8 @@ mod _client_password_auth_type;
 mod _cloudwatch_logs_export_configuration;
 
 mod _cluster_pending_modified_values;
+
+mod _cluster_scalability_type;
 
 mod _connection_pool_configuration;
 

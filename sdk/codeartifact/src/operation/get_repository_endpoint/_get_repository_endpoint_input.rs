@@ -11,6 +11,8 @@ pub struct GetRepositoryEndpointInput {
     pub repository: ::std::option::Option<::std::string::String>,
     /// <p>Returns which endpoint of a repository to return. A repository has one endpoint for each package format.</p>
     pub format: ::std::option::Option<crate::types::PackageFormat>,
+    /// <p>A string that specifies the type of endpoint.</p>
+    pub endpoint_type: ::std::option::Option<crate::types::EndpointType>,
 }
 impl GetRepositoryEndpointInput {
     /// <p>The name of the domain that contains the repository.</p>
@@ -29,6 +31,10 @@ impl GetRepositoryEndpointInput {
     pub fn format(&self) -> ::std::option::Option<&crate::types::PackageFormat> {
         self.format.as_ref()
     }
+    /// <p>A string that specifies the type of endpoint.</p>
+    pub fn endpoint_type(&self) -> ::std::option::Option<&crate::types::EndpointType> {
+        self.endpoint_type.as_ref()
+    }
 }
 impl GetRepositoryEndpointInput {
     /// Creates a new builder-style object to manufacture [`GetRepositoryEndpointInput`](crate::operation::get_repository_endpoint::GetRepositoryEndpointInput).
@@ -45,6 +51,7 @@ pub struct GetRepositoryEndpointInputBuilder {
     pub(crate) domain_owner: ::std::option::Option<::std::string::String>,
     pub(crate) repository: ::std::option::Option<::std::string::String>,
     pub(crate) format: ::std::option::Option<crate::types::PackageFormat>,
+    pub(crate) endpoint_type: ::std::option::Option<crate::types::EndpointType>,
 }
 impl GetRepositoryEndpointInputBuilder {
     /// <p>The name of the domain that contains the repository.</p>
@@ -106,6 +113,20 @@ impl GetRepositoryEndpointInputBuilder {
     pub fn get_format(&self) -> &::std::option::Option<crate::types::PackageFormat> {
         &self.format
     }
+    /// <p>A string that specifies the type of endpoint.</p>
+    pub fn endpoint_type(mut self, input: crate::types::EndpointType) -> Self {
+        self.endpoint_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A string that specifies the type of endpoint.</p>
+    pub fn set_endpoint_type(mut self, input: ::std::option::Option<crate::types::EndpointType>) -> Self {
+        self.endpoint_type = input;
+        self
+    }
+    /// <p>A string that specifies the type of endpoint.</p>
+    pub fn get_endpoint_type(&self) -> &::std::option::Option<crate::types::EndpointType> {
+        &self.endpoint_type
+    }
     /// Consumes the builder and constructs a [`GetRepositoryEndpointInput`](crate::operation::get_repository_endpoint::GetRepositoryEndpointInput).
     pub fn build(
         self,
@@ -116,6 +137,7 @@ impl GetRepositoryEndpointInputBuilder {
             domain_owner: self.domain_owner,
             repository: self.repository,
             format: self.format,
+            endpoint_type: self.endpoint_type,
         })
     }
 }

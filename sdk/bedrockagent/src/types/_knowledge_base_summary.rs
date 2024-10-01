@@ -12,7 +12,7 @@ pub struct KnowledgeBaseSummary {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The status of the knowledge base.</p>
     pub status: crate::types::KnowledgeBaseStatus,
-    /// <p>The time at which the knowledge base was last updated.</p>
+    /// <p>The time the knowledge base was last updated.</p>
     pub updated_at: ::aws_smithy_types::DateTime,
 }
 impl KnowledgeBaseSummary {
@@ -34,7 +34,7 @@ impl KnowledgeBaseSummary {
     pub fn status(&self) -> &crate::types::KnowledgeBaseStatus {
         &self.status
     }
-    /// <p>The time at which the knowledge base was last updated.</p>
+    /// <p>The time the knowledge base was last updated.</p>
     pub fn updated_at(&self) -> &::aws_smithy_types::DateTime {
         &self.updated_at
     }
@@ -116,18 +116,18 @@ impl KnowledgeBaseSummaryBuilder {
     pub fn get_status(&self) -> &::std::option::Option<crate::types::KnowledgeBaseStatus> {
         &self.status
     }
-    /// <p>The time at which the knowledge base was last updated.</p>
+    /// <p>The time the knowledge base was last updated.</p>
     /// This field is required.
     pub fn updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.updated_at = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The time at which the knowledge base was last updated.</p>
+    /// <p>The time the knowledge base was last updated.</p>
     pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.updated_at = input;
         self
     }
-    /// <p>The time at which the knowledge base was last updated.</p>
+    /// <p>The time the knowledge base was last updated.</p>
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.updated_at
     }

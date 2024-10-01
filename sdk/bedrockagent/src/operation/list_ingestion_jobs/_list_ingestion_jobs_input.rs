@@ -3,13 +3,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListIngestionJobsInput {
-    /// <p>The unique identifier of the knowledge base for which to return ingestion jobs.</p>
+    /// <p>The unique identifier of the knowledge base for the list of data ingestion jobs.</p>
     pub knowledge_base_id: ::std::option::Option<::std::string::String>,
-    /// <p>The unique identifier of the data source for which to return ingestion jobs.</p>
+    /// <p>The unique identifier of the data source for the list of data ingestion jobs.</p>
     pub data_source_id: ::std::option::Option<::std::string::String>,
-    /// <p>Contains a definition of a filter for which to filter the results.</p>
+    /// <p>Contains information about the filters for filtering the data.</p>
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::IngestionJobFilter>>,
-    /// <p>Contains details about how to sort the results.</p>
+    /// <p>Contains details about how to sort the data.</p>
     pub sort_by: ::std::option::Option<crate::types::IngestionJobSortBy>,
     /// <p>The maximum number of results to return in the response. If the total number of results is greater than this value, use the token returned in the response in the <code>nextToken</code> field when making another request to return the next batch of results.</p>
     pub max_results: ::std::option::Option<i32>,
@@ -17,21 +17,21 @@ pub struct ListIngestionJobsInput {
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListIngestionJobsInput {
-    /// <p>The unique identifier of the knowledge base for which to return ingestion jobs.</p>
+    /// <p>The unique identifier of the knowledge base for the list of data ingestion jobs.</p>
     pub fn knowledge_base_id(&self) -> ::std::option::Option<&str> {
         self.knowledge_base_id.as_deref()
     }
-    /// <p>The unique identifier of the data source for which to return ingestion jobs.</p>
+    /// <p>The unique identifier of the data source for the list of data ingestion jobs.</p>
     pub fn data_source_id(&self) -> ::std::option::Option<&str> {
         self.data_source_id.as_deref()
     }
-    /// <p>Contains a definition of a filter for which to filter the results.</p>
+    /// <p>Contains information about the filters for filtering the data.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
     pub fn filters(&self) -> &[crate::types::IngestionJobFilter] {
         self.filters.as_deref().unwrap_or_default()
     }
-    /// <p>Contains details about how to sort the results.</p>
+    /// <p>Contains details about how to sort the data.</p>
     pub fn sort_by(&self) -> ::std::option::Option<&crate::types::IngestionJobSortBy> {
         self.sort_by.as_ref()
     }
@@ -63,33 +63,33 @@ pub struct ListIngestionJobsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListIngestionJobsInputBuilder {
-    /// <p>The unique identifier of the knowledge base for which to return ingestion jobs.</p>
+    /// <p>The unique identifier of the knowledge base for the list of data ingestion jobs.</p>
     /// This field is required.
     pub fn knowledge_base_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.knowledge_base_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier of the knowledge base for which to return ingestion jobs.</p>
+    /// <p>The unique identifier of the knowledge base for the list of data ingestion jobs.</p>
     pub fn set_knowledge_base_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.knowledge_base_id = input;
         self
     }
-    /// <p>The unique identifier of the knowledge base for which to return ingestion jobs.</p>
+    /// <p>The unique identifier of the knowledge base for the list of data ingestion jobs.</p>
     pub fn get_knowledge_base_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.knowledge_base_id
     }
-    /// <p>The unique identifier of the data source for which to return ingestion jobs.</p>
+    /// <p>The unique identifier of the data source for the list of data ingestion jobs.</p>
     /// This field is required.
     pub fn data_source_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_source_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier of the data source for which to return ingestion jobs.</p>
+    /// <p>The unique identifier of the data source for the list of data ingestion jobs.</p>
     pub fn set_data_source_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_source_id = input;
         self
     }
-    /// <p>The unique identifier of the data source for which to return ingestion jobs.</p>
+    /// <p>The unique identifier of the data source for the list of data ingestion jobs.</p>
     pub fn get_data_source_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.data_source_id
     }
@@ -97,33 +97,33 @@ impl ListIngestionJobsInputBuilder {
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>Contains a definition of a filter for which to filter the results.</p>
+    /// <p>Contains information about the filters for filtering the data.</p>
     pub fn filters(mut self, input: crate::types::IngestionJobFilter) -> Self {
         let mut v = self.filters.unwrap_or_default();
         v.push(input);
         self.filters = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Contains a definition of a filter for which to filter the results.</p>
+    /// <p>Contains information about the filters for filtering the data.</p>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IngestionJobFilter>>) -> Self {
         self.filters = input;
         self
     }
-    /// <p>Contains a definition of a filter for which to filter the results.</p>
+    /// <p>Contains information about the filters for filtering the data.</p>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IngestionJobFilter>> {
         &self.filters
     }
-    /// <p>Contains details about how to sort the results.</p>
+    /// <p>Contains details about how to sort the data.</p>
     pub fn sort_by(mut self, input: crate::types::IngestionJobSortBy) -> Self {
         self.sort_by = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Contains details about how to sort the results.</p>
+    /// <p>Contains details about how to sort the data.</p>
     pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::IngestionJobSortBy>) -> Self {
         self.sort_by = input;
         self
     }
-    /// <p>Contains details about how to sort the results.</p>
+    /// <p>Contains details about how to sort the data.</p>
     pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::IngestionJobSortBy> {
         &self.sort_by
     }

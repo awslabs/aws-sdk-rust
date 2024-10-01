@@ -394,6 +394,11 @@ pub struct CreateDbClusterInput {
     /// <p>Valid for Cluster Type: Aurora DB clusters only</p>
     /// <p>Valid Values: <code>IPV4 | DUAL</code></p>
     pub network_type: ::std::option::Option<::std::string::String>,
+    /// <p>Specifies the scalability mode of the Aurora DB cluster. When set to <code>limitless</code>, the cluster operates as an Aurora Limitless Database. When set to <code>standard</code> (the default), the cluster uses normal DB instance creation.</p>
+    /// <p>Valid for: Aurora DB clusters only</p><note>
+    /// <p>You can't modify this setting after you create the DB cluster.</p>
+    /// </note>
+    pub cluster_scalability_type: ::std::option::Option<crate::types::ClusterScalabilityType>,
     /// <p>Reserved for future use.</p>
     pub db_system_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether to manage the master user password with Amazon Web Services Secrets Manager.</p>
@@ -929,6 +934,13 @@ impl CreateDbClusterInput {
     pub fn network_type(&self) -> ::std::option::Option<&str> {
         self.network_type.as_deref()
     }
+    /// <p>Specifies the scalability mode of the Aurora DB cluster. When set to <code>limitless</code>, the cluster operates as an Aurora Limitless Database. When set to <code>standard</code> (the default), the cluster uses normal DB instance creation.</p>
+    /// <p>Valid for: Aurora DB clusters only</p><note>
+    /// <p>You can't modify this setting after you create the DB cluster.</p>
+    /// </note>
+    pub fn cluster_scalability_type(&self) -> ::std::option::Option<&crate::types::ClusterScalabilityType> {
+        self.cluster_scalability_type.as_ref()
+    }
     /// <p>Reserved for future use.</p>
     pub fn db_system_id(&self) -> ::std::option::Option<&str> {
         self.db_system_id.as_deref()
@@ -1040,6 +1052,7 @@ pub struct CreateDbClusterInputBuilder {
     pub(crate) enable_limitless_database: ::std::option::Option<bool>,
     pub(crate) serverless_v2_scaling_configuration: ::std::option::Option<crate::types::ServerlessV2ScalingConfiguration>,
     pub(crate) network_type: ::std::option::Option<::std::string::String>,
+    pub(crate) cluster_scalability_type: ::std::option::Option<crate::types::ClusterScalabilityType>,
     pub(crate) db_system_id: ::std::option::Option<::std::string::String>,
     pub(crate) manage_master_user_password: ::std::option::Option<bool>,
     pub(crate) master_user_secret_kms_key_id: ::std::option::Option<::std::string::String>,
@@ -2628,6 +2641,29 @@ impl CreateDbClusterInputBuilder {
     pub fn get_network_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.network_type
     }
+    /// <p>Specifies the scalability mode of the Aurora DB cluster. When set to <code>limitless</code>, the cluster operates as an Aurora Limitless Database. When set to <code>standard</code> (the default), the cluster uses normal DB instance creation.</p>
+    /// <p>Valid for: Aurora DB clusters only</p><note>
+    /// <p>You can't modify this setting after you create the DB cluster.</p>
+    /// </note>
+    pub fn cluster_scalability_type(mut self, input: crate::types::ClusterScalabilityType) -> Self {
+        self.cluster_scalability_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies the scalability mode of the Aurora DB cluster. When set to <code>limitless</code>, the cluster operates as an Aurora Limitless Database. When set to <code>standard</code> (the default), the cluster uses normal DB instance creation.</p>
+    /// <p>Valid for: Aurora DB clusters only</p><note>
+    /// <p>You can't modify this setting after you create the DB cluster.</p>
+    /// </note>
+    pub fn set_cluster_scalability_type(mut self, input: ::std::option::Option<crate::types::ClusterScalabilityType>) -> Self {
+        self.cluster_scalability_type = input;
+        self
+    }
+    /// <p>Specifies the scalability mode of the Aurora DB cluster. When set to <code>limitless</code>, the cluster operates as an Aurora Limitless Database. When set to <code>standard</code> (the default), the cluster uses normal DB instance creation.</p>
+    /// <p>Valid for: Aurora DB clusters only</p><note>
+    /// <p>You can't modify this setting after you create the DB cluster.</p>
+    /// </note>
+    pub fn get_cluster_scalability_type(&self) -> &::std::option::Option<crate::types::ClusterScalabilityType> {
+        &self.cluster_scalability_type
+    }
     /// <p>Reserved for future use.</p>
     pub fn db_system_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_system_id = ::std::option::Option::Some(input.into());
@@ -2846,6 +2882,7 @@ impl CreateDbClusterInputBuilder {
             enable_limitless_database: self.enable_limitless_database,
             serverless_v2_scaling_configuration: self.serverless_v2_scaling_configuration,
             network_type: self.network_type,
+            cluster_scalability_type: self.cluster_scalability_type,
             db_system_id: self.db_system_id,
             manage_master_user_password: self.manage_master_user_password,
             master_user_secret_kms_key_id: self.master_user_secret_kms_key_id,

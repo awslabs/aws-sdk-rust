@@ -44,6 +44,17 @@ pub fn ser_create_db_shard_group_input_input_input(
     if let Some(var_12) = &input.publicly_accessible {
         scope_11.boolean(*var_12);
     }
+    #[allow(unused_mut)]
+    let mut scope_13 = writer.prefix("Tags");
+    if let Some(var_14) = &input.tags {
+        let mut list_16 = scope_13.start_list(false, Some("Tag"));
+        for item_15 in var_14 {
+            #[allow(unused_mut)]
+            let mut entry_17 = list_16.entry();
+            crate::protocol_serde::shape_tag::ser_tag(entry_17, item_15)?;
+        }
+        list_16.finish();
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

@@ -22,7 +22,7 @@ impl crate::operation::start_ingestion_job::builders::StartIngestionJobInputBuil
 }
 /// Fluent builder constructing a request to `StartIngestionJob`.
 ///
-/// <p>Begins an ingestion job, in which a data source is added to a knowledge base.</p>
+/// <p>Begins a data ingestion job. Data sources are ingested into your knowledge base so that Large Language Models (LLMs) can use your data.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartIngestionJobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,31 +108,31 @@ impl StartIngestionJobFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The unique identifier of the knowledge base to which to add the data source.</p>
+    /// <p>The unique identifier of the knowledge base for the data ingestion job.</p>
     pub fn knowledge_base_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.knowledge_base_id(input.into());
         self
     }
-    /// <p>The unique identifier of the knowledge base to which to add the data source.</p>
+    /// <p>The unique identifier of the knowledge base for the data ingestion job.</p>
     pub fn set_knowledge_base_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_knowledge_base_id(input);
         self
     }
-    /// <p>The unique identifier of the knowledge base to which to add the data source.</p>
+    /// <p>The unique identifier of the knowledge base for the data ingestion job.</p>
     pub fn get_knowledge_base_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_knowledge_base_id()
     }
-    /// <p>The unique identifier of the data source to ingest.</p>
+    /// <p>The unique identifier of the data source you want to ingest into your knowledge base.</p>
     pub fn data_source_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.data_source_id(input.into());
         self
     }
-    /// <p>The unique identifier of the data source to ingest.</p>
+    /// <p>The unique identifier of the data source you want to ingest into your knowledge base.</p>
     pub fn set_data_source_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_data_source_id(input);
         self
     }
-    /// <p>The unique identifier of the data source to ingest.</p>
+    /// <p>The unique identifier of the data source you want to ingest into your knowledge base.</p>
     pub fn get_data_source_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_data_source_id()
     }
@@ -150,17 +150,17 @@ impl StartIngestionJobFluentBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }
-    /// <p>A description of the ingestion job.</p>
+    /// <p>A description of the data ingestion job.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
-    /// <p>A description of the ingestion job.</p>
+    /// <p>A description of the data ingestion job.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
-    /// <p>A description of the ingestion job.</p>
+    /// <p>A description of the data ingestion job.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }

@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartIngestionJobOutput {
-    /// <p>An object containing information about the ingestion job.</p>
+    /// <p>Contains information about the data ingestion job.</p>
     pub ingestion_job: ::std::option::Option<crate::types::IngestionJob>,
     _request_id: Option<String>,
 }
 impl StartIngestionJobOutput {
-    /// <p>An object containing information about the ingestion job.</p>
+    /// <p>Contains information about the data ingestion job.</p>
     pub fn ingestion_job(&self) -> ::std::option::Option<&crate::types::IngestionJob> {
         self.ingestion_job.as_ref()
     }
@@ -33,18 +33,18 @@ pub struct StartIngestionJobOutputBuilder {
     _request_id: Option<String>,
 }
 impl StartIngestionJobOutputBuilder {
-    /// <p>An object containing information about the ingestion job.</p>
+    /// <p>Contains information about the data ingestion job.</p>
     /// This field is required.
     pub fn ingestion_job(mut self, input: crate::types::IngestionJob) -> Self {
         self.ingestion_job = ::std::option::Option::Some(input);
         self
     }
-    /// <p>An object containing information about the ingestion job.</p>
+    /// <p>Contains information about the data ingestion job.</p>
     pub fn set_ingestion_job(mut self, input: ::std::option::Option<crate::types::IngestionJob>) -> Self {
         self.ingestion_job = input;
         self
     }
-    /// <p>An object containing information about the ingestion job.</p>
+    /// <p>Contains information about the data ingestion job.</p>
     pub fn get_ingestion_job(&self) -> &::std::option::Option<crate::types::IngestionJob> {
         &self.ingestion_job
     }

@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListIngestionJobsOutput {
-    /// <p>A list of objects, each of which contains information about an ingestion job.</p>
+    /// <p>A list of data ingestion jobs with information about each job.</p>
     pub ingestion_job_summaries: ::std::vec::Vec<crate::types::IngestionJobSummary>,
     /// <p>If the total number of results is greater than the <code>maxResults</code> value provided in the request, use this token when making another request in the <code>nextToken</code> field to return the next batch of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListIngestionJobsOutput {
-    /// <p>A list of objects, each of which contains information about an ingestion job.</p>
+    /// <p>A list of data ingestion jobs with information about each job.</p>
     pub fn ingestion_job_summaries(&self) -> &[crate::types::IngestionJobSummary] {
         use std::ops::Deref;
         self.ingestion_job_summaries.deref()
@@ -45,19 +45,19 @@ impl ListIngestionJobsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_ingestion_job_summaries`](Self::set_ingestion_job_summaries).
     ///
-    /// <p>A list of objects, each of which contains information about an ingestion job.</p>
+    /// <p>A list of data ingestion jobs with information about each job.</p>
     pub fn ingestion_job_summaries(mut self, input: crate::types::IngestionJobSummary) -> Self {
         let mut v = self.ingestion_job_summaries.unwrap_or_default();
         v.push(input);
         self.ingestion_job_summaries = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of objects, each of which contains information about an ingestion job.</p>
+    /// <p>A list of data ingestion jobs with information about each job.</p>
     pub fn set_ingestion_job_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IngestionJobSummary>>) -> Self {
         self.ingestion_job_summaries = input;
         self
     }
-    /// <p>A list of objects, each of which contains information about an ingestion job.</p>
+    /// <p>A list of data ingestion jobs with information about each job.</p>
     pub fn get_ingestion_job_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IngestionJobSummary>> {
         &self.ingestion_job_summaries
     }

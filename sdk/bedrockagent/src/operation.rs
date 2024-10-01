@@ -151,6 +151,9 @@ pub mod prepare_flow;
 /// Types for the `StartIngestionJob` operation.
 pub mod start_ingestion_job;
 
+/// Types for the `StopIngestionJob` operation.
+pub mod stop_ingestion_job;
+
 /// Types for the `TagResource` operation.
 pub mod tag_resource;
 

@@ -103,6 +103,21 @@ pub fn de_create_db_shard_group_http_error(
             }
             tmp
         }),
+        "NetworkTypeNotSupported" => crate::operation::create_db_shard_group::CreateDBShardGroupError::NetworkTypeNotSupported({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::NetworkTypeNotSupportedBuilder::default();
+                output = crate::protocol_serde::shape_network_type_not_supported::de_network_type_not_supported_xml_err(_response_body, output)
+                    .map_err(crate::operation::create_db_shard_group::CreateDBShardGroupError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "UnsupportedDBEngineVersion" => crate::operation::create_db_shard_group::CreateDBShardGroupError::UnsupportedDbEngineVersionFault({
             #[allow(unused_mut)]
             let mut tmp = {
@@ -307,6 +322,16 @@ pub fn de_create_db_shard_group(
                     )
                 ;
                 builder = builder.set_db_shard_group_arn(var_10);
+            }
+            ,
+            s if s.matches("TagList") /* TagList com.amazonaws.rds.synthetic#CreateDBShardGroupOutput$TagList */ =>  {
+                let var_11 =
+                    Some(
+                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_tag_list(var_11);
             }
             ,
             _ => {}

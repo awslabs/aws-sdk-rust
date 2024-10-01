@@ -1685,6 +1685,29 @@ impl CreateDBClusterFluentBuilder {
     pub fn get_network_type(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_network_type()
     }
+    /// <p>Specifies the scalability mode of the Aurora DB cluster. When set to <code>limitless</code>, the cluster operates as an Aurora Limitless Database. When set to <code>standard</code> (the default), the cluster uses normal DB instance creation.</p>
+    /// <p>Valid for: Aurora DB clusters only</p><note>
+    /// <p>You can't modify this setting after you create the DB cluster.</p>
+    /// </note>
+    pub fn cluster_scalability_type(mut self, input: crate::types::ClusterScalabilityType) -> Self {
+        self.inner = self.inner.cluster_scalability_type(input);
+        self
+    }
+    /// <p>Specifies the scalability mode of the Aurora DB cluster. When set to <code>limitless</code>, the cluster operates as an Aurora Limitless Database. When set to <code>standard</code> (the default), the cluster uses normal DB instance creation.</p>
+    /// <p>Valid for: Aurora DB clusters only</p><note>
+    /// <p>You can't modify this setting after you create the DB cluster.</p>
+    /// </note>
+    pub fn set_cluster_scalability_type(mut self, input: ::std::option::Option<crate::types::ClusterScalabilityType>) -> Self {
+        self.inner = self.inner.set_cluster_scalability_type(input);
+        self
+    }
+    /// <p>Specifies the scalability mode of the Aurora DB cluster. When set to <code>limitless</code>, the cluster operates as an Aurora Limitless Database. When set to <code>standard</code> (the default), the cluster uses normal DB instance creation.</p>
+    /// <p>Valid for: Aurora DB clusters only</p><note>
+    /// <p>You can't modify this setting after you create the DB cluster.</p>
+    /// </note>
+    pub fn get_cluster_scalability_type(&self) -> &::std::option::Option<crate::types::ClusterScalabilityType> {
+        self.inner.get_cluster_scalability_type()
+    }
     /// <p>Reserved for future use.</p>
     pub fn db_system_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.db_system_id(input.into());

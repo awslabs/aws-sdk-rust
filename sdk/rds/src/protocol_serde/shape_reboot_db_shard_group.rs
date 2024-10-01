@@ -242,6 +242,16 @@ pub fn de_reboot_db_shard_group(
                 builder = builder.set_db_shard_group_arn(var_10);
             }
             ,
+            s if s.matches("TagList") /* TagList com.amazonaws.rds.synthetic#RebootDBShardGroupOutput$TagList */ =>  {
+                let var_11 =
+                    Some(
+                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_tag_list(var_11);
+            }
+            ,
             _ => {}
         }
         }

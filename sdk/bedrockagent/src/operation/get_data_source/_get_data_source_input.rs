@@ -3,13 +3,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDataSourceInput {
-    /// <p>The unique identifier of the knowledge base that the data source was added to.</p>
+    /// <p>The unique identifier of the knowledge base for the data source.</p>
     pub knowledge_base_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the data source.</p>
     pub data_source_id: ::std::option::Option<::std::string::String>,
 }
 impl GetDataSourceInput {
-    /// <p>The unique identifier of the knowledge base that the data source was added to.</p>
+    /// <p>The unique identifier of the knowledge base for the data source.</p>
     pub fn knowledge_base_id(&self) -> ::std::option::Option<&str> {
         self.knowledge_base_id.as_deref()
     }
@@ -33,18 +33,18 @@ pub struct GetDataSourceInputBuilder {
     pub(crate) data_source_id: ::std::option::Option<::std::string::String>,
 }
 impl GetDataSourceInputBuilder {
-    /// <p>The unique identifier of the knowledge base that the data source was added to.</p>
+    /// <p>The unique identifier of the knowledge base for the data source.</p>
     /// This field is required.
     pub fn knowledge_base_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.knowledge_base_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier of the knowledge base that the data source was added to.</p>
+    /// <p>The unique identifier of the knowledge base for the data source.</p>
     pub fn set_knowledge_base_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.knowledge_base_id = input;
         self
     }
-    /// <p>The unique identifier of the knowledge base that the data source was added to.</p>
+    /// <p>The unique identifier of the knowledge base for the data source.</p>
     pub fn get_knowledge_base_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.knowledge_base_id
     }

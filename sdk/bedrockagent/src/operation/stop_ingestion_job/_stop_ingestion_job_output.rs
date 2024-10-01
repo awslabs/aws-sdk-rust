@@ -2,49 +2,49 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetIngestionJobOutput {
-    /// <p>Contains details about the data ingestion job.</p>
+pub struct StopIngestionJobOutput {
+    /// <p>Contains information about the stopped data ingestion job.</p>
     pub ingestion_job: ::std::option::Option<crate::types::IngestionJob>,
     _request_id: Option<String>,
 }
-impl GetIngestionJobOutput {
-    /// <p>Contains details about the data ingestion job.</p>
+impl StopIngestionJobOutput {
+    /// <p>Contains information about the stopped data ingestion job.</p>
     pub fn ingestion_job(&self) -> ::std::option::Option<&crate::types::IngestionJob> {
         self.ingestion_job.as_ref()
     }
 }
-impl ::aws_types::request_id::RequestId for GetIngestionJobOutput {
+impl ::aws_types::request_id::RequestId for StopIngestionJobOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
 }
-impl GetIngestionJobOutput {
-    /// Creates a new builder-style object to manufacture [`GetIngestionJobOutput`](crate::operation::get_ingestion_job::GetIngestionJobOutput).
-    pub fn builder() -> crate::operation::get_ingestion_job::builders::GetIngestionJobOutputBuilder {
-        crate::operation::get_ingestion_job::builders::GetIngestionJobOutputBuilder::default()
+impl StopIngestionJobOutput {
+    /// Creates a new builder-style object to manufacture [`StopIngestionJobOutput`](crate::operation::stop_ingestion_job::StopIngestionJobOutput).
+    pub fn builder() -> crate::operation::stop_ingestion_job::builders::StopIngestionJobOutputBuilder {
+        crate::operation::stop_ingestion_job::builders::StopIngestionJobOutputBuilder::default()
     }
 }
 
-/// A builder for [`GetIngestionJobOutput`](crate::operation::get_ingestion_job::GetIngestionJobOutput).
+/// A builder for [`StopIngestionJobOutput`](crate::operation::stop_ingestion_job::StopIngestionJobOutput).
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
-pub struct GetIngestionJobOutputBuilder {
+pub struct StopIngestionJobOutputBuilder {
     pub(crate) ingestion_job: ::std::option::Option<crate::types::IngestionJob>,
     _request_id: Option<String>,
 }
-impl GetIngestionJobOutputBuilder {
-    /// <p>Contains details about the data ingestion job.</p>
+impl StopIngestionJobOutputBuilder {
+    /// <p>Contains information about the stopped data ingestion job.</p>
     /// This field is required.
     pub fn ingestion_job(mut self, input: crate::types::IngestionJob) -> Self {
         self.ingestion_job = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Contains details about the data ingestion job.</p>
+    /// <p>Contains information about the stopped data ingestion job.</p>
     pub fn set_ingestion_job(mut self, input: ::std::option::Option<crate::types::IngestionJob>) -> Self {
         self.ingestion_job = input;
         self
     }
-    /// <p>Contains details about the data ingestion job.</p>
+    /// <p>Contains information about the stopped data ingestion job.</p>
     pub fn get_ingestion_job(&self) -> &::std::option::Option<crate::types::IngestionJob> {
         &self.ingestion_job
     }
@@ -57,9 +57,9 @@ impl GetIngestionJobOutputBuilder {
         self._request_id = request_id;
         self
     }
-    /// Consumes the builder and constructs a [`GetIngestionJobOutput`](crate::operation::get_ingestion_job::GetIngestionJobOutput).
-    pub fn build(self) -> crate::operation::get_ingestion_job::GetIngestionJobOutput {
-        crate::operation::get_ingestion_job::GetIngestionJobOutput {
+    /// Consumes the builder and constructs a [`StopIngestionJobOutput`](crate::operation::stop_ingestion_job::StopIngestionJobOutput).
+    pub fn build(self) -> crate::operation::stop_ingestion_job::StopIngestionJobOutput {
+        crate::operation::stop_ingestion_job::StopIngestionJobOutput {
             ingestion_job: self.ingestion_job,
             _request_id: self._request_id,
         }

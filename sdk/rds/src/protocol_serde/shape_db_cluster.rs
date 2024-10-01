@@ -1022,18 +1022,32 @@ pub fn de_db_cluster(
                 builder = builder.set_storage_throughput(var_78);
             }
             ,
-            s if s.matches("CertificateDetails") /* CertificateDetails com.amazonaws.rds#DBCluster$CertificateDetails */ =>  {
+            s if s.matches("ClusterScalabilityType") /* ClusterScalabilityType com.amazonaws.rds#DBCluster$ClusterScalabilityType */ =>  {
                 let var_79 =
+                    Some(
+                        Result::<crate::types::ClusterScalabilityType, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::ClusterScalabilityType::from(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_cluster_scalability_type(var_79);
+            }
+            ,
+            s if s.matches("CertificateDetails") /* CertificateDetails com.amazonaws.rds#DBCluster$CertificateDetails */ =>  {
+                let var_80 =
                     Some(
                         crate::protocol_serde::shape_certificate_details::de_certificate_details(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_certificate_details(var_79);
+                builder = builder.set_certificate_details(var_80);
             }
             ,
             s if s.matches("EngineLifecycleSupport") /* EngineLifecycleSupport com.amazonaws.rds#DBCluster$EngineLifecycleSupport */ =>  {
-                let var_80 =
+                let var_81 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -1042,7 +1056,7 @@ pub fn de_db_cluster(
                         ?
                     )
                 ;
-                builder = builder.set_engine_lifecycle_support(var_80);
+                builder = builder.set_engine_lifecycle_support(var_81);
             }
             ,
             _ => {}

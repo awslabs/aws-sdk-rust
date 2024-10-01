@@ -3,21 +3,21 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartIngestionJobInput {
-    /// <p>The unique identifier of the knowledge base to which to add the data source.</p>
+    /// <p>The unique identifier of the knowledge base for the data ingestion job.</p>
     pub knowledge_base_id: ::std::option::Option<::std::string::String>,
-    /// <p>The unique identifier of the data source to ingest.</p>
+    /// <p>The unique identifier of the data source you want to ingest into your knowledge base.</p>
     pub data_source_id: ::std::option::Option<::std::string::String>,
     /// <p>A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If this token matches a previous request, Amazon Bedrock ignores the request, but does not return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a>.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
-    /// <p>A description of the ingestion job.</p>
+    /// <p>A description of the data ingestion job.</p>
     pub description: ::std::option::Option<::std::string::String>,
 }
 impl StartIngestionJobInput {
-    /// <p>The unique identifier of the knowledge base to which to add the data source.</p>
+    /// <p>The unique identifier of the knowledge base for the data ingestion job.</p>
     pub fn knowledge_base_id(&self) -> ::std::option::Option<&str> {
         self.knowledge_base_id.as_deref()
     }
-    /// <p>The unique identifier of the data source to ingest.</p>
+    /// <p>The unique identifier of the data source you want to ingest into your knowledge base.</p>
     pub fn data_source_id(&self) -> ::std::option::Option<&str> {
         self.data_source_id.as_deref()
     }
@@ -25,7 +25,7 @@ impl StartIngestionJobInput {
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
     }
-    /// <p>A description of the ingestion job.</p>
+    /// <p>A description of the data ingestion job.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
@@ -47,33 +47,33 @@ pub struct StartIngestionJobInputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
 }
 impl StartIngestionJobInputBuilder {
-    /// <p>The unique identifier of the knowledge base to which to add the data source.</p>
+    /// <p>The unique identifier of the knowledge base for the data ingestion job.</p>
     /// This field is required.
     pub fn knowledge_base_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.knowledge_base_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier of the knowledge base to which to add the data source.</p>
+    /// <p>The unique identifier of the knowledge base for the data ingestion job.</p>
     pub fn set_knowledge_base_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.knowledge_base_id = input;
         self
     }
-    /// <p>The unique identifier of the knowledge base to which to add the data source.</p>
+    /// <p>The unique identifier of the knowledge base for the data ingestion job.</p>
     pub fn get_knowledge_base_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.knowledge_base_id
     }
-    /// <p>The unique identifier of the data source to ingest.</p>
+    /// <p>The unique identifier of the data source you want to ingest into your knowledge base.</p>
     /// This field is required.
     pub fn data_source_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_source_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier of the data source to ingest.</p>
+    /// <p>The unique identifier of the data source you want to ingest into your knowledge base.</p>
     pub fn set_data_source_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_source_id = input;
         self
     }
-    /// <p>The unique identifier of the data source to ingest.</p>
+    /// <p>The unique identifier of the data source you want to ingest into your knowledge base.</p>
     pub fn get_data_source_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.data_source_id
     }
@@ -91,17 +91,17 @@ impl StartIngestionJobInputBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
-    /// <p>A description of the ingestion job.</p>
+    /// <p>A description of the data ingestion job.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A description of the ingestion job.</p>
+    /// <p>A description of the data ingestion job.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
-    /// <p>A description of the ingestion job.</p>
+    /// <p>A description of the data ingestion job.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
