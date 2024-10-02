@@ -13,6 +13,8 @@ pub struct CodeEditorAppSettings {
     pub lifecycle_config_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Settings that are used to configure and manage the lifecycle of CodeEditor applications.</p>
     pub app_lifecycle_management: ::std::option::Option<crate::types::AppLifecycleManagement>,
+    /// <p>The lifecycle configuration that runs before the default lifecycle configuration. It can override changes made in the default lifecycle configuration.</p>
+    pub built_in_lifecycle_config_arn: ::std::option::Option<::std::string::String>,
 }
 impl CodeEditorAppSettings {
     /// <p>Specifies the ARN's of a SageMaker image and SageMaker image version, and the instance type that the version runs on.</p>
@@ -35,6 +37,10 @@ impl CodeEditorAppSettings {
     pub fn app_lifecycle_management(&self) -> ::std::option::Option<&crate::types::AppLifecycleManagement> {
         self.app_lifecycle_management.as_ref()
     }
+    /// <p>The lifecycle configuration that runs before the default lifecycle configuration. It can override changes made in the default lifecycle configuration.</p>
+    pub fn built_in_lifecycle_config_arn(&self) -> ::std::option::Option<&str> {
+        self.built_in_lifecycle_config_arn.as_deref()
+    }
 }
 impl CodeEditorAppSettings {
     /// Creates a new builder-style object to manufacture [`CodeEditorAppSettings`](crate::types::CodeEditorAppSettings).
@@ -51,6 +57,7 @@ pub struct CodeEditorAppSettingsBuilder {
     pub(crate) custom_images: ::std::option::Option<::std::vec::Vec<crate::types::CustomImage>>,
     pub(crate) lifecycle_config_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) app_lifecycle_management: ::std::option::Option<crate::types::AppLifecycleManagement>,
+    pub(crate) built_in_lifecycle_config_arn: ::std::option::Option<::std::string::String>,
 }
 impl CodeEditorAppSettingsBuilder {
     /// <p>Specifies the ARN's of a SageMaker image and SageMaker image version, and the instance type that the version runs on.</p>
@@ -121,6 +128,20 @@ impl CodeEditorAppSettingsBuilder {
     pub fn get_app_lifecycle_management(&self) -> &::std::option::Option<crate::types::AppLifecycleManagement> {
         &self.app_lifecycle_management
     }
+    /// <p>The lifecycle configuration that runs before the default lifecycle configuration. It can override changes made in the default lifecycle configuration.</p>
+    pub fn built_in_lifecycle_config_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.built_in_lifecycle_config_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The lifecycle configuration that runs before the default lifecycle configuration. It can override changes made in the default lifecycle configuration.</p>
+    pub fn set_built_in_lifecycle_config_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.built_in_lifecycle_config_arn = input;
+        self
+    }
+    /// <p>The lifecycle configuration that runs before the default lifecycle configuration. It can override changes made in the default lifecycle configuration.</p>
+    pub fn get_built_in_lifecycle_config_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.built_in_lifecycle_config_arn
+    }
     /// Consumes the builder and constructs a [`CodeEditorAppSettings`](crate::types::CodeEditorAppSettings).
     pub fn build(self) -> crate::types::CodeEditorAppSettings {
         crate::types::CodeEditorAppSettings {
@@ -128,6 +149,7 @@ impl CodeEditorAppSettingsBuilder {
             custom_images: self.custom_images,
             lifecycle_config_arns: self.lifecycle_config_arns,
             app_lifecycle_management: self.app_lifecycle_management,
+            built_in_lifecycle_config_arn: self.built_in_lifecycle_config_arn,
         }
     }
 }

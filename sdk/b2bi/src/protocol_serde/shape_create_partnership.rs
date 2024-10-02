@@ -210,6 +210,9 @@ pub(crate) fn de_create_partnership(
                         tokens,
                     )?);
                 }
+                "capabilityOptions" => {
+                    builder = builder.set_capability_options(crate::protocol_serde::shape_capability_options::de_capability_options(tokens)?);
+                }
                 "tradingPartnerId" => {
                     builder = builder.set_trading_partner_id(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

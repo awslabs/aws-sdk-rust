@@ -156,6 +156,46 @@ impl From<crate::operation::create_profile::CreateProfileError> for Error {
         }
     }
 }
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_starter_mapping_template::CreateStarterMappingTemplateError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_starter_mapping_template::CreateStarterMappingTemplateError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_starter_mapping_template::CreateStarterMappingTemplateError> for Error {
+    fn from(err: crate::operation::create_starter_mapping_template::CreateStarterMappingTemplateError) -> Self {
+        match err {
+            crate::operation::create_starter_mapping_template::CreateStarterMappingTemplateError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::create_starter_mapping_template::CreateStarterMappingTemplateError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::create_starter_mapping_template::CreateStarterMappingTemplateError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::create_starter_mapping_template::CreateStarterMappingTemplateError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::create_starter_mapping_template::CreateStarterMappingTemplateError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_transformer::CreateTransformerError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -608,6 +648,32 @@ impl From<crate::operation::tag_resource::TagResourceError> for Error {
             crate::operation::tag_resource::TagResourceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::tag_resource::TagResourceError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::tag_resource::TagResourceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::test_conversion::TestConversionError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::test_conversion::TestConversionError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::test_conversion::TestConversionError> for Error {
+    fn from(err: crate::operation::test_conversion::TestConversionError) -> Self {
+        match err {
+            crate::operation::test_conversion::TestConversionError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::test_conversion::TestConversionError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::test_conversion::TestConversionError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::test_conversion::TestConversionError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::test_conversion::TestConversionError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::test_conversion::TestConversionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

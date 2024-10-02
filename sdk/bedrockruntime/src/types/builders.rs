@@ -9,6 +9,14 @@ pub use crate::types::_guardrail_trace_assessment::GuardrailTraceAssessmentBuild
 
 pub use crate::types::_guardrail_assessment::GuardrailAssessmentBuilder;
 
+pub use crate::types::_guardrail_invocation_metrics::GuardrailInvocationMetricsBuilder;
+
+pub use crate::types::_guardrail_coverage::GuardrailCoverageBuilder;
+
+pub use crate::types::_guardrail_text_characters_coverage::GuardrailTextCharactersCoverageBuilder;
+
+pub use crate::types::_guardrail_usage::GuardrailUsageBuilder;
+
 pub use crate::types::_guardrail_contextual_grounding_policy_assessment::GuardrailContextualGroundingPolicyAssessmentBuilder;
 
 pub use crate::types::_guardrail_contextual_grounding_filter::GuardrailContextualGroundingFilterBuilder;
@@ -84,7 +92,5 @@ pub use crate::types::_converse_metrics::ConverseMetricsBuilder;
 pub use crate::types::_guardrail_configuration::GuardrailConfigurationBuilder;
 
 pub use crate::types::_guardrail_output_content::GuardrailOutputContentBuilder;
-
-pub use crate::types::_guardrail_usage::GuardrailUsageBuilder;
 
 pub use crate::types::_guardrail_text_block::GuardrailTextBlockBuilder;

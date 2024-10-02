@@ -9,14 +9,14 @@ pub fn ser_update_transformer_input_input(
     if let Some(var_2) = &input.name {
         object.key("name").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.file_format {
-        object.key("fileFormat").string(var_3.as_str());
+    if let Some(var_3) = &input.status {
+        object.key("status").string(var_3.as_str());
     }
-    if let Some(var_4) = &input.mapping_template {
-        object.key("mappingTemplate").string(var_4.as_str());
+    if let Some(var_4) = &input.file_format {
+        object.key("fileFormat").string(var_4.as_str());
     }
-    if let Some(var_5) = &input.status {
-        object.key("status").string(var_5.as_str());
+    if let Some(var_5) = &input.mapping_template {
+        object.key("mappingTemplate").string(var_5.as_str());
     }
     if let Some(var_6) = &input.edi_type {
         #[allow(unused_mut)]
@@ -26,6 +26,30 @@ pub fn ser_update_transformer_input_input(
     }
     if let Some(var_8) = &input.sample_document {
         object.key("sampleDocument").string(var_8.as_str());
+    }
+    if let Some(var_9) = &input.input_conversion {
+        #[allow(unused_mut)]
+        let mut object_10 = object.key("inputConversion").start_object();
+        crate::protocol_serde::shape_input_conversion::ser_input_conversion(&mut object_10, var_9)?;
+        object_10.finish();
+    }
+    if let Some(var_11) = &input.mapping {
+        #[allow(unused_mut)]
+        let mut object_12 = object.key("mapping").start_object();
+        crate::protocol_serde::shape_mapping::ser_mapping(&mut object_12, var_11)?;
+        object_12.finish();
+    }
+    if let Some(var_13) = &input.output_conversion {
+        #[allow(unused_mut)]
+        let mut object_14 = object.key("outputConversion").start_object();
+        crate::protocol_serde::shape_output_conversion::ser_output_conversion(&mut object_14, var_13)?;
+        object_14.finish();
+    }
+    if let Some(var_15) = &input.sample_documents {
+        #[allow(unused_mut)]
+        let mut object_16 = object.key("sampleDocuments").start_object();
+        crate::protocol_serde::shape_sample_documents::ser_sample_documents(&mut object_16, var_15)?;
+        object_16.finish();
     }
     Ok(())
 }

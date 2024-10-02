@@ -12,6 +12,7 @@ impl super::Client {
     ///   - [`email(Option<String>)`](crate::operation::get_partnership::GetPartnershipOutput::email): <p>Returns the email address associated with this trading partner.</p>
     ///   - [`phone(Option<String>)`](crate::operation::get_partnership::GetPartnershipOutput::phone): <p>Returns the phone number associated with the partnership.</p>
     ///   - [`capabilities(Option<Vec::<String>>)`](crate::operation::get_partnership::GetPartnershipOutput::capabilities): <p>Returns one or more capabilities associated with this partnership.</p>
+    ///   - [`capability_options(Option<CapabilityOptions>)`](crate::operation::get_partnership::GetPartnershipOutput::capability_options): <p>Contains the details for an Outbound EDI capability.</p>
     ///   - [`trading_partner_id(Option<String>)`](crate::operation::get_partnership::GetPartnershipOutput::trading_partner_id): <p>Returns the unique identifier for the partner for this partnership.</p>
     ///   - [`created_at(DateTime)`](crate::operation::get_partnership::GetPartnershipOutput::created_at): <p>Returns a timestamp for creation date and time of the partnership.</p>
     ///   - [`modified_at(Option<DateTime>)`](crate::operation::get_partnership::GetPartnershipOutput::modified_at): <p>Returns a timestamp that identifies the most recent date and time that the partnership was modified.</p>

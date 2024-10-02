@@ -165,6 +165,9 @@ pub(crate) fn de_apply_guardrail(
                         tokens,
                     )?);
                 }
+                "guardrailCoverage" => {
+                    builder = builder.set_guardrail_coverage(crate::protocol_serde::shape_guardrail_coverage::de_guardrail_coverage(tokens)?);
+                }
                 "outputs" => {
                     builder =
                         builder.set_outputs(crate::protocol_serde::shape_guardrail_output_content_list::de_guardrail_output_content_list(tokens)?);

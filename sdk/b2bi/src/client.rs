@@ -59,14 +59,14 @@ pub(crate) struct Handle {
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`GetTransformerJob`](crate::operation::get_transformer_job) operation has
-/// a [`Client::get_transformer_job`], function which returns a builder for that operation.
+/// For example, the [`CreateStarterMappingTemplate`](crate::operation::create_starter_mapping_template) operation has
+/// a [`Client::create_starter_mapping_template`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.get_transformer_job()
-///     .transformer_job_id("example")
+/// let result = client.create_starter_mapping_template()
+///     .mapping_type("example")
 ///     .send()
 ///     .await;
 /// ```
@@ -142,6 +142,8 @@ mod create_partnership;
 
 mod create_profile;
 
+mod create_starter_mapping_template;
+
 mod create_transformer;
 
 /// Operation customization and supporting types.
@@ -155,7 +157,7 @@ mod create_transformer;
 /// # let client: aws_sdk_b2bi::Client = unimplemented!();
 /// use ::http::header::{HeaderName, HeaderValue};
 ///
-/// let result = client.get_transformer_job()
+/// let result = client.create_starter_mapping_template()
 ///     .customize()
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
@@ -202,6 +204,8 @@ mod list_transformers;
 mod start_transformer_job;
 
 mod tag_resource;
+
+mod test_conversion;
 
 mod test_mapping;
 

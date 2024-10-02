@@ -63,13 +63,13 @@ where
 }
 
 pub fn ser_edi_type(
-    object_5: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
+    object_10: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::EdiType,
 ) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::EdiType::X12Details(inner) => {
             #[allow(unused_mut)]
-            let mut object_1 = object_5.key("x12Details").start_object();
+            let mut object_1 = object_10.key("x12Details").start_object();
             crate::protocol_serde::shape_x12_details::ser_x12_details(&mut object_1, inner)?;
             object_1.finish();
         }

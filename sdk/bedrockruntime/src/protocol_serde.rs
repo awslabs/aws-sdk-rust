@@ -97,6 +97,8 @@ pub(crate) mod shape_guardrail_configuration;
 
 pub(crate) mod shape_guardrail_content_block;
 
+pub(crate) mod shape_guardrail_coverage;
+
 pub(crate) mod shape_guardrail_output_content_list;
 
 pub(crate) mod shape_guardrail_stream_configuration;
@@ -131,6 +133,8 @@ pub(crate) mod shape_guardrail_output_content;
 
 pub(crate) mod shape_guardrail_text_block;
 
+pub(crate) mod shape_guardrail_text_characters_coverage;
+
 pub(crate) mod shape_guardrail_trace_assessment;
 
 pub(crate) mod shape_message_start_event;
@@ -160,6 +164,8 @@ pub(crate) mod shape_guardrail_content_policy_assessment;
 pub(crate) mod shape_guardrail_contextual_grounding_policy_assessment;
 
 pub(crate) mod shape_guardrail_converse_text_block;
+
+pub(crate) mod shape_guardrail_invocation_metrics;
 
 pub(crate) mod shape_guardrail_sensitive_information_policy_assessment;
 

@@ -22,7 +22,7 @@ impl crate::operation::list_transformers::builders::ListTransformersInputBuilder
 }
 /// Fluent builder constructing a request to `ListTransformers`.
 ///
-/// <p>Lists the available transformers. A transformer describes how to process the incoming EDI documents and extract the necessary information to the output file.</p>
+/// <p>Lists the available transformers. A transformer can take an EDI file as input and transform it into a JSON-or XML-formatted document. Alternatively, a transformer can take a JSON-or XML-formatted document as input and transform it into an EDI file.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListTransformersFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

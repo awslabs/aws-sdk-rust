@@ -233,6 +233,8 @@ pub use crate::types::_target_grant::TargetGrant;
 
 pub use crate::types::_bucket_logs_permission::BucketLogsPermission;
 
+pub use crate::types::_transition_default_minimum_object_size::TransitionDefaultMinimumObjectSize;
+
 pub use crate::types::_bucket_lifecycle_configuration::BucketLifecycleConfiguration;
 
 pub use crate::types::_lifecycle_rule::LifecycleRule;
@@ -798,6 +800,8 @@ mod _tiering;
 mod _topic_configuration;
 
 mod _transition;
+
+mod _transition_default_minimum_object_size;
 
 mod _transition_storage_class;
 

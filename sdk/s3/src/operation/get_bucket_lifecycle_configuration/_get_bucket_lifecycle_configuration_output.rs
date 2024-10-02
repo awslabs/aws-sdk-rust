@@ -5,6 +5,15 @@
 pub struct GetBucketLifecycleConfigurationOutput {
     /// <p>Container for a lifecycle rule.</p>
     pub rules: ::std::option::Option<::std::vec::Vec<crate::types::LifecycleRule>>,
+    /// <p>Indicates which default minimum object size behavior is applied to the lifecycle configuration.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>all_storage_classes_128K</code> - Objects smaller than 128 KB will not transition to any storage class by default.</p></li>
+    /// <li>
+    /// <p><code>varies_by_storage_class</code> - Objects smaller than 128 KB will transition to Glacier Flexible Retrieval or Glacier Deep Archive storage classes. By default, all other storage classes will prevent transitions smaller than 128 KB.</p></li>
+    /// </ul>
+    /// <p>To customize the minimum object size for any transition you can add a filter that specifies a custom <code>ObjectSizeGreaterThan</code> or <code>ObjectSizeLessThan</code> in the body of your transition rule. Custom filters always take precedence over the default transition behavior.</p>
+    pub transition_default_minimum_object_size: ::std::option::Option<crate::types::TransitionDefaultMinimumObjectSize>,
     _extended_request_id: Option<String>,
     _request_id: Option<String>,
 }
@@ -14,6 +23,17 @@ impl GetBucketLifecycleConfigurationOutput {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.rules.is_none()`.
     pub fn rules(&self) -> &[crate::types::LifecycleRule] {
         self.rules.as_deref().unwrap_or_default()
+    }
+    /// <p>Indicates which default minimum object size behavior is applied to the lifecycle configuration.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>all_storage_classes_128K</code> - Objects smaller than 128 KB will not transition to any storage class by default.</p></li>
+    /// <li>
+    /// <p><code>varies_by_storage_class</code> - Objects smaller than 128 KB will transition to Glacier Flexible Retrieval or Glacier Deep Archive storage classes. By default, all other storage classes will prevent transitions smaller than 128 KB.</p></li>
+    /// </ul>
+    /// <p>To customize the minimum object size for any transition you can add a filter that specifies a custom <code>ObjectSizeGreaterThan</code> or <code>ObjectSizeLessThan</code> in the body of your transition rule. Custom filters always take precedence over the default transition behavior.</p>
+    pub fn transition_default_minimum_object_size(&self) -> ::std::option::Option<&crate::types::TransitionDefaultMinimumObjectSize> {
+        self.transition_default_minimum_object_size.as_ref()
     }
 }
 impl crate::s3_request_id::RequestIdExt for GetBucketLifecycleConfigurationOutput {
@@ -38,6 +58,7 @@ impl GetBucketLifecycleConfigurationOutput {
 #[non_exhaustive]
 pub struct GetBucketLifecycleConfigurationOutputBuilder {
     pub(crate) rules: ::std::option::Option<::std::vec::Vec<crate::types::LifecycleRule>>,
+    pub(crate) transition_default_minimum_object_size: ::std::option::Option<crate::types::TransitionDefaultMinimumObjectSize>,
     _extended_request_id: Option<String>,
     _request_id: Option<String>,
 }
@@ -62,6 +83,44 @@ impl GetBucketLifecycleConfigurationOutputBuilder {
     pub fn get_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LifecycleRule>> {
         &self.rules
     }
+    /// <p>Indicates which default minimum object size behavior is applied to the lifecycle configuration.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>all_storage_classes_128K</code> - Objects smaller than 128 KB will not transition to any storage class by default.</p></li>
+    /// <li>
+    /// <p><code>varies_by_storage_class</code> - Objects smaller than 128 KB will transition to Glacier Flexible Retrieval or Glacier Deep Archive storage classes. By default, all other storage classes will prevent transitions smaller than 128 KB.</p></li>
+    /// </ul>
+    /// <p>To customize the minimum object size for any transition you can add a filter that specifies a custom <code>ObjectSizeGreaterThan</code> or <code>ObjectSizeLessThan</code> in the body of your transition rule. Custom filters always take precedence over the default transition behavior.</p>
+    pub fn transition_default_minimum_object_size(mut self, input: crate::types::TransitionDefaultMinimumObjectSize) -> Self {
+        self.transition_default_minimum_object_size = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates which default minimum object size behavior is applied to the lifecycle configuration.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>all_storage_classes_128K</code> - Objects smaller than 128 KB will not transition to any storage class by default.</p></li>
+    /// <li>
+    /// <p><code>varies_by_storage_class</code> - Objects smaller than 128 KB will transition to Glacier Flexible Retrieval or Glacier Deep Archive storage classes. By default, all other storage classes will prevent transitions smaller than 128 KB.</p></li>
+    /// </ul>
+    /// <p>To customize the minimum object size for any transition you can add a filter that specifies a custom <code>ObjectSizeGreaterThan</code> or <code>ObjectSizeLessThan</code> in the body of your transition rule. Custom filters always take precedence over the default transition behavior.</p>
+    pub fn set_transition_default_minimum_object_size(
+        mut self,
+        input: ::std::option::Option<crate::types::TransitionDefaultMinimumObjectSize>,
+    ) -> Self {
+        self.transition_default_minimum_object_size = input;
+        self
+    }
+    /// <p>Indicates which default minimum object size behavior is applied to the lifecycle configuration.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>all_storage_classes_128K</code> - Objects smaller than 128 KB will not transition to any storage class by default.</p></li>
+    /// <li>
+    /// <p><code>varies_by_storage_class</code> - Objects smaller than 128 KB will transition to Glacier Flexible Retrieval or Glacier Deep Archive storage classes. By default, all other storage classes will prevent transitions smaller than 128 KB.</p></li>
+    /// </ul>
+    /// <p>To customize the minimum object size for any transition you can add a filter that specifies a custom <code>ObjectSizeGreaterThan</code> or <code>ObjectSizeLessThan</code> in the body of your transition rule. Custom filters always take precedence over the default transition behavior.</p>
+    pub fn get_transition_default_minimum_object_size(&self) -> &::std::option::Option<crate::types::TransitionDefaultMinimumObjectSize> {
+        &self.transition_default_minimum_object_size
+    }
     pub(crate) fn _extended_request_id(mut self, extended_request_id: impl Into<String>) -> Self {
         self._extended_request_id = Some(extended_request_id.into());
         self
@@ -84,6 +143,7 @@ impl GetBucketLifecycleConfigurationOutputBuilder {
     pub fn build(self) -> crate::operation::get_bucket_lifecycle_configuration::GetBucketLifecycleConfigurationOutput {
         crate::operation::get_bucket_lifecycle_configuration::GetBucketLifecycleConfigurationOutput {
             rules: self.rules,
+            transition_default_minimum_object_size: self.transition_default_minimum_object_size,
             _extended_request_id: self._extended_request_id,
             _request_id: self._request_id,
         }

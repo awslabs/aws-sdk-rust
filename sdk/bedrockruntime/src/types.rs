@@ -15,6 +15,14 @@ pub use crate::types::_guardrail_trace_assessment::GuardrailTraceAssessment;
 
 pub use crate::types::_guardrail_assessment::GuardrailAssessment;
 
+pub use crate::types::_guardrail_invocation_metrics::GuardrailInvocationMetrics;
+
+pub use crate::types::_guardrail_coverage::GuardrailCoverage;
+
+pub use crate::types::_guardrail_text_characters_coverage::GuardrailTextCharactersCoverage;
+
+pub use crate::types::_guardrail_usage::GuardrailUsage;
+
 pub use crate::types::_guardrail_contextual_grounding_policy_assessment::GuardrailContextualGroundingPolicyAssessment;
 
 pub use crate::types::_guardrail_contextual_grounding_filter::GuardrailContextualGroundingFilter;
@@ -48,6 +56,8 @@ pub use crate::types::_guardrail_content_policy_assessment::GuardrailContentPoli
 pub use crate::types::_guardrail_content_filter::GuardrailContentFilter;
 
 pub use crate::types::_guardrail_content_policy_action::GuardrailContentPolicyAction;
+
+pub use crate::types::_guardrail_content_filter_strength::GuardrailContentFilterStrength;
 
 pub use crate::types::_guardrail_content_filter_confidence::GuardrailContentFilterConfidence;
 
@@ -155,8 +165,6 @@ pub use crate::types::_guardrail_output_content::GuardrailOutputContent;
 
 pub use crate::types::_guardrail_action::GuardrailAction;
 
-pub use crate::types::_guardrail_usage::GuardrailUsage;
-
 pub use crate::types::_guardrail_content_block::GuardrailContentBlock;
 
 pub use crate::types::_guardrail_text_block::GuardrailTextBlock;
@@ -215,6 +223,8 @@ mod _guardrail_content_filter;
 
 mod _guardrail_content_filter_confidence;
 
+mod _guardrail_content_filter_strength;
+
 mod _guardrail_content_filter_type;
 
 mod _guardrail_content_policy_action;
@@ -239,7 +249,11 @@ mod _guardrail_converse_content_qualifier;
 
 mod _guardrail_converse_text_block;
 
+mod _guardrail_coverage;
+
 mod _guardrail_custom_word;
+
+mod _guardrail_invocation_metrics;
 
 mod _guardrail_managed_word;
 
@@ -262,6 +276,8 @@ mod _guardrail_stream_configuration;
 mod _guardrail_stream_processing_mode;
 
 mod _guardrail_text_block;
+
+mod _guardrail_text_characters_coverage;
 
 mod _guardrail_topic;
 

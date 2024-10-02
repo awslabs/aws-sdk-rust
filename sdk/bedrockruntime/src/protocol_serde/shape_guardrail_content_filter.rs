@@ -28,6 +28,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "filterStrength" => {
+                            builder = builder.set_filter_strength(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::GuardrailContentFilterStrength::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         "action" => {
                             builder = builder.set_action(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

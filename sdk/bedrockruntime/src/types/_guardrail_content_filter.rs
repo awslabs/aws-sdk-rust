@@ -8,6 +8,8 @@ pub struct GuardrailContentFilter {
     pub r#type: crate::types::GuardrailContentFilterType,
     /// <p>The guardrail confidence.</p>
     pub confidence: crate::types::GuardrailContentFilterConfidence,
+    /// <p>The filter strength setting for the guardrail content filter.</p>
+    pub filter_strength: ::std::option::Option<crate::types::GuardrailContentFilterStrength>,
     /// <p>The guardrail action.</p>
     pub action: crate::types::GuardrailContentPolicyAction,
 }
@@ -19,6 +21,10 @@ impl GuardrailContentFilter {
     /// <p>The guardrail confidence.</p>
     pub fn confidence(&self) -> &crate::types::GuardrailContentFilterConfidence {
         &self.confidence
+    }
+    /// <p>The filter strength setting for the guardrail content filter.</p>
+    pub fn filter_strength(&self) -> ::std::option::Option<&crate::types::GuardrailContentFilterStrength> {
+        self.filter_strength.as_ref()
     }
     /// <p>The guardrail action.</p>
     pub fn action(&self) -> &crate::types::GuardrailContentPolicyAction {
@@ -38,6 +44,7 @@ impl GuardrailContentFilter {
 pub struct GuardrailContentFilterBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::GuardrailContentFilterType>,
     pub(crate) confidence: ::std::option::Option<crate::types::GuardrailContentFilterConfidence>,
+    pub(crate) filter_strength: ::std::option::Option<crate::types::GuardrailContentFilterStrength>,
     pub(crate) action: ::std::option::Option<crate::types::GuardrailContentPolicyAction>,
 }
 impl GuardrailContentFilterBuilder {
@@ -70,6 +77,20 @@ impl GuardrailContentFilterBuilder {
     /// <p>The guardrail confidence.</p>
     pub fn get_confidence(&self) -> &::std::option::Option<crate::types::GuardrailContentFilterConfidence> {
         &self.confidence
+    }
+    /// <p>The filter strength setting for the guardrail content filter.</p>
+    pub fn filter_strength(mut self, input: crate::types::GuardrailContentFilterStrength) -> Self {
+        self.filter_strength = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The filter strength setting for the guardrail content filter.</p>
+    pub fn set_filter_strength(mut self, input: ::std::option::Option<crate::types::GuardrailContentFilterStrength>) -> Self {
+        self.filter_strength = input;
+        self
+    }
+    /// <p>The filter strength setting for the guardrail content filter.</p>
+    pub fn get_filter_strength(&self) -> &::std::option::Option<crate::types::GuardrailContentFilterStrength> {
+        &self.filter_strength
     }
     /// <p>The guardrail action.</p>
     /// This field is required.
@@ -105,6 +126,7 @@ impl GuardrailContentFilterBuilder {
                     "confidence was not specified but it is required when building GuardrailContentFilter",
                 )
             })?,
+            filter_strength: self.filter_strength,
             action: self.action.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "action",

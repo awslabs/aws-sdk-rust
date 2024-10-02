@@ -13,6 +13,8 @@ pub struct CreatePartnershipInput {
     pub phone: ::std::option::Option<::std::string::String>,
     /// <p>Specifies a list of the capabilities associated with this partnership.</p>
     pub capabilities: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>Specify the structure that contains the details for the associated capabilities.</p>
+    pub capability_options: ::std::option::Option<crate::types::CapabilityOptions>,
     /// <p>Reserved for future use.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the key-value pairs assigned to ARNs that you can use to group and search for resources by type. You can attach this metadata to resources (capabilities, partnerships, and so on) for any purpose.</p>
@@ -41,6 +43,10 @@ impl CreatePartnershipInput {
     pub fn capabilities(&self) -> &[::std::string::String] {
         self.capabilities.as_deref().unwrap_or_default()
     }
+    /// <p>Specify the structure that contains the details for the associated capabilities.</p>
+    pub fn capability_options(&self) -> ::std::option::Option<&crate::types::CapabilityOptions> {
+        self.capability_options.as_ref()
+    }
     /// <p>Reserved for future use.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
@@ -60,6 +66,7 @@ impl ::std::fmt::Debug for CreatePartnershipInput {
         formatter.field("email", &"*** Sensitive Data Redacted ***");
         formatter.field("phone", &"*** Sensitive Data Redacted ***");
         formatter.field("capabilities", &self.capabilities);
+        formatter.field("capability_options", &self.capability_options);
         formatter.field("client_token", &self.client_token);
         formatter.field("tags", &self.tags);
         formatter.finish()
@@ -81,6 +88,7 @@ pub struct CreatePartnershipInputBuilder {
     pub(crate) email: ::std::option::Option<::std::string::String>,
     pub(crate) phone: ::std::option::Option<::std::string::String>,
     pub(crate) capabilities: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) capability_options: ::std::option::Option<crate::types::CapabilityOptions>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
@@ -164,6 +172,20 @@ impl CreatePartnershipInputBuilder {
     pub fn get_capabilities(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.capabilities
     }
+    /// <p>Specify the structure that contains the details for the associated capabilities.</p>
+    pub fn capability_options(mut self, input: crate::types::CapabilityOptions) -> Self {
+        self.capability_options = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specify the structure that contains the details for the associated capabilities.</p>
+    pub fn set_capability_options(mut self, input: ::std::option::Option<crate::types::CapabilityOptions>) -> Self {
+        self.capability_options = input;
+        self
+    }
+    /// <p>Specify the structure that contains the details for the associated capabilities.</p>
+    pub fn get_capability_options(&self) -> &::std::option::Option<crate::types::CapabilityOptions> {
+        &self.capability_options
+    }
     /// <p>Reserved for future use.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -208,6 +230,7 @@ impl CreatePartnershipInputBuilder {
             email: self.email,
             phone: self.phone,
             capabilities: self.capabilities,
+            capability_options: self.capability_options,
             client_token: self.client_token,
             tags: self.tags,
         })
@@ -221,6 +244,7 @@ impl ::std::fmt::Debug for CreatePartnershipInputBuilder {
         formatter.field("email", &"*** Sensitive Data Redacted ***");
         formatter.field("phone", &"*** Sensitive Data Redacted ***");
         formatter.field("capabilities", &self.capabilities);
+        formatter.field("capability_options", &self.capability_options);
         formatter.field("client_token", &self.client_token);
         formatter.field("tags", &self.tags);
         formatter.finish()

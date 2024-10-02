@@ -5,39 +5,37 @@
 pub struct CreateTransformerInput {
     /// <p>Specifies the name of the transformer, used to identify it.</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies that the currently supported file formats for EDI transformations are <code>JSON</code> and <code>XML</code>.</p>
-    pub file_format: ::std::option::Option<crate::types::FileFormat>,
-    /// <p>Specifies the mapping template for the transformer. This template is used to map the parsed EDI file using JSONata or XSLT.</p>
-    pub mapping_template: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies the details for the EDI standard that is being used for the transformer. Currently, only X12 is supported. X12 is a set of standards and corresponding messages that define specific business documents.</p>
-    pub edi_type: ::std::option::Option<crate::types::EdiType>,
-    /// <p>Specifies a sample EDI document that is used by a transformer as a guide for processing the EDI data.</p>
-    pub sample_document: ::std::option::Option<::std::string::String>,
     /// <p>Reserved for future use.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the key-value pairs assigned to ARNs that you can use to group and search for resources by type. You can attach this metadata to resources (capabilities, partnerships, and so on) for any purpose.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    /// <p>Specifies that the currently supported file formats for EDI transformations are <code>JSON</code> and <code>XML</code>.</p>
+    #[deprecated(note = "This is a legacy trait. Please use input-conversion or output-conversion.")]
+    pub file_format: ::std::option::Option<crate::types::FileFormat>,
+    /// <p>Specifies the mapping template for the transformer. This template is used to map the parsed EDI file using JSONata or XSLT.</p><note>
+    /// <p>This parameter is available for backwards compatibility. Use the <a href="https://docs.aws.amazon.com/b2bi/latest/APIReference/API_Mapping.html">Mapping</a> data type instead.</p>
+    /// </note>
+    #[deprecated(note = "This is a legacy trait. Please use input-conversion or output-conversion.")]
+    pub mapping_template: ::std::option::Option<::std::string::String>,
+    /// <p>Specifies the details for the EDI standard that is being used for the transformer. Currently, only X12 is supported. X12 is a set of standards and corresponding messages that define specific business documents.</p>
+    #[deprecated(note = "This is a legacy trait. Please use input-conversion or output-conversion.")]
+    pub edi_type: ::std::option::Option<crate::types::EdiType>,
+    /// <p>Specifies a sample EDI document that is used by a transformer as a guide for processing the EDI data.</p>
+    #[deprecated(note = "This is a legacy trait. Please use input-conversion or output-conversion.")]
+    pub sample_document: ::std::option::Option<::std::string::String>,
+    /// <p>Specify the <code>InputConversion</code> object, which contains the format options for the inbound transformation.</p>
+    pub input_conversion: ::std::option::Option<crate::types::InputConversion>,
+    /// <p>Specify the structure that contains the mapping template and its language (either XSLT or JSONATA).</p>
+    pub mapping: ::std::option::Option<crate::types::Mapping>,
+    /// <p>A structure that contains the <code>OutputConversion</code> object, which contains the format options for the outbound transformation.</p>
+    pub output_conversion: ::std::option::Option<crate::types::OutputConversion>,
+    /// <p>Specify a structure that contains the Amazon S3 bucket and an array of the corresponding keys used to identify the location for your sample documents.</p>
+    pub sample_documents: ::std::option::Option<crate::types::SampleDocuments>,
 }
 impl CreateTransformerInput {
     /// <p>Specifies the name of the transformer, used to identify it.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
-    }
-    /// <p>Specifies that the currently supported file formats for EDI transformations are <code>JSON</code> and <code>XML</code>.</p>
-    pub fn file_format(&self) -> ::std::option::Option<&crate::types::FileFormat> {
-        self.file_format.as_ref()
-    }
-    /// <p>Specifies the mapping template for the transformer. This template is used to map the parsed EDI file using JSONata or XSLT.</p>
-    pub fn mapping_template(&self) -> ::std::option::Option<&str> {
-        self.mapping_template.as_deref()
-    }
-    /// <p>Specifies the details for the EDI standard that is being used for the transformer. Currently, only X12 is supported. X12 is a set of standards and corresponding messages that define specific business documents.</p>
-    pub fn edi_type(&self) -> ::std::option::Option<&crate::types::EdiType> {
-        self.edi_type.as_ref()
-    }
-    /// <p>Specifies a sample EDI document that is used by a transformer as a guide for processing the EDI data.</p>
-    pub fn sample_document(&self) -> ::std::option::Option<&str> {
-        self.sample_document.as_deref()
     }
     /// <p>Reserved for future use.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
@@ -48,6 +46,44 @@ impl CreateTransformerInput {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
     pub fn tags(&self) -> &[crate::types::Tag] {
         self.tags.as_deref().unwrap_or_default()
+    }
+    /// <p>Specifies that the currently supported file formats for EDI transformations are <code>JSON</code> and <code>XML</code>.</p>
+    #[deprecated(note = "This is a legacy trait. Please use input-conversion or output-conversion.")]
+    pub fn file_format(&self) -> ::std::option::Option<&crate::types::FileFormat> {
+        self.file_format.as_ref()
+    }
+    /// <p>Specifies the mapping template for the transformer. This template is used to map the parsed EDI file using JSONata or XSLT.</p><note>
+    /// <p>This parameter is available for backwards compatibility. Use the <a href="https://docs.aws.amazon.com/b2bi/latest/APIReference/API_Mapping.html">Mapping</a> data type instead.</p>
+    /// </note>
+    #[deprecated(note = "This is a legacy trait. Please use input-conversion or output-conversion.")]
+    pub fn mapping_template(&self) -> ::std::option::Option<&str> {
+        self.mapping_template.as_deref()
+    }
+    /// <p>Specifies the details for the EDI standard that is being used for the transformer. Currently, only X12 is supported. X12 is a set of standards and corresponding messages that define specific business documents.</p>
+    #[deprecated(note = "This is a legacy trait. Please use input-conversion or output-conversion.")]
+    pub fn edi_type(&self) -> ::std::option::Option<&crate::types::EdiType> {
+        self.edi_type.as_ref()
+    }
+    /// <p>Specifies a sample EDI document that is used by a transformer as a guide for processing the EDI data.</p>
+    #[deprecated(note = "This is a legacy trait. Please use input-conversion or output-conversion.")]
+    pub fn sample_document(&self) -> ::std::option::Option<&str> {
+        self.sample_document.as_deref()
+    }
+    /// <p>Specify the <code>InputConversion</code> object, which contains the format options for the inbound transformation.</p>
+    pub fn input_conversion(&self) -> ::std::option::Option<&crate::types::InputConversion> {
+        self.input_conversion.as_ref()
+    }
+    /// <p>Specify the structure that contains the mapping template and its language (either XSLT or JSONATA).</p>
+    pub fn mapping(&self) -> ::std::option::Option<&crate::types::Mapping> {
+        self.mapping.as_ref()
+    }
+    /// <p>A structure that contains the <code>OutputConversion</code> object, which contains the format options for the outbound transformation.</p>
+    pub fn output_conversion(&self) -> ::std::option::Option<&crate::types::OutputConversion> {
+        self.output_conversion.as_ref()
+    }
+    /// <p>Specify a structure that contains the Amazon S3 bucket and an array of the corresponding keys used to identify the location for your sample documents.</p>
+    pub fn sample_documents(&self) -> ::std::option::Option<&crate::types::SampleDocuments> {
+        self.sample_documents.as_ref()
     }
 }
 impl CreateTransformerInput {
@@ -62,12 +98,16 @@ impl CreateTransformerInput {
 #[non_exhaustive]
 pub struct CreateTransformerInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) client_token: ::std::option::Option<::std::string::String>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) file_format: ::std::option::Option<crate::types::FileFormat>,
     pub(crate) mapping_template: ::std::option::Option<::std::string::String>,
     pub(crate) edi_type: ::std::option::Option<crate::types::EdiType>,
     pub(crate) sample_document: ::std::option::Option<::std::string::String>,
-    pub(crate) client_token: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) input_conversion: ::std::option::Option<crate::types::InputConversion>,
+    pub(crate) mapping: ::std::option::Option<crate::types::Mapping>,
+    pub(crate) output_conversion: ::std::option::Option<crate::types::OutputConversion>,
+    pub(crate) sample_documents: ::std::option::Option<crate::types::SampleDocuments>,
 }
 impl CreateTransformerInputBuilder {
     /// <p>Specifies the name of the transformer, used to identify it.</p>
@@ -84,65 +124,6 @@ impl CreateTransformerInputBuilder {
     /// <p>Specifies the name of the transformer, used to identify it.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
-    }
-    /// <p>Specifies that the currently supported file formats for EDI transformations are <code>JSON</code> and <code>XML</code>.</p>
-    /// This field is required.
-    pub fn file_format(mut self, input: crate::types::FileFormat) -> Self {
-        self.file_format = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>Specifies that the currently supported file formats for EDI transformations are <code>JSON</code> and <code>XML</code>.</p>
-    pub fn set_file_format(mut self, input: ::std::option::Option<crate::types::FileFormat>) -> Self {
-        self.file_format = input;
-        self
-    }
-    /// <p>Specifies that the currently supported file formats for EDI transformations are <code>JSON</code> and <code>XML</code>.</p>
-    pub fn get_file_format(&self) -> &::std::option::Option<crate::types::FileFormat> {
-        &self.file_format
-    }
-    /// <p>Specifies the mapping template for the transformer. This template is used to map the parsed EDI file using JSONata or XSLT.</p>
-    /// This field is required.
-    pub fn mapping_template(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.mapping_template = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>Specifies the mapping template for the transformer. This template is used to map the parsed EDI file using JSONata or XSLT.</p>
-    pub fn set_mapping_template(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.mapping_template = input;
-        self
-    }
-    /// <p>Specifies the mapping template for the transformer. This template is used to map the parsed EDI file using JSONata or XSLT.</p>
-    pub fn get_mapping_template(&self) -> &::std::option::Option<::std::string::String> {
-        &self.mapping_template
-    }
-    /// <p>Specifies the details for the EDI standard that is being used for the transformer. Currently, only X12 is supported. X12 is a set of standards and corresponding messages that define specific business documents.</p>
-    /// This field is required.
-    pub fn edi_type(mut self, input: crate::types::EdiType) -> Self {
-        self.edi_type = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>Specifies the details for the EDI standard that is being used for the transformer. Currently, only X12 is supported. X12 is a set of standards and corresponding messages that define specific business documents.</p>
-    pub fn set_edi_type(mut self, input: ::std::option::Option<crate::types::EdiType>) -> Self {
-        self.edi_type = input;
-        self
-    }
-    /// <p>Specifies the details for the EDI standard that is being used for the transformer. Currently, only X12 is supported. X12 is a set of standards and corresponding messages that define specific business documents.</p>
-    pub fn get_edi_type(&self) -> &::std::option::Option<crate::types::EdiType> {
-        &self.edi_type
-    }
-    /// <p>Specifies a sample EDI document that is used by a transformer as a guide for processing the EDI data.</p>
-    pub fn sample_document(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.sample_document = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>Specifies a sample EDI document that is used by a transformer as a guide for processing the EDI data.</p>
-    pub fn set_sample_document(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.sample_document = input;
-        self
-    }
-    /// <p>Specifies a sample EDI document that is used by a transformer as a guide for processing the EDI data.</p>
-    pub fn get_sample_document(&self) -> &::std::option::Option<::std::string::String> {
-        &self.sample_document
     }
     /// <p>Reserved for future use.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -178,18 +159,152 @@ impl CreateTransformerInputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }
+    /// <p>Specifies that the currently supported file formats for EDI transformations are <code>JSON</code> and <code>XML</code>.</p>
+    #[deprecated(note = "This is a legacy trait. Please use input-conversion or output-conversion.")]
+    pub fn file_format(mut self, input: crate::types::FileFormat) -> Self {
+        self.file_format = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies that the currently supported file formats for EDI transformations are <code>JSON</code> and <code>XML</code>.</p>
+    #[deprecated(note = "This is a legacy trait. Please use input-conversion or output-conversion.")]
+    pub fn set_file_format(mut self, input: ::std::option::Option<crate::types::FileFormat>) -> Self {
+        self.file_format = input;
+        self
+    }
+    /// <p>Specifies that the currently supported file formats for EDI transformations are <code>JSON</code> and <code>XML</code>.</p>
+    #[deprecated(note = "This is a legacy trait. Please use input-conversion or output-conversion.")]
+    pub fn get_file_format(&self) -> &::std::option::Option<crate::types::FileFormat> {
+        &self.file_format
+    }
+    /// <p>Specifies the mapping template for the transformer. This template is used to map the parsed EDI file using JSONata or XSLT.</p><note>
+    /// <p>This parameter is available for backwards compatibility. Use the <a href="https://docs.aws.amazon.com/b2bi/latest/APIReference/API_Mapping.html">Mapping</a> data type instead.</p>
+    /// </note>
+    #[deprecated(note = "This is a legacy trait. Please use input-conversion or output-conversion.")]
+    pub fn mapping_template(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.mapping_template = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Specifies the mapping template for the transformer. This template is used to map the parsed EDI file using JSONata or XSLT.</p><note>
+    /// <p>This parameter is available for backwards compatibility. Use the <a href="https://docs.aws.amazon.com/b2bi/latest/APIReference/API_Mapping.html">Mapping</a> data type instead.</p>
+    /// </note>
+    #[deprecated(note = "This is a legacy trait. Please use input-conversion or output-conversion.")]
+    pub fn set_mapping_template(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.mapping_template = input;
+        self
+    }
+    /// <p>Specifies the mapping template for the transformer. This template is used to map the parsed EDI file using JSONata or XSLT.</p><note>
+    /// <p>This parameter is available for backwards compatibility. Use the <a href="https://docs.aws.amazon.com/b2bi/latest/APIReference/API_Mapping.html">Mapping</a> data type instead.</p>
+    /// </note>
+    #[deprecated(note = "This is a legacy trait. Please use input-conversion or output-conversion.")]
+    pub fn get_mapping_template(&self) -> &::std::option::Option<::std::string::String> {
+        &self.mapping_template
+    }
+    /// <p>Specifies the details for the EDI standard that is being used for the transformer. Currently, only X12 is supported. X12 is a set of standards and corresponding messages that define specific business documents.</p>
+    #[deprecated(note = "This is a legacy trait. Please use input-conversion or output-conversion.")]
+    pub fn edi_type(mut self, input: crate::types::EdiType) -> Self {
+        self.edi_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies the details for the EDI standard that is being used for the transformer. Currently, only X12 is supported. X12 is a set of standards and corresponding messages that define specific business documents.</p>
+    #[deprecated(note = "This is a legacy trait. Please use input-conversion or output-conversion.")]
+    pub fn set_edi_type(mut self, input: ::std::option::Option<crate::types::EdiType>) -> Self {
+        self.edi_type = input;
+        self
+    }
+    /// <p>Specifies the details for the EDI standard that is being used for the transformer. Currently, only X12 is supported. X12 is a set of standards and corresponding messages that define specific business documents.</p>
+    #[deprecated(note = "This is a legacy trait. Please use input-conversion or output-conversion.")]
+    pub fn get_edi_type(&self) -> &::std::option::Option<crate::types::EdiType> {
+        &self.edi_type
+    }
+    /// <p>Specifies a sample EDI document that is used by a transformer as a guide for processing the EDI data.</p>
+    #[deprecated(note = "This is a legacy trait. Please use input-conversion or output-conversion.")]
+    pub fn sample_document(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.sample_document = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Specifies a sample EDI document that is used by a transformer as a guide for processing the EDI data.</p>
+    #[deprecated(note = "This is a legacy trait. Please use input-conversion or output-conversion.")]
+    pub fn set_sample_document(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.sample_document = input;
+        self
+    }
+    /// <p>Specifies a sample EDI document that is used by a transformer as a guide for processing the EDI data.</p>
+    #[deprecated(note = "This is a legacy trait. Please use input-conversion or output-conversion.")]
+    pub fn get_sample_document(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sample_document
+    }
+    /// <p>Specify the <code>InputConversion</code> object, which contains the format options for the inbound transformation.</p>
+    pub fn input_conversion(mut self, input: crate::types::InputConversion) -> Self {
+        self.input_conversion = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specify the <code>InputConversion</code> object, which contains the format options for the inbound transformation.</p>
+    pub fn set_input_conversion(mut self, input: ::std::option::Option<crate::types::InputConversion>) -> Self {
+        self.input_conversion = input;
+        self
+    }
+    /// <p>Specify the <code>InputConversion</code> object, which contains the format options for the inbound transformation.</p>
+    pub fn get_input_conversion(&self) -> &::std::option::Option<crate::types::InputConversion> {
+        &self.input_conversion
+    }
+    /// <p>Specify the structure that contains the mapping template and its language (either XSLT or JSONATA).</p>
+    pub fn mapping(mut self, input: crate::types::Mapping) -> Self {
+        self.mapping = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specify the structure that contains the mapping template and its language (either XSLT or JSONATA).</p>
+    pub fn set_mapping(mut self, input: ::std::option::Option<crate::types::Mapping>) -> Self {
+        self.mapping = input;
+        self
+    }
+    /// <p>Specify the structure that contains the mapping template and its language (either XSLT or JSONATA).</p>
+    pub fn get_mapping(&self) -> &::std::option::Option<crate::types::Mapping> {
+        &self.mapping
+    }
+    /// <p>A structure that contains the <code>OutputConversion</code> object, which contains the format options for the outbound transformation.</p>
+    pub fn output_conversion(mut self, input: crate::types::OutputConversion) -> Self {
+        self.output_conversion = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A structure that contains the <code>OutputConversion</code> object, which contains the format options for the outbound transformation.</p>
+    pub fn set_output_conversion(mut self, input: ::std::option::Option<crate::types::OutputConversion>) -> Self {
+        self.output_conversion = input;
+        self
+    }
+    /// <p>A structure that contains the <code>OutputConversion</code> object, which contains the format options for the outbound transformation.</p>
+    pub fn get_output_conversion(&self) -> &::std::option::Option<crate::types::OutputConversion> {
+        &self.output_conversion
+    }
+    /// <p>Specify a structure that contains the Amazon S3 bucket and an array of the corresponding keys used to identify the location for your sample documents.</p>
+    pub fn sample_documents(mut self, input: crate::types::SampleDocuments) -> Self {
+        self.sample_documents = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specify a structure that contains the Amazon S3 bucket and an array of the corresponding keys used to identify the location for your sample documents.</p>
+    pub fn set_sample_documents(mut self, input: ::std::option::Option<crate::types::SampleDocuments>) -> Self {
+        self.sample_documents = input;
+        self
+    }
+    /// <p>Specify a structure that contains the Amazon S3 bucket and an array of the corresponding keys used to identify the location for your sample documents.</p>
+    pub fn get_sample_documents(&self) -> &::std::option::Option<crate::types::SampleDocuments> {
+        &self.sample_documents
+    }
     /// Consumes the builder and constructs a [`CreateTransformerInput`](crate::operation::create_transformer::CreateTransformerInput).
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::create_transformer::CreateTransformerInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_transformer::CreateTransformerInput {
             name: self.name,
+            client_token: self.client_token,
+            tags: self.tags,
             file_format: self.file_format,
             mapping_template: self.mapping_template,
             edi_type: self.edi_type,
             sample_document: self.sample_document,
-            client_token: self.client_token,
-            tags: self.tags,
+            input_conversion: self.input_conversion,
+            mapping: self.mapping,
+            output_conversion: self.output_conversion,
+            sample_documents: self.sample_documents,
         })
     }
 }

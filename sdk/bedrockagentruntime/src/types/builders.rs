@@ -95,6 +95,12 @@ pub use crate::types::_failure_trace::FailureTraceBuilder;
 
 pub use crate::types::_post_processing_model_invocation_output::PostProcessingModelInvocationOutputBuilder;
 
+pub use crate::types::_metadata::MetadataBuilder;
+
+pub use crate::types::_usage::UsageBuilder;
+
+pub use crate::types::_raw_response::RawResponseBuilder;
+
 pub use crate::types::_post_processing_parsed_response::PostProcessingParsedResponseBuilder;
 
 pub use crate::types::_model_invocation_input::ModelInvocationInputBuilder;
@@ -102,12 +108,6 @@ pub use crate::types::_model_invocation_input::ModelInvocationInputBuilder;
 pub use crate::types::_inference_configuration::InferenceConfigurationBuilder;
 
 pub use crate::types::_orchestration_model_invocation_output::OrchestrationModelInvocationOutputBuilder;
-
-pub use crate::types::_metadata::MetadataBuilder;
-
-pub use crate::types::_usage::UsageBuilder;
-
-pub use crate::types::_raw_response::RawResponseBuilder;
 
 pub use crate::types::_observation::ObservationBuilder;
 

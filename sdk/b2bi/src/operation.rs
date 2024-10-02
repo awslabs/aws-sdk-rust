@@ -10,6 +10,9 @@ pub mod create_partnership;
 /// Types for the `CreateProfile` operation.
 pub mod create_profile;
 
+/// Types for the `CreateStarterMappingTemplate` operation.
+pub mod create_starter_mapping_template;
+
 /// Types for the `CreateTransformer` operation.
 pub mod create_transformer;
 
@@ -60,6 +63,9 @@ pub mod start_transformer_job;
 
 /// Types for the `TagResource` operation.
 pub mod tag_resource;
+
+/// Types for the `TestConversion` operation.
+pub mod test_conversion;
 
 /// Types for the `TestMapping` operation.
 pub mod test_mapping;

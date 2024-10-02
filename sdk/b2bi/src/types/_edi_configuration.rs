@@ -4,6 +4,8 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EdiConfiguration {
+    /// <p>Specifies whether this is capability is for inbound or outbound transformations.</p>
+    pub capability_direction: ::std::option::Option<crate::types::CapabilityDirection>,
     /// <p>Returns the type of the capability. Currently, only <code>edi</code> is supported.</p>
     pub r#type: ::std::option::Option<crate::types::EdiType>,
     /// <p>Contains the Amazon S3 bucket and prefix for the location of the input file, which is contained in an <code>S3Location</code> object.</p>
@@ -14,6 +16,10 @@ pub struct EdiConfiguration {
     pub transformer_id: ::std::string::String,
 }
 impl EdiConfiguration {
+    /// <p>Specifies whether this is capability is for inbound or outbound transformations.</p>
+    pub fn capability_direction(&self) -> ::std::option::Option<&crate::types::CapabilityDirection> {
+        self.capability_direction.as_ref()
+    }
     /// <p>Returns the type of the capability. Currently, only <code>edi</code> is supported.</p>
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::EdiType> {
         self.r#type.as_ref()
@@ -43,12 +49,27 @@ impl EdiConfiguration {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct EdiConfigurationBuilder {
+    pub(crate) capability_direction: ::std::option::Option<crate::types::CapabilityDirection>,
     pub(crate) r#type: ::std::option::Option<crate::types::EdiType>,
     pub(crate) input_location: ::std::option::Option<crate::types::S3Location>,
     pub(crate) output_location: ::std::option::Option<crate::types::S3Location>,
     pub(crate) transformer_id: ::std::option::Option<::std::string::String>,
 }
 impl EdiConfigurationBuilder {
+    /// <p>Specifies whether this is capability is for inbound or outbound transformations.</p>
+    pub fn capability_direction(mut self, input: crate::types::CapabilityDirection) -> Self {
+        self.capability_direction = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether this is capability is for inbound or outbound transformations.</p>
+    pub fn set_capability_direction(mut self, input: ::std::option::Option<crate::types::CapabilityDirection>) -> Self {
+        self.capability_direction = input;
+        self
+    }
+    /// <p>Specifies whether this is capability is for inbound or outbound transformations.</p>
+    pub fn get_capability_direction(&self) -> &::std::option::Option<crate::types::CapabilityDirection> {
+        &self.capability_direction
+    }
     /// <p>Returns the type of the capability. Currently, only <code>edi</code> is supported.</p>
     /// This field is required.
     pub fn r#type(mut self, input: crate::types::EdiType) -> Self {
@@ -114,6 +135,7 @@ impl EdiConfigurationBuilder {
     /// - [`transformer_id`](crate::types::builders::EdiConfigurationBuilder::transformer_id)
     pub fn build(self) -> ::std::result::Result<crate::types::EdiConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::EdiConfiguration {
+            capability_direction: self.capability_direction,
             r#type: self.r#type,
             input_location: self.input_location,
             output_location: self.output_location,

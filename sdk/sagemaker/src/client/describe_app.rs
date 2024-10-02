@@ -21,6 +21,7 @@ impl super::Client {
     ///   - [`creation_time(Option<DateTime>)`](crate::operation::describe_app::DescribeAppOutput::creation_time): <p>The creation time of the application.</p><note>  <p>After an application has been shut down for 24 hours, SageMaker deletes all metadata for the application. To be considered an update and retain application metadata, applications must be restarted within 24 hours after the previous application has been shut down. After this time window, creation of an application is considered a new application rather than an update of the previous application.</p> </note>
     ///   - [`failure_reason(Option<String>)`](crate::operation::describe_app::DescribeAppOutput::failure_reason): <p>The failure reason.</p>
     ///   - [`resource_spec(Option<ResourceSpec>)`](crate::operation::describe_app::DescribeAppOutput::resource_spec): <p>The instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the instance.</p>
+    ///   - [`built_in_lifecycle_config_arn(Option<String>)`](crate::operation::describe_app::DescribeAppOutput::built_in_lifecycle_config_arn): <p>The lifecycle configuration that runs before the default lifecycle configuration</p>
     /// - On failure, responds with [`SdkError<DescribeAppError>`](crate::operation::describe_app::DescribeAppError)
     pub fn describe_app(&self) -> crate::operation::describe_app::builders::DescribeAppFluentBuilder {
         crate::operation::describe_app::builders::DescribeAppFluentBuilder::new(self.handle.clone())

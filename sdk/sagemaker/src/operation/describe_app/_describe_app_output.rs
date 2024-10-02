@@ -29,6 +29,8 @@ pub struct DescribeAppOutput {
     pub failure_reason: ::std::option::Option<::std::string::String>,
     /// <p>The instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the instance.</p>
     pub resource_spec: ::std::option::Option<crate::types::ResourceSpec>,
+    /// <p>The lifecycle configuration that runs before the default lifecycle configuration</p>
+    pub built_in_lifecycle_config_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeAppOutput {
@@ -82,6 +84,10 @@ impl DescribeAppOutput {
     pub fn resource_spec(&self) -> ::std::option::Option<&crate::types::ResourceSpec> {
         self.resource_spec.as_ref()
     }
+    /// <p>The lifecycle configuration that runs before the default lifecycle configuration</p>
+    pub fn built_in_lifecycle_config_arn(&self) -> ::std::option::Option<&str> {
+        self.built_in_lifecycle_config_arn.as_deref()
+    }
 }
 impl ::aws_types::request_id::RequestId for DescribeAppOutput {
     fn request_id(&self) -> Option<&str> {
@@ -111,6 +117,7 @@ pub struct DescribeAppOutputBuilder {
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) failure_reason: ::std::option::Option<::std::string::String>,
     pub(crate) resource_spec: ::std::option::Option<crate::types::ResourceSpec>,
+    pub(crate) built_in_lifecycle_config_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeAppOutputBuilder {
@@ -288,6 +295,20 @@ impl DescribeAppOutputBuilder {
     pub fn get_resource_spec(&self) -> &::std::option::Option<crate::types::ResourceSpec> {
         &self.resource_spec
     }
+    /// <p>The lifecycle configuration that runs before the default lifecycle configuration</p>
+    pub fn built_in_lifecycle_config_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.built_in_lifecycle_config_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The lifecycle configuration that runs before the default lifecycle configuration</p>
+    pub fn set_built_in_lifecycle_config_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.built_in_lifecycle_config_arn = input;
+        self
+    }
+    /// <p>The lifecycle configuration that runs before the default lifecycle configuration</p>
+    pub fn get_built_in_lifecycle_config_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.built_in_lifecycle_config_arn
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -312,6 +333,7 @@ impl DescribeAppOutputBuilder {
             creation_time: self.creation_time,
             failure_reason: self.failure_reason,
             resource_spec: self.resource_spec,
+            built_in_lifecycle_config_arn: self.built_in_lifecycle_config_arn,
             _request_id: self._request_id,
         }
     }

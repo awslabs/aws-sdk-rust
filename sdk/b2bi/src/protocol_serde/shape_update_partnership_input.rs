@@ -18,5 +18,11 @@ pub fn ser_update_partnership_input_input(
         }
         array_4.finish();
     }
+    if let Some(var_6) = &input.capability_options {
+        #[allow(unused_mut)]
+        let mut object_7 = object.key("capabilityOptions").start_object();
+        crate::protocol_serde::shape_capability_options::ser_capability_options(&mut object_7, var_6)?;
+        object_7.finish();
+    }
     Ok(())
 }

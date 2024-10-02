@@ -6,35 +6,59 @@ pub fn ser_create_transformer_input_input(
     if let Some(var_1) = &input.name {
         object.key("name").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.file_format {
-        object.key("fileFormat").string(var_2.as_str());
+    if let Some(var_2) = &input.client_token {
+        object.key("clientToken").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.mapping_template {
-        object.key("mappingTemplate").string(var_3.as_str());
-    }
-    if let Some(var_4) = &input.edi_type {
-        #[allow(unused_mut)]
-        let mut object_5 = object.key("ediType").start_object();
-        crate::protocol_serde::shape_edi_type::ser_edi_type(&mut object_5, var_4)?;
-        object_5.finish();
-    }
-    if let Some(var_6) = &input.sample_document {
-        object.key("sampleDocument").string(var_6.as_str());
-    }
-    if let Some(var_7) = &input.client_token {
-        object.key("clientToken").string(var_7.as_str());
-    }
-    if let Some(var_8) = &input.tags {
-        let mut array_9 = object.key("tags").start_array();
-        for item_10 in var_8 {
+    if let Some(var_3) = &input.tags {
+        let mut array_4 = object.key("tags").start_array();
+        for item_5 in var_3 {
             {
                 #[allow(unused_mut)]
-                let mut object_11 = array_9.value().start_object();
-                crate::protocol_serde::shape_tag::ser_tag(&mut object_11, item_10)?;
-                object_11.finish();
+                let mut object_6 = array_4.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_6, item_5)?;
+                object_6.finish();
             }
         }
-        array_9.finish();
+        array_4.finish();
+    }
+    if let Some(var_7) = &input.file_format {
+        object.key("fileFormat").string(var_7.as_str());
+    }
+    if let Some(var_8) = &input.mapping_template {
+        object.key("mappingTemplate").string(var_8.as_str());
+    }
+    if let Some(var_9) = &input.edi_type {
+        #[allow(unused_mut)]
+        let mut object_10 = object.key("ediType").start_object();
+        crate::protocol_serde::shape_edi_type::ser_edi_type(&mut object_10, var_9)?;
+        object_10.finish();
+    }
+    if let Some(var_11) = &input.sample_document {
+        object.key("sampleDocument").string(var_11.as_str());
+    }
+    if let Some(var_12) = &input.input_conversion {
+        #[allow(unused_mut)]
+        let mut object_13 = object.key("inputConversion").start_object();
+        crate::protocol_serde::shape_input_conversion::ser_input_conversion(&mut object_13, var_12)?;
+        object_13.finish();
+    }
+    if let Some(var_14) = &input.mapping {
+        #[allow(unused_mut)]
+        let mut object_15 = object.key("mapping").start_object();
+        crate::protocol_serde::shape_mapping::ser_mapping(&mut object_15, var_14)?;
+        object_15.finish();
+    }
+    if let Some(var_16) = &input.output_conversion {
+        #[allow(unused_mut)]
+        let mut object_17 = object.key("outputConversion").start_object();
+        crate::protocol_serde::shape_output_conversion::ser_output_conversion(&mut object_17, var_16)?;
+        object_17.finish();
+    }
+    if let Some(var_18) = &input.sample_documents {
+        #[allow(unused_mut)]
+        let mut object_19 = object.key("sampleDocuments").start_object();
+        crate::protocol_serde::shape_sample_documents::ser_sample_documents(&mut object_19, var_18)?;
+        object_19.finish();
     }
     Ok(())
 }

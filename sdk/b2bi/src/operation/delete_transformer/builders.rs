@@ -22,7 +22,7 @@ impl crate::operation::delete_transformer::builders::DeleteTransformerInputBuild
 }
 /// Fluent builder constructing a request to `DeleteTransformer`.
 ///
-/// <p>Deletes the specified transformer. A transformer describes how to process the incoming EDI documents and extract the necessary information to the output file.</p>
+/// <p>Deletes the specified transformer. A transformer can take an EDI file as input and transform it into a JSON-or XML-formatted document. Alternatively, a transformer can take a JSON-or XML-formatted document as input and transform it into an EDI file.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteTransformerFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

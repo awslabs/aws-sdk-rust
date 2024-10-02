@@ -29,6 +29,8 @@ pub(crate) mod shape_create_partnership;
 
 pub(crate) mod shape_create_profile;
 
+pub(crate) mod shape_create_starter_mapping_template;
+
 pub(crate) mod shape_create_transformer;
 
 pub(crate) mod shape_delete_capability;
@@ -63,6 +65,8 @@ pub(crate) mod shape_start_transformer_job;
 
 pub(crate) mod shape_tag_resource;
 
+pub(crate) mod shape_test_conversion;
+
 pub(crate) mod shape_test_mapping;
 
 pub(crate) mod shape_test_parsing;
@@ -94,6 +98,8 @@ pub(crate) mod shape_create_capability_input;
 pub(crate) mod shape_create_partnership_input;
 
 pub(crate) mod shape_create_profile_input;
+
+pub(crate) mod shape_create_starter_mapping_template_input;
 
 pub(crate) mod shape_create_transformer_input;
 
@@ -135,6 +141,8 @@ pub(crate) mod shape_start_transformer_job_input;
 
 pub(crate) mod shape_tag_resource_input;
 
+pub(crate) mod shape_test_conversion_input;
+
 pub(crate) mod shape_test_mapping_input;
 
 pub(crate) mod shape_test_parsing_input;
@@ -157,9 +165,21 @@ pub(crate) mod shape_capability_configuration;
 
 pub(crate) mod shape_capability_list;
 
+pub(crate) mod shape_capability_options;
+
+pub(crate) mod shape_conversion_source;
+
+pub(crate) mod shape_conversion_target;
+
 pub(crate) mod shape_edi_type;
 
+pub(crate) mod shape_input_conversion;
+
 pub(crate) mod shape_instructions_documents;
+
+pub(crate) mod shape_mapping;
+
+pub(crate) mod shape_output_conversion;
 
 pub(crate) mod shape_partnership_capabilities;
 
@@ -171,20 +191,50 @@ pub(crate) mod shape_s3_location;
 
 pub(crate) mod shape_s3_location_list;
 
+pub(crate) mod shape_sample_documents;
+
 pub(crate) mod shape_tag;
 
 pub(crate) mod shape_tag_list;
 
+pub(crate) mod shape_template_details;
+
 pub(crate) mod shape_transformer_list;
+
+pub(crate) mod shape_validation_messages;
 
 pub(crate) mod shape_capability_summary;
 
+pub(crate) mod shape_conversion_target_format_details;
+
 pub(crate) mod shape_edi_configuration;
+
+pub(crate) mod shape_format_options;
+
+pub(crate) mod shape_input_file_source;
+
+pub(crate) mod shape_key_list;
+
+pub(crate) mod shape_outbound_edi_options;
+
+pub(crate) mod shape_output_sample_file_source;
 
 pub(crate) mod shape_partnership_summary;
 
 pub(crate) mod shape_profile_summary;
 
+pub(crate) mod shape_sample_document_keys;
+
 pub(crate) mod shape_transformer_summary;
 
 pub(crate) mod shape_x12_details;
+
+pub(crate) mod shape_x12_envelope;
+
+pub(crate) mod shape_x12_outbound_edi_headers;
+
+pub(crate) mod shape_x12_delimiters;
+
+pub(crate) mod shape_x12_functional_group_headers;
+
+pub(crate) mod shape_x12_interchange_control_headers;

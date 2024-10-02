@@ -11,6 +11,8 @@ pub struct ApplyGuardrailOutput {
     pub outputs: ::std::vec::Vec<crate::types::GuardrailOutputContent>,
     /// <p>The assessment details in the response from the guardrail.</p>
     pub assessments: ::std::vec::Vec<crate::types::GuardrailAssessment>,
+    /// <p>The guardrail coverage details in the apply guardrail response.</p>
+    pub guardrail_coverage: ::std::option::Option<crate::types::GuardrailCoverage>,
     _request_id: Option<String>,
 }
 impl ApplyGuardrailOutput {
@@ -31,6 +33,10 @@ impl ApplyGuardrailOutput {
     pub fn assessments(&self) -> &[crate::types::GuardrailAssessment] {
         use std::ops::Deref;
         self.assessments.deref()
+    }
+    /// <p>The guardrail coverage details in the apply guardrail response.</p>
+    pub fn guardrail_coverage(&self) -> ::std::option::Option<&crate::types::GuardrailCoverage> {
+        self.guardrail_coverage.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for ApplyGuardrailOutput {
@@ -53,6 +59,7 @@ pub struct ApplyGuardrailOutputBuilder {
     pub(crate) action: ::std::option::Option<crate::types::GuardrailAction>,
     pub(crate) outputs: ::std::option::Option<::std::vec::Vec<crate::types::GuardrailOutputContent>>,
     pub(crate) assessments: ::std::option::Option<::std::vec::Vec<crate::types::GuardrailAssessment>>,
+    pub(crate) guardrail_coverage: ::std::option::Option<crate::types::GuardrailCoverage>,
     _request_id: Option<String>,
 }
 impl ApplyGuardrailOutputBuilder {
@@ -126,6 +133,20 @@ impl ApplyGuardrailOutputBuilder {
     pub fn get_assessments(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GuardrailAssessment>> {
         &self.assessments
     }
+    /// <p>The guardrail coverage details in the apply guardrail response.</p>
+    pub fn guardrail_coverage(mut self, input: crate::types::GuardrailCoverage) -> Self {
+        self.guardrail_coverage = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The guardrail coverage details in the apply guardrail response.</p>
+    pub fn set_guardrail_coverage(mut self, input: ::std::option::Option<crate::types::GuardrailCoverage>) -> Self {
+        self.guardrail_coverage = input;
+        self
+    }
+    /// <p>The guardrail coverage details in the apply guardrail response.</p>
+    pub fn get_guardrail_coverage(&self) -> &::std::option::Option<crate::types::GuardrailCoverage> {
+        &self.guardrail_coverage
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -163,6 +184,7 @@ impl ApplyGuardrailOutputBuilder {
                     "assessments was not specified but it is required when building ApplyGuardrailOutput",
                 )
             })?,
+            guardrail_coverage: self.guardrail_coverage,
             _request_id: self._request_id,
         })
     }

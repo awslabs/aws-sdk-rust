@@ -28,34 +28,10 @@ where
                                     .transpose()?,
                             );
                         }
-                        "fileFormat" => {
-                            builder = builder.set_file_format(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| crate::types::FileFormat::from(u.as_ref())))
-                                    .transpose()?,
-                            );
-                        }
-                        "mappingTemplate" => {
-                            builder = builder.set_mapping_template(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
                         "status" => {
                             builder = builder.set_status(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| crate::types::TransformerStatus::from(u.as_ref())))
-                                    .transpose()?,
-                            );
-                        }
-                        "ediType" => {
-                            builder = builder.set_edi_type(crate::protocol_serde::shape_edi_type::de_edi_type(tokens)?);
-                        }
-                        "sampleDocument" => {
-                            builder = builder.set_sample_document(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
                             );
                         }
@@ -70,6 +46,42 @@ where
                                 tokens.next(),
                                 ::aws_smithy_types::date_time::Format::DateTimeWithOffset,
                             )?);
+                        }
+                        "fileFormat" => {
+                            builder = builder.set_file_format(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::FileFormat::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "mappingTemplate" => {
+                            builder = builder.set_mapping_template(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "ediType" => {
+                            builder = builder.set_edi_type(crate::protocol_serde::shape_edi_type::de_edi_type(tokens)?);
+                        }
+                        "sampleDocument" => {
+                            builder = builder.set_sample_document(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "inputConversion" => {
+                            builder = builder.set_input_conversion(crate::protocol_serde::shape_input_conversion::de_input_conversion(tokens)?);
+                        }
+                        "mapping" => {
+                            builder = builder.set_mapping(crate::protocol_serde::shape_mapping::de_mapping(tokens)?);
+                        }
+                        "outputConversion" => {
+                            builder = builder.set_output_conversion(crate::protocol_serde::shape_output_conversion::de_output_conversion(tokens)?);
+                        }
+                        "sampleDocuments" => {
+                            builder = builder.set_sample_documents(crate::protocol_serde::shape_sample_documents::de_sample_documents(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

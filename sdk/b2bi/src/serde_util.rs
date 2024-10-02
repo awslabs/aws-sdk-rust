@@ -140,6 +140,15 @@ pub(crate) fn create_profile_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn create_starter_mapping_template_output_output_correct_errors(
+    mut builder: crate::operation::create_starter_mapping_template::builders::CreateStarterMappingTemplateOutputBuilder,
+) -> crate::operation::create_starter_mapping_template::builders::CreateStarterMappingTemplateOutputBuilder {
+    if builder.mapping_template.is_none() {
+        builder.mapping_template = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn create_transformer_output_output_correct_errors(
     mut builder: crate::operation::create_transformer::builders::CreateTransformerOutputBuilder,
 ) -> crate::operation::create_transformer::builders::CreateTransformerOutputBuilder {
@@ -152,17 +161,8 @@ pub(crate) fn create_transformer_output_output_correct_errors(
     if builder.name.is_none() {
         builder.name = Some(Default::default())
     }
-    if builder.file_format.is_none() {
-        builder.file_format = "no value was set".parse::<crate::types::FileFormat>().ok()
-    }
-    if builder.mapping_template.is_none() {
-        builder.mapping_template = Some(Default::default())
-    }
     if builder.status.is_none() {
         builder.status = "no value was set".parse::<crate::types::TransformerStatus>().ok()
-    }
-    if builder.edi_type.is_none() {
-        builder.edi_type = Some(crate::types::EdiType::Unknown)
     }
     if builder.created_at.is_none() {
         builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
@@ -248,17 +248,8 @@ pub(crate) fn get_transformer_output_output_correct_errors(
     if builder.name.is_none() {
         builder.name = Some(Default::default())
     }
-    if builder.file_format.is_none() {
-        builder.file_format = "no value was set".parse::<crate::types::FileFormat>().ok()
-    }
-    if builder.mapping_template.is_none() {
-        builder.mapping_template = Some(Default::default())
-    }
     if builder.status.is_none() {
         builder.status = "no value was set".parse::<crate::types::TransformerStatus>().ok()
-    }
-    if builder.edi_type.is_none() {
-        builder.edi_type = Some(crate::types::EdiType::Unknown)
     }
     if builder.created_at.is_none() {
         builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
@@ -316,6 +307,15 @@ pub(crate) fn start_transformer_job_output_output_correct_errors(
 ) -> crate::operation::start_transformer_job::builders::StartTransformerJobOutputBuilder {
     if builder.transformer_job_id.is_none() {
         builder.transformer_job_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn test_conversion_output_output_correct_errors(
+    mut builder: crate::operation::test_conversion::builders::TestConversionOutputBuilder,
+) -> crate::operation::test_conversion::builders::TestConversionOutputBuilder {
+    if builder.converted_file_content.is_none() {
+        builder.converted_file_content = Some(Default::default())
     }
     builder
 }
@@ -416,23 +416,51 @@ pub(crate) fn update_transformer_output_output_correct_errors(
     if builder.name.is_none() {
         builder.name = Some(Default::default())
     }
-    if builder.file_format.is_none() {
-        builder.file_format = "no value was set".parse::<crate::types::FileFormat>().ok()
-    }
-    if builder.mapping_template.is_none() {
-        builder.mapping_template = Some(Default::default())
-    }
     if builder.status.is_none() {
         builder.status = "no value was set".parse::<crate::types::TransformerStatus>().ok()
-    }
-    if builder.edi_type.is_none() {
-        builder.edi_type = Some(crate::types::EdiType::Unknown)
     }
     if builder.created_at.is_none() {
         builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
     }
     if builder.modified_at.is_none() {
         builder.modified_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn input_conversion_correct_errors(
+    mut builder: crate::types::builders::InputConversionBuilder,
+) -> crate::types::builders::InputConversionBuilder {
+    if builder.from_format.is_none() {
+        builder.from_format = "no value was set".parse::<crate::types::FromFormat>().ok()
+    }
+    builder
+}
+
+pub(crate) fn mapping_correct_errors(mut builder: crate::types::builders::MappingBuilder) -> crate::types::builders::MappingBuilder {
+    if builder.template_language.is_none() {
+        builder.template_language = "no value was set".parse::<crate::types::MappingTemplateLanguage>().ok()
+    }
+    builder
+}
+
+pub(crate) fn output_conversion_correct_errors(
+    mut builder: crate::types::builders::OutputConversionBuilder,
+) -> crate::types::builders::OutputConversionBuilder {
+    if builder.to_format.is_none() {
+        builder.to_format = "no value was set".parse::<crate::types::ToFormat>().ok()
+    }
+    builder
+}
+
+pub(crate) fn sample_documents_correct_errors(
+    mut builder: crate::types::builders::SampleDocumentsBuilder,
+) -> crate::types::builders::SampleDocumentsBuilder {
+    if builder.bucket_name.is_none() {
+        builder.bucket_name = Some(Default::default())
+    }
+    if builder.keys.is_none() {
+        builder.keys = Some(Default::default())
     }
     builder
 }
@@ -531,17 +559,8 @@ pub(crate) fn transformer_summary_correct_errors(
     if builder.name.is_none() {
         builder.name = Some(Default::default())
     }
-    if builder.file_format.is_none() {
-        builder.file_format = "no value was set".parse::<crate::types::FileFormat>().ok()
-    }
-    if builder.mapping_template.is_none() {
-        builder.mapping_template = Some(Default::default())
-    }
     if builder.status.is_none() {
         builder.status = "no value was set".parse::<crate::types::TransformerStatus>().ok()
-    }
-    if builder.edi_type.is_none() {
-        builder.edi_type = Some(crate::types::EdiType::Unknown)
     }
     if builder.created_at.is_none() {
         builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))

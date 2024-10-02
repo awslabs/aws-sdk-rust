@@ -9,6 +9,8 @@ pub struct UpdatePartnershipInput {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>List of the capabilities associated with this partnership.</p>
     pub capabilities: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>To update, specify the structure that contains the details for the associated capabilities.</p>
+    pub capability_options: ::std::option::Option<crate::types::CapabilityOptions>,
 }
 impl UpdatePartnershipInput {
     /// <p>Specifies the unique, system-generated identifier for a partnership.</p>
@@ -25,6 +27,10 @@ impl UpdatePartnershipInput {
     pub fn capabilities(&self) -> &[::std::string::String] {
         self.capabilities.as_deref().unwrap_or_default()
     }
+    /// <p>To update, specify the structure that contains the details for the associated capabilities.</p>
+    pub fn capability_options(&self) -> ::std::option::Option<&crate::types::CapabilityOptions> {
+        self.capability_options.as_ref()
+    }
 }
 impl UpdatePartnershipInput {
     /// Creates a new builder-style object to manufacture [`UpdatePartnershipInput`](crate::operation::update_partnership::UpdatePartnershipInput).
@@ -40,6 +46,7 @@ pub struct UpdatePartnershipInputBuilder {
     pub(crate) partnership_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) capabilities: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) capability_options: ::std::option::Option<crate::types::CapabilityOptions>,
 }
 impl UpdatePartnershipInputBuilder {
     /// <p>Specifies the unique, system-generated identifier for a partnership.</p>
@@ -91,6 +98,20 @@ impl UpdatePartnershipInputBuilder {
     pub fn get_capabilities(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.capabilities
     }
+    /// <p>To update, specify the structure that contains the details for the associated capabilities.</p>
+    pub fn capability_options(mut self, input: crate::types::CapabilityOptions) -> Self {
+        self.capability_options = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>To update, specify the structure that contains the details for the associated capabilities.</p>
+    pub fn set_capability_options(mut self, input: ::std::option::Option<crate::types::CapabilityOptions>) -> Self {
+        self.capability_options = input;
+        self
+    }
+    /// <p>To update, specify the structure that contains the details for the associated capabilities.</p>
+    pub fn get_capability_options(&self) -> &::std::option::Option<crate::types::CapabilityOptions> {
+        &self.capability_options
+    }
     /// Consumes the builder and constructs a [`UpdatePartnershipInput`](crate::operation::update_partnership::UpdatePartnershipInput).
     pub fn build(
         self,
@@ -99,6 +120,7 @@ impl UpdatePartnershipInputBuilder {
             partnership_id: self.partnership_id,
             name: self.name,
             capabilities: self.capabilities,
+            capability_options: self.capability_options,
         })
     }
 }

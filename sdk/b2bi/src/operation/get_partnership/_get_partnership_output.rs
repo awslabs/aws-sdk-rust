@@ -17,6 +17,8 @@ pub struct GetPartnershipOutput {
     pub phone: ::std::option::Option<::std::string::String>,
     /// <p>Returns one or more capabilities associated with this partnership.</p>
     pub capabilities: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>Contains the details for an Outbound EDI capability.</p>
+    pub capability_options: ::std::option::Option<crate::types::CapabilityOptions>,
     /// <p>Returns the unique identifier for the partner for this partnership.</p>
     pub trading_partner_id: ::std::option::Option<::std::string::String>,
     /// <p>Returns a timestamp for creation date and time of the partnership.</p>
@@ -59,6 +61,10 @@ impl GetPartnershipOutput {
     pub fn capabilities(&self) -> &[::std::string::String] {
         self.capabilities.as_deref().unwrap_or_default()
     }
+    /// <p>Contains the details for an Outbound EDI capability.</p>
+    pub fn capability_options(&self) -> ::std::option::Option<&crate::types::CapabilityOptions> {
+        self.capability_options.as_ref()
+    }
     /// <p>Returns the unique identifier for the partner for this partnership.</p>
     pub fn trading_partner_id(&self) -> ::std::option::Option<&str> {
         self.trading_partner_id.as_deref()
@@ -82,6 +88,7 @@ impl ::std::fmt::Debug for GetPartnershipOutput {
         formatter.field("email", &"*** Sensitive Data Redacted ***");
         formatter.field("phone", &"*** Sensitive Data Redacted ***");
         formatter.field("capabilities", &self.capabilities);
+        formatter.field("capability_options", &self.capability_options);
         formatter.field("trading_partner_id", &self.trading_partner_id);
         formatter.field("created_at", &self.created_at);
         formatter.field("modified_at", &self.modified_at);
@@ -112,6 +119,7 @@ pub struct GetPartnershipOutputBuilder {
     pub(crate) email: ::std::option::Option<::std::string::String>,
     pub(crate) phone: ::std::option::Option<::std::string::String>,
     pub(crate) capabilities: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) capability_options: ::std::option::Option<crate::types::CapabilityOptions>,
     pub(crate) trading_partner_id: ::std::option::Option<::std::string::String>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) modified_at: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -225,6 +233,20 @@ impl GetPartnershipOutputBuilder {
     pub fn get_capabilities(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.capabilities
     }
+    /// <p>Contains the details for an Outbound EDI capability.</p>
+    pub fn capability_options(mut self, input: crate::types::CapabilityOptions) -> Self {
+        self.capability_options = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Contains the details for an Outbound EDI capability.</p>
+    pub fn set_capability_options(mut self, input: ::std::option::Option<crate::types::CapabilityOptions>) -> Self {
+        self.capability_options = input;
+        self
+    }
+    /// <p>Contains the details for an Outbound EDI capability.</p>
+    pub fn get_capability_options(&self) -> &::std::option::Option<crate::types::CapabilityOptions> {
+        &self.capability_options
+    }
     /// <p>Returns the unique identifier for the partner for this partnership.</p>
     pub fn trading_partner_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.trading_partner_id = ::std::option::Option::Some(input.into());
@@ -309,6 +331,7 @@ impl GetPartnershipOutputBuilder {
             email: self.email,
             phone: self.phone,
             capabilities: self.capabilities,
+            capability_options: self.capability_options,
             trading_partner_id: self.trading_partner_id,
             created_at: self.created_at.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
@@ -331,6 +354,7 @@ impl ::std::fmt::Debug for GetPartnershipOutputBuilder {
         formatter.field("email", &"*** Sensitive Data Redacted ***");
         formatter.field("phone", &"*** Sensitive Data Redacted ***");
         formatter.field("capabilities", &self.capabilities);
+        formatter.field("capability_options", &self.capability_options);
         formatter.field("trading_partner_id", &self.trading_partner_id);
         formatter.field("created_at", &self.created_at);
         formatter.field("modified_at", &self.modified_at);

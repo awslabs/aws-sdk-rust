@@ -17,6 +17,8 @@ pub struct CreatePartnershipOutput {
     pub phone: ::std::option::Option<::std::string::String>,
     /// <p>Returns one or more capabilities associated with this partnership.</p>
     pub capabilities: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>Returns the structure that contains the details for the associated capabilities.</p>
+    pub capability_options: ::std::option::Option<crate::types::CapabilityOptions>,
     /// <p>Returns the unique, system-generated identifier for a trading partner.</p>
     pub trading_partner_id: ::std::option::Option<::std::string::String>,
     /// <p>Returns a timestamp for creation date and time of the partnership.</p>
@@ -57,6 +59,10 @@ impl CreatePartnershipOutput {
     pub fn capabilities(&self) -> &[::std::string::String] {
         self.capabilities.as_deref().unwrap_or_default()
     }
+    /// <p>Returns the structure that contains the details for the associated capabilities.</p>
+    pub fn capability_options(&self) -> ::std::option::Option<&crate::types::CapabilityOptions> {
+        self.capability_options.as_ref()
+    }
     /// <p>Returns the unique, system-generated identifier for a trading partner.</p>
     pub fn trading_partner_id(&self) -> ::std::option::Option<&str> {
         self.trading_partner_id.as_deref()
@@ -76,6 +82,7 @@ impl ::std::fmt::Debug for CreatePartnershipOutput {
         formatter.field("email", &"*** Sensitive Data Redacted ***");
         formatter.field("phone", &"*** Sensitive Data Redacted ***");
         formatter.field("capabilities", &self.capabilities);
+        formatter.field("capability_options", &self.capability_options);
         formatter.field("trading_partner_id", &self.trading_partner_id);
         formatter.field("created_at", &self.created_at);
         formatter.field("_request_id", &self._request_id);
@@ -105,6 +112,7 @@ pub struct CreatePartnershipOutputBuilder {
     pub(crate) email: ::std::option::Option<::std::string::String>,
     pub(crate) phone: ::std::option::Option<::std::string::String>,
     pub(crate) capabilities: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) capability_options: ::std::option::Option<crate::types::CapabilityOptions>,
     pub(crate) trading_partner_id: ::std::option::Option<::std::string::String>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
@@ -217,6 +225,20 @@ impl CreatePartnershipOutputBuilder {
     pub fn get_capabilities(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.capabilities
     }
+    /// <p>Returns the structure that contains the details for the associated capabilities.</p>
+    pub fn capability_options(mut self, input: crate::types::CapabilityOptions) -> Self {
+        self.capability_options = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Returns the structure that contains the details for the associated capabilities.</p>
+    pub fn set_capability_options(mut self, input: ::std::option::Option<crate::types::CapabilityOptions>) -> Self {
+        self.capability_options = input;
+        self
+    }
+    /// <p>Returns the structure that contains the details for the associated capabilities.</p>
+    pub fn get_capability_options(&self) -> &::std::option::Option<crate::types::CapabilityOptions> {
+        &self.capability_options
+    }
     /// <p>Returns the unique, system-generated identifier for a trading partner.</p>
     pub fn trading_partner_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.trading_partner_id = ::std::option::Option::Some(input.into());
@@ -287,6 +309,7 @@ impl CreatePartnershipOutputBuilder {
             email: self.email,
             phone: self.phone,
             capabilities: self.capabilities,
+            capability_options: self.capability_options,
             trading_partner_id: self.trading_partner_id,
             created_at: self.created_at.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
@@ -308,6 +331,7 @@ impl ::std::fmt::Debug for CreatePartnershipOutputBuilder {
         formatter.field("email", &"*** Sensitive Data Redacted ***");
         formatter.field("phone", &"*** Sensitive Data Redacted ***");
         formatter.field("capabilities", &self.capabilities);
+        formatter.field("capability_options", &self.capability_options);
         formatter.field("trading_partner_id", &self.trading_partner_id);
         formatter.field("created_at", &self.created_at);
         formatter.field("_request_id", &self._request_id);

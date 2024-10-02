@@ -183,6 +183,20 @@ impl CreatePartnershipFluentBuilder {
     pub fn get_capabilities(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_capabilities()
     }
+    /// <p>Specify the structure that contains the details for the associated capabilities.</p>
+    pub fn capability_options(mut self, input: crate::types::CapabilityOptions) -> Self {
+        self.inner = self.inner.capability_options(input);
+        self
+    }
+    /// <p>Specify the structure that contains the details for the associated capabilities.</p>
+    pub fn set_capability_options(mut self, input: ::std::option::Option<crate::types::CapabilityOptions>) -> Self {
+        self.inner = self.inner.set_capability_options(input);
+        self
+    }
+    /// <p>Specify the structure that contains the details for the associated capabilities.</p>
+    pub fn get_capability_options(&self) -> &::std::option::Option<crate::types::CapabilityOptions> {
+        self.inner.get_capability_options()
+    }
     /// <p>Reserved for future use.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());

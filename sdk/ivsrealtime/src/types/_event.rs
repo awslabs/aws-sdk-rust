@@ -12,7 +12,37 @@ pub struct Event {
     pub event_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Unique identifier for the remote participant. For a subscribe event, this is the publisher. For a publish or join event, this is null. This is assigned by IVS.</p>
     pub remote_participant_id: ::std::option::Option<::std::string::String>,
-    /// <p>If the event is an error event, the error code is provided to give insight into the specific error that occurred. If the event is not an error event, this field is null. <code>INSUFFICIENT_CAPABILITIES</code> indicates that the participant tried to take an action that the participant’s token is not allowed to do. For more information about participant capabilities, see the <code>capabilities</code> field in <code>CreateParticipantToken</code>. <code>QUOTA_EXCEEDED</code> indicates that the number of participants who want to publish/subscribe to a stage exceeds the quota; for more information, see <a href="https://docs.aws.amazon.com/ivs/latest/RealTimeUserGuide/service-quotas.html">Service Quotas</a>. <code>PUBLISHER_NOT_FOUND</code> indicates that the participant tried to subscribe to a publisher that doesn’t exist.</p>
+    /// <p>If the event is an error event, the error code is provided to give insight into the specific error that occurred. If the event is not an error event, this field is null.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>B_FRAME_PRESENT</code> — The participant's stream includes B-frames. For details, see <a href="https://docs.aws.amazon.com/ivs/latest/RealTimeUserGuide/rt-rtmp-publishing.html"> IVS RTMP Publishing</a>.</p></li>
+    /// <li>
+    /// <p><code>BITRATE_EXCEEDED</code> — The participant exceeded the maximum supported bitrate. For details, see <a href="https://docs.aws.amazon.com/ivs/latest/RealTimeUserGuide/service-quotas.html"> Service Quotas</a>.</p></li>
+    /// <li>
+    /// <p><code>INSUFFICIENT_CAPABILITIES</code> — The participant tried to take an action that the participant’s token is not allowed to do. For details on participant capabilities, see the <code>capabilities</code> field in <code>CreateParticipantToken</code>.</p></li>
+    /// <li>
+    /// <p><code>INTERNAL_SERVER_EXCEPTION</code> — The participant failed to publish to the stage due to an internal server error.</p></li>
+    /// <li>
+    /// <p><code>INVALID_AUDIO_CODEC</code> — The participant is using an invalid audio codec. For details, see <a href="https://docs.aws.amazon.com/ivs/latest/RealTimeUserGuide/rt-stream-ingest.html"> Stream Ingest</a>.</p></li>
+    /// <li>
+    /// <p><code>INVALID_INPUT</code> — The participant is using an invalid input stream.</p></li>
+    /// <li>
+    /// <p><code>INVALID_PROTOCOL</code> — The participant's IngestConfiguration resource is configured for RTMPS but they tried streaming with RTMP. For details, see <a href="https://docs.aws.amazon.com/ivs/latest/RealTimeUserGuide/rt-rtmp-publishing.html"> IVS RTMP Publishing</a>.</p></li>
+    /// <li>
+    /// <p><code>INVALID_STREAM_KEY</code> — The participant is using an invalid stream key. For details, see <a href="https://docs.aws.amazon.com/ivs/latest/RealTimeUserGuide/rt-rtmp-publishing.html"> IVS RTMP Publishing</a>.</p></li>
+    /// <li>
+    /// <p><code>INVALID_VIDEO_CODEC</code> — The participant is using an invalid video codec. For details, see <a href="https://docs.aws.amazon.com/ivs/latest/RealTimeUserGuide/rt-stream-ingest.html"> Stream Ingest</a>.</p></li>
+    /// <li>
+    /// <p><code>PUBLISHER_NOT_FOUND</code> — The participant tried to subscribe to a publisher that doesn’t exist.</p></li>
+    /// <li>
+    /// <p><code>QUOTA_EXCEEDED</code> — The number of participants who want to publish/subscribe to a stage exceeds the quota. For details, see <a href="https://docs.aws.amazon.com/ivs/latest/RealTimeUserGuide/service-quotas.html"> Service Quotas</a>.</p></li>
+    /// <li>
+    /// <p><code>RESOLUTION_EXCEEDED</code> — The participant exceeded the maximum supported resolution. For details, see <a href="https://docs.aws.amazon.com/ivs/latest/RealTimeUserGuide/service-quotas.html"> Service Quotas</a>.</p></li>
+    /// <li>
+    /// <p><code>REUSE_OF_STREAM_KEY</code> — The participant tried to use a stream key that is associated with another active stage session.</p></li>
+    /// <li>
+    /// <p><code>STREAM_DURATION_EXCEEDED</code> — The participant exceeded the maximum allowed stream duration. For details, see <a href="https://docs.aws.amazon.com/ivs/latest/RealTimeUserGuide/service-quotas.html"> Service Quotas</a>.</p></li>
+    /// </ul>
     pub error_code: ::std::option::Option<crate::types::EventErrorCode>,
 }
 impl Event {
@@ -32,7 +62,37 @@ impl Event {
     pub fn remote_participant_id(&self) -> ::std::option::Option<&str> {
         self.remote_participant_id.as_deref()
     }
-    /// <p>If the event is an error event, the error code is provided to give insight into the specific error that occurred. If the event is not an error event, this field is null. <code>INSUFFICIENT_CAPABILITIES</code> indicates that the participant tried to take an action that the participant’s token is not allowed to do. For more information about participant capabilities, see the <code>capabilities</code> field in <code>CreateParticipantToken</code>. <code>QUOTA_EXCEEDED</code> indicates that the number of participants who want to publish/subscribe to a stage exceeds the quota; for more information, see <a href="https://docs.aws.amazon.com/ivs/latest/RealTimeUserGuide/service-quotas.html">Service Quotas</a>. <code>PUBLISHER_NOT_FOUND</code> indicates that the participant tried to subscribe to a publisher that doesn’t exist.</p>
+    /// <p>If the event is an error event, the error code is provided to give insight into the specific error that occurred. If the event is not an error event, this field is null.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>B_FRAME_PRESENT</code> — The participant's stream includes B-frames. For details, see <a href="https://docs.aws.amazon.com/ivs/latest/RealTimeUserGuide/rt-rtmp-publishing.html"> IVS RTMP Publishing</a>.</p></li>
+    /// <li>
+    /// <p><code>BITRATE_EXCEEDED</code> — The participant exceeded the maximum supported bitrate. For details, see <a href="https://docs.aws.amazon.com/ivs/latest/RealTimeUserGuide/service-quotas.html"> Service Quotas</a>.</p></li>
+    /// <li>
+    /// <p><code>INSUFFICIENT_CAPABILITIES</code> — The participant tried to take an action that the participant’s token is not allowed to do. For details on participant capabilities, see the <code>capabilities</code> field in <code>CreateParticipantToken</code>.</p></li>
+    /// <li>
+    /// <p><code>INTERNAL_SERVER_EXCEPTION</code> — The participant failed to publish to the stage due to an internal server error.</p></li>
+    /// <li>
+    /// <p><code>INVALID_AUDIO_CODEC</code> — The participant is using an invalid audio codec. For details, see <a href="https://docs.aws.amazon.com/ivs/latest/RealTimeUserGuide/rt-stream-ingest.html"> Stream Ingest</a>.</p></li>
+    /// <li>
+    /// <p><code>INVALID_INPUT</code> — The participant is using an invalid input stream.</p></li>
+    /// <li>
+    /// <p><code>INVALID_PROTOCOL</code> — The participant's IngestConfiguration resource is configured for RTMPS but they tried streaming with RTMP. For details, see <a href="https://docs.aws.amazon.com/ivs/latest/RealTimeUserGuide/rt-rtmp-publishing.html"> IVS RTMP Publishing</a>.</p></li>
+    /// <li>
+    /// <p><code>INVALID_STREAM_KEY</code> — The participant is using an invalid stream key. For details, see <a href="https://docs.aws.amazon.com/ivs/latest/RealTimeUserGuide/rt-rtmp-publishing.html"> IVS RTMP Publishing</a>.</p></li>
+    /// <li>
+    /// <p><code>INVALID_VIDEO_CODEC</code> — The participant is using an invalid video codec. For details, see <a href="https://docs.aws.amazon.com/ivs/latest/RealTimeUserGuide/rt-stream-ingest.html"> Stream Ingest</a>.</p></li>
+    /// <li>
+    /// <p><code>PUBLISHER_NOT_FOUND</code> — The participant tried to subscribe to a publisher that doesn’t exist.</p></li>
+    /// <li>
+    /// <p><code>QUOTA_EXCEEDED</code> — The number of participants who want to publish/subscribe to a stage exceeds the quota. For details, see <a href="https://docs.aws.amazon.com/ivs/latest/RealTimeUserGuide/service-quotas.html"> Service Quotas</a>.</p></li>
+    /// <li>
+    /// <p><code>RESOLUTION_EXCEEDED</code> — The participant exceeded the maximum supported resolution. For details, see <a href="https://docs.aws.amazon.com/ivs/latest/RealTimeUserGuide/service-quotas.html"> Service Quotas</a>.</p></li>
+    /// <li>
+    /// <p><code>REUSE_OF_STREAM_KEY</code> — The participant tried to use a stream key that is associated with another active stage session.</p></li>
+    /// <li>
+    /// <p><code>STREAM_DURATION_EXCEEDED</code> — The participant exceeded the maximum allowed stream duration. For details, see <a href="https://docs.aws.amazon.com/ivs/latest/RealTimeUserGuide/service-quotas.html"> Service Quotas</a>.</p></li>
+    /// </ul>
     pub fn error_code(&self) -> ::std::option::Option<&crate::types::EventErrorCode> {
         self.error_code.as_ref()
     }
@@ -111,17 +171,107 @@ impl EventBuilder {
     pub fn get_remote_participant_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.remote_participant_id
     }
-    /// <p>If the event is an error event, the error code is provided to give insight into the specific error that occurred. If the event is not an error event, this field is null. <code>INSUFFICIENT_CAPABILITIES</code> indicates that the participant tried to take an action that the participant’s token is not allowed to do. For more information about participant capabilities, see the <code>capabilities</code> field in <code>CreateParticipantToken</code>. <code>QUOTA_EXCEEDED</code> indicates that the number of participants who want to publish/subscribe to a stage exceeds the quota; for more information, see <a href="https://docs.aws.amazon.com/ivs/latest/RealTimeUserGuide/service-quotas.html">Service Quotas</a>. <code>PUBLISHER_NOT_FOUND</code> indicates that the participant tried to subscribe to a publisher that doesn’t exist.</p>
+    /// <p>If the event is an error event, the error code is provided to give insight into the specific error that occurred. If the event is not an error event, this field is null.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>B_FRAME_PRESENT</code> — The participant's stream includes B-frames. For details, see <a href="https://docs.aws.amazon.com/ivs/latest/RealTimeUserGuide/rt-rtmp-publishing.html"> IVS RTMP Publishing</a>.</p></li>
+    /// <li>
+    /// <p><code>BITRATE_EXCEEDED</code> — The participant exceeded the maximum supported bitrate. For details, see <a href="https://docs.aws.amazon.com/ivs/latest/RealTimeUserGuide/service-quotas.html"> Service Quotas</a>.</p></li>
+    /// <li>
+    /// <p><code>INSUFFICIENT_CAPABILITIES</code> — The participant tried to take an action that the participant’s token is not allowed to do. For details on participant capabilities, see the <code>capabilities</code> field in <code>CreateParticipantToken</code>.</p></li>
+    /// <li>
+    /// <p><code>INTERNAL_SERVER_EXCEPTION</code> — The participant failed to publish to the stage due to an internal server error.</p></li>
+    /// <li>
+    /// <p><code>INVALID_AUDIO_CODEC</code> — The participant is using an invalid audio codec. For details, see <a href="https://docs.aws.amazon.com/ivs/latest/RealTimeUserGuide/rt-stream-ingest.html"> Stream Ingest</a>.</p></li>
+    /// <li>
+    /// <p><code>INVALID_INPUT</code> — The participant is using an invalid input stream.</p></li>
+    /// <li>
+    /// <p><code>INVALID_PROTOCOL</code> — The participant's IngestConfiguration resource is configured for RTMPS but they tried streaming with RTMP. For details, see <a href="https://docs.aws.amazon.com/ivs/latest/RealTimeUserGuide/rt-rtmp-publishing.html"> IVS RTMP Publishing</a>.</p></li>
+    /// <li>
+    /// <p><code>INVALID_STREAM_KEY</code> — The participant is using an invalid stream key. For details, see <a href="https://docs.aws.amazon.com/ivs/latest/RealTimeUserGuide/rt-rtmp-publishing.html"> IVS RTMP Publishing</a>.</p></li>
+    /// <li>
+    /// <p><code>INVALID_VIDEO_CODEC</code> — The participant is using an invalid video codec. For details, see <a href="https://docs.aws.amazon.com/ivs/latest/RealTimeUserGuide/rt-stream-ingest.html"> Stream Ingest</a>.</p></li>
+    /// <li>
+    /// <p><code>PUBLISHER_NOT_FOUND</code> — The participant tried to subscribe to a publisher that doesn’t exist.</p></li>
+    /// <li>
+    /// <p><code>QUOTA_EXCEEDED</code> — The number of participants who want to publish/subscribe to a stage exceeds the quota. For details, see <a href="https://docs.aws.amazon.com/ivs/latest/RealTimeUserGuide/service-quotas.html"> Service Quotas</a>.</p></li>
+    /// <li>
+    /// <p><code>RESOLUTION_EXCEEDED</code> — The participant exceeded the maximum supported resolution. For details, see <a href="https://docs.aws.amazon.com/ivs/latest/RealTimeUserGuide/service-quotas.html"> Service Quotas</a>.</p></li>
+    /// <li>
+    /// <p><code>REUSE_OF_STREAM_KEY</code> — The participant tried to use a stream key that is associated with another active stage session.</p></li>
+    /// <li>
+    /// <p><code>STREAM_DURATION_EXCEEDED</code> — The participant exceeded the maximum allowed stream duration. For details, see <a href="https://docs.aws.amazon.com/ivs/latest/RealTimeUserGuide/service-quotas.html"> Service Quotas</a>.</p></li>
+    /// </ul>
     pub fn error_code(mut self, input: crate::types::EventErrorCode) -> Self {
         self.error_code = ::std::option::Option::Some(input);
         self
     }
-    /// <p>If the event is an error event, the error code is provided to give insight into the specific error that occurred. If the event is not an error event, this field is null. <code>INSUFFICIENT_CAPABILITIES</code> indicates that the participant tried to take an action that the participant’s token is not allowed to do. For more information about participant capabilities, see the <code>capabilities</code> field in <code>CreateParticipantToken</code>. <code>QUOTA_EXCEEDED</code> indicates that the number of participants who want to publish/subscribe to a stage exceeds the quota; for more information, see <a href="https://docs.aws.amazon.com/ivs/latest/RealTimeUserGuide/service-quotas.html">Service Quotas</a>. <code>PUBLISHER_NOT_FOUND</code> indicates that the participant tried to subscribe to a publisher that doesn’t exist.</p>
+    /// <p>If the event is an error event, the error code is provided to give insight into the specific error that occurred. If the event is not an error event, this field is null.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>B_FRAME_PRESENT</code> — The participant's stream includes B-frames. For details, see <a href="https://docs.aws.amazon.com/ivs/latest/RealTimeUserGuide/rt-rtmp-publishing.html"> IVS RTMP Publishing</a>.</p></li>
+    /// <li>
+    /// <p><code>BITRATE_EXCEEDED</code> — The participant exceeded the maximum supported bitrate. For details, see <a href="https://docs.aws.amazon.com/ivs/latest/RealTimeUserGuide/service-quotas.html"> Service Quotas</a>.</p></li>
+    /// <li>
+    /// <p><code>INSUFFICIENT_CAPABILITIES</code> — The participant tried to take an action that the participant’s token is not allowed to do. For details on participant capabilities, see the <code>capabilities</code> field in <code>CreateParticipantToken</code>.</p></li>
+    /// <li>
+    /// <p><code>INTERNAL_SERVER_EXCEPTION</code> — The participant failed to publish to the stage due to an internal server error.</p></li>
+    /// <li>
+    /// <p><code>INVALID_AUDIO_CODEC</code> — The participant is using an invalid audio codec. For details, see <a href="https://docs.aws.amazon.com/ivs/latest/RealTimeUserGuide/rt-stream-ingest.html"> Stream Ingest</a>.</p></li>
+    /// <li>
+    /// <p><code>INVALID_INPUT</code> — The participant is using an invalid input stream.</p></li>
+    /// <li>
+    /// <p><code>INVALID_PROTOCOL</code> — The participant's IngestConfiguration resource is configured for RTMPS but they tried streaming with RTMP. For details, see <a href="https://docs.aws.amazon.com/ivs/latest/RealTimeUserGuide/rt-rtmp-publishing.html"> IVS RTMP Publishing</a>.</p></li>
+    /// <li>
+    /// <p><code>INVALID_STREAM_KEY</code> — The participant is using an invalid stream key. For details, see <a href="https://docs.aws.amazon.com/ivs/latest/RealTimeUserGuide/rt-rtmp-publishing.html"> IVS RTMP Publishing</a>.</p></li>
+    /// <li>
+    /// <p><code>INVALID_VIDEO_CODEC</code> — The participant is using an invalid video codec. For details, see <a href="https://docs.aws.amazon.com/ivs/latest/RealTimeUserGuide/rt-stream-ingest.html"> Stream Ingest</a>.</p></li>
+    /// <li>
+    /// <p><code>PUBLISHER_NOT_FOUND</code> — The participant tried to subscribe to a publisher that doesn’t exist.</p></li>
+    /// <li>
+    /// <p><code>QUOTA_EXCEEDED</code> — The number of participants who want to publish/subscribe to a stage exceeds the quota. For details, see <a href="https://docs.aws.amazon.com/ivs/latest/RealTimeUserGuide/service-quotas.html"> Service Quotas</a>.</p></li>
+    /// <li>
+    /// <p><code>RESOLUTION_EXCEEDED</code> — The participant exceeded the maximum supported resolution. For details, see <a href="https://docs.aws.amazon.com/ivs/latest/RealTimeUserGuide/service-quotas.html"> Service Quotas</a>.</p></li>
+    /// <li>
+    /// <p><code>REUSE_OF_STREAM_KEY</code> — The participant tried to use a stream key that is associated with another active stage session.</p></li>
+    /// <li>
+    /// <p><code>STREAM_DURATION_EXCEEDED</code> — The participant exceeded the maximum allowed stream duration. For details, see <a href="https://docs.aws.amazon.com/ivs/latest/RealTimeUserGuide/service-quotas.html"> Service Quotas</a>.</p></li>
+    /// </ul>
     pub fn set_error_code(mut self, input: ::std::option::Option<crate::types::EventErrorCode>) -> Self {
         self.error_code = input;
         self
     }
-    /// <p>If the event is an error event, the error code is provided to give insight into the specific error that occurred. If the event is not an error event, this field is null. <code>INSUFFICIENT_CAPABILITIES</code> indicates that the participant tried to take an action that the participant’s token is not allowed to do. For more information about participant capabilities, see the <code>capabilities</code> field in <code>CreateParticipantToken</code>. <code>QUOTA_EXCEEDED</code> indicates that the number of participants who want to publish/subscribe to a stage exceeds the quota; for more information, see <a href="https://docs.aws.amazon.com/ivs/latest/RealTimeUserGuide/service-quotas.html">Service Quotas</a>. <code>PUBLISHER_NOT_FOUND</code> indicates that the participant tried to subscribe to a publisher that doesn’t exist.</p>
+    /// <p>If the event is an error event, the error code is provided to give insight into the specific error that occurred. If the event is not an error event, this field is null.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>B_FRAME_PRESENT</code> — The participant's stream includes B-frames. For details, see <a href="https://docs.aws.amazon.com/ivs/latest/RealTimeUserGuide/rt-rtmp-publishing.html"> IVS RTMP Publishing</a>.</p></li>
+    /// <li>
+    /// <p><code>BITRATE_EXCEEDED</code> — The participant exceeded the maximum supported bitrate. For details, see <a href="https://docs.aws.amazon.com/ivs/latest/RealTimeUserGuide/service-quotas.html"> Service Quotas</a>.</p></li>
+    /// <li>
+    /// <p><code>INSUFFICIENT_CAPABILITIES</code> — The participant tried to take an action that the participant’s token is not allowed to do. For details on participant capabilities, see the <code>capabilities</code> field in <code>CreateParticipantToken</code>.</p></li>
+    /// <li>
+    /// <p><code>INTERNAL_SERVER_EXCEPTION</code> — The participant failed to publish to the stage due to an internal server error.</p></li>
+    /// <li>
+    /// <p><code>INVALID_AUDIO_CODEC</code> — The participant is using an invalid audio codec. For details, see <a href="https://docs.aws.amazon.com/ivs/latest/RealTimeUserGuide/rt-stream-ingest.html"> Stream Ingest</a>.</p></li>
+    /// <li>
+    /// <p><code>INVALID_INPUT</code> — The participant is using an invalid input stream.</p></li>
+    /// <li>
+    /// <p><code>INVALID_PROTOCOL</code> — The participant's IngestConfiguration resource is configured for RTMPS but they tried streaming with RTMP. For details, see <a href="https://docs.aws.amazon.com/ivs/latest/RealTimeUserGuide/rt-rtmp-publishing.html"> IVS RTMP Publishing</a>.</p></li>
+    /// <li>
+    /// <p><code>INVALID_STREAM_KEY</code> — The participant is using an invalid stream key. For details, see <a href="https://docs.aws.amazon.com/ivs/latest/RealTimeUserGuide/rt-rtmp-publishing.html"> IVS RTMP Publishing</a>.</p></li>
+    /// <li>
+    /// <p><code>INVALID_VIDEO_CODEC</code> — The participant is using an invalid video codec. For details, see <a href="https://docs.aws.amazon.com/ivs/latest/RealTimeUserGuide/rt-stream-ingest.html"> Stream Ingest</a>.</p></li>
+    /// <li>
+    /// <p><code>PUBLISHER_NOT_FOUND</code> — The participant tried to subscribe to a publisher that doesn’t exist.</p></li>
+    /// <li>
+    /// <p><code>QUOTA_EXCEEDED</code> — The number of participants who want to publish/subscribe to a stage exceeds the quota. For details, see <a href="https://docs.aws.amazon.com/ivs/latest/RealTimeUserGuide/service-quotas.html"> Service Quotas</a>.</p></li>
+    /// <li>
+    /// <p><code>RESOLUTION_EXCEEDED</code> — The participant exceeded the maximum supported resolution. For details, see <a href="https://docs.aws.amazon.com/ivs/latest/RealTimeUserGuide/service-quotas.html"> Service Quotas</a>.</p></li>
+    /// <li>
+    /// <p><code>REUSE_OF_STREAM_KEY</code> — The participant tried to use a stream key that is associated with another active stage session.</p></li>
+    /// <li>
+    /// <p><code>STREAM_DURATION_EXCEEDED</code> — The participant exceeded the maximum allowed stream duration. For details, see <a href="https://docs.aws.amazon.com/ivs/latest/RealTimeUserGuide/service-quotas.html"> Service Quotas</a>.</p></li>
+    /// </ul>
     pub fn get_error_code(&self) -> &::std::option::Option<crate::types::EventErrorCode> {
         &self.error_code
     }

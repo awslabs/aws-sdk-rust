@@ -13,6 +13,7 @@
 /// # let fileformat = unimplemented!();
 /// match fileformat {
 ///     FileFormat::Json => { /* ... */ },
+///     FileFormat::NotUsed => { /* ... */ },
 ///     FileFormat::Xml => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -44,6 +45,8 @@ pub enum FileFormat {
     #[allow(missing_docs)] // documentation missing in model
     Json,
     #[allow(missing_docs)] // documentation missing in model
+    NotUsed,
+    #[allow(missing_docs)] // documentation missing in model
     Xml,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -53,6 +56,7 @@ impl ::std::convert::From<&str> for FileFormat {
     fn from(s: &str) -> Self {
         match s {
             "JSON" => FileFormat::Json,
+            "NOT_USED" => FileFormat::NotUsed,
             "XML" => FileFormat::Xml,
             other => FileFormat::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -70,13 +74,14 @@ impl FileFormat {
     pub fn as_str(&self) -> &str {
         match self {
             FileFormat::Json => "JSON",
+            FileFormat::NotUsed => "NOT_USED",
             FileFormat::Xml => "XML",
             FileFormat::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["JSON", "XML"]
+        &["JSON", "NOT_USED", "XML"]
     }
 }
 impl ::std::convert::AsRef<str> for FileFormat {
@@ -100,6 +105,7 @@ impl ::std::fmt::Display for FileFormat {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             FileFormat::Json => write!(f, "JSON"),
+            FileFormat::NotUsed => write!(f, "NOT_USED"),
             FileFormat::Xml => write!(f, "XML"),
             FileFormat::Unknown(value) => write!(f, "{}", value),
         }

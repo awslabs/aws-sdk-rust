@@ -31,7 +31,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-iotdeviceadvisor = "1.44.0"
+//! aws-sdk-iotdeviceadvisor = "1.45.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
@@ -148,14 +148,14 @@ pub use config::Config;
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`DeleteSuiteDefinition`](crate::operation::delete_suite_definition) operation has
-/// a [`Client::delete_suite_definition`], function which returns a builder for that operation.
+/// For example, the [`CreateSuiteDefinition`](crate::operation::create_suite_definition) operation has
+/// a [`Client::create_suite_definition`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.delete_suite_definition()
-///     .suite_definition_id("example")
+/// let result = client.create_suite_definition()
+///     .client_token("example")
 ///     .send()
 ///     .await;
 /// ```
@@ -186,6 +186,10 @@ pub mod primitives;
 pub mod types;
 
 mod auth_plugin;
+
+pub(crate) mod client_idempotency_token;
+
+mod idempotency_token;
 
 pub(crate) mod protocol_serde;
 

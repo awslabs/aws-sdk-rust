@@ -22,7 +22,7 @@ impl crate::operation::start_transformer_job::builders::StartTransformerJobInput
 }
 /// Fluent builder constructing a request to `StartTransformerJob`.
 ///
-/// <p>Runs a job, using a transformer, to parse input EDI (electronic data interchange) file into the output structures used by Amazon Web Services B2BI Data Interchange.</p>
+/// <p>Runs a job, using a transformer, to parse input EDI (electronic data interchange) file into the output structures used by Amazon Web Services B2B Data Interchange.</p>
 /// <p>If you only want to transform EDI (electronic data interchange) documents, you don't need to create profiles, partnerships or capabilities. Just create and configure a transformer, and then run the <code>StartTransformerJob</code> API to process your files.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartTransformerJobFluentBuilder {

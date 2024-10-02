@@ -24,20 +24,26 @@ pub fn ser_create_partnership_input_input(
         }
         array_6.finish();
     }
-    if let Some(var_8) = &input.client_token {
-        object.key("clientToken").string(var_8.as_str());
+    if let Some(var_8) = &input.capability_options {
+        #[allow(unused_mut)]
+        let mut object_9 = object.key("capabilityOptions").start_object();
+        crate::protocol_serde::shape_capability_options::ser_capability_options(&mut object_9, var_8)?;
+        object_9.finish();
     }
-    if let Some(var_9) = &input.tags {
-        let mut array_10 = object.key("tags").start_array();
-        for item_11 in var_9 {
+    if let Some(var_10) = &input.client_token {
+        object.key("clientToken").string(var_10.as_str());
+    }
+    if let Some(var_11) = &input.tags {
+        let mut array_12 = object.key("tags").start_array();
+        for item_13 in var_11 {
             {
                 #[allow(unused_mut)]
-                let mut object_12 = array_10.value().start_object();
-                crate::protocol_serde::shape_tag::ser_tag(&mut object_12, item_11)?;
-                object_12.finish();
+                let mut object_14 = array_12.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_14, item_13)?;
+                object_14.finish();
             }
         }
-        array_10.finish();
+        array_12.finish();
     }
     Ok(())
 }

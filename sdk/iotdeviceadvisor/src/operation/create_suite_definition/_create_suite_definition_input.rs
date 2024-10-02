@@ -7,6 +7,8 @@ pub struct CreateSuiteDefinitionInput {
     pub suite_definition_configuration: ::std::option::Option<crate::types::SuiteDefinitionConfiguration>,
     /// <p>The tags to be attached to the suite definition.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>The client token for the test suite definition creation. This token is used for tracking test suite definition creation using retries and obtaining its status. This parameter is optional.</p>
+    pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl CreateSuiteDefinitionInput {
     /// <p>Creates a Device Advisor test suite with suite definition configuration.</p>
@@ -16,6 +18,10 @@ impl CreateSuiteDefinitionInput {
     /// <p>The tags to be attached to the suite definition.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
+    }
+    /// <p>The client token for the test suite definition creation. This token is used for tracking test suite definition creation using retries and obtaining its status. This parameter is optional.</p>
+    pub fn client_token(&self) -> ::std::option::Option<&str> {
+        self.client_token.as_deref()
     }
 }
 impl CreateSuiteDefinitionInput {
@@ -31,6 +37,7 @@ impl CreateSuiteDefinitionInput {
 pub struct CreateSuiteDefinitionInputBuilder {
     pub(crate) suite_definition_configuration: ::std::option::Option<crate::types::SuiteDefinitionConfiguration>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl CreateSuiteDefinitionInputBuilder {
     /// <p>Creates a Device Advisor test suite with suite definition configuration.</p>
@@ -68,6 +75,20 @@ impl CreateSuiteDefinitionInputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
+    /// <p>The client token for the test suite definition creation. This token is used for tracking test suite definition creation using retries and obtaining its status. This parameter is optional.</p>
+    pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.client_token = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The client token for the test suite definition creation. This token is used for tracking test suite definition creation using retries and obtaining its status. This parameter is optional.</p>
+    pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.client_token = input;
+        self
+    }
+    /// <p>The client token for the test suite definition creation. This token is used for tracking test suite definition creation using retries and obtaining its status. This parameter is optional.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
+    }
     /// Consumes the builder and constructs a [`CreateSuiteDefinitionInput`](crate::operation::create_suite_definition::CreateSuiteDefinitionInput).
     pub fn build(
         self,
@@ -76,6 +97,7 @@ impl CreateSuiteDefinitionInputBuilder {
         ::std::result::Result::Ok(crate::operation::create_suite_definition::CreateSuiteDefinitionInput {
             suite_definition_configuration: self.suite_definition_configuration,
             tags: self.tags,
+            client_token: self.client_token,
         })
     }
 }

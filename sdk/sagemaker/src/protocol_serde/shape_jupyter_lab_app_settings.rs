@@ -54,6 +54,9 @@ pub fn ser_jupyter_lab_app_settings(
         crate::protocol_serde::shape_emr_settings::ser_emr_settings(&mut object_17, var_16)?;
         object_17.finish();
     }
+    if let Some(var_18) = &input.built_in_lifecycle_config_arn {
+        object.key("BuiltInLifecycleConfigArn").string(var_18.as_str());
+    }
     Ok(())
 }
 
@@ -92,6 +95,13 @@ where
                         }
                         "EmrSettings" => {
                             builder = builder.set_emr_settings(crate::protocol_serde::shape_emr_settings::de_emr_settings(tokens)?);
+                        }
+                        "BuiltInLifecycleConfigArn" => {
+                            builder = builder.set_built_in_lifecycle_config_arn(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -321,6 +321,8 @@ pub(crate) mod shape_get_bucket_intelligent_tiering_configuration_output;
 
 pub(crate) mod shape_get_bucket_inventory_configuration_output;
 
+pub(crate) mod shape_get_bucket_lifecycle_configuration_output;
+
 pub(crate) mod shape_get_bucket_metrics_configuration_output;
 
 pub(crate) mod shape_get_bucket_ownership_controls_output;
@@ -376,6 +378,8 @@ pub(crate) mod shape_not_found;
 pub(crate) mod shape_object_already_in_active_tier_error;
 
 pub(crate) mod shape_object_not_in_active_tier_error;
+
+pub(crate) mod shape_put_bucket_lifecycle_configuration_output;
 
 pub(crate) mod shape_put_object_acl_output;
 

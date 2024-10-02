@@ -26,6 +26,12 @@ where
                                 crate::protocol_serde::shape_pre_processing_parsed_response::de_pre_processing_parsed_response(tokens)?,
                             );
                         }
+                        "rawResponse" => {
+                            builder = builder.set_raw_response(crate::protocol_serde::shape_raw_response::de_raw_response(tokens)?);
+                        }
+                        "metadata" => {
+                            builder = builder.set_metadata(crate::protocol_serde::shape_metadata::de_metadata(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

@@ -8,6 +8,10 @@ pub struct PostProcessingModelInvocationOutput {
     pub trace_id: ::std::option::Option<::std::string::String>,
     /// <p>Details about the response from the Lambda parsing of the output of the post-processing step.</p>
     pub parsed_response: ::std::option::Option<crate::types::PostProcessingParsedResponse>,
+    /// <p>Contains the raw output from the foundation model.</p>
+    pub raw_response: ::std::option::Option<crate::types::RawResponse>,
+    /// <p>Provides details of the foundation model.</p>
+    pub metadata: ::std::option::Option<crate::types::Metadata>,
 }
 impl PostProcessingModelInvocationOutput {
     /// <p>The unique identifier of the trace.</p>
@@ -18,12 +22,22 @@ impl PostProcessingModelInvocationOutput {
     pub fn parsed_response(&self) -> ::std::option::Option<&crate::types::PostProcessingParsedResponse> {
         self.parsed_response.as_ref()
     }
+    /// <p>Contains the raw output from the foundation model.</p>
+    pub fn raw_response(&self) -> ::std::option::Option<&crate::types::RawResponse> {
+        self.raw_response.as_ref()
+    }
+    /// <p>Provides details of the foundation model.</p>
+    pub fn metadata(&self) -> ::std::option::Option<&crate::types::Metadata> {
+        self.metadata.as_ref()
+    }
 }
 impl ::std::fmt::Debug for PostProcessingModelInvocationOutput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("PostProcessingModelInvocationOutput");
         formatter.field("trace_id", &"*** Sensitive Data Redacted ***");
         formatter.field("parsed_response", &"*** Sensitive Data Redacted ***");
+        formatter.field("raw_response", &"*** Sensitive Data Redacted ***");
+        formatter.field("metadata", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
@@ -40,6 +54,8 @@ impl PostProcessingModelInvocationOutput {
 pub struct PostProcessingModelInvocationOutputBuilder {
     pub(crate) trace_id: ::std::option::Option<::std::string::String>,
     pub(crate) parsed_response: ::std::option::Option<crate::types::PostProcessingParsedResponse>,
+    pub(crate) raw_response: ::std::option::Option<crate::types::RawResponse>,
+    pub(crate) metadata: ::std::option::Option<crate::types::Metadata>,
 }
 impl PostProcessingModelInvocationOutputBuilder {
     /// <p>The unique identifier of the trace.</p>
@@ -70,11 +86,41 @@ impl PostProcessingModelInvocationOutputBuilder {
     pub fn get_parsed_response(&self) -> &::std::option::Option<crate::types::PostProcessingParsedResponse> {
         &self.parsed_response
     }
+    /// <p>Contains the raw output from the foundation model.</p>
+    pub fn raw_response(mut self, input: crate::types::RawResponse) -> Self {
+        self.raw_response = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Contains the raw output from the foundation model.</p>
+    pub fn set_raw_response(mut self, input: ::std::option::Option<crate::types::RawResponse>) -> Self {
+        self.raw_response = input;
+        self
+    }
+    /// <p>Contains the raw output from the foundation model.</p>
+    pub fn get_raw_response(&self) -> &::std::option::Option<crate::types::RawResponse> {
+        &self.raw_response
+    }
+    /// <p>Provides details of the foundation model.</p>
+    pub fn metadata(mut self, input: crate::types::Metadata) -> Self {
+        self.metadata = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Provides details of the foundation model.</p>
+    pub fn set_metadata(mut self, input: ::std::option::Option<crate::types::Metadata>) -> Self {
+        self.metadata = input;
+        self
+    }
+    /// <p>Provides details of the foundation model.</p>
+    pub fn get_metadata(&self) -> &::std::option::Option<crate::types::Metadata> {
+        &self.metadata
+    }
     /// Consumes the builder and constructs a [`PostProcessingModelInvocationOutput`](crate::types::PostProcessingModelInvocationOutput).
     pub fn build(self) -> crate::types::PostProcessingModelInvocationOutput {
         crate::types::PostProcessingModelInvocationOutput {
             trace_id: self.trace_id,
             parsed_response: self.parsed_response,
+            raw_response: self.raw_response,
+            metadata: self.metadata,
         }
     }
 }
@@ -83,6 +129,8 @@ impl ::std::fmt::Debug for PostProcessingModelInvocationOutputBuilder {
         let mut formatter = f.debug_struct("PostProcessingModelInvocationOutputBuilder");
         formatter.field("trace_id", &"*** Sensitive Data Redacted ***");
         formatter.field("parsed_response", &"*** Sensitive Data Redacted ***");
+        formatter.field("raw_response", &"*** Sensitive Data Redacted ***");
+        formatter.field("metadata", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }

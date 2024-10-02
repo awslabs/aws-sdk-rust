@@ -16,6 +16,8 @@ pub struct JupyterLabAppSettings {
     pub app_lifecycle_management: ::std::option::Option<crate::types::AppLifecycleManagement>,
     /// <p>The configuration parameters that specify the IAM roles assumed by the execution role of SageMaker (assumable roles) and the cluster instances or job execution environments (execution roles or runtime roles) to manage and access resources required for running Amazon EMR clusters or Amazon EMR Serverless applications.</p>
     pub emr_settings: ::std::option::Option<crate::types::EmrSettings>,
+    /// <p>The lifecycle configuration that runs before the default lifecycle configuration. It can override changes made in the default lifecycle configuration.</p>
+    pub built_in_lifecycle_config_arn: ::std::option::Option<::std::string::String>,
 }
 impl JupyterLabAppSettings {
     /// <p>Specifies the ARN's of a SageMaker image and SageMaker image version, and the instance type that the version runs on.</p>
@@ -48,6 +50,10 @@ impl JupyterLabAppSettings {
     pub fn emr_settings(&self) -> ::std::option::Option<&crate::types::EmrSettings> {
         self.emr_settings.as_ref()
     }
+    /// <p>The lifecycle configuration that runs before the default lifecycle configuration. It can override changes made in the default lifecycle configuration.</p>
+    pub fn built_in_lifecycle_config_arn(&self) -> ::std::option::Option<&str> {
+        self.built_in_lifecycle_config_arn.as_deref()
+    }
 }
 impl JupyterLabAppSettings {
     /// Creates a new builder-style object to manufacture [`JupyterLabAppSettings`](crate::types::JupyterLabAppSettings).
@@ -66,6 +72,7 @@ pub struct JupyterLabAppSettingsBuilder {
     pub(crate) code_repositories: ::std::option::Option<::std::vec::Vec<crate::types::CodeRepository>>,
     pub(crate) app_lifecycle_management: ::std::option::Option<crate::types::AppLifecycleManagement>,
     pub(crate) emr_settings: ::std::option::Option<crate::types::EmrSettings>,
+    pub(crate) built_in_lifecycle_config_arn: ::std::option::Option<::std::string::String>,
 }
 impl JupyterLabAppSettingsBuilder {
     /// <p>Specifies the ARN's of a SageMaker image and SageMaker image version, and the instance type that the version runs on.</p>
@@ -170,6 +177,20 @@ impl JupyterLabAppSettingsBuilder {
     pub fn get_emr_settings(&self) -> &::std::option::Option<crate::types::EmrSettings> {
         &self.emr_settings
     }
+    /// <p>The lifecycle configuration that runs before the default lifecycle configuration. It can override changes made in the default lifecycle configuration.</p>
+    pub fn built_in_lifecycle_config_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.built_in_lifecycle_config_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The lifecycle configuration that runs before the default lifecycle configuration. It can override changes made in the default lifecycle configuration.</p>
+    pub fn set_built_in_lifecycle_config_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.built_in_lifecycle_config_arn = input;
+        self
+    }
+    /// <p>The lifecycle configuration that runs before the default lifecycle configuration. It can override changes made in the default lifecycle configuration.</p>
+    pub fn get_built_in_lifecycle_config_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.built_in_lifecycle_config_arn
+    }
     /// Consumes the builder and constructs a [`JupyterLabAppSettings`](crate::types::JupyterLabAppSettings).
     pub fn build(self) -> crate::types::JupyterLabAppSettings {
         crate::types::JupyterLabAppSettings {
@@ -179,6 +200,7 @@ impl JupyterLabAppSettingsBuilder {
             code_repositories: self.code_repositories,
             app_lifecycle_management: self.app_lifecycle_management,
             emr_settings: self.emr_settings,
+            built_in_lifecycle_config_arn: self.built_in_lifecycle_config_arn,
         }
     }
 }

@@ -25,15 +25,15 @@ impl crate::operation::put_bucket_lifecycle_configuration::builders::PutBucketLi
 /// <note>
 /// <p>This operation is not supported by directory buckets.</p>
 /// </note>
-/// <p>Creates a new lifecycle configuration for the bucket or replaces an existing lifecycle configuration. Keep in mind that this will overwrite an existing lifecycle configuration, so if you want to retain any configuration details, they must be included in the new lifecycle configuration. For information about lifecycle configuration, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lifecycle-mgmt.html">Managing your storage lifecycle</a>.</p><note>
-/// <p>Bucket lifecycle configuration now supports specifying a lifecycle rule using an object key name prefix, one or more object tags, object size, or any combination of these. Accordingly, this section describes the latest API. The previous version of the API supported filtering based only on an object key name prefix, which is supported for backward compatibility. For the related API description, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycle.html">PutBucketLifecycle</a>.</p>
-/// </note>
+/// <p>Creates a new lifecycle configuration for the bucket or replaces an existing lifecycle configuration. Keep in mind that this will overwrite an existing lifecycle configuration, so if you want to retain any configuration details, they must be included in the new lifecycle configuration. For information about lifecycle configuration, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lifecycle-mgmt.html">Managing your storage lifecycle</a>.</p>
 /// <dl>
 /// <dt>
 /// Rules
 /// </dt>
 /// <dd>
-/// <p>You specify the lifecycle configuration in your request body. The lifecycle configuration is specified as XML consisting of one or more rules. An Amazon S3 Lifecycle configuration can have up to 1,000 rules. This limit is not adjustable. Each rule consists of the following:</p>
+/// <p>You specify the lifecycle configuration in your request body. The lifecycle configuration is specified as XML consisting of one or more rules. An Amazon S3 Lifecycle configuration can have up to 1,000 rules. This limit is not adjustable.</p>
+/// <p>Bucket lifecycle configuration supports specifying a lifecycle rule using an object key name prefix, one or more object tags, object size, or any combination of these. Accordingly, this section describes the latest API. The previous version of the API supported filtering based only on an object key name prefix, which is supported for backward compatibility. For the related API description, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycle.html">PutBucketLifecycle</a>.</p>
+/// <p>A lifecycle rule consists of the following:</p>
 /// <ul>
 /// <li>
 /// <p>A filter identifying a subset of objects to which the rule applies. The filter can be based on a key name prefix, object tags, object size, or any combination of these.</p></li>
@@ -213,5 +213,43 @@ impl PutBucketLifecycleConfigurationFluentBuilder {
     /// <p>The account ID of the expected bucket owner. If the account ID that you provide does not match the actual owner of the bucket, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn get_expected_bucket_owner(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_expected_bucket_owner()
+    }
+    /// <p>Indicates which default minimum object size behavior is applied to the lifecycle configuration.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>all_storage_classes_128K</code> - Objects smaller than 128 KB will not transition to any storage class by default.</p></li>
+    /// <li>
+    /// <p><code>varies_by_storage_class</code> - Objects smaller than 128 KB will transition to Glacier Flexible Retrieval or Glacier Deep Archive storage classes. By default, all other storage classes will prevent transitions smaller than 128 KB.</p></li>
+    /// </ul>
+    /// <p>To customize the minimum object size for any transition you can add a filter that specifies a custom <code>ObjectSizeGreaterThan</code> or <code>ObjectSizeLessThan</code> in the body of your transition rule. Custom filters always take precedence over the default transition behavior.</p>
+    pub fn transition_default_minimum_object_size(mut self, input: crate::types::TransitionDefaultMinimumObjectSize) -> Self {
+        self.inner = self.inner.transition_default_minimum_object_size(input);
+        self
+    }
+    /// <p>Indicates which default minimum object size behavior is applied to the lifecycle configuration.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>all_storage_classes_128K</code> - Objects smaller than 128 KB will not transition to any storage class by default.</p></li>
+    /// <li>
+    /// <p><code>varies_by_storage_class</code> - Objects smaller than 128 KB will transition to Glacier Flexible Retrieval or Glacier Deep Archive storage classes. By default, all other storage classes will prevent transitions smaller than 128 KB.</p></li>
+    /// </ul>
+    /// <p>To customize the minimum object size for any transition you can add a filter that specifies a custom <code>ObjectSizeGreaterThan</code> or <code>ObjectSizeLessThan</code> in the body of your transition rule. Custom filters always take precedence over the default transition behavior.</p>
+    pub fn set_transition_default_minimum_object_size(
+        mut self,
+        input: ::std::option::Option<crate::types::TransitionDefaultMinimumObjectSize>,
+    ) -> Self {
+        self.inner = self.inner.set_transition_default_minimum_object_size(input);
+        self
+    }
+    /// <p>Indicates which default minimum object size behavior is applied to the lifecycle configuration.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>all_storage_classes_128K</code> - Objects smaller than 128 KB will not transition to any storage class by default.</p></li>
+    /// <li>
+    /// <p><code>varies_by_storage_class</code> - Objects smaller than 128 KB will transition to Glacier Flexible Retrieval or Glacier Deep Archive storage classes. By default, all other storage classes will prevent transitions smaller than 128 KB.</p></li>
+    /// </ul>
+    /// <p>To customize the minimum object size for any transition you can add a filter that specifies a custom <code>ObjectSizeGreaterThan</code> or <code>ObjectSizeLessThan</code> in the body of your transition rule. Custom filters always take precedence over the default transition behavior.</p>
+    pub fn get_transition_default_minimum_object_size(&self) -> &::std::option::Option<crate::types::TransitionDefaultMinimumObjectSize> {
+        self.inner.get_transition_default_minimum_object_size()
     }
 }

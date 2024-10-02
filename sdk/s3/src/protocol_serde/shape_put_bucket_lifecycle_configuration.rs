@@ -29,6 +29,16 @@ pub fn de_put_bucket_lifecycle_configuration_http_response(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::put_bucket_lifecycle_configuration::builders::PutBucketLifecycleConfigurationOutputBuilder::default();
+        output = output.set_transition_default_minimum_object_size(
+            crate::protocol_serde::shape_put_bucket_lifecycle_configuration_output::de_transition_default_minimum_object_size_header(
+                _response_headers,
+            )
+            .map_err(|_| {
+                crate::operation::put_bucket_lifecycle_configuration::PutBucketLifecycleConfigurationError::unhandled(
+                    "Failed to parse TransitionDefaultMinimumObjectSize from header `x-amz-transition-default-minimum-object-size",
+                )
+            })?,
+        );
         output._set_extended_request_id(crate::s3_request_id::RequestIdExt::extended_request_id(_response_headers).map(str::to_string));
         output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
@@ -63,6 +73,19 @@ pub fn ser_put_bucket_lifecycle_configuration_headers(
                 )
             })?;
             builder = builder.header("x-amz-expected-bucket-owner", header_value);
+        }
+    }
+    if let ::std::option::Option::Some(inner_5) = &input.transition_default_minimum_object_size {
+        let formatted_6 = inner_5.as_str();
+        if !formatted_6.is_empty() {
+            let header_value = formatted_6;
+            let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+                ::aws_smithy_types::error::operation::BuildError::invalid_field(
+                    "transition_default_minimum_object_size",
+                    format!("`{}` cannot be used as a header value: {}", &header_value, err),
+                )
+            })?;
+            builder = builder.header("x-amz-transition-default-minimum-object-size", header_value);
         }
     }
     Ok(builder)

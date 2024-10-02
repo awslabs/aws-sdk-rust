@@ -14,6 +14,13 @@ where
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "capabilityDirection" => {
+                            builder = builder.set_capability_direction(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityDirection::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         "type" => {
                             builder = builder.set_type(crate::protocol_serde::shape_edi_type::de_edi_type(tokens)?);
                         }
@@ -54,23 +61,26 @@ pub fn ser_edi_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::EdiConfiguration,
 ) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.r#type {
-        #[allow(unused_mut)]
-        let mut object_2 = object.key("type").start_object();
-        crate::protocol_serde::shape_edi_type::ser_edi_type(&mut object_2, var_1)?;
-        object_2.finish();
+    if let Some(var_1) = &input.capability_direction {
+        object.key("capabilityDirection").string(var_1.as_str());
     }
-    if let Some(var_3) = &input.input_location {
+    if let Some(var_2) = &input.r#type {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("inputLocation").start_object();
-        crate::protocol_serde::shape_s3_location::ser_s3_location(&mut object_4, var_3)?;
-        object_4.finish();
+        let mut object_3 = object.key("type").start_object();
+        crate::protocol_serde::shape_edi_type::ser_edi_type(&mut object_3, var_2)?;
+        object_3.finish();
     }
-    if let Some(var_5) = &input.output_location {
+    if let Some(var_4) = &input.input_location {
         #[allow(unused_mut)]
-        let mut object_6 = object.key("outputLocation").start_object();
-        crate::protocol_serde::shape_s3_location::ser_s3_location(&mut object_6, var_5)?;
-        object_6.finish();
+        let mut object_5 = object.key("inputLocation").start_object();
+        crate::protocol_serde::shape_s3_location::ser_s3_location(&mut object_5, var_4)?;
+        object_5.finish();
+    }
+    if let Some(var_6) = &input.output_location {
+        #[allow(unused_mut)]
+        let mut object_7 = object.key("outputLocation").start_object();
+        crate::protocol_serde::shape_s3_location::ser_s3_location(&mut object_7, var_6)?;
+        object_7.finish();
     }
     {
         object.key("transformerId").string(input.transformer_id.as_str());

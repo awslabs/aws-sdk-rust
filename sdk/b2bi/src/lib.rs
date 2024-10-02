@@ -33,7 +33,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-b2bi = "1.45.0"
+//! aws-sdk-b2bi = "1.46.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
@@ -150,14 +150,14 @@ pub use config::Config;
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`GetTransformerJob`](crate::operation::get_transformer_job) operation has
-/// a [`Client::get_transformer_job`], function which returns a builder for that operation.
+/// For example, the [`CreateStarterMappingTemplate`](crate::operation::create_starter_mapping_template) operation has
+/// a [`Client::create_starter_mapping_template`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.get_transformer_job()
-///     .transformer_job_id("example")
+/// let result = client.create_starter_mapping_template()
+///     .mapping_type("example")
 ///     .send()
 ///     .await;
 /// ```

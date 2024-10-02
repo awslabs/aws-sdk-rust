@@ -12,6 +12,7 @@
 /// ```text
 /// # let action = unimplemented!();
 /// match action {
+///     Action::AutoTimeZoneRedirection => { /* ... */ },
 ///     Action::ClipboardCopyFromLocalDevice => { /* ... */ },
 ///     Action::ClipboardCopyToLocalDevice => { /* ... */ },
 ///     Action::DomainPasswordSignin => { /* ... */ },
@@ -47,6 +48,8 @@
 )]
 pub enum Action {
     #[allow(missing_docs)] // documentation missing in model
+    AutoTimeZoneRedirection,
+    #[allow(missing_docs)] // documentation missing in model
     ClipboardCopyFromLocalDevice,
     #[allow(missing_docs)] // documentation missing in model
     ClipboardCopyToLocalDevice,
@@ -67,6 +70,7 @@ pub enum Action {
 impl ::std::convert::From<&str> for Action {
     fn from(s: &str) -> Self {
         match s {
+            "AUTO_TIME_ZONE_REDIRECTION" => Action::AutoTimeZoneRedirection,
             "CLIPBOARD_COPY_FROM_LOCAL_DEVICE" => Action::ClipboardCopyFromLocalDevice,
             "CLIPBOARD_COPY_TO_LOCAL_DEVICE" => Action::ClipboardCopyToLocalDevice,
             "DOMAIN_PASSWORD_SIGNIN" => Action::DomainPasswordSignin,
@@ -89,6 +93,7 @@ impl Action {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            Action::AutoTimeZoneRedirection => "AUTO_TIME_ZONE_REDIRECTION",
             Action::ClipboardCopyFromLocalDevice => "CLIPBOARD_COPY_FROM_LOCAL_DEVICE",
             Action::ClipboardCopyToLocalDevice => "CLIPBOARD_COPY_TO_LOCAL_DEVICE",
             Action::DomainPasswordSignin => "DOMAIN_PASSWORD_SIGNIN",
@@ -102,6 +107,7 @@ impl Action {
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
+            "AUTO_TIME_ZONE_REDIRECTION",
             "CLIPBOARD_COPY_FROM_LOCAL_DEVICE",
             "CLIPBOARD_COPY_TO_LOCAL_DEVICE",
             "DOMAIN_PASSWORD_SIGNIN",
@@ -132,6 +138,7 @@ impl Action {
 impl ::std::fmt::Display for Action {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            Action::AutoTimeZoneRedirection => write!(f, "AUTO_TIME_ZONE_REDIRECTION"),
             Action::ClipboardCopyFromLocalDevice => write!(f, "CLIPBOARD_COPY_FROM_LOCAL_DEVICE"),
             Action::ClipboardCopyToLocalDevice => write!(f, "CLIPBOARD_COPY_TO_LOCAL_DEVICE"),
             Action::DomainPasswordSignin => write!(f, "DOMAIN_PASSWORD_SIGNIN"),

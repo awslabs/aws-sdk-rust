@@ -8,6 +8,10 @@ pub struct PreProcessingModelInvocationOutput {
     pub trace_id: ::std::option::Option<::std::string::String>,
     /// <p>Details about the response from the Lambda parsing of the output of the pre-processing step.</p>
     pub parsed_response: ::std::option::Option<crate::types::PreProcessingParsedResponse>,
+    /// <p>Contains the raw output from the foundation model.</p>
+    pub raw_response: ::std::option::Option<crate::types::RawResponse>,
+    /// <p>Provides details of the foundation model.</p>
+    pub metadata: ::std::option::Option<crate::types::Metadata>,
 }
 impl PreProcessingModelInvocationOutput {
     /// <p>The unique identifier of the trace.</p>
@@ -18,12 +22,22 @@ impl PreProcessingModelInvocationOutput {
     pub fn parsed_response(&self) -> ::std::option::Option<&crate::types::PreProcessingParsedResponse> {
         self.parsed_response.as_ref()
     }
+    /// <p>Contains the raw output from the foundation model.</p>
+    pub fn raw_response(&self) -> ::std::option::Option<&crate::types::RawResponse> {
+        self.raw_response.as_ref()
+    }
+    /// <p>Provides details of the foundation model.</p>
+    pub fn metadata(&self) -> ::std::option::Option<&crate::types::Metadata> {
+        self.metadata.as_ref()
+    }
 }
 impl ::std::fmt::Debug for PreProcessingModelInvocationOutput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("PreProcessingModelInvocationOutput");
         formatter.field("trace_id", &"*** Sensitive Data Redacted ***");
         formatter.field("parsed_response", &"*** Sensitive Data Redacted ***");
+        formatter.field("raw_response", &"*** Sensitive Data Redacted ***");
+        formatter.field("metadata", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
@@ -40,6 +54,8 @@ impl PreProcessingModelInvocationOutput {
 pub struct PreProcessingModelInvocationOutputBuilder {
     pub(crate) trace_id: ::std::option::Option<::std::string::String>,
     pub(crate) parsed_response: ::std::option::Option<crate::types::PreProcessingParsedResponse>,
+    pub(crate) raw_response: ::std::option::Option<crate::types::RawResponse>,
+    pub(crate) metadata: ::std::option::Option<crate::types::Metadata>,
 }
 impl PreProcessingModelInvocationOutputBuilder {
     /// <p>The unique identifier of the trace.</p>
@@ -70,11 +86,41 @@ impl PreProcessingModelInvocationOutputBuilder {
     pub fn get_parsed_response(&self) -> &::std::option::Option<crate::types::PreProcessingParsedResponse> {
         &self.parsed_response
     }
+    /// <p>Contains the raw output from the foundation model.</p>
+    pub fn raw_response(mut self, input: crate::types::RawResponse) -> Self {
+        self.raw_response = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Contains the raw output from the foundation model.</p>
+    pub fn set_raw_response(mut self, input: ::std::option::Option<crate::types::RawResponse>) -> Self {
+        self.raw_response = input;
+        self
+    }
+    /// <p>Contains the raw output from the foundation model.</p>
+    pub fn get_raw_response(&self) -> &::std::option::Option<crate::types::RawResponse> {
+        &self.raw_response
+    }
+    /// <p>Provides details of the foundation model.</p>
+    pub fn metadata(mut self, input: crate::types::Metadata) -> Self {
+        self.metadata = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Provides details of the foundation model.</p>
+    pub fn set_metadata(mut self, input: ::std::option::Option<crate::types::Metadata>) -> Self {
+        self.metadata = input;
+        self
+    }
+    /// <p>Provides details of the foundation model.</p>
+    pub fn get_metadata(&self) -> &::std::option::Option<crate::types::Metadata> {
+        &self.metadata
+    }
     /// Consumes the builder and constructs a [`PreProcessingModelInvocationOutput`](crate::types::PreProcessingModelInvocationOutput).
     pub fn build(self) -> crate::types::PreProcessingModelInvocationOutput {
         crate::types::PreProcessingModelInvocationOutput {
             trace_id: self.trace_id,
             parsed_response: self.parsed_response,
+            raw_response: self.raw_response,
+            metadata: self.metadata,
         }
     }
 }
@@ -83,6 +129,8 @@ impl ::std::fmt::Debug for PreProcessingModelInvocationOutputBuilder {
         let mut formatter = f.debug_struct("PreProcessingModelInvocationOutputBuilder");
         formatter.field("trace_id", &"*** Sensitive Data Redacted ***");
         formatter.field("parsed_response", &"*** Sensitive Data Redacted ***");
+        formatter.field("raw_response", &"*** Sensitive Data Redacted ***");
+        formatter.field("metadata", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }

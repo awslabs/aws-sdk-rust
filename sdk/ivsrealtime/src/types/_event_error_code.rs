@@ -13,8 +13,11 @@
 /// # let eventerrorcode = unimplemented!();
 /// match eventerrorcode {
 ///     EventErrorCode::BitrateExceeded => { /* ... */ },
+///     EventErrorCode::BFramePresent => { /* ... */ },
 ///     EventErrorCode::InsufficientCapabilities => { /* ... */ },
+///     EventErrorCode::InternalServerException => { /* ... */ },
 ///     EventErrorCode::InvalidAudioCodec => { /* ... */ },
+///     EventErrorCode::InvalidInput => { /* ... */ },
 ///     EventErrorCode::InvalidProtocol => { /* ... */ },
 ///     EventErrorCode::InvalidStreamKey => { /* ... */ },
 ///     EventErrorCode::InvalidVideoCodec => { /* ... */ },
@@ -53,9 +56,15 @@ pub enum EventErrorCode {
     #[allow(missing_docs)] // documentation missing in model
     BitrateExceeded,
     #[allow(missing_docs)] // documentation missing in model
+    BFramePresent,
+    #[allow(missing_docs)] // documentation missing in model
     InsufficientCapabilities,
     #[allow(missing_docs)] // documentation missing in model
+    InternalServerException,
+    #[allow(missing_docs)] // documentation missing in model
     InvalidAudioCodec,
+    #[allow(missing_docs)] // documentation missing in model
+    InvalidInput,
     #[allow(missing_docs)] // documentation missing in model
     InvalidProtocol,
     #[allow(missing_docs)] // documentation missing in model
@@ -80,8 +89,11 @@ impl ::std::convert::From<&str> for EventErrorCode {
     fn from(s: &str) -> Self {
         match s {
             "BITRATE_EXCEEDED" => EventErrorCode::BitrateExceeded,
+            "B_FRAME_PRESENT" => EventErrorCode::BFramePresent,
             "INSUFFICIENT_CAPABILITIES" => EventErrorCode::InsufficientCapabilities,
+            "INTERNAL_SERVER_EXCEPTION" => EventErrorCode::InternalServerException,
             "INVALID_AUDIO_CODEC" => EventErrorCode::InvalidAudioCodec,
+            "INVALID_INPUT" => EventErrorCode::InvalidInput,
             "INVALID_PROTOCOL" => EventErrorCode::InvalidProtocol,
             "INVALID_STREAM_KEY" => EventErrorCode::InvalidStreamKey,
             "INVALID_VIDEO_CODEC" => EventErrorCode::InvalidVideoCodec,
@@ -106,8 +118,11 @@ impl EventErrorCode {
     pub fn as_str(&self) -> &str {
         match self {
             EventErrorCode::BitrateExceeded => "BITRATE_EXCEEDED",
+            EventErrorCode::BFramePresent => "B_FRAME_PRESENT",
             EventErrorCode::InsufficientCapabilities => "INSUFFICIENT_CAPABILITIES",
+            EventErrorCode::InternalServerException => "INTERNAL_SERVER_EXCEPTION",
             EventErrorCode::InvalidAudioCodec => "INVALID_AUDIO_CODEC",
+            EventErrorCode::InvalidInput => "INVALID_INPUT",
             EventErrorCode::InvalidProtocol => "INVALID_PROTOCOL",
             EventErrorCode::InvalidStreamKey => "INVALID_STREAM_KEY",
             EventErrorCode::InvalidVideoCodec => "INVALID_VIDEO_CODEC",
@@ -123,8 +138,11 @@ impl EventErrorCode {
     pub const fn values() -> &'static [&'static str] {
         &[
             "BITRATE_EXCEEDED",
+            "B_FRAME_PRESENT",
             "INSUFFICIENT_CAPABILITIES",
+            "INTERNAL_SERVER_EXCEPTION",
             "INVALID_AUDIO_CODEC",
+            "INVALID_INPUT",
             "INVALID_PROTOCOL",
             "INVALID_STREAM_KEY",
             "INVALID_VIDEO_CODEC",
@@ -157,8 +175,11 @@ impl ::std::fmt::Display for EventErrorCode {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             EventErrorCode::BitrateExceeded => write!(f, "BITRATE_EXCEEDED"),
+            EventErrorCode::BFramePresent => write!(f, "B_FRAME_PRESENT"),
             EventErrorCode::InsufficientCapabilities => write!(f, "INSUFFICIENT_CAPABILITIES"),
+            EventErrorCode::InternalServerException => write!(f, "INTERNAL_SERVER_EXCEPTION"),
             EventErrorCode::InvalidAudioCodec => write!(f, "INVALID_AUDIO_CODEC"),
+            EventErrorCode::InvalidInput => write!(f, "INVALID_INPUT"),
             EventErrorCode::InvalidProtocol => write!(f, "INVALID_PROTOCOL"),
             EventErrorCode::InvalidStreamKey => write!(f, "INVALID_STREAM_KEY"),
             EventErrorCode::InvalidVideoCodec => write!(f, "INVALID_VIDEO_CODEC"),
