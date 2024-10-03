@@ -20,6 +20,11 @@ pub fn ser_filter_configuration(
             ::aws_smithy_types::Number::NegInt((*var_4).into()),
         );
     }
+    if let Some(var_5) = &input.clip_start_time {
+        object
+            .key("ClipStartTime")
+            .date_time(var_5, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
+    }
     Ok(())
 }
 
@@ -63,6 +68,12 @@ where
                                     .map(i32::try_from)
                                     .transpose()?,
                             );
+                        }
+                        "ClipStartTime" => {
+                            builder = builder.set_clip_start_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                                tokens.next(),
+                                ::aws_smithy_types::date_time::Format::EpochSeconds,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

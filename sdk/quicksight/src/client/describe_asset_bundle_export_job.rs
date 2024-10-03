@@ -23,6 +23,8 @@ impl super::Client {
     ///   - [`include_tags(bool)`](crate::operation::describe_asset_bundle_export_job::DescribeAssetBundleExportJobOutput::include_tags): <p>The include tags flag.</p>
     ///   - [`validation_strategy(Option<AssetBundleExportJobValidationStrategy>)`](crate::operation::describe_asset_bundle_export_job::DescribeAssetBundleExportJobOutput::validation_strategy): <p>The validation strategy that is used to export the analysis or dashboard.</p>
     ///   - [`warnings(Option<Vec::<AssetBundleExportJobWarning>>)`](crate::operation::describe_asset_bundle_export_job::DescribeAssetBundleExportJobOutput::warnings): <p>An array of warning records that describe the analysis or dashboard that is exported. This array includes UI errors that can be skipped during the validation process.</p> <p>This property only appears if <code>StrictModeForAllResources</code> in <code>ValidationStrategy</code> is set to <code>FALSE</code>.</p>
+    ///   - [`include_folder_memberships(bool)`](crate::operation::describe_asset_bundle_export_job::DescribeAssetBundleExportJobOutput::include_folder_memberships): <p>The include folder memberships flag.</p>
+    ///   - [`include_folder_members(Option<IncludeFolderMembers>)`](crate::operation::describe_asset_bundle_export_job::DescribeAssetBundleExportJobOutput::include_folder_members): <p>A setting that determines whether folder members are included.</p>
     /// - On failure, responds with [`SdkError<DescribeAssetBundleExportJobError>`](crate::operation::describe_asset_bundle_export_job::DescribeAssetBundleExportJobError)
     pub fn describe_asset_bundle_export_job(
         &self,

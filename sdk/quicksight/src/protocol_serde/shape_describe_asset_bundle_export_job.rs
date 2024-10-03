@@ -164,6 +164,16 @@ pub(crate) fn de_describe_asset_bundle_export_job(
                 "IncludeAllDependencies" => {
                     builder = builder.set_include_all_dependencies(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                 }
+                "IncludeFolderMembers" => {
+                    builder = builder.set_include_folder_members(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::IncludeFolderMembers::from(u.as_ref())))
+                            .transpose()?,
+                    );
+                }
+                "IncludeFolderMemberships" => {
+                    builder = builder.set_include_folder_memberships(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                }
                 "IncludePermissions" => {
                     builder = builder.set_include_permissions(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                 }

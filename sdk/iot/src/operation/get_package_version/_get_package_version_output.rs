@@ -27,7 +27,7 @@ pub struct GetPackageVersionOutput {
     pub sbom: ::std::option::Option<crate::types::Sbom>,
     /// <p>The status of the validation for a new software bill of materials added to a software package version.</p>
     pub sbom_validation_status: ::std::option::Option<crate::types::SbomValidationStatus>,
-    /// <p>The inline job document associated with a software package version used for a quick job deployment via IoT Jobs.</p>
+    /// <p>The inline job document associated with a software package version used for a quick job deployment.</p>
     pub recipe: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -80,7 +80,7 @@ impl GetPackageVersionOutput {
     pub fn sbom_validation_status(&self) -> ::std::option::Option<&crate::types::SbomValidationStatus> {
         self.sbom_validation_status.as_ref()
     }
-    /// <p>The inline job document associated with a software package version used for a quick job deployment via IoT Jobs.</p>
+    /// <p>The inline job document associated with a software package version used for a quick job deployment.</p>
     pub fn recipe(&self) -> ::std::option::Option<&str> {
         self.recipe.as_deref()
     }
@@ -311,17 +311,17 @@ impl GetPackageVersionOutputBuilder {
     pub fn get_sbom_validation_status(&self) -> &::std::option::Option<crate::types::SbomValidationStatus> {
         &self.sbom_validation_status
     }
-    /// <p>The inline job document associated with a software package version used for a quick job deployment via IoT Jobs.</p>
+    /// <p>The inline job document associated with a software package version used for a quick job deployment.</p>
     pub fn recipe(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.recipe = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The inline job document associated with a software package version used for a quick job deployment via IoT Jobs.</p>
+    /// <p>The inline job document associated with a software package version used for a quick job deployment.</p>
     pub fn set_recipe(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.recipe = input;
         self
     }
-    /// <p>The inline job document associated with a software package version used for a quick job deployment via IoT Jobs.</p>
+    /// <p>The inline job document associated with a software package version used for a quick job deployment.</p>
     pub fn get_recipe(&self) -> &::std::option::Option<::std::string::String> {
         &self.recipe
     }

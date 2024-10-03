@@ -12,6 +12,8 @@ pub struct TopicDetails {
     pub user_experience_version: ::std::option::Option<crate::types::TopicUserExperienceVersion>,
     /// <p>The data sets that the topic is associated with.</p>
     pub data_sets: ::std::option::Option<::std::vec::Vec<crate::types::DatasetMetadata>>,
+    /// <p>Configuration options for a <code>Topic</code>.</p>
+    pub config_options: ::std::option::Option<crate::types::TopicConfigOptions>,
 }
 impl TopicDetails {
     /// <p>The name of the topic.</p>
@@ -32,6 +34,10 @@ impl TopicDetails {
     pub fn data_sets(&self) -> &[crate::types::DatasetMetadata] {
         self.data_sets.as_deref().unwrap_or_default()
     }
+    /// <p>Configuration options for a <code>Topic</code>.</p>
+    pub fn config_options(&self) -> ::std::option::Option<&crate::types::TopicConfigOptions> {
+        self.config_options.as_ref()
+    }
 }
 impl TopicDetails {
     /// Creates a new builder-style object to manufacture [`TopicDetails`](crate::types::TopicDetails).
@@ -48,6 +54,7 @@ pub struct TopicDetailsBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) user_experience_version: ::std::option::Option<crate::types::TopicUserExperienceVersion>,
     pub(crate) data_sets: ::std::option::Option<::std::vec::Vec<crate::types::DatasetMetadata>>,
+    pub(crate) config_options: ::std::option::Option<crate::types::TopicConfigOptions>,
 }
 impl TopicDetailsBuilder {
     /// <p>The name of the topic.</p>
@@ -112,6 +119,20 @@ impl TopicDetailsBuilder {
     pub fn get_data_sets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DatasetMetadata>> {
         &self.data_sets
     }
+    /// <p>Configuration options for a <code>Topic</code>.</p>
+    pub fn config_options(mut self, input: crate::types::TopicConfigOptions) -> Self {
+        self.config_options = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Configuration options for a <code>Topic</code>.</p>
+    pub fn set_config_options(mut self, input: ::std::option::Option<crate::types::TopicConfigOptions>) -> Self {
+        self.config_options = input;
+        self
+    }
+    /// <p>Configuration options for a <code>Topic</code>.</p>
+    pub fn get_config_options(&self) -> &::std::option::Option<crate::types::TopicConfigOptions> {
+        &self.config_options
+    }
     /// Consumes the builder and constructs a [`TopicDetails`](crate::types::TopicDetails).
     pub fn build(self) -> crate::types::TopicDetails {
         crate::types::TopicDetails {
@@ -119,6 +140,7 @@ impl TopicDetailsBuilder {
             description: self.description,
             user_experience_version: self.user_experience_version,
             data_sets: self.data_sets,
+            config_options: self.config_options,
         }
     }
 }

@@ -22,7 +22,7 @@ impl crate::operation::disassociate_sbom_from_package_version::builders::Disasso
 }
 /// Fluent builder constructing a request to `DisassociateSbomFromPackageVersion`.
 ///
-/// <p>Disassociates a software bill of materials (SBOM) from a specific software package version.</p>
+/// <p>Disassociates the selected software bill of materials (SBOM) from a specific software package version.</p>
 /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DisassociateSbomWithPackageVersion</a> action.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DisassociateSbomFromPackageVersionFluentBuilder {

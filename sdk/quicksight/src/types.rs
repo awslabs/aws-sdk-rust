@@ -19,6 +19,8 @@ pub use crate::types::_resource_permission::ResourcePermission;
 
 pub use crate::types::_topic_details::TopicDetails;
 
+pub use crate::types::_topic_config_options::TopicConfigOptions;
+
 pub use crate::types::_dataset_metadata::DatasetMetadata;
 
 pub use crate::types::_topic_named_entity::TopicNamedEntity;
@@ -1657,6 +1659,8 @@ pub use crate::types::_asset_bundle_import_job_override_validation_strategy::Ass
 
 pub use crate::types::_asset_bundle_import_job_override_tags::AssetBundleImportJobOverrideTags;
 
+pub use crate::types::_asset_bundle_import_job_folder_override_tags::AssetBundleImportJobFolderOverrideTags;
+
 pub use crate::types::_asset_bundle_import_job_dashboard_override_tags::AssetBundleImportJobDashboardOverrideTags;
 
 pub use crate::types::_asset_bundle_import_job_analysis_override_tags::AssetBundleImportJobAnalysisOverrideTags;
@@ -1671,11 +1675,13 @@ pub use crate::types::_asset_bundle_import_job_vpc_connection_override_tags::Ass
 
 pub use crate::types::_asset_bundle_import_job_override_permissions::AssetBundleImportJobOverridePermissions;
 
+pub use crate::types::_asset_bundle_import_job_folder_override_permissions::AssetBundleImportJobFolderOverridePermissions;
+
+pub use crate::types::_asset_bundle_resource_permissions::AssetBundleResourcePermissions;
+
 pub use crate::types::_asset_bundle_import_job_dashboard_override_permissions::AssetBundleImportJobDashboardOverridePermissions;
 
 pub use crate::types::_asset_bundle_resource_link_sharing_configuration::AssetBundleResourceLinkSharingConfiguration;
-
-pub use crate::types::_asset_bundle_resource_permissions::AssetBundleResourcePermissions;
 
 pub use crate::types::_asset_bundle_import_job_analysis_override_permissions::AssetBundleImportJobAnalysisOverridePermissions;
 
@@ -1688,6 +1694,8 @@ pub use crate::types::_asset_bundle_import_job_data_source_override_permissions:
 pub use crate::types::_asset_bundle_import_failure_action::AssetBundleImportFailureAction;
 
 pub use crate::types::_asset_bundle_import_job_override_parameters::AssetBundleImportJobOverrideParameters;
+
+pub use crate::types::_asset_bundle_import_job_folder_override_parameters::AssetBundleImportJobFolderOverrideParameters;
 
 pub use crate::types::_asset_bundle_import_job_dashboard_override_parameters::AssetBundleImportJobDashboardOverrideParameters;
 
@@ -1711,9 +1719,15 @@ pub use crate::types::_asset_bundle_import_job_resource_id_override_configuratio
 
 pub use crate::types::_asset_bundle_import_source::AssetBundleImportSource;
 
+pub use crate::types::_include_folder_members::IncludeFolderMembers;
+
 pub use crate::types::_asset_bundle_export_job_validation_strategy::AssetBundleExportJobValidationStrategy;
 
 pub use crate::types::_asset_bundle_cloud_formation_override_property_configuration::AssetBundleCloudFormationOverridePropertyConfiguration;
+
+pub use crate::types::_asset_bundle_export_job_folder_override_properties::AssetBundleExportJobFolderOverrideProperties;
+
+pub use crate::types::_asset_bundle_export_job_folder_property_to_override::AssetBundleExportJobFolderPropertyToOverride;
 
 pub use crate::types::_asset_bundle_export_job_dashboard_override_properties::AssetBundleExportJobDashboardOverrideProperties;
 
@@ -2183,6 +2197,10 @@ mod _asset_bundle_export_job_data_source_property_to_override;
 
 mod _asset_bundle_export_job_error;
 
+mod _asset_bundle_export_job_folder_override_properties;
+
+mod _asset_bundle_export_job_folder_property_to_override;
+
 mod _asset_bundle_export_job_refresh_schedule_override_properties;
 
 mod _asset_bundle_export_job_refresh_schedule_property_to_override;
@@ -2236,6 +2254,12 @@ mod _asset_bundle_import_job_data_source_override_permissions;
 mod _asset_bundle_import_job_data_source_override_tags;
 
 mod _asset_bundle_import_job_error;
+
+mod _asset_bundle_import_job_folder_override_parameters;
+
+mod _asset_bundle_import_job_folder_override_permissions;
+
+mod _asset_bundle_import_job_folder_override_tags;
 
 mod _asset_bundle_import_job_override_parameters;
 
@@ -3052,6 +3076,8 @@ mod _identity_center_configuration;
 mod _identity_store;
 
 mod _identity_type;
+
+mod _include_folder_members;
 
 mod _incremental_refresh;
 
@@ -3950,6 +3976,8 @@ mod _topic_category_filter;
 mod _topic_category_filter_constant;
 
 mod _topic_column;
+
+mod _topic_config_options;
 
 mod _topic_constant_value;
 

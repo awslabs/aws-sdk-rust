@@ -7,7 +7,7 @@ pub struct AssociateSbomWithPackageVersionInput {
     pub package_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the new package version.</p>
     pub version_name: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon S3 location for the software bill of materials associated with a software package version.</p>
+    /// <p>A specific software bill of matrerials associated with a software package version.</p>
     pub sbom: ::std::option::Option<crate::types::Sbom>,
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
@@ -21,7 +21,7 @@ impl AssociateSbomWithPackageVersionInput {
     pub fn version_name(&self) -> ::std::option::Option<&str> {
         self.version_name.as_deref()
     }
-    /// <p>The Amazon S3 location for the software bill of materials associated with a software package version.</p>
+    /// <p>A specific software bill of matrerials associated with a software package version.</p>
     pub fn sbom(&self) -> ::std::option::Option<&crate::types::Sbom> {
         self.sbom.as_ref()
     }
@@ -77,18 +77,18 @@ impl AssociateSbomWithPackageVersionInputBuilder {
     pub fn get_version_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.version_name
     }
-    /// <p>The Amazon S3 location for the software bill of materials associated with a software package version.</p>
+    /// <p>A specific software bill of matrerials associated with a software package version.</p>
     /// This field is required.
     pub fn sbom(mut self, input: crate::types::Sbom) -> Self {
         self.sbom = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The Amazon S3 location for the software bill of materials associated with a software package version.</p>
+    /// <p>A specific software bill of matrerials associated with a software package version.</p>
     pub fn set_sbom(mut self, input: ::std::option::Option<crate::types::Sbom>) -> Self {
         self.sbom = input;
         self
     }
-    /// <p>The Amazon S3 location for the software bill of materials associated with a software package version.</p>
+    /// <p>A specific software bill of matrerials associated with a software package version.</p>
     pub fn get_sbom(&self) -> &::std::option::Option<crate::types::Sbom> {
         &self.sbom
     }

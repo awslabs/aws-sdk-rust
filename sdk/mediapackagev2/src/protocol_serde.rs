@@ -165,6 +165,8 @@ pub(crate) mod shape_scte_dash;
 
 pub(crate) mod shape_scte_hls;
 
+pub(crate) mod shape_start_tag;
+
 pub(crate) mod shape_dash_period_triggers;
 
 pub(crate) mod shape_encryption_method;

@@ -15,10 +15,16 @@ pub struct ActionDeclaration {
     /// <p><i>JSON:</i></p>
     /// <p><code>"Configuration" : { Key : Value },</code></p>
     pub configuration: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>The shell commands to run with your compute action in CodePipeline. All commands are supported except multi-line formats. While CodeBuild logs and permissions are used, you do not need to create any resources in CodeBuild.</p><note>
+    /// <p>Using compute time for this action will incur separate charges in CodeBuild.</p>
+    /// </note>
+    pub commands: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The name or ID of the result of the action declaration, such as a test or build artifact.</p>
     pub output_artifacts: ::std::option::Option<::std::vec::Vec<crate::types::OutputArtifact>>,
     /// <p>The name or ID of the artifact consumed by the action, such as a test or build artifact.</p>
     pub input_artifacts: ::std::option::Option<::std::vec::Vec<crate::types::InputArtifact>>,
+    /// <p>The list of variables that are to be exported from the compute action. This is specifically CodeBuild environment variables as used for that action.</p>
+    pub output_variables: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The ARN of the IAM service role that performs the declared action. This is assumed through the roleArn for the pipeline.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The action declaration's Amazon Web Services Region, such as us-east-1.</p>
@@ -49,6 +55,14 @@ impl ActionDeclaration {
     pub fn configuration(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.configuration.as_ref()
     }
+    /// <p>The shell commands to run with your compute action in CodePipeline. All commands are supported except multi-line formats. While CodeBuild logs and permissions are used, you do not need to create any resources in CodeBuild.</p><note>
+    /// <p>Using compute time for this action will incur separate charges in CodeBuild.</p>
+    /// </note>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.commands.is_none()`.
+    pub fn commands(&self) -> &[::std::string::String] {
+        self.commands.as_deref().unwrap_or_default()
+    }
     /// <p>The name or ID of the result of the action declaration, such as a test or build artifact.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.output_artifacts.is_none()`.
@@ -60,6 +74,12 @@ impl ActionDeclaration {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.input_artifacts.is_none()`.
     pub fn input_artifacts(&self) -> &[crate::types::InputArtifact] {
         self.input_artifacts.as_deref().unwrap_or_default()
+    }
+    /// <p>The list of variables that are to be exported from the compute action. This is specifically CodeBuild environment variables as used for that action.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.output_variables.is_none()`.
+    pub fn output_variables(&self) -> &[::std::string::String] {
+        self.output_variables.as_deref().unwrap_or_default()
     }
     /// <p>The ARN of the IAM service role that performs the declared action. This is assumed through the roleArn for the pipeline.</p>
     pub fn role_arn(&self) -> ::std::option::Option<&str> {
@@ -93,8 +113,10 @@ pub struct ActionDeclarationBuilder {
     pub(crate) action_type_id: ::std::option::Option<crate::types::ActionTypeId>,
     pub(crate) run_order: ::std::option::Option<i32>,
     pub(crate) configuration: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) commands: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) output_artifacts: ::std::option::Option<::std::vec::Vec<crate::types::OutputArtifact>>,
     pub(crate) input_artifacts: ::std::option::Option<::std::vec::Vec<crate::types::InputArtifact>>,
+    pub(crate) output_variables: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) region: ::std::option::Option<::std::string::String>,
     pub(crate) namespace: ::std::option::Option<::std::string::String>,
@@ -177,6 +199,32 @@ impl ActionDeclarationBuilder {
     pub fn get_configuration(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.configuration
     }
+    /// Appends an item to `commands`.
+    ///
+    /// To override the contents of this collection use [`set_commands`](Self::set_commands).
+    ///
+    /// <p>The shell commands to run with your compute action in CodePipeline. All commands are supported except multi-line formats. While CodeBuild logs and permissions are used, you do not need to create any resources in CodeBuild.</p><note>
+    /// <p>Using compute time for this action will incur separate charges in CodeBuild.</p>
+    /// </note>
+    pub fn commands(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.commands.unwrap_or_default();
+        v.push(input.into());
+        self.commands = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The shell commands to run with your compute action in CodePipeline. All commands are supported except multi-line formats. While CodeBuild logs and permissions are used, you do not need to create any resources in CodeBuild.</p><note>
+    /// <p>Using compute time for this action will incur separate charges in CodeBuild.</p>
+    /// </note>
+    pub fn set_commands(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.commands = input;
+        self
+    }
+    /// <p>The shell commands to run with your compute action in CodePipeline. All commands are supported except multi-line formats. While CodeBuild logs and permissions are used, you do not need to create any resources in CodeBuild.</p><note>
+    /// <p>Using compute time for this action will incur separate charges in CodeBuild.</p>
+    /// </note>
+    pub fn get_commands(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.commands
+    }
     /// Appends an item to `output_artifacts`.
     ///
     /// To override the contents of this collection use [`set_output_artifacts`](Self::set_output_artifacts).
@@ -216,6 +264,26 @@ impl ActionDeclarationBuilder {
     /// <p>The name or ID of the artifact consumed by the action, such as a test or build artifact.</p>
     pub fn get_input_artifacts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InputArtifact>> {
         &self.input_artifacts
+    }
+    /// Appends an item to `output_variables`.
+    ///
+    /// To override the contents of this collection use [`set_output_variables`](Self::set_output_variables).
+    ///
+    /// <p>The list of variables that are to be exported from the compute action. This is specifically CodeBuild environment variables as used for that action.</p>
+    pub fn output_variables(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.output_variables.unwrap_or_default();
+        v.push(input.into());
+        self.output_variables = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The list of variables that are to be exported from the compute action. This is specifically CodeBuild environment variables as used for that action.</p>
+    pub fn set_output_variables(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.output_variables = input;
+        self
+    }
+    /// <p>The list of variables that are to be exported from the compute action. This is specifically CodeBuild environment variables as used for that action.</p>
+    pub fn get_output_variables(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.output_variables
     }
     /// <p>The ARN of the IAM service role that performs the declared action. This is assumed through the roleArn for the pipeline.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -287,8 +355,10 @@ impl ActionDeclarationBuilder {
             action_type_id: self.action_type_id,
             run_order: self.run_order,
             configuration: self.configuration,
+            commands: self.commands,
             output_artifacts: self.output_artifacts,
             input_artifacts: self.input_artifacts,
+            output_variables: self.output_variables,
             role_arn: self.role_arn,
             region: self.region,
             namespace: self.namespace,

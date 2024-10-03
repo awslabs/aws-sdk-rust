@@ -24,6 +24,12 @@ pub fn ser_topic_details(
         }
         array_5.finish();
     }
+    if let Some(var_8) = &input.config_options {
+        #[allow(unused_mut)]
+        let mut object_9 = object.key("ConfigOptions").start_object();
+        crate::protocol_serde::shape_topic_config_options::ser_topic_config_options(&mut object_9, var_8)?;
+        object_9.finish();
+    }
     Ok(())
 }
 
@@ -65,6 +71,9 @@ where
                         }
                         "DataSets" => {
                             builder = builder.set_data_sets(crate::protocol_serde::shape_datasets::de_datasets(tokens)?);
+                        }
+                        "ConfigOptions" => {
+                            builder = builder.set_config_options(crate::protocol_serde::shape_topic_config_options::de_topic_config_options(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -22,7 +22,7 @@ impl crate::operation::associate_sbom_with_package_version::builders::AssociateS
 }
 /// Fluent builder constructing a request to `AssociateSbomWithPackageVersion`.
 ///
-/// <p>Associates a software bill of materials (SBOM) with a specific software package version.</p>
+/// <p>Associates the selected software bill of materials (SBOM) with a specific software package version.</p>
 /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">AssociateSbomWithPackageVersion</a> action.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AssociateSbomWithPackageVersionFluentBuilder {
@@ -137,17 +137,17 @@ impl AssociateSbomWithPackageVersionFluentBuilder {
     pub fn get_version_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_version_name()
     }
-    /// <p>The Amazon S3 location for the software bill of materials associated with a software package version.</p>
+    /// <p>A specific software bill of matrerials associated with a software package version.</p>
     pub fn sbom(mut self, input: crate::types::Sbom) -> Self {
         self.inner = self.inner.sbom(input);
         self
     }
-    /// <p>The Amazon S3 location for the software bill of materials associated with a software package version.</p>
+    /// <p>A specific software bill of matrerials associated with a software package version.</p>
     pub fn set_sbom(mut self, input: ::std::option::Option<crate::types::Sbom>) -> Self {
         self.inner = self.inner.set_sbom(input);
         self
     }
-    /// <p>The Amazon S3 location for the software bill of materials associated with a software package version.</p>
+    /// <p>A specific software bill of matrerials associated with a software package version.</p>
     pub fn get_sbom(&self) -> &::std::option::Option<crate::types::Sbom> {
         self.inner.get_sbom()
     }

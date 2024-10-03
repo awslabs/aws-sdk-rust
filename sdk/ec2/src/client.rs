@@ -1383,6 +1383,8 @@ mod modify_instance_attribute;
 
 mod modify_instance_capacity_reservation_attributes;
 
+mod modify_instance_cpu_options;
+
 mod modify_instance_credit_specification;
 
 mod modify_instance_event_start_time;

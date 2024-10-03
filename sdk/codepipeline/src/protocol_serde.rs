@@ -559,11 +559,15 @@ pub(crate) mod shape_polling_service_principal_list;
 
 pub(crate) mod shape_rule_declaration;
 
+pub(crate) mod shape_command_list;
+
 pub(crate) mod shape_condition_execution;
 
 pub(crate) mod shape_input_artifact_list;
 
 pub(crate) mod shape_output_artifact_list;
+
+pub(crate) mod shape_output_variable_list;
 
 pub(crate) mod shape_rule_state_list;
 
@@ -576,6 +580,8 @@ pub(crate) mod shape_git_pull_request_event_type_list;
 pub(crate) mod shape_rule_declaration_list;
 
 pub(crate) mod shape_rule_state;
+
+pub(crate) mod shape_file_path_list;
 
 pub(crate) mod shape_git_branch_pattern_list;
 

@@ -187,17 +187,17 @@ impl CreatePackageVersionFluentBuilder {
     pub fn get_artifact(&self) -> &::std::option::Option<crate::types::PackageVersionArtifact> {
         self.inner.get_artifact()
     }
-    /// <p>The inline job document associated with a software package version used for a quick job deployment via IoT Jobs.</p>
+    /// <p>The inline job document associated with a software package version used for a quick job deployment.</p>
     pub fn recipe(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.recipe(input.into());
         self
     }
-    /// <p>The inline job document associated with a software package version used for a quick job deployment via IoT Jobs.</p>
+    /// <p>The inline job document associated with a software package version used for a quick job deployment.</p>
     pub fn set_recipe(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_recipe(input);
         self
     }
-    /// <p>The inline job document associated with a software package version used for a quick job deployment via IoT Jobs.</p>
+    /// <p>The inline job document associated with a software package version used for a quick job deployment.</p>
     pub fn get_recipe(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_recipe()
     }

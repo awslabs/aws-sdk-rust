@@ -3,53 +3,65 @@ pub fn ser_create_domain_configuration_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_domain_configuration::CreateDomainConfigurationInput,
 ) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.authorizer_config {
+    if let Some(var_1) = &input.application_protocol {
+        object.key("applicationProtocol").string(var_1.as_str());
+    }
+    if let Some(var_2) = &input.authentication_type {
+        object.key("authenticationType").string(var_2.as_str());
+    }
+    if let Some(var_3) = &input.authorizer_config {
         #[allow(unused_mut)]
-        let mut object_2 = object.key("authorizerConfig").start_object();
-        crate::protocol_serde::shape_authorizer_config::ser_authorizer_config(&mut object_2, var_1)?;
-        object_2.finish();
+        let mut object_4 = object.key("authorizerConfig").start_object();
+        crate::protocol_serde::shape_authorizer_config::ser_authorizer_config(&mut object_4, var_3)?;
+        object_4.finish();
     }
-    if let Some(var_3) = &input.domain_name {
-        object.key("domainName").string(var_3.as_str());
+    if let Some(var_5) = &input.client_certificate_config {
+        #[allow(unused_mut)]
+        let mut object_6 = object.key("clientCertificateConfig").start_object();
+        crate::protocol_serde::shape_client_certificate_config::ser_client_certificate_config(&mut object_6, var_5)?;
+        object_6.finish();
     }
-    if let Some(var_4) = &input.server_certificate_arns {
-        let mut array_5 = object.key("serverCertificateArns").start_array();
-        for item_6 in var_4 {
+    if let Some(var_7) = &input.domain_name {
+        object.key("domainName").string(var_7.as_str());
+    }
+    if let Some(var_8) = &input.server_certificate_arns {
+        let mut array_9 = object.key("serverCertificateArns").start_array();
+        for item_10 in var_8 {
             {
-                array_5.value().string(item_6.as_str());
+                array_9.value().string(item_10.as_str());
             }
         }
-        array_5.finish();
+        array_9.finish();
     }
-    if let Some(var_7) = &input.server_certificate_config {
+    if let Some(var_11) = &input.server_certificate_config {
         #[allow(unused_mut)]
-        let mut object_8 = object.key("serverCertificateConfig").start_object();
-        crate::protocol_serde::shape_server_certificate_config::ser_server_certificate_config(&mut object_8, var_7)?;
-        object_8.finish();
+        let mut object_12 = object.key("serverCertificateConfig").start_object();
+        crate::protocol_serde::shape_server_certificate_config::ser_server_certificate_config(&mut object_12, var_11)?;
+        object_12.finish();
     }
-    if let Some(var_9) = &input.service_type {
-        object.key("serviceType").string(var_9.as_str());
+    if let Some(var_13) = &input.service_type {
+        object.key("serviceType").string(var_13.as_str());
     }
-    if let Some(var_10) = &input.tags {
-        let mut array_11 = object.key("tags").start_array();
-        for item_12 in var_10 {
+    if let Some(var_14) = &input.tags {
+        let mut array_15 = object.key("tags").start_array();
+        for item_16 in var_14 {
             {
                 #[allow(unused_mut)]
-                let mut object_13 = array_11.value().start_object();
-                crate::protocol_serde::shape_tag::ser_tag(&mut object_13, item_12)?;
-                object_13.finish();
+                let mut object_17 = array_15.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_17, item_16)?;
+                object_17.finish();
             }
         }
-        array_11.finish();
+        array_15.finish();
     }
-    if let Some(var_14) = &input.tls_config {
+    if let Some(var_18) = &input.tls_config {
         #[allow(unused_mut)]
-        let mut object_15 = object.key("tlsConfig").start_object();
-        crate::protocol_serde::shape_tls_config::ser_tls_config(&mut object_15, var_14)?;
-        object_15.finish();
+        let mut object_19 = object.key("tlsConfig").start_object();
+        crate::protocol_serde::shape_tls_config::ser_tls_config(&mut object_19, var_18)?;
+        object_19.finish();
     }
-    if let Some(var_16) = &input.validation_certificate_arn {
-        object.key("validationCertificateArn").string(var_16.as_str());
+    if let Some(var_20) = &input.validation_certificate_arn {
+        object.key("validationCertificateArn").string(var_20.as_str());
     }
     Ok(())
 }

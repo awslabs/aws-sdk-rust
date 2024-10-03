@@ -303,4 +303,32 @@ impl StartAssetBundleExportJobFluentBuilder {
     pub fn get_validation_strategy(&self) -> &::std::option::Option<crate::types::AssetBundleExportJobValidationStrategy> {
         self.inner.get_validation_strategy()
     }
+    /// <p>A Boolean that determines if the exported asset carries over information about the folders that the asset is a member of.</p>
+    pub fn include_folder_memberships(mut self, input: bool) -> Self {
+        self.inner = self.inner.include_folder_memberships(input);
+        self
+    }
+    /// <p>A Boolean that determines if the exported asset carries over information about the folders that the asset is a member of.</p>
+    pub fn set_include_folder_memberships(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_include_folder_memberships(input);
+        self
+    }
+    /// <p>A Boolean that determines if the exported asset carries over information about the folders that the asset is a member of.</p>
+    pub fn get_include_folder_memberships(&self) -> &::std::option::Option<bool> {
+        self.inner.get_include_folder_memberships()
+    }
+    /// <p>A setting that indicates whether you want to include folder assets. You can also use this setting to recusrsively include all subfolders of an exported folder.</p>
+    pub fn include_folder_members(mut self, input: crate::types::IncludeFolderMembers) -> Self {
+        self.inner = self.inner.include_folder_members(input);
+        self
+    }
+    /// <p>A setting that indicates whether you want to include folder assets. You can also use this setting to recusrsively include all subfolders of an exported folder.</p>
+    pub fn set_include_folder_members(mut self, input: ::std::option::Option<crate::types::IncludeFolderMembers>) -> Self {
+        self.inner = self.inner.set_include_folder_members(input);
+        self
+    }
+    /// <p>A setting that indicates whether you want to include folder assets. You can also use this setting to recusrsively include all subfolders of an exported folder.</p>
+    pub fn get_include_folder_members(&self) -> &::std::option::Option<crate::types::IncludeFolderMembers> {
+        self.inner.get_include_folder_members()
+    }
 }

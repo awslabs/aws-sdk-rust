@@ -867,6 +867,10 @@ pub(crate) mod shape_asset_bundle_export_job_data_source_override_properties_lis
 
 pub(crate) mod shape_asset_bundle_export_job_error;
 
+pub(crate) mod shape_asset_bundle_export_job_folder_override_properties;
+
+pub(crate) mod shape_asset_bundle_export_job_folder_override_properties_list;
+
 pub(crate) mod shape_asset_bundle_export_job_refresh_schedule_override_properties;
 
 pub(crate) mod shape_asset_bundle_export_job_refresh_schedule_override_properties_list;
@@ -934,6 +938,18 @@ pub(crate) mod shape_asset_bundle_import_job_data_source_override_tags;
 pub(crate) mod shape_asset_bundle_import_job_data_source_override_tags_list;
 
 pub(crate) mod shape_asset_bundle_import_job_error;
+
+pub(crate) mod shape_asset_bundle_import_job_folder_override_parameters;
+
+pub(crate) mod shape_asset_bundle_import_job_folder_override_parameters_list;
+
+pub(crate) mod shape_asset_bundle_import_job_folder_override_permissions;
+
+pub(crate) mod shape_asset_bundle_import_job_folder_override_permissions_list;
+
+pub(crate) mod shape_asset_bundle_import_job_folder_override_tags;
+
+pub(crate) mod shape_asset_bundle_import_job_folder_override_tags_list;
 
 pub(crate) mod shape_asset_bundle_import_job_refresh_schedule_override_parameters;
 
@@ -1207,6 +1223,8 @@ pub(crate) mod shape_theme_version;
 
 pub(crate) mod shape_theme_version_summary;
 
+pub(crate) mod shape_topic_config_options;
+
 pub(crate) mod shape_topic_ir;
 
 pub(crate) mod shape_topic_refresh_schedule_summary;
@@ -1410,6 +1428,8 @@ pub(crate) mod shape_asset_bundle_export_job_dashboard_property_to_override_list
 pub(crate) mod shape_asset_bundle_export_job_data_set_property_to_override_list;
 
 pub(crate) mod shape_asset_bundle_export_job_data_source_property_to_override_list;
+
+pub(crate) mod shape_asset_bundle_export_job_folder_property_to_override_list;
 
 pub(crate) mod shape_asset_bundle_export_job_refresh_schedule_property_to_override_list;
 

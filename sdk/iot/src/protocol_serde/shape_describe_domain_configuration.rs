@@ -153,8 +153,27 @@ pub(crate) fn de_describe_domain_configuration(
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                "applicationProtocol" => {
+                    builder = builder.set_application_protocol(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::ApplicationProtocol::from(u.as_ref())))
+                            .transpose()?,
+                    );
+                }
+                "authenticationType" => {
+                    builder = builder.set_authentication_type(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::AuthenticationType::from(u.as_ref())))
+                            .transpose()?,
+                    );
+                }
                 "authorizerConfig" => {
                     builder = builder.set_authorizer_config(crate::protocol_serde::shape_authorizer_config::de_authorizer_config(tokens)?);
+                }
+                "clientCertificateConfig" => {
+                    builder = builder.set_client_certificate_config(
+                        crate::protocol_serde::shape_client_certificate_config::de_client_certificate_config(tokens)?,
+                    );
                 }
                 "domainConfigurationArn" => {
                     builder = builder.set_domain_configuration_arn(

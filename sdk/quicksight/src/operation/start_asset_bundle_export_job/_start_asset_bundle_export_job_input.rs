@@ -39,6 +39,10 @@ pub struct StartAssetBundleExportJobInput {
     pub include_tags: ::std::option::Option<bool>,
     /// <p>An optional parameter that determines which validation strategy to use for the export job. If <code>StrictModeForAllResources</code> is set to <code>TRUE</code>, strict validation for every error is enforced. If it is set to <code>FALSE</code>, validation is skipped for specific UI errors that are shown as warnings. The default value for <code>StrictModeForAllResources</code> is <code>FALSE</code>.</p>
     pub validation_strategy: ::std::option::Option<crate::types::AssetBundleExportJobValidationStrategy>,
+    /// <p>A Boolean that determines if the exported asset carries over information about the folders that the asset is a member of.</p>
+    pub include_folder_memberships: ::std::option::Option<bool>,
+    /// <p>A setting that indicates whether you want to include folder assets. You can also use this setting to recusrsively include all subfolders of an exported folder.</p>
+    pub include_folder_members: ::std::option::Option<crate::types::IncludeFolderMembers>,
 }
 impl StartAssetBundleExportJobInput {
     /// <p>The ID of the Amazon Web Services account to export assets from.</p>
@@ -99,6 +103,14 @@ impl StartAssetBundleExportJobInput {
     pub fn validation_strategy(&self) -> ::std::option::Option<&crate::types::AssetBundleExportJobValidationStrategy> {
         self.validation_strategy.as_ref()
     }
+    /// <p>A Boolean that determines if the exported asset carries over information about the folders that the asset is a member of.</p>
+    pub fn include_folder_memberships(&self) -> ::std::option::Option<bool> {
+        self.include_folder_memberships
+    }
+    /// <p>A setting that indicates whether you want to include folder assets. You can also use this setting to recusrsively include all subfolders of an exported folder.</p>
+    pub fn include_folder_members(&self) -> ::std::option::Option<&crate::types::IncludeFolderMembers> {
+        self.include_folder_members.as_ref()
+    }
 }
 impl StartAssetBundleExportJobInput {
     /// Creates a new builder-style object to manufacture [`StartAssetBundleExportJobInput`](crate::operation::start_asset_bundle_export_job::StartAssetBundleExportJobInput).
@@ -121,6 +133,8 @@ pub struct StartAssetBundleExportJobInputBuilder {
     pub(crate) include_permissions: ::std::option::Option<bool>,
     pub(crate) include_tags: ::std::option::Option<bool>,
     pub(crate) validation_strategy: ::std::option::Option<crate::types::AssetBundleExportJobValidationStrategy>,
+    pub(crate) include_folder_memberships: ::std::option::Option<bool>,
+    pub(crate) include_folder_members: ::std::option::Option<crate::types::IncludeFolderMembers>,
 }
 impl StartAssetBundleExportJobInputBuilder {
     /// <p>The ID of the Amazon Web Services account to export assets from.</p>
@@ -320,6 +334,34 @@ impl StartAssetBundleExportJobInputBuilder {
     pub fn get_validation_strategy(&self) -> &::std::option::Option<crate::types::AssetBundleExportJobValidationStrategy> {
         &self.validation_strategy
     }
+    /// <p>A Boolean that determines if the exported asset carries over information about the folders that the asset is a member of.</p>
+    pub fn include_folder_memberships(mut self, input: bool) -> Self {
+        self.include_folder_memberships = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A Boolean that determines if the exported asset carries over information about the folders that the asset is a member of.</p>
+    pub fn set_include_folder_memberships(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.include_folder_memberships = input;
+        self
+    }
+    /// <p>A Boolean that determines if the exported asset carries over information about the folders that the asset is a member of.</p>
+    pub fn get_include_folder_memberships(&self) -> &::std::option::Option<bool> {
+        &self.include_folder_memberships
+    }
+    /// <p>A setting that indicates whether you want to include folder assets. You can also use this setting to recusrsively include all subfolders of an exported folder.</p>
+    pub fn include_folder_members(mut self, input: crate::types::IncludeFolderMembers) -> Self {
+        self.include_folder_members = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A setting that indicates whether you want to include folder assets. You can also use this setting to recusrsively include all subfolders of an exported folder.</p>
+    pub fn set_include_folder_members(mut self, input: ::std::option::Option<crate::types::IncludeFolderMembers>) -> Self {
+        self.include_folder_members = input;
+        self
+    }
+    /// <p>A setting that indicates whether you want to include folder assets. You can also use this setting to recusrsively include all subfolders of an exported folder.</p>
+    pub fn get_include_folder_members(&self) -> &::std::option::Option<crate::types::IncludeFolderMembers> {
+        &self.include_folder_members
+    }
     /// Consumes the builder and constructs a [`StartAssetBundleExportJobInput`](crate::operation::start_asset_bundle_export_job::StartAssetBundleExportJobInput).
     pub fn build(
         self,
@@ -337,6 +379,8 @@ impl StartAssetBundleExportJobInputBuilder {
             include_permissions: self.include_permissions,
             include_tags: self.include_tags,
             validation_strategy: self.validation_strategy,
+            include_folder_memberships: self.include_folder_memberships,
+            include_folder_members: self.include_folder_members,
         })
     }
 }

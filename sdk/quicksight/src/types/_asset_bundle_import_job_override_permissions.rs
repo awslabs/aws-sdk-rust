@@ -14,6 +14,8 @@ pub struct AssetBundleImportJobOverridePermissions {
     pub analyses: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleImportJobAnalysisOverridePermissions>>,
     /// <p>A list of permissions overrides for any <code>Dashboard</code> resources that are present in the asset bundle that is imported.</p>
     pub dashboards: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleImportJobDashboardOverridePermissions>>,
+    /// <p>A list of permissions for the folders that you want to apply overrides to.</p>
+    pub folders: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleImportJobFolderOverridePermissions>>,
 }
 impl AssetBundleImportJobOverridePermissions {
     /// <p>A list of permissions overrides for any <code>DataSource</code> resources that are present in the asset bundle that is imported.</p>
@@ -46,6 +48,12 @@ impl AssetBundleImportJobOverridePermissions {
     pub fn dashboards(&self) -> &[crate::types::AssetBundleImportJobDashboardOverridePermissions] {
         self.dashboards.as_deref().unwrap_or_default()
     }
+    /// <p>A list of permissions for the folders that you want to apply overrides to.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.folders.is_none()`.
+    pub fn folders(&self) -> &[crate::types::AssetBundleImportJobFolderOverridePermissions] {
+        self.folders.as_deref().unwrap_or_default()
+    }
 }
 impl AssetBundleImportJobOverridePermissions {
     /// Creates a new builder-style object to manufacture [`AssetBundleImportJobOverridePermissions`](crate::types::AssetBundleImportJobOverridePermissions).
@@ -63,6 +71,7 @@ pub struct AssetBundleImportJobOverridePermissionsBuilder {
     pub(crate) themes: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleImportJobThemeOverridePermissions>>,
     pub(crate) analyses: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleImportJobAnalysisOverridePermissions>>,
     pub(crate) dashboards: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleImportJobDashboardOverridePermissions>>,
+    pub(crate) folders: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleImportJobFolderOverridePermissions>>,
 }
 impl AssetBundleImportJobOverridePermissionsBuilder {
     /// Appends an item to `data_sources`.
@@ -177,6 +186,26 @@ impl AssetBundleImportJobOverridePermissionsBuilder {
     pub fn get_dashboards(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetBundleImportJobDashboardOverridePermissions>> {
         &self.dashboards
     }
+    /// Appends an item to `folders`.
+    ///
+    /// To override the contents of this collection use [`set_folders`](Self::set_folders).
+    ///
+    /// <p>A list of permissions for the folders that you want to apply overrides to.</p>
+    pub fn folders(mut self, input: crate::types::AssetBundleImportJobFolderOverridePermissions) -> Self {
+        let mut v = self.folders.unwrap_or_default();
+        v.push(input);
+        self.folders = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of permissions for the folders that you want to apply overrides to.</p>
+    pub fn set_folders(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleImportJobFolderOverridePermissions>>) -> Self {
+        self.folders = input;
+        self
+    }
+    /// <p>A list of permissions for the folders that you want to apply overrides to.</p>
+    pub fn get_folders(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetBundleImportJobFolderOverridePermissions>> {
+        &self.folders
+    }
     /// Consumes the builder and constructs a [`AssetBundleImportJobOverridePermissions`](crate::types::AssetBundleImportJobOverridePermissions).
     pub fn build(self) -> crate::types::AssetBundleImportJobOverridePermissions {
         crate::types::AssetBundleImportJobOverridePermissions {
@@ -185,6 +214,7 @@ impl AssetBundleImportJobOverridePermissionsBuilder {
             themes: self.themes,
             analyses: self.analyses,
             dashboards: self.dashboards,
+            folders: self.folders,
         }
     }
 }

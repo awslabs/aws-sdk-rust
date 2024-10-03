@@ -2047,6 +2047,10 @@ pub(crate) mod shape_modify_instance_capacity_reservation_attributes;
 
 pub(crate) mod shape_modify_instance_capacity_reservation_attributes_input;
 
+pub(crate) mod shape_modify_instance_cpu_options;
+
+pub(crate) mod shape_modify_instance_cpu_options_input;
+
 pub(crate) mod shape_modify_instance_credit_specification;
 
 pub(crate) mod shape_modify_instance_credit_specification_input;

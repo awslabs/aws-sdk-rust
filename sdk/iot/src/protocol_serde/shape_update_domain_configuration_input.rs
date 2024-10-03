@@ -3,29 +3,41 @@ pub fn ser_update_domain_configuration_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_domain_configuration::UpdateDomainConfigurationInput,
 ) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.authorizer_config {
+    if let Some(var_1) = &input.application_protocol {
+        object.key("applicationProtocol").string(var_1.as_str());
+    }
+    if let Some(var_2) = &input.authentication_type {
+        object.key("authenticationType").string(var_2.as_str());
+    }
+    if let Some(var_3) = &input.authorizer_config {
         #[allow(unused_mut)]
-        let mut object_2 = object.key("authorizerConfig").start_object();
-        crate::protocol_serde::shape_authorizer_config::ser_authorizer_config(&mut object_2, var_1)?;
-        object_2.finish();
+        let mut object_4 = object.key("authorizerConfig").start_object();
+        crate::protocol_serde::shape_authorizer_config::ser_authorizer_config(&mut object_4, var_3)?;
+        object_4.finish();
     }
-    if let Some(var_3) = &input.domain_configuration_status {
-        object.key("domainConfigurationStatus").string(var_3.as_str());
-    }
-    if let Some(var_4) = &input.remove_authorizer_config {
-        object.key("removeAuthorizerConfig").boolean(*var_4);
-    }
-    if let Some(var_5) = &input.server_certificate_config {
+    if let Some(var_5) = &input.client_certificate_config {
         #[allow(unused_mut)]
-        let mut object_6 = object.key("serverCertificateConfig").start_object();
-        crate::protocol_serde::shape_server_certificate_config::ser_server_certificate_config(&mut object_6, var_5)?;
+        let mut object_6 = object.key("clientCertificateConfig").start_object();
+        crate::protocol_serde::shape_client_certificate_config::ser_client_certificate_config(&mut object_6, var_5)?;
         object_6.finish();
     }
-    if let Some(var_7) = &input.tls_config {
+    if let Some(var_7) = &input.domain_configuration_status {
+        object.key("domainConfigurationStatus").string(var_7.as_str());
+    }
+    if let Some(var_8) = &input.remove_authorizer_config {
+        object.key("removeAuthorizerConfig").boolean(*var_8);
+    }
+    if let Some(var_9) = &input.server_certificate_config {
         #[allow(unused_mut)]
-        let mut object_8 = object.key("tlsConfig").start_object();
-        crate::protocol_serde::shape_tls_config::ser_tls_config(&mut object_8, var_7)?;
-        object_8.finish();
+        let mut object_10 = object.key("serverCertificateConfig").start_object();
+        crate::protocol_serde::shape_server_certificate_config::ser_server_certificate_config(&mut object_10, var_9)?;
+        object_10.finish();
+    }
+    if let Some(var_11) = &input.tls_config {
+        #[allow(unused_mut)]
+        let mut object_12 = object.key("tlsConfig").start_object();
+        crate::protocol_serde::shape_tls_config::ser_tls_config(&mut object_12, var_11)?;
+        object_12.finish();
     }
     Ok(())
 }

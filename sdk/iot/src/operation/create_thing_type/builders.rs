@@ -22,7 +22,7 @@ impl crate::operation::create_thing_type::builders::CreateThingTypeInputBuilder 
 }
 /// Fluent builder constructing a request to `CreateThingType`.
 ///
-/// <p>Creates a new thing type.</p>
+/// <p>Creates a new thing type. If this call is made multiple times using the same thing type name and configuration, the call will succeed. If this call is made with the same thing type name but different configuration a <code>ResourceAlreadyExistsException</code> is thrown.</p>
 /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateThingType</a> action.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateThingTypeFluentBuilder {

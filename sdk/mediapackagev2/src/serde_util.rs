@@ -393,6 +393,13 @@ pub(crate) fn speke_key_provider_correct_errors(
     builder
 }
 
+pub(crate) fn start_tag_correct_errors(mut builder: crate::types::builders::StartTagBuilder) -> crate::types::builders::StartTagBuilder {
+    if builder.time_offset.is_none() {
+        builder.time_offset = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn encryption_contract_configuration_correct_errors(
     mut builder: crate::types::builders::EncryptionContractConfigurationBuilder,
 ) -> crate::types::builders::EncryptionContractConfigurationBuilder {

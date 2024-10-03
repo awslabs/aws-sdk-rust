@@ -12,6 +12,8 @@ pub struct FilterConfiguration {
     pub end: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Optionally specify the time delay for all of your manifest egress requests. Enter a value that is smaller than your endpoint's startover window. When you include time delay, note that you cannot use time delay query parameters for this manifest's endpoint URL.</p>
     pub time_delay_seconds: ::std::option::Option<i32>,
+    /// <p>Optionally specify the clip start time for all of your manifest egress requests. When you include clip start time, note that you cannot use clip start time query parameters for this manifest's endpoint URL.</p>
+    pub clip_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl FilterConfiguration {
     /// <p>Optionally specify one or more manifest filters for all of your manifest egress requests. When you include a manifest filter, note that you cannot use an identical manifest filter query parameter for this manifest's endpoint URL.</p>
@@ -30,6 +32,10 @@ impl FilterConfiguration {
     pub fn time_delay_seconds(&self) -> ::std::option::Option<i32> {
         self.time_delay_seconds
     }
+    /// <p>Optionally specify the clip start time for all of your manifest egress requests. When you include clip start time, note that you cannot use clip start time query parameters for this manifest's endpoint URL.</p>
+    pub fn clip_start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.clip_start_time.as_ref()
+    }
 }
 impl FilterConfiguration {
     /// Creates a new builder-style object to manufacture [`FilterConfiguration`](crate::types::FilterConfiguration).
@@ -46,6 +52,7 @@ pub struct FilterConfigurationBuilder {
     pub(crate) start: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) end: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) time_delay_seconds: ::std::option::Option<i32>,
+    pub(crate) clip_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl FilterConfigurationBuilder {
     /// <p>Optionally specify one or more manifest filters for all of your manifest egress requests. When you include a manifest filter, note that you cannot use an identical manifest filter query parameter for this manifest's endpoint URL.</p>
@@ -104,6 +111,20 @@ impl FilterConfigurationBuilder {
     pub fn get_time_delay_seconds(&self) -> &::std::option::Option<i32> {
         &self.time_delay_seconds
     }
+    /// <p>Optionally specify the clip start time for all of your manifest egress requests. When you include clip start time, note that you cannot use clip start time query parameters for this manifest's endpoint URL.</p>
+    pub fn clip_start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.clip_start_time = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Optionally specify the clip start time for all of your manifest egress requests. When you include clip start time, note that you cannot use clip start time query parameters for this manifest's endpoint URL.</p>
+    pub fn set_clip_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.clip_start_time = input;
+        self
+    }
+    /// <p>Optionally specify the clip start time for all of your manifest egress requests. When you include clip start time, note that you cannot use clip start time query parameters for this manifest's endpoint URL.</p>
+    pub fn get_clip_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.clip_start_time
+    }
     /// Consumes the builder and constructs a [`FilterConfiguration`](crate::types::FilterConfiguration).
     pub fn build(self) -> crate::types::FilterConfiguration {
         crate::types::FilterConfiguration {
@@ -111,6 +132,7 @@ impl FilterConfigurationBuilder {
             start: self.start,
             end: self.end,
             time_delay_seconds: self.time_delay_seconds,
+            clip_start_time: self.clip_start_time,
         }
     }
 }

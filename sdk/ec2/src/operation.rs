@@ -1519,6 +1519,9 @@ pub mod modify_instance_attribute;
 /// Types for the `ModifyInstanceCapacityReservationAttributes` operation.
 pub mod modify_instance_capacity_reservation_attributes;
 
+/// Types for the `ModifyInstanceCpuOptions` operation.
+pub mod modify_instance_cpu_options;
+
 /// Types for the `ModifyInstanceCreditSpecification` operation.
 pub mod modify_instance_credit_specification;
 

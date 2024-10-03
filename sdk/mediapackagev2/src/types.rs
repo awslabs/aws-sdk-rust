@@ -37,6 +37,8 @@ pub use crate::types::_endpoint_error_condition::EndpointErrorCondition;
 
 pub use crate::types::_get_low_latency_hls_manifest_configuration::GetLowLatencyHlsManifestConfiguration;
 
+pub use crate::types::_start_tag::StartTag;
+
 pub use crate::types::_scte_hls::ScteHls;
 
 pub use crate::types::_ad_marker_hls::AdMarkerHls;
@@ -162,6 +164,8 @@ mod _scte_hls;
 mod _segment;
 
 mod _speke_key_provider;
+
+mod _start_tag;
 
 mod _ts_encryption_method;
 

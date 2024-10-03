@@ -22,7 +22,7 @@ impl crate::operation::create_billing_group::builders::CreateBillingGroupInputBu
 }
 /// Fluent builder constructing a request to `CreateBillingGroup`.
 ///
-/// <p>Creates a billing group.</p>
+/// <p>Creates a billing group. If this call is made multiple times using the same billing group name and configuration, the call will succeed. If this call is made with the same billing group name but different configuration a <code>ResourceAlreadyExistsException</code> is thrown.</p>
 /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateBillingGroup</a> action.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateBillingGroupFluentBuilder {

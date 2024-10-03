@@ -18,29 +18,35 @@ pub fn ser_start_asset_bundle_export_job_input_input(
     if let Some(var_5) = &input.include_all_dependencies {
         object.key("IncludeAllDependencies").boolean(*var_5);
     }
-    if let Some(var_6) = &input.include_permissions {
-        object.key("IncludePermissions").boolean(*var_6);
+    if let Some(var_6) = &input.include_folder_members {
+        object.key("IncludeFolderMembers").string(var_6.as_str());
     }
-    if let Some(var_7) = &input.include_tags {
-        object.key("IncludeTags").boolean(*var_7);
+    if let Some(var_7) = &input.include_folder_memberships {
+        object.key("IncludeFolderMemberships").boolean(*var_7);
     }
-    if let Some(var_8) = &input.resource_arns {
-        let mut array_9 = object.key("ResourceArns").start_array();
-        for item_10 in var_8 {
+    if let Some(var_8) = &input.include_permissions {
+        object.key("IncludePermissions").boolean(*var_8);
+    }
+    if let Some(var_9) = &input.include_tags {
+        object.key("IncludeTags").boolean(*var_9);
+    }
+    if let Some(var_10) = &input.resource_arns {
+        let mut array_11 = object.key("ResourceArns").start_array();
+        for item_12 in var_10 {
             {
-                array_9.value().string(item_10.as_str());
+                array_11.value().string(item_12.as_str());
             }
         }
-        array_9.finish();
+        array_11.finish();
     }
-    if let Some(var_11) = &input.validation_strategy {
+    if let Some(var_13) = &input.validation_strategy {
         #[allow(unused_mut)]
-        let mut object_12 = object.key("ValidationStrategy").start_object();
+        let mut object_14 = object.key("ValidationStrategy").start_object();
         crate::protocol_serde::shape_asset_bundle_export_job_validation_strategy::ser_asset_bundle_export_job_validation_strategy(
-            &mut object_12,
-            var_11,
+            &mut object_14,
+            var_13,
         )?;
-        object_12.finish();
+        object_14.finish();
     }
     Ok(())
 }

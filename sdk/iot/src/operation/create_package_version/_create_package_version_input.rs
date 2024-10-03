@@ -14,7 +14,7 @@ pub struct CreatePackageVersionInput {
     pub attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The various build components created during the build process such as libraries and configuration files that make up a software package version.</p>
     pub artifact: ::std::option::Option<crate::types::PackageVersionArtifact>,
-    /// <p>The inline job document associated with a software package version used for a quick job deployment via IoT Jobs.</p>
+    /// <p>The inline job document associated with a software package version used for a quick job deployment.</p>
     pub recipe: ::std::option::Option<::std::string::String>,
     /// <p>Metadata that can be used to manage the package version.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -43,7 +43,7 @@ impl CreatePackageVersionInput {
     pub fn artifact(&self) -> ::std::option::Option<&crate::types::PackageVersionArtifact> {
         self.artifact.as_ref()
     }
-    /// <p>The inline job document associated with a software package version used for a quick job deployment via IoT Jobs.</p>
+    /// <p>The inline job document associated with a software package version used for a quick job deployment.</p>
     pub fn recipe(&self) -> ::std::option::Option<&str> {
         self.recipe.as_deref()
     }
@@ -172,17 +172,17 @@ impl CreatePackageVersionInputBuilder {
     pub fn get_artifact(&self) -> &::std::option::Option<crate::types::PackageVersionArtifact> {
         &self.artifact
     }
-    /// <p>The inline job document associated with a software package version used for a quick job deployment via IoT Jobs.</p>
+    /// <p>The inline job document associated with a software package version used for a quick job deployment.</p>
     pub fn recipe(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.recipe = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The inline job document associated with a software package version used for a quick job deployment via IoT Jobs.</p>
+    /// <p>The inline job document associated with a software package version used for a quick job deployment.</p>
     pub fn set_recipe(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.recipe = input;
         self
     }
-    /// <p>The inline job document associated with a software package version used for a quick job deployment via IoT Jobs.</p>
+    /// <p>The inline job document associated with a software package version used for a quick job deployment.</p>
     pub fn get_recipe(&self) -> &::std::option::Option<::std::string::String> {
         &self.recipe
     }

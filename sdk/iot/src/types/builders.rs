@@ -79,6 +79,8 @@ pub use crate::types::_aggregation_type::AggregationTypeBuilder;
 
 pub use crate::types::_configuration::ConfigurationBuilder;
 
+pub use crate::types::_client_certificate_config::ClientCertificateConfigBuilder;
+
 pub use crate::types::_server_certificate_config::ServerCertificateConfigBuilder;
 
 pub use crate::types::_tls_config::TlsConfigBuilder;

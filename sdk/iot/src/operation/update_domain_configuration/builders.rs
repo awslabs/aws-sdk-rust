@@ -193,4 +193,154 @@ impl UpdateDomainConfigurationFluentBuilder {
     pub fn get_server_certificate_config(&self) -> &::std::option::Option<crate::types::ServerCertificateConfig> {
         self.inner.get_server_certificate_config()
     }
+    /// <p>An enumerated string that speciﬁes the authentication type.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>CUSTOM_AUTH_X509</code> - Use custom authentication and authorization with additional details from the X.509 client certificate.</p></li>
+    /// </ul>
+    /// <ul>
+    /// <li>
+    /// <p><code>CUSTOM_AUTH</code> - Use custom authentication and authorization. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/custom-authentication.html">Custom authentication and authorization</a>.</p></li>
+    /// </ul>
+    /// <ul>
+    /// <li>
+    /// <p><code>AWS_X509</code> - Use X.509 client certificates without custom authentication and authorization. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/x509-client-certs.html">X.509 client certificates</a>.</p></li>
+    /// </ul>
+    /// <ul>
+    /// <li>
+    /// <p><code>AWS_SIGV4</code> - Use Amazon Web Services Signature Version 4. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/custom-authentication.html">IAM users, groups, and roles</a>.</p></li>
+    /// </ul>
+    /// <ul>
+    /// <li>
+    /// <p><code>DEFAULT </code> - Use a combination of port and Application Layer Protocol Negotiation (ALPN) to specify authentication type. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/protocols.html">Device communication protocols</a>.</p></li>
+    /// </ul>
+    pub fn authentication_type(mut self, input: crate::types::AuthenticationType) -> Self {
+        self.inner = self.inner.authentication_type(input);
+        self
+    }
+    /// <p>An enumerated string that speciﬁes the authentication type.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>CUSTOM_AUTH_X509</code> - Use custom authentication and authorization with additional details from the X.509 client certificate.</p></li>
+    /// </ul>
+    /// <ul>
+    /// <li>
+    /// <p><code>CUSTOM_AUTH</code> - Use custom authentication and authorization. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/custom-authentication.html">Custom authentication and authorization</a>.</p></li>
+    /// </ul>
+    /// <ul>
+    /// <li>
+    /// <p><code>AWS_X509</code> - Use X.509 client certificates without custom authentication and authorization. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/x509-client-certs.html">X.509 client certificates</a>.</p></li>
+    /// </ul>
+    /// <ul>
+    /// <li>
+    /// <p><code>AWS_SIGV4</code> - Use Amazon Web Services Signature Version 4. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/custom-authentication.html">IAM users, groups, and roles</a>.</p></li>
+    /// </ul>
+    /// <ul>
+    /// <li>
+    /// <p><code>DEFAULT </code> - Use a combination of port and Application Layer Protocol Negotiation (ALPN) to specify authentication type. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/protocols.html">Device communication protocols</a>.</p></li>
+    /// </ul>
+    pub fn set_authentication_type(mut self, input: ::std::option::Option<crate::types::AuthenticationType>) -> Self {
+        self.inner = self.inner.set_authentication_type(input);
+        self
+    }
+    /// <p>An enumerated string that speciﬁes the authentication type.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>CUSTOM_AUTH_X509</code> - Use custom authentication and authorization with additional details from the X.509 client certificate.</p></li>
+    /// </ul>
+    /// <ul>
+    /// <li>
+    /// <p><code>CUSTOM_AUTH</code> - Use custom authentication and authorization. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/custom-authentication.html">Custom authentication and authorization</a>.</p></li>
+    /// </ul>
+    /// <ul>
+    /// <li>
+    /// <p><code>AWS_X509</code> - Use X.509 client certificates without custom authentication and authorization. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/x509-client-certs.html">X.509 client certificates</a>.</p></li>
+    /// </ul>
+    /// <ul>
+    /// <li>
+    /// <p><code>AWS_SIGV4</code> - Use Amazon Web Services Signature Version 4. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/custom-authentication.html">IAM users, groups, and roles</a>.</p></li>
+    /// </ul>
+    /// <ul>
+    /// <li>
+    /// <p><code>DEFAULT </code> - Use a combination of port and Application Layer Protocol Negotiation (ALPN) to specify authentication type. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/protocols.html">Device communication protocols</a>.</p></li>
+    /// </ul>
+    pub fn get_authentication_type(&self) -> &::std::option::Option<crate::types::AuthenticationType> {
+        self.inner.get_authentication_type()
+    }
+    /// <p>An enumerated string that speciﬁes the application-layer protocol.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>SECURE_MQTT</code> - MQTT over TLS.</p></li>
+    /// </ul>
+    /// <ul>
+    /// <li>
+    /// <p><code>MQTT_WSS</code> - MQTT over WebSocket.</p></li>
+    /// </ul>
+    /// <ul>
+    /// <li>
+    /// <p><code>HTTPS</code> - HTTP over TLS.</p></li>
+    /// </ul>
+    /// <ul>
+    /// <li>
+    /// <p><code>DEFAULT</code> - Use a combination of port and Application Layer Protocol Negotiation (ALPN) to specify application_layer protocol. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/protocols.html">Device communication protocols</a>.</p></li>
+    /// </ul>
+    pub fn application_protocol(mut self, input: crate::types::ApplicationProtocol) -> Self {
+        self.inner = self.inner.application_protocol(input);
+        self
+    }
+    /// <p>An enumerated string that speciﬁes the application-layer protocol.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>SECURE_MQTT</code> - MQTT over TLS.</p></li>
+    /// </ul>
+    /// <ul>
+    /// <li>
+    /// <p><code>MQTT_WSS</code> - MQTT over WebSocket.</p></li>
+    /// </ul>
+    /// <ul>
+    /// <li>
+    /// <p><code>HTTPS</code> - HTTP over TLS.</p></li>
+    /// </ul>
+    /// <ul>
+    /// <li>
+    /// <p><code>DEFAULT</code> - Use a combination of port and Application Layer Protocol Negotiation (ALPN) to specify application_layer protocol. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/protocols.html">Device communication protocols</a>.</p></li>
+    /// </ul>
+    pub fn set_application_protocol(mut self, input: ::std::option::Option<crate::types::ApplicationProtocol>) -> Self {
+        self.inner = self.inner.set_application_protocol(input);
+        self
+    }
+    /// <p>An enumerated string that speciﬁes the application-layer protocol.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>SECURE_MQTT</code> - MQTT over TLS.</p></li>
+    /// </ul>
+    /// <ul>
+    /// <li>
+    /// <p><code>MQTT_WSS</code> - MQTT over WebSocket.</p></li>
+    /// </ul>
+    /// <ul>
+    /// <li>
+    /// <p><code>HTTPS</code> - HTTP over TLS.</p></li>
+    /// </ul>
+    /// <ul>
+    /// <li>
+    /// <p><code>DEFAULT</code> - Use a combination of port and Application Layer Protocol Negotiation (ALPN) to specify application_layer protocol. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/protocols.html">Device communication protocols</a>.</p></li>
+    /// </ul>
+    pub fn get_application_protocol(&self) -> &::std::option::Option<crate::types::ApplicationProtocol> {
+        self.inner.get_application_protocol()
+    }
+    /// <p>An object that speciﬁes the client certificate conﬁguration for a domain.</p>
+    pub fn client_certificate_config(mut self, input: crate::types::ClientCertificateConfig) -> Self {
+        self.inner = self.inner.client_certificate_config(input);
+        self
+    }
+    /// <p>An object that speciﬁes the client certificate conﬁguration for a domain.</p>
+    pub fn set_client_certificate_config(mut self, input: ::std::option::Option<crate::types::ClientCertificateConfig>) -> Self {
+        self.inner = self.inner.set_client_certificate_config(input);
+        self
+    }
+    /// <p>An object that speciﬁes the client certificate conﬁguration for a domain.</p>
+    pub fn get_client_certificate_config(&self) -> &::std::option::Option<crate::types::ClientCertificateConfig> {
+        self.inner.get_client_certificate_config()
+    }
 }

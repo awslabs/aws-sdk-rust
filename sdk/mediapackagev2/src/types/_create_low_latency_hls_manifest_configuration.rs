@@ -10,6 +10,8 @@ pub struct CreateLowLatencyHlsManifestConfiguration {
     pub child_manifest_name: ::std::option::Option<::std::string::String>,
     /// <p>The SCTE configuration.</p>
     pub scte_hls: ::std::option::Option<crate::types::ScteHls>,
+    /// <p>To insert an EXT-X-START tag in your HLS playlist, specify a StartTag configuration object with a valid TimeOffset. When you do, you can also optionally specify whether to include a PRECISE value in the EXT-X-START tag.</p>
+    pub start_tag: ::std::option::Option<crate::types::StartTag>,
     /// <p>The total duration (in seconds) of the manifest's content.</p>
     pub manifest_window_seconds: ::std::option::Option<i32>,
     /// <p>Inserts EXT-X-PROGRAM-DATE-TIME tags in the output manifest at the interval that you specify. If you don't enter an interval, EXT-X-PROGRAM-DATE-TIME tags aren't included in the manifest. The tags sync the stream to the wall clock so that viewers can seek to a specific time in the playback timeline on the player. ID3Timed metadata messages generate every 5 seconds whenever the content is ingested.</p>
@@ -31,6 +33,10 @@ impl CreateLowLatencyHlsManifestConfiguration {
     /// <p>The SCTE configuration.</p>
     pub fn scte_hls(&self) -> ::std::option::Option<&crate::types::ScteHls> {
         self.scte_hls.as_ref()
+    }
+    /// <p>To insert an EXT-X-START tag in your HLS playlist, specify a StartTag configuration object with a valid TimeOffset. When you do, you can also optionally specify whether to include a PRECISE value in the EXT-X-START tag.</p>
+    pub fn start_tag(&self) -> ::std::option::Option<&crate::types::StartTag> {
+        self.start_tag.as_ref()
     }
     /// <p>The total duration (in seconds) of the manifest's content.</p>
     pub fn manifest_window_seconds(&self) -> ::std::option::Option<i32> {
@@ -60,6 +66,7 @@ pub struct CreateLowLatencyHlsManifestConfigurationBuilder {
     pub(crate) manifest_name: ::std::option::Option<::std::string::String>,
     pub(crate) child_manifest_name: ::std::option::Option<::std::string::String>,
     pub(crate) scte_hls: ::std::option::Option<crate::types::ScteHls>,
+    pub(crate) start_tag: ::std::option::Option<crate::types::StartTag>,
     pub(crate) manifest_window_seconds: ::std::option::Option<i32>,
     pub(crate) program_date_time_interval_seconds: ::std::option::Option<i32>,
     pub(crate) filter_configuration: ::std::option::Option<crate::types::FilterConfiguration>,
@@ -107,6 +114,20 @@ impl CreateLowLatencyHlsManifestConfigurationBuilder {
     /// <p>The SCTE configuration.</p>
     pub fn get_scte_hls(&self) -> &::std::option::Option<crate::types::ScteHls> {
         &self.scte_hls
+    }
+    /// <p>To insert an EXT-X-START tag in your HLS playlist, specify a StartTag configuration object with a valid TimeOffset. When you do, you can also optionally specify whether to include a PRECISE value in the EXT-X-START tag.</p>
+    pub fn start_tag(mut self, input: crate::types::StartTag) -> Self {
+        self.start_tag = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>To insert an EXT-X-START tag in your HLS playlist, specify a StartTag configuration object with a valid TimeOffset. When you do, you can also optionally specify whether to include a PRECISE value in the EXT-X-START tag.</p>
+    pub fn set_start_tag(mut self, input: ::std::option::Option<crate::types::StartTag>) -> Self {
+        self.start_tag = input;
+        self
+    }
+    /// <p>To insert an EXT-X-START tag in your HLS playlist, specify a StartTag configuration object with a valid TimeOffset. When you do, you can also optionally specify whether to include a PRECISE value in the EXT-X-START tag.</p>
+    pub fn get_start_tag(&self) -> &::std::option::Option<crate::types::StartTag> {
+        &self.start_tag
     }
     /// <p>The total duration (in seconds) of the manifest's content.</p>
     pub fn manifest_window_seconds(mut self, input: i32) -> Self {
@@ -168,6 +189,7 @@ impl CreateLowLatencyHlsManifestConfigurationBuilder {
             })?,
             child_manifest_name: self.child_manifest_name,
             scte_hls: self.scte_hls,
+            start_tag: self.start_tag,
             manifest_window_seconds: self.manifest_window_seconds,
             program_date_time_interval_seconds: self.program_date_time_interval_seconds,
             filter_configuration: self.filter_configuration,

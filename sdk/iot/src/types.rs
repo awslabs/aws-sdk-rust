@@ -129,6 +129,12 @@ pub use crate::types::_configuration::Configuration;
 
 pub use crate::types::_event_type::EventType;
 
+pub use crate::types::_client_certificate_config::ClientCertificateConfig;
+
+pub use crate::types::_application_protocol::ApplicationProtocol;
+
+pub use crate::types::_authentication_type::AuthenticationType;
+
 pub use crate::types::_server_certificate_config::ServerCertificateConfig;
 
 pub use crate::types::_tls_config::TlsConfig;
@@ -605,6 +611,8 @@ mod _alert_target_type;
 
 mod _allowed;
 
+mod _application_protocol;
+
 mod _asset_property_timestamp;
 
 mod _asset_property_value;
@@ -652,6 +660,8 @@ mod _auth_decision;
 mod _auth_info;
 
 mod _auth_result;
+
+mod _authentication_type;
 
 mod _authorizer_config;
 
@@ -720,6 +730,8 @@ mod _certificate_provider_summary;
 mod _certificate_status;
 
 mod _certificate_validity;
+
+mod _client_certificate_config;
 
 mod _cloudwatch_alarm_action;
 

@@ -54,6 +54,11 @@ where
                                     crate::protocol_serde::shape_asset_bundle_export_job_dashboard_override_properties_list::de_asset_bundle_export_job_dashboard_override_properties_list(tokens)?
                                 );
                         }
+                        "Folders" => {
+                            builder = builder.set_folders(
+                                    crate::protocol_serde::shape_asset_bundle_export_job_folder_override_properties_list::de_asset_bundle_export_job_folder_override_properties_list(tokens)?
+                                );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {
@@ -165,6 +170,18 @@ pub fn ser_asset_bundle_cloud_formation_override_property_configuration(
             }
         }
         array_28.finish();
+    }
+    if let Some(var_31) = &input.folders {
+        let mut array_32 = object.key("Folders").start_array();
+        for item_33 in var_31 {
+            {
+                #[allow(unused_mut)]
+                let mut object_34 = array_32.value().start_object();
+                crate::protocol_serde::shape_asset_bundle_export_job_folder_override_properties::ser_asset_bundle_export_job_folder_override_properties(&mut object_34, item_33)?;
+                object_34.finish();
+            }
+        }
+        array_32.finish();
     }
     Ok(())
 }

@@ -6,6 +6,15 @@ pub fn ser_output_artifact(
     {
         object.key("name").string(input.name.as_str());
     }
+    if let Some(var_1) = &input.files {
+        let mut array_2 = object.key("files").start_array();
+        for item_3 in var_1 {
+            {
+                array_2.value().string(item_3.as_str());
+            }
+        }
+        array_2.finish();
+    }
     Ok(())
 }
 
@@ -30,6 +39,9 @@ where
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
                             );
+                        }
+                        "files" => {
+                            builder = builder.set_files(crate::protocol_serde::shape_file_path_list::de_file_path_list(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

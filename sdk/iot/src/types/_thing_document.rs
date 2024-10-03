@@ -10,7 +10,7 @@ pub struct ThingDocument {
     pub thing_id: ::std::option::Option<::std::string::String>,
     /// <p>The thing type name.</p>
     pub thing_type_name: ::std::option::Option<::std::string::String>,
-    /// <p>Thing group names.</p>
+    /// <p>Thing group and billing group names.</p>
     pub thing_group_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The attributes.</p>
     pub attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -36,7 +36,7 @@ impl ThingDocument {
     pub fn thing_type_name(&self) -> ::std::option::Option<&str> {
         self.thing_type_name.as_deref()
     }
-    /// <p>Thing group names.</p>
+    /// <p>Thing group and billing group names.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.thing_group_names.is_none()`.
     pub fn thing_group_names(&self) -> &[::std::string::String] {
@@ -128,19 +128,19 @@ impl ThingDocumentBuilder {
     ///
     /// To override the contents of this collection use [`set_thing_group_names`](Self::set_thing_group_names).
     ///
-    /// <p>Thing group names.</p>
+    /// <p>Thing group and billing group names.</p>
     pub fn thing_group_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.thing_group_names.unwrap_or_default();
         v.push(input.into());
         self.thing_group_names = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Thing group names.</p>
+    /// <p>Thing group and billing group names.</p>
     pub fn set_thing_group_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.thing_group_names = input;
         self
     }
-    /// <p>Thing group names.</p>
+    /// <p>Thing group and billing group names.</p>
     pub fn get_thing_group_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.thing_group_names
     }

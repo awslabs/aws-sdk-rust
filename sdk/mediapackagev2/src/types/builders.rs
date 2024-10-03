@@ -17,6 +17,8 @@ pub use crate::types::_force_endpoint_error_configuration::ForceEndpointErrorCon
 
 pub use crate::types::_get_low_latency_hls_manifest_configuration::GetLowLatencyHlsManifestConfigurationBuilder;
 
+pub use crate::types::_start_tag::StartTagBuilder;
+
 pub use crate::types::_scte_hls::ScteHlsBuilder;
 
 pub use crate::types::_get_hls_manifest_configuration::GetHlsManifestConfigurationBuilder;

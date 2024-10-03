@@ -19,6 +19,8 @@ pub struct GetLowLatencyHlsManifestConfiguration {
     pub scte_hls: ::std::option::Option<crate::types::ScteHls>,
     /// <p>Filter configuration includes settings for manifest filtering, start and end times, and time delay that apply to all of your egress requests for this manifest.</p>
     pub filter_configuration: ::std::option::Option<crate::types::FilterConfiguration>,
+    /// <p>To insert an EXT-X-START tag in your HLS playlist, specify a StartTag configuration object with a valid TimeOffset. When you do, you can also optionally specify whether to include a PRECISE value in the EXT-X-START tag.</p>
+    pub start_tag: ::std::option::Option<crate::types::StartTag>,
 }
 impl GetLowLatencyHlsManifestConfiguration {
     /// <p>A short short string that's appended to the endpoint URL. The manifest name creates a unique path to this endpoint. If you don't enter a value, MediaPackage uses the default manifest name, index. MediaPackage automatically inserts the format extension, such as .m3u8. You can't use the same manifest name if you use HLS manifest and low-latency HLS manifest. The manifestName on the HLSManifest object overrides the manifestName you provided on the originEndpoint object.</p>
@@ -52,6 +54,10 @@ impl GetLowLatencyHlsManifestConfiguration {
     pub fn filter_configuration(&self) -> ::std::option::Option<&crate::types::FilterConfiguration> {
         self.filter_configuration.as_ref()
     }
+    /// <p>To insert an EXT-X-START tag in your HLS playlist, specify a StartTag configuration object with a valid TimeOffset. When you do, you can also optionally specify whether to include a PRECISE value in the EXT-X-START tag.</p>
+    pub fn start_tag(&self) -> ::std::option::Option<&crate::types::StartTag> {
+        self.start_tag.as_ref()
+    }
 }
 impl GetLowLatencyHlsManifestConfiguration {
     /// Creates a new builder-style object to manufacture [`GetLowLatencyHlsManifestConfiguration`](crate::types::GetLowLatencyHlsManifestConfiguration).
@@ -71,6 +77,7 @@ pub struct GetLowLatencyHlsManifestConfigurationBuilder {
     pub(crate) program_date_time_interval_seconds: ::std::option::Option<i32>,
     pub(crate) scte_hls: ::std::option::Option<crate::types::ScteHls>,
     pub(crate) filter_configuration: ::std::option::Option<crate::types::FilterConfiguration>,
+    pub(crate) start_tag: ::std::option::Option<crate::types::StartTag>,
 }
 impl GetLowLatencyHlsManifestConfigurationBuilder {
     /// <p>A short short string that's appended to the endpoint URL. The manifest name creates a unique path to this endpoint. If you don't enter a value, MediaPackage uses the default manifest name, index. MediaPackage automatically inserts the format extension, such as .m3u8. You can't use the same manifest name if you use HLS manifest and low-latency HLS manifest. The manifestName on the HLSManifest object overrides the manifestName you provided on the originEndpoint object.</p>
@@ -176,6 +183,20 @@ impl GetLowLatencyHlsManifestConfigurationBuilder {
     pub fn get_filter_configuration(&self) -> &::std::option::Option<crate::types::FilterConfiguration> {
         &self.filter_configuration
     }
+    /// <p>To insert an EXT-X-START tag in your HLS playlist, specify a StartTag configuration object with a valid TimeOffset. When you do, you can also optionally specify whether to include a PRECISE value in the EXT-X-START tag.</p>
+    pub fn start_tag(mut self, input: crate::types::StartTag) -> Self {
+        self.start_tag = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>To insert an EXT-X-START tag in your HLS playlist, specify a StartTag configuration object with a valid TimeOffset. When you do, you can also optionally specify whether to include a PRECISE value in the EXT-X-START tag.</p>
+    pub fn set_start_tag(mut self, input: ::std::option::Option<crate::types::StartTag>) -> Self {
+        self.start_tag = input;
+        self
+    }
+    /// <p>To insert an EXT-X-START tag in your HLS playlist, specify a StartTag configuration object with a valid TimeOffset. When you do, you can also optionally specify whether to include a PRECISE value in the EXT-X-START tag.</p>
+    pub fn get_start_tag(&self) -> &::std::option::Option<crate::types::StartTag> {
+        &self.start_tag
+    }
     /// Consumes the builder and constructs a [`GetLowLatencyHlsManifestConfiguration`](crate::types::GetLowLatencyHlsManifestConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`manifest_name`](crate::types::builders::GetLowLatencyHlsManifestConfigurationBuilder::manifest_name)
@@ -201,6 +222,7 @@ impl GetLowLatencyHlsManifestConfigurationBuilder {
             program_date_time_interval_seconds: self.program_date_time_interval_seconds,
             scte_hls: self.scte_hls,
             filter_configuration: self.filter_configuration,
+            start_tag: self.start_tag,
         })
     }
 }

@@ -12,7 +12,7 @@ pub struct DescribeFleetsInstances {
     pub instance_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The instance type.</p>
     pub instance_type: ::std::option::Option<crate::types::InstanceType>,
-    /// <p>The value is <code>Windows</code> for Windows instances. Otherwise, the value is blank.</p>
+    /// <p>The value is <code>windows</code> for Windows instances in an EC2 Fleet. Otherwise, the value is blank.</p>
     pub platform: ::std::option::Option<crate::types::PlatformValues>,
 }
 impl DescribeFleetsInstances {
@@ -34,7 +34,7 @@ impl DescribeFleetsInstances {
     pub fn instance_type(&self) -> ::std::option::Option<&crate::types::InstanceType> {
         self.instance_type.as_ref()
     }
-    /// <p>The value is <code>Windows</code> for Windows instances. Otherwise, the value is blank.</p>
+    /// <p>The value is <code>windows</code> for Windows instances in an EC2 Fleet. Otherwise, the value is blank.</p>
     pub fn platform(&self) -> ::std::option::Option<&crate::types::PlatformValues> {
         self.platform.as_ref()
     }
@@ -119,17 +119,17 @@ impl DescribeFleetsInstancesBuilder {
     pub fn get_instance_type(&self) -> &::std::option::Option<crate::types::InstanceType> {
         &self.instance_type
     }
-    /// <p>The value is <code>Windows</code> for Windows instances. Otherwise, the value is blank.</p>
+    /// <p>The value is <code>windows</code> for Windows instances in an EC2 Fleet. Otherwise, the value is blank.</p>
     pub fn platform(mut self, input: crate::types::PlatformValues) -> Self {
         self.platform = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The value is <code>Windows</code> for Windows instances. Otherwise, the value is blank.</p>
+    /// <p>The value is <code>windows</code> for Windows instances in an EC2 Fleet. Otherwise, the value is blank.</p>
     pub fn set_platform(mut self, input: ::std::option::Option<crate::types::PlatformValues>) -> Self {
         self.platform = input;
         self
     }
-    /// <p>The value is <code>Windows</code> for Windows instances. Otherwise, the value is blank.</p>
+    /// <p>The value is <code>windows</code> for Windows instances in an EC2 Fleet. Otherwise, the value is blank.</p>
     pub fn get_platform(&self) -> &::std::option::Option<crate::types::PlatformValues> {
         &self.platform
     }

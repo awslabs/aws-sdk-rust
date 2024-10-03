@@ -905,6 +905,8 @@ pub(crate) mod shape_certificate_providers;
 
 pub(crate) mod shape_certificates;
 
+pub(crate) mod shape_client_certificate_config;
+
 pub(crate) mod shape_configuration;
 
 pub(crate) mod shape_destination_package_versions;

@@ -7,9 +7,9 @@ pub struct AssociateSbomWithPackageVersionOutput {
     pub package_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the new package version.</p>
     pub version_name: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon S3 location for the software bill of materials associated with a software package version.</p>
+    /// <p>A specific software bill of matrerials associated with a software package version.</p>
     pub sbom: ::std::option::Option<crate::types::Sbom>,
-    /// <p>The status of the initial validation for the SBOM against the Software Package Data Exchange (SPDX) and CycloneDX industry standard format.</p>
+    /// <p>The status of the initial validation for the software bill of materials against the Software Package Data Exchange (SPDX) and CycloneDX industry standard formats.</p>
     pub sbom_validation_status: ::std::option::Option<crate::types::SbomValidationStatus>,
     _request_id: Option<String>,
 }
@@ -22,11 +22,11 @@ impl AssociateSbomWithPackageVersionOutput {
     pub fn version_name(&self) -> ::std::option::Option<&str> {
         self.version_name.as_deref()
     }
-    /// <p>The Amazon S3 location for the software bill of materials associated with a software package version.</p>
+    /// <p>A specific software bill of matrerials associated with a software package version.</p>
     pub fn sbom(&self) -> ::std::option::Option<&crate::types::Sbom> {
         self.sbom.as_ref()
     }
-    /// <p>The status of the initial validation for the SBOM against the Software Package Data Exchange (SPDX) and CycloneDX industry standard format.</p>
+    /// <p>The status of the initial validation for the software bill of materials against the Software Package Data Exchange (SPDX) and CycloneDX industry standard formats.</p>
     pub fn sbom_validation_status(&self) -> ::std::option::Option<&crate::types::SbomValidationStatus> {
         self.sbom_validation_status.as_ref()
     }
@@ -82,31 +82,31 @@ impl AssociateSbomWithPackageVersionOutputBuilder {
     pub fn get_version_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.version_name
     }
-    /// <p>The Amazon S3 location for the software bill of materials associated with a software package version.</p>
+    /// <p>A specific software bill of matrerials associated with a software package version.</p>
     pub fn sbom(mut self, input: crate::types::Sbom) -> Self {
         self.sbom = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The Amazon S3 location for the software bill of materials associated with a software package version.</p>
+    /// <p>A specific software bill of matrerials associated with a software package version.</p>
     pub fn set_sbom(mut self, input: ::std::option::Option<crate::types::Sbom>) -> Self {
         self.sbom = input;
         self
     }
-    /// <p>The Amazon S3 location for the software bill of materials associated with a software package version.</p>
+    /// <p>A specific software bill of matrerials associated with a software package version.</p>
     pub fn get_sbom(&self) -> &::std::option::Option<crate::types::Sbom> {
         &self.sbom
     }
-    /// <p>The status of the initial validation for the SBOM against the Software Package Data Exchange (SPDX) and CycloneDX industry standard format.</p>
+    /// <p>The status of the initial validation for the software bill of materials against the Software Package Data Exchange (SPDX) and CycloneDX industry standard formats.</p>
     pub fn sbom_validation_status(mut self, input: crate::types::SbomValidationStatus) -> Self {
         self.sbom_validation_status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The status of the initial validation for the SBOM against the Software Package Data Exchange (SPDX) and CycloneDX industry standard format.</p>
+    /// <p>The status of the initial validation for the software bill of materials against the Software Package Data Exchange (SPDX) and CycloneDX industry standard formats.</p>
     pub fn set_sbom_validation_status(mut self, input: ::std::option::Option<crate::types::SbomValidationStatus>) -> Self {
         self.sbom_validation_status = input;
         self
     }
-    /// <p>The status of the initial validation for the SBOM against the Software Package Data Exchange (SPDX) and CycloneDX industry standard format.</p>
+    /// <p>The status of the initial validation for the software bill of materials against the Software Package Data Exchange (SPDX) and CycloneDX industry standard formats.</p>
     pub fn get_sbom_validation_status(&self) -> &::std::option::Option<crate::types::SbomValidationStatus> {
         &self.sbom_validation_status
     }

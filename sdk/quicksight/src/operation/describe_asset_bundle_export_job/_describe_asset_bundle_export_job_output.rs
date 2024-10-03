@@ -43,6 +43,10 @@ pub struct DescribeAssetBundleExportJobOutput {
     /// <p>An array of warning records that describe the analysis or dashboard that is exported. This array includes UI errors that can be skipped during the validation process.</p>
     /// <p>This property only appears if <code>StrictModeForAllResources</code> in <code>ValidationStrategy</code> is set to <code>FALSE</code>.</p>
     pub warnings: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleExportJobWarning>>,
+    /// <p>The include folder memberships flag.</p>
+    pub include_folder_memberships: bool,
+    /// <p>A setting that determines whether folder members are included.</p>
+    pub include_folder_members: ::std::option::Option<crate::types::IncludeFolderMembers>,
     _request_id: Option<String>,
 }
 impl DescribeAssetBundleExportJobOutput {
@@ -128,6 +132,14 @@ impl DescribeAssetBundleExportJobOutput {
     pub fn warnings(&self) -> &[crate::types::AssetBundleExportJobWarning] {
         self.warnings.as_deref().unwrap_or_default()
     }
+    /// <p>The include folder memberships flag.</p>
+    pub fn include_folder_memberships(&self) -> bool {
+        self.include_folder_memberships
+    }
+    /// <p>A setting that determines whether folder members are included.</p>
+    pub fn include_folder_members(&self) -> ::std::option::Option<&crate::types::IncludeFolderMembers> {
+        self.include_folder_members.as_ref()
+    }
 }
 impl ::std::fmt::Debug for DescribeAssetBundleExportJobOutput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -152,6 +164,8 @@ impl ::std::fmt::Debug for DescribeAssetBundleExportJobOutput {
         formatter.field("include_tags", &self.include_tags);
         formatter.field("validation_strategy", &self.validation_strategy);
         formatter.field("warnings", &self.warnings);
+        formatter.field("include_folder_memberships", &self.include_folder_memberships);
+        formatter.field("include_folder_members", &self.include_folder_members);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
@@ -190,6 +204,8 @@ pub struct DescribeAssetBundleExportJobOutputBuilder {
     pub(crate) include_tags: ::std::option::Option<bool>,
     pub(crate) validation_strategy: ::std::option::Option<crate::types::AssetBundleExportJobValidationStrategy>,
     pub(crate) warnings: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleExportJobWarning>>,
+    pub(crate) include_folder_memberships: ::std::option::Option<bool>,
+    pub(crate) include_folder_members: ::std::option::Option<crate::types::IncludeFolderMembers>,
     _request_id: Option<String>,
 }
 impl DescribeAssetBundleExportJobOutputBuilder {
@@ -475,6 +491,34 @@ impl DescribeAssetBundleExportJobOutputBuilder {
     pub fn get_warnings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetBundleExportJobWarning>> {
         &self.warnings
     }
+    /// <p>The include folder memberships flag.</p>
+    pub fn include_folder_memberships(mut self, input: bool) -> Self {
+        self.include_folder_memberships = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The include folder memberships flag.</p>
+    pub fn set_include_folder_memberships(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.include_folder_memberships = input;
+        self
+    }
+    /// <p>The include folder memberships flag.</p>
+    pub fn get_include_folder_memberships(&self) -> &::std::option::Option<bool> {
+        &self.include_folder_memberships
+    }
+    /// <p>A setting that determines whether folder members are included.</p>
+    pub fn include_folder_members(mut self, input: crate::types::IncludeFolderMembers) -> Self {
+        self.include_folder_members = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A setting that determines whether folder members are included.</p>
+    pub fn set_include_folder_members(mut self, input: ::std::option::Option<crate::types::IncludeFolderMembers>) -> Self {
+        self.include_folder_members = input;
+        self
+    }
+    /// <p>A setting that determines whether folder members are included.</p>
+    pub fn get_include_folder_members(&self) -> &::std::option::Option<crate::types::IncludeFolderMembers> {
+        &self.include_folder_members
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -504,6 +548,8 @@ impl DescribeAssetBundleExportJobOutputBuilder {
             include_tags: self.include_tags.unwrap_or_default(),
             validation_strategy: self.validation_strategy,
             warnings: self.warnings,
+            include_folder_memberships: self.include_folder_memberships.unwrap_or_default(),
+            include_folder_members: self.include_folder_members,
             _request_id: self._request_id,
         }
     }
@@ -531,6 +577,8 @@ impl ::std::fmt::Debug for DescribeAssetBundleExportJobOutputBuilder {
         formatter.field("include_tags", &self.include_tags);
         formatter.field("validation_strategy", &self.validation_strategy);
         formatter.field("warnings", &self.warnings);
+        formatter.field("include_folder_memberships", &self.include_folder_memberships);
+        formatter.field("include_folder_members", &self.include_folder_members);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }

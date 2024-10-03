@@ -13,6 +13,7 @@
 /// # let validationexceptiontype = unimplemented!();
 /// match validationexceptiontype {
 ///     ValidationExceptionType::CencIvIncompatible => { /* ... */ },
+///     ValidationExceptionType::ClipStartTimeWithStartOrEnd => { /* ... */ },
 ///     ValidationExceptionType::ContainerTypeImmutable => { /* ... */ },
 ///     ValidationExceptionType::DirectModeWithTimingSource => { /* ... */ },
 ///     ValidationExceptionType::DrmSignalingMismatchSegmentEncryptionStatus => { /* ... */ },
@@ -47,6 +48,7 @@
 ///     ValidationExceptionType::RoleArnLengthOutOfRange => { /* ... */ },
 ///     ValidationExceptionType::RoleArnNotAssumable => { /* ... */ },
 ///     ValidationExceptionType::SourceDisruptionsEnabledIncorrectly => { /* ... */ },
+///     ValidationExceptionType::StartTagTimeOffsetInvalid => { /* ... */ },
 ///     ValidationExceptionType::TimingSourceMissing => { /* ... */ },
 ///     ValidationExceptionType::TsContainerTypeWithDashManifest => { /* ... */ },
 ///     ValidationExceptionType::UpdatePeriodSmallerThanSegmentDuration => { /* ... */ },
@@ -88,6 +90,8 @@
 pub enum ValidationExceptionType {
     #[allow(missing_docs)] // documentation missing in model
     CencIvIncompatible,
+    #[allow(missing_docs)] // documentation missing in model
+    ClipStartTimeWithStartOrEnd,
     #[allow(missing_docs)] // documentation missing in model
     ContainerTypeImmutable,
     #[allow(missing_docs)] // documentation missing in model
@@ -157,6 +161,8 @@ pub enum ValidationExceptionType {
     #[allow(missing_docs)] // documentation missing in model
     SourceDisruptionsEnabledIncorrectly,
     #[allow(missing_docs)] // documentation missing in model
+    StartTagTimeOffsetInvalid,
+    #[allow(missing_docs)] // documentation missing in model
     TimingSourceMissing,
     #[allow(missing_docs)] // documentation missing in model
     TsContainerTypeWithDashManifest,
@@ -188,6 +194,7 @@ impl ::std::convert::From<&str> for ValidationExceptionType {
     fn from(s: &str) -> Self {
         match s {
             "CENC_IV_INCOMPATIBLE" => ValidationExceptionType::CencIvIncompatible,
+            "CLIP_START_TIME_WITH_START_OR_END" => ValidationExceptionType::ClipStartTimeWithStartOrEnd,
             "CONTAINER_TYPE_IMMUTABLE" => ValidationExceptionType::ContainerTypeImmutable,
             "DIRECT_MODE_WITH_TIMING_SOURCE" => ValidationExceptionType::DirectModeWithTimingSource,
             "DRM_SIGNALING_MISMATCH_SEGMENT_ENCRYPTION_STATUS" => ValidationExceptionType::DrmSignalingMismatchSegmentEncryptionStatus,
@@ -226,6 +233,7 @@ impl ::std::convert::From<&str> for ValidationExceptionType {
             "ROLE_ARN_LENGTH_OUT_OF_RANGE" => ValidationExceptionType::RoleArnLengthOutOfRange,
             "ROLE_ARN_NOT_ASSUMABLE" => ValidationExceptionType::RoleArnNotAssumable,
             "SOURCE_DISRUPTIONS_ENABLED_INCORRECTLY" => ValidationExceptionType::SourceDisruptionsEnabledIncorrectly,
+            "START_TAG_TIME_OFFSET_INVALID" => ValidationExceptionType::StartTagTimeOffsetInvalid,
             "TIMING_SOURCE_MISSING" => ValidationExceptionType::TimingSourceMissing,
             "TS_CONTAINER_TYPE_WITH_DASH_MANIFEST" => ValidationExceptionType::TsContainerTypeWithDashManifest,
             "UPDATE_PERIOD_SMALLER_THAN_SEGMENT_DURATION" => ValidationExceptionType::UpdatePeriodSmallerThanSegmentDuration,
@@ -254,6 +262,7 @@ impl ValidationExceptionType {
     pub fn as_str(&self) -> &str {
         match self {
             ValidationExceptionType::CencIvIncompatible => "CENC_IV_INCOMPATIBLE",
+            ValidationExceptionType::ClipStartTimeWithStartOrEnd => "CLIP_START_TIME_WITH_START_OR_END",
             ValidationExceptionType::ContainerTypeImmutable => "CONTAINER_TYPE_IMMUTABLE",
             ValidationExceptionType::DirectModeWithTimingSource => "DIRECT_MODE_WITH_TIMING_SOURCE",
             ValidationExceptionType::DrmSignalingMismatchSegmentEncryptionStatus => "DRM_SIGNALING_MISMATCH_SEGMENT_ENCRYPTION_STATUS",
@@ -292,6 +301,7 @@ impl ValidationExceptionType {
             ValidationExceptionType::RoleArnLengthOutOfRange => "ROLE_ARN_LENGTH_OUT_OF_RANGE",
             ValidationExceptionType::RoleArnNotAssumable => "ROLE_ARN_NOT_ASSUMABLE",
             ValidationExceptionType::SourceDisruptionsEnabledIncorrectly => "SOURCE_DISRUPTIONS_ENABLED_INCORRECTLY",
+            ValidationExceptionType::StartTagTimeOffsetInvalid => "START_TAG_TIME_OFFSET_INVALID",
             ValidationExceptionType::TimingSourceMissing => "TIMING_SOURCE_MISSING",
             ValidationExceptionType::TsContainerTypeWithDashManifest => "TS_CONTAINER_TYPE_WITH_DASH_MANIFEST",
             ValidationExceptionType::UpdatePeriodSmallerThanSegmentDuration => "UPDATE_PERIOD_SMALLER_THAN_SEGMENT_DURATION",
@@ -311,6 +321,7 @@ impl ValidationExceptionType {
     pub const fn values() -> &'static [&'static str] {
         &[
             "CENC_IV_INCOMPATIBLE",
+            "CLIP_START_TIME_WITH_START_OR_END",
             "CONTAINER_TYPE_IMMUTABLE",
             "DIRECT_MODE_WITH_TIMING_SOURCE",
             "DRM_SIGNALING_MISMATCH_SEGMENT_ENCRYPTION_STATUS",
@@ -345,6 +356,7 @@ impl ValidationExceptionType {
             "ROLE_ARN_LENGTH_OUT_OF_RANGE",
             "ROLE_ARN_NOT_ASSUMABLE",
             "SOURCE_DISRUPTIONS_ENABLED_INCORRECTLY",
+            "START_TAG_TIME_OFFSET_INVALID",
             "TIMING_SOURCE_MISSING",
             "TS_CONTAINER_TYPE_WITH_DASH_MANIFEST",
             "UPDATE_PERIOD_SMALLER_THAN_SEGMENT_DURATION",
@@ -381,6 +393,7 @@ impl ::std::fmt::Display for ValidationExceptionType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ValidationExceptionType::CencIvIncompatible => write!(f, "CENC_IV_INCOMPATIBLE"),
+            ValidationExceptionType::ClipStartTimeWithStartOrEnd => write!(f, "CLIP_START_TIME_WITH_START_OR_END"),
             ValidationExceptionType::ContainerTypeImmutable => write!(f, "CONTAINER_TYPE_IMMUTABLE"),
             ValidationExceptionType::DirectModeWithTimingSource => write!(f, "DIRECT_MODE_WITH_TIMING_SOURCE"),
             ValidationExceptionType::DrmSignalingMismatchSegmentEncryptionStatus => write!(f, "DRM_SIGNALING_MISMATCH_SEGMENT_ENCRYPTION_STATUS"),
@@ -421,6 +434,7 @@ impl ::std::fmt::Display for ValidationExceptionType {
             ValidationExceptionType::RoleArnLengthOutOfRange => write!(f, "ROLE_ARN_LENGTH_OUT_OF_RANGE"),
             ValidationExceptionType::RoleArnNotAssumable => write!(f, "ROLE_ARN_NOT_ASSUMABLE"),
             ValidationExceptionType::SourceDisruptionsEnabledIncorrectly => write!(f, "SOURCE_DISRUPTIONS_ENABLED_INCORRECTLY"),
+            ValidationExceptionType::StartTagTimeOffsetInvalid => write!(f, "START_TAG_TIME_OFFSET_INVALID"),
             ValidationExceptionType::TimingSourceMissing => write!(f, "TIMING_SOURCE_MISSING"),
             ValidationExceptionType::TsContainerTypeWithDashManifest => write!(f, "TS_CONTAINER_TYPE_WITH_DASH_MANIFEST"),
             ValidationExceptionType::UpdatePeriodSmallerThanSegmentDuration => write!(f, "UPDATE_PERIOD_SMALLER_THAN_SEGMENT_DURATION"),

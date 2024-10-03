@@ -15,23 +15,29 @@ pub fn ser_create_hls_manifest_configuration(
         crate::protocol_serde::shape_scte_hls::ser_scte_hls(&mut object_3, var_2)?;
         object_3.finish();
     }
-    if let Some(var_4) = &input.manifest_window_seconds {
+    if let Some(var_4) = &input.start_tag {
+        #[allow(unused_mut)]
+        let mut object_5 = object.key("StartTag").start_object();
+        crate::protocol_serde::shape_start_tag::ser_start_tag(&mut object_5, var_4)?;
+        object_5.finish();
+    }
+    if let Some(var_6) = &input.manifest_window_seconds {
         object.key("ManifestWindowSeconds").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_4).into()),
+            ::aws_smithy_types::Number::NegInt((*var_6).into()),
         );
     }
-    if let Some(var_5) = &input.program_date_time_interval_seconds {
+    if let Some(var_7) = &input.program_date_time_interval_seconds {
         object.key("ProgramDateTimeIntervalSeconds").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_5).into()),
+            ::aws_smithy_types::Number::NegInt((*var_7).into()),
         );
     }
-    if let Some(var_6) = &input.filter_configuration {
+    if let Some(var_8) = &input.filter_configuration {
         #[allow(unused_mut)]
-        let mut object_7 = object.key("FilterConfiguration").start_object();
-        crate::protocol_serde::shape_filter_configuration::ser_filter_configuration(&mut object_7, var_6)?;
-        object_7.finish();
+        let mut object_9 = object.key("FilterConfiguration").start_object();
+        crate::protocol_serde::shape_filter_configuration::ser_filter_configuration(&mut object_9, var_8)?;
+        object_9.finish();
     }
     Ok(())
 }

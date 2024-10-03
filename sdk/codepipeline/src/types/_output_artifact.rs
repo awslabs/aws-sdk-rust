@@ -8,6 +8,8 @@ pub struct OutputArtifact {
     /// <p>The input artifact of an action must exactly match the output artifact declared in a preceding action, but the input artifact does not have to be the next action in strict sequence from the action that provided the output artifact. Actions in parallel can declare different output artifacts, which are in turn consumed by different following actions.</p>
     /// <p>Output artifact names must be unique within a pipeline.</p>
     pub name: ::std::string::String,
+    /// <p>The files that you want to associate with the output artifact that will be exported from the compute action.</p>
+    pub files: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl OutputArtifact {
     /// <p>The name of the output of an artifact, such as "My App".</p>
@@ -16,6 +18,12 @@ impl OutputArtifact {
     pub fn name(&self) -> &str {
         use std::ops::Deref;
         self.name.deref()
+    }
+    /// <p>The files that you want to associate with the output artifact that will be exported from the compute action.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.files.is_none()`.
+    pub fn files(&self) -> &[::std::string::String] {
+        self.files.as_deref().unwrap_or_default()
     }
 }
 impl OutputArtifact {
@@ -30,6 +38,7 @@ impl OutputArtifact {
 #[non_exhaustive]
 pub struct OutputArtifactBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) files: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl OutputArtifactBuilder {
     /// <p>The name of the output of an artifact, such as "My App".</p>
@@ -53,6 +62,26 @@ impl OutputArtifactBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
+    /// Appends an item to `files`.
+    ///
+    /// To override the contents of this collection use [`set_files`](Self::set_files).
+    ///
+    /// <p>The files that you want to associate with the output artifact that will be exported from the compute action.</p>
+    pub fn files(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.files.unwrap_or_default();
+        v.push(input.into());
+        self.files = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The files that you want to associate with the output artifact that will be exported from the compute action.</p>
+    pub fn set_files(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.files = input;
+        self
+    }
+    /// <p>The files that you want to associate with the output artifact that will be exported from the compute action.</p>
+    pub fn get_files(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.files
+    }
     /// Consumes the builder and constructs a [`OutputArtifact`](crate::types::OutputArtifact).
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::OutputArtifactBuilder::name)
@@ -64,6 +93,7 @@ impl OutputArtifactBuilder {
                     "name was not specified but it is required when building OutputArtifact",
                 )
             })?,
+            files: self.files,
         })
     }
 }

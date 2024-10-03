@@ -28,43 +28,61 @@ pub fn ser_action_declaration(
         }
         object_5.finish();
     }
-    if let Some(var_8) = &input.output_artifacts {
-        let mut array_9 = object.key("outputArtifacts").start_array();
+    if let Some(var_8) = &input.commands {
+        let mut array_9 = object.key("commands").start_array();
         for item_10 in var_8 {
             {
-                #[allow(unused_mut)]
-                let mut object_11 = array_9.value().start_object();
-                crate::protocol_serde::shape_output_artifact::ser_output_artifact(&mut object_11, item_10)?;
-                object_11.finish();
+                array_9.value().string(item_10.as_str());
             }
         }
         array_9.finish();
     }
-    if let Some(var_12) = &input.input_artifacts {
-        let mut array_13 = object.key("inputArtifacts").start_array();
-        for item_14 in var_12 {
+    if let Some(var_11) = &input.output_artifacts {
+        let mut array_12 = object.key("outputArtifacts").start_array();
+        for item_13 in var_11 {
             {
                 #[allow(unused_mut)]
-                let mut object_15 = array_13.value().start_object();
-                crate::protocol_serde::shape_input_artifact::ser_input_artifact(&mut object_15, item_14)?;
-                object_15.finish();
+                let mut object_14 = array_12.value().start_object();
+                crate::protocol_serde::shape_output_artifact::ser_output_artifact(&mut object_14, item_13)?;
+                object_14.finish();
             }
         }
-        array_13.finish();
+        array_12.finish();
     }
-    if let Some(var_16) = &input.role_arn {
-        object.key("roleArn").string(var_16.as_str());
+    if let Some(var_15) = &input.input_artifacts {
+        let mut array_16 = object.key("inputArtifacts").start_array();
+        for item_17 in var_15 {
+            {
+                #[allow(unused_mut)]
+                let mut object_18 = array_16.value().start_object();
+                crate::protocol_serde::shape_input_artifact::ser_input_artifact(&mut object_18, item_17)?;
+                object_18.finish();
+            }
+        }
+        array_16.finish();
     }
-    if let Some(var_17) = &input.region {
-        object.key("region").string(var_17.as_str());
+    if let Some(var_19) = &input.output_variables {
+        let mut array_20 = object.key("outputVariables").start_array();
+        for item_21 in var_19 {
+            {
+                array_20.value().string(item_21.as_str());
+            }
+        }
+        array_20.finish();
     }
-    if let Some(var_18) = &input.namespace {
-        object.key("namespace").string(var_18.as_str());
+    if let Some(var_22) = &input.role_arn {
+        object.key("roleArn").string(var_22.as_str());
     }
-    if let Some(var_19) = &input.timeout_in_minutes {
+    if let Some(var_23) = &input.region {
+        object.key("region").string(var_23.as_str());
+    }
+    if let Some(var_24) = &input.namespace {
+        object.key("namespace").string(var_24.as_str());
+    }
+    if let Some(var_25) = &input.timeout_in_minutes {
         object.key("timeoutInMinutes").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_19).into()),
+            ::aws_smithy_types::Number::NegInt((*var_25).into()),
         );
     }
     Ok(())
@@ -107,12 +125,19 @@ where
                                 tokens,
                             )?);
                         }
+                        "commands" => {
+                            builder = builder.set_commands(crate::protocol_serde::shape_command_list::de_command_list(tokens)?);
+                        }
                         "outputArtifacts" => {
                             builder =
                                 builder.set_output_artifacts(crate::protocol_serde::shape_output_artifact_list::de_output_artifact_list(tokens)?);
                         }
                         "inputArtifacts" => {
                             builder = builder.set_input_artifacts(crate::protocol_serde::shape_input_artifact_list::de_input_artifact_list(tokens)?);
+                        }
+                        "outputVariables" => {
+                            builder =
+                                builder.set_output_variables(crate::protocol_serde::shape_output_variable_list::de_output_variable_list(tokens)?);
                         }
                         "roleArn" => {
                             builder = builder.set_role_arn(

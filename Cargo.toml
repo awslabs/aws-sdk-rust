@@ -1,13 +1,13 @@
 [workspace]
 resolver = "2"
 exclude = [
-    "examples/cross_service",
-    "examples/examples",
-    "examples/test-utils",
     "examples/lambda",
+    "examples/test-utils",
     "examples/webassembly",
-    "tests/no-default-features",
-    "tests/webassembly"
+    "examples/examples",
+    "examples/cross_service",
+    "tests/webassembly",
+    "tests/no-default-features"
 ]
 members = [
     "sdk/accessanalyzer",
@@ -268,6 +268,7 @@ members = [
     "sdk/marketplacedeployment",
     "sdk/marketplaceentitlement",
     "sdk/marketplacemetering",
+    "sdk/marketplacereporting",
     "sdk/mediaconnect",
     "sdk/mediaconvert",
     "sdk/medialive",

@@ -56,6 +56,9 @@ where
                             builder =
                                 builder.set_filter_configuration(crate::protocol_serde::shape_filter_configuration::de_filter_configuration(tokens)?);
                         }
+                        "StartTag" => {
+                            builder = builder.set_start_tag(crate::protocol_serde::shape_start_tag::de_start_tag(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

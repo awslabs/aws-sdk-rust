@@ -326,6 +326,18 @@ pub(crate) fn asset_bundle_export_job_data_source_override_properties_correct_er
     builder
 }
 
+pub(crate) fn asset_bundle_export_job_folder_override_properties_correct_errors(
+    mut builder: crate::types::builders::AssetBundleExportJobFolderOverridePropertiesBuilder,
+) -> crate::types::builders::AssetBundleExportJobFolderOverridePropertiesBuilder {
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.properties.is_none() {
+        builder.properties = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn asset_bundle_export_job_refresh_schedule_override_properties_correct_errors(
     mut builder: crate::types::builders::AssetBundleExportJobRefreshScheduleOverridePropertiesBuilder,
 ) -> crate::types::builders::AssetBundleExportJobRefreshScheduleOverridePropertiesBuilder {
@@ -493,6 +505,36 @@ pub(crate) fn asset_bundle_import_job_data_source_override_tags_correct_errors(
 ) -> crate::types::builders::AssetBundleImportJobDataSourceOverrideTagsBuilder {
     if builder.data_source_ids.is_none() {
         builder.data_source_ids = Some(Default::default())
+    }
+    if builder.tags.is_none() {
+        builder.tags = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn asset_bundle_import_job_folder_override_parameters_correct_errors(
+    mut builder: crate::types::builders::AssetBundleImportJobFolderOverrideParametersBuilder,
+) -> crate::types::builders::AssetBundleImportJobFolderOverrideParametersBuilder {
+    if builder.folder_id.is_none() {
+        builder.folder_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn asset_bundle_import_job_folder_override_permissions_correct_errors(
+    mut builder: crate::types::builders::AssetBundleImportJobFolderOverridePermissionsBuilder,
+) -> crate::types::builders::AssetBundleImportJobFolderOverridePermissionsBuilder {
+    if builder.folder_ids.is_none() {
+        builder.folder_ids = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn asset_bundle_import_job_folder_override_tags_correct_errors(
+    mut builder: crate::types::builders::AssetBundleImportJobFolderOverrideTagsBuilder,
+) -> crate::types::builders::AssetBundleImportJobFolderOverrideTagsBuilder {
+    if builder.folder_ids.is_none() {
+        builder.folder_ids = Some(Default::default())
     }
     if builder.tags.is_none() {
         builder.tags = Some(Default::default())
