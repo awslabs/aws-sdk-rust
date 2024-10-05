@@ -18,11 +18,11 @@ fn stub_config(http_client: impl HttpClient + 'static) -> Config {
         .build()
 }
 
-fn validate_query_string(expected: &str, actual: &str) {
-    let expected = expected.split('&').collect::<HashSet<&str>>();
-    let actual = actual.split('&').collect::<HashSet<&str>>();
+fn validate_query_string(expected_str: &str, actual_str: &str) {
+    assert_eq!(expected_str.len(), actual_str.len());
+    let expected = expected_str.split('&').collect::<HashSet<_>>();
+    let actual = actual_str.split('&').collect::<HashSet<_>>();
     assert_eq!(expected, actual);
-    assert_eq!(expected.len(), actual.len());
 }
 
 /// See https://github.com/awslabs/aws-sdk-rust/issues/391
