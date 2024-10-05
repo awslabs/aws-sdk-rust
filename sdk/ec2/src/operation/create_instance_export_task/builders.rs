@@ -109,6 +109,25 @@ impl CreateInstanceExportTaskFluentBuilder {
         self.config_override = config_override;
         self
     }
+    ///
+    /// Appends an item to `TagSpecifications`.
+    ///
+    /// To override the contents of this collection use [`set_tag_specifications`](Self::set_tag_specifications).
+    ///
+    /// <p>The tags to apply to the export instance task during creation.</p>
+    pub fn tag_specifications(mut self, input: crate::types::TagSpecification) -> Self {
+        self.inner = self.inner.tag_specifications(input);
+        self
+    }
+    /// <p>The tags to apply to the export instance task during creation.</p>
+    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>) -> Self {
+        self.inner = self.inner.set_tag_specifications(input);
+        self
+    }
+    /// <p>The tags to apply to the export instance task during creation.</p>
+    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+        self.inner.get_tag_specifications()
+    }
     /// <p>A description for the conversion task or the resource being exported. The maximum length is 255 characters.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -122,20 +141,6 @@ impl CreateInstanceExportTaskFluentBuilder {
     /// <p>A description for the conversion task or the resource being exported. The maximum length is 255 characters.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
-    }
-    /// <p>The format and location for an export instance task.</p>
-    pub fn export_to_s3_task(mut self, input: crate::types::ExportToS3TaskSpecification) -> Self {
-        self.inner = self.inner.export_to_s3_task(input);
-        self
-    }
-    /// <p>The format and location for an export instance task.</p>
-    pub fn set_export_to_s3_task(mut self, input: ::std::option::Option<crate::types::ExportToS3TaskSpecification>) -> Self {
-        self.inner = self.inner.set_export_to_s3_task(input);
-        self
-    }
-    /// <p>The format and location for an export instance task.</p>
-    pub fn get_export_to_s3_task(&self) -> &::std::option::Option<crate::types::ExportToS3TaskSpecification> {
-        self.inner.get_export_to_s3_task()
     }
     /// <p>The ID of the instance.</p>
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -165,23 +170,18 @@ impl CreateInstanceExportTaskFluentBuilder {
     pub fn get_target_environment(&self) -> &::std::option::Option<crate::types::ExportEnvironment> {
         self.inner.get_target_environment()
     }
-    ///
-    /// Appends an item to `TagSpecifications`.
-    ///
-    /// To override the contents of this collection use [`set_tag_specifications`](Self::set_tag_specifications).
-    ///
-    /// <p>The tags to apply to the export instance task during creation.</p>
-    pub fn tag_specifications(mut self, input: crate::types::TagSpecification) -> Self {
-        self.inner = self.inner.tag_specifications(input);
+    /// <p>The format and location for an export instance task.</p>
+    pub fn export_to_s3_task(mut self, input: crate::types::ExportToS3TaskSpecification) -> Self {
+        self.inner = self.inner.export_to_s3_task(input);
         self
     }
-    /// <p>The tags to apply to the export instance task during creation.</p>
-    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>) -> Self {
-        self.inner = self.inner.set_tag_specifications(input);
+    /// <p>The format and location for an export instance task.</p>
+    pub fn set_export_to_s3_task(mut self, input: ::std::option::Option<crate::types::ExportToS3TaskSpecification>) -> Self {
+        self.inner = self.inner.set_export_to_s3_task(input);
         self
     }
-    /// <p>The tags to apply to the export instance task during creation.</p>
-    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
-        self.inner.get_tag_specifications()
+    /// <p>The format and location for an export instance task.</p>
+    pub fn get_export_to_s3_task(&self) -> &::std::option::Option<crate::types::ExportToS3TaskSpecification> {
+        self.inner.get_export_to_s3_task()
     }
 }

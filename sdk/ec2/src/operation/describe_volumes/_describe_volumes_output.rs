@@ -3,22 +3,22 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeVolumesOutput {
-    /// <p>Information about the volumes.</p>
-    pub volumes: ::std::option::Option<::std::vec::Vec<crate::types::Volume>>,
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
+    /// <p>Information about the volumes.</p>
+    pub volumes: ::std::option::Option<::std::vec::Vec<crate::types::Volume>>,
     _request_id: Option<String>,
 }
 impl DescribeVolumesOutput {
+    /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
     /// <p>Information about the volumes.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.volumes.is_none()`.
     pub fn volumes(&self) -> &[crate::types::Volume] {
         self.volumes.as_deref().unwrap_or_default()
-    }
-    /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
-        self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeVolumesOutput {
@@ -37,11 +37,25 @@ impl DescribeVolumesOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct DescribeVolumesOutputBuilder {
-    pub(crate) volumes: ::std::option::Option<::std::vec::Vec<crate::types::Volume>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
+    pub(crate) volumes: ::std::option::Option<::std::vec::Vec<crate::types::Volume>>,
     _request_id: Option<String>,
 }
 impl DescribeVolumesOutputBuilder {
+    /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.next_token = input;
+        self
+    }
+    /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `volumes`.
     ///
     /// To override the contents of this collection use [`set_volumes`](Self::set_volumes).
@@ -62,20 +76,6 @@ impl DescribeVolumesOutputBuilder {
     pub fn get_volumes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Volume>> {
         &self.volumes
     }
-    /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
-    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.next_token = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
-    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
-    }
-    /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
-    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
-        &self.next_token
-    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -88,8 +88,8 @@ impl DescribeVolumesOutputBuilder {
     /// Consumes the builder and constructs a [`DescribeVolumesOutput`](crate::operation::describe_volumes::DescribeVolumesOutput).
     pub fn build(self) -> crate::operation::describe_volumes::DescribeVolumesOutput {
         crate::operation::describe_volumes::DescribeVolumesOutput {
-            volumes: self.volumes,
             next_token: self.next_token,
+            volumes: self.volumes,
             _request_id: self._request_id,
         }
     }

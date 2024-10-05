@@ -6,55 +6,55 @@ pub fn ser_report_instance_status_input_input_input(
     #[allow(unused_mut)]
     let mut writer = ::aws_smithy_query::QueryWriter::new(&mut out, "ReportInstanceStatus", "2016-11-15");
     #[allow(unused_mut)]
-    let mut scope_1 = writer.prefix("Description");
-    if let Some(var_2) = &input.description {
-        scope_1.string(var_2);
+    let mut scope_1 = writer.prefix("DryRun");
+    if let Some(var_2) = &input.dry_run {
+        scope_1.boolean(*var_2);
     }
     #[allow(unused_mut)]
-    let mut scope_3 = writer.prefix("DryRun");
-    if let Some(var_4) = &input.dry_run {
-        scope_3.boolean(*var_4);
-    }
-    #[allow(unused_mut)]
-    let mut scope_5 = writer.prefix("EndTime");
-    if let Some(var_6) = &input.end_time {
-        scope_5.date_time(var_6, ::aws_smithy_types::date_time::Format::DateTime)?;
-    }
-    #[allow(unused_mut)]
-    let mut scope_7 = writer.prefix("InstanceId");
-    if let Some(var_8) = &input.instances {
-        if !var_8.is_empty() {
-            let mut list_10 = scope_7.start_list(true, Some("InstanceId"));
-            for item_9 in var_8 {
+    let mut scope_3 = writer.prefix("InstanceId");
+    if let Some(var_4) = &input.instances {
+        if !var_4.is_empty() {
+            let mut list_6 = scope_3.start_list(true, Some("InstanceId"));
+            for item_5 in var_4 {
                 #[allow(unused_mut)]
-                let mut entry_11 = list_10.entry();
-                entry_11.string(item_9);
+                let mut entry_7 = list_6.entry();
+                entry_7.string(item_5);
             }
-            list_10.finish();
+            list_6.finish();
         }
     }
     #[allow(unused_mut)]
-    let mut scope_12 = writer.prefix("ReasonCode");
-    if let Some(var_13) = &input.reason_codes {
-        if !var_13.is_empty() {
-            let mut list_15 = scope_12.start_list(true, Some("item"));
-            for item_14 in var_13 {
+    let mut scope_8 = writer.prefix("Status");
+    if let Some(var_9) = &input.status {
+        scope_8.string(var_9.as_str());
+    }
+    #[allow(unused_mut)]
+    let mut scope_10 = writer.prefix("StartTime");
+    if let Some(var_11) = &input.start_time {
+        scope_10.date_time(var_11, ::aws_smithy_types::date_time::Format::DateTime)?;
+    }
+    #[allow(unused_mut)]
+    let mut scope_12 = writer.prefix("EndTime");
+    if let Some(var_13) = &input.end_time {
+        scope_12.date_time(var_13, ::aws_smithy_types::date_time::Format::DateTime)?;
+    }
+    #[allow(unused_mut)]
+    let mut scope_14 = writer.prefix("ReasonCode");
+    if let Some(var_15) = &input.reason_codes {
+        if !var_15.is_empty() {
+            let mut list_17 = scope_14.start_list(true, Some("item"));
+            for item_16 in var_15 {
                 #[allow(unused_mut)]
-                let mut entry_16 = list_15.entry();
-                entry_16.string(item_14.as_str());
+                let mut entry_18 = list_17.entry();
+                entry_18.string(item_16.as_str());
             }
-            list_15.finish();
+            list_17.finish();
         }
     }
     #[allow(unused_mut)]
-    let mut scope_17 = writer.prefix("StartTime");
-    if let Some(var_18) = &input.start_time {
-        scope_17.date_time(var_18, ::aws_smithy_types::date_time::Format::DateTime)?;
-    }
-    #[allow(unused_mut)]
-    let mut scope_19 = writer.prefix("Status");
-    if let Some(var_20) = &input.status {
-        scope_19.string(var_20.as_str());
+    let mut scope_19 = writer.prefix("Description");
+    if let Some(var_20) = &input.description {
+        scope_19.string(var_20);
     }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))

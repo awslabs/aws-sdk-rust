@@ -109,25 +109,6 @@ impl DescribeExportTasksFluentBuilder {
         self
     }
     ///
-    /// Appends an item to `ExportTaskIds`.
-    ///
-    /// To override the contents of this collection use [`set_export_task_ids`](Self::set_export_task_ids).
-    ///
-    /// <p>The export task IDs.</p>
-    pub fn export_task_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.inner = self.inner.export_task_ids(input.into());
-        self
-    }
-    /// <p>The export task IDs.</p>
-    pub fn set_export_task_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.inner = self.inner.set_export_task_ids(input);
-        self
-    }
-    /// <p>The export task IDs.</p>
-    pub fn get_export_task_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
-        self.inner.get_export_task_ids()
-    }
-    ///
     /// Appends an item to `Filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
@@ -145,5 +126,24 @@ impl DescribeExportTasksFluentBuilder {
     /// <p>the filters for the export tasks.</p>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         self.inner.get_filters()
+    }
+    ///
+    /// Appends an item to `ExportTaskIds`.
+    ///
+    /// To override the contents of this collection use [`set_export_task_ids`](Self::set_export_task_ids).
+    ///
+    /// <p>The export task IDs.</p>
+    pub fn export_task_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.export_task_ids(input.into());
+        self
+    }
+    /// <p>The export task IDs.</p>
+    pub fn set_export_task_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.inner = self.inner.set_export_task_ids(input);
+        self
+    }
+    /// <p>The export task IDs.</p>
+    pub fn get_export_task_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_export_task_ids()
     }
 }

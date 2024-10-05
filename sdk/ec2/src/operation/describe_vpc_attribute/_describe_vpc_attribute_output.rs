@@ -3,21 +3,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeVpcAttributeOutput {
-    /// <p>The ID of the VPC.</p>
-    pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the instances launched in the VPC get DNS hostnames. If this attribute is <code>true</code>, instances in the VPC get DNS hostnames; otherwise, they do not.</p>
     pub enable_dns_hostnames: ::std::option::Option<crate::types::AttributeBooleanValue>,
     /// <p>Indicates whether DNS resolution is enabled for the VPC. If this attribute is <code>true</code>, the Amazon DNS server resolves DNS hostnames for your instances to their corresponding IP addresses; otherwise, it does not.</p>
     pub enable_dns_support: ::std::option::Option<crate::types::AttributeBooleanValue>,
     /// <p>Indicates whether Network Address Usage metrics are enabled for your VPC.</p>
     pub enable_network_address_usage_metrics: ::std::option::Option<crate::types::AttributeBooleanValue>,
+    /// <p>The ID of the VPC.</p>
+    pub vpc_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeVpcAttributeOutput {
-    /// <p>The ID of the VPC.</p>
-    pub fn vpc_id(&self) -> ::std::option::Option<&str> {
-        self.vpc_id.as_deref()
-    }
     /// <p>Indicates whether the instances launched in the VPC get DNS hostnames. If this attribute is <code>true</code>, instances in the VPC get DNS hostnames; otherwise, they do not.</p>
     pub fn enable_dns_hostnames(&self) -> ::std::option::Option<&crate::types::AttributeBooleanValue> {
         self.enable_dns_hostnames.as_ref()
@@ -29,6 +25,10 @@ impl DescribeVpcAttributeOutput {
     /// <p>Indicates whether Network Address Usage metrics are enabled for your VPC.</p>
     pub fn enable_network_address_usage_metrics(&self) -> ::std::option::Option<&crate::types::AttributeBooleanValue> {
         self.enable_network_address_usage_metrics.as_ref()
+    }
+    /// <p>The ID of the VPC.</p>
+    pub fn vpc_id(&self) -> ::std::option::Option<&str> {
+        self.vpc_id.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeVpcAttributeOutput {
@@ -47,27 +47,13 @@ impl DescribeVpcAttributeOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct DescribeVpcAttributeOutputBuilder {
-    pub(crate) vpc_id: ::std::option::Option<::std::string::String>,
     pub(crate) enable_dns_hostnames: ::std::option::Option<crate::types::AttributeBooleanValue>,
     pub(crate) enable_dns_support: ::std::option::Option<crate::types::AttributeBooleanValue>,
     pub(crate) enable_network_address_usage_metrics: ::std::option::Option<crate::types::AttributeBooleanValue>,
+    pub(crate) vpc_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeVpcAttributeOutputBuilder {
-    /// <p>The ID of the VPC.</p>
-    pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.vpc_id = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>The ID of the VPC.</p>
-    pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vpc_id = input;
-        self
-    }
-    /// <p>The ID of the VPC.</p>
-    pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
-        &self.vpc_id
-    }
     /// <p>Indicates whether the instances launched in the VPC get DNS hostnames. If this attribute is <code>true</code>, instances in the VPC get DNS hostnames; otherwise, they do not.</p>
     pub fn enable_dns_hostnames(mut self, input: crate::types::AttributeBooleanValue) -> Self {
         self.enable_dns_hostnames = ::std::option::Option::Some(input);
@@ -110,6 +96,20 @@ impl DescribeVpcAttributeOutputBuilder {
     pub fn get_enable_network_address_usage_metrics(&self) -> &::std::option::Option<crate::types::AttributeBooleanValue> {
         &self.enable_network_address_usage_metrics
     }
+    /// <p>The ID of the VPC.</p>
+    pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.vpc_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the VPC.</p>
+    pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.vpc_id = input;
+        self
+    }
+    /// <p>The ID of the VPC.</p>
+    pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_id
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -122,10 +122,10 @@ impl DescribeVpcAttributeOutputBuilder {
     /// Consumes the builder and constructs a [`DescribeVpcAttributeOutput`](crate::operation::describe_vpc_attribute::DescribeVpcAttributeOutput).
     pub fn build(self) -> crate::operation::describe_vpc_attribute::DescribeVpcAttributeOutput {
         crate::operation::describe_vpc_attribute::DescribeVpcAttributeOutput {
-            vpc_id: self.vpc_id,
             enable_dns_hostnames: self.enable_dns_hostnames,
             enable_dns_support: self.enable_dns_support,
             enable_network_address_usage_metrics: self.enable_network_address_usage_metrics,
+            vpc_id: self.vpc_id,
             _request_id: self._request_id,
         }
     }

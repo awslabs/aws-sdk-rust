@@ -57,18 +57,8 @@ pub fn de_describe_volumes_modifications(
     }
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
-            s if s.matches("volumeModificationSet") /* VolumesModifications com.amazonaws.ec2.synthetic#DescribeVolumesModificationsOutput$VolumesModifications */ =>  {
-                let var_1 =
-                    Some(
-                        crate::protocol_serde::shape_volume_modification_list::de_volume_modification_list(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_volumes_modifications(var_1);
-            }
-            ,
             s if s.matches("nextToken") /* NextToken com.amazonaws.ec2.synthetic#DescribeVolumesModificationsOutput$NextToken */ =>  {
-                let var_2 =
+                let var_1 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -77,7 +67,17 @@ pub fn de_describe_volumes_modifications(
                         ?
                     )
                 ;
-                builder = builder.set_next_token(var_2);
+                builder = builder.set_next_token(var_1);
+            }
+            ,
+            s if s.matches("volumeModificationSet") /* VolumesModifications com.amazonaws.ec2.synthetic#DescribeVolumesModificationsOutput$VolumesModifications */ =>  {
+                let var_2 =
+                    Some(
+                        crate::protocol_serde::shape_volume_modification_list::de_volume_modification_list(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_volumes_modifications(var_2);
             }
             ,
             _ => {}

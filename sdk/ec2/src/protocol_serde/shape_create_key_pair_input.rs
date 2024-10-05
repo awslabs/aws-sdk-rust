@@ -11,32 +11,32 @@ pub fn ser_create_key_pair_input_input_input(
         scope_1.string(var_2);
     }
     #[allow(unused_mut)]
-    let mut scope_3 = writer.prefix("DryRun");
-    if let Some(var_4) = &input.dry_run {
-        scope_3.boolean(*var_4);
+    let mut scope_3 = writer.prefix("KeyType");
+    if let Some(var_4) = &input.key_type {
+        scope_3.string(var_4.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_5 = writer.prefix("KeyType");
-    if let Some(var_6) = &input.key_type {
-        scope_5.string(var_6.as_str());
-    }
-    #[allow(unused_mut)]
-    let mut scope_7 = writer.prefix("TagSpecification");
-    if let Some(var_8) = &input.tag_specifications {
-        if !var_8.is_empty() {
-            let mut list_10 = scope_7.start_list(true, Some("item"));
-            for item_9 in var_8 {
+    let mut scope_5 = writer.prefix("TagSpecification");
+    if let Some(var_6) = &input.tag_specifications {
+        if !var_6.is_empty() {
+            let mut list_8 = scope_5.start_list(true, Some("item"));
+            for item_7 in var_6 {
                 #[allow(unused_mut)]
-                let mut entry_11 = list_10.entry();
-                crate::protocol_serde::shape_tag_specification::ser_tag_specification(entry_11, item_9)?;
+                let mut entry_9 = list_8.entry();
+                crate::protocol_serde::shape_tag_specification::ser_tag_specification(entry_9, item_7)?;
             }
-            list_10.finish();
+            list_8.finish();
         }
     }
     #[allow(unused_mut)]
-    let mut scope_12 = writer.prefix("KeyFormat");
-    if let Some(var_13) = &input.key_format {
-        scope_12.string(var_13.as_str());
+    let mut scope_10 = writer.prefix("KeyFormat");
+    if let Some(var_11) = &input.key_format {
+        scope_10.string(var_11.as_str());
+    }
+    #[allow(unused_mut)]
+    let mut scope_12 = writer.prefix("DryRun");
+    if let Some(var_13) = &input.dry_run {
+        scope_12.boolean(*var_13);
     }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))

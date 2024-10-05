@@ -5,13 +5,13 @@ pub fn ser_ip_range(
     input: &crate::types::IpRange,
 ) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
-    let mut scope_1 = writer.prefix("CidrIp");
-    if let Some(var_2) = &input.cidr_ip {
+    let mut scope_1 = writer.prefix("Description");
+    if let Some(var_2) = &input.description {
         scope_1.string(var_2);
     }
     #[allow(unused_mut)]
-    let mut scope_3 = writer.prefix("Description");
-    if let Some(var_4) = &input.description {
+    let mut scope_3 = writer.prefix("CidrIp");
+    if let Some(var_4) = &input.cidr_ip {
         scope_3.string(var_4);
     }
     Ok(())
@@ -23,7 +23,7 @@ pub fn de_ip_range(decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder) -> Res
     let mut builder = crate::types::IpRange::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
-            s if s.matches("cidrIp") /* CidrIp com.amazonaws.ec2#IpRange$CidrIp */ =>  {
+            s if s.matches("description") /* Description com.amazonaws.ec2#IpRange$Description */ =>  {
                 let var_5 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -33,10 +33,10 @@ pub fn de_ip_range(decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder) -> Res
                         ?
                     )
                 ;
-                builder = builder.set_cidr_ip(var_5);
+                builder = builder.set_description(var_5);
             }
             ,
-            s if s.matches("description") /* Description com.amazonaws.ec2#IpRange$Description */ =>  {
+            s if s.matches("cidrIp") /* CidrIp com.amazonaws.ec2#IpRange$CidrIp */ =>  {
                 let var_6 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -46,7 +46,7 @@ pub fn de_ip_range(decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder) -> Res
                         ?
                     )
                 ;
-                builder = builder.set_description(var_6);
+                builder = builder.set_cidr_ip(var_6);
             }
             ,
             _ => {}

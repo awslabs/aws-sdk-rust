@@ -48,7 +48,7 @@ pub fn de_allocate_address(
     }
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
-            s if s.matches("publicIp") /* PublicIp com.amazonaws.ec2.synthetic#AllocateAddressOutput$PublicIp */ =>  {
+            s if s.matches("allocationId") /* AllocationId com.amazonaws.ec2.synthetic#AllocateAddressOutput$AllocationId */ =>  {
                 let var_1 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -58,10 +58,10 @@ pub fn de_allocate_address(
                         ?
                     )
                 ;
-                builder = builder.set_public_ip(var_1);
+                builder = builder.set_allocation_id(var_1);
             }
             ,
-            s if s.matches("allocationId") /* AllocationId com.amazonaws.ec2.synthetic#AllocateAddressOutput$AllocationId */ =>  {
+            s if s.matches("publicIpv4Pool") /* PublicIpv4Pool com.amazonaws.ec2.synthetic#AllocateAddressOutput$PublicIpv4Pool */ =>  {
                 let var_2 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -71,10 +71,10 @@ pub fn de_allocate_address(
                         ?
                     )
                 ;
-                builder = builder.set_allocation_id(var_2);
+                builder = builder.set_public_ipv4_pool(var_2);
             }
             ,
-            s if s.matches("publicIpv4Pool") /* PublicIpv4Pool com.amazonaws.ec2.synthetic#AllocateAddressOutput$PublicIpv4Pool */ =>  {
+            s if s.matches("networkBorderGroup") /* NetworkBorderGroup com.amazonaws.ec2.synthetic#AllocateAddressOutput$NetworkBorderGroup */ =>  {
                 let var_3 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -84,24 +84,11 @@ pub fn de_allocate_address(
                         ?
                     )
                 ;
-                builder = builder.set_public_ipv4_pool(var_3);
-            }
-            ,
-            s if s.matches("networkBorderGroup") /* NetworkBorderGroup com.amazonaws.ec2.synthetic#AllocateAddressOutput$NetworkBorderGroup */ =>  {
-                let var_4 =
-                    Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_network_border_group(var_4);
+                builder = builder.set_network_border_group(var_3);
             }
             ,
             s if s.matches("domain") /* Domain com.amazonaws.ec2.synthetic#AllocateAddressOutput$Domain */ =>  {
-                let var_5 =
+                let var_4 =
                     Some(
                         Result::<crate::types::DomainType, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::DomainType::from(
@@ -111,10 +98,23 @@ pub fn de_allocate_address(
                         ?
                     )
                 ;
-                builder = builder.set_domain(var_5);
+                builder = builder.set_domain(var_4);
             }
             ,
             s if s.matches("customerOwnedIp") /* CustomerOwnedIp com.amazonaws.ec2.synthetic#AllocateAddressOutput$CustomerOwnedIp */ =>  {
+                let var_5 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_customer_owned_ip(var_5);
+            }
+            ,
+            s if s.matches("customerOwnedIpv4Pool") /* CustomerOwnedIpv4Pool com.amazonaws.ec2.synthetic#AllocateAddressOutput$CustomerOwnedIpv4Pool */ =>  {
                 let var_6 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -124,10 +124,10 @@ pub fn de_allocate_address(
                         ?
                     )
                 ;
-                builder = builder.set_customer_owned_ip(var_6);
+                builder = builder.set_customer_owned_ipv4_pool(var_6);
             }
             ,
-            s if s.matches("customerOwnedIpv4Pool") /* CustomerOwnedIpv4Pool com.amazonaws.ec2.synthetic#AllocateAddressOutput$CustomerOwnedIpv4Pool */ =>  {
+            s if s.matches("carrierIp") /* CarrierIp com.amazonaws.ec2.synthetic#AllocateAddressOutput$CarrierIp */ =>  {
                 let var_7 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -137,10 +137,10 @@ pub fn de_allocate_address(
                         ?
                     )
                 ;
-                builder = builder.set_customer_owned_ipv4_pool(var_7);
+                builder = builder.set_carrier_ip(var_7);
             }
             ,
-            s if s.matches("carrierIp") /* CarrierIp com.amazonaws.ec2.synthetic#AllocateAddressOutput$CarrierIp */ =>  {
+            s if s.matches("publicIp") /* PublicIp com.amazonaws.ec2.synthetic#AllocateAddressOutput$PublicIp */ =>  {
                 let var_8 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -150,7 +150,7 @@ pub fn de_allocate_address(
                         ?
                     )
                 ;
-                builder = builder.set_carrier_ip(var_8);
+                builder = builder.set_public_ip(var_8);
             }
             ,
             _ => {}

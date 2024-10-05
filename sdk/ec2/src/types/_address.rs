@@ -4,10 +4,6 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Address {
-    /// <p>The ID of the instance that the address is associated with (if any).</p>
-    pub instance_id: ::std::option::Option<::std::string::String>,
-    /// <p>The Elastic IP address.</p>
-    pub public_ip: ::std::option::Option<::std::string::String>,
     /// <p>The ID representing the allocation of the address.</p>
     pub allocation_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID representing the association of the address with an instance.</p>
@@ -32,16 +28,12 @@ pub struct Address {
     pub customer_owned_ipv4_pool: ::std::option::Option<::std::string::String>,
     /// <p>The carrier IP address associated. This option is only available for network interfaces which reside in a subnet in a Wavelength Zone (for example an EC2 instance).</p>
     pub carrier_ip: ::std::option::Option<::std::string::String>,
+    /// <p>The ID of the instance that the address is associated with (if any).</p>
+    pub instance_id: ::std::option::Option<::std::string::String>,
+    /// <p>The Elastic IP address.</p>
+    pub public_ip: ::std::option::Option<::std::string::String>,
 }
 impl Address {
-    /// <p>The ID of the instance that the address is associated with (if any).</p>
-    pub fn instance_id(&self) -> ::std::option::Option<&str> {
-        self.instance_id.as_deref()
-    }
-    /// <p>The Elastic IP address.</p>
-    pub fn public_ip(&self) -> ::std::option::Option<&str> {
-        self.public_ip.as_deref()
-    }
     /// <p>The ID representing the allocation of the address.</p>
     pub fn allocation_id(&self) -> ::std::option::Option<&str> {
         self.allocation_id.as_deref()
@@ -92,6 +84,14 @@ impl Address {
     pub fn carrier_ip(&self) -> ::std::option::Option<&str> {
         self.carrier_ip.as_deref()
     }
+    /// <p>The ID of the instance that the address is associated with (if any).</p>
+    pub fn instance_id(&self) -> ::std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>The Elastic IP address.</p>
+    pub fn public_ip(&self) -> ::std::option::Option<&str> {
+        self.public_ip.as_deref()
+    }
 }
 impl Address {
     /// Creates a new builder-style object to manufacture [`Address`](crate::types::Address).
@@ -104,8 +104,6 @@ impl Address {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct AddressBuilder {
-    pub(crate) instance_id: ::std::option::Option<::std::string::String>,
-    pub(crate) public_ip: ::std::option::Option<::std::string::String>,
     pub(crate) allocation_id: ::std::option::Option<::std::string::String>,
     pub(crate) association_id: ::std::option::Option<::std::string::String>,
     pub(crate) domain: ::std::option::Option<crate::types::DomainType>,
@@ -118,36 +116,10 @@ pub struct AddressBuilder {
     pub(crate) customer_owned_ip: ::std::option::Option<::std::string::String>,
     pub(crate) customer_owned_ipv4_pool: ::std::option::Option<::std::string::String>,
     pub(crate) carrier_ip: ::std::option::Option<::std::string::String>,
+    pub(crate) instance_id: ::std::option::Option<::std::string::String>,
+    pub(crate) public_ip: ::std::option::Option<::std::string::String>,
 }
 impl AddressBuilder {
-    /// <p>The ID of the instance that the address is associated with (if any).</p>
-    pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.instance_id = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>The ID of the instance that the address is associated with (if any).</p>
-    pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_id = input;
-        self
-    }
-    /// <p>The ID of the instance that the address is associated with (if any).</p>
-    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
-        &self.instance_id
-    }
-    /// <p>The Elastic IP address.</p>
-    pub fn public_ip(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.public_ip = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>The Elastic IP address.</p>
-    pub fn set_public_ip(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.public_ip = input;
-        self
-    }
-    /// <p>The Elastic IP address.</p>
-    pub fn get_public_ip(&self) -> &::std::option::Option<::std::string::String> {
-        &self.public_ip
-    }
     /// <p>The ID representing the allocation of the address.</p>
     pub fn allocation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.allocation_id = ::std::option::Option::Some(input.into());
@@ -322,11 +294,37 @@ impl AddressBuilder {
     pub fn get_carrier_ip(&self) -> &::std::option::Option<::std::string::String> {
         &self.carrier_ip
     }
+    /// <p>The ID of the instance that the address is associated with (if any).</p>
+    pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.instance_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the instance that the address is associated with (if any).</p>
+    pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.instance_id = input;
+        self
+    }
+    /// <p>The ID of the instance that the address is associated with (if any).</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
+    }
+    /// <p>The Elastic IP address.</p>
+    pub fn public_ip(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.public_ip = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Elastic IP address.</p>
+    pub fn set_public_ip(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.public_ip = input;
+        self
+    }
+    /// <p>The Elastic IP address.</p>
+    pub fn get_public_ip(&self) -> &::std::option::Option<::std::string::String> {
+        &self.public_ip
+    }
     /// Consumes the builder and constructs a [`Address`](crate::types::Address).
     pub fn build(self) -> crate::types::Address {
         crate::types::Address {
-            instance_id: self.instance_id,
-            public_ip: self.public_ip,
             allocation_id: self.allocation_id,
             association_id: self.association_id,
             domain: self.domain,
@@ -339,6 +337,8 @@ impl AddressBuilder {
             customer_owned_ip: self.customer_owned_ip,
             customer_owned_ipv4_pool: self.customer_owned_ipv4_pool,
             carrier_ip: self.carrier_ip,
+            instance_id: self.instance_id,
+            public_ip: self.public_ip,
         }
     }
 }

@@ -4,10 +4,10 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DetachNetworkInterfaceInput {
-    /// <p>The ID of the attachment.</p>
-    pub attachment_id: ::std::option::Option<::std::string::String>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
+    /// <p>The ID of the attachment.</p>
+    pub attachment_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether to force a detachment.</p><note>
     /// <ul>
     /// <li>
@@ -21,13 +21,13 @@ pub struct DetachNetworkInterfaceInput {
     pub force: ::std::option::Option<bool>,
 }
 impl DetachNetworkInterfaceInput {
-    /// <p>The ID of the attachment.</p>
-    pub fn attachment_id(&self) -> ::std::option::Option<&str> {
-        self.attachment_id.as_deref()
-    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
         self.dry_run
+    }
+    /// <p>The ID of the attachment.</p>
+    pub fn attachment_id(&self) -> ::std::option::Option<&str> {
+        self.attachment_id.as_deref()
     }
     /// <p>Specifies whether to force a detachment.</p><note>
     /// <ul>
@@ -54,11 +54,25 @@ impl DetachNetworkInterfaceInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct DetachNetworkInterfaceInputBuilder {
-    pub(crate) attachment_id: ::std::option::Option<::std::string::String>,
     pub(crate) dry_run: ::std::option::Option<bool>,
+    pub(crate) attachment_id: ::std::option::Option<::std::string::String>,
     pub(crate) force: ::std::option::Option<bool>,
 }
 impl DetachNetworkInterfaceInputBuilder {
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn dry_run(mut self, input: bool) -> Self {
+        self.dry_run = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.dry_run = input;
+        self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
+    }
     /// <p>The ID of the attachment.</p>
     /// This field is required.
     pub fn attachment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -73,20 +87,6 @@ impl DetachNetworkInterfaceInputBuilder {
     /// <p>The ID of the attachment.</p>
     pub fn get_attachment_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.attachment_id
-    }
-    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn dry_run(mut self, input: bool) -> Self {
-        self.dry_run = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
-    }
-    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
-        &self.dry_run
     }
     /// <p>Specifies whether to force a detachment.</p><note>
     /// <ul>
@@ -137,8 +137,8 @@ impl DetachNetworkInterfaceInputBuilder {
         ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::detach_network_interface::DetachNetworkInterfaceInput {
-            attachment_id: self.attachment_id,
             dry_run: self.dry_run,
+            attachment_id: self.attachment_id,
             force: self.force,
         })
     }

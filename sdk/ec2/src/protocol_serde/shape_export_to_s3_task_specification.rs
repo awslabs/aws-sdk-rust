@@ -5,13 +5,13 @@ pub fn ser_export_to_s3_task_specification(
     input: &crate::types::ExportToS3TaskSpecification,
 ) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
-    let mut scope_1 = writer.prefix("ContainerFormat");
-    if let Some(var_2) = &input.container_format {
+    let mut scope_1 = writer.prefix("DiskImageFormat");
+    if let Some(var_2) = &input.disk_image_format {
         scope_1.string(var_2.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_3 = writer.prefix("DiskImageFormat");
-    if let Some(var_4) = &input.disk_image_format {
+    let mut scope_3 = writer.prefix("ContainerFormat");
+    if let Some(var_4) = &input.container_format {
         scope_3.string(var_4.as_str());
     }
     #[allow(unused_mut)]

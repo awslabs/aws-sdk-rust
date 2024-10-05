@@ -6,41 +6,41 @@ pub fn ser_modify_hosts_input_input_input(
     #[allow(unused_mut)]
     let mut writer = ::aws_smithy_query::QueryWriter::new(&mut out, "ModifyHosts", "2016-11-15");
     #[allow(unused_mut)]
-    let mut scope_1 = writer.prefix("AutoPlacement");
-    if let Some(var_2) = &input.auto_placement {
+    let mut scope_1 = writer.prefix("HostRecovery");
+    if let Some(var_2) = &input.host_recovery {
         scope_1.string(var_2.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_3 = writer.prefix("HostId");
-    if let Some(var_4) = &input.host_ids {
-        if !var_4.is_empty() {
-            let mut list_6 = scope_3.start_list(true, Some("item"));
-            for item_5 in var_4 {
+    let mut scope_3 = writer.prefix("InstanceType");
+    if let Some(var_4) = &input.instance_type {
+        scope_3.string(var_4);
+    }
+    #[allow(unused_mut)]
+    let mut scope_5 = writer.prefix("InstanceFamily");
+    if let Some(var_6) = &input.instance_family {
+        scope_5.string(var_6);
+    }
+    #[allow(unused_mut)]
+    let mut scope_7 = writer.prefix("HostMaintenance");
+    if let Some(var_8) = &input.host_maintenance {
+        scope_7.string(var_8.as_str());
+    }
+    #[allow(unused_mut)]
+    let mut scope_9 = writer.prefix("HostId");
+    if let Some(var_10) = &input.host_ids {
+        if !var_10.is_empty() {
+            let mut list_12 = scope_9.start_list(true, Some("item"));
+            for item_11 in var_10 {
                 #[allow(unused_mut)]
-                let mut entry_7 = list_6.entry();
-                entry_7.string(item_5);
+                let mut entry_13 = list_12.entry();
+                entry_13.string(item_11);
             }
-            list_6.finish();
+            list_12.finish();
         }
     }
     #[allow(unused_mut)]
-    let mut scope_8 = writer.prefix("HostRecovery");
-    if let Some(var_9) = &input.host_recovery {
-        scope_8.string(var_9.as_str());
-    }
-    #[allow(unused_mut)]
-    let mut scope_10 = writer.prefix("InstanceType");
-    if let Some(var_11) = &input.instance_type {
-        scope_10.string(var_11);
-    }
-    #[allow(unused_mut)]
-    let mut scope_12 = writer.prefix("InstanceFamily");
-    if let Some(var_13) = &input.instance_family {
-        scope_12.string(var_13);
-    }
-    #[allow(unused_mut)]
-    let mut scope_14 = writer.prefix("HostMaintenance");
-    if let Some(var_15) = &input.host_maintenance {
+    let mut scope_14 = writer.prefix("AutoPlacement");
+    if let Some(var_15) = &input.auto_placement {
         scope_14.string(var_15.as_str());
     }
     writer.finish();

@@ -22,7 +22,7 @@ impl crate::operation::create_default_subnet::builders::CreateDefaultSubnetInput
 }
 /// Fluent builder constructing a request to `CreateDefaultSubnet`.
 ///
-/// <p>Creates a default subnet with a size <code>/20</code> IPv4 CIDR block in the specified Availability Zone in your default VPC. You can have only one default subnet per Availability Zone. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/default-vpc.html#create-default-subnet">Create a default subnet</a> in the <i>Amazon VPC User Guide</i>.</p>
+/// <p>Creates a default subnet with a size <code>/20</code> IPv4 CIDR block in the specified Availability Zone in your default VPC. You can have only one default subnet per Availability Zone. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/work-with-default-vpc.html#create-default-subnet">Create a default subnet</a> in the <i>Amazon VPC User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateDefaultSubnetFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

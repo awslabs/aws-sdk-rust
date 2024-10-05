@@ -6,13 +6,13 @@ pub fn ser_describe_identity_id_format_input_input_input(
     #[allow(unused_mut)]
     let mut writer = ::aws_smithy_query::QueryWriter::new(&mut out, "DescribeIdentityIdFormat", "2016-11-15");
     #[allow(unused_mut)]
-    let mut scope_1 = writer.prefix("PrincipalArn");
-    if let Some(var_2) = &input.principal_arn {
+    let mut scope_1 = writer.prefix("Resource");
+    if let Some(var_2) = &input.resource {
         scope_1.string(var_2);
     }
     #[allow(unused_mut)]
-    let mut scope_3 = writer.prefix("Resource");
-    if let Some(var_4) = &input.resource {
+    let mut scope_3 = writer.prefix("PrincipalArn");
+    if let Some(var_4) = &input.principal_arn {
         scope_3.string(var_4);
     }
     writer.finish();

@@ -7,7 +7,7 @@ pub fn de_customer_gateway(
     let mut builder = crate::types::CustomerGateway::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
-            s if s.matches("bgpAsn") /* BgpAsn com.amazonaws.ec2#CustomerGateway$BgpAsn */ =>  {
+            s if s.matches("certificateArn") /* CertificateArn com.amazonaws.ec2#CustomerGateway$CertificateArn */ =>  {
                 let var_1 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -17,10 +17,10 @@ pub fn de_customer_gateway(
                         ?
                     )
                 ;
-                builder = builder.set_bgp_asn(var_1);
+                builder = builder.set_certificate_arn(var_1);
             }
             ,
-            s if s.matches("customerGatewayId") /* CustomerGatewayId com.amazonaws.ec2#CustomerGateway$CustomerGatewayId */ =>  {
+            s if s.matches("deviceName") /* DeviceName com.amazonaws.ec2#CustomerGateway$DeviceName */ =>  {
                 let var_2 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -30,23 +30,20 @@ pub fn de_customer_gateway(
                         ?
                     )
                 ;
-                builder = builder.set_customer_gateway_id(var_2);
+                builder = builder.set_device_name(var_2);
             }
             ,
-            s if s.matches("ipAddress") /* IpAddress com.amazonaws.ec2#CustomerGateway$IpAddress */ =>  {
+            s if s.matches("tagSet") /* Tags com.amazonaws.ec2#CustomerGateway$Tags */ =>  {
                 let var_3 =
                     Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
+                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_ip_address(var_3);
+                builder = builder.set_tags(var_3);
             }
             ,
-            s if s.matches("certificateArn") /* CertificateArn com.amazonaws.ec2#CustomerGateway$CertificateArn */ =>  {
+            s if s.matches("bgpAsnExtended") /* BgpAsnExtended com.amazonaws.ec2#CustomerGateway$BgpAsnExtended */ =>  {
                 let var_4 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -56,10 +53,10 @@ pub fn de_customer_gateway(
                         ?
                     )
                 ;
-                builder = builder.set_certificate_arn(var_4);
+                builder = builder.set_bgp_asn_extended(var_4);
             }
             ,
-            s if s.matches("state") /* State com.amazonaws.ec2#CustomerGateway$State */ =>  {
+            s if s.matches("customerGatewayId") /* CustomerGatewayId com.amazonaws.ec2#CustomerGateway$CustomerGatewayId */ =>  {
                 let var_5 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -69,10 +66,10 @@ pub fn de_customer_gateway(
                         ?
                     )
                 ;
-                builder = builder.set_state(var_5);
+                builder = builder.set_customer_gateway_id(var_5);
             }
             ,
-            s if s.matches("type") /* Type com.amazonaws.ec2#CustomerGateway$Type */ =>  {
+            s if s.matches("state") /* State com.amazonaws.ec2#CustomerGateway$State */ =>  {
                 let var_6 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -82,10 +79,10 @@ pub fn de_customer_gateway(
                         ?
                     )
                 ;
-                builder = builder.set_type(var_6);
+                builder = builder.set_state(var_6);
             }
             ,
-            s if s.matches("deviceName") /* DeviceName com.amazonaws.ec2#CustomerGateway$DeviceName */ =>  {
+            s if s.matches("type") /* Type com.amazonaws.ec2#CustomerGateway$Type */ =>  {
                 let var_7 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -95,20 +92,23 @@ pub fn de_customer_gateway(
                         ?
                     )
                 ;
-                builder = builder.set_device_name(var_7);
+                builder = builder.set_type(var_7);
             }
             ,
-            s if s.matches("tagSet") /* Tags com.amazonaws.ec2#CustomerGateway$Tags */ =>  {
+            s if s.matches("ipAddress") /* IpAddress com.amazonaws.ec2#CustomerGateway$IpAddress */ =>  {
                 let var_8 =
                     Some(
-                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag)
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
                         ?
                     )
                 ;
-                builder = builder.set_tags(var_8);
+                builder = builder.set_ip_address(var_8);
             }
             ,
-            s if s.matches("bgpAsnExtended") /* BgpAsnExtended com.amazonaws.ec2#CustomerGateway$BgpAsnExtended */ =>  {
+            s if s.matches("bgpAsn") /* BgpAsn com.amazonaws.ec2#CustomerGateway$BgpAsn */ =>  {
                 let var_9 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -118,7 +118,7 @@ pub fn de_customer_gateway(
                         ?
                     )
                 ;
-                builder = builder.set_bgp_asn_extended(var_9);
+                builder = builder.set_bgp_asn(var_9);
             }
             ,
             _ => {}

@@ -3,56 +3,41 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateNetworkAclEntryInput {
-    /// <p>The IPv4 network range to allow or deny, in CIDR notation (for example <code>172.16.0.0/24</code>). We modify the specified CIDR block to its canonical form; for example, if you specify <code>100.68.0.18/18</code>, we modify it to <code>100.68.0.0/18</code>.</p>
-    pub cidr_block: ::std::option::Option<::std::string::String>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
-    /// <p>Indicates whether this is an egress rule (rule is applied to traffic leaving the subnet).</p>
-    pub egress: ::std::option::Option<bool>,
-    /// <p>ICMP protocol: The ICMP or ICMPv6 type and code. Required if specifying protocol 1 (ICMP) or protocol 58 (ICMPv6) with an IPv6 CIDR block.</p>
-    pub icmp_type_code: ::std::option::Option<crate::types::IcmpTypeCode>,
-    /// <p>The IPv6 network range to allow or deny, in CIDR notation (for example <code>2001:db8:1234:1a00::/64</code>).</p>
-    pub ipv6_cidr_block: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the network ACL.</p>
     pub network_acl_id: ::std::option::Option<::std::string::String>,
-    /// <p>TCP or UDP protocols: The range of ports the rule applies to. Required if specifying protocol 6 (TCP) or 17 (UDP).</p>
-    pub port_range: ::std::option::Option<crate::types::PortRange>,
+    /// <p>The rule number for the entry (for example, 100). ACL entries are processed in ascending order by rule number.</p>
+    /// <p>Constraints: Positive integer from 1 to 32766. The range 32767 to 65535 is reserved for internal use.</p>
+    pub rule_number: ::std::option::Option<i32>,
     /// <p>The protocol number. A value of "-1" means all protocols. If you specify "-1" or a protocol number other than "6" (TCP), "17" (UDP), or "1" (ICMP), traffic on all ports is allowed, regardless of any ports or ICMP types or codes that you specify. If you specify protocol "58" (ICMPv6) and specify an IPv4 CIDR block, traffic for all ICMP types and codes allowed, regardless of any that you specify. If you specify protocol "58" (ICMPv6) and specify an IPv6 CIDR block, you must specify an ICMP type and code.</p>
     pub protocol: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether to allow or deny the traffic that matches the rule.</p>
     pub rule_action: ::std::option::Option<crate::types::RuleAction>,
-    /// <p>The rule number for the entry (for example, 100). ACL entries are processed in ascending order by rule number.</p>
-    /// <p>Constraints: Positive integer from 1 to 32766. The range 32767 to 65535 is reserved for internal use.</p>
-    pub rule_number: ::std::option::Option<i32>,
+    /// <p>Indicates whether this is an egress rule (rule is applied to traffic leaving the subnet).</p>
+    pub egress: ::std::option::Option<bool>,
+    /// <p>The IPv4 network range to allow or deny, in CIDR notation (for example <code>172.16.0.0/24</code>). We modify the specified CIDR block to its canonical form; for example, if you specify <code>100.68.0.18/18</code>, we modify it to <code>100.68.0.0/18</code>.</p>
+    pub cidr_block: ::std::option::Option<::std::string::String>,
+    /// <p>The IPv6 network range to allow or deny, in CIDR notation (for example <code>2001:db8:1234:1a00::/64</code>).</p>
+    pub ipv6_cidr_block: ::std::option::Option<::std::string::String>,
+    /// <p>ICMP protocol: The ICMP or ICMPv6 type and code. Required if specifying protocol 1 (ICMP) or protocol 58 (ICMPv6) with an IPv6 CIDR block.</p>
+    pub icmp_type_code: ::std::option::Option<crate::types::IcmpTypeCode>,
+    /// <p>TCP or UDP protocols: The range of ports the rule applies to. Required if specifying protocol 6 (TCP) or 17 (UDP).</p>
+    pub port_range: ::std::option::Option<crate::types::PortRange>,
 }
 impl CreateNetworkAclEntryInput {
-    /// <p>The IPv4 network range to allow or deny, in CIDR notation (for example <code>172.16.0.0/24</code>). We modify the specified CIDR block to its canonical form; for example, if you specify <code>100.68.0.18/18</code>, we modify it to <code>100.68.0.0/18</code>.</p>
-    pub fn cidr_block(&self) -> ::std::option::Option<&str> {
-        self.cidr_block.as_deref()
-    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
         self.dry_run
-    }
-    /// <p>Indicates whether this is an egress rule (rule is applied to traffic leaving the subnet).</p>
-    pub fn egress(&self) -> ::std::option::Option<bool> {
-        self.egress
-    }
-    /// <p>ICMP protocol: The ICMP or ICMPv6 type and code. Required if specifying protocol 1 (ICMP) or protocol 58 (ICMPv6) with an IPv6 CIDR block.</p>
-    pub fn icmp_type_code(&self) -> ::std::option::Option<&crate::types::IcmpTypeCode> {
-        self.icmp_type_code.as_ref()
-    }
-    /// <p>The IPv6 network range to allow or deny, in CIDR notation (for example <code>2001:db8:1234:1a00::/64</code>).</p>
-    pub fn ipv6_cidr_block(&self) -> ::std::option::Option<&str> {
-        self.ipv6_cidr_block.as_deref()
     }
     /// <p>The ID of the network ACL.</p>
     pub fn network_acl_id(&self) -> ::std::option::Option<&str> {
         self.network_acl_id.as_deref()
     }
-    /// <p>TCP or UDP protocols: The range of ports the rule applies to. Required if specifying protocol 6 (TCP) or 17 (UDP).</p>
-    pub fn port_range(&self) -> ::std::option::Option<&crate::types::PortRange> {
-        self.port_range.as_ref()
+    /// <p>The rule number for the entry (for example, 100). ACL entries are processed in ascending order by rule number.</p>
+    /// <p>Constraints: Positive integer from 1 to 32766. The range 32767 to 65535 is reserved for internal use.</p>
+    pub fn rule_number(&self) -> ::std::option::Option<i32> {
+        self.rule_number
     }
     /// <p>The protocol number. A value of "-1" means all protocols. If you specify "-1" or a protocol number other than "6" (TCP), "17" (UDP), or "1" (ICMP), traffic on all ports is allowed, regardless of any ports or ICMP types or codes that you specify. If you specify protocol "58" (ICMPv6) and specify an IPv4 CIDR block, traffic for all ICMP types and codes allowed, regardless of any that you specify. If you specify protocol "58" (ICMPv6) and specify an IPv6 CIDR block, you must specify an ICMP type and code.</p>
     pub fn protocol(&self) -> ::std::option::Option<&str> {
@@ -62,10 +47,25 @@ impl CreateNetworkAclEntryInput {
     pub fn rule_action(&self) -> ::std::option::Option<&crate::types::RuleAction> {
         self.rule_action.as_ref()
     }
-    /// <p>The rule number for the entry (for example, 100). ACL entries are processed in ascending order by rule number.</p>
-    /// <p>Constraints: Positive integer from 1 to 32766. The range 32767 to 65535 is reserved for internal use.</p>
-    pub fn rule_number(&self) -> ::std::option::Option<i32> {
-        self.rule_number
+    /// <p>Indicates whether this is an egress rule (rule is applied to traffic leaving the subnet).</p>
+    pub fn egress(&self) -> ::std::option::Option<bool> {
+        self.egress
+    }
+    /// <p>The IPv4 network range to allow or deny, in CIDR notation (for example <code>172.16.0.0/24</code>). We modify the specified CIDR block to its canonical form; for example, if you specify <code>100.68.0.18/18</code>, we modify it to <code>100.68.0.0/18</code>.</p>
+    pub fn cidr_block(&self) -> ::std::option::Option<&str> {
+        self.cidr_block.as_deref()
+    }
+    /// <p>The IPv6 network range to allow or deny, in CIDR notation (for example <code>2001:db8:1234:1a00::/64</code>).</p>
+    pub fn ipv6_cidr_block(&self) -> ::std::option::Option<&str> {
+        self.ipv6_cidr_block.as_deref()
+    }
+    /// <p>ICMP protocol: The ICMP or ICMPv6 type and code. Required if specifying protocol 1 (ICMP) or protocol 58 (ICMPv6) with an IPv6 CIDR block.</p>
+    pub fn icmp_type_code(&self) -> ::std::option::Option<&crate::types::IcmpTypeCode> {
+        self.icmp_type_code.as_ref()
+    }
+    /// <p>TCP or UDP protocols: The range of ports the rule applies to. Required if specifying protocol 6 (TCP) or 17 (UDP).</p>
+    pub fn port_range(&self) -> ::std::option::Option<&crate::types::PortRange> {
+        self.port_range.as_ref()
     }
 }
 impl CreateNetworkAclEntryInput {
@@ -79,32 +79,18 @@ impl CreateNetworkAclEntryInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct CreateNetworkAclEntryInputBuilder {
-    pub(crate) cidr_block: ::std::option::Option<::std::string::String>,
     pub(crate) dry_run: ::std::option::Option<bool>,
-    pub(crate) egress: ::std::option::Option<bool>,
-    pub(crate) icmp_type_code: ::std::option::Option<crate::types::IcmpTypeCode>,
-    pub(crate) ipv6_cidr_block: ::std::option::Option<::std::string::String>,
     pub(crate) network_acl_id: ::std::option::Option<::std::string::String>,
-    pub(crate) port_range: ::std::option::Option<crate::types::PortRange>,
+    pub(crate) rule_number: ::std::option::Option<i32>,
     pub(crate) protocol: ::std::option::Option<::std::string::String>,
     pub(crate) rule_action: ::std::option::Option<crate::types::RuleAction>,
-    pub(crate) rule_number: ::std::option::Option<i32>,
+    pub(crate) egress: ::std::option::Option<bool>,
+    pub(crate) cidr_block: ::std::option::Option<::std::string::String>,
+    pub(crate) ipv6_cidr_block: ::std::option::Option<::std::string::String>,
+    pub(crate) icmp_type_code: ::std::option::Option<crate::types::IcmpTypeCode>,
+    pub(crate) port_range: ::std::option::Option<crate::types::PortRange>,
 }
 impl CreateNetworkAclEntryInputBuilder {
-    /// <p>The IPv4 network range to allow or deny, in CIDR notation (for example <code>172.16.0.0/24</code>). We modify the specified CIDR block to its canonical form; for example, if you specify <code>100.68.0.18/18</code>, we modify it to <code>100.68.0.0/18</code>.</p>
-    pub fn cidr_block(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.cidr_block = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>The IPv4 network range to allow or deny, in CIDR notation (for example <code>172.16.0.0/24</code>). We modify the specified CIDR block to its canonical form; for example, if you specify <code>100.68.0.18/18</code>, we modify it to <code>100.68.0.0/18</code>.</p>
-    pub fn set_cidr_block(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cidr_block = input;
-        self
-    }
-    /// <p>The IPv4 network range to allow or deny, in CIDR notation (for example <code>172.16.0.0/24</code>). We modify the specified CIDR block to its canonical form; for example, if you specify <code>100.68.0.18/18</code>, we modify it to <code>100.68.0.0/18</code>.</p>
-    pub fn get_cidr_block(&self) -> &::std::option::Option<::std::string::String> {
-        &self.cidr_block
-    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.dry_run = ::std::option::Option::Some(input);
@@ -118,49 +104,6 @@ impl CreateNetworkAclEntryInputBuilder {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
         &self.dry_run
-    }
-    /// <p>Indicates whether this is an egress rule (rule is applied to traffic leaving the subnet).</p>
-    /// This field is required.
-    pub fn egress(mut self, input: bool) -> Self {
-        self.egress = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>Indicates whether this is an egress rule (rule is applied to traffic leaving the subnet).</p>
-    pub fn set_egress(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.egress = input;
-        self
-    }
-    /// <p>Indicates whether this is an egress rule (rule is applied to traffic leaving the subnet).</p>
-    pub fn get_egress(&self) -> &::std::option::Option<bool> {
-        &self.egress
-    }
-    /// <p>ICMP protocol: The ICMP or ICMPv6 type and code. Required if specifying protocol 1 (ICMP) or protocol 58 (ICMPv6) with an IPv6 CIDR block.</p>
-    pub fn icmp_type_code(mut self, input: crate::types::IcmpTypeCode) -> Self {
-        self.icmp_type_code = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>ICMP protocol: The ICMP or ICMPv6 type and code. Required if specifying protocol 1 (ICMP) or protocol 58 (ICMPv6) with an IPv6 CIDR block.</p>
-    pub fn set_icmp_type_code(mut self, input: ::std::option::Option<crate::types::IcmpTypeCode>) -> Self {
-        self.icmp_type_code = input;
-        self
-    }
-    /// <p>ICMP protocol: The ICMP or ICMPv6 type and code. Required if specifying protocol 1 (ICMP) or protocol 58 (ICMPv6) with an IPv6 CIDR block.</p>
-    pub fn get_icmp_type_code(&self) -> &::std::option::Option<crate::types::IcmpTypeCode> {
-        &self.icmp_type_code
-    }
-    /// <p>The IPv6 network range to allow or deny, in CIDR notation (for example <code>2001:db8:1234:1a00::/64</code>).</p>
-    pub fn ipv6_cidr_block(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.ipv6_cidr_block = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>The IPv6 network range to allow or deny, in CIDR notation (for example <code>2001:db8:1234:1a00::/64</code>).</p>
-    pub fn set_ipv6_cidr_block(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ipv6_cidr_block = input;
-        self
-    }
-    /// <p>The IPv6 network range to allow or deny, in CIDR notation (for example <code>2001:db8:1234:1a00::/64</code>).</p>
-    pub fn get_ipv6_cidr_block(&self) -> &::std::option::Option<::std::string::String> {
-        &self.ipv6_cidr_block
     }
     /// <p>The ID of the network ACL.</p>
     /// This field is required.
@@ -177,19 +120,23 @@ impl CreateNetworkAclEntryInputBuilder {
     pub fn get_network_acl_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.network_acl_id
     }
-    /// <p>TCP or UDP protocols: The range of ports the rule applies to. Required if specifying protocol 6 (TCP) or 17 (UDP).</p>
-    pub fn port_range(mut self, input: crate::types::PortRange) -> Self {
-        self.port_range = ::std::option::Option::Some(input);
+    /// <p>The rule number for the entry (for example, 100). ACL entries are processed in ascending order by rule number.</p>
+    /// <p>Constraints: Positive integer from 1 to 32766. The range 32767 to 65535 is reserved for internal use.</p>
+    /// This field is required.
+    pub fn rule_number(mut self, input: i32) -> Self {
+        self.rule_number = ::std::option::Option::Some(input);
         self
     }
-    /// <p>TCP or UDP protocols: The range of ports the rule applies to. Required if specifying protocol 6 (TCP) or 17 (UDP).</p>
-    pub fn set_port_range(mut self, input: ::std::option::Option<crate::types::PortRange>) -> Self {
-        self.port_range = input;
+    /// <p>The rule number for the entry (for example, 100). ACL entries are processed in ascending order by rule number.</p>
+    /// <p>Constraints: Positive integer from 1 to 32766. The range 32767 to 65535 is reserved for internal use.</p>
+    pub fn set_rule_number(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.rule_number = input;
         self
     }
-    /// <p>TCP or UDP protocols: The range of ports the rule applies to. Required if specifying protocol 6 (TCP) or 17 (UDP).</p>
-    pub fn get_port_range(&self) -> &::std::option::Option<crate::types::PortRange> {
-        &self.port_range
+    /// <p>The rule number for the entry (for example, 100). ACL entries are processed in ascending order by rule number.</p>
+    /// <p>Constraints: Positive integer from 1 to 32766. The range 32767 to 65535 is reserved for internal use.</p>
+    pub fn get_rule_number(&self) -> &::std::option::Option<i32> {
+        &self.rule_number
     }
     /// <p>The protocol number. A value of "-1" means all protocols. If you specify "-1" or a protocol number other than "6" (TCP), "17" (UDP), or "1" (ICMP), traffic on all ports is allowed, regardless of any ports or ICMP types or codes that you specify. If you specify protocol "58" (ICMPv6) and specify an IPv4 CIDR block, traffic for all ICMP types and codes allowed, regardless of any that you specify. If you specify protocol "58" (ICMPv6) and specify an IPv6 CIDR block, you must specify an ICMP type and code.</p>
     /// This field is required.
@@ -221,23 +168,76 @@ impl CreateNetworkAclEntryInputBuilder {
     pub fn get_rule_action(&self) -> &::std::option::Option<crate::types::RuleAction> {
         &self.rule_action
     }
-    /// <p>The rule number for the entry (for example, 100). ACL entries are processed in ascending order by rule number.</p>
-    /// <p>Constraints: Positive integer from 1 to 32766. The range 32767 to 65535 is reserved for internal use.</p>
+    /// <p>Indicates whether this is an egress rule (rule is applied to traffic leaving the subnet).</p>
     /// This field is required.
-    pub fn rule_number(mut self, input: i32) -> Self {
-        self.rule_number = ::std::option::Option::Some(input);
+    pub fn egress(mut self, input: bool) -> Self {
+        self.egress = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The rule number for the entry (for example, 100). ACL entries are processed in ascending order by rule number.</p>
-    /// <p>Constraints: Positive integer from 1 to 32766. The range 32767 to 65535 is reserved for internal use.</p>
-    pub fn set_rule_number(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.rule_number = input;
+    /// <p>Indicates whether this is an egress rule (rule is applied to traffic leaving the subnet).</p>
+    pub fn set_egress(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.egress = input;
         self
     }
-    /// <p>The rule number for the entry (for example, 100). ACL entries are processed in ascending order by rule number.</p>
-    /// <p>Constraints: Positive integer from 1 to 32766. The range 32767 to 65535 is reserved for internal use.</p>
-    pub fn get_rule_number(&self) -> &::std::option::Option<i32> {
-        &self.rule_number
+    /// <p>Indicates whether this is an egress rule (rule is applied to traffic leaving the subnet).</p>
+    pub fn get_egress(&self) -> &::std::option::Option<bool> {
+        &self.egress
+    }
+    /// <p>The IPv4 network range to allow or deny, in CIDR notation (for example <code>172.16.0.0/24</code>). We modify the specified CIDR block to its canonical form; for example, if you specify <code>100.68.0.18/18</code>, we modify it to <code>100.68.0.0/18</code>.</p>
+    pub fn cidr_block(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.cidr_block = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The IPv4 network range to allow or deny, in CIDR notation (for example <code>172.16.0.0/24</code>). We modify the specified CIDR block to its canonical form; for example, if you specify <code>100.68.0.18/18</code>, we modify it to <code>100.68.0.0/18</code>.</p>
+    pub fn set_cidr_block(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.cidr_block = input;
+        self
+    }
+    /// <p>The IPv4 network range to allow or deny, in CIDR notation (for example <code>172.16.0.0/24</code>). We modify the specified CIDR block to its canonical form; for example, if you specify <code>100.68.0.18/18</code>, we modify it to <code>100.68.0.0/18</code>.</p>
+    pub fn get_cidr_block(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cidr_block
+    }
+    /// <p>The IPv6 network range to allow or deny, in CIDR notation (for example <code>2001:db8:1234:1a00::/64</code>).</p>
+    pub fn ipv6_cidr_block(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.ipv6_cidr_block = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The IPv6 network range to allow or deny, in CIDR notation (for example <code>2001:db8:1234:1a00::/64</code>).</p>
+    pub fn set_ipv6_cidr_block(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.ipv6_cidr_block = input;
+        self
+    }
+    /// <p>The IPv6 network range to allow or deny, in CIDR notation (for example <code>2001:db8:1234:1a00::/64</code>).</p>
+    pub fn get_ipv6_cidr_block(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ipv6_cidr_block
+    }
+    /// <p>ICMP protocol: The ICMP or ICMPv6 type and code. Required if specifying protocol 1 (ICMP) or protocol 58 (ICMPv6) with an IPv6 CIDR block.</p>
+    pub fn icmp_type_code(mut self, input: crate::types::IcmpTypeCode) -> Self {
+        self.icmp_type_code = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>ICMP protocol: The ICMP or ICMPv6 type and code. Required if specifying protocol 1 (ICMP) or protocol 58 (ICMPv6) with an IPv6 CIDR block.</p>
+    pub fn set_icmp_type_code(mut self, input: ::std::option::Option<crate::types::IcmpTypeCode>) -> Self {
+        self.icmp_type_code = input;
+        self
+    }
+    /// <p>ICMP protocol: The ICMP or ICMPv6 type and code. Required if specifying protocol 1 (ICMP) or protocol 58 (ICMPv6) with an IPv6 CIDR block.</p>
+    pub fn get_icmp_type_code(&self) -> &::std::option::Option<crate::types::IcmpTypeCode> {
+        &self.icmp_type_code
+    }
+    /// <p>TCP or UDP protocols: The range of ports the rule applies to. Required if specifying protocol 6 (TCP) or 17 (UDP).</p>
+    pub fn port_range(mut self, input: crate::types::PortRange) -> Self {
+        self.port_range = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>TCP or UDP protocols: The range of ports the rule applies to. Required if specifying protocol 6 (TCP) or 17 (UDP).</p>
+    pub fn set_port_range(mut self, input: ::std::option::Option<crate::types::PortRange>) -> Self {
+        self.port_range = input;
+        self
+    }
+    /// <p>TCP or UDP protocols: The range of ports the rule applies to. Required if specifying protocol 6 (TCP) or 17 (UDP).</p>
+    pub fn get_port_range(&self) -> &::std::option::Option<crate::types::PortRange> {
+        &self.port_range
     }
     /// Consumes the builder and constructs a [`CreateNetworkAclEntryInput`](crate::operation::create_network_acl_entry::CreateNetworkAclEntryInput).
     pub fn build(
@@ -245,16 +245,16 @@ impl CreateNetworkAclEntryInputBuilder {
     ) -> ::std::result::Result<crate::operation::create_network_acl_entry::CreateNetworkAclEntryInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_network_acl_entry::CreateNetworkAclEntryInput {
-            cidr_block: self.cidr_block,
             dry_run: self.dry_run,
-            egress: self.egress,
-            icmp_type_code: self.icmp_type_code,
-            ipv6_cidr_block: self.ipv6_cidr_block,
             network_acl_id: self.network_acl_id,
-            port_range: self.port_range,
+            rule_number: self.rule_number,
             protocol: self.protocol,
             rule_action: self.rule_action,
-            rule_number: self.rule_number,
+            egress: self.egress,
+            cidr_block: self.cidr_block,
+            ipv6_cidr_block: self.ipv6_cidr_block,
+            icmp_type_code: self.icmp_type_code,
+            port_range: self.port_range,
         })
     }
 }

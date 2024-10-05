@@ -6,78 +6,78 @@ pub fn ser_allocate_hosts_input_input_input(
     #[allow(unused_mut)]
     let mut writer = ::aws_smithy_query::QueryWriter::new(&mut out, "AllocateHosts", "2016-11-15");
     #[allow(unused_mut)]
-    let mut scope_1 = writer.prefix("AutoPlacement");
-    if let Some(var_2) = &input.auto_placement {
-        scope_1.string(var_2.as_str());
+    let mut scope_1 = writer.prefix("InstanceFamily");
+    if let Some(var_2) = &input.instance_family {
+        scope_1.string(var_2);
     }
     #[allow(unused_mut)]
-    let mut scope_3 = writer.prefix("AvailabilityZone");
-    if let Some(var_4) = &input.availability_zone {
-        scope_3.string(var_4);
+    let mut scope_3 = writer.prefix("TagSpecification");
+    if let Some(var_4) = &input.tag_specifications {
+        if !var_4.is_empty() {
+            let mut list_6 = scope_3.start_list(true, Some("item"));
+            for item_5 in var_4 {
+                #[allow(unused_mut)]
+                let mut entry_7 = list_6.entry();
+                crate::protocol_serde::shape_tag_specification::ser_tag_specification(entry_7, item_5)?;
+            }
+            list_6.finish();
+        }
     }
     #[allow(unused_mut)]
-    let mut scope_5 = writer.prefix("ClientToken");
-    if let Some(var_6) = &input.client_token {
-        scope_5.string(var_6);
+    let mut scope_8 = writer.prefix("HostRecovery");
+    if let Some(var_9) = &input.host_recovery {
+        scope_8.string(var_9.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_7 = writer.prefix("InstanceType");
-    if let Some(var_8) = &input.instance_type {
-        scope_7.string(var_8);
+    let mut scope_10 = writer.prefix("OutpostArn");
+    if let Some(var_11) = &input.outpost_arn {
+        scope_10.string(var_11);
     }
     #[allow(unused_mut)]
-    let mut scope_9 = writer.prefix("InstanceFamily");
-    if let Some(var_10) = &input.instance_family {
-        scope_9.string(var_10);
+    let mut scope_12 = writer.prefix("HostMaintenance");
+    if let Some(var_13) = &input.host_maintenance {
+        scope_12.string(var_13.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_11 = writer.prefix("Quantity");
-    if let Some(var_12) = &input.quantity {
-        scope_11.number(
+    let mut scope_14 = writer.prefix("AssetId");
+    if let Some(var_15) = &input.asset_ids {
+        if !var_15.is_empty() {
+            let mut list_17 = scope_14.start_list(true, None);
+            for item_16 in var_15 {
+                #[allow(unused_mut)]
+                let mut entry_18 = list_17.entry();
+                entry_18.string(item_16);
+            }
+            list_17.finish();
+        }
+    }
+    #[allow(unused_mut)]
+    let mut scope_19 = writer.prefix("AutoPlacement");
+    if let Some(var_20) = &input.auto_placement {
+        scope_19.string(var_20.as_str());
+    }
+    #[allow(unused_mut)]
+    let mut scope_21 = writer.prefix("ClientToken");
+    if let Some(var_22) = &input.client_token {
+        scope_21.string(var_22);
+    }
+    #[allow(unused_mut)]
+    let mut scope_23 = writer.prefix("InstanceType");
+    if let Some(var_24) = &input.instance_type {
+        scope_23.string(var_24);
+    }
+    #[allow(unused_mut)]
+    let mut scope_25 = writer.prefix("Quantity");
+    if let Some(var_26) = &input.quantity {
+        scope_25.number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_12).into()),
+            ::aws_smithy_types::Number::NegInt((*var_26).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_13 = writer.prefix("TagSpecification");
-    if let Some(var_14) = &input.tag_specifications {
-        if !var_14.is_empty() {
-            let mut list_16 = scope_13.start_list(true, Some("item"));
-            for item_15 in var_14 {
-                #[allow(unused_mut)]
-                let mut entry_17 = list_16.entry();
-                crate::protocol_serde::shape_tag_specification::ser_tag_specification(entry_17, item_15)?;
-            }
-            list_16.finish();
-        }
-    }
-    #[allow(unused_mut)]
-    let mut scope_18 = writer.prefix("HostRecovery");
-    if let Some(var_19) = &input.host_recovery {
-        scope_18.string(var_19.as_str());
-    }
-    #[allow(unused_mut)]
-    let mut scope_20 = writer.prefix("OutpostArn");
-    if let Some(var_21) = &input.outpost_arn {
-        scope_20.string(var_21);
-    }
-    #[allow(unused_mut)]
-    let mut scope_22 = writer.prefix("HostMaintenance");
-    if let Some(var_23) = &input.host_maintenance {
-        scope_22.string(var_23.as_str());
-    }
-    #[allow(unused_mut)]
-    let mut scope_24 = writer.prefix("AssetId");
-    if let Some(var_25) = &input.asset_ids {
-        if !var_25.is_empty() {
-            let mut list_27 = scope_24.start_list(true, None);
-            for item_26 in var_25 {
-                #[allow(unused_mut)]
-                let mut entry_28 = list_27.entry();
-                entry_28.string(item_26);
-            }
-            list_27.finish();
-        }
+    let mut scope_27 = writer.prefix("AvailabilityZone");
+    if let Some(var_28) = &input.availability_zone {
+        scope_27.string(var_28);
     }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))

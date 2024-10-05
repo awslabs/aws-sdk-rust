@@ -119,20 +119,6 @@ impl CreateVpcFluentBuilder {
     pub fn get_cidr_block(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_cidr_block()
     }
-    /// <p>Requests an Amazon-provided IPv6 CIDR block with a /56 prefix length for the VPC. You cannot specify the range of IP addresses, or the size of the CIDR block.</p>
-    pub fn amazon_provided_ipv6_cidr_block(mut self, input: bool) -> Self {
-        self.inner = self.inner.amazon_provided_ipv6_cidr_block(input);
-        self
-    }
-    /// <p>Requests an Amazon-provided IPv6 CIDR block with a /56 prefix length for the VPC. You cannot specify the range of IP addresses, or the size of the CIDR block.</p>
-    pub fn set_amazon_provided_ipv6_cidr_block(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.inner = self.inner.set_amazon_provided_ipv6_cidr_block(input);
-        self
-    }
-    /// <p>Requests an Amazon-provided IPv6 CIDR block with a /56 prefix length for the VPC. You cannot specify the range of IP addresses, or the size of the CIDR block.</p>
-    pub fn get_amazon_provided_ipv6_cidr_block(&self) -> &::std::option::Option<bool> {
-        self.inner.get_amazon_provided_ipv6_cidr_block()
-    }
     /// <p>The ID of an IPv6 address pool from which to allocate the IPv6 CIDR block.</p>
     pub fn ipv6_pool(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.ipv6_pool(input.into());
@@ -220,40 +206,6 @@ impl CreateVpcFluentBuilder {
     pub fn get_ipv6_netmask_length(&self) -> &::std::option::Option<i32> {
         self.inner.get_ipv6_netmask_length()
     }
-    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn dry_run(mut self, input: bool) -> Self {
-        self.inner = self.inner.dry_run(input);
-        self
-    }
-    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.inner = self.inner.set_dry_run(input);
-        self
-    }
-    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
-        self.inner.get_dry_run()
-    }
-    /// <p>The tenancy options for instances launched into the VPC. For <code>default</code>, instances are launched with shared tenancy by default. You can launch instances with any tenancy into a shared tenancy VPC. For <code>dedicated</code>, instances are launched as dedicated tenancy instances by default. You can only launch instances with a tenancy of <code>dedicated</code> or <code>host</code> into a dedicated tenancy VPC.</p>
-    /// <p><b>Important:</b> The <code>host</code> value cannot be used with this parameter. Use the <code>default</code> or <code>dedicated</code> values only.</p>
-    /// <p>Default: <code>default</code></p>
-    pub fn instance_tenancy(mut self, input: crate::types::Tenancy) -> Self {
-        self.inner = self.inner.instance_tenancy(input);
-        self
-    }
-    /// <p>The tenancy options for instances launched into the VPC. For <code>default</code>, instances are launched with shared tenancy by default. You can launch instances with any tenancy into a shared tenancy VPC. For <code>dedicated</code>, instances are launched as dedicated tenancy instances by default. You can only launch instances with a tenancy of <code>dedicated</code> or <code>host</code> into a dedicated tenancy VPC.</p>
-    /// <p><b>Important:</b> The <code>host</code> value cannot be used with this parameter. Use the <code>default</code> or <code>dedicated</code> values only.</p>
-    /// <p>Default: <code>default</code></p>
-    pub fn set_instance_tenancy(mut self, input: ::std::option::Option<crate::types::Tenancy>) -> Self {
-        self.inner = self.inner.set_instance_tenancy(input);
-        self
-    }
-    /// <p>The tenancy options for instances launched into the VPC. For <code>default</code>, instances are launched with shared tenancy by default. You can launch instances with any tenancy into a shared tenancy VPC. For <code>dedicated</code>, instances are launched as dedicated tenancy instances by default. You can only launch instances with a tenancy of <code>dedicated</code> or <code>host</code> into a dedicated tenancy VPC.</p>
-    /// <p><b>Important:</b> The <code>host</code> value cannot be used with this parameter. Use the <code>default</code> or <code>dedicated</code> values only.</p>
-    /// <p>Default: <code>default</code></p>
-    pub fn get_instance_tenancy(&self) -> &::std::option::Option<crate::types::Tenancy> {
-        self.inner.get_instance_tenancy()
-    }
     /// <p>The name of the location from which we advertise the IPV6 CIDR block. Use this parameter to limit the address to this location.</p>
     /// <p>You must set <code>AmazonProvidedIpv6CidrBlock</code> to <code>true</code> to use this parameter.</p>
     pub fn ipv6_cidr_block_network_border_group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -289,5 +241,53 @@ impl CreateVpcFluentBuilder {
     /// <p>The tags to assign to the VPC.</p>
     pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
         self.inner.get_tag_specifications()
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn dry_run(mut self, input: bool) -> Self {
+        self.inner = self.inner.dry_run(input);
+        self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_dry_run(input);
+        self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
+    }
+    /// <p>The tenancy options for instances launched into the VPC. For <code>default</code>, instances are launched with shared tenancy by default. You can launch instances with any tenancy into a shared tenancy VPC. For <code>dedicated</code>, instances are launched as dedicated tenancy instances by default. You can only launch instances with a tenancy of <code>dedicated</code> or <code>host</code> into a dedicated tenancy VPC.</p>
+    /// <p><b>Important:</b> The <code>host</code> value cannot be used with this parameter. Use the <code>default</code> or <code>dedicated</code> values only.</p>
+    /// <p>Default: <code>default</code></p>
+    pub fn instance_tenancy(mut self, input: crate::types::Tenancy) -> Self {
+        self.inner = self.inner.instance_tenancy(input);
+        self
+    }
+    /// <p>The tenancy options for instances launched into the VPC. For <code>default</code>, instances are launched with shared tenancy by default. You can launch instances with any tenancy into a shared tenancy VPC. For <code>dedicated</code>, instances are launched as dedicated tenancy instances by default. You can only launch instances with a tenancy of <code>dedicated</code> or <code>host</code> into a dedicated tenancy VPC.</p>
+    /// <p><b>Important:</b> The <code>host</code> value cannot be used with this parameter. Use the <code>default</code> or <code>dedicated</code> values only.</p>
+    /// <p>Default: <code>default</code></p>
+    pub fn set_instance_tenancy(mut self, input: ::std::option::Option<crate::types::Tenancy>) -> Self {
+        self.inner = self.inner.set_instance_tenancy(input);
+        self
+    }
+    /// <p>The tenancy options for instances launched into the VPC. For <code>default</code>, instances are launched with shared tenancy by default. You can launch instances with any tenancy into a shared tenancy VPC. For <code>dedicated</code>, instances are launched as dedicated tenancy instances by default. You can only launch instances with a tenancy of <code>dedicated</code> or <code>host</code> into a dedicated tenancy VPC.</p>
+    /// <p><b>Important:</b> The <code>host</code> value cannot be used with this parameter. Use the <code>default</code> or <code>dedicated</code> values only.</p>
+    /// <p>Default: <code>default</code></p>
+    pub fn get_instance_tenancy(&self) -> &::std::option::Option<crate::types::Tenancy> {
+        self.inner.get_instance_tenancy()
+    }
+    /// <p>Requests an Amazon-provided IPv6 CIDR block with a /56 prefix length for the VPC. You cannot specify the range of IP addresses, or the size of the CIDR block.</p>
+    pub fn amazon_provided_ipv6_cidr_block(mut self, input: bool) -> Self {
+        self.inner = self.inner.amazon_provided_ipv6_cidr_block(input);
+        self
+    }
+    /// <p>Requests an Amazon-provided IPv6 CIDR block with a /56 prefix length for the VPC. You cannot specify the range of IP addresses, or the size of the CIDR block.</p>
+    pub fn set_amazon_provided_ipv6_cidr_block(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_amazon_provided_ipv6_cidr_block(input);
+        self
+    }
+    /// <p>Requests an Amazon-provided IPv6 CIDR block with a /56 prefix length for the VPC. You cannot specify the range of IP addresses, or the size of the CIDR block.</p>
+    pub fn get_amazon_provided_ipv6_cidr_block(&self) -> &::std::option::Option<bool> {
+        self.inner.get_amazon_provided_ipv6_cidr_block()
     }
 }

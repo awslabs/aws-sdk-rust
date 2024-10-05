@@ -5,51 +5,51 @@ pub fn ser_placement(
     input: &crate::types::Placement,
 ) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
-    let mut scope_1 = writer.prefix("AvailabilityZone");
-    if let Some(var_2) = &input.availability_zone {
+    let mut scope_1 = writer.prefix("Affinity");
+    if let Some(var_2) = &input.affinity {
         scope_1.string(var_2);
     }
     #[allow(unused_mut)]
-    let mut scope_3 = writer.prefix("Affinity");
-    if let Some(var_4) = &input.affinity {
+    let mut scope_3 = writer.prefix("GroupName");
+    if let Some(var_4) = &input.group_name {
         scope_3.string(var_4);
     }
     #[allow(unused_mut)]
-    let mut scope_5 = writer.prefix("GroupName");
-    if let Some(var_6) = &input.group_name {
-        scope_5.string(var_6);
-    }
-    #[allow(unused_mut)]
-    let mut scope_7 = writer.prefix("PartitionNumber");
-    if let Some(var_8) = &input.partition_number {
-        scope_7.number(
+    let mut scope_5 = writer.prefix("PartitionNumber");
+    if let Some(var_6) = &input.partition_number {
+        scope_5.number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_8).into()),
+            ::aws_smithy_types::Number::NegInt((*var_6).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_9 = writer.prefix("HostId");
-    if let Some(var_10) = &input.host_id {
-        scope_9.string(var_10);
+    let mut scope_7 = writer.prefix("HostId");
+    if let Some(var_8) = &input.host_id {
+        scope_7.string(var_8);
     }
     #[allow(unused_mut)]
-    let mut scope_11 = writer.prefix("Tenancy");
-    if let Some(var_12) = &input.tenancy {
-        scope_11.string(var_12.as_str());
+    let mut scope_9 = writer.prefix("Tenancy");
+    if let Some(var_10) = &input.tenancy {
+        scope_9.string(var_10.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_13 = writer.prefix("SpreadDomain");
-    if let Some(var_14) = &input.spread_domain {
+    let mut scope_11 = writer.prefix("SpreadDomain");
+    if let Some(var_12) = &input.spread_domain {
+        scope_11.string(var_12);
+    }
+    #[allow(unused_mut)]
+    let mut scope_13 = writer.prefix("HostResourceGroupArn");
+    if let Some(var_14) = &input.host_resource_group_arn {
         scope_13.string(var_14);
     }
     #[allow(unused_mut)]
-    let mut scope_15 = writer.prefix("HostResourceGroupArn");
-    if let Some(var_16) = &input.host_resource_group_arn {
+    let mut scope_15 = writer.prefix("GroupId");
+    if let Some(var_16) = &input.group_id {
         scope_15.string(var_16);
     }
     #[allow(unused_mut)]
-    let mut scope_17 = writer.prefix("GroupId");
-    if let Some(var_18) = &input.group_id {
+    let mut scope_17 = writer.prefix("AvailabilityZone");
+    if let Some(var_18) = &input.availability_zone {
         scope_17.string(var_18);
     }
     Ok(())
@@ -63,7 +63,7 @@ pub fn de_placement(
     let mut builder = crate::types::Placement::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
-            s if s.matches("availabilityZone") /* AvailabilityZone com.amazonaws.ec2#Placement$AvailabilityZone */ =>  {
+            s if s.matches("affinity") /* Affinity com.amazonaws.ec2#Placement$Affinity */ =>  {
                 let var_19 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -73,10 +73,10 @@ pub fn de_placement(
                         ?
                     )
                 ;
-                builder = builder.set_availability_zone(var_19);
+                builder = builder.set_affinity(var_19);
             }
             ,
-            s if s.matches("affinity") /* Affinity com.amazonaws.ec2#Placement$Affinity */ =>  {
+            s if s.matches("groupName") /* GroupName com.amazonaws.ec2#Placement$GroupName */ =>  {
                 let var_20 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -86,24 +86,11 @@ pub fn de_placement(
                         ?
                     )
                 ;
-                builder = builder.set_affinity(var_20);
-            }
-            ,
-            s if s.matches("groupName") /* GroupName com.amazonaws.ec2#Placement$GroupName */ =>  {
-                let var_21 =
-                    Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_group_name(var_21);
+                builder = builder.set_group_name(var_20);
             }
             ,
             s if s.matches("partitionNumber") /* PartitionNumber com.amazonaws.ec2#Placement$PartitionNumber */ =>  {
-                let var_22 =
+                let var_21 =
                     Some(
                          {
                             <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -114,11 +101,11 @@ pub fn de_placement(
                         ?
                     )
                 ;
-                builder = builder.set_partition_number(var_22);
+                builder = builder.set_partition_number(var_21);
             }
             ,
             s if s.matches("hostId") /* HostId com.amazonaws.ec2#Placement$HostId */ =>  {
-                let var_23 =
+                let var_22 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -127,11 +114,11 @@ pub fn de_placement(
                         ?
                     )
                 ;
-                builder = builder.set_host_id(var_23);
+                builder = builder.set_host_id(var_22);
             }
             ,
             s if s.matches("tenancy") /* Tenancy com.amazonaws.ec2#Placement$Tenancy */ =>  {
-                let var_24 =
+                let var_23 =
                     Some(
                         Result::<crate::types::Tenancy, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::Tenancy::from(
@@ -141,10 +128,23 @@ pub fn de_placement(
                         ?
                     )
                 ;
-                builder = builder.set_tenancy(var_24);
+                builder = builder.set_tenancy(var_23);
             }
             ,
             s if s.matches("spreadDomain") /* SpreadDomain com.amazonaws.ec2#Placement$SpreadDomain */ =>  {
+                let var_24 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_spread_domain(var_24);
+            }
+            ,
+            s if s.matches("hostResourceGroupArn") /* HostResourceGroupArn com.amazonaws.ec2#Placement$HostResourceGroupArn */ =>  {
                 let var_25 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -154,10 +154,10 @@ pub fn de_placement(
                         ?
                     )
                 ;
-                builder = builder.set_spread_domain(var_25);
+                builder = builder.set_host_resource_group_arn(var_25);
             }
             ,
-            s if s.matches("hostResourceGroupArn") /* HostResourceGroupArn com.amazonaws.ec2#Placement$HostResourceGroupArn */ =>  {
+            s if s.matches("groupId") /* GroupId com.amazonaws.ec2#Placement$GroupId */ =>  {
                 let var_26 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -167,10 +167,10 @@ pub fn de_placement(
                         ?
                     )
                 ;
-                builder = builder.set_host_resource_group_arn(var_26);
+                builder = builder.set_group_id(var_26);
             }
             ,
-            s if s.matches("groupId") /* GroupId com.amazonaws.ec2#Placement$GroupId */ =>  {
+            s if s.matches("availabilityZone") /* AvailabilityZone com.amazonaws.ec2#Placement$AvailabilityZone */ =>  {
                 let var_27 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -180,7 +180,7 @@ pub fn de_placement(
                         ?
                     )
                 ;
-                builder = builder.set_group_id(var_27);
+                builder = builder.set_availability_zone(var_27);
             }
             ,
             _ => {}

@@ -111,56 +111,52 @@ impl RequestSpotInstancesFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The user-specified name for a logical grouping of requests.</p>
-    /// <p>When you specify an Availability Zone group in a Spot Instance request, all Spot Instances in the request are launched in the same Availability Zone. Instance proximity is maintained with this parameter, but the choice of Availability Zone is not. The group applies only to requests for Spot Instances of the same instance type. Any additional Spot Instance requests that are specified with the same Availability Zone group name are launched in that same Availability Zone, as long as at least one instance from the group is still active.</p>
-    /// <p>If there is no active instance running in the Availability Zone group that you specify for a new Spot Instance request (all instances are terminated, the request is expired, or the maximum price you specified falls below current Spot price), then Amazon EC2 launches the instance in any Availability Zone where the constraint can be met. Consequently, the subsequent set of Spot Instances could be placed in a different zone from the original request, even if you specified the same Availability Zone group.</p>
-    /// <p>Default: Instances are launched in any available Availability Zone.</p>
-    pub fn availability_zone_group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.inner = self.inner.availability_zone_group(input.into());
+    /// <p>The launch specification.</p>
+    pub fn launch_specification(mut self, input: crate::types::RequestSpotLaunchSpecification) -> Self {
+        self.inner = self.inner.launch_specification(input);
         self
     }
-    /// <p>The user-specified name for a logical grouping of requests.</p>
-    /// <p>When you specify an Availability Zone group in a Spot Instance request, all Spot Instances in the request are launched in the same Availability Zone. Instance proximity is maintained with this parameter, but the choice of Availability Zone is not. The group applies only to requests for Spot Instances of the same instance type. Any additional Spot Instance requests that are specified with the same Availability Zone group name are launched in that same Availability Zone, as long as at least one instance from the group is still active.</p>
-    /// <p>If there is no active instance running in the Availability Zone group that you specify for a new Spot Instance request (all instances are terminated, the request is expired, or the maximum price you specified falls below current Spot price), then Amazon EC2 launches the instance in any Availability Zone where the constraint can be met. Consequently, the subsequent set of Spot Instances could be placed in a different zone from the original request, even if you specified the same Availability Zone group.</p>
-    /// <p>Default: Instances are launched in any available Availability Zone.</p>
-    pub fn set_availability_zone_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.inner = self.inner.set_availability_zone_group(input);
+    /// <p>The launch specification.</p>
+    pub fn set_launch_specification(mut self, input: ::std::option::Option<crate::types::RequestSpotLaunchSpecification>) -> Self {
+        self.inner = self.inner.set_launch_specification(input);
         self
     }
-    /// <p>The user-specified name for a logical grouping of requests.</p>
-    /// <p>When you specify an Availability Zone group in a Spot Instance request, all Spot Instances in the request are launched in the same Availability Zone. Instance proximity is maintained with this parameter, but the choice of Availability Zone is not. The group applies only to requests for Spot Instances of the same instance type. Any additional Spot Instance requests that are specified with the same Availability Zone group name are launched in that same Availability Zone, as long as at least one instance from the group is still active.</p>
-    /// <p>If there is no active instance running in the Availability Zone group that you specify for a new Spot Instance request (all instances are terminated, the request is expired, or the maximum price you specified falls below current Spot price), then Amazon EC2 launches the instance in any Availability Zone where the constraint can be met. Consequently, the subsequent set of Spot Instances could be placed in a different zone from the original request, even if you specified the same Availability Zone group.</p>
-    /// <p>Default: Instances are launched in any available Availability Zone.</p>
-    pub fn get_availability_zone_group(&self) -> &::std::option::Option<::std::string::String> {
-        self.inner.get_availability_zone_group()
+    /// <p>The launch specification.</p>
+    pub fn get_launch_specification(&self) -> &::std::option::Option<crate::types::RequestSpotLaunchSpecification> {
+        self.inner.get_launch_specification()
     }
-    /// <p>Deprecated.</p>
-    pub fn block_duration_minutes(mut self, input: i32) -> Self {
-        self.inner = self.inner.block_duration_minutes(input);
+    ///
+    /// Appends an item to `TagSpecifications`.
+    ///
+    /// To override the contents of this collection use [`set_tag_specifications`](Self::set_tag_specifications).
+    ///
+    /// <p>The key-value pair for tagging the Spot Instance request on creation. The value for <code>ResourceType</code> must be <code>spot-instances-request</code>, otherwise the Spot Instance request fails. To tag the Spot Instance request after it has been created, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
+    pub fn tag_specifications(mut self, input: crate::types::TagSpecification) -> Self {
+        self.inner = self.inner.tag_specifications(input);
         self
     }
-    /// <p>Deprecated.</p>
-    pub fn set_block_duration_minutes(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.inner = self.inner.set_block_duration_minutes(input);
+    /// <p>The key-value pair for tagging the Spot Instance request on creation. The value for <code>ResourceType</code> must be <code>spot-instances-request</code>, otherwise the Spot Instance request fails. To tag the Spot Instance request after it has been created, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
+    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>) -> Self {
+        self.inner = self.inner.set_tag_specifications(input);
         self
     }
-    /// <p>Deprecated.</p>
-    pub fn get_block_duration_minutes(&self) -> &::std::option::Option<i32> {
-        self.inner.get_block_duration_minutes()
+    /// <p>The key-value pair for tagging the Spot Instance request on creation. The value for <code>ResourceType</code> must be <code>spot-instances-request</code>, otherwise the Spot Instance request fails. To tag the Spot Instance request after it has been created, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
+    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+        self.inner.get_tag_specifications()
     }
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">Ensuring idempotency in Amazon EC2 API requests</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.inner = self.inner.client_token(input.into());
+    /// <p>The behavior when a Spot Instance is interrupted. The default is <code>terminate</code>.</p>
+    pub fn instance_interruption_behavior(mut self, input: crate::types::InstanceInterruptionBehavior) -> Self {
+        self.inner = self.inner.instance_interruption_behavior(input);
         self
     }
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">Ensuring idempotency in Amazon EC2 API requests</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.inner = self.inner.set_client_token(input);
+    /// <p>The behavior when a Spot Instance is interrupted. The default is <code>terminate</code>.</p>
+    pub fn set_instance_interruption_behavior(mut self, input: ::std::option::Option<crate::types::InstanceInterruptionBehavior>) -> Self {
+        self.inner = self.inner.set_instance_interruption_behavior(input);
         self
     }
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">Ensuring idempotency in Amazon EC2 API requests</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
-        self.inner.get_client_token()
+    /// <p>The behavior when a Spot Instance is interrupted. The default is <code>terminate</code>.</p>
+    pub fn get_instance_interruption_behavior(&self) -> &::std::option::Option<crate::types::InstanceInterruptionBehavior> {
+        self.inner.get_instance_interruption_behavior()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
@@ -175,54 +171,6 @@ impl RequestSpotInstancesFluentBuilder {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
         self.inner.get_dry_run()
-    }
-    /// <p>The maximum number of Spot Instances to launch.</p>
-    /// <p>Default: 1</p>
-    pub fn instance_count(mut self, input: i32) -> Self {
-        self.inner = self.inner.instance_count(input);
-        self
-    }
-    /// <p>The maximum number of Spot Instances to launch.</p>
-    /// <p>Default: 1</p>
-    pub fn set_instance_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.inner = self.inner.set_instance_count(input);
-        self
-    }
-    /// <p>The maximum number of Spot Instances to launch.</p>
-    /// <p>Default: 1</p>
-    pub fn get_instance_count(&self) -> &::std::option::Option<i32> {
-        self.inner.get_instance_count()
-    }
-    /// <p>The instance launch group. Launch groups are Spot Instances that launch together and terminate together.</p>
-    /// <p>Default: Instances are launched and terminated individually</p>
-    pub fn launch_group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.inner = self.inner.launch_group(input.into());
-        self
-    }
-    /// <p>The instance launch group. Launch groups are Spot Instances that launch together and terminate together.</p>
-    /// <p>Default: Instances are launched and terminated individually</p>
-    pub fn set_launch_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.inner = self.inner.set_launch_group(input);
-        self
-    }
-    /// <p>The instance launch group. Launch groups are Spot Instances that launch together and terminate together.</p>
-    /// <p>Default: Instances are launched and terminated individually</p>
-    pub fn get_launch_group(&self) -> &::std::option::Option<::std::string::String> {
-        self.inner.get_launch_group()
-    }
-    /// <p>The launch specification.</p>
-    pub fn launch_specification(mut self, input: crate::types::RequestSpotLaunchSpecification) -> Self {
-        self.inner = self.inner.launch_specification(input);
-        self
-    }
-    /// <p>The launch specification.</p>
-    pub fn set_launch_specification(mut self, input: ::std::option::Option<crate::types::RequestSpotLaunchSpecification>) -> Self {
-        self.inner = self.inner.set_launch_specification(input);
-        self
-    }
-    /// <p>The launch specification.</p>
-    pub fn get_launch_specification(&self) -> &::std::option::Option<crate::types::RequestSpotLaunchSpecification> {
-        self.inner.get_launch_specification()
     }
     /// <p>The maximum price per unit hour that you are willing to pay for a Spot Instance. We do not recommend using this parameter because it can lead to increased interruptions. If you do not specify this parameter, you will pay the current Spot price.</p><important>
     /// <p>If you specify a maximum price, your instances will be interrupted more frequently than if you do not specify this parameter.</p>
@@ -243,6 +191,37 @@ impl RequestSpotInstancesFluentBuilder {
     /// </important>
     pub fn get_spot_price(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_spot_price()
+    }
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">Ensuring idempotency in Amazon EC2 API requests</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.client_token(input.into());
+        self
+    }
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">Ensuring idempotency in Amazon EC2 API requests</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_client_token(input);
+        self
+    }
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">Ensuring idempotency in Amazon EC2 API requests</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
+    }
+    /// <p>The maximum number of Spot Instances to launch.</p>
+    /// <p>Default: 1</p>
+    pub fn instance_count(mut self, input: i32) -> Self {
+        self.inner = self.inner.instance_count(input);
+        self
+    }
+    /// <p>The maximum number of Spot Instances to launch.</p>
+    /// <p>Default: 1</p>
+    pub fn set_instance_count(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.inner = self.inner.set_instance_count(input);
+        self
+    }
+    /// <p>The maximum number of Spot Instances to launch.</p>
+    /// <p>Default: 1</p>
+    pub fn get_instance_count(&self) -> &::std::option::Option<i32> {
+        self.inner.get_instance_count()
     }
     /// <p>The Spot Instance request type.</p>
     /// <p>Default: <code>one-time</code></p>
@@ -310,37 +289,58 @@ impl RequestSpotInstancesFluentBuilder {
     pub fn get_valid_until(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_valid_until()
     }
-    ///
-    /// Appends an item to `TagSpecifications`.
-    ///
-    /// To override the contents of this collection use [`set_tag_specifications`](Self::set_tag_specifications).
-    ///
-    /// <p>The key-value pair for tagging the Spot Instance request on creation. The value for <code>ResourceType</code> must be <code>spot-instances-request</code>, otherwise the Spot Instance request fails. To tag the Spot Instance request after it has been created, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
-    pub fn tag_specifications(mut self, input: crate::types::TagSpecification) -> Self {
-        self.inner = self.inner.tag_specifications(input);
+    /// <p>The instance launch group. Launch groups are Spot Instances that launch together and terminate together.</p>
+    /// <p>Default: Instances are launched and terminated individually</p>
+    pub fn launch_group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.launch_group(input.into());
         self
     }
-    /// <p>The key-value pair for tagging the Spot Instance request on creation. The value for <code>ResourceType</code> must be <code>spot-instances-request</code>, otherwise the Spot Instance request fails. To tag the Spot Instance request after it has been created, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
-    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>) -> Self {
-        self.inner = self.inner.set_tag_specifications(input);
+    /// <p>The instance launch group. Launch groups are Spot Instances that launch together and terminate together.</p>
+    /// <p>Default: Instances are launched and terminated individually</p>
+    pub fn set_launch_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_launch_group(input);
         self
     }
-    /// <p>The key-value pair for tagging the Spot Instance request on creation. The value for <code>ResourceType</code> must be <code>spot-instances-request</code>, otherwise the Spot Instance request fails. To tag the Spot Instance request after it has been created, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
-    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
-        self.inner.get_tag_specifications()
+    /// <p>The instance launch group. Launch groups are Spot Instances that launch together and terminate together.</p>
+    /// <p>Default: Instances are launched and terminated individually</p>
+    pub fn get_launch_group(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_launch_group()
     }
-    /// <p>The behavior when a Spot Instance is interrupted. The default is <code>terminate</code>.</p>
-    pub fn instance_interruption_behavior(mut self, input: crate::types::InstanceInterruptionBehavior) -> Self {
-        self.inner = self.inner.instance_interruption_behavior(input);
+    /// <p>The user-specified name for a logical grouping of requests.</p>
+    /// <p>When you specify an Availability Zone group in a Spot Instance request, all Spot Instances in the request are launched in the same Availability Zone. Instance proximity is maintained with this parameter, but the choice of Availability Zone is not. The group applies only to requests for Spot Instances of the same instance type. Any additional Spot Instance requests that are specified with the same Availability Zone group name are launched in that same Availability Zone, as long as at least one instance from the group is still active.</p>
+    /// <p>If there is no active instance running in the Availability Zone group that you specify for a new Spot Instance request (all instances are terminated, the request is expired, or the maximum price you specified falls below current Spot price), then Amazon EC2 launches the instance in any Availability Zone where the constraint can be met. Consequently, the subsequent set of Spot Instances could be placed in a different zone from the original request, even if you specified the same Availability Zone group.</p>
+    /// <p>Default: Instances are launched in any available Availability Zone.</p>
+    pub fn availability_zone_group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.availability_zone_group(input.into());
         self
     }
-    /// <p>The behavior when a Spot Instance is interrupted. The default is <code>terminate</code>.</p>
-    pub fn set_instance_interruption_behavior(mut self, input: ::std::option::Option<crate::types::InstanceInterruptionBehavior>) -> Self {
-        self.inner = self.inner.set_instance_interruption_behavior(input);
+    /// <p>The user-specified name for a logical grouping of requests.</p>
+    /// <p>When you specify an Availability Zone group in a Spot Instance request, all Spot Instances in the request are launched in the same Availability Zone. Instance proximity is maintained with this parameter, but the choice of Availability Zone is not. The group applies only to requests for Spot Instances of the same instance type. Any additional Spot Instance requests that are specified with the same Availability Zone group name are launched in that same Availability Zone, as long as at least one instance from the group is still active.</p>
+    /// <p>If there is no active instance running in the Availability Zone group that you specify for a new Spot Instance request (all instances are terminated, the request is expired, or the maximum price you specified falls below current Spot price), then Amazon EC2 launches the instance in any Availability Zone where the constraint can be met. Consequently, the subsequent set of Spot Instances could be placed in a different zone from the original request, even if you specified the same Availability Zone group.</p>
+    /// <p>Default: Instances are launched in any available Availability Zone.</p>
+    pub fn set_availability_zone_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_availability_zone_group(input);
         self
     }
-    /// <p>The behavior when a Spot Instance is interrupted. The default is <code>terminate</code>.</p>
-    pub fn get_instance_interruption_behavior(&self) -> &::std::option::Option<crate::types::InstanceInterruptionBehavior> {
-        self.inner.get_instance_interruption_behavior()
+    /// <p>The user-specified name for a logical grouping of requests.</p>
+    /// <p>When you specify an Availability Zone group in a Spot Instance request, all Spot Instances in the request are launched in the same Availability Zone. Instance proximity is maintained with this parameter, but the choice of Availability Zone is not. The group applies only to requests for Spot Instances of the same instance type. Any additional Spot Instance requests that are specified with the same Availability Zone group name are launched in that same Availability Zone, as long as at least one instance from the group is still active.</p>
+    /// <p>If there is no active instance running in the Availability Zone group that you specify for a new Spot Instance request (all instances are terminated, the request is expired, or the maximum price you specified falls below current Spot price), then Amazon EC2 launches the instance in any Availability Zone where the constraint can be met. Consequently, the subsequent set of Spot Instances could be placed in a different zone from the original request, even if you specified the same Availability Zone group.</p>
+    /// <p>Default: Instances are launched in any available Availability Zone.</p>
+    pub fn get_availability_zone_group(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_availability_zone_group()
+    }
+    /// <p>Deprecated.</p>
+    pub fn block_duration_minutes(mut self, input: i32) -> Self {
+        self.inner = self.inner.block_duration_minutes(input);
+        self
+    }
+    /// <p>Deprecated.</p>
+    pub fn set_block_duration_minutes(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.inner = self.inner.set_block_duration_minutes(input);
+        self
+    }
+    /// <p>Deprecated.</p>
+    pub fn get_block_duration_minutes(&self) -> &::std::option::Option<i32> {
+        self.inner.get_block_duration_minutes()
     }
 }

@@ -124,6 +124,20 @@ impl DescribeSpotFleetRequestHistoryFluentBuilder {
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
         self.inner.get_dry_run()
     }
+    /// <p>The ID of the Spot Fleet request.</p>
+    pub fn spot_fleet_request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.spot_fleet_request_id(input.into());
+        self
+    }
+    /// <p>The ID of the Spot Fleet request.</p>
+    pub fn set_spot_fleet_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_spot_fleet_request_id(input);
+        self
+    }
+    /// <p>The ID of the Spot Fleet request.</p>
+    pub fn get_spot_fleet_request_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_spot_fleet_request_id()
+    }
     /// <p>The type of events to describe. By default, all events are described.</p>
     pub fn event_type(mut self, input: crate::types::EventType) -> Self {
         self.inner = self.inner.event_type(input);
@@ -138,19 +152,19 @@ impl DescribeSpotFleetRequestHistoryFluentBuilder {
     pub fn get_event_type(&self) -> &::std::option::Option<crate::types::EventType> {
         self.inner.get_event_type()
     }
-    /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
-    pub fn max_results(mut self, input: i32) -> Self {
-        self.inner = self.inner.max_results(input);
+    /// <p>The starting date and time for the events, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
+    pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.inner = self.inner.start_time(input);
         self
     }
-    /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
-    pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.inner = self.inner.set_max_results(input);
+    /// <p>The starting date and time for the events, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.inner = self.inner.set_start_time(input);
         self
     }
-    /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
-    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
-        self.inner.get_max_results()
+    /// <p>The starting date and time for the events, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_start_time()
     }
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -166,32 +180,18 @@ impl DescribeSpotFleetRequestHistoryFluentBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }
-    /// <p>The ID of the Spot Fleet request.</p>
-    pub fn spot_fleet_request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.inner = self.inner.spot_fleet_request_id(input.into());
+    /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
+    pub fn max_results(mut self, input: i32) -> Self {
+        self.inner = self.inner.max_results(input);
         self
     }
-    /// <p>The ID of the Spot Fleet request.</p>
-    pub fn set_spot_fleet_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.inner = self.inner.set_spot_fleet_request_id(input);
+    /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
+    pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.inner = self.inner.set_max_results(input);
         self
     }
-    /// <p>The ID of the Spot Fleet request.</p>
-    pub fn get_spot_fleet_request_id(&self) -> &::std::option::Option<::std::string::String> {
-        self.inner.get_spot_fleet_request_id()
-    }
-    /// <p>The starting date and time for the events, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
-    pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
-        self.inner = self.inner.start_time(input);
-        self
-    }
-    /// <p>The starting date and time for the events, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
-    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.inner = self.inner.set_start_time(input);
-        self
-    }
-    /// <p>The starting date and time for the events, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
-    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
-        self.inner.get_start_time()
+    /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
 }

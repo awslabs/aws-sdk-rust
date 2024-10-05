@@ -4,6 +4,10 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeReservedInstancesModificationsInput {
+    /// <p>IDs for the submitted modification request.</p>
+    pub reserved_instances_modification_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The token to retrieve the next page of results.</p>
+    pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>One or more filters.</p>
     /// <ul>
     /// <li>
@@ -32,12 +36,18 @@ pub struct DescribeReservedInstancesModificationsInput {
     /// <p><code>update-date</code> - The time when the modification request was last updated.</p></li>
     /// </ul>
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    /// <p>IDs for the submitted modification request.</p>
-    pub reserved_instances_modification_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>The token to retrieve the next page of results.</p>
-    pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl DescribeReservedInstancesModificationsInput {
+    /// <p>IDs for the submitted modification request.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.reserved_instances_modification_ids.is_none()`.
+    pub fn reserved_instances_modification_ids(&self) -> &[::std::string::String] {
+        self.reserved_instances_modification_ids.as_deref().unwrap_or_default()
+    }
+    /// <p>The token to retrieve the next page of results.</p>
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
     /// <p>One or more filters.</p>
     /// <ul>
     /// <li>
@@ -70,16 +80,6 @@ impl DescribeReservedInstancesModificationsInput {
     pub fn filters(&self) -> &[crate::types::Filter] {
         self.filters.as_deref().unwrap_or_default()
     }
-    /// <p>IDs for the submitted modification request.</p>
-    ///
-    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.reserved_instances_modification_ids.is_none()`.
-    pub fn reserved_instances_modification_ids(&self) -> &[::std::string::String] {
-        self.reserved_instances_modification_ids.as_deref().unwrap_or_default()
-    }
-    /// <p>The token to retrieve the next page of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
-        self.next_token.as_deref()
-    }
 }
 impl DescribeReservedInstancesModificationsInput {
     /// Creates a new builder-style object to manufacture [`DescribeReservedInstancesModificationsInput`](crate::operation::describe_reserved_instances_modifications::DescribeReservedInstancesModificationsInput).
@@ -92,11 +92,45 @@ impl DescribeReservedInstancesModificationsInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct DescribeReservedInstancesModificationsInputBuilder {
-    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     pub(crate) reserved_instances_modification_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
+    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
 }
 impl DescribeReservedInstancesModificationsInputBuilder {
+    /// Appends an item to `reserved_instances_modification_ids`.
+    ///
+    /// To override the contents of this collection use [`set_reserved_instances_modification_ids`](Self::set_reserved_instances_modification_ids).
+    ///
+    /// <p>IDs for the submitted modification request.</p>
+    pub fn reserved_instances_modification_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.reserved_instances_modification_ids.unwrap_or_default();
+        v.push(input.into());
+        self.reserved_instances_modification_ids = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>IDs for the submitted modification request.</p>
+    pub fn set_reserved_instances_modification_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.reserved_instances_modification_ids = input;
+        self
+    }
+    /// <p>IDs for the submitted modification request.</p>
+    pub fn get_reserved_instances_modification_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.reserved_instances_modification_ids
+    }
+    /// <p>The token to retrieve the next page of results.</p>
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The token to retrieve the next page of results.</p>
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.next_token = input;
+        self
+    }
+    /// <p>The token to retrieve the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
@@ -195,40 +229,6 @@ impl DescribeReservedInstancesModificationsInputBuilder {
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         &self.filters
     }
-    /// Appends an item to `reserved_instances_modification_ids`.
-    ///
-    /// To override the contents of this collection use [`set_reserved_instances_modification_ids`](Self::set_reserved_instances_modification_ids).
-    ///
-    /// <p>IDs for the submitted modification request.</p>
-    pub fn reserved_instances_modification_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        let mut v = self.reserved_instances_modification_ids.unwrap_or_default();
-        v.push(input.into());
-        self.reserved_instances_modification_ids = ::std::option::Option::Some(v);
-        self
-    }
-    /// <p>IDs for the submitted modification request.</p>
-    pub fn set_reserved_instances_modification_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.reserved_instances_modification_ids = input;
-        self
-    }
-    /// <p>IDs for the submitted modification request.</p>
-    pub fn get_reserved_instances_modification_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
-        &self.reserved_instances_modification_ids
-    }
-    /// <p>The token to retrieve the next page of results.</p>
-    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.next_token = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>The token to retrieve the next page of results.</p>
-    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
-    }
-    /// <p>The token to retrieve the next page of results.</p>
-    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
-        &self.next_token
-    }
     /// Consumes the builder and constructs a [`DescribeReservedInstancesModificationsInput`](crate::operation::describe_reserved_instances_modifications::DescribeReservedInstancesModificationsInput).
     pub fn build(
         self,
@@ -238,9 +238,9 @@ impl DescribeReservedInstancesModificationsInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::describe_reserved_instances_modifications::DescribeReservedInstancesModificationsInput {
-                filters: self.filters,
                 reserved_instances_modification_ids: self.reserved_instances_modification_ids,
                 next_token: self.next_token,
+                filters: self.filters,
             },
         )
     }

@@ -5,24 +5,24 @@ pub fn ser_launch_permission(
     input: &crate::types::LaunchPermission,
 ) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
-    let mut scope_1 = writer.prefix("Group");
-    if let Some(var_2) = &input.group {
-        scope_1.string(var_2.as_str());
+    let mut scope_1 = writer.prefix("OrganizationArn");
+    if let Some(var_2) = &input.organization_arn {
+        scope_1.string(var_2);
     }
     #[allow(unused_mut)]
-    let mut scope_3 = writer.prefix("UserId");
-    if let Some(var_4) = &input.user_id {
+    let mut scope_3 = writer.prefix("OrganizationalUnitArn");
+    if let Some(var_4) = &input.organizational_unit_arn {
         scope_3.string(var_4);
     }
     #[allow(unused_mut)]
-    let mut scope_5 = writer.prefix("OrganizationArn");
-    if let Some(var_6) = &input.organization_arn {
+    let mut scope_5 = writer.prefix("UserId");
+    if let Some(var_6) = &input.user_id {
         scope_5.string(var_6);
     }
     #[allow(unused_mut)]
-    let mut scope_7 = writer.prefix("OrganizationalUnitArn");
-    if let Some(var_8) = &input.organizational_unit_arn {
-        scope_7.string(var_8);
+    let mut scope_7 = writer.prefix("Group");
+    if let Some(var_8) = &input.group {
+        scope_7.string(var_8.as_str());
     }
     Ok(())
 }
@@ -35,21 +35,20 @@ pub fn de_launch_permission(
     let mut builder = crate::types::LaunchPermission::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
-            s if s.matches("group") /* Group com.amazonaws.ec2#LaunchPermission$Group */ =>  {
+            s if s.matches("organizationArn") /* OrganizationArn com.amazonaws.ec2#LaunchPermission$OrganizationArn */ =>  {
                 let var_9 =
                     Some(
-                        Result::<crate::types::PermissionGroup, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            crate::types::PermissionGroup::from(
-                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
                         )
                         ?
                     )
                 ;
-                builder = builder.set_group(var_9);
+                builder = builder.set_organization_arn(var_9);
             }
             ,
-            s if s.matches("userId") /* UserId com.amazonaws.ec2#LaunchPermission$UserId */ =>  {
+            s if s.matches("organizationalUnitArn") /* OrganizationalUnitArn com.amazonaws.ec2#LaunchPermission$OrganizationalUnitArn */ =>  {
                 let var_10 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -59,10 +58,10 @@ pub fn de_launch_permission(
                         ?
                     )
                 ;
-                builder = builder.set_user_id(var_10);
+                builder = builder.set_organizational_unit_arn(var_10);
             }
             ,
-            s if s.matches("organizationArn") /* OrganizationArn com.amazonaws.ec2#LaunchPermission$OrganizationArn */ =>  {
+            s if s.matches("userId") /* UserId com.amazonaws.ec2#LaunchPermission$UserId */ =>  {
                 let var_11 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -72,20 +71,21 @@ pub fn de_launch_permission(
                         ?
                     )
                 ;
-                builder = builder.set_organization_arn(var_11);
+                builder = builder.set_user_id(var_11);
             }
             ,
-            s if s.matches("organizationalUnitArn") /* OrganizationalUnitArn com.amazonaws.ec2#LaunchPermission$OrganizationalUnitArn */ =>  {
+            s if s.matches("group") /* Group com.amazonaws.ec2#LaunchPermission$Group */ =>  {
                 let var_12 =
                     Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
+                        Result::<crate::types::PermissionGroup, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::PermissionGroup::from(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
                         )
                         ?
                     )
                 ;
-                builder = builder.set_organizational_unit_arn(var_12);
+                builder = builder.set_group(var_12);
             }
             ,
             _ => {}

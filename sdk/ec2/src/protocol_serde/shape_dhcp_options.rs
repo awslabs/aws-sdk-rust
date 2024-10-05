@@ -7,18 +7,8 @@ pub fn de_dhcp_options(
     let mut builder = crate::types::DhcpOptions::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
-            s if s.matches("dhcpConfigurationSet") /* DhcpConfigurations com.amazonaws.ec2#DhcpOptions$DhcpConfigurations */ =>  {
+            s if s.matches("ownerId") /* OwnerId com.amazonaws.ec2#DhcpOptions$OwnerId */ =>  {
                 let var_1 =
-                    Some(
-                        crate::protocol_serde::shape_dhcp_configuration_list::de_dhcp_configuration_list(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_dhcp_configurations(var_1);
-            }
-            ,
-            s if s.matches("dhcpOptionsId") /* DhcpOptionsId com.amazonaws.ec2#DhcpOptions$DhcpOptionsId */ =>  {
-                let var_2 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -27,10 +17,20 @@ pub fn de_dhcp_options(
                         ?
                     )
                 ;
-                builder = builder.set_dhcp_options_id(var_2);
+                builder = builder.set_owner_id(var_1);
             }
             ,
-            s if s.matches("ownerId") /* OwnerId com.amazonaws.ec2#DhcpOptions$OwnerId */ =>  {
+            s if s.matches("tagSet") /* Tags com.amazonaws.ec2#DhcpOptions$Tags */ =>  {
+                let var_2 =
+                    Some(
+                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_tags(var_2);
+            }
+            ,
+            s if s.matches("dhcpOptionsId") /* DhcpOptionsId com.amazonaws.ec2#DhcpOptions$DhcpOptionsId */ =>  {
                 let var_3 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -40,17 +40,17 @@ pub fn de_dhcp_options(
                         ?
                     )
                 ;
-                builder = builder.set_owner_id(var_3);
+                builder = builder.set_dhcp_options_id(var_3);
             }
             ,
-            s if s.matches("tagSet") /* Tags com.amazonaws.ec2#DhcpOptions$Tags */ =>  {
+            s if s.matches("dhcpConfigurationSet") /* DhcpConfigurations com.amazonaws.ec2#DhcpOptions$DhcpConfigurations */ =>  {
                 let var_4 =
                     Some(
-                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag)
+                        crate::protocol_serde::shape_dhcp_configuration_list::de_dhcp_configuration_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_tags(var_4);
+                builder = builder.set_dhcp_configurations(var_4);
             }
             ,
             _ => {}

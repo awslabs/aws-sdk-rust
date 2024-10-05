@@ -11,13 +11,13 @@ pub use crate::types::_security_group_rule_description::SecurityGroupRuleDescrip
 
 pub use crate::types::_ip_permission::IpPermission;
 
-pub use crate::types::_user_id_group_pair::UserIdGroupPair;
-
 pub use crate::types::_prefix_list_id::PrefixListId;
 
 pub use crate::types::_ipv6_range::Ipv6Range;
 
 pub use crate::types::_ip_range::IpRange;
+
+pub use crate::types::_user_id_group_pair::UserIdGroupPair;
 
 pub use crate::types::_instance_monitoring::InstanceMonitoring;
 
@@ -133,6 +133,18 @@ pub use crate::types::_scheduled_instances_ebs::ScheduledInstancesEbs;
 
 pub use crate::types::_instance::Instance;
 
+pub use crate::types::_platform_values::PlatformValues;
+
+pub use crate::types::_placement::Placement;
+
+pub use crate::types::_tenancy::Tenancy;
+
+pub use crate::types::_instance_type::InstanceType;
+
+pub use crate::types::_product_code::ProductCode;
+
+pub use crate::types::_product_code_values::ProductCodeValues;
+
 pub use crate::types::_instance_boot_mode_values::InstanceBootModeValues;
 
 pub use crate::types::_instance_maintenance_options::InstanceMaintenanceOptions;
@@ -221,17 +233,23 @@ pub use crate::types::_ebs_instance_block_device::EbsInstanceBlockDevice;
 
 pub use crate::types::_architecture_values::ArchitectureValues;
 
-pub use crate::types::_product_code::ProductCode;
+pub use crate::types::_iam_instance_profile_specification::IamInstanceProfileSpecification;
 
-pub use crate::types::_product_code_values::ProductCodeValues;
+pub use crate::types::_instance_network_interface_specification::InstanceNetworkInterfaceSpecification;
 
-pub use crate::types::_platform_values::PlatformValues;
+pub use crate::types::_connection_tracking_specification_request::ConnectionTrackingSpecificationRequest;
 
-pub use crate::types::_placement::Placement;
+pub use crate::types::_ena_srd_specification_request::EnaSrdSpecificationRequest;
 
-pub use crate::types::_tenancy::Tenancy;
+pub use crate::types::_ena_srd_udp_specification_request::EnaSrdUdpSpecificationRequest;
 
-pub use crate::types::_instance_type::InstanceType;
+pub use crate::types::_ipv6_prefix_specification_request::Ipv6PrefixSpecificationRequest;
+
+pub use crate::types::_ipv4_prefix_specification_request::Ipv4PrefixSpecificationRequest;
+
+pub use crate::types::_private_ip_address_specification::PrivateIpAddressSpecification;
+
+pub use crate::types::_shutdown_behavior::ShutdownBehavior;
 
 pub use crate::types::_instance_maintenance_options_request::InstanceMaintenanceOptionsRequest;
 
@@ -268,24 +286,6 @@ pub use crate::types::_launch_template_specification::LaunchTemplateSpecificatio
 pub use crate::types::_elastic_inference_accelerator::ElasticInferenceAccelerator;
 
 pub use crate::types::_elastic_gpu_specification::ElasticGpuSpecification;
-
-pub use crate::types::_instance_network_interface_specification::InstanceNetworkInterfaceSpecification;
-
-pub use crate::types::_connection_tracking_specification_request::ConnectionTrackingSpecificationRequest;
-
-pub use crate::types::_ena_srd_specification_request::EnaSrdSpecificationRequest;
-
-pub use crate::types::_ena_srd_udp_specification_request::EnaSrdUdpSpecificationRequest;
-
-pub use crate::types::_ipv6_prefix_specification_request::Ipv6PrefixSpecificationRequest;
-
-pub use crate::types::_ipv4_prefix_specification_request::Ipv4PrefixSpecificationRequest;
-
-pub use crate::types::_private_ip_address_specification::PrivateIpAddressSpecification;
-
-pub use crate::types::_shutdown_behavior::ShutdownBehavior;
-
-pub use crate::types::_iam_instance_profile_specification::IamInstanceProfileSpecification;
 
 pub use crate::types::_run_instances_monitoring_enabled::RunInstancesMonitoringEnabled;
 
@@ -417,17 +417,17 @@ pub use crate::types::_on_demand_allocation_strategy::OnDemandAllocationStrategy
 
 pub use crate::types::_allocation_strategy::AllocationStrategy;
 
-pub use crate::types::_report_status_type::ReportStatusType;
-
 pub use crate::types::_report_instance_reason_codes::ReportInstanceReasonCodes;
+
+pub use crate::types::_report_status_type::ReportStatusType;
 
 pub use crate::types::_route_table_association_state::RouteTableAssociationState;
 
 pub use crate::types::_route_table_association_state_code::RouteTableAssociationStateCode;
 
-pub use crate::types::_rule_action::RuleAction;
-
 pub use crate::types::_icmp_type_code::IcmpTypeCode;
+
+pub use crate::types::_rule_action::RuleAction;
 
 pub use crate::types::_iam_instance_profile_association::IamInstanceProfileAssociation;
 
@@ -535,13 +535,15 @@ pub use crate::types::_cidr_authorization_context::CidrAuthorizationContext;
 
 pub use crate::types::_vpn_connection::VpnConnection;
 
+pub use crate::types::_gateway_type::GatewayType;
+
+pub use crate::types::_vpn_state::VpnState;
+
 pub use crate::types::_vgw_telemetry::VgwTelemetry;
 
 pub use crate::types::_telemetry_status::TelemetryStatus;
 
 pub use crate::types::_vpn_static_route::VpnStaticRoute;
-
-pub use crate::types::_vpn_state::VpnState;
 
 pub use crate::types::_vpn_static_route_source::VpnStaticRouteSource;
 
@@ -570,8 +572,6 @@ pub use crate::types::_phase1_encryption_algorithms_list_value::Phase1Encryption
 pub use crate::types::_tunnel_inside_ip_version::TunnelInsideIpVersion;
 
 pub use crate::types::_gateway_association_state::GatewayAssociationState;
-
-pub use crate::types::_gateway_type::GatewayType;
 
 pub use crate::types::_modify_vpn_tunnel_options_specification::ModifyVpnTunnelOptionsSpecification;
 
@@ -751,13 +751,13 @@ pub use crate::types::_reserved_instances_configuration::ReservedInstancesConfig
 
 pub use crate::types::_scope::Scope;
 
-pub use crate::types::_ena_srd_specification::EnaSrdSpecification;
-
-pub use crate::types::_ena_srd_udp_specification::EnaSrdUdpSpecification;
+pub use crate::types::_network_interface_attachment_changes::NetworkInterfaceAttachmentChanges;
 
 pub use crate::types::_attribute_value::AttributeValue;
 
-pub use crate::types::_network_interface_attachment_changes::NetworkInterfaceAttachmentChanges;
+pub use crate::types::_ena_srd_specification::EnaSrdSpecification;
+
+pub use crate::types::_ena_srd_udp_specification::EnaSrdUdpSpecification;
 
 pub use crate::types::_remove_prefix_list_entry::RemovePrefixListEntry;
 
@@ -815,9 +815,9 @@ pub use crate::types::_ipam_tier::IpamTier;
 
 pub use crate::types::_ipam_state::IpamState;
 
-pub use crate::types::_host_tenancy::HostTenancy;
-
 pub use crate::types::_affinity::Affinity;
+
+pub use crate::types::_host_tenancy::HostTenancy;
 
 pub use crate::types::_default_instance_metadata_tags_state::DefaultInstanceMetadataTagsState;
 
@@ -861,11 +861,11 @@ pub use crate::types::_launch_permission_modifications::LaunchPermissionModifica
 
 pub use crate::types::_launch_permission::LaunchPermission;
 
+pub use crate::types::_auto_placement::AutoPlacement;
+
 pub use crate::types::_host_maintenance::HostMaintenance;
 
 pub use crate::types::_host_recovery::HostRecovery;
-
-pub use crate::types::_auto_placement::AutoPlacement;
 
 pub use crate::types::_fpga_image_attribute::FpgaImageAttribute;
 
@@ -963,11 +963,11 @@ pub use crate::types::_user_bucket::UserBucket;
 
 pub use crate::types::_client_data::ClientData;
 
+pub use crate::types::_disk_image::DiskImage;
+
 pub use crate::types::_import_instance_launch_specification::ImportInstanceLaunchSpecification;
 
 pub use crate::types::_user_data::UserData;
-
-pub use crate::types::_disk_image::DiskImage;
 
 pub use crate::types::_import_image_license_configuration_response::ImportImageLicenseConfigurationResponse;
 
@@ -1349,9 +1349,9 @@ pub use crate::types::_volume_status_action::VolumeStatusAction;
 
 pub use crate::types::_volume::Volume;
 
-pub use crate::types::_volume_state::VolumeState;
-
 pub use crate::types::_volume_attachment::VolumeAttachment;
+
+pub use crate::types::_volume_state::VolumeState;
 
 pub use crate::types::_volume_attribute_name::VolumeAttributeName;
 
@@ -1413,9 +1413,9 @@ pub use crate::types::_tag_description::TagDescription;
 
 pub use crate::types::_subnet::Subnet;
 
-pub use crate::types::_private_dns_name_options_on_launch::PrivateDnsNameOptionsOnLaunch;
-
 pub use crate::types::_subnet_state::SubnetState;
+
+pub use crate::types::_private_dns_name_options_on_launch::PrivateDnsNameOptionsOnLaunch;
 
 pub use crate::types::_store_image_task_result::StoreImageTaskResult;
 
@@ -1757,9 +1757,9 @@ pub use crate::types::_import_image_task::ImportImageTask;
 
 pub use crate::types::_image::Image;
 
-pub use crate::types::_image_state::ImageState;
-
 pub use crate::types::_image_type_values::ImageTypeValues;
+
+pub use crate::types::_image_state::ImageState;
 
 pub use crate::types::_image_attribute_name::ImageAttributeName;
 
@@ -1949,23 +1949,23 @@ pub use crate::types::_capacity_block_offering::CapacityBlockOffering;
 
 pub use crate::types::_bundle_task::BundleTask;
 
+pub use crate::types::_bundle_task_error::BundleTaskError;
+
 pub use crate::types::_storage::Storage;
 
 pub use crate::types::_s3_storage::S3Storage;
 
 pub use crate::types::_bundle_task_state::BundleTaskState;
 
-pub use crate::types::_bundle_task_error::BundleTaskError;
-
 pub use crate::types::_subscription::Subscription;
 
 pub use crate::types::_availability_zone::AvailabilityZone;
 
+pub use crate::types::_availability_zone_state::AvailabilityZoneState;
+
 pub use crate::types::_availability_zone_message::AvailabilityZoneMessage;
 
 pub use crate::types::_availability_zone_opt_in_status::AvailabilityZoneOptInStatus;
-
-pub use crate::types::_availability_zone_state::AvailabilityZoneState;
 
 pub use crate::types::_address::Address;
 

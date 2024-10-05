@@ -3,19 +3,19 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisassociateRouteTableInput {
-    /// <p>The association ID representing the current association between the route table and subnet or gateway.</p>
-    pub association_id: ::std::option::Option<::std::string::String>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
+    /// <p>The association ID representing the current association between the route table and subnet or gateway.</p>
+    pub association_id: ::std::option::Option<::std::string::String>,
 }
 impl DisassociateRouteTableInput {
-    /// <p>The association ID representing the current association between the route table and subnet or gateway.</p>
-    pub fn association_id(&self) -> ::std::option::Option<&str> {
-        self.association_id.as_deref()
-    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
         self.dry_run
+    }
+    /// <p>The association ID representing the current association between the route table and subnet or gateway.</p>
+    pub fn association_id(&self) -> ::std::option::Option<&str> {
+        self.association_id.as_deref()
     }
 }
 impl DisassociateRouteTableInput {
@@ -29,10 +29,24 @@ impl DisassociateRouteTableInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct DisassociateRouteTableInputBuilder {
-    pub(crate) association_id: ::std::option::Option<::std::string::String>,
     pub(crate) dry_run: ::std::option::Option<bool>,
+    pub(crate) association_id: ::std::option::Option<::std::string::String>,
 }
 impl DisassociateRouteTableInputBuilder {
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn dry_run(mut self, input: bool) -> Self {
+        self.dry_run = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.dry_run = input;
+        self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
+    }
     /// <p>The association ID representing the current association between the route table and subnet or gateway.</p>
     /// This field is required.
     pub fn association_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -48,20 +62,6 @@ impl DisassociateRouteTableInputBuilder {
     pub fn get_association_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.association_id
     }
-    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn dry_run(mut self, input: bool) -> Self {
-        self.dry_run = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
-    }
-    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
-        &self.dry_run
-    }
     /// Consumes the builder and constructs a [`DisassociateRouteTableInput`](crate::operation::disassociate_route_table::DisassociateRouteTableInput).
     pub fn build(
         self,
@@ -70,8 +70,8 @@ impl DisassociateRouteTableInputBuilder {
         ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::disassociate_route_table::DisassociateRouteTableInput {
-            association_id: self.association_id,
             dry_run: self.dry_run,
+            association_id: self.association_id,
         })
     }
 }

@@ -26,27 +26,27 @@ pub fn ser_create_vpn_connection_input_input_input(
         scope_7.string(var_8);
     }
     #[allow(unused_mut)]
-    let mut scope_9 = writer.prefix("DryRun");
-    if let Some(var_10) = &input.dry_run {
-        scope_9.boolean(*var_10);
-    }
-    #[allow(unused_mut)]
-    let mut scope_11 = writer.prefix("Options");
-    if let Some(var_12) = &input.options {
-        crate::protocol_serde::shape_vpn_connection_options_specification::ser_vpn_connection_options_specification(scope_11, var_12)?;
-    }
-    #[allow(unused_mut)]
-    let mut scope_13 = writer.prefix("TagSpecification");
-    if let Some(var_14) = &input.tag_specifications {
-        if !var_14.is_empty() {
-            let mut list_16 = scope_13.start_list(true, Some("item"));
-            for item_15 in var_14 {
+    let mut scope_9 = writer.prefix("TagSpecification");
+    if let Some(var_10) = &input.tag_specifications {
+        if !var_10.is_empty() {
+            let mut list_12 = scope_9.start_list(true, Some("item"));
+            for item_11 in var_10 {
                 #[allow(unused_mut)]
-                let mut entry_17 = list_16.entry();
-                crate::protocol_serde::shape_tag_specification::ser_tag_specification(entry_17, item_15)?;
+                let mut entry_13 = list_12.entry();
+                crate::protocol_serde::shape_tag_specification::ser_tag_specification(entry_13, item_11)?;
             }
-            list_16.finish();
+            list_12.finish();
         }
+    }
+    #[allow(unused_mut)]
+    let mut scope_14 = writer.prefix("DryRun");
+    if let Some(var_15) = &input.dry_run {
+        scope_14.boolean(*var_15);
+    }
+    #[allow(unused_mut)]
+    let mut scope_16 = writer.prefix("Options");
+    if let Some(var_17) = &input.options {
+        crate::protocol_serde::shape_vpn_connection_options_specification::ser_vpn_connection_options_specification(scope_16, var_17)?;
     }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))

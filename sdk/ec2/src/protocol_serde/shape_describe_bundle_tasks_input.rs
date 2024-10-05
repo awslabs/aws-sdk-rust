@@ -19,22 +19,22 @@ pub fn ser_describe_bundle_tasks_input_input_input(
         }
     }
     #[allow(unused_mut)]
-    let mut scope_6 = writer.prefix("Filter");
-    if let Some(var_7) = &input.filters {
-        if !var_7.is_empty() {
-            let mut list_9 = scope_6.start_list(true, Some("Filter"));
-            for item_8 in var_7 {
-                #[allow(unused_mut)]
-                let mut entry_10 = list_9.entry();
-                crate::protocol_serde::shape_filter::ser_filter(entry_10, item_8)?;
-            }
-            list_9.finish();
-        }
+    let mut scope_6 = writer.prefix("DryRun");
+    if let Some(var_7) = &input.dry_run {
+        scope_6.boolean(*var_7);
     }
     #[allow(unused_mut)]
-    let mut scope_11 = writer.prefix("DryRun");
-    if let Some(var_12) = &input.dry_run {
-        scope_11.boolean(*var_12);
+    let mut scope_8 = writer.prefix("Filter");
+    if let Some(var_9) = &input.filters {
+        if !var_9.is_empty() {
+            let mut list_11 = scope_8.start_list(true, Some("Filter"));
+            for item_10 in var_9 {
+                #[allow(unused_mut)]
+                let mut entry_12 = list_11.entry();
+                crate::protocol_serde::shape_filter::ser_filter(entry_12, item_10)?;
+            }
+            list_11.finish();
+        }
     }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))

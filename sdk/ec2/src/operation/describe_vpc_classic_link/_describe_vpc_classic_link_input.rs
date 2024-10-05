@@ -3,6 +3,10 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeVpcClassicLinkInput {
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub dry_run: ::std::option::Option<bool>,
+    /// <p>The VPCs for which you want to describe the ClassicLink status.</p>
+    pub vpc_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The filters.</p>
     /// <ul>
     /// <li>
@@ -19,12 +23,18 @@ pub struct DescribeVpcClassicLinkInput {
     /// <p><code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p></li>
     /// </ul>
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub dry_run: ::std::option::Option<bool>,
-    /// <p>The VPCs for which you want to describe the ClassicLink status.</p>
-    pub vpc_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DescribeVpcClassicLinkInput {
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn dry_run(&self) -> ::std::option::Option<bool> {
+        self.dry_run
+    }
+    /// <p>The VPCs for which you want to describe the ClassicLink status.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vpc_ids.is_none()`.
+    pub fn vpc_ids(&self) -> &[::std::string::String] {
+        self.vpc_ids.as_deref().unwrap_or_default()
+    }
     /// <p>The filters.</p>
     /// <ul>
     /// <li>
@@ -45,16 +55,6 @@ impl DescribeVpcClassicLinkInput {
     pub fn filters(&self) -> &[crate::types::Filter] {
         self.filters.as_deref().unwrap_or_default()
     }
-    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn dry_run(&self) -> ::std::option::Option<bool> {
-        self.dry_run
-    }
-    /// <p>The VPCs for which you want to describe the ClassicLink status.</p>
-    ///
-    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vpc_ids.is_none()`.
-    pub fn vpc_ids(&self) -> &[::std::string::String] {
-        self.vpc_ids.as_deref().unwrap_or_default()
-    }
 }
 impl DescribeVpcClassicLinkInput {
     /// Creates a new builder-style object to manufacture [`DescribeVpcClassicLinkInput`](crate::operation::describe_vpc_classic_link::DescribeVpcClassicLinkInput).
@@ -67,11 +67,45 @@ impl DescribeVpcClassicLinkInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct DescribeVpcClassicLinkInputBuilder {
-    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) vpc_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
 }
 impl DescribeVpcClassicLinkInputBuilder {
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn dry_run(mut self, input: bool) -> Self {
+        self.dry_run = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.dry_run = input;
+        self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
+    }
+    /// Appends an item to `vpc_ids`.
+    ///
+    /// To override the contents of this collection use [`set_vpc_ids`](Self::set_vpc_ids).
+    ///
+    /// <p>The VPCs for which you want to describe the ClassicLink status.</p>
+    pub fn vpc_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.vpc_ids.unwrap_or_default();
+        v.push(input.into());
+        self.vpc_ids = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The VPCs for which you want to describe the ClassicLink status.</p>
+    pub fn set_vpc_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.vpc_ids = input;
+        self
+    }
+    /// <p>The VPCs for which you want to describe the ClassicLink status.</p>
+    pub fn get_vpc_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.vpc_ids
+    }
     /// Appends an item to `filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
@@ -134,40 +168,6 @@ impl DescribeVpcClassicLinkInputBuilder {
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         &self.filters
     }
-    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn dry_run(mut self, input: bool) -> Self {
-        self.dry_run = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
-    }
-    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
-        &self.dry_run
-    }
-    /// Appends an item to `vpc_ids`.
-    ///
-    /// To override the contents of this collection use [`set_vpc_ids`](Self::set_vpc_ids).
-    ///
-    /// <p>The VPCs for which you want to describe the ClassicLink status.</p>
-    pub fn vpc_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        let mut v = self.vpc_ids.unwrap_or_default();
-        v.push(input.into());
-        self.vpc_ids = ::std::option::Option::Some(v);
-        self
-    }
-    /// <p>The VPCs for which you want to describe the ClassicLink status.</p>
-    pub fn set_vpc_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.vpc_ids = input;
-        self
-    }
-    /// <p>The VPCs for which you want to describe the ClassicLink status.</p>
-    pub fn get_vpc_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
-        &self.vpc_ids
-    }
     /// Consumes the builder and constructs a [`DescribeVpcClassicLinkInput`](crate::operation::describe_vpc_classic_link::DescribeVpcClassicLinkInput).
     pub fn build(
         self,
@@ -176,9 +176,9 @@ impl DescribeVpcClassicLinkInputBuilder {
         ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_vpc_classic_link::DescribeVpcClassicLinkInput {
-            filters: self.filters,
             dry_run: self.dry_run,
             vpc_ids: self.vpc_ids,
+            filters: self.filters,
         })
     }
 }

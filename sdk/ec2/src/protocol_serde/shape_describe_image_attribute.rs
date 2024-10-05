@@ -54,18 +54,108 @@ pub fn de_describe_image_attribute(
     }
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
-            s if s.matches("blockDeviceMapping") /* BlockDeviceMappings com.amazonaws.ec2.synthetic#DescribeImageAttributeOutput$BlockDeviceMappings */ =>  {
+            s if s.matches("description") /* Description com.amazonaws.ec2.synthetic#DescribeImageAttributeOutput$Description */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_block_device_mapping_list::de_block_device_mapping_list(&mut tag)
+                        crate::protocol_serde::shape_attribute_value::de_attribute_value(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_block_device_mappings(var_1);
+                builder = builder.set_description(var_1);
+            }
+            ,
+            s if s.matches("kernel") /* KernelId com.amazonaws.ec2.synthetic#DescribeImageAttributeOutput$KernelId */ =>  {
+                let var_2 =
+                    Some(
+                        crate::protocol_serde::shape_attribute_value::de_attribute_value(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_kernel_id(var_2);
+            }
+            ,
+            s if s.matches("ramdisk") /* RamdiskId com.amazonaws.ec2.synthetic#DescribeImageAttributeOutput$RamdiskId */ =>  {
+                let var_3 =
+                    Some(
+                        crate::protocol_serde::shape_attribute_value::de_attribute_value(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_ramdisk_id(var_3);
+            }
+            ,
+            s if s.matches("sriovNetSupport") /* SriovNetSupport com.amazonaws.ec2.synthetic#DescribeImageAttributeOutput$SriovNetSupport */ =>  {
+                let var_4 =
+                    Some(
+                        crate::protocol_serde::shape_attribute_value::de_attribute_value(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_sriov_net_support(var_4);
+            }
+            ,
+            s if s.matches("bootMode") /* BootMode com.amazonaws.ec2.synthetic#DescribeImageAttributeOutput$BootMode */ =>  {
+                let var_5 =
+                    Some(
+                        crate::protocol_serde::shape_attribute_value::de_attribute_value(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_boot_mode(var_5);
+            }
+            ,
+            s if s.matches("tpmSupport") /* TpmSupport com.amazonaws.ec2.synthetic#DescribeImageAttributeOutput$TpmSupport */ =>  {
+                let var_6 =
+                    Some(
+                        crate::protocol_serde::shape_attribute_value::de_attribute_value(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_tpm_support(var_6);
+            }
+            ,
+            s if s.matches("uefiData") /* UefiData com.amazonaws.ec2.synthetic#DescribeImageAttributeOutput$UefiData */ =>  {
+                let var_7 =
+                    Some(
+                        crate::protocol_serde::shape_attribute_value::de_attribute_value(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_uefi_data(var_7);
+            }
+            ,
+            s if s.matches("lastLaunchedTime") /* LastLaunchedTime com.amazonaws.ec2.synthetic#DescribeImageAttributeOutput$LastLaunchedTime */ =>  {
+                let var_8 =
+                    Some(
+                        crate::protocol_serde::shape_attribute_value::de_attribute_value(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_last_launched_time(var_8);
+            }
+            ,
+            s if s.matches("imdsSupport") /* ImdsSupport com.amazonaws.ec2.synthetic#DescribeImageAttributeOutput$ImdsSupport */ =>  {
+                let var_9 =
+                    Some(
+                        crate::protocol_serde::shape_attribute_value::de_attribute_value(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_imds_support(var_9);
+            }
+            ,
+            s if s.matches("deregistrationProtection") /* DeregistrationProtection com.amazonaws.ec2.synthetic#DescribeImageAttributeOutput$DeregistrationProtection */ =>  {
+                let var_10 =
+                    Some(
+                        crate::protocol_serde::shape_attribute_value::de_attribute_value(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_deregistration_protection(var_10);
             }
             ,
             s if s.matches("imageId") /* ImageId com.amazonaws.ec2.synthetic#DescribeImageAttributeOutput$ImageId */ =>  {
-                let var_2 =
+                let var_11 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -74,127 +164,37 @@ pub fn de_describe_image_attribute(
                         ?
                     )
                 ;
-                builder = builder.set_image_id(var_2);
+                builder = builder.set_image_id(var_11);
             }
             ,
             s if s.matches("launchPermission") /* LaunchPermissions com.amazonaws.ec2.synthetic#DescribeImageAttributeOutput$LaunchPermissions */ =>  {
-                let var_3 =
+                let var_12 =
                     Some(
                         crate::protocol_serde::shape_launch_permission_list::de_launch_permission_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_launch_permissions(var_3);
+                builder = builder.set_launch_permissions(var_12);
             }
             ,
             s if s.matches("productCodes") /* ProductCodes com.amazonaws.ec2.synthetic#DescribeImageAttributeOutput$ProductCodes */ =>  {
-                let var_4 =
+                let var_13 =
                     Some(
                         crate::protocol_serde::shape_product_code_list::de_product_code_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_product_codes(var_4);
+                builder = builder.set_product_codes(var_13);
             }
             ,
-            s if s.matches("description") /* Description com.amazonaws.ec2.synthetic#DescribeImageAttributeOutput$Description */ =>  {
-                let var_5 =
-                    Some(
-                        crate::protocol_serde::shape_attribute_value::de_attribute_value(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_description(var_5);
-            }
-            ,
-            s if s.matches("kernel") /* KernelId com.amazonaws.ec2.synthetic#DescribeImageAttributeOutput$KernelId */ =>  {
-                let var_6 =
-                    Some(
-                        crate::protocol_serde::shape_attribute_value::de_attribute_value(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_kernel_id(var_6);
-            }
-            ,
-            s if s.matches("ramdisk") /* RamdiskId com.amazonaws.ec2.synthetic#DescribeImageAttributeOutput$RamdiskId */ =>  {
-                let var_7 =
-                    Some(
-                        crate::protocol_serde::shape_attribute_value::de_attribute_value(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_ramdisk_id(var_7);
-            }
-            ,
-            s if s.matches("sriovNetSupport") /* SriovNetSupport com.amazonaws.ec2.synthetic#DescribeImageAttributeOutput$SriovNetSupport */ =>  {
-                let var_8 =
-                    Some(
-                        crate::protocol_serde::shape_attribute_value::de_attribute_value(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_sriov_net_support(var_8);
-            }
-            ,
-            s if s.matches("bootMode") /* BootMode com.amazonaws.ec2.synthetic#DescribeImageAttributeOutput$BootMode */ =>  {
-                let var_9 =
-                    Some(
-                        crate::protocol_serde::shape_attribute_value::de_attribute_value(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_boot_mode(var_9);
-            }
-            ,
-            s if s.matches("tpmSupport") /* TpmSupport com.amazonaws.ec2.synthetic#DescribeImageAttributeOutput$TpmSupport */ =>  {
-                let var_10 =
-                    Some(
-                        crate::protocol_serde::shape_attribute_value::de_attribute_value(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_tpm_support(var_10);
-            }
-            ,
-            s if s.matches("uefiData") /* UefiData com.amazonaws.ec2.synthetic#DescribeImageAttributeOutput$UefiData */ =>  {
-                let var_11 =
-                    Some(
-                        crate::protocol_serde::shape_attribute_value::de_attribute_value(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_uefi_data(var_11);
-            }
-            ,
-            s if s.matches("lastLaunchedTime") /* LastLaunchedTime com.amazonaws.ec2.synthetic#DescribeImageAttributeOutput$LastLaunchedTime */ =>  {
-                let var_12 =
-                    Some(
-                        crate::protocol_serde::shape_attribute_value::de_attribute_value(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_last_launched_time(var_12);
-            }
-            ,
-            s if s.matches("imdsSupport") /* ImdsSupport com.amazonaws.ec2.synthetic#DescribeImageAttributeOutput$ImdsSupport */ =>  {
-                let var_13 =
-                    Some(
-                        crate::protocol_serde::shape_attribute_value::de_attribute_value(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_imds_support(var_13);
-            }
-            ,
-            s if s.matches("deregistrationProtection") /* DeregistrationProtection com.amazonaws.ec2.synthetic#DescribeImageAttributeOutput$DeregistrationProtection */ =>  {
+            s if s.matches("blockDeviceMapping") /* BlockDeviceMappings com.amazonaws.ec2.synthetic#DescribeImageAttributeOutput$BlockDeviceMappings */ =>  {
                 let var_14 =
                     Some(
-                        crate::protocol_serde::shape_attribute_value::de_attribute_value(&mut tag)
+                        crate::protocol_serde::shape_block_device_mapping_list::de_block_device_mapping_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_deregistration_protection(var_14);
+                builder = builder.set_block_device_mappings(var_14);
             }
             ,
             _ => {}

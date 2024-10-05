@@ -6,8 +6,6 @@ pub struct CreateKeyPairInput {
     /// <p>A unique name for the key pair.</p>
     /// <p>Constraints: Up to 255 ASCII characters</p>
     pub key_name: ::std::option::Option<::std::string::String>,
-    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub dry_run: ::std::option::Option<bool>,
     /// <p>The type of key pair. Note that ED25519 keys are not supported for Windows instances.</p>
     /// <p>Default: <code>rsa</code></p>
     pub key_type: ::std::option::Option<crate::types::KeyType>,
@@ -16,16 +14,14 @@ pub struct CreateKeyPairInput {
     /// <p>The format of the key pair.</p>
     /// <p>Default: <code>pem</code></p>
     pub key_format: ::std::option::Option<crate::types::KeyFormat>,
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub dry_run: ::std::option::Option<bool>,
 }
 impl CreateKeyPairInput {
     /// <p>A unique name for the key pair.</p>
     /// <p>Constraints: Up to 255 ASCII characters</p>
     pub fn key_name(&self) -> ::std::option::Option<&str> {
         self.key_name.as_deref()
-    }
-    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn dry_run(&self) -> ::std::option::Option<bool> {
-        self.dry_run
     }
     /// <p>The type of key pair. Note that ED25519 keys are not supported for Windows instances.</p>
     /// <p>Default: <code>rsa</code></p>
@@ -43,6 +39,10 @@ impl CreateKeyPairInput {
     pub fn key_format(&self) -> ::std::option::Option<&crate::types::KeyFormat> {
         self.key_format.as_ref()
     }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn dry_run(&self) -> ::std::option::Option<bool> {
+        self.dry_run
+    }
 }
 impl CreateKeyPairInput {
     /// Creates a new builder-style object to manufacture [`CreateKeyPairInput`](crate::operation::create_key_pair::CreateKeyPairInput).
@@ -56,10 +56,10 @@ impl CreateKeyPairInput {
 #[non_exhaustive]
 pub struct CreateKeyPairInputBuilder {
     pub(crate) key_name: ::std::option::Option<::std::string::String>,
-    pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) key_type: ::std::option::Option<crate::types::KeyType>,
     pub(crate) tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
     pub(crate) key_format: ::std::option::Option<crate::types::KeyFormat>,
+    pub(crate) dry_run: ::std::option::Option<bool>,
 }
 impl CreateKeyPairInputBuilder {
     /// <p>A unique name for the key pair.</p>
@@ -79,20 +79,6 @@ impl CreateKeyPairInputBuilder {
     /// <p>Constraints: Up to 255 ASCII characters</p>
     pub fn get_key_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.key_name
-    }
-    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn dry_run(mut self, input: bool) -> Self {
-        self.dry_run = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
-    }
-    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
-        &self.dry_run
     }
     /// <p>The type of key pair. Note that ED25519 keys are not supported for Windows instances.</p>
     /// <p>Default: <code>rsa</code></p>
@@ -148,16 +134,30 @@ impl CreateKeyPairInputBuilder {
     pub fn get_key_format(&self) -> &::std::option::Option<crate::types::KeyFormat> {
         &self.key_format
     }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn dry_run(mut self, input: bool) -> Self {
+        self.dry_run = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.dry_run = input;
+        self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
+    }
     /// Consumes the builder and constructs a [`CreateKeyPairInput`](crate::operation::create_key_pair::CreateKeyPairInput).
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::create_key_pair::CreateKeyPairInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_key_pair::CreateKeyPairInput {
             key_name: self.key_name,
-            dry_run: self.dry_run,
             key_type: self.key_type,
             tag_specifications: self.tag_specifications,
             key_format: self.key_format,
+            dry_run: self.dry_run,
         })
     }
 }

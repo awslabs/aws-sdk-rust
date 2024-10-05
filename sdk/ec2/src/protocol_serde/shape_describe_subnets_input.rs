@@ -32,22 +32,22 @@ pub fn ser_describe_subnets_input_input_input(
         }
     }
     #[allow(unused_mut)]
-    let mut scope_11 = writer.prefix("DryRun");
-    if let Some(var_12) = &input.dry_run {
-        scope_11.boolean(*var_12);
+    let mut scope_11 = writer.prefix("NextToken");
+    if let Some(var_12) = &input.next_token {
+        scope_11.string(var_12);
     }
     #[allow(unused_mut)]
-    let mut scope_13 = writer.prefix("NextToken");
-    if let Some(var_14) = &input.next_token {
-        scope_13.string(var_14);
-    }
-    #[allow(unused_mut)]
-    let mut scope_15 = writer.prefix("MaxResults");
-    if let Some(var_16) = &input.max_results {
-        scope_15.number(
+    let mut scope_13 = writer.prefix("MaxResults");
+    if let Some(var_14) = &input.max_results {
+        scope_13.number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_16).into()),
+            ::aws_smithy_types::Number::NegInt((*var_14).into()),
         );
+    }
+    #[allow(unused_mut)]
+    let mut scope_15 = writer.prefix("DryRun");
+    if let Some(var_16) = &input.dry_run {
+        scope_15.boolean(*var_16);
     }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))

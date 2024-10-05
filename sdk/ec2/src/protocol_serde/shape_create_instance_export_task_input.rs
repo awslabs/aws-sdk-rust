@@ -6,37 +6,37 @@ pub fn ser_create_instance_export_task_input_input_input(
     #[allow(unused_mut)]
     let mut writer = ::aws_smithy_query::QueryWriter::new(&mut out, "CreateInstanceExportTask", "2016-11-15");
     #[allow(unused_mut)]
-    let mut scope_1 = writer.prefix("Description");
-    if let Some(var_2) = &input.description {
-        scope_1.string(var_2);
-    }
-    #[allow(unused_mut)]
-    let mut scope_3 = writer.prefix("ExportToS3");
-    if let Some(var_4) = &input.export_to_s3_task {
-        crate::protocol_serde::shape_export_to_s3_task_specification::ser_export_to_s3_task_specification(scope_3, var_4)?;
-    }
-    #[allow(unused_mut)]
-    let mut scope_5 = writer.prefix("InstanceId");
-    if let Some(var_6) = &input.instance_id {
-        scope_5.string(var_6);
-    }
-    #[allow(unused_mut)]
-    let mut scope_7 = writer.prefix("TargetEnvironment");
-    if let Some(var_8) = &input.target_environment {
-        scope_7.string(var_8.as_str());
-    }
-    #[allow(unused_mut)]
-    let mut scope_9 = writer.prefix("TagSpecification");
-    if let Some(var_10) = &input.tag_specifications {
-        if !var_10.is_empty() {
-            let mut list_12 = scope_9.start_list(true, Some("item"));
-            for item_11 in var_10 {
+    let mut scope_1 = writer.prefix("TagSpecification");
+    if let Some(var_2) = &input.tag_specifications {
+        if !var_2.is_empty() {
+            let mut list_4 = scope_1.start_list(true, Some("item"));
+            for item_3 in var_2 {
                 #[allow(unused_mut)]
-                let mut entry_13 = list_12.entry();
-                crate::protocol_serde::shape_tag_specification::ser_tag_specification(entry_13, item_11)?;
+                let mut entry_5 = list_4.entry();
+                crate::protocol_serde::shape_tag_specification::ser_tag_specification(entry_5, item_3)?;
             }
-            list_12.finish();
+            list_4.finish();
         }
+    }
+    #[allow(unused_mut)]
+    let mut scope_6 = writer.prefix("Description");
+    if let Some(var_7) = &input.description {
+        scope_6.string(var_7);
+    }
+    #[allow(unused_mut)]
+    let mut scope_8 = writer.prefix("InstanceId");
+    if let Some(var_9) = &input.instance_id {
+        scope_8.string(var_9);
+    }
+    #[allow(unused_mut)]
+    let mut scope_10 = writer.prefix("TargetEnvironment");
+    if let Some(var_11) = &input.target_environment {
+        scope_10.string(var_11.as_str());
+    }
+    #[allow(unused_mut)]
+    let mut scope_12 = writer.prefix("ExportToS3");
+    if let Some(var_13) = &input.export_to_s3_task {
+        crate::protocol_serde::shape_export_to_s3_task_specification::ser_export_to_s3_task_specification(scope_12, var_13)?;
     }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))

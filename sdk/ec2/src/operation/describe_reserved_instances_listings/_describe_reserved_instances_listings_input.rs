@@ -4,6 +4,10 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeReservedInstancesListingsInput {
+    /// <p>One or more Reserved Instance IDs.</p>
+    pub reserved_instances_id: ::std::option::Option<::std::string::String>,
+    /// <p>One or more Reserved Instance listing IDs.</p>
+    pub reserved_instances_listing_id: ::std::option::Option<::std::string::String>,
     /// <p>One or more filters.</p>
     /// <ul>
     /// <li>
@@ -16,12 +20,16 @@ pub struct DescribeReservedInstancesListingsInput {
     /// <p><code>status-message</code> - The reason for the status.</p></li>
     /// </ul>
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    /// <p>One or more Reserved Instance IDs.</p>
-    pub reserved_instances_id: ::std::option::Option<::std::string::String>,
-    /// <p>One or more Reserved Instance listing IDs.</p>
-    pub reserved_instances_listing_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeReservedInstancesListingsInput {
+    /// <p>One or more Reserved Instance IDs.</p>
+    pub fn reserved_instances_id(&self) -> ::std::option::Option<&str> {
+        self.reserved_instances_id.as_deref()
+    }
+    /// <p>One or more Reserved Instance listing IDs.</p>
+    pub fn reserved_instances_listing_id(&self) -> ::std::option::Option<&str> {
+        self.reserved_instances_listing_id.as_deref()
+    }
     /// <p>One or more filters.</p>
     /// <ul>
     /// <li>
@@ -38,14 +46,6 @@ impl DescribeReservedInstancesListingsInput {
     pub fn filters(&self) -> &[crate::types::Filter] {
         self.filters.as_deref().unwrap_or_default()
     }
-    /// <p>One or more Reserved Instance IDs.</p>
-    pub fn reserved_instances_id(&self) -> ::std::option::Option<&str> {
-        self.reserved_instances_id.as_deref()
-    }
-    /// <p>One or more Reserved Instance listing IDs.</p>
-    pub fn reserved_instances_listing_id(&self) -> ::std::option::Option<&str> {
-        self.reserved_instances_listing_id.as_deref()
-    }
 }
 impl DescribeReservedInstancesListingsInput {
     /// Creates a new builder-style object to manufacture [`DescribeReservedInstancesListingsInput`](crate::operation::describe_reserved_instances_listings::DescribeReservedInstancesListingsInput).
@@ -58,11 +58,39 @@ impl DescribeReservedInstancesListingsInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct DescribeReservedInstancesListingsInputBuilder {
-    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     pub(crate) reserved_instances_id: ::std::option::Option<::std::string::String>,
     pub(crate) reserved_instances_listing_id: ::std::option::Option<::std::string::String>,
+    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
 }
 impl DescribeReservedInstancesListingsInputBuilder {
+    /// <p>One or more Reserved Instance IDs.</p>
+    pub fn reserved_instances_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.reserved_instances_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>One or more Reserved Instance IDs.</p>
+    pub fn set_reserved_instances_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.reserved_instances_id = input;
+        self
+    }
+    /// <p>One or more Reserved Instance IDs.</p>
+    pub fn get_reserved_instances_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.reserved_instances_id
+    }
+    /// <p>One or more Reserved Instance listing IDs.</p>
+    pub fn reserved_instances_listing_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.reserved_instances_listing_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>One or more Reserved Instance listing IDs.</p>
+    pub fn set_reserved_instances_listing_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.reserved_instances_listing_id = input;
+        self
+    }
+    /// <p>One or more Reserved Instance listing IDs.</p>
+    pub fn get_reserved_instances_listing_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.reserved_instances_listing_id
+    }
     /// Appends an item to `filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
@@ -113,34 +141,6 @@ impl DescribeReservedInstancesListingsInputBuilder {
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         &self.filters
     }
-    /// <p>One or more Reserved Instance IDs.</p>
-    pub fn reserved_instances_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.reserved_instances_id = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>One or more Reserved Instance IDs.</p>
-    pub fn set_reserved_instances_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.reserved_instances_id = input;
-        self
-    }
-    /// <p>One or more Reserved Instance IDs.</p>
-    pub fn get_reserved_instances_id(&self) -> &::std::option::Option<::std::string::String> {
-        &self.reserved_instances_id
-    }
-    /// <p>One or more Reserved Instance listing IDs.</p>
-    pub fn reserved_instances_listing_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.reserved_instances_listing_id = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>One or more Reserved Instance listing IDs.</p>
-    pub fn set_reserved_instances_listing_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.reserved_instances_listing_id = input;
-        self
-    }
-    /// <p>One or more Reserved Instance listing IDs.</p>
-    pub fn get_reserved_instances_listing_id(&self) -> &::std::option::Option<::std::string::String> {
-        &self.reserved_instances_listing_id
-    }
     /// Consumes the builder and constructs a [`DescribeReservedInstancesListingsInput`](crate::operation::describe_reserved_instances_listings::DescribeReservedInstancesListingsInput).
     pub fn build(
         self,
@@ -150,9 +150,9 @@ impl DescribeReservedInstancesListingsInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::describe_reserved_instances_listings::DescribeReservedInstancesListingsInput {
-                filters: self.filters,
                 reserved_instances_id: self.reserved_instances_id,
                 reserved_instances_listing_id: self.reserved_instances_listing_id,
+                filters: self.filters,
             },
         )
     }

@@ -6,8 +6,6 @@
 pub struct LaunchSpecification {
     /// <p>The base64-encoded user data that instances use when starting up. User data is limited to 16 KB.</p>
     pub user_data: ::std::option::Option<::std::string::String>,
-    /// <p>The IDs of the security groups.</p>
-    pub security_groups: ::std::option::Option<::std::vec::Vec<crate::types::GroupIdentifier>>,
     /// <p>Deprecated.</p>
     pub addressing_type: ::std::option::Option<::std::string::String>,
     /// <p>The block device mapping entries.</p>
@@ -33,6 +31,8 @@ pub struct LaunchSpecification {
     pub ramdisk_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the subnet in which to launch the instance.</p>
     pub subnet_id: ::std::option::Option<::std::string::String>,
+    /// <p>The IDs of the security groups.</p>
+    pub security_groups: ::std::option::Option<::std::vec::Vec<crate::types::GroupIdentifier>>,
     /// <p>Describes the monitoring of an instance.</p>
     pub monitoring: ::std::option::Option<crate::types::RunInstancesMonitoringEnabled>,
 }
@@ -40,12 +40,6 @@ impl LaunchSpecification {
     /// <p>The base64-encoded user data that instances use when starting up. User data is limited to 16 KB.</p>
     pub fn user_data(&self) -> ::std::option::Option<&str> {
         self.user_data.as_deref()
-    }
-    /// <p>The IDs of the security groups.</p>
-    ///
-    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_groups.is_none()`.
-    pub fn security_groups(&self) -> &[crate::types::GroupIdentifier] {
-        self.security_groups.as_deref().unwrap_or_default()
     }
     /// <p>Deprecated.</p>
     pub fn addressing_type(&self) -> ::std::option::Option<&str> {
@@ -100,6 +94,12 @@ impl LaunchSpecification {
     pub fn subnet_id(&self) -> ::std::option::Option<&str> {
         self.subnet_id.as_deref()
     }
+    /// <p>The IDs of the security groups.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_groups.is_none()`.
+    pub fn security_groups(&self) -> &[crate::types::GroupIdentifier] {
+        self.security_groups.as_deref().unwrap_or_default()
+    }
     /// <p>Describes the monitoring of an instance.</p>
     pub fn monitoring(&self) -> ::std::option::Option<&crate::types::RunInstancesMonitoringEnabled> {
         self.monitoring.as_ref()
@@ -109,7 +109,6 @@ impl ::std::fmt::Debug for LaunchSpecification {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("LaunchSpecification");
         formatter.field("user_data", &"*** Sensitive Data Redacted ***");
-        formatter.field("security_groups", &self.security_groups);
         formatter.field("addressing_type", &self.addressing_type);
         formatter.field("block_device_mappings", &self.block_device_mappings);
         formatter.field("ebs_optimized", &self.ebs_optimized);
@@ -122,6 +121,7 @@ impl ::std::fmt::Debug for LaunchSpecification {
         formatter.field("placement", &self.placement);
         formatter.field("ramdisk_id", &self.ramdisk_id);
         formatter.field("subnet_id", &self.subnet_id);
+        formatter.field("security_groups", &self.security_groups);
         formatter.field("monitoring", &self.monitoring);
         formatter.finish()
     }
@@ -138,7 +138,6 @@ impl LaunchSpecification {
 #[non_exhaustive]
 pub struct LaunchSpecificationBuilder {
     pub(crate) user_data: ::std::option::Option<::std::string::String>,
-    pub(crate) security_groups: ::std::option::Option<::std::vec::Vec<crate::types::GroupIdentifier>>,
     pub(crate) addressing_type: ::std::option::Option<::std::string::String>,
     pub(crate) block_device_mappings: ::std::option::Option<::std::vec::Vec<crate::types::BlockDeviceMapping>>,
     pub(crate) ebs_optimized: ::std::option::Option<bool>,
@@ -151,6 +150,7 @@ pub struct LaunchSpecificationBuilder {
     pub(crate) placement: ::std::option::Option<crate::types::SpotPlacement>,
     pub(crate) ramdisk_id: ::std::option::Option<::std::string::String>,
     pub(crate) subnet_id: ::std::option::Option<::std::string::String>,
+    pub(crate) security_groups: ::std::option::Option<::std::vec::Vec<crate::types::GroupIdentifier>>,
     pub(crate) monitoring: ::std::option::Option<crate::types::RunInstancesMonitoringEnabled>,
 }
 impl LaunchSpecificationBuilder {
@@ -167,26 +167,6 @@ impl LaunchSpecificationBuilder {
     /// <p>The base64-encoded user data that instances use when starting up. User data is limited to 16 KB.</p>
     pub fn get_user_data(&self) -> &::std::option::Option<::std::string::String> {
         &self.user_data
-    }
-    /// Appends an item to `security_groups`.
-    ///
-    /// To override the contents of this collection use [`set_security_groups`](Self::set_security_groups).
-    ///
-    /// <p>The IDs of the security groups.</p>
-    pub fn security_groups(mut self, input: crate::types::GroupIdentifier) -> Self {
-        let mut v = self.security_groups.unwrap_or_default();
-        v.push(input);
-        self.security_groups = ::std::option::Option::Some(v);
-        self
-    }
-    /// <p>The IDs of the security groups.</p>
-    pub fn set_security_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GroupIdentifier>>) -> Self {
-        self.security_groups = input;
-        self
-    }
-    /// <p>The IDs of the security groups.</p>
-    pub fn get_security_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GroupIdentifier>> {
-        &self.security_groups
     }
     /// <p>Deprecated.</p>
     pub fn addressing_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -374,6 +354,26 @@ impl LaunchSpecificationBuilder {
     pub fn get_subnet_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.subnet_id
     }
+    /// Appends an item to `security_groups`.
+    ///
+    /// To override the contents of this collection use [`set_security_groups`](Self::set_security_groups).
+    ///
+    /// <p>The IDs of the security groups.</p>
+    pub fn security_groups(mut self, input: crate::types::GroupIdentifier) -> Self {
+        let mut v = self.security_groups.unwrap_or_default();
+        v.push(input);
+        self.security_groups = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The IDs of the security groups.</p>
+    pub fn set_security_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GroupIdentifier>>) -> Self {
+        self.security_groups = input;
+        self
+    }
+    /// <p>The IDs of the security groups.</p>
+    pub fn get_security_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GroupIdentifier>> {
+        &self.security_groups
+    }
     /// <p>Describes the monitoring of an instance.</p>
     pub fn monitoring(mut self, input: crate::types::RunInstancesMonitoringEnabled) -> Self {
         self.monitoring = ::std::option::Option::Some(input);
@@ -392,7 +392,6 @@ impl LaunchSpecificationBuilder {
     pub fn build(self) -> crate::types::LaunchSpecification {
         crate::types::LaunchSpecification {
             user_data: self.user_data,
-            security_groups: self.security_groups,
             addressing_type: self.addressing_type,
             block_device_mappings: self.block_device_mappings,
             ebs_optimized: self.ebs_optimized,
@@ -405,6 +404,7 @@ impl LaunchSpecificationBuilder {
             placement: self.placement,
             ramdisk_id: self.ramdisk_id,
             subnet_id: self.subnet_id,
+            security_groups: self.security_groups,
             monitoring: self.monitoring,
         }
     }
@@ -413,7 +413,6 @@ impl ::std::fmt::Debug for LaunchSpecificationBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("LaunchSpecificationBuilder");
         formatter.field("user_data", &"*** Sensitive Data Redacted ***");
-        formatter.field("security_groups", &self.security_groups);
         formatter.field("addressing_type", &self.addressing_type);
         formatter.field("block_device_mappings", &self.block_device_mappings);
         formatter.field("ebs_optimized", &self.ebs_optimized);
@@ -426,6 +425,7 @@ impl ::std::fmt::Debug for LaunchSpecificationBuilder {
         formatter.field("placement", &self.placement);
         formatter.field("ramdisk_id", &self.ramdisk_id);
         formatter.field("subnet_id", &self.subnet_id);
+        formatter.field("security_groups", &self.security_groups);
         formatter.field("monitoring", &self.monitoring);
         formatter.finish()
     }

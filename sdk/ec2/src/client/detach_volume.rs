@@ -9,14 +9,14 @@ impl super::Client {
     ///   - [`volume_id(impl Into<String>)`](crate::operation::detach_volume::builders::DetachVolumeFluentBuilder::volume_id) / [`set_volume_id(Option<String>)`](crate::operation::detach_volume::builders::DetachVolumeFluentBuilder::set_volume_id):<br>required: **true**<br><p>The ID of the volume.</p><br>
     ///   - [`dry_run(bool)`](crate::operation::detach_volume::builders::DetachVolumeFluentBuilder::dry_run) / [`set_dry_run(Option<bool>)`](crate::operation::detach_volume::builders::DetachVolumeFluentBuilder::set_dry_run):<br>required: **false**<br><p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p><br>
     /// - On success, responds with [`DetachVolumeOutput`](crate::operation::detach_volume::DetachVolumeOutput) with field(s):
-    ///   - [`attach_time(Option<DateTime>)`](crate::operation::detach_volume::DetachVolumeOutput::attach_time): <p>The time stamp when the attachment initiated.</p>
-    ///   - [`device(Option<String>)`](crate::operation::detach_volume::DetachVolumeOutput::device): <p>The device name.</p> <p>If the volume is attached to a Fargate task, this parameter returns <code>null</code>.</p>
-    ///   - [`instance_id(Option<String>)`](crate::operation::detach_volume::DetachVolumeOutput::instance_id): <p>The ID of the instance.</p> <p>If the volume is attached to a Fargate task, this parameter returns <code>null</code>.</p>
-    ///   - [`state(Option<VolumeAttachmentState>)`](crate::operation::detach_volume::DetachVolumeOutput::state): <p>The attachment state of the volume.</p>
-    ///   - [`volume_id(Option<String>)`](crate::operation::detach_volume::DetachVolumeOutput::volume_id): <p>The ID of the volume.</p>
     ///   - [`delete_on_termination(Option<bool>)`](crate::operation::detach_volume::DetachVolumeOutput::delete_on_termination): <p>Indicates whether the EBS volume is deleted on instance termination.</p>
     ///   - [`associated_resource(Option<String>)`](crate::operation::detach_volume::DetachVolumeOutput::associated_resource): <p>The ARN of the Amazon ECS or Fargate task to which the volume is attached.</p>
     ///   - [`instance_owning_service(Option<String>)`](crate::operation::detach_volume::DetachVolumeOutput::instance_owning_service): <p>The service principal of Amazon Web Services service that owns the underlying instance to which the volume is attached.</p> <p>This parameter is returned only for volumes that are attached to Fargate tasks.</p>
+    ///   - [`volume_id(Option<String>)`](crate::operation::detach_volume::DetachVolumeOutput::volume_id): <p>The ID of the volume.</p>
+    ///   - [`instance_id(Option<String>)`](crate::operation::detach_volume::DetachVolumeOutput::instance_id): <p>The ID of the instance.</p> <p>If the volume is attached to a Fargate task, this parameter returns <code>null</code>.</p>
+    ///   - [`device(Option<String>)`](crate::operation::detach_volume::DetachVolumeOutput::device): <p>The device name.</p> <p>If the volume is attached to a Fargate task, this parameter returns <code>null</code>.</p>
+    ///   - [`state(Option<VolumeAttachmentState>)`](crate::operation::detach_volume::DetachVolumeOutput::state): <p>The attachment state of the volume.</p>
+    ///   - [`attach_time(Option<DateTime>)`](crate::operation::detach_volume::DetachVolumeOutput::attach_time): <p>The time stamp when the attachment initiated.</p>
     /// - On failure, responds with [`SdkError<DetachVolumeError>`](crate::operation::detach_volume::DetachVolumeError)
     pub fn detach_volume(&self) -> crate::operation::detach_volume::builders::DetachVolumeFluentBuilder {
         crate::operation::detach_volume::builders::DetachVolumeFluentBuilder::new(self.handle.clone())

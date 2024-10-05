@@ -4,19 +4,19 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateReservedInstancesListingInput {
-    /// <p>Unique, case-sensitive identifier you provide to ensure idempotency of your listings. This helps avoid duplicate listings. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
-    pub client_token: ::std::option::Option<::std::string::String>,
+    /// <p>The ID of the active Standard Reserved Instance.</p>
+    pub reserved_instances_id: ::std::option::Option<::std::string::String>,
     /// <p>The number of instances that are a part of a Reserved Instance account to be listed in the Reserved Instance Marketplace. This number should be less than or equal to the instance count associated with the Reserved Instance ID specified in this call.</p>
     pub instance_count: ::std::option::Option<i32>,
     /// <p>A list specifying the price of the Standard Reserved Instance for each month remaining in the Reserved Instance term.</p>
     pub price_schedules: ::std::option::Option<::std::vec::Vec<crate::types::PriceScheduleSpecification>>,
-    /// <p>The ID of the active Standard Reserved Instance.</p>
-    pub reserved_instances_id: ::std::option::Option<::std::string::String>,
+    /// <p>Unique, case-sensitive identifier you provide to ensure idempotency of your listings. This helps avoid duplicate listings. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
+    pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl CreateReservedInstancesListingInput {
-    /// <p>Unique, case-sensitive identifier you provide to ensure idempotency of your listings. This helps avoid duplicate listings. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
-        self.client_token.as_deref()
+    /// <p>The ID of the active Standard Reserved Instance.</p>
+    pub fn reserved_instances_id(&self) -> ::std::option::Option<&str> {
+        self.reserved_instances_id.as_deref()
     }
     /// <p>The number of instances that are a part of a Reserved Instance account to be listed in the Reserved Instance Marketplace. This number should be less than or equal to the instance count associated with the Reserved Instance ID specified in this call.</p>
     pub fn instance_count(&self) -> ::std::option::Option<i32> {
@@ -28,9 +28,9 @@ impl CreateReservedInstancesListingInput {
     pub fn price_schedules(&self) -> &[crate::types::PriceScheduleSpecification] {
         self.price_schedules.as_deref().unwrap_or_default()
     }
-    /// <p>The ID of the active Standard Reserved Instance.</p>
-    pub fn reserved_instances_id(&self) -> ::std::option::Option<&str> {
-        self.reserved_instances_id.as_deref()
+    /// <p>Unique, case-sensitive identifier you provide to ensure idempotency of your listings. This helps avoid duplicate listings. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
+    pub fn client_token(&self) -> ::std::option::Option<&str> {
+        self.client_token.as_deref()
     }
 }
 impl CreateReservedInstancesListingInput {
@@ -44,26 +44,26 @@ impl CreateReservedInstancesListingInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct CreateReservedInstancesListingInputBuilder {
-    pub(crate) client_token: ::std::option::Option<::std::string::String>,
+    pub(crate) reserved_instances_id: ::std::option::Option<::std::string::String>,
     pub(crate) instance_count: ::std::option::Option<i32>,
     pub(crate) price_schedules: ::std::option::Option<::std::vec::Vec<crate::types::PriceScheduleSpecification>>,
-    pub(crate) reserved_instances_id: ::std::option::Option<::std::string::String>,
+    pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl CreateReservedInstancesListingInputBuilder {
-    /// <p>Unique, case-sensitive identifier you provide to ensure idempotency of your listings. This helps avoid duplicate listings. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
+    /// <p>The ID of the active Standard Reserved Instance.</p>
     /// This field is required.
-    pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.client_token = ::std::option::Option::Some(input.into());
+    pub fn reserved_instances_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.reserved_instances_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Unique, case-sensitive identifier you provide to ensure idempotency of your listings. This helps avoid duplicate listings. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
-    pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
+    /// <p>The ID of the active Standard Reserved Instance.</p>
+    pub fn set_reserved_instances_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.reserved_instances_id = input;
         self
     }
-    /// <p>Unique, case-sensitive identifier you provide to ensure idempotency of your listings. This helps avoid duplicate listings. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
-    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
-        &self.client_token
+    /// <p>The ID of the active Standard Reserved Instance.</p>
+    pub fn get_reserved_instances_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.reserved_instances_id
     }
     /// <p>The number of instances that are a part of a Reserved Instance account to be listed in the Reserved Instance Marketplace. This number should be less than or equal to the instance count associated with the Reserved Instance ID specified in this call.</p>
     /// This field is required.
@@ -100,20 +100,20 @@ impl CreateReservedInstancesListingInputBuilder {
     pub fn get_price_schedules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PriceScheduleSpecification>> {
         &self.price_schedules
     }
-    /// <p>The ID of the active Standard Reserved Instance.</p>
+    /// <p>Unique, case-sensitive identifier you provide to ensure idempotency of your listings. This helps avoid duplicate listings. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
     /// This field is required.
-    pub fn reserved_instances_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.reserved_instances_id = ::std::option::Option::Some(input.into());
+    pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.client_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the active Standard Reserved Instance.</p>
-    pub fn set_reserved_instances_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.reserved_instances_id = input;
+    /// <p>Unique, case-sensitive identifier you provide to ensure idempotency of your listings. This helps avoid duplicate listings. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
+    pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.client_token = input;
         self
     }
-    /// <p>The ID of the active Standard Reserved Instance.</p>
-    pub fn get_reserved_instances_id(&self) -> &::std::option::Option<::std::string::String> {
-        &self.reserved_instances_id
+    /// <p>Unique, case-sensitive identifier you provide to ensure idempotency of your listings. This helps avoid duplicate listings. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// Consumes the builder and constructs a [`CreateReservedInstancesListingInput`](crate::operation::create_reserved_instances_listing::CreateReservedInstancesListingInput).
     pub fn build(
@@ -123,10 +123,10 @@ impl CreateReservedInstancesListingInputBuilder {
         ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_reserved_instances_listing::CreateReservedInstancesListingInput {
-            client_token: self.client_token,
+            reserved_instances_id: self.reserved_instances_id,
             instance_count: self.instance_count,
             price_schedules: self.price_schedules,
-            reserved_instances_id: self.reserved_instances_id,
+            client_token: self.client_token,
         })
     }
 }

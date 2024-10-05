@@ -109,6 +109,42 @@ impl DescribeAddressesFluentBuilder {
         self
     }
     ///
+    /// Appends an item to `PublicIps`.
+    ///
+    /// To override the contents of this collection use [`set_public_ips`](Self::set_public_ips).
+    ///
+    /// <p>One or more Elastic IP addresses.</p>
+    /// <p>Default: Describes all your Elastic IP addresses.</p>
+    pub fn public_ips(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.public_ips(input.into());
+        self
+    }
+    /// <p>One or more Elastic IP addresses.</p>
+    /// <p>Default: Describes all your Elastic IP addresses.</p>
+    pub fn set_public_ips(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.inner = self.inner.set_public_ips(input);
+        self
+    }
+    /// <p>One or more Elastic IP addresses.</p>
+    /// <p>Default: Describes all your Elastic IP addresses.</p>
+    pub fn get_public_ips(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_public_ips()
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn dry_run(mut self, input: bool) -> Self {
+        self.inner = self.inner.dry_run(input);
+        self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_dry_run(input);
+        self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
+    }
+    ///
     /// Appends an item to `Filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
@@ -212,28 +248,6 @@ impl DescribeAddressesFluentBuilder {
         self.inner.get_filters()
     }
     ///
-    /// Appends an item to `PublicIps`.
-    ///
-    /// To override the contents of this collection use [`set_public_ips`](Self::set_public_ips).
-    ///
-    /// <p>One or more Elastic IP addresses.</p>
-    /// <p>Default: Describes all your Elastic IP addresses.</p>
-    pub fn public_ips(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.inner = self.inner.public_ips(input.into());
-        self
-    }
-    /// <p>One or more Elastic IP addresses.</p>
-    /// <p>Default: Describes all your Elastic IP addresses.</p>
-    pub fn set_public_ips(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.inner = self.inner.set_public_ips(input);
-        self
-    }
-    /// <p>One or more Elastic IP addresses.</p>
-    /// <p>Default: Describes all your Elastic IP addresses.</p>
-    pub fn get_public_ips(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
-        self.inner.get_public_ips()
-    }
-    ///
     /// Appends an item to `AllocationIds`.
     ///
     /// To override the contents of this collection use [`set_allocation_ids`](Self::set_allocation_ids).
@@ -251,19 +265,5 @@ impl DescribeAddressesFluentBuilder {
     /// <p>Information about the allocation IDs.</p>
     pub fn get_allocation_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_allocation_ids()
-    }
-    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn dry_run(mut self, input: bool) -> Self {
-        self.inner = self.inner.dry_run(input);
-        self
-    }
-    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.inner = self.inner.set_dry_run(input);
-        self
-    }
-    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
-        self.inner.get_dry_run()
     }
 }

@@ -7,8 +7,21 @@ pub fn de_vpc_attachment(
     let mut builder = crate::types::VpcAttachment::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
-            s if s.matches("state") /* State com.amazonaws.ec2#VpcAttachment$State */ =>  {
+            s if s.matches("vpcId") /* VpcId com.amazonaws.ec2#VpcAttachment$VpcId */ =>  {
                 let var_1 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_vpc_id(var_1);
+            }
+            ,
+            s if s.matches("state") /* State com.amazonaws.ec2#VpcAttachment$State */ =>  {
+                let var_2 =
                     Some(
                         Result::<crate::types::AttachmentStatus, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::AttachmentStatus::from(
@@ -18,20 +31,7 @@ pub fn de_vpc_attachment(
                         ?
                     )
                 ;
-                builder = builder.set_state(var_1);
-            }
-            ,
-            s if s.matches("vpcId") /* VpcId com.amazonaws.ec2#VpcAttachment$VpcId */ =>  {
-                let var_2 =
-                    Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_vpc_id(var_2);
+                builder = builder.set_state(var_2);
             }
             ,
             _ => {}

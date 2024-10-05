@@ -6,36 +6,36 @@ pub fn ser_create_image_input_input_input(
     #[allow(unused_mut)]
     let mut writer = ::aws_smithy_query::QueryWriter::new(&mut out, "CreateImage", "2016-11-15");
     #[allow(unused_mut)]
-    let mut scope_1 = writer.prefix("BlockDeviceMapping");
-    if let Some(var_2) = &input.block_device_mappings {
+    let mut scope_1 = writer.prefix("TagSpecification");
+    if let Some(var_2) = &input.tag_specifications {
         if !var_2.is_empty() {
-            let mut list_4 = scope_1.start_list(true, Some("BlockDeviceMapping"));
+            let mut list_4 = scope_1.start_list(true, Some("item"));
             for item_3 in var_2 {
                 #[allow(unused_mut)]
                 let mut entry_5 = list_4.entry();
-                crate::protocol_serde::shape_block_device_mapping::ser_block_device_mapping(entry_5, item_3)?;
+                crate::protocol_serde::shape_tag_specification::ser_tag_specification(entry_5, item_3)?;
             }
             list_4.finish();
         }
     }
     #[allow(unused_mut)]
-    let mut scope_6 = writer.prefix("Description");
-    if let Some(var_7) = &input.description {
-        scope_6.string(var_7);
+    let mut scope_6 = writer.prefix("DryRun");
+    if let Some(var_7) = &input.dry_run {
+        scope_6.boolean(*var_7);
     }
     #[allow(unused_mut)]
-    let mut scope_8 = writer.prefix("DryRun");
-    if let Some(var_9) = &input.dry_run {
-        scope_8.boolean(*var_9);
+    let mut scope_8 = writer.prefix("InstanceId");
+    if let Some(var_9) = &input.instance_id {
+        scope_8.string(var_9);
     }
     #[allow(unused_mut)]
-    let mut scope_10 = writer.prefix("InstanceId");
-    if let Some(var_11) = &input.instance_id {
+    let mut scope_10 = writer.prefix("Name");
+    if let Some(var_11) = &input.name {
         scope_10.string(var_11);
     }
     #[allow(unused_mut)]
-    let mut scope_12 = writer.prefix("Name");
-    if let Some(var_13) = &input.name {
+    let mut scope_12 = writer.prefix("Description");
+    if let Some(var_13) = &input.description {
         scope_12.string(var_13);
     }
     #[allow(unused_mut)]
@@ -44,14 +44,14 @@ pub fn ser_create_image_input_input_input(
         scope_14.boolean(*var_15);
     }
     #[allow(unused_mut)]
-    let mut scope_16 = writer.prefix("TagSpecification");
-    if let Some(var_17) = &input.tag_specifications {
+    let mut scope_16 = writer.prefix("BlockDeviceMapping");
+    if let Some(var_17) = &input.block_device_mappings {
         if !var_17.is_empty() {
-            let mut list_19 = scope_16.start_list(true, Some("item"));
+            let mut list_19 = scope_16.start_list(true, Some("BlockDeviceMapping"));
             for item_18 in var_17 {
                 #[allow(unused_mut)]
                 let mut entry_20 = list_19.entry();
-                crate::protocol_serde::shape_tag_specification::ser_tag_specification(entry_20, item_18)?;
+                crate::protocol_serde::shape_block_device_mapping::ser_block_device_mapping(entry_20, item_18)?;
             }
             list_19.finish();
         }

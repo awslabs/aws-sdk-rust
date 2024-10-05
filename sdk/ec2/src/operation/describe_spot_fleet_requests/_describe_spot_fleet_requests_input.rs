@@ -6,31 +6,31 @@
 pub struct DescribeSpotFleetRequestsInput {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
-    /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
-    pub max_results: ::std::option::Option<i32>,
-    /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
-    pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The IDs of the Spot Fleet requests.</p>
     pub spot_fleet_request_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
+    pub next_token: ::std::option::Option<::std::string::String>,
+    /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
+    pub max_results: ::std::option::Option<i32>,
 }
 impl DescribeSpotFleetRequestsInput {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
         self.dry_run
     }
-    /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
-    pub fn max_results(&self) -> ::std::option::Option<i32> {
-        self.max_results
-    }
-    /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
-        self.next_token.as_deref()
-    }
     /// <p>The IDs of the Spot Fleet requests.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.spot_fleet_request_ids.is_none()`.
     pub fn spot_fleet_request_ids(&self) -> &[::std::string::String] {
         self.spot_fleet_request_ids.as_deref().unwrap_or_default()
+    }
+    /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
+    pub fn max_results(&self) -> ::std::option::Option<i32> {
+        self.max_results
     }
 }
 impl DescribeSpotFleetRequestsInput {
@@ -45,9 +45,9 @@ impl DescribeSpotFleetRequestsInput {
 #[non_exhaustive]
 pub struct DescribeSpotFleetRequestsInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
-    pub(crate) max_results: ::std::option::Option<i32>,
-    pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) spot_fleet_request_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) next_token: ::std::option::Option<::std::string::String>,
+    pub(crate) max_results: ::std::option::Option<i32>,
 }
 impl DescribeSpotFleetRequestsInputBuilder {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -63,34 +63,6 @@ impl DescribeSpotFleetRequestsInputBuilder {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
         &self.dry_run
-    }
-    /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
-    pub fn max_results(mut self, input: i32) -> Self {
-        self.max_results = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
-    pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
-    }
-    /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
-    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
-        &self.max_results
-    }
-    /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
-    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.next_token = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
-    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
-    }
-    /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
-    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
-        &self.next_token
     }
     /// Appends an item to `spot_fleet_request_ids`.
     ///
@@ -112,6 +84,34 @@ impl DescribeSpotFleetRequestsInputBuilder {
     pub fn get_spot_fleet_request_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.spot_fleet_request_ids
     }
+    /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.next_token = input;
+        self
+    }
+    /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
+    /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
+    pub fn max_results(mut self, input: i32) -> Self {
+        self.max_results = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
+    pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.max_results = input;
+        self
+    }
+    /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// Consumes the builder and constructs a [`DescribeSpotFleetRequestsInput`](crate::operation::describe_spot_fleet_requests::DescribeSpotFleetRequestsInput).
     pub fn build(
         self,
@@ -121,9 +121,9 @@ impl DescribeSpotFleetRequestsInputBuilder {
     > {
         ::std::result::Result::Ok(crate::operation::describe_spot_fleet_requests::DescribeSpotFleetRequestsInput {
             dry_run: self.dry_run,
-            max_results: self.max_results,
-            next_token: self.next_token,
             spot_fleet_request_ids: self.spot_fleet_request_ids,
+            next_token: self.next_token,
+            max_results: self.max_results,
         })
     }
 }

@@ -108,34 +108,6 @@ impl AssociateSubnetCidrBlockFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The IPv6 CIDR block for your subnet.</p>
-    pub fn ipv6_cidr_block(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.inner = self.inner.ipv6_cidr_block(input.into());
-        self
-    }
-    /// <p>The IPv6 CIDR block for your subnet.</p>
-    pub fn set_ipv6_cidr_block(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.inner = self.inner.set_ipv6_cidr_block(input);
-        self
-    }
-    /// <p>The IPv6 CIDR block for your subnet.</p>
-    pub fn get_ipv6_cidr_block(&self) -> &::std::option::Option<::std::string::String> {
-        self.inner.get_ipv6_cidr_block()
-    }
-    /// <p>The ID of your subnet.</p>
-    pub fn subnet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.inner = self.inner.subnet_id(input.into());
-        self
-    }
-    /// <p>The ID of your subnet.</p>
-    pub fn set_subnet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.inner = self.inner.set_subnet_id(input);
-        self
-    }
-    /// <p>The ID of your subnet.</p>
-    pub fn get_subnet_id(&self) -> &::std::option::Option<::std::string::String> {
-        self.inner.get_subnet_id()
-    }
     /// <p>An IPv6 IPAM pool ID.</p>
     pub fn ipv6_ipam_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.ipv6_ipam_pool_id(input.into());
@@ -163,5 +135,33 @@ impl AssociateSubnetCidrBlockFluentBuilder {
     /// <p>An IPv6 netmask length.</p>
     pub fn get_ipv6_netmask_length(&self) -> &::std::option::Option<i32> {
         self.inner.get_ipv6_netmask_length()
+    }
+    /// <p>The ID of your subnet.</p>
+    pub fn subnet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.subnet_id(input.into());
+        self
+    }
+    /// <p>The ID of your subnet.</p>
+    pub fn set_subnet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_subnet_id(input);
+        self
+    }
+    /// <p>The ID of your subnet.</p>
+    pub fn get_subnet_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_subnet_id()
+    }
+    /// <p>The IPv6 CIDR block for your subnet.</p>
+    pub fn ipv6_cidr_block(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.ipv6_cidr_block(input.into());
+        self
+    }
+    /// <p>The IPv6 CIDR block for your subnet.</p>
+    pub fn set_ipv6_cidr_block(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_ipv6_cidr_block(input);
+        self
+    }
+    /// <p>The IPv6 CIDR block for your subnet.</p>
+    pub fn get_ipv6_cidr_block(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_ipv6_cidr_block()
     }
 }

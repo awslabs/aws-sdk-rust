@@ -4,36 +4,20 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AttachNetworkInterfaceInput {
-    /// <p>The index of the device for the network interface attachment.</p>
-    pub device_index: ::std::option::Option<i32>,
-    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub dry_run: ::std::option::Option<bool>,
-    /// <p>The ID of the instance.</p>
-    pub instance_id: ::std::option::Option<::std::string::String>,
-    /// <p>The ID of the network interface.</p>
-    pub network_interface_id: ::std::option::Option<::std::string::String>,
     /// <p>The index of the network card. Some instance types support multiple network cards. The primary network interface must be assigned to network card index 0. The default is network card index 0.</p>
     pub network_card_index: ::std::option::Option<i32>,
     /// <p>Configures ENA Express for the network interface that this action attaches to the instance.</p>
     pub ena_srd_specification: ::std::option::Option<crate::types::EnaSrdSpecification>,
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub dry_run: ::std::option::Option<bool>,
+    /// <p>The ID of the network interface.</p>
+    pub network_interface_id: ::std::option::Option<::std::string::String>,
+    /// <p>The ID of the instance.</p>
+    pub instance_id: ::std::option::Option<::std::string::String>,
+    /// <p>The index of the device for the network interface attachment.</p>
+    pub device_index: ::std::option::Option<i32>,
 }
 impl AttachNetworkInterfaceInput {
-    /// <p>The index of the device for the network interface attachment.</p>
-    pub fn device_index(&self) -> ::std::option::Option<i32> {
-        self.device_index
-    }
-    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn dry_run(&self) -> ::std::option::Option<bool> {
-        self.dry_run
-    }
-    /// <p>The ID of the instance.</p>
-    pub fn instance_id(&self) -> ::std::option::Option<&str> {
-        self.instance_id.as_deref()
-    }
-    /// <p>The ID of the network interface.</p>
-    pub fn network_interface_id(&self) -> ::std::option::Option<&str> {
-        self.network_interface_id.as_deref()
-    }
     /// <p>The index of the network card. Some instance types support multiple network cards. The primary network interface must be assigned to network card index 0. The default is network card index 0.</p>
     pub fn network_card_index(&self) -> ::std::option::Option<i32> {
         self.network_card_index
@@ -41,6 +25,22 @@ impl AttachNetworkInterfaceInput {
     /// <p>Configures ENA Express for the network interface that this action attaches to the instance.</p>
     pub fn ena_srd_specification(&self) -> ::std::option::Option<&crate::types::EnaSrdSpecification> {
         self.ena_srd_specification.as_ref()
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn dry_run(&self) -> ::std::option::Option<bool> {
+        self.dry_run
+    }
+    /// <p>The ID of the network interface.</p>
+    pub fn network_interface_id(&self) -> ::std::option::Option<&str> {
+        self.network_interface_id.as_deref()
+    }
+    /// <p>The ID of the instance.</p>
+    pub fn instance_id(&self) -> ::std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>The index of the device for the network interface attachment.</p>
+    pub fn device_index(&self) -> ::std::option::Option<i32> {
+        self.device_index
     }
 }
 impl AttachNetworkInterfaceInput {
@@ -54,73 +54,14 @@ impl AttachNetworkInterfaceInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct AttachNetworkInterfaceInputBuilder {
-    pub(crate) device_index: ::std::option::Option<i32>,
-    pub(crate) dry_run: ::std::option::Option<bool>,
-    pub(crate) instance_id: ::std::option::Option<::std::string::String>,
-    pub(crate) network_interface_id: ::std::option::Option<::std::string::String>,
     pub(crate) network_card_index: ::std::option::Option<i32>,
     pub(crate) ena_srd_specification: ::std::option::Option<crate::types::EnaSrdSpecification>,
+    pub(crate) dry_run: ::std::option::Option<bool>,
+    pub(crate) network_interface_id: ::std::option::Option<::std::string::String>,
+    pub(crate) instance_id: ::std::option::Option<::std::string::String>,
+    pub(crate) device_index: ::std::option::Option<i32>,
 }
 impl AttachNetworkInterfaceInputBuilder {
-    /// <p>The index of the device for the network interface attachment.</p>
-    /// This field is required.
-    pub fn device_index(mut self, input: i32) -> Self {
-        self.device_index = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>The index of the device for the network interface attachment.</p>
-    pub fn set_device_index(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.device_index = input;
-        self
-    }
-    /// <p>The index of the device for the network interface attachment.</p>
-    pub fn get_device_index(&self) -> &::std::option::Option<i32> {
-        &self.device_index
-    }
-    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn dry_run(mut self, input: bool) -> Self {
-        self.dry_run = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
-    }
-    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
-        &self.dry_run
-    }
-    /// <p>The ID of the instance.</p>
-    /// This field is required.
-    pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.instance_id = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>The ID of the instance.</p>
-    pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_id = input;
-        self
-    }
-    /// <p>The ID of the instance.</p>
-    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
-        &self.instance_id
-    }
-    /// <p>The ID of the network interface.</p>
-    /// This field is required.
-    pub fn network_interface_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.network_interface_id = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>The ID of the network interface.</p>
-    pub fn set_network_interface_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.network_interface_id = input;
-        self
-    }
-    /// <p>The ID of the network interface.</p>
-    pub fn get_network_interface_id(&self) -> &::std::option::Option<::std::string::String> {
-        &self.network_interface_id
-    }
     /// <p>The index of the network card. Some instance types support multiple network cards. The primary network interface must be assigned to network card index 0. The default is network card index 0.</p>
     pub fn network_card_index(mut self, input: i32) -> Self {
         self.network_card_index = ::std::option::Option::Some(input);
@@ -149,6 +90,65 @@ impl AttachNetworkInterfaceInputBuilder {
     pub fn get_ena_srd_specification(&self) -> &::std::option::Option<crate::types::EnaSrdSpecification> {
         &self.ena_srd_specification
     }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn dry_run(mut self, input: bool) -> Self {
+        self.dry_run = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.dry_run = input;
+        self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
+    }
+    /// <p>The ID of the network interface.</p>
+    /// This field is required.
+    pub fn network_interface_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.network_interface_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the network interface.</p>
+    pub fn set_network_interface_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.network_interface_id = input;
+        self
+    }
+    /// <p>The ID of the network interface.</p>
+    pub fn get_network_interface_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.network_interface_id
+    }
+    /// <p>The ID of the instance.</p>
+    /// This field is required.
+    pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.instance_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the instance.</p>
+    pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.instance_id = input;
+        self
+    }
+    /// <p>The ID of the instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
+    }
+    /// <p>The index of the device for the network interface attachment.</p>
+    /// This field is required.
+    pub fn device_index(mut self, input: i32) -> Self {
+        self.device_index = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The index of the device for the network interface attachment.</p>
+    pub fn set_device_index(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.device_index = input;
+        self
+    }
+    /// <p>The index of the device for the network interface attachment.</p>
+    pub fn get_device_index(&self) -> &::std::option::Option<i32> {
+        &self.device_index
+    }
     /// Consumes the builder and constructs a [`AttachNetworkInterfaceInput`](crate::operation::attach_network_interface::AttachNetworkInterfaceInput).
     pub fn build(
         self,
@@ -157,12 +157,12 @@ impl AttachNetworkInterfaceInputBuilder {
         ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::attach_network_interface::AttachNetworkInterfaceInput {
-            device_index: self.device_index,
-            dry_run: self.dry_run,
-            instance_id: self.instance_id,
-            network_interface_id: self.network_interface_id,
             network_card_index: self.network_card_index,
             ena_srd_specification: self.ena_srd_specification,
+            dry_run: self.dry_run,
+            network_interface_id: self.network_interface_id,
+            instance_id: self.instance_id,
+            device_index: self.device_index,
         })
     }
 }

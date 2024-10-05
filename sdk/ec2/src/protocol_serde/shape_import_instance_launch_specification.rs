@@ -5,45 +5,45 @@ pub fn ser_import_instance_launch_specification(
     input: &crate::types::ImportInstanceLaunchSpecification,
 ) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
-    let mut scope_1 = writer.prefix("AdditionalInfo");
-    if let Some(var_2) = &input.additional_info {
-        scope_1.string(var_2);
+    let mut scope_1 = writer.prefix("Architecture");
+    if let Some(var_2) = &input.architecture {
+        scope_1.string(var_2.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_3 = writer.prefix("Architecture");
-    if let Some(var_4) = &input.architecture {
-        scope_3.string(var_4.as_str());
-    }
-    #[allow(unused_mut)]
-    let mut scope_5 = writer.prefix("GroupId");
-    if let Some(var_6) = &input.group_ids {
-        if !var_6.is_empty() {
-            let mut list_8 = scope_5.start_list(true, Some("SecurityGroupId"));
-            for item_7 in var_6 {
+    let mut scope_3 = writer.prefix("GroupName");
+    if let Some(var_4) = &input.group_names {
+        if !var_4.is_empty() {
+            let mut list_6 = scope_3.start_list(true, Some("SecurityGroup"));
+            for item_5 in var_4 {
                 #[allow(unused_mut)]
-                let mut entry_9 = list_8.entry();
-                entry_9.string(item_7);
+                let mut entry_7 = list_6.entry();
+                entry_7.string(item_5);
             }
-            list_8.finish();
+            list_6.finish();
         }
     }
     #[allow(unused_mut)]
-    let mut scope_10 = writer.prefix("GroupName");
-    if let Some(var_11) = &input.group_names {
-        if !var_11.is_empty() {
-            let mut list_13 = scope_10.start_list(true, Some("SecurityGroup"));
-            for item_12 in var_11 {
+    let mut scope_8 = writer.prefix("GroupId");
+    if let Some(var_9) = &input.group_ids {
+        if !var_9.is_empty() {
+            let mut list_11 = scope_8.start_list(true, Some("SecurityGroupId"));
+            for item_10 in var_9 {
                 #[allow(unused_mut)]
-                let mut entry_14 = list_13.entry();
-                entry_14.string(item_12);
+                let mut entry_12 = list_11.entry();
+                entry_12.string(item_10);
             }
-            list_13.finish();
+            list_11.finish();
         }
     }
     #[allow(unused_mut)]
-    let mut scope_15 = writer.prefix("InstanceInitiatedShutdownBehavior");
-    if let Some(var_16) = &input.instance_initiated_shutdown_behavior {
-        scope_15.string(var_16.as_str());
+    let mut scope_13 = writer.prefix("AdditionalInfo");
+    if let Some(var_14) = &input.additional_info {
+        scope_13.string(var_14);
+    }
+    #[allow(unused_mut)]
+    let mut scope_15 = writer.prefix("UserData");
+    if let Some(var_16) = &input.user_data {
+        crate::protocol_serde::shape_user_data::ser_user_data(scope_15, var_16)?;
     }
     #[allow(unused_mut)]
     let mut scope_17 = writer.prefix("InstanceType");
@@ -51,29 +51,29 @@ pub fn ser_import_instance_launch_specification(
         scope_17.string(var_18.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_19 = writer.prefix("Monitoring");
-    if let Some(var_20) = &input.monitoring {
-        scope_19.boolean(*var_20);
+    let mut scope_19 = writer.prefix("Placement");
+    if let Some(var_20) = &input.placement {
+        crate::protocol_serde::shape_placement::ser_placement(scope_19, var_20)?;
     }
     #[allow(unused_mut)]
-    let mut scope_21 = writer.prefix("Placement");
-    if let Some(var_22) = &input.placement {
-        crate::protocol_serde::shape_placement::ser_placement(scope_21, var_22)?;
+    let mut scope_21 = writer.prefix("Monitoring");
+    if let Some(var_22) = &input.monitoring {
+        scope_21.boolean(*var_22);
     }
     #[allow(unused_mut)]
-    let mut scope_23 = writer.prefix("PrivateIpAddress");
-    if let Some(var_24) = &input.private_ip_address {
+    let mut scope_23 = writer.prefix("SubnetId");
+    if let Some(var_24) = &input.subnet_id {
         scope_23.string(var_24);
     }
     #[allow(unused_mut)]
-    let mut scope_25 = writer.prefix("SubnetId");
-    if let Some(var_26) = &input.subnet_id {
-        scope_25.string(var_26);
+    let mut scope_25 = writer.prefix("InstanceInitiatedShutdownBehavior");
+    if let Some(var_26) = &input.instance_initiated_shutdown_behavior {
+        scope_25.string(var_26.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_27 = writer.prefix("UserData");
-    if let Some(var_28) = &input.user_data {
-        crate::protocol_serde::shape_user_data::ser_user_data(scope_27, var_28)?;
+    let mut scope_27 = writer.prefix("PrivateIpAddress");
+    if let Some(var_28) = &input.private_ip_address {
+        scope_27.string(var_28);
     }
     Ok(())
 }

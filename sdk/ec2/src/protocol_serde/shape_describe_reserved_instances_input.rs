@@ -6,40 +6,40 @@ pub fn ser_describe_reserved_instances_input_input_input(
     #[allow(unused_mut)]
     let mut writer = ::aws_smithy_query::QueryWriter::new(&mut out, "DescribeReservedInstances", "2016-11-15");
     #[allow(unused_mut)]
-    let mut scope_1 = writer.prefix("Filter");
-    if let Some(var_2) = &input.filters {
-        if !var_2.is_empty() {
-            let mut list_4 = scope_1.start_list(true, Some("Filter"));
-            for item_3 in var_2 {
+    let mut scope_1 = writer.prefix("OfferingClass");
+    if let Some(var_2) = &input.offering_class {
+        scope_1.string(var_2.as_str());
+    }
+    #[allow(unused_mut)]
+    let mut scope_3 = writer.prefix("ReservedInstancesId");
+    if let Some(var_4) = &input.reserved_instances_ids {
+        if !var_4.is_empty() {
+            let mut list_6 = scope_3.start_list(true, Some("ReservedInstancesId"));
+            for item_5 in var_4 {
                 #[allow(unused_mut)]
-                let mut entry_5 = list_4.entry();
-                crate::protocol_serde::shape_filter::ser_filter(entry_5, item_3)?;
+                let mut entry_7 = list_6.entry();
+                entry_7.string(item_5);
             }
-            list_4.finish();
+            list_6.finish();
         }
     }
     #[allow(unused_mut)]
-    let mut scope_6 = writer.prefix("OfferingClass");
-    if let Some(var_7) = &input.offering_class {
-        scope_6.string(var_7.as_str());
+    let mut scope_8 = writer.prefix("DryRun");
+    if let Some(var_9) = &input.dry_run {
+        scope_8.boolean(*var_9);
     }
     #[allow(unused_mut)]
-    let mut scope_8 = writer.prefix("ReservedInstancesId");
-    if let Some(var_9) = &input.reserved_instances_ids {
-        if !var_9.is_empty() {
-            let mut list_11 = scope_8.start_list(true, Some("ReservedInstancesId"));
-            for item_10 in var_9 {
+    let mut scope_10 = writer.prefix("Filter");
+    if let Some(var_11) = &input.filters {
+        if !var_11.is_empty() {
+            let mut list_13 = scope_10.start_list(true, Some("Filter"));
+            for item_12 in var_11 {
                 #[allow(unused_mut)]
-                let mut entry_12 = list_11.entry();
-                entry_12.string(item_10);
+                let mut entry_14 = list_13.entry();
+                crate::protocol_serde::shape_filter::ser_filter(entry_14, item_12)?;
             }
-            list_11.finish();
+            list_13.finish();
         }
-    }
-    #[allow(unused_mut)]
-    let mut scope_13 = writer.prefix("DryRun");
-    if let Some(var_14) = &input.dry_run {
-        scope_13.boolean(*var_14);
     }
     #[allow(unused_mut)]
     let mut scope_15 = writer.prefix("OfferingType");

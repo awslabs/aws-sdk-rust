@@ -4,14 +4,6 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Vpc {
-    /// <p>The primary IPv4 CIDR block for the VPC.</p>
-    pub cidr_block: ::std::option::Option<::std::string::String>,
-    /// <p>The ID of the set of DHCP options you've associated with the VPC.</p>
-    pub dhcp_options_id: ::std::option::Option<::std::string::String>,
-    /// <p>The current state of the VPC.</p>
-    pub state: ::std::option::Option<crate::types::VpcState>,
-    /// <p>The ID of the VPC.</p>
-    pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Amazon Web Services account that owns the VPC.</p>
     pub owner_id: ::std::option::Option<::std::string::String>,
     /// <p>The allowed tenancy of instances launched into the VPC.</p>
@@ -24,24 +16,16 @@ pub struct Vpc {
     pub is_default: ::std::option::Option<bool>,
     /// <p>Any tags assigned to the VPC.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    /// <p>The ID of the VPC.</p>
+    pub vpc_id: ::std::option::Option<::std::string::String>,
+    /// <p>The current state of the VPC.</p>
+    pub state: ::std::option::Option<crate::types::VpcState>,
+    /// <p>The primary IPv4 CIDR block for the VPC.</p>
+    pub cidr_block: ::std::option::Option<::std::string::String>,
+    /// <p>The ID of the set of DHCP options you've associated with the VPC.</p>
+    pub dhcp_options_id: ::std::option::Option<::std::string::String>,
 }
 impl Vpc {
-    /// <p>The primary IPv4 CIDR block for the VPC.</p>
-    pub fn cidr_block(&self) -> ::std::option::Option<&str> {
-        self.cidr_block.as_deref()
-    }
-    /// <p>The ID of the set of DHCP options you've associated with the VPC.</p>
-    pub fn dhcp_options_id(&self) -> ::std::option::Option<&str> {
-        self.dhcp_options_id.as_deref()
-    }
-    /// <p>The current state of the VPC.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::VpcState> {
-        self.state.as_ref()
-    }
-    /// <p>The ID of the VPC.</p>
-    pub fn vpc_id(&self) -> ::std::option::Option<&str> {
-        self.vpc_id.as_deref()
-    }
     /// <p>The ID of the Amazon Web Services account that owns the VPC.</p>
     pub fn owner_id(&self) -> ::std::option::Option<&str> {
         self.owner_id.as_deref()
@@ -72,6 +56,22 @@ impl Vpc {
     pub fn tags(&self) -> &[crate::types::Tag] {
         self.tags.as_deref().unwrap_or_default()
     }
+    /// <p>The ID of the VPC.</p>
+    pub fn vpc_id(&self) -> ::std::option::Option<&str> {
+        self.vpc_id.as_deref()
+    }
+    /// <p>The current state of the VPC.</p>
+    pub fn state(&self) -> ::std::option::Option<&crate::types::VpcState> {
+        self.state.as_ref()
+    }
+    /// <p>The primary IPv4 CIDR block for the VPC.</p>
+    pub fn cidr_block(&self) -> ::std::option::Option<&str> {
+        self.cidr_block.as_deref()
+    }
+    /// <p>The ID of the set of DHCP options you've associated with the VPC.</p>
+    pub fn dhcp_options_id(&self) -> ::std::option::Option<&str> {
+        self.dhcp_options_id.as_deref()
+    }
 }
 impl Vpc {
     /// Creates a new builder-style object to manufacture [`Vpc`](crate::types::Vpc).
@@ -84,74 +84,18 @@ impl Vpc {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct VpcBuilder {
-    pub(crate) cidr_block: ::std::option::Option<::std::string::String>,
-    pub(crate) dhcp_options_id: ::std::option::Option<::std::string::String>,
-    pub(crate) state: ::std::option::Option<crate::types::VpcState>,
-    pub(crate) vpc_id: ::std::option::Option<::std::string::String>,
     pub(crate) owner_id: ::std::option::Option<::std::string::String>,
     pub(crate) instance_tenancy: ::std::option::Option<crate::types::Tenancy>,
     pub(crate) ipv6_cidr_block_association_set: ::std::option::Option<::std::vec::Vec<crate::types::VpcIpv6CidrBlockAssociation>>,
     pub(crate) cidr_block_association_set: ::std::option::Option<::std::vec::Vec<crate::types::VpcCidrBlockAssociation>>,
     pub(crate) is_default: ::std::option::Option<bool>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) vpc_id: ::std::option::Option<::std::string::String>,
+    pub(crate) state: ::std::option::Option<crate::types::VpcState>,
+    pub(crate) cidr_block: ::std::option::Option<::std::string::String>,
+    pub(crate) dhcp_options_id: ::std::option::Option<::std::string::String>,
 }
 impl VpcBuilder {
-    /// <p>The primary IPv4 CIDR block for the VPC.</p>
-    pub fn cidr_block(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.cidr_block = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>The primary IPv4 CIDR block for the VPC.</p>
-    pub fn set_cidr_block(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cidr_block = input;
-        self
-    }
-    /// <p>The primary IPv4 CIDR block for the VPC.</p>
-    pub fn get_cidr_block(&self) -> &::std::option::Option<::std::string::String> {
-        &self.cidr_block
-    }
-    /// <p>The ID of the set of DHCP options you've associated with the VPC.</p>
-    pub fn dhcp_options_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.dhcp_options_id = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>The ID of the set of DHCP options you've associated with the VPC.</p>
-    pub fn set_dhcp_options_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.dhcp_options_id = input;
-        self
-    }
-    /// <p>The ID of the set of DHCP options you've associated with the VPC.</p>
-    pub fn get_dhcp_options_id(&self) -> &::std::option::Option<::std::string::String> {
-        &self.dhcp_options_id
-    }
-    /// <p>The current state of the VPC.</p>
-    pub fn state(mut self, input: crate::types::VpcState) -> Self {
-        self.state = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>The current state of the VPC.</p>
-    pub fn set_state(mut self, input: ::std::option::Option<crate::types::VpcState>) -> Self {
-        self.state = input;
-        self
-    }
-    /// <p>The current state of the VPC.</p>
-    pub fn get_state(&self) -> &::std::option::Option<crate::types::VpcState> {
-        &self.state
-    }
-    /// <p>The ID of the VPC.</p>
-    pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.vpc_id = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>The ID of the VPC.</p>
-    pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vpc_id = input;
-        self
-    }
-    /// <p>The ID of the VPC.</p>
-    pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
-        &self.vpc_id
-    }
     /// <p>The ID of the Amazon Web Services account that owns the VPC.</p>
     pub fn owner_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.owner_id = ::std::option::Option::Some(input.into());
@@ -257,19 +201,75 @@ impl VpcBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }
+    /// <p>The ID of the VPC.</p>
+    pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.vpc_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the VPC.</p>
+    pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.vpc_id = input;
+        self
+    }
+    /// <p>The ID of the VPC.</p>
+    pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_id
+    }
+    /// <p>The current state of the VPC.</p>
+    pub fn state(mut self, input: crate::types::VpcState) -> Self {
+        self.state = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The current state of the VPC.</p>
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::VpcState>) -> Self {
+        self.state = input;
+        self
+    }
+    /// <p>The current state of the VPC.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::VpcState> {
+        &self.state
+    }
+    /// <p>The primary IPv4 CIDR block for the VPC.</p>
+    pub fn cidr_block(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.cidr_block = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The primary IPv4 CIDR block for the VPC.</p>
+    pub fn set_cidr_block(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.cidr_block = input;
+        self
+    }
+    /// <p>The primary IPv4 CIDR block for the VPC.</p>
+    pub fn get_cidr_block(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cidr_block
+    }
+    /// <p>The ID of the set of DHCP options you've associated with the VPC.</p>
+    pub fn dhcp_options_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.dhcp_options_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the set of DHCP options you've associated with the VPC.</p>
+    pub fn set_dhcp_options_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.dhcp_options_id = input;
+        self
+    }
+    /// <p>The ID of the set of DHCP options you've associated with the VPC.</p>
+    pub fn get_dhcp_options_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dhcp_options_id
+    }
     /// Consumes the builder and constructs a [`Vpc`](crate::types::Vpc).
     pub fn build(self) -> crate::types::Vpc {
         crate::types::Vpc {
-            cidr_block: self.cidr_block,
-            dhcp_options_id: self.dhcp_options_id,
-            state: self.state,
-            vpc_id: self.vpc_id,
             owner_id: self.owner_id,
             instance_tenancy: self.instance_tenancy,
             ipv6_cidr_block_association_set: self.ipv6_cidr_block_association_set,
             cidr_block_association_set: self.cidr_block_association_set,
             is_default: self.is_default,
             tags: self.tags,
+            vpc_id: self.vpc_id,
+            state: self.state,
+            cidr_block: self.cidr_block,
+            dhcp_options_id: self.dhcp_options_id,
         }
     }
 }

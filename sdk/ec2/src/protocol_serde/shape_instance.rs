@@ -7,8 +7,543 @@ pub fn de_instance(
     let mut builder = crate::types::Instance::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
-            s if s.matches("amiLaunchIndex") /* AmiLaunchIndex com.amazonaws.ec2#Instance$AmiLaunchIndex */ =>  {
+            s if s.matches("architecture") /* Architecture com.amazonaws.ec2#Instance$Architecture */ =>  {
                 let var_1 =
+                    Some(
+                        Result::<crate::types::ArchitectureValues, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::ArchitectureValues::from(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_architecture(var_1);
+            }
+            ,
+            s if s.matches("blockDeviceMapping") /* BlockDeviceMappings com.amazonaws.ec2#Instance$BlockDeviceMappings */ =>  {
+                let var_2 =
+                    Some(
+                        crate::protocol_serde::shape_instance_block_device_mapping_list::de_instance_block_device_mapping_list(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_block_device_mappings(var_2);
+            }
+            ,
+            s if s.matches("clientToken") /* ClientToken com.amazonaws.ec2#Instance$ClientToken */ =>  {
+                let var_3 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_client_token(var_3);
+            }
+            ,
+            s if s.matches("ebsOptimized") /* EbsOptimized com.amazonaws.ec2#Instance$EbsOptimized */ =>  {
+                let var_4 =
+                    Some(
+                         {
+                            <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_ebs_optimized(var_4);
+            }
+            ,
+            s if s.matches("enaSupport") /* EnaSupport com.amazonaws.ec2#Instance$EnaSupport */ =>  {
+                let var_5 =
+                    Some(
+                         {
+                            <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_ena_support(var_5);
+            }
+            ,
+            s if s.matches("hypervisor") /* Hypervisor com.amazonaws.ec2#Instance$Hypervisor */ =>  {
+                let var_6 =
+                    Some(
+                        Result::<crate::types::HypervisorType, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::HypervisorType::from(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_hypervisor(var_6);
+            }
+            ,
+            s if s.matches("iamInstanceProfile") /* IamInstanceProfile com.amazonaws.ec2#Instance$IamInstanceProfile */ =>  {
+                let var_7 =
+                    Some(
+                        crate::protocol_serde::shape_iam_instance_profile::de_iam_instance_profile(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_iam_instance_profile(var_7);
+            }
+            ,
+            s if s.matches("instanceLifecycle") /* InstanceLifecycle com.amazonaws.ec2#Instance$InstanceLifecycle */ =>  {
+                let var_8 =
+                    Some(
+                        Result::<crate::types::InstanceLifecycleType, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::InstanceLifecycleType::from(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_instance_lifecycle(var_8);
+            }
+            ,
+            s if s.matches("elasticGpuAssociationSet") /* ElasticGpuAssociations com.amazonaws.ec2#Instance$ElasticGpuAssociations */ =>  {
+                let var_9 =
+                    Some(
+                        crate::protocol_serde::shape_elastic_gpu_association_list::de_elastic_gpu_association_list(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_elastic_gpu_associations(var_9);
+            }
+            ,
+            s if s.matches("elasticInferenceAcceleratorAssociationSet") /* ElasticInferenceAcceleratorAssociations com.amazonaws.ec2#Instance$ElasticInferenceAcceleratorAssociations */ =>  {
+                let var_10 =
+                    Some(
+                        crate::protocol_serde::shape_elastic_inference_accelerator_association_list::de_elastic_inference_accelerator_association_list(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_elastic_inference_accelerator_associations(var_10);
+            }
+            ,
+            s if s.matches("networkInterfaceSet") /* NetworkInterfaces com.amazonaws.ec2#Instance$NetworkInterfaces */ =>  {
+                let var_11 =
+                    Some(
+                        crate::protocol_serde::shape_instance_network_interface_list::de_instance_network_interface_list(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_network_interfaces(var_11);
+            }
+            ,
+            s if s.matches("outpostArn") /* OutpostArn com.amazonaws.ec2#Instance$OutpostArn */ =>  {
+                let var_12 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_outpost_arn(var_12);
+            }
+            ,
+            s if s.matches("rootDeviceName") /* RootDeviceName com.amazonaws.ec2#Instance$RootDeviceName */ =>  {
+                let var_13 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_root_device_name(var_13);
+            }
+            ,
+            s if s.matches("rootDeviceType") /* RootDeviceType com.amazonaws.ec2#Instance$RootDeviceType */ =>  {
+                let var_14 =
+                    Some(
+                        Result::<crate::types::DeviceType, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::DeviceType::from(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_root_device_type(var_14);
+            }
+            ,
+            s if s.matches("groupSet") /* SecurityGroups com.amazonaws.ec2#Instance$SecurityGroups */ =>  {
+                let var_15 =
+                    Some(
+                        crate::protocol_serde::shape_group_identifier_list::de_group_identifier_list(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_security_groups(var_15);
+            }
+            ,
+            s if s.matches("sourceDestCheck") /* SourceDestCheck com.amazonaws.ec2#Instance$SourceDestCheck */ =>  {
+                let var_16 =
+                    Some(
+                         {
+                            <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_source_dest_check(var_16);
+            }
+            ,
+            s if s.matches("spotInstanceRequestId") /* SpotInstanceRequestId com.amazonaws.ec2#Instance$SpotInstanceRequestId */ =>  {
+                let var_17 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_spot_instance_request_id(var_17);
+            }
+            ,
+            s if s.matches("sriovNetSupport") /* SriovNetSupport com.amazonaws.ec2#Instance$SriovNetSupport */ =>  {
+                let var_18 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_sriov_net_support(var_18);
+            }
+            ,
+            s if s.matches("stateReason") /* StateReason com.amazonaws.ec2#Instance$StateReason */ =>  {
+                let var_19 =
+                    Some(
+                        crate::protocol_serde::shape_state_reason::de_state_reason(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_state_reason(var_19);
+            }
+            ,
+            s if s.matches("tagSet") /* Tags com.amazonaws.ec2#Instance$Tags */ =>  {
+                let var_20 =
+                    Some(
+                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_tags(var_20);
+            }
+            ,
+            s if s.matches("virtualizationType") /* VirtualizationType com.amazonaws.ec2#Instance$VirtualizationType */ =>  {
+                let var_21 =
+                    Some(
+                        Result::<crate::types::VirtualizationType, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::VirtualizationType::from(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_virtualization_type(var_21);
+            }
+            ,
+            s if s.matches("cpuOptions") /* CpuOptions com.amazonaws.ec2#Instance$CpuOptions */ =>  {
+                let var_22 =
+                    Some(
+                        crate::protocol_serde::shape_cpu_options::de_cpu_options(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_cpu_options(var_22);
+            }
+            ,
+            s if s.matches("capacityReservationId") /* CapacityReservationId com.amazonaws.ec2#Instance$CapacityReservationId */ =>  {
+                let var_23 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_capacity_reservation_id(var_23);
+            }
+            ,
+            s if s.matches("capacityReservationSpecification") /* CapacityReservationSpecification com.amazonaws.ec2#Instance$CapacityReservationSpecification */ =>  {
+                let var_24 =
+                    Some(
+                        crate::protocol_serde::shape_capacity_reservation_specification_response::de_capacity_reservation_specification_response(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_capacity_reservation_specification(var_24);
+            }
+            ,
+            s if s.matches("hibernationOptions") /* HibernationOptions com.amazonaws.ec2#Instance$HibernationOptions */ =>  {
+                let var_25 =
+                    Some(
+                        crate::protocol_serde::shape_hibernation_options::de_hibernation_options(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_hibernation_options(var_25);
+            }
+            ,
+            s if s.matches("licenseSet") /* Licenses com.amazonaws.ec2#Instance$Licenses */ =>  {
+                let var_26 =
+                    Some(
+                        crate::protocol_serde::shape_license_list::de_license_list(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_licenses(var_26);
+            }
+            ,
+            s if s.matches("metadataOptions") /* MetadataOptions com.amazonaws.ec2#Instance$MetadataOptions */ =>  {
+                let var_27 =
+                    Some(
+                        crate::protocol_serde::shape_instance_metadata_options_response::de_instance_metadata_options_response(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_metadata_options(var_27);
+            }
+            ,
+            s if s.matches("enclaveOptions") /* EnclaveOptions com.amazonaws.ec2#Instance$EnclaveOptions */ =>  {
+                let var_28 =
+                    Some(
+                        crate::protocol_serde::shape_enclave_options::de_enclave_options(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_enclave_options(var_28);
+            }
+            ,
+            s if s.matches("bootMode") /* BootMode com.amazonaws.ec2#Instance$BootMode */ =>  {
+                let var_29 =
+                    Some(
+                        Result::<crate::types::BootModeValues, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::BootModeValues::from(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_boot_mode(var_29);
+            }
+            ,
+            s if s.matches("platformDetails") /* PlatformDetails com.amazonaws.ec2#Instance$PlatformDetails */ =>  {
+                let var_30 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_platform_details(var_30);
+            }
+            ,
+            s if s.matches("usageOperation") /* UsageOperation com.amazonaws.ec2#Instance$UsageOperation */ =>  {
+                let var_31 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_usage_operation(var_31);
+            }
+            ,
+            s if s.matches("usageOperationUpdateTime") /* UsageOperationUpdateTime com.amazonaws.ec2#Instance$UsageOperationUpdateTime */ =>  {
+                let var_32 =
+                    Some(
+                        ::aws_smithy_types::DateTime::from_str(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            , ::aws_smithy_types::date_time::Format::DateTimeWithOffset
+                        )
+                        .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (timestamp: `com.amazonaws.ec2#MillisecondDateTime`)"))
+                        ?
+                    )
+                ;
+                builder = builder.set_usage_operation_update_time(var_32);
+            }
+            ,
+            s if s.matches("privateDnsNameOptions") /* PrivateDnsNameOptions com.amazonaws.ec2#Instance$PrivateDnsNameOptions */ =>  {
+                let var_33 =
+                    Some(
+                        crate::protocol_serde::shape_private_dns_name_options_response::de_private_dns_name_options_response(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_private_dns_name_options(var_33);
+            }
+            ,
+            s if s.matches("ipv6Address") /* Ipv6Address com.amazonaws.ec2#Instance$Ipv6Address */ =>  {
+                let var_34 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_ipv6_address(var_34);
+            }
+            ,
+            s if s.matches("tpmSupport") /* TpmSupport com.amazonaws.ec2#Instance$TpmSupport */ =>  {
+                let var_35 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_tpm_support(var_35);
+            }
+            ,
+            s if s.matches("maintenanceOptions") /* MaintenanceOptions com.amazonaws.ec2#Instance$MaintenanceOptions */ =>  {
+                let var_36 =
+                    Some(
+                        crate::protocol_serde::shape_instance_maintenance_options::de_instance_maintenance_options(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_maintenance_options(var_36);
+            }
+            ,
+            s if s.matches("currentInstanceBootMode") /* CurrentInstanceBootMode com.amazonaws.ec2#Instance$CurrentInstanceBootMode */ =>  {
+                let var_37 =
+                    Some(
+                        Result::<crate::types::InstanceBootModeValues, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::InstanceBootModeValues::from(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_current_instance_boot_mode(var_37);
+            }
+            ,
+            s if s.matches("instanceId") /* InstanceId com.amazonaws.ec2#Instance$InstanceId */ =>  {
+                let var_38 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_instance_id(var_38);
+            }
+            ,
+            s if s.matches("imageId") /* ImageId com.amazonaws.ec2#Instance$ImageId */ =>  {
+                let var_39 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_image_id(var_39);
+            }
+            ,
+            s if s.matches("instanceState") /* State com.amazonaws.ec2#Instance$State */ =>  {
+                let var_40 =
+                    Some(
+                        crate::protocol_serde::shape_instance_state::de_instance_state(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_state(var_40);
+            }
+            ,
+            s if s.matches("privateDnsName") /* PrivateDnsName com.amazonaws.ec2#Instance$PrivateDnsName */ =>  {
+                let var_41 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_private_dns_name(var_41);
+            }
+            ,
+            s if s.matches("dnsName") /* PublicDnsName com.amazonaws.ec2#Instance$PublicDnsName */ =>  {
+                let var_42 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_public_dns_name(var_42);
+            }
+            ,
+            s if s.matches("reason") /* StateTransitionReason com.amazonaws.ec2#Instance$StateTransitionReason */ =>  {
+                let var_43 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_state_transition_reason(var_43);
+            }
+            ,
+            s if s.matches("keyName") /* KeyName com.amazonaws.ec2#Instance$KeyName */ =>  {
+                let var_44 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_key_name(var_44);
+            }
+            ,
+            s if s.matches("amiLaunchIndex") /* AmiLaunchIndex com.amazonaws.ec2#Instance$AmiLaunchIndex */ =>  {
+                let var_45 =
                     Some(
                          {
                             <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -19,37 +554,21 @@ pub fn de_instance(
                         ?
                     )
                 ;
-                builder = builder.set_ami_launch_index(var_1);
+                builder = builder.set_ami_launch_index(var_45);
             }
             ,
-            s if s.matches("imageId") /* ImageId com.amazonaws.ec2#Instance$ImageId */ =>  {
-                let var_2 =
+            s if s.matches("productCodes") /* ProductCodes com.amazonaws.ec2#Instance$ProductCodes */ =>  {
+                let var_46 =
                     Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
+                        crate::protocol_serde::shape_product_code_list::de_product_code_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_image_id(var_2);
-            }
-            ,
-            s if s.matches("instanceId") /* InstanceId com.amazonaws.ec2#Instance$InstanceId */ =>  {
-                let var_3 =
-                    Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_instance_id(var_3);
+                builder = builder.set_product_codes(var_46);
             }
             ,
             s if s.matches("instanceType") /* InstanceType com.amazonaws.ec2#Instance$InstanceType */ =>  {
-                let var_4 =
+                let var_47 =
                     Some(
                         Result::<crate::types::InstanceType, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::InstanceType::from(
@@ -59,37 +578,11 @@ pub fn de_instance(
                         ?
                     )
                 ;
-                builder = builder.set_instance_type(var_4);
-            }
-            ,
-            s if s.matches("kernelId") /* KernelId com.amazonaws.ec2#Instance$KernelId */ =>  {
-                let var_5 =
-                    Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_kernel_id(var_5);
-            }
-            ,
-            s if s.matches("keyName") /* KeyName com.amazonaws.ec2#Instance$KeyName */ =>  {
-                let var_6 =
-                    Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_key_name(var_6);
+                builder = builder.set_instance_type(var_47);
             }
             ,
             s if s.matches("launchTime") /* LaunchTime com.amazonaws.ec2#Instance$LaunchTime */ =>  {
-                let var_7 =
+                let var_48 =
                     Some(
                         ::aws_smithy_types::DateTime::from_str(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -99,515 +592,20 @@ pub fn de_instance(
                         ?
                     )
                 ;
-                builder = builder.set_launch_time(var_7);
-            }
-            ,
-            s if s.matches("monitoring") /* Monitoring com.amazonaws.ec2#Instance$Monitoring */ =>  {
-                let var_8 =
-                    Some(
-                        crate::protocol_serde::shape_monitoring::de_monitoring(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_monitoring(var_8);
+                builder = builder.set_launch_time(var_48);
             }
             ,
             s if s.matches("placement") /* Placement com.amazonaws.ec2#Instance$Placement */ =>  {
-                let var_9 =
+                let var_49 =
                     Some(
                         crate::protocol_serde::shape_placement::de_placement(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_placement(var_9);
+                builder = builder.set_placement(var_49);
             }
             ,
-            s if s.matches("platform") /* Platform com.amazonaws.ec2#Instance$Platform */ =>  {
-                let var_10 =
-                    Some(
-                        Result::<crate::types::PlatformValues, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            crate::types::PlatformValues::from(
-                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_platform(var_10);
-            }
-            ,
-            s if s.matches("privateDnsName") /* PrivateDnsName com.amazonaws.ec2#Instance$PrivateDnsName */ =>  {
-                let var_11 =
-                    Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_private_dns_name(var_11);
-            }
-            ,
-            s if s.matches("privateIpAddress") /* PrivateIpAddress com.amazonaws.ec2#Instance$PrivateIpAddress */ =>  {
-                let var_12 =
-                    Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_private_ip_address(var_12);
-            }
-            ,
-            s if s.matches("productCodes") /* ProductCodes com.amazonaws.ec2#Instance$ProductCodes */ =>  {
-                let var_13 =
-                    Some(
-                        crate::protocol_serde::shape_product_code_list::de_product_code_list(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_product_codes(var_13);
-            }
-            ,
-            s if s.matches("dnsName") /* PublicDnsName com.amazonaws.ec2#Instance$PublicDnsName */ =>  {
-                let var_14 =
-                    Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_public_dns_name(var_14);
-            }
-            ,
-            s if s.matches("ipAddress") /* PublicIpAddress com.amazonaws.ec2#Instance$PublicIpAddress */ =>  {
-                let var_15 =
-                    Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_public_ip_address(var_15);
-            }
-            ,
-            s if s.matches("ramdiskId") /* RamdiskId com.amazonaws.ec2#Instance$RamdiskId */ =>  {
-                let var_16 =
-                    Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_ramdisk_id(var_16);
-            }
-            ,
-            s if s.matches("instanceState") /* State com.amazonaws.ec2#Instance$State */ =>  {
-                let var_17 =
-                    Some(
-                        crate::protocol_serde::shape_instance_state::de_instance_state(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_state(var_17);
-            }
-            ,
-            s if s.matches("reason") /* StateTransitionReason com.amazonaws.ec2#Instance$StateTransitionReason */ =>  {
-                let var_18 =
-                    Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_state_transition_reason(var_18);
-            }
-            ,
-            s if s.matches("subnetId") /* SubnetId com.amazonaws.ec2#Instance$SubnetId */ =>  {
-                let var_19 =
-                    Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_subnet_id(var_19);
-            }
-            ,
-            s if s.matches("vpcId") /* VpcId com.amazonaws.ec2#Instance$VpcId */ =>  {
-                let var_20 =
-                    Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_vpc_id(var_20);
-            }
-            ,
-            s if s.matches("architecture") /* Architecture com.amazonaws.ec2#Instance$Architecture */ =>  {
-                let var_21 =
-                    Some(
-                        Result::<crate::types::ArchitectureValues, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            crate::types::ArchitectureValues::from(
-                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_architecture(var_21);
-            }
-            ,
-            s if s.matches("blockDeviceMapping") /* BlockDeviceMappings com.amazonaws.ec2#Instance$BlockDeviceMappings */ =>  {
-                let var_22 =
-                    Some(
-                        crate::protocol_serde::shape_instance_block_device_mapping_list::de_instance_block_device_mapping_list(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_block_device_mappings(var_22);
-            }
-            ,
-            s if s.matches("clientToken") /* ClientToken com.amazonaws.ec2#Instance$ClientToken */ =>  {
-                let var_23 =
-                    Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_client_token(var_23);
-            }
-            ,
-            s if s.matches("ebsOptimized") /* EbsOptimized com.amazonaws.ec2#Instance$EbsOptimized */ =>  {
-                let var_24 =
-                    Some(
-                         {
-                            <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
-                        }
-                        ?
-                    )
-                ;
-                builder = builder.set_ebs_optimized(var_24);
-            }
-            ,
-            s if s.matches("enaSupport") /* EnaSupport com.amazonaws.ec2#Instance$EnaSupport */ =>  {
-                let var_25 =
-                    Some(
-                         {
-                            <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
-                        }
-                        ?
-                    )
-                ;
-                builder = builder.set_ena_support(var_25);
-            }
-            ,
-            s if s.matches("hypervisor") /* Hypervisor com.amazonaws.ec2#Instance$Hypervisor */ =>  {
-                let var_26 =
-                    Some(
-                        Result::<crate::types::HypervisorType, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            crate::types::HypervisorType::from(
-                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_hypervisor(var_26);
-            }
-            ,
-            s if s.matches("iamInstanceProfile") /* IamInstanceProfile com.amazonaws.ec2#Instance$IamInstanceProfile */ =>  {
-                let var_27 =
-                    Some(
-                        crate::protocol_serde::shape_iam_instance_profile::de_iam_instance_profile(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_iam_instance_profile(var_27);
-            }
-            ,
-            s if s.matches("instanceLifecycle") /* InstanceLifecycle com.amazonaws.ec2#Instance$InstanceLifecycle */ =>  {
-                let var_28 =
-                    Some(
-                        Result::<crate::types::InstanceLifecycleType, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            crate::types::InstanceLifecycleType::from(
-                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_instance_lifecycle(var_28);
-            }
-            ,
-            s if s.matches("elasticGpuAssociationSet") /* ElasticGpuAssociations com.amazonaws.ec2#Instance$ElasticGpuAssociations */ =>  {
-                let var_29 =
-                    Some(
-                        crate::protocol_serde::shape_elastic_gpu_association_list::de_elastic_gpu_association_list(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_elastic_gpu_associations(var_29);
-            }
-            ,
-            s if s.matches("elasticInferenceAcceleratorAssociationSet") /* ElasticInferenceAcceleratorAssociations com.amazonaws.ec2#Instance$ElasticInferenceAcceleratorAssociations */ =>  {
-                let var_30 =
-                    Some(
-                        crate::protocol_serde::shape_elastic_inference_accelerator_association_list::de_elastic_inference_accelerator_association_list(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_elastic_inference_accelerator_associations(var_30);
-            }
-            ,
-            s if s.matches("networkInterfaceSet") /* NetworkInterfaces com.amazonaws.ec2#Instance$NetworkInterfaces */ =>  {
-                let var_31 =
-                    Some(
-                        crate::protocol_serde::shape_instance_network_interface_list::de_instance_network_interface_list(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_network_interfaces(var_31);
-            }
-            ,
-            s if s.matches("outpostArn") /* OutpostArn com.amazonaws.ec2#Instance$OutpostArn */ =>  {
-                let var_32 =
-                    Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_outpost_arn(var_32);
-            }
-            ,
-            s if s.matches("rootDeviceName") /* RootDeviceName com.amazonaws.ec2#Instance$RootDeviceName */ =>  {
-                let var_33 =
-                    Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_root_device_name(var_33);
-            }
-            ,
-            s if s.matches("rootDeviceType") /* RootDeviceType com.amazonaws.ec2#Instance$RootDeviceType */ =>  {
-                let var_34 =
-                    Some(
-                        Result::<crate::types::DeviceType, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            crate::types::DeviceType::from(
-                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_root_device_type(var_34);
-            }
-            ,
-            s if s.matches("groupSet") /* SecurityGroups com.amazonaws.ec2#Instance$SecurityGroups */ =>  {
-                let var_35 =
-                    Some(
-                        crate::protocol_serde::shape_group_identifier_list::de_group_identifier_list(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_security_groups(var_35);
-            }
-            ,
-            s if s.matches("sourceDestCheck") /* SourceDestCheck com.amazonaws.ec2#Instance$SourceDestCheck */ =>  {
-                let var_36 =
-                    Some(
-                         {
-                            <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
-                        }
-                        ?
-                    )
-                ;
-                builder = builder.set_source_dest_check(var_36);
-            }
-            ,
-            s if s.matches("spotInstanceRequestId") /* SpotInstanceRequestId com.amazonaws.ec2#Instance$SpotInstanceRequestId */ =>  {
-                let var_37 =
-                    Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_spot_instance_request_id(var_37);
-            }
-            ,
-            s if s.matches("sriovNetSupport") /* SriovNetSupport com.amazonaws.ec2#Instance$SriovNetSupport */ =>  {
-                let var_38 =
-                    Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_sriov_net_support(var_38);
-            }
-            ,
-            s if s.matches("stateReason") /* StateReason com.amazonaws.ec2#Instance$StateReason */ =>  {
-                let var_39 =
-                    Some(
-                        crate::protocol_serde::shape_state_reason::de_state_reason(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_state_reason(var_39);
-            }
-            ,
-            s if s.matches("tagSet") /* Tags com.amazonaws.ec2#Instance$Tags */ =>  {
-                let var_40 =
-                    Some(
-                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_tags(var_40);
-            }
-            ,
-            s if s.matches("virtualizationType") /* VirtualizationType com.amazonaws.ec2#Instance$VirtualizationType */ =>  {
-                let var_41 =
-                    Some(
-                        Result::<crate::types::VirtualizationType, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            crate::types::VirtualizationType::from(
-                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_virtualization_type(var_41);
-            }
-            ,
-            s if s.matches("cpuOptions") /* CpuOptions com.amazonaws.ec2#Instance$CpuOptions */ =>  {
-                let var_42 =
-                    Some(
-                        crate::protocol_serde::shape_cpu_options::de_cpu_options(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_cpu_options(var_42);
-            }
-            ,
-            s if s.matches("capacityReservationId") /* CapacityReservationId com.amazonaws.ec2#Instance$CapacityReservationId */ =>  {
-                let var_43 =
-                    Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_capacity_reservation_id(var_43);
-            }
-            ,
-            s if s.matches("capacityReservationSpecification") /* CapacityReservationSpecification com.amazonaws.ec2#Instance$CapacityReservationSpecification */ =>  {
-                let var_44 =
-                    Some(
-                        crate::protocol_serde::shape_capacity_reservation_specification_response::de_capacity_reservation_specification_response(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_capacity_reservation_specification(var_44);
-            }
-            ,
-            s if s.matches("hibernationOptions") /* HibernationOptions com.amazonaws.ec2#Instance$HibernationOptions */ =>  {
-                let var_45 =
-                    Some(
-                        crate::protocol_serde::shape_hibernation_options::de_hibernation_options(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_hibernation_options(var_45);
-            }
-            ,
-            s if s.matches("licenseSet") /* Licenses com.amazonaws.ec2#Instance$Licenses */ =>  {
-                let var_46 =
-                    Some(
-                        crate::protocol_serde::shape_license_list::de_license_list(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_licenses(var_46);
-            }
-            ,
-            s if s.matches("metadataOptions") /* MetadataOptions com.amazonaws.ec2#Instance$MetadataOptions */ =>  {
-                let var_47 =
-                    Some(
-                        crate::protocol_serde::shape_instance_metadata_options_response::de_instance_metadata_options_response(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_metadata_options(var_47);
-            }
-            ,
-            s if s.matches("enclaveOptions") /* EnclaveOptions com.amazonaws.ec2#Instance$EnclaveOptions */ =>  {
-                let var_48 =
-                    Some(
-                        crate::protocol_serde::shape_enclave_options::de_enclave_options(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_enclave_options(var_48);
-            }
-            ,
-            s if s.matches("bootMode") /* BootMode com.amazonaws.ec2#Instance$BootMode */ =>  {
-                let var_49 =
-                    Some(
-                        Result::<crate::types::BootModeValues, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            crate::types::BootModeValues::from(
-                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_boot_mode(var_49);
-            }
-            ,
-            s if s.matches("platformDetails") /* PlatformDetails com.amazonaws.ec2#Instance$PlatformDetails */ =>  {
+            s if s.matches("kernelId") /* KernelId com.amazonaws.ec2#Instance$KernelId */ =>  {
                 let var_50 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -617,10 +615,10 @@ pub fn de_instance(
                         ?
                     )
                 ;
-                builder = builder.set_platform_details(var_50);
+                builder = builder.set_kernel_id(var_50);
             }
             ,
-            s if s.matches("usageOperation") /* UsageOperation com.amazonaws.ec2#Instance$UsageOperation */ =>  {
+            s if s.matches("ramdiskId") /* RamdiskId com.amazonaws.ec2#Instance$RamdiskId */ =>  {
                 let var_51 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -630,34 +628,34 @@ pub fn de_instance(
                         ?
                     )
                 ;
-                builder = builder.set_usage_operation(var_51);
+                builder = builder.set_ramdisk_id(var_51);
             }
             ,
-            s if s.matches("usageOperationUpdateTime") /* UsageOperationUpdateTime com.amazonaws.ec2#Instance$UsageOperationUpdateTime */ =>  {
+            s if s.matches("platform") /* Platform com.amazonaws.ec2#Instance$Platform */ =>  {
                 let var_52 =
                     Some(
-                        ::aws_smithy_types::DateTime::from_str(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , ::aws_smithy_types::date_time::Format::DateTimeWithOffset
+                        Result::<crate::types::PlatformValues, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::PlatformValues::from(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
                         )
-                        .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (timestamp: `com.amazonaws.ec2#MillisecondDateTime`)"))
                         ?
                     )
                 ;
-                builder = builder.set_usage_operation_update_time(var_52);
+                builder = builder.set_platform(var_52);
             }
             ,
-            s if s.matches("privateDnsNameOptions") /* PrivateDnsNameOptions com.amazonaws.ec2#Instance$PrivateDnsNameOptions */ =>  {
+            s if s.matches("monitoring") /* Monitoring com.amazonaws.ec2#Instance$Monitoring */ =>  {
                 let var_53 =
                     Some(
-                        crate::protocol_serde::shape_private_dns_name_options_response::de_private_dns_name_options_response(&mut tag)
+                        crate::protocol_serde::shape_monitoring::de_monitoring(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_private_dns_name_options(var_53);
+                builder = builder.set_monitoring(var_53);
             }
             ,
-            s if s.matches("ipv6Address") /* Ipv6Address com.amazonaws.ec2#Instance$Ipv6Address */ =>  {
+            s if s.matches("subnetId") /* SubnetId com.amazonaws.ec2#Instance$SubnetId */ =>  {
                 let var_54 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -667,10 +665,10 @@ pub fn de_instance(
                         ?
                     )
                 ;
-                builder = builder.set_ipv6_address(var_54);
+                builder = builder.set_subnet_id(var_54);
             }
             ,
-            s if s.matches("tpmSupport") /* TpmSupport com.amazonaws.ec2#Instance$TpmSupport */ =>  {
+            s if s.matches("vpcId") /* VpcId com.amazonaws.ec2#Instance$VpcId */ =>  {
                 let var_55 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -680,31 +678,33 @@ pub fn de_instance(
                         ?
                     )
                 ;
-                builder = builder.set_tpm_support(var_55);
+                builder = builder.set_vpc_id(var_55);
             }
             ,
-            s if s.matches("maintenanceOptions") /* MaintenanceOptions com.amazonaws.ec2#Instance$MaintenanceOptions */ =>  {
+            s if s.matches("privateIpAddress") /* PrivateIpAddress com.amazonaws.ec2#Instance$PrivateIpAddress */ =>  {
                 let var_56 =
                     Some(
-                        crate::protocol_serde::shape_instance_maintenance_options::de_instance_maintenance_options(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_maintenance_options(var_56);
-            }
-            ,
-            s if s.matches("currentInstanceBootMode") /* CurrentInstanceBootMode com.amazonaws.ec2#Instance$CurrentInstanceBootMode */ =>  {
-                let var_57 =
-                    Some(
-                        Result::<crate::types::InstanceBootModeValues, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            crate::types::InstanceBootModeValues::from(
-                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
                         )
                         ?
                     )
                 ;
-                builder = builder.set_current_instance_boot_mode(var_57);
+                builder = builder.set_private_ip_address(var_56);
+            }
+            ,
+            s if s.matches("ipAddress") /* PublicIpAddress com.amazonaws.ec2#Instance$PublicIpAddress */ =>  {
+                let var_57 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_public_ip_address(var_57);
             }
             ,
             _ => {}

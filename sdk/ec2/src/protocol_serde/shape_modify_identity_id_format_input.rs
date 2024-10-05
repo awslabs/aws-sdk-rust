@@ -6,19 +6,19 @@ pub fn ser_modify_identity_id_format_input_input_input(
     #[allow(unused_mut)]
     let mut writer = ::aws_smithy_query::QueryWriter::new(&mut out, "ModifyIdentityIdFormat", "2016-11-15");
     #[allow(unused_mut)]
-    let mut scope_1 = writer.prefix("PrincipalArn");
-    if let Some(var_2) = &input.principal_arn {
+    let mut scope_1 = writer.prefix("Resource");
+    if let Some(var_2) = &input.resource {
         scope_1.string(var_2);
     }
     #[allow(unused_mut)]
-    let mut scope_3 = writer.prefix("Resource");
-    if let Some(var_4) = &input.resource {
-        scope_3.string(var_4);
+    let mut scope_3 = writer.prefix("UseLongIds");
+    if let Some(var_4) = &input.use_long_ids {
+        scope_3.boolean(*var_4);
     }
     #[allow(unused_mut)]
-    let mut scope_5 = writer.prefix("UseLongIds");
-    if let Some(var_6) = &input.use_long_ids {
-        scope_5.boolean(*var_6);
+    let mut scope_5 = writer.prefix("PrincipalArn");
+    if let Some(var_6) = &input.principal_arn {
+        scope_5.string(var_6);
     }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))

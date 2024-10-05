@@ -7,18 +7,8 @@ pub fn de_instance_state_change(
     let mut builder = crate::types::InstanceStateChange::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
-            s if s.matches("currentState") /* CurrentState com.amazonaws.ec2#InstanceStateChange$CurrentState */ =>  {
-                let var_1 =
-                    Some(
-                        crate::protocol_serde::shape_instance_state::de_instance_state(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_current_state(var_1);
-            }
-            ,
             s if s.matches("instanceId") /* InstanceId com.amazonaws.ec2#InstanceStateChange$InstanceId */ =>  {
-                let var_2 =
+                let var_1 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -27,7 +17,17 @@ pub fn de_instance_state_change(
                         ?
                     )
                 ;
-                builder = builder.set_instance_id(var_2);
+                builder = builder.set_instance_id(var_1);
+            }
+            ,
+            s if s.matches("currentState") /* CurrentState com.amazonaws.ec2#InstanceStateChange$CurrentState */ =>  {
+                let var_2 =
+                    Some(
+                        crate::protocol_serde::shape_instance_state::de_instance_state(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_current_state(var_2);
             }
             ,
             s if s.matches("previousState") /* PreviousState com.amazonaws.ec2#InstanceStateChange$PreviousState */ =>  {

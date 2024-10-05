@@ -6,31 +6,31 @@ pub fn ser_create_network_acl_input_input_input(
     #[allow(unused_mut)]
     let mut writer = ::aws_smithy_query::QueryWriter::new(&mut out, "CreateNetworkAcl", "2016-11-15");
     #[allow(unused_mut)]
-    let mut scope_1 = writer.prefix("DryRun");
-    if let Some(var_2) = &input.dry_run {
-        scope_1.boolean(*var_2);
-    }
-    #[allow(unused_mut)]
-    let mut scope_3 = writer.prefix("VpcId");
-    if let Some(var_4) = &input.vpc_id {
-        scope_3.string(var_4);
-    }
-    #[allow(unused_mut)]
-    let mut scope_5 = writer.prefix("TagSpecification");
-    if let Some(var_6) = &input.tag_specifications {
-        if !var_6.is_empty() {
-            let mut list_8 = scope_5.start_list(true, Some("item"));
-            for item_7 in var_6 {
+    let mut scope_1 = writer.prefix("TagSpecification");
+    if let Some(var_2) = &input.tag_specifications {
+        if !var_2.is_empty() {
+            let mut list_4 = scope_1.start_list(true, Some("item"));
+            for item_3 in var_2 {
                 #[allow(unused_mut)]
-                let mut entry_9 = list_8.entry();
-                crate::protocol_serde::shape_tag_specification::ser_tag_specification(entry_9, item_7)?;
+                let mut entry_5 = list_4.entry();
+                crate::protocol_serde::shape_tag_specification::ser_tag_specification(entry_5, item_3)?;
             }
-            list_8.finish();
+            list_4.finish();
         }
     }
     #[allow(unused_mut)]
-    let mut scope_10 = writer.prefix("ClientToken");
-    if let Some(var_11) = &input.client_token {
+    let mut scope_6 = writer.prefix("ClientToken");
+    if let Some(var_7) = &input.client_token {
+        scope_6.string(var_7);
+    }
+    #[allow(unused_mut)]
+    let mut scope_8 = writer.prefix("DryRun");
+    if let Some(var_9) = &input.dry_run {
+        scope_8.boolean(*var_9);
+    }
+    #[allow(unused_mut)]
+    let mut scope_10 = writer.prefix("VpcId");
+    if let Some(var_11) = &input.vpc_id {
         scope_10.string(var_11);
     }
     writer.finish();

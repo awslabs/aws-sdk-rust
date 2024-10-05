@@ -3,33 +3,33 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImportVolumeInput {
-    /// <p>The Availability Zone for the resulting EBS volume.</p>
-    pub availability_zone: ::std::option::Option<::std::string::String>,
-    /// <p>A description of the volume.</p>
-    pub description: ::std::option::Option<::std::string::String>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
+    /// <p>The Availability Zone for the resulting EBS volume.</p>
+    pub availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>The disk image.</p>
     pub image: ::std::option::Option<crate::types::DiskImageDetail>,
+    /// <p>A description of the volume.</p>
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p>The volume size.</p>
     pub volume: ::std::option::Option<crate::types::VolumeDetail>,
 }
 impl ImportVolumeInput {
-    /// <p>The Availability Zone for the resulting EBS volume.</p>
-    pub fn availability_zone(&self) -> ::std::option::Option<&str> {
-        self.availability_zone.as_deref()
-    }
-    /// <p>A description of the volume.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
-        self.description.as_deref()
-    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
         self.dry_run
     }
+    /// <p>The Availability Zone for the resulting EBS volume.</p>
+    pub fn availability_zone(&self) -> ::std::option::Option<&str> {
+        self.availability_zone.as_deref()
+    }
     /// <p>The disk image.</p>
     pub fn image(&self) -> ::std::option::Option<&crate::types::DiskImageDetail> {
         self.image.as_ref()
+    }
+    /// <p>A description of the volume.</p>
+    pub fn description(&self) -> ::std::option::Option<&str> {
+        self.description.as_deref()
     }
     /// <p>The volume size.</p>
     pub fn volume(&self) -> ::std::option::Option<&crate::types::VolumeDetail> {
@@ -47,13 +47,27 @@ impl ImportVolumeInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct ImportVolumeInputBuilder {
-    pub(crate) availability_zone: ::std::option::Option<::std::string::String>,
-    pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) dry_run: ::std::option::Option<bool>,
+    pub(crate) availability_zone: ::std::option::Option<::std::string::String>,
     pub(crate) image: ::std::option::Option<crate::types::DiskImageDetail>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) volume: ::std::option::Option<crate::types::VolumeDetail>,
 }
 impl ImportVolumeInputBuilder {
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn dry_run(mut self, input: bool) -> Self {
+        self.dry_run = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.dry_run = input;
+        self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
+    }
     /// <p>The Availability Zone for the resulting EBS volume.</p>
     /// This field is required.
     pub fn availability_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -69,34 +83,6 @@ impl ImportVolumeInputBuilder {
     pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
         &self.availability_zone
     }
-    /// <p>A description of the volume.</p>
-    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.description = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>A description of the volume.</p>
-    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
-    }
-    /// <p>A description of the volume.</p>
-    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
-        &self.description
-    }
-    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn dry_run(mut self, input: bool) -> Self {
-        self.dry_run = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
-    }
-    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
-        &self.dry_run
-    }
     /// <p>The disk image.</p>
     /// This field is required.
     pub fn image(mut self, input: crate::types::DiskImageDetail) -> Self {
@@ -111,6 +97,20 @@ impl ImportVolumeInputBuilder {
     /// <p>The disk image.</p>
     pub fn get_image(&self) -> &::std::option::Option<crate::types::DiskImageDetail> {
         &self.image
+    }
+    /// <p>A description of the volume.</p>
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>A description of the volume.</p>
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.description = input;
+        self
+    }
+    /// <p>A description of the volume.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The volume size.</p>
     /// This field is required.
@@ -132,10 +132,10 @@ impl ImportVolumeInputBuilder {
         self,
     ) -> ::std::result::Result<crate::operation::import_volume::ImportVolumeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::import_volume::ImportVolumeInput {
-            availability_zone: self.availability_zone,
-            description: self.description,
             dry_run: self.dry_run,
+            availability_zone: self.availability_zone,
             image: self.image,
+            description: self.description,
             volume: self.volume,
         })
     }

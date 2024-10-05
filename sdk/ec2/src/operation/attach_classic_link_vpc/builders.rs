@@ -127,25 +127,6 @@ impl AttachClassicLinkVpcFluentBuilder {
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
         self.inner.get_dry_run()
     }
-    ///
-    /// Appends an item to `Groups`.
-    ///
-    /// To override the contents of this collection use [`set_groups`](Self::set_groups).
-    ///
-    /// <p>The IDs of the security groups. You cannot specify security groups from a different VPC.</p>
-    pub fn groups(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.inner = self.inner.groups(input.into());
-        self
-    }
-    /// <p>The IDs of the security groups. You cannot specify security groups from a different VPC.</p>
-    pub fn set_groups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.inner = self.inner.set_groups(input);
-        self
-    }
-    /// <p>The IDs of the security groups. You cannot specify security groups from a different VPC.</p>
-    pub fn get_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
-        self.inner.get_groups()
-    }
     /// <p>The ID of the EC2-Classic instance.</p>
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.instance_id(input.into());
@@ -173,5 +154,24 @@ impl AttachClassicLinkVpcFluentBuilder {
     /// <p>The ID of the ClassicLink-enabled VPC.</p>
     pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_vpc_id()
+    }
+    ///
+    /// Appends an item to `Groups`.
+    ///
+    /// To override the contents of this collection use [`set_groups`](Self::set_groups).
+    ///
+    /// <p>The IDs of the security groups. You cannot specify security groups from a different VPC.</p>
+    pub fn groups(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.groups(input.into());
+        self
+    }
+    /// <p>The IDs of the security groups. You cannot specify security groups from a different VPC.</p>
+    pub fn set_groups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.inner = self.inner.set_groups(input);
+        self
+    }
+    /// <p>The IDs of the security groups. You cannot specify security groups from a different VPC.</p>
+    pub fn get_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_groups()
     }
 }

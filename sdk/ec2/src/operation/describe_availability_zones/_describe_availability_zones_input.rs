@@ -3,6 +3,15 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAvailabilityZonesInput {
+    /// <p>The names of the Availability Zones, Local Zones, and Wavelength Zones.</p>
+    pub zone_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The IDs of the Availability Zones, Local Zones, and Wavelength Zones.</p>
+    pub zone_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>Include all Availability Zones, Local Zones, and Wavelength Zones regardless of your opt-in status.</p>
+    /// <p>If you do not use this parameter, the results include only the zones for the Regions where you have chosen the option to opt in.</p>
+    pub all_availability_zones: ::std::option::Option<bool>,
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub dry_run: ::std::option::Option<bool>,
     /// <p>The filters.</p>
     /// <ul>
     /// <li>
@@ -27,17 +36,29 @@ pub struct DescribeAvailabilityZonesInput {
     /// <p><code>zone-type</code> - The type of zone (<code>availability-zone</code> | <code>local-zone</code> | <code>wavelength-zone</code>).</p></li>
     /// </ul>
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    /// <p>The names of the Availability Zones, Local Zones, and Wavelength Zones.</p>
-    pub zone_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>The IDs of the Availability Zones, Local Zones, and Wavelength Zones.</p>
-    pub zone_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>Include all Availability Zones, Local Zones, and Wavelength Zones regardless of your opt-in status.</p>
-    /// <p>If you do not use this parameter, the results include only the zones for the Regions where you have chosen the option to opt in.</p>
-    pub all_availability_zones: ::std::option::Option<bool>,
-    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub dry_run: ::std::option::Option<bool>,
 }
 impl DescribeAvailabilityZonesInput {
+    /// <p>The names of the Availability Zones, Local Zones, and Wavelength Zones.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.zone_names.is_none()`.
+    pub fn zone_names(&self) -> &[::std::string::String] {
+        self.zone_names.as_deref().unwrap_or_default()
+    }
+    /// <p>The IDs of the Availability Zones, Local Zones, and Wavelength Zones.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.zone_ids.is_none()`.
+    pub fn zone_ids(&self) -> &[::std::string::String] {
+        self.zone_ids.as_deref().unwrap_or_default()
+    }
+    /// <p>Include all Availability Zones, Local Zones, and Wavelength Zones regardless of your opt-in status.</p>
+    /// <p>If you do not use this parameter, the results include only the zones for the Regions where you have chosen the option to opt in.</p>
+    pub fn all_availability_zones(&self) -> ::std::option::Option<bool> {
+        self.all_availability_zones
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn dry_run(&self) -> ::std::option::Option<bool> {
+        self.dry_run
+    }
     /// <p>The filters.</p>
     /// <ul>
     /// <li>
@@ -66,27 +87,6 @@ impl DescribeAvailabilityZonesInput {
     pub fn filters(&self) -> &[crate::types::Filter] {
         self.filters.as_deref().unwrap_or_default()
     }
-    /// <p>The names of the Availability Zones, Local Zones, and Wavelength Zones.</p>
-    ///
-    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.zone_names.is_none()`.
-    pub fn zone_names(&self) -> &[::std::string::String] {
-        self.zone_names.as_deref().unwrap_or_default()
-    }
-    /// <p>The IDs of the Availability Zones, Local Zones, and Wavelength Zones.</p>
-    ///
-    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.zone_ids.is_none()`.
-    pub fn zone_ids(&self) -> &[::std::string::String] {
-        self.zone_ids.as_deref().unwrap_or_default()
-    }
-    /// <p>Include all Availability Zones, Local Zones, and Wavelength Zones regardless of your opt-in status.</p>
-    /// <p>If you do not use this parameter, the results include only the zones for the Regions where you have chosen the option to opt in.</p>
-    pub fn all_availability_zones(&self) -> ::std::option::Option<bool> {
-        self.all_availability_zones
-    }
-    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn dry_run(&self) -> ::std::option::Option<bool> {
-        self.dry_run
-    }
 }
 impl DescribeAvailabilityZonesInput {
     /// Creates a new builder-style object to manufacture [`DescribeAvailabilityZonesInput`](crate::operation::describe_availability_zones::DescribeAvailabilityZonesInput).
@@ -99,13 +99,84 @@ impl DescribeAvailabilityZonesInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct DescribeAvailabilityZonesInputBuilder {
-    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     pub(crate) zone_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) zone_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) all_availability_zones: ::std::option::Option<bool>,
     pub(crate) dry_run: ::std::option::Option<bool>,
+    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
 }
 impl DescribeAvailabilityZonesInputBuilder {
+    /// Appends an item to `zone_names`.
+    ///
+    /// To override the contents of this collection use [`set_zone_names`](Self::set_zone_names).
+    ///
+    /// <p>The names of the Availability Zones, Local Zones, and Wavelength Zones.</p>
+    pub fn zone_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.zone_names.unwrap_or_default();
+        v.push(input.into());
+        self.zone_names = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The names of the Availability Zones, Local Zones, and Wavelength Zones.</p>
+    pub fn set_zone_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.zone_names = input;
+        self
+    }
+    /// <p>The names of the Availability Zones, Local Zones, and Wavelength Zones.</p>
+    pub fn get_zone_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.zone_names
+    }
+    /// Appends an item to `zone_ids`.
+    ///
+    /// To override the contents of this collection use [`set_zone_ids`](Self::set_zone_ids).
+    ///
+    /// <p>The IDs of the Availability Zones, Local Zones, and Wavelength Zones.</p>
+    pub fn zone_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.zone_ids.unwrap_or_default();
+        v.push(input.into());
+        self.zone_ids = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The IDs of the Availability Zones, Local Zones, and Wavelength Zones.</p>
+    pub fn set_zone_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.zone_ids = input;
+        self
+    }
+    /// <p>The IDs of the Availability Zones, Local Zones, and Wavelength Zones.</p>
+    pub fn get_zone_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.zone_ids
+    }
+    /// <p>Include all Availability Zones, Local Zones, and Wavelength Zones regardless of your opt-in status.</p>
+    /// <p>If you do not use this parameter, the results include only the zones for the Regions where you have chosen the option to opt in.</p>
+    pub fn all_availability_zones(mut self, input: bool) -> Self {
+        self.all_availability_zones = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Include all Availability Zones, Local Zones, and Wavelength Zones regardless of your opt-in status.</p>
+    /// <p>If you do not use this parameter, the results include only the zones for the Regions where you have chosen the option to opt in.</p>
+    pub fn set_all_availability_zones(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.all_availability_zones = input;
+        self
+    }
+    /// <p>Include all Availability Zones, Local Zones, and Wavelength Zones regardless of your opt-in status.</p>
+    /// <p>If you do not use this parameter, the results include only the zones for the Regions where you have chosen the option to opt in.</p>
+    pub fn get_all_availability_zones(&self) -> &::std::option::Option<bool> {
+        &self.all_availability_zones
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn dry_run(mut self, input: bool) -> Self {
+        self.dry_run = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.dry_run = input;
+        self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
+    }
     /// Appends an item to `filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
@@ -192,77 +263,6 @@ impl DescribeAvailabilityZonesInputBuilder {
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         &self.filters
     }
-    /// Appends an item to `zone_names`.
-    ///
-    /// To override the contents of this collection use [`set_zone_names`](Self::set_zone_names).
-    ///
-    /// <p>The names of the Availability Zones, Local Zones, and Wavelength Zones.</p>
-    pub fn zone_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        let mut v = self.zone_names.unwrap_or_default();
-        v.push(input.into());
-        self.zone_names = ::std::option::Option::Some(v);
-        self
-    }
-    /// <p>The names of the Availability Zones, Local Zones, and Wavelength Zones.</p>
-    pub fn set_zone_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.zone_names = input;
-        self
-    }
-    /// <p>The names of the Availability Zones, Local Zones, and Wavelength Zones.</p>
-    pub fn get_zone_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
-        &self.zone_names
-    }
-    /// Appends an item to `zone_ids`.
-    ///
-    /// To override the contents of this collection use [`set_zone_ids`](Self::set_zone_ids).
-    ///
-    /// <p>The IDs of the Availability Zones, Local Zones, and Wavelength Zones.</p>
-    pub fn zone_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        let mut v = self.zone_ids.unwrap_or_default();
-        v.push(input.into());
-        self.zone_ids = ::std::option::Option::Some(v);
-        self
-    }
-    /// <p>The IDs of the Availability Zones, Local Zones, and Wavelength Zones.</p>
-    pub fn set_zone_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.zone_ids = input;
-        self
-    }
-    /// <p>The IDs of the Availability Zones, Local Zones, and Wavelength Zones.</p>
-    pub fn get_zone_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
-        &self.zone_ids
-    }
-    /// <p>Include all Availability Zones, Local Zones, and Wavelength Zones regardless of your opt-in status.</p>
-    /// <p>If you do not use this parameter, the results include only the zones for the Regions where you have chosen the option to opt in.</p>
-    pub fn all_availability_zones(mut self, input: bool) -> Self {
-        self.all_availability_zones = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>Include all Availability Zones, Local Zones, and Wavelength Zones regardless of your opt-in status.</p>
-    /// <p>If you do not use this parameter, the results include only the zones for the Regions where you have chosen the option to opt in.</p>
-    pub fn set_all_availability_zones(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.all_availability_zones = input;
-        self
-    }
-    /// <p>Include all Availability Zones, Local Zones, and Wavelength Zones regardless of your opt-in status.</p>
-    /// <p>If you do not use this parameter, the results include only the zones for the Regions where you have chosen the option to opt in.</p>
-    pub fn get_all_availability_zones(&self) -> &::std::option::Option<bool> {
-        &self.all_availability_zones
-    }
-    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn dry_run(mut self, input: bool) -> Self {
-        self.dry_run = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
-    }
-    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
-        &self.dry_run
-    }
     /// Consumes the builder and constructs a [`DescribeAvailabilityZonesInput`](crate::operation::describe_availability_zones::DescribeAvailabilityZonesInput).
     pub fn build(
         self,
@@ -271,11 +271,11 @@ impl DescribeAvailabilityZonesInputBuilder {
         ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_availability_zones::DescribeAvailabilityZonesInput {
-            filters: self.filters,
             zone_names: self.zone_names,
             zone_ids: self.zone_ids,
             all_availability_zones: self.all_availability_zones,
             dry_run: self.dry_run,
+            filters: self.filters,
         })
     }
 }

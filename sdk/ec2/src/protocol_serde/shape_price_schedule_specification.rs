@@ -5,9 +5,12 @@ pub fn ser_price_schedule_specification(
     input: &crate::types::PriceScheduleSpecification,
 ) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
-    let mut scope_1 = writer.prefix("CurrencyCode");
-    if let Some(var_2) = &input.currency_code {
-        scope_1.string(var_2.as_str());
+    let mut scope_1 = writer.prefix("Term");
+    if let Some(var_2) = &input.term {
+        scope_1.number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_2).into()),
+        );
     }
     #[allow(unused_mut)]
     let mut scope_3 = writer.prefix("Price");
@@ -18,12 +21,9 @@ pub fn ser_price_schedule_specification(
         );
     }
     #[allow(unused_mut)]
-    let mut scope_5 = writer.prefix("Term");
-    if let Some(var_6) = &input.term {
-        scope_5.number(
-            #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_6).into()),
-        );
+    let mut scope_5 = writer.prefix("CurrencyCode");
+    if let Some(var_6) = &input.currency_code {
+        scope_5.string(var_6.as_str());
     }
     Ok(())
 }

@@ -5,23 +5,23 @@ pub fn ser_block_device_mapping(
     input: &crate::types::BlockDeviceMapping,
 ) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
-    let mut scope_1 = writer.prefix("DeviceName");
-    if let Some(var_2) = &input.device_name {
-        scope_1.string(var_2);
+    let mut scope_1 = writer.prefix("Ebs");
+    if let Some(var_2) = &input.ebs {
+        crate::protocol_serde::shape_ebs_block_device::ser_ebs_block_device(scope_1, var_2)?;
     }
     #[allow(unused_mut)]
-    let mut scope_3 = writer.prefix("VirtualName");
-    if let Some(var_4) = &input.virtual_name {
+    let mut scope_3 = writer.prefix("NoDevice");
+    if let Some(var_4) = &input.no_device {
         scope_3.string(var_4);
     }
     #[allow(unused_mut)]
-    let mut scope_5 = writer.prefix("Ebs");
-    if let Some(var_6) = &input.ebs {
-        crate::protocol_serde::shape_ebs_block_device::ser_ebs_block_device(scope_5, var_6)?;
+    let mut scope_5 = writer.prefix("DeviceName");
+    if let Some(var_6) = &input.device_name {
+        scope_5.string(var_6);
     }
     #[allow(unused_mut)]
-    let mut scope_7 = writer.prefix("NoDevice");
-    if let Some(var_8) = &input.no_device {
+    let mut scope_7 = writer.prefix("VirtualName");
+    if let Some(var_8) = &input.virtual_name {
         scope_7.string(var_8);
     }
     Ok(())
@@ -35,20 +35,17 @@ pub fn de_block_device_mapping(
     let mut builder = crate::types::BlockDeviceMapping::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
-            s if s.matches("deviceName") /* DeviceName com.amazonaws.ec2#BlockDeviceMapping$DeviceName */ =>  {
+            s if s.matches("ebs") /* Ebs com.amazonaws.ec2#BlockDeviceMapping$Ebs */ =>  {
                 let var_9 =
                     Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
+                        crate::protocol_serde::shape_ebs_block_device::de_ebs_block_device(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_device_name(var_9);
+                builder = builder.set_ebs(var_9);
             }
             ,
-            s if s.matches("virtualName") /* VirtualName com.amazonaws.ec2#BlockDeviceMapping$VirtualName */ =>  {
+            s if s.matches("noDevice") /* NoDevice com.amazonaws.ec2#BlockDeviceMapping$NoDevice */ =>  {
                 let var_10 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -58,20 +55,23 @@ pub fn de_block_device_mapping(
                         ?
                     )
                 ;
-                builder = builder.set_virtual_name(var_10);
+                builder = builder.set_no_device(var_10);
             }
             ,
-            s if s.matches("ebs") /* Ebs com.amazonaws.ec2#BlockDeviceMapping$Ebs */ =>  {
+            s if s.matches("deviceName") /* DeviceName com.amazonaws.ec2#BlockDeviceMapping$DeviceName */ =>  {
                 let var_11 =
                     Some(
-                        crate::protocol_serde::shape_ebs_block_device::de_ebs_block_device(&mut tag)
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
                         ?
                     )
                 ;
-                builder = builder.set_ebs(var_11);
+                builder = builder.set_device_name(var_11);
             }
             ,
-            s if s.matches("noDevice") /* NoDevice com.amazonaws.ec2#BlockDeviceMapping$NoDevice */ =>  {
+            s if s.matches("virtualName") /* VirtualName com.amazonaws.ec2#BlockDeviceMapping$VirtualName */ =>  {
                 let var_12 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -81,7 +81,7 @@ pub fn de_block_device_mapping(
                         ?
                     )
                 ;
-                builder = builder.set_no_device(var_12);
+                builder = builder.set_virtual_name(var_12);
             }
             ,
             _ => {}

@@ -21,8 +21,6 @@ pub struct CreateSubnetInput {
     pub outpost_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the VPC.</p>
     pub vpc_id: ::std::option::Option<::std::string::String>,
-    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub dry_run: ::std::option::Option<bool>,
     /// <p>Indicates whether to create an IPv6 only subnet.</p>
     pub ipv6_native: ::std::option::Option<bool>,
     /// <p>An IPv4 IPAM pool ID for the subnet.</p>
@@ -33,6 +31,8 @@ pub struct CreateSubnetInput {
     pub ipv6_ipam_pool_id: ::std::option::Option<::std::string::String>,
     /// <p>An IPv6 netmask length for the subnet.</p>
     pub ipv6_netmask_length: ::std::option::Option<i32>,
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub dry_run: ::std::option::Option<bool>,
 }
 impl CreateSubnetInput {
     /// <p>The tags to assign to the subnet.</p>
@@ -69,10 +69,6 @@ impl CreateSubnetInput {
     pub fn vpc_id(&self) -> ::std::option::Option<&str> {
         self.vpc_id.as_deref()
     }
-    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn dry_run(&self) -> ::std::option::Option<bool> {
-        self.dry_run
-    }
     /// <p>Indicates whether to create an IPv6 only subnet.</p>
     pub fn ipv6_native(&self) -> ::std::option::Option<bool> {
         self.ipv6_native
@@ -93,6 +89,10 @@ impl CreateSubnetInput {
     pub fn ipv6_netmask_length(&self) -> ::std::option::Option<i32> {
         self.ipv6_netmask_length
     }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn dry_run(&self) -> ::std::option::Option<bool> {
+        self.dry_run
+    }
 }
 impl CreateSubnetInput {
     /// Creates a new builder-style object to manufacture [`CreateSubnetInput`](crate::operation::create_subnet::CreateSubnetInput).
@@ -112,12 +112,12 @@ pub struct CreateSubnetInputBuilder {
     pub(crate) ipv6_cidr_block: ::std::option::Option<::std::string::String>,
     pub(crate) outpost_arn: ::std::option::Option<::std::string::String>,
     pub(crate) vpc_id: ::std::option::Option<::std::string::String>,
-    pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) ipv6_native: ::std::option::Option<bool>,
     pub(crate) ipv4_ipam_pool_id: ::std::option::Option<::std::string::String>,
     pub(crate) ipv4_netmask_length: ::std::option::Option<i32>,
     pub(crate) ipv6_ipam_pool_id: ::std::option::Option<::std::string::String>,
     pub(crate) ipv6_netmask_length: ::std::option::Option<i32>,
+    pub(crate) dry_run: ::std::option::Option<bool>,
 }
 impl CreateSubnetInputBuilder {
     /// Appends an item to `tag_specifications`.
@@ -237,20 +237,6 @@ impl CreateSubnetInputBuilder {
     pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.vpc_id
     }
-    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn dry_run(mut self, input: bool) -> Self {
-        self.dry_run = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
-    }
-    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
-        &self.dry_run
-    }
     /// <p>Indicates whether to create an IPv6 only subnet.</p>
     pub fn ipv6_native(mut self, input: bool) -> Self {
         self.ipv6_native = ::std::option::Option::Some(input);
@@ -321,6 +307,20 @@ impl CreateSubnetInputBuilder {
     pub fn get_ipv6_netmask_length(&self) -> &::std::option::Option<i32> {
         &self.ipv6_netmask_length
     }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn dry_run(mut self, input: bool) -> Self {
+        self.dry_run = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.dry_run = input;
+        self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
+    }
     /// Consumes the builder and constructs a [`CreateSubnetInput`](crate::operation::create_subnet::CreateSubnetInput).
     pub fn build(
         self,
@@ -333,12 +333,12 @@ impl CreateSubnetInputBuilder {
             ipv6_cidr_block: self.ipv6_cidr_block,
             outpost_arn: self.outpost_arn,
             vpc_id: self.vpc_id,
-            dry_run: self.dry_run,
             ipv6_native: self.ipv6_native,
             ipv4_ipam_pool_id: self.ipv4_ipam_pool_id,
             ipv4_netmask_length: self.ipv4_netmask_length,
             ipv6_ipam_pool_id: self.ipv6_ipam_pool_id,
             ipv6_netmask_length: self.ipv6_netmask_length,
+            dry_run: self.dry_run,
         })
     }
 }

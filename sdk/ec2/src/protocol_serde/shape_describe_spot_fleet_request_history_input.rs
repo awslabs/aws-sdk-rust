@@ -11,32 +11,32 @@ pub fn ser_describe_spot_fleet_request_history_input_input_input(
         scope_1.boolean(*var_2);
     }
     #[allow(unused_mut)]
-    let mut scope_3 = writer.prefix("EventType");
-    if let Some(var_4) = &input.event_type {
-        scope_3.string(var_4.as_str());
+    let mut scope_3 = writer.prefix("SpotFleetRequestId");
+    if let Some(var_4) = &input.spot_fleet_request_id {
+        scope_3.string(var_4);
     }
     #[allow(unused_mut)]
-    let mut scope_5 = writer.prefix("MaxResults");
-    if let Some(var_6) = &input.max_results {
-        scope_5.number(
-            #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_6).into()),
-        );
+    let mut scope_5 = writer.prefix("EventType");
+    if let Some(var_6) = &input.event_type {
+        scope_5.string(var_6.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_7 = writer.prefix("NextToken");
-    if let Some(var_8) = &input.next_token {
-        scope_7.string(var_8);
+    let mut scope_7 = writer.prefix("StartTime");
+    if let Some(var_8) = &input.start_time {
+        scope_7.date_time(var_8, ::aws_smithy_types::date_time::Format::DateTime)?;
     }
     #[allow(unused_mut)]
-    let mut scope_9 = writer.prefix("SpotFleetRequestId");
-    if let Some(var_10) = &input.spot_fleet_request_id {
+    let mut scope_9 = writer.prefix("NextToken");
+    if let Some(var_10) = &input.next_token {
         scope_9.string(var_10);
     }
     #[allow(unused_mut)]
-    let mut scope_11 = writer.prefix("StartTime");
-    if let Some(var_12) = &input.start_time {
-        scope_11.date_time(var_12, ::aws_smithy_types::date_time::Format::DateTime)?;
+    let mut scope_11 = writer.prefix("MaxResults");
+    if let Some(var_12) = &input.max_results {
+        scope_11.number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_12).into()),
+        );
     }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))

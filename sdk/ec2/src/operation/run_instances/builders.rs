@@ -413,161 +413,6 @@ impl RunInstancesFluentBuilder {
     pub fn get_user_data(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_user_data()
     }
-    /// <p>Reserved.</p>
-    pub fn additional_info(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.inner = self.inner.additional_info(input.into());
-        self
-    }
-    /// <p>Reserved.</p>
-    pub fn set_additional_info(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.inner = self.inner.set_additional_info(input);
-        self
-    }
-    /// <p>Reserved.</p>
-    pub fn get_additional_info(&self) -> &::std::option::Option<::std::string::String> {
-        self.inner.get_additional_info()
-    }
-    /// <p>Unique, case-sensitive identifier you provide to ensure the idempotency of the request. If you do not specify a client token, a randomly generated token is used for the request to ensure idempotency.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
-    /// <p>Constraints: Maximum 64 ASCII characters</p>
-    pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.inner = self.inner.client_token(input.into());
-        self
-    }
-    /// <p>Unique, case-sensitive identifier you provide to ensure the idempotency of the request. If you do not specify a client token, a randomly generated token is used for the request to ensure idempotency.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
-    /// <p>Constraints: Maximum 64 ASCII characters</p>
-    pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.inner = self.inner.set_client_token(input);
-        self
-    }
-    /// <p>Unique, case-sensitive identifier you provide to ensure the idempotency of the request. If you do not specify a client token, a randomly generated token is used for the request to ensure idempotency.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
-    /// <p>Constraints: Maximum 64 ASCII characters</p>
-    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
-        self.inner.get_client_token()
-    }
-    /// <p>If you set this parameter to <code>true</code>, you can't terminate the instance using the Amazon EC2 console, CLI, or API; otherwise, you can. To change this attribute after launch, use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceAttribute.html">ModifyInstanceAttribute</a>. Alternatively, if you set <code>InstanceInitiatedShutdownBehavior</code> to <code>terminate</code>, you can terminate the instance by running the shutdown command from the instance.</p>
-    /// <p>Default: <code>false</code></p>
-    pub fn disable_api_termination(mut self, input: bool) -> Self {
-        self.inner = self.inner.disable_api_termination(input);
-        self
-    }
-    /// <p>If you set this parameter to <code>true</code>, you can't terminate the instance using the Amazon EC2 console, CLI, or API; otherwise, you can. To change this attribute after launch, use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceAttribute.html">ModifyInstanceAttribute</a>. Alternatively, if you set <code>InstanceInitiatedShutdownBehavior</code> to <code>terminate</code>, you can terminate the instance by running the shutdown command from the instance.</p>
-    /// <p>Default: <code>false</code></p>
-    pub fn set_disable_api_termination(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.inner = self.inner.set_disable_api_termination(input);
-        self
-    }
-    /// <p>If you set this parameter to <code>true</code>, you can't terminate the instance using the Amazon EC2 console, CLI, or API; otherwise, you can. To change this attribute after launch, use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceAttribute.html">ModifyInstanceAttribute</a>. Alternatively, if you set <code>InstanceInitiatedShutdownBehavior</code> to <code>terminate</code>, you can terminate the instance by running the shutdown command from the instance.</p>
-    /// <p>Default: <code>false</code></p>
-    pub fn get_disable_api_termination(&self) -> &::std::option::Option<bool> {
-        self.inner.get_disable_api_termination()
-    }
-    /// <p>Checks whether you have the required permissions for the operation, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn dry_run(mut self, input: bool) -> Self {
-        self.inner = self.inner.dry_run(input);
-        self
-    }
-    /// <p>Checks whether you have the required permissions for the operation, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.inner = self.inner.set_dry_run(input);
-        self
-    }
-    /// <p>Checks whether you have the required permissions for the operation, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
-        self.inner.get_dry_run()
-    }
-    /// <p>Indicates whether the instance is optimized for Amazon EBS I/O. This optimization provides dedicated throughput to Amazon EBS and an optimized configuration stack to provide optimal Amazon EBS I/O performance. This optimization isn't available with all instance types. Additional usage charges apply when using an EBS-optimized instance.</p>
-    /// <p>Default: <code>false</code></p>
-    pub fn ebs_optimized(mut self, input: bool) -> Self {
-        self.inner = self.inner.ebs_optimized(input);
-        self
-    }
-    /// <p>Indicates whether the instance is optimized for Amazon EBS I/O. This optimization provides dedicated throughput to Amazon EBS and an optimized configuration stack to provide optimal Amazon EBS I/O performance. This optimization isn't available with all instance types. Additional usage charges apply when using an EBS-optimized instance.</p>
-    /// <p>Default: <code>false</code></p>
-    pub fn set_ebs_optimized(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.inner = self.inner.set_ebs_optimized(input);
-        self
-    }
-    /// <p>Indicates whether the instance is optimized for Amazon EBS I/O. This optimization provides dedicated throughput to Amazon EBS and an optimized configuration stack to provide optimal Amazon EBS I/O performance. This optimization isn't available with all instance types. Additional usage charges apply when using an EBS-optimized instance.</p>
-    /// <p>Default: <code>false</code></p>
-    pub fn get_ebs_optimized(&self) -> &::std::option::Option<bool> {
-        self.inner.get_ebs_optimized()
-    }
-    /// <p>The name or Amazon Resource Name (ARN) of an IAM instance profile.</p>
-    pub fn iam_instance_profile(mut self, input: crate::types::IamInstanceProfileSpecification) -> Self {
-        self.inner = self.inner.iam_instance_profile(input);
-        self
-    }
-    /// <p>The name or Amazon Resource Name (ARN) of an IAM instance profile.</p>
-    pub fn set_iam_instance_profile(mut self, input: ::std::option::Option<crate::types::IamInstanceProfileSpecification>) -> Self {
-        self.inner = self.inner.set_iam_instance_profile(input);
-        self
-    }
-    /// <p>The name or Amazon Resource Name (ARN) of an IAM instance profile.</p>
-    pub fn get_iam_instance_profile(&self) -> &::std::option::Option<crate::types::IamInstanceProfileSpecification> {
-        self.inner.get_iam_instance_profile()
-    }
-    /// <p>Indicates whether an instance stops or terminates when you initiate shutdown from the instance (using the operating system command for system shutdown).</p>
-    /// <p>Default: <code>stop</code></p>
-    pub fn instance_initiated_shutdown_behavior(mut self, input: crate::types::ShutdownBehavior) -> Self {
-        self.inner = self.inner.instance_initiated_shutdown_behavior(input);
-        self
-    }
-    /// <p>Indicates whether an instance stops or terminates when you initiate shutdown from the instance (using the operating system command for system shutdown).</p>
-    /// <p>Default: <code>stop</code></p>
-    pub fn set_instance_initiated_shutdown_behavior(mut self, input: ::std::option::Option<crate::types::ShutdownBehavior>) -> Self {
-        self.inner = self.inner.set_instance_initiated_shutdown_behavior(input);
-        self
-    }
-    /// <p>Indicates whether an instance stops or terminates when you initiate shutdown from the instance (using the operating system command for system shutdown).</p>
-    /// <p>Default: <code>stop</code></p>
-    pub fn get_instance_initiated_shutdown_behavior(&self) -> &::std::option::Option<crate::types::ShutdownBehavior> {
-        self.inner.get_instance_initiated_shutdown_behavior()
-    }
-    ///
-    /// Appends an item to `NetworkInterfaces`.
-    ///
-    /// To override the contents of this collection use [`set_network_interfaces`](Self::set_network_interfaces).
-    ///
-    /// <p>The network interfaces to associate with the instance.</p>
-    pub fn network_interfaces(mut self, input: crate::types::InstanceNetworkInterfaceSpecification) -> Self {
-        self.inner = self.inner.network_interfaces(input);
-        self
-    }
-    /// <p>The network interfaces to associate with the instance.</p>
-    pub fn set_network_interfaces(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceNetworkInterfaceSpecification>>,
-    ) -> Self {
-        self.inner = self.inner.set_network_interfaces(input);
-        self
-    }
-    /// <p>The network interfaces to associate with the instance.</p>
-    pub fn get_network_interfaces(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceNetworkInterfaceSpecification>> {
-        self.inner.get_network_interfaces()
-    }
-    /// <p>The primary IPv4 address. You must specify a value from the IPv4 address range of the subnet.</p>
-    /// <p>Only one private IP address can be designated as primary. You can't specify this option if you've specified the option to designate a private IP address as the primary IP address in a network interface specification. You cannot specify this option if you're launching more than one instance in the request.</p>
-    /// <p>You cannot specify this option and the network interfaces option in the same request.</p>
-    pub fn private_ip_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.inner = self.inner.private_ip_address(input.into());
-        self
-    }
-    /// <p>The primary IPv4 address. You must specify a value from the IPv4 address range of the subnet.</p>
-    /// <p>Only one private IP address can be designated as primary. You can't specify this option if you've specified the option to designate a private IP address as the primary IP address in a network interface specification. You cannot specify this option if you're launching more than one instance in the request.</p>
-    /// <p>You cannot specify this option and the network interfaces option in the same request.</p>
-    pub fn set_private_ip_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.inner = self.inner.set_private_ip_address(input);
-        self
-    }
-    /// <p>The primary IPv4 address. You must specify a value from the IPv4 address range of the subnet.</p>
-    /// <p>Only one private IP address can be designated as primary. You can't specify this option if you've specified the option to designate a private IP address as the primary IP address in a network interface specification. You cannot specify this option if you're launching more than one instance in the request.</p>
-    /// <p>You cannot specify this option and the network interfaces option in the same request.</p>
-    pub fn get_private_ip_address(&self) -> &::std::option::Option<::std::string::String> {
-        self.inner.get_private_ip_address()
-    }
     ///
     /// Appends an item to `ElasticGpuSpecification`.
     ///
@@ -877,5 +722,160 @@ impl RunInstancesFluentBuilder {
     /// <p>If you’re launching an instance into a dual-stack or IPv6-only subnet, you can enable assigning a primary IPv6 address. A primary IPv6 address is an IPv6 GUA address associated with an ENI that you have enabled to use a primary IPv6 address. Use this option if an instance relies on its IPv6 address not changing. When you launch the instance, Amazon Web Services will automatically assign an IPv6 address associated with the ENI attached to your instance to be the primary IPv6 address. Once you enable an IPv6 GUA address to be a primary IPv6, you cannot disable it. When you enable an IPv6 GUA address to be a primary IPv6, the first IPv6 GUA will be made the primary IPv6 address until the instance is terminated or the network interface is detached. If you have multiple IPv6 addresses associated with an ENI attached to your instance and you enable a primary IPv6 address, the first IPv6 GUA address associated with the ENI becomes the primary IPv6 address.</p>
     pub fn get_enable_primary_ipv6(&self) -> &::std::option::Option<bool> {
         self.inner.get_enable_primary_ipv6()
+    }
+    /// <p>Checks whether you have the required permissions for the operation, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn dry_run(mut self, input: bool) -> Self {
+        self.inner = self.inner.dry_run(input);
+        self
+    }
+    /// <p>Checks whether you have the required permissions for the operation, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_dry_run(input);
+        self
+    }
+    /// <p>Checks whether you have the required permissions for the operation, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
+    }
+    /// <p>If you set this parameter to <code>true</code>, you can't terminate the instance using the Amazon EC2 console, CLI, or API; otherwise, you can. To change this attribute after launch, use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceAttribute.html">ModifyInstanceAttribute</a>. Alternatively, if you set <code>InstanceInitiatedShutdownBehavior</code> to <code>terminate</code>, you can terminate the instance by running the shutdown command from the instance.</p>
+    /// <p>Default: <code>false</code></p>
+    pub fn disable_api_termination(mut self, input: bool) -> Self {
+        self.inner = self.inner.disable_api_termination(input);
+        self
+    }
+    /// <p>If you set this parameter to <code>true</code>, you can't terminate the instance using the Amazon EC2 console, CLI, or API; otherwise, you can. To change this attribute after launch, use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceAttribute.html">ModifyInstanceAttribute</a>. Alternatively, if you set <code>InstanceInitiatedShutdownBehavior</code> to <code>terminate</code>, you can terminate the instance by running the shutdown command from the instance.</p>
+    /// <p>Default: <code>false</code></p>
+    pub fn set_disable_api_termination(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_disable_api_termination(input);
+        self
+    }
+    /// <p>If you set this parameter to <code>true</code>, you can't terminate the instance using the Amazon EC2 console, CLI, or API; otherwise, you can. To change this attribute after launch, use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceAttribute.html">ModifyInstanceAttribute</a>. Alternatively, if you set <code>InstanceInitiatedShutdownBehavior</code> to <code>terminate</code>, you can terminate the instance by running the shutdown command from the instance.</p>
+    /// <p>Default: <code>false</code></p>
+    pub fn get_disable_api_termination(&self) -> &::std::option::Option<bool> {
+        self.inner.get_disable_api_termination()
+    }
+    /// <p>Indicates whether an instance stops or terminates when you initiate shutdown from the instance (using the operating system command for system shutdown).</p>
+    /// <p>Default: <code>stop</code></p>
+    pub fn instance_initiated_shutdown_behavior(mut self, input: crate::types::ShutdownBehavior) -> Self {
+        self.inner = self.inner.instance_initiated_shutdown_behavior(input);
+        self
+    }
+    /// <p>Indicates whether an instance stops or terminates when you initiate shutdown from the instance (using the operating system command for system shutdown).</p>
+    /// <p>Default: <code>stop</code></p>
+    pub fn set_instance_initiated_shutdown_behavior(mut self, input: ::std::option::Option<crate::types::ShutdownBehavior>) -> Self {
+        self.inner = self.inner.set_instance_initiated_shutdown_behavior(input);
+        self
+    }
+    /// <p>Indicates whether an instance stops or terminates when you initiate shutdown from the instance (using the operating system command for system shutdown).</p>
+    /// <p>Default: <code>stop</code></p>
+    pub fn get_instance_initiated_shutdown_behavior(&self) -> &::std::option::Option<crate::types::ShutdownBehavior> {
+        self.inner.get_instance_initiated_shutdown_behavior()
+    }
+    /// <p>The primary IPv4 address. You must specify a value from the IPv4 address range of the subnet.</p>
+    /// <p>Only one private IP address can be designated as primary. You can't specify this option if you've specified the option to designate a private IP address as the primary IP address in a network interface specification. You cannot specify this option if you're launching more than one instance in the request.</p>
+    /// <p>You cannot specify this option and the network interfaces option in the same request.</p>
+    pub fn private_ip_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.private_ip_address(input.into());
+        self
+    }
+    /// <p>The primary IPv4 address. You must specify a value from the IPv4 address range of the subnet.</p>
+    /// <p>Only one private IP address can be designated as primary. You can't specify this option if you've specified the option to designate a private IP address as the primary IP address in a network interface specification. You cannot specify this option if you're launching more than one instance in the request.</p>
+    /// <p>You cannot specify this option and the network interfaces option in the same request.</p>
+    pub fn set_private_ip_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_private_ip_address(input);
+        self
+    }
+    /// <p>The primary IPv4 address. You must specify a value from the IPv4 address range of the subnet.</p>
+    /// <p>Only one private IP address can be designated as primary. You can't specify this option if you've specified the option to designate a private IP address as the primary IP address in a network interface specification. You cannot specify this option if you're launching more than one instance in the request.</p>
+    /// <p>You cannot specify this option and the network interfaces option in the same request.</p>
+    pub fn get_private_ip_address(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_private_ip_address()
+    }
+    /// <p>Unique, case-sensitive identifier you provide to ensure the idempotency of the request. If you do not specify a client token, a randomly generated token is used for the request to ensure idempotency.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
+    /// <p>Constraints: Maximum 64 ASCII characters</p>
+    pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.client_token(input.into());
+        self
+    }
+    /// <p>Unique, case-sensitive identifier you provide to ensure the idempotency of the request. If you do not specify a client token, a randomly generated token is used for the request to ensure idempotency.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
+    /// <p>Constraints: Maximum 64 ASCII characters</p>
+    pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_client_token(input);
+        self
+    }
+    /// <p>Unique, case-sensitive identifier you provide to ensure the idempotency of the request. If you do not specify a client token, a randomly generated token is used for the request to ensure idempotency.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
+    /// <p>Constraints: Maximum 64 ASCII characters</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
+    }
+    /// <p>Reserved.</p>
+    pub fn additional_info(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.additional_info(input.into());
+        self
+    }
+    /// <p>Reserved.</p>
+    pub fn set_additional_info(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_additional_info(input);
+        self
+    }
+    /// <p>Reserved.</p>
+    pub fn get_additional_info(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_additional_info()
+    }
+    ///
+    /// Appends an item to `NetworkInterfaces`.
+    ///
+    /// To override the contents of this collection use [`set_network_interfaces`](Self::set_network_interfaces).
+    ///
+    /// <p>The network interfaces to associate with the instance.</p>
+    pub fn network_interfaces(mut self, input: crate::types::InstanceNetworkInterfaceSpecification) -> Self {
+        self.inner = self.inner.network_interfaces(input);
+        self
+    }
+    /// <p>The network interfaces to associate with the instance.</p>
+    pub fn set_network_interfaces(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceNetworkInterfaceSpecification>>,
+    ) -> Self {
+        self.inner = self.inner.set_network_interfaces(input);
+        self
+    }
+    /// <p>The network interfaces to associate with the instance.</p>
+    pub fn get_network_interfaces(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceNetworkInterfaceSpecification>> {
+        self.inner.get_network_interfaces()
+    }
+    /// <p>The name or Amazon Resource Name (ARN) of an IAM instance profile.</p>
+    pub fn iam_instance_profile(mut self, input: crate::types::IamInstanceProfileSpecification) -> Self {
+        self.inner = self.inner.iam_instance_profile(input);
+        self
+    }
+    /// <p>The name or Amazon Resource Name (ARN) of an IAM instance profile.</p>
+    pub fn set_iam_instance_profile(mut self, input: ::std::option::Option<crate::types::IamInstanceProfileSpecification>) -> Self {
+        self.inner = self.inner.set_iam_instance_profile(input);
+        self
+    }
+    /// <p>The name or Amazon Resource Name (ARN) of an IAM instance profile.</p>
+    pub fn get_iam_instance_profile(&self) -> &::std::option::Option<crate::types::IamInstanceProfileSpecification> {
+        self.inner.get_iam_instance_profile()
+    }
+    /// <p>Indicates whether the instance is optimized for Amazon EBS I/O. This optimization provides dedicated throughput to Amazon EBS and an optimized configuration stack to provide optimal Amazon EBS I/O performance. This optimization isn't available with all instance types. Additional usage charges apply when using an EBS-optimized instance.</p>
+    /// <p>Default: <code>false</code></p>
+    pub fn ebs_optimized(mut self, input: bool) -> Self {
+        self.inner = self.inner.ebs_optimized(input);
+        self
+    }
+    /// <p>Indicates whether the instance is optimized for Amazon EBS I/O. This optimization provides dedicated throughput to Amazon EBS and an optimized configuration stack to provide optimal Amazon EBS I/O performance. This optimization isn't available with all instance types. Additional usage charges apply when using an EBS-optimized instance.</p>
+    /// <p>Default: <code>false</code></p>
+    pub fn set_ebs_optimized(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_ebs_optimized(input);
+        self
+    }
+    /// <p>Indicates whether the instance is optimized for Amazon EBS I/O. This optimization provides dedicated throughput to Amazon EBS and an optimized configuration stack to provide optimal Amazon EBS I/O performance. This optimization isn't available with all instance types. Additional usage charges apply when using an EBS-optimized instance.</p>
+    /// <p>Default: <code>false</code></p>
+    pub fn get_ebs_optimized(&self) -> &::std::option::Option<bool> {
+        self.inner.get_ebs_optimized()
     }
 }

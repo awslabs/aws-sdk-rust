@@ -4,14 +4,20 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UnassignPrivateIpAddressesInput {
+    /// <p>The IPv4 prefixes to unassign from the network interface.</p>
+    pub ipv4_prefixes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The ID of the network interface.</p>
     pub network_interface_id: ::std::option::Option<::std::string::String>,
     /// <p>The secondary private IP addresses to unassign from the network interface. You can specify this option multiple times to unassign more than one IP address.</p>
     pub private_ip_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>The IPv4 prefixes to unassign from the network interface.</p>
-    pub ipv4_prefixes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl UnassignPrivateIpAddressesInput {
+    /// <p>The IPv4 prefixes to unassign from the network interface.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ipv4_prefixes.is_none()`.
+    pub fn ipv4_prefixes(&self) -> &[::std::string::String] {
+        self.ipv4_prefixes.as_deref().unwrap_or_default()
+    }
     /// <p>The ID of the network interface.</p>
     pub fn network_interface_id(&self) -> ::std::option::Option<&str> {
         self.network_interface_id.as_deref()
@@ -21,12 +27,6 @@ impl UnassignPrivateIpAddressesInput {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.private_ip_addresses.is_none()`.
     pub fn private_ip_addresses(&self) -> &[::std::string::String] {
         self.private_ip_addresses.as_deref().unwrap_or_default()
-    }
-    /// <p>The IPv4 prefixes to unassign from the network interface.</p>
-    ///
-    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ipv4_prefixes.is_none()`.
-    pub fn ipv4_prefixes(&self) -> &[::std::string::String] {
-        self.ipv4_prefixes.as_deref().unwrap_or_default()
     }
 }
 impl UnassignPrivateIpAddressesInput {
@@ -40,11 +40,31 @@ impl UnassignPrivateIpAddressesInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct UnassignPrivateIpAddressesInputBuilder {
+    pub(crate) ipv4_prefixes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) network_interface_id: ::std::option::Option<::std::string::String>,
     pub(crate) private_ip_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) ipv4_prefixes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl UnassignPrivateIpAddressesInputBuilder {
+    /// Appends an item to `ipv4_prefixes`.
+    ///
+    /// To override the contents of this collection use [`set_ipv4_prefixes`](Self::set_ipv4_prefixes).
+    ///
+    /// <p>The IPv4 prefixes to unassign from the network interface.</p>
+    pub fn ipv4_prefixes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.ipv4_prefixes.unwrap_or_default();
+        v.push(input.into());
+        self.ipv4_prefixes = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The IPv4 prefixes to unassign from the network interface.</p>
+    pub fn set_ipv4_prefixes(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.ipv4_prefixes = input;
+        self
+    }
+    /// <p>The IPv4 prefixes to unassign from the network interface.</p>
+    pub fn get_ipv4_prefixes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.ipv4_prefixes
+    }
     /// <p>The ID of the network interface.</p>
     /// This field is required.
     pub fn network_interface_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -80,26 +100,6 @@ impl UnassignPrivateIpAddressesInputBuilder {
     pub fn get_private_ip_addresses(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.private_ip_addresses
     }
-    /// Appends an item to `ipv4_prefixes`.
-    ///
-    /// To override the contents of this collection use [`set_ipv4_prefixes`](Self::set_ipv4_prefixes).
-    ///
-    /// <p>The IPv4 prefixes to unassign from the network interface.</p>
-    pub fn ipv4_prefixes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        let mut v = self.ipv4_prefixes.unwrap_or_default();
-        v.push(input.into());
-        self.ipv4_prefixes = ::std::option::Option::Some(v);
-        self
-    }
-    /// <p>The IPv4 prefixes to unassign from the network interface.</p>
-    pub fn set_ipv4_prefixes(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.ipv4_prefixes = input;
-        self
-    }
-    /// <p>The IPv4 prefixes to unassign from the network interface.</p>
-    pub fn get_ipv4_prefixes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
-        &self.ipv4_prefixes
-    }
     /// Consumes the builder and constructs a [`UnassignPrivateIpAddressesInput`](crate::operation::unassign_private_ip_addresses::UnassignPrivateIpAddressesInput).
     pub fn build(
         self,
@@ -108,9 +108,9 @@ impl UnassignPrivateIpAddressesInputBuilder {
         ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::unassign_private_ip_addresses::UnassignPrivateIpAddressesInput {
+            ipv4_prefixes: self.ipv4_prefixes,
             network_interface_id: self.network_interface_id,
             private_ip_addresses: self.private_ip_addresses,
-            ipv4_prefixes: self.ipv4_prefixes,
         })
     }
 }

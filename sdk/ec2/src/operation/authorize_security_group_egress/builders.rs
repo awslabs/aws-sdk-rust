@@ -113,6 +113,25 @@ impl AuthorizeSecurityGroupEgressFluentBuilder {
         self.config_override = config_override;
         self
     }
+    ///
+    /// Appends an item to `TagSpecifications`.
+    ///
+    /// To override the contents of this collection use [`set_tag_specifications`](Self::set_tag_specifications).
+    ///
+    /// <p>The tags applied to the security group rule.</p>
+    pub fn tag_specifications(mut self, input: crate::types::TagSpecification) -> Self {
+        self.inner = self.inner.tag_specifications(input);
+        self
+    }
+    /// <p>The tags applied to the security group rule.</p>
+    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>) -> Self {
+        self.inner = self.inner.set_tag_specifications(input);
+        self
+    }
+    /// <p>The tags applied to the security group rule.</p>
+    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+        self.inner.get_tag_specifications()
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.inner = self.inner.dry_run(input);
@@ -141,100 +160,6 @@ impl AuthorizeSecurityGroupEgressFluentBuilder {
     pub fn get_group_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_group_id()
     }
-    ///
-    /// Appends an item to `IpPermissions`.
-    ///
-    /// To override the contents of this collection use [`set_ip_permissions`](Self::set_ip_permissions).
-    ///
-    /// <p>The permissions for the security group rules.</p>
-    pub fn ip_permissions(mut self, input: crate::types::IpPermission) -> Self {
-        self.inner = self.inner.ip_permissions(input);
-        self
-    }
-    /// <p>The permissions for the security group rules.</p>
-    pub fn set_ip_permissions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IpPermission>>) -> Self {
-        self.inner = self.inner.set_ip_permissions(input);
-        self
-    }
-    /// <p>The permissions for the security group rules.</p>
-    pub fn get_ip_permissions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IpPermission>> {
-        self.inner.get_ip_permissions()
-    }
-    ///
-    /// Appends an item to `TagSpecifications`.
-    ///
-    /// To override the contents of this collection use [`set_tag_specifications`](Self::set_tag_specifications).
-    ///
-    /// <p>The tags applied to the security group rule.</p>
-    pub fn tag_specifications(mut self, input: crate::types::TagSpecification) -> Self {
-        self.inner = self.inner.tag_specifications(input);
-        self
-    }
-    /// <p>The tags applied to the security group rule.</p>
-    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>) -> Self {
-        self.inner = self.inner.set_tag_specifications(input);
-        self
-    }
-    /// <p>The tags applied to the security group rule.</p>
-    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
-        self.inner.get_tag_specifications()
-    }
-    /// <p>Not supported. Use IP permissions instead.</p>
-    pub fn cidr_ip(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.inner = self.inner.cidr_ip(input.into());
-        self
-    }
-    /// <p>Not supported. Use IP permissions instead.</p>
-    pub fn set_cidr_ip(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.inner = self.inner.set_cidr_ip(input);
-        self
-    }
-    /// <p>Not supported. Use IP permissions instead.</p>
-    pub fn get_cidr_ip(&self) -> &::std::option::Option<::std::string::String> {
-        self.inner.get_cidr_ip()
-    }
-    /// <p>Not supported. Use IP permissions instead.</p>
-    pub fn from_port(mut self, input: i32) -> Self {
-        self.inner = self.inner.from_port(input);
-        self
-    }
-    /// <p>Not supported. Use IP permissions instead.</p>
-    pub fn set_from_port(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.inner = self.inner.set_from_port(input);
-        self
-    }
-    /// <p>Not supported. Use IP permissions instead.</p>
-    pub fn get_from_port(&self) -> &::std::option::Option<i32> {
-        self.inner.get_from_port()
-    }
-    /// <p>Not supported. Use IP permissions instead.</p>
-    pub fn ip_protocol(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.inner = self.inner.ip_protocol(input.into());
-        self
-    }
-    /// <p>Not supported. Use IP permissions instead.</p>
-    pub fn set_ip_protocol(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.inner = self.inner.set_ip_protocol(input);
-        self
-    }
-    /// <p>Not supported. Use IP permissions instead.</p>
-    pub fn get_ip_protocol(&self) -> &::std::option::Option<::std::string::String> {
-        self.inner.get_ip_protocol()
-    }
-    /// <p>Not supported. Use IP permissions instead.</p>
-    pub fn to_port(mut self, input: i32) -> Self {
-        self.inner = self.inner.to_port(input);
-        self
-    }
-    /// <p>Not supported. Use IP permissions instead.</p>
-    pub fn set_to_port(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.inner = self.inner.set_to_port(input);
-        self
-    }
-    /// <p>Not supported. Use IP permissions instead.</p>
-    pub fn get_to_port(&self) -> &::std::option::Option<i32> {
-        self.inner.get_to_port()
-    }
     /// <p>Not supported. Use IP permissions instead.</p>
     pub fn source_security_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_security_group_name(input.into());
@@ -262,5 +187,80 @@ impl AuthorizeSecurityGroupEgressFluentBuilder {
     /// <p>Not supported. Use IP permissions instead.</p>
     pub fn get_source_security_group_owner_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_source_security_group_owner_id()
+    }
+    /// <p>Not supported. Use IP permissions instead.</p>
+    pub fn ip_protocol(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.ip_protocol(input.into());
+        self
+    }
+    /// <p>Not supported. Use IP permissions instead.</p>
+    pub fn set_ip_protocol(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_ip_protocol(input);
+        self
+    }
+    /// <p>Not supported. Use IP permissions instead.</p>
+    pub fn get_ip_protocol(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_ip_protocol()
+    }
+    /// <p>Not supported. Use IP permissions instead.</p>
+    pub fn from_port(mut self, input: i32) -> Self {
+        self.inner = self.inner.from_port(input);
+        self
+    }
+    /// <p>Not supported. Use IP permissions instead.</p>
+    pub fn set_from_port(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.inner = self.inner.set_from_port(input);
+        self
+    }
+    /// <p>Not supported. Use IP permissions instead.</p>
+    pub fn get_from_port(&self) -> &::std::option::Option<i32> {
+        self.inner.get_from_port()
+    }
+    /// <p>Not supported. Use IP permissions instead.</p>
+    pub fn to_port(mut self, input: i32) -> Self {
+        self.inner = self.inner.to_port(input);
+        self
+    }
+    /// <p>Not supported. Use IP permissions instead.</p>
+    pub fn set_to_port(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.inner = self.inner.set_to_port(input);
+        self
+    }
+    /// <p>Not supported. Use IP permissions instead.</p>
+    pub fn get_to_port(&self) -> &::std::option::Option<i32> {
+        self.inner.get_to_port()
+    }
+    /// <p>Not supported. Use IP permissions instead.</p>
+    pub fn cidr_ip(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.cidr_ip(input.into());
+        self
+    }
+    /// <p>Not supported. Use IP permissions instead.</p>
+    pub fn set_cidr_ip(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_cidr_ip(input);
+        self
+    }
+    /// <p>Not supported. Use IP permissions instead.</p>
+    pub fn get_cidr_ip(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cidr_ip()
+    }
+    ///
+    /// Appends an item to `IpPermissions`.
+    ///
+    /// To override the contents of this collection use [`set_ip_permissions`](Self::set_ip_permissions).
+    ///
+    /// <p>The permissions for the security group rules.</p>
+    pub fn ip_permissions(mut self, input: crate::types::IpPermission) -> Self {
+        self.inner = self.inner.ip_permissions(input);
+        self
+    }
+    /// <p>The permissions for the security group rules.</p>
+    pub fn set_ip_permissions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IpPermission>>) -> Self {
+        self.inner = self.inner.set_ip_permissions(input);
+        self
+    }
+    /// <p>The permissions for the security group rules.</p>
+    pub fn get_ip_permissions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IpPermission>> {
+        self.inner.get_ip_permissions()
     }
 }

@@ -3,21 +3,21 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReplaceNetworkAclAssociationInput {
-    /// <p>The ID of the current association between the original network ACL and the subnet.</p>
-    pub association_id: ::std::option::Option<::std::string::String>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
+    /// <p>The ID of the current association between the original network ACL and the subnet.</p>
+    pub association_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the new network ACL to associate with the subnet.</p>
     pub network_acl_id: ::std::option::Option<::std::string::String>,
 }
 impl ReplaceNetworkAclAssociationInput {
-    /// <p>The ID of the current association between the original network ACL and the subnet.</p>
-    pub fn association_id(&self) -> ::std::option::Option<&str> {
-        self.association_id.as_deref()
-    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
         self.dry_run
+    }
+    /// <p>The ID of the current association between the original network ACL and the subnet.</p>
+    pub fn association_id(&self) -> ::std::option::Option<&str> {
+        self.association_id.as_deref()
     }
     /// <p>The ID of the new network ACL to associate with the subnet.</p>
     pub fn network_acl_id(&self) -> ::std::option::Option<&str> {
@@ -35,11 +35,25 @@ impl ReplaceNetworkAclAssociationInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct ReplaceNetworkAclAssociationInputBuilder {
-    pub(crate) association_id: ::std::option::Option<::std::string::String>,
     pub(crate) dry_run: ::std::option::Option<bool>,
+    pub(crate) association_id: ::std::option::Option<::std::string::String>,
     pub(crate) network_acl_id: ::std::option::Option<::std::string::String>,
 }
 impl ReplaceNetworkAclAssociationInputBuilder {
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn dry_run(mut self, input: bool) -> Self {
+        self.dry_run = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.dry_run = input;
+        self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
+    }
     /// <p>The ID of the current association between the original network ACL and the subnet.</p>
     /// This field is required.
     pub fn association_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -54,20 +68,6 @@ impl ReplaceNetworkAclAssociationInputBuilder {
     /// <p>The ID of the current association between the original network ACL and the subnet.</p>
     pub fn get_association_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.association_id
-    }
-    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn dry_run(mut self, input: bool) -> Self {
-        self.dry_run = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
-    }
-    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
-        &self.dry_run
     }
     /// <p>The ID of the new network ACL to associate with the subnet.</p>
     /// This field is required.
@@ -92,8 +92,8 @@ impl ReplaceNetworkAclAssociationInputBuilder {
         ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::replace_network_acl_association::ReplaceNetworkAclAssociationInput {
-            association_id: self.association_id,
             dry_run: self.dry_run,
+            association_id: self.association_id,
             network_acl_id: self.network_acl_id,
         })
     }

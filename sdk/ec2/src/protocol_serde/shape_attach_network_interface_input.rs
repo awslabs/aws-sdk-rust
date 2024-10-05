@@ -6,22 +6,22 @@ pub fn ser_attach_network_interface_input_input_input(
     #[allow(unused_mut)]
     let mut writer = ::aws_smithy_query::QueryWriter::new(&mut out, "AttachNetworkInterface", "2016-11-15");
     #[allow(unused_mut)]
-    let mut scope_1 = writer.prefix("DeviceIndex");
-    if let Some(var_2) = &input.device_index {
+    let mut scope_1 = writer.prefix("NetworkCardIndex");
+    if let Some(var_2) = &input.network_card_index {
         scope_1.number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_3 = writer.prefix("DryRun");
-    if let Some(var_4) = &input.dry_run {
-        scope_3.boolean(*var_4);
+    let mut scope_3 = writer.prefix("EnaSrdSpecification");
+    if let Some(var_4) = &input.ena_srd_specification {
+        crate::protocol_serde::shape_ena_srd_specification::ser_ena_srd_specification(scope_3, var_4)?;
     }
     #[allow(unused_mut)]
-    let mut scope_5 = writer.prefix("InstanceId");
-    if let Some(var_6) = &input.instance_id {
-        scope_5.string(var_6);
+    let mut scope_5 = writer.prefix("DryRun");
+    if let Some(var_6) = &input.dry_run {
+        scope_5.boolean(*var_6);
     }
     #[allow(unused_mut)]
     let mut scope_7 = writer.prefix("NetworkInterfaceId");
@@ -29,17 +29,17 @@ pub fn ser_attach_network_interface_input_input_input(
         scope_7.string(var_8);
     }
     #[allow(unused_mut)]
-    let mut scope_9 = writer.prefix("NetworkCardIndex");
-    if let Some(var_10) = &input.network_card_index {
-        scope_9.number(
-            #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_10).into()),
-        );
+    let mut scope_9 = writer.prefix("InstanceId");
+    if let Some(var_10) = &input.instance_id {
+        scope_9.string(var_10);
     }
     #[allow(unused_mut)]
-    let mut scope_11 = writer.prefix("EnaSrdSpecification");
-    if let Some(var_12) = &input.ena_srd_specification {
-        crate::protocol_serde::shape_ena_srd_specification::ser_ena_srd_specification(scope_11, var_12)?;
+    let mut scope_11 = writer.prefix("DeviceIndex");
+    if let Some(var_12) = &input.device_index {
+        scope_11.number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_12).into()),
+        );
     }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))

@@ -7,75 +7,8 @@ pub fn de_volume_attachment(
     let mut builder = crate::types::VolumeAttachment::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
-            s if s.matches("attachTime") /* AttachTime com.amazonaws.ec2#VolumeAttachment$AttachTime */ =>  {
-                let var_1 =
-                    Some(
-                        ::aws_smithy_types::DateTime::from_str(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , ::aws_smithy_types::date_time::Format::DateTimeWithOffset
-                        )
-                        .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (timestamp: `com.amazonaws.ec2#DateTime`)"))
-                        ?
-                    )
-                ;
-                builder = builder.set_attach_time(var_1);
-            }
-            ,
-            s if s.matches("device") /* Device com.amazonaws.ec2#VolumeAttachment$Device */ =>  {
-                let var_2 =
-                    Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_device(var_2);
-            }
-            ,
-            s if s.matches("instanceId") /* InstanceId com.amazonaws.ec2#VolumeAttachment$InstanceId */ =>  {
-                let var_3 =
-                    Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_instance_id(var_3);
-            }
-            ,
-            s if s.matches("status") /* State com.amazonaws.ec2#VolumeAttachment$State */ =>  {
-                let var_4 =
-                    Some(
-                        Result::<crate::types::VolumeAttachmentState, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            crate::types::VolumeAttachmentState::from(
-                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_state(var_4);
-            }
-            ,
-            s if s.matches("volumeId") /* VolumeId com.amazonaws.ec2#VolumeAttachment$VolumeId */ =>  {
-                let var_5 =
-                    Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_volume_id(var_5);
-            }
-            ,
             s if s.matches("deleteOnTermination") /* DeleteOnTermination com.amazonaws.ec2#VolumeAttachment$DeleteOnTermination */ =>  {
-                let var_6 =
+                let var_1 =
                     Some(
                          {
                             <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -86,11 +19,11 @@ pub fn de_volume_attachment(
                         ?
                     )
                 ;
-                builder = builder.set_delete_on_termination(var_6);
+                builder = builder.set_delete_on_termination(var_1);
             }
             ,
             s if s.matches("associatedResource") /* AssociatedResource com.amazonaws.ec2#VolumeAttachment$AssociatedResource */ =>  {
-                let var_7 =
+                let var_2 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -99,11 +32,11 @@ pub fn de_volume_attachment(
                         ?
                     )
                 ;
-                builder = builder.set_associated_resource(var_7);
+                builder = builder.set_associated_resource(var_2);
             }
             ,
             s if s.matches("instanceOwningService") /* InstanceOwningService com.amazonaws.ec2#VolumeAttachment$InstanceOwningService */ =>  {
-                let var_8 =
+                let var_3 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -112,7 +45,74 @@ pub fn de_volume_attachment(
                         ?
                     )
                 ;
-                builder = builder.set_instance_owning_service(var_8);
+                builder = builder.set_instance_owning_service(var_3);
+            }
+            ,
+            s if s.matches("volumeId") /* VolumeId com.amazonaws.ec2#VolumeAttachment$VolumeId */ =>  {
+                let var_4 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_volume_id(var_4);
+            }
+            ,
+            s if s.matches("instanceId") /* InstanceId com.amazonaws.ec2#VolumeAttachment$InstanceId */ =>  {
+                let var_5 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_instance_id(var_5);
+            }
+            ,
+            s if s.matches("device") /* Device com.amazonaws.ec2#VolumeAttachment$Device */ =>  {
+                let var_6 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_device(var_6);
+            }
+            ,
+            s if s.matches("status") /* State com.amazonaws.ec2#VolumeAttachment$State */ =>  {
+                let var_7 =
+                    Some(
+                        Result::<crate::types::VolumeAttachmentState, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::VolumeAttachmentState::from(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_state(var_7);
+            }
+            ,
+            s if s.matches("attachTime") /* AttachTime com.amazonaws.ec2#VolumeAttachment$AttachTime */ =>  {
+                let var_8 =
+                    Some(
+                        ::aws_smithy_types::DateTime::from_str(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            , ::aws_smithy_types::date_time::Format::DateTimeWithOffset
+                        )
+                        .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (timestamp: `com.amazonaws.ec2#DateTime`)"))
+                        ?
+                    )
+                ;
+                builder = builder.set_attach_time(var_8);
             }
             ,
             _ => {}

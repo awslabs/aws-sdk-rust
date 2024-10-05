@@ -11,73 +11,73 @@ pub fn ser_create_vpc_input_input_input(
         scope_1.string(var_2);
     }
     #[allow(unused_mut)]
-    let mut scope_3 = writer.prefix("AmazonProvidedIpv6CidrBlock");
-    if let Some(var_4) = &input.amazon_provided_ipv6_cidr_block {
-        scope_3.boolean(*var_4);
+    let mut scope_3 = writer.prefix("Ipv6Pool");
+    if let Some(var_4) = &input.ipv6_pool {
+        scope_3.string(var_4);
     }
     #[allow(unused_mut)]
-    let mut scope_5 = writer.prefix("Ipv6Pool");
-    if let Some(var_6) = &input.ipv6_pool {
+    let mut scope_5 = writer.prefix("Ipv6CidrBlock");
+    if let Some(var_6) = &input.ipv6_cidr_block {
         scope_5.string(var_6);
     }
     #[allow(unused_mut)]
-    let mut scope_7 = writer.prefix("Ipv6CidrBlock");
-    if let Some(var_8) = &input.ipv6_cidr_block {
+    let mut scope_7 = writer.prefix("Ipv4IpamPoolId");
+    if let Some(var_8) = &input.ipv4_ipam_pool_id {
         scope_7.string(var_8);
     }
     #[allow(unused_mut)]
-    let mut scope_9 = writer.prefix("Ipv4IpamPoolId");
-    if let Some(var_10) = &input.ipv4_ipam_pool_id {
-        scope_9.string(var_10);
-    }
-    #[allow(unused_mut)]
-    let mut scope_11 = writer.prefix("Ipv4NetmaskLength");
-    if let Some(var_12) = &input.ipv4_netmask_length {
-        scope_11.number(
+    let mut scope_9 = writer.prefix("Ipv4NetmaskLength");
+    if let Some(var_10) = &input.ipv4_netmask_length {
+        scope_9.number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_12).into()),
+            ::aws_smithy_types::Number::NegInt((*var_10).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_13 = writer.prefix("Ipv6IpamPoolId");
-    if let Some(var_14) = &input.ipv6_ipam_pool_id {
-        scope_13.string(var_14);
+    let mut scope_11 = writer.prefix("Ipv6IpamPoolId");
+    if let Some(var_12) = &input.ipv6_ipam_pool_id {
+        scope_11.string(var_12);
     }
     #[allow(unused_mut)]
-    let mut scope_15 = writer.prefix("Ipv6NetmaskLength");
-    if let Some(var_16) = &input.ipv6_netmask_length {
-        scope_15.number(
+    let mut scope_13 = writer.prefix("Ipv6NetmaskLength");
+    if let Some(var_14) = &input.ipv6_netmask_length {
+        scope_13.number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_16).into()),
+            ::aws_smithy_types::Number::NegInt((*var_14).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_17 = writer.prefix("DryRun");
-    if let Some(var_18) = &input.dry_run {
-        scope_17.boolean(*var_18);
+    let mut scope_15 = writer.prefix("Ipv6CidrBlockNetworkBorderGroup");
+    if let Some(var_16) = &input.ipv6_cidr_block_network_border_group {
+        scope_15.string(var_16);
     }
     #[allow(unused_mut)]
-    let mut scope_19 = writer.prefix("InstanceTenancy");
-    if let Some(var_20) = &input.instance_tenancy {
-        scope_19.string(var_20.as_str());
-    }
-    #[allow(unused_mut)]
-    let mut scope_21 = writer.prefix("Ipv6CidrBlockNetworkBorderGroup");
-    if let Some(var_22) = &input.ipv6_cidr_block_network_border_group {
-        scope_21.string(var_22);
-    }
-    #[allow(unused_mut)]
-    let mut scope_23 = writer.prefix("TagSpecification");
-    if let Some(var_24) = &input.tag_specifications {
-        if !var_24.is_empty() {
-            let mut list_26 = scope_23.start_list(true, Some("item"));
-            for item_25 in var_24 {
+    let mut scope_17 = writer.prefix("TagSpecification");
+    if let Some(var_18) = &input.tag_specifications {
+        if !var_18.is_empty() {
+            let mut list_20 = scope_17.start_list(true, Some("item"));
+            for item_19 in var_18 {
                 #[allow(unused_mut)]
-                let mut entry_27 = list_26.entry();
-                crate::protocol_serde::shape_tag_specification::ser_tag_specification(entry_27, item_25)?;
+                let mut entry_21 = list_20.entry();
+                crate::protocol_serde::shape_tag_specification::ser_tag_specification(entry_21, item_19)?;
             }
-            list_26.finish();
+            list_20.finish();
         }
+    }
+    #[allow(unused_mut)]
+    let mut scope_22 = writer.prefix("DryRun");
+    if let Some(var_23) = &input.dry_run {
+        scope_22.boolean(*var_23);
+    }
+    #[allow(unused_mut)]
+    let mut scope_24 = writer.prefix("InstanceTenancy");
+    if let Some(var_25) = &input.instance_tenancy {
+        scope_24.string(var_25.as_str());
+    }
+    #[allow(unused_mut)]
+    let mut scope_26 = writer.prefix("AmazonProvidedIpv6CidrBlock");
+    if let Some(var_27) = &input.amazon_provided_ipv6_cidr_block {
+        scope_26.boolean(*var_27);
     }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))

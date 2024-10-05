@@ -5,21 +5,17 @@
 pub struct DeleteNetworkAclEntryInput {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
-    /// <p>Indicates whether the rule is an egress rule.</p>
-    pub egress: ::std::option::Option<bool>,
     /// <p>The ID of the network ACL.</p>
     pub network_acl_id: ::std::option::Option<::std::string::String>,
     /// <p>The rule number of the entry to delete.</p>
     pub rule_number: ::std::option::Option<i32>,
+    /// <p>Indicates whether the rule is an egress rule.</p>
+    pub egress: ::std::option::Option<bool>,
 }
 impl DeleteNetworkAclEntryInput {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
         self.dry_run
-    }
-    /// <p>Indicates whether the rule is an egress rule.</p>
-    pub fn egress(&self) -> ::std::option::Option<bool> {
-        self.egress
     }
     /// <p>The ID of the network ACL.</p>
     pub fn network_acl_id(&self) -> ::std::option::Option<&str> {
@@ -28,6 +24,10 @@ impl DeleteNetworkAclEntryInput {
     /// <p>The rule number of the entry to delete.</p>
     pub fn rule_number(&self) -> ::std::option::Option<i32> {
         self.rule_number
+    }
+    /// <p>Indicates whether the rule is an egress rule.</p>
+    pub fn egress(&self) -> ::std::option::Option<bool> {
+        self.egress
     }
 }
 impl DeleteNetworkAclEntryInput {
@@ -42,9 +42,9 @@ impl DeleteNetworkAclEntryInput {
 #[non_exhaustive]
 pub struct DeleteNetworkAclEntryInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
-    pub(crate) egress: ::std::option::Option<bool>,
     pub(crate) network_acl_id: ::std::option::Option<::std::string::String>,
     pub(crate) rule_number: ::std::option::Option<i32>,
+    pub(crate) egress: ::std::option::Option<bool>,
 }
 impl DeleteNetworkAclEntryInputBuilder {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -60,21 +60,6 @@ impl DeleteNetworkAclEntryInputBuilder {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
         &self.dry_run
-    }
-    /// <p>Indicates whether the rule is an egress rule.</p>
-    /// This field is required.
-    pub fn egress(mut self, input: bool) -> Self {
-        self.egress = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>Indicates whether the rule is an egress rule.</p>
-    pub fn set_egress(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.egress = input;
-        self
-    }
-    /// <p>Indicates whether the rule is an egress rule.</p>
-    pub fn get_egress(&self) -> &::std::option::Option<bool> {
-        &self.egress
     }
     /// <p>The ID of the network ACL.</p>
     /// This field is required.
@@ -106,6 +91,21 @@ impl DeleteNetworkAclEntryInputBuilder {
     pub fn get_rule_number(&self) -> &::std::option::Option<i32> {
         &self.rule_number
     }
+    /// <p>Indicates whether the rule is an egress rule.</p>
+    /// This field is required.
+    pub fn egress(mut self, input: bool) -> Self {
+        self.egress = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether the rule is an egress rule.</p>
+    pub fn set_egress(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.egress = input;
+        self
+    }
+    /// <p>Indicates whether the rule is an egress rule.</p>
+    pub fn get_egress(&self) -> &::std::option::Option<bool> {
+        &self.egress
+    }
     /// Consumes the builder and constructs a [`DeleteNetworkAclEntryInput`](crate::operation::delete_network_acl_entry::DeleteNetworkAclEntryInput).
     pub fn build(
         self,
@@ -113,9 +113,9 @@ impl DeleteNetworkAclEntryInputBuilder {
     {
         ::std::result::Result::Ok(crate::operation::delete_network_acl_entry::DeleteNetworkAclEntryInput {
             dry_run: self.dry_run,
-            egress: self.egress,
             network_acl_id: self.network_acl_id,
             rule_number: self.rule_number,
+            egress: self.egress,
         })
     }
 }

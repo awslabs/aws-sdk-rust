@@ -19,23 +19,23 @@ pub fn ser_describe_images_input_input_input(
         }
     }
     #[allow(unused_mut)]
-    let mut scope_6 = writer.prefix("Filter");
-    if let Some(var_7) = &input.filters {
+    let mut scope_6 = writer.prefix("ImageId");
+    if let Some(var_7) = &input.image_ids {
         if !var_7.is_empty() {
-            let mut list_9 = scope_6.start_list(true, Some("Filter"));
+            let mut list_9 = scope_6.start_list(true, Some("ImageId"));
             for item_8 in var_7 {
                 #[allow(unused_mut)]
                 let mut entry_10 = list_9.entry();
-                crate::protocol_serde::shape_filter::ser_filter(entry_10, item_8)?;
+                entry_10.string(item_8);
             }
             list_9.finish();
         }
     }
     #[allow(unused_mut)]
-    let mut scope_11 = writer.prefix("ImageId");
-    if let Some(var_12) = &input.image_ids {
+    let mut scope_11 = writer.prefix("Owner");
+    if let Some(var_12) = &input.owners {
         if !var_12.is_empty() {
-            let mut list_14 = scope_11.start_list(true, Some("ImageId"));
+            let mut list_14 = scope_11.start_list(true, Some("Owner"));
             for item_13 in var_12 {
                 #[allow(unused_mut)]
                 let mut entry_15 = list_14.entry();
@@ -45,45 +45,45 @@ pub fn ser_describe_images_input_input_input(
         }
     }
     #[allow(unused_mut)]
-    let mut scope_16 = writer.prefix("Owner");
-    if let Some(var_17) = &input.owners {
-        if !var_17.is_empty() {
-            let mut list_19 = scope_16.start_list(true, Some("Owner"));
-            for item_18 in var_17 {
-                #[allow(unused_mut)]
-                let mut entry_20 = list_19.entry();
-                entry_20.string(item_18);
-            }
-            list_19.finish();
-        }
+    let mut scope_16 = writer.prefix("IncludeDeprecated");
+    if let Some(var_17) = &input.include_deprecated {
+        scope_16.boolean(*var_17);
     }
     #[allow(unused_mut)]
-    let mut scope_21 = writer.prefix("IncludeDeprecated");
-    if let Some(var_22) = &input.include_deprecated {
-        scope_21.boolean(*var_22);
+    let mut scope_18 = writer.prefix("IncludeDisabled");
+    if let Some(var_19) = &input.include_disabled {
+        scope_18.boolean(*var_19);
     }
     #[allow(unused_mut)]
-    let mut scope_23 = writer.prefix("IncludeDisabled");
-    if let Some(var_24) = &input.include_disabled {
-        scope_23.boolean(*var_24);
-    }
-    #[allow(unused_mut)]
-    let mut scope_25 = writer.prefix("DryRun");
-    if let Some(var_26) = &input.dry_run {
-        scope_25.boolean(*var_26);
-    }
-    #[allow(unused_mut)]
-    let mut scope_27 = writer.prefix("MaxResults");
-    if let Some(var_28) = &input.max_results {
-        scope_27.number(
+    let mut scope_20 = writer.prefix("MaxResults");
+    if let Some(var_21) = &input.max_results {
+        scope_20.number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_28).into()),
+            ::aws_smithy_types::Number::NegInt((*var_21).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_29 = writer.prefix("NextToken");
-    if let Some(var_30) = &input.next_token {
-        scope_29.string(var_30);
+    let mut scope_22 = writer.prefix("NextToken");
+    if let Some(var_23) = &input.next_token {
+        scope_22.string(var_23);
+    }
+    #[allow(unused_mut)]
+    let mut scope_24 = writer.prefix("DryRun");
+    if let Some(var_25) = &input.dry_run {
+        scope_24.boolean(*var_25);
+    }
+    #[allow(unused_mut)]
+    let mut scope_26 = writer.prefix("Filter");
+    if let Some(var_27) = &input.filters {
+        if !var_27.is_empty() {
+            let mut list_29 = scope_26.start_list(true, Some("Filter"));
+            for item_28 in var_27 {
+                #[allow(unused_mut)]
+                let mut entry_30 = list_29.entry();
+                crate::protocol_serde::shape_filter::ser_filter(entry_30, item_28)?;
+            }
+            list_29.finish();
+        }
     }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))

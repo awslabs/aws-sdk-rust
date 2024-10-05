@@ -114,6 +114,20 @@ impl ImportInstanceFluentBuilder {
         self.config_override = config_override;
         self
     }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn dry_run(mut self, input: bool) -> Self {
+        self.inner = self.inner.dry_run(input);
+        self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_dry_run(input);
+        self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
+    }
     /// <p>A description for the instance being imported.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -127,6 +141,20 @@ impl ImportInstanceFluentBuilder {
     /// <p>A description for the instance being imported.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
+    }
+    /// <p>The launch specification.</p>
+    pub fn launch_specification(mut self, input: crate::types::ImportInstanceLaunchSpecification) -> Self {
+        self.inner = self.inner.launch_specification(input);
+        self
+    }
+    /// <p>The launch specification.</p>
+    pub fn set_launch_specification(mut self, input: ::std::option::Option<crate::types::ImportInstanceLaunchSpecification>) -> Self {
+        self.inner = self.inner.set_launch_specification(input);
+        self
+    }
+    /// <p>The launch specification.</p>
+    pub fn get_launch_specification(&self) -> &::std::option::Option<crate::types::ImportInstanceLaunchSpecification> {
+        self.inner.get_launch_specification()
     }
     ///
     /// Appends an item to `DiskImages`.
@@ -146,34 +174,6 @@ impl ImportInstanceFluentBuilder {
     /// <p>The disk image.</p>
     pub fn get_disk_images(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DiskImage>> {
         self.inner.get_disk_images()
-    }
-    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn dry_run(mut self, input: bool) -> Self {
-        self.inner = self.inner.dry_run(input);
-        self
-    }
-    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.inner = self.inner.set_dry_run(input);
-        self
-    }
-    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
-        self.inner.get_dry_run()
-    }
-    /// <p>The launch specification.</p>
-    pub fn launch_specification(mut self, input: crate::types::ImportInstanceLaunchSpecification) -> Self {
-        self.inner = self.inner.launch_specification(input);
-        self
-    }
-    /// <p>The launch specification.</p>
-    pub fn set_launch_specification(mut self, input: ::std::option::Option<crate::types::ImportInstanceLaunchSpecification>) -> Self {
-        self.inner = self.inner.set_launch_specification(input);
-        self
-    }
-    /// <p>The launch specification.</p>
-    pub fn get_launch_specification(&self) -> &::std::option::Option<crate::types::ImportInstanceLaunchSpecification> {
-        self.inner.get_launch_specification()
     }
     /// <p>The instance operating system.</p>
     pub fn platform(mut self, input: crate::types::PlatformValues) -> Self {

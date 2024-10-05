@@ -3,49 +3,31 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModifyInstancePlacementInput {
-    /// <p>The affinity setting for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/how-dedicated-hosts-work.html#dedicated-hosts-affinity">Host affinity</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    pub affinity: ::std::option::Option<crate::types::Affinity>,
     /// <p>The name of the placement group in which to place the instance. For spread placement groups, the instance must have a tenancy of <code>default</code>. For cluster and partition placement groups, the instance must have a tenancy of <code>default</code> or <code>dedicated</code>.</p>
     /// <p>To remove an instance from a placement group, specify an empty string ("").</p>
     pub group_name: ::std::option::Option<::std::string::String>,
-    /// <p>The ID of the Dedicated Host with which to associate the instance.</p>
-    pub host_id: ::std::option::Option<::std::string::String>,
-    /// <p>The ID of the instance that you are modifying.</p>
-    pub instance_id: ::std::option::Option<::std::string::String>,
-    /// <p>The tenancy for the instance.</p><note>
-    /// <p>For T3 instances, you must launch the instance on a Dedicated Host to use a tenancy of <code>host</code>. You can't change the tenancy from <code>host</code> to <code>dedicated</code> or <code>default</code>. Attempting to make one of these unsupported tenancy changes results in an <code>InvalidRequest</code> error code.</p>
-    /// </note>
-    pub tenancy: ::std::option::Option<crate::types::HostTenancy>,
     /// <p>The number of the partition in which to place the instance. Valid only if the placement group strategy is set to <code>partition</code>.</p>
     pub partition_number: ::std::option::Option<i32>,
     /// <p>The ARN of the host resource group in which to place the instance. The instance must have a tenancy of <code>host</code> to specify this parameter.</p>
     pub host_resource_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Group Id of a placement group. You must specify the Placement Group <b>Group Id</b> to launch an instance in a shared placement group.</p>
     pub group_id: ::std::option::Option<::std::string::String>,
+    /// <p>The ID of the instance that you are modifying.</p>
+    pub instance_id: ::std::option::Option<::std::string::String>,
+    /// <p>The tenancy for the instance.</p><note>
+    /// <p>For T3 instances, you must launch the instance on a Dedicated Host to use a tenancy of <code>host</code>. You can't change the tenancy from <code>host</code> to <code>dedicated</code> or <code>default</code>. Attempting to make one of these unsupported tenancy changes results in an <code>InvalidRequest</code> error code.</p>
+    /// </note>
+    pub tenancy: ::std::option::Option<crate::types::HostTenancy>,
+    /// <p>The affinity setting for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/how-dedicated-hosts-work.html#dedicated-hosts-affinity">Host affinity</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    pub affinity: ::std::option::Option<crate::types::Affinity>,
+    /// <p>The ID of the Dedicated Host with which to associate the instance.</p>
+    pub host_id: ::std::option::Option<::std::string::String>,
 }
 impl ModifyInstancePlacementInput {
-    /// <p>The affinity setting for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/how-dedicated-hosts-work.html#dedicated-hosts-affinity">Host affinity</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    pub fn affinity(&self) -> ::std::option::Option<&crate::types::Affinity> {
-        self.affinity.as_ref()
-    }
     /// <p>The name of the placement group in which to place the instance. For spread placement groups, the instance must have a tenancy of <code>default</code>. For cluster and partition placement groups, the instance must have a tenancy of <code>default</code> or <code>dedicated</code>.</p>
     /// <p>To remove an instance from a placement group, specify an empty string ("").</p>
     pub fn group_name(&self) -> ::std::option::Option<&str> {
         self.group_name.as_deref()
-    }
-    /// <p>The ID of the Dedicated Host with which to associate the instance.</p>
-    pub fn host_id(&self) -> ::std::option::Option<&str> {
-        self.host_id.as_deref()
-    }
-    /// <p>The ID of the instance that you are modifying.</p>
-    pub fn instance_id(&self) -> ::std::option::Option<&str> {
-        self.instance_id.as_deref()
-    }
-    /// <p>The tenancy for the instance.</p><note>
-    /// <p>For T3 instances, you must launch the instance on a Dedicated Host to use a tenancy of <code>host</code>. You can't change the tenancy from <code>host</code> to <code>dedicated</code> or <code>default</code>. Attempting to make one of these unsupported tenancy changes results in an <code>InvalidRequest</code> error code.</p>
-    /// </note>
-    pub fn tenancy(&self) -> ::std::option::Option<&crate::types::HostTenancy> {
-        self.tenancy.as_ref()
     }
     /// <p>The number of the partition in which to place the instance. Valid only if the placement group strategy is set to <code>partition</code>.</p>
     pub fn partition_number(&self) -> ::std::option::Option<i32> {
@@ -59,6 +41,24 @@ impl ModifyInstancePlacementInput {
     pub fn group_id(&self) -> ::std::option::Option<&str> {
         self.group_id.as_deref()
     }
+    /// <p>The ID of the instance that you are modifying.</p>
+    pub fn instance_id(&self) -> ::std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>The tenancy for the instance.</p><note>
+    /// <p>For T3 instances, you must launch the instance on a Dedicated Host to use a tenancy of <code>host</code>. You can't change the tenancy from <code>host</code> to <code>dedicated</code> or <code>default</code>. Attempting to make one of these unsupported tenancy changes results in an <code>InvalidRequest</code> error code.</p>
+    /// </note>
+    pub fn tenancy(&self) -> ::std::option::Option<&crate::types::HostTenancy> {
+        self.tenancy.as_ref()
+    }
+    /// <p>The affinity setting for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/how-dedicated-hosts-work.html#dedicated-hosts-affinity">Host affinity</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    pub fn affinity(&self) -> ::std::option::Option<&crate::types::Affinity> {
+        self.affinity.as_ref()
+    }
+    /// <p>The ID of the Dedicated Host with which to associate the instance.</p>
+    pub fn host_id(&self) -> ::std::option::Option<&str> {
+        self.host_id.as_deref()
+    }
 }
 impl ModifyInstancePlacementInput {
     /// Creates a new builder-style object to manufacture [`ModifyInstancePlacementInput`](crate::operation::modify_instance_placement::ModifyInstancePlacementInput).
@@ -71,30 +71,16 @@ impl ModifyInstancePlacementInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct ModifyInstancePlacementInputBuilder {
-    pub(crate) affinity: ::std::option::Option<crate::types::Affinity>,
     pub(crate) group_name: ::std::option::Option<::std::string::String>,
-    pub(crate) host_id: ::std::option::Option<::std::string::String>,
-    pub(crate) instance_id: ::std::option::Option<::std::string::String>,
-    pub(crate) tenancy: ::std::option::Option<crate::types::HostTenancy>,
     pub(crate) partition_number: ::std::option::Option<i32>,
     pub(crate) host_resource_group_arn: ::std::option::Option<::std::string::String>,
     pub(crate) group_id: ::std::option::Option<::std::string::String>,
+    pub(crate) instance_id: ::std::option::Option<::std::string::String>,
+    pub(crate) tenancy: ::std::option::Option<crate::types::HostTenancy>,
+    pub(crate) affinity: ::std::option::Option<crate::types::Affinity>,
+    pub(crate) host_id: ::std::option::Option<::std::string::String>,
 }
 impl ModifyInstancePlacementInputBuilder {
-    /// <p>The affinity setting for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/how-dedicated-hosts-work.html#dedicated-hosts-affinity">Host affinity</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    pub fn affinity(mut self, input: crate::types::Affinity) -> Self {
-        self.affinity = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>The affinity setting for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/how-dedicated-hosts-work.html#dedicated-hosts-affinity">Host affinity</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    pub fn set_affinity(mut self, input: ::std::option::Option<crate::types::Affinity>) -> Self {
-        self.affinity = input;
-        self
-    }
-    /// <p>The affinity setting for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/how-dedicated-hosts-work.html#dedicated-hosts-affinity">Host affinity</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    pub fn get_affinity(&self) -> &::std::option::Option<crate::types::Affinity> {
-        &self.affinity
-    }
     /// <p>The name of the placement group in which to place the instance. For spread placement groups, the instance must have a tenancy of <code>default</code>. For cluster and partition placement groups, the instance must have a tenancy of <code>default</code> or <code>dedicated</code>.</p>
     /// <p>To remove an instance from a placement group, specify an empty string ("").</p>
     pub fn group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -111,55 +97,6 @@ impl ModifyInstancePlacementInputBuilder {
     /// <p>To remove an instance from a placement group, specify an empty string ("").</p>
     pub fn get_group_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.group_name
-    }
-    /// <p>The ID of the Dedicated Host with which to associate the instance.</p>
-    pub fn host_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.host_id = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>The ID of the Dedicated Host with which to associate the instance.</p>
-    pub fn set_host_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.host_id = input;
-        self
-    }
-    /// <p>The ID of the Dedicated Host with which to associate the instance.</p>
-    pub fn get_host_id(&self) -> &::std::option::Option<::std::string::String> {
-        &self.host_id
-    }
-    /// <p>The ID of the instance that you are modifying.</p>
-    /// This field is required.
-    pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.instance_id = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>The ID of the instance that you are modifying.</p>
-    pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_id = input;
-        self
-    }
-    /// <p>The ID of the instance that you are modifying.</p>
-    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
-        &self.instance_id
-    }
-    /// <p>The tenancy for the instance.</p><note>
-    /// <p>For T3 instances, you must launch the instance on a Dedicated Host to use a tenancy of <code>host</code>. You can't change the tenancy from <code>host</code> to <code>dedicated</code> or <code>default</code>. Attempting to make one of these unsupported tenancy changes results in an <code>InvalidRequest</code> error code.</p>
-    /// </note>
-    pub fn tenancy(mut self, input: crate::types::HostTenancy) -> Self {
-        self.tenancy = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>The tenancy for the instance.</p><note>
-    /// <p>For T3 instances, you must launch the instance on a Dedicated Host to use a tenancy of <code>host</code>. You can't change the tenancy from <code>host</code> to <code>dedicated</code> or <code>default</code>. Attempting to make one of these unsupported tenancy changes results in an <code>InvalidRequest</code> error code.</p>
-    /// </note>
-    pub fn set_tenancy(mut self, input: ::std::option::Option<crate::types::HostTenancy>) -> Self {
-        self.tenancy = input;
-        self
-    }
-    /// <p>The tenancy for the instance.</p><note>
-    /// <p>For T3 instances, you must launch the instance on a Dedicated Host to use a tenancy of <code>host</code>. You can't change the tenancy from <code>host</code> to <code>dedicated</code> or <code>default</code>. Attempting to make one of these unsupported tenancy changes results in an <code>InvalidRequest</code> error code.</p>
-    /// </note>
-    pub fn get_tenancy(&self) -> &::std::option::Option<crate::types::HostTenancy> {
-        &self.tenancy
     }
     /// <p>The number of the partition in which to place the instance. Valid only if the placement group strategy is set to <code>partition</code>.</p>
     pub fn partition_number(mut self, input: i32) -> Self {
@@ -203,6 +140,69 @@ impl ModifyInstancePlacementInputBuilder {
     pub fn get_group_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.group_id
     }
+    /// <p>The ID of the instance that you are modifying.</p>
+    /// This field is required.
+    pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.instance_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the instance that you are modifying.</p>
+    pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.instance_id = input;
+        self
+    }
+    /// <p>The ID of the instance that you are modifying.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
+    }
+    /// <p>The tenancy for the instance.</p><note>
+    /// <p>For T3 instances, you must launch the instance on a Dedicated Host to use a tenancy of <code>host</code>. You can't change the tenancy from <code>host</code> to <code>dedicated</code> or <code>default</code>. Attempting to make one of these unsupported tenancy changes results in an <code>InvalidRequest</code> error code.</p>
+    /// </note>
+    pub fn tenancy(mut self, input: crate::types::HostTenancy) -> Self {
+        self.tenancy = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The tenancy for the instance.</p><note>
+    /// <p>For T3 instances, you must launch the instance on a Dedicated Host to use a tenancy of <code>host</code>. You can't change the tenancy from <code>host</code> to <code>dedicated</code> or <code>default</code>. Attempting to make one of these unsupported tenancy changes results in an <code>InvalidRequest</code> error code.</p>
+    /// </note>
+    pub fn set_tenancy(mut self, input: ::std::option::Option<crate::types::HostTenancy>) -> Self {
+        self.tenancy = input;
+        self
+    }
+    /// <p>The tenancy for the instance.</p><note>
+    /// <p>For T3 instances, you must launch the instance on a Dedicated Host to use a tenancy of <code>host</code>. You can't change the tenancy from <code>host</code> to <code>dedicated</code> or <code>default</code>. Attempting to make one of these unsupported tenancy changes results in an <code>InvalidRequest</code> error code.</p>
+    /// </note>
+    pub fn get_tenancy(&self) -> &::std::option::Option<crate::types::HostTenancy> {
+        &self.tenancy
+    }
+    /// <p>The affinity setting for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/how-dedicated-hosts-work.html#dedicated-hosts-affinity">Host affinity</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    pub fn affinity(mut self, input: crate::types::Affinity) -> Self {
+        self.affinity = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The affinity setting for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/how-dedicated-hosts-work.html#dedicated-hosts-affinity">Host affinity</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    pub fn set_affinity(mut self, input: ::std::option::Option<crate::types::Affinity>) -> Self {
+        self.affinity = input;
+        self
+    }
+    /// <p>The affinity setting for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/how-dedicated-hosts-work.html#dedicated-hosts-affinity">Host affinity</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    pub fn get_affinity(&self) -> &::std::option::Option<crate::types::Affinity> {
+        &self.affinity
+    }
+    /// <p>The ID of the Dedicated Host with which to associate the instance.</p>
+    pub fn host_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.host_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the Dedicated Host with which to associate the instance.</p>
+    pub fn set_host_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.host_id = input;
+        self
+    }
+    /// <p>The ID of the Dedicated Host with which to associate the instance.</p>
+    pub fn get_host_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.host_id
+    }
     /// Consumes the builder and constructs a [`ModifyInstancePlacementInput`](crate::operation::modify_instance_placement::ModifyInstancePlacementInput).
     pub fn build(
         self,
@@ -211,14 +211,14 @@ impl ModifyInstancePlacementInputBuilder {
         ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::modify_instance_placement::ModifyInstancePlacementInput {
-            affinity: self.affinity,
             group_name: self.group_name,
-            host_id: self.host_id,
-            instance_id: self.instance_id,
-            tenancy: self.tenancy,
             partition_number: self.partition_number,
             host_resource_group_arn: self.host_resource_group_arn,
             group_id: self.group_id,
+            instance_id: self.instance_id,
+            tenancy: self.tenancy,
+            affinity: self.affinity,
+            host_id: self.host_id,
         })
     }
 }

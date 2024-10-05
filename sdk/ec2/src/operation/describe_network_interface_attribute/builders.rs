@@ -108,20 +108,6 @@ impl DescribeNetworkInterfaceAttributeFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The attribute of the network interface. This parameter is required.</p>
-    pub fn attribute(mut self, input: crate::types::NetworkInterfaceAttribute) -> Self {
-        self.inner = self.inner.attribute(input);
-        self
-    }
-    /// <p>The attribute of the network interface. This parameter is required.</p>
-    pub fn set_attribute(mut self, input: ::std::option::Option<crate::types::NetworkInterfaceAttribute>) -> Self {
-        self.inner = self.inner.set_attribute(input);
-        self
-    }
-    /// <p>The attribute of the network interface. This parameter is required.</p>
-    pub fn get_attribute(&self) -> &::std::option::Option<crate::types::NetworkInterfaceAttribute> {
-        self.inner.get_attribute()
-    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.inner = self.inner.dry_run(input);
@@ -149,5 +135,19 @@ impl DescribeNetworkInterfaceAttributeFluentBuilder {
     /// <p>The ID of the network interface.</p>
     pub fn get_network_interface_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_network_interface_id()
+    }
+    /// <p>The attribute of the network interface. This parameter is required.</p>
+    pub fn attribute(mut self, input: crate::types::NetworkInterfaceAttribute) -> Self {
+        self.inner = self.inner.attribute(input);
+        self
+    }
+    /// <p>The attribute of the network interface. This parameter is required.</p>
+    pub fn set_attribute(mut self, input: ::std::option::Option<crate::types::NetworkInterfaceAttribute>) -> Self {
+        self.inner = self.inner.set_attribute(input);
+        self
+    }
+    /// <p>The attribute of the network interface. This parameter is required.</p>
+    pub fn get_attribute(&self) -> &::std::option::Option<crate::types::NetworkInterfaceAttribute> {
+        self.inner.get_attribute()
     }
 }

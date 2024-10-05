@@ -3,8 +3,6 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AllocateAddressOutput {
-    /// <p>The Elastic IP address.</p>
-    pub public_ip: ::std::option::Option<::std::string::String>,
     /// <p>The ID that represents the allocation of the Elastic IP address.</p>
     pub allocation_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of an address pool.</p>
@@ -19,13 +17,11 @@ pub struct AllocateAddressOutput {
     pub customer_owned_ipv4_pool: ::std::option::Option<::std::string::String>,
     /// <p>The carrier IP address. This option is only available for network interfaces that reside in a subnet in a Wavelength Zone.</p>
     pub carrier_ip: ::std::option::Option<::std::string::String>,
+    /// <p>The Elastic IP address.</p>
+    pub public_ip: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl AllocateAddressOutput {
-    /// <p>The Elastic IP address.</p>
-    pub fn public_ip(&self) -> ::std::option::Option<&str> {
-        self.public_ip.as_deref()
-    }
     /// <p>The ID that represents the allocation of the Elastic IP address.</p>
     pub fn allocation_id(&self) -> ::std::option::Option<&str> {
         self.allocation_id.as_deref()
@@ -54,6 +50,10 @@ impl AllocateAddressOutput {
     pub fn carrier_ip(&self) -> ::std::option::Option<&str> {
         self.carrier_ip.as_deref()
     }
+    /// <p>The Elastic IP address.</p>
+    pub fn public_ip(&self) -> ::std::option::Option<&str> {
+        self.public_ip.as_deref()
+    }
 }
 impl ::aws_types::request_id::RequestId for AllocateAddressOutput {
     fn request_id(&self) -> Option<&str> {
@@ -71,7 +71,6 @@ impl AllocateAddressOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct AllocateAddressOutputBuilder {
-    pub(crate) public_ip: ::std::option::Option<::std::string::String>,
     pub(crate) allocation_id: ::std::option::Option<::std::string::String>,
     pub(crate) public_ipv4_pool: ::std::option::Option<::std::string::String>,
     pub(crate) network_border_group: ::std::option::Option<::std::string::String>,
@@ -79,23 +78,10 @@ pub struct AllocateAddressOutputBuilder {
     pub(crate) customer_owned_ip: ::std::option::Option<::std::string::String>,
     pub(crate) customer_owned_ipv4_pool: ::std::option::Option<::std::string::String>,
     pub(crate) carrier_ip: ::std::option::Option<::std::string::String>,
+    pub(crate) public_ip: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl AllocateAddressOutputBuilder {
-    /// <p>The Elastic IP address.</p>
-    pub fn public_ip(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.public_ip = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>The Elastic IP address.</p>
-    pub fn set_public_ip(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.public_ip = input;
-        self
-    }
-    /// <p>The Elastic IP address.</p>
-    pub fn get_public_ip(&self) -> &::std::option::Option<::std::string::String> {
-        &self.public_ip
-    }
     /// <p>The ID that represents the allocation of the Elastic IP address.</p>
     pub fn allocation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.allocation_id = ::std::option::Option::Some(input.into());
@@ -194,6 +180,20 @@ impl AllocateAddressOutputBuilder {
     pub fn get_carrier_ip(&self) -> &::std::option::Option<::std::string::String> {
         &self.carrier_ip
     }
+    /// <p>The Elastic IP address.</p>
+    pub fn public_ip(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.public_ip = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Elastic IP address.</p>
+    pub fn set_public_ip(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.public_ip = input;
+        self
+    }
+    /// <p>The Elastic IP address.</p>
+    pub fn get_public_ip(&self) -> &::std::option::Option<::std::string::String> {
+        &self.public_ip
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -206,7 +206,6 @@ impl AllocateAddressOutputBuilder {
     /// Consumes the builder and constructs a [`AllocateAddressOutput`](crate::operation::allocate_address::AllocateAddressOutput).
     pub fn build(self) -> crate::operation::allocate_address::AllocateAddressOutput {
         crate::operation::allocate_address::AllocateAddressOutput {
-            public_ip: self.public_ip,
             allocation_id: self.allocation_id,
             public_ipv4_pool: self.public_ipv4_pool,
             network_border_group: self.network_border_group,
@@ -214,6 +213,7 @@ impl AllocateAddressOutputBuilder {
             customer_owned_ip: self.customer_owned_ip,
             customer_owned_ipv4_pool: self.customer_owned_ipv4_pool,
             carrier_ip: self.carrier_ip,
+            public_ip: self.public_ip,
             _request_id: self._request_id,
         }
     }

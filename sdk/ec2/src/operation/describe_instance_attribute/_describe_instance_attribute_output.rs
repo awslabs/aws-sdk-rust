@@ -4,8 +4,6 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeInstanceAttributeOutput {
-    /// <p>The security groups associated with the instance.</p>
-    pub groups: ::std::option::Option<::std::vec::Vec<crate::types::GroupIdentifier>>,
     /// <p>The block device mapping of the instance.</p>
     pub block_device_mappings: ::std::option::Option<::std::vec::Vec<crate::types::InstanceBlockDeviceMapping>>,
     /// <p>If the value is <code>true</code>, you can't terminate the instance through the Amazon EC2 console, CLI, or API; otherwise, you can.</p>
@@ -38,15 +36,11 @@ pub struct DescribeInstanceAttributeOutput {
     pub user_data: ::std::option::Option<crate::types::AttributeValue>,
     /// <p>To enable the instance for Amazon Web Services Stop Protection, set this parameter to <code>true</code>; otherwise, set it to <code>false</code>.</p>
     pub disable_api_stop: ::std::option::Option<crate::types::AttributeBooleanValue>,
+    /// <p>The security groups associated with the instance.</p>
+    pub groups: ::std::option::Option<::std::vec::Vec<crate::types::GroupIdentifier>>,
     _request_id: Option<String>,
 }
 impl DescribeInstanceAttributeOutput {
-    /// <p>The security groups associated with the instance.</p>
-    ///
-    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.groups.is_none()`.
-    pub fn groups(&self) -> &[crate::types::GroupIdentifier] {
-        self.groups.as_deref().unwrap_or_default()
-    }
     /// <p>The block device mapping of the instance.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.block_device_mappings.is_none()`.
@@ -115,6 +109,12 @@ impl DescribeInstanceAttributeOutput {
     pub fn disable_api_stop(&self) -> ::std::option::Option<&crate::types::AttributeBooleanValue> {
         self.disable_api_stop.as_ref()
     }
+    /// <p>The security groups associated with the instance.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.groups.is_none()`.
+    pub fn groups(&self) -> &[crate::types::GroupIdentifier] {
+        self.groups.as_deref().unwrap_or_default()
+    }
 }
 impl ::aws_types::request_id::RequestId for DescribeInstanceAttributeOutput {
     fn request_id(&self) -> Option<&str> {
@@ -132,7 +132,6 @@ impl DescribeInstanceAttributeOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct DescribeInstanceAttributeOutputBuilder {
-    pub(crate) groups: ::std::option::Option<::std::vec::Vec<crate::types::GroupIdentifier>>,
     pub(crate) block_device_mappings: ::std::option::Option<::std::vec::Vec<crate::types::InstanceBlockDeviceMapping>>,
     pub(crate) disable_api_termination: ::std::option::Option<crate::types::AttributeBooleanValue>,
     pub(crate) ena_support: ::std::option::Option<crate::types::AttributeBooleanValue>,
@@ -149,29 +148,10 @@ pub struct DescribeInstanceAttributeOutputBuilder {
     pub(crate) sriov_net_support: ::std::option::Option<crate::types::AttributeValue>,
     pub(crate) user_data: ::std::option::Option<crate::types::AttributeValue>,
     pub(crate) disable_api_stop: ::std::option::Option<crate::types::AttributeBooleanValue>,
+    pub(crate) groups: ::std::option::Option<::std::vec::Vec<crate::types::GroupIdentifier>>,
     _request_id: Option<String>,
 }
 impl DescribeInstanceAttributeOutputBuilder {
-    /// Appends an item to `groups`.
-    ///
-    /// To override the contents of this collection use [`set_groups`](Self::set_groups).
-    ///
-    /// <p>The security groups associated with the instance.</p>
-    pub fn groups(mut self, input: crate::types::GroupIdentifier) -> Self {
-        let mut v = self.groups.unwrap_or_default();
-        v.push(input);
-        self.groups = ::std::option::Option::Some(v);
-        self
-    }
-    /// <p>The security groups associated with the instance.</p>
-    pub fn set_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GroupIdentifier>>) -> Self {
-        self.groups = input;
-        self
-    }
-    /// <p>The security groups associated with the instance.</p>
-    pub fn get_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GroupIdentifier>> {
-        &self.groups
-    }
     /// Appends an item to `block_device_mappings`.
     ///
     /// To override the contents of this collection use [`set_block_device_mappings`](Self::set_block_device_mappings).
@@ -408,6 +388,26 @@ impl DescribeInstanceAttributeOutputBuilder {
     pub fn get_disable_api_stop(&self) -> &::std::option::Option<crate::types::AttributeBooleanValue> {
         &self.disable_api_stop
     }
+    /// Appends an item to `groups`.
+    ///
+    /// To override the contents of this collection use [`set_groups`](Self::set_groups).
+    ///
+    /// <p>The security groups associated with the instance.</p>
+    pub fn groups(mut self, input: crate::types::GroupIdentifier) -> Self {
+        let mut v = self.groups.unwrap_or_default();
+        v.push(input);
+        self.groups = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The security groups associated with the instance.</p>
+    pub fn set_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GroupIdentifier>>) -> Self {
+        self.groups = input;
+        self
+    }
+    /// <p>The security groups associated with the instance.</p>
+    pub fn get_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GroupIdentifier>> {
+        &self.groups
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -420,7 +420,6 @@ impl DescribeInstanceAttributeOutputBuilder {
     /// Consumes the builder and constructs a [`DescribeInstanceAttributeOutput`](crate::operation::describe_instance_attribute::DescribeInstanceAttributeOutput).
     pub fn build(self) -> crate::operation::describe_instance_attribute::DescribeInstanceAttributeOutput {
         crate::operation::describe_instance_attribute::DescribeInstanceAttributeOutput {
-            groups: self.groups,
             block_device_mappings: self.block_device_mappings,
             disable_api_termination: self.disable_api_termination,
             ena_support: self.ena_support,
@@ -437,6 +436,7 @@ impl DescribeInstanceAttributeOutputBuilder {
             sriov_net_support: self.sriov_net_support,
             user_data: self.user_data,
             disable_api_stop: self.disable_api_stop,
+            groups: self.groups,
             _request_id: self._request_id,
         }
     }

@@ -7,7 +7,7 @@ pub fn de_security_group(
     let mut builder = crate::types::SecurityGroup::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
-            s if s.matches("groupDescription") /* Description com.amazonaws.ec2#SecurityGroup$Description */ =>  {
+            s if s.matches("groupId") /* GroupId com.amazonaws.ec2#SecurityGroup$GroupId */ =>  {
                 let var_1 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -17,33 +17,30 @@ pub fn de_security_group(
                         ?
                     )
                 ;
-                builder = builder.set_description(var_1);
+                builder = builder.set_group_id(var_1);
             }
             ,
-            s if s.matches("groupName") /* GroupName com.amazonaws.ec2#SecurityGroup$GroupName */ =>  {
+            s if s.matches("ipPermissionsEgress") /* IpPermissionsEgress com.amazonaws.ec2#SecurityGroup$IpPermissionsEgress */ =>  {
                 let var_2 =
-                    Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_group_name(var_2);
-            }
-            ,
-            s if s.matches("ipPermissions") /* IpPermissions com.amazonaws.ec2#SecurityGroup$IpPermissions */ =>  {
-                let var_3 =
                     Some(
                         crate::protocol_serde::shape_ip_permission_list::de_ip_permission_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_ip_permissions(var_3);
+                builder = builder.set_ip_permissions_egress(var_2);
             }
             ,
-            s if s.matches("ownerId") /* OwnerId com.amazonaws.ec2#SecurityGroup$OwnerId */ =>  {
+            s if s.matches("tagSet") /* Tags com.amazonaws.ec2#SecurityGroup$Tags */ =>  {
+                let var_3 =
+                    Some(
+                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_tags(var_3);
+            }
+            ,
+            s if s.matches("vpcId") /* VpcId com.amazonaws.ec2#SecurityGroup$VpcId */ =>  {
                 let var_4 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -53,10 +50,10 @@ pub fn de_security_group(
                         ?
                     )
                 ;
-                builder = builder.set_owner_id(var_4);
+                builder = builder.set_vpc_id(var_4);
             }
             ,
-            s if s.matches("groupId") /* GroupId com.amazonaws.ec2#SecurityGroup$GroupId */ =>  {
+            s if s.matches("ownerId") /* OwnerId com.amazonaws.ec2#SecurityGroup$OwnerId */ =>  {
                 let var_5 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -66,31 +63,11 @@ pub fn de_security_group(
                         ?
                     )
                 ;
-                builder = builder.set_group_id(var_5);
+                builder = builder.set_owner_id(var_5);
             }
             ,
-            s if s.matches("ipPermissionsEgress") /* IpPermissionsEgress com.amazonaws.ec2#SecurityGroup$IpPermissionsEgress */ =>  {
+            s if s.matches("groupName") /* GroupName com.amazonaws.ec2#SecurityGroup$GroupName */ =>  {
                 let var_6 =
-                    Some(
-                        crate::protocol_serde::shape_ip_permission_list::de_ip_permission_list(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_ip_permissions_egress(var_6);
-            }
-            ,
-            s if s.matches("tagSet") /* Tags com.amazonaws.ec2#SecurityGroup$Tags */ =>  {
-                let var_7 =
-                    Some(
-                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_tags(var_7);
-            }
-            ,
-            s if s.matches("vpcId") /* VpcId com.amazonaws.ec2#SecurityGroup$VpcId */ =>  {
-                let var_8 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -99,7 +76,30 @@ pub fn de_security_group(
                         ?
                     )
                 ;
-                builder = builder.set_vpc_id(var_8);
+                builder = builder.set_group_name(var_6);
+            }
+            ,
+            s if s.matches("groupDescription") /* Description com.amazonaws.ec2#SecurityGroup$Description */ =>  {
+                let var_7 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_description(var_7);
+            }
+            ,
+            s if s.matches("ipPermissions") /* IpPermissions com.amazonaws.ec2#SecurityGroup$IpPermissions */ =>  {
+                let var_8 =
+                    Some(
+                        crate::protocol_serde::shape_ip_permission_list::de_ip_permission_list(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_ip_permissions(var_8);
             }
             ,
             _ => {}

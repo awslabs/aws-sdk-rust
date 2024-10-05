@@ -3,6 +3,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeInstanceStatusInput {
+    /// <p>The instance IDs.</p>
+    /// <p>Default: Describes all your instances.</p>
+    /// <p>Constraints: Maximum 100 explicitly specified instance IDs.</p>
+    pub instance_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
+    /// <p>You cannot specify this parameter and the instance IDs parameter in the same request.</p>
+    pub max_results: ::std::option::Option<i32>,
+    /// <p>The token returned from a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p>
+    pub next_token: ::std::option::Option<::std::string::String>,
+    /// <p>Checks whether you have the required permissions for the operation, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub dry_run: ::std::option::Option<bool>,
     /// <p>The filters.</p>
     /// <ul>
     /// <li>
@@ -35,22 +46,32 @@ pub struct DescribeInstanceStatusInput {
     /// <p><code>attached-ebs-status.status</code> - The status of the attached EBS volume for the instance (<code>ok</code> | <code>impaired</code> | <code>initializing</code> | <code>insufficient-data</code> | <code>not-applicable</code>).</p></li>
     /// </ul>
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    /// <p>The instance IDs.</p>
-    /// <p>Default: Describes all your instances.</p>
-    /// <p>Constraints: Maximum 100 explicitly specified instance IDs.</p>
-    pub instance_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
-    /// <p>You cannot specify this parameter and the instance IDs parameter in the same request.</p>
-    pub max_results: ::std::option::Option<i32>,
-    /// <p>The token returned from a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p>
-    pub next_token: ::std::option::Option<::std::string::String>,
-    /// <p>Checks whether you have the required permissions for the operation, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub dry_run: ::std::option::Option<bool>,
     /// <p>When <code>true</code>, includes the health status for all instances. When <code>false</code>, includes the health status for running instances only.</p>
     /// <p>Default: <code>false</code></p>
     pub include_all_instances: ::std::option::Option<bool>,
 }
 impl DescribeInstanceStatusInput {
+    /// <p>The instance IDs.</p>
+    /// <p>Default: Describes all your instances.</p>
+    /// <p>Constraints: Maximum 100 explicitly specified instance IDs.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_ids.is_none()`.
+    pub fn instance_ids(&self) -> &[::std::string::String] {
+        self.instance_ids.as_deref().unwrap_or_default()
+    }
+    /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
+    /// <p>You cannot specify this parameter and the instance IDs parameter in the same request.</p>
+    pub fn max_results(&self) -> ::std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The token returned from a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p>
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>Checks whether you have the required permissions for the operation, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn dry_run(&self) -> ::std::option::Option<bool> {
+        self.dry_run
+    }
     /// <p>The filters.</p>
     /// <ul>
     /// <li>
@@ -87,27 +108,6 @@ impl DescribeInstanceStatusInput {
     pub fn filters(&self) -> &[crate::types::Filter] {
         self.filters.as_deref().unwrap_or_default()
     }
-    /// <p>The instance IDs.</p>
-    /// <p>Default: Describes all your instances.</p>
-    /// <p>Constraints: Maximum 100 explicitly specified instance IDs.</p>
-    ///
-    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_ids.is_none()`.
-    pub fn instance_ids(&self) -> &[::std::string::String] {
-        self.instance_ids.as_deref().unwrap_or_default()
-    }
-    /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
-    /// <p>You cannot specify this parameter and the instance IDs parameter in the same request.</p>
-    pub fn max_results(&self) -> ::std::option::Option<i32> {
-        self.max_results
-    }
-    /// <p>The token returned from a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
-        self.next_token.as_deref()
-    }
-    /// <p>Checks whether you have the required permissions for the operation, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn dry_run(&self) -> ::std::option::Option<bool> {
-        self.dry_run
-    }
     /// <p>When <code>true</code>, includes the health status for all instances. When <code>false</code>, includes the health status for running instances only.</p>
     /// <p>Default: <code>false</code></p>
     pub fn include_all_instances(&self) -> ::std::option::Option<bool> {
@@ -125,14 +125,85 @@ impl DescribeInstanceStatusInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct DescribeInstanceStatusInputBuilder {
-    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     pub(crate) instance_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) dry_run: ::std::option::Option<bool>,
+    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     pub(crate) include_all_instances: ::std::option::Option<bool>,
 }
 impl DescribeInstanceStatusInputBuilder {
+    /// Appends an item to `instance_ids`.
+    ///
+    /// To override the contents of this collection use [`set_instance_ids`](Self::set_instance_ids).
+    ///
+    /// <p>The instance IDs.</p>
+    /// <p>Default: Describes all your instances.</p>
+    /// <p>Constraints: Maximum 100 explicitly specified instance IDs.</p>
+    pub fn instance_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.instance_ids.unwrap_or_default();
+        v.push(input.into());
+        self.instance_ids = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The instance IDs.</p>
+    /// <p>Default: Describes all your instances.</p>
+    /// <p>Constraints: Maximum 100 explicitly specified instance IDs.</p>
+    pub fn set_instance_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.instance_ids = input;
+        self
+    }
+    /// <p>The instance IDs.</p>
+    /// <p>Default: Describes all your instances.</p>
+    /// <p>Constraints: Maximum 100 explicitly specified instance IDs.</p>
+    pub fn get_instance_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.instance_ids
+    }
+    /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
+    /// <p>You cannot specify this parameter and the instance IDs parameter in the same request.</p>
+    pub fn max_results(mut self, input: i32) -> Self {
+        self.max_results = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
+    /// <p>You cannot specify this parameter and the instance IDs parameter in the same request.</p>
+    pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.max_results = input;
+        self
+    }
+    /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
+    /// <p>You cannot specify this parameter and the instance IDs parameter in the same request.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
+    /// <p>The token returned from a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p>
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The token returned from a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p>
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.next_token = input;
+        self
+    }
+    /// <p>The token returned from a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
+    /// <p>Checks whether you have the required permissions for the operation, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn dry_run(mut self, input: bool) -> Self {
+        self.dry_run = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Checks whether you have the required permissions for the operation, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.dry_run = input;
+        self
+    }
+    /// <p>Checks whether you have the required permissions for the operation, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
+    }
     /// Appends an item to `filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
@@ -243,77 +314,6 @@ impl DescribeInstanceStatusInputBuilder {
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         &self.filters
     }
-    /// Appends an item to `instance_ids`.
-    ///
-    /// To override the contents of this collection use [`set_instance_ids`](Self::set_instance_ids).
-    ///
-    /// <p>The instance IDs.</p>
-    /// <p>Default: Describes all your instances.</p>
-    /// <p>Constraints: Maximum 100 explicitly specified instance IDs.</p>
-    pub fn instance_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        let mut v = self.instance_ids.unwrap_or_default();
-        v.push(input.into());
-        self.instance_ids = ::std::option::Option::Some(v);
-        self
-    }
-    /// <p>The instance IDs.</p>
-    /// <p>Default: Describes all your instances.</p>
-    /// <p>Constraints: Maximum 100 explicitly specified instance IDs.</p>
-    pub fn set_instance_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.instance_ids = input;
-        self
-    }
-    /// <p>The instance IDs.</p>
-    /// <p>Default: Describes all your instances.</p>
-    /// <p>Constraints: Maximum 100 explicitly specified instance IDs.</p>
-    pub fn get_instance_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
-        &self.instance_ids
-    }
-    /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
-    /// <p>You cannot specify this parameter and the instance IDs parameter in the same request.</p>
-    pub fn max_results(mut self, input: i32) -> Self {
-        self.max_results = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
-    /// <p>You cannot specify this parameter and the instance IDs parameter in the same request.</p>
-    pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
-    }
-    /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
-    /// <p>You cannot specify this parameter and the instance IDs parameter in the same request.</p>
-    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
-        &self.max_results
-    }
-    /// <p>The token returned from a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p>
-    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.next_token = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>The token returned from a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p>
-    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
-    }
-    /// <p>The token returned from a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p>
-    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
-        &self.next_token
-    }
-    /// <p>Checks whether you have the required permissions for the operation, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn dry_run(mut self, input: bool) -> Self {
-        self.dry_run = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>Checks whether you have the required permissions for the operation, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
-    }
-    /// <p>Checks whether you have the required permissions for the operation, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
-        &self.dry_run
-    }
     /// <p>When <code>true</code>, includes the health status for all instances. When <code>false</code>, includes the health status for running instances only.</p>
     /// <p>Default: <code>false</code></p>
     pub fn include_all_instances(mut self, input: bool) -> Self {
@@ -339,11 +339,11 @@ impl DescribeInstanceStatusInputBuilder {
         ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_instance_status::DescribeInstanceStatusInput {
-            filters: self.filters,
             instance_ids: self.instance_ids,
             max_results: self.max_results,
             next_token: self.next_token,
             dry_run: self.dry_run,
+            filters: self.filters,
             include_all_instances: self.include_all_instances,
         })
     }

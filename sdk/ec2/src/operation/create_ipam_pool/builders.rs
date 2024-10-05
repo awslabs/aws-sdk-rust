@@ -145,7 +145,7 @@ impl CreateIpamPoolFluentBuilder {
     /// <p>The network border group for an Amazon Web Services Local Zone where you want this IPAM pool to be available for allocations (<a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html#byoip-zone-avail">supported Local Zones</a>). This option is only available for IPAM IPv4 pools in the public scope.</p></li>
     /// </ul>
     /// <p>If you do not choose a locale, resources in Regions others than the IPAM's home region cannot use CIDRs from this pool.</p>
-    /// <p>Possible values: Any Amazon Web Services Region or supported Amazon Web Services Local Zone.</p>
+    /// <p>Possible values: Any Amazon Web Services Region or supported Amazon Web Services Local Zone. Default is <code>none</code> and means any locale.</p>
     pub fn locale(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.locale(input.into());
         self
@@ -158,7 +158,7 @@ impl CreateIpamPoolFluentBuilder {
     /// <p>The network border group for an Amazon Web Services Local Zone where you want this IPAM pool to be available for allocations (<a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html#byoip-zone-avail">supported Local Zones</a>). This option is only available for IPAM IPv4 pools in the public scope.</p></li>
     /// </ul>
     /// <p>If you do not choose a locale, resources in Regions others than the IPAM's home region cannot use CIDRs from this pool.</p>
-    /// <p>Possible values: Any Amazon Web Services Region or supported Amazon Web Services Local Zone.</p>
+    /// <p>Possible values: Any Amazon Web Services Region or supported Amazon Web Services Local Zone. Default is <code>none</code> and means any locale.</p>
     pub fn set_locale(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_locale(input);
         self
@@ -171,7 +171,7 @@ impl CreateIpamPoolFluentBuilder {
     /// <p>The network border group for an Amazon Web Services Local Zone where you want this IPAM pool to be available for allocations (<a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html#byoip-zone-avail">supported Local Zones</a>). This option is only available for IPAM IPv4 pools in the public scope.</p></li>
     /// </ul>
     /// <p>If you do not choose a locale, resources in Regions others than the IPAM's home region cannot use CIDRs from this pool.</p>
-    /// <p>Possible values: Any Amazon Web Services Region or supported Amazon Web Services Local Zone.</p>
+    /// <p>Possible values: Any Amazon Web Services Region or supported Amazon Web Services Local Zone. Default is <code>none</code> and means any locale.</p>
     pub fn get_locale(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_locale()
     }

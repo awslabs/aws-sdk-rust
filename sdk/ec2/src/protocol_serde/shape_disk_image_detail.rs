@@ -5,17 +5,17 @@ pub fn ser_disk_image_detail(
     input: &crate::types::DiskImageDetail,
 ) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
-    let mut scope_1 = writer.prefix("Bytes");
-    if let Some(var_2) = &input.bytes {
-        scope_1.number(
-            #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_2).into()),
-        );
+    let mut scope_1 = writer.prefix("Format");
+    if let Some(var_2) = &input.format {
+        scope_1.string(var_2.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_3 = writer.prefix("Format");
-    if let Some(var_4) = &input.format {
-        scope_3.string(var_4.as_str());
+    let mut scope_3 = writer.prefix("Bytes");
+    if let Some(var_4) = &input.bytes {
+        scope_3.number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_4).into()),
+        );
     }
     #[allow(unused_mut)]
     let mut scope_5 = writer.prefix("ImportManifestUrl");

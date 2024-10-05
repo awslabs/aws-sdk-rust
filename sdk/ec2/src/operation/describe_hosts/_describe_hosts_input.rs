@@ -3,6 +3,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeHostsInput {
+    /// <p>The IDs of the Dedicated Hosts. The IDs are used for targeted instance launches.</p>
+    pub host_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The token to use to retrieve the next page of results.</p>
+    pub next_token: ::std::option::Option<::std::string::String>,
+    /// <p>The maximum number of results to return for the request in a single page. The remaining results can be seen by sending another request with the returned <code>nextToken</code> value. This value can be between 5 and 500. If <code>maxResults</code> is given a larger value than 500, you receive an error.</p>
+    /// <p>You cannot specify this parameter and the host IDs parameter in the same request.</p>
+    pub max_results: ::std::option::Option<i32>,
     /// <p>The filters.</p>
     /// <ul>
     /// <li>
@@ -21,15 +28,23 @@ pub struct DescribeHostsInput {
     /// <p><code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p></li>
     /// </ul>
     pub filter: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    /// <p>The IDs of the Dedicated Hosts. The IDs are used for targeted instance launches.</p>
-    pub host_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>The maximum number of results to return for the request in a single page. The remaining results can be seen by sending another request with the returned <code>nextToken</code> value. This value can be between 5 and 500. If <code>maxResults</code> is given a larger value than 500, you receive an error.</p>
-    /// <p>You cannot specify this parameter and the host IDs parameter in the same request.</p>
-    pub max_results: ::std::option::Option<i32>,
-    /// <p>The token to use to retrieve the next page of results.</p>
-    pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl DescribeHostsInput {
+    /// <p>The IDs of the Dedicated Hosts. The IDs are used for targeted instance launches.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.host_ids.is_none()`.
+    pub fn host_ids(&self) -> &[::std::string::String] {
+        self.host_ids.as_deref().unwrap_or_default()
+    }
+    /// <p>The token to use to retrieve the next page of results.</p>
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return for the request in a single page. The remaining results can be seen by sending another request with the returned <code>nextToken</code> value. This value can be between 5 and 500. If <code>maxResults</code> is given a larger value than 500, you receive an error.</p>
+    /// <p>You cannot specify this parameter and the host IDs parameter in the same request.</p>
+    pub fn max_results(&self) -> ::std::option::Option<i32> {
+        self.max_results
+    }
     /// <p>The filters.</p>
     /// <ul>
     /// <li>
@@ -52,21 +67,6 @@ impl DescribeHostsInput {
     pub fn filter(&self) -> &[crate::types::Filter] {
         self.filter.as_deref().unwrap_or_default()
     }
-    /// <p>The IDs of the Dedicated Hosts. The IDs are used for targeted instance launches.</p>
-    ///
-    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.host_ids.is_none()`.
-    pub fn host_ids(&self) -> &[::std::string::String] {
-        self.host_ids.as_deref().unwrap_or_default()
-    }
-    /// <p>The maximum number of results to return for the request in a single page. The remaining results can be seen by sending another request with the returned <code>nextToken</code> value. This value can be between 5 and 500. If <code>maxResults</code> is given a larger value than 500, you receive an error.</p>
-    /// <p>You cannot specify this parameter and the host IDs parameter in the same request.</p>
-    pub fn max_results(&self) -> ::std::option::Option<i32> {
-        self.max_results
-    }
-    /// <p>The token to use to retrieve the next page of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
-        self.next_token.as_deref()
-    }
 }
 impl DescribeHostsInput {
     /// Creates a new builder-style object to manufacture [`DescribeHostsInput`](crate::operation::describe_hosts::DescribeHostsInput).
@@ -79,12 +79,63 @@ impl DescribeHostsInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct DescribeHostsInputBuilder {
-    pub(crate) filter: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     pub(crate) host_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
+    pub(crate) max_results: ::std::option::Option<i32>,
+    pub(crate) filter: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
 }
 impl DescribeHostsInputBuilder {
+    /// Appends an item to `host_ids`.
+    ///
+    /// To override the contents of this collection use [`set_host_ids`](Self::set_host_ids).
+    ///
+    /// <p>The IDs of the Dedicated Hosts. The IDs are used for targeted instance launches.</p>
+    pub fn host_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.host_ids.unwrap_or_default();
+        v.push(input.into());
+        self.host_ids = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The IDs of the Dedicated Hosts. The IDs are used for targeted instance launches.</p>
+    pub fn set_host_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.host_ids = input;
+        self
+    }
+    /// <p>The IDs of the Dedicated Hosts. The IDs are used for targeted instance launches.</p>
+    pub fn get_host_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.host_ids
+    }
+    /// <p>The token to use to retrieve the next page of results.</p>
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The token to use to retrieve the next page of results.</p>
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.next_token = input;
+        self
+    }
+    /// <p>The token to use to retrieve the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
+    /// <p>The maximum number of results to return for the request in a single page. The remaining results can be seen by sending another request with the returned <code>nextToken</code> value. This value can be between 5 and 500. If <code>maxResults</code> is given a larger value than 500, you receive an error.</p>
+    /// <p>You cannot specify this parameter and the host IDs parameter in the same request.</p>
+    pub fn max_results(mut self, input: i32) -> Self {
+        self.max_results = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The maximum number of results to return for the request in a single page. The remaining results can be seen by sending another request with the returned <code>nextToken</code> value. This value can be between 5 and 500. If <code>maxResults</code> is given a larger value than 500, you receive an error.</p>
+    /// <p>You cannot specify this parameter and the host IDs parameter in the same request.</p>
+    pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.max_results = input;
+        self
+    }
+    /// <p>The maximum number of results to return for the request in a single page. The remaining results can be seen by sending another request with the returned <code>nextToken</code> value. This value can be between 5 and 500. If <code>maxResults</code> is given a larger value than 500, you receive an error.</p>
+    /// <p>You cannot specify this parameter and the host IDs parameter in the same request.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// Appends an item to `filter`.
     ///
     /// To override the contents of this collection use [`set_filter`](Self::set_filter).
@@ -153,66 +204,15 @@ impl DescribeHostsInputBuilder {
     pub fn get_filter(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         &self.filter
     }
-    /// Appends an item to `host_ids`.
-    ///
-    /// To override the contents of this collection use [`set_host_ids`](Self::set_host_ids).
-    ///
-    /// <p>The IDs of the Dedicated Hosts. The IDs are used for targeted instance launches.</p>
-    pub fn host_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        let mut v = self.host_ids.unwrap_or_default();
-        v.push(input.into());
-        self.host_ids = ::std::option::Option::Some(v);
-        self
-    }
-    /// <p>The IDs of the Dedicated Hosts. The IDs are used for targeted instance launches.</p>
-    pub fn set_host_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.host_ids = input;
-        self
-    }
-    /// <p>The IDs of the Dedicated Hosts. The IDs are used for targeted instance launches.</p>
-    pub fn get_host_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
-        &self.host_ids
-    }
-    /// <p>The maximum number of results to return for the request in a single page. The remaining results can be seen by sending another request with the returned <code>nextToken</code> value. This value can be between 5 and 500. If <code>maxResults</code> is given a larger value than 500, you receive an error.</p>
-    /// <p>You cannot specify this parameter and the host IDs parameter in the same request.</p>
-    pub fn max_results(mut self, input: i32) -> Self {
-        self.max_results = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>The maximum number of results to return for the request in a single page. The remaining results can be seen by sending another request with the returned <code>nextToken</code> value. This value can be between 5 and 500. If <code>maxResults</code> is given a larger value than 500, you receive an error.</p>
-    /// <p>You cannot specify this parameter and the host IDs parameter in the same request.</p>
-    pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
-    }
-    /// <p>The maximum number of results to return for the request in a single page. The remaining results can be seen by sending another request with the returned <code>nextToken</code> value. This value can be between 5 and 500. If <code>maxResults</code> is given a larger value than 500, you receive an error.</p>
-    /// <p>You cannot specify this parameter and the host IDs parameter in the same request.</p>
-    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
-        &self.max_results
-    }
-    /// <p>The token to use to retrieve the next page of results.</p>
-    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.next_token = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>The token to use to retrieve the next page of results.</p>
-    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
-    }
-    /// <p>The token to use to retrieve the next page of results.</p>
-    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
-        &self.next_token
-    }
     /// Consumes the builder and constructs a [`DescribeHostsInput`](crate::operation::describe_hosts::DescribeHostsInput).
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::describe_hosts::DescribeHostsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_hosts::DescribeHostsInput {
-            filter: self.filter,
             host_ids: self.host_ids,
-            max_results: self.max_results,
             next_token: self.next_token,
+            max_results: self.max_results,
+            filter: self.filter,
         })
     }
 }

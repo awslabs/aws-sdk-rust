@@ -5,7 +5,7 @@ pub fn de_address(decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder) -> Resu
     let mut builder = crate::types::Address::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
-            s if s.matches("instanceId") /* InstanceId com.amazonaws.ec2#Address$InstanceId */ =>  {
+            s if s.matches("allocationId") /* AllocationId com.amazonaws.ec2#Address$AllocationId */ =>  {
                 let var_1 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -15,10 +15,10 @@ pub fn de_address(decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder) -> Resu
                         ?
                     )
                 ;
-                builder = builder.set_instance_id(var_1);
+                builder = builder.set_allocation_id(var_1);
             }
             ,
-            s if s.matches("publicIp") /* PublicIp com.amazonaws.ec2#Address$PublicIp */ =>  {
+            s if s.matches("associationId") /* AssociationId com.amazonaws.ec2#Address$AssociationId */ =>  {
                 let var_2 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -28,37 +28,11 @@ pub fn de_address(decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder) -> Resu
                         ?
                     )
                 ;
-                builder = builder.set_public_ip(var_2);
-            }
-            ,
-            s if s.matches("allocationId") /* AllocationId com.amazonaws.ec2#Address$AllocationId */ =>  {
-                let var_3 =
-                    Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_allocation_id(var_3);
-            }
-            ,
-            s if s.matches("associationId") /* AssociationId com.amazonaws.ec2#Address$AssociationId */ =>  {
-                let var_4 =
-                    Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_association_id(var_4);
+                builder = builder.set_association_id(var_2);
             }
             ,
             s if s.matches("domain") /* Domain com.amazonaws.ec2#Address$Domain */ =>  {
-                let var_5 =
+                let var_3 =
                     Some(
                         Result::<crate::types::DomainType, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::DomainType::from(
@@ -68,10 +42,36 @@ pub fn de_address(decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder) -> Resu
                         ?
                     )
                 ;
-                builder = builder.set_domain(var_5);
+                builder = builder.set_domain(var_3);
             }
             ,
             s if s.matches("networkInterfaceId") /* NetworkInterfaceId com.amazonaws.ec2#Address$NetworkInterfaceId */ =>  {
+                let var_4 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_network_interface_id(var_4);
+            }
+            ,
+            s if s.matches("networkInterfaceOwnerId") /* NetworkInterfaceOwnerId com.amazonaws.ec2#Address$NetworkInterfaceOwnerId */ =>  {
+                let var_5 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_network_interface_owner_id(var_5);
+            }
+            ,
+            s if s.matches("privateIpAddress") /* PrivateIpAddress com.amazonaws.ec2#Address$PrivateIpAddress */ =>  {
                 let var_6 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -81,23 +81,20 @@ pub fn de_address(decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder) -> Resu
                         ?
                     )
                 ;
-                builder = builder.set_network_interface_id(var_6);
+                builder = builder.set_private_ip_address(var_6);
             }
             ,
-            s if s.matches("networkInterfaceOwnerId") /* NetworkInterfaceOwnerId com.amazonaws.ec2#Address$NetworkInterfaceOwnerId */ =>  {
+            s if s.matches("tagSet") /* Tags com.amazonaws.ec2#Address$Tags */ =>  {
                 let var_7 =
                     Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
+                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_network_interface_owner_id(var_7);
+                builder = builder.set_tags(var_7);
             }
             ,
-            s if s.matches("privateIpAddress") /* PrivateIpAddress com.amazonaws.ec2#Address$PrivateIpAddress */ =>  {
+            s if s.matches("publicIpv4Pool") /* PublicIpv4Pool com.amazonaws.ec2#Address$PublicIpv4Pool */ =>  {
                 let var_8 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -107,20 +104,23 @@ pub fn de_address(decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder) -> Resu
                         ?
                     )
                 ;
-                builder = builder.set_private_ip_address(var_8);
+                builder = builder.set_public_ipv4_pool(var_8);
             }
             ,
-            s if s.matches("tagSet") /* Tags com.amazonaws.ec2#Address$Tags */ =>  {
+            s if s.matches("networkBorderGroup") /* NetworkBorderGroup com.amazonaws.ec2#Address$NetworkBorderGroup */ =>  {
                 let var_9 =
                     Some(
-                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag)
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
                         ?
                     )
                 ;
-                builder = builder.set_tags(var_9);
+                builder = builder.set_network_border_group(var_9);
             }
             ,
-            s if s.matches("publicIpv4Pool") /* PublicIpv4Pool com.amazonaws.ec2#Address$PublicIpv4Pool */ =>  {
+            s if s.matches("customerOwnedIp") /* CustomerOwnedIp com.amazonaws.ec2#Address$CustomerOwnedIp */ =>  {
                 let var_10 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -130,10 +130,10 @@ pub fn de_address(decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder) -> Resu
                         ?
                     )
                 ;
-                builder = builder.set_public_ipv4_pool(var_10);
+                builder = builder.set_customer_owned_ip(var_10);
             }
             ,
-            s if s.matches("networkBorderGroup") /* NetworkBorderGroup com.amazonaws.ec2#Address$NetworkBorderGroup */ =>  {
+            s if s.matches("customerOwnedIpv4Pool") /* CustomerOwnedIpv4Pool com.amazonaws.ec2#Address$CustomerOwnedIpv4Pool */ =>  {
                 let var_11 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -143,10 +143,10 @@ pub fn de_address(decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder) -> Resu
                         ?
                     )
                 ;
-                builder = builder.set_network_border_group(var_11);
+                builder = builder.set_customer_owned_ipv4_pool(var_11);
             }
             ,
-            s if s.matches("customerOwnedIp") /* CustomerOwnedIp com.amazonaws.ec2#Address$CustomerOwnedIp */ =>  {
+            s if s.matches("carrierIp") /* CarrierIp com.amazonaws.ec2#Address$CarrierIp */ =>  {
                 let var_12 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -156,10 +156,10 @@ pub fn de_address(decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder) -> Resu
                         ?
                     )
                 ;
-                builder = builder.set_customer_owned_ip(var_12);
+                builder = builder.set_carrier_ip(var_12);
             }
             ,
-            s if s.matches("customerOwnedIpv4Pool") /* CustomerOwnedIpv4Pool com.amazonaws.ec2#Address$CustomerOwnedIpv4Pool */ =>  {
+            s if s.matches("instanceId") /* InstanceId com.amazonaws.ec2#Address$InstanceId */ =>  {
                 let var_13 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -169,10 +169,10 @@ pub fn de_address(decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder) -> Resu
                         ?
                     )
                 ;
-                builder = builder.set_customer_owned_ipv4_pool(var_13);
+                builder = builder.set_instance_id(var_13);
             }
             ,
-            s if s.matches("carrierIp") /* CarrierIp com.amazonaws.ec2#Address$CarrierIp */ =>  {
+            s if s.matches("publicIp") /* PublicIp com.amazonaws.ec2#Address$PublicIp */ =>  {
                 let var_14 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -182,7 +182,7 @@ pub fn de_address(decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder) -> Resu
                         ?
                     )
                 ;
-                builder = builder.set_carrier_ip(var_14);
+                builder = builder.set_public_ip(var_14);
             }
             ,
             _ => {}

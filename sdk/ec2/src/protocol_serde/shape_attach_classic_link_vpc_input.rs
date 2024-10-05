@@ -11,27 +11,27 @@ pub fn ser_attach_classic_link_vpc_input_input_input(
         scope_1.boolean(*var_2);
     }
     #[allow(unused_mut)]
-    let mut scope_3 = writer.prefix("SecurityGroupId");
-    if let Some(var_4) = &input.groups {
-        if !var_4.is_empty() {
-            let mut list_6 = scope_3.start_list(true, Some("groupId"));
-            for item_5 in var_4 {
+    let mut scope_3 = writer.prefix("InstanceId");
+    if let Some(var_4) = &input.instance_id {
+        scope_3.string(var_4);
+    }
+    #[allow(unused_mut)]
+    let mut scope_5 = writer.prefix("VpcId");
+    if let Some(var_6) = &input.vpc_id {
+        scope_5.string(var_6);
+    }
+    #[allow(unused_mut)]
+    let mut scope_7 = writer.prefix("SecurityGroupId");
+    if let Some(var_8) = &input.groups {
+        if !var_8.is_empty() {
+            let mut list_10 = scope_7.start_list(true, Some("groupId"));
+            for item_9 in var_8 {
                 #[allow(unused_mut)]
-                let mut entry_7 = list_6.entry();
-                entry_7.string(item_5);
+                let mut entry_11 = list_10.entry();
+                entry_11.string(item_9);
             }
-            list_6.finish();
+            list_10.finish();
         }
-    }
-    #[allow(unused_mut)]
-    let mut scope_8 = writer.prefix("InstanceId");
-    if let Some(var_9) = &input.instance_id {
-        scope_8.string(var_9);
-    }
-    #[allow(unused_mut)]
-    let mut scope_10 = writer.prefix("VpcId");
-    if let Some(var_11) = &input.vpc_id {
-        scope_10.string(var_11);
     }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))

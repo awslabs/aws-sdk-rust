@@ -15,13 +15,13 @@ pub fn ser_instance_block_device_mapping_specification(
         crate::protocol_serde::shape_ebs_instance_block_device_specification::ser_ebs_instance_block_device_specification(scope_3, var_4)?;
     }
     #[allow(unused_mut)]
-    let mut scope_5 = writer.prefix("NoDevice");
-    if let Some(var_6) = &input.no_device {
+    let mut scope_5 = writer.prefix("VirtualName");
+    if let Some(var_6) = &input.virtual_name {
         scope_5.string(var_6);
     }
     #[allow(unused_mut)]
-    let mut scope_7 = writer.prefix("VirtualName");
-    if let Some(var_8) = &input.virtual_name {
+    let mut scope_7 = writer.prefix("NoDevice");
+    if let Some(var_8) = &input.no_device {
         scope_7.string(var_8);
     }
     Ok(())

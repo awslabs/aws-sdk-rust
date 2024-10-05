@@ -4,19 +4,19 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GroupIdentifier {
-    /// <p>The name of the security group.</p>
-    pub group_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the security group.</p>
     pub group_id: ::std::option::Option<::std::string::String>,
+    /// <p>The name of the security group.</p>
+    pub group_name: ::std::option::Option<::std::string::String>,
 }
 impl GroupIdentifier {
-    /// <p>The name of the security group.</p>
-    pub fn group_name(&self) -> ::std::option::Option<&str> {
-        self.group_name.as_deref()
-    }
     /// <p>The ID of the security group.</p>
     pub fn group_id(&self) -> ::std::option::Option<&str> {
         self.group_id.as_deref()
+    }
+    /// <p>The name of the security group.</p>
+    pub fn group_name(&self) -> ::std::option::Option<&str> {
+        self.group_name.as_deref()
     }
 }
 impl GroupIdentifier {
@@ -30,24 +30,10 @@ impl GroupIdentifier {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct GroupIdentifierBuilder {
-    pub(crate) group_name: ::std::option::Option<::std::string::String>,
     pub(crate) group_id: ::std::option::Option<::std::string::String>,
+    pub(crate) group_name: ::std::option::Option<::std::string::String>,
 }
 impl GroupIdentifierBuilder {
-    /// <p>The name of the security group.</p>
-    pub fn group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.group_name = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>The name of the security group.</p>
-    pub fn set_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.group_name = input;
-        self
-    }
-    /// <p>The name of the security group.</p>
-    pub fn get_group_name(&self) -> &::std::option::Option<::std::string::String> {
-        &self.group_name
-    }
     /// <p>The ID of the security group.</p>
     pub fn group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group_id = ::std::option::Option::Some(input.into());
@@ -62,11 +48,25 @@ impl GroupIdentifierBuilder {
     pub fn get_group_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.group_id
     }
+    /// <p>The name of the security group.</p>
+    pub fn group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.group_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of the security group.</p>
+    pub fn set_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.group_name = input;
+        self
+    }
+    /// <p>The name of the security group.</p>
+    pub fn get_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.group_name
+    }
     /// Consumes the builder and constructs a [`GroupIdentifier`](crate::types::GroupIdentifier).
     pub fn build(self) -> crate::types::GroupIdentifier {
         crate::types::GroupIdentifier {
-            group_name: self.group_name,
             group_id: self.group_id,
+            group_name: self.group_name,
         }
     }
 }

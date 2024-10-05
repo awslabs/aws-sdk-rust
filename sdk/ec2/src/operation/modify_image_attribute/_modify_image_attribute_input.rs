@@ -23,8 +23,6 @@ pub struct ModifyImageAttributeInput {
     pub user_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The value of the attribute being modified. This parameter can be used only when the <code>Attribute</code> parameter is <code>description</code> or <code>imdsSupport</code>.</p>
     pub value: ::std::option::Option<::std::string::String>,
-    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub dry_run: ::std::option::Option<bool>,
     /// <p>The Amazon Resource Name (ARN) of an organization. This parameter can be used only when the <code>Attribute</code> parameter is <code>launchPermission</code>.</p>
     pub organization_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The Amazon Resource Name (ARN) of an organizational unit (OU). This parameter can be used only when the <code>Attribute</code> parameter is <code>launchPermission</code>.</p>
@@ -33,6 +31,8 @@ pub struct ModifyImageAttributeInput {
     /// <p>Do not use this parameter unless your AMI software supports IMDSv2. After you set the value to <code>v2.0</code>, you can't undo it. The only way to “reset” your AMI is to create a new AMI from the underlying snapshot.</p>
     /// </important>
     pub imds_support: ::std::option::Option<crate::types::AttributeValue>,
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub dry_run: ::std::option::Option<bool>,
 }
 impl ModifyImageAttributeInput {
     /// <p>The name of the attribute to modify.</p>
@@ -78,10 +78,6 @@ impl ModifyImageAttributeInput {
     pub fn value(&self) -> ::std::option::Option<&str> {
         self.value.as_deref()
     }
-    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn dry_run(&self) -> ::std::option::Option<bool> {
-        self.dry_run
-    }
     /// <p>The Amazon Resource Name (ARN) of an organization. This parameter can be used only when the <code>Attribute</code> parameter is <code>launchPermission</code>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.organization_arns.is_none()`.
@@ -99,6 +95,10 @@ impl ModifyImageAttributeInput {
     /// </important>
     pub fn imds_support(&self) -> ::std::option::Option<&crate::types::AttributeValue> {
         self.imds_support.as_ref()
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn dry_run(&self) -> ::std::option::Option<bool> {
+        self.dry_run
     }
 }
 impl ModifyImageAttributeInput {
@@ -121,10 +121,10 @@ pub struct ModifyImageAttributeInputBuilder {
     pub(crate) user_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) user_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) value: ::std::option::Option<::std::string::String>,
-    pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) organization_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) organizational_unit_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) imds_support: ::std::option::Option<crate::types::AttributeValue>,
+    pub(crate) dry_run: ::std::option::Option<bool>,
 }
 impl ModifyImageAttributeInputBuilder {
     /// <p>The name of the attribute to modify.</p>
@@ -275,20 +275,6 @@ impl ModifyImageAttributeInputBuilder {
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
         &self.value
     }
-    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn dry_run(mut self, input: bool) -> Self {
-        self.dry_run = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
-    }
-    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
-        &self.dry_run
-    }
     /// Appends an item to `organization_arns`.
     ///
     /// To override the contents of this collection use [`set_organization_arns`](Self::set_organization_arns).
@@ -349,6 +335,20 @@ impl ModifyImageAttributeInputBuilder {
     pub fn get_imds_support(&self) -> &::std::option::Option<crate::types::AttributeValue> {
         &self.imds_support
     }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn dry_run(mut self, input: bool) -> Self {
+        self.dry_run = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.dry_run = input;
+        self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
+    }
     /// Consumes the builder and constructs a [`ModifyImageAttributeInput`](crate::operation::modify_image_attribute::ModifyImageAttributeInput).
     pub fn build(
         self,
@@ -364,10 +364,10 @@ impl ModifyImageAttributeInputBuilder {
             user_groups: self.user_groups,
             user_ids: self.user_ids,
             value: self.value,
-            dry_run: self.dry_run,
             organization_arns: self.organization_arns,
             organizational_unit_arns: self.organizational_unit_arns,
             imds_support: self.imds_support,
+            dry_run: self.dry_run,
         })
     }
 }

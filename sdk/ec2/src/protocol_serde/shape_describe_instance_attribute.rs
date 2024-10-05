@@ -57,68 +57,58 @@ pub fn de_describe_instance_attribute(
     }
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
-            s if s.matches("groupSet") /* Groups com.amazonaws.ec2.synthetic#DescribeInstanceAttributeOutput$Groups */ =>  {
-                let var_1 =
-                    Some(
-                        crate::protocol_serde::shape_group_identifier_list::de_group_identifier_list(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_groups(var_1);
-            }
-            ,
             s if s.matches("blockDeviceMapping") /* BlockDeviceMappings com.amazonaws.ec2.synthetic#DescribeInstanceAttributeOutput$BlockDeviceMappings */ =>  {
-                let var_2 =
+                let var_1 =
                     Some(
                         crate::protocol_serde::shape_instance_block_device_mapping_list::de_instance_block_device_mapping_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_block_device_mappings(var_2);
+                builder = builder.set_block_device_mappings(var_1);
             }
             ,
             s if s.matches("disableApiTermination") /* DisableApiTermination com.amazonaws.ec2.synthetic#DescribeInstanceAttributeOutput$DisableApiTermination */ =>  {
+                let var_2 =
+                    Some(
+                        crate::protocol_serde::shape_attribute_boolean_value::de_attribute_boolean_value(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_disable_api_termination(var_2);
+            }
+            ,
+            s if s.matches("enaSupport") /* EnaSupport com.amazonaws.ec2.synthetic#DescribeInstanceAttributeOutput$EnaSupport */ =>  {
                 let var_3 =
                     Some(
                         crate::protocol_serde::shape_attribute_boolean_value::de_attribute_boolean_value(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_disable_api_termination(var_3);
-            }
-            ,
-            s if s.matches("enaSupport") /* EnaSupport com.amazonaws.ec2.synthetic#DescribeInstanceAttributeOutput$EnaSupport */ =>  {
-                let var_4 =
-                    Some(
-                        crate::protocol_serde::shape_attribute_boolean_value::de_attribute_boolean_value(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_ena_support(var_4);
+                builder = builder.set_ena_support(var_3);
             }
             ,
             s if s.matches("enclaveOptions") /* EnclaveOptions com.amazonaws.ec2.synthetic#DescribeInstanceAttributeOutput$EnclaveOptions */ =>  {
-                let var_5 =
+                let var_4 =
                     Some(
                         crate::protocol_serde::shape_enclave_options::de_enclave_options(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_enclave_options(var_5);
+                builder = builder.set_enclave_options(var_4);
             }
             ,
             s if s.matches("ebsOptimized") /* EbsOptimized com.amazonaws.ec2.synthetic#DescribeInstanceAttributeOutput$EbsOptimized */ =>  {
-                let var_6 =
+                let var_5 =
                     Some(
                         crate::protocol_serde::shape_attribute_boolean_value::de_attribute_boolean_value(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_ebs_optimized(var_6);
+                builder = builder.set_ebs_optimized(var_5);
             }
             ,
             s if s.matches("instanceId") /* InstanceId com.amazonaws.ec2.synthetic#DescribeInstanceAttributeOutput$InstanceId */ =>  {
-                let var_7 =
+                let var_6 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -127,107 +117,117 @@ pub fn de_describe_instance_attribute(
                         ?
                     )
                 ;
-                builder = builder.set_instance_id(var_7);
+                builder = builder.set_instance_id(var_6);
             }
             ,
             s if s.matches("instanceInitiatedShutdownBehavior") /* InstanceInitiatedShutdownBehavior com.amazonaws.ec2.synthetic#DescribeInstanceAttributeOutput$InstanceInitiatedShutdownBehavior */ =>  {
+                let var_7 =
+                    Some(
+                        crate::protocol_serde::shape_attribute_value::de_attribute_value(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_instance_initiated_shutdown_behavior(var_7);
+            }
+            ,
+            s if s.matches("instanceType") /* InstanceType com.amazonaws.ec2.synthetic#DescribeInstanceAttributeOutput$InstanceType */ =>  {
                 let var_8 =
                     Some(
                         crate::protocol_serde::shape_attribute_value::de_attribute_value(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_instance_initiated_shutdown_behavior(var_8);
+                builder = builder.set_instance_type(var_8);
             }
             ,
-            s if s.matches("instanceType") /* InstanceType com.amazonaws.ec2.synthetic#DescribeInstanceAttributeOutput$InstanceType */ =>  {
+            s if s.matches("kernel") /* KernelId com.amazonaws.ec2.synthetic#DescribeInstanceAttributeOutput$KernelId */ =>  {
                 let var_9 =
                     Some(
                         crate::protocol_serde::shape_attribute_value::de_attribute_value(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_instance_type(var_9);
-            }
-            ,
-            s if s.matches("kernel") /* KernelId com.amazonaws.ec2.synthetic#DescribeInstanceAttributeOutput$KernelId */ =>  {
-                let var_10 =
-                    Some(
-                        crate::protocol_serde::shape_attribute_value::de_attribute_value(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_kernel_id(var_10);
+                builder = builder.set_kernel_id(var_9);
             }
             ,
             s if s.matches("productCodes") /* ProductCodes com.amazonaws.ec2.synthetic#DescribeInstanceAttributeOutput$ProductCodes */ =>  {
-                let var_11 =
+                let var_10 =
                     Some(
                         crate::protocol_serde::shape_product_code_list::de_product_code_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_product_codes(var_11);
+                builder = builder.set_product_codes(var_10);
             }
             ,
             s if s.matches("ramdisk") /* RamdiskId com.amazonaws.ec2.synthetic#DescribeInstanceAttributeOutput$RamdiskId */ =>  {
+                let var_11 =
+                    Some(
+                        crate::protocol_serde::shape_attribute_value::de_attribute_value(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_ramdisk_id(var_11);
+            }
+            ,
+            s if s.matches("rootDeviceName") /* RootDeviceName com.amazonaws.ec2.synthetic#DescribeInstanceAttributeOutput$RootDeviceName */ =>  {
                 let var_12 =
                     Some(
                         crate::protocol_serde::shape_attribute_value::de_attribute_value(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_ramdisk_id(var_12);
-            }
-            ,
-            s if s.matches("rootDeviceName") /* RootDeviceName com.amazonaws.ec2.synthetic#DescribeInstanceAttributeOutput$RootDeviceName */ =>  {
-                let var_13 =
-                    Some(
-                        crate::protocol_serde::shape_attribute_value::de_attribute_value(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_root_device_name(var_13);
+                builder = builder.set_root_device_name(var_12);
             }
             ,
             s if s.matches("sourceDestCheck") /* SourceDestCheck com.amazonaws.ec2.synthetic#DescribeInstanceAttributeOutput$SourceDestCheck */ =>  {
-                let var_14 =
+                let var_13 =
                     Some(
                         crate::protocol_serde::shape_attribute_boolean_value::de_attribute_boolean_value(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_source_dest_check(var_14);
+                builder = builder.set_source_dest_check(var_13);
             }
             ,
             s if s.matches("sriovNetSupport") /* SriovNetSupport com.amazonaws.ec2.synthetic#DescribeInstanceAttributeOutput$SriovNetSupport */ =>  {
+                let var_14 =
+                    Some(
+                        crate::protocol_serde::shape_attribute_value::de_attribute_value(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_sriov_net_support(var_14);
+            }
+            ,
+            s if s.matches("userData") /* UserData com.amazonaws.ec2.synthetic#DescribeInstanceAttributeOutput$UserData */ =>  {
                 let var_15 =
                     Some(
                         crate::protocol_serde::shape_attribute_value::de_attribute_value(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_sriov_net_support(var_15);
-            }
-            ,
-            s if s.matches("userData") /* UserData com.amazonaws.ec2.synthetic#DescribeInstanceAttributeOutput$UserData */ =>  {
-                let var_16 =
-                    Some(
-                        crate::protocol_serde::shape_attribute_value::de_attribute_value(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_user_data(var_16);
+                builder = builder.set_user_data(var_15);
             }
             ,
             s if s.matches("disableApiStop") /* DisableApiStop com.amazonaws.ec2.synthetic#DescribeInstanceAttributeOutput$DisableApiStop */ =>  {
-                let var_17 =
+                let var_16 =
                     Some(
                         crate::protocol_serde::shape_attribute_boolean_value::de_attribute_boolean_value(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_disable_api_stop(var_17);
+                builder = builder.set_disable_api_stop(var_16);
+            }
+            ,
+            s if s.matches("groupSet") /* Groups com.amazonaws.ec2.synthetic#DescribeInstanceAttributeOutput$Groups */ =>  {
+                let var_17 =
+                    Some(
+                        crate::protocol_serde::shape_group_identifier_list::de_group_identifier_list(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_groups(var_17);
             }
             ,
             _ => {}

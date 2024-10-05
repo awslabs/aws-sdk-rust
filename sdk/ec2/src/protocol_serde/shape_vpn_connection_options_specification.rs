@@ -10,57 +10,57 @@ pub fn ser_vpn_connection_options_specification(
         scope_1.boolean(*var_2);
     }
     #[allow(unused_mut)]
-    let mut scope_3 = writer.prefix("StaticRoutesOnly");
-    if let Some(var_4) = &input.static_routes_only {
-        scope_3.boolean(*var_4);
+    let mut scope_3 = writer.prefix("TunnelInsideIpVersion");
+    if let Some(var_4) = &input.tunnel_inside_ip_version {
+        scope_3.string(var_4.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_5 = writer.prefix("TunnelInsideIpVersion");
-    if let Some(var_6) = &input.tunnel_inside_ip_version {
-        scope_5.string(var_6.as_str());
-    }
-    #[allow(unused_mut)]
-    let mut scope_7 = writer.prefix("TunnelOptions");
-    if let Some(var_8) = &input.tunnel_options {
-        if !var_8.is_empty() {
-            let mut list_10 = scope_7.start_list(true, None);
-            for item_9 in var_8 {
+    let mut scope_5 = writer.prefix("TunnelOptions");
+    if let Some(var_6) = &input.tunnel_options {
+        if !var_6.is_empty() {
+            let mut list_8 = scope_5.start_list(true, None);
+            for item_7 in var_6 {
                 #[allow(unused_mut)]
-                let mut entry_11 = list_10.entry();
-                crate::protocol_serde::shape_vpn_tunnel_options_specification::ser_vpn_tunnel_options_specification(entry_11, item_9)?;
+                let mut entry_9 = list_8.entry();
+                crate::protocol_serde::shape_vpn_tunnel_options_specification::ser_vpn_tunnel_options_specification(entry_9, item_7)?;
             }
-            list_10.finish();
+            list_8.finish();
         }
     }
     #[allow(unused_mut)]
-    let mut scope_12 = writer.prefix("LocalIpv4NetworkCidr");
-    if let Some(var_13) = &input.local_ipv4_network_cidr {
+    let mut scope_10 = writer.prefix("LocalIpv4NetworkCidr");
+    if let Some(var_11) = &input.local_ipv4_network_cidr {
+        scope_10.string(var_11);
+    }
+    #[allow(unused_mut)]
+    let mut scope_12 = writer.prefix("RemoteIpv4NetworkCidr");
+    if let Some(var_13) = &input.remote_ipv4_network_cidr {
         scope_12.string(var_13);
     }
     #[allow(unused_mut)]
-    let mut scope_14 = writer.prefix("RemoteIpv4NetworkCidr");
-    if let Some(var_15) = &input.remote_ipv4_network_cidr {
+    let mut scope_14 = writer.prefix("LocalIpv6NetworkCidr");
+    if let Some(var_15) = &input.local_ipv6_network_cidr {
         scope_14.string(var_15);
     }
     #[allow(unused_mut)]
-    let mut scope_16 = writer.prefix("LocalIpv6NetworkCidr");
-    if let Some(var_17) = &input.local_ipv6_network_cidr {
+    let mut scope_16 = writer.prefix("RemoteIpv6NetworkCidr");
+    if let Some(var_17) = &input.remote_ipv6_network_cidr {
         scope_16.string(var_17);
     }
     #[allow(unused_mut)]
-    let mut scope_18 = writer.prefix("RemoteIpv6NetworkCidr");
-    if let Some(var_19) = &input.remote_ipv6_network_cidr {
+    let mut scope_18 = writer.prefix("OutsideIpAddressType");
+    if let Some(var_19) = &input.outside_ip_address_type {
         scope_18.string(var_19);
     }
     #[allow(unused_mut)]
-    let mut scope_20 = writer.prefix("OutsideIpAddressType");
-    if let Some(var_21) = &input.outside_ip_address_type {
+    let mut scope_20 = writer.prefix("TransportTransitGatewayAttachmentId");
+    if let Some(var_21) = &input.transport_transit_gateway_attachment_id {
         scope_20.string(var_21);
     }
     #[allow(unused_mut)]
-    let mut scope_22 = writer.prefix("TransportTransitGatewayAttachmentId");
-    if let Some(var_23) = &input.transport_transit_gateway_attachment_id {
-        scope_22.string(var_23);
+    let mut scope_22 = writer.prefix("StaticRoutesOnly");
+    if let Some(var_23) = &input.static_routes_only {
+        scope_22.boolean(*var_23);
     }
     Ok(())
 }

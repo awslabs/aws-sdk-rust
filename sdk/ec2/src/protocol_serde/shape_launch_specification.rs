@@ -20,18 +20,8 @@ pub fn de_launch_specification(
                 builder = builder.set_user_data(var_1);
             }
             ,
-            s if s.matches("groupSet") /* SecurityGroups com.amazonaws.ec2#LaunchSpecification$SecurityGroups */ =>  {
-                let var_2 =
-                    Some(
-                        crate::protocol_serde::shape_group_identifier_list::de_group_identifier_list(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_security_groups(var_2);
-            }
-            ,
             s if s.matches("addressingType") /* AddressingType com.amazonaws.ec2#LaunchSpecification$AddressingType */ =>  {
-                let var_3 =
+                let var_2 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -40,21 +30,21 @@ pub fn de_launch_specification(
                         ?
                     )
                 ;
-                builder = builder.set_addressing_type(var_3);
+                builder = builder.set_addressing_type(var_2);
             }
             ,
             s if s.matches("blockDeviceMapping") /* BlockDeviceMappings com.amazonaws.ec2#LaunchSpecification$BlockDeviceMappings */ =>  {
-                let var_4 =
+                let var_3 =
                     Some(
                         crate::protocol_serde::shape_block_device_mapping_list::de_block_device_mapping_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_block_device_mappings(var_4);
+                builder = builder.set_block_device_mappings(var_3);
             }
             ,
             s if s.matches("ebsOptimized") /* EbsOptimized com.amazonaws.ec2#LaunchSpecification$EbsOptimized */ =>  {
-                let var_5 =
+                let var_4 =
                     Some(
                          {
                             <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -65,21 +55,21 @@ pub fn de_launch_specification(
                         ?
                     )
                 ;
-                builder = builder.set_ebs_optimized(var_5);
+                builder = builder.set_ebs_optimized(var_4);
             }
             ,
             s if s.matches("iamInstanceProfile") /* IamInstanceProfile com.amazonaws.ec2#LaunchSpecification$IamInstanceProfile */ =>  {
-                let var_6 =
+                let var_5 =
                     Some(
                         crate::protocol_serde::shape_iam_instance_profile_specification::de_iam_instance_profile_specification(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_iam_instance_profile(var_6);
+                builder = builder.set_iam_instance_profile(var_5);
             }
             ,
             s if s.matches("imageId") /* ImageId com.amazonaws.ec2#LaunchSpecification$ImageId */ =>  {
-                let var_7 =
+                let var_6 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -88,11 +78,11 @@ pub fn de_launch_specification(
                         ?
                     )
                 ;
-                builder = builder.set_image_id(var_7);
+                builder = builder.set_image_id(var_6);
             }
             ,
             s if s.matches("instanceType") /* InstanceType com.amazonaws.ec2#LaunchSpecification$InstanceType */ =>  {
-                let var_8 =
+                let var_7 =
                     Some(
                         Result::<crate::types::InstanceType, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::InstanceType::from(
@@ -102,10 +92,23 @@ pub fn de_launch_specification(
                         ?
                     )
                 ;
-                builder = builder.set_instance_type(var_8);
+                builder = builder.set_instance_type(var_7);
             }
             ,
             s if s.matches("kernelId") /* KernelId com.amazonaws.ec2#LaunchSpecification$KernelId */ =>  {
+                let var_8 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_kernel_id(var_8);
+            }
+            ,
+            s if s.matches("keyName") /* KeyName com.amazonaws.ec2#LaunchSpecification$KeyName */ =>  {
                 let var_9 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -115,11 +118,31 @@ pub fn de_launch_specification(
                         ?
                     )
                 ;
-                builder = builder.set_kernel_id(var_9);
+                builder = builder.set_key_name(var_9);
             }
             ,
-            s if s.matches("keyName") /* KeyName com.amazonaws.ec2#LaunchSpecification$KeyName */ =>  {
+            s if s.matches("networkInterfaceSet") /* NetworkInterfaces com.amazonaws.ec2#LaunchSpecification$NetworkInterfaces */ =>  {
                 let var_10 =
+                    Some(
+                        crate::protocol_serde::shape_instance_network_interface_specification_list::de_instance_network_interface_specification_list(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_network_interfaces(var_10);
+            }
+            ,
+            s if s.matches("placement") /* Placement com.amazonaws.ec2#LaunchSpecification$Placement */ =>  {
+                let var_11 =
+                    Some(
+                        crate::protocol_serde::shape_spot_placement::de_spot_placement(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_placement(var_11);
+            }
+            ,
+            s if s.matches("ramdiskId") /* RamdiskId com.amazonaws.ec2#LaunchSpecification$RamdiskId */ =>  {
+                let var_12 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -128,30 +151,10 @@ pub fn de_launch_specification(
                         ?
                     )
                 ;
-                builder = builder.set_key_name(var_10);
+                builder = builder.set_ramdisk_id(var_12);
             }
             ,
-            s if s.matches("networkInterfaceSet") /* NetworkInterfaces com.amazonaws.ec2#LaunchSpecification$NetworkInterfaces */ =>  {
-                let var_11 =
-                    Some(
-                        crate::protocol_serde::shape_instance_network_interface_specification_list::de_instance_network_interface_specification_list(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_network_interfaces(var_11);
-            }
-            ,
-            s if s.matches("placement") /* Placement com.amazonaws.ec2#LaunchSpecification$Placement */ =>  {
-                let var_12 =
-                    Some(
-                        crate::protocol_serde::shape_spot_placement::de_spot_placement(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_placement(var_12);
-            }
-            ,
-            s if s.matches("ramdiskId") /* RamdiskId com.amazonaws.ec2#LaunchSpecification$RamdiskId */ =>  {
+            s if s.matches("subnetId") /* SubnetId com.amazonaws.ec2#LaunchSpecification$SubnetId */ =>  {
                 let var_13 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -161,20 +164,17 @@ pub fn de_launch_specification(
                         ?
                     )
                 ;
-                builder = builder.set_ramdisk_id(var_13);
+                builder = builder.set_subnet_id(var_13);
             }
             ,
-            s if s.matches("subnetId") /* SubnetId com.amazonaws.ec2#LaunchSpecification$SubnetId */ =>  {
+            s if s.matches("groupSet") /* SecurityGroups com.amazonaws.ec2#LaunchSpecification$SecurityGroups */ =>  {
                 let var_14 =
                     Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
+                        crate::protocol_serde::shape_group_identifier_list::de_group_identifier_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_subnet_id(var_14);
+                builder = builder.set_security_groups(var_14);
             }
             ,
             s if s.matches("monitoring") /* Monitoring com.amazonaws.ec2#LaunchSpecification$Monitoring */ =>  {

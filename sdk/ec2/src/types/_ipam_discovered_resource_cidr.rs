@@ -32,6 +32,8 @@ pub struct IpamDiscoveredResourceCidr {
     pub ip_usage: ::std::option::Option<f64>,
     /// <p>The VPC ID.</p>
     pub vpc_id: ::std::option::Option<::std::string::String>,
+    /// <p>The subnet ID.</p>
+    pub subnet_id: ::std::option::Option<::std::string::String>,
     /// <p>For elastic network interfaces, this is the status of whether or not the elastic network interface is attached.</p>
     pub network_interface_attachment_status: ::std::option::Option<crate::types::IpamNetworkInterfaceAttachmentStatus>,
     /// <p>The last successful resource discovery time.</p>
@@ -90,6 +92,10 @@ impl IpamDiscoveredResourceCidr {
     pub fn vpc_id(&self) -> ::std::option::Option<&str> {
         self.vpc_id.as_deref()
     }
+    /// <p>The subnet ID.</p>
+    pub fn subnet_id(&self) -> ::std::option::Option<&str> {
+        self.subnet_id.as_deref()
+    }
     /// <p>For elastic network interfaces, this is the status of whether or not the elastic network interface is attached.</p>
     pub fn network_interface_attachment_status(&self) -> ::std::option::Option<&crate::types::IpamNetworkInterfaceAttachmentStatus> {
         self.network_interface_attachment_status.as_ref()
@@ -124,6 +130,7 @@ pub struct IpamDiscoveredResourceCidrBuilder {
     pub(crate) resource_tags: ::std::option::Option<::std::vec::Vec<crate::types::IpamResourceTag>>,
     pub(crate) ip_usage: ::std::option::Option<f64>,
     pub(crate) vpc_id: ::std::option::Option<::std::string::String>,
+    pub(crate) subnet_id: ::std::option::Option<::std::string::String>,
     pub(crate) network_interface_attachment_status: ::std::option::Option<crate::types::IpamNetworkInterfaceAttachmentStatus>,
     pub(crate) sample_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) availability_zone_id: ::std::option::Option<::std::string::String>,
@@ -299,6 +306,20 @@ impl IpamDiscoveredResourceCidrBuilder {
     pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.vpc_id
     }
+    /// <p>The subnet ID.</p>
+    pub fn subnet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.subnet_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The subnet ID.</p>
+    pub fn set_subnet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.subnet_id = input;
+        self
+    }
+    /// <p>The subnet ID.</p>
+    pub fn get_subnet_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.subnet_id
+    }
     /// <p>For elastic network interfaces, this is the status of whether or not the elastic network interface is attached.</p>
     pub fn network_interface_attachment_status(mut self, input: crate::types::IpamNetworkInterfaceAttachmentStatus) -> Self {
         self.network_interface_attachment_status = ::std::option::Option::Some(input);
@@ -357,6 +378,7 @@ impl IpamDiscoveredResourceCidrBuilder {
             resource_tags: self.resource_tags,
             ip_usage: self.ip_usage,
             vpc_id: self.vpc_id,
+            subnet_id: self.subnet_id,
             network_interface_attachment_status: self.network_interface_attachment_status,
             sample_time: self.sample_time,
             availability_zone_id: self.availability_zone_id,

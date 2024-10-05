@@ -111,6 +111,56 @@ impl DescribeReservedInstancesFluentBuilder {
         self.config_override = config_override;
         self
     }
+    /// <p>Describes whether the Reserved Instance is Standard or Convertible.</p>
+    pub fn offering_class(mut self, input: crate::types::OfferingClassType) -> Self {
+        self.inner = self.inner.offering_class(input);
+        self
+    }
+    /// <p>Describes whether the Reserved Instance is Standard or Convertible.</p>
+    pub fn set_offering_class(mut self, input: ::std::option::Option<crate::types::OfferingClassType>) -> Self {
+        self.inner = self.inner.set_offering_class(input);
+        self
+    }
+    /// <p>Describes whether the Reserved Instance is Standard or Convertible.</p>
+    pub fn get_offering_class(&self) -> &::std::option::Option<crate::types::OfferingClassType> {
+        self.inner.get_offering_class()
+    }
+    ///
+    /// Appends an item to `ReservedInstancesIds`.
+    ///
+    /// To override the contents of this collection use [`set_reserved_instances_ids`](Self::set_reserved_instances_ids).
+    ///
+    /// <p>One or more Reserved Instance IDs.</p>
+    /// <p>Default: Describes all your Reserved Instances, or only those otherwise specified.</p>
+    pub fn reserved_instances_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.reserved_instances_ids(input.into());
+        self
+    }
+    /// <p>One or more Reserved Instance IDs.</p>
+    /// <p>Default: Describes all your Reserved Instances, or only those otherwise specified.</p>
+    pub fn set_reserved_instances_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.inner = self.inner.set_reserved_instances_ids(input);
+        self
+    }
+    /// <p>One or more Reserved Instance IDs.</p>
+    /// <p>Default: Describes all your Reserved Instances, or only those otherwise specified.</p>
+    pub fn get_reserved_instances_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_reserved_instances_ids()
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn dry_run(mut self, input: bool) -> Self {
+        self.inner = self.inner.dry_run(input);
+        self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_dry_run(input);
+        self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
+    }
     ///
     /// Appends an item to `Filters`.
     ///
@@ -213,56 +263,6 @@ impl DescribeReservedInstancesFluentBuilder {
     /// </ul>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         self.inner.get_filters()
-    }
-    /// <p>Describes whether the Reserved Instance is Standard or Convertible.</p>
-    pub fn offering_class(mut self, input: crate::types::OfferingClassType) -> Self {
-        self.inner = self.inner.offering_class(input);
-        self
-    }
-    /// <p>Describes whether the Reserved Instance is Standard or Convertible.</p>
-    pub fn set_offering_class(mut self, input: ::std::option::Option<crate::types::OfferingClassType>) -> Self {
-        self.inner = self.inner.set_offering_class(input);
-        self
-    }
-    /// <p>Describes whether the Reserved Instance is Standard or Convertible.</p>
-    pub fn get_offering_class(&self) -> &::std::option::Option<crate::types::OfferingClassType> {
-        self.inner.get_offering_class()
-    }
-    ///
-    /// Appends an item to `ReservedInstancesIds`.
-    ///
-    /// To override the contents of this collection use [`set_reserved_instances_ids`](Self::set_reserved_instances_ids).
-    ///
-    /// <p>One or more Reserved Instance IDs.</p>
-    /// <p>Default: Describes all your Reserved Instances, or only those otherwise specified.</p>
-    pub fn reserved_instances_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.inner = self.inner.reserved_instances_ids(input.into());
-        self
-    }
-    /// <p>One or more Reserved Instance IDs.</p>
-    /// <p>Default: Describes all your Reserved Instances, or only those otherwise specified.</p>
-    pub fn set_reserved_instances_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.inner = self.inner.set_reserved_instances_ids(input);
-        self
-    }
-    /// <p>One or more Reserved Instance IDs.</p>
-    /// <p>Default: Describes all your Reserved Instances, or only those otherwise specified.</p>
-    pub fn get_reserved_instances_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
-        self.inner.get_reserved_instances_ids()
-    }
-    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn dry_run(mut self, input: bool) -> Self {
-        self.inner = self.inner.dry_run(input);
-        self
-    }
-    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.inner = self.inner.set_dry_run(input);
-        self
-    }
-    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
-        self.inner.get_dry_run()
     }
     /// <p>The Reserved Instance offering type. If you are using tools that predate the 2011-11-01 API version, you only have access to the <code>Medium Utilization</code> Reserved Instance offering type.</p>
     pub fn offering_type(mut self, input: crate::types::OfferingTypeValues) -> Self {

@@ -31,27 +31,27 @@ pub fn ser_allocate_address_input_input_input(
         scope_9.string(var_10);
     }
     #[allow(unused_mut)]
-    let mut scope_11 = writer.prefix("DryRun");
-    if let Some(var_12) = &input.dry_run {
-        scope_11.boolean(*var_12);
-    }
-    #[allow(unused_mut)]
-    let mut scope_13 = writer.prefix("TagSpecification");
-    if let Some(var_14) = &input.tag_specifications {
-        if !var_14.is_empty() {
-            let mut list_16 = scope_13.start_list(true, Some("item"));
-            for item_15 in var_14 {
+    let mut scope_11 = writer.prefix("TagSpecification");
+    if let Some(var_12) = &input.tag_specifications {
+        if !var_12.is_empty() {
+            let mut list_14 = scope_11.start_list(true, Some("item"));
+            for item_13 in var_12 {
                 #[allow(unused_mut)]
-                let mut entry_17 = list_16.entry();
-                crate::protocol_serde::shape_tag_specification::ser_tag_specification(entry_17, item_15)?;
+                let mut entry_15 = list_14.entry();
+                crate::protocol_serde::shape_tag_specification::ser_tag_specification(entry_15, item_13)?;
             }
-            list_16.finish();
+            list_14.finish();
         }
     }
     #[allow(unused_mut)]
-    let mut scope_18 = writer.prefix("IpamPoolId");
-    if let Some(var_19) = &input.ipam_pool_id {
-        scope_18.string(var_19);
+    let mut scope_16 = writer.prefix("IpamPoolId");
+    if let Some(var_17) = &input.ipam_pool_id {
+        scope_16.string(var_17);
+    }
+    #[allow(unused_mut)]
+    let mut scope_18 = writer.prefix("DryRun");
+    if let Some(var_19) = &input.dry_run {
+        scope_18.boolean(*var_19);
     }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))

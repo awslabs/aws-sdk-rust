@@ -5,136 +5,136 @@ pub fn ser_spot_fleet_launch_specification(
     input: &crate::types::SpotFleetLaunchSpecification,
 ) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
-    let mut scope_1 = writer.prefix("GroupSet");
-    if let Some(var_2) = &input.security_groups {
-        if !var_2.is_empty() {
-            let mut list_4 = scope_1.start_list(true, Some("item"));
-            for item_3 in var_2 {
+    let mut scope_1 = writer.prefix("AddressingType");
+    if let Some(var_2) = &input.addressing_type {
+        scope_1.string(var_2);
+    }
+    #[allow(unused_mut)]
+    let mut scope_3 = writer.prefix("BlockDeviceMapping");
+    if let Some(var_4) = &input.block_device_mappings {
+        if !var_4.is_empty() {
+            let mut list_6 = scope_3.start_list(true, Some("item"));
+            for item_5 in var_4 {
                 #[allow(unused_mut)]
-                let mut entry_5 = list_4.entry();
-                crate::protocol_serde::shape_group_identifier::ser_group_identifier(entry_5, item_3)?;
+                let mut entry_7 = list_6.entry();
+                crate::protocol_serde::shape_block_device_mapping::ser_block_device_mapping(entry_7, item_5)?;
             }
-            list_4.finish();
+            list_6.finish();
         }
     }
     #[allow(unused_mut)]
-    let mut scope_6 = writer.prefix("AddressingType");
-    if let Some(var_7) = &input.addressing_type {
-        scope_6.string(var_7);
+    let mut scope_8 = writer.prefix("EbsOptimized");
+    if let Some(var_9) = &input.ebs_optimized {
+        scope_8.boolean(*var_9);
     }
     #[allow(unused_mut)]
-    let mut scope_8 = writer.prefix("BlockDeviceMapping");
-    if let Some(var_9) = &input.block_device_mappings {
-        if !var_9.is_empty() {
-            let mut list_11 = scope_8.start_list(true, Some("item"));
-            for item_10 in var_9 {
+    let mut scope_10 = writer.prefix("IamInstanceProfile");
+    if let Some(var_11) = &input.iam_instance_profile {
+        crate::protocol_serde::shape_iam_instance_profile_specification::ser_iam_instance_profile_specification(scope_10, var_11)?;
+    }
+    #[allow(unused_mut)]
+    let mut scope_12 = writer.prefix("ImageId");
+    if let Some(var_13) = &input.image_id {
+        scope_12.string(var_13);
+    }
+    #[allow(unused_mut)]
+    let mut scope_14 = writer.prefix("InstanceType");
+    if let Some(var_15) = &input.instance_type {
+        scope_14.string(var_15.as_str());
+    }
+    #[allow(unused_mut)]
+    let mut scope_16 = writer.prefix("KernelId");
+    if let Some(var_17) = &input.kernel_id {
+        scope_16.string(var_17);
+    }
+    #[allow(unused_mut)]
+    let mut scope_18 = writer.prefix("KeyName");
+    if let Some(var_19) = &input.key_name {
+        scope_18.string(var_19);
+    }
+    #[allow(unused_mut)]
+    let mut scope_20 = writer.prefix("Monitoring");
+    if let Some(var_21) = &input.monitoring {
+        crate::protocol_serde::shape_spot_fleet_monitoring::ser_spot_fleet_monitoring(scope_20, var_21)?;
+    }
+    #[allow(unused_mut)]
+    let mut scope_22 = writer.prefix("NetworkInterfaceSet");
+    if let Some(var_23) = &input.network_interfaces {
+        if !var_23.is_empty() {
+            let mut list_25 = scope_22.start_list(true, Some("item"));
+            for item_24 in var_23 {
                 #[allow(unused_mut)]
-                let mut entry_12 = list_11.entry();
-                crate::protocol_serde::shape_block_device_mapping::ser_block_device_mapping(entry_12, item_10)?;
-            }
-            list_11.finish();
-        }
-    }
-    #[allow(unused_mut)]
-    let mut scope_13 = writer.prefix("EbsOptimized");
-    if let Some(var_14) = &input.ebs_optimized {
-        scope_13.boolean(*var_14);
-    }
-    #[allow(unused_mut)]
-    let mut scope_15 = writer.prefix("IamInstanceProfile");
-    if let Some(var_16) = &input.iam_instance_profile {
-        crate::protocol_serde::shape_iam_instance_profile_specification::ser_iam_instance_profile_specification(scope_15, var_16)?;
-    }
-    #[allow(unused_mut)]
-    let mut scope_17 = writer.prefix("ImageId");
-    if let Some(var_18) = &input.image_id {
-        scope_17.string(var_18);
-    }
-    #[allow(unused_mut)]
-    let mut scope_19 = writer.prefix("InstanceType");
-    if let Some(var_20) = &input.instance_type {
-        scope_19.string(var_20.as_str());
-    }
-    #[allow(unused_mut)]
-    let mut scope_21 = writer.prefix("KernelId");
-    if let Some(var_22) = &input.kernel_id {
-        scope_21.string(var_22);
-    }
-    #[allow(unused_mut)]
-    let mut scope_23 = writer.prefix("KeyName");
-    if let Some(var_24) = &input.key_name {
-        scope_23.string(var_24);
-    }
-    #[allow(unused_mut)]
-    let mut scope_25 = writer.prefix("Monitoring");
-    if let Some(var_26) = &input.monitoring {
-        crate::protocol_serde::shape_spot_fleet_monitoring::ser_spot_fleet_monitoring(scope_25, var_26)?;
-    }
-    #[allow(unused_mut)]
-    let mut scope_27 = writer.prefix("NetworkInterfaceSet");
-    if let Some(var_28) = &input.network_interfaces {
-        if !var_28.is_empty() {
-            let mut list_30 = scope_27.start_list(true, Some("item"));
-            for item_29 in var_28 {
-                #[allow(unused_mut)]
-                let mut entry_31 = list_30.entry();
+                let mut entry_26 = list_25.entry();
                 crate::protocol_serde::shape_instance_network_interface_specification::ser_instance_network_interface_specification(
-                    entry_31, item_29,
+                    entry_26, item_24,
                 )?;
             }
-            list_30.finish();
+            list_25.finish();
         }
     }
     #[allow(unused_mut)]
-    let mut scope_32 = writer.prefix("Placement");
-    if let Some(var_33) = &input.placement {
-        crate::protocol_serde::shape_spot_placement::ser_spot_placement(scope_32, var_33)?;
+    let mut scope_27 = writer.prefix("Placement");
+    if let Some(var_28) = &input.placement {
+        crate::protocol_serde::shape_spot_placement::ser_spot_placement(scope_27, var_28)?;
     }
     #[allow(unused_mut)]
-    let mut scope_34 = writer.prefix("RamdiskId");
-    if let Some(var_35) = &input.ramdisk_id {
-        scope_34.string(var_35);
+    let mut scope_29 = writer.prefix("RamdiskId");
+    if let Some(var_30) = &input.ramdisk_id {
+        scope_29.string(var_30);
     }
     #[allow(unused_mut)]
-    let mut scope_36 = writer.prefix("SpotPrice");
-    if let Some(var_37) = &input.spot_price {
-        scope_36.string(var_37);
+    let mut scope_31 = writer.prefix("SpotPrice");
+    if let Some(var_32) = &input.spot_price {
+        scope_31.string(var_32);
     }
     #[allow(unused_mut)]
-    let mut scope_38 = writer.prefix("SubnetId");
-    if let Some(var_39) = &input.subnet_id {
-        scope_38.string(var_39);
+    let mut scope_33 = writer.prefix("SubnetId");
+    if let Some(var_34) = &input.subnet_id {
+        scope_33.string(var_34);
     }
     #[allow(unused_mut)]
-    let mut scope_40 = writer.prefix("UserData");
-    if let Some(var_41) = &input.user_data {
-        scope_40.string(var_41);
+    let mut scope_35 = writer.prefix("UserData");
+    if let Some(var_36) = &input.user_data {
+        scope_35.string(var_36);
     }
     #[allow(unused_mut)]
-    let mut scope_42 = writer.prefix("WeightedCapacity");
-    if let Some(var_43) = &input.weighted_capacity {
-        scope_42.number(
+    let mut scope_37 = writer.prefix("WeightedCapacity");
+    if let Some(var_38) = &input.weighted_capacity {
+        scope_37.number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::Float((*var_43).into()),
+            ::aws_smithy_types::Number::Float((*var_38).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_44 = writer.prefix("TagSpecificationSet");
-    if let Some(var_45) = &input.tag_specifications {
-        if !var_45.is_empty() {
-            let mut list_47 = scope_44.start_list(true, Some("item"));
-            for item_46 in var_45 {
+    let mut scope_39 = writer.prefix("TagSpecificationSet");
+    if let Some(var_40) = &input.tag_specifications {
+        if !var_40.is_empty() {
+            let mut list_42 = scope_39.start_list(true, Some("item"));
+            for item_41 in var_40 {
                 #[allow(unused_mut)]
-                let mut entry_48 = list_47.entry();
-                crate::protocol_serde::shape_spot_fleet_tag_specification::ser_spot_fleet_tag_specification(entry_48, item_46)?;
+                let mut entry_43 = list_42.entry();
+                crate::protocol_serde::shape_spot_fleet_tag_specification::ser_spot_fleet_tag_specification(entry_43, item_41)?;
             }
-            list_47.finish();
+            list_42.finish();
         }
     }
     #[allow(unused_mut)]
-    let mut scope_49 = writer.prefix("InstanceRequirements");
-    if let Some(var_50) = &input.instance_requirements {
-        crate::protocol_serde::shape_instance_requirements::ser_instance_requirements(scope_49, var_50)?;
+    let mut scope_44 = writer.prefix("InstanceRequirements");
+    if let Some(var_45) = &input.instance_requirements {
+        crate::protocol_serde::shape_instance_requirements::ser_instance_requirements(scope_44, var_45)?;
+    }
+    #[allow(unused_mut)]
+    let mut scope_46 = writer.prefix("GroupSet");
+    if let Some(var_47) = &input.security_groups {
+        if !var_47.is_empty() {
+            let mut list_49 = scope_46.start_list(true, Some("item"));
+            for item_48 in var_47 {
+                #[allow(unused_mut)]
+                let mut entry_50 = list_49.entry();
+                crate::protocol_serde::shape_group_identifier::ser_group_identifier(entry_50, item_48)?;
+            }
+            list_49.finish();
+        }
     }
     Ok(())
 }
@@ -147,18 +147,8 @@ pub fn de_spot_fleet_launch_specification(
     let mut builder = crate::types::SpotFleetLaunchSpecification::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
-            s if s.matches("groupSet") /* SecurityGroups com.amazonaws.ec2#SpotFleetLaunchSpecification$SecurityGroups */ =>  {
-                let var_51 =
-                    Some(
-                        crate::protocol_serde::shape_group_identifier_list::de_group_identifier_list(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_security_groups(var_51);
-            }
-            ,
             s if s.matches("addressingType") /* AddressingType com.amazonaws.ec2#SpotFleetLaunchSpecification$AddressingType */ =>  {
-                let var_52 =
+                let var_51 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -167,21 +157,21 @@ pub fn de_spot_fleet_launch_specification(
                         ?
                     )
                 ;
-                builder = builder.set_addressing_type(var_52);
+                builder = builder.set_addressing_type(var_51);
             }
             ,
             s if s.matches("blockDeviceMapping") /* BlockDeviceMappings com.amazonaws.ec2#SpotFleetLaunchSpecification$BlockDeviceMappings */ =>  {
-                let var_53 =
+                let var_52 =
                     Some(
                         crate::protocol_serde::shape_block_device_mapping_list::de_block_device_mapping_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_block_device_mappings(var_53);
+                builder = builder.set_block_device_mappings(var_52);
             }
             ,
             s if s.matches("ebsOptimized") /* EbsOptimized com.amazonaws.ec2#SpotFleetLaunchSpecification$EbsOptimized */ =>  {
-                let var_54 =
+                let var_53 =
                     Some(
                          {
                             <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -192,21 +182,21 @@ pub fn de_spot_fleet_launch_specification(
                         ?
                     )
                 ;
-                builder = builder.set_ebs_optimized(var_54);
+                builder = builder.set_ebs_optimized(var_53);
             }
             ,
             s if s.matches("iamInstanceProfile") /* IamInstanceProfile com.amazonaws.ec2#SpotFleetLaunchSpecification$IamInstanceProfile */ =>  {
-                let var_55 =
+                let var_54 =
                     Some(
                         crate::protocol_serde::shape_iam_instance_profile_specification::de_iam_instance_profile_specification(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_iam_instance_profile(var_55);
+                builder = builder.set_iam_instance_profile(var_54);
             }
             ,
             s if s.matches("imageId") /* ImageId com.amazonaws.ec2#SpotFleetLaunchSpecification$ImageId */ =>  {
-                let var_56 =
+                let var_55 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -215,11 +205,11 @@ pub fn de_spot_fleet_launch_specification(
                         ?
                     )
                 ;
-                builder = builder.set_image_id(var_56);
+                builder = builder.set_image_id(var_55);
             }
             ,
             s if s.matches("instanceType") /* InstanceType com.amazonaws.ec2#SpotFleetLaunchSpecification$InstanceType */ =>  {
-                let var_57 =
+                let var_56 =
                     Some(
                         Result::<crate::types::InstanceType, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::InstanceType::from(
@@ -229,10 +219,23 @@ pub fn de_spot_fleet_launch_specification(
                         ?
                     )
                 ;
-                builder = builder.set_instance_type(var_57);
+                builder = builder.set_instance_type(var_56);
             }
             ,
             s if s.matches("kernelId") /* KernelId com.amazonaws.ec2#SpotFleetLaunchSpecification$KernelId */ =>  {
+                let var_57 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_kernel_id(var_57);
+            }
+            ,
+            s if s.matches("keyName") /* KeyName com.amazonaws.ec2#SpotFleetLaunchSpecification$KeyName */ =>  {
                 let var_58 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -242,11 +245,41 @@ pub fn de_spot_fleet_launch_specification(
                         ?
                     )
                 ;
-                builder = builder.set_kernel_id(var_58);
+                builder = builder.set_key_name(var_58);
             }
             ,
-            s if s.matches("keyName") /* KeyName com.amazonaws.ec2#SpotFleetLaunchSpecification$KeyName */ =>  {
+            s if s.matches("monitoring") /* Monitoring com.amazonaws.ec2#SpotFleetLaunchSpecification$Monitoring */ =>  {
                 let var_59 =
+                    Some(
+                        crate::protocol_serde::shape_spot_fleet_monitoring::de_spot_fleet_monitoring(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_monitoring(var_59);
+            }
+            ,
+            s if s.matches("networkInterfaceSet") /* NetworkInterfaces com.amazonaws.ec2#SpotFleetLaunchSpecification$NetworkInterfaces */ =>  {
+                let var_60 =
+                    Some(
+                        crate::protocol_serde::shape_instance_network_interface_specification_list::de_instance_network_interface_specification_list(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_network_interfaces(var_60);
+            }
+            ,
+            s if s.matches("placement") /* Placement com.amazonaws.ec2#SpotFleetLaunchSpecification$Placement */ =>  {
+                let var_61 =
+                    Some(
+                        crate::protocol_serde::shape_spot_placement::de_spot_placement(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_placement(var_61);
+            }
+            ,
+            s if s.matches("ramdiskId") /* RamdiskId com.amazonaws.ec2#SpotFleetLaunchSpecification$RamdiskId */ =>  {
+                let var_62 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -255,40 +288,10 @@ pub fn de_spot_fleet_launch_specification(
                         ?
                     )
                 ;
-                builder = builder.set_key_name(var_59);
+                builder = builder.set_ramdisk_id(var_62);
             }
             ,
-            s if s.matches("monitoring") /* Monitoring com.amazonaws.ec2#SpotFleetLaunchSpecification$Monitoring */ =>  {
-                let var_60 =
-                    Some(
-                        crate::protocol_serde::shape_spot_fleet_monitoring::de_spot_fleet_monitoring(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_monitoring(var_60);
-            }
-            ,
-            s if s.matches("networkInterfaceSet") /* NetworkInterfaces com.amazonaws.ec2#SpotFleetLaunchSpecification$NetworkInterfaces */ =>  {
-                let var_61 =
-                    Some(
-                        crate::protocol_serde::shape_instance_network_interface_specification_list::de_instance_network_interface_specification_list(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_network_interfaces(var_61);
-            }
-            ,
-            s if s.matches("placement") /* Placement com.amazonaws.ec2#SpotFleetLaunchSpecification$Placement */ =>  {
-                let var_62 =
-                    Some(
-                        crate::protocol_serde::shape_spot_placement::de_spot_placement(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_placement(var_62);
-            }
-            ,
-            s if s.matches("ramdiskId") /* RamdiskId com.amazonaws.ec2#SpotFleetLaunchSpecification$RamdiskId */ =>  {
+            s if s.matches("spotPrice") /* SpotPrice com.amazonaws.ec2#SpotFleetLaunchSpecification$SpotPrice */ =>  {
                 let var_63 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -298,10 +301,10 @@ pub fn de_spot_fleet_launch_specification(
                         ?
                     )
                 ;
-                builder = builder.set_ramdisk_id(var_63);
+                builder = builder.set_spot_price(var_63);
             }
             ,
-            s if s.matches("spotPrice") /* SpotPrice com.amazonaws.ec2#SpotFleetLaunchSpecification$SpotPrice */ =>  {
+            s if s.matches("subnetId") /* SubnetId com.amazonaws.ec2#SpotFleetLaunchSpecification$SubnetId */ =>  {
                 let var_64 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -311,10 +314,10 @@ pub fn de_spot_fleet_launch_specification(
                         ?
                     )
                 ;
-                builder = builder.set_spot_price(var_64);
+                builder = builder.set_subnet_id(var_64);
             }
             ,
-            s if s.matches("subnetId") /* SubnetId com.amazonaws.ec2#SpotFleetLaunchSpecification$SubnetId */ =>  {
+            s if s.matches("userData") /* UserData com.amazonaws.ec2#SpotFleetLaunchSpecification$UserData */ =>  {
                 let var_65 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -324,24 +327,11 @@ pub fn de_spot_fleet_launch_specification(
                         ?
                     )
                 ;
-                builder = builder.set_subnet_id(var_65);
-            }
-            ,
-            s if s.matches("userData") /* UserData com.amazonaws.ec2#SpotFleetLaunchSpecification$UserData */ =>  {
-                let var_66 =
-                    Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_user_data(var_66);
+                builder = builder.set_user_data(var_65);
             }
             ,
             s if s.matches("weightedCapacity") /* WeightedCapacity com.amazonaws.ec2#SpotFleetLaunchSpecification$WeightedCapacity */ =>  {
-                let var_67 =
+                let var_66 =
                     Some(
                          {
                             <f64 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -352,27 +342,37 @@ pub fn de_spot_fleet_launch_specification(
                         ?
                     )
                 ;
-                builder = builder.set_weighted_capacity(var_67);
+                builder = builder.set_weighted_capacity(var_66);
             }
             ,
             s if s.matches("tagSpecificationSet") /* TagSpecifications com.amazonaws.ec2#SpotFleetLaunchSpecification$TagSpecifications */ =>  {
-                let var_68 =
+                let var_67 =
                     Some(
                         crate::protocol_serde::shape_spot_fleet_tag_specification_list::de_spot_fleet_tag_specification_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_tag_specifications(var_68);
+                builder = builder.set_tag_specifications(var_67);
             }
             ,
             s if s.matches("instanceRequirements") /* InstanceRequirements com.amazonaws.ec2#SpotFleetLaunchSpecification$InstanceRequirements */ =>  {
-                let var_69 =
+                let var_68 =
                     Some(
                         crate::protocol_serde::shape_instance_requirements::de_instance_requirements(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_instance_requirements(var_69);
+                builder = builder.set_instance_requirements(var_68);
+            }
+            ,
+            s if s.matches("groupSet") /* SecurityGroups com.amazonaws.ec2#SpotFleetLaunchSpecification$SecurityGroups */ =>  {
+                let var_69 =
+                    Some(
+                        crate::protocol_serde::shape_group_identifier_list::de_group_identifier_list(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_security_groups(var_69);
             }
             ,
             _ => {}

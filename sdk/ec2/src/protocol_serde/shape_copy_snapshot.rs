@@ -48,8 +48,18 @@ pub fn de_copy_snapshot(
     }
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
-            s if s.matches("snapshotId") /* SnapshotId com.amazonaws.ec2.synthetic#CopySnapshotOutput$SnapshotId */ =>  {
+            s if s.matches("tagSet") /* Tags com.amazonaws.ec2.synthetic#CopySnapshotOutput$Tags */ =>  {
                 let var_1 =
+                    Some(
+                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_tags(var_1);
+            }
+            ,
+            s if s.matches("snapshotId") /* SnapshotId com.amazonaws.ec2.synthetic#CopySnapshotOutput$SnapshotId */ =>  {
+                let var_2 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -58,17 +68,7 @@ pub fn de_copy_snapshot(
                         ?
                     )
                 ;
-                builder = builder.set_snapshot_id(var_1);
-            }
-            ,
-            s if s.matches("tagSet") /* Tags com.amazonaws.ec2.synthetic#CopySnapshotOutput$Tags */ =>  {
-                let var_2 =
-                    Some(
-                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_tags(var_2);
+                builder = builder.set_snapshot_id(var_2);
             }
             ,
             _ => {}

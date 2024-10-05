@@ -6,22 +6,22 @@ pub fn ser_describe_conversion_tasks_input_input_input(
     #[allow(unused_mut)]
     let mut writer = ::aws_smithy_query::QueryWriter::new(&mut out, "DescribeConversionTasks", "2016-11-15");
     #[allow(unused_mut)]
-    let mut scope_1 = writer.prefix("ConversionTaskId");
-    if let Some(var_2) = &input.conversion_task_ids {
-        if !var_2.is_empty() {
-            let mut list_4 = scope_1.start_list(true, Some("item"));
-            for item_3 in var_2 {
-                #[allow(unused_mut)]
-                let mut entry_5 = list_4.entry();
-                entry_5.string(item_3);
-            }
-            list_4.finish();
-        }
+    let mut scope_1 = writer.prefix("DryRun");
+    if let Some(var_2) = &input.dry_run {
+        scope_1.boolean(*var_2);
     }
     #[allow(unused_mut)]
-    let mut scope_6 = writer.prefix("DryRun");
-    if let Some(var_7) = &input.dry_run {
-        scope_6.boolean(*var_7);
+    let mut scope_3 = writer.prefix("ConversionTaskId");
+    if let Some(var_4) = &input.conversion_task_ids {
+        if !var_4.is_empty() {
+            let mut list_6 = scope_3.start_list(true, Some("item"));
+            for item_5 in var_4 {
+                #[allow(unused_mut)]
+                let mut entry_7 = list_6.entry();
+                entry_7.string(item_5);
+            }
+            list_6.finish();
+        }
     }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))

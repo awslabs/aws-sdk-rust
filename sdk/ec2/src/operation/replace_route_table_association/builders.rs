@@ -109,20 +109,6 @@ impl ReplaceRouteTableAssociationFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The association ID.</p>
-    pub fn association_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.inner = self.inner.association_id(input.into());
-        self
-    }
-    /// <p>The association ID.</p>
-    pub fn set_association_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.inner = self.inner.set_association_id(input);
-        self
-    }
-    /// <p>The association ID.</p>
-    pub fn get_association_id(&self) -> &::std::option::Option<::std::string::String> {
-        self.inner.get_association_id()
-    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.inner = self.inner.dry_run(input);
@@ -136,6 +122,20 @@ impl ReplaceRouteTableAssociationFluentBuilder {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
         self.inner.get_dry_run()
+    }
+    /// <p>The association ID.</p>
+    pub fn association_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.association_id(input.into());
+        self
+    }
+    /// <p>The association ID.</p>
+    pub fn set_association_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_association_id(input);
+        self
+    }
+    /// <p>The association ID.</p>
+    pub fn get_association_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_association_id()
     }
     /// <p>The ID of the new route table to associate with the subnet.</p>
     pub fn route_table_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

@@ -49,40 +49,40 @@ pub fn ser_create_subnet_input_input_input(
         scope_16.string(var_17);
     }
     #[allow(unused_mut)]
-    let mut scope_18 = writer.prefix("DryRun");
-    if let Some(var_19) = &input.dry_run {
+    let mut scope_18 = writer.prefix("Ipv6Native");
+    if let Some(var_19) = &input.ipv6_native {
         scope_18.boolean(*var_19);
     }
     #[allow(unused_mut)]
-    let mut scope_20 = writer.prefix("Ipv6Native");
-    if let Some(var_21) = &input.ipv6_native {
-        scope_20.boolean(*var_21);
+    let mut scope_20 = writer.prefix("Ipv4IpamPoolId");
+    if let Some(var_21) = &input.ipv4_ipam_pool_id {
+        scope_20.string(var_21);
     }
     #[allow(unused_mut)]
-    let mut scope_22 = writer.prefix("Ipv4IpamPoolId");
-    if let Some(var_23) = &input.ipv4_ipam_pool_id {
-        scope_22.string(var_23);
-    }
-    #[allow(unused_mut)]
-    let mut scope_24 = writer.prefix("Ipv4NetmaskLength");
-    if let Some(var_25) = &input.ipv4_netmask_length {
-        scope_24.number(
+    let mut scope_22 = writer.prefix("Ipv4NetmaskLength");
+    if let Some(var_23) = &input.ipv4_netmask_length {
+        scope_22.number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_25).into()),
+            ::aws_smithy_types::Number::NegInt((*var_23).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_26 = writer.prefix("Ipv6IpamPoolId");
-    if let Some(var_27) = &input.ipv6_ipam_pool_id {
-        scope_26.string(var_27);
+    let mut scope_24 = writer.prefix("Ipv6IpamPoolId");
+    if let Some(var_25) = &input.ipv6_ipam_pool_id {
+        scope_24.string(var_25);
     }
     #[allow(unused_mut)]
-    let mut scope_28 = writer.prefix("Ipv6NetmaskLength");
-    if let Some(var_29) = &input.ipv6_netmask_length {
-        scope_28.number(
+    let mut scope_26 = writer.prefix("Ipv6NetmaskLength");
+    if let Some(var_27) = &input.ipv6_netmask_length {
+        scope_26.number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_29).into()),
+            ::aws_smithy_types::Number::NegInt((*var_27).into()),
         );
+    }
+    #[allow(unused_mut)]
+    let mut scope_28 = writer.prefix("DryRun");
+    if let Some(var_29) = &input.dry_run {
+        scope_28.boolean(*var_29);
     }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))

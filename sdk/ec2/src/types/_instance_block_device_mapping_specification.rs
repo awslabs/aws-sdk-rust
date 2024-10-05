@@ -8,10 +8,10 @@ pub struct InstanceBlockDeviceMappingSpecification {
     pub device_name: ::std::option::Option<::std::string::String>,
     /// <p>Parameters used to automatically set up EBS volumes when the instance is launched.</p>
     pub ebs: ::std::option::Option<crate::types::EbsInstanceBlockDeviceSpecification>,
-    /// <p>suppress the specified device included in the block device mapping.</p>
-    pub no_device: ::std::option::Option<::std::string::String>,
     /// <p>The virtual device name.</p>
     pub virtual_name: ::std::option::Option<::std::string::String>,
+    /// <p>suppress the specified device included in the block device mapping.</p>
+    pub no_device: ::std::option::Option<::std::string::String>,
 }
 impl InstanceBlockDeviceMappingSpecification {
     /// <p>The device name (for example, <code>/dev/sdh</code> or <code>xvdh</code>).</p>
@@ -22,13 +22,13 @@ impl InstanceBlockDeviceMappingSpecification {
     pub fn ebs(&self) -> ::std::option::Option<&crate::types::EbsInstanceBlockDeviceSpecification> {
         self.ebs.as_ref()
     }
-    /// <p>suppress the specified device included in the block device mapping.</p>
-    pub fn no_device(&self) -> ::std::option::Option<&str> {
-        self.no_device.as_deref()
-    }
     /// <p>The virtual device name.</p>
     pub fn virtual_name(&self) -> ::std::option::Option<&str> {
         self.virtual_name.as_deref()
+    }
+    /// <p>suppress the specified device included in the block device mapping.</p>
+    pub fn no_device(&self) -> ::std::option::Option<&str> {
+        self.no_device.as_deref()
     }
 }
 impl InstanceBlockDeviceMappingSpecification {
@@ -44,8 +44,8 @@ impl InstanceBlockDeviceMappingSpecification {
 pub struct InstanceBlockDeviceMappingSpecificationBuilder {
     pub(crate) device_name: ::std::option::Option<::std::string::String>,
     pub(crate) ebs: ::std::option::Option<crate::types::EbsInstanceBlockDeviceSpecification>,
-    pub(crate) no_device: ::std::option::Option<::std::string::String>,
     pub(crate) virtual_name: ::std::option::Option<::std::string::String>,
+    pub(crate) no_device: ::std::option::Option<::std::string::String>,
 }
 impl InstanceBlockDeviceMappingSpecificationBuilder {
     /// <p>The device name (for example, <code>/dev/sdh</code> or <code>xvdh</code>).</p>
@@ -76,20 +76,6 @@ impl InstanceBlockDeviceMappingSpecificationBuilder {
     pub fn get_ebs(&self) -> &::std::option::Option<crate::types::EbsInstanceBlockDeviceSpecification> {
         &self.ebs
     }
-    /// <p>suppress the specified device included in the block device mapping.</p>
-    pub fn no_device(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.no_device = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>suppress the specified device included in the block device mapping.</p>
-    pub fn set_no_device(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.no_device = input;
-        self
-    }
-    /// <p>suppress the specified device included in the block device mapping.</p>
-    pub fn get_no_device(&self) -> &::std::option::Option<::std::string::String> {
-        &self.no_device
-    }
     /// <p>The virtual device name.</p>
     pub fn virtual_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.virtual_name = ::std::option::Option::Some(input.into());
@@ -104,13 +90,27 @@ impl InstanceBlockDeviceMappingSpecificationBuilder {
     pub fn get_virtual_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.virtual_name
     }
+    /// <p>suppress the specified device included in the block device mapping.</p>
+    pub fn no_device(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.no_device = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>suppress the specified device included in the block device mapping.</p>
+    pub fn set_no_device(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.no_device = input;
+        self
+    }
+    /// <p>suppress the specified device included in the block device mapping.</p>
+    pub fn get_no_device(&self) -> &::std::option::Option<::std::string::String> {
+        &self.no_device
+    }
     /// Consumes the builder and constructs a [`InstanceBlockDeviceMappingSpecification`](crate::types::InstanceBlockDeviceMappingSpecification).
     pub fn build(self) -> crate::types::InstanceBlockDeviceMappingSpecification {
         crate::types::InstanceBlockDeviceMappingSpecification {
             device_name: self.device_name,
             ebs: self.ebs,
-            no_device: self.no_device,
             virtual_name: self.virtual_name,
+            no_device: self.no_device,
         }
     }
 }

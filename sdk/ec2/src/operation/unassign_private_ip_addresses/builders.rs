@@ -108,6 +108,25 @@ impl UnassignPrivateIpAddressesFluentBuilder {
         self.config_override = config_override;
         self
     }
+    ///
+    /// Appends an item to `Ipv4Prefixes`.
+    ///
+    /// To override the contents of this collection use [`set_ipv4_prefixes`](Self::set_ipv4_prefixes).
+    ///
+    /// <p>The IPv4 prefixes to unassign from the network interface.</p>
+    pub fn ipv4_prefixes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.ipv4_prefixes(input.into());
+        self
+    }
+    /// <p>The IPv4 prefixes to unassign from the network interface.</p>
+    pub fn set_ipv4_prefixes(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.inner = self.inner.set_ipv4_prefixes(input);
+        self
+    }
+    /// <p>The IPv4 prefixes to unassign from the network interface.</p>
+    pub fn get_ipv4_prefixes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_ipv4_prefixes()
+    }
     /// <p>The ID of the network interface.</p>
     pub fn network_interface_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.network_interface_id(input.into());
@@ -140,24 +159,5 @@ impl UnassignPrivateIpAddressesFluentBuilder {
     /// <p>The secondary private IP addresses to unassign from the network interface. You can specify this option multiple times to unassign more than one IP address.</p>
     pub fn get_private_ip_addresses(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_private_ip_addresses()
-    }
-    ///
-    /// Appends an item to `Ipv4Prefixes`.
-    ///
-    /// To override the contents of this collection use [`set_ipv4_prefixes`](Self::set_ipv4_prefixes).
-    ///
-    /// <p>The IPv4 prefixes to unassign from the network interface.</p>
-    pub fn ipv4_prefixes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.inner = self.inner.ipv4_prefixes(input.into());
-        self
-    }
-    /// <p>The IPv4 prefixes to unassign from the network interface.</p>
-    pub fn set_ipv4_prefixes(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.inner = self.inner.set_ipv4_prefixes(input);
-        self
-    }
-    /// <p>The IPv4 prefixes to unassign from the network interface.</p>
-    pub fn get_ipv4_prefixes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
-        self.inner.get_ipv4_prefixes()
     }
 }

@@ -6,24 +6,24 @@ pub fn ser_import_volume_input_input_input(
     #[allow(unused_mut)]
     let mut writer = ::aws_smithy_query::QueryWriter::new(&mut out, "ImportVolume", "2016-11-15");
     #[allow(unused_mut)]
-    let mut scope_1 = writer.prefix("AvailabilityZone");
-    if let Some(var_2) = &input.availability_zone {
-        scope_1.string(var_2);
+    let mut scope_1 = writer.prefix("DryRun");
+    if let Some(var_2) = &input.dry_run {
+        scope_1.boolean(*var_2);
     }
     #[allow(unused_mut)]
-    let mut scope_3 = writer.prefix("Description");
-    if let Some(var_4) = &input.description {
+    let mut scope_3 = writer.prefix("AvailabilityZone");
+    if let Some(var_4) = &input.availability_zone {
         scope_3.string(var_4);
     }
     #[allow(unused_mut)]
-    let mut scope_5 = writer.prefix("DryRun");
-    if let Some(var_6) = &input.dry_run {
-        scope_5.boolean(*var_6);
+    let mut scope_5 = writer.prefix("Image");
+    if let Some(var_6) = &input.image {
+        crate::protocol_serde::shape_disk_image_detail::ser_disk_image_detail(scope_5, var_6)?;
     }
     #[allow(unused_mut)]
-    let mut scope_7 = writer.prefix("Image");
-    if let Some(var_8) = &input.image {
-        crate::protocol_serde::shape_disk_image_detail::ser_disk_image_detail(scope_7, var_8)?;
+    let mut scope_7 = writer.prefix("Description");
+    if let Some(var_8) = &input.description {
+        scope_7.string(var_8);
     }
     #[allow(unused_mut)]
     let mut scope_9 = writer.prefix("Volume");

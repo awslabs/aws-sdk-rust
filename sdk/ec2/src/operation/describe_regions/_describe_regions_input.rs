@@ -3,6 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeRegionsInput {
+    /// <p>The names of the Regions. You can specify any Regions, whether they are enabled and disabled for your account.</p>
+    pub region_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>Indicates whether to display all Regions, including Regions that are disabled for your account.</p>
+    pub all_regions: ::std::option::Option<bool>,
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub dry_run: ::std::option::Option<bool>,
     /// <p>The filters.</p>
     /// <ul>
     /// <li>
@@ -13,14 +19,22 @@ pub struct DescribeRegionsInput {
     /// <p><code>region-name</code> - The name of the Region (for example, <code>us-east-1</code>).</p></li>
     /// </ul>
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    /// <p>The names of the Regions. You can specify any Regions, whether they are enabled and disabled for your account.</p>
-    pub region_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub dry_run: ::std::option::Option<bool>,
-    /// <p>Indicates whether to display all Regions, including Regions that are disabled for your account.</p>
-    pub all_regions: ::std::option::Option<bool>,
 }
 impl DescribeRegionsInput {
+    /// <p>The names of the Regions. You can specify any Regions, whether they are enabled and disabled for your account.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.region_names.is_none()`.
+    pub fn region_names(&self) -> &[::std::string::String] {
+        self.region_names.as_deref().unwrap_or_default()
+    }
+    /// <p>Indicates whether to display all Regions, including Regions that are disabled for your account.</p>
+    pub fn all_regions(&self) -> ::std::option::Option<bool> {
+        self.all_regions
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn dry_run(&self) -> ::std::option::Option<bool> {
+        self.dry_run
+    }
     /// <p>The filters.</p>
     /// <ul>
     /// <li>
@@ -35,20 +49,6 @@ impl DescribeRegionsInput {
     pub fn filters(&self) -> &[crate::types::Filter] {
         self.filters.as_deref().unwrap_or_default()
     }
-    /// <p>The names of the Regions. You can specify any Regions, whether they are enabled and disabled for your account.</p>
-    ///
-    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.region_names.is_none()`.
-    pub fn region_names(&self) -> &[::std::string::String] {
-        self.region_names.as_deref().unwrap_or_default()
-    }
-    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn dry_run(&self) -> ::std::option::Option<bool> {
-        self.dry_run
-    }
-    /// <p>Indicates whether to display all Regions, including Regions that are disabled for your account.</p>
-    pub fn all_regions(&self) -> ::std::option::Option<bool> {
-        self.all_regions
-    }
 }
 impl DescribeRegionsInput {
     /// Creates a new builder-style object to manufacture [`DescribeRegionsInput`](crate::operation::describe_regions::DescribeRegionsInput).
@@ -61,12 +61,60 @@ impl DescribeRegionsInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct DescribeRegionsInputBuilder {
-    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     pub(crate) region_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) all_regions: ::std::option::Option<bool>,
+    pub(crate) dry_run: ::std::option::Option<bool>,
+    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
 }
 impl DescribeRegionsInputBuilder {
+    /// Appends an item to `region_names`.
+    ///
+    /// To override the contents of this collection use [`set_region_names`](Self::set_region_names).
+    ///
+    /// <p>The names of the Regions. You can specify any Regions, whether they are enabled and disabled for your account.</p>
+    pub fn region_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.region_names.unwrap_or_default();
+        v.push(input.into());
+        self.region_names = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The names of the Regions. You can specify any Regions, whether they are enabled and disabled for your account.</p>
+    pub fn set_region_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.region_names = input;
+        self
+    }
+    /// <p>The names of the Regions. You can specify any Regions, whether they are enabled and disabled for your account.</p>
+    pub fn get_region_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.region_names
+    }
+    /// <p>Indicates whether to display all Regions, including Regions that are disabled for your account.</p>
+    pub fn all_regions(mut self, input: bool) -> Self {
+        self.all_regions = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether to display all Regions, including Regions that are disabled for your account.</p>
+    pub fn set_all_regions(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.all_regions = input;
+        self
+    }
+    /// <p>Indicates whether to display all Regions, including Regions that are disabled for your account.</p>
+    pub fn get_all_regions(&self) -> &::std::option::Option<bool> {
+        &self.all_regions
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn dry_run(mut self, input: bool) -> Self {
+        self.dry_run = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.dry_run = input;
+        self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
+    }
     /// Appends an item to `filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
@@ -111,63 +159,15 @@ impl DescribeRegionsInputBuilder {
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         &self.filters
     }
-    /// Appends an item to `region_names`.
-    ///
-    /// To override the contents of this collection use [`set_region_names`](Self::set_region_names).
-    ///
-    /// <p>The names of the Regions. You can specify any Regions, whether they are enabled and disabled for your account.</p>
-    pub fn region_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        let mut v = self.region_names.unwrap_or_default();
-        v.push(input.into());
-        self.region_names = ::std::option::Option::Some(v);
-        self
-    }
-    /// <p>The names of the Regions. You can specify any Regions, whether they are enabled and disabled for your account.</p>
-    pub fn set_region_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.region_names = input;
-        self
-    }
-    /// <p>The names of the Regions. You can specify any Regions, whether they are enabled and disabled for your account.</p>
-    pub fn get_region_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
-        &self.region_names
-    }
-    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn dry_run(mut self, input: bool) -> Self {
-        self.dry_run = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
-    }
-    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
-        &self.dry_run
-    }
-    /// <p>Indicates whether to display all Regions, including Regions that are disabled for your account.</p>
-    pub fn all_regions(mut self, input: bool) -> Self {
-        self.all_regions = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>Indicates whether to display all Regions, including Regions that are disabled for your account.</p>
-    pub fn set_all_regions(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.all_regions = input;
-        self
-    }
-    /// <p>Indicates whether to display all Regions, including Regions that are disabled for your account.</p>
-    pub fn get_all_regions(&self) -> &::std::option::Option<bool> {
-        &self.all_regions
-    }
     /// Consumes the builder and constructs a [`DescribeRegionsInput`](crate::operation::describe_regions::DescribeRegionsInput).
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::describe_regions::DescribeRegionsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_regions::DescribeRegionsInput {
-            filters: self.filters,
             region_names: self.region_names,
-            dry_run: self.dry_run,
             all_regions: self.all_regions,
+            dry_run: self.dry_run,
+            filters: self.filters,
         })
     }
 }

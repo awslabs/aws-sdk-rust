@@ -57,28 +57,18 @@ pub fn de_describe_snapshot_attribute(
     }
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
-            s if s.matches("createVolumePermission") /* CreateVolumePermissions com.amazonaws.ec2.synthetic#DescribeSnapshotAttributeOutput$CreateVolumePermissions */ =>  {
-                let var_1 =
-                    Some(
-                        crate::protocol_serde::shape_create_volume_permission_list::de_create_volume_permission_list(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_create_volume_permissions(var_1);
-            }
-            ,
             s if s.matches("productCodes") /* ProductCodes com.amazonaws.ec2.synthetic#DescribeSnapshotAttributeOutput$ProductCodes */ =>  {
-                let var_2 =
+                let var_1 =
                     Some(
                         crate::protocol_serde::shape_product_code_list::de_product_code_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_product_codes(var_2);
+                builder = builder.set_product_codes(var_1);
             }
             ,
             s if s.matches("snapshotId") /* SnapshotId com.amazonaws.ec2.synthetic#DescribeSnapshotAttributeOutput$SnapshotId */ =>  {
-                let var_3 =
+                let var_2 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -87,7 +77,17 @@ pub fn de_describe_snapshot_attribute(
                         ?
                     )
                 ;
-                builder = builder.set_snapshot_id(var_3);
+                builder = builder.set_snapshot_id(var_2);
+            }
+            ,
+            s if s.matches("createVolumePermission") /* CreateVolumePermissions com.amazonaws.ec2.synthetic#DescribeSnapshotAttributeOutput$CreateVolumePermissions */ =>  {
+                let var_3 =
+                    Some(
+                        crate::protocol_serde::shape_create_volume_permission_list::de_create_volume_permission_list(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_create_volume_permissions(var_3);
             }
             ,
             _ => {}

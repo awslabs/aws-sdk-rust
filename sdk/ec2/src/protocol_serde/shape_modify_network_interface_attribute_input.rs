@@ -6,62 +6,62 @@ pub fn ser_modify_network_interface_attribute_input_input_input(
     #[allow(unused_mut)]
     let mut writer = ::aws_smithy_query::QueryWriter::new(&mut out, "ModifyNetworkInterfaceAttribute", "2016-11-15");
     #[allow(unused_mut)]
-    let mut scope_1 = writer.prefix("Attachment");
-    if let Some(var_2) = &input.attachment {
-        crate::protocol_serde::shape_network_interface_attachment_changes::ser_network_interface_attachment_changes(scope_1, var_2)?;
+    let mut scope_1 = writer.prefix("EnaSrdSpecification");
+    if let Some(var_2) = &input.ena_srd_specification {
+        crate::protocol_serde::shape_ena_srd_specification::ser_ena_srd_specification(scope_1, var_2)?;
     }
     #[allow(unused_mut)]
-    let mut scope_3 = writer.prefix("Description");
-    if let Some(var_4) = &input.description {
-        crate::protocol_serde::shape_attribute_value::ser_attribute_value(scope_3, var_4)?;
+    let mut scope_3 = writer.prefix("EnablePrimaryIpv6");
+    if let Some(var_4) = &input.enable_primary_ipv6 {
+        scope_3.boolean(*var_4);
     }
     #[allow(unused_mut)]
-    let mut scope_5 = writer.prefix("DryRun");
-    if let Some(var_6) = &input.dry_run {
-        scope_5.boolean(*var_6);
+    let mut scope_5 = writer.prefix("ConnectionTrackingSpecification");
+    if let Some(var_6) = &input.connection_tracking_specification {
+        crate::protocol_serde::shape_connection_tracking_specification_request::ser_connection_tracking_specification_request(scope_5, var_6)?;
     }
     #[allow(unused_mut)]
-    let mut scope_7 = writer.prefix("SecurityGroupId");
-    if let Some(var_8) = &input.groups {
-        if !var_8.is_empty() {
-            let mut list_10 = scope_7.start_list(true, Some("SecurityGroupId"));
-            for item_9 in var_8 {
+    let mut scope_7 = writer.prefix("AssociatePublicIpAddress");
+    if let Some(var_8) = &input.associate_public_ip_address {
+        scope_7.boolean(*var_8);
+    }
+    #[allow(unused_mut)]
+    let mut scope_9 = writer.prefix("DryRun");
+    if let Some(var_10) = &input.dry_run {
+        scope_9.boolean(*var_10);
+    }
+    #[allow(unused_mut)]
+    let mut scope_11 = writer.prefix("NetworkInterfaceId");
+    if let Some(var_12) = &input.network_interface_id {
+        scope_11.string(var_12);
+    }
+    #[allow(unused_mut)]
+    let mut scope_13 = writer.prefix("Description");
+    if let Some(var_14) = &input.description {
+        crate::protocol_serde::shape_attribute_value::ser_attribute_value(scope_13, var_14)?;
+    }
+    #[allow(unused_mut)]
+    let mut scope_15 = writer.prefix("SourceDestCheck");
+    if let Some(var_16) = &input.source_dest_check {
+        crate::protocol_serde::shape_attribute_boolean_value::ser_attribute_boolean_value(scope_15, var_16)?;
+    }
+    #[allow(unused_mut)]
+    let mut scope_17 = writer.prefix("SecurityGroupId");
+    if let Some(var_18) = &input.groups {
+        if !var_18.is_empty() {
+            let mut list_20 = scope_17.start_list(true, Some("SecurityGroupId"));
+            for item_19 in var_18 {
                 #[allow(unused_mut)]
-                let mut entry_11 = list_10.entry();
-                entry_11.string(item_9);
+                let mut entry_21 = list_20.entry();
+                entry_21.string(item_19);
             }
-            list_10.finish();
+            list_20.finish();
         }
     }
     #[allow(unused_mut)]
-    let mut scope_12 = writer.prefix("NetworkInterfaceId");
-    if let Some(var_13) = &input.network_interface_id {
-        scope_12.string(var_13);
-    }
-    #[allow(unused_mut)]
-    let mut scope_14 = writer.prefix("SourceDestCheck");
-    if let Some(var_15) = &input.source_dest_check {
-        crate::protocol_serde::shape_attribute_boolean_value::ser_attribute_boolean_value(scope_14, var_15)?;
-    }
-    #[allow(unused_mut)]
-    let mut scope_16 = writer.prefix("EnaSrdSpecification");
-    if let Some(var_17) = &input.ena_srd_specification {
-        crate::protocol_serde::shape_ena_srd_specification::ser_ena_srd_specification(scope_16, var_17)?;
-    }
-    #[allow(unused_mut)]
-    let mut scope_18 = writer.prefix("EnablePrimaryIpv6");
-    if let Some(var_19) = &input.enable_primary_ipv6 {
-        scope_18.boolean(*var_19);
-    }
-    #[allow(unused_mut)]
-    let mut scope_20 = writer.prefix("ConnectionTrackingSpecification");
-    if let Some(var_21) = &input.connection_tracking_specification {
-        crate::protocol_serde::shape_connection_tracking_specification_request::ser_connection_tracking_specification_request(scope_20, var_21)?;
-    }
-    #[allow(unused_mut)]
-    let mut scope_22 = writer.prefix("AssociatePublicIpAddress");
-    if let Some(var_23) = &input.associate_public_ip_address {
-        scope_22.boolean(*var_23);
+    let mut scope_22 = writer.prefix("Attachment");
+    if let Some(var_23) = &input.attachment {
+        crate::protocol_serde::shape_network_interface_attachment_changes::ser_network_interface_attachment_changes(scope_22, var_23)?;
     }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))

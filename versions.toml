@@ -755,8 +755,8 @@ model_hash = '5ec7004d46e2bb30c8d974da3846e960c6d52a00307ee4cc8a62b95566a1fc84'
 [crates.aws-sdk-ec2]
 category = 'AwsSdk'
 version = '1.77.0'
-source_hash = '24804492ecd0423d4c453670139cfd9a90fd29bc422c1dfca8c13d425092507b'
-model_hash = '989da0c7a7865d11a5d37caae0bf28843b3657c1b434bbe46caa1af68e717a3e'
+source_hash = '40ce781c4c96ceaab98a4f9f0e38e5d4e0b5a0d75ca20de04c64a171a2001386'
+model_hash = '44233a607200d7605b3a08f7c46f96222ff3c34544bb03746632dd5fbf38baf8'
 
 [crates.aws-sdk-ec2instanceconnect]
 category = 'AwsSdk'
@@ -1074,7 +1074,7 @@ model_hash = '8b7402d76f582f5fa80d28816367eb766bf53a7d78502626ed14defd1943e0fb'
 category = 'AwsSdk'
 version = '1.45.0'
 source_hash = 'a97dcd22f8d5479826695ea7b5b7c2a8d140ef2e1b48a63749198b1742b44f5a'
-model_hash = '3b983cfeaff668f43c046ba541674ed11c5466da9ccf7044b85f01486ce73abe'
+model_hash = 'bd0477aea3b327ff1360119ae34181153984612148c4efa99c99df9feb4884ba'
 
 [crates.aws-sdk-iotdeviceadvisor]
 category = 'AwsSdk'

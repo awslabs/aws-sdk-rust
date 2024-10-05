@@ -4,48 +4,6 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Instance {
-    /// <p>The AMI launch index, which can be used to find this instance in the launch group.</p>
-    pub ami_launch_index: ::std::option::Option<i32>,
-    /// <p>The ID of the AMI used to launch the instance.</p>
-    pub image_id: ::std::option::Option<::std::string::String>,
-    /// <p>The ID of the instance.</p>
-    pub instance_id: ::std::option::Option<::std::string::String>,
-    /// <p>The instance type.</p>
-    pub instance_type: ::std::option::Option<crate::types::InstanceType>,
-    /// <p>The kernel associated with this instance, if applicable.</p>
-    pub kernel_id: ::std::option::Option<::std::string::String>,
-    /// <p>The name of the key pair, if this instance was launched with an associated key pair.</p>
-    pub key_name: ::std::option::Option<::std::string::String>,
-    /// <p>The time the instance was launched.</p>
-    pub launch_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The monitoring for the instance.</p>
-    pub monitoring: ::std::option::Option<crate::types::Monitoring>,
-    /// <p>The location where the instance launched, if applicable.</p>
-    pub placement: ::std::option::Option<crate::types::Placement>,
-    /// <p>The platform. This value is <code>windows</code> for Windows instances; otherwise, it is empty.</p>
-    pub platform: ::std::option::Option<crate::types::PlatformValues>,
-    /// <p>\[IPv4 only\] The private DNS hostname name assigned to the instance. This DNS hostname can only be used inside the Amazon EC2 network. This name is not available until the instance enters the running state.</p>
-    /// <p>The Amazon-provided DNS server resolves Amazon-provided private DNS hostnames if you've enabled DNS resolution and DNS hostnames in your VPC. If you are not using the Amazon-provided DNS server in your VPC, your custom domain name servers must resolve the hostname as appropriate.</p>
-    pub private_dns_name: ::std::option::Option<::std::string::String>,
-    /// <p>The private IPv4 address assigned to the instance.</p>
-    pub private_ip_address: ::std::option::Option<::std::string::String>,
-    /// <p>The product codes attached to this instance, if applicable.</p>
-    pub product_codes: ::std::option::Option<::std::vec::Vec<crate::types::ProductCode>>,
-    /// <p>\[IPv4 only\] The public DNS name assigned to the instance. This name is not available until the instance enters the running state. This name is only available if you've enabled DNS hostnames for your VPC.</p>
-    pub public_dns_name: ::std::option::Option<::std::string::String>,
-    /// <p>The public IPv4 address, or the Carrier IP address assigned to the instance, if applicable.</p>
-    /// <p>A Carrier IP address only applies to an instance launched in a subnet associated with a Wavelength Zone.</p>
-    pub public_ip_address: ::std::option::Option<::std::string::String>,
-    /// <p>The RAM disk associated with this instance, if applicable.</p>
-    pub ramdisk_id: ::std::option::Option<::std::string::String>,
-    /// <p>The current state of the instance.</p>
-    pub state: ::std::option::Option<crate::types::InstanceState>,
-    /// <p>The reason for the most recent state transition. This might be an empty string.</p>
-    pub state_transition_reason: ::std::option::Option<::std::string::String>,
-    /// <p>The ID of the subnet in which the instance is running.</p>
-    pub subnet_id: ::std::option::Option<::std::string::String>,
-    /// <p>The ID of the VPC in which the instance is running.</p>
-    pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>The architecture of the image.</p>
     pub architecture: ::std::option::Option<crate::types::ArchitectureValues>,
     /// <p>Any block device mapping entries for the instance.</p>
@@ -125,92 +83,50 @@ pub struct Instance {
     pub maintenance_options: ::std::option::Option<crate::types::InstanceMaintenanceOptions>,
     /// <p>The boot mode that is used to boot the instance at launch or start. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot modes</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub current_instance_boot_mode: ::std::option::Option<crate::types::InstanceBootModeValues>,
-}
-impl Instance {
-    /// <p>The AMI launch index, which can be used to find this instance in the launch group.</p>
-    pub fn ami_launch_index(&self) -> ::std::option::Option<i32> {
-        self.ami_launch_index
-    }
-    /// <p>The ID of the AMI used to launch the instance.</p>
-    pub fn image_id(&self) -> ::std::option::Option<&str> {
-        self.image_id.as_deref()
-    }
     /// <p>The ID of the instance.</p>
-    pub fn instance_id(&self) -> ::std::option::Option<&str> {
-        self.instance_id.as_deref()
-    }
-    /// <p>The instance type.</p>
-    pub fn instance_type(&self) -> ::std::option::Option<&crate::types::InstanceType> {
-        self.instance_type.as_ref()
-    }
-    /// <p>The kernel associated with this instance, if applicable.</p>
-    pub fn kernel_id(&self) -> ::std::option::Option<&str> {
-        self.kernel_id.as_deref()
-    }
-    /// <p>The name of the key pair, if this instance was launched with an associated key pair.</p>
-    pub fn key_name(&self) -> ::std::option::Option<&str> {
-        self.key_name.as_deref()
-    }
-    /// <p>The time the instance was launched.</p>
-    pub fn launch_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.launch_time.as_ref()
-    }
-    /// <p>The monitoring for the instance.</p>
-    pub fn monitoring(&self) -> ::std::option::Option<&crate::types::Monitoring> {
-        self.monitoring.as_ref()
-    }
-    /// <p>The location where the instance launched, if applicable.</p>
-    pub fn placement(&self) -> ::std::option::Option<&crate::types::Placement> {
-        self.placement.as_ref()
-    }
-    /// <p>The platform. This value is <code>windows</code> for Windows instances; otherwise, it is empty.</p>
-    pub fn platform(&self) -> ::std::option::Option<&crate::types::PlatformValues> {
-        self.platform.as_ref()
-    }
+    pub instance_id: ::std::option::Option<::std::string::String>,
+    /// <p>The ID of the AMI used to launch the instance.</p>
+    pub image_id: ::std::option::Option<::std::string::String>,
+    /// <p>The current state of the instance.</p>
+    pub state: ::std::option::Option<crate::types::InstanceState>,
     /// <p>\[IPv4 only\] The private DNS hostname name assigned to the instance. This DNS hostname can only be used inside the Amazon EC2 network. This name is not available until the instance enters the running state.</p>
     /// <p>The Amazon-provided DNS server resolves Amazon-provided private DNS hostnames if you've enabled DNS resolution and DNS hostnames in your VPC. If you are not using the Amazon-provided DNS server in your VPC, your custom domain name servers must resolve the hostname as appropriate.</p>
-    pub fn private_dns_name(&self) -> ::std::option::Option<&str> {
-        self.private_dns_name.as_deref()
-    }
-    /// <p>The private IPv4 address assigned to the instance.</p>
-    pub fn private_ip_address(&self) -> ::std::option::Option<&str> {
-        self.private_ip_address.as_deref()
-    }
-    /// <p>The product codes attached to this instance, if applicable.</p>
-    ///
-    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.product_codes.is_none()`.
-    pub fn product_codes(&self) -> &[crate::types::ProductCode] {
-        self.product_codes.as_deref().unwrap_or_default()
-    }
+    pub private_dns_name: ::std::option::Option<::std::string::String>,
     /// <p>\[IPv4 only\] The public DNS name assigned to the instance. This name is not available until the instance enters the running state. This name is only available if you've enabled DNS hostnames for your VPC.</p>
-    pub fn public_dns_name(&self) -> ::std::option::Option<&str> {
-        self.public_dns_name.as_deref()
-    }
+    pub public_dns_name: ::std::option::Option<::std::string::String>,
+    /// <p>The reason for the most recent state transition. This might be an empty string.</p>
+    pub state_transition_reason: ::std::option::Option<::std::string::String>,
+    /// <p>The name of the key pair, if this instance was launched with an associated key pair.</p>
+    pub key_name: ::std::option::Option<::std::string::String>,
+    /// <p>The AMI launch index, which can be used to find this instance in the launch group.</p>
+    pub ami_launch_index: ::std::option::Option<i32>,
+    /// <p>The product codes attached to this instance, if applicable.</p>
+    pub product_codes: ::std::option::Option<::std::vec::Vec<crate::types::ProductCode>>,
+    /// <p>The instance type.</p>
+    pub instance_type: ::std::option::Option<crate::types::InstanceType>,
+    /// <p>The time the instance was launched.</p>
+    pub launch_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The location where the instance launched, if applicable.</p>
+    pub placement: ::std::option::Option<crate::types::Placement>,
+    /// <p>The kernel associated with this instance, if applicable.</p>
+    pub kernel_id: ::std::option::Option<::std::string::String>,
+    /// <p>The RAM disk associated with this instance, if applicable.</p>
+    pub ramdisk_id: ::std::option::Option<::std::string::String>,
+    /// <p>The platform. This value is <code>windows</code> for Windows instances; otherwise, it is empty.</p>
+    pub platform: ::std::option::Option<crate::types::PlatformValues>,
+    /// <p>The monitoring for the instance.</p>
+    pub monitoring: ::std::option::Option<crate::types::Monitoring>,
+    /// <p>The ID of the subnet in which the instance is running.</p>
+    pub subnet_id: ::std::option::Option<::std::string::String>,
+    /// <p>The ID of the VPC in which the instance is running.</p>
+    pub vpc_id: ::std::option::Option<::std::string::String>,
+    /// <p>The private IPv4 address assigned to the instance.</p>
+    pub private_ip_address: ::std::option::Option<::std::string::String>,
     /// <p>The public IPv4 address, or the Carrier IP address assigned to the instance, if applicable.</p>
     /// <p>A Carrier IP address only applies to an instance launched in a subnet associated with a Wavelength Zone.</p>
-    pub fn public_ip_address(&self) -> ::std::option::Option<&str> {
-        self.public_ip_address.as_deref()
-    }
-    /// <p>The RAM disk associated with this instance, if applicable.</p>
-    pub fn ramdisk_id(&self) -> ::std::option::Option<&str> {
-        self.ramdisk_id.as_deref()
-    }
-    /// <p>The current state of the instance.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::InstanceState> {
-        self.state.as_ref()
-    }
-    /// <p>The reason for the most recent state transition. This might be an empty string.</p>
-    pub fn state_transition_reason(&self) -> ::std::option::Option<&str> {
-        self.state_transition_reason.as_deref()
-    }
-    /// <p>The ID of the subnet in which the instance is running.</p>
-    pub fn subnet_id(&self) -> ::std::option::Option<&str> {
-        self.subnet_id.as_deref()
-    }
-    /// <p>The ID of the VPC in which the instance is running.</p>
-    pub fn vpc_id(&self) -> ::std::option::Option<&str> {
-        self.vpc_id.as_deref()
-    }
+    pub public_ip_address: ::std::option::Option<::std::string::String>,
+}
+impl Instance {
     /// <p>The architecture of the image.</p>
     pub fn architecture(&self) -> ::std::option::Option<&crate::types::ArchitectureValues> {
         self.architecture.as_ref()
@@ -378,6 +294,90 @@ impl Instance {
     pub fn current_instance_boot_mode(&self) -> ::std::option::Option<&crate::types::InstanceBootModeValues> {
         self.current_instance_boot_mode.as_ref()
     }
+    /// <p>The ID of the instance.</p>
+    pub fn instance_id(&self) -> ::std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>The ID of the AMI used to launch the instance.</p>
+    pub fn image_id(&self) -> ::std::option::Option<&str> {
+        self.image_id.as_deref()
+    }
+    /// <p>The current state of the instance.</p>
+    pub fn state(&self) -> ::std::option::Option<&crate::types::InstanceState> {
+        self.state.as_ref()
+    }
+    /// <p>\[IPv4 only\] The private DNS hostname name assigned to the instance. This DNS hostname can only be used inside the Amazon EC2 network. This name is not available until the instance enters the running state.</p>
+    /// <p>The Amazon-provided DNS server resolves Amazon-provided private DNS hostnames if you've enabled DNS resolution and DNS hostnames in your VPC. If you are not using the Amazon-provided DNS server in your VPC, your custom domain name servers must resolve the hostname as appropriate.</p>
+    pub fn private_dns_name(&self) -> ::std::option::Option<&str> {
+        self.private_dns_name.as_deref()
+    }
+    /// <p>\[IPv4 only\] The public DNS name assigned to the instance. This name is not available until the instance enters the running state. This name is only available if you've enabled DNS hostnames for your VPC.</p>
+    pub fn public_dns_name(&self) -> ::std::option::Option<&str> {
+        self.public_dns_name.as_deref()
+    }
+    /// <p>The reason for the most recent state transition. This might be an empty string.</p>
+    pub fn state_transition_reason(&self) -> ::std::option::Option<&str> {
+        self.state_transition_reason.as_deref()
+    }
+    /// <p>The name of the key pair, if this instance was launched with an associated key pair.</p>
+    pub fn key_name(&self) -> ::std::option::Option<&str> {
+        self.key_name.as_deref()
+    }
+    /// <p>The AMI launch index, which can be used to find this instance in the launch group.</p>
+    pub fn ami_launch_index(&self) -> ::std::option::Option<i32> {
+        self.ami_launch_index
+    }
+    /// <p>The product codes attached to this instance, if applicable.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.product_codes.is_none()`.
+    pub fn product_codes(&self) -> &[crate::types::ProductCode] {
+        self.product_codes.as_deref().unwrap_or_default()
+    }
+    /// <p>The instance type.</p>
+    pub fn instance_type(&self) -> ::std::option::Option<&crate::types::InstanceType> {
+        self.instance_type.as_ref()
+    }
+    /// <p>The time the instance was launched.</p>
+    pub fn launch_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.launch_time.as_ref()
+    }
+    /// <p>The location where the instance launched, if applicable.</p>
+    pub fn placement(&self) -> ::std::option::Option<&crate::types::Placement> {
+        self.placement.as_ref()
+    }
+    /// <p>The kernel associated with this instance, if applicable.</p>
+    pub fn kernel_id(&self) -> ::std::option::Option<&str> {
+        self.kernel_id.as_deref()
+    }
+    /// <p>The RAM disk associated with this instance, if applicable.</p>
+    pub fn ramdisk_id(&self) -> ::std::option::Option<&str> {
+        self.ramdisk_id.as_deref()
+    }
+    /// <p>The platform. This value is <code>windows</code> for Windows instances; otherwise, it is empty.</p>
+    pub fn platform(&self) -> ::std::option::Option<&crate::types::PlatformValues> {
+        self.platform.as_ref()
+    }
+    /// <p>The monitoring for the instance.</p>
+    pub fn monitoring(&self) -> ::std::option::Option<&crate::types::Monitoring> {
+        self.monitoring.as_ref()
+    }
+    /// <p>The ID of the subnet in which the instance is running.</p>
+    pub fn subnet_id(&self) -> ::std::option::Option<&str> {
+        self.subnet_id.as_deref()
+    }
+    /// <p>The ID of the VPC in which the instance is running.</p>
+    pub fn vpc_id(&self) -> ::std::option::Option<&str> {
+        self.vpc_id.as_deref()
+    }
+    /// <p>The private IPv4 address assigned to the instance.</p>
+    pub fn private_ip_address(&self) -> ::std::option::Option<&str> {
+        self.private_ip_address.as_deref()
+    }
+    /// <p>The public IPv4 address, or the Carrier IP address assigned to the instance, if applicable.</p>
+    /// <p>A Carrier IP address only applies to an instance launched in a subnet associated with a Wavelength Zone.</p>
+    pub fn public_ip_address(&self) -> ::std::option::Option<&str> {
+        self.public_ip_address.as_deref()
+    }
 }
 impl Instance {
     /// Creates a new builder-style object to manufacture [`Instance`](crate::types::Instance).
@@ -390,26 +390,6 @@ impl Instance {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct InstanceBuilder {
-    pub(crate) ami_launch_index: ::std::option::Option<i32>,
-    pub(crate) image_id: ::std::option::Option<::std::string::String>,
-    pub(crate) instance_id: ::std::option::Option<::std::string::String>,
-    pub(crate) instance_type: ::std::option::Option<crate::types::InstanceType>,
-    pub(crate) kernel_id: ::std::option::Option<::std::string::String>,
-    pub(crate) key_name: ::std::option::Option<::std::string::String>,
-    pub(crate) launch_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) monitoring: ::std::option::Option<crate::types::Monitoring>,
-    pub(crate) placement: ::std::option::Option<crate::types::Placement>,
-    pub(crate) platform: ::std::option::Option<crate::types::PlatformValues>,
-    pub(crate) private_dns_name: ::std::option::Option<::std::string::String>,
-    pub(crate) private_ip_address: ::std::option::Option<::std::string::String>,
-    pub(crate) product_codes: ::std::option::Option<::std::vec::Vec<crate::types::ProductCode>>,
-    pub(crate) public_dns_name: ::std::option::Option<::std::string::String>,
-    pub(crate) public_ip_address: ::std::option::Option<::std::string::String>,
-    pub(crate) ramdisk_id: ::std::option::Option<::std::string::String>,
-    pub(crate) state: ::std::option::Option<crate::types::InstanceState>,
-    pub(crate) state_transition_reason: ::std::option::Option<::std::string::String>,
-    pub(crate) subnet_id: ::std::option::Option<::std::string::String>,
-    pub(crate) vpc_id: ::std::option::Option<::std::string::String>,
     pub(crate) architecture: ::std::option::Option<crate::types::ArchitectureValues>,
     pub(crate) block_device_mappings: ::std::option::Option<::std::vec::Vec<crate::types::InstanceBlockDeviceMapping>>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
@@ -448,300 +428,28 @@ pub struct InstanceBuilder {
     pub(crate) tpm_support: ::std::option::Option<::std::string::String>,
     pub(crate) maintenance_options: ::std::option::Option<crate::types::InstanceMaintenanceOptions>,
     pub(crate) current_instance_boot_mode: ::std::option::Option<crate::types::InstanceBootModeValues>,
+    pub(crate) instance_id: ::std::option::Option<::std::string::String>,
+    pub(crate) image_id: ::std::option::Option<::std::string::String>,
+    pub(crate) state: ::std::option::Option<crate::types::InstanceState>,
+    pub(crate) private_dns_name: ::std::option::Option<::std::string::String>,
+    pub(crate) public_dns_name: ::std::option::Option<::std::string::String>,
+    pub(crate) state_transition_reason: ::std::option::Option<::std::string::String>,
+    pub(crate) key_name: ::std::option::Option<::std::string::String>,
+    pub(crate) ami_launch_index: ::std::option::Option<i32>,
+    pub(crate) product_codes: ::std::option::Option<::std::vec::Vec<crate::types::ProductCode>>,
+    pub(crate) instance_type: ::std::option::Option<crate::types::InstanceType>,
+    pub(crate) launch_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) placement: ::std::option::Option<crate::types::Placement>,
+    pub(crate) kernel_id: ::std::option::Option<::std::string::String>,
+    pub(crate) ramdisk_id: ::std::option::Option<::std::string::String>,
+    pub(crate) platform: ::std::option::Option<crate::types::PlatformValues>,
+    pub(crate) monitoring: ::std::option::Option<crate::types::Monitoring>,
+    pub(crate) subnet_id: ::std::option::Option<::std::string::String>,
+    pub(crate) vpc_id: ::std::option::Option<::std::string::String>,
+    pub(crate) private_ip_address: ::std::option::Option<::std::string::String>,
+    pub(crate) public_ip_address: ::std::option::Option<::std::string::String>,
 }
 impl InstanceBuilder {
-    /// <p>The AMI launch index, which can be used to find this instance in the launch group.</p>
-    pub fn ami_launch_index(mut self, input: i32) -> Self {
-        self.ami_launch_index = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>The AMI launch index, which can be used to find this instance in the launch group.</p>
-    pub fn set_ami_launch_index(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.ami_launch_index = input;
-        self
-    }
-    /// <p>The AMI launch index, which can be used to find this instance in the launch group.</p>
-    pub fn get_ami_launch_index(&self) -> &::std::option::Option<i32> {
-        &self.ami_launch_index
-    }
-    /// <p>The ID of the AMI used to launch the instance.</p>
-    pub fn image_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.image_id = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>The ID of the AMI used to launch the instance.</p>
-    pub fn set_image_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.image_id = input;
-        self
-    }
-    /// <p>The ID of the AMI used to launch the instance.</p>
-    pub fn get_image_id(&self) -> &::std::option::Option<::std::string::String> {
-        &self.image_id
-    }
-    /// <p>The ID of the instance.</p>
-    pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.instance_id = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>The ID of the instance.</p>
-    pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_id = input;
-        self
-    }
-    /// <p>The ID of the instance.</p>
-    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
-        &self.instance_id
-    }
-    /// <p>The instance type.</p>
-    pub fn instance_type(mut self, input: crate::types::InstanceType) -> Self {
-        self.instance_type = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>The instance type.</p>
-    pub fn set_instance_type(mut self, input: ::std::option::Option<crate::types::InstanceType>) -> Self {
-        self.instance_type = input;
-        self
-    }
-    /// <p>The instance type.</p>
-    pub fn get_instance_type(&self) -> &::std::option::Option<crate::types::InstanceType> {
-        &self.instance_type
-    }
-    /// <p>The kernel associated with this instance, if applicable.</p>
-    pub fn kernel_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.kernel_id = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>The kernel associated with this instance, if applicable.</p>
-    pub fn set_kernel_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kernel_id = input;
-        self
-    }
-    /// <p>The kernel associated with this instance, if applicable.</p>
-    pub fn get_kernel_id(&self) -> &::std::option::Option<::std::string::String> {
-        &self.kernel_id
-    }
-    /// <p>The name of the key pair, if this instance was launched with an associated key pair.</p>
-    pub fn key_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.key_name = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>The name of the key pair, if this instance was launched with an associated key pair.</p>
-    pub fn set_key_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key_name = input;
-        self
-    }
-    /// <p>The name of the key pair, if this instance was launched with an associated key pair.</p>
-    pub fn get_key_name(&self) -> &::std::option::Option<::std::string::String> {
-        &self.key_name
-    }
-    /// <p>The time the instance was launched.</p>
-    pub fn launch_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
-        self.launch_time = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>The time the instance was launched.</p>
-    pub fn set_launch_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.launch_time = input;
-        self
-    }
-    /// <p>The time the instance was launched.</p>
-    pub fn get_launch_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
-        &self.launch_time
-    }
-    /// <p>The monitoring for the instance.</p>
-    pub fn monitoring(mut self, input: crate::types::Monitoring) -> Self {
-        self.monitoring = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>The monitoring for the instance.</p>
-    pub fn set_monitoring(mut self, input: ::std::option::Option<crate::types::Monitoring>) -> Self {
-        self.monitoring = input;
-        self
-    }
-    /// <p>The monitoring for the instance.</p>
-    pub fn get_monitoring(&self) -> &::std::option::Option<crate::types::Monitoring> {
-        &self.monitoring
-    }
-    /// <p>The location where the instance launched, if applicable.</p>
-    pub fn placement(mut self, input: crate::types::Placement) -> Self {
-        self.placement = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>The location where the instance launched, if applicable.</p>
-    pub fn set_placement(mut self, input: ::std::option::Option<crate::types::Placement>) -> Self {
-        self.placement = input;
-        self
-    }
-    /// <p>The location where the instance launched, if applicable.</p>
-    pub fn get_placement(&self) -> &::std::option::Option<crate::types::Placement> {
-        &self.placement
-    }
-    /// <p>The platform. This value is <code>windows</code> for Windows instances; otherwise, it is empty.</p>
-    pub fn platform(mut self, input: crate::types::PlatformValues) -> Self {
-        self.platform = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>The platform. This value is <code>windows</code> for Windows instances; otherwise, it is empty.</p>
-    pub fn set_platform(mut self, input: ::std::option::Option<crate::types::PlatformValues>) -> Self {
-        self.platform = input;
-        self
-    }
-    /// <p>The platform. This value is <code>windows</code> for Windows instances; otherwise, it is empty.</p>
-    pub fn get_platform(&self) -> &::std::option::Option<crate::types::PlatformValues> {
-        &self.platform
-    }
-    /// <p>\[IPv4 only\] The private DNS hostname name assigned to the instance. This DNS hostname can only be used inside the Amazon EC2 network. This name is not available until the instance enters the running state.</p>
-    /// <p>The Amazon-provided DNS server resolves Amazon-provided private DNS hostnames if you've enabled DNS resolution and DNS hostnames in your VPC. If you are not using the Amazon-provided DNS server in your VPC, your custom domain name servers must resolve the hostname as appropriate.</p>
-    pub fn private_dns_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.private_dns_name = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>\[IPv4 only\] The private DNS hostname name assigned to the instance. This DNS hostname can only be used inside the Amazon EC2 network. This name is not available until the instance enters the running state.</p>
-    /// <p>The Amazon-provided DNS server resolves Amazon-provided private DNS hostnames if you've enabled DNS resolution and DNS hostnames in your VPC. If you are not using the Amazon-provided DNS server in your VPC, your custom domain name servers must resolve the hostname as appropriate.</p>
-    pub fn set_private_dns_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.private_dns_name = input;
-        self
-    }
-    /// <p>\[IPv4 only\] The private DNS hostname name assigned to the instance. This DNS hostname can only be used inside the Amazon EC2 network. This name is not available until the instance enters the running state.</p>
-    /// <p>The Amazon-provided DNS server resolves Amazon-provided private DNS hostnames if you've enabled DNS resolution and DNS hostnames in your VPC. If you are not using the Amazon-provided DNS server in your VPC, your custom domain name servers must resolve the hostname as appropriate.</p>
-    pub fn get_private_dns_name(&self) -> &::std::option::Option<::std::string::String> {
-        &self.private_dns_name
-    }
-    /// <p>The private IPv4 address assigned to the instance.</p>
-    pub fn private_ip_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.private_ip_address = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>The private IPv4 address assigned to the instance.</p>
-    pub fn set_private_ip_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.private_ip_address = input;
-        self
-    }
-    /// <p>The private IPv4 address assigned to the instance.</p>
-    pub fn get_private_ip_address(&self) -> &::std::option::Option<::std::string::String> {
-        &self.private_ip_address
-    }
-    /// Appends an item to `product_codes`.
-    ///
-    /// To override the contents of this collection use [`set_product_codes`](Self::set_product_codes).
-    ///
-    /// <p>The product codes attached to this instance, if applicable.</p>
-    pub fn product_codes(mut self, input: crate::types::ProductCode) -> Self {
-        let mut v = self.product_codes.unwrap_or_default();
-        v.push(input);
-        self.product_codes = ::std::option::Option::Some(v);
-        self
-    }
-    /// <p>The product codes attached to this instance, if applicable.</p>
-    pub fn set_product_codes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProductCode>>) -> Self {
-        self.product_codes = input;
-        self
-    }
-    /// <p>The product codes attached to this instance, if applicable.</p>
-    pub fn get_product_codes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProductCode>> {
-        &self.product_codes
-    }
-    /// <p>\[IPv4 only\] The public DNS name assigned to the instance. This name is not available until the instance enters the running state. This name is only available if you've enabled DNS hostnames for your VPC.</p>
-    pub fn public_dns_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.public_dns_name = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>\[IPv4 only\] The public DNS name assigned to the instance. This name is not available until the instance enters the running state. This name is only available if you've enabled DNS hostnames for your VPC.</p>
-    pub fn set_public_dns_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.public_dns_name = input;
-        self
-    }
-    /// <p>\[IPv4 only\] The public DNS name assigned to the instance. This name is not available until the instance enters the running state. This name is only available if you've enabled DNS hostnames for your VPC.</p>
-    pub fn get_public_dns_name(&self) -> &::std::option::Option<::std::string::String> {
-        &self.public_dns_name
-    }
-    /// <p>The public IPv4 address, or the Carrier IP address assigned to the instance, if applicable.</p>
-    /// <p>A Carrier IP address only applies to an instance launched in a subnet associated with a Wavelength Zone.</p>
-    pub fn public_ip_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.public_ip_address = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>The public IPv4 address, or the Carrier IP address assigned to the instance, if applicable.</p>
-    /// <p>A Carrier IP address only applies to an instance launched in a subnet associated with a Wavelength Zone.</p>
-    pub fn set_public_ip_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.public_ip_address = input;
-        self
-    }
-    /// <p>The public IPv4 address, or the Carrier IP address assigned to the instance, if applicable.</p>
-    /// <p>A Carrier IP address only applies to an instance launched in a subnet associated with a Wavelength Zone.</p>
-    pub fn get_public_ip_address(&self) -> &::std::option::Option<::std::string::String> {
-        &self.public_ip_address
-    }
-    /// <p>The RAM disk associated with this instance, if applicable.</p>
-    pub fn ramdisk_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.ramdisk_id = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>The RAM disk associated with this instance, if applicable.</p>
-    pub fn set_ramdisk_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ramdisk_id = input;
-        self
-    }
-    /// <p>The RAM disk associated with this instance, if applicable.</p>
-    pub fn get_ramdisk_id(&self) -> &::std::option::Option<::std::string::String> {
-        &self.ramdisk_id
-    }
-    /// <p>The current state of the instance.</p>
-    pub fn state(mut self, input: crate::types::InstanceState) -> Self {
-        self.state = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>The current state of the instance.</p>
-    pub fn set_state(mut self, input: ::std::option::Option<crate::types::InstanceState>) -> Self {
-        self.state = input;
-        self
-    }
-    /// <p>The current state of the instance.</p>
-    pub fn get_state(&self) -> &::std::option::Option<crate::types::InstanceState> {
-        &self.state
-    }
-    /// <p>The reason for the most recent state transition. This might be an empty string.</p>
-    pub fn state_transition_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.state_transition_reason = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>The reason for the most recent state transition. This might be an empty string.</p>
-    pub fn set_state_transition_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.state_transition_reason = input;
-        self
-    }
-    /// <p>The reason for the most recent state transition. This might be an empty string.</p>
-    pub fn get_state_transition_reason(&self) -> &::std::option::Option<::std::string::String> {
-        &self.state_transition_reason
-    }
-    /// <p>The ID of the subnet in which the instance is running.</p>
-    pub fn subnet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.subnet_id = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>The ID of the subnet in which the instance is running.</p>
-    pub fn set_subnet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.subnet_id = input;
-        self
-    }
-    /// <p>The ID of the subnet in which the instance is running.</p>
-    pub fn get_subnet_id(&self) -> &::std::option::Option<::std::string::String> {
-        &self.subnet_id
-    }
-    /// <p>The ID of the VPC in which the instance is running.</p>
-    pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.vpc_id = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>The ID of the VPC in which the instance is running.</p>
-    pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vpc_id = input;
-        self
-    }
-    /// <p>The ID of the VPC in which the instance is running.</p>
-    pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
-        &self.vpc_id
-    }
     /// <p>The architecture of the image.</p>
     pub fn architecture(mut self, input: crate::types::ArchitectureValues) -> Self {
         self.architecture = ::std::option::Option::Some(input);
@@ -1325,29 +1033,301 @@ impl InstanceBuilder {
     pub fn get_current_instance_boot_mode(&self) -> &::std::option::Option<crate::types::InstanceBootModeValues> {
         &self.current_instance_boot_mode
     }
+    /// <p>The ID of the instance.</p>
+    pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.instance_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the instance.</p>
+    pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.instance_id = input;
+        self
+    }
+    /// <p>The ID of the instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
+    }
+    /// <p>The ID of the AMI used to launch the instance.</p>
+    pub fn image_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.image_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the AMI used to launch the instance.</p>
+    pub fn set_image_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.image_id = input;
+        self
+    }
+    /// <p>The ID of the AMI used to launch the instance.</p>
+    pub fn get_image_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.image_id
+    }
+    /// <p>The current state of the instance.</p>
+    pub fn state(mut self, input: crate::types::InstanceState) -> Self {
+        self.state = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The current state of the instance.</p>
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::InstanceState>) -> Self {
+        self.state = input;
+        self
+    }
+    /// <p>The current state of the instance.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::InstanceState> {
+        &self.state
+    }
+    /// <p>\[IPv4 only\] The private DNS hostname name assigned to the instance. This DNS hostname can only be used inside the Amazon EC2 network. This name is not available until the instance enters the running state.</p>
+    /// <p>The Amazon-provided DNS server resolves Amazon-provided private DNS hostnames if you've enabled DNS resolution and DNS hostnames in your VPC. If you are not using the Amazon-provided DNS server in your VPC, your custom domain name servers must resolve the hostname as appropriate.</p>
+    pub fn private_dns_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.private_dns_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>\[IPv4 only\] The private DNS hostname name assigned to the instance. This DNS hostname can only be used inside the Amazon EC2 network. This name is not available until the instance enters the running state.</p>
+    /// <p>The Amazon-provided DNS server resolves Amazon-provided private DNS hostnames if you've enabled DNS resolution and DNS hostnames in your VPC. If you are not using the Amazon-provided DNS server in your VPC, your custom domain name servers must resolve the hostname as appropriate.</p>
+    pub fn set_private_dns_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.private_dns_name = input;
+        self
+    }
+    /// <p>\[IPv4 only\] The private DNS hostname name assigned to the instance. This DNS hostname can only be used inside the Amazon EC2 network. This name is not available until the instance enters the running state.</p>
+    /// <p>The Amazon-provided DNS server resolves Amazon-provided private DNS hostnames if you've enabled DNS resolution and DNS hostnames in your VPC. If you are not using the Amazon-provided DNS server in your VPC, your custom domain name servers must resolve the hostname as appropriate.</p>
+    pub fn get_private_dns_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.private_dns_name
+    }
+    /// <p>\[IPv4 only\] The public DNS name assigned to the instance. This name is not available until the instance enters the running state. This name is only available if you've enabled DNS hostnames for your VPC.</p>
+    pub fn public_dns_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.public_dns_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>\[IPv4 only\] The public DNS name assigned to the instance. This name is not available until the instance enters the running state. This name is only available if you've enabled DNS hostnames for your VPC.</p>
+    pub fn set_public_dns_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.public_dns_name = input;
+        self
+    }
+    /// <p>\[IPv4 only\] The public DNS name assigned to the instance. This name is not available until the instance enters the running state. This name is only available if you've enabled DNS hostnames for your VPC.</p>
+    pub fn get_public_dns_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.public_dns_name
+    }
+    /// <p>The reason for the most recent state transition. This might be an empty string.</p>
+    pub fn state_transition_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.state_transition_reason = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The reason for the most recent state transition. This might be an empty string.</p>
+    pub fn set_state_transition_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.state_transition_reason = input;
+        self
+    }
+    /// <p>The reason for the most recent state transition. This might be an empty string.</p>
+    pub fn get_state_transition_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.state_transition_reason
+    }
+    /// <p>The name of the key pair, if this instance was launched with an associated key pair.</p>
+    pub fn key_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.key_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of the key pair, if this instance was launched with an associated key pair.</p>
+    pub fn set_key_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.key_name = input;
+        self
+    }
+    /// <p>The name of the key pair, if this instance was launched with an associated key pair.</p>
+    pub fn get_key_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key_name
+    }
+    /// <p>The AMI launch index, which can be used to find this instance in the launch group.</p>
+    pub fn ami_launch_index(mut self, input: i32) -> Self {
+        self.ami_launch_index = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The AMI launch index, which can be used to find this instance in the launch group.</p>
+    pub fn set_ami_launch_index(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.ami_launch_index = input;
+        self
+    }
+    /// <p>The AMI launch index, which can be used to find this instance in the launch group.</p>
+    pub fn get_ami_launch_index(&self) -> &::std::option::Option<i32> {
+        &self.ami_launch_index
+    }
+    /// Appends an item to `product_codes`.
+    ///
+    /// To override the contents of this collection use [`set_product_codes`](Self::set_product_codes).
+    ///
+    /// <p>The product codes attached to this instance, if applicable.</p>
+    pub fn product_codes(mut self, input: crate::types::ProductCode) -> Self {
+        let mut v = self.product_codes.unwrap_or_default();
+        v.push(input);
+        self.product_codes = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The product codes attached to this instance, if applicable.</p>
+    pub fn set_product_codes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProductCode>>) -> Self {
+        self.product_codes = input;
+        self
+    }
+    /// <p>The product codes attached to this instance, if applicable.</p>
+    pub fn get_product_codes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProductCode>> {
+        &self.product_codes
+    }
+    /// <p>The instance type.</p>
+    pub fn instance_type(mut self, input: crate::types::InstanceType) -> Self {
+        self.instance_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The instance type.</p>
+    pub fn set_instance_type(mut self, input: ::std::option::Option<crate::types::InstanceType>) -> Self {
+        self.instance_type = input;
+        self
+    }
+    /// <p>The instance type.</p>
+    pub fn get_instance_type(&self) -> &::std::option::Option<crate::types::InstanceType> {
+        &self.instance_type
+    }
+    /// <p>The time the instance was launched.</p>
+    pub fn launch_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.launch_time = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The time the instance was launched.</p>
+    pub fn set_launch_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.launch_time = input;
+        self
+    }
+    /// <p>The time the instance was launched.</p>
+    pub fn get_launch_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.launch_time
+    }
+    /// <p>The location where the instance launched, if applicable.</p>
+    pub fn placement(mut self, input: crate::types::Placement) -> Self {
+        self.placement = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The location where the instance launched, if applicable.</p>
+    pub fn set_placement(mut self, input: ::std::option::Option<crate::types::Placement>) -> Self {
+        self.placement = input;
+        self
+    }
+    /// <p>The location where the instance launched, if applicable.</p>
+    pub fn get_placement(&self) -> &::std::option::Option<crate::types::Placement> {
+        &self.placement
+    }
+    /// <p>The kernel associated with this instance, if applicable.</p>
+    pub fn kernel_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.kernel_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The kernel associated with this instance, if applicable.</p>
+    pub fn set_kernel_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.kernel_id = input;
+        self
+    }
+    /// <p>The kernel associated with this instance, if applicable.</p>
+    pub fn get_kernel_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kernel_id
+    }
+    /// <p>The RAM disk associated with this instance, if applicable.</p>
+    pub fn ramdisk_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.ramdisk_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The RAM disk associated with this instance, if applicable.</p>
+    pub fn set_ramdisk_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.ramdisk_id = input;
+        self
+    }
+    /// <p>The RAM disk associated with this instance, if applicable.</p>
+    pub fn get_ramdisk_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ramdisk_id
+    }
+    /// <p>The platform. This value is <code>windows</code> for Windows instances; otherwise, it is empty.</p>
+    pub fn platform(mut self, input: crate::types::PlatformValues) -> Self {
+        self.platform = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The platform. This value is <code>windows</code> for Windows instances; otherwise, it is empty.</p>
+    pub fn set_platform(mut self, input: ::std::option::Option<crate::types::PlatformValues>) -> Self {
+        self.platform = input;
+        self
+    }
+    /// <p>The platform. This value is <code>windows</code> for Windows instances; otherwise, it is empty.</p>
+    pub fn get_platform(&self) -> &::std::option::Option<crate::types::PlatformValues> {
+        &self.platform
+    }
+    /// <p>The monitoring for the instance.</p>
+    pub fn monitoring(mut self, input: crate::types::Monitoring) -> Self {
+        self.monitoring = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The monitoring for the instance.</p>
+    pub fn set_monitoring(mut self, input: ::std::option::Option<crate::types::Monitoring>) -> Self {
+        self.monitoring = input;
+        self
+    }
+    /// <p>The monitoring for the instance.</p>
+    pub fn get_monitoring(&self) -> &::std::option::Option<crate::types::Monitoring> {
+        &self.monitoring
+    }
+    /// <p>The ID of the subnet in which the instance is running.</p>
+    pub fn subnet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.subnet_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the subnet in which the instance is running.</p>
+    pub fn set_subnet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.subnet_id = input;
+        self
+    }
+    /// <p>The ID of the subnet in which the instance is running.</p>
+    pub fn get_subnet_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.subnet_id
+    }
+    /// <p>The ID of the VPC in which the instance is running.</p>
+    pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.vpc_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the VPC in which the instance is running.</p>
+    pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.vpc_id = input;
+        self
+    }
+    /// <p>The ID of the VPC in which the instance is running.</p>
+    pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_id
+    }
+    /// <p>The private IPv4 address assigned to the instance.</p>
+    pub fn private_ip_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.private_ip_address = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The private IPv4 address assigned to the instance.</p>
+    pub fn set_private_ip_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.private_ip_address = input;
+        self
+    }
+    /// <p>The private IPv4 address assigned to the instance.</p>
+    pub fn get_private_ip_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.private_ip_address
+    }
+    /// <p>The public IPv4 address, or the Carrier IP address assigned to the instance, if applicable.</p>
+    /// <p>A Carrier IP address only applies to an instance launched in a subnet associated with a Wavelength Zone.</p>
+    pub fn public_ip_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.public_ip_address = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The public IPv4 address, or the Carrier IP address assigned to the instance, if applicable.</p>
+    /// <p>A Carrier IP address only applies to an instance launched in a subnet associated with a Wavelength Zone.</p>
+    pub fn set_public_ip_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.public_ip_address = input;
+        self
+    }
+    /// <p>The public IPv4 address, or the Carrier IP address assigned to the instance, if applicable.</p>
+    /// <p>A Carrier IP address only applies to an instance launched in a subnet associated with a Wavelength Zone.</p>
+    pub fn get_public_ip_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.public_ip_address
+    }
     /// Consumes the builder and constructs a [`Instance`](crate::types::Instance).
     pub fn build(self) -> crate::types::Instance {
         crate::types::Instance {
-            ami_launch_index: self.ami_launch_index,
-            image_id: self.image_id,
-            instance_id: self.instance_id,
-            instance_type: self.instance_type,
-            kernel_id: self.kernel_id,
-            key_name: self.key_name,
-            launch_time: self.launch_time,
-            monitoring: self.monitoring,
-            placement: self.placement,
-            platform: self.platform,
-            private_dns_name: self.private_dns_name,
-            private_ip_address: self.private_ip_address,
-            product_codes: self.product_codes,
-            public_dns_name: self.public_dns_name,
-            public_ip_address: self.public_ip_address,
-            ramdisk_id: self.ramdisk_id,
-            state: self.state,
-            state_transition_reason: self.state_transition_reason,
-            subnet_id: self.subnet_id,
-            vpc_id: self.vpc_id,
             architecture: self.architecture,
             block_device_mappings: self.block_device_mappings,
             client_token: self.client_token,
@@ -1385,6 +1365,26 @@ impl InstanceBuilder {
             tpm_support: self.tpm_support,
             maintenance_options: self.maintenance_options,
             current_instance_boot_mode: self.current_instance_boot_mode,
+            instance_id: self.instance_id,
+            image_id: self.image_id,
+            state: self.state,
+            private_dns_name: self.private_dns_name,
+            public_dns_name: self.public_dns_name,
+            state_transition_reason: self.state_transition_reason,
+            key_name: self.key_name,
+            ami_launch_index: self.ami_launch_index,
+            product_codes: self.product_codes,
+            instance_type: self.instance_type,
+            launch_time: self.launch_time,
+            placement: self.placement,
+            kernel_id: self.kernel_id,
+            ramdisk_id: self.ramdisk_id,
+            platform: self.platform,
+            monitoring: self.monitoring,
+            subnet_id: self.subnet_id,
+            vpc_id: self.vpc_id,
+            private_ip_address: self.private_ip_address,
+            public_ip_address: self.public_ip_address,
         }
     }
 }

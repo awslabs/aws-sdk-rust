@@ -7,72 +7,8 @@ pub fn de_vpn_gateway(
     let mut builder = crate::types::VpnGateway::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
-            s if s.matches("availabilityZone") /* AvailabilityZone com.amazonaws.ec2#VpnGateway$AvailabilityZone */ =>  {
-                let var_1 =
-                    Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_availability_zone(var_1);
-            }
-            ,
-            s if s.matches("state") /* State com.amazonaws.ec2#VpnGateway$State */ =>  {
-                let var_2 =
-                    Some(
-                        Result::<crate::types::VpnState, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            crate::types::VpnState::from(
-                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_state(var_2);
-            }
-            ,
-            s if s.matches("type") /* Type com.amazonaws.ec2#VpnGateway$Type */ =>  {
-                let var_3 =
-                    Some(
-                        Result::<crate::types::GatewayType, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            crate::types::GatewayType::from(
-                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_type(var_3);
-            }
-            ,
-            s if s.matches("attachments") /* VpcAttachments com.amazonaws.ec2#VpnGateway$VpcAttachments */ =>  {
-                let var_4 =
-                    Some(
-                        crate::protocol_serde::shape_vpc_attachment_list::de_vpc_attachment_list(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_vpc_attachments(var_4);
-            }
-            ,
-            s if s.matches("vpnGatewayId") /* VpnGatewayId com.amazonaws.ec2#VpnGateway$VpnGatewayId */ =>  {
-                let var_5 =
-                    Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_vpn_gateway_id(var_5);
-            }
-            ,
             s if s.matches("amazonSideAsn") /* AmazonSideAsn com.amazonaws.ec2#VpnGateway$AmazonSideAsn */ =>  {
-                let var_6 =
+                let var_1 =
                     Some(
                          {
                             <i64 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -83,17 +19,81 @@ pub fn de_vpn_gateway(
                         ?
                     )
                 ;
-                builder = builder.set_amazon_side_asn(var_6);
+                builder = builder.set_amazon_side_asn(var_1);
             }
             ,
             s if s.matches("tagSet") /* Tags com.amazonaws.ec2#VpnGateway$Tags */ =>  {
-                let var_7 =
+                let var_2 =
                     Some(
                         crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_tags(var_7);
+                builder = builder.set_tags(var_2);
+            }
+            ,
+            s if s.matches("vpnGatewayId") /* VpnGatewayId com.amazonaws.ec2#VpnGateway$VpnGatewayId */ =>  {
+                let var_3 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_vpn_gateway_id(var_3);
+            }
+            ,
+            s if s.matches("state") /* State com.amazonaws.ec2#VpnGateway$State */ =>  {
+                let var_4 =
+                    Some(
+                        Result::<crate::types::VpnState, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::VpnState::from(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_state(var_4);
+            }
+            ,
+            s if s.matches("type") /* Type com.amazonaws.ec2#VpnGateway$Type */ =>  {
+                let var_5 =
+                    Some(
+                        Result::<crate::types::GatewayType, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::GatewayType::from(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_type(var_5);
+            }
+            ,
+            s if s.matches("availabilityZone") /* AvailabilityZone com.amazonaws.ec2#VpnGateway$AvailabilityZone */ =>  {
+                let var_6 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_availability_zone(var_6);
+            }
+            ,
+            s if s.matches("attachments") /* VpcAttachments com.amazonaws.ec2#VpnGateway$VpcAttachments */ =>  {
+                let var_7 =
+                    Some(
+                        crate::protocol_serde::shape_vpc_attachment_list::de_vpc_attachment_list(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_vpc_attachments(var_7);
             }
             ,
             _ => {}

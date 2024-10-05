@@ -4,14 +4,6 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeImageAttributeOutput {
-    /// <p>The block device mapping entries.</p>
-    pub block_device_mappings: ::std::option::Option<::std::vec::Vec<crate::types::BlockDeviceMapping>>,
-    /// <p>The ID of the AMI.</p>
-    pub image_id: ::std::option::Option<::std::string::String>,
-    /// <p>The launch permissions.</p>
-    pub launch_permissions: ::std::option::Option<::std::vec::Vec<crate::types::LaunchPermission>>,
-    /// <p>The product codes.</p>
-    pub product_codes: ::std::option::Option<::std::vec::Vec<crate::types::ProductCode>>,
     /// <p>A description for the AMI.</p>
     pub description: ::std::option::Option<crate::types::AttributeValue>,
     /// <p>The kernel ID.</p>
@@ -34,31 +26,17 @@ pub struct DescribeImageAttributeOutput {
     pub imds_support: ::std::option::Option<crate::types::AttributeValue>,
     /// <p>Indicates whether deregistration protection is enabled for the AMI.</p>
     pub deregistration_protection: ::std::option::Option<crate::types::AttributeValue>,
+    /// <p>The ID of the AMI.</p>
+    pub image_id: ::std::option::Option<::std::string::String>,
+    /// <p>The launch permissions.</p>
+    pub launch_permissions: ::std::option::Option<::std::vec::Vec<crate::types::LaunchPermission>>,
+    /// <p>The product codes.</p>
+    pub product_codes: ::std::option::Option<::std::vec::Vec<crate::types::ProductCode>>,
+    /// <p>The block device mapping entries.</p>
+    pub block_device_mappings: ::std::option::Option<::std::vec::Vec<crate::types::BlockDeviceMapping>>,
     _request_id: Option<String>,
 }
 impl DescribeImageAttributeOutput {
-    /// <p>The block device mapping entries.</p>
-    ///
-    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.block_device_mappings.is_none()`.
-    pub fn block_device_mappings(&self) -> &[crate::types::BlockDeviceMapping] {
-        self.block_device_mappings.as_deref().unwrap_or_default()
-    }
-    /// <p>The ID of the AMI.</p>
-    pub fn image_id(&self) -> ::std::option::Option<&str> {
-        self.image_id.as_deref()
-    }
-    /// <p>The launch permissions.</p>
-    ///
-    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.launch_permissions.is_none()`.
-    pub fn launch_permissions(&self) -> &[crate::types::LaunchPermission] {
-        self.launch_permissions.as_deref().unwrap_or_default()
-    }
-    /// <p>The product codes.</p>
-    ///
-    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.product_codes.is_none()`.
-    pub fn product_codes(&self) -> &[crate::types::ProductCode] {
-        self.product_codes.as_deref().unwrap_or_default()
-    }
     /// <p>A description for the AMI.</p>
     pub fn description(&self) -> ::std::option::Option<&crate::types::AttributeValue> {
         self.description.as_ref()
@@ -101,6 +79,28 @@ impl DescribeImageAttributeOutput {
     pub fn deregistration_protection(&self) -> ::std::option::Option<&crate::types::AttributeValue> {
         self.deregistration_protection.as_ref()
     }
+    /// <p>The ID of the AMI.</p>
+    pub fn image_id(&self) -> ::std::option::Option<&str> {
+        self.image_id.as_deref()
+    }
+    /// <p>The launch permissions.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.launch_permissions.is_none()`.
+    pub fn launch_permissions(&self) -> &[crate::types::LaunchPermission] {
+        self.launch_permissions.as_deref().unwrap_or_default()
+    }
+    /// <p>The product codes.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.product_codes.is_none()`.
+    pub fn product_codes(&self) -> &[crate::types::ProductCode] {
+        self.product_codes.as_deref().unwrap_or_default()
+    }
+    /// <p>The block device mapping entries.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.block_device_mappings.is_none()`.
+    pub fn block_device_mappings(&self) -> &[crate::types::BlockDeviceMapping] {
+        self.block_device_mappings.as_deref().unwrap_or_default()
+    }
 }
 impl ::aws_types::request_id::RequestId for DescribeImageAttributeOutput {
     fn request_id(&self) -> Option<&str> {
@@ -118,10 +118,6 @@ impl DescribeImageAttributeOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct DescribeImageAttributeOutputBuilder {
-    pub(crate) block_device_mappings: ::std::option::Option<::std::vec::Vec<crate::types::BlockDeviceMapping>>,
-    pub(crate) image_id: ::std::option::Option<::std::string::String>,
-    pub(crate) launch_permissions: ::std::option::Option<::std::vec::Vec<crate::types::LaunchPermission>>,
-    pub(crate) product_codes: ::std::option::Option<::std::vec::Vec<crate::types::ProductCode>>,
     pub(crate) description: ::std::option::Option<crate::types::AttributeValue>,
     pub(crate) kernel_id: ::std::option::Option<crate::types::AttributeValue>,
     pub(crate) ramdisk_id: ::std::option::Option<crate::types::AttributeValue>,
@@ -132,83 +128,13 @@ pub struct DescribeImageAttributeOutputBuilder {
     pub(crate) last_launched_time: ::std::option::Option<crate::types::AttributeValue>,
     pub(crate) imds_support: ::std::option::Option<crate::types::AttributeValue>,
     pub(crate) deregistration_protection: ::std::option::Option<crate::types::AttributeValue>,
+    pub(crate) image_id: ::std::option::Option<::std::string::String>,
+    pub(crate) launch_permissions: ::std::option::Option<::std::vec::Vec<crate::types::LaunchPermission>>,
+    pub(crate) product_codes: ::std::option::Option<::std::vec::Vec<crate::types::ProductCode>>,
+    pub(crate) block_device_mappings: ::std::option::Option<::std::vec::Vec<crate::types::BlockDeviceMapping>>,
     _request_id: Option<String>,
 }
 impl DescribeImageAttributeOutputBuilder {
-    /// Appends an item to `block_device_mappings`.
-    ///
-    /// To override the contents of this collection use [`set_block_device_mappings`](Self::set_block_device_mappings).
-    ///
-    /// <p>The block device mapping entries.</p>
-    pub fn block_device_mappings(mut self, input: crate::types::BlockDeviceMapping) -> Self {
-        let mut v = self.block_device_mappings.unwrap_or_default();
-        v.push(input);
-        self.block_device_mappings = ::std::option::Option::Some(v);
-        self
-    }
-    /// <p>The block device mapping entries.</p>
-    pub fn set_block_device_mappings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BlockDeviceMapping>>) -> Self {
-        self.block_device_mappings = input;
-        self
-    }
-    /// <p>The block device mapping entries.</p>
-    pub fn get_block_device_mappings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BlockDeviceMapping>> {
-        &self.block_device_mappings
-    }
-    /// <p>The ID of the AMI.</p>
-    pub fn image_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.image_id = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>The ID of the AMI.</p>
-    pub fn set_image_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.image_id = input;
-        self
-    }
-    /// <p>The ID of the AMI.</p>
-    pub fn get_image_id(&self) -> &::std::option::Option<::std::string::String> {
-        &self.image_id
-    }
-    /// Appends an item to `launch_permissions`.
-    ///
-    /// To override the contents of this collection use [`set_launch_permissions`](Self::set_launch_permissions).
-    ///
-    /// <p>The launch permissions.</p>
-    pub fn launch_permissions(mut self, input: crate::types::LaunchPermission) -> Self {
-        let mut v = self.launch_permissions.unwrap_or_default();
-        v.push(input);
-        self.launch_permissions = ::std::option::Option::Some(v);
-        self
-    }
-    /// <p>The launch permissions.</p>
-    pub fn set_launch_permissions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LaunchPermission>>) -> Self {
-        self.launch_permissions = input;
-        self
-    }
-    /// <p>The launch permissions.</p>
-    pub fn get_launch_permissions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LaunchPermission>> {
-        &self.launch_permissions
-    }
-    /// Appends an item to `product_codes`.
-    ///
-    /// To override the contents of this collection use [`set_product_codes`](Self::set_product_codes).
-    ///
-    /// <p>The product codes.</p>
-    pub fn product_codes(mut self, input: crate::types::ProductCode) -> Self {
-        let mut v = self.product_codes.unwrap_or_default();
-        v.push(input);
-        self.product_codes = ::std::option::Option::Some(v);
-        self
-    }
-    /// <p>The product codes.</p>
-    pub fn set_product_codes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProductCode>>) -> Self {
-        self.product_codes = input;
-        self
-    }
-    /// <p>The product codes.</p>
-    pub fn get_product_codes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProductCode>> {
-        &self.product_codes
-    }
     /// <p>A description for the AMI.</p>
     pub fn description(mut self, input: crate::types::AttributeValue) -> Self {
         self.description = ::std::option::Option::Some(input);
@@ -355,6 +281,80 @@ impl DescribeImageAttributeOutputBuilder {
     pub fn get_deregistration_protection(&self) -> &::std::option::Option<crate::types::AttributeValue> {
         &self.deregistration_protection
     }
+    /// <p>The ID of the AMI.</p>
+    pub fn image_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.image_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the AMI.</p>
+    pub fn set_image_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.image_id = input;
+        self
+    }
+    /// <p>The ID of the AMI.</p>
+    pub fn get_image_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.image_id
+    }
+    /// Appends an item to `launch_permissions`.
+    ///
+    /// To override the contents of this collection use [`set_launch_permissions`](Self::set_launch_permissions).
+    ///
+    /// <p>The launch permissions.</p>
+    pub fn launch_permissions(mut self, input: crate::types::LaunchPermission) -> Self {
+        let mut v = self.launch_permissions.unwrap_or_default();
+        v.push(input);
+        self.launch_permissions = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The launch permissions.</p>
+    pub fn set_launch_permissions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LaunchPermission>>) -> Self {
+        self.launch_permissions = input;
+        self
+    }
+    /// <p>The launch permissions.</p>
+    pub fn get_launch_permissions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LaunchPermission>> {
+        &self.launch_permissions
+    }
+    /// Appends an item to `product_codes`.
+    ///
+    /// To override the contents of this collection use [`set_product_codes`](Self::set_product_codes).
+    ///
+    /// <p>The product codes.</p>
+    pub fn product_codes(mut self, input: crate::types::ProductCode) -> Self {
+        let mut v = self.product_codes.unwrap_or_default();
+        v.push(input);
+        self.product_codes = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The product codes.</p>
+    pub fn set_product_codes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProductCode>>) -> Self {
+        self.product_codes = input;
+        self
+    }
+    /// <p>The product codes.</p>
+    pub fn get_product_codes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProductCode>> {
+        &self.product_codes
+    }
+    /// Appends an item to `block_device_mappings`.
+    ///
+    /// To override the contents of this collection use [`set_block_device_mappings`](Self::set_block_device_mappings).
+    ///
+    /// <p>The block device mapping entries.</p>
+    pub fn block_device_mappings(mut self, input: crate::types::BlockDeviceMapping) -> Self {
+        let mut v = self.block_device_mappings.unwrap_or_default();
+        v.push(input);
+        self.block_device_mappings = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The block device mapping entries.</p>
+    pub fn set_block_device_mappings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BlockDeviceMapping>>) -> Self {
+        self.block_device_mappings = input;
+        self
+    }
+    /// <p>The block device mapping entries.</p>
+    pub fn get_block_device_mappings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BlockDeviceMapping>> {
+        &self.block_device_mappings
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -367,10 +367,6 @@ impl DescribeImageAttributeOutputBuilder {
     /// Consumes the builder and constructs a [`DescribeImageAttributeOutput`](crate::operation::describe_image_attribute::DescribeImageAttributeOutput).
     pub fn build(self) -> crate::operation::describe_image_attribute::DescribeImageAttributeOutput {
         crate::operation::describe_image_attribute::DescribeImageAttributeOutput {
-            block_device_mappings: self.block_device_mappings,
-            image_id: self.image_id,
-            launch_permissions: self.launch_permissions,
-            product_codes: self.product_codes,
             description: self.description,
             kernel_id: self.kernel_id,
             ramdisk_id: self.ramdisk_id,
@@ -381,6 +377,10 @@ impl DescribeImageAttributeOutputBuilder {
             last_launched_time: self.last_launched_time,
             imds_support: self.imds_support,
             deregistration_protection: self.deregistration_protection,
+            image_id: self.image_id,
+            launch_permissions: self.launch_permissions,
+            product_codes: self.product_codes,
+            block_device_mappings: self.block_device_mappings,
             _request_id: self._request_id,
         }
     }

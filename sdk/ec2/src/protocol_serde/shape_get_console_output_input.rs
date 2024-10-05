@@ -11,13 +11,13 @@ pub fn ser_get_console_output_input_input_input(
         scope_1.string(var_2);
     }
     #[allow(unused_mut)]
-    let mut scope_3 = writer.prefix("DryRun");
-    if let Some(var_4) = &input.dry_run {
+    let mut scope_3 = writer.prefix("Latest");
+    if let Some(var_4) = &input.latest {
         scope_3.boolean(*var_4);
     }
     #[allow(unused_mut)]
-    let mut scope_5 = writer.prefix("Latest");
-    if let Some(var_6) = &input.latest {
+    let mut scope_5 = writer.prefix("DryRun");
+    if let Some(var_6) = &input.dry_run {
         scope_5.boolean(*var_6);
     }
     writer.finish();

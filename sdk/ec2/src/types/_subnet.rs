@@ -4,31 +4,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Subnet {
-    /// <p>The Availability Zone of the subnet.</p>
-    pub availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>The AZ ID of the subnet.</p>
     pub availability_zone_id: ::std::option::Option<::std::string::String>,
-    /// <p>The number of unused private IPv4 addresses in the subnet. The IPv4 addresses for any stopped instances are considered unavailable.</p>
-    pub available_ip_address_count: ::std::option::Option<i32>,
-    /// <p>The IPv4 CIDR block assigned to the subnet.</p>
-    pub cidr_block: ::std::option::Option<::std::string::String>,
-    /// <p>Indicates whether this is the default subnet for the Availability Zone.</p>
-    pub default_for_az: ::std::option::Option<bool>,
     /// <p>Indicates the device position for local network interfaces in this subnet. For example, <code>1</code> indicates local network interfaces in this subnet are the secondary network interface (eth1).</p>
     pub enable_lni_at_device_index: ::std::option::Option<i32>,
-    /// <p>Indicates whether instances launched in this subnet receive a public IPv4 address.</p>
-    /// <p>Amazon Web Services charges for all public IPv4 addresses, including public IPv4 addresses associated with running instances and Elastic IP addresses. For more information, see the <i>Public IPv4 Address</i> tab on the <a href="http://aws.amazon.com/vpc/pricing/">Amazon VPC pricing page</a>.</p>
-    pub map_public_ip_on_launch: ::std::option::Option<bool>,
     /// <p>Indicates whether a network interface created in this subnet (including a network interface created by <code>RunInstances</code>) receives a customer-owned IPv4 address.</p>
     pub map_customer_owned_ip_on_launch: ::std::option::Option<bool>,
     /// <p>The customer-owned IPv4 address pool associated with the subnet.</p>
     pub customer_owned_ipv4_pool: ::std::option::Option<::std::string::String>,
-    /// <p>The current state of the subnet.</p>
-    pub state: ::std::option::Option<crate::types::SubnetState>,
-    /// <p>The ID of the subnet.</p>
-    pub subnet_id: ::std::option::Option<::std::string::String>,
-    /// <p>The ID of the VPC the subnet is in.</p>
-    pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Amazon Web Services account that owns the subnet.</p>
     pub owner_id: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether a network interface created in this subnet (including a network interface created by <code>RunInstances</code>) receives an IPv6 address.</p>
@@ -47,36 +30,32 @@ pub struct Subnet {
     pub ipv6_native: ::std::option::Option<bool>,
     /// <p>The type of hostnames to assign to instances in the subnet at launch. An instance hostname is based on the IPv4 address or ID of the instance.</p>
     pub private_dns_name_options_on_launch: ::std::option::Option<crate::types::PrivateDnsNameOptionsOnLaunch>,
+    /// <p>The ID of the subnet.</p>
+    pub subnet_id: ::std::option::Option<::std::string::String>,
+    /// <p>The current state of the subnet.</p>
+    pub state: ::std::option::Option<crate::types::SubnetState>,
+    /// <p>The ID of the VPC the subnet is in.</p>
+    pub vpc_id: ::std::option::Option<::std::string::String>,
+    /// <p>The IPv4 CIDR block assigned to the subnet.</p>
+    pub cidr_block: ::std::option::Option<::std::string::String>,
+    /// <p>The number of unused private IPv4 addresses in the subnet. The IPv4 addresses for any stopped instances are considered unavailable.</p>
+    pub available_ip_address_count: ::std::option::Option<i32>,
+    /// <p>The Availability Zone of the subnet.</p>
+    pub availability_zone: ::std::option::Option<::std::string::String>,
+    /// <p>Indicates whether this is the default subnet for the Availability Zone.</p>
+    pub default_for_az: ::std::option::Option<bool>,
+    /// <p>Indicates whether instances launched in this subnet receive a public IPv4 address.</p>
+    /// <p>Amazon Web Services charges for all public IPv4 addresses, including public IPv4 addresses associated with running instances and Elastic IP addresses. For more information, see the <i>Public IPv4 Address</i> tab on the <a href="http://aws.amazon.com/vpc/pricing/">Amazon VPC pricing page</a>.</p>
+    pub map_public_ip_on_launch: ::std::option::Option<bool>,
 }
 impl Subnet {
-    /// <p>The Availability Zone of the subnet.</p>
-    pub fn availability_zone(&self) -> ::std::option::Option<&str> {
-        self.availability_zone.as_deref()
-    }
     /// <p>The AZ ID of the subnet.</p>
     pub fn availability_zone_id(&self) -> ::std::option::Option<&str> {
         self.availability_zone_id.as_deref()
     }
-    /// <p>The number of unused private IPv4 addresses in the subnet. The IPv4 addresses for any stopped instances are considered unavailable.</p>
-    pub fn available_ip_address_count(&self) -> ::std::option::Option<i32> {
-        self.available_ip_address_count
-    }
-    /// <p>The IPv4 CIDR block assigned to the subnet.</p>
-    pub fn cidr_block(&self) -> ::std::option::Option<&str> {
-        self.cidr_block.as_deref()
-    }
-    /// <p>Indicates whether this is the default subnet for the Availability Zone.</p>
-    pub fn default_for_az(&self) -> ::std::option::Option<bool> {
-        self.default_for_az
-    }
     /// <p>Indicates the device position for local network interfaces in this subnet. For example, <code>1</code> indicates local network interfaces in this subnet are the secondary network interface (eth1).</p>
     pub fn enable_lni_at_device_index(&self) -> ::std::option::Option<i32> {
         self.enable_lni_at_device_index
-    }
-    /// <p>Indicates whether instances launched in this subnet receive a public IPv4 address.</p>
-    /// <p>Amazon Web Services charges for all public IPv4 addresses, including public IPv4 addresses associated with running instances and Elastic IP addresses. For more information, see the <i>Public IPv4 Address</i> tab on the <a href="http://aws.amazon.com/vpc/pricing/">Amazon VPC pricing page</a>.</p>
-    pub fn map_public_ip_on_launch(&self) -> ::std::option::Option<bool> {
-        self.map_public_ip_on_launch
     }
     /// <p>Indicates whether a network interface created in this subnet (including a network interface created by <code>RunInstances</code>) receives a customer-owned IPv4 address.</p>
     pub fn map_customer_owned_ip_on_launch(&self) -> ::std::option::Option<bool> {
@@ -85,18 +64,6 @@ impl Subnet {
     /// <p>The customer-owned IPv4 address pool associated with the subnet.</p>
     pub fn customer_owned_ipv4_pool(&self) -> ::std::option::Option<&str> {
         self.customer_owned_ipv4_pool.as_deref()
-    }
-    /// <p>The current state of the subnet.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::SubnetState> {
-        self.state.as_ref()
-    }
-    /// <p>The ID of the subnet.</p>
-    pub fn subnet_id(&self) -> ::std::option::Option<&str> {
-        self.subnet_id.as_deref()
-    }
-    /// <p>The ID of the VPC the subnet is in.</p>
-    pub fn vpc_id(&self) -> ::std::option::Option<&str> {
-        self.vpc_id.as_deref()
     }
     /// <p>The ID of the Amazon Web Services account that owns the subnet.</p>
     pub fn owner_id(&self) -> ::std::option::Option<&str> {
@@ -138,6 +105,39 @@ impl Subnet {
     pub fn private_dns_name_options_on_launch(&self) -> ::std::option::Option<&crate::types::PrivateDnsNameOptionsOnLaunch> {
         self.private_dns_name_options_on_launch.as_ref()
     }
+    /// <p>The ID of the subnet.</p>
+    pub fn subnet_id(&self) -> ::std::option::Option<&str> {
+        self.subnet_id.as_deref()
+    }
+    /// <p>The current state of the subnet.</p>
+    pub fn state(&self) -> ::std::option::Option<&crate::types::SubnetState> {
+        self.state.as_ref()
+    }
+    /// <p>The ID of the VPC the subnet is in.</p>
+    pub fn vpc_id(&self) -> ::std::option::Option<&str> {
+        self.vpc_id.as_deref()
+    }
+    /// <p>The IPv4 CIDR block assigned to the subnet.</p>
+    pub fn cidr_block(&self) -> ::std::option::Option<&str> {
+        self.cidr_block.as_deref()
+    }
+    /// <p>The number of unused private IPv4 addresses in the subnet. The IPv4 addresses for any stopped instances are considered unavailable.</p>
+    pub fn available_ip_address_count(&self) -> ::std::option::Option<i32> {
+        self.available_ip_address_count
+    }
+    /// <p>The Availability Zone of the subnet.</p>
+    pub fn availability_zone(&self) -> ::std::option::Option<&str> {
+        self.availability_zone.as_deref()
+    }
+    /// <p>Indicates whether this is the default subnet for the Availability Zone.</p>
+    pub fn default_for_az(&self) -> ::std::option::Option<bool> {
+        self.default_for_az
+    }
+    /// <p>Indicates whether instances launched in this subnet receive a public IPv4 address.</p>
+    /// <p>Amazon Web Services charges for all public IPv4 addresses, including public IPv4 addresses associated with running instances and Elastic IP addresses. For more information, see the <i>Public IPv4 Address</i> tab on the <a href="http://aws.amazon.com/vpc/pricing/">Amazon VPC pricing page</a>.</p>
+    pub fn map_public_ip_on_launch(&self) -> ::std::option::Option<bool> {
+        self.map_public_ip_on_launch
+    }
 }
 impl Subnet {
     /// Creates a new builder-style object to manufacture [`Subnet`](crate::types::Subnet).
@@ -150,18 +150,10 @@ impl Subnet {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct SubnetBuilder {
-    pub(crate) availability_zone: ::std::option::Option<::std::string::String>,
     pub(crate) availability_zone_id: ::std::option::Option<::std::string::String>,
-    pub(crate) available_ip_address_count: ::std::option::Option<i32>,
-    pub(crate) cidr_block: ::std::option::Option<::std::string::String>,
-    pub(crate) default_for_az: ::std::option::Option<bool>,
     pub(crate) enable_lni_at_device_index: ::std::option::Option<i32>,
-    pub(crate) map_public_ip_on_launch: ::std::option::Option<bool>,
     pub(crate) map_customer_owned_ip_on_launch: ::std::option::Option<bool>,
     pub(crate) customer_owned_ipv4_pool: ::std::option::Option<::std::string::String>,
-    pub(crate) state: ::std::option::Option<crate::types::SubnetState>,
-    pub(crate) subnet_id: ::std::option::Option<::std::string::String>,
-    pub(crate) vpc_id: ::std::option::Option<::std::string::String>,
     pub(crate) owner_id: ::std::option::Option<::std::string::String>,
     pub(crate) assign_ipv6_address_on_creation: ::std::option::Option<bool>,
     pub(crate) ipv6_cidr_block_association_set: ::std::option::Option<::std::vec::Vec<crate::types::SubnetIpv6CidrBlockAssociation>>,
@@ -171,22 +163,16 @@ pub struct SubnetBuilder {
     pub(crate) enable_dns64: ::std::option::Option<bool>,
     pub(crate) ipv6_native: ::std::option::Option<bool>,
     pub(crate) private_dns_name_options_on_launch: ::std::option::Option<crate::types::PrivateDnsNameOptionsOnLaunch>,
+    pub(crate) subnet_id: ::std::option::Option<::std::string::String>,
+    pub(crate) state: ::std::option::Option<crate::types::SubnetState>,
+    pub(crate) vpc_id: ::std::option::Option<::std::string::String>,
+    pub(crate) cidr_block: ::std::option::Option<::std::string::String>,
+    pub(crate) available_ip_address_count: ::std::option::Option<i32>,
+    pub(crate) availability_zone: ::std::option::Option<::std::string::String>,
+    pub(crate) default_for_az: ::std::option::Option<bool>,
+    pub(crate) map_public_ip_on_launch: ::std::option::Option<bool>,
 }
 impl SubnetBuilder {
-    /// <p>The Availability Zone of the subnet.</p>
-    pub fn availability_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.availability_zone = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>The Availability Zone of the subnet.</p>
-    pub fn set_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.availability_zone = input;
-        self
-    }
-    /// <p>The Availability Zone of the subnet.</p>
-    pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
-        &self.availability_zone
-    }
     /// <p>The AZ ID of the subnet.</p>
     pub fn availability_zone_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.availability_zone_id = ::std::option::Option::Some(input.into());
@@ -201,48 +187,6 @@ impl SubnetBuilder {
     pub fn get_availability_zone_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.availability_zone_id
     }
-    /// <p>The number of unused private IPv4 addresses in the subnet. The IPv4 addresses for any stopped instances are considered unavailable.</p>
-    pub fn available_ip_address_count(mut self, input: i32) -> Self {
-        self.available_ip_address_count = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>The number of unused private IPv4 addresses in the subnet. The IPv4 addresses for any stopped instances are considered unavailable.</p>
-    pub fn set_available_ip_address_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.available_ip_address_count = input;
-        self
-    }
-    /// <p>The number of unused private IPv4 addresses in the subnet. The IPv4 addresses for any stopped instances are considered unavailable.</p>
-    pub fn get_available_ip_address_count(&self) -> &::std::option::Option<i32> {
-        &self.available_ip_address_count
-    }
-    /// <p>The IPv4 CIDR block assigned to the subnet.</p>
-    pub fn cidr_block(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.cidr_block = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>The IPv4 CIDR block assigned to the subnet.</p>
-    pub fn set_cidr_block(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cidr_block = input;
-        self
-    }
-    /// <p>The IPv4 CIDR block assigned to the subnet.</p>
-    pub fn get_cidr_block(&self) -> &::std::option::Option<::std::string::String> {
-        &self.cidr_block
-    }
-    /// <p>Indicates whether this is the default subnet for the Availability Zone.</p>
-    pub fn default_for_az(mut self, input: bool) -> Self {
-        self.default_for_az = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>Indicates whether this is the default subnet for the Availability Zone.</p>
-    pub fn set_default_for_az(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.default_for_az = input;
-        self
-    }
-    /// <p>Indicates whether this is the default subnet for the Availability Zone.</p>
-    pub fn get_default_for_az(&self) -> &::std::option::Option<bool> {
-        &self.default_for_az
-    }
     /// <p>Indicates the device position for local network interfaces in this subnet. For example, <code>1</code> indicates local network interfaces in this subnet are the secondary network interface (eth1).</p>
     pub fn enable_lni_at_device_index(mut self, input: i32) -> Self {
         self.enable_lni_at_device_index = ::std::option::Option::Some(input);
@@ -256,23 +200,6 @@ impl SubnetBuilder {
     /// <p>Indicates the device position for local network interfaces in this subnet. For example, <code>1</code> indicates local network interfaces in this subnet are the secondary network interface (eth1).</p>
     pub fn get_enable_lni_at_device_index(&self) -> &::std::option::Option<i32> {
         &self.enable_lni_at_device_index
-    }
-    /// <p>Indicates whether instances launched in this subnet receive a public IPv4 address.</p>
-    /// <p>Amazon Web Services charges for all public IPv4 addresses, including public IPv4 addresses associated with running instances and Elastic IP addresses. For more information, see the <i>Public IPv4 Address</i> tab on the <a href="http://aws.amazon.com/vpc/pricing/">Amazon VPC pricing page</a>.</p>
-    pub fn map_public_ip_on_launch(mut self, input: bool) -> Self {
-        self.map_public_ip_on_launch = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>Indicates whether instances launched in this subnet receive a public IPv4 address.</p>
-    /// <p>Amazon Web Services charges for all public IPv4 addresses, including public IPv4 addresses associated with running instances and Elastic IP addresses. For more information, see the <i>Public IPv4 Address</i> tab on the <a href="http://aws.amazon.com/vpc/pricing/">Amazon VPC pricing page</a>.</p>
-    pub fn set_map_public_ip_on_launch(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.map_public_ip_on_launch = input;
-        self
-    }
-    /// <p>Indicates whether instances launched in this subnet receive a public IPv4 address.</p>
-    /// <p>Amazon Web Services charges for all public IPv4 addresses, including public IPv4 addresses associated with running instances and Elastic IP addresses. For more information, see the <i>Public IPv4 Address</i> tab on the <a href="http://aws.amazon.com/vpc/pricing/">Amazon VPC pricing page</a>.</p>
-    pub fn get_map_public_ip_on_launch(&self) -> &::std::option::Option<bool> {
-        &self.map_public_ip_on_launch
     }
     /// <p>Indicates whether a network interface created in this subnet (including a network interface created by <code>RunInstances</code>) receives a customer-owned IPv4 address.</p>
     pub fn map_customer_owned_ip_on_launch(mut self, input: bool) -> Self {
@@ -301,48 +228,6 @@ impl SubnetBuilder {
     /// <p>The customer-owned IPv4 address pool associated with the subnet.</p>
     pub fn get_customer_owned_ipv4_pool(&self) -> &::std::option::Option<::std::string::String> {
         &self.customer_owned_ipv4_pool
-    }
-    /// <p>The current state of the subnet.</p>
-    pub fn state(mut self, input: crate::types::SubnetState) -> Self {
-        self.state = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>The current state of the subnet.</p>
-    pub fn set_state(mut self, input: ::std::option::Option<crate::types::SubnetState>) -> Self {
-        self.state = input;
-        self
-    }
-    /// <p>The current state of the subnet.</p>
-    pub fn get_state(&self) -> &::std::option::Option<crate::types::SubnetState> {
-        &self.state
-    }
-    /// <p>The ID of the subnet.</p>
-    pub fn subnet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.subnet_id = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>The ID of the subnet.</p>
-    pub fn set_subnet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.subnet_id = input;
-        self
-    }
-    /// <p>The ID of the subnet.</p>
-    pub fn get_subnet_id(&self) -> &::std::option::Option<::std::string::String> {
-        &self.subnet_id
-    }
-    /// <p>The ID of the VPC the subnet is in.</p>
-    pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.vpc_id = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>The ID of the VPC the subnet is in.</p>
-    pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vpc_id = input;
-        self
-    }
-    /// <p>The ID of the VPC the subnet is in.</p>
-    pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
-        &self.vpc_id
     }
     /// <p>The ID of the Amazon Web Services account that owns the subnet.</p>
     pub fn owner_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -485,21 +370,128 @@ impl SubnetBuilder {
     pub fn get_private_dns_name_options_on_launch(&self) -> &::std::option::Option<crate::types::PrivateDnsNameOptionsOnLaunch> {
         &self.private_dns_name_options_on_launch
     }
+    /// <p>The ID of the subnet.</p>
+    pub fn subnet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.subnet_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the subnet.</p>
+    pub fn set_subnet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.subnet_id = input;
+        self
+    }
+    /// <p>The ID of the subnet.</p>
+    pub fn get_subnet_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.subnet_id
+    }
+    /// <p>The current state of the subnet.</p>
+    pub fn state(mut self, input: crate::types::SubnetState) -> Self {
+        self.state = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The current state of the subnet.</p>
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::SubnetState>) -> Self {
+        self.state = input;
+        self
+    }
+    /// <p>The current state of the subnet.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::SubnetState> {
+        &self.state
+    }
+    /// <p>The ID of the VPC the subnet is in.</p>
+    pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.vpc_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the VPC the subnet is in.</p>
+    pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.vpc_id = input;
+        self
+    }
+    /// <p>The ID of the VPC the subnet is in.</p>
+    pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_id
+    }
+    /// <p>The IPv4 CIDR block assigned to the subnet.</p>
+    pub fn cidr_block(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.cidr_block = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The IPv4 CIDR block assigned to the subnet.</p>
+    pub fn set_cidr_block(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.cidr_block = input;
+        self
+    }
+    /// <p>The IPv4 CIDR block assigned to the subnet.</p>
+    pub fn get_cidr_block(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cidr_block
+    }
+    /// <p>The number of unused private IPv4 addresses in the subnet. The IPv4 addresses for any stopped instances are considered unavailable.</p>
+    pub fn available_ip_address_count(mut self, input: i32) -> Self {
+        self.available_ip_address_count = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The number of unused private IPv4 addresses in the subnet. The IPv4 addresses for any stopped instances are considered unavailable.</p>
+    pub fn set_available_ip_address_count(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.available_ip_address_count = input;
+        self
+    }
+    /// <p>The number of unused private IPv4 addresses in the subnet. The IPv4 addresses for any stopped instances are considered unavailable.</p>
+    pub fn get_available_ip_address_count(&self) -> &::std::option::Option<i32> {
+        &self.available_ip_address_count
+    }
+    /// <p>The Availability Zone of the subnet.</p>
+    pub fn availability_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.availability_zone = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Availability Zone of the subnet.</p>
+    pub fn set_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.availability_zone = input;
+        self
+    }
+    /// <p>The Availability Zone of the subnet.</p>
+    pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
+        &self.availability_zone
+    }
+    /// <p>Indicates whether this is the default subnet for the Availability Zone.</p>
+    pub fn default_for_az(mut self, input: bool) -> Self {
+        self.default_for_az = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether this is the default subnet for the Availability Zone.</p>
+    pub fn set_default_for_az(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.default_for_az = input;
+        self
+    }
+    /// <p>Indicates whether this is the default subnet for the Availability Zone.</p>
+    pub fn get_default_for_az(&self) -> &::std::option::Option<bool> {
+        &self.default_for_az
+    }
+    /// <p>Indicates whether instances launched in this subnet receive a public IPv4 address.</p>
+    /// <p>Amazon Web Services charges for all public IPv4 addresses, including public IPv4 addresses associated with running instances and Elastic IP addresses. For more information, see the <i>Public IPv4 Address</i> tab on the <a href="http://aws.amazon.com/vpc/pricing/">Amazon VPC pricing page</a>.</p>
+    pub fn map_public_ip_on_launch(mut self, input: bool) -> Self {
+        self.map_public_ip_on_launch = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether instances launched in this subnet receive a public IPv4 address.</p>
+    /// <p>Amazon Web Services charges for all public IPv4 addresses, including public IPv4 addresses associated with running instances and Elastic IP addresses. For more information, see the <i>Public IPv4 Address</i> tab on the <a href="http://aws.amazon.com/vpc/pricing/">Amazon VPC pricing page</a>.</p>
+    pub fn set_map_public_ip_on_launch(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.map_public_ip_on_launch = input;
+        self
+    }
+    /// <p>Indicates whether instances launched in this subnet receive a public IPv4 address.</p>
+    /// <p>Amazon Web Services charges for all public IPv4 addresses, including public IPv4 addresses associated with running instances and Elastic IP addresses. For more information, see the <i>Public IPv4 Address</i> tab on the <a href="http://aws.amazon.com/vpc/pricing/">Amazon VPC pricing page</a>.</p>
+    pub fn get_map_public_ip_on_launch(&self) -> &::std::option::Option<bool> {
+        &self.map_public_ip_on_launch
+    }
     /// Consumes the builder and constructs a [`Subnet`](crate::types::Subnet).
     pub fn build(self) -> crate::types::Subnet {
         crate::types::Subnet {
-            availability_zone: self.availability_zone,
             availability_zone_id: self.availability_zone_id,
-            available_ip_address_count: self.available_ip_address_count,
-            cidr_block: self.cidr_block,
-            default_for_az: self.default_for_az,
             enable_lni_at_device_index: self.enable_lni_at_device_index,
-            map_public_ip_on_launch: self.map_public_ip_on_launch,
             map_customer_owned_ip_on_launch: self.map_customer_owned_ip_on_launch,
             customer_owned_ipv4_pool: self.customer_owned_ipv4_pool,
-            state: self.state,
-            subnet_id: self.subnet_id,
-            vpc_id: self.vpc_id,
             owner_id: self.owner_id,
             assign_ipv6_address_on_creation: self.assign_ipv6_address_on_creation,
             ipv6_cidr_block_association_set: self.ipv6_cidr_block_association_set,
@@ -509,6 +501,14 @@ impl SubnetBuilder {
             enable_dns64: self.enable_dns64,
             ipv6_native: self.ipv6_native,
             private_dns_name_options_on_launch: self.private_dns_name_options_on_launch,
+            subnet_id: self.subnet_id,
+            state: self.state,
+            vpc_id: self.vpc_id,
+            cidr_block: self.cidr_block,
+            available_ip_address_count: self.available_ip_address_count,
+            availability_zone: self.availability_zone,
+            default_for_az: self.default_for_az,
+            map_public_ip_on_launch: self.map_public_ip_on_launch,
         }
     }
 }

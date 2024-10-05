@@ -46,27 +46,27 @@ pub fn ser_copy_image_input_input_input(
         scope_15.string(var_16);
     }
     #[allow(unused_mut)]
-    let mut scope_17 = writer.prefix("DryRun");
-    if let Some(var_18) = &input.dry_run {
+    let mut scope_17 = writer.prefix("CopyImageTags");
+    if let Some(var_18) = &input.copy_image_tags {
         scope_17.boolean(*var_18);
     }
     #[allow(unused_mut)]
-    let mut scope_19 = writer.prefix("CopyImageTags");
-    if let Some(var_20) = &input.copy_image_tags {
-        scope_19.boolean(*var_20);
+    let mut scope_19 = writer.prefix("TagSpecification");
+    if let Some(var_20) = &input.tag_specifications {
+        if !var_20.is_empty() {
+            let mut list_22 = scope_19.start_list(true, Some("item"));
+            for item_21 in var_20 {
+                #[allow(unused_mut)]
+                let mut entry_23 = list_22.entry();
+                crate::protocol_serde::shape_tag_specification::ser_tag_specification(entry_23, item_21)?;
+            }
+            list_22.finish();
+        }
     }
     #[allow(unused_mut)]
-    let mut scope_21 = writer.prefix("TagSpecification");
-    if let Some(var_22) = &input.tag_specifications {
-        if !var_22.is_empty() {
-            let mut list_24 = scope_21.start_list(true, Some("item"));
-            for item_23 in var_22 {
-                #[allow(unused_mut)]
-                let mut entry_25 = list_24.entry();
-                crate::protocol_serde::shape_tag_specification::ser_tag_specification(entry_25, item_23)?;
-            }
-            list_24.finish();
-        }
+    let mut scope_24 = writer.prefix("DryRun");
+    if let Some(var_25) = &input.dry_run {
+        scope_24.boolean(*var_25);
     }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))

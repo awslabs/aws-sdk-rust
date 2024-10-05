@@ -7,13 +7,13 @@ pub use crate::types::_security_group_rule_description::SecurityGroupRuleDescrip
 
 pub use crate::types::_ip_permission::IpPermissionBuilder;
 
-pub use crate::types::_user_id_group_pair::UserIdGroupPairBuilder;
-
 pub use crate::types::_prefix_list_id::PrefixListIdBuilder;
 
 pub use crate::types::_ipv6_range::Ipv6RangeBuilder;
 
 pub use crate::types::_ip_range::IpRangeBuilder;
+
+pub use crate::types::_user_id_group_pair::UserIdGroupPairBuilder;
 
 pub use crate::types::_instance_monitoring::InstanceMonitoringBuilder;
 
@@ -103,6 +103,10 @@ pub use crate::types::_scheduled_instances_ebs::ScheduledInstancesEbsBuilder;
 
 pub use crate::types::_instance::InstanceBuilder;
 
+pub use crate::types::_placement::PlacementBuilder;
+
+pub use crate::types::_product_code::ProductCodeBuilder;
+
 pub use crate::types::_instance_maintenance_options::InstanceMaintenanceOptionsBuilder;
 
 pub use crate::types::_private_dns_name_options_response::PrivateDnsNameOptionsResponseBuilder;
@@ -155,9 +159,21 @@ pub use crate::types::_instance_block_device_mapping::InstanceBlockDeviceMapping
 
 pub use crate::types::_ebs_instance_block_device::EbsInstanceBlockDeviceBuilder;
 
-pub use crate::types::_product_code::ProductCodeBuilder;
+pub use crate::types::_iam_instance_profile_specification::IamInstanceProfileSpecificationBuilder;
 
-pub use crate::types::_placement::PlacementBuilder;
+pub use crate::types::_instance_network_interface_specification::InstanceNetworkInterfaceSpecificationBuilder;
+
+pub use crate::types::_connection_tracking_specification_request::ConnectionTrackingSpecificationRequestBuilder;
+
+pub use crate::types::_ena_srd_specification_request::EnaSrdSpecificationRequestBuilder;
+
+pub use crate::types::_ena_srd_udp_specification_request::EnaSrdUdpSpecificationRequestBuilder;
+
+pub use crate::types::_ipv6_prefix_specification_request::Ipv6PrefixSpecificationRequestBuilder;
+
+pub use crate::types::_ipv4_prefix_specification_request::Ipv4PrefixSpecificationRequestBuilder;
+
+pub use crate::types::_private_ip_address_specification::PrivateIpAddressSpecificationBuilder;
 
 pub use crate::types::_instance_maintenance_options_request::InstanceMaintenanceOptionsRequestBuilder;
 
@@ -188,22 +204,6 @@ pub use crate::types::_launch_template_specification::LaunchTemplateSpecificatio
 pub use crate::types::_elastic_inference_accelerator::ElasticInferenceAcceleratorBuilder;
 
 pub use crate::types::_elastic_gpu_specification::ElasticGpuSpecificationBuilder;
-
-pub use crate::types::_instance_network_interface_specification::InstanceNetworkInterfaceSpecificationBuilder;
-
-pub use crate::types::_connection_tracking_specification_request::ConnectionTrackingSpecificationRequestBuilder;
-
-pub use crate::types::_ena_srd_specification_request::EnaSrdSpecificationRequestBuilder;
-
-pub use crate::types::_ena_srd_udp_specification_request::EnaSrdUdpSpecificationRequestBuilder;
-
-pub use crate::types::_ipv6_prefix_specification_request::Ipv6PrefixSpecificationRequestBuilder;
-
-pub use crate::types::_ipv4_prefix_specification_request::Ipv4PrefixSpecificationRequestBuilder;
-
-pub use crate::types::_private_ip_address_specification::PrivateIpAddressSpecificationBuilder;
-
-pub use crate::types::_iam_instance_profile_specification::IamInstanceProfileSpecificationBuilder;
 
 pub use crate::types::_run_instances_monitoring_enabled::RunInstancesMonitoringEnabledBuilder;
 
@@ -487,13 +487,13 @@ pub use crate::types::_security_group_rule_request::SecurityGroupRuleRequestBuil
 
 pub use crate::types::_reserved_instances_configuration::ReservedInstancesConfigurationBuilder;
 
-pub use crate::types::_ena_srd_specification::EnaSrdSpecificationBuilder;
-
-pub use crate::types::_ena_srd_udp_specification::EnaSrdUdpSpecificationBuilder;
+pub use crate::types::_network_interface_attachment_changes::NetworkInterfaceAttachmentChangesBuilder;
 
 pub use crate::types::_attribute_value::AttributeValueBuilder;
 
-pub use crate::types::_network_interface_attachment_changes::NetworkInterfaceAttachmentChangesBuilder;
+pub use crate::types::_ena_srd_specification::EnaSrdSpecificationBuilder;
+
+pub use crate::types::_ena_srd_udp_specification::EnaSrdUdpSpecificationBuilder;
 
 pub use crate::types::_remove_prefix_list_entry::RemovePrefixListEntryBuilder;
 
@@ -627,11 +627,11 @@ pub use crate::types::_user_bucket::UserBucketBuilder;
 
 pub use crate::types::_client_data::ClientDataBuilder;
 
+pub use crate::types::_disk_image::DiskImageBuilder;
+
 pub use crate::types::_import_instance_launch_specification::ImportInstanceLaunchSpecificationBuilder;
 
 pub use crate::types::_user_data::UserDataBuilder;
-
-pub use crate::types::_disk_image::DiskImageBuilder;
 
 pub use crate::types::_import_image_license_configuration_response::ImportImageLicenseConfigurationResponseBuilder;
 
@@ -1301,11 +1301,11 @@ pub use crate::types::_capacity_block_offering::CapacityBlockOfferingBuilder;
 
 pub use crate::types::_bundle_task::BundleTaskBuilder;
 
+pub use crate::types::_bundle_task_error::BundleTaskErrorBuilder;
+
 pub use crate::types::_storage::StorageBuilder;
 
 pub use crate::types::_s3_storage::S3StorageBuilder;
-
-pub use crate::types::_bundle_task_error::BundleTaskErrorBuilder;
 
 pub use crate::types::_subscription::SubscriptionBuilder;
 

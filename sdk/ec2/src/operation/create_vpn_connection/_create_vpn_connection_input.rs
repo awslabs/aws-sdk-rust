@@ -12,12 +12,12 @@ pub struct CreateVpnConnectionInput {
     pub vpn_gateway_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the transit gateway. If you specify a transit gateway, you cannot specify a virtual private gateway.</p>
     pub transit_gateway_id: ::std::option::Option<::std::string::String>,
+    /// <p>The tags to apply to the VPN connection.</p>
+    pub tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The options for the VPN connection.</p>
     pub options: ::std::option::Option<crate::types::VpnConnectionOptionsSpecification>,
-    /// <p>The tags to apply to the VPN connection.</p>
-    pub tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
 }
 impl CreateVpnConnectionInput {
     /// <p>The ID of the customer gateway.</p>
@@ -36,6 +36,12 @@ impl CreateVpnConnectionInput {
     pub fn transit_gateway_id(&self) -> ::std::option::Option<&str> {
         self.transit_gateway_id.as_deref()
     }
+    /// <p>The tags to apply to the VPN connection.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_specifications.is_none()`.
+    pub fn tag_specifications(&self) -> &[crate::types::TagSpecification] {
+        self.tag_specifications.as_deref().unwrap_or_default()
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
         self.dry_run
@@ -43,12 +49,6 @@ impl CreateVpnConnectionInput {
     /// <p>The options for the VPN connection.</p>
     pub fn options(&self) -> ::std::option::Option<&crate::types::VpnConnectionOptionsSpecification> {
         self.options.as_ref()
-    }
-    /// <p>The tags to apply to the VPN connection.</p>
-    ///
-    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_specifications.is_none()`.
-    pub fn tag_specifications(&self) -> &[crate::types::TagSpecification] {
-        self.tag_specifications.as_deref().unwrap_or_default()
     }
 }
 impl CreateVpnConnectionInput {
@@ -66,9 +66,9 @@ pub struct CreateVpnConnectionInputBuilder {
     pub(crate) r#type: ::std::option::Option<::std::string::String>,
     pub(crate) vpn_gateway_id: ::std::option::Option<::std::string::String>,
     pub(crate) transit_gateway_id: ::std::option::Option<::std::string::String>,
+    pub(crate) tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) options: ::std::option::Option<crate::types::VpnConnectionOptionsSpecification>,
-    pub(crate) tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
 }
 impl CreateVpnConnectionInputBuilder {
     /// <p>The ID of the customer gateway.</p>
@@ -129,6 +129,26 @@ impl CreateVpnConnectionInputBuilder {
     pub fn get_transit_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.transit_gateway_id
     }
+    /// Appends an item to `tag_specifications`.
+    ///
+    /// To override the contents of this collection use [`set_tag_specifications`](Self::set_tag_specifications).
+    ///
+    /// <p>The tags to apply to the VPN connection.</p>
+    pub fn tag_specifications(mut self, input: crate::types::TagSpecification) -> Self {
+        let mut v = self.tag_specifications.unwrap_or_default();
+        v.push(input);
+        self.tag_specifications = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The tags to apply to the VPN connection.</p>
+    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>) -> Self {
+        self.tag_specifications = input;
+        self
+    }
+    /// <p>The tags to apply to the VPN connection.</p>
+    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+        &self.tag_specifications
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.dry_run = ::std::option::Option::Some(input);
@@ -157,26 +177,6 @@ impl CreateVpnConnectionInputBuilder {
     pub fn get_options(&self) -> &::std::option::Option<crate::types::VpnConnectionOptionsSpecification> {
         &self.options
     }
-    /// Appends an item to `tag_specifications`.
-    ///
-    /// To override the contents of this collection use [`set_tag_specifications`](Self::set_tag_specifications).
-    ///
-    /// <p>The tags to apply to the VPN connection.</p>
-    pub fn tag_specifications(mut self, input: crate::types::TagSpecification) -> Self {
-        let mut v = self.tag_specifications.unwrap_or_default();
-        v.push(input);
-        self.tag_specifications = ::std::option::Option::Some(v);
-        self
-    }
-    /// <p>The tags to apply to the VPN connection.</p>
-    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>) -> Self {
-        self.tag_specifications = input;
-        self
-    }
-    /// <p>The tags to apply to the VPN connection.</p>
-    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
-        &self.tag_specifications
-    }
     /// Consumes the builder and constructs a [`CreateVpnConnectionInput`](crate::operation::create_vpn_connection::CreateVpnConnectionInput).
     pub fn build(
         self,
@@ -187,9 +187,9 @@ impl CreateVpnConnectionInputBuilder {
             r#type: self.r#type,
             vpn_gateway_id: self.vpn_gateway_id,
             transit_gateway_id: self.transit_gateway_id,
+            tag_specifications: self.tag_specifications,
             dry_run: self.dry_run,
             options: self.options,
-            tag_specifications: self.tag_specifications,
         })
     }
 }

@@ -11,30 +11,30 @@ pub fn ser_describe_spot_fleet_requests_input_input_input(
         scope_1.boolean(*var_2);
     }
     #[allow(unused_mut)]
-    let mut scope_3 = writer.prefix("MaxResults");
-    if let Some(var_4) = &input.max_results {
-        scope_3.number(
-            #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_4).into()),
-        );
-    }
-    #[allow(unused_mut)]
-    let mut scope_5 = writer.prefix("NextToken");
-    if let Some(var_6) = &input.next_token {
-        scope_5.string(var_6);
-    }
-    #[allow(unused_mut)]
-    let mut scope_7 = writer.prefix("SpotFleetRequestId");
-    if let Some(var_8) = &input.spot_fleet_request_ids {
-        if !var_8.is_empty() {
-            let mut list_10 = scope_7.start_list(true, Some("item"));
-            for item_9 in var_8 {
+    let mut scope_3 = writer.prefix("SpotFleetRequestId");
+    if let Some(var_4) = &input.spot_fleet_request_ids {
+        if !var_4.is_empty() {
+            let mut list_6 = scope_3.start_list(true, Some("item"));
+            for item_5 in var_4 {
                 #[allow(unused_mut)]
-                let mut entry_11 = list_10.entry();
-                entry_11.string(item_9);
+                let mut entry_7 = list_6.entry();
+                entry_7.string(item_5);
             }
-            list_10.finish();
+            list_6.finish();
         }
+    }
+    #[allow(unused_mut)]
+    let mut scope_8 = writer.prefix("NextToken");
+    if let Some(var_9) = &input.next_token {
+        scope_8.string(var_9);
+    }
+    #[allow(unused_mut)]
+    let mut scope_10 = writer.prefix("MaxResults");
+    if let Some(var_11) = &input.max_results {
+        scope_10.number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_11).into()),
+        );
     }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))

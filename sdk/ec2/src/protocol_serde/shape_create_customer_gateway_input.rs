@@ -52,17 +52,17 @@ pub fn ser_create_customer_gateway_input_input_input(
         scope_16.string(var_17);
     }
     #[allow(unused_mut)]
-    let mut scope_18 = writer.prefix("DryRun");
-    if let Some(var_19) = &input.dry_run {
-        scope_18.boolean(*var_19);
+    let mut scope_18 = writer.prefix("BgpAsnExtended");
+    if let Some(var_19) = &input.bgp_asn_extended {
+        scope_18.number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_19).into()),
+        );
     }
     #[allow(unused_mut)]
-    let mut scope_20 = writer.prefix("BgpAsnExtended");
-    if let Some(var_21) = &input.bgp_asn_extended {
-        scope_20.number(
-            #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_21).into()),
-        );
+    let mut scope_20 = writer.prefix("DryRun");
+    if let Some(var_21) = &input.dry_run {
+        scope_20.boolean(*var_21);
     }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))

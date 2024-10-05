@@ -109,25 +109,6 @@ impl UnassignIpv6AddressesFluentBuilder {
         self
     }
     ///
-    /// Appends an item to `Ipv6Addresses`.
-    ///
-    /// To override the contents of this collection use [`set_ipv6_addresses`](Self::set_ipv6_addresses).
-    ///
-    /// <p>The IPv6 addresses to unassign from the network interface.</p>
-    pub fn ipv6_addresses(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.inner = self.inner.ipv6_addresses(input.into());
-        self
-    }
-    /// <p>The IPv6 addresses to unassign from the network interface.</p>
-    pub fn set_ipv6_addresses(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.inner = self.inner.set_ipv6_addresses(input);
-        self
-    }
-    /// <p>The IPv6 addresses to unassign from the network interface.</p>
-    pub fn get_ipv6_addresses(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
-        self.inner.get_ipv6_addresses()
-    }
-    ///
     /// Appends an item to `Ipv6Prefixes`.
     ///
     /// To override the contents of this collection use [`set_ipv6_prefixes`](Self::set_ipv6_prefixes).
@@ -159,5 +140,24 @@ impl UnassignIpv6AddressesFluentBuilder {
     /// <p>The ID of the network interface.</p>
     pub fn get_network_interface_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_network_interface_id()
+    }
+    ///
+    /// Appends an item to `Ipv6Addresses`.
+    ///
+    /// To override the contents of this collection use [`set_ipv6_addresses`](Self::set_ipv6_addresses).
+    ///
+    /// <p>The IPv6 addresses to unassign from the network interface.</p>
+    pub fn ipv6_addresses(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.ipv6_addresses(input.into());
+        self
+    }
+    /// <p>The IPv6 addresses to unassign from the network interface.</p>
+    pub fn set_ipv6_addresses(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.inner = self.inner.set_ipv6_addresses(input);
+        self
+    }
+    /// <p>The IPv6 addresses to unassign from the network interface.</p>
+    pub fn get_ipv6_addresses(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_ipv6_addresses()
     }
 }

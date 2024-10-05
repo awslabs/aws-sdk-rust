@@ -7,9 +7,6 @@ pub struct VpnConnectionOptionsSpecification {
     /// <p>Indicate whether to enable acceleration for the VPN connection.</p>
     /// <p>Default: <code>false</code></p>
     pub enable_acceleration: ::std::option::Option<bool>,
-    /// <p>Indicate whether the VPN connection uses static routes only. If you are creating a VPN connection for a device that does not support BGP, you must specify <code>true</code>. Use <code>CreateVpnConnectionRoute</code> to create a static route.</p>
-    /// <p>Default: <code>false</code></p>
-    pub static_routes_only: ::std::option::Option<bool>,
     /// <p>Indicate whether the VPN tunnels process IPv4 or IPv6 traffic.</p>
     /// <p>Default: <code>ipv4</code></p>
     pub tunnel_inside_ip_version: ::std::option::Option<crate::types::TunnelInsideIpVersion>,
@@ -34,17 +31,15 @@ pub struct VpnConnectionOptionsSpecification {
     /// <p>The transit gateway attachment ID to use for the VPN tunnel.</p>
     /// <p>Required if <code>OutsideIpAddressType</code> is set to <code>PrivateIpv4</code>.</p>
     pub transport_transit_gateway_attachment_id: ::std::option::Option<::std::string::String>,
+    /// <p>Indicate whether the VPN connection uses static routes only. If you are creating a VPN connection for a device that does not support BGP, you must specify <code>true</code>. Use <code>CreateVpnConnectionRoute</code> to create a static route.</p>
+    /// <p>Default: <code>false</code></p>
+    pub static_routes_only: ::std::option::Option<bool>,
 }
 impl VpnConnectionOptionsSpecification {
     /// <p>Indicate whether to enable acceleration for the VPN connection.</p>
     /// <p>Default: <code>false</code></p>
     pub fn enable_acceleration(&self) -> ::std::option::Option<bool> {
         self.enable_acceleration
-    }
-    /// <p>Indicate whether the VPN connection uses static routes only. If you are creating a VPN connection for a device that does not support BGP, you must specify <code>true</code>. Use <code>CreateVpnConnectionRoute</code> to create a static route.</p>
-    /// <p>Default: <code>false</code></p>
-    pub fn static_routes_only(&self) -> ::std::option::Option<bool> {
-        self.static_routes_only
     }
     /// <p>Indicate whether the VPN tunnels process IPv4 or IPv6 traffic.</p>
     /// <p>Default: <code>ipv4</code></p>
@@ -88,6 +83,11 @@ impl VpnConnectionOptionsSpecification {
     pub fn transport_transit_gateway_attachment_id(&self) -> ::std::option::Option<&str> {
         self.transport_transit_gateway_attachment_id.as_deref()
     }
+    /// <p>Indicate whether the VPN connection uses static routes only. If you are creating a VPN connection for a device that does not support BGP, you must specify <code>true</code>. Use <code>CreateVpnConnectionRoute</code> to create a static route.</p>
+    /// <p>Default: <code>false</code></p>
+    pub fn static_routes_only(&self) -> ::std::option::Option<bool> {
+        self.static_routes_only
+    }
 }
 impl VpnConnectionOptionsSpecification {
     /// Creates a new builder-style object to manufacture [`VpnConnectionOptionsSpecification`](crate::types::VpnConnectionOptionsSpecification).
@@ -101,7 +101,6 @@ impl VpnConnectionOptionsSpecification {
 #[non_exhaustive]
 pub struct VpnConnectionOptionsSpecificationBuilder {
     pub(crate) enable_acceleration: ::std::option::Option<bool>,
-    pub(crate) static_routes_only: ::std::option::Option<bool>,
     pub(crate) tunnel_inside_ip_version: ::std::option::Option<crate::types::TunnelInsideIpVersion>,
     pub(crate) tunnel_options: ::std::option::Option<::std::vec::Vec<crate::types::VpnTunnelOptionsSpecification>>,
     pub(crate) local_ipv4_network_cidr: ::std::option::Option<::std::string::String>,
@@ -110,6 +109,7 @@ pub struct VpnConnectionOptionsSpecificationBuilder {
     pub(crate) remote_ipv6_network_cidr: ::std::option::Option<::std::string::String>,
     pub(crate) outside_ip_address_type: ::std::option::Option<::std::string::String>,
     pub(crate) transport_transit_gateway_attachment_id: ::std::option::Option<::std::string::String>,
+    pub(crate) static_routes_only: ::std::option::Option<bool>,
 }
 impl VpnConnectionOptionsSpecificationBuilder {
     /// <p>Indicate whether to enable acceleration for the VPN connection.</p>
@@ -128,23 +128,6 @@ impl VpnConnectionOptionsSpecificationBuilder {
     /// <p>Default: <code>false</code></p>
     pub fn get_enable_acceleration(&self) -> &::std::option::Option<bool> {
         &self.enable_acceleration
-    }
-    /// <p>Indicate whether the VPN connection uses static routes only. If you are creating a VPN connection for a device that does not support BGP, you must specify <code>true</code>. Use <code>CreateVpnConnectionRoute</code> to create a static route.</p>
-    /// <p>Default: <code>false</code></p>
-    pub fn static_routes_only(mut self, input: bool) -> Self {
-        self.static_routes_only = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>Indicate whether the VPN connection uses static routes only. If you are creating a VPN connection for a device that does not support BGP, you must specify <code>true</code>. Use <code>CreateVpnConnectionRoute</code> to create a static route.</p>
-    /// <p>Default: <code>false</code></p>
-    pub fn set_static_routes_only(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.static_routes_only = input;
-        self
-    }
-    /// <p>Indicate whether the VPN connection uses static routes only. If you are creating a VPN connection for a device that does not support BGP, you must specify <code>true</code>. Use <code>CreateVpnConnectionRoute</code> to create a static route.</p>
-    /// <p>Default: <code>false</code></p>
-    pub fn get_static_routes_only(&self) -> &::std::option::Option<bool> {
-        &self.static_routes_only
     }
     /// <p>Indicate whether the VPN tunnels process IPv4 or IPv6 traffic.</p>
     /// <p>Default: <code>ipv4</code></p>
@@ -288,11 +271,27 @@ impl VpnConnectionOptionsSpecificationBuilder {
     pub fn get_transport_transit_gateway_attachment_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.transport_transit_gateway_attachment_id
     }
+    /// <p>Indicate whether the VPN connection uses static routes only. If you are creating a VPN connection for a device that does not support BGP, you must specify <code>true</code>. Use <code>CreateVpnConnectionRoute</code> to create a static route.</p>
+    /// <p>Default: <code>false</code></p>
+    pub fn static_routes_only(mut self, input: bool) -> Self {
+        self.static_routes_only = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicate whether the VPN connection uses static routes only. If you are creating a VPN connection for a device that does not support BGP, you must specify <code>true</code>. Use <code>CreateVpnConnectionRoute</code> to create a static route.</p>
+    /// <p>Default: <code>false</code></p>
+    pub fn set_static_routes_only(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.static_routes_only = input;
+        self
+    }
+    /// <p>Indicate whether the VPN connection uses static routes only. If you are creating a VPN connection for a device that does not support BGP, you must specify <code>true</code>. Use <code>CreateVpnConnectionRoute</code> to create a static route.</p>
+    /// <p>Default: <code>false</code></p>
+    pub fn get_static_routes_only(&self) -> &::std::option::Option<bool> {
+        &self.static_routes_only
+    }
     /// Consumes the builder and constructs a [`VpnConnectionOptionsSpecification`](crate::types::VpnConnectionOptionsSpecification).
     pub fn build(self) -> crate::types::VpnConnectionOptionsSpecification {
         crate::types::VpnConnectionOptionsSpecification {
             enable_acceleration: self.enable_acceleration,
-            static_routes_only: self.static_routes_only,
             tunnel_inside_ip_version: self.tunnel_inside_ip_version,
             tunnel_options: self.tunnel_options,
             local_ipv4_network_cidr: self.local_ipv4_network_cidr,
@@ -301,6 +300,7 @@ impl VpnConnectionOptionsSpecificationBuilder {
             remote_ipv6_network_cidr: self.remote_ipv6_network_cidr,
             outside_ip_address_type: self.outside_ip_address_type,
             transport_transit_gateway_attachment_id: self.transport_transit_gateway_attachment_id,
+            static_routes_only: self.static_routes_only,
         }
     }
 }

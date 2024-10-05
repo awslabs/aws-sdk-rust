@@ -7,27 +7,33 @@ pub fn de_reservation(
     let mut builder = crate::types::Reservation::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
-            s if s.matches("groupSet") /* Groups com.amazonaws.ec2#Reservation$Groups */ =>  {
+            s if s.matches("reservationId") /* ReservationId com.amazonaws.ec2#Reservation$ReservationId */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_group_identifier_list::de_group_identifier_list(&mut tag)
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
                         ?
                     )
                 ;
-                builder = builder.set_groups(var_1);
-            }
-            ,
-            s if s.matches("instancesSet") /* Instances com.amazonaws.ec2#Reservation$Instances */ =>  {
-                let var_2 =
-                    Some(
-                        crate::protocol_serde::shape_instance_list::de_instance_list(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_instances(var_2);
+                builder = builder.set_reservation_id(var_1);
             }
             ,
             s if s.matches("ownerId") /* OwnerId com.amazonaws.ec2#Reservation$OwnerId */ =>  {
+                let var_2 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_owner_id(var_2);
+            }
+            ,
+            s if s.matches("requesterId") /* RequesterId com.amazonaws.ec2#Reservation$RequesterId */ =>  {
                 let var_3 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -37,33 +43,27 @@ pub fn de_reservation(
                         ?
                     )
                 ;
-                builder = builder.set_owner_id(var_3);
+                builder = builder.set_requester_id(var_3);
             }
             ,
-            s if s.matches("requesterId") /* RequesterId com.amazonaws.ec2#Reservation$RequesterId */ =>  {
+            s if s.matches("groupSet") /* Groups com.amazonaws.ec2#Reservation$Groups */ =>  {
                 let var_4 =
                     Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
+                        crate::protocol_serde::shape_group_identifier_list::de_group_identifier_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_requester_id(var_4);
+                builder = builder.set_groups(var_4);
             }
             ,
-            s if s.matches("reservationId") /* ReservationId com.amazonaws.ec2#Reservation$ReservationId */ =>  {
+            s if s.matches("instancesSet") /* Instances com.amazonaws.ec2#Reservation$Instances */ =>  {
                 let var_5 =
                     Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
+                        crate::protocol_serde::shape_instance_list::de_instance_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_reservation_id(var_5);
+                builder = builder.set_instances(var_5);
             }
             ,
             _ => {}

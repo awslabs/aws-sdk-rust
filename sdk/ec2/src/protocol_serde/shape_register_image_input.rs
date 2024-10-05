@@ -11,113 +11,113 @@ pub fn ser_register_image_input_input_input(
         scope_1.string(var_2);
     }
     #[allow(unused_mut)]
-    let mut scope_3 = writer.prefix("Architecture");
-    if let Some(var_4) = &input.architecture {
-        scope_3.string(var_4.as_str());
-    }
-    #[allow(unused_mut)]
-    let mut scope_5 = writer.prefix("BlockDeviceMapping");
-    if let Some(var_6) = &input.block_device_mappings {
-        if !var_6.is_empty() {
-            let mut list_8 = scope_5.start_list(true, Some("BlockDeviceMapping"));
-            for item_7 in var_6 {
+    let mut scope_3 = writer.prefix("BillingProduct");
+    if let Some(var_4) = &input.billing_products {
+        if !var_4.is_empty() {
+            let mut list_6 = scope_3.start_list(true, Some("item"));
+            for item_5 in var_4 {
                 #[allow(unused_mut)]
-                let mut entry_9 = list_8.entry();
-                crate::protocol_serde::shape_block_device_mapping::ser_block_device_mapping(entry_9, item_7)?;
+                let mut entry_7 = list_6.entry();
+                entry_7.string(item_5);
             }
-            list_8.finish();
+            list_6.finish();
         }
     }
     #[allow(unused_mut)]
-    let mut scope_10 = writer.prefix("Description");
-    if let Some(var_11) = &input.description {
-        scope_10.string(var_11);
+    let mut scope_8 = writer.prefix("BootMode");
+    if let Some(var_9) = &input.boot_mode {
+        scope_8.string(var_9.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_12 = writer.prefix("DryRun");
-    if let Some(var_13) = &input.dry_run {
-        scope_12.boolean(*var_13);
+    let mut scope_10 = writer.prefix("TpmSupport");
+    if let Some(var_11) = &input.tpm_support {
+        scope_10.string(var_11.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_14 = writer.prefix("EnaSupport");
-    if let Some(var_15) = &input.ena_support {
-        scope_14.boolean(*var_15);
+    let mut scope_12 = writer.prefix("UefiData");
+    if let Some(var_13) = &input.uefi_data {
+        scope_12.string(var_13);
     }
     #[allow(unused_mut)]
-    let mut scope_16 = writer.prefix("KernelId");
-    if let Some(var_17) = &input.kernel_id {
-        scope_16.string(var_17);
+    let mut scope_14 = writer.prefix("ImdsSupport");
+    if let Some(var_15) = &input.imds_support {
+        scope_14.string(var_15.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_18 = writer.prefix("Name");
-    if let Some(var_19) = &input.name {
-        scope_18.string(var_19);
-    }
-    #[allow(unused_mut)]
-    let mut scope_20 = writer.prefix("BillingProduct");
-    if let Some(var_21) = &input.billing_products {
-        if !var_21.is_empty() {
-            let mut list_23 = scope_20.start_list(true, Some("item"));
-            for item_22 in var_21 {
+    let mut scope_16 = writer.prefix("TagSpecification");
+    if let Some(var_17) = &input.tag_specifications {
+        if !var_17.is_empty() {
+            let mut list_19 = scope_16.start_list(true, Some("item"));
+            for item_18 in var_17 {
                 #[allow(unused_mut)]
-                let mut entry_24 = list_23.entry();
-                entry_24.string(item_22);
+                let mut entry_20 = list_19.entry();
+                crate::protocol_serde::shape_tag_specification::ser_tag_specification(entry_20, item_18)?;
             }
-            list_23.finish();
+            list_19.finish();
         }
     }
     #[allow(unused_mut)]
-    let mut scope_25 = writer.prefix("RamdiskId");
-    if let Some(var_26) = &input.ramdisk_id {
+    let mut scope_21 = writer.prefix("DryRun");
+    if let Some(var_22) = &input.dry_run {
+        scope_21.boolean(*var_22);
+    }
+    #[allow(unused_mut)]
+    let mut scope_23 = writer.prefix("Name");
+    if let Some(var_24) = &input.name {
+        scope_23.string(var_24);
+    }
+    #[allow(unused_mut)]
+    let mut scope_25 = writer.prefix("Description");
+    if let Some(var_26) = &input.description {
         scope_25.string(var_26);
     }
     #[allow(unused_mut)]
-    let mut scope_27 = writer.prefix("RootDeviceName");
-    if let Some(var_28) = &input.root_device_name {
-        scope_27.string(var_28);
+    let mut scope_27 = writer.prefix("Architecture");
+    if let Some(var_28) = &input.architecture {
+        scope_27.string(var_28.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_29 = writer.prefix("SriovNetSupport");
-    if let Some(var_30) = &input.sriov_net_support {
+    let mut scope_29 = writer.prefix("KernelId");
+    if let Some(var_30) = &input.kernel_id {
         scope_29.string(var_30);
     }
     #[allow(unused_mut)]
-    let mut scope_31 = writer.prefix("VirtualizationType");
-    if let Some(var_32) = &input.virtualization_type {
+    let mut scope_31 = writer.prefix("RamdiskId");
+    if let Some(var_32) = &input.ramdisk_id {
         scope_31.string(var_32);
     }
     #[allow(unused_mut)]
-    let mut scope_33 = writer.prefix("BootMode");
-    if let Some(var_34) = &input.boot_mode {
-        scope_33.string(var_34.as_str());
+    let mut scope_33 = writer.prefix("RootDeviceName");
+    if let Some(var_34) = &input.root_device_name {
+        scope_33.string(var_34);
     }
     #[allow(unused_mut)]
-    let mut scope_35 = writer.prefix("TpmSupport");
-    if let Some(var_36) = &input.tpm_support {
-        scope_35.string(var_36.as_str());
-    }
-    #[allow(unused_mut)]
-    let mut scope_37 = writer.prefix("UefiData");
-    if let Some(var_38) = &input.uefi_data {
-        scope_37.string(var_38);
-    }
-    #[allow(unused_mut)]
-    let mut scope_39 = writer.prefix("ImdsSupport");
-    if let Some(var_40) = &input.imds_support {
-        scope_39.string(var_40.as_str());
-    }
-    #[allow(unused_mut)]
-    let mut scope_41 = writer.prefix("TagSpecification");
-    if let Some(var_42) = &input.tag_specifications {
-        if !var_42.is_empty() {
-            let mut list_44 = scope_41.start_list(true, Some("item"));
-            for item_43 in var_42 {
+    let mut scope_35 = writer.prefix("BlockDeviceMapping");
+    if let Some(var_36) = &input.block_device_mappings {
+        if !var_36.is_empty() {
+            let mut list_38 = scope_35.start_list(true, Some("BlockDeviceMapping"));
+            for item_37 in var_36 {
                 #[allow(unused_mut)]
-                let mut entry_45 = list_44.entry();
-                crate::protocol_serde::shape_tag_specification::ser_tag_specification(entry_45, item_43)?;
+                let mut entry_39 = list_38.entry();
+                crate::protocol_serde::shape_block_device_mapping::ser_block_device_mapping(entry_39, item_37)?;
             }
-            list_44.finish();
+            list_38.finish();
         }
+    }
+    #[allow(unused_mut)]
+    let mut scope_40 = writer.prefix("VirtualizationType");
+    if let Some(var_41) = &input.virtualization_type {
+        scope_40.string(var_41);
+    }
+    #[allow(unused_mut)]
+    let mut scope_42 = writer.prefix("SriovNetSupport");
+    if let Some(var_43) = &input.sriov_net_support {
+        scope_42.string(var_43);
+    }
+    #[allow(unused_mut)]
+    let mut scope_44 = writer.prefix("EnaSupport");
+    if let Some(var_45) = &input.ena_support {
+        scope_44.boolean(*var_45);
     }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))

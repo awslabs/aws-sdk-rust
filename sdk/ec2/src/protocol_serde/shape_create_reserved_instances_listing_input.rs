@@ -6,8 +6,8 @@ pub fn ser_create_reserved_instances_listing_input_input_input(
     #[allow(unused_mut)]
     let mut writer = ::aws_smithy_query::QueryWriter::new(&mut out, "CreateReservedInstancesListing", "2016-11-15");
     #[allow(unused_mut)]
-    let mut scope_1 = writer.prefix("ClientToken");
-    if let Some(var_2) = &input.client_token {
+    let mut scope_1 = writer.prefix("ReservedInstancesId");
+    if let Some(var_2) = &input.reserved_instances_id {
         scope_1.string(var_2);
     }
     #[allow(unused_mut)]
@@ -32,8 +32,8 @@ pub fn ser_create_reserved_instances_listing_input_input_input(
         }
     }
     #[allow(unused_mut)]
-    let mut scope_10 = writer.prefix("ReservedInstancesId");
-    if let Some(var_11) = &input.reserved_instances_id {
+    let mut scope_10 = writer.prefix("ClientToken");
+    if let Some(var_11) = &input.client_token {
         scope_10.string(var_11);
     }
     writer.finish();

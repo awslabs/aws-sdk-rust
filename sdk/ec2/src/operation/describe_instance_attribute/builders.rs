@@ -108,23 +108,6 @@ impl DescribeInstanceAttributeFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The instance attribute.</p>
-    /// <p>Note: The <code>enaSupport</code> attribute is not supported at this time.</p>
-    pub fn attribute(mut self, input: crate::types::InstanceAttributeName) -> Self {
-        self.inner = self.inner.attribute(input);
-        self
-    }
-    /// <p>The instance attribute.</p>
-    /// <p>Note: The <code>enaSupport</code> attribute is not supported at this time.</p>
-    pub fn set_attribute(mut self, input: ::std::option::Option<crate::types::InstanceAttributeName>) -> Self {
-        self.inner = self.inner.set_attribute(input);
-        self
-    }
-    /// <p>The instance attribute.</p>
-    /// <p>Note: The <code>enaSupport</code> attribute is not supported at this time.</p>
-    pub fn get_attribute(&self) -> &::std::option::Option<crate::types::InstanceAttributeName> {
-        self.inner.get_attribute()
-    }
     /// <p>Checks whether you have the required permissions for the operation, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.inner = self.inner.dry_run(input);
@@ -152,5 +135,22 @@ impl DescribeInstanceAttributeFluentBuilder {
     /// <p>The ID of the instance.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_instance_id()
+    }
+    /// <p>The instance attribute.</p>
+    /// <p>Note: The <code>enaSupport</code> attribute is not supported at this time.</p>
+    pub fn attribute(mut self, input: crate::types::InstanceAttributeName) -> Self {
+        self.inner = self.inner.attribute(input);
+        self
+    }
+    /// <p>The instance attribute.</p>
+    /// <p>Note: The <code>enaSupport</code> attribute is not supported at this time.</p>
+    pub fn set_attribute(mut self, input: ::std::option::Option<crate::types::InstanceAttributeName>) -> Self {
+        self.inner = self.inner.set_attribute(input);
+        self
+    }
+    /// <p>The instance attribute.</p>
+    /// <p>Note: The <code>enaSupport</code> attribute is not supported at this time.</p>
+    pub fn get_attribute(&self) -> &::std::option::Option<crate::types::InstanceAttributeName> {
+        self.inner.get_attribute()
     }
 }

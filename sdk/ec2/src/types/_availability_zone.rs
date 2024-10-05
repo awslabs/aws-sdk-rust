@@ -4,8 +4,6 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AvailabilityZone {
-    /// <p>The state of the Availability Zone, Local Zone, or Wavelength Zone. This value is always <code>available</code>.</p>
-    pub state: ::std::option::Option<crate::types::AvailabilityZoneState>,
     /// <p>For Availability Zones, this parameter always has the value of <code>opt-in-not-required</code>.</p>
     /// <p>For Local Zones and Wavelength Zones, this parameter is the opt-in status. The possible values are <code>opted-in</code>, and <code>not-opted-in</code>.</p>
     pub opt_in_status: ::std::option::Option<crate::types::AvailabilityZoneOptInStatus>,
@@ -29,12 +27,10 @@ pub struct AvailabilityZone {
     pub parent_zone_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the zone that handles some of the Local Zone or Wavelength Zone control plane operations, such as API calls.</p>
     pub parent_zone_id: ::std::option::Option<::std::string::String>,
+    /// <p>The state of the Availability Zone, Local Zone, or Wavelength Zone. This value is always <code>available</code>.</p>
+    pub state: ::std::option::Option<crate::types::AvailabilityZoneState>,
 }
 impl AvailabilityZone {
-    /// <p>The state of the Availability Zone, Local Zone, or Wavelength Zone. This value is always <code>available</code>.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::AvailabilityZoneState> {
-        self.state.as_ref()
-    }
     /// <p>For Availability Zones, this parameter always has the value of <code>opt-in-not-required</code>.</p>
     /// <p>For Local Zones and Wavelength Zones, this parameter is the opt-in status. The possible values are <code>opted-in</code>, and <code>not-opted-in</code>.</p>
     pub fn opt_in_status(&self) -> ::std::option::Option<&crate::types::AvailabilityZoneOptInStatus> {
@@ -80,6 +76,10 @@ impl AvailabilityZone {
     pub fn parent_zone_id(&self) -> ::std::option::Option<&str> {
         self.parent_zone_id.as_deref()
     }
+    /// <p>The state of the Availability Zone, Local Zone, or Wavelength Zone. This value is always <code>available</code>.</p>
+    pub fn state(&self) -> ::std::option::Option<&crate::types::AvailabilityZoneState> {
+        self.state.as_ref()
+    }
 }
 impl AvailabilityZone {
     /// Creates a new builder-style object to manufacture [`AvailabilityZone`](crate::types::AvailabilityZone).
@@ -92,7 +92,6 @@ impl AvailabilityZone {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct AvailabilityZoneBuilder {
-    pub(crate) state: ::std::option::Option<crate::types::AvailabilityZoneState>,
     pub(crate) opt_in_status: ::std::option::Option<crate::types::AvailabilityZoneOptInStatus>,
     pub(crate) messages: ::std::option::Option<::std::vec::Vec<crate::types::AvailabilityZoneMessage>>,
     pub(crate) region_name: ::std::option::Option<::std::string::String>,
@@ -103,22 +102,9 @@ pub struct AvailabilityZoneBuilder {
     pub(crate) zone_type: ::std::option::Option<::std::string::String>,
     pub(crate) parent_zone_name: ::std::option::Option<::std::string::String>,
     pub(crate) parent_zone_id: ::std::option::Option<::std::string::String>,
+    pub(crate) state: ::std::option::Option<crate::types::AvailabilityZoneState>,
 }
 impl AvailabilityZoneBuilder {
-    /// <p>The state of the Availability Zone, Local Zone, or Wavelength Zone. This value is always <code>available</code>.</p>
-    pub fn state(mut self, input: crate::types::AvailabilityZoneState) -> Self {
-        self.state = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>The state of the Availability Zone, Local Zone, or Wavelength Zone. This value is always <code>available</code>.</p>
-    pub fn set_state(mut self, input: ::std::option::Option<crate::types::AvailabilityZoneState>) -> Self {
-        self.state = input;
-        self
-    }
-    /// <p>The state of the Availability Zone, Local Zone, or Wavelength Zone. This value is always <code>available</code>.</p>
-    pub fn get_state(&self) -> &::std::option::Option<crate::types::AvailabilityZoneState> {
-        &self.state
-    }
     /// <p>For Availability Zones, this parameter always has the value of <code>opt-in-not-required</code>.</p>
     /// <p>For Local Zones and Wavelength Zones, this parameter is the opt-in status. The possible values are <code>opted-in</code>, and <code>not-opted-in</code>.</p>
     pub fn opt_in_status(mut self, input: crate::types::AvailabilityZoneOptInStatus) -> Self {
@@ -274,10 +260,23 @@ impl AvailabilityZoneBuilder {
     pub fn get_parent_zone_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.parent_zone_id
     }
+    /// <p>The state of the Availability Zone, Local Zone, or Wavelength Zone. This value is always <code>available</code>.</p>
+    pub fn state(mut self, input: crate::types::AvailabilityZoneState) -> Self {
+        self.state = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The state of the Availability Zone, Local Zone, or Wavelength Zone. This value is always <code>available</code>.</p>
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::AvailabilityZoneState>) -> Self {
+        self.state = input;
+        self
+    }
+    /// <p>The state of the Availability Zone, Local Zone, or Wavelength Zone. This value is always <code>available</code>.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::AvailabilityZoneState> {
+        &self.state
+    }
     /// Consumes the builder and constructs a [`AvailabilityZone`](crate::types::AvailabilityZone).
     pub fn build(self) -> crate::types::AvailabilityZone {
         crate::types::AvailabilityZone {
-            state: self.state,
             opt_in_status: self.opt_in_status,
             messages: self.messages,
             region_name: self.region_name,
@@ -288,6 +287,7 @@ impl AvailabilityZoneBuilder {
             zone_type: self.zone_type,
             parent_zone_name: self.parent_zone_name,
             parent_zone_id: self.parent_zone_id,
+            state: self.state,
         }
     }
 }

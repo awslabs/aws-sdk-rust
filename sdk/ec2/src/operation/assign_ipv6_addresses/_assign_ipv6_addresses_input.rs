@@ -3,28 +3,18 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssignIpv6AddressesInput {
-    /// <p>The number of additional IPv6 addresses to assign to the network interface. The specified number of IPv6 addresses are assigned in addition to the existing IPv6 addresses that are already assigned to the network interface. Amazon EC2 automatically selects the IPv6 addresses from the subnet range. You can't use this option if specifying specific IPv6 addresses.</p>
-    pub ipv6_address_count: ::std::option::Option<i32>,
-    /// <p>The IPv6 addresses to be assigned to the network interface. You can't use this option if you're specifying a number of IPv6 addresses.</p>
-    pub ipv6_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The number of IPv6 prefixes that Amazon Web Services automatically assigns to the network interface. You cannot use this option if you use the <code>Ipv6Prefixes</code> option.</p>
     pub ipv6_prefix_count: ::std::option::Option<i32>,
     /// <p>One or more IPv6 prefixes assigned to the network interface. You cannot use this option if you use the <code>Ipv6PrefixCount</code> option.</p>
     pub ipv6_prefixes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The ID of the network interface.</p>
     pub network_interface_id: ::std::option::Option<::std::string::String>,
+    /// <p>The IPv6 addresses to be assigned to the network interface. You can't use this option if you're specifying a number of IPv6 addresses.</p>
+    pub ipv6_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The number of additional IPv6 addresses to assign to the network interface. The specified number of IPv6 addresses are assigned in addition to the existing IPv6 addresses that are already assigned to the network interface. Amazon EC2 automatically selects the IPv6 addresses from the subnet range. You can't use this option if specifying specific IPv6 addresses.</p>
+    pub ipv6_address_count: ::std::option::Option<i32>,
 }
 impl AssignIpv6AddressesInput {
-    /// <p>The number of additional IPv6 addresses to assign to the network interface. The specified number of IPv6 addresses are assigned in addition to the existing IPv6 addresses that are already assigned to the network interface. Amazon EC2 automatically selects the IPv6 addresses from the subnet range. You can't use this option if specifying specific IPv6 addresses.</p>
-    pub fn ipv6_address_count(&self) -> ::std::option::Option<i32> {
-        self.ipv6_address_count
-    }
-    /// <p>The IPv6 addresses to be assigned to the network interface. You can't use this option if you're specifying a number of IPv6 addresses.</p>
-    ///
-    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ipv6_addresses.is_none()`.
-    pub fn ipv6_addresses(&self) -> &[::std::string::String] {
-        self.ipv6_addresses.as_deref().unwrap_or_default()
-    }
     /// <p>The number of IPv6 prefixes that Amazon Web Services automatically assigns to the network interface. You cannot use this option if you use the <code>Ipv6Prefixes</code> option.</p>
     pub fn ipv6_prefix_count(&self) -> ::std::option::Option<i32> {
         self.ipv6_prefix_count
@@ -39,6 +29,16 @@ impl AssignIpv6AddressesInput {
     pub fn network_interface_id(&self) -> ::std::option::Option<&str> {
         self.network_interface_id.as_deref()
     }
+    /// <p>The IPv6 addresses to be assigned to the network interface. You can't use this option if you're specifying a number of IPv6 addresses.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ipv6_addresses.is_none()`.
+    pub fn ipv6_addresses(&self) -> &[::std::string::String] {
+        self.ipv6_addresses.as_deref().unwrap_or_default()
+    }
+    /// <p>The number of additional IPv6 addresses to assign to the network interface. The specified number of IPv6 addresses are assigned in addition to the existing IPv6 addresses that are already assigned to the network interface. Amazon EC2 automatically selects the IPv6 addresses from the subnet range. You can't use this option if specifying specific IPv6 addresses.</p>
+    pub fn ipv6_address_count(&self) -> ::std::option::Option<i32> {
+        self.ipv6_address_count
+    }
 }
 impl AssignIpv6AddressesInput {
     /// Creates a new builder-style object to manufacture [`AssignIpv6AddressesInput`](crate::operation::assign_ipv6_addresses::AssignIpv6AddressesInput).
@@ -51,47 +51,13 @@ impl AssignIpv6AddressesInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct AssignIpv6AddressesInputBuilder {
-    pub(crate) ipv6_address_count: ::std::option::Option<i32>,
-    pub(crate) ipv6_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) ipv6_prefix_count: ::std::option::Option<i32>,
     pub(crate) ipv6_prefixes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) network_interface_id: ::std::option::Option<::std::string::String>,
+    pub(crate) ipv6_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) ipv6_address_count: ::std::option::Option<i32>,
 }
 impl AssignIpv6AddressesInputBuilder {
-    /// <p>The number of additional IPv6 addresses to assign to the network interface. The specified number of IPv6 addresses are assigned in addition to the existing IPv6 addresses that are already assigned to the network interface. Amazon EC2 automatically selects the IPv6 addresses from the subnet range. You can't use this option if specifying specific IPv6 addresses.</p>
-    pub fn ipv6_address_count(mut self, input: i32) -> Self {
-        self.ipv6_address_count = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>The number of additional IPv6 addresses to assign to the network interface. The specified number of IPv6 addresses are assigned in addition to the existing IPv6 addresses that are already assigned to the network interface. Amazon EC2 automatically selects the IPv6 addresses from the subnet range. You can't use this option if specifying specific IPv6 addresses.</p>
-    pub fn set_ipv6_address_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.ipv6_address_count = input;
-        self
-    }
-    /// <p>The number of additional IPv6 addresses to assign to the network interface. The specified number of IPv6 addresses are assigned in addition to the existing IPv6 addresses that are already assigned to the network interface. Amazon EC2 automatically selects the IPv6 addresses from the subnet range. You can't use this option if specifying specific IPv6 addresses.</p>
-    pub fn get_ipv6_address_count(&self) -> &::std::option::Option<i32> {
-        &self.ipv6_address_count
-    }
-    /// Appends an item to `ipv6_addresses`.
-    ///
-    /// To override the contents of this collection use [`set_ipv6_addresses`](Self::set_ipv6_addresses).
-    ///
-    /// <p>The IPv6 addresses to be assigned to the network interface. You can't use this option if you're specifying a number of IPv6 addresses.</p>
-    pub fn ipv6_addresses(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        let mut v = self.ipv6_addresses.unwrap_or_default();
-        v.push(input.into());
-        self.ipv6_addresses = ::std::option::Option::Some(v);
-        self
-    }
-    /// <p>The IPv6 addresses to be assigned to the network interface. You can't use this option if you're specifying a number of IPv6 addresses.</p>
-    pub fn set_ipv6_addresses(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.ipv6_addresses = input;
-        self
-    }
-    /// <p>The IPv6 addresses to be assigned to the network interface. You can't use this option if you're specifying a number of IPv6 addresses.</p>
-    pub fn get_ipv6_addresses(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
-        &self.ipv6_addresses
-    }
     /// <p>The number of IPv6 prefixes that Amazon Web Services automatically assigns to the network interface. You cannot use this option if you use the <code>Ipv6Prefixes</code> option.</p>
     pub fn ipv6_prefix_count(mut self, input: i32) -> Self {
         self.ipv6_prefix_count = ::std::option::Option::Some(input);
@@ -141,17 +107,51 @@ impl AssignIpv6AddressesInputBuilder {
     pub fn get_network_interface_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.network_interface_id
     }
+    /// Appends an item to `ipv6_addresses`.
+    ///
+    /// To override the contents of this collection use [`set_ipv6_addresses`](Self::set_ipv6_addresses).
+    ///
+    /// <p>The IPv6 addresses to be assigned to the network interface. You can't use this option if you're specifying a number of IPv6 addresses.</p>
+    pub fn ipv6_addresses(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.ipv6_addresses.unwrap_or_default();
+        v.push(input.into());
+        self.ipv6_addresses = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The IPv6 addresses to be assigned to the network interface. You can't use this option if you're specifying a number of IPv6 addresses.</p>
+    pub fn set_ipv6_addresses(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.ipv6_addresses = input;
+        self
+    }
+    /// <p>The IPv6 addresses to be assigned to the network interface. You can't use this option if you're specifying a number of IPv6 addresses.</p>
+    pub fn get_ipv6_addresses(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.ipv6_addresses
+    }
+    /// <p>The number of additional IPv6 addresses to assign to the network interface. The specified number of IPv6 addresses are assigned in addition to the existing IPv6 addresses that are already assigned to the network interface. Amazon EC2 automatically selects the IPv6 addresses from the subnet range. You can't use this option if specifying specific IPv6 addresses.</p>
+    pub fn ipv6_address_count(mut self, input: i32) -> Self {
+        self.ipv6_address_count = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The number of additional IPv6 addresses to assign to the network interface. The specified number of IPv6 addresses are assigned in addition to the existing IPv6 addresses that are already assigned to the network interface. Amazon EC2 automatically selects the IPv6 addresses from the subnet range. You can't use this option if specifying specific IPv6 addresses.</p>
+    pub fn set_ipv6_address_count(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.ipv6_address_count = input;
+        self
+    }
+    /// <p>The number of additional IPv6 addresses to assign to the network interface. The specified number of IPv6 addresses are assigned in addition to the existing IPv6 addresses that are already assigned to the network interface. Amazon EC2 automatically selects the IPv6 addresses from the subnet range. You can't use this option if specifying specific IPv6 addresses.</p>
+    pub fn get_ipv6_address_count(&self) -> &::std::option::Option<i32> {
+        &self.ipv6_address_count
+    }
     /// Consumes the builder and constructs a [`AssignIpv6AddressesInput`](crate::operation::assign_ipv6_addresses::AssignIpv6AddressesInput).
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::assign_ipv6_addresses::AssignIpv6AddressesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::assign_ipv6_addresses::AssignIpv6AddressesInput {
-            ipv6_address_count: self.ipv6_address_count,
-            ipv6_addresses: self.ipv6_addresses,
             ipv6_prefix_count: self.ipv6_prefix_count,
             ipv6_prefixes: self.ipv6_prefixes,
             network_interface_id: self.network_interface_id,
+            ipv6_addresses: self.ipv6_addresses,
+            ipv6_address_count: self.ipv6_address_count,
         })
     }
 }

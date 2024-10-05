@@ -65,22 +65,22 @@ pub fn ser_authorize_security_group_ingress_input_input_input(
         );
     }
     #[allow(unused_mut)]
-    let mut scope_22 = writer.prefix("DryRun");
-    if let Some(var_23) = &input.dry_run {
-        scope_22.boolean(*var_23);
+    let mut scope_22 = writer.prefix("TagSpecification");
+    if let Some(var_23) = &input.tag_specifications {
+        if !var_23.is_empty() {
+            let mut list_25 = scope_22.start_list(true, Some("item"));
+            for item_24 in var_23 {
+                #[allow(unused_mut)]
+                let mut entry_26 = list_25.entry();
+                crate::protocol_serde::shape_tag_specification::ser_tag_specification(entry_26, item_24)?;
+            }
+            list_25.finish();
+        }
     }
     #[allow(unused_mut)]
-    let mut scope_24 = writer.prefix("TagSpecification");
-    if let Some(var_25) = &input.tag_specifications {
-        if !var_25.is_empty() {
-            let mut list_27 = scope_24.start_list(true, Some("item"));
-            for item_26 in var_25 {
-                #[allow(unused_mut)]
-                let mut entry_28 = list_27.entry();
-                crate::protocol_serde::shape_tag_specification::ser_tag_specification(entry_28, item_26)?;
-            }
-            list_27.finish();
-        }
+    let mut scope_27 = writer.prefix("DryRun");
+    if let Some(var_28) = &input.dry_run {
+        scope_27.boolean(*var_28);
     }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))

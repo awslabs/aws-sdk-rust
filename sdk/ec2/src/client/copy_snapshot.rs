@@ -14,8 +14,8 @@ impl super::Client {
     ///   - [`tag_specifications(TagSpecification)`](crate::operation::copy_snapshot::builders::CopySnapshotFluentBuilder::tag_specifications) / [`set_tag_specifications(Option<Vec::<TagSpecification>>)`](crate::operation::copy_snapshot::builders::CopySnapshotFluentBuilder::set_tag_specifications):<br>required: **false**<br><p>The tags to apply to the new snapshot.</p><br>
     ///   - [`dry_run(bool)`](crate::operation::copy_snapshot::builders::CopySnapshotFluentBuilder::dry_run) / [`set_dry_run(Option<bool>)`](crate::operation::copy_snapshot::builders::CopySnapshotFluentBuilder::set_dry_run):<br>required: **false**<br><p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p><br>
     /// - On success, responds with [`CopySnapshotOutput`](crate::operation::copy_snapshot::CopySnapshotOutput) with field(s):
-    ///   - [`snapshot_id(Option<String>)`](crate::operation::copy_snapshot::CopySnapshotOutput::snapshot_id): <p>The ID of the new snapshot.</p>
     ///   - [`tags(Option<Vec::<Tag>>)`](crate::operation::copy_snapshot::CopySnapshotOutput::tags): <p>Any tags applied to the new snapshot.</p>
+    ///   - [`snapshot_id(Option<String>)`](crate::operation::copy_snapshot::CopySnapshotOutput::snapshot_id): <p>The ID of the new snapshot.</p>
     /// - On failure, responds with [`SdkError<CopySnapshotError>`](crate::operation::copy_snapshot::CopySnapshotError)
     pub fn copy_snapshot(&self) -> crate::operation::copy_snapshot::builders::CopySnapshotFluentBuilder {
         crate::operation::copy_snapshot::builders::CopySnapshotFluentBuilder::new(self.handle.clone())

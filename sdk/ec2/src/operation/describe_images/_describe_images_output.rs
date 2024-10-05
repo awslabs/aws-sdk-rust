@@ -3,22 +3,22 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeImagesOutput {
-    /// <p>Information about the images.</p>
-    pub images: ::std::option::Option<::std::vec::Vec<crate::types::Image>>,
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
+    /// <p>Information about the images.</p>
+    pub images: ::std::option::Option<::std::vec::Vec<crate::types::Image>>,
     _request_id: Option<String>,
 }
 impl DescribeImagesOutput {
+    /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
     /// <p>Information about the images.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.images.is_none()`.
     pub fn images(&self) -> &[crate::types::Image] {
         self.images.as_deref().unwrap_or_default()
-    }
-    /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
-        self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeImagesOutput {
@@ -37,11 +37,25 @@ impl DescribeImagesOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct DescribeImagesOutputBuilder {
-    pub(crate) images: ::std::option::Option<::std::vec::Vec<crate::types::Image>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
+    pub(crate) images: ::std::option::Option<::std::vec::Vec<crate::types::Image>>,
     _request_id: Option<String>,
 }
 impl DescribeImagesOutputBuilder {
+    /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.next_token = input;
+        self
+    }
+    /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `images`.
     ///
     /// To override the contents of this collection use [`set_images`](Self::set_images).
@@ -62,20 +76,6 @@ impl DescribeImagesOutputBuilder {
     pub fn get_images(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Image>> {
         &self.images
     }
-    /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
-    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.next_token = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
-    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
-    }
-    /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
-    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
-        &self.next_token
-    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -88,8 +88,8 @@ impl DescribeImagesOutputBuilder {
     /// Consumes the builder and constructs a [`DescribeImagesOutput`](crate::operation::describe_images::DescribeImagesOutput).
     pub fn build(self) -> crate::operation::describe_images::DescribeImagesOutput {
         crate::operation::describe_images::DescribeImagesOutput {
-            images: self.images,
             next_token: self.next_token,
+            images: self.images,
             _request_id: self._request_id,
         }
     }

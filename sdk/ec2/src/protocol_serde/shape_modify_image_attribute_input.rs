@@ -75,40 +75,40 @@ pub fn ser_modify_image_attribute_input_input_input(
         scope_26.string(var_27);
     }
     #[allow(unused_mut)]
-    let mut scope_28 = writer.prefix("DryRun");
-    if let Some(var_29) = &input.dry_run {
-        scope_28.boolean(*var_29);
-    }
-    #[allow(unused_mut)]
-    let mut scope_30 = writer.prefix("OrganizationArn");
-    if let Some(var_31) = &input.organization_arns {
-        if !var_31.is_empty() {
-            let mut list_33 = scope_30.start_list(true, Some("OrganizationArn"));
-            for item_32 in var_31 {
+    let mut scope_28 = writer.prefix("OrganizationArn");
+    if let Some(var_29) = &input.organization_arns {
+        if !var_29.is_empty() {
+            let mut list_31 = scope_28.start_list(true, Some("OrganizationArn"));
+            for item_30 in var_29 {
                 #[allow(unused_mut)]
-                let mut entry_34 = list_33.entry();
-                entry_34.string(item_32);
+                let mut entry_32 = list_31.entry();
+                entry_32.string(item_30);
             }
-            list_33.finish();
+            list_31.finish();
         }
     }
     #[allow(unused_mut)]
-    let mut scope_35 = writer.prefix("OrganizationalUnitArn");
-    if let Some(var_36) = &input.organizational_unit_arns {
-        if !var_36.is_empty() {
-            let mut list_38 = scope_35.start_list(true, Some("OrganizationalUnitArn"));
-            for item_37 in var_36 {
+    let mut scope_33 = writer.prefix("OrganizationalUnitArn");
+    if let Some(var_34) = &input.organizational_unit_arns {
+        if !var_34.is_empty() {
+            let mut list_36 = scope_33.start_list(true, Some("OrganizationalUnitArn"));
+            for item_35 in var_34 {
                 #[allow(unused_mut)]
-                let mut entry_39 = list_38.entry();
-                entry_39.string(item_37);
+                let mut entry_37 = list_36.entry();
+                entry_37.string(item_35);
             }
-            list_38.finish();
+            list_36.finish();
         }
     }
     #[allow(unused_mut)]
-    let mut scope_40 = writer.prefix("ImdsSupport");
-    if let Some(var_41) = &input.imds_support {
-        crate::protocol_serde::shape_attribute_value::ser_attribute_value(scope_40, var_41)?;
+    let mut scope_38 = writer.prefix("ImdsSupport");
+    if let Some(var_39) = &input.imds_support {
+        crate::protocol_serde::shape_attribute_value::ser_attribute_value(scope_38, var_39)?;
+    }
+    #[allow(unused_mut)]
+    let mut scope_40 = writer.prefix("DryRun");
+    if let Some(var_41) = &input.dry_run {
+        scope_40.boolean(*var_41);
     }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))

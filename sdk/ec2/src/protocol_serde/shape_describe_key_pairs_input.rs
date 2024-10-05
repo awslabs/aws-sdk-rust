@@ -6,23 +6,23 @@ pub fn ser_describe_key_pairs_input_input_input(
     #[allow(unused_mut)]
     let mut writer = ::aws_smithy_query::QueryWriter::new(&mut out, "DescribeKeyPairs", "2016-11-15");
     #[allow(unused_mut)]
-    let mut scope_1 = writer.prefix("Filter");
-    if let Some(var_2) = &input.filters {
+    let mut scope_1 = writer.prefix("KeyName");
+    if let Some(var_2) = &input.key_names {
         if !var_2.is_empty() {
-            let mut list_4 = scope_1.start_list(true, Some("Filter"));
+            let mut list_4 = scope_1.start_list(true, Some("KeyName"));
             for item_3 in var_2 {
                 #[allow(unused_mut)]
                 let mut entry_5 = list_4.entry();
-                crate::protocol_serde::shape_filter::ser_filter(entry_5, item_3)?;
+                entry_5.string(item_3);
             }
             list_4.finish();
         }
     }
     #[allow(unused_mut)]
-    let mut scope_6 = writer.prefix("KeyName");
-    if let Some(var_7) = &input.key_names {
+    let mut scope_6 = writer.prefix("KeyPairId");
+    if let Some(var_7) = &input.key_pair_ids {
         if !var_7.is_empty() {
-            let mut list_9 = scope_6.start_list(true, Some("KeyName"));
+            let mut list_9 = scope_6.start_list(true, Some("KeyPairId"));
             for item_8 in var_7 {
                 #[allow(unused_mut)]
                 let mut entry_10 = list_9.entry();
@@ -32,27 +32,27 @@ pub fn ser_describe_key_pairs_input_input_input(
         }
     }
     #[allow(unused_mut)]
-    let mut scope_11 = writer.prefix("KeyPairId");
-    if let Some(var_12) = &input.key_pair_ids {
-        if !var_12.is_empty() {
-            let mut list_14 = scope_11.start_list(true, Some("KeyPairId"));
-            for item_13 in var_12 {
+    let mut scope_11 = writer.prefix("IncludePublicKey");
+    if let Some(var_12) = &input.include_public_key {
+        scope_11.boolean(*var_12);
+    }
+    #[allow(unused_mut)]
+    let mut scope_13 = writer.prefix("DryRun");
+    if let Some(var_14) = &input.dry_run {
+        scope_13.boolean(*var_14);
+    }
+    #[allow(unused_mut)]
+    let mut scope_15 = writer.prefix("Filter");
+    if let Some(var_16) = &input.filters {
+        if !var_16.is_empty() {
+            let mut list_18 = scope_15.start_list(true, Some("Filter"));
+            for item_17 in var_16 {
                 #[allow(unused_mut)]
-                let mut entry_15 = list_14.entry();
-                entry_15.string(item_13);
+                let mut entry_19 = list_18.entry();
+                crate::protocol_serde::shape_filter::ser_filter(entry_19, item_17)?;
             }
-            list_14.finish();
+            list_18.finish();
         }
-    }
-    #[allow(unused_mut)]
-    let mut scope_16 = writer.prefix("DryRun");
-    if let Some(var_17) = &input.dry_run {
-        scope_16.boolean(*var_17);
-    }
-    #[allow(unused_mut)]
-    let mut scope_18 = writer.prefix("IncludePublicKey");
-    if let Some(var_19) = &input.include_public_key {
-        scope_18.boolean(*var_19);
     }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))

@@ -3,6 +3,19 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeSnapshotsInput {
+    /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
+    pub max_results: ::std::option::Option<i32>,
+    /// <p>The token returned from a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p>
+    pub next_token: ::std::option::Option<::std::string::String>,
+    /// <p>Scopes the results to snapshots with the specified owners. You can specify a combination of Amazon Web Services account IDs, <code>self</code>, and <code>amazon</code>.</p>
+    pub owner_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The IDs of the Amazon Web Services accounts that can create volumes from the snapshot.</p>
+    pub restorable_by_user_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The snapshot IDs.</p>
+    /// <p>Default: Describes the snapshots for which you have create volume permissions.</p>
+    pub snapshot_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub dry_run: ::std::option::Option<bool>,
     /// <p>The filters.</p>
     /// <ul>
     /// <li>
@@ -39,21 +52,39 @@ pub struct DescribeSnapshotsInput {
     /// <p><code>volume-size</code> - The size of the volume, in GiB.</p></li>
     /// </ul>
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
-    pub max_results: ::std::option::Option<i32>,
-    /// <p>The token returned from a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p>
-    pub next_token: ::std::option::Option<::std::string::String>,
-    /// <p>Scopes the results to snapshots with the specified owners. You can specify a combination of Amazon Web Services account IDs, <code>self</code>, and <code>amazon</code>.</p>
-    pub owner_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>The IDs of the Amazon Web Services accounts that can create volumes from the snapshot.</p>
-    pub restorable_by_user_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>The snapshot IDs.</p>
-    /// <p>Default: Describes the snapshots for which you have create volume permissions.</p>
-    pub snapshot_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub dry_run: ::std::option::Option<bool>,
 }
 impl DescribeSnapshotsInput {
+    /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
+    pub fn max_results(&self) -> ::std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The token returned from a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p>
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>Scopes the results to snapshots with the specified owners. You can specify a combination of Amazon Web Services account IDs, <code>self</code>, and <code>amazon</code>.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.owner_ids.is_none()`.
+    pub fn owner_ids(&self) -> &[::std::string::String] {
+        self.owner_ids.as_deref().unwrap_or_default()
+    }
+    /// <p>The IDs of the Amazon Web Services accounts that can create volumes from the snapshot.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.restorable_by_user_ids.is_none()`.
+    pub fn restorable_by_user_ids(&self) -> &[::std::string::String] {
+        self.restorable_by_user_ids.as_deref().unwrap_or_default()
+    }
+    /// <p>The snapshot IDs.</p>
+    /// <p>Default: Describes the snapshots for which you have create volume permissions.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.snapshot_ids.is_none()`.
+    pub fn snapshot_ids(&self) -> &[::std::string::String] {
+        self.snapshot_ids.as_deref().unwrap_or_default()
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn dry_run(&self) -> ::std::option::Option<bool> {
+        self.dry_run
+    }
     /// <p>The filters.</p>
     /// <ul>
     /// <li>
@@ -94,37 +125,6 @@ impl DescribeSnapshotsInput {
     pub fn filters(&self) -> &[crate::types::Filter] {
         self.filters.as_deref().unwrap_or_default()
     }
-    /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
-    pub fn max_results(&self) -> ::std::option::Option<i32> {
-        self.max_results
-    }
-    /// <p>The token returned from a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
-        self.next_token.as_deref()
-    }
-    /// <p>Scopes the results to snapshots with the specified owners. You can specify a combination of Amazon Web Services account IDs, <code>self</code>, and <code>amazon</code>.</p>
-    ///
-    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.owner_ids.is_none()`.
-    pub fn owner_ids(&self) -> &[::std::string::String] {
-        self.owner_ids.as_deref().unwrap_or_default()
-    }
-    /// <p>The IDs of the Amazon Web Services accounts that can create volumes from the snapshot.</p>
-    ///
-    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.restorable_by_user_ids.is_none()`.
-    pub fn restorable_by_user_ids(&self) -> &[::std::string::String] {
-        self.restorable_by_user_ids.as_deref().unwrap_or_default()
-    }
-    /// <p>The snapshot IDs.</p>
-    /// <p>Default: Describes the snapshots for which you have create volume permissions.</p>
-    ///
-    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.snapshot_ids.is_none()`.
-    pub fn snapshot_ids(&self) -> &[::std::string::String] {
-        self.snapshot_ids.as_deref().unwrap_or_default()
-    }
-    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn dry_run(&self) -> ::std::option::Option<bool> {
-        self.dry_run
-    }
 }
 impl DescribeSnapshotsInput {
     /// Creates a new builder-style object to manufacture [`DescribeSnapshotsInput`](crate::operation::describe_snapshots::DescribeSnapshotsInput).
@@ -137,15 +137,120 @@ impl DescribeSnapshotsInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct DescribeSnapshotsInputBuilder {
-    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) owner_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) restorable_by_user_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) snapshot_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) dry_run: ::std::option::Option<bool>,
+    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
 }
 impl DescribeSnapshotsInputBuilder {
+    /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
+    pub fn max_results(mut self, input: i32) -> Self {
+        self.max_results = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
+    pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.max_results = input;
+        self
+    }
+    /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
+    /// <p>The token returned from a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p>
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The token returned from a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p>
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.next_token = input;
+        self
+    }
+    /// <p>The token returned from a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
+    /// Appends an item to `owner_ids`.
+    ///
+    /// To override the contents of this collection use [`set_owner_ids`](Self::set_owner_ids).
+    ///
+    /// <p>Scopes the results to snapshots with the specified owners. You can specify a combination of Amazon Web Services account IDs, <code>self</code>, and <code>amazon</code>.</p>
+    pub fn owner_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.owner_ids.unwrap_or_default();
+        v.push(input.into());
+        self.owner_ids = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Scopes the results to snapshots with the specified owners. You can specify a combination of Amazon Web Services account IDs, <code>self</code>, and <code>amazon</code>.</p>
+    pub fn set_owner_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.owner_ids = input;
+        self
+    }
+    /// <p>Scopes the results to snapshots with the specified owners. You can specify a combination of Amazon Web Services account IDs, <code>self</code>, and <code>amazon</code>.</p>
+    pub fn get_owner_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.owner_ids
+    }
+    /// Appends an item to `restorable_by_user_ids`.
+    ///
+    /// To override the contents of this collection use [`set_restorable_by_user_ids`](Self::set_restorable_by_user_ids).
+    ///
+    /// <p>The IDs of the Amazon Web Services accounts that can create volumes from the snapshot.</p>
+    pub fn restorable_by_user_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.restorable_by_user_ids.unwrap_or_default();
+        v.push(input.into());
+        self.restorable_by_user_ids = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The IDs of the Amazon Web Services accounts that can create volumes from the snapshot.</p>
+    pub fn set_restorable_by_user_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.restorable_by_user_ids = input;
+        self
+    }
+    /// <p>The IDs of the Amazon Web Services accounts that can create volumes from the snapshot.</p>
+    pub fn get_restorable_by_user_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.restorable_by_user_ids
+    }
+    /// Appends an item to `snapshot_ids`.
+    ///
+    /// To override the contents of this collection use [`set_snapshot_ids`](Self::set_snapshot_ids).
+    ///
+    /// <p>The snapshot IDs.</p>
+    /// <p>Default: Describes the snapshots for which you have create volume permissions.</p>
+    pub fn snapshot_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.snapshot_ids.unwrap_or_default();
+        v.push(input.into());
+        self.snapshot_ids = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The snapshot IDs.</p>
+    /// <p>Default: Describes the snapshots for which you have create volume permissions.</p>
+    pub fn set_snapshot_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.snapshot_ids = input;
+        self
+    }
+    /// <p>The snapshot IDs.</p>
+    /// <p>Default: Describes the snapshots for which you have create volume permissions.</p>
+    pub fn get_snapshot_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.snapshot_ids
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn dry_run(mut self, input: bool) -> Self {
+        self.dry_run = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.dry_run = input;
+        self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
+    }
     /// Appends an item to `filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
@@ -268,123 +373,18 @@ impl DescribeSnapshotsInputBuilder {
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         &self.filters
     }
-    /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
-    pub fn max_results(mut self, input: i32) -> Self {
-        self.max_results = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
-    pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
-    }
-    /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
-    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
-        &self.max_results
-    }
-    /// <p>The token returned from a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p>
-    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.next_token = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>The token returned from a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p>
-    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
-    }
-    /// <p>The token returned from a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p>
-    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
-        &self.next_token
-    }
-    /// Appends an item to `owner_ids`.
-    ///
-    /// To override the contents of this collection use [`set_owner_ids`](Self::set_owner_ids).
-    ///
-    /// <p>Scopes the results to snapshots with the specified owners. You can specify a combination of Amazon Web Services account IDs, <code>self</code>, and <code>amazon</code>.</p>
-    pub fn owner_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        let mut v = self.owner_ids.unwrap_or_default();
-        v.push(input.into());
-        self.owner_ids = ::std::option::Option::Some(v);
-        self
-    }
-    /// <p>Scopes the results to snapshots with the specified owners. You can specify a combination of Amazon Web Services account IDs, <code>self</code>, and <code>amazon</code>.</p>
-    pub fn set_owner_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.owner_ids = input;
-        self
-    }
-    /// <p>Scopes the results to snapshots with the specified owners. You can specify a combination of Amazon Web Services account IDs, <code>self</code>, and <code>amazon</code>.</p>
-    pub fn get_owner_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
-        &self.owner_ids
-    }
-    /// Appends an item to `restorable_by_user_ids`.
-    ///
-    /// To override the contents of this collection use [`set_restorable_by_user_ids`](Self::set_restorable_by_user_ids).
-    ///
-    /// <p>The IDs of the Amazon Web Services accounts that can create volumes from the snapshot.</p>
-    pub fn restorable_by_user_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        let mut v = self.restorable_by_user_ids.unwrap_or_default();
-        v.push(input.into());
-        self.restorable_by_user_ids = ::std::option::Option::Some(v);
-        self
-    }
-    /// <p>The IDs of the Amazon Web Services accounts that can create volumes from the snapshot.</p>
-    pub fn set_restorable_by_user_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.restorable_by_user_ids = input;
-        self
-    }
-    /// <p>The IDs of the Amazon Web Services accounts that can create volumes from the snapshot.</p>
-    pub fn get_restorable_by_user_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
-        &self.restorable_by_user_ids
-    }
-    /// Appends an item to `snapshot_ids`.
-    ///
-    /// To override the contents of this collection use [`set_snapshot_ids`](Self::set_snapshot_ids).
-    ///
-    /// <p>The snapshot IDs.</p>
-    /// <p>Default: Describes the snapshots for which you have create volume permissions.</p>
-    pub fn snapshot_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        let mut v = self.snapshot_ids.unwrap_or_default();
-        v.push(input.into());
-        self.snapshot_ids = ::std::option::Option::Some(v);
-        self
-    }
-    /// <p>The snapshot IDs.</p>
-    /// <p>Default: Describes the snapshots for which you have create volume permissions.</p>
-    pub fn set_snapshot_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.snapshot_ids = input;
-        self
-    }
-    /// <p>The snapshot IDs.</p>
-    /// <p>Default: Describes the snapshots for which you have create volume permissions.</p>
-    pub fn get_snapshot_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
-        &self.snapshot_ids
-    }
-    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn dry_run(mut self, input: bool) -> Self {
-        self.dry_run = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
-    }
-    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
-        &self.dry_run
-    }
     /// Consumes the builder and constructs a [`DescribeSnapshotsInput`](crate::operation::describe_snapshots::DescribeSnapshotsInput).
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::describe_snapshots::DescribeSnapshotsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_snapshots::DescribeSnapshotsInput {
-            filters: self.filters,
             max_results: self.max_results,
             next_token: self.next_token,
             owner_ids: self.owner_ids,
             restorable_by_user_ids: self.restorable_by_user_ids,
             snapshot_ids: self.snapshot_ids,
             dry_run: self.dry_run,
+            filters: self.filters,
         })
     }
 }

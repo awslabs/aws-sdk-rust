@@ -6,48 +6,48 @@ pub fn ser_describe_volume_status_input_input_input(
     #[allow(unused_mut)]
     let mut writer = ::aws_smithy_query::QueryWriter::new(&mut out, "DescribeVolumeStatus", "2016-11-15");
     #[allow(unused_mut)]
-    let mut scope_1 = writer.prefix("Filter");
-    if let Some(var_2) = &input.filters {
-        if !var_2.is_empty() {
-            let mut list_4 = scope_1.start_list(true, Some("Filter"));
-            for item_3 in var_2 {
-                #[allow(unused_mut)]
-                let mut entry_5 = list_4.entry();
-                crate::protocol_serde::shape_filter::ser_filter(entry_5, item_3)?;
-            }
-            list_4.finish();
-        }
-    }
-    #[allow(unused_mut)]
-    let mut scope_6 = writer.prefix("MaxResults");
-    if let Some(var_7) = &input.max_results {
-        scope_6.number(
+    let mut scope_1 = writer.prefix("MaxResults");
+    if let Some(var_2) = &input.max_results {
+        scope_1.number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_7).into()),
+            ::aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_8 = writer.prefix("NextToken");
-    if let Some(var_9) = &input.next_token {
-        scope_8.string(var_9);
+    let mut scope_3 = writer.prefix("NextToken");
+    if let Some(var_4) = &input.next_token {
+        scope_3.string(var_4);
     }
     #[allow(unused_mut)]
-    let mut scope_10 = writer.prefix("VolumeId");
-    if let Some(var_11) = &input.volume_ids {
-        if !var_11.is_empty() {
-            let mut list_13 = scope_10.start_list(true, Some("VolumeId"));
-            for item_12 in var_11 {
+    let mut scope_5 = writer.prefix("VolumeId");
+    if let Some(var_6) = &input.volume_ids {
+        if !var_6.is_empty() {
+            let mut list_8 = scope_5.start_list(true, Some("VolumeId"));
+            for item_7 in var_6 {
                 #[allow(unused_mut)]
-                let mut entry_14 = list_13.entry();
-                entry_14.string(item_12);
+                let mut entry_9 = list_8.entry();
+                entry_9.string(item_7);
             }
-            list_13.finish();
+            list_8.finish();
         }
     }
     #[allow(unused_mut)]
-    let mut scope_15 = writer.prefix("DryRun");
-    if let Some(var_16) = &input.dry_run {
-        scope_15.boolean(*var_16);
+    let mut scope_10 = writer.prefix("DryRun");
+    if let Some(var_11) = &input.dry_run {
+        scope_10.boolean(*var_11);
+    }
+    #[allow(unused_mut)]
+    let mut scope_12 = writer.prefix("Filter");
+    if let Some(var_13) = &input.filters {
+        if !var_13.is_empty() {
+            let mut list_15 = scope_12.start_list(true, Some("Filter"));
+            for item_14 in var_13 {
+                #[allow(unused_mut)]
+                let mut entry_16 = list_15.entry();
+                crate::protocol_serde::shape_filter::ser_filter(entry_16, item_14)?;
+            }
+            list_15.finish();
+        }
     }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))

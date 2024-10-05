@@ -5,10 +5,10 @@
 pub struct GetPasswordDataOutput {
     /// <p>The ID of the Windows instance.</p>
     pub instance_id: ::std::option::Option<::std::string::String>,
-    /// <p>The password of the instance. Returns an empty string if the password is not available.</p>
-    pub password_data: ::std::option::Option<::std::string::String>,
     /// <p>The time the data was last updated.</p>
     pub timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The password of the instance. Returns an empty string if the password is not available.</p>
+    pub password_data: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetPasswordDataOutput {
@@ -16,21 +16,21 @@ impl GetPasswordDataOutput {
     pub fn instance_id(&self) -> ::std::option::Option<&str> {
         self.instance_id.as_deref()
     }
-    /// <p>The password of the instance. Returns an empty string if the password is not available.</p>
-    pub fn password_data(&self) -> ::std::option::Option<&str> {
-        self.password_data.as_deref()
-    }
     /// <p>The time the data was last updated.</p>
     pub fn timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.timestamp.as_ref()
+    }
+    /// <p>The password of the instance. Returns an empty string if the password is not available.</p>
+    pub fn password_data(&self) -> ::std::option::Option<&str> {
+        self.password_data.as_deref()
     }
 }
 impl ::std::fmt::Debug for GetPasswordDataOutput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("GetPasswordDataOutput");
         formatter.field("instance_id", &self.instance_id);
-        formatter.field("password_data", &"*** Sensitive Data Redacted ***");
         formatter.field("timestamp", &self.timestamp);
+        formatter.field("password_data", &"*** Sensitive Data Redacted ***");
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
@@ -52,8 +52,8 @@ impl GetPasswordDataOutput {
 #[non_exhaustive]
 pub struct GetPasswordDataOutputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
-    pub(crate) password_data: ::std::option::Option<::std::string::String>,
     pub(crate) timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) password_data: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetPasswordDataOutputBuilder {
@@ -71,20 +71,6 @@ impl GetPasswordDataOutputBuilder {
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.instance_id
     }
-    /// <p>The password of the instance. Returns an empty string if the password is not available.</p>
-    pub fn password_data(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.password_data = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>The password of the instance. Returns an empty string if the password is not available.</p>
-    pub fn set_password_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.password_data = input;
-        self
-    }
-    /// <p>The password of the instance. Returns an empty string if the password is not available.</p>
-    pub fn get_password_data(&self) -> &::std::option::Option<::std::string::String> {
-        &self.password_data
-    }
     /// <p>The time the data was last updated.</p>
     pub fn timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.timestamp = ::std::option::Option::Some(input);
@@ -99,6 +85,20 @@ impl GetPasswordDataOutputBuilder {
     pub fn get_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.timestamp
     }
+    /// <p>The password of the instance. Returns an empty string if the password is not available.</p>
+    pub fn password_data(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.password_data = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The password of the instance. Returns an empty string if the password is not available.</p>
+    pub fn set_password_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.password_data = input;
+        self
+    }
+    /// <p>The password of the instance. Returns an empty string if the password is not available.</p>
+    pub fn get_password_data(&self) -> &::std::option::Option<::std::string::String> {
+        &self.password_data
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -112,8 +112,8 @@ impl GetPasswordDataOutputBuilder {
     pub fn build(self) -> crate::operation::get_password_data::GetPasswordDataOutput {
         crate::operation::get_password_data::GetPasswordDataOutput {
             instance_id: self.instance_id,
-            password_data: self.password_data,
             timestamp: self.timestamp,
+            password_data: self.password_data,
             _request_id: self._request_id,
         }
     }
@@ -122,8 +122,8 @@ impl ::std::fmt::Debug for GetPasswordDataOutputBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("GetPasswordDataOutputBuilder");
         formatter.field("instance_id", &self.instance_id);
-        formatter.field("password_data", &"*** Sensitive Data Redacted ***");
         formatter.field("timestamp", &self.timestamp);
+        formatter.field("password_data", &"*** Sensitive Data Redacted ***");
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }

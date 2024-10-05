@@ -3,22 +3,22 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CopySnapshotOutput {
-    /// <p>The ID of the new snapshot.</p>
-    pub snapshot_id: ::std::option::Option<::std::string::String>,
     /// <p>Any tags applied to the new snapshot.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    /// <p>The ID of the new snapshot.</p>
+    pub snapshot_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CopySnapshotOutput {
-    /// <p>The ID of the new snapshot.</p>
-    pub fn snapshot_id(&self) -> ::std::option::Option<&str> {
-        self.snapshot_id.as_deref()
-    }
     /// <p>Any tags applied to the new snapshot.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
     pub fn tags(&self) -> &[crate::types::Tag] {
         self.tags.as_deref().unwrap_or_default()
+    }
+    /// <p>The ID of the new snapshot.</p>
+    pub fn snapshot_id(&self) -> ::std::option::Option<&str> {
+        self.snapshot_id.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CopySnapshotOutput {
@@ -37,25 +37,11 @@ impl CopySnapshotOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct CopySnapshotOutputBuilder {
-    pub(crate) snapshot_id: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) snapshot_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CopySnapshotOutputBuilder {
-    /// <p>The ID of the new snapshot.</p>
-    pub fn snapshot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.snapshot_id = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>The ID of the new snapshot.</p>
-    pub fn set_snapshot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.snapshot_id = input;
-        self
-    }
-    /// <p>The ID of the new snapshot.</p>
-    pub fn get_snapshot_id(&self) -> &::std::option::Option<::std::string::String> {
-        &self.snapshot_id
-    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -76,6 +62,20 @@ impl CopySnapshotOutputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }
+    /// <p>The ID of the new snapshot.</p>
+    pub fn snapshot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.snapshot_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the new snapshot.</p>
+    pub fn set_snapshot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.snapshot_id = input;
+        self
+    }
+    /// <p>The ID of the new snapshot.</p>
+    pub fn get_snapshot_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.snapshot_id
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -88,8 +88,8 @@ impl CopySnapshotOutputBuilder {
     /// Consumes the builder and constructs a [`CopySnapshotOutput`](crate::operation::copy_snapshot::CopySnapshotOutput).
     pub fn build(self) -> crate::operation::copy_snapshot::CopySnapshotOutput {
         crate::operation::copy_snapshot::CopySnapshotOutput {
-            snapshot_id: self.snapshot_id,
             tags: self.tags,
+            snapshot_id: self.snapshot_id,
             _request_id: self._request_id,
         }
     }

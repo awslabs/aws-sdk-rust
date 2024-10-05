@@ -54,21 +54,8 @@ pub fn de_confirm_product_instance(
     }
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
-            s if s.matches("ownerId") /* OwnerId com.amazonaws.ec2.synthetic#ConfirmProductInstanceOutput$OwnerId */ =>  {
-                let var_1 =
-                    Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_owner_id(var_1);
-            }
-            ,
             s if s.matches("return") /* Return com.amazonaws.ec2.synthetic#ConfirmProductInstanceOutput$Return */ =>  {
-                let var_2 =
+                let var_1 =
                     Some(
                          {
                             <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -79,7 +66,20 @@ pub fn de_confirm_product_instance(
                         ?
                     )
                 ;
-                builder = builder.set_return(var_2);
+                builder = builder.set_return(var_1);
+            }
+            ,
+            s if s.matches("ownerId") /* OwnerId com.amazonaws.ec2.synthetic#ConfirmProductInstanceOutput$OwnerId */ =>  {
+                let var_2 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_owner_id(var_2);
             }
             ,
             _ => {}

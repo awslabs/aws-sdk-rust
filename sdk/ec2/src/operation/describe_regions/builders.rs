@@ -113,6 +113,53 @@ impl DescribeRegionsFluentBuilder {
         self
     }
     ///
+    /// Appends an item to `RegionNames`.
+    ///
+    /// To override the contents of this collection use [`set_region_names`](Self::set_region_names).
+    ///
+    /// <p>The names of the Regions. You can specify any Regions, whether they are enabled and disabled for your account.</p>
+    pub fn region_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.region_names(input.into());
+        self
+    }
+    /// <p>The names of the Regions. You can specify any Regions, whether they are enabled and disabled for your account.</p>
+    pub fn set_region_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.inner = self.inner.set_region_names(input);
+        self
+    }
+    /// <p>The names of the Regions. You can specify any Regions, whether they are enabled and disabled for your account.</p>
+    pub fn get_region_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_region_names()
+    }
+    /// <p>Indicates whether to display all Regions, including Regions that are disabled for your account.</p>
+    pub fn all_regions(mut self, input: bool) -> Self {
+        self.inner = self.inner.all_regions(input);
+        self
+    }
+    /// <p>Indicates whether to display all Regions, including Regions that are disabled for your account.</p>
+    pub fn set_all_regions(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_all_regions(input);
+        self
+    }
+    /// <p>Indicates whether to display all Regions, including Regions that are disabled for your account.</p>
+    pub fn get_all_regions(&self) -> &::std::option::Option<bool> {
+        self.inner.get_all_regions()
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn dry_run(mut self, input: bool) -> Self {
+        self.inner = self.inner.dry_run(input);
+        self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_dry_run(input);
+        self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
+    }
+    ///
     /// Appends an item to `Filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
@@ -154,52 +201,5 @@ impl DescribeRegionsFluentBuilder {
     /// </ul>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         self.inner.get_filters()
-    }
-    ///
-    /// Appends an item to `RegionNames`.
-    ///
-    /// To override the contents of this collection use [`set_region_names`](Self::set_region_names).
-    ///
-    /// <p>The names of the Regions. You can specify any Regions, whether they are enabled and disabled for your account.</p>
-    pub fn region_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.inner = self.inner.region_names(input.into());
-        self
-    }
-    /// <p>The names of the Regions. You can specify any Regions, whether they are enabled and disabled for your account.</p>
-    pub fn set_region_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.inner = self.inner.set_region_names(input);
-        self
-    }
-    /// <p>The names of the Regions. You can specify any Regions, whether they are enabled and disabled for your account.</p>
-    pub fn get_region_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
-        self.inner.get_region_names()
-    }
-    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn dry_run(mut self, input: bool) -> Self {
-        self.inner = self.inner.dry_run(input);
-        self
-    }
-    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.inner = self.inner.set_dry_run(input);
-        self
-    }
-    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
-        self.inner.get_dry_run()
-    }
-    /// <p>Indicates whether to display all Regions, including Regions that are disabled for your account.</p>
-    pub fn all_regions(mut self, input: bool) -> Self {
-        self.inner = self.inner.all_regions(input);
-        self
-    }
-    /// <p>Indicates whether to display all Regions, including Regions that are disabled for your account.</p>
-    pub fn set_all_regions(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.inner = self.inner.set_all_regions(input);
-        self
-    }
-    /// <p>Indicates whether to display all Regions, including Regions that are disabled for your account.</p>
-    pub fn get_all_regions(&self) -> &::std::option::Option<bool> {
-        self.inner.get_all_regions()
     }
 }

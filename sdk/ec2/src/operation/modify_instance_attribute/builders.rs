@@ -124,6 +124,51 @@ impl ModifyInstanceAttributeFluentBuilder {
     pub fn get_source_dest_check(&self) -> &::std::option::Option<crate::types::AttributeBooleanValue> {
         self.inner.get_source_dest_check()
     }
+    /// <p>Indicates whether an instance is enabled for stop protection. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-stop-protection.html">Enable stop protection for your instance</a>.</p>
+    /// <p></p>
+    pub fn disable_api_stop(mut self, input: crate::types::AttributeBooleanValue) -> Self {
+        self.inner = self.inner.disable_api_stop(input);
+        self
+    }
+    /// <p>Indicates whether an instance is enabled for stop protection. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-stop-protection.html">Enable stop protection for your instance</a>.</p>
+    /// <p></p>
+    pub fn set_disable_api_stop(mut self, input: ::std::option::Option<crate::types::AttributeBooleanValue>) -> Self {
+        self.inner = self.inner.set_disable_api_stop(input);
+        self
+    }
+    /// <p>Indicates whether an instance is enabled for stop protection. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-stop-protection.html">Enable stop protection for your instance</a>.</p>
+    /// <p></p>
+    pub fn get_disable_api_stop(&self) -> &::std::option::Option<crate::types::AttributeBooleanValue> {
+        self.inner.get_disable_api_stop()
+    }
+    /// <p>Checks whether you have the required permissions for the operation, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn dry_run(mut self, input: bool) -> Self {
+        self.inner = self.inner.dry_run(input);
+        self
+    }
+    /// <p>Checks whether you have the required permissions for the operation, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_dry_run(input);
+        self
+    }
+    /// <p>Checks whether you have the required permissions for the operation, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
+    }
+    /// <p>The ID of the instance.</p>
+    pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.instance_id(input.into());
+        self
+    }
+    /// <p>The ID of the instance.</p>
+    pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_instance_id(input);
+        self
+    }
+    /// <p>The ID of the instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_instance_id()
+    }
     /// <p>The name of the attribute to modify.</p><important>
     /// <p>You can modify the following attributes only: <code>disableApiTermination</code> | <code>instanceType</code> | <code>kernel</code> | <code>ramdisk</code> | <code>instanceInitiatedShutdownBehavior</code> | <code>blockDeviceMapping</code> | <code>userData</code> | <code>sourceDestCheck</code> | <code>groupSet</code> | <code>ebsOptimized</code> | <code>sriovNetSupport</code> | <code>enaSupport</code> | <code>nvmeSupport</code> | <code>disableApiStop</code> | <code>enclaveOptions</code></p>
     /// </important>
@@ -143,6 +188,20 @@ impl ModifyInstanceAttributeFluentBuilder {
     /// </important>
     pub fn get_attribute(&self) -> &::std::option::Option<crate::types::InstanceAttributeName> {
         self.inner.get_attribute()
+    }
+    /// <p>A new value for the attribute. Use only with the <code>kernel</code>, <code>ramdisk</code>, <code>userData</code>, <code>disableApiTermination</code>, or <code>instanceInitiatedShutdownBehavior</code> attribute.</p>
+    pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.value(input.into());
+        self
+    }
+    /// <p>A new value for the attribute. Use only with the <code>kernel</code>, <code>ramdisk</code>, <code>userData</code>, <code>disableApiTermination</code>, or <code>instanceInitiatedShutdownBehavior</code> attribute.</p>
+    pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_value(input);
+        self
+    }
+    /// <p>A new value for the attribute. Use only with the <code>kernel</code>, <code>ramdisk</code>, <code>userData</code>, <code>disableApiTermination</code>, or <code>instanceInitiatedShutdownBehavior</code> attribute.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_value()
     }
     ///
     /// Appends an item to `BlockDeviceMappings`.
@@ -182,98 +241,6 @@ impl ModifyInstanceAttributeFluentBuilder {
     /// <p>If the value is <code>true</code>, you can't terminate the instance using the Amazon EC2 console, CLI, or API; otherwise, you can. You cannot use this parameter for Spot Instances.</p>
     pub fn get_disable_api_termination(&self) -> &::std::option::Option<crate::types::AttributeBooleanValue> {
         self.inner.get_disable_api_termination()
-    }
-    /// <p>Checks whether you have the required permissions for the operation, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn dry_run(mut self, input: bool) -> Self {
-        self.inner = self.inner.dry_run(input);
-        self
-    }
-    /// <p>Checks whether you have the required permissions for the operation, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.inner = self.inner.set_dry_run(input);
-        self
-    }
-    /// <p>Checks whether you have the required permissions for the operation, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
-        self.inner.get_dry_run()
-    }
-    /// <p>Specifies whether the instance is optimized for Amazon EBS I/O. This optimization provides dedicated throughput to Amazon EBS and an optimized configuration stack to provide optimal EBS I/O performance. This optimization isn't available with all instance types. Additional usage charges apply when using an EBS Optimized instance.</p>
-    pub fn ebs_optimized(mut self, input: crate::types::AttributeBooleanValue) -> Self {
-        self.inner = self.inner.ebs_optimized(input);
-        self
-    }
-    /// <p>Specifies whether the instance is optimized for Amazon EBS I/O. This optimization provides dedicated throughput to Amazon EBS and an optimized configuration stack to provide optimal EBS I/O performance. This optimization isn't available with all instance types. Additional usage charges apply when using an EBS Optimized instance.</p>
-    pub fn set_ebs_optimized(mut self, input: ::std::option::Option<crate::types::AttributeBooleanValue>) -> Self {
-        self.inner = self.inner.set_ebs_optimized(input);
-        self
-    }
-    /// <p>Specifies whether the instance is optimized for Amazon EBS I/O. This optimization provides dedicated throughput to Amazon EBS and an optimized configuration stack to provide optimal EBS I/O performance. This optimization isn't available with all instance types. Additional usage charges apply when using an EBS Optimized instance.</p>
-    pub fn get_ebs_optimized(&self) -> &::std::option::Option<crate::types::AttributeBooleanValue> {
-        self.inner.get_ebs_optimized()
-    }
-    /// <p>Set to <code>true</code> to enable enhanced networking with ENA for the instance.</p>
-    /// <p>This option is supported only for HVM instances. Specifying this option with a PV instance can make it unreachable.</p>
-    pub fn ena_support(mut self, input: crate::types::AttributeBooleanValue) -> Self {
-        self.inner = self.inner.ena_support(input);
-        self
-    }
-    /// <p>Set to <code>true</code> to enable enhanced networking with ENA for the instance.</p>
-    /// <p>This option is supported only for HVM instances. Specifying this option with a PV instance can make it unreachable.</p>
-    pub fn set_ena_support(mut self, input: ::std::option::Option<crate::types::AttributeBooleanValue>) -> Self {
-        self.inner = self.inner.set_ena_support(input);
-        self
-    }
-    /// <p>Set to <code>true</code> to enable enhanced networking with ENA for the instance.</p>
-    /// <p>This option is supported only for HVM instances. Specifying this option with a PV instance can make it unreachable.</p>
-    pub fn get_ena_support(&self) -> &::std::option::Option<crate::types::AttributeBooleanValue> {
-        self.inner.get_ena_support()
-    }
-    ///
-    /// Appends an item to `Groups`.
-    ///
-    /// To override the contents of this collection use [`set_groups`](Self::set_groups).
-    ///
-    /// <p>Replaces the security groups of the instance with the specified security groups. You must specify the ID of at least one security group, even if it's just the default security group for the VPC.</p>
-    pub fn groups(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.inner = self.inner.groups(input.into());
-        self
-    }
-    /// <p>Replaces the security groups of the instance with the specified security groups. You must specify the ID of at least one security group, even if it's just the default security group for the VPC.</p>
-    pub fn set_groups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.inner = self.inner.set_groups(input);
-        self
-    }
-    /// <p>Replaces the security groups of the instance with the specified security groups. You must specify the ID of at least one security group, even if it's just the default security group for the VPC.</p>
-    pub fn get_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
-        self.inner.get_groups()
-    }
-    /// <p>The ID of the instance.</p>
-    pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.inner = self.inner.instance_id(input.into());
-        self
-    }
-    /// <p>The ID of the instance.</p>
-    pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.inner = self.inner.set_instance_id(input);
-        self
-    }
-    /// <p>The ID of the instance.</p>
-    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
-        self.inner.get_instance_id()
-    }
-    /// <p>Specifies whether an instance stops or terminates when you initiate shutdown from the instance (using the operating system command for system shutdown).</p>
-    pub fn instance_initiated_shutdown_behavior(mut self, input: crate::types::AttributeValue) -> Self {
-        self.inner = self.inner.instance_initiated_shutdown_behavior(input);
-        self
-    }
-    /// <p>Specifies whether an instance stops or terminates when you initiate shutdown from the instance (using the operating system command for system shutdown).</p>
-    pub fn set_instance_initiated_shutdown_behavior(mut self, input: ::std::option::Option<crate::types::AttributeValue>) -> Self {
-        self.inner = self.inner.set_instance_initiated_shutdown_behavior(input);
-        self
-    }
-    /// <p>Specifies whether an instance stops or terminates when you initiate shutdown from the instance (using the operating system command for system shutdown).</p>
-    pub fn get_instance_initiated_shutdown_behavior(&self) -> &::std::option::Option<crate::types::AttributeValue> {
-        self.inner.get_instance_initiated_shutdown_behavior()
     }
     /// <p>Changes the instance type to the specified value. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the <i>Amazon EC2 User Guide</i>. If the instance type is not valid, the error returned is <code>InvalidInstanceAttributeValue</code>.</p>
     pub fn instance_type(mut self, input: crate::types::AttributeValue) -> Self {
@@ -317,6 +284,67 @@ impl ModifyInstanceAttributeFluentBuilder {
     pub fn get_ramdisk(&self) -> &::std::option::Option<crate::types::AttributeValue> {
         self.inner.get_ramdisk()
     }
+    /// <p>Changes the instance's user data to the specified value. User data must be base64-encoded. Depending on the tool or SDK that you're using, the base64-encoding might be performed for you. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instancedata-add-user-data.html">Work with instance user data</a>.</p>
+    pub fn user_data(mut self, input: crate::types::BlobAttributeValue) -> Self {
+        self.inner = self.inner.user_data(input);
+        self
+    }
+    /// <p>Changes the instance's user data to the specified value. User data must be base64-encoded. Depending on the tool or SDK that you're using, the base64-encoding might be performed for you. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instancedata-add-user-data.html">Work with instance user data</a>.</p>
+    pub fn set_user_data(mut self, input: ::std::option::Option<crate::types::BlobAttributeValue>) -> Self {
+        self.inner = self.inner.set_user_data(input);
+        self
+    }
+    /// <p>Changes the instance's user data to the specified value. User data must be base64-encoded. Depending on the tool or SDK that you're using, the base64-encoding might be performed for you. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instancedata-add-user-data.html">Work with instance user data</a>.</p>
+    pub fn get_user_data(&self) -> &::std::option::Option<crate::types::BlobAttributeValue> {
+        self.inner.get_user_data()
+    }
+    /// <p>Specifies whether an instance stops or terminates when you initiate shutdown from the instance (using the operating system command for system shutdown).</p>
+    pub fn instance_initiated_shutdown_behavior(mut self, input: crate::types::AttributeValue) -> Self {
+        self.inner = self.inner.instance_initiated_shutdown_behavior(input);
+        self
+    }
+    /// <p>Specifies whether an instance stops or terminates when you initiate shutdown from the instance (using the operating system command for system shutdown).</p>
+    pub fn set_instance_initiated_shutdown_behavior(mut self, input: ::std::option::Option<crate::types::AttributeValue>) -> Self {
+        self.inner = self.inner.set_instance_initiated_shutdown_behavior(input);
+        self
+    }
+    /// <p>Specifies whether an instance stops or terminates when you initiate shutdown from the instance (using the operating system command for system shutdown).</p>
+    pub fn get_instance_initiated_shutdown_behavior(&self) -> &::std::option::Option<crate::types::AttributeValue> {
+        self.inner.get_instance_initiated_shutdown_behavior()
+    }
+    ///
+    /// Appends an item to `Groups`.
+    ///
+    /// To override the contents of this collection use [`set_groups`](Self::set_groups).
+    ///
+    /// <p>Replaces the security groups of the instance with the specified security groups. You must specify the ID of at least one security group, even if it's just the default security group for the VPC.</p>
+    pub fn groups(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.groups(input.into());
+        self
+    }
+    /// <p>Replaces the security groups of the instance with the specified security groups. You must specify the ID of at least one security group, even if it's just the default security group for the VPC.</p>
+    pub fn set_groups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.inner = self.inner.set_groups(input);
+        self
+    }
+    /// <p>Replaces the security groups of the instance with the specified security groups. You must specify the ID of at least one security group, even if it's just the default security group for the VPC.</p>
+    pub fn get_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_groups()
+    }
+    /// <p>Specifies whether the instance is optimized for Amazon EBS I/O. This optimization provides dedicated throughput to Amazon EBS and an optimized configuration stack to provide optimal EBS I/O performance. This optimization isn't available with all instance types. Additional usage charges apply when using an EBS Optimized instance.</p>
+    pub fn ebs_optimized(mut self, input: crate::types::AttributeBooleanValue) -> Self {
+        self.inner = self.inner.ebs_optimized(input);
+        self
+    }
+    /// <p>Specifies whether the instance is optimized for Amazon EBS I/O. This optimization provides dedicated throughput to Amazon EBS and an optimized configuration stack to provide optimal EBS I/O performance. This optimization isn't available with all instance types. Additional usage charges apply when using an EBS Optimized instance.</p>
+    pub fn set_ebs_optimized(mut self, input: ::std::option::Option<crate::types::AttributeBooleanValue>) -> Self {
+        self.inner = self.inner.set_ebs_optimized(input);
+        self
+    }
+    /// <p>Specifies whether the instance is optimized for Amazon EBS I/O. This optimization provides dedicated throughput to Amazon EBS and an optimized configuration stack to provide optimal EBS I/O performance. This optimization isn't available with all instance types. Additional usage charges apply when using an EBS Optimized instance.</p>
+    pub fn get_ebs_optimized(&self) -> &::std::option::Option<crate::types::AttributeBooleanValue> {
+        self.inner.get_ebs_optimized()
+    }
     /// <p>Set to <code>simple</code> to enable enhanced networking with the Intel 82599 Virtual Function interface for the instance.</p>
     /// <p>There is no way to disable enhanced networking with the Intel 82599 Virtual Function interface at this time.</p>
     /// <p>This option is supported only for HVM instances. Specifying this option with a PV instance can make it unreachable.</p>
@@ -337,49 +365,21 @@ impl ModifyInstanceAttributeFluentBuilder {
     pub fn get_sriov_net_support(&self) -> &::std::option::Option<crate::types::AttributeValue> {
         self.inner.get_sriov_net_support()
     }
-    /// <p>Changes the instance's user data to the specified value. User data must be base64-encoded. Depending on the tool or SDK that you're using, the base64-encoding might be performed for you. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instancedata-add-user-data.html">Work with instance user data</a>.</p>
-    pub fn user_data(mut self, input: crate::types::BlobAttributeValue) -> Self {
-        self.inner = self.inner.user_data(input);
+    /// <p>Set to <code>true</code> to enable enhanced networking with ENA for the instance.</p>
+    /// <p>This option is supported only for HVM instances. Specifying this option with a PV instance can make it unreachable.</p>
+    pub fn ena_support(mut self, input: crate::types::AttributeBooleanValue) -> Self {
+        self.inner = self.inner.ena_support(input);
         self
     }
-    /// <p>Changes the instance's user data to the specified value. User data must be base64-encoded. Depending on the tool or SDK that you're using, the base64-encoding might be performed for you. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instancedata-add-user-data.html">Work with instance user data</a>.</p>
-    pub fn set_user_data(mut self, input: ::std::option::Option<crate::types::BlobAttributeValue>) -> Self {
-        self.inner = self.inner.set_user_data(input);
+    /// <p>Set to <code>true</code> to enable enhanced networking with ENA for the instance.</p>
+    /// <p>This option is supported only for HVM instances. Specifying this option with a PV instance can make it unreachable.</p>
+    pub fn set_ena_support(mut self, input: ::std::option::Option<crate::types::AttributeBooleanValue>) -> Self {
+        self.inner = self.inner.set_ena_support(input);
         self
     }
-    /// <p>Changes the instance's user data to the specified value. User data must be base64-encoded. Depending on the tool or SDK that you're using, the base64-encoding might be performed for you. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instancedata-add-user-data.html">Work with instance user data</a>.</p>
-    pub fn get_user_data(&self) -> &::std::option::Option<crate::types::BlobAttributeValue> {
-        self.inner.get_user_data()
-    }
-    /// <p>A new value for the attribute. Use only with the <code>kernel</code>, <code>ramdisk</code>, <code>userData</code>, <code>disableApiTermination</code>, or <code>instanceInitiatedShutdownBehavior</code> attribute.</p>
-    pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.inner = self.inner.value(input.into());
-        self
-    }
-    /// <p>A new value for the attribute. Use only with the <code>kernel</code>, <code>ramdisk</code>, <code>userData</code>, <code>disableApiTermination</code>, or <code>instanceInitiatedShutdownBehavior</code> attribute.</p>
-    pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.inner = self.inner.set_value(input);
-        self
-    }
-    /// <p>A new value for the attribute. Use only with the <code>kernel</code>, <code>ramdisk</code>, <code>userData</code>, <code>disableApiTermination</code>, or <code>instanceInitiatedShutdownBehavior</code> attribute.</p>
-    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
-        self.inner.get_value()
-    }
-    /// <p>Indicates whether an instance is enabled for stop protection. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-stop-protection.html">Enable stop protection for your instance</a>.</p>
-    /// <p></p>
-    pub fn disable_api_stop(mut self, input: crate::types::AttributeBooleanValue) -> Self {
-        self.inner = self.inner.disable_api_stop(input);
-        self
-    }
-    /// <p>Indicates whether an instance is enabled for stop protection. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-stop-protection.html">Enable stop protection for your instance</a>.</p>
-    /// <p></p>
-    pub fn set_disable_api_stop(mut self, input: ::std::option::Option<crate::types::AttributeBooleanValue>) -> Self {
-        self.inner = self.inner.set_disable_api_stop(input);
-        self
-    }
-    /// <p>Indicates whether an instance is enabled for stop protection. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-stop-protection.html">Enable stop protection for your instance</a>.</p>
-    /// <p></p>
-    pub fn get_disable_api_stop(&self) -> &::std::option::Option<crate::types::AttributeBooleanValue> {
-        self.inner.get_disable_api_stop()
+    /// <p>Set to <code>true</code> to enable enhanced networking with ENA for the instance.</p>
+    /// <p>This option is supported only for HVM instances. Specifying this option with a PV instance can make it unreachable.</p>
+    pub fn get_ena_support(&self) -> &::std::option::Option<crate::types::AttributeBooleanValue> {
+        self.inner.get_ena_support()
     }
 }

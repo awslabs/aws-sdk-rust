@@ -54,8 +54,38 @@ pub fn de_describe_vpc_attribute(
     }
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
-            s if s.matches("vpcId") /* VpcId com.amazonaws.ec2.synthetic#DescribeVpcAttributeOutput$VpcId */ =>  {
+            s if s.matches("enableDnsHostnames") /* EnableDnsHostnames com.amazonaws.ec2.synthetic#DescribeVpcAttributeOutput$EnableDnsHostnames */ =>  {
                 let var_1 =
+                    Some(
+                        crate::protocol_serde::shape_attribute_boolean_value::de_attribute_boolean_value(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_enable_dns_hostnames(var_1);
+            }
+            ,
+            s if s.matches("enableDnsSupport") /* EnableDnsSupport com.amazonaws.ec2.synthetic#DescribeVpcAttributeOutput$EnableDnsSupport */ =>  {
+                let var_2 =
+                    Some(
+                        crate::protocol_serde::shape_attribute_boolean_value::de_attribute_boolean_value(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_enable_dns_support(var_2);
+            }
+            ,
+            s if s.matches("enableNetworkAddressUsageMetrics") /* EnableNetworkAddressUsageMetrics com.amazonaws.ec2.synthetic#DescribeVpcAttributeOutput$EnableNetworkAddressUsageMetrics */ =>  {
+                let var_3 =
+                    Some(
+                        crate::protocol_serde::shape_attribute_boolean_value::de_attribute_boolean_value(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_enable_network_address_usage_metrics(var_3);
+            }
+            ,
+            s if s.matches("vpcId") /* VpcId com.amazonaws.ec2.synthetic#DescribeVpcAttributeOutput$VpcId */ =>  {
+                let var_4 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -64,37 +94,7 @@ pub fn de_describe_vpc_attribute(
                         ?
                     )
                 ;
-                builder = builder.set_vpc_id(var_1);
-            }
-            ,
-            s if s.matches("enableDnsHostnames") /* EnableDnsHostnames com.amazonaws.ec2.synthetic#DescribeVpcAttributeOutput$EnableDnsHostnames */ =>  {
-                let var_2 =
-                    Some(
-                        crate::protocol_serde::shape_attribute_boolean_value::de_attribute_boolean_value(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_enable_dns_hostnames(var_2);
-            }
-            ,
-            s if s.matches("enableDnsSupport") /* EnableDnsSupport com.amazonaws.ec2.synthetic#DescribeVpcAttributeOutput$EnableDnsSupport */ =>  {
-                let var_3 =
-                    Some(
-                        crate::protocol_serde::shape_attribute_boolean_value::de_attribute_boolean_value(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_enable_dns_support(var_3);
-            }
-            ,
-            s if s.matches("enableNetworkAddressUsageMetrics") /* EnableNetworkAddressUsageMetrics com.amazonaws.ec2.synthetic#DescribeVpcAttributeOutput$EnableNetworkAddressUsageMetrics */ =>  {
-                let var_4 =
-                    Some(
-                        crate::protocol_serde::shape_attribute_boolean_value::de_attribute_boolean_value(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_enable_network_address_usage_metrics(var_4);
+                builder = builder.set_vpc_id(var_4);
             }
             ,
             _ => {}

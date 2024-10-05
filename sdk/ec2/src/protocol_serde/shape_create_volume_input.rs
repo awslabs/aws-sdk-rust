@@ -52,40 +52,40 @@ pub fn ser_create_volume_input_input_input(
         scope_15.string(var_16.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_17 = writer.prefix("DryRun");
-    if let Some(var_18) = &input.dry_run {
-        scope_17.boolean(*var_18);
-    }
-    #[allow(unused_mut)]
-    let mut scope_19 = writer.prefix("TagSpecification");
-    if let Some(var_20) = &input.tag_specifications {
-        if !var_20.is_empty() {
-            let mut list_22 = scope_19.start_list(true, Some("item"));
-            for item_21 in var_20 {
+    let mut scope_17 = writer.prefix("TagSpecification");
+    if let Some(var_18) = &input.tag_specifications {
+        if !var_18.is_empty() {
+            let mut list_20 = scope_17.start_list(true, Some("item"));
+            for item_19 in var_18 {
                 #[allow(unused_mut)]
-                let mut entry_23 = list_22.entry();
-                crate::protocol_serde::shape_tag_specification::ser_tag_specification(entry_23, item_21)?;
+                let mut entry_21 = list_20.entry();
+                crate::protocol_serde::shape_tag_specification::ser_tag_specification(entry_21, item_19)?;
             }
-            list_22.finish();
+            list_20.finish();
         }
     }
     #[allow(unused_mut)]
-    let mut scope_24 = writer.prefix("MultiAttachEnabled");
-    if let Some(var_25) = &input.multi_attach_enabled {
-        scope_24.boolean(*var_25);
+    let mut scope_22 = writer.prefix("MultiAttachEnabled");
+    if let Some(var_23) = &input.multi_attach_enabled {
+        scope_22.boolean(*var_23);
     }
     #[allow(unused_mut)]
-    let mut scope_26 = writer.prefix("Throughput");
-    if let Some(var_27) = &input.throughput {
-        scope_26.number(
+    let mut scope_24 = writer.prefix("Throughput");
+    if let Some(var_25) = &input.throughput {
+        scope_24.number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_27).into()),
+            ::aws_smithy_types::Number::NegInt((*var_25).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_28 = writer.prefix("ClientToken");
-    if let Some(var_29) = &input.client_token {
-        scope_28.string(var_29);
+    let mut scope_26 = writer.prefix("ClientToken");
+    if let Some(var_27) = &input.client_token {
+        scope_26.string(var_27);
+    }
+    #[allow(unused_mut)]
+    let mut scope_28 = writer.prefix("DryRun");
+    if let Some(var_29) = &input.dry_run {
+        scope_28.boolean(*var_29);
     }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))

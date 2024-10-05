@@ -6,27 +6,27 @@ pub fn ser_describe_export_tasks_input_input_input(
     #[allow(unused_mut)]
     let mut writer = ::aws_smithy_query::QueryWriter::new(&mut out, "DescribeExportTasks", "2016-11-15");
     #[allow(unused_mut)]
-    let mut scope_1 = writer.prefix("ExportTaskId");
-    if let Some(var_2) = &input.export_task_ids {
+    let mut scope_1 = writer.prefix("Filter");
+    if let Some(var_2) = &input.filters {
         if !var_2.is_empty() {
-            let mut list_4 = scope_1.start_list(true, Some("ExportTaskId"));
+            let mut list_4 = scope_1.start_list(true, Some("Filter"));
             for item_3 in var_2 {
                 #[allow(unused_mut)]
                 let mut entry_5 = list_4.entry();
-                entry_5.string(item_3);
+                crate::protocol_serde::shape_filter::ser_filter(entry_5, item_3)?;
             }
             list_4.finish();
         }
     }
     #[allow(unused_mut)]
-    let mut scope_6 = writer.prefix("Filter");
-    if let Some(var_7) = &input.filters {
+    let mut scope_6 = writer.prefix("ExportTaskId");
+    if let Some(var_7) = &input.export_task_ids {
         if !var_7.is_empty() {
-            let mut list_9 = scope_6.start_list(true, Some("Filter"));
+            let mut list_9 = scope_6.start_list(true, Some("ExportTaskId"));
             for item_8 in var_7 {
                 #[allow(unused_mut)]
                 let mut entry_10 = list_9.entry();
-                crate::protocol_serde::shape_filter::ser_filter(entry_10, item_8)?;
+                entry_10.string(item_8);
             }
             list_9.finish();
         }

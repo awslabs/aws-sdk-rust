@@ -22,7 +22,7 @@ impl crate::operation::attach_vpn_gateway::builders::AttachVpnGatewayInputBuilde
 }
 /// Fluent builder constructing a request to `AttachVpnGateway`.
 ///
-/// <p>Attaches a virtual private gateway to a VPC. You can attach one virtual private gateway to one VPC at a time.</p>
+/// <p>Attaches an available virtual private gateway to a VPC. You can attach one virtual private gateway to one VPC at a time.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">Amazon Web Services Site-to-Site VPN</a> in the <i>Amazon Web Services Site-to-Site VPN User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AttachVpnGatewayFluentBuilder {

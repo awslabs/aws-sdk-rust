@@ -6,6 +6,8 @@ pub struct DescribeBundleTasksInput {
     /// <p>The bundle task IDs.</p>
     /// <p>Default: Describes all your bundle tasks.</p>
     pub bundle_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub dry_run: ::std::option::Option<bool>,
     /// <p>The filters.</p>
     /// <ul>
     /// <li>
@@ -30,8 +32,6 @@ pub struct DescribeBundleTasksInput {
     /// <p><code>update-time</code> - The time of the most recent update for the task.</p></li>
     /// </ul>
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub dry_run: ::std::option::Option<bool>,
 }
 impl DescribeBundleTasksInput {
     /// <p>The bundle task IDs.</p>
@@ -40,6 +40,10 @@ impl DescribeBundleTasksInput {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.bundle_ids.is_none()`.
     pub fn bundle_ids(&self) -> &[::std::string::String] {
         self.bundle_ids.as_deref().unwrap_or_default()
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn dry_run(&self) -> ::std::option::Option<bool> {
+        self.dry_run
     }
     /// <p>The filters.</p>
     /// <ul>
@@ -69,10 +73,6 @@ impl DescribeBundleTasksInput {
     pub fn filters(&self) -> &[crate::types::Filter] {
         self.filters.as_deref().unwrap_or_default()
     }
-    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn dry_run(&self) -> ::std::option::Option<bool> {
-        self.dry_run
-    }
 }
 impl DescribeBundleTasksInput {
     /// Creates a new builder-style object to manufacture [`DescribeBundleTasksInput`](crate::operation::describe_bundle_tasks::DescribeBundleTasksInput).
@@ -86,8 +86,8 @@ impl DescribeBundleTasksInput {
 #[non_exhaustive]
 pub struct DescribeBundleTasksInputBuilder {
     pub(crate) bundle_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     pub(crate) dry_run: ::std::option::Option<bool>,
+    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
 }
 impl DescribeBundleTasksInputBuilder {
     /// Appends an item to `bundle_ids`.
@@ -112,6 +112,20 @@ impl DescribeBundleTasksInputBuilder {
     /// <p>Default: Describes all your bundle tasks.</p>
     pub fn get_bundle_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.bundle_ids
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn dry_run(mut self, input: bool) -> Self {
+        self.dry_run = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.dry_run = input;
+        self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
     }
     /// Appends an item to `filters`.
     ///
@@ -199,20 +213,6 @@ impl DescribeBundleTasksInputBuilder {
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         &self.filters
     }
-    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn dry_run(mut self, input: bool) -> Self {
-        self.dry_run = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
-    }
-    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
-        &self.dry_run
-    }
     /// Consumes the builder and constructs a [`DescribeBundleTasksInput`](crate::operation::describe_bundle_tasks::DescribeBundleTasksInput).
     pub fn build(
         self,
@@ -220,8 +220,8 @@ impl DescribeBundleTasksInputBuilder {
     {
         ::std::result::Result::Ok(crate::operation::describe_bundle_tasks::DescribeBundleTasksInput {
             bundle_ids: self.bundle_ids,
-            filters: self.filters,
             dry_run: self.dry_run,
+            filters: self.filters,
         })
     }
 }

@@ -6,16 +6,16 @@ pub fn ser_assign_ipv6_addresses_input_input_input(
     #[allow(unused_mut)]
     let mut writer = ::aws_smithy_query::QueryWriter::new(&mut out, "AssignIpv6Addresses", "2016-11-15");
     #[allow(unused_mut)]
-    let mut scope_1 = writer.prefix("Ipv6AddressCount");
-    if let Some(var_2) = &input.ipv6_address_count {
+    let mut scope_1 = writer.prefix("Ipv6PrefixCount");
+    if let Some(var_2) = &input.ipv6_prefix_count {
         scope_1.number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_3 = writer.prefix("Ipv6Addresses");
-    if let Some(var_4) = &input.ipv6_addresses {
+    let mut scope_3 = writer.prefix("Ipv6Prefix");
+    if let Some(var_4) = &input.ipv6_prefixes {
         if !var_4.is_empty() {
             let mut list_6 = scope_3.start_list(true, Some("item"));
             for item_5 in var_4 {
@@ -27,16 +27,13 @@ pub fn ser_assign_ipv6_addresses_input_input_input(
         }
     }
     #[allow(unused_mut)]
-    let mut scope_8 = writer.prefix("Ipv6PrefixCount");
-    if let Some(var_9) = &input.ipv6_prefix_count {
-        scope_8.number(
-            #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_9).into()),
-        );
+    let mut scope_8 = writer.prefix("NetworkInterfaceId");
+    if let Some(var_9) = &input.network_interface_id {
+        scope_8.string(var_9);
     }
     #[allow(unused_mut)]
-    let mut scope_10 = writer.prefix("Ipv6Prefix");
-    if let Some(var_11) = &input.ipv6_prefixes {
+    let mut scope_10 = writer.prefix("Ipv6Addresses");
+    if let Some(var_11) = &input.ipv6_addresses {
         if !var_11.is_empty() {
             let mut list_13 = scope_10.start_list(true, Some("item"));
             for item_12 in var_11 {
@@ -48,9 +45,12 @@ pub fn ser_assign_ipv6_addresses_input_input_input(
         }
     }
     #[allow(unused_mut)]
-    let mut scope_15 = writer.prefix("NetworkInterfaceId");
-    if let Some(var_16) = &input.network_interface_id {
-        scope_15.string(var_16);
+    let mut scope_15 = writer.prefix("Ipv6AddressCount");
+    if let Some(var_16) = &input.ipv6_address_count {
+        scope_15.number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_16).into()),
+        );
     }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))

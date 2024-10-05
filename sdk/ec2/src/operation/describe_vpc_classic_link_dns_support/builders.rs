@@ -117,6 +117,25 @@ impl DescribeVpcClassicLinkDnsSupportFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::describe_vpc_classic_link_dns_support::paginator::DescribeVpcClassicLinkDnsSupportPaginator {
         crate::operation::describe_vpc_classic_link_dns_support::paginator::DescribeVpcClassicLinkDnsSupportPaginator::new(self.handle, self.inner)
     }
+    ///
+    /// Appends an item to `VpcIds`.
+    ///
+    /// To override the contents of this collection use [`set_vpc_ids`](Self::set_vpc_ids).
+    ///
+    /// <p>The IDs of the VPCs.</p>
+    pub fn vpc_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.vpc_ids(input.into());
+        self
+    }
+    /// <p>The IDs of the VPCs.</p>
+    pub fn set_vpc_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.inner = self.inner.set_vpc_ids(input);
+        self
+    }
+    /// <p>The IDs of the VPCs.</p>
+    pub fn get_vpc_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_vpc_ids()
+    }
     /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -144,24 +163,5 @@ impl DescribeVpcClassicLinkDnsSupportFluentBuilder {
     /// <p>The token returned from a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
-    }
-    ///
-    /// Appends an item to `VpcIds`.
-    ///
-    /// To override the contents of this collection use [`set_vpc_ids`](Self::set_vpc_ids).
-    ///
-    /// <p>The IDs of the VPCs.</p>
-    pub fn vpc_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.inner = self.inner.vpc_ids(input.into());
-        self
-    }
-    /// <p>The IDs of the VPCs.</p>
-    pub fn set_vpc_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.inner = self.inner.set_vpc_ids(input);
-        self
-    }
-    /// <p>The IDs of the VPCs.</p>
-    pub fn get_vpc_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
-        self.inner.get_vpc_ids()
     }
 }

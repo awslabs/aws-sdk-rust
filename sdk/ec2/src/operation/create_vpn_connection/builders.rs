@@ -170,6 +170,25 @@ impl CreateVpnConnectionFluentBuilder {
     pub fn get_transit_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_transit_gateway_id()
     }
+    ///
+    /// Appends an item to `TagSpecifications`.
+    ///
+    /// To override the contents of this collection use [`set_tag_specifications`](Self::set_tag_specifications).
+    ///
+    /// <p>The tags to apply to the VPN connection.</p>
+    pub fn tag_specifications(mut self, input: crate::types::TagSpecification) -> Self {
+        self.inner = self.inner.tag_specifications(input);
+        self
+    }
+    /// <p>The tags to apply to the VPN connection.</p>
+    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>) -> Self {
+        self.inner = self.inner.set_tag_specifications(input);
+        self
+    }
+    /// <p>The tags to apply to the VPN connection.</p>
+    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+        self.inner.get_tag_specifications()
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.inner = self.inner.dry_run(input);
@@ -197,24 +216,5 @@ impl CreateVpnConnectionFluentBuilder {
     /// <p>The options for the VPN connection.</p>
     pub fn get_options(&self) -> &::std::option::Option<crate::types::VpnConnectionOptionsSpecification> {
         self.inner.get_options()
-    }
-    ///
-    /// Appends an item to `TagSpecifications`.
-    ///
-    /// To override the contents of this collection use [`set_tag_specifications`](Self::set_tag_specifications).
-    ///
-    /// <p>The tags to apply to the VPN connection.</p>
-    pub fn tag_specifications(mut self, input: crate::types::TagSpecification) -> Self {
-        self.inner = self.inner.tag_specifications(input);
-        self
-    }
-    /// <p>The tags to apply to the VPN connection.</p>
-    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>) -> Self {
-        self.inner = self.inner.set_tag_specifications(input);
-        self
-    }
-    /// <p>The tags to apply to the VPN connection.</p>
-    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
-        self.inner.get_tag_specifications()
     }
 }

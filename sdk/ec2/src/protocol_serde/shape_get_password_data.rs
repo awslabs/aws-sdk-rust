@@ -61,21 +61,8 @@ pub fn de_get_password_data(
                 builder = builder.set_instance_id(var_1);
             }
             ,
-            s if s.matches("passwordData") /* PasswordData com.amazonaws.ec2.synthetic#GetPasswordDataOutput$PasswordData */ =>  {
-                let var_2 =
-                    Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_password_data(var_2);
-            }
-            ,
             s if s.matches("timestamp") /* Timestamp com.amazonaws.ec2.synthetic#GetPasswordDataOutput$Timestamp */ =>  {
-                let var_3 =
+                let var_2 =
                     Some(
                         ::aws_smithy_types::DateTime::from_str(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -85,7 +72,20 @@ pub fn de_get_password_data(
                         ?
                     )
                 ;
-                builder = builder.set_timestamp(var_3);
+                builder = builder.set_timestamp(var_2);
+            }
+            ,
+            s if s.matches("passwordData") /* PasswordData com.amazonaws.ec2.synthetic#GetPasswordDataOutput$PasswordData */ =>  {
+                let var_3 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_password_data(var_3);
             }
             ,
             _ => {}

@@ -115,6 +115,86 @@ impl DescribeSpotPriceHistoryFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::describe_spot_price_history::paginator::DescribeSpotPriceHistoryPaginator {
         crate::operation::describe_spot_price_history::paginator::DescribeSpotPriceHistoryPaginator::new(self.handle, self.inner)
     }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn dry_run(mut self, input: bool) -> Self {
+        self.inner = self.inner.dry_run(input);
+        self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_dry_run(input);
+        self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
+    }
+    /// <p>The date and time, up to the past 90 days, from which to start retrieving the price history data, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
+    pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.inner = self.inner.start_time(input);
+        self
+    }
+    /// <p>The date and time, up to the past 90 days, from which to start retrieving the price history data, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.inner = self.inner.set_start_time(input);
+        self
+    }
+    /// <p>The date and time, up to the past 90 days, from which to start retrieving the price history data, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_start_time()
+    }
+    /// <p>The date and time, up to the current date, from which to stop retrieving the price history data, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
+    pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.inner = self.inner.end_time(input);
+        self
+    }
+    /// <p>The date and time, up to the current date, from which to stop retrieving the price history data, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.inner = self.inner.set_end_time(input);
+        self
+    }
+    /// <p>The date and time, up to the current date, from which to stop retrieving the price history data, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_end_time()
+    }
+    ///
+    /// Appends an item to `InstanceTypes`.
+    ///
+    /// To override the contents of this collection use [`set_instance_types`](Self::set_instance_types).
+    ///
+    /// <p>Filters the results by the specified instance types.</p>
+    pub fn instance_types(mut self, input: crate::types::InstanceType) -> Self {
+        self.inner = self.inner.instance_types(input);
+        self
+    }
+    /// <p>Filters the results by the specified instance types.</p>
+    pub fn set_instance_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceType>>) -> Self {
+        self.inner = self.inner.set_instance_types(input);
+        self
+    }
+    /// <p>Filters the results by the specified instance types.</p>
+    pub fn get_instance_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceType>> {
+        self.inner.get_instance_types()
+    }
+    ///
+    /// Appends an item to `ProductDescriptions`.
+    ///
+    /// To override the contents of this collection use [`set_product_descriptions`](Self::set_product_descriptions).
+    ///
+    /// <p>Filters the results by the specified basic product descriptions.</p>
+    pub fn product_descriptions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.product_descriptions(input.into());
+        self
+    }
+    /// <p>Filters the results by the specified basic product descriptions.</p>
+    pub fn set_product_descriptions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.inner = self.inner.set_product_descriptions(input);
+        self
+    }
+    /// <p>Filters the results by the specified basic product descriptions.</p>
+    pub fn get_product_descriptions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_product_descriptions()
+    }
     ///
     /// Appends an item to `Filters`.
     ///
@@ -184,53 +264,6 @@ impl DescribeSpotPriceHistoryFluentBuilder {
     pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_availability_zone()
     }
-    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn dry_run(mut self, input: bool) -> Self {
-        self.inner = self.inner.dry_run(input);
-        self
-    }
-    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.inner = self.inner.set_dry_run(input);
-        self
-    }
-    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
-        self.inner.get_dry_run()
-    }
-    /// <p>The date and time, up to the current date, from which to stop retrieving the price history data, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
-    pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
-        self.inner = self.inner.end_time(input);
-        self
-    }
-    /// <p>The date and time, up to the current date, from which to stop retrieving the price history data, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
-    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.inner = self.inner.set_end_time(input);
-        self
-    }
-    /// <p>The date and time, up to the current date, from which to stop retrieving the price history data, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
-    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
-        self.inner.get_end_time()
-    }
-    ///
-    /// Appends an item to `InstanceTypes`.
-    ///
-    /// To override the contents of this collection use [`set_instance_types`](Self::set_instance_types).
-    ///
-    /// <p>Filters the results by the specified instance types.</p>
-    pub fn instance_types(mut self, input: crate::types::InstanceType) -> Self {
-        self.inner = self.inner.instance_types(input);
-        self
-    }
-    /// <p>Filters the results by the specified instance types.</p>
-    pub fn set_instance_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceType>>) -> Self {
-        self.inner = self.inner.set_instance_types(input);
-        self
-    }
-    /// <p>Filters the results by the specified instance types.</p>
-    pub fn get_instance_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceType>> {
-        self.inner.get_instance_types()
-    }
     /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -258,38 +291,5 @@ impl DescribeSpotPriceHistoryFluentBuilder {
     /// <p>The token returned from a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
-    }
-    ///
-    /// Appends an item to `ProductDescriptions`.
-    ///
-    /// To override the contents of this collection use [`set_product_descriptions`](Self::set_product_descriptions).
-    ///
-    /// <p>Filters the results by the specified basic product descriptions.</p>
-    pub fn product_descriptions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.inner = self.inner.product_descriptions(input.into());
-        self
-    }
-    /// <p>Filters the results by the specified basic product descriptions.</p>
-    pub fn set_product_descriptions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.inner = self.inner.set_product_descriptions(input);
-        self
-    }
-    /// <p>Filters the results by the specified basic product descriptions.</p>
-    pub fn get_product_descriptions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
-        self.inner.get_product_descriptions()
-    }
-    /// <p>The date and time, up to the past 90 days, from which to start retrieving the price history data, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
-    pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
-        self.inner = self.inner.start_time(input);
-        self
-    }
-    /// <p>The date and time, up to the past 90 days, from which to start retrieving the price history data, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
-    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.inner = self.inner.set_start_time(input);
-        self
-    }
-    /// <p>The date and time, up to the past 90 days, from which to start retrieving the price history data, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
-    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
-        self.inner.get_start_time()
     }
 }

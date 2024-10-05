@@ -6,83 +6,83 @@ pub fn ser_request_spot_instances_input_input_input(
     #[allow(unused_mut)]
     let mut writer = ::aws_smithy_query::QueryWriter::new(&mut out, "RequestSpotInstances", "2016-11-15");
     #[allow(unused_mut)]
-    let mut scope_1 = writer.prefix("AvailabilityZoneGroup");
-    if let Some(var_2) = &input.availability_zone_group {
-        scope_1.string(var_2);
+    let mut scope_1 = writer.prefix("LaunchSpecification");
+    if let Some(var_2) = &input.launch_specification {
+        crate::protocol_serde::shape_request_spot_launch_specification::ser_request_spot_launch_specification(scope_1, var_2)?;
     }
     #[allow(unused_mut)]
-    let mut scope_3 = writer.prefix("BlockDurationMinutes");
-    if let Some(var_4) = &input.block_duration_minutes {
-        scope_3.number(
-            #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_4).into()),
-        );
-    }
-    #[allow(unused_mut)]
-    let mut scope_5 = writer.prefix("ClientToken");
-    if let Some(var_6) = &input.client_token {
-        scope_5.string(var_6);
-    }
-    #[allow(unused_mut)]
-    let mut scope_7 = writer.prefix("DryRun");
-    if let Some(var_8) = &input.dry_run {
-        scope_7.boolean(*var_8);
-    }
-    #[allow(unused_mut)]
-    let mut scope_9 = writer.prefix("InstanceCount");
-    if let Some(var_10) = &input.instance_count {
-        scope_9.number(
-            #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_10).into()),
-        );
-    }
-    #[allow(unused_mut)]
-    let mut scope_11 = writer.prefix("LaunchGroup");
-    if let Some(var_12) = &input.launch_group {
-        scope_11.string(var_12);
-    }
-    #[allow(unused_mut)]
-    let mut scope_13 = writer.prefix("LaunchSpecification");
-    if let Some(var_14) = &input.launch_specification {
-        crate::protocol_serde::shape_request_spot_launch_specification::ser_request_spot_launch_specification(scope_13, var_14)?;
-    }
-    #[allow(unused_mut)]
-    let mut scope_15 = writer.prefix("SpotPrice");
-    if let Some(var_16) = &input.spot_price {
-        scope_15.string(var_16);
-    }
-    #[allow(unused_mut)]
-    let mut scope_17 = writer.prefix("Type");
-    if let Some(var_18) = &input.r#type {
-        scope_17.string(var_18.as_str());
-    }
-    #[allow(unused_mut)]
-    let mut scope_19 = writer.prefix("ValidFrom");
-    if let Some(var_20) = &input.valid_from {
-        scope_19.date_time(var_20, ::aws_smithy_types::date_time::Format::DateTime)?;
-    }
-    #[allow(unused_mut)]
-    let mut scope_21 = writer.prefix("ValidUntil");
-    if let Some(var_22) = &input.valid_until {
-        scope_21.date_time(var_22, ::aws_smithy_types::date_time::Format::DateTime)?;
-    }
-    #[allow(unused_mut)]
-    let mut scope_23 = writer.prefix("TagSpecification");
-    if let Some(var_24) = &input.tag_specifications {
-        if !var_24.is_empty() {
-            let mut list_26 = scope_23.start_list(true, Some("item"));
-            for item_25 in var_24 {
+    let mut scope_3 = writer.prefix("TagSpecification");
+    if let Some(var_4) = &input.tag_specifications {
+        if !var_4.is_empty() {
+            let mut list_6 = scope_3.start_list(true, Some("item"));
+            for item_5 in var_4 {
                 #[allow(unused_mut)]
-                let mut entry_27 = list_26.entry();
-                crate::protocol_serde::shape_tag_specification::ser_tag_specification(entry_27, item_25)?;
+                let mut entry_7 = list_6.entry();
+                crate::protocol_serde::shape_tag_specification::ser_tag_specification(entry_7, item_5)?;
             }
-            list_26.finish();
+            list_6.finish();
         }
     }
     #[allow(unused_mut)]
-    let mut scope_28 = writer.prefix("InstanceInterruptionBehavior");
-    if let Some(var_29) = &input.instance_interruption_behavior {
-        scope_28.string(var_29.as_str());
+    let mut scope_8 = writer.prefix("InstanceInterruptionBehavior");
+    if let Some(var_9) = &input.instance_interruption_behavior {
+        scope_8.string(var_9.as_str());
+    }
+    #[allow(unused_mut)]
+    let mut scope_10 = writer.prefix("DryRun");
+    if let Some(var_11) = &input.dry_run {
+        scope_10.boolean(*var_11);
+    }
+    #[allow(unused_mut)]
+    let mut scope_12 = writer.prefix("SpotPrice");
+    if let Some(var_13) = &input.spot_price {
+        scope_12.string(var_13);
+    }
+    #[allow(unused_mut)]
+    let mut scope_14 = writer.prefix("ClientToken");
+    if let Some(var_15) = &input.client_token {
+        scope_14.string(var_15);
+    }
+    #[allow(unused_mut)]
+    let mut scope_16 = writer.prefix("InstanceCount");
+    if let Some(var_17) = &input.instance_count {
+        scope_16.number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_17).into()),
+        );
+    }
+    #[allow(unused_mut)]
+    let mut scope_18 = writer.prefix("Type");
+    if let Some(var_19) = &input.r#type {
+        scope_18.string(var_19.as_str());
+    }
+    #[allow(unused_mut)]
+    let mut scope_20 = writer.prefix("ValidFrom");
+    if let Some(var_21) = &input.valid_from {
+        scope_20.date_time(var_21, ::aws_smithy_types::date_time::Format::DateTime)?;
+    }
+    #[allow(unused_mut)]
+    let mut scope_22 = writer.prefix("ValidUntil");
+    if let Some(var_23) = &input.valid_until {
+        scope_22.date_time(var_23, ::aws_smithy_types::date_time::Format::DateTime)?;
+    }
+    #[allow(unused_mut)]
+    let mut scope_24 = writer.prefix("LaunchGroup");
+    if let Some(var_25) = &input.launch_group {
+        scope_24.string(var_25);
+    }
+    #[allow(unused_mut)]
+    let mut scope_26 = writer.prefix("AvailabilityZoneGroup");
+    if let Some(var_27) = &input.availability_zone_group {
+        scope_26.string(var_27);
+    }
+    #[allow(unused_mut)]
+    let mut scope_28 = writer.prefix("BlockDurationMinutes");
+    if let Some(var_29) = &input.block_duration_minutes {
+        scope_28.number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_29).into()),
+        );
     }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))

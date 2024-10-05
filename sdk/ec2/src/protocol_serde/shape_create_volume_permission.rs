@@ -5,14 +5,14 @@ pub fn ser_create_volume_permission(
     input: &crate::types::CreateVolumePermission,
 ) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
-    let mut scope_1 = writer.prefix("Group");
-    if let Some(var_2) = &input.group {
-        scope_1.string(var_2.as_str());
+    let mut scope_1 = writer.prefix("UserId");
+    if let Some(var_2) = &input.user_id {
+        scope_1.string(var_2);
     }
     #[allow(unused_mut)]
-    let mut scope_3 = writer.prefix("UserId");
-    if let Some(var_4) = &input.user_id {
-        scope_3.string(var_4);
+    let mut scope_3 = writer.prefix("Group");
+    if let Some(var_4) = &input.group {
+        scope_3.string(var_4.as_str());
     }
     Ok(())
 }
@@ -25,8 +25,21 @@ pub fn de_create_volume_permission(
     let mut builder = crate::types::CreateVolumePermission::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
-            s if s.matches("group") /* Group com.amazonaws.ec2#CreateVolumePermission$Group */ =>  {
+            s if s.matches("userId") /* UserId com.amazonaws.ec2#CreateVolumePermission$UserId */ =>  {
                 let var_5 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_user_id(var_5);
+            }
+            ,
+            s if s.matches("group") /* Group com.amazonaws.ec2#CreateVolumePermission$Group */ =>  {
+                let var_6 =
                     Some(
                         Result::<crate::types::PermissionGroup, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::PermissionGroup::from(
@@ -36,20 +49,7 @@ pub fn de_create_volume_permission(
                         ?
                     )
                 ;
-                builder = builder.set_group(var_5);
-            }
-            ,
-            s if s.matches("userId") /* UserId com.amazonaws.ec2#CreateVolumePermission$UserId */ =>  {
-                let var_6 =
-                    Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_user_id(var_6);
+                builder = builder.set_group(var_6);
             }
             ,
             _ => {}

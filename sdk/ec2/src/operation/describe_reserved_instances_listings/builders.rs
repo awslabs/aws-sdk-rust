@@ -114,6 +114,34 @@ impl DescribeReservedInstancesListingsFluentBuilder {
         self.config_override = config_override;
         self
     }
+    /// <p>One or more Reserved Instance IDs.</p>
+    pub fn reserved_instances_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.reserved_instances_id(input.into());
+        self
+    }
+    /// <p>One or more Reserved Instance IDs.</p>
+    pub fn set_reserved_instances_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_reserved_instances_id(input);
+        self
+    }
+    /// <p>One or more Reserved Instance IDs.</p>
+    pub fn get_reserved_instances_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_reserved_instances_id()
+    }
+    /// <p>One or more Reserved Instance listing IDs.</p>
+    pub fn reserved_instances_listing_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.reserved_instances_listing_id(input.into());
+        self
+    }
+    /// <p>One or more Reserved Instance listing IDs.</p>
+    pub fn set_reserved_instances_listing_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_reserved_instances_listing_id(input);
+        self
+    }
+    /// <p>One or more Reserved Instance listing IDs.</p>
+    pub fn get_reserved_instances_listing_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_reserved_instances_listing_id()
+    }
     ///
     /// Appends an item to `Filters`.
     ///
@@ -162,33 +190,5 @@ impl DescribeReservedInstancesListingsFluentBuilder {
     /// </ul>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         self.inner.get_filters()
-    }
-    /// <p>One or more Reserved Instance IDs.</p>
-    pub fn reserved_instances_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.inner = self.inner.reserved_instances_id(input.into());
-        self
-    }
-    /// <p>One or more Reserved Instance IDs.</p>
-    pub fn set_reserved_instances_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.inner = self.inner.set_reserved_instances_id(input);
-        self
-    }
-    /// <p>One or more Reserved Instance IDs.</p>
-    pub fn get_reserved_instances_id(&self) -> &::std::option::Option<::std::string::String> {
-        self.inner.get_reserved_instances_id()
-    }
-    /// <p>One or more Reserved Instance listing IDs.</p>
-    pub fn reserved_instances_listing_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.inner = self.inner.reserved_instances_listing_id(input.into());
-        self
-    }
-    /// <p>One or more Reserved Instance listing IDs.</p>
-    pub fn set_reserved_instances_listing_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.inner = self.inner.set_reserved_instances_listing_id(input);
-        self
-    }
-    /// <p>One or more Reserved Instance listing IDs.</p>
-    pub fn get_reserved_instances_listing_id(&self) -> &::std::option::Option<::std::string::String> {
-        self.inner.get_reserved_instances_listing_id()
     }
 }

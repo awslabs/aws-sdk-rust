@@ -4,25 +4,25 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PriceScheduleSpecification {
-    /// <p>The currency for transacting the Reserved Instance resale. At this time, the only supported currency is <code>USD</code>.</p>
-    pub currency_code: ::std::option::Option<crate::types::CurrencyCodeValues>,
-    /// <p>The fixed price for the term.</p>
-    pub price: ::std::option::Option<f64>,
     /// <p>The number of months remaining in the reservation. For example, 2 is the second to the last month before the capacity reservation expires.</p>
     pub term: ::std::option::Option<i64>,
+    /// <p>The fixed price for the term.</p>
+    pub price: ::std::option::Option<f64>,
+    /// <p>The currency for transacting the Reserved Instance resale. At this time, the only supported currency is <code>USD</code>.</p>
+    pub currency_code: ::std::option::Option<crate::types::CurrencyCodeValues>,
 }
 impl PriceScheduleSpecification {
-    /// <p>The currency for transacting the Reserved Instance resale. At this time, the only supported currency is <code>USD</code>.</p>
-    pub fn currency_code(&self) -> ::std::option::Option<&crate::types::CurrencyCodeValues> {
-        self.currency_code.as_ref()
+    /// <p>The number of months remaining in the reservation. For example, 2 is the second to the last month before the capacity reservation expires.</p>
+    pub fn term(&self) -> ::std::option::Option<i64> {
+        self.term
     }
     /// <p>The fixed price for the term.</p>
     pub fn price(&self) -> ::std::option::Option<f64> {
         self.price
     }
-    /// <p>The number of months remaining in the reservation. For example, 2 is the second to the last month before the capacity reservation expires.</p>
-    pub fn term(&self) -> ::std::option::Option<i64> {
-        self.term
+    /// <p>The currency for transacting the Reserved Instance resale. At this time, the only supported currency is <code>USD</code>.</p>
+    pub fn currency_code(&self) -> ::std::option::Option<&crate::types::CurrencyCodeValues> {
+        self.currency_code.as_ref()
     }
 }
 impl PriceScheduleSpecification {
@@ -36,24 +36,24 @@ impl PriceScheduleSpecification {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct PriceScheduleSpecificationBuilder {
-    pub(crate) currency_code: ::std::option::Option<crate::types::CurrencyCodeValues>,
-    pub(crate) price: ::std::option::Option<f64>,
     pub(crate) term: ::std::option::Option<i64>,
+    pub(crate) price: ::std::option::Option<f64>,
+    pub(crate) currency_code: ::std::option::Option<crate::types::CurrencyCodeValues>,
 }
 impl PriceScheduleSpecificationBuilder {
-    /// <p>The currency for transacting the Reserved Instance resale. At this time, the only supported currency is <code>USD</code>.</p>
-    pub fn currency_code(mut self, input: crate::types::CurrencyCodeValues) -> Self {
-        self.currency_code = ::std::option::Option::Some(input);
+    /// <p>The number of months remaining in the reservation. For example, 2 is the second to the last month before the capacity reservation expires.</p>
+    pub fn term(mut self, input: i64) -> Self {
+        self.term = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The currency for transacting the Reserved Instance resale. At this time, the only supported currency is <code>USD</code>.</p>
-    pub fn set_currency_code(mut self, input: ::std::option::Option<crate::types::CurrencyCodeValues>) -> Self {
-        self.currency_code = input;
+    /// <p>The number of months remaining in the reservation. For example, 2 is the second to the last month before the capacity reservation expires.</p>
+    pub fn set_term(mut self, input: ::std::option::Option<i64>) -> Self {
+        self.term = input;
         self
     }
-    /// <p>The currency for transacting the Reserved Instance resale. At this time, the only supported currency is <code>USD</code>.</p>
-    pub fn get_currency_code(&self) -> &::std::option::Option<crate::types::CurrencyCodeValues> {
-        &self.currency_code
+    /// <p>The number of months remaining in the reservation. For example, 2 is the second to the last month before the capacity reservation expires.</p>
+    pub fn get_term(&self) -> &::std::option::Option<i64> {
+        &self.term
     }
     /// <p>The fixed price for the term.</p>
     pub fn price(mut self, input: f64) -> Self {
@@ -69,26 +69,26 @@ impl PriceScheduleSpecificationBuilder {
     pub fn get_price(&self) -> &::std::option::Option<f64> {
         &self.price
     }
-    /// <p>The number of months remaining in the reservation. For example, 2 is the second to the last month before the capacity reservation expires.</p>
-    pub fn term(mut self, input: i64) -> Self {
-        self.term = ::std::option::Option::Some(input);
+    /// <p>The currency for transacting the Reserved Instance resale. At this time, the only supported currency is <code>USD</code>.</p>
+    pub fn currency_code(mut self, input: crate::types::CurrencyCodeValues) -> Self {
+        self.currency_code = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of months remaining in the reservation. For example, 2 is the second to the last month before the capacity reservation expires.</p>
-    pub fn set_term(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.term = input;
+    /// <p>The currency for transacting the Reserved Instance resale. At this time, the only supported currency is <code>USD</code>.</p>
+    pub fn set_currency_code(mut self, input: ::std::option::Option<crate::types::CurrencyCodeValues>) -> Self {
+        self.currency_code = input;
         self
     }
-    /// <p>The number of months remaining in the reservation. For example, 2 is the second to the last month before the capacity reservation expires.</p>
-    pub fn get_term(&self) -> &::std::option::Option<i64> {
-        &self.term
+    /// <p>The currency for transacting the Reserved Instance resale. At this time, the only supported currency is <code>USD</code>.</p>
+    pub fn get_currency_code(&self) -> &::std::option::Option<crate::types::CurrencyCodeValues> {
+        &self.currency_code
     }
     /// Consumes the builder and constructs a [`PriceScheduleSpecification`](crate::types::PriceScheduleSpecification).
     pub fn build(self) -> crate::types::PriceScheduleSpecification {
         crate::types::PriceScheduleSpecification {
-            currency_code: self.currency_code,
-            price: self.price,
             term: self.term,
+            price: self.price,
+            currency_code: self.currency_code,
         }
     }
 }

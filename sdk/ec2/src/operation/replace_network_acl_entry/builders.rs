@@ -108,20 +108,6 @@ impl ReplaceNetworkAclEntryFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The IPv4 network range to allow or deny, in CIDR notation (for example <code>172.16.0.0/24</code>).</p>
-    pub fn cidr_block(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.inner = self.inner.cidr_block(input.into());
-        self
-    }
-    /// <p>The IPv4 network range to allow or deny, in CIDR notation (for example <code>172.16.0.0/24</code>).</p>
-    pub fn set_cidr_block(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.inner = self.inner.set_cidr_block(input);
-        self
-    }
-    /// <p>The IPv4 network range to allow or deny, in CIDR notation (for example <code>172.16.0.0/24</code>).</p>
-    pub fn get_cidr_block(&self) -> &::std::option::Option<::std::string::String> {
-        self.inner.get_cidr_block()
-    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.inner = self.inner.dry_run(input);
@@ -135,51 +121,6 @@ impl ReplaceNetworkAclEntryFluentBuilder {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
         self.inner.get_dry_run()
-    }
-    /// <p>Indicates whether to replace the egress rule.</p>
-    /// <p>Default: If no value is specified, we replace the ingress rule.</p>
-    pub fn egress(mut self, input: bool) -> Self {
-        self.inner = self.inner.egress(input);
-        self
-    }
-    /// <p>Indicates whether to replace the egress rule.</p>
-    /// <p>Default: If no value is specified, we replace the ingress rule.</p>
-    pub fn set_egress(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.inner = self.inner.set_egress(input);
-        self
-    }
-    /// <p>Indicates whether to replace the egress rule.</p>
-    /// <p>Default: If no value is specified, we replace the ingress rule.</p>
-    pub fn get_egress(&self) -> &::std::option::Option<bool> {
-        self.inner.get_egress()
-    }
-    /// <p>ICMP protocol: The ICMP or ICMPv6 type and code. Required if specifying protocol 1 (ICMP) or protocol 58 (ICMPv6) with an IPv6 CIDR block.</p>
-    pub fn icmp_type_code(mut self, input: crate::types::IcmpTypeCode) -> Self {
-        self.inner = self.inner.icmp_type_code(input);
-        self
-    }
-    /// <p>ICMP protocol: The ICMP or ICMPv6 type and code. Required if specifying protocol 1 (ICMP) or protocol 58 (ICMPv6) with an IPv6 CIDR block.</p>
-    pub fn set_icmp_type_code(mut self, input: ::std::option::Option<crate::types::IcmpTypeCode>) -> Self {
-        self.inner = self.inner.set_icmp_type_code(input);
-        self
-    }
-    /// <p>ICMP protocol: The ICMP or ICMPv6 type and code. Required if specifying protocol 1 (ICMP) or protocol 58 (ICMPv6) with an IPv6 CIDR block.</p>
-    pub fn get_icmp_type_code(&self) -> &::std::option::Option<crate::types::IcmpTypeCode> {
-        self.inner.get_icmp_type_code()
-    }
-    /// <p>The IPv6 network range to allow or deny, in CIDR notation (for example <code>2001:bd8:1234:1a00::/64</code>).</p>
-    pub fn ipv6_cidr_block(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.inner = self.inner.ipv6_cidr_block(input.into());
-        self
-    }
-    /// <p>The IPv6 network range to allow or deny, in CIDR notation (for example <code>2001:bd8:1234:1a00::/64</code>).</p>
-    pub fn set_ipv6_cidr_block(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.inner = self.inner.set_ipv6_cidr_block(input);
-        self
-    }
-    /// <p>The IPv6 network range to allow or deny, in CIDR notation (for example <code>2001:bd8:1234:1a00::/64</code>).</p>
-    pub fn get_ipv6_cidr_block(&self) -> &::std::option::Option<::std::string::String> {
-        self.inner.get_ipv6_cidr_block()
     }
     /// <p>The ID of the ACL.</p>
     pub fn network_acl_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -195,19 +136,19 @@ impl ReplaceNetworkAclEntryFluentBuilder {
     pub fn get_network_acl_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_network_acl_id()
     }
-    /// <p>TCP or UDP protocols: The range of ports the rule applies to. Required if specifying protocol 6 (TCP) or 17 (UDP).</p>
-    pub fn port_range(mut self, input: crate::types::PortRange) -> Self {
-        self.inner = self.inner.port_range(input);
+    /// <p>The rule number of the entry to replace.</p>
+    pub fn rule_number(mut self, input: i32) -> Self {
+        self.inner = self.inner.rule_number(input);
         self
     }
-    /// <p>TCP or UDP protocols: The range of ports the rule applies to. Required if specifying protocol 6 (TCP) or 17 (UDP).</p>
-    pub fn set_port_range(mut self, input: ::std::option::Option<crate::types::PortRange>) -> Self {
-        self.inner = self.inner.set_port_range(input);
+    /// <p>The rule number of the entry to replace.</p>
+    pub fn set_rule_number(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.inner = self.inner.set_rule_number(input);
         self
     }
-    /// <p>TCP or UDP protocols: The range of ports the rule applies to. Required if specifying protocol 6 (TCP) or 17 (UDP).</p>
-    pub fn get_port_range(&self) -> &::std::option::Option<crate::types::PortRange> {
-        self.inner.get_port_range()
+    /// <p>The rule number of the entry to replace.</p>
+    pub fn get_rule_number(&self) -> &::std::option::Option<i32> {
+        self.inner.get_rule_number()
     }
     /// <p>The protocol number. A value of "-1" means all protocols. If you specify "-1" or a protocol number other than "6" (TCP), "17" (UDP), or "1" (ICMP), traffic on all ports is allowed, regardless of any ports or ICMP types or codes that you specify. If you specify protocol "58" (ICMPv6) and specify an IPv4 CIDR block, traffic for all ICMP types and codes allowed, regardless of any that you specify. If you specify protocol "58" (ICMPv6) and specify an IPv6 CIDR block, you must specify an ICMP type and code.</p>
     pub fn protocol(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -237,18 +178,77 @@ impl ReplaceNetworkAclEntryFluentBuilder {
     pub fn get_rule_action(&self) -> &::std::option::Option<crate::types::RuleAction> {
         self.inner.get_rule_action()
     }
-    /// <p>The rule number of the entry to replace.</p>
-    pub fn rule_number(mut self, input: i32) -> Self {
-        self.inner = self.inner.rule_number(input);
+    /// <p>Indicates whether to replace the egress rule.</p>
+    /// <p>Default: If no value is specified, we replace the ingress rule.</p>
+    pub fn egress(mut self, input: bool) -> Self {
+        self.inner = self.inner.egress(input);
         self
     }
-    /// <p>The rule number of the entry to replace.</p>
-    pub fn set_rule_number(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.inner = self.inner.set_rule_number(input);
+    /// <p>Indicates whether to replace the egress rule.</p>
+    /// <p>Default: If no value is specified, we replace the ingress rule.</p>
+    pub fn set_egress(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_egress(input);
         self
     }
-    /// <p>The rule number of the entry to replace.</p>
-    pub fn get_rule_number(&self) -> &::std::option::Option<i32> {
-        self.inner.get_rule_number()
+    /// <p>Indicates whether to replace the egress rule.</p>
+    /// <p>Default: If no value is specified, we replace the ingress rule.</p>
+    pub fn get_egress(&self) -> &::std::option::Option<bool> {
+        self.inner.get_egress()
+    }
+    /// <p>The IPv4 network range to allow or deny, in CIDR notation (for example <code>172.16.0.0/24</code>).</p>
+    pub fn cidr_block(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.cidr_block(input.into());
+        self
+    }
+    /// <p>The IPv4 network range to allow or deny, in CIDR notation (for example <code>172.16.0.0/24</code>).</p>
+    pub fn set_cidr_block(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_cidr_block(input);
+        self
+    }
+    /// <p>The IPv4 network range to allow or deny, in CIDR notation (for example <code>172.16.0.0/24</code>).</p>
+    pub fn get_cidr_block(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cidr_block()
+    }
+    /// <p>The IPv6 network range to allow or deny, in CIDR notation (for example <code>2001:bd8:1234:1a00::/64</code>).</p>
+    pub fn ipv6_cidr_block(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.ipv6_cidr_block(input.into());
+        self
+    }
+    /// <p>The IPv6 network range to allow or deny, in CIDR notation (for example <code>2001:bd8:1234:1a00::/64</code>).</p>
+    pub fn set_ipv6_cidr_block(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_ipv6_cidr_block(input);
+        self
+    }
+    /// <p>The IPv6 network range to allow or deny, in CIDR notation (for example <code>2001:bd8:1234:1a00::/64</code>).</p>
+    pub fn get_ipv6_cidr_block(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_ipv6_cidr_block()
+    }
+    /// <p>ICMP protocol: The ICMP or ICMPv6 type and code. Required if specifying protocol 1 (ICMP) or protocol 58 (ICMPv6) with an IPv6 CIDR block.</p>
+    pub fn icmp_type_code(mut self, input: crate::types::IcmpTypeCode) -> Self {
+        self.inner = self.inner.icmp_type_code(input);
+        self
+    }
+    /// <p>ICMP protocol: The ICMP or ICMPv6 type and code. Required if specifying protocol 1 (ICMP) or protocol 58 (ICMPv6) with an IPv6 CIDR block.</p>
+    pub fn set_icmp_type_code(mut self, input: ::std::option::Option<crate::types::IcmpTypeCode>) -> Self {
+        self.inner = self.inner.set_icmp_type_code(input);
+        self
+    }
+    /// <p>ICMP protocol: The ICMP or ICMPv6 type and code. Required if specifying protocol 1 (ICMP) or protocol 58 (ICMPv6) with an IPv6 CIDR block.</p>
+    pub fn get_icmp_type_code(&self) -> &::std::option::Option<crate::types::IcmpTypeCode> {
+        self.inner.get_icmp_type_code()
+    }
+    /// <p>TCP or UDP protocols: The range of ports the rule applies to. Required if specifying protocol 6 (TCP) or 17 (UDP).</p>
+    pub fn port_range(mut self, input: crate::types::PortRange) -> Self {
+        self.inner = self.inner.port_range(input);
+        self
+    }
+    /// <p>TCP or UDP protocols: The range of ports the rule applies to. Required if specifying protocol 6 (TCP) or 17 (UDP).</p>
+    pub fn set_port_range(mut self, input: ::std::option::Option<crate::types::PortRange>) -> Self {
+        self.inner = self.inner.set_port_range(input);
+        self
+    }
+    /// <p>TCP or UDP protocols: The range of ports the rule applies to. Required if specifying protocol 6 (TCP) or 17 (UDP).</p>
+    pub fn get_port_range(&self) -> &::std::option::Option<crate::types::PortRange> {
+        self.inner.get_port_range()
     }
 }

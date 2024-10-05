@@ -3,13 +3,6 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreatePlacementGroupInput {
-    /// <p>Checks whether you have the required permissions for the operation, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub dry_run: ::std::option::Option<bool>,
-    /// <p>A name for the placement group. Must be unique within the scope of your account for the Region.</p>
-    /// <p>Constraints: Up to 255 ASCII characters</p>
-    pub group_name: ::std::option::Option<::std::string::String>,
-    /// <p>The placement strategy.</p>
-    pub strategy: ::std::option::Option<crate::types::PlacementStrategy>,
     /// <p>The number of partitions. Valid only when <b>Strategy</b> is set to <code>partition</code>.</p>
     pub partition_count: ::std::option::Option<i32>,
     /// <p>The tags to apply to the new placement group.</p>
@@ -22,21 +15,15 @@ pub struct CreatePlacementGroupInput {
     /// <p>Rack – No usage restrictions.</p></li>
     /// </ul>
     pub spread_level: ::std::option::Option<crate::types::SpreadLevel>,
-}
-impl CreatePlacementGroupInput {
     /// <p>Checks whether you have the required permissions for the operation, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn dry_run(&self) -> ::std::option::Option<bool> {
-        self.dry_run
-    }
+    pub dry_run: ::std::option::Option<bool>,
     /// <p>A name for the placement group. Must be unique within the scope of your account for the Region.</p>
     /// <p>Constraints: Up to 255 ASCII characters</p>
-    pub fn group_name(&self) -> ::std::option::Option<&str> {
-        self.group_name.as_deref()
-    }
+    pub group_name: ::std::option::Option<::std::string::String>,
     /// <p>The placement strategy.</p>
-    pub fn strategy(&self) -> ::std::option::Option<&crate::types::PlacementStrategy> {
-        self.strategy.as_ref()
-    }
+    pub strategy: ::std::option::Option<crate::types::PlacementStrategy>,
+}
+impl CreatePlacementGroupInput {
     /// <p>The number of partitions. Valid only when <b>Strategy</b> is set to <code>partition</code>.</p>
     pub fn partition_count(&self) -> ::std::option::Option<i32> {
         self.partition_count
@@ -57,6 +44,19 @@ impl CreatePlacementGroupInput {
     pub fn spread_level(&self) -> ::std::option::Option<&crate::types::SpreadLevel> {
         self.spread_level.as_ref()
     }
+    /// <p>Checks whether you have the required permissions for the operation, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn dry_run(&self) -> ::std::option::Option<bool> {
+        self.dry_run
+    }
+    /// <p>A name for the placement group. Must be unique within the scope of your account for the Region.</p>
+    /// <p>Constraints: Up to 255 ASCII characters</p>
+    pub fn group_name(&self) -> ::std::option::Option<&str> {
+        self.group_name.as_deref()
+    }
+    /// <p>The placement strategy.</p>
+    pub fn strategy(&self) -> ::std::option::Option<&crate::types::PlacementStrategy> {
+        self.strategy.as_ref()
+    }
 }
 impl CreatePlacementGroupInput {
     /// Creates a new builder-style object to manufacture [`CreatePlacementGroupInput`](crate::operation::create_placement_group::CreatePlacementGroupInput).
@@ -69,59 +69,14 @@ impl CreatePlacementGroupInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct CreatePlacementGroupInputBuilder {
-    pub(crate) dry_run: ::std::option::Option<bool>,
-    pub(crate) group_name: ::std::option::Option<::std::string::String>,
-    pub(crate) strategy: ::std::option::Option<crate::types::PlacementStrategy>,
     pub(crate) partition_count: ::std::option::Option<i32>,
     pub(crate) tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
     pub(crate) spread_level: ::std::option::Option<crate::types::SpreadLevel>,
+    pub(crate) dry_run: ::std::option::Option<bool>,
+    pub(crate) group_name: ::std::option::Option<::std::string::String>,
+    pub(crate) strategy: ::std::option::Option<crate::types::PlacementStrategy>,
 }
 impl CreatePlacementGroupInputBuilder {
-    /// <p>Checks whether you have the required permissions for the operation, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn dry_run(mut self, input: bool) -> Self {
-        self.dry_run = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>Checks whether you have the required permissions for the operation, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
-    }
-    /// <p>Checks whether you have the required permissions for the operation, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
-        &self.dry_run
-    }
-    /// <p>A name for the placement group. Must be unique within the scope of your account for the Region.</p>
-    /// <p>Constraints: Up to 255 ASCII characters</p>
-    pub fn group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.group_name = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>A name for the placement group. Must be unique within the scope of your account for the Region.</p>
-    /// <p>Constraints: Up to 255 ASCII characters</p>
-    pub fn set_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.group_name = input;
-        self
-    }
-    /// <p>A name for the placement group. Must be unique within the scope of your account for the Region.</p>
-    /// <p>Constraints: Up to 255 ASCII characters</p>
-    pub fn get_group_name(&self) -> &::std::option::Option<::std::string::String> {
-        &self.group_name
-    }
-    /// <p>The placement strategy.</p>
-    pub fn strategy(mut self, input: crate::types::PlacementStrategy) -> Self {
-        self.strategy = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>The placement strategy.</p>
-    pub fn set_strategy(mut self, input: ::std::option::Option<crate::types::PlacementStrategy>) -> Self {
-        self.strategy = input;
-        self
-    }
-    /// <p>The placement strategy.</p>
-    pub fn get_strategy(&self) -> &::std::option::Option<crate::types::PlacementStrategy> {
-        &self.strategy
-    }
     /// <p>The number of partitions. Valid only when <b>Strategy</b> is set to <code>partition</code>.</p>
     pub fn partition_count(mut self, input: i32) -> Self {
         self.partition_count = ::std::option::Option::Some(input);
@@ -188,18 +143,63 @@ impl CreatePlacementGroupInputBuilder {
     pub fn get_spread_level(&self) -> &::std::option::Option<crate::types::SpreadLevel> {
         &self.spread_level
     }
+    /// <p>Checks whether you have the required permissions for the operation, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn dry_run(mut self, input: bool) -> Self {
+        self.dry_run = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Checks whether you have the required permissions for the operation, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.dry_run = input;
+        self
+    }
+    /// <p>Checks whether you have the required permissions for the operation, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
+    }
+    /// <p>A name for the placement group. Must be unique within the scope of your account for the Region.</p>
+    /// <p>Constraints: Up to 255 ASCII characters</p>
+    pub fn group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.group_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>A name for the placement group. Must be unique within the scope of your account for the Region.</p>
+    /// <p>Constraints: Up to 255 ASCII characters</p>
+    pub fn set_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.group_name = input;
+        self
+    }
+    /// <p>A name for the placement group. Must be unique within the scope of your account for the Region.</p>
+    /// <p>Constraints: Up to 255 ASCII characters</p>
+    pub fn get_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.group_name
+    }
+    /// <p>The placement strategy.</p>
+    pub fn strategy(mut self, input: crate::types::PlacementStrategy) -> Self {
+        self.strategy = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The placement strategy.</p>
+    pub fn set_strategy(mut self, input: ::std::option::Option<crate::types::PlacementStrategy>) -> Self {
+        self.strategy = input;
+        self
+    }
+    /// <p>The placement strategy.</p>
+    pub fn get_strategy(&self) -> &::std::option::Option<crate::types::PlacementStrategy> {
+        &self.strategy
+    }
     /// Consumes the builder and constructs a [`CreatePlacementGroupInput`](crate::operation::create_placement_group::CreatePlacementGroupInput).
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::create_placement_group::CreatePlacementGroupInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_placement_group::CreatePlacementGroupInput {
-            dry_run: self.dry_run,
-            group_name: self.group_name,
-            strategy: self.strategy,
             partition_count: self.partition_count,
             tag_specifications: self.tag_specifications,
             spread_level: self.spread_level,
+            dry_run: self.dry_run,
+            group_name: self.group_name,
+            strategy: self.strategy,
         })
     }
 }

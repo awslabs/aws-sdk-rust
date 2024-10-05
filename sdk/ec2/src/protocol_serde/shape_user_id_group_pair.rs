@@ -10,8 +10,8 @@ pub fn ser_user_id_group_pair(
         scope_1.string(var_2);
     }
     #[allow(unused_mut)]
-    let mut scope_3 = writer.prefix("GroupId");
-    if let Some(var_4) = &input.group_id {
+    let mut scope_3 = writer.prefix("UserId");
+    if let Some(var_4) = &input.user_id {
         scope_3.string(var_4);
     }
     #[allow(unused_mut)]
@@ -20,23 +20,23 @@ pub fn ser_user_id_group_pair(
         scope_5.string(var_6);
     }
     #[allow(unused_mut)]
-    let mut scope_7 = writer.prefix("PeeringStatus");
-    if let Some(var_8) = &input.peering_status {
+    let mut scope_7 = writer.prefix("GroupId");
+    if let Some(var_8) = &input.group_id {
         scope_7.string(var_8);
     }
     #[allow(unused_mut)]
-    let mut scope_9 = writer.prefix("UserId");
-    if let Some(var_10) = &input.user_id {
+    let mut scope_9 = writer.prefix("VpcId");
+    if let Some(var_10) = &input.vpc_id {
         scope_9.string(var_10);
     }
     #[allow(unused_mut)]
-    let mut scope_11 = writer.prefix("VpcId");
-    if let Some(var_12) = &input.vpc_id {
+    let mut scope_11 = writer.prefix("VpcPeeringConnectionId");
+    if let Some(var_12) = &input.vpc_peering_connection_id {
         scope_11.string(var_12);
     }
     #[allow(unused_mut)]
-    let mut scope_13 = writer.prefix("VpcPeeringConnectionId");
-    if let Some(var_14) = &input.vpc_peering_connection_id {
+    let mut scope_13 = writer.prefix("PeeringStatus");
+    if let Some(var_14) = &input.peering_status {
         scope_13.string(var_14);
     }
     Ok(())
@@ -63,7 +63,7 @@ pub fn de_user_id_group_pair(
                 builder = builder.set_description(var_15);
             }
             ,
-            s if s.matches("groupId") /* GroupId com.amazonaws.ec2#UserIdGroupPair$GroupId */ =>  {
+            s if s.matches("userId") /* UserId com.amazonaws.ec2#UserIdGroupPair$UserId */ =>  {
                 let var_16 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -73,7 +73,7 @@ pub fn de_user_id_group_pair(
                         ?
                     )
                 ;
-                builder = builder.set_group_id(var_16);
+                builder = builder.set_user_id(var_16);
             }
             ,
             s if s.matches("groupName") /* GroupName com.amazonaws.ec2#UserIdGroupPair$GroupName */ =>  {
@@ -89,7 +89,7 @@ pub fn de_user_id_group_pair(
                 builder = builder.set_group_name(var_17);
             }
             ,
-            s if s.matches("peeringStatus") /* PeeringStatus com.amazonaws.ec2#UserIdGroupPair$PeeringStatus */ =>  {
+            s if s.matches("groupId") /* GroupId com.amazonaws.ec2#UserIdGroupPair$GroupId */ =>  {
                 let var_18 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -99,10 +99,10 @@ pub fn de_user_id_group_pair(
                         ?
                     )
                 ;
-                builder = builder.set_peering_status(var_18);
+                builder = builder.set_group_id(var_18);
             }
             ,
-            s if s.matches("userId") /* UserId com.amazonaws.ec2#UserIdGroupPair$UserId */ =>  {
+            s if s.matches("vpcId") /* VpcId com.amazonaws.ec2#UserIdGroupPair$VpcId */ =>  {
                 let var_19 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -112,10 +112,10 @@ pub fn de_user_id_group_pair(
                         ?
                     )
                 ;
-                builder = builder.set_user_id(var_19);
+                builder = builder.set_vpc_id(var_19);
             }
             ,
-            s if s.matches("vpcId") /* VpcId com.amazonaws.ec2#UserIdGroupPair$VpcId */ =>  {
+            s if s.matches("vpcPeeringConnectionId") /* VpcPeeringConnectionId com.amazonaws.ec2#UserIdGroupPair$VpcPeeringConnectionId */ =>  {
                 let var_20 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -125,10 +125,10 @@ pub fn de_user_id_group_pair(
                         ?
                     )
                 ;
-                builder = builder.set_vpc_id(var_20);
+                builder = builder.set_vpc_peering_connection_id(var_20);
             }
             ,
-            s if s.matches("vpcPeeringConnectionId") /* VpcPeeringConnectionId com.amazonaws.ec2#UserIdGroupPair$VpcPeeringConnectionId */ =>  {
+            s if s.matches("peeringStatus") /* PeeringStatus com.amazonaws.ec2#UserIdGroupPair$PeeringStatus */ =>  {
                 let var_21 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -138,7 +138,7 @@ pub fn de_user_id_group_pair(
                         ?
                     )
                 ;
-                builder = builder.set_vpc_peering_connection_id(var_21);
+                builder = builder.set_peering_status(var_21);
             }
             ,
             _ => {}

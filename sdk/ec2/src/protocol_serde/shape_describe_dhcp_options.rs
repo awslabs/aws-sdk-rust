@@ -54,18 +54,8 @@ pub fn de_describe_dhcp_options(
     }
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
-            s if s.matches("dhcpOptionsSet") /* DhcpOptions com.amazonaws.ec2.synthetic#DescribeDhcpOptionsOutput$DhcpOptions */ =>  {
-                let var_1 =
-                    Some(
-                        crate::protocol_serde::shape_dhcp_options_list::de_dhcp_options_list(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_dhcp_options(var_1);
-            }
-            ,
             s if s.matches("nextToken") /* NextToken com.amazonaws.ec2.synthetic#DescribeDhcpOptionsOutput$NextToken */ =>  {
-                let var_2 =
+                let var_1 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -74,7 +64,17 @@ pub fn de_describe_dhcp_options(
                         ?
                     )
                 ;
-                builder = builder.set_next_token(var_2);
+                builder = builder.set_next_token(var_1);
+            }
+            ,
+            s if s.matches("dhcpOptionsSet") /* DhcpOptions com.amazonaws.ec2.synthetic#DescribeDhcpOptionsOutput$DhcpOptions */ =>  {
+                let var_2 =
+                    Some(
+                        crate::protocol_serde::shape_dhcp_options_list::de_dhcp_options_list(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_dhcp_options(var_2);
             }
             ,
             _ => {}

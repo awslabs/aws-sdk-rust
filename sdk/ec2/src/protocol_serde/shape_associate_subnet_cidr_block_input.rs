@@ -6,27 +6,27 @@ pub fn ser_associate_subnet_cidr_block_input_input_input(
     #[allow(unused_mut)]
     let mut writer = ::aws_smithy_query::QueryWriter::new(&mut out, "AssociateSubnetCidrBlock", "2016-11-15");
     #[allow(unused_mut)]
-    let mut scope_1 = writer.prefix("Ipv6CidrBlock");
-    if let Some(var_2) = &input.ipv6_cidr_block {
+    let mut scope_1 = writer.prefix("Ipv6IpamPoolId");
+    if let Some(var_2) = &input.ipv6_ipam_pool_id {
         scope_1.string(var_2);
     }
     #[allow(unused_mut)]
-    let mut scope_3 = writer.prefix("SubnetId");
-    if let Some(var_4) = &input.subnet_id {
-        scope_3.string(var_4);
+    let mut scope_3 = writer.prefix("Ipv6NetmaskLength");
+    if let Some(var_4) = &input.ipv6_netmask_length {
+        scope_3.number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_4).into()),
+        );
     }
     #[allow(unused_mut)]
-    let mut scope_5 = writer.prefix("Ipv6IpamPoolId");
-    if let Some(var_6) = &input.ipv6_ipam_pool_id {
+    let mut scope_5 = writer.prefix("SubnetId");
+    if let Some(var_6) = &input.subnet_id {
         scope_5.string(var_6);
     }
     #[allow(unused_mut)]
-    let mut scope_7 = writer.prefix("Ipv6NetmaskLength");
-    if let Some(var_8) = &input.ipv6_netmask_length {
-        scope_7.number(
-            #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_8).into()),
-        );
+    let mut scope_7 = writer.prefix("Ipv6CidrBlock");
+    if let Some(var_8) = &input.ipv6_cidr_block {
+        scope_7.string(var_8);
     }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))

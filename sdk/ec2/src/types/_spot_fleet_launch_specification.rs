@@ -4,9 +4,6 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct SpotFleetLaunchSpecification {
-    /// <p>The security groups.</p>
-    /// <p>If you specify a network interface, you must specify any security groups as part of the network interface instead of using this parameter.</p>
-    pub security_groups: ::std::option::Option<::std::vec::Vec<crate::types::GroupIdentifier>>,
     /// <p>Deprecated.</p>
     pub addressing_type: ::std::option::Option<::std::string::String>,
     /// <p>One or more block devices that are mapped to the Spot Instances. You can't specify both a snapshot ID and an encryption value. This is because only blank volumes can be encrypted on creation. If a snapshot is the basis for a volume, it is not blank and its encryption status is used for the volume encryption status.</p>
@@ -54,15 +51,11 @@ pub struct SpotFleetLaunchSpecification {
     /// <p>If you specify <code>InstanceRequirements</code>, you can't specify <code>InstanceType</code>.</p>
     /// </note>
     pub instance_requirements: ::std::option::Option<crate::types::InstanceRequirements>,
-}
-impl SpotFleetLaunchSpecification {
     /// <p>The security groups.</p>
     /// <p>If you specify a network interface, you must specify any security groups as part of the network interface instead of using this parameter.</p>
-    ///
-    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_groups.is_none()`.
-    pub fn security_groups(&self) -> &[crate::types::GroupIdentifier] {
-        self.security_groups.as_deref().unwrap_or_default()
-    }
+    pub security_groups: ::std::option::Option<::std::vec::Vec<crate::types::GroupIdentifier>>,
+}
+impl SpotFleetLaunchSpecification {
     /// <p>Deprecated.</p>
     pub fn addressing_type(&self) -> ::std::option::Option<&str> {
         self.addressing_type.as_deref()
@@ -152,11 +145,17 @@ impl SpotFleetLaunchSpecification {
     pub fn instance_requirements(&self) -> ::std::option::Option<&crate::types::InstanceRequirements> {
         self.instance_requirements.as_ref()
     }
+    /// <p>The security groups.</p>
+    /// <p>If you specify a network interface, you must specify any security groups as part of the network interface instead of using this parameter.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_groups.is_none()`.
+    pub fn security_groups(&self) -> &[crate::types::GroupIdentifier] {
+        self.security_groups.as_deref().unwrap_or_default()
+    }
 }
 impl ::std::fmt::Debug for SpotFleetLaunchSpecification {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("SpotFleetLaunchSpecification");
-        formatter.field("security_groups", &self.security_groups);
         formatter.field("addressing_type", &self.addressing_type);
         formatter.field("block_device_mappings", &self.block_device_mappings);
         formatter.field("ebs_optimized", &self.ebs_optimized);
@@ -175,6 +174,7 @@ impl ::std::fmt::Debug for SpotFleetLaunchSpecification {
         formatter.field("weighted_capacity", &self.weighted_capacity);
         formatter.field("tag_specifications", &self.tag_specifications);
         formatter.field("instance_requirements", &self.instance_requirements);
+        formatter.field("security_groups", &self.security_groups);
         formatter.finish()
     }
 }
@@ -189,7 +189,6 @@ impl SpotFleetLaunchSpecification {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct SpotFleetLaunchSpecificationBuilder {
-    pub(crate) security_groups: ::std::option::Option<::std::vec::Vec<crate::types::GroupIdentifier>>,
     pub(crate) addressing_type: ::std::option::Option<::std::string::String>,
     pub(crate) block_device_mappings: ::std::option::Option<::std::vec::Vec<crate::types::BlockDeviceMapping>>,
     pub(crate) ebs_optimized: ::std::option::Option<bool>,
@@ -208,31 +207,9 @@ pub struct SpotFleetLaunchSpecificationBuilder {
     pub(crate) weighted_capacity: ::std::option::Option<f64>,
     pub(crate) tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::SpotFleetTagSpecification>>,
     pub(crate) instance_requirements: ::std::option::Option<crate::types::InstanceRequirements>,
+    pub(crate) security_groups: ::std::option::Option<::std::vec::Vec<crate::types::GroupIdentifier>>,
 }
 impl SpotFleetLaunchSpecificationBuilder {
-    /// Appends an item to `security_groups`.
-    ///
-    /// To override the contents of this collection use [`set_security_groups`](Self::set_security_groups).
-    ///
-    /// <p>The security groups.</p>
-    /// <p>If you specify a network interface, you must specify any security groups as part of the network interface instead of using this parameter.</p>
-    pub fn security_groups(mut self, input: crate::types::GroupIdentifier) -> Self {
-        let mut v = self.security_groups.unwrap_or_default();
-        v.push(input);
-        self.security_groups = ::std::option::Option::Some(v);
-        self
-    }
-    /// <p>The security groups.</p>
-    /// <p>If you specify a network interface, you must specify any security groups as part of the network interface instead of using this parameter.</p>
-    pub fn set_security_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GroupIdentifier>>) -> Self {
-        self.security_groups = input;
-        self
-    }
-    /// <p>The security groups.</p>
-    /// <p>If you specify a network interface, you must specify any security groups as part of the network interface instead of using this parameter.</p>
-    pub fn get_security_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GroupIdentifier>> {
-        &self.security_groups
-    }
     /// <p>Deprecated.</p>
     pub fn addressing_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.addressing_type = ::std::option::Option::Some(input.into());
@@ -539,10 +516,32 @@ impl SpotFleetLaunchSpecificationBuilder {
     pub fn get_instance_requirements(&self) -> &::std::option::Option<crate::types::InstanceRequirements> {
         &self.instance_requirements
     }
+    /// Appends an item to `security_groups`.
+    ///
+    /// To override the contents of this collection use [`set_security_groups`](Self::set_security_groups).
+    ///
+    /// <p>The security groups.</p>
+    /// <p>If you specify a network interface, you must specify any security groups as part of the network interface instead of using this parameter.</p>
+    pub fn security_groups(mut self, input: crate::types::GroupIdentifier) -> Self {
+        let mut v = self.security_groups.unwrap_or_default();
+        v.push(input);
+        self.security_groups = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The security groups.</p>
+    /// <p>If you specify a network interface, you must specify any security groups as part of the network interface instead of using this parameter.</p>
+    pub fn set_security_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GroupIdentifier>>) -> Self {
+        self.security_groups = input;
+        self
+    }
+    /// <p>The security groups.</p>
+    /// <p>If you specify a network interface, you must specify any security groups as part of the network interface instead of using this parameter.</p>
+    pub fn get_security_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GroupIdentifier>> {
+        &self.security_groups
+    }
     /// Consumes the builder and constructs a [`SpotFleetLaunchSpecification`](crate::types::SpotFleetLaunchSpecification).
     pub fn build(self) -> crate::types::SpotFleetLaunchSpecification {
         crate::types::SpotFleetLaunchSpecification {
-            security_groups: self.security_groups,
             addressing_type: self.addressing_type,
             block_device_mappings: self.block_device_mappings,
             ebs_optimized: self.ebs_optimized,
@@ -561,13 +560,13 @@ impl SpotFleetLaunchSpecificationBuilder {
             weighted_capacity: self.weighted_capacity,
             tag_specifications: self.tag_specifications,
             instance_requirements: self.instance_requirements,
+            security_groups: self.security_groups,
         }
     }
 }
 impl ::std::fmt::Debug for SpotFleetLaunchSpecificationBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("SpotFleetLaunchSpecificationBuilder");
-        formatter.field("security_groups", &self.security_groups);
         formatter.field("addressing_type", &self.addressing_type);
         formatter.field("block_device_mappings", &self.block_device_mappings);
         formatter.field("ebs_optimized", &self.ebs_optimized);
@@ -586,6 +585,7 @@ impl ::std::fmt::Debug for SpotFleetLaunchSpecificationBuilder {
         formatter.field("weighted_capacity", &self.weighted_capacity);
         formatter.field("tag_specifications", &self.tag_specifications);
         formatter.field("instance_requirements", &self.instance_requirements);
+        formatter.field("security_groups", &self.security_groups);
         formatter.finish()
     }
 }

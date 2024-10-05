@@ -3,6 +3,19 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribePlacementGroupsInput {
+    /// <p>The IDs of the placement groups.</p>
+    pub group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>Checks whether you have the required permissions for the operation, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub dry_run: ::std::option::Option<bool>,
+    /// <p>The names of the placement groups.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>You can specify a name only if the placement group is owned by your account.</p></li>
+    /// <li>
+    /// <p>If a placement group is <i>shared</i> with your account, specifying the name results in an error. You must use the <code>GroupId</code> parameter instead.</p></li>
+    /// </ul>
+    pub group_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The filters.</p>
     /// <ul>
     /// <li>
@@ -21,8 +34,18 @@ pub struct DescribePlacementGroupsInput {
     /// <p><code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources that have a tag with a specific key, regardless of the tag value.</p></li>
     /// </ul>
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
+}
+impl DescribePlacementGroupsInput {
+    /// <p>The IDs of the placement groups.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.group_ids.is_none()`.
+    pub fn group_ids(&self) -> &[::std::string::String] {
+        self.group_ids.as_deref().unwrap_or_default()
+    }
     /// <p>Checks whether you have the required permissions for the operation, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub dry_run: ::std::option::Option<bool>,
+    pub fn dry_run(&self) -> ::std::option::Option<bool> {
+        self.dry_run
+    }
     /// <p>The names of the placement groups.</p>
     /// <p>Constraints:</p>
     /// <ul>
@@ -31,11 +54,11 @@ pub struct DescribePlacementGroupsInput {
     /// <li>
     /// <p>If a placement group is <i>shared</i> with your account, specifying the name results in an error. You must use the <code>GroupId</code> parameter instead.</p></li>
     /// </ul>
-    pub group_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>The IDs of the placement groups.</p>
-    pub group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-}
-impl DescribePlacementGroupsInput {
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.group_names.is_none()`.
+    pub fn group_names(&self) -> &[::std::string::String] {
+        self.group_names.as_deref().unwrap_or_default()
+    }
     /// <p>The filters.</p>
     /// <ul>
     /// <li>
@@ -58,29 +81,6 @@ impl DescribePlacementGroupsInput {
     pub fn filters(&self) -> &[crate::types::Filter] {
         self.filters.as_deref().unwrap_or_default()
     }
-    /// <p>Checks whether you have the required permissions for the operation, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn dry_run(&self) -> ::std::option::Option<bool> {
-        self.dry_run
-    }
-    /// <p>The names of the placement groups.</p>
-    /// <p>Constraints:</p>
-    /// <ul>
-    /// <li>
-    /// <p>You can specify a name only if the placement group is owned by your account.</p></li>
-    /// <li>
-    /// <p>If a placement group is <i>shared</i> with your account, specifying the name results in an error. You must use the <code>GroupId</code> parameter instead.</p></li>
-    /// </ul>
-    ///
-    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.group_names.is_none()`.
-    pub fn group_names(&self) -> &[::std::string::String] {
-        self.group_names.as_deref().unwrap_or_default()
-    }
-    /// <p>The IDs of the placement groups.</p>
-    ///
-    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.group_ids.is_none()`.
-    pub fn group_ids(&self) -> &[::std::string::String] {
-        self.group_ids.as_deref().unwrap_or_default()
-    }
 }
 impl DescribePlacementGroupsInput {
     /// Creates a new builder-style object to manufacture [`DescribePlacementGroupsInput`](crate::operation::describe_placement_groups::DescribePlacementGroupsInput).
@@ -93,12 +93,87 @@ impl DescribePlacementGroupsInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct DescribePlacementGroupsInputBuilder {
-    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
+    pub(crate) group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) group_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
 }
 impl DescribePlacementGroupsInputBuilder {
+    /// Appends an item to `group_ids`.
+    ///
+    /// To override the contents of this collection use [`set_group_ids`](Self::set_group_ids).
+    ///
+    /// <p>The IDs of the placement groups.</p>
+    pub fn group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.group_ids.unwrap_or_default();
+        v.push(input.into());
+        self.group_ids = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The IDs of the placement groups.</p>
+    pub fn set_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.group_ids = input;
+        self
+    }
+    /// <p>The IDs of the placement groups.</p>
+    pub fn get_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.group_ids
+    }
+    /// <p>Checks whether you have the required permissions for the operation, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn dry_run(mut self, input: bool) -> Self {
+        self.dry_run = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Checks whether you have the required permissions for the operation, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.dry_run = input;
+        self
+    }
+    /// <p>Checks whether you have the required permissions for the operation, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
+    }
+    /// Appends an item to `group_names`.
+    ///
+    /// To override the contents of this collection use [`set_group_names`](Self::set_group_names).
+    ///
+    /// <p>The names of the placement groups.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>You can specify a name only if the placement group is owned by your account.</p></li>
+    /// <li>
+    /// <p>If a placement group is <i>shared</i> with your account, specifying the name results in an error. You must use the <code>GroupId</code> parameter instead.</p></li>
+    /// </ul>
+    pub fn group_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.group_names.unwrap_or_default();
+        v.push(input.into());
+        self.group_names = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The names of the placement groups.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>You can specify a name only if the placement group is owned by your account.</p></li>
+    /// <li>
+    /// <p>If a placement group is <i>shared</i> with your account, specifying the name results in an error. You must use the <code>GroupId</code> parameter instead.</p></li>
+    /// </ul>
+    pub fn set_group_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.group_names = input;
+        self
+    }
+    /// <p>The names of the placement groups.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>You can specify a name only if the placement group is owned by your account.</p></li>
+    /// <li>
+    /// <p>If a placement group is <i>shared</i> with your account, specifying the name results in an error. You must use the <code>GroupId</code> parameter instead.</p></li>
+    /// </ul>
+    pub fn get_group_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.group_names
+    }
     /// Appends an item to `filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
@@ -167,81 +242,6 @@ impl DescribePlacementGroupsInputBuilder {
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         &self.filters
     }
-    /// <p>Checks whether you have the required permissions for the operation, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn dry_run(mut self, input: bool) -> Self {
-        self.dry_run = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>Checks whether you have the required permissions for the operation, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
-    }
-    /// <p>Checks whether you have the required permissions for the operation, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
-        &self.dry_run
-    }
-    /// Appends an item to `group_names`.
-    ///
-    /// To override the contents of this collection use [`set_group_names`](Self::set_group_names).
-    ///
-    /// <p>The names of the placement groups.</p>
-    /// <p>Constraints:</p>
-    /// <ul>
-    /// <li>
-    /// <p>You can specify a name only if the placement group is owned by your account.</p></li>
-    /// <li>
-    /// <p>If a placement group is <i>shared</i> with your account, specifying the name results in an error. You must use the <code>GroupId</code> parameter instead.</p></li>
-    /// </ul>
-    pub fn group_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        let mut v = self.group_names.unwrap_or_default();
-        v.push(input.into());
-        self.group_names = ::std::option::Option::Some(v);
-        self
-    }
-    /// <p>The names of the placement groups.</p>
-    /// <p>Constraints:</p>
-    /// <ul>
-    /// <li>
-    /// <p>You can specify a name only if the placement group is owned by your account.</p></li>
-    /// <li>
-    /// <p>If a placement group is <i>shared</i> with your account, specifying the name results in an error. You must use the <code>GroupId</code> parameter instead.</p></li>
-    /// </ul>
-    pub fn set_group_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.group_names = input;
-        self
-    }
-    /// <p>The names of the placement groups.</p>
-    /// <p>Constraints:</p>
-    /// <ul>
-    /// <li>
-    /// <p>You can specify a name only if the placement group is owned by your account.</p></li>
-    /// <li>
-    /// <p>If a placement group is <i>shared</i> with your account, specifying the name results in an error. You must use the <code>GroupId</code> parameter instead.</p></li>
-    /// </ul>
-    pub fn get_group_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
-        &self.group_names
-    }
-    /// Appends an item to `group_ids`.
-    ///
-    /// To override the contents of this collection use [`set_group_ids`](Self::set_group_ids).
-    ///
-    /// <p>The IDs of the placement groups.</p>
-    pub fn group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        let mut v = self.group_ids.unwrap_or_default();
-        v.push(input.into());
-        self.group_ids = ::std::option::Option::Some(v);
-        self
-    }
-    /// <p>The IDs of the placement groups.</p>
-    pub fn set_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.group_ids = input;
-        self
-    }
-    /// <p>The IDs of the placement groups.</p>
-    pub fn get_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
-        &self.group_ids
-    }
     /// Consumes the builder and constructs a [`DescribePlacementGroupsInput`](crate::operation::describe_placement_groups::DescribePlacementGroupsInput).
     pub fn build(
         self,
@@ -250,10 +250,10 @@ impl DescribePlacementGroupsInputBuilder {
         ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_placement_groups::DescribePlacementGroupsInput {
-            filters: self.filters,
+            group_ids: self.group_ids,
             dry_run: self.dry_run,
             group_names: self.group_names,
-            group_ids: self.group_ids,
+            filters: self.filters,
         })
     }
 }

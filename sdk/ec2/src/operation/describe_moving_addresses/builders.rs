@@ -117,6 +117,53 @@ impl DescribeMovingAddressesFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::describe_moving_addresses::paginator::DescribeMovingAddressesPaginator {
         crate::operation::describe_moving_addresses::paginator::DescribeMovingAddressesPaginator::new(self.handle, self.inner)
     }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn dry_run(mut self, input: bool) -> Self {
+        self.inner = self.inner.dry_run(input);
+        self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_dry_run(input);
+        self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
+    }
+    ///
+    /// Appends an item to `PublicIps`.
+    ///
+    /// To override the contents of this collection use [`set_public_ips`](Self::set_public_ips).
+    ///
+    /// <p>One or more Elastic IP addresses.</p>
+    pub fn public_ips(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.public_ips(input.into());
+        self
+    }
+    /// <p>One or more Elastic IP addresses.</p>
+    pub fn set_public_ips(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.inner = self.inner.set_public_ips(input);
+        self
+    }
+    /// <p>One or more Elastic IP addresses.</p>
+    pub fn get_public_ips(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_public_ips()
+    }
+    /// <p>The token for the next page of results.</p>
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.next_token(input.into());
+        self
+    }
+    /// <p>The token for the next page of results.</p>
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_next_token(input);
+        self
+    }
+    /// <p>The token for the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     ///
     /// Appends an item to `Filters`.
     ///
@@ -148,20 +195,6 @@ impl DescribeMovingAddressesFluentBuilder {
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         self.inner.get_filters()
     }
-    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn dry_run(mut self, input: bool) -> Self {
-        self.inner = self.inner.dry_run(input);
-        self
-    }
-    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.inner = self.inner.set_dry_run(input);
-        self
-    }
-    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
-        self.inner.get_dry_run()
-    }
     /// <p>The maximum number of results to return for the request in a single page. The remaining results of the initial request can be seen by sending another request with the returned <code>NextToken</code> value. This value can be between 5 and 1000; if <code>MaxResults</code> is given a value outside of this range, an error is returned.</p>
     /// <p>Default: If no value is provided, the default is 1000.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -178,38 +211,5 @@ impl DescribeMovingAddressesFluentBuilder {
     /// <p>Default: If no value is provided, the default is 1000.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
-    }
-    /// <p>The token for the next page of results.</p>
-    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.inner = self.inner.next_token(input.into());
-        self
-    }
-    /// <p>The token for the next page of results.</p>
-    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.inner = self.inner.set_next_token(input);
-        self
-    }
-    /// <p>The token for the next page of results.</p>
-    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
-        self.inner.get_next_token()
-    }
-    ///
-    /// Appends an item to `PublicIps`.
-    ///
-    /// To override the contents of this collection use [`set_public_ips`](Self::set_public_ips).
-    ///
-    /// <p>One or more Elastic IP addresses.</p>
-    pub fn public_ips(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.inner = self.inner.public_ips(input.into());
-        self
-    }
-    /// <p>One or more Elastic IP addresses.</p>
-    pub fn set_public_ips(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.inner = self.inner.set_public_ips(input);
-        self
-    }
-    /// <p>One or more Elastic IP addresses.</p>
-    pub fn get_public_ips(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
-        self.inner.get_public_ips()
     }
 }

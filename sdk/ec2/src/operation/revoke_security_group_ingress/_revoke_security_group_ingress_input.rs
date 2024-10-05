@@ -21,10 +21,10 @@ pub struct RevokeSecurityGroupIngressInput {
     pub source_security_group_owner_id: ::std::option::Option<::std::string::String>,
     /// <p>If the protocol is TCP or UDP, this is the end of the port range. If the protocol is ICMP, this is the ICMP code or -1 (all ICMP codes).</p>
     pub to_port: ::std::option::Option<i32>,
-    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub dry_run: ::std::option::Option<bool>,
     /// <p>The IDs of the security group rules.</p>
     pub security_group_rule_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub dry_run: ::std::option::Option<bool>,
 }
 impl RevokeSecurityGroupIngressInput {
     /// <p>The CIDR IP address range. You can't specify this parameter when specifying a source security group.</p>
@@ -65,15 +65,15 @@ impl RevokeSecurityGroupIngressInput {
     pub fn to_port(&self) -> ::std::option::Option<i32> {
         self.to_port
     }
-    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn dry_run(&self) -> ::std::option::Option<bool> {
-        self.dry_run
-    }
     /// <p>The IDs of the security group rules.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_group_rule_ids.is_none()`.
     pub fn security_group_rule_ids(&self) -> &[::std::string::String] {
         self.security_group_rule_ids.as_deref().unwrap_or_default()
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn dry_run(&self) -> ::std::option::Option<bool> {
+        self.dry_run
     }
 }
 impl RevokeSecurityGroupIngressInput {
@@ -96,8 +96,8 @@ pub struct RevokeSecurityGroupIngressInputBuilder {
     pub(crate) source_security_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) source_security_group_owner_id: ::std::option::Option<::std::string::String>,
     pub(crate) to_port: ::std::option::Option<i32>,
-    pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) security_group_rule_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) dry_run: ::std::option::Option<bool>,
 }
 impl RevokeSecurityGroupIngressInputBuilder {
     /// <p>The CIDR IP address range. You can't specify this parameter when specifying a source security group.</p>
@@ -232,20 +232,6 @@ impl RevokeSecurityGroupIngressInputBuilder {
     pub fn get_to_port(&self) -> &::std::option::Option<i32> {
         &self.to_port
     }
-    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn dry_run(mut self, input: bool) -> Self {
-        self.dry_run = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
-    }
-    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
-        &self.dry_run
-    }
     /// Appends an item to `security_group_rule_ids`.
     ///
     /// To override the contents of this collection use [`set_security_group_rule_ids`](Self::set_security_group_rule_ids).
@@ -266,6 +252,20 @@ impl RevokeSecurityGroupIngressInputBuilder {
     pub fn get_security_group_rule_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.security_group_rule_ids
     }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn dry_run(mut self, input: bool) -> Self {
+        self.dry_run = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.dry_run = input;
+        self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
+    }
     /// Consumes the builder and constructs a [`RevokeSecurityGroupIngressInput`](crate::operation::revoke_security_group_ingress::RevokeSecurityGroupIngressInput).
     pub fn build(
         self,
@@ -283,8 +283,8 @@ impl RevokeSecurityGroupIngressInputBuilder {
             source_security_group_name: self.source_security_group_name,
             source_security_group_owner_id: self.source_security_group_owner_id,
             to_port: self.to_port,
-            dry_run: self.dry_run,
             security_group_rule_ids: self.security_group_rule_ids,
+            dry_run: self.dry_run,
         })
     }
 }

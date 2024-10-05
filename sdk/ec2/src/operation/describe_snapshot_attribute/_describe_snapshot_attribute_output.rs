@@ -3,21 +3,15 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeSnapshotAttributeOutput {
-    /// <p>The users and groups that have the permissions for creating volumes from the snapshot.</p>
-    pub create_volume_permissions: ::std::option::Option<::std::vec::Vec<crate::types::CreateVolumePermission>>,
     /// <p>The product codes.</p>
     pub product_codes: ::std::option::Option<::std::vec::Vec<crate::types::ProductCode>>,
     /// <p>The ID of the EBS snapshot.</p>
     pub snapshot_id: ::std::option::Option<::std::string::String>,
+    /// <p>The users and groups that have the permissions for creating volumes from the snapshot.</p>
+    pub create_volume_permissions: ::std::option::Option<::std::vec::Vec<crate::types::CreateVolumePermission>>,
     _request_id: Option<String>,
 }
 impl DescribeSnapshotAttributeOutput {
-    /// <p>The users and groups that have the permissions for creating volumes from the snapshot.</p>
-    ///
-    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.create_volume_permissions.is_none()`.
-    pub fn create_volume_permissions(&self) -> &[crate::types::CreateVolumePermission] {
-        self.create_volume_permissions.as_deref().unwrap_or_default()
-    }
     /// <p>The product codes.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.product_codes.is_none()`.
@@ -27,6 +21,12 @@ impl DescribeSnapshotAttributeOutput {
     /// <p>The ID of the EBS snapshot.</p>
     pub fn snapshot_id(&self) -> ::std::option::Option<&str> {
         self.snapshot_id.as_deref()
+    }
+    /// <p>The users and groups that have the permissions for creating volumes from the snapshot.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.create_volume_permissions.is_none()`.
+    pub fn create_volume_permissions(&self) -> &[crate::types::CreateVolumePermission] {
+        self.create_volume_permissions.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeSnapshotAttributeOutput {
@@ -45,32 +45,12 @@ impl DescribeSnapshotAttributeOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct DescribeSnapshotAttributeOutputBuilder {
-    pub(crate) create_volume_permissions: ::std::option::Option<::std::vec::Vec<crate::types::CreateVolumePermission>>,
     pub(crate) product_codes: ::std::option::Option<::std::vec::Vec<crate::types::ProductCode>>,
     pub(crate) snapshot_id: ::std::option::Option<::std::string::String>,
+    pub(crate) create_volume_permissions: ::std::option::Option<::std::vec::Vec<crate::types::CreateVolumePermission>>,
     _request_id: Option<String>,
 }
 impl DescribeSnapshotAttributeOutputBuilder {
-    /// Appends an item to `create_volume_permissions`.
-    ///
-    /// To override the contents of this collection use [`set_create_volume_permissions`](Self::set_create_volume_permissions).
-    ///
-    /// <p>The users and groups that have the permissions for creating volumes from the snapshot.</p>
-    pub fn create_volume_permissions(mut self, input: crate::types::CreateVolumePermission) -> Self {
-        let mut v = self.create_volume_permissions.unwrap_or_default();
-        v.push(input);
-        self.create_volume_permissions = ::std::option::Option::Some(v);
-        self
-    }
-    /// <p>The users and groups that have the permissions for creating volumes from the snapshot.</p>
-    pub fn set_create_volume_permissions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CreateVolumePermission>>) -> Self {
-        self.create_volume_permissions = input;
-        self
-    }
-    /// <p>The users and groups that have the permissions for creating volumes from the snapshot.</p>
-    pub fn get_create_volume_permissions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CreateVolumePermission>> {
-        &self.create_volume_permissions
-    }
     /// Appends an item to `product_codes`.
     ///
     /// To override the contents of this collection use [`set_product_codes`](Self::set_product_codes).
@@ -105,6 +85,26 @@ impl DescribeSnapshotAttributeOutputBuilder {
     pub fn get_snapshot_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.snapshot_id
     }
+    /// Appends an item to `create_volume_permissions`.
+    ///
+    /// To override the contents of this collection use [`set_create_volume_permissions`](Self::set_create_volume_permissions).
+    ///
+    /// <p>The users and groups that have the permissions for creating volumes from the snapshot.</p>
+    pub fn create_volume_permissions(mut self, input: crate::types::CreateVolumePermission) -> Self {
+        let mut v = self.create_volume_permissions.unwrap_or_default();
+        v.push(input);
+        self.create_volume_permissions = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The users and groups that have the permissions for creating volumes from the snapshot.</p>
+    pub fn set_create_volume_permissions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CreateVolumePermission>>) -> Self {
+        self.create_volume_permissions = input;
+        self
+    }
+    /// <p>The users and groups that have the permissions for creating volumes from the snapshot.</p>
+    pub fn get_create_volume_permissions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CreateVolumePermission>> {
+        &self.create_volume_permissions
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -117,9 +117,9 @@ impl DescribeSnapshotAttributeOutputBuilder {
     /// Consumes the builder and constructs a [`DescribeSnapshotAttributeOutput`](crate::operation::describe_snapshot_attribute::DescribeSnapshotAttributeOutput).
     pub fn build(self) -> crate::operation::describe_snapshot_attribute::DescribeSnapshotAttributeOutput {
         crate::operation::describe_snapshot_attribute::DescribeSnapshotAttributeOutput {
-            create_volume_permissions: self.create_volume_permissions,
             product_codes: self.product_codes,
             snapshot_id: self.snapshot_id,
+            create_volume_permissions: self.create_volume_permissions,
             _request_id: self._request_id,
         }
     }

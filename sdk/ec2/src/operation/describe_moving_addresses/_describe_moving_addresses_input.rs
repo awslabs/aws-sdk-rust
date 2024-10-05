@@ -3,23 +3,37 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeMovingAddressesInput {
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub dry_run: ::std::option::Option<bool>,
+    /// <p>One or more Elastic IP addresses.</p>
+    pub public_ips: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The token for the next page of results.</p>
+    pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>One or more filters.</p>
     /// <ul>
     /// <li>
     /// <p><code>moving-status</code> - The status of the Elastic IP address (<code>MovingToVpc</code> | <code>RestoringToClassic</code>).</p></li>
     /// </ul>
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub dry_run: ::std::option::Option<bool>,
     /// <p>The maximum number of results to return for the request in a single page. The remaining results of the initial request can be seen by sending another request with the returned <code>NextToken</code> value. This value can be between 5 and 1000; if <code>MaxResults</code> is given a value outside of this range, an error is returned.</p>
     /// <p>Default: If no value is provided, the default is 1000.</p>
     pub max_results: ::std::option::Option<i32>,
-    /// <p>The token for the next page of results.</p>
-    pub next_token: ::std::option::Option<::std::string::String>,
-    /// <p>One or more Elastic IP addresses.</p>
-    pub public_ips: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DescribeMovingAddressesInput {
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn dry_run(&self) -> ::std::option::Option<bool> {
+        self.dry_run
+    }
+    /// <p>One or more Elastic IP addresses.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.public_ips.is_none()`.
+    pub fn public_ips(&self) -> &[::std::string::String] {
+        self.public_ips.as_deref().unwrap_or_default()
+    }
+    /// <p>The token for the next page of results.</p>
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
     /// <p>One or more filters.</p>
     /// <ul>
     /// <li>
@@ -30,24 +44,10 @@ impl DescribeMovingAddressesInput {
     pub fn filters(&self) -> &[crate::types::Filter] {
         self.filters.as_deref().unwrap_or_default()
     }
-    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn dry_run(&self) -> ::std::option::Option<bool> {
-        self.dry_run
-    }
     /// <p>The maximum number of results to return for the request in a single page. The remaining results of the initial request can be seen by sending another request with the returned <code>NextToken</code> value. This value can be between 5 and 1000; if <code>MaxResults</code> is given a value outside of this range, an error is returned.</p>
     /// <p>Default: If no value is provided, the default is 1000.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
-    }
-    /// <p>The token for the next page of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
-        self.next_token.as_deref()
-    }
-    /// <p>One or more Elastic IP addresses.</p>
-    ///
-    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.public_ips.is_none()`.
-    pub fn public_ips(&self) -> &[::std::string::String] {
-        self.public_ips.as_deref().unwrap_or_default()
     }
 }
 impl DescribeMovingAddressesInput {
@@ -61,13 +61,61 @@ impl DescribeMovingAddressesInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct DescribeMovingAddressesInputBuilder {
-    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     pub(crate) dry_run: ::std::option::Option<bool>,
-    pub(crate) max_results: ::std::option::Option<i32>,
-    pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) public_ips: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) next_token: ::std::option::Option<::std::string::String>,
+    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
+    pub(crate) max_results: ::std::option::Option<i32>,
 }
 impl DescribeMovingAddressesInputBuilder {
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn dry_run(mut self, input: bool) -> Self {
+        self.dry_run = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.dry_run = input;
+        self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
+    }
+    /// Appends an item to `public_ips`.
+    ///
+    /// To override the contents of this collection use [`set_public_ips`](Self::set_public_ips).
+    ///
+    /// <p>One or more Elastic IP addresses.</p>
+    pub fn public_ips(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.public_ips.unwrap_or_default();
+        v.push(input.into());
+        self.public_ips = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>One or more Elastic IP addresses.</p>
+    pub fn set_public_ips(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.public_ips = input;
+        self
+    }
+    /// <p>One or more Elastic IP addresses.</p>
+    pub fn get_public_ips(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.public_ips
+    }
+    /// <p>The token for the next page of results.</p>
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The token for the next page of results.</p>
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.next_token = input;
+        self
+    }
+    /// <p>The token for the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
@@ -100,20 +148,6 @@ impl DescribeMovingAddressesInputBuilder {
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         &self.filters
     }
-    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn dry_run(mut self, input: bool) -> Self {
-        self.dry_run = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
-    }
-    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
-        &self.dry_run
-    }
     /// <p>The maximum number of results to return for the request in a single page. The remaining results of the initial request can be seen by sending another request with the returned <code>NextToken</code> value. This value can be between 5 and 1000; if <code>MaxResults</code> is given a value outside of this range, an error is returned.</p>
     /// <p>Default: If no value is provided, the default is 1000.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -131,40 +165,6 @@ impl DescribeMovingAddressesInputBuilder {
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
-    /// <p>The token for the next page of results.</p>
-    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.next_token = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>The token for the next page of results.</p>
-    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
-    }
-    /// <p>The token for the next page of results.</p>
-    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
-        &self.next_token
-    }
-    /// Appends an item to `public_ips`.
-    ///
-    /// To override the contents of this collection use [`set_public_ips`](Self::set_public_ips).
-    ///
-    /// <p>One or more Elastic IP addresses.</p>
-    pub fn public_ips(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        let mut v = self.public_ips.unwrap_or_default();
-        v.push(input.into());
-        self.public_ips = ::std::option::Option::Some(v);
-        self
-    }
-    /// <p>One or more Elastic IP addresses.</p>
-    pub fn set_public_ips(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.public_ips = input;
-        self
-    }
-    /// <p>One or more Elastic IP addresses.</p>
-    pub fn get_public_ips(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
-        &self.public_ips
-    }
     /// Consumes the builder and constructs a [`DescribeMovingAddressesInput`](crate::operation::describe_moving_addresses::DescribeMovingAddressesInput).
     pub fn build(
         self,
@@ -173,11 +173,11 @@ impl DescribeMovingAddressesInputBuilder {
         ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_moving_addresses::DescribeMovingAddressesInput {
-            filters: self.filters,
             dry_run: self.dry_run,
-            max_results: self.max_results,
-            next_token: self.next_token,
             public_ips: self.public_ips,
+            next_token: self.next_token,
+            filters: self.filters,
+            max_results: self.max_results,
         })
     }
 }

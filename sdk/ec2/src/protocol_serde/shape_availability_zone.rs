@@ -7,22 +7,8 @@ pub fn de_availability_zone(
     let mut builder = crate::types::AvailabilityZone::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
-            s if s.matches("zoneState") /* State com.amazonaws.ec2#AvailabilityZone$State */ =>  {
-                let var_1 =
-                    Some(
-                        Result::<crate::types::AvailabilityZoneState, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            crate::types::AvailabilityZoneState::from(
-                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_state(var_1);
-            }
-            ,
             s if s.matches("optInStatus") /* OptInStatus com.amazonaws.ec2#AvailabilityZone$OptInStatus */ =>  {
-                let var_2 =
+                let var_1 =
                     Some(
                         Result::<crate::types::AvailabilityZoneOptInStatus, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::AvailabilityZoneOptInStatus::from(
@@ -32,20 +18,33 @@ pub fn de_availability_zone(
                         ?
                     )
                 ;
-                builder = builder.set_opt_in_status(var_2);
+                builder = builder.set_opt_in_status(var_1);
             }
             ,
             s if s.matches("messageSet") /* Messages com.amazonaws.ec2#AvailabilityZone$Messages */ =>  {
-                let var_3 =
+                let var_2 =
                     Some(
                         crate::protocol_serde::shape_availability_zone_message_list::de_availability_zone_message_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_messages(var_3);
+                builder = builder.set_messages(var_2);
             }
             ,
             s if s.matches("regionName") /* RegionName com.amazonaws.ec2#AvailabilityZone$RegionName */ =>  {
+                let var_3 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_region_name(var_3);
+            }
+            ,
+            s if s.matches("zoneName") /* ZoneName com.amazonaws.ec2#AvailabilityZone$ZoneName */ =>  {
                 let var_4 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -55,10 +54,10 @@ pub fn de_availability_zone(
                         ?
                     )
                 ;
-                builder = builder.set_region_name(var_4);
+                builder = builder.set_zone_name(var_4);
             }
             ,
-            s if s.matches("zoneName") /* ZoneName com.amazonaws.ec2#AvailabilityZone$ZoneName */ =>  {
+            s if s.matches("zoneId") /* ZoneId com.amazonaws.ec2#AvailabilityZone$ZoneId */ =>  {
                 let var_5 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -68,10 +67,10 @@ pub fn de_availability_zone(
                         ?
                     )
                 ;
-                builder = builder.set_zone_name(var_5);
+                builder = builder.set_zone_id(var_5);
             }
             ,
-            s if s.matches("zoneId") /* ZoneId com.amazonaws.ec2#AvailabilityZone$ZoneId */ =>  {
+            s if s.matches("groupName") /* GroupName com.amazonaws.ec2#AvailabilityZone$GroupName */ =>  {
                 let var_6 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -81,10 +80,10 @@ pub fn de_availability_zone(
                         ?
                     )
                 ;
-                builder = builder.set_zone_id(var_6);
+                builder = builder.set_group_name(var_6);
             }
             ,
-            s if s.matches("groupName") /* GroupName com.amazonaws.ec2#AvailabilityZone$GroupName */ =>  {
+            s if s.matches("networkBorderGroup") /* NetworkBorderGroup com.amazonaws.ec2#AvailabilityZone$NetworkBorderGroup */ =>  {
                 let var_7 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -94,10 +93,10 @@ pub fn de_availability_zone(
                         ?
                     )
                 ;
-                builder = builder.set_group_name(var_7);
+                builder = builder.set_network_border_group(var_7);
             }
             ,
-            s if s.matches("networkBorderGroup") /* NetworkBorderGroup com.amazonaws.ec2#AvailabilityZone$NetworkBorderGroup */ =>  {
+            s if s.matches("zoneType") /* ZoneType com.amazonaws.ec2#AvailabilityZone$ZoneType */ =>  {
                 let var_8 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -107,10 +106,10 @@ pub fn de_availability_zone(
                         ?
                     )
                 ;
-                builder = builder.set_network_border_group(var_8);
+                builder = builder.set_zone_type(var_8);
             }
             ,
-            s if s.matches("zoneType") /* ZoneType com.amazonaws.ec2#AvailabilityZone$ZoneType */ =>  {
+            s if s.matches("parentZoneName") /* ParentZoneName com.amazonaws.ec2#AvailabilityZone$ParentZoneName */ =>  {
                 let var_9 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -120,10 +119,10 @@ pub fn de_availability_zone(
                         ?
                     )
                 ;
-                builder = builder.set_zone_type(var_9);
+                builder = builder.set_parent_zone_name(var_9);
             }
             ,
-            s if s.matches("parentZoneName") /* ParentZoneName com.amazonaws.ec2#AvailabilityZone$ParentZoneName */ =>  {
+            s if s.matches("parentZoneId") /* ParentZoneId com.amazonaws.ec2#AvailabilityZone$ParentZoneId */ =>  {
                 let var_10 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -133,20 +132,21 @@ pub fn de_availability_zone(
                         ?
                     )
                 ;
-                builder = builder.set_parent_zone_name(var_10);
+                builder = builder.set_parent_zone_id(var_10);
             }
             ,
-            s if s.matches("parentZoneId") /* ParentZoneId com.amazonaws.ec2#AvailabilityZone$ParentZoneId */ =>  {
+            s if s.matches("zoneState") /* State com.amazonaws.ec2#AvailabilityZone$State */ =>  {
                 let var_11 =
                     Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
+                        Result::<crate::types::AvailabilityZoneState, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::AvailabilityZoneState::from(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
                         )
                         ?
                     )
                 ;
-                builder = builder.set_parent_zone_id(var_11);
+                builder = builder.set_state(var_11);
             }
             ,
             _ => {}

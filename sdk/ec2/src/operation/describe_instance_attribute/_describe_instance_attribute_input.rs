@@ -3,20 +3,15 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeInstanceAttributeInput {
-    /// <p>The instance attribute.</p>
-    /// <p>Note: The <code>enaSupport</code> attribute is not supported at this time.</p>
-    pub attribute: ::std::option::Option<crate::types::InstanceAttributeName>,
     /// <p>Checks whether you have the required permissions for the operation, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The ID of the instance.</p>
     pub instance_id: ::std::option::Option<::std::string::String>,
-}
-impl DescribeInstanceAttributeInput {
     /// <p>The instance attribute.</p>
     /// <p>Note: The <code>enaSupport</code> attribute is not supported at this time.</p>
-    pub fn attribute(&self) -> ::std::option::Option<&crate::types::InstanceAttributeName> {
-        self.attribute.as_ref()
-    }
+    pub attribute: ::std::option::Option<crate::types::InstanceAttributeName>,
+}
+impl DescribeInstanceAttributeInput {
     /// <p>Checks whether you have the required permissions for the operation, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
         self.dry_run
@@ -24,6 +19,11 @@ impl DescribeInstanceAttributeInput {
     /// <p>The ID of the instance.</p>
     pub fn instance_id(&self) -> ::std::option::Option<&str> {
         self.instance_id.as_deref()
+    }
+    /// <p>The instance attribute.</p>
+    /// <p>Note: The <code>enaSupport</code> attribute is not supported at this time.</p>
+    pub fn attribute(&self) -> ::std::option::Option<&crate::types::InstanceAttributeName> {
+        self.attribute.as_ref()
     }
 }
 impl DescribeInstanceAttributeInput {
@@ -37,29 +37,11 @@ impl DescribeInstanceAttributeInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct DescribeInstanceAttributeInputBuilder {
-    pub(crate) attribute: ::std::option::Option<crate::types::InstanceAttributeName>,
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
+    pub(crate) attribute: ::std::option::Option<crate::types::InstanceAttributeName>,
 }
 impl DescribeInstanceAttributeInputBuilder {
-    /// <p>The instance attribute.</p>
-    /// <p>Note: The <code>enaSupport</code> attribute is not supported at this time.</p>
-    /// This field is required.
-    pub fn attribute(mut self, input: crate::types::InstanceAttributeName) -> Self {
-        self.attribute = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>The instance attribute.</p>
-    /// <p>Note: The <code>enaSupport</code> attribute is not supported at this time.</p>
-    pub fn set_attribute(mut self, input: ::std::option::Option<crate::types::InstanceAttributeName>) -> Self {
-        self.attribute = input;
-        self
-    }
-    /// <p>The instance attribute.</p>
-    /// <p>Note: The <code>enaSupport</code> attribute is not supported at this time.</p>
-    pub fn get_attribute(&self) -> &::std::option::Option<crate::types::InstanceAttributeName> {
-        &self.attribute
-    }
     /// <p>Checks whether you have the required permissions for the operation, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.dry_run = ::std::option::Option::Some(input);
@@ -89,6 +71,24 @@ impl DescribeInstanceAttributeInputBuilder {
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.instance_id
     }
+    /// <p>The instance attribute.</p>
+    /// <p>Note: The <code>enaSupport</code> attribute is not supported at this time.</p>
+    /// This field is required.
+    pub fn attribute(mut self, input: crate::types::InstanceAttributeName) -> Self {
+        self.attribute = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The instance attribute.</p>
+    /// <p>Note: The <code>enaSupport</code> attribute is not supported at this time.</p>
+    pub fn set_attribute(mut self, input: ::std::option::Option<crate::types::InstanceAttributeName>) -> Self {
+        self.attribute = input;
+        self
+    }
+    /// <p>The instance attribute.</p>
+    /// <p>Note: The <code>enaSupport</code> attribute is not supported at this time.</p>
+    pub fn get_attribute(&self) -> &::std::option::Option<crate::types::InstanceAttributeName> {
+        &self.attribute
+    }
     /// Consumes the builder and constructs a [`DescribeInstanceAttributeInput`](crate::operation::describe_instance_attribute::DescribeInstanceAttributeInput).
     pub fn build(
         self,
@@ -97,9 +97,9 @@ impl DescribeInstanceAttributeInputBuilder {
         ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_instance_attribute::DescribeInstanceAttributeInput {
-            attribute: self.attribute,
             dry_run: self.dry_run,
             instance_id: self.instance_id,
+            attribute: self.attribute,
         })
     }
 }

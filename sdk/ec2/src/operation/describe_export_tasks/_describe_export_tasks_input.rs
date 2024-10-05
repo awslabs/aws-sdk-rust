@@ -3,23 +3,23 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeExportTasksInput {
-    /// <p>The export task IDs.</p>
-    pub export_task_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>the filters for the export tasks.</p>
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
+    /// <p>The export task IDs.</p>
+    pub export_task_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DescribeExportTasksInput {
-    /// <p>The export task IDs.</p>
-    ///
-    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.export_task_ids.is_none()`.
-    pub fn export_task_ids(&self) -> &[::std::string::String] {
-        self.export_task_ids.as_deref().unwrap_or_default()
-    }
     /// <p>the filters for the export tasks.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
     pub fn filters(&self) -> &[crate::types::Filter] {
         self.filters.as_deref().unwrap_or_default()
+    }
+    /// <p>The export task IDs.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.export_task_ids.is_none()`.
+    pub fn export_task_ids(&self) -> &[::std::string::String] {
+        self.export_task_ids.as_deref().unwrap_or_default()
     }
 }
 impl DescribeExportTasksInput {
@@ -33,30 +33,10 @@ impl DescribeExportTasksInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct DescribeExportTasksInputBuilder {
-    pub(crate) export_task_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
+    pub(crate) export_task_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DescribeExportTasksInputBuilder {
-    /// Appends an item to `export_task_ids`.
-    ///
-    /// To override the contents of this collection use [`set_export_task_ids`](Self::set_export_task_ids).
-    ///
-    /// <p>The export task IDs.</p>
-    pub fn export_task_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        let mut v = self.export_task_ids.unwrap_or_default();
-        v.push(input.into());
-        self.export_task_ids = ::std::option::Option::Some(v);
-        self
-    }
-    /// <p>The export task IDs.</p>
-    pub fn set_export_task_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.export_task_ids = input;
-        self
-    }
-    /// <p>The export task IDs.</p>
-    pub fn get_export_task_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
-        &self.export_task_ids
-    }
     /// Appends an item to `filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
@@ -77,14 +57,34 @@ impl DescribeExportTasksInputBuilder {
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         &self.filters
     }
+    /// Appends an item to `export_task_ids`.
+    ///
+    /// To override the contents of this collection use [`set_export_task_ids`](Self::set_export_task_ids).
+    ///
+    /// <p>The export task IDs.</p>
+    pub fn export_task_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.export_task_ids.unwrap_or_default();
+        v.push(input.into());
+        self.export_task_ids = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The export task IDs.</p>
+    pub fn set_export_task_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.export_task_ids = input;
+        self
+    }
+    /// <p>The export task IDs.</p>
+    pub fn get_export_task_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.export_task_ids
+    }
     /// Consumes the builder and constructs a [`DescribeExportTasksInput`](crate::operation::describe_export_tasks::DescribeExportTasksInput).
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::describe_export_tasks::DescribeExportTasksInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_export_tasks::DescribeExportTasksInput {
-            export_task_ids: self.export_task_ids,
             filters: self.filters,
+            export_task_ids: self.export_task_ids,
         })
     }
 }

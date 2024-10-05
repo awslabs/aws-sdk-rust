@@ -110,6 +110,78 @@ impl DescribeKeyPairsFluentBuilder {
         self
     }
     ///
+    /// Appends an item to `KeyNames`.
+    ///
+    /// To override the contents of this collection use [`set_key_names`](Self::set_key_names).
+    ///
+    /// <p>The key pair names.</p>
+    /// <p>Default: Describes all of your key pairs.</p>
+    pub fn key_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.key_names(input.into());
+        self
+    }
+    /// <p>The key pair names.</p>
+    /// <p>Default: Describes all of your key pairs.</p>
+    pub fn set_key_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.inner = self.inner.set_key_names(input);
+        self
+    }
+    /// <p>The key pair names.</p>
+    /// <p>Default: Describes all of your key pairs.</p>
+    pub fn get_key_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_key_names()
+    }
+    ///
+    /// Appends an item to `KeyPairIds`.
+    ///
+    /// To override the contents of this collection use [`set_key_pair_ids`](Self::set_key_pair_ids).
+    ///
+    /// <p>The IDs of the key pairs.</p>
+    pub fn key_pair_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.key_pair_ids(input.into());
+        self
+    }
+    /// <p>The IDs of the key pairs.</p>
+    pub fn set_key_pair_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.inner = self.inner.set_key_pair_ids(input);
+        self
+    }
+    /// <p>The IDs of the key pairs.</p>
+    pub fn get_key_pair_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_key_pair_ids()
+    }
+    /// <p>If <code>true</code>, the public key material is included in the response.</p>
+    /// <p>Default: <code>false</code></p>
+    pub fn include_public_key(mut self, input: bool) -> Self {
+        self.inner = self.inner.include_public_key(input);
+        self
+    }
+    /// <p>If <code>true</code>, the public key material is included in the response.</p>
+    /// <p>Default: <code>false</code></p>
+    pub fn set_include_public_key(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_include_public_key(input);
+        self
+    }
+    /// <p>If <code>true</code>, the public key material is included in the response.</p>
+    /// <p>Default: <code>false</code></p>
+    pub fn get_include_public_key(&self) -> &::std::option::Option<bool> {
+        self.inner.get_include_public_key()
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn dry_run(mut self, input: bool) -> Self {
+        self.inner = self.inner.dry_run(input);
+        self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_dry_run(input);
+        self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
+    }
+    ///
     /// Appends an item to `Filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
@@ -181,77 +253,5 @@ impl DescribeKeyPairsFluentBuilder {
     /// </ul>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         self.inner.get_filters()
-    }
-    ///
-    /// Appends an item to `KeyNames`.
-    ///
-    /// To override the contents of this collection use [`set_key_names`](Self::set_key_names).
-    ///
-    /// <p>The key pair names.</p>
-    /// <p>Default: Describes all of your key pairs.</p>
-    pub fn key_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.inner = self.inner.key_names(input.into());
-        self
-    }
-    /// <p>The key pair names.</p>
-    /// <p>Default: Describes all of your key pairs.</p>
-    pub fn set_key_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.inner = self.inner.set_key_names(input);
-        self
-    }
-    /// <p>The key pair names.</p>
-    /// <p>Default: Describes all of your key pairs.</p>
-    pub fn get_key_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
-        self.inner.get_key_names()
-    }
-    ///
-    /// Appends an item to `KeyPairIds`.
-    ///
-    /// To override the contents of this collection use [`set_key_pair_ids`](Self::set_key_pair_ids).
-    ///
-    /// <p>The IDs of the key pairs.</p>
-    pub fn key_pair_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.inner = self.inner.key_pair_ids(input.into());
-        self
-    }
-    /// <p>The IDs of the key pairs.</p>
-    pub fn set_key_pair_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.inner = self.inner.set_key_pair_ids(input);
-        self
-    }
-    /// <p>The IDs of the key pairs.</p>
-    pub fn get_key_pair_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
-        self.inner.get_key_pair_ids()
-    }
-    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn dry_run(mut self, input: bool) -> Self {
-        self.inner = self.inner.dry_run(input);
-        self
-    }
-    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.inner = self.inner.set_dry_run(input);
-        self
-    }
-    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
-        self.inner.get_dry_run()
-    }
-    /// <p>If <code>true</code>, the public key material is included in the response.</p>
-    /// <p>Default: <code>false</code></p>
-    pub fn include_public_key(mut self, input: bool) -> Self {
-        self.inner = self.inner.include_public_key(input);
-        self
-    }
-    /// <p>If <code>true</code>, the public key material is included in the response.</p>
-    /// <p>Default: <code>false</code></p>
-    pub fn set_include_public_key(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.inner = self.inner.set_include_public_key(input);
-        self
-    }
-    /// <p>If <code>true</code>, the public key material is included in the response.</p>
-    /// <p>Default: <code>false</code></p>
-    pub fn get_include_public_key(&self) -> &::std::option::Option<bool> {
-        self.inner.get_include_public_key()
     }
 }

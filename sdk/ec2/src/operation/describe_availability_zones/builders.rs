@@ -112,6 +112,75 @@ impl DescribeAvailabilityZonesFluentBuilder {
         self
     }
     ///
+    /// Appends an item to `ZoneNames`.
+    ///
+    /// To override the contents of this collection use [`set_zone_names`](Self::set_zone_names).
+    ///
+    /// <p>The names of the Availability Zones, Local Zones, and Wavelength Zones.</p>
+    pub fn zone_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.zone_names(input.into());
+        self
+    }
+    /// <p>The names of the Availability Zones, Local Zones, and Wavelength Zones.</p>
+    pub fn set_zone_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.inner = self.inner.set_zone_names(input);
+        self
+    }
+    /// <p>The names of the Availability Zones, Local Zones, and Wavelength Zones.</p>
+    pub fn get_zone_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_zone_names()
+    }
+    ///
+    /// Appends an item to `ZoneIds`.
+    ///
+    /// To override the contents of this collection use [`set_zone_ids`](Self::set_zone_ids).
+    ///
+    /// <p>The IDs of the Availability Zones, Local Zones, and Wavelength Zones.</p>
+    pub fn zone_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.zone_ids(input.into());
+        self
+    }
+    /// <p>The IDs of the Availability Zones, Local Zones, and Wavelength Zones.</p>
+    pub fn set_zone_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.inner = self.inner.set_zone_ids(input);
+        self
+    }
+    /// <p>The IDs of the Availability Zones, Local Zones, and Wavelength Zones.</p>
+    pub fn get_zone_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_zone_ids()
+    }
+    /// <p>Include all Availability Zones, Local Zones, and Wavelength Zones regardless of your opt-in status.</p>
+    /// <p>If you do not use this parameter, the results include only the zones for the Regions where you have chosen the option to opt in.</p>
+    pub fn all_availability_zones(mut self, input: bool) -> Self {
+        self.inner = self.inner.all_availability_zones(input);
+        self
+    }
+    /// <p>Include all Availability Zones, Local Zones, and Wavelength Zones regardless of your opt-in status.</p>
+    /// <p>If you do not use this parameter, the results include only the zones for the Regions where you have chosen the option to opt in.</p>
+    pub fn set_all_availability_zones(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_all_availability_zones(input);
+        self
+    }
+    /// <p>Include all Availability Zones, Local Zones, and Wavelength Zones regardless of your opt-in status.</p>
+    /// <p>If you do not use this parameter, the results include only the zones for the Regions where you have chosen the option to opt in.</p>
+    pub fn get_all_availability_zones(&self) -> &::std::option::Option<bool> {
+        self.inner.get_all_availability_zones()
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn dry_run(mut self, input: bool) -> Self {
+        self.inner = self.inner.dry_run(input);
+        self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_dry_run(input);
+        self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
+    }
+    ///
     /// Appends an item to `Filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
@@ -195,74 +264,5 @@ impl DescribeAvailabilityZonesFluentBuilder {
     /// </ul>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         self.inner.get_filters()
-    }
-    ///
-    /// Appends an item to `ZoneNames`.
-    ///
-    /// To override the contents of this collection use [`set_zone_names`](Self::set_zone_names).
-    ///
-    /// <p>The names of the Availability Zones, Local Zones, and Wavelength Zones.</p>
-    pub fn zone_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.inner = self.inner.zone_names(input.into());
-        self
-    }
-    /// <p>The names of the Availability Zones, Local Zones, and Wavelength Zones.</p>
-    pub fn set_zone_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.inner = self.inner.set_zone_names(input);
-        self
-    }
-    /// <p>The names of the Availability Zones, Local Zones, and Wavelength Zones.</p>
-    pub fn get_zone_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
-        self.inner.get_zone_names()
-    }
-    ///
-    /// Appends an item to `ZoneIds`.
-    ///
-    /// To override the contents of this collection use [`set_zone_ids`](Self::set_zone_ids).
-    ///
-    /// <p>The IDs of the Availability Zones, Local Zones, and Wavelength Zones.</p>
-    pub fn zone_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.inner = self.inner.zone_ids(input.into());
-        self
-    }
-    /// <p>The IDs of the Availability Zones, Local Zones, and Wavelength Zones.</p>
-    pub fn set_zone_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.inner = self.inner.set_zone_ids(input);
-        self
-    }
-    /// <p>The IDs of the Availability Zones, Local Zones, and Wavelength Zones.</p>
-    pub fn get_zone_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
-        self.inner.get_zone_ids()
-    }
-    /// <p>Include all Availability Zones, Local Zones, and Wavelength Zones regardless of your opt-in status.</p>
-    /// <p>If you do not use this parameter, the results include only the zones for the Regions where you have chosen the option to opt in.</p>
-    pub fn all_availability_zones(mut self, input: bool) -> Self {
-        self.inner = self.inner.all_availability_zones(input);
-        self
-    }
-    /// <p>Include all Availability Zones, Local Zones, and Wavelength Zones regardless of your opt-in status.</p>
-    /// <p>If you do not use this parameter, the results include only the zones for the Regions where you have chosen the option to opt in.</p>
-    pub fn set_all_availability_zones(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.inner = self.inner.set_all_availability_zones(input);
-        self
-    }
-    /// <p>Include all Availability Zones, Local Zones, and Wavelength Zones regardless of your opt-in status.</p>
-    /// <p>If you do not use this parameter, the results include only the zones for the Regions where you have chosen the option to opt in.</p>
-    pub fn get_all_availability_zones(&self) -> &::std::option::Option<bool> {
-        self.inner.get_all_availability_zones()
-    }
-    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn dry_run(mut self, input: bool) -> Self {
-        self.inner = self.inner.dry_run(input);
-        self
-    }
-    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.inner = self.inner.set_dry_run(input);
-        self
-    }
-    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
-        self.inner.get_dry_run()
     }
 }

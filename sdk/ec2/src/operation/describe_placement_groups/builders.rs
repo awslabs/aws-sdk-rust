@@ -112,6 +112,79 @@ impl DescribePlacementGroupsFluentBuilder {
         self
     }
     ///
+    /// Appends an item to `GroupIds`.
+    ///
+    /// To override the contents of this collection use [`set_group_ids`](Self::set_group_ids).
+    ///
+    /// <p>The IDs of the placement groups.</p>
+    pub fn group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.group_ids(input.into());
+        self
+    }
+    /// <p>The IDs of the placement groups.</p>
+    pub fn set_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.inner = self.inner.set_group_ids(input);
+        self
+    }
+    /// <p>The IDs of the placement groups.</p>
+    pub fn get_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_group_ids()
+    }
+    /// <p>Checks whether you have the required permissions for the operation, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn dry_run(mut self, input: bool) -> Self {
+        self.inner = self.inner.dry_run(input);
+        self
+    }
+    /// <p>Checks whether you have the required permissions for the operation, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_dry_run(input);
+        self
+    }
+    /// <p>Checks whether you have the required permissions for the operation, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
+    }
+    ///
+    /// Appends an item to `GroupNames`.
+    ///
+    /// To override the contents of this collection use [`set_group_names`](Self::set_group_names).
+    ///
+    /// <p>The names of the placement groups.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>You can specify a name only if the placement group is owned by your account.</p></li>
+    /// <li>
+    /// <p>If a placement group is <i>shared</i> with your account, specifying the name results in an error. You must use the <code>GroupId</code> parameter instead.</p></li>
+    /// </ul>
+    pub fn group_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.group_names(input.into());
+        self
+    }
+    /// <p>The names of the placement groups.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>You can specify a name only if the placement group is owned by your account.</p></li>
+    /// <li>
+    /// <p>If a placement group is <i>shared</i> with your account, specifying the name results in an error. You must use the <code>GroupId</code> parameter instead.</p></li>
+    /// </ul>
+    pub fn set_group_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.inner = self.inner.set_group_names(input);
+        self
+    }
+    /// <p>The names of the placement groups.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>You can specify a name only if the placement group is owned by your account.</p></li>
+    /// <li>
+    /// <p>If a placement group is <i>shared</i> with your account, specifying the name results in an error. You must use the <code>GroupId</code> parameter instead.</p></li>
+    /// </ul>
+    pub fn get_group_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_group_names()
+    }
+    ///
     /// Appends an item to `Filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
@@ -177,78 +250,5 @@ impl DescribePlacementGroupsFluentBuilder {
     /// </ul>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         self.inner.get_filters()
-    }
-    /// <p>Checks whether you have the required permissions for the operation, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn dry_run(mut self, input: bool) -> Self {
-        self.inner = self.inner.dry_run(input);
-        self
-    }
-    /// <p>Checks whether you have the required permissions for the operation, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.inner = self.inner.set_dry_run(input);
-        self
-    }
-    /// <p>Checks whether you have the required permissions for the operation, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
-        self.inner.get_dry_run()
-    }
-    ///
-    /// Appends an item to `GroupNames`.
-    ///
-    /// To override the contents of this collection use [`set_group_names`](Self::set_group_names).
-    ///
-    /// <p>The names of the placement groups.</p>
-    /// <p>Constraints:</p>
-    /// <ul>
-    /// <li>
-    /// <p>You can specify a name only if the placement group is owned by your account.</p></li>
-    /// <li>
-    /// <p>If a placement group is <i>shared</i> with your account, specifying the name results in an error. You must use the <code>GroupId</code> parameter instead.</p></li>
-    /// </ul>
-    pub fn group_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.inner = self.inner.group_names(input.into());
-        self
-    }
-    /// <p>The names of the placement groups.</p>
-    /// <p>Constraints:</p>
-    /// <ul>
-    /// <li>
-    /// <p>You can specify a name only if the placement group is owned by your account.</p></li>
-    /// <li>
-    /// <p>If a placement group is <i>shared</i> with your account, specifying the name results in an error. You must use the <code>GroupId</code> parameter instead.</p></li>
-    /// </ul>
-    pub fn set_group_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.inner = self.inner.set_group_names(input);
-        self
-    }
-    /// <p>The names of the placement groups.</p>
-    /// <p>Constraints:</p>
-    /// <ul>
-    /// <li>
-    /// <p>You can specify a name only if the placement group is owned by your account.</p></li>
-    /// <li>
-    /// <p>If a placement group is <i>shared</i> with your account, specifying the name results in an error. You must use the <code>GroupId</code> parameter instead.</p></li>
-    /// </ul>
-    pub fn get_group_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
-        self.inner.get_group_names()
-    }
-    ///
-    /// Appends an item to `GroupIds`.
-    ///
-    /// To override the contents of this collection use [`set_group_ids`](Self::set_group_ids).
-    ///
-    /// <p>The IDs of the placement groups.</p>
-    pub fn group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.inner = self.inner.group_ids(input.into());
-        self
-    }
-    /// <p>The IDs of the placement groups.</p>
-    pub fn set_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.inner = self.inner.set_group_ids(input);
-        self
-    }
-    /// <p>The IDs of the placement groups.</p>
-    pub fn get_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
-        self.inner.get_group_ids()
     }
 }

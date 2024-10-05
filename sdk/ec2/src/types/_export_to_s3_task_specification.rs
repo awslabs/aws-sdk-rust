@@ -4,23 +4,23 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExportToS3TaskSpecification {
-    /// <p>The container format used to combine disk images with metadata (such as OVF). If absent, only the disk image is exported.</p>
-    pub container_format: ::std::option::Option<crate::types::ContainerFormat>,
     /// <p>The format for the exported image.</p>
     pub disk_image_format: ::std::option::Option<crate::types::DiskImageFormat>,
+    /// <p>The container format used to combine disk images with metadata (such as OVF). If absent, only the disk image is exported.</p>
+    pub container_format: ::std::option::Option<crate::types::ContainerFormat>,
     /// <p>The Amazon S3 bucket for the destination image. The destination bucket must exist and have an access control list (ACL) attached that specifies the Region-specific canonical account ID for the <code>Grantee</code>. For more information about the ACL to your S3 bucket, see <a href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmexport.html#vmexport-prerequisites">Prerequisites</a> in the VM Import/Export User Guide.</p>
     pub s3_bucket: ::std::option::Option<::std::string::String>,
     /// <p>The image is written to a single object in the Amazon S3 bucket at the S3 key s3prefix + exportTaskId + '.' + diskImageFormat.</p>
     pub s3_prefix: ::std::option::Option<::std::string::String>,
 }
 impl ExportToS3TaskSpecification {
-    /// <p>The container format used to combine disk images with metadata (such as OVF). If absent, only the disk image is exported.</p>
-    pub fn container_format(&self) -> ::std::option::Option<&crate::types::ContainerFormat> {
-        self.container_format.as_ref()
-    }
     /// <p>The format for the exported image.</p>
     pub fn disk_image_format(&self) -> ::std::option::Option<&crate::types::DiskImageFormat> {
         self.disk_image_format.as_ref()
+    }
+    /// <p>The container format used to combine disk images with metadata (such as OVF). If absent, only the disk image is exported.</p>
+    pub fn container_format(&self) -> ::std::option::Option<&crate::types::ContainerFormat> {
+        self.container_format.as_ref()
     }
     /// <p>The Amazon S3 bucket for the destination image. The destination bucket must exist and have an access control list (ACL) attached that specifies the Region-specific canonical account ID for the <code>Grantee</code>. For more information about the ACL to your S3 bucket, see <a href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmexport.html#vmexport-prerequisites">Prerequisites</a> in the VM Import/Export User Guide.</p>
     pub fn s3_bucket(&self) -> ::std::option::Option<&str> {
@@ -42,26 +42,12 @@ impl ExportToS3TaskSpecification {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct ExportToS3TaskSpecificationBuilder {
-    pub(crate) container_format: ::std::option::Option<crate::types::ContainerFormat>,
     pub(crate) disk_image_format: ::std::option::Option<crate::types::DiskImageFormat>,
+    pub(crate) container_format: ::std::option::Option<crate::types::ContainerFormat>,
     pub(crate) s3_bucket: ::std::option::Option<::std::string::String>,
     pub(crate) s3_prefix: ::std::option::Option<::std::string::String>,
 }
 impl ExportToS3TaskSpecificationBuilder {
-    /// <p>The container format used to combine disk images with metadata (such as OVF). If absent, only the disk image is exported.</p>
-    pub fn container_format(mut self, input: crate::types::ContainerFormat) -> Self {
-        self.container_format = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>The container format used to combine disk images with metadata (such as OVF). If absent, only the disk image is exported.</p>
-    pub fn set_container_format(mut self, input: ::std::option::Option<crate::types::ContainerFormat>) -> Self {
-        self.container_format = input;
-        self
-    }
-    /// <p>The container format used to combine disk images with metadata (such as OVF). If absent, only the disk image is exported.</p>
-    pub fn get_container_format(&self) -> &::std::option::Option<crate::types::ContainerFormat> {
-        &self.container_format
-    }
     /// <p>The format for the exported image.</p>
     pub fn disk_image_format(mut self, input: crate::types::DiskImageFormat) -> Self {
         self.disk_image_format = ::std::option::Option::Some(input);
@@ -75,6 +61,20 @@ impl ExportToS3TaskSpecificationBuilder {
     /// <p>The format for the exported image.</p>
     pub fn get_disk_image_format(&self) -> &::std::option::Option<crate::types::DiskImageFormat> {
         &self.disk_image_format
+    }
+    /// <p>The container format used to combine disk images with metadata (such as OVF). If absent, only the disk image is exported.</p>
+    pub fn container_format(mut self, input: crate::types::ContainerFormat) -> Self {
+        self.container_format = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The container format used to combine disk images with metadata (such as OVF). If absent, only the disk image is exported.</p>
+    pub fn set_container_format(mut self, input: ::std::option::Option<crate::types::ContainerFormat>) -> Self {
+        self.container_format = input;
+        self
+    }
+    /// <p>The container format used to combine disk images with metadata (such as OVF). If absent, only the disk image is exported.</p>
+    pub fn get_container_format(&self) -> &::std::option::Option<crate::types::ContainerFormat> {
+        &self.container_format
     }
     /// <p>The Amazon S3 bucket for the destination image. The destination bucket must exist and have an access control list (ACL) attached that specifies the Region-specific canonical account ID for the <code>Grantee</code>. For more information about the ACL to your S3 bucket, see <a href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmexport.html#vmexport-prerequisites">Prerequisites</a> in the VM Import/Export User Guide.</p>
     pub fn s3_bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -107,8 +107,8 @@ impl ExportToS3TaskSpecificationBuilder {
     /// Consumes the builder and constructs a [`ExportToS3TaskSpecification`](crate::types::ExportToS3TaskSpecification).
     pub fn build(self) -> crate::types::ExportToS3TaskSpecification {
         crate::types::ExportToS3TaskSpecification {
-            container_format: self.container_format,
             disk_image_format: self.disk_image_format,
+            container_format: self.container_format,
             s3_bucket: self.s3_bucket,
             s3_prefix: self.s3_prefix,
         }

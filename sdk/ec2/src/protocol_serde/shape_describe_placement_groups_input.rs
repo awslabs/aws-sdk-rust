@@ -6,14 +6,14 @@ pub fn ser_describe_placement_groups_input_input_input(
     #[allow(unused_mut)]
     let mut writer = ::aws_smithy_query::QueryWriter::new(&mut out, "DescribePlacementGroups", "2016-11-15");
     #[allow(unused_mut)]
-    let mut scope_1 = writer.prefix("Filter");
-    if let Some(var_2) = &input.filters {
+    let mut scope_1 = writer.prefix("GroupId");
+    if let Some(var_2) = &input.group_ids {
         if !var_2.is_empty() {
-            let mut list_4 = scope_1.start_list(true, Some("Filter"));
+            let mut list_4 = scope_1.start_list(true, Some("GroupId"));
             for item_3 in var_2 {
                 #[allow(unused_mut)]
                 let mut entry_5 = list_4.entry();
-                crate::protocol_serde::shape_filter::ser_filter(entry_5, item_3)?;
+                entry_5.string(item_3);
             }
             list_4.finish();
         }
@@ -37,14 +37,14 @@ pub fn ser_describe_placement_groups_input_input_input(
         }
     }
     #[allow(unused_mut)]
-    let mut scope_13 = writer.prefix("GroupId");
-    if let Some(var_14) = &input.group_ids {
+    let mut scope_13 = writer.prefix("Filter");
+    if let Some(var_14) = &input.filters {
         if !var_14.is_empty() {
-            let mut list_16 = scope_13.start_list(true, Some("GroupId"));
+            let mut list_16 = scope_13.start_list(true, Some("Filter"));
             for item_15 in var_14 {
                 #[allow(unused_mut)]
                 let mut entry_17 = list_16.entry();
-                entry_17.string(item_15);
+                crate::protocol_serde::shape_filter::ser_filter(entry_17, item_15)?;
             }
             list_16.finish();
         }

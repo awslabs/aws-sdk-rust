@@ -5,10 +5,10 @@
 pub struct GetConsoleOutputOutput {
     /// <p>The ID of the instance.</p>
     pub instance_id: ::std::option::Option<::std::string::String>,
-    /// <p>The console output, base64-encoded. If you are using a command line tool, the tool decodes the output for you.</p>
-    pub output: ::std::option::Option<::std::string::String>,
     /// <p>The time at which the output was last updated.</p>
     pub timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The console output, base64-encoded. If you are using a command line tool, the tool decodes the output for you.</p>
+    pub output: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetConsoleOutputOutput {
@@ -16,13 +16,13 @@ impl GetConsoleOutputOutput {
     pub fn instance_id(&self) -> ::std::option::Option<&str> {
         self.instance_id.as_deref()
     }
-    /// <p>The console output, base64-encoded. If you are using a command line tool, the tool decodes the output for you.</p>
-    pub fn output(&self) -> ::std::option::Option<&str> {
-        self.output.as_deref()
-    }
     /// <p>The time at which the output was last updated.</p>
     pub fn timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.timestamp.as_ref()
+    }
+    /// <p>The console output, base64-encoded. If you are using a command line tool, the tool decodes the output for you.</p>
+    pub fn output(&self) -> ::std::option::Option<&str> {
+        self.output.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetConsoleOutputOutput {
@@ -42,8 +42,8 @@ impl GetConsoleOutputOutput {
 #[non_exhaustive]
 pub struct GetConsoleOutputOutputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
-    pub(crate) output: ::std::option::Option<::std::string::String>,
     pub(crate) timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) output: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetConsoleOutputOutputBuilder {
@@ -61,20 +61,6 @@ impl GetConsoleOutputOutputBuilder {
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.instance_id
     }
-    /// <p>The console output, base64-encoded. If you are using a command line tool, the tool decodes the output for you.</p>
-    pub fn output(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.output = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>The console output, base64-encoded. If you are using a command line tool, the tool decodes the output for you.</p>
-    pub fn set_output(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.output = input;
-        self
-    }
-    /// <p>The console output, base64-encoded. If you are using a command line tool, the tool decodes the output for you.</p>
-    pub fn get_output(&self) -> &::std::option::Option<::std::string::String> {
-        &self.output
-    }
     /// <p>The time at which the output was last updated.</p>
     pub fn timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.timestamp = ::std::option::Option::Some(input);
@@ -89,6 +75,20 @@ impl GetConsoleOutputOutputBuilder {
     pub fn get_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.timestamp
     }
+    /// <p>The console output, base64-encoded. If you are using a command line tool, the tool decodes the output for you.</p>
+    pub fn output(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.output = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The console output, base64-encoded. If you are using a command line tool, the tool decodes the output for you.</p>
+    pub fn set_output(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.output = input;
+        self
+    }
+    /// <p>The console output, base64-encoded. If you are using a command line tool, the tool decodes the output for you.</p>
+    pub fn get_output(&self) -> &::std::option::Option<::std::string::String> {
+        &self.output
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -102,8 +102,8 @@ impl GetConsoleOutputOutputBuilder {
     pub fn build(self) -> crate::operation::get_console_output::GetConsoleOutputOutput {
         crate::operation::get_console_output::GetConsoleOutputOutput {
             instance_id: self.instance_id,
-            output: self.output,
             timestamp: self.timestamp,
+            output: self.output,
             _request_id: self._request_id,
         }
     }

@@ -7,7 +7,7 @@ pub fn de_bundle_task(
     let mut builder = crate::types::BundleTask::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
-            s if s.matches("bundleId") /* BundleId com.amazonaws.ec2#BundleTask$BundleId */ =>  {
+            s if s.matches("instanceId") /* InstanceId com.amazonaws.ec2#BundleTask$InstanceId */ =>  {
                 let var_1 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -17,46 +17,51 @@ pub fn de_bundle_task(
                         ?
                     )
                 ;
-                builder = builder.set_bundle_id(var_1);
+                builder = builder.set_instance_id(var_1);
             }
             ,
-            s if s.matches("error") /* BundleTaskError com.amazonaws.ec2#BundleTask$BundleTaskError */ =>  {
+            s if s.matches("bundleId") /* BundleId com.amazonaws.ec2#BundleTask$BundleId */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_bundle_task_error::de_bundle_task_error(&mut tag)
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
                         ?
                     )
                 ;
-                builder = builder.set_bundle_task_error(var_2);
+                builder = builder.set_bundle_id(var_2);
             }
             ,
-            s if s.matches("instanceId") /* InstanceId com.amazonaws.ec2#BundleTask$InstanceId */ =>  {
+            s if s.matches("state") /* State com.amazonaws.ec2#BundleTask$State */ =>  {
                 let var_3 =
                     Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
+                        Result::<crate::types::BundleTaskState, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::BundleTaskState::from(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
                         )
                         ?
                     )
                 ;
-                builder = builder.set_instance_id(var_3);
-            }
-            ,
-            s if s.matches("progress") /* Progress com.amazonaws.ec2#BundleTask$Progress */ =>  {
-                let var_4 =
-                    Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_progress(var_4);
+                builder = builder.set_state(var_3);
             }
             ,
             s if s.matches("startTime") /* StartTime com.amazonaws.ec2#BundleTask$StartTime */ =>  {
+                let var_4 =
+                    Some(
+                        ::aws_smithy_types::DateTime::from_str(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            , ::aws_smithy_types::date_time::Format::DateTimeWithOffset
+                        )
+                        .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (timestamp: `com.amazonaws.ec2#DateTime`)"))
+                        ?
+                    )
+                ;
+                builder = builder.set_start_time(var_4);
+            }
+            ,
+            s if s.matches("updateTime") /* UpdateTime com.amazonaws.ec2#BundleTask$UpdateTime */ =>  {
                 let var_5 =
                     Some(
                         ::aws_smithy_types::DateTime::from_str(
@@ -67,45 +72,40 @@ pub fn de_bundle_task(
                         ?
                     )
                 ;
-                builder = builder.set_start_time(var_5);
-            }
-            ,
-            s if s.matches("state") /* State com.amazonaws.ec2#BundleTask$State */ =>  {
-                let var_6 =
-                    Some(
-                        Result::<crate::types::BundleTaskState, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            crate::types::BundleTaskState::from(
-                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_state(var_6);
+                builder = builder.set_update_time(var_5);
             }
             ,
             s if s.matches("storage") /* Storage com.amazonaws.ec2#BundleTask$Storage */ =>  {
-                let var_7 =
+                let var_6 =
                     Some(
                         crate::protocol_serde::shape_storage::de_storage(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_storage(var_7);
+                builder = builder.set_storage(var_6);
             }
             ,
-            s if s.matches("updateTime") /* UpdateTime com.amazonaws.ec2#BundleTask$UpdateTime */ =>  {
-                let var_8 =
+            s if s.matches("progress") /* Progress com.amazonaws.ec2#BundleTask$Progress */ =>  {
+                let var_7 =
                     Some(
-                        ::aws_smithy_types::DateTime::from_str(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , ::aws_smithy_types::date_time::Format::DateTimeWithOffset
+                            .into()
                         )
-                        .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (timestamp: `com.amazonaws.ec2#DateTime`)"))
                         ?
                     )
                 ;
-                builder = builder.set_update_time(var_8);
+                builder = builder.set_progress(var_7);
+            }
+            ,
+            s if s.matches("error") /* BundleTaskError com.amazonaws.ec2#BundleTask$BundleTaskError */ =>  {
+                let var_8 =
+                    Some(
+                        crate::protocol_serde::shape_bundle_task_error::de_bundle_task_error(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_bundle_task_error(var_8);
             }
             ,
             _ => {}

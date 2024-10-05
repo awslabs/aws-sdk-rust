@@ -108,62 +108,6 @@ impl AttachNetworkInterfaceFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The index of the device for the network interface attachment.</p>
-    pub fn device_index(mut self, input: i32) -> Self {
-        self.inner = self.inner.device_index(input);
-        self
-    }
-    /// <p>The index of the device for the network interface attachment.</p>
-    pub fn set_device_index(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.inner = self.inner.set_device_index(input);
-        self
-    }
-    /// <p>The index of the device for the network interface attachment.</p>
-    pub fn get_device_index(&self) -> &::std::option::Option<i32> {
-        self.inner.get_device_index()
-    }
-    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn dry_run(mut self, input: bool) -> Self {
-        self.inner = self.inner.dry_run(input);
-        self
-    }
-    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.inner = self.inner.set_dry_run(input);
-        self
-    }
-    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
-        self.inner.get_dry_run()
-    }
-    /// <p>The ID of the instance.</p>
-    pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.inner = self.inner.instance_id(input.into());
-        self
-    }
-    /// <p>The ID of the instance.</p>
-    pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.inner = self.inner.set_instance_id(input);
-        self
-    }
-    /// <p>The ID of the instance.</p>
-    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
-        self.inner.get_instance_id()
-    }
-    /// <p>The ID of the network interface.</p>
-    pub fn network_interface_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.inner = self.inner.network_interface_id(input.into());
-        self
-    }
-    /// <p>The ID of the network interface.</p>
-    pub fn set_network_interface_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.inner = self.inner.set_network_interface_id(input);
-        self
-    }
-    /// <p>The ID of the network interface.</p>
-    pub fn get_network_interface_id(&self) -> &::std::option::Option<::std::string::String> {
-        self.inner.get_network_interface_id()
-    }
     /// <p>The index of the network card. Some instance types support multiple network cards. The primary network interface must be assigned to network card index 0. The default is network card index 0.</p>
     pub fn network_card_index(mut self, input: i32) -> Self {
         self.inner = self.inner.network_card_index(input);
@@ -191,5 +135,61 @@ impl AttachNetworkInterfaceFluentBuilder {
     /// <p>Configures ENA Express for the network interface that this action attaches to the instance.</p>
     pub fn get_ena_srd_specification(&self) -> &::std::option::Option<crate::types::EnaSrdSpecification> {
         self.inner.get_ena_srd_specification()
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn dry_run(mut self, input: bool) -> Self {
+        self.inner = self.inner.dry_run(input);
+        self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_dry_run(input);
+        self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
+    }
+    /// <p>The ID of the network interface.</p>
+    pub fn network_interface_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.network_interface_id(input.into());
+        self
+    }
+    /// <p>The ID of the network interface.</p>
+    pub fn set_network_interface_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_network_interface_id(input);
+        self
+    }
+    /// <p>The ID of the network interface.</p>
+    pub fn get_network_interface_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_network_interface_id()
+    }
+    /// <p>The ID of the instance.</p>
+    pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.instance_id(input.into());
+        self
+    }
+    /// <p>The ID of the instance.</p>
+    pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_instance_id(input);
+        self
+    }
+    /// <p>The ID of the instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_instance_id()
+    }
+    /// <p>The index of the device for the network interface attachment.</p>
+    pub fn device_index(mut self, input: i32) -> Self {
+        self.inner = self.inner.device_index(input);
+        self
+    }
+    /// <p>The index of the device for the network interface attachment.</p>
+    pub fn set_device_index(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.inner = self.inner.set_device_index(input);
+        self
+    }
+    /// <p>The index of the device for the network interface attachment.</p>
+    pub fn get_device_index(&self) -> &::std::option::Option<i32> {
+        self.inner.get_device_index()
     }
 }

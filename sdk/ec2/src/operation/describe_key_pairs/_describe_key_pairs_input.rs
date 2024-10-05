@@ -3,6 +3,16 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeKeyPairsInput {
+    /// <p>The key pair names.</p>
+    /// <p>Default: Describes all of your key pairs.</p>
+    pub key_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The IDs of the key pairs.</p>
+    pub key_pair_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>If <code>true</code>, the public key material is included in the response.</p>
+    /// <p>Default: <code>false</code></p>
+    pub include_public_key: ::std::option::Option<bool>,
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub dry_run: ::std::option::Option<bool>,
     /// <p>The filters.</p>
     /// <ul>
     /// <li>
@@ -23,18 +33,30 @@ pub struct DescribeKeyPairsInput {
     /// </key></p></li>
     /// </ul>
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    /// <p>The key pair names.</p>
-    /// <p>Default: Describes all of your key pairs.</p>
-    pub key_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>The IDs of the key pairs.</p>
-    pub key_pair_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub dry_run: ::std::option::Option<bool>,
-    /// <p>If <code>true</code>, the public key material is included in the response.</p>
-    /// <p>Default: <code>false</code></p>
-    pub include_public_key: ::std::option::Option<bool>,
 }
 impl DescribeKeyPairsInput {
+    /// <p>The key pair names.</p>
+    /// <p>Default: Describes all of your key pairs.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.key_names.is_none()`.
+    pub fn key_names(&self) -> &[::std::string::String] {
+        self.key_names.as_deref().unwrap_or_default()
+    }
+    /// <p>The IDs of the key pairs.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.key_pair_ids.is_none()`.
+    pub fn key_pair_ids(&self) -> &[::std::string::String] {
+        self.key_pair_ids.as_deref().unwrap_or_default()
+    }
+    /// <p>If <code>true</code>, the public key material is included in the response.</p>
+    /// <p>Default: <code>false</code></p>
+    pub fn include_public_key(&self) -> ::std::option::Option<bool> {
+        self.include_public_key
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn dry_run(&self) -> ::std::option::Option<bool> {
+        self.dry_run
+    }
     /// <p>The filters.</p>
     /// <ul>
     /// <li>
@@ -59,28 +81,6 @@ impl DescribeKeyPairsInput {
     pub fn filters(&self) -> &[crate::types::Filter] {
         self.filters.as_deref().unwrap_or_default()
     }
-    /// <p>The key pair names.</p>
-    /// <p>Default: Describes all of your key pairs.</p>
-    ///
-    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.key_names.is_none()`.
-    pub fn key_names(&self) -> &[::std::string::String] {
-        self.key_names.as_deref().unwrap_or_default()
-    }
-    /// <p>The IDs of the key pairs.</p>
-    ///
-    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.key_pair_ids.is_none()`.
-    pub fn key_pair_ids(&self) -> &[::std::string::String] {
-        self.key_pair_ids.as_deref().unwrap_or_default()
-    }
-    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn dry_run(&self) -> ::std::option::Option<bool> {
-        self.dry_run
-    }
-    /// <p>If <code>true</code>, the public key material is included in the response.</p>
-    /// <p>Default: <code>false</code></p>
-    pub fn include_public_key(&self) -> ::std::option::Option<bool> {
-        self.include_public_key
-    }
 }
 impl DescribeKeyPairsInput {
     /// Creates a new builder-style object to manufacture [`DescribeKeyPairsInput`](crate::operation::describe_key_pairs::DescribeKeyPairsInput).
@@ -93,13 +93,87 @@ impl DescribeKeyPairsInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct DescribeKeyPairsInputBuilder {
-    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     pub(crate) key_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) key_pair_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) include_public_key: ::std::option::Option<bool>,
+    pub(crate) dry_run: ::std::option::Option<bool>,
+    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
 }
 impl DescribeKeyPairsInputBuilder {
+    /// Appends an item to `key_names`.
+    ///
+    /// To override the contents of this collection use [`set_key_names`](Self::set_key_names).
+    ///
+    /// <p>The key pair names.</p>
+    /// <p>Default: Describes all of your key pairs.</p>
+    pub fn key_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.key_names.unwrap_or_default();
+        v.push(input.into());
+        self.key_names = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The key pair names.</p>
+    /// <p>Default: Describes all of your key pairs.</p>
+    pub fn set_key_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.key_names = input;
+        self
+    }
+    /// <p>The key pair names.</p>
+    /// <p>Default: Describes all of your key pairs.</p>
+    pub fn get_key_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.key_names
+    }
+    /// Appends an item to `key_pair_ids`.
+    ///
+    /// To override the contents of this collection use [`set_key_pair_ids`](Self::set_key_pair_ids).
+    ///
+    /// <p>The IDs of the key pairs.</p>
+    pub fn key_pair_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.key_pair_ids.unwrap_or_default();
+        v.push(input.into());
+        self.key_pair_ids = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The IDs of the key pairs.</p>
+    pub fn set_key_pair_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.key_pair_ids = input;
+        self
+    }
+    /// <p>The IDs of the key pairs.</p>
+    pub fn get_key_pair_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.key_pair_ids
+    }
+    /// <p>If <code>true</code>, the public key material is included in the response.</p>
+    /// <p>Default: <code>false</code></p>
+    pub fn include_public_key(mut self, input: bool) -> Self {
+        self.include_public_key = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>If <code>true</code>, the public key material is included in the response.</p>
+    /// <p>Default: <code>false</code></p>
+    pub fn set_include_public_key(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.include_public_key = input;
+        self
+    }
+    /// <p>If <code>true</code>, the public key material is included in the response.</p>
+    /// <p>Default: <code>false</code></p>
+    pub fn get_include_public_key(&self) -> &::std::option::Option<bool> {
+        &self.include_public_key
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn dry_run(mut self, input: bool) -> Self {
+        self.dry_run = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.dry_run = input;
+        self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
+    }
     /// Appends an item to `filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
@@ -174,90 +248,16 @@ impl DescribeKeyPairsInputBuilder {
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         &self.filters
     }
-    /// Appends an item to `key_names`.
-    ///
-    /// To override the contents of this collection use [`set_key_names`](Self::set_key_names).
-    ///
-    /// <p>The key pair names.</p>
-    /// <p>Default: Describes all of your key pairs.</p>
-    pub fn key_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        let mut v = self.key_names.unwrap_or_default();
-        v.push(input.into());
-        self.key_names = ::std::option::Option::Some(v);
-        self
-    }
-    /// <p>The key pair names.</p>
-    /// <p>Default: Describes all of your key pairs.</p>
-    pub fn set_key_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.key_names = input;
-        self
-    }
-    /// <p>The key pair names.</p>
-    /// <p>Default: Describes all of your key pairs.</p>
-    pub fn get_key_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
-        &self.key_names
-    }
-    /// Appends an item to `key_pair_ids`.
-    ///
-    /// To override the contents of this collection use [`set_key_pair_ids`](Self::set_key_pair_ids).
-    ///
-    /// <p>The IDs of the key pairs.</p>
-    pub fn key_pair_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        let mut v = self.key_pair_ids.unwrap_or_default();
-        v.push(input.into());
-        self.key_pair_ids = ::std::option::Option::Some(v);
-        self
-    }
-    /// <p>The IDs of the key pairs.</p>
-    pub fn set_key_pair_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.key_pair_ids = input;
-        self
-    }
-    /// <p>The IDs of the key pairs.</p>
-    pub fn get_key_pair_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
-        &self.key_pair_ids
-    }
-    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn dry_run(mut self, input: bool) -> Self {
-        self.dry_run = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
-    }
-    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
-        &self.dry_run
-    }
-    /// <p>If <code>true</code>, the public key material is included in the response.</p>
-    /// <p>Default: <code>false</code></p>
-    pub fn include_public_key(mut self, input: bool) -> Self {
-        self.include_public_key = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>If <code>true</code>, the public key material is included in the response.</p>
-    /// <p>Default: <code>false</code></p>
-    pub fn set_include_public_key(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.include_public_key = input;
-        self
-    }
-    /// <p>If <code>true</code>, the public key material is included in the response.</p>
-    /// <p>Default: <code>false</code></p>
-    pub fn get_include_public_key(&self) -> &::std::option::Option<bool> {
-        &self.include_public_key
-    }
     /// Consumes the builder and constructs a [`DescribeKeyPairsInput`](crate::operation::describe_key_pairs::DescribeKeyPairsInput).
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::describe_key_pairs::DescribeKeyPairsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_key_pairs::DescribeKeyPairsInput {
-            filters: self.filters,
             key_names: self.key_names,
             key_pair_ids: self.key_pair_ids,
-            dry_run: self.dry_run,
             include_public_key: self.include_public_key,
+            dry_run: self.dry_run,
+            filters: self.filters,
         })
     }
 }

@@ -6,48 +6,48 @@ pub fn ser_modify_spot_fleet_request_input_input_input(
     #[allow(unused_mut)]
     let mut writer = ::aws_smithy_query::QueryWriter::new(&mut out, "ModifySpotFleetRequest", "2016-11-15");
     #[allow(unused_mut)]
-    let mut scope_1 = writer.prefix("ExcessCapacityTerminationPolicy");
-    if let Some(var_2) = &input.excess_capacity_termination_policy {
-        scope_1.string(var_2.as_str());
-    }
-    #[allow(unused_mut)]
-    let mut scope_3 = writer.prefix("LaunchTemplateConfig");
-    if let Some(var_4) = &input.launch_template_configs {
-        if !var_4.is_empty() {
-            let mut list_6 = scope_3.start_list(true, Some("item"));
-            for item_5 in var_4 {
+    let mut scope_1 = writer.prefix("LaunchTemplateConfig");
+    if let Some(var_2) = &input.launch_template_configs {
+        if !var_2.is_empty() {
+            let mut list_4 = scope_1.start_list(true, Some("item"));
+            for item_3 in var_2 {
                 #[allow(unused_mut)]
-                let mut entry_7 = list_6.entry();
-                crate::protocol_serde::shape_launch_template_config::ser_launch_template_config(entry_7, item_5)?;
+                let mut entry_5 = list_4.entry();
+                crate::protocol_serde::shape_launch_template_config::ser_launch_template_config(entry_5, item_3)?;
             }
-            list_6.finish();
+            list_4.finish();
         }
     }
     #[allow(unused_mut)]
-    let mut scope_8 = writer.prefix("SpotFleetRequestId");
-    if let Some(var_9) = &input.spot_fleet_request_id {
-        scope_8.string(var_9);
-    }
-    #[allow(unused_mut)]
-    let mut scope_10 = writer.prefix("TargetCapacity");
-    if let Some(var_11) = &input.target_capacity {
-        scope_10.number(
+    let mut scope_6 = writer.prefix("OnDemandTargetCapacity");
+    if let Some(var_7) = &input.on_demand_target_capacity {
+        scope_6.number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_11).into()),
+            ::aws_smithy_types::Number::NegInt((*var_7).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_12 = writer.prefix("OnDemandTargetCapacity");
-    if let Some(var_13) = &input.on_demand_target_capacity {
+    let mut scope_8 = writer.prefix("Context");
+    if let Some(var_9) = &input.context {
+        scope_8.string(var_9);
+    }
+    #[allow(unused_mut)]
+    let mut scope_10 = writer.prefix("SpotFleetRequestId");
+    if let Some(var_11) = &input.spot_fleet_request_id {
+        scope_10.string(var_11);
+    }
+    #[allow(unused_mut)]
+    let mut scope_12 = writer.prefix("TargetCapacity");
+    if let Some(var_13) = &input.target_capacity {
         scope_12.number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((*var_13).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_14 = writer.prefix("Context");
-    if let Some(var_15) = &input.context {
-        scope_14.string(var_15);
+    let mut scope_14 = writer.prefix("ExcessCapacityTerminationPolicy");
+    if let Some(var_15) = &input.excess_capacity_termination_policy {
+        scope_14.string(var_15.as_str());
     }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))

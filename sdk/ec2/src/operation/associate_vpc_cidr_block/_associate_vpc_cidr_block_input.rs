@@ -3,12 +3,8 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociateVpcCidrBlockInput {
-    /// <p>Requests an Amazon-provided IPv6 CIDR block with a /56 prefix length for the VPC. You cannot specify the range of IPv6 addresses or the size of the CIDR block.</p>
-    pub amazon_provided_ipv6_cidr_block: ::std::option::Option<bool>,
     /// <p>An IPv4 CIDR block to associate with the VPC.</p>
     pub cidr_block: ::std::option::Option<::std::string::String>,
-    /// <p>The ID of the VPC.</p>
-    pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the location from which we advertise the IPV6 CIDR block. Use this parameter to limit the CIDR block to this location.</p>
     /// <p>You must set <code>AmazonProvidedIpv6CidrBlock</code> to <code>true</code> to use this parameter.</p>
     /// <p>You can have one IPv6 CIDR block association per network border group.</p>
@@ -26,19 +22,15 @@ pub struct AssociateVpcCidrBlockInput {
     pub ipv6_ipam_pool_id: ::std::option::Option<::std::string::String>,
     /// <p>The netmask length of the IPv6 CIDR you would like to associate from an Amazon VPC IP Address Manager (IPAM) pool. For more information about IPAM, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
     pub ipv6_netmask_length: ::std::option::Option<i32>,
+    /// <p>The ID of the VPC.</p>
+    pub vpc_id: ::std::option::Option<::std::string::String>,
+    /// <p>Requests an Amazon-provided IPv6 CIDR block with a /56 prefix length for the VPC. You cannot specify the range of IPv6 addresses or the size of the CIDR block.</p>
+    pub amazon_provided_ipv6_cidr_block: ::std::option::Option<bool>,
 }
 impl AssociateVpcCidrBlockInput {
-    /// <p>Requests an Amazon-provided IPv6 CIDR block with a /56 prefix length for the VPC. You cannot specify the range of IPv6 addresses or the size of the CIDR block.</p>
-    pub fn amazon_provided_ipv6_cidr_block(&self) -> ::std::option::Option<bool> {
-        self.amazon_provided_ipv6_cidr_block
-    }
     /// <p>An IPv4 CIDR block to associate with the VPC.</p>
     pub fn cidr_block(&self) -> ::std::option::Option<&str> {
         self.cidr_block.as_deref()
-    }
-    /// <p>The ID of the VPC.</p>
-    pub fn vpc_id(&self) -> ::std::option::Option<&str> {
-        self.vpc_id.as_deref()
     }
     /// <p>The name of the location from which we advertise the IPV6 CIDR block. Use this parameter to limit the CIDR block to this location.</p>
     /// <p>You must set <code>AmazonProvidedIpv6CidrBlock</code> to <code>true</code> to use this parameter.</p>
@@ -71,6 +63,14 @@ impl AssociateVpcCidrBlockInput {
     pub fn ipv6_netmask_length(&self) -> ::std::option::Option<i32> {
         self.ipv6_netmask_length
     }
+    /// <p>The ID of the VPC.</p>
+    pub fn vpc_id(&self) -> ::std::option::Option<&str> {
+        self.vpc_id.as_deref()
+    }
+    /// <p>Requests an Amazon-provided IPv6 CIDR block with a /56 prefix length for the VPC. You cannot specify the range of IPv6 addresses or the size of the CIDR block.</p>
+    pub fn amazon_provided_ipv6_cidr_block(&self) -> ::std::option::Option<bool> {
+        self.amazon_provided_ipv6_cidr_block
+    }
 }
 impl AssociateVpcCidrBlockInput {
     /// Creates a new builder-style object to manufacture [`AssociateVpcCidrBlockInput`](crate::operation::associate_vpc_cidr_block::AssociateVpcCidrBlockInput).
@@ -83,9 +83,7 @@ impl AssociateVpcCidrBlockInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct AssociateVpcCidrBlockInputBuilder {
-    pub(crate) amazon_provided_ipv6_cidr_block: ::std::option::Option<bool>,
     pub(crate) cidr_block: ::std::option::Option<::std::string::String>,
-    pub(crate) vpc_id: ::std::option::Option<::std::string::String>,
     pub(crate) ipv6_cidr_block_network_border_group: ::std::option::Option<::std::string::String>,
     pub(crate) ipv6_pool: ::std::option::Option<::std::string::String>,
     pub(crate) ipv6_cidr_block: ::std::option::Option<::std::string::String>,
@@ -93,22 +91,10 @@ pub struct AssociateVpcCidrBlockInputBuilder {
     pub(crate) ipv4_netmask_length: ::std::option::Option<i32>,
     pub(crate) ipv6_ipam_pool_id: ::std::option::Option<::std::string::String>,
     pub(crate) ipv6_netmask_length: ::std::option::Option<i32>,
+    pub(crate) vpc_id: ::std::option::Option<::std::string::String>,
+    pub(crate) amazon_provided_ipv6_cidr_block: ::std::option::Option<bool>,
 }
 impl AssociateVpcCidrBlockInputBuilder {
-    /// <p>Requests an Amazon-provided IPv6 CIDR block with a /56 prefix length for the VPC. You cannot specify the range of IPv6 addresses or the size of the CIDR block.</p>
-    pub fn amazon_provided_ipv6_cidr_block(mut self, input: bool) -> Self {
-        self.amazon_provided_ipv6_cidr_block = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>Requests an Amazon-provided IPv6 CIDR block with a /56 prefix length for the VPC. You cannot specify the range of IPv6 addresses or the size of the CIDR block.</p>
-    pub fn set_amazon_provided_ipv6_cidr_block(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.amazon_provided_ipv6_cidr_block = input;
-        self
-    }
-    /// <p>Requests an Amazon-provided IPv6 CIDR block with a /56 prefix length for the VPC. You cannot specify the range of IPv6 addresses or the size of the CIDR block.</p>
-    pub fn get_amazon_provided_ipv6_cidr_block(&self) -> &::std::option::Option<bool> {
-        &self.amazon_provided_ipv6_cidr_block
-    }
     /// <p>An IPv4 CIDR block to associate with the VPC.</p>
     pub fn cidr_block(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cidr_block = ::std::option::Option::Some(input.into());
@@ -122,21 +108,6 @@ impl AssociateVpcCidrBlockInputBuilder {
     /// <p>An IPv4 CIDR block to associate with the VPC.</p>
     pub fn get_cidr_block(&self) -> &::std::option::Option<::std::string::String> {
         &self.cidr_block
-    }
-    /// <p>The ID of the VPC.</p>
-    /// This field is required.
-    pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.vpc_id = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>The ID of the VPC.</p>
-    pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vpc_id = input;
-        self
-    }
-    /// <p>The ID of the VPC.</p>
-    pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
-        &self.vpc_id
     }
     /// <p>The name of the location from which we advertise the IPV6 CIDR block. Use this parameter to limit the CIDR block to this location.</p>
     /// <p>You must set <code>AmazonProvidedIpv6CidrBlock</code> to <code>true</code> to use this parameter.</p>
@@ -245,15 +216,42 @@ impl AssociateVpcCidrBlockInputBuilder {
     pub fn get_ipv6_netmask_length(&self) -> &::std::option::Option<i32> {
         &self.ipv6_netmask_length
     }
+    /// <p>The ID of the VPC.</p>
+    /// This field is required.
+    pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.vpc_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the VPC.</p>
+    pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.vpc_id = input;
+        self
+    }
+    /// <p>The ID of the VPC.</p>
+    pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_id
+    }
+    /// <p>Requests an Amazon-provided IPv6 CIDR block with a /56 prefix length for the VPC. You cannot specify the range of IPv6 addresses or the size of the CIDR block.</p>
+    pub fn amazon_provided_ipv6_cidr_block(mut self, input: bool) -> Self {
+        self.amazon_provided_ipv6_cidr_block = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Requests an Amazon-provided IPv6 CIDR block with a /56 prefix length for the VPC. You cannot specify the range of IPv6 addresses or the size of the CIDR block.</p>
+    pub fn set_amazon_provided_ipv6_cidr_block(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.amazon_provided_ipv6_cidr_block = input;
+        self
+    }
+    /// <p>Requests an Amazon-provided IPv6 CIDR block with a /56 prefix length for the VPC. You cannot specify the range of IPv6 addresses or the size of the CIDR block.</p>
+    pub fn get_amazon_provided_ipv6_cidr_block(&self) -> &::std::option::Option<bool> {
+        &self.amazon_provided_ipv6_cidr_block
+    }
     /// Consumes the builder and constructs a [`AssociateVpcCidrBlockInput`](crate::operation::associate_vpc_cidr_block::AssociateVpcCidrBlockInput).
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::associate_vpc_cidr_block::AssociateVpcCidrBlockInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::associate_vpc_cidr_block::AssociateVpcCidrBlockInput {
-            amazon_provided_ipv6_cidr_block: self.amazon_provided_ipv6_cidr_block,
             cidr_block: self.cidr_block,
-            vpc_id: self.vpc_id,
             ipv6_cidr_block_network_border_group: self.ipv6_cidr_block_network_border_group,
             ipv6_pool: self.ipv6_pool,
             ipv6_cidr_block: self.ipv6_cidr_block,
@@ -261,6 +259,8 @@ impl AssociateVpcCidrBlockInputBuilder {
             ipv4_netmask_length: self.ipv4_netmask_length,
             ipv6_ipam_pool_id: self.ipv6_ipam_pool_id,
             ipv6_netmask_length: self.ipv6_netmask_length,
+            vpc_id: self.vpc_id,
+            amazon_provided_ipv6_cidr_block: self.amazon_provided_ipv6_cidr_block,
         })
     }
 }

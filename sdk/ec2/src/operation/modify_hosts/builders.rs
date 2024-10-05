@@ -109,39 +109,6 @@ impl ModifyHostsFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>Specify whether to enable or disable auto-placement.</p>
-    pub fn auto_placement(mut self, input: crate::types::AutoPlacement) -> Self {
-        self.inner = self.inner.auto_placement(input);
-        self
-    }
-    /// <p>Specify whether to enable or disable auto-placement.</p>
-    pub fn set_auto_placement(mut self, input: ::std::option::Option<crate::types::AutoPlacement>) -> Self {
-        self.inner = self.inner.set_auto_placement(input);
-        self
-    }
-    /// <p>Specify whether to enable or disable auto-placement.</p>
-    pub fn get_auto_placement(&self) -> &::std::option::Option<crate::types::AutoPlacement> {
-        self.inner.get_auto_placement()
-    }
-    ///
-    /// Appends an item to `HostIds`.
-    ///
-    /// To override the contents of this collection use [`set_host_ids`](Self::set_host_ids).
-    ///
-    /// <p>The IDs of the Dedicated Hosts to modify.</p>
-    pub fn host_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.inner = self.inner.host_ids(input.into());
-        self
-    }
-    /// <p>The IDs of the Dedicated Hosts to modify.</p>
-    pub fn set_host_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.inner = self.inner.set_host_ids(input);
-        self
-    }
-    /// <p>The IDs of the Dedicated Hosts to modify.</p>
-    pub fn get_host_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
-        self.inner.get_host_ids()
-    }
     /// <p>Indicates whether to enable or disable host recovery for the Dedicated Host. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-recovery.html">Host recovery</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn host_recovery(mut self, input: crate::types::HostRecovery) -> Self {
         self.inner = self.inner.host_recovery(input);
@@ -203,5 +170,38 @@ impl ModifyHostsFluentBuilder {
     /// <p>Indicates whether to enable or disable host maintenance for the Dedicated Host. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-maintenance.html">Host maintenance</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn get_host_maintenance(&self) -> &::std::option::Option<crate::types::HostMaintenance> {
         self.inner.get_host_maintenance()
+    }
+    ///
+    /// Appends an item to `HostIds`.
+    ///
+    /// To override the contents of this collection use [`set_host_ids`](Self::set_host_ids).
+    ///
+    /// <p>The IDs of the Dedicated Hosts to modify.</p>
+    pub fn host_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.host_ids(input.into());
+        self
+    }
+    /// <p>The IDs of the Dedicated Hosts to modify.</p>
+    pub fn set_host_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.inner = self.inner.set_host_ids(input);
+        self
+    }
+    /// <p>The IDs of the Dedicated Hosts to modify.</p>
+    pub fn get_host_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_host_ids()
+    }
+    /// <p>Specify whether to enable or disable auto-placement.</p>
+    pub fn auto_placement(mut self, input: crate::types::AutoPlacement) -> Self {
+        self.inner = self.inner.auto_placement(input);
+        self
+    }
+    /// <p>Specify whether to enable or disable auto-placement.</p>
+    pub fn set_auto_placement(mut self, input: ::std::option::Option<crate::types::AutoPlacement>) -> Self {
+        self.inner = self.inner.set_auto_placement(input);
+        self
+    }
+    /// <p>Specify whether to enable or disable auto-placement.</p>
+    pub fn get_auto_placement(&self) -> &::std::option::Option<crate::types::AutoPlacement> {
+        self.inner.get_auto_placement()
     }
 }

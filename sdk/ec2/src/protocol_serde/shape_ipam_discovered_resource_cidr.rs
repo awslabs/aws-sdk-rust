@@ -138,8 +138,21 @@ pub fn de_ipam_discovered_resource_cidr(
                 builder = builder.set_vpc_id(var_10);
             }
             ,
-            s if s.matches("networkInterfaceAttachmentStatus") /* NetworkInterfaceAttachmentStatus com.amazonaws.ec2#IpamDiscoveredResourceCidr$NetworkInterfaceAttachmentStatus */ =>  {
+            s if s.matches("subnetId") /* SubnetId com.amazonaws.ec2#IpamDiscoveredResourceCidr$SubnetId */ =>  {
                 let var_11 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_subnet_id(var_11);
+            }
+            ,
+            s if s.matches("networkInterfaceAttachmentStatus") /* NetworkInterfaceAttachmentStatus com.amazonaws.ec2#IpamDiscoveredResourceCidr$NetworkInterfaceAttachmentStatus */ =>  {
+                let var_12 =
                     Some(
                         Result::<crate::types::IpamNetworkInterfaceAttachmentStatus, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::IpamNetworkInterfaceAttachmentStatus::from(
@@ -149,11 +162,11 @@ pub fn de_ipam_discovered_resource_cidr(
                         ?
                     )
                 ;
-                builder = builder.set_network_interface_attachment_status(var_11);
+                builder = builder.set_network_interface_attachment_status(var_12);
             }
             ,
             s if s.matches("sampleTime") /* SampleTime com.amazonaws.ec2#IpamDiscoveredResourceCidr$SampleTime */ =>  {
-                let var_12 =
+                let var_13 =
                     Some(
                         ::aws_smithy_types::DateTime::from_str(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -163,11 +176,11 @@ pub fn de_ipam_discovered_resource_cidr(
                         ?
                     )
                 ;
-                builder = builder.set_sample_time(var_12);
+                builder = builder.set_sample_time(var_13);
             }
             ,
             s if s.matches("availabilityZoneId") /* AvailabilityZoneId com.amazonaws.ec2#IpamDiscoveredResourceCidr$AvailabilityZoneId */ =>  {
-                let var_13 =
+                let var_14 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -176,7 +189,7 @@ pub fn de_ipam_discovered_resource_cidr(
                         ?
                     )
                 ;
-                builder = builder.set_availability_zone_id(var_13);
+                builder = builder.set_availability_zone_id(var_14);
             }
             ,
             _ => {}

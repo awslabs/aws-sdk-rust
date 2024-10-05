@@ -113,34 +113,6 @@ impl ImportVolumeFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The Availability Zone for the resulting EBS volume.</p>
-    pub fn availability_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.inner = self.inner.availability_zone(input.into());
-        self
-    }
-    /// <p>The Availability Zone for the resulting EBS volume.</p>
-    pub fn set_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.inner = self.inner.set_availability_zone(input);
-        self
-    }
-    /// <p>The Availability Zone for the resulting EBS volume.</p>
-    pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
-        self.inner.get_availability_zone()
-    }
-    /// <p>A description of the volume.</p>
-    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.inner = self.inner.description(input.into());
-        self
-    }
-    /// <p>A description of the volume.</p>
-    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.inner = self.inner.set_description(input);
-        self
-    }
-    /// <p>A description of the volume.</p>
-    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
-        self.inner.get_description()
-    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.inner = self.inner.dry_run(input);
@@ -155,6 +127,20 @@ impl ImportVolumeFluentBuilder {
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
         self.inner.get_dry_run()
     }
+    /// <p>The Availability Zone for the resulting EBS volume.</p>
+    pub fn availability_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.availability_zone(input.into());
+        self
+    }
+    /// <p>The Availability Zone for the resulting EBS volume.</p>
+    pub fn set_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_availability_zone(input);
+        self
+    }
+    /// <p>The Availability Zone for the resulting EBS volume.</p>
+    pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_availability_zone()
+    }
     /// <p>The disk image.</p>
     pub fn image(mut self, input: crate::types::DiskImageDetail) -> Self {
         self.inner = self.inner.image(input);
@@ -168,6 +154,20 @@ impl ImportVolumeFluentBuilder {
     /// <p>The disk image.</p>
     pub fn get_image(&self) -> &::std::option::Option<crate::types::DiskImageDetail> {
         self.inner.get_image()
+    }
+    /// <p>A description of the volume.</p>
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.description(input.into());
+        self
+    }
+    /// <p>A description of the volume.</p>
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_description(input);
+        self
+    }
+    /// <p>A description of the volume.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// <p>The volume size.</p>
     pub fn volume(mut self, input: crate::types::VolumeDetail) -> Self {

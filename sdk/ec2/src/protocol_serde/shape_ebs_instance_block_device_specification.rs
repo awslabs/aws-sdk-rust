@@ -5,14 +5,14 @@ pub fn ser_ebs_instance_block_device_specification(
     input: &crate::types::EbsInstanceBlockDeviceSpecification,
 ) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
-    let mut scope_1 = writer.prefix("DeleteOnTermination");
-    if let Some(var_2) = &input.delete_on_termination {
-        scope_1.boolean(*var_2);
+    let mut scope_1 = writer.prefix("VolumeId");
+    if let Some(var_2) = &input.volume_id {
+        scope_1.string(var_2);
     }
     #[allow(unused_mut)]
-    let mut scope_3 = writer.prefix("VolumeId");
-    if let Some(var_4) = &input.volume_id {
-        scope_3.string(var_4);
+    let mut scope_3 = writer.prefix("DeleteOnTermination");
+    if let Some(var_4) = &input.delete_on_termination {
+        scope_3.boolean(*var_4);
     }
     Ok(())
 }

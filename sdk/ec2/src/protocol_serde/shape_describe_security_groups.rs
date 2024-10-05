@@ -54,18 +54,8 @@ pub fn de_describe_security_groups(
     }
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
-            s if s.matches("securityGroupInfo") /* SecurityGroups com.amazonaws.ec2.synthetic#DescribeSecurityGroupsOutput$SecurityGroups */ =>  {
-                let var_1 =
-                    Some(
-                        crate::protocol_serde::shape_security_group_list::de_security_group_list(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_security_groups(var_1);
-            }
-            ,
             s if s.matches("nextToken") /* NextToken com.amazonaws.ec2.synthetic#DescribeSecurityGroupsOutput$NextToken */ =>  {
-                let var_2 =
+                let var_1 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -74,7 +64,17 @@ pub fn de_describe_security_groups(
                         ?
                     )
                 ;
-                builder = builder.set_next_token(var_2);
+                builder = builder.set_next_token(var_1);
+            }
+            ,
+            s if s.matches("securityGroupInfo") /* SecurityGroups com.amazonaws.ec2.synthetic#DescribeSecurityGroupsOutput$SecurityGroups */ =>  {
+                let var_2 =
+                    Some(
+                        crate::protocol_serde::shape_security_group_list::de_security_group_list(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_security_groups(var_2);
             }
             ,
             _ => {}

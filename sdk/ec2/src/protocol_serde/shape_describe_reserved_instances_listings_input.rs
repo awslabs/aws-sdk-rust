@@ -6,27 +6,27 @@ pub fn ser_describe_reserved_instances_listings_input_input_input(
     #[allow(unused_mut)]
     let mut writer = ::aws_smithy_query::QueryWriter::new(&mut out, "DescribeReservedInstancesListings", "2016-11-15");
     #[allow(unused_mut)]
-    let mut scope_1 = writer.prefix("Filter");
-    if let Some(var_2) = &input.filters {
-        if !var_2.is_empty() {
-            let mut list_4 = scope_1.start_list(true, Some("Filter"));
-            for item_3 in var_2 {
+    let mut scope_1 = writer.prefix("ReservedInstancesId");
+    if let Some(var_2) = &input.reserved_instances_id {
+        scope_1.string(var_2);
+    }
+    #[allow(unused_mut)]
+    let mut scope_3 = writer.prefix("ReservedInstancesListingId");
+    if let Some(var_4) = &input.reserved_instances_listing_id {
+        scope_3.string(var_4);
+    }
+    #[allow(unused_mut)]
+    let mut scope_5 = writer.prefix("Filter");
+    if let Some(var_6) = &input.filters {
+        if !var_6.is_empty() {
+            let mut list_8 = scope_5.start_list(true, Some("Filter"));
+            for item_7 in var_6 {
                 #[allow(unused_mut)]
-                let mut entry_5 = list_4.entry();
-                crate::protocol_serde::shape_filter::ser_filter(entry_5, item_3)?;
+                let mut entry_9 = list_8.entry();
+                crate::protocol_serde::shape_filter::ser_filter(entry_9, item_7)?;
             }
-            list_4.finish();
+            list_8.finish();
         }
-    }
-    #[allow(unused_mut)]
-    let mut scope_6 = writer.prefix("ReservedInstancesId");
-    if let Some(var_7) = &input.reserved_instances_id {
-        scope_6.string(var_7);
-    }
-    #[allow(unused_mut)]
-    let mut scope_8 = writer.prefix("ReservedInstancesListingId");
-    if let Some(var_9) = &input.reserved_instances_listing_id {
-        scope_8.string(var_9);
     }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))

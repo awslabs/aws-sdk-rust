@@ -21,24 +21,24 @@ pub fn ser_associate_address_input_input_input(
         scope_5.string(var_6);
     }
     #[allow(unused_mut)]
-    let mut scope_7 = writer.prefix("AllowReassociation");
-    if let Some(var_8) = &input.allow_reassociation {
+    let mut scope_7 = writer.prefix("DryRun");
+    if let Some(var_8) = &input.dry_run {
         scope_7.boolean(*var_8);
     }
     #[allow(unused_mut)]
-    let mut scope_9 = writer.prefix("DryRun");
-    if let Some(var_10) = &input.dry_run {
-        scope_9.boolean(*var_10);
+    let mut scope_9 = writer.prefix("NetworkInterfaceId");
+    if let Some(var_10) = &input.network_interface_id {
+        scope_9.string(var_10);
     }
     #[allow(unused_mut)]
-    let mut scope_11 = writer.prefix("NetworkInterfaceId");
-    if let Some(var_12) = &input.network_interface_id {
+    let mut scope_11 = writer.prefix("PrivateIpAddress");
+    if let Some(var_12) = &input.private_ip_address {
         scope_11.string(var_12);
     }
     #[allow(unused_mut)]
-    let mut scope_13 = writer.prefix("PrivateIpAddress");
-    if let Some(var_14) = &input.private_ip_address {
-        scope_13.string(var_14);
+    let mut scope_13 = writer.prefix("AllowReassociation");
+    if let Some(var_14) = &input.allow_reassociation {
+        scope_13.boolean(*var_14);
     }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))

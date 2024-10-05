@@ -9,8 +9,6 @@ pub struct AssociateAddressInput {
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>Deprecated.</p>
     pub public_ip: ::std::option::Option<::std::string::String>,
-    /// <p>Reassociation is automatic, but you can specify false to ensure the operation fails if the Elastic IP address is already associated with another resource.</p>
-    pub allow_reassociation: ::std::option::Option<bool>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The ID of the network interface. If the instance has more than one network interface, you must specify a network interface ID.</p>
@@ -18,6 +16,8 @@ pub struct AssociateAddressInput {
     pub network_interface_id: ::std::option::Option<::std::string::String>,
     /// <p>The primary or secondary private IP address to associate with the Elastic IP address. If no private IP address is specified, the Elastic IP address is associated with the primary private IP address.</p>
     pub private_ip_address: ::std::option::Option<::std::string::String>,
+    /// <p>Reassociation is automatic, but you can specify false to ensure the operation fails if the Elastic IP address is already associated with another resource.</p>
+    pub allow_reassociation: ::std::option::Option<bool>,
 }
 impl AssociateAddressInput {
     /// <p>The allocation ID. This is required.</p>
@@ -32,10 +32,6 @@ impl AssociateAddressInput {
     pub fn public_ip(&self) -> ::std::option::Option<&str> {
         self.public_ip.as_deref()
     }
-    /// <p>Reassociation is automatic, but you can specify false to ensure the operation fails if the Elastic IP address is already associated with another resource.</p>
-    pub fn allow_reassociation(&self) -> ::std::option::Option<bool> {
-        self.allow_reassociation
-    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
         self.dry_run
@@ -48,6 +44,10 @@ impl AssociateAddressInput {
     /// <p>The primary or secondary private IP address to associate with the Elastic IP address. If no private IP address is specified, the Elastic IP address is associated with the primary private IP address.</p>
     pub fn private_ip_address(&self) -> ::std::option::Option<&str> {
         self.private_ip_address.as_deref()
+    }
+    /// <p>Reassociation is automatic, but you can specify false to ensure the operation fails if the Elastic IP address is already associated with another resource.</p>
+    pub fn allow_reassociation(&self) -> ::std::option::Option<bool> {
+        self.allow_reassociation
     }
 }
 impl AssociateAddressInput {
@@ -64,10 +64,10 @@ pub struct AssociateAddressInputBuilder {
     pub(crate) allocation_id: ::std::option::Option<::std::string::String>,
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) public_ip: ::std::option::Option<::std::string::String>,
-    pub(crate) allow_reassociation: ::std::option::Option<bool>,
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) network_interface_id: ::std::option::Option<::std::string::String>,
     pub(crate) private_ip_address: ::std::option::Option<::std::string::String>,
+    pub(crate) allow_reassociation: ::std::option::Option<bool>,
 }
 impl AssociateAddressInputBuilder {
     /// <p>The allocation ID. This is required.</p>
@@ -111,20 +111,6 @@ impl AssociateAddressInputBuilder {
     /// <p>Deprecated.</p>
     pub fn get_public_ip(&self) -> &::std::option::Option<::std::string::String> {
         &self.public_ip
-    }
-    /// <p>Reassociation is automatic, but you can specify false to ensure the operation fails if the Elastic IP address is already associated with another resource.</p>
-    pub fn allow_reassociation(mut self, input: bool) -> Self {
-        self.allow_reassociation = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>Reassociation is automatic, but you can specify false to ensure the operation fails if the Elastic IP address is already associated with another resource.</p>
-    pub fn set_allow_reassociation(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.allow_reassociation = input;
-        self
-    }
-    /// <p>Reassociation is automatic, but you can specify false to ensure the operation fails if the Elastic IP address is already associated with another resource.</p>
-    pub fn get_allow_reassociation(&self) -> &::std::option::Option<bool> {
-        &self.allow_reassociation
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
@@ -171,6 +157,20 @@ impl AssociateAddressInputBuilder {
     pub fn get_private_ip_address(&self) -> &::std::option::Option<::std::string::String> {
         &self.private_ip_address
     }
+    /// <p>Reassociation is automatic, but you can specify false to ensure the operation fails if the Elastic IP address is already associated with another resource.</p>
+    pub fn allow_reassociation(mut self, input: bool) -> Self {
+        self.allow_reassociation = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Reassociation is automatic, but you can specify false to ensure the operation fails if the Elastic IP address is already associated with another resource.</p>
+    pub fn set_allow_reassociation(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.allow_reassociation = input;
+        self
+    }
+    /// <p>Reassociation is automatic, but you can specify false to ensure the operation fails if the Elastic IP address is already associated with another resource.</p>
+    pub fn get_allow_reassociation(&self) -> &::std::option::Option<bool> {
+        &self.allow_reassociation
+    }
     /// Consumes the builder and constructs a [`AssociateAddressInput`](crate::operation::associate_address::AssociateAddressInput).
     pub fn build(
         self,
@@ -179,10 +179,10 @@ impl AssociateAddressInputBuilder {
             allocation_id: self.allocation_id,
             instance_id: self.instance_id,
             public_ip: self.public_ip,
-            allow_reassociation: self.allow_reassociation,
             dry_run: self.dry_run,
             network_interface_id: self.network_interface_id,
             private_ip_address: self.private_ip_address,
+            allow_reassociation: self.allow_reassociation,
         })
     }
 }

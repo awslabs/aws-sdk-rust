@@ -6,57 +6,57 @@ pub fn ser_create_network_acl_entry_input_input_input(
     #[allow(unused_mut)]
     let mut writer = ::aws_smithy_query::QueryWriter::new(&mut out, "CreateNetworkAclEntry", "2016-11-15");
     #[allow(unused_mut)]
-    let mut scope_1 = writer.prefix("CidrBlock");
-    if let Some(var_2) = &input.cidr_block {
-        scope_1.string(var_2);
+    let mut scope_1 = writer.prefix("DryRun");
+    if let Some(var_2) = &input.dry_run {
+        scope_1.boolean(*var_2);
     }
     #[allow(unused_mut)]
-    let mut scope_3 = writer.prefix("DryRun");
-    if let Some(var_4) = &input.dry_run {
-        scope_3.boolean(*var_4);
+    let mut scope_3 = writer.prefix("NetworkAclId");
+    if let Some(var_4) = &input.network_acl_id {
+        scope_3.string(var_4);
     }
     #[allow(unused_mut)]
-    let mut scope_5 = writer.prefix("Egress");
-    if let Some(var_6) = &input.egress {
-        scope_5.boolean(*var_6);
+    let mut scope_5 = writer.prefix("RuleNumber");
+    if let Some(var_6) = &input.rule_number {
+        scope_5.number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_6).into()),
+        );
     }
     #[allow(unused_mut)]
-    let mut scope_7 = writer.prefix("Icmp");
-    if let Some(var_8) = &input.icmp_type_code {
-        crate::protocol_serde::shape_icmp_type_code::ser_icmp_type_code(scope_7, var_8)?;
+    let mut scope_7 = writer.prefix("Protocol");
+    if let Some(var_8) = &input.protocol {
+        scope_7.string(var_8);
     }
     #[allow(unused_mut)]
-    let mut scope_9 = writer.prefix("Ipv6CidrBlock");
-    if let Some(var_10) = &input.ipv6_cidr_block {
-        scope_9.string(var_10);
+    let mut scope_9 = writer.prefix("RuleAction");
+    if let Some(var_10) = &input.rule_action {
+        scope_9.string(var_10.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_11 = writer.prefix("NetworkAclId");
-    if let Some(var_12) = &input.network_acl_id {
-        scope_11.string(var_12);
+    let mut scope_11 = writer.prefix("Egress");
+    if let Some(var_12) = &input.egress {
+        scope_11.boolean(*var_12);
     }
     #[allow(unused_mut)]
-    let mut scope_13 = writer.prefix("PortRange");
-    if let Some(var_14) = &input.port_range {
-        crate::protocol_serde::shape_port_range::ser_port_range(scope_13, var_14)?;
+    let mut scope_13 = writer.prefix("CidrBlock");
+    if let Some(var_14) = &input.cidr_block {
+        scope_13.string(var_14);
     }
     #[allow(unused_mut)]
-    let mut scope_15 = writer.prefix("Protocol");
-    if let Some(var_16) = &input.protocol {
+    let mut scope_15 = writer.prefix("Ipv6CidrBlock");
+    if let Some(var_16) = &input.ipv6_cidr_block {
         scope_15.string(var_16);
     }
     #[allow(unused_mut)]
-    let mut scope_17 = writer.prefix("RuleAction");
-    if let Some(var_18) = &input.rule_action {
-        scope_17.string(var_18.as_str());
+    let mut scope_17 = writer.prefix("Icmp");
+    if let Some(var_18) = &input.icmp_type_code {
+        crate::protocol_serde::shape_icmp_type_code::ser_icmp_type_code(scope_17, var_18)?;
     }
     #[allow(unused_mut)]
-    let mut scope_19 = writer.prefix("RuleNumber");
-    if let Some(var_20) = &input.rule_number {
-        scope_19.number(
-            #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_20).into()),
-        );
+    let mut scope_19 = writer.prefix("PortRange");
+    if let Some(var_20) = &input.port_range {
+        crate::protocol_serde::shape_port_range::ser_port_range(scope_19, var_20)?;
     }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))

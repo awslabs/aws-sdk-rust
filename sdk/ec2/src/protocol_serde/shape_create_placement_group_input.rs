@@ -6,44 +6,44 @@ pub fn ser_create_placement_group_input_input_input(
     #[allow(unused_mut)]
     let mut writer = ::aws_smithy_query::QueryWriter::new(&mut out, "CreatePlacementGroup", "2016-11-15");
     #[allow(unused_mut)]
-    let mut scope_1 = writer.prefix("DryRun");
-    if let Some(var_2) = &input.dry_run {
-        scope_1.boolean(*var_2);
-    }
-    #[allow(unused_mut)]
-    let mut scope_3 = writer.prefix("GroupName");
-    if let Some(var_4) = &input.group_name {
-        scope_3.string(var_4);
-    }
-    #[allow(unused_mut)]
-    let mut scope_5 = writer.prefix("Strategy");
-    if let Some(var_6) = &input.strategy {
-        scope_5.string(var_6.as_str());
-    }
-    #[allow(unused_mut)]
-    let mut scope_7 = writer.prefix("PartitionCount");
-    if let Some(var_8) = &input.partition_count {
-        scope_7.number(
+    let mut scope_1 = writer.prefix("PartitionCount");
+    if let Some(var_2) = &input.partition_count {
+        scope_1.number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_8).into()),
+            ::aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_9 = writer.prefix("TagSpecification");
-    if let Some(var_10) = &input.tag_specifications {
-        if !var_10.is_empty() {
-            let mut list_12 = scope_9.start_list(true, Some("item"));
-            for item_11 in var_10 {
+    let mut scope_3 = writer.prefix("TagSpecification");
+    if let Some(var_4) = &input.tag_specifications {
+        if !var_4.is_empty() {
+            let mut list_6 = scope_3.start_list(true, Some("item"));
+            for item_5 in var_4 {
                 #[allow(unused_mut)]
-                let mut entry_13 = list_12.entry();
-                crate::protocol_serde::shape_tag_specification::ser_tag_specification(entry_13, item_11)?;
+                let mut entry_7 = list_6.entry();
+                crate::protocol_serde::shape_tag_specification::ser_tag_specification(entry_7, item_5)?;
             }
-            list_12.finish();
+            list_6.finish();
         }
     }
     #[allow(unused_mut)]
-    let mut scope_14 = writer.prefix("SpreadLevel");
-    if let Some(var_15) = &input.spread_level {
+    let mut scope_8 = writer.prefix("SpreadLevel");
+    if let Some(var_9) = &input.spread_level {
+        scope_8.string(var_9.as_str());
+    }
+    #[allow(unused_mut)]
+    let mut scope_10 = writer.prefix("DryRun");
+    if let Some(var_11) = &input.dry_run {
+        scope_10.boolean(*var_11);
+    }
+    #[allow(unused_mut)]
+    let mut scope_12 = writer.prefix("GroupName");
+    if let Some(var_13) = &input.group_name {
+        scope_12.string(var_13);
+    }
+    #[allow(unused_mut)]
+    let mut scope_14 = writer.prefix("Strategy");
+    if let Some(var_15) = &input.strategy {
         scope_14.string(var_15.as_str());
     }
     writer.finish();

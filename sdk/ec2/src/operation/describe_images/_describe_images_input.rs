@@ -13,6 +13,25 @@ pub struct DescribeImagesInput {
     /// <p>If you specify <code>all</code>, all public AMIs are returned.</p></li>
     /// </ul>
     pub executable_users: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The image IDs.</p>
+    /// <p>Default: Describes all images available to you.</p>
+    pub image_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>Scopes the results to images with the specified owners. You can specify a combination of Amazon Web Services account IDs, <code>self</code>, <code>amazon</code>, and <code>aws-marketplace</code>. If you omit this parameter, the results include all images for which you have launch permissions, regardless of ownership.</p>
+    pub owners: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>Specifies whether to include deprecated AMIs.</p>
+    /// <p>Default: No deprecated AMIs are included in the response.</p><note>
+    /// <p>If you are the AMI owner, all deprecated AMIs appear in the response regardless of what you specify for this parameter.</p>
+    /// </note>
+    pub include_deprecated: ::std::option::Option<bool>,
+    /// <p>Specifies whether to include disabled AMIs.</p>
+    /// <p>Default: No disabled AMIs are included in the response.</p>
+    pub include_disabled: ::std::option::Option<bool>,
+    /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
+    pub max_results: ::std::option::Option<i32>,
+    /// <p>The token returned from a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p>
+    pub next_token: ::std::option::Option<::std::string::String>,
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub dry_run: ::std::option::Option<bool>,
     /// <p>The filters.</p>
     /// <ul>
     /// <li>
@@ -89,25 +108,6 @@ pub struct DescribeImagesInput {
     /// <p><code>virtualization-type</code> - The virtualization type (<code>paravirtual</code> | <code>hvm</code>).</p></li>
     /// </ul>
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    /// <p>The image IDs.</p>
-    /// <p>Default: Describes all images available to you.</p>
-    pub image_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>Scopes the results to images with the specified owners. You can specify a combination of Amazon Web Services account IDs, <code>self</code>, <code>amazon</code>, and <code>aws-marketplace</code>. If you omit this parameter, the results include all images for which you have launch permissions, regardless of ownership.</p>
-    pub owners: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>Specifies whether to include deprecated AMIs.</p>
-    /// <p>Default: No deprecated AMIs are included in the response.</p><note>
-    /// <p>If you are the AMI owner, all deprecated AMIs appear in the response regardless of what you specify for this parameter.</p>
-    /// </note>
-    pub include_deprecated: ::std::option::Option<bool>,
-    /// <p>Specifies whether to include disabled AMIs.</p>
-    /// <p>Default: No disabled AMIs are included in the response.</p>
-    pub include_disabled: ::std::option::Option<bool>,
-    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub dry_run: ::std::option::Option<bool>,
-    /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
-    pub max_results: ::std::option::Option<i32>,
-    /// <p>The token returned from a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p>
-    pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl DescribeImagesInput {
     /// <p>Scopes the images by users with explicit launch permissions. Specify an Amazon Web Services account ID, <code>self</code> (the sender of the request), or <code>all</code> (public AMIs).</p>
@@ -123,6 +123,43 @@ impl DescribeImagesInput {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.executable_users.is_none()`.
     pub fn executable_users(&self) -> &[::std::string::String] {
         self.executable_users.as_deref().unwrap_or_default()
+    }
+    /// <p>The image IDs.</p>
+    /// <p>Default: Describes all images available to you.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.image_ids.is_none()`.
+    pub fn image_ids(&self) -> &[::std::string::String] {
+        self.image_ids.as_deref().unwrap_or_default()
+    }
+    /// <p>Scopes the results to images with the specified owners. You can specify a combination of Amazon Web Services account IDs, <code>self</code>, <code>amazon</code>, and <code>aws-marketplace</code>. If you omit this parameter, the results include all images for which you have launch permissions, regardless of ownership.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.owners.is_none()`.
+    pub fn owners(&self) -> &[::std::string::String] {
+        self.owners.as_deref().unwrap_or_default()
+    }
+    /// <p>Specifies whether to include deprecated AMIs.</p>
+    /// <p>Default: No deprecated AMIs are included in the response.</p><note>
+    /// <p>If you are the AMI owner, all deprecated AMIs appear in the response regardless of what you specify for this parameter.</p>
+    /// </note>
+    pub fn include_deprecated(&self) -> ::std::option::Option<bool> {
+        self.include_deprecated
+    }
+    /// <p>Specifies whether to include disabled AMIs.</p>
+    /// <p>Default: No disabled AMIs are included in the response.</p>
+    pub fn include_disabled(&self) -> ::std::option::Option<bool> {
+        self.include_disabled
+    }
+    /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
+    pub fn max_results(&self) -> ::std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The token returned from a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p>
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn dry_run(&self) -> ::std::option::Option<bool> {
+        self.dry_run
     }
     /// <p>The filters.</p>
     /// <ul>
@@ -204,43 +241,6 @@ impl DescribeImagesInput {
     pub fn filters(&self) -> &[crate::types::Filter] {
         self.filters.as_deref().unwrap_or_default()
     }
-    /// <p>The image IDs.</p>
-    /// <p>Default: Describes all images available to you.</p>
-    ///
-    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.image_ids.is_none()`.
-    pub fn image_ids(&self) -> &[::std::string::String] {
-        self.image_ids.as_deref().unwrap_or_default()
-    }
-    /// <p>Scopes the results to images with the specified owners. You can specify a combination of Amazon Web Services account IDs, <code>self</code>, <code>amazon</code>, and <code>aws-marketplace</code>. If you omit this parameter, the results include all images for which you have launch permissions, regardless of ownership.</p>
-    ///
-    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.owners.is_none()`.
-    pub fn owners(&self) -> &[::std::string::String] {
-        self.owners.as_deref().unwrap_or_default()
-    }
-    /// <p>Specifies whether to include deprecated AMIs.</p>
-    /// <p>Default: No deprecated AMIs are included in the response.</p><note>
-    /// <p>If you are the AMI owner, all deprecated AMIs appear in the response regardless of what you specify for this parameter.</p>
-    /// </note>
-    pub fn include_deprecated(&self) -> ::std::option::Option<bool> {
-        self.include_deprecated
-    }
-    /// <p>Specifies whether to include disabled AMIs.</p>
-    /// <p>Default: No disabled AMIs are included in the response.</p>
-    pub fn include_disabled(&self) -> ::std::option::Option<bool> {
-        self.include_disabled
-    }
-    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn dry_run(&self) -> ::std::option::Option<bool> {
-        self.dry_run
-    }
-    /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
-    pub fn max_results(&self) -> ::std::option::Option<i32> {
-        self.max_results
-    }
-    /// <p>The token returned from a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
-        self.next_token.as_deref()
-    }
 }
 impl DescribeImagesInput {
     /// Creates a new builder-style object to manufacture [`DescribeImagesInput`](crate::operation::describe_images::DescribeImagesInput).
@@ -254,14 +254,14 @@ impl DescribeImagesInput {
 #[non_exhaustive]
 pub struct DescribeImagesInputBuilder {
     pub(crate) executable_users: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     pub(crate) image_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) owners: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) include_deprecated: ::std::option::Option<bool>,
     pub(crate) include_disabled: ::std::option::Option<bool>,
-    pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
+    pub(crate) dry_run: ::std::option::Option<bool>,
+    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
 }
 impl DescribeImagesInputBuilder {
     /// Appends an item to `executable_users`.
@@ -307,6 +307,131 @@ impl DescribeImagesInputBuilder {
     /// </ul>
     pub fn get_executable_users(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.executable_users
+    }
+    /// Appends an item to `image_ids`.
+    ///
+    /// To override the contents of this collection use [`set_image_ids`](Self::set_image_ids).
+    ///
+    /// <p>The image IDs.</p>
+    /// <p>Default: Describes all images available to you.</p>
+    pub fn image_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.image_ids.unwrap_or_default();
+        v.push(input.into());
+        self.image_ids = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The image IDs.</p>
+    /// <p>Default: Describes all images available to you.</p>
+    pub fn set_image_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.image_ids = input;
+        self
+    }
+    /// <p>The image IDs.</p>
+    /// <p>Default: Describes all images available to you.</p>
+    pub fn get_image_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.image_ids
+    }
+    /// Appends an item to `owners`.
+    ///
+    /// To override the contents of this collection use [`set_owners`](Self::set_owners).
+    ///
+    /// <p>Scopes the results to images with the specified owners. You can specify a combination of Amazon Web Services account IDs, <code>self</code>, <code>amazon</code>, and <code>aws-marketplace</code>. If you omit this parameter, the results include all images for which you have launch permissions, regardless of ownership.</p>
+    pub fn owners(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.owners.unwrap_or_default();
+        v.push(input.into());
+        self.owners = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Scopes the results to images with the specified owners. You can specify a combination of Amazon Web Services account IDs, <code>self</code>, <code>amazon</code>, and <code>aws-marketplace</code>. If you omit this parameter, the results include all images for which you have launch permissions, regardless of ownership.</p>
+    pub fn set_owners(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.owners = input;
+        self
+    }
+    /// <p>Scopes the results to images with the specified owners. You can specify a combination of Amazon Web Services account IDs, <code>self</code>, <code>amazon</code>, and <code>aws-marketplace</code>. If you omit this parameter, the results include all images for which you have launch permissions, regardless of ownership.</p>
+    pub fn get_owners(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.owners
+    }
+    /// <p>Specifies whether to include deprecated AMIs.</p>
+    /// <p>Default: No deprecated AMIs are included in the response.</p><note>
+    /// <p>If you are the AMI owner, all deprecated AMIs appear in the response regardless of what you specify for this parameter.</p>
+    /// </note>
+    pub fn include_deprecated(mut self, input: bool) -> Self {
+        self.include_deprecated = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether to include deprecated AMIs.</p>
+    /// <p>Default: No deprecated AMIs are included in the response.</p><note>
+    /// <p>If you are the AMI owner, all deprecated AMIs appear in the response regardless of what you specify for this parameter.</p>
+    /// </note>
+    pub fn set_include_deprecated(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.include_deprecated = input;
+        self
+    }
+    /// <p>Specifies whether to include deprecated AMIs.</p>
+    /// <p>Default: No deprecated AMIs are included in the response.</p><note>
+    /// <p>If you are the AMI owner, all deprecated AMIs appear in the response regardless of what you specify for this parameter.</p>
+    /// </note>
+    pub fn get_include_deprecated(&self) -> &::std::option::Option<bool> {
+        &self.include_deprecated
+    }
+    /// <p>Specifies whether to include disabled AMIs.</p>
+    /// <p>Default: No disabled AMIs are included in the response.</p>
+    pub fn include_disabled(mut self, input: bool) -> Self {
+        self.include_disabled = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether to include disabled AMIs.</p>
+    /// <p>Default: No disabled AMIs are included in the response.</p>
+    pub fn set_include_disabled(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.include_disabled = input;
+        self
+    }
+    /// <p>Specifies whether to include disabled AMIs.</p>
+    /// <p>Default: No disabled AMIs are included in the response.</p>
+    pub fn get_include_disabled(&self) -> &::std::option::Option<bool> {
+        &self.include_disabled
+    }
+    /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
+    pub fn max_results(mut self, input: i32) -> Self {
+        self.max_results = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
+    pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.max_results = input;
+        self
+    }
+    /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
+    /// <p>The token returned from a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p>
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The token returned from a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p>
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.next_token = input;
+        self
+    }
+    /// <p>The token returned from a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn dry_run(mut self, input: bool) -> Self {
+        self.dry_run = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.dry_run = input;
+        self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
     }
     /// Appends an item to `filters`.
     ///
@@ -550,145 +675,20 @@ impl DescribeImagesInputBuilder {
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         &self.filters
     }
-    /// Appends an item to `image_ids`.
-    ///
-    /// To override the contents of this collection use [`set_image_ids`](Self::set_image_ids).
-    ///
-    /// <p>The image IDs.</p>
-    /// <p>Default: Describes all images available to you.</p>
-    pub fn image_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        let mut v = self.image_ids.unwrap_or_default();
-        v.push(input.into());
-        self.image_ids = ::std::option::Option::Some(v);
-        self
-    }
-    /// <p>The image IDs.</p>
-    /// <p>Default: Describes all images available to you.</p>
-    pub fn set_image_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.image_ids = input;
-        self
-    }
-    /// <p>The image IDs.</p>
-    /// <p>Default: Describes all images available to you.</p>
-    pub fn get_image_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
-        &self.image_ids
-    }
-    /// Appends an item to `owners`.
-    ///
-    /// To override the contents of this collection use [`set_owners`](Self::set_owners).
-    ///
-    /// <p>Scopes the results to images with the specified owners. You can specify a combination of Amazon Web Services account IDs, <code>self</code>, <code>amazon</code>, and <code>aws-marketplace</code>. If you omit this parameter, the results include all images for which you have launch permissions, regardless of ownership.</p>
-    pub fn owners(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        let mut v = self.owners.unwrap_or_default();
-        v.push(input.into());
-        self.owners = ::std::option::Option::Some(v);
-        self
-    }
-    /// <p>Scopes the results to images with the specified owners. You can specify a combination of Amazon Web Services account IDs, <code>self</code>, <code>amazon</code>, and <code>aws-marketplace</code>. If you omit this parameter, the results include all images for which you have launch permissions, regardless of ownership.</p>
-    pub fn set_owners(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.owners = input;
-        self
-    }
-    /// <p>Scopes the results to images with the specified owners. You can specify a combination of Amazon Web Services account IDs, <code>self</code>, <code>amazon</code>, and <code>aws-marketplace</code>. If you omit this parameter, the results include all images for which you have launch permissions, regardless of ownership.</p>
-    pub fn get_owners(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
-        &self.owners
-    }
-    /// <p>Specifies whether to include deprecated AMIs.</p>
-    /// <p>Default: No deprecated AMIs are included in the response.</p><note>
-    /// <p>If you are the AMI owner, all deprecated AMIs appear in the response regardless of what you specify for this parameter.</p>
-    /// </note>
-    pub fn include_deprecated(mut self, input: bool) -> Self {
-        self.include_deprecated = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>Specifies whether to include deprecated AMIs.</p>
-    /// <p>Default: No deprecated AMIs are included in the response.</p><note>
-    /// <p>If you are the AMI owner, all deprecated AMIs appear in the response regardless of what you specify for this parameter.</p>
-    /// </note>
-    pub fn set_include_deprecated(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.include_deprecated = input;
-        self
-    }
-    /// <p>Specifies whether to include deprecated AMIs.</p>
-    /// <p>Default: No deprecated AMIs are included in the response.</p><note>
-    /// <p>If you are the AMI owner, all deprecated AMIs appear in the response regardless of what you specify for this parameter.</p>
-    /// </note>
-    pub fn get_include_deprecated(&self) -> &::std::option::Option<bool> {
-        &self.include_deprecated
-    }
-    /// <p>Specifies whether to include disabled AMIs.</p>
-    /// <p>Default: No disabled AMIs are included in the response.</p>
-    pub fn include_disabled(mut self, input: bool) -> Self {
-        self.include_disabled = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>Specifies whether to include disabled AMIs.</p>
-    /// <p>Default: No disabled AMIs are included in the response.</p>
-    pub fn set_include_disabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.include_disabled = input;
-        self
-    }
-    /// <p>Specifies whether to include disabled AMIs.</p>
-    /// <p>Default: No disabled AMIs are included in the response.</p>
-    pub fn get_include_disabled(&self) -> &::std::option::Option<bool> {
-        &self.include_disabled
-    }
-    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn dry_run(mut self, input: bool) -> Self {
-        self.dry_run = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
-    }
-    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
-        &self.dry_run
-    }
-    /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
-    pub fn max_results(mut self, input: i32) -> Self {
-        self.max_results = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
-    pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
-    }
-    /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
-    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
-        &self.max_results
-    }
-    /// <p>The token returned from a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p>
-    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.next_token = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>The token returned from a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p>
-    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
-    }
-    /// <p>The token returned from a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p>
-    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
-        &self.next_token
-    }
     /// Consumes the builder and constructs a [`DescribeImagesInput`](crate::operation::describe_images::DescribeImagesInput).
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::describe_images::DescribeImagesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_images::DescribeImagesInput {
             executable_users: self.executable_users,
-            filters: self.filters,
             image_ids: self.image_ids,
             owners: self.owners,
             include_deprecated: self.include_deprecated,
             include_disabled: self.include_disabled,
-            dry_run: self.dry_run,
             max_results: self.max_results,
             next_token: self.next_token,
+            dry_run: self.dry_run,
+            filters: self.filters,
         })
     }
 }

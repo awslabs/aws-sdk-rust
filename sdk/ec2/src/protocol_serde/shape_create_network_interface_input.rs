@@ -6,154 +6,154 @@ pub fn ser_create_network_interface_input_input_input(
     #[allow(unused_mut)]
     let mut writer = ::aws_smithy_query::QueryWriter::new(&mut out, "CreateNetworkInterface", "2016-11-15");
     #[allow(unused_mut)]
-    let mut scope_1 = writer.prefix("Description");
-    if let Some(var_2) = &input.description {
-        scope_1.string(var_2);
-    }
-    #[allow(unused_mut)]
-    let mut scope_3 = writer.prefix("DryRun");
-    if let Some(var_4) = &input.dry_run {
-        scope_3.boolean(*var_4);
-    }
-    #[allow(unused_mut)]
-    let mut scope_5 = writer.prefix("SecurityGroupId");
-    if let Some(var_6) = &input.groups {
-        if !var_6.is_empty() {
-            let mut list_8 = scope_5.start_list(true, Some("SecurityGroupId"));
-            for item_7 in var_6 {
+    let mut scope_1 = writer.prefix("Ipv4Prefix");
+    if let Some(var_2) = &input.ipv4_prefixes {
+        if !var_2.is_empty() {
+            let mut list_4 = scope_1.start_list(true, Some("item"));
+            for item_3 in var_2 {
                 #[allow(unused_mut)]
-                let mut entry_9 = list_8.entry();
-                entry_9.string(item_7);
+                let mut entry_5 = list_4.entry();
+                crate::protocol_serde::shape_ipv4_prefix_specification_request::ser_ipv4_prefix_specification_request(entry_5, item_3)?;
             }
-            list_8.finish();
+            list_4.finish();
         }
     }
     #[allow(unused_mut)]
-    let mut scope_10 = writer.prefix("Ipv6AddressCount");
-    if let Some(var_11) = &input.ipv6_address_count {
-        scope_10.number(
+    let mut scope_6 = writer.prefix("Ipv4PrefixCount");
+    if let Some(var_7) = &input.ipv4_prefix_count {
+        scope_6.number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_11).into()),
+            ::aws_smithy_types::Number::NegInt((*var_7).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_12 = writer.prefix("Ipv6Addresses");
-    if let Some(var_13) = &input.ipv6_addresses {
-        if !var_13.is_empty() {
-            let mut list_15 = scope_12.start_list(true, Some("item"));
-            for item_14 in var_13 {
+    let mut scope_8 = writer.prefix("Ipv6Prefix");
+    if let Some(var_9) = &input.ipv6_prefixes {
+        if !var_9.is_empty() {
+            let mut list_11 = scope_8.start_list(true, Some("item"));
+            for item_10 in var_9 {
                 #[allow(unused_mut)]
-                let mut entry_16 = list_15.entry();
-                crate::protocol_serde::shape_instance_ipv6_address::ser_instance_ipv6_address(entry_16, item_14)?;
+                let mut entry_12 = list_11.entry();
+                crate::protocol_serde::shape_ipv6_prefix_specification_request::ser_ipv6_prefix_specification_request(entry_12, item_10)?;
             }
-            list_15.finish();
+            list_11.finish();
         }
     }
     #[allow(unused_mut)]
-    let mut scope_17 = writer.prefix("PrivateIpAddress");
-    if let Some(var_18) = &input.private_ip_address {
-        scope_17.string(var_18);
-    }
-    #[allow(unused_mut)]
-    let mut scope_19 = writer.prefix("PrivateIpAddresses");
-    if let Some(var_20) = &input.private_ip_addresses {
-        if !var_20.is_empty() {
-            let mut list_22 = scope_19.start_list(true, Some("item"));
-            for item_21 in var_20 {
-                #[allow(unused_mut)]
-                let mut entry_23 = list_22.entry();
-                crate::protocol_serde::shape_private_ip_address_specification::ser_private_ip_address_specification(entry_23, item_21)?;
-            }
-            list_22.finish();
-        }
-    }
-    #[allow(unused_mut)]
-    let mut scope_24 = writer.prefix("SecondaryPrivateIpAddressCount");
-    if let Some(var_25) = &input.secondary_private_ip_address_count {
-        scope_24.number(
+    let mut scope_13 = writer.prefix("Ipv6PrefixCount");
+    if let Some(var_14) = &input.ipv6_prefix_count {
+        scope_13.number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_25).into()),
+            ::aws_smithy_types::Number::NegInt((*var_14).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_26 = writer.prefix("Ipv4Prefix");
-    if let Some(var_27) = &input.ipv4_prefixes {
-        if !var_27.is_empty() {
-            let mut list_29 = scope_26.start_list(true, Some("item"));
-            for item_28 in var_27 {
+    let mut scope_15 = writer.prefix("InterfaceType");
+    if let Some(var_16) = &input.interface_type {
+        scope_15.string(var_16.as_str());
+    }
+    #[allow(unused_mut)]
+    let mut scope_17 = writer.prefix("TagSpecification");
+    if let Some(var_18) = &input.tag_specifications {
+        if !var_18.is_empty() {
+            let mut list_20 = scope_17.start_list(true, Some("item"));
+            for item_19 in var_18 {
                 #[allow(unused_mut)]
-                let mut entry_30 = list_29.entry();
-                crate::protocol_serde::shape_ipv4_prefix_specification_request::ser_ipv4_prefix_specification_request(entry_30, item_28)?;
+                let mut entry_21 = list_20.entry();
+                crate::protocol_serde::shape_tag_specification::ser_tag_specification(entry_21, item_19)?;
             }
-            list_29.finish();
+            list_20.finish();
         }
     }
     #[allow(unused_mut)]
-    let mut scope_31 = writer.prefix("Ipv4PrefixCount");
-    if let Some(var_32) = &input.ipv4_prefix_count {
-        scope_31.number(
+    let mut scope_22 = writer.prefix("ClientToken");
+    if let Some(var_23) = &input.client_token {
+        scope_22.string(var_23);
+    }
+    #[allow(unused_mut)]
+    let mut scope_24 = writer.prefix("EnablePrimaryIpv6");
+    if let Some(var_25) = &input.enable_primary_ipv6 {
+        scope_24.boolean(*var_25);
+    }
+    #[allow(unused_mut)]
+    let mut scope_26 = writer.prefix("ConnectionTrackingSpecification");
+    if let Some(var_27) = &input.connection_tracking_specification {
+        crate::protocol_serde::shape_connection_tracking_specification_request::ser_connection_tracking_specification_request(scope_26, var_27)?;
+    }
+    #[allow(unused_mut)]
+    let mut scope_28 = writer.prefix("SubnetId");
+    if let Some(var_29) = &input.subnet_id {
+        scope_28.string(var_29);
+    }
+    #[allow(unused_mut)]
+    let mut scope_30 = writer.prefix("Description");
+    if let Some(var_31) = &input.description {
+        scope_30.string(var_31);
+    }
+    #[allow(unused_mut)]
+    let mut scope_32 = writer.prefix("PrivateIpAddress");
+    if let Some(var_33) = &input.private_ip_address {
+        scope_32.string(var_33);
+    }
+    #[allow(unused_mut)]
+    let mut scope_34 = writer.prefix("SecurityGroupId");
+    if let Some(var_35) = &input.groups {
+        if !var_35.is_empty() {
+            let mut list_37 = scope_34.start_list(true, Some("SecurityGroupId"));
+            for item_36 in var_35 {
+                #[allow(unused_mut)]
+                let mut entry_38 = list_37.entry();
+                entry_38.string(item_36);
+            }
+            list_37.finish();
+        }
+    }
+    #[allow(unused_mut)]
+    let mut scope_39 = writer.prefix("PrivateIpAddresses");
+    if let Some(var_40) = &input.private_ip_addresses {
+        if !var_40.is_empty() {
+            let mut list_42 = scope_39.start_list(true, Some("item"));
+            for item_41 in var_40 {
+                #[allow(unused_mut)]
+                let mut entry_43 = list_42.entry();
+                crate::protocol_serde::shape_private_ip_address_specification::ser_private_ip_address_specification(entry_43, item_41)?;
+            }
+            list_42.finish();
+        }
+    }
+    #[allow(unused_mut)]
+    let mut scope_44 = writer.prefix("SecondaryPrivateIpAddressCount");
+    if let Some(var_45) = &input.secondary_private_ip_address_count {
+        scope_44.number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_32).into()),
+            ::aws_smithy_types::Number::NegInt((*var_45).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_33 = writer.prefix("Ipv6Prefix");
-    if let Some(var_34) = &input.ipv6_prefixes {
-        if !var_34.is_empty() {
-            let mut list_36 = scope_33.start_list(true, Some("item"));
-            for item_35 in var_34 {
+    let mut scope_46 = writer.prefix("Ipv6Addresses");
+    if let Some(var_47) = &input.ipv6_addresses {
+        if !var_47.is_empty() {
+            let mut list_49 = scope_46.start_list(true, Some("item"));
+            for item_48 in var_47 {
                 #[allow(unused_mut)]
-                let mut entry_37 = list_36.entry();
-                crate::protocol_serde::shape_ipv6_prefix_specification_request::ser_ipv6_prefix_specification_request(entry_37, item_35)?;
+                let mut entry_50 = list_49.entry();
+                crate::protocol_serde::shape_instance_ipv6_address::ser_instance_ipv6_address(entry_50, item_48)?;
             }
-            list_36.finish();
+            list_49.finish();
         }
     }
     #[allow(unused_mut)]
-    let mut scope_38 = writer.prefix("Ipv6PrefixCount");
-    if let Some(var_39) = &input.ipv6_prefix_count {
-        scope_38.number(
+    let mut scope_51 = writer.prefix("Ipv6AddressCount");
+    if let Some(var_52) = &input.ipv6_address_count {
+        scope_51.number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_39).into()),
+            ::aws_smithy_types::Number::NegInt((*var_52).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_40 = writer.prefix("InterfaceType");
-    if let Some(var_41) = &input.interface_type {
-        scope_40.string(var_41.as_str());
-    }
-    #[allow(unused_mut)]
-    let mut scope_42 = writer.prefix("SubnetId");
-    if let Some(var_43) = &input.subnet_id {
-        scope_42.string(var_43);
-    }
-    #[allow(unused_mut)]
-    let mut scope_44 = writer.prefix("TagSpecification");
-    if let Some(var_45) = &input.tag_specifications {
-        if !var_45.is_empty() {
-            let mut list_47 = scope_44.start_list(true, Some("item"));
-            for item_46 in var_45 {
-                #[allow(unused_mut)]
-                let mut entry_48 = list_47.entry();
-                crate::protocol_serde::shape_tag_specification::ser_tag_specification(entry_48, item_46)?;
-            }
-            list_47.finish();
-        }
-    }
-    #[allow(unused_mut)]
-    let mut scope_49 = writer.prefix("ClientToken");
-    if let Some(var_50) = &input.client_token {
-        scope_49.string(var_50);
-    }
-    #[allow(unused_mut)]
-    let mut scope_51 = writer.prefix("EnablePrimaryIpv6");
-    if let Some(var_52) = &input.enable_primary_ipv6 {
-        scope_51.boolean(*var_52);
-    }
-    #[allow(unused_mut)]
-    let mut scope_53 = writer.prefix("ConnectionTrackingSpecification");
-    if let Some(var_54) = &input.connection_tracking_specification {
-        crate::protocol_serde::shape_connection_tracking_specification_request::ser_connection_tracking_specification_request(scope_53, var_54)?;
+    let mut scope_53 = writer.prefix("DryRun");
+    if let Some(var_54) = &input.dry_run {
+        scope_53.boolean(*var_54);
     }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))

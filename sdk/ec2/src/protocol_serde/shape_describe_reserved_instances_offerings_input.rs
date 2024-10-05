@@ -11,79 +11,79 @@ pub fn ser_describe_reserved_instances_offerings_input_input_input(
         scope_1.string(var_2);
     }
     #[allow(unused_mut)]
-    let mut scope_3 = writer.prefix("Filter");
-    if let Some(var_4) = &input.filters {
-        if !var_4.is_empty() {
-            let mut list_6 = scope_3.start_list(true, Some("Filter"));
-            for item_5 in var_4 {
+    let mut scope_3 = writer.prefix("IncludeMarketplace");
+    if let Some(var_4) = &input.include_marketplace {
+        scope_3.boolean(*var_4);
+    }
+    #[allow(unused_mut)]
+    let mut scope_5 = writer.prefix("InstanceType");
+    if let Some(var_6) = &input.instance_type {
+        scope_5.string(var_6.as_str());
+    }
+    #[allow(unused_mut)]
+    let mut scope_7 = writer.prefix("MaxDuration");
+    if let Some(var_8) = &input.max_duration {
+        scope_7.number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_8).into()),
+        );
+    }
+    #[allow(unused_mut)]
+    let mut scope_9 = writer.prefix("MaxInstanceCount");
+    if let Some(var_10) = &input.max_instance_count {
+        scope_9.number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_10).into()),
+        );
+    }
+    #[allow(unused_mut)]
+    let mut scope_11 = writer.prefix("MinDuration");
+    if let Some(var_12) = &input.min_duration {
+        scope_11.number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_12).into()),
+        );
+    }
+    #[allow(unused_mut)]
+    let mut scope_13 = writer.prefix("OfferingClass");
+    if let Some(var_14) = &input.offering_class {
+        scope_13.string(var_14.as_str());
+    }
+    #[allow(unused_mut)]
+    let mut scope_15 = writer.prefix("ProductDescription");
+    if let Some(var_16) = &input.product_description {
+        scope_15.string(var_16.as_str());
+    }
+    #[allow(unused_mut)]
+    let mut scope_17 = writer.prefix("ReservedInstancesOfferingId");
+    if let Some(var_18) = &input.reserved_instances_offering_ids {
+        if !var_18.is_empty() {
+            let mut list_20 = scope_17.start_list(true, None);
+            for item_19 in var_18 {
                 #[allow(unused_mut)]
-                let mut entry_7 = list_6.entry();
-                crate::protocol_serde::shape_filter::ser_filter(entry_7, item_5)?;
+                let mut entry_21 = list_20.entry();
+                entry_21.string(item_19);
             }
-            list_6.finish();
+            list_20.finish();
         }
     }
     #[allow(unused_mut)]
-    let mut scope_8 = writer.prefix("IncludeMarketplace");
-    if let Some(var_9) = &input.include_marketplace {
-        scope_8.boolean(*var_9);
+    let mut scope_22 = writer.prefix("DryRun");
+    if let Some(var_23) = &input.dry_run {
+        scope_22.boolean(*var_23);
     }
     #[allow(unused_mut)]
-    let mut scope_10 = writer.prefix("InstanceType");
-    if let Some(var_11) = &input.instance_type {
-        scope_10.string(var_11.as_str());
-    }
-    #[allow(unused_mut)]
-    let mut scope_12 = writer.prefix("MaxDuration");
-    if let Some(var_13) = &input.max_duration {
-        scope_12.number(
-            #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_13).into()),
-        );
-    }
-    #[allow(unused_mut)]
-    let mut scope_14 = writer.prefix("MaxInstanceCount");
-    if let Some(var_15) = &input.max_instance_count {
-        scope_14.number(
-            #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_15).into()),
-        );
-    }
-    #[allow(unused_mut)]
-    let mut scope_16 = writer.prefix("MinDuration");
-    if let Some(var_17) = &input.min_duration {
-        scope_16.number(
-            #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_17).into()),
-        );
-    }
-    #[allow(unused_mut)]
-    let mut scope_18 = writer.prefix("OfferingClass");
-    if let Some(var_19) = &input.offering_class {
-        scope_18.string(var_19.as_str());
-    }
-    #[allow(unused_mut)]
-    let mut scope_20 = writer.prefix("ProductDescription");
-    if let Some(var_21) = &input.product_description {
-        scope_20.string(var_21.as_str());
-    }
-    #[allow(unused_mut)]
-    let mut scope_22 = writer.prefix("ReservedInstancesOfferingId");
-    if let Some(var_23) = &input.reserved_instances_offering_ids {
-        if !var_23.is_empty() {
-            let mut list_25 = scope_22.start_list(true, None);
-            for item_24 in var_23 {
+    let mut scope_24 = writer.prefix("Filter");
+    if let Some(var_25) = &input.filters {
+        if !var_25.is_empty() {
+            let mut list_27 = scope_24.start_list(true, Some("Filter"));
+            for item_26 in var_25 {
                 #[allow(unused_mut)]
-                let mut entry_26 = list_25.entry();
-                entry_26.string(item_24);
+                let mut entry_28 = list_27.entry();
+                crate::protocol_serde::shape_filter::ser_filter(entry_28, item_26)?;
             }
-            list_25.finish();
+            list_27.finish();
         }
-    }
-    #[allow(unused_mut)]
-    let mut scope_27 = writer.prefix("DryRun");
-    if let Some(var_28) = &input.dry_run {
-        scope_27.boolean(*var_28);
     }
     #[allow(unused_mut)]
     let mut scope_29 = writer.prefix("InstanceTenancy");
@@ -91,12 +91,9 @@ pub fn ser_describe_reserved_instances_offerings_input_input_input(
         scope_29.string(var_30.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_31 = writer.prefix("MaxResults");
-    if let Some(var_32) = &input.max_results {
-        scope_31.number(
-            #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_32).into()),
-        );
+    let mut scope_31 = writer.prefix("OfferingType");
+    if let Some(var_32) = &input.offering_type {
+        scope_31.string(var_32.as_str());
     }
     #[allow(unused_mut)]
     let mut scope_33 = writer.prefix("NextToken");
@@ -104,9 +101,12 @@ pub fn ser_describe_reserved_instances_offerings_input_input_input(
         scope_33.string(var_34);
     }
     #[allow(unused_mut)]
-    let mut scope_35 = writer.prefix("OfferingType");
-    if let Some(var_36) = &input.offering_type {
-        scope_35.string(var_36.as_str());
+    let mut scope_35 = writer.prefix("MaxResults");
+    if let Some(var_36) = &input.max_results {
+        scope_35.number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_36).into()),
+        );
     }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))

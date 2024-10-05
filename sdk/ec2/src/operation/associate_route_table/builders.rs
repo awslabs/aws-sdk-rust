@@ -109,6 +109,20 @@ impl AssociateRouteTableFluentBuilder {
         self.config_override = config_override;
         self
     }
+    /// <p>The ID of the internet gateway or virtual private gateway.</p>
+    pub fn gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.gateway_id(input.into());
+        self
+    }
+    /// <p>The ID of the internet gateway or virtual private gateway.</p>
+    pub fn set_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_gateway_id(input);
+        self
+    }
+    /// <p>The ID of the internet gateway or virtual private gateway.</p>
+    pub fn get_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_gateway_id()
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.inner = self.inner.dry_run(input);
@@ -122,20 +136,6 @@ impl AssociateRouteTableFluentBuilder {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
         self.inner.get_dry_run()
-    }
-    /// <p>The ID of the route table.</p>
-    pub fn route_table_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.inner = self.inner.route_table_id(input.into());
-        self
-    }
-    /// <p>The ID of the route table.</p>
-    pub fn set_route_table_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.inner = self.inner.set_route_table_id(input);
-        self
-    }
-    /// <p>The ID of the route table.</p>
-    pub fn get_route_table_id(&self) -> &::std::option::Option<::std::string::String> {
-        self.inner.get_route_table_id()
     }
     /// <p>The ID of the subnet.</p>
     pub fn subnet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -151,18 +151,18 @@ impl AssociateRouteTableFluentBuilder {
     pub fn get_subnet_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_subnet_id()
     }
-    /// <p>The ID of the internet gateway or virtual private gateway.</p>
-    pub fn gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.inner = self.inner.gateway_id(input.into());
+    /// <p>The ID of the route table.</p>
+    pub fn route_table_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.route_table_id(input.into());
         self
     }
-    /// <p>The ID of the internet gateway or virtual private gateway.</p>
-    pub fn set_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.inner = self.inner.set_gateway_id(input);
+    /// <p>The ID of the route table.</p>
+    pub fn set_route_table_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_route_table_id(input);
         self
     }
-    /// <p>The ID of the internet gateway or virtual private gateway.</p>
-    pub fn get_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
-        self.inner.get_gateway_id()
+    /// <p>The ID of the route table.</p>
+    pub fn get_route_table_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_route_table_id()
     }
 }

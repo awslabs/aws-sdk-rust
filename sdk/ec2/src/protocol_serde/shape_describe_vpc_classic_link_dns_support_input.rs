@@ -6,30 +6,30 @@ pub fn ser_describe_vpc_classic_link_dns_support_input_input_input(
     #[allow(unused_mut)]
     let mut writer = ::aws_smithy_query::QueryWriter::new(&mut out, "DescribeVpcClassicLinkDnsSupport", "2016-11-15");
     #[allow(unused_mut)]
-    let mut scope_1 = writer.prefix("MaxResults");
-    if let Some(var_2) = &input.max_results {
-        scope_1.number(
+    let mut scope_1 = writer.prefix("VpcIds");
+    if let Some(var_2) = &input.vpc_ids {
+        if !var_2.is_empty() {
+            let mut list_4 = scope_1.start_list(true, Some("VpcId"));
+            for item_3 in var_2 {
+                #[allow(unused_mut)]
+                let mut entry_5 = list_4.entry();
+                entry_5.string(item_3);
+            }
+            list_4.finish();
+        }
+    }
+    #[allow(unused_mut)]
+    let mut scope_6 = writer.prefix("MaxResults");
+    if let Some(var_7) = &input.max_results {
+        scope_6.number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_2).into()),
+            ::aws_smithy_types::Number::NegInt((*var_7).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_3 = writer.prefix("NextToken");
-    if let Some(var_4) = &input.next_token {
-        scope_3.string(var_4);
-    }
-    #[allow(unused_mut)]
-    let mut scope_5 = writer.prefix("VpcIds");
-    if let Some(var_6) = &input.vpc_ids {
-        if !var_6.is_empty() {
-            let mut list_8 = scope_5.start_list(true, Some("VpcId"));
-            for item_7 in var_6 {
-                #[allow(unused_mut)]
-                let mut entry_9 = list_8.entry();
-                entry_9.string(item_7);
-            }
-            list_8.finish();
-        }
+    let mut scope_8 = writer.prefix("NextToken");
+    if let Some(var_9) = &input.next_token {
+        scope_8.string(var_9);
     }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))

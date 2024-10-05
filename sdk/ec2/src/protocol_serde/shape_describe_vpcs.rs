@@ -48,18 +48,8 @@ pub fn de_describe_vpcs(
     }
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
-            s if s.matches("vpcSet") /* Vpcs com.amazonaws.ec2.synthetic#DescribeVpcsOutput$Vpcs */ =>  {
-                let var_1 =
-                    Some(
-                        crate::protocol_serde::shape_vpc_list::de_vpc_list(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_vpcs(var_1);
-            }
-            ,
             s if s.matches("nextToken") /* NextToken com.amazonaws.ec2.synthetic#DescribeVpcsOutput$NextToken */ =>  {
-                let var_2 =
+                let var_1 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -68,7 +58,17 @@ pub fn de_describe_vpcs(
                         ?
                     )
                 ;
-                builder = builder.set_next_token(var_2);
+                builder = builder.set_next_token(var_1);
+            }
+            ,
+            s if s.matches("vpcSet") /* Vpcs com.amazonaws.ec2.synthetic#DescribeVpcsOutput$Vpcs */ =>  {
+                let var_2 =
+                    Some(
+                        crate::protocol_serde::shape_vpc_list::de_vpc_list(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_vpcs(var_2);
             }
             ,
             _ => {}

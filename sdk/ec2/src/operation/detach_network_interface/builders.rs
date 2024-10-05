@@ -108,20 +108,6 @@ impl DetachNetworkInterfaceFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The ID of the attachment.</p>
-    pub fn attachment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.inner = self.inner.attachment_id(input.into());
-        self
-    }
-    /// <p>The ID of the attachment.</p>
-    pub fn set_attachment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.inner = self.inner.set_attachment_id(input);
-        self
-    }
-    /// <p>The ID of the attachment.</p>
-    pub fn get_attachment_id(&self) -> &::std::option::Option<::std::string::String> {
-        self.inner.get_attachment_id()
-    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.inner = self.inner.dry_run(input);
@@ -135,6 +121,20 @@ impl DetachNetworkInterfaceFluentBuilder {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
         self.inner.get_dry_run()
+    }
+    /// <p>The ID of the attachment.</p>
+    pub fn attachment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.attachment_id(input.into());
+        self
+    }
+    /// <p>The ID of the attachment.</p>
+    pub fn set_attachment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_attachment_id(input);
+        self
+    }
+    /// <p>The ID of the attachment.</p>
+    pub fn get_attachment_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_attachment_id()
     }
     /// <p>Specifies whether to force a detachment.</p><note>
     /// <ul>

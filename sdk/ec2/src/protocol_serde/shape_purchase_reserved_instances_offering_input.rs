@@ -19,19 +19,19 @@ pub fn ser_purchase_reserved_instances_offering_input_input_input(
         scope_3.string(var_4);
     }
     #[allow(unused_mut)]
-    let mut scope_5 = writer.prefix("DryRun");
-    if let Some(var_6) = &input.dry_run {
-        scope_5.boolean(*var_6);
+    let mut scope_5 = writer.prefix("PurchaseTime");
+    if let Some(var_6) = &input.purchase_time {
+        scope_5.date_time(var_6, ::aws_smithy_types::date_time::Format::DateTime)?;
     }
     #[allow(unused_mut)]
-    let mut scope_7 = writer.prefix("LimitPrice");
-    if let Some(var_8) = &input.limit_price {
-        crate::protocol_serde::shape_reserved_instance_limit_price::ser_reserved_instance_limit_price(scope_7, var_8)?;
+    let mut scope_7 = writer.prefix("DryRun");
+    if let Some(var_8) = &input.dry_run {
+        scope_7.boolean(*var_8);
     }
     #[allow(unused_mut)]
-    let mut scope_9 = writer.prefix("PurchaseTime");
-    if let Some(var_10) = &input.purchase_time {
-        scope_9.date_time(var_10, ::aws_smithy_types::date_time::Format::DateTime)?;
+    let mut scope_9 = writer.prefix("LimitPrice");
+    if let Some(var_10) = &input.limit_price {
+        crate::protocol_serde::shape_reserved_instance_limit_price::ser_reserved_instance_limit_price(scope_9, var_10)?;
     }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))

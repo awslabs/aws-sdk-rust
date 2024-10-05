@@ -50,18 +50,8 @@ pub fn de_describe_instances(
     }
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
-            s if s.matches("reservationSet") /* Reservations com.amazonaws.ec2.synthetic#DescribeInstancesOutput$Reservations */ =>  {
-                let var_1 =
-                    Some(
-                        crate::protocol_serde::shape_reservation_list::de_reservation_list(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_reservations(var_1);
-            }
-            ,
             s if s.matches("nextToken") /* NextToken com.amazonaws.ec2.synthetic#DescribeInstancesOutput$NextToken */ =>  {
-                let var_2 =
+                let var_1 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -70,7 +60,17 @@ pub fn de_describe_instances(
                         ?
                     )
                 ;
-                builder = builder.set_next_token(var_2);
+                builder = builder.set_next_token(var_1);
+            }
+            ,
+            s if s.matches("reservationSet") /* Reservations com.amazonaws.ec2.synthetic#DescribeInstancesOutput$Reservations */ =>  {
+                let var_2 =
+                    Some(
+                        crate::protocol_serde::shape_reservation_list::de_reservation_list(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_reservations(var_2);
             }
             ,
             _ => {}

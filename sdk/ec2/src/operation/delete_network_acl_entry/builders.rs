@@ -122,20 +122,6 @@ impl DeleteNetworkAclEntryFluentBuilder {
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
         self.inner.get_dry_run()
     }
-    /// <p>Indicates whether the rule is an egress rule.</p>
-    pub fn egress(mut self, input: bool) -> Self {
-        self.inner = self.inner.egress(input);
-        self
-    }
-    /// <p>Indicates whether the rule is an egress rule.</p>
-    pub fn set_egress(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.inner = self.inner.set_egress(input);
-        self
-    }
-    /// <p>Indicates whether the rule is an egress rule.</p>
-    pub fn get_egress(&self) -> &::std::option::Option<bool> {
-        self.inner.get_egress()
-    }
     /// <p>The ID of the network ACL.</p>
     pub fn network_acl_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.network_acl_id(input.into());
@@ -163,5 +149,19 @@ impl DeleteNetworkAclEntryFluentBuilder {
     /// <p>The rule number of the entry to delete.</p>
     pub fn get_rule_number(&self) -> &::std::option::Option<i32> {
         self.inner.get_rule_number()
+    }
+    /// <p>Indicates whether the rule is an egress rule.</p>
+    pub fn egress(mut self, input: bool) -> Self {
+        self.inner = self.inner.egress(input);
+        self
+    }
+    /// <p>Indicates whether the rule is an egress rule.</p>
+    pub fn set_egress(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_egress(input);
+        self
+    }
+    /// <p>Indicates whether the rule is an egress rule.</p>
+    pub fn get_egress(&self) -> &::std::option::Option<bool> {
+        self.inner.get_egress()
     }
 }

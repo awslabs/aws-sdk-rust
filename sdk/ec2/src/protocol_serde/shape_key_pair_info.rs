@@ -20,34 +20,8 @@ pub fn de_key_pair_info(
                 builder = builder.set_key_pair_id(var_1);
             }
             ,
-            s if s.matches("keyFingerprint") /* KeyFingerprint com.amazonaws.ec2#KeyPairInfo$KeyFingerprint */ =>  {
-                let var_2 =
-                    Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_key_fingerprint(var_2);
-            }
-            ,
-            s if s.matches("keyName") /* KeyName com.amazonaws.ec2#KeyPairInfo$KeyName */ =>  {
-                let var_3 =
-                    Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_key_name(var_3);
-            }
-            ,
             s if s.matches("keyType") /* KeyType com.amazonaws.ec2#KeyPairInfo$KeyType */ =>  {
-                let var_4 =
+                let var_2 =
                     Some(
                         Result::<crate::types::KeyType, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::KeyType::from(
@@ -57,21 +31,21 @@ pub fn de_key_pair_info(
                         ?
                     )
                 ;
-                builder = builder.set_key_type(var_4);
+                builder = builder.set_key_type(var_2);
             }
             ,
             s if s.matches("tagSet") /* Tags com.amazonaws.ec2#KeyPairInfo$Tags */ =>  {
-                let var_5 =
+                let var_3 =
                     Some(
                         crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_tags(var_5);
+                builder = builder.set_tags(var_3);
             }
             ,
             s if s.matches("publicKey") /* PublicKey com.amazonaws.ec2#KeyPairInfo$PublicKey */ =>  {
-                let var_6 =
+                let var_4 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -80,11 +54,11 @@ pub fn de_key_pair_info(
                         ?
                     )
                 ;
-                builder = builder.set_public_key(var_6);
+                builder = builder.set_public_key(var_4);
             }
             ,
             s if s.matches("createTime") /* CreateTime com.amazonaws.ec2#KeyPairInfo$CreateTime */ =>  {
-                let var_7 =
+                let var_5 =
                     Some(
                         ::aws_smithy_types::DateTime::from_str(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -94,7 +68,33 @@ pub fn de_key_pair_info(
                         ?
                     )
                 ;
-                builder = builder.set_create_time(var_7);
+                builder = builder.set_create_time(var_5);
+            }
+            ,
+            s if s.matches("keyName") /* KeyName com.amazonaws.ec2#KeyPairInfo$KeyName */ =>  {
+                let var_6 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_key_name(var_6);
+            }
+            ,
+            s if s.matches("keyFingerprint") /* KeyFingerprint com.amazonaws.ec2#KeyPairInfo$KeyFingerprint */ =>  {
+                let var_7 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_key_fingerprint(var_7);
             }
             ,
             _ => {}

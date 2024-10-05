@@ -113,19 +113,38 @@ impl AssignPrivateIpAddressesFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>Indicates whether to allow an IP address that is already assigned to another network interface or instance to be reassigned to the specified network interface.</p>
-    pub fn allow_reassignment(mut self, input: bool) -> Self {
-        self.inner = self.inner.allow_reassignment(input);
+    ///
+    /// Appends an item to `Ipv4Prefixes`.
+    ///
+    /// To override the contents of this collection use [`set_ipv4_prefixes`](Self::set_ipv4_prefixes).
+    ///
+    /// <p>One or more IPv4 prefixes assigned to the network interface. You cannot use this option if you use the <code>Ipv4PrefixCount</code> option.</p>
+    pub fn ipv4_prefixes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.ipv4_prefixes(input.into());
         self
     }
-    /// <p>Indicates whether to allow an IP address that is already assigned to another network interface or instance to be reassigned to the specified network interface.</p>
-    pub fn set_allow_reassignment(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.inner = self.inner.set_allow_reassignment(input);
+    /// <p>One or more IPv4 prefixes assigned to the network interface. You cannot use this option if you use the <code>Ipv4PrefixCount</code> option.</p>
+    pub fn set_ipv4_prefixes(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.inner = self.inner.set_ipv4_prefixes(input);
         self
     }
-    /// <p>Indicates whether to allow an IP address that is already assigned to another network interface or instance to be reassigned to the specified network interface.</p>
-    pub fn get_allow_reassignment(&self) -> &::std::option::Option<bool> {
-        self.inner.get_allow_reassignment()
+    /// <p>One or more IPv4 prefixes assigned to the network interface. You cannot use this option if you use the <code>Ipv4PrefixCount</code> option.</p>
+    pub fn get_ipv4_prefixes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_ipv4_prefixes()
+    }
+    /// <p>The number of IPv4 prefixes that Amazon Web Services automatically assigns to the network interface. You cannot use this option if you use the <code>Ipv4 Prefixes</code> option.</p>
+    pub fn ipv4_prefix_count(mut self, input: i32) -> Self {
+        self.inner = self.inner.ipv4_prefix_count(input);
+        self
+    }
+    /// <p>The number of IPv4 prefixes that Amazon Web Services automatically assigns to the network interface. You cannot use this option if you use the <code>Ipv4 Prefixes</code> option.</p>
+    pub fn set_ipv4_prefix_count(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.inner = self.inner.set_ipv4_prefix_count(input);
+        self
+    }
+    /// <p>The number of IPv4 prefixes that Amazon Web Services automatically assigns to the network interface. You cannot use this option if you use the <code>Ipv4 Prefixes</code> option.</p>
+    pub fn get_ipv4_prefix_count(&self) -> &::std::option::Option<i32> {
+        self.inner.get_ipv4_prefix_count()
     }
     /// <p>The ID of the network interface.</p>
     pub fn network_interface_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -177,37 +196,18 @@ impl AssignPrivateIpAddressesFluentBuilder {
     pub fn get_secondary_private_ip_address_count(&self) -> &::std::option::Option<i32> {
         self.inner.get_secondary_private_ip_address_count()
     }
-    ///
-    /// Appends an item to `Ipv4Prefixes`.
-    ///
-    /// To override the contents of this collection use [`set_ipv4_prefixes`](Self::set_ipv4_prefixes).
-    ///
-    /// <p>One or more IPv4 prefixes assigned to the network interface. You cannot use this option if you use the <code>Ipv4PrefixCount</code> option.</p>
-    pub fn ipv4_prefixes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.inner = self.inner.ipv4_prefixes(input.into());
+    /// <p>Indicates whether to allow an IP address that is already assigned to another network interface or instance to be reassigned to the specified network interface.</p>
+    pub fn allow_reassignment(mut self, input: bool) -> Self {
+        self.inner = self.inner.allow_reassignment(input);
         self
     }
-    /// <p>One or more IPv4 prefixes assigned to the network interface. You cannot use this option if you use the <code>Ipv4PrefixCount</code> option.</p>
-    pub fn set_ipv4_prefixes(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.inner = self.inner.set_ipv4_prefixes(input);
+    /// <p>Indicates whether to allow an IP address that is already assigned to another network interface or instance to be reassigned to the specified network interface.</p>
+    pub fn set_allow_reassignment(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_allow_reassignment(input);
         self
     }
-    /// <p>One or more IPv4 prefixes assigned to the network interface. You cannot use this option if you use the <code>Ipv4PrefixCount</code> option.</p>
-    pub fn get_ipv4_prefixes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
-        self.inner.get_ipv4_prefixes()
-    }
-    /// <p>The number of IPv4 prefixes that Amazon Web Services automatically assigns to the network interface. You cannot use this option if you use the <code>Ipv4 Prefixes</code> option.</p>
-    pub fn ipv4_prefix_count(mut self, input: i32) -> Self {
-        self.inner = self.inner.ipv4_prefix_count(input);
-        self
-    }
-    /// <p>The number of IPv4 prefixes that Amazon Web Services automatically assigns to the network interface. You cannot use this option if you use the <code>Ipv4 Prefixes</code> option.</p>
-    pub fn set_ipv4_prefix_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.inner = self.inner.set_ipv4_prefix_count(input);
-        self
-    }
-    /// <p>The number of IPv4 prefixes that Amazon Web Services automatically assigns to the network interface. You cannot use this option if you use the <code>Ipv4 Prefixes</code> option.</p>
-    pub fn get_ipv4_prefix_count(&self) -> &::std::option::Option<i32> {
-        self.inner.get_ipv4_prefix_count()
+    /// <p>Indicates whether to allow an IP address that is already assigned to another network interface or instance to be reassigned to the specified network interface.</p>
+    pub fn get_allow_reassignment(&self) -> &::std::option::Option<bool> {
+        self.inner.get_allow_reassignment()
     }
 }

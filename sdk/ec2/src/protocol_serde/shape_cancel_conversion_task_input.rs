@@ -6,14 +6,14 @@ pub fn ser_cancel_conversion_task_input_input_input(
     #[allow(unused_mut)]
     let mut writer = ::aws_smithy_query::QueryWriter::new(&mut out, "CancelConversionTask", "2016-11-15");
     #[allow(unused_mut)]
-    let mut scope_1 = writer.prefix("ConversionTaskId");
-    if let Some(var_2) = &input.conversion_task_id {
-        scope_1.string(var_2);
+    let mut scope_1 = writer.prefix("DryRun");
+    if let Some(var_2) = &input.dry_run {
+        scope_1.boolean(*var_2);
     }
     #[allow(unused_mut)]
-    let mut scope_3 = writer.prefix("DryRun");
-    if let Some(var_4) = &input.dry_run {
-        scope_3.boolean(*var_4);
+    let mut scope_3 = writer.prefix("ConversionTaskId");
+    if let Some(var_4) = &input.conversion_task_id {
+        scope_3.string(var_4);
     }
     #[allow(unused_mut)]
     let mut scope_5 = writer.prefix("ReasonMessage");

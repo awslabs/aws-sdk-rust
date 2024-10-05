@@ -3,26 +3,18 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteRouteInput {
-    /// <p>The IPv4 CIDR range for the route. The value you specify must match the CIDR for the route exactly.</p>
-    pub destination_cidr_block: ::std::option::Option<::std::string::String>,
-    /// <p>The IPv6 CIDR range for the route. The value you specify must match the CIDR for the route exactly.</p>
-    pub destination_ipv6_cidr_block: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the prefix list for the route.</p>
     pub destination_prefix_list_id: ::std::option::Option<::std::string::String>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The ID of the route table.</p>
     pub route_table_id: ::std::option::Option<::std::string::String>,
+    /// <p>The IPv4 CIDR range for the route. The value you specify must match the CIDR for the route exactly.</p>
+    pub destination_cidr_block: ::std::option::Option<::std::string::String>,
+    /// <p>The IPv6 CIDR range for the route. The value you specify must match the CIDR for the route exactly.</p>
+    pub destination_ipv6_cidr_block: ::std::option::Option<::std::string::String>,
 }
 impl DeleteRouteInput {
-    /// <p>The IPv4 CIDR range for the route. The value you specify must match the CIDR for the route exactly.</p>
-    pub fn destination_cidr_block(&self) -> ::std::option::Option<&str> {
-        self.destination_cidr_block.as_deref()
-    }
-    /// <p>The IPv6 CIDR range for the route. The value you specify must match the CIDR for the route exactly.</p>
-    pub fn destination_ipv6_cidr_block(&self) -> ::std::option::Option<&str> {
-        self.destination_ipv6_cidr_block.as_deref()
-    }
     /// <p>The ID of the prefix list for the route.</p>
     pub fn destination_prefix_list_id(&self) -> ::std::option::Option<&str> {
         self.destination_prefix_list_id.as_deref()
@@ -34,6 +26,14 @@ impl DeleteRouteInput {
     /// <p>The ID of the route table.</p>
     pub fn route_table_id(&self) -> ::std::option::Option<&str> {
         self.route_table_id.as_deref()
+    }
+    /// <p>The IPv4 CIDR range for the route. The value you specify must match the CIDR for the route exactly.</p>
+    pub fn destination_cidr_block(&self) -> ::std::option::Option<&str> {
+        self.destination_cidr_block.as_deref()
+    }
+    /// <p>The IPv6 CIDR range for the route. The value you specify must match the CIDR for the route exactly.</p>
+    pub fn destination_ipv6_cidr_block(&self) -> ::std::option::Option<&str> {
+        self.destination_ipv6_cidr_block.as_deref()
     }
 }
 impl DeleteRouteInput {
@@ -47,41 +47,13 @@ impl DeleteRouteInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct DeleteRouteInputBuilder {
-    pub(crate) destination_cidr_block: ::std::option::Option<::std::string::String>,
-    pub(crate) destination_ipv6_cidr_block: ::std::option::Option<::std::string::String>,
     pub(crate) destination_prefix_list_id: ::std::option::Option<::std::string::String>,
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) route_table_id: ::std::option::Option<::std::string::String>,
+    pub(crate) destination_cidr_block: ::std::option::Option<::std::string::String>,
+    pub(crate) destination_ipv6_cidr_block: ::std::option::Option<::std::string::String>,
 }
 impl DeleteRouteInputBuilder {
-    /// <p>The IPv4 CIDR range for the route. The value you specify must match the CIDR for the route exactly.</p>
-    pub fn destination_cidr_block(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.destination_cidr_block = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>The IPv4 CIDR range for the route. The value you specify must match the CIDR for the route exactly.</p>
-    pub fn set_destination_cidr_block(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.destination_cidr_block = input;
-        self
-    }
-    /// <p>The IPv4 CIDR range for the route. The value you specify must match the CIDR for the route exactly.</p>
-    pub fn get_destination_cidr_block(&self) -> &::std::option::Option<::std::string::String> {
-        &self.destination_cidr_block
-    }
-    /// <p>The IPv6 CIDR range for the route. The value you specify must match the CIDR for the route exactly.</p>
-    pub fn destination_ipv6_cidr_block(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.destination_ipv6_cidr_block = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>The IPv6 CIDR range for the route. The value you specify must match the CIDR for the route exactly.</p>
-    pub fn set_destination_ipv6_cidr_block(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.destination_ipv6_cidr_block = input;
-        self
-    }
-    /// <p>The IPv6 CIDR range for the route. The value you specify must match the CIDR for the route exactly.</p>
-    pub fn get_destination_ipv6_cidr_block(&self) -> &::std::option::Option<::std::string::String> {
-        &self.destination_ipv6_cidr_block
-    }
     /// <p>The ID of the prefix list for the route.</p>
     pub fn destination_prefix_list_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_prefix_list_id = ::std::option::Option::Some(input.into());
@@ -125,14 +97,42 @@ impl DeleteRouteInputBuilder {
     pub fn get_route_table_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.route_table_id
     }
+    /// <p>The IPv4 CIDR range for the route. The value you specify must match the CIDR for the route exactly.</p>
+    pub fn destination_cidr_block(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.destination_cidr_block = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The IPv4 CIDR range for the route. The value you specify must match the CIDR for the route exactly.</p>
+    pub fn set_destination_cidr_block(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.destination_cidr_block = input;
+        self
+    }
+    /// <p>The IPv4 CIDR range for the route. The value you specify must match the CIDR for the route exactly.</p>
+    pub fn get_destination_cidr_block(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination_cidr_block
+    }
+    /// <p>The IPv6 CIDR range for the route. The value you specify must match the CIDR for the route exactly.</p>
+    pub fn destination_ipv6_cidr_block(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.destination_ipv6_cidr_block = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The IPv6 CIDR range for the route. The value you specify must match the CIDR for the route exactly.</p>
+    pub fn set_destination_ipv6_cidr_block(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.destination_ipv6_cidr_block = input;
+        self
+    }
+    /// <p>The IPv6 CIDR range for the route. The value you specify must match the CIDR for the route exactly.</p>
+    pub fn get_destination_ipv6_cidr_block(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination_ipv6_cidr_block
+    }
     /// Consumes the builder and constructs a [`DeleteRouteInput`](crate::operation::delete_route::DeleteRouteInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::delete_route::DeleteRouteInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_route::DeleteRouteInput {
-            destination_cidr_block: self.destination_cidr_block,
-            destination_ipv6_cidr_block: self.destination_ipv6_cidr_block,
             destination_prefix_list_id: self.destination_prefix_list_id,
             dry_run: self.dry_run,
             route_table_id: self.route_table_id,
+            destination_cidr_block: self.destination_cidr_block,
+            destination_ipv6_cidr_block: self.destination_ipv6_cidr_block,
         })
     }
 }

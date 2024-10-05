@@ -111,64 +111,47 @@ impl CreateImageFluentBuilder {
         self
     }
     ///
-    /// Appends an item to `BlockDeviceMappings`.
+    /// Appends an item to `TagSpecifications`.
     ///
-    /// To override the contents of this collection use [`set_block_device_mappings`](Self::set_block_device_mappings).
+    /// To override the contents of this collection use [`set_tag_specifications`](Self::set_tag_specifications).
     ///
-    /// <p>The block device mappings.</p>
-    /// <p>When using the CreateImage action:</p>
+    /// <p>The tags to apply to the AMI and snapshots on creation. You can tag the AMI, the snapshots, or both.</p>
     /// <ul>
     /// <li>
-    /// <p>You can't change the volume size using the VolumeSize parameter. If you want a different volume size, you must first change the volume size of the source instance.</p></li>
+    /// <p>To tag the AMI, the value for <code>ResourceType</code> must be <code>image</code>.</p></li>
     /// <li>
-    /// <p>You can't modify the encryption status of existing volumes or snapshots. To create an AMI with volumes or snapshots that have a different encryption status (for example, where the source volume and snapshots are unencrypted, and you want to create an AMI with encrypted volumes or snapshots), use the <code>CopyImage</code> action.</p></li>
-    /// <li>
-    /// <p>The only option that can be changed for existing mappings or snapshots is <code>DeleteOnTermination</code>.</p></li>
+    /// <p>To tag the snapshots that are created of the root volume and of other Amazon EBS volumes that are attached to the instance, the value for <code>ResourceType</code> must be <code>snapshot</code>. The same tag is applied to all of the snapshots that are created.</p></li>
     /// </ul>
-    pub fn block_device_mappings(mut self, input: crate::types::BlockDeviceMapping) -> Self {
-        self.inner = self.inner.block_device_mappings(input);
+    /// <p>If you specify other values for <code>ResourceType</code>, the request fails.</p>
+    /// <p>To tag an AMI or snapshot after it has been created, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
+    pub fn tag_specifications(mut self, input: crate::types::TagSpecification) -> Self {
+        self.inner = self.inner.tag_specifications(input);
         self
     }
-    /// <p>The block device mappings.</p>
-    /// <p>When using the CreateImage action:</p>
+    /// <p>The tags to apply to the AMI and snapshots on creation. You can tag the AMI, the snapshots, or both.</p>
     /// <ul>
     /// <li>
-    /// <p>You can't change the volume size using the VolumeSize parameter. If you want a different volume size, you must first change the volume size of the source instance.</p></li>
+    /// <p>To tag the AMI, the value for <code>ResourceType</code> must be <code>image</code>.</p></li>
     /// <li>
-    /// <p>You can't modify the encryption status of existing volumes or snapshots. To create an AMI with volumes or snapshots that have a different encryption status (for example, where the source volume and snapshots are unencrypted, and you want to create an AMI with encrypted volumes or snapshots), use the <code>CopyImage</code> action.</p></li>
-    /// <li>
-    /// <p>The only option that can be changed for existing mappings or snapshots is <code>DeleteOnTermination</code>.</p></li>
+    /// <p>To tag the snapshots that are created of the root volume and of other Amazon EBS volumes that are attached to the instance, the value for <code>ResourceType</code> must be <code>snapshot</code>. The same tag is applied to all of the snapshots that are created.</p></li>
     /// </ul>
-    pub fn set_block_device_mappings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BlockDeviceMapping>>) -> Self {
-        self.inner = self.inner.set_block_device_mappings(input);
+    /// <p>If you specify other values for <code>ResourceType</code>, the request fails.</p>
+    /// <p>To tag an AMI or snapshot after it has been created, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
+    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>) -> Self {
+        self.inner = self.inner.set_tag_specifications(input);
         self
     }
-    /// <p>The block device mappings.</p>
-    /// <p>When using the CreateImage action:</p>
+    /// <p>The tags to apply to the AMI and snapshots on creation. You can tag the AMI, the snapshots, or both.</p>
     /// <ul>
     /// <li>
-    /// <p>You can't change the volume size using the VolumeSize parameter. If you want a different volume size, you must first change the volume size of the source instance.</p></li>
+    /// <p>To tag the AMI, the value for <code>ResourceType</code> must be <code>image</code>.</p></li>
     /// <li>
-    /// <p>You can't modify the encryption status of existing volumes or snapshots. To create an AMI with volumes or snapshots that have a different encryption status (for example, where the source volume and snapshots are unencrypted, and you want to create an AMI with encrypted volumes or snapshots), use the <code>CopyImage</code> action.</p></li>
-    /// <li>
-    /// <p>The only option that can be changed for existing mappings or snapshots is <code>DeleteOnTermination</code>.</p></li>
+    /// <p>To tag the snapshots that are created of the root volume and of other Amazon EBS volumes that are attached to the instance, the value for <code>ResourceType</code> must be <code>snapshot</code>. The same tag is applied to all of the snapshots that are created.</p></li>
     /// </ul>
-    pub fn get_block_device_mappings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BlockDeviceMapping>> {
-        self.inner.get_block_device_mappings()
-    }
-    /// <p>A description for the new image.</p>
-    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.inner = self.inner.description(input.into());
-        self
-    }
-    /// <p>A description for the new image.</p>
-    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.inner = self.inner.set_description(input);
-        self
-    }
-    /// <p>A description for the new image.</p>
-    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
-        self.inner.get_description()
+    /// <p>If you specify other values for <code>ResourceType</code>, the request fails.</p>
+    /// <p>To tag an AMI or snapshot after it has been created, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
+    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+        self.inner.get_tag_specifications()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
@@ -215,6 +198,20 @@ impl CreateImageFluentBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
+    /// <p>A description for the new image.</p>
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.description(input.into());
+        self
+    }
+    /// <p>A description for the new image.</p>
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_description(input);
+        self
+    }
+    /// <p>A description for the new image.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
+    }
     /// <p>Indicates whether or not the instance should be automatically rebooted before creating the image. Specify one of the following values:</p>
     /// <ul>
     /// <li>
@@ -251,46 +248,49 @@ impl CreateImageFluentBuilder {
         self.inner.get_no_reboot()
     }
     ///
-    /// Appends an item to `TagSpecifications`.
+    /// Appends an item to `BlockDeviceMappings`.
     ///
-    /// To override the contents of this collection use [`set_tag_specifications`](Self::set_tag_specifications).
+    /// To override the contents of this collection use [`set_block_device_mappings`](Self::set_block_device_mappings).
     ///
-    /// <p>The tags to apply to the AMI and snapshots on creation. You can tag the AMI, the snapshots, or both.</p>
+    /// <p>The block device mappings.</p>
+    /// <p>When using the CreateImage action:</p>
     /// <ul>
     /// <li>
-    /// <p>To tag the AMI, the value for <code>ResourceType</code> must be <code>image</code>.</p></li>
+    /// <p>You can't change the volume size using the VolumeSize parameter. If you want a different volume size, you must first change the volume size of the source instance.</p></li>
     /// <li>
-    /// <p>To tag the snapshots that are created of the root volume and of other Amazon EBS volumes that are attached to the instance, the value for <code>ResourceType</code> must be <code>snapshot</code>. The same tag is applied to all of the snapshots that are created.</p></li>
+    /// <p>You can't modify the encryption status of existing volumes or snapshots. To create an AMI with volumes or snapshots that have a different encryption status (for example, where the source volume and snapshots are unencrypted, and you want to create an AMI with encrypted volumes or snapshots), use the <code>CopyImage</code> action.</p></li>
+    /// <li>
+    /// <p>The only option that can be changed for existing mappings or snapshots is <code>DeleteOnTermination</code>.</p></li>
     /// </ul>
-    /// <p>If you specify other values for <code>ResourceType</code>, the request fails.</p>
-    /// <p>To tag an AMI or snapshot after it has been created, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
-    pub fn tag_specifications(mut self, input: crate::types::TagSpecification) -> Self {
-        self.inner = self.inner.tag_specifications(input);
+    pub fn block_device_mappings(mut self, input: crate::types::BlockDeviceMapping) -> Self {
+        self.inner = self.inner.block_device_mappings(input);
         self
     }
-    /// <p>The tags to apply to the AMI and snapshots on creation. You can tag the AMI, the snapshots, or both.</p>
+    /// <p>The block device mappings.</p>
+    /// <p>When using the CreateImage action:</p>
     /// <ul>
     /// <li>
-    /// <p>To tag the AMI, the value for <code>ResourceType</code> must be <code>image</code>.</p></li>
+    /// <p>You can't change the volume size using the VolumeSize parameter. If you want a different volume size, you must first change the volume size of the source instance.</p></li>
     /// <li>
-    /// <p>To tag the snapshots that are created of the root volume and of other Amazon EBS volumes that are attached to the instance, the value for <code>ResourceType</code> must be <code>snapshot</code>. The same tag is applied to all of the snapshots that are created.</p></li>
+    /// <p>You can't modify the encryption status of existing volumes or snapshots. To create an AMI with volumes or snapshots that have a different encryption status (for example, where the source volume and snapshots are unencrypted, and you want to create an AMI with encrypted volumes or snapshots), use the <code>CopyImage</code> action.</p></li>
+    /// <li>
+    /// <p>The only option that can be changed for existing mappings or snapshots is <code>DeleteOnTermination</code>.</p></li>
     /// </ul>
-    /// <p>If you specify other values for <code>ResourceType</code>, the request fails.</p>
-    /// <p>To tag an AMI or snapshot after it has been created, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
-    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>) -> Self {
-        self.inner = self.inner.set_tag_specifications(input);
+    pub fn set_block_device_mappings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BlockDeviceMapping>>) -> Self {
+        self.inner = self.inner.set_block_device_mappings(input);
         self
     }
-    /// <p>The tags to apply to the AMI and snapshots on creation. You can tag the AMI, the snapshots, or both.</p>
+    /// <p>The block device mappings.</p>
+    /// <p>When using the CreateImage action:</p>
     /// <ul>
     /// <li>
-    /// <p>To tag the AMI, the value for <code>ResourceType</code> must be <code>image</code>.</p></li>
+    /// <p>You can't change the volume size using the VolumeSize parameter. If you want a different volume size, you must first change the volume size of the source instance.</p></li>
     /// <li>
-    /// <p>To tag the snapshots that are created of the root volume and of other Amazon EBS volumes that are attached to the instance, the value for <code>ResourceType</code> must be <code>snapshot</code>. The same tag is applied to all of the snapshots that are created.</p></li>
+    /// <p>You can't modify the encryption status of existing volumes or snapshots. To create an AMI with volumes or snapshots that have a different encryption status (for example, where the source volume and snapshots are unencrypted, and you want to create an AMI with encrypted volumes or snapshots), use the <code>CopyImage</code> action.</p></li>
+    /// <li>
+    /// <p>The only option that can be changed for existing mappings or snapshots is <code>DeleteOnTermination</code>.</p></li>
     /// </ul>
-    /// <p>If you specify other values for <code>ResourceType</code>, the request fails.</p>
-    /// <p>To tag an AMI or snapshot after it has been created, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
-    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
-        self.inner.get_tag_specifications()
+    pub fn get_block_device_mappings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BlockDeviceMapping>> {
+        self.inner.get_block_device_mappings()
     }
 }

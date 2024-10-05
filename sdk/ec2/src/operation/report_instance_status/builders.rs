@@ -109,20 +109,6 @@ impl ReportInstanceStatusFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>Descriptive text about the health state of your instance.</p>
-    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.inner = self.inner.description(input.into());
-        self
-    }
-    /// <p>Descriptive text about the health state of your instance.</p>
-    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.inner = self.inner.set_description(input);
-        self
-    }
-    /// <p>Descriptive text about the health state of your instance.</p>
-    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
-        self.inner.get_description()
-    }
     /// <p>Checks whether you have the required permissions for the operation, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.inner = self.inner.dry_run(input);
@@ -136,20 +122,6 @@ impl ReportInstanceStatusFluentBuilder {
     /// <p>Checks whether you have the required permissions for the operation, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
         self.inner.get_dry_run()
-    }
-    /// <p>The time at which the reported instance health state ended.</p>
-    pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
-        self.inner = self.inner.end_time(input);
-        self
-    }
-    /// <p>The time at which the reported instance health state ended.</p>
-    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.inner = self.inner.set_end_time(input);
-        self
-    }
-    /// <p>The time at which the reported instance health state ended.</p>
-    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
-        self.inner.get_end_time()
     }
     ///
     /// Appends an item to `Instances`.
@@ -169,6 +141,48 @@ impl ReportInstanceStatusFluentBuilder {
     /// <p>The instances.</p>
     pub fn get_instances(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_instances()
+    }
+    /// <p>The status of all instances listed.</p>
+    pub fn status(mut self, input: crate::types::ReportStatusType) -> Self {
+        self.inner = self.inner.status(input);
+        self
+    }
+    /// <p>The status of all instances listed.</p>
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ReportStatusType>) -> Self {
+        self.inner = self.inner.set_status(input);
+        self
+    }
+    /// <p>The status of all instances listed.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ReportStatusType> {
+        self.inner.get_status()
+    }
+    /// <p>The time at which the reported instance health state began.</p>
+    pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.inner = self.inner.start_time(input);
+        self
+    }
+    /// <p>The time at which the reported instance health state began.</p>
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.inner = self.inner.set_start_time(input);
+        self
+    }
+    /// <p>The time at which the reported instance health state began.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_start_time()
+    }
+    /// <p>The time at which the reported instance health state ended.</p>
+    pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.inner = self.inner.end_time(input);
+        self
+    }
+    /// <p>The time at which the reported instance health state ended.</p>
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.inner = self.inner.set_end_time(input);
+        self
+    }
+    /// <p>The time at which the reported instance health state ended.</p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_end_time()
     }
     ///
     /// Appends an item to `ReasonCodes`.
@@ -249,32 +263,21 @@ impl ReportInstanceStatusFluentBuilder {
     pub fn get_reason_codes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReportInstanceReasonCodes>> {
         self.inner.get_reason_codes()
     }
-    /// <p>The time at which the reported instance health state began.</p>
-    pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
-        self.inner = self.inner.start_time(input);
+    /// <p>Descriptive text about the health state of your instance.</p>
+    #[deprecated(note = "This member has been deprecated")]
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.description(input.into());
         self
     }
-    /// <p>The time at which the reported instance health state began.</p>
-    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.inner = self.inner.set_start_time(input);
+    /// <p>Descriptive text about the health state of your instance.</p>
+    #[deprecated(note = "This member has been deprecated")]
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_description(input);
         self
     }
-    /// <p>The time at which the reported instance health state began.</p>
-    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
-        self.inner.get_start_time()
-    }
-    /// <p>The status of all instances listed.</p>
-    pub fn status(mut self, input: crate::types::ReportStatusType) -> Self {
-        self.inner = self.inner.status(input);
-        self
-    }
-    /// <p>The status of all instances listed.</p>
-    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ReportStatusType>) -> Self {
-        self.inner = self.inner.set_status(input);
-        self
-    }
-    /// <p>The status of all instances listed.</p>
-    pub fn get_status(&self) -> &::std::option::Option<crate::types::ReportStatusType> {
-        self.inner.get_status()
+    /// <p>Descriptive text about the health state of your instance.</p>
+    #[deprecated(note = "This member has been deprecated")]
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
 }

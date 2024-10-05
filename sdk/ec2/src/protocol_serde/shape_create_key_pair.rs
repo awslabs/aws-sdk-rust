@@ -48,7 +48,7 @@ pub fn de_create_key_pair(
     }
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
-            s if s.matches("keyFingerprint") /* KeyFingerprint com.amazonaws.ec2.synthetic#CreateKeyPairOutput$KeyFingerprint */ =>  {
+            s if s.matches("keyPairId") /* KeyPairId com.amazonaws.ec2.synthetic#CreateKeyPairOutput$KeyPairId */ =>  {
                 let var_1 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -58,20 +58,17 @@ pub fn de_create_key_pair(
                         ?
                     )
                 ;
-                builder = builder.set_key_fingerprint(var_1);
+                builder = builder.set_key_pair_id(var_1);
             }
             ,
-            s if s.matches("keyMaterial") /* KeyMaterial com.amazonaws.ec2.synthetic#CreateKeyPairOutput$KeyMaterial */ =>  {
+            s if s.matches("tagSet") /* Tags com.amazonaws.ec2.synthetic#CreateKeyPairOutput$Tags */ =>  {
                 let var_2 =
                     Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
+                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_key_material(var_2);
+                builder = builder.set_tags(var_2);
             }
             ,
             s if s.matches("keyName") /* KeyName com.amazonaws.ec2.synthetic#CreateKeyPairOutput$KeyName */ =>  {
@@ -87,7 +84,7 @@ pub fn de_create_key_pair(
                 builder = builder.set_key_name(var_3);
             }
             ,
-            s if s.matches("keyPairId") /* KeyPairId com.amazonaws.ec2.synthetic#CreateKeyPairOutput$KeyPairId */ =>  {
+            s if s.matches("keyFingerprint") /* KeyFingerprint com.amazonaws.ec2.synthetic#CreateKeyPairOutput$KeyFingerprint */ =>  {
                 let var_4 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -97,17 +94,20 @@ pub fn de_create_key_pair(
                         ?
                     )
                 ;
-                builder = builder.set_key_pair_id(var_4);
+                builder = builder.set_key_fingerprint(var_4);
             }
             ,
-            s if s.matches("tagSet") /* Tags com.amazonaws.ec2.synthetic#CreateKeyPairOutput$Tags */ =>  {
+            s if s.matches("keyMaterial") /* KeyMaterial com.amazonaws.ec2.synthetic#CreateKeyPairOutput$KeyMaterial */ =>  {
                 let var_5 =
                     Some(
-                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag)
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
                         ?
                     )
                 ;
-                builder = builder.set_tags(var_5);
+                builder = builder.set_key_material(var_5);
             }
             ,
             _ => {}

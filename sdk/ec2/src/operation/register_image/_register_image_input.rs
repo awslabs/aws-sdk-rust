@@ -6,39 +6,9 @@
 pub struct RegisterImageInput {
     /// <p>The full path to your AMI manifest in Amazon S3 storage. The specified bucket must have the <code>aws-exec-read</code> canned access control list (ACL) to ensure that it can be accessed by Amazon EC2. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl">Canned ACLs</a> in the <i>Amazon S3 Service Developer Guide</i>.</p>
     pub image_location: ::std::option::Option<::std::string::String>,
-    /// <p>The architecture of the AMI.</p>
-    /// <p>Default: For Amazon EBS-backed AMIs, <code>i386</code>. For instance store-backed AMIs, the architecture specified in the manifest file.</p>
-    pub architecture: ::std::option::Option<crate::types::ArchitectureValues>,
-    /// <p>The block device mapping entries.</p>
-    /// <p>If you specify an Amazon EBS volume using the ID of an Amazon EBS snapshot, you can't specify the encryption state of the volume.</p>
-    /// <p>If you create an AMI on an Outpost, then all backing snapshots must be on the same Outpost or in the Region of that Outpost. AMIs on an Outpost that include local snapshots can be used to launch instances on the same Outpost only. For more information, <a href="https://docs.aws.amazon.com/ebs/latest/userguide/snapshots-outposts.html#ami">Amazon EBS local snapshots on Outposts</a> in the <i>Amazon EBS User Guide</i>.</p>
-    pub block_device_mappings: ::std::option::Option<::std::vec::Vec<crate::types::BlockDeviceMapping>>,
-    /// <p>A description for your AMI.</p>
-    pub description: ::std::option::Option<::std::string::String>,
-    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub dry_run: ::std::option::Option<bool>,
-    /// <p>Set to <code>true</code> to enable enhanced networking with ENA for the AMI and any instances that you launch from the AMI.</p>
-    /// <p>This option is supported only for HVM AMIs. Specifying this option with a PV AMI can make instances launched from the AMI unreachable.</p>
-    pub ena_support: ::std::option::Option<bool>,
-    /// <p>The ID of the kernel.</p>
-    pub kernel_id: ::std::option::Option<::std::string::String>,
-    /// <p>A name for your AMI.</p>
-    /// <p>Constraints: 3-128 alphanumeric characters, parentheses (()), square brackets (\[\]), spaces ( ), periods (.), slashes (/), dashes (-), single quotes ('), at-signs (@), or underscores(_)</p>
-    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The billing product codes. Your account must be authorized to specify billing product codes.</p>
     /// <p>If your account is not authorized to specify billing product codes, you can publish AMIs that include billable software and list them on the Amazon Web Services Marketplace. You must first register as a seller on the Amazon Web Services Marketplace. For more information, see <a href="https://docs.aws.amazon.com/marketplace/latest/userguide/user-guide-for-sellers.html">Getting started as a seller</a> and <a href="https://docs.aws.amazon.com/marketplace/latest/userguide/ami-products.html">AMI-based products</a> in the <i>Amazon Web Services Marketplace Seller Guide</i>.</p>
     pub billing_products: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>The ID of the RAM disk.</p>
-    pub ramdisk_id: ::std::option::Option<::std::string::String>,
-    /// <p>The device name of the root device volume (for example, <code>/dev/sda1</code>).</p>
-    pub root_device_name: ::std::option::Option<::std::string::String>,
-    /// <p>Set to <code>simple</code> to enable enhanced networking with the Intel 82599 Virtual Function interface for the AMI and any instances that you launch from the AMI.</p>
-    /// <p>There is no way to disable <code>sriovNetSupport</code> at this time.</p>
-    /// <p>This option is supported only for HVM AMIs. Specifying this option with a PV AMI can make instances launched from the AMI unreachable.</p>
-    pub sriov_net_support: ::std::option::Option<::std::string::String>,
-    /// <p>The type of virtualization (<code>hvm</code> | <code>paravirtual</code>).</p>
-    /// <p>Default: <code>paravirtual</code></p>
-    pub virtualization_type: ::std::option::Option<::std::string::String>,
     /// <p>The boot mode of the AMI. A value of <code>uefi-preferred</code> indicates that the AMI supports both UEFI and Legacy BIOS.</p><note>
     /// <p>The operating system contained in the AMI must be configured to support the specified boot mode.</p>
     /// </note>
@@ -56,46 +26,41 @@ pub struct RegisterImageInput {
     /// <p>To tag the AMI, the value for <code>ResourceType</code> must be <code>image</code>. If you specify another value for <code>ResourceType</code>, the request fails.</p>
     /// <p>To tag an AMI after it has been registered, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
     pub tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub dry_run: ::std::option::Option<bool>,
+    /// <p>A name for your AMI.</p>
+    /// <p>Constraints: 3-128 alphanumeric characters, parentheses (()), square brackets (\[\]), spaces ( ), periods (.), slashes (/), dashes (-), single quotes ('), at-signs (@), or underscores(_)</p>
+    pub name: ::std::option::Option<::std::string::String>,
+    /// <p>A description for your AMI.</p>
+    pub description: ::std::option::Option<::std::string::String>,
+    /// <p>The architecture of the AMI.</p>
+    /// <p>Default: For Amazon EBS-backed AMIs, <code>i386</code>. For instance store-backed AMIs, the architecture specified in the manifest file.</p>
+    pub architecture: ::std::option::Option<crate::types::ArchitectureValues>,
+    /// <p>The ID of the kernel.</p>
+    pub kernel_id: ::std::option::Option<::std::string::String>,
+    /// <p>The ID of the RAM disk.</p>
+    pub ramdisk_id: ::std::option::Option<::std::string::String>,
+    /// <p>The device name of the root device volume (for example, <code>/dev/sda1</code>).</p>
+    pub root_device_name: ::std::option::Option<::std::string::String>,
+    /// <p>The block device mapping entries.</p>
+    /// <p>If you specify an Amazon EBS volume using the ID of an Amazon EBS snapshot, you can't specify the encryption state of the volume.</p>
+    /// <p>If you create an AMI on an Outpost, then all backing snapshots must be on the same Outpost or in the Region of that Outpost. AMIs on an Outpost that include local snapshots can be used to launch instances on the same Outpost only. For more information, <a href="https://docs.aws.amazon.com/ebs/latest/userguide/snapshots-outposts.html#ami">Amazon EBS local snapshots on Outposts</a> in the <i>Amazon EBS User Guide</i>.</p>
+    pub block_device_mappings: ::std::option::Option<::std::vec::Vec<crate::types::BlockDeviceMapping>>,
+    /// <p>The type of virtualization (<code>hvm</code> | <code>paravirtual</code>).</p>
+    /// <p>Default: <code>paravirtual</code></p>
+    pub virtualization_type: ::std::option::Option<::std::string::String>,
+    /// <p>Set to <code>simple</code> to enable enhanced networking with the Intel 82599 Virtual Function interface for the AMI and any instances that you launch from the AMI.</p>
+    /// <p>There is no way to disable <code>sriovNetSupport</code> at this time.</p>
+    /// <p>This option is supported only for HVM AMIs. Specifying this option with a PV AMI can make instances launched from the AMI unreachable.</p>
+    pub sriov_net_support: ::std::option::Option<::std::string::String>,
+    /// <p>Set to <code>true</code> to enable enhanced networking with ENA for the AMI and any instances that you launch from the AMI.</p>
+    /// <p>This option is supported only for HVM AMIs. Specifying this option with a PV AMI can make instances launched from the AMI unreachable.</p>
+    pub ena_support: ::std::option::Option<bool>,
 }
 impl RegisterImageInput {
     /// <p>The full path to your AMI manifest in Amazon S3 storage. The specified bucket must have the <code>aws-exec-read</code> canned access control list (ACL) to ensure that it can be accessed by Amazon EC2. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl">Canned ACLs</a> in the <i>Amazon S3 Service Developer Guide</i>.</p>
     pub fn image_location(&self) -> ::std::option::Option<&str> {
         self.image_location.as_deref()
-    }
-    /// <p>The architecture of the AMI.</p>
-    /// <p>Default: For Amazon EBS-backed AMIs, <code>i386</code>. For instance store-backed AMIs, the architecture specified in the manifest file.</p>
-    pub fn architecture(&self) -> ::std::option::Option<&crate::types::ArchitectureValues> {
-        self.architecture.as_ref()
-    }
-    /// <p>The block device mapping entries.</p>
-    /// <p>If you specify an Amazon EBS volume using the ID of an Amazon EBS snapshot, you can't specify the encryption state of the volume.</p>
-    /// <p>If you create an AMI on an Outpost, then all backing snapshots must be on the same Outpost or in the Region of that Outpost. AMIs on an Outpost that include local snapshots can be used to launch instances on the same Outpost only. For more information, <a href="https://docs.aws.amazon.com/ebs/latest/userguide/snapshots-outposts.html#ami">Amazon EBS local snapshots on Outposts</a> in the <i>Amazon EBS User Guide</i>.</p>
-    ///
-    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.block_device_mappings.is_none()`.
-    pub fn block_device_mappings(&self) -> &[crate::types::BlockDeviceMapping] {
-        self.block_device_mappings.as_deref().unwrap_or_default()
-    }
-    /// <p>A description for your AMI.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
-        self.description.as_deref()
-    }
-    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn dry_run(&self) -> ::std::option::Option<bool> {
-        self.dry_run
-    }
-    /// <p>Set to <code>true</code> to enable enhanced networking with ENA for the AMI and any instances that you launch from the AMI.</p>
-    /// <p>This option is supported only for HVM AMIs. Specifying this option with a PV AMI can make instances launched from the AMI unreachable.</p>
-    pub fn ena_support(&self) -> ::std::option::Option<bool> {
-        self.ena_support
-    }
-    /// <p>The ID of the kernel.</p>
-    pub fn kernel_id(&self) -> ::std::option::Option<&str> {
-        self.kernel_id.as_deref()
-    }
-    /// <p>A name for your AMI.</p>
-    /// <p>Constraints: 3-128 alphanumeric characters, parentheses (()), square brackets (\[\]), spaces ( ), periods (.), slashes (/), dashes (-), single quotes ('), at-signs (@), or underscores(_)</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
     }
     /// <p>The billing product codes. Your account must be authorized to specify billing product codes.</p>
     /// <p>If your account is not authorized to specify billing product codes, you can publish AMIs that include billable software and list them on the Amazon Web Services Marketplace. You must first register as a seller on the Amazon Web Services Marketplace. For more information, see <a href="https://docs.aws.amazon.com/marketplace/latest/userguide/user-guide-for-sellers.html">Getting started as a seller</a> and <a href="https://docs.aws.amazon.com/marketplace/latest/userguide/ami-products.html">AMI-based products</a> in the <i>Amazon Web Services Marketplace Seller Guide</i>.</p>
@@ -103,25 +68,6 @@ impl RegisterImageInput {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.billing_products.is_none()`.
     pub fn billing_products(&self) -> &[::std::string::String] {
         self.billing_products.as_deref().unwrap_or_default()
-    }
-    /// <p>The ID of the RAM disk.</p>
-    pub fn ramdisk_id(&self) -> ::std::option::Option<&str> {
-        self.ramdisk_id.as_deref()
-    }
-    /// <p>The device name of the root device volume (for example, <code>/dev/sda1</code>).</p>
-    pub fn root_device_name(&self) -> ::std::option::Option<&str> {
-        self.root_device_name.as_deref()
-    }
-    /// <p>Set to <code>simple</code> to enable enhanced networking with the Intel 82599 Virtual Function interface for the AMI and any instances that you launch from the AMI.</p>
-    /// <p>There is no way to disable <code>sriovNetSupport</code> at this time.</p>
-    /// <p>This option is supported only for HVM AMIs. Specifying this option with a PV AMI can make instances launched from the AMI unreachable.</p>
-    pub fn sriov_net_support(&self) -> ::std::option::Option<&str> {
-        self.sriov_net_support.as_deref()
-    }
-    /// <p>The type of virtualization (<code>hvm</code> | <code>paravirtual</code>).</p>
-    /// <p>Default: <code>paravirtual</code></p>
-    pub fn virtualization_type(&self) -> ::std::option::Option<&str> {
-        self.virtualization_type.as_deref()
     }
     /// <p>The boot mode of the AMI. A value of <code>uefi-preferred</code> indicates that the AMI supports both UEFI and Legacy BIOS.</p><note>
     /// <p>The operating system contained in the AMI must be configured to support the specified boot mode.</p>
@@ -152,6 +98,60 @@ impl RegisterImageInput {
     pub fn tag_specifications(&self) -> &[crate::types::TagSpecification] {
         self.tag_specifications.as_deref().unwrap_or_default()
     }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn dry_run(&self) -> ::std::option::Option<bool> {
+        self.dry_run
+    }
+    /// <p>A name for your AMI.</p>
+    /// <p>Constraints: 3-128 alphanumeric characters, parentheses (()), square brackets (\[\]), spaces ( ), periods (.), slashes (/), dashes (-), single quotes ('), at-signs (@), or underscores(_)</p>
+    pub fn name(&self) -> ::std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A description for your AMI.</p>
+    pub fn description(&self) -> ::std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The architecture of the AMI.</p>
+    /// <p>Default: For Amazon EBS-backed AMIs, <code>i386</code>. For instance store-backed AMIs, the architecture specified in the manifest file.</p>
+    pub fn architecture(&self) -> ::std::option::Option<&crate::types::ArchitectureValues> {
+        self.architecture.as_ref()
+    }
+    /// <p>The ID of the kernel.</p>
+    pub fn kernel_id(&self) -> ::std::option::Option<&str> {
+        self.kernel_id.as_deref()
+    }
+    /// <p>The ID of the RAM disk.</p>
+    pub fn ramdisk_id(&self) -> ::std::option::Option<&str> {
+        self.ramdisk_id.as_deref()
+    }
+    /// <p>The device name of the root device volume (for example, <code>/dev/sda1</code>).</p>
+    pub fn root_device_name(&self) -> ::std::option::Option<&str> {
+        self.root_device_name.as_deref()
+    }
+    /// <p>The block device mapping entries.</p>
+    /// <p>If you specify an Amazon EBS volume using the ID of an Amazon EBS snapshot, you can't specify the encryption state of the volume.</p>
+    /// <p>If you create an AMI on an Outpost, then all backing snapshots must be on the same Outpost or in the Region of that Outpost. AMIs on an Outpost that include local snapshots can be used to launch instances on the same Outpost only. For more information, <a href="https://docs.aws.amazon.com/ebs/latest/userguide/snapshots-outposts.html#ami">Amazon EBS local snapshots on Outposts</a> in the <i>Amazon EBS User Guide</i>.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.block_device_mappings.is_none()`.
+    pub fn block_device_mappings(&self) -> &[crate::types::BlockDeviceMapping] {
+        self.block_device_mappings.as_deref().unwrap_or_default()
+    }
+    /// <p>The type of virtualization (<code>hvm</code> | <code>paravirtual</code>).</p>
+    /// <p>Default: <code>paravirtual</code></p>
+    pub fn virtualization_type(&self) -> ::std::option::Option<&str> {
+        self.virtualization_type.as_deref()
+    }
+    /// <p>Set to <code>simple</code> to enable enhanced networking with the Intel 82599 Virtual Function interface for the AMI and any instances that you launch from the AMI.</p>
+    /// <p>There is no way to disable <code>sriovNetSupport</code> at this time.</p>
+    /// <p>This option is supported only for HVM AMIs. Specifying this option with a PV AMI can make instances launched from the AMI unreachable.</p>
+    pub fn sriov_net_support(&self) -> ::std::option::Option<&str> {
+        self.sriov_net_support.as_deref()
+    }
+    /// <p>Set to <code>true</code> to enable enhanced networking with ENA for the AMI and any instances that you launch from the AMI.</p>
+    /// <p>This option is supported only for HVM AMIs. Specifying this option with a PV AMI can make instances launched from the AMI unreachable.</p>
+    pub fn ena_support(&self) -> ::std::option::Option<bool> {
+        self.ena_support
+    }
 }
 impl RegisterImageInput {
     /// Creates a new builder-style object to manufacture [`RegisterImageInput`](crate::operation::register_image::RegisterImageInput).
@@ -165,23 +165,23 @@ impl RegisterImageInput {
 #[non_exhaustive]
 pub struct RegisterImageInputBuilder {
     pub(crate) image_location: ::std::option::Option<::std::string::String>,
-    pub(crate) architecture: ::std::option::Option<crate::types::ArchitectureValues>,
-    pub(crate) block_device_mappings: ::std::option::Option<::std::vec::Vec<crate::types::BlockDeviceMapping>>,
-    pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) dry_run: ::std::option::Option<bool>,
-    pub(crate) ena_support: ::std::option::Option<bool>,
-    pub(crate) kernel_id: ::std::option::Option<::std::string::String>,
-    pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) billing_products: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) ramdisk_id: ::std::option::Option<::std::string::String>,
-    pub(crate) root_device_name: ::std::option::Option<::std::string::String>,
-    pub(crate) sriov_net_support: ::std::option::Option<::std::string::String>,
-    pub(crate) virtualization_type: ::std::option::Option<::std::string::String>,
     pub(crate) boot_mode: ::std::option::Option<crate::types::BootModeValues>,
     pub(crate) tpm_support: ::std::option::Option<crate::types::TpmSupportValues>,
     pub(crate) uefi_data: ::std::option::Option<::std::string::String>,
     pub(crate) imds_support: ::std::option::Option<crate::types::ImdsSupportValues>,
     pub(crate) tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
+    pub(crate) dry_run: ::std::option::Option<bool>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) architecture: ::std::option::Option<crate::types::ArchitectureValues>,
+    pub(crate) kernel_id: ::std::option::Option<::std::string::String>,
+    pub(crate) ramdisk_id: ::std::option::Option<::std::string::String>,
+    pub(crate) root_device_name: ::std::option::Option<::std::string::String>,
+    pub(crate) block_device_mappings: ::std::option::Option<::std::vec::Vec<crate::types::BlockDeviceMapping>>,
+    pub(crate) virtualization_type: ::std::option::Option<::std::string::String>,
+    pub(crate) sriov_net_support: ::std::option::Option<::std::string::String>,
+    pub(crate) ena_support: ::std::option::Option<bool>,
 }
 impl RegisterImageInputBuilder {
     /// <p>The full path to your AMI manifest in Amazon S3 storage. The specified bucket must have the <code>aws-exec-read</code> canned access control list (ACL) to ensure that it can be accessed by Amazon EC2. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl">Canned ACLs</a> in the <i>Amazon S3 Service Developer Guide</i>.</p>
@@ -197,126 +197,6 @@ impl RegisterImageInputBuilder {
     /// <p>The full path to your AMI manifest in Amazon S3 storage. The specified bucket must have the <code>aws-exec-read</code> canned access control list (ACL) to ensure that it can be accessed by Amazon EC2. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl">Canned ACLs</a> in the <i>Amazon S3 Service Developer Guide</i>.</p>
     pub fn get_image_location(&self) -> &::std::option::Option<::std::string::String> {
         &self.image_location
-    }
-    /// <p>The architecture of the AMI.</p>
-    /// <p>Default: For Amazon EBS-backed AMIs, <code>i386</code>. For instance store-backed AMIs, the architecture specified in the manifest file.</p>
-    pub fn architecture(mut self, input: crate::types::ArchitectureValues) -> Self {
-        self.architecture = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>The architecture of the AMI.</p>
-    /// <p>Default: For Amazon EBS-backed AMIs, <code>i386</code>. For instance store-backed AMIs, the architecture specified in the manifest file.</p>
-    pub fn set_architecture(mut self, input: ::std::option::Option<crate::types::ArchitectureValues>) -> Self {
-        self.architecture = input;
-        self
-    }
-    /// <p>The architecture of the AMI.</p>
-    /// <p>Default: For Amazon EBS-backed AMIs, <code>i386</code>. For instance store-backed AMIs, the architecture specified in the manifest file.</p>
-    pub fn get_architecture(&self) -> &::std::option::Option<crate::types::ArchitectureValues> {
-        &self.architecture
-    }
-    /// Appends an item to `block_device_mappings`.
-    ///
-    /// To override the contents of this collection use [`set_block_device_mappings`](Self::set_block_device_mappings).
-    ///
-    /// <p>The block device mapping entries.</p>
-    /// <p>If you specify an Amazon EBS volume using the ID of an Amazon EBS snapshot, you can't specify the encryption state of the volume.</p>
-    /// <p>If you create an AMI on an Outpost, then all backing snapshots must be on the same Outpost or in the Region of that Outpost. AMIs on an Outpost that include local snapshots can be used to launch instances on the same Outpost only. For more information, <a href="https://docs.aws.amazon.com/ebs/latest/userguide/snapshots-outposts.html#ami">Amazon EBS local snapshots on Outposts</a> in the <i>Amazon EBS User Guide</i>.</p>
-    pub fn block_device_mappings(mut self, input: crate::types::BlockDeviceMapping) -> Self {
-        let mut v = self.block_device_mappings.unwrap_or_default();
-        v.push(input);
-        self.block_device_mappings = ::std::option::Option::Some(v);
-        self
-    }
-    /// <p>The block device mapping entries.</p>
-    /// <p>If you specify an Amazon EBS volume using the ID of an Amazon EBS snapshot, you can't specify the encryption state of the volume.</p>
-    /// <p>If you create an AMI on an Outpost, then all backing snapshots must be on the same Outpost or in the Region of that Outpost. AMIs on an Outpost that include local snapshots can be used to launch instances on the same Outpost only. For more information, <a href="https://docs.aws.amazon.com/ebs/latest/userguide/snapshots-outposts.html#ami">Amazon EBS local snapshots on Outposts</a> in the <i>Amazon EBS User Guide</i>.</p>
-    pub fn set_block_device_mappings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BlockDeviceMapping>>) -> Self {
-        self.block_device_mappings = input;
-        self
-    }
-    /// <p>The block device mapping entries.</p>
-    /// <p>If you specify an Amazon EBS volume using the ID of an Amazon EBS snapshot, you can't specify the encryption state of the volume.</p>
-    /// <p>If you create an AMI on an Outpost, then all backing snapshots must be on the same Outpost or in the Region of that Outpost. AMIs on an Outpost that include local snapshots can be used to launch instances on the same Outpost only. For more information, <a href="https://docs.aws.amazon.com/ebs/latest/userguide/snapshots-outposts.html#ami">Amazon EBS local snapshots on Outposts</a> in the <i>Amazon EBS User Guide</i>.</p>
-    pub fn get_block_device_mappings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BlockDeviceMapping>> {
-        &self.block_device_mappings
-    }
-    /// <p>A description for your AMI.</p>
-    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.description = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>A description for your AMI.</p>
-    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
-    }
-    /// <p>A description for your AMI.</p>
-    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
-        &self.description
-    }
-    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn dry_run(mut self, input: bool) -> Self {
-        self.dry_run = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
-    }
-    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
-        &self.dry_run
-    }
-    /// <p>Set to <code>true</code> to enable enhanced networking with ENA for the AMI and any instances that you launch from the AMI.</p>
-    /// <p>This option is supported only for HVM AMIs. Specifying this option with a PV AMI can make instances launched from the AMI unreachable.</p>
-    pub fn ena_support(mut self, input: bool) -> Self {
-        self.ena_support = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>Set to <code>true</code> to enable enhanced networking with ENA for the AMI and any instances that you launch from the AMI.</p>
-    /// <p>This option is supported only for HVM AMIs. Specifying this option with a PV AMI can make instances launched from the AMI unreachable.</p>
-    pub fn set_ena_support(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.ena_support = input;
-        self
-    }
-    /// <p>Set to <code>true</code> to enable enhanced networking with ENA for the AMI and any instances that you launch from the AMI.</p>
-    /// <p>This option is supported only for HVM AMIs. Specifying this option with a PV AMI can make instances launched from the AMI unreachable.</p>
-    pub fn get_ena_support(&self) -> &::std::option::Option<bool> {
-        &self.ena_support
-    }
-    /// <p>The ID of the kernel.</p>
-    pub fn kernel_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.kernel_id = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>The ID of the kernel.</p>
-    pub fn set_kernel_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kernel_id = input;
-        self
-    }
-    /// <p>The ID of the kernel.</p>
-    pub fn get_kernel_id(&self) -> &::std::option::Option<::std::string::String> {
-        &self.kernel_id
-    }
-    /// <p>A name for your AMI.</p>
-    /// <p>Constraints: 3-128 alphanumeric characters, parentheses (()), square brackets (\[\]), spaces ( ), periods (.), slashes (/), dashes (-), single quotes ('), at-signs (@), or underscores(_)</p>
-    /// This field is required.
-    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.name = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>A name for your AMI.</p>
-    /// <p>Constraints: 3-128 alphanumeric characters, parentheses (()), square brackets (\[\]), spaces ( ), periods (.), slashes (/), dashes (-), single quotes ('), at-signs (@), or underscores(_)</p>
-    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
-    }
-    /// <p>A name for your AMI.</p>
-    /// <p>Constraints: 3-128 alphanumeric characters, parentheses (()), square brackets (\[\]), spaces ( ), periods (.), slashes (/), dashes (-), single quotes ('), at-signs (@), or underscores(_)</p>
-    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
-        &self.name
     }
     /// Appends an item to `billing_products`.
     ///
@@ -340,71 +220,6 @@ impl RegisterImageInputBuilder {
     /// <p>If your account is not authorized to specify billing product codes, you can publish AMIs that include billable software and list them on the Amazon Web Services Marketplace. You must first register as a seller on the Amazon Web Services Marketplace. For more information, see <a href="https://docs.aws.amazon.com/marketplace/latest/userguide/user-guide-for-sellers.html">Getting started as a seller</a> and <a href="https://docs.aws.amazon.com/marketplace/latest/userguide/ami-products.html">AMI-based products</a> in the <i>Amazon Web Services Marketplace Seller Guide</i>.</p>
     pub fn get_billing_products(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.billing_products
-    }
-    /// <p>The ID of the RAM disk.</p>
-    pub fn ramdisk_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.ramdisk_id = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>The ID of the RAM disk.</p>
-    pub fn set_ramdisk_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ramdisk_id = input;
-        self
-    }
-    /// <p>The ID of the RAM disk.</p>
-    pub fn get_ramdisk_id(&self) -> &::std::option::Option<::std::string::String> {
-        &self.ramdisk_id
-    }
-    /// <p>The device name of the root device volume (for example, <code>/dev/sda1</code>).</p>
-    pub fn root_device_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.root_device_name = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>The device name of the root device volume (for example, <code>/dev/sda1</code>).</p>
-    pub fn set_root_device_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.root_device_name = input;
-        self
-    }
-    /// <p>The device name of the root device volume (for example, <code>/dev/sda1</code>).</p>
-    pub fn get_root_device_name(&self) -> &::std::option::Option<::std::string::String> {
-        &self.root_device_name
-    }
-    /// <p>Set to <code>simple</code> to enable enhanced networking with the Intel 82599 Virtual Function interface for the AMI and any instances that you launch from the AMI.</p>
-    /// <p>There is no way to disable <code>sriovNetSupport</code> at this time.</p>
-    /// <p>This option is supported only for HVM AMIs. Specifying this option with a PV AMI can make instances launched from the AMI unreachable.</p>
-    pub fn sriov_net_support(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.sriov_net_support = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>Set to <code>simple</code> to enable enhanced networking with the Intel 82599 Virtual Function interface for the AMI and any instances that you launch from the AMI.</p>
-    /// <p>There is no way to disable <code>sriovNetSupport</code> at this time.</p>
-    /// <p>This option is supported only for HVM AMIs. Specifying this option with a PV AMI can make instances launched from the AMI unreachable.</p>
-    pub fn set_sriov_net_support(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.sriov_net_support = input;
-        self
-    }
-    /// <p>Set to <code>simple</code> to enable enhanced networking with the Intel 82599 Virtual Function interface for the AMI and any instances that you launch from the AMI.</p>
-    /// <p>There is no way to disable <code>sriovNetSupport</code> at this time.</p>
-    /// <p>This option is supported only for HVM AMIs. Specifying this option with a PV AMI can make instances launched from the AMI unreachable.</p>
-    pub fn get_sriov_net_support(&self) -> &::std::option::Option<::std::string::String> {
-        &self.sriov_net_support
-    }
-    /// <p>The type of virtualization (<code>hvm</code> | <code>paravirtual</code>).</p>
-    /// <p>Default: <code>paravirtual</code></p>
-    pub fn virtualization_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.virtualization_type = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>The type of virtualization (<code>hvm</code> | <code>paravirtual</code>).</p>
-    /// <p>Default: <code>paravirtual</code></p>
-    pub fn set_virtualization_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.virtualization_type = input;
-        self
-    }
-    /// <p>The type of virtualization (<code>hvm</code> | <code>paravirtual</code>).</p>
-    /// <p>Default: <code>paravirtual</code></p>
-    pub fn get_virtualization_type(&self) -> &::std::option::Option<::std::string::String> {
-        &self.virtualization_type
     }
     /// <p>The boot mode of the AMI. A value of <code>uefi-preferred</code> indicates that the AMI supports both UEFI and Legacy BIOS.</p><note>
     /// <p>The operating system contained in the AMI must be configured to support the specified boot mode.</p>
@@ -503,29 +318,214 @@ impl RegisterImageInputBuilder {
     pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
         &self.tag_specifications
     }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn dry_run(mut self, input: bool) -> Self {
+        self.dry_run = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.dry_run = input;
+        self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
+    }
+    /// <p>A name for your AMI.</p>
+    /// <p>Constraints: 3-128 alphanumeric characters, parentheses (()), square brackets (\[\]), spaces ( ), periods (.), slashes (/), dashes (-), single quotes ('), at-signs (@), or underscores(_)</p>
+    /// This field is required.
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>A name for your AMI.</p>
+    /// <p>Constraints: 3-128 alphanumeric characters, parentheses (()), square brackets (\[\]), spaces ( ), periods (.), slashes (/), dashes (-), single quotes ('), at-signs (@), or underscores(_)</p>
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.name = input;
+        self
+    }
+    /// <p>A name for your AMI.</p>
+    /// <p>Constraints: 3-128 alphanumeric characters, parentheses (()), square brackets (\[\]), spaces ( ), periods (.), slashes (/), dashes (-), single quotes ('), at-signs (@), or underscores(_)</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
+    /// <p>A description for your AMI.</p>
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>A description for your AMI.</p>
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.description = input;
+        self
+    }
+    /// <p>A description for your AMI.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
+    /// <p>The architecture of the AMI.</p>
+    /// <p>Default: For Amazon EBS-backed AMIs, <code>i386</code>. For instance store-backed AMIs, the architecture specified in the manifest file.</p>
+    pub fn architecture(mut self, input: crate::types::ArchitectureValues) -> Self {
+        self.architecture = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The architecture of the AMI.</p>
+    /// <p>Default: For Amazon EBS-backed AMIs, <code>i386</code>. For instance store-backed AMIs, the architecture specified in the manifest file.</p>
+    pub fn set_architecture(mut self, input: ::std::option::Option<crate::types::ArchitectureValues>) -> Self {
+        self.architecture = input;
+        self
+    }
+    /// <p>The architecture of the AMI.</p>
+    /// <p>Default: For Amazon EBS-backed AMIs, <code>i386</code>. For instance store-backed AMIs, the architecture specified in the manifest file.</p>
+    pub fn get_architecture(&self) -> &::std::option::Option<crate::types::ArchitectureValues> {
+        &self.architecture
+    }
+    /// <p>The ID of the kernel.</p>
+    pub fn kernel_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.kernel_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the kernel.</p>
+    pub fn set_kernel_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.kernel_id = input;
+        self
+    }
+    /// <p>The ID of the kernel.</p>
+    pub fn get_kernel_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kernel_id
+    }
+    /// <p>The ID of the RAM disk.</p>
+    pub fn ramdisk_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.ramdisk_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the RAM disk.</p>
+    pub fn set_ramdisk_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.ramdisk_id = input;
+        self
+    }
+    /// <p>The ID of the RAM disk.</p>
+    pub fn get_ramdisk_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ramdisk_id
+    }
+    /// <p>The device name of the root device volume (for example, <code>/dev/sda1</code>).</p>
+    pub fn root_device_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.root_device_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The device name of the root device volume (for example, <code>/dev/sda1</code>).</p>
+    pub fn set_root_device_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.root_device_name = input;
+        self
+    }
+    /// <p>The device name of the root device volume (for example, <code>/dev/sda1</code>).</p>
+    pub fn get_root_device_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.root_device_name
+    }
+    /// Appends an item to `block_device_mappings`.
+    ///
+    /// To override the contents of this collection use [`set_block_device_mappings`](Self::set_block_device_mappings).
+    ///
+    /// <p>The block device mapping entries.</p>
+    /// <p>If you specify an Amazon EBS volume using the ID of an Amazon EBS snapshot, you can't specify the encryption state of the volume.</p>
+    /// <p>If you create an AMI on an Outpost, then all backing snapshots must be on the same Outpost or in the Region of that Outpost. AMIs on an Outpost that include local snapshots can be used to launch instances on the same Outpost only. For more information, <a href="https://docs.aws.amazon.com/ebs/latest/userguide/snapshots-outposts.html#ami">Amazon EBS local snapshots on Outposts</a> in the <i>Amazon EBS User Guide</i>.</p>
+    pub fn block_device_mappings(mut self, input: crate::types::BlockDeviceMapping) -> Self {
+        let mut v = self.block_device_mappings.unwrap_or_default();
+        v.push(input);
+        self.block_device_mappings = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The block device mapping entries.</p>
+    /// <p>If you specify an Amazon EBS volume using the ID of an Amazon EBS snapshot, you can't specify the encryption state of the volume.</p>
+    /// <p>If you create an AMI on an Outpost, then all backing snapshots must be on the same Outpost or in the Region of that Outpost. AMIs on an Outpost that include local snapshots can be used to launch instances on the same Outpost only. For more information, <a href="https://docs.aws.amazon.com/ebs/latest/userguide/snapshots-outposts.html#ami">Amazon EBS local snapshots on Outposts</a> in the <i>Amazon EBS User Guide</i>.</p>
+    pub fn set_block_device_mappings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BlockDeviceMapping>>) -> Self {
+        self.block_device_mappings = input;
+        self
+    }
+    /// <p>The block device mapping entries.</p>
+    /// <p>If you specify an Amazon EBS volume using the ID of an Amazon EBS snapshot, you can't specify the encryption state of the volume.</p>
+    /// <p>If you create an AMI on an Outpost, then all backing snapshots must be on the same Outpost or in the Region of that Outpost. AMIs on an Outpost that include local snapshots can be used to launch instances on the same Outpost only. For more information, <a href="https://docs.aws.amazon.com/ebs/latest/userguide/snapshots-outposts.html#ami">Amazon EBS local snapshots on Outposts</a> in the <i>Amazon EBS User Guide</i>.</p>
+    pub fn get_block_device_mappings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BlockDeviceMapping>> {
+        &self.block_device_mappings
+    }
+    /// <p>The type of virtualization (<code>hvm</code> | <code>paravirtual</code>).</p>
+    /// <p>Default: <code>paravirtual</code></p>
+    pub fn virtualization_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.virtualization_type = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The type of virtualization (<code>hvm</code> | <code>paravirtual</code>).</p>
+    /// <p>Default: <code>paravirtual</code></p>
+    pub fn set_virtualization_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.virtualization_type = input;
+        self
+    }
+    /// <p>The type of virtualization (<code>hvm</code> | <code>paravirtual</code>).</p>
+    /// <p>Default: <code>paravirtual</code></p>
+    pub fn get_virtualization_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.virtualization_type
+    }
+    /// <p>Set to <code>simple</code> to enable enhanced networking with the Intel 82599 Virtual Function interface for the AMI and any instances that you launch from the AMI.</p>
+    /// <p>There is no way to disable <code>sriovNetSupport</code> at this time.</p>
+    /// <p>This option is supported only for HVM AMIs. Specifying this option with a PV AMI can make instances launched from the AMI unreachable.</p>
+    pub fn sriov_net_support(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.sriov_net_support = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Set to <code>simple</code> to enable enhanced networking with the Intel 82599 Virtual Function interface for the AMI and any instances that you launch from the AMI.</p>
+    /// <p>There is no way to disable <code>sriovNetSupport</code> at this time.</p>
+    /// <p>This option is supported only for HVM AMIs. Specifying this option with a PV AMI can make instances launched from the AMI unreachable.</p>
+    pub fn set_sriov_net_support(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.sriov_net_support = input;
+        self
+    }
+    /// <p>Set to <code>simple</code> to enable enhanced networking with the Intel 82599 Virtual Function interface for the AMI and any instances that you launch from the AMI.</p>
+    /// <p>There is no way to disable <code>sriovNetSupport</code> at this time.</p>
+    /// <p>This option is supported only for HVM AMIs. Specifying this option with a PV AMI can make instances launched from the AMI unreachable.</p>
+    pub fn get_sriov_net_support(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sriov_net_support
+    }
+    /// <p>Set to <code>true</code> to enable enhanced networking with ENA for the AMI and any instances that you launch from the AMI.</p>
+    /// <p>This option is supported only for HVM AMIs. Specifying this option with a PV AMI can make instances launched from the AMI unreachable.</p>
+    pub fn ena_support(mut self, input: bool) -> Self {
+        self.ena_support = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Set to <code>true</code> to enable enhanced networking with ENA for the AMI and any instances that you launch from the AMI.</p>
+    /// <p>This option is supported only for HVM AMIs. Specifying this option with a PV AMI can make instances launched from the AMI unreachable.</p>
+    pub fn set_ena_support(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.ena_support = input;
+        self
+    }
+    /// <p>Set to <code>true</code> to enable enhanced networking with ENA for the AMI and any instances that you launch from the AMI.</p>
+    /// <p>This option is supported only for HVM AMIs. Specifying this option with a PV AMI can make instances launched from the AMI unreachable.</p>
+    pub fn get_ena_support(&self) -> &::std::option::Option<bool> {
+        &self.ena_support
+    }
     /// Consumes the builder and constructs a [`RegisterImageInput`](crate::operation::register_image::RegisterImageInput).
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::register_image::RegisterImageInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::register_image::RegisterImageInput {
             image_location: self.image_location,
-            architecture: self.architecture,
-            block_device_mappings: self.block_device_mappings,
-            description: self.description,
-            dry_run: self.dry_run,
-            ena_support: self.ena_support,
-            kernel_id: self.kernel_id,
-            name: self.name,
             billing_products: self.billing_products,
-            ramdisk_id: self.ramdisk_id,
-            root_device_name: self.root_device_name,
-            sriov_net_support: self.sriov_net_support,
-            virtualization_type: self.virtualization_type,
             boot_mode: self.boot_mode,
             tpm_support: self.tpm_support,
             uefi_data: self.uefi_data,
             imds_support: self.imds_support,
             tag_specifications: self.tag_specifications,
+            dry_run: self.dry_run,
+            name: self.name,
+            description: self.description,
+            architecture: self.architecture,
+            kernel_id: self.kernel_id,
+            ramdisk_id: self.ramdisk_id,
+            root_device_name: self.root_device_name,
+            block_device_mappings: self.block_device_mappings,
+            virtualization_type: self.virtualization_type,
+            sriov_net_support: self.sriov_net_support,
+            ena_support: self.ena_support,
         })
     }
 }
