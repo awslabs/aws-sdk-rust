@@ -96,7 +96,7 @@ impl RoleMappingBuilder {
     }
     /// Consumes the builder and constructs a [`RoleMapping`](crate::types::RoleMapping).
     /// This method will fail if any of the following fields are not set:
-    /// - [`r#type`](crate::types::builders::RoleMappingBuilder::type)
+    /// - [`r#type`](crate::types::builders::RoleMappingBuilder::r#type)
     pub fn build(self) -> ::std::result::Result<crate::types::RoleMapping, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::RoleMapping {
             r#type: self.r#type.ok_or_else(|| {

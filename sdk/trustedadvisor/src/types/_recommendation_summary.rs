@@ -342,7 +342,7 @@ impl RecommendationSummaryBuilder {
     /// Consumes the builder and constructs a [`RecommendationSummary`](crate::types::RecommendationSummary).
     /// This method will fail if any of the following fields are not set:
     /// - [`id`](crate::types::builders::RecommendationSummaryBuilder::id)
-    /// - [`r#type`](crate::types::builders::RecommendationSummaryBuilder::type)
+    /// - [`r#type`](crate::types::builders::RecommendationSummaryBuilder::r#type)
     /// - [`status`](crate::types::builders::RecommendationSummaryBuilder::status)
     /// - [`pillars`](crate::types::builders::RecommendationSummaryBuilder::pillars)
     /// - [`source`](crate::types::builders::RecommendationSummaryBuilder::source)

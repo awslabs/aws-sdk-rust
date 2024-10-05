@@ -39,7 +39,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-elasticloadbalancing = "1.45.0"
+//! aws-sdk-elasticloadbalancing = "1.46.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
@@ -126,7 +126,7 @@ pub use config::Config;
 ///
 /// Occasionally, SDKs may have additional service-specific values that can be set on the [`Config`] that
 /// is absent from [`SdkConfig`], or slightly different settings for a specific client may be desired.
-/// The [`Builder`](crate::config::Builder) struct implements `From<&SdkConfig>`, so setting these specific settings can be
+/// The [`Builder`] struct implements `From<&SdkConfig>`, so setting these specific settings can be
 /// done as follows:
 ///
 /// ```rust,no_run

@@ -45,7 +45,7 @@ impl ResponseHeadersPolicyContentTypeOptionsBuilder {
     }
     /// Consumes the builder and constructs a [`ResponseHeadersPolicyContentTypeOptions`](crate::types::ResponseHeadersPolicyContentTypeOptions).
     /// This method will fail if any of the following fields are not set:
-    /// - [`r#override`](crate::types::builders::ResponseHeadersPolicyContentTypeOptionsBuilder::override)
+    /// - [`r#override`](crate::types::builders::ResponseHeadersPolicyContentTypeOptionsBuilder::r#override)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::types::ResponseHeadersPolicyContentTypeOptions, ::aws_smithy_types::error::operation::BuildError> {

@@ -8,8 +8,8 @@ description = "Example usage of the SecretManager service"
 publish = false
 
 [dependencies]
-aws-config= { version = "1.5.7", path = "../../../sdk/aws-config", features = ["behavior-version-latest"] }
-aws-sdk-secretsmanager= { version = "1.48.0", path = "../../../sdk/secretsmanager" }
+aws-config= { version = "1.5.5", path = "../../../sdk/aws-config", features = ["behavior-version-latest"] }
+aws-sdk-secretsmanager= { version = "1.49.0", path = "../../../sdk/secretsmanager" }
 
 [dependencies.tokio]
 version = "1.20.1"

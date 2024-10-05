@@ -231,7 +231,7 @@ impl InferenceProfileSummaryBuilder {
     /// - [`inference_profile_arn`](crate::types::builders::InferenceProfileSummaryBuilder::inference_profile_arn)
     /// - [`inference_profile_id`](crate::types::builders::InferenceProfileSummaryBuilder::inference_profile_id)
     /// - [`status`](crate::types::builders::InferenceProfileSummaryBuilder::status)
-    /// - [`r#type`](crate::types::builders::InferenceProfileSummaryBuilder::type)
+    /// - [`r#type`](crate::types::builders::InferenceProfileSummaryBuilder::r#type)
     pub fn build(self) -> ::std::result::Result<crate::types::InferenceProfileSummary, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::InferenceProfileSummary {
             inference_profile_name: self.inference_profile_name.ok_or_else(|| {

@@ -136,7 +136,7 @@ impl IngressPointBuilder {
     /// - [`ingress_point_name`](crate::types::builders::IngressPointBuilder::ingress_point_name)
     /// - [`ingress_point_id`](crate::types::builders::IngressPointBuilder::ingress_point_id)
     /// - [`status`](crate::types::builders::IngressPointBuilder::status)
-    /// - [`r#type`](crate::types::builders::IngressPointBuilder::type)
+    /// - [`r#type`](crate::types::builders::IngressPointBuilder::r#type)
     pub fn build(self) -> ::std::result::Result<crate::types::IngressPoint, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::IngressPoint {
             ingress_point_name: self.ingress_point_name.ok_or_else(|| {

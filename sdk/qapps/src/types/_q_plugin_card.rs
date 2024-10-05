@@ -189,7 +189,7 @@ impl QPluginCardBuilder {
     /// - [`id`](crate::types::builders::QPluginCardBuilder::id)
     /// - [`title`](crate::types::builders::QPluginCardBuilder::title)
     /// - [`dependencies`](crate::types::builders::QPluginCardBuilder::dependencies)
-    /// - [`r#type`](crate::types::builders::QPluginCardBuilder::type)
+    /// - [`r#type`](crate::types::builders::QPluginCardBuilder::r#type)
     /// - [`prompt`](crate::types::builders::QPluginCardBuilder::prompt)
     /// - [`plugin_type`](crate::types::builders::QPluginCardBuilder::plugin_type)
     /// - [`plugin_id`](crate::types::builders::QPluginCardBuilder::plugin_id)

@@ -5,9 +5,8 @@
 //! they are disabled by default. To enable them, run the tests with
 //!
 //! ```sh
-//! RUSTFLAGS="--cfg smoketests" cargo test
+//! RUSTFLAGS="--cfg smoketests" cargo test.
 //! ```
-//!
 use aws_sdk_marketplacereporting::{config, Client};
 /// Smoke tests for the `get_buyer_dashboard` operation
 #[::tokio::test]
@@ -15,7 +14,7 @@ async fn test_get_buyer_dashboard_unauthorized() {
     let config = ::aws_config::load_defaults(config::BehaviorVersion::latest()).await;
     let conf = config::Config::from(&config)
         .to_builder()
-        .region(::aws_types::region::Region::new("us-east-1"))
+        .region(config::Region::new("us-east-1"))
         .use_dual_stack(false)
         .use_fips(false)
         .build();

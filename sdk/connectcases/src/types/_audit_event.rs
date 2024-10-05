@@ -160,7 +160,7 @@ impl AuditEventBuilder {
     /// Consumes the builder and constructs a [`AuditEvent`](crate::types::AuditEvent).
     /// This method will fail if any of the following fields are not set:
     /// - [`event_id`](crate::types::builders::AuditEventBuilder::event_id)
-    /// - [`r#type`](crate::types::builders::AuditEventBuilder::type)
+    /// - [`r#type`](crate::types::builders::AuditEventBuilder::r#type)
     /// - [`performed_time`](crate::types::builders::AuditEventBuilder::performed_time)
     /// - [`fields`](crate::types::builders::AuditEventBuilder::fields)
     pub fn build(self) -> ::std::result::Result<crate::types::AuditEvent, ::aws_smithy_types::error::operation::BuildError> {

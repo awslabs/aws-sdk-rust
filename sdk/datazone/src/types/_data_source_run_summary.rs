@@ -265,7 +265,7 @@ impl DataSourceRunSummaryBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`id`](crate::types::builders::DataSourceRunSummaryBuilder::id)
     /// - [`data_source_id`](crate::types::builders::DataSourceRunSummaryBuilder::data_source_id)
-    /// - [`r#type`](crate::types::builders::DataSourceRunSummaryBuilder::type)
+    /// - [`r#type`](crate::types::builders::DataSourceRunSummaryBuilder::r#type)
     /// - [`status`](crate::types::builders::DataSourceRunSummaryBuilder::status)
     /// - [`project_id`](crate::types::builders::DataSourceRunSummaryBuilder::project_id)
     /// - [`created_at`](crate::types::builders::DataSourceRunSummaryBuilder::created_at)

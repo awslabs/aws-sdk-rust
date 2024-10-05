@@ -73,7 +73,7 @@ impl GeometryBuilder {
     }
     /// Consumes the builder and constructs a [`Geometry`](crate::types::Geometry).
     /// This method will fail if any of the following fields are not set:
-    /// - [`r#type`](crate::types::builders::GeometryBuilder::type)
+    /// - [`r#type`](crate::types::builders::GeometryBuilder::r#type)
     /// - [`coordinates`](crate::types::builders::GeometryBuilder::coordinates)
     pub fn build(self) -> ::std::result::Result<crate::types::Geometry, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Geometry {

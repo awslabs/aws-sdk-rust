@@ -254,7 +254,7 @@ impl CollaborationPrivacyBudgetSummaryBuilder {
     /// - [`collaboration_id`](crate::types::builders::CollaborationPrivacyBudgetSummaryBuilder::collaboration_id)
     /// - [`collaboration_arn`](crate::types::builders::CollaborationPrivacyBudgetSummaryBuilder::collaboration_arn)
     /// - [`creator_account_id`](crate::types::builders::CollaborationPrivacyBudgetSummaryBuilder::creator_account_id)
-    /// - [`r#type`](crate::types::builders::CollaborationPrivacyBudgetSummaryBuilder::type)
+    /// - [`r#type`](crate::types::builders::CollaborationPrivacyBudgetSummaryBuilder::r#type)
     /// - [`create_time`](crate::types::builders::CollaborationPrivacyBudgetSummaryBuilder::create_time)
     /// - [`update_time`](crate::types::builders::CollaborationPrivacyBudgetSummaryBuilder::update_time)
     pub fn build(self) -> ::std::result::Result<crate::types::CollaborationPrivacyBudgetSummary, ::aws_smithy_types::error::operation::BuildError> {

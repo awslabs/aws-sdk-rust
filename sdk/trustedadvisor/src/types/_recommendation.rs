@@ -518,7 +518,7 @@ impl RecommendationBuilder {
     /// Consumes the builder and constructs a [`Recommendation`](crate::types::Recommendation).
     /// This method will fail if any of the following fields are not set:
     /// - [`id`](crate::types::builders::RecommendationBuilder::id)
-    /// - [`r#type`](crate::types::builders::RecommendationBuilder::type)
+    /// - [`r#type`](crate::types::builders::RecommendationBuilder::r#type)
     /// - [`status`](crate::types::builders::RecommendationBuilder::status)
     /// - [`pillars`](crate::types::builders::RecommendationBuilder::pillars)
     /// - [`source`](crate::types::builders::RecommendationBuilder::source)

@@ -606,7 +606,7 @@ impl SecurityServicePolicyDataBuilder {
     }
     /// Consumes the builder and constructs a [`SecurityServicePolicyData`](crate::types::SecurityServicePolicyData).
     /// This method will fail if any of the following fields are not set:
-    /// - [`r#type`](crate::types::builders::SecurityServicePolicyDataBuilder::type)
+    /// - [`r#type`](crate::types::builders::SecurityServicePolicyDataBuilder::r#type)
     pub fn build(self) -> ::std::result::Result<crate::types::SecurityServicePolicyData, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::SecurityServicePolicyData {
             r#type: self.r#type.ok_or_else(|| {

@@ -543,7 +543,7 @@ impl ApplicationBuilder {
     /// - [`application_id`](crate::types::builders::ApplicationBuilder::application_id)
     /// - [`arn`](crate::types::builders::ApplicationBuilder::arn)
     /// - [`release_label`](crate::types::builders::ApplicationBuilder::release_label)
-    /// - [`r#type`](crate::types::builders::ApplicationBuilder::type)
+    /// - [`r#type`](crate::types::builders::ApplicationBuilder::r#type)
     /// - [`state`](crate::types::builders::ApplicationBuilder::state)
     /// - [`created_at`](crate::types::builders::ApplicationBuilder::created_at)
     /// - [`updated_at`](crate::types::builders::ApplicationBuilder::updated_at)

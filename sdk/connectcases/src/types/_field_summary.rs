@@ -138,7 +138,7 @@ impl FieldSummaryBuilder {
     /// - [`field_id`](crate::types::builders::FieldSummaryBuilder::field_id)
     /// - [`field_arn`](crate::types::builders::FieldSummaryBuilder::field_arn)
     /// - [`name`](crate::types::builders::FieldSummaryBuilder::name)
-    /// - [`r#type`](crate::types::builders::FieldSummaryBuilder::type)
+    /// - [`r#type`](crate::types::builders::FieldSummaryBuilder::r#type)
     /// - [`namespace`](crate::types::builders::FieldSummaryBuilder::namespace)
     pub fn build(self) -> ::std::result::Result<crate::types::FieldSummary, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::FieldSummary {

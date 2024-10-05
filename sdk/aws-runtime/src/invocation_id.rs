@@ -152,6 +152,8 @@ impl Storable for InvocationId {
 
 #[cfg(feature = "test-util")]
 mod test_util {
+    use std::sync::{Arc, Mutex};
+
     use super::*;
 
     impl InvocationId {

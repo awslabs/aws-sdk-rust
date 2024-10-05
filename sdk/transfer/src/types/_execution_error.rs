@@ -167,7 +167,7 @@ impl ExecutionErrorBuilder {
     }
     /// Consumes the builder and constructs a [`ExecutionError`](crate::types::ExecutionError).
     /// This method will fail if any of the following fields are not set:
-    /// - [`r#type`](crate::types::builders::ExecutionErrorBuilder::type)
+    /// - [`r#type`](crate::types::builders::ExecutionErrorBuilder::r#type)
     /// - [`message`](crate::types::builders::ExecutionErrorBuilder::message)
     pub fn build(self) -> ::std::result::Result<crate::types::ExecutionError, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ExecutionError {

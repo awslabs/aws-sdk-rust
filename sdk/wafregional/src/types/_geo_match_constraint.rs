@@ -70,7 +70,7 @@ impl GeoMatchConstraintBuilder {
     }
     /// Consumes the builder and constructs a [`GeoMatchConstraint`](crate::types::GeoMatchConstraint).
     /// This method will fail if any of the following fields are not set:
-    /// - [`r#type`](crate::types::builders::GeoMatchConstraintBuilder::type)
+    /// - [`r#type`](crate::types::builders::GeoMatchConstraintBuilder::r#type)
     /// - [`value`](crate::types::builders::GeoMatchConstraintBuilder::value)
     pub fn build(self) -> ::std::result::Result<crate::types::GeoMatchConstraint, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::GeoMatchConstraint {

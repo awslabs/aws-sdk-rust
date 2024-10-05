@@ -206,7 +206,7 @@ impl SyncBlockerBuilder {
     /// Consumes the builder and constructs a [`SyncBlocker`](crate::types::SyncBlocker).
     /// This method will fail if any of the following fields are not set:
     /// - [`id`](crate::types::builders::SyncBlockerBuilder::id)
-    /// - [`r#type`](crate::types::builders::SyncBlockerBuilder::type)
+    /// - [`r#type`](crate::types::builders::SyncBlockerBuilder::r#type)
     /// - [`status`](crate::types::builders::SyncBlockerBuilder::status)
     /// - [`created_reason`](crate::types::builders::SyncBlockerBuilder::created_reason)
     /// - [`created_at`](crate::types::builders::SyncBlockerBuilder::created_at)

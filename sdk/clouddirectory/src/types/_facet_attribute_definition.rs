@@ -113,7 +113,7 @@ impl FacetAttributeDefinitionBuilder {
     }
     /// Consumes the builder and constructs a [`FacetAttributeDefinition`](crate::types::FacetAttributeDefinition).
     /// This method will fail if any of the following fields are not set:
-    /// - [`r#type`](crate::types::builders::FacetAttributeDefinitionBuilder::type)
+    /// - [`r#type`](crate::types::builders::FacetAttributeDefinitionBuilder::r#type)
     pub fn build(self) -> ::std::result::Result<crate::types::FacetAttributeDefinition, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::FacetAttributeDefinition {
             r#type: self.r#type.ok_or_else(|| {

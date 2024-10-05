@@ -327,7 +327,7 @@ impl GetDataSourceRunOutputBuilder {
     /// - [`id`](crate::operation::get_data_source_run::builders::GetDataSourceRunOutputBuilder::id)
     /// - [`project_id`](crate::operation::get_data_source_run::builders::GetDataSourceRunOutputBuilder::project_id)
     /// - [`status`](crate::operation::get_data_source_run::builders::GetDataSourceRunOutputBuilder::status)
-    /// - [`r#type`](crate::operation::get_data_source_run::builders::GetDataSourceRunOutputBuilder::type)
+    /// - [`r#type`](crate::operation::get_data_source_run::builders::GetDataSourceRunOutputBuilder::r#type)
     /// - [`created_at`](crate::operation::get_data_source_run::builders::GetDataSourceRunOutputBuilder::created_at)
     /// - [`updated_at`](crate::operation::get_data_source_run::builders::GetDataSourceRunOutputBuilder::updated_at)
     pub fn build(

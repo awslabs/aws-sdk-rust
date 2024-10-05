@@ -72,7 +72,7 @@ impl CostCategorySplitChargeRuleParameterBuilder {
     }
     /// Consumes the builder and constructs a [`CostCategorySplitChargeRuleParameter`](crate::types::CostCategorySplitChargeRuleParameter).
     /// This method will fail if any of the following fields are not set:
-    /// - [`r#type`](crate::types::builders::CostCategorySplitChargeRuleParameterBuilder::type)
+    /// - [`r#type`](crate::types::builders::CostCategorySplitChargeRuleParameterBuilder::r#type)
     /// - [`values`](crate::types::builders::CostCategorySplitChargeRuleParameterBuilder::values)
     pub fn build(
         self,

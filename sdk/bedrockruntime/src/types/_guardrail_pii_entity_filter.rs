@@ -89,8 +89,8 @@ impl GuardrailPiiEntityFilterBuilder {
     }
     /// Consumes the builder and constructs a [`GuardrailPiiEntityFilter`](crate::types::GuardrailPiiEntityFilter).
     /// This method will fail if any of the following fields are not set:
-    /// - [`r#match`](crate::types::builders::GuardrailPiiEntityFilterBuilder::match)
-    /// - [`r#type`](crate::types::builders::GuardrailPiiEntityFilterBuilder::type)
+    /// - [`r#match`](crate::types::builders::GuardrailPiiEntityFilterBuilder::r#match)
+    /// - [`r#type`](crate::types::builders::GuardrailPiiEntityFilterBuilder::r#type)
     /// - [`action`](crate::types::builders::GuardrailPiiEntityFilterBuilder::action)
     pub fn build(self) -> ::std::result::Result<crate::types::GuardrailPiiEntityFilter, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::GuardrailPiiEntityFilter {

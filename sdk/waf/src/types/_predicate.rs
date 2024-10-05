@@ -99,7 +99,7 @@ impl PredicateBuilder {
     /// Consumes the builder and constructs a [`Predicate`](crate::types::Predicate).
     /// This method will fail if any of the following fields are not set:
     /// - [`negated`](crate::types::builders::PredicateBuilder::negated)
-    /// - [`r#type`](crate::types::builders::PredicateBuilder::type)
+    /// - [`r#type`](crate::types::builders::PredicateBuilder::r#type)
     /// - [`data_id`](crate::types::builders::PredicateBuilder::data_id)
     pub fn build(self) -> ::std::result::Result<crate::types::Predicate, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Predicate {

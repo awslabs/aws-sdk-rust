@@ -225,7 +225,7 @@ impl GetCapabilityOutputBuilder {
     /// - [`capability_id`](crate::operation::get_capability::builders::GetCapabilityOutputBuilder::capability_id)
     /// - [`capability_arn`](crate::operation::get_capability::builders::GetCapabilityOutputBuilder::capability_arn)
     /// - [`name`](crate::operation::get_capability::builders::GetCapabilityOutputBuilder::name)
-    /// - [`r#type`](crate::operation::get_capability::builders::GetCapabilityOutputBuilder::type)
+    /// - [`r#type`](crate::operation::get_capability::builders::GetCapabilityOutputBuilder::r#type)
     /// - [`created_at`](crate::operation::get_capability::builders::GetCapabilityOutputBuilder::created_at)
     pub fn build(
         self,

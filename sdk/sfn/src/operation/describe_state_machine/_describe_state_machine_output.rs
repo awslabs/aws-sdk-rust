@@ -434,7 +434,7 @@ impl DescribeStateMachineOutputBuilder {
     /// - [`name`](crate::operation::describe_state_machine::builders::DescribeStateMachineOutputBuilder::name)
     /// - [`definition`](crate::operation::describe_state_machine::builders::DescribeStateMachineOutputBuilder::definition)
     /// - [`role_arn`](crate::operation::describe_state_machine::builders::DescribeStateMachineOutputBuilder::role_arn)
-    /// - [`r#type`](crate::operation::describe_state_machine::builders::DescribeStateMachineOutputBuilder::type)
+    /// - [`r#type`](crate::operation::describe_state_machine::builders::DescribeStateMachineOutputBuilder::r#type)
     /// - [`creation_date`](crate::operation::describe_state_machine::builders::DescribeStateMachineOutputBuilder::creation_date)
     pub fn build(
         self,

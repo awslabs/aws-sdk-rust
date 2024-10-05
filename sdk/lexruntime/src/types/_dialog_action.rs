@@ -334,7 +334,7 @@ impl DialogActionBuilder {
     }
     /// Consumes the builder and constructs a [`DialogAction`](crate::types::DialogAction).
     /// This method will fail if any of the following fields are not set:
-    /// - [`r#type`](crate::types::builders::DialogActionBuilder::type)
+    /// - [`r#type`](crate::types::builders::DialogActionBuilder::r#type)
     pub fn build(self) -> ::std::result::Result<crate::types::DialogAction, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::DialogAction {
             r#type: self.r#type.ok_or_else(|| {

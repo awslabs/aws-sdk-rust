@@ -68,7 +68,7 @@ impl UnshareTargetBuilder {
     /// Consumes the builder and constructs a [`UnshareTarget`](crate::types::UnshareTarget).
     /// This method will fail if any of the following fields are not set:
     /// - [`id`](crate::types::builders::UnshareTargetBuilder::id)
-    /// - [`r#type`](crate::types::builders::UnshareTargetBuilder::type)
+    /// - [`r#type`](crate::types::builders::UnshareTargetBuilder::r#type)
     pub fn build(self) -> ::std::result::Result<crate::types::UnshareTarget, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::UnshareTarget {
             id: self.id.ok_or_else(|| {

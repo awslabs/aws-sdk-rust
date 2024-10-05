@@ -92,7 +92,7 @@ impl ConditionBuilder {
     }
     /// Consumes the builder and constructs a [`Condition`](crate::types::Condition).
     /// This method will fail if any of the following fields are not set:
-    /// - [`r#type`](crate::types::builders::ConditionBuilder::type)
+    /// - [`r#type`](crate::types::builders::ConditionBuilder::r#type)
     /// - [`key`](crate::types::builders::ConditionBuilder::key)
     /// - [`value`](crate::types::builders::ConditionBuilder::value)
     pub fn build(self) -> ::std::result::Result<crate::types::Condition, ::aws_smithy_types::error::operation::BuildError> {

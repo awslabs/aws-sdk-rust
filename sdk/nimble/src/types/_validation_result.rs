@@ -111,7 +111,7 @@ impl ValidationResultBuilder {
     }
     /// Consumes the builder and constructs a [`ValidationResult`](crate::types::ValidationResult).
     /// This method will fail if any of the following fields are not set:
-    /// - [`r#type`](crate::types::builders::ValidationResultBuilder::type)
+    /// - [`r#type`](crate::types::builders::ValidationResultBuilder::r#type)
     /// - [`state`](crate::types::builders::ValidationResultBuilder::state)
     /// - [`status_code`](crate::types::builders::ValidationResultBuilder::status_code)
     /// - [`status_message`](crate::types::builders::ValidationResultBuilder::status_message)

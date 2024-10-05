@@ -440,7 +440,7 @@ impl ExperimentBuilder {
     /// - [`status`](crate::types::builders::ExperimentBuilder::status)
     /// - [`created_time`](crate::types::builders::ExperimentBuilder::created_time)
     /// - [`last_updated_time`](crate::types::builders::ExperimentBuilder::last_updated_time)
-    /// - [`r#type`](crate::types::builders::ExperimentBuilder::type)
+    /// - [`r#type`](crate::types::builders::ExperimentBuilder::r#type)
     pub fn build(self) -> ::std::result::Result<crate::types::Experiment, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Experiment {
             arn: self.arn.ok_or_else(|| {

@@ -113,7 +113,7 @@ impl ResourceSyncEventBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`event`](crate::types::builders::ResourceSyncEventBuilder::event)
     /// - [`time`](crate::types::builders::ResourceSyncEventBuilder::time)
-    /// - [`r#type`](crate::types::builders::ResourceSyncEventBuilder::type)
+    /// - [`r#type`](crate::types::builders::ResourceSyncEventBuilder::r#type)
     pub fn build(self) -> ::std::result::Result<crate::types::ResourceSyncEvent, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ResourceSyncEvent {
             event: self.event.ok_or_else(|| {

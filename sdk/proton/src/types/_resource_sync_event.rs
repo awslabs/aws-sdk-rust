@@ -111,7 +111,7 @@ impl ResourceSyncEventBuilder {
     }
     /// Consumes the builder and constructs a [`ResourceSyncEvent`](crate::types::ResourceSyncEvent).
     /// This method will fail if any of the following fields are not set:
-    /// - [`r#type`](crate::types::builders::ResourceSyncEventBuilder::type)
+    /// - [`r#type`](crate::types::builders::ResourceSyncEventBuilder::r#type)
     /// - [`time`](crate::types::builders::ResourceSyncEventBuilder::time)
     /// - [`event`](crate::types::builders::ResourceSyncEventBuilder::event)
     pub fn build(self) -> ::std::result::Result<crate::types::ResourceSyncEvent, ::aws_smithy_types::error::operation::BuildError> {

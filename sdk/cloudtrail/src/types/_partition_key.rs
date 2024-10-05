@@ -69,7 +69,7 @@ impl PartitionKeyBuilder {
     /// Consumes the builder and constructs a [`PartitionKey`](crate::types::PartitionKey).
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::PartitionKeyBuilder::name)
-    /// - [`r#type`](crate::types::builders::PartitionKeyBuilder::type)
+    /// - [`r#type`](crate::types::builders::PartitionKeyBuilder::r#type)
     pub fn build(self) -> ::std::result::Result<crate::types::PartitionKey, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::PartitionKey {
             name: self.name.ok_or_else(|| {

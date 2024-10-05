@@ -181,7 +181,7 @@ impl TransformConfigParameterBuilder {
     /// Consumes the builder and constructs a [`TransformConfigParameter`](crate::types::TransformConfigParameter).
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::TransformConfigParameterBuilder::name)
-    /// - [`r#type`](crate::types::builders::TransformConfigParameterBuilder::type)
+    /// - [`r#type`](crate::types::builders::TransformConfigParameterBuilder::r#type)
     pub fn build(self) -> ::std::result::Result<crate::types::TransformConfigParameter, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::TransformConfigParameter {
             name: self.name.ok_or_else(|| {

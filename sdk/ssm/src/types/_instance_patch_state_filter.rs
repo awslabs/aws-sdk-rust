@@ -196,7 +196,7 @@ impl InstancePatchStateFilterBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`key`](crate::types::builders::InstancePatchStateFilterBuilder::key)
     /// - [`values`](crate::types::builders::InstancePatchStateFilterBuilder::values)
-    /// - [`r#type`](crate::types::builders::InstancePatchStateFilterBuilder::type)
+    /// - [`r#type`](crate::types::builders::InstancePatchStateFilterBuilder::r#type)
     pub fn build(self) -> ::std::result::Result<crate::types::InstancePatchStateFilter, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::InstancePatchStateFilter {
             key: self.key.ok_or_else(|| {

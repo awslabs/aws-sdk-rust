@@ -109,7 +109,7 @@ impl ResponseHeadersPolicyStrictTransportSecurityBuilder {
     }
     /// Consumes the builder and constructs a [`ResponseHeadersPolicyStrictTransportSecurity`](crate::types::ResponseHeadersPolicyStrictTransportSecurity).
     /// This method will fail if any of the following fields are not set:
-    /// - [`r#override`](crate::types::builders::ResponseHeadersPolicyStrictTransportSecurityBuilder::override)
+    /// - [`r#override`](crate::types::builders::ResponseHeadersPolicyStrictTransportSecurityBuilder::r#override)
     /// - [`access_control_max_age_sec`](crate::types::builders::ResponseHeadersPolicyStrictTransportSecurityBuilder::access_control_max_age_sec)
     pub fn build(
         self,

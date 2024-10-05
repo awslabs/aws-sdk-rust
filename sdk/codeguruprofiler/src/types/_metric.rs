@@ -96,7 +96,7 @@ impl MetricBuilder {
     /// Consumes the builder and constructs a [`Metric`](crate::types::Metric).
     /// This method will fail if any of the following fields are not set:
     /// - [`frame_name`](crate::types::builders::MetricBuilder::frame_name)
-    /// - [`r#type`](crate::types::builders::MetricBuilder::type)
+    /// - [`r#type`](crate::types::builders::MetricBuilder::r#type)
     /// - [`thread_states`](crate::types::builders::MetricBuilder::thread_states)
     pub fn build(self) -> ::std::result::Result<crate::types::Metric, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Metric {

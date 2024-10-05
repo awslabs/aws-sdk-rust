@@ -66,7 +66,7 @@ impl EvaluationRuleBuilder {
     }
     /// Consumes the builder and constructs a [`EvaluationRule`](crate::types::EvaluationRule).
     /// This method will fail if any of the following fields are not set:
-    /// - [`r#type`](crate::types::builders::EvaluationRuleBuilder::type)
+    /// - [`r#type`](crate::types::builders::EvaluationRuleBuilder::r#type)
     pub fn build(self) -> ::std::result::Result<crate::types::EvaluationRule, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::EvaluationRule {
             name: self.name,

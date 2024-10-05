@@ -131,7 +131,7 @@ impl DatasetParameterBuilder {
     /// Consumes the builder and constructs a [`DatasetParameter`](crate::types::DatasetParameter).
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::DatasetParameterBuilder::name)
-    /// - [`r#type`](crate::types::builders::DatasetParameterBuilder::type)
+    /// - [`r#type`](crate::types::builders::DatasetParameterBuilder::r#type)
     pub fn build(self) -> ::std::result::Result<crate::types::DatasetParameter, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::DatasetParameter {
             name: self.name.ok_or_else(|| {

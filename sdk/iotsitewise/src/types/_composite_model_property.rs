@@ -133,7 +133,7 @@ impl CompositeModelPropertyBuilder {
     /// Consumes the builder and constructs a [`CompositeModelProperty`](crate::types::CompositeModelProperty).
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::CompositeModelPropertyBuilder::name)
-    /// - [`r#type`](crate::types::builders::CompositeModelPropertyBuilder::type)
+    /// - [`r#type`](crate::types::builders::CompositeModelPropertyBuilder::r#type)
     pub fn build(self) -> ::std::result::Result<crate::types::CompositeModelProperty, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CompositeModelProperty {
             name: self.name.ok_or_else(|| {

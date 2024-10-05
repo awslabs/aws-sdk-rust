@@ -158,7 +158,7 @@ impl ConfiguredTableAnalysisRuleBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`configured_table_id`](crate::types::builders::ConfiguredTableAnalysisRuleBuilder::configured_table_id)
     /// - [`configured_table_arn`](crate::types::builders::ConfiguredTableAnalysisRuleBuilder::configured_table_arn)
-    /// - [`r#type`](crate::types::builders::ConfiguredTableAnalysisRuleBuilder::type)
+    /// - [`r#type`](crate::types::builders::ConfiguredTableAnalysisRuleBuilder::r#type)
     /// - [`create_time`](crate::types::builders::ConfiguredTableAnalysisRuleBuilder::create_time)
     /// - [`update_time`](crate::types::builders::ConfiguredTableAnalysisRuleBuilder::update_time)
     pub fn build(self) -> ::std::result::Result<crate::types::ConfiguredTableAnalysisRule, ::aws_smithy_types::error::operation::BuildError> {

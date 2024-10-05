@@ -135,7 +135,7 @@ impl CapabilitySummaryBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`capability_id`](crate::types::builders::CapabilitySummaryBuilder::capability_id)
     /// - [`name`](crate::types::builders::CapabilitySummaryBuilder::name)
-    /// - [`r#type`](crate::types::builders::CapabilitySummaryBuilder::type)
+    /// - [`r#type`](crate::types::builders::CapabilitySummaryBuilder::r#type)
     /// - [`created_at`](crate::types::builders::CapabilitySummaryBuilder::created_at)
     pub fn build(self) -> ::std::result::Result<crate::types::CapabilitySummary, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CapabilitySummary {

@@ -156,7 +156,7 @@ impl ConfigurationDefinitionBuilder {
     }
     /// Consumes the builder and constructs a [`ConfigurationDefinition`](crate::types::ConfigurationDefinition).
     /// This method will fail if any of the following fields are not set:
-    /// - [`r#type`](crate::types::builders::ConfigurationDefinitionBuilder::type)
+    /// - [`r#type`](crate::types::builders::ConfigurationDefinitionBuilder::r#type)
     /// - [`parameters`](crate::types::builders::ConfigurationDefinitionBuilder::parameters)
     pub fn build(self) -> ::std::result::Result<crate::types::ConfigurationDefinition, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ConfigurationDefinition {

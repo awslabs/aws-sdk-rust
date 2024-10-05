@@ -154,7 +154,7 @@ impl SignalDecoderBuilder {
     /// Consumes the builder and constructs a [`SignalDecoder`](crate::types::SignalDecoder).
     /// This method will fail if any of the following fields are not set:
     /// - [`fully_qualified_name`](crate::types::builders::SignalDecoderBuilder::fully_qualified_name)
-    /// - [`r#type`](crate::types::builders::SignalDecoderBuilder::type)
+    /// - [`r#type`](crate::types::builders::SignalDecoderBuilder::r#type)
     /// - [`interface_id`](crate::types::builders::SignalDecoderBuilder::interface_id)
     pub fn build(self) -> ::std::result::Result<crate::types::SignalDecoder, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::SignalDecoder {

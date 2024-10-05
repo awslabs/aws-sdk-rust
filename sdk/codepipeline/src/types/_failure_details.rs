@@ -88,7 +88,7 @@ impl FailureDetailsBuilder {
     }
     /// Consumes the builder and constructs a [`FailureDetails`](crate::types::FailureDetails).
     /// This method will fail if any of the following fields are not set:
-    /// - [`r#type`](crate::types::builders::FailureDetailsBuilder::type)
+    /// - [`r#type`](crate::types::builders::FailureDetailsBuilder::r#type)
     /// - [`message`](crate::types::builders::FailureDetailsBuilder::message)
     pub fn build(self) -> ::std::result::Result<crate::types::FailureDetails, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::FailureDetails {

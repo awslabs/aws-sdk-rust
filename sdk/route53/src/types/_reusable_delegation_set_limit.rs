@@ -66,7 +66,7 @@ impl ReusableDelegationSetLimitBuilder {
     }
     /// Consumes the builder and constructs a [`ReusableDelegationSetLimit`](crate::types::ReusableDelegationSetLimit).
     /// This method will fail if any of the following fields are not set:
-    /// - [`r#type`](crate::types::builders::ReusableDelegationSetLimitBuilder::type)
+    /// - [`r#type`](crate::types::builders::ReusableDelegationSetLimitBuilder::r#type)
     /// - [`value`](crate::types::builders::ReusableDelegationSetLimitBuilder::value)
     pub fn build(self) -> ::std::result::Result<crate::types::ReusableDelegationSetLimit, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ReusableDelegationSetLimit {

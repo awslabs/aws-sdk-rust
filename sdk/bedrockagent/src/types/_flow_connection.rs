@@ -134,7 +134,7 @@ impl FlowConnectionBuilder {
     }
     /// Consumes the builder and constructs a [`FlowConnection`](crate::types::FlowConnection).
     /// This method will fail if any of the following fields are not set:
-    /// - [`r#type`](crate::types::builders::FlowConnectionBuilder::type)
+    /// - [`r#type`](crate::types::builders::FlowConnectionBuilder::r#type)
     /// - [`name`](crate::types::builders::FlowConnectionBuilder::name)
     /// - [`source`](crate::types::builders::FlowConnectionBuilder::source)
     /// - [`target`](crate::types::builders::FlowConnectionBuilder::target)

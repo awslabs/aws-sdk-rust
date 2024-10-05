@@ -98,7 +98,7 @@ impl AnalysisParameterBuilder {
     /// Consumes the builder and constructs a [`AnalysisParameter`](crate::types::AnalysisParameter).
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::AnalysisParameterBuilder::name)
-    /// - [`r#type`](crate::types::builders::AnalysisParameterBuilder::type)
+    /// - [`r#type`](crate::types::builders::AnalysisParameterBuilder::r#type)
     pub fn build(self) -> ::std::result::Result<crate::types::AnalysisParameter, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AnalysisParameter {
             name: self.name.ok_or_else(|| {

@@ -134,7 +134,7 @@ impl DataSetBuilder {
     }
     /// Consumes the builder and constructs a [`DataSet`](crate::types::DataSet).
     /// This method will fail if any of the following fields are not set:
-    /// - [`r#type`](crate::types::builders::DataSetBuilder::type)
+    /// - [`r#type`](crate::types::builders::DataSetBuilder::r#type)
     /// - [`name`](crate::types::builders::DataSetBuilder::name)
     /// - [`ccsid`](crate::types::builders::DataSetBuilder::ccsid)
     /// - [`format`](crate::types::builders::DataSetBuilder::format)

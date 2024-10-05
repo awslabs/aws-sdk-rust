@@ -94,7 +94,7 @@ impl ConfigurableEnvironmentActionBuilder {
     }
     /// Consumes the builder and constructs a [`ConfigurableEnvironmentAction`](crate::types::ConfigurableEnvironmentAction).
     /// This method will fail if any of the following fields are not set:
-    /// - [`r#type`](crate::types::builders::ConfigurableEnvironmentActionBuilder::type)
+    /// - [`r#type`](crate::types::builders::ConfigurableEnvironmentActionBuilder::r#type)
     /// - [`parameters`](crate::types::builders::ConfigurableEnvironmentActionBuilder::parameters)
     pub fn build(self) -> ::std::result::Result<crate::types::ConfigurableEnvironmentAction, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ConfigurableEnvironmentAction {

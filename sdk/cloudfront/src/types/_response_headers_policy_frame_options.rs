@@ -72,7 +72,7 @@ impl ResponseHeadersPolicyFrameOptionsBuilder {
     }
     /// Consumes the builder and constructs a [`ResponseHeadersPolicyFrameOptions`](crate::types::ResponseHeadersPolicyFrameOptions).
     /// This method will fail if any of the following fields are not set:
-    /// - [`r#override`](crate::types::builders::ResponseHeadersPolicyFrameOptionsBuilder::override)
+    /// - [`r#override`](crate::types::builders::ResponseHeadersPolicyFrameOptionsBuilder::r#override)
     /// - [`frame_option`](crate::types::builders::ResponseHeadersPolicyFrameOptionsBuilder::frame_option)
     pub fn build(self) -> ::std::result::Result<crate::types::ResponseHeadersPolicyFrameOptions, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ResponseHeadersPolicyFrameOptions {

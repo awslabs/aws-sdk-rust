@@ -224,7 +224,7 @@ impl TopBottomMoversComputationBuilder {
     /// Consumes the builder and constructs a [`TopBottomMoversComputation`](crate::types::TopBottomMoversComputation).
     /// This method will fail if any of the following fields are not set:
     /// - [`computation_id`](crate::types::builders::TopBottomMoversComputationBuilder::computation_id)
-    /// - [`r#type`](crate::types::builders::TopBottomMoversComputationBuilder::type)
+    /// - [`r#type`](crate::types::builders::TopBottomMoversComputationBuilder::r#type)
     pub fn build(self) -> ::std::result::Result<crate::types::TopBottomMoversComputation, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::TopBottomMoversComputation {
             computation_id: self.computation_id.ok_or_else(|| {

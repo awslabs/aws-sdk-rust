@@ -456,7 +456,7 @@ impl DnsRecordBuilder {
     }
     /// Consumes the builder and constructs a [`DnsRecord`](crate::types::DnsRecord).
     /// This method will fail if any of the following fields are not set:
-    /// - [`r#type`](crate::types::builders::DnsRecordBuilder::type)
+    /// - [`r#type`](crate::types::builders::DnsRecordBuilder::r#type)
     /// - [`ttl`](crate::types::builders::DnsRecordBuilder::ttl)
     pub fn build(self) -> ::std::result::Result<crate::types::DnsRecord, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::DnsRecord {

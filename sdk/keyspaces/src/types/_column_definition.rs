@@ -69,7 +69,7 @@ impl ColumnDefinitionBuilder {
     /// Consumes the builder and constructs a [`ColumnDefinition`](crate::types::ColumnDefinition).
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::ColumnDefinitionBuilder::name)
-    /// - [`r#type`](crate::types::builders::ColumnDefinitionBuilder::type)
+    /// - [`r#type`](crate::types::builders::ColumnDefinitionBuilder::r#type)
     pub fn build(self) -> ::std::result::Result<crate::types::ColumnDefinition, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ColumnDefinition {
             name: self.name.ok_or_else(|| {

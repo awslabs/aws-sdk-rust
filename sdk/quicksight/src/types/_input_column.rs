@@ -89,7 +89,7 @@ impl InputColumnBuilder {
     /// Consumes the builder and constructs a [`InputColumn`](crate::types::InputColumn).
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::InputColumnBuilder::name)
-    /// - [`r#type`](crate::types::builders::InputColumnBuilder::type)
+    /// - [`r#type`](crate::types::builders::InputColumnBuilder::r#type)
     pub fn build(self) -> ::std::result::Result<crate::types::InputColumn, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::InputColumn {
             name: self.name.ok_or_else(|| {

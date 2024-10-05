@@ -132,7 +132,7 @@ impl CostAllocationTagBuilder {
     /// Consumes the builder and constructs a [`CostAllocationTag`](crate::types::CostAllocationTag).
     /// This method will fail if any of the following fields are not set:
     /// - [`tag_key`](crate::types::builders::CostAllocationTagBuilder::tag_key)
-    /// - [`r#type`](crate::types::builders::CostAllocationTagBuilder::type)
+    /// - [`r#type`](crate::types::builders::CostAllocationTagBuilder::r#type)
     /// - [`status`](crate::types::builders::CostAllocationTagBuilder::status)
     pub fn build(self) -> ::std::result::Result<crate::types::CostAllocationTag, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CostAllocationTag {

@@ -160,7 +160,7 @@ impl AssetCompositeModelBuilder {
     /// Consumes the builder and constructs a [`AssetCompositeModel`](crate::types::AssetCompositeModel).
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::AssetCompositeModelBuilder::name)
-    /// - [`r#type`](crate::types::builders::AssetCompositeModelBuilder::type)
+    /// - [`r#type`](crate::types::builders::AssetCompositeModelBuilder::r#type)
     /// - [`properties`](crate::types::builders::AssetCompositeModelBuilder::properties)
     pub fn build(self) -> ::std::result::Result<crate::types::AssetCompositeModel, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AssetCompositeModel {

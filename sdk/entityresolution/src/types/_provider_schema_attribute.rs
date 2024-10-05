@@ -110,7 +110,7 @@ impl ProviderSchemaAttributeBuilder {
     /// Consumes the builder and constructs a [`ProviderSchemaAttribute`](crate::types::ProviderSchemaAttribute).
     /// This method will fail if any of the following fields are not set:
     /// - [`field_name`](crate::types::builders::ProviderSchemaAttributeBuilder::field_name)
-    /// - [`r#type`](crate::types::builders::ProviderSchemaAttributeBuilder::type)
+    /// - [`r#type`](crate::types::builders::ProviderSchemaAttributeBuilder::r#type)
     pub fn build(self) -> ::std::result::Result<crate::types::ProviderSchemaAttribute, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ProviderSchemaAttribute {
             field_name: self.field_name.ok_or_else(|| {

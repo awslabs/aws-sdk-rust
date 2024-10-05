@@ -3510,7 +3510,7 @@ impl ConfigurationDefinitionInputBuilder {
     }
     /// Consumes the builder and constructs a [`ConfigurationDefinitionInput`](crate::types::ConfigurationDefinitionInput).
     /// This method will fail if any of the following fields are not set:
-    /// - [`r#type`](crate::types::builders::ConfigurationDefinitionInputBuilder::type)
+    /// - [`r#type`](crate::types::builders::ConfigurationDefinitionInputBuilder::r#type)
     /// - [`parameters`](crate::types::builders::ConfigurationDefinitionInputBuilder::parameters)
     pub fn build(self) -> ::std::result::Result<crate::types::ConfigurationDefinitionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ConfigurationDefinitionInput {

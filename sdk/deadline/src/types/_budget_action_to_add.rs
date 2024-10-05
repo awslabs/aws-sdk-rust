@@ -106,7 +106,7 @@ impl BudgetActionToAddBuilder {
     }
     /// Consumes the builder and constructs a [`BudgetActionToAdd`](crate::types::BudgetActionToAdd).
     /// This method will fail if any of the following fields are not set:
-    /// - [`r#type`](crate::types::builders::BudgetActionToAddBuilder::type)
+    /// - [`r#type`](crate::types::builders::BudgetActionToAddBuilder::r#type)
     /// - [`threshold_percentage`](crate::types::builders::BudgetActionToAddBuilder::threshold_percentage)
     pub fn build(self) -> ::std::result::Result<crate::types::BudgetActionToAdd, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::BudgetActionToAdd {

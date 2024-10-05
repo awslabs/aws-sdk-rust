@@ -68,7 +68,7 @@ impl DelegateBuilder {
     /// Consumes the builder and constructs a [`Delegate`](crate::types::Delegate).
     /// This method will fail if any of the following fields are not set:
     /// - [`id`](crate::types::builders::DelegateBuilder::id)
-    /// - [`r#type`](crate::types::builders::DelegateBuilder::type)
+    /// - [`r#type`](crate::types::builders::DelegateBuilder::r#type)
     pub fn build(self) -> ::std::result::Result<crate::types::Delegate, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Delegate {
             id: self.id.ok_or_else(|| {

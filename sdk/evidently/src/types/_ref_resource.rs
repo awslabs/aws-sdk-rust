@@ -174,7 +174,7 @@ impl RefResourceBuilder {
     /// Consumes the builder and constructs a [`RefResource`](crate::types::RefResource).
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::RefResourceBuilder::name)
-    /// - [`r#type`](crate::types::builders::RefResourceBuilder::type)
+    /// - [`r#type`](crate::types::builders::RefResourceBuilder::r#type)
     pub fn build(self) -> ::std::result::Result<crate::types::RefResource, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::RefResource {
             name: self.name.ok_or_else(|| {

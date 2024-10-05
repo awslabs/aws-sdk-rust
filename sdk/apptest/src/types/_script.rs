@@ -68,7 +68,7 @@ impl ScriptBuilder {
     /// Consumes the builder and constructs a [`Script`](crate::types::Script).
     /// This method will fail if any of the following fields are not set:
     /// - [`script_location`](crate::types::builders::ScriptBuilder::script_location)
-    /// - [`r#type`](crate::types::builders::ScriptBuilder::type)
+    /// - [`r#type`](crate::types::builders::ScriptBuilder::r#type)
     pub fn build(self) -> ::std::result::Result<crate::types::Script, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Script {
             script_location: self.script_location.ok_or_else(|| {

@@ -350,7 +350,7 @@ impl GetVectorEnrichmentJobOutputBuilder {
     /// Consumes the builder and constructs a [`GetVectorEnrichmentJobOutput`](crate::operation::get_vector_enrichment_job::GetVectorEnrichmentJobOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`arn`](crate::operation::get_vector_enrichment_job::builders::GetVectorEnrichmentJobOutputBuilder::arn)
-    /// - [`r#type`](crate::operation::get_vector_enrichment_job::builders::GetVectorEnrichmentJobOutputBuilder::type)
+    /// - [`r#type`](crate::operation::get_vector_enrichment_job::builders::GetVectorEnrichmentJobOutputBuilder::r#type)
     /// - [`name`](crate::operation::get_vector_enrichment_job::builders::GetVectorEnrichmentJobOutputBuilder::name)
     /// - [`creation_time`](crate::operation::get_vector_enrichment_job::builders::GetVectorEnrichmentJobOutputBuilder::creation_time)
     /// - [`duration_in_seconds`](crate::operation::get_vector_enrichment_job::builders::GetVectorEnrichmentJobOutputBuilder::duration_in_seconds)

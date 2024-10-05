@@ -230,7 +230,7 @@ impl SchemaSummaryBuilder {
     /// Consumes the builder and constructs a [`SchemaSummary`](crate::types::SchemaSummary).
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::SchemaSummaryBuilder::name)
-    /// - [`r#type`](crate::types::builders::SchemaSummaryBuilder::type)
+    /// - [`r#type`](crate::types::builders::SchemaSummaryBuilder::r#type)
     /// - [`creator_account_id`](crate::types::builders::SchemaSummaryBuilder::creator_account_id)
     /// - [`create_time`](crate::types::builders::SchemaSummaryBuilder::create_time)
     /// - [`update_time`](crate::types::builders::SchemaSummaryBuilder::update_time)

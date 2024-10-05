@@ -225,7 +225,7 @@ impl UpdateCapabilityOutputBuilder {
     /// - [`capability_id`](crate::operation::update_capability::builders::UpdateCapabilityOutputBuilder::capability_id)
     /// - [`capability_arn`](crate::operation::update_capability::builders::UpdateCapabilityOutputBuilder::capability_arn)
     /// - [`name`](crate::operation::update_capability::builders::UpdateCapabilityOutputBuilder::name)
-    /// - [`r#type`](crate::operation::update_capability::builders::UpdateCapabilityOutputBuilder::type)
+    /// - [`r#type`](crate::operation::update_capability::builders::UpdateCapabilityOutputBuilder::r#type)
     /// - [`created_at`](crate::operation::update_capability::builders::UpdateCapabilityOutputBuilder::created_at)
     pub fn build(
         self,

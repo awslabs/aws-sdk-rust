@@ -273,7 +273,7 @@ impl AlarmRecommendationBuilder {
     /// - [`recommendation_id`](crate::types::builders::AlarmRecommendationBuilder::recommendation_id)
     /// - [`reference_id`](crate::types::builders::AlarmRecommendationBuilder::reference_id)
     /// - [`name`](crate::types::builders::AlarmRecommendationBuilder::name)
-    /// - [`r#type`](crate::types::builders::AlarmRecommendationBuilder::type)
+    /// - [`r#type`](crate::types::builders::AlarmRecommendationBuilder::r#type)
     pub fn build(self) -> ::std::result::Result<crate::types::AlarmRecommendation, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AlarmRecommendation {
             recommendation_id: self.recommendation_id.ok_or_else(|| {

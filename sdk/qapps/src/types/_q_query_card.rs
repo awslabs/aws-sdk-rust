@@ -187,7 +187,7 @@ impl QQueryCardBuilder {
     /// - [`id`](crate::types::builders::QQueryCardBuilder::id)
     /// - [`title`](crate::types::builders::QQueryCardBuilder::title)
     /// - [`dependencies`](crate::types::builders::QQueryCardBuilder::dependencies)
-    /// - [`r#type`](crate::types::builders::QQueryCardBuilder::type)
+    /// - [`r#type`](crate::types::builders::QQueryCardBuilder::r#type)
     /// - [`prompt`](crate::types::builders::QQueryCardBuilder::prompt)
     /// - [`output_source`](crate::types::builders::QQueryCardBuilder::output_source)
     pub fn build(self) -> ::std::result::Result<crate::types::QQueryCard, ::aws_smithy_types::error::operation::BuildError> {

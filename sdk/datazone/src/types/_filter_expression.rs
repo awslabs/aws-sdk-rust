@@ -67,7 +67,7 @@ impl FilterExpressionBuilder {
     }
     /// Consumes the builder and constructs a [`FilterExpression`](crate::types::FilterExpression).
     /// This method will fail if any of the following fields are not set:
-    /// - [`r#type`](crate::types::builders::FilterExpressionBuilder::type)
+    /// - [`r#type`](crate::types::builders::FilterExpressionBuilder::r#type)
     /// - [`expression`](crate::types::builders::FilterExpressionBuilder::expression)
     pub fn build(self) -> ::std::result::Result<crate::types::FilterExpression, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::FilterExpression {

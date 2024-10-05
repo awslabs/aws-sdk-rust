@@ -367,7 +367,7 @@ impl SchemaBuilder {
     /// - [`description`](crate::types::builders::SchemaBuilder::description)
     /// - [`create_time`](crate::types::builders::SchemaBuilder::create_time)
     /// - [`update_time`](crate::types::builders::SchemaBuilder::update_time)
-    /// - [`r#type`](crate::types::builders::SchemaBuilder::type)
+    /// - [`r#type`](crate::types::builders::SchemaBuilder::r#type)
     pub fn build(self) -> ::std::result::Result<crate::types::Schema, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Schema {
             columns: self.columns.ok_or_else(|| {

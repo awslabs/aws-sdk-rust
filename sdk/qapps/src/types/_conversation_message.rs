@@ -68,7 +68,7 @@ impl ConversationMessageBuilder {
     /// Consumes the builder and constructs a [`ConversationMessage`](crate::types::ConversationMessage).
     /// This method will fail if any of the following fields are not set:
     /// - [`body`](crate::types::builders::ConversationMessageBuilder::body)
-    /// - [`r#type`](crate::types::builders::ConversationMessageBuilder::type)
+    /// - [`r#type`](crate::types::builders::ConversationMessageBuilder::r#type)
     pub fn build(self) -> ::std::result::Result<crate::types::ConversationMessage, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ConversationMessage {
             body: self.body.ok_or_else(|| {

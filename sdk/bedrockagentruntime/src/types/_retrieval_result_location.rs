@@ -170,7 +170,7 @@ impl RetrievalResultLocationBuilder {
     }
     /// Consumes the builder and constructs a [`RetrievalResultLocation`](crate::types::RetrievalResultLocation).
     /// This method will fail if any of the following fields are not set:
-    /// - [`r#type`](crate::types::builders::RetrievalResultLocationBuilder::type)
+    /// - [`r#type`](crate::types::builders::RetrievalResultLocationBuilder::r#type)
     pub fn build(self) -> ::std::result::Result<crate::types::RetrievalResultLocation, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::RetrievalResultLocation {
             r#type: self.r#type.ok_or_else(|| {

@@ -371,7 +371,7 @@ impl EnvironmentBuilder {
     }
     /// Consumes the builder and constructs a [`Environment`](crate::types::Environment).
     /// This method will fail if any of the following fields are not set:
-    /// - [`r#type`](crate::types::builders::EnvironmentBuilder::type)
+    /// - [`r#type`](crate::types::builders::EnvironmentBuilder::r#type)
     /// - [`arn`](crate::types::builders::EnvironmentBuilder::arn)
     /// - [`owner_arn`](crate::types::builders::EnvironmentBuilder::owner_arn)
     pub fn build(self) -> ::std::result::Result<crate::types::Environment, ::aws_smithy_types::error::operation::BuildError> {

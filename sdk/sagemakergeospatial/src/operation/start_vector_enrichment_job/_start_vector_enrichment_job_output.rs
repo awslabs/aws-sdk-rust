@@ -288,7 +288,7 @@ impl StartVectorEnrichmentJobOutputBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::operation::start_vector_enrichment_job::builders::StartVectorEnrichmentJobOutputBuilder::name)
     /// - [`arn`](crate::operation::start_vector_enrichment_job::builders::StartVectorEnrichmentJobOutputBuilder::arn)
-    /// - [`r#type`](crate::operation::start_vector_enrichment_job::builders::StartVectorEnrichmentJobOutputBuilder::type)
+    /// - [`r#type`](crate::operation::start_vector_enrichment_job::builders::StartVectorEnrichmentJobOutputBuilder::r#type)
     /// - [`creation_time`](crate::operation::start_vector_enrichment_job::builders::StartVectorEnrichmentJobOutputBuilder::creation_time)
     /// - [`duration_in_seconds`](crate::operation::start_vector_enrichment_job::builders::StartVectorEnrichmentJobOutputBuilder::duration_in_seconds)
     /// - [`status`](crate::operation::start_vector_enrichment_job::builders::StartVectorEnrichmentJobOutputBuilder::status)

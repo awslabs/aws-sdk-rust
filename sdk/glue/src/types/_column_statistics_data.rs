@@ -191,7 +191,7 @@ impl ColumnStatisticsDataBuilder {
     }
     /// Consumes the builder and constructs a [`ColumnStatisticsData`](crate::types::ColumnStatisticsData).
     /// This method will fail if any of the following fields are not set:
-    /// - [`r#type`](crate::types::builders::ColumnStatisticsDataBuilder::type)
+    /// - [`r#type`](crate::types::builders::ColumnStatisticsDataBuilder::r#type)
     pub fn build(self) -> ::std::result::Result<crate::types::ColumnStatisticsData, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ColumnStatisticsData {
             r#type: self.r#type.ok_or_else(|| {

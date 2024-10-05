@@ -238,7 +238,7 @@ impl AssistantSummaryBuilder {
     /// - [`assistant_id`](crate::types::builders::AssistantSummaryBuilder::assistant_id)
     /// - [`assistant_arn`](crate::types::builders::AssistantSummaryBuilder::assistant_arn)
     /// - [`name`](crate::types::builders::AssistantSummaryBuilder::name)
-    /// - [`r#type`](crate::types::builders::AssistantSummaryBuilder::type)
+    /// - [`r#type`](crate::types::builders::AssistantSummaryBuilder::r#type)
     /// - [`status`](crate::types::builders::AssistantSummaryBuilder::status)
     pub fn build(self) -> ::std::result::Result<crate::types::AssistantSummary, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AssistantSummary {

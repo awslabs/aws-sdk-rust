@@ -5,6 +5,7 @@
 
 use crate::unescape::unescape;
 use std::borrow::Cow;
+use std::convert::TryFrom;
 use std::error::Error;
 use std::fmt::{Display, Formatter};
 use xmlparser::{ElementEnd, Token, Tokenizer};

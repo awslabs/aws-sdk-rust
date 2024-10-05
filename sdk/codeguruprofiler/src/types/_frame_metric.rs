@@ -96,7 +96,7 @@ impl FrameMetricBuilder {
     /// Consumes the builder and constructs a [`FrameMetric`](crate::types::FrameMetric).
     /// This method will fail if any of the following fields are not set:
     /// - [`frame_name`](crate::types::builders::FrameMetricBuilder::frame_name)
-    /// - [`r#type`](crate::types::builders::FrameMetricBuilder::type)
+    /// - [`r#type`](crate::types::builders::FrameMetricBuilder::r#type)
     /// - [`thread_states`](crate::types::builders::FrameMetricBuilder::thread_states)
     pub fn build(self) -> ::std::result::Result<crate::types::FrameMetric, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::FrameMetric {

@@ -69,7 +69,7 @@ impl ConcatenationSourceBuilder {
     }
     /// Consumes the builder and constructs a [`ConcatenationSource`](crate::types::ConcatenationSource).
     /// This method will fail if any of the following fields are not set:
-    /// - [`r#type`](crate::types::builders::ConcatenationSourceBuilder::type)
+    /// - [`r#type`](crate::types::builders::ConcatenationSourceBuilder::r#type)
     pub fn build(self) -> ::std::result::Result<crate::types::ConcatenationSource, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ConcatenationSource {
             r#type: self.r#type.ok_or_else(|| {

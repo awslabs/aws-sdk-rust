@@ -204,7 +204,7 @@ impl CreateCapabilityOutputBuilder {
     /// - [`capability_id`](crate::operation::create_capability::builders::CreateCapabilityOutputBuilder::capability_id)
     /// - [`capability_arn`](crate::operation::create_capability::builders::CreateCapabilityOutputBuilder::capability_arn)
     /// - [`name`](crate::operation::create_capability::builders::CreateCapabilityOutputBuilder::name)
-    /// - [`r#type`](crate::operation::create_capability::builders::CreateCapabilityOutputBuilder::type)
+    /// - [`r#type`](crate::operation::create_capability::builders::CreateCapabilityOutputBuilder::r#type)
     /// - [`created_at`](crate::operation::create_capability::builders::CreateCapabilityOutputBuilder::created_at)
     pub fn build(
         self,

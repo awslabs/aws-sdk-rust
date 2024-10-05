@@ -112,7 +112,7 @@ impl SourceContentDataDetailsBuilder {
     /// Consumes the builder and constructs a [`SourceContentDataDetails`](crate::types::SourceContentDataDetails).
     /// This method will fail if any of the following fields are not set:
     /// - [`id`](crate::types::builders::SourceContentDataDetailsBuilder::id)
-    /// - [`r#type`](crate::types::builders::SourceContentDataDetailsBuilder::type)
+    /// - [`r#type`](crate::types::builders::SourceContentDataDetailsBuilder::r#type)
     pub fn build(self) -> ::std::result::Result<crate::types::SourceContentDataDetails, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::SourceContentDataDetails {
             id: self.id.ok_or_else(|| {

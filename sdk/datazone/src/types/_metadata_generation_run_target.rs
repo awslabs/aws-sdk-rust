@@ -88,7 +88,7 @@ impl MetadataGenerationRunTargetBuilder {
     }
     /// Consumes the builder and constructs a [`MetadataGenerationRunTarget`](crate::types::MetadataGenerationRunTarget).
     /// This method will fail if any of the following fields are not set:
-    /// - [`r#type`](crate::types::builders::MetadataGenerationRunTargetBuilder::type)
+    /// - [`r#type`](crate::types::builders::MetadataGenerationRunTargetBuilder::r#type)
     /// - [`identifier`](crate::types::builders::MetadataGenerationRunTargetBuilder::identifier)
     pub fn build(self) -> ::std::result::Result<crate::types::MetadataGenerationRunTarget, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::MetadataGenerationRunTarget {

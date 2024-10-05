@@ -95,7 +95,7 @@ impl NetworkResourceDefinitionBuilder {
     }
     /// Consumes the builder and constructs a [`NetworkResourceDefinition`](crate::types::NetworkResourceDefinition).
     /// This method will fail if any of the following fields are not set:
-    /// - [`r#type`](crate::types::builders::NetworkResourceDefinitionBuilder::type)
+    /// - [`r#type`](crate::types::builders::NetworkResourceDefinitionBuilder::r#type)
     /// - [`count`](crate::types::builders::NetworkResourceDefinitionBuilder::count)
     pub fn build(self) -> ::std::result::Result<crate::types::NetworkResourceDefinition, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::NetworkResourceDefinition {

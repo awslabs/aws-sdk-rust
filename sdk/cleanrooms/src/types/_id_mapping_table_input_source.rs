@@ -68,7 +68,7 @@ impl IdMappingTableInputSourceBuilder {
     /// Consumes the builder and constructs a [`IdMappingTableInputSource`](crate::types::IdMappingTableInputSource).
     /// This method will fail if any of the following fields are not set:
     /// - [`id_namespace_association_id`](crate::types::builders::IdMappingTableInputSourceBuilder::id_namespace_association_id)
-    /// - [`r#type`](crate::types::builders::IdMappingTableInputSourceBuilder::type)
+    /// - [`r#type`](crate::types::builders::IdMappingTableInputSourceBuilder::r#type)
     pub fn build(self) -> ::std::result::Result<crate::types::IdMappingTableInputSource, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::IdMappingTableInputSource {
             id_namespace_association_id: self.id_namespace_association_id.ok_or_else(|| {

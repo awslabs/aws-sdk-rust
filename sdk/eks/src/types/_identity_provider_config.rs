@@ -68,7 +68,7 @@ impl IdentityProviderConfigBuilder {
     }
     /// Consumes the builder and constructs a [`IdentityProviderConfig`](crate::types::IdentityProviderConfig).
     /// This method will fail if any of the following fields are not set:
-    /// - [`r#type`](crate::types::builders::IdentityProviderConfigBuilder::type)
+    /// - [`r#type`](crate::types::builders::IdentityProviderConfigBuilder::r#type)
     /// - [`name`](crate::types::builders::IdentityProviderConfigBuilder::name)
     pub fn build(self) -> ::std::result::Result<crate::types::IdentityProviderConfig, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::IdentityProviderConfig {

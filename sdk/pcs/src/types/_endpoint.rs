@@ -126,7 +126,7 @@ impl EndpointBuilder {
     }
     /// Consumes the builder and constructs a [`Endpoint`](crate::types::Endpoint).
     /// This method will fail if any of the following fields are not set:
-    /// - [`r#type`](crate::types::builders::EndpointBuilder::type)
+    /// - [`r#type`](crate::types::builders::EndpointBuilder::r#type)
     /// - [`private_ip_address`](crate::types::builders::EndpointBuilder::private_ip_address)
     /// - [`port`](crate::types::builders::EndpointBuilder::port)
     pub fn build(self) -> ::std::result::Result<crate::types::Endpoint, ::aws_smithy_types::error::operation::BuildError> {

@@ -159,7 +159,7 @@ impl TypedLinkAttributeDefinitionBuilder {
     /// Consumes the builder and constructs a [`TypedLinkAttributeDefinition`](crate::types::TypedLinkAttributeDefinition).
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::TypedLinkAttributeDefinitionBuilder::name)
-    /// - [`r#type`](crate::types::builders::TypedLinkAttributeDefinitionBuilder::type)
+    /// - [`r#type`](crate::types::builders::TypedLinkAttributeDefinitionBuilder::r#type)
     /// - [`required_behavior`](crate::types::builders::TypedLinkAttributeDefinitionBuilder::required_behavior)
     pub fn build(self) -> ::std::result::Result<crate::types::TypedLinkAttributeDefinition, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::TypedLinkAttributeDefinition {

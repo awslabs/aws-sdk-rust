@@ -65,7 +65,7 @@ impl EncryptionConfigurationBuilder {
     }
     /// Consumes the builder and constructs a [`EncryptionConfiguration`](crate::types::EncryptionConfiguration).
     /// This method will fail if any of the following fields are not set:
-    /// - [`r#type`](crate::types::builders::EncryptionConfigurationBuilder::type)
+    /// - [`r#type`](crate::types::builders::EncryptionConfigurationBuilder::r#type)
     pub fn build(self) -> ::std::result::Result<crate::types::EncryptionConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::EncryptionConfiguration {
             key_id: self.key_id,

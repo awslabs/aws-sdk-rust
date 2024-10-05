@@ -88,7 +88,7 @@ impl ContainerProviderBuilder {
     }
     /// Consumes the builder and constructs a [`ContainerProvider`](crate::types::ContainerProvider).
     /// This method will fail if any of the following fields are not set:
-    /// - [`r#type`](crate::types::builders::ContainerProviderBuilder::type)
+    /// - [`r#type`](crate::types::builders::ContainerProviderBuilder::r#type)
     /// - [`id`](crate::types::builders::ContainerProviderBuilder::id)
     pub fn build(self) -> ::std::result::Result<crate::types::ContainerProvider, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ContainerProvider {

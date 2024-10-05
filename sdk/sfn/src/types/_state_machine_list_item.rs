@@ -184,7 +184,7 @@ impl StateMachineListItemBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`state_machine_arn`](crate::types::builders::StateMachineListItemBuilder::state_machine_arn)
     /// - [`name`](crate::types::builders::StateMachineListItemBuilder::name)
-    /// - [`r#type`](crate::types::builders::StateMachineListItemBuilder::type)
+    /// - [`r#type`](crate::types::builders::StateMachineListItemBuilder::r#type)
     /// - [`creation_date`](crate::types::builders::StateMachineListItemBuilder::creation_date)
     pub fn build(self) -> ::std::result::Result<crate::types::StateMachineListItem, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::StateMachineListItem {

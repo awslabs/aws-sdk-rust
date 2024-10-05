@@ -44,7 +44,7 @@ impl ServiceManagedEc2InstanceMarketOptionsBuilder {
     }
     /// Consumes the builder and constructs a [`ServiceManagedEc2InstanceMarketOptions`](crate::types::ServiceManagedEc2InstanceMarketOptions).
     /// This method will fail if any of the following fields are not set:
-    /// - [`r#type`](crate::types::builders::ServiceManagedEc2InstanceMarketOptionsBuilder::type)
+    /// - [`r#type`](crate::types::builders::ServiceManagedEc2InstanceMarketOptionsBuilder::r#type)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::types::ServiceManagedEc2InstanceMarketOptions, ::aws_smithy_types::error::operation::BuildError> {

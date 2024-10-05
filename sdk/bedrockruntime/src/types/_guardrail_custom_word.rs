@@ -67,7 +67,7 @@ impl GuardrailCustomWordBuilder {
     }
     /// Consumes the builder and constructs a [`GuardrailCustomWord`](crate::types::GuardrailCustomWord).
     /// This method will fail if any of the following fields are not set:
-    /// - [`r#match`](crate::types::builders::GuardrailCustomWordBuilder::match)
+    /// - [`r#match`](crate::types::builders::GuardrailCustomWordBuilder::r#match)
     /// - [`action`](crate::types::builders::GuardrailCustomWordBuilder::action)
     pub fn build(self) -> ::std::result::Result<crate::types::GuardrailCustomWord, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::GuardrailCustomWord {

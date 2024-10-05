@@ -246,7 +246,7 @@ impl GetInferenceProfileOutputBuilder {
     /// - [`inference_profile_arn`](crate::operation::get_inference_profile::builders::GetInferenceProfileOutputBuilder::inference_profile_arn)
     /// - [`inference_profile_id`](crate::operation::get_inference_profile::builders::GetInferenceProfileOutputBuilder::inference_profile_id)
     /// - [`status`](crate::operation::get_inference_profile::builders::GetInferenceProfileOutputBuilder::status)
-    /// - [`r#type`](crate::operation::get_inference_profile::builders::GetInferenceProfileOutputBuilder::type)
+    /// - [`r#type`](crate::operation::get_inference_profile::builders::GetInferenceProfileOutputBuilder::r#type)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::get_inference_profile::GetInferenceProfileOutput, ::aws_smithy_types::error::operation::BuildError>

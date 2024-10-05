@@ -19,6 +19,7 @@ use http0::header::{AsHeaderName, HeaderName, HOST};
 use http0::{HeaderMap, HeaderValue, Uri};
 use std::borrow::Cow;
 use std::cmp::Ordering;
+use std::convert::TryFrom;
 use std::fmt;
 use std::str::FromStr;
 use std::time::SystemTime;

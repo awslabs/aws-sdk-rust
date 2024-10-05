@@ -81,7 +81,7 @@ impl HandshakePartyBuilder {
     /// Consumes the builder and constructs a [`HandshakeParty`](crate::types::HandshakeParty).
     /// This method will fail if any of the following fields are not set:
     /// - [`id`](crate::types::builders::HandshakePartyBuilder::id)
-    /// - [`r#type`](crate::types::builders::HandshakePartyBuilder::type)
+    /// - [`r#type`](crate::types::builders::HandshakePartyBuilder::r#type)
     pub fn build(self) -> ::std::result::Result<crate::types::HandshakeParty, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::HandshakeParty {
             id: self.id.ok_or_else(|| {

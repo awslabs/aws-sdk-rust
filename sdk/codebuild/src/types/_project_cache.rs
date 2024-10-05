@@ -354,7 +354,7 @@ impl ProjectCacheBuilder {
     }
     /// Consumes the builder and constructs a [`ProjectCache`](crate::types::ProjectCache).
     /// This method will fail if any of the following fields are not set:
-    /// - [`r#type`](crate::types::builders::ProjectCacheBuilder::type)
+    /// - [`r#type`](crate::types::builders::ProjectCacheBuilder::r#type)
     pub fn build(self) -> ::std::result::Result<crate::types::ProjectCache, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ProjectCache {
             r#type: self.r#type.ok_or_else(|| {

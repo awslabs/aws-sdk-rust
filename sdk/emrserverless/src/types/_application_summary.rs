@@ -246,7 +246,7 @@ impl ApplicationSummaryBuilder {
     /// - [`id`](crate::types::builders::ApplicationSummaryBuilder::id)
     /// - [`arn`](crate::types::builders::ApplicationSummaryBuilder::arn)
     /// - [`release_label`](crate::types::builders::ApplicationSummaryBuilder::release_label)
-    /// - [`r#type`](crate::types::builders::ApplicationSummaryBuilder::type)
+    /// - [`r#type`](crate::types::builders::ApplicationSummaryBuilder::r#type)
     /// - [`state`](crate::types::builders::ApplicationSummaryBuilder::state)
     /// - [`created_at`](crate::types::builders::ApplicationSummaryBuilder::created_at)
     /// - [`updated_at`](crate::types::builders::ApplicationSummaryBuilder::updated_at)

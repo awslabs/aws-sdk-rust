@@ -113,7 +113,7 @@ impl EncryptionSpecificationBuilder {
     }
     /// Consumes the builder and constructs a [`EncryptionSpecification`](crate::types::EncryptionSpecification).
     /// This method will fail if any of the following fields are not set:
-    /// - [`r#type`](crate::types::builders::EncryptionSpecificationBuilder::type)
+    /// - [`r#type`](crate::types::builders::EncryptionSpecificationBuilder::r#type)
     pub fn build(self) -> ::std::result::Result<crate::types::EncryptionSpecification, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::EncryptionSpecification {
             r#type: self.r#type.ok_or_else(|| {

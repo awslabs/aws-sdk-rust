@@ -136,7 +136,7 @@ impl RumEventBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`id`](crate::types::builders::RumEventBuilder::id)
     /// - [`timestamp`](crate::types::builders::RumEventBuilder::timestamp)
-    /// - [`r#type`](crate::types::builders::RumEventBuilder::type)
+    /// - [`r#type`](crate::types::builders::RumEventBuilder::r#type)
     /// - [`details`](crate::types::builders::RumEventBuilder::details)
     pub fn build(self) -> ::std::result::Result<crate::types::RumEvent, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::RumEvent {

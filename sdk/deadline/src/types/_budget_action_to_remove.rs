@@ -66,7 +66,7 @@ impl BudgetActionToRemoveBuilder {
     }
     /// Consumes the builder and constructs a [`BudgetActionToRemove`](crate::types::BudgetActionToRemove).
     /// This method will fail if any of the following fields are not set:
-    /// - [`r#type`](crate::types::builders::BudgetActionToRemoveBuilder::type)
+    /// - [`r#type`](crate::types::builders::BudgetActionToRemoveBuilder::r#type)
     /// - [`threshold_percentage`](crate::types::builders::BudgetActionToRemoveBuilder::threshold_percentage)
     pub fn build(self) -> ::std::result::Result<crate::types::BudgetActionToRemove, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::BudgetActionToRemove {

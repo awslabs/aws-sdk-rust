@@ -184,7 +184,7 @@ impl FileUploadCardBuilder {
     /// - [`id`](crate::types::builders::FileUploadCardBuilder::id)
     /// - [`title`](crate::types::builders::FileUploadCardBuilder::title)
     /// - [`dependencies`](crate::types::builders::FileUploadCardBuilder::dependencies)
-    /// - [`r#type`](crate::types::builders::FileUploadCardBuilder::type)
+    /// - [`r#type`](crate::types::builders::FileUploadCardBuilder::r#type)
     pub fn build(self) -> ::std::result::Result<crate::types::FileUploadCard, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::FileUploadCard {
             id: self.id.ok_or_else(|| {

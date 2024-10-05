@@ -404,7 +404,7 @@ impl SubscriptionTargetSummaryBuilder {
     /// - [`project_id`](crate::types::builders::SubscriptionTargetSummaryBuilder::project_id)
     /// - [`environment_id`](crate::types::builders::SubscriptionTargetSummaryBuilder::environment_id)
     /// - [`name`](crate::types::builders::SubscriptionTargetSummaryBuilder::name)
-    /// - [`r#type`](crate::types::builders::SubscriptionTargetSummaryBuilder::type)
+    /// - [`r#type`](crate::types::builders::SubscriptionTargetSummaryBuilder::r#type)
     /// - [`created_by`](crate::types::builders::SubscriptionTargetSummaryBuilder::created_by)
     /// - [`created_at`](crate::types::builders::SubscriptionTargetSummaryBuilder::created_at)
     /// - [`manage_access_role`](crate::types::builders::SubscriptionTargetSummaryBuilder::manage_access_role)

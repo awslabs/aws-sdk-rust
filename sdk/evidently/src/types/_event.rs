@@ -90,7 +90,7 @@ impl EventBuilder {
     /// Consumes the builder and constructs a [`Event`](crate::types::Event).
     /// This method will fail if any of the following fields are not set:
     /// - [`timestamp`](crate::types::builders::EventBuilder::timestamp)
-    /// - [`r#type`](crate::types::builders::EventBuilder::type)
+    /// - [`r#type`](crate::types::builders::EventBuilder::r#type)
     /// - [`data`](crate::types::builders::EventBuilder::data)
     pub fn build(self) -> ::std::result::Result<crate::types::Event, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Event {

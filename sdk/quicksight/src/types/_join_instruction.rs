@@ -157,7 +157,7 @@ impl JoinInstructionBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`left_operand`](crate::types::builders::JoinInstructionBuilder::left_operand)
     /// - [`right_operand`](crate::types::builders::JoinInstructionBuilder::right_operand)
-    /// - [`r#type`](crate::types::builders::JoinInstructionBuilder::type)
+    /// - [`r#type`](crate::types::builders::JoinInstructionBuilder::r#type)
     /// - [`on_clause`](crate::types::builders::JoinInstructionBuilder::on_clause)
     pub fn build(self) -> ::std::result::Result<crate::types::JoinInstruction, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::JoinInstruction {

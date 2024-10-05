@@ -67,7 +67,7 @@ impl EncryptionKeyBuilder {
     }
     /// Consumes the builder and constructs a [`EncryptionKey`](crate::types::EncryptionKey).
     /// This method will fail if any of the following fields are not set:
-    /// - [`r#type`](crate::types::builders::EncryptionKeyBuilder::type)
+    /// - [`r#type`](crate::types::builders::EncryptionKeyBuilder::r#type)
     /// - [`id`](crate::types::builders::EncryptionKeyBuilder::id)
     pub fn build(self) -> ::std::result::Result<crate::types::EncryptionKey, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::EncryptionKey {

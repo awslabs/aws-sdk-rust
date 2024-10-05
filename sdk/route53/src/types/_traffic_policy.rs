@@ -159,7 +159,7 @@ impl TrafficPolicyBuilder {
     /// - [`id`](crate::types::builders::TrafficPolicyBuilder::id)
     /// - [`version`](crate::types::builders::TrafficPolicyBuilder::version)
     /// - [`name`](crate::types::builders::TrafficPolicyBuilder::name)
-    /// - [`r#type`](crate::types::builders::TrafficPolicyBuilder::type)
+    /// - [`r#type`](crate::types::builders::TrafficPolicyBuilder::r#type)
     /// - [`document`](crate::types::builders::TrafficPolicyBuilder::document)
     pub fn build(self) -> ::std::result::Result<crate::types::TrafficPolicy, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::TrafficPolicy {

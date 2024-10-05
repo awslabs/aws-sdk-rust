@@ -72,7 +72,7 @@ impl FilterValueBuilder {
     }
     /// Consumes the builder and constructs a [`FilterValue`](crate::types::FilterValue).
     /// This method will fail if any of the following fields are not set:
-    /// - [`r#type`](crate::types::builders::FilterValueBuilder::type)
+    /// - [`r#type`](crate::types::builders::FilterValueBuilder::r#type)
     /// - [`value`](crate::types::builders::FilterValueBuilder::value)
     pub fn build(self) -> ::std::result::Result<crate::types::FilterValue, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::FilterValue {

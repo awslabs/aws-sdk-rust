@@ -66,7 +66,7 @@ impl TargetDatabaseMetadataBuilder {
     }
     /// Consumes the builder and constructs a [`TargetDatabaseMetadata`](crate::types::TargetDatabaseMetadata).
     /// This method will fail if any of the following fields are not set:
-    /// - [`r#type`](crate::types::builders::TargetDatabaseMetadataBuilder::type)
+    /// - [`r#type`](crate::types::builders::TargetDatabaseMetadataBuilder::r#type)
     /// - [`capture_tool`](crate::types::builders::TargetDatabaseMetadataBuilder::capture_tool)
     pub fn build(self) -> ::std::result::Result<crate::types::TargetDatabaseMetadata, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::TargetDatabaseMetadata {

@@ -191,7 +191,7 @@ impl RasterDataCollectionMetadataBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::RasterDataCollectionMetadataBuilder::name)
     /// - [`arn`](crate::types::builders::RasterDataCollectionMetadataBuilder::arn)
-    /// - [`r#type`](crate::types::builders::RasterDataCollectionMetadataBuilder::type)
+    /// - [`r#type`](crate::types::builders::RasterDataCollectionMetadataBuilder::r#type)
     /// - [`description`](crate::types::builders::RasterDataCollectionMetadataBuilder::description)
     /// - [`supported_filters`](crate::types::builders::RasterDataCollectionMetadataBuilder::supported_filters)
     pub fn build(self) -> ::std::result::Result<crate::types::RasterDataCollectionMetadata, ::aws_smithy_types::error::operation::BuildError> {

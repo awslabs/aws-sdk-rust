@@ -88,7 +88,7 @@ impl NotificationResourceBuilder {
     }
     /// Consumes the builder and constructs a [`NotificationResource`](crate::types::NotificationResource).
     /// This method will fail if any of the following fields are not set:
-    /// - [`r#type`](crate::types::builders::NotificationResourceBuilder::type)
+    /// - [`r#type`](crate::types::builders::NotificationResourceBuilder::r#type)
     /// - [`id`](crate::types::builders::NotificationResourceBuilder::id)
     pub fn build(self) -> ::std::result::Result<crate::types::NotificationResource, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::NotificationResource {

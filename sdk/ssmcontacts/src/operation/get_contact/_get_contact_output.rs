@@ -150,7 +150,7 @@ impl GetContactOutputBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`contact_arn`](crate::operation::get_contact::builders::GetContactOutputBuilder::contact_arn)
     /// - [`alias`](crate::operation::get_contact::builders::GetContactOutputBuilder::alias)
-    /// - [`r#type`](crate::operation::get_contact::builders::GetContactOutputBuilder::type)
+    /// - [`r#type`](crate::operation::get_contact::builders::GetContactOutputBuilder::r#type)
     pub fn build(self) -> ::std::result::Result<crate::operation::get_contact::GetContactOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_contact::GetContactOutput {
             contact_arn: self.contact_arn.ok_or_else(|| {

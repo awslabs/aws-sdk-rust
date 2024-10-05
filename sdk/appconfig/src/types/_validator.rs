@@ -75,7 +75,7 @@ impl ValidatorBuilder {
     }
     /// Consumes the builder and constructs a [`Validator`](crate::types::Validator).
     /// This method will fail if any of the following fields are not set:
-    /// - [`r#type`](crate::types::builders::ValidatorBuilder::type)
+    /// - [`r#type`](crate::types::builders::ValidatorBuilder::r#type)
     /// - [`content`](crate::types::builders::ValidatorBuilder::content)
     pub fn build(self) -> ::std::result::Result<crate::types::Validator, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Validator {

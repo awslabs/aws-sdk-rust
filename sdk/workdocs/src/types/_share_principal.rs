@@ -90,7 +90,7 @@ impl SharePrincipalBuilder {
     /// Consumes the builder and constructs a [`SharePrincipal`](crate::types::SharePrincipal).
     /// This method will fail if any of the following fields are not set:
     /// - [`id`](crate::types::builders::SharePrincipalBuilder::id)
-    /// - [`r#type`](crate::types::builders::SharePrincipalBuilder::type)
+    /// - [`r#type`](crate::types::builders::SharePrincipalBuilder::r#type)
     /// - [`role`](crate::types::builders::SharePrincipalBuilder::role)
     pub fn build(self) -> ::std::result::Result<crate::types::SharePrincipal, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::SharePrincipal {

@@ -5,9 +5,8 @@
 //! they are disabled by default. To enable them, run the tests with
 //!
 //! ```sh
-//! RUSTFLAGS="--cfg smoketests" cargo test
+//! RUSTFLAGS="--cfg smoketests" cargo test.
 //! ```
-//!
 use aws_sdk_costandusagereport::{config, Client};
 /// Smoke tests for the `describe_report_definitions` operation
 #[::tokio::test]
@@ -15,7 +14,7 @@ async fn test_describe_report_definitions_success() {
     let config = ::aws_config::load_defaults(config::BehaviorVersion::latest()).await;
     let conf = config::Config::from(&config)
         .to_builder()
-        .region(::aws_types::region::Region::new("us-east-1"))
+        .region(config::Region::new("us-east-1"))
         .use_dual_stack(false)
         .use_fips(false)
         .build();

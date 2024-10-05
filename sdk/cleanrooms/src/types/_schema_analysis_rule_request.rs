@@ -68,7 +68,7 @@ impl SchemaAnalysisRuleRequestBuilder {
     /// Consumes the builder and constructs a [`SchemaAnalysisRuleRequest`](crate::types::SchemaAnalysisRuleRequest).
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::SchemaAnalysisRuleRequestBuilder::name)
-    /// - [`r#type`](crate::types::builders::SchemaAnalysisRuleRequestBuilder::type)
+    /// - [`r#type`](crate::types::builders::SchemaAnalysisRuleRequestBuilder::r#type)
     pub fn build(self) -> ::std::result::Result<crate::types::SchemaAnalysisRuleRequest, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::SchemaAnalysisRuleRequest {
             name: self.name.ok_or_else(|| {

@@ -236,7 +236,7 @@ impl GetRasterDataCollectionOutputBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::operation::get_raster_data_collection::builders::GetRasterDataCollectionOutputBuilder::name)
     /// - [`arn`](crate::operation::get_raster_data_collection::builders::GetRasterDataCollectionOutputBuilder::arn)
-    /// - [`r#type`](crate::operation::get_raster_data_collection::builders::GetRasterDataCollectionOutputBuilder::type)
+    /// - [`r#type`](crate::operation::get_raster_data_collection::builders::GetRasterDataCollectionOutputBuilder::r#type)
     /// - [`description`](crate::operation::get_raster_data_collection::builders::GetRasterDataCollectionOutputBuilder::description)
     /// - [`description_page_url`](crate::operation::get_raster_data_collection::builders::GetRasterDataCollectionOutputBuilder::description_page_url)
     /// - [`supported_filters`](crate::operation::get_raster_data_collection::builders::GetRasterDataCollectionOutputBuilder::supported_filters)

@@ -92,7 +92,7 @@ impl ResponseHeadersPolicyCustomHeaderBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`header`](crate::types::builders::ResponseHeadersPolicyCustomHeaderBuilder::header)
     /// - [`value`](crate::types::builders::ResponseHeadersPolicyCustomHeaderBuilder::value)
-    /// - [`r#override`](crate::types::builders::ResponseHeadersPolicyCustomHeaderBuilder::override)
+    /// - [`r#override`](crate::types::builders::ResponseHeadersPolicyCustomHeaderBuilder::r#override)
     pub fn build(self) -> ::std::result::Result<crate::types::ResponseHeadersPolicyCustomHeader, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ResponseHeadersPolicyCustomHeader {
             header: self.header.ok_or_else(|| {

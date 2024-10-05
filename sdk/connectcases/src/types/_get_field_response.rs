@@ -254,7 +254,7 @@ impl GetFieldResponseBuilder {
     /// - [`field_id`](crate::types::builders::GetFieldResponseBuilder::field_id)
     /// - [`name`](crate::types::builders::GetFieldResponseBuilder::name)
     /// - [`field_arn`](crate::types::builders::GetFieldResponseBuilder::field_arn)
-    /// - [`r#type`](crate::types::builders::GetFieldResponseBuilder::type)
+    /// - [`r#type`](crate::types::builders::GetFieldResponseBuilder::r#type)
     /// - [`namespace`](crate::types::builders::GetFieldResponseBuilder::namespace)
     pub fn build(self) -> ::std::result::Result<crate::types::GetFieldResponse, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::GetFieldResponse {

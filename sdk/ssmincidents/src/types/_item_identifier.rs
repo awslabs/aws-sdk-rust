@@ -66,7 +66,7 @@ impl ItemIdentifierBuilder {
     }
     /// Consumes the builder and constructs a [`ItemIdentifier`](crate::types::ItemIdentifier).
     /// This method will fail if any of the following fields are not set:
-    /// - [`r#type`](crate::types::builders::ItemIdentifierBuilder::type)
+    /// - [`r#type`](crate::types::builders::ItemIdentifierBuilder::r#type)
     pub fn build(self) -> ::std::result::Result<crate::types::ItemIdentifier, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ItemIdentifier {
             value: self.value,

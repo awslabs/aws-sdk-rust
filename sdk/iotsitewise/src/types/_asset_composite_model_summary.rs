@@ -200,7 +200,7 @@ impl AssetCompositeModelSummaryBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`id`](crate::types::builders::AssetCompositeModelSummaryBuilder::id)
     /// - [`name`](crate::types::builders::AssetCompositeModelSummaryBuilder::name)
-    /// - [`r#type`](crate::types::builders::AssetCompositeModelSummaryBuilder::type)
+    /// - [`r#type`](crate::types::builders::AssetCompositeModelSummaryBuilder::r#type)
     /// - [`description`](crate::types::builders::AssetCompositeModelSummaryBuilder::description)
     /// - [`path`](crate::types::builders::AssetCompositeModelSummaryBuilder::path)
     pub fn build(self) -> ::std::result::Result<crate::types::AssetCompositeModelSummary, ::aws_smithy_types::error::operation::BuildError> {

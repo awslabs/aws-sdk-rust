@@ -107,7 +107,7 @@ impl SourceConfigurationBuilder {
     }
     /// Consumes the builder and constructs a [`SourceConfiguration`](crate::types::SourceConfiguration).
     /// This method will fail if any of the following fields are not set:
-    /// - [`r#type`](crate::types::builders::SourceConfigurationBuilder::type)
+    /// - [`r#type`](crate::types::builders::SourceConfigurationBuilder::r#type)
     pub fn build(self) -> ::std::result::Result<crate::types::SourceConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::SourceConfiguration {
             r#type: self.r#type.ok_or_else(|| {

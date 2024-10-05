@@ -126,7 +126,7 @@ impl AccountLimitBuilder {
     }
     /// Consumes the builder and constructs a [`AccountLimit`](crate::types::AccountLimit).
     /// This method will fail if any of the following fields are not set:
-    /// - [`r#type`](crate::types::builders::AccountLimitBuilder::type)
+    /// - [`r#type`](crate::types::builders::AccountLimitBuilder::r#type)
     /// - [`value`](crate::types::builders::AccountLimitBuilder::value)
     pub fn build(self) -> ::std::result::Result<crate::types::AccountLimit, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AccountLimit {

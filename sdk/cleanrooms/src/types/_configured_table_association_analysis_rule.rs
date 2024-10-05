@@ -182,7 +182,7 @@ impl ConfiguredTableAssociationAnalysisRuleBuilder {
     /// - [`membership_identifier`](crate::types::builders::ConfiguredTableAssociationAnalysisRuleBuilder::membership_identifier)
     /// - [`configured_table_association_id`](crate::types::builders::ConfiguredTableAssociationAnalysisRuleBuilder::configured_table_association_id)
     /// - [`configured_table_association_arn`](crate::types::builders::ConfiguredTableAssociationAnalysisRuleBuilder::configured_table_association_arn)
-    /// - [`r#type`](crate::types::builders::ConfiguredTableAssociationAnalysisRuleBuilder::type)
+    /// - [`r#type`](crate::types::builders::ConfiguredTableAssociationAnalysisRuleBuilder::r#type)
     /// - [`create_time`](crate::types::builders::ConfiguredTableAssociationAnalysisRuleBuilder::create_time)
     /// - [`update_time`](crate::types::builders::ConfiguredTableAssociationAnalysisRuleBuilder::update_time)
     pub fn build(

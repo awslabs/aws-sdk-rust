@@ -86,7 +86,7 @@ impl EnvironmentFileBuilder {
     /// Consumes the builder and constructs a [`EnvironmentFile`](crate::types::EnvironmentFile).
     /// This method will fail if any of the following fields are not set:
     /// - [`value`](crate::types::builders::EnvironmentFileBuilder::value)
-    /// - [`r#type`](crate::types::builders::EnvironmentFileBuilder::type)
+    /// - [`r#type`](crate::types::builders::EnvironmentFileBuilder::r#type)
     pub fn build(self) -> ::std::result::Result<crate::types::EnvironmentFile, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::EnvironmentFile {
             value: self.value.ok_or_else(|| {

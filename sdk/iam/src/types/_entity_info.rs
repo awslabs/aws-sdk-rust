@@ -142,7 +142,7 @@ impl EntityInfoBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`arn`](crate::types::builders::EntityInfoBuilder::arn)
     /// - [`name`](crate::types::builders::EntityInfoBuilder::name)
-    /// - [`r#type`](crate::types::builders::EntityInfoBuilder::type)
+    /// - [`r#type`](crate::types::builders::EntityInfoBuilder::r#type)
     /// - [`id`](crate::types::builders::EntityInfoBuilder::id)
     pub fn build(self) -> ::std::result::Result<crate::types::EntityInfo, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::EntityInfo {

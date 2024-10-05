@@ -110,7 +110,7 @@ impl FreeTrialInfoBuilder {
     }
     /// Consumes the builder and constructs a [`FreeTrialInfo`](crate::types::FreeTrialInfo).
     /// This method will fail if any of the following fields are not set:
-    /// - [`r#type`](crate::types::builders::FreeTrialInfoBuilder::type)
+    /// - [`r#type`](crate::types::builders::FreeTrialInfoBuilder::r#type)
     /// - [`start`](crate::types::builders::FreeTrialInfoBuilder::start)
     /// - [`end`](crate::types::builders::FreeTrialInfoBuilder::end)
     /// - [`status`](crate::types::builders::FreeTrialInfoBuilder::status)

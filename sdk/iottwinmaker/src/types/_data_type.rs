@@ -136,7 +136,7 @@ impl DataTypeBuilder {
     }
     /// Consumes the builder and constructs a [`DataType`](crate::types::DataType).
     /// This method will fail if any of the following fields are not set:
-    /// - [`r#type`](crate::types::builders::DataTypeBuilder::type)
+    /// - [`r#type`](crate::types::builders::DataTypeBuilder::r#type)
     pub fn build(self) -> ::std::result::Result<crate::types::DataType, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::DataType {
             r#type: self.r#type.ok_or_else(|| {

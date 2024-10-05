@@ -420,7 +420,7 @@ impl UpdateSubscriptionTargetOutputBuilder {
     /// - [`project_id`](crate::operation::update_subscription_target::builders::UpdateSubscriptionTargetOutputBuilder::project_id)
     /// - [`environment_id`](crate::operation::update_subscription_target::builders::UpdateSubscriptionTargetOutputBuilder::environment_id)
     /// - [`name`](crate::operation::update_subscription_target::builders::UpdateSubscriptionTargetOutputBuilder::name)
-    /// - [`r#type`](crate::operation::update_subscription_target::builders::UpdateSubscriptionTargetOutputBuilder::type)
+    /// - [`r#type`](crate::operation::update_subscription_target::builders::UpdateSubscriptionTargetOutputBuilder::r#type)
     /// - [`created_by`](crate::operation::update_subscription_target::builders::UpdateSubscriptionTargetOutputBuilder::created_by)
     /// - [`created_at`](crate::operation::update_subscription_target::builders::UpdateSubscriptionTargetOutputBuilder::created_at)
     /// - [`manage_access_role`](crate::operation::update_subscription_target::builders::UpdateSubscriptionTargetOutputBuilder::manage_access_role)

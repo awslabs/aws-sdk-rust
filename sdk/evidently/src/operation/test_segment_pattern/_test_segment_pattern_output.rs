@@ -59,7 +59,7 @@ impl TestSegmentPatternOutputBuilder {
     }
     /// Consumes the builder and constructs a [`TestSegmentPatternOutput`](crate::operation::test_segment_pattern::TestSegmentPatternOutput).
     /// This method will fail if any of the following fields are not set:
-    /// - [`r#match`](crate::operation::test_segment_pattern::builders::TestSegmentPatternOutputBuilder::match)
+    /// - [`r#match`](crate::operation::test_segment_pattern::builders::TestSegmentPatternOutputBuilder::r#match)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::test_segment_pattern::TestSegmentPatternOutput, ::aws_smithy_types::error::operation::BuildError>

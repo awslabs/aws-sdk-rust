@@ -119,7 +119,7 @@ impl ComponentParameterDetailBuilder {
     /// Consumes the builder and constructs a [`ComponentParameterDetail`](crate::types::ComponentParameterDetail).
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::ComponentParameterDetailBuilder::name)
-    /// - [`r#type`](crate::types::builders::ComponentParameterDetailBuilder::type)
+    /// - [`r#type`](crate::types::builders::ComponentParameterDetailBuilder::r#type)
     pub fn build(self) -> ::std::result::Result<crate::types::ComponentParameterDetail, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ComponentParameterDetail {
             name: self.name.ok_or_else(|| {

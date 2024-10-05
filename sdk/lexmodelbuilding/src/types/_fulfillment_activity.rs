@@ -72,7 +72,7 @@ impl FulfillmentActivityBuilder {
     }
     /// Consumes the builder and constructs a [`FulfillmentActivity`](crate::types::FulfillmentActivity).
     /// This method will fail if any of the following fields are not set:
-    /// - [`r#type`](crate::types::builders::FulfillmentActivityBuilder::type)
+    /// - [`r#type`](crate::types::builders::FulfillmentActivityBuilder::r#type)
     pub fn build(self) -> ::std::result::Result<crate::types::FulfillmentActivity, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::FulfillmentActivity {
             r#type: self.r#type.ok_or_else(|| {
