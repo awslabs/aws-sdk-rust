@@ -6,7 +6,6 @@
 //! UTF-8 string byte buffer representation with validation amortization.
 
 use bytes::Bytes;
-use std::convert::TryFrom;
 use std::str::Utf8Error;
 
 /// UTF-8 string byte buffer representation with validation amortization.
@@ -27,7 +26,6 @@ use std::str::Utf8Error;
 /// ```rust
 /// use bytes::Bytes;
 /// use aws_smithy_types::str_bytes::StrBytes;
-/// use std::convert::TryInto;
 ///
 /// let bytes = Bytes::from_static(b"example");
 /// let value: StrBytes = bytes.try_into().expect("valid utf-8");
@@ -120,7 +118,6 @@ impl TryFrom<Bytes> for StrBytes {
 mod tests {
     use crate::str_bytes::StrBytes;
     use bytes::Bytes;
-    use std::convert::TryInto;
     use std::str::Utf8Error;
 
     #[test]

@@ -119,7 +119,7 @@ impl WorkflowParameterDetailBuilder {
     /// Consumes the builder and constructs a [`WorkflowParameterDetail`](crate::types::WorkflowParameterDetail).
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::WorkflowParameterDetailBuilder::name)
-    /// - [`r#type`](crate::types::builders::WorkflowParameterDetailBuilder::r#type)
+    /// - [`r#type`](crate::types::builders::WorkflowParameterDetailBuilder::type)
     pub fn build(self) -> ::std::result::Result<crate::types::WorkflowParameterDetail, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::WorkflowParameterDetail {
             name: self.name.ok_or_else(|| {

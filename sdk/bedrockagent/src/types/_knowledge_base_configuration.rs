@@ -65,7 +65,7 @@ impl KnowledgeBaseConfigurationBuilder {
     }
     /// Consumes the builder and constructs a [`KnowledgeBaseConfiguration`](crate::types::KnowledgeBaseConfiguration).
     /// This method will fail if any of the following fields are not set:
-    /// - [`r#type`](crate::types::builders::KnowledgeBaseConfigurationBuilder::r#type)
+    /// - [`r#type`](crate::types::builders::KnowledgeBaseConfigurationBuilder::type)
     pub fn build(self) -> ::std::result::Result<crate::types::KnowledgeBaseConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::KnowledgeBaseConfiguration {
             r#type: self.r#type.ok_or_else(|| {

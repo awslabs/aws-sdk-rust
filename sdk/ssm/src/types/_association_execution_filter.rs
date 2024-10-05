@@ -91,7 +91,7 @@ impl AssociationExecutionFilterBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`key`](crate::types::builders::AssociationExecutionFilterBuilder::key)
     /// - [`value`](crate::types::builders::AssociationExecutionFilterBuilder::value)
-    /// - [`r#type`](crate::types::builders::AssociationExecutionFilterBuilder::r#type)
+    /// - [`r#type`](crate::types::builders::AssociationExecutionFilterBuilder::type)
     pub fn build(self) -> ::std::result::Result<crate::types::AssociationExecutionFilter, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AssociationExecutionFilter {
             key: self.key.ok_or_else(|| {

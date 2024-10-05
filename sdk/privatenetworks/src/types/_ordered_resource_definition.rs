@@ -87,7 +87,7 @@ impl OrderedResourceDefinitionBuilder {
     }
     /// Consumes the builder and constructs a [`OrderedResourceDefinition`](crate::types::OrderedResourceDefinition).
     /// This method will fail if any of the following fields are not set:
-    /// - [`r#type`](crate::types::builders::OrderedResourceDefinitionBuilder::r#type)
+    /// - [`r#type`](crate::types::builders::OrderedResourceDefinitionBuilder::type)
     /// - [`count`](crate::types::builders::OrderedResourceDefinitionBuilder::count)
     pub fn build(self) -> ::std::result::Result<crate::types::OrderedResourceDefinition, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::OrderedResourceDefinition {

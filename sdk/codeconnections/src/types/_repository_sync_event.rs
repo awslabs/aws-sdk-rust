@@ -113,7 +113,7 @@ impl RepositorySyncEventBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`event`](crate::types::builders::RepositorySyncEventBuilder::event)
     /// - [`time`](crate::types::builders::RepositorySyncEventBuilder::time)
-    /// - [`r#type`](crate::types::builders::RepositorySyncEventBuilder::r#type)
+    /// - [`r#type`](crate::types::builders::RepositorySyncEventBuilder::type)
     pub fn build(self) -> ::std::result::Result<crate::types::RepositorySyncEvent, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::RepositorySyncEvent {
             event: self.event.ok_or_else(|| {

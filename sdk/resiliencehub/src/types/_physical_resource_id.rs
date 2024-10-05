@@ -440,7 +440,7 @@ impl PhysicalResourceIdBuilder {
     /// Consumes the builder and constructs a [`PhysicalResourceId`](crate::types::PhysicalResourceId).
     /// This method will fail if any of the following fields are not set:
     /// - [`identifier`](crate::types::builders::PhysicalResourceIdBuilder::identifier)
-    /// - [`r#type`](crate::types::builders::PhysicalResourceIdBuilder::r#type)
+    /// - [`r#type`](crate::types::builders::PhysicalResourceIdBuilder::type)
     pub fn build(self) -> ::std::result::Result<crate::types::PhysicalResourceId, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::PhysicalResourceId {
             identifier: self.identifier.ok_or_else(|| {

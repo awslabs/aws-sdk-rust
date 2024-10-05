@@ -69,7 +69,7 @@ impl KeySchemaElementBuilder {
     /// Consumes the builder and constructs a [`KeySchemaElement`](crate::types::KeySchemaElement).
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::KeySchemaElementBuilder::name)
-    /// - [`r#type`](crate::types::builders::KeySchemaElementBuilder::r#type)
+    /// - [`r#type`](crate::types::builders::KeySchemaElementBuilder::type)
     pub fn build(self) -> ::std::result::Result<crate::types::KeySchemaElement, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::KeySchemaElement {
             name: self.name.ok_or_else(|| {

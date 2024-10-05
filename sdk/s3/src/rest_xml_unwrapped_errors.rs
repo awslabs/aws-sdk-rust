@@ -9,7 +9,6 @@
 
 use aws_smithy_types::error::metadata::{Builder as ErrorMetadataBuilder, ErrorMetadata};
 use aws_smithy_xml::decode::{try_data, Document, ScopedDecoder, XmlDecodeError};
-use std::convert::TryFrom;
 
 #[allow(unused)]
 pub fn body_is_error(body: &[u8]) -> Result<bool, XmlDecodeError> {

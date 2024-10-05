@@ -23,7 +23,6 @@ use aws_smithy_types::DateTime;
 use aws_types::os_shim_internal::{Env, Fs};
 use aws_types::region::Region;
 use aws_types::SdkConfig;
-use std::convert::TryInto;
 
 /// SSO Credentials Provider
 ///

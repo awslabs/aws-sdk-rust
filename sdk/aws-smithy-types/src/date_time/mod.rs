@@ -10,7 +10,6 @@ use crate::date_time::format::DateTimeParseErrorKind;
 use num_integer::div_mod_floor;
 use num_integer::Integer;
 use std::cmp::Ordering;
-use std::convert::TryFrom;
 use std::error::Error as StdError;
 use std::fmt;
 use std::fmt::Display;
@@ -44,7 +43,6 @@ const NANOS_PER_SECOND_U32: u32 = 1_000_000_000;
 /// # fn doc_fn() -> Result<(), aws_smithy_types::date_time::ConversionError> {
 /// # use aws_smithy_types::date_time::DateTime;
 /// # use std::time::SystemTime;
-/// use std::convert::TryFrom;
 ///
 /// let the_millennium_as_system_time = SystemTime::try_from(DateTime::from_secs(946_713_600))?;
 /// let now_as_date_time = DateTime::from(SystemTime::now());
@@ -394,7 +392,6 @@ mod test {
     use crate::date_time::Format;
     use crate::DateTime;
     use proptest::proptest;
-    use std::convert::TryFrom;
     use std::time::SystemTime;
     use time::format_description::well_known::Rfc3339;
     use time::OffsetDateTime;

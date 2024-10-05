@@ -77,7 +77,7 @@ impl EcsResourceRequirementBuilder {
     }
     /// Consumes the builder and constructs a [`EcsResourceRequirement`](crate::types::EcsResourceRequirement).
     /// This method will fail if any of the following fields are not set:
-    /// - [`r#type`](crate::types::builders::EcsResourceRequirementBuilder::r#type)
+    /// - [`r#type`](crate::types::builders::EcsResourceRequirementBuilder::type)
     /// - [`value`](crate::types::builders::EcsResourceRequirementBuilder::value)
     pub fn build(self) -> ::std::result::Result<crate::types::EcsResourceRequirement, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::EcsResourceRequirement {

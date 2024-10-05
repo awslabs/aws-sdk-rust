@@ -67,7 +67,7 @@ impl DestinationBuilder {
     }
     /// Consumes the builder and constructs a [`Destination`](crate::types::Destination).
     /// This method will fail if any of the following fields are not set:
-    /// - [`r#type`](crate::types::builders::DestinationBuilder::r#type)
+    /// - [`r#type`](crate::types::builders::DestinationBuilder::type)
     /// - [`location`](crate::types::builders::DestinationBuilder::location)
     pub fn build(self) -> ::std::result::Result<crate::types::Destination, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Destination {

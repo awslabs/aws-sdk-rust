@@ -74,7 +74,7 @@ impl GroupConfigurationItemBuilder {
     }
     /// Consumes the builder and constructs a [`GroupConfigurationItem`](crate::types::GroupConfigurationItem).
     /// This method will fail if any of the following fields are not set:
-    /// - [`r#type`](crate::types::builders::GroupConfigurationItemBuilder::r#type)
+    /// - [`r#type`](crate::types::builders::GroupConfigurationItemBuilder::type)
     pub fn build(self) -> ::std::result::Result<crate::types::GroupConfigurationItem, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::GroupConfigurationItem {
             r#type: self.r#type.ok_or_else(|| {

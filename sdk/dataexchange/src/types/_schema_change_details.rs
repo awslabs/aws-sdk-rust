@@ -89,7 +89,7 @@ impl SchemaChangeDetailsBuilder {
     /// Consumes the builder and constructs a [`SchemaChangeDetails`](crate::types::SchemaChangeDetails).
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::SchemaChangeDetailsBuilder::name)
-    /// - [`r#type`](crate::types::builders::SchemaChangeDetailsBuilder::r#type)
+    /// - [`r#type`](crate::types::builders::SchemaChangeDetailsBuilder::type)
     pub fn build(self) -> ::std::result::Result<crate::types::SchemaChangeDetails, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::SchemaChangeDetails {
             name: self.name.ok_or_else(|| {

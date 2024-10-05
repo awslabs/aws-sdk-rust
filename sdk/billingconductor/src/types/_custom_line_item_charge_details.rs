@@ -115,7 +115,7 @@ impl CustomLineItemChargeDetailsBuilder {
     }
     /// Consumes the builder and constructs a [`CustomLineItemChargeDetails`](crate::types::CustomLineItemChargeDetails).
     /// This method will fail if any of the following fields are not set:
-    /// - [`r#type`](crate::types::builders::CustomLineItemChargeDetailsBuilder::r#type)
+    /// - [`r#type`](crate::types::builders::CustomLineItemChargeDetailsBuilder::type)
     pub fn build(self) -> ::std::result::Result<crate::types::CustomLineItemChargeDetails, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CustomLineItemChargeDetails {
             flat: self.flat,

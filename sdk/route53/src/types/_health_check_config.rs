@@ -927,7 +927,7 @@ impl HealthCheckConfigBuilder {
     }
     /// Consumes the builder and constructs a [`HealthCheckConfig`](crate::types::HealthCheckConfig).
     /// This method will fail if any of the following fields are not set:
-    /// - [`r#type`](crate::types::builders::HealthCheckConfigBuilder::r#type)
+    /// - [`r#type`](crate::types::builders::HealthCheckConfigBuilder::type)
     pub fn build(self) -> ::std::result::Result<crate::types::HealthCheckConfig, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::HealthCheckConfig {
             ip_address: self.ip_address,

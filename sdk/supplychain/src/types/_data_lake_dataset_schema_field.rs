@@ -90,7 +90,7 @@ impl DataLakeDatasetSchemaFieldBuilder {
     /// Consumes the builder and constructs a [`DataLakeDatasetSchemaField`](crate::types::DataLakeDatasetSchemaField).
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::DataLakeDatasetSchemaFieldBuilder::name)
-    /// - [`r#type`](crate::types::builders::DataLakeDatasetSchemaFieldBuilder::r#type)
+    /// - [`r#type`](crate::types::builders::DataLakeDatasetSchemaFieldBuilder::type)
     /// - [`is_required`](crate::types::builders::DataLakeDatasetSchemaFieldBuilder::is_required)
     pub fn build(self) -> ::std::result::Result<crate::types::DataLakeDatasetSchemaField, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::DataLakeDatasetSchemaField {

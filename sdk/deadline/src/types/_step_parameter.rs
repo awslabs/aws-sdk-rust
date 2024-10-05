@@ -68,7 +68,7 @@ impl StepParameterBuilder {
     /// Consumes the builder and constructs a [`StepParameter`](crate::types::StepParameter).
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::StepParameterBuilder::name)
-    /// - [`r#type`](crate::types::builders::StepParameterBuilder::r#type)
+    /// - [`r#type`](crate::types::builders::StepParameterBuilder::type)
     pub fn build(self) -> ::std::result::Result<crate::types::StepParameter, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::StepParameter {
             name: self.name.ok_or_else(|| {

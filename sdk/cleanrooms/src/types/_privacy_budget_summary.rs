@@ -278,7 +278,7 @@ impl PrivacyBudgetSummaryBuilder {
     /// - [`membership_arn`](crate::types::builders::PrivacyBudgetSummaryBuilder::membership_arn)
     /// - [`collaboration_id`](crate::types::builders::PrivacyBudgetSummaryBuilder::collaboration_id)
     /// - [`collaboration_arn`](crate::types::builders::PrivacyBudgetSummaryBuilder::collaboration_arn)
-    /// - [`r#type`](crate::types::builders::PrivacyBudgetSummaryBuilder::r#type)
+    /// - [`r#type`](crate::types::builders::PrivacyBudgetSummaryBuilder::type)
     /// - [`create_time`](crate::types::builders::PrivacyBudgetSummaryBuilder::create_time)
     /// - [`update_time`](crate::types::builders::PrivacyBudgetSummaryBuilder::update_time)
     pub fn build(self) -> ::std::result::Result<crate::types::PrivacyBudgetSummary, ::aws_smithy_types::error::operation::BuildError> {

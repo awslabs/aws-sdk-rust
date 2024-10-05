@@ -852,7 +852,7 @@ impl BatchResourceRequirementBuilder {
     }
     /// Consumes the builder and constructs a [`BatchResourceRequirement`](crate::types::BatchResourceRequirement).
     /// This method will fail if any of the following fields are not set:
-    /// - [`r#type`](crate::types::builders::BatchResourceRequirementBuilder::r#type)
+    /// - [`r#type`](crate::types::builders::BatchResourceRequirementBuilder::type)
     /// - [`value`](crate::types::builders::BatchResourceRequirementBuilder::value)
     pub fn build(self) -> ::std::result::Result<crate::types::BatchResourceRequirement, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::BatchResourceRequirement {

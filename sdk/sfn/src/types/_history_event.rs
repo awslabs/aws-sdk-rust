@@ -886,7 +886,7 @@ impl HistoryEventBuilder {
     /// Consumes the builder and constructs a [`HistoryEvent`](crate::types::HistoryEvent).
     /// This method will fail if any of the following fields are not set:
     /// - [`timestamp`](crate::types::builders::HistoryEventBuilder::timestamp)
-    /// - [`r#type`](crate::types::builders::HistoryEventBuilder::r#type)
+    /// - [`r#type`](crate::types::builders::HistoryEventBuilder::type)
     pub fn build(self) -> ::std::result::Result<crate::types::HistoryEvent, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::HistoryEvent {
             timestamp: self.timestamp.ok_or_else(|| {

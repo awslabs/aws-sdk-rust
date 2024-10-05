@@ -44,7 +44,7 @@ impl KpiVisualStandardLayoutBuilder {
     }
     /// Consumes the builder and constructs a [`KpiVisualStandardLayout`](crate::types::KpiVisualStandardLayout).
     /// This method will fail if any of the following fields are not set:
-    /// - [`r#type`](crate::types::builders::KpiVisualStandardLayoutBuilder::r#type)
+    /// - [`r#type`](crate::types::builders::KpiVisualStandardLayoutBuilder::type)
     pub fn build(self) -> ::std::result::Result<crate::types::KpiVisualStandardLayout, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::KpiVisualStandardLayout {
             r#type: self.r#type.ok_or_else(|| {

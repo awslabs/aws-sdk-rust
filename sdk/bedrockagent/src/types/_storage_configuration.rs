@@ -149,7 +149,7 @@ impl StorageConfigurationBuilder {
     }
     /// Consumes the builder and constructs a [`StorageConfiguration`](crate::types::StorageConfiguration).
     /// This method will fail if any of the following fields are not set:
-    /// - [`r#type`](crate::types::builders::StorageConfigurationBuilder::r#type)
+    /// - [`r#type`](crate::types::builders::StorageConfigurationBuilder::type)
     pub fn build(self) -> ::std::result::Result<crate::types::StorageConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::StorageConfiguration {
             r#type: self.r#type.ok_or_else(|| {

@@ -163,7 +163,7 @@ impl TextInputCardBuilder {
     /// - [`id`](crate::types::builders::TextInputCardBuilder::id)
     /// - [`title`](crate::types::builders::TextInputCardBuilder::title)
     /// - [`dependencies`](crate::types::builders::TextInputCardBuilder::dependencies)
-    /// - [`r#type`](crate::types::builders::TextInputCardBuilder::r#type)
+    /// - [`r#type`](crate::types::builders::TextInputCardBuilder::type)
     pub fn build(self) -> ::std::result::Result<crate::types::TextInputCard, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::TextInputCard {
             id: self.id.ok_or_else(|| {

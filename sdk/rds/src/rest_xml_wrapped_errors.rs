@@ -6,7 +6,6 @@
 
 use aws_smithy_types::error::metadata::{Builder as ErrorMetadataBuilder, ErrorMetadata};
 use aws_smithy_xml::decode::{try_data, Document, ScopedDecoder, XmlDecodeError};
-use std::convert::TryFrom;
 
 #[allow(unused)]
 pub fn body_is_error(body: &[u8]) -> Result<bool, XmlDecodeError> {
@@ -61,7 +60,6 @@ mod test {
     use super::{body_is_error, parse_error_metadata};
     use crate::rest_xml_wrapped_errors::error_scope;
     use aws_smithy_xml::decode::Document;
-    use std::convert::TryFrom;
 
     #[test]
     fn parse_wrapped_error() {

@@ -65,7 +65,7 @@ impl ExportServerSideEncryptionBuilder {
     }
     /// Consumes the builder and constructs a [`ExportServerSideEncryption`](crate::types::ExportServerSideEncryption).
     /// This method will fail if any of the following fields are not set:
-    /// - [`r#type`](crate::types::builders::ExportServerSideEncryptionBuilder::r#type)
+    /// - [`r#type`](crate::types::builders::ExportServerSideEncryptionBuilder::type)
     pub fn build(self) -> ::std::result::Result<crate::types::ExportServerSideEncryption, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ExportServerSideEncryption {
             kms_key_arn: self.kms_key_arn,

@@ -272,7 +272,7 @@ impl ResourceQueryBuilder {
     }
     /// Consumes the builder and constructs a [`ResourceQuery`](crate::types::ResourceQuery).
     /// This method will fail if any of the following fields are not set:
-    /// - [`r#type`](crate::types::builders::ResourceQueryBuilder::r#type)
+    /// - [`r#type`](crate::types::builders::ResourceQueryBuilder::type)
     /// - [`query`](crate::types::builders::ResourceQueryBuilder::query)
     pub fn build(self) -> ::std::result::Result<crate::types::ResourceQuery, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ResourceQuery {

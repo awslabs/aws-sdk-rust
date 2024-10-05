@@ -77,7 +77,7 @@ impl SourceCodeVersionBuilder {
     }
     /// Consumes the builder and constructs a [`SourceCodeVersion`](crate::types::SourceCodeVersion).
     /// This method will fail if any of the following fields are not set:
-    /// - [`r#type`](crate::types::builders::SourceCodeVersionBuilder::r#type)
+    /// - [`r#type`](crate::types::builders::SourceCodeVersionBuilder::type)
     /// - [`value`](crate::types::builders::SourceCodeVersionBuilder::value)
     pub fn build(self) -> ::std::result::Result<crate::types::SourceCodeVersion, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::SourceCodeVersion {

@@ -68,7 +68,7 @@ impl FlowNodeOutputBuilder {
     /// Consumes the builder and constructs a [`FlowNodeOutput`](crate::types::FlowNodeOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::FlowNodeOutputBuilder::name)
-    /// - [`r#type`](crate::types::builders::FlowNodeOutputBuilder::r#type)
+    /// - [`r#type`](crate::types::builders::FlowNodeOutputBuilder::type)
     pub fn build(self) -> ::std::result::Result<crate::types::FlowNodeOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::FlowNodeOutput {
             name: self.name.ok_or_else(|| {

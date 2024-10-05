@@ -68,7 +68,7 @@ impl ReferenceBuilder {
     /// Consumes the builder and constructs a [`Reference`](crate::types::Reference).
     /// This method will fail if any of the following fields are not set:
     /// - [`value`](crate::types::builders::ReferenceBuilder::value)
-    /// - [`r#type`](crate::types::builders::ReferenceBuilder::r#type)
+    /// - [`r#type`](crate::types::builders::ReferenceBuilder::type)
     pub fn build(self) -> ::std::result::Result<crate::types::Reference, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Reference {
             value: self.value.ok_or_else(|| {

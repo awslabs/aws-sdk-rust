@@ -141,7 +141,7 @@ impl IpSetDescriptorBuilder {
     }
     /// Consumes the builder and constructs a [`IpSetDescriptor`](crate::types::IpSetDescriptor).
     /// This method will fail if any of the following fields are not set:
-    /// - [`r#type`](crate::types::builders::IpSetDescriptorBuilder::r#type)
+    /// - [`r#type`](crate::types::builders::IpSetDescriptorBuilder::type)
     /// - [`value`](crate::types::builders::IpSetDescriptorBuilder::value)
     pub fn build(self) -> ::std::result::Result<crate::types::IpSetDescriptor, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::IpSetDescriptor {

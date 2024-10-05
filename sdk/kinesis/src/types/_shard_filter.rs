@@ -161,7 +161,7 @@ impl ShardFilterBuilder {
     }
     /// Consumes the builder and constructs a [`ShardFilter`](crate::types::ShardFilter).
     /// This method will fail if any of the following fields are not set:
-    /// - [`r#type`](crate::types::builders::ShardFilterBuilder::r#type)
+    /// - [`r#type`](crate::types::builders::ShardFilterBuilder::type)
     pub fn build(self) -> ::std::result::Result<crate::types::ShardFilter, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ShardFilter {
             r#type: self.r#type.ok_or_else(|| {

@@ -67,7 +67,7 @@ impl LifecyclePolicyResourceIdentifierBuilder {
     }
     /// Consumes the builder and constructs a [`LifecyclePolicyResourceIdentifier`](crate::types::LifecyclePolicyResourceIdentifier).
     /// This method will fail if any of the following fields are not set:
-    /// - [`r#type`](crate::types::builders::LifecyclePolicyResourceIdentifierBuilder::r#type)
+    /// - [`r#type`](crate::types::builders::LifecyclePolicyResourceIdentifierBuilder::type)
     /// - [`resource`](crate::types::builders::LifecyclePolicyResourceIdentifierBuilder::resource)
     pub fn build(self) -> ::std::result::Result<crate::types::LifecyclePolicyResourceIdentifier, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::LifecyclePolicyResourceIdentifier {

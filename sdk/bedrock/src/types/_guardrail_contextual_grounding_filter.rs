@@ -66,7 +66,7 @@ impl GuardrailContextualGroundingFilterBuilder {
     }
     /// Consumes the builder and constructs a [`GuardrailContextualGroundingFilter`](crate::types::GuardrailContextualGroundingFilter).
     /// This method will fail if any of the following fields are not set:
-    /// - [`r#type`](crate::types::builders::GuardrailContextualGroundingFilterBuilder::r#type)
+    /// - [`r#type`](crate::types::builders::GuardrailContextualGroundingFilterBuilder::type)
     /// - [`threshold`](crate::types::builders::GuardrailContextualGroundingFilterBuilder::threshold)
     pub fn build(self) -> ::std::result::Result<crate::types::GuardrailContextualGroundingFilter, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::GuardrailContextualGroundingFilter {

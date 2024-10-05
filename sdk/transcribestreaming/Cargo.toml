@@ -21,11 +21,11 @@ version = "1.2.1"
 [dependencies.aws-runtime]
 path = "../aws-runtime"
 features = ["event-stream"]
-version = "1.4.2"
+version = "1.4.3"
 
 [dependencies.aws-sigv4]
 path = "../aws-sigv4"
-version = "1.2.3"
+version = "1.2.4"
 
 [dependencies.aws-smithy-async]
 path = "../aws-smithy-async"
@@ -33,12 +33,12 @@ version = "1.2.1"
 
 [dependencies.aws-smithy-eventstream]
 path = "../aws-smithy-eventstream"
-version = "0.60.4"
+version = "0.60.5"
 
 [dependencies.aws-smithy-http]
 path = "../aws-smithy-http"
 features = ["event-stream"]
-version = "0.60.10"
+version = "0.60.11"
 
 [dependencies.aws-smithy-json]
 path = "../aws-smithy-json"
@@ -57,7 +57,7 @@ version = "1.7.2"
 [dependencies.aws-smithy-types]
 path = "../aws-smithy-types"
 features = ["http-body-0-4-x"]
-version = "1.2.5"
+version = "1.2.6"
 
 [dependencies.aws-types]
 path = "../aws-types"
@@ -86,7 +86,7 @@ version = "0.3.0"
 
 [dev-dependencies.aws-config]
 path = "../aws-config"
-version = "1.5.5"
+version = "1.5.6"
 
 [dev-dependencies.aws-credential-types]
 path = "../aws-credential-types"
@@ -96,7 +96,7 @@ version = "1.2.1"
 [dev-dependencies.aws-runtime]
 path = "../aws-runtime"
 features = ["test-util"]
-version = "1.4.2"
+version = "1.4.3"
 
 [dev-dependencies.aws-smithy-async]
 path = "../aws-smithy-async"
@@ -120,7 +120,7 @@ version = "1.7.2"
 [dev-dependencies.aws-smithy-types]
 path = "../aws-smithy-types"
 features = ["test-util"]
-version = "1.2.5"
+version = "1.2.6"
 
 [dev-dependencies.futures-core]
 version = "0.3.25"

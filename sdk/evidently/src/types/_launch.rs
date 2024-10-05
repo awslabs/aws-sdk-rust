@@ -372,7 +372,7 @@ impl LaunchBuilder {
     /// - [`status`](crate::types::builders::LaunchBuilder::status)
     /// - [`created_time`](crate::types::builders::LaunchBuilder::created_time)
     /// - [`last_updated_time`](crate::types::builders::LaunchBuilder::last_updated_time)
-    /// - [`r#type`](crate::types::builders::LaunchBuilder::r#type)
+    /// - [`r#type`](crate::types::builders::LaunchBuilder::type)
     pub fn build(self) -> ::std::result::Result<crate::types::Launch, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Launch {
             arn: self.arn.ok_or_else(|| {

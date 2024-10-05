@@ -128,7 +128,7 @@ impl DocumentationPartLocationBuilder {
     }
     /// Consumes the builder and constructs a [`DocumentationPartLocation`](crate::types::DocumentationPartLocation).
     /// This method will fail if any of the following fields are not set:
-    /// - [`r#type`](crate::types::builders::DocumentationPartLocationBuilder::r#type)
+    /// - [`r#type`](crate::types::builders::DocumentationPartLocationBuilder::type)
     pub fn build(self) -> ::std::result::Result<crate::types::DocumentationPartLocation, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::DocumentationPartLocation {
             r#type: self.r#type.ok_or_else(|| {

@@ -96,7 +96,7 @@ impl HostedZoneLimitBuilder {
     }
     /// Consumes the builder and constructs a [`HostedZoneLimit`](crate::types::HostedZoneLimit).
     /// This method will fail if any of the following fields are not set:
-    /// - [`r#type`](crate::types::builders::HostedZoneLimitBuilder::r#type)
+    /// - [`r#type`](crate::types::builders::HostedZoneLimitBuilder::type)
     /// - [`value`](crate::types::builders::HostedZoneLimitBuilder::value)
     pub fn build(self) -> ::std::result::Result<crate::types::HostedZoneLimit, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::HostedZoneLimit {

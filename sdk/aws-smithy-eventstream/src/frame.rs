@@ -13,7 +13,6 @@ use aws_smithy_types::event_stream::{Header, HeaderValue, Message};
 use aws_smithy_types::str_bytes::StrBytes;
 use aws_smithy_types::DateTime;
 use bytes::{Buf, BufMut};
-use std::convert::{TryFrom, TryInto};
 use std::error::Error as StdError;
 use std::fmt;
 use std::mem::size_of;

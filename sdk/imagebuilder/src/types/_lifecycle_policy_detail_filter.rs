@@ -118,7 +118,7 @@ impl LifecyclePolicyDetailFilterBuilder {
     }
     /// Consumes the builder and constructs a [`LifecyclePolicyDetailFilter`](crate::types::LifecyclePolicyDetailFilter).
     /// This method will fail if any of the following fields are not set:
-    /// - [`r#type`](crate::types::builders::LifecyclePolicyDetailFilterBuilder::r#type)
+    /// - [`r#type`](crate::types::builders::LifecyclePolicyDetailFilterBuilder::type)
     /// - [`value`](crate::types::builders::LifecyclePolicyDetailFilterBuilder::value)
     pub fn build(self) -> ::std::result::Result<crate::types::LifecyclePolicyDetailFilter, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::LifecyclePolicyDetailFilter {

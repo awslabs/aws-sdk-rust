@@ -711,7 +711,7 @@ impl GuardrailPiiEntityConfigBuilder {
     }
     /// Consumes the builder and constructs a [`GuardrailPiiEntityConfig`](crate::types::GuardrailPiiEntityConfig).
     /// This method will fail if any of the following fields are not set:
-    /// - [`r#type`](crate::types::builders::GuardrailPiiEntityConfigBuilder::r#type)
+    /// - [`r#type`](crate::types::builders::GuardrailPiiEntityConfigBuilder::type)
     /// - [`action`](crate::types::builders::GuardrailPiiEntityConfigBuilder::action)
     pub fn build(self) -> ::std::result::Result<crate::types::GuardrailPiiEntityConfig, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::GuardrailPiiEntityConfig {

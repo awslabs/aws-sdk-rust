@@ -564,7 +564,7 @@ impl ScheduleRunTestBuilder {
     }
     /// Consumes the builder and constructs a [`ScheduleRunTest`](crate::types::ScheduleRunTest).
     /// This method will fail if any of the following fields are not set:
-    /// - [`r#type`](crate::types::builders::ScheduleRunTestBuilder::r#type)
+    /// - [`r#type`](crate::types::builders::ScheduleRunTestBuilder::type)
     pub fn build(self) -> ::std::result::Result<crate::types::ScheduleRunTest, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ScheduleRunTest {
             r#type: self.r#type.ok_or_else(|| {

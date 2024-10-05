@@ -293,7 +293,7 @@ impl GetIdNamespaceOutputBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`id_namespace_name`](crate::operation::get_id_namespace::builders::GetIdNamespaceOutputBuilder::id_namespace_name)
     /// - [`id_namespace_arn`](crate::operation::get_id_namespace::builders::GetIdNamespaceOutputBuilder::id_namespace_arn)
-    /// - [`r#type`](crate::operation::get_id_namespace::builders::GetIdNamespaceOutputBuilder::r#type)
+    /// - [`r#type`](crate::operation::get_id_namespace::builders::GetIdNamespaceOutputBuilder::type)
     /// - [`created_at`](crate::operation::get_id_namespace::builders::GetIdNamespaceOutputBuilder::created_at)
     /// - [`updated_at`](crate::operation::get_id_namespace::builders::GetIdNamespaceOutputBuilder::updated_at)
     pub fn build(

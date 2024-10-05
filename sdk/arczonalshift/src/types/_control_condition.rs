@@ -69,7 +69,7 @@ impl ControlConditionBuilder {
     }
     /// Consumes the builder and constructs a [`ControlCondition`](crate::types::ControlCondition).
     /// This method will fail if any of the following fields are not set:
-    /// - [`r#type`](crate::types::builders::ControlConditionBuilder::r#type)
+    /// - [`r#type`](crate::types::builders::ControlConditionBuilder::type)
     /// - [`alarm_identifier`](crate::types::builders::ControlConditionBuilder::alarm_identifier)
     pub fn build(self) -> ::std::result::Result<crate::types::ControlCondition, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ControlCondition {
