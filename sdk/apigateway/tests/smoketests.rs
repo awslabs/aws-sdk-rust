@@ -7,6 +7,7 @@
 //! ```sh
 //! RUSTFLAGS="--cfg smoketests" cargo test.
 //! ```
+//!
 use aws_sdk_apigateway::{config, Client};
 /// Smoke tests for the `get_domain_names` operation
 #[::tokio::test]

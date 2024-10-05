@@ -7,6 +7,7 @@
 //! ```sh
 //! RUSTFLAGS="--cfg smoketests" cargo test.
 //! ```
+//!
 use aws_sdk_marketplacereporting::{config, Client};
 /// Smoke tests for the `get_buyer_dashboard` operation
 #[::tokio::test]

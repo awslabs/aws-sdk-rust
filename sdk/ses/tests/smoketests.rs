@@ -7,6 +7,7 @@
 //! ```sh
 //! RUSTFLAGS="--cfg smoketests" cargo test.
 //! ```
+//!
 use aws_sdk_ses::{config, Client};
 /// Smoke tests for the `list_identities` operation
 #[::tokio::test]

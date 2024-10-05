@@ -7,6 +7,7 @@
 //! ```sh
 //! RUSTFLAGS="--cfg smoketests" cargo test.
 //! ```
+//!
 use aws_sdk_costandusagereport::{config, Client};
 /// Smoke tests for the `describe_report_definitions` operation
 #[::tokio::test]

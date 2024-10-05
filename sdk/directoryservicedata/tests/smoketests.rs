@@ -7,6 +7,7 @@
 //! ```sh
 //! RUSTFLAGS="--cfg smoketests" cargo test.
 //! ```
+//!
 use aws_sdk_directoryservicedata::{config, Client};
 /// Smoke tests for the `describe_group` operation
 #[::tokio::test]

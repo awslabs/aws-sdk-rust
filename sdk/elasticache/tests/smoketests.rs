@@ -7,6 +7,7 @@
 //! ```sh
 //! RUSTFLAGS="--cfg smoketests" cargo test.
 //! ```
+//!
 use aws_sdk_elasticache::{config, Client};
 /// Smoke tests for the `describe_events` operation
 #[::tokio::test]

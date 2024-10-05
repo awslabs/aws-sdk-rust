@@ -7,6 +7,7 @@
 //! ```sh
 //! RUSTFLAGS="--cfg smoketests" cargo test.
 //! ```
+//!
 use aws_sdk_neptune::{config, Client};
 /// Smoke tests for the `describe_db_engine_versions` operation
 #[::tokio::test]

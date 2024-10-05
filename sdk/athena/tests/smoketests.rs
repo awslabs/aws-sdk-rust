@@ -7,6 +7,7 @@
 //! ```sh
 //! RUSTFLAGS="--cfg smoketests" cargo test.
 //! ```
+//!
 use aws_sdk_athena::{config, Client};
 /// Smoke tests for the `list_named_queries` operation
 #[::tokio::test]

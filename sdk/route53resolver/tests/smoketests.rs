@@ -7,6 +7,7 @@
 //! ```sh
 //! RUSTFLAGS="--cfg smoketests" cargo test.
 //! ```
+//!
 use aws_sdk_route53resolver::{config, Client};
 /// Smoke tests for the `list_resolver_endpoints` operation
 #[::tokio::test]

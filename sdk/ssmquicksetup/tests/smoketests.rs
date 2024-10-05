@@ -7,6 +7,7 @@
 //! ```sh
 //! RUSTFLAGS="--cfg smoketests" cargo test.
 //! ```
+//!
 use aws_sdk_ssmquicksetup::{config, Client};
 /// Smoke tests for the `get_configuration_manager` operation
 #[::tokio::test]
