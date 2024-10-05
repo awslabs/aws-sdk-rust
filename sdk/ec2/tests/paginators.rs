@@ -5,11 +5,10 @@
 
 use aws_runtime::user_agent::test_util::assert_ua_contains_metric_values;
 use aws_sdk_ec2::{config::Credentials, config::Region, types::InstanceType, Client, Config};
-use aws_smithy_runtime::client::http::test_util::{
-    capture_request, ReplayEvent, StaticReplayClient,
-};
+use aws_smithy_runtime::client::http::test_util::capture_request;
 use aws_smithy_runtime_api::client::http::HttpClient;
 use aws_smithy_types::body::SdkBody;
+use std::collections::HashSet;
 
 fn stub_config(http_client: impl HttpClient + 'static) -> Config {
     Config::builder()
@@ -19,28 +18,29 @@ fn stub_config(http_client: impl HttpClient + 'static) -> Config {
         .build()
 }
 
+fn validate_query_string(expected: &str, actual: &str) {
+    let expected = expected.split('&').collect::<HashSet<&str>>();
+    let actual = actual.split('&').collect::<HashSet<&str>>();
+    assert_eq!(expected, actual);
+    assert_eq!(expected.len(), actual.len());
+}
+
 /// See https://github.com/awslabs/aws-sdk-rust/issues/391
 ///
 /// EC2 replies with `<nextToken></nextToken>` which our XML parser parses as empty string and not "none"
 #[tokio::test]
 async fn paginators_handle_empty_tokens() {
-    let request= "Action=DescribeSpotPriceHistory&Version=2016-11-15&AvailabilityZone=eu-north-1a&InstanceType.1=g5.48xlarge&ProductDescription.1=Linux%2FUNIX";
     let response = r#"<?xml version="1.0" encoding="UTF-8"?>
         <DescribeSpotPriceHistoryResponse xmlns="http://ec2.amazonaws.com/doc/2016-11-15/">
             <requestId>edf3e86c-4baf-47c1-9228-9a5ea09542e8</requestId>
             <spotPriceHistorySet/>
             <nextToken></nextToken>
         </DescribeSpotPriceHistoryResponse>"#;
-    let http_client = StaticReplayClient::new(vec![ReplayEvent::new(
-        http::Request::builder()
-            .uri("https://ec2.us-east-1.amazonaws.com/")
-            .body(request.into())
-            .unwrap(),
-        http::Response::builder()
-            .status(200)
-            .body(SdkBody::from(response))
-            .unwrap(),
-    )]);
+    let response = http::Response::builder()
+        .status(200)
+        .body(SdkBody::from(response))
+        .unwrap();
+    let (http_client, captured_request) = capture_request(Some(response));
     let client = Client::from_conf(stub_config(http_client.clone()));
     let instance_type = InstanceType::from("g5.48xlarge");
     let mut paginator = client
@@ -53,7 +53,10 @@ async fn paginators_handle_empty_tokens() {
         .send();
     let first_item = paginator.try_next().await.expect("success");
     assert_eq!(first_item, None);
-    http_client.assert_requests_match(&[]);
+    let req = captured_request.expect_request();
+    let actual_body = std::str::from_utf8(req.body().bytes().unwrap()).unwrap();
+    let expected_body = "Action=DescribeSpotPriceHistory&Version=2016-11-15&AvailabilityZone=eu-north-1a&InstanceType.1=g5.48xlarge&ProductDescription.1=Linux%2FUNIX";
+    validate_query_string(expected_body, actual_body);
 }
 
 /// See https://github.com/awslabs/aws-sdk-rust/issues/405
@@ -61,22 +64,16 @@ async fn paginators_handle_empty_tokens() {
 /// EC2 can also reply with the token truly unset which will be interpreted as `None`
 #[tokio::test]
 async fn paginators_handle_unset_tokens() {
-    let request= "Action=DescribeSpotPriceHistory&Version=2016-11-15&AvailabilityZone=eu-north-1a&InstanceType.1=g5.48xlarge&ProductDescription.1=Linux%2FUNIX";
     let response = r#"<?xml version="1.0" encoding="UTF-8"?>
         <DescribeSpotPriceHistoryResponse xmlns="http://ec2.amazonaws.com/doc/2016-11-15/">
             <requestId>edf3e86c-4baf-47c1-9228-9a5ea09542e8</requestId>
             <spotPriceHistorySet/>
         </DescribeSpotPriceHistoryResponse>"#;
-    let http_client = StaticReplayClient::new(vec![ReplayEvent::new(
-        http::Request::builder()
-            .uri("https://ec2.us-east-1.amazonaws.com/")
-            .body(request.into())
-            .unwrap(),
-        http::Response::builder()
-            .status(200)
-            .body(SdkBody::from(response))
-            .unwrap(),
-    )]);
+    let response = http::Response::builder()
+        .status(200)
+        .body(SdkBody::from(response))
+        .unwrap();
+    let (http_client, captured_request) = capture_request(Some(response));
     let client = Client::from_conf(stub_config(http_client.clone()));
     let instance_type = InstanceType::from("g5.48xlarge");
     let mut paginator = client
@@ -89,7 +86,10 @@ async fn paginators_handle_unset_tokens() {
         .send();
     let first_item = paginator.try_next().await.expect("success");
     assert_eq!(first_item, None);
-    http_client.assert_requests_match(&[]);
+    let req = captured_request.expect_request();
+    let actual_body = std::str::from_utf8(req.body().bytes().unwrap()).unwrap();
+    let expected_body = "Action=DescribeSpotPriceHistory&Version=2016-11-15&AvailabilityZone=eu-north-1a&InstanceType.1=g5.48xlarge&ProductDescription.1=Linux%2FUNIX";
+    validate_query_string(expected_body, actual_body);
 }
 
 #[tokio::test]
