@@ -19,7 +19,7 @@
 //! WebIdentityTokenCredentialProvider will load the following environment variables:
 //! - `AWS_WEB_IDENTITY_TOKEN_FILE`: **required**, location to find the token file containing a JWT token
 //! - `AWS_ROLE_ARN`: **required**, role ARN to assume
-//! - `AWS_IAM_ROLE_SESSION_NAME`: **optional**: Session name to use when assuming the role
+//! - `AWS_ROLE_SESSION_NAME`: **optional**: Session name to use when assuming the role
 //!
 //! ## AWS Profile Configuration
 //! _Note: Configuration of the web identity token provider via a shared profile is only supported
