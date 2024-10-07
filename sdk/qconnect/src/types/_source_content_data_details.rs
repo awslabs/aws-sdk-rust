@@ -12,6 +12,8 @@ pub struct SourceContentDataDetails {
     pub text_data: ::std::option::Option<crate::types::TextData>,
     /// <p>Details about the source content ranking data.</p>
     pub ranking_data: ::std::option::Option<crate::types::RankingData>,
+    /// <p>Contains information about where the text with a citation begins and ends in the generated output.</p>
+    pub citation_span: ::std::option::Option<crate::types::CitationSpan>,
 }
 impl SourceContentDataDetails {
     /// <p>The identifier of the source content.</p>
@@ -31,6 +33,10 @@ impl SourceContentDataDetails {
     pub fn ranking_data(&self) -> ::std::option::Option<&crate::types::RankingData> {
         self.ranking_data.as_ref()
     }
+    /// <p>Contains information about where the text with a citation begins and ends in the generated output.</p>
+    pub fn citation_span(&self) -> ::std::option::Option<&crate::types::CitationSpan> {
+        self.citation_span.as_ref()
+    }
 }
 impl SourceContentDataDetails {
     /// Creates a new builder-style object to manufacture [`SourceContentDataDetails`](crate::types::SourceContentDataDetails).
@@ -47,6 +53,7 @@ pub struct SourceContentDataDetailsBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::SourceContentType>,
     pub(crate) text_data: ::std::option::Option<crate::types::TextData>,
     pub(crate) ranking_data: ::std::option::Option<crate::types::RankingData>,
+    pub(crate) citation_span: ::std::option::Option<crate::types::CitationSpan>,
 }
 impl SourceContentDataDetailsBuilder {
     /// <p>The identifier of the source content.</p>
@@ -109,6 +116,20 @@ impl SourceContentDataDetailsBuilder {
     pub fn get_ranking_data(&self) -> &::std::option::Option<crate::types::RankingData> {
         &self.ranking_data
     }
+    /// <p>Contains information about where the text with a citation begins and ends in the generated output.</p>
+    pub fn citation_span(mut self, input: crate::types::CitationSpan) -> Self {
+        self.citation_span = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Contains information about where the text with a citation begins and ends in the generated output.</p>
+    pub fn set_citation_span(mut self, input: ::std::option::Option<crate::types::CitationSpan>) -> Self {
+        self.citation_span = input;
+        self
+    }
+    /// <p>Contains information about where the text with a citation begins and ends in the generated output.</p>
+    pub fn get_citation_span(&self) -> &::std::option::Option<crate::types::CitationSpan> {
+        &self.citation_span
+    }
     /// Consumes the builder and constructs a [`SourceContentDataDetails`](crate::types::SourceContentDataDetails).
     /// This method will fail if any of the following fields are not set:
     /// - [`id`](crate::types::builders::SourceContentDataDetailsBuilder::id)
@@ -129,6 +150,7 @@ impl SourceContentDataDetailsBuilder {
             })?,
             text_data: self.text_data,
             ranking_data: self.ranking_data,
+            citation_span: self.citation_span,
         })
     }
 }

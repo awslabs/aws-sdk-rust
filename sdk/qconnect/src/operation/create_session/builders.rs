@@ -197,4 +197,28 @@ impl CreateSessionFluentBuilder {
     pub fn get_tag_filter(&self) -> &::std::option::Option<crate::types::TagFilter> {
         self.inner.get_tag_filter()
     }
+    ///
+    /// Adds a key-value pair to `aiAgentConfiguration`.
+    ///
+    /// To override the contents of this collection use [`set_ai_agent_configuration`](Self::set_ai_agent_configuration).
+    ///
+    /// <p>The configuration of the AI Agents (mapped by AI Agent Type to AI Agent version) that should be used by Amazon Q in Connect for this Session.</p>
+    pub fn ai_agent_configuration(mut self, k: crate::types::AiAgentType, v: crate::types::AiAgentConfigurationData) -> Self {
+        self.inner = self.inner.ai_agent_configuration(k, v);
+        self
+    }
+    /// <p>The configuration of the AI Agents (mapped by AI Agent Type to AI Agent version) that should be used by Amazon Q in Connect for this Session.</p>
+    pub fn set_ai_agent_configuration(
+        mut self,
+        input: ::std::option::Option<::std::collections::HashMap<crate::types::AiAgentType, crate::types::AiAgentConfigurationData>>,
+    ) -> Self {
+        self.inner = self.inner.set_ai_agent_configuration(input);
+        self
+    }
+    /// <p>The configuration of the AI Agents (mapped by AI Agent Type to AI Agent version) that should be used by Amazon Q in Connect for this Session.</p>
+    pub fn get_ai_agent_configuration(
+        &self,
+    ) -> &::std::option::Option<::std::collections::HashMap<crate::types::AiAgentType, crate::types::AiAgentConfigurationData>> {
+        self.inner.get_ai_agent_configuration()
+    }
 }

@@ -23,6 +23,14 @@ pub fn parse_http_error_metadata(
     crate::json_errors::parse_error_metadata(response_body, response_headers)
 }
 
+pub(crate) mod shape_create_ai_agent;
+
+pub(crate) mod shape_create_ai_agent_version;
+
+pub(crate) mod shape_create_ai_prompt;
+
+pub(crate) mod shape_create_ai_prompt_version;
+
 pub(crate) mod shape_create_assistant;
 
 pub(crate) mod shape_create_assistant_association;
@@ -37,6 +45,14 @@ pub(crate) mod shape_create_quick_response;
 
 pub(crate) mod shape_create_session;
 
+pub(crate) mod shape_delete_ai_agent;
+
+pub(crate) mod shape_delete_ai_agent_version;
+
+pub(crate) mod shape_delete_ai_prompt;
+
+pub(crate) mod shape_delete_ai_prompt_version;
+
 pub(crate) mod shape_delete_assistant;
 
 pub(crate) mod shape_delete_assistant_association;
@@ -50,6 +66,10 @@ pub(crate) mod shape_delete_import_job;
 pub(crate) mod shape_delete_knowledge_base;
 
 pub(crate) mod shape_delete_quick_response;
+
+pub(crate) mod shape_get_ai_agent;
+
+pub(crate) mod shape_get_ai_prompt;
 
 pub(crate) mod shape_get_assistant;
 
@@ -70,6 +90,14 @@ pub(crate) mod shape_get_quick_response;
 pub(crate) mod shape_get_recommendations;
 
 pub(crate) mod shape_get_session;
+
+pub(crate) mod shape_list_ai_agent_versions;
+
+pub(crate) mod shape_list_ai_agents;
+
+pub(crate) mod shape_list_ai_prompt_versions;
+
+pub(crate) mod shape_list_ai_prompts;
 
 pub(crate) mod shape_list_assistant_associations;
 
@@ -93,6 +121,8 @@ pub(crate) mod shape_put_feedback;
 
 pub(crate) mod shape_query_assistant;
 
+pub(crate) mod shape_remove_assistant_ai_agent;
+
 pub(crate) mod shape_remove_knowledge_base_template_uri;
 
 pub(crate) mod shape_search_content;
@@ -109,6 +139,12 @@ pub(crate) mod shape_tag_resource;
 
 pub(crate) mod shape_untag_resource;
 
+pub(crate) mod shape_update_ai_agent;
+
+pub(crate) mod shape_update_ai_prompt;
+
+pub(crate) mod shape_update_assistant_ai_agent;
+
 pub(crate) mod shape_update_content;
 
 pub(crate) mod shape_update_knowledge_base_template_uri;
@@ -116,6 +152,8 @@ pub(crate) mod shape_update_knowledge_base_template_uri;
 pub(crate) mod shape_update_quick_response;
 
 pub(crate) mod shape_update_session;
+
+pub(crate) mod shape_update_session_data;
 
 pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
     if data.is_empty() {
@@ -128,6 +166,14 @@ pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
 pub(crate) mod shape_access_denied_exception;
 
 pub(crate) mod shape_conflict_exception;
+
+pub(crate) mod shape_create_ai_agent_input;
+
+pub(crate) mod shape_create_ai_agent_version_input;
+
+pub(crate) mod shape_create_ai_prompt_input;
+
+pub(crate) mod shape_create_ai_prompt_version_input;
 
 pub(crate) mod shape_create_assistant_association_input;
 
@@ -173,15 +219,41 @@ pub(crate) mod shape_throttling_exception;
 
 pub(crate) mod shape_too_many_tags_exception;
 
+pub(crate) mod shape_update_ai_agent_input;
+
+pub(crate) mod shape_update_ai_prompt_input;
+
+pub(crate) mod shape_update_assistant_ai_agent_input;
+
 pub(crate) mod shape_update_content_input;
 
 pub(crate) mod shape_update_knowledge_base_template_uri_input;
 
 pub(crate) mod shape_update_quick_response_input;
 
+pub(crate) mod shape_update_session_data_input;
+
 pub(crate) mod shape_update_session_input;
 
 pub(crate) mod shape_validation_exception;
+
+pub(crate) mod shape_ai_agent_configuration;
+
+pub(crate) mod shape_ai_agent_configuration_data;
+
+pub(crate) mod shape_ai_agent_data;
+
+pub(crate) mod shape_ai_agent_summary_list;
+
+pub(crate) mod shape_ai_agent_version_summaries_list;
+
+pub(crate) mod shape_ai_prompt_data;
+
+pub(crate) mod shape_ai_prompt_summary_list;
+
+pub(crate) mod shape_ai_prompt_template_configuration;
+
+pub(crate) mod shape_ai_prompt_version_summaries_list;
 
 pub(crate) mod shape_assistant_association_data;
 
@@ -225,6 +297,8 @@ pub(crate) mod shape_notify_recommendations_received_error_list;
 
 pub(crate) mod shape_query_condition;
 
+pub(crate) mod shape_query_input_data;
+
 pub(crate) mod shape_query_results_list;
 
 pub(crate) mod shape_quick_response_data;
@@ -245,6 +319,10 @@ pub(crate) mod shape_recommendation_trigger_list;
 
 pub(crate) mod shape_rendering_configuration;
 
+pub(crate) mod shape_runtime_session_data;
+
+pub(crate) mod shape_runtime_session_data_list;
+
 pub(crate) mod shape_search_expression;
 
 pub(crate) mod shape_server_side_encryption_configuration;
@@ -259,7 +337,21 @@ pub(crate) mod shape_tag_filter;
 
 pub(crate) mod shape_tags;
 
+pub(crate) mod shape_vector_ingestion_configuration;
+
+pub(crate) mod shape_ai_agent_configuration_map;
+
+pub(crate) mod shape_ai_agent_summary;
+
+pub(crate) mod shape_ai_agent_version_summary;
+
+pub(crate) mod shape_ai_prompt_summary;
+
+pub(crate) mod shape_ai_prompt_version_summary;
+
 pub(crate) mod shape_amazon_connect_guide_association_data;
+
+pub(crate) mod shape_answer_recommendation_ai_agent_configuration;
 
 pub(crate) mod shape_app_integrations_configuration;
 
@@ -275,11 +367,15 @@ pub(crate) mod shape_assistant_summary;
 
 pub(crate) mod shape_channels;
 
+pub(crate) mod shape_chunking_configuration;
+
 pub(crate) mod shape_configuration;
 
 pub(crate) mod shape_content_association_summary;
 
 pub(crate) mod shape_content_metadata;
+
+pub(crate) mod shape_failure_reason;
 
 pub(crate) mod shape_filter;
 
@@ -287,13 +383,23 @@ pub(crate) mod shape_generative_content_feedback_data;
 
 pub(crate) mod shape_import_job_summary;
 
+pub(crate) mod shape_intent_input_data;
+
 pub(crate) mod shape_knowledge_base_summary;
+
+pub(crate) mod shape_managed_source_configuration;
+
+pub(crate) mod shape_manual_search_ai_agent_configuration;
 
 pub(crate) mod shape_notify_recommendations_received_error;
 
 pub(crate) mod shape_or_condition;
 
+pub(crate) mod shape_parsing_configuration;
+
 pub(crate) mod shape_query_condition_item;
+
+pub(crate) mod shape_query_text_input_data;
 
 pub(crate) mod shape_quick_response_contents;
 
@@ -313,13 +419,21 @@ pub(crate) mod shape_recommendation_trigger;
 
 pub(crate) mod shape_result_data;
 
+pub(crate) mod shape_runtime_session_data_value;
+
 pub(crate) mod shape_session_integration_configuration;
 
 pub(crate) mod shape_session_summary;
 
 pub(crate) mod shape_tag_condition;
 
+pub(crate) mod shape_text_full_ai_prompt_edit_template_configuration;
+
 pub(crate) mod shape_and_conditions;
+
+pub(crate) mod shape_association_configuration;
+
+pub(crate) mod shape_bedrock_foundation_model_configuration_for_parsing;
 
 pub(crate) mod shape_connect_configuration;
 
@@ -329,7 +443,11 @@ pub(crate) mod shape_data_summary;
 
 pub(crate) mod shape_document;
 
+pub(crate) mod shape_fixed_size_chunking_configuration;
+
 pub(crate) mod shape_grouping_values;
+
+pub(crate) mod shape_hierarchical_chunking_configuration;
 
 pub(crate) mod shape_knowledge_base_association_data;
 
@@ -339,6 +457,14 @@ pub(crate) mod shape_quick_response_content_provider;
 
 pub(crate) mod shape_recommendation_trigger_data;
 
+pub(crate) mod shape_semantic_chunking_configuration;
+
+pub(crate) mod shape_web_crawler_configuration;
+
+pub(crate) mod shape_association_configuration_data;
+
+pub(crate) mod shape_association_configuration_list;
+
 pub(crate) mod shape_content_reference;
 
 pub(crate) mod shape_data_details;
@@ -347,9 +473,17 @@ pub(crate) mod shape_data_reference;
 
 pub(crate) mod shape_document_text;
 
+pub(crate) mod shape_hierarchical_chunking_level_configuration;
+
 pub(crate) mod shape_object_fields_list;
 
+pub(crate) mod shape_parsing_prompt;
+
 pub(crate) mod shape_query_recommendation_trigger_data;
+
+pub(crate) mod shape_url_configuration;
+
+pub(crate) mod shape_web_crawler_limits;
 
 pub(crate) mod shape_content_data_details;
 
@@ -357,14 +491,28 @@ pub(crate) mod shape_generative_data_details;
 
 pub(crate) mod shape_generative_reference;
 
+pub(crate) mod shape_hierarchical_chunking_level_configurations;
+
 pub(crate) mod shape_highlights;
 
+pub(crate) mod shape_intent_detected_data_details;
+
+pub(crate) mod shape_knowledge_base_association_configuration_data;
+
+pub(crate) mod shape_seed_url;
+
 pub(crate) mod shape_source_content_data_details;
+
+pub(crate) mod shape_url_filter_list;
+
+pub(crate) mod shape_citation_span;
 
 pub(crate) mod shape_data_summary_list;
 
 pub(crate) mod shape_highlight;
 
 pub(crate) mod shape_ranking_data;
+
+pub(crate) mod shape_seed_urls;
 
 pub(crate) mod shape_text_data;

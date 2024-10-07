@@ -40,17 +40,20 @@ pub fn ser_create_job_input_input(
             ::aws_smithy_types::Number::NegInt((*var_10).into()),
         );
     }
-    if let Some(var_11) = &input.storage_profile_id {
-        object.key("storageProfileId").string(var_11.as_str());
+    if let Some(var_11) = &input.source_job_id {
+        object.key("sourceJobId").string(var_11.as_str());
     }
-    if let Some(var_12) = &input.target_task_run_status {
-        object.key("targetTaskRunStatus").string(var_12.as_str());
+    if let Some(var_12) = &input.storage_profile_id {
+        object.key("storageProfileId").string(var_12.as_str());
     }
-    if let Some(var_13) = &input.template {
-        object.key("template").string(var_13.as_str());
+    if let Some(var_13) = &input.target_task_run_status {
+        object.key("targetTaskRunStatus").string(var_13.as_str());
     }
-    if let Some(var_14) = &input.template_type {
-        object.key("templateType").string(var_14.as_str());
+    if let Some(var_14) = &input.template {
+        object.key("template").string(var_14.as_str());
+    }
+    if let Some(var_15) = &input.template_type {
+        object.key("templateType").string(var_15.as_str());
     }
     Ok(())
 }

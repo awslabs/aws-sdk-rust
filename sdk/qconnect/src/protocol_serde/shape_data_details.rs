@@ -39,6 +39,11 @@ where
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'generativeData' cannot be null")
                             })?,
                         )),
+                        "intentDetectedData" => Some(crate::types::DataDetails::IntentDetectedData(
+                            crate::protocol_serde::shape_intent_detected_data_details::de_intent_detected_data_details(tokens)?.ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'intentDetectedData' cannot be null")
+                            })?,
+                        )),
                         "sourceContentData" => Some(crate::types::DataDetails::SourceContentData(
                             crate::protocol_serde::shape_source_content_data_details::de_source_content_data_details(tokens)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'sourceContentData' cannot be null")

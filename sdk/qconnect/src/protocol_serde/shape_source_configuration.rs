@@ -10,6 +10,12 @@ pub fn ser_source_configuration(
             crate::protocol_serde::shape_app_integrations_configuration::ser_app_integrations_configuration(&mut object_1, inner)?;
             object_1.finish();
         }
+        crate::types::SourceConfiguration::ManagedSourceConfiguration(inner) => {
+            #[allow(unused_mut)]
+            let mut object_2 = object_10.key("managedSourceConfiguration").start_object();
+            crate::protocol_serde::shape_managed_source_configuration::ser_managed_source_configuration(&mut object_2, inner)?;
+            object_2.finish();
+        }
         crate::types::SourceConfiguration::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "SourceConfiguration",
@@ -53,6 +59,13 @@ where
                             crate::protocol_serde::shape_app_integrations_configuration::de_app_integrations_configuration(tokens)?.ok_or_else(
                                 || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'appIntegrations' cannot be null"),
                             )?,
+                        )),
+                        "managedSourceConfiguration" => Some(crate::types::SourceConfiguration::ManagedSourceConfiguration(
+                            crate::protocol_serde::shape_managed_source_configuration::de_managed_source_configuration(tokens)?.ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                                    "value for 'managedSourceConfiguration' cannot be null",
+                                )
+                            })?,
                         )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;

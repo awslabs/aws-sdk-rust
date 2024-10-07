@@ -58,6 +58,8 @@ pub struct JobSearchSummary {
     pub started_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The job parameters.</p>
     pub job_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::JobParameter>>,
+    /// <p>The job ID for the source job.</p>
+    pub source_job_id: ::std::option::Option<::std::string::String>,
 }
 impl JobSearchSummary {
     /// <p>The job ID.</p>
@@ -146,6 +148,10 @@ impl JobSearchSummary {
     pub fn job_parameters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::JobParameter>> {
         self.job_parameters.as_ref()
     }
+    /// <p>The job ID for the source job.</p>
+    pub fn source_job_id(&self) -> ::std::option::Option<&str> {
+        self.source_job_id.as_deref()
+    }
 }
 impl ::std::fmt::Debug for JobSearchSummary {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -166,6 +172,7 @@ impl ::std::fmt::Debug for JobSearchSummary {
         formatter.field("ended_at", &self.ended_at);
         formatter.field("started_at", &self.started_at);
         formatter.field("job_parameters", &"*** Sensitive Data Redacted ***");
+        formatter.field("source_job_id", &self.source_job_id);
         formatter.finish()
     }
 }
@@ -196,6 +203,7 @@ pub struct JobSearchSummaryBuilder {
     pub(crate) ended_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) started_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) job_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::JobParameter>>,
+    pub(crate) source_job_id: ::std::option::Option<::std::string::String>,
 }
 impl JobSearchSummaryBuilder {
     /// <p>The job ID.</p>
@@ -503,6 +511,20 @@ impl JobSearchSummaryBuilder {
     pub fn get_job_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::JobParameter>> {
         &self.job_parameters
     }
+    /// <p>The job ID for the source job.</p>
+    pub fn source_job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.source_job_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The job ID for the source job.</p>
+    pub fn set_source_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.source_job_id = input;
+        self
+    }
+    /// <p>The job ID for the source job.</p>
+    pub fn get_source_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_job_id
+    }
     /// Consumes the builder and constructs a [`JobSearchSummary`](crate::types::JobSearchSummary).
     pub fn build(self) -> crate::types::JobSearchSummary {
         crate::types::JobSearchSummary {
@@ -522,6 +544,7 @@ impl JobSearchSummaryBuilder {
             ended_at: self.ended_at,
             started_at: self.started_at,
             job_parameters: self.job_parameters,
+            source_job_id: self.source_job_id,
         }
     }
 }
@@ -544,6 +567,7 @@ impl ::std::fmt::Debug for JobSearchSummaryBuilder {
         formatter.field("ended_at", &self.ended_at);
         formatter.field("started_at", &self.started_at);
         formatter.field("job_parameters", &"*** Sensitive Data Redacted ***");
+        formatter.field("source_job_id", &self.source_job_id);
         formatter.finish()
     }
 }

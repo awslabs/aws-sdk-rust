@@ -53,6 +53,11 @@ where
                             builder =
                                 builder.set_source_configuration(crate::protocol_serde::shape_source_configuration::de_source_configuration(tokens)?);
                         }
+                        "vectorIngestionConfiguration" => {
+                            builder = builder.set_vector_ingestion_configuration(
+                                crate::protocol_serde::shape_vector_ingestion_configuration::de_vector_ingestion_configuration(tokens)?,
+                            );
+                        }
                         "renderingConfiguration" => {
                             builder = builder.set_rendering_configuration(
                                 crate::protocol_serde::shape_rendering_configuration::de_rendering_configuration(tokens)?,

@@ -136,6 +136,14 @@ impl Client {
     }
 }
 
+mod create_ai_agent;
+
+mod create_ai_agent_version;
+
+mod create_ai_prompt;
+
+mod create_ai_prompt_version;
+
 mod create_assistant;
 
 mod create_assistant_association;
@@ -177,6 +185,14 @@ mod create_session;
 /// ```
 pub mod customize;
 
+mod delete_ai_agent;
+
+mod delete_ai_agent_version;
+
+mod delete_ai_prompt;
+
+mod delete_ai_prompt_version;
+
 mod delete_assistant;
 
 mod delete_assistant_association;
@@ -190,6 +206,10 @@ mod delete_import_job;
 mod delete_knowledge_base;
 
 mod delete_quick_response;
+
+mod get_ai_agent;
+
+mod get_ai_prompt;
 
 mod get_assistant;
 
@@ -210,6 +230,14 @@ mod get_quick_response;
 mod get_recommendations;
 
 mod get_session;
+
+mod list_ai_agent_versions;
+
+mod list_ai_agents;
+
+mod list_ai_prompt_versions;
+
+mod list_ai_prompts;
 
 mod list_assistant_associations;
 
@@ -233,6 +261,8 @@ mod put_feedback;
 
 mod query_assistant;
 
+mod remove_assistant_ai_agent;
+
 mod remove_knowledge_base_template_uri;
 
 mod search_content;
@@ -249,6 +279,12 @@ mod tag_resource;
 
 mod untag_resource;
 
+mod update_ai_agent;
+
+mod update_ai_prompt;
+
+mod update_assistant_ai_agent;
+
 mod update_content;
 
 mod update_knowledge_base_template_uri;
@@ -256,3 +292,5 @@ mod update_knowledge_base_template_uri;
 mod update_quick_response;
 
 mod update_session;
+
+mod update_session_data;

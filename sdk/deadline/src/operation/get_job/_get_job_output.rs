@@ -45,6 +45,8 @@ pub struct GetJobOutput {
     /// <p>This field can store any content. Escape or encode this content before displaying it on a webpage or any other system that might interpret the content of this field.</p>
     /// </important>
     pub description: ::std::option::Option<::std::string::String>,
+    /// <p>The job ID for the source job.</p>
+    pub source_job_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetJobOutput {
@@ -134,6 +136,10 @@ impl GetJobOutput {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
+    /// <p>The job ID for the source job.</p>
+    pub fn source_job_id(&self) -> ::std::option::Option<&str> {
+        self.source_job_id.as_deref()
+    }
 }
 impl ::std::fmt::Debug for GetJobOutput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -158,6 +164,7 @@ impl ::std::fmt::Debug for GetJobOutput {
         formatter.field("parameters", &"*** Sensitive Data Redacted ***");
         formatter.field("attachments", &self.attachments);
         formatter.field("description", &"*** Sensitive Data Redacted ***");
+        formatter.field("source_job_id", &self.source_job_id);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
@@ -198,6 +205,7 @@ pub struct GetJobOutputBuilder {
     pub(crate) parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::JobParameter>>,
     pub(crate) attachments: ::std::option::Option<crate::types::Attachments>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) source_job_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetJobOutputBuilder {
@@ -509,6 +517,20 @@ impl GetJobOutputBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
+    /// <p>The job ID for the source job.</p>
+    pub fn source_job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.source_job_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The job ID for the source job.</p>
+    pub fn set_source_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.source_job_id = input;
+        self
+    }
+    /// <p>The job ID for the source job.</p>
+    pub fn get_source_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_job_id
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -584,6 +606,7 @@ impl GetJobOutputBuilder {
             parameters: self.parameters,
             attachments: self.attachments,
             description: self.description,
+            source_job_id: self.source_job_id,
             _request_id: self._request_id,
         })
     }
@@ -611,6 +634,7 @@ impl ::std::fmt::Debug for GetJobOutputBuilder {
         formatter.field("parameters", &"*** Sensitive Data Redacted ***");
         formatter.field("attachments", &self.attachments);
         formatter.field("description", &"*** Sensitive Data Redacted ***");
+        formatter.field("source_job_id", &self.source_job_id);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }

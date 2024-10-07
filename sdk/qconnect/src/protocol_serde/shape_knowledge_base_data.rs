@@ -55,6 +55,11 @@ where
                                 ::aws_smithy_types::date_time::Format::EpochSeconds,
                             )?);
                         }
+                        "vectorIngestionConfiguration" => {
+                            builder = builder.set_vector_ingestion_configuration(
+                                crate::protocol_serde::shape_vector_ingestion_configuration::de_vector_ingestion_configuration(tokens)?,
+                            );
+                        }
                         "sourceConfiguration" => {
                             builder =
                                 builder.set_source_configuration(crate::protocol_serde::shape_source_configuration::de_source_configuration(tokens)?);
@@ -78,6 +83,16 @@ where
                         }
                         "tags" => {
                             builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens)?);
+                        }
+                        "ingestionStatus" => {
+                            builder = builder.set_ingestion_status(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::SyncStatus::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "ingestionFailureReasons" => {
+                            builder = builder.set_ingestion_failure_reasons(crate::protocol_serde::shape_failure_reason::de_failure_reason(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

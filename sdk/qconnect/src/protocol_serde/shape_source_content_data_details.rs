@@ -34,6 +34,9 @@ where
                         "rankingData" => {
                             builder = builder.set_ranking_data(crate::protocol_serde::shape_ranking_data::de_ranking_data(tokens)?);
                         }
+                        "citationSpan" => {
+                            builder = builder.set_citation_span(crate::protocol_serde::shape_citation_span::de_citation_span(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

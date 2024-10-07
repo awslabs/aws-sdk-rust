@@ -191,6 +191,20 @@ impl CreateKnowledgeBaseFluentBuilder {
     pub fn get_rendering_configuration(&self) -> &::std::option::Option<crate::types::RenderingConfiguration> {
         self.inner.get_rendering_configuration()
     }
+    /// <p>Contains details about how to ingest the documents in a data source.</p>
+    pub fn vector_ingestion_configuration(mut self, input: crate::types::VectorIngestionConfiguration) -> Self {
+        self.inner = self.inner.vector_ingestion_configuration(input);
+        self
+    }
+    /// <p>Contains details about how to ingest the documents in a data source.</p>
+    pub fn set_vector_ingestion_configuration(mut self, input: ::std::option::Option<crate::types::VectorIngestionConfiguration>) -> Self {
+        self.inner = self.inner.set_vector_ingestion_configuration(input);
+        self
+    }
+    /// <p>Contains details about how to ingest the documents in a data source.</p>
+    pub fn get_vector_ingestion_configuration(&self) -> &::std::option::Option<crate::types::VectorIngestionConfiguration> {
+        self.inner.get_vector_ingestion_configuration()
+    }
     /// <p>The configuration information for the customer managed key used for encryption.</p>
     /// <p>This KMS key must have a policy that allows <code>kms:CreateGrant</code>, <code>kms:DescribeKey</code>, <code>kms:Decrypt</code>, and <code>kms:GenerateDataKey*</code> permissions to the IAM identity using the key to invoke Amazon Q in Connect.</p>
     /// <p>For more information about setting up a customer managed key for Amazon Q in Connect, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-q.html">Enable Amazon Q in Connect for your instance</a>.</p>

@@ -16,6 +16,8 @@ pub struct KnowledgeBaseData {
     pub status: crate::types::KnowledgeBaseStatus,
     /// <p>An epoch timestamp indicating the most recent content modification inside the knowledge base. If no content exists in a knowledge base, this value is unset.</p>
     pub last_content_modification_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>Contains details about how to ingest the documents in a data source.</p>
+    pub vector_ingestion_configuration: ::std::option::Option<crate::types::VectorIngestionConfiguration>,
     /// <p>Source configuration information about the knowledge base.</p>
     pub source_configuration: ::std::option::Option<crate::types::SourceConfiguration>,
     /// <p>Information about how to render the content.</p>
@@ -28,6 +30,10 @@ pub struct KnowledgeBaseData {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>Status of ingestion on data source.</p>
+    pub ingestion_status: ::std::option::Option<crate::types::SyncStatus>,
+    /// <p>List of failure reasons on ingestion per file.</p>
+    pub ingestion_failure_reasons: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl KnowledgeBaseData {
     /// <p>The identifier of the knowledge base.</p>
@@ -57,6 +63,10 @@ impl KnowledgeBaseData {
     pub fn last_content_modification_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_content_modification_time.as_ref()
     }
+    /// <p>Contains details about how to ingest the documents in a data source.</p>
+    pub fn vector_ingestion_configuration(&self) -> ::std::option::Option<&crate::types::VectorIngestionConfiguration> {
+        self.vector_ingestion_configuration.as_ref()
+    }
     /// <p>Source configuration information about the knowledge base.</p>
     pub fn source_configuration(&self) -> ::std::option::Option<&crate::types::SourceConfiguration> {
         self.source_configuration.as_ref()
@@ -79,6 +89,16 @@ impl KnowledgeBaseData {
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
+    /// <p>Status of ingestion on data source.</p>
+    pub fn ingestion_status(&self) -> ::std::option::Option<&crate::types::SyncStatus> {
+        self.ingestion_status.as_ref()
+    }
+    /// <p>List of failure reasons on ingestion per file.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ingestion_failure_reasons.is_none()`.
+    pub fn ingestion_failure_reasons(&self) -> &[::std::string::String] {
+        self.ingestion_failure_reasons.as_deref().unwrap_or_default()
+    }
 }
 impl KnowledgeBaseData {
     /// Creates a new builder-style object to manufacture [`KnowledgeBaseData`](crate::types::KnowledgeBaseData).
@@ -97,11 +117,14 @@ pub struct KnowledgeBaseDataBuilder {
     pub(crate) knowledge_base_type: ::std::option::Option<crate::types::KnowledgeBaseType>,
     pub(crate) status: ::std::option::Option<crate::types::KnowledgeBaseStatus>,
     pub(crate) last_content_modification_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) vector_ingestion_configuration: ::std::option::Option<crate::types::VectorIngestionConfiguration>,
     pub(crate) source_configuration: ::std::option::Option<crate::types::SourceConfiguration>,
     pub(crate) rendering_configuration: ::std::option::Option<crate::types::RenderingConfiguration>,
     pub(crate) server_side_encryption_configuration: ::std::option::Option<crate::types::ServerSideEncryptionConfiguration>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) ingestion_status: ::std::option::Option<crate::types::SyncStatus>,
+    pub(crate) ingestion_failure_reasons: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl KnowledgeBaseDataBuilder {
     /// <p>The identifier of the knowledge base.</p>
@@ -193,6 +216,20 @@ impl KnowledgeBaseDataBuilder {
     pub fn get_last_content_modification_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_content_modification_time
     }
+    /// <p>Contains details about how to ingest the documents in a data source.</p>
+    pub fn vector_ingestion_configuration(mut self, input: crate::types::VectorIngestionConfiguration) -> Self {
+        self.vector_ingestion_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Contains details about how to ingest the documents in a data source.</p>
+    pub fn set_vector_ingestion_configuration(mut self, input: ::std::option::Option<crate::types::VectorIngestionConfiguration>) -> Self {
+        self.vector_ingestion_configuration = input;
+        self
+    }
+    /// <p>Contains details about how to ingest the documents in a data source.</p>
+    pub fn get_vector_ingestion_configuration(&self) -> &::std::option::Option<crate::types::VectorIngestionConfiguration> {
+        &self.vector_ingestion_configuration
+    }
     /// <p>Source configuration information about the knowledge base.</p>
     pub fn source_configuration(mut self, input: crate::types::SourceConfiguration) -> Self {
         self.source_configuration = ::std::option::Option::Some(input);
@@ -275,6 +312,40 @@ impl KnowledgeBaseDataBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
+    /// <p>Status of ingestion on data source.</p>
+    pub fn ingestion_status(mut self, input: crate::types::SyncStatus) -> Self {
+        self.ingestion_status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Status of ingestion on data source.</p>
+    pub fn set_ingestion_status(mut self, input: ::std::option::Option<crate::types::SyncStatus>) -> Self {
+        self.ingestion_status = input;
+        self
+    }
+    /// <p>Status of ingestion on data source.</p>
+    pub fn get_ingestion_status(&self) -> &::std::option::Option<crate::types::SyncStatus> {
+        &self.ingestion_status
+    }
+    /// Appends an item to `ingestion_failure_reasons`.
+    ///
+    /// To override the contents of this collection use [`set_ingestion_failure_reasons`](Self::set_ingestion_failure_reasons).
+    ///
+    /// <p>List of failure reasons on ingestion per file.</p>
+    pub fn ingestion_failure_reasons(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.ingestion_failure_reasons.unwrap_or_default();
+        v.push(input.into());
+        self.ingestion_failure_reasons = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>List of failure reasons on ingestion per file.</p>
+    pub fn set_ingestion_failure_reasons(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.ingestion_failure_reasons = input;
+        self
+    }
+    /// <p>List of failure reasons on ingestion per file.</p>
+    pub fn get_ingestion_failure_reasons(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.ingestion_failure_reasons
+    }
     /// Consumes the builder and constructs a [`KnowledgeBaseData`](crate::types::KnowledgeBaseData).
     /// This method will fail if any of the following fields are not set:
     /// - [`knowledge_base_id`](crate::types::builders::KnowledgeBaseDataBuilder::knowledge_base_id)
@@ -315,11 +386,14 @@ impl KnowledgeBaseDataBuilder {
                 )
             })?,
             last_content_modification_time: self.last_content_modification_time,
+            vector_ingestion_configuration: self.vector_ingestion_configuration,
             source_configuration: self.source_configuration,
             rendering_configuration: self.rendering_configuration,
             server_side_encryption_configuration: self.server_side_encryption_configuration,
             description: self.description,
             tags: self.tags,
+            ingestion_status: self.ingestion_status,
+            ingestion_failure_reasons: self.ingestion_failure_reasons,
         })
     }
 }

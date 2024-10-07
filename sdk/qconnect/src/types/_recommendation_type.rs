@@ -12,6 +12,7 @@
 /// ```text
 /// # let recommendationtype = unimplemented!();
 /// match recommendationtype {
+///     RecommendationType::DetectedIntent => { /* ... */ },
 ///     RecommendationType::GenerativeAnswer => { /* ... */ },
 ///     RecommendationType::GenerativeResponse => { /* ... */ },
 ///     RecommendationType::KnowledgeContent => { /* ... */ },
@@ -43,6 +44,8 @@
 )]
 pub enum RecommendationType {
     #[allow(missing_docs)] // documentation missing in model
+    DetectedIntent,
+    #[allow(missing_docs)] // documentation missing in model
     GenerativeAnswer,
     #[allow(missing_docs)] // documentation missing in model
     GenerativeResponse,
@@ -55,6 +58,7 @@ pub enum RecommendationType {
 impl ::std::convert::From<&str> for RecommendationType {
     fn from(s: &str) -> Self {
         match s {
+            "DETECTED_INTENT" => RecommendationType::DetectedIntent,
             "GENERATIVE_ANSWER" => RecommendationType::GenerativeAnswer,
             "GENERATIVE_RESPONSE" => RecommendationType::GenerativeResponse,
             "KNOWLEDGE_CONTENT" => RecommendationType::KnowledgeContent,
@@ -73,6 +77,7 @@ impl RecommendationType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            RecommendationType::DetectedIntent => "DETECTED_INTENT",
             RecommendationType::GenerativeAnswer => "GENERATIVE_ANSWER",
             RecommendationType::GenerativeResponse => "GENERATIVE_RESPONSE",
             RecommendationType::KnowledgeContent => "KNOWLEDGE_CONTENT",
@@ -81,7 +86,7 @@ impl RecommendationType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["GENERATIVE_ANSWER", "GENERATIVE_RESPONSE", "KNOWLEDGE_CONTENT"]
+        &["DETECTED_INTENT", "GENERATIVE_ANSWER", "GENERATIVE_RESPONSE", "KNOWLEDGE_CONTENT"]
     }
 }
 impl ::std::convert::AsRef<str> for RecommendationType {
@@ -104,6 +109,7 @@ impl RecommendationType {
 impl ::std::fmt::Display for RecommendationType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            RecommendationType::DetectedIntent => write!(f, "DETECTED_INTENT"),
             RecommendationType::GenerativeAnswer => write!(f, "GENERATIVE_ANSWER"),
             RecommendationType::GenerativeResponse => write!(f, "GENERATIVE_RESPONSE"),
             RecommendationType::KnowledgeContent => write!(f, "KNOWLEDGE_CONTENT"),

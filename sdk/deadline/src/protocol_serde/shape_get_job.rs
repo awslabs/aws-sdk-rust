@@ -212,6 +212,13 @@ pub(crate) fn de_get_job(
                             .transpose()?,
                     );
                 }
+                "sourceJobId" => {
+                    builder = builder.set_source_job_id(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
                 "startedAt" => {
                     builder = builder.set_started_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                         tokens.next(),

@@ -53,6 +53,11 @@ where
                         "tagFilter" => {
                             builder = builder.set_tag_filter(crate::protocol_serde::shape_tag_filter::de_tag_filter(tokens)?);
                         }
+                        "aiAgentConfiguration" => {
+                            builder = builder.set_ai_agent_configuration(
+                                crate::protocol_serde::shape_ai_agent_configuration_map::de_ai_agent_configuration_map(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

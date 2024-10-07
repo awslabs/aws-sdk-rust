@@ -184,6 +184,9 @@ pub mod list_fleets;
 /// Types for the `ListJobMembers` operation.
 pub mod list_job_members;
 
+/// Types for the `ListJobParameterDefinitions` operation.
+pub mod list_job_parameter_definitions;
+
 /// Types for the `ListJobs` operation.
 pub mod list_jobs;
 

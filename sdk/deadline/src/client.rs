@@ -348,6 +348,8 @@ mod list_fleets;
 
 mod list_job_members;
 
+mod list_job_parameter_definitions;
+
 mod list_jobs;
 
 mod list_license_endpoints;

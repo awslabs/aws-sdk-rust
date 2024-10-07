@@ -3,14 +3,27 @@ pub fn ser_update_session_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_session::UpdateSessionInput,
 ) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.description {
-        object.key("description").string(var_1.as_str());
-    }
-    if let Some(var_2) = &input.tag_filter {
+    if let Some(var_1) = &input.ai_agent_configuration {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("tagFilter").start_object();
-        crate::protocol_serde::shape_tag_filter::ser_tag_filter(&mut object_3, var_2)?;
-        object_3.finish();
+        let mut object_2 = object.key("aiAgentConfiguration").start_object();
+        for (key_3, value_4) in var_1 {
+            {
+                #[allow(unused_mut)]
+                let mut object_5 = object_2.key(key_3.as_str()).start_object();
+                crate::protocol_serde::shape_ai_agent_configuration_data::ser_ai_agent_configuration_data(&mut object_5, value_4)?;
+                object_5.finish();
+            }
+        }
+        object_2.finish();
+    }
+    if let Some(var_6) = &input.description {
+        object.key("description").string(var_6.as_str());
+    }
+    if let Some(var_7) = &input.tag_filter {
+        #[allow(unused_mut)]
+        let mut object_8 = object.key("tagFilter").start_object();
+        crate::protocol_serde::shape_tag_filter::ser_tag_filter(&mut object_8, var_7)?;
+        object_8.finish();
     }
     Ok(())
 }

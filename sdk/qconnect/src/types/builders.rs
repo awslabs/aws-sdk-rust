@@ -5,7 +5,33 @@ pub use crate::types::_server_side_encryption_configuration::ServerSideEncryptio
 
 pub use crate::types::_rendering_configuration::RenderingConfigurationBuilder;
 
+pub use crate::types::_web_crawler_configuration::WebCrawlerConfigurationBuilder;
+
+pub use crate::types::_web_crawler_limits::WebCrawlerLimitsBuilder;
+
+pub use crate::types::_url_configuration::UrlConfigurationBuilder;
+
+pub use crate::types::_seed_url::SeedUrlBuilder;
+
 pub use crate::types::_app_integrations_configuration::AppIntegrationsConfigurationBuilder;
+
+pub use crate::types::_vector_ingestion_configuration::VectorIngestionConfigurationBuilder;
+
+pub use crate::types::_parsing_configuration::ParsingConfigurationBuilder;
+
+pub use crate::types::_bedrock_foundation_model_configuration_for_parsing::BedrockFoundationModelConfigurationForParsingBuilder;
+
+pub use crate::types::_parsing_prompt::ParsingPromptBuilder;
+
+pub use crate::types::_chunking_configuration::ChunkingConfigurationBuilder;
+
+pub use crate::types::_semantic_chunking_configuration::SemanticChunkingConfigurationBuilder;
+
+pub use crate::types::_hierarchical_chunking_configuration::HierarchicalChunkingConfigurationBuilder;
+
+pub use crate::types::_hierarchical_chunking_level_configuration::HierarchicalChunkingLevelConfigurationBuilder;
+
+pub use crate::types::_fixed_size_chunking_configuration::FixedSizeChunkingConfigurationBuilder;
 
 pub use crate::types::_import_job_data::ImportJobDataBuilder;
 
@@ -49,6 +75,14 @@ pub use crate::types::_amazon_connect_guide_association_data::AmazonConnectGuide
 
 pub use crate::types::_content_association_summary::ContentAssociationSummaryBuilder;
 
+pub use crate::types::_assistant_data::AssistantDataBuilder;
+
+pub use crate::types::_ai_agent_configuration_data::AiAgentConfigurationDataBuilder;
+
+pub use crate::types::_assistant_capability_configuration::AssistantCapabilityConfigurationBuilder;
+
+pub use crate::types::_assistant_integration_configuration::AssistantIntegrationConfigurationBuilder;
+
 pub use crate::types::_session_summary::SessionSummaryBuilder;
 
 pub use crate::types::_result_data::ResultDataBuilder;
@@ -57,6 +91,8 @@ pub use crate::types::_data_summary::DataSummaryBuilder;
 
 pub use crate::types::_source_content_data_details::SourceContentDataDetailsBuilder;
 
+pub use crate::types::_citation_span::CitationSpanBuilder;
+
 pub use crate::types::_ranking_data::RankingDataBuilder;
 
 pub use crate::types::_text_data::TextDataBuilder;
@@ -64,6 +100,8 @@ pub use crate::types::_text_data::TextDataBuilder;
 pub use crate::types::_document_text::DocumentTextBuilder;
 
 pub use crate::types::_highlight::HighlightBuilder;
+
+pub use crate::types::_intent_detected_data_details::IntentDetectedDataDetailsBuilder;
 
 pub use crate::types::_generative_data_details::GenerativeDataDetailsBuilder;
 
@@ -74,6 +112,10 @@ pub use crate::types::_generative_reference::GenerativeReferenceBuilder;
 pub use crate::types::_content_reference::ContentReferenceBuilder;
 
 pub use crate::types::_document::DocumentBuilder;
+
+pub use crate::types::_intent_input_data::IntentInputDataBuilder;
+
+pub use crate::types::_query_text_input_data::QueryTextInputDataBuilder;
 
 pub use crate::types::_query_condition_item::QueryConditionItemBuilder;
 
@@ -87,13 +129,9 @@ pub use crate::types::_query_recommendation_trigger_data::QueryRecommendationTri
 
 pub use crate::types::_recommendation_data::RecommendationDataBuilder;
 
-pub use crate::types::_assistant_data::AssistantDataBuilder;
-
-pub use crate::types::_assistant_capability_configuration::AssistantCapabilityConfigurationBuilder;
-
-pub use crate::types::_assistant_integration_configuration::AssistantIntegrationConfigurationBuilder;
-
 pub use crate::types::_assistant_summary::AssistantSummaryBuilder;
+
+pub use crate::types::_runtime_session_data::RuntimeSessionDataBuilder;
 
 pub use crate::types::_session_data::SessionDataBuilder;
 
@@ -106,3 +144,25 @@ pub use crate::types::_assistant_association_data::AssistantAssociationDataBuild
 pub use crate::types::_knowledge_base_association_data::KnowledgeBaseAssociationDataBuilder;
 
 pub use crate::types::_assistant_association_summary::AssistantAssociationSummaryBuilder;
+
+pub use crate::types::_ai_prompt_version_summary::AiPromptVersionSummaryBuilder;
+
+pub use crate::types::_ai_prompt_summary::AiPromptSummaryBuilder;
+
+pub use crate::types::_ai_prompt_data::AiPromptDataBuilder;
+
+pub use crate::types::_text_full_ai_prompt_edit_template_configuration::TextFullAiPromptEditTemplateConfigurationBuilder;
+
+pub use crate::types::_ai_agent_version_summary::AiAgentVersionSummaryBuilder;
+
+pub use crate::types::_ai_agent_summary::AiAgentSummaryBuilder;
+
+pub use crate::types::_answer_recommendation_ai_agent_configuration::AnswerRecommendationAiAgentConfigurationBuilder;
+
+pub use crate::types::_association_configuration::AssociationConfigurationBuilder;
+
+pub use crate::types::_knowledge_base_association_configuration_data::KnowledgeBaseAssociationConfigurationDataBuilder;
+
+pub use crate::types::_manual_search_ai_agent_configuration::ManualSearchAiAgentConfigurationBuilder;
+
+pub use crate::types::_ai_agent_data::AiAgentDataBuilder;

@@ -209,4 +209,32 @@ impl QueryAssistantFluentBuilder {
     pub fn get_query_condition(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::QueryCondition>> {
         self.inner.get_query_condition()
     }
+    /// <p>Information about the query.</p>
+    pub fn query_input_data(mut self, input: crate::types::QueryInputData) -> Self {
+        self.inner = self.inner.query_input_data(input);
+        self
+    }
+    /// <p>Information about the query.</p>
+    pub fn set_query_input_data(mut self, input: ::std::option::Option<crate::types::QueryInputData>) -> Self {
+        self.inner = self.inner.set_query_input_data(input);
+        self
+    }
+    /// <p>Information about the query.</p>
+    pub fn get_query_input_data(&self) -> &::std::option::Option<crate::types::QueryInputData> {
+        self.inner.get_query_input_data()
+    }
+    /// <p>The search type to be used against the Knowledge Base for this request. The values can be <code>SEMANTIC</code> which uses vector embeddings or <code>HYBRID</code> which use vector embeddings and raw text.</p>
+    pub fn override_knowledge_base_search_type(mut self, input: crate::types::KnowledgeBaseSearchType) -> Self {
+        self.inner = self.inner.override_knowledge_base_search_type(input);
+        self
+    }
+    /// <p>The search type to be used against the Knowledge Base for this request. The values can be <code>SEMANTIC</code> which uses vector embeddings or <code>HYBRID</code> which use vector embeddings and raw text.</p>
+    pub fn set_override_knowledge_base_search_type(mut self, input: ::std::option::Option<crate::types::KnowledgeBaseSearchType>) -> Self {
+        self.inner = self.inner.set_override_knowledge_base_search_type(input);
+        self
+    }
+    /// <p>The search type to be used against the Knowledge Base for this request. The values can be <code>SEMANTIC</code> which uses vector embeddings or <code>HYBRID</code> which use vector embeddings and raw text.</p>
+    pub fn get_override_knowledge_base_search_type(&self) -> &::std::option::Option<crate::types::KnowledgeBaseSearchType> {
+        self.inner.get_override_knowledge_base_search_type()
+    }
 }

@@ -725,6 +725,15 @@ pub(crate) fn list_job_members_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn list_job_parameter_definitions_output_output_correct_errors(
+    mut builder: crate::operation::list_job_parameter_definitions::builders::ListJobParameterDefinitionsOutputBuilder,
+) -> crate::operation::list_job_parameter_definitions::builders::ListJobParameterDefinitionsOutputBuilder {
+    if builder.job_parameter_definitions.is_none() {
+        builder.job_parameter_definitions = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn list_jobs_output_output_correct_errors(
     mut builder: crate::operation::list_jobs::builders::ListJobsOutputBuilder,
 ) -> crate::operation::list_jobs::builders::ListJobsOutputBuilder {

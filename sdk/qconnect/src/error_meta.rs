@@ -76,6 +76,132 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_ai_agent::CreateAIAgentError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_ai_agent::CreateAIAgentError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_ai_agent::CreateAIAgentError> for Error {
+    fn from(err: crate::operation::create_ai_agent::CreateAIAgentError) -> Self {
+        match err {
+            crate::operation::create_ai_agent::CreateAIAgentError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_ai_agent::CreateAIAgentError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_ai_agent::CreateAIAgentError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::create_ai_agent::CreateAIAgentError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::create_ai_agent::CreateAIAgentError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_ai_agent::CreateAIAgentError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_ai_agent::CreateAIAgentError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_ai_agent_version::CreateAIAgentVersionError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_ai_agent_version::CreateAIAgentVersionError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_ai_agent_version::CreateAIAgentVersionError> for Error {
+    fn from(err: crate::operation::create_ai_agent_version::CreateAIAgentVersionError) -> Self {
+        match err {
+            crate::operation::create_ai_agent_version::CreateAIAgentVersionError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_ai_agent_version::CreateAIAgentVersionError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_ai_agent_version::CreateAIAgentVersionError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::create_ai_agent_version::CreateAIAgentVersionError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::create_ai_agent_version::CreateAIAgentVersionError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_ai_agent_version::CreateAIAgentVersionError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_ai_agent_version::CreateAIAgentVersionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_ai_prompt::CreateAIPromptError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_ai_prompt::CreateAIPromptError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_ai_prompt::CreateAIPromptError> for Error {
+    fn from(err: crate::operation::create_ai_prompt::CreateAIPromptError) -> Self {
+        match err {
+            crate::operation::create_ai_prompt::CreateAIPromptError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_ai_prompt::CreateAIPromptError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_ai_prompt::CreateAIPromptError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::create_ai_prompt::CreateAIPromptError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::create_ai_prompt::CreateAIPromptError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_ai_prompt::CreateAIPromptError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_ai_prompt::CreateAIPromptError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_ai_prompt_version::CreateAIPromptVersionError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_ai_prompt_version::CreateAIPromptVersionError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_ai_prompt_version::CreateAIPromptVersionError> for Error {
+    fn from(err: crate::operation::create_ai_prompt_version::CreateAIPromptVersionError) -> Self {
+        match err {
+            crate::operation::create_ai_prompt_version::CreateAIPromptVersionError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::create_ai_prompt_version::CreateAIPromptVersionError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_ai_prompt_version::CreateAIPromptVersionError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::create_ai_prompt_version::CreateAIPromptVersionError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::create_ai_prompt_version::CreateAIPromptVersionError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_ai_prompt_version::CreateAIPromptVersionError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_ai_prompt_version::CreateAIPromptVersionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_assistant::CreateAssistantError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -290,6 +416,118 @@ impl From<crate::operation::create_session::CreateSessionError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_ai_agent::DeleteAIAgentError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_ai_agent::DeleteAIAgentError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_ai_agent::DeleteAIAgentError> for Error {
+    fn from(err: crate::operation::delete_ai_agent::DeleteAIAgentError) -> Self {
+        match err {
+            crate::operation::delete_ai_agent::DeleteAIAgentError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_ai_agent::DeleteAIAgentError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_ai_agent::DeleteAIAgentError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_ai_agent::DeleteAIAgentError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_ai_agent::DeleteAIAgentError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_ai_agent_version::DeleteAIAgentVersionError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_ai_agent_version::DeleteAIAgentVersionError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_ai_agent_version::DeleteAIAgentVersionError> for Error {
+    fn from(err: crate::operation::delete_ai_agent_version::DeleteAIAgentVersionError) -> Self {
+        match err {
+            crate::operation::delete_ai_agent_version::DeleteAIAgentVersionError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_ai_agent_version::DeleteAIAgentVersionError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::delete_ai_agent_version::DeleteAIAgentVersionError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_ai_agent_version::DeleteAIAgentVersionError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_ai_agent_version::DeleteAIAgentVersionError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_ai_agent_version::DeleteAIAgentVersionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_ai_prompt::DeleteAIPromptError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_ai_prompt::DeleteAIPromptError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_ai_prompt::DeleteAIPromptError> for Error {
+    fn from(err: crate::operation::delete_ai_prompt::DeleteAIPromptError) -> Self {
+        match err {
+            crate::operation::delete_ai_prompt::DeleteAIPromptError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_ai_prompt::DeleteAIPromptError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_ai_prompt::DeleteAIPromptError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_ai_prompt::DeleteAIPromptError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_ai_prompt::DeleteAIPromptError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_ai_prompt_version::DeleteAIPromptVersionError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_ai_prompt_version::DeleteAIPromptVersionError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_ai_prompt_version::DeleteAIPromptVersionError> for Error {
+    fn from(err: crate::operation::delete_ai_prompt_version::DeleteAIPromptVersionError) -> Self {
+        match err {
+            crate::operation::delete_ai_prompt_version::DeleteAIPromptVersionError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::delete_ai_prompt_version::DeleteAIPromptVersionError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::delete_ai_prompt_version::DeleteAIPromptVersionError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_ai_prompt_version::DeleteAIPromptVersionError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_ai_prompt_version::DeleteAIPromptVersionError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_ai_prompt_version::DeleteAIPromptVersionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_assistant::DeleteAssistantError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -479,6 +717,56 @@ impl From<crate::operation::delete_quick_response::DeleteQuickResponseError> for
             }
             crate::operation::delete_quick_response::DeleteQuickResponseError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::delete_quick_response::DeleteQuickResponseError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_ai_agent::GetAIAgentError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_ai_agent::GetAIAgentError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_ai_agent::GetAIAgentError> for Error {
+    fn from(err: crate::operation::get_ai_agent::GetAIAgentError) -> Self {
+        match err {
+            crate::operation::get_ai_agent::GetAIAgentError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_ai_agent::GetAIAgentError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_ai_agent::GetAIAgentError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_ai_agent::GetAIAgentError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_ai_agent::GetAIAgentError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_ai_prompt::GetAIPromptError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_ai_prompt::GetAIPromptError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_ai_prompt::GetAIPromptError> for Error {
+    fn from(err: crate::operation::get_ai_prompt::GetAIPromptError) -> Self {
+        match err {
+            crate::operation::get_ai_prompt::GetAIPromptError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_ai_prompt::GetAIPromptError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_ai_prompt::GetAIPromptError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_ai_prompt::GetAIPromptError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_ai_prompt::GetAIPromptError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -738,6 +1026,112 @@ impl From<crate::operation::get_session::GetSessionError> for Error {
             crate::operation::get_session::GetSessionError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::get_session::GetSessionError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_session::GetSessionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_ai_agents::ListAIAgentsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_ai_agents::ListAIAgentsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_ai_agents::ListAIAgentsError> for Error {
+    fn from(err: crate::operation::list_ai_agents::ListAIAgentsError) -> Self {
+        match err {
+            crate::operation::list_ai_agents::ListAIAgentsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_ai_agents::ListAIAgentsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_ai_agents::ListAIAgentsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_ai_agents::ListAIAgentsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_ai_agents::ListAIAgentsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_ai_agent_versions::ListAIAgentVersionsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_ai_agent_versions::ListAIAgentVersionsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_ai_agent_versions::ListAIAgentVersionsError> for Error {
+    fn from(err: crate::operation::list_ai_agent_versions::ListAIAgentVersionsError) -> Self {
+        match err {
+            crate::operation::list_ai_agent_versions::ListAIAgentVersionsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_ai_agent_versions::ListAIAgentVersionsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_ai_agent_versions::ListAIAgentVersionsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_ai_agent_versions::ListAIAgentVersionsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_ai_agent_versions::ListAIAgentVersionsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_ai_prompts::ListAIPromptsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_ai_prompts::ListAIPromptsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_ai_prompts::ListAIPromptsError> for Error {
+    fn from(err: crate::operation::list_ai_prompts::ListAIPromptsError) -> Self {
+        match err {
+            crate::operation::list_ai_prompts::ListAIPromptsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_ai_prompts::ListAIPromptsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_ai_prompts::ListAIPromptsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_ai_prompts::ListAIPromptsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_ai_prompts::ListAIPromptsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_ai_prompt_versions::ListAIPromptVersionsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_ai_prompt_versions::ListAIPromptVersionsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_ai_prompt_versions::ListAIPromptVersionsError> for Error {
+    fn from(err: crate::operation::list_ai_prompt_versions::ListAIPromptVersionsError) -> Self {
+        match err {
+            crate::operation::list_ai_prompt_versions::ListAIPromptVersionsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_ai_prompt_versions::ListAIPromptVersionsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_ai_prompt_versions::ListAIPromptVersionsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_ai_prompt_versions::ListAIPromptVersionsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_ai_prompt_versions::ListAIPromptVersionsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1036,6 +1430,38 @@ impl From<crate::operation::query_assistant::QueryAssistantError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::remove_assistant_ai_agent::RemoveAssistantAIAgentError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::remove_assistant_ai_agent::RemoveAssistantAIAgentError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::remove_assistant_ai_agent::RemoveAssistantAIAgentError> for Error {
+    fn from(err: crate::operation::remove_assistant_ai_agent::RemoveAssistantAIAgentError) -> Self {
+        match err {
+            crate::operation::remove_assistant_ai_agent::RemoveAssistantAIAgentError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::remove_assistant_ai_agent::RemoveAssistantAIAgentError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::remove_assistant_ai_agent::RemoveAssistantAIAgentError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::remove_assistant_ai_agent::RemoveAssistantAIAgentError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::remove_assistant_ai_agent::RemoveAssistantAIAgentError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<
@@ -1253,6 +1679,90 @@ impl From<crate::operation::untag_resource::UntagResourceError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_ai_agent::UpdateAIAgentError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_ai_agent::UpdateAIAgentError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_ai_agent::UpdateAIAgentError> for Error {
+    fn from(err: crate::operation::update_ai_agent::UpdateAIAgentError) -> Self {
+        match err {
+            crate::operation::update_ai_agent::UpdateAIAgentError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_ai_agent::UpdateAIAgentError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::update_ai_agent::UpdateAIAgentError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_ai_agent::UpdateAIAgentError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_ai_agent::UpdateAIAgentError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_ai_agent::UpdateAIAgentError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_ai_prompt::UpdateAIPromptError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_ai_prompt::UpdateAIPromptError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_ai_prompt::UpdateAIPromptError> for Error {
+    fn from(err: crate::operation::update_ai_prompt::UpdateAIPromptError) -> Self {
+        match err {
+            crate::operation::update_ai_prompt::UpdateAIPromptError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_ai_prompt::UpdateAIPromptError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::update_ai_prompt::UpdateAIPromptError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_ai_prompt::UpdateAIPromptError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_ai_prompt::UpdateAIPromptError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_ai_prompt::UpdateAIPromptError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_assistant_ai_agent::UpdateAssistantAIAgentError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_assistant_ai_agent::UpdateAssistantAIAgentError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_assistant_ai_agent::UpdateAssistantAIAgentError> for Error {
+    fn from(err: crate::operation::update_assistant_ai_agent::UpdateAssistantAIAgentError) -> Self {
+        match err {
+            crate::operation::update_assistant_ai_agent::UpdateAssistantAIAgentError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::update_assistant_ai_agent::UpdateAssistantAIAgentError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_assistant_ai_agent::UpdateAssistantAIAgentError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_assistant_ai_agent::UpdateAssistantAIAgentError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_assistant_ai_agent::UpdateAssistantAIAgentError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_content::UpdateContentError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1370,6 +1880,32 @@ impl From<crate::operation::update_session::UpdateSessionError> for Error {
             crate::operation::update_session::UpdateSessionError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::update_session::UpdateSessionError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::update_session::UpdateSessionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_session_data::UpdateSessionDataError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_session_data::UpdateSessionDataError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_session_data::UpdateSessionDataError> for Error {
+    fn from(err: crate::operation::update_session_data::UpdateSessionDataError) -> Self {
+        match err {
+            crate::operation::update_session_data::UpdateSessionDataError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_session_data::UpdateSessionDataError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_session_data::UpdateSessionDataError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_session_data::UpdateSessionDataError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

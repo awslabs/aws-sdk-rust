@@ -6,6 +6,8 @@
 pub enum SourceConfiguration {
     /// <p>Configuration information for Amazon AppIntegrations to automatically ingest content.</p>
     AppIntegrations(crate::types::AppIntegrationsConfiguration),
+    /// <p>Source configuration for managed resources.</p>
+    ManagedSourceConfiguration(crate::types::ManagedSourceConfiguration),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
     ///
@@ -17,7 +19,6 @@ pub enum SourceConfiguration {
     Unknown,
 }
 impl SourceConfiguration {
-    #[allow(irrefutable_let_patterns)]
     /// Tries to convert the enum instance into [`AppIntegrations`](crate::types::SourceConfiguration::AppIntegrations), extracting the inner [`AppIntegrationsConfiguration`](crate::types::AppIntegrationsConfiguration).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_app_integrations(&self) -> ::std::result::Result<&crate::types::AppIntegrationsConfiguration, &Self> {
@@ -30,6 +31,19 @@ impl SourceConfiguration {
     /// Returns true if this is a [`AppIntegrations`](crate::types::SourceConfiguration::AppIntegrations).
     pub fn is_app_integrations(&self) -> bool {
         self.as_app_integrations().is_ok()
+    }
+    /// Tries to convert the enum instance into [`ManagedSourceConfiguration`](crate::types::SourceConfiguration::ManagedSourceConfiguration), extracting the inner [`ManagedSourceConfiguration`](crate::types::ManagedSourceConfiguration).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_managed_source_configuration(&self) -> ::std::result::Result<&crate::types::ManagedSourceConfiguration, &Self> {
+        if let SourceConfiguration::ManagedSourceConfiguration(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`ManagedSourceConfiguration`](crate::types::SourceConfiguration::ManagedSourceConfiguration).
+    pub fn is_managed_source_configuration(&self) -> bool {
+        self.as_managed_source_configuration().is_ok()
     }
     /// Returns true if the enum instance is the `Unknown` variant.
     pub fn is_unknown(&self) -> bool {

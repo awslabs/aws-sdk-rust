@@ -22,7 +22,9 @@ impl crate::operation::get_buyer_dashboard::builders::GetBuyerDashboardInputBuil
 }
 /// Fluent builder constructing a request to `GetBuyerDashboard`.
 ///
-/// <p>Generates an embedding URL for an Amazon QuickSight dashboard for an anonymous user.</p>
+/// <p>Generates an embedding URL for an Amazon QuickSight dashboard for an anonymous user.</p><note>
+/// <p>This API is available only to Amazon Web Services Organization management accounts or delegated administrators registered for the procurement insights (<code>procurement-insights.marketplace.amazonaws.com</code>) feature.</p>
+/// </note>
 /// <p>The following rules apply to a generated URL:</p>
 /// <ul>
 /// <li>

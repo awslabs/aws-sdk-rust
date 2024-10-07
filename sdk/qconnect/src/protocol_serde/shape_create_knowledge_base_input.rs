@@ -43,5 +43,11 @@ pub fn ser_create_knowledge_base_input_input(
         }
         object_12.finish();
     }
+    if let Some(var_15) = &input.vector_ingestion_configuration {
+        #[allow(unused_mut)]
+        let mut object_16 = object.key("vectorIngestionConfiguration").start_object();
+        crate::protocol_serde::shape_vector_ingestion_configuration::ser_vector_ingestion_configuration(&mut object_16, var_15)?;
+        object_16.finish();
+    }
     Ok(())
 }

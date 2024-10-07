@@ -12,6 +12,10 @@ pub struct ContentReference {
     pub content_arn: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the content.</p>
     pub content_id: ::std::option::Option<::std::string::String>,
+    /// <p>The web URL of the source content.</p>
+    pub source_url: ::std::option::Option<::std::string::String>,
+    /// <p>The type of reference content.</p>
+    pub reference_type: ::std::option::Option<crate::types::ReferenceType>,
 }
 impl ContentReference {
     /// <p>The Amazon Resource Name (ARN) of the knowledge base.</p>
@@ -30,6 +34,14 @@ impl ContentReference {
     pub fn content_id(&self) -> ::std::option::Option<&str> {
         self.content_id.as_deref()
     }
+    /// <p>The web URL of the source content.</p>
+    pub fn source_url(&self) -> ::std::option::Option<&str> {
+        self.source_url.as_deref()
+    }
+    /// <p>The type of reference content.</p>
+    pub fn reference_type(&self) -> ::std::option::Option<&crate::types::ReferenceType> {
+        self.reference_type.as_ref()
+    }
 }
 impl ContentReference {
     /// Creates a new builder-style object to manufacture [`ContentReference`](crate::types::ContentReference).
@@ -46,6 +58,8 @@ pub struct ContentReferenceBuilder {
     pub(crate) knowledge_base_id: ::std::option::Option<::std::string::String>,
     pub(crate) content_arn: ::std::option::Option<::std::string::String>,
     pub(crate) content_id: ::std::option::Option<::std::string::String>,
+    pub(crate) source_url: ::std::option::Option<::std::string::String>,
+    pub(crate) reference_type: ::std::option::Option<crate::types::ReferenceType>,
 }
 impl ContentReferenceBuilder {
     /// <p>The Amazon Resource Name (ARN) of the knowledge base.</p>
@@ -104,6 +118,34 @@ impl ContentReferenceBuilder {
     pub fn get_content_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.content_id
     }
+    /// <p>The web URL of the source content.</p>
+    pub fn source_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.source_url = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The web URL of the source content.</p>
+    pub fn set_source_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.source_url = input;
+        self
+    }
+    /// <p>The web URL of the source content.</p>
+    pub fn get_source_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_url
+    }
+    /// <p>The type of reference content.</p>
+    pub fn reference_type(mut self, input: crate::types::ReferenceType) -> Self {
+        self.reference_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The type of reference content.</p>
+    pub fn set_reference_type(mut self, input: ::std::option::Option<crate::types::ReferenceType>) -> Self {
+        self.reference_type = input;
+        self
+    }
+    /// <p>The type of reference content.</p>
+    pub fn get_reference_type(&self) -> &::std::option::Option<crate::types::ReferenceType> {
+        &self.reference_type
+    }
     /// Consumes the builder and constructs a [`ContentReference`](crate::types::ContentReference).
     pub fn build(self) -> crate::types::ContentReference {
         crate::types::ContentReference {
@@ -111,6 +153,8 @@ impl ContentReferenceBuilder {
             knowledge_base_id: self.knowledge_base_id,
             content_arn: self.content_arn,
             content_id: self.content_id,
+            source_url: self.source_url,
+            reference_type: self.reference_type,
         }
     }
 }

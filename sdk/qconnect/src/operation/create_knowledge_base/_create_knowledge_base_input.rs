@@ -13,6 +13,8 @@ pub struct CreateKnowledgeBaseInput {
     pub source_configuration: ::std::option::Option<crate::types::SourceConfiguration>,
     /// <p>Information about how to render the content.</p>
     pub rendering_configuration: ::std::option::Option<crate::types::RenderingConfiguration>,
+    /// <p>Contains details about how to ingest the documents in a data source.</p>
+    pub vector_ingestion_configuration: ::std::option::Option<crate::types::VectorIngestionConfiguration>,
     /// <p>The configuration information for the customer managed key used for encryption.</p>
     /// <p>This KMS key must have a policy that allows <code>kms:CreateGrant</code>, <code>kms:DescribeKey</code>, <code>kms:Decrypt</code>, and <code>kms:GenerateDataKey*</code> permissions to the IAM identity using the key to invoke Amazon Q in Connect.</p>
     /// <p>For more information about setting up a customer managed key for Amazon Q in Connect, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-q.html">Enable Amazon Q in Connect for your instance</a>.</p>
@@ -42,6 +44,10 @@ impl CreateKnowledgeBaseInput {
     /// <p>Information about how to render the content.</p>
     pub fn rendering_configuration(&self) -> ::std::option::Option<&crate::types::RenderingConfiguration> {
         self.rendering_configuration.as_ref()
+    }
+    /// <p>Contains details about how to ingest the documents in a data source.</p>
+    pub fn vector_ingestion_configuration(&self) -> ::std::option::Option<&crate::types::VectorIngestionConfiguration> {
+        self.vector_ingestion_configuration.as_ref()
     }
     /// <p>The configuration information for the customer managed key used for encryption.</p>
     /// <p>This KMS key must have a policy that allows <code>kms:CreateGrant</code>, <code>kms:DescribeKey</code>, <code>kms:Decrypt</code>, and <code>kms:GenerateDataKey*</code> permissions to the IAM identity using the key to invoke Amazon Q in Connect.</p>
@@ -74,6 +80,7 @@ pub struct CreateKnowledgeBaseInputBuilder {
     pub(crate) knowledge_base_type: ::std::option::Option<crate::types::KnowledgeBaseType>,
     pub(crate) source_configuration: ::std::option::Option<crate::types::SourceConfiguration>,
     pub(crate) rendering_configuration: ::std::option::Option<crate::types::RenderingConfiguration>,
+    pub(crate) vector_ingestion_configuration: ::std::option::Option<crate::types::VectorIngestionConfiguration>,
     pub(crate) server_side_encryption_configuration: ::std::option::Option<crate::types::ServerSideEncryptionConfiguration>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -151,6 +158,20 @@ impl CreateKnowledgeBaseInputBuilder {
     pub fn get_rendering_configuration(&self) -> &::std::option::Option<crate::types::RenderingConfiguration> {
         &self.rendering_configuration
     }
+    /// <p>Contains details about how to ingest the documents in a data source.</p>
+    pub fn vector_ingestion_configuration(mut self, input: crate::types::VectorIngestionConfiguration) -> Self {
+        self.vector_ingestion_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Contains details about how to ingest the documents in a data source.</p>
+    pub fn set_vector_ingestion_configuration(mut self, input: ::std::option::Option<crate::types::VectorIngestionConfiguration>) -> Self {
+        self.vector_ingestion_configuration = input;
+        self
+    }
+    /// <p>Contains details about how to ingest the documents in a data source.</p>
+    pub fn get_vector_ingestion_configuration(&self) -> &::std::option::Option<crate::types::VectorIngestionConfiguration> {
+        &self.vector_ingestion_configuration
+    }
     /// <p>The configuration information for the customer managed key used for encryption.</p>
     /// <p>This KMS key must have a policy that allows <code>kms:CreateGrant</code>, <code>kms:DescribeKey</code>, <code>kms:Decrypt</code>, and <code>kms:GenerateDataKey*</code> permissions to the IAM identity using the key to invoke Amazon Q in Connect.</p>
     /// <p>For more information about setting up a customer managed key for Amazon Q in Connect, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-q.html">Enable Amazon Q in Connect for your instance</a>.</p>
@@ -216,6 +237,7 @@ impl CreateKnowledgeBaseInputBuilder {
             knowledge_base_type: self.knowledge_base_type,
             source_configuration: self.source_configuration,
             rendering_configuration: self.rendering_configuration,
+            vector_ingestion_configuration: self.vector_ingestion_configuration,
             server_side_encryption_configuration: self.server_side_encryption_configuration,
             description: self.description,
             tags: self.tags,

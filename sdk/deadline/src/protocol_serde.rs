@@ -145,6 +145,8 @@ pub(crate) mod shape_list_fleets;
 
 pub(crate) mod shape_list_job_members;
 
+pub(crate) mod shape_list_job_parameter_definitions;
+
 pub(crate) mod shape_list_jobs;
 
 pub(crate) mod shape_list_license_endpoints;
@@ -378,6 +380,8 @@ pub(crate) mod shape_job_entity_identifiers_union;
 pub(crate) mod shape_job_members;
 
 pub(crate) mod shape_job_parameter;
+
+pub(crate) mod shape_job_parameter_definitions;
 
 pub(crate) mod shape_job_parameters;
 

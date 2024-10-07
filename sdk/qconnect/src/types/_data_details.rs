@@ -8,6 +8,8 @@ pub enum DataDetails {
     ContentData(crate::types::ContentDataDetails),
     /// <p>Details about the generative data.</p>
     GenerativeData(crate::types::GenerativeDataDetails),
+    /// <p>Details about the intent data.</p>
+    IntentDetectedData(crate::types::IntentDetectedDataDetails),
     /// <p>Details about the content data.</p>
     SourceContentData(crate::types::SourceContentDataDetails),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
@@ -46,6 +48,19 @@ impl DataDetails {
     /// Returns true if this is a [`GenerativeData`](crate::types::DataDetails::GenerativeData).
     pub fn is_generative_data(&self) -> bool {
         self.as_generative_data().is_ok()
+    }
+    /// Tries to convert the enum instance into [`IntentDetectedData`](crate::types::DataDetails::IntentDetectedData), extracting the inner [`IntentDetectedDataDetails`](crate::types::IntentDetectedDataDetails).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_intent_detected_data(&self) -> ::std::result::Result<&crate::types::IntentDetectedDataDetails, &Self> {
+        if let DataDetails::IntentDetectedData(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`IntentDetectedData`](crate::types::DataDetails::IntentDetectedData).
+    pub fn is_intent_detected_data(&self) -> bool {
+        self.as_intent_detected_data().is_ok()
     }
     /// Tries to convert the enum instance into [`SourceContentData`](crate::types::DataDetails::SourceContentData), extracting the inner [`SourceContentDataDetails`](crate::types::SourceContentDataDetails).
     /// Returns `Err(&Self)` if it can't be converted.

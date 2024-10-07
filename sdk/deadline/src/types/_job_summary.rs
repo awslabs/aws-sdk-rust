@@ -58,6 +58,8 @@ pub struct JobSummary {
     pub max_failed_tasks_count: ::std::option::Option<i32>,
     /// <p>The maximum number of retries for a job.</p>
     pub max_retries_per_task: ::std::option::Option<i32>,
+    /// <p>The job ID for the source job.</p>
+    pub source_job_id: ::std::option::Option<::std::string::String>,
 }
 impl JobSummary {
     /// <p>The job ID.</p>
@@ -150,6 +152,10 @@ impl JobSummary {
     pub fn max_retries_per_task(&self) -> ::std::option::Option<i32> {
         self.max_retries_per_task
     }
+    /// <p>The job ID for the source job.</p>
+    pub fn source_job_id(&self) -> ::std::option::Option<&str> {
+        self.source_job_id.as_deref()
+    }
 }
 impl JobSummary {
     /// Creates a new builder-style object to manufacture [`JobSummary`](crate::types::JobSummary).
@@ -178,6 +184,7 @@ pub struct JobSummaryBuilder {
     pub(crate) task_run_status_counts: ::std::option::Option<::std::collections::HashMap<crate::types::TaskRunStatus, i32>>,
     pub(crate) max_failed_tasks_count: ::std::option::Option<i32>,
     pub(crate) max_retries_per_task: ::std::option::Option<i32>,
+    pub(crate) source_job_id: ::std::option::Option<::std::string::String>,
 }
 impl JobSummaryBuilder {
     /// <p>The job ID.</p>
@@ -483,6 +490,20 @@ impl JobSummaryBuilder {
     pub fn get_max_retries_per_task(&self) -> &::std::option::Option<i32> {
         &self.max_retries_per_task
     }
+    /// <p>The job ID for the source job.</p>
+    pub fn source_job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.source_job_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The job ID for the source job.</p>
+    pub fn set_source_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.source_job_id = input;
+        self
+    }
+    /// <p>The job ID for the source job.</p>
+    pub fn get_source_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_job_id
+    }
     /// Consumes the builder and constructs a [`JobSummary`](crate::types::JobSummary).
     /// This method will fail if any of the following fields are not set:
     /// - [`job_id`](crate::types::builders::JobSummaryBuilder::job_id)
@@ -545,6 +566,7 @@ impl JobSummaryBuilder {
             task_run_status_counts: self.task_run_status_counts,
             max_failed_tasks_count: self.max_failed_tasks_count,
             max_retries_per_task: self.max_retries_per_task,
+            source_job_id: self.source_job_id,
         })
     }
 }

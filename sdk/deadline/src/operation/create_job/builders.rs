@@ -278,4 +278,18 @@ impl CreateJobFluentBuilder {
     pub fn get_max_retries_per_task(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_retries_per_task()
     }
+    /// <p>The job ID for the source job.</p>
+    pub fn source_job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.source_job_id(input.into());
+        self
+    }
+    /// <p>The job ID for the source job.</p>
+    pub fn set_source_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_source_job_id(input);
+        self
+    }
+    /// <p>The job ID for the source job.</p>
+    pub fn get_source_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_source_job_id()
+    }
 }

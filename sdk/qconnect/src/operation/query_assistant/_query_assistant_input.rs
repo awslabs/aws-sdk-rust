@@ -15,6 +15,10 @@ pub struct QueryAssistantInput {
     pub session_id: ::std::option::Option<::std::string::String>,
     /// <p>Information about how to query content.</p>
     pub query_condition: ::std::option::Option<::std::vec::Vec<crate::types::QueryCondition>>,
+    /// <p>Information about the query.</p>
+    pub query_input_data: ::std::option::Option<crate::types::QueryInputData>,
+    /// <p>The search type to be used against the Knowledge Base for this request. The values can be <code>SEMANTIC</code> which uses vector embeddings or <code>HYBRID</code> which use vector embeddings and raw text.</p>
+    pub override_knowledge_base_search_type: ::std::option::Option<crate::types::KnowledgeBaseSearchType>,
 }
 impl QueryAssistantInput {
     /// <p>The identifier of the Amazon Q in Connect assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
@@ -43,6 +47,14 @@ impl QueryAssistantInput {
     pub fn query_condition(&self) -> &[crate::types::QueryCondition] {
         self.query_condition.as_deref().unwrap_or_default()
     }
+    /// <p>Information about the query.</p>
+    pub fn query_input_data(&self) -> ::std::option::Option<&crate::types::QueryInputData> {
+        self.query_input_data.as_ref()
+    }
+    /// <p>The search type to be used against the Knowledge Base for this request. The values can be <code>SEMANTIC</code> which uses vector embeddings or <code>HYBRID</code> which use vector embeddings and raw text.</p>
+    pub fn override_knowledge_base_search_type(&self) -> ::std::option::Option<&crate::types::KnowledgeBaseSearchType> {
+        self.override_knowledge_base_search_type.as_ref()
+    }
 }
 impl ::std::fmt::Debug for QueryAssistantInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -53,6 +65,8 @@ impl ::std::fmt::Debug for QueryAssistantInput {
         formatter.field("max_results", &self.max_results);
         formatter.field("session_id", &self.session_id);
         formatter.field("query_condition", &self.query_condition);
+        formatter.field("query_input_data", &self.query_input_data);
+        formatter.field("override_knowledge_base_search_type", &self.override_knowledge_base_search_type);
         formatter.finish()
     }
 }
@@ -73,6 +87,8 @@ pub struct QueryAssistantInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) session_id: ::std::option::Option<::std::string::String>,
     pub(crate) query_condition: ::std::option::Option<::std::vec::Vec<crate::types::QueryCondition>>,
+    pub(crate) query_input_data: ::std::option::Option<crate::types::QueryInputData>,
+    pub(crate) override_knowledge_base_search_type: ::std::option::Option<crate::types::KnowledgeBaseSearchType>,
 }
 impl QueryAssistantInputBuilder {
     /// <p>The identifier of the Amazon Q in Connect assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
@@ -91,7 +107,6 @@ impl QueryAssistantInputBuilder {
         &self.assistant_id
     }
     /// <p>The text to search for.</p>
-    /// This field is required.
     pub fn query_text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.query_text = ::std::option::Option::Some(input.into());
         self
@@ -167,6 +182,34 @@ impl QueryAssistantInputBuilder {
     pub fn get_query_condition(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::QueryCondition>> {
         &self.query_condition
     }
+    /// <p>Information about the query.</p>
+    pub fn query_input_data(mut self, input: crate::types::QueryInputData) -> Self {
+        self.query_input_data = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Information about the query.</p>
+    pub fn set_query_input_data(mut self, input: ::std::option::Option<crate::types::QueryInputData>) -> Self {
+        self.query_input_data = input;
+        self
+    }
+    /// <p>Information about the query.</p>
+    pub fn get_query_input_data(&self) -> &::std::option::Option<crate::types::QueryInputData> {
+        &self.query_input_data
+    }
+    /// <p>The search type to be used against the Knowledge Base for this request. The values can be <code>SEMANTIC</code> which uses vector embeddings or <code>HYBRID</code> which use vector embeddings and raw text.</p>
+    pub fn override_knowledge_base_search_type(mut self, input: crate::types::KnowledgeBaseSearchType) -> Self {
+        self.override_knowledge_base_search_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The search type to be used against the Knowledge Base for this request. The values can be <code>SEMANTIC</code> which uses vector embeddings or <code>HYBRID</code> which use vector embeddings and raw text.</p>
+    pub fn set_override_knowledge_base_search_type(mut self, input: ::std::option::Option<crate::types::KnowledgeBaseSearchType>) -> Self {
+        self.override_knowledge_base_search_type = input;
+        self
+    }
+    /// <p>The search type to be used against the Knowledge Base for this request. The values can be <code>SEMANTIC</code> which uses vector embeddings or <code>HYBRID</code> which use vector embeddings and raw text.</p>
+    pub fn get_override_knowledge_base_search_type(&self) -> &::std::option::Option<crate::types::KnowledgeBaseSearchType> {
+        &self.override_knowledge_base_search_type
+    }
     /// Consumes the builder and constructs a [`QueryAssistantInput`](crate::operation::query_assistant::QueryAssistantInput).
     pub fn build(
         self,
@@ -178,6 +221,8 @@ impl QueryAssistantInputBuilder {
             max_results: self.max_results,
             session_id: self.session_id,
             query_condition: self.query_condition,
+            query_input_data: self.query_input_data,
+            override_knowledge_base_search_type: self.override_knowledge_base_search_type,
         })
     }
 }
@@ -190,6 +235,8 @@ impl ::std::fmt::Debug for QueryAssistantInputBuilder {
         formatter.field("max_results", &self.max_results);
         formatter.field("session_id", &self.session_id);
         formatter.field("query_condition", &self.query_condition);
+        formatter.field("query_input_data", &self.query_input_data);
+        formatter.field("override_knowledge_base_search_type", &self.override_knowledge_base_search_type);
         formatter.finish()
     }
 }

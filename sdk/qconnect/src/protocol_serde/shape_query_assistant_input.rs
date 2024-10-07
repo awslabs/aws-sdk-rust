@@ -12,23 +12,32 @@ pub fn ser_query_assistant_input_input(
     if let Some(var_2) = &input.next_token {
         object.key("nextToken").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.query_condition {
-        let mut array_4 = object.key("queryCondition").start_array();
-        for item_5 in var_3 {
+    if let Some(var_3) = &input.override_knowledge_base_search_type {
+        object.key("overrideKnowledgeBaseSearchType").string(var_3.as_str());
+    }
+    if let Some(var_4) = &input.query_condition {
+        let mut array_5 = object.key("queryCondition").start_array();
+        for item_6 in var_4 {
             {
                 #[allow(unused_mut)]
-                let mut object_6 = array_4.value().start_object();
-                crate::protocol_serde::shape_query_condition::ser_query_condition(&mut object_6, item_5)?;
-                object_6.finish();
+                let mut object_7 = array_5.value().start_object();
+                crate::protocol_serde::shape_query_condition::ser_query_condition(&mut object_7, item_6)?;
+                object_7.finish();
             }
         }
-        array_4.finish();
+        array_5.finish();
     }
-    if let Some(var_7) = &input.query_text {
-        object.key("queryText").string(var_7.as_str());
+    if let Some(var_8) = &input.query_input_data {
+        #[allow(unused_mut)]
+        let mut object_9 = object.key("queryInputData").start_object();
+        crate::protocol_serde::shape_query_input_data::ser_query_input_data(&mut object_9, var_8)?;
+        object_9.finish();
     }
-    if let Some(var_8) = &input.session_id {
-        object.key("sessionId").string(var_8.as_str());
+    if let Some(var_10) = &input.query_text {
+        object.key("queryText").string(var_10.as_str());
+    }
+    if let Some(var_11) = &input.session_id {
+        object.key("sessionId").string(var_11.as_str());
     }
     Ok(())
 }

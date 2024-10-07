@@ -79,6 +79,16 @@ pub(crate) fn reflens_list_job_members_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_job_parameter_definitions_output_output_next_token(
+    input: &crate::operation::list_job_parameter_definitions::ListJobParameterDefinitionsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_jobs_output_output_next_token(
     input: &crate::operation::list_jobs::ListJobsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -315,6 +325,13 @@ pub(crate) fn lens_list_job_members_output_output_members(
     input: crate::operation::list_job_members::ListJobMembersOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::JobMember>> {
     let input = input.members;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_job_parameter_definitions_output_output_job_parameter_definitions(
+    input: crate::operation::list_job_parameter_definitions::ListJobParameterDefinitionsOutput,
+) -> ::std::option::Option<::std::vec::Vec<::aws_smithy_types::Document>> {
+    let input = input.job_parameter_definitions;
     ::std::option::Option::Some(input)
 }
 

@@ -26,6 +26,8 @@ pub struct AssistantData {
     pub integration_configuration: ::std::option::Option<crate::types::AssistantIntegrationConfiguration>,
     /// <p>The configuration information for the Amazon Q in Connect assistant capability.</p>
     pub capability_configuration: ::std::option::Option<crate::types::AssistantCapabilityConfiguration>,
+    /// <p>The configuration of the AI Agents (mapped by AI Agent Type to AI Agent version) that is set on the Amazon Q in Connect Assistant.</p>
+    pub ai_agent_configuration: ::std::option::Option<::std::collections::HashMap<crate::types::AiAgentType, crate::types::AiAgentConfigurationData>>,
 }
 impl AssistantData {
     /// <p>The identifier of the Amazon Q in Connect assistant.</p>
@@ -73,6 +75,12 @@ impl AssistantData {
     pub fn capability_configuration(&self) -> ::std::option::Option<&crate::types::AssistantCapabilityConfiguration> {
         self.capability_configuration.as_ref()
     }
+    /// <p>The configuration of the AI Agents (mapped by AI Agent Type to AI Agent version) that is set on the Amazon Q in Connect Assistant.</p>
+    pub fn ai_agent_configuration(
+        &self,
+    ) -> ::std::option::Option<&::std::collections::HashMap<crate::types::AiAgentType, crate::types::AiAgentConfigurationData>> {
+        self.ai_agent_configuration.as_ref()
+    }
 }
 impl AssistantData {
     /// Creates a new builder-style object to manufacture [`AssistantData`](crate::types::AssistantData).
@@ -95,6 +103,8 @@ pub struct AssistantDataBuilder {
     pub(crate) server_side_encryption_configuration: ::std::option::Option<crate::types::ServerSideEncryptionConfiguration>,
     pub(crate) integration_configuration: ::std::option::Option<crate::types::AssistantIntegrationConfiguration>,
     pub(crate) capability_configuration: ::std::option::Option<crate::types::AssistantCapabilityConfiguration>,
+    pub(crate) ai_agent_configuration:
+        ::std::option::Option<::std::collections::HashMap<crate::types::AiAgentType, crate::types::AiAgentConfigurationData>>,
 }
 impl AssistantDataBuilder {
     /// <p>The identifier of the Amazon Q in Connect assistant.</p>
@@ -254,6 +264,31 @@ impl AssistantDataBuilder {
     pub fn get_capability_configuration(&self) -> &::std::option::Option<crate::types::AssistantCapabilityConfiguration> {
         &self.capability_configuration
     }
+    /// Adds a key-value pair to `ai_agent_configuration`.
+    ///
+    /// To override the contents of this collection use [`set_ai_agent_configuration`](Self::set_ai_agent_configuration).
+    ///
+    /// <p>The configuration of the AI Agents (mapped by AI Agent Type to AI Agent version) that is set on the Amazon Q in Connect Assistant.</p>
+    pub fn ai_agent_configuration(mut self, k: crate::types::AiAgentType, v: crate::types::AiAgentConfigurationData) -> Self {
+        let mut hash_map = self.ai_agent_configuration.unwrap_or_default();
+        hash_map.insert(k, v);
+        self.ai_agent_configuration = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>The configuration of the AI Agents (mapped by AI Agent Type to AI Agent version) that is set on the Amazon Q in Connect Assistant.</p>
+    pub fn set_ai_agent_configuration(
+        mut self,
+        input: ::std::option::Option<::std::collections::HashMap<crate::types::AiAgentType, crate::types::AiAgentConfigurationData>>,
+    ) -> Self {
+        self.ai_agent_configuration = input;
+        self
+    }
+    /// <p>The configuration of the AI Agents (mapped by AI Agent Type to AI Agent version) that is set on the Amazon Q in Connect Assistant.</p>
+    pub fn get_ai_agent_configuration(
+        &self,
+    ) -> &::std::option::Option<::std::collections::HashMap<crate::types::AiAgentType, crate::types::AiAgentConfigurationData>> {
+        &self.ai_agent_configuration
+    }
     /// Consumes the builder and constructs a [`AssistantData`](crate::types::AssistantData).
     /// This method will fail if any of the following fields are not set:
     /// - [`assistant_id`](crate::types::builders::AssistantDataBuilder::assistant_id)
@@ -298,6 +333,7 @@ impl AssistantDataBuilder {
             server_side_encryption_configuration: self.server_side_encryption_configuration,
             integration_configuration: self.integration_configuration,
             capability_configuration: self.capability_configuration,
+            ai_agent_configuration: self.ai_agent_configuration,
         })
     }
 }

@@ -27,6 +27,8 @@ pub struct CreateJobInput {
     pub max_failed_tasks_count: ::std::option::Option<i32>,
     /// <p>The maximum number of retries for each task.</p>
     pub max_retries_per_task: ::std::option::Option<i32>,
+    /// <p>The job ID for the source job.</p>
+    pub source_job_id: ::std::option::Option<::std::string::String>,
 }
 impl CreateJobInput {
     /// <p>The farm ID of the farm to connect to the job.</p>
@@ -77,6 +79,10 @@ impl CreateJobInput {
     pub fn max_retries_per_task(&self) -> ::std::option::Option<i32> {
         self.max_retries_per_task
     }
+    /// <p>The job ID for the source job.</p>
+    pub fn source_job_id(&self) -> ::std::option::Option<&str> {
+        self.source_job_id.as_deref()
+    }
 }
 impl ::std::fmt::Debug for CreateJobInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -93,6 +99,7 @@ impl ::std::fmt::Debug for CreateJobInput {
         formatter.field("target_task_run_status", &self.target_task_run_status);
         formatter.field("max_failed_tasks_count", &self.max_failed_tasks_count);
         formatter.field("max_retries_per_task", &self.max_retries_per_task);
+        formatter.field("source_job_id", &self.source_job_id);
         formatter.finish()
     }
 }
@@ -119,6 +126,7 @@ pub struct CreateJobInputBuilder {
     pub(crate) target_task_run_status: ::std::option::Option<crate::types::CreateJobTargetTaskRunStatus>,
     pub(crate) max_failed_tasks_count: ::std::option::Option<i32>,
     pub(crate) max_retries_per_task: ::std::option::Option<i32>,
+    pub(crate) source_job_id: ::std::option::Option<::std::string::String>,
 }
 impl CreateJobInputBuilder {
     /// <p>The farm ID of the farm to connect to the job.</p>
@@ -166,7 +174,6 @@ impl CreateJobInputBuilder {
         &self.client_token
     }
     /// <p>The job template to use for this job.</p>
-    /// This field is required.
     pub fn template(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template = ::std::option::Option::Some(input.into());
         self
@@ -181,7 +188,6 @@ impl CreateJobInputBuilder {
         &self.template
     }
     /// <p>The file type for the job template.</p>
-    /// This field is required.
     pub fn template_type(mut self, input: crate::types::JobTemplateType) -> Self {
         self.template_type = ::std::option::Option::Some(input);
         self
@@ -303,6 +309,20 @@ impl CreateJobInputBuilder {
     pub fn get_max_retries_per_task(&self) -> &::std::option::Option<i32> {
         &self.max_retries_per_task
     }
+    /// <p>The job ID for the source job.</p>
+    pub fn source_job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.source_job_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The job ID for the source job.</p>
+    pub fn set_source_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.source_job_id = input;
+        self
+    }
+    /// <p>The job ID for the source job.</p>
+    pub fn get_source_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_job_id
+    }
     /// Consumes the builder and constructs a [`CreateJobInput`](crate::operation::create_job::CreateJobInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_job::CreateJobInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_job::CreateJobInput {
@@ -318,6 +338,7 @@ impl CreateJobInputBuilder {
             target_task_run_status: self.target_task_run_status,
             max_failed_tasks_count: self.max_failed_tasks_count,
             max_retries_per_task: self.max_retries_per_task,
+            source_job_id: self.source_job_id,
         })
     }
 }
@@ -336,6 +357,7 @@ impl ::std::fmt::Debug for CreateJobInputBuilder {
         formatter.field("target_task_run_status", &self.target_task_run_status);
         formatter.field("max_failed_tasks_count", &self.max_failed_tasks_count);
         formatter.field("max_retries_per_task", &self.max_retries_per_task);
+        formatter.field("source_job_id", &self.source_job_id);
         formatter.finish()
     }
 }

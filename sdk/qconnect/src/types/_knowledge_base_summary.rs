@@ -16,6 +16,8 @@ pub struct KnowledgeBaseSummary {
     pub status: crate::types::KnowledgeBaseStatus,
     /// <p>Configuration information about the external data source.</p>
     pub source_configuration: ::std::option::Option<crate::types::SourceConfiguration>,
+    /// <p>Contains details about how to ingest the documents in a data source.</p>
+    pub vector_ingestion_configuration: ::std::option::Option<crate::types::VectorIngestionConfiguration>,
     /// <p>Information about how to render the content.</p>
     pub rendering_configuration: ::std::option::Option<crate::types::RenderingConfiguration>,
     /// <p>The configuration information for the customer managed key used for encryption.</p>
@@ -55,6 +57,10 @@ impl KnowledgeBaseSummary {
     pub fn source_configuration(&self) -> ::std::option::Option<&crate::types::SourceConfiguration> {
         self.source_configuration.as_ref()
     }
+    /// <p>Contains details about how to ingest the documents in a data source.</p>
+    pub fn vector_ingestion_configuration(&self) -> ::std::option::Option<&crate::types::VectorIngestionConfiguration> {
+        self.vector_ingestion_configuration.as_ref()
+    }
     /// <p>Information about how to render the content.</p>
     pub fn rendering_configuration(&self) -> ::std::option::Option<&crate::types::RenderingConfiguration> {
         self.rendering_configuration.as_ref()
@@ -91,6 +97,7 @@ pub struct KnowledgeBaseSummaryBuilder {
     pub(crate) knowledge_base_type: ::std::option::Option<crate::types::KnowledgeBaseType>,
     pub(crate) status: ::std::option::Option<crate::types::KnowledgeBaseStatus>,
     pub(crate) source_configuration: ::std::option::Option<crate::types::SourceConfiguration>,
+    pub(crate) vector_ingestion_configuration: ::std::option::Option<crate::types::VectorIngestionConfiguration>,
     pub(crate) rendering_configuration: ::std::option::Option<crate::types::RenderingConfiguration>,
     pub(crate) server_side_encryption_configuration: ::std::option::Option<crate::types::ServerSideEncryptionConfiguration>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -185,6 +192,20 @@ impl KnowledgeBaseSummaryBuilder {
     /// <p>Configuration information about the external data source.</p>
     pub fn get_source_configuration(&self) -> &::std::option::Option<crate::types::SourceConfiguration> {
         &self.source_configuration
+    }
+    /// <p>Contains details about how to ingest the documents in a data source.</p>
+    pub fn vector_ingestion_configuration(mut self, input: crate::types::VectorIngestionConfiguration) -> Self {
+        self.vector_ingestion_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Contains details about how to ingest the documents in a data source.</p>
+    pub fn set_vector_ingestion_configuration(mut self, input: ::std::option::Option<crate::types::VectorIngestionConfiguration>) -> Self {
+        self.vector_ingestion_configuration = input;
+        self
+    }
+    /// <p>Contains details about how to ingest the documents in a data source.</p>
+    pub fn get_vector_ingestion_configuration(&self) -> &::std::option::Option<crate::types::VectorIngestionConfiguration> {
+        &self.vector_ingestion_configuration
     }
     /// <p>Information about how to render the content.</p>
     pub fn rendering_configuration(mut self, input: crate::types::RenderingConfiguration) -> Self {
@@ -294,6 +315,7 @@ impl KnowledgeBaseSummaryBuilder {
                 )
             })?,
             source_configuration: self.source_configuration,
+            vector_ingestion_configuration: self.vector_ingestion_configuration,
             rendering_configuration: self.rendering_configuration,
             server_side_encryption_configuration: self.server_side_encryption_configuration,
             description: self.description,

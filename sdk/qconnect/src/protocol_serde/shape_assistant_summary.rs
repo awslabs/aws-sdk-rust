@@ -74,6 +74,11 @@ where
                                 crate::protocol_serde::shape_assistant_capability_configuration::de_assistant_capability_configuration(tokens)?,
                             );
                         }
+                        "aiAgentConfiguration" => {
+                            builder = builder.set_ai_agent_configuration(
+                                crate::protocol_serde::shape_ai_agent_configuration_map::de_ai_agent_configuration_map(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

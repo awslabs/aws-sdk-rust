@@ -17,25 +17,7 @@ pub struct EnableLoggingInput {
     /// </ul>
     pub bucket_name: ::std::option::Option<::std::string::String>,
     /// <p>The prefix applied to the log file names.</p>
-    /// <p>Constraints:</p>
-    /// <ul>
-    /// <li>
-    /// <p>Cannot exceed 512 characters</p></li>
-    /// <li>
-    /// <p>Cannot contain spaces( ), double quotes ("), single quotes ('), a backslash (\), or control characters. The hexadecimal codes for invalid characters are:</p>
-    /// <ul>
-    /// <li>
-    /// <p>x00 to x20</p></li>
-    /// <li>
-    /// <p>x22</p></li>
-    /// <li>
-    /// <p>x27</p></li>
-    /// <li>
-    /// <p>x5c</p></li>
-    /// <li>
-    /// <p>x7f or larger</p></li>
-    /// </ul></li>
-    /// </ul>
+    /// <p>Valid characters are any letter from any language, any whitespace character, any numeric character, and the following characters: underscore (<code>_</code>), period (<code>.</code>), colon (<code>:</code>), slash (<code>/</code>), equal (<code>=</code>), plus (<code>+</code>), backslash (<code>\</code>), hyphen (<code>-</code>), at symbol (<code>@</code>).</p>
     pub s3_key_prefix: ::std::option::Option<::std::string::String>,
     /// <p>The log destination type. An enum with possible values of <code>s3</code> and <code>cloudwatch</code>.</p>
     pub log_destination_type: ::std::option::Option<crate::types::LogDestinationType>,
@@ -60,25 +42,7 @@ impl EnableLoggingInput {
         self.bucket_name.as_deref()
     }
     /// <p>The prefix applied to the log file names.</p>
-    /// <p>Constraints:</p>
-    /// <ul>
-    /// <li>
-    /// <p>Cannot exceed 512 characters</p></li>
-    /// <li>
-    /// <p>Cannot contain spaces( ), double quotes ("), single quotes ('), a backslash (\), or control characters. The hexadecimal codes for invalid characters are:</p>
-    /// <ul>
-    /// <li>
-    /// <p>x00 to x20</p></li>
-    /// <li>
-    /// <p>x22</p></li>
-    /// <li>
-    /// <p>x27</p></li>
-    /// <li>
-    /// <p>x5c</p></li>
-    /// <li>
-    /// <p>x7f or larger</p></li>
-    /// </ul></li>
-    /// </ul>
+    /// <p>Valid characters are any letter from any language, any whitespace character, any numeric character, and the following characters: underscore (<code>_</code>), period (<code>.</code>), colon (<code>:</code>), slash (<code>/</code>), equal (<code>=</code>), plus (<code>+</code>), backslash (<code>\</code>), hyphen (<code>-</code>), at symbol (<code>@</code>).</p>
     pub fn s3_key_prefix(&self) -> ::std::option::Option<&str> {
         self.s3_key_prefix.as_deref()
     }
@@ -165,73 +129,19 @@ impl EnableLoggingInputBuilder {
         &self.bucket_name
     }
     /// <p>The prefix applied to the log file names.</p>
-    /// <p>Constraints:</p>
-    /// <ul>
-    /// <li>
-    /// <p>Cannot exceed 512 characters</p></li>
-    /// <li>
-    /// <p>Cannot contain spaces( ), double quotes ("), single quotes ('), a backslash (\), or control characters. The hexadecimal codes for invalid characters are:</p>
-    /// <ul>
-    /// <li>
-    /// <p>x00 to x20</p></li>
-    /// <li>
-    /// <p>x22</p></li>
-    /// <li>
-    /// <p>x27</p></li>
-    /// <li>
-    /// <p>x5c</p></li>
-    /// <li>
-    /// <p>x7f or larger</p></li>
-    /// </ul></li>
-    /// </ul>
+    /// <p>Valid characters are any letter from any language, any whitespace character, any numeric character, and the following characters: underscore (<code>_</code>), period (<code>.</code>), colon (<code>:</code>), slash (<code>/</code>), equal (<code>=</code>), plus (<code>+</code>), backslash (<code>\</code>), hyphen (<code>-</code>), at symbol (<code>@</code>).</p>
     pub fn s3_key_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_key_prefix = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The prefix applied to the log file names.</p>
-    /// <p>Constraints:</p>
-    /// <ul>
-    /// <li>
-    /// <p>Cannot exceed 512 characters</p></li>
-    /// <li>
-    /// <p>Cannot contain spaces( ), double quotes ("), single quotes ('), a backslash (\), or control characters. The hexadecimal codes for invalid characters are:</p>
-    /// <ul>
-    /// <li>
-    /// <p>x00 to x20</p></li>
-    /// <li>
-    /// <p>x22</p></li>
-    /// <li>
-    /// <p>x27</p></li>
-    /// <li>
-    /// <p>x5c</p></li>
-    /// <li>
-    /// <p>x7f or larger</p></li>
-    /// </ul></li>
-    /// </ul>
+    /// <p>Valid characters are any letter from any language, any whitespace character, any numeric character, and the following characters: underscore (<code>_</code>), period (<code>.</code>), colon (<code>:</code>), slash (<code>/</code>), equal (<code>=</code>), plus (<code>+</code>), backslash (<code>\</code>), hyphen (<code>-</code>), at symbol (<code>@</code>).</p>
     pub fn set_s3_key_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.s3_key_prefix = input;
         self
     }
     /// <p>The prefix applied to the log file names.</p>
-    /// <p>Constraints:</p>
-    /// <ul>
-    /// <li>
-    /// <p>Cannot exceed 512 characters</p></li>
-    /// <li>
-    /// <p>Cannot contain spaces( ), double quotes ("), single quotes ('), a backslash (\), or control characters. The hexadecimal codes for invalid characters are:</p>
-    /// <ul>
-    /// <li>
-    /// <p>x00 to x20</p></li>
-    /// <li>
-    /// <p>x22</p></li>
-    /// <li>
-    /// <p>x27</p></li>
-    /// <li>
-    /// <p>x5c</p></li>
-    /// <li>
-    /// <p>x7f or larger</p></li>
-    /// </ul></li>
-    /// </ul>
+    /// <p>Valid characters are any letter from any language, any whitespace character, any numeric character, and the following characters: underscore (<code>_</code>), period (<code>.</code>), colon (<code>:</code>), slash (<code>/</code>), equal (<code>=</code>), plus (<code>+</code>), backslash (<code>\</code>), hyphen (<code>-</code>), at symbol (<code>@</code>).</p>
     pub fn get_s3_key_prefix(&self) -> &::std::option::Option<::std::string::String> {
         &self.s3_key_prefix
     }

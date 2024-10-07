@@ -27,6 +27,7 @@ impl super::Client {
     ///   - [`parameters(Option<HashMap::<String, JobParameter>>)`](crate::operation::get_job::GetJobOutput::parameters): <p>The parameters for the job.</p>
     ///   - [`attachments(Option<Attachments>)`](crate::operation::get_job::GetJobOutput::attachments): <p>The attachments for the job.</p>
     ///   - [`description(Option<String>)`](crate::operation::get_job::GetJobOutput::description): <p>The description of the job.</p><important>  <p>This field can store any content. Escape or encode this content before displaying it on a webpage or any other system that might interpret the content of this field.</p> </important>
+    ///   - [`source_job_id(Option<String>)`](crate::operation::get_job::GetJobOutput::source_job_id): <p>The job ID for the source job.</p>
     /// - On failure, responds with [`SdkError<GetJobError>`](crate::operation::get_job::GetJobError)
     pub fn get_job(&self) -> crate::operation::get_job::builders::GetJobFluentBuilder {
         crate::operation::get_job::builders::GetJobFluentBuilder::new(self.handle.clone())

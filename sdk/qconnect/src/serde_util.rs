@@ -8,6 +8,42 @@ pub(crate) fn get_recommendations_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn list_ai_agent_versions_output_output_correct_errors(
+    mut builder: crate::operation::list_ai_agent_versions::builders::ListAiAgentVersionsOutputBuilder,
+) -> crate::operation::list_ai_agent_versions::builders::ListAiAgentVersionsOutputBuilder {
+    if builder.ai_agent_version_summaries.is_none() {
+        builder.ai_agent_version_summaries = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_ai_agents_output_output_correct_errors(
+    mut builder: crate::operation::list_ai_agents::builders::ListAiAgentsOutputBuilder,
+) -> crate::operation::list_ai_agents::builders::ListAiAgentsOutputBuilder {
+    if builder.ai_agent_summaries.is_none() {
+        builder.ai_agent_summaries = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_ai_prompt_versions_output_output_correct_errors(
+    mut builder: crate::operation::list_ai_prompt_versions::builders::ListAiPromptVersionsOutputBuilder,
+) -> crate::operation::list_ai_prompt_versions::builders::ListAiPromptVersionsOutputBuilder {
+    if builder.ai_prompt_version_summaries.is_none() {
+        builder.ai_prompt_version_summaries = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_ai_prompts_output_output_correct_errors(
+    mut builder: crate::operation::list_ai_prompts::builders::ListAiPromptsOutputBuilder,
+) -> crate::operation::list_ai_prompts::builders::ListAiPromptsOutputBuilder {
+    if builder.ai_prompt_summaries.is_none() {
+        builder.ai_prompt_summaries = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn list_assistant_associations_output_output_correct_errors(
     mut builder: crate::operation::list_assistant_associations::builders::ListAssistantAssociationsOutputBuilder,
 ) -> crate::operation::list_assistant_associations::builders::ListAssistantAssociationsOutputBuilder {
@@ -142,6 +178,89 @@ pub(crate) fn start_content_upload_output_output_correct_errors(
     }
     if builder.headers_to_include.is_none() {
         builder.headers_to_include = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn update_session_data_output_output_correct_errors(
+    mut builder: crate::operation::update_session_data::builders::UpdateSessionDataOutputBuilder,
+) -> crate::operation::update_session_data::builders::UpdateSessionDataOutputBuilder {
+    if builder.session_arn.is_none() {
+        builder.session_arn = Some(Default::default())
+    }
+    if builder.session_id.is_none() {
+        builder.session_id = Some(Default::default())
+    }
+    if builder.namespace.is_none() {
+        builder.namespace = "no value was set".parse::<crate::types::SessionDataNamespace>().ok()
+    }
+    if builder.data.is_none() {
+        builder.data = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn ai_agent_data_correct_errors(mut builder: crate::types::builders::AiAgentDataBuilder) -> crate::types::builders::AiAgentDataBuilder {
+    if builder.assistant_id.is_none() {
+        builder.assistant_id = Some(Default::default())
+    }
+    if builder.assistant_arn.is_none() {
+        builder.assistant_arn = Some(Default::default())
+    }
+    if builder.ai_agent_id.is_none() {
+        builder.ai_agent_id = Some(Default::default())
+    }
+    if builder.ai_agent_arn.is_none() {
+        builder.ai_agent_arn = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::AiAgentType>().ok()
+    }
+    if builder.configuration.is_none() {
+        builder.configuration = Some(crate::types::AiAgentConfiguration::Unknown)
+    }
+    if builder.visibility_status.is_none() {
+        builder.visibility_status = "no value was set".parse::<crate::types::VisibilityStatus>().ok()
+    }
+    builder
+}
+
+pub(crate) fn ai_prompt_data_correct_errors(mut builder: crate::types::builders::AiPromptDataBuilder) -> crate::types::builders::AiPromptDataBuilder {
+    if builder.assistant_id.is_none() {
+        builder.assistant_id = Some(Default::default())
+    }
+    if builder.assistant_arn.is_none() {
+        builder.assistant_arn = Some(Default::default())
+    }
+    if builder.ai_prompt_id.is_none() {
+        builder.ai_prompt_id = Some(Default::default())
+    }
+    if builder.ai_prompt_arn.is_none() {
+        builder.ai_prompt_arn = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::AiPromptType>().ok()
+    }
+    if builder.template_type.is_none() {
+        builder.template_type = "no value was set".parse::<crate::types::AiPromptTemplateType>().ok()
+    }
+    if builder.model_id.is_none() {
+        builder.model_id = Some(Default::default())
+    }
+    if builder.api_format.is_none() {
+        builder.api_format = "no value was set".parse::<crate::types::AiPromptApiFormat>().ok()
+    }
+    if builder.template_configuration.is_none() {
+        builder.template_configuration = Some(crate::types::AiPromptTemplateConfiguration::Unknown)
+    }
+    if builder.visibility_status.is_none() {
+        builder.visibility_status = "no value was set".parse::<crate::types::VisibilityStatus>().ok()
     }
     builder
 }
@@ -396,6 +515,69 @@ pub(crate) fn session_data_correct_errors(mut builder: crate::types::builders::S
     }
     if builder.name.is_none() {
         builder.name = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn ai_agent_summary_correct_errors(
+    mut builder: crate::types::builders::AiAgentSummaryBuilder,
+) -> crate::types::builders::AiAgentSummaryBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.assistant_id.is_none() {
+        builder.assistant_id = Some(Default::default())
+    }
+    if builder.assistant_arn.is_none() {
+        builder.assistant_arn = Some(Default::default())
+    }
+    if builder.ai_agent_id.is_none() {
+        builder.ai_agent_id = Some(Default::default())
+    }
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::AiAgentType>().ok()
+    }
+    if builder.ai_agent_arn.is_none() {
+        builder.ai_agent_arn = Some(Default::default())
+    }
+    if builder.visibility_status.is_none() {
+        builder.visibility_status = "no value was set".parse::<crate::types::VisibilityStatus>().ok()
+    }
+    builder
+}
+
+pub(crate) fn ai_prompt_summary_correct_errors(
+    mut builder: crate::types::builders::AiPromptSummaryBuilder,
+) -> crate::types::builders::AiPromptSummaryBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.assistant_id.is_none() {
+        builder.assistant_id = Some(Default::default())
+    }
+    if builder.assistant_arn.is_none() {
+        builder.assistant_arn = Some(Default::default())
+    }
+    if builder.ai_prompt_id.is_none() {
+        builder.ai_prompt_id = Some(Default::default())
+    }
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::AiPromptType>().ok()
+    }
+    if builder.ai_prompt_arn.is_none() {
+        builder.ai_prompt_arn = Some(Default::default())
+    }
+    if builder.template_type.is_none() {
+        builder.template_type = "no value was set".parse::<crate::types::AiPromptTemplateType>().ok()
+    }
+    if builder.model_id.is_none() {
+        builder.model_id = Some(Default::default())
+    }
+    if builder.api_format.is_none() {
+        builder.api_format = "no value was set".parse::<crate::types::AiPromptApiFormat>().ok()
+    }
+    if builder.visibility_status.is_none() {
+        builder.visibility_status = "no value was set".parse::<crate::types::VisibilityStatus>().ok()
     }
     builder
 }
@@ -659,6 +841,18 @@ pub(crate) fn result_data_correct_errors(mut builder: crate::types::builders::Re
     builder
 }
 
+pub(crate) fn runtime_session_data_correct_errors(
+    mut builder: crate::types::builders::RuntimeSessionDataBuilder,
+) -> crate::types::builders::RuntimeSessionDataBuilder {
+    if builder.key.is_none() {
+        builder.key = Some(Default::default())
+    }
+    if builder.value.is_none() {
+        builder.value = Some(crate::types::RuntimeSessionDataValue::Unknown)
+    }
+    builder
+}
+
 pub(crate) fn session_summary_correct_errors(
     mut builder: crate::types::builders::SessionSummaryBuilder,
 ) -> crate::types::builders::SessionSummaryBuilder {
@@ -677,11 +871,29 @@ pub(crate) fn session_summary_correct_errors(
     builder
 }
 
+pub(crate) fn ai_agent_configuration_data_correct_errors(
+    mut builder: crate::types::builders::AiAgentConfigurationDataBuilder,
+) -> crate::types::builders::AiAgentConfigurationDataBuilder {
+    if builder.ai_agent_id.is_none() {
+        builder.ai_agent_id = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn app_integrations_configuration_correct_errors(
     mut builder: crate::types::builders::AppIntegrationsConfigurationBuilder,
 ) -> crate::types::builders::AppIntegrationsConfigurationBuilder {
     if builder.app_integration_arn.is_none() {
         builder.app_integration_arn = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn chunking_configuration_correct_errors(
+    mut builder: crate::types::builders::ChunkingConfigurationBuilder,
+) -> crate::types::builders::ChunkingConfigurationBuilder {
+    if builder.chunking_strategy.is_none() {
+        builder.chunking_strategy = "no value was set".parse::<crate::types::ChunkingStrategy>().ok()
     }
     builder
 }
@@ -706,9 +918,87 @@ pub(crate) fn document_correct_errors(mut builder: crate::types::builders::Docum
     builder
 }
 
+pub(crate) fn parsing_configuration_correct_errors(
+    mut builder: crate::types::builders::ParsingConfigurationBuilder,
+) -> crate::types::builders::ParsingConfigurationBuilder {
+    if builder.parsing_strategy.is_none() {
+        builder.parsing_strategy = "no value was set".parse::<crate::types::ParsingStrategy>().ok()
+    }
+    builder
+}
+
 pub(crate) fn tag_condition_correct_errors(mut builder: crate::types::builders::TagConditionBuilder) -> crate::types::builders::TagConditionBuilder {
     if builder.key.is_none() {
         builder.key = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn text_full_ai_prompt_edit_template_configuration_correct_errors(
+    mut builder: crate::types::builders::TextFullAiPromptEditTemplateConfigurationBuilder,
+) -> crate::types::builders::TextFullAiPromptEditTemplateConfigurationBuilder {
+    if builder.text.is_none() {
+        builder.text = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn bedrock_foundation_model_configuration_for_parsing_correct_errors(
+    mut builder: crate::types::builders::BedrockFoundationModelConfigurationForParsingBuilder,
+) -> crate::types::builders::BedrockFoundationModelConfigurationForParsingBuilder {
+    if builder.model_arn.is_none() {
+        builder.model_arn = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn fixed_size_chunking_configuration_correct_errors(
+    mut builder: crate::types::builders::FixedSizeChunkingConfigurationBuilder,
+) -> crate::types::builders::FixedSizeChunkingConfigurationBuilder {
+    if builder.max_tokens.is_none() {
+        builder.max_tokens = Some(Default::default())
+    }
+    if builder.overlap_percentage.is_none() {
+        builder.overlap_percentage = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn hierarchical_chunking_configuration_correct_errors(
+    mut builder: crate::types::builders::HierarchicalChunkingConfigurationBuilder,
+) -> crate::types::builders::HierarchicalChunkingConfigurationBuilder {
+    if builder.level_configurations.is_none() {
+        builder.level_configurations = Some(Default::default())
+    }
+    if builder.overlap_tokens.is_none() {
+        builder.overlap_tokens = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn semantic_chunking_configuration_correct_errors(
+    mut builder: crate::types::builders::SemanticChunkingConfigurationBuilder,
+) -> crate::types::builders::SemanticChunkingConfigurationBuilder {
+    if builder.max_tokens.is_none() {
+        builder.max_tokens = Some(Default::default())
+    }
+    if builder.buffer_size.is_none() {
+        builder.buffer_size = Some(Default::default())
+    }
+    if builder.breakpoint_percentile_threshold.is_none() {
+        builder.breakpoint_percentile_threshold = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn web_crawler_configuration_correct_errors(
+    mut builder: crate::types::builders::WebCrawlerConfigurationBuilder,
+) -> crate::types::builders::WebCrawlerConfigurationBuilder {
+    if builder.url_configuration.is_none() {
+        builder.url_configuration = {
+            let builder = crate::types::builders::UrlConfigurationBuilder::default();
+            Some(builder.build())
+        }
     }
     builder
 }
@@ -749,6 +1039,27 @@ pub(crate) fn generative_data_details_correct_errors(
     builder
 }
 
+pub(crate) fn intent_detected_data_details_correct_errors(
+    mut builder: crate::types::builders::IntentDetectedDataDetailsBuilder,
+) -> crate::types::builders::IntentDetectedDataDetailsBuilder {
+    if builder.intent.is_none() {
+        builder.intent = Some(Default::default())
+    }
+    if builder.intent_id.is_none() {
+        builder.intent_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn parsing_prompt_correct_errors(
+    mut builder: crate::types::builders::ParsingPromptBuilder,
+) -> crate::types::builders::ParsingPromptBuilder {
+    if builder.parsing_prompt_text.is_none() {
+        builder.parsing_prompt_text = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn source_content_data_details_correct_errors(
     mut builder: crate::types::builders::SourceContentDataDetailsBuilder,
 ) -> crate::types::builders::SourceContentDataDetailsBuilder {
@@ -769,6 +1080,15 @@ pub(crate) fn source_content_data_details_correct_errors(
             let builder = crate::types::builders::RankingDataBuilder::default();
             Some(builder.build())
         }
+    }
+    builder
+}
+
+pub(crate) fn hierarchical_chunking_level_configuration_correct_errors(
+    mut builder: crate::types::builders::HierarchicalChunkingLevelConfigurationBuilder,
+) -> crate::types::builders::HierarchicalChunkingLevelConfigurationBuilder {
+    if builder.max_tokens.is_none() {
+        builder.max_tokens = Some(Default::default())
     }
     builder
 }

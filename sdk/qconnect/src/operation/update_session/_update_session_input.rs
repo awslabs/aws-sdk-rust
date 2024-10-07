@@ -11,6 +11,8 @@ pub struct UpdateSessionInput {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>An object that can be used to specify Tag conditions.</p>
     pub tag_filter: ::std::option::Option<crate::types::TagFilter>,
+    /// <p>The configuration of the AI Agents (mapped by AI Agent Type to AI Agent version) that should be used by Amazon Q in Connect for this Session.</p>
+    pub ai_agent_configuration: ::std::option::Option<::std::collections::HashMap<crate::types::AiAgentType, crate::types::AiAgentConfigurationData>>,
 }
 impl UpdateSessionInput {
     /// <p>The identifier of the Amazon Q in Connect assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
@@ -29,6 +31,12 @@ impl UpdateSessionInput {
     pub fn tag_filter(&self) -> ::std::option::Option<&crate::types::TagFilter> {
         self.tag_filter.as_ref()
     }
+    /// <p>The configuration of the AI Agents (mapped by AI Agent Type to AI Agent version) that should be used by Amazon Q in Connect for this Session.</p>
+    pub fn ai_agent_configuration(
+        &self,
+    ) -> ::std::option::Option<&::std::collections::HashMap<crate::types::AiAgentType, crate::types::AiAgentConfigurationData>> {
+        self.ai_agent_configuration.as_ref()
+    }
 }
 impl UpdateSessionInput {
     /// Creates a new builder-style object to manufacture [`UpdateSessionInput`](crate::operation::update_session::UpdateSessionInput).
@@ -45,6 +53,8 @@ pub struct UpdateSessionInputBuilder {
     pub(crate) session_id: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) tag_filter: ::std::option::Option<crate::types::TagFilter>,
+    pub(crate) ai_agent_configuration:
+        ::std::option::Option<::std::collections::HashMap<crate::types::AiAgentType, crate::types::AiAgentConfigurationData>>,
 }
 impl UpdateSessionInputBuilder {
     /// <p>The identifier of the Amazon Q in Connect assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
@@ -105,6 +115,31 @@ impl UpdateSessionInputBuilder {
     pub fn get_tag_filter(&self) -> &::std::option::Option<crate::types::TagFilter> {
         &self.tag_filter
     }
+    /// Adds a key-value pair to `ai_agent_configuration`.
+    ///
+    /// To override the contents of this collection use [`set_ai_agent_configuration`](Self::set_ai_agent_configuration).
+    ///
+    /// <p>The configuration of the AI Agents (mapped by AI Agent Type to AI Agent version) that should be used by Amazon Q in Connect for this Session.</p>
+    pub fn ai_agent_configuration(mut self, k: crate::types::AiAgentType, v: crate::types::AiAgentConfigurationData) -> Self {
+        let mut hash_map = self.ai_agent_configuration.unwrap_or_default();
+        hash_map.insert(k, v);
+        self.ai_agent_configuration = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>The configuration of the AI Agents (mapped by AI Agent Type to AI Agent version) that should be used by Amazon Q in Connect for this Session.</p>
+    pub fn set_ai_agent_configuration(
+        mut self,
+        input: ::std::option::Option<::std::collections::HashMap<crate::types::AiAgentType, crate::types::AiAgentConfigurationData>>,
+    ) -> Self {
+        self.ai_agent_configuration = input;
+        self
+    }
+    /// <p>The configuration of the AI Agents (mapped by AI Agent Type to AI Agent version) that should be used by Amazon Q in Connect for this Session.</p>
+    pub fn get_ai_agent_configuration(
+        &self,
+    ) -> &::std::option::Option<::std::collections::HashMap<crate::types::AiAgentType, crate::types::AiAgentConfigurationData>> {
+        &self.ai_agent_configuration
+    }
     /// Consumes the builder and constructs a [`UpdateSessionInput`](crate::operation::update_session::UpdateSessionInput).
     pub fn build(
         self,
@@ -114,6 +149,7 @@ impl UpdateSessionInputBuilder {
             session_id: self.session_id,
             description: self.description,
             tag_filter: self.tag_filter,
+            ai_agent_configuration: self.ai_agent_configuration,
         })
     }
 }
