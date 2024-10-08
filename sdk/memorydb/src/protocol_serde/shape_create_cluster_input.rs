@@ -93,14 +93,17 @@ pub fn ser_create_cluster_input_input(
     if let Some(var_26) = &input.acl_name {
         object.key("ACLName").string(var_26.as_str());
     }
-    if let Some(var_27) = &input.engine_version {
-        object.key("EngineVersion").string(var_27.as_str());
+    if let Some(var_27) = &input.engine {
+        object.key("Engine").string(var_27.as_str());
     }
-    if let Some(var_28) = &input.auto_minor_version_upgrade {
-        object.key("AutoMinorVersionUpgrade").boolean(*var_28);
+    if let Some(var_28) = &input.engine_version {
+        object.key("EngineVersion").string(var_28.as_str());
     }
-    if let Some(var_29) = &input.data_tiering {
-        object.key("DataTiering").boolean(*var_29);
+    if let Some(var_29) = &input.auto_minor_version_upgrade {
+        object.key("AutoMinorVersionUpgrade").boolean(*var_29);
+    }
+    if let Some(var_30) = &input.data_tiering {
+        object.key("DataTiering").boolean(*var_30);
     }
     Ok(())
 }

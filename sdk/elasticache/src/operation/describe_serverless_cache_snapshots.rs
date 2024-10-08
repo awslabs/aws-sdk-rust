@@ -261,7 +261,7 @@ pub enum DescribeServerlessCacheSnapshotsError {
     InvalidParameterValueException(crate::types::error::InvalidParameterValueException),
     /// <p>The serverless cache was not found or does not exist.</p>
     ServerlessCacheNotFoundFault(crate::types::error::ServerlessCacheNotFoundFault),
-    /// <p>This serverless cache snapshot could not be found or does not exist. Available for Redis OSS and Serverless Memcached only.</p>
+    /// <p>This serverless cache snapshot could not be found or does not exist. Available for Valkey, Redis OSS and Serverless Memcached only.</p>
     ServerlessCacheSnapshotNotFoundFault(crate::types::error::ServerlessCacheSnapshotNotFoundFault),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

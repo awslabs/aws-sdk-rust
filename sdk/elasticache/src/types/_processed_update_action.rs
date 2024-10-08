@@ -10,7 +10,7 @@ pub struct ProcessedUpdateAction {
     pub cache_cluster_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique ID of the service update</p>
     pub service_update_name: ::std::option::Option<::std::string::String>,
-    /// <p>The status of the update action on the Redis OSS cluster</p>
+    /// <p>The status of the update action on the Valkey or Redis OSS cluster</p>
     pub update_action_status: ::std::option::Option<crate::types::UpdateActionStatus>,
 }
 impl ProcessedUpdateAction {
@@ -26,7 +26,7 @@ impl ProcessedUpdateAction {
     pub fn service_update_name(&self) -> ::std::option::Option<&str> {
         self.service_update_name.as_deref()
     }
-    /// <p>The status of the update action on the Redis OSS cluster</p>
+    /// <p>The status of the update action on the Valkey or Redis OSS cluster</p>
     pub fn update_action_status(&self) -> ::std::option::Option<&crate::types::UpdateActionStatus> {
         self.update_action_status.as_ref()
     }
@@ -90,17 +90,17 @@ impl ProcessedUpdateActionBuilder {
     pub fn get_service_update_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.service_update_name
     }
-    /// <p>The status of the update action on the Redis OSS cluster</p>
+    /// <p>The status of the update action on the Valkey or Redis OSS cluster</p>
     pub fn update_action_status(mut self, input: crate::types::UpdateActionStatus) -> Self {
         self.update_action_status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The status of the update action on the Redis OSS cluster</p>
+    /// <p>The status of the update action on the Valkey or Redis OSS cluster</p>
     pub fn set_update_action_status(mut self, input: ::std::option::Option<crate::types::UpdateActionStatus>) -> Self {
         self.update_action_status = input;
         self
     }
-    /// <p>The status of the update action on the Redis OSS cluster</p>
+    /// <p>The status of the update action on the Valkey or Redis OSS cluster</p>
     pub fn get_update_action_status(&self) -> &::std::option::Option<crate::types::UpdateActionStatus> {
         &self.update_action_status
     }

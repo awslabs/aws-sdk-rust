@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`kms_key_id(impl Into<String>)`](crate::operation::create_snapshot::builders::CreateSnapshotFluentBuilder::kms_key_id) / [`set_kms_key_id(Option<String>)`](crate::operation::create_snapshot::builders::CreateSnapshotFluentBuilder::set_kms_key_id):<br>required: **false**<br><p>The ID of the KMS key used to encrypt the snapshot.</p><br>
     ///   - [`tags(Tag)`](crate::operation::create_snapshot::builders::CreateSnapshotFluentBuilder::tags) / [`set_tags(Option<Vec::<Tag>>)`](crate::operation::create_snapshot::builders::CreateSnapshotFluentBuilder::set_tags):<br>required: **false**<br><p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p><br>
     /// - On success, responds with [`CreateSnapshotOutput`](crate::operation::create_snapshot::CreateSnapshotOutput) with field(s):
-    ///   - [`snapshot(Option<Snapshot>)`](crate::operation::create_snapshot::CreateSnapshotOutput::snapshot): <p>Represents a copy of an entire Redis OSS cluster as of the time when the snapshot was taken.</p>
+    ///   - [`snapshot(Option<Snapshot>)`](crate::operation::create_snapshot::CreateSnapshotOutput::snapshot): <p>Represents a copy of an entire Valkey or Redis OSS cluster as of the time when the snapshot was taken.</p>
     /// - On failure, responds with [`SdkError<CreateSnapshotError>`](crate::operation::create_snapshot::CreateSnapshotError)
     pub fn create_snapshot(&self) -> crate::operation::create_snapshot::builders::CreateSnapshotFluentBuilder {
         crate::operation::create_snapshot::builders::CreateSnapshotFluentBuilder::new(self.handle.clone())

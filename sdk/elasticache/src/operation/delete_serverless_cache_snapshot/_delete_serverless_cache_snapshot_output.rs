@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteServerlessCacheSnapshotOutput {
-    /// <p>The snapshot to be deleted. Available for Redis OSS and Serverless Memcached only.</p>
+    /// <p>The snapshot to be deleted. Available for Valkey, Redis OSS and Serverless Memcached only.</p>
     pub serverless_cache_snapshot: ::std::option::Option<crate::types::ServerlessCacheSnapshot>,
     _request_id: Option<String>,
 }
 impl DeleteServerlessCacheSnapshotOutput {
-    /// <p>The snapshot to be deleted. Available for Redis OSS and Serverless Memcached only.</p>
+    /// <p>The snapshot to be deleted. Available for Valkey, Redis OSS and Serverless Memcached only.</p>
     pub fn serverless_cache_snapshot(&self) -> ::std::option::Option<&crate::types::ServerlessCacheSnapshot> {
         self.serverless_cache_snapshot.as_ref()
     }
@@ -33,17 +33,17 @@ pub struct DeleteServerlessCacheSnapshotOutputBuilder {
     _request_id: Option<String>,
 }
 impl DeleteServerlessCacheSnapshotOutputBuilder {
-    /// <p>The snapshot to be deleted. Available for Redis OSS and Serverless Memcached only.</p>
+    /// <p>The snapshot to be deleted. Available for Valkey, Redis OSS and Serverless Memcached only.</p>
     pub fn serverless_cache_snapshot(mut self, input: crate::types::ServerlessCacheSnapshot) -> Self {
         self.serverless_cache_snapshot = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The snapshot to be deleted. Available for Redis OSS and Serverless Memcached only.</p>
+    /// <p>The snapshot to be deleted. Available for Valkey, Redis OSS and Serverless Memcached only.</p>
     pub fn set_serverless_cache_snapshot(mut self, input: ::std::option::Option<crate::types::ServerlessCacheSnapshot>) -> Self {
         self.serverless_cache_snapshot = input;
         self
     }
-    /// <p>The snapshot to be deleted. Available for Redis OSS and Serverless Memcached only.</p>
+    /// <p>The snapshot to be deleted. Available for Valkey, Redis OSS and Serverless Memcached only.</p>
     pub fn get_serverless_cache_snapshot(&self) -> &::std::option::Option<crate::types::ServerlessCacheSnapshot> {
         &self.serverless_cache_snapshot
     }

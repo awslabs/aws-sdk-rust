@@ -36,7 +36,7 @@ pub struct UpdateAction {
     pub cache_node_update_status: ::std::option::Option<::std::vec::Vec<crate::types::CacheNodeUpdateStatus>>,
     /// <p>The estimated length of time for the update to complete</p>
     pub estimated_update_time: ::std::option::Option<::std::string::String>,
-    /// <p>The Elasticache engine to which the update applies. Either Redis OSS or Memcached.</p>
+    /// <p>The Elasticache engine to which the update applies. Either Valkey, Redis OSS or Memcached.</p>
     pub engine: ::std::option::Option<::std::string::String>,
 }
 impl UpdateAction {
@@ -108,7 +108,7 @@ impl UpdateAction {
     pub fn estimated_update_time(&self) -> ::std::option::Option<&str> {
         self.estimated_update_time.as_deref()
     }
-    /// <p>The Elasticache engine to which the update applies. Either Redis OSS or Memcached.</p>
+    /// <p>The Elasticache engine to which the update applies. Either Valkey, Redis OSS or Memcached.</p>
     pub fn engine(&self) -> ::std::option::Option<&str> {
         self.engine.as_deref()
     }
@@ -379,17 +379,17 @@ impl UpdateActionBuilder {
     pub fn get_estimated_update_time(&self) -> &::std::option::Option<::std::string::String> {
         &self.estimated_update_time
     }
-    /// <p>The Elasticache engine to which the update applies. Either Redis OSS or Memcached.</p>
+    /// <p>The Elasticache engine to which the update applies. Either Valkey, Redis OSS or Memcached.</p>
     pub fn engine(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Elasticache engine to which the update applies. Either Redis OSS or Memcached.</p>
+    /// <p>The Elasticache engine to which the update applies. Either Valkey, Redis OSS or Memcached.</p>
     pub fn set_engine(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.engine = input;
         self
     }
-    /// <p>The Elasticache engine to which the update applies. Either Redis OSS or Memcached.</p>
+    /// <p>The Elasticache engine to which the update applies. Either Valkey, Redis OSS or Memcached.</p>
     pub fn get_engine(&self) -> &::std::option::Option<::std::string::String> {
         &self.engine
     }

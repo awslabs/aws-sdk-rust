@@ -3,23 +3,26 @@ pub fn ser_describe_engine_versions_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::describe_engine_versions::DescribeEngineVersionsInput,
 ) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.engine_version {
-        object.key("EngineVersion").string(var_1.as_str());
+    if let Some(var_1) = &input.engine {
+        object.key("Engine").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.parameter_group_family {
-        object.key("ParameterGroupFamily").string(var_2.as_str());
+    if let Some(var_2) = &input.engine_version {
+        object.key("EngineVersion").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.max_results {
+    if let Some(var_3) = &input.parameter_group_family {
+        object.key("ParameterGroupFamily").string(var_3.as_str());
+    }
+    if let Some(var_4) = &input.max_results {
         object.key("MaxResults").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_3).into()),
+            ::aws_smithy_types::Number::NegInt((*var_4).into()),
         );
     }
-    if let Some(var_4) = &input.next_token {
-        object.key("NextToken").string(var_4.as_str());
+    if let Some(var_5) = &input.next_token {
+        object.key("NextToken").string(var_5.as_str());
     }
-    if let Some(var_5) = &input.default_only {
-        object.key("DefaultOnly").boolean(*var_5);
+    if let Some(var_6) = &input.default_only {
+        object.key("DefaultOnly").boolean(*var_6);
     }
     Ok(())
 }

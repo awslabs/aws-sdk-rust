@@ -170,17 +170,17 @@ impl CacheClusterDeletedFluentBuilder {
     pub fn get_show_cache_node_info(&self) -> &::std::option::Option<bool> {
         self.inner.get_show_cache_node_info()
     }
-    /// <p>An optional flag that can be included in the <code>DescribeCacheCluster</code> request to show only nodes (API/CLI: clusters) that are not members of a replication group. In practice, this mean Memcached and single node Redis OSS clusters.</p>
+    /// <p>An optional flag that can be included in the <code>DescribeCacheCluster</code> request to show only nodes (API/CLI: clusters) that are not members of a replication group. In practice, this means Memcached and single node Valkey or Redis OSS clusters.</p>
     pub fn show_cache_clusters_not_in_replication_groups(mut self, input: bool) -> Self {
         self.inner = self.inner.show_cache_clusters_not_in_replication_groups(input);
         self
     }
-    /// <p>An optional flag that can be included in the <code>DescribeCacheCluster</code> request to show only nodes (API/CLI: clusters) that are not members of a replication group. In practice, this mean Memcached and single node Redis OSS clusters.</p>
+    /// <p>An optional flag that can be included in the <code>DescribeCacheCluster</code> request to show only nodes (API/CLI: clusters) that are not members of a replication group. In practice, this means Memcached and single node Valkey or Redis OSS clusters.</p>
     pub fn set_show_cache_clusters_not_in_replication_groups(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_show_cache_clusters_not_in_replication_groups(input);
         self
     }
-    /// <p>An optional flag that can be included in the <code>DescribeCacheCluster</code> request to show only nodes (API/CLI: clusters) that are not members of a replication group. In practice, this mean Memcached and single node Redis OSS clusters.</p>
+    /// <p>An optional flag that can be included in the <code>DescribeCacheCluster</code> request to show only nodes (API/CLI: clusters) that are not members of a replication group. In practice, this means Memcached and single node Valkey or Redis OSS clusters.</p>
     pub fn get_show_cache_clusters_not_in_replication_groups(&self) -> &::std::option::Option<bool> {
         self.inner.get_show_cache_clusters_not_in_replication_groups()
     }

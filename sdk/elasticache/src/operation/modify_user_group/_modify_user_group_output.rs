@@ -17,7 +17,7 @@ pub struct ModifyUserGroupOutput {
     pub pending_changes: ::std::option::Option<crate::types::UserGroupPendingChanges>,
     /// <p>A list of replication groups that the user group can access.</p>
     pub replication_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>Indicates which serverless caches the specified user group is associated with. Available for Redis OSS and Serverless Memcached only.</p>
+    /// <p>Indicates which serverless caches the specified user group is associated with. Available for Valkey, Redis OSS and Serverless Memcached only.</p>
     pub serverless_caches: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The Amazon Resource Name (ARN) of the user group.</p>
     pub arn: ::std::option::Option<::std::string::String>,
@@ -56,7 +56,7 @@ impl ModifyUserGroupOutput {
     pub fn replication_groups(&self) -> &[::std::string::String] {
         self.replication_groups.as_deref().unwrap_or_default()
     }
-    /// <p>Indicates which serverless caches the specified user group is associated with. Available for Redis OSS and Serverless Memcached only.</p>
+    /// <p>Indicates which serverless caches the specified user group is associated with. Available for Valkey, Redis OSS and Serverless Memcached only.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.serverless_caches.is_none()`.
     pub fn serverless_caches(&self) -> &[::std::string::String] {
@@ -209,19 +209,19 @@ impl ModifyUserGroupOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_serverless_caches`](Self::set_serverless_caches).
     ///
-    /// <p>Indicates which serverless caches the specified user group is associated with. Available for Redis OSS and Serverless Memcached only.</p>
+    /// <p>Indicates which serverless caches the specified user group is associated with. Available for Valkey, Redis OSS and Serverless Memcached only.</p>
     pub fn serverless_caches(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.serverless_caches.unwrap_or_default();
         v.push(input.into());
         self.serverless_caches = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Indicates which serverless caches the specified user group is associated with. Available for Redis OSS and Serverless Memcached only.</p>
+    /// <p>Indicates which serverless caches the specified user group is associated with. Available for Valkey, Redis OSS and Serverless Memcached only.</p>
     pub fn set_serverless_caches(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.serverless_caches = input;
         self
     }
-    /// <p>Indicates which serverless caches the specified user group is associated with. Available for Redis OSS and Serverless Memcached only.</p>
+    /// <p>Indicates which serverless caches the specified user group is associated with. Available for Valkey, Redis OSS and Serverless Memcached only.</p>
     pub fn get_serverless_caches(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.serverless_caches
     }

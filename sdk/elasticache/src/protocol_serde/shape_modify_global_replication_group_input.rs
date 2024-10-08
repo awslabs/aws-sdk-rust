@@ -21,24 +21,29 @@ pub fn ser_modify_global_replication_group_input_input_input(
         scope_5.string(var_6);
     }
     #[allow(unused_mut)]
-    let mut scope_7 = writer.prefix("EngineVersion");
-    if let Some(var_8) = &input.engine_version {
+    let mut scope_7 = writer.prefix("Engine");
+    if let Some(var_8) = &input.engine {
         scope_7.string(var_8);
     }
     #[allow(unused_mut)]
-    let mut scope_9 = writer.prefix("CacheParameterGroupName");
-    if let Some(var_10) = &input.cache_parameter_group_name {
+    let mut scope_9 = writer.prefix("EngineVersion");
+    if let Some(var_10) = &input.engine_version {
         scope_9.string(var_10);
     }
     #[allow(unused_mut)]
-    let mut scope_11 = writer.prefix("GlobalReplicationGroupDescription");
-    if let Some(var_12) = &input.global_replication_group_description {
+    let mut scope_11 = writer.prefix("CacheParameterGroupName");
+    if let Some(var_12) = &input.cache_parameter_group_name {
         scope_11.string(var_12);
     }
     #[allow(unused_mut)]
-    let mut scope_13 = writer.prefix("AutomaticFailoverEnabled");
-    if let Some(var_14) = &input.automatic_failover_enabled {
-        scope_13.boolean(*var_14);
+    let mut scope_13 = writer.prefix("GlobalReplicationGroupDescription");
+    if let Some(var_14) = &input.global_replication_group_description {
+        scope_13.string(var_14);
+    }
+    #[allow(unused_mut)]
+    let mut scope_15 = writer.prefix("AutomaticFailoverEnabled");
+    if let Some(var_16) = &input.automatic_failover_enabled {
+        scope_15.boolean(*var_16);
     }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))

@@ -41,6 +41,8 @@ pub struct UpdateClusterInput {
     pub snapshot_retention_limit: ::std::option::Option<i32>,
     /// <p>A valid node type that you want to scale this cluster up or down to.</p>
     pub node_type: ::std::option::Option<::std::string::String>,
+    /// <p>The name of the engine to be used for the nodes in this cluster. The value must be set to either Redis or Valkey.</p>
+    pub engine: ::std::option::Option<::std::string::String>,
     /// <p>The upgraded version of the engine to be run on the nodes. You can upgrade to a newer engine version, but you cannot downgrade to an earlier engine version. If you want to use an earlier engine version, you must delete the existing cluster and create it anew with the earlier engine version.</p>
     pub engine_version: ::std::option::Option<::std::string::String>,
     /// <p>The number of replicas that will reside in each shard</p>
@@ -111,6 +113,10 @@ impl UpdateClusterInput {
     pub fn node_type(&self) -> ::std::option::Option<&str> {
         self.node_type.as_deref()
     }
+    /// <p>The name of the engine to be used for the nodes in this cluster. The value must be set to either Redis or Valkey.</p>
+    pub fn engine(&self) -> ::std::option::Option<&str> {
+        self.engine.as_deref()
+    }
     /// <p>The upgraded version of the engine to be run on the nodes. You can upgrade to a newer engine version, but you cannot downgrade to an earlier engine version. If you want to use an earlier engine version, you must delete the existing cluster and create it anew with the earlier engine version.</p>
     pub fn engine_version(&self) -> ::std::option::Option<&str> {
         self.engine_version.as_deref()
@@ -149,6 +155,7 @@ pub struct UpdateClusterInputBuilder {
     pub(crate) snapshot_window: ::std::option::Option<::std::string::String>,
     pub(crate) snapshot_retention_limit: ::std::option::Option<i32>,
     pub(crate) node_type: ::std::option::Option<::std::string::String>,
+    pub(crate) engine: ::std::option::Option<::std::string::String>,
     pub(crate) engine_version: ::std::option::Option<::std::string::String>,
     pub(crate) replica_configuration: ::std::option::Option<crate::types::ReplicaConfigurationRequest>,
     pub(crate) shard_configuration: ::std::option::Option<crate::types::ShardConfigurationRequest>,
@@ -356,6 +363,20 @@ impl UpdateClusterInputBuilder {
     pub fn get_node_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.node_type
     }
+    /// <p>The name of the engine to be used for the nodes in this cluster. The value must be set to either Redis or Valkey.</p>
+    pub fn engine(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.engine = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of the engine to be used for the nodes in this cluster. The value must be set to either Redis or Valkey.</p>
+    pub fn set_engine(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.engine = input;
+        self
+    }
+    /// <p>The name of the engine to be used for the nodes in this cluster. The value must be set to either Redis or Valkey.</p>
+    pub fn get_engine(&self) -> &::std::option::Option<::std::string::String> {
+        &self.engine
+    }
     /// <p>The upgraded version of the engine to be run on the nodes. You can upgrade to a newer engine version, but you cannot downgrade to an earlier engine version. If you want to use an earlier engine version, you must delete the existing cluster and create it anew with the earlier engine version.</p>
     pub fn engine_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine_version = ::std::option::Option::Some(input.into());
@@ -427,6 +448,7 @@ impl UpdateClusterInputBuilder {
             snapshot_window: self.snapshot_window,
             snapshot_retention_limit: self.snapshot_retention_limit,
             node_type: self.node_type,
+            engine: self.engine,
             engine_version: self.engine_version,
             replica_configuration: self.replica_configuration,
             shard_configuration: self.shard_configuration,

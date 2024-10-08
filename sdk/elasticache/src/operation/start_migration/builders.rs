@@ -127,17 +127,17 @@ impl StartMigrationFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_customer_node_endpoint_list`](Self::set_customer_node_endpoint_list).
     ///
-    /// <p>List of endpoints from which data should be migrated. For Redis OSS (cluster mode disabled), list should have only one element.</p>
+    /// <p>List of endpoints from which data should be migrated. For Valkey or Redis OSS (cluster mode disabled), the list should have only one element.</p>
     pub fn customer_node_endpoint_list(mut self, input: crate::types::CustomerNodeEndpoint) -> Self {
         self.inner = self.inner.customer_node_endpoint_list(input);
         self
     }
-    /// <p>List of endpoints from which data should be migrated. For Redis OSS (cluster mode disabled), list should have only one element.</p>
+    /// <p>List of endpoints from which data should be migrated. For Valkey or Redis OSS (cluster mode disabled), the list should have only one element.</p>
     pub fn set_customer_node_endpoint_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CustomerNodeEndpoint>>) -> Self {
         self.inner = self.inner.set_customer_node_endpoint_list(input);
         self
     }
-    /// <p>List of endpoints from which data should be migrated. For Redis OSS (cluster mode disabled), list should have only one element.</p>
+    /// <p>List of endpoints from which data should be migrated. For Valkey or Redis OSS (cluster mode disabled), the list should have only one element.</p>
     pub fn get_customer_node_endpoint_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomerNodeEndpoint>> {
         self.inner.get_customer_node_endpoint_list()
     }

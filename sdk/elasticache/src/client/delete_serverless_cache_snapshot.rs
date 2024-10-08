@@ -3,9 +3,9 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteServerlessCacheSnapshot`](crate::operation::delete_serverless_cache_snapshot::builders::DeleteServerlessCacheSnapshotFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`serverless_cache_snapshot_name(impl Into<String>)`](crate::operation::delete_serverless_cache_snapshot::builders::DeleteServerlessCacheSnapshotFluentBuilder::serverless_cache_snapshot_name) / [`set_serverless_cache_snapshot_name(Option<String>)`](crate::operation::delete_serverless_cache_snapshot::builders::DeleteServerlessCacheSnapshotFluentBuilder::set_serverless_cache_snapshot_name):<br>required: **true**<br><p>Idenfitier of the snapshot to be deleted. Available for Redis OSS and Serverless Memcached only.</p><br>
+    ///   - [`serverless_cache_snapshot_name(impl Into<String>)`](crate::operation::delete_serverless_cache_snapshot::builders::DeleteServerlessCacheSnapshotFluentBuilder::serverless_cache_snapshot_name) / [`set_serverless_cache_snapshot_name(Option<String>)`](crate::operation::delete_serverless_cache_snapshot::builders::DeleteServerlessCacheSnapshotFluentBuilder::set_serverless_cache_snapshot_name):<br>required: **true**<br><p>Idenfitier of the snapshot to be deleted. Available for Valkey, Redis OSS and Serverless Memcached only.</p><br>
     /// - On success, responds with [`DeleteServerlessCacheSnapshotOutput`](crate::operation::delete_serverless_cache_snapshot::DeleteServerlessCacheSnapshotOutput) with field(s):
-    ///   - [`serverless_cache_snapshot(Option<ServerlessCacheSnapshot>)`](crate::operation::delete_serverless_cache_snapshot::DeleteServerlessCacheSnapshotOutput::serverless_cache_snapshot): <p>The snapshot to be deleted. Available for Redis OSS and Serverless Memcached only.</p>
+    ///   - [`serverless_cache_snapshot(Option<ServerlessCacheSnapshot>)`](crate::operation::delete_serverless_cache_snapshot::DeleteServerlessCacheSnapshotOutput::serverless_cache_snapshot): <p>The snapshot to be deleted. Available for Valkey, Redis OSS and Serverless Memcached only.</p>
     /// - On failure, responds with [`SdkError<DeleteServerlessCacheSnapshotError>`](crate::operation::delete_serverless_cache_snapshot::DeleteServerlessCacheSnapshotError)
     pub fn delete_serverless_cache_snapshot(
         &self,

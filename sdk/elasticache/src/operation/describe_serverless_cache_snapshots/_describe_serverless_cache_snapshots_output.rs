@@ -3,18 +3,18 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeServerlessCacheSnapshotsOutput {
-    /// <p>An optional marker returned from a prior request to support pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by max-results. Available for Redis OSS and Serverless Memcached only.</p>
+    /// <p>An optional marker returned from a prior request to support pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by max-results. Available for Valkey, Redis OSS and Serverless Memcached only.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
-    /// <p>The serverless caches snapshots associated with a given description request. Available for Redis OSS and Serverless Memcached only.</p>
+    /// <p>The serverless caches snapshots associated with a given description request. Available for Valkey, Redis OSS and Serverless Memcached only.</p>
     pub serverless_cache_snapshots: ::std::option::Option<::std::vec::Vec<crate::types::ServerlessCacheSnapshot>>,
     _request_id: Option<String>,
 }
 impl DescribeServerlessCacheSnapshotsOutput {
-    /// <p>An optional marker returned from a prior request to support pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by max-results. Available for Redis OSS and Serverless Memcached only.</p>
+    /// <p>An optional marker returned from a prior request to support pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by max-results. Available for Valkey, Redis OSS and Serverless Memcached only.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The serverless caches snapshots associated with a given description request. Available for Redis OSS and Serverless Memcached only.</p>
+    /// <p>The serverless caches snapshots associated with a given description request. Available for Valkey, Redis OSS and Serverless Memcached only.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.serverless_cache_snapshots.is_none()`.
     pub fn serverless_cache_snapshots(&self) -> &[crate::types::ServerlessCacheSnapshot] {
@@ -42,17 +42,17 @@ pub struct DescribeServerlessCacheSnapshotsOutputBuilder {
     _request_id: Option<String>,
 }
 impl DescribeServerlessCacheSnapshotsOutputBuilder {
-    /// <p>An optional marker returned from a prior request to support pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by max-results. Available for Redis OSS and Serverless Memcached only.</p>
+    /// <p>An optional marker returned from a prior request to support pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by max-results. Available for Valkey, Redis OSS and Serverless Memcached only.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>An optional marker returned from a prior request to support pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by max-results. Available for Redis OSS and Serverless Memcached only.</p>
+    /// <p>An optional marker returned from a prior request to support pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by max-results. Available for Valkey, Redis OSS and Serverless Memcached only.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>An optional marker returned from a prior request to support pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by max-results. Available for Redis OSS and Serverless Memcached only.</p>
+    /// <p>An optional marker returned from a prior request to support pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by max-results. Available for Valkey, Redis OSS and Serverless Memcached only.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
@@ -60,19 +60,19 @@ impl DescribeServerlessCacheSnapshotsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_serverless_cache_snapshots`](Self::set_serverless_cache_snapshots).
     ///
-    /// <p>The serverless caches snapshots associated with a given description request. Available for Redis OSS and Serverless Memcached only.</p>
+    /// <p>The serverless caches snapshots associated with a given description request. Available for Valkey, Redis OSS and Serverless Memcached only.</p>
     pub fn serverless_cache_snapshots(mut self, input: crate::types::ServerlessCacheSnapshot) -> Self {
         let mut v = self.serverless_cache_snapshots.unwrap_or_default();
         v.push(input);
         self.serverless_cache_snapshots = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The serverless caches snapshots associated with a given description request. Available for Redis OSS and Serverless Memcached only.</p>
+    /// <p>The serverless caches snapshots associated with a given description request. Available for Valkey, Redis OSS and Serverless Memcached only.</p>
     pub fn set_serverless_cache_snapshots(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ServerlessCacheSnapshot>>) -> Self {
         self.serverless_cache_snapshots = input;
         self
     }
-    /// <p>The serverless caches snapshots associated with a given description request. Available for Redis OSS and Serverless Memcached only.</p>
+    /// <p>The serverless caches snapshots associated with a given description request. Available for Valkey, Redis OSS and Serverless Memcached only.</p>
     pub fn get_serverless_cache_snapshots(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ServerlessCacheSnapshot>> {
         &self.serverless_cache_snapshots
     }

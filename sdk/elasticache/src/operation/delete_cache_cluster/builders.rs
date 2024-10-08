@@ -26,9 +26,9 @@ impl crate::operation::delete_cache_cluster::builders::DeleteCacheClusterInputBu
 /// <p>This operation is not valid for:</p>
 /// <ul>
 /// <li>
-/// <p>Redis OSS (cluster mode enabled) clusters</p></li>
+/// <p>Valkey or Redis OSS (cluster mode enabled) clusters</p></li>
 /// <li>
-/// <p>Redis OSS (cluster mode disabled) clusters</p></li>
+/// <p>Valkey or Redis OSS (cluster mode disabled) clusters</p></li>
 /// <li>
 /// <p>A cluster that is the last read replica of a replication group</p></li>
 /// <li>
@@ -36,7 +36,7 @@ impl crate::operation::delete_cache_cluster::builders::DeleteCacheClusterInputBu
 /// <li>
 /// <p>A node group (shard) that has Multi-AZ mode enabled</p></li>
 /// <li>
-/// <p>A cluster from a Redis OSS (cluster mode enabled) replication group</p></li>
+/// <p>A cluster from a Valkey or Redis OSS (cluster mode enabled) replication group</p></li>
 /// <li>
 /// <p>A cluster that is not in the <code>available</code> state</p></li>
 /// </ul>

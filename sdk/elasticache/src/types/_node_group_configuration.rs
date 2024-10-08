@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NodeGroupConfiguration {
-    /// <p>Either the ElastiCache (Redis OSS) supplied 4-digit id or a user supplied id for the node group these configuration values apply to.</p>
+    /// <p>Either the ElastiCache supplied 4-digit id or a user supplied id for the node group these configuration values apply to.</p>
     pub node_group_id: ::std::option::Option<::std::string::String>,
     /// <p>A string that specifies the keyspace for a particular node group. Keyspaces range from 0 to 16,383. The string is in the format <code>startkey-endkey</code>.</p>
     /// <p>Example: <code>"0-3999"</code></p>
@@ -21,7 +21,7 @@ pub struct NodeGroupConfiguration {
     pub replica_outpost_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl NodeGroupConfiguration {
-    /// <p>Either the ElastiCache (Redis OSS) supplied 4-digit id or a user supplied id for the node group these configuration values apply to.</p>
+    /// <p>Either the ElastiCache supplied 4-digit id or a user supplied id for the node group these configuration values apply to.</p>
     pub fn node_group_id(&self) -> ::std::option::Option<&str> {
         self.node_group_id.as_deref()
     }
@@ -75,17 +75,17 @@ pub struct NodeGroupConfigurationBuilder {
     pub(crate) replica_outpost_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl NodeGroupConfigurationBuilder {
-    /// <p>Either the ElastiCache (Redis OSS) supplied 4-digit id or a user supplied id for the node group these configuration values apply to.</p>
+    /// <p>Either the ElastiCache supplied 4-digit id or a user supplied id for the node group these configuration values apply to.</p>
     pub fn node_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.node_group_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Either the ElastiCache (Redis OSS) supplied 4-digit id or a user supplied id for the node group these configuration values apply to.</p>
+    /// <p>Either the ElastiCache supplied 4-digit id or a user supplied id for the node group these configuration values apply to.</p>
     pub fn set_node_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.node_group_id = input;
         self
     }
-    /// <p>Either the ElastiCache (Redis OSS) supplied 4-digit id or a user supplied id for the node group these configuration values apply to.</p>
+    /// <p>Either the ElastiCache supplied 4-digit id or a user supplied id for the node group these configuration values apply to.</p>
     pub fn get_node_group_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.node_group_id
     }

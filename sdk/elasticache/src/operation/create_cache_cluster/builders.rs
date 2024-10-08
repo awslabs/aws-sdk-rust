@@ -22,8 +22,8 @@ impl crate::operation::create_cache_cluster::builders::CreateCacheClusterInputBu
 }
 /// Fluent builder constructing a request to `CreateCacheCluster`.
 ///
-/// <p>Creates a cluster. All nodes in the cluster run the same protocol-compliant cache engine software, either Memcached or Redis OSS.</p>
-/// <p>This operation is not supported for Redis OSS (cluster mode enabled) clusters.</p>
+/// <p>Creates a cluster. All nodes in the cluster run the same protocol-compliant cache engine software, either Memcached, Valkey or Redis OSS.</p>
+/// <p>This operation is not supported for Valkey or Redis OSS (cluster mode enabled) clusters.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateCacheClusterFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -251,21 +251,21 @@ impl CreateCacheClusterFluentBuilder {
         self.inner.get_preferred_availability_zones()
     }
     /// <p>The initial number of cache nodes that the cluster has.</p>
-    /// <p>For clusters running Redis OSS, this value must be 1. For clusters running Memcached, this value must be between 1 and 40.</p>
+    /// <p>For clusters running Valkey or Redis OSS, this value must be 1. For clusters running Memcached, this value must be between 1 and 40.</p>
     /// <p>If you need more than 40 nodes for your Memcached cluster, please fill out the ElastiCache Limit Increase Request form at <a href="http://aws.amazon.com/contact-us/elasticache-node-limit-request/">http://aws.amazon.com/contact-us/elasticache-node-limit-request/</a>.</p>
     pub fn num_cache_nodes(mut self, input: i32) -> Self {
         self.inner = self.inner.num_cache_nodes(input);
         self
     }
     /// <p>The initial number of cache nodes that the cluster has.</p>
-    /// <p>For clusters running Redis OSS, this value must be 1. For clusters running Memcached, this value must be between 1 and 40.</p>
+    /// <p>For clusters running Valkey or Redis OSS, this value must be 1. For clusters running Memcached, this value must be between 1 and 40.</p>
     /// <p>If you need more than 40 nodes for your Memcached cluster, please fill out the ElastiCache Limit Increase Request form at <a href="http://aws.amazon.com/contact-us/elasticache-node-limit-request/">http://aws.amazon.com/contact-us/elasticache-node-limit-request/</a>.</p>
     pub fn set_num_cache_nodes(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_num_cache_nodes(input);
         self
     }
     /// <p>The initial number of cache nodes that the cluster has.</p>
-    /// <p>For clusters running Redis OSS, this value must be 1. For clusters running Memcached, this value must be between 1 and 40.</p>
+    /// <p>For clusters running Valkey or Redis OSS, this value must be 1. For clusters running Memcached, this value must be between 1 and 40.</p>
     /// <p>If you need more than 40 nodes for your Memcached cluster, please fill out the ElastiCache Limit Increase Request form at <a href="http://aws.amazon.com/contact-us/elasticache-node-limit-request/">http://aws.amazon.com/contact-us/elasticache-node-limit-request/</a>.</p>
     pub fn get_num_cache_nodes(&self) -> &::std::option::Option<i32> {
         self.inner.get_num_cache_nodes()
@@ -322,11 +322,11 @@ impl CreateCacheClusterFluentBuilder {
     /// <li>
     /// <p>All current generation instance types are created in Amazon VPC by default.</p></li>
     /// <li>
-    /// <p>Redis OSS append-only files (AOF) are not supported for T1 or T2 instances.</p></li>
+    /// <p>Valkey or Redis OSS append-only files (AOF) are not supported for T1 or T2 instances.</p></li>
     /// <li>
-    /// <p>Redis OSS Multi-AZ with automatic failover is not supported on T1 instances.</p></li>
+    /// <p>Valkey or Redis OSS Multi-AZ with automatic failover is not supported on T1 instances.</p></li>
     /// <li>
-    /// <p>Redis OSS configuration variables <code>appendonly</code> and <code>appendfsync</code> are not supported on Redis OSS version 2.8.22 and later.</p></li>
+    /// <p>The configuration variables <code>appendonly</code> and <code>appendfsync</code> are not supported on Valkey, or on Redis OSS version 2.8.22 and later.</p></li>
     /// </ul>
     pub fn cache_node_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cache_node_type(input.into());
@@ -384,11 +384,11 @@ impl CreateCacheClusterFluentBuilder {
     /// <li>
     /// <p>All current generation instance types are created in Amazon VPC by default.</p></li>
     /// <li>
-    /// <p>Redis OSS append-only files (AOF) are not supported for T1 or T2 instances.</p></li>
+    /// <p>Valkey or Redis OSS append-only files (AOF) are not supported for T1 or T2 instances.</p></li>
     /// <li>
-    /// <p>Redis OSS Multi-AZ with automatic failover is not supported on T1 instances.</p></li>
+    /// <p>Valkey or Redis OSS Multi-AZ with automatic failover is not supported on T1 instances.</p></li>
     /// <li>
-    /// <p>Redis OSS configuration variables <code>appendonly</code> and <code>appendfsync</code> are not supported on Redis OSS version 2.8.22 and later.</p></li>
+    /// <p>The configuration variables <code>appendonly</code> and <code>appendfsync</code> are not supported on Valkey, or on Redis OSS version 2.8.22 and later.</p></li>
     /// </ul>
     pub fn set_cache_node_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cache_node_type(input);
@@ -446,11 +446,11 @@ impl CreateCacheClusterFluentBuilder {
     /// <li>
     /// <p>All current generation instance types are created in Amazon VPC by default.</p></li>
     /// <li>
-    /// <p>Redis OSS append-only files (AOF) are not supported for T1 or T2 instances.</p></li>
+    /// <p>Valkey or Redis OSS append-only files (AOF) are not supported for T1 or T2 instances.</p></li>
     /// <li>
-    /// <p>Redis OSS Multi-AZ with automatic failover is not supported on T1 instances.</p></li>
+    /// <p>Valkey or Redis OSS Multi-AZ with automatic failover is not supported on T1 instances.</p></li>
     /// <li>
-    /// <p>Redis OSS configuration variables <code>appendonly</code> and <code>appendfsync</code> are not supported on Redis OSS version 2.8.22 and later.</p></li>
+    /// <p>The configuration variables <code>appendonly</code> and <code>appendfsync</code> are not supported on Valkey, or on Redis OSS version 2.8.22 and later.</p></li>
     /// </ul>
     pub fn get_cache_node_type(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_cache_node_type()
@@ -594,7 +594,7 @@ impl CreateCacheClusterFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_snapshot_arns`](Self::set_snapshot_arns).
     ///
-    /// <p>A single-element string list containing an Amazon Resource Name (ARN) that uniquely identifies a Redis OSS RDB snapshot file stored in Amazon S3. The snapshot file is used to populate the node group (shard). The Amazon S3 object name in the ARN cannot contain any commas.</p><note>
+    /// <p>A single-element string list containing an Amazon Resource Name (ARN) that uniquely identifies a Valkey or Redis OSS RDB snapshot file stored in Amazon S3. The snapshot file is used to populate the node group (shard). The Amazon S3 object name in the ARN cannot contain any commas.</p><note>
     /// <p>This parameter is only valid if the <code>Engine</code> parameter is <code>redis</code>.</p>
     /// </note>
     /// <p>Example of an Amazon S3 ARN: <code>arn:aws:s3:::my_bucket/snapshot1.rdb</code></p>
@@ -602,7 +602,7 @@ impl CreateCacheClusterFluentBuilder {
         self.inner = self.inner.snapshot_arns(input.into());
         self
     }
-    /// <p>A single-element string list containing an Amazon Resource Name (ARN) that uniquely identifies a Redis OSS RDB snapshot file stored in Amazon S3. The snapshot file is used to populate the node group (shard). The Amazon S3 object name in the ARN cannot contain any commas.</p><note>
+    /// <p>A single-element string list containing an Amazon Resource Name (ARN) that uniquely identifies a Valkey or Redis OSS RDB snapshot file stored in Amazon S3. The snapshot file is used to populate the node group (shard). The Amazon S3 object name in the ARN cannot contain any commas.</p><note>
     /// <p>This parameter is only valid if the <code>Engine</code> parameter is <code>redis</code>.</p>
     /// </note>
     /// <p>Example of an Amazon S3 ARN: <code>arn:aws:s3:::my_bucket/snapshot1.rdb</code></p>
@@ -610,28 +610,28 @@ impl CreateCacheClusterFluentBuilder {
         self.inner = self.inner.set_snapshot_arns(input);
         self
     }
-    /// <p>A single-element string list containing an Amazon Resource Name (ARN) that uniquely identifies a Redis OSS RDB snapshot file stored in Amazon S3. The snapshot file is used to populate the node group (shard). The Amazon S3 object name in the ARN cannot contain any commas.</p><note>
+    /// <p>A single-element string list containing an Amazon Resource Name (ARN) that uniquely identifies a Valkey or Redis OSS RDB snapshot file stored in Amazon S3. The snapshot file is used to populate the node group (shard). The Amazon S3 object name in the ARN cannot contain any commas.</p><note>
     /// <p>This parameter is only valid if the <code>Engine</code> parameter is <code>redis</code>.</p>
     /// </note>
     /// <p>Example of an Amazon S3 ARN: <code>arn:aws:s3:::my_bucket/snapshot1.rdb</code></p>
     pub fn get_snapshot_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_snapshot_arns()
     }
-    /// <p>The name of a Redis OSS snapshot from which to restore data into the new node group (shard). The snapshot status changes to <code>restoring</code> while the new node group (shard) is being created.</p><note>
+    /// <p>The name of a Valkey or Redis OSS snapshot from which to restore data into the new node group (shard). The snapshot status changes to <code>restoring</code> while the new node group (shard) is being created.</p><note>
     /// <p>This parameter is only valid if the <code>Engine</code> parameter is <code>redis</code>.</p>
     /// </note>
     pub fn snapshot_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.snapshot_name(input.into());
         self
     }
-    /// <p>The name of a Redis OSS snapshot from which to restore data into the new node group (shard). The snapshot status changes to <code>restoring</code> while the new node group (shard) is being created.</p><note>
+    /// <p>The name of a Valkey or Redis OSS snapshot from which to restore data into the new node group (shard). The snapshot status changes to <code>restoring</code> while the new node group (shard) is being created.</p><note>
     /// <p>This parameter is only valid if the <code>Engine</code> parameter is <code>redis</code>.</p>
     /// </note>
     pub fn set_snapshot_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_snapshot_name(input);
         self
     }
-    /// <p>The name of a Redis OSS snapshot from which to restore data into the new node group (shard). The snapshot status changes to <code>restoring</code> while the new node group (shard) is being created.</p><note>
+    /// <p>The name of a Valkey or Redis OSS snapshot from which to restore data into the new node group (shard). The snapshot status changes to <code>restoring</code> while the new node group (shard) is being created.</p><note>
     /// <p>This parameter is only valid if the <code>Engine</code> parameter is <code>redis</code>.</p>
     /// </note>
     pub fn get_snapshot_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -685,17 +685,17 @@ impl CreateCacheClusterFluentBuilder {
     pub fn get_notification_topic_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_notification_topic_arn()
     }
-    /// <p>&nbsp;If you are running Redis OSS engine version 6.0 or later, set this parameter to yes if you want to opt-in to the next auto minor version upgrade campaign. This parameter is disabled for previous versions.&nbsp;</p>
+    /// <p>&nbsp;If you are running Valkey 7.2 and above or Redis OSS engine version 6.0 and above, set this parameter to yes to opt-in to the next auto minor version upgrade campaign. This parameter is disabled for previous versions.&nbsp;</p>
     pub fn auto_minor_version_upgrade(mut self, input: bool) -> Self {
         self.inner = self.inner.auto_minor_version_upgrade(input);
         self
     }
-    /// <p>&nbsp;If you are running Redis OSS engine version 6.0 or later, set this parameter to yes if you want to opt-in to the next auto minor version upgrade campaign. This parameter is disabled for previous versions.&nbsp;</p>
+    /// <p>&nbsp;If you are running Valkey 7.2 and above or Redis OSS engine version 6.0 and above, set this parameter to yes to opt-in to the next auto minor version upgrade campaign. This parameter is disabled for previous versions.&nbsp;</p>
     pub fn set_auto_minor_version_upgrade(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_auto_minor_version_upgrade(input);
         self
     }
-    /// <p>&nbsp;If you are running Redis OSS engine version 6.0 or later, set this parameter to yes if you want to opt-in to the next auto minor version upgrade campaign. This parameter is disabled for previous versions.&nbsp;</p>
+    /// <p>&nbsp;If you are running Valkey 7.2 and above or Redis OSS engine version 6.0 and above, set this parameter to yes to opt-in to the next auto minor version upgrade campaign. This parameter is disabled for previous versions.&nbsp;</p>
     pub fn get_auto_minor_version_upgrade(&self) -> &::std::option::Option<bool> {
         self.inner.get_auto_minor_version_upgrade()
     }
@@ -875,31 +875,31 @@ impl CreateCacheClusterFluentBuilder {
     pub fn get_transit_encryption_enabled(&self) -> &::std::option::Option<bool> {
         self.inner.get_transit_encryption_enabled()
     }
-    /// <p>Must be either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. IPv6 is supported for workloads using Redis OSS engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
+    /// <p>Must be either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. IPv6 is supported for workloads using Valkey 7.2 and above, Redis OSS engine version 6.2 and above or Memcached engine version 1.6.6 and above on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
     pub fn network_type(mut self, input: crate::types::NetworkType) -> Self {
         self.inner = self.inner.network_type(input);
         self
     }
-    /// <p>Must be either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. IPv6 is supported for workloads using Redis OSS engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
+    /// <p>Must be either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. IPv6 is supported for workloads using Valkey 7.2 and above, Redis OSS engine version 6.2 and above or Memcached engine version 1.6.6 and above on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
     pub fn set_network_type(mut self, input: ::std::option::Option<crate::types::NetworkType>) -> Self {
         self.inner = self.inner.set_network_type(input);
         self
     }
-    /// <p>Must be either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. IPv6 is supported for workloads using Redis OSS engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
+    /// <p>Must be either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. IPv6 is supported for workloads using Valkey 7.2 and above, Redis OSS engine version 6.2 and above or Memcached engine version 1.6.6 and above on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
     pub fn get_network_type(&self) -> &::std::option::Option<crate::types::NetworkType> {
         self.inner.get_network_type()
     }
-    /// <p>The network type you choose when modifying a cluster, either <code>ipv4</code> | <code>ipv6</code>. IPv6 is supported for workloads using Redis OSS engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
+    /// <p>The network type you choose when modifying a cluster, either <code>ipv4</code> | <code>ipv6</code>. IPv6 is supported for workloads using Valkey 7.2 and above, Redis OSS engine version 6.2 and above or Memcached engine version 1.6.6 and above on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
     pub fn ip_discovery(mut self, input: crate::types::IpDiscovery) -> Self {
         self.inner = self.inner.ip_discovery(input);
         self
     }
-    /// <p>The network type you choose when modifying a cluster, either <code>ipv4</code> | <code>ipv6</code>. IPv6 is supported for workloads using Redis OSS engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
+    /// <p>The network type you choose when modifying a cluster, either <code>ipv4</code> | <code>ipv6</code>. IPv6 is supported for workloads using Valkey 7.2 and above, Redis OSS engine version 6.2 and above or Memcached engine version 1.6.6 and above on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
     pub fn set_ip_discovery(mut self, input: ::std::option::Option<crate::types::IpDiscovery>) -> Self {
         self.inner = self.inner.set_ip_discovery(input);
         self
     }
-    /// <p>The network type you choose when modifying a cluster, either <code>ipv4</code> | <code>ipv6</code>. IPv6 is supported for workloads using Redis OSS engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
+    /// <p>The network type you choose when modifying a cluster, either <code>ipv4</code> | <code>ipv6</code>. IPv6 is supported for workloads using Valkey 7.2 and above, Redis OSS engine version 6.2 and above or Memcached engine version 1.6.6 and above on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
     pub fn get_ip_discovery(&self) -> &::std::option::Option<crate::types::IpDiscovery> {
         self.inner.get_ip_discovery()
     }

@@ -114,17 +114,17 @@ impl DescribeUsersFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::describe_users::paginator::DescribeUsersPaginator {
         crate::operation::describe_users::paginator::DescribeUsersPaginator::new(self.handle, self.inner)
     }
-    /// <p>The Redis OSS engine.</p>
+    /// <p>The engine.</p>
     pub fn engine(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.engine(input.into());
         self
     }
-    /// <p>The Redis OSS engine.</p>
+    /// <p>The engine.</p>
     pub fn set_engine(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_engine(input);
         self
     }
-    /// <p>The Redis OSS engine.</p>
+    /// <p>The engine.</p>
     pub fn get_engine(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_engine()
     }

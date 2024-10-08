@@ -9,7 +9,7 @@ pub struct DescribeUpdateActionsInput {
     pub replication_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The cache cluster IDs</p>
     pub cache_cluster_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>The Elasticache engine to which the update applies. Either Redis OSS or Memcached.</p>
+    /// <p>The Elasticache engine to which the update applies. Either Valkey, Redis OSS or Memcached.</p>
     pub engine: ::std::option::Option<::std::string::String>,
     /// <p>The status of the service update</p>
     pub service_update_status: ::std::option::Option<::std::vec::Vec<crate::types::ServiceUpdateStatus>>,
@@ -41,7 +41,7 @@ impl DescribeUpdateActionsInput {
     pub fn cache_cluster_ids(&self) -> &[::std::string::String] {
         self.cache_cluster_ids.as_deref().unwrap_or_default()
     }
-    /// <p>The Elasticache engine to which the update applies. Either Redis OSS or Memcached.</p>
+    /// <p>The Elasticache engine to which the update applies. Either Valkey, Redis OSS or Memcached.</p>
     pub fn engine(&self) -> ::std::option::Option<&str> {
         self.engine.as_deref()
     }
@@ -151,17 +151,17 @@ impl DescribeUpdateActionsInputBuilder {
     pub fn get_cache_cluster_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.cache_cluster_ids
     }
-    /// <p>The Elasticache engine to which the update applies. Either Redis OSS or Memcached.</p>
+    /// <p>The Elasticache engine to which the update applies. Either Valkey, Redis OSS or Memcached.</p>
     pub fn engine(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Elasticache engine to which the update applies. Either Redis OSS or Memcached.</p>
+    /// <p>The Elasticache engine to which the update applies. Either Valkey, Redis OSS or Memcached.</p>
     pub fn set_engine(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.engine = input;
         self
     }
-    /// <p>The Elasticache engine to which the update applies. Either Redis OSS or Memcached.</p>
+    /// <p>The Elasticache engine to which the update applies. Either Valkey, Redis OSS or Memcached.</p>
     pub fn get_engine(&self) -> &::std::option::Option<::std::string::String> {
         &self.engine
     }

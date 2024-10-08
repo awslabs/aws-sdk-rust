@@ -54,6 +54,16 @@ pub fn ser_modify_serverless_cache_input_input_input(
     if let Some(var_19) = &input.daily_snapshot_time {
         scope_18.string(var_19);
     }
+    #[allow(unused_mut)]
+    let mut scope_20 = writer.prefix("Engine");
+    if let Some(var_21) = &input.engine {
+        scope_20.string(var_21);
+    }
+    #[allow(unused_mut)]
+    let mut scope_22 = writer.prefix("MajorEngineVersion");
+    if let Some(var_23) = &input.major_engine_version {
+        scope_22.string(var_23);
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

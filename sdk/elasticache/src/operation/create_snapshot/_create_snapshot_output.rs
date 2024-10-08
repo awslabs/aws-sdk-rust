@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateSnapshotOutput {
-    /// <p>Represents a copy of an entire Redis OSS cluster as of the time when the snapshot was taken.</p>
+    /// <p>Represents a copy of an entire Valkey or Redis OSS cluster as of the time when the snapshot was taken.</p>
     pub snapshot: ::std::option::Option<crate::types::Snapshot>,
     _request_id: Option<String>,
 }
 impl CreateSnapshotOutput {
-    /// <p>Represents a copy of an entire Redis OSS cluster as of the time when the snapshot was taken.</p>
+    /// <p>Represents a copy of an entire Valkey or Redis OSS cluster as of the time when the snapshot was taken.</p>
     pub fn snapshot(&self) -> ::std::option::Option<&crate::types::Snapshot> {
         self.snapshot.as_ref()
     }
@@ -33,17 +33,17 @@ pub struct CreateSnapshotOutputBuilder {
     _request_id: Option<String>,
 }
 impl CreateSnapshotOutputBuilder {
-    /// <p>Represents a copy of an entire Redis OSS cluster as of the time when the snapshot was taken.</p>
+    /// <p>Represents a copy of an entire Valkey or Redis OSS cluster as of the time when the snapshot was taken.</p>
     pub fn snapshot(mut self, input: crate::types::Snapshot) -> Self {
         self.snapshot = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Represents a copy of an entire Redis OSS cluster as of the time when the snapshot was taken.</p>
+    /// <p>Represents a copy of an entire Valkey or Redis OSS cluster as of the time when the snapshot was taken.</p>
     pub fn set_snapshot(mut self, input: ::std::option::Option<crate::types::Snapshot>) -> Self {
         self.snapshot = input;
         self
     }
-    /// <p>Represents a copy of an entire Redis OSS cluster as of the time when the snapshot was taken.</p>
+    /// <p>Represents a copy of an entire Valkey or Redis OSS cluster as of the time when the snapshot was taken.</p>
     pub fn get_snapshot(&self) -> &::std::option::Option<crate::types::Snapshot> {
         &self.snapshot
     }

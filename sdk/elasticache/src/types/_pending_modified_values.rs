@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PendingModifiedValues {
     /// <p>The new number of cache nodes for the cluster.</p>
-    /// <p>For clusters running Redis OSS, this value must be 1. For clusters running Memcached, this value must be between 1 and 40.</p>
+    /// <p>For clusters running Valkey or Redis OSS, this value must be 1. For clusters running Memcached, this value must be between 1 and 40.</p>
     pub num_cache_nodes: ::std::option::Option<i32>,
     /// <p>A list of cache node IDs that are being removed (or will be removed) from the cluster. A node ID is a 4-digit numeric identifier (0001, 0002, etc.).</p>
     pub cache_node_ids_to_remove: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -24,7 +24,7 @@ pub struct PendingModifiedValues {
 }
 impl PendingModifiedValues {
     /// <p>The new number of cache nodes for the cluster.</p>
-    /// <p>For clusters running Redis OSS, this value must be 1. For clusters running Memcached, this value must be between 1 and 40.</p>
+    /// <p>For clusters running Valkey or Redis OSS, this value must be 1. For clusters running Memcached, this value must be between 1 and 40.</p>
     pub fn num_cache_nodes(&self) -> ::std::option::Option<i32> {
         self.num_cache_nodes
     }
@@ -83,19 +83,19 @@ pub struct PendingModifiedValuesBuilder {
 }
 impl PendingModifiedValuesBuilder {
     /// <p>The new number of cache nodes for the cluster.</p>
-    /// <p>For clusters running Redis OSS, this value must be 1. For clusters running Memcached, this value must be between 1 and 40.</p>
+    /// <p>For clusters running Valkey or Redis OSS, this value must be 1. For clusters running Memcached, this value must be between 1 and 40.</p>
     pub fn num_cache_nodes(mut self, input: i32) -> Self {
         self.num_cache_nodes = ::std::option::Option::Some(input);
         self
     }
     /// <p>The new number of cache nodes for the cluster.</p>
-    /// <p>For clusters running Redis OSS, this value must be 1. For clusters running Memcached, this value must be between 1 and 40.</p>
+    /// <p>For clusters running Valkey or Redis OSS, this value must be 1. For clusters running Memcached, this value must be between 1 and 40.</p>
     pub fn set_num_cache_nodes(mut self, input: ::std::option::Option<i32>) -> Self {
         self.num_cache_nodes = input;
         self
     }
     /// <p>The new number of cache nodes for the cluster.</p>
-    /// <p>For clusters running Redis OSS, this value must be 1. For clusters running Memcached, this value must be between 1 and 40.</p>
+    /// <p>For clusters running Valkey or Redis OSS, this value must be 1. For clusters running Memcached, this value must be between 1 and 40.</p>
     pub fn get_num_cache_nodes(&self) -> &::std::option::Option<i32> {
         &self.num_cache_nodes
     }

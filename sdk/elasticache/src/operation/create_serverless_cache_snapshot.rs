@@ -259,9 +259,9 @@ pub enum CreateServerlessCacheSnapshotError {
     InvalidServerlessCacheStateFault(crate::types::error::InvalidServerlessCacheStateFault),
     /// <p>The serverless cache was not found or does not exist.</p>
     ServerlessCacheNotFoundFault(crate::types::error::ServerlessCacheNotFoundFault),
-    /// <p>A serverless cache snapshot with this name already exists. Available for Redis OSS and Serverless Memcached only.</p>
+    /// <p>A serverless cache snapshot with this name already exists. Available for Valkey, Redis OSS and Serverless Memcached only.</p>
     ServerlessCacheSnapshotAlreadyExistsFault(crate::types::error::ServerlessCacheSnapshotAlreadyExistsFault),
-    /// <p>The number of serverless cache snapshots exceeds the customer snapshot quota. Available for Redis OSS and Serverless Memcached only.</p>
+    /// <p>The number of serverless cache snapshots exceeds the customer snapshot quota. Available for Valkey, Redis OSS and Serverless Memcached only.</p>
     ServerlessCacheSnapshotQuotaExceededFault(crate::types::error::ServerlessCacheSnapshotQuotaExceededFault),
     /// <p>The specified service linked role (SLR) was not found.</p>
     ServiceLinkedRoleNotFoundFault(crate::types::error::ServiceLinkedRoleNotFoundFault),

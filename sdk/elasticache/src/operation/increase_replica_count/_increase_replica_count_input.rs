@@ -5,9 +5,9 @@
 pub struct IncreaseReplicaCountInput {
     /// <p>The id of the replication group to which you want to add replica nodes.</p>
     pub replication_group_id: ::std::option::Option<::std::string::String>,
-    /// <p>The number of read replica nodes you want at the completion of this operation. For Redis OSS (cluster mode disabled) replication groups, this is the number of replica nodes in the replication group. For Redis OSS (cluster mode enabled) replication groups, this is the number of replica nodes in each of the replication group's node groups.</p>
+    /// <p>The number of read replica nodes you want at the completion of this operation. For Valkey or Redis OSS (cluster mode disabled) replication groups, this is the number of replica nodes in the replication group. For Valkey or Redis OSS (cluster mode enabled) replication groups, this is the number of replica nodes in each of the replication group's node groups.</p>
     pub new_replica_count: ::std::option::Option<i32>,
-    /// <p>A list of <code>ConfigureShard</code> objects that can be used to configure each shard in a Redis OSS (cluster mode enabled) replication group. The <code>ConfigureShard</code> has three members: <code>NewReplicaCount</code>, <code>NodeGroupId</code>, and <code>PreferredAvailabilityZones</code>.</p>
+    /// <p>A list of <code>ConfigureShard</code> objects that can be used to configure each shard in a Valkey or Redis OSS (cluster mode enabled) replication group. The <code>ConfigureShard</code> has three members: <code>NewReplicaCount</code>, <code>NodeGroupId</code>, and <code>PreferredAvailabilityZones</code>.</p>
     pub replica_configuration: ::std::option::Option<::std::vec::Vec<crate::types::ConfigureShard>>,
     /// <p>If <code>True</code>, the number of replica nodes is increased immediately. <code>ApplyImmediately=False</code> is not currently supported.</p>
     pub apply_immediately: ::std::option::Option<bool>,
@@ -17,11 +17,11 @@ impl IncreaseReplicaCountInput {
     pub fn replication_group_id(&self) -> ::std::option::Option<&str> {
         self.replication_group_id.as_deref()
     }
-    /// <p>The number of read replica nodes you want at the completion of this operation. For Redis OSS (cluster mode disabled) replication groups, this is the number of replica nodes in the replication group. For Redis OSS (cluster mode enabled) replication groups, this is the number of replica nodes in each of the replication group's node groups.</p>
+    /// <p>The number of read replica nodes you want at the completion of this operation. For Valkey or Redis OSS (cluster mode disabled) replication groups, this is the number of replica nodes in the replication group. For Valkey or Redis OSS (cluster mode enabled) replication groups, this is the number of replica nodes in each of the replication group's node groups.</p>
     pub fn new_replica_count(&self) -> ::std::option::Option<i32> {
         self.new_replica_count
     }
-    /// <p>A list of <code>ConfigureShard</code> objects that can be used to configure each shard in a Redis OSS (cluster mode enabled) replication group. The <code>ConfigureShard</code> has three members: <code>NewReplicaCount</code>, <code>NodeGroupId</code>, and <code>PreferredAvailabilityZones</code>.</p>
+    /// <p>A list of <code>ConfigureShard</code> objects that can be used to configure each shard in a Valkey or Redis OSS (cluster mode enabled) replication group. The <code>ConfigureShard</code> has three members: <code>NewReplicaCount</code>, <code>NodeGroupId</code>, and <code>PreferredAvailabilityZones</code>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.replica_configuration.is_none()`.
     pub fn replica_configuration(&self) -> &[crate::types::ConfigureShard] {
@@ -64,17 +64,17 @@ impl IncreaseReplicaCountInputBuilder {
     pub fn get_replication_group_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.replication_group_id
     }
-    /// <p>The number of read replica nodes you want at the completion of this operation. For Redis OSS (cluster mode disabled) replication groups, this is the number of replica nodes in the replication group. For Redis OSS (cluster mode enabled) replication groups, this is the number of replica nodes in each of the replication group's node groups.</p>
+    /// <p>The number of read replica nodes you want at the completion of this operation. For Valkey or Redis OSS (cluster mode disabled) replication groups, this is the number of replica nodes in the replication group. For Valkey or Redis OSS (cluster mode enabled) replication groups, this is the number of replica nodes in each of the replication group's node groups.</p>
     pub fn new_replica_count(mut self, input: i32) -> Self {
         self.new_replica_count = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of read replica nodes you want at the completion of this operation. For Redis OSS (cluster mode disabled) replication groups, this is the number of replica nodes in the replication group. For Redis OSS (cluster mode enabled) replication groups, this is the number of replica nodes in each of the replication group's node groups.</p>
+    /// <p>The number of read replica nodes you want at the completion of this operation. For Valkey or Redis OSS (cluster mode disabled) replication groups, this is the number of replica nodes in the replication group. For Valkey or Redis OSS (cluster mode enabled) replication groups, this is the number of replica nodes in each of the replication group's node groups.</p>
     pub fn set_new_replica_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.new_replica_count = input;
         self
     }
-    /// <p>The number of read replica nodes you want at the completion of this operation. For Redis OSS (cluster mode disabled) replication groups, this is the number of replica nodes in the replication group. For Redis OSS (cluster mode enabled) replication groups, this is the number of replica nodes in each of the replication group's node groups.</p>
+    /// <p>The number of read replica nodes you want at the completion of this operation. For Valkey or Redis OSS (cluster mode disabled) replication groups, this is the number of replica nodes in the replication group. For Valkey or Redis OSS (cluster mode enabled) replication groups, this is the number of replica nodes in each of the replication group's node groups.</p>
     pub fn get_new_replica_count(&self) -> &::std::option::Option<i32> {
         &self.new_replica_count
     }
@@ -82,19 +82,19 @@ impl IncreaseReplicaCountInputBuilder {
     ///
     /// To override the contents of this collection use [`set_replica_configuration`](Self::set_replica_configuration).
     ///
-    /// <p>A list of <code>ConfigureShard</code> objects that can be used to configure each shard in a Redis OSS (cluster mode enabled) replication group. The <code>ConfigureShard</code> has three members: <code>NewReplicaCount</code>, <code>NodeGroupId</code>, and <code>PreferredAvailabilityZones</code>.</p>
+    /// <p>A list of <code>ConfigureShard</code> objects that can be used to configure each shard in a Valkey or Redis OSS (cluster mode enabled) replication group. The <code>ConfigureShard</code> has three members: <code>NewReplicaCount</code>, <code>NodeGroupId</code>, and <code>PreferredAvailabilityZones</code>.</p>
     pub fn replica_configuration(mut self, input: crate::types::ConfigureShard) -> Self {
         let mut v = self.replica_configuration.unwrap_or_default();
         v.push(input);
         self.replica_configuration = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of <code>ConfigureShard</code> objects that can be used to configure each shard in a Redis OSS (cluster mode enabled) replication group. The <code>ConfigureShard</code> has three members: <code>NewReplicaCount</code>, <code>NodeGroupId</code>, and <code>PreferredAvailabilityZones</code>.</p>
+    /// <p>A list of <code>ConfigureShard</code> objects that can be used to configure each shard in a Valkey or Redis OSS (cluster mode enabled) replication group. The <code>ConfigureShard</code> has three members: <code>NewReplicaCount</code>, <code>NodeGroupId</code>, and <code>PreferredAvailabilityZones</code>.</p>
     pub fn set_replica_configuration(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ConfigureShard>>) -> Self {
         self.replica_configuration = input;
         self
     }
-    /// <p>A list of <code>ConfigureShard</code> objects that can be used to configure each shard in a Redis OSS (cluster mode enabled) replication group. The <code>ConfigureShard</code> has three members: <code>NewReplicaCount</code>, <code>NodeGroupId</code>, and <code>PreferredAvailabilityZones</code>.</p>
+    /// <p>A list of <code>ConfigureShard</code> objects that can be used to configure each shard in a Valkey or Redis OSS (cluster mode enabled) replication group. The <code>ConfigureShard</code> has three members: <code>NewReplicaCount</code>, <code>NodeGroupId</code>, and <code>PreferredAvailabilityZones</code>.</p>
     pub fn get_replica_configuration(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ConfigureShard>> {
         &self.replica_configuration
     }

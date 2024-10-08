@@ -63,11 +63,11 @@ pub struct CacheCluster {
     /// <li>
     /// <p>All current generation instance types are created in Amazon VPC by default.</p></li>
     /// <li>
-    /// <p>Redis OSS append-only files (AOF) are not supported for T1 or T2 instances.</p></li>
+    /// <p>Valkey or Redis OSS append-only files (AOF) are not supported for T1 or T2 instances.</p></li>
     /// <li>
-    /// <p>Redis OSS Multi-AZ with automatic failover is not supported on T1 instances.</p></li>
+    /// <p>Valkey or Redis OSS Multi-AZ with automatic failover is not supported on T1 instances.</p></li>
     /// <li>
-    /// <p>Redis OSS configuration variables <code>appendonly</code> and <code>appendfsync</code> are not supported on Redis OSS version 2.8.22 and later.</p></li>
+    /// <p>The configuration variables <code>appendonly</code> and <code>appendfsync</code> are not supported on Valkey, or on Redis OSS version 2.8.22 and later.</p></li>
     /// </ul>
     pub cache_node_type: ::std::option::Option<::std::string::String>,
     /// <p>The name of the cache engine (<code>memcached</code> or <code>redis</code>) to be used for this cluster.</p>
@@ -77,7 +77,7 @@ pub struct CacheCluster {
     /// <p>The current state of this cluster, one of the following values: <code>available</code>, <code>creating</code>, <code>deleted</code>, <code>deleting</code>, <code>incompatible-network</code>, <code>modifying</code>, <code>rebooting cluster nodes</code>, <code>restore-failed</code>, or <code>snapshotting</code>.</p>
     pub cache_cluster_status: ::std::option::Option<::std::string::String>,
     /// <p>The number of cache nodes in the cluster.</p>
-    /// <p>For clusters running Redis OSS, this value must be 1. For clusters running Memcached, this value must be between 1 and 40.</p>
+    /// <p>For clusters running Valkey or Redis OSS, this value must be 1. For clusters running Memcached, this value must be between 1 and 40.</p>
     pub num_cache_nodes: ::std::option::Option<i32>,
     /// <p>The name of the Availability Zone in which the cluster is located or "Multiple" if the cache nodes are located in different Availability Zones.</p>
     pub preferred_availability_zone: ::std::option::Option<::std::string::String>,
@@ -117,7 +117,7 @@ pub struct CacheCluster {
     pub cache_subnet_group_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of cache nodes that are members of the cluster.</p>
     pub cache_nodes: ::std::option::Option<::std::vec::Vec<crate::types::CacheNode>>,
-    /// <p>&nbsp;If you are running Redis OSS engine version 6.0 or later, set this parameter to yes if you want to opt-in to the next auto minor version upgrade campaign. This parameter is disabled for previous versions.&nbsp;</p>
+    /// <p>&nbsp;If you are running Valkey or Redis OSS engine version 6.0 or later, set this parameter to yes if you want to opt-in to the next auto minor version upgrade campaign. This parameter is disabled for previous versions.&nbsp;</p>
     pub auto_minor_version_upgrade: ::std::option::Option<bool>,
     /// <p>A list of VPC Security Groups associated with the cluster.</p>
     pub security_groups: ::std::option::Option<::std::vec::Vec<crate::types::SecurityGroupMembership>>,
@@ -130,7 +130,7 @@ pub struct CacheCluster {
     /// <p>The daily time range (in UTC) during which ElastiCache begins taking a daily snapshot of your cluster.</p>
     /// <p>Example: <code>05:00-09:00</code></p>
     pub snapshot_window: ::std::option::Option<::std::string::String>,
-    /// <p>A flag that enables using an <code>AuthToken</code> (password) when issuing Redis OSS commands.</p>
+    /// <p>A flag that enables using an <code>AuthToken</code> (password) when issuing Valkey or Redis OSS commands.</p>
     /// <p>Default: <code>false</code></p>
     pub auth_token_enabled: ::std::option::Option<bool>,
     /// <p>The date the auth token was last modified</p>
@@ -150,9 +150,9 @@ pub struct CacheCluster {
     pub replication_group_log_delivery_enabled: ::std::option::Option<bool>,
     /// <p>Returns the destination, format and type of the logs.</p>
     pub log_delivery_configurations: ::std::option::Option<::std::vec::Vec<crate::types::LogDeliveryConfiguration>>,
-    /// <p>Must be either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. IPv6 is supported for workloads using Redis OSS engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
+    /// <p>Must be either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. IPv6 is supported for workloads using Valkey 7.2 and above, Redis OSS engine version 6.2 and above or Memcached engine version 1.6.6 and above on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
     pub network_type: ::std::option::Option<crate::types::NetworkType>,
-    /// <p>The network type associated with the cluster, either <code>ipv4</code> | <code>ipv6</code>. IPv6 is supported for workloads using Redis OSS engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
+    /// <p>The network type associated with the cluster, either <code>ipv4</code> | <code>ipv6</code>. IPv6 is supported for workloads using Valkey 7.2 and above, Redis OSS engine version 6.2 and above or Memcached engine version 1.6.6 and above on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
     pub ip_discovery: ::std::option::Option<crate::types::IpDiscovery>,
     /// <p>A setting that allows you to migrate your clients to use in-transit encryption, with no downtime.</p>
     pub transit_encryption_mode: ::std::option::Option<crate::types::TransitEncryptionMode>,
@@ -223,11 +223,11 @@ impl CacheCluster {
     /// <li>
     /// <p>All current generation instance types are created in Amazon VPC by default.</p></li>
     /// <li>
-    /// <p>Redis OSS append-only files (AOF) are not supported for T1 or T2 instances.</p></li>
+    /// <p>Valkey or Redis OSS append-only files (AOF) are not supported for T1 or T2 instances.</p></li>
     /// <li>
-    /// <p>Redis OSS Multi-AZ with automatic failover is not supported on T1 instances.</p></li>
+    /// <p>Valkey or Redis OSS Multi-AZ with automatic failover is not supported on T1 instances.</p></li>
     /// <li>
-    /// <p>Redis OSS configuration variables <code>appendonly</code> and <code>appendfsync</code> are not supported on Redis OSS version 2.8.22 and later.</p></li>
+    /// <p>The configuration variables <code>appendonly</code> and <code>appendfsync</code> are not supported on Valkey, or on Redis OSS version 2.8.22 and later.</p></li>
     /// </ul>
     pub fn cache_node_type(&self) -> ::std::option::Option<&str> {
         self.cache_node_type.as_deref()
@@ -245,7 +245,7 @@ impl CacheCluster {
         self.cache_cluster_status.as_deref()
     }
     /// <p>The number of cache nodes in the cluster.</p>
-    /// <p>For clusters running Redis OSS, this value must be 1. For clusters running Memcached, this value must be between 1 and 40.</p>
+    /// <p>For clusters running Valkey or Redis OSS, this value must be 1. For clusters running Memcached, this value must be between 1 and 40.</p>
     pub fn num_cache_nodes(&self) -> ::std::option::Option<i32> {
         self.num_cache_nodes
     }
@@ -311,7 +311,7 @@ impl CacheCluster {
     pub fn cache_nodes(&self) -> &[crate::types::CacheNode] {
         self.cache_nodes.as_deref().unwrap_or_default()
     }
-    /// <p>&nbsp;If you are running Redis OSS engine version 6.0 or later, set this parameter to yes if you want to opt-in to the next auto minor version upgrade campaign. This parameter is disabled for previous versions.&nbsp;</p>
+    /// <p>&nbsp;If you are running Valkey or Redis OSS engine version 6.0 or later, set this parameter to yes if you want to opt-in to the next auto minor version upgrade campaign. This parameter is disabled for previous versions.&nbsp;</p>
     pub fn auto_minor_version_upgrade(&self) -> ::std::option::Option<bool> {
         self.auto_minor_version_upgrade
     }
@@ -336,7 +336,7 @@ impl CacheCluster {
     pub fn snapshot_window(&self) -> ::std::option::Option<&str> {
         self.snapshot_window.as_deref()
     }
-    /// <p>A flag that enables using an <code>AuthToken</code> (password) when issuing Redis OSS commands.</p>
+    /// <p>A flag that enables using an <code>AuthToken</code> (password) when issuing Valkey or Redis OSS commands.</p>
     /// <p>Default: <code>false</code></p>
     pub fn auth_token_enabled(&self) -> ::std::option::Option<bool> {
         self.auth_token_enabled
@@ -372,11 +372,11 @@ impl CacheCluster {
     pub fn log_delivery_configurations(&self) -> &[crate::types::LogDeliveryConfiguration] {
         self.log_delivery_configurations.as_deref().unwrap_or_default()
     }
-    /// <p>Must be either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. IPv6 is supported for workloads using Redis OSS engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
+    /// <p>Must be either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. IPv6 is supported for workloads using Valkey 7.2 and above, Redis OSS engine version 6.2 and above or Memcached engine version 1.6.6 and above on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
     pub fn network_type(&self) -> ::std::option::Option<&crate::types::NetworkType> {
         self.network_type.as_ref()
     }
-    /// <p>The network type associated with the cluster, either <code>ipv4</code> | <code>ipv6</code>. IPv6 is supported for workloads using Redis OSS engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
+    /// <p>The network type associated with the cluster, either <code>ipv4</code> | <code>ipv6</code>. IPv6 is supported for workloads using Valkey 7.2 and above, Redis OSS engine version 6.2 and above or Memcached engine version 1.6.6 and above on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
     pub fn ip_discovery(&self) -> ::std::option::Option<&crate::types::IpDiscovery> {
         self.ip_discovery.as_ref()
     }
@@ -528,11 +528,11 @@ impl CacheClusterBuilder {
     /// <li>
     /// <p>All current generation instance types are created in Amazon VPC by default.</p></li>
     /// <li>
-    /// <p>Redis OSS append-only files (AOF) are not supported for T1 or T2 instances.</p></li>
+    /// <p>Valkey or Redis OSS append-only files (AOF) are not supported for T1 or T2 instances.</p></li>
     /// <li>
-    /// <p>Redis OSS Multi-AZ with automatic failover is not supported on T1 instances.</p></li>
+    /// <p>Valkey or Redis OSS Multi-AZ with automatic failover is not supported on T1 instances.</p></li>
     /// <li>
-    /// <p>Redis OSS configuration variables <code>appendonly</code> and <code>appendfsync</code> are not supported on Redis OSS version 2.8.22 and later.</p></li>
+    /// <p>The configuration variables <code>appendonly</code> and <code>appendfsync</code> are not supported on Valkey, or on Redis OSS version 2.8.22 and later.</p></li>
     /// </ul>
     pub fn cache_node_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cache_node_type = ::std::option::Option::Some(input.into());
@@ -590,11 +590,11 @@ impl CacheClusterBuilder {
     /// <li>
     /// <p>All current generation instance types are created in Amazon VPC by default.</p></li>
     /// <li>
-    /// <p>Redis OSS append-only files (AOF) are not supported for T1 or T2 instances.</p></li>
+    /// <p>Valkey or Redis OSS append-only files (AOF) are not supported for T1 or T2 instances.</p></li>
     /// <li>
-    /// <p>Redis OSS Multi-AZ with automatic failover is not supported on T1 instances.</p></li>
+    /// <p>Valkey or Redis OSS Multi-AZ with automatic failover is not supported on T1 instances.</p></li>
     /// <li>
-    /// <p>Redis OSS configuration variables <code>appendonly</code> and <code>appendfsync</code> are not supported on Redis OSS version 2.8.22 and later.</p></li>
+    /// <p>The configuration variables <code>appendonly</code> and <code>appendfsync</code> are not supported on Valkey, or on Redis OSS version 2.8.22 and later.</p></li>
     /// </ul>
     pub fn set_cache_node_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cache_node_type = input;
@@ -652,11 +652,11 @@ impl CacheClusterBuilder {
     /// <li>
     /// <p>All current generation instance types are created in Amazon VPC by default.</p></li>
     /// <li>
-    /// <p>Redis OSS append-only files (AOF) are not supported for T1 or T2 instances.</p></li>
+    /// <p>Valkey or Redis OSS append-only files (AOF) are not supported for T1 or T2 instances.</p></li>
     /// <li>
-    /// <p>Redis OSS Multi-AZ with automatic failover is not supported on T1 instances.</p></li>
+    /// <p>Valkey or Redis OSS Multi-AZ with automatic failover is not supported on T1 instances.</p></li>
     /// <li>
-    /// <p>Redis OSS configuration variables <code>appendonly</code> and <code>appendfsync</code> are not supported on Redis OSS version 2.8.22 and later.</p></li>
+    /// <p>The configuration variables <code>appendonly</code> and <code>appendfsync</code> are not supported on Valkey, or on Redis OSS version 2.8.22 and later.</p></li>
     /// </ul>
     pub fn get_cache_node_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.cache_node_type
@@ -704,19 +704,19 @@ impl CacheClusterBuilder {
         &self.cache_cluster_status
     }
     /// <p>The number of cache nodes in the cluster.</p>
-    /// <p>For clusters running Redis OSS, this value must be 1. For clusters running Memcached, this value must be between 1 and 40.</p>
+    /// <p>For clusters running Valkey or Redis OSS, this value must be 1. For clusters running Memcached, this value must be between 1 and 40.</p>
     pub fn num_cache_nodes(mut self, input: i32) -> Self {
         self.num_cache_nodes = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of cache nodes in the cluster.</p>
-    /// <p>For clusters running Redis OSS, this value must be 1. For clusters running Memcached, this value must be between 1 and 40.</p>
+    /// <p>For clusters running Valkey or Redis OSS, this value must be 1. For clusters running Memcached, this value must be between 1 and 40.</p>
     pub fn set_num_cache_nodes(mut self, input: ::std::option::Option<i32>) -> Self {
         self.num_cache_nodes = input;
         self
     }
     /// <p>The number of cache nodes in the cluster.</p>
-    /// <p>For clusters running Redis OSS, this value must be 1. For clusters running Memcached, this value must be between 1 and 40.</p>
+    /// <p>For clusters running Valkey or Redis OSS, this value must be 1. For clusters running Memcached, this value must be between 1 and 40.</p>
     pub fn get_num_cache_nodes(&self) -> &::std::option::Option<i32> {
         &self.num_cache_nodes
     }
@@ -926,17 +926,17 @@ impl CacheClusterBuilder {
     pub fn get_cache_nodes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CacheNode>> {
         &self.cache_nodes
     }
-    /// <p>&nbsp;If you are running Redis OSS engine version 6.0 or later, set this parameter to yes if you want to opt-in to the next auto minor version upgrade campaign. This parameter is disabled for previous versions.&nbsp;</p>
+    /// <p>&nbsp;If you are running Valkey or Redis OSS engine version 6.0 or later, set this parameter to yes if you want to opt-in to the next auto minor version upgrade campaign. This parameter is disabled for previous versions.&nbsp;</p>
     pub fn auto_minor_version_upgrade(mut self, input: bool) -> Self {
         self.auto_minor_version_upgrade = ::std::option::Option::Some(input);
         self
     }
-    /// <p>&nbsp;If you are running Redis OSS engine version 6.0 or later, set this parameter to yes if you want to opt-in to the next auto minor version upgrade campaign. This parameter is disabled for previous versions.&nbsp;</p>
+    /// <p>&nbsp;If you are running Valkey or Redis OSS engine version 6.0 or later, set this parameter to yes if you want to opt-in to the next auto minor version upgrade campaign. This parameter is disabled for previous versions.&nbsp;</p>
     pub fn set_auto_minor_version_upgrade(mut self, input: ::std::option::Option<bool>) -> Self {
         self.auto_minor_version_upgrade = input;
         self
     }
-    /// <p>&nbsp;If you are running Redis OSS engine version 6.0 or later, set this parameter to yes if you want to opt-in to the next auto minor version upgrade campaign. This parameter is disabled for previous versions.&nbsp;</p>
+    /// <p>&nbsp;If you are running Valkey or Redis OSS engine version 6.0 or later, set this parameter to yes if you want to opt-in to the next auto minor version upgrade campaign. This parameter is disabled for previous versions.&nbsp;</p>
     pub fn get_auto_minor_version_upgrade(&self) -> &::std::option::Option<bool> {
         &self.auto_minor_version_upgrade
     }
@@ -1011,19 +1011,19 @@ impl CacheClusterBuilder {
     pub fn get_snapshot_window(&self) -> &::std::option::Option<::std::string::String> {
         &self.snapshot_window
     }
-    /// <p>A flag that enables using an <code>AuthToken</code> (password) when issuing Redis OSS commands.</p>
+    /// <p>A flag that enables using an <code>AuthToken</code> (password) when issuing Valkey or Redis OSS commands.</p>
     /// <p>Default: <code>false</code></p>
     pub fn auth_token_enabled(mut self, input: bool) -> Self {
         self.auth_token_enabled = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A flag that enables using an <code>AuthToken</code> (password) when issuing Redis OSS commands.</p>
+    /// <p>A flag that enables using an <code>AuthToken</code> (password) when issuing Valkey or Redis OSS commands.</p>
     /// <p>Default: <code>false</code></p>
     pub fn set_auth_token_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.auth_token_enabled = input;
         self
     }
-    /// <p>A flag that enables using an <code>AuthToken</code> (password) when issuing Redis OSS commands.</p>
+    /// <p>A flag that enables using an <code>AuthToken</code> (password) when issuing Valkey or Redis OSS commands.</p>
     /// <p>Default: <code>false</code></p>
     pub fn get_auth_token_enabled(&self) -> &::std::option::Option<bool> {
         &self.auth_token_enabled
@@ -1133,31 +1133,31 @@ impl CacheClusterBuilder {
     pub fn get_log_delivery_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LogDeliveryConfiguration>> {
         &self.log_delivery_configurations
     }
-    /// <p>Must be either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. IPv6 is supported for workloads using Redis OSS engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
+    /// <p>Must be either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. IPv6 is supported for workloads using Valkey 7.2 and above, Redis OSS engine version 6.2 and above or Memcached engine version 1.6.6 and above on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
     pub fn network_type(mut self, input: crate::types::NetworkType) -> Self {
         self.network_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Must be either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. IPv6 is supported for workloads using Redis OSS engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
+    /// <p>Must be either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. IPv6 is supported for workloads using Valkey 7.2 and above, Redis OSS engine version 6.2 and above or Memcached engine version 1.6.6 and above on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
     pub fn set_network_type(mut self, input: ::std::option::Option<crate::types::NetworkType>) -> Self {
         self.network_type = input;
         self
     }
-    /// <p>Must be either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. IPv6 is supported for workloads using Redis OSS engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
+    /// <p>Must be either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. IPv6 is supported for workloads using Valkey 7.2 and above, Redis OSS engine version 6.2 and above or Memcached engine version 1.6.6 and above on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
     pub fn get_network_type(&self) -> &::std::option::Option<crate::types::NetworkType> {
         &self.network_type
     }
-    /// <p>The network type associated with the cluster, either <code>ipv4</code> | <code>ipv6</code>. IPv6 is supported for workloads using Redis OSS engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
+    /// <p>The network type associated with the cluster, either <code>ipv4</code> | <code>ipv6</code>. IPv6 is supported for workloads using Valkey 7.2 and above, Redis OSS engine version 6.2 and above or Memcached engine version 1.6.6 and above on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
     pub fn ip_discovery(mut self, input: crate::types::IpDiscovery) -> Self {
         self.ip_discovery = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The network type associated with the cluster, either <code>ipv4</code> | <code>ipv6</code>. IPv6 is supported for workloads using Redis OSS engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
+    /// <p>The network type associated with the cluster, either <code>ipv4</code> | <code>ipv6</code>. IPv6 is supported for workloads using Valkey 7.2 and above, Redis OSS engine version 6.2 and above or Memcached engine version 1.6.6 and above on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
     pub fn set_ip_discovery(mut self, input: ::std::option::Option<crate::types::IpDiscovery>) -> Self {
         self.ip_discovery = input;
         self
     }
-    /// <p>The network type associated with the cluster, either <code>ipv4</code> | <code>ipv6</code>. IPv6 is supported for workloads using Redis OSS engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
+    /// <p>The network type associated with the cluster, either <code>ipv4</code> | <code>ipv6</code>. IPv6 is supported for workloads using Valkey 7.2 and above, Redis OSS engine version 6.2 and above or Memcached engine version 1.6.6 and above on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
     pub fn get_ip_discovery(&self) -> &::std::option::Option<crate::types::IpDiscovery> {
         &self.ip_discovery
     }

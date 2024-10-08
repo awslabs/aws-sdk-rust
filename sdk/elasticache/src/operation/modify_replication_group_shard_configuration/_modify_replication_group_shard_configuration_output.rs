@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModifyReplicationGroupShardConfigurationOutput {
-    /// <p>Contains all of the attributes of a specific Redis OSS replication group.</p>
+    /// <p>Contains all of the attributes of a specific Valkey or Redis OSS replication group.</p>
     pub replication_group: ::std::option::Option<crate::types::ReplicationGroup>,
     _request_id: Option<String>,
 }
 impl ModifyReplicationGroupShardConfigurationOutput {
-    /// <p>Contains all of the attributes of a specific Redis OSS replication group.</p>
+    /// <p>Contains all of the attributes of a specific Valkey or Redis OSS replication group.</p>
     pub fn replication_group(&self) -> ::std::option::Option<&crate::types::ReplicationGroup> {
         self.replication_group.as_ref()
     }
@@ -34,17 +34,17 @@ pub struct ModifyReplicationGroupShardConfigurationOutputBuilder {
     _request_id: Option<String>,
 }
 impl ModifyReplicationGroupShardConfigurationOutputBuilder {
-    /// <p>Contains all of the attributes of a specific Redis OSS replication group.</p>
+    /// <p>Contains all of the attributes of a specific Valkey or Redis OSS replication group.</p>
     pub fn replication_group(mut self, input: crate::types::ReplicationGroup) -> Self {
         self.replication_group = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Contains all of the attributes of a specific Redis OSS replication group.</p>
+    /// <p>Contains all of the attributes of a specific Valkey or Redis OSS replication group.</p>
     pub fn set_replication_group(mut self, input: ::std::option::Option<crate::types::ReplicationGroup>) -> Self {
         self.replication_group = input;
         self
     }
-    /// <p>Contains all of the attributes of a specific Redis OSS replication group.</p>
+    /// <p>Contains all of the attributes of a specific Valkey or Redis OSS replication group.</p>
     pub fn get_replication_group(&self) -> &::std::option::Option<crate::types::ReplicationGroup> {
         &self.replication_group
     }

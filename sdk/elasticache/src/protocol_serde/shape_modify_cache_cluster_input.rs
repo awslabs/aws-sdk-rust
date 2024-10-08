@@ -93,58 +93,63 @@ pub fn ser_modify_cache_cluster_input_input_input(
         scope_35.boolean(*var_36);
     }
     #[allow(unused_mut)]
-    let mut scope_37 = writer.prefix("EngineVersion");
-    if let Some(var_38) = &input.engine_version {
+    let mut scope_37 = writer.prefix("Engine");
+    if let Some(var_38) = &input.engine {
         scope_37.string(var_38);
     }
     #[allow(unused_mut)]
-    let mut scope_39 = writer.prefix("AutoMinorVersionUpgrade");
-    if let Some(var_40) = &input.auto_minor_version_upgrade {
-        scope_39.boolean(*var_40);
+    let mut scope_39 = writer.prefix("EngineVersion");
+    if let Some(var_40) = &input.engine_version {
+        scope_39.string(var_40);
     }
     #[allow(unused_mut)]
-    let mut scope_41 = writer.prefix("SnapshotRetentionLimit");
-    if let Some(var_42) = &input.snapshot_retention_limit {
-        scope_41.number(
+    let mut scope_41 = writer.prefix("AutoMinorVersionUpgrade");
+    if let Some(var_42) = &input.auto_minor_version_upgrade {
+        scope_41.boolean(*var_42);
+    }
+    #[allow(unused_mut)]
+    let mut scope_43 = writer.prefix("SnapshotRetentionLimit");
+    if let Some(var_44) = &input.snapshot_retention_limit {
+        scope_43.number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_42).into()),
+            ::aws_smithy_types::Number::NegInt((*var_44).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_43 = writer.prefix("SnapshotWindow");
-    if let Some(var_44) = &input.snapshot_window {
-        scope_43.string(var_44);
-    }
-    #[allow(unused_mut)]
-    let mut scope_45 = writer.prefix("CacheNodeType");
-    if let Some(var_46) = &input.cache_node_type {
+    let mut scope_45 = writer.prefix("SnapshotWindow");
+    if let Some(var_46) = &input.snapshot_window {
         scope_45.string(var_46);
     }
     #[allow(unused_mut)]
-    let mut scope_47 = writer.prefix("AuthToken");
-    if let Some(var_48) = &input.auth_token {
+    let mut scope_47 = writer.prefix("CacheNodeType");
+    if let Some(var_48) = &input.cache_node_type {
         scope_47.string(var_48);
     }
     #[allow(unused_mut)]
-    let mut scope_49 = writer.prefix("AuthTokenUpdateStrategy");
-    if let Some(var_50) = &input.auth_token_update_strategy {
-        scope_49.string(var_50.as_str());
+    let mut scope_49 = writer.prefix("AuthToken");
+    if let Some(var_50) = &input.auth_token {
+        scope_49.string(var_50);
     }
     #[allow(unused_mut)]
-    let mut scope_51 = writer.prefix("LogDeliveryConfigurations");
-    if let Some(var_52) = &input.log_delivery_configurations {
-        let mut list_54 = scope_51.start_list(false, Some("LogDeliveryConfigurationRequest"));
-        for item_53 in var_52 {
+    let mut scope_51 = writer.prefix("AuthTokenUpdateStrategy");
+    if let Some(var_52) = &input.auth_token_update_strategy {
+        scope_51.string(var_52.as_str());
+    }
+    #[allow(unused_mut)]
+    let mut scope_53 = writer.prefix("LogDeliveryConfigurations");
+    if let Some(var_54) = &input.log_delivery_configurations {
+        let mut list_56 = scope_53.start_list(false, Some("LogDeliveryConfigurationRequest"));
+        for item_55 in var_54 {
             #[allow(unused_mut)]
-            let mut entry_55 = list_54.entry();
-            crate::protocol_serde::shape_log_delivery_configuration_request::ser_log_delivery_configuration_request(entry_55, item_53)?;
+            let mut entry_57 = list_56.entry();
+            crate::protocol_serde::shape_log_delivery_configuration_request::ser_log_delivery_configuration_request(entry_57, item_55)?;
         }
-        list_54.finish();
+        list_56.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_56 = writer.prefix("IpDiscovery");
-    if let Some(var_57) = &input.ip_discovery {
-        scope_56.string(var_57.as_str());
+    let mut scope_58 = writer.prefix("IpDiscovery");
+    if let Some(var_59) = &input.ip_discovery {
+        scope_58.string(var_59.as_str());
     }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))

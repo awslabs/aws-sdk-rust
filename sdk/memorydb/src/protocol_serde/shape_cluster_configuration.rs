@@ -35,6 +35,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "Engine" => {
+                            builder = builder.set_engine(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "EngineVersion" => {
                             builder = builder.set_engine_version(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

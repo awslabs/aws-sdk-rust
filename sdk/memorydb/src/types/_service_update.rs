@@ -16,6 +16,8 @@ pub struct ServiceUpdate {
     pub status: ::std::option::Option<crate::types::ServiceUpdateStatus>,
     /// <p>Reflects the nature of the service update</p>
     pub r#type: ::std::option::Option<crate::types::ServiceUpdateType>,
+    /// <p>The MemoryDB engine to which the update applies. The values are either Redis or Valkey.</p>
+    pub engine: ::std::option::Option<::std::string::String>,
     /// <p>A list of nodes updated by the service update</p>
     pub nodes_updated: ::std::option::Option<::std::string::String>,
     /// <p>The date at which the service update will be automatically applied</p>
@@ -46,6 +48,10 @@ impl ServiceUpdate {
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::ServiceUpdateType> {
         self.r#type.as_ref()
     }
+    /// <p>The MemoryDB engine to which the update applies. The values are either Redis or Valkey.</p>
+    pub fn engine(&self) -> ::std::option::Option<&str> {
+        self.engine.as_deref()
+    }
     /// <p>A list of nodes updated by the service update</p>
     pub fn nodes_updated(&self) -> ::std::option::Option<&str> {
         self.nodes_updated.as_deref()
@@ -72,6 +78,7 @@ pub struct ServiceUpdateBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::ServiceUpdateStatus>,
     pub(crate) r#type: ::std::option::Option<crate::types::ServiceUpdateType>,
+    pub(crate) engine: ::std::option::Option<::std::string::String>,
     pub(crate) nodes_updated: ::std::option::Option<::std::string::String>,
     pub(crate) auto_update_start_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
@@ -160,6 +167,20 @@ impl ServiceUpdateBuilder {
     pub fn get_type(&self) -> &::std::option::Option<crate::types::ServiceUpdateType> {
         &self.r#type
     }
+    /// <p>The MemoryDB engine to which the update applies. The values are either Redis or Valkey.</p>
+    pub fn engine(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.engine = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The MemoryDB engine to which the update applies. The values are either Redis or Valkey.</p>
+    pub fn set_engine(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.engine = input;
+        self
+    }
+    /// <p>The MemoryDB engine to which the update applies. The values are either Redis or Valkey.</p>
+    pub fn get_engine(&self) -> &::std::option::Option<::std::string::String> {
+        &self.engine
+    }
     /// <p>A list of nodes updated by the service update</p>
     pub fn nodes_updated(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.nodes_updated = ::std::option::Option::Some(input.into());
@@ -197,6 +218,7 @@ impl ServiceUpdateBuilder {
             description: self.description,
             status: self.status,
             r#type: self.r#type,
+            engine: self.engine,
             nodes_updated: self.nodes_updated,
             auto_update_start_date: self.auto_update_start_date,
         }

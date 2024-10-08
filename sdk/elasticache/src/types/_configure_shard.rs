@@ -4,13 +4,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConfigureShard {
-    /// <p>The 4-digit id for the node group you are configuring. For Redis OSS (cluster mode disabled) replication groups, the node group id is always 0001. To find a Redis OSS (cluster mode enabled)'s node group's (shard's) id, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/shard-find-id.html">Finding a Shard's Id</a>.</p>
+    /// <p>The 4-digit id for the node group you are configuring. For Valkey or Redis OSS (cluster mode disabled) replication groups, the node group id is always 0001. To find a Valkey or Redis OSS (cluster mode enabled)'s node group's (shard's) id, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/shard-find-id.html">Finding a Shard's Id</a>.</p>
     pub node_group_id: ::std::option::Option<::std::string::String>,
-    /// <p>The number of replicas you want in this node group at the end of this operation. The maximum value for <code>NewReplicaCount</code> is 5. The minimum value depends upon the type of Redis OSS replication group you are working with.</p>
+    /// <p>The number of replicas you want in this node group at the end of this operation. The maximum value for <code>NewReplicaCount</code> is 5. The minimum value depends upon the type of Valkey or Redis OSS replication group you are working with.</p>
     /// <p>The minimum number of replicas in a shard or replication group is:</p>
     /// <ul>
     /// <li>
-    /// <p>Redis OSS (cluster mode disabled)</p>
+    /// <p>Valkey or Redis OSS (cluster mode disabled)</p>
     /// <ul>
     /// <li>
     /// <p>If Multi-AZ: 1</p></li>
@@ -18,24 +18,24 @@ pub struct ConfigureShard {
     /// <p>If Multi-AZ: 0</p></li>
     /// </ul></li>
     /// <li>
-    /// <p>Redis OSS (cluster mode enabled): 0 (though you will not be able to failover to a replica if your primary node fails)</p></li>
+    /// <p>Valkey or Redis OSS (cluster mode enabled): 0 (though you will not be able to failover to a replica if your primary node fails)</p></li>
     /// </ul>
     pub new_replica_count: ::std::option::Option<i32>,
-    /// <p>A list of <code>PreferredAvailabilityZone</code> strings that specify which availability zones the replication group's nodes are to be in. The nummber of <code>PreferredAvailabilityZone</code> values must equal the value of <code>NewReplicaCount</code> plus 1 to account for the primary node. If this member of <code>ReplicaConfiguration</code> is omitted, ElastiCache (Redis OSS) selects the availability zone for each of the replicas.</p>
+    /// <p>A list of <code>PreferredAvailabilityZone</code> strings that specify which availability zones the replication group's nodes are to be in. The nummber of <code>PreferredAvailabilityZone</code> values must equal the value of <code>NewReplicaCount</code> plus 1 to account for the primary node. If this member of <code>ReplicaConfiguration</code> is omitted, ElastiCache selects the availability zone for each of the replicas.</p>
     pub preferred_availability_zones: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The outpost ARNs in which the cache cluster is created.</p>
     pub preferred_outpost_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ConfigureShard {
-    /// <p>The 4-digit id for the node group you are configuring. For Redis OSS (cluster mode disabled) replication groups, the node group id is always 0001. To find a Redis OSS (cluster mode enabled)'s node group's (shard's) id, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/shard-find-id.html">Finding a Shard's Id</a>.</p>
+    /// <p>The 4-digit id for the node group you are configuring. For Valkey or Redis OSS (cluster mode disabled) replication groups, the node group id is always 0001. To find a Valkey or Redis OSS (cluster mode enabled)'s node group's (shard's) id, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/shard-find-id.html">Finding a Shard's Id</a>.</p>
     pub fn node_group_id(&self) -> ::std::option::Option<&str> {
         self.node_group_id.as_deref()
     }
-    /// <p>The number of replicas you want in this node group at the end of this operation. The maximum value for <code>NewReplicaCount</code> is 5. The minimum value depends upon the type of Redis OSS replication group you are working with.</p>
+    /// <p>The number of replicas you want in this node group at the end of this operation. The maximum value for <code>NewReplicaCount</code> is 5. The minimum value depends upon the type of Valkey or Redis OSS replication group you are working with.</p>
     /// <p>The minimum number of replicas in a shard or replication group is:</p>
     /// <ul>
     /// <li>
-    /// <p>Redis OSS (cluster mode disabled)</p>
+    /// <p>Valkey or Redis OSS (cluster mode disabled)</p>
     /// <ul>
     /// <li>
     /// <p>If Multi-AZ: 1</p></li>
@@ -43,12 +43,12 @@ impl ConfigureShard {
     /// <p>If Multi-AZ: 0</p></li>
     /// </ul></li>
     /// <li>
-    /// <p>Redis OSS (cluster mode enabled): 0 (though you will not be able to failover to a replica if your primary node fails)</p></li>
+    /// <p>Valkey or Redis OSS (cluster mode enabled): 0 (though you will not be able to failover to a replica if your primary node fails)</p></li>
     /// </ul>
     pub fn new_replica_count(&self) -> ::std::option::Option<i32> {
         self.new_replica_count
     }
-    /// <p>A list of <code>PreferredAvailabilityZone</code> strings that specify which availability zones the replication group's nodes are to be in. The nummber of <code>PreferredAvailabilityZone</code> values must equal the value of <code>NewReplicaCount</code> plus 1 to account for the primary node. If this member of <code>ReplicaConfiguration</code> is omitted, ElastiCache (Redis OSS) selects the availability zone for each of the replicas.</p>
+    /// <p>A list of <code>PreferredAvailabilityZone</code> strings that specify which availability zones the replication group's nodes are to be in. The nummber of <code>PreferredAvailabilityZone</code> values must equal the value of <code>NewReplicaCount</code> plus 1 to account for the primary node. If this member of <code>ReplicaConfiguration</code> is omitted, ElastiCache selects the availability zone for each of the replicas.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.preferred_availability_zones.is_none()`.
     pub fn preferred_availability_zones(&self) -> &[::std::string::String] {
@@ -78,26 +78,26 @@ pub struct ConfigureShardBuilder {
     pub(crate) preferred_outpost_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ConfigureShardBuilder {
-    /// <p>The 4-digit id for the node group you are configuring. For Redis OSS (cluster mode disabled) replication groups, the node group id is always 0001. To find a Redis OSS (cluster mode enabled)'s node group's (shard's) id, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/shard-find-id.html">Finding a Shard's Id</a>.</p>
+    /// <p>The 4-digit id for the node group you are configuring. For Valkey or Redis OSS (cluster mode disabled) replication groups, the node group id is always 0001. To find a Valkey or Redis OSS (cluster mode enabled)'s node group's (shard's) id, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/shard-find-id.html">Finding a Shard's Id</a>.</p>
     /// This field is required.
     pub fn node_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.node_group_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The 4-digit id for the node group you are configuring. For Redis OSS (cluster mode disabled) replication groups, the node group id is always 0001. To find a Redis OSS (cluster mode enabled)'s node group's (shard's) id, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/shard-find-id.html">Finding a Shard's Id</a>.</p>
+    /// <p>The 4-digit id for the node group you are configuring. For Valkey or Redis OSS (cluster mode disabled) replication groups, the node group id is always 0001. To find a Valkey or Redis OSS (cluster mode enabled)'s node group's (shard's) id, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/shard-find-id.html">Finding a Shard's Id</a>.</p>
     pub fn set_node_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.node_group_id = input;
         self
     }
-    /// <p>The 4-digit id for the node group you are configuring. For Redis OSS (cluster mode disabled) replication groups, the node group id is always 0001. To find a Redis OSS (cluster mode enabled)'s node group's (shard's) id, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/shard-find-id.html">Finding a Shard's Id</a>.</p>
+    /// <p>The 4-digit id for the node group you are configuring. For Valkey or Redis OSS (cluster mode disabled) replication groups, the node group id is always 0001. To find a Valkey or Redis OSS (cluster mode enabled)'s node group's (shard's) id, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/shard-find-id.html">Finding a Shard's Id</a>.</p>
     pub fn get_node_group_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.node_group_id
     }
-    /// <p>The number of replicas you want in this node group at the end of this operation. The maximum value for <code>NewReplicaCount</code> is 5. The minimum value depends upon the type of Redis OSS replication group you are working with.</p>
+    /// <p>The number of replicas you want in this node group at the end of this operation. The maximum value for <code>NewReplicaCount</code> is 5. The minimum value depends upon the type of Valkey or Redis OSS replication group you are working with.</p>
     /// <p>The minimum number of replicas in a shard or replication group is:</p>
     /// <ul>
     /// <li>
-    /// <p>Redis OSS (cluster mode disabled)</p>
+    /// <p>Valkey or Redis OSS (cluster mode disabled)</p>
     /// <ul>
     /// <li>
     /// <p>If Multi-AZ: 1</p></li>
@@ -105,18 +105,18 @@ impl ConfigureShardBuilder {
     /// <p>If Multi-AZ: 0</p></li>
     /// </ul></li>
     /// <li>
-    /// <p>Redis OSS (cluster mode enabled): 0 (though you will not be able to failover to a replica if your primary node fails)</p></li>
+    /// <p>Valkey or Redis OSS (cluster mode enabled): 0 (though you will not be able to failover to a replica if your primary node fails)</p></li>
     /// </ul>
     /// This field is required.
     pub fn new_replica_count(mut self, input: i32) -> Self {
         self.new_replica_count = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of replicas you want in this node group at the end of this operation. The maximum value for <code>NewReplicaCount</code> is 5. The minimum value depends upon the type of Redis OSS replication group you are working with.</p>
+    /// <p>The number of replicas you want in this node group at the end of this operation. The maximum value for <code>NewReplicaCount</code> is 5. The minimum value depends upon the type of Valkey or Redis OSS replication group you are working with.</p>
     /// <p>The minimum number of replicas in a shard or replication group is:</p>
     /// <ul>
     /// <li>
-    /// <p>Redis OSS (cluster mode disabled)</p>
+    /// <p>Valkey or Redis OSS (cluster mode disabled)</p>
     /// <ul>
     /// <li>
     /// <p>If Multi-AZ: 1</p></li>
@@ -124,17 +124,17 @@ impl ConfigureShardBuilder {
     /// <p>If Multi-AZ: 0</p></li>
     /// </ul></li>
     /// <li>
-    /// <p>Redis OSS (cluster mode enabled): 0 (though you will not be able to failover to a replica if your primary node fails)</p></li>
+    /// <p>Valkey or Redis OSS (cluster mode enabled): 0 (though you will not be able to failover to a replica if your primary node fails)</p></li>
     /// </ul>
     pub fn set_new_replica_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.new_replica_count = input;
         self
     }
-    /// <p>The number of replicas you want in this node group at the end of this operation. The maximum value for <code>NewReplicaCount</code> is 5. The minimum value depends upon the type of Redis OSS replication group you are working with.</p>
+    /// <p>The number of replicas you want in this node group at the end of this operation. The maximum value for <code>NewReplicaCount</code> is 5. The minimum value depends upon the type of Valkey or Redis OSS replication group you are working with.</p>
     /// <p>The minimum number of replicas in a shard or replication group is:</p>
     /// <ul>
     /// <li>
-    /// <p>Redis OSS (cluster mode disabled)</p>
+    /// <p>Valkey or Redis OSS (cluster mode disabled)</p>
     /// <ul>
     /// <li>
     /// <p>If Multi-AZ: 1</p></li>
@@ -142,7 +142,7 @@ impl ConfigureShardBuilder {
     /// <p>If Multi-AZ: 0</p></li>
     /// </ul></li>
     /// <li>
-    /// <p>Redis OSS (cluster mode enabled): 0 (though you will not be able to failover to a replica if your primary node fails)</p></li>
+    /// <p>Valkey or Redis OSS (cluster mode enabled): 0 (though you will not be able to failover to a replica if your primary node fails)</p></li>
     /// </ul>
     pub fn get_new_replica_count(&self) -> &::std::option::Option<i32> {
         &self.new_replica_count
@@ -151,19 +151,19 @@ impl ConfigureShardBuilder {
     ///
     /// To override the contents of this collection use [`set_preferred_availability_zones`](Self::set_preferred_availability_zones).
     ///
-    /// <p>A list of <code>PreferredAvailabilityZone</code> strings that specify which availability zones the replication group's nodes are to be in. The nummber of <code>PreferredAvailabilityZone</code> values must equal the value of <code>NewReplicaCount</code> plus 1 to account for the primary node. If this member of <code>ReplicaConfiguration</code> is omitted, ElastiCache (Redis OSS) selects the availability zone for each of the replicas.</p>
+    /// <p>A list of <code>PreferredAvailabilityZone</code> strings that specify which availability zones the replication group's nodes are to be in. The nummber of <code>PreferredAvailabilityZone</code> values must equal the value of <code>NewReplicaCount</code> plus 1 to account for the primary node. If this member of <code>ReplicaConfiguration</code> is omitted, ElastiCache selects the availability zone for each of the replicas.</p>
     pub fn preferred_availability_zones(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.preferred_availability_zones.unwrap_or_default();
         v.push(input.into());
         self.preferred_availability_zones = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of <code>PreferredAvailabilityZone</code> strings that specify which availability zones the replication group's nodes are to be in. The nummber of <code>PreferredAvailabilityZone</code> values must equal the value of <code>NewReplicaCount</code> plus 1 to account for the primary node. If this member of <code>ReplicaConfiguration</code> is omitted, ElastiCache (Redis OSS) selects the availability zone for each of the replicas.</p>
+    /// <p>A list of <code>PreferredAvailabilityZone</code> strings that specify which availability zones the replication group's nodes are to be in. The nummber of <code>PreferredAvailabilityZone</code> values must equal the value of <code>NewReplicaCount</code> plus 1 to account for the primary node. If this member of <code>ReplicaConfiguration</code> is omitted, ElastiCache selects the availability zone for each of the replicas.</p>
     pub fn set_preferred_availability_zones(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.preferred_availability_zones = input;
         self
     }
-    /// <p>A list of <code>PreferredAvailabilityZone</code> strings that specify which availability zones the replication group's nodes are to be in. The nummber of <code>PreferredAvailabilityZone</code> values must equal the value of <code>NewReplicaCount</code> plus 1 to account for the primary node. If this member of <code>ReplicaConfiguration</code> is omitted, ElastiCache (Redis OSS) selects the availability zone for each of the replicas.</p>
+    /// <p>A list of <code>PreferredAvailabilityZone</code> strings that specify which availability zones the replication group's nodes are to be in. The nummber of <code>PreferredAvailabilityZone</code> values must equal the value of <code>NewReplicaCount</code> plus 1 to account for the primary node. If this member of <code>ReplicaConfiguration</code> is omitted, ElastiCache selects the availability zone for each of the replicas.</p>
     pub fn get_preferred_availability_zones(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.preferred_availability_zones
     }

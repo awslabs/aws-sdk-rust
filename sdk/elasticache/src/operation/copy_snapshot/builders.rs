@@ -23,7 +23,7 @@ impl crate::operation::copy_snapshot::builders::CopySnapshotInputBuilder {
 /// Fluent builder constructing a request to `CopySnapshot`.
 ///
 /// <p>Makes a copy of an existing snapshot.</p><note>
-/// <p>This operation is valid for Redis OSS only.</p>
+/// <p>This operation is valid for Valkey or Redis OSS only.</p>
 /// </note> <important>
 /// <p>Users or groups that have permissions to use the <code>CopySnapshot</code> operation can create their own Amazon S3 buckets and copy snapshots to it. To control access to your snapshots, use an IAM policy to control who has the ability to use the <code>CopySnapshot</code> operation. For more information about using IAM to control the use of ElastiCache operations, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html">Exporting Snapshots</a> and <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/IAM.html">Authentication &amp; Access Control</a>.</p>
 /// </important>

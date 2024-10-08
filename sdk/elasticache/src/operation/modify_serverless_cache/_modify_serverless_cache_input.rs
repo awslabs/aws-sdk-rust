@@ -9,16 +9,20 @@ pub struct ModifyServerlessCacheInput {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Modify the cache usage limit for the serverless cache.</p>
     pub cache_usage_limits: ::std::option::Option<crate::types::CacheUsageLimits>,
-    /// <p>The identifier of the UserGroup to be removed from association with the Redis OSS serverless cache. Available for Redis OSS only. Default is NULL.</p>
+    /// <p>The identifier of the UserGroup to be removed from association with the Valkey and Redis OSS serverless cache. Available for Valkey and Redis OSS only. Default is NULL.</p>
     pub remove_user_group: ::std::option::Option<bool>,
-    /// <p>The identifier of the UserGroup to be associated with the serverless cache. Available for Redis OSS only. Default is NULL - the existing UserGroup is not removed.</p>
+    /// <p>The identifier of the UserGroup to be associated with the serverless cache. Available for Valkey and Redis OSS only. Default is NULL - the existing UserGroup is not removed.</p>
     pub user_group_id: ::std::option::Option<::std::string::String>,
     /// <p>The new list of VPC security groups to be associated with the serverless cache. Populating this list means the current VPC security groups will be removed. This security group is used to authorize traffic access for the VPC end-point (private-link). Default = NULL - the existing list of VPC security groups is not removed.</p>
     pub security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>The number of days for which Elasticache retains automatic snapshots before deleting them. Available for Redis OSS and Serverless Memcached only. Default = NULL, i.e. the existing snapshot-retention-limit will not be removed or modified. The maximum value allowed is 35 days.</p>
+    /// <p>The number of days for which Elasticache retains automatic snapshots before deleting them. Available for Valkey, Redis OSS and Serverless Memcached only. Default = NULL, i.e. the existing snapshot-retention-limit will not be removed or modified. The maximum value allowed is 35 days.</p>
     pub snapshot_retention_limit: ::std::option::Option<i32>,
-    /// <p>The daily time during which Elasticache begins taking a daily snapshot of the serverless cache. Available for Redis OSS and Serverless Memcached only. The default is NULL, i.e. the existing snapshot time configured for the cluster is not removed.</p>
+    /// <p>The daily time during which Elasticache begins taking a daily snapshot of the serverless cache. Available for Valkey, Redis OSS and Serverless Memcached only. The default is NULL, i.e. the existing snapshot time configured for the cluster is not removed.</p>
     pub daily_snapshot_time: ::std::option::Option<::std::string::String>,
+    /// <p>Modifies the engine listed in a serverless cache request. The options are redis, memcached or valkey.</p>
+    pub engine: ::std::option::Option<::std::string::String>,
+    /// <p>Modifies the engine vesion listed in a serverless cache request.</p>
+    pub major_engine_version: ::std::option::Option<::std::string::String>,
 }
 impl ModifyServerlessCacheInput {
     /// <p>User-provided identifier for the serverless cache to be modified.</p>
@@ -33,11 +37,11 @@ impl ModifyServerlessCacheInput {
     pub fn cache_usage_limits(&self) -> ::std::option::Option<&crate::types::CacheUsageLimits> {
         self.cache_usage_limits.as_ref()
     }
-    /// <p>The identifier of the UserGroup to be removed from association with the Redis OSS serverless cache. Available for Redis OSS only. Default is NULL.</p>
+    /// <p>The identifier of the UserGroup to be removed from association with the Valkey and Redis OSS serverless cache. Available for Valkey and Redis OSS only. Default is NULL.</p>
     pub fn remove_user_group(&self) -> ::std::option::Option<bool> {
         self.remove_user_group
     }
-    /// <p>The identifier of the UserGroup to be associated with the serverless cache. Available for Redis OSS only. Default is NULL - the existing UserGroup is not removed.</p>
+    /// <p>The identifier of the UserGroup to be associated with the serverless cache. Available for Valkey and Redis OSS only. Default is NULL - the existing UserGroup is not removed.</p>
     pub fn user_group_id(&self) -> ::std::option::Option<&str> {
         self.user_group_id.as_deref()
     }
@@ -47,13 +51,21 @@ impl ModifyServerlessCacheInput {
     pub fn security_group_ids(&self) -> &[::std::string::String] {
         self.security_group_ids.as_deref().unwrap_or_default()
     }
-    /// <p>The number of days for which Elasticache retains automatic snapshots before deleting them. Available for Redis OSS and Serverless Memcached only. Default = NULL, i.e. the existing snapshot-retention-limit will not be removed or modified. The maximum value allowed is 35 days.</p>
+    /// <p>The number of days for which Elasticache retains automatic snapshots before deleting them. Available for Valkey, Redis OSS and Serverless Memcached only. Default = NULL, i.e. the existing snapshot-retention-limit will not be removed or modified. The maximum value allowed is 35 days.</p>
     pub fn snapshot_retention_limit(&self) -> ::std::option::Option<i32> {
         self.snapshot_retention_limit
     }
-    /// <p>The daily time during which Elasticache begins taking a daily snapshot of the serverless cache. Available for Redis OSS and Serverless Memcached only. The default is NULL, i.e. the existing snapshot time configured for the cluster is not removed.</p>
+    /// <p>The daily time during which Elasticache begins taking a daily snapshot of the serverless cache. Available for Valkey, Redis OSS and Serverless Memcached only. The default is NULL, i.e. the existing snapshot time configured for the cluster is not removed.</p>
     pub fn daily_snapshot_time(&self) -> ::std::option::Option<&str> {
         self.daily_snapshot_time.as_deref()
+    }
+    /// <p>Modifies the engine listed in a serverless cache request. The options are redis, memcached or valkey.</p>
+    pub fn engine(&self) -> ::std::option::Option<&str> {
+        self.engine.as_deref()
+    }
+    /// <p>Modifies the engine vesion listed in a serverless cache request.</p>
+    pub fn major_engine_version(&self) -> ::std::option::Option<&str> {
+        self.major_engine_version.as_deref()
     }
 }
 impl ModifyServerlessCacheInput {
@@ -75,6 +87,8 @@ pub struct ModifyServerlessCacheInputBuilder {
     pub(crate) security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) snapshot_retention_limit: ::std::option::Option<i32>,
     pub(crate) daily_snapshot_time: ::std::option::Option<::std::string::String>,
+    pub(crate) engine: ::std::option::Option<::std::string::String>,
+    pub(crate) major_engine_version: ::std::option::Option<::std::string::String>,
 }
 impl ModifyServerlessCacheInputBuilder {
     /// <p>User-provided identifier for the serverless cache to be modified.</p>
@@ -120,31 +134,31 @@ impl ModifyServerlessCacheInputBuilder {
     pub fn get_cache_usage_limits(&self) -> &::std::option::Option<crate::types::CacheUsageLimits> {
         &self.cache_usage_limits
     }
-    /// <p>The identifier of the UserGroup to be removed from association with the Redis OSS serverless cache. Available for Redis OSS only. Default is NULL.</p>
+    /// <p>The identifier of the UserGroup to be removed from association with the Valkey and Redis OSS serverless cache. Available for Valkey and Redis OSS only. Default is NULL.</p>
     pub fn remove_user_group(mut self, input: bool) -> Self {
         self.remove_user_group = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The identifier of the UserGroup to be removed from association with the Redis OSS serverless cache. Available for Redis OSS only. Default is NULL.</p>
+    /// <p>The identifier of the UserGroup to be removed from association with the Valkey and Redis OSS serverless cache. Available for Valkey and Redis OSS only. Default is NULL.</p>
     pub fn set_remove_user_group(mut self, input: ::std::option::Option<bool>) -> Self {
         self.remove_user_group = input;
         self
     }
-    /// <p>The identifier of the UserGroup to be removed from association with the Redis OSS serverless cache. Available for Redis OSS only. Default is NULL.</p>
+    /// <p>The identifier of the UserGroup to be removed from association with the Valkey and Redis OSS serverless cache. Available for Valkey and Redis OSS only. Default is NULL.</p>
     pub fn get_remove_user_group(&self) -> &::std::option::Option<bool> {
         &self.remove_user_group
     }
-    /// <p>The identifier of the UserGroup to be associated with the serverless cache. Available for Redis OSS only. Default is NULL - the existing UserGroup is not removed.</p>
+    /// <p>The identifier of the UserGroup to be associated with the serverless cache. Available for Valkey and Redis OSS only. Default is NULL - the existing UserGroup is not removed.</p>
     pub fn user_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_group_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier of the UserGroup to be associated with the serverless cache. Available for Redis OSS only. Default is NULL - the existing UserGroup is not removed.</p>
+    /// <p>The identifier of the UserGroup to be associated with the serverless cache. Available for Valkey and Redis OSS only. Default is NULL - the existing UserGroup is not removed.</p>
     pub fn set_user_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_group_id = input;
         self
     }
-    /// <p>The identifier of the UserGroup to be associated with the serverless cache. Available for Redis OSS only. Default is NULL - the existing UserGroup is not removed.</p>
+    /// <p>The identifier of the UserGroup to be associated with the serverless cache. Available for Valkey and Redis OSS only. Default is NULL - the existing UserGroup is not removed.</p>
     pub fn get_user_group_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.user_group_id
     }
@@ -168,33 +182,61 @@ impl ModifyServerlessCacheInputBuilder {
     pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.security_group_ids
     }
-    /// <p>The number of days for which Elasticache retains automatic snapshots before deleting them. Available for Redis OSS and Serverless Memcached only. Default = NULL, i.e. the existing snapshot-retention-limit will not be removed or modified. The maximum value allowed is 35 days.</p>
+    /// <p>The number of days for which Elasticache retains automatic snapshots before deleting them. Available for Valkey, Redis OSS and Serverless Memcached only. Default = NULL, i.e. the existing snapshot-retention-limit will not be removed or modified. The maximum value allowed is 35 days.</p>
     pub fn snapshot_retention_limit(mut self, input: i32) -> Self {
         self.snapshot_retention_limit = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of days for which Elasticache retains automatic snapshots before deleting them. Available for Redis OSS and Serverless Memcached only. Default = NULL, i.e. the existing snapshot-retention-limit will not be removed or modified. The maximum value allowed is 35 days.</p>
+    /// <p>The number of days for which Elasticache retains automatic snapshots before deleting them. Available for Valkey, Redis OSS and Serverless Memcached only. Default = NULL, i.e. the existing snapshot-retention-limit will not be removed or modified. The maximum value allowed is 35 days.</p>
     pub fn set_snapshot_retention_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.snapshot_retention_limit = input;
         self
     }
-    /// <p>The number of days for which Elasticache retains automatic snapshots before deleting them. Available for Redis OSS and Serverless Memcached only. Default = NULL, i.e. the existing snapshot-retention-limit will not be removed or modified. The maximum value allowed is 35 days.</p>
+    /// <p>The number of days for which Elasticache retains automatic snapshots before deleting them. Available for Valkey, Redis OSS and Serverless Memcached only. Default = NULL, i.e. the existing snapshot-retention-limit will not be removed or modified. The maximum value allowed is 35 days.</p>
     pub fn get_snapshot_retention_limit(&self) -> &::std::option::Option<i32> {
         &self.snapshot_retention_limit
     }
-    /// <p>The daily time during which Elasticache begins taking a daily snapshot of the serverless cache. Available for Redis OSS and Serverless Memcached only. The default is NULL, i.e. the existing snapshot time configured for the cluster is not removed.</p>
+    /// <p>The daily time during which Elasticache begins taking a daily snapshot of the serverless cache. Available for Valkey, Redis OSS and Serverless Memcached only. The default is NULL, i.e. the existing snapshot time configured for the cluster is not removed.</p>
     pub fn daily_snapshot_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.daily_snapshot_time = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The daily time during which Elasticache begins taking a daily snapshot of the serverless cache. Available for Redis OSS and Serverless Memcached only. The default is NULL, i.e. the existing snapshot time configured for the cluster is not removed.</p>
+    /// <p>The daily time during which Elasticache begins taking a daily snapshot of the serverless cache. Available for Valkey, Redis OSS and Serverless Memcached only. The default is NULL, i.e. the existing snapshot time configured for the cluster is not removed.</p>
     pub fn set_daily_snapshot_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.daily_snapshot_time = input;
         self
     }
-    /// <p>The daily time during which Elasticache begins taking a daily snapshot of the serverless cache. Available for Redis OSS and Serverless Memcached only. The default is NULL, i.e. the existing snapshot time configured for the cluster is not removed.</p>
+    /// <p>The daily time during which Elasticache begins taking a daily snapshot of the serverless cache. Available for Valkey, Redis OSS and Serverless Memcached only. The default is NULL, i.e. the existing snapshot time configured for the cluster is not removed.</p>
     pub fn get_daily_snapshot_time(&self) -> &::std::option::Option<::std::string::String> {
         &self.daily_snapshot_time
+    }
+    /// <p>Modifies the engine listed in a serverless cache request. The options are redis, memcached or valkey.</p>
+    pub fn engine(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.engine = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Modifies the engine listed in a serverless cache request. The options are redis, memcached or valkey.</p>
+    pub fn set_engine(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.engine = input;
+        self
+    }
+    /// <p>Modifies the engine listed in a serverless cache request. The options are redis, memcached or valkey.</p>
+    pub fn get_engine(&self) -> &::std::option::Option<::std::string::String> {
+        &self.engine
+    }
+    /// <p>Modifies the engine vesion listed in a serverless cache request.</p>
+    pub fn major_engine_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.major_engine_version = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Modifies the engine vesion listed in a serverless cache request.</p>
+    pub fn set_major_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.major_engine_version = input;
+        self
+    }
+    /// <p>Modifies the engine vesion listed in a serverless cache request.</p>
+    pub fn get_major_engine_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.major_engine_version
     }
     /// Consumes the builder and constructs a [`ModifyServerlessCacheInput`](crate::operation::modify_serverless_cache::ModifyServerlessCacheInput).
     pub fn build(
@@ -210,6 +252,8 @@ impl ModifyServerlessCacheInputBuilder {
             security_group_ids: self.security_group_ids,
             snapshot_retention_limit: self.snapshot_retention_limit,
             daily_snapshot_time: self.daily_snapshot_time,
+            engine: self.engine,
+            major_engine_version: self.major_engine_version,
         })
     }
 }

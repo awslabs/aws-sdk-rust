@@ -150,6 +150,20 @@ impl ModifyGlobalReplicationGroupFluentBuilder {
     pub fn get_cache_node_type(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_cache_node_type()
     }
+    /// <p>Modifies the engine listed in a global replication group message. The options are redis, memcached or valkey.</p>
+    pub fn engine(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.engine(input.into());
+        self
+    }
+    /// <p>Modifies the engine listed in a global replication group message. The options are redis, memcached or valkey.</p>
+    pub fn set_engine(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_engine(input);
+        self
+    }
+    /// <p>Modifies the engine listed in a global replication group message. The options are redis, memcached or valkey.</p>
+    pub fn get_engine(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_engine()
+    }
     /// <p>The upgraded version of the cache engine to be run on the clusters in the Global datastore.</p>
     pub fn engine_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.engine_version(input.into());

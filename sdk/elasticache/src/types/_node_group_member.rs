@@ -8,13 +8,13 @@ pub struct NodeGroupMember {
     pub cache_cluster_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the node within its cluster. A node ID is a numeric identifier (0001, 0002, etc.).</p>
     pub cache_node_id: ::std::option::Option<::std::string::String>,
-    /// <p>The information required for client programs to connect to a node for read operations. The read endpoint is only applicable on Redis OSS (cluster mode disabled) clusters.</p>
+    /// <p>The information required for client programs to connect to a node for read operations. The read endpoint is only applicable on Valkey or Redis OSS (cluster mode disabled) clusters.</p>
     pub read_endpoint: ::std::option::Option<crate::types::Endpoint>,
     /// <p>The name of the Availability Zone in which the node is located.</p>
     pub preferred_availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>The outpost ARN of the node group member.</p>
     pub preferred_outpost_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The role that is currently assigned to the node - <code>primary</code> or <code>replica</code>. This member is only applicable for Redis OSS (cluster mode disabled) replication groups.</p>
+    /// <p>The role that is currently assigned to the node - <code>primary</code> or <code>replica</code>. This member is only applicable for Valkey or Redis OSS (cluster mode disabled) replication groups.</p>
     pub current_role: ::std::option::Option<::std::string::String>,
 }
 impl NodeGroupMember {
@@ -26,7 +26,7 @@ impl NodeGroupMember {
     pub fn cache_node_id(&self) -> ::std::option::Option<&str> {
         self.cache_node_id.as_deref()
     }
-    /// <p>The information required for client programs to connect to a node for read operations. The read endpoint is only applicable on Redis OSS (cluster mode disabled) clusters.</p>
+    /// <p>The information required for client programs to connect to a node for read operations. The read endpoint is only applicable on Valkey or Redis OSS (cluster mode disabled) clusters.</p>
     pub fn read_endpoint(&self) -> ::std::option::Option<&crate::types::Endpoint> {
         self.read_endpoint.as_ref()
     }
@@ -38,7 +38,7 @@ impl NodeGroupMember {
     pub fn preferred_outpost_arn(&self) -> ::std::option::Option<&str> {
         self.preferred_outpost_arn.as_deref()
     }
-    /// <p>The role that is currently assigned to the node - <code>primary</code> or <code>replica</code>. This member is only applicable for Redis OSS (cluster mode disabled) replication groups.</p>
+    /// <p>The role that is currently assigned to the node - <code>primary</code> or <code>replica</code>. This member is only applicable for Valkey or Redis OSS (cluster mode disabled) replication groups.</p>
     pub fn current_role(&self) -> ::std::option::Option<&str> {
         self.current_role.as_deref()
     }
@@ -90,17 +90,17 @@ impl NodeGroupMemberBuilder {
     pub fn get_cache_node_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.cache_node_id
     }
-    /// <p>The information required for client programs to connect to a node for read operations. The read endpoint is only applicable on Redis OSS (cluster mode disabled) clusters.</p>
+    /// <p>The information required for client programs to connect to a node for read operations. The read endpoint is only applicable on Valkey or Redis OSS (cluster mode disabled) clusters.</p>
     pub fn read_endpoint(mut self, input: crate::types::Endpoint) -> Self {
         self.read_endpoint = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The information required for client programs to connect to a node for read operations. The read endpoint is only applicable on Redis OSS (cluster mode disabled) clusters.</p>
+    /// <p>The information required for client programs to connect to a node for read operations. The read endpoint is only applicable on Valkey or Redis OSS (cluster mode disabled) clusters.</p>
     pub fn set_read_endpoint(mut self, input: ::std::option::Option<crate::types::Endpoint>) -> Self {
         self.read_endpoint = input;
         self
     }
-    /// <p>The information required for client programs to connect to a node for read operations. The read endpoint is only applicable on Redis OSS (cluster mode disabled) clusters.</p>
+    /// <p>The information required for client programs to connect to a node for read operations. The read endpoint is only applicable on Valkey or Redis OSS (cluster mode disabled) clusters.</p>
     pub fn get_read_endpoint(&self) -> &::std::option::Option<crate::types::Endpoint> {
         &self.read_endpoint
     }
@@ -132,17 +132,17 @@ impl NodeGroupMemberBuilder {
     pub fn get_preferred_outpost_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.preferred_outpost_arn
     }
-    /// <p>The role that is currently assigned to the node - <code>primary</code> or <code>replica</code>. This member is only applicable for Redis OSS (cluster mode disabled) replication groups.</p>
+    /// <p>The role that is currently assigned to the node - <code>primary</code> or <code>replica</code>. This member is only applicable for Valkey or Redis OSS (cluster mode disabled) replication groups.</p>
     pub fn current_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.current_role = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The role that is currently assigned to the node - <code>primary</code> or <code>replica</code>. This member is only applicable for Redis OSS (cluster mode disabled) replication groups.</p>
+    /// <p>The role that is currently assigned to the node - <code>primary</code> or <code>replica</code>. This member is only applicable for Valkey or Redis OSS (cluster mode disabled) replication groups.</p>
     pub fn set_current_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.current_role = input;
         self
     }
-    /// <p>The role that is currently assigned to the node - <code>primary</code> or <code>replica</code>. This member is only applicable for Redis OSS (cluster mode disabled) replication groups.</p>
+    /// <p>The role that is currently assigned to the node - <code>primary</code> or <code>replica</code>. This member is only applicable for Valkey or Redis OSS (cluster mode disabled) replication groups.</p>
     pub fn get_current_role(&self) -> &::std::option::Option<::std::string::String> {
         &self.current_role
     }

@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteServerlessCacheSnapshotInput {
-    /// <p>Idenfitier of the snapshot to be deleted. Available for Redis OSS and Serverless Memcached only.</p>
+    /// <p>Idenfitier of the snapshot to be deleted. Available for Valkey, Redis OSS and Serverless Memcached only.</p>
     pub serverless_cache_snapshot_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteServerlessCacheSnapshotInput {
-    /// <p>Idenfitier of the snapshot to be deleted. Available for Redis OSS and Serverless Memcached only.</p>
+    /// <p>Idenfitier of the snapshot to be deleted. Available for Valkey, Redis OSS and Serverless Memcached only.</p>
     pub fn serverless_cache_snapshot_name(&self) -> ::std::option::Option<&str> {
         self.serverless_cache_snapshot_name.as_deref()
     }
@@ -26,18 +26,18 @@ pub struct DeleteServerlessCacheSnapshotInputBuilder {
     pub(crate) serverless_cache_snapshot_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteServerlessCacheSnapshotInputBuilder {
-    /// <p>Idenfitier of the snapshot to be deleted. Available for Redis OSS and Serverless Memcached only.</p>
+    /// <p>Idenfitier of the snapshot to be deleted. Available for Valkey, Redis OSS and Serverless Memcached only.</p>
     /// This field is required.
     pub fn serverless_cache_snapshot_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.serverless_cache_snapshot_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Idenfitier of the snapshot to be deleted. Available for Redis OSS and Serverless Memcached only.</p>
+    /// <p>Idenfitier of the snapshot to be deleted. Available for Valkey, Redis OSS and Serverless Memcached only.</p>
     pub fn set_serverless_cache_snapshot_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.serverless_cache_snapshot_name = input;
         self
     }
-    /// <p>Idenfitier of the snapshot to be deleted. Available for Redis OSS and Serverless Memcached only.</p>
+    /// <p>Idenfitier of the snapshot to be deleted. Available for Valkey, Redis OSS and Serverless Memcached only.</p>
     pub fn get_serverless_cache_snapshot_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.serverless_cache_snapshot_name
     }

@@ -32,7 +32,7 @@ impl crate::operation::test_failover::builders::TestFailoverInputBuilder {
 /// <p>If calling this operation on shards in different clusters (called replication groups in the API and CLI), the calls can be made concurrently.</p>
 /// <p></p></li>
 /// <li>
-/// <p>If calling this operation multiple times on different shards in the same Redis OSS (cluster mode enabled) replication group, the first node replacement must complete before a subsequent call can be made.</p></li>
+/// <p>If calling this operation multiple times on different shards in the same Valkey or Redis OSS (cluster mode enabled) replication group, the first node replacement must complete before a subsequent call can be made.</p></li>
 /// <li>
 /// <p>To determine whether the node replacement is complete you can check Events using the Amazon ElastiCache console, the Amazon CLI, or the ElastiCache API. Look for the following automatic failover related events, listed here in order of occurrance:</p>
 /// <ol>

@@ -22,7 +22,7 @@ impl crate::operation::list_allowed_node_type_modifications::builders::ListAllow
 }
 /// Fluent builder constructing a request to `ListAllowedNodeTypeModifications`.
 ///
-/// <p>Lists all available node types that you can scale your Redis OSS cluster's or replication group's current node type.</p>
+/// <p>Lists all available node types that you can scale with your cluster's replication group's current node type.</p>
 /// <p>When you use the <code>ModifyCacheCluster</code> or <code>ModifyReplicationGroup</code> operations to scale your cluster or replication group, the value of the <code>CacheNodeType</code> parameter must be one of the node types returned by this operation.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListAllowedNodeTypeModificationsFluentBuilder {

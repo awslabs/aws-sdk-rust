@@ -407,6 +407,19 @@ pub fn de_replication_group(
                 builder = builder.set_cluster_mode(var_31);
             }
             ,
+            s if s.matches("Engine") /* Engine com.amazonaws.elasticache#ReplicationGroup$Engine */ =>  {
+                let var_32 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_engine(var_32);
+            }
+            ,
             _ => {}
         }
     }

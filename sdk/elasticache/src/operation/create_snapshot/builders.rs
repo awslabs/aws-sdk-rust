@@ -23,7 +23,7 @@ impl crate::operation::create_snapshot::builders::CreateSnapshotInputBuilder {
 /// Fluent builder constructing a request to `CreateSnapshot`.
 ///
 /// <p>Creates a copy of an entire cluster or replication group at a specific moment in time.</p><note>
-/// <p>This operation is valid for Redis OSS only.</p>
+/// <p>This operation is valid for Valkey or Redis OSS only.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateSnapshotFluentBuilder {

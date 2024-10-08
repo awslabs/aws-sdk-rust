@@ -22,7 +22,7 @@ impl crate::operation::export_serverless_cache_snapshot::builders::ExportServerl
 }
 /// Fluent builder constructing a request to `ExportServerlessCacheSnapshot`.
 ///
-/// <p>Provides the functionality to export the serverless cache snapshot data to Amazon S3. Available for Redis OSS only.</p>
+/// <p>Provides the functionality to export the serverless cache snapshot data to Amazon S3. Available for Valkey and Redis OSS only.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ExportServerlessCacheSnapshotFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,31 +108,31 @@ impl ExportServerlessCacheSnapshotFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The identifier of the serverless cache snapshot to be exported to S3. Available for Redis OSS only.</p>
+    /// <p>The identifier of the serverless cache snapshot to be exported to S3. Available for Valkey and Redis OSS only.</p>
     pub fn serverless_cache_snapshot_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.serverless_cache_snapshot_name(input.into());
         self
     }
-    /// <p>The identifier of the serverless cache snapshot to be exported to S3. Available for Redis OSS only.</p>
+    /// <p>The identifier of the serverless cache snapshot to be exported to S3. Available for Valkey and Redis OSS only.</p>
     pub fn set_serverless_cache_snapshot_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_serverless_cache_snapshot_name(input);
         self
     }
-    /// <p>The identifier of the serverless cache snapshot to be exported to S3. Available for Redis OSS only.</p>
+    /// <p>The identifier of the serverless cache snapshot to be exported to S3. Available for Valkey and Redis OSS only.</p>
     pub fn get_serverless_cache_snapshot_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_serverless_cache_snapshot_name()
     }
-    /// <p>Name of the Amazon S3 bucket to export the snapshot to. The Amazon S3 bucket must also be in same region as the snapshot. Available for Redis OSS only.</p>
+    /// <p>Name of the Amazon S3 bucket to export the snapshot to. The Amazon S3 bucket must also be in same region as the snapshot. Available for Valkey and Redis OSS only.</p>
     pub fn s3_bucket_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.s3_bucket_name(input.into());
         self
     }
-    /// <p>Name of the Amazon S3 bucket to export the snapshot to. The Amazon S3 bucket must also be in same region as the snapshot. Available for Redis OSS only.</p>
+    /// <p>Name of the Amazon S3 bucket to export the snapshot to. The Amazon S3 bucket must also be in same region as the snapshot. Available for Valkey and Redis OSS only.</p>
     pub fn set_s3_bucket_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_s3_bucket_name(input);
         self
     }
-    /// <p>Name of the Amazon S3 bucket to export the snapshot to. The Amazon S3 bucket must also be in same region as the snapshot. Available for Redis OSS only.</p>
+    /// <p>Name of the Amazon S3 bucket to export the snapshot to. The Amazon S3 bucket must also be in same region as the snapshot. Available for Valkey and Redis OSS only.</p>
     pub fn get_s3_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_s3_bucket_name()
     }

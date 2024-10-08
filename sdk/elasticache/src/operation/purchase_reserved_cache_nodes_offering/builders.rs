@@ -22,7 +22,7 @@ impl crate::operation::purchase_reserved_cache_nodes_offering::builders::Purchas
 }
 /// Fluent builder constructing a request to `PurchaseReservedCacheNodesOffering`.
 ///
-/// <p>Allows you to purchase a reserved cache node offering. Reserved nodes are not eligible for cancellation and are non-refundable. For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/reserved-nodes.html">Managing Costs with Reserved Nodes</a> for Redis OSS or <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/reserved-nodes.html">Managing Costs with Reserved Nodes</a> for Memcached.</p>
+/// <p>Allows you to purchase a reserved cache node offering. Reserved nodes are not eligible for cancellation and are non-refundable. For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/reserved-nodes.html">Managing Costs with Reserved Nodes</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PurchaseReservedCacheNodesOfferingFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
