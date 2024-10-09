@@ -14,6 +14,7 @@
 /// match actioncategory {
 ///     ActionCategory::Approval => { /* ... */ },
 ///     ActionCategory::Build => { /* ... */ },
+///     ActionCategory::Compute => { /* ... */ },
 ///     ActionCategory::Deploy => { /* ... */ },
 ///     ActionCategory::Invoke => { /* ... */ },
 ///     ActionCategory::Source => { /* ... */ },
@@ -50,6 +51,8 @@ pub enum ActionCategory {
     #[allow(missing_docs)] // documentation missing in model
     Build,
     #[allow(missing_docs)] // documentation missing in model
+    Compute,
+    #[allow(missing_docs)] // documentation missing in model
     Deploy,
     #[allow(missing_docs)] // documentation missing in model
     Invoke,
@@ -66,6 +69,7 @@ impl ::std::convert::From<&str> for ActionCategory {
         match s {
             "Approval" => ActionCategory::Approval,
             "Build" => ActionCategory::Build,
+            "Compute" => ActionCategory::Compute,
             "Deploy" => ActionCategory::Deploy,
             "Invoke" => ActionCategory::Invoke,
             "Source" => ActionCategory::Source,
@@ -87,6 +91,7 @@ impl ActionCategory {
         match self {
             ActionCategory::Approval => "Approval",
             ActionCategory::Build => "Build",
+            ActionCategory::Compute => "Compute",
             ActionCategory::Deploy => "Deploy",
             ActionCategory::Invoke => "Invoke",
             ActionCategory::Source => "Source",
@@ -96,7 +101,7 @@ impl ActionCategory {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Approval", "Build", "Deploy", "Invoke", "Source", "Test"]
+        &["Approval", "Build", "Compute", "Deploy", "Invoke", "Source", "Test"]
     }
 }
 impl ::std::convert::AsRef<str> for ActionCategory {
@@ -121,6 +126,7 @@ impl ::std::fmt::Display for ActionCategory {
         match self {
             ActionCategory::Approval => write!(f, "Approval"),
             ActionCategory::Build => write!(f, "Build"),
+            ActionCategory::Compute => write!(f, "Compute"),
             ActionCategory::Deploy => write!(f, "Deploy"),
             ActionCategory::Invoke => write!(f, "Invoke"),
             ActionCategory::Source => write!(f, "Source"),

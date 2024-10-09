@@ -502,9 +502,9 @@ model_hash = 'c6db5c090a27a7b7c92113bc8827999fff3130e382c9f5970fae1d1e4c81cda6'
 
 [crates.aws-sdk-codepipeline]
 category = 'AwsSdk'
-version = '1.50.0'
-source_hash = '64353c3f9bec1d59ebd472f5fd9f7faea985aeceef1b0831020cb06eb59a4075'
-model_hash = 'bcc51c72c42512ec379a7fc52bf3e5100d76d47a4725313ef12ac4996880f660'
+version = '1.51.0'
+source_hash = 'f209978e30eda8240a0702b34c3b6bcff51f4de16f543d33fef402df9c8f72e3'
+model_hash = '872c9e470b542389eaed2efc3a9368028125ab7e23d1eb06e2919f57a526ce15'
 
 [crates.aws-sdk-codestarconnections]
 category = 'AwsSdk'
@@ -2493,10 +2493,5 @@ source_hash = 'e229261bc0f8ca2575df733f699c55d19b49a32c3a09e2e37b8192c2ec424edb'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = '2fe25f627f326867fe30559e73c464e12361c13b66e7ffc0bc95aa91a482fafd'
-
-[release]
-tag = 'release-2024-10-08'
-
 [release.crates]
-aws-sdk-elasticache = '1.49.0'
-aws-sdk-memorydb = '1.46.0'
+aws-sdk-codepipeline = '1.51.0'

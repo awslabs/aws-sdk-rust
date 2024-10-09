@@ -47,6 +47,7 @@
 //!   - Deploy
 //!   - Approval
 //!   - Invoke
+//!   - Compute
 //!
 //! Pipelines also include _transitions_, which allow the transition of artifacts from one stage to the next in a pipeline after the actions in one stage complete.
 //!
@@ -88,7 +89,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-codepipeline = "1.50.0"
+//! aws-sdk-codepipeline = "1.51.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
