@@ -2493,5 +2493,9 @@ source_hash = 'e229261bc0f8ca2575df733f699c55d19b49a32c3a09e2e37b8192c2ec424edb'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = '2fe25f627f326867fe30559e73c464e12361c13b66e7ffc0bc95aa91a482fafd'
+
+[release]
+tag = 'release-2024-10-09'
+
 [release.crates]
 aws-sdk-codepipeline = '1.51.0'
