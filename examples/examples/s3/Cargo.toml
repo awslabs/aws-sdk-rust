@@ -24,7 +24,7 @@ tracing = "0.1.37"
 serde_json = "1"
 chrono = "0.4.38"
 aws-config= { version = "1.5.8", path = "../../../sdk/aws-config", features = ["behavior-version-latest"] }
-aws-sdk-s3= { version = "1.54.0", path = "../../../sdk/s3", features = ["rt-tokio"] }
+aws-sdk-s3= { version = "1.55.0", path = "../../../sdk/s3", features = ["rt-tokio"] }
 aws-smithy-runtime= { version = "1.7.1", path = "../../../sdk/aws-smithy-runtime" }
 aws-smithy-runtime-api= { version = "1.7.2", path = "../../../sdk/aws-smithy-runtime-api", features = ["client"] }
 aws-smithy-types= { version = "1.2.7", path = "../../../sdk/aws-smithy-types", features = ["http-body-0-4-x"] }
