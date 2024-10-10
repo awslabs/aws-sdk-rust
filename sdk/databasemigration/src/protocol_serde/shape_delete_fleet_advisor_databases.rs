@@ -20,6 +20,21 @@ pub fn de_delete_fleet_advisor_databases_http_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
+        "AccessDeniedFault" => crate::operation::delete_fleet_advisor_databases::DeleteFleetAdvisorDatabasesError::AccessDeniedFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::AccessDeniedFaultBuilder::default();
+                output = crate::protocol_serde::shape_access_denied_fault::de_access_denied_fault_json_err(_response_body, output)
+                    .map_err(crate::operation::delete_fleet_advisor_databases::DeleteFleetAdvisorDatabasesError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "InvalidOperationFault" => crate::operation::delete_fleet_advisor_databases::DeleteFleetAdvisorDatabasesError::InvalidOperationFault({
             #[allow(unused_mut)]
             let mut tmp = {

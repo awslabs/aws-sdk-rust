@@ -66,6 +66,7 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | AWS Elemental MediaPackage v2 | [aws-sdk-mediapackagev2](https://crates.io/crates/aws-sdk-mediapackagev2) ([docs](https://docs.rs/aws-sdk-mediapackagev2)) |
 | AWS Elemental MediaStore | [aws-sdk-mediastore](https://crates.io/crates/aws-sdk-mediastore) ([docs](https://docs.rs/aws-sdk-mediastore)) |
 | AWS Elemental MediaStore Data Plane | [aws-sdk-mediastoredata](https://crates.io/crates/aws-sdk-mediastoredata) ([docs](https://docs.rs/aws-sdk-mediastoredata)) |
+| AWS End User Messaging Social | [aws-sdk-socialmessaging](https://crates.io/crates/aws-sdk-socialmessaging) ([docs](https://docs.rs/aws-sdk-socialmessaging)) |
 | AWS EntityResolution | [aws-sdk-entityresolution](https://crates.io/crates/aws-sdk-entityresolution) ([docs](https://docs.rs/aws-sdk-entityresolution)) |
 | AWS Fault Injection Simulator | [aws-sdk-fis](https://crates.io/crates/aws-sdk-fis) ([docs](https://docs.rs/aws-sdk-fis)) |
 | AWS Free Tier | [aws-sdk-freetier](https://crates.io/crates/aws-sdk-freetier) ([docs](https://docs.rs/aws-sdk-freetier)) |

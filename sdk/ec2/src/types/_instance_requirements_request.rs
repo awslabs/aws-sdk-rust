@@ -126,8 +126,6 @@ pub struct InstanceRequirementsRequest {
     /// <p>To include instance types with GPU hardware, specify <code>gpu</code>.</p></li>
     /// <li>
     /// <p>To include instance types with FPGA hardware, specify <code>fpga</code>.</p></li>
-    /// <li>
-    /// <p>To include instance types with inference hardware, specify <code>inference</code>.</p></li>
     /// </ul>
     /// <p>Default: Any accelerator type</p>
     pub accelerator_types: ::std::option::Option<::std::vec::Vec<crate::types::AcceleratorType>>,
@@ -349,8 +347,6 @@ impl InstanceRequirementsRequest {
     /// <p>To include instance types with GPU hardware, specify <code>gpu</code>.</p></li>
     /// <li>
     /// <p>To include instance types with FPGA hardware, specify <code>fpga</code>.</p></li>
-    /// <li>
-    /// <p>To include instance types with inference hardware, specify <code>inference</code>.</p></li>
     /// </ul>
     /// <p>Default: Any accelerator type</p>
     ///
@@ -956,8 +952,6 @@ impl InstanceRequirementsRequestBuilder {
     /// <p>To include instance types with GPU hardware, specify <code>gpu</code>.</p></li>
     /// <li>
     /// <p>To include instance types with FPGA hardware, specify <code>fpga</code>.</p></li>
-    /// <li>
-    /// <p>To include instance types with inference hardware, specify <code>inference</code>.</p></li>
     /// </ul>
     /// <p>Default: Any accelerator type</p>
     pub fn accelerator_types(mut self, input: crate::types::AcceleratorType) -> Self {
@@ -972,8 +966,6 @@ impl InstanceRequirementsRequestBuilder {
     /// <p>To include instance types with GPU hardware, specify <code>gpu</code>.</p></li>
     /// <li>
     /// <p>To include instance types with FPGA hardware, specify <code>fpga</code>.</p></li>
-    /// <li>
-    /// <p>To include instance types with inference hardware, specify <code>inference</code>.</p></li>
     /// </ul>
     /// <p>Default: Any accelerator type</p>
     pub fn set_accelerator_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AcceleratorType>>) -> Self {
@@ -986,8 +978,6 @@ impl InstanceRequirementsRequestBuilder {
     /// <p>To include instance types with GPU hardware, specify <code>gpu</code>.</p></li>
     /// <li>
     /// <p>To include instance types with FPGA hardware, specify <code>fpga</code>.</p></li>
-    /// <li>
-    /// <p>To include instance types with inference hardware, specify <code>inference</code>.</p></li>
     /// </ul>
     /// <p>Default: Any accelerator type</p>
     pub fn get_accelerator_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AcceleratorType>> {

@@ -9,9 +9,9 @@ pub struct CreateResolverQueryLogConfigInput {
     /// <ul>
     /// <li>
     /// <p><b>S3 bucket</b>:</p>
-    /// <p><code>arn:aws:s3:::examplebucket</code></p>
+    /// <p><code>arn:aws:s3:::amzn-s3-demo-bucket</code></p>
     /// <p>You can optionally append a file prefix to the end of the ARN.</p>
-    /// <p><code>arn:aws:s3:::examplebucket/development/</code></p></li>
+    /// <p><code>arn:aws:s3:::amzn-s3-demo-bucket/development/</code></p></li>
     /// <li>
     /// <p><b>CloudWatch Logs log group</b>:</p>
     /// <p><code>arn:aws:logs:us-west-1:123456789012:log-group:/mystack-testgroup-12ABC1AB12A1:*</code></p></li>
@@ -34,9 +34,9 @@ impl CreateResolverQueryLogConfigInput {
     /// <ul>
     /// <li>
     /// <p><b>S3 bucket</b>:</p>
-    /// <p><code>arn:aws:s3:::examplebucket</code></p>
+    /// <p><code>arn:aws:s3:::amzn-s3-demo-bucket</code></p>
     /// <p>You can optionally append a file prefix to the end of the ARN.</p>
-    /// <p><code>arn:aws:s3:::examplebucket/development/</code></p></li>
+    /// <p><code>arn:aws:s3:::amzn-s3-demo-bucket/development/</code></p></li>
     /// <li>
     /// <p><b>CloudWatch Logs log group</b>:</p>
     /// <p><code>arn:aws:logs:us-west-1:123456789012:log-group:/mystack-testgroup-12ABC1AB12A1:*</code></p></li>
@@ -94,9 +94,9 @@ impl CreateResolverQueryLogConfigInputBuilder {
     /// <ul>
     /// <li>
     /// <p><b>S3 bucket</b>:</p>
-    /// <p><code>arn:aws:s3:::examplebucket</code></p>
+    /// <p><code>arn:aws:s3:::amzn-s3-demo-bucket</code></p>
     /// <p>You can optionally append a file prefix to the end of the ARN.</p>
-    /// <p><code>arn:aws:s3:::examplebucket/development/</code></p></li>
+    /// <p><code>arn:aws:s3:::amzn-s3-demo-bucket/development/</code></p></li>
     /// <li>
     /// <p><b>CloudWatch Logs log group</b>:</p>
     /// <p><code>arn:aws:logs:us-west-1:123456789012:log-group:/mystack-testgroup-12ABC1AB12A1:*</code></p></li>
@@ -113,9 +113,9 @@ impl CreateResolverQueryLogConfigInputBuilder {
     /// <ul>
     /// <li>
     /// <p><b>S3 bucket</b>:</p>
-    /// <p><code>arn:aws:s3:::examplebucket</code></p>
+    /// <p><code>arn:aws:s3:::amzn-s3-demo-bucket</code></p>
     /// <p>You can optionally append a file prefix to the end of the ARN.</p>
-    /// <p><code>arn:aws:s3:::examplebucket/development/</code></p></li>
+    /// <p><code>arn:aws:s3:::amzn-s3-demo-bucket/development/</code></p></li>
     /// <li>
     /// <p><b>CloudWatch Logs log group</b>:</p>
     /// <p><code>arn:aws:logs:us-west-1:123456789012:log-group:/mystack-testgroup-12ABC1AB12A1:*</code></p></li>
@@ -131,9 +131,9 @@ impl CreateResolverQueryLogConfigInputBuilder {
     /// <ul>
     /// <li>
     /// <p><b>S3 bucket</b>:</p>
-    /// <p><code>arn:aws:s3:::examplebucket</code></p>
+    /// <p><code>arn:aws:s3:::amzn-s3-demo-bucket</code></p>
     /// <p>You can optionally append a file prefix to the end of the ARN.</p>
-    /// <p><code>arn:aws:s3:::examplebucket/development/</code></p></li>
+    /// <p><code>arn:aws:s3:::amzn-s3-demo-bucket/development/</code></p></li>
     /// <li>
     /// <p><b>CloudWatch Logs log group</b>:</p>
     /// <p><code>arn:aws:logs:us-west-1:123456789012:log-group:/mystack-testgroup-12ABC1AB12A1:*</code></p></li>

@@ -66,6 +66,40 @@ impl From<crate::operation::accept_address_transfer::AcceptAddressTransferError>
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::accept_capacity_reservation_billing_ownership::AcceptCapacityReservationBillingOwnershipError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::accept_capacity_reservation_billing_ownership::AcceptCapacityReservationBillingOwnershipError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::accept_capacity_reservation_billing_ownership::AcceptCapacityReservationBillingOwnershipError> for Error {
+    fn from(err: crate::operation::accept_capacity_reservation_billing_ownership::AcceptCapacityReservationBillingOwnershipError) -> Self {
+        match err {
+            crate::operation::accept_capacity_reservation_billing_ownership::AcceptCapacityReservationBillingOwnershipError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::accept_reserved_instances_exchange_quote::AcceptReservedInstancesExchangeQuoteError,
             R,
         >,
@@ -466,6 +500,40 @@ impl From<crate::operation::associate_address::AssociateAddressError> for Error 
     fn from(err: crate::operation::associate_address::AssociateAddressError) -> Self {
         match err {
             crate::operation::associate_address::AssociateAddressError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::associate_capacity_reservation_billing_owner::AssociateCapacityReservationBillingOwnerError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::associate_capacity_reservation_billing_owner::AssociateCapacityReservationBillingOwnerError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::associate_capacity_reservation_billing_owner::AssociateCapacityReservationBillingOwnerError> for Error {
+    fn from(err: crate::operation::associate_capacity_reservation_billing_owner::AssociateCapacityReservationBillingOwnerError) -> Self {
+        match err {
+            crate::operation::associate_capacity_reservation_billing_owner::AssociateCapacityReservationBillingOwnerError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
@@ -6008,6 +6076,40 @@ impl From<crate::operation::describe_capacity_block_offerings::DescribeCapacityB
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_capacity_reservation_billing_requests::DescribeCapacityReservationBillingRequestsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_capacity_reservation_billing_requests::DescribeCapacityReservationBillingRequestsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_capacity_reservation_billing_requests::DescribeCapacityReservationBillingRequestsError> for Error {
+    fn from(err: crate::operation::describe_capacity_reservation_billing_requests::DescribeCapacityReservationBillingRequestsError) -> Self {
+        match err {
+            crate::operation::describe_capacity_reservation_billing_requests::DescribeCapacityReservationBillingRequestsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::describe_capacity_reservation_fleets::DescribeCapacityReservationFleetsError,
             R,
         >,
@@ -10463,6 +10565,40 @@ impl From<crate::operation::disassociate_address::DisassociateAddressError> for 
     fn from(err: crate::operation::disassociate_address::DisassociateAddressError) -> Self {
         match err {
             crate::operation::disassociate_address::DisassociateAddressError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::disassociate_capacity_reservation_billing_owner::DisassociateCapacityReservationBillingOwnerError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::disassociate_capacity_reservation_billing_owner::DisassociateCapacityReservationBillingOwnerError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::disassociate_capacity_reservation_billing_owner::DisassociateCapacityReservationBillingOwnerError> for Error {
+    fn from(err: crate::operation::disassociate_capacity_reservation_billing_owner::DisassociateCapacityReservationBillingOwnerError) -> Self {
+        match err {
+            crate::operation::disassociate_capacity_reservation_billing_owner::DisassociateCapacityReservationBillingOwnerError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
@@ -15288,6 +15424,40 @@ impl From<crate::operation::register_transit_gateway_multicast_group_sources::Re
             crate::operation::register_transit_gateway_multicast_group_sources::RegisterTransitGatewayMulticastGroupSourcesError::Unhandled(
                 inner,
             ) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::reject_capacity_reservation_billing_ownership::RejectCapacityReservationBillingOwnershipError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::reject_capacity_reservation_billing_ownership::RejectCapacityReservationBillingOwnershipError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::reject_capacity_reservation_billing_ownership::RejectCapacityReservationBillingOwnershipError> for Error {
+    fn from(err: crate::operation::reject_capacity_reservation_billing_ownership::RejectCapacityReservationBillingOwnershipError) -> Self {
+        match err {
+            crate::operation::reject_capacity_reservation_billing_ownership::RejectCapacityReservationBillingOwnershipError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }

@@ -13,7 +13,9 @@ pub struct Order {
     /// <li>
     /// <p><code>PREPARING</code> - Order is received and being prepared.</p></li>
     /// <li>
-    /// <p><code>IN_PROGRESS</code> - Order is either being built, shipped, or installed. To get more details, see the line item status.</p></li>
+    /// <p><code>IN_PROGRESS</code> - Order is either being built or shipped. To get more details, see the line item status.</p></li>
+    /// <li>
+    /// <p><code>DELIVERED</code> - Order was delivered to the Outpost site.</p></li>
     /// <li>
     /// <p><code>COMPLETED</code> - Order is complete.</p></li>
     /// <li>
@@ -51,7 +53,9 @@ impl Order {
     /// <li>
     /// <p><code>PREPARING</code> - Order is received and being prepared.</p></li>
     /// <li>
-    /// <p><code>IN_PROGRESS</code> - Order is either being built, shipped, or installed. To get more details, see the line item status.</p></li>
+    /// <p><code>IN_PROGRESS</code> - Order is either being built or shipped. To get more details, see the line item status.</p></li>
+    /// <li>
+    /// <p><code>DELIVERED</code> - Order was delivered to the Outpost site.</p></li>
     /// <li>
     /// <p><code>COMPLETED</code> - Order is complete.</p></li>
     /// <li>
@@ -146,7 +150,9 @@ impl OrderBuilder {
     /// <li>
     /// <p><code>PREPARING</code> - Order is received and being prepared.</p></li>
     /// <li>
-    /// <p><code>IN_PROGRESS</code> - Order is either being built, shipped, or installed. To get more details, see the line item status.</p></li>
+    /// <p><code>IN_PROGRESS</code> - Order is either being built or shipped. To get more details, see the line item status.</p></li>
+    /// <li>
+    /// <p><code>DELIVERED</code> - Order was delivered to the Outpost site.</p></li>
     /// <li>
     /// <p><code>COMPLETED</code> - Order is complete.</p></li>
     /// <li>
@@ -165,7 +171,9 @@ impl OrderBuilder {
     /// <li>
     /// <p><code>PREPARING</code> - Order is received and being prepared.</p></li>
     /// <li>
-    /// <p><code>IN_PROGRESS</code> - Order is either being built, shipped, or installed. To get more details, see the line item status.</p></li>
+    /// <p><code>IN_PROGRESS</code> - Order is either being built or shipped. To get more details, see the line item status.</p></li>
+    /// <li>
+    /// <p><code>DELIVERED</code> - Order was delivered to the Outpost site.</p></li>
     /// <li>
     /// <p><code>COMPLETED</code> - Order is complete.</p></li>
     /// <li>
@@ -184,7 +192,9 @@ impl OrderBuilder {
     /// <li>
     /// <p><code>PREPARING</code> - Order is received and being prepared.</p></li>
     /// <li>
-    /// <p><code>IN_PROGRESS</code> - Order is either being built, shipped, or installed. To get more details, see the line item status.</p></li>
+    /// <p><code>IN_PROGRESS</code> - Order is either being built or shipped. To get more details, see the line item status.</p></li>
+    /// <li>
+    /// <p><code>DELIVERED</code> - Order was delivered to the Outpost site.</p></li>
     /// <li>
     /// <p><code>COMPLETED</code> - Order is complete.</p></li>
     /// <li>

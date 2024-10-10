@@ -444,14 +444,14 @@ impl RunInstancesFluentBuilder {
     /// To override the contents of this collection use [`set_elastic_inference_accelerators`](Self::set_elastic_inference_accelerators).
     ///
     /// <p>An elastic inference accelerator to associate with the instance.</p><note>
-    /// <p>Amazon Elastic Inference (EI) is no longer available to new customers. For more information, see <a href="http://aws.amazon.com/machine-learning/elastic-inference/faqs/">Amazon Elastic Inference FAQs</a>.</p>
+    /// <p>Amazon Elastic Inference is no longer available.</p>
     /// </note>
     pub fn elastic_inference_accelerators(mut self, input: crate::types::ElasticInferenceAccelerator) -> Self {
         self.inner = self.inner.elastic_inference_accelerators(input);
         self
     }
     /// <p>An elastic inference accelerator to associate with the instance.</p><note>
-    /// <p>Amazon Elastic Inference (EI) is no longer available to new customers. For more information, see <a href="http://aws.amazon.com/machine-learning/elastic-inference/faqs/">Amazon Elastic Inference FAQs</a>.</p>
+    /// <p>Amazon Elastic Inference is no longer available.</p>
     /// </note>
     pub fn set_elastic_inference_accelerators(
         mut self,
@@ -461,7 +461,7 @@ impl RunInstancesFluentBuilder {
         self
     }
     /// <p>An elastic inference accelerator to associate with the instance.</p><note>
-    /// <p>Amazon Elastic Inference (EI) is no longer available to new customers. For more information, see <a href="http://aws.amazon.com/machine-learning/elastic-inference/faqs/">Amazon Elastic Inference FAQs</a>.</p>
+    /// <p>Amazon Elastic Inference is no longer available.</p>
     /// </note>
     pub fn get_elastic_inference_accelerators(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ElasticInferenceAccelerator>> {
         self.inner.get_elastic_inference_accelerators()

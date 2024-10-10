@@ -258,6 +258,8 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DescribeMigra
 pub enum DescribeMigrationProjectsError {
     /// <p>DMS was denied access to the endpoint. Check that the role is correctly configured.</p>
     AccessDeniedFault(crate::types::error::AccessDeniedFault),
+    /// <p>A dependency threw an exception.</p>
+    FailedDependencyFault(crate::types::error::FailedDependencyFault),
     /// <p>The resource could not be found.</p>
     ResourceNotFoundFault(crate::types::error::ResourceNotFoundFault),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
@@ -294,6 +296,7 @@ impl DescribeMigrationProjectsError {
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::AccessDeniedFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::FailedDependencyFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ResourceNotFoundFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
@@ -301,6 +304,10 @@ impl DescribeMigrationProjectsError {
     /// Returns `true` if the error kind is `DescribeMigrationProjectsError::AccessDeniedFault`.
     pub fn is_access_denied_fault(&self) -> bool {
         matches!(self, Self::AccessDeniedFault(_))
+    }
+    /// Returns `true` if the error kind is `DescribeMigrationProjectsError::FailedDependencyFault`.
+    pub fn is_failed_dependency_fault(&self) -> bool {
+        matches!(self, Self::FailedDependencyFault(_))
     }
     /// Returns `true` if the error kind is `DescribeMigrationProjectsError::ResourceNotFoundFault`.
     pub fn is_resource_not_found_fault(&self) -> bool {
@@ -311,6 +318,7 @@ impl ::std::error::Error for DescribeMigrationProjectsError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
             Self::AccessDeniedFault(_inner) => ::std::option::Option::Some(_inner),
+            Self::FailedDependencyFault(_inner) => ::std::option::Option::Some(_inner),
             Self::ResourceNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
         }
@@ -320,6 +328,7 @@ impl ::std::fmt::Display for DescribeMigrationProjectsError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
             Self::AccessDeniedFault(_inner) => _inner.fmt(f),
+            Self::FailedDependencyFault(_inner) => _inner.fmt(f),
             Self::ResourceNotFoundFault(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
@@ -343,6 +352,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for DescribeMigra
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::AccessDeniedFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::FailedDependencyFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ResourceNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,
         }

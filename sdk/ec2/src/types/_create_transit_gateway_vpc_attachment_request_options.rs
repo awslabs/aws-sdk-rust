@@ -7,7 +7,7 @@ pub struct CreateTransitGatewayVpcAttachmentRequestOptions {
     /// <p>Enable or disable DNS support. The default is <code>enable</code>.</p>
     pub dns_support: ::std::option::Option<crate::types::DnsSupportValue>,
     /// <p>Enables you to reference a security group across VPCs attached to a transit gateway to simplify security group management.</p>
-    /// <p>This option is enabled by default. However, security group referencing is disabled by default at the transit gateway level.</p>
+    /// <p>This option is set to <code>enable</code> by default. However, at the transit gateway level the default is set to <code>disable</code>.</p>
     /// <p>For more information about security group referencing, see <a href="https://docs.aws.amazon.com/vpc/latest/tgw/tgw-vpc-attachments.html#vpc-attachment-security">Security group referencing </a> in the <i>Amazon Web Services Transit Gateways Guide</i>.</p>
     pub security_group_referencing_support: ::std::option::Option<crate::types::SecurityGroupReferencingSupportValue>,
     /// <p>Enable or disable IPv6 support. The default is <code>disable</code>.</p>
@@ -21,7 +21,7 @@ impl CreateTransitGatewayVpcAttachmentRequestOptions {
         self.dns_support.as_ref()
     }
     /// <p>Enables you to reference a security group across VPCs attached to a transit gateway to simplify security group management.</p>
-    /// <p>This option is enabled by default. However, security group referencing is disabled by default at the transit gateway level.</p>
+    /// <p>This option is set to <code>enable</code> by default. However, at the transit gateway level the default is set to <code>disable</code>.</p>
     /// <p>For more information about security group referencing, see <a href="https://docs.aws.amazon.com/vpc/latest/tgw/tgw-vpc-attachments.html#vpc-attachment-security">Security group referencing </a> in the <i>Amazon Web Services Transit Gateways Guide</i>.</p>
     pub fn security_group_referencing_support(&self) -> ::std::option::Option<&crate::types::SecurityGroupReferencingSupportValue> {
         self.security_group_referencing_support.as_ref()
@@ -67,14 +67,14 @@ impl CreateTransitGatewayVpcAttachmentRequestOptionsBuilder {
         &self.dns_support
     }
     /// <p>Enables you to reference a security group across VPCs attached to a transit gateway to simplify security group management.</p>
-    /// <p>This option is enabled by default. However, security group referencing is disabled by default at the transit gateway level.</p>
+    /// <p>This option is set to <code>enable</code> by default. However, at the transit gateway level the default is set to <code>disable</code>.</p>
     /// <p>For more information about security group referencing, see <a href="https://docs.aws.amazon.com/vpc/latest/tgw/tgw-vpc-attachments.html#vpc-attachment-security">Security group referencing </a> in the <i>Amazon Web Services Transit Gateways Guide</i>.</p>
     pub fn security_group_referencing_support(mut self, input: crate::types::SecurityGroupReferencingSupportValue) -> Self {
         self.security_group_referencing_support = ::std::option::Option::Some(input);
         self
     }
     /// <p>Enables you to reference a security group across VPCs attached to a transit gateway to simplify security group management.</p>
-    /// <p>This option is enabled by default. However, security group referencing is disabled by default at the transit gateway level.</p>
+    /// <p>This option is set to <code>enable</code> by default. However, at the transit gateway level the default is set to <code>disable</code>.</p>
     /// <p>For more information about security group referencing, see <a href="https://docs.aws.amazon.com/vpc/latest/tgw/tgw-vpc-attachments.html#vpc-attachment-security">Security group referencing </a> in the <i>Amazon Web Services Transit Gateways Guide</i>.</p>
     pub fn set_security_group_referencing_support(
         mut self,
@@ -84,7 +84,7 @@ impl CreateTransitGatewayVpcAttachmentRequestOptionsBuilder {
         self
     }
     /// <p>Enables you to reference a security group across VPCs attached to a transit gateway to simplify security group management.</p>
-    /// <p>This option is enabled by default. However, security group referencing is disabled by default at the transit gateway level.</p>
+    /// <p>This option is set to <code>enable</code> by default. However, at the transit gateway level the default is set to <code>disable</code>.</p>
     /// <p>For more information about security group referencing, see <a href="https://docs.aws.amazon.com/vpc/latest/tgw/tgw-vpc-attachments.html#vpc-attachment-security">Security group referencing </a> in the <i>Amazon Web Services Transit Gateways Guide</i>.</p>
     pub fn get_security_group_referencing_support(&self) -> &::std::option::Option<crate::types::SecurityGroupReferencingSupportValue> {
         &self.security_group_referencing_support

@@ -27,6 +27,10 @@ pub(crate) mod shape_accept_address_transfer;
 
 pub(crate) mod shape_accept_address_transfer_input;
 
+pub(crate) mod shape_accept_capacity_reservation_billing_ownership;
+
+pub(crate) mod shape_accept_capacity_reservation_billing_ownership_input;
+
 pub(crate) mod shape_accept_reserved_instances_exchange_quote;
 
 pub(crate) mod shape_accept_reserved_instances_exchange_quote_input;
@@ -86,6 +90,10 @@ pub(crate) mod shape_assign_private_nat_gateway_address_input;
 pub(crate) mod shape_associate_address;
 
 pub(crate) mod shape_associate_address_input;
+
+pub(crate) mod shape_associate_capacity_reservation_billing_owner;
+
+pub(crate) mod shape_associate_capacity_reservation_billing_owner_input;
 
 pub(crate) mod shape_associate_client_vpn_target_network;
 
@@ -951,6 +959,10 @@ pub(crate) mod shape_describe_capacity_block_offerings;
 
 pub(crate) mod shape_describe_capacity_block_offerings_input;
 
+pub(crate) mod shape_describe_capacity_reservation_billing_requests;
+
+pub(crate) mod shape_describe_capacity_reservation_billing_requests_input;
+
 pub(crate) mod shape_describe_capacity_reservation_fleets;
 
 pub(crate) mod shape_describe_capacity_reservation_fleets_input;
@@ -1610,6 +1622,10 @@ pub(crate) mod shape_disable_vpc_classic_link_input;
 pub(crate) mod shape_disassociate_address;
 
 pub(crate) mod shape_disassociate_address_input;
+
+pub(crate) mod shape_disassociate_capacity_reservation_billing_owner;
+
+pub(crate) mod shape_disassociate_capacity_reservation_billing_owner_input;
 
 pub(crate) mod shape_disassociate_client_vpn_target_network;
 
@@ -2319,6 +2335,10 @@ pub(crate) mod shape_register_transit_gateway_multicast_group_sources;
 
 pub(crate) mod shape_register_transit_gateway_multicast_group_sources_input;
 
+pub(crate) mod shape_reject_capacity_reservation_billing_ownership;
+
+pub(crate) mod shape_reject_capacity_reservation_billing_ownership_input;
+
 pub(crate) mod shape_reject_transit_gateway_multicast_domain_associations;
 
 pub(crate) mod shape_reject_transit_gateway_multicast_domain_associations_input;
@@ -2850,6 +2870,8 @@ pub(crate) mod shape_cancelled_spot_instance_request_list;
 pub(crate) mod shape_capacity_block_offering_set;
 
 pub(crate) mod shape_capacity_reservation;
+
+pub(crate) mod shape_capacity_reservation_billing_request_set;
 
 pub(crate) mod shape_capacity_reservation_fleet_cancellation_state_set;
 
@@ -3667,6 +3689,8 @@ pub(crate) mod shape_capacity_allocations;
 
 pub(crate) mod shape_capacity_block_offering;
 
+pub(crate) mod shape_capacity_reservation_billing_request;
+
 pub(crate) mod shape_capacity_reservation_fleet;
 
 pub(crate) mod shape_capacity_reservation_fleet_cancellation_state;
@@ -4172,6 +4196,8 @@ pub(crate) mod shape_cancel_capacity_reservation_fleet_error;
 pub(crate) mod shape_cancel_spot_fleet_requests_error;
 
 pub(crate) mod shape_capacity_allocation;
+
+pub(crate) mod shape_capacity_reservation_info;
 
 pub(crate) mod shape_capacity_reservation_specification_response;
 

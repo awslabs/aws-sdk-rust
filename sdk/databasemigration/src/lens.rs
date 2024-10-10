@@ -29,6 +29,16 @@ pub(crate) fn reflens_describe_connections_output_output_marker(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_describe_data_migrations_output_output_marker(
+    input: &crate::operation::describe_data_migrations::DescribeDataMigrationsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.marker {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_describe_data_providers_output_output_marker(
     input: &crate::operation::describe_data_providers::DescribeDataProvidersOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -383,6 +393,16 @@ pub(crate) fn reflens_describe_table_statistics_output_output_marker(
     input: &crate::operation::describe_table_statistics::DescribeTableStatisticsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
     let input = match &input.marker {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_describe_data_migrations_output_output_data_migrations(
+    input: crate::operation::describe_data_migrations::DescribeDataMigrationsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::DataMigration>> {
+    let input = match input.data_migrations {
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,
     };

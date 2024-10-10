@@ -21,10 +21,12 @@ pub struct Instance {
     /// <p>Indicates whether this is a Spot Instance or a Scheduled Instance.</p>
     pub instance_lifecycle: ::std::option::Option<crate::types::InstanceLifecycleType>,
     /// <p>Deprecated.</p><note>
-    /// <p>Amazon Elastic Graphics reached end of life on January 8, 2024. For workloads that require graphics acceleration, we recommend that you use Amazon EC2 G4ad, G4dn, or G5 instances.</p>
+    /// <p>Amazon Elastic Graphics reached end of life on January 8, 2024.</p>
     /// </note>
     pub elastic_gpu_associations: ::std::option::Option<::std::vec::Vec<crate::types::ElasticGpuAssociation>>,
-    /// <p>The elastic inference accelerator associated with the instance.</p>
+    /// <p>Deprecated</p><note>
+    /// <p>Amazon Elastic Inference is no longer available.</p>
+    /// </note>
     pub elastic_inference_accelerator_associations: ::std::option::Option<::std::vec::Vec<crate::types::ElasticInferenceAcceleratorAssociation>>,
     /// <p>The network interfaces for the instance.</p>
     pub network_interfaces: ::std::option::Option<::std::vec::Vec<crate::types::InstanceNetworkInterface>>,
@@ -162,14 +164,16 @@ impl Instance {
         self.instance_lifecycle.as_ref()
     }
     /// <p>Deprecated.</p><note>
-    /// <p>Amazon Elastic Graphics reached end of life on January 8, 2024. For workloads that require graphics acceleration, we recommend that you use Amazon EC2 G4ad, G4dn, or G5 instances.</p>
+    /// <p>Amazon Elastic Graphics reached end of life on January 8, 2024.</p>
     /// </note>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.elastic_gpu_associations.is_none()`.
     pub fn elastic_gpu_associations(&self) -> &[crate::types::ElasticGpuAssociation] {
         self.elastic_gpu_associations.as_deref().unwrap_or_default()
     }
-    /// <p>The elastic inference accelerator associated with the instance.</p>
+    /// <p>Deprecated</p><note>
+    /// <p>Amazon Elastic Inference is no longer available.</p>
+    /// </note>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.elastic_inference_accelerator_associations.is_none()`.
     pub fn elastic_inference_accelerator_associations(&self) -> &[crate::types::ElasticInferenceAcceleratorAssociation] {
@@ -573,7 +577,7 @@ impl InstanceBuilder {
     /// To override the contents of this collection use [`set_elastic_gpu_associations`](Self::set_elastic_gpu_associations).
     ///
     /// <p>Deprecated.</p><note>
-    /// <p>Amazon Elastic Graphics reached end of life on January 8, 2024. For workloads that require graphics acceleration, we recommend that you use Amazon EC2 G4ad, G4dn, or G5 instances.</p>
+    /// <p>Amazon Elastic Graphics reached end of life on January 8, 2024.</p>
     /// </note>
     pub fn elastic_gpu_associations(mut self, input: crate::types::ElasticGpuAssociation) -> Self {
         let mut v = self.elastic_gpu_associations.unwrap_or_default();
@@ -582,14 +586,14 @@ impl InstanceBuilder {
         self
     }
     /// <p>Deprecated.</p><note>
-    /// <p>Amazon Elastic Graphics reached end of life on January 8, 2024. For workloads that require graphics acceleration, we recommend that you use Amazon EC2 G4ad, G4dn, or G5 instances.</p>
+    /// <p>Amazon Elastic Graphics reached end of life on January 8, 2024.</p>
     /// </note>
     pub fn set_elastic_gpu_associations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ElasticGpuAssociation>>) -> Self {
         self.elastic_gpu_associations = input;
         self
     }
     /// <p>Deprecated.</p><note>
-    /// <p>Amazon Elastic Graphics reached end of life on January 8, 2024. For workloads that require graphics acceleration, we recommend that you use Amazon EC2 G4ad, G4dn, or G5 instances.</p>
+    /// <p>Amazon Elastic Graphics reached end of life on January 8, 2024.</p>
     /// </note>
     pub fn get_elastic_gpu_associations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ElasticGpuAssociation>> {
         &self.elastic_gpu_associations
@@ -598,14 +602,18 @@ impl InstanceBuilder {
     ///
     /// To override the contents of this collection use [`set_elastic_inference_accelerator_associations`](Self::set_elastic_inference_accelerator_associations).
     ///
-    /// <p>The elastic inference accelerator associated with the instance.</p>
+    /// <p>Deprecated</p><note>
+    /// <p>Amazon Elastic Inference is no longer available.</p>
+    /// </note>
     pub fn elastic_inference_accelerator_associations(mut self, input: crate::types::ElasticInferenceAcceleratorAssociation) -> Self {
         let mut v = self.elastic_inference_accelerator_associations.unwrap_or_default();
         v.push(input);
         self.elastic_inference_accelerator_associations = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The elastic inference accelerator associated with the instance.</p>
+    /// <p>Deprecated</p><note>
+    /// <p>Amazon Elastic Inference is no longer available.</p>
+    /// </note>
     pub fn set_elastic_inference_accelerator_associations(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::ElasticInferenceAcceleratorAssociation>>,
@@ -613,7 +621,9 @@ impl InstanceBuilder {
         self.elastic_inference_accelerator_associations = input;
         self
     }
-    /// <p>The elastic inference accelerator associated with the instance.</p>
+    /// <p>Deprecated</p><note>
+    /// <p>Amazon Elastic Inference is no longer available.</p>
+    /// </note>
     pub fn get_elastic_inference_accelerator_associations(
         &self,
     ) -> &::std::option::Option<::std::vec::Vec<crate::types::ElasticInferenceAcceleratorAssociation>> {

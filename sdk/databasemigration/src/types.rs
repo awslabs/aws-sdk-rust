@@ -13,6 +13,14 @@ pub use crate::types::_replication_stats::ReplicationStats;
 
 pub use crate::types::_provision_data::ProvisionData;
 
+pub use crate::types::_data_migration::DataMigration;
+
+pub use crate::types::_data_migration_statistics::DataMigrationStatistics;
+
+pub use crate::types::_source_data_setting::SourceDataSetting;
+
+pub use crate::types::_data_migration_settings::DataMigrationSettings;
+
 pub use crate::types::_replication_task_assessment_run::ReplicationTaskAssessmentRun;
 
 pub use crate::types::_replication_task_assessment_run_progress::ReplicationTaskAssessmentRunProgress;
@@ -22,6 +30,8 @@ pub use crate::types::_start_replication_task_type_value::StartReplicationTaskTy
 pub use crate::types::_recommendation_settings::RecommendationSettings;
 
 pub use crate::types::_origin_type_value::OriginTypeValue;
+
+pub use crate::types::_start_replication_migration_type_value::StartReplicationMigrationTypeValue;
 
 pub use crate::types::_reload_option_value::ReloadOptionValue;
 
@@ -299,6 +309,12 @@ mod _connection;
 
 mod _data_format_value;
 
+mod _data_migration;
+
+mod _data_migration_settings;
+
+mod _data_migration_statistics;
+
 mod _data_provider;
 
 mod _data_provider_descriptor;
@@ -501,11 +517,15 @@ mod _schema_short_info_response;
 
 mod _server_short_info_response;
 
+mod _source_data_setting;
+
 mod _source_type;
 
 mod _ssl_security_protocol_value;
 
 mod _start_recommendations_request_entry;
+
+mod _start_replication_migration_type_value;
 
 mod _start_replication_task_type_value;
 

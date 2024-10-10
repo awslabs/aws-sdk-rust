@@ -1297,6 +1297,10 @@ pub use crate::types::_capacity_reservation_fleet::CapacityReservationFleetBuild
 
 pub use crate::types::_fleet_capacity_reservation::FleetCapacityReservationBuilder;
 
+pub use crate::types::_capacity_reservation_billing_request::CapacityReservationBillingRequestBuilder;
+
+pub use crate::types::_capacity_reservation_info::CapacityReservationInfoBuilder;
+
 pub use crate::types::_capacity_block_offering::CapacityBlockOfferingBuilder;
 
 pub use crate::types::_bundle_task::BundleTaskBuilder;

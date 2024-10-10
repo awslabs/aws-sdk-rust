@@ -384,6 +384,7 @@ members = [
     "sdk/snowball",
     "sdk/snowdevicemanagement",
     "sdk/sns",
+    "sdk/socialmessaging",
     "sdk/sqs",
     "sdk/ssm",
     "sdk/ssmcontacts",

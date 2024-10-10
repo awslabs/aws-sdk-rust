@@ -38,6 +38,8 @@ pub struct TargetAddress {
     /// <p>None, which is treated as Do53.</p></li>
     /// </ul>
     pub protocol: ::std::option::Option<crate::types::Protocol>,
+    /// <p>The Server Name Indication of the DoH server that you want to forward queries to. This is only used if the Protocol of the <code>TargetAddress</code> is <code>DoH</code>.</p>
+    pub server_name_indication: ::std::option::Option<::std::string::String>,
 }
 impl TargetAddress {
     /// <p>One IPv4 address that you want to forward DNS queries to.</p>
@@ -82,6 +84,10 @@ impl TargetAddress {
     pub fn protocol(&self) -> ::std::option::Option<&crate::types::Protocol> {
         self.protocol.as_ref()
     }
+    /// <p>The Server Name Indication of the DoH server that you want to forward queries to. This is only used if the Protocol of the <code>TargetAddress</code> is <code>DoH</code>.</p>
+    pub fn server_name_indication(&self) -> ::std::option::Option<&str> {
+        self.server_name_indication.as_deref()
+    }
 }
 impl TargetAddress {
     /// Creates a new builder-style object to manufacture [`TargetAddress`](crate::types::TargetAddress).
@@ -98,6 +104,7 @@ pub struct TargetAddressBuilder {
     pub(crate) port: ::std::option::Option<i32>,
     pub(crate) ipv6: ::std::option::Option<::std::string::String>,
     pub(crate) protocol: ::std::option::Option<crate::types::Protocol>,
+    pub(crate) server_name_indication: ::std::option::Option<::std::string::String>,
 }
 impl TargetAddressBuilder {
     /// <p>One IPv4 address that you want to forward DNS queries to.</p>
@@ -234,6 +241,20 @@ impl TargetAddressBuilder {
     pub fn get_protocol(&self) -> &::std::option::Option<crate::types::Protocol> {
         &self.protocol
     }
+    /// <p>The Server Name Indication of the DoH server that you want to forward queries to. This is only used if the Protocol of the <code>TargetAddress</code> is <code>DoH</code>.</p>
+    pub fn server_name_indication(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.server_name_indication = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Server Name Indication of the DoH server that you want to forward queries to. This is only used if the Protocol of the <code>TargetAddress</code> is <code>DoH</code>.</p>
+    pub fn set_server_name_indication(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.server_name_indication = input;
+        self
+    }
+    /// <p>The Server Name Indication of the DoH server that you want to forward queries to. This is only used if the Protocol of the <code>TargetAddress</code> is <code>DoH</code>.</p>
+    pub fn get_server_name_indication(&self) -> &::std::option::Option<::std::string::String> {
+        &self.server_name_indication
+    }
     /// Consumes the builder and constructs a [`TargetAddress`](crate::types::TargetAddress).
     pub fn build(self) -> crate::types::TargetAddress {
         crate::types::TargetAddress {
@@ -241,6 +262,7 @@ impl TargetAddressBuilder {
             port: self.port,
             ipv6: self.ipv6,
             protocol: self.protocol,
+            server_name_indication: self.server_name_indication,
         }
     }
 }

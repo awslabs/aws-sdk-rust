@@ -214,8 +214,6 @@ impl DescribeInstancesFluentBuilder {
     /// <li>
     /// <p><code>iam-instance-profile.id</code> - The instance profile associated with the instance. Specified as an ID.</p></li>
     /// <li>
-    /// <p><code>iam-instance-profile.name</code> - The instance profile associated with the instance. Specified as an name.</p></li>
-    /// <li>
     /// <p><code>image-id</code> - The ID of the image used to launch the instance.</p></li>
     /// <li>
     /// <p><code>instance-id</code> - The ID of the instance.</p></li>
@@ -483,8 +481,6 @@ impl DescribeInstancesFluentBuilder {
     /// <li>
     /// <p><code>iam-instance-profile.id</code> - The instance profile associated with the instance. Specified as an ID.</p></li>
     /// <li>
-    /// <p><code>iam-instance-profile.name</code> - The instance profile associated with the instance. Specified as an name.</p></li>
-    /// <li>
     /// <p><code>image-id</code> - The ID of the image used to launch the instance.</p></li>
     /// <li>
     /// <p><code>instance-id</code> - The ID of the instance.</p></li>
@@ -751,8 +747,6 @@ impl DescribeInstancesFluentBuilder {
     /// <p><code>iam-instance-profile.arn</code> - The instance profile associated with the instance. Specified as an ARN.</p></li>
     /// <li>
     /// <p><code>iam-instance-profile.id</code> - The instance profile associated with the instance. Specified as an ID.</p></li>
-    /// <li>
-    /// <p><code>iam-instance-profile.name</code> - The instance profile associated with the instance. Specified as an name.</p></li>
     /// <li>
     /// <p><code>image-id</code> - The ID of the image used to launch the instance.</p></li>
     /// <li>

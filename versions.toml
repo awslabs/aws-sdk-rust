@@ -59,8 +59,8 @@ model_hash = '707cde7caa30133c4d1e401decfb9815af0805b744e956c8cc125119a3691f83'
 [crates.aws-sdk-acmpca]
 category = 'AwsSdk'
 version = '1.49.0'
-source_hash = '3be344f7ef4b84c1f536f939b3968ef40c4eb2dfe565c75ee7baac3c13a6a3d2'
-model_hash = '025a4b98ffe521deeb9de0538127e54c9ffc82dc1dfdb7c2839a62de70f4e498'
+source_hash = 'fe88e00edd7db0818fac12355d1bc940ab42e36e57c9963451d7f2ae43c39f37'
+model_hash = 'ae1e89c98ecb9c95b4f64fa65e2b0a1347611cd3de2db192630f9b53419fc821'
 
 [crates.aws-sdk-amp]
 category = 'AwsSdk'
@@ -629,8 +629,8 @@ model_hash = 'ae1580fbf0ebe79f362c9c77e619ffeff1770cbef0d7161324a33b440246544f'
 [crates.aws-sdk-databasemigration]
 category = 'AwsSdk'
 version = '1.47.0'
-source_hash = '520092b468d634bc6b2650db775f2f3bae2110c225956c87a2af5354a08b47f3'
-model_hash = '3a8173758444a7a2d59bfccf6764308b0d4e16ddc38c991c987af8b0acece08e'
+source_hash = '1e5c9c1f28536e2a4d9937e34f2b062ac4370cc546e4bac8124dc7de6a7c19df'
+model_hash = '09b86b0d1958c0932baae5ce837d72fd021a7e960b47d1fc362a2743f1baa6f7'
 
 [crates.aws-sdk-databrew]
 category = 'AwsSdk'
@@ -755,8 +755,8 @@ model_hash = '5ec7004d46e2bb30c8d974da3846e960c6d52a00307ee4cc8a62b95566a1fc84'
 [crates.aws-sdk-ec2]
 category = 'AwsSdk'
 version = '1.78.0'
-source_hash = '8dc7663cacde83b96610c178f10c40bab20e01e509c3a05bd66010811b2f27f6'
-model_hash = '44233a607200d7605b3a08f7c46f96222ff3c34544bb03746632dd5fbf38baf8'
+source_hash = 'e2de340e6838cd250d86b04412059a42bb718d5621a9da66bbf4cde2ca50adda'
+model_hash = '766b661762b238b45e1ae63bced77cf6d70056dca17321da84670b43f5964487'
 
 [crates.aws-sdk-ec2instanceconnect]
 category = 'AwsSdk'
@@ -779,8 +779,8 @@ model_hash = 'b6e23be351cb44f9f2b57d80f227604694a8bac84ed1467add8d019c824ac349'
 [crates.aws-sdk-ecs]
 category = 'AwsSdk'
 version = '1.48.0'
-source_hash = '607098715388594159812ef4f3b154f0c85e52270812c142f1542a8cbcb46628'
-model_hash = '3238332dddb6909cf5be962b1b2ad41fc74bec9889984e5abbb7b326d4f5bc50'
+source_hash = 'b6d09ef7c9efc91d172c656c3df5b5261ba783a07b794996e1531dcd4276bdd4'
+model_hash = '26519b59d09252f7dec6b71eca1d904d0397b33dd24529ad969565fd6dd28454'
 
 [crates.aws-sdk-efs]
 category = 'AwsSdk'
@@ -815,8 +815,8 @@ model_hash = 'e55bce3fdf06277dce4fbe4512bf5caf9a0c369b23608f66e24113e6dba91b75'
 [crates.aws-sdk-elasticinference]
 category = 'AwsSdk'
 version = '1.46.0'
-source_hash = 'af67f7cddf61da14969ed199859bce1bf78c220a61794bd8141b8d7ebeb81a28'
-model_hash = '237abbdf572e7a7a4fc9891f05db5f8c0664c1c757dda0d6ac4707b88ba5e120'
+source_hash = 'd6a426103f5a6f3a5a42951ca9c2dad989061a6f569f3ff9fd6b6b527830e23b'
+model_hash = '1732892152c88440b079cc2b2c6ef7995e996b9ca398d36d61dd36b2ea888887'
 
 [crates.aws-sdk-elasticloadbalancing]
 category = 'AwsSdk'
@@ -1103,8 +1103,8 @@ model_hash = '445ebd849fd5c7031c93b5e6f57b120d23bcb3ea42ac713b4ebd321203611c2c'
 [crates.aws-sdk-iotfleetwise]
 category = 'AwsSdk'
 version = '1.48.0'
-source_hash = '1c9a9d078a230ffc98f2d78830f1180f6ff958dc41c39b48b2e03e8b1da56e72'
-model_hash = '493d5e0d94be5e43a623cf091c89c86da29873827e61b0b149aa960ef7263d46'
+source_hash = '6d6ac07afe22a594e3446723777ce8c8e1202b8ebe1fc91ab5b9953df195a958'
+model_hash = '9a947a1b2b7ef7e6c7ac794e11dce2eadec28d90eaa840ccdf1c13b4ddb8638c'
 
 [crates.aws-sdk-iotjobsdataplane]
 category = 'AwsSdk'
@@ -1547,8 +1547,8 @@ model_hash = '3b83cd13db92df4ca24a11f8978d16f9aaebaaaf6144a282feba7c369d65c248'
 [crates.aws-sdk-neptunegraph]
 category = 'AwsSdk'
 version = '1.44.0'
-source_hash = '194575001ece7ab835d7836d18206f75a81f43c8fd71f3ee1341247b647c35b2'
-model_hash = '3ef2a3f0060980140db2f222152f02c92371144d972bdfc765cce105c1c37f93'
+source_hash = 'ce74f575f32692e4421bb5a49842a1643a54a219007cff3435f0d670a01f88c1'
+model_hash = 'caa3cf3fc4e8305f11d746a2ae9ed586ce0aee96d56f457e3c208fddf1918c1b'
 
 [crates.aws-sdk-networkfirewall]
 category = 'AwsSdk'
@@ -1625,8 +1625,8 @@ model_hash = '4d2917fd5fa3eb1748b771abcc3273a96d4646cd7715aa010eb7e98c766648d6'
 [crates.aws-sdk-outposts]
 category = 'AwsSdk'
 version = '1.49.0'
-source_hash = 'ed057178030500a4bf41c16226f64a44d100e68cf67a0ddf81580254f3ccc4c7'
-model_hash = 'ba872fbc48ac336af94042c9d874858c96be2079c87c66ba39f2a2427e87cd00'
+source_hash = '1fc5ed7c601affcbc18eca5931ead7bcff8c4cbe5f77e124c225768a05ea00ab'
+model_hash = '31b62d42640c9a4dfe3ea584fee1baf02552e6105863a87a853cd22e832d67ee'
 
 [crates.aws-sdk-panorama]
 category = 'AwsSdk'
@@ -1907,8 +1907,8 @@ model_hash = '4174e800015b430563a53761759735a4db5bc924a4107ae11d034af8e9c6625d'
 [crates.aws-sdk-route53resolver]
 category = 'AwsSdk'
 version = '1.50.0'
-source_hash = '19d50420e83e7b187d88ff039d30c24b2bd7fd3984bff70978456383fe0af4f1'
-model_hash = 'd87597f0e84a64ae799be3ec7e60022644afe1208f49bd5db1b9a8e4571ed7d3'
+source_hash = 'b91926294fdae5836796e2519082f65bd5951ff02b9e506d77970c5f4b033618'
+model_hash = '3f8350db685a3b3bfd4b35f82c1312b3224f0b0495dc1aecf5754d2f7564dbf1'
 
 [crates.aws-sdk-rum]
 category = 'AwsSdk'
@@ -2102,6 +2102,12 @@ version = '1.47.0'
 source_hash = '062ba3a94d76f863caddb6a01ce9d318b6d5c2702e8e42f9b3d7ba5407795a15'
 model_hash = 'bf653eadb796f2eeff0c0277d293bc0b970f6de5aaea4f73229d70a87f0acf57'
 
+[crates.aws-sdk-socialmessaging]
+category = 'AwsSdk'
+version = '1.0.0'
+source_hash = '71e33092e847516cbbff479f56ecf7f29dadef16678044290e883d11107d0319'
+model_hash = 'd0f11fe8d81d0e4a3ae56122cd0e9be4523eaf85d537a5a2052cc44e84b766d0'
+
 [crates.aws-sdk-sqs]
 category = 'AwsSdk'
 version = '1.46.0'
@@ -2214,7 +2220,7 @@ model_hash = 'a53d78aba76a9e4ea3ea54db9720f8c1bf9a20b349516a5afce390bb40f55a9f'
 category = 'AwsSdk'
 version = '1.30.0'
 source_hash = '406b271eab28ab0bc20d2f31d905653367aa7463281ac0b514d1931244fb9f4a'
-model_hash = '5d1138bceacb3e9fa2621832706c419b5f76f7092ca11e328a0d42f0bbd9e773'
+model_hash = '07132406d7b90c31830dca33e4afb72e3614fdca293826a0bd759c264873c4f7'
 
 [crates.aws-sdk-timestreamquery]
 category = 'AwsSdk'
@@ -2838,6 +2844,7 @@ aws-sdk-sms = '1.46.0'
 aws-sdk-snowball = '1.46.0'
 aws-sdk-snowdevicemanagement = '1.46.0'
 aws-sdk-sns = '1.47.0'
+aws-sdk-socialmessaging = '1.0.0'
 aws-sdk-sqs = '1.46.0'
 aws-sdk-ssm = '1.51.0'
 aws-sdk-ssmcontacts = '1.46.0'

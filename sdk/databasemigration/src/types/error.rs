@@ -9,6 +9,8 @@ pub use crate::types::error::_resource_not_found_fault::ResourceNotFoundFault;
 
 pub use crate::types::error::_kms_key_not_accessible_fault::KmsKeyNotAccessibleFault;
 
+pub use crate::types::error::_failed_dependency_fault::FailedDependencyFault;
+
 pub use crate::types::error::_s3_resource_not_found_fault::S3ResourceNotFoundFault;
 
 pub use crate::types::error::_s3_access_denied_fault::S3AccessDeniedFault;
@@ -24,6 +26,8 @@ pub use crate::types::error::_kms_fault::KmsFault;
 pub use crate::types::error::_kms_disabled_fault::KmsDisabledFault;
 
 pub use crate::types::error::_kms_access_denied_fault::KmsAccessDeniedFault;
+
+pub use crate::types::error::_invalid_operation_fault::InvalidOperationFault;
 
 pub use crate::types::error::_subnet_already_in_use::SubnetAlreadyInUse;
 
@@ -45,13 +49,13 @@ pub use crate::types::error::_kms_throttling_fault::KmsThrottlingFault;
 
 pub use crate::types::error::_invalid_certificate_fault::InvalidCertificateFault;
 
-pub use crate::types::error::_invalid_operation_fault::InvalidOperationFault;
-
 pub use crate::types::error::_collector_not_found_fault::CollectorNotFoundFault;
 
 mod _access_denied_fault;
 
 mod _collector_not_found_fault;
+
+mod _failed_dependency_fault;
 
 mod _insufficient_resource_capacity_fault;
 

@@ -14,6 +14,7 @@
 /// match orderstatus {
 ///     OrderStatus::Cancelled => { /* ... */ },
 ///     OrderStatus::Completed => { /* ... */ },
+///     OrderStatus::Delivered => { /* ... */ },
 ///     OrderStatus::Error => { /* ... */ },
 ///     OrderStatus::Fulfilled => { /* ... */ },
 ///     OrderStatus::Installing => { /* ... */ },
@@ -54,6 +55,8 @@ pub enum OrderStatus {
     #[allow(missing_docs)] // documentation missing in model
     Completed,
     #[allow(missing_docs)] // documentation missing in model
+    Delivered,
+    #[allow(missing_docs)] // documentation missing in model
     Error,
     #[allow(missing_docs)] // documentation missing in model
     Fulfilled,
@@ -78,6 +81,7 @@ impl ::std::convert::From<&str> for OrderStatus {
         match s {
             "CANCELLED" => OrderStatus::Cancelled,
             "COMPLETED" => OrderStatus::Completed,
+            "DELIVERED" => OrderStatus::Delivered,
             "ERROR" => OrderStatus::Error,
             "FULFILLED" => OrderStatus::Fulfilled,
             "INSTALLING" => OrderStatus::Installing,
@@ -103,6 +107,7 @@ impl OrderStatus {
         match self {
             OrderStatus::Cancelled => "CANCELLED",
             OrderStatus::Completed => "COMPLETED",
+            OrderStatus::Delivered => "DELIVERED",
             OrderStatus::Error => "ERROR",
             OrderStatus::Fulfilled => "FULFILLED",
             OrderStatus::Installing => "INSTALLING",
@@ -119,6 +124,7 @@ impl OrderStatus {
         &[
             "CANCELLED",
             "COMPLETED",
+            "DELIVERED",
             "ERROR",
             "FULFILLED",
             "INSTALLING",
@@ -152,6 +158,7 @@ impl ::std::fmt::Display for OrderStatus {
         match self {
             OrderStatus::Cancelled => write!(f, "CANCELLED"),
             OrderStatus::Completed => write!(f, "COMPLETED"),
+            OrderStatus::Delivered => write!(f, "DELIVERED"),
             OrderStatus::Error => write!(f, "ERROR"),
             OrderStatus::Fulfilled => write!(f, "FULFILLED"),
             OrderStatus::Installing => write!(f, "INSTALLING"),

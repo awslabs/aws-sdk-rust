@@ -208,6 +208,8 @@ mod batch_start_recommendations;
 
 mod cancel_replication_task_assessment_run;
 
+mod create_data_migration;
+
 mod create_data_provider;
 
 mod create_endpoint;
@@ -259,6 +261,8 @@ mod delete_certificate;
 
 mod delete_connection;
 
+mod delete_data_migration;
+
 mod delete_data_provider;
 
 mod delete_endpoint;
@@ -292,6 +296,8 @@ mod describe_certificates;
 mod describe_connections;
 
 mod describe_conversion_configuration;
+
+mod describe_data_migrations;
 
 mod describe_data_providers;
 
@@ -377,6 +383,8 @@ mod list_tags_for_resource;
 
 mod modify_conversion_configuration;
 
+mod modify_data_migration;
+
 mod modify_data_provider;
 
 mod modify_endpoint;
@@ -409,6 +417,8 @@ mod remove_tags_from_resource;
 
 mod run_fleet_advisor_lsa_analysis;
 
+mod start_data_migration;
+
 mod start_extension_pack_association;
 
 mod start_metadata_model_assessment;
@@ -430,6 +440,8 @@ mod start_replication_task;
 mod start_replication_task_assessment;
 
 mod start_replication_task_assessment_run;
+
+mod stop_data_migration;
 
 mod stop_replication;
 

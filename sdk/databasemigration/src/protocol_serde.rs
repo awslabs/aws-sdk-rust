@@ -31,6 +31,8 @@ pub(crate) mod shape_batch_start_recommendations;
 
 pub(crate) mod shape_cancel_replication_task_assessment_run;
 
+pub(crate) mod shape_create_data_migration;
+
 pub(crate) mod shape_create_data_provider;
 
 pub(crate) mod shape_create_endpoint;
@@ -54,6 +56,8 @@ pub(crate) mod shape_create_replication_task;
 pub(crate) mod shape_delete_certificate;
 
 pub(crate) mod shape_delete_connection;
+
+pub(crate) mod shape_delete_data_migration;
 
 pub(crate) mod shape_delete_data_provider;
 
@@ -88,6 +92,8 @@ pub(crate) mod shape_describe_certificates;
 pub(crate) mod shape_describe_connections;
 
 pub(crate) mod shape_describe_conversion_configuration;
+
+pub(crate) mod shape_describe_data_migrations;
 
 pub(crate) mod shape_describe_data_providers;
 
@@ -173,6 +179,8 @@ pub(crate) mod shape_list_tags_for_resource;
 
 pub(crate) mod shape_modify_conversion_configuration;
 
+pub(crate) mod shape_modify_data_migration;
+
 pub(crate) mod shape_modify_data_provider;
 
 pub(crate) mod shape_modify_endpoint;
@@ -205,6 +213,8 @@ pub(crate) mod shape_remove_tags_from_resource;
 
 pub(crate) mod shape_run_fleet_advisor_lsa_analysis;
 
+pub(crate) mod shape_start_data_migration;
+
 pub(crate) mod shape_start_extension_pack_association;
 
 pub(crate) mod shape_start_metadata_model_assessment;
@@ -226,6 +236,8 @@ pub(crate) mod shape_start_replication_task;
 pub(crate) mod shape_start_replication_task_assessment;
 
 pub(crate) mod shape_start_replication_task_assessment_run;
+
+pub(crate) mod shape_stop_data_migration;
 
 pub(crate) mod shape_stop_replication;
 
@@ -255,6 +267,8 @@ pub(crate) mod shape_cancel_replication_task_assessment_run_input;
 
 pub(crate) mod shape_collector_not_found_fault;
 
+pub(crate) mod shape_create_data_migration_input;
+
 pub(crate) mod shape_create_data_provider_input;
 
 pub(crate) mod shape_create_endpoint_input;
@@ -278,6 +292,8 @@ pub(crate) mod shape_create_replication_task_input;
 pub(crate) mod shape_delete_certificate_input;
 
 pub(crate) mod shape_delete_connection_input;
+
+pub(crate) mod shape_delete_data_migration_input;
 
 pub(crate) mod shape_delete_data_provider_input;
 
@@ -310,6 +326,8 @@ pub(crate) mod shape_describe_certificates_input;
 pub(crate) mod shape_describe_connections_input;
 
 pub(crate) mod shape_describe_conversion_configuration_input;
+
+pub(crate) mod shape_describe_data_migrations_input;
 
 pub(crate) mod shape_describe_data_providers_input;
 
@@ -389,6 +407,8 @@ pub(crate) mod shape_describe_table_statistics_input;
 
 pub(crate) mod shape_export_metadata_model_assessment_input;
 
+pub(crate) mod shape_failed_dependency_fault;
+
 pub(crate) mod shape_import_certificate_input;
 
 pub(crate) mod shape_insufficient_resource_capacity_fault;
@@ -418,6 +438,8 @@ pub(crate) mod shape_kms_throttling_fault;
 pub(crate) mod shape_list_tags_for_resource_input;
 
 pub(crate) mod shape_modify_conversion_configuration_input;
+
+pub(crate) mod shape_modify_data_migration_input;
 
 pub(crate) mod shape_modify_data_provider_input;
 
@@ -465,6 +487,8 @@ pub(crate) mod shape_sns_invalid_topic_fault;
 
 pub(crate) mod shape_sns_no_authorization_fault;
 
+pub(crate) mod shape_start_data_migration_input;
+
 pub(crate) mod shape_start_extension_pack_association_input;
 
 pub(crate) mod shape_start_metadata_model_assessment_input;
@@ -486,6 +510,8 @@ pub(crate) mod shape_start_replication_task_assessment_input;
 pub(crate) mod shape_start_replication_task_assessment_run_input;
 
 pub(crate) mod shape_start_replication_task_input;
+
+pub(crate) mod shape_stop_data_migration_input;
 
 pub(crate) mod shape_stop_replication_input;
 
@@ -516,6 +542,10 @@ pub(crate) mod shape_compute_config;
 pub(crate) mod shape_connection;
 
 pub(crate) mod shape_connection_list;
+
+pub(crate) mod shape_data_migration;
+
+pub(crate) mod shape_data_migrations;
 
 pub(crate) mod shape_data_provider;
 
@@ -649,6 +679,8 @@ pub(crate) mod shape_schema_conversion_request_list;
 
 pub(crate) mod shape_schema_list;
 
+pub(crate) mod shape_source_data_setting;
+
 pub(crate) mod shape_start_recommendations_request_entry;
 
 pub(crate) mod shape_string_list;
@@ -672,6 +704,10 @@ pub(crate) mod shape_account_quota;
 pub(crate) mod shape_batch_start_recommendations_error_entry;
 
 pub(crate) mod shape_collector_response;
+
+pub(crate) mod shape_data_migration_settings;
+
+pub(crate) mod shape_data_migration_statistics;
 
 pub(crate) mod shape_data_provider_descriptor_list;
 
@@ -713,6 +749,8 @@ pub(crate) mod shape_postgre_sql_data_provider_settings;
 
 pub(crate) mod shape_provision_data;
 
+pub(crate) mod shape_public_ip_address_list;
+
 pub(crate) mod shape_recommendation;
 
 pub(crate) mod shape_redshift_data_provider_settings;
@@ -740,6 +778,8 @@ pub(crate) mod shape_replication_task_stats;
 pub(crate) mod shape_schema_conversion_request;
 
 pub(crate) mod shape_schema_response;
+
+pub(crate) mod shape_source_data_settings;
 
 pub(crate) mod shape_source_ids_list;
 

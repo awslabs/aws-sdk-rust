@@ -258,6 +258,8 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateMigrati
 pub enum CreateMigrationProjectError {
     /// <p>DMS was denied access to the endpoint. Check that the role is correctly configured.</p>
     AccessDeniedFault(crate::types::error::AccessDeniedFault),
+    /// <p>A dependency threw an exception.</p>
+    FailedDependencyFault(crate::types::error::FailedDependencyFault),
     /// <p>The resource you are attempting to create already exists.</p>
     ResourceAlreadyExistsFault(crate::types::error::ResourceAlreadyExistsFault),
     /// <p>The resource could not be found.</p>
@@ -302,6 +304,7 @@ impl CreateMigrationProjectError {
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::AccessDeniedFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::FailedDependencyFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ResourceAlreadyExistsFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ResourceNotFoundFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ResourceQuotaExceededFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -313,6 +316,10 @@ impl CreateMigrationProjectError {
     /// Returns `true` if the error kind is `CreateMigrationProjectError::AccessDeniedFault`.
     pub fn is_access_denied_fault(&self) -> bool {
         matches!(self, Self::AccessDeniedFault(_))
+    }
+    /// Returns `true` if the error kind is `CreateMigrationProjectError::FailedDependencyFault`.
+    pub fn is_failed_dependency_fault(&self) -> bool {
+        matches!(self, Self::FailedDependencyFault(_))
     }
     /// Returns `true` if the error kind is `CreateMigrationProjectError::ResourceAlreadyExistsFault`.
     pub fn is_resource_already_exists_fault(&self) -> bool {
@@ -339,6 +346,7 @@ impl ::std::error::Error for CreateMigrationProjectError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
             Self::AccessDeniedFault(_inner) => ::std::option::Option::Some(_inner),
+            Self::FailedDependencyFault(_inner) => ::std::option::Option::Some(_inner),
             Self::ResourceAlreadyExistsFault(_inner) => ::std::option::Option::Some(_inner),
             Self::ResourceNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
             Self::ResourceQuotaExceededFault(_inner) => ::std::option::Option::Some(_inner),
@@ -352,6 +360,7 @@ impl ::std::fmt::Display for CreateMigrationProjectError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
             Self::AccessDeniedFault(_inner) => _inner.fmt(f),
+            Self::FailedDependencyFault(_inner) => _inner.fmt(f),
             Self::ResourceAlreadyExistsFault(_inner) => _inner.fmt(f),
             Self::ResourceNotFoundFault(_inner) => _inner.fmt(f),
             Self::ResourceQuotaExceededFault(_inner) => _inner.fmt(f),
@@ -379,6 +388,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for CreateMigrati
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::AccessDeniedFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::FailedDependencyFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ResourceAlreadyExistsFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ResourceNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ResourceQuotaExceededFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

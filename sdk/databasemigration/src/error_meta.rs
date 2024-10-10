@@ -7,6 +7,8 @@ pub enum Error {
     AccessDeniedFault(crate::types::error::AccessDeniedFault),
     /// <p>The specified collector doesn't exist.</p>
     CollectorNotFoundFault(crate::types::error::CollectorNotFoundFault),
+    /// <p>A dependency threw an exception.</p>
+    FailedDependencyFault(crate::types::error::FailedDependencyFault),
     /// <p>There are not enough resources allocated to the database migration.</p>
     InsufficientResourceCapacityFault(crate::types::error::InsufficientResourceCapacityFault),
     /// <p>The certificate was not valid.</p>
@@ -67,6 +69,7 @@ impl ::std::fmt::Display for Error {
         match self {
             Error::AccessDeniedFault(inner) => inner.fmt(f),
             Error::CollectorNotFoundFault(inner) => inner.fmt(f),
+            Error::FailedDependencyFault(inner) => inner.fmt(f),
             Error::InsufficientResourceCapacityFault(inner) => inner.fmt(f),
             Error::InvalidCertificateFault(inner) => inner.fmt(f),
             Error::InvalidOperationFault(inner) => inner.fmt(f),
@@ -113,6 +116,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
         match self {
             Self::AccessDeniedFault(inner) => inner.meta(),
             Self::CollectorNotFoundFault(inner) => inner.meta(),
+            Self::FailedDependencyFault(inner) => inner.meta(),
             Self::InsufficientResourceCapacityFault(inner) => inner.meta(),
             Self::InvalidCertificateFault(inner) => inner.meta(),
             Self::InvalidOperationFault(inner) => inner.meta(),
@@ -157,6 +161,9 @@ where
 impl From<crate::operation::add_tags_to_resource::AddTagsToResourceError> for Error {
     fn from(err: crate::operation::add_tags_to_resource::AddTagsToResourceError) -> Self {
         match err {
+            crate::operation::add_tags_to_resource::AddTagsToResourceError::InvalidResourceStateFault(inner) => {
+                Error::InvalidResourceStateFault(inner)
+            }
             crate::operation::add_tags_to_resource::AddTagsToResourceError::ResourceNotFoundFault(inner) => Error::ResourceNotFoundFault(inner),
             crate::operation::add_tags_to_resource::AddTagsToResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -270,6 +277,36 @@ impl From<crate::operation::cancel_replication_task_assessment_run::CancelReplic
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_data_migration::CreateDataMigrationError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_data_migration::CreateDataMigrationError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_data_migration::CreateDataMigrationError> for Error {
+    fn from(err: crate::operation::create_data_migration::CreateDataMigrationError) -> Self {
+        match err {
+            crate::operation::create_data_migration::CreateDataMigrationError::FailedDependencyFault(inner) => Error::FailedDependencyFault(inner),
+            crate::operation::create_data_migration::CreateDataMigrationError::InvalidOperationFault(inner) => Error::InvalidOperationFault(inner),
+            crate::operation::create_data_migration::CreateDataMigrationError::ResourceAlreadyExistsFault(inner) => {
+                Error::ResourceAlreadyExistsFault(inner)
+            }
+            crate::operation::create_data_migration::CreateDataMigrationError::ResourceNotFoundFault(inner) => Error::ResourceNotFoundFault(inner),
+            crate::operation::create_data_migration::CreateDataMigrationError::ResourceQuotaExceededFault(inner) => {
+                Error::ResourceQuotaExceededFault(inner)
+            }
+            crate::operation::create_data_migration::CreateDataMigrationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_data_provider::CreateDataProviderError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -288,6 +325,7 @@ impl From<crate::operation::create_data_provider::CreateDataProviderError> for E
     fn from(err: crate::operation::create_data_provider::CreateDataProviderError) -> Self {
         match err {
             crate::operation::create_data_provider::CreateDataProviderError::AccessDeniedFault(inner) => Error::AccessDeniedFault(inner),
+            crate::operation::create_data_provider::CreateDataProviderError::FailedDependencyFault(inner) => Error::FailedDependencyFault(inner),
             crate::operation::create_data_provider::CreateDataProviderError::ResourceAlreadyExistsFault(inner) => {
                 Error::ResourceAlreadyExistsFault(inner)
             }
@@ -437,6 +475,9 @@ impl From<crate::operation::create_instance_profile::CreateInstanceProfileError>
     fn from(err: crate::operation::create_instance_profile::CreateInstanceProfileError) -> Self {
         match err {
             crate::operation::create_instance_profile::CreateInstanceProfileError::AccessDeniedFault(inner) => Error::AccessDeniedFault(inner),
+            crate::operation::create_instance_profile::CreateInstanceProfileError::FailedDependencyFault(inner) => {
+                Error::FailedDependencyFault(inner)
+            }
             crate::operation::create_instance_profile::CreateInstanceProfileError::InvalidResourceStateFault(inner) => {
                 Error::InvalidResourceStateFault(inner)
             }
@@ -480,6 +521,9 @@ impl From<crate::operation::create_migration_project::CreateMigrationProjectErro
     fn from(err: crate::operation::create_migration_project::CreateMigrationProjectError) -> Self {
         match err {
             crate::operation::create_migration_project::CreateMigrationProjectError::AccessDeniedFault(inner) => Error::AccessDeniedFault(inner),
+            crate::operation::create_migration_project::CreateMigrationProjectError::FailedDependencyFault(inner) => {
+                Error::FailedDependencyFault(inner)
+            }
             crate::operation::create_migration_project::CreateMigrationProjectError::ResourceAlreadyExistsFault(inner) => {
                 Error::ResourceAlreadyExistsFault(inner)
             }
@@ -723,6 +767,32 @@ impl From<crate::operation::delete_connection::DeleteConnectionError> for Error 
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_data_migration::DeleteDataMigrationError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_data_migration::DeleteDataMigrationError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_data_migration::DeleteDataMigrationError> for Error {
+    fn from(err: crate::operation::delete_data_migration::DeleteDataMigrationError) -> Self {
+        match err {
+            crate::operation::delete_data_migration::DeleteDataMigrationError::FailedDependencyFault(inner) => Error::FailedDependencyFault(inner),
+            crate::operation::delete_data_migration::DeleteDataMigrationError::InvalidResourceStateFault(inner) => {
+                Error::InvalidResourceStateFault(inner)
+            }
+            crate::operation::delete_data_migration::DeleteDataMigrationError::ResourceNotFoundFault(inner) => Error::ResourceNotFoundFault(inner),
+            crate::operation::delete_data_migration::DeleteDataMigrationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_data_provider::DeleteDataProviderError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -741,6 +811,7 @@ impl From<crate::operation::delete_data_provider::DeleteDataProviderError> for E
     fn from(err: crate::operation::delete_data_provider::DeleteDataProviderError) -> Self {
         match err {
             crate::operation::delete_data_provider::DeleteDataProviderError::AccessDeniedFault(inner) => Error::AccessDeniedFault(inner),
+            crate::operation::delete_data_provider::DeleteDataProviderError::FailedDependencyFault(inner) => Error::FailedDependencyFault(inner),
             crate::operation::delete_data_provider::DeleteDataProviderError::InvalidResourceStateFault(inner) => {
                 Error::InvalidResourceStateFault(inner)
             }
@@ -826,6 +897,9 @@ where
 impl From<crate::operation::delete_fleet_advisor_collector::DeleteFleetAdvisorCollectorError> for Error {
     fn from(err: crate::operation::delete_fleet_advisor_collector::DeleteFleetAdvisorCollectorError) -> Self {
         match err {
+            crate::operation::delete_fleet_advisor_collector::DeleteFleetAdvisorCollectorError::AccessDeniedFault(inner) => {
+                Error::AccessDeniedFault(inner)
+            }
             crate::operation::delete_fleet_advisor_collector::DeleteFleetAdvisorCollectorError::CollectorNotFoundFault(inner) => {
                 Error::CollectorNotFoundFault(inner)
             }
@@ -860,6 +934,9 @@ where
 impl From<crate::operation::delete_fleet_advisor_databases::DeleteFleetAdvisorDatabasesError> for Error {
     fn from(err: crate::operation::delete_fleet_advisor_databases::DeleteFleetAdvisorDatabasesError) -> Self {
         match err {
+            crate::operation::delete_fleet_advisor_databases::DeleteFleetAdvisorDatabasesError::AccessDeniedFault(inner) => {
+                Error::AccessDeniedFault(inner)
+            }
             crate::operation::delete_fleet_advisor_databases::DeleteFleetAdvisorDatabasesError::InvalidOperationFault(inner) => {
                 Error::InvalidOperationFault(inner)
             }
@@ -890,6 +967,9 @@ impl From<crate::operation::delete_instance_profile::DeleteInstanceProfileError>
     fn from(err: crate::operation::delete_instance_profile::DeleteInstanceProfileError) -> Self {
         match err {
             crate::operation::delete_instance_profile::DeleteInstanceProfileError::AccessDeniedFault(inner) => Error::AccessDeniedFault(inner),
+            crate::operation::delete_instance_profile::DeleteInstanceProfileError::FailedDependencyFault(inner) => {
+                Error::FailedDependencyFault(inner)
+            }
             crate::operation::delete_instance_profile::DeleteInstanceProfileError::InvalidResourceStateFault(inner) => {
                 Error::InvalidResourceStateFault(inner)
             }
@@ -920,6 +1000,9 @@ impl From<crate::operation::delete_migration_project::DeleteMigrationProjectErro
     fn from(err: crate::operation::delete_migration_project::DeleteMigrationProjectError) -> Self {
         match err {
             crate::operation::delete_migration_project::DeleteMigrationProjectError::AccessDeniedFault(inner) => Error::AccessDeniedFault(inner),
+            crate::operation::delete_migration_project::DeleteMigrationProjectError::FailedDependencyFault(inner) => {
+                Error::FailedDependencyFault(inner)
+            }
             crate::operation::delete_migration_project::DeleteMigrationProjectError::InvalidResourceStateFault(inner) => {
                 Error::InvalidResourceStateFault(inner)
             }
@@ -1243,6 +1326,38 @@ impl From<crate::operation::describe_conversion_configuration::DescribeConversio
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_data_migrations::DescribeDataMigrationsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_data_migrations::DescribeDataMigrationsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_data_migrations::DescribeDataMigrationsError> for Error {
+    fn from(err: crate::operation::describe_data_migrations::DescribeDataMigrationsError) -> Self {
+        match err {
+            crate::operation::describe_data_migrations::DescribeDataMigrationsError::FailedDependencyFault(inner) => {
+                Error::FailedDependencyFault(inner)
+            }
+            crate::operation::describe_data_migrations::DescribeDataMigrationsError::InvalidResourceStateFault(inner) => {
+                Error::InvalidResourceStateFault(inner)
+            }
+            crate::operation::describe_data_migrations::DescribeDataMigrationsError::ResourceNotFoundFault(inner) => {
+                Error::ResourceNotFoundFault(inner)
+            }
+            crate::operation::describe_data_migrations::DescribeDataMigrationsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_data_providers::DescribeDataProvidersError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1263,6 +1378,9 @@ impl From<crate::operation::describe_data_providers::DescribeDataProvidersError>
     fn from(err: crate::operation::describe_data_providers::DescribeDataProvidersError) -> Self {
         match err {
             crate::operation::describe_data_providers::DescribeDataProvidersError::AccessDeniedFault(inner) => Error::AccessDeniedFault(inner),
+            crate::operation::describe_data_providers::DescribeDataProvidersError::FailedDependencyFault(inner) => {
+                Error::FailedDependencyFault(inner)
+            }
             crate::operation::describe_data_providers::DescribeDataProvidersError::ResourceNotFoundFault(inner) => {
                 Error::ResourceNotFoundFault(inner)
             }
@@ -1655,6 +1773,9 @@ impl From<crate::operation::describe_instance_profiles::DescribeInstanceProfiles
     fn from(err: crate::operation::describe_instance_profiles::DescribeInstanceProfilesError) -> Self {
         match err {
             crate::operation::describe_instance_profiles::DescribeInstanceProfilesError::AccessDeniedFault(inner) => Error::AccessDeniedFault(inner),
+            crate::operation::describe_instance_profiles::DescribeInstanceProfilesError::FailedDependencyFault(inner) => {
+                Error::FailedDependencyFault(inner)
+            }
             crate::operation::describe_instance_profiles::DescribeInstanceProfilesError::ResourceNotFoundFault(inner) => {
                 Error::ResourceNotFoundFault(inner)
             }
@@ -1859,6 +1980,9 @@ impl From<crate::operation::describe_migration_projects::DescribeMigrationProjec
         match err {
             crate::operation::describe_migration_projects::DescribeMigrationProjectsError::AccessDeniedFault(inner) => {
                 Error::AccessDeniedFault(inner)
+            }
+            crate::operation::describe_migration_projects::DescribeMigrationProjectsError::FailedDependencyFault(inner) => {
+                Error::FailedDependencyFault(inner)
             }
             crate::operation::describe_migration_projects::DescribeMigrationProjectsError::ResourceNotFoundFault(inner) => {
                 Error::ResourceNotFoundFault(inner)
@@ -2499,6 +2623,9 @@ where
 impl From<crate::operation::list_tags_for_resource::ListTagsForResourceError> for Error {
     fn from(err: crate::operation::list_tags_for_resource::ListTagsForResourceError) -> Self {
         match err {
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::InvalidResourceStateFault(inner) => {
+                Error::InvalidResourceStateFault(inner)
+            }
             crate::operation::list_tags_for_resource::ListTagsForResourceError::ResourceNotFoundFault(inner) => Error::ResourceNotFoundFault(inner),
             crate::operation::list_tags_for_resource::ListTagsForResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -2538,6 +2665,32 @@ impl From<crate::operation::modify_conversion_configuration::ModifyConversionCon
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::modify_data_migration::ModifyDataMigrationError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::modify_data_migration::ModifyDataMigrationError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::modify_data_migration::ModifyDataMigrationError> for Error {
+    fn from(err: crate::operation::modify_data_migration::ModifyDataMigrationError) -> Self {
+        match err {
+            crate::operation::modify_data_migration::ModifyDataMigrationError::FailedDependencyFault(inner) => Error::FailedDependencyFault(inner),
+            crate::operation::modify_data_migration::ModifyDataMigrationError::InvalidResourceStateFault(inner) => {
+                Error::InvalidResourceStateFault(inner)
+            }
+            crate::operation::modify_data_migration::ModifyDataMigrationError::ResourceNotFoundFault(inner) => Error::ResourceNotFoundFault(inner),
+            crate::operation::modify_data_migration::ModifyDataMigrationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::modify_data_provider::ModifyDataProviderError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -2556,6 +2709,7 @@ impl From<crate::operation::modify_data_provider::ModifyDataProviderError> for E
     fn from(err: crate::operation::modify_data_provider::ModifyDataProviderError) -> Self {
         match err {
             crate::operation::modify_data_provider::ModifyDataProviderError::AccessDeniedFault(inner) => Error::AccessDeniedFault(inner),
+            crate::operation::modify_data_provider::ModifyDataProviderError::FailedDependencyFault(inner) => Error::FailedDependencyFault(inner),
             crate::operation::modify_data_provider::ModifyDataProviderError::InvalidResourceStateFault(inner) => {
                 Error::InvalidResourceStateFault(inner)
             }
@@ -2655,6 +2809,9 @@ impl From<crate::operation::modify_instance_profile::ModifyInstanceProfileError>
     fn from(err: crate::operation::modify_instance_profile::ModifyInstanceProfileError) -> Self {
         match err {
             crate::operation::modify_instance_profile::ModifyInstanceProfileError::AccessDeniedFault(inner) => Error::AccessDeniedFault(inner),
+            crate::operation::modify_instance_profile::ModifyInstanceProfileError::FailedDependencyFault(inner) => {
+                Error::FailedDependencyFault(inner)
+            }
             crate::operation::modify_instance_profile::ModifyInstanceProfileError::InvalidResourceStateFault(inner) => {
                 Error::InvalidResourceStateFault(inner)
             }
@@ -2692,6 +2849,9 @@ impl From<crate::operation::modify_migration_project::ModifyMigrationProjectErro
     fn from(err: crate::operation::modify_migration_project::ModifyMigrationProjectError) -> Self {
         match err {
             crate::operation::modify_migration_project::ModifyMigrationProjectError::AccessDeniedFault(inner) => Error::AccessDeniedFault(inner),
+            crate::operation::modify_migration_project::ModifyMigrationProjectError::FailedDependencyFault(inner) => {
+                Error::FailedDependencyFault(inner)
+            }
             crate::operation::modify_migration_project::ModifyMigrationProjectError::InvalidResourceStateFault(inner) => {
                 Error::InvalidResourceStateFault(inner)
             }
@@ -3028,6 +3188,9 @@ where
 impl From<crate::operation::remove_tags_from_resource::RemoveTagsFromResourceError> for Error {
     fn from(err: crate::operation::remove_tags_from_resource::RemoveTagsFromResourceError) -> Self {
         match err {
+            crate::operation::remove_tags_from_resource::RemoveTagsFromResourceError::InvalidResourceStateFault(inner) => {
+                Error::InvalidResourceStateFault(inner)
+            }
             crate::operation::remove_tags_from_resource::RemoveTagsFromResourceError::ResourceNotFoundFault(inner) => {
                 Error::ResourceNotFoundFault(inner)
             }
@@ -3062,6 +3225,36 @@ impl From<crate::operation::run_fleet_advisor_lsa_analysis::RunFleetAdvisorLsaAn
                 Error::ResourceNotFoundFault(inner)
             }
             crate::operation::run_fleet_advisor_lsa_analysis::RunFleetAdvisorLsaAnalysisError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_data_migration::StartDataMigrationError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_data_migration::StartDataMigrationError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::start_data_migration::StartDataMigrationError> for Error {
+    fn from(err: crate::operation::start_data_migration::StartDataMigrationError) -> Self {
+        match err {
+            crate::operation::start_data_migration::StartDataMigrationError::FailedDependencyFault(inner) => Error::FailedDependencyFault(inner),
+            crate::operation::start_data_migration::StartDataMigrationError::InvalidOperationFault(inner) => Error::InvalidOperationFault(inner),
+            crate::operation::start_data_migration::StartDataMigrationError::InvalidResourceStateFault(inner) => {
+                Error::InvalidResourceStateFault(inner)
+            }
+            crate::operation::start_data_migration::StartDataMigrationError::ResourceNotFoundFault(inner) => Error::ResourceNotFoundFault(inner),
+            crate::operation::start_data_migration::StartDataMigrationError::ResourceQuotaExceededFault(inner) => {
+                Error::ResourceQuotaExceededFault(inner)
+            }
+            crate::operation::start_data_migration::StartDataMigrationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -3568,6 +3761,32 @@ impl From<crate::operation::start_replication_task_assessment_run::StartReplicat
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::stop_data_migration::StopDataMigrationError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::stop_data_migration::StopDataMigrationError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::stop_data_migration::StopDataMigrationError> for Error {
+    fn from(err: crate::operation::stop_data_migration::StopDataMigrationError) -> Self {
+        match err {
+            crate::operation::stop_data_migration::StopDataMigrationError::FailedDependencyFault(inner) => Error::FailedDependencyFault(inner),
+            crate::operation::stop_data_migration::StopDataMigrationError::InvalidResourceStateFault(inner) => {
+                Error::InvalidResourceStateFault(inner)
+            }
+            crate::operation::stop_data_migration::StopDataMigrationError::ResourceNotFoundFault(inner) => Error::ResourceNotFoundFault(inner),
+            crate::operation::stop_data_migration::StopDataMigrationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::stop_replication::StopReplicationError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -3700,6 +3919,7 @@ impl ::std::error::Error for Error {
         match self {
             Error::AccessDeniedFault(inner) => inner.source(),
             Error::CollectorNotFoundFault(inner) => inner.source(),
+            Error::FailedDependencyFault(inner) => inner.source(),
             Error::InsufficientResourceCapacityFault(inner) => inner.source(),
             Error::InvalidCertificateFault(inner) => inner.source(),
             Error::InvalidOperationFault(inner) => inner.source(),
@@ -3732,6 +3952,7 @@ impl ::aws_types::request_id::RequestId for Error {
         match self {
             Self::AccessDeniedFault(e) => e.request_id(),
             Self::CollectorNotFoundFault(e) => e.request_id(),
+            Self::FailedDependencyFault(e) => e.request_id(),
             Self::InsufficientResourceCapacityFault(e) => e.request_id(),
             Self::InvalidCertificateFault(e) => e.request_id(),
             Self::InvalidOperationFault(e) => e.request_id(),

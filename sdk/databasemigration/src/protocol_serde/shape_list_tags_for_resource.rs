@@ -20,6 +20,21 @@ pub fn de_list_tags_for_resource_http_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
+        "InvalidResourceStateFault" => crate::operation::list_tags_for_resource::ListTagsForResourceError::InvalidResourceStateFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidResourceStateFaultBuilder::default();
+                output = crate::protocol_serde::shape_invalid_resource_state_fault::de_invalid_resource_state_fault_json_err(_response_body, output)
+                    .map_err(crate::operation::list_tags_for_resource::ListTagsForResourceError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "ResourceNotFoundFault" => crate::operation::list_tags_for_resource::ListTagsForResourceError::ResourceNotFoundFault({
             #[allow(unused_mut)]
             let mut tmp = {

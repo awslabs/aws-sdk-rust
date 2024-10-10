@@ -330,6 +330,19 @@ pub fn de_capacity_reservation(
                 builder = builder.set_reservation_type(var_24);
             }
             ,
+            s if s.matches("unusedReservationBillingOwnerId") /* UnusedReservationBillingOwnerId com.amazonaws.ec2#CapacityReservation$UnusedReservationBillingOwnerId */ =>  {
+                let var_25 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_unused_reservation_billing_owner_id(var_25);
+            }
+            ,
             _ => {}
         }
     }

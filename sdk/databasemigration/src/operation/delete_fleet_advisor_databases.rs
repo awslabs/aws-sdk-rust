@@ -256,6 +256,8 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DeleteFleetAd
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum DeleteFleetAdvisorDatabasesError {
+    /// <p>DMS was denied access to the endpoint. Check that the role is correctly configured.</p>
+    AccessDeniedFault(crate::types::error::AccessDeniedFault),
     /// <p>The action or operation requested isn't valid.</p>
     InvalidOperationFault(crate::types::error::InvalidOperationFault),
     /// <p>The resource could not be found.</p>
@@ -293,10 +295,15 @@ impl DeleteFleetAdvisorDatabasesError {
     ///
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::AccessDeniedFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidOperationFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ResourceNotFoundFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
+    }
+    /// Returns `true` if the error kind is `DeleteFleetAdvisorDatabasesError::AccessDeniedFault`.
+    pub fn is_access_denied_fault(&self) -> bool {
+        matches!(self, Self::AccessDeniedFault(_))
     }
     /// Returns `true` if the error kind is `DeleteFleetAdvisorDatabasesError::InvalidOperationFault`.
     pub fn is_invalid_operation_fault(&self) -> bool {
@@ -310,6 +317,7 @@ impl DeleteFleetAdvisorDatabasesError {
 impl ::std::error::Error for DeleteFleetAdvisorDatabasesError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
+            Self::AccessDeniedFault(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidOperationFault(_inner) => ::std::option::Option::Some(_inner),
             Self::ResourceNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
@@ -319,6 +327,7 @@ impl ::std::error::Error for DeleteFleetAdvisorDatabasesError {
 impl ::std::fmt::Display for DeleteFleetAdvisorDatabasesError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
+            Self::AccessDeniedFault(_inner) => _inner.fmt(f),
             Self::InvalidOperationFault(_inner) => _inner.fmt(f),
             Self::ResourceNotFoundFault(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
@@ -342,6 +351,7 @@ impl ::aws_smithy_types::retry::ProvideErrorKind for DeleteFleetAdvisorDatabases
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for DeleteFleetAdvisorDatabasesError {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::AccessDeniedFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidOperationFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ResourceNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,

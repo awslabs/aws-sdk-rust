@@ -258,6 +258,8 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ModifyMigrati
 pub enum ModifyMigrationProjectError {
     /// <p>DMS was denied access to the endpoint. Check that the role is correctly configured.</p>
     AccessDeniedFault(crate::types::error::AccessDeniedFault),
+    /// <p>A dependency threw an exception.</p>
+    FailedDependencyFault(crate::types::error::FailedDependencyFault),
     /// <p>The resource is in a state that prevents it from being used for database migration.</p>
     InvalidResourceStateFault(crate::types::error::InvalidResourceStateFault),
     /// <p>The resource could not be found.</p>
@@ -300,6 +302,7 @@ impl ModifyMigrationProjectError {
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::AccessDeniedFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::FailedDependencyFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidResourceStateFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ResourceNotFoundFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::S3AccessDeniedFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -310,6 +313,10 @@ impl ModifyMigrationProjectError {
     /// Returns `true` if the error kind is `ModifyMigrationProjectError::AccessDeniedFault`.
     pub fn is_access_denied_fault(&self) -> bool {
         matches!(self, Self::AccessDeniedFault(_))
+    }
+    /// Returns `true` if the error kind is `ModifyMigrationProjectError::FailedDependencyFault`.
+    pub fn is_failed_dependency_fault(&self) -> bool {
+        matches!(self, Self::FailedDependencyFault(_))
     }
     /// Returns `true` if the error kind is `ModifyMigrationProjectError::InvalidResourceStateFault`.
     pub fn is_invalid_resource_state_fault(&self) -> bool {
@@ -332,6 +339,7 @@ impl ::std::error::Error for ModifyMigrationProjectError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
             Self::AccessDeniedFault(_inner) => ::std::option::Option::Some(_inner),
+            Self::FailedDependencyFault(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidResourceStateFault(_inner) => ::std::option::Option::Some(_inner),
             Self::ResourceNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
             Self::S3AccessDeniedFault(_inner) => ::std::option::Option::Some(_inner),
@@ -344,6 +352,7 @@ impl ::std::fmt::Display for ModifyMigrationProjectError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
             Self::AccessDeniedFault(_inner) => _inner.fmt(f),
+            Self::FailedDependencyFault(_inner) => _inner.fmt(f),
             Self::InvalidResourceStateFault(_inner) => _inner.fmt(f),
             Self::ResourceNotFoundFault(_inner) => _inner.fmt(f),
             Self::S3AccessDeniedFault(_inner) => _inner.fmt(f),
@@ -370,6 +379,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for ModifyMigrati
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::AccessDeniedFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::FailedDependencyFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidResourceStateFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ResourceNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::S3AccessDeniedFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

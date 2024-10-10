@@ -4,6 +4,9 @@ pub use ::aws_types::request_id::RequestId;
 /// Types for the `AcceptAddressTransfer` operation.
 pub mod accept_address_transfer;
 
+/// Types for the `AcceptCapacityReservationBillingOwnership` operation.
+pub mod accept_capacity_reservation_billing_ownership;
+
 /// Types for the `AcceptReservedInstancesExchangeQuote` operation.
 pub mod accept_reserved_instances_exchange_quote;
 
@@ -48,6 +51,9 @@ pub mod assign_private_nat_gateway_address;
 
 /// Types for the `AssociateAddress` operation.
 pub mod associate_address;
+
+/// Types for the `AssociateCapacityReservationBillingOwner` operation.
+pub mod associate_capacity_reservation_billing_owner;
 
 /// Types for the `AssociateClientVpnTargetNetwork` operation.
 pub mod associate_client_vpn_target_network;
@@ -697,6 +703,9 @@ pub mod describe_byoip_cidrs;
 /// Types for the `DescribeCapacityBlockOfferings` operation.
 pub mod describe_capacity_block_offerings;
 
+/// Types for the `DescribeCapacityReservationBillingRequests` operation.
+pub mod describe_capacity_reservation_billing_requests;
+
 /// Types for the `DescribeCapacityReservationFleets` operation.
 pub mod describe_capacity_reservation_fleets;
 
@@ -1191,6 +1200,9 @@ pub mod disable_vpc_classic_link_dns_support;
 
 /// Types for the `DisassociateAddress` operation.
 pub mod disassociate_address;
+
+/// Types for the `DisassociateCapacityReservationBillingOwner` operation.
+pub mod disassociate_capacity_reservation_billing_owner;
 
 /// Types for the `DisassociateClientVpnTargetNetwork` operation.
 pub mod disassociate_client_vpn_target_network;
@@ -1722,6 +1734,9 @@ pub mod register_transit_gateway_multicast_group_members;
 
 /// Types for the `RegisterTransitGatewayMulticastGroupSources` operation.
 pub mod register_transit_gateway_multicast_group_sources;
+
+/// Types for the `RejectCapacityReservationBillingOwnership` operation.
+pub mod reject_capacity_reservation_billing_ownership;
 
 /// Types for the `RejectTransitGatewayMulticastDomainAssociations` operation.
 pub mod reject_transit_gateway_multicast_domain_associations;

@@ -82,6 +82,8 @@ pub struct CapacityReservation {
     pub capacity_allocations: ::std::option::Option<::std::vec::Vec<crate::types::CapacityAllocation>>,
     /// <p>The type of Capacity Reservation.</p>
     pub reservation_type: ::std::option::Option<crate::types::CapacityReservationType>,
+    /// <p>The ID of the Amazon Web Services account to which billing of the unused capacity of the Capacity Reservation is assigned.</p>
+    pub unused_reservation_billing_owner_id: ::std::option::Option<::std::string::String>,
 }
 impl CapacityReservation {
     /// <p>The ID of the Capacity Reservation.</p>
@@ -214,6 +216,10 @@ impl CapacityReservation {
     pub fn reservation_type(&self) -> ::std::option::Option<&crate::types::CapacityReservationType> {
         self.reservation_type.as_ref()
     }
+    /// <p>The ID of the Amazon Web Services account to which billing of the unused capacity of the Capacity Reservation is assigned.</p>
+    pub fn unused_reservation_billing_owner_id(&self) -> ::std::option::Option<&str> {
+        self.unused_reservation_billing_owner_id.as_deref()
+    }
 }
 impl CapacityReservation {
     /// Creates a new builder-style object to manufacture [`CapacityReservation`](crate::types::CapacityReservation).
@@ -250,6 +256,7 @@ pub struct CapacityReservationBuilder {
     pub(crate) placement_group_arn: ::std::option::Option<::std::string::String>,
     pub(crate) capacity_allocations: ::std::option::Option<::std::vec::Vec<crate::types::CapacityAllocation>>,
     pub(crate) reservation_type: ::std::option::Option<crate::types::CapacityReservationType>,
+    pub(crate) unused_reservation_billing_owner_id: ::std::option::Option<::std::string::String>,
 }
 impl CapacityReservationBuilder {
     /// <p>The ID of the Capacity Reservation.</p>
@@ -690,6 +697,20 @@ impl CapacityReservationBuilder {
     pub fn get_reservation_type(&self) -> &::std::option::Option<crate::types::CapacityReservationType> {
         &self.reservation_type
     }
+    /// <p>The ID of the Amazon Web Services account to which billing of the unused capacity of the Capacity Reservation is assigned.</p>
+    pub fn unused_reservation_billing_owner_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.unused_reservation_billing_owner_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the Amazon Web Services account to which billing of the unused capacity of the Capacity Reservation is assigned.</p>
+    pub fn set_unused_reservation_billing_owner_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.unused_reservation_billing_owner_id = input;
+        self
+    }
+    /// <p>The ID of the Amazon Web Services account to which billing of the unused capacity of the Capacity Reservation is assigned.</p>
+    pub fn get_unused_reservation_billing_owner_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.unused_reservation_billing_owner_id
+    }
     /// Consumes the builder and constructs a [`CapacityReservation`](crate::types::CapacityReservation).
     pub fn build(self) -> crate::types::CapacityReservation {
         crate::types::CapacityReservation {
@@ -717,6 +738,7 @@ impl CapacityReservationBuilder {
             placement_group_arn: self.placement_group_arn,
             capacity_allocations: self.capacity_allocations,
             reservation_type: self.reservation_type,
+            unused_reservation_billing_owner_id: self.unused_reservation_billing_owner_id,
         }
     }
 }

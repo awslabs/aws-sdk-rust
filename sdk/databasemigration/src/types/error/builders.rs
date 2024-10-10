@@ -9,6 +9,8 @@ pub use crate::types::error::_resource_not_found_fault::ResourceNotFoundFaultBui
 
 pub use crate::types::error::_kms_key_not_accessible_fault::KmsKeyNotAccessibleFaultBuilder;
 
+pub use crate::types::error::_failed_dependency_fault::FailedDependencyFaultBuilder;
+
 pub use crate::types::error::_s3_resource_not_found_fault::S3ResourceNotFoundFaultBuilder;
 
 pub use crate::types::error::_s3_access_denied_fault::S3AccessDeniedFaultBuilder;
@@ -24,6 +26,8 @@ pub use crate::types::error::_kms_fault::KmsFaultBuilder;
 pub use crate::types::error::_kms_disabled_fault::KmsDisabledFaultBuilder;
 
 pub use crate::types::error::_kms_access_denied_fault::KmsAccessDeniedFaultBuilder;
+
+pub use crate::types::error::_invalid_operation_fault::InvalidOperationFaultBuilder;
 
 pub use crate::types::error::_subnet_already_in_use::SubnetAlreadyInUseBuilder;
 
@@ -44,7 +48,5 @@ pub use crate::types::error::_sns_invalid_topic_fault::SnsInvalidTopicFaultBuild
 pub use crate::types::error::_kms_throttling_fault::KmsThrottlingFaultBuilder;
 
 pub use crate::types::error::_invalid_certificate_fault::InvalidCertificateFaultBuilder;
-
-pub use crate::types::error::_invalid_operation_fault::InvalidOperationFaultBuilder;
 
 pub use crate::types::error::_collector_not_found_fault::CollectorNotFoundFaultBuilder;

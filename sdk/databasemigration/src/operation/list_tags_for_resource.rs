@@ -256,6 +256,8 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListTagsForRe
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum ListTagsForResourceError {
+    /// <p>The resource is in a state that prevents it from being used for database migration.</p>
+    InvalidResourceStateFault(crate::types::error::InvalidResourceStateFault),
     /// <p>The resource could not be found.</p>
     ResourceNotFoundFault(crate::types::error::ResourceNotFoundFault),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
@@ -291,9 +293,14 @@ impl ListTagsForResourceError {
     ///
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::InvalidResourceStateFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ResourceNotFoundFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
+    }
+    /// Returns `true` if the error kind is `ListTagsForResourceError::InvalidResourceStateFault`.
+    pub fn is_invalid_resource_state_fault(&self) -> bool {
+        matches!(self, Self::InvalidResourceStateFault(_))
     }
     /// Returns `true` if the error kind is `ListTagsForResourceError::ResourceNotFoundFault`.
     pub fn is_resource_not_found_fault(&self) -> bool {
@@ -303,6 +310,7 @@ impl ListTagsForResourceError {
 impl ::std::error::Error for ListTagsForResourceError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
+            Self::InvalidResourceStateFault(_inner) => ::std::option::Option::Some(_inner),
             Self::ResourceNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
         }
@@ -311,6 +319,7 @@ impl ::std::error::Error for ListTagsForResourceError {
 impl ::std::fmt::Display for ListTagsForResourceError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
+            Self::InvalidResourceStateFault(_inner) => _inner.fmt(f),
             Self::ResourceNotFoundFault(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
@@ -333,6 +342,7 @@ impl ::aws_smithy_types::retry::ProvideErrorKind for ListTagsForResourceError {
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for ListTagsForResourceError {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::InvalidResourceStateFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ResourceNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,
         }

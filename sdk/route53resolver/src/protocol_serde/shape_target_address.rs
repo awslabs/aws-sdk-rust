@@ -18,6 +18,9 @@ pub fn ser_target_address(
     if let Some(var_4) = &input.protocol {
         object.key("Protocol").string(var_4.as_str());
     }
+    if let Some(var_5) = &input.server_name_indication {
+        object.key("ServerNameIndication").string(var_5.as_str());
+    }
     Ok(())
 }
 
@@ -61,6 +64,13 @@ where
                             builder = builder.set_protocol(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| crate::types::Protocol::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "ServerNameIndication" => {
+                            builder = builder.set_server_name_indication(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
                             );
                         }

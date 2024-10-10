@@ -269,18 +269,21 @@ impl CreateCampaignFluentBuilder {
     }
     /// <p>(Optional) A number indicating the priority of one campaign over another campaign for a certain vehicle or fleet. A campaign with the lowest value is deployed to vehicles before any other campaigns. If it's not specified, <code>0</code> is used.</p>
     /// <p>Default: <code>0</code></p>
+    #[deprecated(note = "priority is no longer used or needed as input")]
     pub fn priority(mut self, input: i32) -> Self {
         self.inner = self.inner.priority(input);
         self
     }
     /// <p>(Optional) A number indicating the priority of one campaign over another campaign for a certain vehicle or fleet. A campaign with the lowest value is deployed to vehicles before any other campaigns. If it's not specified, <code>0</code> is used.</p>
     /// <p>Default: <code>0</code></p>
+    #[deprecated(note = "priority is no longer used or needed as input")]
     pub fn set_priority(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_priority(input);
         self
     }
     /// <p>(Optional) A number indicating the priority of one campaign over another campaign for a certain vehicle or fleet. A campaign with the lowest value is deployed to vehicles before any other campaigns. If it's not specified, <code>0</code> is used.</p>
     /// <p>Default: <code>0</code></p>
+    #[deprecated(note = "priority is no longer used or needed as input")]
     pub fn get_priority(&self) -> &::std::option::Option<i32> {
         self.inner.get_priority()
     }

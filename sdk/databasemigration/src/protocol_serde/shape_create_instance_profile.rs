@@ -35,6 +35,21 @@ pub fn de_create_instance_profile_http_error(
             }
             tmp
         }),
+        "FailedDependencyFault" => crate::operation::create_instance_profile::CreateInstanceProfileError::FailedDependencyFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::FailedDependencyFaultBuilder::default();
+                output = crate::protocol_serde::shape_failed_dependency_fault::de_failed_dependency_fault_json_err(_response_body, output)
+                    .map_err(crate::operation::create_instance_profile::CreateInstanceProfileError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "InvalidResourceStateFault" => crate::operation::create_instance_profile::CreateInstanceProfileError::InvalidResourceStateFault({
             #[allow(unused_mut)]
             let mut tmp = {

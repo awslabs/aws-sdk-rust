@@ -5,7 +5,7 @@
 pub struct CreateCertificateAuthorityInput {
     /// <p>Name and bit size of the private key algorithm, the name of the signing algorithm, and X.500 certificate subject information.</p>
     pub certificate_authority_configuration: ::std::option::Option<crate::types::CertificateAuthorityConfiguration>,
-    /// <p>Contains information to enable Online Certificate Status Protocol (OCSP) support, to enable a certificate revocation list (CRL), to enable both, or to enable neither. The default is for both certificate validation mechanisms to be disabled.</p><note>
+    /// <p>Contains information to enable support for Online Certificate Status Protocol (OCSP), certificate revocation list (CRL), both protocols, or neither. By default, both certificate validation mechanisms are disabled.</p>
     /// <p>The following requirements apply to revocation configurations.</p>
     /// <ul>
     /// <li>
@@ -17,7 +17,6 @@ pub struct CreateCertificateAuthorityInput {
     /// <li>
     /// <p>In a CRL or OCSP configuration, the value of a CNAME parameter must not include a protocol prefix such as "http://" or "https://".</p></li>
     /// </ul>
-    /// </note>
     /// <p>For more information, see the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_OcspConfiguration.html">OcspConfiguration</a> and <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_CrlConfiguration.html">CrlConfiguration</a> types.</p>
     pub revocation_configuration: ::std::option::Option<crate::types::RevocationConfiguration>,
     /// <p>The type of the certificate authority.</p>
@@ -41,7 +40,7 @@ impl CreateCertificateAuthorityInput {
     pub fn certificate_authority_configuration(&self) -> ::std::option::Option<&crate::types::CertificateAuthorityConfiguration> {
         self.certificate_authority_configuration.as_ref()
     }
-    /// <p>Contains information to enable Online Certificate Status Protocol (OCSP) support, to enable a certificate revocation list (CRL), to enable both, or to enable neither. The default is for both certificate validation mechanisms to be disabled.</p><note>
+    /// <p>Contains information to enable support for Online Certificate Status Protocol (OCSP), certificate revocation list (CRL), both protocols, or neither. By default, both certificate validation mechanisms are disabled.</p>
     /// <p>The following requirements apply to revocation configurations.</p>
     /// <ul>
     /// <li>
@@ -53,7 +52,6 @@ impl CreateCertificateAuthorityInput {
     /// <li>
     /// <p>In a CRL or OCSP configuration, the value of a CNAME parameter must not include a protocol prefix such as "http://" or "https://".</p></li>
     /// </ul>
-    /// </note>
     /// <p>For more information, see the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_OcspConfiguration.html">OcspConfiguration</a> and <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_CrlConfiguration.html">CrlConfiguration</a> types.</p>
     pub fn revocation_configuration(&self) -> ::std::option::Option<&crate::types::RevocationConfiguration> {
         self.revocation_configuration.as_ref()
@@ -121,7 +119,7 @@ impl CreateCertificateAuthorityInputBuilder {
     pub fn get_certificate_authority_configuration(&self) -> &::std::option::Option<crate::types::CertificateAuthorityConfiguration> {
         &self.certificate_authority_configuration
     }
-    /// <p>Contains information to enable Online Certificate Status Protocol (OCSP) support, to enable a certificate revocation list (CRL), to enable both, or to enable neither. The default is for both certificate validation mechanisms to be disabled.</p><note>
+    /// <p>Contains information to enable support for Online Certificate Status Protocol (OCSP), certificate revocation list (CRL), both protocols, or neither. By default, both certificate validation mechanisms are disabled.</p>
     /// <p>The following requirements apply to revocation configurations.</p>
     /// <ul>
     /// <li>
@@ -133,13 +131,12 @@ impl CreateCertificateAuthorityInputBuilder {
     /// <li>
     /// <p>In a CRL or OCSP configuration, the value of a CNAME parameter must not include a protocol prefix such as "http://" or "https://".</p></li>
     /// </ul>
-    /// </note>
     /// <p>For more information, see the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_OcspConfiguration.html">OcspConfiguration</a> and <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_CrlConfiguration.html">CrlConfiguration</a> types.</p>
     pub fn revocation_configuration(mut self, input: crate::types::RevocationConfiguration) -> Self {
         self.revocation_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Contains information to enable Online Certificate Status Protocol (OCSP) support, to enable a certificate revocation list (CRL), to enable both, or to enable neither. The default is for both certificate validation mechanisms to be disabled.</p><note>
+    /// <p>Contains information to enable support for Online Certificate Status Protocol (OCSP), certificate revocation list (CRL), both protocols, or neither. By default, both certificate validation mechanisms are disabled.</p>
     /// <p>The following requirements apply to revocation configurations.</p>
     /// <ul>
     /// <li>
@@ -151,13 +148,12 @@ impl CreateCertificateAuthorityInputBuilder {
     /// <li>
     /// <p>In a CRL or OCSP configuration, the value of a CNAME parameter must not include a protocol prefix such as "http://" or "https://".</p></li>
     /// </ul>
-    /// </note>
     /// <p>For more information, see the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_OcspConfiguration.html">OcspConfiguration</a> and <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_CrlConfiguration.html">CrlConfiguration</a> types.</p>
     pub fn set_revocation_configuration(mut self, input: ::std::option::Option<crate::types::RevocationConfiguration>) -> Self {
         self.revocation_configuration = input;
         self
     }
-    /// <p>Contains information to enable Online Certificate Status Protocol (OCSP) support, to enable a certificate revocation list (CRL), to enable both, or to enable neither. The default is for both certificate validation mechanisms to be disabled.</p><note>
+    /// <p>Contains information to enable support for Online Certificate Status Protocol (OCSP), certificate revocation list (CRL), both protocols, or neither. By default, both certificate validation mechanisms are disabled.</p>
     /// <p>The following requirements apply to revocation configurations.</p>
     /// <ul>
     /// <li>
@@ -169,7 +165,6 @@ impl CreateCertificateAuthorityInputBuilder {
     /// <li>
     /// <p>In a CRL or OCSP configuration, the value of a CNAME parameter must not include a protocol prefix such as "http://" or "https://".</p></li>
     /// </ul>
-    /// </note>
     /// <p>For more information, see the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_OcspConfiguration.html">OcspConfiguration</a> and <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_CrlConfiguration.html">CrlConfiguration</a> types.</p>
     pub fn get_revocation_configuration(&self) -> &::std::option::Option<crate::types::RevocationConfiguration> {
         &self.revocation_configuration

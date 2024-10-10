@@ -35,6 +35,21 @@ pub fn de_describe_data_providers_http_error(
             }
             tmp
         }),
+        "FailedDependencyFault" => crate::operation::describe_data_providers::DescribeDataProvidersError::FailedDependencyFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::FailedDependencyFaultBuilder::default();
+                output = crate::protocol_serde::shape_failed_dependency_fault::de_failed_dependency_fault_json_err(_response_body, output)
+                    .map_err(crate::operation::describe_data_providers::DescribeDataProvidersError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "ResourceNotFoundFault" => crate::operation::describe_data_providers::DescribeDataProvidersError::ResourceNotFoundFault({
             #[allow(unused_mut)]
             let mut tmp = {

@@ -1945,6 +1945,14 @@ pub use crate::types::_fleet_capacity_reservation_tenancy::FleetCapacityReservat
 
 pub use crate::types::_capacity_reservation_fleet_state::CapacityReservationFleetState;
 
+pub use crate::types::_capacity_reservation_billing_request::CapacityReservationBillingRequest;
+
+pub use crate::types::_capacity_reservation_info::CapacityReservationInfo;
+
+pub use crate::types::_capacity_reservation_billing_request_status::CapacityReservationBillingRequestStatus;
+
+pub use crate::types::_caller_role::CallerRole;
+
 pub use crate::types::_capacity_block_offering::CapacityBlockOffering;
 
 pub use crate::types::_bundle_task::BundleTask;
@@ -2335,6 +2343,8 @@ mod _byoip_cidr;
 
 mod _byoip_cidr_state;
 
+mod _caller_role;
+
 mod _cancel_batch_error_code;
 
 mod _cancel_capacity_reservation_fleet_error;
@@ -2355,6 +2365,10 @@ mod _capacity_block_offering;
 
 mod _capacity_reservation;
 
+mod _capacity_reservation_billing_request;
+
+mod _capacity_reservation_billing_request_status;
+
 mod _capacity_reservation_fleet;
 
 mod _capacity_reservation_fleet_cancellation_state;
@@ -2362,6 +2376,8 @@ mod _capacity_reservation_fleet_cancellation_state;
 mod _capacity_reservation_fleet_state;
 
 mod _capacity_reservation_group;
+
+mod _capacity_reservation_info;
 
 mod _capacity_reservation_instance_platform;
 

@@ -13,6 +13,9 @@ pub mod batch_start_recommendations;
 /// Types for the `CancelReplicationTaskAssessmentRun` operation.
 pub mod cancel_replication_task_assessment_run;
 
+/// Types for the `CreateDataMigration` operation.
+pub mod create_data_migration;
+
 /// Types for the `CreateDataProvider` operation.
 pub mod create_data_provider;
 
@@ -48,6 +51,9 @@ pub mod delete_certificate;
 
 /// Types for the `DeleteConnection` operation.
 pub mod delete_connection;
+
+/// Types for the `DeleteDataMigration` operation.
+pub mod delete_data_migration;
 
 /// Types for the `DeleteDataProvider` operation.
 pub mod delete_data_provider;
@@ -99,6 +105,9 @@ pub mod describe_connections;
 
 /// Types for the `DescribeConversionConfiguration` operation.
 pub mod describe_conversion_configuration;
+
+/// Types for the `DescribeDataMigrations` operation.
+pub mod describe_data_migrations;
 
 /// Types for the `DescribeDataProviders` operation.
 pub mod describe_data_providers;
@@ -226,6 +235,9 @@ pub mod list_tags_for_resource;
 /// Types for the `ModifyConversionConfiguration` operation.
 pub mod modify_conversion_configuration;
 
+/// Types for the `ModifyDataMigration` operation.
+pub mod modify_data_migration;
+
 /// Types for the `ModifyDataProvider` operation.
 pub mod modify_data_provider;
 
@@ -274,6 +286,9 @@ pub mod remove_tags_from_resource;
 /// Types for the `RunFleetAdvisorLsaAnalysis` operation.
 pub mod run_fleet_advisor_lsa_analysis;
 
+/// Types for the `StartDataMigration` operation.
+pub mod start_data_migration;
+
 /// Types for the `StartExtensionPackAssociation` operation.
 pub mod start_extension_pack_association;
 
@@ -306,6 +321,9 @@ pub mod start_replication_task_assessment;
 
 /// Types for the `StartReplicationTaskAssessmentRun` operation.
 pub mod start_replication_task_assessment_run;
+
+/// Types for the `StopDataMigration` operation.
+pub mod stop_data_migration;
 
 /// Types for the `StopReplication` operation.
 pub mod stop_replication;

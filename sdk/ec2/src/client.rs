@@ -346,6 +346,8 @@ impl Client {
 
 mod accept_address_transfer;
 
+mod accept_capacity_reservation_billing_ownership;
+
 mod accept_reserved_instances_exchange_quote;
 
 mod accept_transit_gateway_multicast_domain_associations;
@@ -375,6 +377,8 @@ mod assign_private_ip_addresses;
 mod assign_private_nat_gateway_address;
 
 mod associate_address;
+
+mod associate_capacity_reservation_billing_owner;
 
 mod associate_client_vpn_target_network;
 
@@ -835,6 +839,8 @@ mod describe_byoip_cidrs;
 
 mod describe_capacity_block_offerings;
 
+mod describe_capacity_reservation_billing_requests;
+
 mod describe_capacity_reservation_fleets;
 
 mod describe_capacity_reservations;
@@ -1164,6 +1170,8 @@ mod disable_vpc_classic_link;
 mod disable_vpc_classic_link_dns_support;
 
 mod disassociate_address;
+
+mod disassociate_capacity_reservation_billing_owner;
 
 mod disassociate_client_vpn_target_network;
 
@@ -1518,6 +1526,8 @@ mod register_instance_event_notification_attributes;
 mod register_transit_gateway_multicast_group_members;
 
 mod register_transit_gateway_multicast_group_sources;
+
+mod reject_capacity_reservation_billing_ownership;
 
 mod reject_transit_gateway_multicast_domain_associations;
 

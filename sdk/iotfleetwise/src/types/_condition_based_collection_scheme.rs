@@ -2,7 +2,7 @@
 
 /// <p>Information about a collection scheme that uses a simple logical expression to recognize what data to collect.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ConditionBasedCollectionScheme {
     /// <p>The logical expression used to recognize what data to collect. For example, <code>$variable.`Vehicle.OutsideAirTemperature` &gt;= 105.0</code>.</p>
     pub expression: ::std::string::String,
@@ -36,6 +36,16 @@ impl ConditionBasedCollectionScheme {
         self.condition_language_version
     }
 }
+impl ::std::fmt::Debug for ConditionBasedCollectionScheme {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("ConditionBasedCollectionScheme");
+        formatter.field("expression", &"*** Sensitive Data Redacted ***");
+        formatter.field("minimum_trigger_interval_ms", &self.minimum_trigger_interval_ms);
+        formatter.field("trigger_mode", &self.trigger_mode);
+        formatter.field("condition_language_version", &self.condition_language_version);
+        formatter.finish()
+    }
+}
 impl ConditionBasedCollectionScheme {
     /// Creates a new builder-style object to manufacture [`ConditionBasedCollectionScheme`](crate::types::ConditionBasedCollectionScheme).
     pub fn builder() -> crate::types::builders::ConditionBasedCollectionSchemeBuilder {
@@ -44,7 +54,7 @@ impl ConditionBasedCollectionScheme {
 }
 
 /// A builder for [`ConditionBasedCollectionScheme`](crate::types::ConditionBasedCollectionScheme).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct ConditionBasedCollectionSchemeBuilder {
     pub(crate) expression: ::std::option::Option<::std::string::String>,
@@ -131,5 +141,15 @@ impl ConditionBasedCollectionSchemeBuilder {
             trigger_mode: self.trigger_mode,
             condition_language_version: self.condition_language_version,
         })
+    }
+}
+impl ::std::fmt::Debug for ConditionBasedCollectionSchemeBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("ConditionBasedCollectionSchemeBuilder");
+        formatter.field("expression", &"*** Sensitive Data Redacted ***");
+        formatter.field("minimum_trigger_interval_ms", &self.minimum_trigger_interval_ms);
+        formatter.field("trigger_mode", &self.trigger_mode);
+        formatter.field("condition_language_version", &self.condition_language_version);
+        formatter.finish()
     }
 }

@@ -54,7 +54,7 @@ pub struct RunInstancesInput {
     /// </note>
     pub elastic_gpu_specification: ::std::option::Option<::std::vec::Vec<crate::types::ElasticGpuSpecification>>,
     /// <p>An elastic inference accelerator to associate with the instance.</p><note>
-    /// <p>Amazon Elastic Inference (EI) is no longer available to new customers. For more information, see <a href="http://aws.amazon.com/machine-learning/elastic-inference/faqs/">Amazon Elastic Inference FAQs</a>.</p>
+    /// <p>Amazon Elastic Inference is no longer available.</p>
     /// </note>
     pub elastic_inference_accelerators: ::std::option::Option<::std::vec::Vec<crate::types::ElasticInferenceAccelerator>>,
     /// <p>The tags to apply to the resources that are created during instance launch.</p>
@@ -224,7 +224,7 @@ impl RunInstancesInput {
         self.elastic_gpu_specification.as_deref().unwrap_or_default()
     }
     /// <p>An elastic inference accelerator to associate with the instance.</p><note>
-    /// <p>Amazon Elastic Inference (EI) is no longer available to new customers. For more information, see <a href="http://aws.amazon.com/machine-learning/elastic-inference/faqs/">Amazon Elastic Inference FAQs</a>.</p>
+    /// <p>Amazon Elastic Inference is no longer available.</p>
     /// </note>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.elastic_inference_accelerators.is_none()`.
@@ -778,7 +778,7 @@ impl RunInstancesInputBuilder {
     /// To override the contents of this collection use [`set_elastic_inference_accelerators`](Self::set_elastic_inference_accelerators).
     ///
     /// <p>An elastic inference accelerator to associate with the instance.</p><note>
-    /// <p>Amazon Elastic Inference (EI) is no longer available to new customers. For more information, see <a href="http://aws.amazon.com/machine-learning/elastic-inference/faqs/">Amazon Elastic Inference FAQs</a>.</p>
+    /// <p>Amazon Elastic Inference is no longer available.</p>
     /// </note>
     pub fn elastic_inference_accelerators(mut self, input: crate::types::ElasticInferenceAccelerator) -> Self {
         let mut v = self.elastic_inference_accelerators.unwrap_or_default();
@@ -787,7 +787,7 @@ impl RunInstancesInputBuilder {
         self
     }
     /// <p>An elastic inference accelerator to associate with the instance.</p><note>
-    /// <p>Amazon Elastic Inference (EI) is no longer available to new customers. For more information, see <a href="http://aws.amazon.com/machine-learning/elastic-inference/faqs/">Amazon Elastic Inference FAQs</a>.</p>
+    /// <p>Amazon Elastic Inference is no longer available.</p>
     /// </note>
     pub fn set_elastic_inference_accelerators(
         mut self,
@@ -797,7 +797,7 @@ impl RunInstancesInputBuilder {
         self
     }
     /// <p>An elastic inference accelerator to associate with the instance.</p><note>
-    /// <p>Amazon Elastic Inference (EI) is no longer available to new customers. For more information, see <a href="http://aws.amazon.com/machine-learning/elastic-inference/faqs/">Amazon Elastic Inference FAQs</a>.</p>
+    /// <p>Amazon Elastic Inference is no longer available.</p>
     /// </note>
     pub fn get_elastic_inference_accelerators(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ElasticInferenceAccelerator>> {
         &self.elastic_inference_accelerators
