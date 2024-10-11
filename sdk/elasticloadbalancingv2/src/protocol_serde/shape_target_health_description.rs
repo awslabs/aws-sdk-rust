@@ -50,6 +50,16 @@ pub fn de_target_health_description(
                 builder = builder.set_anomaly_detection(var_4);
             }
             ,
+            s if s.matches("AdministrativeOverride") /* AdministrativeOverride com.amazonaws.elasticloadbalancingv2#TargetHealthDescription$AdministrativeOverride */ =>  {
+                let var_5 =
+                    Some(
+                        crate::protocol_serde::shape_administrative_override::de_administrative_override(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_administrative_override(var_5);
+            }
+            ,
             _ => {}
         }
     }

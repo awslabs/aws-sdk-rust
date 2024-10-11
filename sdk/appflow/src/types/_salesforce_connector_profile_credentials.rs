@@ -22,18 +22,14 @@ pub struct SalesforceConnectorProfileCredentials {
     /// <p>Amazon AppFlow passes an authorization code when it requests the access token from Salesforce. Amazon AppFlow receives the authorization code from Salesforce after you log in to your Salesforce account and authorize Amazon AppFlow to access your records.</p>
     /// </dd>
     /// <dt>
-    /// CLIENT_CREDENTIALS
-    /// </dt>
-    /// <dd>
-    /// <p>Amazon AppFlow passes client credentials (a client ID and client secret) when it requests the access token from Salesforce. You provide these credentials to Amazon AppFlow when you define the connection to your Salesforce account.</p>
-    /// </dd>
-    /// <dt>
     /// JWT_BEARER
     /// </dt>
     /// <dd>
     /// <p>Amazon AppFlow passes a JSON web token (JWT) when it requests the access token from Salesforce. You provide the JWT to Amazon AppFlow when you define the connection to your Salesforce account. When you use this grant type, you don't need to log in to your Salesforce account to authorize Amazon AppFlow to access your records.</p>
     /// </dd>
-    /// </dl>
+    /// </dl><note>
+    /// <p>The CLIENT_CREDENTIALS value is not supported for Salesforce.</p>
+    /// </note>
     pub o_auth2_grant_type: ::std::option::Option<crate::types::OAuth2GrantType>,
     /// <p>A JSON web token (JWT) that authorizes Amazon AppFlow to access your Salesforce records.</p>
     pub jwt_token: ::std::option::Option<::std::string::String>,
@@ -65,18 +61,14 @@ impl SalesforceConnectorProfileCredentials {
     /// <p>Amazon AppFlow passes an authorization code when it requests the access token from Salesforce. Amazon AppFlow receives the authorization code from Salesforce after you log in to your Salesforce account and authorize Amazon AppFlow to access your records.</p>
     /// </dd>
     /// <dt>
-    /// CLIENT_CREDENTIALS
-    /// </dt>
-    /// <dd>
-    /// <p>Amazon AppFlow passes client credentials (a client ID and client secret) when it requests the access token from Salesforce. You provide these credentials to Amazon AppFlow when you define the connection to your Salesforce account.</p>
-    /// </dd>
-    /// <dt>
     /// JWT_BEARER
     /// </dt>
     /// <dd>
     /// <p>Amazon AppFlow passes a JSON web token (JWT) when it requests the access token from Salesforce. You provide the JWT to Amazon AppFlow when you define the connection to your Salesforce account. When you use this grant type, you don't need to log in to your Salesforce account to authorize Amazon AppFlow to access your records.</p>
     /// </dd>
-    /// </dl>
+    /// </dl><note>
+    /// <p>The CLIENT_CREDENTIALS value is not supported for Salesforce.</p>
+    /// </note>
     pub fn o_auth2_grant_type(&self) -> ::std::option::Option<&crate::types::OAuth2GrantType> {
         self.o_auth2_grant_type.as_ref()
     }
@@ -182,18 +174,14 @@ impl SalesforceConnectorProfileCredentialsBuilder {
     /// <p>Amazon AppFlow passes an authorization code when it requests the access token from Salesforce. Amazon AppFlow receives the authorization code from Salesforce after you log in to your Salesforce account and authorize Amazon AppFlow to access your records.</p>
     /// </dd>
     /// <dt>
-    /// CLIENT_CREDENTIALS
-    /// </dt>
-    /// <dd>
-    /// <p>Amazon AppFlow passes client credentials (a client ID and client secret) when it requests the access token from Salesforce. You provide these credentials to Amazon AppFlow when you define the connection to your Salesforce account.</p>
-    /// </dd>
-    /// <dt>
     /// JWT_BEARER
     /// </dt>
     /// <dd>
     /// <p>Amazon AppFlow passes a JSON web token (JWT) when it requests the access token from Salesforce. You provide the JWT to Amazon AppFlow when you define the connection to your Salesforce account. When you use this grant type, you don't need to log in to your Salesforce account to authorize Amazon AppFlow to access your records.</p>
     /// </dd>
-    /// </dl>
+    /// </dl><note>
+    /// <p>The CLIENT_CREDENTIALS value is not supported for Salesforce.</p>
+    /// </note>
     pub fn o_auth2_grant_type(mut self, input: crate::types::OAuth2GrantType) -> Self {
         self.o_auth2_grant_type = ::std::option::Option::Some(input);
         self
@@ -208,18 +196,14 @@ impl SalesforceConnectorProfileCredentialsBuilder {
     /// <p>Amazon AppFlow passes an authorization code when it requests the access token from Salesforce. Amazon AppFlow receives the authorization code from Salesforce after you log in to your Salesforce account and authorize Amazon AppFlow to access your records.</p>
     /// </dd>
     /// <dt>
-    /// CLIENT_CREDENTIALS
-    /// </dt>
-    /// <dd>
-    /// <p>Amazon AppFlow passes client credentials (a client ID and client secret) when it requests the access token from Salesforce. You provide these credentials to Amazon AppFlow when you define the connection to your Salesforce account.</p>
-    /// </dd>
-    /// <dt>
     /// JWT_BEARER
     /// </dt>
     /// <dd>
     /// <p>Amazon AppFlow passes a JSON web token (JWT) when it requests the access token from Salesforce. You provide the JWT to Amazon AppFlow when you define the connection to your Salesforce account. When you use this grant type, you don't need to log in to your Salesforce account to authorize Amazon AppFlow to access your records.</p>
     /// </dd>
-    /// </dl>
+    /// </dl><note>
+    /// <p>The CLIENT_CREDENTIALS value is not supported for Salesforce.</p>
+    /// </note>
     pub fn set_o_auth2_grant_type(mut self, input: ::std::option::Option<crate::types::OAuth2GrantType>) -> Self {
         self.o_auth2_grant_type = input;
         self
@@ -234,18 +218,14 @@ impl SalesforceConnectorProfileCredentialsBuilder {
     /// <p>Amazon AppFlow passes an authorization code when it requests the access token from Salesforce. Amazon AppFlow receives the authorization code from Salesforce after you log in to your Salesforce account and authorize Amazon AppFlow to access your records.</p>
     /// </dd>
     /// <dt>
-    /// CLIENT_CREDENTIALS
-    /// </dt>
-    /// <dd>
-    /// <p>Amazon AppFlow passes client credentials (a client ID and client secret) when it requests the access token from Salesforce. You provide these credentials to Amazon AppFlow when you define the connection to your Salesforce account.</p>
-    /// </dd>
-    /// <dt>
     /// JWT_BEARER
     /// </dt>
     /// <dd>
     /// <p>Amazon AppFlow passes a JSON web token (JWT) when it requests the access token from Salesforce. You provide the JWT to Amazon AppFlow when you define the connection to your Salesforce account. When you use this grant type, you don't need to log in to your Salesforce account to authorize Amazon AppFlow to access your records.</p>
     /// </dd>
-    /// </dl>
+    /// </dl><note>
+    /// <p>The CLIENT_CREDENTIALS value is not supported for Salesforce.</p>
+    /// </note>
     pub fn get_o_auth2_grant_type(&self) -> &::std::option::Option<crate::types::OAuth2GrantType> {
         &self.o_auth2_grant_type
     }

@@ -37,6 +37,13 @@ where
                         "localIpDetails" => {
                             builder = builder.set_local_ip_details(crate::protocol_serde::shape_local_ip_details::de_local_ip_details(tokens)?);
                         }
+                        "localNetworkInterface" => {
+                            builder = builder.set_local_network_interface(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "remoteIpDetails" => {
                             builder = builder.set_remote_ip_details(crate::protocol_serde::shape_remote_ip_details::de_remote_ip_details(tokens)?);
                         }

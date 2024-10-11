@@ -12,7 +12,7 @@ impl super::Client {
     ///   - [`name(Option<String>)`](crate::operation::create_robot_application_version::CreateRobotApplicationVersionOutput::name): <p>The name of the robot application.</p>
     ///   - [`version(Option<String>)`](crate::operation::create_robot_application_version::CreateRobotApplicationVersionOutput::version): <p>The version of the robot application.</p>
     ///   - [`sources(Option<Vec::<Source>>)`](crate::operation::create_robot_application_version::CreateRobotApplicationVersionOutput::sources): <p>The sources of the robot application.</p>
-    ///   - [`robot_software_suite(Option<RobotSoftwareSuite>)`](crate::operation::create_robot_application_version::CreateRobotApplicationVersionOutput::robot_software_suite): <p>The robot software suite (ROS distribution) used by the robot application.</p>
+    ///   - [`robot_software_suite(Option<RobotSoftwareSuite>)`](crate::operation::create_robot_application_version::CreateRobotApplicationVersionOutput::robot_software_suite): <p>The robot software suite used by the robot application.</p>
     ///   - [`last_updated_at(Option<DateTime>)`](crate::operation::create_robot_application_version::CreateRobotApplicationVersionOutput::last_updated_at): <p>The time, in milliseconds since the epoch, when the robot application was last updated.</p>
     ///   - [`revision_id(Option<String>)`](crate::operation::create_robot_application_version::CreateRobotApplicationVersionOutput::revision_id): <p>The revision id of the robot application.</p>
     ///   - [`environment(Option<Environment>)`](crate::operation::create_robot_application_version::CreateRobotApplicationVersionOutput::environment): <p>The object that contains the Docker image URI used to create your robot application.</p>

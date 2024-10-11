@@ -48,5 +48,8 @@ pub fn ser_instance_fleet_config(
         crate::protocol_serde::shape_instance_fleet_resizing_specifications::ser_instance_fleet_resizing_specifications(&mut object_12, var_11)?;
         object_12.finish();
     }
+    if let Some(var_13) = &input.context {
+        object.key("Context").string(var_13.as_str());
+    }
     Ok(())
 }

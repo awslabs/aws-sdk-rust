@@ -91,6 +91,12 @@ pub use crate::types::_trust_store_association::TrustStoreAssociation;
 
 pub use crate::types::_target_health_description::TargetHealthDescription;
 
+pub use crate::types::_administrative_override::AdministrativeOverride;
+
+pub use crate::types::_target_administrative_override_reason_enum::TargetAdministrativeOverrideReasonEnum;
+
+pub use crate::types::_target_administrative_override_state_enum::TargetAdministrativeOverrideStateEnum;
+
 pub use crate::types::_anomaly_detection::AnomalyDetection;
 
 pub use crate::types::_mitigation_in_effect_enum::MitigationInEffectEnum;
@@ -132,6 +138,8 @@ pub use crate::types::_revocation_content::RevocationContent;
 mod _action;
 
 mod _action_type_enum;
+
+mod _administrative_override;
 
 mod _anomaly_detection;
 
@@ -226,6 +234,10 @@ mod _subnet_mapping;
 mod _tag;
 
 mod _tag_description;
+
+mod _target_administrative_override_reason_enum;
+
+mod _target_administrative_override_state_enum;
 
 mod _target_description;
 

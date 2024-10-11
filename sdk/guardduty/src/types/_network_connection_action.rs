@@ -14,6 +14,8 @@ pub struct NetworkConnectionAction {
     pub protocol: ::std::option::Option<::std::string::String>,
     /// <p>The local IP information of the connection.</p>
     pub local_ip_details: ::std::option::Option<crate::types::LocalIpDetails>,
+    /// <p>The EC2 instance's local elastic network interface utilized for the connection.</p>
+    pub local_network_interface: ::std::option::Option<::std::string::String>,
     /// <p>The remote IP information of the connection.</p>
     pub remote_ip_details: ::std::option::Option<crate::types::RemoteIpDetails>,
     /// <p>The remote port information of the connection.</p>
@@ -40,6 +42,10 @@ impl NetworkConnectionAction {
     pub fn local_ip_details(&self) -> ::std::option::Option<&crate::types::LocalIpDetails> {
         self.local_ip_details.as_ref()
     }
+    /// <p>The EC2 instance's local elastic network interface utilized for the connection.</p>
+    pub fn local_network_interface(&self) -> ::std::option::Option<&str> {
+        self.local_network_interface.as_deref()
+    }
     /// <p>The remote IP information of the connection.</p>
     pub fn remote_ip_details(&self) -> ::std::option::Option<&crate::types::RemoteIpDetails> {
         self.remote_ip_details.as_ref()
@@ -65,6 +71,7 @@ pub struct NetworkConnectionActionBuilder {
     pub(crate) local_port_details: ::std::option::Option<crate::types::LocalPortDetails>,
     pub(crate) protocol: ::std::option::Option<::std::string::String>,
     pub(crate) local_ip_details: ::std::option::Option<crate::types::LocalIpDetails>,
+    pub(crate) local_network_interface: ::std::option::Option<::std::string::String>,
     pub(crate) remote_ip_details: ::std::option::Option<crate::types::RemoteIpDetails>,
     pub(crate) remote_port_details: ::std::option::Option<crate::types::RemotePortDetails>,
 }
@@ -139,6 +146,20 @@ impl NetworkConnectionActionBuilder {
     pub fn get_local_ip_details(&self) -> &::std::option::Option<crate::types::LocalIpDetails> {
         &self.local_ip_details
     }
+    /// <p>The EC2 instance's local elastic network interface utilized for the connection.</p>
+    pub fn local_network_interface(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.local_network_interface = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The EC2 instance's local elastic network interface utilized for the connection.</p>
+    pub fn set_local_network_interface(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.local_network_interface = input;
+        self
+    }
+    /// <p>The EC2 instance's local elastic network interface utilized for the connection.</p>
+    pub fn get_local_network_interface(&self) -> &::std::option::Option<::std::string::String> {
+        &self.local_network_interface
+    }
     /// <p>The remote IP information of the connection.</p>
     pub fn remote_ip_details(mut self, input: crate::types::RemoteIpDetails) -> Self {
         self.remote_ip_details = ::std::option::Option::Some(input);
@@ -175,6 +196,7 @@ impl NetworkConnectionActionBuilder {
             local_port_details: self.local_port_details,
             protocol: self.protocol,
             local_ip_details: self.local_ip_details,
+            local_network_interface: self.local_network_interface,
             remote_ip_details: self.remote_ip_details,
             remote_port_details: self.remote_port_details,
         }

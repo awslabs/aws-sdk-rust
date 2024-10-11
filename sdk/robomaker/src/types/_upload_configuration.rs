@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UploadConfiguration {
     /// <p>A prefix that specifies where files will be uploaded in Amazon S3. It is appended to the simulation output location to determine the final path.</p>
-    /// <p>For example, if your simulation output location is <code>s3://my-bucket</code> and your upload configuration name is <code>robot-test</code>, your files will be uploaded to <code>s3://my-bucket/<simid>
+    /// <p>For example, if your simulation output location is <code>s3://amzn-s3-demo-bucket</code> and your upload configuration name is <code>robot-test</code>, your files will be uploaded to <code>s3://amzn-s3-demo-bucket/<simid>
     /// /
     /// <runid>
     /// /robot-test
@@ -34,7 +34,7 @@ pub struct UploadConfiguration {
 }
 impl UploadConfiguration {
     /// <p>A prefix that specifies where files will be uploaded in Amazon S3. It is appended to the simulation output location to determine the final path.</p>
-    /// <p>For example, if your simulation output location is <code>s3://my-bucket</code> and your upload configuration name is <code>robot-test</code>, your files will be uploaded to <code>s3://my-bucket/<simid>
+    /// <p>For example, if your simulation output location is <code>s3://amzn-s3-demo-bucket</code> and your upload configuration name is <code>robot-test</code>, your files will be uploaded to <code>s3://amzn-s3-demo-bucket/<simid>
     /// /
     /// <runid>
     /// /robot-test
@@ -86,7 +86,7 @@ pub struct UploadConfigurationBuilder {
 }
 impl UploadConfigurationBuilder {
     /// <p>A prefix that specifies where files will be uploaded in Amazon S3. It is appended to the simulation output location to determine the final path.</p>
-    /// <p>For example, if your simulation output location is <code>s3://my-bucket</code> and your upload configuration name is <code>robot-test</code>, your files will be uploaded to <code>s3://my-bucket/<simid>
+    /// <p>For example, if your simulation output location is <code>s3://amzn-s3-demo-bucket</code> and your upload configuration name is <code>robot-test</code>, your files will be uploaded to <code>s3://amzn-s3-demo-bucket/<simid>
     /// /
     /// <runid>
     /// /robot-test
@@ -98,7 +98,7 @@ impl UploadConfigurationBuilder {
         self
     }
     /// <p>A prefix that specifies where files will be uploaded in Amazon S3. It is appended to the simulation output location to determine the final path.</p>
-    /// <p>For example, if your simulation output location is <code>s3://my-bucket</code> and your upload configuration name is <code>robot-test</code>, your files will be uploaded to <code>s3://my-bucket/<simid>
+    /// <p>For example, if your simulation output location is <code>s3://amzn-s3-demo-bucket</code> and your upload configuration name is <code>robot-test</code>, your files will be uploaded to <code>s3://amzn-s3-demo-bucket/<simid>
     /// /
     /// <runid>
     /// /robot-test
@@ -109,7 +109,7 @@ impl UploadConfigurationBuilder {
         self
     }
     /// <p>A prefix that specifies where files will be uploaded in Amazon S3. It is appended to the simulation output location to determine the final path.</p>
-    /// <p>For example, if your simulation output location is <code>s3://my-bucket</code> and your upload configuration name is <code>robot-test</code>, your files will be uploaded to <code>s3://my-bucket/<simid>
+    /// <p>For example, if your simulation output location is <code>s3://amzn-s3-demo-bucket</code> and your upload configuration name is <code>robot-test</code>, your files will be uploaded to <code>s3://amzn-s3-demo-bucket/<simid>
     /// /
     /// <runid>
     /// /robot-test

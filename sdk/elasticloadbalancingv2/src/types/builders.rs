@@ -67,6 +67,8 @@ pub use crate::types::_trust_store_association::TrustStoreAssociationBuilder;
 
 pub use crate::types::_target_health_description::TargetHealthDescriptionBuilder;
 
+pub use crate::types::_administrative_override::AdministrativeOverrideBuilder;
+
 pub use crate::types::_anomaly_detection::AnomalyDetectionBuilder;
 
 pub use crate::types::_target_health::TargetHealthBuilder;

@@ -16,6 +16,8 @@ pub struct InstanceFleetModifyConfig {
     pub resize_specifications: ::std::option::Option<crate::types::InstanceFleetResizingSpecifications>,
     /// <p>An array of InstanceTypeConfig objects that specify how Amazon EMR provisions Amazon EC2 instances when it fulfills On-Demand and Spot capacities. For more information, see <a href="https://docs.aws.amazon.com/emr/latest/APIReference/API_InstanceTypeConfig.html">InstanceTypeConfig</a>.</p>
     pub instance_type_configs: ::std::option::Option<::std::vec::Vec<crate::types::InstanceTypeConfig>>,
+    /// <p>Reserved.</p>
+    pub context: ::std::option::Option<::std::string::String>,
 }
 impl InstanceFleetModifyConfig {
     /// <p>A unique identifier for the instance fleet.</p>
@@ -40,6 +42,10 @@ impl InstanceFleetModifyConfig {
     pub fn instance_type_configs(&self) -> &[crate::types::InstanceTypeConfig] {
         self.instance_type_configs.as_deref().unwrap_or_default()
     }
+    /// <p>Reserved.</p>
+    pub fn context(&self) -> ::std::option::Option<&str> {
+        self.context.as_deref()
+    }
 }
 impl InstanceFleetModifyConfig {
     /// Creates a new builder-style object to manufacture [`InstanceFleetModifyConfig`](crate::types::InstanceFleetModifyConfig).
@@ -57,6 +63,7 @@ pub struct InstanceFleetModifyConfigBuilder {
     pub(crate) target_spot_capacity: ::std::option::Option<i32>,
     pub(crate) resize_specifications: ::std::option::Option<crate::types::InstanceFleetResizingSpecifications>,
     pub(crate) instance_type_configs: ::std::option::Option<::std::vec::Vec<crate::types::InstanceTypeConfig>>,
+    pub(crate) context: ::std::option::Option<::std::string::String>,
 }
 impl InstanceFleetModifyConfigBuilder {
     /// <p>A unique identifier for the instance fleet.</p>
@@ -136,6 +143,20 @@ impl InstanceFleetModifyConfigBuilder {
     pub fn get_instance_type_configs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceTypeConfig>> {
         &self.instance_type_configs
     }
+    /// <p>Reserved.</p>
+    pub fn context(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.context = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Reserved.</p>
+    pub fn set_context(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.context = input;
+        self
+    }
+    /// <p>Reserved.</p>
+    pub fn get_context(&self) -> &::std::option::Option<::std::string::String> {
+        &self.context
+    }
     /// Consumes the builder and constructs a [`InstanceFleetModifyConfig`](crate::types::InstanceFleetModifyConfig).
     pub fn build(self) -> crate::types::InstanceFleetModifyConfig {
         crate::types::InstanceFleetModifyConfig {
@@ -144,6 +165,7 @@ impl InstanceFleetModifyConfigBuilder {
             target_spot_capacity: self.target_spot_capacity,
             resize_specifications: self.resize_specifications,
             instance_type_configs: self.instance_type_configs,
+            context: self.context,
         }
     }
 }

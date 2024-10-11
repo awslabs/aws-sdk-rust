@@ -12,7 +12,7 @@ pub struct SimulationApplicationSummary {
     pub version: ::std::option::Option<::std::string::String>,
     /// <p>The time, in milliseconds since the epoch, when the simulation application was last updated.</p>
     pub last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>Information about a robot software suite (ROS distribution).</p>
+    /// <p>Information about a robot software suite.</p>
     pub robot_software_suite: ::std::option::Option<crate::types::RobotSoftwareSuite>,
     /// <p>Information about a simulation software suite.</p>
     pub simulation_software_suite: ::std::option::Option<crate::types::SimulationSoftwareSuite>,
@@ -34,7 +34,7 @@ impl SimulationApplicationSummary {
     pub fn last_updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
-    /// <p>Information about a robot software suite (ROS distribution).</p>
+    /// <p>Information about a robot software suite.</p>
     pub fn robot_software_suite(&self) -> ::std::option::Option<&crate::types::RobotSoftwareSuite> {
         self.robot_software_suite.as_ref()
     }
@@ -118,17 +118,17 @@ impl SimulationApplicationSummaryBuilder {
     pub fn get_last_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_updated_at
     }
-    /// <p>Information about a robot software suite (ROS distribution).</p>
+    /// <p>Information about a robot software suite.</p>
     pub fn robot_software_suite(mut self, input: crate::types::RobotSoftwareSuite) -> Self {
         self.robot_software_suite = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Information about a robot software suite (ROS distribution).</p>
+    /// <p>Information about a robot software suite.</p>
     pub fn set_robot_software_suite(mut self, input: ::std::option::Option<crate::types::RobotSoftwareSuite>) -> Self {
         self.robot_software_suite = input;
         self
     }
-    /// <p>Information about a robot software suite (ROS distribution).</p>
+    /// <p>Information about a robot software suite.</p>
     pub fn get_robot_software_suite(&self) -> &::std::option::Option<crate::types::RobotSoftwareSuite> {
         &self.robot_software_suite
     }

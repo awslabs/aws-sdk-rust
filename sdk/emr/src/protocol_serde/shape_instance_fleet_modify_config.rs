@@ -36,5 +36,8 @@ pub fn ser_instance_fleet_modify_config(
         }
         array_7.finish();
     }
+    if let Some(var_10) = &input.context {
+        object.key("Context").string(var_10.as_str());
+    }
     Ok(())
 }

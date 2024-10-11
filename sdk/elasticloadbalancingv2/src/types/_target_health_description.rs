@@ -14,6 +14,8 @@ pub struct TargetHealthDescription {
     /// <p>If no anomalies were detected, the result is <code>normal</code>.</p>
     /// <p>If anomalies were detected, the result is <code>anomalous</code>.</p>
     pub anomaly_detection: ::std::option::Option<crate::types::AnomalyDetection>,
+    /// <p>The administrative override information for the target.</p>
+    pub administrative_override: ::std::option::Option<crate::types::AdministrativeOverride>,
 }
 impl TargetHealthDescription {
     /// <p>The description of the target.</p>
@@ -34,6 +36,10 @@ impl TargetHealthDescription {
     pub fn anomaly_detection(&self) -> ::std::option::Option<&crate::types::AnomalyDetection> {
         self.anomaly_detection.as_ref()
     }
+    /// <p>The administrative override information for the target.</p>
+    pub fn administrative_override(&self) -> ::std::option::Option<&crate::types::AdministrativeOverride> {
+        self.administrative_override.as_ref()
+    }
 }
 impl TargetHealthDescription {
     /// Creates a new builder-style object to manufacture [`TargetHealthDescription`](crate::types::TargetHealthDescription).
@@ -50,6 +56,7 @@ pub struct TargetHealthDescriptionBuilder {
     pub(crate) health_check_port: ::std::option::Option<::std::string::String>,
     pub(crate) target_health: ::std::option::Option<crate::types::TargetHealth>,
     pub(crate) anomaly_detection: ::std::option::Option<crate::types::AnomalyDetection>,
+    pub(crate) administrative_override: ::std::option::Option<crate::types::AdministrativeOverride>,
 }
 impl TargetHealthDescriptionBuilder {
     /// <p>The description of the target.</p>
@@ -114,6 +121,20 @@ impl TargetHealthDescriptionBuilder {
     pub fn get_anomaly_detection(&self) -> &::std::option::Option<crate::types::AnomalyDetection> {
         &self.anomaly_detection
     }
+    /// <p>The administrative override information for the target.</p>
+    pub fn administrative_override(mut self, input: crate::types::AdministrativeOverride) -> Self {
+        self.administrative_override = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The administrative override information for the target.</p>
+    pub fn set_administrative_override(mut self, input: ::std::option::Option<crate::types::AdministrativeOverride>) -> Self {
+        self.administrative_override = input;
+        self
+    }
+    /// <p>The administrative override information for the target.</p>
+    pub fn get_administrative_override(&self) -> &::std::option::Option<crate::types::AdministrativeOverride> {
+        &self.administrative_override
+    }
     /// Consumes the builder and constructs a [`TargetHealthDescription`](crate::types::TargetHealthDescription).
     pub fn build(self) -> crate::types::TargetHealthDescription {
         crate::types::TargetHealthDescription {
@@ -121,6 +142,7 @@ impl TargetHealthDescriptionBuilder {
             health_check_port: self.health_check_port,
             target_health: self.target_health,
             anomaly_detection: self.anomaly_detection,
+            administrative_override: self.administrative_override,
         }
     }
 }

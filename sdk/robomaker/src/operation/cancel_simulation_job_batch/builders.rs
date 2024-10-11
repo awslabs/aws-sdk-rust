@@ -22,6 +22,9 @@ impl crate::operation::cancel_simulation_job_batch::builders::CancelSimulationJo
 }
 /// Fluent builder constructing a request to `CancelSimulationJobBatch`.
 ///
+/// <important>
+/// <p>End of support notice: On September 10, 2025, Amazon Web Services will discontinue support for Amazon Web Services RoboMaker. After September 10, 2025, you will no longer be able to access the Amazon Web Services RoboMaker console or Amazon Web Services RoboMaker resources. For more information on transitioning to Batch to help run containerized simulations, visit <a href="https://aws.amazon.com/blogs/hpc/run-simulations-using-multiple-containers-in-a-single-aws-batch-job/">https://aws.amazon.com/blogs/hpc/run-simulations-using-multiple-containers-in-a-single-aws-batch-job/</a>.</p>
+/// </important>
 /// <p>Cancels a simulation job batch. When you cancel a simulation job batch, you are also cancelling all of the active simulation jobs created as part of the batch.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CancelSimulationJobBatchFluentBuilder {

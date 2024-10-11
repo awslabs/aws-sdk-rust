@@ -3,97 +3,146 @@
 /// <p>The <code>Filter</code> is used to identify objects that a Lifecycle Rule applies to. A <code>Filter</code> can have exactly one of <code>Prefix</code>, <code>Tag</code>, <code>ObjectSizeGreaterThan</code>, <code>ObjectSizeLessThan</code>, or <code>And</code> specified. If the <code>Filter</code> element is left empty, the Lifecycle Rule applies to all objects in the bucket.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub enum LifecycleRuleFilter {
-    /// <p>This is used in a Lifecycle Rule Filter to apply a logical AND to two or more predicates. The Lifecycle Rule will apply to any object matching all of the predicates configured inside the And operator.</p>
-    And(crate::types::LifecycleRuleAndOperator),
-    /// <p>Minimum object size to which the rule applies.</p>
-    ObjectSizeGreaterThan(i64),
-    /// <p>Maximum object size to which the rule applies.</p>
-    ObjectSizeLessThan(i64),
+pub struct LifecycleRuleFilter {
     /// <p>Prefix identifying one or more objects to which the rule applies.</p><important>
     /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML related object key constraints</a>.</p>
     /// </important>
-    Prefix(::std::string::String),
+    pub prefix: ::std::option::Option<::std::string::String>,
     /// <p>This tag must exist in the object's tag set in order for the rule to apply.</p>
-    Tag(crate::types::Tag),
-    /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
-    /// An unknown enum variant
-    ///
-    /// _Note: If you encounter this error, consider upgrading your SDK to the latest version._
-    /// The `Unknown` variant represents cases where the server sent a value that wasn't recognized
-    /// by the client. This can happen when the server adds new functionality, but the client has not been updated.
-    /// To investigate this, consider turning on debug logging to print the raw HTTP response.
-    #[non_exhaustive]
-    Unknown,
+    pub tag: ::std::option::Option<crate::types::Tag>,
+    /// <p>Minimum object size to which the rule applies.</p>
+    pub object_size_greater_than: ::std::option::Option<i64>,
+    /// <p>Maximum object size to which the rule applies.</p>
+    pub object_size_less_than: ::std::option::Option<i64>,
+    /// <p>This is used in a Lifecycle Rule Filter to apply a logical AND to two or more predicates. The Lifecycle Rule will apply to any object matching all of the predicates configured inside the And operator.</p>
+    pub and: ::std::option::Option<crate::types::LifecycleRuleAndOperator>,
 }
 impl LifecycleRuleFilter {
-    /// Tries to convert the enum instance into [`And`](crate::types::LifecycleRuleFilter::And), extracting the inner [`LifecycleRuleAndOperator`](crate::types::LifecycleRuleAndOperator).
-    /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_and(&self) -> ::std::result::Result<&crate::types::LifecycleRuleAndOperator, &Self> {
-        if let LifecycleRuleFilter::And(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
+    /// <p>Prefix identifying one or more objects to which the rule applies.</p><important>
+    /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML related object key constraints</a>.</p>
+    /// </important>
+    pub fn prefix(&self) -> ::std::option::Option<&str> {
+        self.prefix.as_deref()
+    }
+    /// <p>This tag must exist in the object's tag set in order for the rule to apply.</p>
+    pub fn tag(&self) -> ::std::option::Option<&crate::types::Tag> {
+        self.tag.as_ref()
+    }
+    /// <p>Minimum object size to which the rule applies.</p>
+    pub fn object_size_greater_than(&self) -> ::std::option::Option<i64> {
+        self.object_size_greater_than
+    }
+    /// <p>Maximum object size to which the rule applies.</p>
+    pub fn object_size_less_than(&self) -> ::std::option::Option<i64> {
+        self.object_size_less_than
+    }
+    /// <p>This is used in a Lifecycle Rule Filter to apply a logical AND to two or more predicates. The Lifecycle Rule will apply to any object matching all of the predicates configured inside the And operator.</p>
+    pub fn and(&self) -> ::std::option::Option<&crate::types::LifecycleRuleAndOperator> {
+        self.and.as_ref()
+    }
+}
+impl LifecycleRuleFilter {
+    /// Creates a new builder-style object to manufacture [`LifecycleRuleFilter`](crate::types::LifecycleRuleFilter).
+    pub fn builder() -> crate::types::builders::LifecycleRuleFilterBuilder {
+        crate::types::builders::LifecycleRuleFilterBuilder::default()
+    }
+}
+
+/// A builder for [`LifecycleRuleFilter`](crate::types::LifecycleRuleFilter).
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
+pub struct LifecycleRuleFilterBuilder {
+    pub(crate) prefix: ::std::option::Option<::std::string::String>,
+    pub(crate) tag: ::std::option::Option<crate::types::Tag>,
+    pub(crate) object_size_greater_than: ::std::option::Option<i64>,
+    pub(crate) object_size_less_than: ::std::option::Option<i64>,
+    pub(crate) and: ::std::option::Option<crate::types::LifecycleRuleAndOperator>,
+}
+impl LifecycleRuleFilterBuilder {
+    /// <p>Prefix identifying one or more objects to which the rule applies.</p><important>
+    /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML related object key constraints</a>.</p>
+    /// </important>
+    pub fn prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.prefix = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Prefix identifying one or more objects to which the rule applies.</p><important>
+    /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML related object key constraints</a>.</p>
+    /// </important>
+    pub fn set_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.prefix = input;
+        self
+    }
+    /// <p>Prefix identifying one or more objects to which the rule applies.</p><important>
+    /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML related object key constraints</a>.</p>
+    /// </important>
+    pub fn get_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.prefix
+    }
+    /// <p>This tag must exist in the object's tag set in order for the rule to apply.</p>
+    pub fn tag(mut self, input: crate::types::Tag) -> Self {
+        self.tag = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>This tag must exist in the object's tag set in order for the rule to apply.</p>
+    pub fn set_tag(mut self, input: ::std::option::Option<crate::types::Tag>) -> Self {
+        self.tag = input;
+        self
+    }
+    /// <p>This tag must exist in the object's tag set in order for the rule to apply.</p>
+    pub fn get_tag(&self) -> &::std::option::Option<crate::types::Tag> {
+        &self.tag
+    }
+    /// <p>Minimum object size to which the rule applies.</p>
+    pub fn object_size_greater_than(mut self, input: i64) -> Self {
+        self.object_size_greater_than = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Minimum object size to which the rule applies.</p>
+    pub fn set_object_size_greater_than(mut self, input: ::std::option::Option<i64>) -> Self {
+        self.object_size_greater_than = input;
+        self
+    }
+    /// <p>Minimum object size to which the rule applies.</p>
+    pub fn get_object_size_greater_than(&self) -> &::std::option::Option<i64> {
+        &self.object_size_greater_than
+    }
+    /// <p>Maximum object size to which the rule applies.</p>
+    pub fn object_size_less_than(mut self, input: i64) -> Self {
+        self.object_size_less_than = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Maximum object size to which the rule applies.</p>
+    pub fn set_object_size_less_than(mut self, input: ::std::option::Option<i64>) -> Self {
+        self.object_size_less_than = input;
+        self
+    }
+    /// <p>Maximum object size to which the rule applies.</p>
+    pub fn get_object_size_less_than(&self) -> &::std::option::Option<i64> {
+        &self.object_size_less_than
+    }
+    /// <p>This is used in a Lifecycle Rule Filter to apply a logical AND to two or more predicates. The Lifecycle Rule will apply to any object matching all of the predicates configured inside the And operator.</p>
+    pub fn and(mut self, input: crate::types::LifecycleRuleAndOperator) -> Self {
+        self.and = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>This is used in a Lifecycle Rule Filter to apply a logical AND to two or more predicates. The Lifecycle Rule will apply to any object matching all of the predicates configured inside the And operator.</p>
+    pub fn set_and(mut self, input: ::std::option::Option<crate::types::LifecycleRuleAndOperator>) -> Self {
+        self.and = input;
+        self
+    }
+    /// <p>This is used in a Lifecycle Rule Filter to apply a logical AND to two or more predicates. The Lifecycle Rule will apply to any object matching all of the predicates configured inside the And operator.</p>
+    pub fn get_and(&self) -> &::std::option::Option<crate::types::LifecycleRuleAndOperator> {
+        &self.and
+    }
+    /// Consumes the builder and constructs a [`LifecycleRuleFilter`](crate::types::LifecycleRuleFilter).
+    pub fn build(self) -> crate::types::LifecycleRuleFilter {
+        crate::types::LifecycleRuleFilter {
+            prefix: self.prefix,
+            tag: self.tag,
+            object_size_greater_than: self.object_size_greater_than,
+            object_size_less_than: self.object_size_less_than,
+            and: self.and,
         }
-    }
-    /// Returns true if this is a [`And`](crate::types::LifecycleRuleFilter::And).
-    pub fn is_and(&self) -> bool {
-        self.as_and().is_ok()
-    }
-    /// Tries to convert the enum instance into [`ObjectSizeGreaterThan`](crate::types::LifecycleRuleFilter::ObjectSizeGreaterThan), extracting the inner [`i64`](i64).
-    /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_object_size_greater_than(&self) -> ::std::result::Result<&i64, &Self> {
-        if let LifecycleRuleFilter::ObjectSizeGreaterThan(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
-    }
-    /// Returns true if this is a [`ObjectSizeGreaterThan`](crate::types::LifecycleRuleFilter::ObjectSizeGreaterThan).
-    pub fn is_object_size_greater_than(&self) -> bool {
-        self.as_object_size_greater_than().is_ok()
-    }
-    /// Tries to convert the enum instance into [`ObjectSizeLessThan`](crate::types::LifecycleRuleFilter::ObjectSizeLessThan), extracting the inner [`i64`](i64).
-    /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_object_size_less_than(&self) -> ::std::result::Result<&i64, &Self> {
-        if let LifecycleRuleFilter::ObjectSizeLessThan(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
-    }
-    /// Returns true if this is a [`ObjectSizeLessThan`](crate::types::LifecycleRuleFilter::ObjectSizeLessThan).
-    pub fn is_object_size_less_than(&self) -> bool {
-        self.as_object_size_less_than().is_ok()
-    }
-    /// Tries to convert the enum instance into [`Prefix`](crate::types::LifecycleRuleFilter::Prefix), extracting the inner [`String`](::std::string::String).
-    /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_prefix(&self) -> ::std::result::Result<&::std::string::String, &Self> {
-        if let LifecycleRuleFilter::Prefix(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
-    }
-    /// Returns true if this is a [`Prefix`](crate::types::LifecycleRuleFilter::Prefix).
-    pub fn is_prefix(&self) -> bool {
-        self.as_prefix().is_ok()
-    }
-    /// Tries to convert the enum instance into [`Tag`](crate::types::LifecycleRuleFilter::Tag), extracting the inner [`Tag`](crate::types::Tag).
-    /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_tag(&self) -> ::std::result::Result<&crate::types::Tag, &Self> {
-        if let LifecycleRuleFilter::Tag(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
-    }
-    /// Returns true if this is a [`Tag`](crate::types::LifecycleRuleFilter::Tag).
-    pub fn is_tag(&self) -> bool {
-        self.as_tag().is_ok()
-    }
-    /// Returns true if the enum instance is the `Unknown` variant.
-    pub fn is_unknown(&self) -> bool {
-        matches!(self, Self::Unknown)
     }
 }

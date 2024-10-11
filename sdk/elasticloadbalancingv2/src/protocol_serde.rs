@@ -435,6 +435,8 @@ pub(crate) mod shape_trust_store_revocation;
 
 pub(crate) mod shape_actions;
 
+pub(crate) mod shape_administrative_override;
+
 pub(crate) mod shape_alpn_policy_name;
 
 pub(crate) mod shape_anomaly_detection;

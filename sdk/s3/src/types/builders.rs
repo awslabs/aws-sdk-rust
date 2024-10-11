@@ -115,6 +115,8 @@ pub use crate::types::_replica_modifications::ReplicaModificationsBuilder;
 
 pub use crate::types::_sse_kms_encrypted_objects::SseKmsEncryptedObjectsBuilder;
 
+pub use crate::types::_replication_rule_filter::ReplicationRuleFilterBuilder;
+
 pub use crate::types::_replication_rule_and_operator::ReplicationRuleAndOperatorBuilder;
 
 pub use crate::types::_ownership_controls::OwnershipControlsBuilder;
@@ -164,6 +166,8 @@ pub use crate::types::_noncurrent_version_expiration::NoncurrentVersionExpiratio
 pub use crate::types::_noncurrent_version_transition::NoncurrentVersionTransitionBuilder;
 
 pub use crate::types::_transition::TransitionBuilder;
+
+pub use crate::types::_lifecycle_rule_filter::LifecycleRuleFilterBuilder;
 
 pub use crate::types::_lifecycle_rule_and_operator::LifecycleRuleAndOperatorBuilder;
 

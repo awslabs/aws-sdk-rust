@@ -24,6 +24,8 @@ pub struct InstanceFleetConfig {
     pub launch_specifications: ::std::option::Option<crate::types::InstanceFleetProvisioningSpecifications>,
     /// <p>The resize specification for the instance fleet.</p>
     pub resize_specifications: ::std::option::Option<crate::types::InstanceFleetResizingSpecifications>,
+    /// <p>Reserved.</p>
+    pub context: ::std::option::Option<::std::string::String>,
 }
 impl InstanceFleetConfig {
     /// <p>The friendly name of the instance fleet.</p>
@@ -60,6 +62,10 @@ impl InstanceFleetConfig {
     pub fn resize_specifications(&self) -> ::std::option::Option<&crate::types::InstanceFleetResizingSpecifications> {
         self.resize_specifications.as_ref()
     }
+    /// <p>Reserved.</p>
+    pub fn context(&self) -> ::std::option::Option<&str> {
+        self.context.as_deref()
+    }
 }
 impl InstanceFleetConfig {
     /// Creates a new builder-style object to manufacture [`InstanceFleetConfig`](crate::types::InstanceFleetConfig).
@@ -79,6 +85,7 @@ pub struct InstanceFleetConfigBuilder {
     pub(crate) instance_type_configs: ::std::option::Option<::std::vec::Vec<crate::types::InstanceTypeConfig>>,
     pub(crate) launch_specifications: ::std::option::Option<crate::types::InstanceFleetProvisioningSpecifications>,
     pub(crate) resize_specifications: ::std::option::Option<crate::types::InstanceFleetResizingSpecifications>,
+    pub(crate) context: ::std::option::Option<::std::string::String>,
 }
 impl InstanceFleetConfigBuilder {
     /// <p>The friendly name of the instance fleet.</p>
@@ -198,6 +205,20 @@ impl InstanceFleetConfigBuilder {
     pub fn get_resize_specifications(&self) -> &::std::option::Option<crate::types::InstanceFleetResizingSpecifications> {
         &self.resize_specifications
     }
+    /// <p>Reserved.</p>
+    pub fn context(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.context = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Reserved.</p>
+    pub fn set_context(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.context = input;
+        self
+    }
+    /// <p>Reserved.</p>
+    pub fn get_context(&self) -> &::std::option::Option<::std::string::String> {
+        &self.context
+    }
     /// Consumes the builder and constructs a [`InstanceFleetConfig`](crate::types::InstanceFleetConfig).
     pub fn build(self) -> crate::types::InstanceFleetConfig {
         crate::types::InstanceFleetConfig {
@@ -208,6 +229,7 @@ impl InstanceFleetConfigBuilder {
             instance_type_configs: self.instance_type_configs,
             launch_specifications: self.launch_specifications,
             resize_specifications: self.resize_specifications,
+            context: self.context,
         }
     }
 }

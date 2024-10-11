@@ -3,7 +3,14 @@
 /// <p>A filter that identifies the subset of objects to which the replication rule applies. A <code>Filter</code> must specify exactly one <code>Prefix</code>, <code>Tag</code>, or an <code>And</code> child element.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub enum ReplicationRuleFilter {
+pub struct ReplicationRuleFilter {
+    /// <p>An object key name prefix that identifies the subset of objects to which the rule applies.</p><important>
+    /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML related object key constraints</a>.</p>
+    /// </important>
+    pub prefix: ::std::option::Option<::std::string::String>,
+    /// <p>A container for specifying a tag key and value.</p>
+    /// <p>The rule applies only to objects that have the tag in their tag set.</p>
+    pub tag: ::std::option::Option<crate::types::Tag>,
     /// <p>A container for specifying rule filters. The filters determine the subset of objects to which the rule applies. This element is required only if you specify more than one filter. For example:</p>
     /// <ul>
     /// <li>
@@ -11,66 +18,122 @@ pub enum ReplicationRuleFilter {
     /// <li>
     /// <p>If you specify a filter based on multiple tags, wrap the <code>Tag</code> elements in an <code>And</code> tag.</p></li>
     /// </ul>
-    And(crate::types::ReplicationRuleAndOperator),
+    pub and: ::std::option::Option<crate::types::ReplicationRuleAndOperator>,
+}
+impl ReplicationRuleFilter {
     /// <p>An object key name prefix that identifies the subset of objects to which the rule applies.</p><important>
     /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML related object key constraints</a>.</p>
     /// </important>
-    Prefix(::std::string::String),
+    pub fn prefix(&self) -> ::std::option::Option<&str> {
+        self.prefix.as_deref()
+    }
     /// <p>A container for specifying a tag key and value.</p>
     /// <p>The rule applies only to objects that have the tag in their tag set.</p>
-    Tag(crate::types::Tag),
-    /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
-    /// An unknown enum variant
-    ///
-    /// _Note: If you encounter this error, consider upgrading your SDK to the latest version._
-    /// The `Unknown` variant represents cases where the server sent a value that wasn't recognized
-    /// by the client. This can happen when the server adds new functionality, but the client has not been updated.
-    /// To investigate this, consider turning on debug logging to print the raw HTTP response.
-    #[non_exhaustive]
-    Unknown,
+    pub fn tag(&self) -> ::std::option::Option<&crate::types::Tag> {
+        self.tag.as_ref()
+    }
+    /// <p>A container for specifying rule filters. The filters determine the subset of objects to which the rule applies. This element is required only if you specify more than one filter. For example:</p>
+    /// <ul>
+    /// <li>
+    /// <p>If you specify both a <code>Prefix</code> and a <code>Tag</code> filter, wrap these filters in an <code>And</code> tag.</p></li>
+    /// <li>
+    /// <p>If you specify a filter based on multiple tags, wrap the <code>Tag</code> elements in an <code>And</code> tag.</p></li>
+    /// </ul>
+    pub fn and(&self) -> ::std::option::Option<&crate::types::ReplicationRuleAndOperator> {
+        self.and.as_ref()
+    }
 }
 impl ReplicationRuleFilter {
-    /// Tries to convert the enum instance into [`And`](crate::types::ReplicationRuleFilter::And), extracting the inner [`ReplicationRuleAndOperator`](crate::types::ReplicationRuleAndOperator).
-    /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_and(&self) -> ::std::result::Result<&crate::types::ReplicationRuleAndOperator, &Self> {
-        if let ReplicationRuleFilter::And(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
+    /// Creates a new builder-style object to manufacture [`ReplicationRuleFilter`](crate::types::ReplicationRuleFilter).
+    pub fn builder() -> crate::types::builders::ReplicationRuleFilterBuilder {
+        crate::types::builders::ReplicationRuleFilterBuilder::default()
+    }
+}
+
+/// A builder for [`ReplicationRuleFilter`](crate::types::ReplicationRuleFilter).
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
+pub struct ReplicationRuleFilterBuilder {
+    pub(crate) prefix: ::std::option::Option<::std::string::String>,
+    pub(crate) tag: ::std::option::Option<crate::types::Tag>,
+    pub(crate) and: ::std::option::Option<crate::types::ReplicationRuleAndOperator>,
+}
+impl ReplicationRuleFilterBuilder {
+    /// <p>An object key name prefix that identifies the subset of objects to which the rule applies.</p><important>
+    /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML related object key constraints</a>.</p>
+    /// </important>
+    pub fn prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.prefix = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>An object key name prefix that identifies the subset of objects to which the rule applies.</p><important>
+    /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML related object key constraints</a>.</p>
+    /// </important>
+    pub fn set_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.prefix = input;
+        self
+    }
+    /// <p>An object key name prefix that identifies the subset of objects to which the rule applies.</p><important>
+    /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML related object key constraints</a>.</p>
+    /// </important>
+    pub fn get_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.prefix
+    }
+    /// <p>A container for specifying a tag key and value.</p>
+    /// <p>The rule applies only to objects that have the tag in their tag set.</p>
+    pub fn tag(mut self, input: crate::types::Tag) -> Self {
+        self.tag = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A container for specifying a tag key and value.</p>
+    /// <p>The rule applies only to objects that have the tag in their tag set.</p>
+    pub fn set_tag(mut self, input: ::std::option::Option<crate::types::Tag>) -> Self {
+        self.tag = input;
+        self
+    }
+    /// <p>A container for specifying a tag key and value.</p>
+    /// <p>The rule applies only to objects that have the tag in their tag set.</p>
+    pub fn get_tag(&self) -> &::std::option::Option<crate::types::Tag> {
+        &self.tag
+    }
+    /// <p>A container for specifying rule filters. The filters determine the subset of objects to which the rule applies. This element is required only if you specify more than one filter. For example:</p>
+    /// <ul>
+    /// <li>
+    /// <p>If you specify both a <code>Prefix</code> and a <code>Tag</code> filter, wrap these filters in an <code>And</code> tag.</p></li>
+    /// <li>
+    /// <p>If you specify a filter based on multiple tags, wrap the <code>Tag</code> elements in an <code>And</code> tag.</p></li>
+    /// </ul>
+    pub fn and(mut self, input: crate::types::ReplicationRuleAndOperator) -> Self {
+        self.and = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A container for specifying rule filters. The filters determine the subset of objects to which the rule applies. This element is required only if you specify more than one filter. For example:</p>
+    /// <ul>
+    /// <li>
+    /// <p>If you specify both a <code>Prefix</code> and a <code>Tag</code> filter, wrap these filters in an <code>And</code> tag.</p></li>
+    /// <li>
+    /// <p>If you specify a filter based on multiple tags, wrap the <code>Tag</code> elements in an <code>And</code> tag.</p></li>
+    /// </ul>
+    pub fn set_and(mut self, input: ::std::option::Option<crate::types::ReplicationRuleAndOperator>) -> Self {
+        self.and = input;
+        self
+    }
+    /// <p>A container for specifying rule filters. The filters determine the subset of objects to which the rule applies. This element is required only if you specify more than one filter. For example:</p>
+    /// <ul>
+    /// <li>
+    /// <p>If you specify both a <code>Prefix</code> and a <code>Tag</code> filter, wrap these filters in an <code>And</code> tag.</p></li>
+    /// <li>
+    /// <p>If you specify a filter based on multiple tags, wrap the <code>Tag</code> elements in an <code>And</code> tag.</p></li>
+    /// </ul>
+    pub fn get_and(&self) -> &::std::option::Option<crate::types::ReplicationRuleAndOperator> {
+        &self.and
+    }
+    /// Consumes the builder and constructs a [`ReplicationRuleFilter`](crate::types::ReplicationRuleFilter).
+    pub fn build(self) -> crate::types::ReplicationRuleFilter {
+        crate::types::ReplicationRuleFilter {
+            prefix: self.prefix,
+            tag: self.tag,
+            and: self.and,
         }
-    }
-    /// Returns true if this is a [`And`](crate::types::ReplicationRuleFilter::And).
-    pub fn is_and(&self) -> bool {
-        self.as_and().is_ok()
-    }
-    /// Tries to convert the enum instance into [`Prefix`](crate::types::ReplicationRuleFilter::Prefix), extracting the inner [`String`](::std::string::String).
-    /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_prefix(&self) -> ::std::result::Result<&::std::string::String, &Self> {
-        if let ReplicationRuleFilter::Prefix(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
-    }
-    /// Returns true if this is a [`Prefix`](crate::types::ReplicationRuleFilter::Prefix).
-    pub fn is_prefix(&self) -> bool {
-        self.as_prefix().is_ok()
-    }
-    /// Tries to convert the enum instance into [`Tag`](crate::types::ReplicationRuleFilter::Tag), extracting the inner [`Tag`](crate::types::Tag).
-    /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_tag(&self) -> ::std::result::Result<&crate::types::Tag, &Self> {
-        if let ReplicationRuleFilter::Tag(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
-    }
-    /// Returns true if this is a [`Tag`](crate::types::ReplicationRuleFilter::Tag).
-    pub fn is_tag(&self) -> bool {
-        self.as_tag().is_ok()
-    }
-    /// Returns true if the enum instance is the `Unknown` variant.
-    pub fn is_unknown(&self) -> bool {
-        matches!(self, Self::Unknown)
     }
 }

@@ -22,6 +22,9 @@ impl crate::operation::update_simulation_application::builders::UpdateSimulation
 }
 /// Fluent builder constructing a request to `UpdateSimulationApplication`.
 ///
+/// <important>
+/// <p>End of support notice: On September 10, 2025, Amazon Web Services will discontinue support for Amazon Web Services RoboMaker. After September 10, 2025, you will no longer be able to access the Amazon Web Services RoboMaker console or Amazon Web Services RoboMaker resources. For more information on transitioning to Batch to help run containerized simulations, visit <a href="https://aws.amazon.com/blogs/hpc/run-simulations-using-multiple-containers-in-a-single-aws-batch-job/">https://aws.amazon.com/blogs/hpc/run-simulations-using-multiple-containers-in-a-single-aws-batch-job/</a>.</p>
+/// </important>
 /// <p>Updates a simulation application.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateSimulationApplicationFluentBuilder {
@@ -155,17 +158,17 @@ impl UpdateSimulationApplicationFluentBuilder {
     pub fn get_simulation_software_suite(&self) -> &::std::option::Option<crate::types::SimulationSoftwareSuite> {
         self.inner.get_simulation_software_suite()
     }
-    /// <p>Information about the robot software suite (ROS distribution).</p>
+    /// <p>Information about the robot software suite.</p>
     pub fn robot_software_suite(mut self, input: crate::types::RobotSoftwareSuite) -> Self {
         self.inner = self.inner.robot_software_suite(input);
         self
     }
-    /// <p>Information about the robot software suite (ROS distribution).</p>
+    /// <p>Information about the robot software suite.</p>
     pub fn set_robot_software_suite(mut self, input: ::std::option::Option<crate::types::RobotSoftwareSuite>) -> Self {
         self.inner = self.inner.set_robot_software_suite(input);
         self
     }
-    /// <p>Information about the robot software suite (ROS distribution).</p>
+    /// <p>Information about the robot software suite.</p>
     pub fn get_robot_software_suite(&self) -> &::std::option::Option<crate::types::RobotSoftwareSuite> {
         self.inner.get_robot_software_suite()
     }

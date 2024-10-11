@@ -9,7 +9,7 @@ pub struct CreateSimulationApplicationInput {
     pub sources: ::std::option::Option<::std::vec::Vec<crate::types::SourceConfig>>,
     /// <p>The simulation software suite used by the simulation application.</p>
     pub simulation_software_suite: ::std::option::Option<crate::types::SimulationSoftwareSuite>,
-    /// <p>The robot software suite (ROS distribution) used by the simulation application.</p>
+    /// <p>The robot software suite used by the simulation application.</p>
     pub robot_software_suite: ::std::option::Option<crate::types::RobotSoftwareSuite>,
     /// <p>The rendering engine for the simulation application.</p>
     pub rendering_engine: ::std::option::Option<crate::types::RenderingEngine>,
@@ -33,7 +33,7 @@ impl CreateSimulationApplicationInput {
     pub fn simulation_software_suite(&self) -> ::std::option::Option<&crate::types::SimulationSoftwareSuite> {
         self.simulation_software_suite.as_ref()
     }
-    /// <p>The robot software suite (ROS distribution) used by the simulation application.</p>
+    /// <p>The robot software suite used by the simulation application.</p>
     pub fn robot_software_suite(&self) -> ::std::option::Option<&crate::types::RobotSoftwareSuite> {
         self.robot_software_suite.as_ref()
     }
@@ -120,18 +120,18 @@ impl CreateSimulationApplicationInputBuilder {
     pub fn get_simulation_software_suite(&self) -> &::std::option::Option<crate::types::SimulationSoftwareSuite> {
         &self.simulation_software_suite
     }
-    /// <p>The robot software suite (ROS distribution) used by the simulation application.</p>
+    /// <p>The robot software suite used by the simulation application.</p>
     /// This field is required.
     pub fn robot_software_suite(mut self, input: crate::types::RobotSoftwareSuite) -> Self {
         self.robot_software_suite = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The robot software suite (ROS distribution) used by the simulation application.</p>
+    /// <p>The robot software suite used by the simulation application.</p>
     pub fn set_robot_software_suite(mut self, input: ::std::option::Option<crate::types::RobotSoftwareSuite>) -> Self {
         self.robot_software_suite = input;
         self
     }
-    /// <p>The robot software suite (ROS distribution) used by the simulation application.</p>
+    /// <p>The robot software suite used by the simulation application.</p>
     pub fn get_robot_software_suite(&self) -> &::std::option::Option<crate::types::RobotSoftwareSuite> {
         &self.robot_software_suite
     }

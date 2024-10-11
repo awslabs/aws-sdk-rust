@@ -22,6 +22,9 @@ impl crate::operation::create_simulation_application::builders::CreateSimulation
 }
 /// Fluent builder constructing a request to `CreateSimulationApplication`.
 ///
+/// <important>
+/// <p>End of support notice: On September 10, 2025, Amazon Web Services will discontinue support for Amazon Web Services RoboMaker. After September 10, 2025, you will no longer be able to access the Amazon Web Services RoboMaker console or Amazon Web Services RoboMaker resources. For more information on transitioning to Batch to help run containerized simulations, visit <a href="https://aws.amazon.com/blogs/hpc/run-simulations-using-multiple-containers-in-a-single-aws-batch-job/">https://aws.amazon.com/blogs/hpc/run-simulations-using-multiple-containers-in-a-single-aws-batch-job/</a>.</p>
+/// </important>
 /// <p>Creates a simulation application.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateSimulationApplicationFluentBuilder {
@@ -155,17 +158,17 @@ impl CreateSimulationApplicationFluentBuilder {
     pub fn get_simulation_software_suite(&self) -> &::std::option::Option<crate::types::SimulationSoftwareSuite> {
         self.inner.get_simulation_software_suite()
     }
-    /// <p>The robot software suite (ROS distribution) used by the simulation application.</p>
+    /// <p>The robot software suite used by the simulation application.</p>
     pub fn robot_software_suite(mut self, input: crate::types::RobotSoftwareSuite) -> Self {
         self.inner = self.inner.robot_software_suite(input);
         self
     }
-    /// <p>The robot software suite (ROS distribution) used by the simulation application.</p>
+    /// <p>The robot software suite used by the simulation application.</p>
     pub fn set_robot_software_suite(mut self, input: ::std::option::Option<crate::types::RobotSoftwareSuite>) -> Self {
         self.inner = self.inner.set_robot_software_suite(input);
         self
     }
-    /// <p>The robot software suite (ROS distribution) used by the simulation application.</p>
+    /// <p>The robot software suite used by the simulation application.</p>
     pub fn get_robot_software_suite(&self) -> &::std::option::Option<crate::types::RobotSoftwareSuite> {
         self.inner.get_robot_software_suite()
     }

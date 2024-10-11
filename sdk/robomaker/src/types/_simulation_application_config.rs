@@ -12,7 +12,9 @@ pub struct SimulationApplicationConfig {
     pub launch_config: ::std::option::Option<crate::types::LaunchConfig>,
     /// <p>Information about upload configurations for the simulation application.</p>
     pub upload_configurations: ::std::option::Option<::std::vec::Vec<crate::types::UploadConfiguration>>,
-    /// <p>A list of world configurations.</p>
+    /// <p>A list of world configurations.</p><important>
+    /// <p>This API is no longer supported and will throw an error if used.</p>
+    /// </important>
     pub world_configs: ::std::option::Option<::std::vec::Vec<crate::types::WorldConfig>>,
     /// <p>A Boolean indicating whether to use default upload configurations. By default, <code>.ros</code> and <code>.gazebo</code> files are uploaded when the application terminates and all ROS topics will be recorded.</p>
     /// <p>If you set this value, you must specify an <code>outputLocation</code>.</p><important>
@@ -52,7 +54,9 @@ impl SimulationApplicationConfig {
     pub fn upload_configurations(&self) -> &[crate::types::UploadConfiguration] {
         self.upload_configurations.as_deref().unwrap_or_default()
     }
-    /// <p>A list of world configurations.</p>
+    /// <p>A list of world configurations.</p><important>
+    /// <p>This API is no longer supported and will throw an error if used.</p>
+    /// </important>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.world_configs.is_none()`.
     pub fn world_configs(&self) -> &[crate::types::WorldConfig] {
@@ -173,19 +177,25 @@ impl SimulationApplicationConfigBuilder {
     ///
     /// To override the contents of this collection use [`set_world_configs`](Self::set_world_configs).
     ///
-    /// <p>A list of world configurations.</p>
+    /// <p>A list of world configurations.</p><important>
+    /// <p>This API is no longer supported and will throw an error if used.</p>
+    /// </important>
     pub fn world_configs(mut self, input: crate::types::WorldConfig) -> Self {
         let mut v = self.world_configs.unwrap_or_default();
         v.push(input);
         self.world_configs = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of world configurations.</p>
+    /// <p>A list of world configurations.</p><important>
+    /// <p>This API is no longer supported and will throw an error if used.</p>
+    /// </important>
     pub fn set_world_configs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::WorldConfig>>) -> Self {
         self.world_configs = input;
         self
     }
-    /// <p>A list of world configurations.</p>
+    /// <p>A list of world configurations.</p><important>
+    /// <p>This API is no longer supported and will throw an error if used.</p>
+    /// </important>
     pub fn get_world_configs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::WorldConfig>> {
         &self.world_configs
     }

@@ -64,6 +64,8 @@ pub struct LoadBalancerAttribute {
     /// <ul>
     /// <li>
     /// <p><code>dns_record.client_routing_policy</code> - Indicates how traffic is distributed among the load balancer Availability Zones. The possible values are <code>availability_zone_affinity</code> with 100 percent zonal affinity, <code>partial_availability_zone_affinity</code> with 85 percent zonal affinity, and <code>any_availability_zone</code> with 0 percent zonal affinity.</p></li>
+    /// <li>
+    /// <p><code>zonal_shift.config.enabled</code> - Indicates whether zonal shift is enabled. The possible values are <code>true</code> and <code>false</code>. The default is <code>false</code>.</p></li>
     /// </ul>
     pub key: ::std::option::Option<::std::string::String>,
     /// <p>The value of the attribute.</p>
@@ -130,6 +132,8 @@ impl LoadBalancerAttribute {
     /// <ul>
     /// <li>
     /// <p><code>dns_record.client_routing_policy</code> - Indicates how traffic is distributed among the load balancer Availability Zones. The possible values are <code>availability_zone_affinity</code> with 100 percent zonal affinity, <code>partial_availability_zone_affinity</code> with 85 percent zonal affinity, and <code>any_availability_zone</code> with 0 percent zonal affinity.</p></li>
+    /// <li>
+    /// <p><code>zonal_shift.config.enabled</code> - Indicates whether zonal shift is enabled. The possible values are <code>true</code> and <code>false</code>. The default is <code>false</code>.</p></li>
     /// </ul>
     pub fn key(&self) -> ::std::option::Option<&str> {
         self.key.as_deref()
@@ -214,6 +218,8 @@ impl LoadBalancerAttributeBuilder {
     /// <ul>
     /// <li>
     /// <p><code>dns_record.client_routing_policy</code> - Indicates how traffic is distributed among the load balancer Availability Zones. The possible values are <code>availability_zone_affinity</code> with 100 percent zonal affinity, <code>partial_availability_zone_affinity</code> with 85 percent zonal affinity, and <code>any_availability_zone</code> with 0 percent zonal affinity.</p></li>
+    /// <li>
+    /// <p><code>zonal_shift.config.enabled</code> - Indicates whether zonal shift is enabled. The possible values are <code>true</code> and <code>false</code>. The default is <code>false</code>.</p></li>
     /// </ul>
     pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key = ::std::option::Option::Some(input.into());
@@ -279,6 +285,8 @@ impl LoadBalancerAttributeBuilder {
     /// <ul>
     /// <li>
     /// <p><code>dns_record.client_routing_policy</code> - Indicates how traffic is distributed among the load balancer Availability Zones. The possible values are <code>availability_zone_affinity</code> with 100 percent zonal affinity, <code>partial_availability_zone_affinity</code> with 85 percent zonal affinity, and <code>any_availability_zone</code> with 0 percent zonal affinity.</p></li>
+    /// <li>
+    /// <p><code>zonal_shift.config.enabled</code> - Indicates whether zonal shift is enabled. The possible values are <code>true</code> and <code>false</code>. The default is <code>false</code>.</p></li>
     /// </ul>
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key = input;
@@ -344,6 +352,8 @@ impl LoadBalancerAttributeBuilder {
     /// <ul>
     /// <li>
     /// <p><code>dns_record.client_routing_policy</code> - Indicates how traffic is distributed among the load balancer Availability Zones. The possible values are <code>availability_zone_affinity</code> with 100 percent zonal affinity, <code>partial_availability_zone_affinity</code> with 85 percent zonal affinity, and <code>any_availability_zone</code> with 0 percent zonal affinity.</p></li>
+    /// <li>
+    /// <p><code>zonal_shift.config.enabled</code> - Indicates whether zonal shift is enabled. The possible values are <code>true</code> and <code>false</code>. The default is <code>false</code>.</p></li>
     /// </ul>
     pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
         &self.key

@@ -3,64 +3,67 @@ pub fn ser_replication_rule_filter(
     input: &crate::types::ReplicationRuleFilter,
     writer: ::aws_smithy_xml::encode::ElWriter,
 ) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    let mut scope_writer = writer.finish();
-    match input {
-        crate::types::ReplicationRuleFilter::Prefix(inner) => {
-            let mut inner_writer = scope_writer.start_el("Prefix").finish();
-            inner_writer.data(inner.as_str());
-        }
-        crate::types::ReplicationRuleFilter::Tag(inner) => {
-            let inner_writer = scope_writer.start_el("Tag");
-            crate::protocol_serde::shape_tag::ser_tag(inner, inner_writer)?
-        }
-        crate::types::ReplicationRuleFilter::And(inner) => {
-            let inner_writer = scope_writer.start_el("And");
-            crate::protocol_serde::shape_replication_rule_and_operator::ser_replication_rule_and_operator(inner, inner_writer)?
-        }
-        crate::types::ReplicationRuleFilter::Unknown => {
-            return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
-                "ReplicationRuleFilter",
-            ))
-        }
+    #[allow(unused_mut)]
+    let mut scope = writer.finish();
+    if let Some(var_1) = &input.prefix {
+        let mut inner_writer = scope.start_el("Prefix").finish();
+        inner_writer.data(var_1.as_str());
     }
+    if let Some(var_2) = &input.tag {
+        let inner_writer = scope.start_el("Tag");
+        crate::protocol_serde::shape_tag::ser_tag(var_2, inner_writer)?
+    }
+    if let Some(var_3) = &input.and {
+        let inner_writer = scope.start_el("And");
+        crate::protocol_serde::shape_replication_rule_and_operator::ser_replication_rule_and_operator(var_3, inner_writer)?
+    }
+    scope.finish();
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_replication_rule_filter(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::ReplicationRuleFilter, ::aws_smithy_xml::decode::XmlDecodeError> {
-    let mut base: Option<crate::types::ReplicationRuleFilter> = None;
+    #[allow(unused_mut)]
+    let mut builder = crate::types::ReplicationRuleFilter::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Prefix") /* Prefix com.amazonaws.s3#ReplicationRuleFilter$Prefix */ =>  {
-                let tmp =
-                    Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                        ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        .into()
+                let var_4 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
                     )
-                    ?
                 ;
-                base = Some(crate::types::ReplicationRuleFilter::Prefix(tmp));
+                builder = builder.set_prefix(var_4);
             }
             ,
             s if s.matches("Tag") /* Tag com.amazonaws.s3#ReplicationRuleFilter$Tag */ =>  {
-                let tmp =
-                    crate::protocol_serde::shape_tag::de_tag(&mut tag)
-                    ?
+                let var_5 =
+                    Some(
+                        crate::protocol_serde::shape_tag::de_tag(&mut tag)
+                        ?
+                    )
                 ;
-                base = Some(crate::types::ReplicationRuleFilter::Tag(tmp));
+                builder = builder.set_tag(var_5);
             }
             ,
             s if s.matches("And") /* And com.amazonaws.s3#ReplicationRuleFilter$And */ =>  {
-                let tmp =
-                    crate::protocol_serde::shape_replication_rule_and_operator::de_replication_rule_and_operator(&mut tag)
-                    ?
+                let var_6 =
+                    Some(
+                        crate::protocol_serde::shape_replication_rule_and_operator::de_replication_rule_and_operator(&mut tag)
+                        ?
+                    )
                 ;
-                base = Some(crate::types::ReplicationRuleFilter::And(tmp));
+                builder = builder.set_and(var_6);
             }
             ,
-            _unknown => base = Some(crate::types::ReplicationRuleFilter::Unknown),
+            _ => {}
         }
     }
-    base.ok_or_else(|| ::aws_smithy_xml::decode::XmlDecodeError::custom("expected union, got nothing"))
+    Ok(builder.build())
 }

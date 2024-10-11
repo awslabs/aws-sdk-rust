@@ -11,7 +11,7 @@ pub struct UpdateRobotApplicationOutput {
     pub version: ::std::option::Option<::std::string::String>,
     /// <p>The sources of the robot application.</p>
     pub sources: ::std::option::Option<::std::vec::Vec<crate::types::Source>>,
-    /// <p>The robot software suite (ROS distribution) used by the robot application.</p>
+    /// <p>The robot software suite used by the robot application.</p>
     pub robot_software_suite: ::std::option::Option<crate::types::RobotSoftwareSuite>,
     /// <p>The time, in milliseconds since the epoch, when the robot application was last updated.</p>
     pub last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -40,7 +40,7 @@ impl UpdateRobotApplicationOutput {
     pub fn sources(&self) -> &[crate::types::Source] {
         self.sources.as_deref().unwrap_or_default()
     }
-    /// <p>The robot software suite (ROS distribution) used by the robot application.</p>
+    /// <p>The robot software suite used by the robot application.</p>
     pub fn robot_software_suite(&self) -> ::std::option::Option<&crate::types::RobotSoftwareSuite> {
         self.robot_software_suite.as_ref()
     }
@@ -146,17 +146,17 @@ impl UpdateRobotApplicationOutputBuilder {
     pub fn get_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Source>> {
         &self.sources
     }
-    /// <p>The robot software suite (ROS distribution) used by the robot application.</p>
+    /// <p>The robot software suite used by the robot application.</p>
     pub fn robot_software_suite(mut self, input: crate::types::RobotSoftwareSuite) -> Self {
         self.robot_software_suite = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The robot software suite (ROS distribution) used by the robot application.</p>
+    /// <p>The robot software suite used by the robot application.</p>
     pub fn set_robot_software_suite(mut self, input: ::std::option::Option<crate::types::RobotSoftwareSuite>) -> Self {
         self.robot_software_suite = input;
         self
     }
-    /// <p>The robot software suite (ROS distribution) used by the robot application.</p>
+    /// <p>The robot software suite used by the robot application.</p>
     pub fn get_robot_software_suite(&self) -> &::std::option::Option<crate::types::RobotSoftwareSuite> {
         &self.robot_software_suite
     }

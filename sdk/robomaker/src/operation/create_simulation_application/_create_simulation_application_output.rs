@@ -13,7 +13,7 @@ pub struct CreateSimulationApplicationOutput {
     pub sources: ::std::option::Option<::std::vec::Vec<crate::types::Source>>,
     /// <p>The simulation software suite used by the simulation application.</p>
     pub simulation_software_suite: ::std::option::Option<crate::types::SimulationSoftwareSuite>,
-    /// <p>Information about the robot software suite (ROS distribution).</p>
+    /// <p>Information about the robot software suite.</p>
     pub robot_software_suite: ::std::option::Option<crate::types::RobotSoftwareSuite>,
     /// <p>The rendering engine for the simulation application.</p>
     pub rendering_engine: ::std::option::Option<crate::types::RenderingEngine>,
@@ -50,7 +50,7 @@ impl CreateSimulationApplicationOutput {
     pub fn simulation_software_suite(&self) -> ::std::option::Option<&crate::types::SimulationSoftwareSuite> {
         self.simulation_software_suite.as_ref()
     }
-    /// <p>Information about the robot software suite (ROS distribution).</p>
+    /// <p>Information about the robot software suite.</p>
     pub fn robot_software_suite(&self) -> ::std::option::Option<&crate::types::RobotSoftwareSuite> {
         self.robot_software_suite.as_ref()
     }
@@ -181,17 +181,17 @@ impl CreateSimulationApplicationOutputBuilder {
     pub fn get_simulation_software_suite(&self) -> &::std::option::Option<crate::types::SimulationSoftwareSuite> {
         &self.simulation_software_suite
     }
-    /// <p>Information about the robot software suite (ROS distribution).</p>
+    /// <p>Information about the robot software suite.</p>
     pub fn robot_software_suite(mut self, input: crate::types::RobotSoftwareSuite) -> Self {
         self.robot_software_suite = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Information about the robot software suite (ROS distribution).</p>
+    /// <p>Information about the robot software suite.</p>
     pub fn set_robot_software_suite(mut self, input: ::std::option::Option<crate::types::RobotSoftwareSuite>) -> Self {
         self.robot_software_suite = input;
         self
     }
-    /// <p>Information about the robot software suite (ROS distribution).</p>
+    /// <p>Information about the robot software suite.</p>
     pub fn get_robot_software_suite(&self) -> &::std::option::Option<crate::types::RobotSoftwareSuite> {
         &self.robot_software_suite
     }
