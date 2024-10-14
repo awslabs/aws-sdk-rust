@@ -10,11 +10,17 @@ pub mod create_data_integration_flow;
 /// Types for the `CreateDataLakeDataset` operation.
 pub mod create_data_lake_dataset;
 
+/// Types for the `CreateInstance` operation.
+pub mod create_instance;
+
 /// Types for the `DeleteDataIntegrationFlow` operation.
 pub mod delete_data_integration_flow;
 
 /// Types for the `DeleteDataLakeDataset` operation.
 pub mod delete_data_lake_dataset;
+
+/// Types for the `DeleteInstance` operation.
+pub mod delete_instance;
 
 /// Types for the `GetBillOfMaterialsImportJob` operation.
 pub mod get_bill_of_materials_import_job;
@@ -25,11 +31,17 @@ pub mod get_data_integration_flow;
 /// Types for the `GetDataLakeDataset` operation.
 pub mod get_data_lake_dataset;
 
+/// Types for the `GetInstance` operation.
+pub mod get_instance;
+
 /// Types for the `ListDataIntegrationFlows` operation.
 pub mod list_data_integration_flows;
 
 /// Types for the `ListDataLakeDatasets` operation.
 pub mod list_data_lake_datasets;
+
+/// Types for the `ListInstances` operation.
+pub mod list_instances;
 
 /// Types for the `ListTagsForResource` operation.
 pub mod list_tags_for_resource;
@@ -48,3 +60,6 @@ pub mod update_data_integration_flow;
 
 /// Types for the `UpdateDataLakeDataset` operation.
 pub mod update_data_lake_dataset;
+
+/// Types for the `UpdateInstance` operation.
+pub mod update_instance;

@@ -2,7 +2,7 @@
 
 /// <p>A result row containing metadata for an archived email message.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct Row {
     /// <p>The unique identifier of the archived message.</p>
     pub archived_message_id: ::std::option::Option<::std::string::String>,
@@ -32,6 +32,14 @@ pub struct Row {
     pub x_original_mailer: ::std::option::Option<::std::string::String>,
     /// <p>The priority level of the email.</p>
     pub x_priority: ::std::option::Option<::std::string::String>,
+    /// <p>The ID of the ingress endpoint through which the email was received.</p>
+    pub ingress_point_id: ::std::option::Option<::std::string::String>,
+    /// <p>The name of the host from which the email was received.</p>
+    pub sender_hostname: ::std::option::Option<::std::string::String>,
+    /// <p>The IP address of the host from which the email was received.</p>
+    pub sender_ip_address: ::std::option::Option<::std::string::String>,
+    /// <p>The SMTP envelope information of the email.</p>
+    pub envelope: ::std::option::Option<crate::types::Envelope>,
 }
 impl Row {
     /// <p>The unique identifier of the archived message.</p>
@@ -92,6 +100,46 @@ impl Row {
     pub fn x_priority(&self) -> ::std::option::Option<&str> {
         self.x_priority.as_deref()
     }
+    /// <p>The ID of the ingress endpoint through which the email was received.</p>
+    pub fn ingress_point_id(&self) -> ::std::option::Option<&str> {
+        self.ingress_point_id.as_deref()
+    }
+    /// <p>The name of the host from which the email was received.</p>
+    pub fn sender_hostname(&self) -> ::std::option::Option<&str> {
+        self.sender_hostname.as_deref()
+    }
+    /// <p>The IP address of the host from which the email was received.</p>
+    pub fn sender_ip_address(&self) -> ::std::option::Option<&str> {
+        self.sender_ip_address.as_deref()
+    }
+    /// <p>The SMTP envelope information of the email.</p>
+    pub fn envelope(&self) -> ::std::option::Option<&crate::types::Envelope> {
+        self.envelope.as_ref()
+    }
+}
+impl ::std::fmt::Debug for Row {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("Row");
+        formatter.field("archived_message_id", &self.archived_message_id);
+        formatter.field("received_timestamp", &self.received_timestamp);
+        formatter.field("date", &self.date);
+        formatter.field("to", &self.to);
+        formatter.field("from", &self.from);
+        formatter.field("cc", &self.cc);
+        formatter.field("subject", &self.subject);
+        formatter.field("message_id", &self.message_id);
+        formatter.field("has_attachments", &self.has_attachments);
+        formatter.field("received_headers", &self.received_headers);
+        formatter.field("in_reply_to", &self.in_reply_to);
+        formatter.field("x_mailer", &self.x_mailer);
+        formatter.field("x_original_mailer", &self.x_original_mailer);
+        formatter.field("x_priority", &self.x_priority);
+        formatter.field("ingress_point_id", &self.ingress_point_id);
+        formatter.field("sender_hostname", &self.sender_hostname);
+        formatter.field("sender_ip_address", &"*** Sensitive Data Redacted ***");
+        formatter.field("envelope", &self.envelope);
+        formatter.finish()
+    }
 }
 impl Row {
     /// Creates a new builder-style object to manufacture [`Row`](crate::types::Row).
@@ -101,7 +149,7 @@ impl Row {
 }
 
 /// A builder for [`Row`](crate::types::Row).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct RowBuilder {
     pub(crate) archived_message_id: ::std::option::Option<::std::string::String>,
@@ -118,6 +166,10 @@ pub struct RowBuilder {
     pub(crate) x_mailer: ::std::option::Option<::std::string::String>,
     pub(crate) x_original_mailer: ::std::option::Option<::std::string::String>,
     pub(crate) x_priority: ::std::option::Option<::std::string::String>,
+    pub(crate) ingress_point_id: ::std::option::Option<::std::string::String>,
+    pub(crate) sender_hostname: ::std::option::Option<::std::string::String>,
+    pub(crate) sender_ip_address: ::std::option::Option<::std::string::String>,
+    pub(crate) envelope: ::std::option::Option<crate::types::Envelope>,
 }
 impl RowBuilder {
     /// <p>The unique identifier of the archived message.</p>
@@ -322,6 +374,62 @@ impl RowBuilder {
     pub fn get_x_priority(&self) -> &::std::option::Option<::std::string::String> {
         &self.x_priority
     }
+    /// <p>The ID of the ingress endpoint through which the email was received.</p>
+    pub fn ingress_point_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.ingress_point_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the ingress endpoint through which the email was received.</p>
+    pub fn set_ingress_point_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.ingress_point_id = input;
+        self
+    }
+    /// <p>The ID of the ingress endpoint through which the email was received.</p>
+    pub fn get_ingress_point_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ingress_point_id
+    }
+    /// <p>The name of the host from which the email was received.</p>
+    pub fn sender_hostname(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.sender_hostname = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of the host from which the email was received.</p>
+    pub fn set_sender_hostname(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.sender_hostname = input;
+        self
+    }
+    /// <p>The name of the host from which the email was received.</p>
+    pub fn get_sender_hostname(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sender_hostname
+    }
+    /// <p>The IP address of the host from which the email was received.</p>
+    pub fn sender_ip_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.sender_ip_address = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The IP address of the host from which the email was received.</p>
+    pub fn set_sender_ip_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.sender_ip_address = input;
+        self
+    }
+    /// <p>The IP address of the host from which the email was received.</p>
+    pub fn get_sender_ip_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sender_ip_address
+    }
+    /// <p>The SMTP envelope information of the email.</p>
+    pub fn envelope(mut self, input: crate::types::Envelope) -> Self {
+        self.envelope = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The SMTP envelope information of the email.</p>
+    pub fn set_envelope(mut self, input: ::std::option::Option<crate::types::Envelope>) -> Self {
+        self.envelope = input;
+        self
+    }
+    /// <p>The SMTP envelope information of the email.</p>
+    pub fn get_envelope(&self) -> &::std::option::Option<crate::types::Envelope> {
+        &self.envelope
+    }
     /// Consumes the builder and constructs a [`Row`](crate::types::Row).
     pub fn build(self) -> crate::types::Row {
         crate::types::Row {
@@ -339,6 +447,34 @@ impl RowBuilder {
             x_mailer: self.x_mailer,
             x_original_mailer: self.x_original_mailer,
             x_priority: self.x_priority,
+            ingress_point_id: self.ingress_point_id,
+            sender_hostname: self.sender_hostname,
+            sender_ip_address: self.sender_ip_address,
+            envelope: self.envelope,
         }
+    }
+}
+impl ::std::fmt::Debug for RowBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RowBuilder");
+        formatter.field("archived_message_id", &self.archived_message_id);
+        formatter.field("received_timestamp", &self.received_timestamp);
+        formatter.field("date", &self.date);
+        formatter.field("to", &self.to);
+        formatter.field("from", &self.from);
+        formatter.field("cc", &self.cc);
+        formatter.field("subject", &self.subject);
+        formatter.field("message_id", &self.message_id);
+        formatter.field("has_attachments", &self.has_attachments);
+        formatter.field("received_headers", &self.received_headers);
+        formatter.field("in_reply_to", &self.in_reply_to);
+        formatter.field("x_mailer", &self.x_mailer);
+        formatter.field("x_original_mailer", &self.x_original_mailer);
+        formatter.field("x_priority", &self.x_priority);
+        formatter.field("ingress_point_id", &self.ingress_point_id);
+        formatter.field("sender_hostname", &self.sender_hostname);
+        formatter.field("sender_ip_address", &"*** Sensitive Data Redacted ***");
+        formatter.field("envelope", &self.envelope);
+        formatter.finish()
     }
 }

@@ -125,6 +125,10 @@ pub use crate::types::_custom_step_status::CustomStepStatus;
 
 pub use crate::types::_listed_host_key::ListedHostKey;
 
+pub use crate::types::_connector_file_transfer_result::ConnectorFileTransferResult;
+
+pub use crate::types::_transfer_table_status::TransferTableStatus;
+
 pub use crate::types::_listed_execution::ListedExecution;
 
 pub use crate::types::_execution_status::ExecutionStatus;
@@ -174,6 +178,8 @@ mod _certificate_type;
 mod _certificate_usage_type;
 
 mod _compression_enum;
+
+mod _connector_file_transfer_result;
 
 mod _copy_step_details;
 
@@ -312,6 +318,8 @@ mod _tag;
 mod _tag_step_details;
 
 mod _tls_session_resumption_mode;
+
+mod _transfer_table_status;
 
 mod _user_details;
 

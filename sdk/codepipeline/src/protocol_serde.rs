@@ -455,6 +455,8 @@ pub(crate) mod shape_pipeline_context;
 
 pub(crate) mod shape_resolved_pipeline_variable;
 
+pub(crate) mod shape_retry_stage_metadata;
+
 pub(crate) mod shape_rule_configuration_property_list;
 
 pub(crate) mod shape_rule_execution_input;
@@ -514,6 +516,8 @@ pub(crate) mod shape_output_variables_map;
 pub(crate) mod shape_resolved_action_configuration_map;
 
 pub(crate) mod shape_resolved_rule_configuration_map;
+
+pub(crate) mod shape_retry_configuration;
 
 pub(crate) mod shape_rule_configuration_map;
 

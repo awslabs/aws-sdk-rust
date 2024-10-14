@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDataLakeOrganizationConfigurationOutput {
-    /// <p>The configuration for new accounts.</p>
+    /// <p>The configuration used for new accounts in Security Lake.</p>
     pub auto_enable_new_account: ::std::option::Option<::std::vec::Vec<crate::types::DataLakeAutoEnableNewAccountConfiguration>>,
     _request_id: Option<String>,
 }
 impl GetDataLakeOrganizationConfigurationOutput {
-    /// <p>The configuration for new accounts.</p>
+    /// <p>The configuration used for new accounts in Security Lake.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.auto_enable_new_account.is_none()`.
     pub fn auto_enable_new_account(&self) -> &[crate::types::DataLakeAutoEnableNewAccountConfiguration] {
@@ -39,14 +39,14 @@ impl GetDataLakeOrganizationConfigurationOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_auto_enable_new_account`](Self::set_auto_enable_new_account).
     ///
-    /// <p>The configuration for new accounts.</p>
+    /// <p>The configuration used for new accounts in Security Lake.</p>
     pub fn auto_enable_new_account(mut self, input: crate::types::DataLakeAutoEnableNewAccountConfiguration) -> Self {
         let mut v = self.auto_enable_new_account.unwrap_or_default();
         v.push(input);
         self.auto_enable_new_account = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The configuration for new accounts.</p>
+    /// <p>The configuration used for new accounts in Security Lake.</p>
     pub fn set_auto_enable_new_account(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::DataLakeAutoEnableNewAccountConfiguration>>,
@@ -54,7 +54,7 @@ impl GetDataLakeOrganizationConfigurationOutputBuilder {
         self.auto_enable_new_account = input;
         self
     }
-    /// <p>The configuration for new accounts.</p>
+    /// <p>The configuration used for new accounts in Security Lake.</p>
     pub fn get_auto_enable_new_account(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataLakeAutoEnableNewAccountConfiguration>> {
         &self.auto_enable_new_account
     }

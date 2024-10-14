@@ -9,7 +9,7 @@ pub struct CreateSubscriberInput {
     pub subscriber_name: ::std::option::Option<::std::string::String>,
     /// <p>The description for your subscriber account in Security Lake.</p>
     pub subscriber_description: ::std::option::Option<::std::string::String>,
-    /// <p>The supported Amazon Web Services from which logs and events are collected. Security Lake supports log and event collection for natively supported Amazon Web Services.</p>
+    /// <p>The supported Amazon Web Services services from which logs and events are collected. Security Lake supports log and event collection for natively supported Amazon Web Services services.</p>
     pub sources: ::std::option::Option<::std::vec::Vec<crate::types::LogSourceResource>>,
     /// <p>The Amazon S3 or Lake Formation access type.</p>
     pub access_types: ::std::option::Option<::std::vec::Vec<crate::types::AccessType>>,
@@ -29,7 +29,7 @@ impl CreateSubscriberInput {
     pub fn subscriber_description(&self) -> ::std::option::Option<&str> {
         self.subscriber_description.as_deref()
     }
-    /// <p>The supported Amazon Web Services from which logs and events are collected. Security Lake supports log and event collection for natively supported Amazon Web Services.</p>
+    /// <p>The supported Amazon Web Services services from which logs and events are collected. Security Lake supports log and event collection for natively supported Amazon Web Services services.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sources.is_none()`.
     pub fn sources(&self) -> &[crate::types::LogSourceResource] {
@@ -115,19 +115,19 @@ impl CreateSubscriberInputBuilder {
     ///
     /// To override the contents of this collection use [`set_sources`](Self::set_sources).
     ///
-    /// <p>The supported Amazon Web Services from which logs and events are collected. Security Lake supports log and event collection for natively supported Amazon Web Services.</p>
+    /// <p>The supported Amazon Web Services services from which logs and events are collected. Security Lake supports log and event collection for natively supported Amazon Web Services services.</p>
     pub fn sources(mut self, input: crate::types::LogSourceResource) -> Self {
         let mut v = self.sources.unwrap_or_default();
         v.push(input);
         self.sources = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The supported Amazon Web Services from which logs and events are collected. Security Lake supports log and event collection for natively supported Amazon Web Services.</p>
+    /// <p>The supported Amazon Web Services services from which logs and events are collected. Security Lake supports log and event collection for natively supported Amazon Web Services services.</p>
     pub fn set_sources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LogSourceResource>>) -> Self {
         self.sources = input;
         self
     }
-    /// <p>The supported Amazon Web Services from which logs and events are collected. Security Lake supports log and event collection for natively supported Amazon Web Services.</p>
+    /// <p>The supported Amazon Web Services services from which logs and events are collected. Security Lake supports log and event collection for natively supported Amazon Web Services services.</p>
     pub fn get_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LogSourceResource>> {
         &self.sources
     }

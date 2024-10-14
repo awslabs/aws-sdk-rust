@@ -108,17 +108,17 @@ impl CreateCustomLogSourceFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>Specify the name for a third-party custom source. This must be a Regionally unique value.</p>
+    /// <p>Specify the name for a third-party custom source. This must be a Regionally unique value. The <code>sourceName</code> you enter here, is used in the <code>LogProviderRole</code> name which follows the convention <code>AmazonSecurityLake-Provider-{name of the custom source}-{region}</code>. You must use a <code>CustomLogSource</code> name that is shorter than or equal to 20 characters. This ensures that the <code>LogProviderRole</code> name is below the 64 character limit.</p>
     pub fn source_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_name(input.into());
         self
     }
-    /// <p>Specify the name for a third-party custom source. This must be a Regionally unique value.</p>
+    /// <p>Specify the name for a third-party custom source. This must be a Regionally unique value. The <code>sourceName</code> you enter here, is used in the <code>LogProviderRole</code> name which follows the convention <code>AmazonSecurityLake-Provider-{name of the custom source}-{region}</code>. You must use a <code>CustomLogSource</code> name that is shorter than or equal to 20 characters. This ensures that the <code>LogProviderRole</code> name is below the 64 character limit.</p>
     pub fn set_source_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source_name(input);
         self
     }
-    /// <p>Specify the name for a third-party custom source. This must be a Regionally unique value.</p>
+    /// <p>Specify the name for a third-party custom source. This must be a Regionally unique value. The <code>sourceName</code> you enter here, is used in the <code>LogProviderRole</code> name which follows the convention <code>AmazonSecurityLake-Provider-{name of the custom source}-{region}</code>. You must use a <code>CustomLogSource</code> name that is shorter than or equal to 20 characters. This ensures that the <code>LogProviderRole</code> name is below the 64 character limit.</p>
     pub fn get_source_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_source_name()
     }
@@ -335,17 +335,17 @@ impl CreateCustomLogSourceFluentBuilder {
     pub fn get_event_classes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_event_classes()
     }
-    /// <p>The configuration for the third-party custom source.</p>
+    /// <p>The configuration used for the third-party custom source.</p>
     pub fn configuration(mut self, input: crate::types::CustomLogSourceConfiguration) -> Self {
         self.inner = self.inner.configuration(input);
         self
     }
-    /// <p>The configuration for the third-party custom source.</p>
+    /// <p>The configuration used for the third-party custom source.</p>
     pub fn set_configuration(mut self, input: ::std::option::Option<crate::types::CustomLogSourceConfiguration>) -> Self {
         self.inner = self.inner.set_configuration(input);
         self
     }
-    /// <p>The configuration for the third-party custom source.</p>
+    /// <p>The configuration used for the third-party custom source.</p>
     pub fn get_configuration(&self) -> &::std::option::Option<crate::types::CustomLogSourceConfiguration> {
         self.inner.get_configuration()
     }

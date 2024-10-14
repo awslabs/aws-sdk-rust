@@ -7,7 +7,7 @@ pub struct UpdateDataLakeExceptionSubscriptionInput {
     pub subscription_protocol: ::std::option::Option<::std::string::String>,
     /// <p>The account that is subscribed to receive exception notifications.</p>
     pub notification_endpoint: ::std::option::Option<::std::string::String>,
-    /// <p>The time-to-live (TTL) for the exception message to remain.</p>
+    /// <p>The time-to-live (TTL) for the exception message to remain. It is the duration of time until which the exception message remains.</p>
     pub exception_time_to_live: ::std::option::Option<i64>,
 }
 impl UpdateDataLakeExceptionSubscriptionInput {
@@ -19,7 +19,7 @@ impl UpdateDataLakeExceptionSubscriptionInput {
     pub fn notification_endpoint(&self) -> ::std::option::Option<&str> {
         self.notification_endpoint.as_deref()
     }
-    /// <p>The time-to-live (TTL) for the exception message to remain.</p>
+    /// <p>The time-to-live (TTL) for the exception message to remain. It is the duration of time until which the exception message remains.</p>
     pub fn exception_time_to_live(&self) -> ::std::option::Option<i64> {
         self.exception_time_to_live
     }
@@ -70,17 +70,17 @@ impl UpdateDataLakeExceptionSubscriptionInputBuilder {
     pub fn get_notification_endpoint(&self) -> &::std::option::Option<::std::string::String> {
         &self.notification_endpoint
     }
-    /// <p>The time-to-live (TTL) for the exception message to remain.</p>
+    /// <p>The time-to-live (TTL) for the exception message to remain. It is the duration of time until which the exception message remains.</p>
     pub fn exception_time_to_live(mut self, input: i64) -> Self {
         self.exception_time_to_live = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The time-to-live (TTL) for the exception message to remain.</p>
+    /// <p>The time-to-live (TTL) for the exception message to remain. It is the duration of time until which the exception message remains.</p>
     pub fn set_exception_time_to_live(mut self, input: ::std::option::Option<i64>) -> Self {
         self.exception_time_to_live = input;
         self
     }
-    /// <p>The time-to-live (TTL) for the exception message to remain.</p>
+    /// <p>The time-to-live (TTL) for the exception message to remain. It is the duration of time until which the exception message remains.</p>
     pub fn get_exception_time_to_live(&self) -> &::std::option::Option<i64> {
         &self.exception_time_to_live
     }

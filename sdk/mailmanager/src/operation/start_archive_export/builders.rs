@@ -192,4 +192,18 @@ impl StartArchiveExportFluentBuilder {
     pub fn get_export_destination_configuration(&self) -> &::std::option::Option<crate::types::ExportDestinationConfiguration> {
         self.inner.get_export_destination_configuration()
     }
+    /// <p>Whether to include message metadata as JSON files in the export.</p>
+    pub fn include_metadata(mut self, input: bool) -> Self {
+        self.inner = self.inner.include_metadata(input);
+        self
+    }
+    /// <p>Whether to include message metadata as JSON files in the export.</p>
+    pub fn set_include_metadata(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_include_metadata(input);
+        self
+    }
+    /// <p>Whether to include message metadata as JSON files in the export.</p>
+    pub fn get_include_metadata(&self) -> &::std::option::Option<bool> {
+        self.inner.get_include_metadata()
+    }
 }

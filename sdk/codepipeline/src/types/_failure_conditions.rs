@@ -6,6 +6,8 @@
 pub struct FailureConditions {
     /// <p>The specified result for when the failure conditions are met, such as rolling back the stage.</p>
     pub result: ::std::option::Option<crate::types::Result>,
+    /// <p>The retry configuration specifies automatic retry for a failed stage, along with the configured retry mode.</p>
+    pub retry_configuration: ::std::option::Option<crate::types::RetryConfiguration>,
     /// <p>The conditions that are configured as failure conditions.</p>
     pub conditions: ::std::option::Option<::std::vec::Vec<crate::types::Condition>>,
 }
@@ -13,6 +15,10 @@ impl FailureConditions {
     /// <p>The specified result for when the failure conditions are met, such as rolling back the stage.</p>
     pub fn result(&self) -> ::std::option::Option<&crate::types::Result> {
         self.result.as_ref()
+    }
+    /// <p>The retry configuration specifies automatic retry for a failed stage, along with the configured retry mode.</p>
+    pub fn retry_configuration(&self) -> ::std::option::Option<&crate::types::RetryConfiguration> {
+        self.retry_configuration.as_ref()
     }
     /// <p>The conditions that are configured as failure conditions.</p>
     ///
@@ -33,6 +39,7 @@ impl FailureConditions {
 #[non_exhaustive]
 pub struct FailureConditionsBuilder {
     pub(crate) result: ::std::option::Option<crate::types::Result>,
+    pub(crate) retry_configuration: ::std::option::Option<crate::types::RetryConfiguration>,
     pub(crate) conditions: ::std::option::Option<::std::vec::Vec<crate::types::Condition>>,
 }
 impl FailureConditionsBuilder {
@@ -49,6 +56,20 @@ impl FailureConditionsBuilder {
     /// <p>The specified result for when the failure conditions are met, such as rolling back the stage.</p>
     pub fn get_result(&self) -> &::std::option::Option<crate::types::Result> {
         &self.result
+    }
+    /// <p>The retry configuration specifies automatic retry for a failed stage, along with the configured retry mode.</p>
+    pub fn retry_configuration(mut self, input: crate::types::RetryConfiguration) -> Self {
+        self.retry_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The retry configuration specifies automatic retry for a failed stage, along with the configured retry mode.</p>
+    pub fn set_retry_configuration(mut self, input: ::std::option::Option<crate::types::RetryConfiguration>) -> Self {
+        self.retry_configuration = input;
+        self
+    }
+    /// <p>The retry configuration specifies automatic retry for a failed stage, along with the configured retry mode.</p>
+    pub fn get_retry_configuration(&self) -> &::std::option::Option<crate::types::RetryConfiguration> {
+        &self.retry_configuration
     }
     /// Appends an item to `conditions`.
     ///
@@ -74,6 +95,7 @@ impl FailureConditionsBuilder {
     pub fn build(self) -> crate::types::FailureConditions {
         crate::types::FailureConditions {
             result: self.result,
+            retry_configuration: self.retry_configuration,
             conditions: self.conditions,
         }
     }

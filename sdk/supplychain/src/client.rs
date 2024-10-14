@@ -142,6 +142,8 @@ mod create_data_integration_flow;
 
 mod create_data_lake_dataset;
 
+mod create_instance;
+
 /// Operation customization and supporting types.
 ///
 /// The underlying HTTP requests made during an operation can be customized
@@ -173,15 +175,21 @@ mod delete_data_integration_flow;
 
 mod delete_data_lake_dataset;
 
+mod delete_instance;
+
 mod get_bill_of_materials_import_job;
 
 mod get_data_integration_flow;
 
 mod get_data_lake_dataset;
 
+mod get_instance;
+
 mod list_data_integration_flows;
 
 mod list_data_lake_datasets;
+
+mod list_instances;
 
 mod list_tags_for_resource;
 
@@ -194,3 +202,5 @@ mod untag_resource;
 mod update_data_integration_flow;
 
 mod update_data_lake_dataset;
+
+mod update_instance;

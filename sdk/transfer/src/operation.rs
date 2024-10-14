@@ -109,6 +109,9 @@ pub mod list_connectors;
 /// Types for the `ListExecutions` operation.
 pub mod list_executions;
 
+/// Types for the `ListFileTransferResults` operation.
+pub mod list_file_transfer_results;
+
 /// Types for the `ListHostKeys` operation.
 pub mod list_host_keys;
 

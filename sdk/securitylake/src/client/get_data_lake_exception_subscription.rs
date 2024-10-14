@@ -6,7 +6,7 @@ impl super::Client {
     /// - On success, responds with [`GetDataLakeExceptionSubscriptionOutput`](crate::operation::get_data_lake_exception_subscription::GetDataLakeExceptionSubscriptionOutput) with field(s):
     ///   - [`subscription_protocol(Option<String>)`](crate::operation::get_data_lake_exception_subscription::GetDataLakeExceptionSubscriptionOutput::subscription_protocol): <p>The subscription protocol to which exception notifications are posted.</p>
     ///   - [`notification_endpoint(Option<String>)`](crate::operation::get_data_lake_exception_subscription::GetDataLakeExceptionSubscriptionOutput::notification_endpoint): <p>The Amazon Web Services account where you receive exception notifications.</p>
-    ///   - [`exception_time_to_live(Option<i64>)`](crate::operation::get_data_lake_exception_subscription::GetDataLakeExceptionSubscriptionOutput::exception_time_to_live): <p>The expiration period and time-to-live (TTL).</p>
+    ///   - [`exception_time_to_live(Option<i64>)`](crate::operation::get_data_lake_exception_subscription::GetDataLakeExceptionSubscriptionOutput::exception_time_to_live): <p>The expiration period and time-to-live (TTL). It is the duration of time until which the exception message remains.</p>
     /// - On failure, responds with [`SdkError<GetDataLakeExceptionSubscriptionError>`](crate::operation::get_data_lake_exception_subscription::GetDataLakeExceptionSubscriptionError)
     pub fn get_data_lake_exception_subscription(
         &self,

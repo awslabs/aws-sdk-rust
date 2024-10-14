@@ -33,6 +33,8 @@ pub use crate::types::_success_conditions::SuccessConditionsBuilder;
 
 pub use crate::types::_failure_conditions::FailureConditionsBuilder;
 
+pub use crate::types::_retry_configuration::RetryConfigurationBuilder;
+
 pub use crate::types::_action_declaration::ActionDeclarationBuilder;
 
 pub use crate::types::_output_artifact::OutputArtifactBuilder;
@@ -174,6 +176,8 @@ pub use crate::types::_third_party_job_details::ThirdPartyJobDetailsBuilder;
 pub use crate::types::_third_party_job_data::ThirdPartyJobDataBuilder;
 
 pub use crate::types::_stage_state::StageStateBuilder;
+
+pub use crate::types::_retry_stage_metadata::RetryStageMetadataBuilder;
 
 pub use crate::types::_stage_condition_state::StageConditionStateBuilder;
 

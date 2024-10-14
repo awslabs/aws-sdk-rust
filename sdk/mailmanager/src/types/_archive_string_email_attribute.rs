@@ -13,6 +13,8 @@
 /// # let archivestringemailattribute = unimplemented!();
 /// match archivestringemailattribute {
 ///     ArchiveStringEmailAttribute::Cc => { /* ... */ },
+///     ArchiveStringEmailAttribute::EnvelopeFrom => { /* ... */ },
+///     ArchiveStringEmailAttribute::EnvelopeTo => { /* ... */ },
 ///     ArchiveStringEmailAttribute::From => { /* ... */ },
 ///     ArchiveStringEmailAttribute::Subject => { /* ... */ },
 ///     ArchiveStringEmailAttribute::To => { /* ... */ },
@@ -46,6 +48,10 @@ pub enum ArchiveStringEmailAttribute {
     #[allow(missing_docs)] // documentation missing in model
     Cc,
     #[allow(missing_docs)] // documentation missing in model
+    EnvelopeFrom,
+    #[allow(missing_docs)] // documentation missing in model
+    EnvelopeTo,
+    #[allow(missing_docs)] // documentation missing in model
     From,
     #[allow(missing_docs)] // documentation missing in model
     Subject,
@@ -59,6 +65,8 @@ impl ::std::convert::From<&str> for ArchiveStringEmailAttribute {
     fn from(s: &str) -> Self {
         match s {
             "CC" => ArchiveStringEmailAttribute::Cc,
+            "ENVELOPE_FROM" => ArchiveStringEmailAttribute::EnvelopeFrom,
+            "ENVELOPE_TO" => ArchiveStringEmailAttribute::EnvelopeTo,
             "FROM" => ArchiveStringEmailAttribute::From,
             "SUBJECT" => ArchiveStringEmailAttribute::Subject,
             "TO" => ArchiveStringEmailAttribute::To,
@@ -78,6 +86,8 @@ impl ArchiveStringEmailAttribute {
     pub fn as_str(&self) -> &str {
         match self {
             ArchiveStringEmailAttribute::Cc => "CC",
+            ArchiveStringEmailAttribute::EnvelopeFrom => "ENVELOPE_FROM",
+            ArchiveStringEmailAttribute::EnvelopeTo => "ENVELOPE_TO",
             ArchiveStringEmailAttribute::From => "FROM",
             ArchiveStringEmailAttribute::Subject => "SUBJECT",
             ArchiveStringEmailAttribute::To => "TO",
@@ -86,7 +96,7 @@ impl ArchiveStringEmailAttribute {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CC", "FROM", "SUBJECT", "TO"]
+        &["CC", "ENVELOPE_FROM", "ENVELOPE_TO", "FROM", "SUBJECT", "TO"]
     }
 }
 impl ::std::convert::AsRef<str> for ArchiveStringEmailAttribute {
@@ -110,6 +120,8 @@ impl ::std::fmt::Display for ArchiveStringEmailAttribute {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ArchiveStringEmailAttribute::Cc => write!(f, "CC"),
+            ArchiveStringEmailAttribute::EnvelopeFrom => write!(f, "ENVELOPE_FROM"),
+            ArchiveStringEmailAttribute::EnvelopeTo => write!(f, "ENVELOPE_TO"),
             ArchiveStringEmailAttribute::From => write!(f, "FROM"),
             ArchiveStringEmailAttribute::Subject => write!(f, "SUBJECT"),
             ArchiveStringEmailAttribute::To => write!(f, "TO"),

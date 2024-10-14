@@ -137,17 +137,17 @@ impl UpdateDataLakeExceptionSubscriptionFluentBuilder {
     pub fn get_notification_endpoint(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_notification_endpoint()
     }
-    /// <p>The time-to-live (TTL) for the exception message to remain.</p>
+    /// <p>The time-to-live (TTL) for the exception message to remain. It is the duration of time until which the exception message remains.</p>
     pub fn exception_time_to_live(mut self, input: i64) -> Self {
         self.inner = self.inner.exception_time_to_live(input);
         self
     }
-    /// <p>The time-to-live (TTL) for the exception message to remain.</p>
+    /// <p>The time-to-live (TTL) for the exception message to remain. It is the duration of time until which the exception message remains.</p>
     pub fn set_exception_time_to_live(mut self, input: ::std::option::Option<i64>) -> Self {
         self.inner = self.inner.set_exception_time_to_live(input);
         self
     }
-    /// <p>The time-to-live (TTL) for the exception message to remain.</p>
+    /// <p>The time-to-live (TTL) for the exception message to remain. It is the duration of time until which the exception message remains.</p>
     pub fn get_exception_time_to_live(&self) -> &::std::option::Option<i64> {
         self.inner.get_exception_time_to_live()
     }

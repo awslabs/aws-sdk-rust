@@ -191,7 +191,11 @@ pub use crate::types::_export_state::ExportState;
 
 pub use crate::types::_row::Row;
 
+pub use crate::types::_envelope::Envelope;
+
 pub use crate::types::_message_body::MessageBody;
+
+pub use crate::types::_metadata::Metadata;
 
 mod _accept_action;
 
@@ -236,6 +240,8 @@ mod _archive_string_to_evaluate;
 mod _deliver_to_mailbox_action;
 
 mod _drop_action;
+
+mod _envelope;
 
 mod _export_destination_configuration;
 
@@ -296,6 +302,8 @@ mod _ingress_tls_protocol_to_evaluate;
 mod _mail_from;
 
 mod _message_body;
+
+mod _metadata;
 
 mod _no_authentication;
 

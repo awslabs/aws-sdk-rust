@@ -22,7 +22,7 @@ impl crate::operation::get_data_lake_exception_subscription::builders::GetDataLa
 }
 /// Fluent builder constructing a request to `GetDataLakeExceptionSubscription`.
 ///
-/// <p>Retrieves the details of exception notifications for the account in Amazon Security Lake.</p>
+/// <p>Retrieves the protocol and endpoint that were provided when subscribing to Amazon SNS topics for exception notifications.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetDataLakeExceptionSubscriptionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

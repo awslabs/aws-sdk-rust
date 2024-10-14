@@ -16,7 +16,7 @@ pub struct DataLakeResource {
     pub lifecycle_configuration: ::std::option::Option<crate::types::DataLakeLifecycleConfiguration>,
     /// <p>Provides replication details of Amazon Security Lake object.</p>
     pub replication_configuration: ::std::option::Option<crate::types::DataLakeReplicationConfiguration>,
-    /// <p>Retrieves the status of the configuration operation for an account in Amazon Security Lake.</p>
+    /// <p>Retrieves the status of the <code>CreateDatalake</code> API call for an account in Amazon Security Lake.</p>
     pub create_status: ::std::option::Option<crate::types::DataLakeStatus>,
     /// <p>The status of the last <code>UpdateDataLake </code>or <code>DeleteDataLake</code> API request.</p>
     pub update_status: ::std::option::Option<crate::types::DataLakeUpdateStatus>,
@@ -48,7 +48,7 @@ impl DataLakeResource {
     pub fn replication_configuration(&self) -> ::std::option::Option<&crate::types::DataLakeReplicationConfiguration> {
         self.replication_configuration.as_ref()
     }
-    /// <p>Retrieves the status of the configuration operation for an account in Amazon Security Lake.</p>
+    /// <p>Retrieves the status of the <code>CreateDatalake</code> API call for an account in Amazon Security Lake.</p>
     pub fn create_status(&self) -> ::std::option::Option<&crate::types::DataLakeStatus> {
         self.create_status.as_ref()
     }
@@ -164,17 +164,17 @@ impl DataLakeResourceBuilder {
     pub fn get_replication_configuration(&self) -> &::std::option::Option<crate::types::DataLakeReplicationConfiguration> {
         &self.replication_configuration
     }
-    /// <p>Retrieves the status of the configuration operation for an account in Amazon Security Lake.</p>
+    /// <p>Retrieves the status of the <code>CreateDatalake</code> API call for an account in Amazon Security Lake.</p>
     pub fn create_status(mut self, input: crate::types::DataLakeStatus) -> Self {
         self.create_status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Retrieves the status of the configuration operation for an account in Amazon Security Lake.</p>
+    /// <p>Retrieves the status of the <code>CreateDatalake</code> API call for an account in Amazon Security Lake.</p>
     pub fn set_create_status(mut self, input: ::std::option::Option<crate::types::DataLakeStatus>) -> Self {
         self.create_status = input;
         self
     }
-    /// <p>Retrieves the status of the configuration operation for an account in Amazon Security Lake.</p>
+    /// <p>Retrieves the status of the <code>CreateDatalake</code> API call for an account in Amazon Security Lake.</p>
     pub fn get_create_status(&self) -> &::std::option::Option<crate::types::DataLakeStatus> {
         &self.create_status
     }

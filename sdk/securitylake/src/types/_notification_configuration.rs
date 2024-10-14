@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum NotificationConfiguration {
-    /// <p>The configurations for HTTPS subscriber notification.</p>
+    /// <p>The configurations used for HTTPS subscriber notification.</p>
     HttpsNotificationConfiguration(crate::types::HttpsNotificationConfiguration),
     /// <p>The configurations for SQS subscriber notification.</p>
     SqsNotificationConfiguration(crate::types::SqsNotificationConfiguration),

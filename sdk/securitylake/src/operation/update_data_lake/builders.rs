@@ -22,7 +22,9 @@ impl crate::operation::update_data_lake::builders::UpdateDataLakeInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateDataLake`.
 ///
-/// <p>Specifies where to store your security data and for how long. You can add a rollup Region to consolidate data from multiple Amazon Web Services Regions.</p>
+/// <p>You can use <code>UpdateDataLake</code> to specify where to store your security data, how it should be encrypted at rest and for how long. You can add a <a href="https://docs.aws.amazon.com/security-lake/latest/userguide/manage-regions.html#add-rollup-region">Rollup Region</a> to consolidate data from multiple Amazon Web Services Regions, replace default encryption (SSE-S3) with <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">Customer Manged Key</a>, or specify transition and expiration actions through storage <a href="https://docs.aws.amazon.com/security-lake/latest/userguide/lifecycle-management.html">Lifecycle management</a>. The <code>UpdateDataLake</code> API works as an "upsert" operation that performs an insert if the specified item or record does not exist, or an update if it already exists. Security Lake securely stores your data at rest using Amazon Web Services encryption solutions. For more details, see <a href="https://docs.aws.amazon.com/security-lake/latest/userguide/data-protection.html">Data protection in Amazon Security Lake</a>.</p>
+/// <p>For example, omitting the key <code>encryptionConfiguration</code> from a Region that is included in an update call that currently uses KMS will leave that Region's KMS key in place, but specifying <code>encryptionConfiguration: {kmsKeyId: 'S3_MANAGED_KEY'}</code> for that same Region will reset the key to <code>S3-managed</code>.</p>
+/// <p>For more details about lifecycle management and how to update retention settings for one or more Regions after enabling Security Lake, see the <a href="https://docs.aws.amazon.com/security-lake/latest/userguide/lifecycle-management.html">Amazon Security Lake User Guide</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateDataLakeFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -113,17 +115,17 @@ impl UpdateDataLakeFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_configurations`](Self::set_configurations).
     ///
-    /// <p>Specify the Region or Regions that will contribute data to the rollup region.</p>
+    /// <p>Specifies the Region or Regions that will contribute data to the rollup region.</p>
     pub fn configurations(mut self, input: crate::types::DataLakeConfiguration) -> Self {
         self.inner = self.inner.configurations(input);
         self
     }
-    /// <p>Specify the Region or Regions that will contribute data to the rollup region.</p>
+    /// <p>Specifies the Region or Regions that will contribute data to the rollup region.</p>
     pub fn set_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DataLakeConfiguration>>) -> Self {
         self.inner = self.inner.set_configurations(input);
         self
     }
-    /// <p>Specify the Region or Regions that will contribute data to the rollup region.</p>
+    /// <p>Specifies the Region or Regions that will contribute data to the rollup region.</p>
     pub fn get_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataLakeConfiguration>> {
         self.inner.get_configurations()
     }

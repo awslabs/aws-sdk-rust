@@ -6,17 +6,23 @@ pub fn ser_failure_conditions(
     if let Some(var_1) = &input.result {
         object.key("result").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.conditions {
-        let mut array_3 = object.key("conditions").start_array();
-        for item_4 in var_2 {
+    if let Some(var_2) = &input.retry_configuration {
+        #[allow(unused_mut)]
+        let mut object_3 = object.key("retryConfiguration").start_object();
+        crate::protocol_serde::shape_retry_configuration::ser_retry_configuration(&mut object_3, var_2)?;
+        object_3.finish();
+    }
+    if let Some(var_4) = &input.conditions {
+        let mut array_5 = object.key("conditions").start_array();
+        for item_6 in var_4 {
             {
                 #[allow(unused_mut)]
-                let mut object_5 = array_3.value().start_object();
-                crate::protocol_serde::shape_condition::ser_condition(&mut object_5, item_4)?;
-                object_5.finish();
+                let mut object_7 = array_5.value().start_object();
+                crate::protocol_serde::shape_condition::ser_condition(&mut object_7, item_6)?;
+                object_7.finish();
             }
         }
-        array_3.finish();
+        array_5.finish();
     }
     Ok(())
 }
@@ -42,6 +48,10 @@ where
                                     .map(|s| s.to_unescaped().map(|u| crate::types::Result::from(u.as_ref())))
                                     .transpose()?,
                             );
+                        }
+                        "retryConfiguration" => {
+                            builder =
+                                builder.set_retry_configuration(crate::protocol_serde::shape_retry_configuration::de_retry_configuration(tokens)?);
                         }
                         "conditions" => {
                             builder = builder.set_conditions(crate::protocol_serde::shape_condition_list::de_condition_list(tokens)?);

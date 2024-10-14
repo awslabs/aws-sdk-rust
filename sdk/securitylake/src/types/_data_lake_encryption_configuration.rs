@@ -4,11 +4,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataLakeEncryptionConfiguration {
-    /// <p>The id of KMS encryption key used by Amazon Security Lake to encrypt the Security Lake object.</p>
+    /// <p>The identifier of KMS encryption key used by Amazon Security Lake to encrypt the Security Lake object.</p>
     pub kms_key_id: ::std::option::Option<::std::string::String>,
 }
 impl DataLakeEncryptionConfiguration {
-    /// <p>The id of KMS encryption key used by Amazon Security Lake to encrypt the Security Lake object.</p>
+    /// <p>The identifier of KMS encryption key used by Amazon Security Lake to encrypt the Security Lake object.</p>
     pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
@@ -27,17 +27,17 @@ pub struct DataLakeEncryptionConfigurationBuilder {
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
 }
 impl DataLakeEncryptionConfigurationBuilder {
-    /// <p>The id of KMS encryption key used by Amazon Security Lake to encrypt the Security Lake object.</p>
+    /// <p>The identifier of KMS encryption key used by Amazon Security Lake to encrypt the Security Lake object.</p>
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The id of KMS encryption key used by Amazon Security Lake to encrypt the Security Lake object.</p>
+    /// <p>The identifier of KMS encryption key used by Amazon Security Lake to encrypt the Security Lake object.</p>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_id = input;
         self
     }
-    /// <p>The id of KMS encryption key used by Amazon Security Lake to encrypt the Security Lake object.</p>
+    /// <p>The identifier of KMS encryption key used by Amazon Security Lake to encrypt the Security Lake object.</p>
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.kms_key_id
     }

@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateCustomLogSourceInput {
-    /// <p>Specify the name for a third-party custom source. This must be a Regionally unique value.</p>
+    /// <p>Specify the name for a third-party custom source. This must be a Regionally unique value. The <code>sourceName</code> you enter here, is used in the <code>LogProviderRole</code> name which follows the convention <code>AmazonSecurityLake-Provider-{name of the custom source}-{region}</code>. You must use a <code>CustomLogSource</code> name that is shorter than or equal to 20 characters. This ensures that the <code>LogProviderRole</code> name is below the 64 character limit.</p>
     pub source_name: ::std::option::Option<::std::string::String>,
     /// <p>Specify the source version for the third-party custom source, to limit log collection to a specific version of custom data source.</p>
     pub source_version: ::std::option::Option<::std::string::String>,
@@ -69,11 +69,11 @@ pub struct CreateCustomLogSourceInput {
     /// <p><code>CLOUD_API</code></p></li>
     /// </ul>
     pub event_classes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>The configuration for the third-party custom source.</p>
+    /// <p>The configuration used for the third-party custom source.</p>
     pub configuration: ::std::option::Option<crate::types::CustomLogSourceConfiguration>,
 }
 impl CreateCustomLogSourceInput {
-    /// <p>Specify the name for a third-party custom source. This must be a Regionally unique value.</p>
+    /// <p>Specify the name for a third-party custom source. This must be a Regionally unique value. The <code>sourceName</code> you enter here, is used in the <code>LogProviderRole</code> name which follows the convention <code>AmazonSecurityLake-Provider-{name of the custom source}-{region}</code>. You must use a <code>CustomLogSource</code> name that is shorter than or equal to 20 characters. This ensures that the <code>LogProviderRole</code> name is below the 64 character limit.</p>
     pub fn source_name(&self) -> ::std::option::Option<&str> {
         self.source_name.as_deref()
     }
@@ -147,7 +147,7 @@ impl CreateCustomLogSourceInput {
     pub fn event_classes(&self) -> &[::std::string::String] {
         self.event_classes.as_deref().unwrap_or_default()
     }
-    /// <p>The configuration for the third-party custom source.</p>
+    /// <p>The configuration used for the third-party custom source.</p>
     pub fn configuration(&self) -> ::std::option::Option<&crate::types::CustomLogSourceConfiguration> {
         self.configuration.as_ref()
     }
@@ -169,18 +169,18 @@ pub struct CreateCustomLogSourceInputBuilder {
     pub(crate) configuration: ::std::option::Option<crate::types::CustomLogSourceConfiguration>,
 }
 impl CreateCustomLogSourceInputBuilder {
-    /// <p>Specify the name for a third-party custom source. This must be a Regionally unique value.</p>
+    /// <p>Specify the name for a third-party custom source. This must be a Regionally unique value. The <code>sourceName</code> you enter here, is used in the <code>LogProviderRole</code> name which follows the convention <code>AmazonSecurityLake-Provider-{name of the custom source}-{region}</code>. You must use a <code>CustomLogSource</code> name that is shorter than or equal to 20 characters. This ensures that the <code>LogProviderRole</code> name is below the 64 character limit.</p>
     /// This field is required.
     pub fn source_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Specify the name for a third-party custom source. This must be a Regionally unique value.</p>
+    /// <p>Specify the name for a third-party custom source. This must be a Regionally unique value. The <code>sourceName</code> you enter here, is used in the <code>LogProviderRole</code> name which follows the convention <code>AmazonSecurityLake-Provider-{name of the custom source}-{region}</code>. You must use a <code>CustomLogSource</code> name that is shorter than or equal to 20 characters. This ensures that the <code>LogProviderRole</code> name is below the 64 character limit.</p>
     pub fn set_source_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_name = input;
         self
     }
-    /// <p>Specify the name for a third-party custom source. This must be a Regionally unique value.</p>
+    /// <p>Specify the name for a third-party custom source. This must be a Regionally unique value. The <code>sourceName</code> you enter here, is used in the <code>LogProviderRole</code> name which follows the convention <code>AmazonSecurityLake-Provider-{name of the custom source}-{region}</code>. You must use a <code>CustomLogSource</code> name that is shorter than or equal to 20 characters. This ensures that the <code>LogProviderRole</code> name is below the 64 character limit.</p>
     pub fn get_source_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.source_name
     }
@@ -398,18 +398,18 @@ impl CreateCustomLogSourceInputBuilder {
     pub fn get_event_classes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.event_classes
     }
-    /// <p>The configuration for the third-party custom source.</p>
+    /// <p>The configuration used for the third-party custom source.</p>
     /// This field is required.
     pub fn configuration(mut self, input: crate::types::CustomLogSourceConfiguration) -> Self {
         self.configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The configuration for the third-party custom source.</p>
+    /// <p>The configuration used for the third-party custom source.</p>
     pub fn set_configuration(mut self, input: ::std::option::Option<crate::types::CustomLogSourceConfiguration>) -> Self {
         self.configuration = input;
         self
     }
-    /// <p>The configuration for the third-party custom source.</p>
+    /// <p>The configuration used for the third-party custom source.</p>
     pub fn get_configuration(&self) -> &::std::option::Option<crate::types::CustomLogSourceConfiguration> {
         &self.configuration
     }

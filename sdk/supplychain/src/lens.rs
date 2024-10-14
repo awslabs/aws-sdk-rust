@@ -19,6 +19,16 @@ pub(crate) fn reflens_list_data_lake_datasets_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_instances_output_output_next_token(
+    input: &crate::operation::list_instances::ListInstancesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_list_data_integration_flows_output_output_flows(
     input: crate::operation::list_data_integration_flows::ListDataIntegrationFlowsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::DataIntegrationFlow>> {
@@ -30,5 +40,12 @@ pub(crate) fn lens_list_data_lake_datasets_output_output_datasets(
     input: crate::operation::list_data_lake_datasets::ListDataLakeDatasetsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::DataLakeDataset>> {
     let input = input.datasets;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_instances_output_output_instances(
+    input: crate::operation::list_instances::ListInstancesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::Instance>> {
+    let input = input.instances;
     ::std::option::Option::Some(input)
 }

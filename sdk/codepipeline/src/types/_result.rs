@@ -13,7 +13,9 @@
 /// # let result = unimplemented!();
 /// match result {
 ///     Result::Fail => { /* ... */ },
+///     Result::Retry => { /* ... */ },
 ///     Result::Rollback => { /* ... */ },
+///     Result::Skip => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -44,7 +46,11 @@ pub enum Result {
     #[allow(missing_docs)] // documentation missing in model
     Fail,
     #[allow(missing_docs)] // documentation missing in model
+    Retry,
+    #[allow(missing_docs)] // documentation missing in model
     Rollback,
+    #[allow(missing_docs)] // documentation missing in model
+    Skip,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -53,7 +59,9 @@ impl ::std::convert::From<&str> for Result {
     fn from(s: &str) -> Self {
         match s {
             "FAIL" => Result::Fail,
+            "RETRY" => Result::Retry,
             "ROLLBACK" => Result::Rollback,
+            "SKIP" => Result::Skip,
             other => Result::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -70,13 +78,15 @@ impl Result {
     pub fn as_str(&self) -> &str {
         match self {
             Result::Fail => "FAIL",
+            Result::Retry => "RETRY",
             Result::Rollback => "ROLLBACK",
+            Result::Skip => "SKIP",
             Result::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["FAIL", "ROLLBACK"]
+        &["FAIL", "RETRY", "ROLLBACK", "SKIP"]
     }
 }
 impl ::std::convert::AsRef<str> for Result {
@@ -100,7 +110,9 @@ impl ::std::fmt::Display for Result {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             Result::Fail => write!(f, "FAIL"),
+            Result::Retry => write!(f, "RETRY"),
             Result::Rollback => write!(f, "ROLLBACK"),
+            Result::Skip => write!(f, "SKIP"),
             Result::Unknown(value) => write!(f, "{}", value),
         }
     }

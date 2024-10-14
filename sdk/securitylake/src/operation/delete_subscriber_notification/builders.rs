@@ -22,7 +22,7 @@ impl crate::operation::delete_subscriber_notification::builders::DeleteSubscribe
 }
 /// Fluent builder constructing a request to `DeleteSubscriberNotification`.
 ///
-/// <p>Deletes the specified notification subscription in Amazon Security Lake for the organization you specify.</p>
+/// <p>Deletes the specified subscription notification in Amazon Security Lake for the organization you specify.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteSubscriberNotificationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

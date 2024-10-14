@@ -15,6 +15,7 @@
 ///     StageExecutionStatus::Cancelled => { /* ... */ },
 ///     StageExecutionStatus::Failed => { /* ... */ },
 ///     StageExecutionStatus::InProgress => { /* ... */ },
+///     StageExecutionStatus::Skipped => { /* ... */ },
 ///     StageExecutionStatus::Stopped => { /* ... */ },
 ///     StageExecutionStatus::Stopping => { /* ... */ },
 ///     StageExecutionStatus::Succeeded => { /* ... */ },
@@ -52,6 +53,8 @@ pub enum StageExecutionStatus {
     #[allow(missing_docs)] // documentation missing in model
     InProgress,
     #[allow(missing_docs)] // documentation missing in model
+    Skipped,
+    #[allow(missing_docs)] // documentation missing in model
     Stopped,
     #[allow(missing_docs)] // documentation missing in model
     Stopping,
@@ -67,6 +70,7 @@ impl ::std::convert::From<&str> for StageExecutionStatus {
             "Cancelled" => StageExecutionStatus::Cancelled,
             "Failed" => StageExecutionStatus::Failed,
             "InProgress" => StageExecutionStatus::InProgress,
+            "Skipped" => StageExecutionStatus::Skipped,
             "Stopped" => StageExecutionStatus::Stopped,
             "Stopping" => StageExecutionStatus::Stopping,
             "Succeeded" => StageExecutionStatus::Succeeded,
@@ -88,6 +92,7 @@ impl StageExecutionStatus {
             StageExecutionStatus::Cancelled => "Cancelled",
             StageExecutionStatus::Failed => "Failed",
             StageExecutionStatus::InProgress => "InProgress",
+            StageExecutionStatus::Skipped => "Skipped",
             StageExecutionStatus::Stopped => "Stopped",
             StageExecutionStatus::Stopping => "Stopping",
             StageExecutionStatus::Succeeded => "Succeeded",
@@ -96,7 +101,7 @@ impl StageExecutionStatus {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Cancelled", "Failed", "InProgress", "Stopped", "Stopping", "Succeeded"]
+        &["Cancelled", "Failed", "InProgress", "Skipped", "Stopped", "Stopping", "Succeeded"]
     }
 }
 impl ::std::convert::AsRef<str> for StageExecutionStatus {
@@ -122,6 +127,7 @@ impl ::std::fmt::Display for StageExecutionStatus {
             StageExecutionStatus::Cancelled => write!(f, "Cancelled"),
             StageExecutionStatus::Failed => write!(f, "Failed"),
             StageExecutionStatus::InProgress => write!(f, "InProgress"),
+            StageExecutionStatus::Skipped => write!(f, "Skipped"),
             StageExecutionStatus::Stopped => write!(f, "Stopped"),
             StageExecutionStatus::Stopping => write!(f, "Stopping"),
             StageExecutionStatus::Succeeded => write!(f, "Succeeded"),

@@ -95,6 +95,8 @@ pub(crate) mod shape_list_connectors;
 
 pub(crate) mod shape_list_executions;
 
+pub(crate) mod shape_list_file_transfer_results;
+
 pub(crate) mod shape_list_host_keys;
 
 pub(crate) mod shape_list_profiles;
@@ -233,6 +235,8 @@ pub(crate) mod shape_list_connectors_input;
 
 pub(crate) mod shape_list_executions_input;
 
+pub(crate) mod shape_list_file_transfer_results_input;
+
 pub(crate) mod shape_list_host_keys_input;
 
 pub(crate) mod shape_list_profiles_input;
@@ -290,6 +294,8 @@ pub(crate) mod shape_update_server_input;
 pub(crate) mod shape_update_user_input;
 
 pub(crate) mod shape_as2_connector_config;
+
+pub(crate) mod shape_connector_file_transfer_results;
 
 pub(crate) mod shape_described_access;
 
@@ -358,6 +364,8 @@ pub(crate) mod shape_workflow_details;
 pub(crate) mod shape_workflow_step;
 
 pub(crate) mod shape_certificate_ids;
+
+pub(crate) mod shape_connector_file_transfer_result;
 
 pub(crate) mod shape_copy_step_details;
 

@@ -113,6 +113,12 @@ pub(crate) fn de_get_archive_message(
                             .transpose()?,
                     );
                 }
+                "Metadata" => {
+                    builder = builder.set_metadata(crate::protocol_serde::shape_metadata::de_metadata(tokens)?);
+                }
+                "Envelope" => {
+                    builder = builder.set_envelope(crate::protocol_serde::shape_envelope::de_envelope(tokens)?);
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

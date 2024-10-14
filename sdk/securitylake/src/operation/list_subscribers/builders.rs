@@ -22,7 +22,7 @@ impl crate::operation::list_subscribers::builders::ListSubscribersInputBuilder {
 }
 /// Fluent builder constructing a request to `ListSubscribers`.
 ///
-/// <p>List all subscribers for the specific Amazon Security Lake account ID. You can retrieve a list of subscriptions associated with a specific organization or Amazon Web Services account.</p>
+/// <p>Lists all subscribers for the specific Amazon Security Lake account ID. You can retrieve a list of subscriptions associated with a specific organization or Amazon Web Services account.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListSubscribersFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

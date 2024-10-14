@@ -3,21 +3,21 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListDataLakeExceptionsOutput {
-    /// <p>Lists the failures that cannot be retried in the current Region.</p>
+    /// <p>Lists the failures that cannot be retried.</p>
     pub exceptions: ::std::option::Option<::std::vec::Vec<crate::types::DataLakeException>>,
-    /// <p>List if there are more results available. The value of nextToken is a unique pagination token for each page. Repeat the call using the returned token to retrieve the next page. Keep all other arguments unchanged.</p>
+    /// <p>Lists if there are more results available. The value of nextToken is a unique pagination token for each page. Repeat the call using the returned token to retrieve the next page. Keep all other arguments unchanged.</p>
     /// <p>Each pagination token expires after 24 hours. Using an expired pagination token will return an HTTP 400 InvalidToken error.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListDataLakeExceptionsOutput {
-    /// <p>Lists the failures that cannot be retried in the current Region.</p>
+    /// <p>Lists the failures that cannot be retried.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.exceptions.is_none()`.
     pub fn exceptions(&self) -> &[crate::types::DataLakeException] {
         self.exceptions.as_deref().unwrap_or_default()
     }
-    /// <p>List if there are more results available. The value of nextToken is a unique pagination token for each page. Repeat the call using the returned token to retrieve the next page. Keep all other arguments unchanged.</p>
+    /// <p>Lists if there are more results available. The value of nextToken is a unique pagination token for each page. Repeat the call using the returned token to retrieve the next page. Keep all other arguments unchanged.</p>
     /// <p>Each pagination token expires after 24 hours. Using an expired pagination token will return an HTTP 400 InvalidToken error.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
@@ -48,35 +48,35 @@ impl ListDataLakeExceptionsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_exceptions`](Self::set_exceptions).
     ///
-    /// <p>Lists the failures that cannot be retried in the current Region.</p>
+    /// <p>Lists the failures that cannot be retried.</p>
     pub fn exceptions(mut self, input: crate::types::DataLakeException) -> Self {
         let mut v = self.exceptions.unwrap_or_default();
         v.push(input);
         self.exceptions = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Lists the failures that cannot be retried in the current Region.</p>
+    /// <p>Lists the failures that cannot be retried.</p>
     pub fn set_exceptions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DataLakeException>>) -> Self {
         self.exceptions = input;
         self
     }
-    /// <p>Lists the failures that cannot be retried in the current Region.</p>
+    /// <p>Lists the failures that cannot be retried.</p>
     pub fn get_exceptions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataLakeException>> {
         &self.exceptions
     }
-    /// <p>List if there are more results available. The value of nextToken is a unique pagination token for each page. Repeat the call using the returned token to retrieve the next page. Keep all other arguments unchanged.</p>
+    /// <p>Lists if there are more results available. The value of nextToken is a unique pagination token for each page. Repeat the call using the returned token to retrieve the next page. Keep all other arguments unchanged.</p>
     /// <p>Each pagination token expires after 24 hours. Using an expired pagination token will return an HTTP 400 InvalidToken error.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>List if there are more results available. The value of nextToken is a unique pagination token for each page. Repeat the call using the returned token to retrieve the next page. Keep all other arguments unchanged.</p>
+    /// <p>Lists if there are more results available. The value of nextToken is a unique pagination token for each page. Repeat the call using the returned token to retrieve the next page. Keep all other arguments unchanged.</p>
     /// <p>Each pagination token expires after 24 hours. Using an expired pagination token will return an HTTP 400 InvalidToken error.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>List if there are more results available. The value of nextToken is a unique pagination token for each page. Repeat the call using the returned token to retrieve the next page. Keep all other arguments unchanged.</p>
+    /// <p>Lists if there are more results available. The value of nextToken is a unique pagination token for each page. Repeat the call using the returned token to retrieve the next page. Keep all other arguments unchanged.</p>
     /// <p>Each pagination token expires after 24 hours. Using an expired pagination token will return an HTTP 400 InvalidToken error.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token

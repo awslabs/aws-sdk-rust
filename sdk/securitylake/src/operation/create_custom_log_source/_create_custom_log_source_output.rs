@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateCustomLogSourceOutput {
-    /// <p>The created third-party custom source.</p>
+    /// <p>The third-party custom source that was created.</p>
     pub source: ::std::option::Option<crate::types::CustomLogSourceResource>,
     _request_id: Option<String>,
 }
 impl CreateCustomLogSourceOutput {
-    /// <p>The created third-party custom source.</p>
+    /// <p>The third-party custom source that was created.</p>
     pub fn source(&self) -> ::std::option::Option<&crate::types::CustomLogSourceResource> {
         self.source.as_ref()
     }
@@ -33,17 +33,17 @@ pub struct CreateCustomLogSourceOutputBuilder {
     _request_id: Option<String>,
 }
 impl CreateCustomLogSourceOutputBuilder {
-    /// <p>The created third-party custom source.</p>
+    /// <p>The third-party custom source that was created.</p>
     pub fn source(mut self, input: crate::types::CustomLogSourceResource) -> Self {
         self.source = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The created third-party custom source.</p>
+    /// <p>The third-party custom source that was created.</p>
     pub fn set_source(mut self, input: ::std::option::Option<crate::types::CustomLogSourceResource>) -> Self {
         self.source = input;
         self
     }
-    /// <p>The created third-party custom source.</p>
+    /// <p>The third-party custom source that was created.</p>
     pub fn get_source(&self) -> &::std::option::Option<crate::types::CustomLogSourceResource> {
         &self.source
     }

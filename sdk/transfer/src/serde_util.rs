@@ -353,6 +353,15 @@ pub(crate) fn list_executions_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn list_file_transfer_results_output_output_correct_errors(
+    mut builder: crate::operation::list_file_transfer_results::builders::ListFileTransferResultsOutputBuilder,
+) -> crate::operation::list_file_transfer_results::builders::ListFileTransferResultsOutputBuilder {
+    if builder.file_transfer_results.is_none() {
+        builder.file_transfer_results = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn list_host_keys_output_output_correct_errors(
     mut builder: crate::operation::list_host_keys::builders::ListHostKeysOutputBuilder,
 ) -> crate::operation::list_host_keys::builders::ListHostKeysOutputBuilder {
@@ -613,6 +622,18 @@ pub(crate) fn described_workflow_correct_errors(
 ) -> crate::types::builders::DescribedWorkflowBuilder {
     if builder.arn.is_none() {
         builder.arn = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn connector_file_transfer_result_correct_errors(
+    mut builder: crate::types::builders::ConnectorFileTransferResultBuilder,
+) -> crate::types::builders::ConnectorFileTransferResultBuilder {
+    if builder.file_path.is_none() {
+        builder.file_path = Some(Default::default())
+    }
+    if builder.status_code.is_none() {
+        builder.status_code = "no value was set".parse::<crate::types::TransferTableStatus>().ok()
     }
     builder
 }

@@ -32,6 +32,18 @@ pub(crate) fn create_data_lake_dataset_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn create_instance_output_output_correct_errors(
+    mut builder: crate::operation::create_instance::builders::CreateInstanceOutputBuilder,
+) -> crate::operation::create_instance::builders::CreateInstanceOutputBuilder {
+    if builder.instance.is_none() {
+        builder.instance = {
+            let builder = crate::types::builders::InstanceBuilder::default();
+            crate::serde_util::instance_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
 pub(crate) fn delete_data_integration_flow_output_output_correct_errors(
     mut builder: crate::operation::delete_data_integration_flow::builders::DeleteDataIntegrationFlowOutputBuilder,
 ) -> crate::operation::delete_data_integration_flow::builders::DeleteDataIntegrationFlowOutputBuilder {
@@ -55,6 +67,18 @@ pub(crate) fn delete_data_lake_dataset_output_output_correct_errors(
     }
     if builder.name.is_none() {
         builder.name = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn delete_instance_output_output_correct_errors(
+    mut builder: crate::operation::delete_instance::builders::DeleteInstanceOutputBuilder,
+) -> crate::operation::delete_instance::builders::DeleteInstanceOutputBuilder {
+    if builder.instance.is_none() {
+        builder.instance = {
+            let builder = crate::types::builders::InstanceBuilder::default();
+            crate::serde_util::instance_correct_errors(builder).build().ok()
+        }
     }
     builder
 }
@@ -95,6 +119,18 @@ pub(crate) fn get_data_lake_dataset_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn get_instance_output_output_correct_errors(
+    mut builder: crate::operation::get_instance::builders::GetInstanceOutputBuilder,
+) -> crate::operation::get_instance::builders::GetInstanceOutputBuilder {
+    if builder.instance.is_none() {
+        builder.instance = {
+            let builder = crate::types::builders::InstanceBuilder::default();
+            crate::serde_util::instance_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
 pub(crate) fn list_data_integration_flows_output_output_correct_errors(
     mut builder: crate::operation::list_data_integration_flows::builders::ListDataIntegrationFlowsOutputBuilder,
 ) -> crate::operation::list_data_integration_flows::builders::ListDataIntegrationFlowsOutputBuilder {
@@ -109,6 +145,15 @@ pub(crate) fn list_data_lake_datasets_output_output_correct_errors(
 ) -> crate::operation::list_data_lake_datasets::builders::ListDataLakeDatasetsOutputBuilder {
     if builder.datasets.is_none() {
         builder.datasets = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_instances_output_output_correct_errors(
+    mut builder: crate::operation::list_instances::builders::ListInstancesOutputBuilder,
+) -> crate::operation::list_instances::builders::ListInstancesOutputBuilder {
+    if builder.instances.is_none() {
+        builder.instances = Some(Default::default())
     }
     builder
 }
@@ -155,6 +200,18 @@ pub(crate) fn update_data_lake_dataset_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn update_instance_output_output_correct_errors(
+    mut builder: crate::operation::update_instance::builders::UpdateInstanceOutputBuilder,
+) -> crate::operation::update_instance::builders::UpdateInstanceOutputBuilder {
+    if builder.instance.is_none() {
+        builder.instance = {
+            let builder = crate::types::builders::InstanceBuilder::default();
+            crate::serde_util::instance_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
 pub(crate) fn data_lake_dataset_correct_errors(
     mut builder: crate::types::builders::DataLakeDatasetBuilder,
 ) -> crate::types::builders::DataLakeDatasetBuilder {
@@ -181,6 +238,19 @@ pub(crate) fn data_lake_dataset_correct_errors(
     }
     if builder.last_modified_time.is_none() {
         builder.last_modified_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn instance_correct_errors(mut builder: crate::types::builders::InstanceBuilder) -> crate::types::builders::InstanceBuilder {
+    if builder.instance_id.is_none() {
+        builder.instance_id = Some(Default::default())
+    }
+    if builder.aws_account_id.is_none() {
+        builder.aws_account_id = Some(Default::default())
+    }
+    if builder.state.is_none() {
+        builder.state = "no value was set".parse::<crate::types::InstanceState>().ok()
     }
     builder
 }

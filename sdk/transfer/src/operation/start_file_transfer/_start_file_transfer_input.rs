@@ -5,8 +5,8 @@
 pub struct StartFileTransferInput {
     /// <p>The unique identifier for the connector.</p>
     pub connector_id: ::std::option::Option<::std::string::String>,
-    /// <p>One or more source paths for the Amazon S3 storage. Each string represents a source file path for one outbound file transfer. For example, <code> <i>DOC-EXAMPLE-BUCKET</i>/<i>myfile.txt</i> </code>.</p><note>
-    /// <p>Replace <code> <i>DOC-EXAMPLE-BUCKET</i> </code> with one of your actual buckets.</p>
+    /// <p>One or more source paths for the Amazon S3 storage. Each string represents a source file path for one outbound file transfer. For example, <code> <i>amzn-s3-demo-bucket</i>/<i>myfile.txt</i> </code>.</p><note>
+    /// <p>Replace <code> <i>amzn-s3-demo-bucket</i> </code> with one of your actual buckets.</p>
     /// </note>
     pub send_file_paths: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>One or more source paths for the partner's SFTP server. Each string represents a source file path for one inbound file transfer.</p>
@@ -21,8 +21,8 @@ impl StartFileTransferInput {
     pub fn connector_id(&self) -> ::std::option::Option<&str> {
         self.connector_id.as_deref()
     }
-    /// <p>One or more source paths for the Amazon S3 storage. Each string represents a source file path for one outbound file transfer. For example, <code> <i>DOC-EXAMPLE-BUCKET</i>/<i>myfile.txt</i> </code>.</p><note>
-    /// <p>Replace <code> <i>DOC-EXAMPLE-BUCKET</i> </code> with one of your actual buckets.</p>
+    /// <p>One or more source paths for the Amazon S3 storage. Each string represents a source file path for one outbound file transfer. For example, <code> <i>amzn-s3-demo-bucket</i>/<i>myfile.txt</i> </code>.</p><note>
+    /// <p>Replace <code> <i>amzn-s3-demo-bucket</i> </code> with one of your actual buckets.</p>
     /// </note>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.send_file_paths.is_none()`.
@@ -81,8 +81,8 @@ impl StartFileTransferInputBuilder {
     ///
     /// To override the contents of this collection use [`set_send_file_paths`](Self::set_send_file_paths).
     ///
-    /// <p>One or more source paths for the Amazon S3 storage. Each string represents a source file path for one outbound file transfer. For example, <code> <i>DOC-EXAMPLE-BUCKET</i>/<i>myfile.txt</i> </code>.</p><note>
-    /// <p>Replace <code> <i>DOC-EXAMPLE-BUCKET</i> </code> with one of your actual buckets.</p>
+    /// <p>One or more source paths for the Amazon S3 storage. Each string represents a source file path for one outbound file transfer. For example, <code> <i>amzn-s3-demo-bucket</i>/<i>myfile.txt</i> </code>.</p><note>
+    /// <p>Replace <code> <i>amzn-s3-demo-bucket</i> </code> with one of your actual buckets.</p>
     /// </note>
     pub fn send_file_paths(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.send_file_paths.unwrap_or_default();
@@ -90,15 +90,15 @@ impl StartFileTransferInputBuilder {
         self.send_file_paths = ::std::option::Option::Some(v);
         self
     }
-    /// <p>One or more source paths for the Amazon S3 storage. Each string represents a source file path for one outbound file transfer. For example, <code> <i>DOC-EXAMPLE-BUCKET</i>/<i>myfile.txt</i> </code>.</p><note>
-    /// <p>Replace <code> <i>DOC-EXAMPLE-BUCKET</i> </code> with one of your actual buckets.</p>
+    /// <p>One or more source paths for the Amazon S3 storage. Each string represents a source file path for one outbound file transfer. For example, <code> <i>amzn-s3-demo-bucket</i>/<i>myfile.txt</i> </code>.</p><note>
+    /// <p>Replace <code> <i>amzn-s3-demo-bucket</i> </code> with one of your actual buckets.</p>
     /// </note>
     pub fn set_send_file_paths(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.send_file_paths = input;
         self
     }
-    /// <p>One or more source paths for the Amazon S3 storage. Each string represents a source file path for one outbound file transfer. For example, <code> <i>DOC-EXAMPLE-BUCKET</i>/<i>myfile.txt</i> </code>.</p><note>
-    /// <p>Replace <code> <i>DOC-EXAMPLE-BUCKET</i> </code> with one of your actual buckets.</p>
+    /// <p>One or more source paths for the Amazon S3 storage. Each string represents a source file path for one outbound file transfer. For example, <code> <i>amzn-s3-demo-bucket</i>/<i>myfile.txt</i> </code>.</p><note>
+    /// <p>Replace <code> <i>amzn-s3-demo-bucket</i> </code> with one of your actual buckets.</p>
     /// </note>
     pub fn get_send_file_paths(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.send_file_paths

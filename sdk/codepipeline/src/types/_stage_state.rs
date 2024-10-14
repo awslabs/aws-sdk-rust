@@ -22,6 +22,8 @@ pub struct StageState {
     pub on_success_condition_state: ::std::option::Option<crate::types::StageConditionState>,
     /// <p>The state of the failure conditions for a stage.</p>
     pub on_failure_condition_state: ::std::option::Option<crate::types::StageConditionState>,
+    /// <p>he details of a specific automatic retry on stage failure, including the attempt number and trigger.</p>
+    pub retry_stage_metadata: ::std::option::Option<crate::types::RetryStageMetadata>,
 }
 impl StageState {
     /// <p>The name of the stage.</p>
@@ -64,6 +66,10 @@ impl StageState {
     pub fn on_failure_condition_state(&self) -> ::std::option::Option<&crate::types::StageConditionState> {
         self.on_failure_condition_state.as_ref()
     }
+    /// <p>he details of a specific automatic retry on stage failure, including the attempt number and trigger.</p>
+    pub fn retry_stage_metadata(&self) -> ::std::option::Option<&crate::types::RetryStageMetadata> {
+        self.retry_stage_metadata.as_ref()
+    }
 }
 impl StageState {
     /// Creates a new builder-style object to manufacture [`StageState`](crate::types::StageState).
@@ -85,6 +91,7 @@ pub struct StageStateBuilder {
     pub(crate) before_entry_condition_state: ::std::option::Option<crate::types::StageConditionState>,
     pub(crate) on_success_condition_state: ::std::option::Option<crate::types::StageConditionState>,
     pub(crate) on_failure_condition_state: ::std::option::Option<crate::types::StageConditionState>,
+    pub(crate) retry_stage_metadata: ::std::option::Option<crate::types::RetryStageMetadata>,
 }
 impl StageStateBuilder {
     /// <p>The name of the stage.</p>
@@ -225,6 +232,20 @@ impl StageStateBuilder {
     pub fn get_on_failure_condition_state(&self) -> &::std::option::Option<crate::types::StageConditionState> {
         &self.on_failure_condition_state
     }
+    /// <p>he details of a specific automatic retry on stage failure, including the attempt number and trigger.</p>
+    pub fn retry_stage_metadata(mut self, input: crate::types::RetryStageMetadata) -> Self {
+        self.retry_stage_metadata = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>he details of a specific automatic retry on stage failure, including the attempt number and trigger.</p>
+    pub fn set_retry_stage_metadata(mut self, input: ::std::option::Option<crate::types::RetryStageMetadata>) -> Self {
+        self.retry_stage_metadata = input;
+        self
+    }
+    /// <p>he details of a specific automatic retry on stage failure, including the attempt number and trigger.</p>
+    pub fn get_retry_stage_metadata(&self) -> &::std::option::Option<crate::types::RetryStageMetadata> {
+        &self.retry_stage_metadata
+    }
     /// Consumes the builder and constructs a [`StageState`](crate::types::StageState).
     pub fn build(self) -> crate::types::StageState {
         crate::types::StageState {
@@ -237,6 +258,7 @@ impl StageStateBuilder {
             before_entry_condition_state: self.before_entry_condition_state,
             on_success_condition_state: self.on_success_condition_state,
             on_failure_condition_state: self.on_failure_condition_state,
+            retry_stage_metadata: self.retry_stage_metadata,
         }
     }
 }

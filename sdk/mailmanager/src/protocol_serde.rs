@@ -241,6 +241,8 @@ pub(crate) mod shape_archive_retention;
 
 pub(crate) mod shape_archives_list;
 
+pub(crate) mod shape_envelope;
+
 pub(crate) mod shape_export_destination_configuration;
 
 pub(crate) mod shape_export_status;
@@ -254,6 +256,8 @@ pub(crate) mod shape_ingress_point_configuration;
 pub(crate) mod shape_ingress_points_list;
 
 pub(crate) mod shape_message_body;
+
+pub(crate) mod shape_metadata;
 
 pub(crate) mod shape_policy_statement;
 
@@ -314,6 +318,8 @@ pub(crate) mod shape_rule_set;
 pub(crate) mod shape_s3_export_destination_configuration;
 
 pub(crate) mod shape_search_summary;
+
+pub(crate) mod shape_string_list;
 
 pub(crate) mod shape_traffic_policy;
 
@@ -404,5 +410,3 @@ pub(crate) mod shape_rule_ip_value_list;
 pub(crate) mod shape_rule_string_list;
 
 pub(crate) mod shape_rule_verdict_value_list;
-
-pub(crate) mod shape_string_list;

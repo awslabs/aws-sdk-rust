@@ -166,19 +166,19 @@ impl CreateAgreementFluentBuilder {
         self.inner.get_partner_profile_id()
     }
     /// <p>The landing directory (folder) for files transferred by using the AS2 protocol.</p>
-    /// <p>A <code>BaseDirectory</code> example is <code>/DOC-EXAMPLE-BUCKET/home/mydirectory</code>.</p>
+    /// <p>A <code>BaseDirectory</code> example is <code>/<i>amzn-s3-demo-bucket</i>/home/mydirectory</code>.</p>
     pub fn base_directory(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.base_directory(input.into());
         self
     }
     /// <p>The landing directory (folder) for files transferred by using the AS2 protocol.</p>
-    /// <p>A <code>BaseDirectory</code> example is <code>/DOC-EXAMPLE-BUCKET/home/mydirectory</code>.</p>
+    /// <p>A <code>BaseDirectory</code> example is <code>/<i>amzn-s3-demo-bucket</i>/home/mydirectory</code>.</p>
     pub fn set_base_directory(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_base_directory(input);
         self
     }
     /// <p>The landing directory (folder) for files transferred by using the AS2 protocol.</p>
-    /// <p>A <code>BaseDirectory</code> example is <code>/DOC-EXAMPLE-BUCKET/home/mydirectory</code>.</p>
+    /// <p>A <code>BaseDirectory</code> example is <code>/<i>amzn-s3-demo-bucket</i>/home/mydirectory</code>.</p>
     pub fn get_base_directory(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_base_directory()
     }

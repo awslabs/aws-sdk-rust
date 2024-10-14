@@ -34,5 +34,8 @@ pub fn ser_start_archive_export_input_input(
         crate::protocol_serde::shape_export_destination_configuration::ser_export_destination_configuration(&mut object_8, var_7)?;
         object_8.finish();
     }
+    if let Some(var_9) = &input.include_metadata {
+        object.key("IncludeMetadata").boolean(*var_9);
+    }
     Ok(())
 }

@@ -269,6 +269,8 @@ mod list_connectors;
 
 mod list_executions;
 
+mod list_file_transfer_results;
+
 mod list_host_keys;
 
 mod list_profiles;

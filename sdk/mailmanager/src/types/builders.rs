@@ -83,4 +83,8 @@ pub use crate::types::_export_status::ExportStatusBuilder;
 
 pub use crate::types::_row::RowBuilder;
 
+pub use crate::types::_envelope::EnvelopeBuilder;
+
 pub use crate::types::_message_body::MessageBodyBuilder;
+
+pub use crate::types::_metadata::MetadataBuilder;

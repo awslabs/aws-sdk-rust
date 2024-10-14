@@ -49,6 +49,16 @@ pub(crate) fn reflens_list_executions_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_file_transfer_results_output_output_next_token(
+    input: &crate::operation::list_file_transfer_results::ListFileTransferResultsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_profiles_output_output_next_token(
     input: &crate::operation::list_profiles::ListProfilesOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -141,6 +151,13 @@ pub(crate) fn lens_list_executions_output_output_executions(
     input: crate::operation::list_executions::ListExecutionsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ListedExecution>> {
     let input = input.executions;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_file_transfer_results_output_output_file_transfer_results(
+    input: crate::operation::list_file_transfer_results::ListFileTransferResultsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ConnectorFileTransferResult>> {
+    let input = input.file_transfer_results;
     ::std::option::Option::Some(input)
 }
 

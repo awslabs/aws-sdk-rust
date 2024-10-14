@@ -16,6 +16,8 @@ pub struct StartArchiveExportInput {
     pub max_results: ::std::option::Option<i32>,
     /// <p>Details on where to deliver the exported email data.</p>
     pub export_destination_configuration: ::std::option::Option<crate::types::ExportDestinationConfiguration>,
+    /// <p>Whether to include message metadata as JSON files in the export.</p>
+    pub include_metadata: ::std::option::Option<bool>,
 }
 impl StartArchiveExportInput {
     /// <p>The identifier of the archive to export emails from.</p>
@@ -42,6 +44,10 @@ impl StartArchiveExportInput {
     pub fn export_destination_configuration(&self) -> ::std::option::Option<&crate::types::ExportDestinationConfiguration> {
         self.export_destination_configuration.as_ref()
     }
+    /// <p>Whether to include message metadata as JSON files in the export.</p>
+    pub fn include_metadata(&self) -> ::std::option::Option<bool> {
+        self.include_metadata
+    }
 }
 impl StartArchiveExportInput {
     /// Creates a new builder-style object to manufacture [`StartArchiveExportInput`](crate::operation::start_archive_export::StartArchiveExportInput).
@@ -60,6 +66,7 @@ pub struct StartArchiveExportInputBuilder {
     pub(crate) to_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) export_destination_configuration: ::std::option::Option<crate::types::ExportDestinationConfiguration>,
+    pub(crate) include_metadata: ::std::option::Option<bool>,
 }
 impl StartArchiveExportInputBuilder {
     /// <p>The identifier of the archive to export emails from.</p>
@@ -150,6 +157,20 @@ impl StartArchiveExportInputBuilder {
     pub fn get_export_destination_configuration(&self) -> &::std::option::Option<crate::types::ExportDestinationConfiguration> {
         &self.export_destination_configuration
     }
+    /// <p>Whether to include message metadata as JSON files in the export.</p>
+    pub fn include_metadata(mut self, input: bool) -> Self {
+        self.include_metadata = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Whether to include message metadata as JSON files in the export.</p>
+    pub fn set_include_metadata(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.include_metadata = input;
+        self
+    }
+    /// <p>Whether to include message metadata as JSON files in the export.</p>
+    pub fn get_include_metadata(&self) -> &::std::option::Option<bool> {
+        &self.include_metadata
+    }
     /// Consumes the builder and constructs a [`StartArchiveExportInput`](crate::operation::start_archive_export::StartArchiveExportInput).
     pub fn build(
         self,
@@ -162,6 +183,7 @@ impl StartArchiveExportInputBuilder {
             to_timestamp: self.to_timestamp,
             max_results: self.max_results,
             export_destination_configuration: self.export_destination_configuration,
+            include_metadata: self.include_metadata,
         })
     }
 }

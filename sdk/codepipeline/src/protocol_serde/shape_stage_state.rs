@@ -53,6 +53,10 @@ where
                                 crate::protocol_serde::shape_stage_condition_state::de_stage_condition_state(tokens)?,
                             );
                         }
+                        "retryStageMetadata" => {
+                            builder =
+                                builder.set_retry_stage_metadata(crate::protocol_serde::shape_retry_stage_metadata::de_retry_stage_metadata(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

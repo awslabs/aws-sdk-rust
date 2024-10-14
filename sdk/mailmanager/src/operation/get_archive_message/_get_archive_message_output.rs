@@ -6,12 +6,24 @@
 pub struct GetArchiveMessageOutput {
     /// <p>A pre-signed URL to temporarily download the full message content.</p>
     pub message_download_link: ::std::option::Option<::std::string::String>,
+    /// <p>The metadata about the email.</p>
+    pub metadata: ::std::option::Option<crate::types::Metadata>,
+    /// <p>The SMTP envelope information of the email.</p>
+    pub envelope: ::std::option::Option<crate::types::Envelope>,
     _request_id: Option<String>,
 }
 impl GetArchiveMessageOutput {
     /// <p>A pre-signed URL to temporarily download the full message content.</p>
     pub fn message_download_link(&self) -> ::std::option::Option<&str> {
         self.message_download_link.as_deref()
+    }
+    /// <p>The metadata about the email.</p>
+    pub fn metadata(&self) -> ::std::option::Option<&crate::types::Metadata> {
+        self.metadata.as_ref()
+    }
+    /// <p>The SMTP envelope information of the email.</p>
+    pub fn envelope(&self) -> ::std::option::Option<&crate::types::Envelope> {
+        self.envelope.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetArchiveMessageOutput {
@@ -31,6 +43,8 @@ impl GetArchiveMessageOutput {
 #[non_exhaustive]
 pub struct GetArchiveMessageOutputBuilder {
     pub(crate) message_download_link: ::std::option::Option<::std::string::String>,
+    pub(crate) metadata: ::std::option::Option<crate::types::Metadata>,
+    pub(crate) envelope: ::std::option::Option<crate::types::Envelope>,
     _request_id: Option<String>,
 }
 impl GetArchiveMessageOutputBuilder {
@@ -48,6 +62,34 @@ impl GetArchiveMessageOutputBuilder {
     pub fn get_message_download_link(&self) -> &::std::option::Option<::std::string::String> {
         &self.message_download_link
     }
+    /// <p>The metadata about the email.</p>
+    pub fn metadata(mut self, input: crate::types::Metadata) -> Self {
+        self.metadata = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The metadata about the email.</p>
+    pub fn set_metadata(mut self, input: ::std::option::Option<crate::types::Metadata>) -> Self {
+        self.metadata = input;
+        self
+    }
+    /// <p>The metadata about the email.</p>
+    pub fn get_metadata(&self) -> &::std::option::Option<crate::types::Metadata> {
+        &self.metadata
+    }
+    /// <p>The SMTP envelope information of the email.</p>
+    pub fn envelope(mut self, input: crate::types::Envelope) -> Self {
+        self.envelope = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The SMTP envelope information of the email.</p>
+    pub fn set_envelope(mut self, input: ::std::option::Option<crate::types::Envelope>) -> Self {
+        self.envelope = input;
+        self
+    }
+    /// <p>The SMTP envelope information of the email.</p>
+    pub fn get_envelope(&self) -> &::std::option::Option<crate::types::Envelope> {
+        &self.envelope
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -61,6 +103,8 @@ impl GetArchiveMessageOutputBuilder {
     pub fn build(self) -> crate::operation::get_archive_message::GetArchiveMessageOutput {
         crate::operation::get_archive_message::GetArchiveMessageOutput {
             message_download_link: self.message_download_link,
+            metadata: self.metadata,
+            envelope: self.envelope,
             _request_id: self._request_id,
         }
     }

@@ -105,6 +105,30 @@ where
                                     .transpose()?,
                             );
                         }
+                        "IngressPointId" => {
+                            builder = builder.set_ingress_point_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "SenderHostname" => {
+                            builder = builder.set_sender_hostname(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "SenderIpAddress" => {
+                            builder = builder.set_sender_ip_address(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "Envelope" => {
+                            builder = builder.set_envelope(crate::protocol_serde::shape_envelope::de_envelope(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

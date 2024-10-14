@@ -73,6 +73,8 @@ pub use crate::types::_listed_agreement::ListedAgreementBuilder;
 
 pub use crate::types::_listed_host_key::ListedHostKeyBuilder;
 
+pub use crate::types::_connector_file_transfer_result::ConnectorFileTransferResultBuilder;
+
 pub use crate::types::_listed_execution::ListedExecutionBuilder;
 
 pub use crate::types::_service_metadata::ServiceMetadataBuilder;

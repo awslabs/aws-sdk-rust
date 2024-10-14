@@ -22,7 +22,7 @@ impl crate::operation::create_data_lake_exception_subscription::builders::Create
 }
 /// Fluent builder constructing a request to `CreateDataLakeExceptionSubscription`.
 ///
-/// <p>Creates the specified notification subscription in Amazon Security Lake for the organization you specify.</p>
+/// <p>Creates the specified notification subscription in Amazon Security Lake for the organization you specify. The notification subscription is created for exceptions that cannot be resolved by Security Lake automatically.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateDataLakeExceptionSubscriptionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -137,17 +137,17 @@ impl CreateDataLakeExceptionSubscriptionFluentBuilder {
     pub fn get_notification_endpoint(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_notification_endpoint()
     }
-    /// <p>The expiration period and time-to-live (TTL).</p>
+    /// <p>The expiration period and time-to-live (TTL). It is the duration of time until which the exception message remains.</p>
     pub fn exception_time_to_live(mut self, input: i64) -> Self {
         self.inner = self.inner.exception_time_to_live(input);
         self
     }
-    /// <p>The expiration period and time-to-live (TTL).</p>
+    /// <p>The expiration period and time-to-live (TTL). It is the duration of time until which the exception message remains.</p>
     pub fn set_exception_time_to_live(mut self, input: ::std::option::Option<i64>) -> Self {
         self.inner = self.inner.set_exception_time_to_live(input);
         self
     }
-    /// <p>The expiration period and time-to-live (TTL).</p>
+    /// <p>The expiration period and time-to-live (TTL). It is the duration of time until which the exception message remains.</p>
     pub fn get_exception_time_to_live(&self) -> &::std::option::Option<i64> {
         self.inner.get_exception_time_to_live()
     }

@@ -29,9 +29,13 @@ pub(crate) mod shape_create_data_integration_flow;
 
 pub(crate) mod shape_create_data_lake_dataset;
 
+pub(crate) mod shape_create_instance;
+
 pub(crate) mod shape_delete_data_integration_flow;
 
 pub(crate) mod shape_delete_data_lake_dataset;
+
+pub(crate) mod shape_delete_instance;
 
 pub(crate) mod shape_get_bill_of_materials_import_job;
 
@@ -39,9 +43,13 @@ pub(crate) mod shape_get_data_integration_flow;
 
 pub(crate) mod shape_get_data_lake_dataset;
 
+pub(crate) mod shape_get_instance;
+
 pub(crate) mod shape_list_data_integration_flows;
 
 pub(crate) mod shape_list_data_lake_datasets;
+
+pub(crate) mod shape_list_instances;
 
 pub(crate) mod shape_list_tags_for_resource;
 
@@ -54,6 +62,8 @@ pub(crate) mod shape_untag_resource;
 pub(crate) mod shape_update_data_integration_flow;
 
 pub(crate) mod shape_update_data_lake_dataset;
+
+pub(crate) mod shape_update_instance;
 
 pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
     if data.is_empty() {
@@ -73,6 +83,8 @@ pub(crate) mod shape_create_data_integration_flow_input;
 
 pub(crate) mod shape_create_data_lake_dataset_input;
 
+pub(crate) mod shape_create_instance_input;
+
 pub(crate) mod shape_internal_server_exception;
 
 pub(crate) mod shape_resource_not_found_exception;
@@ -88,6 +100,8 @@ pub(crate) mod shape_throttling_exception;
 pub(crate) mod shape_update_data_integration_flow_input;
 
 pub(crate) mod shape_update_data_lake_dataset_input;
+
+pub(crate) mod shape_update_instance_input;
 
 pub(crate) mod shape_validation_exception;
 
@@ -108,6 +122,10 @@ pub(crate) mod shape_data_lake_dataset;
 pub(crate) mod shape_data_lake_dataset_list;
 
 pub(crate) mod shape_data_lake_dataset_schema;
+
+pub(crate) mod shape_instance;
+
+pub(crate) mod shape_instance_list;
 
 pub(crate) mod shape_tag_map;
 

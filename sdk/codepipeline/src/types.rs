@@ -47,6 +47,10 @@ pub use crate::types::_success_conditions::SuccessConditions;
 
 pub use crate::types::_failure_conditions::FailureConditions;
 
+pub use crate::types::_retry_configuration::RetryConfiguration;
+
+pub use crate::types::_stage_retry_mode::StageRetryMode;
+
 pub use crate::types::_action_declaration::ActionDeclaration;
 
 pub use crate::types::_output_artifact::OutputArtifact;
@@ -98,8 +102,6 @@ pub use crate::types::_source_revision_override::SourceRevisionOverride;
 pub use crate::types::_source_revision_type::SourceRevisionType;
 
 pub use crate::types::_pipeline_variable::PipelineVariable;
-
-pub use crate::types::_stage_retry_mode::StageRetryMode;
 
 pub use crate::types::_list_webhook_item::ListWebhookItem;
 
@@ -230,6 +232,10 @@ pub use crate::types::_third_party_job_details::ThirdPartyJobDetails;
 pub use crate::types::_third_party_job_data::ThirdPartyJobData;
 
 pub use crate::types::_stage_state::StageState;
+
+pub use crate::types::_retry_stage_metadata::RetryStageMetadata;
+
+pub use crate::types::_retry_trigger::RetryTrigger;
 
 pub use crate::types::_stage_condition_state::StageConditionState;
 
@@ -452,6 +458,12 @@ mod _pipeline_variable_declaration;
 mod _resolved_pipeline_variable;
 
 mod _result;
+
+mod _retry_configuration;
+
+mod _retry_stage_metadata;
+
+mod _retry_trigger;
 
 mod _rule_category;
 

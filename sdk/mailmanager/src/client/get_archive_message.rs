@@ -6,6 +6,8 @@ impl super::Client {
     ///   - [`archived_message_id(impl Into<String>)`](crate::operation::get_archive_message::builders::GetArchiveMessageFluentBuilder::archived_message_id) / [`set_archived_message_id(Option<String>)`](crate::operation::get_archive_message::builders::GetArchiveMessageFluentBuilder::set_archived_message_id):<br>required: **true**<br><p>The unique identifier of the archived email message.</p><br>
     /// - On success, responds with [`GetArchiveMessageOutput`](crate::operation::get_archive_message::GetArchiveMessageOutput) with field(s):
     ///   - [`message_download_link(Option<String>)`](crate::operation::get_archive_message::GetArchiveMessageOutput::message_download_link): <p>A pre-signed URL to temporarily download the full message content.</p>
+    ///   - [`metadata(Option<Metadata>)`](crate::operation::get_archive_message::GetArchiveMessageOutput::metadata): <p>The metadata about the email.</p>
+    ///   - [`envelope(Option<Envelope>)`](crate::operation::get_archive_message::GetArchiveMessageOutput::envelope): <p>The SMTP envelope information of the email.</p>
     /// - On failure, responds with [`SdkError<GetArchiveMessageError>`](crate::operation::get_archive_message::GetArchiveMessageError)
     pub fn get_archive_message(&self) -> crate::operation::get_archive_message::builders::GetArchiveMessageFluentBuilder {
         crate::operation::get_archive_message::builders::GetArchiveMessageFluentBuilder::new(self.handle.clone())

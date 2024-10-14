@@ -22,7 +22,7 @@ impl crate::operation::list_log_sources::builders::ListLogSourcesInputBuilder {
 }
 /// Fluent builder constructing a request to `ListLogSources`.
 ///
-/// <p>Retrieves the log sources in the current Amazon Web Services Region.</p>
+/// <p>Retrieves the log sources.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListLogSourcesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -122,17 +122,17 @@ impl UpdateSubscriberFluentBuilder {
     pub fn get_subscriber_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_subscriber_id()
     }
-    /// <p>The AWS identity used to access your data.</p>
+    /// <p>The Amazon Web Services identity used to access your data.</p>
     pub fn subscriber_identity(mut self, input: crate::types::AwsIdentity) -> Self {
         self.inner = self.inner.subscriber_identity(input);
         self
     }
-    /// <p>The AWS identity used to access your data.</p>
+    /// <p>The Amazon Web Services identity used to access your data.</p>
     pub fn set_subscriber_identity(mut self, input: ::std::option::Option<crate::types::AwsIdentity>) -> Self {
         self.inner = self.inner.set_subscriber_identity(input);
         self
     }
-    /// <p>The AWS identity used to access your data.</p>
+    /// <p>The Amazon Web Services identity used to access your data.</p>
     pub fn get_subscriber_identity(&self) -> &::std::option::Option<crate::types::AwsIdentity> {
         self.inner.get_subscriber_identity()
     }
@@ -169,17 +169,17 @@ impl UpdateSubscriberFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_sources`](Self::set_sources).
     ///
-    /// <p>The supported Amazon Web Services from which logs and events are collected. For the list of supported Amazon Web Services, see the <a href="https://docs.aws.amazon.com/security-lake/latest/userguide/internal-sources.html">Amazon Security Lake User Guide</a>.</p>
+    /// <p>The supported Amazon Web Services services from which logs and events are collected. For the list of supported Amazon Web Services services, see the <a href="https://docs.aws.amazon.com/security-lake/latest/userguide/internal-sources.html">Amazon Security Lake User Guide</a>.</p>
     pub fn sources(mut self, input: crate::types::LogSourceResource) -> Self {
         self.inner = self.inner.sources(input);
         self
     }
-    /// <p>The supported Amazon Web Services from which logs and events are collected. For the list of supported Amazon Web Services, see the <a href="https://docs.aws.amazon.com/security-lake/latest/userguide/internal-sources.html">Amazon Security Lake User Guide</a>.</p>
+    /// <p>The supported Amazon Web Services services from which logs and events are collected. For the list of supported Amazon Web Services services, see the <a href="https://docs.aws.amazon.com/security-lake/latest/userguide/internal-sources.html">Amazon Security Lake User Guide</a>.</p>
     pub fn set_sources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LogSourceResource>>) -> Self {
         self.inner = self.inner.set_sources(input);
         self
     }
-    /// <p>The supported Amazon Web Services from which logs and events are collected. For the list of supported Amazon Web Services, see the <a href="https://docs.aws.amazon.com/security-lake/latest/userguide/internal-sources.html">Amazon Security Lake User Guide</a>.</p>
+    /// <p>The supported Amazon Web Services services from which logs and events are collected. For the list of supported Amazon Web Services services, see the <a href="https://docs.aws.amazon.com/security-lake/latest/userguide/internal-sources.html">Amazon Security Lake User Guide</a>.</p>
     pub fn get_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LogSourceResource>> {
         self.inner.get_sources()
     }

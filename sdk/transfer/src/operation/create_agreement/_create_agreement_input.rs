@@ -12,7 +12,7 @@ pub struct CreateAgreementInput {
     /// <p>A unique identifier for the partner profile used in the agreement.</p>
     pub partner_profile_id: ::std::option::Option<::std::string::String>,
     /// <p>The landing directory (folder) for files transferred by using the AS2 protocol.</p>
-    /// <p>A <code>BaseDirectory</code> example is <code>/DOC-EXAMPLE-BUCKET/home/mydirectory</code>.</p>
+    /// <p>A <code>BaseDirectory</code> example is <code>/<i>amzn-s3-demo-bucket</i>/home/mydirectory</code>.</p>
     pub base_directory: ::std::option::Option<::std::string::String>,
     /// <p>Connectors are used to send files using either the AS2 or SFTP protocol. For the access role, provide the Amazon Resource Name (ARN) of the Identity and Access Management role to use.</p>
     /// <p><b>For AS2 connectors</b></p>
@@ -44,7 +44,7 @@ impl CreateAgreementInput {
         self.partner_profile_id.as_deref()
     }
     /// <p>The landing directory (folder) for files transferred by using the AS2 protocol.</p>
-    /// <p>A <code>BaseDirectory</code> example is <code>/DOC-EXAMPLE-BUCKET/home/mydirectory</code>.</p>
+    /// <p>A <code>BaseDirectory</code> example is <code>/<i>amzn-s3-demo-bucket</i>/home/mydirectory</code>.</p>
     pub fn base_directory(&self) -> ::std::option::Option<&str> {
         self.base_directory.as_deref()
     }
@@ -149,20 +149,20 @@ impl CreateAgreementInputBuilder {
         &self.partner_profile_id
     }
     /// <p>The landing directory (folder) for files transferred by using the AS2 protocol.</p>
-    /// <p>A <code>BaseDirectory</code> example is <code>/DOC-EXAMPLE-BUCKET/home/mydirectory</code>.</p>
+    /// <p>A <code>BaseDirectory</code> example is <code>/<i>amzn-s3-demo-bucket</i>/home/mydirectory</code>.</p>
     /// This field is required.
     pub fn base_directory(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.base_directory = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The landing directory (folder) for files transferred by using the AS2 protocol.</p>
-    /// <p>A <code>BaseDirectory</code> example is <code>/DOC-EXAMPLE-BUCKET/home/mydirectory</code>.</p>
+    /// <p>A <code>BaseDirectory</code> example is <code>/<i>amzn-s3-demo-bucket</i>/home/mydirectory</code>.</p>
     pub fn set_base_directory(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.base_directory = input;
         self
     }
     /// <p>The landing directory (folder) for files transferred by using the AS2 protocol.</p>
-    /// <p>A <code>BaseDirectory</code> example is <code>/DOC-EXAMPLE-BUCKET/home/mydirectory</code>.</p>
+    /// <p>A <code>BaseDirectory</code> example is <code>/<i>amzn-s3-demo-bucket</i>/home/mydirectory</code>.</p>
     pub fn get_base_directory(&self) -> &::std::option::Option<::std::string::String> {
         &self.base_directory
     }
