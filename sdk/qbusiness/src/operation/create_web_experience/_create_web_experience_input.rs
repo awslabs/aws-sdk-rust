@@ -13,6 +13,10 @@ pub struct CreateWebExperienceInput {
     pub welcome_message: ::std::option::Option<::std::string::String>,
     /// <p>Determines whether sample prompts are enabled in the web experience for an end user.</p>
     pub sample_prompts_control_mode: ::std::option::Option<crate::types::WebExperienceSamplePromptsControlMode>,
+    /// <p>Sets the website domain origins that are allowed to embed the Amazon Q Business web experience. The <i>domain origin</i> refers to the base URL for accessing a website including the protocol (<code>http/https</code>), the domain name, and the port number (if specified).</p><note>
+    /// <p>You must only submit a <i>base URL</i> and not a full path. For example, <code>https://docs.aws.amazon.com</code>.</p>
+    /// </note>
+    pub origins: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The Amazon Resource Name (ARN) of the service role attached to your web experience.</p><note>
     /// <p>You must provide this value if you're using IAM Identity Center to manage end user access to your application. If you're using legacy identity management to manage user access, you don't need to provide this value.</p>
     /// </note>
@@ -44,6 +48,14 @@ impl CreateWebExperienceInput {
     /// <p>Determines whether sample prompts are enabled in the web experience for an end user.</p>
     pub fn sample_prompts_control_mode(&self) -> ::std::option::Option<&crate::types::WebExperienceSamplePromptsControlMode> {
         self.sample_prompts_control_mode.as_ref()
+    }
+    /// <p>Sets the website domain origins that are allowed to embed the Amazon Q Business web experience. The <i>domain origin</i> refers to the base URL for accessing a website including the protocol (<code>http/https</code>), the domain name, and the port number (if specified).</p><note>
+    /// <p>You must only submit a <i>base URL</i> and not a full path. For example, <code>https://docs.aws.amazon.com</code>.</p>
+    /// </note>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.origins.is_none()`.
+    pub fn origins(&self) -> &[::std::string::String] {
+        self.origins.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon Resource Name (ARN) of the service role attached to your web experience.</p><note>
     /// <p>You must provide this value if you're using IAM Identity Center to manage end user access to your application. If you're using legacy identity management to manage user access, you don't need to provide this value.</p>
@@ -82,6 +94,7 @@ pub struct CreateWebExperienceInputBuilder {
     pub(crate) subtitle: ::std::option::Option<::std::string::String>,
     pub(crate) welcome_message: ::std::option::Option<::std::string::String>,
     pub(crate) sample_prompts_control_mode: ::std::option::Option<crate::types::WebExperienceSamplePromptsControlMode>,
+    pub(crate) origins: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
@@ -158,6 +171,32 @@ impl CreateWebExperienceInputBuilder {
     /// <p>Determines whether sample prompts are enabled in the web experience for an end user.</p>
     pub fn get_sample_prompts_control_mode(&self) -> &::std::option::Option<crate::types::WebExperienceSamplePromptsControlMode> {
         &self.sample_prompts_control_mode
+    }
+    /// Appends an item to `origins`.
+    ///
+    /// To override the contents of this collection use [`set_origins`](Self::set_origins).
+    ///
+    /// <p>Sets the website domain origins that are allowed to embed the Amazon Q Business web experience. The <i>domain origin</i> refers to the base URL for accessing a website including the protocol (<code>http/https</code>), the domain name, and the port number (if specified).</p><note>
+    /// <p>You must only submit a <i>base URL</i> and not a full path. For example, <code>https://docs.aws.amazon.com</code>.</p>
+    /// </note>
+    pub fn origins(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.origins.unwrap_or_default();
+        v.push(input.into());
+        self.origins = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Sets the website domain origins that are allowed to embed the Amazon Q Business web experience. The <i>domain origin</i> refers to the base URL for accessing a website including the protocol (<code>http/https</code>), the domain name, and the port number (if specified).</p><note>
+    /// <p>You must only submit a <i>base URL</i> and not a full path. For example, <code>https://docs.aws.amazon.com</code>.</p>
+    /// </note>
+    pub fn set_origins(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.origins = input;
+        self
+    }
+    /// <p>Sets the website domain origins that are allowed to embed the Amazon Q Business web experience. The <i>domain origin</i> refers to the base URL for accessing a website including the protocol (<code>http/https</code>), the domain name, and the port number (if specified).</p><note>
+    /// <p>You must only submit a <i>base URL</i> and not a full path. For example, <code>https://docs.aws.amazon.com</code>.</p>
+    /// </note>
+    pub fn get_origins(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.origins
     }
     /// <p>The Amazon Resource Name (ARN) of the service role attached to your web experience.</p><note>
     /// <p>You must provide this value if you're using IAM Identity Center to manage end user access to your application. If you're using legacy identity management to manage user access, you don't need to provide this value.</p>
@@ -238,6 +277,7 @@ impl CreateWebExperienceInputBuilder {
             subtitle: self.subtitle,
             welcome_message: self.welcome_message,
             sample_prompts_control_mode: self.sample_prompts_control_mode,
+            origins: self.origins,
             role_arn: self.role_arn,
             tags: self.tags,
             client_token: self.client_token,

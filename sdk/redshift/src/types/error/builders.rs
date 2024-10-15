@@ -125,6 +125,14 @@ pub use crate::types::error::_redshift_idc_application_not_exists_fault::Redshif
 
 pub use crate::types::error::_dependent_service_access_denied_fault::DependentServiceAccessDeniedFaultBuilder;
 
+pub use crate::types::error::_integration_not_found_fault::IntegrationNotFoundFaultBuilder;
+
+pub use crate::types::error::_integration_conflict_state_fault::IntegrationConflictStateFaultBuilder;
+
+pub use crate::types::error::_integration_conflict_operation_fault::IntegrationConflictOperationFaultBuilder;
+
+pub use crate::types::error::_integration_already_exists_fault::IntegrationAlreadyExistsFaultBuilder;
+
 pub use crate::types::error::_subscription_severity_not_found_fault::SubscriptionSeverityNotFoundFaultBuilder;
 
 pub use crate::types::error::_subscription_not_found_fault::SubscriptionNotFoundFaultBuilder;
@@ -191,8 +199,6 @@ pub use crate::types::error::_resize_not_found_fault::ResizeNotFoundFaultBuilder
 
 pub use crate::types::error::_reserved_node_exchange_not_found_fault::ReservedNodeExchangeNotFoundFaultBuilder;
 
-pub use crate::types::error::_integration_not_found_fault::IntegrationNotFoundFaultBuilder;
-
 pub use crate::types::error::_invalid_snapshot_copy_grant_state_fault::InvalidSnapshotCopyGrantStateFaultBuilder;
 
 pub use crate::types::error::_invalid_hsm_configuration_state_fault::InvalidHsmConfigurationStateFaultBuilder;
@@ -224,6 +230,12 @@ pub use crate::types::error::_scheduled_action_already_exists_fault::ScheduledAc
 pub use crate::types::error::_redshift_idc_application_quota_exceeded_fault::RedshiftIdcApplicationQuotaExceededFaultBuilder;
 
 pub use crate::types::error::_redshift_idc_application_already_exists_fault::RedshiftIdcApplicationAlreadyExistsFaultBuilder;
+
+pub use crate::types::error::_integration_target_not_found_fault::IntegrationTargetNotFoundFaultBuilder;
+
+pub use crate::types::error::_integration_source_not_found_fault::IntegrationSourceNotFoundFaultBuilder;
+
+pub use crate::types::error::_integration_quota_exceeded_fault::IntegrationQuotaExceededFaultBuilder;
 
 pub use crate::types::error::_hsm_configuration_quota_exceeded_fault::HsmConfigurationQuotaExceededFaultBuilder;
 

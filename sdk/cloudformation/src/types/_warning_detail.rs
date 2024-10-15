@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WarningDetail {
-    /// <p>The type of this warning. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/generate-IaC-write-only-properties.html">IaC generator and write-only properties</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// <p>The type of this warning. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/generate-IaC-write-only-properties.html">Resolve write-only properties</a> in the <i>CloudFormation User Guide</i>.</p>
     /// <ul>
     /// <li>
     /// <p><code>MUTUALLY_EXCLUSIVE_PROPERTIES</code> - The resource requires mutually-exclusive write-only properties. The IaC generator selects one set of mutually exclusive properties and converts the included properties into parameters. The parameter names have a suffix <code>OneOf</code> and the parameter descriptions indicate that the corresponding property can be replaced with other exclusive properties.</p></li>
@@ -20,7 +20,7 @@ pub struct WarningDetail {
     pub properties: ::std::option::Option<::std::vec::Vec<crate::types::WarningProperty>>,
 }
 impl WarningDetail {
-    /// <p>The type of this warning. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/generate-IaC-write-only-properties.html">IaC generator and write-only properties</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// <p>The type of this warning. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/generate-IaC-write-only-properties.html">Resolve write-only properties</a> in the <i>CloudFormation User Guide</i>.</p>
     /// <ul>
     /// <li>
     /// <p><code>MUTUALLY_EXCLUSIVE_PROPERTIES</code> - The resource requires mutually-exclusive write-only properties. The IaC generator selects one set of mutually exclusive properties and converts the included properties into parameters. The parameter names have a suffix <code>OneOf</code> and the parameter descriptions indicate that the corresponding property can be replaced with other exclusive properties.</p></li>
@@ -56,7 +56,7 @@ pub struct WarningDetailBuilder {
     pub(crate) properties: ::std::option::Option<::std::vec::Vec<crate::types::WarningProperty>>,
 }
 impl WarningDetailBuilder {
-    /// <p>The type of this warning. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/generate-IaC-write-only-properties.html">IaC generator and write-only properties</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// <p>The type of this warning. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/generate-IaC-write-only-properties.html">Resolve write-only properties</a> in the <i>CloudFormation User Guide</i>.</p>
     /// <ul>
     /// <li>
     /// <p><code>MUTUALLY_EXCLUSIVE_PROPERTIES</code> - The resource requires mutually-exclusive write-only properties. The IaC generator selects one set of mutually exclusive properties and converts the included properties into parameters. The parameter names have a suffix <code>OneOf</code> and the parameter descriptions indicate that the corresponding property can be replaced with other exclusive properties.</p></li>
@@ -71,7 +71,7 @@ impl WarningDetailBuilder {
         self.r#type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of this warning. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/generate-IaC-write-only-properties.html">IaC generator and write-only properties</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// <p>The type of this warning. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/generate-IaC-write-only-properties.html">Resolve write-only properties</a> in the <i>CloudFormation User Guide</i>.</p>
     /// <ul>
     /// <li>
     /// <p><code>MUTUALLY_EXCLUSIVE_PROPERTIES</code> - The resource requires mutually-exclusive write-only properties. The IaC generator selects one set of mutually exclusive properties and converts the included properties into parameters. The parameter names have a suffix <code>OneOf</code> and the parameter descriptions indicate that the corresponding property can be replaced with other exclusive properties.</p></li>
@@ -86,7 +86,7 @@ impl WarningDetailBuilder {
         self.r#type = input;
         self
     }
-    /// <p>The type of this warning. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/generate-IaC-write-only-properties.html">IaC generator and write-only properties</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// <p>The type of this warning. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/generate-IaC-write-only-properties.html">Resolve write-only properties</a> in the <i>CloudFormation User Guide</i>.</p>
     /// <ul>
     /// <li>
     /// <p><code>MUTUALLY_EXCLUSIVE_PROPERTIES</code> - The resource requires mutually-exclusive write-only properties. The IaC generator selects one set of mutually exclusive properties and converts the included properties into parameters. The parameter names have a suffix <code>OneOf</code> and the parameter descriptions indicate that the corresponding property can be replaced with other exclusive properties.</p></li>

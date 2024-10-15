@@ -13,7 +13,7 @@ pub struct ModifyClusterInput {
     pub cluster_type: ::std::option::Option<::std::string::String>,
     /// <p>The new node type of the cluster. If you specify a new node type, you must also specify the number of nodes parameter.</p>
     /// <p>For more information about resizing clusters, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/rs-resize-tutorial.html">Resizing Clusters in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
-    /// <p>Valid Values: <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.xlplus</code> | <code>ra3.4xlarge</code> | <code>ra3.16xlarge</code></p>
+    /// <p>Valid Values: <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.large</code> | <code>ra3.xlplus</code> | <code>ra3.4xlarge</code> | <code>ra3.16xlarge</code></p>
     pub node_type: ::std::option::Option<::std::string::String>,
     /// <p>The new number of nodes of the cluster. If you specify a new number of nodes, you must also specify the node type parameter.</p>
     /// <p>For more information about resizing clusters, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/rs-resize-tutorial.html">Resizing Clusters in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
@@ -152,7 +152,7 @@ impl ModifyClusterInput {
     }
     /// <p>The new node type of the cluster. If you specify a new node type, you must also specify the number of nodes parameter.</p>
     /// <p>For more information about resizing clusters, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/rs-resize-tutorial.html">Resizing Clusters in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
-    /// <p>Valid Values: <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.xlplus</code> | <code>ra3.4xlarge</code> | <code>ra3.16xlarge</code></p>
+    /// <p>Valid Values: <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.large</code> | <code>ra3.xlplus</code> | <code>ra3.4xlarge</code> | <code>ra3.16xlarge</code></p>
     pub fn node_type(&self) -> ::std::option::Option<&str> {
         self.node_type.as_deref()
     }
@@ -452,21 +452,21 @@ impl ModifyClusterInputBuilder {
     }
     /// <p>The new node type of the cluster. If you specify a new node type, you must also specify the number of nodes parameter.</p>
     /// <p>For more information about resizing clusters, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/rs-resize-tutorial.html">Resizing Clusters in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
-    /// <p>Valid Values: <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.xlplus</code> | <code>ra3.4xlarge</code> | <code>ra3.16xlarge</code></p>
+    /// <p>Valid Values: <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.large</code> | <code>ra3.xlplus</code> | <code>ra3.4xlarge</code> | <code>ra3.16xlarge</code></p>
     pub fn node_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.node_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The new node type of the cluster. If you specify a new node type, you must also specify the number of nodes parameter.</p>
     /// <p>For more information about resizing clusters, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/rs-resize-tutorial.html">Resizing Clusters in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
-    /// <p>Valid Values: <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.xlplus</code> | <code>ra3.4xlarge</code> | <code>ra3.16xlarge</code></p>
+    /// <p>Valid Values: <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.large</code> | <code>ra3.xlplus</code> | <code>ra3.4xlarge</code> | <code>ra3.16xlarge</code></p>
     pub fn set_node_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.node_type = input;
         self
     }
     /// <p>The new node type of the cluster. If you specify a new node type, you must also specify the number of nodes parameter.</p>
     /// <p>For more information about resizing clusters, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/rs-resize-tutorial.html">Resizing Clusters in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
-    /// <p>Valid Values: <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.xlplus</code> | <code>ra3.4xlarge</code> | <code>ra3.16xlarge</code></p>
+    /// <p>Valid Values: <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.large</code> | <code>ra3.xlplus</code> | <code>ra3.4xlarge</code> | <code>ra3.16xlarge</code></p>
     pub fn get_node_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.node_type
     }

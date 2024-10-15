@@ -29,11 +29,11 @@ impl crate::operation::test_type::builders::TestTypeInputBuilder {
 /// <li>
 /// <p>For modules, this includes determining if the module's model meets all necessary requirements.</p></li>
 /// </ul>
-/// <p>For more information, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/publish-extension.html#publish-extension-testing">Testing your public extension prior to publishing</a> in the <i>CloudFormation CLI User Guide</i>.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/publish-extension.html#publish-extension-testing">Testing your public extension before publishing</a> in the <i>CloudFormation Command Line Interface (CLI) User Guide</i>.</p>
 /// <p>If you don't specify a version, CloudFormation uses the default version of the extension in your account and Region for testing.</p>
 /// <p>To perform testing, CloudFormation assumes the execution role specified when the type was registered. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p>
 /// <p>Once you've initiated testing on an extension using <code>TestType</code>, you can pass the returned <code>TypeVersionArn</code> into <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeType.html">DescribeType</a> to monitor the current test status and test status description for the extension.</p>
-/// <p>An extension must have a test status of <code>PASSED</code> before it can be published. For more information, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-publish.html">Publishing extensions to make them available for public use</a> in the <i>CloudFormation CLI User Guide</i>.</p>
+/// <p>An extension must have a test status of <code>PASSED</code> before it can be published. For more information, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-publish.html">Publishing extensions to make them available for public use</a> in the <i>CloudFormation Command Line Interface (CLI) User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct TestTypeFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -190,7 +190,7 @@ impl TestTypeFluentBuilder {
     /// <li>
     /// <p><code>PutObject</code></p></li>
     /// </ul>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3.html">Actions, Resources, and Condition Keys for Amazon S3</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3.html">Actions, Resources, and Condition Keys for Amazon S3</a> in the <i>Identity and Access Management User Guide</i>.</p>
     pub fn log_delivery_bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.log_delivery_bucket(input.into());
         self
@@ -204,7 +204,7 @@ impl TestTypeFluentBuilder {
     /// <li>
     /// <p><code>PutObject</code></p></li>
     /// </ul>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3.html">Actions, Resources, and Condition Keys for Amazon S3</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3.html">Actions, Resources, and Condition Keys for Amazon S3</a> in the <i>Identity and Access Management User Guide</i>.</p>
     pub fn set_log_delivery_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_log_delivery_bucket(input);
         self
@@ -218,7 +218,7 @@ impl TestTypeFluentBuilder {
     /// <li>
     /// <p><code>PutObject</code></p></li>
     /// </ul>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3.html">Actions, Resources, and Condition Keys for Amazon S3</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3.html">Actions, Resources, and Condition Keys for Amazon S3</a> in the <i>Identity and Access Management User Guide</i>.</p>
     pub fn get_log_delivery_bucket(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_log_delivery_bucket()
     }

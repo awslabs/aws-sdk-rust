@@ -10,6 +10,16 @@ pub struct StreamEvent {
     pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>Time when the event occurred. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.</p>
     pub event_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>Provides additional details about the stream event. There are several values; note that the long descriptions are provided in the IVS console but not delivered through the IVS API or EventBridge:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>StreamTakeoverMediaMismatch</code> — The broadcast client attempted to take over with different media properties (e.g., codec, resolution, or video track type) from the original stream.</p></li>
+    /// <li>
+    /// <p><code>StreamTakeoverInvalidPriority</code> — The broadcast client attempted a takeover with either a priority integer value equal to or lower than the original stream's value or a value outside the allowed range of 1 to 2,147,483,647.</p></li>
+    /// <li>
+    /// <p><code>StreamTakeoverLimitBreached</code> — The broadcast client reached the maximum allowed takeover attempts for this stream.</p></li>
+    /// </ul>
+    pub code: ::std::option::Option<::std::string::String>,
 }
 impl StreamEvent {
     /// <p>Name that identifies the stream event within a <code>type</code>.</p>
@@ -23,6 +33,18 @@ impl StreamEvent {
     /// <p>Time when the event occurred. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.</p>
     pub fn event_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.event_time.as_ref()
+    }
+    /// <p>Provides additional details about the stream event. There are several values; note that the long descriptions are provided in the IVS console but not delivered through the IVS API or EventBridge:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>StreamTakeoverMediaMismatch</code> — The broadcast client attempted to take over with different media properties (e.g., codec, resolution, or video track type) from the original stream.</p></li>
+    /// <li>
+    /// <p><code>StreamTakeoverInvalidPriority</code> — The broadcast client attempted a takeover with either a priority integer value equal to or lower than the original stream's value or a value outside the allowed range of 1 to 2,147,483,647.</p></li>
+    /// <li>
+    /// <p><code>StreamTakeoverLimitBreached</code> — The broadcast client reached the maximum allowed takeover attempts for this stream.</p></li>
+    /// </ul>
+    pub fn code(&self) -> ::std::option::Option<&str> {
+        self.code.as_deref()
     }
 }
 impl StreamEvent {
@@ -39,6 +61,7 @@ pub struct StreamEventBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<::std::string::String>,
     pub(crate) event_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) code: ::std::option::Option<::std::string::String>,
 }
 impl StreamEventBuilder {
     /// <p>Name that identifies the stream event within a <code>type</code>.</p>
@@ -83,12 +106,51 @@ impl StreamEventBuilder {
     pub fn get_event_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.event_time
     }
+    /// <p>Provides additional details about the stream event. There are several values; note that the long descriptions are provided in the IVS console but not delivered through the IVS API or EventBridge:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>StreamTakeoverMediaMismatch</code> — The broadcast client attempted to take over with different media properties (e.g., codec, resolution, or video track type) from the original stream.</p></li>
+    /// <li>
+    /// <p><code>StreamTakeoverInvalidPriority</code> — The broadcast client attempted a takeover with either a priority integer value equal to or lower than the original stream's value or a value outside the allowed range of 1 to 2,147,483,647.</p></li>
+    /// <li>
+    /// <p><code>StreamTakeoverLimitBreached</code> — The broadcast client reached the maximum allowed takeover attempts for this stream.</p></li>
+    /// </ul>
+    pub fn code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.code = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Provides additional details about the stream event. There are several values; note that the long descriptions are provided in the IVS console but not delivered through the IVS API or EventBridge:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>StreamTakeoverMediaMismatch</code> — The broadcast client attempted to take over with different media properties (e.g., codec, resolution, or video track type) from the original stream.</p></li>
+    /// <li>
+    /// <p><code>StreamTakeoverInvalidPriority</code> — The broadcast client attempted a takeover with either a priority integer value equal to or lower than the original stream's value or a value outside the allowed range of 1 to 2,147,483,647.</p></li>
+    /// <li>
+    /// <p><code>StreamTakeoverLimitBreached</code> — The broadcast client reached the maximum allowed takeover attempts for this stream.</p></li>
+    /// </ul>
+    pub fn set_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.code = input;
+        self
+    }
+    /// <p>Provides additional details about the stream event. There are several values; note that the long descriptions are provided in the IVS console but not delivered through the IVS API or EventBridge:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>StreamTakeoverMediaMismatch</code> — The broadcast client attempted to take over with different media properties (e.g., codec, resolution, or video track type) from the original stream.</p></li>
+    /// <li>
+    /// <p><code>StreamTakeoverInvalidPriority</code> — The broadcast client attempted a takeover with either a priority integer value equal to or lower than the original stream's value or a value outside the allowed range of 1 to 2,147,483,647.</p></li>
+    /// <li>
+    /// <p><code>StreamTakeoverLimitBreached</code> — The broadcast client reached the maximum allowed takeover attempts for this stream.</p></li>
+    /// </ul>
+    pub fn get_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.code
+    }
     /// Consumes the builder and constructs a [`StreamEvent`](crate::types::StreamEvent).
     pub fn build(self) -> crate::types::StreamEvent {
         crate::types::StreamEvent {
             name: self.name,
             r#type: self.r#type,
             event_time: self.event_time,
+            code: self.code,
         }
     }
 }

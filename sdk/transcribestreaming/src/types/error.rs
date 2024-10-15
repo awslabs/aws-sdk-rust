@@ -13,7 +13,7 @@ pub use crate::types::error::_service_unavailable_exception::ServiceUnavailableE
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum TranscriptResultStreamError {
-    /// <p>One or more arguments to the <code>StartStreamTranscription</code>, <code>StartMedicalStreamTranscription</code>, or <code>StartCallAnalyticsStreamTranscription</code> operation was not valid. For example, <code>MediaEncoding</code> or <code>LanguageCode</code> used not valid values. Check the specified parameters and try your request again.</p>
+    /// <p>One or more arguments to the <code>StartStreamTranscription</code>, <code>StartMedicalStreamTranscription</code>, or <code>StartCallAnalyticsStreamTranscription</code> operation was not valid. For example, <code>MediaEncoding</code> or <code>LanguageCode</code> used unsupported values. Check the specified parameters and try your request again.</p>
     BadRequestException(crate::types::error::BadRequestException),
     /// <p>Your client has exceeded one of the Amazon Transcribe limits. This is typically the audio length limit. Break your audio stream into smaller chunks and try your request again.</p>
     LimitExceededException(crate::types::error::LimitExceededException),
@@ -249,7 +249,7 @@ impl ::aws_types::request_id::RequestId for crate::types::error::AudioStreamErro
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum MedicalTranscriptResultStreamError {
-    /// <p>One or more arguments to the <code>StartStreamTranscription</code>, <code>StartMedicalStreamTranscription</code>, or <code>StartCallAnalyticsStreamTranscription</code> operation was not valid. For example, <code>MediaEncoding</code> or <code>LanguageCode</code> used not valid values. Check the specified parameters and try your request again.</p>
+    /// <p>One or more arguments to the <code>StartStreamTranscription</code>, <code>StartMedicalStreamTranscription</code>, or <code>StartCallAnalyticsStreamTranscription</code> operation was not valid. For example, <code>MediaEncoding</code> or <code>LanguageCode</code> used unsupported values. Check the specified parameters and try your request again.</p>
     BadRequestException(crate::types::error::BadRequestException),
     /// <p>Your client has exceeded one of the Amazon Transcribe limits. This is typically the audio length limit. Break your audio stream into smaller chunks and try your request again.</p>
     LimitExceededException(crate::types::error::LimitExceededException),
@@ -392,7 +392,7 @@ impl ::aws_types::request_id::RequestId for crate::types::error::MedicalTranscri
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum CallAnalyticsTranscriptResultStreamError {
-    /// <p>One or more arguments to the <code>StartStreamTranscription</code>, <code>StartMedicalStreamTranscription</code>, or <code>StartCallAnalyticsStreamTranscription</code> operation was not valid. For example, <code>MediaEncoding</code> or <code>LanguageCode</code> used not valid values. Check the specified parameters and try your request again.</p>
+    /// <p>One or more arguments to the <code>StartStreamTranscription</code>, <code>StartMedicalStreamTranscription</code>, or <code>StartCallAnalyticsStreamTranscription</code> operation was not valid. For example, <code>MediaEncoding</code> or <code>LanguageCode</code> used unsupported values. Check the specified parameters and try your request again.</p>
     BadRequestException(crate::types::error::BadRequestException),
     /// <p>Your client has exceeded one of the Amazon Transcribe limits. This is typically the audio length limit. Break your audio stream into smaller chunks and try your request again.</p>
     LimitExceededException(crate::types::error::LimitExceededException),

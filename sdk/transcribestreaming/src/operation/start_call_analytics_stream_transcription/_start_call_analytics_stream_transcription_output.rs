@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub struct StartCallAnalyticsStreamTranscriptionOutput {
-    /// <p>Provides the identifier for your Call Analytics streaming request.</p>
+    /// <p>Provides the identifier for your real-time Call Analytics request.</p>
     pub request_id: ::std::option::Option<::std::string::String>,
     /// <p>Provides the language code that you specified in your Call Analytics request.</p>
     pub language_code: ::std::option::Option<crate::types::CallAnalyticsLanguageCode>,
@@ -15,7 +15,7 @@ pub struct StartCallAnalyticsStreamTranscriptionOutput {
     pub vocabulary_name: ::std::option::Option<::std::string::String>,
     /// <p>Provides the identifier for your Call Analytics transcription session.</p>
     pub session_id: ::std::option::Option<::std::string::String>,
-    /// <p>Provides detailed information about your Call Analytics streaming session.</p>
+    /// <p>Provides detailed information about your real-time Call Analytics session.</p>
     pub call_analytics_transcript_result_stream: crate::event_receiver::EventReceiver<
         crate::types::CallAnalyticsTranscriptResultStream,
         crate::types::error::CallAnalyticsTranscriptResultStreamError,
@@ -39,7 +39,7 @@ pub struct StartCallAnalyticsStreamTranscriptionOutput {
     _request_id: Option<String>,
 }
 impl StartCallAnalyticsStreamTranscriptionOutput {
-    /// <p>Provides the identifier for your Call Analytics streaming request.</p>
+    /// <p>Provides the identifier for your real-time Call Analytics request.</p>
     pub fn request_id(&self) -> ::std::option::Option<&str> {
         self.request_id.as_deref()
     }
@@ -63,7 +63,7 @@ impl StartCallAnalyticsStreamTranscriptionOutput {
     pub fn session_id(&self) -> ::std::option::Option<&str> {
         self.session_id.as_deref()
     }
-    /// <p>Provides detailed information about your Call Analytics streaming session.</p>
+    /// <p>Provides detailed information about your real-time Call Analytics session.</p>
     pub fn call_analytics_transcript_result_stream(
         &self,
     ) -> &crate::event_receiver::EventReceiver<
@@ -144,17 +144,17 @@ pub struct StartCallAnalyticsStreamTranscriptionOutputBuilder {
     _request_id: Option<String>,
 }
 impl StartCallAnalyticsStreamTranscriptionOutputBuilder {
-    /// <p>Provides the identifier for your Call Analytics streaming request.</p>
+    /// <p>Provides the identifier for your real-time Call Analytics request.</p>
     pub fn request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.request_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Provides the identifier for your Call Analytics streaming request.</p>
+    /// <p>Provides the identifier for your real-time Call Analytics request.</p>
     pub fn set_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.request_id = input;
         self
     }
-    /// <p>Provides the identifier for your Call Analytics streaming request.</p>
+    /// <p>Provides the identifier for your real-time Call Analytics request.</p>
     pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.request_id
     }
@@ -228,7 +228,7 @@ impl StartCallAnalyticsStreamTranscriptionOutputBuilder {
     pub fn get_session_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.session_id
     }
-    /// <p>Provides detailed information about your Call Analytics streaming session.</p>
+    /// <p>Provides detailed information about your real-time Call Analytics session.</p>
     pub fn call_analytics_transcript_result_stream(
         mut self,
         input: crate::event_receiver::EventReceiver<
@@ -239,7 +239,7 @@ impl StartCallAnalyticsStreamTranscriptionOutputBuilder {
         self.call_analytics_transcript_result_stream = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Provides detailed information about your Call Analytics streaming session.</p>
+    /// <p>Provides detailed information about your real-time Call Analytics session.</p>
     pub fn set_call_analytics_transcript_result_stream(
         mut self,
         input: ::std::option::Option<
@@ -252,7 +252,7 @@ impl StartCallAnalyticsStreamTranscriptionOutputBuilder {
         self.call_analytics_transcript_result_stream = input;
         self
     }
-    /// <p>Provides detailed information about your Call Analytics streaming session.</p>
+    /// <p>Provides detailed information about your real-time Call Analytics session.</p>
     pub fn get_call_analytics_transcript_result_stream(
         &self,
     ) -> &::std::option::Option<

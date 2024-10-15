@@ -17,6 +17,8 @@ pub struct ListAppsInput {
     pub to_last_assessment_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The application list is sorted based on the values of <code>lastAppComplianceEvaluationTime</code> field. By default, application list is sorted in ascending order. To sort the application list in descending order, set this field to <code>True</code>.</p>
     pub reverse_order: ::std::option::Option<bool>,
+    /// <p>Amazon Resource Name (ARN) of Resource Groups group that is integrated with an AppRegistry application. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
+    pub aws_application_arn: ::std::option::Option<::std::string::String>,
 }
 impl ListAppsInput {
     /// <p>Null, or the token from a previous call to get the next set of results.</p>
@@ -47,6 +49,10 @@ impl ListAppsInput {
     pub fn reverse_order(&self) -> ::std::option::Option<bool> {
         self.reverse_order
     }
+    /// <p>Amazon Resource Name (ARN) of Resource Groups group that is integrated with an AppRegistry application. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
+    pub fn aws_application_arn(&self) -> ::std::option::Option<&str> {
+        self.aws_application_arn.as_deref()
+    }
 }
 impl ListAppsInput {
     /// Creates a new builder-style object to manufacture [`ListAppsInput`](crate::operation::list_apps::ListAppsInput).
@@ -66,6 +72,7 @@ pub struct ListAppsInputBuilder {
     pub(crate) from_last_assessment_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) to_last_assessment_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) reverse_order: ::std::option::Option<bool>,
+    pub(crate) aws_application_arn: ::std::option::Option<::std::string::String>,
 }
 impl ListAppsInputBuilder {
     /// <p>Null, or the token from a previous call to get the next set of results.</p>
@@ -166,6 +173,20 @@ impl ListAppsInputBuilder {
     pub fn get_reverse_order(&self) -> &::std::option::Option<bool> {
         &self.reverse_order
     }
+    /// <p>Amazon Resource Name (ARN) of Resource Groups group that is integrated with an AppRegistry application. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
+    pub fn aws_application_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.aws_application_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Amazon Resource Name (ARN) of Resource Groups group that is integrated with an AppRegistry application. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
+    pub fn set_aws_application_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.aws_application_arn = input;
+        self
+    }
+    /// <p>Amazon Resource Name (ARN) of Resource Groups group that is integrated with an AppRegistry application. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
+    pub fn get_aws_application_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aws_application_arn
+    }
     /// Consumes the builder and constructs a [`ListAppsInput`](crate::operation::list_apps::ListAppsInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::list_apps::ListAppsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_apps::ListAppsInput {
@@ -176,6 +197,7 @@ impl ListAppsInputBuilder {
             from_last_assessment_time: self.from_last_assessment_time,
             to_last_assessment_time: self.to_last_assessment_time,
             reverse_order: self.reverse_order,
+            aws_application_arn: self.aws_application_arn,
         })
     }
 }

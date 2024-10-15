@@ -125,6 +125,14 @@ pub use crate::types::error::_redshift_idc_application_not_exists_fault::Redshif
 
 pub use crate::types::error::_dependent_service_access_denied_fault::DependentServiceAccessDeniedFault;
 
+pub use crate::types::error::_integration_not_found_fault::IntegrationNotFoundFault;
+
+pub use crate::types::error::_integration_conflict_state_fault::IntegrationConflictStateFault;
+
+pub use crate::types::error::_integration_conflict_operation_fault::IntegrationConflictOperationFault;
+
+pub use crate::types::error::_integration_already_exists_fault::IntegrationAlreadyExistsFault;
+
 pub use crate::types::error::_subscription_severity_not_found_fault::SubscriptionSeverityNotFoundFault;
 
 pub use crate::types::error::_subscription_not_found_fault::SubscriptionNotFoundFault;
@@ -191,8 +199,6 @@ pub use crate::types::error::_resize_not_found_fault::ResizeNotFoundFault;
 
 pub use crate::types::error::_reserved_node_exchange_not_found_fault::ReservedNodeExchangeNotFoundFault;
 
-pub use crate::types::error::_integration_not_found_fault::IntegrationNotFoundFault;
-
 pub use crate::types::error::_invalid_snapshot_copy_grant_state_fault::InvalidSnapshotCopyGrantStateFault;
 
 pub use crate::types::error::_invalid_hsm_configuration_state_fault::InvalidHsmConfigurationStateFault;
@@ -224,6 +230,12 @@ pub use crate::types::error::_scheduled_action_already_exists_fault::ScheduledAc
 pub use crate::types::error::_redshift_idc_application_quota_exceeded_fault::RedshiftIdcApplicationQuotaExceededFault;
 
 pub use crate::types::error::_redshift_idc_application_already_exists_fault::RedshiftIdcApplicationAlreadyExistsFault;
+
+pub use crate::types::error::_integration_target_not_found_fault::IntegrationTargetNotFoundFault;
+
+pub use crate::types::error::_integration_source_not_found_fault::IntegrationSourceNotFoundFault;
+
+pub use crate::types::error::_integration_quota_exceeded_fault::IntegrationQuotaExceededFault;
 
 pub use crate::types::error::_hsm_configuration_quota_exceeded_fault::HsmConfigurationQuotaExceededFault;
 
@@ -377,7 +389,19 @@ mod _insufficient_cluster_capacity_fault;
 
 mod _insufficient_s3_bucket_policy_fault;
 
+mod _integration_already_exists_fault;
+
+mod _integration_conflict_operation_fault;
+
+mod _integration_conflict_state_fault;
+
 mod _integration_not_found_fault;
+
+mod _integration_quota_exceeded_fault;
+
+mod _integration_source_not_found_fault;
+
+mod _integration_target_not_found_fault;
 
 mod _invalid_authentication_profile_request_fault;
 

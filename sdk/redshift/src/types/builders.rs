@@ -81,6 +81,8 @@ pub use crate::types::_lake_formation_query::LakeFormationQueryBuilder;
 
 pub use crate::types::_authorized_token_issuer::AuthorizedTokenIssuerBuilder;
 
+pub use crate::types::_integration_error::IntegrationErrorBuilder;
+
 pub use crate::types::_event_subscription::EventSubscriptionBuilder;
 
 pub use crate::types::_cluster_subnet_group::ClusterSubnetGroupBuilder;
@@ -121,9 +123,11 @@ pub use crate::types::_node_configuration_option::NodeConfigurationOptionBuilder
 
 pub use crate::types::_node_configuration_options_filter::NodeConfigurationOptionsFilterBuilder;
 
-pub use crate::types::_inbound_integration::InboundIntegrationBuilder;
+pub use crate::types::_integration::IntegrationBuilder;
 
-pub use crate::types::_integration_error::IntegrationErrorBuilder;
+pub use crate::types::_describe_integrations_filter::DescribeIntegrationsFilterBuilder;
+
+pub use crate::types::_inbound_integration::InboundIntegrationBuilder;
 
 pub use crate::types::_hsm_configuration::HsmConfigurationBuilder;
 

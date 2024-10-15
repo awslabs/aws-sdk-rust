@@ -22,6 +22,15 @@ pub struct UpdateWebExperienceInput {
     pub sample_prompts_control_mode: ::std::option::Option<crate::types::WebExperienceSamplePromptsControlMode>,
     /// <p>Information about the identity provider (IdP) used to authenticate end users of an Amazon Q Business web experience.</p>
     pub identity_provider_configuration: ::std::option::Option<crate::types::IdentityProviderConfiguration>,
+    /// <p>Updates the website domain origins that are allowed to embed the Amazon Q Business web experience. The <i>domain origin</i> refers to the <i>base URL</i> for accessing a website including the protocol (<code>http/https</code>), the domain name, and the port number (if specified).</p><note>
+    /// <ul>
+    /// <li>
+    /// <p>Any values except <code>null</code> submitted as part of this update will replace all previous values.</p></li>
+    /// <li>
+    /// <p>You must only submit a <i>base URL</i> and not a full path. For example, <code>https://docs.aws.amazon.com</code>.</p></li>
+    /// </ul>
+    /// </note>
+    pub origins: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl UpdateWebExperienceInput {
     /// <p>The identifier of the Amazon Q Business application attached to the web experience.</p>
@@ -61,6 +70,19 @@ impl UpdateWebExperienceInput {
     pub fn identity_provider_configuration(&self) -> ::std::option::Option<&crate::types::IdentityProviderConfiguration> {
         self.identity_provider_configuration.as_ref()
     }
+    /// <p>Updates the website domain origins that are allowed to embed the Amazon Q Business web experience. The <i>domain origin</i> refers to the <i>base URL</i> for accessing a website including the protocol (<code>http/https</code>), the domain name, and the port number (if specified).</p><note>
+    /// <ul>
+    /// <li>
+    /// <p>Any values except <code>null</code> submitted as part of this update will replace all previous values.</p></li>
+    /// <li>
+    /// <p>You must only submit a <i>base URL</i> and not a full path. For example, <code>https://docs.aws.amazon.com</code>.</p></li>
+    /// </ul>
+    /// </note>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.origins.is_none()`.
+    pub fn origins(&self) -> &[::std::string::String] {
+        self.origins.as_deref().unwrap_or_default()
+    }
 }
 impl UpdateWebExperienceInput {
     /// Creates a new builder-style object to manufacture [`UpdateWebExperienceInput`](crate::operation::update_web_experience::UpdateWebExperienceInput).
@@ -82,6 +104,7 @@ pub struct UpdateWebExperienceInputBuilder {
     pub(crate) welcome_message: ::std::option::Option<::std::string::String>,
     pub(crate) sample_prompts_control_mode: ::std::option::Option<crate::types::WebExperienceSamplePromptsControlMode>,
     pub(crate) identity_provider_configuration: ::std::option::Option<crate::types::IdentityProviderConfiguration>,
+    pub(crate) origins: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl UpdateWebExperienceInputBuilder {
     /// <p>The identifier of the Amazon Q Business application attached to the web experience.</p>
@@ -215,6 +238,47 @@ impl UpdateWebExperienceInputBuilder {
     pub fn get_identity_provider_configuration(&self) -> &::std::option::Option<crate::types::IdentityProviderConfiguration> {
         &self.identity_provider_configuration
     }
+    /// Appends an item to `origins`.
+    ///
+    /// To override the contents of this collection use [`set_origins`](Self::set_origins).
+    ///
+    /// <p>Updates the website domain origins that are allowed to embed the Amazon Q Business web experience. The <i>domain origin</i> refers to the <i>base URL</i> for accessing a website including the protocol (<code>http/https</code>), the domain name, and the port number (if specified).</p><note>
+    /// <ul>
+    /// <li>
+    /// <p>Any values except <code>null</code> submitted as part of this update will replace all previous values.</p></li>
+    /// <li>
+    /// <p>You must only submit a <i>base URL</i> and not a full path. For example, <code>https://docs.aws.amazon.com</code>.</p></li>
+    /// </ul>
+    /// </note>
+    pub fn origins(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.origins.unwrap_or_default();
+        v.push(input.into());
+        self.origins = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Updates the website domain origins that are allowed to embed the Amazon Q Business web experience. The <i>domain origin</i> refers to the <i>base URL</i> for accessing a website including the protocol (<code>http/https</code>), the domain name, and the port number (if specified).</p><note>
+    /// <ul>
+    /// <li>
+    /// <p>Any values except <code>null</code> submitted as part of this update will replace all previous values.</p></li>
+    /// <li>
+    /// <p>You must only submit a <i>base URL</i> and not a full path. For example, <code>https://docs.aws.amazon.com</code>.</p></li>
+    /// </ul>
+    /// </note>
+    pub fn set_origins(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.origins = input;
+        self
+    }
+    /// <p>Updates the website domain origins that are allowed to embed the Amazon Q Business web experience. The <i>domain origin</i> refers to the <i>base URL</i> for accessing a website including the protocol (<code>http/https</code>), the domain name, and the port number (if specified).</p><note>
+    /// <ul>
+    /// <li>
+    /// <p>Any values except <code>null</code> submitted as part of this update will replace all previous values.</p></li>
+    /// <li>
+    /// <p>You must only submit a <i>base URL</i> and not a full path. For example, <code>https://docs.aws.amazon.com</code>.</p></li>
+    /// </ul>
+    /// </note>
+    pub fn get_origins(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.origins
+    }
     /// Consumes the builder and constructs a [`UpdateWebExperienceInput`](crate::operation::update_web_experience::UpdateWebExperienceInput).
     pub fn build(
         self,
@@ -230,6 +294,7 @@ impl UpdateWebExperienceInputBuilder {
             welcome_message: self.welcome_message,
             sample_prompts_control_mode: self.sample_prompts_control_mode,
             identity_provider_configuration: self.identity_provider_configuration,
+            origins: self.origins,
         })
     }
 }

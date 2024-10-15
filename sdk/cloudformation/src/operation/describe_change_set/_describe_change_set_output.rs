@@ -24,7 +24,7 @@ pub struct DescribeChangeSetOutput {
     pub status: ::std::option::Option<crate::types::ChangeSetStatus>,
     /// <p>A description of the change set's status. For example, if your attempt to create a change set failed, CloudFormation shows the error message.</p>
     pub status_reason: ::std::option::Option<::std::string::String>,
-    /// <p>The ARNs of the Amazon Simple Notification Service (Amazon SNS) topics that will be associated with the stack if you execute the change set.</p>
+    /// <p>The ARNs of the Amazon SNS topics that will be associated with the stack if you execute the change set.</p>
     pub notification_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The rollback triggers for CloudFormation to monitor during stack creation and updating operations, and for the specified monitoring period afterwards.</p>
     pub rollback_configuration: ::std::option::Option<crate::types::RollbackConfiguration>,
@@ -101,7 +101,7 @@ impl DescribeChangeSetOutput {
     pub fn status_reason(&self) -> ::std::option::Option<&str> {
         self.status_reason.as_deref()
     }
-    /// <p>The ARNs of the Amazon Simple Notification Service (Amazon SNS) topics that will be associated with the stack if you execute the change set.</p>
+    /// <p>The ARNs of the Amazon SNS topics that will be associated with the stack if you execute the change set.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.notification_arns.is_none()`.
     pub fn notification_arns(&self) -> &[::std::string::String] {
@@ -354,19 +354,19 @@ impl DescribeChangeSetOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_notification_arns`](Self::set_notification_arns).
     ///
-    /// <p>The ARNs of the Amazon Simple Notification Service (Amazon SNS) topics that will be associated with the stack if you execute the change set.</p>
+    /// <p>The ARNs of the Amazon SNS topics that will be associated with the stack if you execute the change set.</p>
     pub fn notification_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.notification_arns.unwrap_or_default();
         v.push(input.into());
         self.notification_arns = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The ARNs of the Amazon Simple Notification Service (Amazon SNS) topics that will be associated with the stack if you execute the change set.</p>
+    /// <p>The ARNs of the Amazon SNS topics that will be associated with the stack if you execute the change set.</p>
     pub fn set_notification_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.notification_arns = input;
         self
     }
-    /// <p>The ARNs of the Amazon Simple Notification Service (Amazon SNS) topics that will be associated with the stack if you execute the change set.</p>
+    /// <p>The ARNs of the Amazon SNS topics that will be associated with the stack if you execute the change set.</p>
     pub fn get_notification_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.notification_arns
     }

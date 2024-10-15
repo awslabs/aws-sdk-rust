@@ -16,7 +16,7 @@ pub struct DeleteStackInstancesInput {
     /// <p>Preferences for how CloudFormation performs this stack set operation.</p>
     pub operation_preferences: ::std::option::Option<crate::types::StackSetOperationPreferences>,
     /// <p>Removes the stack instances from the specified stack set, but doesn't delete the stacks. You can't reassociate a retained stack or add an existing, saved stack to a new stack set.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options">Stack set operation options</a>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/what-is-cfnstacksets.html#stackset-ops-options">Stack set operation options</a>.</p>
     pub retain_stacks: ::std::option::Option<bool>,
     /// <p>The unique identifier for this stack set operation.</p>
     /// <p>If you don't specify an operation ID, the SDK generates one automatically.</p>
@@ -62,7 +62,7 @@ impl DeleteStackInstancesInput {
         self.operation_preferences.as_ref()
     }
     /// <p>Removes the stack instances from the specified stack set, but doesn't delete the stacks. You can't reassociate a retained stack or add an existing, saved stack to a new stack set.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options">Stack set operation options</a>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/what-is-cfnstacksets.html#stackset-ops-options">Stack set operation options</a>.</p>
     pub fn retain_stacks(&self) -> ::std::option::Option<bool> {
         self.retain_stacks
     }
@@ -197,20 +197,20 @@ impl DeleteStackInstancesInputBuilder {
         &self.operation_preferences
     }
     /// <p>Removes the stack instances from the specified stack set, but doesn't delete the stacks. You can't reassociate a retained stack or add an existing, saved stack to a new stack set.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options">Stack set operation options</a>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/what-is-cfnstacksets.html#stackset-ops-options">Stack set operation options</a>.</p>
     /// This field is required.
     pub fn retain_stacks(mut self, input: bool) -> Self {
         self.retain_stacks = ::std::option::Option::Some(input);
         self
     }
     /// <p>Removes the stack instances from the specified stack set, but doesn't delete the stacks. You can't reassociate a retained stack or add an existing, saved stack to a new stack set.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options">Stack set operation options</a>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/what-is-cfnstacksets.html#stackset-ops-options">Stack set operation options</a>.</p>
     pub fn set_retain_stacks(mut self, input: ::std::option::Option<bool>) -> Self {
         self.retain_stacks = input;
         self
     }
     /// <p>Removes the stack instances from the specified stack set, but doesn't delete the stacks. You can't reassociate a retained stack or add an existing, saved stack to a new stack set.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options">Stack set operation options</a>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/what-is-cfnstacksets.html#stackset-ops-options">Stack set operation options</a>.</p>
     pub fn get_retain_stacks(&self) -> &::std::option::Option<bool> {
         &self.retain_stacks
     }

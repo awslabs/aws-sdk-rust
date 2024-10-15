@@ -6,7 +6,8 @@
 pub struct ConfigurationEvent {
     /// <p>Indicates which speaker is on which audio channel.</p>
     pub channel_definitions: ::std::option::Option<::std::vec::Vec<crate::types::ChannelDefinition>>,
-    /// <p>Provides additional optional settings for your Call Analytics post-call request, including encryption and output locations for your redacted and unredacted transcript.</p>
+    /// <p>Provides additional optional settings for your Call Analytics post-call request, including encryption and output locations for your redacted transcript.</p>
+    /// <p><code>PostCallAnalyticsSettings</code> provides you with the same insights as a Call Analytics post-call transcription. Refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/tca-post-call.html">Post-call analytics</a> for more information on this feature.</p>
     pub post_call_analytics_settings: ::std::option::Option<crate::types::PostCallAnalyticsSettings>,
 }
 impl ConfigurationEvent {
@@ -16,7 +17,8 @@ impl ConfigurationEvent {
     pub fn channel_definitions(&self) -> &[crate::types::ChannelDefinition] {
         self.channel_definitions.as_deref().unwrap_or_default()
     }
-    /// <p>Provides additional optional settings for your Call Analytics post-call request, including encryption and output locations for your redacted and unredacted transcript.</p>
+    /// <p>Provides additional optional settings for your Call Analytics post-call request, including encryption and output locations for your redacted transcript.</p>
+    /// <p><code>PostCallAnalyticsSettings</code> provides you with the same insights as a Call Analytics post-call transcription. Refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/tca-post-call.html">Post-call analytics</a> for more information on this feature.</p>
     pub fn post_call_analytics_settings(&self) -> ::std::option::Option<&crate::types::PostCallAnalyticsSettings> {
         self.post_call_analytics_settings.as_ref()
     }
@@ -56,17 +58,20 @@ impl ConfigurationEventBuilder {
     pub fn get_channel_definitions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ChannelDefinition>> {
         &self.channel_definitions
     }
-    /// <p>Provides additional optional settings for your Call Analytics post-call request, including encryption and output locations for your redacted and unredacted transcript.</p>
+    /// <p>Provides additional optional settings for your Call Analytics post-call request, including encryption and output locations for your redacted transcript.</p>
+    /// <p><code>PostCallAnalyticsSettings</code> provides you with the same insights as a Call Analytics post-call transcription. Refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/tca-post-call.html">Post-call analytics</a> for more information on this feature.</p>
     pub fn post_call_analytics_settings(mut self, input: crate::types::PostCallAnalyticsSettings) -> Self {
         self.post_call_analytics_settings = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Provides additional optional settings for your Call Analytics post-call request, including encryption and output locations for your redacted and unredacted transcript.</p>
+    /// <p>Provides additional optional settings for your Call Analytics post-call request, including encryption and output locations for your redacted transcript.</p>
+    /// <p><code>PostCallAnalyticsSettings</code> provides you with the same insights as a Call Analytics post-call transcription. Refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/tca-post-call.html">Post-call analytics</a> for more information on this feature.</p>
     pub fn set_post_call_analytics_settings(mut self, input: ::std::option::Option<crate::types::PostCallAnalyticsSettings>) -> Self {
         self.post_call_analytics_settings = input;
         self
     }
-    /// <p>Provides additional optional settings for your Call Analytics post-call request, including encryption and output locations for your redacted and unredacted transcript.</p>
+    /// <p>Provides additional optional settings for your Call Analytics post-call request, including encryption and output locations for your redacted transcript.</p>
+    /// <p><code>PostCallAnalyticsSettings</code> provides you with the same insights as a Call Analytics post-call transcription. Refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/tca-post-call.html">Post-call analytics</a> for more information on this feature.</p>
     pub fn get_post_call_analytics_settings(&self) -> &::std::option::Option<crate::types::PostCallAnalyticsSettings> {
         &self.post_call_analytics_settings
     }

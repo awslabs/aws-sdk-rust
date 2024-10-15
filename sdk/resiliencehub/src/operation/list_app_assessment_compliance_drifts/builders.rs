@@ -22,7 +22,7 @@ impl crate::operation::list_app_assessment_compliance_drifts::builders::ListAppA
 }
 /// Fluent builder constructing a request to `ListAppAssessmentComplianceDrifts`.
 ///
-/// <p>List of compliance drifts that were detected while running an assessment.</p>
+/// <p>Indicates the list of compliance drifts that were detected while running an assessment.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListAppAssessmentComplianceDriftsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

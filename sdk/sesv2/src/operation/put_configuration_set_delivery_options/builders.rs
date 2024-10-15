@@ -150,4 +150,18 @@ impl PutConfigurationSetDeliveryOptionsFluentBuilder {
     pub fn get_sending_pool_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_sending_pool_name()
     }
+    /// <p>The maximum amount of time, in seconds, that Amazon SES API v2 will attempt delivery of email. If specified, the value must greater than or equal to 300 seconds (5 minutes) and less than or equal to 50400 seconds (840 minutes).</p>
+    pub fn max_delivery_seconds(mut self, input: i64) -> Self {
+        self.inner = self.inner.max_delivery_seconds(input);
+        self
+    }
+    /// <p>The maximum amount of time, in seconds, that Amazon SES API v2 will attempt delivery of email. If specified, the value must greater than or equal to 300 seconds (5 minutes) and less than or equal to 50400 seconds (840 minutes).</p>
+    pub fn set_max_delivery_seconds(mut self, input: ::std::option::Option<i64>) -> Self {
+        self.inner = self.inner.set_max_delivery_seconds(input);
+        self
+    }
+    /// <p>The maximum amount of time, in seconds, that Amazon SES API v2 will attempt delivery of email. If specified, the value must greater than or equal to 300 seconds (5 minutes) and less than or equal to 50400 seconds (840 minutes).</p>
+    pub fn get_max_delivery_seconds(&self) -> &::std::option::Option<i64> {
+        self.inner.get_max_delivery_seconds()
+    }
 }

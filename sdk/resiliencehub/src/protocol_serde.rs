@@ -311,6 +311,8 @@ pub(crate) mod shape_eks_source_cluster_namespace;
 
 pub(crate) mod shape_eks_source_list;
 
+pub(crate) mod shape_error_detail_list;
+
 pub(crate) mod shape_event_subscription;
 
 pub(crate) mod shape_failed_grouping_recommendation_entries;
@@ -384,6 +386,8 @@ pub(crate) mod shape_component_recommendation;
 pub(crate) mod shape_cost;
 
 pub(crate) mod shape_disruption_policy;
+
+pub(crate) mod shape_error_detail;
 
 pub(crate) mod shape_event_subscription_list;
 

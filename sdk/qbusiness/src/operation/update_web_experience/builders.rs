@@ -237,4 +237,44 @@ impl UpdateWebExperienceFluentBuilder {
     pub fn get_identity_provider_configuration(&self) -> &::std::option::Option<crate::types::IdentityProviderConfiguration> {
         self.inner.get_identity_provider_configuration()
     }
+    ///
+    /// Appends an item to `origins`.
+    ///
+    /// To override the contents of this collection use [`set_origins`](Self::set_origins).
+    ///
+    /// <p>Updates the website domain origins that are allowed to embed the Amazon Q Business web experience. The <i>domain origin</i> refers to the <i>base URL</i> for accessing a website including the protocol (<code>http/https</code>), the domain name, and the port number (if specified).</p><note>
+    /// <ul>
+    /// <li>
+    /// <p>Any values except <code>null</code> submitted as part of this update will replace all previous values.</p></li>
+    /// <li>
+    /// <p>You must only submit a <i>base URL</i> and not a full path. For example, <code>https://docs.aws.amazon.com</code>.</p></li>
+    /// </ul>
+    /// </note>
+    pub fn origins(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.origins(input.into());
+        self
+    }
+    /// <p>Updates the website domain origins that are allowed to embed the Amazon Q Business web experience. The <i>domain origin</i> refers to the <i>base URL</i> for accessing a website including the protocol (<code>http/https</code>), the domain name, and the port number (if specified).</p><note>
+    /// <ul>
+    /// <li>
+    /// <p>Any values except <code>null</code> submitted as part of this update will replace all previous values.</p></li>
+    /// <li>
+    /// <p>You must only submit a <i>base URL</i> and not a full path. For example, <code>https://docs.aws.amazon.com</code>.</p></li>
+    /// </ul>
+    /// </note>
+    pub fn set_origins(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.inner = self.inner.set_origins(input);
+        self
+    }
+    /// <p>Updates the website domain origins that are allowed to embed the Amazon Q Business web experience. The <i>domain origin</i> refers to the <i>base URL</i> for accessing a website including the protocol (<code>http/https</code>), the domain name, and the port number (if specified).</p><note>
+    /// <ul>
+    /// <li>
+    /// <p>Any values except <code>null</code> submitted as part of this update will replace all previous values.</p></li>
+    /// <li>
+    /// <p>You must only submit a <i>base URL</i> and not a full path. For example, <code>https://docs.aws.amazon.com</code>.</p></li>
+    /// </ul>
+    /// </note>
+    pub fn get_origins(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_origins()
+    }
 }

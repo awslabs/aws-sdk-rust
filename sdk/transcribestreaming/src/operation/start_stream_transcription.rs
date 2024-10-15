@@ -273,7 +273,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for StartStreamTr
 pub enum StartStreamTranscriptionError {
     /// <p>The service is currently unavailable. Try your request later.</p>
     ServiceUnavailableException(crate::types::error::ServiceUnavailableException),
-    /// <p>One or more arguments to the <code>StartStreamTranscription</code>, <code>StartMedicalStreamTranscription</code>, or <code>StartCallAnalyticsStreamTranscription</code> operation was not valid. For example, <code>MediaEncoding</code> or <code>LanguageCode</code> used not valid values. Check the specified parameters and try your request again.</p>
+    /// <p>One or more arguments to the <code>StartStreamTranscription</code>, <code>StartMedicalStreamTranscription</code>, or <code>StartCallAnalyticsStreamTranscription</code> operation was not valid. For example, <code>MediaEncoding</code> or <code>LanguageCode</code> used unsupported values. Check the specified parameters and try your request again.</p>
     BadRequestException(crate::types::error::BadRequestException),
     /// <p>A problem occurred while processing the audio. Amazon Transcribe terminated processing.</p>
     InternalFailureException(crate::types::error::InternalFailureException),

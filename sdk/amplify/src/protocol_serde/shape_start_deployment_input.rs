@@ -9,5 +9,8 @@ pub fn ser_start_deployment_input_input(
     if let Some(var_2) = &input.source_url {
         object.key("sourceUrl").string(var_2.as_str());
     }
+    if let Some(var_3) = &input.source_url_type {
+        object.key("sourceUrlType").string(var_3.as_str());
+    }
     Ok(())
 }

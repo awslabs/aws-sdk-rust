@@ -128,17 +128,17 @@ impl ChatFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_user_groups`](Self::set_user_groups).
     ///
-    /// <p>The groups that a user associated with the chat input belongs to.</p>
+    /// <p>The group names that a user associated with the chat input belongs to.</p>
     pub fn user_groups(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.user_groups(input.into());
         self
     }
-    /// <p>The groups that a user associated with the chat input belongs to.</p>
+    /// <p>The group names that a user associated with the chat input belongs to.</p>
     pub fn set_user_groups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_user_groups(input);
         self
     }
-    /// <p>The groups that a user associated with the chat input belongs to.</p>
+    /// <p>The group names that a user associated with the chat input belongs to.</p>
     pub fn get_user_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_user_groups()
     }

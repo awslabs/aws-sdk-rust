@@ -41,6 +41,8 @@ pub use crate::types::_platform::Platform;
 
 pub use crate::types::_job_summary::JobSummary;
 
+pub use crate::types::_source_url_type::SourceUrlType;
+
 pub use crate::types::_job_type::JobType;
 
 pub use crate::types::_job_status::JobStatus;
@@ -94,6 +96,8 @@ mod _platform;
 mod _production_branch;
 
 mod _repository_clone_method;
+
+mod _source_url_type;
 
 mod _stage;
 

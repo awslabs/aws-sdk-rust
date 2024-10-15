@@ -4,8 +4,7 @@
 #[derive(::std::fmt::Debug)]
 pub struct StartCallAnalyticsStreamTranscriptionInput {
     /// <p>Specify the language code that represents the language spoken in your audio.</p>
-    /// <p>If you're unsure of the language spoken in your audio, consider using <code>IdentifyLanguage</code> to enable automatic language identification.</p>
-    /// <p>For a list of languages supported with streaming Call Analytics, refer to the <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a> table.</p>
+    /// <p>For a list of languages supported with real-time Call Analytics, refer to the <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a> table.</p>
     pub language_code: ::std::option::Option<crate::types::CallAnalyticsLanguageCode>,
     /// <p>The sample rate of the input audio (in hertz). Low-quality audio, such as telephone audio, is typically around 8,000 Hz. High-quality audio typically ranges from 16,000 Hz to 48,000 Hz. Note that the sample rate you specify must match that of your audio.</p>
     pub media_sample_rate_hertz: ::std::option::Option<i32>,
@@ -25,7 +24,6 @@ pub struct StartCallAnalyticsStreamTranscriptionInput {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/custom-vocabulary.html">Custom vocabularies</a>.</p>
     pub vocabulary_name: ::std::option::Option<::std::string::String>,
     /// <p>Specify a name for your Call Analytics transcription session. If you don't include this parameter in your request, Amazon Transcribe generates an ID and returns it in the response.</p>
-    /// <p>You can use a session ID to retry a streaming session.</p>
     pub session_id: ::std::option::Option<::std::string::String>,
     /// <p>An encoded stream of audio blobs. Audio streams are encoded as either HTTP/2 or WebSocket data frames.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/streaming.html">Transcribing streaming audio</a>.</p>
@@ -50,24 +48,24 @@ pub struct StartCallAnalyticsStreamTranscriptionInput {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/streaming.html#streaming-partial-result-stabilization">Partial-result stabilization</a>.</p>
     pub partial_results_stability: ::std::option::Option<crate::types::PartialResultsStability>,
     /// <p>Labels all personally identifiable information (PII) identified in your transcript.</p>
-    /// <p>Content identification is performed at the segment level; PII specified in <code>PiiEntityTypes</code> is flagged upon complete transcription of an audio segment.</p>
+    /// <p>Content identification is performed at the segment level; PII specified in <code>PiiEntityTypes</code> is flagged upon complete transcription of an audio segment. If you don't include <code>PiiEntityTypes</code> in your request, all PII is identified.</p>
     /// <p>You can’t set <code>ContentIdentificationType</code> and <code>ContentRedactionType</code> in the same request. If you set both, your request returns a <code>BadRequestException</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/pii-redaction.html">Redacting or identifying personally identifiable information</a>.</p>
     pub content_identification_type: ::std::option::Option<crate::types::ContentIdentificationType>,
     /// <p>Redacts all personally identifiable information (PII) identified in your transcript.</p>
-    /// <p>Content redaction is performed at the segment level; PII specified in <code>PiiEntityTypes</code> is redacted upon complete transcription of an audio segment.</p>
+    /// <p>Content redaction is performed at the segment level; PII specified in <code>PiiEntityTypes</code> is redacted upon complete transcription of an audio segment. If you don't include <code>PiiEntityTypes</code> in your request, all PII is redacted.</p>
     /// <p>You can’t set <code>ContentRedactionType</code> and <code>ContentIdentificationType</code> in the same request. If you set both, your request returns a <code>BadRequestException</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/pii-redaction.html">Redacting or identifying personally identifiable information</a>.</p>
     pub content_redaction_type: ::std::option::Option<crate::types::ContentRedactionType>,
     /// <p>Specify which types of personally identifiable information (PII) you want to redact in your transcript. You can include as many types as you'd like, or you can select <code>ALL</code>.</p>
-    /// <p>To include <code>PiiEntityTypes</code> in your Call Analytics request, you must also include either <code>ContentIdentificationType</code> or <code>ContentRedactionType</code>.</p>
-    /// <p>Values must be comma-separated and can include: <code>BANK_ACCOUNT_NUMBER</code>, <code>BANK_ROUTING</code>, <code>CREDIT_DEBIT_NUMBER</code>, <code>CREDIT_DEBIT_CVV</code>, <code>CREDIT_DEBIT_EXPIRY</code>, <code>PIN</code>, <code>EMAIL</code>, <code>ADDRESS</code>, <code>NAME</code>, <code>PHONE</code>, <code>SSN</code>, or <code>ALL</code>.</p>
+    /// <p>Values must be comma-separated and can include: <code>ADDRESS</code>, <code>BANK_ACCOUNT_NUMBER</code>, <code>BANK_ROUTING</code>, <code>CREDIT_DEBIT_CVV</code>, <code>CREDIT_DEBIT_EXPIRY</code>, <code>CREDIT_DEBIT_NUMBER</code>, <code>EMAIL</code>, <code>NAME</code>, <code>PHONE</code>, <code>PIN</code>, <code>SSN</code>, or <code>ALL</code>.</p>
+    /// <p>Note that if you include <code>PiiEntityTypes</code> in your request, you must also include <code>ContentIdentificationType</code> or <code>ContentRedactionType</code>.</p>
+    /// <p>If you include <code>ContentRedactionType</code> or <code>ContentIdentificationType</code> in your request, but do not include <code>PiiEntityTypes</code>, all PII is redacted or identified.</p>
     pub pii_entity_types: ::std::option::Option<::std::string::String>,
 }
 impl StartCallAnalyticsStreamTranscriptionInput {
     /// <p>Specify the language code that represents the language spoken in your audio.</p>
-    /// <p>If you're unsure of the language spoken in your audio, consider using <code>IdentifyLanguage</code> to enable automatic language identification.</p>
-    /// <p>For a list of languages supported with streaming Call Analytics, refer to the <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a> table.</p>
+    /// <p>For a list of languages supported with real-time Call Analytics, refer to the <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a> table.</p>
     pub fn language_code(&self) -> ::std::option::Option<&crate::types::CallAnalyticsLanguageCode> {
         self.language_code.as_ref()
     }
@@ -95,7 +93,6 @@ impl StartCallAnalyticsStreamTranscriptionInput {
         self.vocabulary_name.as_deref()
     }
     /// <p>Specify a name for your Call Analytics transcription session. If you don't include this parameter in your request, Amazon Transcribe generates an ID and returns it in the response.</p>
-    /// <p>You can use a session ID to retry a streaming session.</p>
     pub fn session_id(&self) -> ::std::option::Option<&str> {
         self.session_id.as_deref()
     }
@@ -136,22 +133,23 @@ impl StartCallAnalyticsStreamTranscriptionInput {
         self.partial_results_stability.as_ref()
     }
     /// <p>Labels all personally identifiable information (PII) identified in your transcript.</p>
-    /// <p>Content identification is performed at the segment level; PII specified in <code>PiiEntityTypes</code> is flagged upon complete transcription of an audio segment.</p>
+    /// <p>Content identification is performed at the segment level; PII specified in <code>PiiEntityTypes</code> is flagged upon complete transcription of an audio segment. If you don't include <code>PiiEntityTypes</code> in your request, all PII is identified.</p>
     /// <p>You can’t set <code>ContentIdentificationType</code> and <code>ContentRedactionType</code> in the same request. If you set both, your request returns a <code>BadRequestException</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/pii-redaction.html">Redacting or identifying personally identifiable information</a>.</p>
     pub fn content_identification_type(&self) -> ::std::option::Option<&crate::types::ContentIdentificationType> {
         self.content_identification_type.as_ref()
     }
     /// <p>Redacts all personally identifiable information (PII) identified in your transcript.</p>
-    /// <p>Content redaction is performed at the segment level; PII specified in <code>PiiEntityTypes</code> is redacted upon complete transcription of an audio segment.</p>
+    /// <p>Content redaction is performed at the segment level; PII specified in <code>PiiEntityTypes</code> is redacted upon complete transcription of an audio segment. If you don't include <code>PiiEntityTypes</code> in your request, all PII is redacted.</p>
     /// <p>You can’t set <code>ContentRedactionType</code> and <code>ContentIdentificationType</code> in the same request. If you set both, your request returns a <code>BadRequestException</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/pii-redaction.html">Redacting or identifying personally identifiable information</a>.</p>
     pub fn content_redaction_type(&self) -> ::std::option::Option<&crate::types::ContentRedactionType> {
         self.content_redaction_type.as_ref()
     }
     /// <p>Specify which types of personally identifiable information (PII) you want to redact in your transcript. You can include as many types as you'd like, or you can select <code>ALL</code>.</p>
-    /// <p>To include <code>PiiEntityTypes</code> in your Call Analytics request, you must also include either <code>ContentIdentificationType</code> or <code>ContentRedactionType</code>.</p>
-    /// <p>Values must be comma-separated and can include: <code>BANK_ACCOUNT_NUMBER</code>, <code>BANK_ROUTING</code>, <code>CREDIT_DEBIT_NUMBER</code>, <code>CREDIT_DEBIT_CVV</code>, <code>CREDIT_DEBIT_EXPIRY</code>, <code>PIN</code>, <code>EMAIL</code>, <code>ADDRESS</code>, <code>NAME</code>, <code>PHONE</code>, <code>SSN</code>, or <code>ALL</code>.</p>
+    /// <p>Values must be comma-separated and can include: <code>ADDRESS</code>, <code>BANK_ACCOUNT_NUMBER</code>, <code>BANK_ROUTING</code>, <code>CREDIT_DEBIT_CVV</code>, <code>CREDIT_DEBIT_EXPIRY</code>, <code>CREDIT_DEBIT_NUMBER</code>, <code>EMAIL</code>, <code>NAME</code>, <code>PHONE</code>, <code>PIN</code>, <code>SSN</code>, or <code>ALL</code>.</p>
+    /// <p>Note that if you include <code>PiiEntityTypes</code> in your request, you must also include <code>ContentIdentificationType</code> or <code>ContentRedactionType</code>.</p>
+    /// <p>If you include <code>ContentRedactionType</code> or <code>ContentIdentificationType</code> in your request, but do not include <code>PiiEntityTypes</code>, all PII is redacted or identified.</p>
     pub fn pii_entity_types(&self) -> ::std::option::Option<&str> {
         self.pii_entity_types.as_deref()
     }
@@ -185,23 +183,20 @@ pub struct StartCallAnalyticsStreamTranscriptionInputBuilder {
 }
 impl StartCallAnalyticsStreamTranscriptionInputBuilder {
     /// <p>Specify the language code that represents the language spoken in your audio.</p>
-    /// <p>If you're unsure of the language spoken in your audio, consider using <code>IdentifyLanguage</code> to enable automatic language identification.</p>
-    /// <p>For a list of languages supported with streaming Call Analytics, refer to the <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a> table.</p>
+    /// <p>For a list of languages supported with real-time Call Analytics, refer to the <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a> table.</p>
     /// This field is required.
     pub fn language_code(mut self, input: crate::types::CallAnalyticsLanguageCode) -> Self {
         self.language_code = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specify the language code that represents the language spoken in your audio.</p>
-    /// <p>If you're unsure of the language spoken in your audio, consider using <code>IdentifyLanguage</code> to enable automatic language identification.</p>
-    /// <p>For a list of languages supported with streaming Call Analytics, refer to the <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a> table.</p>
+    /// <p>For a list of languages supported with real-time Call Analytics, refer to the <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a> table.</p>
     pub fn set_language_code(mut self, input: ::std::option::Option<crate::types::CallAnalyticsLanguageCode>) -> Self {
         self.language_code = input;
         self
     }
     /// <p>Specify the language code that represents the language spoken in your audio.</p>
-    /// <p>If you're unsure of the language spoken in your audio, consider using <code>IdentifyLanguage</code> to enable automatic language identification.</p>
-    /// <p>For a list of languages supported with streaming Call Analytics, refer to the <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a> table.</p>
+    /// <p>For a list of languages supported with real-time Call Analytics, refer to the <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a> table.</p>
     pub fn get_language_code(&self) -> &::std::option::Option<crate::types::CallAnalyticsLanguageCode> {
         &self.language_code
     }
@@ -283,19 +278,16 @@ impl StartCallAnalyticsStreamTranscriptionInputBuilder {
         &self.vocabulary_name
     }
     /// <p>Specify a name for your Call Analytics transcription session. If you don't include this parameter in your request, Amazon Transcribe generates an ID and returns it in the response.</p>
-    /// <p>You can use a session ID to retry a streaming session.</p>
     pub fn session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.session_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specify a name for your Call Analytics transcription session. If you don't include this parameter in your request, Amazon Transcribe generates an ID and returns it in the response.</p>
-    /// <p>You can use a session ID to retry a streaming session.</p>
     pub fn set_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.session_id = input;
         self
     }
     /// <p>Specify a name for your Call Analytics transcription session. If you don't include this parameter in your request, Amazon Transcribe generates an ID and returns it in the response.</p>
-    /// <p>You can use a session ID to retry a streaming session.</p>
     pub fn get_session_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.session_id
     }
@@ -426,7 +418,7 @@ impl StartCallAnalyticsStreamTranscriptionInputBuilder {
         &self.partial_results_stability
     }
     /// <p>Labels all personally identifiable information (PII) identified in your transcript.</p>
-    /// <p>Content identification is performed at the segment level; PII specified in <code>PiiEntityTypes</code> is flagged upon complete transcription of an audio segment.</p>
+    /// <p>Content identification is performed at the segment level; PII specified in <code>PiiEntityTypes</code> is flagged upon complete transcription of an audio segment. If you don't include <code>PiiEntityTypes</code> in your request, all PII is identified.</p>
     /// <p>You can’t set <code>ContentIdentificationType</code> and <code>ContentRedactionType</code> in the same request. If you set both, your request returns a <code>BadRequestException</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/pii-redaction.html">Redacting or identifying personally identifiable information</a>.</p>
     pub fn content_identification_type(mut self, input: crate::types::ContentIdentificationType) -> Self {
@@ -434,7 +426,7 @@ impl StartCallAnalyticsStreamTranscriptionInputBuilder {
         self
     }
     /// <p>Labels all personally identifiable information (PII) identified in your transcript.</p>
-    /// <p>Content identification is performed at the segment level; PII specified in <code>PiiEntityTypes</code> is flagged upon complete transcription of an audio segment.</p>
+    /// <p>Content identification is performed at the segment level; PII specified in <code>PiiEntityTypes</code> is flagged upon complete transcription of an audio segment. If you don't include <code>PiiEntityTypes</code> in your request, all PII is identified.</p>
     /// <p>You can’t set <code>ContentIdentificationType</code> and <code>ContentRedactionType</code> in the same request. If you set both, your request returns a <code>BadRequestException</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/pii-redaction.html">Redacting or identifying personally identifiable information</a>.</p>
     pub fn set_content_identification_type(mut self, input: ::std::option::Option<crate::types::ContentIdentificationType>) -> Self {
@@ -442,14 +434,14 @@ impl StartCallAnalyticsStreamTranscriptionInputBuilder {
         self
     }
     /// <p>Labels all personally identifiable information (PII) identified in your transcript.</p>
-    /// <p>Content identification is performed at the segment level; PII specified in <code>PiiEntityTypes</code> is flagged upon complete transcription of an audio segment.</p>
+    /// <p>Content identification is performed at the segment level; PII specified in <code>PiiEntityTypes</code> is flagged upon complete transcription of an audio segment. If you don't include <code>PiiEntityTypes</code> in your request, all PII is identified.</p>
     /// <p>You can’t set <code>ContentIdentificationType</code> and <code>ContentRedactionType</code> in the same request. If you set both, your request returns a <code>BadRequestException</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/pii-redaction.html">Redacting or identifying personally identifiable information</a>.</p>
     pub fn get_content_identification_type(&self) -> &::std::option::Option<crate::types::ContentIdentificationType> {
         &self.content_identification_type
     }
     /// <p>Redacts all personally identifiable information (PII) identified in your transcript.</p>
-    /// <p>Content redaction is performed at the segment level; PII specified in <code>PiiEntityTypes</code> is redacted upon complete transcription of an audio segment.</p>
+    /// <p>Content redaction is performed at the segment level; PII specified in <code>PiiEntityTypes</code> is redacted upon complete transcription of an audio segment. If you don't include <code>PiiEntityTypes</code> in your request, all PII is redacted.</p>
     /// <p>You can’t set <code>ContentRedactionType</code> and <code>ContentIdentificationType</code> in the same request. If you set both, your request returns a <code>BadRequestException</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/pii-redaction.html">Redacting or identifying personally identifiable information</a>.</p>
     pub fn content_redaction_type(mut self, input: crate::types::ContentRedactionType) -> Self {
@@ -457,7 +449,7 @@ impl StartCallAnalyticsStreamTranscriptionInputBuilder {
         self
     }
     /// <p>Redacts all personally identifiable information (PII) identified in your transcript.</p>
-    /// <p>Content redaction is performed at the segment level; PII specified in <code>PiiEntityTypes</code> is redacted upon complete transcription of an audio segment.</p>
+    /// <p>Content redaction is performed at the segment level; PII specified in <code>PiiEntityTypes</code> is redacted upon complete transcription of an audio segment. If you don't include <code>PiiEntityTypes</code> in your request, all PII is redacted.</p>
     /// <p>You can’t set <code>ContentRedactionType</code> and <code>ContentIdentificationType</code> in the same request. If you set both, your request returns a <code>BadRequestException</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/pii-redaction.html">Redacting or identifying personally identifiable information</a>.</p>
     pub fn set_content_redaction_type(mut self, input: ::std::option::Option<crate::types::ContentRedactionType>) -> Self {
@@ -465,29 +457,32 @@ impl StartCallAnalyticsStreamTranscriptionInputBuilder {
         self
     }
     /// <p>Redacts all personally identifiable information (PII) identified in your transcript.</p>
-    /// <p>Content redaction is performed at the segment level; PII specified in <code>PiiEntityTypes</code> is redacted upon complete transcription of an audio segment.</p>
+    /// <p>Content redaction is performed at the segment level; PII specified in <code>PiiEntityTypes</code> is redacted upon complete transcription of an audio segment. If you don't include <code>PiiEntityTypes</code> in your request, all PII is redacted.</p>
     /// <p>You can’t set <code>ContentRedactionType</code> and <code>ContentIdentificationType</code> in the same request. If you set both, your request returns a <code>BadRequestException</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/pii-redaction.html">Redacting or identifying personally identifiable information</a>.</p>
     pub fn get_content_redaction_type(&self) -> &::std::option::Option<crate::types::ContentRedactionType> {
         &self.content_redaction_type
     }
     /// <p>Specify which types of personally identifiable information (PII) you want to redact in your transcript. You can include as many types as you'd like, or you can select <code>ALL</code>.</p>
-    /// <p>To include <code>PiiEntityTypes</code> in your Call Analytics request, you must also include either <code>ContentIdentificationType</code> or <code>ContentRedactionType</code>.</p>
-    /// <p>Values must be comma-separated and can include: <code>BANK_ACCOUNT_NUMBER</code>, <code>BANK_ROUTING</code>, <code>CREDIT_DEBIT_NUMBER</code>, <code>CREDIT_DEBIT_CVV</code>, <code>CREDIT_DEBIT_EXPIRY</code>, <code>PIN</code>, <code>EMAIL</code>, <code>ADDRESS</code>, <code>NAME</code>, <code>PHONE</code>, <code>SSN</code>, or <code>ALL</code>.</p>
+    /// <p>Values must be comma-separated and can include: <code>ADDRESS</code>, <code>BANK_ACCOUNT_NUMBER</code>, <code>BANK_ROUTING</code>, <code>CREDIT_DEBIT_CVV</code>, <code>CREDIT_DEBIT_EXPIRY</code>, <code>CREDIT_DEBIT_NUMBER</code>, <code>EMAIL</code>, <code>NAME</code>, <code>PHONE</code>, <code>PIN</code>, <code>SSN</code>, or <code>ALL</code>.</p>
+    /// <p>Note that if you include <code>PiiEntityTypes</code> in your request, you must also include <code>ContentIdentificationType</code> or <code>ContentRedactionType</code>.</p>
+    /// <p>If you include <code>ContentRedactionType</code> or <code>ContentIdentificationType</code> in your request, but do not include <code>PiiEntityTypes</code>, all PII is redacted or identified.</p>
     pub fn pii_entity_types(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pii_entity_types = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specify which types of personally identifiable information (PII) you want to redact in your transcript. You can include as many types as you'd like, or you can select <code>ALL</code>.</p>
-    /// <p>To include <code>PiiEntityTypes</code> in your Call Analytics request, you must also include either <code>ContentIdentificationType</code> or <code>ContentRedactionType</code>.</p>
-    /// <p>Values must be comma-separated and can include: <code>BANK_ACCOUNT_NUMBER</code>, <code>BANK_ROUTING</code>, <code>CREDIT_DEBIT_NUMBER</code>, <code>CREDIT_DEBIT_CVV</code>, <code>CREDIT_DEBIT_EXPIRY</code>, <code>PIN</code>, <code>EMAIL</code>, <code>ADDRESS</code>, <code>NAME</code>, <code>PHONE</code>, <code>SSN</code>, or <code>ALL</code>.</p>
+    /// <p>Values must be comma-separated and can include: <code>ADDRESS</code>, <code>BANK_ACCOUNT_NUMBER</code>, <code>BANK_ROUTING</code>, <code>CREDIT_DEBIT_CVV</code>, <code>CREDIT_DEBIT_EXPIRY</code>, <code>CREDIT_DEBIT_NUMBER</code>, <code>EMAIL</code>, <code>NAME</code>, <code>PHONE</code>, <code>PIN</code>, <code>SSN</code>, or <code>ALL</code>.</p>
+    /// <p>Note that if you include <code>PiiEntityTypes</code> in your request, you must also include <code>ContentIdentificationType</code> or <code>ContentRedactionType</code>.</p>
+    /// <p>If you include <code>ContentRedactionType</code> or <code>ContentIdentificationType</code> in your request, but do not include <code>PiiEntityTypes</code>, all PII is redacted or identified.</p>
     pub fn set_pii_entity_types(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pii_entity_types = input;
         self
     }
     /// <p>Specify which types of personally identifiable information (PII) you want to redact in your transcript. You can include as many types as you'd like, or you can select <code>ALL</code>.</p>
-    /// <p>To include <code>PiiEntityTypes</code> in your Call Analytics request, you must also include either <code>ContentIdentificationType</code> or <code>ContentRedactionType</code>.</p>
-    /// <p>Values must be comma-separated and can include: <code>BANK_ACCOUNT_NUMBER</code>, <code>BANK_ROUTING</code>, <code>CREDIT_DEBIT_NUMBER</code>, <code>CREDIT_DEBIT_CVV</code>, <code>CREDIT_DEBIT_EXPIRY</code>, <code>PIN</code>, <code>EMAIL</code>, <code>ADDRESS</code>, <code>NAME</code>, <code>PHONE</code>, <code>SSN</code>, or <code>ALL</code>.</p>
+    /// <p>Values must be comma-separated and can include: <code>ADDRESS</code>, <code>BANK_ACCOUNT_NUMBER</code>, <code>BANK_ROUTING</code>, <code>CREDIT_DEBIT_CVV</code>, <code>CREDIT_DEBIT_EXPIRY</code>, <code>CREDIT_DEBIT_NUMBER</code>, <code>EMAIL</code>, <code>NAME</code>, <code>PHONE</code>, <code>PIN</code>, <code>SSN</code>, or <code>ALL</code>.</p>
+    /// <p>Note that if you include <code>PiiEntityTypes</code> in your request, you must also include <code>ContentIdentificationType</code> or <code>ContentRedactionType</code>.</p>
+    /// <p>If you include <code>ContentRedactionType</code> or <code>ContentIdentificationType</code> in your request, but do not include <code>PiiEntityTypes</code>, all PII is redacted or identified.</p>
     pub fn get_pii_entity_types(&self) -> &::std::option::Option<::std::string::String> {
         &self.pii_entity_types
     }

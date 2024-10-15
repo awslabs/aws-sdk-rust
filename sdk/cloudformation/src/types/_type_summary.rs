@@ -29,16 +29,16 @@ pub struct TypeSummary {
     /// <p>The ID of the extension publisher, if the extension is published by a third party. Extensions published by Amazon don't return a publisher ID.</p>
     pub publisher_id: ::std::option::Option<::std::string::String>,
     /// <p>For public extensions that have been activated for this account and Region, the type name of the public extension.</p>
-    /// <p>If you specified a <code>TypeNameAlias</code> when enabling the extension in this account and Region, CloudFormation treats that alias as the extension's type name within the account and Region, not the type name of the public extension. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-alias">Specifying aliases to refer to extensions</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// <p>If you specified a <code>TypeNameAlias</code> when enabling the extension in this account and Region, CloudFormation treats that alias as the extension's type name within the account and Region, not the type name of the public extension. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-alias">Use aliases to refer to extensions</a> in the <i>CloudFormation User Guide</i>.</p>
     pub original_type_name: ::std::option::Option<::std::string::String>,
     /// <p>For public extensions that have been activated for this account and Region, the version of the public extension to be used for CloudFormation operations in this account and Region.</p>
-    /// <p>How you specified <code>AutoUpdate</code> when enabling the extension affects whether CloudFormation automatically updates the extension in this account and Region when a new version is released. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-auto">Setting CloudFormation to automatically use new versions of extensions</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// <p>How you specified <code>AutoUpdate</code> when enabling the extension affects whether CloudFormation automatically updates the extension in this account and Region when a new version is released. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-auto">Automatically use new versions of extensions</a> in the <i>CloudFormation User Guide</i>.</p>
     pub public_version_number: ::std::option::Option<::std::string::String>,
-    /// <p>For public extensions that have been activated for this account and Region, the latest version of the public extension <i>that is available</i>. For any extensions other than activated third-arty extensions, CloudFormation returns <code>null</code>.</p>
-    /// <p>How you specified <code>AutoUpdate</code> when enabling the extension affects whether CloudFormation automatically updates the extension in this account and Region when a new version is released. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-auto">Setting CloudFormation to automatically use new versions of extensions</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// <p>For public extensions that have been activated for this account and Region, the latest version of the public extension <i>that is available</i>. For any extensions other than activated third-party extensions, CloudFormation returns <code>null</code>.</p>
+    /// <p>How you specified <code>AutoUpdate</code> when enabling the extension affects whether CloudFormation automatically updates the extension in this account and Region when a new version is released. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-auto">Automatically use new versions of extensions</a> in the <i>CloudFormation User Guide</i>.</p>
     pub latest_public_version: ::std::option::Option<::std::string::String>,
     /// <p>The service used to verify the publisher identity.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/publish-extension.html">Registering your account to publish CloudFormation extensions</a> in the <i> CFN-CLI User Guide for Extension Development</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/publish-extension.html">Publishing extensions to make them available for public use</a> in the <i>CloudFormation Command Line Interface (CLI) User Guide</i>.</p>
     pub publisher_identity: ::std::option::Option<crate::types::IdentityProvider>,
     /// <p>The publisher name, as defined in the public profile for that publisher in the service used to verify the publisher identity.</p>
     pub publisher_name: ::std::option::Option<::std::string::String>,
@@ -86,22 +86,22 @@ impl TypeSummary {
         self.publisher_id.as_deref()
     }
     /// <p>For public extensions that have been activated for this account and Region, the type name of the public extension.</p>
-    /// <p>If you specified a <code>TypeNameAlias</code> when enabling the extension in this account and Region, CloudFormation treats that alias as the extension's type name within the account and Region, not the type name of the public extension. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-alias">Specifying aliases to refer to extensions</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// <p>If you specified a <code>TypeNameAlias</code> when enabling the extension in this account and Region, CloudFormation treats that alias as the extension's type name within the account and Region, not the type name of the public extension. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-alias">Use aliases to refer to extensions</a> in the <i>CloudFormation User Guide</i>.</p>
     pub fn original_type_name(&self) -> ::std::option::Option<&str> {
         self.original_type_name.as_deref()
     }
     /// <p>For public extensions that have been activated for this account and Region, the version of the public extension to be used for CloudFormation operations in this account and Region.</p>
-    /// <p>How you specified <code>AutoUpdate</code> when enabling the extension affects whether CloudFormation automatically updates the extension in this account and Region when a new version is released. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-auto">Setting CloudFormation to automatically use new versions of extensions</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// <p>How you specified <code>AutoUpdate</code> when enabling the extension affects whether CloudFormation automatically updates the extension in this account and Region when a new version is released. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-auto">Automatically use new versions of extensions</a> in the <i>CloudFormation User Guide</i>.</p>
     pub fn public_version_number(&self) -> ::std::option::Option<&str> {
         self.public_version_number.as_deref()
     }
-    /// <p>For public extensions that have been activated for this account and Region, the latest version of the public extension <i>that is available</i>. For any extensions other than activated third-arty extensions, CloudFormation returns <code>null</code>.</p>
-    /// <p>How you specified <code>AutoUpdate</code> when enabling the extension affects whether CloudFormation automatically updates the extension in this account and Region when a new version is released. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-auto">Setting CloudFormation to automatically use new versions of extensions</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// <p>For public extensions that have been activated for this account and Region, the latest version of the public extension <i>that is available</i>. For any extensions other than activated third-party extensions, CloudFormation returns <code>null</code>.</p>
+    /// <p>How you specified <code>AutoUpdate</code> when enabling the extension affects whether CloudFormation automatically updates the extension in this account and Region when a new version is released. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-auto">Automatically use new versions of extensions</a> in the <i>CloudFormation User Guide</i>.</p>
     pub fn latest_public_version(&self) -> ::std::option::Option<&str> {
         self.latest_public_version.as_deref()
     }
     /// <p>The service used to verify the publisher identity.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/publish-extension.html">Registering your account to publish CloudFormation extensions</a> in the <i> CFN-CLI User Guide for Extension Development</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/publish-extension.html">Publishing extensions to make them available for public use</a> in the <i>CloudFormation Command Line Interface (CLI) User Guide</i>.</p>
     pub fn publisher_identity(&self) -> ::std::option::Option<&crate::types::IdentityProvider> {
         self.publisher_identity.as_ref()
     }
@@ -270,70 +270,70 @@ impl TypeSummaryBuilder {
         &self.publisher_id
     }
     /// <p>For public extensions that have been activated for this account and Region, the type name of the public extension.</p>
-    /// <p>If you specified a <code>TypeNameAlias</code> when enabling the extension in this account and Region, CloudFormation treats that alias as the extension's type name within the account and Region, not the type name of the public extension. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-alias">Specifying aliases to refer to extensions</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// <p>If you specified a <code>TypeNameAlias</code> when enabling the extension in this account and Region, CloudFormation treats that alias as the extension's type name within the account and Region, not the type name of the public extension. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-alias">Use aliases to refer to extensions</a> in the <i>CloudFormation User Guide</i>.</p>
     pub fn original_type_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.original_type_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>For public extensions that have been activated for this account and Region, the type name of the public extension.</p>
-    /// <p>If you specified a <code>TypeNameAlias</code> when enabling the extension in this account and Region, CloudFormation treats that alias as the extension's type name within the account and Region, not the type name of the public extension. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-alias">Specifying aliases to refer to extensions</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// <p>If you specified a <code>TypeNameAlias</code> when enabling the extension in this account and Region, CloudFormation treats that alias as the extension's type name within the account and Region, not the type name of the public extension. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-alias">Use aliases to refer to extensions</a> in the <i>CloudFormation User Guide</i>.</p>
     pub fn set_original_type_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.original_type_name = input;
         self
     }
     /// <p>For public extensions that have been activated for this account and Region, the type name of the public extension.</p>
-    /// <p>If you specified a <code>TypeNameAlias</code> when enabling the extension in this account and Region, CloudFormation treats that alias as the extension's type name within the account and Region, not the type name of the public extension. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-alias">Specifying aliases to refer to extensions</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// <p>If you specified a <code>TypeNameAlias</code> when enabling the extension in this account and Region, CloudFormation treats that alias as the extension's type name within the account and Region, not the type name of the public extension. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-alias">Use aliases to refer to extensions</a> in the <i>CloudFormation User Guide</i>.</p>
     pub fn get_original_type_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.original_type_name
     }
     /// <p>For public extensions that have been activated for this account and Region, the version of the public extension to be used for CloudFormation operations in this account and Region.</p>
-    /// <p>How you specified <code>AutoUpdate</code> when enabling the extension affects whether CloudFormation automatically updates the extension in this account and Region when a new version is released. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-auto">Setting CloudFormation to automatically use new versions of extensions</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// <p>How you specified <code>AutoUpdate</code> when enabling the extension affects whether CloudFormation automatically updates the extension in this account and Region when a new version is released. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-auto">Automatically use new versions of extensions</a> in the <i>CloudFormation User Guide</i>.</p>
     pub fn public_version_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.public_version_number = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>For public extensions that have been activated for this account and Region, the version of the public extension to be used for CloudFormation operations in this account and Region.</p>
-    /// <p>How you specified <code>AutoUpdate</code> when enabling the extension affects whether CloudFormation automatically updates the extension in this account and Region when a new version is released. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-auto">Setting CloudFormation to automatically use new versions of extensions</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// <p>How you specified <code>AutoUpdate</code> when enabling the extension affects whether CloudFormation automatically updates the extension in this account and Region when a new version is released. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-auto">Automatically use new versions of extensions</a> in the <i>CloudFormation User Guide</i>.</p>
     pub fn set_public_version_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.public_version_number = input;
         self
     }
     /// <p>For public extensions that have been activated for this account and Region, the version of the public extension to be used for CloudFormation operations in this account and Region.</p>
-    /// <p>How you specified <code>AutoUpdate</code> when enabling the extension affects whether CloudFormation automatically updates the extension in this account and Region when a new version is released. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-auto">Setting CloudFormation to automatically use new versions of extensions</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// <p>How you specified <code>AutoUpdate</code> when enabling the extension affects whether CloudFormation automatically updates the extension in this account and Region when a new version is released. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-auto">Automatically use new versions of extensions</a> in the <i>CloudFormation User Guide</i>.</p>
     pub fn get_public_version_number(&self) -> &::std::option::Option<::std::string::String> {
         &self.public_version_number
     }
-    /// <p>For public extensions that have been activated for this account and Region, the latest version of the public extension <i>that is available</i>. For any extensions other than activated third-arty extensions, CloudFormation returns <code>null</code>.</p>
-    /// <p>How you specified <code>AutoUpdate</code> when enabling the extension affects whether CloudFormation automatically updates the extension in this account and Region when a new version is released. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-auto">Setting CloudFormation to automatically use new versions of extensions</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// <p>For public extensions that have been activated for this account and Region, the latest version of the public extension <i>that is available</i>. For any extensions other than activated third-party extensions, CloudFormation returns <code>null</code>.</p>
+    /// <p>How you specified <code>AutoUpdate</code> when enabling the extension affects whether CloudFormation automatically updates the extension in this account and Region when a new version is released. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-auto">Automatically use new versions of extensions</a> in the <i>CloudFormation User Guide</i>.</p>
     pub fn latest_public_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.latest_public_version = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>For public extensions that have been activated for this account and Region, the latest version of the public extension <i>that is available</i>. For any extensions other than activated third-arty extensions, CloudFormation returns <code>null</code>.</p>
-    /// <p>How you specified <code>AutoUpdate</code> when enabling the extension affects whether CloudFormation automatically updates the extension in this account and Region when a new version is released. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-auto">Setting CloudFormation to automatically use new versions of extensions</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// <p>For public extensions that have been activated for this account and Region, the latest version of the public extension <i>that is available</i>. For any extensions other than activated third-party extensions, CloudFormation returns <code>null</code>.</p>
+    /// <p>How you specified <code>AutoUpdate</code> when enabling the extension affects whether CloudFormation automatically updates the extension in this account and Region when a new version is released. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-auto">Automatically use new versions of extensions</a> in the <i>CloudFormation User Guide</i>.</p>
     pub fn set_latest_public_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.latest_public_version = input;
         self
     }
-    /// <p>For public extensions that have been activated for this account and Region, the latest version of the public extension <i>that is available</i>. For any extensions other than activated third-arty extensions, CloudFormation returns <code>null</code>.</p>
-    /// <p>How you specified <code>AutoUpdate</code> when enabling the extension affects whether CloudFormation automatically updates the extension in this account and Region when a new version is released. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-auto">Setting CloudFormation to automatically use new versions of extensions</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// <p>For public extensions that have been activated for this account and Region, the latest version of the public extension <i>that is available</i>. For any extensions other than activated third-party extensions, CloudFormation returns <code>null</code>.</p>
+    /// <p>How you specified <code>AutoUpdate</code> when enabling the extension affects whether CloudFormation automatically updates the extension in this account and Region when a new version is released. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-auto">Automatically use new versions of extensions</a> in the <i>CloudFormation User Guide</i>.</p>
     pub fn get_latest_public_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.latest_public_version
     }
     /// <p>The service used to verify the publisher identity.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/publish-extension.html">Registering your account to publish CloudFormation extensions</a> in the <i> CFN-CLI User Guide for Extension Development</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/publish-extension.html">Publishing extensions to make them available for public use</a> in the <i>CloudFormation Command Line Interface (CLI) User Guide</i>.</p>
     pub fn publisher_identity(mut self, input: crate::types::IdentityProvider) -> Self {
         self.publisher_identity = ::std::option::Option::Some(input);
         self
     }
     /// <p>The service used to verify the publisher identity.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/publish-extension.html">Registering your account to publish CloudFormation extensions</a> in the <i> CFN-CLI User Guide for Extension Development</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/publish-extension.html">Publishing extensions to make them available for public use</a> in the <i>CloudFormation Command Line Interface (CLI) User Guide</i>.</p>
     pub fn set_publisher_identity(mut self, input: ::std::option::Option<crate::types::IdentityProvider>) -> Self {
         self.publisher_identity = input;
         self
     }
     /// <p>The service used to verify the publisher identity.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/publish-extension.html">Registering your account to publish CloudFormation extensions</a> in the <i> CFN-CLI User Guide for Extension Development</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/publish-extension.html">Publishing extensions to make them available for public use</a> in the <i>CloudFormation Command Line Interface (CLI) User Guide</i>.</p>
     pub fn get_publisher_identity(&self) -> &::std::option::Option<crate::types::IdentityProvider> {
         &self.publisher_identity
     }

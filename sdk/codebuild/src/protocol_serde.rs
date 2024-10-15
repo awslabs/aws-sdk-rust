@@ -297,6 +297,8 @@ pub(crate) mod shape_project_source_version;
 
 pub(crate) mod shape_projects;
 
+pub(crate) mod shape_proxy_configuration;
+
 pub(crate) mod shape_registry_credential;
 
 pub(crate) mod shape_report_arns;
@@ -365,6 +367,8 @@ pub(crate) mod shape_exported_environment_variables;
 
 pub(crate) mod shape_filter_groups;
 
+pub(crate) mod shape_fleet_proxy_rule;
+
 pub(crate) mod shape_fleet_status;
 
 pub(crate) mod shape_logs_location;
@@ -415,6 +419,8 @@ pub(crate) mod shape_exported_environment_variable;
 
 pub(crate) mod shape_filter_group;
 
+pub(crate) mod shape_fleet_proxy_rules;
+
 pub(crate) mod shape_project_cache_modes;
 
 pub(crate) mod shape_security_group_ids;
@@ -440,6 +446,8 @@ pub(crate) mod shape_phase_contexts;
 pub(crate) mod shape_report_status_counts;
 
 pub(crate) mod shape_environment_images;
+
+pub(crate) mod shape_fleet_proxy_rule_entities;
 
 pub(crate) mod shape_phase_context;
 

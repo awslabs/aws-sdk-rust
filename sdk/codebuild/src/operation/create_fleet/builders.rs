@@ -374,6 +374,20 @@ impl CreateFleetFluentBuilder {
     pub fn get_vpc_config(&self) -> &::std::option::Option<crate::types::VpcConfig> {
         self.inner.get_vpc_config()
     }
+    /// <p>The proxy configuration of the compute fleet.</p>
+    pub fn proxy_configuration(mut self, input: crate::types::ProxyConfiguration) -> Self {
+        self.inner = self.inner.proxy_configuration(input);
+        self
+    }
+    /// <p>The proxy configuration of the compute fleet.</p>
+    pub fn set_proxy_configuration(mut self, input: ::std::option::Option<crate::types::ProxyConfiguration>) -> Self {
+        self.inner = self.inner.set_proxy_configuration(input);
+        self
+    }
+    /// <p>The proxy configuration of the compute fleet.</p>
+    pub fn get_proxy_configuration(&self) -> &::std::option::Option<crate::types::ProxyConfiguration> {
+        self.inner.get_proxy_configuration()
+    }
     /// <p>The Amazon Machine Image (AMI) of the compute fleet.</p>
     pub fn image_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.image_id(input.into());

@@ -55,6 +55,10 @@ pub use crate::types::_git_submodules_config::GitSubmodulesConfigBuilder;
 
 pub use crate::types::_fleet::FleetBuilder;
 
+pub use crate::types::_proxy_configuration::ProxyConfigurationBuilder;
+
+pub use crate::types::_fleet_proxy_rule::FleetProxyRuleBuilder;
+
 pub use crate::types::_scaling_configuration_output::ScalingConfigurationOutputBuilder;
 
 pub use crate::types::_target_tracking_scaling_configuration::TargetTrackingScalingConfigurationBuilder;

@@ -117,6 +117,10 @@ pub use crate::types::_service_authorization::ServiceAuthorization;
 
 pub use crate::types::_authorized_token_issuer::AuthorizedTokenIssuer;
 
+pub use crate::types::_integration_error::IntegrationError;
+
+pub use crate::types::_zero_etl_integration_status::ZeroEtlIntegrationStatus;
+
 pub use crate::types::_event_subscription::EventSubscription;
 
 pub use crate::types::_cluster_subnet_group::ClusterSubnetGroup;
@@ -177,11 +181,13 @@ pub use crate::types::_node_configuration_options_filter_name::NodeConfiguration
 
 pub use crate::types::_action_type::ActionType;
 
+pub use crate::types::_integration::Integration;
+
+pub use crate::types::_describe_integrations_filter::DescribeIntegrationsFilter;
+
+pub use crate::types::_describe_integrations_filter_name::DescribeIntegrationsFilterName;
+
 pub use crate::types::_inbound_integration::InboundIntegration;
-
-pub use crate::types::_integration_error::IntegrationError;
-
-pub use crate::types::_zero_etl_integration_status::ZeroEtlIntegrationStatus;
 
 pub use crate::types::_hsm_configuration::HsmConfiguration;
 
@@ -311,6 +317,10 @@ mod _deferred_maintenance_window;
 
 mod _delete_cluster_snapshot_message;
 
+mod _describe_integrations_filter;
+
+mod _describe_integrations_filter_name;
+
 mod _ec2_security_group;
 
 mod _elastic_ip_status;
@@ -338,6 +348,8 @@ mod _hsm_status;
 mod _impact_ranking_type;
 
 mod _inbound_integration;
+
+mod _integration;
 
 mod _integration_error;
 

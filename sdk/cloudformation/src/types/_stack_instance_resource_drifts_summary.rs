@@ -12,7 +12,7 @@ pub struct StackInstanceResourceDriftsSummary {
     pub physical_resource_id: ::std::option::Option<::std::string::String>,
     /// <p>Context information that enables CloudFormation to uniquely identify a resource. CloudFormation uses context key-value pairs in cases where a resource's logical and physical IDs aren't enough to uniquely identify that resource. Each context key-value pair specifies a unique resource that contains the targeted resource.</p>
     pub physical_resource_id_context: ::std::option::Option<::std::vec::Vec<crate::types::PhysicalResourceIdContextKeyValuePair>>,
-    /// <p>Type of resource. For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services Resource Types Reference</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// <p>Type of resource. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services resource and property types reference</a> in the <i>CloudFormation User Guide</i>.</p>
     pub resource_type: ::std::option::Option<::std::string::String>,
     /// <p>Status of the actual configuration of the resource compared to its expected configuration. These will be present only for resources whose <code>StackInstanceResourceDriftStatus</code> is <code>MODIFIED</code>.</p>
     pub property_differences: ::std::option::Option<::std::vec::Vec<crate::types::PropertyDifference>>,
@@ -50,7 +50,7 @@ impl StackInstanceResourceDriftsSummary {
     pub fn physical_resource_id_context(&self) -> &[crate::types::PhysicalResourceIdContextKeyValuePair] {
         self.physical_resource_id_context.as_deref().unwrap_or_default()
     }
-    /// <p>Type of resource. For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services Resource Types Reference</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// <p>Type of resource. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services resource and property types reference</a> in the <i>CloudFormation User Guide</i>.</p>
     pub fn resource_type(&self) -> ::std::option::Option<&str> {
         self.resource_type.as_deref()
     }
@@ -167,18 +167,18 @@ impl StackInstanceResourceDriftsSummaryBuilder {
     pub fn get_physical_resource_id_context(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PhysicalResourceIdContextKeyValuePair>> {
         &self.physical_resource_id_context
     }
-    /// <p>Type of resource. For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services Resource Types Reference</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// <p>Type of resource. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services resource and property types reference</a> in the <i>CloudFormation User Guide</i>.</p>
     /// This field is required.
     pub fn resource_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_type = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Type of resource. For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services Resource Types Reference</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// <p>Type of resource. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services resource and property types reference</a> in the <i>CloudFormation User Guide</i>.</p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_type = input;
         self
     }
-    /// <p>Type of resource. For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services Resource Types Reference</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// <p>Type of resource. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services resource and property types reference</a> in the <i>CloudFormation User Guide</i>.</p>
     pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_type
     }

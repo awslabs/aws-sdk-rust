@@ -40,7 +40,9 @@ pub struct AppAssessment {
     pub version_name: ::std::option::Option<::std::string::String>,
     /// <p>Indicates if compliance drifts (deviations) were detected while running an assessment for your application.</p>
     pub drift_status: ::std::option::Option<crate::types::DriftStatus>,
-    /// <p>Indicates a concise summary that provides an overview of the Resilience Hub assessment.</p>
+    /// <p>Indicates the AI-generated summary for the Resilience Hub assessment, providing a concise overview that highlights the top risks and recommendations.</p><note>
+    /// <p>This property is available only in the US East (N. Virginia) Region.</p>
+    /// </note>
     pub summary: ::std::option::Option<crate::types::AssessmentSummary>,
 }
 impl AppAssessment {
@@ -119,7 +121,9 @@ impl AppAssessment {
     pub fn drift_status(&self) -> ::std::option::Option<&crate::types::DriftStatus> {
         self.drift_status.as_ref()
     }
-    /// <p>Indicates a concise summary that provides an overview of the Resilience Hub assessment.</p>
+    /// <p>Indicates the AI-generated summary for the Resilience Hub assessment, providing a concise overview that highlights the top risks and recommendations.</p><note>
+    /// <p>This property is available only in the US East (N. Virginia) Region.</p>
+    /// </note>
     pub fn summary(&self) -> ::std::option::Option<&crate::types::AssessmentSummary> {
         self.summary.as_ref()
     }
@@ -453,17 +457,23 @@ impl AppAssessmentBuilder {
     pub fn get_drift_status(&self) -> &::std::option::Option<crate::types::DriftStatus> {
         &self.drift_status
     }
-    /// <p>Indicates a concise summary that provides an overview of the Resilience Hub assessment.</p>
+    /// <p>Indicates the AI-generated summary for the Resilience Hub assessment, providing a concise overview that highlights the top risks and recommendations.</p><note>
+    /// <p>This property is available only in the US East (N. Virginia) Region.</p>
+    /// </note>
     pub fn summary(mut self, input: crate::types::AssessmentSummary) -> Self {
         self.summary = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates a concise summary that provides an overview of the Resilience Hub assessment.</p>
+    /// <p>Indicates the AI-generated summary for the Resilience Hub assessment, providing a concise overview that highlights the top risks and recommendations.</p><note>
+    /// <p>This property is available only in the US East (N. Virginia) Region.</p>
+    /// </note>
     pub fn set_summary(mut self, input: ::std::option::Option<crate::types::AssessmentSummary>) -> Self {
         self.summary = input;
         self
     }
-    /// <p>Indicates a concise summary that provides an overview of the Resilience Hub assessment.</p>
+    /// <p>Indicates the AI-generated summary for the Resilience Hub assessment, providing a concise overview that highlights the top risks and recommendations.</p><note>
+    /// <p>This property is available only in the US East (N. Virginia) Region.</p>
+    /// </note>
     pub fn get_summary(&self) -> &::std::option::Option<crate::types::AssessmentSummary> {
         &self.summary
     }

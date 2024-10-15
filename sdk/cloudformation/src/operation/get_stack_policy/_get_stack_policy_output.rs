@@ -4,12 +4,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetStackPolicyOutput {
-    /// <p>Structure containing the stack policy body. (For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html"> Prevent Updates to Stack Resources</a> in the <i>CloudFormation User Guide</i>.)</p>
+    /// <p>Structure containing the stack policy body. (For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html">Prevent updates to stack resources</a> in the <i>CloudFormation User Guide</i>.)</p>
     pub stack_policy_body: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetStackPolicyOutput {
-    /// <p>Structure containing the stack policy body. (For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html"> Prevent Updates to Stack Resources</a> in the <i>CloudFormation User Guide</i>.)</p>
+    /// <p>Structure containing the stack policy body. (For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html">Prevent updates to stack resources</a> in the <i>CloudFormation User Guide</i>.)</p>
     pub fn stack_policy_body(&self) -> ::std::option::Option<&str> {
         self.stack_policy_body.as_deref()
     }
@@ -34,17 +34,17 @@ pub struct GetStackPolicyOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetStackPolicyOutputBuilder {
-    /// <p>Structure containing the stack policy body. (For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html"> Prevent Updates to Stack Resources</a> in the <i>CloudFormation User Guide</i>.)</p>
+    /// <p>Structure containing the stack policy body. (For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html">Prevent updates to stack resources</a> in the <i>CloudFormation User Guide</i>.)</p>
     pub fn stack_policy_body(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stack_policy_body = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Structure containing the stack policy body. (For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html"> Prevent Updates to Stack Resources</a> in the <i>CloudFormation User Guide</i>.)</p>
+    /// <p>Structure containing the stack policy body. (For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html">Prevent updates to stack resources</a> in the <i>CloudFormation User Guide</i>.)</p>
     pub fn set_stack_policy_body(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stack_policy_body = input;
         self
     }
-    /// <p>Structure containing the stack policy body. (For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html"> Prevent Updates to Stack Resources</a> in the <i>CloudFormation User Guide</i>.)</p>
+    /// <p>Structure containing the stack policy body. (For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html">Prevent updates to stack resources</a> in the <i>CloudFormation User Guide</i>.)</p>
     pub fn get_stack_policy_body(&self) -> &::std::option::Option<::std::string::String> {
         &self.stack_policy_body
     }

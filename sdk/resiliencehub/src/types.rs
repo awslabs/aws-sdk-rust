@@ -169,6 +169,8 @@ pub use crate::types::_resource_import_status_type::ResourceImportStatusType;
 
 pub use crate::types::_resource_import_strategy_type::ResourceImportStrategyType;
 
+pub use crate::types::_error_detail::ErrorDetail;
+
 pub use crate::types::_batch_update_recommendation_status_failed_entry::BatchUpdateRecommendationStatusFailedEntry;
 
 pub use crate::types::_batch_update_recommendation_status_successful_entry::BatchUpdateRecommendationStatusSuccessfulEntry;
@@ -250,6 +252,8 @@ mod _drift_type;
 mod _eks_source;
 
 mod _eks_source_cluster_namespace;
+
+mod _error_detail;
 
 mod _estimated_cost_tier;
 

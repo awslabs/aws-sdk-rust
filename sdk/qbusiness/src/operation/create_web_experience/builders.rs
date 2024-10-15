@@ -178,6 +178,31 @@ impl CreateWebExperienceFluentBuilder {
     pub fn get_sample_prompts_control_mode(&self) -> &::std::option::Option<crate::types::WebExperienceSamplePromptsControlMode> {
         self.inner.get_sample_prompts_control_mode()
     }
+    ///
+    /// Appends an item to `origins`.
+    ///
+    /// To override the contents of this collection use [`set_origins`](Self::set_origins).
+    ///
+    /// <p>Sets the website domain origins that are allowed to embed the Amazon Q Business web experience. The <i>domain origin</i> refers to the base URL for accessing a website including the protocol (<code>http/https</code>), the domain name, and the port number (if specified).</p><note>
+    /// <p>You must only submit a <i>base URL</i> and not a full path. For example, <code>https://docs.aws.amazon.com</code>.</p>
+    /// </note>
+    pub fn origins(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.origins(input.into());
+        self
+    }
+    /// <p>Sets the website domain origins that are allowed to embed the Amazon Q Business web experience. The <i>domain origin</i> refers to the base URL for accessing a website including the protocol (<code>http/https</code>), the domain name, and the port number (if specified).</p><note>
+    /// <p>You must only submit a <i>base URL</i> and not a full path. For example, <code>https://docs.aws.amazon.com</code>.</p>
+    /// </note>
+    pub fn set_origins(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.inner = self.inner.set_origins(input);
+        self
+    }
+    /// <p>Sets the website domain origins that are allowed to embed the Amazon Q Business web experience. The <i>domain origin</i> refers to the base URL for accessing a website including the protocol (<code>http/https</code>), the domain name, and the port number (if specified).</p><note>
+    /// <p>You must only submit a <i>base URL</i> and not a full path. For example, <code>https://docs.aws.amazon.com</code>.</p>
+    /// </note>
+    pub fn get_origins(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_origins()
+    }
     /// <p>The Amazon Resource Name (ARN) of the service role attached to your web experience.</p><note>
     /// <p>You must provide this value if you're using IAM Identity Center to manage end user access to your application. If you're using legacy identity management to manage user access, you don't need to provide this value.</p>
     /// </note>

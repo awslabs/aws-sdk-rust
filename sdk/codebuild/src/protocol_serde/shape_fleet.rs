@@ -86,6 +86,10 @@ where
                         "vpcConfig" => {
                             builder = builder.set_vpc_config(crate::protocol_serde::shape_vpc_config::de_vpc_config(tokens)?);
                         }
+                        "proxyConfiguration" => {
+                            builder =
+                                builder.set_proxy_configuration(crate::protocol_serde::shape_proxy_configuration::de_proxy_configuration(tokens)?);
+                        }
                         "imageId" => {
                             builder = builder.set_image_id(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

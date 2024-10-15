@@ -109,8 +109,20 @@ pub enum Error {
     InsufficientClusterCapacityFault(crate::types::error::InsufficientClusterCapacityFault),
     /// <p>The cluster does not have read bucket or put object permissions on the S3 bucket specified when enabling logging.</p>
     InsufficientS3BucketPolicyFault(crate::types::error::InsufficientS3BucketPolicyFault),
+    /// <p>The integration you are trying to create already exists.</p>
+    IntegrationAlreadyExistsFault(crate::types::error::IntegrationAlreadyExistsFault),
+    /// <p>A conflicting conditional operation is currently in progress against this resource. This typically occurs when there are multiple requests being made to the same resource at the same time, and these requests conflict with each other.</p>
+    IntegrationConflictOperationFault(crate::types::error::IntegrationConflictOperationFault),
+    /// <p>The integration is in an invalid state and can't perform the requested operation.</p>
+    IntegrationConflictStateFault(crate::types::error::IntegrationConflictStateFault),
     /// <p>The integration can't be found.</p>
     IntegrationNotFoundFault(crate::types::error::IntegrationNotFoundFault),
+    /// <p>You can't create any more zero-ETL integrations because the quota has been reached.</p>
+    IntegrationQuotaExceededFault(crate::types::error::IntegrationQuotaExceededFault),
+    /// <p>The specified integration source can't be found.</p>
+    IntegrationSourceNotFoundFault(crate::types::error::IntegrationSourceNotFoundFault),
+    /// <p>The specified integration target can't be found.</p>
+    IntegrationTargetNotFoundFault(crate::types::error::IntegrationTargetNotFoundFault),
     /// <p>The authentication profile request is not valid. The profile name can't be null or empty. The authentication profile API operation must be available in the Amazon Web Services Region.</p>
     InvalidAuthenticationProfileRequestFault(crate::types::error::InvalidAuthenticationProfileRequestFault),
     /// <p>The status of the authorization is not valid.</p>
@@ -341,7 +353,13 @@ impl ::std::fmt::Display for Error {
             Error::IncompatibleOrderableOptions(inner) => inner.fmt(f),
             Error::InsufficientClusterCapacityFault(inner) => inner.fmt(f),
             Error::InsufficientS3BucketPolicyFault(inner) => inner.fmt(f),
+            Error::IntegrationAlreadyExistsFault(inner) => inner.fmt(f),
+            Error::IntegrationConflictOperationFault(inner) => inner.fmt(f),
+            Error::IntegrationConflictStateFault(inner) => inner.fmt(f),
             Error::IntegrationNotFoundFault(inner) => inner.fmt(f),
+            Error::IntegrationQuotaExceededFault(inner) => inner.fmt(f),
+            Error::IntegrationSourceNotFoundFault(inner) => inner.fmt(f),
+            Error::IntegrationTargetNotFoundFault(inner) => inner.fmt(f),
             Error::InvalidAuthenticationProfileRequestFault(inner) => inner.fmt(f),
             Error::InvalidAuthorizationStateFault(inner) => inner.fmt(f),
             Error::InvalidClusterParameterGroupStateFault(inner) => inner.fmt(f),
@@ -498,7 +516,13 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::IncompatibleOrderableOptions(inner) => inner.meta(),
             Self::InsufficientClusterCapacityFault(inner) => inner.meta(),
             Self::InsufficientS3BucketPolicyFault(inner) => inner.meta(),
+            Self::IntegrationAlreadyExistsFault(inner) => inner.meta(),
+            Self::IntegrationConflictOperationFault(inner) => inner.meta(),
+            Self::IntegrationConflictStateFault(inner) => inner.meta(),
             Self::IntegrationNotFoundFault(inner) => inner.meta(),
+            Self::IntegrationQuotaExceededFault(inner) => inner.meta(),
+            Self::IntegrationSourceNotFoundFault(inner) => inner.meta(),
+            Self::IntegrationTargetNotFoundFault(inner) => inner.meta(),
             Self::InvalidAuthenticationProfileRequestFault(inner) => inner.meta(),
             Self::InvalidAuthorizationStateFault(inner) => inner.meta(),
             Self::InvalidClusterParameterGroupStateFault(inner) => inner.meta(),
@@ -1421,6 +1445,46 @@ impl From<crate::operation::create_hsm_configuration::CreateHsmConfigurationErro
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_integration::CreateIntegrationError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_integration::CreateIntegrationError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_integration::CreateIntegrationError> for Error {
+    fn from(err: crate::operation::create_integration::CreateIntegrationError) -> Self {
+        match err {
+            crate::operation::create_integration::CreateIntegrationError::IntegrationAlreadyExistsFault(inner) => {
+                Error::IntegrationAlreadyExistsFault(inner)
+            }
+            crate::operation::create_integration::CreateIntegrationError::IntegrationConflictOperationFault(inner) => {
+                Error::IntegrationConflictOperationFault(inner)
+            }
+            crate::operation::create_integration::CreateIntegrationError::IntegrationQuotaExceededFault(inner) => {
+                Error::IntegrationQuotaExceededFault(inner)
+            }
+            crate::operation::create_integration::CreateIntegrationError::IntegrationSourceNotFoundFault(inner) => {
+                Error::IntegrationSourceNotFoundFault(inner)
+            }
+            crate::operation::create_integration::CreateIntegrationError::IntegrationTargetNotFoundFault(inner) => {
+                Error::IntegrationTargetNotFoundFault(inner)
+            }
+            crate::operation::create_integration::CreateIntegrationError::InvalidClusterStateFault(inner) => Error::InvalidClusterStateFault(inner),
+            crate::operation::create_integration::CreateIntegrationError::InvalidTagFault(inner) => Error::InvalidTagFault(inner),
+            crate::operation::create_integration::CreateIntegrationError::TagLimitExceededFault(inner) => Error::TagLimitExceededFault(inner),
+            crate::operation::create_integration::CreateIntegrationError::UnsupportedOperationFault(inner) => Error::UnsupportedOperationFault(inner),
+            crate::operation::create_integration::CreateIntegrationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R>
     From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_redshift_idc_application::CreateRedshiftIdcApplicationError, R>>
     for Error
@@ -2006,6 +2070,35 @@ impl From<crate::operation::delete_hsm_configuration::DeleteHsmConfigurationErro
                 Error::InvalidHsmConfigurationStateFault(inner)
             }
             crate::operation::delete_hsm_configuration::DeleteHsmConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_integration::DeleteIntegrationError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_integration::DeleteIntegrationError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_integration::DeleteIntegrationError> for Error {
+    fn from(err: crate::operation::delete_integration::DeleteIntegrationError) -> Self {
+        match err {
+            crate::operation::delete_integration::DeleteIntegrationError::IntegrationConflictOperationFault(inner) => {
+                Error::IntegrationConflictOperationFault(inner)
+            }
+            crate::operation::delete_integration::DeleteIntegrationError::IntegrationConflictStateFault(inner) => {
+                Error::IntegrationConflictStateFault(inner)
+            }
+            crate::operation::delete_integration::DeleteIntegrationError::IntegrationNotFoundFault(inner) => Error::IntegrationNotFoundFault(inner),
+            crate::operation::delete_integration::DeleteIntegrationError::UnsupportedOperationFault(inner) => Error::UnsupportedOperationFault(inner),
+            crate::operation::delete_integration::DeleteIntegrationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2965,6 +3058,33 @@ impl From<crate::operation::describe_inbound_integrations::DescribeInboundIntegr
                 Error::UnsupportedOperationFault(inner)
             }
             crate::operation::describe_inbound_integrations::DescribeInboundIntegrationsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_integrations::DescribeIntegrationsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_integrations::DescribeIntegrationsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_integrations::DescribeIntegrationsError> for Error {
+    fn from(err: crate::operation::describe_integrations::DescribeIntegrationsError) -> Self {
+        match err {
+            crate::operation::describe_integrations::DescribeIntegrationsError::IntegrationNotFoundFault(inner) => {
+                Error::IntegrationNotFoundFault(inner)
+            }
+            crate::operation::describe_integrations::DescribeIntegrationsError::UnsupportedOperationFault(inner) => {
+                Error::UnsupportedOperationFault(inner)
+            }
+            crate::operation::describe_integrations::DescribeIntegrationsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -4354,6 +4474,38 @@ impl From<crate::operation::modify_event_subscription::ModifyEventSubscriptionEr
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::modify_integration::ModifyIntegrationError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::modify_integration::ModifyIntegrationError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::modify_integration::ModifyIntegrationError> for Error {
+    fn from(err: crate::operation::modify_integration::ModifyIntegrationError) -> Self {
+        match err {
+            crate::operation::modify_integration::ModifyIntegrationError::IntegrationAlreadyExistsFault(inner) => {
+                Error::IntegrationAlreadyExistsFault(inner)
+            }
+            crate::operation::modify_integration::ModifyIntegrationError::IntegrationConflictOperationFault(inner) => {
+                Error::IntegrationConflictOperationFault(inner)
+            }
+            crate::operation::modify_integration::ModifyIntegrationError::IntegrationConflictStateFault(inner) => {
+                Error::IntegrationConflictStateFault(inner)
+            }
+            crate::operation::modify_integration::ModifyIntegrationError::IntegrationNotFoundFault(inner) => Error::IntegrationNotFoundFault(inner),
+            crate::operation::modify_integration::ModifyIntegrationError::UnsupportedOperationFault(inner) => Error::UnsupportedOperationFault(inner),
+            crate::operation::modify_integration::ModifyIntegrationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R>
     From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::modify_redshift_idc_application::ModifyRedshiftIdcApplicationError, R>>
     for Error
@@ -5190,7 +5342,13 @@ impl ::std::error::Error for Error {
             Error::IncompatibleOrderableOptions(inner) => inner.source(),
             Error::InsufficientClusterCapacityFault(inner) => inner.source(),
             Error::InsufficientS3BucketPolicyFault(inner) => inner.source(),
+            Error::IntegrationAlreadyExistsFault(inner) => inner.source(),
+            Error::IntegrationConflictOperationFault(inner) => inner.source(),
+            Error::IntegrationConflictStateFault(inner) => inner.source(),
             Error::IntegrationNotFoundFault(inner) => inner.source(),
+            Error::IntegrationQuotaExceededFault(inner) => inner.source(),
+            Error::IntegrationSourceNotFoundFault(inner) => inner.source(),
+            Error::IntegrationTargetNotFoundFault(inner) => inner.source(),
             Error::InvalidAuthenticationProfileRequestFault(inner) => inner.source(),
             Error::InvalidAuthorizationStateFault(inner) => inner.source(),
             Error::InvalidClusterParameterGroupStateFault(inner) => inner.source(),
@@ -5333,7 +5491,13 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::IncompatibleOrderableOptions(e) => e.request_id(),
             Self::InsufficientClusterCapacityFault(e) => e.request_id(),
             Self::InsufficientS3BucketPolicyFault(e) => e.request_id(),
+            Self::IntegrationAlreadyExistsFault(e) => e.request_id(),
+            Self::IntegrationConflictOperationFault(e) => e.request_id(),
+            Self::IntegrationConflictStateFault(e) => e.request_id(),
             Self::IntegrationNotFoundFault(e) => e.request_id(),
+            Self::IntegrationQuotaExceededFault(e) => e.request_id(),
+            Self::IntegrationSourceNotFoundFault(e) => e.request_id(),
+            Self::IntegrationTargetNotFoundFault(e) => e.request_id(),
             Self::InvalidAuthenticationProfileRequestFault(e) => e.request_id(),
             Self::InvalidAuthorizationStateFault(e) => e.request_id(),
             Self::InvalidClusterParameterGroupStateFault(e) => e.request_id(),

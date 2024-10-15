@@ -25,7 +25,7 @@ pub struct TestTypeInput {
     /// <li>
     /// <p><code>PutObject</code></p></li>
     /// </ul>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3.html">Actions, Resources, and Condition Keys for Amazon S3</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3.html">Actions, Resources, and Condition Keys for Amazon S3</a> in the <i>Identity and Access Management User Guide</i>.</p>
     pub log_delivery_bucket: ::std::option::Option<::std::string::String>,
 }
 impl TestTypeInput {
@@ -59,7 +59,7 @@ impl TestTypeInput {
     /// <li>
     /// <p><code>PutObject</code></p></li>
     /// </ul>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3.html">Actions, Resources, and Condition Keys for Amazon S3</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3.html">Actions, Resources, and Condition Keys for Amazon S3</a> in the <i>Identity and Access Management User Guide</i>.</p>
     pub fn log_delivery_bucket(&self) -> ::std::option::Option<&str> {
         self.log_delivery_bucket.as_deref()
     }
@@ -162,7 +162,7 @@ impl TestTypeInputBuilder {
     /// <li>
     /// <p><code>PutObject</code></p></li>
     /// </ul>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3.html">Actions, Resources, and Condition Keys for Amazon S3</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3.html">Actions, Resources, and Condition Keys for Amazon S3</a> in the <i>Identity and Access Management User Guide</i>.</p>
     pub fn log_delivery_bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.log_delivery_bucket = ::std::option::Option::Some(input.into());
         self
@@ -176,7 +176,7 @@ impl TestTypeInputBuilder {
     /// <li>
     /// <p><code>PutObject</code></p></li>
     /// </ul>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3.html">Actions, Resources, and Condition Keys for Amazon S3</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3.html">Actions, Resources, and Condition Keys for Amazon S3</a> in the <i>Identity and Access Management User Guide</i>.</p>
     pub fn set_log_delivery_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.log_delivery_bucket = input;
         self
@@ -190,7 +190,7 @@ impl TestTypeInputBuilder {
     /// <li>
     /// <p><code>PutObject</code></p></li>
     /// </ul>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3.html">Actions, Resources, and Condition Keys for Amazon S3</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3.html">Actions, Resources, and Condition Keys for Amazon S3</a> in the <i>Identity and Access Management User Guide</i>.</p>
     pub fn get_log_delivery_bucket(&self) -> &::std::option::Option<::std::string::String> {
         &self.log_delivery_bucket
     }

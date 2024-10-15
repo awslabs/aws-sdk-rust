@@ -16,7 +16,7 @@ pub struct StackSet {
     pub template_body: ::std::option::Option<::std::string::String>,
     /// <p>A list of input parameters for a stack set.</p>
     pub parameters: ::std::option::Option<::std::vec::Vec<crate::types::Parameter>>,
-    /// <p>The capabilities that are allowed in the stack set. Some stack set templates might include resources that can affect permissions in your Amazon Web Services account—for example, by creating new Identity and Access Management (IAM) users. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging IAM Resources in CloudFormation Templates.</a></p>
+    /// <p>The capabilities that are allowed in the stack set. Some stack set templates might include resources that can affect permissions in your Amazon Web Services account—for example, by creating new Identity and Access Management (IAM) users. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#using-iam-capabilities">Acknowledging IAM resources in CloudFormation templates</a>.</p>
     pub capabilities: ::std::option::Option<::std::vec::Vec<crate::types::Capability>>,
     /// <p>A list of tags that specify information about the stack set. A maximum number of 50 tags can be specified.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
@@ -75,7 +75,7 @@ impl StackSet {
     pub fn parameters(&self) -> &[crate::types::Parameter] {
         self.parameters.as_deref().unwrap_or_default()
     }
-    /// <p>The capabilities that are allowed in the stack set. Some stack set templates might include resources that can affect permissions in your Amazon Web Services account—for example, by creating new Identity and Access Management (IAM) users. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging IAM Resources in CloudFormation Templates.</a></p>
+    /// <p>The capabilities that are allowed in the stack set. Some stack set templates might include resources that can affect permissions in your Amazon Web Services account—for example, by creating new Identity and Access Management (IAM) users. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#using-iam-capabilities">Acknowledging IAM resources in CloudFormation templates</a>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.capabilities.is_none()`.
     pub fn capabilities(&self) -> &[crate::types::Capability] {
@@ -261,19 +261,19 @@ impl StackSetBuilder {
     ///
     /// To override the contents of this collection use [`set_capabilities`](Self::set_capabilities).
     ///
-    /// <p>The capabilities that are allowed in the stack set. Some stack set templates might include resources that can affect permissions in your Amazon Web Services account—for example, by creating new Identity and Access Management (IAM) users. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging IAM Resources in CloudFormation Templates.</a></p>
+    /// <p>The capabilities that are allowed in the stack set. Some stack set templates might include resources that can affect permissions in your Amazon Web Services account—for example, by creating new Identity and Access Management (IAM) users. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#using-iam-capabilities">Acknowledging IAM resources in CloudFormation templates</a>.</p>
     pub fn capabilities(mut self, input: crate::types::Capability) -> Self {
         let mut v = self.capabilities.unwrap_or_default();
         v.push(input);
         self.capabilities = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The capabilities that are allowed in the stack set. Some stack set templates might include resources that can affect permissions in your Amazon Web Services account—for example, by creating new Identity and Access Management (IAM) users. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging IAM Resources in CloudFormation Templates.</a></p>
+    /// <p>The capabilities that are allowed in the stack set. Some stack set templates might include resources that can affect permissions in your Amazon Web Services account—for example, by creating new Identity and Access Management (IAM) users. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#using-iam-capabilities">Acknowledging IAM resources in CloudFormation templates</a>.</p>
     pub fn set_capabilities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Capability>>) -> Self {
         self.capabilities = input;
         self
     }
-    /// <p>The capabilities that are allowed in the stack set. Some stack set templates might include resources that can affect permissions in your Amazon Web Services account—for example, by creating new Identity and Access Management (IAM) users. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging IAM Resources in CloudFormation Templates.</a></p>
+    /// <p>The capabilities that are allowed in the stack set. Some stack set templates might include resources that can affect permissions in your Amazon Web Services account—for example, by creating new Identity and Access Management (IAM) users. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#using-iam-capabilities">Acknowledging IAM resources in CloudFormation templates</a>.</p>
     pub fn get_capabilities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Capability>> {
         &self.capabilities
     }

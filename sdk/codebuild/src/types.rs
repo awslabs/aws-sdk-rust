@@ -103,6 +103,16 @@ pub use crate::types::_source_type::SourceType;
 
 pub use crate::types::_fleet::Fleet;
 
+pub use crate::types::_proxy_configuration::ProxyConfiguration;
+
+pub use crate::types::_fleet_proxy_rule::FleetProxyRule;
+
+pub use crate::types::_fleet_proxy_rule_effect_type::FleetProxyRuleEffectType;
+
+pub use crate::types::_fleet_proxy_rule_type::FleetProxyRuleType;
+
+pub use crate::types::_fleet_proxy_rule_behavior::FleetProxyRuleBehavior;
+
 pub use crate::types::_fleet_overflow_behavior::FleetOverflowBehavior;
 
 pub use crate::types::_scaling_configuration_output::ScalingConfigurationOutput;
@@ -285,6 +295,14 @@ mod _fleet_context_code;
 
 mod _fleet_overflow_behavior;
 
+mod _fleet_proxy_rule;
+
+mod _fleet_proxy_rule_behavior;
+
+mod _fleet_proxy_rule_effect_type;
+
+mod _fleet_proxy_rule_type;
+
 mod _fleet_scaling_metric_type;
 
 mod _fleet_scaling_type;
@@ -336,6 +354,8 @@ mod _project_source;
 mod _project_source_version;
 
 mod _project_visibility_type;
+
+mod _proxy_configuration;
 
 mod _registry_credential;
 

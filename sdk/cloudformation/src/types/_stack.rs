@@ -42,20 +42,20 @@ pub struct Stack {
     pub capabilities: ::std::option::Option<::std::vec::Vec<crate::types::Capability>>,
     /// <p>A list of output structures.</p>
     pub outputs: ::std::option::Option<::std::vec::Vec<crate::types::Output>>,
-    /// <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM) role that's associated with the stack. During a stack operation, CloudFormation uses this role's credentials to make calls on your behalf.</p>
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that's associated with the stack. During a stack operation, CloudFormation uses this role's credentials to make calls on your behalf.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of <code>Tag</code>s that specify information about the stack.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>Whether termination protection is enabled for the stack.</p>
-    /// <p>For <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">nested stacks</a>, termination protection is set on the root stack and can't be changed directly on the nested stack. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-protect-stacks.html">Protecting a Stack From Being Deleted</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// <p>For <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">nested stacks</a>, termination protection is set on the root stack and can't be changed directly on the nested stack. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-protect-stacks.html">Protect a CloudFormation stack from being deleted</a> in the <i>CloudFormation User Guide</i>.</p>
     pub enable_termination_protection: ::std::option::Option<bool>,
     /// <p>For nested stacks--stacks created as resources for another stack--the stack ID of the direct parent of this stack. For the first level of nested stacks, the root stack is also the parent stack.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working with Nested Stacks</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Embed stacks within other stacks using nested stacks</a> in the <i>CloudFormation User Guide</i>.</p>
     pub parent_id: ::std::option::Option<::std::string::String>,
     /// <p>For nested stacks--stacks created as resources for another stack--the stack ID of the top-level stack to which the nested stack ultimately belongs.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working with Nested Stacks</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Embed stacks within other stacks using nested stacks</a> in the <i>CloudFormation User Guide</i>.</p>
     pub root_id: ::std::option::Option<::std::string::String>,
-    /// <p>Information about whether a stack's actual configuration differs, or has <i>drifted</i>, from its expected configuration, as defined in the stack template and any values specified as template parameters. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting Unregulated Configuration Changes to Stacks and Resources</a>.</p>
+    /// <p>Information about whether a stack's actual configuration differs, or has <i>drifted</i>, from its expected configuration, as defined in the stack template and any values specified as template parameters. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detect unmanaged configuration changes to stacks and resources with drift detection</a>.</p>
     pub drift_information: ::std::option::Option<crate::types::StackDriftInformation>,
     /// <p>When set to <code>true</code>, newly created resources are deleted when the operation rolls back. This includes newly created resources marked with a deletion policy of <code>Retain</code>.</p>
     /// <p>Default: <code>false</code></p>
@@ -68,7 +68,7 @@ pub struct Stack {
     /// <p><code>FORCE_DELETE_STACK</code> - Delete the stack if it's stuck in a <code>DELETE_FAILED</code> state due to resource deletion failure.</p></li>
     /// </ul>
     pub deletion_mode: ::std::option::Option<crate::types::DeletionMode>,
-    /// <p>The detailed status of the resource or stack. If <code>CONFIGURATION_COMPLETE</code> is present, the resource or resource configuration phase has completed and the stabilization of the resources is in progress. The stack sets <code>CONFIGURATION_COMPLETE</code> when all of the resources in the stack have reached that event. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stack-resource-configuration-complete.html">CloudFormation stack deployment</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// <p>The detailed status of the resource or stack. If <code>CONFIGURATION_COMPLETE</code> is present, the resource or resource configuration phase has completed and the stabilization of the resources is in progress. The stack sets <code>CONFIGURATION_COMPLETE</code> when all of the resources in the stack have reached that event. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stack-resource-configuration-complete.html">Understand CloudFormation stack creation events</a> in the <i>CloudFormation User Guide</i>.</p>
     pub detailed_status: ::std::option::Option<crate::types::DetailedStatus>,
 }
 impl Stack {
@@ -150,7 +150,7 @@ impl Stack {
     pub fn outputs(&self) -> &[crate::types::Output] {
         self.outputs.as_deref().unwrap_or_default()
     }
-    /// <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM) role that's associated with the stack. During a stack operation, CloudFormation uses this role's credentials to make calls on your behalf.</p>
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that's associated with the stack. During a stack operation, CloudFormation uses this role's credentials to make calls on your behalf.</p>
     pub fn role_arn(&self) -> ::std::option::Option<&str> {
         self.role_arn.as_deref()
     }
@@ -161,21 +161,21 @@ impl Stack {
         self.tags.as_deref().unwrap_or_default()
     }
     /// <p>Whether termination protection is enabled for the stack.</p>
-    /// <p>For <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">nested stacks</a>, termination protection is set on the root stack and can't be changed directly on the nested stack. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-protect-stacks.html">Protecting a Stack From Being Deleted</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// <p>For <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">nested stacks</a>, termination protection is set on the root stack and can't be changed directly on the nested stack. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-protect-stacks.html">Protect a CloudFormation stack from being deleted</a> in the <i>CloudFormation User Guide</i>.</p>
     pub fn enable_termination_protection(&self) -> ::std::option::Option<bool> {
         self.enable_termination_protection
     }
     /// <p>For nested stacks--stacks created as resources for another stack--the stack ID of the direct parent of this stack. For the first level of nested stacks, the root stack is also the parent stack.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working with Nested Stacks</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Embed stacks within other stacks using nested stacks</a> in the <i>CloudFormation User Guide</i>.</p>
     pub fn parent_id(&self) -> ::std::option::Option<&str> {
         self.parent_id.as_deref()
     }
     /// <p>For nested stacks--stacks created as resources for another stack--the stack ID of the top-level stack to which the nested stack ultimately belongs.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working with Nested Stacks</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Embed stacks within other stacks using nested stacks</a> in the <i>CloudFormation User Guide</i>.</p>
     pub fn root_id(&self) -> ::std::option::Option<&str> {
         self.root_id.as_deref()
     }
-    /// <p>Information about whether a stack's actual configuration differs, or has <i>drifted</i>, from its expected configuration, as defined in the stack template and any values specified as template parameters. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting Unregulated Configuration Changes to Stacks and Resources</a>.</p>
+    /// <p>Information about whether a stack's actual configuration differs, or has <i>drifted</i>, from its expected configuration, as defined in the stack template and any values specified as template parameters. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detect unmanaged configuration changes to stacks and resources with drift detection</a>.</p>
     pub fn drift_information(&self) -> ::std::option::Option<&crate::types::StackDriftInformation> {
         self.drift_information.as_ref()
     }
@@ -194,7 +194,7 @@ impl Stack {
     pub fn deletion_mode(&self) -> ::std::option::Option<&crate::types::DeletionMode> {
         self.deletion_mode.as_ref()
     }
-    /// <p>The detailed status of the resource or stack. If <code>CONFIGURATION_COMPLETE</code> is present, the resource or resource configuration phase has completed and the stabilization of the resources is in progress. The stack sets <code>CONFIGURATION_COMPLETE</code> when all of the resources in the stack have reached that event. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stack-resource-configuration-complete.html">CloudFormation stack deployment</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// <p>The detailed status of the resource or stack. If <code>CONFIGURATION_COMPLETE</code> is present, the resource or resource configuration phase has completed and the stabilization of the resources is in progress. The stack sets <code>CONFIGURATION_COMPLETE</code> when all of the resources in the stack have reached that event. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stack-resource-configuration-complete.html">Understand CloudFormation stack creation events</a> in the <i>CloudFormation User Guide</i>.</p>
     pub fn detailed_status(&self) -> ::std::option::Option<&crate::types::DetailedStatus> {
         self.detailed_status.as_ref()
     }
@@ -506,17 +506,17 @@ impl StackBuilder {
     pub fn get_outputs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Output>> {
         &self.outputs
     }
-    /// <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM) role that's associated with the stack. During a stack operation, CloudFormation uses this role's credentials to make calls on your behalf.</p>
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that's associated with the stack. During a stack operation, CloudFormation uses this role's credentials to make calls on your behalf.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM) role that's associated with the stack. During a stack operation, CloudFormation uses this role's credentials to make calls on your behalf.</p>
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that's associated with the stack. During a stack operation, CloudFormation uses this role's credentials to make calls on your behalf.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM) role that's associated with the stack. During a stack operation, CloudFormation uses this role's credentials to make calls on your behalf.</p>
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that's associated with the stack. During a stack operation, CloudFormation uses this role's credentials to make calls on your behalf.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.role_arn
     }
@@ -541,67 +541,67 @@ impl StackBuilder {
         &self.tags
     }
     /// <p>Whether termination protection is enabled for the stack.</p>
-    /// <p>For <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">nested stacks</a>, termination protection is set on the root stack and can't be changed directly on the nested stack. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-protect-stacks.html">Protecting a Stack From Being Deleted</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// <p>For <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">nested stacks</a>, termination protection is set on the root stack and can't be changed directly on the nested stack. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-protect-stacks.html">Protect a CloudFormation stack from being deleted</a> in the <i>CloudFormation User Guide</i>.</p>
     pub fn enable_termination_protection(mut self, input: bool) -> Self {
         self.enable_termination_protection = ::std::option::Option::Some(input);
         self
     }
     /// <p>Whether termination protection is enabled for the stack.</p>
-    /// <p>For <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">nested stacks</a>, termination protection is set on the root stack and can't be changed directly on the nested stack. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-protect-stacks.html">Protecting a Stack From Being Deleted</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// <p>For <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">nested stacks</a>, termination protection is set on the root stack and can't be changed directly on the nested stack. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-protect-stacks.html">Protect a CloudFormation stack from being deleted</a> in the <i>CloudFormation User Guide</i>.</p>
     pub fn set_enable_termination_protection(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enable_termination_protection = input;
         self
     }
     /// <p>Whether termination protection is enabled for the stack.</p>
-    /// <p>For <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">nested stacks</a>, termination protection is set on the root stack and can't be changed directly on the nested stack. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-protect-stacks.html">Protecting a Stack From Being Deleted</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// <p>For <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">nested stacks</a>, termination protection is set on the root stack and can't be changed directly on the nested stack. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-protect-stacks.html">Protect a CloudFormation stack from being deleted</a> in the <i>CloudFormation User Guide</i>.</p>
     pub fn get_enable_termination_protection(&self) -> &::std::option::Option<bool> {
         &self.enable_termination_protection
     }
     /// <p>For nested stacks--stacks created as resources for another stack--the stack ID of the direct parent of this stack. For the first level of nested stacks, the root stack is also the parent stack.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working with Nested Stacks</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Embed stacks within other stacks using nested stacks</a> in the <i>CloudFormation User Guide</i>.</p>
     pub fn parent_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parent_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>For nested stacks--stacks created as resources for another stack--the stack ID of the direct parent of this stack. For the first level of nested stacks, the root stack is also the parent stack.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working with Nested Stacks</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Embed stacks within other stacks using nested stacks</a> in the <i>CloudFormation User Guide</i>.</p>
     pub fn set_parent_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.parent_id = input;
         self
     }
     /// <p>For nested stacks--stacks created as resources for another stack--the stack ID of the direct parent of this stack. For the first level of nested stacks, the root stack is also the parent stack.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working with Nested Stacks</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Embed stacks within other stacks using nested stacks</a> in the <i>CloudFormation User Guide</i>.</p>
     pub fn get_parent_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.parent_id
     }
     /// <p>For nested stacks--stacks created as resources for another stack--the stack ID of the top-level stack to which the nested stack ultimately belongs.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working with Nested Stacks</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Embed stacks within other stacks using nested stacks</a> in the <i>CloudFormation User Guide</i>.</p>
     pub fn root_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.root_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>For nested stacks--stacks created as resources for another stack--the stack ID of the top-level stack to which the nested stack ultimately belongs.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working with Nested Stacks</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Embed stacks within other stacks using nested stacks</a> in the <i>CloudFormation User Guide</i>.</p>
     pub fn set_root_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.root_id = input;
         self
     }
     /// <p>For nested stacks--stacks created as resources for another stack--the stack ID of the top-level stack to which the nested stack ultimately belongs.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working with Nested Stacks</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Embed stacks within other stacks using nested stacks</a> in the <i>CloudFormation User Guide</i>.</p>
     pub fn get_root_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.root_id
     }
-    /// <p>Information about whether a stack's actual configuration differs, or has <i>drifted</i>, from its expected configuration, as defined in the stack template and any values specified as template parameters. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting Unregulated Configuration Changes to Stacks and Resources</a>.</p>
+    /// <p>Information about whether a stack's actual configuration differs, or has <i>drifted</i>, from its expected configuration, as defined in the stack template and any values specified as template parameters. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detect unmanaged configuration changes to stacks and resources with drift detection</a>.</p>
     pub fn drift_information(mut self, input: crate::types::StackDriftInformation) -> Self {
         self.drift_information = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Information about whether a stack's actual configuration differs, or has <i>drifted</i>, from its expected configuration, as defined in the stack template and any values specified as template parameters. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting Unregulated Configuration Changes to Stacks and Resources</a>.</p>
+    /// <p>Information about whether a stack's actual configuration differs, or has <i>drifted</i>, from its expected configuration, as defined in the stack template and any values specified as template parameters. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detect unmanaged configuration changes to stacks and resources with drift detection</a>.</p>
     pub fn set_drift_information(mut self, input: ::std::option::Option<crate::types::StackDriftInformation>) -> Self {
         self.drift_information = input;
         self
     }
-    /// <p>Information about whether a stack's actual configuration differs, or has <i>drifted</i>, from its expected configuration, as defined in the stack template and any values specified as template parameters. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting Unregulated Configuration Changes to Stacks and Resources</a>.</p>
+    /// <p>Information about whether a stack's actual configuration differs, or has <i>drifted</i>, from its expected configuration, as defined in the stack template and any values specified as template parameters. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detect unmanaged configuration changes to stacks and resources with drift detection</a>.</p>
     pub fn get_drift_information(&self) -> &::std::option::Option<crate::types::StackDriftInformation> {
         &self.drift_information
     }
@@ -654,17 +654,17 @@ impl StackBuilder {
     pub fn get_deletion_mode(&self) -> &::std::option::Option<crate::types::DeletionMode> {
         &self.deletion_mode
     }
-    /// <p>The detailed status of the resource or stack. If <code>CONFIGURATION_COMPLETE</code> is present, the resource or resource configuration phase has completed and the stabilization of the resources is in progress. The stack sets <code>CONFIGURATION_COMPLETE</code> when all of the resources in the stack have reached that event. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stack-resource-configuration-complete.html">CloudFormation stack deployment</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// <p>The detailed status of the resource or stack. If <code>CONFIGURATION_COMPLETE</code> is present, the resource or resource configuration phase has completed and the stabilization of the resources is in progress. The stack sets <code>CONFIGURATION_COMPLETE</code> when all of the resources in the stack have reached that event. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stack-resource-configuration-complete.html">Understand CloudFormation stack creation events</a> in the <i>CloudFormation User Guide</i>.</p>
     pub fn detailed_status(mut self, input: crate::types::DetailedStatus) -> Self {
         self.detailed_status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The detailed status of the resource or stack. If <code>CONFIGURATION_COMPLETE</code> is present, the resource or resource configuration phase has completed and the stabilization of the resources is in progress. The stack sets <code>CONFIGURATION_COMPLETE</code> when all of the resources in the stack have reached that event. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stack-resource-configuration-complete.html">CloudFormation stack deployment</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// <p>The detailed status of the resource or stack. If <code>CONFIGURATION_COMPLETE</code> is present, the resource or resource configuration phase has completed and the stabilization of the resources is in progress. The stack sets <code>CONFIGURATION_COMPLETE</code> when all of the resources in the stack have reached that event. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stack-resource-configuration-complete.html">Understand CloudFormation stack creation events</a> in the <i>CloudFormation User Guide</i>.</p>
     pub fn set_detailed_status(mut self, input: ::std::option::Option<crate::types::DetailedStatus>) -> Self {
         self.detailed_status = input;
         self
     }
-    /// <p>The detailed status of the resource or stack. If <code>CONFIGURATION_COMPLETE</code> is present, the resource or resource configuration phase has completed and the stabilization of the resources is in progress. The stack sets <code>CONFIGURATION_COMPLETE</code> when all of the resources in the stack have reached that event. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stack-resource-configuration-complete.html">CloudFormation stack deployment</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// <p>The detailed status of the resource or stack. If <code>CONFIGURATION_COMPLETE</code> is present, the resource or resource configuration phase has completed and the stabilization of the resources is in progress. The stack sets <code>CONFIGURATION_COMPLETE</code> when all of the resources in the stack have reached that event. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stack-resource-configuration-complete.html">Understand CloudFormation stack creation events</a> in the <i>CloudFormation User Guide</i>.</p>
     pub fn get_detailed_status(&self) -> &::std::option::Option<crate::types::DetailedStatus> {
         &self.detailed_status
     }

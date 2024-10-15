@@ -33,23 +33,29 @@ pub fn ser_create_fleet_input_input(
         crate::protocol_serde::shape_vpc_config::ser_vpc_config(&mut object_9, var_8)?;
         object_9.finish();
     }
-    if let Some(var_10) = &input.image_id {
-        object.key("imageId").string(var_10.as_str());
+    if let Some(var_10) = &input.proxy_configuration {
+        #[allow(unused_mut)]
+        let mut object_11 = object.key("proxyConfiguration").start_object();
+        crate::protocol_serde::shape_proxy_configuration::ser_proxy_configuration(&mut object_11, var_10)?;
+        object_11.finish();
     }
-    if let Some(var_11) = &input.fleet_service_role {
-        object.key("fleetServiceRole").string(var_11.as_str());
+    if let Some(var_12) = &input.image_id {
+        object.key("imageId").string(var_12.as_str());
     }
-    if let Some(var_12) = &input.tags {
-        let mut array_13 = object.key("tags").start_array();
-        for item_14 in var_12 {
+    if let Some(var_13) = &input.fleet_service_role {
+        object.key("fleetServiceRole").string(var_13.as_str());
+    }
+    if let Some(var_14) = &input.tags {
+        let mut array_15 = object.key("tags").start_array();
+        for item_16 in var_14 {
             {
                 #[allow(unused_mut)]
-                let mut object_15 = array_13.value().start_object();
-                crate::protocol_serde::shape_tag::ser_tag(&mut object_15, item_14)?;
-                object_15.finish();
+                let mut object_17 = array_15.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_17, item_16)?;
+                object_17.finish();
             }
         }
-        array_13.finish();
+        array_15.finish();
     }
     Ok(())
 }

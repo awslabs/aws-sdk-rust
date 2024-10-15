@@ -177,6 +177,9 @@ pub(crate) fn de_describe_draft_app_version_resources_import_status(
                             .transpose()?,
                     );
                 }
+                "errorDetails" => {
+                    builder = builder.set_error_details(crate::protocol_serde::shape_error_detail_list::de_error_detail_list(tokens)?);
+                }
                 "errorMessage" => {
                     builder = builder.set_error_message(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

@@ -213,6 +213,16 @@ pub(crate) fn reflens_describe_inbound_integrations_output_output_marker(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_describe_integrations_output_output_marker(
+    input: &crate::operation::describe_integrations::DescribeIntegrationsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.marker {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_describe_node_configuration_options_output_output_marker(
     input: &crate::operation::describe_node_configuration_options::DescribeNodeConfigurationOptionsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -571,6 +581,16 @@ pub(crate) fn lens_describe_inbound_integrations_output_output_inbound_integrati
     input: crate::operation::describe_inbound_integrations::DescribeInboundIntegrationsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::InboundIntegration>> {
     let input = match input.inbound_integrations {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_describe_integrations_output_output_integrations(
+    input: crate::operation::describe_integrations::DescribeIntegrationsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::Integration>> {
+    let input = match input.integrations {
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,
     };

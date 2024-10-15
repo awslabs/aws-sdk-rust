@@ -98,7 +98,6 @@ impl BatchUpdateRecommendationStatusSuccessfulEntryBuilder {
         &self.reference_id
     }
     /// <p>The operational recommendation item.</p>
-    /// This field is required.
     pub fn item(mut self, input: crate::types::UpdateRecommendationStatusItem) -> Self {
         self.item = ::std::option::Option::Some(input);
         self

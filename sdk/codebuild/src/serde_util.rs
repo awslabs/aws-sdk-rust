@@ -134,6 +134,21 @@ pub(crate) fn environment_variable_correct_errors(
     builder
 }
 
+pub(crate) fn fleet_proxy_rule_correct_errors(
+    mut builder: crate::types::builders::FleetProxyRuleBuilder,
+) -> crate::types::builders::FleetProxyRuleBuilder {
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::FleetProxyRuleType>().ok()
+    }
+    if builder.effect.is_none() {
+        builder.effect = "no value was set".parse::<crate::types::FleetProxyRuleEffectType>().ok()
+    }
+    if builder.entities.is_none() {
+        builder.entities = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn webhook_filter_correct_errors(
     mut builder: crate::types::builders::WebhookFilterBuilder,
 ) -> crate::types::builders::WebhookFilterBuilder {

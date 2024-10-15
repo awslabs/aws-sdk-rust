@@ -20,8 +20,13 @@ pub struct JobSummary {
     pub status: crate::types::JobStatus,
     /// <p>The end date and time for the job.</p>
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The type for the job. If the value is <code>RELEASE</code>, the job was manually released from its source by using the <code>StartJob</code> API. If the value is <code>RETRY</code>, the job was manually retried using the <code>StartJob</code> API. If the value is <code>WEB_HOOK</code>, the job was automatically triggered by webhooks.</p>
+    /// <p>The type for the job. If the value is <code>RELEASE</code>, the job was manually released from its source by using the <code>StartJob</code> API. This value is available only for apps that are connected to a repository.</p>
+    /// <p>If the value is <code>RETRY</code>, the job was manually retried using the <code>StartJob</code> API. If the value is <code>WEB_HOOK</code>, the job was automatically triggered by webhooks. If the value is <code>MANUAL</code>, the job is for a manually deployed app. Manually deployed apps are not connected to a Git repository.</p>
     pub job_type: crate::types::JobType,
+    /// <p>The source URL for the files to deploy. The source URL can be either an HTTP GET URL that is publicly accessible and downloads a single .zip file, or an Amazon S3 bucket and prefix.</p>
+    pub source_url: ::std::option::Option<::std::string::String>,
+    /// <p>The type of source specified by the <code>sourceURL</code>. If the value is <code>ZIP</code>, the source is a .zip file. If the value is <code>BUCKET_PREFIX</code>, the source is an Amazon S3 bucket and prefix. If no value is specified, the default is <code>ZIP</code>.</p>
+    pub source_url_type: ::std::option::Option<crate::types::SourceUrlType>,
 }
 impl JobSummary {
     /// <p>The Amazon Resource Name (ARN) for the job.</p>
@@ -60,9 +65,18 @@ impl JobSummary {
     pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
-    /// <p>The type for the job. If the value is <code>RELEASE</code>, the job was manually released from its source by using the <code>StartJob</code> API. If the value is <code>RETRY</code>, the job was manually retried using the <code>StartJob</code> API. If the value is <code>WEB_HOOK</code>, the job was automatically triggered by webhooks.</p>
+    /// <p>The type for the job. If the value is <code>RELEASE</code>, the job was manually released from its source by using the <code>StartJob</code> API. This value is available only for apps that are connected to a repository.</p>
+    /// <p>If the value is <code>RETRY</code>, the job was manually retried using the <code>StartJob</code> API. If the value is <code>WEB_HOOK</code>, the job was automatically triggered by webhooks. If the value is <code>MANUAL</code>, the job is for a manually deployed app. Manually deployed apps are not connected to a Git repository.</p>
     pub fn job_type(&self) -> &crate::types::JobType {
         &self.job_type
+    }
+    /// <p>The source URL for the files to deploy. The source URL can be either an HTTP GET URL that is publicly accessible and downloads a single .zip file, or an Amazon S3 bucket and prefix.</p>
+    pub fn source_url(&self) -> ::std::option::Option<&str> {
+        self.source_url.as_deref()
+    }
+    /// <p>The type of source specified by the <code>sourceURL</code>. If the value is <code>ZIP</code>, the source is a .zip file. If the value is <code>BUCKET_PREFIX</code>, the source is an Amazon S3 bucket and prefix. If no value is specified, the default is <code>ZIP</code>.</p>
+    pub fn source_url_type(&self) -> ::std::option::Option<&crate::types::SourceUrlType> {
+        self.source_url_type.as_ref()
     }
 }
 impl JobSummary {
@@ -85,6 +99,8 @@ pub struct JobSummaryBuilder {
     pub(crate) status: ::std::option::Option<crate::types::JobStatus>,
     pub(crate) end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) job_type: ::std::option::Option<crate::types::JobType>,
+    pub(crate) source_url: ::std::option::Option<::std::string::String>,
+    pub(crate) source_url_type: ::std::option::Option<crate::types::SourceUrlType>,
 }
 impl JobSummaryBuilder {
     /// <p>The Amazon Resource Name (ARN) for the job.</p>
@@ -206,20 +222,51 @@ impl JobSummaryBuilder {
     pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.end_time
     }
-    /// <p>The type for the job. If the value is <code>RELEASE</code>, the job was manually released from its source by using the <code>StartJob</code> API. If the value is <code>RETRY</code>, the job was manually retried using the <code>StartJob</code> API. If the value is <code>WEB_HOOK</code>, the job was automatically triggered by webhooks.</p>
+    /// <p>The type for the job. If the value is <code>RELEASE</code>, the job was manually released from its source by using the <code>StartJob</code> API. This value is available only for apps that are connected to a repository.</p>
+    /// <p>If the value is <code>RETRY</code>, the job was manually retried using the <code>StartJob</code> API. If the value is <code>WEB_HOOK</code>, the job was automatically triggered by webhooks. If the value is <code>MANUAL</code>, the job is for a manually deployed app. Manually deployed apps are not connected to a Git repository.</p>
     /// This field is required.
     pub fn job_type(mut self, input: crate::types::JobType) -> Self {
         self.job_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type for the job. If the value is <code>RELEASE</code>, the job was manually released from its source by using the <code>StartJob</code> API. If the value is <code>RETRY</code>, the job was manually retried using the <code>StartJob</code> API. If the value is <code>WEB_HOOK</code>, the job was automatically triggered by webhooks.</p>
+    /// <p>The type for the job. If the value is <code>RELEASE</code>, the job was manually released from its source by using the <code>StartJob</code> API. This value is available only for apps that are connected to a repository.</p>
+    /// <p>If the value is <code>RETRY</code>, the job was manually retried using the <code>StartJob</code> API. If the value is <code>WEB_HOOK</code>, the job was automatically triggered by webhooks. If the value is <code>MANUAL</code>, the job is for a manually deployed app. Manually deployed apps are not connected to a Git repository.</p>
     pub fn set_job_type(mut self, input: ::std::option::Option<crate::types::JobType>) -> Self {
         self.job_type = input;
         self
     }
-    /// <p>The type for the job. If the value is <code>RELEASE</code>, the job was manually released from its source by using the <code>StartJob</code> API. If the value is <code>RETRY</code>, the job was manually retried using the <code>StartJob</code> API. If the value is <code>WEB_HOOK</code>, the job was automatically triggered by webhooks.</p>
+    /// <p>The type for the job. If the value is <code>RELEASE</code>, the job was manually released from its source by using the <code>StartJob</code> API. This value is available only for apps that are connected to a repository.</p>
+    /// <p>If the value is <code>RETRY</code>, the job was manually retried using the <code>StartJob</code> API. If the value is <code>WEB_HOOK</code>, the job was automatically triggered by webhooks. If the value is <code>MANUAL</code>, the job is for a manually deployed app. Manually deployed apps are not connected to a Git repository.</p>
     pub fn get_job_type(&self) -> &::std::option::Option<crate::types::JobType> {
         &self.job_type
+    }
+    /// <p>The source URL for the files to deploy. The source URL can be either an HTTP GET URL that is publicly accessible and downloads a single .zip file, or an Amazon S3 bucket and prefix.</p>
+    pub fn source_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.source_url = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The source URL for the files to deploy. The source URL can be either an HTTP GET URL that is publicly accessible and downloads a single .zip file, or an Amazon S3 bucket and prefix.</p>
+    pub fn set_source_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.source_url = input;
+        self
+    }
+    /// <p>The source URL for the files to deploy. The source URL can be either an HTTP GET URL that is publicly accessible and downloads a single .zip file, or an Amazon S3 bucket and prefix.</p>
+    pub fn get_source_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_url
+    }
+    /// <p>The type of source specified by the <code>sourceURL</code>. If the value is <code>ZIP</code>, the source is a .zip file. If the value is <code>BUCKET_PREFIX</code>, the source is an Amazon S3 bucket and prefix. If no value is specified, the default is <code>ZIP</code>.</p>
+    pub fn source_url_type(mut self, input: crate::types::SourceUrlType) -> Self {
+        self.source_url_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The type of source specified by the <code>sourceURL</code>. If the value is <code>ZIP</code>, the source is a .zip file. If the value is <code>BUCKET_PREFIX</code>, the source is an Amazon S3 bucket and prefix. If no value is specified, the default is <code>ZIP</code>.</p>
+    pub fn set_source_url_type(mut self, input: ::std::option::Option<crate::types::SourceUrlType>) -> Self {
+        self.source_url_type = input;
+        self
+    }
+    /// <p>The type of source specified by the <code>sourceURL</code>. If the value is <code>ZIP</code>, the source is a .zip file. If the value is <code>BUCKET_PREFIX</code>, the source is an Amazon S3 bucket and prefix. If no value is specified, the default is <code>ZIP</code>.</p>
+    pub fn get_source_url_type(&self) -> &::std::option::Option<crate::types::SourceUrlType> {
+        &self.source_url_type
     }
     /// Consumes the builder and constructs a [`JobSummary`](crate::types::JobSummary).
     /// This method will fail if any of the following fields are not set:
@@ -282,6 +329,8 @@ impl JobSummaryBuilder {
                     "job_type was not specified but it is required when building JobSummary",
                 )
             })?,
+            source_url: self.source_url,
+            source_url_type: self.source_url_type,
         })
     }
 }

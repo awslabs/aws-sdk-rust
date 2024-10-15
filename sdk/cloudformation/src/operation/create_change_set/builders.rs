@@ -201,7 +201,7 @@ impl CreateChangeSetFluentBuilder {
     /// <ul>
     /// <li>
     /// <p><code>CAPABILITY_IAM</code> and <code>CAPABILITY_NAMED_IAM</code></p>
-    /// <p>Some stack templates might include resources that can affect permissions in your Amazon Web Services account; for example, by creating new Identity and Access Management (IAM) users. For those stacks, you must explicitly acknowledge this by specifying one of these capabilities.</p>
+    /// <p>Some stack templates might include resources that can affect permissions in your Amazon Web Services account; for example, by creating new IAM users. For those stacks, you must explicitly acknowledge this by specifying one of these capabilities.</p>
     /// <p>The following IAM resources require you to specify either the <code>CAPABILITY_IAM</code> or <code>CAPABILITY_NAMED_IAM</code> capability.</p>
     /// <ul>
     /// <li>
@@ -214,28 +214,28 @@ impl CreateChangeSetFluentBuilder {
     /// <p>If your stack template contains these resources, we suggest that you review all permissions associated with them and edit their permissions if necessary.</p>
     /// <ul>
     /// <li>
-    /// <p><a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html"> AWS::IAM::AccessKey</a></p></li>
+    /// <p><a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-accesskey.html"> AWS::IAM::AccessKey</a></p></li>
     /// <li>
-    /// <p><a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html"> AWS::IAM::Group</a></p></li>
+    /// <p><a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-group.html"> AWS::IAM::Group</a></p></li>
     /// <li>
     /// <p><a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">AWS::IAM::InstanceProfile</a></p></li>
     /// <li>
-    /// <p><a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html"> AWS::IAM::Policy</a></p></li>
+    /// <p><a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html"> AWS::IAM::Policy</a></p></li>
     /// <li>
     /// <p><a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html"> AWS::IAM::Role</a></p></li>
     /// <li>
-    /// <p><a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html"> AWS::IAM::User</a></p></li>
+    /// <p><a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-user.html"> AWS::IAM::User</a></p></li>
     /// <li>
-    /// <p><a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">AWS::IAM::UserToGroupAddition</a></p></li>
+    /// <p><a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-usertogroupaddition.html">AWS::IAM::UserToGroupAddition</a></p></li>
     /// </ul>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging IAM resources in CloudFormation templates</a>.</p></li>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#using-iam-capabilities">Acknowledging IAM resources in CloudFormation templates</a>.</p></li>
     /// <li>
     /// <p><code>CAPABILITY_AUTO_EXPAND</code></p>
     /// <p>Some template contain macros. Macros perform custom processing on templates; this can include simple actions like find-and-replace operations, all the way to extensive transformations of entire templates. Because of this, users typically create a change set from the processed template, so that they can review the changes resulting from the macros before actually creating the stack. If your stack template contains one or more macros, and you choose to create a stack directly from the processed template, without first reviewing the resulting changes in a change set, you must acknowledge this capability. This includes the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">AWS::Include</a> and <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a> transforms, which are macros hosted by CloudFormation.</p><note>
     /// <p>This capacity doesn't apply to creating change sets, and specifying it when creating change sets has no effect.</p>
     /// <p>If you want to create a stack from a stack template that contains macros <i>and</i> nested stacks, you must create or update the stack directly from the template using the <code>CreateStack</code> or <code>UpdateStack</code> action, and specifying this capability.</p>
     /// </note>
-    /// <p>For more information about macros, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using CloudFormation macros to perform custom processing on templates</a>.</p></li>
+    /// <p>For more information about macros, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Perform custom processing on CloudFormation templates with template macros</a>.</p></li>
     /// </ul><note>
     /// <p>Only one of the <code>Capabilities</code> and <code>ResourceType</code> parameters can be specified.</p>
     /// </note>
@@ -247,7 +247,7 @@ impl CreateChangeSetFluentBuilder {
     /// <ul>
     /// <li>
     /// <p><code>CAPABILITY_IAM</code> and <code>CAPABILITY_NAMED_IAM</code></p>
-    /// <p>Some stack templates might include resources that can affect permissions in your Amazon Web Services account; for example, by creating new Identity and Access Management (IAM) users. For those stacks, you must explicitly acknowledge this by specifying one of these capabilities.</p>
+    /// <p>Some stack templates might include resources that can affect permissions in your Amazon Web Services account; for example, by creating new IAM users. For those stacks, you must explicitly acknowledge this by specifying one of these capabilities.</p>
     /// <p>The following IAM resources require you to specify either the <code>CAPABILITY_IAM</code> or <code>CAPABILITY_NAMED_IAM</code> capability.</p>
     /// <ul>
     /// <li>
@@ -260,28 +260,28 @@ impl CreateChangeSetFluentBuilder {
     /// <p>If your stack template contains these resources, we suggest that you review all permissions associated with them and edit their permissions if necessary.</p>
     /// <ul>
     /// <li>
-    /// <p><a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html"> AWS::IAM::AccessKey</a></p></li>
+    /// <p><a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-accesskey.html"> AWS::IAM::AccessKey</a></p></li>
     /// <li>
-    /// <p><a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html"> AWS::IAM::Group</a></p></li>
+    /// <p><a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-group.html"> AWS::IAM::Group</a></p></li>
     /// <li>
     /// <p><a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">AWS::IAM::InstanceProfile</a></p></li>
     /// <li>
-    /// <p><a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html"> AWS::IAM::Policy</a></p></li>
+    /// <p><a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html"> AWS::IAM::Policy</a></p></li>
     /// <li>
     /// <p><a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html"> AWS::IAM::Role</a></p></li>
     /// <li>
-    /// <p><a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html"> AWS::IAM::User</a></p></li>
+    /// <p><a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-user.html"> AWS::IAM::User</a></p></li>
     /// <li>
-    /// <p><a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">AWS::IAM::UserToGroupAddition</a></p></li>
+    /// <p><a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-usertogroupaddition.html">AWS::IAM::UserToGroupAddition</a></p></li>
     /// </ul>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging IAM resources in CloudFormation templates</a>.</p></li>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#using-iam-capabilities">Acknowledging IAM resources in CloudFormation templates</a>.</p></li>
     /// <li>
     /// <p><code>CAPABILITY_AUTO_EXPAND</code></p>
     /// <p>Some template contain macros. Macros perform custom processing on templates; this can include simple actions like find-and-replace operations, all the way to extensive transformations of entire templates. Because of this, users typically create a change set from the processed template, so that they can review the changes resulting from the macros before actually creating the stack. If your stack template contains one or more macros, and you choose to create a stack directly from the processed template, without first reviewing the resulting changes in a change set, you must acknowledge this capability. This includes the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">AWS::Include</a> and <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a> transforms, which are macros hosted by CloudFormation.</p><note>
     /// <p>This capacity doesn't apply to creating change sets, and specifying it when creating change sets has no effect.</p>
     /// <p>If you want to create a stack from a stack template that contains macros <i>and</i> nested stacks, you must create or update the stack directly from the template using the <code>CreateStack</code> or <code>UpdateStack</code> action, and specifying this capability.</p>
     /// </note>
-    /// <p>For more information about macros, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using CloudFormation macros to perform custom processing on templates</a>.</p></li>
+    /// <p>For more information about macros, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Perform custom processing on CloudFormation templates with template macros</a>.</p></li>
     /// </ul><note>
     /// <p>Only one of the <code>Capabilities</code> and <code>ResourceType</code> parameters can be specified.</p>
     /// </note>
@@ -293,7 +293,7 @@ impl CreateChangeSetFluentBuilder {
     /// <ul>
     /// <li>
     /// <p><code>CAPABILITY_IAM</code> and <code>CAPABILITY_NAMED_IAM</code></p>
-    /// <p>Some stack templates might include resources that can affect permissions in your Amazon Web Services account; for example, by creating new Identity and Access Management (IAM) users. For those stacks, you must explicitly acknowledge this by specifying one of these capabilities.</p>
+    /// <p>Some stack templates might include resources that can affect permissions in your Amazon Web Services account; for example, by creating new IAM users. For those stacks, you must explicitly acknowledge this by specifying one of these capabilities.</p>
     /// <p>The following IAM resources require you to specify either the <code>CAPABILITY_IAM</code> or <code>CAPABILITY_NAMED_IAM</code> capability.</p>
     /// <ul>
     /// <li>
@@ -306,28 +306,28 @@ impl CreateChangeSetFluentBuilder {
     /// <p>If your stack template contains these resources, we suggest that you review all permissions associated with them and edit their permissions if necessary.</p>
     /// <ul>
     /// <li>
-    /// <p><a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html"> AWS::IAM::AccessKey</a></p></li>
+    /// <p><a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-accesskey.html"> AWS::IAM::AccessKey</a></p></li>
     /// <li>
-    /// <p><a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html"> AWS::IAM::Group</a></p></li>
+    /// <p><a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-group.html"> AWS::IAM::Group</a></p></li>
     /// <li>
     /// <p><a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">AWS::IAM::InstanceProfile</a></p></li>
     /// <li>
-    /// <p><a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html"> AWS::IAM::Policy</a></p></li>
+    /// <p><a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html"> AWS::IAM::Policy</a></p></li>
     /// <li>
     /// <p><a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html"> AWS::IAM::Role</a></p></li>
     /// <li>
-    /// <p><a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html"> AWS::IAM::User</a></p></li>
+    /// <p><a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-user.html"> AWS::IAM::User</a></p></li>
     /// <li>
-    /// <p><a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">AWS::IAM::UserToGroupAddition</a></p></li>
+    /// <p><a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-usertogroupaddition.html">AWS::IAM::UserToGroupAddition</a></p></li>
     /// </ul>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging IAM resources in CloudFormation templates</a>.</p></li>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#using-iam-capabilities">Acknowledging IAM resources in CloudFormation templates</a>.</p></li>
     /// <li>
     /// <p><code>CAPABILITY_AUTO_EXPAND</code></p>
     /// <p>Some template contain macros. Macros perform custom processing on templates; this can include simple actions like find-and-replace operations, all the way to extensive transformations of entire templates. Because of this, users typically create a change set from the processed template, so that they can review the changes resulting from the macros before actually creating the stack. If your stack template contains one or more macros, and you choose to create a stack directly from the processed template, without first reviewing the resulting changes in a change set, you must acknowledge this capability. This includes the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">AWS::Include</a> and <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a> transforms, which are macros hosted by CloudFormation.</p><note>
     /// <p>This capacity doesn't apply to creating change sets, and specifying it when creating change sets has no effect.</p>
     /// <p>If you want to create a stack from a stack template that contains macros <i>and</i> nested stacks, you must create or update the stack directly from the template using the <code>CreateStack</code> or <code>UpdateStack</code> action, and specifying this capability.</p>
     /// </note>
-    /// <p>For more information about macros, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using CloudFormation macros to perform custom processing on templates</a>.</p></li>
+    /// <p>For more information about macros, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Perform custom processing on CloudFormation templates with template macros</a>.</p></li>
     /// </ul><note>
     /// <p>Only one of the <code>Capabilities</code> and <code>ResourceType</code> parameters can be specified.</p>
     /// </note>
@@ -340,7 +340,7 @@ impl CreateChangeSetFluentBuilder {
     /// To override the contents of this collection use [`set_resource_types`](Self::set_resource_types).
     ///
     /// <p>The template resource types that you have permissions to work with if you execute this change set, such as <code>AWS::EC2::Instance</code>, <code>AWS::EC2::*</code>, or <code>Custom::MyCustomInstance</code>.</p>
-    /// <p>If the list of resource types doesn't include a resource type that you're updating, the stack update fails. By default, CloudFormation grants permissions to all resource types. Identity and Access Management (IAM) uses this parameter for condition keys in IAM policies for CloudFormation. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling access with Identity and Access Management</a> in the <i>CloudFormation User Guide</i>.</p><note>
+    /// <p>If the list of resource types doesn't include a resource type that you're updating, the stack update fails. By default, CloudFormation grants permissions to all resource types. IAM uses this parameter for condition keys in IAM policies for CloudFormation. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Control access with Identity and Access Management</a> in the <i>CloudFormation User Guide</i>.</p><note>
     /// <p>Only one of the <code>Capabilities</code> and <code>ResourceType</code> parameters can be specified.</p>
     /// </note>
     pub fn resource_types(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -348,7 +348,7 @@ impl CreateChangeSetFluentBuilder {
         self
     }
     /// <p>The template resource types that you have permissions to work with if you execute this change set, such as <code>AWS::EC2::Instance</code>, <code>AWS::EC2::*</code>, or <code>Custom::MyCustomInstance</code>.</p>
-    /// <p>If the list of resource types doesn't include a resource type that you're updating, the stack update fails. By default, CloudFormation grants permissions to all resource types. Identity and Access Management (IAM) uses this parameter for condition keys in IAM policies for CloudFormation. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling access with Identity and Access Management</a> in the <i>CloudFormation User Guide</i>.</p><note>
+    /// <p>If the list of resource types doesn't include a resource type that you're updating, the stack update fails. By default, CloudFormation grants permissions to all resource types. IAM uses this parameter for condition keys in IAM policies for CloudFormation. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Control access with Identity and Access Management</a> in the <i>CloudFormation User Guide</i>.</p><note>
     /// <p>Only one of the <code>Capabilities</code> and <code>ResourceType</code> parameters can be specified.</p>
     /// </note>
     pub fn set_resource_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
@@ -356,25 +356,25 @@ impl CreateChangeSetFluentBuilder {
         self
     }
     /// <p>The template resource types that you have permissions to work with if you execute this change set, such as <code>AWS::EC2::Instance</code>, <code>AWS::EC2::*</code>, or <code>Custom::MyCustomInstance</code>.</p>
-    /// <p>If the list of resource types doesn't include a resource type that you're updating, the stack update fails. By default, CloudFormation grants permissions to all resource types. Identity and Access Management (IAM) uses this parameter for condition keys in IAM policies for CloudFormation. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling access with Identity and Access Management</a> in the <i>CloudFormation User Guide</i>.</p><note>
+    /// <p>If the list of resource types doesn't include a resource type that you're updating, the stack update fails. By default, CloudFormation grants permissions to all resource types. IAM uses this parameter for condition keys in IAM policies for CloudFormation. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Control access with Identity and Access Management</a> in the <i>CloudFormation User Guide</i>.</p><note>
     /// <p>Only one of the <code>Capabilities</code> and <code>ResourceType</code> parameters can be specified.</p>
     /// </note>
     pub fn get_resource_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_resource_types()
     }
-    /// <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM) role that CloudFormation assumes when executing the change set. CloudFormation uses the role's credentials to make calls on your behalf. CloudFormation uses this role for all future operations on the stack. Provided that users have permission to operate on the stack, CloudFormation uses this role even if the users don't have permission to pass it. Ensure that the role grants least permission.</p>
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that CloudFormation assumes when executing the change set. CloudFormation uses the role's credentials to make calls on your behalf. CloudFormation uses this role for all future operations on the stack. Provided that users have permission to operate on the stack, CloudFormation uses this role even if the users don't have permission to pass it. Ensure that the role grants least permission.</p>
     /// <p>If you don't specify a value, CloudFormation uses the role that was previously associated with the stack. If no role is available, CloudFormation uses a temporary session that is generated from your user credentials.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.role_arn(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM) role that CloudFormation assumes when executing the change set. CloudFormation uses the role's credentials to make calls on your behalf. CloudFormation uses this role for all future operations on the stack. Provided that users have permission to operate on the stack, CloudFormation uses this role even if the users don't have permission to pass it. Ensure that the role grants least permission.</p>
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that CloudFormation assumes when executing the change set. CloudFormation uses the role's credentials to make calls on your behalf. CloudFormation uses this role for all future operations on the stack. Provided that users have permission to operate on the stack, CloudFormation uses this role even if the users don't have permission to pass it. Ensure that the role grants least permission.</p>
     /// <p>If you don't specify a value, CloudFormation uses the role that was previously associated with the stack. If no role is available, CloudFormation uses a temporary session that is generated from your user credentials.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_role_arn(input);
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM) role that CloudFormation assumes when executing the change set. CloudFormation uses the role's credentials to make calls on your behalf. CloudFormation uses this role for all future operations on the stack. Provided that users have permission to operate on the stack, CloudFormation uses this role even if the users don't have permission to pass it. Ensure that the role grants least permission.</p>
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that CloudFormation assumes when executing the change set. CloudFormation uses the role's credentials to make calls on your behalf. CloudFormation uses this role for all future operations on the stack. Provided that users have permission to operate on the stack, CloudFormation uses this role even if the users don't have permission to pass it. Ensure that the role grants least permission.</p>
     /// <p>If you don't specify a value, CloudFormation uses the role that was previously associated with the stack. If no role is available, CloudFormation uses a temporary session that is generated from your user credentials.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_role_arn()
@@ -398,17 +398,17 @@ impl CreateChangeSetFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_notification_arns`](Self::set_notification_arns).
     ///
-    /// <p>The Amazon Resource Names (ARNs) of Amazon Simple Notification Service (Amazon SNS) topics that CloudFormation associates with the stack. To remove all associated notification topics, specify an empty list.</p>
+    /// <p>The Amazon Resource Names (ARNs) of Amazon SNS topics that CloudFormation associates with the stack. To remove all associated notification topics, specify an empty list.</p>
     pub fn notification_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.notification_arns(input.into());
         self
     }
-    /// <p>The Amazon Resource Names (ARNs) of Amazon Simple Notification Service (Amazon SNS) topics that CloudFormation associates with the stack. To remove all associated notification topics, specify an empty list.</p>
+    /// <p>The Amazon Resource Names (ARNs) of Amazon SNS topics that CloudFormation associates with the stack. To remove all associated notification topics, specify an empty list.</p>
     pub fn set_notification_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_notification_arns(input);
         self
     }
-    /// <p>The Amazon Resource Names (ARNs) of Amazon Simple Notification Service (Amazon SNS) topics that CloudFormation associates with the stack. To remove all associated notification topics, specify an empty list.</p>
+    /// <p>The Amazon Resource Names (ARNs) of Amazon SNS topics that CloudFormation associates with the stack. To remove all associated notification topics, specify an empty list.</p>
     pub fn get_notification_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_notification_arns()
     }
@@ -477,21 +477,21 @@ impl CreateChangeSetFluentBuilder {
         self.inner.get_description()
     }
     /// <p>The type of change set operation. To create a change set for a new stack, specify <code>CREATE</code>. To create a change set for an existing stack, specify <code>UPDATE</code>. To create a change set for an import operation, specify <code>IMPORT</code>.</p>
-    /// <p>If you create a change set for a new stack, CloudFormation creates a stack with a unique stack ID, but no template or resources. The stack will be in the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-describing-stacks.html#d0e11995">REVIEW_IN_PROGRESS</a> state until you execute the change set.</p>
+    /// <p>If you create a change set for a new stack, CloudFormation creates a stack with a unique stack ID, but no template or resources. The stack will be in the <code>REVIEW_IN_PROGRESS</code> state until you execute the change set.</p>
     /// <p>By default, CloudFormation specifies <code>UPDATE</code>. You can't use the <code>UPDATE</code> type to create a change set for a new stack or the <code>CREATE</code> type to create a change set for an existing stack.</p>
     pub fn change_set_type(mut self, input: crate::types::ChangeSetType) -> Self {
         self.inner = self.inner.change_set_type(input);
         self
     }
     /// <p>The type of change set operation. To create a change set for a new stack, specify <code>CREATE</code>. To create a change set for an existing stack, specify <code>UPDATE</code>. To create a change set for an import operation, specify <code>IMPORT</code>.</p>
-    /// <p>If you create a change set for a new stack, CloudFormation creates a stack with a unique stack ID, but no template or resources. The stack will be in the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-describing-stacks.html#d0e11995">REVIEW_IN_PROGRESS</a> state until you execute the change set.</p>
+    /// <p>If you create a change set for a new stack, CloudFormation creates a stack with a unique stack ID, but no template or resources. The stack will be in the <code>REVIEW_IN_PROGRESS</code> state until you execute the change set.</p>
     /// <p>By default, CloudFormation specifies <code>UPDATE</code>. You can't use the <code>UPDATE</code> type to create a change set for a new stack or the <code>CREATE</code> type to create a change set for an existing stack.</p>
     pub fn set_change_set_type(mut self, input: ::std::option::Option<crate::types::ChangeSetType>) -> Self {
         self.inner = self.inner.set_change_set_type(input);
         self
     }
     /// <p>The type of change set operation. To create a change set for a new stack, specify <code>CREATE</code>. To create a change set for an existing stack, specify <code>UPDATE</code>. To create a change set for an import operation, specify <code>IMPORT</code>.</p>
-    /// <p>If you create a change set for a new stack, CloudFormation creates a stack with a unique stack ID, but no template or resources. The stack will be in the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-describing-stacks.html#d0e11995">REVIEW_IN_PROGRESS</a> state until you execute the change set.</p>
+    /// <p>If you create a change set for a new stack, CloudFormation creates a stack with a unique stack ID, but no template or resources. The stack will be in the <code>REVIEW_IN_PROGRESS</code> state until you execute the change set.</p>
     /// <p>By default, CloudFormation specifies <code>UPDATE</code>. You can't use the <code>UPDATE</code> type to create a change set for a new stack or the <code>CREATE</code> type to create a change set for an existing stack.</p>
     pub fn get_change_set_type(&self) -> &::std::option::Option<crate::types::ChangeSetType> {
         self.inner.get_change_set_type()
@@ -571,21 +571,21 @@ impl CreateChangeSetFluentBuilder {
         self.inner.get_on_stack_failure()
     }
     /// <p>Indicates if the change set imports resources that already exist.</p><note>
-    /// <p>This parameter can only import resources that have custom names in templates. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-name.html">name type</a> in the <i>CloudFormation User Guide</i>. To import resources that do not accept custom names, such as EC2 instances, use the resource import feature instead. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resource-import.html">Bringing existing resources into CloudFormation management</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// <p>This parameter can only import resources that have custom names in templates. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-name.html">name type</a> in the <i>CloudFormation User Guide</i>. To import resources that do not accept custom names, such as EC2 instances, use the resource import feature instead. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resource-import.html">Import Amazon Web Services resources into a CloudFormation stack with a resource import</a> in the <i>CloudFormation User Guide</i>.</p>
     /// </note>
     pub fn import_existing_resources(mut self, input: bool) -> Self {
         self.inner = self.inner.import_existing_resources(input);
         self
     }
     /// <p>Indicates if the change set imports resources that already exist.</p><note>
-    /// <p>This parameter can only import resources that have custom names in templates. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-name.html">name type</a> in the <i>CloudFormation User Guide</i>. To import resources that do not accept custom names, such as EC2 instances, use the resource import feature instead. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resource-import.html">Bringing existing resources into CloudFormation management</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// <p>This parameter can only import resources that have custom names in templates. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-name.html">name type</a> in the <i>CloudFormation User Guide</i>. To import resources that do not accept custom names, such as EC2 instances, use the resource import feature instead. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resource-import.html">Import Amazon Web Services resources into a CloudFormation stack with a resource import</a> in the <i>CloudFormation User Guide</i>.</p>
     /// </note>
     pub fn set_import_existing_resources(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_import_existing_resources(input);
         self
     }
     /// <p>Indicates if the change set imports resources that already exist.</p><note>
-    /// <p>This parameter can only import resources that have custom names in templates. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-name.html">name type</a> in the <i>CloudFormation User Guide</i>. To import resources that do not accept custom names, such as EC2 instances, use the resource import feature instead. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resource-import.html">Bringing existing resources into CloudFormation management</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// <p>This parameter can only import resources that have custom names in templates. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-name.html">name type</a> in the <i>CloudFormation User Guide</i>. To import resources that do not accept custom names, such as EC2 instances, use the resource import feature instead. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resource-import.html">Import Amazon Web Services resources into a CloudFormation stack with a resource import</a> in the <i>CloudFormation User Guide</i>.</p>
     /// </note>
     pub fn get_import_existing_resources(&self) -> &::std::option::Option<bool> {
         self.inner.get_import_existing_resources()

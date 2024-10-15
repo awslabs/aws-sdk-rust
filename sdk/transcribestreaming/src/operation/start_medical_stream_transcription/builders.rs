@@ -253,19 +253,16 @@ impl StartMedicalStreamTranscriptionFluentBuilder {
         self.inner.get_show_speaker_label()
     }
     /// <p>Specify a name for your transcription session. If you don't include this parameter in your request, Amazon Transcribe Medical generates an ID and returns it in the response.</p>
-    /// <p>You can use a session ID to retry a streaming session.</p>
     pub fn session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.session_id(input.into());
         self
     }
     /// <p>Specify a name for your transcription session. If you don't include this parameter in your request, Amazon Transcribe Medical generates an ID and returns it in the response.</p>
-    /// <p>You can use a session ID to retry a streaming session.</p>
     pub fn set_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_session_id(input);
         self
     }
     /// <p>Specify a name for your transcription session. If you don't include this parameter in your request, Amazon Transcribe Medical generates an ID and returns it in the response.</p>
-    /// <p>You can use a session ID to retry a streaming session.</p>
     pub fn get_session_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_session_id()
     }
@@ -300,6 +297,7 @@ impl StartMedicalStreamTranscriptionFluentBuilder {
     /// <p>Enables channel identification in multi-channel audio.</p>
     /// <p>Channel identification transcribes the audio on each channel independently, then appends the output for each channel into one transcript.</p>
     /// <p>If you have multi-channel audio and do not enable channel identification, your audio is transcribed in a continuous manner and your transcript is not separated by channel.</p>
+    /// <p>If you include <code>EnableChannelIdentification</code> in your request, you must also include <code>NumberOfChannels</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/channel-id.html">Transcribing multi-channel audio</a>.</p>
     pub fn enable_channel_identification(mut self, input: bool) -> Self {
         self.inner = self.inner.enable_channel_identification(input);
@@ -308,6 +306,7 @@ impl StartMedicalStreamTranscriptionFluentBuilder {
     /// <p>Enables channel identification in multi-channel audio.</p>
     /// <p>Channel identification transcribes the audio on each channel independently, then appends the output for each channel into one transcript.</p>
     /// <p>If you have multi-channel audio and do not enable channel identification, your audio is transcribed in a continuous manner and your transcript is not separated by channel.</p>
+    /// <p>If you include <code>EnableChannelIdentification</code> in your request, you must also include <code>NumberOfChannels</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/channel-id.html">Transcribing multi-channel audio</a>.</p>
     pub fn set_enable_channel_identification(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_enable_channel_identification(input);
@@ -316,21 +315,25 @@ impl StartMedicalStreamTranscriptionFluentBuilder {
     /// <p>Enables channel identification in multi-channel audio.</p>
     /// <p>Channel identification transcribes the audio on each channel independently, then appends the output for each channel into one transcript.</p>
     /// <p>If you have multi-channel audio and do not enable channel identification, your audio is transcribed in a continuous manner and your transcript is not separated by channel.</p>
+    /// <p>If you include <code>EnableChannelIdentification</code> in your request, you must also include <code>NumberOfChannels</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/channel-id.html">Transcribing multi-channel audio</a>.</p>
     pub fn get_enable_channel_identification(&self) -> &::std::option::Option<bool> {
         self.inner.get_enable_channel_identification()
     }
-    /// <p>Specify the number of channels in your audio stream. Up to two channels are supported.</p>
+    /// <p>Specify the number of channels in your audio stream. This value must be <code>2</code>, as only two channels are supported. If your audio doesn't contain multiple channels, do not include this parameter in your request.</p>
+    /// <p>If you include <code>NumberOfChannels</code> in your request, you must also include <code>EnableChannelIdentification</code>.</p>
     pub fn number_of_channels(mut self, input: i32) -> Self {
         self.inner = self.inner.number_of_channels(input);
         self
     }
-    /// <p>Specify the number of channels in your audio stream. Up to two channels are supported.</p>
+    /// <p>Specify the number of channels in your audio stream. This value must be <code>2</code>, as only two channels are supported. If your audio doesn't contain multiple channels, do not include this parameter in your request.</p>
+    /// <p>If you include <code>NumberOfChannels</code> in your request, you must also include <code>EnableChannelIdentification</code>.</p>
     pub fn set_number_of_channels(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_number_of_channels(input);
         self
     }
-    /// <p>Specify the number of channels in your audio stream. Up to two channels are supported.</p>
+    /// <p>Specify the number of channels in your audio stream. This value must be <code>2</code>, as only two channels are supported. If your audio doesn't contain multiple channels, do not include this parameter in your request.</p>
+    /// <p>If you include <code>NumberOfChannels</code> in your request, you must also include <code>EnableChannelIdentification</code>.</p>
     pub fn get_number_of_channels(&self) -> &::std::option::Option<i32> {
         self.inner.get_number_of_channels()
     }

@@ -67,6 +67,9 @@ pub mod create_hsm_client_certificate;
 /// Types for the `CreateHsmConfiguration` operation.
 pub mod create_hsm_configuration;
 
+/// Types for the `CreateIntegration` operation.
+pub mod create_integration;
+
 /// Types for the `CreateRedshiftIdcApplication` operation.
 pub mod create_redshift_idc_application;
 
@@ -120,6 +123,9 @@ pub mod delete_hsm_client_certificate;
 
 /// Types for the `DeleteHsmConfiguration` operation.
 pub mod delete_hsm_configuration;
+
+/// Types for the `DeleteIntegration` operation.
+pub mod delete_integration;
 
 /// Types for the `DeletePartner` operation.
 pub mod delete_partner;
@@ -216,6 +222,9 @@ pub mod describe_hsm_configurations;
 
 /// Types for the `DescribeInboundIntegrations` operation.
 pub mod describe_inbound_integrations;
+
+/// Types for the `DescribeIntegrations` operation.
+pub mod describe_integrations;
 
 /// Types for the `DescribeLoggingStatus` operation.
 pub mod describe_logging_status;
@@ -339,6 +348,9 @@ pub mod modify_endpoint_access;
 
 /// Types for the `ModifyEventSubscription` operation.
 pub mod modify_event_subscription;
+
+/// Types for the `ModifyIntegration` operation.
+pub mod modify_integration;
 
 /// Types for the `ModifyRedshiftIdcApplication` operation.
 pub mod modify_redshift_idc_application;

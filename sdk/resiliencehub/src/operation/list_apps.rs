@@ -213,6 +213,11 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListAppsRequ
                         query.push_kv("reverseOrder", ::aws_smithy_types::primitive::Encoder::from(*inner_7).encode());
                     }
                 }
+                if let ::std::option::Option::Some(inner_8) = &_input.aws_application_arn {
+                    {
+                        query.push_kv("awsApplicationArn", &::aws_smithy_http::query::fmt_string(inner_8));
+                    }
+                }
                 ::std::result::Result::Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]

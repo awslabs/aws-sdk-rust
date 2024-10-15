@@ -22,7 +22,7 @@ impl crate::operation::describe_stack_events::builders::DescribeStackEventsInput
 }
 /// Fluent builder constructing a request to `DescribeStackEvents`.
 ///
-/// <p>Returns all stack related events for a specified stack in reverse chronological order. For more information about a stack's event history, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stack-resource-configuration-complete.html">CloudFormation stack creation events</a> in the <i>CloudFormation User Guide</i>.</p><note>
+/// <p>Returns all stack related events for a specified stack in reverse chronological order. For more information about a stack's event history, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stack-resource-configuration-complete.html">Understand CloudFormation stack creation events</a> in the <i>CloudFormation User Guide</i>.</p><note>
 /// <p>You can list events for stacks that have failed to create or have been deleted by specifying the unique stack identifier (stack ID).</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

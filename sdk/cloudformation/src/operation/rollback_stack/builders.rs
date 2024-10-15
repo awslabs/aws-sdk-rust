@@ -136,17 +136,17 @@ impl RollbackStackFluentBuilder {
     pub fn get_stack_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_stack_name()
     }
-    /// <p>The Amazon Resource Name (ARN) of an Identity and Access Management role that CloudFormation assumes to rollback the stack.</p>
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that CloudFormation assumes to rollback the stack.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.role_arn(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of an Identity and Access Management role that CloudFormation assumes to rollback the stack.</p>
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that CloudFormation assumes to rollback the stack.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_role_arn(input);
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of an Identity and Access Management role that CloudFormation assumes to rollback the stack.</p>
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that CloudFormation assumes to rollback the stack.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_role_arn()
     }

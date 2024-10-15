@@ -335,6 +335,8 @@ pub(crate) mod shape_validation_exception_fields;
 
 pub(crate) mod shape_web_experience_auth_configuration;
 
+pub(crate) mod shape_web_experience_origins;
+
 pub(crate) mod shape_web_experiences;
 
 pub(crate) mod shape_access_configuration;

@@ -27,7 +27,6 @@ pub struct StartStreamTranscriptionInput {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/custom-vocabulary.html">Custom vocabularies</a>.</p>
     pub vocabulary_name: ::std::option::Option<::std::string::String>,
     /// <p>Specify a name for your transcription session. If you don't include this parameter in your request, Amazon Transcribe generates an ID and returns it in the response.</p>
-    /// <p>You can use a session ID to retry a streaming session.</p>
     pub session_id: ::std::option::Option<::std::string::String>,
     /// <p>An encoded stream of audio blobs. Audio streams are encoded as either HTTP/2 or WebSocket data frames.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/streaming.html">Transcribing streaming audio</a>.</p>
@@ -49,9 +48,11 @@ pub struct StartStreamTranscriptionInput {
     /// <p>Enables channel identification in multi-channel audio.</p>
     /// <p>Channel identification transcribes the audio on each channel independently, then appends the output for each channel into one transcript.</p>
     /// <p>If you have multi-channel audio and do not enable channel identification, your audio is transcribed in a continuous manner and your transcript is not separated by channel.</p>
+    /// <p>If you include <code>EnableChannelIdentification</code> in your request, you must also include <code>NumberOfChannels</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/channel-id.html">Transcribing multi-channel audio</a>.</p>
     pub enable_channel_identification: ::std::option::Option<bool>,
-    /// <p>Specify the number of channels in your audio stream. Up to two channels are supported.</p>
+    /// <p>Specify the number of channels in your audio stream. This value must be <code>2</code>, as only two channels are supported. If your audio doesn't contain multiple channels, do not include this parameter in your request.</p>
+    /// <p>If you include <code>NumberOfChannels</code> in your request, you must also include <code>EnableChannelIdentification</code>.</p>
     pub number_of_channels: ::std::option::Option<i32>,
     /// <p>Enables partial result stabilization for your transcription. Partial result stabilization can reduce latency in your output, but may impact accuracy. For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/streaming.html#streaming-partial-result-stabilization">Partial-result stabilization</a>.</p>
     pub enable_partial_results_stabilization: ::std::option::Option<bool>,
@@ -60,33 +61,34 @@ pub struct StartStreamTranscriptionInput {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/streaming.html#streaming-partial-result-stabilization">Partial-result stabilization</a>.</p>
     pub partial_results_stability: ::std::option::Option<crate::types::PartialResultsStability>,
     /// <p>Labels all personally identifiable information (PII) identified in your transcript.</p>
-    /// <p>Content identification is performed at the segment level; PII specified in <code>PiiEntityTypes</code> is flagged upon complete transcription of an audio segment.</p>
+    /// <p>Content identification is performed at the segment level; PII specified in <code>PiiEntityTypes</code> is flagged upon complete transcription of an audio segment. If you don't include <code>PiiEntityTypes</code> in your request, all PII is identified.</p>
     /// <p>You can’t set <code>ContentIdentificationType</code> and <code>ContentRedactionType</code> in the same request. If you set both, your request returns a <code>BadRequestException</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/pii-redaction.html">Redacting or identifying personally identifiable information</a>.</p>
     pub content_identification_type: ::std::option::Option<crate::types::ContentIdentificationType>,
     /// <p>Redacts all personally identifiable information (PII) identified in your transcript.</p>
-    /// <p>Content redaction is performed at the segment level; PII specified in <code>PiiEntityTypes</code> is redacted upon complete transcription of an audio segment.</p>
+    /// <p>Content redaction is performed at the segment level; PII specified in <code>PiiEntityTypes</code> is redacted upon complete transcription of an audio segment. If you don't include <code>PiiEntityTypes</code> in your request, all PII is redacted.</p>
     /// <p>You can’t set <code>ContentRedactionType</code> and <code>ContentIdentificationType</code> in the same request. If you set both, your request returns a <code>BadRequestException</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/pii-redaction.html">Redacting or identifying personally identifiable information</a>.</p>
     pub content_redaction_type: ::std::option::Option<crate::types::ContentRedactionType>,
     /// <p>Specify which types of personally identifiable information (PII) you want to redact in your transcript. You can include as many types as you'd like, or you can select <code>ALL</code>.</p>
-    /// <p>To include <code>PiiEntityTypes</code> in your request, you must also include either <code>ContentIdentificationType</code> or <code>ContentRedactionType</code>.</p>
-    /// <p>Values must be comma-separated and can include: <code>BANK_ACCOUNT_NUMBER</code>, <code>BANK_ROUTING</code>, <code>CREDIT_DEBIT_NUMBER</code>, <code>CREDIT_DEBIT_CVV</code>, <code>CREDIT_DEBIT_EXPIRY</code>, <code>PIN</code>, <code>EMAIL</code>, <code>ADDRESS</code>, <code>NAME</code>, <code>PHONE</code>, <code>SSN</code>, or <code>ALL</code>.</p>
+    /// <p>Values must be comma-separated and can include: <code>ADDRESS</code>, <code>BANK_ACCOUNT_NUMBER</code>, <code>BANK_ROUTING</code>, <code>CREDIT_DEBIT_CVV</code>, <code>CREDIT_DEBIT_EXPIRY</code>, <code>CREDIT_DEBIT_NUMBER</code>, <code>EMAIL</code>, <code>NAME</code>, <code>PHONE</code>, <code>PIN</code>, <code>SSN</code>, or <code>ALL</code>.</p>
+    /// <p>Note that if you include <code>PiiEntityTypes</code> in your request, you must also include <code>ContentIdentificationType</code> or <code>ContentRedactionType</code>.</p>
+    /// <p>If you include <code>ContentRedactionType</code> or <code>ContentIdentificationType</code> in your request, but do not include <code>PiiEntityTypes</code>, all PII is redacted or identified.</p>
     pub pii_entity_types: ::std::option::Option<::std::string::String>,
     /// <p>Specify the name of the custom language model that you want to use when processing your transcription. Note that language model names are case sensitive.</p>
     /// <p>The language of the specified language model must match the language code you specify in your transcription request. If the languages don't match, the custom language model isn't applied. There are no errors or warnings associated with a language mismatch.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/custom-language-models.html">Custom language models</a>.</p>
     pub language_model_name: ::std::option::Option<::std::string::String>,
     /// <p>Enables automatic language identification for your transcription.</p>
-    /// <p>If you include <code>IdentifyLanguage</code>, you can optionally include a list of language codes, using <code>LanguageOptions</code>, that you think may be present in your audio stream. Including language options can improve transcription accuracy.</p>
+    /// <p>If you include <code>IdentifyLanguage</code>, you must include a list of language codes, using <code>LanguageOptions</code>, that you think may be present in your audio stream.</p>
     /// <p>You can also include a preferred language using <code>PreferredLanguage</code>. Adding a preferred language can help Amazon Transcribe identify the language faster than if you omit this parameter.</p>
     /// <p>If you have multi-channel audio that contains different languages on each channel, and you've enabled channel identification, automatic language identification identifies the dominant language on each audio channel.</p>
     /// <p>Note that you must include either <code>LanguageCode</code> or <code>IdentifyLanguage</code> or <code>IdentifyMultipleLanguages</code> in your request. If you include more than one of these parameters, your transcription job fails.</p>
     /// <p>Streaming language identification can't be combined with custom language models or redaction.</p>
     pub identify_language: ::std::option::Option<bool>,
-    /// <p>Specify two or more language codes that represent the languages you think may be present in your media; including more than five is not recommended. If you're unsure what languages are present, do not include this parameter.</p>
+    /// <p>Specify two or more language codes that represent the languages you think may be present in your media; including more than five is not recommended.</p>
     /// <p>Including language options can improve the accuracy of language identification.</p>
-    /// <p>If you include <code>LanguageOptions</code> in your request, you must also include <code>IdentifyLanguage</code>.</p>
+    /// <p>If you include <code>LanguageOptions</code> in your request, you must also include <code>IdentifyLanguage</code> or <code>IdentifyMultipleLanguages</code>.</p>
     /// <p>For a list of languages supported with Amazon Transcribe streaming, refer to the <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a> table.</p><important>
     /// <p>You can only include one language dialect per language per stream. For example, you cannot include <code>en-US</code> and <code>en-AU</code> in the same request.</p>
     /// </important>
@@ -95,7 +97,7 @@ pub struct StartStreamTranscriptionInput {
     /// <p>You can only use this parameter if you've included <code>IdentifyLanguage</code> and <code>LanguageOptions</code> in your request.</p>
     pub preferred_language: ::std::option::Option<crate::types::LanguageCode>,
     /// <p>Enables automatic multi-language identification in your transcription job request. Use this parameter if your stream contains more than one language. If your stream contains only one language, use IdentifyLanguage instead.</p>
-    /// <p>If you include <code>IdentifyMultipleLanguages</code>, you can optionally include a list of language codes, using <code>LanguageOptions</code>, that you think may be present in your stream. Including <code>LanguageOptions</code> restricts <code>IdentifyMultipleLanguages</code> to only the language options that you specify, which can improve transcription accuracy.</p>
+    /// <p>If you include <code>IdentifyMultipleLanguages</code>, you must include a list of language codes, using <code>LanguageOptions</code>, that you think may be present in your stream.</p>
     /// <p>If you want to apply a custom vocabulary or a custom vocabulary filter to your automatic multiple language identification request, include <code>VocabularyNames</code> or <code>VocabularyFilterNames</code>.</p>
     /// <p>Note that you must include one of <code>LanguageCode</code>, <code>IdentifyLanguage</code>, or <code>IdentifyMultipleLanguages</code> in your request. If you include more than one of these parameters, your transcription job fails.</p>
     pub identify_multiple_languages: ::std::option::Option<bool>,
@@ -145,7 +147,6 @@ impl StartStreamTranscriptionInput {
         self.vocabulary_name.as_deref()
     }
     /// <p>Specify a name for your transcription session. If you don't include this parameter in your request, Amazon Transcribe generates an ID and returns it in the response.</p>
-    /// <p>You can use a session ID to retry a streaming session.</p>
     pub fn session_id(&self) -> ::std::option::Option<&str> {
         self.session_id.as_deref()
     }
@@ -179,11 +180,13 @@ impl StartStreamTranscriptionInput {
     /// <p>Enables channel identification in multi-channel audio.</p>
     /// <p>Channel identification transcribes the audio on each channel independently, then appends the output for each channel into one transcript.</p>
     /// <p>If you have multi-channel audio and do not enable channel identification, your audio is transcribed in a continuous manner and your transcript is not separated by channel.</p>
+    /// <p>If you include <code>EnableChannelIdentification</code> in your request, you must also include <code>NumberOfChannels</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/channel-id.html">Transcribing multi-channel audio</a>.</p>
     pub fn enable_channel_identification(&self) -> ::std::option::Option<bool> {
         self.enable_channel_identification
     }
-    /// <p>Specify the number of channels in your audio stream. Up to two channels are supported.</p>
+    /// <p>Specify the number of channels in your audio stream. This value must be <code>2</code>, as only two channels are supported. If your audio doesn't contain multiple channels, do not include this parameter in your request.</p>
+    /// <p>If you include <code>NumberOfChannels</code> in your request, you must also include <code>EnableChannelIdentification</code>.</p>
     pub fn number_of_channels(&self) -> ::std::option::Option<i32> {
         self.number_of_channels
     }
@@ -198,22 +201,23 @@ impl StartStreamTranscriptionInput {
         self.partial_results_stability.as_ref()
     }
     /// <p>Labels all personally identifiable information (PII) identified in your transcript.</p>
-    /// <p>Content identification is performed at the segment level; PII specified in <code>PiiEntityTypes</code> is flagged upon complete transcription of an audio segment.</p>
+    /// <p>Content identification is performed at the segment level; PII specified in <code>PiiEntityTypes</code> is flagged upon complete transcription of an audio segment. If you don't include <code>PiiEntityTypes</code> in your request, all PII is identified.</p>
     /// <p>You can’t set <code>ContentIdentificationType</code> and <code>ContentRedactionType</code> in the same request. If you set both, your request returns a <code>BadRequestException</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/pii-redaction.html">Redacting or identifying personally identifiable information</a>.</p>
     pub fn content_identification_type(&self) -> ::std::option::Option<&crate::types::ContentIdentificationType> {
         self.content_identification_type.as_ref()
     }
     /// <p>Redacts all personally identifiable information (PII) identified in your transcript.</p>
-    /// <p>Content redaction is performed at the segment level; PII specified in <code>PiiEntityTypes</code> is redacted upon complete transcription of an audio segment.</p>
+    /// <p>Content redaction is performed at the segment level; PII specified in <code>PiiEntityTypes</code> is redacted upon complete transcription of an audio segment. If you don't include <code>PiiEntityTypes</code> in your request, all PII is redacted.</p>
     /// <p>You can’t set <code>ContentRedactionType</code> and <code>ContentIdentificationType</code> in the same request. If you set both, your request returns a <code>BadRequestException</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/pii-redaction.html">Redacting or identifying personally identifiable information</a>.</p>
     pub fn content_redaction_type(&self) -> ::std::option::Option<&crate::types::ContentRedactionType> {
         self.content_redaction_type.as_ref()
     }
     /// <p>Specify which types of personally identifiable information (PII) you want to redact in your transcript. You can include as many types as you'd like, or you can select <code>ALL</code>.</p>
-    /// <p>To include <code>PiiEntityTypes</code> in your request, you must also include either <code>ContentIdentificationType</code> or <code>ContentRedactionType</code>.</p>
-    /// <p>Values must be comma-separated and can include: <code>BANK_ACCOUNT_NUMBER</code>, <code>BANK_ROUTING</code>, <code>CREDIT_DEBIT_NUMBER</code>, <code>CREDIT_DEBIT_CVV</code>, <code>CREDIT_DEBIT_EXPIRY</code>, <code>PIN</code>, <code>EMAIL</code>, <code>ADDRESS</code>, <code>NAME</code>, <code>PHONE</code>, <code>SSN</code>, or <code>ALL</code>.</p>
+    /// <p>Values must be comma-separated and can include: <code>ADDRESS</code>, <code>BANK_ACCOUNT_NUMBER</code>, <code>BANK_ROUTING</code>, <code>CREDIT_DEBIT_CVV</code>, <code>CREDIT_DEBIT_EXPIRY</code>, <code>CREDIT_DEBIT_NUMBER</code>, <code>EMAIL</code>, <code>NAME</code>, <code>PHONE</code>, <code>PIN</code>, <code>SSN</code>, or <code>ALL</code>.</p>
+    /// <p>Note that if you include <code>PiiEntityTypes</code> in your request, you must also include <code>ContentIdentificationType</code> or <code>ContentRedactionType</code>.</p>
+    /// <p>If you include <code>ContentRedactionType</code> or <code>ContentIdentificationType</code> in your request, but do not include <code>PiiEntityTypes</code>, all PII is redacted or identified.</p>
     pub fn pii_entity_types(&self) -> ::std::option::Option<&str> {
         self.pii_entity_types.as_deref()
     }
@@ -224,7 +228,7 @@ impl StartStreamTranscriptionInput {
         self.language_model_name.as_deref()
     }
     /// <p>Enables automatic language identification for your transcription.</p>
-    /// <p>If you include <code>IdentifyLanguage</code>, you can optionally include a list of language codes, using <code>LanguageOptions</code>, that you think may be present in your audio stream. Including language options can improve transcription accuracy.</p>
+    /// <p>If you include <code>IdentifyLanguage</code>, you must include a list of language codes, using <code>LanguageOptions</code>, that you think may be present in your audio stream.</p>
     /// <p>You can also include a preferred language using <code>PreferredLanguage</code>. Adding a preferred language can help Amazon Transcribe identify the language faster than if you omit this parameter.</p>
     /// <p>If you have multi-channel audio that contains different languages on each channel, and you've enabled channel identification, automatic language identification identifies the dominant language on each audio channel.</p>
     /// <p>Note that you must include either <code>LanguageCode</code> or <code>IdentifyLanguage</code> or <code>IdentifyMultipleLanguages</code> in your request. If you include more than one of these parameters, your transcription job fails.</p>
@@ -232,9 +236,9 @@ impl StartStreamTranscriptionInput {
     pub fn identify_language(&self) -> ::std::option::Option<bool> {
         self.identify_language
     }
-    /// <p>Specify two or more language codes that represent the languages you think may be present in your media; including more than five is not recommended. If you're unsure what languages are present, do not include this parameter.</p>
+    /// <p>Specify two or more language codes that represent the languages you think may be present in your media; including more than five is not recommended.</p>
     /// <p>Including language options can improve the accuracy of language identification.</p>
-    /// <p>If you include <code>LanguageOptions</code> in your request, you must also include <code>IdentifyLanguage</code>.</p>
+    /// <p>If you include <code>LanguageOptions</code> in your request, you must also include <code>IdentifyLanguage</code> or <code>IdentifyMultipleLanguages</code>.</p>
     /// <p>For a list of languages supported with Amazon Transcribe streaming, refer to the <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a> table.</p><important>
     /// <p>You can only include one language dialect per language per stream. For example, you cannot include <code>en-US</code> and <code>en-AU</code> in the same request.</p>
     /// </important>
@@ -247,7 +251,7 @@ impl StartStreamTranscriptionInput {
         self.preferred_language.as_ref()
     }
     /// <p>Enables automatic multi-language identification in your transcription job request. Use this parameter if your stream contains more than one language. If your stream contains only one language, use IdentifyLanguage instead.</p>
-    /// <p>If you include <code>IdentifyMultipleLanguages</code>, you can optionally include a list of language codes, using <code>LanguageOptions</code>, that you think may be present in your stream. Including <code>LanguageOptions</code> restricts <code>IdentifyMultipleLanguages</code> to only the language options that you specify, which can improve transcription accuracy.</p>
+    /// <p>If you include <code>IdentifyMultipleLanguages</code>, you must include a list of language codes, using <code>LanguageOptions</code>, that you think may be present in your stream.</p>
     /// <p>If you want to apply a custom vocabulary or a custom vocabulary filter to your automatic multiple language identification request, include <code>VocabularyNames</code> or <code>VocabularyFilterNames</code>.</p>
     /// <p>Note that you must include one of <code>LanguageCode</code>, <code>IdentifyLanguage</code>, or <code>IdentifyMultipleLanguages</code> in your request. If you include more than one of these parameters, your transcription job fails.</p>
     pub fn identify_multiple_languages(&self) -> ::std::option::Option<bool> {
@@ -411,19 +415,16 @@ impl StartStreamTranscriptionInputBuilder {
         &self.vocabulary_name
     }
     /// <p>Specify a name for your transcription session. If you don't include this parameter in your request, Amazon Transcribe generates an ID and returns it in the response.</p>
-    /// <p>You can use a session ID to retry a streaming session.</p>
     pub fn session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.session_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specify a name for your transcription session. If you don't include this parameter in your request, Amazon Transcribe generates an ID and returns it in the response.</p>
-    /// <p>You can use a session ID to retry a streaming session.</p>
     pub fn set_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.session_id = input;
         self
     }
     /// <p>Specify a name for your transcription session. If you don't include this parameter in your request, Amazon Transcribe generates an ID and returns it in the response.</p>
-    /// <p>You can use a session ID to retry a streaming session.</p>
     pub fn get_session_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.session_id
     }
@@ -525,6 +526,7 @@ impl StartStreamTranscriptionInputBuilder {
     /// <p>Enables channel identification in multi-channel audio.</p>
     /// <p>Channel identification transcribes the audio on each channel independently, then appends the output for each channel into one transcript.</p>
     /// <p>If you have multi-channel audio and do not enable channel identification, your audio is transcribed in a continuous manner and your transcript is not separated by channel.</p>
+    /// <p>If you include <code>EnableChannelIdentification</code> in your request, you must also include <code>NumberOfChannels</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/channel-id.html">Transcribing multi-channel audio</a>.</p>
     pub fn enable_channel_identification(mut self, input: bool) -> Self {
         self.enable_channel_identification = ::std::option::Option::Some(input);
@@ -533,6 +535,7 @@ impl StartStreamTranscriptionInputBuilder {
     /// <p>Enables channel identification in multi-channel audio.</p>
     /// <p>Channel identification transcribes the audio on each channel independently, then appends the output for each channel into one transcript.</p>
     /// <p>If you have multi-channel audio and do not enable channel identification, your audio is transcribed in a continuous manner and your transcript is not separated by channel.</p>
+    /// <p>If you include <code>EnableChannelIdentification</code> in your request, you must also include <code>NumberOfChannels</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/channel-id.html">Transcribing multi-channel audio</a>.</p>
     pub fn set_enable_channel_identification(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enable_channel_identification = input;
@@ -541,21 +544,25 @@ impl StartStreamTranscriptionInputBuilder {
     /// <p>Enables channel identification in multi-channel audio.</p>
     /// <p>Channel identification transcribes the audio on each channel independently, then appends the output for each channel into one transcript.</p>
     /// <p>If you have multi-channel audio and do not enable channel identification, your audio is transcribed in a continuous manner and your transcript is not separated by channel.</p>
+    /// <p>If you include <code>EnableChannelIdentification</code> in your request, you must also include <code>NumberOfChannels</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/channel-id.html">Transcribing multi-channel audio</a>.</p>
     pub fn get_enable_channel_identification(&self) -> &::std::option::Option<bool> {
         &self.enable_channel_identification
     }
-    /// <p>Specify the number of channels in your audio stream. Up to two channels are supported.</p>
+    /// <p>Specify the number of channels in your audio stream. This value must be <code>2</code>, as only two channels are supported. If your audio doesn't contain multiple channels, do not include this parameter in your request.</p>
+    /// <p>If you include <code>NumberOfChannels</code> in your request, you must also include <code>EnableChannelIdentification</code>.</p>
     pub fn number_of_channels(mut self, input: i32) -> Self {
         self.number_of_channels = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specify the number of channels in your audio stream. Up to two channels are supported.</p>
+    /// <p>Specify the number of channels in your audio stream. This value must be <code>2</code>, as only two channels are supported. If your audio doesn't contain multiple channels, do not include this parameter in your request.</p>
+    /// <p>If you include <code>NumberOfChannels</code> in your request, you must also include <code>EnableChannelIdentification</code>.</p>
     pub fn set_number_of_channels(mut self, input: ::std::option::Option<i32>) -> Self {
         self.number_of_channels = input;
         self
     }
-    /// <p>Specify the number of channels in your audio stream. Up to two channels are supported.</p>
+    /// <p>Specify the number of channels in your audio stream. This value must be <code>2</code>, as only two channels are supported. If your audio doesn't contain multiple channels, do not include this parameter in your request.</p>
+    /// <p>If you include <code>NumberOfChannels</code> in your request, you must also include <code>EnableChannelIdentification</code>.</p>
     pub fn get_number_of_channels(&self) -> &::std::option::Option<i32> {
         &self.number_of_channels
     }
@@ -594,7 +601,7 @@ impl StartStreamTranscriptionInputBuilder {
         &self.partial_results_stability
     }
     /// <p>Labels all personally identifiable information (PII) identified in your transcript.</p>
-    /// <p>Content identification is performed at the segment level; PII specified in <code>PiiEntityTypes</code> is flagged upon complete transcription of an audio segment.</p>
+    /// <p>Content identification is performed at the segment level; PII specified in <code>PiiEntityTypes</code> is flagged upon complete transcription of an audio segment. If you don't include <code>PiiEntityTypes</code> in your request, all PII is identified.</p>
     /// <p>You can’t set <code>ContentIdentificationType</code> and <code>ContentRedactionType</code> in the same request. If you set both, your request returns a <code>BadRequestException</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/pii-redaction.html">Redacting or identifying personally identifiable information</a>.</p>
     pub fn content_identification_type(mut self, input: crate::types::ContentIdentificationType) -> Self {
@@ -602,7 +609,7 @@ impl StartStreamTranscriptionInputBuilder {
         self
     }
     /// <p>Labels all personally identifiable information (PII) identified in your transcript.</p>
-    /// <p>Content identification is performed at the segment level; PII specified in <code>PiiEntityTypes</code> is flagged upon complete transcription of an audio segment.</p>
+    /// <p>Content identification is performed at the segment level; PII specified in <code>PiiEntityTypes</code> is flagged upon complete transcription of an audio segment. If you don't include <code>PiiEntityTypes</code> in your request, all PII is identified.</p>
     /// <p>You can’t set <code>ContentIdentificationType</code> and <code>ContentRedactionType</code> in the same request. If you set both, your request returns a <code>BadRequestException</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/pii-redaction.html">Redacting or identifying personally identifiable information</a>.</p>
     pub fn set_content_identification_type(mut self, input: ::std::option::Option<crate::types::ContentIdentificationType>) -> Self {
@@ -610,14 +617,14 @@ impl StartStreamTranscriptionInputBuilder {
         self
     }
     /// <p>Labels all personally identifiable information (PII) identified in your transcript.</p>
-    /// <p>Content identification is performed at the segment level; PII specified in <code>PiiEntityTypes</code> is flagged upon complete transcription of an audio segment.</p>
+    /// <p>Content identification is performed at the segment level; PII specified in <code>PiiEntityTypes</code> is flagged upon complete transcription of an audio segment. If you don't include <code>PiiEntityTypes</code> in your request, all PII is identified.</p>
     /// <p>You can’t set <code>ContentIdentificationType</code> and <code>ContentRedactionType</code> in the same request. If you set both, your request returns a <code>BadRequestException</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/pii-redaction.html">Redacting or identifying personally identifiable information</a>.</p>
     pub fn get_content_identification_type(&self) -> &::std::option::Option<crate::types::ContentIdentificationType> {
         &self.content_identification_type
     }
     /// <p>Redacts all personally identifiable information (PII) identified in your transcript.</p>
-    /// <p>Content redaction is performed at the segment level; PII specified in <code>PiiEntityTypes</code> is redacted upon complete transcription of an audio segment.</p>
+    /// <p>Content redaction is performed at the segment level; PII specified in <code>PiiEntityTypes</code> is redacted upon complete transcription of an audio segment. If you don't include <code>PiiEntityTypes</code> in your request, all PII is redacted.</p>
     /// <p>You can’t set <code>ContentRedactionType</code> and <code>ContentIdentificationType</code> in the same request. If you set both, your request returns a <code>BadRequestException</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/pii-redaction.html">Redacting or identifying personally identifiable information</a>.</p>
     pub fn content_redaction_type(mut self, input: crate::types::ContentRedactionType) -> Self {
@@ -625,7 +632,7 @@ impl StartStreamTranscriptionInputBuilder {
         self
     }
     /// <p>Redacts all personally identifiable information (PII) identified in your transcript.</p>
-    /// <p>Content redaction is performed at the segment level; PII specified in <code>PiiEntityTypes</code> is redacted upon complete transcription of an audio segment.</p>
+    /// <p>Content redaction is performed at the segment level; PII specified in <code>PiiEntityTypes</code> is redacted upon complete transcription of an audio segment. If you don't include <code>PiiEntityTypes</code> in your request, all PII is redacted.</p>
     /// <p>You can’t set <code>ContentRedactionType</code> and <code>ContentIdentificationType</code> in the same request. If you set both, your request returns a <code>BadRequestException</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/pii-redaction.html">Redacting or identifying personally identifiable information</a>.</p>
     pub fn set_content_redaction_type(mut self, input: ::std::option::Option<crate::types::ContentRedactionType>) -> Self {
@@ -633,29 +640,32 @@ impl StartStreamTranscriptionInputBuilder {
         self
     }
     /// <p>Redacts all personally identifiable information (PII) identified in your transcript.</p>
-    /// <p>Content redaction is performed at the segment level; PII specified in <code>PiiEntityTypes</code> is redacted upon complete transcription of an audio segment.</p>
+    /// <p>Content redaction is performed at the segment level; PII specified in <code>PiiEntityTypes</code> is redacted upon complete transcription of an audio segment. If you don't include <code>PiiEntityTypes</code> in your request, all PII is redacted.</p>
     /// <p>You can’t set <code>ContentRedactionType</code> and <code>ContentIdentificationType</code> in the same request. If you set both, your request returns a <code>BadRequestException</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/pii-redaction.html">Redacting or identifying personally identifiable information</a>.</p>
     pub fn get_content_redaction_type(&self) -> &::std::option::Option<crate::types::ContentRedactionType> {
         &self.content_redaction_type
     }
     /// <p>Specify which types of personally identifiable information (PII) you want to redact in your transcript. You can include as many types as you'd like, or you can select <code>ALL</code>.</p>
-    /// <p>To include <code>PiiEntityTypes</code> in your request, you must also include either <code>ContentIdentificationType</code> or <code>ContentRedactionType</code>.</p>
-    /// <p>Values must be comma-separated and can include: <code>BANK_ACCOUNT_NUMBER</code>, <code>BANK_ROUTING</code>, <code>CREDIT_DEBIT_NUMBER</code>, <code>CREDIT_DEBIT_CVV</code>, <code>CREDIT_DEBIT_EXPIRY</code>, <code>PIN</code>, <code>EMAIL</code>, <code>ADDRESS</code>, <code>NAME</code>, <code>PHONE</code>, <code>SSN</code>, or <code>ALL</code>.</p>
+    /// <p>Values must be comma-separated and can include: <code>ADDRESS</code>, <code>BANK_ACCOUNT_NUMBER</code>, <code>BANK_ROUTING</code>, <code>CREDIT_DEBIT_CVV</code>, <code>CREDIT_DEBIT_EXPIRY</code>, <code>CREDIT_DEBIT_NUMBER</code>, <code>EMAIL</code>, <code>NAME</code>, <code>PHONE</code>, <code>PIN</code>, <code>SSN</code>, or <code>ALL</code>.</p>
+    /// <p>Note that if you include <code>PiiEntityTypes</code> in your request, you must also include <code>ContentIdentificationType</code> or <code>ContentRedactionType</code>.</p>
+    /// <p>If you include <code>ContentRedactionType</code> or <code>ContentIdentificationType</code> in your request, but do not include <code>PiiEntityTypes</code>, all PII is redacted or identified.</p>
     pub fn pii_entity_types(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pii_entity_types = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specify which types of personally identifiable information (PII) you want to redact in your transcript. You can include as many types as you'd like, or you can select <code>ALL</code>.</p>
-    /// <p>To include <code>PiiEntityTypes</code> in your request, you must also include either <code>ContentIdentificationType</code> or <code>ContentRedactionType</code>.</p>
-    /// <p>Values must be comma-separated and can include: <code>BANK_ACCOUNT_NUMBER</code>, <code>BANK_ROUTING</code>, <code>CREDIT_DEBIT_NUMBER</code>, <code>CREDIT_DEBIT_CVV</code>, <code>CREDIT_DEBIT_EXPIRY</code>, <code>PIN</code>, <code>EMAIL</code>, <code>ADDRESS</code>, <code>NAME</code>, <code>PHONE</code>, <code>SSN</code>, or <code>ALL</code>.</p>
+    /// <p>Values must be comma-separated and can include: <code>ADDRESS</code>, <code>BANK_ACCOUNT_NUMBER</code>, <code>BANK_ROUTING</code>, <code>CREDIT_DEBIT_CVV</code>, <code>CREDIT_DEBIT_EXPIRY</code>, <code>CREDIT_DEBIT_NUMBER</code>, <code>EMAIL</code>, <code>NAME</code>, <code>PHONE</code>, <code>PIN</code>, <code>SSN</code>, or <code>ALL</code>.</p>
+    /// <p>Note that if you include <code>PiiEntityTypes</code> in your request, you must also include <code>ContentIdentificationType</code> or <code>ContentRedactionType</code>.</p>
+    /// <p>If you include <code>ContentRedactionType</code> or <code>ContentIdentificationType</code> in your request, but do not include <code>PiiEntityTypes</code>, all PII is redacted or identified.</p>
     pub fn set_pii_entity_types(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pii_entity_types = input;
         self
     }
     /// <p>Specify which types of personally identifiable information (PII) you want to redact in your transcript. You can include as many types as you'd like, or you can select <code>ALL</code>.</p>
-    /// <p>To include <code>PiiEntityTypes</code> in your request, you must also include either <code>ContentIdentificationType</code> or <code>ContentRedactionType</code>.</p>
-    /// <p>Values must be comma-separated and can include: <code>BANK_ACCOUNT_NUMBER</code>, <code>BANK_ROUTING</code>, <code>CREDIT_DEBIT_NUMBER</code>, <code>CREDIT_DEBIT_CVV</code>, <code>CREDIT_DEBIT_EXPIRY</code>, <code>PIN</code>, <code>EMAIL</code>, <code>ADDRESS</code>, <code>NAME</code>, <code>PHONE</code>, <code>SSN</code>, or <code>ALL</code>.</p>
+    /// <p>Values must be comma-separated and can include: <code>ADDRESS</code>, <code>BANK_ACCOUNT_NUMBER</code>, <code>BANK_ROUTING</code>, <code>CREDIT_DEBIT_CVV</code>, <code>CREDIT_DEBIT_EXPIRY</code>, <code>CREDIT_DEBIT_NUMBER</code>, <code>EMAIL</code>, <code>NAME</code>, <code>PHONE</code>, <code>PIN</code>, <code>SSN</code>, or <code>ALL</code>.</p>
+    /// <p>Note that if you include <code>PiiEntityTypes</code> in your request, you must also include <code>ContentIdentificationType</code> or <code>ContentRedactionType</code>.</p>
+    /// <p>If you include <code>ContentRedactionType</code> or <code>ContentIdentificationType</code> in your request, but do not include <code>PiiEntityTypes</code>, all PII is redacted or identified.</p>
     pub fn get_pii_entity_types(&self) -> &::std::option::Option<::std::string::String> {
         &self.pii_entity_types
     }
@@ -680,7 +690,7 @@ impl StartStreamTranscriptionInputBuilder {
         &self.language_model_name
     }
     /// <p>Enables automatic language identification for your transcription.</p>
-    /// <p>If you include <code>IdentifyLanguage</code>, you can optionally include a list of language codes, using <code>LanguageOptions</code>, that you think may be present in your audio stream. Including language options can improve transcription accuracy.</p>
+    /// <p>If you include <code>IdentifyLanguage</code>, you must include a list of language codes, using <code>LanguageOptions</code>, that you think may be present in your audio stream.</p>
     /// <p>You can also include a preferred language using <code>PreferredLanguage</code>. Adding a preferred language can help Amazon Transcribe identify the language faster than if you omit this parameter.</p>
     /// <p>If you have multi-channel audio that contains different languages on each channel, and you've enabled channel identification, automatic language identification identifies the dominant language on each audio channel.</p>
     /// <p>Note that you must include either <code>LanguageCode</code> or <code>IdentifyLanguage</code> or <code>IdentifyMultipleLanguages</code> in your request. If you include more than one of these parameters, your transcription job fails.</p>
@@ -690,7 +700,7 @@ impl StartStreamTranscriptionInputBuilder {
         self
     }
     /// <p>Enables automatic language identification for your transcription.</p>
-    /// <p>If you include <code>IdentifyLanguage</code>, you can optionally include a list of language codes, using <code>LanguageOptions</code>, that you think may be present in your audio stream. Including language options can improve transcription accuracy.</p>
+    /// <p>If you include <code>IdentifyLanguage</code>, you must include a list of language codes, using <code>LanguageOptions</code>, that you think may be present in your audio stream.</p>
     /// <p>You can also include a preferred language using <code>PreferredLanguage</code>. Adding a preferred language can help Amazon Transcribe identify the language faster than if you omit this parameter.</p>
     /// <p>If you have multi-channel audio that contains different languages on each channel, and you've enabled channel identification, automatic language identification identifies the dominant language on each audio channel.</p>
     /// <p>Note that you must include either <code>LanguageCode</code> or <code>IdentifyLanguage</code> or <code>IdentifyMultipleLanguages</code> in your request. If you include more than one of these parameters, your transcription job fails.</p>
@@ -700,7 +710,7 @@ impl StartStreamTranscriptionInputBuilder {
         self
     }
     /// <p>Enables automatic language identification for your transcription.</p>
-    /// <p>If you include <code>IdentifyLanguage</code>, you can optionally include a list of language codes, using <code>LanguageOptions</code>, that you think may be present in your audio stream. Including language options can improve transcription accuracy.</p>
+    /// <p>If you include <code>IdentifyLanguage</code>, you must include a list of language codes, using <code>LanguageOptions</code>, that you think may be present in your audio stream.</p>
     /// <p>You can also include a preferred language using <code>PreferredLanguage</code>. Adding a preferred language can help Amazon Transcribe identify the language faster than if you omit this parameter.</p>
     /// <p>If you have multi-channel audio that contains different languages on each channel, and you've enabled channel identification, automatic language identification identifies the dominant language on each audio channel.</p>
     /// <p>Note that you must include either <code>LanguageCode</code> or <code>IdentifyLanguage</code> or <code>IdentifyMultipleLanguages</code> in your request. If you include more than one of these parameters, your transcription job fails.</p>
@@ -708,9 +718,9 @@ impl StartStreamTranscriptionInputBuilder {
     pub fn get_identify_language(&self) -> &::std::option::Option<bool> {
         &self.identify_language
     }
-    /// <p>Specify two or more language codes that represent the languages you think may be present in your media; including more than five is not recommended. If you're unsure what languages are present, do not include this parameter.</p>
+    /// <p>Specify two or more language codes that represent the languages you think may be present in your media; including more than five is not recommended.</p>
     /// <p>Including language options can improve the accuracy of language identification.</p>
-    /// <p>If you include <code>LanguageOptions</code> in your request, you must also include <code>IdentifyLanguage</code>.</p>
+    /// <p>If you include <code>LanguageOptions</code> in your request, you must also include <code>IdentifyLanguage</code> or <code>IdentifyMultipleLanguages</code>.</p>
     /// <p>For a list of languages supported with Amazon Transcribe streaming, refer to the <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a> table.</p><important>
     /// <p>You can only include one language dialect per language per stream. For example, you cannot include <code>en-US</code> and <code>en-AU</code> in the same request.</p>
     /// </important>
@@ -718,9 +728,9 @@ impl StartStreamTranscriptionInputBuilder {
         self.language_options = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Specify two or more language codes that represent the languages you think may be present in your media; including more than five is not recommended. If you're unsure what languages are present, do not include this parameter.</p>
+    /// <p>Specify two or more language codes that represent the languages you think may be present in your media; including more than five is not recommended.</p>
     /// <p>Including language options can improve the accuracy of language identification.</p>
-    /// <p>If you include <code>LanguageOptions</code> in your request, you must also include <code>IdentifyLanguage</code>.</p>
+    /// <p>If you include <code>LanguageOptions</code> in your request, you must also include <code>IdentifyLanguage</code> or <code>IdentifyMultipleLanguages</code>.</p>
     /// <p>For a list of languages supported with Amazon Transcribe streaming, refer to the <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a> table.</p><important>
     /// <p>You can only include one language dialect per language per stream. For example, you cannot include <code>en-US</code> and <code>en-AU</code> in the same request.</p>
     /// </important>
@@ -728,9 +738,9 @@ impl StartStreamTranscriptionInputBuilder {
         self.language_options = input;
         self
     }
-    /// <p>Specify two or more language codes that represent the languages you think may be present in your media; including more than five is not recommended. If you're unsure what languages are present, do not include this parameter.</p>
+    /// <p>Specify two or more language codes that represent the languages you think may be present in your media; including more than five is not recommended.</p>
     /// <p>Including language options can improve the accuracy of language identification.</p>
-    /// <p>If you include <code>LanguageOptions</code> in your request, you must also include <code>IdentifyLanguage</code>.</p>
+    /// <p>If you include <code>LanguageOptions</code> in your request, you must also include <code>IdentifyLanguage</code> or <code>IdentifyMultipleLanguages</code>.</p>
     /// <p>For a list of languages supported with Amazon Transcribe streaming, refer to the <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a> table.</p><important>
     /// <p>You can only include one language dialect per language per stream. For example, you cannot include <code>en-US</code> and <code>en-AU</code> in the same request.</p>
     /// </important>
@@ -755,7 +765,7 @@ impl StartStreamTranscriptionInputBuilder {
         &self.preferred_language
     }
     /// <p>Enables automatic multi-language identification in your transcription job request. Use this parameter if your stream contains more than one language. If your stream contains only one language, use IdentifyLanguage instead.</p>
-    /// <p>If you include <code>IdentifyMultipleLanguages</code>, you can optionally include a list of language codes, using <code>LanguageOptions</code>, that you think may be present in your stream. Including <code>LanguageOptions</code> restricts <code>IdentifyMultipleLanguages</code> to only the language options that you specify, which can improve transcription accuracy.</p>
+    /// <p>If you include <code>IdentifyMultipleLanguages</code>, you must include a list of language codes, using <code>LanguageOptions</code>, that you think may be present in your stream.</p>
     /// <p>If you want to apply a custom vocabulary or a custom vocabulary filter to your automatic multiple language identification request, include <code>VocabularyNames</code> or <code>VocabularyFilterNames</code>.</p>
     /// <p>Note that you must include one of <code>LanguageCode</code>, <code>IdentifyLanguage</code>, or <code>IdentifyMultipleLanguages</code> in your request. If you include more than one of these parameters, your transcription job fails.</p>
     pub fn identify_multiple_languages(mut self, input: bool) -> Self {
@@ -763,7 +773,7 @@ impl StartStreamTranscriptionInputBuilder {
         self
     }
     /// <p>Enables automatic multi-language identification in your transcription job request. Use this parameter if your stream contains more than one language. If your stream contains only one language, use IdentifyLanguage instead.</p>
-    /// <p>If you include <code>IdentifyMultipleLanguages</code>, you can optionally include a list of language codes, using <code>LanguageOptions</code>, that you think may be present in your stream. Including <code>LanguageOptions</code> restricts <code>IdentifyMultipleLanguages</code> to only the language options that you specify, which can improve transcription accuracy.</p>
+    /// <p>If you include <code>IdentifyMultipleLanguages</code>, you must include a list of language codes, using <code>LanguageOptions</code>, that you think may be present in your stream.</p>
     /// <p>If you want to apply a custom vocabulary or a custom vocabulary filter to your automatic multiple language identification request, include <code>VocabularyNames</code> or <code>VocabularyFilterNames</code>.</p>
     /// <p>Note that you must include one of <code>LanguageCode</code>, <code>IdentifyLanguage</code>, or <code>IdentifyMultipleLanguages</code> in your request. If you include more than one of these parameters, your transcription job fails.</p>
     pub fn set_identify_multiple_languages(mut self, input: ::std::option::Option<bool>) -> Self {
@@ -771,7 +781,7 @@ impl StartStreamTranscriptionInputBuilder {
         self
     }
     /// <p>Enables automatic multi-language identification in your transcription job request. Use this parameter if your stream contains more than one language. If your stream contains only one language, use IdentifyLanguage instead.</p>
-    /// <p>If you include <code>IdentifyMultipleLanguages</code>, you can optionally include a list of language codes, using <code>LanguageOptions</code>, that you think may be present in your stream. Including <code>LanguageOptions</code> restricts <code>IdentifyMultipleLanguages</code> to only the language options that you specify, which can improve transcription accuracy.</p>
+    /// <p>If you include <code>IdentifyMultipleLanguages</code>, you must include a list of language codes, using <code>LanguageOptions</code>, that you think may be present in your stream.</p>
     /// <p>If you want to apply a custom vocabulary or a custom vocabulary filter to your automatic multiple language identification request, include <code>VocabularyNames</code> or <code>VocabularyFilterNames</code>.</p>
     /// <p>Note that you must include one of <code>LanguageCode</code>, <code>IdentifyLanguage</code>, or <code>IdentifyMultipleLanguages</code> in your request. If you include more than one of these parameters, your transcription job fails.</p>
     pub fn get_identify_multiple_languages(&self) -> &::std::option::Option<bool> {

@@ -9,7 +9,8 @@ impl super::Client {
     ///   - [`app_version(String)`](crate::operation::describe_draft_app_version_resources_import_status::DescribeDraftAppVersionResourcesImportStatusOutput::app_version): <p>The version of the application.</p>
     ///   - [`status(ResourceImportStatusType)`](crate::operation::describe_draft_app_version_resources_import_status::DescribeDraftAppVersionResourcesImportStatusOutput::status): <p>Status of the action.</p>
     ///   - [`status_change_time(DateTime)`](crate::operation::describe_draft_app_version_resources_import_status::DescribeDraftAppVersionResourcesImportStatusOutput::status_change_time): <p>The time when the status last changed.</p>
-    ///   - [`error_message(Option<String>)`](crate::operation::describe_draft_app_version_resources_import_status::DescribeDraftAppVersionResourcesImportStatusOutput::error_message): <p>The returned error message for the request.</p>
+    ///   - [`error_message(Option<String>)`](crate::operation::describe_draft_app_version_resources_import_status::DescribeDraftAppVersionResourcesImportStatusOutput::error_message): <p>The error message returned for the resource request.</p>
+    ///   - [`error_details(Option<Vec::<ErrorDetail>>)`](crate::operation::describe_draft_app_version_resources_import_status::DescribeDraftAppVersionResourcesImportStatusOutput::error_details): <p>List of errors that were encountered while importing resources.</p>
     /// - On failure, responds with [`SdkError<DescribeDraftAppVersionResourcesImportStatusError>`](crate::operation::describe_draft_app_version_resources_import_status::DescribeDraftAppVersionResourcesImportStatusError)
     pub fn describe_draft_app_version_resources_import_status(
         &self,

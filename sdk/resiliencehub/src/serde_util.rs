@@ -767,12 +767,6 @@ pub(crate) fn batch_update_recommendation_status_successful_entry_correct_errors
     if builder.reference_id.is_none() {
         builder.reference_id = Some(Default::default())
     }
-    if builder.item.is_none() {
-        builder.item = {
-            let builder = crate::types::builders::UpdateRecommendationStatusItemBuilder::default();
-            Some(builder.build())
-        }
-    }
     if builder.excluded.is_none() {
         builder.excluded = Some(Default::default())
     }

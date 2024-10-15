@@ -22,7 +22,7 @@ impl crate::operation::describe_account_limits::builders::DescribeAccountLimitsI
 }
 /// Fluent builder constructing a request to `DescribeAccountLimits`.
 ///
-/// <p>Retrieves your account's CloudFormation limits, such as the maximum number of stacks that you can create in your account. For more information about account limits, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cloudformation-limits.html">CloudFormation Quotas</a> in the <i>CloudFormation User Guide</i>.</p>
+/// <p>Retrieves your account's CloudFormation limits, such as the maximum number of stacks that you can create in your account. For more information about account limits, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cloudformation-limits.html">Understand CloudFormation quotas</a> in the <i>CloudFormation User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeAccountLimitsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

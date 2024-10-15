@@ -224,6 +224,8 @@ mod create_hsm_client_certificate;
 
 mod create_hsm_configuration;
 
+mod create_integration;
+
 mod create_redshift_idc_application;
 
 mod create_scheduled_action;
@@ -286,6 +288,8 @@ mod delete_event_subscription;
 mod delete_hsm_client_certificate;
 
 mod delete_hsm_configuration;
+
+mod delete_integration;
 
 mod delete_partner;
 
@@ -350,6 +354,8 @@ mod describe_hsm_client_certificates;
 mod describe_hsm_configurations;
 
 mod describe_inbound_integrations;
+
+mod describe_integrations;
 
 mod describe_logging_status;
 
@@ -432,6 +438,8 @@ mod modify_custom_domain_association;
 mod modify_endpoint_access;
 
 mod modify_event_subscription;
+
+mod modify_integration;
 
 mod modify_redshift_idc_application;
 

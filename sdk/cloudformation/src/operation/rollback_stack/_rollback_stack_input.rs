@@ -5,7 +5,7 @@
 pub struct RollbackStackInput {
     /// <p>The name that's associated with the stack.</p>
     pub stack_name: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of an Identity and Access Management role that CloudFormation assumes to rollback the stack.</p>
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that CloudFormation assumes to rollback the stack.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for this <code>RollbackStack</code> request.</p>
     pub client_request_token: ::std::option::Option<::std::string::String>,
@@ -18,7 +18,7 @@ impl RollbackStackInput {
     pub fn stack_name(&self) -> ::std::option::Option<&str> {
         self.stack_name.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of an Identity and Access Management role that CloudFormation assumes to rollback the stack.</p>
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that CloudFormation assumes to rollback the stack.</p>
     pub fn role_arn(&self) -> ::std::option::Option<&str> {
         self.role_arn.as_deref()
     }
@@ -64,17 +64,17 @@ impl RollbackStackInputBuilder {
     pub fn get_stack_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.stack_name
     }
-    /// <p>The Amazon Resource Name (ARN) of an Identity and Access Management role that CloudFormation assumes to rollback the stack.</p>
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that CloudFormation assumes to rollback the stack.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of an Identity and Access Management role that CloudFormation assumes to rollback the stack.</p>
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that CloudFormation assumes to rollback the stack.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of an Identity and Access Management role that CloudFormation assumes to rollback the stack.</p>
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that CloudFormation assumes to rollback the stack.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.role_arn
     }

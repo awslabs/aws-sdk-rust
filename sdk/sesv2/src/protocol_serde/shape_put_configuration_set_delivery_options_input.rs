@@ -3,11 +3,17 @@ pub fn ser_put_configuration_set_delivery_options_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::put_configuration_set_delivery_options::PutConfigurationSetDeliveryOptionsInput,
 ) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.sending_pool_name {
-        object.key("SendingPoolName").string(var_1.as_str());
+    if let Some(var_1) = &input.max_delivery_seconds {
+        object.key("MaxDeliverySeconds").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_1).into()),
+        );
     }
-    if let Some(var_2) = &input.tls_policy {
-        object.key("TlsPolicy").string(var_2.as_str());
+    if let Some(var_2) = &input.sending_pool_name {
+        object.key("SendingPoolName").string(var_2.as_str());
+    }
+    if let Some(var_3) = &input.tls_policy {
+        object.key("TlsPolicy").string(var_3.as_str());
     }
     Ok(())
 }

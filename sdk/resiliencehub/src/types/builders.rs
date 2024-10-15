@@ -89,6 +89,8 @@ pub use crate::types::_alarm_recommendation::AlarmRecommendationBuilder;
 
 pub use crate::types::_eks_source::EksSourceBuilder;
 
+pub use crate::types::_error_detail::ErrorDetailBuilder;
+
 pub use crate::types::_batch_update_recommendation_status_failed_entry::BatchUpdateRecommendationStatusFailedEntryBuilder;
 
 pub use crate::types::_batch_update_recommendation_status_successful_entry::BatchUpdateRecommendationStatusSuccessfulEntryBuilder;

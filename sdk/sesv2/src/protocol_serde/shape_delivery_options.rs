@@ -9,6 +9,12 @@ pub fn ser_delivery_options(
     if let Some(var_2) = &input.sending_pool_name {
         object.key("SendingPoolName").string(var_2.as_str());
     }
+    if let Some(var_3) = &input.max_delivery_seconds {
+        object.key("MaxDeliverySeconds").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_3).into()),
+        );
+    }
     Ok(())
 }
 
@@ -38,6 +44,13 @@ where
                             builder = builder.set_sending_pool_name(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "MaxDeliverySeconds" => {
+                            builder = builder.set_max_delivery_seconds(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i64::try_from)
                                     .transpose()?,
                             );
                         }

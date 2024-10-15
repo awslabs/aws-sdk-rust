@@ -15,20 +15,29 @@ pub fn ser_update_web_experience_input_input(
         crate::protocol_serde::shape_identity_provider_configuration::ser_identity_provider_configuration(&mut object_4, var_3)?;
         object_4.finish();
     }
-    if let Some(var_5) = &input.role_arn {
-        object.key("roleArn").string(var_5.as_str());
+    if let Some(var_5) = &input.origins {
+        let mut array_6 = object.key("origins").start_array();
+        for item_7 in var_5 {
+            {
+                array_6.value().string(item_7.as_str());
+            }
+        }
+        array_6.finish();
     }
-    if let Some(var_6) = &input.sample_prompts_control_mode {
-        object.key("samplePromptsControlMode").string(var_6.as_str());
+    if let Some(var_8) = &input.role_arn {
+        object.key("roleArn").string(var_8.as_str());
     }
-    if let Some(var_7) = &input.subtitle {
-        object.key("subtitle").string(var_7.as_str());
+    if let Some(var_9) = &input.sample_prompts_control_mode {
+        object.key("samplePromptsControlMode").string(var_9.as_str());
     }
-    if let Some(var_8) = &input.title {
-        object.key("title").string(var_8.as_str());
+    if let Some(var_10) = &input.subtitle {
+        object.key("subtitle").string(var_10.as_str());
     }
-    if let Some(var_9) = &input.welcome_message {
-        object.key("welcomeMessage").string(var_9.as_str());
+    if let Some(var_11) = &input.title {
+        object.key("title").string(var_11.as_str());
+    }
+    if let Some(var_12) = &input.welcome_message {
+        object.key("welcomeMessage").string(var_12.as_str());
     }
     Ok(())
 }

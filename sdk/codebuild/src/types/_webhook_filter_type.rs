@@ -19,6 +19,7 @@
 ///     WebhookFilterType::FilePath => { /* ... */ },
 ///     WebhookFilterType::HeadRef => { /* ... */ },
 ///     WebhookFilterType::ReleaseName => { /* ... */ },
+///     WebhookFilterType::RepositoryName => { /* ... */ },
 ///     WebhookFilterType::TagName => { /* ... */ },
 ///     WebhookFilterType::WorkflowName => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -63,6 +64,8 @@ pub enum WebhookFilterType {
     #[allow(missing_docs)] // documentation missing in model
     ReleaseName,
     #[allow(missing_docs)] // documentation missing in model
+    RepositoryName,
+    #[allow(missing_docs)] // documentation missing in model
     TagName,
     #[allow(missing_docs)] // documentation missing in model
     WorkflowName,
@@ -80,6 +83,7 @@ impl ::std::convert::From<&str> for WebhookFilterType {
             "FILE_PATH" => WebhookFilterType::FilePath,
             "HEAD_REF" => WebhookFilterType::HeadRef,
             "RELEASE_NAME" => WebhookFilterType::ReleaseName,
+            "REPOSITORY_NAME" => WebhookFilterType::RepositoryName,
             "TAG_NAME" => WebhookFilterType::TagName,
             "WORKFLOW_NAME" => WebhookFilterType::WorkflowName,
             other => WebhookFilterType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -104,6 +108,7 @@ impl WebhookFilterType {
             WebhookFilterType::FilePath => "FILE_PATH",
             WebhookFilterType::HeadRef => "HEAD_REF",
             WebhookFilterType::ReleaseName => "RELEASE_NAME",
+            WebhookFilterType::RepositoryName => "REPOSITORY_NAME",
             WebhookFilterType::TagName => "TAG_NAME",
             WebhookFilterType::WorkflowName => "WORKFLOW_NAME",
             WebhookFilterType::Unknown(value) => value.as_str(),
@@ -119,6 +124,7 @@ impl WebhookFilterType {
             "FILE_PATH",
             "HEAD_REF",
             "RELEASE_NAME",
+            "REPOSITORY_NAME",
             "TAG_NAME",
             "WORKFLOW_NAME",
         ]
@@ -151,6 +157,7 @@ impl ::std::fmt::Display for WebhookFilterType {
             WebhookFilterType::FilePath => write!(f, "FILE_PATH"),
             WebhookFilterType::HeadRef => write!(f, "HEAD_REF"),
             WebhookFilterType::ReleaseName => write!(f, "RELEASE_NAME"),
+            WebhookFilterType::RepositoryName => write!(f, "REPOSITORY_NAME"),
             WebhookFilterType::TagName => write!(f, "TAG_NAME"),
             WebhookFilterType::WorkflowName => write!(f, "WORKFLOW_NAME"),
             WebhookFilterType::Unknown(value) => write!(f, "{}", value),

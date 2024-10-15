@@ -22,7 +22,7 @@ impl crate::operation::update_termination_protection::builders::UpdateTerminatio
 }
 /// Fluent builder constructing a request to `UpdateTerminationProtection`.
 ///
-/// <p>Updates termination protection for the specified stack. If a user attempts to delete a stack with termination protection enabled, the operation fails and the stack remains unchanged. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-protect-stacks.html">Protecting a Stack From Being Deleted</a> in the <i>CloudFormation User Guide</i>.</p>
+/// <p>Updates termination protection for the specified stack. If a user attempts to delete a stack with termination protection enabled, the operation fails and the stack remains unchanged. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-protect-stacks.html">Protect a CloudFormation stack from being deleted</a> in the <i>CloudFormation User Guide</i>.</p>
 /// <p>For <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">nested stacks</a>, termination protection is set on the root stack and can't be changed directly on the nested stack.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateTerminationProtectionFluentBuilder {

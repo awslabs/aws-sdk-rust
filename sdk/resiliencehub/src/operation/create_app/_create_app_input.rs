@@ -19,6 +19,8 @@ pub struct CreateAppInput {
     pub permission_model: ::std::option::Option<crate::types::PermissionModel>,
     /// <p>The list of events you would like to subscribe and get notification for. Currently, Resilience Hub supports only <b>Drift detected</b> and <b>Scheduled assessment failure</b> events notification.</p>
     pub event_subscriptions: ::std::option::Option<::std::vec::Vec<crate::types::EventSubscription>>,
+    /// <p>Amazon Resource Name (ARN) of Resource Groups group that is integrated with an AppRegistry application. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
+    pub aws_application_arn: ::std::option::Option<::std::string::String>,
 }
 impl CreateAppInput {
     /// <p>Name of the application.</p>
@@ -55,6 +57,10 @@ impl CreateAppInput {
     pub fn event_subscriptions(&self) -> &[crate::types::EventSubscription] {
         self.event_subscriptions.as_deref().unwrap_or_default()
     }
+    /// <p>Amazon Resource Name (ARN) of Resource Groups group that is integrated with an AppRegistry application. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
+    pub fn aws_application_arn(&self) -> ::std::option::Option<&str> {
+        self.aws_application_arn.as_deref()
+    }
 }
 impl ::std::fmt::Debug for CreateAppInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -67,6 +73,7 @@ impl ::std::fmt::Debug for CreateAppInput {
         formatter.field("assessment_schedule", &self.assessment_schedule);
         formatter.field("permission_model", &self.permission_model);
         formatter.field("event_subscriptions", &self.event_subscriptions);
+        formatter.field("aws_application_arn", &self.aws_application_arn);
         formatter.finish()
     }
 }
@@ -89,6 +96,7 @@ pub struct CreateAppInputBuilder {
     pub(crate) assessment_schedule: ::std::option::Option<crate::types::AppAssessmentScheduleType>,
     pub(crate) permission_model: ::std::option::Option<crate::types::PermissionModel>,
     pub(crate) event_subscriptions: ::std::option::Option<::std::vec::Vec<crate::types::EventSubscription>>,
+    pub(crate) aws_application_arn: ::std::option::Option<::std::string::String>,
 }
 impl CreateAppInputBuilder {
     /// <p>Name of the application.</p>
@@ -216,6 +224,20 @@ impl CreateAppInputBuilder {
     pub fn get_event_subscriptions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EventSubscription>> {
         &self.event_subscriptions
     }
+    /// <p>Amazon Resource Name (ARN) of Resource Groups group that is integrated with an AppRegistry application. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
+    pub fn aws_application_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.aws_application_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Amazon Resource Name (ARN) of Resource Groups group that is integrated with an AppRegistry application. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
+    pub fn set_aws_application_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.aws_application_arn = input;
+        self
+    }
+    /// <p>Amazon Resource Name (ARN) of Resource Groups group that is integrated with an AppRegistry application. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
+    pub fn get_aws_application_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aws_application_arn
+    }
     /// Consumes the builder and constructs a [`CreateAppInput`](crate::operation::create_app::CreateAppInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_app::CreateAppInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_app::CreateAppInput {
@@ -227,6 +249,7 @@ impl CreateAppInputBuilder {
             assessment_schedule: self.assessment_schedule,
             permission_model: self.permission_model,
             event_subscriptions: self.event_subscriptions,
+            aws_application_arn: self.aws_application_arn,
         })
     }
 }
@@ -241,6 +264,7 @@ impl ::std::fmt::Debug for CreateAppInputBuilder {
         formatter.field("assessment_schedule", &self.assessment_schedule);
         formatter.field("permission_model", &self.permission_model);
         formatter.field("event_subscriptions", &self.event_subscriptions);
+        formatter.field("aws_application_arn", &self.aws_application_arn);
         formatter.finish()
     }
 }

@@ -28,6 +28,10 @@ pub struct DescribeTagsInput {
     /// <p>Parameter group</p></li>
     /// <li>
     /// <p>Snapshot copy grant</p></li>
+    /// <li>
+    /// <p>Integration (zero-ETL integration)</p><note>
+    /// <p>To describe the tags associated with an <code>integration</code>, don't specify <code>ResourceType</code>, instead specify the <code>ResourceName</code> of the integration.</p>
+    /// </note></li>
     /// </ul>
     /// <p>For more information about Amazon Redshift resource types and constructing ARNs, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-overview.html#redshift-iam-access-control-specify-actions">Specifying Policy Elements: Actions, Effects, Resources, and Principals</a> in the Amazon Redshift Cluster Management Guide.</p>
     pub resource_type: ::std::option::Option<::std::string::String>,
@@ -67,6 +71,10 @@ impl DescribeTagsInput {
     /// <p>Parameter group</p></li>
     /// <li>
     /// <p>Snapshot copy grant</p></li>
+    /// <li>
+    /// <p>Integration (zero-ETL integration)</p><note>
+    /// <p>To describe the tags associated with an <code>integration</code>, don't specify <code>ResourceType</code>, instead specify the <code>ResourceName</code> of the integration.</p>
+    /// </note></li>
     /// </ul>
     /// <p>For more information about Amazon Redshift resource types and constructing ARNs, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-overview.html#redshift-iam-access-control-specify-actions">Specifying Policy Elements: Actions, Effects, Resources, and Principals</a> in the Amazon Redshift Cluster Management Guide.</p>
     pub fn resource_type(&self) -> ::std::option::Option<&str> {
@@ -148,6 +156,10 @@ impl DescribeTagsInputBuilder {
     /// <p>Parameter group</p></li>
     /// <li>
     /// <p>Snapshot copy grant</p></li>
+    /// <li>
+    /// <p>Integration (zero-ETL integration)</p><note>
+    /// <p>To describe the tags associated with an <code>integration</code>, don't specify <code>ResourceType</code>, instead specify the <code>ResourceName</code> of the integration.</p>
+    /// </note></li>
     /// </ul>
     /// <p>For more information about Amazon Redshift resource types and constructing ARNs, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-overview.html#redshift-iam-access-control-specify-actions">Specifying Policy Elements: Actions, Effects, Resources, and Principals</a> in the Amazon Redshift Cluster Management Guide.</p>
     pub fn resource_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -176,6 +188,10 @@ impl DescribeTagsInputBuilder {
     /// <p>Parameter group</p></li>
     /// <li>
     /// <p>Snapshot copy grant</p></li>
+    /// <li>
+    /// <p>Integration (zero-ETL integration)</p><note>
+    /// <p>To describe the tags associated with an <code>integration</code>, don't specify <code>ResourceType</code>, instead specify the <code>ResourceName</code> of the integration.</p>
+    /// </note></li>
     /// </ul>
     /// <p>For more information about Amazon Redshift resource types and constructing ARNs, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-overview.html#redshift-iam-access-control-specify-actions">Specifying Policy Elements: Actions, Effects, Resources, and Principals</a> in the Amazon Redshift Cluster Management Guide.</p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -204,6 +220,10 @@ impl DescribeTagsInputBuilder {
     /// <p>Parameter group</p></li>
     /// <li>
     /// <p>Snapshot copy grant</p></li>
+    /// <li>
+    /// <p>Integration (zero-ETL integration)</p><note>
+    /// <p>To describe the tags associated with an <code>integration</code>, don't specify <code>ResourceType</code>, instead specify the <code>ResourceName</code> of the integration.</p>
+    /// </note></li>
     /// </ul>
     /// <p>For more information about Amazon Redshift resource types and constructing ARNs, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-overview.html#redshift-iam-access-control-specify-actions">Specifying Policy Elements: Actions, Effects, Resources, and Principals</a> in the Amazon Redshift Cluster Management Guide.</p>
     pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {

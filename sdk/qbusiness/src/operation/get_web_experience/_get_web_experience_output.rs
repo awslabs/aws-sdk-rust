@@ -25,6 +25,8 @@ pub struct GetWebExperienceOutput {
     pub welcome_message: ::std::option::Option<::std::string::String>,
     /// <p>Determines whether sample prompts are enabled in the web experience for an end user.</p>
     pub sample_prompts_control_mode: ::std::option::Option<crate::types::WebExperienceSamplePromptsControlMode>,
+    /// <p>Gets the website domain origins that are allowed to embed the Amazon Q Business web experience. The <i>domain origin</i> refers to the base URL for accessing a website including the protocol (<code>http/https</code>), the domain name, and the port number (if specified).</p>
+    pub origins: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The Amazon Resource Name (ARN) of the service role attached to your web experience.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Information about the identity provider (IdP) used to authenticate end users of an Amazon Q Business web experience.</p>
@@ -81,6 +83,12 @@ impl GetWebExperienceOutput {
     pub fn sample_prompts_control_mode(&self) -> ::std::option::Option<&crate::types::WebExperienceSamplePromptsControlMode> {
         self.sample_prompts_control_mode.as_ref()
     }
+    /// <p>Gets the website domain origins that are allowed to embed the Amazon Q Business web experience. The <i>domain origin</i> refers to the base URL for accessing a website including the protocol (<code>http/https</code>), the domain name, and the port number (if specified).</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.origins.is_none()`.
+    pub fn origins(&self) -> &[::std::string::String] {
+        self.origins.as_deref().unwrap_or_default()
+    }
     /// <p>The Amazon Resource Name (ARN) of the service role attached to your web experience.</p>
     pub fn role_arn(&self) -> ::std::option::Option<&str> {
         self.role_arn.as_deref()
@@ -126,6 +134,7 @@ pub struct GetWebExperienceOutputBuilder {
     pub(crate) subtitle: ::std::option::Option<::std::string::String>,
     pub(crate) welcome_message: ::std::option::Option<::std::string::String>,
     pub(crate) sample_prompts_control_mode: ::std::option::Option<crate::types::WebExperienceSamplePromptsControlMode>,
+    pub(crate) origins: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) identity_provider_configuration: ::std::option::Option<crate::types::IdentityProviderConfiguration>,
     pub(crate) authentication_configuration: ::std::option::Option<crate::types::WebExperienceAuthConfiguration>,
@@ -287,6 +296,26 @@ impl GetWebExperienceOutputBuilder {
     pub fn get_sample_prompts_control_mode(&self) -> &::std::option::Option<crate::types::WebExperienceSamplePromptsControlMode> {
         &self.sample_prompts_control_mode
     }
+    /// Appends an item to `origins`.
+    ///
+    /// To override the contents of this collection use [`set_origins`](Self::set_origins).
+    ///
+    /// <p>Gets the website domain origins that are allowed to embed the Amazon Q Business web experience. The <i>domain origin</i> refers to the base URL for accessing a website including the protocol (<code>http/https</code>), the domain name, and the port number (if specified).</p>
+    pub fn origins(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.origins.unwrap_or_default();
+        v.push(input.into());
+        self.origins = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Gets the website domain origins that are allowed to embed the Amazon Q Business web experience. The <i>domain origin</i> refers to the base URL for accessing a website including the protocol (<code>http/https</code>), the domain name, and the port number (if specified).</p>
+    pub fn set_origins(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.origins = input;
+        self
+    }
+    /// <p>Gets the website domain origins that are allowed to embed the Amazon Q Business web experience. The <i>domain origin</i> refers to the base URL for accessing a website including the protocol (<code>http/https</code>), the domain name, and the port number (if specified).</p>
+    pub fn get_origins(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.origins
+    }
     /// <p>The Amazon Resource Name (ARN) of the service role attached to your web experience.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
@@ -369,6 +398,7 @@ impl GetWebExperienceOutputBuilder {
             subtitle: self.subtitle,
             welcome_message: self.welcome_message,
             sample_prompts_control_mode: self.sample_prompts_control_mode,
+            origins: self.origins,
             role_arn: self.role_arn,
             identity_provider_configuration: self.identity_provider_configuration,
             authentication_configuration: self.authentication_configuration,

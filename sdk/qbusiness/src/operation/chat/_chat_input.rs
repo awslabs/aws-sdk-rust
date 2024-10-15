@@ -7,7 +7,7 @@ pub struct ChatInput {
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the user attached to the chat input.</p>
     pub user_id: ::std::option::Option<::std::string::String>,
-    /// <p>The groups that a user associated with the chat input belongs to.</p>
+    /// <p>The group names that a user associated with the chat input belongs to.</p>
     pub user_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The identifier of the Amazon Q Business conversation.</p>
     pub conversation_id: ::std::option::Option<::std::string::String>,
@@ -27,7 +27,7 @@ impl ChatInput {
     pub fn user_id(&self) -> ::std::option::Option<&str> {
         self.user_id.as_deref()
     }
-    /// <p>The groups that a user associated with the chat input belongs to.</p>
+    /// <p>The group names that a user associated with the chat input belongs to.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.user_groups.is_none()`.
     pub fn user_groups(&self) -> &[::std::string::String] {
@@ -107,19 +107,19 @@ impl ChatInputBuilder {
     ///
     /// To override the contents of this collection use [`set_user_groups`](Self::set_user_groups).
     ///
-    /// <p>The groups that a user associated with the chat input belongs to.</p>
+    /// <p>The group names that a user associated with the chat input belongs to.</p>
     pub fn user_groups(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.user_groups.unwrap_or_default();
         v.push(input.into());
         self.user_groups = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The groups that a user associated with the chat input belongs to.</p>
+    /// <p>The group names that a user associated with the chat input belongs to.</p>
     pub fn set_user_groups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.user_groups = input;
         self
     }
-    /// <p>The groups that a user associated with the chat input belongs to.</p>
+    /// <p>The group names that a user associated with the chat input belongs to.</p>
     pub fn get_user_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.user_groups
     }

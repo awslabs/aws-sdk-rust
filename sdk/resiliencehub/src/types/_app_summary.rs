@@ -28,6 +28,8 @@ pub struct AppSummary {
     pub rto_in_secs: ::std::option::Option<i32>,
     /// <p>Recovery Point Objective (RPO) in seconds.</p>
     pub rpo_in_secs: ::std::option::Option<i32>,
+    /// <p>Amazon Resource Name (ARN) of Resource Groups group that is integrated with an AppRegistry application. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
+    pub aws_application_arn: ::std::option::Option<::std::string::String>,
 }
 impl AppSummary {
     /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
@@ -80,6 +82,10 @@ impl AppSummary {
     pub fn rpo_in_secs(&self) -> ::std::option::Option<i32> {
         self.rpo_in_secs
     }
+    /// <p>Amazon Resource Name (ARN) of Resource Groups group that is integrated with an AppRegistry application. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
+    pub fn aws_application_arn(&self) -> ::std::option::Option<&str> {
+        self.aws_application_arn.as_deref()
+    }
 }
 impl AppSummary {
     /// Creates a new builder-style object to manufacture [`AppSummary`](crate::types::AppSummary).
@@ -104,6 +110,7 @@ pub struct AppSummaryBuilder {
     pub(crate) last_app_compliance_evaluation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) rto_in_secs: ::std::option::Option<i32>,
     pub(crate) rpo_in_secs: ::std::option::Option<i32>,
+    pub(crate) aws_application_arn: ::std::option::Option<::std::string::String>,
 }
 impl AppSummaryBuilder {
     /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
@@ -277,6 +284,20 @@ impl AppSummaryBuilder {
     pub fn get_rpo_in_secs(&self) -> &::std::option::Option<i32> {
         &self.rpo_in_secs
     }
+    /// <p>Amazon Resource Name (ARN) of Resource Groups group that is integrated with an AppRegistry application. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
+    pub fn aws_application_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.aws_application_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Amazon Resource Name (ARN) of Resource Groups group that is integrated with an AppRegistry application. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
+    pub fn set_aws_application_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.aws_application_arn = input;
+        self
+    }
+    /// <p>Amazon Resource Name (ARN) of Resource Groups group that is integrated with an AppRegistry application. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
+    pub fn get_aws_application_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aws_application_arn
+    }
     /// Consumes the builder and constructs a [`AppSummary`](crate::types::AppSummary).
     /// This method will fail if any of the following fields are not set:
     /// - [`app_arn`](crate::types::builders::AppSummaryBuilder::app_arn)
@@ -311,6 +332,7 @@ impl AppSummaryBuilder {
             last_app_compliance_evaluation_time: self.last_app_compliance_evaluation_time,
             rto_in_secs: self.rto_in_secs,
             rpo_in_secs: self.rpo_in_secs,
+            aws_application_arn: self.aws_application_arn,
         })
     }
 }

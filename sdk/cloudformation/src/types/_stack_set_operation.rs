@@ -44,7 +44,7 @@ pub struct StackSetOperation {
     pub deployment_targets: ::std::option::Option<crate::types::DeploymentTargets>,
     /// <p>Detailed information about the drift status of the stack set. This includes information about drift operations currently being performed on the stack set.</p>
     /// <p>This information will only be present for stack set operations whose <code>Action</code> type is <code>DETECT_DRIFT</code>.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-drift.html">Detecting Unmanaged Changes in Stack Sets</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-drift.html">Detect stack set drift</a> in the <i>CloudFormation User Guide</i>.</p>
     pub stack_set_drift_detection_details: ::std::option::Option<crate::types::StackSetDriftDetectionDetails>,
     /// <p>The status of the operation in details.</p>
     pub status_reason: ::std::option::Option<::std::string::String>,
@@ -114,7 +114,7 @@ impl StackSetOperation {
     }
     /// <p>Detailed information about the drift status of the stack set. This includes information about drift operations currently being performed on the stack set.</p>
     /// <p>This information will only be present for stack set operations whose <code>Action</code> type is <code>DETECT_DRIFT</code>.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-drift.html">Detecting Unmanaged Changes in Stack Sets</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-drift.html">Detect stack set drift</a> in the <i>CloudFormation User Guide</i>.</p>
     pub fn stack_set_drift_detection_details(&self) -> ::std::option::Option<&crate::types::StackSetDriftDetectionDetails> {
         self.stack_set_drift_detection_details.as_ref()
     }
@@ -358,21 +358,21 @@ impl StackSetOperationBuilder {
     }
     /// <p>Detailed information about the drift status of the stack set. This includes information about drift operations currently being performed on the stack set.</p>
     /// <p>This information will only be present for stack set operations whose <code>Action</code> type is <code>DETECT_DRIFT</code>.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-drift.html">Detecting Unmanaged Changes in Stack Sets</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-drift.html">Detect stack set drift</a> in the <i>CloudFormation User Guide</i>.</p>
     pub fn stack_set_drift_detection_details(mut self, input: crate::types::StackSetDriftDetectionDetails) -> Self {
         self.stack_set_drift_detection_details = ::std::option::Option::Some(input);
         self
     }
     /// <p>Detailed information about the drift status of the stack set. This includes information about drift operations currently being performed on the stack set.</p>
     /// <p>This information will only be present for stack set operations whose <code>Action</code> type is <code>DETECT_DRIFT</code>.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-drift.html">Detecting Unmanaged Changes in Stack Sets</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-drift.html">Detect stack set drift</a> in the <i>CloudFormation User Guide</i>.</p>
     pub fn set_stack_set_drift_detection_details(mut self, input: ::std::option::Option<crate::types::StackSetDriftDetectionDetails>) -> Self {
         self.stack_set_drift_detection_details = input;
         self
     }
     /// <p>Detailed information about the drift status of the stack set. This includes information about drift operations currently being performed on the stack set.</p>
     /// <p>This information will only be present for stack set operations whose <code>Action</code> type is <code>DETECT_DRIFT</code>.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-drift.html">Detecting Unmanaged Changes in Stack Sets</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-drift.html">Detect stack set drift</a> in the <i>CloudFormation User Guide</i>.</p>
     pub fn get_stack_set_drift_detection_details(&self) -> &::std::option::Option<crate::types::StackSetDriftDetectionDetails> {
         &self.stack_set_drift_detection_details
     }

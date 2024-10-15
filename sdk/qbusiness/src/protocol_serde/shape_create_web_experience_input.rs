@@ -12,32 +12,41 @@ pub fn ser_create_web_experience_input_input(
         crate::protocol_serde::shape_identity_provider_configuration::ser_identity_provider_configuration(&mut object_3, var_2)?;
         object_3.finish();
     }
-    if let Some(var_4) = &input.role_arn {
-        object.key("roleArn").string(var_4.as_str());
-    }
-    if let Some(var_5) = &input.sample_prompts_control_mode {
-        object.key("samplePromptsControlMode").string(var_5.as_str());
-    }
-    if let Some(var_6) = &input.subtitle {
-        object.key("subtitle").string(var_6.as_str());
-    }
-    if let Some(var_7) = &input.tags {
-        let mut array_8 = object.key("tags").start_array();
-        for item_9 in var_7 {
+    if let Some(var_4) = &input.origins {
+        let mut array_5 = object.key("origins").start_array();
+        for item_6 in var_4 {
             {
-                #[allow(unused_mut)]
-                let mut object_10 = array_8.value().start_object();
-                crate::protocol_serde::shape_tag::ser_tag(&mut object_10, item_9)?;
-                object_10.finish();
+                array_5.value().string(item_6.as_str());
             }
         }
-        array_8.finish();
+        array_5.finish();
     }
-    if let Some(var_11) = &input.title {
-        object.key("title").string(var_11.as_str());
+    if let Some(var_7) = &input.role_arn {
+        object.key("roleArn").string(var_7.as_str());
     }
-    if let Some(var_12) = &input.welcome_message {
-        object.key("welcomeMessage").string(var_12.as_str());
+    if let Some(var_8) = &input.sample_prompts_control_mode {
+        object.key("samplePromptsControlMode").string(var_8.as_str());
+    }
+    if let Some(var_9) = &input.subtitle {
+        object.key("subtitle").string(var_9.as_str());
+    }
+    if let Some(var_10) = &input.tags {
+        let mut array_11 = object.key("tags").start_array();
+        for item_12 in var_10 {
+            {
+                #[allow(unused_mut)]
+                let mut object_13 = array_11.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_13, item_12)?;
+                object_13.finish();
+            }
+        }
+        array_11.finish();
+    }
+    if let Some(var_14) = &input.title {
+        object.key("title").string(var_14.as_str());
+    }
+    if let Some(var_15) = &input.welcome_message {
+        object.key("welcomeMessage").string(var_15.as_str());
     }
     Ok(())
 }

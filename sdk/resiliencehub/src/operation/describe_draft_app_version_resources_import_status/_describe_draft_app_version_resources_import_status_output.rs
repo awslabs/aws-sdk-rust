@@ -11,8 +11,10 @@ pub struct DescribeDraftAppVersionResourcesImportStatusOutput {
     pub status: crate::types::ResourceImportStatusType,
     /// <p>The time when the status last changed.</p>
     pub status_change_time: ::aws_smithy_types::DateTime,
-    /// <p>The returned error message for the request.</p>
+    /// <p>The error message returned for the resource request.</p>
     pub error_message: ::std::option::Option<::std::string::String>,
+    /// <p>List of errors that were encountered while importing resources.</p>
+    pub error_details: ::std::option::Option<::std::vec::Vec<crate::types::ErrorDetail>>,
     _request_id: Option<String>,
 }
 impl DescribeDraftAppVersionResourcesImportStatusOutput {
@@ -34,9 +36,15 @@ impl DescribeDraftAppVersionResourcesImportStatusOutput {
     pub fn status_change_time(&self) -> &::aws_smithy_types::DateTime {
         &self.status_change_time
     }
-    /// <p>The returned error message for the request.</p>
+    /// <p>The error message returned for the resource request.</p>
     pub fn error_message(&self) -> ::std::option::Option<&str> {
         self.error_message.as_deref()
+    }
+    /// <p>List of errors that were encountered while importing resources.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.error_details.is_none()`.
+    pub fn error_details(&self) -> &[crate::types::ErrorDetail] {
+        self.error_details.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeDraftAppVersionResourcesImportStatusOutput {
@@ -62,6 +70,7 @@ pub struct DescribeDraftAppVersionResourcesImportStatusOutputBuilder {
     pub(crate) status: ::std::option::Option<crate::types::ResourceImportStatusType>,
     pub(crate) status_change_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) error_message: ::std::option::Option<::std::string::String>,
+    pub(crate) error_details: ::std::option::Option<::std::vec::Vec<crate::types::ErrorDetail>>,
     _request_id: Option<String>,
 }
 impl DescribeDraftAppVersionResourcesImportStatusOutputBuilder {
@@ -125,19 +134,39 @@ impl DescribeDraftAppVersionResourcesImportStatusOutputBuilder {
     pub fn get_status_change_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.status_change_time
     }
-    /// <p>The returned error message for the request.</p>
+    /// <p>The error message returned for the resource request.</p>
     pub fn error_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_message = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The returned error message for the request.</p>
+    /// <p>The error message returned for the resource request.</p>
     pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_message = input;
         self
     }
-    /// <p>The returned error message for the request.</p>
+    /// <p>The error message returned for the resource request.</p>
     pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.error_message
+    }
+    /// Appends an item to `error_details`.
+    ///
+    /// To override the contents of this collection use [`set_error_details`](Self::set_error_details).
+    ///
+    /// <p>List of errors that were encountered while importing resources.</p>
+    pub fn error_details(mut self, input: crate::types::ErrorDetail) -> Self {
+        let mut v = self.error_details.unwrap_or_default();
+        v.push(input);
+        self.error_details = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>List of errors that were encountered while importing resources.</p>
+    pub fn set_error_details(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ErrorDetail>>) -> Self {
+        self.error_details = input;
+        self
+    }
+    /// <p>List of errors that were encountered while importing resources.</p>
+    pub fn get_error_details(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ErrorDetail>> {
+        &self.error_details
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
@@ -187,6 +216,7 @@ impl DescribeDraftAppVersionResourcesImportStatusOutputBuilder {
                     )
                 })?,
                 error_message: self.error_message,
+                error_details: self.error_details,
                 _request_id: self._request_id,
             },
         )
