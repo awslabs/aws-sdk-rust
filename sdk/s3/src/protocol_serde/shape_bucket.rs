@@ -32,6 +32,19 @@ pub fn de_bucket(decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder) -> Resul
                 builder = builder.set_creation_date(var_2);
             }
             ,
+            s if s.matches("BucketRegion") /* BucketRegion com.amazonaws.s3#Bucket$BucketRegion */ =>  {
+                let var_3 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_bucket_region(var_3);
+            }
+            ,
             _ => {}
         }
     }

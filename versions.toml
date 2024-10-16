@@ -1918,9 +1918,9 @@ model_hash = '34648839402316ab9da4bef0fe11beb9bc3ec1d05b3ff7d09664ab74c0cb3d2b'
 
 [crates.aws-sdk-s3]
 category = 'AwsSdk'
-version = '1.56.0'
-source_hash = '36aea4a7770c1b9382cdb6f8fedb7f84f9188a768c69c91d63c680040aabd295'
-model_hash = '588b323ec168ed4350d55639ea5096efe44132b312410c3a08d893a17f8a4388'
+version = '1.57.0'
+source_hash = '20843d1c84b247902e5f3eb4e97d810299063fac3338400d0e599940294b1a70'
+model_hash = 'f3dd5b9e103d035ffa51cc6666602b2e486df8d192431008e266211f3ee1ad7d'
 
 [crates.aws-sdk-s3control]
 category = 'AwsSdk'
@@ -2499,17 +2499,5 @@ source_hash = '80dac965e6bba4c1f69c0329fa21203c182f3eb034792d8f4c4fa94ba15ca72f'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = '2fe25f627f326867fe30559e73c464e12361c13b66e7ffc0bc95aa91a482fafd'
-
-[release]
-tag = 'release-2024-10-15'
-
 [release.crates]
-aws-sdk-amplify = '1.50.0'
-aws-sdk-cloudformation = '1.51.1'
-aws-sdk-codebuild = '1.58.0'
-aws-sdk-ivs = '1.51.0'
-aws-sdk-qbusiness = '1.49.0'
-aws-sdk-redshift = '1.49.0'
-aws-sdk-resiliencehub = '1.48.0'
-aws-sdk-sesv2 = '1.51.0'
-aws-sdk-transcribestreaming = '1.47.0'
+aws-sdk-s3 = '1.57.0'

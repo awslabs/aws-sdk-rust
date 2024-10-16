@@ -9,18 +9,12 @@ pub struct RestoreRequest {
     pub days: ::std::option::Option<i32>,
     /// <p>S3 Glacier related parameters pertaining to this job. Do not use with restores that specify <code>OutputLocation</code>.</p>
     pub glacier_job_parameters: ::std::option::Option<crate::types::GlacierJobParameters>,
-    /// <important>
-    /// <p>Amazon S3 Select is no longer available to new customers. Existing customers of Amazon S3 Select can continue to use the feature as usual. <a href="http://aws.amazon.com/blogs/storage/how-to-optimize-querying-your-data-in-amazon-s3/">Learn more</a></p>
-    /// </important>
     /// <p>Type of restore request.</p>
     pub r#type: ::std::option::Option<crate::types::RestoreRequestType>,
     /// <p>Retrieval tier at which the restore will be processed.</p>
     pub tier: ::std::option::Option<crate::types::Tier>,
     /// <p>The optional description for the job.</p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <important>
-    /// <p>Amazon S3 Select is no longer available to new customers. Existing customers of Amazon S3 Select can continue to use the feature as usual. <a href="http://aws.amazon.com/blogs/storage/how-to-optimize-querying-your-data-in-amazon-s3/">Learn more</a></p>
-    /// </important>
     /// <p>Describes the parameters for Select job types.</p>
     pub select_parameters: ::std::option::Option<crate::types::SelectParameters>,
     /// <p>Describes the location where the restore job's output is stored.</p>
@@ -36,9 +30,6 @@ impl RestoreRequest {
     pub fn glacier_job_parameters(&self) -> ::std::option::Option<&crate::types::GlacierJobParameters> {
         self.glacier_job_parameters.as_ref()
     }
-    /// <important>
-    /// <p>Amazon S3 Select is no longer available to new customers. Existing customers of Amazon S3 Select can continue to use the feature as usual. <a href="http://aws.amazon.com/blogs/storage/how-to-optimize-querying-your-data-in-amazon-s3/">Learn more</a></p>
-    /// </important>
     /// <p>Type of restore request.</p>
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::RestoreRequestType> {
         self.r#type.as_ref()
@@ -51,9 +42,6 @@ impl RestoreRequest {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <important>
-    /// <p>Amazon S3 Select is no longer available to new customers. Existing customers of Amazon S3 Select can continue to use the feature as usual. <a href="http://aws.amazon.com/blogs/storage/how-to-optimize-querying-your-data-in-amazon-s3/">Learn more</a></p>
-    /// </important>
     /// <p>Describes the parameters for Select job types.</p>
     pub fn select_parameters(&self) -> ::std::option::Option<&crate::types::SelectParameters> {
         self.select_parameters.as_ref()
@@ -114,25 +102,16 @@ impl RestoreRequestBuilder {
     pub fn get_glacier_job_parameters(&self) -> &::std::option::Option<crate::types::GlacierJobParameters> {
         &self.glacier_job_parameters
     }
-    /// <important>
-    /// <p>Amazon S3 Select is no longer available to new customers. Existing customers of Amazon S3 Select can continue to use the feature as usual. <a href="http://aws.amazon.com/blogs/storage/how-to-optimize-querying-your-data-in-amazon-s3/">Learn more</a></p>
-    /// </important>
     /// <p>Type of restore request.</p>
     pub fn r#type(mut self, input: crate::types::RestoreRequestType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
     }
-    /// <important>
-    /// <p>Amazon S3 Select is no longer available to new customers. Existing customers of Amazon S3 Select can continue to use the feature as usual. <a href="http://aws.amazon.com/blogs/storage/how-to-optimize-querying-your-data-in-amazon-s3/">Learn more</a></p>
-    /// </important>
     /// <p>Type of restore request.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::RestoreRequestType>) -> Self {
         self.r#type = input;
         self
     }
-    /// <important>
-    /// <p>Amazon S3 Select is no longer available to new customers. Existing customers of Amazon S3 Select can continue to use the feature as usual. <a href="http://aws.amazon.com/blogs/storage/how-to-optimize-querying-your-data-in-amazon-s3/">Learn more</a></p>
-    /// </important>
     /// <p>Type of restore request.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::RestoreRequestType> {
         &self.r#type
@@ -165,25 +144,16 @@ impl RestoreRequestBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
-    /// <important>
-    /// <p>Amazon S3 Select is no longer available to new customers. Existing customers of Amazon S3 Select can continue to use the feature as usual. <a href="http://aws.amazon.com/blogs/storage/how-to-optimize-querying-your-data-in-amazon-s3/">Learn more</a></p>
-    /// </important>
     /// <p>Describes the parameters for Select job types.</p>
     pub fn select_parameters(mut self, input: crate::types::SelectParameters) -> Self {
         self.select_parameters = ::std::option::Option::Some(input);
         self
     }
-    /// <important>
-    /// <p>Amazon S3 Select is no longer available to new customers. Existing customers of Amazon S3 Select can continue to use the feature as usual. <a href="http://aws.amazon.com/blogs/storage/how-to-optimize-querying-your-data-in-amazon-s3/">Learn more</a></p>
-    /// </important>
     /// <p>Describes the parameters for Select job types.</p>
     pub fn set_select_parameters(mut self, input: ::std::option::Option<crate::types::SelectParameters>) -> Self {
         self.select_parameters = input;
         self
     }
-    /// <important>
-    /// <p>Amazon S3 Select is no longer available to new customers. Existing customers of Amazon S3 Select can continue to use the feature as usual. <a href="http://aws.amazon.com/blogs/storage/how-to-optimize-querying-your-data-in-amazon-s3/">Learn more</a></p>
-    /// </important>
     /// <p>Describes the parameters for Select job types.</p>
     pub fn get_select_parameters(&self) -> &::std::option::Option<crate::types::SelectParameters> {
         &self.select_parameters

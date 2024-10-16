@@ -9,6 +9,12 @@ pub struct ListBucketsInput {
     /// <p>Length Constraints: Minimum length of 0. Maximum length of 1024.</p>
     /// <p>Required: No.</p>
     pub continuation_token: ::std::option::Option<::std::string::String>,
+    /// <p>Limits the response to bucket names that begin with the specified bucket name prefix.</p>
+    pub prefix: ::std::option::Option<::std::string::String>,
+    /// <p>Limits the response to buckets that are located in the specified Amazon Web Services Region. The Amazon Web Services Region must be expressed according to the Amazon Web Services Region code, such as <code>us-west-2</code> for the US West (Oregon) Region. For a list of the valid values for all of the Amazon Web Services Regions, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Regions and Endpoints</a>.</p><note>
+    /// <p>Requests made to a Regional endpoint that is different from the <code>bucket-region</code> parameter are not supported. For example, if you want to limit the response to your buckets in Region <code>us-west-2</code>, the request must be made to an endpoint in Region <code>us-west-2</code>.</p>
+    /// </note>
+    pub bucket_region: ::std::option::Option<::std::string::String>,
 }
 impl ListBucketsInput {
     /// <p>Maximum number of buckets to be returned in response. When the number is more than the count of buckets that are owned by an Amazon Web Services account, return all the buckets in response.</p>
@@ -20,6 +26,16 @@ impl ListBucketsInput {
     /// <p>Required: No.</p>
     pub fn continuation_token(&self) -> ::std::option::Option<&str> {
         self.continuation_token.as_deref()
+    }
+    /// <p>Limits the response to bucket names that begin with the specified bucket name prefix.</p>
+    pub fn prefix(&self) -> ::std::option::Option<&str> {
+        self.prefix.as_deref()
+    }
+    /// <p>Limits the response to buckets that are located in the specified Amazon Web Services Region. The Amazon Web Services Region must be expressed according to the Amazon Web Services Region code, such as <code>us-west-2</code> for the US West (Oregon) Region. For a list of the valid values for all of the Amazon Web Services Regions, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Regions and Endpoints</a>.</p><note>
+    /// <p>Requests made to a Regional endpoint that is different from the <code>bucket-region</code> parameter are not supported. For example, if you want to limit the response to your buckets in Region <code>us-west-2</code>, the request must be made to an endpoint in Region <code>us-west-2</code>.</p>
+    /// </note>
+    pub fn bucket_region(&self) -> ::std::option::Option<&str> {
+        self.bucket_region.as_deref()
     }
 }
 impl ListBucketsInput {
@@ -35,6 +51,8 @@ impl ListBucketsInput {
 pub struct ListBucketsInputBuilder {
     pub(crate) max_buckets: ::std::option::Option<i32>,
     pub(crate) continuation_token: ::std::option::Option<::std::string::String>,
+    pub(crate) prefix: ::std::option::Option<::std::string::String>,
+    pub(crate) bucket_region: ::std::option::Option<::std::string::String>,
 }
 impl ListBucketsInputBuilder {
     /// <p>Maximum number of buckets to be returned in response. When the number is more than the count of buckets that are owned by an Amazon Web Services account, return all the buckets in response.</p>
@@ -71,11 +89,47 @@ impl ListBucketsInputBuilder {
     pub fn get_continuation_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.continuation_token
     }
+    /// <p>Limits the response to bucket names that begin with the specified bucket name prefix.</p>
+    pub fn prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.prefix = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Limits the response to bucket names that begin with the specified bucket name prefix.</p>
+    pub fn set_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.prefix = input;
+        self
+    }
+    /// <p>Limits the response to bucket names that begin with the specified bucket name prefix.</p>
+    pub fn get_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.prefix
+    }
+    /// <p>Limits the response to buckets that are located in the specified Amazon Web Services Region. The Amazon Web Services Region must be expressed according to the Amazon Web Services Region code, such as <code>us-west-2</code> for the US West (Oregon) Region. For a list of the valid values for all of the Amazon Web Services Regions, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Regions and Endpoints</a>.</p><note>
+    /// <p>Requests made to a Regional endpoint that is different from the <code>bucket-region</code> parameter are not supported. For example, if you want to limit the response to your buckets in Region <code>us-west-2</code>, the request must be made to an endpoint in Region <code>us-west-2</code>.</p>
+    /// </note>
+    pub fn bucket_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.bucket_region = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Limits the response to buckets that are located in the specified Amazon Web Services Region. The Amazon Web Services Region must be expressed according to the Amazon Web Services Region code, such as <code>us-west-2</code> for the US West (Oregon) Region. For a list of the valid values for all of the Amazon Web Services Regions, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Regions and Endpoints</a>.</p><note>
+    /// <p>Requests made to a Regional endpoint that is different from the <code>bucket-region</code> parameter are not supported. For example, if you want to limit the response to your buckets in Region <code>us-west-2</code>, the request must be made to an endpoint in Region <code>us-west-2</code>.</p>
+    /// </note>
+    pub fn set_bucket_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.bucket_region = input;
+        self
+    }
+    /// <p>Limits the response to buckets that are located in the specified Amazon Web Services Region. The Amazon Web Services Region must be expressed according to the Amazon Web Services Region code, such as <code>us-west-2</code> for the US West (Oregon) Region. For a list of the valid values for all of the Amazon Web Services Regions, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Regions and Endpoints</a>.</p><note>
+    /// <p>Requests made to a Regional endpoint that is different from the <code>bucket-region</code> parameter are not supported. For example, if you want to limit the response to your buckets in Region <code>us-west-2</code>, the request must be made to an endpoint in Region <code>us-west-2</code>.</p>
+    /// </note>
+    pub fn get_bucket_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket_region
+    }
     /// Consumes the builder and constructs a [`ListBucketsInput`](crate::operation::list_buckets::ListBucketsInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::list_buckets::ListBucketsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_buckets::ListBucketsInput {
             max_buckets: self.max_buckets,
             continuation_token: self.continuation_token,
+            prefix: self.prefix,
+            bucket_region: self.bucket_region,
         })
     }
 }
