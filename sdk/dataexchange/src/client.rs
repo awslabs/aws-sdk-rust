@@ -59,14 +59,14 @@ pub(crate) struct Handle {
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`CancelJob`](crate::operation::cancel_job) operation has
-/// a [`Client::cancel_job`], function which returns a builder for that operation.
+/// For example, the [`AcceptDataGrant`](crate::operation::accept_data_grant) operation has
+/// a [`Client::accept_data_grant`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.cancel_job()
-///     .job_id("example")
+/// let result = client.accept_data_grant()
+///     .data_grant_arn("example")
 ///     .send()
 ///     .await;
 /// ```
@@ -136,7 +136,11 @@ impl Client {
     }
 }
 
+mod accept_data_grant;
+
 mod cancel_job;
+
+mod create_data_grant;
 
 mod create_data_set;
 
@@ -157,7 +161,7 @@ mod create_revision;
 /// # let client: aws_sdk_dataexchange::Client = unimplemented!();
 /// use ::http::header::{HeaderName, HeaderValue};
 ///
-/// let result = client.cancel_job()
+/// let result = client.accept_data_grant()
 ///     .customize()
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
@@ -175,6 +179,8 @@ pub mod customize;
 
 mod delete_asset;
 
+mod delete_data_grant;
+
 mod delete_data_set;
 
 mod delete_event_action;
@@ -183,13 +189,19 @@ mod delete_revision;
 
 mod get_asset;
 
+mod get_data_grant;
+
 mod get_data_set;
 
 mod get_event_action;
 
 mod get_job;
 
+mod get_received_data_grant;
+
 mod get_revision;
+
+mod list_data_grants;
 
 mod list_data_set_revisions;
 
@@ -198,6 +210,8 @@ mod list_data_sets;
 mod list_event_actions;
 
 mod list_jobs;
+
+mod list_received_data_grants;
 
 mod list_revision_assets;
 

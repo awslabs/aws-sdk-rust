@@ -37,7 +37,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-dataexchange = "1.46.0"
+//! aws-sdk-dataexchange = "1.47.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
@@ -154,14 +154,14 @@ pub use config::Config;
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`CancelJob`](crate::operation::cancel_job) operation has
-/// a [`Client::cancel_job`], function which returns a builder for that operation.
+/// For example, the [`AcceptDataGrant`](crate::operation::accept_data_grant) operation has
+/// a [`Client::accept_data_grant`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.cancel_job()
-///     .job_id("example")
+/// let result = client.accept_data_grant()
+///     .data_grant_arn("example")
 ///     .send()
 ///     .await;
 /// ```

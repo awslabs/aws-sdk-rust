@@ -309,6 +309,8 @@ pub(crate) mod shape_start_asset_bundle_import_job;
 
 pub(crate) mod shape_start_dashboard_snapshot_job;
 
+pub(crate) mod shape_start_dashboard_snapshot_job_schedule;
+
 pub(crate) mod shape_tag_resource;
 
 pub(crate) mod shape_untag_resource;
@@ -675,6 +677,8 @@ pub(crate) mod shape_field_folder;
 
 pub(crate) mod shape_folder;
 
+pub(crate) mod shape_folder_arn_list;
+
 pub(crate) mod shape_folder_member;
 
 pub(crate) mod shape_folder_member_list;
@@ -806,6 +810,8 @@ pub(crate) mod shape_topic_refresh_schedule_summaries;
 pub(crate) mod shape_topic_reviewed_answers;
 
 pub(crate) mod shape_topic_summaries;
+
+pub(crate) mod shape_update_resource_permission_list;
 
 pub(crate) mod shape_user;
 

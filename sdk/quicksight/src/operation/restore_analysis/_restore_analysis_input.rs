@@ -7,6 +7,8 @@ pub struct RestoreAnalysisInput {
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the analysis that you're restoring.</p>
     pub analysis_id: ::std::option::Option<::std::string::String>,
+    /// <p>A boolean value that determines if the analysis will be restored to folders that it previously resided in. A <code>True</code> value restores analysis back to all folders that it previously resided in. A <code>False</code> value restores the analysis but does not restore the analysis back to all previously resided folders. Restoring a restricted analysis requires this parameter to be set to <code>True</code>.</p>
+    pub restore_to_folders: ::std::option::Option<bool>,
 }
 impl RestoreAnalysisInput {
     /// <p>The ID of the Amazon Web Services account that contains the analysis.</p>
@@ -16,6 +18,10 @@ impl RestoreAnalysisInput {
     /// <p>The ID of the analysis that you're restoring.</p>
     pub fn analysis_id(&self) -> ::std::option::Option<&str> {
         self.analysis_id.as_deref()
+    }
+    /// <p>A boolean value that determines if the analysis will be restored to folders that it previously resided in. A <code>True</code> value restores analysis back to all folders that it previously resided in. A <code>False</code> value restores the analysis but does not restore the analysis back to all previously resided folders. Restoring a restricted analysis requires this parameter to be set to <code>True</code>.</p>
+    pub fn restore_to_folders(&self) -> ::std::option::Option<bool> {
+        self.restore_to_folders
     }
 }
 impl RestoreAnalysisInput {
@@ -31,6 +37,7 @@ impl RestoreAnalysisInput {
 pub struct RestoreAnalysisInputBuilder {
     pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) analysis_id: ::std::option::Option<::std::string::String>,
+    pub(crate) restore_to_folders: ::std::option::Option<bool>,
 }
 impl RestoreAnalysisInputBuilder {
     /// <p>The ID of the Amazon Web Services account that contains the analysis.</p>
@@ -63,6 +70,20 @@ impl RestoreAnalysisInputBuilder {
     pub fn get_analysis_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.analysis_id
     }
+    /// <p>A boolean value that determines if the analysis will be restored to folders that it previously resided in. A <code>True</code> value restores analysis back to all folders that it previously resided in. A <code>False</code> value restores the analysis but does not restore the analysis back to all previously resided folders. Restoring a restricted analysis requires this parameter to be set to <code>True</code>.</p>
+    pub fn restore_to_folders(mut self, input: bool) -> Self {
+        self.restore_to_folders = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A boolean value that determines if the analysis will be restored to folders that it previously resided in. A <code>True</code> value restores analysis back to all folders that it previously resided in. A <code>False</code> value restores the analysis but does not restore the analysis back to all previously resided folders. Restoring a restricted analysis requires this parameter to be set to <code>True</code>.</p>
+    pub fn set_restore_to_folders(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.restore_to_folders = input;
+        self
+    }
+    /// <p>A boolean value that determines if the analysis will be restored to folders that it previously resided in. A <code>True</code> value restores analysis back to all folders that it previously resided in. A <code>False</code> value restores the analysis but does not restore the analysis back to all previously resided folders. Restoring a restricted analysis requires this parameter to be set to <code>True</code>.</p>
+    pub fn get_restore_to_folders(&self) -> &::std::option::Option<bool> {
+        &self.restore_to_folders
+    }
     /// Consumes the builder and constructs a [`RestoreAnalysisInput`](crate::operation::restore_analysis::RestoreAnalysisInput).
     pub fn build(
         self,
@@ -70,6 +91,7 @@ impl RestoreAnalysisInputBuilder {
         ::std::result::Result::Ok(crate::operation::restore_analysis::RestoreAnalysisInput {
             aws_account_id: self.aws_account_id,
             analysis_id: self.analysis_id,
+            restore_to_folders: self.restore_to_folders,
         })
     }
 }

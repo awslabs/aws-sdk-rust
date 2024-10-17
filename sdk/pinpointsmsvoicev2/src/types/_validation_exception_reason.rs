@@ -49,6 +49,7 @@
 ///     ValidationExceptionReason::UnknownRegistrationSection => { /* ... */ },
 ///     ValidationExceptionReason::UnknownRegistrationType => { /* ... */ },
 ///     ValidationExceptionReason::UnknownRegistrationVersion => { /* ... */ },
+///     ValidationExceptionReason::UnspecifiedParameterNotSupported => { /* ... */ },
 ///     ValidationExceptionReason::VerificationCodeMismatch => { /* ... */ },
 ///     ValidationExceptionReason::VoiceCapabilityNotAvailable => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -153,6 +154,8 @@ pub enum ValidationExceptionReason {
     #[allow(missing_docs)] // documentation missing in model
     UnknownRegistrationVersion,
     #[allow(missing_docs)] // documentation missing in model
+    UnspecifiedParameterNotSupported,
+    #[allow(missing_docs)] // documentation missing in model
     VerificationCodeMismatch,
     #[allow(missing_docs)] // documentation missing in model
     VoiceCapabilityNotAvailable,
@@ -200,6 +203,7 @@ impl ::std::convert::From<&str> for ValidationExceptionReason {
             "UNKNOWN_REGISTRATION_SECTION" => ValidationExceptionReason::UnknownRegistrationSection,
             "UNKNOWN_REGISTRATION_TYPE" => ValidationExceptionReason::UnknownRegistrationType,
             "UNKNOWN_REGISTRATION_VERSION" => ValidationExceptionReason::UnknownRegistrationVersion,
+            "UNSPECIFIED_PARAMETER_NOT_SUPPORTED" => ValidationExceptionReason::UnspecifiedParameterNotSupported,
             "VERIFICATION_CODE_MISMATCH" => ValidationExceptionReason::VerificationCodeMismatch,
             "VOICE_CAPABILITY_NOT_AVAILABLE" => ValidationExceptionReason::VoiceCapabilityNotAvailable,
             other => ValidationExceptionReason::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -254,6 +258,7 @@ impl ValidationExceptionReason {
             ValidationExceptionReason::UnknownRegistrationSection => "UNKNOWN_REGISTRATION_SECTION",
             ValidationExceptionReason::UnknownRegistrationType => "UNKNOWN_REGISTRATION_TYPE",
             ValidationExceptionReason::UnknownRegistrationVersion => "UNKNOWN_REGISTRATION_VERSION",
+            ValidationExceptionReason::UnspecifiedParameterNotSupported => "UNSPECIFIED_PARAMETER_NOT_SUPPORTED",
             ValidationExceptionReason::VerificationCodeMismatch => "VERIFICATION_CODE_MISMATCH",
             ValidationExceptionReason::VoiceCapabilityNotAvailable => "VOICE_CAPABILITY_NOT_AVAILABLE",
             ValidationExceptionReason::Unknown(value) => value.as_str(),
@@ -299,6 +304,7 @@ impl ValidationExceptionReason {
             "UNKNOWN_REGISTRATION_SECTION",
             "UNKNOWN_REGISTRATION_TYPE",
             "UNKNOWN_REGISTRATION_VERSION",
+            "UNSPECIFIED_PARAMETER_NOT_SUPPORTED",
             "VERIFICATION_CODE_MISMATCH",
             "VOICE_CAPABILITY_NOT_AVAILABLE",
         ]
@@ -361,6 +367,7 @@ impl ::std::fmt::Display for ValidationExceptionReason {
             ValidationExceptionReason::UnknownRegistrationSection => write!(f, "UNKNOWN_REGISTRATION_SECTION"),
             ValidationExceptionReason::UnknownRegistrationType => write!(f, "UNKNOWN_REGISTRATION_TYPE"),
             ValidationExceptionReason::UnknownRegistrationVersion => write!(f, "UNKNOWN_REGISTRATION_VERSION"),
+            ValidationExceptionReason::UnspecifiedParameterNotSupported => write!(f, "UNSPECIFIED_PARAMETER_NOT_SUPPORTED"),
             ValidationExceptionReason::VerificationCodeMismatch => write!(f, "VERIFICATION_CODE_MISMATCH"),
             ValidationExceptionReason::VoiceCapabilityNotAvailable => write!(f, "VOICE_CAPABILITY_NOT_AVAILABLE"),
             ValidationExceptionReason::Unknown(value) => write!(f, "{}", value),

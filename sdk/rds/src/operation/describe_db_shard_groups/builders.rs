@@ -108,7 +108,7 @@ impl DescribeDBShardGroupsFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The user-supplied DB shard group identifier or the Amazon Resource Name (ARN) of the DB shard group. If this parameter is specified, information for only the specific DB shard group is returned. This parameter isn't case-sensitive.</p>
+    /// <p>The user-supplied DB shard group identifier. If this parameter is specified, information for only the specific DB shard group is returned. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li>
@@ -118,7 +118,7 @@ impl DescribeDBShardGroupsFluentBuilder {
         self.inner = self.inner.db_shard_group_identifier(input.into());
         self
     }
-    /// <p>The user-supplied DB shard group identifier or the Amazon Resource Name (ARN) of the DB shard group. If this parameter is specified, information for only the specific DB shard group is returned. This parameter isn't case-sensitive.</p>
+    /// <p>The user-supplied DB shard group identifier. If this parameter is specified, information for only the specific DB shard group is returned. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li>
@@ -128,7 +128,7 @@ impl DescribeDBShardGroupsFluentBuilder {
         self.inner = self.inner.set_db_shard_group_identifier(input);
         self
     }
-    /// <p>The user-supplied DB shard group identifier or the Amazon Resource Name (ARN) of the DB shard group. If this parameter is specified, information for only the specific DB shard group is returned. This parameter isn't case-sensitive.</p>
+    /// <p>The user-supplied DB shard group identifier. If this parameter is specified, information for only the specific DB shard group is returned. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li>

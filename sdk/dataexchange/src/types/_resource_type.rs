@@ -13,6 +13,7 @@
 /// # let resourcetype = unimplemented!();
 /// match resourcetype {
 ///     ResourceType::Asset => { /* ... */ },
+///     ResourceType::DataGrant => { /* ... */ },
 ///     ResourceType::DataSet => { /* ... */ },
 ///     ResourceType::EventAction => { /* ... */ },
 ///     ResourceType::Job => { /* ... */ },
@@ -47,6 +48,8 @@ pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     Asset,
     #[allow(missing_docs)] // documentation missing in model
+    DataGrant,
+    #[allow(missing_docs)] // documentation missing in model
     DataSet,
     #[allow(missing_docs)] // documentation missing in model
     EventAction,
@@ -62,6 +65,7 @@ impl ::std::convert::From<&str> for ResourceType {
     fn from(s: &str) -> Self {
         match s {
             "ASSET" => ResourceType::Asset,
+            "DATA_GRANT" => ResourceType::DataGrant,
             "DATA_SET" => ResourceType::DataSet,
             "EVENT_ACTION" => ResourceType::EventAction,
             "JOB" => ResourceType::Job,
@@ -82,6 +86,7 @@ impl ResourceType {
     pub fn as_str(&self) -> &str {
         match self {
             ResourceType::Asset => "ASSET",
+            ResourceType::DataGrant => "DATA_GRANT",
             ResourceType::DataSet => "DATA_SET",
             ResourceType::EventAction => "EVENT_ACTION",
             ResourceType::Job => "JOB",
@@ -91,7 +96,7 @@ impl ResourceType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ASSET", "DATA_SET", "EVENT_ACTION", "JOB", "REVISION"]
+        &["ASSET", "DATA_GRANT", "DATA_SET", "EVENT_ACTION", "JOB", "REVISION"]
     }
 }
 impl ::std::convert::AsRef<str> for ResourceType {
@@ -115,6 +120,7 @@ impl ::std::fmt::Display for ResourceType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ResourceType::Asset => write!(f, "ASSET"),
+            ResourceType::DataGrant => write!(f, "DATA_GRANT"),
             ResourceType::DataSet => write!(f, "DATA_SET"),
             ResourceType::EventAction => write!(f, "EVENT_ACTION"),
             ResourceType::Job => write!(f, "JOB"),

@@ -6,7 +6,7 @@
 pub struct PipeSourceManagedStreamingKafkaParameters {
     /// <p>The name of the topic that the pipe will read from.</p>
     pub topic_name: ::std::string::String,
-    /// <p>(Streams only) The position in a stream from which to start reading.</p>
+    /// <p>The position in a stream from which to start reading.</p>
     pub starting_position: ::std::option::Option<crate::types::MskStartPosition>,
     /// <p>The maximum number of records to include in each batch.</p>
     pub batch_size: ::std::option::Option<i32>,
@@ -23,7 +23,7 @@ impl PipeSourceManagedStreamingKafkaParameters {
         use std::ops::Deref;
         self.topic_name.deref()
     }
-    /// <p>(Streams only) The position in a stream from which to start reading.</p>
+    /// <p>The position in a stream from which to start reading.</p>
     pub fn starting_position(&self) -> ::std::option::Option<&crate::types::MskStartPosition> {
         self.starting_position.as_ref()
     }
@@ -90,17 +90,17 @@ impl PipeSourceManagedStreamingKafkaParametersBuilder {
     pub fn get_topic_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.topic_name
     }
-    /// <p>(Streams only) The position in a stream from which to start reading.</p>
+    /// <p>The position in a stream from which to start reading.</p>
     pub fn starting_position(mut self, input: crate::types::MskStartPosition) -> Self {
         self.starting_position = ::std::option::Option::Some(input);
         self
     }
-    /// <p>(Streams only) The position in a stream from which to start reading.</p>
+    /// <p>The position in a stream from which to start reading.</p>
     pub fn set_starting_position(mut self, input: ::std::option::Option<crate::types::MskStartPosition>) -> Self {
         self.starting_position = input;
         self
     }
-    /// <p>(Streams only) The position in a stream from which to start reading.</p>
+    /// <p>The position in a stream from which to start reading.</p>
     pub fn get_starting_position(&self) -> &::std::option::Option<crate::types::MskStartPosition> {
         &self.starting_position
     }

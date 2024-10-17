@@ -24,7 +24,7 @@ impl crate::operation::describe_opted_out_numbers::builders::DescribeOptedOutNum
 ///
 /// <p>Describes the specified opted out destination numbers or all opted out destination numbers in an opt-out list.</p>
 /// <p>If you specify opted out numbers, the output includes information for only the specified opted out numbers. If you specify filters, the output includes information for only those opted out numbers that meet the filter criteria. If you don't specify opted out numbers or filters, the output includes information for all opted out destination numbers in your opt-out list.</p>
-/// <p>If you specify an opted out number that isn't valid, an error is returned.</p>
+/// <p>If you specify an opted out number that isn't valid, an exception is returned.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeOptedOutNumbersFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -142,16 +142,19 @@ impl DescribeOptedOutNumbersFluentBuilder {
     /// To override the contents of this collection use [`set_opted_out_numbers`](Self::set_opted_out_numbers).
     ///
     /// <p>An array of phone numbers to search for in the OptOutList.</p>
+    /// <p>If you specify an opted out number that isn't valid, an exception is returned.</p>
     pub fn opted_out_numbers(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.opted_out_numbers(input.into());
         self
     }
     /// <p>An array of phone numbers to search for in the OptOutList.</p>
+    /// <p>If you specify an opted out number that isn't valid, an exception is returned.</p>
     pub fn set_opted_out_numbers(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_opted_out_numbers(input);
         self
     }
     /// <p>An array of phone numbers to search for in the OptOutList.</p>
+    /// <p>If you specify an opted out number that isn't valid, an exception is returned.</p>
     pub fn get_opted_out_numbers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_opted_out_numbers()
     }

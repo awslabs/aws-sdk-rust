@@ -168,9 +168,8 @@ pub(crate) fn de_describe_dashboard_permissions(
                     );
                 }
                 "Permissions" => {
-                    builder = builder.set_permissions(crate::protocol_serde::shape_resource_permission_list::de_resource_permission_list(
-                        tokens,
-                    )?);
+                    builder = builder
+                        .set_permissions(crate::protocol_serde::shape_update_resource_permission_list::de_update_resource_permission_list(tokens)?);
                 }
                 "RequestId" => {
                     builder = builder.set_request_id(

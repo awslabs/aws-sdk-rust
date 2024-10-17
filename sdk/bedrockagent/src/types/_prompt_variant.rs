@@ -108,6 +108,7 @@ impl PromptVariantBuilder {
         &self.template_type
     }
     /// <p>Contains configurations for the prompt template.</p>
+    /// This field is required.
     pub fn template_configuration(mut self, input: crate::types::PromptTemplateConfiguration) -> Self {
         self.template_configuration = ::std::option::Option::Some(input);
         self

@@ -204,6 +204,18 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for RestoreAnaly
                 .expect("formatting should succeed");
                 ::std::result::Result::Ok(())
             }
+            fn uri_query(
+                _input: &crate::operation::restore_analysis::RestoreAnalysisInput,
+                mut output: &mut ::std::string::String,
+            ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
+                let mut query = ::aws_smithy_http::query::Writer::new(output);
+                if let ::std::option::Option::Some(inner_3) = &_input.restore_to_folders {
+                    {
+                        query.push_kv("restore-to-folders", ::aws_smithy_types::primitive::Encoder::from(*inner_3).encode());
+                    }
+                }
+                ::std::result::Result::Ok(())
+            }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
                 input: &crate::operation::restore_analysis::RestoreAnalysisInput,
@@ -211,6 +223,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for RestoreAnaly
             ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
                 let mut uri = ::std::string::String::new();
                 uri_base(input, &mut uri)?;
+                uri_query(input, &mut uri)?;
                 ::std::result::Result::Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&input, ::http::request::Builder::new())?;
@@ -272,6 +285,10 @@ pub enum RestoreAnalysisError {
     InternalFailureException(crate::types::error::InternalFailureException),
     /// <p>One or more parameters has a value that isn't valid.</p>
     InvalidParameterValueException(crate::types::error::InvalidParameterValueException),
+    /// <p>A limit is exceeded.</p>
+    LimitExceededException(crate::types::error::LimitExceededException),
+    /// <p>One or more preconditions aren't met.</p>
+    PreconditionNotMetException(crate::types::error::PreconditionNotMetException),
     /// <p>One or more resources can't be found.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>Access is throttled.</p>
@@ -314,6 +331,8 @@ impl RestoreAnalysisError {
             Self::ConflictException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InternalFailureException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidParameterValueException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::LimitExceededException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::PreconditionNotMetException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ResourceNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ThrottlingException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::UnsupportedUserEditionException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -331,6 +350,14 @@ impl RestoreAnalysisError {
     /// Returns `true` if the error kind is `RestoreAnalysisError::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(self, Self::InvalidParameterValueException(_))
+    }
+    /// Returns `true` if the error kind is `RestoreAnalysisError::LimitExceededException`.
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(self, Self::LimitExceededException(_))
+    }
+    /// Returns `true` if the error kind is `RestoreAnalysisError::PreconditionNotMetException`.
+    pub fn is_precondition_not_met_exception(&self) -> bool {
+        matches!(self, Self::PreconditionNotMetException(_))
     }
     /// Returns `true` if the error kind is `RestoreAnalysisError::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
@@ -351,6 +378,8 @@ impl ::std::error::Error for RestoreAnalysisError {
             Self::ConflictException(_inner) => ::std::option::Option::Some(_inner),
             Self::InternalFailureException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidParameterValueException(_inner) => ::std::option::Option::Some(_inner),
+            Self::LimitExceededException(_inner) => ::std::option::Option::Some(_inner),
+            Self::PreconditionNotMetException(_inner) => ::std::option::Option::Some(_inner),
             Self::ResourceNotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::ThrottlingException(_inner) => ::std::option::Option::Some(_inner),
             Self::UnsupportedUserEditionException(_inner) => ::std::option::Option::Some(_inner),
@@ -364,6 +393,8 @@ impl ::std::fmt::Display for RestoreAnalysisError {
             Self::ConflictException(_inner) => _inner.fmt(f),
             Self::InternalFailureException(_inner) => _inner.fmt(f),
             Self::InvalidParameterValueException(_inner) => _inner.fmt(f),
+            Self::LimitExceededException(_inner) => _inner.fmt(f),
+            Self::PreconditionNotMetException(_inner) => _inner.fmt(f),
             Self::ResourceNotFoundException(_inner) => _inner.fmt(f),
             Self::ThrottlingException(_inner) => _inner.fmt(f),
             Self::UnsupportedUserEditionException(_inner) => _inner.fmt(f),
@@ -391,6 +422,8 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for RestoreAnalys
             Self::ConflictException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InternalFailureException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidParameterValueException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::LimitExceededException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::PreconditionNotMetException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ResourceNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ThrottlingException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::UnsupportedUserEditionException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

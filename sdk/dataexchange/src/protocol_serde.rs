@@ -23,7 +23,11 @@ pub fn parse_http_error_metadata(
     crate::json_errors::parse_error_metadata(response_body, response_headers)
 }
 
+pub(crate) mod shape_accept_data_grant;
+
 pub(crate) mod shape_cancel_job;
+
+pub(crate) mod shape_create_data_grant;
 
 pub(crate) mod shape_create_data_set;
 
@@ -35,6 +39,8 @@ pub(crate) mod shape_create_revision;
 
 pub(crate) mod shape_delete_asset;
 
+pub(crate) mod shape_delete_data_grant;
+
 pub(crate) mod shape_delete_data_set;
 
 pub(crate) mod shape_delete_event_action;
@@ -43,13 +49,19 @@ pub(crate) mod shape_delete_revision;
 
 pub(crate) mod shape_get_asset;
 
+pub(crate) mod shape_get_data_grant;
+
 pub(crate) mod shape_get_data_set;
 
 pub(crate) mod shape_get_event_action;
 
 pub(crate) mod shape_get_job;
 
+pub(crate) mod shape_get_received_data_grant;
+
 pub(crate) mod shape_get_revision;
+
+pub(crate) mod shape_list_data_grants;
 
 pub(crate) mod shape_list_data_set_revisions;
 
@@ -58,6 +70,8 @@ pub(crate) mod shape_list_data_sets;
 pub(crate) mod shape_list_event_actions;
 
 pub(crate) mod shape_list_jobs;
+
+pub(crate) mod shape_list_received_data_grants;
 
 pub(crate) mod shape_list_revision_assets;
 
@@ -96,6 +110,8 @@ pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
 pub(crate) mod shape_access_denied_exception;
 
 pub(crate) mod shape_conflict_exception;
+
+pub(crate) mod shape_create_data_grant_input;
 
 pub(crate) mod shape_create_data_set_input;
 
@@ -139,6 +155,8 @@ pub(crate) mod shape_event;
 
 pub(crate) mod shape_list_of_asset_entry;
 
+pub(crate) mod shape_list_of_data_grant_summary_entry;
+
 pub(crate) mod shape_list_of_data_set_entry;
 
 pub(crate) mod shape_list_of_event_action_entry;
@@ -146,6 +164,8 @@ pub(crate) mod shape_list_of_event_action_entry;
 pub(crate) mod shape_list_of_job_entry;
 
 pub(crate) mod shape_list_of_job_error;
+
+pub(crate) mod shape_list_of_received_data_grant_summaries_entry;
 
 pub(crate) mod shape_list_of_revision_entry;
 
@@ -170,6 +190,8 @@ pub(crate) mod shape_auto_export_revision_to_s3_request_details;
 pub(crate) mod shape_create_s3_data_access_from_s3_bucket_request_details;
 
 pub(crate) mod shape_create_s3_data_access_from_s3_bucket_response_details;
+
+pub(crate) mod shape_data_grant_summary_entry;
 
 pub(crate) mod shape_data_set_entry;
 
@@ -218,6 +240,8 @@ pub(crate) mod shape_job_error;
 pub(crate) mod shape_lake_formation_data_permission_asset;
 
 pub(crate) mod shape_lake_formation_tag_policy_details;
+
+pub(crate) mod shape_received_data_grant_summaries_entry;
 
 pub(crate) mod shape_redshift_data_share_asset;
 

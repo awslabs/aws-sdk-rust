@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteDbShardGroupInput {
-    /// <p>Teh name of the DB shard group to delete.</p>
+    /// <p>The name of the DB shard group to delete.</p>
     pub db_shard_group_identifier: ::std::option::Option<::std::string::String>,
 }
 impl DeleteDbShardGroupInput {
-    /// <p>Teh name of the DB shard group to delete.</p>
+    /// <p>The name of the DB shard group to delete.</p>
     pub fn db_shard_group_identifier(&self) -> ::std::option::Option<&str> {
         self.db_shard_group_identifier.as_deref()
     }
@@ -26,18 +26,18 @@ pub struct DeleteDbShardGroupInputBuilder {
     pub(crate) db_shard_group_identifier: ::std::option::Option<::std::string::String>,
 }
 impl DeleteDbShardGroupInputBuilder {
-    /// <p>Teh name of the DB shard group to delete.</p>
+    /// <p>The name of the DB shard group to delete.</p>
     /// This field is required.
     pub fn db_shard_group_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_shard_group_identifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Teh name of the DB shard group to delete.</p>
+    /// <p>The name of the DB shard group to delete.</p>
     pub fn set_db_shard_group_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_shard_group_identifier = input;
         self
     }
-    /// <p>Teh name of the DB shard group to delete.</p>
+    /// <p>The name of the DB shard group to delete.</p>
     pub fn get_db_shard_group_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.db_shard_group_identifier
     }

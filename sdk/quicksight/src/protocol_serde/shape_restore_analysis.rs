@@ -65,6 +65,37 @@ pub fn de_restore_analysis_http_error(
             }
             tmp
         }),
+        "LimitExceededException" => crate::operation::restore_analysis::RestoreAnalysisError::LimitExceededException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::LimitExceededExceptionBuilder::default();
+                output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::restore_analysis::RestoreAnalysisError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "PreconditionNotMetException" => crate::operation::restore_analysis::RestoreAnalysisError::PreconditionNotMetException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::PreconditionNotMetExceptionBuilder::default();
+                output =
+                    crate::protocol_serde::shape_precondition_not_met_exception::de_precondition_not_met_exception_json_err(_response_body, output)
+                        .map_err(crate::operation::restore_analysis::RestoreAnalysisError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "ResourceNotFoundException" => crate::operation::restore_analysis::RestoreAnalysisError::ResourceNotFoundException({
             #[allow(unused_mut)]
             let mut tmp = {
@@ -165,6 +196,9 @@ pub(crate) fn de_restore_analysis(
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                             .transpose()?,
                     );
+                }
+                "RestorationFailedFolderArns" => {
+                    builder = builder.set_restoration_failed_folder_arns(crate::protocol_serde::shape_folder_arn_list::de_folder_arn_list(tokens)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

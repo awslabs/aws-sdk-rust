@@ -59,6 +59,8 @@ pub use crate::types::_lake_formation_tag_policy_details::LakeFormationTagPolicy
 
 pub use crate::types::_asset_entry::AssetEntryBuilder;
 
+pub use crate::types::_received_data_grant_summaries_entry::ReceivedDataGrantSummariesEntryBuilder;
+
 pub use crate::types::_job_entry::JobEntryBuilder;
 
 pub use crate::types::_job_error::JobErrorBuilder;
@@ -106,6 +108,8 @@ pub use crate::types::_event_action_entry::EventActionEntryBuilder;
 pub use crate::types::_data_set_entry::DataSetEntryBuilder;
 
 pub use crate::types::_revision_entry::RevisionEntryBuilder;
+
+pub use crate::types::_data_grant_summary_entry::DataGrantSummaryEntryBuilder;
 
 pub use crate::types::_request_details::RequestDetailsBuilder;
 

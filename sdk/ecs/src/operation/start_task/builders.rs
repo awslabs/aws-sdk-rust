@@ -231,17 +231,17 @@ impl StartTaskFluentBuilder {
     pub fn get_propagate_tags(&self) -> &::std::option::Option<crate::types::PropagateTags> {
         self.inner.get_propagate_tags()
     }
-    /// <p>The reference ID to use for the task.</p>
+    /// <p>This parameter is only used by Amazon ECS. It is not intended for use by customers.</p>
     pub fn reference_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.reference_id(input.into());
         self
     }
-    /// <p>The reference ID to use for the task.</p>
+    /// <p>This parameter is only used by Amazon ECS. It is not intended for use by customers.</p>
     pub fn set_reference_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_reference_id(input);
         self
     }
-    /// <p>The reference ID to use for the task.</p>
+    /// <p>This parameter is only used by Amazon ECS. It is not intended for use by customers.</p>
     pub fn get_reference_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_reference_id()
     }

@@ -22,7 +22,8 @@ impl crate::operation::create_registration_attachment::builders::CreateRegistrat
 }
 /// Fluent builder constructing a request to `CreateRegistrationAttachment`.
 ///
-/// <p>Create a new registration attachment to use for uploading a file or a URL to a file. The maximum file size is 1MiB and valid file extensions are PDF, JPEG and PNG. For example, many sender ID registrations require a signed “letter of authorization” (LOA) to be submitted.</p>
+/// <p>Create a new registration attachment to use for uploading a file or a URL to a file. The maximum file size is 500KB and valid file extensions are PDF, JPEG and PNG. For example, many sender ID registrations require a signed “letter of authorization” (LOA) to be submitted.</p>
+/// <p>Use either <code>AttachmentUrl</code> or <code>AttachmentBody</code> to upload your attachment. If both are specified then an exception is returned.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateRegistrationAttachmentFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,31 +109,31 @@ impl CreateRegistrationAttachmentFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The registration file to upload. The maximum file size is 1MiB and valid file extensions are PDF, JPEG and PNG.</p>
+    /// <p>The registration file to upload. The maximum file size is 500KB and valid file extensions are PDF, JPEG and PNG.</p>
     pub fn attachment_body(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.inner = self.inner.attachment_body(input);
         self
     }
-    /// <p>The registration file to upload. The maximum file size is 1MiB and valid file extensions are PDF, JPEG and PNG.</p>
+    /// <p>The registration file to upload. The maximum file size is 500KB and valid file extensions are PDF, JPEG and PNG.</p>
     pub fn set_attachment_body(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.inner = self.inner.set_attachment_body(input);
         self
     }
-    /// <p>The registration file to upload. The maximum file size is 1MiB and valid file extensions are PDF, JPEG and PNG.</p>
+    /// <p>The registration file to upload. The maximum file size is 500KB and valid file extensions are PDF, JPEG and PNG.</p>
     pub fn get_attachment_body(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
         self.inner.get_attachment_body()
     }
-    /// <p>A URL to the required registration file. For example, you can provide the S3 object URL.</p>
+    /// <p>Registration files have to be stored in an Amazon S3 bucket. The URI to use when sending is in the format <code>s3://BucketName/FileName</code>.</p>
     pub fn attachment_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.attachment_url(input.into());
         self
     }
-    /// <p>A URL to the required registration file. For example, you can provide the S3 object URL.</p>
+    /// <p>Registration files have to be stored in an Amazon S3 bucket. The URI to use when sending is in the format <code>s3://BucketName/FileName</code>.</p>
     pub fn set_attachment_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_attachment_url(input);
         self
     }
-    /// <p>A URL to the required registration file. For example, you can provide the S3 object URL.</p>
+    /// <p>Registration files have to be stored in an Amazon S3 bucket. The URI to use when sending is in the format <code>s3://BucketName/FileName</code>.</p>
     pub fn get_attachment_url(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_attachment_url()
     }

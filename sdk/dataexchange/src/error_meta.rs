@@ -68,6 +68,33 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::accept_data_grant::AcceptDataGrantError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::accept_data_grant::AcceptDataGrantError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::accept_data_grant::AcceptDataGrantError> for Error {
+    fn from(err: crate::operation::accept_data_grant::AcceptDataGrantError) -> Self {
+        match err {
+            crate::operation::accept_data_grant::AcceptDataGrantError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::accept_data_grant::AcceptDataGrantError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::accept_data_grant::AcceptDataGrantError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::accept_data_grant::AcceptDataGrantError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::accept_data_grant::AcceptDataGrantError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::accept_data_grant::AcceptDataGrantError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::accept_data_grant::AcceptDataGrantError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::cancel_job::CancelJobError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -91,6 +118,35 @@ impl From<crate::operation::cancel_job::CancelJobError> for Error {
             crate::operation::cancel_job::CancelJobError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::cancel_job::CancelJobError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::cancel_job::CancelJobError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_data_grant::CreateDataGrantError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_data_grant::CreateDataGrantError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_data_grant::CreateDataGrantError> for Error {
+    fn from(err: crate::operation::create_data_grant::CreateDataGrantError) -> Self {
+        match err {
+            crate::operation::create_data_grant::CreateDataGrantError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_data_grant::CreateDataGrantError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::create_data_grant::CreateDataGrantError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::create_data_grant::CreateDataGrantError::ServiceLimitExceededException(inner) => {
+                Error::ServiceLimitExceededException(inner)
+            }
+            crate::operation::create_data_grant::CreateDataGrantError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_data_grant::CreateDataGrantError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_data_grant::CreateDataGrantError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -230,6 +286,32 @@ impl From<crate::operation::delete_asset::DeleteAssetError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_data_grant::DeleteDataGrantError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_data_grant::DeleteDataGrantError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_data_grant::DeleteDataGrantError> for Error {
+    fn from(err: crate::operation::delete_data_grant::DeleteDataGrantError) -> Self {
+        match err {
+            crate::operation::delete_data_grant::DeleteDataGrantError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_data_grant::DeleteDataGrantError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::delete_data_grant::DeleteDataGrantError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_data_grant::DeleteDataGrantError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_data_grant::DeleteDataGrantError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_data_grant::DeleteDataGrantError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_data_set::DeleteDataSetError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -336,6 +418,32 @@ impl From<crate::operation::get_asset::GetAssetError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_data_grant::GetDataGrantError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_data_grant::GetDataGrantError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_data_grant::GetDataGrantError> for Error {
+    fn from(err: crate::operation::get_data_grant::GetDataGrantError) -> Self {
+        match err {
+            crate::operation::get_data_grant::GetDataGrantError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_data_grant::GetDataGrantError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_data_grant::GetDataGrantError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_data_grant::GetDataGrantError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_data_grant::GetDataGrantError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_data_grant::GetDataGrantError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_data_set::GetDataSetError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -411,6 +519,38 @@ impl From<crate::operation::get_job::GetJobError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_received_data_grant::GetReceivedDataGrantError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_received_data_grant::GetReceivedDataGrantError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_received_data_grant::GetReceivedDataGrantError> for Error {
+    fn from(err: crate::operation::get_received_data_grant::GetReceivedDataGrantError) -> Self {
+        match err {
+            crate::operation::get_received_data_grant::GetReceivedDataGrantError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_received_data_grant::GetReceivedDataGrantError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_received_data_grant::GetReceivedDataGrantError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_received_data_grant::GetReceivedDataGrantError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_received_data_grant::GetReceivedDataGrantError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_received_data_grant::GetReceivedDataGrantError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_revision::GetRevisionError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -433,6 +573,32 @@ impl From<crate::operation::get_revision::GetRevisionError> for Error {
             crate::operation::get_revision::GetRevisionError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::get_revision::GetRevisionError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_revision::GetRevisionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_data_grants::ListDataGrantsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_data_grants::ListDataGrantsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_data_grants::ListDataGrantsError> for Error {
+    fn from(err: crate::operation::list_data_grants::ListDataGrantsError) -> Self {
+        match err {
+            crate::operation::list_data_grants::ListDataGrantsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_data_grants::ListDataGrantsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_data_grants::ListDataGrantsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_data_grants::ListDataGrantsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_data_grants::ListDataGrantsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_data_grants::ListDataGrantsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -539,6 +705,41 @@ impl From<crate::operation::list_jobs::ListJobsError> for Error {
             crate::operation::list_jobs::ListJobsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_jobs::ListJobsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_jobs::ListJobsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_received_data_grants::ListReceivedDataGrantsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_received_data_grants::ListReceivedDataGrantsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_received_data_grants::ListReceivedDataGrantsError> for Error {
+    fn from(err: crate::operation::list_received_data_grants::ListReceivedDataGrantsError) -> Self {
+        match err {
+            crate::operation::list_received_data_grants::ListReceivedDataGrantsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_received_data_grants::ListReceivedDataGrantsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_received_data_grants::ListReceivedDataGrantsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_received_data_grants::ListReceivedDataGrantsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_received_data_grants::ListReceivedDataGrantsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_received_data_grants::ListReceivedDataGrantsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

@@ -6,11 +6,17 @@
 pub struct OriginDetails {
     /// <p>The product ID of the origin of the data set.</p>
     pub product_id: ::std::option::Option<::std::string::String>,
+    /// <p>The ID of the data grant.</p>
+    pub data_grant_id: ::std::option::Option<::std::string::String>,
 }
 impl OriginDetails {
     /// <p>The product ID of the origin of the data set.</p>
     pub fn product_id(&self) -> ::std::option::Option<&str> {
         self.product_id.as_deref()
+    }
+    /// <p>The ID of the data grant.</p>
+    pub fn data_grant_id(&self) -> ::std::option::Option<&str> {
+        self.data_grant_id.as_deref()
     }
 }
 impl OriginDetails {
@@ -25,6 +31,7 @@ impl OriginDetails {
 #[non_exhaustive]
 pub struct OriginDetailsBuilder {
     pub(crate) product_id: ::std::option::Option<::std::string::String>,
+    pub(crate) data_grant_id: ::std::option::Option<::std::string::String>,
 }
 impl OriginDetailsBuilder {
     /// <p>The product ID of the origin of the data set.</p>
@@ -41,8 +48,25 @@ impl OriginDetailsBuilder {
     pub fn get_product_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.product_id
     }
+    /// <p>The ID of the data grant.</p>
+    pub fn data_grant_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.data_grant_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the data grant.</p>
+    pub fn set_data_grant_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.data_grant_id = input;
+        self
+    }
+    /// <p>The ID of the data grant.</p>
+    pub fn get_data_grant_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_grant_id
+    }
     /// Consumes the builder and constructs a [`OriginDetails`](crate::types::OriginDetails).
     pub fn build(self) -> crate::types::OriginDetails {
-        crate::types::OriginDetails { product_id: self.product_id }
+        crate::types::OriginDetails {
+            product_id: self.product_id,
+            data_grant_id: self.data_grant_id,
+        }
     }
 }

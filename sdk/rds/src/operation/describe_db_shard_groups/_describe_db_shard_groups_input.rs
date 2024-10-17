@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeDbShardGroupsInput {
-    /// <p>The user-supplied DB shard group identifier or the Amazon Resource Name (ARN) of the DB shard group. If this parameter is specified, information for only the specific DB shard group is returned. This parameter isn't case-sensitive.</p>
+    /// <p>The user-supplied DB shard group identifier. If this parameter is specified, information for only the specific DB shard group is returned. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li>
@@ -20,7 +20,7 @@ pub struct DescribeDbShardGroupsInput {
     pub max_records: ::std::option::Option<i32>,
 }
 impl DescribeDbShardGroupsInput {
-    /// <p>The user-supplied DB shard group identifier or the Amazon Resource Name (ARN) of the DB shard group. If this parameter is specified, information for only the specific DB shard group is returned. This parameter isn't case-sensitive.</p>
+    /// <p>The user-supplied DB shard group identifier. If this parameter is specified, information for only the specific DB shard group is returned. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li>
@@ -63,7 +63,7 @@ pub struct DescribeDbShardGroupsInputBuilder {
     pub(crate) max_records: ::std::option::Option<i32>,
 }
 impl DescribeDbShardGroupsInputBuilder {
-    /// <p>The user-supplied DB shard group identifier or the Amazon Resource Name (ARN) of the DB shard group. If this parameter is specified, information for only the specific DB shard group is returned. This parameter isn't case-sensitive.</p>
+    /// <p>The user-supplied DB shard group identifier. If this parameter is specified, information for only the specific DB shard group is returned. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li>
@@ -73,7 +73,7 @@ impl DescribeDbShardGroupsInputBuilder {
         self.db_shard_group_identifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The user-supplied DB shard group identifier or the Amazon Resource Name (ARN) of the DB shard group. If this parameter is specified, information for only the specific DB shard group is returned. This parameter isn't case-sensitive.</p>
+    /// <p>The user-supplied DB shard group identifier. If this parameter is specified, information for only the specific DB shard group is returned. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li>
@@ -83,7 +83,7 @@ impl DescribeDbShardGroupsInputBuilder {
         self.db_shard_group_identifier = input;
         self
     }
-    /// <p>The user-supplied DB shard group identifier or the Amazon Resource Name (ARN) of the DB shard group. If this parameter is specified, information for only the specific DB shard group is returned. This parameter isn't case-sensitive.</p>
+    /// <p>The user-supplied DB shard group identifier. If this parameter is specified, information for only the specific DB shard group is returned. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li>

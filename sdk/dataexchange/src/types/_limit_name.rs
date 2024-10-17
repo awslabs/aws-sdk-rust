@@ -13,6 +13,7 @@
 /// # let limitname = unimplemented!();
 /// match limitname {
 ///     LimitName::AwsLakeFormationDataPermissionAssetsPerRevision => { /* ... */ },
+///     LimitName::ActiveAndPendingDataGrants => { /* ... */ },
 ///     LimitName::AmazonApiGatewayApiAssetsPerRevision => { /* ... */ },
 ///     LimitName::AmazonRedshiftDatashareAssetsPerImportJobFromRedshift => { /* ... */ },
 ///     LimitName::AmazonRedshiftDatashareAssetsPerRevision => { /* ... */ },
@@ -34,6 +35,7 @@
 ///     LimitName::DataSetsPerAccount => { /* ... */ },
 ///     LimitName::DataSetsPerProduct => { /* ... */ },
 ///     LimitName::EventActionsPerAccount => { /* ... */ },
+///     LimitName::PendingDataGrantsPerConsumer => { /* ... */ },
 ///     LimitName::ProductsPerAccount => { /* ... */ },
 ///     LimitName::RevisionsPerAwsLakeFormationDataPermissionDataSet => { /* ... */ },
 ///     LimitName::RevisionsPerAmazonApiGatewayApiDataSet => { /* ... */ },
@@ -69,6 +71,8 @@
 pub enum LimitName {
     #[allow(missing_docs)] // documentation missing in model
     AwsLakeFormationDataPermissionAssetsPerRevision,
+    #[allow(missing_docs)] // documentation missing in model
+    ActiveAndPendingDataGrants,
     #[allow(missing_docs)] // documentation missing in model
     AmazonApiGatewayApiAssetsPerRevision,
     #[allow(missing_docs)] // documentation missing in model
@@ -112,6 +116,8 @@ pub enum LimitName {
     #[allow(missing_docs)] // documentation missing in model
     EventActionsPerAccount,
     #[allow(missing_docs)] // documentation missing in model
+    PendingDataGrantsPerConsumer,
+    #[allow(missing_docs)] // documentation missing in model
     ProductsPerAccount,
     #[allow(missing_docs)] // documentation missing in model
     RevisionsPerAwsLakeFormationDataPermissionDataSet,
@@ -131,6 +137,7 @@ impl ::std::convert::From<&str> for LimitName {
     fn from(s: &str) -> Self {
         match s {
             "AWS Lake Formation data permission assets per revision" => LimitName::AwsLakeFormationDataPermissionAssetsPerRevision,
+            "Active and pending data grants" => LimitName::ActiveAndPendingDataGrants,
             "Amazon API Gateway API assets per revision" => LimitName::AmazonApiGatewayApiAssetsPerRevision,
             "Amazon Redshift datashare assets per import job from Redshift" => LimitName::AmazonRedshiftDatashareAssetsPerImportJobFromRedshift,
             "Amazon Redshift datashare assets per revision" => LimitName::AmazonRedshiftDatashareAssetsPerRevision,
@@ -160,6 +167,7 @@ impl ::std::convert::From<&str> for LimitName {
             "Data sets per account" => LimitName::DataSetsPerAccount,
             "Data sets per product" => LimitName::DataSetsPerProduct,
             "Event actions per account" => LimitName::EventActionsPerAccount,
+            "Pending data grants per consumer" => LimitName::PendingDataGrantsPerConsumer,
             "Products per account" => LimitName::ProductsPerAccount,
             "Revisions per AWS Lake Formation data permission data set" => LimitName::RevisionsPerAwsLakeFormationDataPermissionDataSet,
             "Revisions per Amazon API Gateway API data set" => LimitName::RevisionsPerAmazonApiGatewayApiDataSet,
@@ -182,6 +190,7 @@ impl LimitName {
     pub fn as_str(&self) -> &str {
         match self {
             LimitName::AwsLakeFormationDataPermissionAssetsPerRevision => "AWS Lake Formation data permission assets per revision",
+            LimitName::ActiveAndPendingDataGrants => "Active and pending data grants",
             LimitName::AmazonApiGatewayApiAssetsPerRevision => "Amazon API Gateway API assets per revision",
             LimitName::AmazonRedshiftDatashareAssetsPerImportJobFromRedshift => "Amazon Redshift datashare assets per import job from Redshift",
             LimitName::AmazonRedshiftDatashareAssetsPerRevision => "Amazon Redshift datashare assets per revision",
@@ -211,6 +220,7 @@ impl LimitName {
             LimitName::DataSetsPerAccount => "Data sets per account",
             LimitName::DataSetsPerProduct => "Data sets per product",
             LimitName::EventActionsPerAccount => "Event actions per account",
+            LimitName::PendingDataGrantsPerConsumer => "Pending data grants per consumer",
             LimitName::ProductsPerAccount => "Products per account",
             LimitName::RevisionsPerAwsLakeFormationDataPermissionDataSet => "Revisions per AWS Lake Formation data permission data set",
             LimitName::RevisionsPerAmazonApiGatewayApiDataSet => "Revisions per Amazon API Gateway API data set",
@@ -224,6 +234,7 @@ impl LimitName {
     pub const fn values() -> &'static [&'static str] {
         &[
             "AWS Lake Formation data permission assets per revision",
+            "Active and pending data grants",
             "Amazon API Gateway API assets per revision",
             "Amazon Redshift datashare assets per import job from Redshift",
             "Amazon Redshift datashare assets per revision",
@@ -245,6 +256,7 @@ impl LimitName {
             "Data sets per account",
             "Data sets per product",
             "Event actions per account",
+            "Pending data grants per consumer",
             "Products per account",
             "Revisions per AWS Lake Formation data permission data set",
             "Revisions per Amazon API Gateway API data set",
@@ -275,6 +287,7 @@ impl ::std::fmt::Display for LimitName {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             LimitName::AwsLakeFormationDataPermissionAssetsPerRevision => write!(f, "AWS Lake Formation data permission assets per revision"),
+            LimitName::ActiveAndPendingDataGrants => write!(f, "Active and pending data grants"),
             LimitName::AmazonApiGatewayApiAssetsPerRevision => write!(f, "Amazon API Gateway API assets per revision"),
             LimitName::AmazonRedshiftDatashareAssetsPerImportJobFromRedshift => {
                 write!(f, "Amazon Redshift datashare assets per import job from Redshift")
@@ -312,6 +325,7 @@ impl ::std::fmt::Display for LimitName {
             LimitName::DataSetsPerAccount => write!(f, "Data sets per account"),
             LimitName::DataSetsPerProduct => write!(f, "Data sets per product"),
             LimitName::EventActionsPerAccount => write!(f, "Event actions per account"),
+            LimitName::PendingDataGrantsPerConsumer => write!(f, "Pending data grants per consumer"),
             LimitName::ProductsPerAccount => write!(f, "Products per account"),
             LimitName::RevisionsPerAwsLakeFormationDataPermissionDataSet => write!(f, "Revisions per AWS Lake Formation data permission data set"),
             LimitName::RevisionsPerAmazonApiGatewayApiDataSet => write!(f, "Revisions per Amazon API Gateway API data set"),

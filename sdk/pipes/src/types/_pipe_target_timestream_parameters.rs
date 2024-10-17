@@ -12,7 +12,7 @@ pub struct PipeTargetTimestreamParameters {
     /// <p>The type of time value used.</p>
     /// <p>The default is <code>EPOCH</code>.</p>
     pub time_field_type: ::std::option::Option<crate::types::TimeFieldType>,
-    /// <p>How to format the timestamps. For example, <code>YYYY-MM-DDThh:mm:ss.sssTZD</code>.</p>
+    /// <p>How to format the timestamps. For example, <code>yyyy-MM-dd'T'HH:mm:ss'Z'</code>.</p>
     /// <p>Required if <code>TimeFieldType</code> is specified as <code>TIMESTAMP_FORMAT</code>.</p>
     pub timestamp_format: ::std::option::Option<::std::string::String>,
     /// <p>64 bit version value or source data field that represents the version value for your data.</p>
@@ -47,7 +47,7 @@ impl PipeTargetTimestreamParameters {
     pub fn time_field_type(&self) -> ::std::option::Option<&crate::types::TimeFieldType> {
         self.time_field_type.as_ref()
     }
-    /// <p>How to format the timestamps. For example, <code>YYYY-MM-DDThh:mm:ss.sssTZD</code>.</p>
+    /// <p>How to format the timestamps. For example, <code>yyyy-MM-dd'T'HH:mm:ss'Z'</code>.</p>
     /// <p>Required if <code>TimeFieldType</code> is specified as <code>TIMESTAMP_FORMAT</code>.</p>
     pub fn timestamp_format(&self) -> ::std::option::Option<&str> {
         self.timestamp_format.as_deref()
@@ -152,19 +152,19 @@ impl PipeTargetTimestreamParametersBuilder {
     pub fn get_time_field_type(&self) -> &::std::option::Option<crate::types::TimeFieldType> {
         &self.time_field_type
     }
-    /// <p>How to format the timestamps. For example, <code>YYYY-MM-DDThh:mm:ss.sssTZD</code>.</p>
+    /// <p>How to format the timestamps. For example, <code>yyyy-MM-dd'T'HH:mm:ss'Z'</code>.</p>
     /// <p>Required if <code>TimeFieldType</code> is specified as <code>TIMESTAMP_FORMAT</code>.</p>
     pub fn timestamp_format(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.timestamp_format = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>How to format the timestamps. For example, <code>YYYY-MM-DDThh:mm:ss.sssTZD</code>.</p>
+    /// <p>How to format the timestamps. For example, <code>yyyy-MM-dd'T'HH:mm:ss'Z'</code>.</p>
     /// <p>Required if <code>TimeFieldType</code> is specified as <code>TIMESTAMP_FORMAT</code>.</p>
     pub fn set_timestamp_format(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.timestamp_format = input;
         self
     }
-    /// <p>How to format the timestamps. For example, <code>YYYY-MM-DDThh:mm:ss.sssTZD</code>.</p>
+    /// <p>How to format the timestamps. For example, <code>yyyy-MM-dd'T'HH:mm:ss'Z'</code>.</p>
     /// <p>Required if <code>TimeFieldType</code> is specified as <code>TIMESTAMP_FORMAT</code>.</p>
     pub fn get_timestamp_format(&self) -> &::std::option::Option<::std::string::String> {
         &self.timestamp_format

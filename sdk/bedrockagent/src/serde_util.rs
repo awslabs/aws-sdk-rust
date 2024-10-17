@@ -1383,6 +1383,9 @@ pub(crate) fn prompt_variant_correct_errors(
     if builder.template_type.is_none() {
         builder.template_type = "no value was set".parse::<crate::types::PromptTemplateType>().ok()
     }
+    if builder.template_configuration.is_none() {
+        builder.template_configuration = Some(crate::types::PromptTemplateConfiguration::Unknown)
+    }
     builder
 }
 

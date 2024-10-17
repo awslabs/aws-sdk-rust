@@ -136,4 +136,18 @@ impl RestoreAnalysisFluentBuilder {
     pub fn get_analysis_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_analysis_id()
     }
+    /// <p>A boolean value that determines if the analysis will be restored to folders that it previously resided in. A <code>True</code> value restores analysis back to all folders that it previously resided in. A <code>False</code> value restores the analysis but does not restore the analysis back to all previously resided folders. Restoring a restricted analysis requires this parameter to be set to <code>True</code>.</p>
+    pub fn restore_to_folders(mut self, input: bool) -> Self {
+        self.inner = self.inner.restore_to_folders(input);
+        self
+    }
+    /// <p>A boolean value that determines if the analysis will be restored to folders that it previously resided in. A <code>True</code> value restores analysis back to all folders that it previously resided in. A <code>False</code> value restores the analysis but does not restore the analysis back to all previously resided folders. Restoring a restricted analysis requires this parameter to be set to <code>True</code>.</p>
+    pub fn set_restore_to_folders(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_restore_to_folders(input);
+        self
+    }
+    /// <p>A boolean value that determines if the analysis will be restored to folders that it previously resided in. A <code>True</code> value restores analysis back to all folders that it previously resided in. A <code>False</code> value restores the analysis but does not restore the analysis back to all previously resided folders. Restoring a restricted analysis requires this parameter to be set to <code>True</code>.</p>
+    pub fn get_restore_to_folders(&self) -> &::std::option::Option<bool> {
+        self.inner.get_restore_to_folders()
+    }
 }

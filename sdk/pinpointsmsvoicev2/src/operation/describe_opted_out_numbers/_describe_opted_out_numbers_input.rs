@@ -8,6 +8,7 @@ pub struct DescribeOptedOutNumbersInput {
     /// </important>
     pub opt_out_list_name: ::std::option::Option<::std::string::String>,
     /// <p>An array of phone numbers to search for in the OptOutList.</p>
+    /// <p>If you specify an opted out number that isn't valid, an exception is returned.</p>
     pub opted_out_numbers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>An array of OptedOutFilter objects to filter the results on.</p>
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::OptedOutFilter>>,
@@ -24,6 +25,7 @@ impl DescribeOptedOutNumbersInput {
         self.opt_out_list_name.as_deref()
     }
     /// <p>An array of phone numbers to search for in the OptOutList.</p>
+    /// <p>If you specify an opted out number that isn't valid, an exception is returned.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.opted_out_numbers.is_none()`.
     pub fn opted_out_numbers(&self) -> &[::std::string::String] {
@@ -88,6 +90,7 @@ impl DescribeOptedOutNumbersInputBuilder {
     /// To override the contents of this collection use [`set_opted_out_numbers`](Self::set_opted_out_numbers).
     ///
     /// <p>An array of phone numbers to search for in the OptOutList.</p>
+    /// <p>If you specify an opted out number that isn't valid, an exception is returned.</p>
     pub fn opted_out_numbers(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.opted_out_numbers.unwrap_or_default();
         v.push(input.into());
@@ -95,11 +98,13 @@ impl DescribeOptedOutNumbersInputBuilder {
         self
     }
     /// <p>An array of phone numbers to search for in the OptOutList.</p>
+    /// <p>If you specify an opted out number that isn't valid, an exception is returned.</p>
     pub fn set_opted_out_numbers(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.opted_out_numbers = input;
         self
     }
     /// <p>An array of phone numbers to search for in the OptOutList.</p>
+    /// <p>If you specify an opted out number that isn't valid, an exception is returned.</p>
     pub fn get_opted_out_numbers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.opted_out_numbers
     }

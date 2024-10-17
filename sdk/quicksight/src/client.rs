@@ -449,6 +449,8 @@ mod start_asset_bundle_import_job;
 
 mod start_dashboard_snapshot_job;
 
+mod start_dashboard_snapshot_job_schedule;
+
 mod tag_resource;
 
 mod untag_resource;

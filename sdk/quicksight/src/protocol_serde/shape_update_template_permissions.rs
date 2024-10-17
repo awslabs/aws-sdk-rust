@@ -188,9 +188,8 @@ pub(crate) fn de_update_template_permissions(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "Permissions" => {
-                    builder = builder.set_permissions(crate::protocol_serde::shape_resource_permission_list::de_resource_permission_list(
-                        tokens,
-                    )?);
+                    builder = builder
+                        .set_permissions(crate::protocol_serde::shape_update_resource_permission_list::de_update_resource_permission_list(tokens)?);
                 }
                 "RequestId" => {
                     builder = builder.set_request_id(

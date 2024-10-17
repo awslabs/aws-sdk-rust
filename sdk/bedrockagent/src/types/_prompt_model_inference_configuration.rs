@@ -8,8 +8,6 @@ pub struct PromptModelInferenceConfiguration {
     pub temperature: ::std::option::Option<f32>,
     /// <p>The percentage of most-likely candidates that the model considers for the next token.</p>
     pub top_p: ::std::option::Option<f32>,
-    /// <p>The number of most-likely candidates that the model considers for the next token during generation.</p>
-    pub top_k: ::std::option::Option<i32>,
     /// <p>The maximum number of tokens to return in the response.</p>
     pub max_tokens: ::std::option::Option<i32>,
     /// <p>A list of strings that define sequences after which the model will stop generating.</p>
@@ -23,10 +21,6 @@ impl PromptModelInferenceConfiguration {
     /// <p>The percentage of most-likely candidates that the model considers for the next token.</p>
     pub fn top_p(&self) -> ::std::option::Option<f32> {
         self.top_p
-    }
-    /// <p>The number of most-likely candidates that the model considers for the next token during generation.</p>
-    pub fn top_k(&self) -> ::std::option::Option<i32> {
-        self.top_k
     }
     /// <p>The maximum number of tokens to return in the response.</p>
     pub fn max_tokens(&self) -> ::std::option::Option<i32> {
@@ -52,7 +46,6 @@ impl PromptModelInferenceConfiguration {
 pub struct PromptModelInferenceConfigurationBuilder {
     pub(crate) temperature: ::std::option::Option<f32>,
     pub(crate) top_p: ::std::option::Option<f32>,
-    pub(crate) top_k: ::std::option::Option<i32>,
     pub(crate) max_tokens: ::std::option::Option<i32>,
     pub(crate) stop_sequences: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -84,20 +77,6 @@ impl PromptModelInferenceConfigurationBuilder {
     /// <p>The percentage of most-likely candidates that the model considers for the next token.</p>
     pub fn get_top_p(&self) -> &::std::option::Option<f32> {
         &self.top_p
-    }
-    /// <p>The number of most-likely candidates that the model considers for the next token during generation.</p>
-    pub fn top_k(mut self, input: i32) -> Self {
-        self.top_k = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>The number of most-likely candidates that the model considers for the next token during generation.</p>
-    pub fn set_top_k(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.top_k = input;
-        self
-    }
-    /// <p>The number of most-likely candidates that the model considers for the next token during generation.</p>
-    pub fn get_top_k(&self) -> &::std::option::Option<i32> {
-        &self.top_k
     }
     /// <p>The maximum number of tokens to return in the response.</p>
     pub fn max_tokens(mut self, input: i32) -> Self {
@@ -138,7 +117,6 @@ impl PromptModelInferenceConfigurationBuilder {
         crate::types::PromptModelInferenceConfiguration {
             temperature: self.temperature,
             top_p: self.top_p,
-            top_k: self.top_k,
             max_tokens: self.max_tokens,
             stop_sequences: self.stop_sequences,
         }

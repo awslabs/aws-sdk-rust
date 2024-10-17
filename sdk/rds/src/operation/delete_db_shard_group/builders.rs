@@ -108,17 +108,17 @@ impl DeleteDBShardGroupFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>Teh name of the DB shard group to delete.</p>
+    /// <p>The name of the DB shard group to delete.</p>
     pub fn db_shard_group_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.db_shard_group_identifier(input.into());
         self
     }
-    /// <p>Teh name of the DB shard group to delete.</p>
+    /// <p>The name of the DB shard group to delete.</p>
     pub fn set_db_shard_group_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_db_shard_group_identifier(input);
         self
     }
-    /// <p>Teh name of the DB shard group to delete.</p>
+    /// <p>The name of the DB shard group to delete.</p>
     pub fn get_db_shard_group_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_db_shard_group_identifier()
     }

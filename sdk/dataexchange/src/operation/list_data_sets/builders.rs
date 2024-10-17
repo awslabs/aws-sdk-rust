@@ -22,7 +22,7 @@ impl crate::operation::list_data_sets::builders::ListDataSetsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListDataSets`.
 ///
-/// <p>This operation lists your data sets. When listing by origin OWNED, results are sorted by CreatedAt in descending order. When listing by origin ENTITLED, there is no order and the maxResults parameter is ignored.</p>
+/// <p>This operation lists your data sets. When listing by origin OWNED, results are sorted by CreatedAt in descending order. When listing by origin ENTITLED, there is no order.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListDataSetsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

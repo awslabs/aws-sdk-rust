@@ -430,6 +430,9 @@ pub mod start_asset_bundle_import_job;
 /// Types for the `StartDashboardSnapshotJob` operation.
 pub mod start_dashboard_snapshot_job;
 
+/// Types for the `StartDashboardSnapshotJobSchedule` operation.
+pub mod start_dashboard_snapshot_job_schedule;
+
 /// Types for the `TagResource` operation.
 pub mod tag_resource;
 

@@ -81,6 +81,12 @@ pub use crate::types::_lake_formation_tag_policy_details::LakeFormationTagPolicy
 
 pub use crate::types::_asset_entry::AssetEntry;
 
+pub use crate::types::_received_data_grant_summaries_entry::ReceivedDataGrantSummariesEntry;
+
+pub use crate::types::_data_grant_acceptance_state::DataGrantAcceptanceState;
+
+pub use crate::types::_acceptance_state_filter_value::AcceptanceStateFilterValue;
+
 pub use crate::types::_job_entry::JobEntry;
 
 pub use crate::types::_type_::Type;
@@ -143,6 +149,10 @@ pub use crate::types::_data_set_entry::DataSetEntry;
 
 pub use crate::types::_revision_entry::RevisionEntry;
 
+pub use crate::types::_data_grant_summary_entry::DataGrantSummaryEntry;
+
+pub use crate::types::_grant_distribution_scope::GrantDistributionScope;
+
 pub use crate::types::_request_details::RequestDetails;
 
 pub use crate::types::_import_assets_from_lake_formation_tag_policy_request_details::ImportAssetsFromLakeFormationTagPolicyRequestDetails;
@@ -164,6 +174,8 @@ pub use crate::types::_export_assets_to_s3_request_details::ExportAssetsToS3Requ
 pub use crate::types::_export_asset_to_signed_url_request_details::ExportAssetToSignedUrlRequestDetails;
 
 pub use crate::types::_limit_name::LimitName;
+
+mod _acceptance_state_filter_value;
 
 mod _action;
 
@@ -188,6 +200,10 @@ mod _code;
 mod _create_s3_data_access_from_s3_bucket_request_details;
 
 mod _create_s3_data_access_from_s3_bucket_response_details;
+
+mod _data_grant_acceptance_state;
+
+mod _data_grant_summary_entry;
 
 mod _data_set_entry;
 
@@ -222,6 +238,8 @@ mod _export_revisions_to_s3_request_details;
 mod _export_revisions_to_s3_response_details;
 
 mod _export_server_side_encryption;
+
+mod _grant_distribution_scope;
 
 mod _import_asset_from_api_gateway_api_request_details;
 
@@ -284,6 +302,8 @@ mod _origin;
 mod _origin_details;
 
 mod _protocol_type;
+
+mod _received_data_grant_summaries_entry;
 
 mod _redshift_data_share_asset;
 

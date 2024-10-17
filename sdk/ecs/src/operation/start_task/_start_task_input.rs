@@ -21,7 +21,7 @@ pub struct StartTaskInput {
     pub overrides: ::std::option::Option<crate::types::TaskOverride>,
     /// <p>Specifies whether to propagate the tags from the task definition or the service to the task. If no value is specified, the tags aren't propagated.</p>
     pub propagate_tags: ::std::option::Option<crate::types::PropagateTags>,
-    /// <p>The reference ID to use for the task.</p>
+    /// <p>This parameter is only used by Amazon ECS. It is not intended for use by customers.</p>
     pub reference_id: ::std::option::Option<::std::string::String>,
     /// <p>An optional tag specified when a task is started. For example, if you automatically trigger a task to run a batch process job, you could apply a unique identifier for that job to your task with the <code>startedBy</code> parameter. You can then identify which tasks belong to that job by filtering the results of a <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListTasks.html">ListTasks</a> call with the <code>startedBy</code> value. Up to 36 letters (uppercase and lowercase), numbers, hyphens (-), forward slash (/), and underscores (_) are allowed.</p>
     /// <p>If a task is started by an Amazon ECS service, the <code>startedBy</code> parameter contains the deployment ID of the service that starts it.</p>
@@ -87,7 +87,7 @@ impl StartTaskInput {
     pub fn propagate_tags(&self) -> ::std::option::Option<&crate::types::PropagateTags> {
         self.propagate_tags.as_ref()
     }
-    /// <p>The reference ID to use for the task.</p>
+    /// <p>This parameter is only used by Amazon ECS. It is not intended for use by customers.</p>
     pub fn reference_id(&self) -> ::std::option::Option<&str> {
         self.reference_id.as_deref()
     }
@@ -280,17 +280,17 @@ impl StartTaskInputBuilder {
     pub fn get_propagate_tags(&self) -> &::std::option::Option<crate::types::PropagateTags> {
         &self.propagate_tags
     }
-    /// <p>The reference ID to use for the task.</p>
+    /// <p>This parameter is only used by Amazon ECS. It is not intended for use by customers.</p>
     pub fn reference_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reference_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The reference ID to use for the task.</p>
+    /// <p>This parameter is only used by Amazon ECS. It is not intended for use by customers.</p>
     pub fn set_reference_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reference_id = input;
         self
     }
-    /// <p>The reference ID to use for the task.</p>
+    /// <p>This parameter is only used by Amazon ECS. It is not intended for use by customers.</p>
     pub fn get_reference_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.reference_id
     }

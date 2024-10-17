@@ -22,7 +22,7 @@ impl crate::operation::get_ingestion_job::builders::GetIngestionJobInputBuilder 
 }
 /// Fluent builder constructing a request to `GetIngestionJob`.
 ///
-/// <p>Gets information about a data ingestion job. Data sources are ingested into your knowledge base so that Large Lanaguage Models (LLMs) can use your data.</p>
+/// <p>Gets information about a data ingestion job. Data sources are ingested into your knowledge base so that Large Language Models (LLMs) can use your data.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetIngestionJobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

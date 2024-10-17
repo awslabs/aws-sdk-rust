@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteDBShardGroup`](crate::operation::delete_db_shard_group::builders::DeleteDBShardGroupFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`db_shard_group_identifier(impl Into<String>)`](crate::operation::delete_db_shard_group::builders::DeleteDBShardGroupFluentBuilder::db_shard_group_identifier) / [`set_db_shard_group_identifier(Option<String>)`](crate::operation::delete_db_shard_group::builders::DeleteDBShardGroupFluentBuilder::set_db_shard_group_identifier):<br>required: **true**<br><p>Teh name of the DB shard group to delete.</p><br>
+    ///   - [`db_shard_group_identifier(impl Into<String>)`](crate::operation::delete_db_shard_group::builders::DeleteDBShardGroupFluentBuilder::db_shard_group_identifier) / [`set_db_shard_group_identifier(Option<String>)`](crate::operation::delete_db_shard_group::builders::DeleteDBShardGroupFluentBuilder::set_db_shard_group_identifier):<br>required: **true**<br><p>The name of the DB shard group to delete.</p><br>
     /// - On success, responds with [`DeleteDbShardGroupOutput`](crate::operation::delete_db_shard_group::DeleteDbShardGroupOutput) with field(s):
     ///   - [`db_shard_group_resource_id(Option<String>)`](crate::operation::delete_db_shard_group::DeleteDbShardGroupOutput::db_shard_group_resource_id): <p>The Amazon Web Services Region-unique, immutable identifier for the DB shard group.</p>
     ///   - [`db_shard_group_identifier(Option<String>)`](crate::operation::delete_db_shard_group::DeleteDbShardGroupOutput::db_shard_group_identifier): <p>The name of the DB shard group.</p>

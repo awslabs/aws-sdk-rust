@@ -7,7 +7,7 @@
 pub struct PipeSourceSelfManagedKafkaParameters {
     /// <p>The name of the topic that the pipe will read from.</p>
     pub topic_name: ::std::string::String,
-    /// <p>(Streams only) The position in a stream from which to start reading.</p>
+    /// <p>The position in a stream from which to start reading.</p>
     pub starting_position: ::std::option::Option<crate::types::SelfManagedKafkaStartPosition>,
     /// <p>An array of server URLs.</p>
     pub additional_bootstrap_servers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -30,7 +30,7 @@ impl PipeSourceSelfManagedKafkaParameters {
         use std::ops::Deref;
         self.topic_name.deref()
     }
-    /// <p>(Streams only) The position in a stream from which to start reading.</p>
+    /// <p>The position in a stream from which to start reading.</p>
     pub fn starting_position(&self) -> ::std::option::Option<&crate::types::SelfManagedKafkaStartPosition> {
         self.starting_position.as_ref()
     }
@@ -117,17 +117,17 @@ impl PipeSourceSelfManagedKafkaParametersBuilder {
     pub fn get_topic_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.topic_name
     }
-    /// <p>(Streams only) The position in a stream from which to start reading.</p>
+    /// <p>The position in a stream from which to start reading.</p>
     pub fn starting_position(mut self, input: crate::types::SelfManagedKafkaStartPosition) -> Self {
         self.starting_position = ::std::option::Option::Some(input);
         self
     }
-    /// <p>(Streams only) The position in a stream from which to start reading.</p>
+    /// <p>The position in a stream from which to start reading.</p>
     pub fn set_starting_position(mut self, input: ::std::option::Option<crate::types::SelfManagedKafkaStartPosition>) -> Self {
         self.starting_position = input;
         self
     }
-    /// <p>(Streams only) The position in a stream from which to start reading.</p>
+    /// <p>The position in a stream from which to start reading.</p>
     pub fn get_starting_position(&self) -> &::std::option::Option<crate::types::SelfManagedKafkaStartPosition> {
         &self.starting_position
     }

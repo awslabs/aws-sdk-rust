@@ -15,26 +15,20 @@ pub fn ser_prompt_model_inference_configuration(
             ::aws_smithy_types::Number::Float((*var_2).into()),
         );
     }
-    if let Some(var_3) = &input.top_k {
-        object.key("topK").number(
+    if let Some(var_3) = &input.max_tokens {
+        object.key("maxTokens").number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((*var_3).into()),
         );
     }
-    if let Some(var_4) = &input.max_tokens {
-        object.key("maxTokens").number(
-            #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_4).into()),
-        );
-    }
-    if let Some(var_5) = &input.stop_sequences {
-        let mut array_6 = object.key("stopSequences").start_array();
-        for item_7 in var_5 {
+    if let Some(var_4) = &input.stop_sequences {
+        let mut array_5 = object.key("stopSequences").start_array();
+        for item_6 in var_4 {
             {
-                array_6.value().string(item_7.as_str());
+                array_5.value().string(item_6.as_str());
             }
         }
-        array_6.finish();
+        array_5.finish();
     }
     Ok(())
 }
@@ -62,13 +56,6 @@ where
                         "topP" => {
                             builder = builder
                                 .set_top_p(::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?.map(|v| v.to_f32_lossy()));
-                        }
-                        "topK" => {
-                            builder = builder.set_top_k(
-                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
-                                    .map(i32::try_from)
-                                    .transpose()?,
-                            );
                         }
                         "maxTokens" => {
                             builder = builder.set_max_tokens(

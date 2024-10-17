@@ -5169,6 +5169,8 @@ impl From<crate::operation::restore_analysis::RestoreAnalysisError> for Error {
             crate::operation::restore_analysis::RestoreAnalysisError::InvalidParameterValueException(inner) => {
                 Error::InvalidParameterValueException(inner)
             }
+            crate::operation::restore_analysis::RestoreAnalysisError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::restore_analysis::RestoreAnalysisError::PreconditionNotMetException(inner) => Error::PreconditionNotMetException(inner),
             crate::operation::restore_analysis::RestoreAnalysisError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::restore_analysis::RestoreAnalysisError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::restore_analysis::RestoreAnalysisError::UnsupportedUserEditionException(inner) => {
@@ -5502,6 +5504,61 @@ impl From<crate::operation::start_dashboard_snapshot_job::StartDashboardSnapshot
                 Error::UnsupportedUserEditionException(inner)
             }
             crate::operation::start_dashboard_snapshot_job::StartDashboardSnapshotJobError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::start_dashboard_snapshot_job_schedule::StartDashboardSnapshotJobScheduleError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::start_dashboard_snapshot_job_schedule::StartDashboardSnapshotJobScheduleError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::start_dashboard_snapshot_job_schedule::StartDashboardSnapshotJobScheduleError> for Error {
+    fn from(err: crate::operation::start_dashboard_snapshot_job_schedule::StartDashboardSnapshotJobScheduleError) -> Self {
+        match err {
+            crate::operation::start_dashboard_snapshot_job_schedule::StartDashboardSnapshotJobScheduleError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::start_dashboard_snapshot_job_schedule::StartDashboardSnapshotJobScheduleError::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
+            crate::operation::start_dashboard_snapshot_job_schedule::StartDashboardSnapshotJobScheduleError::InvalidParameterValueException(
+                inner,
+            ) => Error::InvalidParameterValueException(inner),
+            crate::operation::start_dashboard_snapshot_job_schedule::StartDashboardSnapshotJobScheduleError::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::operation::start_dashboard_snapshot_job_schedule::StartDashboardSnapshotJobScheduleError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::start_dashboard_snapshot_job_schedule::StartDashboardSnapshotJobScheduleError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::start_dashboard_snapshot_job_schedule::StartDashboardSnapshotJobScheduleError::UnsupportedUserEditionException(
+                inner,
+            ) => Error::UnsupportedUserEditionException(inner),
+            crate::operation::start_dashboard_snapshot_job_schedule::StartDashboardSnapshotJobScheduleError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }

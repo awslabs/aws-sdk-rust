@@ -11,6 +11,8 @@ pub struct RestoreAnalysisOutput {
     pub analysis_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: ::std::option::Option<::std::string::String>,
+    /// <p>A list of folder arns thatthe analysis failed to be restored to.</p>
+    pub restoration_failed_folder_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl RestoreAnalysisOutput {
@@ -29,6 +31,12 @@ impl RestoreAnalysisOutput {
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub fn request_id(&self) -> ::std::option::Option<&str> {
         self.request_id.as_deref()
+    }
+    /// <p>A list of folder arns thatthe analysis failed to be restored to.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.restoration_failed_folder_arns.is_none()`.
+    pub fn restoration_failed_folder_arns(&self) -> &[::std::string::String] {
+        self.restoration_failed_folder_arns.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for RestoreAnalysisOutput {
@@ -51,6 +59,7 @@ pub struct RestoreAnalysisOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) analysis_id: ::std::option::Option<::std::string::String>,
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
+    pub(crate) restoration_failed_folder_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl RestoreAnalysisOutputBuilder {
@@ -110,6 +119,26 @@ impl RestoreAnalysisOutputBuilder {
     pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.request_id
     }
+    /// Appends an item to `restoration_failed_folder_arns`.
+    ///
+    /// To override the contents of this collection use [`set_restoration_failed_folder_arns`](Self::set_restoration_failed_folder_arns).
+    ///
+    /// <p>A list of folder arns thatthe analysis failed to be restored to.</p>
+    pub fn restoration_failed_folder_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.restoration_failed_folder_arns.unwrap_or_default();
+        v.push(input.into());
+        self.restoration_failed_folder_arns = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of folder arns thatthe analysis failed to be restored to.</p>
+    pub fn set_restoration_failed_folder_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.restoration_failed_folder_arns = input;
+        self
+    }
+    /// <p>A list of folder arns thatthe analysis failed to be restored to.</p>
+    pub fn get_restoration_failed_folder_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.restoration_failed_folder_arns
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -126,6 +155,7 @@ impl RestoreAnalysisOutputBuilder {
             arn: self.arn,
             analysis_id: self.analysis_id,
             request_id: self.request_id,
+            restoration_failed_folder_arns: self.restoration_failed_folder_arns,
             _request_id: self._request_id,
         }
     }

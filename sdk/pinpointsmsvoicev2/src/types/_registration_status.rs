@@ -17,6 +17,7 @@
 ///     RegistrationStatus::Created => { /* ... */ },
 ///     RegistrationStatus::Deleted => { /* ... */ },
 ///     RegistrationStatus::Provisioning => { /* ... */ },
+///     RegistrationStatus::RequiresAuthentication => { /* ... */ },
 ///     RegistrationStatus::RequiresUpdates => { /* ... */ },
 ///     RegistrationStatus::Reviewing => { /* ... */ },
 ///     RegistrationStatus::Submitted => { /* ... */ },
@@ -58,6 +59,8 @@ pub enum RegistrationStatus {
     #[allow(missing_docs)] // documentation missing in model
     Provisioning,
     #[allow(missing_docs)] // documentation missing in model
+    RequiresAuthentication,
+    #[allow(missing_docs)] // documentation missing in model
     RequiresUpdates,
     #[allow(missing_docs)] // documentation missing in model
     Reviewing,
@@ -75,6 +78,7 @@ impl ::std::convert::From<&str> for RegistrationStatus {
             "CREATED" => RegistrationStatus::Created,
             "DELETED" => RegistrationStatus::Deleted,
             "PROVISIONING" => RegistrationStatus::Provisioning,
+            "REQUIRES_AUTHENTICATION" => RegistrationStatus::RequiresAuthentication,
             "REQUIRES_UPDATES" => RegistrationStatus::RequiresUpdates,
             "REVIEWING" => RegistrationStatus::Reviewing,
             "SUBMITTED" => RegistrationStatus::Submitted,
@@ -98,6 +102,7 @@ impl RegistrationStatus {
             RegistrationStatus::Created => "CREATED",
             RegistrationStatus::Deleted => "DELETED",
             RegistrationStatus::Provisioning => "PROVISIONING",
+            RegistrationStatus::RequiresAuthentication => "REQUIRES_AUTHENTICATION",
             RegistrationStatus::RequiresUpdates => "REQUIRES_UPDATES",
             RegistrationStatus::Reviewing => "REVIEWING",
             RegistrationStatus::Submitted => "SUBMITTED",
@@ -112,6 +117,7 @@ impl RegistrationStatus {
             "CREATED",
             "DELETED",
             "PROVISIONING",
+            "REQUIRES_AUTHENTICATION",
             "REQUIRES_UPDATES",
             "REVIEWING",
             "SUBMITTED",
@@ -143,6 +149,7 @@ impl ::std::fmt::Display for RegistrationStatus {
             RegistrationStatus::Created => write!(f, "CREATED"),
             RegistrationStatus::Deleted => write!(f, "DELETED"),
             RegistrationStatus::Provisioning => write!(f, "PROVISIONING"),
+            RegistrationStatus::RequiresAuthentication => write!(f, "REQUIRES_AUTHENTICATION"),
             RegistrationStatus::RequiresUpdates => write!(f, "REQUIRES_UPDATES"),
             RegistrationStatus::Reviewing => write!(f, "REVIEWING"),
             RegistrationStatus::Submitted => write!(f, "SUBMITTED"),
