@@ -2499,6 +2499,10 @@ source_hash = '80dac965e6bba4c1f69c0329fa21203c182f3eb034792d8f4c4fa94ba15ca72f'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = '2fe25f627f326867fe30559e73c464e12361c13b66e7ffc0bc95aa91a482fafd'
+
+[release]
+tag = 'release-2024-10-18'
+
 [release.crates]
 aws-sdk-athena = '1.50.0'
 aws-sdk-bedrock = '1.57.0'
