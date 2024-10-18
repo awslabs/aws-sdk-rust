@@ -97,6 +97,8 @@ pub use crate::types::_asset_in_data_product_listing_item::AssetInDataProductLis
 
 pub use crate::types::_subscribed_asset_listing::SubscribedAssetListingBuilder;
 
+pub use crate::types::_asset_scope::AssetScopeBuilder;
+
 pub use crate::types::_subscribed_project::SubscribedProjectBuilder;
 
 pub use crate::types::_subscribed_asset::SubscribedAssetBuilder;
@@ -288,6 +290,8 @@ pub use crate::types::_subscribed_project_input::SubscribedProjectInputBuilder;
 pub use crate::types::_asset_target_name_map::AssetTargetNameMapBuilder;
 
 pub use crate::types::_listing_revision_input::ListingRevisionInputBuilder;
+
+pub use crate::types::_accepted_asset_scope::AcceptedAssetScopeBuilder;
 
 pub use crate::types::_accept_choice::AcceptChoiceBuilder;
 

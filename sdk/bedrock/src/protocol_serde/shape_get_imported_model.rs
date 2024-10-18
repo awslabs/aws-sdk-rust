@@ -129,6 +129,9 @@ pub(crate) fn de_get_imported_model(
                         ::aws_smithy_types::date_time::Format::DateTimeWithOffset,
                     )?);
                 }
+                "instructSupported" => {
+                    builder = builder.set_instruct_supported(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                }
                 "jobArn" => {
                     builder = builder.set_job_arn(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

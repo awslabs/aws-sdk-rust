@@ -19,6 +19,8 @@ pub struct GetImportedModelOutput {
     pub model_architecture: ::std::option::Option<::std::string::String>,
     /// <p>The imported model is encrypted at rest using this key.</p>
     pub model_kms_key_arn: ::std::option::Option<::std::string::String>,
+    /// <p>Specifies if the imported model supports fine tuning.</p>
+    pub instruct_supported: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }
 impl GetImportedModelOutput {
@@ -54,6 +56,10 @@ impl GetImportedModelOutput {
     pub fn model_kms_key_arn(&self) -> ::std::option::Option<&str> {
         self.model_kms_key_arn.as_deref()
     }
+    /// <p>Specifies if the imported model supports fine tuning.</p>
+    pub fn instruct_supported(&self) -> ::std::option::Option<bool> {
+        self.instruct_supported
+    }
 }
 impl ::aws_types::request_id::RequestId for GetImportedModelOutput {
     fn request_id(&self) -> Option<&str> {
@@ -79,6 +85,7 @@ pub struct GetImportedModelOutputBuilder {
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) model_architecture: ::std::option::Option<::std::string::String>,
     pub(crate) model_kms_key_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) instruct_supported: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }
 impl GetImportedModelOutputBuilder {
@@ -194,6 +201,20 @@ impl GetImportedModelOutputBuilder {
     pub fn get_model_kms_key_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.model_kms_key_arn
     }
+    /// <p>Specifies if the imported model supports fine tuning.</p>
+    pub fn instruct_supported(mut self, input: bool) -> Self {
+        self.instruct_supported = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies if the imported model supports fine tuning.</p>
+    pub fn set_instruct_supported(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.instruct_supported = input;
+        self
+    }
+    /// <p>Specifies if the imported model supports fine tuning.</p>
+    pub fn get_instruct_supported(&self) -> &::std::option::Option<bool> {
+        &self.instruct_supported
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -214,6 +235,7 @@ impl GetImportedModelOutputBuilder {
             creation_time: self.creation_time,
             model_architecture: self.model_architecture,
             model_kms_key_arn: self.model_kms_key_arn,
+            instruct_supported: self.instruct_supported,
             _request_id: self._request_id,
         }
     }

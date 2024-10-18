@@ -12,7 +12,6 @@
 /// ```text
 /// # let datacatalogtype = unimplemented!();
 /// match datacatalogtype {
-///     DataCatalogType::Federated => { /* ... */ },
 ///     DataCatalogType::Glue => { /* ... */ },
 ///     DataCatalogType::Hive => { /* ... */ },
 ///     DataCatalogType::Lambda => { /* ... */ },
@@ -44,8 +43,6 @@
 )]
 pub enum DataCatalogType {
     #[allow(missing_docs)] // documentation missing in model
-    Federated,
-    #[allow(missing_docs)] // documentation missing in model
     Glue,
     #[allow(missing_docs)] // documentation missing in model
     Hive,
@@ -58,7 +55,6 @@ pub enum DataCatalogType {
 impl ::std::convert::From<&str> for DataCatalogType {
     fn from(s: &str) -> Self {
         match s {
-            "FEDERATED" => DataCatalogType::Federated,
             "GLUE" => DataCatalogType::Glue,
             "HIVE" => DataCatalogType::Hive,
             "LAMBDA" => DataCatalogType::Lambda,
@@ -77,7 +73,6 @@ impl DataCatalogType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
-            DataCatalogType::Federated => "FEDERATED",
             DataCatalogType::Glue => "GLUE",
             DataCatalogType::Hive => "HIVE",
             DataCatalogType::Lambda => "LAMBDA",
@@ -86,7 +81,7 @@ impl DataCatalogType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["FEDERATED", "GLUE", "HIVE", "LAMBDA"]
+        &["GLUE", "HIVE", "LAMBDA"]
     }
 }
 impl ::std::convert::AsRef<str> for DataCatalogType {
@@ -109,7 +104,6 @@ impl DataCatalogType {
 impl ::std::fmt::Display for DataCatalogType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
-            DataCatalogType::Federated => write!(f, "FEDERATED"),
             DataCatalogType::Glue => write!(f, "GLUE"),
             DataCatalogType::Hive => write!(f, "HIVE"),
             DataCatalogType::Lambda => write!(f, "LAMBDA"),

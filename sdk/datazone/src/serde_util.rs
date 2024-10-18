@@ -2553,6 +2553,19 @@ pub(crate) fn asset_item_correct_errors(mut builder: crate::types::builders::Ass
     builder
 }
 
+pub(crate) fn asset_scope_correct_errors(mut builder: crate::types::builders::AssetScopeBuilder) -> crate::types::builders::AssetScopeBuilder {
+    if builder.asset_id.is_none() {
+        builder.asset_id = Some(Default::default())
+    }
+    if builder.filter_ids.is_none() {
+        builder.filter_ids = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn asset_type_item_correct_errors(
     mut builder: crate::types::builders::AssetTypeItemBuilder,
 ) -> crate::types::builders::AssetTypeItemBuilder {

@@ -13,6 +13,7 @@ impl super::Client {
     ///   - [`creation_time(Option<DateTime>)`](crate::operation::get_imported_model::GetImportedModelOutput::creation_time): <p>Creation time of the imported model.</p>
     ///   - [`model_architecture(Option<String>)`](crate::operation::get_imported_model::GetImportedModelOutput::model_architecture): <p>The architecture of the imported model.</p>
     ///   - [`model_kms_key_arn(Option<String>)`](crate::operation::get_imported_model::GetImportedModelOutput::model_kms_key_arn): <p>The imported model is encrypted at rest using this key.</p>
+    ///   - [`instruct_supported(Option<bool>)`](crate::operation::get_imported_model::GetImportedModelOutput::instruct_supported): <p>Specifies if the imported model supports fine tuning.</p>
     /// - On failure, responds with [`SdkError<GetImportedModelError>`](crate::operation::get_imported_model::GetImportedModelError)
     pub fn get_imported_model(&self) -> crate::operation::get_imported_model::builders::GetImportedModelFluentBuilder {
         crate::operation::get_imported_model::builders::GetImportedModelFluentBuilder::new(self.handle.clone())

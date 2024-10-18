@@ -12,6 +12,9 @@
 /// ```text
 /// # let userdesignation = unimplemented!();
 /// match userdesignation {
+///     UserDesignation::ProjectCatalogConsumer => { /* ... */ },
+///     UserDesignation::ProjectCatalogSteward => { /* ... */ },
+///     UserDesignation::ProjectCatalogViewer => { /* ... */ },
 ///     UserDesignation::ProjectContributor => { /* ... */ },
 ///     UserDesignation::ProjectOwner => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -42,6 +45,12 @@
 )]
 pub enum UserDesignation {
     #[allow(missing_docs)] // documentation missing in model
+    ProjectCatalogConsumer,
+    #[allow(missing_docs)] // documentation missing in model
+    ProjectCatalogSteward,
+    #[allow(missing_docs)] // documentation missing in model
+    ProjectCatalogViewer,
+    #[allow(missing_docs)] // documentation missing in model
     ProjectContributor,
     #[allow(missing_docs)] // documentation missing in model
     ProjectOwner,
@@ -52,6 +61,9 @@ pub enum UserDesignation {
 impl ::std::convert::From<&str> for UserDesignation {
     fn from(s: &str) -> Self {
         match s {
+            "PROJECT_CATALOG_CONSUMER" => UserDesignation::ProjectCatalogConsumer,
+            "PROJECT_CATALOG_STEWARD" => UserDesignation::ProjectCatalogSteward,
+            "PROJECT_CATALOG_VIEWER" => UserDesignation::ProjectCatalogViewer,
             "PROJECT_CONTRIBUTOR" => UserDesignation::ProjectContributor,
             "PROJECT_OWNER" => UserDesignation::ProjectOwner,
             other => UserDesignation::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -69,6 +81,9 @@ impl UserDesignation {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            UserDesignation::ProjectCatalogConsumer => "PROJECT_CATALOG_CONSUMER",
+            UserDesignation::ProjectCatalogSteward => "PROJECT_CATALOG_STEWARD",
+            UserDesignation::ProjectCatalogViewer => "PROJECT_CATALOG_VIEWER",
             UserDesignation::ProjectContributor => "PROJECT_CONTRIBUTOR",
             UserDesignation::ProjectOwner => "PROJECT_OWNER",
             UserDesignation::Unknown(value) => value.as_str(),
@@ -76,7 +91,13 @@ impl UserDesignation {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["PROJECT_CONTRIBUTOR", "PROJECT_OWNER"]
+        &[
+            "PROJECT_CATALOG_CONSUMER",
+            "PROJECT_CATALOG_STEWARD",
+            "PROJECT_CATALOG_VIEWER",
+            "PROJECT_CONTRIBUTOR",
+            "PROJECT_OWNER",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for UserDesignation {
@@ -99,6 +120,9 @@ impl UserDesignation {
 impl ::std::fmt::Display for UserDesignation {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            UserDesignation::ProjectCatalogConsumer => write!(f, "PROJECT_CATALOG_CONSUMER"),
+            UserDesignation::ProjectCatalogSteward => write!(f, "PROJECT_CATALOG_STEWARD"),
+            UserDesignation::ProjectCatalogViewer => write!(f, "PROJECT_CATALOG_VIEWER"),
             UserDesignation::ProjectContributor => write!(f, "PROJECT_CONTRIBUTOR"),
             UserDesignation::ProjectOwner => write!(f, "PROJECT_OWNER"),
             UserDesignation::Unknown(value) => write!(f, "{}", value),

@@ -10,7 +10,7 @@ pub struct DataCatalog {
     pub name: ::std::string::String,
     /// <p>An optional description of the data catalog.</p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p>The type of data catalog to create: <code>LAMBDA</code> for a federated catalog, <code>GLUE</code> for an Glue Data Catalog, and <code>HIVE</code> for an external Apache Hive metastore. <code>FEDERATED</code> is a federated catalog for which Athena creates the connection and the Lambda function for you based on the parameters that you pass.</p>
+    /// <p>The type of data catalog to create: <code>LAMBDA</code> for a federated catalog, <code>HIVE</code> for an external hive metastore, or <code>GLUE</code> for an Glue Data Catalog.</p>
     pub r#type: crate::types::DataCatalogType,
     /// <p>Specifies the Lambda function or functions to use for the data catalog. This is a mapping whose values depend on the catalog type.</p>
     /// <ul>
@@ -34,54 +34,8 @@ pub struct DataCatalog {
     /// <li>
     /// <p>The <code>GLUE</code> data catalog type also applies to the default <code>AwsDataCatalog</code> that already exists in your account, of which you can have only one and cannot modify.</p></li>
     /// </ul></li>
-    /// <li>
-    /// <p>The <code>FEDERATED</code> data catalog type uses one of the following parameters, but not both. Use <code>connection-arn</code> for an existing Glue connection. Use <code>connection-type</code> and <code>connection-properties</code> to specify the configuration setting for a new connection.</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>connection-arn:<i><glue_connection_arn_to_reuse></glue_connection_arn_to_reuse></i> </code></p></li>
-    /// <li>
-    /// <p><code>connection-type:MYSQL|REDSHIFT|...., connection-properties:"<i><json_string></json_string></i>"</code></p>
-    /// <p>For <i> <code><json_string></json_string></code> </i>, use escaped JSON text, as in the following example.</p>
-    /// <p><code>"{\"spill_bucket\":\"my_spill\",\"spill_prefix\":\"athena-spill\",\"host\":\"abc12345.snowflakecomputing.com\",\"port\":\"1234\",\"warehouse\":\"DEV_WH\",\"database\":\"TEST\",\"schema\":\"PUBLIC\",\"SecretArn\":\"arn:aws:secretsmanager:ap-south-1:111122223333:secret:snowflake-XHb67j\"}"</code></p></li>
-    /// </ul></li>
     /// </ul>
     pub parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    /// <p>The status of the creation or deletion of the data catalog.</p>
-    /// <ul>
-    /// <li>
-    /// <p>The <code>LAMBDA</code>, <code>GLUE</code>, and <code>HIVE</code> data catalog types are created synchronously. Their status is either <code>CREATE_COMPLETE</code> or <code>CREATE_FAILED</code>.</p></li>
-    /// <li>
-    /// <p>The <code>FEDERATED</code> data catalog type is created asynchronously.</p></li>
-    /// </ul>
-    /// <p>Data catalog creation status:</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>CREATE_IN_PROGRESS</code>: Federated data catalog creation in progress.</p></li>
-    /// <li>
-    /// <p><code>CREATE_COMPLETE</code>: Data catalog creation complete.</p></li>
-    /// <li>
-    /// <p><code>CREATE_FAILED</code>: Data catalog could not be created.</p></li>
-    /// <li>
-    /// <p><code>CREATE_FAILED_CLEANUP_IN_PROGRESS</code>: Federated data catalog creation failed and is being removed.</p></li>
-    /// <li>
-    /// <p><code>CREATE_FAILED_CLEANUP_COMPLETE</code>: Federated data catalog creation failed and was removed.</p></li>
-    /// <li>
-    /// <p><code>CREATE_FAILED_CLEANUP_FAILED</code>: Federated data catalog creation failed but could not be removed.</p></li>
-    /// </ul>
-    /// <p>Data catalog deletion status:</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>DELETE_IN_PROGRESS</code>: Federated data catalog deletion in progress.</p></li>
-    /// <li>
-    /// <p><code>DELETE_COMPLETE</code>: Federated data catalog deleted.</p></li>
-    /// <li>
-    /// <p><code>DELETE_FAILED</code>: Federated data catalog could not be deleted.</p></li>
-    /// </ul>
-    pub status: ::std::option::Option<crate::types::DataCatalogStatus>,
-    /// <p>The type of connection for a <code>FEDERATED</code> data catalog (for example, <code>REDSHIFT</code>, <code>MYSQL</code>, or <code>SQLSERVER</code>). For information about individual connectors, see <a href="https://docs.aws.amazon.com/athena/latest/ug/connectors-available.html">Available data source connectors</a>.</p>
-    pub connection_type: ::std::option::Option<crate::types::ConnectionType>,
-    /// <p>Text of the error that occurred during data catalog creation or deletion.</p>
-    pub error: ::std::option::Option<::std::string::String>,
 }
 impl DataCatalog {
     /// <p>The name of the data catalog. The catalog name must be unique for the Amazon Web Services account and can use a maximum of 127 alphanumeric, underscore, at sign, or hyphen characters. The remainder of the length constraint of 256 is reserved for use by Athena.</p>
@@ -93,7 +47,7 @@ impl DataCatalog {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The type of data catalog to create: <code>LAMBDA</code> for a federated catalog, <code>GLUE</code> for an Glue Data Catalog, and <code>HIVE</code> for an external Apache Hive metastore. <code>FEDERATED</code> is a federated catalog for which Athena creates the connection and the Lambda function for you based on the parameters that you pass.</p>
+    /// <p>The type of data catalog to create: <code>LAMBDA</code> for a federated catalog, <code>HIVE</code> for an external hive metastore, or <code>GLUE</code> for an Glue Data Catalog.</p>
     pub fn r#type(&self) -> &crate::types::DataCatalogType {
         &self.r#type
     }
@@ -119,61 +73,9 @@ impl DataCatalog {
     /// <li>
     /// <p>The <code>GLUE</code> data catalog type also applies to the default <code>AwsDataCatalog</code> that already exists in your account, of which you can have only one and cannot modify.</p></li>
     /// </ul></li>
-    /// <li>
-    /// <p>The <code>FEDERATED</code> data catalog type uses one of the following parameters, but not both. Use <code>connection-arn</code> for an existing Glue connection. Use <code>connection-type</code> and <code>connection-properties</code> to specify the configuration setting for a new connection.</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>connection-arn:<i><glue_connection_arn_to_reuse></glue_connection_arn_to_reuse></i> </code></p></li>
-    /// <li>
-    /// <p><code>connection-type:MYSQL|REDSHIFT|...., connection-properties:"<i><json_string></json_string></i>"</code></p>
-    /// <p>For <i> <code><json_string></json_string></code> </i>, use escaped JSON text, as in the following example.</p>
-    /// <p><code>"{\"spill_bucket\":\"my_spill\",\"spill_prefix\":\"athena-spill\",\"host\":\"abc12345.snowflakecomputing.com\",\"port\":\"1234\",\"warehouse\":\"DEV_WH\",\"database\":\"TEST\",\"schema\":\"PUBLIC\",\"SecretArn\":\"arn:aws:secretsmanager:ap-south-1:111122223333:secret:snowflake-XHb67j\"}"</code></p></li>
-    /// </ul></li>
     /// </ul>
     pub fn parameters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.parameters.as_ref()
-    }
-    /// <p>The status of the creation or deletion of the data catalog.</p>
-    /// <ul>
-    /// <li>
-    /// <p>The <code>LAMBDA</code>, <code>GLUE</code>, and <code>HIVE</code> data catalog types are created synchronously. Their status is either <code>CREATE_COMPLETE</code> or <code>CREATE_FAILED</code>.</p></li>
-    /// <li>
-    /// <p>The <code>FEDERATED</code> data catalog type is created asynchronously.</p></li>
-    /// </ul>
-    /// <p>Data catalog creation status:</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>CREATE_IN_PROGRESS</code>: Federated data catalog creation in progress.</p></li>
-    /// <li>
-    /// <p><code>CREATE_COMPLETE</code>: Data catalog creation complete.</p></li>
-    /// <li>
-    /// <p><code>CREATE_FAILED</code>: Data catalog could not be created.</p></li>
-    /// <li>
-    /// <p><code>CREATE_FAILED_CLEANUP_IN_PROGRESS</code>: Federated data catalog creation failed and is being removed.</p></li>
-    /// <li>
-    /// <p><code>CREATE_FAILED_CLEANUP_COMPLETE</code>: Federated data catalog creation failed and was removed.</p></li>
-    /// <li>
-    /// <p><code>CREATE_FAILED_CLEANUP_FAILED</code>: Federated data catalog creation failed but could not be removed.</p></li>
-    /// </ul>
-    /// <p>Data catalog deletion status:</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>DELETE_IN_PROGRESS</code>: Federated data catalog deletion in progress.</p></li>
-    /// <li>
-    /// <p><code>DELETE_COMPLETE</code>: Federated data catalog deleted.</p></li>
-    /// <li>
-    /// <p><code>DELETE_FAILED</code>: Federated data catalog could not be deleted.</p></li>
-    /// </ul>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::DataCatalogStatus> {
-        self.status.as_ref()
-    }
-    /// <p>The type of connection for a <code>FEDERATED</code> data catalog (for example, <code>REDSHIFT</code>, <code>MYSQL</code>, or <code>SQLSERVER</code>). For information about individual connectors, see <a href="https://docs.aws.amazon.com/athena/latest/ug/connectors-available.html">Available data source connectors</a>.</p>
-    pub fn connection_type(&self) -> ::std::option::Option<&crate::types::ConnectionType> {
-        self.connection_type.as_ref()
-    }
-    /// <p>Text of the error that occurred during data catalog creation or deletion.</p>
-    pub fn error(&self) -> ::std::option::Option<&str> {
-        self.error.as_deref()
     }
 }
 impl DataCatalog {
@@ -191,9 +93,6 @@ pub struct DataCatalogBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::DataCatalogType>,
     pub(crate) parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    pub(crate) status: ::std::option::Option<crate::types::DataCatalogStatus>,
-    pub(crate) connection_type: ::std::option::Option<crate::types::ConnectionType>,
-    pub(crate) error: ::std::option::Option<::std::string::String>,
 }
 impl DataCatalogBuilder {
     /// <p>The name of the data catalog. The catalog name must be unique for the Amazon Web Services account and can use a maximum of 127 alphanumeric, underscore, at sign, or hyphen characters. The remainder of the length constraint of 256 is reserved for use by Athena.</p>
@@ -225,18 +124,18 @@ impl DataCatalogBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
-    /// <p>The type of data catalog to create: <code>LAMBDA</code> for a federated catalog, <code>GLUE</code> for an Glue Data Catalog, and <code>HIVE</code> for an external Apache Hive metastore. <code>FEDERATED</code> is a federated catalog for which Athena creates the connection and the Lambda function for you based on the parameters that you pass.</p>
+    /// <p>The type of data catalog to create: <code>LAMBDA</code> for a federated catalog, <code>HIVE</code> for an external hive metastore, or <code>GLUE</code> for an Glue Data Catalog.</p>
     /// This field is required.
     pub fn r#type(mut self, input: crate::types::DataCatalogType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of data catalog to create: <code>LAMBDA</code> for a federated catalog, <code>GLUE</code> for an Glue Data Catalog, and <code>HIVE</code> for an external Apache Hive metastore. <code>FEDERATED</code> is a federated catalog for which Athena creates the connection and the Lambda function for you based on the parameters that you pass.</p>
+    /// <p>The type of data catalog to create: <code>LAMBDA</code> for a federated catalog, <code>HIVE</code> for an external hive metastore, or <code>GLUE</code> for an Glue Data Catalog.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::DataCatalogType>) -> Self {
         self.r#type = input;
         self
     }
-    /// <p>The type of data catalog to create: <code>LAMBDA</code> for a federated catalog, <code>GLUE</code> for an Glue Data Catalog, and <code>HIVE</code> for an external Apache Hive metastore. <code>FEDERATED</code> is a federated catalog for which Athena creates the connection and the Lambda function for you based on the parameters that you pass.</p>
+    /// <p>The type of data catalog to create: <code>LAMBDA</code> for a federated catalog, <code>HIVE</code> for an external hive metastore, or <code>GLUE</code> for an Glue Data Catalog.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::DataCatalogType> {
         &self.r#type
     }
@@ -265,16 +164,6 @@ impl DataCatalogBuilder {
     /// <ul>
     /// <li>
     /// <p>The <code>GLUE</code> data catalog type also applies to the default <code>AwsDataCatalog</code> that already exists in your account, of which you can have only one and cannot modify.</p></li>
-    /// </ul></li>
-    /// <li>
-    /// <p>The <code>FEDERATED</code> data catalog type uses one of the following parameters, but not both. Use <code>connection-arn</code> for an existing Glue connection. Use <code>connection-type</code> and <code>connection-properties</code> to specify the configuration setting for a new connection.</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>connection-arn:<i><glue_connection_arn_to_reuse></glue_connection_arn_to_reuse></i> </code></p></li>
-    /// <li>
-    /// <p><code>connection-type:MYSQL|REDSHIFT|...., connection-properties:"<i><json_string></json_string></i>"</code></p>
-    /// <p>For <i> <code><json_string></json_string></code> </i>, use escaped JSON text, as in the following example.</p>
-    /// <p><code>"{\"spill_bucket\":\"my_spill\",\"spill_prefix\":\"athena-spill\",\"host\":\"abc12345.snowflakecomputing.com\",\"port\":\"1234\",\"warehouse\":\"DEV_WH\",\"database\":\"TEST\",\"schema\":\"PUBLIC\",\"SecretArn\":\"arn:aws:secretsmanager:ap-south-1:111122223333:secret:snowflake-XHb67j\"}"</code></p></li>
     /// </ul></li>
     /// </ul>
     pub fn parameters(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -305,16 +194,6 @@ impl DataCatalogBuilder {
     /// <li>
     /// <p>The <code>GLUE</code> data catalog type also applies to the default <code>AwsDataCatalog</code> that already exists in your account, of which you can have only one and cannot modify.</p></li>
     /// </ul></li>
-    /// <li>
-    /// <p>The <code>FEDERATED</code> data catalog type uses one of the following parameters, but not both. Use <code>connection-arn</code> for an existing Glue connection. Use <code>connection-type</code> and <code>connection-properties</code> to specify the configuration setting for a new connection.</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>connection-arn:<i><glue_connection_arn_to_reuse></glue_connection_arn_to_reuse></i> </code></p></li>
-    /// <li>
-    /// <p><code>connection-type:MYSQL|REDSHIFT|...., connection-properties:"<i><json_string></json_string></i>"</code></p>
-    /// <p>For <i> <code><json_string></json_string></code> </i>, use escaped JSON text, as in the following example.</p>
-    /// <p><code>"{\"spill_bucket\":\"my_spill\",\"spill_prefix\":\"athena-spill\",\"host\":\"abc12345.snowflakecomputing.com\",\"port\":\"1234\",\"warehouse\":\"DEV_WH\",\"database\":\"TEST\",\"schema\":\"PUBLIC\",\"SecretArn\":\"arn:aws:secretsmanager:ap-south-1:111122223333:secret:snowflake-XHb67j\"}"</code></p></li>
-    /// </ul></li>
     /// </ul>
     pub fn set_parameters(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.parameters = input;
@@ -342,151 +221,9 @@ impl DataCatalogBuilder {
     /// <li>
     /// <p>The <code>GLUE</code> data catalog type also applies to the default <code>AwsDataCatalog</code> that already exists in your account, of which you can have only one and cannot modify.</p></li>
     /// </ul></li>
-    /// <li>
-    /// <p>The <code>FEDERATED</code> data catalog type uses one of the following parameters, but not both. Use <code>connection-arn</code> for an existing Glue connection. Use <code>connection-type</code> and <code>connection-properties</code> to specify the configuration setting for a new connection.</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>connection-arn:<i><glue_connection_arn_to_reuse></glue_connection_arn_to_reuse></i> </code></p></li>
-    /// <li>
-    /// <p><code>connection-type:MYSQL|REDSHIFT|...., connection-properties:"<i><json_string></json_string></i>"</code></p>
-    /// <p>For <i> <code><json_string></json_string></code> </i>, use escaped JSON text, as in the following example.</p>
-    /// <p><code>"{\"spill_bucket\":\"my_spill\",\"spill_prefix\":\"athena-spill\",\"host\":\"abc12345.snowflakecomputing.com\",\"port\":\"1234\",\"warehouse\":\"DEV_WH\",\"database\":\"TEST\",\"schema\":\"PUBLIC\",\"SecretArn\":\"arn:aws:secretsmanager:ap-south-1:111122223333:secret:snowflake-XHb67j\"}"</code></p></li>
-    /// </ul></li>
     /// </ul>
     pub fn get_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.parameters
-    }
-    /// <p>The status of the creation or deletion of the data catalog.</p>
-    /// <ul>
-    /// <li>
-    /// <p>The <code>LAMBDA</code>, <code>GLUE</code>, and <code>HIVE</code> data catalog types are created synchronously. Their status is either <code>CREATE_COMPLETE</code> or <code>CREATE_FAILED</code>.</p></li>
-    /// <li>
-    /// <p>The <code>FEDERATED</code> data catalog type is created asynchronously.</p></li>
-    /// </ul>
-    /// <p>Data catalog creation status:</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>CREATE_IN_PROGRESS</code>: Federated data catalog creation in progress.</p></li>
-    /// <li>
-    /// <p><code>CREATE_COMPLETE</code>: Data catalog creation complete.</p></li>
-    /// <li>
-    /// <p><code>CREATE_FAILED</code>: Data catalog could not be created.</p></li>
-    /// <li>
-    /// <p><code>CREATE_FAILED_CLEANUP_IN_PROGRESS</code>: Federated data catalog creation failed and is being removed.</p></li>
-    /// <li>
-    /// <p><code>CREATE_FAILED_CLEANUP_COMPLETE</code>: Federated data catalog creation failed and was removed.</p></li>
-    /// <li>
-    /// <p><code>CREATE_FAILED_CLEANUP_FAILED</code>: Federated data catalog creation failed but could not be removed.</p></li>
-    /// </ul>
-    /// <p>Data catalog deletion status:</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>DELETE_IN_PROGRESS</code>: Federated data catalog deletion in progress.</p></li>
-    /// <li>
-    /// <p><code>DELETE_COMPLETE</code>: Federated data catalog deleted.</p></li>
-    /// <li>
-    /// <p><code>DELETE_FAILED</code>: Federated data catalog could not be deleted.</p></li>
-    /// </ul>
-    pub fn status(mut self, input: crate::types::DataCatalogStatus) -> Self {
-        self.status = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>The status of the creation or deletion of the data catalog.</p>
-    /// <ul>
-    /// <li>
-    /// <p>The <code>LAMBDA</code>, <code>GLUE</code>, and <code>HIVE</code> data catalog types are created synchronously. Their status is either <code>CREATE_COMPLETE</code> or <code>CREATE_FAILED</code>.</p></li>
-    /// <li>
-    /// <p>The <code>FEDERATED</code> data catalog type is created asynchronously.</p></li>
-    /// </ul>
-    /// <p>Data catalog creation status:</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>CREATE_IN_PROGRESS</code>: Federated data catalog creation in progress.</p></li>
-    /// <li>
-    /// <p><code>CREATE_COMPLETE</code>: Data catalog creation complete.</p></li>
-    /// <li>
-    /// <p><code>CREATE_FAILED</code>: Data catalog could not be created.</p></li>
-    /// <li>
-    /// <p><code>CREATE_FAILED_CLEANUP_IN_PROGRESS</code>: Federated data catalog creation failed and is being removed.</p></li>
-    /// <li>
-    /// <p><code>CREATE_FAILED_CLEANUP_COMPLETE</code>: Federated data catalog creation failed and was removed.</p></li>
-    /// <li>
-    /// <p><code>CREATE_FAILED_CLEANUP_FAILED</code>: Federated data catalog creation failed but could not be removed.</p></li>
-    /// </ul>
-    /// <p>Data catalog deletion status:</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>DELETE_IN_PROGRESS</code>: Federated data catalog deletion in progress.</p></li>
-    /// <li>
-    /// <p><code>DELETE_COMPLETE</code>: Federated data catalog deleted.</p></li>
-    /// <li>
-    /// <p><code>DELETE_FAILED</code>: Federated data catalog could not be deleted.</p></li>
-    /// </ul>
-    pub fn set_status(mut self, input: ::std::option::Option<crate::types::DataCatalogStatus>) -> Self {
-        self.status = input;
-        self
-    }
-    /// <p>The status of the creation or deletion of the data catalog.</p>
-    /// <ul>
-    /// <li>
-    /// <p>The <code>LAMBDA</code>, <code>GLUE</code>, and <code>HIVE</code> data catalog types are created synchronously. Their status is either <code>CREATE_COMPLETE</code> or <code>CREATE_FAILED</code>.</p></li>
-    /// <li>
-    /// <p>The <code>FEDERATED</code> data catalog type is created asynchronously.</p></li>
-    /// </ul>
-    /// <p>Data catalog creation status:</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>CREATE_IN_PROGRESS</code>: Federated data catalog creation in progress.</p></li>
-    /// <li>
-    /// <p><code>CREATE_COMPLETE</code>: Data catalog creation complete.</p></li>
-    /// <li>
-    /// <p><code>CREATE_FAILED</code>: Data catalog could not be created.</p></li>
-    /// <li>
-    /// <p><code>CREATE_FAILED_CLEANUP_IN_PROGRESS</code>: Federated data catalog creation failed and is being removed.</p></li>
-    /// <li>
-    /// <p><code>CREATE_FAILED_CLEANUP_COMPLETE</code>: Federated data catalog creation failed and was removed.</p></li>
-    /// <li>
-    /// <p><code>CREATE_FAILED_CLEANUP_FAILED</code>: Federated data catalog creation failed but could not be removed.</p></li>
-    /// </ul>
-    /// <p>Data catalog deletion status:</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>DELETE_IN_PROGRESS</code>: Federated data catalog deletion in progress.</p></li>
-    /// <li>
-    /// <p><code>DELETE_COMPLETE</code>: Federated data catalog deleted.</p></li>
-    /// <li>
-    /// <p><code>DELETE_FAILED</code>: Federated data catalog could not be deleted.</p></li>
-    /// </ul>
-    pub fn get_status(&self) -> &::std::option::Option<crate::types::DataCatalogStatus> {
-        &self.status
-    }
-    /// <p>The type of connection for a <code>FEDERATED</code> data catalog (for example, <code>REDSHIFT</code>, <code>MYSQL</code>, or <code>SQLSERVER</code>). For information about individual connectors, see <a href="https://docs.aws.amazon.com/athena/latest/ug/connectors-available.html">Available data source connectors</a>.</p>
-    pub fn connection_type(mut self, input: crate::types::ConnectionType) -> Self {
-        self.connection_type = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>The type of connection for a <code>FEDERATED</code> data catalog (for example, <code>REDSHIFT</code>, <code>MYSQL</code>, or <code>SQLSERVER</code>). For information about individual connectors, see <a href="https://docs.aws.amazon.com/athena/latest/ug/connectors-available.html">Available data source connectors</a>.</p>
-    pub fn set_connection_type(mut self, input: ::std::option::Option<crate::types::ConnectionType>) -> Self {
-        self.connection_type = input;
-        self
-    }
-    /// <p>The type of connection for a <code>FEDERATED</code> data catalog (for example, <code>REDSHIFT</code>, <code>MYSQL</code>, or <code>SQLSERVER</code>). For information about individual connectors, see <a href="https://docs.aws.amazon.com/athena/latest/ug/connectors-available.html">Available data source connectors</a>.</p>
-    pub fn get_connection_type(&self) -> &::std::option::Option<crate::types::ConnectionType> {
-        &self.connection_type
-    }
-    /// <p>Text of the error that occurred during data catalog creation or deletion.</p>
-    pub fn error(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.error = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>Text of the error that occurred during data catalog creation or deletion.</p>
-    pub fn set_error(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error = input;
-        self
-    }
-    /// <p>Text of the error that occurred during data catalog creation or deletion.</p>
-    pub fn get_error(&self) -> &::std::option::Option<::std::string::String> {
-        &self.error
     }
     /// Consumes the builder and constructs a [`DataCatalog`](crate::types::DataCatalog).
     /// This method will fail if any of the following fields are not set:
@@ -508,9 +245,6 @@ impl DataCatalogBuilder {
                 )
             })?,
             parameters: self.parameters,
-            status: self.status,
-            connection_type: self.connection_type,
-            error: self.error,
         })
     }
 }

@@ -73,10 +73,6 @@ pub use crate::types::_executor_type::ExecutorType;
 
 pub use crate::types::_data_catalog_summary::DataCatalogSummary;
 
-pub use crate::types::_connection_type::ConnectionType;
-
-pub use crate::types::_data_catalog_status::DataCatalogStatus;
-
 pub use crate::types::_database::Database;
 
 pub use crate::types::_capacity_reservation::CapacityReservation;
@@ -195,13 +191,9 @@ mod _column_info;
 
 mod _column_nullable;
 
-mod _connection_type;
-
 mod _customer_content_encryption_configuration;
 
 mod _data_catalog;
-
-mod _data_catalog_status;
 
 mod _data_catalog_summary;
 
