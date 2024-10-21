@@ -23,7 +23,11 @@ pub use crate::types::_data_migration_settings::DataMigrationSettings;
 
 pub use crate::types::_replication_task_assessment_run::ReplicationTaskAssessmentRun;
 
+pub use crate::types::_replication_task_assessment_run_result_statistic::ReplicationTaskAssessmentRunResultStatistic;
+
 pub use crate::types::_replication_task_assessment_run_progress::ReplicationTaskAssessmentRunProgress;
+
+pub use crate::types::_tag::Tag;
 
 pub use crate::types::_start_replication_task_type_value::StartReplicationTaskTypeValue;
 
@@ -180,8 +184,6 @@ pub use crate::types::_my_sql_data_provider_settings::MySqlDataProviderSettings;
 pub use crate::types::_postgre_sql_data_provider_settings::PostgreSqlDataProviderSettings;
 
 pub use crate::types::_redshift_data_provider_settings::RedshiftDataProviderSettings;
-
-pub use crate::types::_tag::Tag;
 
 pub use crate::types::_certificate::Certificate;
 
@@ -496,6 +498,8 @@ mod _replication_task_assessment_result;
 mod _replication_task_assessment_run;
 
 mod _replication_task_assessment_run_progress;
+
+mod _replication_task_assessment_run_result_statistic;
 
 mod _replication_task_individual_assessment;
 

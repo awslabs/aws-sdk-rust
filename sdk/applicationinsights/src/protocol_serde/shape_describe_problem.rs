@@ -106,6 +106,13 @@ pub(crate) fn de_describe_problem(
                 "Problem" => {
                     builder = builder.set_problem(crate::protocol_serde::shape_problem::de_problem(tokens)?);
                 }
+                "SNSNotificationArn" => {
+                    builder = builder.set_sns_notification_arn(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

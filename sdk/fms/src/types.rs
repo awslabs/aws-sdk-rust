@@ -85,6 +85,10 @@ pub use crate::types::_violation_detail::ViolationDetail;
 
 pub use crate::types::_resource_violation::ResourceViolation;
 
+pub use crate::types::_web_acl_has_out_of_scope_resources_violation::WebAclHasOutOfScopeResourcesViolation;
+
+pub use crate::types::_web_acl_has_incompatible_configuration_violation::WebAclHasIncompatibleConfigurationViolation;
+
 pub use crate::types::_possible_remediation_actions::PossibleRemediationActions;
 
 pub use crate::types::_possible_remediation_action::PossibleRemediationAction;
@@ -442,6 +446,10 @@ mod _third_party_firewall_policy;
 mod _violation_detail;
 
 mod _violation_reason;
+
+mod _web_acl_has_incompatible_configuration_violation;
+
+mod _web_acl_has_out_of_scope_resources_violation;
 
 /// Builders
 pub mod builders;

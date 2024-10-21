@@ -15,29 +15,32 @@ pub fn ser_create_application_input_input(
     if let Some(var_4) = &input.ops_item_sns_topic_arn {
         object.key("OpsItemSNSTopicArn").string(var_4.as_str());
     }
-    if let Some(var_5) = &input.tags {
-        let mut array_6 = object.key("Tags").start_array();
-        for item_7 in var_5 {
+    if let Some(var_5) = &input.sns_notification_arn {
+        object.key("SNSNotificationArn").string(var_5.as_str());
+    }
+    if let Some(var_6) = &input.tags {
+        let mut array_7 = object.key("Tags").start_array();
+        for item_8 in var_6 {
             {
                 #[allow(unused_mut)]
-                let mut object_8 = array_6.value().start_object();
-                crate::protocol_serde::shape_tag::ser_tag(&mut object_8, item_7)?;
-                object_8.finish();
+                let mut object_9 = array_7.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_9, item_8)?;
+                object_9.finish();
             }
         }
-        array_6.finish();
+        array_7.finish();
     }
-    if let Some(var_9) = &input.auto_config_enabled {
-        object.key("AutoConfigEnabled").boolean(*var_9);
+    if let Some(var_10) = &input.auto_config_enabled {
+        object.key("AutoConfigEnabled").boolean(*var_10);
     }
-    if let Some(var_10) = &input.auto_create {
-        object.key("AutoCreate").boolean(*var_10);
+    if let Some(var_11) = &input.auto_create {
+        object.key("AutoCreate").boolean(*var_11);
     }
-    if let Some(var_11) = &input.grouping_type {
-        object.key("GroupingType").string(var_11.as_str());
+    if let Some(var_12) = &input.grouping_type {
+        object.key("GroupingType").string(var_12.as_str());
     }
-    if let Some(var_12) = &input.attach_missing_permission {
-        object.key("AttachMissingPermission").boolean(*var_12);
+    if let Some(var_13) = &input.attach_missing_permission {
+        object.key("AttachMissingPermission").boolean(*var_13);
     }
     Ok(())
 }

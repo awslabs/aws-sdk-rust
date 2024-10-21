@@ -25,7 +25,7 @@ impl crate::operation::put_scaling_policy::builders::PutScalingPolicyInputBuilde
 /// <p>Creates or updates a scaling policy for an Auto Scaling group. Scaling policies are used to scale an Auto Scaling group based on configurable metrics. If no policies are defined, the dynamic scaling and predictive scaling features are not used.</p>
 /// <p>For more information about using dynamic scaling, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-target-tracking.html">Target tracking scaling policies</a> and <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html">Step and simple scaling policies</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
 /// <p>For more information about using predictive scaling, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-predictive-scaling.html">Predictive scaling for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-/// <p>You can view the scaling policies for an Auto Scaling group using the <code>DescribePolicies</code> API call. If you are no longer using a scaling policy, you can delete it by calling the <code>DeletePolicy</code> API.</p>
+/// <p>You can view the scaling policies for an Auto Scaling group using the <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribePolicies.html">DescribePolicies</a> API call. If you are no longer using a scaling policy, you can delete it by calling the <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DeletePolicy.html">DeletePolicy</a> API.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutScalingPolicyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

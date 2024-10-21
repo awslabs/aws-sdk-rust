@@ -24,7 +24,7 @@ impl crate::operation::put_scheduled_update_group_action::builders::PutScheduled
 ///
 /// <p>Creates or updates a scheduled scaling action for an Auto Scaling group.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-scheduled-scaling.html">Scheduled scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-/// <p>You can view the scheduled actions for an Auto Scaling group using the <code>DescribeScheduledActions</code> API call. If you are no longer using a scheduled action, you can delete it by calling the <code>DeleteScheduledAction</code> API.</p>
+/// <p>You can view the scheduled actions for an Auto Scaling group using the <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeScheduledActions.html">DescribeScheduledActions</a> API call. If you are no longer using a scheduled action, you can delete it by calling the <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DeleteScheduledAction.html">DeleteScheduledAction</a> API.</p>
 /// <p>If you try to schedule your action in the past, Amazon EC2 Auto Scaling returns an error message.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutScheduledUpdateGroupActionFluentBuilder {

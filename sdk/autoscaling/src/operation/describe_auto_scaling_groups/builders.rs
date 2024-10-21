@@ -24,7 +24,7 @@ impl crate::operation::describe_auto_scaling_groups::builders::DescribeAutoScali
 ///
 /// <p>Gets information about the Auto Scaling groups in the account and Region.</p>
 /// <p>If you specify Auto Scaling group names, the output includes information for only the specified Auto Scaling groups. If you specify filters, the output includes information for only those Auto Scaling groups that meet the filter criteria. If you do not specify group names or filters, the output includes information for all Auto Scaling groups.</p>
-/// <p>This operation also returns information about instances in Auto Scaling groups. To retrieve information about the instances in a warm pool, you must call the <code>DescribeWarmPool</code> API.</p>
+/// <p>This operation also returns information about instances in Auto Scaling groups. To retrieve information about the instances in a warm pool, you must call the <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeWarmPool.html">DescribeWarmPool</a> API.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeAutoScalingGroupsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

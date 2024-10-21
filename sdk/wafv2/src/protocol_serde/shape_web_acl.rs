@@ -95,6 +95,10 @@ where
                         "AssociationConfig" => {
                             builder = builder.set_association_config(crate::protocol_serde::shape_association_config::de_association_config(tokens)?);
                         }
+                        "RetrofittedByFirewallManager" => {
+                            builder = builder
+                                .set_retrofitted_by_firewall_manager(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

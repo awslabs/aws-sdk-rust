@@ -116,17 +116,17 @@ impl CreateClusterFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The unique name to give to your cluster.</p>
+    /// <p>The unique name to give to your cluster. The name can contain only alphanumeric characters (case-sensitive), hyphens, and underscores. It must start with an alphanumeric character and can't be longer than 100 characters. The name must be unique within the Amazon Web Services Region and Amazon Web Services account that you're creating the cluster in.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
-    /// <p>The unique name to give to your cluster.</p>
+    /// <p>The unique name to give to your cluster. The name can contain only alphanumeric characters (case-sensitive), hyphens, and underscores. It must start with an alphanumeric character and can't be longer than 100 characters. The name must be unique within the Amazon Web Services Region and Amazon Web Services account that you're creating the cluster in.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
-    /// <p>The unique name to give to your cluster.</p>
+    /// <p>The unique name to give to your cluster. The name can contain only alphanumeric characters (case-sensitive), hyphens, and underscores. It must start with an alphanumeric character and can't be longer than 100 characters. The name must be unique within the Amazon Web Services Region and Amazon Web Services account that you're creating the cluster in.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
@@ -325,5 +325,25 @@ impl CreateClusterFluentBuilder {
     /// <p>New clusters, by default, have extended support enabled. You can disable extended support when creating a cluster by setting this value to <code>STANDARD</code>.</p>
     pub fn get_upgrade_policy(&self) -> &::std::option::Option<crate::types::UpgradePolicyRequest> {
         self.inner.get_upgrade_policy()
+    }
+    /// <p>Enable or disable ARC zonal shift for the cluster. If zonal shift is enabled, Amazon Web Services configures zonal autoshift for the cluster.</p>
+    /// <p>Zonal shift is a feature of Amazon Application Recovery Controller (ARC). ARC zonal shift is designed to be a temporary measure that allows you to move traffic for a resource away from an impaired AZ until the zonal shift expires or you cancel it. You can extend the zonal shift if necessary.</p>
+    /// <p>You can start a zonal shift for an EKS cluster, or you can allow Amazon Web Services to do it for you by enabling <i>zonal autoshift</i>. This shift updates the flow of east-to-west network traffic in your cluster to only consider network endpoints for Pods running on worker nodes in healthy AZs. Additionally, any ALB or NLB handling ingress traffic for applications in your EKS cluster will automatically route traffic to targets in the healthy AZs. For more information about zonal shift in EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/zone-shift.html">Learn about Amazon Application Recovery Controller (ARC) Zonal Shift in Amazon EKS</a> in the <i> <i>Amazon EKS User Guide</i> </i>.</p>
+    pub fn zonal_shift_config(mut self, input: crate::types::ZonalShiftConfigRequest) -> Self {
+        self.inner = self.inner.zonal_shift_config(input);
+        self
+    }
+    /// <p>Enable or disable ARC zonal shift for the cluster. If zonal shift is enabled, Amazon Web Services configures zonal autoshift for the cluster.</p>
+    /// <p>Zonal shift is a feature of Amazon Application Recovery Controller (ARC). ARC zonal shift is designed to be a temporary measure that allows you to move traffic for a resource away from an impaired AZ until the zonal shift expires or you cancel it. You can extend the zonal shift if necessary.</p>
+    /// <p>You can start a zonal shift for an EKS cluster, or you can allow Amazon Web Services to do it for you by enabling <i>zonal autoshift</i>. This shift updates the flow of east-to-west network traffic in your cluster to only consider network endpoints for Pods running on worker nodes in healthy AZs. Additionally, any ALB or NLB handling ingress traffic for applications in your EKS cluster will automatically route traffic to targets in the healthy AZs. For more information about zonal shift in EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/zone-shift.html">Learn about Amazon Application Recovery Controller (ARC) Zonal Shift in Amazon EKS</a> in the <i> <i>Amazon EKS User Guide</i> </i>.</p>
+    pub fn set_zonal_shift_config(mut self, input: ::std::option::Option<crate::types::ZonalShiftConfigRequest>) -> Self {
+        self.inner = self.inner.set_zonal_shift_config(input);
+        self
+    }
+    /// <p>Enable or disable ARC zonal shift for the cluster. If zonal shift is enabled, Amazon Web Services configures zonal autoshift for the cluster.</p>
+    /// <p>Zonal shift is a feature of Amazon Application Recovery Controller (ARC). ARC zonal shift is designed to be a temporary measure that allows you to move traffic for a resource away from an impaired AZ until the zonal shift expires or you cancel it. You can extend the zonal shift if necessary.</p>
+    /// <p>You can start a zonal shift for an EKS cluster, or you can allow Amazon Web Services to do it for you by enabling <i>zonal autoshift</i>. This shift updates the flow of east-to-west network traffic in your cluster to only consider network endpoints for Pods running on worker nodes in healthy AZs. Additionally, any ALB or NLB handling ingress traffic for applications in your EKS cluster will automatically route traffic to targets in the healthy AZs. For more information about zonal shift in EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/zone-shift.html">Learn about Amazon Application Recovery Controller (ARC) Zonal Shift in Amazon EKS</a> in the <i> <i>Amazon EKS User Guide</i> </i>.</p>
+    pub fn get_zonal_shift_config(&self) -> &::std::option::Option<crate::types::ZonalShiftConfigRequest> {
+        self.inner.get_zonal_shift_config()
     }
 }

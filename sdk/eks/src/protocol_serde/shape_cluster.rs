@@ -128,6 +128,11 @@ where
                             builder =
                                 builder.set_upgrade_policy(crate::protocol_serde::shape_upgrade_policy_response::de_upgrade_policy_response(tokens)?);
                         }
+                        "zonalShiftConfig" => {
+                            builder = builder.set_zonal_shift_config(
+                                crate::protocol_serde::shape_zonal_shift_config_response::de_zonal_shift_config_response(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

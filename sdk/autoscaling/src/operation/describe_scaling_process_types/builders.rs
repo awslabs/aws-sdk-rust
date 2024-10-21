@@ -22,7 +22,7 @@ impl crate::operation::describe_scaling_process_types::builders::DescribeScaling
 }
 /// Fluent builder constructing a request to `DescribeScalingProcessTypes`.
 ///
-/// <p>Describes the scaling process types for use with the <code>ResumeProcesses</code> and <code>SuspendProcesses</code> APIs.</p>
+/// <p>Describes the scaling process types for use with the <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_ResumeProcesses.html">ResumeProcesses</a> and <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_SuspendProcesses.html">SuspendProcesses</a> APIs.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeScalingProcessTypesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -76,5 +76,11 @@ pub fn ser_create_cluster_input_input(
     if let Some(var_25) = &input.version {
         object.key("version").string(var_25.as_str());
     }
+    if let Some(var_26) = &input.zonal_shift_config {
+        #[allow(unused_mut)]
+        let mut object_27 = object.key("zonalShiftConfig").start_object();
+        crate::protocol_serde::shape_zonal_shift_config_request::ser_zonal_shift_config_request(&mut object_27, var_26)?;
+        object_27.finish();
+    }
     Ok(())
 }

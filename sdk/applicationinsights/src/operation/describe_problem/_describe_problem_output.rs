@@ -5,12 +5,18 @@
 pub struct DescribeProblemOutput {
     /// <p>Information about the problem.</p>
     pub problem: ::std::option::Option<crate::types::Problem>,
+    /// <p>The SNS notification topic ARN of the problem.</p>
+    pub sns_notification_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeProblemOutput {
     /// <p>Information about the problem.</p>
     pub fn problem(&self) -> ::std::option::Option<&crate::types::Problem> {
         self.problem.as_ref()
+    }
+    /// <p>The SNS notification topic ARN of the problem.</p>
+    pub fn sns_notification_arn(&self) -> ::std::option::Option<&str> {
+        self.sns_notification_arn.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeProblemOutput {
@@ -30,6 +36,7 @@ impl DescribeProblemOutput {
 #[non_exhaustive]
 pub struct DescribeProblemOutputBuilder {
     pub(crate) problem: ::std::option::Option<crate::types::Problem>,
+    pub(crate) sns_notification_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeProblemOutputBuilder {
@@ -47,6 +54,20 @@ impl DescribeProblemOutputBuilder {
     pub fn get_problem(&self) -> &::std::option::Option<crate::types::Problem> {
         &self.problem
     }
+    /// <p>The SNS notification topic ARN of the problem.</p>
+    pub fn sns_notification_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.sns_notification_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The SNS notification topic ARN of the problem.</p>
+    pub fn set_sns_notification_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.sns_notification_arn = input;
+        self
+    }
+    /// <p>The SNS notification topic ARN of the problem.</p>
+    pub fn get_sns_notification_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sns_notification_arn
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -60,6 +81,7 @@ impl DescribeProblemOutputBuilder {
     pub fn build(self) -> crate::operation::describe_problem::DescribeProblemOutput {
         crate::operation::describe_problem::DescribeProblemOutput {
             problem: self.problem,
+            sns_notification_arn: self.sns_notification_arn,
             _request_id: self._request_id,
         }
     }

@@ -9,7 +9,7 @@ pub struct DescribeWorkloadInput {
     pub component_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the workload.</p>
     pub workload_id: ::std::option::Option<::std::string::String>,
-    /// <p>The AWS account ID for the workload owner.</p>
+    /// <p>The Amazon Web Services account ID for the workload owner.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeWorkloadInput {
@@ -25,7 +25,7 @@ impl DescribeWorkloadInput {
     pub fn workload_id(&self) -> ::std::option::Option<&str> {
         self.workload_id.as_deref()
     }
-    /// <p>The AWS account ID for the workload owner.</p>
+    /// <p>The Amazon Web Services account ID for the workload owner.</p>
     pub fn account_id(&self) -> ::std::option::Option<&str> {
         self.account_id.as_deref()
     }
@@ -92,17 +92,17 @@ impl DescribeWorkloadInputBuilder {
     pub fn get_workload_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.workload_id
     }
-    /// <p>The AWS account ID for the workload owner.</p>
+    /// <p>The Amazon Web Services account ID for the workload owner.</p>
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The AWS account ID for the workload owner.</p>
+    /// <p>The Amazon Web Services account ID for the workload owner.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_id = input;
         self
     }
-    /// <p>The AWS account ID for the workload owner.</p>
+    /// <p>The Amazon Web Services account ID for the workload owner.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.account_id
     }

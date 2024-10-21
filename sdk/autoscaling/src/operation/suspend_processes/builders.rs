@@ -24,7 +24,7 @@ impl crate::operation::suspend_processes::builders::SuspendProcessesInputBuilder
 ///
 /// <p>Suspends the specified auto scaling processes, or all processes, for the specified Auto Scaling group.</p>
 /// <p>If you suspend either the <code>Launch</code> or <code>Terminate</code> process types, it can prevent other process types from functioning properly. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-suspend-resume-processes.html">Suspend and resume Amazon EC2 Auto Scaling processes</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-/// <p>To resume processes that have been suspended, call the <code>ResumeProcesses</code> API.</p>
+/// <p>To resume processes that have been suspended, call the <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_ResumeProcesses.html">ResumeProcesses</a> API.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SuspendProcessesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

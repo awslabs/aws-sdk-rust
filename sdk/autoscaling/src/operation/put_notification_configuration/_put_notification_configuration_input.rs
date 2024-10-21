@@ -7,7 +7,7 @@ pub struct PutNotificationConfigurationInput {
     pub auto_scaling_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic.</p>
     pub topic_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The type of event that causes the notification to be sent. To query the notification types supported by Amazon EC2 Auto Scaling, call the <code>DescribeAutoScalingNotificationTypes</code> API.</p>
+    /// <p>The type of event that causes the notification to be sent. To query the notification types supported by Amazon EC2 Auto Scaling, call the <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeAutoScalingNotificationTypes.html">DescribeAutoScalingNotificationTypes</a> API.</p>
     pub notification_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl PutNotificationConfigurationInput {
@@ -19,7 +19,7 @@ impl PutNotificationConfigurationInput {
     pub fn topic_arn(&self) -> ::std::option::Option<&str> {
         self.topic_arn.as_deref()
     }
-    /// <p>The type of event that causes the notification to be sent. To query the notification types supported by Amazon EC2 Auto Scaling, call the <code>DescribeAutoScalingNotificationTypes</code> API.</p>
+    /// <p>The type of event that causes the notification to be sent. To query the notification types supported by Amazon EC2 Auto Scaling, call the <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeAutoScalingNotificationTypes.html">DescribeAutoScalingNotificationTypes</a> API.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.notification_types.is_none()`.
     pub fn notification_types(&self) -> &[::std::string::String] {
@@ -76,19 +76,19 @@ impl PutNotificationConfigurationInputBuilder {
     ///
     /// To override the contents of this collection use [`set_notification_types`](Self::set_notification_types).
     ///
-    /// <p>The type of event that causes the notification to be sent. To query the notification types supported by Amazon EC2 Auto Scaling, call the <code>DescribeAutoScalingNotificationTypes</code> API.</p>
+    /// <p>The type of event that causes the notification to be sent. To query the notification types supported by Amazon EC2 Auto Scaling, call the <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeAutoScalingNotificationTypes.html">DescribeAutoScalingNotificationTypes</a> API.</p>
     pub fn notification_types(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.notification_types.unwrap_or_default();
         v.push(input.into());
         self.notification_types = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The type of event that causes the notification to be sent. To query the notification types supported by Amazon EC2 Auto Scaling, call the <code>DescribeAutoScalingNotificationTypes</code> API.</p>
+    /// <p>The type of event that causes the notification to be sent. To query the notification types supported by Amazon EC2 Auto Scaling, call the <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeAutoScalingNotificationTypes.html">DescribeAutoScalingNotificationTypes</a> API.</p>
     pub fn set_notification_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.notification_types = input;
         self
     }
-    /// <p>The type of event that causes the notification to be sent. To query the notification types supported by Amazon EC2 Auto Scaling, call the <code>DescribeAutoScalingNotificationTypes</code> API.</p>
+    /// <p>The type of event that causes the notification to be sent. To query the notification types supported by Amazon EC2 Auto Scaling, call the <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeAutoScalingNotificationTypes.html">DescribeAutoScalingNotificationTypes</a> API.</p>
     pub fn get_notification_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.notification_types
     }

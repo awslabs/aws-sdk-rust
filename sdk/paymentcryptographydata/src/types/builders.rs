@@ -65,6 +65,20 @@ pub use crate::types::_visa_pin_verification_value::VisaPinVerificationValueBuil
 
 pub use crate::types::_visa_pin::VisaPinBuilder;
 
+pub use crate::types::_visa_amex_derivation_outputs::VisaAmexDerivationOutputsBuilder;
+
+pub use crate::types::_master_card_attributes::MasterCardAttributesBuilder;
+
+pub use crate::types::_emv2000_attributes::Emv2000AttributesBuilder;
+
+pub use crate::types::_visa_attributes::VisaAttributesBuilder;
+
+pub use crate::types::_current_pin_attributes::CurrentPinAttributesBuilder;
+
+pub use crate::types::_amex_attributes::AmexAttributesBuilder;
+
+pub use crate::types::_emv_common_attributes::EmvCommonAttributesBuilder;
+
 pub use crate::types::_emv_encryption_attributes::EmvEncryptionAttributesBuilder;
 
 pub use crate::types::_asymmetric_encryption_attributes::AsymmetricEncryptionAttributesBuilder;

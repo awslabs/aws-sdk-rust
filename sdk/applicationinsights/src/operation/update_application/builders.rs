@@ -164,6 +164,20 @@ impl UpdateApplicationFluentBuilder {
     pub fn get_ops_item_sns_topic_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_ops_item_sns_topic_arn()
     }
+    /// <p>The SNS topic ARN. Allows you to receive SNS notifications for updates and issues with an application.</p>
+    pub fn sns_notification_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.sns_notification_arn(input.into());
+        self
+    }
+    /// <p>The SNS topic ARN. Allows you to receive SNS notifications for updates and issues with an application.</p>
+    pub fn set_sns_notification_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_sns_notification_arn(input);
+        self
+    }
+    /// <p>The SNS topic ARN. Allows you to receive SNS notifications for updates and issues with an application.</p>
+    pub fn get_sns_notification_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_sns_notification_arn()
+    }
     /// <p>Disassociates the SNS topic from the opsItem created for detected problems.</p>
     pub fn remove_sns_topic(mut self, input: bool) -> Self {
         self.inner = self.inner.remove_sns_topic(input);

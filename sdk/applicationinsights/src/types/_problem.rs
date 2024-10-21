@@ -8,6 +8,8 @@ pub struct Problem {
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the problem.</p>
     pub title: ::std::option::Option<::std::string::String>,
+    /// <p>The short name of the problem associated with the SNS notification.</p>
+    pub short_name: ::std::option::Option<::std::string::String>,
     /// <p>A detailed analysis of the problem using machine learning.</p>
     pub insights: ::std::option::Option<::std::string::String>,
     /// <p>The status of the problem.</p>
@@ -20,7 +22,7 @@ pub struct Problem {
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A measure of the level of impact of the problem.</p>
     pub severity_level: ::std::option::Option<crate::types::SeverityLevel>,
-    /// <p>The AWS account ID for the owner of the resource group affected by the problem.</p>
+    /// <p>The Amazon Web Services account ID for the owner of the resource group affected by the problem.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the resource group affected by the problem.</p>
     pub resource_group_name: ::std::option::Option<::std::string::String>,
@@ -43,6 +45,10 @@ impl Problem {
     /// <p>The name of the problem.</p>
     pub fn title(&self) -> ::std::option::Option<&str> {
         self.title.as_deref()
+    }
+    /// <p>The short name of the problem associated with the SNS notification.</p>
+    pub fn short_name(&self) -> ::std::option::Option<&str> {
+        self.short_name.as_deref()
     }
     /// <p>A detailed analysis of the problem using machine learning.</p>
     pub fn insights(&self) -> ::std::option::Option<&str> {
@@ -68,7 +74,7 @@ impl Problem {
     pub fn severity_level(&self) -> ::std::option::Option<&crate::types::SeverityLevel> {
         self.severity_level.as_ref()
     }
-    /// <p>The AWS account ID for the owner of the resource group affected by the problem.</p>
+    /// <p>The Amazon Web Services account ID for the owner of the resource group affected by the problem.</p>
     pub fn account_id(&self) -> ::std::option::Option<&str> {
         self.account_id.as_deref()
     }
@@ -110,6 +116,7 @@ impl Problem {
 pub struct ProblemBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) title: ::std::option::Option<::std::string::String>,
+    pub(crate) short_name: ::std::option::Option<::std::string::String>,
     pub(crate) insights: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::Status>,
     pub(crate) affected_resource: ::std::option::Option<::std::string::String>,
@@ -152,6 +159,20 @@ impl ProblemBuilder {
     /// <p>The name of the problem.</p>
     pub fn get_title(&self) -> &::std::option::Option<::std::string::String> {
         &self.title
+    }
+    /// <p>The short name of the problem associated with the SNS notification.</p>
+    pub fn short_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.short_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The short name of the problem associated with the SNS notification.</p>
+    pub fn set_short_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.short_name = input;
+        self
+    }
+    /// <p>The short name of the problem associated with the SNS notification.</p>
+    pub fn get_short_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.short_name
     }
     /// <p>A detailed analysis of the problem using machine learning.</p>
     pub fn insights(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -237,17 +258,17 @@ impl ProblemBuilder {
     pub fn get_severity_level(&self) -> &::std::option::Option<crate::types::SeverityLevel> {
         &self.severity_level
     }
-    /// <p>The AWS account ID for the owner of the resource group affected by the problem.</p>
+    /// <p>The Amazon Web Services account ID for the owner of the resource group affected by the problem.</p>
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The AWS account ID for the owner of the resource group affected by the problem.</p>
+    /// <p>The Amazon Web Services account ID for the owner of the resource group affected by the problem.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_id = input;
         self
     }
-    /// <p>The AWS account ID for the owner of the resource group affected by the problem.</p>
+    /// <p>The Amazon Web Services account ID for the owner of the resource group affected by the problem.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.account_id
     }
@@ -349,6 +370,7 @@ impl ProblemBuilder {
         crate::types::Problem {
             id: self.id,
             title: self.title,
+            short_name: self.short_name,
             insights: self.insights,
             status: self.status,
             affected_resource: self.affected_resource,

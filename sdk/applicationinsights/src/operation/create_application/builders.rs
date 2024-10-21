@@ -164,6 +164,20 @@ impl CreateApplicationFluentBuilder {
     pub fn get_ops_item_sns_topic_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_ops_item_sns_topic_arn()
     }
+    /// <p>The SNS notification topic ARN.</p>
+    pub fn sns_notification_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.sns_notification_arn(input.into());
+        self
+    }
+    /// <p>The SNS notification topic ARN.</p>
+    pub fn set_sns_notification_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_sns_notification_arn(input);
+        self
+    }
+    /// <p>The SNS notification topic ARN.</p>
+    pub fn get_sns_notification_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_sns_notification_arn()
+    }
     ///
     /// Appends an item to `Tags`.
     ///

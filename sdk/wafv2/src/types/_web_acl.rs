@@ -27,7 +27,7 @@ pub struct WebAcl {
     /// <p>The last set of rules for WAF to process in the web ACL. This is defined in an Firewall Manager WAF policy and contains only rule group references. You can't alter these. Any rules and rule groups that you define for the web ACL are prioritized before these.</p>
     /// <p>In the Firewall Manager WAF policy, the Firewall Manager administrator can define a set of rule groups to run first in the web ACL and a set of rule groups to run last. Within each set, the administrator prioritizes the rule groups, to determine their relative processing order.</p>
     pub post_process_firewall_manager_rule_groups: ::std::option::Option<::std::vec::Vec<crate::types::FirewallManagerRuleGroup>>,
-    /// <p>Indicates whether this web ACL is managed by Firewall Manager. If true, then only Firewall Manager can delete the web ACL or any Firewall Manager rule groups in the web ACL.</p>
+    /// <p>Indicates whether this web ACL was created by Firewall Manager and is being managed by Firewall Manager. If true, then only Firewall Manager can delete the web ACL or any Firewall Manager rule groups in the web ACL. See also the properties <code>RetrofittedByFirewallManager</code>, <code>PreProcessFirewallManagerRuleGroups</code>, and <code>PostProcessFirewallManagerRuleGroups</code>.</p>
     pub managed_by_firewall_manager: bool,
     /// <p>The label namespace prefix for this web ACL. All labels added by rules in this web ACL have this prefix.</p>
     /// <ul>
@@ -60,6 +60,8 @@ pub struct WebAcl {
     /// </note>
     /// <p>For Application Load Balancer and AppSync, the limit is fixed at 8 KB (8,192 bytes).</p>
     pub association_config: ::std::option::Option<crate::types::AssociationConfig>,
+    /// <p>Indicates whether this web ACL was created by a customer account and then retrofitted by Firewall Manager. If true, then the web ACL is currently being managed by a Firewall Manager WAF policy, and only Firewall Manager can manage any Firewall Manager rule groups in the web ACL. See also the properties <code>ManagedByFirewallManager</code>, <code>PreProcessFirewallManagerRuleGroups</code>, and <code>PostProcessFirewallManagerRuleGroups</code>.</p>
+    pub retrofitted_by_firewall_manager: bool,
 }
 impl WebAcl {
     /// <p>The name of the web ACL. You cannot change the name of a web ACL after you create it.</p>
@@ -114,7 +116,7 @@ impl WebAcl {
     pub fn post_process_firewall_manager_rule_groups(&self) -> &[crate::types::FirewallManagerRuleGroup] {
         self.post_process_firewall_manager_rule_groups.as_deref().unwrap_or_default()
     }
-    /// <p>Indicates whether this web ACL is managed by Firewall Manager. If true, then only Firewall Manager can delete the web ACL or any Firewall Manager rule groups in the web ACL.</p>
+    /// <p>Indicates whether this web ACL was created by Firewall Manager and is being managed by Firewall Manager. If true, then only Firewall Manager can delete the web ACL or any Firewall Manager rule groups in the web ACL. See also the properties <code>RetrofittedByFirewallManager</code>, <code>PreProcessFirewallManagerRuleGroups</code>, and <code>PostProcessFirewallManagerRuleGroups</code>.</p>
     pub fn managed_by_firewall_manager(&self) -> bool {
         self.managed_by_firewall_manager
     }
@@ -165,6 +167,10 @@ impl WebAcl {
     pub fn association_config(&self) -> ::std::option::Option<&crate::types::AssociationConfig> {
         self.association_config.as_ref()
     }
+    /// <p>Indicates whether this web ACL was created by a customer account and then retrofitted by Firewall Manager. If true, then the web ACL is currently being managed by a Firewall Manager WAF policy, and only Firewall Manager can manage any Firewall Manager rule groups in the web ACL. See also the properties <code>ManagedByFirewallManager</code>, <code>PreProcessFirewallManagerRuleGroups</code>, and <code>PostProcessFirewallManagerRuleGroups</code>.</p>
+    pub fn retrofitted_by_firewall_manager(&self) -> bool {
+        self.retrofitted_by_firewall_manager
+    }
 }
 impl WebAcl {
     /// Creates a new builder-style object to manufacture [`WebAcl`](crate::types::WebAcl).
@@ -194,6 +200,7 @@ pub struct WebAclBuilder {
     pub(crate) challenge_config: ::std::option::Option<crate::types::ChallengeConfig>,
     pub(crate) token_domains: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) association_config: ::std::option::Option<crate::types::AssociationConfig>,
+    pub(crate) retrofitted_by_firewall_manager: ::std::option::Option<bool>,
 }
 impl WebAclBuilder {
     /// <p>The name of the web ACL. You cannot change the name of a web ACL after you create it.</p>
@@ -374,17 +381,17 @@ impl WebAclBuilder {
     pub fn get_post_process_firewall_manager_rule_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FirewallManagerRuleGroup>> {
         &self.post_process_firewall_manager_rule_groups
     }
-    /// <p>Indicates whether this web ACL is managed by Firewall Manager. If true, then only Firewall Manager can delete the web ACL or any Firewall Manager rule groups in the web ACL.</p>
+    /// <p>Indicates whether this web ACL was created by Firewall Manager and is being managed by Firewall Manager. If true, then only Firewall Manager can delete the web ACL or any Firewall Manager rule groups in the web ACL. See also the properties <code>RetrofittedByFirewallManager</code>, <code>PreProcessFirewallManagerRuleGroups</code>, and <code>PostProcessFirewallManagerRuleGroups</code>.</p>
     pub fn managed_by_firewall_manager(mut self, input: bool) -> Self {
         self.managed_by_firewall_manager = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates whether this web ACL is managed by Firewall Manager. If true, then only Firewall Manager can delete the web ACL or any Firewall Manager rule groups in the web ACL.</p>
+    /// <p>Indicates whether this web ACL was created by Firewall Manager and is being managed by Firewall Manager. If true, then only Firewall Manager can delete the web ACL or any Firewall Manager rule groups in the web ACL. See also the properties <code>RetrofittedByFirewallManager</code>, <code>PreProcessFirewallManagerRuleGroups</code>, and <code>PostProcessFirewallManagerRuleGroups</code>.</p>
     pub fn set_managed_by_firewall_manager(mut self, input: ::std::option::Option<bool>) -> Self {
         self.managed_by_firewall_manager = input;
         self
     }
-    /// <p>Indicates whether this web ACL is managed by Firewall Manager. If true, then only Firewall Manager can delete the web ACL or any Firewall Manager rule groups in the web ACL.</p>
+    /// <p>Indicates whether this web ACL was created by Firewall Manager and is being managed by Firewall Manager. If true, then only Firewall Manager can delete the web ACL or any Firewall Manager rule groups in the web ACL. See also the properties <code>RetrofittedByFirewallManager</code>, <code>PreProcessFirewallManagerRuleGroups</code>, and <code>PostProcessFirewallManagerRuleGroups</code>.</p>
     pub fn get_managed_by_firewall_manager(&self) -> &::std::option::Option<bool> {
         &self.managed_by_firewall_manager
     }
@@ -546,6 +553,20 @@ impl WebAclBuilder {
     pub fn get_association_config(&self) -> &::std::option::Option<crate::types::AssociationConfig> {
         &self.association_config
     }
+    /// <p>Indicates whether this web ACL was created by a customer account and then retrofitted by Firewall Manager. If true, then the web ACL is currently being managed by a Firewall Manager WAF policy, and only Firewall Manager can manage any Firewall Manager rule groups in the web ACL. See also the properties <code>ManagedByFirewallManager</code>, <code>PreProcessFirewallManagerRuleGroups</code>, and <code>PostProcessFirewallManagerRuleGroups</code>.</p>
+    pub fn retrofitted_by_firewall_manager(mut self, input: bool) -> Self {
+        self.retrofitted_by_firewall_manager = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether this web ACL was created by a customer account and then retrofitted by Firewall Manager. If true, then the web ACL is currently being managed by a Firewall Manager WAF policy, and only Firewall Manager can manage any Firewall Manager rule groups in the web ACL. See also the properties <code>ManagedByFirewallManager</code>, <code>PreProcessFirewallManagerRuleGroups</code>, and <code>PostProcessFirewallManagerRuleGroups</code>.</p>
+    pub fn set_retrofitted_by_firewall_manager(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.retrofitted_by_firewall_manager = input;
+        self
+    }
+    /// <p>Indicates whether this web ACL was created by a customer account and then retrofitted by Firewall Manager. If true, then the web ACL is currently being managed by a Firewall Manager WAF policy, and only Firewall Manager can manage any Firewall Manager rule groups in the web ACL. See also the properties <code>ManagedByFirewallManager</code>, <code>PreProcessFirewallManagerRuleGroups</code>, and <code>PostProcessFirewallManagerRuleGroups</code>.</p>
+    pub fn get_retrofitted_by_firewall_manager(&self) -> &::std::option::Option<bool> {
+        &self.retrofitted_by_firewall_manager
+    }
     /// Consumes the builder and constructs a [`WebAcl`](crate::types::WebAcl).
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::WebAclBuilder::name)
@@ -582,6 +603,7 @@ impl WebAclBuilder {
             challenge_config: self.challenge_config,
             token_domains: self.token_domains,
             association_config: self.association_config,
+            retrofitted_by_firewall_manager: self.retrofitted_by_firewall_manager.unwrap_or_default(),
         })
     }
 }

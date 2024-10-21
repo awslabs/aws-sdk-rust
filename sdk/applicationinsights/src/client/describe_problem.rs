@@ -4,9 +4,10 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`problem_id(impl Into<String>)`](crate::operation::describe_problem::builders::DescribeProblemFluentBuilder::problem_id) / [`set_problem_id(Option<String>)`](crate::operation::describe_problem::builders::DescribeProblemFluentBuilder::set_problem_id):<br>required: **true**<br><p>The ID of the problem.</p><br>
-    ///   - [`account_id(impl Into<String>)`](crate::operation::describe_problem::builders::DescribeProblemFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::describe_problem::builders::DescribeProblemFluentBuilder::set_account_id):<br>required: **false**<br><p>The AWS account ID for the owner of the resource group affected by the problem.</p><br>
+    ///   - [`account_id(impl Into<String>)`](crate::operation::describe_problem::builders::DescribeProblemFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::describe_problem::builders::DescribeProblemFluentBuilder::set_account_id):<br>required: **false**<br><p>The Amazon Web Services account ID for the owner of the resource group affected by the problem.</p><br>
     /// - On success, responds with [`DescribeProblemOutput`](crate::operation::describe_problem::DescribeProblemOutput) with field(s):
     ///   - [`problem(Option<Problem>)`](crate::operation::describe_problem::DescribeProblemOutput::problem): <p>Information about the problem.</p>
+    ///   - [`sns_notification_arn(Option<String>)`](crate::operation::describe_problem::DescribeProblemOutput::sns_notification_arn): <p>The SNS notification topic ARN of the problem.</p>
     /// - On failure, responds with [`SdkError<DescribeProblemError>`](crate::operation::describe_problem::DescribeProblemError)
     pub fn describe_problem(&self) -> crate::operation::describe_problem::builders::DescribeProblemFluentBuilder {
         crate::operation::describe_problem::builders::DescribeProblemFluentBuilder::new(self.handle.clone())

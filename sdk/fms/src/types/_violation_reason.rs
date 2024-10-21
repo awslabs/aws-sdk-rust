@@ -40,6 +40,7 @@
 ///     ViolationReason::TrafficInspectionCrossesAzBoundary => { /* ... */ },
 ///     ViolationReason::UnexpectedFirewallRoutes => { /* ... */ },
 ///     ViolationReason::UnexpectedTargetGatewayRoutes => { /* ... */ },
+///     ViolationReason::WebAclConfigurationOrScopeOfUse => { /* ... */ },
 ///     ViolationReason::WebAclMissingRuleGroup => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -125,6 +126,8 @@ pub enum ViolationReason {
     #[allow(missing_docs)] // documentation missing in model
     UnexpectedTargetGatewayRoutes,
     #[allow(missing_docs)] // documentation missing in model
+    WebAclConfigurationOrScopeOfUse,
+    #[allow(missing_docs)] // documentation missing in model
     WebAclMissingRuleGroup,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -161,6 +164,7 @@ impl ::std::convert::From<&str> for ViolationReason {
             "TRAFFIC_INSPECTION_CROSSES_AZ_BOUNDARY" => ViolationReason::TrafficInspectionCrossesAzBoundary,
             "UNEXPECTED_FIREWALL_ROUTES" => ViolationReason::UnexpectedFirewallRoutes,
             "UNEXPECTED_TARGET_GATEWAY_ROUTES" => ViolationReason::UnexpectedTargetGatewayRoutes,
+            "WEB_ACL_CONFIGURATION_OR_SCOPE_OF_USE" => ViolationReason::WebAclConfigurationOrScopeOfUse,
             "WEB_ACL_MISSING_RULE_GROUP" => ViolationReason::WebAclMissingRuleGroup,
             other => ViolationReason::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -205,6 +209,7 @@ impl ViolationReason {
             ViolationReason::TrafficInspectionCrossesAzBoundary => "TRAFFIC_INSPECTION_CROSSES_AZ_BOUNDARY",
             ViolationReason::UnexpectedFirewallRoutes => "UNEXPECTED_FIREWALL_ROUTES",
             ViolationReason::UnexpectedTargetGatewayRoutes => "UNEXPECTED_TARGET_GATEWAY_ROUTES",
+            ViolationReason::WebAclConfigurationOrScopeOfUse => "WEB_ACL_CONFIGURATION_OR_SCOPE_OF_USE",
             ViolationReason::WebAclMissingRuleGroup => "WEB_ACL_MISSING_RULE_GROUP",
             ViolationReason::Unknown(value) => value.as_str(),
         }
@@ -240,6 +245,7 @@ impl ViolationReason {
             "TRAFFIC_INSPECTION_CROSSES_AZ_BOUNDARY",
             "UNEXPECTED_FIREWALL_ROUTES",
             "UNEXPECTED_TARGET_GATEWAY_ROUTES",
+            "WEB_ACL_CONFIGURATION_OR_SCOPE_OF_USE",
             "WEB_ACL_MISSING_RULE_GROUP",
         ]
     }
@@ -292,6 +298,7 @@ impl ::std::fmt::Display for ViolationReason {
             ViolationReason::TrafficInspectionCrossesAzBoundary => write!(f, "TRAFFIC_INSPECTION_CROSSES_AZ_BOUNDARY"),
             ViolationReason::UnexpectedFirewallRoutes => write!(f, "UNEXPECTED_FIREWALL_ROUTES"),
             ViolationReason::UnexpectedTargetGatewayRoutes => write!(f, "UNEXPECTED_TARGET_GATEWAY_ROUTES"),
+            ViolationReason::WebAclConfigurationOrScopeOfUse => write!(f, "WEB_ACL_CONFIGURATION_OR_SCOPE_OF_USE"),
             ViolationReason::WebAclMissingRuleGroup => write!(f, "WEB_ACL_MISSING_RULE_GROUP"),
             ViolationReason::Unknown(value) => write!(f, "{}", value),
         }

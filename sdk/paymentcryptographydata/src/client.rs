@@ -171,6 +171,8 @@ mod generate_card_validation_data;
 
 mod generate_mac;
 
+mod generate_mac_emv_pin_change;
+
 mod generate_pin_data;
 
 mod re_encrypt_data;

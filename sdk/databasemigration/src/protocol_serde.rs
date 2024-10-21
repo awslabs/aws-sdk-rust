@@ -705,6 +705,8 @@ pub(crate) mod shape_batch_start_recommendations_error_entry;
 
 pub(crate) mod shape_collector_response;
 
+pub(crate) mod shape_data_migration_cidr_block;
+
 pub(crate) mod shape_data_migration_settings;
 
 pub(crate) mod shape_data_migration_statistics;
@@ -770,6 +772,8 @@ pub(crate) mod shape_replication_stats;
 pub(crate) mod shape_replication_task_assessment_result;
 
 pub(crate) mod shape_replication_task_assessment_run_progress;
+
+pub(crate) mod shape_replication_task_assessment_run_result_statistic;
 
 pub(crate) mod shape_replication_task_individual_assessment;
 

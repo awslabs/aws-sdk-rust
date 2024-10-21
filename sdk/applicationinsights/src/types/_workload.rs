@@ -14,6 +14,8 @@ pub struct Workload {
     pub tier: ::std::option::Option<crate::types::Tier>,
     /// <p>If logging is supported for the resource type, shows whether the component has configured logs to be monitored.</p>
     pub workload_remarks: ::std::option::Option<::std::string::String>,
+    /// <p>Indicates whether all of the component configurations required to monitor a workload were provided.</p>
+    pub missing_workload_config: ::std::option::Option<bool>,
 }
 impl Workload {
     /// <p>The ID of the workload.</p>
@@ -36,6 +38,10 @@ impl Workload {
     pub fn workload_remarks(&self) -> ::std::option::Option<&str> {
         self.workload_remarks.as_deref()
     }
+    /// <p>Indicates whether all of the component configurations required to monitor a workload were provided.</p>
+    pub fn missing_workload_config(&self) -> ::std::option::Option<bool> {
+        self.missing_workload_config
+    }
 }
 impl Workload {
     /// Creates a new builder-style object to manufacture [`Workload`](crate::types::Workload).
@@ -53,6 +59,7 @@ pub struct WorkloadBuilder {
     pub(crate) workload_name: ::std::option::Option<::std::string::String>,
     pub(crate) tier: ::std::option::Option<crate::types::Tier>,
     pub(crate) workload_remarks: ::std::option::Option<::std::string::String>,
+    pub(crate) missing_workload_config: ::std::option::Option<bool>,
 }
 impl WorkloadBuilder {
     /// <p>The ID of the workload.</p>
@@ -125,6 +132,20 @@ impl WorkloadBuilder {
     pub fn get_workload_remarks(&self) -> &::std::option::Option<::std::string::String> {
         &self.workload_remarks
     }
+    /// <p>Indicates whether all of the component configurations required to monitor a workload were provided.</p>
+    pub fn missing_workload_config(mut self, input: bool) -> Self {
+        self.missing_workload_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether all of the component configurations required to monitor a workload were provided.</p>
+    pub fn set_missing_workload_config(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.missing_workload_config = input;
+        self
+    }
+    /// <p>Indicates whether all of the component configurations required to monitor a workload were provided.</p>
+    pub fn get_missing_workload_config(&self) -> &::std::option::Option<bool> {
+        &self.missing_workload_config
+    }
     /// Consumes the builder and constructs a [`Workload`](crate::types::Workload).
     pub fn build(self) -> crate::types::Workload {
         crate::types::Workload {
@@ -133,6 +154,7 @@ impl WorkloadBuilder {
             workload_name: self.workload_name,
             tier: self.tier,
             workload_remarks: self.workload_remarks,
+            missing_workload_config: self.missing_workload_config,
         }
     }
 }

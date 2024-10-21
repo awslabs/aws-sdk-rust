@@ -7,7 +7,7 @@ pub struct DescribeComponentConfigurationInput {
     pub resource_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the component.</p>
     pub component_name: ::std::option::Option<::std::string::String>,
-    /// <p>The AWS account ID for the resource group owner.</p>
+    /// <p>The Amazon Web Services account ID for the resource group owner.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeComponentConfigurationInput {
@@ -19,7 +19,7 @@ impl DescribeComponentConfigurationInput {
     pub fn component_name(&self) -> ::std::option::Option<&str> {
         self.component_name.as_deref()
     }
-    /// <p>The AWS account ID for the resource group owner.</p>
+    /// <p>The Amazon Web Services account ID for the resource group owner.</p>
     pub fn account_id(&self) -> ::std::option::Option<&str> {
         self.account_id.as_deref()
     }
@@ -70,17 +70,17 @@ impl DescribeComponentConfigurationInputBuilder {
     pub fn get_component_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.component_name
     }
-    /// <p>The AWS account ID for the resource group owner.</p>
+    /// <p>The Amazon Web Services account ID for the resource group owner.</p>
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The AWS account ID for the resource group owner.</p>
+    /// <p>The Amazon Web Services account ID for the resource group owner.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_id = input;
         self
     }
-    /// <p>The AWS account ID for the resource group owner.</p>
+    /// <p>The Amazon Web Services account ID for the resource group owner.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.account_id
     }

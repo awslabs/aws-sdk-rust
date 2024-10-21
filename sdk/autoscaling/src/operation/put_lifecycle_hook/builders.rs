@@ -35,13 +35,13 @@ impl crate::operation::put_lifecycle_hook::builders::PutLifecycleHookInputBuilde
 /// <li>
 /// <p><b>Create the lifecycle hook. Specify whether the hook is used when the instances launch or terminate.</b></p></li>
 /// <li>
-/// <p>If you need more time, record the lifecycle action heartbeat to keep the instance in a wait state using the <code>RecordLifecycleActionHeartbeat</code> API call.</p></li>
+/// <p>If you need more time, record the lifecycle action heartbeat to keep the instance in a wait state using the <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_RecordLifecycleActionHeartbeat.html">RecordLifecycleActionHeartbeat</a> API call.</p></li>
 /// <li>
-/// <p>If you finish before the timeout period ends, send a callback by using the <code>CompleteLifecycleAction</code> API call.</p></li>
+/// <p>If you finish before the timeout period ends, send a callback by using the <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_CompleteLifecycleAction.html">CompleteLifecycleAction</a> API call.</p></li>
 /// </ol>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/lifecycle-hooks.html">Amazon EC2 Auto Scaling lifecycle hooks</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
 /// <p>If you exceed your maximum limit of lifecycle hooks, which by default is 50 per Auto Scaling group, the call fails.</p>
-/// <p>You can view the lifecycle hooks for an Auto Scaling group using the <code>DescribeLifecycleHooks</code> API call. If you are no longer using a lifecycle hook, you can delete it by calling the <code>DeleteLifecycleHook</code> API.</p>
+/// <p>You can view the lifecycle hooks for an Auto Scaling group using the <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeLifecycleHooks.html">DescribeLifecycleHooks</a> API call. If you are no longer using a lifecycle hook, you can delete it by calling the <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DeleteLifecycleHook.html">DeleteLifecycleHook</a> API.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutLifecycleHookFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

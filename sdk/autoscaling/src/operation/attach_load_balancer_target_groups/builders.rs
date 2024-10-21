@@ -23,7 +23,7 @@ impl crate::operation::attach_load_balancer_target_groups::builders::AttachLoadB
 /// Fluent builder constructing a request to `AttachLoadBalancerTargetGroups`.
 ///
 /// <note>
-/// <p>This API operation is superseded by <code>AttachTrafficSources</code>, which can attach multiple traffic sources types. We recommend using <code>AttachTrafficSources</code> to simplify how you manage traffic sources. However, we continue to support <code>AttachLoadBalancerTargetGroups</code>. You can use both the original <code>AttachLoadBalancerTargetGroups</code> API operation and <code>AttachTrafficSources</code> on the same Auto Scaling group.</p>
+/// <p>This API operation is superseded by <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_AttachTrafficSources.html">AttachTrafficSources</a>, which can attach multiple traffic sources types. We recommend using <code>AttachTrafficSources</code> to simplify how you manage traffic sources. However, we continue to support <code>AttachLoadBalancerTargetGroups</code>. You can use both the original <code>AttachLoadBalancerTargetGroups</code> API operation and <code>AttachTrafficSources</code> on the same Auto Scaling group.</p>
 /// </note>
 /// <p>Attaches one or more target groups to the specified Auto Scaling group.</p>
 /// <p>This operation is used with the following load balancer types:</p>
@@ -35,7 +35,7 @@ impl crate::operation::attach_load_balancer_target_groups::builders::AttachLoadB
 /// <li>
 /// <p>Gateway Load Balancer - Operates at the network layer (layer 3).</p></li>
 /// </ul>
-/// <p>To describe the target groups for an Auto Scaling group, call the <code>DescribeLoadBalancerTargetGroups</code> API. To detach the target group from the Auto Scaling group, call the <code>DetachLoadBalancerTargetGroups</code> API.</p>
+/// <p>To describe the target groups for an Auto Scaling group, call the <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeLoadBalancerTargetGroups.html">DescribeLoadBalancerTargetGroups</a> API. To detach the target group from the Auto Scaling group, call the <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DetachLoadBalancerTargetGroups.html">DetachLoadBalancerTargetGroups</a> API.</p>
 /// <p>This operation is additive and does not detach existing target groups or Classic Load Balancers from the Auto Scaling group.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html">Use Elastic Load Balancing to distribute traffic across the instances in your Auto Scaling group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

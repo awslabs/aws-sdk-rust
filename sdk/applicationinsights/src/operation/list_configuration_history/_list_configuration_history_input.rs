@@ -15,7 +15,7 @@ pub struct ListConfigurationHistoryInput {
     pub max_results: ::std::option::Option<i32>,
     /// <p>The <code>NextToken</code> value returned from a previous paginated <code>ListConfigurationHistory</code> request where <code>MaxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>NextToken</code> value. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
-    /// <p>The AWS account ID for the resource group owner.</p>
+    /// <p>The Amazon Web Services account ID for the resource group owner.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
 }
 impl ListConfigurationHistoryInput {
@@ -43,7 +43,7 @@ impl ListConfigurationHistoryInput {
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The AWS account ID for the resource group owner.</p>
+    /// <p>The Amazon Web Services account ID for the resource group owner.</p>
     pub fn account_id(&self) -> ::std::option::Option<&str> {
         self.account_id.as_deref()
     }
@@ -152,17 +152,17 @@ impl ListConfigurationHistoryInputBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
-    /// <p>The AWS account ID for the resource group owner.</p>
+    /// <p>The Amazon Web Services account ID for the resource group owner.</p>
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The AWS account ID for the resource group owner.</p>
+    /// <p>The Amazon Web Services account ID for the resource group owner.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_id = input;
         self
     }
-    /// <p>The AWS account ID for the resource group owner.</p>
+    /// <p>The Amazon Web Services account ID for the resource group owner.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.account_id
     }

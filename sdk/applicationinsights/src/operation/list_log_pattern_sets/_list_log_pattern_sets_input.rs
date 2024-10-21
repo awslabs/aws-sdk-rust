@@ -9,7 +9,7 @@ pub struct ListLogPatternSetsInput {
     pub max_results: ::std::option::Option<i32>,
     /// <p>The token to request the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
-    /// <p>The AWS account ID for the resource group owner.</p>
+    /// <p>The Amazon Web Services account ID for the resource group owner.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
 }
 impl ListLogPatternSetsInput {
@@ -25,7 +25,7 @@ impl ListLogPatternSetsInput {
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The AWS account ID for the resource group owner.</p>
+    /// <p>The Amazon Web Services account ID for the resource group owner.</p>
     pub fn account_id(&self) -> ::std::option::Option<&str> {
         self.account_id.as_deref()
     }
@@ -90,17 +90,17 @@ impl ListLogPatternSetsInputBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
-    /// <p>The AWS account ID for the resource group owner.</p>
+    /// <p>The Amazon Web Services account ID for the resource group owner.</p>
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The AWS account ID for the resource group owner.</p>
+    /// <p>The Amazon Web Services account ID for the resource group owner.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_id = input;
         self
     }
-    /// <p>The AWS account ID for the resource group owner.</p>
+    /// <p>The Amazon Web Services account ID for the resource group owner.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.account_id
     }

@@ -140,17 +140,17 @@ impl AssociateCapacityReservationBillingOwnerFluentBuilder {
     pub fn get_capacity_reservation_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_capacity_reservation_id()
     }
-    /// <p>The ID of the consumer account to which assign billing.</p>
+    /// <p>The ID of the consumer account to which to assign billing.</p>
     pub fn unused_reservation_billing_owner_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.unused_reservation_billing_owner_id(input.into());
         self
     }
-    /// <p>The ID of the consumer account to which assign billing.</p>
+    /// <p>The ID of the consumer account to which to assign billing.</p>
     pub fn set_unused_reservation_billing_owner_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_unused_reservation_billing_owner_id(input);
         self
     }
-    /// <p>The ID of the consumer account to which assign billing.</p>
+    /// <p>The ID of the consumer account to which to assign billing.</p>
     pub fn get_unused_reservation_billing_owner_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_unused_reservation_billing_owner_id()
     }

@@ -21,7 +21,11 @@ pub use crate::types::_data_migration_settings::DataMigrationSettingsBuilder;
 
 pub use crate::types::_replication_task_assessment_run::ReplicationTaskAssessmentRunBuilder;
 
+pub use crate::types::_replication_task_assessment_run_result_statistic::ReplicationTaskAssessmentRunResultStatisticBuilder;
+
 pub use crate::types::_replication_task_assessment_run_progress::ReplicationTaskAssessmentRunProgressBuilder;
+
+pub use crate::types::_tag::TagBuilder;
 
 pub use crate::types::_recommendation_settings::RecommendationSettingsBuilder;
 
@@ -114,8 +118,6 @@ pub use crate::types::_my_sql_data_provider_settings::MySqlDataProviderSettingsB
 pub use crate::types::_postgre_sql_data_provider_settings::PostgreSqlDataProviderSettingsBuilder;
 
 pub use crate::types::_redshift_data_provider_settings::RedshiftDataProviderSettingsBuilder;
-
-pub use crate::types::_tag::TagBuilder;
 
 pub use crate::types::_certificate::CertificateBuilder;
 

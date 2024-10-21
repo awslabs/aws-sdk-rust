@@ -23,7 +23,7 @@ impl crate::operation::delete_web_acl::builders::DeleteWebAclInputBuilder {
 /// Fluent builder constructing a request to `DeleteWebACL`.
 ///
 /// <p>Deletes the specified <code>WebACL</code>.</p>
-/// <p>You can only use this if <code>ManagedByFirewallManager</code> is false in the specified <code>WebACL</code>.</p><note>
+/// <p>You can only use this if <code>ManagedByFirewallManager</code> is false in the web ACL.</p><note>
 /// <p>Before deleting any web ACL, first disassociate it from all resources.</p>
 /// <ul>
 /// <li>

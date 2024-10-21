@@ -52,6 +52,10 @@ pub struct ReplicationTaskAssessmentRun {
     pub result_kms_key_arn: ::std::option::Option<::std::string::String>,
     /// <p>Unique name of the assessment run.</p>
     pub assessment_run_name: ::std::option::Option<::std::string::String>,
+    /// <p>Indicates that the following PreflightAssessmentRun is the latest for the ReplicationTask. The status is either true or false.</p>
+    pub is_latest_task_assessment_run: bool,
+    /// <p>Result statistics for a completed assessment run, showing aggregated statistics of IndividualAssessments for how many assessments were passed, failed, or encountered issues such as errors or warnings.</p>
+    pub result_statistic: ::std::option::Option<crate::types::ReplicationTaskAssessmentRunResultStatistic>,
 }
 impl ReplicationTaskAssessmentRun {
     /// <p>Amazon Resource Name (ARN) of this assessment run.</p>
@@ -125,6 +129,14 @@ impl ReplicationTaskAssessmentRun {
     pub fn assessment_run_name(&self) -> ::std::option::Option<&str> {
         self.assessment_run_name.as_deref()
     }
+    /// <p>Indicates that the following PreflightAssessmentRun is the latest for the ReplicationTask. The status is either true or false.</p>
+    pub fn is_latest_task_assessment_run(&self) -> bool {
+        self.is_latest_task_assessment_run
+    }
+    /// <p>Result statistics for a completed assessment run, showing aggregated statistics of IndividualAssessments for how many assessments were passed, failed, or encountered issues such as errors or warnings.</p>
+    pub fn result_statistic(&self) -> ::std::option::Option<&crate::types::ReplicationTaskAssessmentRunResultStatistic> {
+        self.result_statistic.as_ref()
+    }
 }
 impl ReplicationTaskAssessmentRun {
     /// Creates a new builder-style object to manufacture [`ReplicationTaskAssessmentRun`](crate::types::ReplicationTaskAssessmentRun).
@@ -149,6 +161,8 @@ pub struct ReplicationTaskAssessmentRunBuilder {
     pub(crate) result_encryption_mode: ::std::option::Option<::std::string::String>,
     pub(crate) result_kms_key_arn: ::std::option::Option<::std::string::String>,
     pub(crate) assessment_run_name: ::std::option::Option<::std::string::String>,
+    pub(crate) is_latest_task_assessment_run: ::std::option::Option<bool>,
+    pub(crate) result_statistic: ::std::option::Option<crate::types::ReplicationTaskAssessmentRunResultStatistic>,
 }
 impl ReplicationTaskAssessmentRunBuilder {
     /// <p>Amazon Resource Name (ARN) of this assessment run.</p>
@@ -388,6 +402,34 @@ impl ReplicationTaskAssessmentRunBuilder {
     pub fn get_assessment_run_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.assessment_run_name
     }
+    /// <p>Indicates that the following PreflightAssessmentRun is the latest for the ReplicationTask. The status is either true or false.</p>
+    pub fn is_latest_task_assessment_run(mut self, input: bool) -> Self {
+        self.is_latest_task_assessment_run = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates that the following PreflightAssessmentRun is the latest for the ReplicationTask. The status is either true or false.</p>
+    pub fn set_is_latest_task_assessment_run(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.is_latest_task_assessment_run = input;
+        self
+    }
+    /// <p>Indicates that the following PreflightAssessmentRun is the latest for the ReplicationTask. The status is either true or false.</p>
+    pub fn get_is_latest_task_assessment_run(&self) -> &::std::option::Option<bool> {
+        &self.is_latest_task_assessment_run
+    }
+    /// <p>Result statistics for a completed assessment run, showing aggregated statistics of IndividualAssessments for how many assessments were passed, failed, or encountered issues such as errors or warnings.</p>
+    pub fn result_statistic(mut self, input: crate::types::ReplicationTaskAssessmentRunResultStatistic) -> Self {
+        self.result_statistic = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Result statistics for a completed assessment run, showing aggregated statistics of IndividualAssessments for how many assessments were passed, failed, or encountered issues such as errors or warnings.</p>
+    pub fn set_result_statistic(mut self, input: ::std::option::Option<crate::types::ReplicationTaskAssessmentRunResultStatistic>) -> Self {
+        self.result_statistic = input;
+        self
+    }
+    /// <p>Result statistics for a completed assessment run, showing aggregated statistics of IndividualAssessments for how many assessments were passed, failed, or encountered issues such as errors or warnings.</p>
+    pub fn get_result_statistic(&self) -> &::std::option::Option<crate::types::ReplicationTaskAssessmentRunResultStatistic> {
+        &self.result_statistic
+    }
     /// Consumes the builder and constructs a [`ReplicationTaskAssessmentRun`](crate::types::ReplicationTaskAssessmentRun).
     pub fn build(self) -> crate::types::ReplicationTaskAssessmentRun {
         crate::types::ReplicationTaskAssessmentRun {
@@ -403,6 +445,8 @@ impl ReplicationTaskAssessmentRunBuilder {
             result_encryption_mode: self.result_encryption_mode,
             result_kms_key_arn: self.result_kms_key_arn,
             assessment_run_name: self.assessment_run_name,
+            is_latest_task_assessment_run: self.is_latest_task_assessment_run.unwrap_or_default(),
+            result_statistic: self.result_statistic,
         }
     }
 }

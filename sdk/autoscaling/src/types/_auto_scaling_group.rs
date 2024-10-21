@@ -46,7 +46,7 @@ pub struct AutoScalingGroup {
     pub vpc_zone_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The metrics enabled for the group.</p>
     pub enabled_metrics: ::std::option::Option<::std::vec::Vec<crate::types::EnabledMetric>>,
-    /// <p>The current state of the group when the <code>DeleteAutoScalingGroup</code> operation is in progress.</p>
+    /// <p>The current state of the group when the <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DeleteAutoScalingGroup.html">DeleteAutoScalingGroup</a> operation is in progress.</p>
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>The tags for the group.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::TagDescription>>,
@@ -173,7 +173,7 @@ impl AutoScalingGroup {
     pub fn enabled_metrics(&self) -> &[crate::types::EnabledMetric] {
         self.enabled_metrics.as_deref().unwrap_or_default()
     }
-    /// <p>The current state of the group when the <code>DeleteAutoScalingGroup</code> operation is in progress.</p>
+    /// <p>The current state of the group when the <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DeleteAutoScalingGroup.html">DeleteAutoScalingGroup</a> operation is in progress.</p>
     pub fn status(&self) -> ::std::option::Option<&str> {
         self.status.as_deref()
     }
@@ -622,17 +622,17 @@ impl AutoScalingGroupBuilder {
     pub fn get_enabled_metrics(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EnabledMetric>> {
         &self.enabled_metrics
     }
-    /// <p>The current state of the group when the <code>DeleteAutoScalingGroup</code> operation is in progress.</p>
+    /// <p>The current state of the group when the <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DeleteAutoScalingGroup.html">DeleteAutoScalingGroup</a> operation is in progress.</p>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The current state of the group when the <code>DeleteAutoScalingGroup</code> operation is in progress.</p>
+    /// <p>The current state of the group when the <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DeleteAutoScalingGroup.html">DeleteAutoScalingGroup</a> operation is in progress.</p>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
     }
-    /// <p>The current state of the group when the <code>DeleteAutoScalingGroup</code> operation is in progress.</p>
+    /// <p>The current state of the group when the <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DeleteAutoScalingGroup.html">DeleteAutoScalingGroup</a> operation is in progress.</p>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.status
     }

@@ -41,6 +41,7 @@
 ///     UpdateParamType::TaintsToRemove => { /* ... */ },
 ///     UpdateParamType::UpgradePolicy => { /* ... */ },
 ///     UpdateParamType::Version => { /* ... */ },
+///     UpdateParamType::ZonalShiftConfig => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -126,6 +127,8 @@ pub enum UpdateParamType {
     UpgradePolicy,
     #[allow(missing_docs)] // documentation missing in model
     Version,
+    #[allow(missing_docs)] // documentation missing in model
+    ZonalShiftConfig,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -162,6 +165,7 @@ impl ::std::convert::From<&str> for UpdateParamType {
             "TaintsToRemove" => UpdateParamType::TaintsToRemove,
             "UpgradePolicy" => UpdateParamType::UpgradePolicy,
             "Version" => UpdateParamType::Version,
+            "ZonalShiftConfig" => UpdateParamType::ZonalShiftConfig,
             other => UpdateParamType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -206,6 +210,7 @@ impl UpdateParamType {
             UpdateParamType::TaintsToRemove => "TaintsToRemove",
             UpdateParamType::UpgradePolicy => "UpgradePolicy",
             UpdateParamType::Version => "Version",
+            UpdateParamType::ZonalShiftConfig => "ZonalShiftConfig",
             UpdateParamType::Unknown(value) => value.as_str(),
         }
     }
@@ -241,6 +246,7 @@ impl UpdateParamType {
             "TaintsToRemove",
             "UpgradePolicy",
             "Version",
+            "ZonalShiftConfig",
         ]
     }
 }
@@ -293,6 +299,7 @@ impl ::std::fmt::Display for UpdateParamType {
             UpdateParamType::TaintsToRemove => write!(f, "TaintsToRemove"),
             UpdateParamType::UpgradePolicy => write!(f, "UpgradePolicy"),
             UpdateParamType::Version => write!(f, "Version"),
+            UpdateParamType::ZonalShiftConfig => write!(f, "ZonalShiftConfig"),
             UpdateParamType::Unknown(value) => write!(f, "{}", value),
         }
     }

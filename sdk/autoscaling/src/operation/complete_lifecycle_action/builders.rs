@@ -36,7 +36,7 @@ impl crate::operation::complete_lifecycle_action::builders::CompleteLifecycleAct
 /// <li>
 /// <p>If you need more time, record the lifecycle action heartbeat to keep the instance in a wait state.</p></li>
 /// <li>
-/// <p><b>If you finish before the timeout period ends, send a callback by using the <code>CompleteLifecycleAction</code> API call.</b></p></li>
+/// <p><b>If you finish before the timeout period ends, send a callback by using the <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_CompleteLifecycleAction.html">CompleteLifecycleAction</a> API call.</b></p></li>
 /// </ol>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/completing-lifecycle-hooks.html">Complete a lifecycle action</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

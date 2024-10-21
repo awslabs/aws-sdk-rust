@@ -9,7 +9,7 @@ pub struct ListProblemsOutput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The name of the resource group.</p>
     pub resource_group_name: ::std::option::Option<::std::string::String>,
-    /// <p>The AWS account ID for the resource group owner.</p>
+    /// <p>The Amazon Web Services account ID for the resource group owner.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -28,7 +28,7 @@ impl ListProblemsOutput {
     pub fn resource_group_name(&self) -> ::std::option::Option<&str> {
         self.resource_group_name.as_deref()
     }
-    /// <p>The AWS account ID for the resource group owner.</p>
+    /// <p>The Amazon Web Services account ID for the resource group owner.</p>
     pub fn account_id(&self) -> ::std::option::Option<&str> {
         self.account_id.as_deref()
     }
@@ -104,17 +104,17 @@ impl ListProblemsOutputBuilder {
     pub fn get_resource_group_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_group_name
     }
-    /// <p>The AWS account ID for the resource group owner.</p>
+    /// <p>The Amazon Web Services account ID for the resource group owner.</p>
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The AWS account ID for the resource group owner.</p>
+    /// <p>The Amazon Web Services account ID for the resource group owner.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_id = input;
         self
     }
-    /// <p>The AWS account ID for the resource group owner.</p>
+    /// <p>The Amazon Web Services account ID for the resource group owner.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.account_id
     }

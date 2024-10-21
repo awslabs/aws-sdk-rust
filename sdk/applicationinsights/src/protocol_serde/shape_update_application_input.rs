@@ -15,14 +15,17 @@ pub fn ser_update_application_input_input(
     if let Some(var_4) = &input.ops_item_sns_topic_arn {
         object.key("OpsItemSNSTopicArn").string(var_4.as_str());
     }
-    if let Some(var_5) = &input.remove_sns_topic {
-        object.key("RemoveSNSTopic").boolean(*var_5);
+    if let Some(var_5) = &input.sns_notification_arn {
+        object.key("SNSNotificationArn").string(var_5.as_str());
     }
-    if let Some(var_6) = &input.auto_config_enabled {
-        object.key("AutoConfigEnabled").boolean(*var_6);
+    if let Some(var_6) = &input.remove_sns_topic {
+        object.key("RemoveSNSTopic").boolean(*var_6);
     }
-    if let Some(var_7) = &input.attach_missing_permission {
-        object.key("AttachMissingPermission").boolean(*var_7);
+    if let Some(var_7) = &input.auto_config_enabled {
+        object.key("AutoConfigEnabled").boolean(*var_7);
+    }
+    if let Some(var_8) = &input.attach_missing_permission {
+        object.key("AttachMissingPermission").boolean(*var_8);
     }
     Ok(())
 }

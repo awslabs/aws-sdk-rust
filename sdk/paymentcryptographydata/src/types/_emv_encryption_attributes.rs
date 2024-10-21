@@ -8,7 +8,7 @@ pub struct EmvEncryptionAttributes {
     pub major_key_derivation_mode: crate::types::EmvMajorKeyDerivationMode,
     /// <p>The Primary Account Number (PAN), a unique identifier for a payment credit or debit card and associates the card to a specific account holder.</p>
     pub primary_account_number: ::std::string::String,
-    /// <p>A number that identifies and differentiates payment cards with the same Primary Account Number (PAN).</p>
+    /// <p>A number that identifies and differentiates payment cards with the same Primary Account Number (PAN). Typically 00 is used, if no value is provided by the terminal.</p>
     pub pan_sequence_number: ::std::string::String,
     /// <p>The derivation value used to derive the ICC session key. It is typically the application transaction counter value padded with zeros or previous ARQC value padded with zeros as per EMV version 4.3 book 2.</p>
     pub session_derivation_data: ::std::string::String,
@@ -27,7 +27,7 @@ impl EmvEncryptionAttributes {
         use std::ops::Deref;
         self.primary_account_number.deref()
     }
-    /// <p>A number that identifies and differentiates payment cards with the same Primary Account Number (PAN).</p>
+    /// <p>A number that identifies and differentiates payment cards with the same Primary Account Number (PAN). Typically 00 is used, if no value is provided by the terminal.</p>
     pub fn pan_sequence_number(&self) -> &str {
         use std::ops::Deref;
         self.pan_sequence_number.deref()
@@ -107,18 +107,18 @@ impl EmvEncryptionAttributesBuilder {
     pub fn get_primary_account_number(&self) -> &::std::option::Option<::std::string::String> {
         &self.primary_account_number
     }
-    /// <p>A number that identifies and differentiates payment cards with the same Primary Account Number (PAN).</p>
+    /// <p>A number that identifies and differentiates payment cards with the same Primary Account Number (PAN). Typically 00 is used, if no value is provided by the terminal.</p>
     /// This field is required.
     pub fn pan_sequence_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pan_sequence_number = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A number that identifies and differentiates payment cards with the same Primary Account Number (PAN).</p>
+    /// <p>A number that identifies and differentiates payment cards with the same Primary Account Number (PAN). Typically 00 is used, if no value is provided by the terminal.</p>
     pub fn set_pan_sequence_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pan_sequence_number = input;
         self
     }
-    /// <p>A number that identifies and differentiates payment cards with the same Primary Account Number (PAN).</p>
+    /// <p>A number that identifies and differentiates payment cards with the same Primary Account Number (PAN). Typically 00 is used, if no value is provided by the terminal.</p>
     pub fn get_pan_sequence_number(&self) -> &::std::option::Option<::std::string::String> {
         &self.pan_sequence_number
     }

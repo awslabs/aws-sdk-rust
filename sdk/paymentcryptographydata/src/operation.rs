@@ -13,6 +13,9 @@ pub mod generate_card_validation_data;
 /// Types for the `GenerateMac` operation.
 pub mod generate_mac;
 
+/// Types for the `GenerateMacEmvPinChange` operation.
+pub mod generate_mac_emv_pin_change;
+
 /// Types for the `GeneratePinData` operation.
 pub mod generate_pin_data;
 

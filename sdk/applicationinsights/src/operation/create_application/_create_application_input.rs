@@ -11,6 +11,8 @@ pub struct CreateApplicationInput {
     pub cwe_monitor_enabled: ::std::option::Option<bool>,
     /// <p>The SNS topic provided to Application Insights that is associated to the created opsItem. Allows you to receive notifications for updates to the opsItem.</p>
     pub ops_item_sns_topic_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The SNS notification topic ARN.</p>
+    pub sns_notification_arn: ::std::option::Option<::std::string::String>,
     /// <p>List of tags to add to the application. tag key (<code>Key</code>) and an associated tag value (<code>Value</code>). The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>Indicates whether Application Insights automatically configures unmonitored resources in the resource group.</p>
@@ -38,6 +40,10 @@ impl CreateApplicationInput {
     /// <p>The SNS topic provided to Application Insights that is associated to the created opsItem. Allows you to receive notifications for updates to the opsItem.</p>
     pub fn ops_item_sns_topic_arn(&self) -> ::std::option::Option<&str> {
         self.ops_item_sns_topic_arn.as_deref()
+    }
+    /// <p>The SNS notification topic ARN.</p>
+    pub fn sns_notification_arn(&self) -> ::std::option::Option<&str> {
+        self.sns_notification_arn.as_deref()
     }
     /// <p>List of tags to add to the application. tag key (<code>Key</code>) and an associated tag value (<code>Value</code>). The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
     ///
@@ -77,6 +83,7 @@ pub struct CreateApplicationInputBuilder {
     pub(crate) ops_center_enabled: ::std::option::Option<bool>,
     pub(crate) cwe_monitor_enabled: ::std::option::Option<bool>,
     pub(crate) ops_item_sns_topic_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) sns_notification_arn: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) auto_config_enabled: ::std::option::Option<bool>,
     pub(crate) auto_create: ::std::option::Option<bool>,
@@ -139,6 +146,20 @@ impl CreateApplicationInputBuilder {
     /// <p>The SNS topic provided to Application Insights that is associated to the created opsItem. Allows you to receive notifications for updates to the opsItem.</p>
     pub fn get_ops_item_sns_topic_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.ops_item_sns_topic_arn
+    }
+    /// <p>The SNS notification topic ARN.</p>
+    pub fn sns_notification_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.sns_notification_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The SNS notification topic ARN.</p>
+    pub fn set_sns_notification_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.sns_notification_arn = input;
+        self
+    }
+    /// <p>The SNS notification topic ARN.</p>
+    pub fn get_sns_notification_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sns_notification_arn
     }
     /// Appends an item to `tags`.
     ///
@@ -225,6 +246,7 @@ impl CreateApplicationInputBuilder {
             ops_center_enabled: self.ops_center_enabled,
             cwe_monitor_enabled: self.cwe_monitor_enabled,
             ops_item_sns_topic_arn: self.ops_item_sns_topic_arn,
+            sns_notification_arn: self.sns_notification_arn,
             tags: self.tags,
             auto_config_enabled: self.auto_config_enabled,
             auto_create: self.auto_create,

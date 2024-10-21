@@ -8,7 +8,7 @@ pub struct OrchestrationModelInvocationOutput {
     pub trace_id: ::std::option::Option<::std::string::String>,
     /// <p>Contains details of the raw response from the foundation model output.</p>
     pub raw_response: ::std::option::Option<crate::types::RawResponse>,
-    /// <p>Contains information about the foundation model output.</p>
+    /// <p>Contains information about the foundation model output from the orchestration step.</p>
     pub metadata: ::std::option::Option<crate::types::Metadata>,
 }
 impl OrchestrationModelInvocationOutput {
@@ -20,7 +20,7 @@ impl OrchestrationModelInvocationOutput {
     pub fn raw_response(&self) -> ::std::option::Option<&crate::types::RawResponse> {
         self.raw_response.as_ref()
     }
-    /// <p>Contains information about the foundation model output.</p>
+    /// <p>Contains information about the foundation model output from the orchestration step.</p>
     pub fn metadata(&self) -> ::std::option::Option<&crate::types::Metadata> {
         self.metadata.as_ref()
     }
@@ -78,17 +78,17 @@ impl OrchestrationModelInvocationOutputBuilder {
     pub fn get_raw_response(&self) -> &::std::option::Option<crate::types::RawResponse> {
         &self.raw_response
     }
-    /// <p>Contains information about the foundation model output.</p>
+    /// <p>Contains information about the foundation model output from the orchestration step.</p>
     pub fn metadata(mut self, input: crate::types::Metadata) -> Self {
         self.metadata = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Contains information about the foundation model output.</p>
+    /// <p>Contains information about the foundation model output from the orchestration step.</p>
     pub fn set_metadata(mut self, input: ::std::option::Option<crate::types::Metadata>) -> Self {
         self.metadata = input;
         self
     }
-    /// <p>Contains information about the foundation model output.</p>
+    /// <p>Contains information about the foundation model output from the orchestration step.</p>
     pub fn get_metadata(&self) -> &::std::option::Option<crate::types::Metadata> {
         &self.metadata
     }

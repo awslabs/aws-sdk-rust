@@ -281,4 +281,23 @@ impl StartReplicationTaskAssessmentRunFluentBuilder {
     pub fn get_exclude(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_exclude()
     }
+    ///
+    /// Appends an item to `Tags`.
+    ///
+    /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+    ///
+    /// <p>One or more tags to be assigned to the premigration assessment run that you want to start.</p>
+    pub fn tags(mut self, input: crate::types::Tag) -> Self {
+        self.inner = self.inner.tags(input);
+        self
+    }
+    /// <p>One or more tags to be assigned to the premigration assessment run that you want to start.</p>
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.inner = self.inner.set_tags(input);
+        self
+    }
+    /// <p>One or more tags to be assigned to the premigration assessment run that you want to start.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
+    }
 }

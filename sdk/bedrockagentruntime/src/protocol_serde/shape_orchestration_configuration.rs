@@ -3,11 +3,33 @@ pub fn ser_orchestration_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::OrchestrationConfiguration,
 ) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.query_transformation_configuration {
+    if let Some(var_1) = &input.prompt_template {
         #[allow(unused_mut)]
-        let mut object_2 = object.key("queryTransformationConfiguration").start_object();
-        crate::protocol_serde::shape_query_transformation_configuration::ser_query_transformation_configuration(&mut object_2, var_1)?;
+        let mut object_2 = object.key("promptTemplate").start_object();
+        crate::protocol_serde::shape_prompt_template::ser_prompt_template(&mut object_2, var_1)?;
         object_2.finish();
+    }
+    if let Some(var_3) = &input.inference_config {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("inferenceConfig").start_object();
+        crate::protocol_serde::shape_inference_config::ser_inference_config(&mut object_4, var_3)?;
+        object_4.finish();
+    }
+    if let Some(var_5) = &input.additional_model_request_fields {
+        #[allow(unused_mut)]
+        let mut object_6 = object.key("additionalModelRequestFields").start_object();
+        for (key_7, value_8) in var_5 {
+            {
+                object_6.key(key_7.as_str()).document(value_8);
+            }
+        }
+        object_6.finish();
+    }
+    if let Some(var_9) = &input.query_transformation_configuration {
+        #[allow(unused_mut)]
+        let mut object_10 = object.key("queryTransformationConfiguration").start_object();
+        crate::protocol_serde::shape_query_transformation_configuration::ser_query_transformation_configuration(&mut object_10, var_9)?;
+        object_10.finish();
     }
     Ok(())
 }

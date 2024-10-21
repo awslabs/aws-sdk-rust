@@ -42,6 +42,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "SNSNotificationArn" => {
+                            builder = builder.set_sns_notification_arn(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "OpsCenterEnabled" => {
                             builder = builder.set_ops_center_enabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }

@@ -22,7 +22,7 @@ impl crate::operation::record_lifecycle_action_heartbeat::builders::RecordLifecy
 }
 /// Fluent builder constructing a request to `RecordLifecycleActionHeartbeat`.
 ///
-/// <p>Records a heartbeat for the lifecycle action associated with the specified token or instance. This extends the timeout by the length of time defined using the <code>PutLifecycleHook</code> API call.</p>
+/// <p>Records a heartbeat for the lifecycle action associated with the specified token or instance. This extends the timeout by the length of time defined using the <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_PutLifecycleHook.html">PutLifecycleHook</a> API call.</p>
 /// <p>This step is a part of the procedure for adding a lifecycle hook to an Auto Scaling group:</p>
 /// <ol>
 /// <li>
@@ -36,7 +36,7 @@ impl crate::operation::record_lifecycle_action_heartbeat::builders::RecordLifecy
 /// <li>
 /// <p><b>If you need more time, record the lifecycle action heartbeat to keep the instance in a wait state.</b></p></li>
 /// <li>
-/// <p>If you finish before the timeout period ends, send a callback by using the <code>CompleteLifecycleAction</code> API call.</p></li>
+/// <p>If you finish before the timeout period ends, send a callback by using the <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_CompleteLifecycleAction.html">CompleteLifecycleAction</a> API call.</p></li>
 /// </ol>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/lifecycle-hooks.html">Amazon EC2 Auto Scaling lifecycle hooks</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

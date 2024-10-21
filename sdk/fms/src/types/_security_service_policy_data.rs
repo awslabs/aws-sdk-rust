@@ -42,7 +42,7 @@ pub struct SecurityServicePolicyData {
     /// <p>To use the distributed deployment model, you must set <a href="https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_PolicyOption.html">PolicyOption</a> to <code>NULL</code>.</p></li>
     /// <li>
     /// <p>Example: <code>SECURITY_GROUPS_COMMON</code></p>
-    /// <p><code>"{\"type\":\"SECURITY_GROUPS_COMMON\",\"revertManualSecurityGroupChanges\":false,\"exclusiveResourceSecurityGroupManagement\":false, \"applyToAllEC2InstanceENIs\":false,\"securityGroups\":\[{\"id\":\" sg-000e55995d61a06bd\"}\]}"</code></p></li>
+    /// <p><code>"{\"type\":\"SECURITY_GROUPS_COMMON\",\"securityGroups\":\[{\"id\":\"sg-03b1f67d69ed00197\"}\],\"revertManualSecurityGroupChanges\":true,\"exclusiveResourceSecurityGroupManagement\":true,\"applyToAllEC2InstanceENIs\":false,\"includeSharedVPC\":true,\"enableSecurityGroupReferencesDistribution\":true}"</code></p></li>
     /// <li>
     /// <p>Example: <code>SECURITY_GROUPS_COMMON</code> - Security group tag distribution</p>
     /// <p><code>""{\"type\":\"SECURITY_GROUPS_COMMON\",\"securityGroups\":\[{\"id\":\"sg-000e55995d61a06bd\"}\],\"revertManualSecurityGroupChanges\":true,\"exclusiveResourceSecurityGroupManagement\":false,\"applyToAllEC2InstanceENIs\":false,\"includeSharedVPC\":false,\"enableTagDistribution\":true}""</code></p>
@@ -53,11 +53,11 @@ pub struct SecurityServicePolicyData {
     /// <p><code>"{\"type\":\"SECURITY_GROUPS_COMMON\",\"revertManualSecurityGroupChanges\":false,\"exclusiveResourceSecurityGroupManagement\":false, \"applyToAllEC2InstanceENIs\":false,\"includeSharedVPC\":true,\"securityGroups\":\[{\"id\":\" sg-000e55995d61a06bd\"}\]}"</code></p></li>
     /// <li>
     /// <p>Example: <code>SECURITY_GROUPS_CONTENT_AUDIT</code></p>
-    /// <p><code>"{\"type\":\"SECURITY_GROUPS_CONTENT_AUDIT\",\"securityGroups\":\[{\"id\":\"sg-000e55995d61a06bd\"}\],\"securityGroupAction\":{\"type\":\"ALLOW\"}}"</code></p>
+    /// <p><code>"{\"type\":\"SECURITY_GROUPS_CONTENT_AUDIT\",\"preManagedOptions\":\[{\"denyProtocolAllValue\":true},{\"auditSgDirection\":{\"type\":\"ALL\"}}\],\"securityGroups\":\[{\"id\":\"sg-049b2393a25468971\"}\],\"securityGroupAction\":{\"type\":\"ALLOW\"}}"</code></p>
     /// <p>The security group action for content audit can be <code>ALLOW</code> or <code>DENY</code>. For <code>ALLOW</code>, all in-scope security group rules must be within the allowed range of the policy's security group rules. For <code>DENY</code>, all in-scope security group rules must not contain a value or a range that matches a rule value or range in the policy security group.</p></li>
     /// <li>
     /// <p>Example: <code>SECURITY_GROUPS_USAGE_AUDIT</code></p>
-    /// <p><code>"{\"type\":\"SECURITY_GROUPS_USAGE_AUDIT\",\"deleteUnusedSecurityGroups\":true,\"coalesceRedundantSecurityGroups\":true}"</code></p></li>
+    /// <p><code>"{\"type\":\"SECURITY_GROUPS_USAGE_AUDIT\",\"deleteUnusedSecurityGroups\":true,\"coalesceRedundantSecurityGroups\":true,\"optionalDelayForUnusedInMinutes\":60}"</code></p></li>
     /// <li>
     /// <p>Example: <code>SHIELD_ADVANCED</code> with web ACL management</p>
     /// <p><code>"{\"type\":\"SHIELD_ADVANCED\",\"optimizeUnassociatedWebACL\":true}"</code></p>
@@ -100,7 +100,7 @@ pub struct SecurityServicePolicyData {
     /// </ul></li>
     /// <li>
     /// <p>Example: <code>WAFV2</code> - Firewall Manager support for WAF managed rule group versioning</p>
-    /// <p><code>"{\"type\":\"WAFV2\",\"preProcessRuleGroups\":\[{\"ruleGroupArn\":null,\"overrideAction\":{\"type\":\"NONE\"},\"managedRuleGroupIdentifier\":{\"versionEnabled\":true,\"version\":\"Version_2.0\",\"vendorName\":\"AWS\",\"managedRuleGroupName\":\"AWSManagedRulesCommonRuleSet\"},\"ruleGroupType\":\"ManagedRuleGroup\",\"excludeRules\":\[{\"name\":\"NoUserAgent_HEADER\"}\]}\],\"postProcessRuleGroups\":\[\],\"defaultAction\":{\"type\":\"ALLOW\"},\"overrideCustomerWebACLAssociation\":false,\"loggingConfiguration\":{\"logDestinationConfigs\":\[\"arn:aws:firehose:us-west-2:12345678912:deliverystream/aws-waf-logs-fms-admin-destination\"\],\"redactedFields\":\[{\"redactedFieldType\":\"SingleHeader\",\"redactedFieldValue\":\"Cookies\"},{\"redactedFieldType\":\"Method\"}\]}}"</code></p>
+    /// <p><code>"{\"preProcessRuleGroups\":\[{\"ruleGroupType\":\"ManagedRuleGroup\",\"overrideAction\":{\"type\":\"NONE\"},\"sampledRequestsEnabled\":true,\"managedRuleGroupIdentifier\":{\"managedRuleGroupName\":\"AWSManagedRulesAdminProtectionRuleSet\",\"vendorName\":\"AWS\",\"managedRuleGroupConfigs\":null}}\],\"postProcessRuleGroups\":\[\],\"defaultAction\":{\"type\":\"ALLOW\"},\"customRequestHandling\":null,\"tokenDomains\":null,\"customResponse\":null,\"type\":\"WAFV2\",\"overrideCustomerWebACLAssociation\":false,\"sampledRequestsEnabledForDefaultActions\":true,\"optimizeUnassociatedWebACL\":true,\"webACLSource\":\"RETROFIT_EXISTING\"}"</code></p>
     /// <p>To use a specific version of a WAF managed rule group in your Firewall Manager policy, you must set <code>versionEnabled</code> to <code>true</code>, and set <code>version</code> to the version you'd like to use. If you don't set <code>versionEnabled</code> to <code>true</code>, or if you omit <code>versionEnabled</code>, then Firewall Manager uses the default version of the WAF managed rule group.</p></li>
     /// <li>
     /// <p>Example: <code>WAFV2</code> - Logging configurations</p>
@@ -109,7 +109,7 @@ pub struct SecurityServicePolicyData {
     /// <p>In the <code>loggingConfiguration</code>, you can specify one <code>logDestinationConfigs</code>. Optionally provide as many as 20 <code>redactedFields</code>. The <code>RedactedFieldType</code> must be one of <code>URI</code>, <code>QUERY_STRING</code>, <code>HEADER</code>, or <code>METHOD</code>.</p></li>
     /// <li>
     /// <p>Example: <code>WAF Classic</code></p>
-    /// <p><code>"{\"type\": \"WAF\", \"ruleGroups\": \[{\"id\":\"12345678-1bcd-9012-efga-0987654321ab\", \"overrideAction\" : {\"type\": \"COUNT\"}}\], \"defaultAction\": {\"type\": \"BLOCK\"}}"</code></p></li>
+    /// <p><code>"{\"ruleGroups\":\[{\"id\":\"78cb36c0-1b5e-4d7d-82b2-cf48d3ad9659\",\"overrideAction\":{\"type\":\"NONE\"}}\],\"overrideCustomerWebACLAssociation\":true,\"defaultAction\":{\"type\":\"ALLOW\"},\"type\":\"WAF\"}"</code></p></li>
     /// </ul>
     pub managed_service_data: ::std::option::Option<::std::string::String>,
     /// <p>Contains the settings to configure a network ACL policy, a Network Firewall firewall policy deployment model, or a third-party firewall policy.</p>
@@ -156,7 +156,7 @@ impl SecurityServicePolicyData {
     /// <p>To use the distributed deployment model, you must set <a href="https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_PolicyOption.html">PolicyOption</a> to <code>NULL</code>.</p></li>
     /// <li>
     /// <p>Example: <code>SECURITY_GROUPS_COMMON</code></p>
-    /// <p><code>"{\"type\":\"SECURITY_GROUPS_COMMON\",\"revertManualSecurityGroupChanges\":false,\"exclusiveResourceSecurityGroupManagement\":false, \"applyToAllEC2InstanceENIs\":false,\"securityGroups\":\[{\"id\":\" sg-000e55995d61a06bd\"}\]}"</code></p></li>
+    /// <p><code>"{\"type\":\"SECURITY_GROUPS_COMMON\",\"securityGroups\":\[{\"id\":\"sg-03b1f67d69ed00197\"}\],\"revertManualSecurityGroupChanges\":true,\"exclusiveResourceSecurityGroupManagement\":true,\"applyToAllEC2InstanceENIs\":false,\"includeSharedVPC\":true,\"enableSecurityGroupReferencesDistribution\":true}"</code></p></li>
     /// <li>
     /// <p>Example: <code>SECURITY_GROUPS_COMMON</code> - Security group tag distribution</p>
     /// <p><code>""{\"type\":\"SECURITY_GROUPS_COMMON\",\"securityGroups\":\[{\"id\":\"sg-000e55995d61a06bd\"}\],\"revertManualSecurityGroupChanges\":true,\"exclusiveResourceSecurityGroupManagement\":false,\"applyToAllEC2InstanceENIs\":false,\"includeSharedVPC\":false,\"enableTagDistribution\":true}""</code></p>
@@ -167,11 +167,11 @@ impl SecurityServicePolicyData {
     /// <p><code>"{\"type\":\"SECURITY_GROUPS_COMMON\",\"revertManualSecurityGroupChanges\":false,\"exclusiveResourceSecurityGroupManagement\":false, \"applyToAllEC2InstanceENIs\":false,\"includeSharedVPC\":true,\"securityGroups\":\[{\"id\":\" sg-000e55995d61a06bd\"}\]}"</code></p></li>
     /// <li>
     /// <p>Example: <code>SECURITY_GROUPS_CONTENT_AUDIT</code></p>
-    /// <p><code>"{\"type\":\"SECURITY_GROUPS_CONTENT_AUDIT\",\"securityGroups\":\[{\"id\":\"sg-000e55995d61a06bd\"}\],\"securityGroupAction\":{\"type\":\"ALLOW\"}}"</code></p>
+    /// <p><code>"{\"type\":\"SECURITY_GROUPS_CONTENT_AUDIT\",\"preManagedOptions\":\[{\"denyProtocolAllValue\":true},{\"auditSgDirection\":{\"type\":\"ALL\"}}\],\"securityGroups\":\[{\"id\":\"sg-049b2393a25468971\"}\],\"securityGroupAction\":{\"type\":\"ALLOW\"}}"</code></p>
     /// <p>The security group action for content audit can be <code>ALLOW</code> or <code>DENY</code>. For <code>ALLOW</code>, all in-scope security group rules must be within the allowed range of the policy's security group rules. For <code>DENY</code>, all in-scope security group rules must not contain a value or a range that matches a rule value or range in the policy security group.</p></li>
     /// <li>
     /// <p>Example: <code>SECURITY_GROUPS_USAGE_AUDIT</code></p>
-    /// <p><code>"{\"type\":\"SECURITY_GROUPS_USAGE_AUDIT\",\"deleteUnusedSecurityGroups\":true,\"coalesceRedundantSecurityGroups\":true}"</code></p></li>
+    /// <p><code>"{\"type\":\"SECURITY_GROUPS_USAGE_AUDIT\",\"deleteUnusedSecurityGroups\":true,\"coalesceRedundantSecurityGroups\":true,\"optionalDelayForUnusedInMinutes\":60}"</code></p></li>
     /// <li>
     /// <p>Example: <code>SHIELD_ADVANCED</code> with web ACL management</p>
     /// <p><code>"{\"type\":\"SHIELD_ADVANCED\",\"optimizeUnassociatedWebACL\":true}"</code></p>
@@ -214,7 +214,7 @@ impl SecurityServicePolicyData {
     /// </ul></li>
     /// <li>
     /// <p>Example: <code>WAFV2</code> - Firewall Manager support for WAF managed rule group versioning</p>
-    /// <p><code>"{\"type\":\"WAFV2\",\"preProcessRuleGroups\":\[{\"ruleGroupArn\":null,\"overrideAction\":{\"type\":\"NONE\"},\"managedRuleGroupIdentifier\":{\"versionEnabled\":true,\"version\":\"Version_2.0\",\"vendorName\":\"AWS\",\"managedRuleGroupName\":\"AWSManagedRulesCommonRuleSet\"},\"ruleGroupType\":\"ManagedRuleGroup\",\"excludeRules\":\[{\"name\":\"NoUserAgent_HEADER\"}\]}\],\"postProcessRuleGroups\":\[\],\"defaultAction\":{\"type\":\"ALLOW\"},\"overrideCustomerWebACLAssociation\":false,\"loggingConfiguration\":{\"logDestinationConfigs\":\[\"arn:aws:firehose:us-west-2:12345678912:deliverystream/aws-waf-logs-fms-admin-destination\"\],\"redactedFields\":\[{\"redactedFieldType\":\"SingleHeader\",\"redactedFieldValue\":\"Cookies\"},{\"redactedFieldType\":\"Method\"}\]}}"</code></p>
+    /// <p><code>"{\"preProcessRuleGroups\":\[{\"ruleGroupType\":\"ManagedRuleGroup\",\"overrideAction\":{\"type\":\"NONE\"},\"sampledRequestsEnabled\":true,\"managedRuleGroupIdentifier\":{\"managedRuleGroupName\":\"AWSManagedRulesAdminProtectionRuleSet\",\"vendorName\":\"AWS\",\"managedRuleGroupConfigs\":null}}\],\"postProcessRuleGroups\":\[\],\"defaultAction\":{\"type\":\"ALLOW\"},\"customRequestHandling\":null,\"tokenDomains\":null,\"customResponse\":null,\"type\":\"WAFV2\",\"overrideCustomerWebACLAssociation\":false,\"sampledRequestsEnabledForDefaultActions\":true,\"optimizeUnassociatedWebACL\":true,\"webACLSource\":\"RETROFIT_EXISTING\"}"</code></p>
     /// <p>To use a specific version of a WAF managed rule group in your Firewall Manager policy, you must set <code>versionEnabled</code> to <code>true</code>, and set <code>version</code> to the version you'd like to use. If you don't set <code>versionEnabled</code> to <code>true</code>, or if you omit <code>versionEnabled</code>, then Firewall Manager uses the default version of the WAF managed rule group.</p></li>
     /// <li>
     /// <p>Example: <code>WAFV2</code> - Logging configurations</p>
@@ -223,7 +223,7 @@ impl SecurityServicePolicyData {
     /// <p>In the <code>loggingConfiguration</code>, you can specify one <code>logDestinationConfigs</code>. Optionally provide as many as 20 <code>redactedFields</code>. The <code>RedactedFieldType</code> must be one of <code>URI</code>, <code>QUERY_STRING</code>, <code>HEADER</code>, or <code>METHOD</code>.</p></li>
     /// <li>
     /// <p>Example: <code>WAF Classic</code></p>
-    /// <p><code>"{\"type\": \"WAF\", \"ruleGroups\": \[{\"id\":\"12345678-1bcd-9012-efga-0987654321ab\", \"overrideAction\" : {\"type\": \"COUNT\"}}\], \"defaultAction\": {\"type\": \"BLOCK\"}}"</code></p></li>
+    /// <p><code>"{\"ruleGroups\":\[{\"id\":\"78cb36c0-1b5e-4d7d-82b2-cf48d3ad9659\",\"overrideAction\":{\"type\":\"NONE\"}}\],\"overrideCustomerWebACLAssociation\":true,\"defaultAction\":{\"type\":\"ALLOW\"},\"type\":\"WAF\"}"</code></p></li>
     /// </ul>
     pub fn managed_service_data(&self) -> ::std::option::Option<&str> {
         self.managed_service_data.as_deref()
@@ -300,7 +300,7 @@ impl SecurityServicePolicyDataBuilder {
     /// <p>To use the distributed deployment model, you must set <a href="https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_PolicyOption.html">PolicyOption</a> to <code>NULL</code>.</p></li>
     /// <li>
     /// <p>Example: <code>SECURITY_GROUPS_COMMON</code></p>
-    /// <p><code>"{\"type\":\"SECURITY_GROUPS_COMMON\",\"revertManualSecurityGroupChanges\":false,\"exclusiveResourceSecurityGroupManagement\":false, \"applyToAllEC2InstanceENIs\":false,\"securityGroups\":\[{\"id\":\" sg-000e55995d61a06bd\"}\]}"</code></p></li>
+    /// <p><code>"{\"type\":\"SECURITY_GROUPS_COMMON\",\"securityGroups\":\[{\"id\":\"sg-03b1f67d69ed00197\"}\],\"revertManualSecurityGroupChanges\":true,\"exclusiveResourceSecurityGroupManagement\":true,\"applyToAllEC2InstanceENIs\":false,\"includeSharedVPC\":true,\"enableSecurityGroupReferencesDistribution\":true}"</code></p></li>
     /// <li>
     /// <p>Example: <code>SECURITY_GROUPS_COMMON</code> - Security group tag distribution</p>
     /// <p><code>""{\"type\":\"SECURITY_GROUPS_COMMON\",\"securityGroups\":\[{\"id\":\"sg-000e55995d61a06bd\"}\],\"revertManualSecurityGroupChanges\":true,\"exclusiveResourceSecurityGroupManagement\":false,\"applyToAllEC2InstanceENIs\":false,\"includeSharedVPC\":false,\"enableTagDistribution\":true}""</code></p>
@@ -311,11 +311,11 @@ impl SecurityServicePolicyDataBuilder {
     /// <p><code>"{\"type\":\"SECURITY_GROUPS_COMMON\",\"revertManualSecurityGroupChanges\":false,\"exclusiveResourceSecurityGroupManagement\":false, \"applyToAllEC2InstanceENIs\":false,\"includeSharedVPC\":true,\"securityGroups\":\[{\"id\":\" sg-000e55995d61a06bd\"}\]}"</code></p></li>
     /// <li>
     /// <p>Example: <code>SECURITY_GROUPS_CONTENT_AUDIT</code></p>
-    /// <p><code>"{\"type\":\"SECURITY_GROUPS_CONTENT_AUDIT\",\"securityGroups\":\[{\"id\":\"sg-000e55995d61a06bd\"}\],\"securityGroupAction\":{\"type\":\"ALLOW\"}}"</code></p>
+    /// <p><code>"{\"type\":\"SECURITY_GROUPS_CONTENT_AUDIT\",\"preManagedOptions\":\[{\"denyProtocolAllValue\":true},{\"auditSgDirection\":{\"type\":\"ALL\"}}\],\"securityGroups\":\[{\"id\":\"sg-049b2393a25468971\"}\],\"securityGroupAction\":{\"type\":\"ALLOW\"}}"</code></p>
     /// <p>The security group action for content audit can be <code>ALLOW</code> or <code>DENY</code>. For <code>ALLOW</code>, all in-scope security group rules must be within the allowed range of the policy's security group rules. For <code>DENY</code>, all in-scope security group rules must not contain a value or a range that matches a rule value or range in the policy security group.</p></li>
     /// <li>
     /// <p>Example: <code>SECURITY_GROUPS_USAGE_AUDIT</code></p>
-    /// <p><code>"{\"type\":\"SECURITY_GROUPS_USAGE_AUDIT\",\"deleteUnusedSecurityGroups\":true,\"coalesceRedundantSecurityGroups\":true}"</code></p></li>
+    /// <p><code>"{\"type\":\"SECURITY_GROUPS_USAGE_AUDIT\",\"deleteUnusedSecurityGroups\":true,\"coalesceRedundantSecurityGroups\":true,\"optionalDelayForUnusedInMinutes\":60}"</code></p></li>
     /// <li>
     /// <p>Example: <code>SHIELD_ADVANCED</code> with web ACL management</p>
     /// <p><code>"{\"type\":\"SHIELD_ADVANCED\",\"optimizeUnassociatedWebACL\":true}"</code></p>
@@ -358,7 +358,7 @@ impl SecurityServicePolicyDataBuilder {
     /// </ul></li>
     /// <li>
     /// <p>Example: <code>WAFV2</code> - Firewall Manager support for WAF managed rule group versioning</p>
-    /// <p><code>"{\"type\":\"WAFV2\",\"preProcessRuleGroups\":\[{\"ruleGroupArn\":null,\"overrideAction\":{\"type\":\"NONE\"},\"managedRuleGroupIdentifier\":{\"versionEnabled\":true,\"version\":\"Version_2.0\",\"vendorName\":\"AWS\",\"managedRuleGroupName\":\"AWSManagedRulesCommonRuleSet\"},\"ruleGroupType\":\"ManagedRuleGroup\",\"excludeRules\":\[{\"name\":\"NoUserAgent_HEADER\"}\]}\],\"postProcessRuleGroups\":\[\],\"defaultAction\":{\"type\":\"ALLOW\"},\"overrideCustomerWebACLAssociation\":false,\"loggingConfiguration\":{\"logDestinationConfigs\":\[\"arn:aws:firehose:us-west-2:12345678912:deliverystream/aws-waf-logs-fms-admin-destination\"\],\"redactedFields\":\[{\"redactedFieldType\":\"SingleHeader\",\"redactedFieldValue\":\"Cookies\"},{\"redactedFieldType\":\"Method\"}\]}}"</code></p>
+    /// <p><code>"{\"preProcessRuleGroups\":\[{\"ruleGroupType\":\"ManagedRuleGroup\",\"overrideAction\":{\"type\":\"NONE\"},\"sampledRequestsEnabled\":true,\"managedRuleGroupIdentifier\":{\"managedRuleGroupName\":\"AWSManagedRulesAdminProtectionRuleSet\",\"vendorName\":\"AWS\",\"managedRuleGroupConfigs\":null}}\],\"postProcessRuleGroups\":\[\],\"defaultAction\":{\"type\":\"ALLOW\"},\"customRequestHandling\":null,\"tokenDomains\":null,\"customResponse\":null,\"type\":\"WAFV2\",\"overrideCustomerWebACLAssociation\":false,\"sampledRequestsEnabledForDefaultActions\":true,\"optimizeUnassociatedWebACL\":true,\"webACLSource\":\"RETROFIT_EXISTING\"}"</code></p>
     /// <p>To use a specific version of a WAF managed rule group in your Firewall Manager policy, you must set <code>versionEnabled</code> to <code>true</code>, and set <code>version</code> to the version you'd like to use. If you don't set <code>versionEnabled</code> to <code>true</code>, or if you omit <code>versionEnabled</code>, then Firewall Manager uses the default version of the WAF managed rule group.</p></li>
     /// <li>
     /// <p>Example: <code>WAFV2</code> - Logging configurations</p>
@@ -367,7 +367,7 @@ impl SecurityServicePolicyDataBuilder {
     /// <p>In the <code>loggingConfiguration</code>, you can specify one <code>logDestinationConfigs</code>. Optionally provide as many as 20 <code>redactedFields</code>. The <code>RedactedFieldType</code> must be one of <code>URI</code>, <code>QUERY_STRING</code>, <code>HEADER</code>, or <code>METHOD</code>.</p></li>
     /// <li>
     /// <p>Example: <code>WAF Classic</code></p>
-    /// <p><code>"{\"type\": \"WAF\", \"ruleGroups\": \[{\"id\":\"12345678-1bcd-9012-efga-0987654321ab\", \"overrideAction\" : {\"type\": \"COUNT\"}}\], \"defaultAction\": {\"type\": \"BLOCK\"}}"</code></p></li>
+    /// <p><code>"{\"ruleGroups\":\[{\"id\":\"78cb36c0-1b5e-4d7d-82b2-cf48d3ad9659\",\"overrideAction\":{\"type\":\"NONE\"}}\],\"overrideCustomerWebACLAssociation\":true,\"defaultAction\":{\"type\":\"ALLOW\"},\"type\":\"WAF\"}"</code></p></li>
     /// </ul>
     pub fn managed_service_data(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.managed_service_data = ::std::option::Option::Some(input.into());
@@ -409,7 +409,7 @@ impl SecurityServicePolicyDataBuilder {
     /// <p>To use the distributed deployment model, you must set <a href="https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_PolicyOption.html">PolicyOption</a> to <code>NULL</code>.</p></li>
     /// <li>
     /// <p>Example: <code>SECURITY_GROUPS_COMMON</code></p>
-    /// <p><code>"{\"type\":\"SECURITY_GROUPS_COMMON\",\"revertManualSecurityGroupChanges\":false,\"exclusiveResourceSecurityGroupManagement\":false, \"applyToAllEC2InstanceENIs\":false,\"securityGroups\":\[{\"id\":\" sg-000e55995d61a06bd\"}\]}"</code></p></li>
+    /// <p><code>"{\"type\":\"SECURITY_GROUPS_COMMON\",\"securityGroups\":\[{\"id\":\"sg-03b1f67d69ed00197\"}\],\"revertManualSecurityGroupChanges\":true,\"exclusiveResourceSecurityGroupManagement\":true,\"applyToAllEC2InstanceENIs\":false,\"includeSharedVPC\":true,\"enableSecurityGroupReferencesDistribution\":true}"</code></p></li>
     /// <li>
     /// <p>Example: <code>SECURITY_GROUPS_COMMON</code> - Security group tag distribution</p>
     /// <p><code>""{\"type\":\"SECURITY_GROUPS_COMMON\",\"securityGroups\":\[{\"id\":\"sg-000e55995d61a06bd\"}\],\"revertManualSecurityGroupChanges\":true,\"exclusiveResourceSecurityGroupManagement\":false,\"applyToAllEC2InstanceENIs\":false,\"includeSharedVPC\":false,\"enableTagDistribution\":true}""</code></p>
@@ -420,11 +420,11 @@ impl SecurityServicePolicyDataBuilder {
     /// <p><code>"{\"type\":\"SECURITY_GROUPS_COMMON\",\"revertManualSecurityGroupChanges\":false,\"exclusiveResourceSecurityGroupManagement\":false, \"applyToAllEC2InstanceENIs\":false,\"includeSharedVPC\":true,\"securityGroups\":\[{\"id\":\" sg-000e55995d61a06bd\"}\]}"</code></p></li>
     /// <li>
     /// <p>Example: <code>SECURITY_GROUPS_CONTENT_AUDIT</code></p>
-    /// <p><code>"{\"type\":\"SECURITY_GROUPS_CONTENT_AUDIT\",\"securityGroups\":\[{\"id\":\"sg-000e55995d61a06bd\"}\],\"securityGroupAction\":{\"type\":\"ALLOW\"}}"</code></p>
+    /// <p><code>"{\"type\":\"SECURITY_GROUPS_CONTENT_AUDIT\",\"preManagedOptions\":\[{\"denyProtocolAllValue\":true},{\"auditSgDirection\":{\"type\":\"ALL\"}}\],\"securityGroups\":\[{\"id\":\"sg-049b2393a25468971\"}\],\"securityGroupAction\":{\"type\":\"ALLOW\"}}"</code></p>
     /// <p>The security group action for content audit can be <code>ALLOW</code> or <code>DENY</code>. For <code>ALLOW</code>, all in-scope security group rules must be within the allowed range of the policy's security group rules. For <code>DENY</code>, all in-scope security group rules must not contain a value or a range that matches a rule value or range in the policy security group.</p></li>
     /// <li>
     /// <p>Example: <code>SECURITY_GROUPS_USAGE_AUDIT</code></p>
-    /// <p><code>"{\"type\":\"SECURITY_GROUPS_USAGE_AUDIT\",\"deleteUnusedSecurityGroups\":true,\"coalesceRedundantSecurityGroups\":true}"</code></p></li>
+    /// <p><code>"{\"type\":\"SECURITY_GROUPS_USAGE_AUDIT\",\"deleteUnusedSecurityGroups\":true,\"coalesceRedundantSecurityGroups\":true,\"optionalDelayForUnusedInMinutes\":60}"</code></p></li>
     /// <li>
     /// <p>Example: <code>SHIELD_ADVANCED</code> with web ACL management</p>
     /// <p><code>"{\"type\":\"SHIELD_ADVANCED\",\"optimizeUnassociatedWebACL\":true}"</code></p>
@@ -467,7 +467,7 @@ impl SecurityServicePolicyDataBuilder {
     /// </ul></li>
     /// <li>
     /// <p>Example: <code>WAFV2</code> - Firewall Manager support for WAF managed rule group versioning</p>
-    /// <p><code>"{\"type\":\"WAFV2\",\"preProcessRuleGroups\":\[{\"ruleGroupArn\":null,\"overrideAction\":{\"type\":\"NONE\"},\"managedRuleGroupIdentifier\":{\"versionEnabled\":true,\"version\":\"Version_2.0\",\"vendorName\":\"AWS\",\"managedRuleGroupName\":\"AWSManagedRulesCommonRuleSet\"},\"ruleGroupType\":\"ManagedRuleGroup\",\"excludeRules\":\[{\"name\":\"NoUserAgent_HEADER\"}\]}\],\"postProcessRuleGroups\":\[\],\"defaultAction\":{\"type\":\"ALLOW\"},\"overrideCustomerWebACLAssociation\":false,\"loggingConfiguration\":{\"logDestinationConfigs\":\[\"arn:aws:firehose:us-west-2:12345678912:deliverystream/aws-waf-logs-fms-admin-destination\"\],\"redactedFields\":\[{\"redactedFieldType\":\"SingleHeader\",\"redactedFieldValue\":\"Cookies\"},{\"redactedFieldType\":\"Method\"}\]}}"</code></p>
+    /// <p><code>"{\"preProcessRuleGroups\":\[{\"ruleGroupType\":\"ManagedRuleGroup\",\"overrideAction\":{\"type\":\"NONE\"},\"sampledRequestsEnabled\":true,\"managedRuleGroupIdentifier\":{\"managedRuleGroupName\":\"AWSManagedRulesAdminProtectionRuleSet\",\"vendorName\":\"AWS\",\"managedRuleGroupConfigs\":null}}\],\"postProcessRuleGroups\":\[\],\"defaultAction\":{\"type\":\"ALLOW\"},\"customRequestHandling\":null,\"tokenDomains\":null,\"customResponse\":null,\"type\":\"WAFV2\",\"overrideCustomerWebACLAssociation\":false,\"sampledRequestsEnabledForDefaultActions\":true,\"optimizeUnassociatedWebACL\":true,\"webACLSource\":\"RETROFIT_EXISTING\"}"</code></p>
     /// <p>To use a specific version of a WAF managed rule group in your Firewall Manager policy, you must set <code>versionEnabled</code> to <code>true</code>, and set <code>version</code> to the version you'd like to use. If you don't set <code>versionEnabled</code> to <code>true</code>, or if you omit <code>versionEnabled</code>, then Firewall Manager uses the default version of the WAF managed rule group.</p></li>
     /// <li>
     /// <p>Example: <code>WAFV2</code> - Logging configurations</p>
@@ -476,7 +476,7 @@ impl SecurityServicePolicyDataBuilder {
     /// <p>In the <code>loggingConfiguration</code>, you can specify one <code>logDestinationConfigs</code>. Optionally provide as many as 20 <code>redactedFields</code>. The <code>RedactedFieldType</code> must be one of <code>URI</code>, <code>QUERY_STRING</code>, <code>HEADER</code>, or <code>METHOD</code>.</p></li>
     /// <li>
     /// <p>Example: <code>WAF Classic</code></p>
-    /// <p><code>"{\"type\": \"WAF\", \"ruleGroups\": \[{\"id\":\"12345678-1bcd-9012-efga-0987654321ab\", \"overrideAction\" : {\"type\": \"COUNT\"}}\], \"defaultAction\": {\"type\": \"BLOCK\"}}"</code></p></li>
+    /// <p><code>"{\"ruleGroups\":\[{\"id\":\"78cb36c0-1b5e-4d7d-82b2-cf48d3ad9659\",\"overrideAction\":{\"type\":\"NONE\"}}\],\"overrideCustomerWebACLAssociation\":true,\"defaultAction\":{\"type\":\"ALLOW\"},\"type\":\"WAF\"}"</code></p></li>
     /// </ul>
     pub fn set_managed_service_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.managed_service_data = input;
@@ -518,7 +518,7 @@ impl SecurityServicePolicyDataBuilder {
     /// <p>To use the distributed deployment model, you must set <a href="https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_PolicyOption.html">PolicyOption</a> to <code>NULL</code>.</p></li>
     /// <li>
     /// <p>Example: <code>SECURITY_GROUPS_COMMON</code></p>
-    /// <p><code>"{\"type\":\"SECURITY_GROUPS_COMMON\",\"revertManualSecurityGroupChanges\":false,\"exclusiveResourceSecurityGroupManagement\":false, \"applyToAllEC2InstanceENIs\":false,\"securityGroups\":\[{\"id\":\" sg-000e55995d61a06bd\"}\]}"</code></p></li>
+    /// <p><code>"{\"type\":\"SECURITY_GROUPS_COMMON\",\"securityGroups\":\[{\"id\":\"sg-03b1f67d69ed00197\"}\],\"revertManualSecurityGroupChanges\":true,\"exclusiveResourceSecurityGroupManagement\":true,\"applyToAllEC2InstanceENIs\":false,\"includeSharedVPC\":true,\"enableSecurityGroupReferencesDistribution\":true}"</code></p></li>
     /// <li>
     /// <p>Example: <code>SECURITY_GROUPS_COMMON</code> - Security group tag distribution</p>
     /// <p><code>""{\"type\":\"SECURITY_GROUPS_COMMON\",\"securityGroups\":\[{\"id\":\"sg-000e55995d61a06bd\"}\],\"revertManualSecurityGroupChanges\":true,\"exclusiveResourceSecurityGroupManagement\":false,\"applyToAllEC2InstanceENIs\":false,\"includeSharedVPC\":false,\"enableTagDistribution\":true}""</code></p>
@@ -529,11 +529,11 @@ impl SecurityServicePolicyDataBuilder {
     /// <p><code>"{\"type\":\"SECURITY_GROUPS_COMMON\",\"revertManualSecurityGroupChanges\":false,\"exclusiveResourceSecurityGroupManagement\":false, \"applyToAllEC2InstanceENIs\":false,\"includeSharedVPC\":true,\"securityGroups\":\[{\"id\":\" sg-000e55995d61a06bd\"}\]}"</code></p></li>
     /// <li>
     /// <p>Example: <code>SECURITY_GROUPS_CONTENT_AUDIT</code></p>
-    /// <p><code>"{\"type\":\"SECURITY_GROUPS_CONTENT_AUDIT\",\"securityGroups\":\[{\"id\":\"sg-000e55995d61a06bd\"}\],\"securityGroupAction\":{\"type\":\"ALLOW\"}}"</code></p>
+    /// <p><code>"{\"type\":\"SECURITY_GROUPS_CONTENT_AUDIT\",\"preManagedOptions\":\[{\"denyProtocolAllValue\":true},{\"auditSgDirection\":{\"type\":\"ALL\"}}\],\"securityGroups\":\[{\"id\":\"sg-049b2393a25468971\"}\],\"securityGroupAction\":{\"type\":\"ALLOW\"}}"</code></p>
     /// <p>The security group action for content audit can be <code>ALLOW</code> or <code>DENY</code>. For <code>ALLOW</code>, all in-scope security group rules must be within the allowed range of the policy's security group rules. For <code>DENY</code>, all in-scope security group rules must not contain a value or a range that matches a rule value or range in the policy security group.</p></li>
     /// <li>
     /// <p>Example: <code>SECURITY_GROUPS_USAGE_AUDIT</code></p>
-    /// <p><code>"{\"type\":\"SECURITY_GROUPS_USAGE_AUDIT\",\"deleteUnusedSecurityGroups\":true,\"coalesceRedundantSecurityGroups\":true}"</code></p></li>
+    /// <p><code>"{\"type\":\"SECURITY_GROUPS_USAGE_AUDIT\",\"deleteUnusedSecurityGroups\":true,\"coalesceRedundantSecurityGroups\":true,\"optionalDelayForUnusedInMinutes\":60}"</code></p></li>
     /// <li>
     /// <p>Example: <code>SHIELD_ADVANCED</code> with web ACL management</p>
     /// <p><code>"{\"type\":\"SHIELD_ADVANCED\",\"optimizeUnassociatedWebACL\":true}"</code></p>
@@ -576,7 +576,7 @@ impl SecurityServicePolicyDataBuilder {
     /// </ul></li>
     /// <li>
     /// <p>Example: <code>WAFV2</code> - Firewall Manager support for WAF managed rule group versioning</p>
-    /// <p><code>"{\"type\":\"WAFV2\",\"preProcessRuleGroups\":\[{\"ruleGroupArn\":null,\"overrideAction\":{\"type\":\"NONE\"},\"managedRuleGroupIdentifier\":{\"versionEnabled\":true,\"version\":\"Version_2.0\",\"vendorName\":\"AWS\",\"managedRuleGroupName\":\"AWSManagedRulesCommonRuleSet\"},\"ruleGroupType\":\"ManagedRuleGroup\",\"excludeRules\":\[{\"name\":\"NoUserAgent_HEADER\"}\]}\],\"postProcessRuleGroups\":\[\],\"defaultAction\":{\"type\":\"ALLOW\"},\"overrideCustomerWebACLAssociation\":false,\"loggingConfiguration\":{\"logDestinationConfigs\":\[\"arn:aws:firehose:us-west-2:12345678912:deliverystream/aws-waf-logs-fms-admin-destination\"\],\"redactedFields\":\[{\"redactedFieldType\":\"SingleHeader\",\"redactedFieldValue\":\"Cookies\"},{\"redactedFieldType\":\"Method\"}\]}}"</code></p>
+    /// <p><code>"{\"preProcessRuleGroups\":\[{\"ruleGroupType\":\"ManagedRuleGroup\",\"overrideAction\":{\"type\":\"NONE\"},\"sampledRequestsEnabled\":true,\"managedRuleGroupIdentifier\":{\"managedRuleGroupName\":\"AWSManagedRulesAdminProtectionRuleSet\",\"vendorName\":\"AWS\",\"managedRuleGroupConfigs\":null}}\],\"postProcessRuleGroups\":\[\],\"defaultAction\":{\"type\":\"ALLOW\"},\"customRequestHandling\":null,\"tokenDomains\":null,\"customResponse\":null,\"type\":\"WAFV2\",\"overrideCustomerWebACLAssociation\":false,\"sampledRequestsEnabledForDefaultActions\":true,\"optimizeUnassociatedWebACL\":true,\"webACLSource\":\"RETROFIT_EXISTING\"}"</code></p>
     /// <p>To use a specific version of a WAF managed rule group in your Firewall Manager policy, you must set <code>versionEnabled</code> to <code>true</code>, and set <code>version</code> to the version you'd like to use. If you don't set <code>versionEnabled</code> to <code>true</code>, or if you omit <code>versionEnabled</code>, then Firewall Manager uses the default version of the WAF managed rule group.</p></li>
     /// <li>
     /// <p>Example: <code>WAFV2</code> - Logging configurations</p>
@@ -585,7 +585,7 @@ impl SecurityServicePolicyDataBuilder {
     /// <p>In the <code>loggingConfiguration</code>, you can specify one <code>logDestinationConfigs</code>. Optionally provide as many as 20 <code>redactedFields</code>. The <code>RedactedFieldType</code> must be one of <code>URI</code>, <code>QUERY_STRING</code>, <code>HEADER</code>, or <code>METHOD</code>.</p></li>
     /// <li>
     /// <p>Example: <code>WAF Classic</code></p>
-    /// <p><code>"{\"type\": \"WAF\", \"ruleGroups\": \[{\"id\":\"12345678-1bcd-9012-efga-0987654321ab\", \"overrideAction\" : {\"type\": \"COUNT\"}}\], \"defaultAction\": {\"type\": \"BLOCK\"}}"</code></p></li>
+    /// <p><code>"{\"ruleGroups\":\[{\"id\":\"78cb36c0-1b5e-4d7d-82b2-cf48d3ad9659\",\"overrideAction\":{\"type\":\"NONE\"}}\],\"overrideCustomerWebACLAssociation\":true,\"defaultAction\":{\"type\":\"ALLOW\"},\"type\":\"WAF\"}"</code></p></li>
     /// </ul>
     pub fn get_managed_service_data(&self) -> &::std::option::Option<::std::string::String> {
         &self.managed_service_data

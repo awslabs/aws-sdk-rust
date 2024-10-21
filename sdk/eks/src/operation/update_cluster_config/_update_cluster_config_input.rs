@@ -17,6 +17,10 @@ pub struct UpdateClusterConfigInput {
     pub access_config: ::std::option::Option<crate::types::UpdateAccessConfigRequest>,
     /// <p>You can enable or disable extended support for clusters currently on standard support. You cannot disable extended support once it starts. You must enable extended support before your cluster exits standard support.</p>
     pub upgrade_policy: ::std::option::Option<crate::types::UpgradePolicyRequest>,
+    /// <p>Enable or disable ARC zonal shift for the cluster. If zonal shift is enabled, Amazon Web Services configures zonal autoshift for the cluster.</p>
+    /// <p>Zonal shift is a feature of Amazon Application Recovery Controller (ARC). ARC zonal shift is designed to be a temporary measure that allows you to move traffic for a resource away from an impaired AZ until the zonal shift expires or you cancel it. You can extend the zonal shift if necessary.</p>
+    /// <p>You can start a zonal shift for an EKS cluster, or you can allow Amazon Web Services to do it for you by enabling <i>zonal autoshift</i>. This shift updates the flow of east-to-west network traffic in your cluster to only consider network endpoints for Pods running on worker nodes in healthy AZs. Additionally, any ALB or NLB handling ingress traffic for applications in your EKS cluster will automatically route traffic to targets in the healthy AZs. For more information about zonal shift in EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/zone-shift.html">Learn about Amazon Application Recovery Controller (ARC) Zonal Shift in Amazon EKS</a> in the <i> <i>Amazon EKS User Guide</i> </i>.</p>
+    pub zonal_shift_config: ::std::option::Option<crate::types::ZonalShiftConfigRequest>,
 }
 impl UpdateClusterConfigInput {
     /// <p>The name of the Amazon EKS cluster to update.</p>
@@ -45,6 +49,12 @@ impl UpdateClusterConfigInput {
     pub fn upgrade_policy(&self) -> ::std::option::Option<&crate::types::UpgradePolicyRequest> {
         self.upgrade_policy.as_ref()
     }
+    /// <p>Enable or disable ARC zonal shift for the cluster. If zonal shift is enabled, Amazon Web Services configures zonal autoshift for the cluster.</p>
+    /// <p>Zonal shift is a feature of Amazon Application Recovery Controller (ARC). ARC zonal shift is designed to be a temporary measure that allows you to move traffic for a resource away from an impaired AZ until the zonal shift expires or you cancel it. You can extend the zonal shift if necessary.</p>
+    /// <p>You can start a zonal shift for an EKS cluster, or you can allow Amazon Web Services to do it for you by enabling <i>zonal autoshift</i>. This shift updates the flow of east-to-west network traffic in your cluster to only consider network endpoints for Pods running on worker nodes in healthy AZs. Additionally, any ALB or NLB handling ingress traffic for applications in your EKS cluster will automatically route traffic to targets in the healthy AZs. For more information about zonal shift in EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/zone-shift.html">Learn about Amazon Application Recovery Controller (ARC) Zonal Shift in Amazon EKS</a> in the <i> <i>Amazon EKS User Guide</i> </i>.</p>
+    pub fn zonal_shift_config(&self) -> ::std::option::Option<&crate::types::ZonalShiftConfigRequest> {
+        self.zonal_shift_config.as_ref()
+    }
 }
 impl UpdateClusterConfigInput {
     /// Creates a new builder-style object to manufacture [`UpdateClusterConfigInput`](crate::operation::update_cluster_config::UpdateClusterConfigInput).
@@ -63,6 +73,7 @@ pub struct UpdateClusterConfigInputBuilder {
     pub(crate) client_request_token: ::std::option::Option<::std::string::String>,
     pub(crate) access_config: ::std::option::Option<crate::types::UpdateAccessConfigRequest>,
     pub(crate) upgrade_policy: ::std::option::Option<crate::types::UpgradePolicyRequest>,
+    pub(crate) zonal_shift_config: ::std::option::Option<crate::types::ZonalShiftConfigRequest>,
 }
 impl UpdateClusterConfigInputBuilder {
     /// <p>The name of the Amazon EKS cluster to update.</p>
@@ -156,6 +167,26 @@ impl UpdateClusterConfigInputBuilder {
     pub fn get_upgrade_policy(&self) -> &::std::option::Option<crate::types::UpgradePolicyRequest> {
         &self.upgrade_policy
     }
+    /// <p>Enable or disable ARC zonal shift for the cluster. If zonal shift is enabled, Amazon Web Services configures zonal autoshift for the cluster.</p>
+    /// <p>Zonal shift is a feature of Amazon Application Recovery Controller (ARC). ARC zonal shift is designed to be a temporary measure that allows you to move traffic for a resource away from an impaired AZ until the zonal shift expires or you cancel it. You can extend the zonal shift if necessary.</p>
+    /// <p>You can start a zonal shift for an EKS cluster, or you can allow Amazon Web Services to do it for you by enabling <i>zonal autoshift</i>. This shift updates the flow of east-to-west network traffic in your cluster to only consider network endpoints for Pods running on worker nodes in healthy AZs. Additionally, any ALB or NLB handling ingress traffic for applications in your EKS cluster will automatically route traffic to targets in the healthy AZs. For more information about zonal shift in EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/zone-shift.html">Learn about Amazon Application Recovery Controller (ARC) Zonal Shift in Amazon EKS</a> in the <i> <i>Amazon EKS User Guide</i> </i>.</p>
+    pub fn zonal_shift_config(mut self, input: crate::types::ZonalShiftConfigRequest) -> Self {
+        self.zonal_shift_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Enable or disable ARC zonal shift for the cluster. If zonal shift is enabled, Amazon Web Services configures zonal autoshift for the cluster.</p>
+    /// <p>Zonal shift is a feature of Amazon Application Recovery Controller (ARC). ARC zonal shift is designed to be a temporary measure that allows you to move traffic for a resource away from an impaired AZ until the zonal shift expires or you cancel it. You can extend the zonal shift if necessary.</p>
+    /// <p>You can start a zonal shift for an EKS cluster, or you can allow Amazon Web Services to do it for you by enabling <i>zonal autoshift</i>. This shift updates the flow of east-to-west network traffic in your cluster to only consider network endpoints for Pods running on worker nodes in healthy AZs. Additionally, any ALB or NLB handling ingress traffic for applications in your EKS cluster will automatically route traffic to targets in the healthy AZs. For more information about zonal shift in EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/zone-shift.html">Learn about Amazon Application Recovery Controller (ARC) Zonal Shift in Amazon EKS</a> in the <i> <i>Amazon EKS User Guide</i> </i>.</p>
+    pub fn set_zonal_shift_config(mut self, input: ::std::option::Option<crate::types::ZonalShiftConfigRequest>) -> Self {
+        self.zonal_shift_config = input;
+        self
+    }
+    /// <p>Enable or disable ARC zonal shift for the cluster. If zonal shift is enabled, Amazon Web Services configures zonal autoshift for the cluster.</p>
+    /// <p>Zonal shift is a feature of Amazon Application Recovery Controller (ARC). ARC zonal shift is designed to be a temporary measure that allows you to move traffic for a resource away from an impaired AZ until the zonal shift expires or you cancel it. You can extend the zonal shift if necessary.</p>
+    /// <p>You can start a zonal shift for an EKS cluster, or you can allow Amazon Web Services to do it for you by enabling <i>zonal autoshift</i>. This shift updates the flow of east-to-west network traffic in your cluster to only consider network endpoints for Pods running on worker nodes in healthy AZs. Additionally, any ALB or NLB handling ingress traffic for applications in your EKS cluster will automatically route traffic to targets in the healthy AZs. For more information about zonal shift in EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/zone-shift.html">Learn about Amazon Application Recovery Controller (ARC) Zonal Shift in Amazon EKS</a> in the <i> <i>Amazon EKS User Guide</i> </i>.</p>
+    pub fn get_zonal_shift_config(&self) -> &::std::option::Option<crate::types::ZonalShiftConfigRequest> {
+        &self.zonal_shift_config
+    }
     /// Consumes the builder and constructs a [`UpdateClusterConfigInput`](crate::operation::update_cluster_config::UpdateClusterConfigInput).
     pub fn build(
         self,
@@ -168,6 +199,7 @@ impl UpdateClusterConfigInputBuilder {
             client_request_token: self.client_request_token,
             access_config: self.access_config,
             upgrade_policy: self.upgrade_policy,
+            zonal_shift_config: self.zonal_shift_config,
         })
     }
 }

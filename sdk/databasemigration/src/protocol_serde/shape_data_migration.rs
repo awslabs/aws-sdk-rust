@@ -92,6 +92,11 @@ where
                             builder = builder
                                 .set_public_ip_addresses(crate::protocol_serde::shape_public_ip_address_list::de_public_ip_address_list(tokens)?);
                         }
+                        "DataMigrationCidrBlocks" => {
+                            builder = builder.set_data_migration_cidr_blocks(
+                                crate::protocol_serde::shape_data_migration_cidr_block::de_data_migration_cidr_block(tokens)?,
+                            );
+                        }
                         "LastFailureMessage" => {
                             builder = builder.set_last_failure_message(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

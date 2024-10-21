@@ -34,6 +34,8 @@ pub struct StartReplicationTaskAssessmentRunInput {
     /// <p>To identify the names of the default individual assessments that DMS supports for the associated migration task, run the <code>DescribeApplicableIndividualAssessments</code> operation using its own <code>ReplicationTaskArn</code> request parameter.</p>
     /// </note>
     pub exclude: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>One or more tags to be assigned to the premigration assessment run that you want to start.</p>
+    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl StartReplicationTaskAssessmentRunInput {
     /// <p>Amazon Resource Name (ARN) of the migration task associated with the premigration assessment run that you want to start.</p>
@@ -88,6 +90,12 @@ impl StartReplicationTaskAssessmentRunInput {
     pub fn exclude(&self) -> &[::std::string::String] {
         self.exclude.as_deref().unwrap_or_default()
     }
+    /// <p>One or more tags to be assigned to the premigration assessment run that you want to start.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
+    }
 }
 impl StartReplicationTaskAssessmentRunInput {
     /// Creates a new builder-style object to manufacture [`StartReplicationTaskAssessmentRunInput`](crate::operation::start_replication_task_assessment_run::StartReplicationTaskAssessmentRunInput).
@@ -109,6 +117,7 @@ pub struct StartReplicationTaskAssessmentRunInputBuilder {
     pub(crate) assessment_run_name: ::std::option::Option<::std::string::String>,
     pub(crate) include_only: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) exclude: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl StartReplicationTaskAssessmentRunInputBuilder {
     /// <p>Amazon Resource Name (ARN) of the migration task associated with the premigration assessment run that you want to start.</p>
@@ -289,6 +298,26 @@ impl StartReplicationTaskAssessmentRunInputBuilder {
     pub fn get_exclude(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.exclude
     }
+    /// Appends an item to `tags`.
+    ///
+    /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+    ///
+    /// <p>One or more tags to be assigned to the premigration assessment run that you want to start.</p>
+    pub fn tags(mut self, input: crate::types::Tag) -> Self {
+        let mut v = self.tags.unwrap_or_default();
+        v.push(input);
+        self.tags = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>One or more tags to be assigned to the premigration assessment run that you want to start.</p>
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input;
+        self
+    }
+    /// <p>One or more tags to be assigned to the premigration assessment run that you want to start.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// Consumes the builder and constructs a [`StartReplicationTaskAssessmentRunInput`](crate::operation::start_replication_task_assessment_run::StartReplicationTaskAssessmentRunInput).
     pub fn build(
         self,
@@ -307,6 +336,7 @@ impl StartReplicationTaskAssessmentRunInputBuilder {
                 assessment_run_name: self.assessment_run_name,
                 include_only: self.include_only,
                 exclude: self.exclude,
+                tags: self.tags,
             },
         )
     }

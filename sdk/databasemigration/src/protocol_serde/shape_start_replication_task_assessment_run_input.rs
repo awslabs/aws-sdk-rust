@@ -42,5 +42,17 @@ pub fn ser_start_replication_task_assessment_run_input_input(
         }
         array_12.finish();
     }
+    if let Some(var_14) = &input.tags {
+        let mut array_15 = object.key("Tags").start_array();
+        for item_16 in var_14 {
+            {
+                #[allow(unused_mut)]
+                let mut object_17 = array_15.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_17, item_16)?;
+                object_17.finish();
+            }
+        }
+        array_15.finish();
+    }
     Ok(())
 }

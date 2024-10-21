@@ -30,5 +30,11 @@ pub fn ser_update_cluster_config_input_input(
         crate::protocol_serde::shape_upgrade_policy_request::ser_upgrade_policy_request(&mut object_9, var_8)?;
         object_9.finish();
     }
+    if let Some(var_10) = &input.zonal_shift_config {
+        #[allow(unused_mut)]
+        let mut object_11 = object.key("zonalShiftConfig").start_object();
+        crate::protocol_serde::shape_zonal_shift_config_request::ser_zonal_shift_config_request(&mut object_11, var_10)?;
+        object_11.finish();
+    }
     Ok(())
 }

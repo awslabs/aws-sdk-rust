@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`resource_group_name(impl Into<String>)`](crate::operation::describe_application::builders::DescribeApplicationFluentBuilder::resource_group_name) / [`set_resource_group_name(Option<String>)`](crate::operation::describe_application::builders::DescribeApplicationFluentBuilder::set_resource_group_name):<br>required: **true**<br><p>The name of the resource group.</p><br>
-    ///   - [`account_id(impl Into<String>)`](crate::operation::describe_application::builders::DescribeApplicationFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::describe_application::builders::DescribeApplicationFluentBuilder::set_account_id):<br>required: **false**<br><p>The AWS account ID for the resource group owner.</p><br>
+    ///   - [`account_id(impl Into<String>)`](crate::operation::describe_application::builders::DescribeApplicationFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::describe_application::builders::DescribeApplicationFluentBuilder::set_account_id):<br>required: **false**<br><p>The Amazon Web Services account ID for the resource group owner.</p><br>
     /// - On success, responds with [`DescribeApplicationOutput`](crate::operation::describe_application::DescribeApplicationOutput) with field(s):
     ///   - [`application_info(Option<ApplicationInfo>)`](crate::operation::describe_application::DescribeApplicationOutput::application_info): <p>Information about the application.</p>
     /// - On failure, responds with [`SdkError<DescribeApplicationError>`](crate::operation::describe_application::DescribeApplicationError)

@@ -16,6 +16,7 @@
 ///     NetworkInterfaceType::AwsCodestarConnectionsManaged => { /* ... */ },
 ///     NetworkInterfaceType::Branch => { /* ... */ },
 ///     NetworkInterfaceType::Efa => { /* ... */ },
+///     NetworkInterfaceType::EfaOnly => { /* ... */ },
 ///     NetworkInterfaceType::GatewayLoadBalancer => { /* ... */ },
 ///     NetworkInterfaceType::GatewayLoadBalancerEndpoint => { /* ... */ },
 ///     NetworkInterfaceType::GlobalAcceleratorManaged => { /* ... */ },
@@ -65,6 +66,8 @@ pub enum NetworkInterfaceType {
     #[allow(missing_docs)] // documentation missing in model
     Efa,
     #[allow(missing_docs)] // documentation missing in model
+    EfaOnly,
+    #[allow(missing_docs)] // documentation missing in model
     GatewayLoadBalancer,
     #[allow(missing_docs)] // documentation missing in model
     GatewayLoadBalancerEndpoint,
@@ -101,6 +104,7 @@ impl ::std::convert::From<&str> for NetworkInterfaceType {
             "aws_codestar_connections_managed" => NetworkInterfaceType::AwsCodestarConnectionsManaged,
             "branch" => NetworkInterfaceType::Branch,
             "efa" => NetworkInterfaceType::Efa,
+            "efa-only" => NetworkInterfaceType::EfaOnly,
             "gateway_load_balancer" => NetworkInterfaceType::GatewayLoadBalancer,
             "gateway_load_balancer_endpoint" => NetworkInterfaceType::GatewayLoadBalancerEndpoint,
             "global_accelerator_managed" => NetworkInterfaceType::GlobalAcceleratorManaged,
@@ -133,6 +137,7 @@ impl NetworkInterfaceType {
             NetworkInterfaceType::AwsCodestarConnectionsManaged => "aws_codestar_connections_managed",
             NetworkInterfaceType::Branch => "branch",
             NetworkInterfaceType::Efa => "efa",
+            NetworkInterfaceType::EfaOnly => "efa-only",
             NetworkInterfaceType::GatewayLoadBalancer => "gateway_load_balancer",
             NetworkInterfaceType::GatewayLoadBalancerEndpoint => "gateway_load_balancer_endpoint",
             NetworkInterfaceType::GlobalAcceleratorManaged => "global_accelerator_managed",
@@ -156,6 +161,7 @@ impl NetworkInterfaceType {
             "aws_codestar_connections_managed",
             "branch",
             "efa",
+            "efa-only",
             "gateway_load_balancer",
             "gateway_load_balancer_endpoint",
             "global_accelerator_managed",
@@ -196,6 +202,7 @@ impl ::std::fmt::Display for NetworkInterfaceType {
             NetworkInterfaceType::AwsCodestarConnectionsManaged => write!(f, "aws_codestar_connections_managed"),
             NetworkInterfaceType::Branch => write!(f, "branch"),
             NetworkInterfaceType::Efa => write!(f, "efa"),
+            NetworkInterfaceType::EfaOnly => write!(f, "efa-only"),
             NetworkInterfaceType::GatewayLoadBalancer => write!(f, "gateway_load_balancer"),
             NetworkInterfaceType::GatewayLoadBalancerEndpoint => write!(f, "gateway_load_balancer_endpoint"),
             NetworkInterfaceType::GlobalAcceleratorManaged => write!(f, "global_accelerator_managed"),

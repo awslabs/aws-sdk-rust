@@ -6,7 +6,7 @@
 pub struct ConfigurationEvent {
     /// <p>The name of the resource group of the application to which the configuration event belongs.</p>
     pub resource_group_name: ::std::option::Option<::std::string::String>,
-    /// <p>The AWS account ID for the owner of the application to which the configuration event belongs.</p>
+    /// <p>The Amazon Web Services account ID for the owner of the application to which the configuration event belongs.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The resource monitored by Application Insights.</p>
     pub monitored_resource_arn: ::std::option::Option<::std::string::String>,
@@ -26,7 +26,7 @@ impl ConfigurationEvent {
     pub fn resource_group_name(&self) -> ::std::option::Option<&str> {
         self.resource_group_name.as_deref()
     }
-    /// <p>The AWS account ID for the owner of the application to which the configuration event belongs.</p>
+    /// <p>The Amazon Web Services account ID for the owner of the application to which the configuration event belongs.</p>
     pub fn account_id(&self) -> ::std::option::Option<&str> {
         self.account_id.as_deref()
     }
@@ -90,17 +90,17 @@ impl ConfigurationEventBuilder {
     pub fn get_resource_group_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_group_name
     }
-    /// <p>The AWS account ID for the owner of the application to which the configuration event belongs.</p>
+    /// <p>The Amazon Web Services account ID for the owner of the application to which the configuration event belongs.</p>
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The AWS account ID for the owner of the application to which the configuration event belongs.</p>
+    /// <p>The Amazon Web Services account ID for the owner of the application to which the configuration event belongs.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_id = input;
         self
     }
-    /// <p>The AWS account ID for the owner of the application to which the configuration event belongs.</p>
+    /// <p>The Amazon Web Services account ID for the owner of the application to which the configuration event belongs.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.account_id
     }

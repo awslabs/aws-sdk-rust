@@ -65,6 +65,36 @@ pub(crate) fn generate_mac_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn generate_mac_emv_pin_change_output_output_correct_errors(
+    mut builder: crate::operation::generate_mac_emv_pin_change::builders::GenerateMacEmvPinChangeOutputBuilder,
+) -> crate::operation::generate_mac_emv_pin_change::builders::GenerateMacEmvPinChangeOutputBuilder {
+    if builder.new_pin_pek_arn.is_none() {
+        builder.new_pin_pek_arn = Some(Default::default())
+    }
+    if builder.secure_messaging_integrity_key_arn.is_none() {
+        builder.secure_messaging_integrity_key_arn = Some(Default::default())
+    }
+    if builder.secure_messaging_confidentiality_key_arn.is_none() {
+        builder.secure_messaging_confidentiality_key_arn = Some(Default::default())
+    }
+    if builder.mac.is_none() {
+        builder.mac = Some(Default::default())
+    }
+    if builder.encrypted_pin_block.is_none() {
+        builder.encrypted_pin_block = Some(Default::default())
+    }
+    if builder.new_pin_pek_key_check_value.is_none() {
+        builder.new_pin_pek_key_check_value = Some(Default::default())
+    }
+    if builder.secure_messaging_integrity_key_check_value.is_none() {
+        builder.secure_messaging_integrity_key_check_value = Some(Default::default())
+    }
+    if builder.secure_messaging_confidentiality_key_check_value.is_none() {
+        builder.secure_messaging_confidentiality_key_check_value = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn generate_pin_data_output_output_correct_errors(
     mut builder: crate::operation::generate_pin_data::builders::GeneratePinDataOutputBuilder,
 ) -> crate::operation::generate_pin_data::builders::GeneratePinDataOutputBuilder {
@@ -181,6 +211,18 @@ pub(crate) fn verify_pin_data_output_output_correct_errors(
     }
     if builder.encryption_key_check_value.is_none() {
         builder.encryption_key_check_value = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn visa_amex_derivation_outputs_correct_errors(
+    mut builder: crate::types::builders::VisaAmexDerivationOutputsBuilder,
+) -> crate::types::builders::VisaAmexDerivationOutputsBuilder {
+    if builder.authorization_request_key_arn.is_none() {
+        builder.authorization_request_key_arn = Some(Default::default())
+    }
+    if builder.authorization_request_key_check_value.is_none() {
+        builder.authorization_request_key_check_value = Some(Default::default())
     }
     builder
 }

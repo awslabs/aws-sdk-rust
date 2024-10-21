@@ -65,6 +65,10 @@ pub use crate::types::_violation_detail::ViolationDetailBuilder;
 
 pub use crate::types::_resource_violation::ResourceViolationBuilder;
 
+pub use crate::types::_web_acl_has_out_of_scope_resources_violation::WebAclHasOutOfScopeResourcesViolationBuilder;
+
+pub use crate::types::_web_acl_has_incompatible_configuration_violation::WebAclHasIncompatibleConfigurationViolationBuilder;
+
 pub use crate::types::_possible_remediation_actions::PossibleRemediationActionsBuilder;
 
 pub use crate::types::_possible_remediation_action::PossibleRemediationActionBuilder;

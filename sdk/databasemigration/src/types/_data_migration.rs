@@ -30,6 +30,8 @@ pub struct DataMigration {
     pub data_migration_status: ::std::option::Option<::std::string::String>,
     /// <p>The IP addresses of the endpoints for the data migration.</p>
     pub public_ip_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The CIDR blocks of the endpoints for the data migration.</p>
+    pub data_migration_cidr_blocks: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Information about the data migration's most recent error or failure.</p>
     pub last_failure_message: ::std::option::Option<::std::string::String>,
     /// <p>The reason the data migration last stopped.</p>
@@ -92,6 +94,12 @@ impl DataMigration {
     pub fn public_ip_addresses(&self) -> &[::std::string::String] {
         self.public_ip_addresses.as_deref().unwrap_or_default()
     }
+    /// <p>The CIDR blocks of the endpoints for the data migration.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.data_migration_cidr_blocks.is_none()`.
+    pub fn data_migration_cidr_blocks(&self) -> &[::std::string::String] {
+        self.data_migration_cidr_blocks.as_deref().unwrap_or_default()
+    }
     /// <p>Information about the data migration's most recent error or failure.</p>
     pub fn last_failure_message(&self) -> ::std::option::Option<&str> {
         self.last_failure_message.as_deref()
@@ -117,6 +125,7 @@ impl ::std::fmt::Debug for DataMigration {
         formatter.field("data_migration_statistics", &self.data_migration_statistics);
         formatter.field("data_migration_status", &self.data_migration_status);
         formatter.field("public_ip_addresses", &"*** Sensitive Data Redacted ***");
+        formatter.field("data_migration_cidr_blocks", &self.data_migration_cidr_blocks);
         formatter.field("last_failure_message", &self.last_failure_message);
         formatter.field("stop_reason", &self.stop_reason);
         formatter.finish()
@@ -146,6 +155,7 @@ pub struct DataMigrationBuilder {
     pub(crate) data_migration_statistics: ::std::option::Option<crate::types::DataMigrationStatistics>,
     pub(crate) data_migration_status: ::std::option::Option<::std::string::String>,
     pub(crate) public_ip_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) data_migration_cidr_blocks: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) last_failure_message: ::std::option::Option<::std::string::String>,
     pub(crate) stop_reason: ::std::option::Option<::std::string::String>,
 }
@@ -344,6 +354,26 @@ impl DataMigrationBuilder {
     pub fn get_public_ip_addresses(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.public_ip_addresses
     }
+    /// Appends an item to `data_migration_cidr_blocks`.
+    ///
+    /// To override the contents of this collection use [`set_data_migration_cidr_blocks`](Self::set_data_migration_cidr_blocks).
+    ///
+    /// <p>The CIDR blocks of the endpoints for the data migration.</p>
+    pub fn data_migration_cidr_blocks(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.data_migration_cidr_blocks.unwrap_or_default();
+        v.push(input.into());
+        self.data_migration_cidr_blocks = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The CIDR blocks of the endpoints for the data migration.</p>
+    pub fn set_data_migration_cidr_blocks(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.data_migration_cidr_blocks = input;
+        self
+    }
+    /// <p>The CIDR blocks of the endpoints for the data migration.</p>
+    pub fn get_data_migration_cidr_blocks(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.data_migration_cidr_blocks
+    }
     /// <p>Information about the data migration's most recent error or failure.</p>
     pub fn last_failure_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_failure_message = ::std::option::Option::Some(input.into());
@@ -388,6 +418,7 @@ impl DataMigrationBuilder {
             data_migration_statistics: self.data_migration_statistics,
             data_migration_status: self.data_migration_status,
             public_ip_addresses: self.public_ip_addresses,
+            data_migration_cidr_blocks: self.data_migration_cidr_blocks,
             last_failure_message: self.last_failure_message,
             stop_reason: self.stop_reason,
         }
@@ -409,6 +440,7 @@ impl ::std::fmt::Debug for DataMigrationBuilder {
         formatter.field("data_migration_statistics", &self.data_migration_statistics);
         formatter.field("data_migration_status", &self.data_migration_status);
         formatter.field("public_ip_addresses", &"*** Sensitive Data Redacted ***");
+        formatter.field("data_migration_cidr_blocks", &self.data_migration_cidr_blocks);
         formatter.field("last_failure_message", &self.last_failure_message);
         formatter.field("stop_reason", &self.stop_reason);
         formatter.finish()

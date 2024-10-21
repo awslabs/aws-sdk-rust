@@ -23,6 +23,7 @@
 ///     UpdateType::UpgradePolicyUpdate => { /* ... */ },
 ///     UpdateType::VersionUpdate => { /* ... */ },
 ///     UpdateType::VpcConfigUpdate => { /* ... */ },
+///     UpdateType::ZonalShiftConfigUpdate => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -72,6 +73,8 @@ pub enum UpdateType {
     VersionUpdate,
     #[allow(missing_docs)] // documentation missing in model
     VpcConfigUpdate,
+    #[allow(missing_docs)] // documentation missing in model
+    ZonalShiftConfigUpdate,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -90,6 +93,7 @@ impl ::std::convert::From<&str> for UpdateType {
             "UpgradePolicyUpdate" => UpdateType::UpgradePolicyUpdate,
             "VersionUpdate" => UpdateType::VersionUpdate,
             "VpcConfigUpdate" => UpdateType::VpcConfigUpdate,
+            "ZonalShiftConfigUpdate" => UpdateType::ZonalShiftConfigUpdate,
             other => UpdateType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -116,6 +120,7 @@ impl UpdateType {
             UpdateType::UpgradePolicyUpdate => "UpgradePolicyUpdate",
             UpdateType::VersionUpdate => "VersionUpdate",
             UpdateType::VpcConfigUpdate => "VpcConfigUpdate",
+            UpdateType::ZonalShiftConfigUpdate => "ZonalShiftConfigUpdate",
             UpdateType::Unknown(value) => value.as_str(),
         }
     }
@@ -133,6 +138,7 @@ impl UpdateType {
             "UpgradePolicyUpdate",
             "VersionUpdate",
             "VpcConfigUpdate",
+            "ZonalShiftConfigUpdate",
         ]
     }
 }
@@ -167,6 +173,7 @@ impl ::std::fmt::Display for UpdateType {
             UpdateType::UpgradePolicyUpdate => write!(f, "UpgradePolicyUpdate"),
             UpdateType::VersionUpdate => write!(f, "VersionUpdate"),
             UpdateType::VpcConfigUpdate => write!(f, "VpcConfigUpdate"),
+            UpdateType::ZonalShiftConfigUpdate => write!(f, "ZonalShiftConfigUpdate"),
             UpdateType::Unknown(value) => write!(f, "{}", value),
         }
     }

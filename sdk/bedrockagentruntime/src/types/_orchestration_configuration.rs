@@ -4,10 +4,30 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OrchestrationConfiguration {
+    /// <p>Contains the template for the prompt that's sent to the model for response generation.</p>
+    pub prompt_template: ::std::option::Option<crate::types::PromptTemplate>,
+    /// <p>Configuration settings for inference when using RetrieveAndGenerate to generate responses while using a knowledge base as a source.</p>
+    pub inference_config: ::std::option::Option<crate::types::InferenceConfig>,
+    /// <p>Additional model parameters and corresponding values not included in the textInferenceConfig structure for a knowledge base. This allows users to provide custom model parameters specific to the language model being used.</p>
+    pub additional_model_request_fields: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::aws_smithy_types::Document>>,
     /// <p>To split up the prompt and retrieve multiple sources, set the transformation type to <code>QUERY_DECOMPOSITION</code>.</p>
     pub query_transformation_configuration: ::std::option::Option<crate::types::QueryTransformationConfiguration>,
 }
 impl OrchestrationConfiguration {
+    /// <p>Contains the template for the prompt that's sent to the model for response generation.</p>
+    pub fn prompt_template(&self) -> ::std::option::Option<&crate::types::PromptTemplate> {
+        self.prompt_template.as_ref()
+    }
+    /// <p>Configuration settings for inference when using RetrieveAndGenerate to generate responses while using a knowledge base as a source.</p>
+    pub fn inference_config(&self) -> ::std::option::Option<&crate::types::InferenceConfig> {
+        self.inference_config.as_ref()
+    }
+    /// <p>Additional model parameters and corresponding values not included in the textInferenceConfig structure for a knowledge base. This allows users to provide custom model parameters specific to the language model being used.</p>
+    pub fn additional_model_request_fields(
+        &self,
+    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::aws_smithy_types::Document>> {
+        self.additional_model_request_fields.as_ref()
+    }
     /// <p>To split up the prompt and retrieve multiple sources, set the transformation type to <code>QUERY_DECOMPOSITION</code>.</p>
     pub fn query_transformation_configuration(&self) -> ::std::option::Option<&crate::types::QueryTransformationConfiguration> {
         self.query_transformation_configuration.as_ref()
@@ -24,11 +44,67 @@ impl OrchestrationConfiguration {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct OrchestrationConfigurationBuilder {
+    pub(crate) prompt_template: ::std::option::Option<crate::types::PromptTemplate>,
+    pub(crate) inference_config: ::std::option::Option<crate::types::InferenceConfig>,
+    pub(crate) additional_model_request_fields:
+        ::std::option::Option<::std::collections::HashMap<::std::string::String, ::aws_smithy_types::Document>>,
     pub(crate) query_transformation_configuration: ::std::option::Option<crate::types::QueryTransformationConfiguration>,
 }
 impl OrchestrationConfigurationBuilder {
+    /// <p>Contains the template for the prompt that's sent to the model for response generation.</p>
+    pub fn prompt_template(mut self, input: crate::types::PromptTemplate) -> Self {
+        self.prompt_template = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Contains the template for the prompt that's sent to the model for response generation.</p>
+    pub fn set_prompt_template(mut self, input: ::std::option::Option<crate::types::PromptTemplate>) -> Self {
+        self.prompt_template = input;
+        self
+    }
+    /// <p>Contains the template for the prompt that's sent to the model for response generation.</p>
+    pub fn get_prompt_template(&self) -> &::std::option::Option<crate::types::PromptTemplate> {
+        &self.prompt_template
+    }
+    /// <p>Configuration settings for inference when using RetrieveAndGenerate to generate responses while using a knowledge base as a source.</p>
+    pub fn inference_config(mut self, input: crate::types::InferenceConfig) -> Self {
+        self.inference_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Configuration settings for inference when using RetrieveAndGenerate to generate responses while using a knowledge base as a source.</p>
+    pub fn set_inference_config(mut self, input: ::std::option::Option<crate::types::InferenceConfig>) -> Self {
+        self.inference_config = input;
+        self
+    }
+    /// <p>Configuration settings for inference when using RetrieveAndGenerate to generate responses while using a knowledge base as a source.</p>
+    pub fn get_inference_config(&self) -> &::std::option::Option<crate::types::InferenceConfig> {
+        &self.inference_config
+    }
+    /// Adds a key-value pair to `additional_model_request_fields`.
+    ///
+    /// To override the contents of this collection use [`set_additional_model_request_fields`](Self::set_additional_model_request_fields).
+    ///
+    /// <p>Additional model parameters and corresponding values not included in the textInferenceConfig structure for a knowledge base. This allows users to provide custom model parameters specific to the language model being used.</p>
+    pub fn additional_model_request_fields(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::aws_smithy_types::Document) -> Self {
+        let mut hash_map = self.additional_model_request_fields.unwrap_or_default();
+        hash_map.insert(k.into(), v);
+        self.additional_model_request_fields = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>Additional model parameters and corresponding values not included in the textInferenceConfig structure for a knowledge base. This allows users to provide custom model parameters specific to the language model being used.</p>
+    pub fn set_additional_model_request_fields(
+        mut self,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::aws_smithy_types::Document>>,
+    ) -> Self {
+        self.additional_model_request_fields = input;
+        self
+    }
+    /// <p>Additional model parameters and corresponding values not included in the textInferenceConfig structure for a knowledge base. This allows users to provide custom model parameters specific to the language model being used.</p>
+    pub fn get_additional_model_request_fields(
+        &self,
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::aws_smithy_types::Document>> {
+        &self.additional_model_request_fields
+    }
     /// <p>To split up the prompt and retrieve multiple sources, set the transformation type to <code>QUERY_DECOMPOSITION</code>.</p>
-    /// This field is required.
     pub fn query_transformation_configuration(mut self, input: crate::types::QueryTransformationConfiguration) -> Self {
         self.query_transformation_configuration = ::std::option::Option::Some(input);
         self
@@ -45,6 +121,9 @@ impl OrchestrationConfigurationBuilder {
     /// Consumes the builder and constructs a [`OrchestrationConfiguration`](crate::types::OrchestrationConfiguration).
     pub fn build(self) -> crate::types::OrchestrationConfiguration {
         crate::types::OrchestrationConfiguration {
+            prompt_template: self.prompt_template,
+            inference_config: self.inference_config,
+            additional_model_request_fields: self.additional_model_request_fields,
             query_transformation_configuration: self.query_transformation_configuration,
         }
     }

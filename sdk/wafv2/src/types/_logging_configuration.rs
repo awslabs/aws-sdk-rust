@@ -32,6 +32,7 @@ pub struct LoggingConfiguration {
     /// </note>
     pub redacted_fields: ::std::option::Option<::std::vec::Vec<crate::types::FieldToMatch>>,
     /// <p>Indicates whether the logging configuration was created by Firewall Manager, as part of an WAF policy configuration. If true, only Firewall Manager can modify or delete the configuration.</p>
+    /// <p>The logging configuration can be created by Firewall Manager for use with any web ACL that Firewall Manager is using for an WAF policy. Web ACLs that Firewall Manager creates and uses have their <code>ManagedByFirewallManager</code> property set to true. Web ACLs that were created by a customer account and then retrofitted by Firewall Manager for use by a policy have their <code>RetrofittedByFirewallManager</code> property set to true. For either case, any corresponding logging configuration will indicate <code>ManagedByFirewallManager</code>.</p>
     pub managed_by_firewall_manager: bool,
     /// <p>Filtering that specifies which web requests are kept in the logs and which are dropped. You can filter on the rule action and on the web request labels that were applied by matching rules during web ACL evaluation.</p>
     pub logging_filter: ::std::option::Option<crate::types::LoggingFilter>,
@@ -69,6 +70,7 @@ impl LoggingConfiguration {
         self.redacted_fields.as_deref().unwrap_or_default()
     }
     /// <p>Indicates whether the logging configuration was created by Firewall Manager, as part of an WAF policy configuration. If true, only Firewall Manager can modify or delete the configuration.</p>
+    /// <p>The logging configuration can be created by Firewall Manager for use with any web ACL that Firewall Manager is using for an WAF policy. Web ACLs that Firewall Manager creates and uses have their <code>ManagedByFirewallManager</code> property set to true. Web ACLs that were created by a customer account and then retrofitted by Firewall Manager for use by a policy have their <code>RetrofittedByFirewallManager</code> property set to true. For either case, any corresponding logging configuration will indicate <code>ManagedByFirewallManager</code>.</p>
     pub fn managed_by_firewall_manager(&self) -> bool {
         self.managed_by_firewall_manager
     }
@@ -188,16 +190,19 @@ impl LoggingConfigurationBuilder {
         &self.redacted_fields
     }
     /// <p>Indicates whether the logging configuration was created by Firewall Manager, as part of an WAF policy configuration. If true, only Firewall Manager can modify or delete the configuration.</p>
+    /// <p>The logging configuration can be created by Firewall Manager for use with any web ACL that Firewall Manager is using for an WAF policy. Web ACLs that Firewall Manager creates and uses have their <code>ManagedByFirewallManager</code> property set to true. Web ACLs that were created by a customer account and then retrofitted by Firewall Manager for use by a policy have their <code>RetrofittedByFirewallManager</code> property set to true. For either case, any corresponding logging configuration will indicate <code>ManagedByFirewallManager</code>.</p>
     pub fn managed_by_firewall_manager(mut self, input: bool) -> Self {
         self.managed_by_firewall_manager = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether the logging configuration was created by Firewall Manager, as part of an WAF policy configuration. If true, only Firewall Manager can modify or delete the configuration.</p>
+    /// <p>The logging configuration can be created by Firewall Manager for use with any web ACL that Firewall Manager is using for an WAF policy. Web ACLs that Firewall Manager creates and uses have their <code>ManagedByFirewallManager</code> property set to true. Web ACLs that were created by a customer account and then retrofitted by Firewall Manager for use by a policy have their <code>RetrofittedByFirewallManager</code> property set to true. For either case, any corresponding logging configuration will indicate <code>ManagedByFirewallManager</code>.</p>
     pub fn set_managed_by_firewall_manager(mut self, input: ::std::option::Option<bool>) -> Self {
         self.managed_by_firewall_manager = input;
         self
     }
     /// <p>Indicates whether the logging configuration was created by Firewall Manager, as part of an WAF policy configuration. If true, only Firewall Manager can modify or delete the configuration.</p>
+    /// <p>The logging configuration can be created by Firewall Manager for use with any web ACL that Firewall Manager is using for an WAF policy. Web ACLs that Firewall Manager creates and uses have their <code>ManagedByFirewallManager</code> property set to true. Web ACLs that were created by a customer account and then retrofitted by Firewall Manager for use by a policy have their <code>RetrofittedByFirewallManager</code> property set to true. For either case, any corresponding logging configuration will indicate <code>ManagedByFirewallManager</code>.</p>
     pub fn get_managed_by_firewall_manager(&self) -> &::std::option::Option<bool> {
         &self.managed_by_firewall_manager
     }

@@ -122,17 +122,17 @@ impl DescribeProblemObservationsFluentBuilder {
     pub fn get_problem_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_problem_id()
     }
-    /// <p>The AWS account ID for the resource group owner.</p>
+    /// <p>The Amazon Web Services account ID for the resource group owner.</p>
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.account_id(input.into());
         self
     }
-    /// <p>The AWS account ID for the resource group owner.</p>
+    /// <p>The Amazon Web Services account ID for the resource group owner.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_account_id(input);
         self
     }
-    /// <p>The AWS account ID for the resource group owner.</p>
+    /// <p>The Amazon Web Services account ID for the resource group owner.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_account_id()
     }

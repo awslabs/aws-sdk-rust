@@ -37,6 +37,8 @@ pub use crate::types::_eks_anywhere_subscription_term_unit::EksAnywhereSubscript
 
 pub use crate::types::_eks_anywhere_subscription_license_type::EksAnywhereSubscriptionLicenseType;
 
+pub use crate::types::_zonal_shift_config_request::ZonalShiftConfigRequest;
+
 pub use crate::types::_upgrade_policy_request::UpgradePolicyRequest;
 
 pub use crate::types::_support_type::SupportType;
@@ -60,6 +62,8 @@ pub use crate::types::_resolve_conflicts::ResolveConflicts;
 pub use crate::types::_access_entry::AccessEntry;
 
 pub use crate::types::_cluster::Cluster;
+
+pub use crate::types::_zonal_shift_config_response::ZonalShiftConfigResponse;
 
 pub use crate::types::_upgrade_policy_response::UpgradePolicyResponse;
 
@@ -402,6 +406,10 @@ mod _upgrade_policy_response;
 mod _vpc_config_request;
 
 mod _vpc_config_response;
+
+mod _zonal_shift_config_request;
+
+mod _zonal_shift_config_response;
 
 /// Builders
 pub mod builders;

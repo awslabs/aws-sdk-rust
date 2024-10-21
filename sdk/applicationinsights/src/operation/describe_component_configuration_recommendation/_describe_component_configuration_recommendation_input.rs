@@ -9,7 +9,7 @@ pub struct DescribeComponentConfigurationRecommendationInput {
     pub component_name: ::std::option::Option<::std::string::String>,
     /// <p>The tier of the application component.</p>
     pub tier: ::std::option::Option<crate::types::Tier>,
-    /// <p>The name of the workload.</p>
+    /// <p>The name of the workload. The name of the workload is required when the tier of the application component is <code>SAP_ASE_SINGLE_NODE</code> or <code>SAP_ASE_HIGH_AVAILABILITY</code>.</p>
     pub workload_name: ::std::option::Option<::std::string::String>,
     /// <p>The recommended configuration type.</p>
     pub recommendation_type: ::std::option::Option<crate::types::RecommendationType>,
@@ -27,7 +27,7 @@ impl DescribeComponentConfigurationRecommendationInput {
     pub fn tier(&self) -> ::std::option::Option<&crate::types::Tier> {
         self.tier.as_ref()
     }
-    /// <p>The name of the workload.</p>
+    /// <p>The name of the workload. The name of the workload is required when the tier of the application component is <code>SAP_ASE_SINGLE_NODE</code> or <code>SAP_ASE_HIGH_AVAILABILITY</code>.</p>
     pub fn workload_name(&self) -> ::std::option::Option<&str> {
         self.workload_name.as_deref()
     }
@@ -101,17 +101,17 @@ impl DescribeComponentConfigurationRecommendationInputBuilder {
     pub fn get_tier(&self) -> &::std::option::Option<crate::types::Tier> {
         &self.tier
     }
-    /// <p>The name of the workload.</p>
+    /// <p>The name of the workload. The name of the workload is required when the tier of the application component is <code>SAP_ASE_SINGLE_NODE</code> or <code>SAP_ASE_HIGH_AVAILABILITY</code>.</p>
     pub fn workload_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workload_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the workload.</p>
+    /// <p>The name of the workload. The name of the workload is required when the tier of the application component is <code>SAP_ASE_SINGLE_NODE</code> or <code>SAP_ASE_HIGH_AVAILABILITY</code>.</p>
     pub fn set_workload_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.workload_name = input;
         self
     }
-    /// <p>The name of the workload.</p>
+    /// <p>The name of the workload. The name of the workload is required when the tier of the application component is <code>SAP_ASE_SINGLE_NODE</code> or <code>SAP_ASE_HIGH_AVAILABILITY</code>.</p>
     pub fn get_workload_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.workload_name
     }

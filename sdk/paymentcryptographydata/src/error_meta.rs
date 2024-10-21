@@ -181,6 +181,45 @@ impl From<crate::operation::generate_mac::GenerateMacError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::generate_mac_emv_pin_change::GenerateMacEmvPinChangeError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::generate_mac_emv_pin_change::GenerateMacEmvPinChangeError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::generate_mac_emv_pin_change::GenerateMacEmvPinChangeError> for Error {
+    fn from(err: crate::operation::generate_mac_emv_pin_change::GenerateMacEmvPinChangeError) -> Self {
+        match err {
+            crate::operation::generate_mac_emv_pin_change::GenerateMacEmvPinChangeError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::generate_mac_emv_pin_change::GenerateMacEmvPinChangeError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::generate_mac_emv_pin_change::GenerateMacEmvPinChangeError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::generate_mac_emv_pin_change::GenerateMacEmvPinChangeError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::generate_mac_emv_pin_change::GenerateMacEmvPinChangeError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::generate_mac_emv_pin_change::GenerateMacEmvPinChangeError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::generate_pin_data::GeneratePinDataError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

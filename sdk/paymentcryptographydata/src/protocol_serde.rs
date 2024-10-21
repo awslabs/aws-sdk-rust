@@ -31,6 +31,8 @@ pub(crate) mod shape_generate_card_validation_data;
 
 pub(crate) mod shape_generate_mac;
 
+pub(crate) mod shape_generate_mac_emv_pin_change;
+
 pub(crate) mod shape_generate_pin_data;
 
 pub(crate) mod shape_re_encrypt_data;
@@ -60,6 +62,8 @@ pub(crate) mod shape_decrypt_data_input;
 pub(crate) mod shape_encrypt_data_input;
 
 pub(crate) mod shape_generate_card_validation_data_input;
+
+pub(crate) mod shape_generate_mac_emv_pin_change_input;
 
 pub(crate) mod shape_generate_mac_input;
 
@@ -93,6 +97,8 @@ pub(crate) mod shape_card_verification_attributes;
 
 pub(crate) mod shape_cryptogram_auth_response;
 
+pub(crate) mod shape_derivation_method_attributes;
+
 pub(crate) mod shape_dukpt_attributes;
 
 pub(crate) mod shape_dukpt_derivation_attributes;
@@ -115,7 +121,11 @@ pub(crate) mod shape_translation_iso_formats;
 
 pub(crate) mod shape_validation_exception_field_list;
 
+pub(crate) mod shape_visa_amex_derivation_outputs;
+
 pub(crate) mod shape_wrapped_key;
+
+pub(crate) mod shape_amex_attributes;
 
 pub(crate) mod shape_amex_card_security_code_version1;
 
@@ -141,6 +151,10 @@ pub(crate) mod shape_dynamic_card_verification_code;
 
 pub(crate) mod shape_dynamic_card_verification_value;
 
+pub(crate) mod shape_emv2000_attributes;
+
+pub(crate) mod shape_emv_common_attributes;
+
 pub(crate) mod shape_emv_encryption_attributes;
 
 pub(crate) mod shape_ibm3624_natural_pin;
@@ -156,6 +170,8 @@ pub(crate) mod shape_ibm3624_random_pin;
 pub(crate) mod shape_mac_algorithm_dukpt;
 
 pub(crate) mod shape_mac_algorithm_emv;
+
+pub(crate) mod shape_master_card_attributes;
 
 pub(crate) mod shape_session_key_amex;
 
@@ -175,6 +191,8 @@ pub(crate) mod shape_translation_pin_data_iso_format1;
 
 pub(crate) mod shape_validation_exception_field;
 
+pub(crate) mod shape_visa_attributes;
+
 pub(crate) mod shape_visa_pin;
 
 pub(crate) mod shape_visa_pin_verification;
@@ -182,5 +200,7 @@ pub(crate) mod shape_visa_pin_verification;
 pub(crate) mod shape_visa_pin_verification_value;
 
 pub(crate) mod shape_wrapped_key_material;
+
+pub(crate) mod shape_current_pin_attributes;
 
 pub(crate) mod shape_session_key_derivation_value;

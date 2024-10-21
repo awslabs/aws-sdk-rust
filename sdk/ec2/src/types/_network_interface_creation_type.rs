@@ -14,6 +14,7 @@
 /// match networkinterfacecreationtype {
 ///     NetworkInterfaceCreationType::Branch => { /* ... */ },
 ///     NetworkInterfaceCreationType::Efa => { /* ... */ },
+///     NetworkInterfaceCreationType::EfaOnly => { /* ... */ },
 ///     NetworkInterfaceCreationType::Trunk => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -47,6 +48,8 @@ pub enum NetworkInterfaceCreationType {
     #[allow(missing_docs)] // documentation missing in model
     Efa,
     #[allow(missing_docs)] // documentation missing in model
+    EfaOnly,
+    #[allow(missing_docs)] // documentation missing in model
     Trunk,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -57,6 +60,7 @@ impl ::std::convert::From<&str> for NetworkInterfaceCreationType {
         match s {
             "branch" => NetworkInterfaceCreationType::Branch,
             "efa" => NetworkInterfaceCreationType::Efa,
+            "efa-only" => NetworkInterfaceCreationType::EfaOnly,
             "trunk" => NetworkInterfaceCreationType::Trunk,
             other => NetworkInterfaceCreationType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -75,13 +79,14 @@ impl NetworkInterfaceCreationType {
         match self {
             NetworkInterfaceCreationType::Branch => "branch",
             NetworkInterfaceCreationType::Efa => "efa",
+            NetworkInterfaceCreationType::EfaOnly => "efa-only",
             NetworkInterfaceCreationType::Trunk => "trunk",
             NetworkInterfaceCreationType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["branch", "efa", "trunk"]
+        &["branch", "efa", "efa-only", "trunk"]
     }
 }
 impl ::std::convert::AsRef<str> for NetworkInterfaceCreationType {
@@ -106,6 +111,7 @@ impl ::std::fmt::Display for NetworkInterfaceCreationType {
         match self {
             NetworkInterfaceCreationType::Branch => write!(f, "branch"),
             NetworkInterfaceCreationType::Efa => write!(f, "efa"),
+            NetworkInterfaceCreationType::EfaOnly => write!(f, "efa-only"),
             NetworkInterfaceCreationType::Trunk => write!(f, "trunk"),
             NetworkInterfaceCreationType::Unknown(value) => write!(f, "{}", value),
         }

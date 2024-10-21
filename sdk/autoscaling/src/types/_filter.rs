@@ -7,7 +7,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Filter {
     /// <p>The name of the filter.</p>
-    /// <p>The valid values for <code>Name</code> depend on which API operation you're using with the filter (<code>DescribeAutoScalingGroups</code> or <code>DescribeTags</code>).</p>
+    /// <p>The valid values for <code>Name</code> depend on which API operation you're using with the filter (<a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeAutoScalingGroups.html">DescribeAutoScalingGroups</a> or <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeTags.html">DescribeTags</a>).</p>
     /// <p><b>DescribeAutoScalingGroups</b></p>
     /// <p>Valid values for <code>Name</code> include the following:</p>
     /// <ul>
@@ -37,7 +37,7 @@ pub struct Filter {
 }
 impl Filter {
     /// <p>The name of the filter.</p>
-    /// <p>The valid values for <code>Name</code> depend on which API operation you're using with the filter (<code>DescribeAutoScalingGroups</code> or <code>DescribeTags</code>).</p>
+    /// <p>The valid values for <code>Name</code> depend on which API operation you're using with the filter (<a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeAutoScalingGroups.html">DescribeAutoScalingGroups</a> or <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeTags.html">DescribeTags</a>).</p>
     /// <p><b>DescribeAutoScalingGroups</b></p>
     /// <p>Valid values for <code>Name</code> include the following:</p>
     /// <ul>
@@ -87,7 +87,7 @@ pub struct FilterBuilder {
 }
 impl FilterBuilder {
     /// <p>The name of the filter.</p>
-    /// <p>The valid values for <code>Name</code> depend on which API operation you're using with the filter (<code>DescribeAutoScalingGroups</code> or <code>DescribeTags</code>).</p>
+    /// <p>The valid values for <code>Name</code> depend on which API operation you're using with the filter (<a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeAutoScalingGroups.html">DescribeAutoScalingGroups</a> or <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeTags.html">DescribeTags</a>).</p>
     /// <p><b>DescribeAutoScalingGroups</b></p>
     /// <p>Valid values for <code>Name</code> include the following:</p>
     /// <ul>
@@ -115,7 +115,7 @@ impl FilterBuilder {
         self
     }
     /// <p>The name of the filter.</p>
-    /// <p>The valid values for <code>Name</code> depend on which API operation you're using with the filter (<code>DescribeAutoScalingGroups</code> or <code>DescribeTags</code>).</p>
+    /// <p>The valid values for <code>Name</code> depend on which API operation you're using with the filter (<a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeAutoScalingGroups.html">DescribeAutoScalingGroups</a> or <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeTags.html">DescribeTags</a>).</p>
     /// <p><b>DescribeAutoScalingGroups</b></p>
     /// <p>Valid values for <code>Name</code> include the following:</p>
     /// <ul>
@@ -143,7 +143,7 @@ impl FilterBuilder {
         self
     }
     /// <p>The name of the filter.</p>
-    /// <p>The valid values for <code>Name</code> depend on which API operation you're using with the filter (<code>DescribeAutoScalingGroups</code> or <code>DescribeTags</code>).</p>
+    /// <p>The valid values for <code>Name</code> depend on which API operation you're using with the filter (<a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeAutoScalingGroups.html">DescribeAutoScalingGroups</a> or <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeTags.html">DescribeTags</a>).</p>
     /// <p><b>DescribeAutoScalingGroups</b></p>
     /// <p>Valid values for <code>Name</code> include the following:</p>
     /// <ul>

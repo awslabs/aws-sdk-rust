@@ -22,8 +22,8 @@ impl crate::operation::delete_firewall_manager_rule_groups::builders::DeleteFire
 }
 /// Fluent builder constructing a request to `DeleteFirewallManagerRuleGroups`.
 ///
-/// <p>Deletes all rule groups that are managed by Firewall Manager for the specified web ACL.</p>
-/// <p>You can only use this if <code>ManagedByFirewallManager</code> is false in the specified <code>WebACL</code>.</p>
+/// <p>Deletes all rule groups that are managed by Firewall Manager from the specified <code>WebACL</code>.</p>
+/// <p>You can only use this if <code>ManagedByFirewallManager</code> and <code>RetrofittedByFirewallManager</code> are both false in the web ACL.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteFirewallManagerRuleGroupsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

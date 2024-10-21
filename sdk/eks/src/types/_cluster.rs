@@ -49,6 +49,8 @@ pub struct Cluster {
     /// <p>This value indicates if extended support is enabled or disabled for the cluster.</p>
     /// <p><a href="https://docs.aws.amazon.com/eks/latest/userguide/extended-support-control.html">Learn more about EKS Extended Support in the EKS User Guide.</a></p>
     pub upgrade_policy: ::std::option::Option<crate::types::UpgradePolicyResponse>,
+    /// <p>The configuration for zonal shift for the cluster.</p>
+    pub zonal_shift_config: ::std::option::Option<crate::types::ZonalShiftConfigResponse>,
 }
 impl Cluster {
     /// <p>The name of your cluster.</p>
@@ -142,6 +144,10 @@ impl Cluster {
     pub fn upgrade_policy(&self) -> ::std::option::Option<&crate::types::UpgradePolicyResponse> {
         self.upgrade_policy.as_ref()
     }
+    /// <p>The configuration for zonal shift for the cluster.</p>
+    pub fn zonal_shift_config(&self) -> ::std::option::Option<&crate::types::ZonalShiftConfigResponse> {
+        self.zonal_shift_config.as_ref()
+    }
 }
 impl Cluster {
     /// Creates a new builder-style object to manufacture [`Cluster`](crate::types::Cluster).
@@ -176,6 +182,7 @@ pub struct ClusterBuilder {
     pub(crate) outpost_config: ::std::option::Option<crate::types::OutpostConfigResponse>,
     pub(crate) access_config: ::std::option::Option<crate::types::AccessConfigResponse>,
     pub(crate) upgrade_policy: ::std::option::Option<crate::types::UpgradePolicyResponse>,
+    pub(crate) zonal_shift_config: ::std::option::Option<crate::types::ZonalShiftConfigResponse>,
 }
 impl ClusterBuilder {
     /// <p>The name of your cluster.</p>
@@ -501,6 +508,20 @@ impl ClusterBuilder {
     pub fn get_upgrade_policy(&self) -> &::std::option::Option<crate::types::UpgradePolicyResponse> {
         &self.upgrade_policy
     }
+    /// <p>The configuration for zonal shift for the cluster.</p>
+    pub fn zonal_shift_config(mut self, input: crate::types::ZonalShiftConfigResponse) -> Self {
+        self.zonal_shift_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration for zonal shift for the cluster.</p>
+    pub fn set_zonal_shift_config(mut self, input: ::std::option::Option<crate::types::ZonalShiftConfigResponse>) -> Self {
+        self.zonal_shift_config = input;
+        self
+    }
+    /// <p>The configuration for zonal shift for the cluster.</p>
+    pub fn get_zonal_shift_config(&self) -> &::std::option::Option<crate::types::ZonalShiftConfigResponse> {
+        &self.zonal_shift_config
+    }
     /// Consumes the builder and constructs a [`Cluster`](crate::types::Cluster).
     pub fn build(self) -> crate::types::Cluster {
         crate::types::Cluster {
@@ -526,6 +547,7 @@ impl ClusterBuilder {
             outpost_config: self.outpost_config,
             access_config: self.access_config,
             upgrade_policy: self.upgrade_policy,
+            zonal_shift_config: self.zonal_shift_config,
         }
     }
 }

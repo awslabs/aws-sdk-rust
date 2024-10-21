@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ApplicationInfo {
-    /// <p>The AWS account ID for the owner of the application.</p>
+    /// <p>The Amazon Web Services account ID for the owner of the application.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the resource group used for the application.</p>
     pub resource_group_name: ::std::option::Option<::std::string::String>,
@@ -12,6 +12,8 @@ pub struct ApplicationInfo {
     pub life_cycle: ::std::option::Option<::std::string::String>,
     /// <p>The SNS topic provided to Application Insights that is associated to the created opsItems to receive SNS notifications for opsItem updates.</p>
     pub ops_item_sns_topic_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The SNS topic ARN that is associated with SNS notifications for updates or issues.</p>
+    pub sns_notification_arn: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether Application Insights will create opsItems for any problem detected by Application Insights for an application.</p>
     pub ops_center_enabled: ::std::option::Option<bool>,
     /// <p>Indicates whether Application Insights can listen to CloudWatch events for the application resources, such as <code>instance terminated</code>, <code>failed deployment</code>, and others.</p>
@@ -32,7 +34,7 @@ pub struct ApplicationInfo {
     pub attach_missing_permission: ::std::option::Option<bool>,
 }
 impl ApplicationInfo {
-    /// <p>The AWS account ID for the owner of the application.</p>
+    /// <p>The Amazon Web Services account ID for the owner of the application.</p>
     pub fn account_id(&self) -> ::std::option::Option<&str> {
         self.account_id.as_deref()
     }
@@ -47,6 +49,10 @@ impl ApplicationInfo {
     /// <p>The SNS topic provided to Application Insights that is associated to the created opsItems to receive SNS notifications for opsItem updates.</p>
     pub fn ops_item_sns_topic_arn(&self) -> ::std::option::Option<&str> {
         self.ops_item_sns_topic_arn.as_deref()
+    }
+    /// <p>The SNS topic ARN that is associated with SNS notifications for updates or issues.</p>
+    pub fn sns_notification_arn(&self) -> ::std::option::Option<&str> {
+        self.sns_notification_arn.as_deref()
     }
     /// <p>Indicates whether Application Insights will create opsItems for any problem detected by Application Insights for an application.</p>
     pub fn ops_center_enabled(&self) -> ::std::option::Option<bool> {
@@ -94,6 +100,7 @@ pub struct ApplicationInfoBuilder {
     pub(crate) resource_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) life_cycle: ::std::option::Option<::std::string::String>,
     pub(crate) ops_item_sns_topic_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) sns_notification_arn: ::std::option::Option<::std::string::String>,
     pub(crate) ops_center_enabled: ::std::option::Option<bool>,
     pub(crate) cwe_monitor_enabled: ::std::option::Option<bool>,
     pub(crate) remarks: ::std::option::Option<::std::string::String>,
@@ -102,17 +109,17 @@ pub struct ApplicationInfoBuilder {
     pub(crate) attach_missing_permission: ::std::option::Option<bool>,
 }
 impl ApplicationInfoBuilder {
-    /// <p>The AWS account ID for the owner of the application.</p>
+    /// <p>The Amazon Web Services account ID for the owner of the application.</p>
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The AWS account ID for the owner of the application.</p>
+    /// <p>The Amazon Web Services account ID for the owner of the application.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_id = input;
         self
     }
-    /// <p>The AWS account ID for the owner of the application.</p>
+    /// <p>The Amazon Web Services account ID for the owner of the application.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.account_id
     }
@@ -157,6 +164,20 @@ impl ApplicationInfoBuilder {
     /// <p>The SNS topic provided to Application Insights that is associated to the created opsItems to receive SNS notifications for opsItem updates.</p>
     pub fn get_ops_item_sns_topic_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.ops_item_sns_topic_arn
+    }
+    /// <p>The SNS topic ARN that is associated with SNS notifications for updates or issues.</p>
+    pub fn sns_notification_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.sns_notification_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The SNS topic ARN that is associated with SNS notifications for updates or issues.</p>
+    pub fn set_sns_notification_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.sns_notification_arn = input;
+        self
+    }
+    /// <p>The SNS topic ARN that is associated with SNS notifications for updates or issues.</p>
+    pub fn get_sns_notification_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sns_notification_arn
     }
     /// <p>Indicates whether Application Insights will create opsItems for any problem detected by Application Insights for an application.</p>
     pub fn ops_center_enabled(mut self, input: bool) -> Self {
@@ -267,6 +288,7 @@ impl ApplicationInfoBuilder {
             resource_group_name: self.resource_group_name,
             life_cycle: self.life_cycle,
             ops_item_sns_topic_arn: self.ops_item_sns_topic_arn,
+            sns_notification_arn: self.sns_notification_arn,
             ops_center_enabled: self.ops_center_enabled,
             cwe_monitor_enabled: self.cwe_monitor_enabled,
             remarks: self.remarks,

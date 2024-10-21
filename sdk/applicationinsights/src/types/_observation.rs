@@ -36,15 +36,15 @@ pub struct Observation {
     pub cloud_watch_event_source: ::std::option::Option<crate::types::CloudWatchEventSource>,
     /// <p>The detail type of the CloudWatch Event-based observation, for example, <code>EC2 Instance State-change Notification</code>.</p>
     pub cloud_watch_event_detail_type: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the AWS Health Event-based observation.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Health Event-based observation.</p>
     pub health_event_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The service to which the AWS Health Event belongs, such as EC2.</p>
+    /// <p>The service to which the Health Event belongs, such as EC2.</p>
     pub health_service: ::std::option::Option<::std::string::String>,
-    /// <p>The type of the AWS Health event, for example, <code>AWS_EC2_POWER_CONNECTIVITY_ISSUE</code>.</p>
+    /// <p>The type of the Health event, for example, <code>AWS_EC2_POWER_CONNECTIVITY_ISSUE</code>.</p>
     pub health_event_type_code: ::std::option::Option<::std::string::String>,
-    /// <p>The category of the AWS Health event, such as <code>issue</code>.</p>
+    /// <p>The category of the Health event, such as <code>issue</code>.</p>
     pub health_event_type_category: ::std::option::Option<::std::string::String>,
-    /// <p>The description of the AWS Health event provided by the service, such as Amazon EC2.</p>
+    /// <p>The description of the Health event provided by the service, such as Amazon EC2.</p>
     pub health_event_description: ::std::option::Option<::std::string::String>,
     /// <p>The deployment ID of the CodeDeploy-based observation related to the detected problem.</p>
     pub code_deploy_deployment_id: ::std::option::Option<::std::string::String>,
@@ -160,23 +160,23 @@ impl Observation {
     pub fn cloud_watch_event_detail_type(&self) -> ::std::option::Option<&str> {
         self.cloud_watch_event_detail_type.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the AWS Health Event-based observation.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Health Event-based observation.</p>
     pub fn health_event_arn(&self) -> ::std::option::Option<&str> {
         self.health_event_arn.as_deref()
     }
-    /// <p>The service to which the AWS Health Event belongs, such as EC2.</p>
+    /// <p>The service to which the Health Event belongs, such as EC2.</p>
     pub fn health_service(&self) -> ::std::option::Option<&str> {
         self.health_service.as_deref()
     }
-    /// <p>The type of the AWS Health event, for example, <code>AWS_EC2_POWER_CONNECTIVITY_ISSUE</code>.</p>
+    /// <p>The type of the Health event, for example, <code>AWS_EC2_POWER_CONNECTIVITY_ISSUE</code>.</p>
     pub fn health_event_type_code(&self) -> ::std::option::Option<&str> {
         self.health_event_type_code.as_deref()
     }
-    /// <p>The category of the AWS Health event, such as <code>issue</code>.</p>
+    /// <p>The category of the Health event, such as <code>issue</code>.</p>
     pub fn health_event_type_category(&self) -> ::std::option::Option<&str> {
         self.health_event_type_category.as_deref()
     }
-    /// <p>The description of the AWS Health event provided by the service, such as Amazon EC2.</p>
+    /// <p>The description of the Health event provided by the service, such as Amazon EC2.</p>
     pub fn health_event_description(&self) -> ::std::option::Option<&str> {
         self.health_event_description.as_deref()
     }
@@ -559,73 +559,73 @@ impl ObservationBuilder {
     pub fn get_cloud_watch_event_detail_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.cloud_watch_event_detail_type
     }
-    /// <p>The Amazon Resource Name (ARN) of the AWS Health Event-based observation.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Health Event-based observation.</p>
     pub fn health_event_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.health_event_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the AWS Health Event-based observation.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Health Event-based observation.</p>
     pub fn set_health_event_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.health_event_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the AWS Health Event-based observation.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Health Event-based observation.</p>
     pub fn get_health_event_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.health_event_arn
     }
-    /// <p>The service to which the AWS Health Event belongs, such as EC2.</p>
+    /// <p>The service to which the Health Event belongs, such as EC2.</p>
     pub fn health_service(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.health_service = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The service to which the AWS Health Event belongs, such as EC2.</p>
+    /// <p>The service to which the Health Event belongs, such as EC2.</p>
     pub fn set_health_service(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.health_service = input;
         self
     }
-    /// <p>The service to which the AWS Health Event belongs, such as EC2.</p>
+    /// <p>The service to which the Health Event belongs, such as EC2.</p>
     pub fn get_health_service(&self) -> &::std::option::Option<::std::string::String> {
         &self.health_service
     }
-    /// <p>The type of the AWS Health event, for example, <code>AWS_EC2_POWER_CONNECTIVITY_ISSUE</code>.</p>
+    /// <p>The type of the Health event, for example, <code>AWS_EC2_POWER_CONNECTIVITY_ISSUE</code>.</p>
     pub fn health_event_type_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.health_event_type_code = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The type of the AWS Health event, for example, <code>AWS_EC2_POWER_CONNECTIVITY_ISSUE</code>.</p>
+    /// <p>The type of the Health event, for example, <code>AWS_EC2_POWER_CONNECTIVITY_ISSUE</code>.</p>
     pub fn set_health_event_type_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.health_event_type_code = input;
         self
     }
-    /// <p>The type of the AWS Health event, for example, <code>AWS_EC2_POWER_CONNECTIVITY_ISSUE</code>.</p>
+    /// <p>The type of the Health event, for example, <code>AWS_EC2_POWER_CONNECTIVITY_ISSUE</code>.</p>
     pub fn get_health_event_type_code(&self) -> &::std::option::Option<::std::string::String> {
         &self.health_event_type_code
     }
-    /// <p>The category of the AWS Health event, such as <code>issue</code>.</p>
+    /// <p>The category of the Health event, such as <code>issue</code>.</p>
     pub fn health_event_type_category(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.health_event_type_category = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The category of the AWS Health event, such as <code>issue</code>.</p>
+    /// <p>The category of the Health event, such as <code>issue</code>.</p>
     pub fn set_health_event_type_category(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.health_event_type_category = input;
         self
     }
-    /// <p>The category of the AWS Health event, such as <code>issue</code>.</p>
+    /// <p>The category of the Health event, such as <code>issue</code>.</p>
     pub fn get_health_event_type_category(&self) -> &::std::option::Option<::std::string::String> {
         &self.health_event_type_category
     }
-    /// <p>The description of the AWS Health event provided by the service, such as Amazon EC2.</p>
+    /// <p>The description of the Health event provided by the service, such as Amazon EC2.</p>
     pub fn health_event_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.health_event_description = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The description of the AWS Health event provided by the service, such as Amazon EC2.</p>
+    /// <p>The description of the Health event provided by the service, such as Amazon EC2.</p>
     pub fn set_health_event_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.health_event_description = input;
         self
     }
-    /// <p>The description of the AWS Health event provided by the service, such as Amazon EC2.</p>
+    /// <p>The description of the Health event provided by the service, such as Amazon EC2.</p>
     pub fn get_health_event_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.health_event_description
     }

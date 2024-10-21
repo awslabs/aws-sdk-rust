@@ -33,7 +33,7 @@ impl crate::operation::rollback_instance_refresh::builders::RollbackInstanceRefr
 /// <li>
 /// <p>The Auto Scaling group uses the launch template's <code>$Latest</code> or <code>$Default</code> version.</p></li>
 /// </ul>
-/// <p>When you receive a successful response from this operation, Amazon EC2 Auto Scaling immediately begins replacing instances. You can check the status of this operation through the <code>DescribeInstanceRefreshes</code> API operation.</p>
+/// <p>When you receive a successful response from this operation, Amazon EC2 Auto Scaling immediately begins replacing instances. You can check the status of this operation through the <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeInstanceRefreshes.html">DescribeInstanceRefreshes</a> API operation.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RollbackInstanceRefreshFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

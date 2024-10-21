@@ -8,9 +8,9 @@ pub struct PreProcessingModelInvocationOutput {
     pub trace_id: ::std::option::Option<::std::string::String>,
     /// <p>Details about the response from the Lambda parsing of the output of the pre-processing step.</p>
     pub parsed_response: ::std::option::Option<crate::types::PreProcessingParsedResponse>,
-    /// <p>Contains the raw output from the foundation model.</p>
+    /// <p>Details of the raw response from the foundation model output.</p>
     pub raw_response: ::std::option::Option<crate::types::RawResponse>,
-    /// <p>Provides details of the foundation model.</p>
+    /// <p>Contains information about the foundation model output from the pre-processing step.</p>
     pub metadata: ::std::option::Option<crate::types::Metadata>,
 }
 impl PreProcessingModelInvocationOutput {
@@ -22,11 +22,11 @@ impl PreProcessingModelInvocationOutput {
     pub fn parsed_response(&self) -> ::std::option::Option<&crate::types::PreProcessingParsedResponse> {
         self.parsed_response.as_ref()
     }
-    /// <p>Contains the raw output from the foundation model.</p>
+    /// <p>Details of the raw response from the foundation model output.</p>
     pub fn raw_response(&self) -> ::std::option::Option<&crate::types::RawResponse> {
         self.raw_response.as_ref()
     }
-    /// <p>Provides details of the foundation model.</p>
+    /// <p>Contains information about the foundation model output from the pre-processing step.</p>
     pub fn metadata(&self) -> ::std::option::Option<&crate::types::Metadata> {
         self.metadata.as_ref()
     }
@@ -86,31 +86,31 @@ impl PreProcessingModelInvocationOutputBuilder {
     pub fn get_parsed_response(&self) -> &::std::option::Option<crate::types::PreProcessingParsedResponse> {
         &self.parsed_response
     }
-    /// <p>Contains the raw output from the foundation model.</p>
+    /// <p>Details of the raw response from the foundation model output.</p>
     pub fn raw_response(mut self, input: crate::types::RawResponse) -> Self {
         self.raw_response = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Contains the raw output from the foundation model.</p>
+    /// <p>Details of the raw response from the foundation model output.</p>
     pub fn set_raw_response(mut self, input: ::std::option::Option<crate::types::RawResponse>) -> Self {
         self.raw_response = input;
         self
     }
-    /// <p>Contains the raw output from the foundation model.</p>
+    /// <p>Details of the raw response from the foundation model output.</p>
     pub fn get_raw_response(&self) -> &::std::option::Option<crate::types::RawResponse> {
         &self.raw_response
     }
-    /// <p>Provides details of the foundation model.</p>
+    /// <p>Contains information about the foundation model output from the pre-processing step.</p>
     pub fn metadata(mut self, input: crate::types::Metadata) -> Self {
         self.metadata = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Provides details of the foundation model.</p>
+    /// <p>Contains information about the foundation model output from the pre-processing step.</p>
     pub fn set_metadata(mut self, input: ::std::option::Option<crate::types::Metadata>) -> Self {
         self.metadata = input;
         self
     }
-    /// <p>Provides details of the foundation model.</p>
+    /// <p>Contains information about the foundation model output from the pre-processing step.</p>
     pub fn get_metadata(&self) -> &::std::option::Option<crate::types::Metadata> {
         &self.metadata
     }

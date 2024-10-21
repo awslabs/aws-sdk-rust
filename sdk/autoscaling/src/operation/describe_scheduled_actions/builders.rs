@@ -23,7 +23,7 @@ impl crate::operation::describe_scheduled_actions::builders::DescribeScheduledAc
 /// Fluent builder constructing a request to `DescribeScheduledActions`.
 ///
 /// <p>Gets information about the scheduled actions that haven't run or that have not reached their end time.</p>
-/// <p>To describe the scaling activities for scheduled actions that have already run, call the <code>DescribeScalingActivities</code> API.</p>
+/// <p>To describe the scaling activities for scheduled actions that have already run, call the <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeScalingActivities.html">DescribeScalingActivities</a> API.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeScheduledActionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

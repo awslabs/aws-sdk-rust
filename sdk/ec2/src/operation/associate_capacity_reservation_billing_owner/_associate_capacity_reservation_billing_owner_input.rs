@@ -7,7 +7,7 @@ pub struct AssociateCapacityReservationBillingOwnerInput {
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The ID of the Capacity Reservation.</p>
     pub capacity_reservation_id: ::std::option::Option<::std::string::String>,
-    /// <p>The ID of the consumer account to which assign billing.</p>
+    /// <p>The ID of the consumer account to which to assign billing.</p>
     pub unused_reservation_billing_owner_id: ::std::option::Option<::std::string::String>,
 }
 impl AssociateCapacityReservationBillingOwnerInput {
@@ -19,7 +19,7 @@ impl AssociateCapacityReservationBillingOwnerInput {
     pub fn capacity_reservation_id(&self) -> ::std::option::Option<&str> {
         self.capacity_reservation_id.as_deref()
     }
-    /// <p>The ID of the consumer account to which assign billing.</p>
+    /// <p>The ID of the consumer account to which to assign billing.</p>
     pub fn unused_reservation_billing_owner_id(&self) -> ::std::option::Option<&str> {
         self.unused_reservation_billing_owner_id.as_deref()
     }
@@ -70,18 +70,18 @@ impl AssociateCapacityReservationBillingOwnerInputBuilder {
     pub fn get_capacity_reservation_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.capacity_reservation_id
     }
-    /// <p>The ID of the consumer account to which assign billing.</p>
+    /// <p>The ID of the consumer account to which to assign billing.</p>
     /// This field is required.
     pub fn unused_reservation_billing_owner_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.unused_reservation_billing_owner_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the consumer account to which assign billing.</p>
+    /// <p>The ID of the consumer account to which to assign billing.</p>
     pub fn set_unused_reservation_billing_owner_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.unused_reservation_billing_owner_id = input;
         self
     }
-    /// <p>The ID of the consumer account to which assign billing.</p>
+    /// <p>The ID of the consumer account to which to assign billing.</p>
     pub fn get_unused_reservation_billing_owner_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.unused_reservation_billing_owner_id
     }

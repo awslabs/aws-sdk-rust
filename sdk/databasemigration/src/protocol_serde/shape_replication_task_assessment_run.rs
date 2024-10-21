@@ -98,6 +98,15 @@ where
                                         .transpose()?,
                                 );
                             }
+                            "IsLatestTaskAssessmentRun" => {
+                                builder = builder
+                                    .set_is_latest_task_assessment_run(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                            }
+                            "ResultStatistic" => {
+                                builder = builder.set_result_statistic(
+                                    crate::protocol_serde::shape_replication_task_assessment_run_result_statistic::de_replication_task_assessment_run_result_statistic(tokens)?
+                                );
+                            }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

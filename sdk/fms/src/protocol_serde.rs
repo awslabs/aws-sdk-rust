@@ -375,6 +375,10 @@ pub(crate) mod shape_third_party_firewall_missing_subnet_violation;
 
 pub(crate) mod shape_third_party_firewall_policy;
 
+pub(crate) mod shape_web_acl_has_incompatible_configuration_violation;
+
+pub(crate) mod shape_web_acl_has_out_of_scope_resources_violation;
+
 pub(crate) mod shape_aws_ec2_network_interface_violations;
 
 pub(crate) mod shape_dns_rule_group_priorities;
@@ -390,6 +394,8 @@ pub(crate) mod shape_network_firewall_policy_description;
 pub(crate) mod shape_partial_matches;
 
 pub(crate) mod shape_possible_remediation_action_list;
+
+pub(crate) mod shape_resource_arn_list;
 
 pub(crate) mod shape_resource_id_list;
 

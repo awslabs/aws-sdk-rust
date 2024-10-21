@@ -28,6 +28,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "ShortName" => {
+                            builder = builder.set_short_name(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "Insights" => {
                             builder = builder.set_insights(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

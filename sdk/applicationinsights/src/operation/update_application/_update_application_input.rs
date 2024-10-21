@@ -11,6 +11,8 @@ pub struct UpdateApplicationInput {
     pub cwe_monitor_enabled: ::std::option::Option<bool>,
     /// <p>The SNS topic provided to Application Insights that is associated to the created opsItem. Allows you to receive notifications for updates to the opsItem.</p>
     pub ops_item_sns_topic_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The SNS topic ARN. Allows you to receive SNS notifications for updates and issues with an application.</p>
+    pub sns_notification_arn: ::std::option::Option<::std::string::String>,
     /// <p>Disassociates the SNS topic from the opsItem created for detected problems.</p>
     pub remove_sns_topic: ::std::option::Option<bool>,
     /// <p>Turns auto-configuration on or off.</p>
@@ -34,6 +36,10 @@ impl UpdateApplicationInput {
     /// <p>The SNS topic provided to Application Insights that is associated to the created opsItem. Allows you to receive notifications for updates to the opsItem.</p>
     pub fn ops_item_sns_topic_arn(&self) -> ::std::option::Option<&str> {
         self.ops_item_sns_topic_arn.as_deref()
+    }
+    /// <p>The SNS topic ARN. Allows you to receive SNS notifications for updates and issues with an application.</p>
+    pub fn sns_notification_arn(&self) -> ::std::option::Option<&str> {
+        self.sns_notification_arn.as_deref()
     }
     /// <p>Disassociates the SNS topic from the opsItem created for detected problems.</p>
     pub fn remove_sns_topic(&self) -> ::std::option::Option<bool> {
@@ -63,6 +69,7 @@ pub struct UpdateApplicationInputBuilder {
     pub(crate) ops_center_enabled: ::std::option::Option<bool>,
     pub(crate) cwe_monitor_enabled: ::std::option::Option<bool>,
     pub(crate) ops_item_sns_topic_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) sns_notification_arn: ::std::option::Option<::std::string::String>,
     pub(crate) remove_sns_topic: ::std::option::Option<bool>,
     pub(crate) auto_config_enabled: ::std::option::Option<bool>,
     pub(crate) attach_missing_permission: ::std::option::Option<bool>,
@@ -125,6 +132,20 @@ impl UpdateApplicationInputBuilder {
     pub fn get_ops_item_sns_topic_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.ops_item_sns_topic_arn
     }
+    /// <p>The SNS topic ARN. Allows you to receive SNS notifications for updates and issues with an application.</p>
+    pub fn sns_notification_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.sns_notification_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The SNS topic ARN. Allows you to receive SNS notifications for updates and issues with an application.</p>
+    pub fn set_sns_notification_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.sns_notification_arn = input;
+        self
+    }
+    /// <p>The SNS topic ARN. Allows you to receive SNS notifications for updates and issues with an application.</p>
+    pub fn get_sns_notification_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sns_notification_arn
+    }
     /// <p>Disassociates the SNS topic from the opsItem created for detected problems.</p>
     pub fn remove_sns_topic(mut self, input: bool) -> Self {
         self.remove_sns_topic = ::std::option::Option::Some(input);
@@ -176,6 +197,7 @@ impl UpdateApplicationInputBuilder {
             ops_center_enabled: self.ops_center_enabled,
             cwe_monitor_enabled: self.cwe_monitor_enabled,
             ops_item_sns_topic_arn: self.ops_item_sns_topic_arn,
+            sns_notification_arn: self.sns_notification_arn,
             remove_sns_topic: self.remove_sns_topic,
             auto_config_enabled: self.auto_config_enabled,
             attach_missing_permission: self.attach_missing_permission,

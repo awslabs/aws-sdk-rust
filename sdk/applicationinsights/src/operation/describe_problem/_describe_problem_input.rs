@@ -5,7 +5,7 @@
 pub struct DescribeProblemInput {
     /// <p>The ID of the problem.</p>
     pub problem_id: ::std::option::Option<::std::string::String>,
-    /// <p>The AWS account ID for the owner of the resource group affected by the problem.</p>
+    /// <p>The Amazon Web Services account ID for the owner of the resource group affected by the problem.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeProblemInput {
@@ -13,7 +13,7 @@ impl DescribeProblemInput {
     pub fn problem_id(&self) -> ::std::option::Option<&str> {
         self.problem_id.as_deref()
     }
-    /// <p>The AWS account ID for the owner of the resource group affected by the problem.</p>
+    /// <p>The Amazon Web Services account ID for the owner of the resource group affected by the problem.</p>
     pub fn account_id(&self) -> ::std::option::Option<&str> {
         self.account_id.as_deref()
     }
@@ -48,17 +48,17 @@ impl DescribeProblemInputBuilder {
     pub fn get_problem_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.problem_id
     }
-    /// <p>The AWS account ID for the owner of the resource group affected by the problem.</p>
+    /// <p>The Amazon Web Services account ID for the owner of the resource group affected by the problem.</p>
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The AWS account ID for the owner of the resource group affected by the problem.</p>
+    /// <p>The Amazon Web Services account ID for the owner of the resource group affected by the problem.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_id = input;
         self
     }
-    /// <p>The AWS account ID for the owner of the resource group affected by the problem.</p>
+    /// <p>The Amazon Web Services account ID for the owner of the resource group affected by the problem.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.account_id
     }

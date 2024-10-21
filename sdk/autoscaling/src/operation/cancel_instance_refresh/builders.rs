@@ -24,7 +24,7 @@ impl crate::operation::cancel_instance_refresh::builders::CancelInstanceRefreshI
 ///
 /// <p>Cancels an instance refresh or rollback that is in progress. If an instance refresh or rollback is not in progress, an <code>ActiveInstanceRefreshNotFound</code> error occurs.</p>
 /// <p>This operation is part of the <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-refresh.html">instance refresh feature</a> in Amazon EC2 Auto Scaling, which helps you update instances in your Auto Scaling group after you make configuration changes.</p>
-/// <p>When you cancel an instance refresh, this does not roll back any changes that it made. Use the <code>RollbackInstanceRefresh</code> API to roll back instead.</p>
+/// <p>When you cancel an instance refresh, this does not roll back any changes that it made. Use the <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_RollbackInstanceRefresh.html">RollbackInstanceRefresh</a> API to roll back instead.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CancelInstanceRefreshFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

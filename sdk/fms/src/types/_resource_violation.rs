@@ -55,6 +55,10 @@ pub struct ResourceViolation {
     pub invalid_network_acl_entries_violation: ::std::option::Option<crate::types::InvalidNetworkAclEntriesViolation>,
     /// <p>A list of possible remediation action lists. Each individual possible remediation action is a list of individual remediation actions.</p>
     pub possible_remediation_actions: ::std::option::Option<crate::types::PossibleRemediationActions>,
+    /// <p>The violation details for a web ACL whose configuration is incompatible with the Firewall Manager policy.</p>
+    pub web_acl_has_incompatible_configuration_violation: ::std::option::Option<crate::types::WebAclHasIncompatibleConfigurationViolation>,
+    /// <p>The violation details for a web ACL that's associated with at least one resource that's out of scope of the Firewall Manager policy.</p>
+    pub web_acl_has_out_of_scope_resources_violation: ::std::option::Option<crate::types::WebAclHasOutOfScopeResourcesViolation>,
 }
 impl ResourceViolation {
     /// <p>Violation detail for security groups.</p>
@@ -169,6 +173,16 @@ impl ResourceViolation {
     pub fn possible_remediation_actions(&self) -> ::std::option::Option<&crate::types::PossibleRemediationActions> {
         self.possible_remediation_actions.as_ref()
     }
+    /// <p>The violation details for a web ACL whose configuration is incompatible with the Firewall Manager policy.</p>
+    pub fn web_acl_has_incompatible_configuration_violation(
+        &self,
+    ) -> ::std::option::Option<&crate::types::WebAclHasIncompatibleConfigurationViolation> {
+        self.web_acl_has_incompatible_configuration_violation.as_ref()
+    }
+    /// <p>The violation details for a web ACL that's associated with at least one resource that's out of scope of the Firewall Manager policy.</p>
+    pub fn web_acl_has_out_of_scope_resources_violation(&self) -> ::std::option::Option<&crate::types::WebAclHasOutOfScopeResourcesViolation> {
+        self.web_acl_has_out_of_scope_resources_violation.as_ref()
+    }
 }
 impl ResourceViolation {
     /// Creates a new builder-style object to manufacture [`ResourceViolation`](crate::types::ResourceViolation).
@@ -211,6 +225,8 @@ pub struct ResourceViolationBuilder {
     pub(crate) firewall_subnet_missing_vpc_endpoint_violation: ::std::option::Option<crate::types::FirewallSubnetMissingVpcEndpointViolation>,
     pub(crate) invalid_network_acl_entries_violation: ::std::option::Option<crate::types::InvalidNetworkAclEntriesViolation>,
     pub(crate) possible_remediation_actions: ::std::option::Option<crate::types::PossibleRemediationActions>,
+    pub(crate) web_acl_has_incompatible_configuration_violation: ::std::option::Option<crate::types::WebAclHasIncompatibleConfigurationViolation>,
+    pub(crate) web_acl_has_out_of_scope_resources_violation: ::std::option::Option<crate::types::WebAclHasOutOfScopeResourcesViolation>,
 }
 impl ResourceViolationBuilder {
     /// <p>Violation detail for security groups.</p>
@@ -646,6 +662,42 @@ impl ResourceViolationBuilder {
     pub fn get_possible_remediation_actions(&self) -> &::std::option::Option<crate::types::PossibleRemediationActions> {
         &self.possible_remediation_actions
     }
+    /// <p>The violation details for a web ACL whose configuration is incompatible with the Firewall Manager policy.</p>
+    pub fn web_acl_has_incompatible_configuration_violation(mut self, input: crate::types::WebAclHasIncompatibleConfigurationViolation) -> Self {
+        self.web_acl_has_incompatible_configuration_violation = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The violation details for a web ACL whose configuration is incompatible with the Firewall Manager policy.</p>
+    pub fn set_web_acl_has_incompatible_configuration_violation(
+        mut self,
+        input: ::std::option::Option<crate::types::WebAclHasIncompatibleConfigurationViolation>,
+    ) -> Self {
+        self.web_acl_has_incompatible_configuration_violation = input;
+        self
+    }
+    /// <p>The violation details for a web ACL whose configuration is incompatible with the Firewall Manager policy.</p>
+    pub fn get_web_acl_has_incompatible_configuration_violation(
+        &self,
+    ) -> &::std::option::Option<crate::types::WebAclHasIncompatibleConfigurationViolation> {
+        &self.web_acl_has_incompatible_configuration_violation
+    }
+    /// <p>The violation details for a web ACL that's associated with at least one resource that's out of scope of the Firewall Manager policy.</p>
+    pub fn web_acl_has_out_of_scope_resources_violation(mut self, input: crate::types::WebAclHasOutOfScopeResourcesViolation) -> Self {
+        self.web_acl_has_out_of_scope_resources_violation = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The violation details for a web ACL that's associated with at least one resource that's out of scope of the Firewall Manager policy.</p>
+    pub fn set_web_acl_has_out_of_scope_resources_violation(
+        mut self,
+        input: ::std::option::Option<crate::types::WebAclHasOutOfScopeResourcesViolation>,
+    ) -> Self {
+        self.web_acl_has_out_of_scope_resources_violation = input;
+        self
+    }
+    /// <p>The violation details for a web ACL that's associated with at least one resource that's out of scope of the Firewall Manager policy.</p>
+    pub fn get_web_acl_has_out_of_scope_resources_violation(&self) -> &::std::option::Option<crate::types::WebAclHasOutOfScopeResourcesViolation> {
+        &self.web_acl_has_out_of_scope_resources_violation
+    }
     /// Consumes the builder and constructs a [`ResourceViolation`](crate::types::ResourceViolation).
     pub fn build(self) -> crate::types::ResourceViolation {
         crate::types::ResourceViolation {
@@ -673,6 +725,8 @@ impl ResourceViolationBuilder {
             firewall_subnet_missing_vpc_endpoint_violation: self.firewall_subnet_missing_vpc_endpoint_violation,
             invalid_network_acl_entries_violation: self.invalid_network_acl_entries_violation,
             possible_remediation_actions: self.possible_remediation_actions,
+            web_acl_has_incompatible_configuration_violation: self.web_acl_has_incompatible_configuration_violation,
+            web_acl_has_out_of_scope_resources_violation: self.web_acl_has_out_of_scope_resources_violation,
         }
     }
 }

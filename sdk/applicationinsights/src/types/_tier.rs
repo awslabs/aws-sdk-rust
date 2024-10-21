@@ -23,6 +23,8 @@
 ///     Tier::Mysql => { /* ... */ },
 ///     Tier::Oracle => { /* ... */ },
 ///     Tier::Postgresql => { /* ... */ },
+///     Tier::SapAseHighAvailability => { /* ... */ },
+///     Tier::SapAseSingleNode => { /* ... */ },
 ///     Tier::SapHanaHighAvailability => { /* ... */ },
 ///     Tier::SapHanaMultiNode => { /* ... */ },
 ///     Tier::SapHanaSingleNode => { /* ... */ },
@@ -83,6 +85,10 @@ pub enum Tier {
     #[allow(missing_docs)] // documentation missing in model
     Postgresql,
     #[allow(missing_docs)] // documentation missing in model
+    SapAseHighAvailability,
+    #[allow(missing_docs)] // documentation missing in model
+    SapAseSingleNode,
+    #[allow(missing_docs)] // documentation missing in model
     SapHanaHighAvailability,
     #[allow(missing_docs)] // documentation missing in model
     SapHanaMultiNode,
@@ -120,6 +126,8 @@ impl ::std::convert::From<&str> for Tier {
             "MYSQL" => Tier::Mysql,
             "ORACLE" => Tier::Oracle,
             "POSTGRESQL" => Tier::Postgresql,
+            "SAP_ASE_HIGH_AVAILABILITY" => Tier::SapAseHighAvailability,
+            "SAP_ASE_SINGLE_NODE" => Tier::SapAseSingleNode,
             "SAP_HANA_HIGH_AVAILABILITY" => Tier::SapHanaHighAvailability,
             "SAP_HANA_MULTI_NODE" => Tier::SapHanaMultiNode,
             "SAP_HANA_SINGLE_NODE" => Tier::SapHanaSingleNode,
@@ -156,6 +164,8 @@ impl Tier {
             Tier::Mysql => "MYSQL",
             Tier::Oracle => "ORACLE",
             Tier::Postgresql => "POSTGRESQL",
+            Tier::SapAseHighAvailability => "SAP_ASE_HIGH_AVAILABILITY",
+            Tier::SapAseSingleNode => "SAP_ASE_SINGLE_NODE",
             Tier::SapHanaHighAvailability => "SAP_HANA_HIGH_AVAILABILITY",
             Tier::SapHanaMultiNode => "SAP_HANA_MULTI_NODE",
             Tier::SapHanaSingleNode => "SAP_HANA_SINGLE_NODE",
@@ -183,6 +193,8 @@ impl Tier {
             "MYSQL",
             "ORACLE",
             "POSTGRESQL",
+            "SAP_ASE_HIGH_AVAILABILITY",
+            "SAP_ASE_SINGLE_NODE",
             "SAP_HANA_HIGH_AVAILABILITY",
             "SAP_HANA_MULTI_NODE",
             "SAP_HANA_SINGLE_NODE",
@@ -227,6 +239,8 @@ impl ::std::fmt::Display for Tier {
             Tier::Mysql => write!(f, "MYSQL"),
             Tier::Oracle => write!(f, "ORACLE"),
             Tier::Postgresql => write!(f, "POSTGRESQL"),
+            Tier::SapAseHighAvailability => write!(f, "SAP_ASE_HIGH_AVAILABILITY"),
+            Tier::SapAseSingleNode => write!(f, "SAP_ASE_SINGLE_NODE"),
             Tier::SapHanaHighAvailability => write!(f, "SAP_HANA_HIGH_AVAILABILITY"),
             Tier::SapHanaMultiNode => write!(f, "SAP_HANA_MULTI_NODE"),
             Tier::SapHanaSingleNode => write!(f, "SAP_HANA_SINGLE_NODE"),

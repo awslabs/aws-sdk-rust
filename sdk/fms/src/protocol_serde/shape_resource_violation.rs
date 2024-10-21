@@ -139,6 +139,16 @@ where
                                     crate::protocol_serde::shape_possible_remediation_actions::de_possible_remediation_actions(tokens)?,
                                 );
                             }
+                            "WebACLHasIncompatibleConfigurationViolation" => {
+                                builder = builder.set_web_acl_has_incompatible_configuration_violation(
+                                    crate::protocol_serde::shape_web_acl_has_incompatible_configuration_violation::de_web_acl_has_incompatible_configuration_violation(tokens)?
+                                );
+                            }
+                            "WebACLHasOutOfScopeResourcesViolation" => {
+                                builder = builder.set_web_acl_has_out_of_scope_resources_violation(
+                                    crate::protocol_serde::shape_web_acl_has_out_of_scope_resources_violation::de_web_acl_has_out_of_scope_resources_violation(tokens)?
+                                );
+                            }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

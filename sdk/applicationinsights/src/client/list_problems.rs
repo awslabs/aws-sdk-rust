@@ -4,7 +4,7 @@ impl super::Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_problems::builders::ListProblemsFluentBuilder::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`account_id(impl Into<String>)`](crate::operation::list_problems::builders::ListProblemsFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::list_problems::builders::ListProblemsFluentBuilder::set_account_id):<br>required: **false**<br><p>The AWS account ID for the resource group owner.</p><br>
+    ///   - [`account_id(impl Into<String>)`](crate::operation::list_problems::builders::ListProblemsFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::list_problems::builders::ListProblemsFluentBuilder::set_account_id):<br>required: **false**<br><p>The Amazon Web Services account ID for the resource group owner.</p><br>
     ///   - [`resource_group_name(impl Into<String>)`](crate::operation::list_problems::builders::ListProblemsFluentBuilder::resource_group_name) / [`set_resource_group_name(Option<String>)`](crate::operation::list_problems::builders::ListProblemsFluentBuilder::set_resource_group_name):<br>required: **false**<br><p>The name of the resource group.</p><br>
     ///   - [`start_time(DateTime)`](crate::operation::list_problems::builders::ListProblemsFluentBuilder::start_time) / [`set_start_time(Option<DateTime>)`](crate::operation::list_problems::builders::ListProblemsFluentBuilder::set_start_time):<br>required: **false**<br><p>The time when the problem was detected, in epoch seconds. If you don't specify a time frame for the request, problems within the past seven days are returned.</p><br>
     ///   - [`end_time(DateTime)`](crate::operation::list_problems::builders::ListProblemsFluentBuilder::end_time) / [`set_end_time(Option<DateTime>)`](crate::operation::list_problems::builders::ListProblemsFluentBuilder::set_end_time):<br>required: **false**<br><p>The time when the problem ended, in epoch seconds. If not specified, problems within the past seven days are returned.</p><br>
@@ -16,7 +16,7 @@ impl super::Client {
     ///   - [`problem_list(Option<Vec::<Problem>>)`](crate::operation::list_problems::ListProblemsOutput::problem_list): <p>The list of problems.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_problems::ListProblemsOutput::next_token): <p>The token used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     ///   - [`resource_group_name(Option<String>)`](crate::operation::list_problems::ListProblemsOutput::resource_group_name): <p>The name of the resource group.</p>
-    ///   - [`account_id(Option<String>)`](crate::operation::list_problems::ListProblemsOutput::account_id): <p>The AWS account ID for the resource group owner.</p>
+    ///   - [`account_id(Option<String>)`](crate::operation::list_problems::ListProblemsOutput::account_id): <p>The Amazon Web Services account ID for the resource group owner.</p>
     /// - On failure, responds with [`SdkError<ListProblemsError>`](crate::operation::list_problems::ListProblemsError)
     pub fn list_problems(&self) -> crate::operation::list_problems::builders::ListProblemsFluentBuilder {
         crate::operation::list_problems::builders::ListProblemsFluentBuilder::new(self.handle.clone())
