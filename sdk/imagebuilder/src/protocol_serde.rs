@@ -379,6 +379,8 @@ pub(crate) mod shape_lifecycle_policy_summary_list;
 
 pub(crate) mod shape_logging;
 
+pub(crate) mod shape_placement;
+
 pub(crate) mod shape_resource_state;
 
 pub(crate) mod shape_resource_state_update_exclusion_rules;

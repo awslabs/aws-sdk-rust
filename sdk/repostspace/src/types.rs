@@ -11,7 +11,15 @@ pub use crate::types::_vanity_domain_status::VanityDomainStatus;
 
 pub use crate::types::_configuration_status::ConfigurationStatus;
 
+pub use crate::types::_role::Role;
+
+pub use crate::types::_batch_error::BatchError;
+
+mod _batch_error;
+
 mod _configuration_status;
+
+mod _role;
 
 mod _space_data;
 

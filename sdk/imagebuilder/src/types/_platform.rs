@@ -14,6 +14,7 @@
 /// match platform {
 ///     Platform::Linux => { /* ... */ },
 ///     Platform::Windows => { /* ... */ },
+///     Platform::Macos => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -45,6 +46,8 @@ pub enum Platform {
     Linux,
     #[allow(missing_docs)] // documentation missing in model
     Windows,
+    #[allow(missing_docs)] // documentation missing in model
+    Macos,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -54,6 +57,7 @@ impl ::std::convert::From<&str> for Platform {
         match s {
             "Linux" => Platform::Linux,
             "Windows" => Platform::Windows,
+            "macOS" => Platform::Macos,
             other => Platform::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -71,12 +75,13 @@ impl Platform {
         match self {
             Platform::Linux => "Linux",
             Platform::Windows => "Windows",
+            Platform::Macos => "macOS",
             Platform::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Linux", "Windows"]
+        &["Linux", "Windows", "macOS"]
     }
 }
 impl ::std::convert::AsRef<str> for Platform {
@@ -101,6 +106,7 @@ impl ::std::fmt::Display for Platform {
         match self {
             Platform::Linux => write!(f, "Linux"),
             Platform::Windows => write!(f, "Windows"),
+            Platform::Macos => write!(f, "macOS"),
             Platform::Unknown(value) => write!(f, "{}", value),
         }
     }

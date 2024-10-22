@@ -25,12 +25,14 @@ pub struct CreateInfrastructureConfigurationInput {
     /// <p>EC2 Image Builder is unable to send notifications to SNS topics that are encrypted using keys from other accounts. The key that is used to encrypt the SNS topic must reside in the account that the Image Builder service runs under.</p>
     /// </note>
     pub sns_topic_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The tags attached to the resource created by Image Builder.</p>
+    /// <p>The metadata tags to assign to the Amazon EC2 instance that Image Builder launches during the build process. Tags are formatted as key value pairs.</p>
     pub resource_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The instance metadata options that you can set for the HTTP requests that pipeline builds use to launch EC2 build and test instances.</p>
     pub instance_metadata_options: ::std::option::Option<crate::types::InstanceMetadataOptions>,
-    /// <p>The tags of the infrastructure configuration.</p>
+    /// <p>The metadata tags to assign to the infrastructure configuration resource that Image Builder creates as output. Tags are formatted as key value pairs.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>The instance placement settings that define where the instances that are launched from your image will run.</p>
+    pub placement: ::std::option::Option<crate::types::Placement>,
     /// <p>Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
@@ -81,7 +83,7 @@ impl CreateInfrastructureConfigurationInput {
     pub fn sns_topic_arn(&self) -> ::std::option::Option<&str> {
         self.sns_topic_arn.as_deref()
     }
-    /// <p>The tags attached to the resource created by Image Builder.</p>
+    /// <p>The metadata tags to assign to the Amazon EC2 instance that Image Builder launches during the build process. Tags are formatted as key value pairs.</p>
     pub fn resource_tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.resource_tags.as_ref()
     }
@@ -89,9 +91,13 @@ impl CreateInfrastructureConfigurationInput {
     pub fn instance_metadata_options(&self) -> ::std::option::Option<&crate::types::InstanceMetadataOptions> {
         self.instance_metadata_options.as_ref()
     }
-    /// <p>The tags of the infrastructure configuration.</p>
+    /// <p>The metadata tags to assign to the infrastructure configuration resource that Image Builder creates as output. Tags are formatted as key value pairs.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
+    }
+    /// <p>The instance placement settings that define where the instances that are launched from your image will run.</p>
+    pub fn placement(&self) -> ::std::option::Option<&crate::types::Placement> {
+        self.placement.as_ref()
     }
     /// <p>Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
@@ -122,6 +128,7 @@ pub struct CreateInfrastructureConfigurationInputBuilder {
     pub(crate) resource_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) instance_metadata_options: ::std::option::Option<crate::types::InstanceMetadataOptions>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) placement: ::std::option::Option<crate::types::Placement>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl CreateInfrastructureConfigurationInputBuilder {
@@ -289,14 +296,14 @@ impl CreateInfrastructureConfigurationInputBuilder {
     ///
     /// To override the contents of this collection use [`set_resource_tags`](Self::set_resource_tags).
     ///
-    /// <p>The tags attached to the resource created by Image Builder.</p>
+    /// <p>The metadata tags to assign to the Amazon EC2 instance that Image Builder launches during the build process. Tags are formatted as key value pairs.</p>
     pub fn resource_tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.resource_tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.resource_tags = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>The tags attached to the resource created by Image Builder.</p>
+    /// <p>The metadata tags to assign to the Amazon EC2 instance that Image Builder launches during the build process. Tags are formatted as key value pairs.</p>
     pub fn set_resource_tags(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -304,7 +311,7 @@ impl CreateInfrastructureConfigurationInputBuilder {
         self.resource_tags = input;
         self
     }
-    /// <p>The tags attached to the resource created by Image Builder.</p>
+    /// <p>The metadata tags to assign to the Amazon EC2 instance that Image Builder launches during the build process. Tags are formatted as key value pairs.</p>
     pub fn get_resource_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.resource_tags
     }
@@ -326,21 +333,35 @@ impl CreateInfrastructureConfigurationInputBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>The tags of the infrastructure configuration.</p>
+    /// <p>The metadata tags to assign to the infrastructure configuration resource that Image Builder creates as output. Tags are formatted as key value pairs.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>The tags of the infrastructure configuration.</p>
+    /// <p>The metadata tags to assign to the infrastructure configuration resource that Image Builder creates as output. Tags are formatted as key value pairs.</p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
-    /// <p>The tags of the infrastructure configuration.</p>
+    /// <p>The metadata tags to assign to the infrastructure configuration resource that Image Builder creates as output. Tags are formatted as key value pairs.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
+    }
+    /// <p>The instance placement settings that define where the instances that are launched from your image will run.</p>
+    pub fn placement(mut self, input: crate::types::Placement) -> Self {
+        self.placement = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The instance placement settings that define where the instances that are launched from your image will run.</p>
+    pub fn set_placement(mut self, input: ::std::option::Option<crate::types::Placement>) -> Self {
+        self.placement = input;
+        self
+    }
+    /// <p>The instance placement settings that define where the instances that are launched from your image will run.</p>
+    pub fn get_placement(&self) -> &::std::option::Option<crate::types::Placement> {
+        &self.placement
     }
     /// <p>Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
     /// This field is required.
@@ -379,6 +400,7 @@ impl CreateInfrastructureConfigurationInputBuilder {
                 resource_tags: self.resource_tags,
                 instance_metadata_options: self.instance_metadata_options,
                 tags: self.tags,
+                placement: self.placement,
                 client_token: self.client_token,
             },
         )

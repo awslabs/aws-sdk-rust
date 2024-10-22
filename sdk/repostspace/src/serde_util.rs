@@ -8,21 +8,6 @@ pub(crate) fn access_denied_exception_correct_errors(
     builder
 }
 
-pub(crate) fn conflict_exception_correct_errors(
-    mut builder: crate::types::error::builders::ConflictExceptionBuilder,
-) -> crate::types::error::builders::ConflictExceptionBuilder {
-    if builder.message.is_none() {
-        builder.message = Some(Default::default())
-    }
-    if builder.resource_id.is_none() {
-        builder.resource_id = Some(Default::default())
-    }
-    if builder.resource_type.is_none() {
-        builder.resource_type = Some(Default::default())
-    }
-    builder
-}
-
 pub(crate) fn internal_server_exception_correct_errors(
     mut builder: crate::types::error::builders::InternalServerExceptionBuilder,
 ) -> crate::types::error::builders::InternalServerExceptionBuilder {
@@ -35,6 +20,66 @@ pub(crate) fn internal_server_exception_correct_errors(
 pub(crate) fn resource_not_found_exception_correct_errors(
     mut builder: crate::types::error::builders::ResourceNotFoundExceptionBuilder,
 ) -> crate::types::error::builders::ResourceNotFoundExceptionBuilder {
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
+    }
+    if builder.resource_id.is_none() {
+        builder.resource_id = Some(Default::default())
+    }
+    if builder.resource_type.is_none() {
+        builder.resource_type = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn throttling_exception_correct_errors(
+    mut builder: crate::types::error::builders::ThrottlingExceptionBuilder,
+) -> crate::types::error::builders::ThrottlingExceptionBuilder {
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn validation_exception_correct_errors(
+    mut builder: crate::types::error::builders::ValidationExceptionBuilder,
+) -> crate::types::error::builders::ValidationExceptionBuilder {
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
+    }
+    if builder.reason.is_none() {
+        builder.reason = "no value was set".parse::<crate::types::ValidationExceptionReason>().ok()
+    }
+    builder
+}
+
+pub(crate) fn batch_add_role_output_output_correct_errors(
+    mut builder: crate::operation::batch_add_role::builders::BatchAddRoleOutputBuilder,
+) -> crate::operation::batch_add_role::builders::BatchAddRoleOutputBuilder {
+    if builder.added_accessor_ids.is_none() {
+        builder.added_accessor_ids = Some(Default::default())
+    }
+    if builder.errors.is_none() {
+        builder.errors = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn batch_remove_role_output_output_correct_errors(
+    mut builder: crate::operation::batch_remove_role::builders::BatchRemoveRoleOutputBuilder,
+) -> crate::operation::batch_remove_role::builders::BatchRemoveRoleOutputBuilder {
+    if builder.removed_accessor_ids.is_none() {
+        builder.removed_accessor_ids = Some(Default::default())
+    }
+    if builder.errors.is_none() {
+        builder.errors = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn conflict_exception_correct_errors(
+    mut builder: crate::types::error::builders::ConflictExceptionBuilder,
+) -> crate::types::error::builders::ConflictExceptionBuilder {
     if builder.message.is_none() {
         builder.message = Some(Default::default())
     }
@@ -64,27 +109,6 @@ pub(crate) fn service_quota_exceeded_exception_correct_errors(
     }
     if builder.quota_code.is_none() {
         builder.quota_code = Some(Default::default())
-    }
-    builder
-}
-
-pub(crate) fn throttling_exception_correct_errors(
-    mut builder: crate::types::error::builders::ThrottlingExceptionBuilder,
-) -> crate::types::error::builders::ThrottlingExceptionBuilder {
-    if builder.message.is_none() {
-        builder.message = Some(Default::default())
-    }
-    builder
-}
-
-pub(crate) fn validation_exception_correct_errors(
-    mut builder: crate::types::error::builders::ValidationExceptionBuilder,
-) -> crate::types::error::builders::ValidationExceptionBuilder {
-    if builder.message.is_none() {
-        builder.message = Some(Default::default())
-    }
-    if builder.reason.is_none() {
-        builder.reason = "no value was set".parse::<crate::types::ValidationExceptionReason>().ok()
     }
     builder
 }
@@ -145,6 +169,19 @@ pub(crate) fn list_spaces_output_output_correct_errors(
 ) -> crate::operation::list_spaces::builders::ListSpacesOutputBuilder {
     if builder.spaces.is_none() {
         builder.spaces = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn batch_error_correct_errors(mut builder: crate::types::builders::BatchErrorBuilder) -> crate::types::builders::BatchErrorBuilder {
+    if builder.accessor_id.is_none() {
+        builder.accessor_id = Some(Default::default())
+    }
+    if builder.error.is_none() {
+        builder.error = Some(Default::default())
+    }
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
     }
     builder
 }

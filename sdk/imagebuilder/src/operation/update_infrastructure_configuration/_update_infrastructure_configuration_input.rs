@@ -25,8 +25,6 @@ pub struct UpdateInfrastructureConfigurationInput {
     /// <p>EC2 Image Builder is unable to send notifications to SNS topics that are encrypted using keys from other accounts. The key that is used to encrypt the SNS topic must reside in the account that the Image Builder service runs under.</p>
     /// </note>
     pub sns_topic_arn: ::std::option::Option<::std::string::String>,
-    /// <p>Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
-    pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The tags attached to the resource created by Image Builder.</p>
     pub resource_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The instance metadata options that you can set for the HTTP requests that pipeline builds use to launch EC2 build and test instances. For more information about instance metadata options, see one of the following links:</p>
@@ -37,6 +35,10 @@ pub struct UpdateInfrastructureConfigurationInput {
     /// <p><a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/configuring-instance-metadata-options.html">Configure the instance metadata options</a> in the <i> <i>Amazon EC2 Windows Guide</i> </i> for Windows instances.</p></li>
     /// </ul>
     pub instance_metadata_options: ::std::option::Option<crate::types::InstanceMetadataOptions>,
+    /// <p>The instance placement settings that define where the instances that are launched from your image will run.</p>
+    pub placement: ::std::option::Option<crate::types::Placement>,
+    /// <p>Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
+    pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl UpdateInfrastructureConfigurationInput {
     /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration that you want to update.</p>
@@ -85,10 +87,6 @@ impl UpdateInfrastructureConfigurationInput {
     pub fn sns_topic_arn(&self) -> ::std::option::Option<&str> {
         self.sns_topic_arn.as_deref()
     }
-    /// <p>Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
-        self.client_token.as_deref()
-    }
     /// <p>The tags attached to the resource created by Image Builder.</p>
     pub fn resource_tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.resource_tags.as_ref()
@@ -102,6 +100,14 @@ impl UpdateInfrastructureConfigurationInput {
     /// </ul>
     pub fn instance_metadata_options(&self) -> ::std::option::Option<&crate::types::InstanceMetadataOptions> {
         self.instance_metadata_options.as_ref()
+    }
+    /// <p>The instance placement settings that define where the instances that are launched from your image will run.</p>
+    pub fn placement(&self) -> ::std::option::Option<&crate::types::Placement> {
+        self.placement.as_ref()
+    }
+    /// <p>Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
+    pub fn client_token(&self) -> ::std::option::Option<&str> {
+        self.client_token.as_deref()
     }
 }
 impl UpdateInfrastructureConfigurationInput {
@@ -125,9 +131,10 @@ pub struct UpdateInfrastructureConfigurationInputBuilder {
     pub(crate) key_pair: ::std::option::Option<::std::string::String>,
     pub(crate) terminate_instance_on_failure: ::std::option::Option<bool>,
     pub(crate) sns_topic_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) resource_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) instance_metadata_options: ::std::option::Option<crate::types::InstanceMetadataOptions>,
+    pub(crate) placement: ::std::option::Option<crate::types::Placement>,
+    pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl UpdateInfrastructureConfigurationInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration that you want to update.</p>
@@ -290,21 +297,6 @@ impl UpdateInfrastructureConfigurationInputBuilder {
     pub fn get_sns_topic_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.sns_topic_arn
     }
-    /// <p>Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
-    /// This field is required.
-    pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.client_token = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
-    pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
-    }
-    /// <p>Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
-    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
-        &self.client_token
-    }
     /// Adds a key-value pair to `resource_tags`.
     ///
     /// To override the contents of this collection use [`set_resource_tags`](Self::set_resource_tags).
@@ -360,6 +352,35 @@ impl UpdateInfrastructureConfigurationInputBuilder {
     pub fn get_instance_metadata_options(&self) -> &::std::option::Option<crate::types::InstanceMetadataOptions> {
         &self.instance_metadata_options
     }
+    /// <p>The instance placement settings that define where the instances that are launched from your image will run.</p>
+    pub fn placement(mut self, input: crate::types::Placement) -> Self {
+        self.placement = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The instance placement settings that define where the instances that are launched from your image will run.</p>
+    pub fn set_placement(mut self, input: ::std::option::Option<crate::types::Placement>) -> Self {
+        self.placement = input;
+        self
+    }
+    /// <p>The instance placement settings that define where the instances that are launched from your image will run.</p>
+    pub fn get_placement(&self) -> &::std::option::Option<crate::types::Placement> {
+        &self.placement
+    }
+    /// <p>Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
+    /// This field is required.
+    pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.client_token = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
+    pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.client_token = input;
+        self
+    }
+    /// <p>Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
+    }
     /// Consumes the builder and constructs a [`UpdateInfrastructureConfigurationInput`](crate::operation::update_infrastructure_configuration::UpdateInfrastructureConfigurationInput).
     pub fn build(
         self,
@@ -379,9 +400,10 @@ impl UpdateInfrastructureConfigurationInputBuilder {
                 key_pair: self.key_pair,
                 terminate_instance_on_failure: self.terminate_instance_on_failure,
                 sns_topic_arn: self.sns_topic_arn,
-                client_token: self.client_token,
                 resource_tags: self.resource_tags,
                 instance_metadata_options: self.instance_metadata_options,
+                placement: self.placement,
+                client_token: self.client_token,
             },
         )
     }

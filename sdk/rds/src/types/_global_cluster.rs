@@ -27,6 +27,8 @@ pub struct GlobalCluster {
     pub deletion_protection: ::std::option::Option<bool>,
     /// <p>The list of primary and secondary clusters within the global database cluster.</p>
     pub global_cluster_members: ::std::option::Option<::std::vec::Vec<crate::types::GlobalClusterMember>>,
+    /// <p>The writer endpoint for the new global database cluster. This endpoint always points to the writer DB instance in the current primary cluster.</p>
+    pub endpoint: ::std::option::Option<::std::string::String>,
     /// <p>A data object containing all properties for the current state of an in-process or pending switchover or failover process for this global cluster (Aurora global database). This object is empty unless the <code>SwitchoverGlobalCluster</code> or <code>FailoverGlobalCluster</code> operation was called on this global cluster.</p>
     pub failover_state: ::std::option::Option<crate::types::FailoverState>,
     /// <p>A list of tags.</p>
@@ -81,6 +83,10 @@ impl GlobalCluster {
     pub fn global_cluster_members(&self) -> &[crate::types::GlobalClusterMember] {
         self.global_cluster_members.as_deref().unwrap_or_default()
     }
+    /// <p>The writer endpoint for the new global database cluster. This endpoint always points to the writer DB instance in the current primary cluster.</p>
+    pub fn endpoint(&self) -> ::std::option::Option<&str> {
+        self.endpoint.as_deref()
+    }
     /// <p>A data object containing all properties for the current state of an in-process or pending switchover or failover process for this global cluster (Aurora global database). This object is empty unless the <code>SwitchoverGlobalCluster</code> or <code>FailoverGlobalCluster</code> operation was called on this global cluster.</p>
     pub fn failover_state(&self) -> ::std::option::Option<&crate::types::FailoverState> {
         self.failover_state.as_ref()
@@ -115,6 +121,7 @@ pub struct GlobalClusterBuilder {
     pub(crate) storage_encrypted: ::std::option::Option<bool>,
     pub(crate) deletion_protection: ::std::option::Option<bool>,
     pub(crate) global_cluster_members: ::std::option::Option<::std::vec::Vec<crate::types::GlobalClusterMember>>,
+    pub(crate) endpoint: ::std::option::Option<::std::string::String>,
     pub(crate) failover_state: ::std::option::Option<crate::types::FailoverState>,
     pub(crate) tag_list: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
@@ -282,6 +289,20 @@ impl GlobalClusterBuilder {
     pub fn get_global_cluster_members(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GlobalClusterMember>> {
         &self.global_cluster_members
     }
+    /// <p>The writer endpoint for the new global database cluster. This endpoint always points to the writer DB instance in the current primary cluster.</p>
+    pub fn endpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.endpoint = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The writer endpoint for the new global database cluster. This endpoint always points to the writer DB instance in the current primary cluster.</p>
+    pub fn set_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.endpoint = input;
+        self
+    }
+    /// <p>The writer endpoint for the new global database cluster. This endpoint always points to the writer DB instance in the current primary cluster.</p>
+    pub fn get_endpoint(&self) -> &::std::option::Option<::std::string::String> {
+        &self.endpoint
+    }
     /// <p>A data object containing all properties for the current state of an in-process or pending switchover or failover process for this global cluster (Aurora global database). This object is empty unless the <code>SwitchoverGlobalCluster</code> or <code>FailoverGlobalCluster</code> operation was called on this global cluster.</p>
     pub fn failover_state(mut self, input: crate::types::FailoverState) -> Self {
         self.failover_state = ::std::option::Option::Some(input);
@@ -333,6 +354,7 @@ impl GlobalClusterBuilder {
             storage_encrypted: self.storage_encrypted,
             deletion_protection: self.deletion_protection,
             global_cluster_members: self.global_cluster_members,
+            endpoint: self.endpoint,
             failover_state: self.failover_state,
             tag_list: self.tag_list,
         }

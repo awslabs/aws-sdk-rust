@@ -10,7 +10,7 @@ impl super::Client {
     ///   - [`environment_arn(String)`](crate::operation::get_environment::GetEnvironmentOutput::environment_arn): <p>The Amazon Resource Name (ARN) of the runtime environment.</p>
     ///   - [`environment_id(String)`](crate::operation::get_environment::GetEnvironmentOutput::environment_id): <p>The unique identifier of the runtime environment.</p>
     ///   - [`instance_type(String)`](crate::operation::get_environment::GetEnvironmentOutput::instance_type): <p>The type of instance underlying the runtime environment.</p>
-    ///   - [`status(EnvironmentLifecycle)`](crate::operation::get_environment::GetEnvironmentOutput::status): <p>The status of the runtime environment.</p>
+    ///   - [`status(EnvironmentLifecycle)`](crate::operation::get_environment::GetEnvironmentOutput::status): <p>The status of the runtime environment. If the Amazon Web Services Mainframe Modernization environment is missing a connection to the customer owned dependent resource, the status will be <code>Unhealthy</code>.</p>
     ///   - [`engine_type(EngineType)`](crate::operation::get_environment::GetEnvironmentOutput::engine_type): <p>The target platform for the runtime environment.</p>
     ///   - [`engine_version(String)`](crate::operation::get_environment::GetEnvironmentOutput::engine_version): <p>The version of the runtime engine.</p>
     ///   - [`vpc_id(String)`](crate::operation::get_environment::GetEnvironmentOutput::vpc_id): <p>The unique identifier for the VPC used with this runtime environment.</p>

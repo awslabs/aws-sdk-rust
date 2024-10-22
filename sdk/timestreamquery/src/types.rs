@@ -5,6 +5,16 @@ pub use crate::types::_query_pricing_model::QueryPricingModel;
 
 pub use crate::types::_tag::Tag;
 
+pub use crate::types::_query_insights_response::QueryInsightsResponse;
+
+pub use crate::types::_query_temporal_range::QueryTemporalRange;
+
+pub use crate::types::_query_temporal_range_max::QueryTemporalRangeMax;
+
+pub use crate::types::_query_spatial_coverage::QuerySpatialCoverage;
+
+pub use crate::types::_query_spatial_coverage_max::QuerySpatialCoverageMax;
+
 pub use crate::types::_query_status::QueryStatus;
 
 pub use crate::types::_column_info::ColumnInfo;
@@ -18,6 +28,10 @@ pub use crate::types::_row::Row;
 pub use crate::types::_datum::Datum;
 
 pub use crate::types::_time_series_data_point::TimeSeriesDataPoint;
+
+pub use crate::types::_query_insights::QueryInsights;
+
+pub use crate::types::_query_insights_mode::QueryInsightsMode;
 
 pub use crate::types::_parameter_mapping::ParameterMapping;
 
@@ -37,6 +51,10 @@ pub use crate::types::_s3_configuration::S3Configuration;
 
 pub use crate::types::_s3_encryption_option::S3EncryptionOption;
 
+pub use crate::types::_scheduled_query_insights::ScheduledQueryInsights;
+
+pub use crate::types::_scheduled_query_insights_mode::ScheduledQueryInsightsMode;
+
 pub use crate::types::_scheduled_query_description::ScheduledQueryDescription;
 
 pub use crate::types::_scheduled_query_run_summary::ScheduledQueryRunSummary;
@@ -44,6 +62,8 @@ pub use crate::types::_scheduled_query_run_summary::ScheduledQueryRunSummary;
 pub use crate::types::_error_report_location::ErrorReportLocation;
 
 pub use crate::types::_s3_report_location::S3ReportLocation;
+
+pub use crate::types::_scheduled_query_insights_response::ScheduledQueryInsightsResponse;
 
 pub use crate::types::_execution_stats::ExecutionStats;
 
@@ -101,9 +121,23 @@ mod _notification_configuration;
 
 mod _parameter_mapping;
 
+mod _query_insights;
+
+mod _query_insights_mode;
+
+mod _query_insights_response;
+
 mod _query_pricing_model;
 
+mod _query_spatial_coverage;
+
+mod _query_spatial_coverage_max;
+
 mod _query_status;
+
+mod _query_temporal_range;
+
+mod _query_temporal_range_max;
 
 mod _row;
 
@@ -122,6 +156,12 @@ mod _schedule_configuration;
 mod _scheduled_query;
 
 mod _scheduled_query_description;
+
+mod _scheduled_query_insights;
+
+mod _scheduled_query_insights_mode;
+
+mod _scheduled_query_insights_response;
 
 mod _scheduled_query_run_status;
 

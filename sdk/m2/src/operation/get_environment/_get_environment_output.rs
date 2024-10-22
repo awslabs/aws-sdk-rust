@@ -13,7 +13,7 @@ pub struct GetEnvironmentOutput {
     pub environment_id: ::std::string::String,
     /// <p>The type of instance underlying the runtime environment.</p>
     pub instance_type: ::std::string::String,
-    /// <p>The status of the runtime environment.</p>
+    /// <p>The status of the runtime environment. If the Amazon Web Services Mainframe Modernization environment is missing a connection to the customer owned dependent resource, the status will be <code>Unhealthy</code>.</p>
     pub status: crate::types::EnvironmentLifecycle,
     /// <p>The target platform for the runtime environment.</p>
     pub engine_type: crate::types::EngineType,
@@ -74,7 +74,7 @@ impl GetEnvironmentOutput {
         use std::ops::Deref;
         self.instance_type.deref()
     }
-    /// <p>The status of the runtime environment.</p>
+    /// <p>The status of the runtime environment. If the Amazon Web Services Mainframe Modernization environment is missing a connection to the customer owned dependent resource, the status will be <code>Unhealthy</code>.</p>
     pub fn status(&self) -> &crate::types::EnvironmentLifecycle {
         &self.status
     }
@@ -264,18 +264,18 @@ impl GetEnvironmentOutputBuilder {
     pub fn get_instance_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.instance_type
     }
-    /// <p>The status of the runtime environment.</p>
+    /// <p>The status of the runtime environment. If the Amazon Web Services Mainframe Modernization environment is missing a connection to the customer owned dependent resource, the status will be <code>Unhealthy</code>.</p>
     /// This field is required.
     pub fn status(mut self, input: crate::types::EnvironmentLifecycle) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The status of the runtime environment.</p>
+    /// <p>The status of the runtime environment. If the Amazon Web Services Mainframe Modernization environment is missing a connection to the customer owned dependent resource, the status will be <code>Unhealthy</code>.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::EnvironmentLifecycle>) -> Self {
         self.status = input;
         self
     }
-    /// <p>The status of the runtime environment.</p>
+    /// <p>The status of the runtime environment. If the Amazon Web Services Mainframe Modernization environment is missing a connection to the customer owned dependent resource, the status will be <code>Unhealthy</code>.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::EnvironmentLifecycle> {
         &self.status
     }

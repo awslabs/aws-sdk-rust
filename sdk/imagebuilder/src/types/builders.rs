@@ -17,6 +17,8 @@ pub use crate::types::_lifecycle_policy_detail_action::LifecyclePolicyDetailActi
 
 pub use crate::types::_lifecycle_policy_detail_action_include_resources::LifecyclePolicyDetailActionIncludeResourcesBuilder;
 
+pub use crate::types::_placement::PlacementBuilder;
+
 pub use crate::types::_instance_metadata_options::InstanceMetadataOptionsBuilder;
 
 pub use crate::types::_logging::LoggingBuilder;

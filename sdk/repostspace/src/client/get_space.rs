@@ -22,6 +22,7 @@ impl super::Client {
     ///   - [`storage_limit(i64)`](crate::operation::get_space::GetSpaceOutput::storage_limit): <p>The storage limit of the private re:Post.</p>
     ///   - [`user_admins(Option<Vec::<String>>)`](crate::operation::get_space::GetSpaceOutput::user_admins): <p>The list of users that are administrators of the private re:Post.</p>
     ///   - [`group_admins(Option<Vec::<String>>)`](crate::operation::get_space::GetSpaceOutput::group_admins): <p>The list of groups that are administrators of the private re:Post.</p>
+    ///   - [`roles(Option<HashMap::<String, Vec::<Role>>>)`](crate::operation::get_space::GetSpaceOutput::roles): <p>A map of accessor identifiers and their roles.</p>
     ///   - [`user_kms_key(Option<String>)`](crate::operation::get_space::GetSpaceOutput::user_kms_key): <p>The custom AWS KMS key ARN that’s used for the AWS KMS encryption.</p>
     ///   - [`user_count(Option<i32>)`](crate::operation::get_space::GetSpaceOutput::user_count): <p>The number of users that have onboarded to the private re:Post.</p>
     ///   - [`content_size(Option<i64>)`](crate::operation::get_space::GetSpaceOutput::content_size): <p>The content size of the private re:Post.</p>

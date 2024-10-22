@@ -149,6 +149,8 @@ pub use crate::types::error::_invalid_integration_state_fault::InvalidIntegratio
 
 pub use crate::types::error::_integration_conflict_operation_fault::IntegrationConflictOperationFaultBuilder;
 
+pub use crate::types::error::_global_cluster_already_exists_fault::GlobalClusterAlreadyExistsFaultBuilder;
+
 pub use crate::types::error::_subscription_category_not_found_fault::SubscriptionCategoryNotFoundFaultBuilder;
 
 pub use crate::types::error::_sns_topic_arn_not_found_fault::SnsTopicArnNotFoundFaultBuilder;
@@ -222,8 +224,6 @@ pub use crate::types::error::_integration_quota_exceeded_fault::IntegrationQuota
 pub use crate::types::error::_integration_already_exists_fault::IntegrationAlreadyExistsFaultBuilder;
 
 pub use crate::types::error::_global_cluster_quota_exceeded_fault::GlobalClusterQuotaExceededFaultBuilder;
-
-pub use crate::types::error::_global_cluster_already_exists_fault::GlobalClusterAlreadyExistsFaultBuilder;
 
 pub use crate::types::error::_subscription_already_exist_fault::SubscriptionAlreadyExistFaultBuilder;
 

@@ -14,5 +14,11 @@ pub fn ser_execute_scheduled_query_input_input(
     if let Some(var_3) = &input.client_token {
         object.key("ClientToken").string(var_3.as_str());
     }
+    if let Some(var_4) = &input.query_insights {
+        #[allow(unused_mut)]
+        let mut object_5 = object.key("QueryInsights").start_object();
+        crate::protocol_serde::shape_scheduled_query_insights::ser_scheduled_query_insights(&mut object_5, var_4)?;
+        object_5.finish();
+    }
     Ok(())
 }

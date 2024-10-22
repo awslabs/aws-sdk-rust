@@ -6,7 +6,7 @@
 pub enum BatchJobIdentifier {
     /// <p>Specifies a file associated with a specific batch job.</p>
     FileBatchJobIdentifier(crate::types::FileBatchJobIdentifier),
-    /// <p>Specifies the required information for restart, including execution ID and jobsteprestartmarker.</p>
+    /// <p>Specifies the required information for restart, including <code>executionId</code> and <code>JobStepRestartMarker</code>.</p>
     RestartBatchJobIdentifier(crate::types::RestartBatchJobIdentifier),
     /// <p>Specifies an Amazon S3 location that identifies the batch jobs that you want to run. Use this identifier to run ad hoc batch jobs.</p>
     S3BatchJobIdentifier(crate::types::S3BatchJobIdentifier),

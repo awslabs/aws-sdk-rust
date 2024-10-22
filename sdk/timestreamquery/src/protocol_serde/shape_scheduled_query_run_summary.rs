@@ -36,6 +36,11 @@ where
                         "ExecutionStats" => {
                             builder = builder.set_execution_stats(crate::protocol_serde::shape_execution_stats::de_execution_stats(tokens)?);
                         }
+                        "QueryInsightsResponse" => {
+                            builder = builder.set_query_insights_response(
+                                crate::protocol_serde::shape_scheduled_query_insights_response::de_scheduled_query_insights_response(tokens)?,
+                            );
+                        }
                         "ErrorReportLocation" => {
                             builder = builder
                                 .set_error_report_location(crate::protocol_serde::shape_error_report_location::de_error_report_location(tokens)?);

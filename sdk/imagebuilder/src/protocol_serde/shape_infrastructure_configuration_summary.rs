@@ -65,6 +65,9 @@ where
                                     .transpose()?,
                             );
                         }
+                        "placement" => {
+                            builder = builder.set_placement(crate::protocol_serde::shape_placement::de_placement(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

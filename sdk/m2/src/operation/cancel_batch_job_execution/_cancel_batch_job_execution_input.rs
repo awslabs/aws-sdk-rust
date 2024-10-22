@@ -7,6 +7,8 @@ pub struct CancelBatchJobExecutionInput {
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the batch job execution.</p>
     pub execution_id: ::std::option::Option<::std::string::String>,
+    /// <p>The Amazon Web Services Secrets Manager containing user's credentials for authentication and authorization for Cancel Batch Job Execution operation.</p>
+    pub auth_secrets_manager_arn: ::std::option::Option<::std::string::String>,
 }
 impl CancelBatchJobExecutionInput {
     /// <p>The unique identifier of the application.</p>
@@ -16,6 +18,10 @@ impl CancelBatchJobExecutionInput {
     /// <p>The unique identifier of the batch job execution.</p>
     pub fn execution_id(&self) -> ::std::option::Option<&str> {
         self.execution_id.as_deref()
+    }
+    /// <p>The Amazon Web Services Secrets Manager containing user's credentials for authentication and authorization for Cancel Batch Job Execution operation.</p>
+    pub fn auth_secrets_manager_arn(&self) -> ::std::option::Option<&str> {
+        self.auth_secrets_manager_arn.as_deref()
     }
 }
 impl CancelBatchJobExecutionInput {
@@ -31,6 +37,7 @@ impl CancelBatchJobExecutionInput {
 pub struct CancelBatchJobExecutionInputBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) execution_id: ::std::option::Option<::std::string::String>,
+    pub(crate) auth_secrets_manager_arn: ::std::option::Option<::std::string::String>,
 }
 impl CancelBatchJobExecutionInputBuilder {
     /// <p>The unique identifier of the application.</p>
@@ -63,6 +70,20 @@ impl CancelBatchJobExecutionInputBuilder {
     pub fn get_execution_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.execution_id
     }
+    /// <p>The Amazon Web Services Secrets Manager containing user's credentials for authentication and authorization for Cancel Batch Job Execution operation.</p>
+    pub fn auth_secrets_manager_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.auth_secrets_manager_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Web Services Secrets Manager containing user's credentials for authentication and authorization for Cancel Batch Job Execution operation.</p>
+    pub fn set_auth_secrets_manager_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.auth_secrets_manager_arn = input;
+        self
+    }
+    /// <p>The Amazon Web Services Secrets Manager containing user's credentials for authentication and authorization for Cancel Batch Job Execution operation.</p>
+    pub fn get_auth_secrets_manager_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.auth_secrets_manager_arn
+    }
     /// Consumes the builder and constructs a [`CancelBatchJobExecutionInput`](crate::operation::cancel_batch_job_execution::CancelBatchJobExecutionInput).
     pub fn build(
         self,
@@ -73,6 +94,7 @@ impl CancelBatchJobExecutionInputBuilder {
         ::std::result::Result::Ok(crate::operation::cancel_batch_job_execution::CancelBatchJobExecutionInput {
             application_id: self.application_id,
             execution_id: self.execution_id,
+            auth_secrets_manager_arn: self.auth_secrets_manager_arn,
         })
     }
 }

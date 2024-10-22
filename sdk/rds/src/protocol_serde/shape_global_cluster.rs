@@ -151,24 +151,37 @@ pub fn de_global_cluster(
                 builder = builder.set_global_cluster_members(var_11);
             }
             ,
-            s if s.matches("FailoverState") /* FailoverState com.amazonaws.rds#GlobalCluster$FailoverState */ =>  {
+            s if s.matches("Endpoint") /* Endpoint com.amazonaws.rds#GlobalCluster$Endpoint */ =>  {
                 let var_12 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_endpoint(var_12);
+            }
+            ,
+            s if s.matches("FailoverState") /* FailoverState com.amazonaws.rds#GlobalCluster$FailoverState */ =>  {
+                let var_13 =
                     Some(
                         crate::protocol_serde::shape_failover_state::de_failover_state(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_failover_state(var_12);
+                builder = builder.set_failover_state(var_13);
             }
             ,
             s if s.matches("TagList") /* TagList com.amazonaws.rds#GlobalCluster$TagList */ =>  {
-                let var_13 =
+                let var_14 =
                     Some(
                         crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_tag_list(var_13);
+                builder = builder.set_tag_list(var_14);
             }
             ,
             _ => {}

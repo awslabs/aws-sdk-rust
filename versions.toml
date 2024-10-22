@@ -280,9 +280,9 @@ model_hash = 'cf365ad9943ad78f74f04c80149bfc80511bdec2594c4394beb3cb76d846bf03'
 
 [crates.aws-sdk-bedrockruntime]
 category = 'AwsSdk'
-version = '1.55.0'
-source_hash = '0fd67162c0eb9b5d0e040725a5f387c99eaf8bf58a7dd7a2592a15c73cf7412d'
-model_hash = '61a54f98f982c8a5648e5432f5273c846e76f720135ce5409b8590af5a586519'
+version = '1.56.0'
+source_hash = 'ca080b36acb6809d9f697c68a09c32f2400d5dbf8892bed2c69a0538977178ec'
+model_hash = 'da50a09398868d68ed08454e6e7ec4507965ed71ac6e7966913a2bc2516c360c'
 
 [crates.aws-sdk-billingconductor]
 category = 'AwsSdk'
@@ -1018,9 +1018,9 @@ model_hash = 'abd0728cd0c7060cf5e676f42e09b2a177eea6729e727c62b19b84e35304f7b2'
 
 [crates.aws-sdk-imagebuilder]
 category = 'AwsSdk'
-version = '1.47.0'
-source_hash = '521de5b147fbec078880bebbe04943b986dbe647dde9e394fe59b443988b7333'
-model_hash = '4d979ebc15aaf2d4c614796710bc1dc21d36535653f840bee206b08c295104d4'
+version = '1.48.0'
+source_hash = '5fba6b5bb9e23dda9a42d51b2c0e3a1f7598f0d67d3cf325f20e29a1f4f8bbff'
+model_hash = '5df67df29770da515639a366250f81bc89210e34b92cca06aae6322929f9b431'
 
 [crates.aws-sdk-inspector]
 category = 'AwsSdk'
@@ -1336,9 +1336,9 @@ model_hash = 'ad9b57505093a165cbe3fe1e84c3252c99cca170ba2de812a5c5ddad055219d4'
 
 [crates.aws-sdk-m2]
 category = 'AwsSdk'
-version = '1.47.0'
-source_hash = 'b7e3db8f26eb631caa4705b1fa37782f42360275fa9c984bf7c570c3ae684b39'
-model_hash = '55e47f57eaa6548ad8d31cbb68e3840e882f229f656a989a97b68783e2305052'
+version = '1.48.0'
+source_hash = '53b3656bbf90bc90c5209da08dc7588d832f531878c9a1a2c8b6e44db717893d'
+model_hash = '8548a8c333c09820460f90f52b66c160d894023f79c55aaa9d1c5305b021519e'
 
 [crates.aws-sdk-machinelearning]
 category = 'AwsSdk'
@@ -1792,9 +1792,9 @@ model_hash = '33137a772550764a4312631b5ad37b61e0232d622a5d0bca86b20efd5bb76105'
 
 [crates.aws-sdk-rds]
 category = 'AwsSdk'
-version = '1.60.1'
-source_hash = '747153c1f75a213a1078f35866ce4a98d138d60ae8727c04a92b4e4204541b3f'
-model_hash = 'a99dea5bfbc55ec7897cbd78aa8c09e10cdfe56352b1a65ab68bec96a700c5fc'
+version = '1.61.0'
+source_hash = 'd6099042a1aaf2c421ff17404372e403ff5953ac1ec23aa345bb5455839a4656'
+model_hash = 'cd416bb950b527b4df539ffe4ee79eca94ad7427da8e6fc97c31f517f63763dc'
 
 [crates.aws-sdk-rdsdata]
 category = 'AwsSdk'
@@ -1828,9 +1828,9 @@ model_hash = 'aa17b6ae5b12d56dc2a00dc0ee4e5ceaa5090eed279819c0e7e298f2906b01a6'
 
 [crates.aws-sdk-repostspace]
 category = 'AwsSdk'
-version = '1.44.0'
-source_hash = 'b196057547ba8078e0d9cb0b003ca307e0229c20ffac4d3c051222fc72ce68dd'
-model_hash = '1740a029d9327517f19ade84759349b7d729ad38260dd0f96afcfea396d670ba'
+version = '1.45.0'
+source_hash = '2b7af1996c5d41e2e6991e2bebd970c165204545af32e3e9f2bf8329dce71f8d'
+model_hash = 'd45f45aa7a94560c0f7dd37685fc124f7a824a566e6f1f6329b30695c7289666'
 
 [crates.aws-sdk-resiliencehub]
 category = 'AwsSdk'
@@ -2224,9 +2224,9 @@ model_hash = '07132406d7b90c31830dca33e4afb72e3614fdca293826a0bd759c264873c4f7'
 
 [crates.aws-sdk-timestreamquery]
 category = 'AwsSdk'
-version = '1.47.0'
-source_hash = '5d6519ed82031c1a37c65e26e38f3c459ac7c370b2eab886b51f94dcd1d5d884'
-model_hash = 'd549dc10c59fe077dea1de34bb86e6ea091c51a18a8f94c36835b813cb51c5c3'
+version = '1.48.0'
+source_hash = '609fd90bf46c824002471528d8a60bd5526d969b09590fadf21d5d68c268a00c'
+model_hash = '2234bd3eb44ef8a0571175cf14fcc1fbe4cc494b18a03672f6b935d4e462be32'
 
 [crates.aws-sdk-timestreamwrite]
 category = 'AwsSdk'
@@ -2499,17 +2499,10 @@ source_hash = '80dac965e6bba4c1f69c0329fa21203c182f3eb034792d8f4c4fa94ba15ca72f'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = '2fe25f627f326867fe30559e73c464e12361c13b66e7ffc0bc95aa91a482fafd'
-
-[release]
-tag = 'release-2024-10-21'
-
 [release.crates]
-aws-sdk-applicationinsights = '1.47.0'
-aws-sdk-autoscaling = '1.50.0'
-aws-sdk-bedrockagentruntime = '1.55.0'
-aws-sdk-databasemigration = '1.48.0'
-aws-sdk-ec2 = '1.80.0'
-aws-sdk-eks = '1.54.0'
-aws-sdk-fms = '1.50.0'
-aws-sdk-paymentcryptographydata = '1.49.0'
-aws-sdk-wafv2 = '1.51.0'
+aws-sdk-bedrockruntime = '1.56.0'
+aws-sdk-imagebuilder = '1.48.0'
+aws-sdk-m2 = '1.48.0'
+aws-sdk-rds = '1.61.0'
+aws-sdk-repostspace = '1.45.0'
+aws-sdk-timestreamquery = '1.48.0'

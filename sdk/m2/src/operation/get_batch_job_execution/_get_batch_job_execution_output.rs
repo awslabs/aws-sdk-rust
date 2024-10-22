@@ -27,7 +27,7 @@ pub struct GetBatchJobExecutionOutput {
     pub return_code: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of this batch job.</p>
     pub batch_job_identifier: ::std::option::Option<crate::types::BatchJobIdentifier>,
-    /// <p>The restart steps information for the most recent restart operation.</p>
+    /// <p>The step/procedure step information for the restart batch job operation.</p>
     pub job_step_restart_marker: ::std::option::Option<crate::types::JobStepRestartMarker>,
     _request_id: Option<String>,
 }
@@ -82,7 +82,7 @@ impl GetBatchJobExecutionOutput {
     pub fn batch_job_identifier(&self) -> ::std::option::Option<&crate::types::BatchJobIdentifier> {
         self.batch_job_identifier.as_ref()
     }
-    /// <p>The restart steps information for the most recent restart operation.</p>
+    /// <p>The step/procedure step information for the restart batch job operation.</p>
     pub fn job_step_restart_marker(&self) -> ::std::option::Option<&crate::types::JobStepRestartMarker> {
         self.job_step_restart_marker.as_ref()
     }
@@ -291,17 +291,17 @@ impl GetBatchJobExecutionOutputBuilder {
     pub fn get_batch_job_identifier(&self) -> &::std::option::Option<crate::types::BatchJobIdentifier> {
         &self.batch_job_identifier
     }
-    /// <p>The restart steps information for the most recent restart operation.</p>
+    /// <p>The step/procedure step information for the restart batch job operation.</p>
     pub fn job_step_restart_marker(mut self, input: crate::types::JobStepRestartMarker) -> Self {
         self.job_step_restart_marker = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The restart steps information for the most recent restart operation.</p>
+    /// <p>The step/procedure step information for the restart batch job operation.</p>
     pub fn set_job_step_restart_marker(mut self, input: ::std::option::Option<crate::types::JobStepRestartMarker>) -> Self {
         self.job_step_restart_marker = input;
         self
     }
-    /// <p>The restart steps information for the most recent restart operation.</p>
+    /// <p>The step/procedure step information for the restart batch job operation.</p>
     pub fn get_job_step_restart_marker(&self) -> &::std::option::Option<crate::types::JobStepRestartMarker> {
         &self.job_step_restart_marker
     }

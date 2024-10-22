@@ -22,7 +22,7 @@ impl crate::operation::list_batch_job_restart_points::builders::ListBatchJobRest
 }
 /// Fluent builder constructing a request to `ListBatchJobRestartPoints`.
 ///
-/// <p>Lists all the job steps for JCL files to restart a batch job. This is only applicable for Micro Focus engine with versions 8.0.6 and above.</p>
+/// <p>Lists all the job steps for a JCL file to restart a batch job. This is only applicable for Micro Focus engine with versions 8.0.6 and above.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListBatchJobRestartPointsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -122,18 +122,32 @@ impl ListBatchJobRestartPointsFluentBuilder {
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_application_id()
     }
-    /// <p>The unique identifier of each batch job execution.</p>
+    /// <p>The unique identifier of the batch job execution.</p>
     pub fn execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.execution_id(input.into());
         self
     }
-    /// <p>The unique identifier of each batch job execution.</p>
+    /// <p>The unique identifier of the batch job execution.</p>
     pub fn set_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_execution_id(input);
         self
     }
-    /// <p>The unique identifier of each batch job execution.</p>
+    /// <p>The unique identifier of the batch job execution.</p>
     pub fn get_execution_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_execution_id()
+    }
+    /// <p>The Amazon Web Services Secrets Manager containing user's credentials for authentication and authorization for List Batch Job Restart Points operation.</p>
+    pub fn auth_secrets_manager_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.auth_secrets_manager_arn(input.into());
+        self
+    }
+    /// <p>The Amazon Web Services Secrets Manager containing user's credentials for authentication and authorization for List Batch Job Restart Points operation.</p>
+    pub fn set_auth_secrets_manager_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_auth_secrets_manager_arn(input);
+        self
+    }
+    /// <p>The Amazon Web Services Secrets Manager containing user's credentials for authentication and authorization for List Batch Job Restart Points operation.</p>
+    pub fn get_auth_secrets_manager_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_auth_secrets_manager_arn()
     }
 }

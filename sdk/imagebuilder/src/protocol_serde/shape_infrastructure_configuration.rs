@@ -101,6 +101,9 @@ where
                         "tags" => {
                             builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens)?);
                         }
+                        "placement" => {
+                            builder = builder.set_placement(crate::protocol_serde::shape_placement::de_placement(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

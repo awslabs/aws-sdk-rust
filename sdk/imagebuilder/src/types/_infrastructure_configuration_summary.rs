@@ -22,6 +22,8 @@ pub struct InfrastructureConfigurationSummary {
     pub instance_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The instance profile of the infrastructure configuration.</p>
     pub instance_profile_name: ::std::option::Option<::std::string::String>,
+    /// <p>The instance placement settings that define where the instances that are launched from your image will run.</p>
+    pub placement: ::std::option::Option<crate::types::Placement>,
 }
 impl InfrastructureConfigurationSummary {
     /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration.</p>
@@ -62,6 +64,10 @@ impl InfrastructureConfigurationSummary {
     pub fn instance_profile_name(&self) -> ::std::option::Option<&str> {
         self.instance_profile_name.as_deref()
     }
+    /// <p>The instance placement settings that define where the instances that are launched from your image will run.</p>
+    pub fn placement(&self) -> ::std::option::Option<&crate::types::Placement> {
+        self.placement.as_ref()
+    }
 }
 impl InfrastructureConfigurationSummary {
     /// Creates a new builder-style object to manufacture [`InfrastructureConfigurationSummary`](crate::types::InfrastructureConfigurationSummary).
@@ -83,6 +89,7 @@ pub struct InfrastructureConfigurationSummaryBuilder {
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) instance_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) instance_profile_name: ::std::option::Option<::std::string::String>,
+    pub(crate) placement: ::std::option::Option<crate::types::Placement>,
 }
 impl InfrastructureConfigurationSummaryBuilder {
     /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration.</p>
@@ -232,6 +239,20 @@ impl InfrastructureConfigurationSummaryBuilder {
     pub fn get_instance_profile_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.instance_profile_name
     }
+    /// <p>The instance placement settings that define where the instances that are launched from your image will run.</p>
+    pub fn placement(mut self, input: crate::types::Placement) -> Self {
+        self.placement = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The instance placement settings that define where the instances that are launched from your image will run.</p>
+    pub fn set_placement(mut self, input: ::std::option::Option<crate::types::Placement>) -> Self {
+        self.placement = input;
+        self
+    }
+    /// <p>The instance placement settings that define where the instances that are launched from your image will run.</p>
+    pub fn get_placement(&self) -> &::std::option::Option<crate::types::Placement> {
+        &self.placement
+    }
     /// Consumes the builder and constructs a [`InfrastructureConfigurationSummary`](crate::types::InfrastructureConfigurationSummary).
     pub fn build(self) -> crate::types::InfrastructureConfigurationSummary {
         crate::types::InfrastructureConfigurationSummary {
@@ -244,6 +265,7 @@ impl InfrastructureConfigurationSummaryBuilder {
             tags: self.tags,
             instance_types: self.instance_types,
             instance_profile_name: self.instance_profile_name,
+            placement: self.placement,
         }
     }
 }

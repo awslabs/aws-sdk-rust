@@ -136,4 +136,18 @@ impl CancelBatchJobExecutionFluentBuilder {
     pub fn get_execution_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_execution_id()
     }
+    /// <p>The Amazon Web Services Secrets Manager containing user's credentials for authentication and authorization for Cancel Batch Job Execution operation.</p>
+    pub fn auth_secrets_manager_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.auth_secrets_manager_arn(input.into());
+        self
+    }
+    /// <p>The Amazon Web Services Secrets Manager containing user's credentials for authentication and authorization for Cancel Batch Job Execution operation.</p>
+    pub fn set_auth_secrets_manager_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_auth_secrets_manager_arn(input);
+        self
+    }
+    /// <p>The Amazon Web Services Secrets Manager containing user's credentials for authentication and authorization for Cancel Batch Job Execution operation.</p>
+    pub fn get_auth_secrets_manager_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_auth_secrets_manager_arn()
+    }
 }

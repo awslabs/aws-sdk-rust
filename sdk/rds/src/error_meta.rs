@@ -141,7 +141,7 @@ pub enum Error {
     ExportTaskAlreadyExistsFault(crate::types::error::ExportTaskAlreadyExistsFault),
     /// <p>The export task doesn't exist.</p>
     ExportTaskNotFoundFault(crate::types::error::ExportTaskNotFoundFault),
-    /// <p>The <code>GlobalClusterIdentifier</code> already exists. Choose a new global database identifier (unique name) to create a new global database cluster.</p>
+    /// <p>The <code>GlobalClusterIdentifier</code> already exists. Specify a new global database identifier (unique name) to create a new global database cluster or to rename an existing one.</p>
     GlobalClusterAlreadyExistsFault(crate::types::error::GlobalClusterAlreadyExistsFault),
     /// <p>The <code>GlobalClusterIdentifier</code> doesn't refer to an existing global database cluster.</p>
     GlobalClusterNotFoundFault(crate::types::error::GlobalClusterNotFoundFault),
@@ -4743,6 +4743,9 @@ where
 impl From<crate::operation::modify_global_cluster::ModifyGlobalClusterError> for Error {
     fn from(err: crate::operation::modify_global_cluster::ModifyGlobalClusterError) -> Self {
         match err {
+            crate::operation::modify_global_cluster::ModifyGlobalClusterError::GlobalClusterAlreadyExistsFault(inner) => {
+                Error::GlobalClusterAlreadyExistsFault(inner)
+            }
             crate::operation::modify_global_cluster::ModifyGlobalClusterError::GlobalClusterNotFoundFault(inner) => {
                 Error::GlobalClusterNotFoundFault(inner)
             }

@@ -39,33 +39,39 @@ pub fn ser_update_infrastructure_configuration_input_input(
         crate::protocol_serde::shape_logging::ser_logging(&mut object_12, var_11)?;
         object_12.finish();
     }
-    if let Some(var_13) = &input.resource_tags {
+    if let Some(var_13) = &input.placement {
         #[allow(unused_mut)]
-        let mut object_14 = object.key("resourceTags").start_object();
-        for (key_15, value_16) in var_13 {
-            {
-                object_14.key(key_15.as_str()).string(value_16.as_str());
-            }
-        }
+        let mut object_14 = object.key("placement").start_object();
+        crate::protocol_serde::shape_placement::ser_placement(&mut object_14, var_13)?;
         object_14.finish();
     }
-    if let Some(var_17) = &input.security_group_ids {
-        let mut array_18 = object.key("securityGroupIds").start_array();
-        for item_19 in var_17 {
+    if let Some(var_15) = &input.resource_tags {
+        #[allow(unused_mut)]
+        let mut object_16 = object.key("resourceTags").start_object();
+        for (key_17, value_18) in var_15 {
             {
-                array_18.value().string(item_19.as_str());
+                object_16.key(key_17.as_str()).string(value_18.as_str());
             }
         }
-        array_18.finish();
+        object_16.finish();
     }
-    if let Some(var_20) = &input.sns_topic_arn {
-        object.key("snsTopicArn").string(var_20.as_str());
+    if let Some(var_19) = &input.security_group_ids {
+        let mut array_20 = object.key("securityGroupIds").start_array();
+        for item_21 in var_19 {
+            {
+                array_20.value().string(item_21.as_str());
+            }
+        }
+        array_20.finish();
     }
-    if let Some(var_21) = &input.subnet_id {
-        object.key("subnetId").string(var_21.as_str());
+    if let Some(var_22) = &input.sns_topic_arn {
+        object.key("snsTopicArn").string(var_22.as_str());
     }
-    if let Some(var_22) = &input.terminate_instance_on_failure {
-        object.key("terminateInstanceOnFailure").boolean(*var_22);
+    if let Some(var_23) = &input.subnet_id {
+        object.key("subnetId").string(var_23.as_str());
+    }
+    if let Some(var_24) = &input.terminate_instance_on_failure {
+        object.key("terminateInstanceOnFailure").boolean(*var_24);
     }
     Ok(())
 }

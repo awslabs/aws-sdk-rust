@@ -264,20 +264,6 @@ impl UpdateInfrastructureConfigurationFluentBuilder {
     pub fn get_sns_topic_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_sns_topic_arn()
     }
-    /// <p>Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
-    pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.inner = self.inner.client_token(input.into());
-        self
-    }
-    /// <p>Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
-    pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.inner = self.inner.set_client_token(input);
-        self
-    }
-    /// <p>Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
-    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
-        self.inner.get_client_token()
-    }
     ///
     /// Adds a key-value pair to `resourceTags`.
     ///
@@ -331,5 +317,33 @@ impl UpdateInfrastructureConfigurationFluentBuilder {
     /// </ul>
     pub fn get_instance_metadata_options(&self) -> &::std::option::Option<crate::types::InstanceMetadataOptions> {
         self.inner.get_instance_metadata_options()
+    }
+    /// <p>The instance placement settings that define where the instances that are launched from your image will run.</p>
+    pub fn placement(mut self, input: crate::types::Placement) -> Self {
+        self.inner = self.inner.placement(input);
+        self
+    }
+    /// <p>The instance placement settings that define where the instances that are launched from your image will run.</p>
+    pub fn set_placement(mut self, input: ::std::option::Option<crate::types::Placement>) -> Self {
+        self.inner = self.inner.set_placement(input);
+        self
+    }
+    /// <p>The instance placement settings that define where the instances that are launched from your image will run.</p>
+    pub fn get_placement(&self) -> &::std::option::Option<crate::types::Placement> {
+        self.inner.get_placement()
+    }
+    /// <p>Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
+    pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.client_token(input.into());
+        self
+    }
+    /// <p>Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
+    pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_client_token(input);
+        self
+    }
+    /// <p>Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
 }

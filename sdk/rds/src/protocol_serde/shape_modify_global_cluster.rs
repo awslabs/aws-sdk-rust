@@ -20,6 +20,24 @@ pub fn de_modify_global_cluster_http_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
+        "GlobalClusterAlreadyExistsFault" => crate::operation::modify_global_cluster::ModifyGlobalClusterError::GlobalClusterAlreadyExistsFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::GlobalClusterAlreadyExistsFaultBuilder::default();
+                output = crate::protocol_serde::shape_global_cluster_already_exists_fault::de_global_cluster_already_exists_fault_xml_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::modify_global_cluster::ModifyGlobalClusterError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "GlobalClusterNotFoundFault" => crate::operation::modify_global_cluster::ModifyGlobalClusterError::GlobalClusterNotFoundFault({
             #[allow(unused_mut)]
             let mut tmp = {

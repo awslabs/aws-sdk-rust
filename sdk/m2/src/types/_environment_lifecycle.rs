@@ -16,6 +16,7 @@
 ///     EnvironmentLifecycle::Creating => { /* ... */ },
 ///     EnvironmentLifecycle::Deleting => { /* ... */ },
 ///     EnvironmentLifecycle::Failed => { /* ... */ },
+///     EnvironmentLifecycle::Unhealthy => { /* ... */ },
 ///     EnvironmentLifecycle::Updating => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -53,6 +54,8 @@ pub enum EnvironmentLifecycle {
     #[allow(missing_docs)] // documentation missing in model
     Failed,
     #[allow(missing_docs)] // documentation missing in model
+    Unhealthy,
+    #[allow(missing_docs)] // documentation missing in model
     Updating,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -65,6 +68,7 @@ impl ::std::convert::From<&str> for EnvironmentLifecycle {
             "Creating" => EnvironmentLifecycle::Creating,
             "Deleting" => EnvironmentLifecycle::Deleting,
             "Failed" => EnvironmentLifecycle::Failed,
+            "UnHealthy" => EnvironmentLifecycle::Unhealthy,
             "Updating" => EnvironmentLifecycle::Updating,
             other => EnvironmentLifecycle::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -85,13 +89,14 @@ impl EnvironmentLifecycle {
             EnvironmentLifecycle::Creating => "Creating",
             EnvironmentLifecycle::Deleting => "Deleting",
             EnvironmentLifecycle::Failed => "Failed",
+            EnvironmentLifecycle::Unhealthy => "UnHealthy",
             EnvironmentLifecycle::Updating => "Updating",
             EnvironmentLifecycle::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Available", "Creating", "Deleting", "Failed", "Updating"]
+        &["Available", "Creating", "Deleting", "Failed", "UnHealthy", "Updating"]
     }
 }
 impl ::std::convert::AsRef<str> for EnvironmentLifecycle {
@@ -118,6 +123,7 @@ impl ::std::fmt::Display for EnvironmentLifecycle {
             EnvironmentLifecycle::Creating => write!(f, "Creating"),
             EnvironmentLifecycle::Deleting => write!(f, "Deleting"),
             EnvironmentLifecycle::Failed => write!(f, "Failed"),
+            EnvironmentLifecycle::Unhealthy => write!(f, "UnHealthy"),
             EnvironmentLifecycle::Updating => write!(f, "Updating"),
             EnvironmentLifecycle::Unknown(value) => write!(f, "{}", value),
         }

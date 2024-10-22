@@ -115,6 +115,10 @@ pub(crate) mod shape_notification_configuration;
 
 pub(crate) mod shape_parameter_mapping_list;
 
+pub(crate) mod shape_query_insights;
+
+pub(crate) mod shape_query_insights_response;
+
 pub(crate) mod shape_query_status;
 
 pub(crate) mod shape_row_list;
@@ -122,6 +126,8 @@ pub(crate) mod shape_row_list;
 pub(crate) mod shape_schedule_configuration;
 
 pub(crate) mod shape_scheduled_query_description;
+
+pub(crate) mod shape_scheduled_query_insights;
 
 pub(crate) mod shape_scheduled_query_list;
 
@@ -138,6 +144,10 @@ pub(crate) mod shape_column_info;
 pub(crate) mod shape_endpoint;
 
 pub(crate) mod shape_parameter_mapping;
+
+pub(crate) mod shape_query_spatial_coverage;
+
+pub(crate) mod shape_query_temporal_range;
 
 pub(crate) mod shape_row;
 
@@ -167,6 +177,12 @@ pub(crate) mod shape_mixed_measure_mapping;
 
 pub(crate) mod shape_multi_measure_mappings;
 
+pub(crate) mod shape_query_spatial_coverage_max;
+
+pub(crate) mod shape_query_temporal_range_max;
+
+pub(crate) mod shape_scheduled_query_insights_response;
+
 pub(crate) mod shape_target_destination;
 
 pub(crate) mod shape_type;
@@ -178,6 +194,8 @@ pub(crate) mod shape_dimension_mapping_list;
 pub(crate) mod shape_mixed_measure_mapping_list;
 
 pub(crate) mod shape_multi_measure_attribute_mapping;
+
+pub(crate) mod shape_partition_key_list;
 
 pub(crate) mod shape_s3_report_location;
 

@@ -9,6 +9,8 @@ pub struct StartBatchJobInput {
     pub batch_job_identifier: ::std::option::Option<crate::types::BatchJobIdentifier>,
     /// <p>The collection of batch job parameters. For details about limits for keys and values, see <a href="https://www.ibm.com/docs/en/workload-automation/9.3.0?topic=zos-coding-variables-in-jcl">Coding variables in JCL</a>.</p>
     pub job_params: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>The Amazon Web Services Secrets Manager containing user's credentials for authentication and authorization for Start Batch Job execution operation.</p>
+    pub auth_secrets_manager_arn: ::std::option::Option<::std::string::String>,
 }
 impl StartBatchJobInput {
     /// <p>The unique identifier of the application associated with this batch job.</p>
@@ -22,6 +24,10 @@ impl StartBatchJobInput {
     /// <p>The collection of batch job parameters. For details about limits for keys and values, see <a href="https://www.ibm.com/docs/en/workload-automation/9.3.0?topic=zos-coding-variables-in-jcl">Coding variables in JCL</a>.</p>
     pub fn job_params(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.job_params.as_ref()
+    }
+    /// <p>The Amazon Web Services Secrets Manager containing user's credentials for authentication and authorization for Start Batch Job execution operation.</p>
+    pub fn auth_secrets_manager_arn(&self) -> ::std::option::Option<&str> {
+        self.auth_secrets_manager_arn.as_deref()
     }
 }
 impl StartBatchJobInput {
@@ -38,6 +44,7 @@ pub struct StartBatchJobInputBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) batch_job_identifier: ::std::option::Option<crate::types::BatchJobIdentifier>,
     pub(crate) job_params: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) auth_secrets_manager_arn: ::std::option::Option<::std::string::String>,
 }
 impl StartBatchJobInputBuilder {
     /// <p>The unique identifier of the application associated with this batch job.</p>
@@ -90,6 +97,20 @@ impl StartBatchJobInputBuilder {
     pub fn get_job_params(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.job_params
     }
+    /// <p>The Amazon Web Services Secrets Manager containing user's credentials for authentication and authorization for Start Batch Job execution operation.</p>
+    pub fn auth_secrets_manager_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.auth_secrets_manager_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Web Services Secrets Manager containing user's credentials for authentication and authorization for Start Batch Job execution operation.</p>
+    pub fn set_auth_secrets_manager_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.auth_secrets_manager_arn = input;
+        self
+    }
+    /// <p>The Amazon Web Services Secrets Manager containing user's credentials for authentication and authorization for Start Batch Job execution operation.</p>
+    pub fn get_auth_secrets_manager_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.auth_secrets_manager_arn
+    }
     /// Consumes the builder and constructs a [`StartBatchJobInput`](crate::operation::start_batch_job::StartBatchJobInput).
     pub fn build(
         self,
@@ -98,6 +119,7 @@ impl StartBatchJobInputBuilder {
             application_id: self.application_id,
             batch_job_identifier: self.batch_job_identifier,
             job_params: self.job_params,
+            auth_secrets_manager_arn: self.auth_secrets_manager_arn,
         })
     }
 }

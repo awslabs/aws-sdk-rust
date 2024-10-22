@@ -5,17 +5,23 @@
 pub struct ListBatchJobRestartPointsInput {
     /// <p>The unique identifier of the application.</p>
     pub application_id: ::std::option::Option<::std::string::String>,
-    /// <p>The unique identifier of each batch job execution.</p>
+    /// <p>The unique identifier of the batch job execution.</p>
     pub execution_id: ::std::option::Option<::std::string::String>,
+    /// <p>The Amazon Web Services Secrets Manager containing user's credentials for authentication and authorization for List Batch Job Restart Points operation.</p>
+    pub auth_secrets_manager_arn: ::std::option::Option<::std::string::String>,
 }
 impl ListBatchJobRestartPointsInput {
     /// <p>The unique identifier of the application.</p>
     pub fn application_id(&self) -> ::std::option::Option<&str> {
         self.application_id.as_deref()
     }
-    /// <p>The unique identifier of each batch job execution.</p>
+    /// <p>The unique identifier of the batch job execution.</p>
     pub fn execution_id(&self) -> ::std::option::Option<&str> {
         self.execution_id.as_deref()
+    }
+    /// <p>The Amazon Web Services Secrets Manager containing user's credentials for authentication and authorization for List Batch Job Restart Points operation.</p>
+    pub fn auth_secrets_manager_arn(&self) -> ::std::option::Option<&str> {
+        self.auth_secrets_manager_arn.as_deref()
     }
 }
 impl ListBatchJobRestartPointsInput {
@@ -31,6 +37,7 @@ impl ListBatchJobRestartPointsInput {
 pub struct ListBatchJobRestartPointsInputBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) execution_id: ::std::option::Option<::std::string::String>,
+    pub(crate) auth_secrets_manager_arn: ::std::option::Option<::std::string::String>,
 }
 impl ListBatchJobRestartPointsInputBuilder {
     /// <p>The unique identifier of the application.</p>
@@ -48,20 +55,34 @@ impl ListBatchJobRestartPointsInputBuilder {
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.application_id
     }
-    /// <p>The unique identifier of each batch job execution.</p>
+    /// <p>The unique identifier of the batch job execution.</p>
     /// This field is required.
     pub fn execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.execution_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier of each batch job execution.</p>
+    /// <p>The unique identifier of the batch job execution.</p>
     pub fn set_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.execution_id = input;
         self
     }
-    /// <p>The unique identifier of each batch job execution.</p>
+    /// <p>The unique identifier of the batch job execution.</p>
     pub fn get_execution_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.execution_id
+    }
+    /// <p>The Amazon Web Services Secrets Manager containing user's credentials for authentication and authorization for List Batch Job Restart Points operation.</p>
+    pub fn auth_secrets_manager_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.auth_secrets_manager_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Web Services Secrets Manager containing user's credentials for authentication and authorization for List Batch Job Restart Points operation.</p>
+    pub fn set_auth_secrets_manager_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.auth_secrets_manager_arn = input;
+        self
+    }
+    /// <p>The Amazon Web Services Secrets Manager containing user's credentials for authentication and authorization for List Batch Job Restart Points operation.</p>
+    pub fn get_auth_secrets_manager_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.auth_secrets_manager_arn
     }
     /// Consumes the builder and constructs a [`ListBatchJobRestartPointsInput`](crate::operation::list_batch_job_restart_points::ListBatchJobRestartPointsInput).
     pub fn build(
@@ -73,6 +94,7 @@ impl ListBatchJobRestartPointsInputBuilder {
         ::std::result::Result::Ok(crate::operation::list_batch_job_restart_points::ListBatchJobRestartPointsInput {
             application_id: self.application_id,
             execution_id: self.execution_id,
+            auth_secrets_manager_arn: self.auth_secrets_manager_arn,
         })
     }
 }

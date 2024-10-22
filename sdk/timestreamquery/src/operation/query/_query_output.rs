@@ -13,6 +13,8 @@ pub struct QueryOutput {
     pub column_info: ::std::vec::Vec<crate::types::ColumnInfo>,
     /// <p>Information about the status of the query, including progress and bytes scanned.</p>
     pub query_status: ::std::option::Option<crate::types::QueryStatus>,
+    /// <p>Encapsulates <code>QueryInsights</code> containing insights and metrics related to the query that you executed.</p>
+    pub query_insights_response: ::std::option::Option<crate::types::QueryInsightsResponse>,
     _request_id: Option<String>,
 }
 impl QueryOutput {
@@ -39,6 +41,10 @@ impl QueryOutput {
     pub fn query_status(&self) -> ::std::option::Option<&crate::types::QueryStatus> {
         self.query_status.as_ref()
     }
+    /// <p>Encapsulates <code>QueryInsights</code> containing insights and metrics related to the query that you executed.</p>
+    pub fn query_insights_response(&self) -> ::std::option::Option<&crate::types::QueryInsightsResponse> {
+        self.query_insights_response.as_ref()
+    }
 }
 impl ::aws_types::request_id::RequestId for QueryOutput {
     fn request_id(&self) -> Option<&str> {
@@ -61,6 +67,7 @@ pub struct QueryOutputBuilder {
     pub(crate) rows: ::std::option::Option<::std::vec::Vec<crate::types::Row>>,
     pub(crate) column_info: ::std::option::Option<::std::vec::Vec<crate::types::ColumnInfo>>,
     pub(crate) query_status: ::std::option::Option<crate::types::QueryStatus>,
+    pub(crate) query_insights_response: ::std::option::Option<crate::types::QueryInsightsResponse>,
     _request_id: Option<String>,
 }
 impl QueryOutputBuilder {
@@ -147,6 +154,20 @@ impl QueryOutputBuilder {
     pub fn get_query_status(&self) -> &::std::option::Option<crate::types::QueryStatus> {
         &self.query_status
     }
+    /// <p>Encapsulates <code>QueryInsights</code> containing insights and metrics related to the query that you executed.</p>
+    pub fn query_insights_response(mut self, input: crate::types::QueryInsightsResponse) -> Self {
+        self.query_insights_response = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Encapsulates <code>QueryInsights</code> containing insights and metrics related to the query that you executed.</p>
+    pub fn set_query_insights_response(mut self, input: ::std::option::Option<crate::types::QueryInsightsResponse>) -> Self {
+        self.query_insights_response = input;
+        self
+    }
+    /// <p>Encapsulates <code>QueryInsights</code> containing insights and metrics related to the query that you executed.</p>
+    pub fn get_query_insights_response(&self) -> &::std::option::Option<crate::types::QueryInsightsResponse> {
+        &self.query_insights_response
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -183,6 +204,7 @@ impl QueryOutputBuilder {
                 )
             })?,
             query_status: self.query_status,
+            query_insights_response: self.query_insights_response,
             _request_id: self._request_id,
         })
     }

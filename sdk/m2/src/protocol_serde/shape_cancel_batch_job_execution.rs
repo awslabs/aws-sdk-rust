@@ -142,3 +142,13 @@ pub fn de_cancel_batch_job_execution_http_response(
         output.build()
     })
 }
+
+pub fn ser_cancel_batch_job_execution_input(
+    input: &crate::operation::cancel_batch_job_execution::CancelBatchJobExecutionInput,
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+    let mut out = String::new();
+    let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::protocol_serde::shape_cancel_batch_job_execution_input::ser_cancel_batch_job_execution_input_input(&mut object, input)?;
+    object.finish();
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
+}

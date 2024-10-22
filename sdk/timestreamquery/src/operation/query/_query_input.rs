@@ -44,6 +44,9 @@ pub struct QueryInput {
     /// <p>Otherwise, the initial invocation of <code>Query</code> only returns a <code>NextToken</code>, which can then be used in subsequent calls to fetch the result set. To resume pagination, provide the <code>NextToken</code> value in the subsequent command.</p>
     /// <p>If the row size is large (e.g. a row has many columns), Timestream may return fewer rows to keep the response size from exceeding the 1 MB limit. If <code>MaxRows</code> is not provided, Timestream will send the necessary number of rows to meet the 1 MB limit.</p>
     pub max_rows: ::std::option::Option<i32>,
+    /// <p>Encapsulates settings for enabling <code>QueryInsights</code>.</p>
+    /// <p>Enabling <code>QueryInsights</code> returns insights and metrics in addition to query results for the query that you executed. You can use <code>QueryInsights</code> to tune your query performance.</p>
+    pub query_insights: ::std::option::Option<crate::types::QueryInsights>,
 }
 impl QueryInput {
     /// <p>The query to be run by Timestream.</p>
@@ -95,6 +98,11 @@ impl QueryInput {
     pub fn max_rows(&self) -> ::std::option::Option<i32> {
         self.max_rows
     }
+    /// <p>Encapsulates settings for enabling <code>QueryInsights</code>.</p>
+    /// <p>Enabling <code>QueryInsights</code> returns insights and metrics in addition to query results for the query that you executed. You can use <code>QueryInsights</code> to tune your query performance.</p>
+    pub fn query_insights(&self) -> ::std::option::Option<&crate::types::QueryInsights> {
+        self.query_insights.as_ref()
+    }
 }
 impl ::std::fmt::Debug for QueryInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -103,6 +111,7 @@ impl ::std::fmt::Debug for QueryInput {
         formatter.field("client_token", &"*** Sensitive Data Redacted ***");
         formatter.field("next_token", &self.next_token);
         formatter.field("max_rows", &self.max_rows);
+        formatter.field("query_insights", &self.query_insights);
         formatter.finish()
     }
 }
@@ -121,6 +130,7 @@ pub struct QueryInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_rows: ::std::option::Option<i32>,
+    pub(crate) query_insights: ::std::option::Option<crate::types::QueryInsights>,
 }
 impl QueryInputBuilder {
     /// <p>The query to be run by Timestream.</p>
@@ -279,6 +289,23 @@ impl QueryInputBuilder {
     pub fn get_max_rows(&self) -> &::std::option::Option<i32> {
         &self.max_rows
     }
+    /// <p>Encapsulates settings for enabling <code>QueryInsights</code>.</p>
+    /// <p>Enabling <code>QueryInsights</code> returns insights and metrics in addition to query results for the query that you executed. You can use <code>QueryInsights</code> to tune your query performance.</p>
+    pub fn query_insights(mut self, input: crate::types::QueryInsights) -> Self {
+        self.query_insights = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Encapsulates settings for enabling <code>QueryInsights</code>.</p>
+    /// <p>Enabling <code>QueryInsights</code> returns insights and metrics in addition to query results for the query that you executed. You can use <code>QueryInsights</code> to tune your query performance.</p>
+    pub fn set_query_insights(mut self, input: ::std::option::Option<crate::types::QueryInsights>) -> Self {
+        self.query_insights = input;
+        self
+    }
+    /// <p>Encapsulates settings for enabling <code>QueryInsights</code>.</p>
+    /// <p>Enabling <code>QueryInsights</code> returns insights and metrics in addition to query results for the query that you executed. You can use <code>QueryInsights</code> to tune your query performance.</p>
+    pub fn get_query_insights(&self) -> &::std::option::Option<crate::types::QueryInsights> {
+        &self.query_insights
+    }
     /// Consumes the builder and constructs a [`QueryInput`](crate::operation::query::QueryInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::query::QueryInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::query::QueryInput {
@@ -286,6 +313,7 @@ impl QueryInputBuilder {
             client_token: self.client_token,
             next_token: self.next_token,
             max_rows: self.max_rows,
+            query_insights: self.query_insights,
         })
     }
 }
@@ -296,6 +324,7 @@ impl ::std::fmt::Debug for QueryInputBuilder {
         formatter.field("client_token", &"*** Sensitive Data Redacted ***");
         formatter.field("next_token", &self.next_token);
         formatter.field("max_rows", &self.max_rows);
+        formatter.field("query_insights", &self.query_insights);
         formatter.finish()
     }
 }

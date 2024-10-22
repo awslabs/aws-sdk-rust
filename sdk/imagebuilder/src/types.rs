@@ -27,6 +27,10 @@ pub use crate::types::_lifecycle_policy_resource_type::LifecyclePolicyResourceTy
 
 pub use crate::types::_lifecycle_policy_status::LifecyclePolicyStatus;
 
+pub use crate::types::_placement::Placement;
+
+pub use crate::types::_tenancy_type::TenancyType;
+
 pub use crate::types::_instance_metadata_options::InstanceMetadataOptions;
 
 pub use crate::types::_logging::Logging;
@@ -445,6 +449,8 @@ mod _pipeline_execution_start_condition;
 
 mod _pipeline_status;
 
+mod _placement;
+
 mod _platform;
 
 mod _remediation;
@@ -470,6 +476,8 @@ mod _severity_counts;
 mod _systems_manager_agent;
 
 mod _target_container_repository;
+
+mod _tenancy_type;
 
 mod _vulnerability_id_aggregation;
 

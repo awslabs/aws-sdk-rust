@@ -59,14 +59,14 @@ pub(crate) struct Handle {
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`CreateSpace`](crate::operation::create_space) operation has
-/// a [`Client::create_space`], function which returns a builder for that operation.
+/// For example, the [`BatchAddRole`](crate::operation::batch_add_role) operation has
+/// a [`Client::batch_add_role`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.create_space()
-///     .name("example")
+/// let result = client.batch_add_role()
+///     .space_id("example")
 ///     .send()
 ///     .await;
 /// ```
@@ -136,6 +136,10 @@ impl Client {
     }
 }
 
+mod batch_add_role;
+
+mod batch_remove_role;
+
 mod create_space;
 
 /// Operation customization and supporting types.
@@ -149,7 +153,7 @@ mod create_space;
 /// # let client: aws_sdk_repostspace::Client = unimplemented!();
 /// use ::http::header::{HeaderName, HeaderValue};
 ///
-/// let result = client.create_space()
+/// let result = client.batch_add_role()
 ///     .customize()
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value

@@ -359,17 +359,17 @@ impl CreateContainerRecipeFluentBuilder {
     pub fn get_target_repository(&self) -> &::std::option::Option<crate::types::TargetContainerRepository> {
         self.inner.get_target_repository()
     }
-    /// <p>Identifies which KMS key is used to encrypt the container image.</p>
+    /// <p>Identifies which KMS key is used to encrypt the Dockerfile template.</p>
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.kms_key_id(input.into());
         self
     }
-    /// <p>Identifies which KMS key is used to encrypt the container image.</p>
+    /// <p>Identifies which KMS key is used to encrypt the Dockerfile template.</p>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_kms_key_id(input);
         self
     }
-    /// <p>Identifies which KMS key is used to encrypt the container image.</p>
+    /// <p>Identifies which KMS key is used to encrypt the Dockerfile template.</p>
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_kms_key_id()
     }

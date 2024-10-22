@@ -244,6 +244,8 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ModifyGlobalC
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum ModifyGlobalClusterError {
+    /// <p>The <code>GlobalClusterIdentifier</code> already exists. Specify a new global database identifier (unique name) to create a new global database cluster or to rename an existing one.</p>
+    GlobalClusterAlreadyExistsFault(crate::types::error::GlobalClusterAlreadyExistsFault),
     /// <p>The <code>GlobalClusterIdentifier</code> doesn't refer to an existing global database cluster.</p>
     GlobalClusterNotFoundFault(crate::types::error::GlobalClusterNotFoundFault),
     /// <p>The requested operation can't be performed while the cluster is in this state.</p>
@@ -285,12 +287,17 @@ impl ModifyGlobalClusterError {
     ///
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::GlobalClusterAlreadyExistsFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::GlobalClusterNotFoundFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidDbClusterStateFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidDbInstanceStateFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidGlobalClusterStateFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
+    }
+    /// Returns `true` if the error kind is `ModifyGlobalClusterError::GlobalClusterAlreadyExistsFault`.
+    pub fn is_global_cluster_already_exists_fault(&self) -> bool {
+        matches!(self, Self::GlobalClusterAlreadyExistsFault(_))
     }
     /// Returns `true` if the error kind is `ModifyGlobalClusterError::GlobalClusterNotFoundFault`.
     pub fn is_global_cluster_not_found_fault(&self) -> bool {
@@ -312,6 +319,7 @@ impl ModifyGlobalClusterError {
 impl ::std::error::Error for ModifyGlobalClusterError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
+            Self::GlobalClusterAlreadyExistsFault(_inner) => ::std::option::Option::Some(_inner),
             Self::GlobalClusterNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidDbClusterStateFault(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidDbInstanceStateFault(_inner) => ::std::option::Option::Some(_inner),
@@ -323,6 +331,7 @@ impl ::std::error::Error for ModifyGlobalClusterError {
 impl ::std::fmt::Display for ModifyGlobalClusterError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
+            Self::GlobalClusterAlreadyExistsFault(_inner) => _inner.fmt(f),
             Self::GlobalClusterNotFoundFault(_inner) => _inner.fmt(f),
             Self::InvalidDbClusterStateFault(_inner) => _inner.fmt(f),
             Self::InvalidDbInstanceStateFault(_inner) => _inner.fmt(f),
@@ -348,6 +357,7 @@ impl ::aws_smithy_types::retry::ProvideErrorKind for ModifyGlobalClusterError {
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for ModifyGlobalClusterError {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::GlobalClusterAlreadyExistsFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::GlobalClusterNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidDbClusterStateFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidDbInstanceStateFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

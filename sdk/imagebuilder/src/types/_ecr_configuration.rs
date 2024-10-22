@@ -6,7 +6,7 @@
 pub struct EcrConfiguration {
     /// <p>The name of the container repository that Amazon Inspector scans to identify findings for your container images. The name includes the path for the repository location. If you don’t provide this information, Image Builder creates a repository in your account named <code>image-builder-image-scanning-repository</code> for vulnerability scans of your output container images.</p>
     pub repository_name: ::std::option::Option<::std::string::String>,
-    /// <p>Tags for Image Builder to apply to the output container image that &amp;INS; scans. Tags can help you identify and manage your scanned images.</p>
+    /// <p>Tags for Image Builder to apply to the output container image that Amazon Inspector scans. Tags can help you identify and manage your scanned images.</p>
     pub container_tags: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl EcrConfiguration {
@@ -14,7 +14,7 @@ impl EcrConfiguration {
     pub fn repository_name(&self) -> ::std::option::Option<&str> {
         self.repository_name.as_deref()
     }
-    /// <p>Tags for Image Builder to apply to the output container image that &amp;INS; scans. Tags can help you identify and manage your scanned images.</p>
+    /// <p>Tags for Image Builder to apply to the output container image that Amazon Inspector scans. Tags can help you identify and manage your scanned images.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.container_tags.is_none()`.
     pub fn container_tags(&self) -> &[::std::string::String] {
@@ -54,19 +54,19 @@ impl EcrConfigurationBuilder {
     ///
     /// To override the contents of this collection use [`set_container_tags`](Self::set_container_tags).
     ///
-    /// <p>Tags for Image Builder to apply to the output container image that &amp;INS; scans. Tags can help you identify and manage your scanned images.</p>
+    /// <p>Tags for Image Builder to apply to the output container image that Amazon Inspector scans. Tags can help you identify and manage your scanned images.</p>
     pub fn container_tags(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.container_tags.unwrap_or_default();
         v.push(input.into());
         self.container_tags = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Tags for Image Builder to apply to the output container image that &amp;INS; scans. Tags can help you identify and manage your scanned images.</p>
+    /// <p>Tags for Image Builder to apply to the output container image that Amazon Inspector scans. Tags can help you identify and manage your scanned images.</p>
     pub fn set_container_tags(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.container_tags = input;
         self
     }
-    /// <p>Tags for Image Builder to apply to the output container image that &amp;INS; scans. Tags can help you identify and manage your scanned images.</p>
+    /// <p>Tags for Image Builder to apply to the output container image that Amazon Inspector scans. Tags can help you identify and manage your scanned images.</p>
     pub fn get_container_tags(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.container_tags
     }

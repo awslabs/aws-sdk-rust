@@ -38,6 +38,8 @@ pub struct InfrastructureConfiguration {
     pub instance_metadata_options: ::std::option::Option<crate::types::InstanceMetadataOptions>,
     /// <p>The tags of the infrastructure configuration.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>The instance placement settings that define where the instances that are launched from your image will run.</p>
+    pub placement: ::std::option::Option<crate::types::Placement>,
 }
 impl InfrastructureConfiguration {
     /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration.</p>
@@ -110,6 +112,10 @@ impl InfrastructureConfiguration {
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
+    /// <p>The instance placement settings that define where the instances that are launched from your image will run.</p>
+    pub fn placement(&self) -> ::std::option::Option<&crate::types::Placement> {
+        self.placement.as_ref()
+    }
 }
 impl InfrastructureConfiguration {
     /// Creates a new builder-style object to manufacture [`InfrastructureConfiguration`](crate::types::InfrastructureConfiguration).
@@ -138,6 +144,7 @@ pub struct InfrastructureConfigurationBuilder {
     pub(crate) resource_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) instance_metadata_options: ::std::option::Option<crate::types::InstanceMetadataOptions>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) placement: ::std::option::Option<crate::types::Placement>,
 }
 impl InfrastructureConfigurationBuilder {
     /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration.</p>
@@ -397,6 +404,20 @@ impl InfrastructureConfigurationBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
+    /// <p>The instance placement settings that define where the instances that are launched from your image will run.</p>
+    pub fn placement(mut self, input: crate::types::Placement) -> Self {
+        self.placement = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The instance placement settings that define where the instances that are launched from your image will run.</p>
+    pub fn set_placement(mut self, input: ::std::option::Option<crate::types::Placement>) -> Self {
+        self.placement = input;
+        self
+    }
+    /// <p>The instance placement settings that define where the instances that are launched from your image will run.</p>
+    pub fn get_placement(&self) -> &::std::option::Option<crate::types::Placement> {
+        &self.placement
+    }
     /// Consumes the builder and constructs a [`InfrastructureConfiguration`](crate::types::InfrastructureConfiguration).
     pub fn build(self) -> crate::types::InfrastructureConfiguration {
         crate::types::InfrastructureConfiguration {
@@ -416,6 +437,7 @@ impl InfrastructureConfigurationBuilder {
             resource_tags: self.resource_tags,
             instance_metadata_options: self.instance_metadata_options,
             tags: self.tags,
+            placement: self.placement,
         }
     }
 }

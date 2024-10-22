@@ -201,6 +201,9 @@ pub(crate) fn de_get_space(
                             .transpose()?,
                     );
                 }
+                "roles" => {
+                    builder = builder.set_roles(crate::protocol_serde::shape_roles::de_roles(tokens)?);
+                }
                 "spaceId" => {
                     builder = builder.set_space_id(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

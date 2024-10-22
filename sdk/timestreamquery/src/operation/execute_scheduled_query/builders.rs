@@ -23,6 +23,7 @@ impl crate::operation::execute_scheduled_query::builders::ExecuteScheduledQueryI
 /// Fluent builder constructing a request to `ExecuteScheduledQuery`.
 ///
 /// <p>You can use this API to run a scheduled query manually.</p>
+/// <p>If you enabled <code>QueryInsights</code>, this API also returns insights and metrics related to the query that you executed as part of an Amazon SNS notification. <code>QueryInsights</code> helps with performance tuning of your query.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ExecuteScheduledQueryFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -149,5 +150,22 @@ impl ExecuteScheduledQueryFluentBuilder {
     /// <p>Not used.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
+    }
+    /// <p>Encapsulates settings for enabling <code>QueryInsights</code>.</p>
+    /// <p>Enabling <code>QueryInsights</code> returns insights and metrics as a part of the Amazon SNS notification for the query that you executed. You can use <code>QueryInsights</code> to tune your query performance and cost.</p>
+    pub fn query_insights(mut self, input: crate::types::ScheduledQueryInsights) -> Self {
+        self.inner = self.inner.query_insights(input);
+        self
+    }
+    /// <p>Encapsulates settings for enabling <code>QueryInsights</code>.</p>
+    /// <p>Enabling <code>QueryInsights</code> returns insights and metrics as a part of the Amazon SNS notification for the query that you executed. You can use <code>QueryInsights</code> to tune your query performance and cost.</p>
+    pub fn set_query_insights(mut self, input: ::std::option::Option<crate::types::ScheduledQueryInsights>) -> Self {
+        self.inner = self.inner.set_query_insights(input);
+        self
+    }
+    /// <p>Encapsulates settings for enabling <code>QueryInsights</code>.</p>
+    /// <p>Enabling <code>QueryInsights</code> returns insights and metrics as a part of the Amazon SNS notification for the query that you executed. You can use <code>QueryInsights</code> to tune your query performance and cost.</p>
+    pub fn get_query_insights(&self) -> &::std::option::Option<crate::types::ScheduledQueryInsights> {
+        self.inner.get_query_insights()
     }
 }

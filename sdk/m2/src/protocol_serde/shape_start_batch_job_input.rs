@@ -3,21 +3,24 @@ pub fn ser_start_batch_job_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::start_batch_job::StartBatchJobInput,
 ) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.batch_job_identifier {
-        #[allow(unused_mut)]
-        let mut object_2 = object.key("batchJobIdentifier").start_object();
-        crate::protocol_serde::shape_batch_job_identifier::ser_batch_job_identifier(&mut object_2, var_1)?;
-        object_2.finish();
+    if let Some(var_1) = &input.auth_secrets_manager_arn {
+        object.key("authSecretsManagerArn").string(var_1.as_str());
     }
-    if let Some(var_3) = &input.job_params {
+    if let Some(var_2) = &input.batch_job_identifier {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("jobParams").start_object();
-        for (key_5, value_6) in var_3 {
+        let mut object_3 = object.key("batchJobIdentifier").start_object();
+        crate::protocol_serde::shape_batch_job_identifier::ser_batch_job_identifier(&mut object_3, var_2)?;
+        object_3.finish();
+    }
+    if let Some(var_4) = &input.job_params {
+        #[allow(unused_mut)]
+        let mut object_5 = object.key("jobParams").start_object();
+        for (key_6, value_7) in var_4 {
             {
-                object_4.key(key_5.as_str()).string(value_6.as_str());
+                object_5.key(key_6.as_str()).string(value_7.as_str());
             }
         }
-        object_4.finish();
+        object_5.finish();
     }
     Ok(())
 }

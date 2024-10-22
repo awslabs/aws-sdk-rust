@@ -80,31 +80,31 @@ where
 }
 
 pub fn ser_batch_job_identifier(
-    object_2: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
+    object_3: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::BatchJobIdentifier,
 ) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::BatchJobIdentifier::FileBatchJobIdentifier(inner) => {
             #[allow(unused_mut)]
-            let mut object_1 = object_2.key("fileBatchJobIdentifier").start_object();
+            let mut object_1 = object_3.key("fileBatchJobIdentifier").start_object();
             crate::protocol_serde::shape_file_batch_job_identifier::ser_file_batch_job_identifier(&mut object_1, inner)?;
             object_1.finish();
         }
         crate::types::BatchJobIdentifier::ScriptBatchJobIdentifier(inner) => {
             #[allow(unused_mut)]
-            let mut object_2 = object_2.key("scriptBatchJobIdentifier").start_object();
+            let mut object_2 = object_3.key("scriptBatchJobIdentifier").start_object();
             crate::protocol_serde::shape_script_batch_job_identifier::ser_script_batch_job_identifier(&mut object_2, inner)?;
             object_2.finish();
         }
         crate::types::BatchJobIdentifier::S3BatchJobIdentifier(inner) => {
             #[allow(unused_mut)]
-            let mut object_3 = object_2.key("s3BatchJobIdentifier").start_object();
+            let mut object_3 = object_3.key("s3BatchJobIdentifier").start_object();
             crate::protocol_serde::shape_s3_batch_job_identifier::ser_s3_batch_job_identifier(&mut object_3, inner)?;
             object_3.finish();
         }
         crate::types::BatchJobIdentifier::RestartBatchJobIdentifier(inner) => {
             #[allow(unused_mut)]
-            let mut object_4 = object_2.key("restartBatchJobIdentifier").start_object();
+            let mut object_4 = object_3.key("restartBatchJobIdentifier").start_object();
             crate::protocol_serde::shape_restart_batch_job_identifier::ser_restart_batch_job_identifier(&mut object_4, inner)?;
             object_4.finish();
         }

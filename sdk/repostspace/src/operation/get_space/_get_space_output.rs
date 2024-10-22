@@ -34,9 +34,13 @@ pub struct GetSpaceOutput {
     /// <p>The storage limit of the private re:Post.</p>
     pub storage_limit: i64,
     /// <p>The list of users that are administrators of the private re:Post.</p>
+    #[deprecated(note = "This property has been depracted and will be replaced by the roles property.")]
     pub user_admins: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The list of groups that are administrators of the private re:Post.</p>
+    #[deprecated(note = "This property has been depracted and will be replaced by the roles property.")]
     pub group_admins: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>A map of accessor identifiers and their roles.</p>
+    pub roles: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<crate::types::Role>>>,
     /// <p>The custom AWS KMS key ARN that’s used for the AWS KMS encryption.</p>
     pub user_kms_key: ::std::option::Option<::std::string::String>,
     /// <p>The number of users that have onboarded to the private re:Post.</p>
@@ -116,14 +120,20 @@ impl GetSpaceOutput {
     /// <p>The list of users that are administrators of the private re:Post.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.user_admins.is_none()`.
+    #[deprecated(note = "This property has been depracted and will be replaced by the roles property.")]
     pub fn user_admins(&self) -> &[::std::string::String] {
         self.user_admins.as_deref().unwrap_or_default()
     }
     /// <p>The list of groups that are administrators of the private re:Post.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.group_admins.is_none()`.
+    #[deprecated(note = "This property has been depracted and will be replaced by the roles property.")]
     pub fn group_admins(&self) -> &[::std::string::String] {
         self.group_admins.as_deref().unwrap_or_default()
+    }
+    /// <p>A map of accessor identifiers and their roles.</p>
+    pub fn roles(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::vec::Vec<crate::types::Role>>> {
+        self.roles.as_ref()
     }
     /// <p>The custom AWS KMS key ARN that’s used for the AWS KMS encryption.</p>
     pub fn user_kms_key(&self) -> ::std::option::Option<&str> {
@@ -158,6 +168,7 @@ impl ::std::fmt::Debug for GetSpaceOutput {
         formatter.field("storage_limit", &self.storage_limit);
         formatter.field("user_admins", &self.user_admins);
         formatter.field("group_admins", &self.group_admins);
+        formatter.field("roles", &self.roles);
         formatter.field("user_kms_key", &self.user_kms_key);
         formatter.field("user_count", &self.user_count);
         formatter.field("content_size", &self.content_size);
@@ -198,6 +209,7 @@ pub struct GetSpaceOutputBuilder {
     pub(crate) storage_limit: ::std::option::Option<i64>,
     pub(crate) user_admins: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) group_admins: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) roles: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<crate::types::Role>>>,
     pub(crate) user_kms_key: ::std::option::Option<::std::string::String>,
     pub(crate) user_count: ::std::option::Option<i32>,
     pub(crate) content_size: ::std::option::Option<i64>,
@@ -431,6 +443,7 @@ impl GetSpaceOutputBuilder {
     /// To override the contents of this collection use [`set_user_admins`](Self::set_user_admins).
     ///
     /// <p>The list of users that are administrators of the private re:Post.</p>
+    #[deprecated(note = "This property has been depracted and will be replaced by the roles property.")]
     pub fn user_admins(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.user_admins.unwrap_or_default();
         v.push(input.into());
@@ -438,11 +451,13 @@ impl GetSpaceOutputBuilder {
         self
     }
     /// <p>The list of users that are administrators of the private re:Post.</p>
+    #[deprecated(note = "This property has been depracted and will be replaced by the roles property.")]
     pub fn set_user_admins(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.user_admins = input;
         self
     }
     /// <p>The list of users that are administrators of the private re:Post.</p>
+    #[deprecated(note = "This property has been depracted and will be replaced by the roles property.")]
     pub fn get_user_admins(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.user_admins
     }
@@ -451,6 +466,7 @@ impl GetSpaceOutputBuilder {
     /// To override the contents of this collection use [`set_group_admins`](Self::set_group_admins).
     ///
     /// <p>The list of groups that are administrators of the private re:Post.</p>
+    #[deprecated(note = "This property has been depracted and will be replaced by the roles property.")]
     pub fn group_admins(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.group_admins.unwrap_or_default();
         v.push(input.into());
@@ -458,13 +474,38 @@ impl GetSpaceOutputBuilder {
         self
     }
     /// <p>The list of groups that are administrators of the private re:Post.</p>
+    #[deprecated(note = "This property has been depracted and will be replaced by the roles property.")]
     pub fn set_group_admins(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.group_admins = input;
         self
     }
     /// <p>The list of groups that are administrators of the private re:Post.</p>
+    #[deprecated(note = "This property has been depracted and will be replaced by the roles property.")]
     pub fn get_group_admins(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.group_admins
+    }
+    /// Adds a key-value pair to `roles`.
+    ///
+    /// To override the contents of this collection use [`set_roles`](Self::set_roles).
+    ///
+    /// <p>A map of accessor identifiers and their roles.</p>
+    pub fn roles(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::vec::Vec<crate::types::Role>) -> Self {
+        let mut hash_map = self.roles.unwrap_or_default();
+        hash_map.insert(k.into(), v);
+        self.roles = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>A map of accessor identifiers and their roles.</p>
+    pub fn set_roles(
+        mut self,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<crate::types::Role>>>,
+    ) -> Self {
+        self.roles = input;
+        self
+    }
+    /// <p>A map of accessor identifiers and their roles.</p>
+    pub fn get_roles(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<crate::types::Role>>> {
+        &self.roles
     }
     /// <p>The custom AWS KMS key ARN that’s used for the AWS KMS encryption.</p>
     pub fn user_kms_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -610,6 +651,7 @@ impl GetSpaceOutputBuilder {
             })?,
             user_admins: self.user_admins,
             group_admins: self.group_admins,
+            roles: self.roles,
             user_kms_key: self.user_kms_key,
             user_count: self.user_count,
             content_size: self.content_size,
@@ -637,6 +679,7 @@ impl ::std::fmt::Debug for GetSpaceOutputBuilder {
         formatter.field("storage_limit", &self.storage_limit);
         formatter.field("user_admins", &self.user_admins);
         formatter.field("group_admins", &self.group_admins);
+        formatter.field("roles", &self.roles);
         formatter.field("user_kms_key", &self.user_kms_key);
         formatter.field("user_count", &self.user_count);
         formatter.field("content_size", &self.content_size);

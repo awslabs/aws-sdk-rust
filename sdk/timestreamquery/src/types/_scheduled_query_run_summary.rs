@@ -12,6 +12,8 @@ pub struct ScheduledQueryRunSummary {
     pub run_status: ::std::option::Option<crate::types::ScheduledQueryRunStatus>,
     /// <p>Runtime statistics for a scheduled run.</p>
     pub execution_stats: ::std::option::Option<crate::types::ExecutionStats>,
+    /// <p>Provides various insights and metrics related to the run summary of the scheduled query.</p>
+    pub query_insights_response: ::std::option::Option<crate::types::ScheduledQueryInsightsResponse>,
     /// <p>S3 location for error report.</p>
     pub error_report_location: ::std::option::Option<crate::types::ErrorReportLocation>,
     /// <p>Error message for the scheduled query in case of failure. You might have to look at the error report to get more detailed error reasons.</p>
@@ -33,6 +35,10 @@ impl ScheduledQueryRunSummary {
     /// <p>Runtime statistics for a scheduled run.</p>
     pub fn execution_stats(&self) -> ::std::option::Option<&crate::types::ExecutionStats> {
         self.execution_stats.as_ref()
+    }
+    /// <p>Provides various insights and metrics related to the run summary of the scheduled query.</p>
+    pub fn query_insights_response(&self) -> ::std::option::Option<&crate::types::ScheduledQueryInsightsResponse> {
+        self.query_insights_response.as_ref()
     }
     /// <p>S3 location for error report.</p>
     pub fn error_report_location(&self) -> ::std::option::Option<&crate::types::ErrorReportLocation> {
@@ -58,6 +64,7 @@ pub struct ScheduledQueryRunSummaryBuilder {
     pub(crate) trigger_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) run_status: ::std::option::Option<crate::types::ScheduledQueryRunStatus>,
     pub(crate) execution_stats: ::std::option::Option<crate::types::ExecutionStats>,
+    pub(crate) query_insights_response: ::std::option::Option<crate::types::ScheduledQueryInsightsResponse>,
     pub(crate) error_report_location: ::std::option::Option<crate::types::ErrorReportLocation>,
     pub(crate) failure_reason: ::std::option::Option<::std::string::String>,
 }
@@ -118,6 +125,20 @@ impl ScheduledQueryRunSummaryBuilder {
     pub fn get_execution_stats(&self) -> &::std::option::Option<crate::types::ExecutionStats> {
         &self.execution_stats
     }
+    /// <p>Provides various insights and metrics related to the run summary of the scheduled query.</p>
+    pub fn query_insights_response(mut self, input: crate::types::ScheduledQueryInsightsResponse) -> Self {
+        self.query_insights_response = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Provides various insights and metrics related to the run summary of the scheduled query.</p>
+    pub fn set_query_insights_response(mut self, input: ::std::option::Option<crate::types::ScheduledQueryInsightsResponse>) -> Self {
+        self.query_insights_response = input;
+        self
+    }
+    /// <p>Provides various insights and metrics related to the run summary of the scheduled query.</p>
+    pub fn get_query_insights_response(&self) -> &::std::option::Option<crate::types::ScheduledQueryInsightsResponse> {
+        &self.query_insights_response
+    }
     /// <p>S3 location for error report.</p>
     pub fn error_report_location(mut self, input: crate::types::ErrorReportLocation) -> Self {
         self.error_report_location = ::std::option::Option::Some(input);
@@ -153,6 +174,7 @@ impl ScheduledQueryRunSummaryBuilder {
             trigger_time: self.trigger_time,
             run_status: self.run_status,
             execution_stats: self.execution_stats,
+            query_insights_response: self.query_insights_response,
             error_report_location: self.error_report_location,
             failure_reason: self.failure_reason,
         }

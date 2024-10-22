@@ -187,6 +187,10 @@ pub(crate) fn de_query(
                 "QueryStatus" => {
                     builder = builder.set_query_status(crate::protocol_serde::shape_query_status::de_query_status(tokens)?);
                 }
+                "QueryInsightsResponse" => {
+                    builder = builder
+                        .set_query_insights_response(crate::protocol_serde::shape_query_insights_response::de_query_insights_response(tokens)?);
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

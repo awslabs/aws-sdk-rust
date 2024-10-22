@@ -9,6 +9,9 @@ pub struct ExecuteScheduledQueryInput {
     pub invocation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Not used.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
+    /// <p>Encapsulates settings for enabling <code>QueryInsights</code>.</p>
+    /// <p>Enabling <code>QueryInsights</code> returns insights and metrics as a part of the Amazon SNS notification for the query that you executed. You can use <code>QueryInsights</code> to tune your query performance and cost.</p>
+    pub query_insights: ::std::option::Option<crate::types::ScheduledQueryInsights>,
 }
 impl ExecuteScheduledQueryInput {
     /// <p>ARN of the scheduled query.</p>
@@ -23,6 +26,11 @@ impl ExecuteScheduledQueryInput {
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
     }
+    /// <p>Encapsulates settings for enabling <code>QueryInsights</code>.</p>
+    /// <p>Enabling <code>QueryInsights</code> returns insights and metrics as a part of the Amazon SNS notification for the query that you executed. You can use <code>QueryInsights</code> to tune your query performance and cost.</p>
+    pub fn query_insights(&self) -> ::std::option::Option<&crate::types::ScheduledQueryInsights> {
+        self.query_insights.as_ref()
+    }
 }
 impl ::std::fmt::Debug for ExecuteScheduledQueryInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -30,6 +38,7 @@ impl ::std::fmt::Debug for ExecuteScheduledQueryInput {
         formatter.field("scheduled_query_arn", &self.scheduled_query_arn);
         formatter.field("invocation_time", &self.invocation_time);
         formatter.field("client_token", &"*** Sensitive Data Redacted ***");
+        formatter.field("query_insights", &self.query_insights);
         formatter.finish()
     }
 }
@@ -47,6 +56,7 @@ pub struct ExecuteScheduledQueryInputBuilder {
     pub(crate) scheduled_query_arn: ::std::option::Option<::std::string::String>,
     pub(crate) invocation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
+    pub(crate) query_insights: ::std::option::Option<crate::types::ScheduledQueryInsights>,
 }
 impl ExecuteScheduledQueryInputBuilder {
     /// <p>ARN of the scheduled query.</p>
@@ -93,6 +103,23 @@ impl ExecuteScheduledQueryInputBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
+    /// <p>Encapsulates settings for enabling <code>QueryInsights</code>.</p>
+    /// <p>Enabling <code>QueryInsights</code> returns insights and metrics as a part of the Amazon SNS notification for the query that you executed. You can use <code>QueryInsights</code> to tune your query performance and cost.</p>
+    pub fn query_insights(mut self, input: crate::types::ScheduledQueryInsights) -> Self {
+        self.query_insights = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Encapsulates settings for enabling <code>QueryInsights</code>.</p>
+    /// <p>Enabling <code>QueryInsights</code> returns insights and metrics as a part of the Amazon SNS notification for the query that you executed. You can use <code>QueryInsights</code> to tune your query performance and cost.</p>
+    pub fn set_query_insights(mut self, input: ::std::option::Option<crate::types::ScheduledQueryInsights>) -> Self {
+        self.query_insights = input;
+        self
+    }
+    /// <p>Encapsulates settings for enabling <code>QueryInsights</code>.</p>
+    /// <p>Enabling <code>QueryInsights</code> returns insights and metrics as a part of the Amazon SNS notification for the query that you executed. You can use <code>QueryInsights</code> to tune your query performance and cost.</p>
+    pub fn get_query_insights(&self) -> &::std::option::Option<crate::types::ScheduledQueryInsights> {
+        &self.query_insights
+    }
     /// Consumes the builder and constructs a [`ExecuteScheduledQueryInput`](crate::operation::execute_scheduled_query::ExecuteScheduledQueryInput).
     pub fn build(
         self,
@@ -102,6 +129,7 @@ impl ExecuteScheduledQueryInputBuilder {
             scheduled_query_arn: self.scheduled_query_arn,
             invocation_time: self.invocation_time,
             client_token: self.client_token,
+            query_insights: self.query_insights,
         })
     }
 }
@@ -111,6 +139,7 @@ impl ::std::fmt::Debug for ExecuteScheduledQueryInputBuilder {
         formatter.field("scheduled_query_arn", &self.scheduled_query_arn);
         formatter.field("invocation_time", &self.invocation_time);
         formatter.field("client_token", &"*** Sensitive Data Redacted ***");
+        formatter.field("query_insights", &self.query_insights);
         formatter.finish()
     }
 }

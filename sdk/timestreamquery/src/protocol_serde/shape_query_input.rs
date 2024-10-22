@@ -18,5 +18,11 @@ pub fn ser_query_input_input(
             ::aws_smithy_types::Number::NegInt((*var_4).into()),
         );
     }
+    if let Some(var_5) = &input.query_insights {
+        #[allow(unused_mut)]
+        let mut object_6 = object.key("QueryInsights").start_object();
+        crate::protocol_serde::shape_query_insights::ser_query_insights(&mut object_6, var_5)?;
+        object_6.finish();
+    }
     Ok(())
 }

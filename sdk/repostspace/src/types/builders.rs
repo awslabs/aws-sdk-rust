@@ -2,3 +2,5 @@
 pub use crate::types::_validation_exception_field::ValidationExceptionFieldBuilder;
 
 pub use crate::types::_space_data::SpaceDataBuilder;
+
+pub use crate::types::_batch_error::BatchErrorBuilder;

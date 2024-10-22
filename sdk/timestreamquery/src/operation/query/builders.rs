@@ -22,7 +22,11 @@ impl crate::operation::query::builders::QueryInputBuilder {
 }
 /// Fluent builder constructing a request to `Query`.
 ///
-/// <p><code>Query</code> is a synchronous operation that enables you to run a query against your Amazon Timestream data. <code>Query</code> will time out after 60 seconds. You must update the default timeout in the SDK to support a timeout of 60 seconds. See the <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/code-samples.run-query.html">code sample</a> for details.</p>
+/// <p><code>Query</code> is a synchronous operation that enables you to run a query against your Amazon Timestream data.</p>
+/// <p>If you enabled <code>QueryInsights</code>, this API also returns insights and metrics related to the query that you executed. <code>QueryInsights</code> helps with performance tuning of your query.</p><note>
+/// <p>The maximum number of <code>Query</code> API requests you're allowed to make with <code>QueryInsights</code> enabled is 1 query per second (QPS). If you exceed this query rate, it might result in throttling.</p>
+/// </note>
+/// <p><code>Query</code> will time out after 60 seconds. You must update the default timeout in the SDK to support a timeout of 60 seconds. See the <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/code-samples.run-query.html">code sample</a> for details.</p>
 /// <p>Your query request will fail in the following cases:</p>
 /// <ul>
 /// <li>
@@ -261,5 +265,22 @@ impl QueryFluentBuilder {
     /// <p>If the row size is large (e.g. a row has many columns), Timestream may return fewer rows to keep the response size from exceeding the 1 MB limit. If <code>MaxRows</code> is not provided, Timestream will send the necessary number of rows to meet the 1 MB limit.</p>
     pub fn get_max_rows(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_rows()
+    }
+    /// <p>Encapsulates settings for enabling <code>QueryInsights</code>.</p>
+    /// <p>Enabling <code>QueryInsights</code> returns insights and metrics in addition to query results for the query that you executed. You can use <code>QueryInsights</code> to tune your query performance.</p>
+    pub fn query_insights(mut self, input: crate::types::QueryInsights) -> Self {
+        self.inner = self.inner.query_insights(input);
+        self
+    }
+    /// <p>Encapsulates settings for enabling <code>QueryInsights</code>.</p>
+    /// <p>Enabling <code>QueryInsights</code> returns insights and metrics in addition to query results for the query that you executed. You can use <code>QueryInsights</code> to tune your query performance.</p>
+    pub fn set_query_insights(mut self, input: ::std::option::Option<crate::types::QueryInsights>) -> Self {
+        self.inner = self.inner.set_query_insights(input);
+        self
+    }
+    /// <p>Encapsulates settings for enabling <code>QueryInsights</code>.</p>
+    /// <p>Enabling <code>QueryInsights</code> returns insights and metrics in addition to query results for the query that you executed. You can use <code>QueryInsights</code> to tune your query performance.</p>
+    pub fn get_query_insights(&self) -> &::std::option::Option<crate::types::QueryInsights> {
+        self.inner.get_query_insights()
     }
 }
