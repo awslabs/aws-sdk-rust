@@ -236,4 +236,18 @@ impl VerifyPinDataFluentBuilder {
     pub fn get_dukpt_attributes(&self) -> &::std::option::Option<crate::types::DukptAttributes> {
         self.inner.get_dukpt_attributes()
     }
+    /// <p>Parameter information of a WrappedKeyBlock for encryption key exchange.</p>
+    pub fn encryption_wrapped_key(mut self, input: crate::types::WrappedKey) -> Self {
+        self.inner = self.inner.encryption_wrapped_key(input);
+        self
+    }
+    /// <p>Parameter information of a WrappedKeyBlock for encryption key exchange.</p>
+    pub fn set_encryption_wrapped_key(mut self, input: ::std::option::Option<crate::types::WrappedKey>) -> Self {
+        self.inner = self.inner.set_encryption_wrapped_key(input);
+        self
+    }
+    /// <p>Parameter information of a WrappedKeyBlock for encryption key exchange.</p>
+    pub fn get_encryption_wrapped_key(&self) -> &::std::option::Option<crate::types::WrappedKey> {
+        self.inner.get_encryption_wrapped_key()
+    }
 }

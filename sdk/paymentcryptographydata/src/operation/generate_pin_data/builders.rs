@@ -24,6 +24,7 @@ impl crate::operation::generate_pin_data::builders::GeneratePinDataInputBuilder 
 ///
 /// <p>Generates pin-related data such as PIN, PIN Verification Value (PVV), PIN Block, and PIN Offset during new card issuance or reissuance. For more information, see <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/generate-pin-data.html">Generate PIN data</a> in the <i>Amazon Web Services Payment Cryptography User Guide</i>.</p>
 /// <p>PIN data is never transmitted in clear to or from Amazon Web Services Payment Cryptography. This operation generates PIN, PVV, or PIN Offset and then encrypts it using Pin Encryption Key (PEK) to create an <code>EncryptedPinBlock</code> for transmission from Amazon Web Services Payment Cryptography. This operation uses a separate Pin Verification Key (PVK) for VISA PVV generation.</p>
+/// <p>Using ECDH key exchange, you can receive cardholder selectable PINs into Amazon Web Services Payment Cryptography. The ECDH derived key protects the incoming PIN block. You can also use it for reveal PIN, wherein the generated PIN block is protected by the ECDH derived key before transmission from Amazon Web Services Payment Cryptography. For more information on establishing ECDH derived keys, see the <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/create-keys.html">Generating keys</a> in the <i>Amazon Web Services Payment Cryptography User Guide</i>.</p>
 /// <p>For information about valid keys for this operation, see <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/keys-validattributes.html">Understanding key attributes</a> and <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/crypto-ops-validkeys-ops.html">Key types for specific data operations</a> in the <i>Amazon Web Services Payment Cryptography User Guide</i>.</p>
 /// <p><b>Cross-account use</b>: This operation can't be used across different Amazon Web Services accounts.</p>
 /// <p><b>Related operations:</b></p>
@@ -134,17 +135,17 @@ impl GeneratePinDataFluentBuilder {
     pub fn get_generation_key_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_generation_key_identifier()
     }
-    /// <p>The <code>keyARN</code> of the PEK that Amazon Web Services Payment Cryptography uses to encrypt the PIN Block.</p>
+    /// <p>The <code>keyARN</code> of the PEK that Amazon Web Services Payment Cryptography uses to encrypt the PIN Block. For ECDH, it is the <code>keyARN</code> of the asymmetric ECC key.</p>
     pub fn encryption_key_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.encryption_key_identifier(input.into());
         self
     }
-    /// <p>The <code>keyARN</code> of the PEK that Amazon Web Services Payment Cryptography uses to encrypt the PIN Block.</p>
+    /// <p>The <code>keyARN</code> of the PEK that Amazon Web Services Payment Cryptography uses to encrypt the PIN Block. For ECDH, it is the <code>keyARN</code> of the asymmetric ECC key.</p>
     pub fn set_encryption_key_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_encryption_key_identifier(input);
         self
     }
-    /// <p>The <code>keyARN</code> of the PEK that Amazon Web Services Payment Cryptography uses to encrypt the PIN Block.</p>
+    /// <p>The <code>keyARN</code> of the PEK that Amazon Web Services Payment Cryptography uses to encrypt the PIN Block. For ECDH, it is the <code>keyARN</code> of the asymmetric ECC key.</p>
     pub fn get_encryption_key_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_encryption_key_identifier()
     }
@@ -209,5 +210,19 @@ impl GeneratePinDataFluentBuilder {
     /// <p>The <code>ISO_Format_3</code> PIN block format is the same as <code>ISO_Format_0</code> except that the fill digits are random values from 10 to 15.</p>
     pub fn get_pin_block_format(&self) -> &::std::option::Option<crate::types::PinBlockFormatForPinData> {
         self.inner.get_pin_block_format()
+    }
+    /// <p>Parameter information of a WrappedKeyBlock for encryption key exchange.</p>
+    pub fn encryption_wrapped_key(mut self, input: crate::types::WrappedKey) -> Self {
+        self.inner = self.inner.encryption_wrapped_key(input);
+        self
+    }
+    /// <p>Parameter information of a WrappedKeyBlock for encryption key exchange.</p>
+    pub fn set_encryption_wrapped_key(mut self, input: ::std::option::Option<crate::types::WrappedKey>) -> Self {
+        self.inner = self.inner.set_encryption_wrapped_key(input);
+        self
+    }
+    /// <p>Parameter information of a WrappedKeyBlock for encryption key exchange.</p>
+    pub fn get_encryption_wrapped_key(&self) -> &::std::option::Option<crate::types::WrappedKey> {
+        self.inner.get_encryption_wrapped_key()
     }
 }

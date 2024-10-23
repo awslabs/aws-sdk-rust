@@ -33,6 +33,8 @@ pub(crate) mod shape_delete_environment;
 
 pub(crate) mod shape_get_environment;
 
+pub(crate) mod shape_invoke_rest_api;
+
 pub(crate) mod shape_list_environments;
 
 pub(crate) mod shape_list_tags_for_resource;
@@ -59,9 +61,15 @@ pub(crate) mod shape_create_environment_input;
 
 pub(crate) mod shape_internal_server_exception;
 
+pub(crate) mod shape_invoke_rest_api_input;
+
 pub(crate) mod shape_publish_metrics_input;
 
 pub(crate) mod shape_resource_not_found_exception;
+
+pub(crate) mod shape_rest_api_client_exception;
+
+pub(crate) mod shape_rest_api_server_exception;
 
 pub(crate) mod shape_tag_resource_input;
 

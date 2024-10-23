@@ -15,26 +15,32 @@ pub fn ser_verify_pin_data_input_input(
     if let Some(var_4) = &input.encryption_key_identifier {
         object.key("EncryptionKeyIdentifier").string(var_4.as_str());
     }
-    if let Some(var_5) = &input.pin_block_format {
-        object.key("PinBlockFormat").string(var_5.as_str());
+    if let Some(var_5) = &input.encryption_wrapped_key {
+        #[allow(unused_mut)]
+        let mut object_6 = object.key("EncryptionWrappedKey").start_object();
+        crate::protocol_serde::shape_wrapped_key::ser_wrapped_key(&mut object_6, var_5)?;
+        object_6.finish();
     }
-    if let Some(var_6) = &input.pin_data_length {
+    if let Some(var_7) = &input.pin_block_format {
+        object.key("PinBlockFormat").string(var_7.as_str());
+    }
+    if let Some(var_8) = &input.pin_data_length {
         object.key("PinDataLength").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_6).into()),
+            ::aws_smithy_types::Number::NegInt((*var_8).into()),
         );
     }
-    if let Some(var_7) = &input.primary_account_number {
-        object.key("PrimaryAccountNumber").string(var_7.as_str());
+    if let Some(var_9) = &input.primary_account_number {
+        object.key("PrimaryAccountNumber").string(var_9.as_str());
     }
-    if let Some(var_8) = &input.verification_attributes {
+    if let Some(var_10) = &input.verification_attributes {
         #[allow(unused_mut)]
-        let mut object_9 = object.key("VerificationAttributes").start_object();
-        crate::protocol_serde::shape_pin_verification_attributes::ser_pin_verification_attributes(&mut object_9, var_8)?;
-        object_9.finish();
+        let mut object_11 = object.key("VerificationAttributes").start_object();
+        crate::protocol_serde::shape_pin_verification_attributes::ser_pin_verification_attributes(&mut object_11, var_10)?;
+        object_11.finish();
     }
-    if let Some(var_10) = &input.verification_key_identifier {
-        object.key("VerificationKeyIdentifier").string(var_10.as_str());
+    if let Some(var_12) = &input.verification_key_identifier {
+        object.key("VerificationKeyIdentifier").string(var_12.as_str());
     }
     Ok(())
 }

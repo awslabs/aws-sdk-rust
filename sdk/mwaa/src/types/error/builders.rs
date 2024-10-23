@@ -5,4 +5,8 @@ pub use crate::types::error::_resource_not_found_exception::ResourceNotFoundExce
 
 pub use crate::types::error::_internal_server_exception::InternalServerExceptionBuilder;
 
+pub use crate::types::error::_rest_api_server_exception::RestApiServerExceptionBuilder;
+
+pub use crate::types::error::_rest_api_client_exception::RestApiClientExceptionBuilder;
+
 pub use crate::types::error::_access_denied_exception::AccessDeniedExceptionBuilder;

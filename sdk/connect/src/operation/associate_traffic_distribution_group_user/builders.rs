@@ -22,7 +22,7 @@ impl crate::operation::associate_traffic_distribution_group_user::builders::Asso
 }
 /// Fluent builder constructing a request to `AssociateTrafficDistributionGroupUser`.
 ///
-/// <p>Associates an agent with a traffic distribution group.</p>
+/// <p>Associates an agent with a traffic distribution group. This API can be called only in the Region where the traffic distribution group is created.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AssociateTrafficDistributionGroupUserFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -111,17 +111,17 @@ impl AssociateTrafficDistributionGroupUserFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The identifier of the traffic distribution group. This can be the ID or the ARN if the API is being called in the Region where the traffic distribution group was created. The ARN must be provided if the call is from the replicated Region.</p>
+    /// <p>The identifier of the traffic distribution group. This can be the ID or the ARN of the traffic distribution group.</p>
     pub fn traffic_distribution_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.traffic_distribution_group_id(input.into());
         self
     }
-    /// <p>The identifier of the traffic distribution group. This can be the ID or the ARN if the API is being called in the Region where the traffic distribution group was created. The ARN must be provided if the call is from the replicated Region.</p>
+    /// <p>The identifier of the traffic distribution group. This can be the ID or the ARN of the traffic distribution group.</p>
     pub fn set_traffic_distribution_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_traffic_distribution_group_id(input);
         self
     }
-    /// <p>The identifier of the traffic distribution group. This can be the ID or the ARN if the API is being called in the Region where the traffic distribution group was created. The ARN must be provided if the call is from the replicated Region.</p>
+    /// <p>The identifier of the traffic distribution group. This can be the ID or the ARN of the traffic distribution group.</p>
     pub fn get_traffic_distribution_group_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_traffic_distribution_group_id()
     }

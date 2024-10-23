@@ -14,7 +14,7 @@ pub struct AgentInfo {
     pub hierarchy_groups: ::std::option::Option<crate::types::HierarchyGroups>,
     /// <p>Information regarding Agent’s device.</p>
     pub device_info: ::std::option::Option<crate::types::DeviceInfo>,
-    /// <p>The configuration for the allowed capabilities for participants present over the call.</p>
+    /// <p>The configuration for the allowed video and screen sharing capabilities for participants present over the call. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/inapp-calling.html">Set up in-app, web, video calling, and screen sharing capabilities</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
     pub capabilities: ::std::option::Option<crate::types::ParticipantCapabilities>,
 }
 impl AgentInfo {
@@ -38,7 +38,7 @@ impl AgentInfo {
     pub fn device_info(&self) -> ::std::option::Option<&crate::types::DeviceInfo> {
         self.device_info.as_ref()
     }
-    /// <p>The configuration for the allowed capabilities for participants present over the call.</p>
+    /// <p>The configuration for the allowed video and screen sharing capabilities for participants present over the call. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/inapp-calling.html">Set up in-app, web, video calling, and screen sharing capabilities</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
     pub fn capabilities(&self) -> ::std::option::Option<&crate::types::ParticipantCapabilities> {
         self.capabilities.as_ref()
     }
@@ -132,17 +132,17 @@ impl AgentInfoBuilder {
     pub fn get_device_info(&self) -> &::std::option::Option<crate::types::DeviceInfo> {
         &self.device_info
     }
-    /// <p>The configuration for the allowed capabilities for participants present over the call.</p>
+    /// <p>The configuration for the allowed video and screen sharing capabilities for participants present over the call. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/inapp-calling.html">Set up in-app, web, video calling, and screen sharing capabilities</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
     pub fn capabilities(mut self, input: crate::types::ParticipantCapabilities) -> Self {
         self.capabilities = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The configuration for the allowed capabilities for participants present over the call.</p>
+    /// <p>The configuration for the allowed video and screen sharing capabilities for participants present over the call. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/inapp-calling.html">Set up in-app, web, video calling, and screen sharing capabilities</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
     pub fn set_capabilities(mut self, input: ::std::option::Option<crate::types::ParticipantCapabilities>) -> Self {
         self.capabilities = input;
         self
     }
-    /// <p>The configuration for the allowed capabilities for participants present over the call.</p>
+    /// <p>The configuration for the allowed video and screen sharing capabilities for participants present over the call. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/inapp-calling.html">Set up in-app, web, video calling, and screen sharing capabilities</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
     pub fn get_capabilities(&self) -> &::std::option::Option<crate::types::ParticipantCapabilities> {
         &self.capabilities
     }

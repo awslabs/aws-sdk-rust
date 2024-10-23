@@ -16,6 +16,9 @@ pub mod delete_environment;
 /// Types for the `GetEnvironment` operation.
 pub mod get_environment;
 
+/// Types for the `InvokeRestApi` operation.
+pub mod invoke_rest_api;
+
 /// Types for the `ListEnvironments` operation.
 pub mod list_environments;
 

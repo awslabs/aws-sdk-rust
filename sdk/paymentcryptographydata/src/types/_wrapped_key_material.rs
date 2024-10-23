@@ -4,6 +4,8 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub enum WrappedKeyMaterial {
+    /// <p>The parameter information for deriving a ECDH shared key.</p>
+    DiffieHellmanSymmetricKey(crate::types::EcdhDerivationAttributes),
     /// <p>The TR-31 wrapped key block.</p>
     Tr31KeyBlock(::std::string::String),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
@@ -17,7 +19,19 @@ pub enum WrappedKeyMaterial {
     Unknown,
 }
 impl WrappedKeyMaterial {
-    #[allow(irrefutable_let_patterns)]
+    /// Tries to convert the enum instance into [`DiffieHellmanSymmetricKey`](crate::types::WrappedKeyMaterial::DiffieHellmanSymmetricKey), extracting the inner [`EcdhDerivationAttributes`](crate::types::EcdhDerivationAttributes).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_diffie_hellman_symmetric_key(&self) -> ::std::result::Result<&crate::types::EcdhDerivationAttributes, &Self> {
+        if let WrappedKeyMaterial::DiffieHellmanSymmetricKey(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`DiffieHellmanSymmetricKey`](crate::types::WrappedKeyMaterial::DiffieHellmanSymmetricKey).
+    pub fn is_diffie_hellman_symmetric_key(&self) -> bool {
+        self.as_diffie_hellman_symmetric_key().is_ok()
+    }
     /// Tries to convert the enum instance into [`Tr31KeyBlock`](crate::types::WrappedKeyMaterial::Tr31KeyBlock), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_tr31_key_block(&self) -> ::std::result::Result<&::std::string::String, &Self> {
@@ -39,6 +53,7 @@ impl WrappedKeyMaterial {
 impl ::std::fmt::Debug for WrappedKeyMaterial {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
+            WrappedKeyMaterial::DiffieHellmanSymmetricKey(val) => f.debug_tuple("DiffieHellmanSymmetricKey").field(&val).finish(),
             WrappedKeyMaterial::Tr31KeyBlock(_) => f.debug_tuple("*** Sensitive Data Redacted ***").finish(),
             WrappedKeyMaterial::Unknown => f.debug_tuple("Unknown").finish(),
         }

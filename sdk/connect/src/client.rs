@@ -557,6 +557,8 @@ mod start_outbound_chat_contact;
 
 mod start_outbound_voice_contact;
 
+mod start_screen_sharing;
+
 mod start_task_contact;
 
 mod start_web_rtc_contact;

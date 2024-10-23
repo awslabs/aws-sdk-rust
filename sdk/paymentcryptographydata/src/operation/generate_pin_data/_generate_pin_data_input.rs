@@ -5,7 +5,7 @@
 pub struct GeneratePinDataInput {
     /// <p>The <code>keyARN</code> of the PEK that Amazon Web Services Payment Cryptography uses for pin data generation.</p>
     pub generation_key_identifier: ::std::option::Option<::std::string::String>,
-    /// <p>The <code>keyARN</code> of the PEK that Amazon Web Services Payment Cryptography uses to encrypt the PIN Block.</p>
+    /// <p>The <code>keyARN</code> of the PEK that Amazon Web Services Payment Cryptography uses to encrypt the PIN Block. For ECDH, it is the <code>keyARN</code> of the asymmetric ECC key.</p>
     pub encryption_key_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The attributes and values to use for PIN, PVV, or PIN Offset generation.</p>
     pub generation_attributes: ::std::option::Option<crate::types::PinGenerationAttributes>,
@@ -17,13 +17,15 @@ pub struct GeneratePinDataInput {
     /// <p>The <code>ISO_Format_0</code> PIN block format is equivalent to the ANSI X9.8, VISA-1, and ECI-1 PIN block formats. It is similar to a VISA-4 PIN block format. It supports a PIN from 4 to 12 digits in length.</p>
     /// <p>The <code>ISO_Format_3</code> PIN block format is the same as <code>ISO_Format_0</code> except that the fill digits are random values from 10 to 15.</p>
     pub pin_block_format: ::std::option::Option<crate::types::PinBlockFormatForPinData>,
+    /// <p>Parameter information of a WrappedKeyBlock for encryption key exchange.</p>
+    pub encryption_wrapped_key: ::std::option::Option<crate::types::WrappedKey>,
 }
 impl GeneratePinDataInput {
     /// <p>The <code>keyARN</code> of the PEK that Amazon Web Services Payment Cryptography uses for pin data generation.</p>
     pub fn generation_key_identifier(&self) -> ::std::option::Option<&str> {
         self.generation_key_identifier.as_deref()
     }
-    /// <p>The <code>keyARN</code> of the PEK that Amazon Web Services Payment Cryptography uses to encrypt the PIN Block.</p>
+    /// <p>The <code>keyARN</code> of the PEK that Amazon Web Services Payment Cryptography uses to encrypt the PIN Block. For ECDH, it is the <code>keyARN</code> of the asymmetric ECC key.</p>
     pub fn encryption_key_identifier(&self) -> ::std::option::Option<&str> {
         self.encryption_key_identifier.as_deref()
     }
@@ -45,6 +47,10 @@ impl GeneratePinDataInput {
     pub fn pin_block_format(&self) -> ::std::option::Option<&crate::types::PinBlockFormatForPinData> {
         self.pin_block_format.as_ref()
     }
+    /// <p>Parameter information of a WrappedKeyBlock for encryption key exchange.</p>
+    pub fn encryption_wrapped_key(&self) -> ::std::option::Option<&crate::types::WrappedKey> {
+        self.encryption_wrapped_key.as_ref()
+    }
 }
 impl ::std::fmt::Debug for GeneratePinDataInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -55,6 +61,7 @@ impl ::std::fmt::Debug for GeneratePinDataInput {
         formatter.field("pin_data_length", &self.pin_data_length);
         formatter.field("primary_account_number", &"*** Sensitive Data Redacted ***");
         formatter.field("pin_block_format", &self.pin_block_format);
+        formatter.field("encryption_wrapped_key", &self.encryption_wrapped_key);
         formatter.finish()
     }
 }
@@ -75,6 +82,7 @@ pub struct GeneratePinDataInputBuilder {
     pub(crate) pin_data_length: ::std::option::Option<i32>,
     pub(crate) primary_account_number: ::std::option::Option<::std::string::String>,
     pub(crate) pin_block_format: ::std::option::Option<crate::types::PinBlockFormatForPinData>,
+    pub(crate) encryption_wrapped_key: ::std::option::Option<crate::types::WrappedKey>,
 }
 impl GeneratePinDataInputBuilder {
     /// <p>The <code>keyARN</code> of the PEK that Amazon Web Services Payment Cryptography uses for pin data generation.</p>
@@ -92,18 +100,18 @@ impl GeneratePinDataInputBuilder {
     pub fn get_generation_key_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.generation_key_identifier
     }
-    /// <p>The <code>keyARN</code> of the PEK that Amazon Web Services Payment Cryptography uses to encrypt the PIN Block.</p>
+    /// <p>The <code>keyARN</code> of the PEK that Amazon Web Services Payment Cryptography uses to encrypt the PIN Block. For ECDH, it is the <code>keyARN</code> of the asymmetric ECC key.</p>
     /// This field is required.
     pub fn encryption_key_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.encryption_key_identifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The <code>keyARN</code> of the PEK that Amazon Web Services Payment Cryptography uses to encrypt the PIN Block.</p>
+    /// <p>The <code>keyARN</code> of the PEK that Amazon Web Services Payment Cryptography uses to encrypt the PIN Block. For ECDH, it is the <code>keyARN</code> of the asymmetric ECC key.</p>
     pub fn set_encryption_key_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.encryption_key_identifier = input;
         self
     }
-    /// <p>The <code>keyARN</code> of the PEK that Amazon Web Services Payment Cryptography uses to encrypt the PIN Block.</p>
+    /// <p>The <code>keyARN</code> of the PEK that Amazon Web Services Payment Cryptography uses to encrypt the PIN Block. For ECDH, it is the <code>keyARN</code> of the asymmetric ECC key.</p>
     pub fn get_encryption_key_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.encryption_key_identifier
     }
@@ -172,6 +180,20 @@ impl GeneratePinDataInputBuilder {
     pub fn get_pin_block_format(&self) -> &::std::option::Option<crate::types::PinBlockFormatForPinData> {
         &self.pin_block_format
     }
+    /// <p>Parameter information of a WrappedKeyBlock for encryption key exchange.</p>
+    pub fn encryption_wrapped_key(mut self, input: crate::types::WrappedKey) -> Self {
+        self.encryption_wrapped_key = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Parameter information of a WrappedKeyBlock for encryption key exchange.</p>
+    pub fn set_encryption_wrapped_key(mut self, input: ::std::option::Option<crate::types::WrappedKey>) -> Self {
+        self.encryption_wrapped_key = input;
+        self
+    }
+    /// <p>Parameter information of a WrappedKeyBlock for encryption key exchange.</p>
+    pub fn get_encryption_wrapped_key(&self) -> &::std::option::Option<crate::types::WrappedKey> {
+        &self.encryption_wrapped_key
+    }
     /// Consumes the builder and constructs a [`GeneratePinDataInput`](crate::operation::generate_pin_data::GeneratePinDataInput).
     pub fn build(
         self,
@@ -183,6 +205,7 @@ impl GeneratePinDataInputBuilder {
             pin_data_length: self.pin_data_length,
             primary_account_number: self.primary_account_number,
             pin_block_format: self.pin_block_format,
+            encryption_wrapped_key: self.encryption_wrapped_key,
         })
     }
 }
@@ -195,6 +218,7 @@ impl ::std::fmt::Debug for GeneratePinDataInputBuilder {
         formatter.field("pin_data_length", &self.pin_data_length);
         formatter.field("primary_account_number", &"*** Sensitive Data Redacted ***");
         formatter.field("pin_block_format", &self.pin_block_format);
+        formatter.field("encryption_wrapped_key", &self.encryption_wrapped_key);
         formatter.finish()
     }
 }

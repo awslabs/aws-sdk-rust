@@ -19,7 +19,7 @@ pub struct GetImportedModelOutput {
     pub model_architecture: ::std::option::Option<::std::string::String>,
     /// <p>The imported model is encrypted at rest using this key.</p>
     pub model_kms_key_arn: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies if the imported model supports fine tuning.</p>
+    /// <p>Specifies if the imported model supports converse.</p>
     pub instruct_supported: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }
@@ -56,7 +56,7 @@ impl GetImportedModelOutput {
     pub fn model_kms_key_arn(&self) -> ::std::option::Option<&str> {
         self.model_kms_key_arn.as_deref()
     }
-    /// <p>Specifies if the imported model supports fine tuning.</p>
+    /// <p>Specifies if the imported model supports converse.</p>
     pub fn instruct_supported(&self) -> ::std::option::Option<bool> {
         self.instruct_supported
     }
@@ -201,17 +201,17 @@ impl GetImportedModelOutputBuilder {
     pub fn get_model_kms_key_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.model_kms_key_arn
     }
-    /// <p>Specifies if the imported model supports fine tuning.</p>
+    /// <p>Specifies if the imported model supports converse.</p>
     pub fn instruct_supported(mut self, input: bool) -> Self {
         self.instruct_supported = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies if the imported model supports fine tuning.</p>
+    /// <p>Specifies if the imported model supports converse.</p>
     pub fn set_instruct_supported(mut self, input: ::std::option::Option<bool>) -> Self {
         self.instruct_supported = input;
         self
     }
-    /// <p>Specifies if the imported model supports fine tuning.</p>
+    /// <p>Specifies if the imported model supports converse.</p>
     pub fn get_instruct_supported(&self) -> &::std::option::Option<bool> {
         &self.instruct_supported
     }

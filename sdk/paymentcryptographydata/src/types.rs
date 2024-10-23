@@ -3,6 +3,20 @@ pub use crate::types::_verification_failed_reason::VerificationFailedReason;
 
 pub use crate::types::_validation_exception_field::ValidationExceptionField;
 
+pub use crate::types::_wrapped_key::WrappedKey;
+
+pub use crate::types::_key_check_value_algorithm::KeyCheckValueAlgorithm;
+
+pub use crate::types::_wrapped_key_material::WrappedKeyMaterial;
+
+pub use crate::types::_ecdh_derivation_attributes::EcdhDerivationAttributes;
+
+pub use crate::types::_key_derivation_hash_algorithm::KeyDerivationHashAlgorithm;
+
+pub use crate::types::_key_derivation_function::KeyDerivationFunction;
+
+pub use crate::types::_symmetric_key_algorithm::SymmetricKeyAlgorithm;
+
 pub use crate::types::_dukpt_attributes::DukptAttributes;
 
 pub use crate::types::_dukpt_derivation_type::DukptDerivationType;
@@ -66,12 +80,6 @@ pub use crate::types::_session_key_emv2000::SessionKeyEmv2000;
 pub use crate::types::_session_key_mastercard::SessionKeyMastercard;
 
 pub use crate::types::_session_key_emv_common::SessionKeyEmvCommon;
-
-pub use crate::types::_wrapped_key::WrappedKey;
-
-pub use crate::types::_key_check_value_algorithm::KeyCheckValueAlgorithm;
-
-pub use crate::types::_wrapped_key_material::WrappedKeyMaterial;
 
 pub use crate::types::_dukpt_derivation_attributes::DukptDerivationAttributes;
 
@@ -189,6 +197,8 @@ mod _dynamic_card_verification_code;
 
 mod _dynamic_card_verification_value;
 
+mod _ecdh_derivation_attributes;
+
 mod _emv2000_attributes;
 
 mod _emv_common_attributes;
@@ -214,6 +224,10 @@ mod _ibm3624_pin_verification;
 mod _ibm3624_random_pin;
 
 mod _key_check_value_algorithm;
+
+mod _key_derivation_function;
+
+mod _key_derivation_hash_algorithm;
 
 mod _mac_algorithm;
 
@@ -262,6 +276,8 @@ mod _session_key_mastercard;
 mod _session_key_visa;
 
 mod _symmetric_encryption_attributes;
+
+mod _symmetric_key_algorithm;
 
 mod _translation_iso_formats;
 

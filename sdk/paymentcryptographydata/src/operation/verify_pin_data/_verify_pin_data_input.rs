@@ -21,6 +21,8 @@ pub struct VerifyPinDataInput {
     pub pin_data_length: ::std::option::Option<i32>,
     /// <p>The attributes and values for the DUKPT encrypted PIN block data.</p>
     pub dukpt_attributes: ::std::option::Option<crate::types::DukptAttributes>,
+    /// <p>Parameter information of a WrappedKeyBlock for encryption key exchange.</p>
+    pub encryption_wrapped_key: ::std::option::Option<crate::types::WrappedKey>,
 }
 impl VerifyPinDataInput {
     /// <p>The <code>keyARN</code> of the PIN verification key.</p>
@@ -57,6 +59,10 @@ impl VerifyPinDataInput {
     pub fn dukpt_attributes(&self) -> ::std::option::Option<&crate::types::DukptAttributes> {
         self.dukpt_attributes.as_ref()
     }
+    /// <p>Parameter information of a WrappedKeyBlock for encryption key exchange.</p>
+    pub fn encryption_wrapped_key(&self) -> ::std::option::Option<&crate::types::WrappedKey> {
+        self.encryption_wrapped_key.as_ref()
+    }
 }
 impl ::std::fmt::Debug for VerifyPinDataInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -69,6 +75,7 @@ impl ::std::fmt::Debug for VerifyPinDataInput {
         formatter.field("pin_block_format", &self.pin_block_format);
         formatter.field("pin_data_length", &self.pin_data_length);
         formatter.field("dukpt_attributes", &self.dukpt_attributes);
+        formatter.field("encryption_wrapped_key", &self.encryption_wrapped_key);
         formatter.finish()
     }
 }
@@ -91,6 +98,7 @@ pub struct VerifyPinDataInputBuilder {
     pub(crate) pin_block_format: ::std::option::Option<crate::types::PinBlockFormatForPinData>,
     pub(crate) pin_data_length: ::std::option::Option<i32>,
     pub(crate) dukpt_attributes: ::std::option::Option<crate::types::DukptAttributes>,
+    pub(crate) encryption_wrapped_key: ::std::option::Option<crate::types::WrappedKey>,
 }
 impl VerifyPinDataInputBuilder {
     /// <p>The <code>keyARN</code> of the PIN verification key.</p>
@@ -217,6 +225,20 @@ impl VerifyPinDataInputBuilder {
     pub fn get_dukpt_attributes(&self) -> &::std::option::Option<crate::types::DukptAttributes> {
         &self.dukpt_attributes
     }
+    /// <p>Parameter information of a WrappedKeyBlock for encryption key exchange.</p>
+    pub fn encryption_wrapped_key(mut self, input: crate::types::WrappedKey) -> Self {
+        self.encryption_wrapped_key = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Parameter information of a WrappedKeyBlock for encryption key exchange.</p>
+    pub fn set_encryption_wrapped_key(mut self, input: ::std::option::Option<crate::types::WrappedKey>) -> Self {
+        self.encryption_wrapped_key = input;
+        self
+    }
+    /// <p>Parameter information of a WrappedKeyBlock for encryption key exchange.</p>
+    pub fn get_encryption_wrapped_key(&self) -> &::std::option::Option<crate::types::WrappedKey> {
+        &self.encryption_wrapped_key
+    }
     /// Consumes the builder and constructs a [`VerifyPinDataInput`](crate::operation::verify_pin_data::VerifyPinDataInput).
     pub fn build(
         self,
@@ -230,6 +252,7 @@ impl VerifyPinDataInputBuilder {
             pin_block_format: self.pin_block_format,
             pin_data_length: self.pin_data_length,
             dukpt_attributes: self.dukpt_attributes,
+            encryption_wrapped_key: self.encryption_wrapped_key,
         })
     }
 }
@@ -244,6 +267,7 @@ impl ::std::fmt::Debug for VerifyPinDataInputBuilder {
         formatter.field("pin_block_format", &self.pin_block_format);
         formatter.field("pin_data_length", &self.pin_data_length);
         formatter.field("dukpt_attributes", &self.dukpt_attributes);
+        formatter.field("encryption_wrapped_key", &self.encryption_wrapped_key);
         formatter.finish()
     }
 }

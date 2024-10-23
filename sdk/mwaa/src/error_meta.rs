@@ -9,6 +9,10 @@ pub enum Error {
     InternalServerException(crate::types::error::InternalServerException),
     /// <p>ResourceNotFoundException: The resource is not available.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
+    /// <p>An exception indicating that a client-side error occurred during the Apache Airflow REST API call.</p>
+    RestApiClientException(crate::types::error::RestApiClientException),
+    /// <p>An exception indicating that a server-side error occurred during the Apache Airflow REST API call.</p>
+    RestApiServerException(crate::types::error::RestApiServerException),
     /// <p>ValidationException: The provided input is not valid.</p>
     ValidationException(crate::types::error::ValidationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
@@ -26,6 +30,8 @@ impl ::std::fmt::Display for Error {
             Error::AccessDeniedException(inner) => inner.fmt(f),
             Error::InternalServerException(inner) => inner.fmt(f),
             Error::ResourceNotFoundException(inner) => inner.fmt(f),
+            Error::RestApiClientException(inner) => inner.fmt(f),
+            Error::RestApiServerException(inner) => inner.fmt(f),
             Error::ValidationException(inner) => inner.fmt(f),
             Error::Unhandled(_) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
@@ -51,6 +57,8 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::AccessDeniedException(inner) => inner.meta(),
             Self::InternalServerException(inner) => inner.meta(),
             Self::ResourceNotFoundException(inner) => inner.meta(),
+            Self::RestApiClientException(inner) => inner.meta(),
+            Self::RestApiServerException(inner) => inner.meta(),
             Self::ValidationException(inner) => inner.meta(),
             Self::Unhandled(inner) => &inner.meta,
         }
@@ -175,6 +183,33 @@ impl From<crate::operation::get_environment::GetEnvironmentError> for Error {
             crate::operation::get_environment::GetEnvironmentError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::get_environment::GetEnvironmentError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_environment::GetEnvironmentError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::invoke_rest_api::InvokeRestApiError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::invoke_rest_api::InvokeRestApiError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::invoke_rest_api::InvokeRestApiError> for Error {
+    fn from(err: crate::operation::invoke_rest_api::InvokeRestApiError) -> Self {
+        match err {
+            crate::operation::invoke_rest_api::InvokeRestApiError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::invoke_rest_api::InvokeRestApiError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::invoke_rest_api::InvokeRestApiError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::invoke_rest_api::InvokeRestApiError::RestApiClientException(inner) => Error::RestApiClientException(inner),
+            crate::operation::invoke_rest_api::InvokeRestApiError::RestApiServerException(inner) => Error::RestApiServerException(inner),
+            crate::operation::invoke_rest_api::InvokeRestApiError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::invoke_rest_api::InvokeRestApiError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -330,6 +365,8 @@ impl ::std::error::Error for Error {
             Error::AccessDeniedException(inner) => inner.source(),
             Error::InternalServerException(inner) => inner.source(),
             Error::ResourceNotFoundException(inner) => inner.source(),
+            Error::RestApiClientException(inner) => inner.source(),
+            Error::RestApiServerException(inner) => inner.source(),
             Error::ValidationException(inner) => inner.source(),
             Error::Unhandled(inner) => ::std::option::Option::Some(&*inner.source),
         }
@@ -341,6 +378,8 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::AccessDeniedException(e) => e.request_id(),
             Self::InternalServerException(e) => e.request_id(),
             Self::ResourceNotFoundException(e) => e.request_id(),
+            Self::RestApiClientException(e) => e.request_id(),
+            Self::RestApiServerException(e) => e.request_id(),
             Self::ValidationException(e) => e.request_id(),
             Self::Unhandled(e) => e.meta.request_id(),
         }

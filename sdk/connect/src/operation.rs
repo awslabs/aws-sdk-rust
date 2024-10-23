@@ -592,6 +592,9 @@ pub mod start_outbound_chat_contact;
 /// Types for the `StartOutboundVoiceContact` operation.
 pub mod start_outbound_voice_contact;
 
+/// Types for the `StartScreenSharing` operation.
+pub mod start_screen_sharing;
+
 /// Types for the `StartTaskContact` operation.
 pub mod start_task_contact;
 

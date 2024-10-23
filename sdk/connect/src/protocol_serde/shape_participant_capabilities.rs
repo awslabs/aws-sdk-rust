@@ -6,6 +6,9 @@ pub fn ser_participant_capabilities(
     if let Some(var_1) = &input.video {
         object.key("Video").string(var_1.as_str());
     }
+    if let Some(var_2) = &input.screen_share {
+        object.key("ScreenShare").string(var_2.as_str());
+    }
     Ok(())
 }
 
@@ -28,6 +31,13 @@ where
                             builder = builder.set_video(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| crate::types::VideoCapability::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "ScreenShare" => {
+                            builder = builder.set_screen_share(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::ScreenShareCapability::from(u.as_ref())))
                                     .transpose()?,
                             );
                         }

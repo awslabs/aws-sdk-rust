@@ -7,6 +7,12 @@ pub fn ser_wrapped_key_material(
         crate::types::WrappedKeyMaterial::Tr31KeyBlock(inner) => {
             object_2.key("Tr31KeyBlock").string(inner.as_str());
         }
+        crate::types::WrappedKeyMaterial::DiffieHellmanSymmetricKey(inner) => {
+            #[allow(unused_mut)]
+            let mut object_1 = object_2.key("DiffieHellmanSymmetricKey").start_object();
+            crate::protocol_serde::shape_ecdh_derivation_attributes::ser_ecdh_derivation_attributes(&mut object_1, inner)?;
+            object_1.finish();
+        }
         crate::types::WrappedKeyMaterial::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "WrappedKeyMaterial",

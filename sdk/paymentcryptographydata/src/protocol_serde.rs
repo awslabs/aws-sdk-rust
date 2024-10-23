@@ -203,4 +203,6 @@ pub(crate) mod shape_wrapped_key_material;
 
 pub(crate) mod shape_current_pin_attributes;
 
+pub(crate) mod shape_ecdh_derivation_attributes;
+
 pub(crate) mod shape_session_key_derivation_value;

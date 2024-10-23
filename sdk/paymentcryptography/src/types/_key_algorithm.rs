@@ -15,6 +15,8 @@
 ///     KeyAlgorithm::Aes128 => { /* ... */ },
 ///     KeyAlgorithm::Aes192 => { /* ... */ },
 ///     KeyAlgorithm::Aes256 => { /* ... */ },
+///     KeyAlgorithm::EccNistP256 => { /* ... */ },
+///     KeyAlgorithm::EccNistP384 => { /* ... */ },
 ///     KeyAlgorithm::Rsa2048 => { /* ... */ },
 ///     KeyAlgorithm::Rsa3072 => { /* ... */ },
 ///     KeyAlgorithm::Rsa4096 => { /* ... */ },
@@ -54,6 +56,10 @@ pub enum KeyAlgorithm {
     #[allow(missing_docs)] // documentation missing in model
     Aes256,
     #[allow(missing_docs)] // documentation missing in model
+    EccNistP256,
+    #[allow(missing_docs)] // documentation missing in model
+    EccNistP384,
+    #[allow(missing_docs)] // documentation missing in model
     Rsa2048,
     #[allow(missing_docs)] // documentation missing in model
     Rsa3072,
@@ -73,6 +79,8 @@ impl ::std::convert::From<&str> for KeyAlgorithm {
             "AES_128" => KeyAlgorithm::Aes128,
             "AES_192" => KeyAlgorithm::Aes192,
             "AES_256" => KeyAlgorithm::Aes256,
+            "ECC_NIST_P256" => KeyAlgorithm::EccNistP256,
+            "ECC_NIST_P384" => KeyAlgorithm::EccNistP384,
             "RSA_2048" => KeyAlgorithm::Rsa2048,
             "RSA_3072" => KeyAlgorithm::Rsa3072,
             "RSA_4096" => KeyAlgorithm::Rsa4096,
@@ -96,6 +104,8 @@ impl KeyAlgorithm {
             KeyAlgorithm::Aes128 => "AES_128",
             KeyAlgorithm::Aes192 => "AES_192",
             KeyAlgorithm::Aes256 => "AES_256",
+            KeyAlgorithm::EccNistP256 => "ECC_NIST_P256",
+            KeyAlgorithm::EccNistP384 => "ECC_NIST_P384",
             KeyAlgorithm::Rsa2048 => "RSA_2048",
             KeyAlgorithm::Rsa3072 => "RSA_3072",
             KeyAlgorithm::Rsa4096 => "RSA_4096",
@@ -110,6 +120,8 @@ impl KeyAlgorithm {
             "AES_128",
             "AES_192",
             "AES_256",
+            "ECC_NIST_P256",
+            "ECC_NIST_P384",
             "RSA_2048",
             "RSA_3072",
             "RSA_4096",
@@ -141,6 +153,8 @@ impl ::std::fmt::Display for KeyAlgorithm {
             KeyAlgorithm::Aes128 => write!(f, "AES_128"),
             KeyAlgorithm::Aes192 => write!(f, "AES_192"),
             KeyAlgorithm::Aes256 => write!(f, "AES_256"),
+            KeyAlgorithm::EccNistP256 => write!(f, "ECC_NIST_P256"),
+            KeyAlgorithm::EccNistP384 => write!(f, "ECC_NIST_P384"),
             KeyAlgorithm::Rsa2048 => write!(f, "RSA_2048"),
             KeyAlgorithm::Rsa3072 => write!(f, "RSA_3072"),
             KeyAlgorithm::Rsa4096 => write!(f, "RSA_4096"),

@@ -7079,6 +7079,39 @@ impl From<crate::operation::start_outbound_voice_contact::StartOutboundVoiceCont
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_screen_sharing::StartScreenSharingError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_screen_sharing::StartScreenSharingError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::start_screen_sharing::StartScreenSharingError> for Error {
+    fn from(err: crate::operation::start_screen_sharing::StartScreenSharingError) -> Self {
+        match err {
+            crate::operation::start_screen_sharing::StartScreenSharingError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::start_screen_sharing::StartScreenSharingError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::start_screen_sharing::StartScreenSharingError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::start_screen_sharing::StartScreenSharingError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::start_screen_sharing::StartScreenSharingError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::start_screen_sharing::StartScreenSharingError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::start_screen_sharing::StartScreenSharingError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_task_contact::StartTaskContactError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

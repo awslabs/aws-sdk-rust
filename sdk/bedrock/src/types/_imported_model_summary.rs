@@ -10,7 +10,7 @@ pub struct ImportedModelSummary {
     pub model_name: ::std::string::String,
     /// <p>Creation time of the imported model.</p>
     pub creation_time: ::aws_smithy_types::DateTime,
-    /// <p>Specifies if the imported model supports fine tuning.</p>
+    /// <p>Specifies if the imported model supports converse.</p>
     pub instruct_supported: ::std::option::Option<bool>,
     /// <p>The architecture of the imported model.</p>
     pub model_architecture: ::std::option::Option<::std::string::String>,
@@ -30,7 +30,7 @@ impl ImportedModelSummary {
     pub fn creation_time(&self) -> &::aws_smithy_types::DateTime {
         &self.creation_time
     }
-    /// <p>Specifies if the imported model supports fine tuning.</p>
+    /// <p>Specifies if the imported model supports converse.</p>
     pub fn instruct_supported(&self) -> ::std::option::Option<bool> {
         self.instruct_supported
     }
@@ -102,17 +102,17 @@ impl ImportedModelSummaryBuilder {
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.creation_time
     }
-    /// <p>Specifies if the imported model supports fine tuning.</p>
+    /// <p>Specifies if the imported model supports converse.</p>
     pub fn instruct_supported(mut self, input: bool) -> Self {
         self.instruct_supported = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies if the imported model supports fine tuning.</p>
+    /// <p>Specifies if the imported model supports converse.</p>
     pub fn set_instruct_supported(mut self, input: ::std::option::Option<bool>) -> Self {
         self.instruct_supported = input;
         self
     }
-    /// <p>Specifies if the imported model supports fine tuning.</p>
+    /// <p>Specifies if the imported model supports converse.</p>
     pub fn get_instruct_supported(&self) -> &::std::option::Option<bool> {
         &self.instruct_supported
     }

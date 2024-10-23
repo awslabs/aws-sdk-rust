@@ -173,6 +173,8 @@ mod delete_environment;
 
 mod get_environment;
 
+mod invoke_rest_api;
+
 mod list_environments;
 
 mod list_tags_for_resource;

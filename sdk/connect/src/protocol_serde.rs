@@ -417,6 +417,8 @@ pub(crate) mod shape_start_outbound_chat_contact;
 
 pub(crate) mod shape_start_outbound_voice_contact;
 
+pub(crate) mod shape_start_screen_sharing;
+
 pub(crate) mod shape_start_task_contact;
 
 pub(crate) mod shape_start_web_rtc_contact;
@@ -766,6 +768,8 @@ pub(crate) mod shape_start_contact_streaming_input;
 pub(crate) mod shape_start_outbound_chat_contact_input;
 
 pub(crate) mod shape_start_outbound_voice_contact_input;
+
+pub(crate) mod shape_start_screen_sharing_input;
 
 pub(crate) mod shape_start_task_contact_input;
 

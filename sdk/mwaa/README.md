@@ -16,6 +16,7 @@ __Endpoints__
   - env.airflow.{region}.amazonaws.com - This endpoint is used to operate the Airflow environment.
     - [CreateCliToken](https://docs.aws.amazon.com/mwaa/latest/API/API_CreateCliToken.html )
     - [CreateWebLoginToken](https://docs.aws.amazon.com/mwaa/latest/API/API_CreateWebLoginToken.html)
+    - [InvokeRestApi](https://docs.aws.amazon.com/mwaa/latest/API/API_InvokeRestApi.html)
 
 __Regions__
 
@@ -33,7 +34,7 @@ your project, add the following to your **Cargo.toml** file:
 ```toml
 [dependencies]
 aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-aws-sdk-mwaa = "1.49.0"
+aws-sdk-mwaa = "1.50.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

@@ -4,9 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct TranslatePinDataInput {
     /// <p>The <code>keyARN</code> of the encryption key under which incoming PIN block data is encrypted. This key type can be PEK or BDK.</p>
-    /// <p>When a WrappedKeyBlock is provided, this value will be the identifier to the key wrapping key for PIN block. Otherwise, it is the key identifier used to perform the operation.</p>
+    /// <p>For dynamic keys, it is the <code>keyARN</code> of KEK of the TR-31 wrapped PEK. For ECDH, it is the <code>keyARN</code> of the asymmetric ECC key.</p>
     pub incoming_key_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The <code>keyARN</code> of the encryption key for encrypting outgoing PIN block data. This key type can be PEK or BDK.</p>
+    /// <p>For ECDH, it is the <code>keyARN</code> of the asymmetric ECC key.</p>
     pub outgoing_key_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The format of the incoming PIN block data for translation within Amazon Web Services Payment Cryptography.</p>
     pub incoming_translation_attributes: ::std::option::Option<crate::types::TranslationIsoFormats>,
@@ -25,11 +26,12 @@ pub struct TranslatePinDataInput {
 }
 impl TranslatePinDataInput {
     /// <p>The <code>keyARN</code> of the encryption key under which incoming PIN block data is encrypted. This key type can be PEK or BDK.</p>
-    /// <p>When a WrappedKeyBlock is provided, this value will be the identifier to the key wrapping key for PIN block. Otherwise, it is the key identifier used to perform the operation.</p>
+    /// <p>For dynamic keys, it is the <code>keyARN</code> of KEK of the TR-31 wrapped PEK. For ECDH, it is the <code>keyARN</code> of the asymmetric ECC key.</p>
     pub fn incoming_key_identifier(&self) -> ::std::option::Option<&str> {
         self.incoming_key_identifier.as_deref()
     }
     /// <p>The <code>keyARN</code> of the encryption key for encrypting outgoing PIN block data. This key type can be PEK or BDK.</p>
+    /// <p>For ECDH, it is the <code>keyARN</code> of the asymmetric ECC key.</p>
     pub fn outgoing_key_identifier(&self) -> ::std::option::Option<&str> {
         self.outgoing_key_identifier.as_deref()
     }
@@ -100,35 +102,38 @@ pub struct TranslatePinDataInputBuilder {
 }
 impl TranslatePinDataInputBuilder {
     /// <p>The <code>keyARN</code> of the encryption key under which incoming PIN block data is encrypted. This key type can be PEK or BDK.</p>
-    /// <p>When a WrappedKeyBlock is provided, this value will be the identifier to the key wrapping key for PIN block. Otherwise, it is the key identifier used to perform the operation.</p>
+    /// <p>For dynamic keys, it is the <code>keyARN</code> of KEK of the TR-31 wrapped PEK. For ECDH, it is the <code>keyARN</code> of the asymmetric ECC key.</p>
     /// This field is required.
     pub fn incoming_key_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.incoming_key_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The <code>keyARN</code> of the encryption key under which incoming PIN block data is encrypted. This key type can be PEK or BDK.</p>
-    /// <p>When a WrappedKeyBlock is provided, this value will be the identifier to the key wrapping key for PIN block. Otherwise, it is the key identifier used to perform the operation.</p>
+    /// <p>For dynamic keys, it is the <code>keyARN</code> of KEK of the TR-31 wrapped PEK. For ECDH, it is the <code>keyARN</code> of the asymmetric ECC key.</p>
     pub fn set_incoming_key_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.incoming_key_identifier = input;
         self
     }
     /// <p>The <code>keyARN</code> of the encryption key under which incoming PIN block data is encrypted. This key type can be PEK or BDK.</p>
-    /// <p>When a WrappedKeyBlock is provided, this value will be the identifier to the key wrapping key for PIN block. Otherwise, it is the key identifier used to perform the operation.</p>
+    /// <p>For dynamic keys, it is the <code>keyARN</code> of KEK of the TR-31 wrapped PEK. For ECDH, it is the <code>keyARN</code> of the asymmetric ECC key.</p>
     pub fn get_incoming_key_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.incoming_key_identifier
     }
     /// <p>The <code>keyARN</code> of the encryption key for encrypting outgoing PIN block data. This key type can be PEK or BDK.</p>
+    /// <p>For ECDH, it is the <code>keyARN</code> of the asymmetric ECC key.</p>
     /// This field is required.
     pub fn outgoing_key_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.outgoing_key_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The <code>keyARN</code> of the encryption key for encrypting outgoing PIN block data. This key type can be PEK or BDK.</p>
+    /// <p>For ECDH, it is the <code>keyARN</code> of the asymmetric ECC key.</p>
     pub fn set_outgoing_key_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.outgoing_key_identifier = input;
         self
     }
     /// <p>The <code>keyARN</code> of the encryption key for encrypting outgoing PIN block data. This key type can be PEK or BDK.</p>
+    /// <p>For ECDH, it is the <code>keyARN</code> of the asymmetric ECC key.</p>
     pub fn get_outgoing_key_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.outgoing_key_identifier
     }

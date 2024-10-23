@@ -6,26 +6,32 @@ pub fn ser_generate_pin_data_input_input(
     if let Some(var_1) = &input.encryption_key_identifier {
         object.key("EncryptionKeyIdentifier").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.generation_attributes {
+    if let Some(var_2) = &input.encryption_wrapped_key {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("GenerationAttributes").start_object();
-        crate::protocol_serde::shape_pin_generation_attributes::ser_pin_generation_attributes(&mut object_3, var_2)?;
+        let mut object_3 = object.key("EncryptionWrappedKey").start_object();
+        crate::protocol_serde::shape_wrapped_key::ser_wrapped_key(&mut object_3, var_2)?;
         object_3.finish();
     }
-    if let Some(var_4) = &input.generation_key_identifier {
-        object.key("GenerationKeyIdentifier").string(var_4.as_str());
+    if let Some(var_4) = &input.generation_attributes {
+        #[allow(unused_mut)]
+        let mut object_5 = object.key("GenerationAttributes").start_object();
+        crate::protocol_serde::shape_pin_generation_attributes::ser_pin_generation_attributes(&mut object_5, var_4)?;
+        object_5.finish();
     }
-    if let Some(var_5) = &input.pin_block_format {
-        object.key("PinBlockFormat").string(var_5.as_str());
+    if let Some(var_6) = &input.generation_key_identifier {
+        object.key("GenerationKeyIdentifier").string(var_6.as_str());
     }
-    if let Some(var_6) = &input.pin_data_length {
+    if let Some(var_7) = &input.pin_block_format {
+        object.key("PinBlockFormat").string(var_7.as_str());
+    }
+    if let Some(var_8) = &input.pin_data_length {
         object.key("PinDataLength").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_6).into()),
+            ::aws_smithy_types::Number::NegInt((*var_8).into()),
         );
     }
-    if let Some(var_7) = &input.primary_account_number {
-        object.key("PrimaryAccountNumber").string(var_7.as_str());
+    if let Some(var_9) = &input.primary_account_number {
+        object.key("PrimaryAccountNumber").string(var_9.as_str());
     }
     Ok(())
 }

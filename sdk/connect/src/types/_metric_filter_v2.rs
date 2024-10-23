@@ -5,30 +5,66 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MetricFilterV2 {
     /// <p>The key to use for filtering data.</p>
-    /// <p>Valid metric filter keys: <code>INITIATION_METHOD</code>, <code>DISCONNECT_REASON</code>. These are the same values as the <code>InitiationMethod</code> and <code>DisconnectReason</code> in the contact record. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/ctr-data-model.html#ctr-ContactTraceRecord">ContactTraceRecord</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    /// <p>Valid metric filter keys:</p>
+    /// <ul>
+    /// <li>
+    /// <p>ANSWERING_MACHINE_DETECTION_STATUS</p></li>
+    /// <li>
+    /// <p>CASE_STATUS</p></li>
+    /// <li>
+    /// <p>DISCONNECT_REASON</p></li>
+    /// <li>
+    /// <p>FLOWS_ACTION_IDENTIFIER</p></li>
+    /// <li>
+    /// <p>FLOWS_NEXT_ACTION_IDENTIFIER</p></li>
+    /// <li>
+    /// <p>FLOWS_OUTCOME_TYPE</p></li>
+    /// <li>
+    /// <p>FLOWS_RESOURCE_TYPE</p></li>
+    /// <li>
+    /// <p>INITIATION_METHOD</p></li>
+    /// </ul>
     pub metric_filter_key: ::std::option::Option<::std::string::String>,
-    /// <p>The values to use for filtering data.</p>
-    /// <p>Valid metric filter values for <code>INITIATION_METHOD</code>: <code>INBOUND</code> | <code>OUTBOUND</code> | <code>TRANSFER</code> | <code>QUEUE_TRANSFER</code> | <code>CALLBACK</code> | <code>API</code> | <code>WEBRTC_API</code> | <code>MONITOR</code> | <code>DISCONNECT</code> | <code>EXTERNAL_OUTBOUND</code></p>
-    /// <p>Valid metric filter values for <code>DISCONNECT_REASON</code>: <code>CUSTOMER_DISCONNECT</code> | <code>AGENT_DISCONNECT</code> | <code>THIRD_PARTY_DISCONNECT</code> | <code>TELECOM_PROBLEM</code> | <code>BARGED</code> | <code>CONTACT_FLOW_DISCONNECT</code> | <code>OTHER</code> | <code>EXPIRED</code> | <code>API</code></p>
+    /// <p>The values to use for filtering data. Values for metric-level filters can be either a fixed set of values or a customized list, depending on the use case.</p>
+    /// <p>For valid values of metric-level filters <code>INITIATION_METHOD</code>, <code>DISCONNECT_REASON</code>, and <code>ANSWERING_MACHINE_DETECTION_STATUS</code>, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/ctr-data-model.html#ctr-ContactTraceRecord">ContactTraceRecord</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    /// <p>For valid values of the metric-level filter <code>FLOWS_OUTCOME_TYPE</code>, see the description for the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#flows-outcome-historical">Flow outcome</a> metric in the <i>Amazon Connect Administrator Guide</i>.</p>
     pub metric_filter_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>The flag to use to filter on requested metric filter values or to not filter on requested metric filter values. By default the negate is <code>false</code>, which indicates to filter on the requested metric filter.</p>
+    /// <p>If set to <code>true</code>, the API response contains results that filter out the results matched by the metric-level filters condition. By default, <code>Negate</code> is set to <code>false</code>.</p>
     pub negate: bool,
 }
 impl MetricFilterV2 {
     /// <p>The key to use for filtering data.</p>
-    /// <p>Valid metric filter keys: <code>INITIATION_METHOD</code>, <code>DISCONNECT_REASON</code>. These are the same values as the <code>InitiationMethod</code> and <code>DisconnectReason</code> in the contact record. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/ctr-data-model.html#ctr-ContactTraceRecord">ContactTraceRecord</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    /// <p>Valid metric filter keys:</p>
+    /// <ul>
+    /// <li>
+    /// <p>ANSWERING_MACHINE_DETECTION_STATUS</p></li>
+    /// <li>
+    /// <p>CASE_STATUS</p></li>
+    /// <li>
+    /// <p>DISCONNECT_REASON</p></li>
+    /// <li>
+    /// <p>FLOWS_ACTION_IDENTIFIER</p></li>
+    /// <li>
+    /// <p>FLOWS_NEXT_ACTION_IDENTIFIER</p></li>
+    /// <li>
+    /// <p>FLOWS_OUTCOME_TYPE</p></li>
+    /// <li>
+    /// <p>FLOWS_RESOURCE_TYPE</p></li>
+    /// <li>
+    /// <p>INITIATION_METHOD</p></li>
+    /// </ul>
     pub fn metric_filter_key(&self) -> ::std::option::Option<&str> {
         self.metric_filter_key.as_deref()
     }
-    /// <p>The values to use for filtering data.</p>
-    /// <p>Valid metric filter values for <code>INITIATION_METHOD</code>: <code>INBOUND</code> | <code>OUTBOUND</code> | <code>TRANSFER</code> | <code>QUEUE_TRANSFER</code> | <code>CALLBACK</code> | <code>API</code> | <code>WEBRTC_API</code> | <code>MONITOR</code> | <code>DISCONNECT</code> | <code>EXTERNAL_OUTBOUND</code></p>
-    /// <p>Valid metric filter values for <code>DISCONNECT_REASON</code>: <code>CUSTOMER_DISCONNECT</code> | <code>AGENT_DISCONNECT</code> | <code>THIRD_PARTY_DISCONNECT</code> | <code>TELECOM_PROBLEM</code> | <code>BARGED</code> | <code>CONTACT_FLOW_DISCONNECT</code> | <code>OTHER</code> | <code>EXPIRED</code> | <code>API</code></p>
+    /// <p>The values to use for filtering data. Values for metric-level filters can be either a fixed set of values or a customized list, depending on the use case.</p>
+    /// <p>For valid values of metric-level filters <code>INITIATION_METHOD</code>, <code>DISCONNECT_REASON</code>, and <code>ANSWERING_MACHINE_DETECTION_STATUS</code>, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/ctr-data-model.html#ctr-ContactTraceRecord">ContactTraceRecord</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    /// <p>For valid values of the metric-level filter <code>FLOWS_OUTCOME_TYPE</code>, see the description for the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#flows-outcome-historical">Flow outcome</a> metric in the <i>Amazon Connect Administrator Guide</i>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.metric_filter_values.is_none()`.
     pub fn metric_filter_values(&self) -> &[::std::string::String] {
         self.metric_filter_values.as_deref().unwrap_or_default()
     }
-    /// <p>The flag to use to filter on requested metric filter values or to not filter on requested metric filter values. By default the negate is <code>false</code>, which indicates to filter on the requested metric filter.</p>
+    /// <p>If set to <code>true</code>, the API response contains results that filter out the results matched by the metric-level filters condition. By default, <code>Negate</code> is set to <code>false</code>.</p>
     pub fn negate(&self) -> bool {
         self.negate
     }
@@ -50,19 +86,73 @@ pub struct MetricFilterV2Builder {
 }
 impl MetricFilterV2Builder {
     /// <p>The key to use for filtering data.</p>
-    /// <p>Valid metric filter keys: <code>INITIATION_METHOD</code>, <code>DISCONNECT_REASON</code>. These are the same values as the <code>InitiationMethod</code> and <code>DisconnectReason</code> in the contact record. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/ctr-data-model.html#ctr-ContactTraceRecord">ContactTraceRecord</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    /// <p>Valid metric filter keys:</p>
+    /// <ul>
+    /// <li>
+    /// <p>ANSWERING_MACHINE_DETECTION_STATUS</p></li>
+    /// <li>
+    /// <p>CASE_STATUS</p></li>
+    /// <li>
+    /// <p>DISCONNECT_REASON</p></li>
+    /// <li>
+    /// <p>FLOWS_ACTION_IDENTIFIER</p></li>
+    /// <li>
+    /// <p>FLOWS_NEXT_ACTION_IDENTIFIER</p></li>
+    /// <li>
+    /// <p>FLOWS_OUTCOME_TYPE</p></li>
+    /// <li>
+    /// <p>FLOWS_RESOURCE_TYPE</p></li>
+    /// <li>
+    /// <p>INITIATION_METHOD</p></li>
+    /// </ul>
     pub fn metric_filter_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.metric_filter_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The key to use for filtering data.</p>
-    /// <p>Valid metric filter keys: <code>INITIATION_METHOD</code>, <code>DISCONNECT_REASON</code>. These are the same values as the <code>InitiationMethod</code> and <code>DisconnectReason</code> in the contact record. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/ctr-data-model.html#ctr-ContactTraceRecord">ContactTraceRecord</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    /// <p>Valid metric filter keys:</p>
+    /// <ul>
+    /// <li>
+    /// <p>ANSWERING_MACHINE_DETECTION_STATUS</p></li>
+    /// <li>
+    /// <p>CASE_STATUS</p></li>
+    /// <li>
+    /// <p>DISCONNECT_REASON</p></li>
+    /// <li>
+    /// <p>FLOWS_ACTION_IDENTIFIER</p></li>
+    /// <li>
+    /// <p>FLOWS_NEXT_ACTION_IDENTIFIER</p></li>
+    /// <li>
+    /// <p>FLOWS_OUTCOME_TYPE</p></li>
+    /// <li>
+    /// <p>FLOWS_RESOURCE_TYPE</p></li>
+    /// <li>
+    /// <p>INITIATION_METHOD</p></li>
+    /// </ul>
     pub fn set_metric_filter_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.metric_filter_key = input;
         self
     }
     /// <p>The key to use for filtering data.</p>
-    /// <p>Valid metric filter keys: <code>INITIATION_METHOD</code>, <code>DISCONNECT_REASON</code>. These are the same values as the <code>InitiationMethod</code> and <code>DisconnectReason</code> in the contact record. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/ctr-data-model.html#ctr-ContactTraceRecord">ContactTraceRecord</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    /// <p>Valid metric filter keys:</p>
+    /// <ul>
+    /// <li>
+    /// <p>ANSWERING_MACHINE_DETECTION_STATUS</p></li>
+    /// <li>
+    /// <p>CASE_STATUS</p></li>
+    /// <li>
+    /// <p>DISCONNECT_REASON</p></li>
+    /// <li>
+    /// <p>FLOWS_ACTION_IDENTIFIER</p></li>
+    /// <li>
+    /// <p>FLOWS_NEXT_ACTION_IDENTIFIER</p></li>
+    /// <li>
+    /// <p>FLOWS_OUTCOME_TYPE</p></li>
+    /// <li>
+    /// <p>FLOWS_RESOURCE_TYPE</p></li>
+    /// <li>
+    /// <p>INITIATION_METHOD</p></li>
+    /// </ul>
     pub fn get_metric_filter_key(&self) -> &::std::option::Option<::std::string::String> {
         &self.metric_filter_key
     }
@@ -70,39 +160,39 @@ impl MetricFilterV2Builder {
     ///
     /// To override the contents of this collection use [`set_metric_filter_values`](Self::set_metric_filter_values).
     ///
-    /// <p>The values to use for filtering data.</p>
-    /// <p>Valid metric filter values for <code>INITIATION_METHOD</code>: <code>INBOUND</code> | <code>OUTBOUND</code> | <code>TRANSFER</code> | <code>QUEUE_TRANSFER</code> | <code>CALLBACK</code> | <code>API</code> | <code>WEBRTC_API</code> | <code>MONITOR</code> | <code>DISCONNECT</code> | <code>EXTERNAL_OUTBOUND</code></p>
-    /// <p>Valid metric filter values for <code>DISCONNECT_REASON</code>: <code>CUSTOMER_DISCONNECT</code> | <code>AGENT_DISCONNECT</code> | <code>THIRD_PARTY_DISCONNECT</code> | <code>TELECOM_PROBLEM</code> | <code>BARGED</code> | <code>CONTACT_FLOW_DISCONNECT</code> | <code>OTHER</code> | <code>EXPIRED</code> | <code>API</code></p>
+    /// <p>The values to use for filtering data. Values for metric-level filters can be either a fixed set of values or a customized list, depending on the use case.</p>
+    /// <p>For valid values of metric-level filters <code>INITIATION_METHOD</code>, <code>DISCONNECT_REASON</code>, and <code>ANSWERING_MACHINE_DETECTION_STATUS</code>, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/ctr-data-model.html#ctr-ContactTraceRecord">ContactTraceRecord</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    /// <p>For valid values of the metric-level filter <code>FLOWS_OUTCOME_TYPE</code>, see the description for the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#flows-outcome-historical">Flow outcome</a> metric in the <i>Amazon Connect Administrator Guide</i>.</p>
     pub fn metric_filter_values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.metric_filter_values.unwrap_or_default();
         v.push(input.into());
         self.metric_filter_values = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The values to use for filtering data.</p>
-    /// <p>Valid metric filter values for <code>INITIATION_METHOD</code>: <code>INBOUND</code> | <code>OUTBOUND</code> | <code>TRANSFER</code> | <code>QUEUE_TRANSFER</code> | <code>CALLBACK</code> | <code>API</code> | <code>WEBRTC_API</code> | <code>MONITOR</code> | <code>DISCONNECT</code> | <code>EXTERNAL_OUTBOUND</code></p>
-    /// <p>Valid metric filter values for <code>DISCONNECT_REASON</code>: <code>CUSTOMER_DISCONNECT</code> | <code>AGENT_DISCONNECT</code> | <code>THIRD_PARTY_DISCONNECT</code> | <code>TELECOM_PROBLEM</code> | <code>BARGED</code> | <code>CONTACT_FLOW_DISCONNECT</code> | <code>OTHER</code> | <code>EXPIRED</code> | <code>API</code></p>
+    /// <p>The values to use for filtering data. Values for metric-level filters can be either a fixed set of values or a customized list, depending on the use case.</p>
+    /// <p>For valid values of metric-level filters <code>INITIATION_METHOD</code>, <code>DISCONNECT_REASON</code>, and <code>ANSWERING_MACHINE_DETECTION_STATUS</code>, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/ctr-data-model.html#ctr-ContactTraceRecord">ContactTraceRecord</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    /// <p>For valid values of the metric-level filter <code>FLOWS_OUTCOME_TYPE</code>, see the description for the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#flows-outcome-historical">Flow outcome</a> metric in the <i>Amazon Connect Administrator Guide</i>.</p>
     pub fn set_metric_filter_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.metric_filter_values = input;
         self
     }
-    /// <p>The values to use for filtering data.</p>
-    /// <p>Valid metric filter values for <code>INITIATION_METHOD</code>: <code>INBOUND</code> | <code>OUTBOUND</code> | <code>TRANSFER</code> | <code>QUEUE_TRANSFER</code> | <code>CALLBACK</code> | <code>API</code> | <code>WEBRTC_API</code> | <code>MONITOR</code> | <code>DISCONNECT</code> | <code>EXTERNAL_OUTBOUND</code></p>
-    /// <p>Valid metric filter values for <code>DISCONNECT_REASON</code>: <code>CUSTOMER_DISCONNECT</code> | <code>AGENT_DISCONNECT</code> | <code>THIRD_PARTY_DISCONNECT</code> | <code>TELECOM_PROBLEM</code> | <code>BARGED</code> | <code>CONTACT_FLOW_DISCONNECT</code> | <code>OTHER</code> | <code>EXPIRED</code> | <code>API</code></p>
+    /// <p>The values to use for filtering data. Values for metric-level filters can be either a fixed set of values or a customized list, depending on the use case.</p>
+    /// <p>For valid values of metric-level filters <code>INITIATION_METHOD</code>, <code>DISCONNECT_REASON</code>, and <code>ANSWERING_MACHINE_DETECTION_STATUS</code>, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/ctr-data-model.html#ctr-ContactTraceRecord">ContactTraceRecord</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    /// <p>For valid values of the metric-level filter <code>FLOWS_OUTCOME_TYPE</code>, see the description for the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#flows-outcome-historical">Flow outcome</a> metric in the <i>Amazon Connect Administrator Guide</i>.</p>
     pub fn get_metric_filter_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.metric_filter_values
     }
-    /// <p>The flag to use to filter on requested metric filter values or to not filter on requested metric filter values. By default the negate is <code>false</code>, which indicates to filter on the requested metric filter.</p>
+    /// <p>If set to <code>true</code>, the API response contains results that filter out the results matched by the metric-level filters condition. By default, <code>Negate</code> is set to <code>false</code>.</p>
     pub fn negate(mut self, input: bool) -> Self {
         self.negate = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The flag to use to filter on requested metric filter values or to not filter on requested metric filter values. By default the negate is <code>false</code>, which indicates to filter on the requested metric filter.</p>
+    /// <p>If set to <code>true</code>, the API response contains results that filter out the results matched by the metric-level filters condition. By default, <code>Negate</code> is set to <code>false</code>.</p>
     pub fn set_negate(mut self, input: ::std::option::Option<bool>) -> Self {
         self.negate = input;
         self
     }
-    /// <p>The flag to use to filter on requested metric filter values or to not filter on requested metric filter values. By default the negate is <code>false</code>, which indicates to filter on the requested metric filter.</p>
+    /// <p>If set to <code>true</code>, the API response contains results that filter out the results matched by the metric-level filters condition. By default, <code>Negate</code> is set to <code>false</code>.</p>
     pub fn get_negate(&self) -> &::std::option::Option<bool> {
         &self.negate
     }

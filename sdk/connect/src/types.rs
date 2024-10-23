@@ -261,6 +261,8 @@ pub use crate::types::_allowed_capabilities::AllowedCapabilities;
 
 pub use crate::types::_participant_capabilities::ParticipantCapabilities;
 
+pub use crate::types::_screen_share_capability::ScreenShareCapability;
+
 pub use crate::types::_video_capability::VideoCapability;
 
 pub use crate::types::_traffic_type::TrafficType;
@@ -1444,6 +1446,8 @@ mod _rule_summary;
 mod _rule_trigger_event_source;
 
 mod _s3_config;
+
+mod _screen_share_capability;
 
 mod _search_contacts_match_type;
 

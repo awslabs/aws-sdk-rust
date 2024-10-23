@@ -17,6 +17,8 @@ pub use crate::types::_unit::Unit;
 
 pub use crate::types::_dimension::Dimension;
 
+pub use crate::types::_rest_api_method::RestApiMethod;
+
 pub use crate::types::_environment::Environment;
 
 pub use crate::types::_endpoint_management::EndpointManagement;
@@ -58,6 +60,8 @@ mod _module_logging_configuration;
 mod _module_logging_configuration_input;
 
 mod _network_configuration;
+
+mod _rest_api_method;
 
 mod _statistic_set;
 

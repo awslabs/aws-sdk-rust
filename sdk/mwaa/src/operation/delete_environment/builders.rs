@@ -22,7 +22,7 @@ impl crate::operation::delete_environment::builders::DeleteEnvironmentInputBuild
 }
 /// Fluent builder constructing a request to `DeleteEnvironment`.
 ///
-/// <p>Deletes an Amazon Managed Workflows for Apache Airflow (MWAA) environment.</p>
+/// <p>Deletes an Amazon Managed Workflows for Apache Airflow (Amazon MWAA) environment.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteEnvironmentFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
