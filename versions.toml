@@ -2,7 +2,7 @@ smithy_rs_revision = '1a438ca7c75f0d36de1a908d60dbc4b8b24f6883'
 aws_doc_sdk_examples_revision = 'a370cb2bb182ab57f55a6086175273dc863ee9e3'
 
 [manual_interventions]
-crates_to_remove = []
+crates_to_remove = ["aws-sdk-nimble"]
 [crates.aws-config]
 category = 'AwsRuntime'
 version = '1.5.8'
