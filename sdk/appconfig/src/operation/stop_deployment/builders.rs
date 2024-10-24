@@ -22,7 +22,7 @@ impl crate::operation::stop_deployment::builders::StopDeploymentInputBuilder {
 }
 /// Fluent builder constructing a request to `StopDeployment`.
 ///
-/// <p>Stops a deployment. This API action works only on deployments that have a status of <code>DEPLOYING</code>. This action moves the deployment to a status of <code>ROLLED_BACK</code>.</p>
+/// <p>Stops a deployment. This API action works only on deployments that have a status of <code>DEPLOYING</code>, unless an <code>AllowRevert</code> parameter is supplied. If the <code>AllowRevert</code> parameter is supplied, the status of an in-progress deployment will be <code>ROLLED_BACK</code>. The status of a completed deployment will be <code>REVERTED</code>. AppConfig only allows a revert within 72 hours of deployment completion.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StopDeploymentFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -149,5 +149,19 @@ impl StopDeploymentFluentBuilder {
     /// <p>The sequence number of the deployment.</p>
     pub fn get_deployment_number(&self) -> &::std::option::Option<i32> {
         self.inner.get_deployment_number()
+    }
+    /// <p>A Boolean that enables AppConfig to rollback a <code>COMPLETED</code> deployment to the previous configuration version. This action moves the deployment to a status of <code>REVERTED</code>.</p>
+    pub fn allow_revert(mut self, input: bool) -> Self {
+        self.inner = self.inner.allow_revert(input);
+        self
+    }
+    /// <p>A Boolean that enables AppConfig to rollback a <code>COMPLETED</code> deployment to the previous configuration version. This action moves the deployment to a status of <code>REVERTED</code>.</p>
+    pub fn set_allow_revert(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_allow_revert(input);
+        self
+    }
+    /// <p>A Boolean that enables AppConfig to rollback a <code>COMPLETED</code> deployment to the previous configuration version. This action moves the deployment to a status of <code>REVERTED</code>.</p>
+    pub fn get_allow_revert(&self) -> &::std::option::Option<bool> {
+        self.inner.get_allow_revert()
     }
 }

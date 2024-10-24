@@ -4,13 +4,15 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ClusterSlurmConfigurationRequest {
-    /// <p>The time before an idle node is scaled down.</p>
+    /// <p>The time (in seconds) before an idle node is scaled down.</p>
+    /// <p>Default: <code>600</code></p>
     pub scale_down_idle_time_in_seconds: ::std::option::Option<i32>,
     /// <p>Additional Slurm-specific configuration that directly maps to Slurm settings.</p>
     pub slurm_custom_settings: ::std::option::Option<::std::vec::Vec<crate::types::SlurmCustomSetting>>,
 }
 impl ClusterSlurmConfigurationRequest {
-    /// <p>The time before an idle node is scaled down.</p>
+    /// <p>The time (in seconds) before an idle node is scaled down.</p>
+    /// <p>Default: <code>600</code></p>
     pub fn scale_down_idle_time_in_seconds(&self) -> ::std::option::Option<i32> {
         self.scale_down_idle_time_in_seconds
     }
@@ -36,17 +38,20 @@ pub struct ClusterSlurmConfigurationRequestBuilder {
     pub(crate) slurm_custom_settings: ::std::option::Option<::std::vec::Vec<crate::types::SlurmCustomSetting>>,
 }
 impl ClusterSlurmConfigurationRequestBuilder {
-    /// <p>The time before an idle node is scaled down.</p>
+    /// <p>The time (in seconds) before an idle node is scaled down.</p>
+    /// <p>Default: <code>600</code></p>
     pub fn scale_down_idle_time_in_seconds(mut self, input: i32) -> Self {
         self.scale_down_idle_time_in_seconds = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The time before an idle node is scaled down.</p>
+    /// <p>The time (in seconds) before an idle node is scaled down.</p>
+    /// <p>Default: <code>600</code></p>
     pub fn set_scale_down_idle_time_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.scale_down_idle_time_in_seconds = input;
         self
     }
-    /// <p>The time before an idle node is scaled down.</p>
+    /// <p>The time (in seconds) before an idle node is scaled down.</p>
+    /// <p>Default: <code>600</code></p>
     pub fn get_scale_down_idle_time_in_seconds(&self) -> &::std::option::Option<i32> {
         &self.scale_down_idle_time_in_seconds
     }

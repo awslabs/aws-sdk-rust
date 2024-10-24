@@ -10,7 +10,7 @@ pub struct LaunchTemplateEbsBlockDevice {
     pub delete_on_termination: ::std::option::Option<bool>,
     /// <p>The number of I/O operations per second (IOPS) that the volume supports.</p>
     pub iops: ::std::option::Option<i32>,
-    /// <p>The ARN of the Key Management Service (KMS) CMK used for encryption.</p>
+    /// <p>Identifier (key ID, key alias, key ARN, or alias ARN) of the customer managed KMS key to use for EBS encryption.</p>
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the snapshot.</p>
     pub snapshot_id: ::std::option::Option<::std::string::String>,
@@ -34,7 +34,7 @@ impl LaunchTemplateEbsBlockDevice {
     pub fn iops(&self) -> ::std::option::Option<i32> {
         self.iops
     }
-    /// <p>The ARN of the Key Management Service (KMS) CMK used for encryption.</p>
+    /// <p>Identifier (key ID, key alias, key ARN, or alias ARN) of the customer managed KMS key to use for EBS encryption.</p>
     pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
@@ -118,17 +118,17 @@ impl LaunchTemplateEbsBlockDeviceBuilder {
     pub fn get_iops(&self) -> &::std::option::Option<i32> {
         &self.iops
     }
-    /// <p>The ARN of the Key Management Service (KMS) CMK used for encryption.</p>
+    /// <p>Identifier (key ID, key alias, key ARN, or alias ARN) of the customer managed KMS key to use for EBS encryption.</p>
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the Key Management Service (KMS) CMK used for encryption.</p>
+    /// <p>Identifier (key ID, key alias, key ARN, or alias ARN) of the customer managed KMS key to use for EBS encryption.</p>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_id = input;
         self
     }
-    /// <p>The ARN of the Key Management Service (KMS) CMK used for encryption.</p>
+    /// <p>Identifier (key ID, key alias, key ARN, or alias ARN) of the customer managed KMS key to use for EBS encryption.</p>
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.kms_key_id
     }

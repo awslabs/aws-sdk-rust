@@ -57,6 +57,9 @@ where
                                     .transpose()?,
                             );
                         }
+                        "arrayItemJsonSchema" => {
+                            builder = builder.set_array_item_json_schema(Some(::aws_smithy_json::deserialize::token::expect_document(tokens)?));
+                        }
                         "required" => {
                             builder = builder.set_required(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }

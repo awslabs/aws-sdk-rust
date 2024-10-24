@@ -14,6 +14,7 @@
 /// match environmentstate {
 ///     EnvironmentState::Deploying => { /* ... */ },
 ///     EnvironmentState::ReadyForDeployment => { /* ... */ },
+///     EnvironmentState::Reverted => { /* ... */ },
 ///     EnvironmentState::RolledBack => { /* ... */ },
 ///     EnvironmentState::RollingBack => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -48,6 +49,8 @@ pub enum EnvironmentState {
     #[allow(missing_docs)] // documentation missing in model
     ReadyForDeployment,
     #[allow(missing_docs)] // documentation missing in model
+    Reverted,
+    #[allow(missing_docs)] // documentation missing in model
     RolledBack,
     #[allow(missing_docs)] // documentation missing in model
     RollingBack,
@@ -60,6 +63,7 @@ impl ::std::convert::From<&str> for EnvironmentState {
         match s {
             "DEPLOYING" => EnvironmentState::Deploying,
             "READY_FOR_DEPLOYMENT" => EnvironmentState::ReadyForDeployment,
+            "REVERTED" => EnvironmentState::Reverted,
             "ROLLED_BACK" => EnvironmentState::RolledBack,
             "ROLLING_BACK" => EnvironmentState::RollingBack,
             other => EnvironmentState::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -79,6 +83,7 @@ impl EnvironmentState {
         match self {
             EnvironmentState::Deploying => "DEPLOYING",
             EnvironmentState::ReadyForDeployment => "READY_FOR_DEPLOYMENT",
+            EnvironmentState::Reverted => "REVERTED",
             EnvironmentState::RolledBack => "ROLLED_BACK",
             EnvironmentState::RollingBack => "ROLLING_BACK",
             EnvironmentState::Unknown(value) => value.as_str(),
@@ -86,7 +91,7 @@ impl EnvironmentState {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DEPLOYING", "READY_FOR_DEPLOYMENT", "ROLLED_BACK", "ROLLING_BACK"]
+        &["DEPLOYING", "READY_FOR_DEPLOYMENT", "REVERTED", "ROLLED_BACK", "ROLLING_BACK"]
     }
 }
 impl ::std::convert::AsRef<str> for EnvironmentState {
@@ -111,6 +116,7 @@ impl ::std::fmt::Display for EnvironmentState {
         match self {
             EnvironmentState::Deploying => write!(f, "DEPLOYING"),
             EnvironmentState::ReadyForDeployment => write!(f, "READY_FOR_DEPLOYMENT"),
+            EnvironmentState::Reverted => write!(f, "REVERTED"),
             EnvironmentState::RolledBack => write!(f, "ROLLED_BACK"),
             EnvironmentState::RollingBack => write!(f, "ROLLING_BACK"),
             EnvironmentState::Unknown(value) => write!(f, "{}", value),

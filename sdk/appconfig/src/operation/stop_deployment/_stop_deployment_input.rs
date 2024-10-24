@@ -9,6 +9,8 @@ pub struct StopDeploymentInput {
     pub environment_id: ::std::option::Option<::std::string::String>,
     /// <p>The sequence number of the deployment.</p>
     pub deployment_number: ::std::option::Option<i32>,
+    /// <p>A Boolean that enables AppConfig to rollback a <code>COMPLETED</code> deployment to the previous configuration version. This action moves the deployment to a status of <code>REVERTED</code>.</p>
+    pub allow_revert: ::std::option::Option<bool>,
 }
 impl StopDeploymentInput {
     /// <p>The application ID.</p>
@@ -22,6 +24,10 @@ impl StopDeploymentInput {
     /// <p>The sequence number of the deployment.</p>
     pub fn deployment_number(&self) -> ::std::option::Option<i32> {
         self.deployment_number
+    }
+    /// <p>A Boolean that enables AppConfig to rollback a <code>COMPLETED</code> deployment to the previous configuration version. This action moves the deployment to a status of <code>REVERTED</code>.</p>
+    pub fn allow_revert(&self) -> ::std::option::Option<bool> {
+        self.allow_revert
     }
 }
 impl StopDeploymentInput {
@@ -38,6 +44,7 @@ pub struct StopDeploymentInputBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) environment_id: ::std::option::Option<::std::string::String>,
     pub(crate) deployment_number: ::std::option::Option<i32>,
+    pub(crate) allow_revert: ::std::option::Option<bool>,
 }
 impl StopDeploymentInputBuilder {
     /// <p>The application ID.</p>
@@ -85,6 +92,20 @@ impl StopDeploymentInputBuilder {
     pub fn get_deployment_number(&self) -> &::std::option::Option<i32> {
         &self.deployment_number
     }
+    /// <p>A Boolean that enables AppConfig to rollback a <code>COMPLETED</code> deployment to the previous configuration version. This action moves the deployment to a status of <code>REVERTED</code>.</p>
+    pub fn allow_revert(mut self, input: bool) -> Self {
+        self.allow_revert = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A Boolean that enables AppConfig to rollback a <code>COMPLETED</code> deployment to the previous configuration version. This action moves the deployment to a status of <code>REVERTED</code>.</p>
+    pub fn set_allow_revert(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.allow_revert = input;
+        self
+    }
+    /// <p>A Boolean that enables AppConfig to rollback a <code>COMPLETED</code> deployment to the previous configuration version. This action moves the deployment to a status of <code>REVERTED</code>.</p>
+    pub fn get_allow_revert(&self) -> &::std::option::Option<bool> {
+        &self.allow_revert
+    }
     /// Consumes the builder and constructs a [`StopDeploymentInput`](crate::operation::stop_deployment::StopDeploymentInput).
     pub fn build(
         self,
@@ -93,6 +114,7 @@ impl StopDeploymentInputBuilder {
             application_id: self.application_id,
             environment_id: self.environment_id,
             deployment_number: self.deployment_number,
+            allow_revert: self.allow_revert,
         })
     }
 }

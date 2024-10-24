@@ -16,6 +16,7 @@
 ///     DeploymentEventType::DeploymentCompleted => { /* ... */ },
 ///     DeploymentEventType::DeploymentStarted => { /* ... */ },
 ///     DeploymentEventType::PercentageUpdated => { /* ... */ },
+///     DeploymentEventType::RevertCompleted => { /* ... */ },
 ///     DeploymentEventType::RollbackCompleted => { /* ... */ },
 ///     DeploymentEventType::RollbackStarted => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -54,6 +55,8 @@ pub enum DeploymentEventType {
     #[allow(missing_docs)] // documentation missing in model
     PercentageUpdated,
     #[allow(missing_docs)] // documentation missing in model
+    RevertCompleted,
+    #[allow(missing_docs)] // documentation missing in model
     RollbackCompleted,
     #[allow(missing_docs)] // documentation missing in model
     RollbackStarted,
@@ -68,6 +71,7 @@ impl ::std::convert::From<&str> for DeploymentEventType {
             "DEPLOYMENT_COMPLETED" => DeploymentEventType::DeploymentCompleted,
             "DEPLOYMENT_STARTED" => DeploymentEventType::DeploymentStarted,
             "PERCENTAGE_UPDATED" => DeploymentEventType::PercentageUpdated,
+            "REVERT_COMPLETED" => DeploymentEventType::RevertCompleted,
             "ROLLBACK_COMPLETED" => DeploymentEventType::RollbackCompleted,
             "ROLLBACK_STARTED" => DeploymentEventType::RollbackStarted,
             other => DeploymentEventType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -89,6 +93,7 @@ impl DeploymentEventType {
             DeploymentEventType::DeploymentCompleted => "DEPLOYMENT_COMPLETED",
             DeploymentEventType::DeploymentStarted => "DEPLOYMENT_STARTED",
             DeploymentEventType::PercentageUpdated => "PERCENTAGE_UPDATED",
+            DeploymentEventType::RevertCompleted => "REVERT_COMPLETED",
             DeploymentEventType::RollbackCompleted => "ROLLBACK_COMPLETED",
             DeploymentEventType::RollbackStarted => "ROLLBACK_STARTED",
             DeploymentEventType::Unknown(value) => value.as_str(),
@@ -101,6 +106,7 @@ impl DeploymentEventType {
             "DEPLOYMENT_COMPLETED",
             "DEPLOYMENT_STARTED",
             "PERCENTAGE_UPDATED",
+            "REVERT_COMPLETED",
             "ROLLBACK_COMPLETED",
             "ROLLBACK_STARTED",
         ]
@@ -130,6 +136,7 @@ impl ::std::fmt::Display for DeploymentEventType {
             DeploymentEventType::DeploymentCompleted => write!(f, "DEPLOYMENT_COMPLETED"),
             DeploymentEventType::DeploymentStarted => write!(f, "DEPLOYMENT_STARTED"),
             DeploymentEventType::PercentageUpdated => write!(f, "PERCENTAGE_UPDATED"),
+            DeploymentEventType::RevertCompleted => write!(f, "REVERT_COMPLETED"),
             DeploymentEventType::RollbackCompleted => write!(f, "ROLLBACK_COMPLETED"),
             DeploymentEventType::RollbackStarted => write!(f, "ROLLBACK_STARTED"),
             DeploymentEventType::Unknown(value) => write!(f, "{}", value),

@@ -224,6 +224,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for StopDeployme
             ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
                 let mut uri = ::std::string::String::new();
                 uri_base(input, &mut uri)?;
+                let builder = crate::protocol_serde::shape_stop_deployment::ser_stop_deployment_headers(input, builder)?;
                 ::std::result::Result::Ok(builder.method("DELETE").uri(uri))
             }
             let mut builder = update_http_builder(&input, ::http::request::Builder::new())?;

@@ -826,6 +826,9 @@ pub mod describe_instance_event_notification_attributes;
 /// Types for the `DescribeInstanceEventWindows` operation.
 pub mod describe_instance_event_windows;
 
+/// Types for the `DescribeInstanceImageMetadata` operation.
+pub mod describe_instance_image_metadata;
+
 /// Types for the `DescribeInstanceStatus` operation.
 pub mod describe_instance_status;
 

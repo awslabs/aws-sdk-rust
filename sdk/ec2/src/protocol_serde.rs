@@ -1123,6 +1123,10 @@ pub(crate) mod shape_describe_instance_event_windows;
 
 pub(crate) mod shape_describe_instance_event_windows_input;
 
+pub(crate) mod shape_describe_instance_image_metadata;
+
+pub(crate) mod shape_describe_instance_image_metadata_input;
+
 pub(crate) mod shape_describe_instance_status;
 
 pub(crate) mod shape_describe_instance_status_input;
@@ -3069,6 +3073,8 @@ pub(crate) mod shape_instance_family_credit_specification;
 
 pub(crate) mod shape_instance_id_set;
 
+pub(crate) mod shape_instance_image_metadata_list;
+
 pub(crate) mod shape_instance_list;
 
 pub(crate) mod shape_instance_metadata_defaults_response;
@@ -3823,6 +3829,8 @@ pub(crate) mod shape_instance_event_window_time_range_list;
 
 pub(crate) mod shape_instance_export_details;
 
+pub(crate) mod shape_instance_image_metadata;
+
 pub(crate) mod shape_instance_ipv6_address_request;
 
 pub(crate) mod shape_instance_monitoring;
@@ -4280,6 +4288,8 @@ pub(crate) mod shape_hibernation_options;
 pub(crate) mod shape_host_instance_list;
 
 pub(crate) mod shape_host_properties;
+
+pub(crate) mod shape_image_metadata;
 
 pub(crate) mod shape_import_instance_volume_detail_set;
 

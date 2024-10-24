@@ -14,6 +14,7 @@
 /// match taskfilesystemtype {
 ///     TaskFilesystemType::Ext3 => { /* ... */ },
 ///     TaskFilesystemType::Ext4 => { /* ... */ },
+///     TaskFilesystemType::Ntfs => { /* ... */ },
 ///     TaskFilesystemType::Xfs => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -47,6 +48,8 @@ pub enum TaskFilesystemType {
     #[allow(missing_docs)] // documentation missing in model
     Ext4,
     #[allow(missing_docs)] // documentation missing in model
+    Ntfs,
+    #[allow(missing_docs)] // documentation missing in model
     Xfs,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -57,6 +60,7 @@ impl ::std::convert::From<&str> for TaskFilesystemType {
         match s {
             "ext3" => TaskFilesystemType::Ext3,
             "ext4" => TaskFilesystemType::Ext4,
+            "ntfs" => TaskFilesystemType::Ntfs,
             "xfs" => TaskFilesystemType::Xfs,
             other => TaskFilesystemType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -75,13 +79,14 @@ impl TaskFilesystemType {
         match self {
             TaskFilesystemType::Ext3 => "ext3",
             TaskFilesystemType::Ext4 => "ext4",
+            TaskFilesystemType::Ntfs => "ntfs",
             TaskFilesystemType::Xfs => "xfs",
             TaskFilesystemType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ext3", "ext4", "xfs"]
+        &["ext3", "ext4", "ntfs", "xfs"]
     }
 }
 impl ::std::convert::AsRef<str> for TaskFilesystemType {
@@ -106,6 +111,7 @@ impl ::std::fmt::Display for TaskFilesystemType {
         match self {
             TaskFilesystemType::Ext3 => write!(f, "ext3"),
             TaskFilesystemType::Ext4 => write!(f, "ext4"),
+            TaskFilesystemType::Ntfs => write!(f, "ntfs"),
             TaskFilesystemType::Xfs => write!(f, "xfs"),
             TaskFilesystemType::Unknown(value) => write!(f, "{}", value),
         }

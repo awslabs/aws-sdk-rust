@@ -1169,6 +1169,10 @@ pub use crate::types::_instance_status_details::InstanceStatusDetailsBuilder;
 
 pub use crate::types::_reservation::ReservationBuilder;
 
+pub use crate::types::_instance_image_metadata::InstanceImageMetadataBuilder;
+
+pub use crate::types::_image_metadata::ImageMetadataBuilder;
+
 pub use crate::types::_instance_credit_specification::InstanceCreditSpecificationBuilder;
 
 pub use crate::types::_ec2_instance_connect_endpoint::Ec2InstanceConnectEndpointBuilder;

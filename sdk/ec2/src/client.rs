@@ -921,6 +921,8 @@ mod describe_instance_event_notification_attributes;
 
 mod describe_instance_event_windows;
 
+mod describe_instance_image_metadata;
+
 mod describe_instance_status;
 
 mod describe_instance_topology;

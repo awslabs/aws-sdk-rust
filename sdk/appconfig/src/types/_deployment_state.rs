@@ -15,6 +15,7 @@
 ///     DeploymentState::Baking => { /* ... */ },
 ///     DeploymentState::Complete => { /* ... */ },
 ///     DeploymentState::Deploying => { /* ... */ },
+///     DeploymentState::Reverted => { /* ... */ },
 ///     DeploymentState::RolledBack => { /* ... */ },
 ///     DeploymentState::RollingBack => { /* ... */ },
 ///     DeploymentState::Validating => { /* ... */ },
@@ -52,6 +53,8 @@ pub enum DeploymentState {
     #[allow(missing_docs)] // documentation missing in model
     Deploying,
     #[allow(missing_docs)] // documentation missing in model
+    Reverted,
+    #[allow(missing_docs)] // documentation missing in model
     RolledBack,
     #[allow(missing_docs)] // documentation missing in model
     RollingBack,
@@ -67,6 +70,7 @@ impl ::std::convert::From<&str> for DeploymentState {
             "BAKING" => DeploymentState::Baking,
             "COMPLETE" => DeploymentState::Complete,
             "DEPLOYING" => DeploymentState::Deploying,
+            "REVERTED" => DeploymentState::Reverted,
             "ROLLED_BACK" => DeploymentState::RolledBack,
             "ROLLING_BACK" => DeploymentState::RollingBack,
             "VALIDATING" => DeploymentState::Validating,
@@ -88,6 +92,7 @@ impl DeploymentState {
             DeploymentState::Baking => "BAKING",
             DeploymentState::Complete => "COMPLETE",
             DeploymentState::Deploying => "DEPLOYING",
+            DeploymentState::Reverted => "REVERTED",
             DeploymentState::RolledBack => "ROLLED_BACK",
             DeploymentState::RollingBack => "ROLLING_BACK",
             DeploymentState::Validating => "VALIDATING",
@@ -96,7 +101,7 @@ impl DeploymentState {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["BAKING", "COMPLETE", "DEPLOYING", "ROLLED_BACK", "ROLLING_BACK", "VALIDATING"]
+        &["BAKING", "COMPLETE", "DEPLOYING", "REVERTED", "ROLLED_BACK", "ROLLING_BACK", "VALIDATING"]
     }
 }
 impl ::std::convert::AsRef<str> for DeploymentState {
@@ -122,6 +127,7 @@ impl ::std::fmt::Display for DeploymentState {
             DeploymentState::Baking => write!(f, "BAKING"),
             DeploymentState::Complete => write!(f, "COMPLETE"),
             DeploymentState::Deploying => write!(f, "DEPLOYING"),
+            DeploymentState::Reverted => write!(f, "REVERTED"),
             DeploymentState::RolledBack => write!(f, "ROLLED_BACK"),
             DeploymentState::RollingBack => write!(f, "ROLLING_BACK"),
             DeploymentState::Validating => write!(f, "VALIDATING"),

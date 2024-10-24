@@ -18,6 +18,8 @@ pub struct ActionReviewPayloadField {
     pub allowed_values: ::std::option::Option<::std::vec::Vec<crate::types::ActionReviewPayloadFieldAllowedValue>>,
     /// <p>The expected data format for the action review input field value. For example, in PTO request, <code>from</code> and <code>to</code> would be of <code>datetime</code> allowed format.</p>
     pub allowed_format: ::std::option::Option<::std::string::String>,
+    /// <p>Use to create a custom form with array fields (fields with nested objects inside an array).</p>
+    pub array_item_json_schema: ::std::option::Option<::aws_smithy_types::Document>,
     /// <p>Information about whether the field is required.</p>
     pub required: ::std::option::Option<bool>,
 }
@@ -52,6 +54,10 @@ impl ActionReviewPayloadField {
     pub fn allowed_format(&self) -> ::std::option::Option<&str> {
         self.allowed_format.as_deref()
     }
+    /// <p>Use to create a custom form with array fields (fields with nested objects inside an array).</p>
+    pub fn array_item_json_schema(&self) -> ::std::option::Option<&::aws_smithy_types::Document> {
+        self.array_item_json_schema.as_ref()
+    }
     /// <p>Information about whether the field is required.</p>
     pub fn required(&self) -> ::std::option::Option<bool> {
         self.required
@@ -75,6 +81,7 @@ pub struct ActionReviewPayloadFieldBuilder {
     pub(crate) value: ::std::option::Option<::aws_smithy_types::Document>,
     pub(crate) allowed_values: ::std::option::Option<::std::vec::Vec<crate::types::ActionReviewPayloadFieldAllowedValue>>,
     pub(crate) allowed_format: ::std::option::Option<::std::string::String>,
+    pub(crate) array_item_json_schema: ::std::option::Option<::aws_smithy_types::Document>,
     pub(crate) required: ::std::option::Option<bool>,
 }
 impl ActionReviewPayloadFieldBuilder {
@@ -182,6 +189,20 @@ impl ActionReviewPayloadFieldBuilder {
     pub fn get_allowed_format(&self) -> &::std::option::Option<::std::string::String> {
         &self.allowed_format
     }
+    /// <p>Use to create a custom form with array fields (fields with nested objects inside an array).</p>
+    pub fn array_item_json_schema(mut self, input: ::aws_smithy_types::Document) -> Self {
+        self.array_item_json_schema = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Use to create a custom form with array fields (fields with nested objects inside an array).</p>
+    pub fn set_array_item_json_schema(mut self, input: ::std::option::Option<::aws_smithy_types::Document>) -> Self {
+        self.array_item_json_schema = input;
+        self
+    }
+    /// <p>Use to create a custom form with array fields (fields with nested objects inside an array).</p>
+    pub fn get_array_item_json_schema(&self) -> &::std::option::Option<::aws_smithy_types::Document> {
+        &self.array_item_json_schema
+    }
     /// <p>Information about whether the field is required.</p>
     pub fn required(mut self, input: bool) -> Self {
         self.required = ::std::option::Option::Some(input);
@@ -206,6 +227,7 @@ impl ActionReviewPayloadFieldBuilder {
             value: self.value,
             allowed_values: self.allowed_values,
             allowed_format: self.allowed_format,
+            array_item_json_schema: self.array_item_json_schema,
             required: self.required,
         }
     }

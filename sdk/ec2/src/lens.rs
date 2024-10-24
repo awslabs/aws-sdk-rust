@@ -339,6 +339,16 @@ pub(crate) fn reflens_describe_instance_event_windows_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_describe_instance_image_metadata_output_output_next_token(
+    input: &crate::operation::describe_instance_image_metadata::DescribeInstanceImageMetadataOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_describe_instance_status_output_output_next_token(
     input: &crate::operation::describe_instance_status::DescribeInstanceStatusOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -1743,6 +1753,16 @@ pub(crate) fn lens_describe_instance_event_windows_output_output_instance_event_
     input: crate::operation::describe_instance_event_windows::DescribeInstanceEventWindowsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::InstanceEventWindow>> {
     let input = match input.instance_event_windows {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_describe_instance_image_metadata_output_output_instance_image_metadata(
+    input: crate::operation::describe_instance_image_metadata::DescribeInstanceImageMetadataOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::InstanceImageMetadata>> {
+    let input = match input.instance_image_metadata {
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,
     };

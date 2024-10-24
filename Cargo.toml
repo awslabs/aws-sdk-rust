@@ -1,13 +1,13 @@
 [workspace]
 resolver = "2"
 exclude = [
-    "examples/examples",
-    "examples/cross_service",
     "examples/lambda",
+    "examples/examples",
     "examples/webassembly",
     "examples/test-utils",
-    "tests/webassembly",
-    "tests/no-default-features"
+    "examples/cross_service",
+    "tests/no-default-features",
+    "tests/webassembly"
 ]
 members = [
     "sdk/accessanalyzer",
@@ -295,7 +295,6 @@ members = [
     "sdk/networkfirewall",
     "sdk/networkmanager",
     "sdk/networkmonitor",
-    "sdk/nimble",
     "sdk/oam",
     "sdk/omics",
     "sdk/opensearch",

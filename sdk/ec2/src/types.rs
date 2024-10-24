@@ -1745,6 +1745,12 @@ pub use crate::types::_instance_status_details::InstanceStatusDetails;
 
 pub use crate::types::_reservation::Reservation;
 
+pub use crate::types::_instance_image_metadata::InstanceImageMetadata;
+
+pub use crate::types::_image_metadata::ImageMetadata;
+
+pub use crate::types::_image_state::ImageState;
+
 pub use crate::types::_instance_credit_specification::InstanceCreditSpecification;
 
 pub use crate::types::_ec2_instance_connect_endpoint::Ec2InstanceConnectEndpoint;
@@ -1758,8 +1764,6 @@ pub use crate::types::_import_image_task::ImportImageTask;
 pub use crate::types::_image::Image;
 
 pub use crate::types::_image_type_values::ImageTypeValues;
-
-pub use crate::types::_image_state::ImageState;
 
 pub use crate::types::_image_attribute_name::ImageAttributeName;
 
@@ -2913,6 +2917,8 @@ mod _image_block_public_access_enabled_state;
 
 mod _image_disk_container;
 
+mod _image_metadata;
+
 mod _image_recycle_bin_info;
 
 mod _image_state;
@@ -2990,6 +2996,8 @@ mod _instance_family_credit_specification;
 mod _instance_generation;
 
 mod _instance_health_status;
+
+mod _instance_image_metadata;
 
 mod _instance_interruption_behavior;
 

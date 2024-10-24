@@ -14,7 +14,6 @@ pub struct CreateIpamPoolInput {
     /// <li>
     /// <p>The network border group for an Amazon Web Services Local Zone where you want this IPAM pool to be available for allocations (<a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html#byoip-zone-avail">supported Local Zones</a>). This option is only available for IPAM IPv4 pools in the public scope.</p></li>
     /// </ul>
-    /// <p>If you do not choose a locale, resources in Regions others than the IPAM's home region cannot use CIDRs from this pool.</p>
     /// <p>Possible values: Any Amazon Web Services Region or supported Amazon Web Services Local Zone. Default is <code>none</code> and means any locale.</p>
     pub locale: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the source IPAM pool. Use this option to create a pool within an existing pool. Note that the CIDR you provision for the pool within the source pool must be available in the source pool's CIDR range.</p>
@@ -26,7 +25,7 @@ pub struct CreateIpamPoolInput {
     /// <p>If selected, IPAM will continuously look for resources within the CIDR range of this pool and automatically import them as allocations into your IPAM. The CIDRs that will be allocated for these resources must not already be allocated to other resources in order for the import to succeed. IPAM will import a CIDR regardless of its compliance with the pool's allocation rules, so a resource might be imported and subsequently marked as noncompliant. If IPAM discovers multiple CIDRs that overlap, IPAM will import the largest CIDR only. If IPAM discovers multiple CIDRs with matching CIDRs, IPAM will randomly import one of them only.</p>
     /// <p>A locale must be set on the pool for this feature to work.</p>
     pub auto_import: ::std::option::Option<bool>,
-    /// <p>Determines if the pool is publicly advertisable. This option is not available for pools with AddressFamily set to <code>ipv4</code>.</p>
+    /// <p>Determines if the pool is publicly advertisable. The request can only contain <code>PubliclyAdvertisable</code> if <code>AddressFamily</code> is <code>ipv6</code> and <code>PublicIpSource</code> is <code>byoip</code>.</p>
     pub publicly_advertisable: ::std::option::Option<bool>,
     /// <p>The minimum netmask length required for CIDR allocations in this IPAM pool to be compliant. The minimum netmask length must be less than the maximum netmask length. Possible netmask lengths for IPv4 addresses are 0 - 32. Possible netmask lengths for IPv6 addresses are 0 - 128.</p>
     pub allocation_min_netmask_length: ::std::option::Option<i32>,
@@ -63,7 +62,6 @@ impl CreateIpamPoolInput {
     /// <li>
     /// <p>The network border group for an Amazon Web Services Local Zone where you want this IPAM pool to be available for allocations (<a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html#byoip-zone-avail">supported Local Zones</a>). This option is only available for IPAM IPv4 pools in the public scope.</p></li>
     /// </ul>
-    /// <p>If you do not choose a locale, resources in Regions others than the IPAM's home region cannot use CIDRs from this pool.</p>
     /// <p>Possible values: Any Amazon Web Services Region or supported Amazon Web Services Local Zone. Default is <code>none</code> and means any locale.</p>
     pub fn locale(&self) -> ::std::option::Option<&str> {
         self.locale.as_deref()
@@ -85,7 +83,7 @@ impl CreateIpamPoolInput {
     pub fn auto_import(&self) -> ::std::option::Option<bool> {
         self.auto_import
     }
-    /// <p>Determines if the pool is publicly advertisable. This option is not available for pools with AddressFamily set to <code>ipv4</code>.</p>
+    /// <p>Determines if the pool is publicly advertisable. The request can only contain <code>PubliclyAdvertisable</code> if <code>AddressFamily</code> is <code>ipv6</code> and <code>PublicIpSource</code> is <code>byoip</code>.</p>
     pub fn publicly_advertisable(&self) -> ::std::option::Option<bool> {
         self.publicly_advertisable
     }
@@ -196,7 +194,6 @@ impl CreateIpamPoolInputBuilder {
     /// <li>
     /// <p>The network border group for an Amazon Web Services Local Zone where you want this IPAM pool to be available for allocations (<a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html#byoip-zone-avail">supported Local Zones</a>). This option is only available for IPAM IPv4 pools in the public scope.</p></li>
     /// </ul>
-    /// <p>If you do not choose a locale, resources in Regions others than the IPAM's home region cannot use CIDRs from this pool.</p>
     /// <p>Possible values: Any Amazon Web Services Region or supported Amazon Web Services Local Zone. Default is <code>none</code> and means any locale.</p>
     pub fn locale(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.locale = ::std::option::Option::Some(input.into());
@@ -209,7 +206,6 @@ impl CreateIpamPoolInputBuilder {
     /// <li>
     /// <p>The network border group for an Amazon Web Services Local Zone where you want this IPAM pool to be available for allocations (<a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html#byoip-zone-avail">supported Local Zones</a>). This option is only available for IPAM IPv4 pools in the public scope.</p></li>
     /// </ul>
-    /// <p>If you do not choose a locale, resources in Regions others than the IPAM's home region cannot use CIDRs from this pool.</p>
     /// <p>Possible values: Any Amazon Web Services Region or supported Amazon Web Services Local Zone. Default is <code>none</code> and means any locale.</p>
     pub fn set_locale(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.locale = input;
@@ -222,7 +218,6 @@ impl CreateIpamPoolInputBuilder {
     /// <li>
     /// <p>The network border group for an Amazon Web Services Local Zone where you want this IPAM pool to be available for allocations (<a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html#byoip-zone-avail">supported Local Zones</a>). This option is only available for IPAM IPv4 pools in the public scope.</p></li>
     /// </ul>
-    /// <p>If you do not choose a locale, resources in Regions others than the IPAM's home region cannot use CIDRs from this pool.</p>
     /// <p>Possible values: Any Amazon Web Services Region or supported Amazon Web Services Local Zone. Default is <code>none</code> and means any locale.</p>
     pub fn get_locale(&self) -> &::std::option::Option<::std::string::String> {
         &self.locale
@@ -287,17 +282,17 @@ impl CreateIpamPoolInputBuilder {
     pub fn get_auto_import(&self) -> &::std::option::Option<bool> {
         &self.auto_import
     }
-    /// <p>Determines if the pool is publicly advertisable. This option is not available for pools with AddressFamily set to <code>ipv4</code>.</p>
+    /// <p>Determines if the pool is publicly advertisable. The request can only contain <code>PubliclyAdvertisable</code> if <code>AddressFamily</code> is <code>ipv6</code> and <code>PublicIpSource</code> is <code>byoip</code>.</p>
     pub fn publicly_advertisable(mut self, input: bool) -> Self {
         self.publicly_advertisable = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Determines if the pool is publicly advertisable. This option is not available for pools with AddressFamily set to <code>ipv4</code>.</p>
+    /// <p>Determines if the pool is publicly advertisable. The request can only contain <code>PubliclyAdvertisable</code> if <code>AddressFamily</code> is <code>ipv6</code> and <code>PublicIpSource</code> is <code>byoip</code>.</p>
     pub fn set_publicly_advertisable(mut self, input: ::std::option::Option<bool>) -> Self {
         self.publicly_advertisable = input;
         self
     }
-    /// <p>Determines if the pool is publicly advertisable. This option is not available for pools with AddressFamily set to <code>ipv4</code>.</p>
+    /// <p>Determines if the pool is publicly advertisable. The request can only contain <code>PubliclyAdvertisable</code> if <code>AddressFamily</code> is <code>ipv6</code> and <code>PublicIpSource</code> is <code>byoip</code>.</p>
     pub fn get_publicly_advertisable(&self) -> &::std::option::Option<bool> {
         &self.publicly_advertisable
     }

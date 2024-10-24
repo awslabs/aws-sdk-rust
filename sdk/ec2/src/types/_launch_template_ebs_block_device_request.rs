@@ -21,7 +21,7 @@ pub struct LaunchTemplateEbsBlockDeviceRequest {
     /// <p>For <code>io2</code> volumes, you can achieve up to 256,000 IOPS on <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">instances built on the Nitro System</a>. On other instances, you can achieve performance up to 32,000 IOPS.</p>
     /// <p>This parameter is supported for <code>io1</code>, <code>io2</code>, and <code>gp3</code> volumes only.</p>
     pub iops: ::std::option::Option<i32>,
-    /// <p>The ARN of the symmetric Key Management Service (KMS) CMK used for encryption.</p>
+    /// <p>Identifier (key ID, key alias, key ARN, or alias ARN) of the customer managed KMS key to use for EBS encryption.</p>
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the snapshot.</p>
     pub snapshot_id: ::std::option::Option<::std::string::String>,
@@ -69,7 +69,7 @@ impl LaunchTemplateEbsBlockDeviceRequest {
     pub fn iops(&self) -> ::std::option::Option<i32> {
         self.iops
     }
-    /// <p>The ARN of the symmetric Key Management Service (KMS) CMK used for encryption.</p>
+    /// <p>Identifier (key ID, key alias, key ARN, or alias ARN) of the customer managed KMS key to use for EBS encryption.</p>
     pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
@@ -199,17 +199,17 @@ impl LaunchTemplateEbsBlockDeviceRequestBuilder {
     pub fn get_iops(&self) -> &::std::option::Option<i32> {
         &self.iops
     }
-    /// <p>The ARN of the symmetric Key Management Service (KMS) CMK used for encryption.</p>
+    /// <p>Identifier (key ID, key alias, key ARN, or alias ARN) of the customer managed KMS key to use for EBS encryption.</p>
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the symmetric Key Management Service (KMS) CMK used for encryption.</p>
+    /// <p>Identifier (key ID, key alias, key ARN, or alias ARN) of the customer managed KMS key to use for EBS encryption.</p>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_id = input;
         self
     }
-    /// <p>The ARN of the symmetric Key Management Service (KMS) CMK used for encryption.</p>
+    /// <p>Identifier (key ID, key alias, key ARN, or alias ARN) of the customer managed KMS key to use for EBS encryption.</p>
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.kms_key_id
     }
