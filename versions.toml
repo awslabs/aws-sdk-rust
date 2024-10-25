@@ -2493,6 +2493,10 @@ source_hash = 'd307d523704de996da26895d5cab32ae6b6e0658dbfd0ca1322d89d5ffa0b232'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = '9774362a22b16daecb3975d0261b48b60e08346efbd45db057a320642021ffce'
+
+[release]
+tag = 'release-2024-10-25'
+
 [release.crates]
 aws-config = '1.5.9'
 aws-sdk-accessanalyzer = '1.50.0'
