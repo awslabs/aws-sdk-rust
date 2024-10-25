@@ -187,6 +187,8 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListQueuesRe
                 ::http::header::HeaderName::from_static("x-amz-target"),
                 "AmazonSQS.ListQueues",
             );
+            builder =
+                _header_serialization_settings.set_default_header(builder, ::http::header::HeaderName::from_static("x-amzn-query-mode"), "true");
             builder
         };
         let body = ::aws_smithy_types::body::SdkBody::from(crate::protocol_serde::shape_list_queues::ser_list_queues_input(&input)?);

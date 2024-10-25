@@ -189,6 +189,8 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetQueueUrlR
                 ::http::header::HeaderName::from_static("x-amz-target"),
                 "AmazonSQS.GetQueueUrl",
             );
+            builder =
+                _header_serialization_settings.set_default_header(builder, ::http::header::HeaderName::from_static("x-amzn-query-mode"), "true");
             builder
         };
         let body = ::aws_smithy_types::body::SdkBody::from(crate::protocol_serde::shape_get_queue_url::ser_get_queue_url_input(&input)?);

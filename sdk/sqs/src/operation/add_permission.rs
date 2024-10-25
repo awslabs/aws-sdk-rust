@@ -189,6 +189,8 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for AddPermissio
                 ::http::header::HeaderName::from_static("x-amz-target"),
                 "AmazonSQS.AddPermission",
             );
+            builder =
+                _header_serialization_settings.set_default_header(builder, ::http::header::HeaderName::from_static("x-amzn-query-mode"), "true");
             builder
         };
         let body = ::aws_smithy_types::body::SdkBody::from(crate::protocol_serde::shape_add_permission::ser_add_permission_input(&input)?);

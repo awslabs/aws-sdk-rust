@@ -189,6 +189,8 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DeleteMessag
                 ::http::header::HeaderName::from_static("x-amz-target"),
                 "AmazonSQS.DeleteMessage",
             );
+            builder =
+                _header_serialization_settings.set_default_header(builder, ::http::header::HeaderName::from_static("x-amzn-query-mode"), "true");
             builder
         };
         let body = ::aws_smithy_types::body::SdkBody::from(crate::protocol_serde::shape_delete_message::ser_delete_message_input(&input)?);

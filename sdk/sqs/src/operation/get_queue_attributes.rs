@@ -189,6 +189,8 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetQueueAttr
                 ::http::header::HeaderName::from_static("x-amz-target"),
                 "AmazonSQS.GetQueueAttributes",
             );
+            builder =
+                _header_serialization_settings.set_default_header(builder, ::http::header::HeaderName::from_static("x-amzn-query-mode"), "true");
             builder
         };
         let body =
