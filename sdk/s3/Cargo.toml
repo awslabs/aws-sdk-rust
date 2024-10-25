@@ -14,10 +14,6 @@ codegen-version = "dd7432478e9b03ef0bf991cfcec67df36f27232f"
 [package.metadata.docs.rs]
 all-features = true
 targets = ["x86_64-unknown-linux-gnu"]
-[dependencies.ahash]
-version = "0.8.11"
-default-features = false
-
 [dependencies.aws-credential-types]
 path = "../aws-credential-types"
 version = "1.2.1"
