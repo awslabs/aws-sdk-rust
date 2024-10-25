@@ -12,7 +12,7 @@ publish = false
 http = "0.2"
 tokio = "1.33.0"
 aws-config= { version = "1.5.8", path = "../../sdk/aws-config" }
-aws-smithy-types= { version = "1.2.7", path = "../../sdk/aws-smithy-types" }
+aws-smithy-types= { version = "1.2.8", path = "../../sdk/aws-smithy-types" }
 aws-smithy-runtime= { version = "1.7.3", path = "../../sdk/aws-smithy-runtime", features = ["test-util"] }
 aws-types= { version = "1.3.3", path = "../../sdk/aws-types" }
 

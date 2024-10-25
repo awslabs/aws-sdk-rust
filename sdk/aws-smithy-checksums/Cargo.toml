@@ -32,7 +32,7 @@ version = "0.60.11"
 
 [dependencies.aws-smithy-types]
 path = "../aws-smithy-types"
-version = "1.2.7"
+version = "1.2.8"
 
 [dev-dependencies]
 bytes-utils = "0.1.2"

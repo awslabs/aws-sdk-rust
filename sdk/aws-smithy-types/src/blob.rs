@@ -31,6 +31,24 @@ impl AsRef<[u8]> for Blob {
     }
 }
 
+impl From<Vec<u8>> for Blob {
+    fn from(value: Vec<u8>) -> Self {
+        Blob::new(value)
+    }
+}
+
+impl From<Blob> for Vec<u8> {
+    fn from(value: Blob) -> Self {
+        value.into_inner()
+    }
+}
+
+impl From<&[u8]> for Blob {
+    fn from(value: &[u8]) -> Self {
+        Blob::new(value)
+    }
+}
+
 #[cfg(all(aws_sdk_unstable, feature = "serde-serialize"))]
 mod serde_serialize {
     use super::*;
@@ -103,6 +121,25 @@ mod serde_deserialize {
 }
 
 #[cfg(test)]
+mod test {
+    use crate::Blob;
+
+    #[test]
+    fn blob_conversion() {
+        let my_bytes: &[u8] = &[1u8, 2u8, 3u8];
+        let my_vec = vec![1u8, 2u8, 3u8];
+        let orig_vec = my_vec.clone();
+
+        let blob1: Blob = my_bytes.into();
+        let vec1: Vec<u8> = blob1.into();
+        assert_eq!(orig_vec, vec1);
+
+        let blob2: Blob = my_vec.into();
+        let vec2: Vec<u8> = blob2.into();
+        assert_eq!(orig_vec, vec2);
+    }
+}
+
 #[cfg(all(
     aws_sdk_unstable,
     feature = "serde-serialize",
