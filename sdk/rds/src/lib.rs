@@ -112,6 +112,8 @@ pub use error_meta::Error;
 #[doc(inline)]
 pub use config::Config;
 
+// include crate::auth_token;
+
 /// Client for calling Amazon Relational Database Service.
 /// ## Constructing a `Client`
 ///
@@ -214,6 +216,8 @@ pub mod primitives;
 pub mod types;
 
 mod auth_plugin;
+
+pub mod auth_token;
 
 pub(crate) mod protocol_serde;
 

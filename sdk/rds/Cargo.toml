@@ -22,6 +22,10 @@ version = "1.2.1"
 path = "../aws-runtime"
 version = "1.4.3"
 
+[dependencies.aws-sigv4]
+path = "../aws-sigv4"
+version = "1.2.5"
+
 [dependencies.aws-smithy-async]
 path = "../aws-smithy-async"
 version = "1.2.1"
@@ -71,12 +75,20 @@ version = "0.1.5"
 
 [dependencies.tracing]
 version = "0.1"
+
+[dependencies.url]
+version = "2.3.1"
 [dev-dependencies.aws-config]
 path = "../aws-config"
 version = "1.5.8"
 
 [dev-dependencies.aws-credential-types]
 path = "../aws-credential-types"
+features = ["test-util"]
+version = "1.2.1"
+
+[dev-dependencies.aws-smithy-async]
+path = "../aws-smithy-async"
 features = ["test-util"]
 version = "1.2.1"
 

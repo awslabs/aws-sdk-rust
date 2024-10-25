@@ -25,7 +25,7 @@ version = "1.4.3"
 
 [dependencies.aws-sigv4]
 path = "../aws-sigv4"
-version = "1.2.4"
+version = "1.2.5"
 
 [dependencies.aws-smithy-async]
 path = "../aws-smithy-async"
@@ -33,7 +33,7 @@ version = "1.2.1"
 
 [dependencies.aws-smithy-checksums]
 path = "../aws-smithy-checksums"
-version = "0.60.12"
+version = "0.60.13"
 
 [dependencies.aws-smithy-eventstream]
 path = "../aws-smithy-eventstream"

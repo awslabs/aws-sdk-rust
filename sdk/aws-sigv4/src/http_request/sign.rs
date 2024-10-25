@@ -93,6 +93,13 @@ pub enum SignableBody<'a> {
     StreamingUnsignedPayloadTrailer,
 }
 
+impl SignableBody<'_> {
+    /// Create a new empty signable body
+    pub fn empty() -> SignableBody<'static> {
+        SignableBody::Bytes(&[])
+    }
+}
+
 /// Instructions for applying a signature to an HTTP request.
 #[derive(Debug)]
 pub struct SigningInstructions {
