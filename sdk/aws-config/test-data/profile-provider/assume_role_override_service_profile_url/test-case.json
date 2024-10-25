@@ -1,0 +1,12 @@
+{
+  "name": "assume-role-override-service-profile-url",
+  "docs": "override endpoint_url via services section",
+  "result": {
+    "Ok": {
+      "access_key_id": "ASIARTESTID",
+      "secret_access_key": "TESTSECRETKEY",
+      "session_token": "TESTSESSIONTOKEN",
+      "expiry": 1628193482
+    }
+  }
+}

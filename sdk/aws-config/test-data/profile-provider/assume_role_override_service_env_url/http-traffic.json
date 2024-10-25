@@ -1,0 +1,107 @@
+{
+  "events": [
+    {
+      "connection_id": 0,
+      "action": {
+        "Request": {
+          "request": {
+            "uri": "http://aws.sts-env-override",
+            "headers": {
+              "content-type": [
+                "application/x-www-form-urlencoded"
+              ],
+              "authorization": [
+                "AWS4-HMAC-SHA256 Credential=AKIAFAKE/20210810/us-east-1/sts/aws4_request, SignedHeaders=content-length;content-type;host;x-amz-date;x-amz-user-agent, Signature=cd5cb2aa1d20717ca17692bcbda711797ae9eb8bb1130690b021b3952b7ae56e"
+              ],
+              "user-agent": [
+                "aws-sdk-rust/0.1.0 os/macos lang/rust/1.55.0-nightly"
+              ],
+              "content-length": [
+                "146"
+              ],
+              "x-amz-date": [
+                "20210810T003833Z"
+              ],
+              "host": [
+                "aws.sts-env-override"
+              ],
+              "x-amz-user-agent": [
+                "aws-sdk-rust/0.1.0 api/sts/0.0.14-alpha os/macos lang/rust/1.55.0-nightly"
+              ]
+            },
+            "method": "POST"
+          }
+        }
+      }
+    },
+    {
+      "connection_id": 0,
+      "action": {
+        "Data": {
+          "data": {
+            "Utf8": "Action=AssumeRole&Version=2011-06-15&RoleArn=arn%3Aaws%3Aiam%3A%3A123456789%3Arole%2Fintegration-test&RoleSessionName=assume-role-provider-session"
+          },
+          "direction": "Request"
+        }
+      }
+    },
+    {
+      "connection_id": 0,
+      "action": {
+        "Eof": {
+          "ok": true,
+          "direction": "Request"
+        }
+      }
+    },
+    {
+      "connection_id": 0,
+      "action": {
+        "Response": {
+          "response": {
+            "Ok": {
+              "status": 200,
+              "version": "HTTP/1.1",
+              "headers": {
+                "date": [
+                  "Thu, 05 Aug 2021 18:58:02 GMT"
+                ],
+                "content-length": [
+                  "1491"
+                ],
+                "content-type": [
+                  "text/xml"
+                ],
+                "x-amzn-requestid": [
+                  "c2e971c2-702d-4124-9b1f-1670febbea18"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "connection_id": 0,
+      "action": {
+        "Data": {
+          "data": {
+            "Utf8": "<AssumeRoleResponse xmlns=\"https://sts.amazonaws.com/doc/2011-06-15/\">\n  <AssumeRoleResult>\n    <AssumedRoleUser>\n      <AssumedRoleId>AROARABCDEFGHIJKLMNOP:assume-role-provider-session</AssumedRoleId>\n      <Arn>arn:aws:sts::123456789012:assumed-role/integration-test/assume-role-provider-session</Arn>\n    </AssumedRoleUser>\n    <Credentials>\n      <AccessKeyId>ASIARTESTID</AccessKeyId>\n      <SecretAccessKey>TESTSECRETKEY</SecretAccessKey>\n      <SessionToken>TESTSESSIONTOKEN</SessionToken>\n      <Expiration>2021-08-05T19:58:02Z</Expiration>\n    </Credentials>\n  </AssumeRoleResult>\n  <ResponseMetadata>\n    <RequestId>c2e971c2-702d-4124-9b1f-1670febbea18</RequestId>\n  </ResponseMetadata>\n</AssumeRoleResponse>\n"
+          },
+          "direction": "Response"
+        }
+      }
+    },
+    {
+      "connection_id": 0,
+      "action": {
+        "Eof": {
+          "ok": true,
+          "direction": "Response"
+        }
+      }
+    }
+  ],
+  "docs": "standard request / response with STS",
+  "version": "V0"
+}

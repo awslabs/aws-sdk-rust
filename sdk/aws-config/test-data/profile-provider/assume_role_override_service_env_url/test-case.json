@@ -1,0 +1,12 @@
+{
+  "name": "assume-role-override-service-env-url",
+  "docs": "override AWS_ENDPOINT_URL_STS via environment",
+  "result": {
+    "Ok": {
+      "access_key_id": "ASIARTESTID",
+      "secret_access_key": "TESTSECRETKEY",
+      "session_token": "TESTSESSIONTOKEN",
+      "expiry": 1628193482
+    }
+  }
+}

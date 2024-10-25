@@ -33,7 +33,6 @@ use aws_credential_types::{
     Credentials,
 };
 use aws_smithy_types::error::display::DisplayErrorContext;
-use aws_types::SdkConfig;
 use std::borrow::Cow;
 use std::collections::HashMap;
 use std::error::Error;
@@ -142,7 +141,6 @@ pub struct ProfileFileCredentialsProvider {
 #[derive(Debug)]
 struct Config {
     factory: exec::named::NamedProviderFactory,
-    sdk_config: SdkConfig,
     provider_config: ProviderConfig,
 }
 
@@ -493,7 +491,6 @@ impl Builder {
         ProfileFileCredentialsProvider {
             config: Arc::new(Config {
                 factory,
-                sdk_config: conf.client_config(),
                 provider_config: conf,
             }),
             inner_provider: ErrorTakingOnceCell::new(),
@@ -542,9 +539,13 @@ impl ChainProvider {
                     return Err(CredentialsError::provider_error(e));
                 }
             };
+
+            // we want to create `SdkConfig` _after_ we have resolved the profile or else
+            // we won't get things like `service_config()` set appropriately.
+            let sdk_config = config.provider_config.client_config();
             for provider in chain.chain().iter() {
                 let next_creds = provider
-                    .credentials(creds, &config.sdk_config)
+                    .credentials(creds, &sdk_config)
                     .instrument(tracing::debug_span!("load_assume_role", provider = ?provider))
                     .await;
                 match next_creds {
@@ -609,7 +610,14 @@ mod test {
     #[cfg(feature = "sso")]
     make_test!(sso_credentials);
     #[cfg(feature = "sso")]
+    make_test!(sso_override_global_env_url);
+    #[cfg(feature = "sso")]
     make_test!(sso_token);
+
+    make_test!(assume_role_override_global_env_url);
+    make_test!(assume_role_override_service_env_url);
+    make_test!(assume_role_override_global_profile_url);
+    make_test!(assume_role_override_service_profile_url);
 }
 
 #[cfg(all(test, feature = "sso"))]

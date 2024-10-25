@@ -1,0 +1,92 @@
+{
+  "docs": "test case using sso credentials",
+  "version": "V0",
+  "events": [
+    {
+      "connection_id": 0,
+      "action": {
+        "Request": {
+          "request": {
+            "uri": "http://aws.global-env-override/federation/credentials?role_name=SampleRole&account_id=012345678901",
+            "headers": {
+              "x-amz-sso_bearer_token": [
+                "secret-access-token"
+              ],
+              "host": [
+                "aws.global-env-override"
+              ]
+            },
+            "method": "GET"
+          }
+        }
+      }
+    },
+    {
+      "connection_id": 0,
+      "action": {
+        "Data": {
+          "data": {
+            "Utf8": ""
+          },
+          "direction": "Request"
+        }
+      }
+    },
+    {
+      "connection_id": 0,
+      "action": {
+        "Eof": {
+          "ok": true,
+          "direction": "Request"
+        }
+      }
+    },
+    {
+      "connection_id": 0,
+      "action": {
+        "Response": {
+          "response": {
+            "Ok": {
+              "status": 200,
+              "version": "HTTP/1.1",
+              "headers": {
+                "date": [
+                  "Thu, 05 Aug 2021 18:58:02 GMT"
+                ],
+                "content-length": [
+                  "1491"
+                ],
+                "content-type": [
+                  "text/xml"
+                ],
+                "x-amzn-requestid": [
+                  "c2e971c2-702d-4124-9b1f-1670febbea18"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "connection_id": 0,
+      "action": {
+        "Data": {
+          "data": {
+            "Utf8": "{\"roleCredentials\":{\"accessKeyId\":\"ASIARTESTID\",\"secretAccessKey\":\"TESTSECRETKEY\",\"sessionToken\":\"TESTSESSIONTOKEN\",\"expiration\": 1651516560000}}"
+          },
+          "direction": "Response"
+        }
+      }
+    },
+    {
+      "connection_id": 0,
+      "action": {
+        "Eof": {
+          "ok": true,
+          "direction": "Response"
+        }
+      }
+    }
+  ]
+}

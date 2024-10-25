@@ -5,6 +5,7 @@
 
 //! Configuration Options for Credential Providers
 
+use crate::env_service_config::EnvServiceConfig;
 use crate::profile;
 #[allow(deprecated)]
 use crate::profile::profile_file::ProfileFiles;
@@ -196,13 +197,26 @@ impl ProviderConfig {
         Self::without_region().load_default_region().await
     }
 
+    /// Attempt to get a representation of `SdkConfig` from this `ProviderConfig`.
+    ///
+    ///
+    /// **WARN**: Some options (e.g. `service_config`) can only be set if the profile has been
+    /// parsed already (e.g. by calling [`ProviderConfig::profile()`]). This is an
+    /// imperfect mapping and should be used sparingly.
     pub(crate) fn client_config(&self) -> SdkConfig {
+        let profiles = self.parsed_profile.get().and_then(|v| v.as_ref().ok());
+        let service_config = EnvServiceConfig {
+            env: self.env(),
+            env_config_sections: profiles.cloned().unwrap_or_default(),
+        };
+
         let mut builder = SdkConfig::builder()
             .retry_config(RetryConfig::standard())
             .region(self.region())
             .time_source(self.time_source())
             .use_fips(self.use_fips().unwrap_or_default())
             .use_dual_stack(self.use_dual_stack().unwrap_or_default())
+            .service_config(service_config)
             .behavior_version(crate::BehaviorVersion::latest());
         builder.set_http_client(self.http_client.clone());
         builder.set_sleep_impl(self.sleep_impl.clone());

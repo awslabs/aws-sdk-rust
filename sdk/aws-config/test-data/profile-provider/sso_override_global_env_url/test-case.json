@@ -1,0 +1,12 @@
+{
+  "name": "sso_override_global_env_url",
+  "docs": "sso_credentials loads SSO credentials with global endpoint URL override from environment",
+  "result": {
+    "Ok": {
+      "access_key_id": "ASIARTESTID",
+      "secret_access_key": "TESTSECRETKEY",
+      "session_token": "TESTSESSIONTOKEN",
+      "expiry": 1651516560
+    }
+  }
+}
