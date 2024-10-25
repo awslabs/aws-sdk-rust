@@ -168,5 +168,11 @@ pub fn ser_start_build_input_input(
         crate::protocol_serde::shape_project_fleet::ser_project_fleet(&mut object_52, var_51)?;
         object_52.finish();
     }
+    if let Some(var_53) = &input.auto_retry_limit_override {
+        object.key("autoRetryLimitOverride").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_53).into()),
+        );
+    }
     Ok(())
 }

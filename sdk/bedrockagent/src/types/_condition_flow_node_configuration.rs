@@ -2,7 +2,7 @@
 
 /// <p>Defines a condition node in your flow. You can specify conditions that determine which node comes next in the flow. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/flows-nodes.html">Node types in Amazon Bedrock works</a> in the Amazon Bedrock User Guide.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConditionFlowNodeConfiguration {
     /// <p>An array of conditions. Each member contains the name of a condition and an expression that defines the condition.</p>
     pub conditions: ::std::vec::Vec<crate::types::FlowCondition>,
@@ -14,13 +14,6 @@ impl ConditionFlowNodeConfiguration {
         self.conditions.deref()
     }
 }
-impl ::std::fmt::Debug for ConditionFlowNodeConfiguration {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
-        let mut formatter = f.debug_struct("ConditionFlowNodeConfiguration");
-        formatter.field("conditions", &"*** Sensitive Data Redacted ***");
-        formatter.finish()
-    }
-}
 impl ConditionFlowNodeConfiguration {
     /// Creates a new builder-style object to manufacture [`ConditionFlowNodeConfiguration`](crate::types::ConditionFlowNodeConfiguration).
     pub fn builder() -> crate::types::builders::ConditionFlowNodeConfigurationBuilder {
@@ -29,7 +22,7 @@ impl ConditionFlowNodeConfiguration {
 }
 
 /// A builder for [`ConditionFlowNodeConfiguration`](crate::types::ConditionFlowNodeConfiguration).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct ConditionFlowNodeConfigurationBuilder {
     pub(crate) conditions: ::std::option::Option<::std::vec::Vec<crate::types::FlowCondition>>,
@@ -67,12 +60,5 @@ impl ConditionFlowNodeConfigurationBuilder {
                 )
             })?,
         })
-    }
-}
-impl ::std::fmt::Debug for ConditionFlowNodeConfigurationBuilder {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
-        let mut formatter = f.debug_struct("ConditionFlowNodeConfigurationBuilder");
-        formatter.field("conditions", &"*** Sensitive Data Redacted ***");
-        formatter.finish()
     }
 }

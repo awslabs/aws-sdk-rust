@@ -35,6 +35,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "errorMessage" => {
+                            builder = builder.set_error_message(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "webAppDnsDomain" => {
                             builder = builder.set_web_app_dns_domain(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

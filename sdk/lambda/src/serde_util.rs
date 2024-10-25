@@ -176,6 +176,16 @@ pub(crate) fn ephemeral_storage_correct_errors(
     builder
 }
 
+pub(crate) fn tags_error_correct_errors(mut builder: crate::types::builders::TagsErrorBuilder) -> crate::types::builders::TagsErrorBuilder {
+    if builder.error_code.is_none() {
+        builder.error_code = Some(Default::default())
+    }
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn allowed_publishers_correct_errors(
     mut builder: crate::types::builders::AllowedPublishersBuilder,
 ) -> crate::types::builders::AllowedPublishersBuilder {

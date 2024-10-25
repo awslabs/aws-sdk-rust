@@ -151,6 +151,8 @@ pub use crate::types::_build_batch_phase_type::BuildBatchPhaseType;
 
 pub use crate::types::_build::Build;
 
+pub use crate::types::_auto_retry_config::AutoRetryConfig;
+
 pub use crate::types::_debug_session::DebugSession;
 
 pub use crate::types::_exported_environment_variable::ExportedEnvironmentVariable;
@@ -226,6 +228,8 @@ mod _artifact_packaging;
 mod _artifacts_type;
 
 mod _auth_type;
+
+mod _auto_retry_config;
 
 mod _batch_report_mode_type;
 

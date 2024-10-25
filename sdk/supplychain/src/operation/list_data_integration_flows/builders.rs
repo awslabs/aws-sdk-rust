@@ -22,7 +22,7 @@ impl crate::operation::list_data_integration_flows::builders::ListDataIntegratio
 }
 /// Fluent builder constructing a request to `ListDataIntegrationFlows`.
 ///
-/// <p>Lists all the DataIntegrationFlows in a paginated way.</p>
+/// <p>Enables you to programmatically list all data pipelines for the provided Amazon Web Services Supply Chain instance.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListDataIntegrationFlowsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

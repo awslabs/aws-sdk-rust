@@ -179,6 +179,9 @@ where
                                     .transpose()?,
                             );
                         }
+                        "autoRetryConfig" => {
+                            builder = builder.set_auto_retry_config(crate::protocol_serde::shape_auto_retry_config::de_auto_retry_config(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

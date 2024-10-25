@@ -67,6 +67,8 @@ pub struct UpdateProjectInput {
     /// <p>New builds are only started if the current number of builds is less than or equal to this limit. If the current build count meets this limit, new builds are throttled and are not run.</p>
     /// <p>To remove this limit, set this value to -1.</p>
     pub concurrent_build_limit: ::std::option::Option<i32>,
+    /// <p>The maximum number of additional automatic retries after a failed build. For example, if the auto-retry limit is set to 2, CodeBuild will call the <code>RetryBuild</code> API to automatically retry your build for up to 2 additional times.</p>
+    pub auto_retry_limit: ::std::option::Option<i32>,
 }
 impl UpdateProjectInput {
     /// <p>The name of the build project.</p><note>
@@ -185,6 +187,10 @@ impl UpdateProjectInput {
     pub fn concurrent_build_limit(&self) -> ::std::option::Option<i32> {
         self.concurrent_build_limit
     }
+    /// <p>The maximum number of additional automatic retries after a failed build. For example, if the auto-retry limit is set to 2, CodeBuild will call the <code>RetryBuild</code> API to automatically retry your build for up to 2 additional times.</p>
+    pub fn auto_retry_limit(&self) -> ::std::option::Option<i32> {
+        self.auto_retry_limit
+    }
 }
 impl UpdateProjectInput {
     /// Creates a new builder-style object to manufacture [`UpdateProjectInput`](crate::operation::update_project::UpdateProjectInput).
@@ -218,6 +224,7 @@ pub struct UpdateProjectInputBuilder {
     pub(crate) file_system_locations: ::std::option::Option<::std::vec::Vec<crate::types::ProjectFileSystemLocation>>,
     pub(crate) build_batch_config: ::std::option::Option<crate::types::ProjectBuildBatchConfig>,
     pub(crate) concurrent_build_limit: ::std::option::Option<i32>,
+    pub(crate) auto_retry_limit: ::std::option::Option<i32>,
 }
 impl UpdateProjectInputBuilder {
     /// <p>The name of the build project.</p><note>
@@ -611,6 +618,20 @@ impl UpdateProjectInputBuilder {
     pub fn get_concurrent_build_limit(&self) -> &::std::option::Option<i32> {
         &self.concurrent_build_limit
     }
+    /// <p>The maximum number of additional automatic retries after a failed build. For example, if the auto-retry limit is set to 2, CodeBuild will call the <code>RetryBuild</code> API to automatically retry your build for up to 2 additional times.</p>
+    pub fn auto_retry_limit(mut self, input: i32) -> Self {
+        self.auto_retry_limit = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The maximum number of additional automatic retries after a failed build. For example, if the auto-retry limit is set to 2, CodeBuild will call the <code>RetryBuild</code> API to automatically retry your build for up to 2 additional times.</p>
+    pub fn set_auto_retry_limit(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.auto_retry_limit = input;
+        self
+    }
+    /// <p>The maximum number of additional automatic retries after a failed build. For example, if the auto-retry limit is set to 2, CodeBuild will call the <code>RetryBuild</code> API to automatically retry your build for up to 2 additional times.</p>
+    pub fn get_auto_retry_limit(&self) -> &::std::option::Option<i32> {
+        &self.auto_retry_limit
+    }
     /// Consumes the builder and constructs a [`UpdateProjectInput`](crate::operation::update_project::UpdateProjectInput).
     pub fn build(
         self,
@@ -637,6 +658,7 @@ impl UpdateProjectInputBuilder {
             file_system_locations: self.file_system_locations,
             build_batch_config: self.build_batch_config,
             concurrent_build_limit: self.concurrent_build_limit,
+            auto_retry_limit: self.auto_retry_limit,
         })
     }
 }

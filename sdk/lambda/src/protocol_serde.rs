@@ -409,6 +409,8 @@ pub(crate) mod shape_source_access_configurations;
 
 pub(crate) mod shape_tags;
 
+pub(crate) mod shape_tags_error;
+
 pub(crate) mod shape_topics;
 
 pub(crate) mod shape_tracing_config;

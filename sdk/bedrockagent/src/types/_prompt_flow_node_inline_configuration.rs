@@ -12,6 +12,8 @@ pub struct PromptFlowNodeInlineConfiguration {
     pub model_id: ::std::string::String,
     /// <p>Contains inference configurations for the prompt.</p>
     pub inference_configuration: ::std::option::Option<crate::types::PromptInferenceConfiguration>,
+    /// <p>Contains model-specific inference configurations that aren't in the <code>inferenceConfiguration</code> field. To see model-specific inference parameters, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters.html">Inference request parameters and response fields for foundation models</a>.</p>
+    pub additional_model_request_fields: ::std::option::Option<::aws_smithy_types::Document>,
 }
 impl PromptFlowNodeInlineConfiguration {
     /// <p>The type of prompt template.</p>
@@ -31,6 +33,10 @@ impl PromptFlowNodeInlineConfiguration {
     pub fn inference_configuration(&self) -> ::std::option::Option<&crate::types::PromptInferenceConfiguration> {
         self.inference_configuration.as_ref()
     }
+    /// <p>Contains model-specific inference configurations that aren't in the <code>inferenceConfiguration</code> field. To see model-specific inference parameters, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters.html">Inference request parameters and response fields for foundation models</a>.</p>
+    pub fn additional_model_request_fields(&self) -> ::std::option::Option<&::aws_smithy_types::Document> {
+        self.additional_model_request_fields.as_ref()
+    }
 }
 impl PromptFlowNodeInlineConfiguration {
     /// Creates a new builder-style object to manufacture [`PromptFlowNodeInlineConfiguration`](crate::types::PromptFlowNodeInlineConfiguration).
@@ -47,6 +53,7 @@ pub struct PromptFlowNodeInlineConfigurationBuilder {
     pub(crate) template_configuration: ::std::option::Option<crate::types::PromptTemplateConfiguration>,
     pub(crate) model_id: ::std::option::Option<::std::string::String>,
     pub(crate) inference_configuration: ::std::option::Option<crate::types::PromptInferenceConfiguration>,
+    pub(crate) additional_model_request_fields: ::std::option::Option<::aws_smithy_types::Document>,
 }
 impl PromptFlowNodeInlineConfigurationBuilder {
     /// <p>The type of prompt template.</p>
@@ -108,6 +115,20 @@ impl PromptFlowNodeInlineConfigurationBuilder {
     pub fn get_inference_configuration(&self) -> &::std::option::Option<crate::types::PromptInferenceConfiguration> {
         &self.inference_configuration
     }
+    /// <p>Contains model-specific inference configurations that aren't in the <code>inferenceConfiguration</code> field. To see model-specific inference parameters, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters.html">Inference request parameters and response fields for foundation models</a>.</p>
+    pub fn additional_model_request_fields(mut self, input: ::aws_smithy_types::Document) -> Self {
+        self.additional_model_request_fields = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Contains model-specific inference configurations that aren't in the <code>inferenceConfiguration</code> field. To see model-specific inference parameters, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters.html">Inference request parameters and response fields for foundation models</a>.</p>
+    pub fn set_additional_model_request_fields(mut self, input: ::std::option::Option<::aws_smithy_types::Document>) -> Self {
+        self.additional_model_request_fields = input;
+        self
+    }
+    /// <p>Contains model-specific inference configurations that aren't in the <code>inferenceConfiguration</code> field. To see model-specific inference parameters, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters.html">Inference request parameters and response fields for foundation models</a>.</p>
+    pub fn get_additional_model_request_fields(&self) -> &::std::option::Option<::aws_smithy_types::Document> {
+        &self.additional_model_request_fields
+    }
     /// Consumes the builder and constructs a [`PromptFlowNodeInlineConfiguration`](crate::types::PromptFlowNodeInlineConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`template_type`](crate::types::builders::PromptFlowNodeInlineConfigurationBuilder::template_type)
@@ -128,6 +149,7 @@ impl PromptFlowNodeInlineConfigurationBuilder {
                 )
             })?,
             inference_configuration: self.inference_configuration,
+            additional_model_request_fields: self.additional_model_request_fields,
         })
     }
 }

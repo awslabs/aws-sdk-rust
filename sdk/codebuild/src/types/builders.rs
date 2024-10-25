@@ -83,6 +83,8 @@ pub use crate::types::_phase_context::PhaseContextBuilder;
 
 pub use crate::types::_build::BuildBuilder;
 
+pub use crate::types::_auto_retry_config::AutoRetryConfigBuilder;
+
 pub use crate::types::_debug_session::DebugSessionBuilder;
 
 pub use crate::types::_exported_environment_variable::ExportedEnvironmentVariableBuilder;

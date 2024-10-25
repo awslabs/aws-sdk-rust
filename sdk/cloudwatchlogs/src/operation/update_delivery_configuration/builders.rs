@@ -127,17 +127,17 @@ impl UpdateDeliveryConfigurationFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_record_fields`](Self::set_record_fields).
     ///
-    /// <p>The list of record fields to be delivered to the destination, in order. If the delivery’s log source has mandatory fields, they must be included in this list.</p>
+    /// <p>The list of record fields to be delivered to the destination, in order. If the delivery's log source has mandatory fields, they must be included in this list.</p>
     pub fn record_fields(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.record_fields(input.into());
         self
     }
-    /// <p>The list of record fields to be delivered to the destination, in order. If the delivery’s log source has mandatory fields, they must be included in this list.</p>
+    /// <p>The list of record fields to be delivered to the destination, in order. If the delivery's log source has mandatory fields, they must be included in this list.</p>
     pub fn set_record_fields(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_record_fields(input);
         self
     }
-    /// <p>The list of record fields to be delivered to the destination, in order. If the delivery’s log source has mandatory fields, they must be included in this list.</p>
+    /// <p>The list of record fields to be delivered to the destination, in order. If the delivery's log source has mandatory fields, they must be included in this list.</p>
     pub fn get_record_fields(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_record_fields()
     }
@@ -155,17 +155,17 @@ impl UpdateDeliveryConfigurationFluentBuilder {
     pub fn get_field_delimiter(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_field_delimiter()
     }
-    /// <p>This structure contains parameters that are valid only when the delivery’s delivery destination is an S3 bucket.</p>
+    /// <p>This structure contains parameters that are valid only when the delivery's delivery destination is an S3 bucket.</p>
     pub fn s3_delivery_configuration(mut self, input: crate::types::S3DeliveryConfiguration) -> Self {
         self.inner = self.inner.s3_delivery_configuration(input);
         self
     }
-    /// <p>This structure contains parameters that are valid only when the delivery’s delivery destination is an S3 bucket.</p>
+    /// <p>This structure contains parameters that are valid only when the delivery's delivery destination is an S3 bucket.</p>
     pub fn set_s3_delivery_configuration(mut self, input: ::std::option::Option<crate::types::S3DeliveryConfiguration>) -> Self {
         self.inner = self.inner.set_s3_delivery_configuration(input);
         self
     }
-    /// <p>This structure contains parameters that are valid only when the delivery’s delivery destination is an S3 bucket.</p>
+    /// <p>This structure contains parameters that are valid only when the delivery's delivery destination is an S3 bucket.</p>
     pub fn get_s3_delivery_configuration(&self) -> &::std::option::Option<crate::types::S3DeliveryConfiguration> {
         self.inner.get_s3_delivery_configuration()
     }

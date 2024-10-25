@@ -7,8 +7,10 @@ pub struct GetFunctionOutput {
     pub configuration: ::std::option::Option<crate::types::FunctionConfiguration>,
     /// <p>The deployment package of the function or version.</p>
     pub code: ::std::option::Option<crate::types::FunctionCodeLocation>,
-    /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/tagging.html">tags</a>.</p>
+    /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/tagging.html">tags</a>. Lambda returns tag data only if you have explicit allow permissions for <a href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/lambda/latest/api/API_ListTags.html">lambda:ListTags</a>.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>An object that contains details about an error related to retrieving tags.</p>
+    pub tags_error: ::std::option::Option<crate::types::TagsError>,
     /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html">reserved concurrency</a>.</p>
     pub concurrency: ::std::option::Option<crate::types::Concurrency>,
     _request_id: Option<String>,
@@ -22,9 +24,13 @@ impl GetFunctionOutput {
     pub fn code(&self) -> ::std::option::Option<&crate::types::FunctionCodeLocation> {
         self.code.as_ref()
     }
-    /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/tagging.html">tags</a>.</p>
+    /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/tagging.html">tags</a>. Lambda returns tag data only if you have explicit allow permissions for <a href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/lambda/latest/api/API_ListTags.html">lambda:ListTags</a>.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
+    }
+    /// <p>An object that contains details about an error related to retrieving tags.</p>
+    pub fn tags_error(&self) -> ::std::option::Option<&crate::types::TagsError> {
+        self.tags_error.as_ref()
     }
     /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html">reserved concurrency</a>.</p>
     pub fn concurrency(&self) -> ::std::option::Option<&crate::types::Concurrency> {
@@ -50,6 +56,7 @@ pub struct GetFunctionOutputBuilder {
     pub(crate) configuration: ::std::option::Option<crate::types::FunctionConfiguration>,
     pub(crate) code: ::std::option::Option<crate::types::FunctionCodeLocation>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags_error: ::std::option::Option<crate::types::TagsError>,
     pub(crate) concurrency: ::std::option::Option<crate::types::Concurrency>,
     _request_id: Option<String>,
 }
@@ -86,21 +93,35 @@ impl GetFunctionOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/tagging.html">tags</a>.</p>
+    /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/tagging.html">tags</a>. Lambda returns tag data only if you have explicit allow permissions for <a href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/lambda/latest/api/API_ListTags.html">lambda:ListTags</a>.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/tagging.html">tags</a>.</p>
+    /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/tagging.html">tags</a>. Lambda returns tag data only if you have explicit allow permissions for <a href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/lambda/latest/api/API_ListTags.html">lambda:ListTags</a>.</p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
-    /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/tagging.html">tags</a>.</p>
+    /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/tagging.html">tags</a>. Lambda returns tag data only if you have explicit allow permissions for <a href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/lambda/latest/api/API_ListTags.html">lambda:ListTags</a>.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
+    }
+    /// <p>An object that contains details about an error related to retrieving tags.</p>
+    pub fn tags_error(mut self, input: crate::types::TagsError) -> Self {
+        self.tags_error = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>An object that contains details about an error related to retrieving tags.</p>
+    pub fn set_tags_error(mut self, input: ::std::option::Option<crate::types::TagsError>) -> Self {
+        self.tags_error = input;
+        self
+    }
+    /// <p>An object that contains details about an error related to retrieving tags.</p>
+    pub fn get_tags_error(&self) -> &::std::option::Option<crate::types::TagsError> {
+        &self.tags_error
     }
     /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html">reserved concurrency</a>.</p>
     pub fn concurrency(mut self, input: crate::types::Concurrency) -> Self {
@@ -131,6 +152,7 @@ impl GetFunctionOutputBuilder {
             configuration: self.configuration,
             code: self.code,
             tags: self.tags,
+            tags_error: self.tags_error,
             concurrency: self.concurrency,
             _request_id: self._request_id,
         }

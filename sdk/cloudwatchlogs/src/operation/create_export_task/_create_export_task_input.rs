@@ -17,6 +17,7 @@ pub struct CreateExportTaskInput {
     /// <p>The name of S3 bucket for the exported log data. The bucket must be in the same Amazon Web Services Region.</p>
     pub destination: ::std::option::Option<::std::string::String>,
     /// <p>The prefix used as the start of the key for every object exported. If you don't specify a value, the default is <code>exportedlogs</code>.</p>
+    /// <p>The length of this parameter must comply with the S3 object key name length limits. The object key name is a sequence of Unicode characters with UTF-8 encoding, and can be up to 1,024 bytes.</p>
     pub destination_prefix: ::std::option::Option<::std::string::String>,
 }
 impl CreateExportTaskInput {
@@ -46,6 +47,7 @@ impl CreateExportTaskInput {
         self.destination.as_deref()
     }
     /// <p>The prefix used as the start of the key for every object exported. If you don't specify a value, the default is <code>exportedlogs</code>.</p>
+    /// <p>The length of this parameter must comply with the S3 object key name length limits. The object key name is a sequence of Unicode characters with UTF-8 encoding, and can be up to 1,024 bytes.</p>
     pub fn destination_prefix(&self) -> ::std::option::Option<&str> {
         self.destination_prefix.as_deref()
     }
@@ -162,16 +164,19 @@ impl CreateExportTaskInputBuilder {
         &self.destination
     }
     /// <p>The prefix used as the start of the key for every object exported. If you don't specify a value, the default is <code>exportedlogs</code>.</p>
+    /// <p>The length of this parameter must comply with the S3 object key name length limits. The object key name is a sequence of Unicode characters with UTF-8 encoding, and can be up to 1,024 bytes.</p>
     pub fn destination_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_prefix = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The prefix used as the start of the key for every object exported. If you don't specify a value, the default is <code>exportedlogs</code>.</p>
+    /// <p>The length of this parameter must comply with the S3 object key name length limits. The object key name is a sequence of Unicode characters with UTF-8 encoding, and can be up to 1,024 bytes.</p>
     pub fn set_destination_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination_prefix = input;
         self
     }
     /// <p>The prefix used as the start of the key for every object exported. If you don't specify a value, the default is <code>exportedlogs</code>.</p>
+    /// <p>The length of this parameter must comply with the S3 object key name length limits. The object key name is a sequence of Unicode characters with UTF-8 encoding, and can be up to 1,024 bytes.</p>
     pub fn get_destination_prefix(&self) -> &::std::option::Option<::std::string::String> {
         &self.destination_prefix
     }

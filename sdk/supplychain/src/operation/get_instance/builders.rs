@@ -22,7 +22,7 @@ impl crate::operation::get_instance::builders::GetInstanceInputBuilder {
 }
 /// Fluent builder constructing a request to `GetInstance`.
 ///
-/// <p>Get the AWS Supply Chain instance details.</p>
+/// <p>Enables you to programmatically retrieve the information related to an Amazon Web Services Supply Chain instance ID.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetInstanceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

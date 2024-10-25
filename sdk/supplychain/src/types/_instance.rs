@@ -10,6 +10,8 @@ pub struct Instance {
     pub aws_account_id: ::std::string::String,
     /// <p>The state of the instance.</p>
     pub state: crate::types::InstanceState,
+    /// <p>The Amazon Web Services Supply Chain instance error message. If the instance results in an unhealthy state, customers need to check the error message, delete the current instance, and recreate a new one based on the mitigation from the error message.</p>
+    pub error_message: ::std::option::Option<::std::string::String>,
     /// <p>The WebApp DNS domain name of the instance.</p>
     pub web_app_dns_domain: ::std::option::Option<::std::string::String>,
     /// <p>The instance creation timestamp.</p>
@@ -39,6 +41,10 @@ impl Instance {
     /// <p>The state of the instance.</p>
     pub fn state(&self) -> &crate::types::InstanceState {
         &self.state
+    }
+    /// <p>The Amazon Web Services Supply Chain instance error message. If the instance results in an unhealthy state, customers need to check the error message, delete the current instance, and recreate a new one based on the mitigation from the error message.</p>
+    pub fn error_message(&self) -> ::std::option::Option<&str> {
+        self.error_message.as_deref()
     }
     /// <p>The WebApp DNS domain name of the instance.</p>
     pub fn web_app_dns_domain(&self) -> ::std::option::Option<&str> {
@@ -83,6 +89,7 @@ pub struct InstanceBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) state: ::std::option::Option<crate::types::InstanceState>,
+    pub(crate) error_message: ::std::option::Option<::std::string::String>,
     pub(crate) web_app_dns_domain: ::std::option::Option<::std::string::String>,
     pub(crate) created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -136,6 +143,20 @@ impl InstanceBuilder {
     /// <p>The state of the instance.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::InstanceState> {
         &self.state
+    }
+    /// <p>The Amazon Web Services Supply Chain instance error message. If the instance results in an unhealthy state, customers need to check the error message, delete the current instance, and recreate a new one based on the mitigation from the error message.</p>
+    pub fn error_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.error_message = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Web Services Supply Chain instance error message. If the instance results in an unhealthy state, customers need to check the error message, delete the current instance, and recreate a new one based on the mitigation from the error message.</p>
+    pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.error_message = input;
+        self
+    }
+    /// <p>The Amazon Web Services Supply Chain instance error message. If the instance results in an unhealthy state, customers need to check the error message, delete the current instance, and recreate a new one based on the mitigation from the error message.</p>
+    pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_message
     }
     /// <p>The WebApp DNS domain name of the instance.</p>
     pub fn web_app_dns_domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -260,6 +281,7 @@ impl InstanceBuilder {
                     "state was not specified but it is required when building Instance",
                 )
             })?,
+            error_message: self.error_message,
             web_app_dns_domain: self.web_app_dns_domain,
             created_time: self.created_time,
             last_modified_time: self.last_modified_time,

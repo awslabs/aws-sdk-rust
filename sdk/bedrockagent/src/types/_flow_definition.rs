@@ -27,7 +27,7 @@ impl ::std::fmt::Debug for FlowDefinition {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("FlowDefinition");
         formatter.field("nodes", &"*** Sensitive Data Redacted ***");
-        formatter.field("connections", &self.connections);
+        formatter.field("connections", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
@@ -98,7 +98,7 @@ impl ::std::fmt::Debug for FlowDefinitionBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("FlowDefinitionBuilder");
         formatter.field("nodes", &"*** Sensitive Data Redacted ***");
-        formatter.field("connections", &self.connections);
+        formatter.field("connections", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }

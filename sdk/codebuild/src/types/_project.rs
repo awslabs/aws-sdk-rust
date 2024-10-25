@@ -93,6 +93,8 @@ pub struct Project {
     pub public_project_alias: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the IAM role that enables CodeBuild to access the CloudWatch Logs and Amazon S3 artifacts for the project's builds.</p>
     pub resource_access_role: ::std::option::Option<::std::string::String>,
+    /// <p>The maximum number of additional automatic retries after a failed build. For example, if the auto-retry limit is set to 2, CodeBuild will call the <code>RetryBuild</code> API to automatically retry your build for up to 2 additional times.</p>
+    pub auto_retry_limit: ::std::option::Option<i32>,
 }
 impl Project {
     /// <p>The name of the build project.</p>
@@ -250,6 +252,10 @@ impl Project {
     pub fn resource_access_role(&self) -> ::std::option::Option<&str> {
         self.resource_access_role.as_deref()
     }
+    /// <p>The maximum number of additional automatic retries after a failed build. For example, if the auto-retry limit is set to 2, CodeBuild will call the <code>RetryBuild</code> API to automatically retry your build for up to 2 additional times.</p>
+    pub fn auto_retry_limit(&self) -> ::std::option::Option<i32> {
+        self.auto_retry_limit
+    }
 }
 impl Project {
     /// Creates a new builder-style object to manufacture [`Project`](crate::types::Project).
@@ -290,6 +296,7 @@ pub struct ProjectBuilder {
     pub(crate) project_visibility: ::std::option::Option<crate::types::ProjectVisibilityType>,
     pub(crate) public_project_alias: ::std::option::Option<::std::string::String>,
     pub(crate) resource_access_role: ::std::option::Option<::std::string::String>,
+    pub(crate) auto_retry_limit: ::std::option::Option<i32>,
 }
 impl ProjectBuilder {
     /// <p>The name of the build project.</p>
@@ -813,6 +820,20 @@ impl ProjectBuilder {
     pub fn get_resource_access_role(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_access_role
     }
+    /// <p>The maximum number of additional automatic retries after a failed build. For example, if the auto-retry limit is set to 2, CodeBuild will call the <code>RetryBuild</code> API to automatically retry your build for up to 2 additional times.</p>
+    pub fn auto_retry_limit(mut self, input: i32) -> Self {
+        self.auto_retry_limit = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The maximum number of additional automatic retries after a failed build. For example, if the auto-retry limit is set to 2, CodeBuild will call the <code>RetryBuild</code> API to automatically retry your build for up to 2 additional times.</p>
+    pub fn set_auto_retry_limit(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.auto_retry_limit = input;
+        self
+    }
+    /// <p>The maximum number of additional automatic retries after a failed build. For example, if the auto-retry limit is set to 2, CodeBuild will call the <code>RetryBuild</code> API to automatically retry your build for up to 2 additional times.</p>
+    pub fn get_auto_retry_limit(&self) -> &::std::option::Option<i32> {
+        &self.auto_retry_limit
+    }
     /// Consumes the builder and constructs a [`Project`](crate::types::Project).
     pub fn build(self) -> crate::types::Project {
         crate::types::Project {
@@ -844,6 +865,7 @@ impl ProjectBuilder {
             project_visibility: self.project_visibility,
             public_project_alias: self.public_project_alias,
             resource_access_role: self.resource_access_role,
+            auto_retry_limit: self.auto_retry_limit,
         }
     }
 }

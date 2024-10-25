@@ -22,7 +22,7 @@ impl crate::operation::delete_data_integration_flow::builders::DeleteDataIntegra
 }
 /// Fluent builder constructing a request to `DeleteDataIntegrationFlow`.
 ///
-/// <p>Delete the DataIntegrationFlow.</p>
+/// <p>Enable you to programmatically delete an existing data pipeline for the provided Amazon Web Services Supply Chain instance and DataIntegrationFlow name.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteDataIntegrationFlowFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

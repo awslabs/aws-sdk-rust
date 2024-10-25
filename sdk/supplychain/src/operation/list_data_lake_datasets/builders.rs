@@ -22,7 +22,7 @@ impl crate::operation::list_data_lake_datasets::builders::ListDataLakeDatasetsIn
 }
 /// Fluent builder constructing a request to `ListDataLakeDatasets`.
 ///
-/// <p>List the data lake datasets for a specific instance and name space.</p>
+/// <p>Enables you to programmatically view the list of Amazon Web Services Supply Chain data lake datasets. Developers can view the datasets and the corresponding information such as namespace, schema, and so on for a given instance ID and namespace.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListDataLakeDatasetsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

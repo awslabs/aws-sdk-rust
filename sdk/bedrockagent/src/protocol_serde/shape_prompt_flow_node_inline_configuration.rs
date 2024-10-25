@@ -21,6 +21,9 @@ pub fn ser_prompt_flow_node_inline_configuration(
         crate::protocol_serde::shape_prompt_inference_configuration::ser_prompt_inference_configuration(&mut object_4, var_3)?;
         object_4.finish();
     }
+    if let Some(var_5) = &input.additional_model_request_fields {
+        object.key("additionalModelRequestFields").document(var_5);
+    }
     Ok(())
 }
 
@@ -62,6 +65,10 @@ where
                             builder = builder.set_inference_configuration(
                                 crate::protocol_serde::shape_prompt_inference_configuration::de_prompt_inference_configuration(tokens)?,
                             );
+                        }
+                        "additionalModelRequestFields" => {
+                            builder =
+                                builder.set_additional_model_request_fields(Some(::aws_smithy_json::deserialize::token::expect_document(tokens)?));
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -493,4 +493,18 @@ impl UpdateProjectFluentBuilder {
     pub fn get_concurrent_build_limit(&self) -> &::std::option::Option<i32> {
         self.inner.get_concurrent_build_limit()
     }
+    /// <p>The maximum number of additional automatic retries after a failed build. For example, if the auto-retry limit is set to 2, CodeBuild will call the <code>RetryBuild</code> API to automatically retry your build for up to 2 additional times.</p>
+    pub fn auto_retry_limit(mut self, input: i32) -> Self {
+        self.inner = self.inner.auto_retry_limit(input);
+        self
+    }
+    /// <p>The maximum number of additional automatic retries after a failed build. For example, if the auto-retry limit is set to 2, CodeBuild will call the <code>RetryBuild</code> API to automatically retry your build for up to 2 additional times.</p>
+    pub fn set_auto_retry_limit(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.inner = self.inner.set_auto_retry_limit(input);
+        self
+    }
+    /// <p>The maximum number of additional automatic retries after a failed build. For example, if the auto-retry limit is set to 2, CodeBuild will call the <code>RetryBuild</code> API to automatically retry your build for up to 2 additional times.</p>
+    pub fn get_auto_retry_limit(&self) -> &::std::option::Option<i32> {
+        self.inner.get_auto_retry_limit()
+    }
 }

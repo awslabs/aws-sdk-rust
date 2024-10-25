@@ -8,7 +8,8 @@ impl super::Client {
     /// - On success, responds with [`GetFunctionOutput`](crate::operation::get_function::GetFunctionOutput) with field(s):
     ///   - [`configuration(Option<FunctionConfiguration>)`](crate::operation::get_function::GetFunctionOutput::configuration): <p>The configuration of the function or version.</p>
     ///   - [`code(Option<FunctionCodeLocation>)`](crate::operation::get_function::GetFunctionOutput::code): <p>The deployment package of the function or version.</p>
-    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::get_function::GetFunctionOutput::tags): <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/tagging.html">tags</a>.</p>
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::get_function::GetFunctionOutput::tags): <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/tagging.html">tags</a>. Lambda returns tag data only if you have explicit allow permissions for <a href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/lambda/latest/api/API_ListTags.html">lambda:ListTags</a>.</p>
+    ///   - [`tags_error(Option<TagsError>)`](crate::operation::get_function::GetFunctionOutput::tags_error): <p>An object that contains details about an error related to retrieving tags.</p>
     ///   - [`concurrency(Option<Concurrency>)`](crate::operation::get_function::GetFunctionOutput::concurrency): <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html">reserved concurrency</a>.</p>
     /// - On failure, responds with [`SdkError<GetFunctionError>`](crate::operation::get_function::GetFunctionError)
     pub fn get_function(&self) -> crate::operation::get_function::builders::GetFunctionFluentBuilder {

@@ -113,6 +113,8 @@ pub struct Build {
     pub debug_session: ::std::option::Option<crate::types::DebugSession>,
     /// <p>The ARN of the batch build that this build is a member of, if applicable.</p>
     pub build_batch_arn: ::std::option::Option<::std::string::String>,
+    /// <p>Information about the auto-retry configuration for the build.</p>
+    pub auto_retry_config: ::std::option::Option<crate::types::AutoRetryConfig>,
 }
 impl Build {
     /// <p>The unique ID for the build.</p>
@@ -302,6 +304,10 @@ impl Build {
     pub fn build_batch_arn(&self) -> ::std::option::Option<&str> {
         self.build_batch_arn.as_deref()
     }
+    /// <p>Information about the auto-retry configuration for the build.</p>
+    pub fn auto_retry_config(&self) -> ::std::option::Option<&crate::types::AutoRetryConfig> {
+        self.auto_retry_config.as_ref()
+    }
 }
 impl Build {
     /// Creates a new builder-style object to manufacture [`Build`](crate::types::Build).
@@ -346,6 +352,7 @@ pub struct BuildBuilder {
     pub(crate) file_system_locations: ::std::option::Option<::std::vec::Vec<crate::types::ProjectFileSystemLocation>>,
     pub(crate) debug_session: ::std::option::Option<crate::types::DebugSession>,
     pub(crate) build_batch_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) auto_retry_config: ::std::option::Option<crate::types::AutoRetryConfig>,
 }
 impl BuildBuilder {
     /// <p>The unique ID for the build.</p>
@@ -976,6 +983,20 @@ impl BuildBuilder {
     pub fn get_build_batch_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.build_batch_arn
     }
+    /// <p>Information about the auto-retry configuration for the build.</p>
+    pub fn auto_retry_config(mut self, input: crate::types::AutoRetryConfig) -> Self {
+        self.auto_retry_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Information about the auto-retry configuration for the build.</p>
+    pub fn set_auto_retry_config(mut self, input: ::std::option::Option<crate::types::AutoRetryConfig>) -> Self {
+        self.auto_retry_config = input;
+        self
+    }
+    /// <p>Information about the auto-retry configuration for the build.</p>
+    pub fn get_auto_retry_config(&self) -> &::std::option::Option<crate::types::AutoRetryConfig> {
+        &self.auto_retry_config
+    }
     /// Consumes the builder and constructs a [`Build`](crate::types::Build).
     pub fn build(self) -> crate::types::Build {
         crate::types::Build {
@@ -1011,6 +1032,7 @@ impl BuildBuilder {
             file_system_locations: self.file_system_locations,
             debug_session: self.debug_session,
             build_batch_arn: self.build_batch_arn,
+            auto_retry_config: self.auto_retry_config,
         }
     }
 }

@@ -157,6 +157,8 @@ pub use crate::types::_invocation_type::InvocationType;
 
 pub use crate::types::_concurrency::Concurrency;
 
+pub use crate::types::_tags_error::TagsError;
+
 pub use crate::types::_function_code_location::FunctionCodeLocation;
 
 pub use crate::types::_account_usage::AccountUsage;
@@ -316,6 +318,8 @@ mod _state;
 mod _state_reason_code;
 
 mod _system_log_level;
+
+mod _tags_error;
 
 mod _throttle_reason;
 

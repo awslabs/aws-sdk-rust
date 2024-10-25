@@ -22,7 +22,7 @@ impl crate::operation::update_instance::builders::UpdateInstanceInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateInstance`.
 ///
-/// <p>Update the instance.</p>
+/// <p>Enables you to programmatically update an Amazon Web Services Supply Chain instance description by providing all the relevant information such as account ID, instance ID and so on without using the AWS console.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateInstanceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

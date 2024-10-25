@@ -22,7 +22,7 @@ impl crate::operation::get_data_integration_flow::builders::GetDataIntegrationFl
 }
 /// Fluent builder constructing a request to `GetDataIntegrationFlow`.
 ///
-/// <p>View the DataIntegrationFlow details.</p>
+/// <p>Enables you to programmatically view a specific data pipeline for the provided Amazon Web Services Supply Chain instance and DataIntegrationFlow name.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetDataIntegrationFlowFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

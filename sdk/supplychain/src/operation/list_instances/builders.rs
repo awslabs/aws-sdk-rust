@@ -22,7 +22,7 @@ impl crate::operation::list_instances::builders::ListInstancesInputBuilder {
 }
 /// Fluent builder constructing a request to `ListInstances`.
 ///
-/// <p>List all the AWS Supply Chain instances in a paginated way.</p>
+/// <p>List all Amazon Web Services Supply Chain instances for a specific account. Enables you to programmatically list all Amazon Web Services Supply Chain instances based on their account ID, instance name, and state of the instance (active or delete).</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListInstancesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

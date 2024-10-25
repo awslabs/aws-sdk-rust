@@ -3,7 +3,7 @@
 /// <p>This structure contains information about one <i>delivery</i> in your account.</p>
 /// <p>A delivery is a connection between a logical <i>delivery source</i> and a logical <i>delivery destination</i>.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_CreateDelivery.html">CreateDelivery</a>.</p>
-/// <p>You can't update an existing delivery. You can only create and delete deliveries.</p>
+/// <p>To update an existing delivery configuration, use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_UpdateDeliveryConfiguration.html">UpdateDeliveryConfiguration</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Delivery {

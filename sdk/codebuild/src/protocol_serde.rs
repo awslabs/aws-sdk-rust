@@ -339,6 +339,8 @@ pub(crate) mod shape_webhook;
 
 pub(crate) mod shape_webhook_filter;
 
+pub(crate) mod shape_auto_retry_config;
+
 pub(crate) mod shape_batch_restrictions;
 
 pub(crate) mod shape_build_artifacts;

@@ -22,7 +22,7 @@ impl crate::operation::create_data_lake_dataset::builders::CreateDataLakeDataset
 }
 /// Fluent builder constructing a request to `CreateDataLakeDataset`.
 ///
-/// <p>Create a data lake dataset.</p>
+/// <p>Enables you to programmatically create an Amazon Web Services Supply Chain data lake dataset. Developers can create the datasets using their pre-defined or custom schema for a given instance ID, namespace, and dataset name.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateDataLakeDatasetFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

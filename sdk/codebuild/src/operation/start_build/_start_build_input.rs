@@ -125,6 +125,8 @@ pub struct StartBuildInput {
     pub debug_session_enabled: ::std::option::Option<bool>,
     /// <p>A ProjectFleet object specified for this build that overrides the one defined in the build project.</p>
     pub fleet_override: ::std::option::Option<crate::types::ProjectFleet>,
+    /// <p>The maximum number of additional automatic retries after a failed build. For example, if the auto-retry limit is set to 2, CodeBuild will call the <code>RetryBuild</code> API to automatically retry your build for up to 2 additional times.</p>
+    pub auto_retry_limit_override: ::std::option::Option<i32>,
 }
 impl StartBuildInput {
     /// <p>The name of the CodeBuild build project to start running a build.</p>
@@ -321,6 +323,10 @@ impl StartBuildInput {
     pub fn fleet_override(&self) -> ::std::option::Option<&crate::types::ProjectFleet> {
         self.fleet_override.as_ref()
     }
+    /// <p>The maximum number of additional automatic retries after a failed build. For example, if the auto-retry limit is set to 2, CodeBuild will call the <code>RetryBuild</code> API to automatically retry your build for up to 2 additional times.</p>
+    pub fn auto_retry_limit_override(&self) -> ::std::option::Option<i32> {
+        self.auto_retry_limit_override
+    }
 }
 impl StartBuildInput {
     /// Creates a new builder-style object to manufacture [`StartBuildInput`](crate::operation::start_build::StartBuildInput).
@@ -365,6 +371,7 @@ pub struct StartBuildInputBuilder {
     pub(crate) image_pull_credentials_type_override: ::std::option::Option<crate::types::ImagePullCredentialsType>,
     pub(crate) debug_session_enabled: ::std::option::Option<bool>,
     pub(crate) fleet_override: ::std::option::Option<crate::types::ProjectFleet>,
+    pub(crate) auto_retry_limit_override: ::std::option::Option<i32>,
 }
 impl StartBuildInputBuilder {
     /// <p>The name of the CodeBuild build project to start running a build.</p>
@@ -1017,6 +1024,20 @@ impl StartBuildInputBuilder {
     pub fn get_fleet_override(&self) -> &::std::option::Option<crate::types::ProjectFleet> {
         &self.fleet_override
     }
+    /// <p>The maximum number of additional automatic retries after a failed build. For example, if the auto-retry limit is set to 2, CodeBuild will call the <code>RetryBuild</code> API to automatically retry your build for up to 2 additional times.</p>
+    pub fn auto_retry_limit_override(mut self, input: i32) -> Self {
+        self.auto_retry_limit_override = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The maximum number of additional automatic retries after a failed build. For example, if the auto-retry limit is set to 2, CodeBuild will call the <code>RetryBuild</code> API to automatically retry your build for up to 2 additional times.</p>
+    pub fn set_auto_retry_limit_override(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.auto_retry_limit_override = input;
+        self
+    }
+    /// <p>The maximum number of additional automatic retries after a failed build. For example, if the auto-retry limit is set to 2, CodeBuild will call the <code>RetryBuild</code> API to automatically retry your build for up to 2 additional times.</p>
+    pub fn get_auto_retry_limit_override(&self) -> &::std::option::Option<i32> {
+        &self.auto_retry_limit_override
+    }
     /// Consumes the builder and constructs a [`StartBuildInput`](crate::operation::start_build::StartBuildInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::start_build::StartBuildInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_build::StartBuildInput {
@@ -1052,6 +1073,7 @@ impl StartBuildInputBuilder {
             image_pull_credentials_type_override: self.image_pull_credentials_type_override,
             debug_session_enabled: self.debug_session_enabled,
             fleet_override: self.fleet_override,
+            auto_retry_limit_override: self.auto_retry_limit_override,
         })
     }
 }

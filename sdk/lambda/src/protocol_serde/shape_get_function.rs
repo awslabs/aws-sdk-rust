@@ -128,6 +128,9 @@ pub(crate) fn de_get_function(
                 "Tags" => {
                     builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens)?);
                 }
+                "TagsError" => {
+                    builder = builder.set_tags_error(crate::protocol_serde::shape_tags_error::de_tags_error(tokens)?);
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

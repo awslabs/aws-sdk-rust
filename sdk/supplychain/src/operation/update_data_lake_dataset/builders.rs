@@ -22,7 +22,7 @@ impl crate::operation::update_data_lake_dataset::builders::UpdateDataLakeDataset
 }
 /// Fluent builder constructing a request to `UpdateDataLakeDataset`.
 ///
-/// <p>Update a data lake dataset.</p>
+/// <p>Enables you to programmatically update an Amazon Web Services Supply Chain data lake dataset. Developers can update the description of a data lake dataset for a given instance ID, namespace, and dataset name.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateDataLakeDatasetFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

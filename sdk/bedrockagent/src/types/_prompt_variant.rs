@@ -16,6 +16,8 @@ pub struct PromptVariant {
     pub inference_configuration: ::std::option::Option<crate::types::PromptInferenceConfiguration>,
     /// <p>An array of objects, each containing a key-value pair that defines a metadata tag and value to attach to a prompt variant. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-management-create.html">Create a prompt using Prompt management</a>.</p>
     pub metadata: ::std::option::Option<::std::vec::Vec<crate::types::PromptMetadataEntry>>,
+    /// <p>Contains model-specific inference configurations that aren't in the <code>inferenceConfiguration</code> field. To see model-specific inference parameters, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters.html">Inference request parameters and response fields for foundation models</a>.</p>
+    pub additional_model_request_fields: ::std::option::Option<::aws_smithy_types::Document>,
 }
 impl PromptVariant {
     /// <p>The name of the prompt variant.</p>
@@ -45,6 +47,10 @@ impl PromptVariant {
     pub fn metadata(&self) -> &[crate::types::PromptMetadataEntry] {
         self.metadata.as_deref().unwrap_or_default()
     }
+    /// <p>Contains model-specific inference configurations that aren't in the <code>inferenceConfiguration</code> field. To see model-specific inference parameters, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters.html">Inference request parameters and response fields for foundation models</a>.</p>
+    pub fn additional_model_request_fields(&self) -> ::std::option::Option<&::aws_smithy_types::Document> {
+        self.additional_model_request_fields.as_ref()
+    }
 }
 impl ::std::fmt::Debug for PromptVariant {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -55,6 +61,7 @@ impl ::std::fmt::Debug for PromptVariant {
         formatter.field("model_id", &"*** Sensitive Data Redacted ***");
         formatter.field("inference_configuration", &"*** Sensitive Data Redacted ***");
         formatter.field("metadata", &"*** Sensitive Data Redacted ***");
+        formatter.field("additional_model_request_fields", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
@@ -75,6 +82,7 @@ pub struct PromptVariantBuilder {
     pub(crate) model_id: ::std::option::Option<::std::string::String>,
     pub(crate) inference_configuration: ::std::option::Option<crate::types::PromptInferenceConfiguration>,
     pub(crate) metadata: ::std::option::Option<::std::vec::Vec<crate::types::PromptMetadataEntry>>,
+    pub(crate) additional_model_request_fields: ::std::option::Option<::aws_smithy_types::Document>,
 }
 impl PromptVariantBuilder {
     /// <p>The name of the prompt variant.</p>
@@ -170,6 +178,20 @@ impl PromptVariantBuilder {
     pub fn get_metadata(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PromptMetadataEntry>> {
         &self.metadata
     }
+    /// <p>Contains model-specific inference configurations that aren't in the <code>inferenceConfiguration</code> field. To see model-specific inference parameters, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters.html">Inference request parameters and response fields for foundation models</a>.</p>
+    pub fn additional_model_request_fields(mut self, input: ::aws_smithy_types::Document) -> Self {
+        self.additional_model_request_fields = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Contains model-specific inference configurations that aren't in the <code>inferenceConfiguration</code> field. To see model-specific inference parameters, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters.html">Inference request parameters and response fields for foundation models</a>.</p>
+    pub fn set_additional_model_request_fields(mut self, input: ::std::option::Option<::aws_smithy_types::Document>) -> Self {
+        self.additional_model_request_fields = input;
+        self
+    }
+    /// <p>Contains model-specific inference configurations that aren't in the <code>inferenceConfiguration</code> field. To see model-specific inference parameters, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters.html">Inference request parameters and response fields for foundation models</a>.</p>
+    pub fn get_additional_model_request_fields(&self) -> &::std::option::Option<::aws_smithy_types::Document> {
+        &self.additional_model_request_fields
+    }
     /// Consumes the builder and constructs a [`PromptVariant`](crate::types::PromptVariant).
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::PromptVariantBuilder::name)
@@ -192,6 +214,7 @@ impl PromptVariantBuilder {
             model_id: self.model_id,
             inference_configuration: self.inference_configuration,
             metadata: self.metadata,
+            additional_model_request_fields: self.additional_model_request_fields,
         })
     }
 }
@@ -204,6 +227,7 @@ impl ::std::fmt::Debug for PromptVariantBuilder {
         formatter.field("model_id", &"*** Sensitive Data Redacted ***");
         formatter.field("inference_configuration", &"*** Sensitive Data Redacted ***");
         formatter.field("metadata", &"*** Sensitive Data Redacted ***");
+        formatter.field("additional_model_request_fields", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }

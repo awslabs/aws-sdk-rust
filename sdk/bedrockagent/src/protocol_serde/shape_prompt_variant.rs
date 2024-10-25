@@ -36,6 +36,9 @@ pub fn ser_prompt_variant(
         }
         array_7.finish();
     }
+    if let Some(var_10) = &input.additional_model_request_fields {
+        object.key("additionalModelRequestFields").document(var_10);
+    }
     Ok(())
 }
 
@@ -87,6 +90,10 @@ where
                         }
                         "metadata" => {
                             builder = builder.set_metadata(crate::protocol_serde::shape_prompt_metadata_list::de_prompt_metadata_list(tokens)?);
+                        }
+                        "additionalModelRequestFields" => {
+                            builder =
+                                builder.set_additional_model_request_fields(Some(::aws_smithy_json::deserialize::token::expect_document(tokens)?));
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

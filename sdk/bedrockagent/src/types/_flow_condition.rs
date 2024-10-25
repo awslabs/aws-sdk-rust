@@ -23,7 +23,7 @@ impl FlowCondition {
 impl ::std::fmt::Debug for FlowCondition {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("FlowCondition");
-        formatter.field("name", &"*** Sensitive Data Redacted ***");
+        formatter.field("name", &self.name);
         formatter.field("expression", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
@@ -90,7 +90,7 @@ impl FlowConditionBuilder {
 impl ::std::fmt::Debug for FlowConditionBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("FlowConditionBuilder");
-        formatter.field("name", &"*** Sensitive Data Redacted ***");
+        formatter.field("name", &self.name);
         formatter.field("expression", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }

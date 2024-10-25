@@ -97,6 +97,8 @@ pub use crate::types::_invoke_response_stream_update::InvokeResponseStreamUpdate
 
 pub use crate::types::_concurrency::ConcurrencyBuilder;
 
+pub use crate::types::_tags_error::TagsErrorBuilder;
+
 pub use crate::types::_function_code_location::FunctionCodeLocationBuilder;
 
 pub use crate::types::_account_usage::AccountUsageBuilder;

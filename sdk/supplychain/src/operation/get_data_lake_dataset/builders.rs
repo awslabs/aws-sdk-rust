@@ -22,7 +22,7 @@ impl crate::operation::get_data_lake_dataset::builders::GetDataLakeDatasetInputB
 }
 /// Fluent builder constructing a request to `GetDataLakeDataset`.
 ///
-/// <p>Get a data lake dataset.</p>
+/// <p>Enables you to programmatically view an Amazon Web Services Supply Chain data lake dataset. Developers can view the data lake dataset information such as namespace, schema, and so on for a given instance ID, namespace, and dataset name.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetDataLakeDatasetFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

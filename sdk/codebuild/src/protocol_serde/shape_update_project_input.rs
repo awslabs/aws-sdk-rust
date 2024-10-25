@@ -141,5 +141,11 @@ pub fn ser_update_project_input_input(
             ::aws_smithy_types::Number::NegInt((*var_43).into()),
         );
     }
+    if let Some(var_44) = &input.auto_retry_limit {
+        object.key("autoRetryLimit").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_44).into()),
+        );
+    }
     Ok(())
 }

@@ -22,7 +22,7 @@ impl crate::operation::delete_data_lake_dataset::builders::DeleteDataLakeDataset
 }
 /// Fluent builder constructing a request to `DeleteDataLakeDataset`.
 ///
-/// <p>Delete a data lake dataset.</p>
+/// <p>Enables you to programmatically delete an Amazon Web Services Supply Chain data lake dataset. Developers can delete the existing datasets for a given instance ID, namespace, and instance name.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteDataLakeDatasetFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -12,7 +12,7 @@ pub struct ConfigurationTemplate {
     pub resource_type: ::std::option::Option<::std::string::String>,
     /// <p>A string specifying which destination type this configuration template applies to.</p>
     pub delivery_destination_type: ::std::option::Option<crate::types::DeliveryDestinationType>,
-    /// <p>A mapping that displays the default value of each property within a delivery’s configuration, if it is not specified in the request.</p>
+    /// <p>A mapping that displays the default value of each property within a delivery's configuration, if it is not specified in the request.</p>
     pub default_delivery_config_values: ::std::option::Option<crate::types::ConfigurationTemplateDeliveryConfigValues>,
     /// <p>The allowed fields that a caller can use in the <code>recordFields</code> parameter of a <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_CreateDelivery.html">CreateDelivery</a> or <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_UpdateDeliveryConfiguration.html">UpdateDeliveryConfiguration</a> operation.</p>
     pub allowed_fields: ::std::option::Option<::std::vec::Vec<crate::types::RecordField>>,
@@ -42,7 +42,7 @@ impl ConfigurationTemplate {
     pub fn delivery_destination_type(&self) -> ::std::option::Option<&crate::types::DeliveryDestinationType> {
         self.delivery_destination_type.as_ref()
     }
-    /// <p>A mapping that displays the default value of each property within a delivery’s configuration, if it is not specified in the request.</p>
+    /// <p>A mapping that displays the default value of each property within a delivery's configuration, if it is not specified in the request.</p>
     pub fn default_delivery_config_values(&self) -> ::std::option::Option<&crate::types::ConfigurationTemplateDeliveryConfigValues> {
         self.default_delivery_config_values.as_ref()
     }
@@ -154,12 +154,12 @@ impl ConfigurationTemplateBuilder {
     pub fn get_delivery_destination_type(&self) -> &::std::option::Option<crate::types::DeliveryDestinationType> {
         &self.delivery_destination_type
     }
-    /// <p>A mapping that displays the default value of each property within a delivery’s configuration, if it is not specified in the request.</p>
+    /// <p>A mapping that displays the default value of each property within a delivery's configuration, if it is not specified in the request.</p>
     pub fn default_delivery_config_values(mut self, input: crate::types::ConfigurationTemplateDeliveryConfigValues) -> Self {
         self.default_delivery_config_values = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A mapping that displays the default value of each property within a delivery’s configuration, if it is not specified in the request.</p>
+    /// <p>A mapping that displays the default value of each property within a delivery's configuration, if it is not specified in the request.</p>
     pub fn set_default_delivery_config_values(
         mut self,
         input: ::std::option::Option<crate::types::ConfigurationTemplateDeliveryConfigValues>,
@@ -167,7 +167,7 @@ impl ConfigurationTemplateBuilder {
         self.default_delivery_config_values = input;
         self
     }
-    /// <p>A mapping that displays the default value of each property within a delivery’s configuration, if it is not specified in the request.</p>
+    /// <p>A mapping that displays the default value of each property within a delivery's configuration, if it is not specified in the request.</p>
     pub fn get_default_delivery_config_values(&self) -> &::std::option::Option<crate::types::ConfigurationTemplateDeliveryConfigValues> {
         &self.default_delivery_config_values
     }

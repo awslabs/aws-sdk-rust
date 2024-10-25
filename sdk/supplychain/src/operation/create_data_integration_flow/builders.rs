@@ -22,7 +22,7 @@ impl crate::operation::create_data_integration_flow::builders::CreateDataIntegra
 }
 /// Fluent builder constructing a request to `CreateDataIntegrationFlow`.
 ///
-/// <p>Create DataIntegrationFlow to map one or more different sources to one target using the SQL transformation query.</p>
+/// <p>Enables you to programmatically create a data pipeline to ingest data from source systems such as Amazon S3 buckets, to a predefined Amazon Web Services Supply Chain dataset (product, inbound_order) or a temporary dataset along with the data transformation query provided with the API.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateDataIntegrationFlowFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
