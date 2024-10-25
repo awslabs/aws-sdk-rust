@@ -58,7 +58,7 @@ version = "1.7.2"
 [dependencies.aws-smithy-runtime]
 features = ["client"]
 path = "../aws-smithy-runtime"
-version = "1.7.2"
+version = "1.7.3"
 
 [dependencies.aws-smithy-async]
 path = "../aws-smithy-async"
@@ -84,7 +84,7 @@ version = "1.2.1"
 [dev-dependencies.aws-smithy-runtime]
 path = "../aws-smithy-runtime"
 features = ["client", "test-util", "connector-hyper-0-14-x"]
-version = "1.7.2"
+version = "1.7.3"
 
 [dev-dependencies.tokio]
 version = "1"

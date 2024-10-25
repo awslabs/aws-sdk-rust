@@ -35,7 +35,7 @@ aws-sdk-dynamodb= { version = "1.51.0", path = "../../../sdk/dynamodb" }
 aws-sdk-rekognition= { version = "1.50.0", path = "../../../sdk/rekognition" }
 aws-sdk-s3= { version = "1.58.0", path = "../../../sdk/s3" }
 aws-sdk-sns= { version = "1.48.0", path = "../../../sdk/sns" }
-aws-smithy-runtime= { version = "1.7.2", path = "../../../sdk/aws-smithy-runtime" }
+aws-smithy-runtime= { version = "1.7.3", path = "../../../sdk/aws-smithy-runtime" }
 aws-smithy-types-convert= { version = "0.60.8", path = "../../../sdk/aws-smithy-types-convert", features = ["convert-chrono"] }
 
 [dependencies.aws_lambda_events]

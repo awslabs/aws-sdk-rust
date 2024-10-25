@@ -6,6 +6,8 @@
 #![cfg(all(feature = "client", feature = "test-util"))]
 
 use std::time::Duration;
+use tokio::sync::mpsc::channel;
+use tokio::sync::Barrier;
 
 #[macro_use]
 mod stalled_stream_common;
@@ -194,10 +196,66 @@ async fn user_downloads_data_too_slowly() {
     result.expect("response MUST NOT timeout");
 }
 
+/// Scenario: Derived from the reproduction steps in https://github.com/awslabs/aws-sdk-rust/issues/1202.
+/// Expected: MUST NOT timeout.
+#[tokio::test]
+async fn user_polls_pending_followed_by_data_for_every_bin_in_throughput_logs() {
+    let _logs = show_test_logs();
+
+    let (time, sleep) = tick_advance_time_and_sleep();
+    let (server, response_sender) = channel_server();
+    let op = operation(server, time.clone(), sleep);
+
+    let (tx_server, mut rx_server) = channel(1);
+    let (tx_client, rx_client) = channel(1);
+
+    let server = tokio::spawn(async move {
+        for _ in 1..100 {
+            // Block until a signal has been received
+            let _ = rx_server.recv().await;
+            if response_sender.send(NEAT_DATA).await.is_err() {
+                // The client has shut down due to a minimum throughput detection error
+                break;
+            }
+        }
+        drop(response_sender);
+    });
+
+    let _ticker = tokio::spawn({
+        async move {
+            // Each `Bin` has a time resolution of 100ms. In every iteration, the client will go first, yielding
+            // a `Poll::Pending` in the first half of the allotted time. The server will then take its turn in the
+            // second half to generate data, allowing the client to yield a `Poll::Ready` immediately after.
+            // This creates a consistent pattern in throughput logs: within each 100ms interval, a newly created `Bin`
+            // will be assigned a `BinLabel::Pending`, followed by an attempt to assign `BinLabel::TransferredBytes` to
+            // the same `Bin`.
+            loop {
+                tick!(time, Duration::from_millis(50));
+                // We don't `unwrap` here since it will eventually fail when the client shuts down due to the minimum
+                // throughput detection error.
+                let _ = tx_client.send(()).await;
+                tick!(time, Duration::from_millis(50));
+                // We don't `unwrap` here since it will eventually fail when the server exits due to the client shutting
+                // down due to a minimum throughput detection error.
+                let _ = tx_server.send(()).await;
+            }
+        }
+    });
+
+    let response_body = op.invoke(()).await.expect("initial success");
+    let result = tokio::spawn(consume_on_signal(rx_client, response_body));
+    server.await.unwrap();
+
+    result
+        .await
+        .expect("no panics")
+        .expect("response MUST NOT timeout");
+}
+
 use download_test_tools::*;
-use tokio::sync::Barrier;
 mod download_test_tools {
     use crate::stalled_stream_common::*;
+    use tokio::sync::mpsc::Receiver;
 
     fn response(body: SdkBody) -> HttpResponse {
         HttpResponse::try_from(
@@ -303,6 +361,23 @@ mod download_test_tools {
             } else {
                 info!("consumed bytes from the response body");
                 tick!(time, Duration::from_secs(10));
+            }
+        }
+        Ok(())
+    }
+
+    /// A client that allows us to control when data is consumed by sending a signal to `rx`.
+    pub async fn consume_on_signal(mut rx: Receiver<()>, body: SdkBody) -> Result<(), BoxError> {
+        // Wait to start polling until a signal has been received
+        let _ = rx.recv().await;
+        pin_mut!(body);
+        while let Some(result) = poll_fn(|cx| body.as_mut().poll_data(cx)).await {
+            if let Err(err) = result {
+                return Err(err);
+            } else {
+                info!("consumed bytes from the response body");
+                // Block until a signal has been received
+                let _ = rx.recv().await;
             }
         }
         Ok(())
