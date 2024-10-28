@@ -947,6 +947,127 @@ impl RestoreDBClusterToPointInTimeFluentBuilder {
     pub fn get_rds_custom_cluster_configuration(&self) -> &::std::option::Option<crate::types::RdsCustomClusterConfiguration> {
         self.inner.get_rds_custom_cluster_configuration()
     }
+    /// <p>The interval, in seconds, between points when Enhanced Monitoring metrics are collected for the DB cluster. To turn off collecting Enhanced Monitoring metrics, specify <code>0</code>.</p>
+    /// <p>If <code>MonitoringRoleArn</code> is specified, also set <code>MonitoringInterval</code> to a value other than <code>0</code>.</p>
+    /// <p>Valid Values: <code>0 | 1 | 5 | 10 | 15 | 30 | 60</code></p>
+    /// <p>Default: <code>0</code></p>
+    pub fn monitoring_interval(mut self, input: i32) -> Self {
+        self.inner = self.inner.monitoring_interval(input);
+        self
+    }
+    /// <p>The interval, in seconds, between points when Enhanced Monitoring metrics are collected for the DB cluster. To turn off collecting Enhanced Monitoring metrics, specify <code>0</code>.</p>
+    /// <p>If <code>MonitoringRoleArn</code> is specified, also set <code>MonitoringInterval</code> to a value other than <code>0</code>.</p>
+    /// <p>Valid Values: <code>0 | 1 | 5 | 10 | 15 | 30 | 60</code></p>
+    /// <p>Default: <code>0</code></p>
+    pub fn set_monitoring_interval(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.inner = self.inner.set_monitoring_interval(input);
+        self
+    }
+    /// <p>The interval, in seconds, between points when Enhanced Monitoring metrics are collected for the DB cluster. To turn off collecting Enhanced Monitoring metrics, specify <code>0</code>.</p>
+    /// <p>If <code>MonitoringRoleArn</code> is specified, also set <code>MonitoringInterval</code> to a value other than <code>0</code>.</p>
+    /// <p>Valid Values: <code>0 | 1 | 5 | 10 | 15 | 30 | 60</code></p>
+    /// <p>Default: <code>0</code></p>
+    pub fn get_monitoring_interval(&self) -> &::std::option::Option<i32> {
+        self.inner.get_monitoring_interval()
+    }
+    /// <p>The Amazon Resource Name (ARN) for the IAM role that permits RDS to send Enhanced Monitoring metrics to Amazon CloudWatch Logs. An example is <code>arn:aws:iam:123456789012:role/emaccess</code>.</p>
+    /// <p>If <code>MonitoringInterval</code> is set to a value other than <code>0</code>, supply a <code>MonitoringRoleArn</code> value.</p>
+    pub fn monitoring_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.monitoring_role_arn(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) for the IAM role that permits RDS to send Enhanced Monitoring metrics to Amazon CloudWatch Logs. An example is <code>arn:aws:iam:123456789012:role/emaccess</code>.</p>
+    /// <p>If <code>MonitoringInterval</code> is set to a value other than <code>0</code>, supply a <code>MonitoringRoleArn</code> value.</p>
+    pub fn set_monitoring_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_monitoring_role_arn(input);
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) for the IAM role that permits RDS to send Enhanced Monitoring metrics to Amazon CloudWatch Logs. An example is <code>arn:aws:iam:123456789012:role/emaccess</code>.</p>
+    /// <p>If <code>MonitoringInterval</code> is set to a value other than <code>0</code>, supply a <code>MonitoringRoleArn</code> value.</p>
+    pub fn get_monitoring_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_monitoring_role_arn()
+    }
+    /// <p>Specifies whether to turn on Performance Insights for the DB cluster.</p>
+    pub fn enable_performance_insights(mut self, input: bool) -> Self {
+        self.inner = self.inner.enable_performance_insights(input);
+        self
+    }
+    /// <p>Specifies whether to turn on Performance Insights for the DB cluster.</p>
+    pub fn set_enable_performance_insights(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_enable_performance_insights(input);
+        self
+    }
+    /// <p>Specifies whether to turn on Performance Insights for the DB cluster.</p>
+    pub fn get_enable_performance_insights(&self) -> &::std::option::Option<bool> {
+        self.inner.get_enable_performance_insights()
+    }
+    /// <p>The Amazon Web Services KMS key identifier for encryption of Performance Insights data.</p>
+    /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
+    /// <p>If you don't specify a value for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default KMS key. There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different default KMS key for each Amazon Web Services Region.</p>
+    pub fn performance_insights_kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.performance_insights_kms_key_id(input.into());
+        self
+    }
+    /// <p>The Amazon Web Services KMS key identifier for encryption of Performance Insights data.</p>
+    /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
+    /// <p>If you don't specify a value for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default KMS key. There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different default KMS key for each Amazon Web Services Region.</p>
+    pub fn set_performance_insights_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_performance_insights_kms_key_id(input);
+        self
+    }
+    /// <p>The Amazon Web Services KMS key identifier for encryption of Performance Insights data.</p>
+    /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
+    /// <p>If you don't specify a value for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default KMS key. There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different default KMS key for each Amazon Web Services Region.</p>
+    pub fn get_performance_insights_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_performance_insights_kms_key_id()
+    }
+    /// <p>The number of days to retain Performance Insights data.</p>
+    /// <p>Valid Values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>7</code></p></li>
+    /// <li>
+    /// <p><i>month</i> * 31, where <i>month</i> is a number of months from 1-23. Examples: <code>93</code> (3 months * 31), <code>341</code> (11 months * 31), <code>589</code> (19 months * 31)</p></li>
+    /// <li>
+    /// <p><code>731</code></p></li>
+    /// </ul>
+    /// <p>Default: <code>7</code> days</p>
+    /// <p>If you specify a retention period that isn't valid, such as <code>94</code>, Amazon RDS issues an error.</p>
+    pub fn performance_insights_retention_period(mut self, input: i32) -> Self {
+        self.inner = self.inner.performance_insights_retention_period(input);
+        self
+    }
+    /// <p>The number of days to retain Performance Insights data.</p>
+    /// <p>Valid Values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>7</code></p></li>
+    /// <li>
+    /// <p><i>month</i> * 31, where <i>month</i> is a number of months from 1-23. Examples: <code>93</code> (3 months * 31), <code>341</code> (11 months * 31), <code>589</code> (19 months * 31)</p></li>
+    /// <li>
+    /// <p><code>731</code></p></li>
+    /// </ul>
+    /// <p>Default: <code>7</code> days</p>
+    /// <p>If you specify a retention period that isn't valid, such as <code>94</code>, Amazon RDS issues an error.</p>
+    pub fn set_performance_insights_retention_period(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.inner = self.inner.set_performance_insights_retention_period(input);
+        self
+    }
+    /// <p>The number of days to retain Performance Insights data.</p>
+    /// <p>Valid Values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>7</code></p></li>
+    /// <li>
+    /// <p><i>month</i> * 31, where <i>month</i> is a number of months from 1-23. Examples: <code>93</code> (3 months * 31), <code>341</code> (11 months * 31), <code>589</code> (19 months * 31)</p></li>
+    /// <li>
+    /// <p><code>731</code></p></li>
+    /// </ul>
+    /// <p>Default: <code>7</code> days</p>
+    /// <p>If you specify a retention period that isn't valid, such as <code>94</code>, Amazon RDS issues an error.</p>
+    pub fn get_performance_insights_retention_period(&self) -> &::std::option::Option<i32> {
+        self.inner.get_performance_insights_retention_period()
+    }
     /// <p>The life cycle type for this DB cluster.</p><note>
     /// <p>By default, this value is set to <code>open-source-rds-extended-support</code>, which enrolls your DB cluster into Amazon RDS Extended Support. At the end of standard support, you can avoid charges for Extended Support by setting the value to <code>open-source-rds-extended-support-disabled</code>. In this case, RDS automatically upgrades your restored DB cluster to a higher engine version, if the major engine version is past its end of standard support date.</p>
     /// </note>

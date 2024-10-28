@@ -23,9 +23,13 @@ pub fn parse_http_error_metadata(
     crate::json_errors::parse_error_metadata(response_body, response_headers)
 }
 
+pub(crate) mod shape_cancel_harvest_job;
+
 pub(crate) mod shape_create_channel;
 
 pub(crate) mod shape_create_channel_group;
+
+pub(crate) mod shape_create_harvest_job;
 
 pub(crate) mod shape_create_origin_endpoint;
 
@@ -45,6 +49,8 @@ pub(crate) mod shape_get_channel_group;
 
 pub(crate) mod shape_get_channel_policy;
 
+pub(crate) mod shape_get_harvest_job;
+
 pub(crate) mod shape_get_origin_endpoint;
 
 pub(crate) mod shape_get_origin_endpoint_policy;
@@ -52,6 +58,8 @@ pub(crate) mod shape_get_origin_endpoint_policy;
 pub(crate) mod shape_list_channel_groups;
 
 pub(crate) mod shape_list_channels;
+
+pub(crate) mod shape_list_harvest_jobs;
 
 pub(crate) mod shape_list_origin_endpoints;
 
@@ -87,6 +95,8 @@ pub(crate) mod shape_create_channel_group_input;
 
 pub(crate) mod shape_create_channel_input;
 
+pub(crate) mod shape_create_harvest_job_input;
+
 pub(crate) mod shape_create_origin_endpoint_input;
 
 pub(crate) mod shape_internal_server_exception;
@@ -121,6 +131,8 @@ pub(crate) mod shape_create_hls_manifest_configuration;
 
 pub(crate) mod shape_create_low_latency_hls_manifest_configuration;
 
+pub(crate) mod shape_destination;
+
 pub(crate) mod shape_force_endpoint_error_configuration;
 
 pub(crate) mod shape_get_dash_manifests;
@@ -128,6 +140,12 @@ pub(crate) mod shape_get_dash_manifests;
 pub(crate) mod shape_get_hls_manifests;
 
 pub(crate) mod shape_get_low_latency_hls_manifests;
+
+pub(crate) mod shape_harvest_jobs_list;
+
+pub(crate) mod shape_harvested_manifests;
+
+pub(crate) mod shape_harvester_schedule_configuration;
 
 pub(crate) mod shape_ingest_endpoint_list;
 
@@ -155,9 +173,25 @@ pub(crate) mod shape_get_hls_manifest_configuration;
 
 pub(crate) mod shape_get_low_latency_hls_manifest_configuration;
 
+pub(crate) mod shape_harvest_job;
+
+pub(crate) mod shape_harvested_dash_manifest;
+
+pub(crate) mod shape_harvested_dash_manifests_list;
+
+pub(crate) mod shape_harvested_hls_manifest;
+
+pub(crate) mod shape_harvested_hls_manifests_list;
+
+pub(crate) mod shape_harvested_low_latency_hls_manifest;
+
+pub(crate) mod shape_harvested_low_latency_hls_manifests_list;
+
 pub(crate) mod shape_ingest_endpoint;
 
 pub(crate) mod shape_origin_endpoint_list_configuration;
+
+pub(crate) mod shape_s3_destination_config;
 
 pub(crate) mod shape_scte;
 

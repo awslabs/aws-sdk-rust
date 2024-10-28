@@ -68,6 +68,33 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::cancel_harvest_job::CancelHarvestJobError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::cancel_harvest_job::CancelHarvestJobError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::cancel_harvest_job::CancelHarvestJobError> for Error {
+    fn from(err: crate::operation::cancel_harvest_job::CancelHarvestJobError) -> Self {
+        match err {
+            crate::operation::cancel_harvest_job::CancelHarvestJobError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::cancel_harvest_job::CancelHarvestJobError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::cancel_harvest_job::CancelHarvestJobError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::cancel_harvest_job::CancelHarvestJobError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::cancel_harvest_job::CancelHarvestJobError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::cancel_harvest_job::CancelHarvestJobError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::cancel_harvest_job::CancelHarvestJobError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_channel::CreateChannelError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -125,6 +152,36 @@ impl From<crate::operation::create_channel_group::CreateChannelGroupError> for E
             crate::operation::create_channel_group::CreateChannelGroupError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::create_channel_group::CreateChannelGroupError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::create_channel_group::CreateChannelGroupError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_harvest_job::CreateHarvestJobError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_harvest_job::CreateHarvestJobError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_harvest_job::CreateHarvestJobError> for Error {
+    fn from(err: crate::operation::create_harvest_job::CreateHarvestJobError) -> Self {
+        match err {
+            crate::operation::create_harvest_job::CreateHarvestJobError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_harvest_job::CreateHarvestJobError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_harvest_job::CreateHarvestJobError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::create_harvest_job::CreateHarvestJobError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::create_harvest_job::CreateHarvestJobError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::create_harvest_job::CreateHarvestJobError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_harvest_job::CreateHarvestJobError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_harvest_job::CreateHarvestJobError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -386,6 +443,32 @@ impl From<crate::operation::get_channel_policy::GetChannelPolicyError> for Error
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_harvest_job::GetHarvestJobError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_harvest_job::GetHarvestJobError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_harvest_job::GetHarvestJobError> for Error {
+    fn from(err: crate::operation::get_harvest_job::GetHarvestJobError) -> Self {
+        match err {
+            crate::operation::get_harvest_job::GetHarvestJobError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_harvest_job::GetHarvestJobError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_harvest_job::GetHarvestJobError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_harvest_job::GetHarvestJobError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_harvest_job::GetHarvestJobError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_harvest_job::GetHarvestJobError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_origin_endpoint::GetOriginEndpointError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -501,6 +584,32 @@ impl From<crate::operation::list_channels::ListChannelsError> for Error {
             crate::operation::list_channels::ListChannelsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_channels::ListChannelsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_channels::ListChannelsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_harvest_jobs::ListHarvestJobsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_harvest_jobs::ListHarvestJobsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_harvest_jobs::ListHarvestJobsError> for Error {
+    fn from(err: crate::operation::list_harvest_jobs::ListHarvestJobsError) -> Self {
+        match err {
+            crate::operation::list_harvest_jobs::ListHarvestJobsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_harvest_jobs::ListHarvestJobsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_harvest_jobs::ListHarvestJobsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_harvest_jobs::ListHarvestJobsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_harvest_jobs::ListHarvestJobsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_harvest_jobs::ListHarvestJobsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -755,6 +864,18 @@ impl From<crate::operation::update_origin_endpoint::UpdateOriginEndpointError> f
             crate::operation::update_origin_endpoint::UpdateOriginEndpointError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::update_origin_endpoint::UpdateOriginEndpointError::Unhandled(inner) => Error::Unhandled(inner),
         }
+    }
+}
+impl<O, E> ::std::convert::From<::aws_smithy_runtime_api::client::waiters::error::WaiterError<O, E>> for Error
+where
+    O: ::std::fmt::Debug + ::std::marker::Send + ::std::marker::Sync + 'static,
+    E: ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::waiters::error::WaiterError<O, E>) -> Self {
+        Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+            meta: ::std::default::Default::default(),
+            source: err.into(),
+        })
     }
 }
 impl ::std::error::Error for Error {

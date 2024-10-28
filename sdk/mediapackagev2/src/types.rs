@@ -7,6 +7,24 @@ pub use crate::types::_resource_type_not_found::ResourceTypeNotFound;
 
 pub use crate::types::_channel_group_list_configuration::ChannelGroupListConfiguration;
 
+pub use crate::types::_harvest_job_status::HarvestJobStatus;
+
+pub use crate::types::_harvester_schedule_configuration::HarvesterScheduleConfiguration;
+
+pub use crate::types::_harvested_manifests::HarvestedManifests;
+
+pub use crate::types::_harvested_low_latency_hls_manifest::HarvestedLowLatencyHlsManifest;
+
+pub use crate::types::_harvested_dash_manifest::HarvestedDashManifest;
+
+pub use crate::types::_harvested_hls_manifest::HarvestedHlsManifest;
+
+pub use crate::types::_destination::Destination;
+
+pub use crate::types::_s3_destination_config::S3DestinationConfig;
+
+pub use crate::types::_harvest_job::HarvestJob;
+
 pub use crate::types::_input_type::InputType;
 
 pub use crate::types::_ingest_endpoint::IngestEndpoint;
@@ -115,6 +133,8 @@ mod _dash_utc_timing;
 
 mod _dash_utc_timing_mode;
 
+mod _destination;
+
 mod _drm_system;
 
 mod _encryption;
@@ -135,6 +155,20 @@ mod _get_hls_manifest_configuration;
 
 mod _get_low_latency_hls_manifest_configuration;
 
+mod _harvest_job;
+
+mod _harvest_job_status;
+
+mod _harvested_dash_manifest;
+
+mod _harvested_hls_manifest;
+
+mod _harvested_low_latency_hls_manifest;
+
+mod _harvested_manifests;
+
+mod _harvester_schedule_configuration;
+
 mod _ingest_endpoint;
 
 mod _input_type;
@@ -152,6 +186,8 @@ mod _preset_speke20_audio;
 mod _preset_speke20_video;
 
 mod _resource_type_not_found;
+
+mod _s3_destination_config;
 
 mod _scte;
 

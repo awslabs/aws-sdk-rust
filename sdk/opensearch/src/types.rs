@@ -151,11 +151,17 @@ pub use crate::types::_cluster_config_status::ClusterConfigStatus;
 
 pub use crate::types::_cluster_config::ClusterConfig;
 
+pub use crate::types::_node_option::NodeOption;
+
+pub use crate::types::_node_config::NodeConfig;
+
+pub use crate::types::_open_search_partition_instance_type::OpenSearchPartitionInstanceType;
+
+pub use crate::types::_node_options_node_type::NodeOptionsNodeType;
+
 pub use crate::types::_cold_storage_options::ColdStorageOptions;
 
 pub use crate::types::_open_search_warm_partition_instance_type::OpenSearchWarmPartitionInstanceType;
-
-pub use crate::types::_open_search_partition_instance_type::OpenSearchPartitionInstanceType;
 
 pub use crate::types::_zone_awareness_config::ZoneAwarenessConfig;
 
@@ -512,6 +518,12 @@ mod _natural_language_query_generation_desired_state;
 mod _natural_language_query_generation_options_input;
 
 mod _natural_language_query_generation_options_output;
+
+mod _node_config;
+
+mod _node_option;
+
+mod _node_options_node_type;
 
 mod _node_status;
 

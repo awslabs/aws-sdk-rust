@@ -23,6 +23,13 @@
 ///     ValidationExceptionType::EncryptionContractWithoutAudioRenditionIncompatible => { /* ... */ },
 ///     ValidationExceptionType::EncryptionMethodContainerTypeMismatch => { /* ... */ },
 ///     ValidationExceptionType::EndTimeEarlierThanStartTime => { /* ... */ },
+///     ValidationExceptionType::HarvestedManifestHasStartEndFilterConfiguration => { /* ... */ },
+///     ValidationExceptionType::HarvestedManifestNotFoundOnEndpoint => { /* ... */ },
+///     ValidationExceptionType::HarvestJobCustomerEndpointReadAccessDenied => { /* ... */ },
+///     ValidationExceptionType::HarvestJobIneligibleForCancellation => { /* ... */ },
+///     ValidationExceptionType::HarvestJobS3DestinationMissingOrIncomplete => { /* ... */ },
+///     ValidationExceptionType::HarvestJobUnableToWriteToS3Destination => { /* ... */ },
+///     ValidationExceptionType::InvalidHarvestJobDuration => { /* ... */ },
 ///     ValidationExceptionType::InvalidManifestFilter => { /* ... */ },
 ///     ValidationExceptionType::InvalidPaginationMaxResults => { /* ... */ },
 ///     ValidationExceptionType::InvalidPaginationToken => { /* ... */ },
@@ -50,6 +57,7 @@
 ///     ValidationExceptionType::SourceDisruptionsEnabledIncorrectly => { /* ... */ },
 ///     ValidationExceptionType::StartTagTimeOffsetInvalid => { /* ... */ },
 ///     ValidationExceptionType::TimingSourceMissing => { /* ... */ },
+///     ValidationExceptionType::TooManyInProgressHarvestJobs => { /* ... */ },
 ///     ValidationExceptionType::TsContainerTypeWithDashManifest => { /* ... */ },
 ///     ValidationExceptionType::UpdatePeriodSmallerThanSegmentDuration => { /* ... */ },
 ///     ValidationExceptionType::UrlInvalid => { /* ... */ },
@@ -111,6 +119,20 @@ pub enum ValidationExceptionType {
     #[allow(missing_docs)] // documentation missing in model
     EndTimeEarlierThanStartTime,
     #[allow(missing_docs)] // documentation missing in model
+    HarvestedManifestHasStartEndFilterConfiguration,
+    #[allow(missing_docs)] // documentation missing in model
+    HarvestedManifestNotFoundOnEndpoint,
+    #[allow(missing_docs)] // documentation missing in model
+    HarvestJobCustomerEndpointReadAccessDenied,
+    #[allow(missing_docs)] // documentation missing in model
+    HarvestJobIneligibleForCancellation,
+    #[allow(missing_docs)] // documentation missing in model
+    HarvestJobS3DestinationMissingOrIncomplete,
+    #[allow(missing_docs)] // documentation missing in model
+    HarvestJobUnableToWriteToS3Destination,
+    #[allow(missing_docs)] // documentation missing in model
+    InvalidHarvestJobDuration,
+    #[allow(missing_docs)] // documentation missing in model
     InvalidManifestFilter,
     #[allow(missing_docs)] // documentation missing in model
     InvalidPaginationMaxResults,
@@ -165,6 +187,8 @@ pub enum ValidationExceptionType {
     #[allow(missing_docs)] // documentation missing in model
     TimingSourceMissing,
     #[allow(missing_docs)] // documentation missing in model
+    TooManyInProgressHarvestJobs,
+    #[allow(missing_docs)] // documentation missing in model
     TsContainerTypeWithDashManifest,
     #[allow(missing_docs)] // documentation missing in model
     UpdatePeriodSmallerThanSegmentDuration,
@@ -206,6 +230,13 @@ impl ::std::convert::From<&str> for ValidationExceptionType {
             }
             "ENCRYPTION_METHOD_CONTAINER_TYPE_MISMATCH" => ValidationExceptionType::EncryptionMethodContainerTypeMismatch,
             "END_TIME_EARLIER_THAN_START_TIME" => ValidationExceptionType::EndTimeEarlierThanStartTime,
+            "HARVESTED_MANIFEST_HAS_START_END_FILTER_CONFIGURATION" => ValidationExceptionType::HarvestedManifestHasStartEndFilterConfiguration,
+            "HARVESTED_MANIFEST_NOT_FOUND_ON_ENDPOINT" => ValidationExceptionType::HarvestedManifestNotFoundOnEndpoint,
+            "HARVEST_JOB_CUSTOMER_ENDPOINT_READ_ACCESS_DENIED" => ValidationExceptionType::HarvestJobCustomerEndpointReadAccessDenied,
+            "HARVEST_JOB_INELIGIBLE_FOR_CANCELLATION" => ValidationExceptionType::HarvestJobIneligibleForCancellation,
+            "HARVEST_JOB_S3_DESTINATION_MISSING_OR_INCOMPLETE" => ValidationExceptionType::HarvestJobS3DestinationMissingOrIncomplete,
+            "HARVEST_JOB_UNABLE_TO_WRITE_TO_S3_DESTINATION" => ValidationExceptionType::HarvestJobUnableToWriteToS3Destination,
+            "INVALID_HARVEST_JOB_DURATION" => ValidationExceptionType::InvalidHarvestJobDuration,
             "INVALID_MANIFEST_FILTER" => ValidationExceptionType::InvalidManifestFilter,
             "INVALID_PAGINATION_MAX_RESULTS" => ValidationExceptionType::InvalidPaginationMaxResults,
             "INVALID_PAGINATION_TOKEN" => ValidationExceptionType::InvalidPaginationToken,
@@ -235,6 +266,7 @@ impl ::std::convert::From<&str> for ValidationExceptionType {
             "SOURCE_DISRUPTIONS_ENABLED_INCORRECTLY" => ValidationExceptionType::SourceDisruptionsEnabledIncorrectly,
             "START_TAG_TIME_OFFSET_INVALID" => ValidationExceptionType::StartTagTimeOffsetInvalid,
             "TIMING_SOURCE_MISSING" => ValidationExceptionType::TimingSourceMissing,
+            "TOO_MANY_IN_PROGRESS_HARVEST_JOBS" => ValidationExceptionType::TooManyInProgressHarvestJobs,
             "TS_CONTAINER_TYPE_WITH_DASH_MANIFEST" => ValidationExceptionType::TsContainerTypeWithDashManifest,
             "UPDATE_PERIOD_SMALLER_THAN_SEGMENT_DURATION" => ValidationExceptionType::UpdatePeriodSmallerThanSegmentDuration,
             "URL_INVALID" => ValidationExceptionType::UrlInvalid,
@@ -274,6 +306,13 @@ impl ValidationExceptionType {
             }
             ValidationExceptionType::EncryptionMethodContainerTypeMismatch => "ENCRYPTION_METHOD_CONTAINER_TYPE_MISMATCH",
             ValidationExceptionType::EndTimeEarlierThanStartTime => "END_TIME_EARLIER_THAN_START_TIME",
+            ValidationExceptionType::HarvestedManifestHasStartEndFilterConfiguration => "HARVESTED_MANIFEST_HAS_START_END_FILTER_CONFIGURATION",
+            ValidationExceptionType::HarvestedManifestNotFoundOnEndpoint => "HARVESTED_MANIFEST_NOT_FOUND_ON_ENDPOINT",
+            ValidationExceptionType::HarvestJobCustomerEndpointReadAccessDenied => "HARVEST_JOB_CUSTOMER_ENDPOINT_READ_ACCESS_DENIED",
+            ValidationExceptionType::HarvestJobIneligibleForCancellation => "HARVEST_JOB_INELIGIBLE_FOR_CANCELLATION",
+            ValidationExceptionType::HarvestJobS3DestinationMissingOrIncomplete => "HARVEST_JOB_S3_DESTINATION_MISSING_OR_INCOMPLETE",
+            ValidationExceptionType::HarvestJobUnableToWriteToS3Destination => "HARVEST_JOB_UNABLE_TO_WRITE_TO_S3_DESTINATION",
+            ValidationExceptionType::InvalidHarvestJobDuration => "INVALID_HARVEST_JOB_DURATION",
             ValidationExceptionType::InvalidManifestFilter => "INVALID_MANIFEST_FILTER",
             ValidationExceptionType::InvalidPaginationMaxResults => "INVALID_PAGINATION_MAX_RESULTS",
             ValidationExceptionType::InvalidPaginationToken => "INVALID_PAGINATION_TOKEN",
@@ -303,6 +342,7 @@ impl ValidationExceptionType {
             ValidationExceptionType::SourceDisruptionsEnabledIncorrectly => "SOURCE_DISRUPTIONS_ENABLED_INCORRECTLY",
             ValidationExceptionType::StartTagTimeOffsetInvalid => "START_TAG_TIME_OFFSET_INVALID",
             ValidationExceptionType::TimingSourceMissing => "TIMING_SOURCE_MISSING",
+            ValidationExceptionType::TooManyInProgressHarvestJobs => "TOO_MANY_IN_PROGRESS_HARVEST_JOBS",
             ValidationExceptionType::TsContainerTypeWithDashManifest => "TS_CONTAINER_TYPE_WITH_DASH_MANIFEST",
             ValidationExceptionType::UpdatePeriodSmallerThanSegmentDuration => "UPDATE_PERIOD_SMALLER_THAN_SEGMENT_DURATION",
             ValidationExceptionType::UrlInvalid => "URL_INVALID",
@@ -331,6 +371,13 @@ impl ValidationExceptionType {
             "ENCRYPTION_CONTRACT_WITHOUT_AUDIO_RENDITION_INCOMPATIBLE",
             "ENCRYPTION_METHOD_CONTAINER_TYPE_MISMATCH",
             "END_TIME_EARLIER_THAN_START_TIME",
+            "HARVESTED_MANIFEST_HAS_START_END_FILTER_CONFIGURATION",
+            "HARVESTED_MANIFEST_NOT_FOUND_ON_ENDPOINT",
+            "HARVEST_JOB_CUSTOMER_ENDPOINT_READ_ACCESS_DENIED",
+            "HARVEST_JOB_INELIGIBLE_FOR_CANCELLATION",
+            "HARVEST_JOB_S3_DESTINATION_MISSING_OR_INCOMPLETE",
+            "HARVEST_JOB_UNABLE_TO_WRITE_TO_S3_DESTINATION",
+            "INVALID_HARVEST_JOB_DURATION",
             "INVALID_MANIFEST_FILTER",
             "INVALID_PAGINATION_MAX_RESULTS",
             "INVALID_PAGINATION_TOKEN",
@@ -358,6 +405,7 @@ impl ValidationExceptionType {
             "SOURCE_DISRUPTIONS_ENABLED_INCORRECTLY",
             "START_TAG_TIME_OFFSET_INVALID",
             "TIMING_SOURCE_MISSING",
+            "TOO_MANY_IN_PROGRESS_HARVEST_JOBS",
             "TS_CONTAINER_TYPE_WITH_DASH_MANIFEST",
             "UPDATE_PERIOD_SMALLER_THAN_SEGMENT_DURATION",
             "URL_INVALID",
@@ -405,6 +453,15 @@ impl ::std::fmt::Display for ValidationExceptionType {
             }
             ValidationExceptionType::EncryptionMethodContainerTypeMismatch => write!(f, "ENCRYPTION_METHOD_CONTAINER_TYPE_MISMATCH"),
             ValidationExceptionType::EndTimeEarlierThanStartTime => write!(f, "END_TIME_EARLIER_THAN_START_TIME"),
+            ValidationExceptionType::HarvestedManifestHasStartEndFilterConfiguration => {
+                write!(f, "HARVESTED_MANIFEST_HAS_START_END_FILTER_CONFIGURATION")
+            }
+            ValidationExceptionType::HarvestedManifestNotFoundOnEndpoint => write!(f, "HARVESTED_MANIFEST_NOT_FOUND_ON_ENDPOINT"),
+            ValidationExceptionType::HarvestJobCustomerEndpointReadAccessDenied => write!(f, "HARVEST_JOB_CUSTOMER_ENDPOINT_READ_ACCESS_DENIED"),
+            ValidationExceptionType::HarvestJobIneligibleForCancellation => write!(f, "HARVEST_JOB_INELIGIBLE_FOR_CANCELLATION"),
+            ValidationExceptionType::HarvestJobS3DestinationMissingOrIncomplete => write!(f, "HARVEST_JOB_S3_DESTINATION_MISSING_OR_INCOMPLETE"),
+            ValidationExceptionType::HarvestJobUnableToWriteToS3Destination => write!(f, "HARVEST_JOB_UNABLE_TO_WRITE_TO_S3_DESTINATION"),
+            ValidationExceptionType::InvalidHarvestJobDuration => write!(f, "INVALID_HARVEST_JOB_DURATION"),
             ValidationExceptionType::InvalidManifestFilter => write!(f, "INVALID_MANIFEST_FILTER"),
             ValidationExceptionType::InvalidPaginationMaxResults => write!(f, "INVALID_PAGINATION_MAX_RESULTS"),
             ValidationExceptionType::InvalidPaginationToken => write!(f, "INVALID_PAGINATION_TOKEN"),
@@ -436,6 +493,7 @@ impl ::std::fmt::Display for ValidationExceptionType {
             ValidationExceptionType::SourceDisruptionsEnabledIncorrectly => write!(f, "SOURCE_DISRUPTIONS_ENABLED_INCORRECTLY"),
             ValidationExceptionType::StartTagTimeOffsetInvalid => write!(f, "START_TAG_TIME_OFFSET_INVALID"),
             ValidationExceptionType::TimingSourceMissing => write!(f, "TIMING_SOURCE_MISSING"),
+            ValidationExceptionType::TooManyInProgressHarvestJobs => write!(f, "TOO_MANY_IN_PROGRESS_HARVEST_JOBS"),
             ValidationExceptionType::TsContainerTypeWithDashManifest => write!(f, "TS_CONTAINER_TYPE_WITH_DASH_MANIFEST"),
             ValidationExceptionType::UpdatePeriodSmallerThanSegmentDuration => write!(f, "UPDATE_PERIOD_SMALLER_THAN_SEGMENT_DURATION"),
             ValidationExceptionType::UrlInvalid => write!(f, "URL_INVALID"),

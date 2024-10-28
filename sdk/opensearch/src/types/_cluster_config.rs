@@ -28,6 +28,8 @@ pub struct ClusterConfig {
     pub cold_storage_options: ::std::option::Option<crate::types::ColdStorageOptions>,
     /// <p>A boolean that indicates whether a multi-AZ domain is turned on with a standby AZ. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains-multiaz.html">Configuring a multi-AZ domain in Amazon OpenSearch Service</a>.</p>
     pub multi_az_with_standby_enabled: ::std::option::Option<bool>,
+    /// <p>List of node options for the domain.</p>
+    pub node_options: ::std::option::Option<::std::vec::Vec<crate::types::NodeOption>>,
 }
 impl ClusterConfig {
     /// <p>Instance type of data nodes in the cluster.</p>
@@ -78,6 +80,12 @@ impl ClusterConfig {
     pub fn multi_az_with_standby_enabled(&self) -> ::std::option::Option<bool> {
         self.multi_az_with_standby_enabled
     }
+    /// <p>List of node options for the domain.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.node_options.is_none()`.
+    pub fn node_options(&self) -> &[crate::types::NodeOption] {
+        self.node_options.as_deref().unwrap_or_default()
+    }
 }
 impl ClusterConfig {
     /// Creates a new builder-style object to manufacture [`ClusterConfig`](crate::types::ClusterConfig).
@@ -102,6 +110,7 @@ pub struct ClusterConfigBuilder {
     pub(crate) warm_count: ::std::option::Option<i32>,
     pub(crate) cold_storage_options: ::std::option::Option<crate::types::ColdStorageOptions>,
     pub(crate) multi_az_with_standby_enabled: ::std::option::Option<bool>,
+    pub(crate) node_options: ::std::option::Option<::std::vec::Vec<crate::types::NodeOption>>,
 }
 impl ClusterConfigBuilder {
     /// <p>Instance type of data nodes in the cluster.</p>
@@ -272,6 +281,26 @@ impl ClusterConfigBuilder {
     pub fn get_multi_az_with_standby_enabled(&self) -> &::std::option::Option<bool> {
         &self.multi_az_with_standby_enabled
     }
+    /// Appends an item to `node_options`.
+    ///
+    /// To override the contents of this collection use [`set_node_options`](Self::set_node_options).
+    ///
+    /// <p>List of node options for the domain.</p>
+    pub fn node_options(mut self, input: crate::types::NodeOption) -> Self {
+        let mut v = self.node_options.unwrap_or_default();
+        v.push(input);
+        self.node_options = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>List of node options for the domain.</p>
+    pub fn set_node_options(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NodeOption>>) -> Self {
+        self.node_options = input;
+        self
+    }
+    /// <p>List of node options for the domain.</p>
+    pub fn get_node_options(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NodeOption>> {
+        &self.node_options
+    }
     /// Consumes the builder and constructs a [`ClusterConfig`](crate::types::ClusterConfig).
     pub fn build(self) -> crate::types::ClusterConfig {
         crate::types::ClusterConfig {
@@ -287,6 +316,7 @@ impl ClusterConfigBuilder {
             warm_count: self.warm_count,
             cold_storage_options: self.cold_storage_options,
             multi_az_with_standby_enabled: self.multi_az_with_standby_enabled,
+            node_options: self.node_options,
         }
     }
 }

@@ -14,6 +14,7 @@
 /// match resourcetypenotfound {
 ///     ResourceTypeNotFound::Channel => { /* ... */ },
 ///     ResourceTypeNotFound::ChannelGroup => { /* ... */ },
+///     ResourceTypeNotFound::HarvestJob => { /* ... */ },
 ///     ResourceTypeNotFound::OriginEndpoint => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -47,6 +48,8 @@ pub enum ResourceTypeNotFound {
     #[allow(missing_docs)] // documentation missing in model
     ChannelGroup,
     #[allow(missing_docs)] // documentation missing in model
+    HarvestJob,
+    #[allow(missing_docs)] // documentation missing in model
     OriginEndpoint,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -57,6 +60,7 @@ impl ::std::convert::From<&str> for ResourceTypeNotFound {
         match s {
             "CHANNEL" => ResourceTypeNotFound::Channel,
             "CHANNEL_GROUP" => ResourceTypeNotFound::ChannelGroup,
+            "HARVEST_JOB" => ResourceTypeNotFound::HarvestJob,
             "ORIGIN_ENDPOINT" => ResourceTypeNotFound::OriginEndpoint,
             other => ResourceTypeNotFound::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -75,13 +79,14 @@ impl ResourceTypeNotFound {
         match self {
             ResourceTypeNotFound::Channel => "CHANNEL",
             ResourceTypeNotFound::ChannelGroup => "CHANNEL_GROUP",
+            ResourceTypeNotFound::HarvestJob => "HARVEST_JOB",
             ResourceTypeNotFound::OriginEndpoint => "ORIGIN_ENDPOINT",
             ResourceTypeNotFound::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CHANNEL", "CHANNEL_GROUP", "ORIGIN_ENDPOINT"]
+        &["CHANNEL", "CHANNEL_GROUP", "HARVEST_JOB", "ORIGIN_ENDPOINT"]
     }
 }
 impl ::std::convert::AsRef<str> for ResourceTypeNotFound {
@@ -106,6 +111,7 @@ impl ::std::fmt::Display for ResourceTypeNotFound {
         match self {
             ResourceTypeNotFound::Channel => write!(f, "CHANNEL"),
             ResourceTypeNotFound::ChannelGroup => write!(f, "CHANNEL_GROUP"),
+            ResourceTypeNotFound::HarvestJob => write!(f, "HARVEST_JOB"),
             ResourceTypeNotFound::OriginEndpoint => write!(f, "ORIGIN_ENDPOINT"),
             ResourceTypeNotFound::Unknown(value) => write!(f, "{}", value),
         }

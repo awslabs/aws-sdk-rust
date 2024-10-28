@@ -8,7 +8,9 @@ pub struct GatewayInfo {
     pub gateway_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub gateway_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The type of the gateway.</p>
+    /// <p>The type of the gateway.</p><important>
+    /// <p>Amazon FSx File Gateway is no longer available to new customers. Existing customers of FSx File Gateway can continue to use the service normally. For capabilities similar to FSx File Gateway, visit <a href="https://aws.amazon.com/blogs/storage/switch-your-file-share-access-from-amazon-fsx-file-gateway-to-amazon-fsx-for-windows-file-server/">this blog post</a>.</p>
+    /// </important>
     pub gateway_type: ::std::option::Option<::std::string::String>,
     /// <p>The state of the gateway.</p>
     /// <p>Valid Values: <code>DISABLED</code> | <code>ACTIVE</code></p>
@@ -39,7 +41,9 @@ impl GatewayInfo {
     pub fn gateway_arn(&self) -> ::std::option::Option<&str> {
         self.gateway_arn.as_deref()
     }
-    /// <p>The type of the gateway.</p>
+    /// <p>The type of the gateway.</p><important>
+    /// <p>Amazon FSx File Gateway is no longer available to new customers. Existing customers of FSx File Gateway can continue to use the service normally. For capabilities similar to FSx File Gateway, visit <a href="https://aws.amazon.com/blogs/storage/switch-your-file-share-access-from-amazon-fsx-file-gateway-to-amazon-fsx-for-windows-file-server/">this blog post</a>.</p>
+    /// </important>
     pub fn gateway_type(&self) -> ::std::option::Option<&str> {
         self.gateway_type.as_deref()
     }
@@ -131,17 +135,23 @@ impl GatewayInfoBuilder {
     pub fn get_gateway_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.gateway_arn
     }
-    /// <p>The type of the gateway.</p>
+    /// <p>The type of the gateway.</p><important>
+    /// <p>Amazon FSx File Gateway is no longer available to new customers. Existing customers of FSx File Gateway can continue to use the service normally. For capabilities similar to FSx File Gateway, visit <a href="https://aws.amazon.com/blogs/storage/switch-your-file-share-access-from-amazon-fsx-file-gateway-to-amazon-fsx-for-windows-file-server/">this blog post</a>.</p>
+    /// </important>
     pub fn gateway_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.gateway_type = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The type of the gateway.</p>
+    /// <p>The type of the gateway.</p><important>
+    /// <p>Amazon FSx File Gateway is no longer available to new customers. Existing customers of FSx File Gateway can continue to use the service normally. For capabilities similar to FSx File Gateway, visit <a href="https://aws.amazon.com/blogs/storage/switch-your-file-share-access-from-amazon-fsx-file-gateway-to-amazon-fsx-for-windows-file-server/">this blog post</a>.</p>
+    /// </important>
     pub fn set_gateway_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.gateway_type = input;
         self
     }
-    /// <p>The type of the gateway.</p>
+    /// <p>The type of the gateway.</p><important>
+    /// <p>Amazon FSx File Gateway is no longer available to new customers. Existing customers of FSx File Gateway can continue to use the service normally. For capabilities similar to FSx File Gateway, visit <a href="https://aws.amazon.com/blogs/storage/switch-your-file-share-access-from-amazon-fsx-file-gateway-to-amazon-fsx-for-windows-file-server/">this blog post</a>.</p>
+    /// </important>
     pub fn get_gateway_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.gateway_type
     }

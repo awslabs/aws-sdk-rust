@@ -314,7 +314,9 @@ pub struct ModifyDbClusterInput {
     /// <p>The Amazon Resource Name (ARN) of the recovery point in Amazon Web Services Backup.</p>
     pub aws_backup_recovery_point_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether to enable Aurora Limitless Database. You must enable Aurora Limitless Database to create a DB shard group.</p>
-    /// <p>Valid for: Aurora DB clusters only</p>
+    /// <p>Valid for: Aurora DB clusters only</p><note>
+    /// <p>This setting is no longer used. Instead use the <code>ClusterScalabilityType</code> setting when you create your Aurora Limitless Database DB cluster.</p>
+    /// </note>
     pub enable_limitless_database: ::std::option::Option<bool>,
     /// <p>The CA certificate identifier to use for the DB cluster's server certificate.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i>.</p>
@@ -720,7 +722,9 @@ impl ModifyDbClusterInput {
         self.aws_backup_recovery_point_arn.as_deref()
     }
     /// <p>Specifies whether to enable Aurora Limitless Database. You must enable Aurora Limitless Database to create a DB shard group.</p>
-    /// <p>Valid for: Aurora DB clusters only</p>
+    /// <p>Valid for: Aurora DB clusters only</p><note>
+    /// <p>This setting is no longer used. Instead use the <code>ClusterScalabilityType</code> setting when you create your Aurora Limitless Database DB cluster.</p>
+    /// </note>
     pub fn enable_limitless_database(&self) -> ::std::option::Option<bool> {
         self.enable_limitless_database
     }
@@ -2068,19 +2072,25 @@ impl ModifyDbClusterInputBuilder {
         &self.aws_backup_recovery_point_arn
     }
     /// <p>Specifies whether to enable Aurora Limitless Database. You must enable Aurora Limitless Database to create a DB shard group.</p>
-    /// <p>Valid for: Aurora DB clusters only</p>
+    /// <p>Valid for: Aurora DB clusters only</p><note>
+    /// <p>This setting is no longer used. Instead use the <code>ClusterScalabilityType</code> setting when you create your Aurora Limitless Database DB cluster.</p>
+    /// </note>
     pub fn enable_limitless_database(mut self, input: bool) -> Self {
         self.enable_limitless_database = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies whether to enable Aurora Limitless Database. You must enable Aurora Limitless Database to create a DB shard group.</p>
-    /// <p>Valid for: Aurora DB clusters only</p>
+    /// <p>Valid for: Aurora DB clusters only</p><note>
+    /// <p>This setting is no longer used. Instead use the <code>ClusterScalabilityType</code> setting when you create your Aurora Limitless Database DB cluster.</p>
+    /// </note>
     pub fn set_enable_limitless_database(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enable_limitless_database = input;
         self
     }
     /// <p>Specifies whether to enable Aurora Limitless Database. You must enable Aurora Limitless Database to create a DB shard group.</p>
-    /// <p>Valid for: Aurora DB clusters only</p>
+    /// <p>Valid for: Aurora DB clusters only</p><note>
+    /// <p>This setting is no longer used. Instead use the <code>ClusterScalabilityType</code> setting when you create your Aurora Limitless Database DB cluster.</p>
+    /// </note>
     pub fn get_enable_limitless_database(&self) -> &::std::option::Option<bool> {
         &self.enable_limitless_database
     }

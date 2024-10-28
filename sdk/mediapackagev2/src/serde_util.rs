@@ -41,6 +41,54 @@ pub(crate) fn create_channel_group_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn create_harvest_job_output_output_correct_errors(
+    mut builder: crate::operation::create_harvest_job::builders::CreateHarvestJobOutputBuilder,
+) -> crate::operation::create_harvest_job::builders::CreateHarvestJobOutputBuilder {
+    if builder.channel_group_name.is_none() {
+        builder.channel_group_name = Some(Default::default())
+    }
+    if builder.channel_name.is_none() {
+        builder.channel_name = Some(Default::default())
+    }
+    if builder.origin_endpoint_name.is_none() {
+        builder.origin_endpoint_name = Some(Default::default())
+    }
+    if builder.destination.is_none() {
+        builder.destination = {
+            let builder = crate::types::builders::DestinationBuilder::default();
+            Some(crate::serde_util::destination_correct_errors(builder).build())
+        }
+    }
+    if builder.harvest_job_name.is_none() {
+        builder.harvest_job_name = Some(Default::default())
+    }
+    if builder.harvested_manifests.is_none() {
+        builder.harvested_manifests = {
+            let builder = crate::types::builders::HarvestedManifestsBuilder::default();
+            Some(builder.build())
+        }
+    }
+    if builder.schedule_configuration.is_none() {
+        builder.schedule_configuration = {
+            let builder = crate::types::builders::HarvesterScheduleConfigurationBuilder::default();
+            crate::serde_util::harvester_schedule_configuration_correct_errors(builder).build().ok()
+        }
+    }
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.modified_at.is_none() {
+        builder.modified_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::HarvestJobStatus>().ok()
+    }
+    builder
+}
+
 pub(crate) fn create_origin_endpoint_output_output_correct_errors(
     mut builder: crate::operation::create_origin_endpoint::builders::CreateOriginEndpointOutputBuilder,
 ) -> crate::operation::create_origin_endpoint::builders::CreateOriginEndpointOutputBuilder {
@@ -127,6 +175,54 @@ pub(crate) fn get_channel_policy_output_output_correct_errors(
     }
     if builder.policy.is_none() {
         builder.policy = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn get_harvest_job_output_output_correct_errors(
+    mut builder: crate::operation::get_harvest_job::builders::GetHarvestJobOutputBuilder,
+) -> crate::operation::get_harvest_job::builders::GetHarvestJobOutputBuilder {
+    if builder.channel_group_name.is_none() {
+        builder.channel_group_name = Some(Default::default())
+    }
+    if builder.channel_name.is_none() {
+        builder.channel_name = Some(Default::default())
+    }
+    if builder.origin_endpoint_name.is_none() {
+        builder.origin_endpoint_name = Some(Default::default())
+    }
+    if builder.destination.is_none() {
+        builder.destination = {
+            let builder = crate::types::builders::DestinationBuilder::default();
+            Some(crate::serde_util::destination_correct_errors(builder).build())
+        }
+    }
+    if builder.harvest_job_name.is_none() {
+        builder.harvest_job_name = Some(Default::default())
+    }
+    if builder.harvested_manifests.is_none() {
+        builder.harvested_manifests = {
+            let builder = crate::types::builders::HarvestedManifestsBuilder::default();
+            Some(builder.build())
+        }
+    }
+    if builder.schedule_configuration.is_none() {
+        builder.schedule_configuration = {
+            let builder = crate::types::builders::HarvesterScheduleConfigurationBuilder::default();
+            crate::serde_util::harvester_schedule_configuration_correct_errors(builder).build().ok()
+        }
+    }
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.modified_at.is_none() {
+        builder.modified_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::HarvestJobStatus>().ok()
     }
     builder
 }
@@ -257,6 +353,40 @@ pub(crate) fn update_origin_endpoint_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn destination_correct_errors(mut builder: crate::types::builders::DestinationBuilder) -> crate::types::builders::DestinationBuilder {
+    if builder.s3_destination.is_none() {
+        builder.s3_destination = {
+            let builder = crate::types::builders::S3DestinationConfigBuilder::default();
+            crate::serde_util::s3_destination_config_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
+pub(crate) fn harvester_schedule_configuration_correct_errors(
+    mut builder: crate::types::builders::HarvesterScheduleConfigurationBuilder,
+) -> crate::types::builders::HarvesterScheduleConfigurationBuilder {
+    if builder.start_time.is_none() {
+        builder.start_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.end_time.is_none() {
+        builder.end_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn s3_destination_config_correct_errors(
+    mut builder: crate::types::builders::S3DestinationConfigBuilder,
+) -> crate::types::builders::S3DestinationConfigBuilder {
+    if builder.bucket_name.is_none() {
+        builder.bucket_name = Some(Default::default())
+    }
+    if builder.destination_path.is_none() {
+        builder.destination_path = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn channel_group_list_configuration_correct_errors(
     mut builder: crate::types::builders::ChannelGroupListConfigurationBuilder,
 ) -> crate::types::builders::ChannelGroupListConfigurationBuilder {
@@ -348,6 +478,52 @@ pub(crate) fn get_low_latency_hls_manifest_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn harvest_job_correct_errors(mut builder: crate::types::builders::HarvestJobBuilder) -> crate::types::builders::HarvestJobBuilder {
+    if builder.channel_group_name.is_none() {
+        builder.channel_group_name = Some(Default::default())
+    }
+    if builder.channel_name.is_none() {
+        builder.channel_name = Some(Default::default())
+    }
+    if builder.origin_endpoint_name.is_none() {
+        builder.origin_endpoint_name = Some(Default::default())
+    }
+    if builder.destination.is_none() {
+        builder.destination = {
+            let builder = crate::types::builders::DestinationBuilder::default();
+            Some(crate::serde_util::destination_correct_errors(builder).build())
+        }
+    }
+    if builder.harvest_job_name.is_none() {
+        builder.harvest_job_name = Some(Default::default())
+    }
+    if builder.harvested_manifests.is_none() {
+        builder.harvested_manifests = {
+            let builder = crate::types::builders::HarvestedManifestsBuilder::default();
+            Some(builder.build())
+        }
+    }
+    if builder.schedule_configuration.is_none() {
+        builder.schedule_configuration = {
+            let builder = crate::types::builders::HarvesterScheduleConfigurationBuilder::default();
+            crate::serde_util::harvester_schedule_configuration_correct_errors(builder).build().ok()
+        }
+    }
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.modified_at.is_none() {
+        builder.modified_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::HarvestJobStatus>().ok()
+    }
+    builder
+}
+
 pub(crate) fn origin_endpoint_list_configuration_correct_errors(
     mut builder: crate::types::builders::OriginEndpointListConfigurationBuilder,
 ) -> crate::types::builders::OriginEndpointListConfigurationBuilder {
@@ -365,6 +541,33 @@ pub(crate) fn origin_endpoint_list_configuration_correct_errors(
     }
     if builder.container_type.is_none() {
         builder.container_type = "no value was set".parse::<crate::types::ContainerType>().ok()
+    }
+    builder
+}
+
+pub(crate) fn harvested_dash_manifest_correct_errors(
+    mut builder: crate::types::builders::HarvestedDashManifestBuilder,
+) -> crate::types::builders::HarvestedDashManifestBuilder {
+    if builder.manifest_name.is_none() {
+        builder.manifest_name = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn harvested_hls_manifest_correct_errors(
+    mut builder: crate::types::builders::HarvestedHlsManifestBuilder,
+) -> crate::types::builders::HarvestedHlsManifestBuilder {
+    if builder.manifest_name.is_none() {
+        builder.manifest_name = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn harvested_low_latency_hls_manifest_correct_errors(
+    mut builder: crate::types::builders::HarvestedLowLatencyHlsManifestBuilder,
+) -> crate::types::builders::HarvestedLowLatencyHlsManifestBuilder {
+    if builder.manifest_name.is_none() {
+        builder.manifest_name = Some(Default::default())
     }
     builder
 }

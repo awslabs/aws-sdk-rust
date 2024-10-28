@@ -53,6 +53,7 @@ pub struct UpdateNfsFileShareInput {
     pub requester_pays: ::std::option::Option<bool>,
     /// <p>The name of the file share. Optional.</p><note>
     /// <p><code>FileShareName</code> must be set if an S3 prefix name is set in <code>LocationARN</code>, or if an access point or access point alias is used.</p>
+    /// <p>A valid NFS file share name can only contain the following characters: <code>a</code>-<code>z</code>, <code>A</code>-<code>Z</code>, <code>0</code>-<code>9</code>, <code>-</code>, <code>.</code>, and <code>_</code>.</p>
     /// </note>
     pub file_share_name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies refresh cache information for the file share.</p>
@@ -145,6 +146,7 @@ impl UpdateNfsFileShareInput {
     }
     /// <p>The name of the file share. Optional.</p><note>
     /// <p><code>FileShareName</code> must be set if an S3 prefix name is set in <code>LocationARN</code>, or if an access point or access point alias is used.</p>
+    /// <p>A valid NFS file share name can only contain the following characters: <code>a</code>-<code>z</code>, <code>A</code>-<code>Z</code>, <code>0</code>-<code>9</code>, <code>-</code>, <code>.</code>, and <code>_</code>.</p>
     /// </note>
     pub fn file_share_name(&self) -> ::std::option::Option<&str> {
         self.file_share_name.as_deref()
@@ -444,6 +446,7 @@ impl UpdateNfsFileShareInputBuilder {
     }
     /// <p>The name of the file share. Optional.</p><note>
     /// <p><code>FileShareName</code> must be set if an S3 prefix name is set in <code>LocationARN</code>, or if an access point or access point alias is used.</p>
+    /// <p>A valid NFS file share name can only contain the following characters: <code>a</code>-<code>z</code>, <code>A</code>-<code>Z</code>, <code>0</code>-<code>9</code>, <code>-</code>, <code>.</code>, and <code>_</code>.</p>
     /// </note>
     pub fn file_share_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_share_name = ::std::option::Option::Some(input.into());
@@ -451,6 +454,7 @@ impl UpdateNfsFileShareInputBuilder {
     }
     /// <p>The name of the file share. Optional.</p><note>
     /// <p><code>FileShareName</code> must be set if an S3 prefix name is set in <code>LocationARN</code>, or if an access point or access point alias is used.</p>
+    /// <p>A valid NFS file share name can only contain the following characters: <code>a</code>-<code>z</code>, <code>A</code>-<code>Z</code>, <code>0</code>-<code>9</code>, <code>-</code>, <code>.</code>, and <code>_</code>.</p>
     /// </note>
     pub fn set_file_share_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.file_share_name = input;
@@ -458,6 +462,7 @@ impl UpdateNfsFileShareInputBuilder {
     }
     /// <p>The name of the file share. Optional.</p><note>
     /// <p><code>FileShareName</code> must be set if an S3 prefix name is set in <code>LocationARN</code>, or if an access point or access point alias is used.</p>
+    /// <p>A valid NFS file share name can only contain the following characters: <code>a</code>-<code>z</code>, <code>A</code>-<code>Z</code>, <code>0</code>-<code>9</code>, <code>-</code>, <code>.</code>, and <code>_</code>.</p>
     /// </note>
     pub fn get_file_share_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.file_share_name

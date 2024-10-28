@@ -6,7 +6,20 @@
 pub struct PendingMaintenanceAction {
     /// <p>The type of pending maintenance action that is available for the resource.</p>
     /// <p>For more information about maintenance actions, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html">Maintaining a DB instance</a>.</p>
-    /// <p>Valid Values:<code> system-update | db-upgrade | hardware-maintenance | ca-certificate-rotation</code></p>
+    /// <p>Valid Values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ca-certificate-rotation</code></p></li>
+    /// <li>
+    /// <p><code>db-upgrade</code></p></li>
+    /// <li>
+    /// <p><code>hardware-maintenance</code></p></li>
+    /// <li>
+    /// <p><code>os-upgrade</code></p></li>
+    /// <li>
+    /// <p><code>system-update</code></p></li>
+    /// </ul>
+    /// <p>For more information about these actions, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_UpgradeDBInstance.Maintenance.html#maintenance-actions-aurora">Maintenance actions for Amazon Aurora</a> or <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#maintenance-actions-rds">Maintenance actions for Amazon RDS</a>.</p>
     pub action: ::std::option::Option<::std::string::String>,
     /// <p>The date of the maintenance window when the action is applied. The maintenance action is applied to the resource during its first maintenance window after this date.</p>
     pub auto_applied_after_date: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -23,7 +36,20 @@ pub struct PendingMaintenanceAction {
 impl PendingMaintenanceAction {
     /// <p>The type of pending maintenance action that is available for the resource.</p>
     /// <p>For more information about maintenance actions, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html">Maintaining a DB instance</a>.</p>
-    /// <p>Valid Values:<code> system-update | db-upgrade | hardware-maintenance | ca-certificate-rotation</code></p>
+    /// <p>Valid Values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ca-certificate-rotation</code></p></li>
+    /// <li>
+    /// <p><code>db-upgrade</code></p></li>
+    /// <li>
+    /// <p><code>hardware-maintenance</code></p></li>
+    /// <li>
+    /// <p><code>os-upgrade</code></p></li>
+    /// <li>
+    /// <p><code>system-update</code></p></li>
+    /// </ul>
+    /// <p>For more information about these actions, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_UpgradeDBInstance.Maintenance.html#maintenance-actions-aurora">Maintenance actions for Amazon Aurora</a> or <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#maintenance-actions-rds">Maintenance actions for Amazon RDS</a>.</p>
     pub fn action(&self) -> ::std::option::Option<&str> {
         self.action.as_deref()
     }
@@ -70,21 +96,60 @@ pub struct PendingMaintenanceActionBuilder {
 impl PendingMaintenanceActionBuilder {
     /// <p>The type of pending maintenance action that is available for the resource.</p>
     /// <p>For more information about maintenance actions, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html">Maintaining a DB instance</a>.</p>
-    /// <p>Valid Values:<code> system-update | db-upgrade | hardware-maintenance | ca-certificate-rotation</code></p>
+    /// <p>Valid Values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ca-certificate-rotation</code></p></li>
+    /// <li>
+    /// <p><code>db-upgrade</code></p></li>
+    /// <li>
+    /// <p><code>hardware-maintenance</code></p></li>
+    /// <li>
+    /// <p><code>os-upgrade</code></p></li>
+    /// <li>
+    /// <p><code>system-update</code></p></li>
+    /// </ul>
+    /// <p>For more information about these actions, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_UpgradeDBInstance.Maintenance.html#maintenance-actions-aurora">Maintenance actions for Amazon Aurora</a> or <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#maintenance-actions-rds">Maintenance actions for Amazon RDS</a>.</p>
     pub fn action(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.action = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The type of pending maintenance action that is available for the resource.</p>
     /// <p>For more information about maintenance actions, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html">Maintaining a DB instance</a>.</p>
-    /// <p>Valid Values:<code> system-update | db-upgrade | hardware-maintenance | ca-certificate-rotation</code></p>
+    /// <p>Valid Values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ca-certificate-rotation</code></p></li>
+    /// <li>
+    /// <p><code>db-upgrade</code></p></li>
+    /// <li>
+    /// <p><code>hardware-maintenance</code></p></li>
+    /// <li>
+    /// <p><code>os-upgrade</code></p></li>
+    /// <li>
+    /// <p><code>system-update</code></p></li>
+    /// </ul>
+    /// <p>For more information about these actions, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_UpgradeDBInstance.Maintenance.html#maintenance-actions-aurora">Maintenance actions for Amazon Aurora</a> or <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#maintenance-actions-rds">Maintenance actions for Amazon RDS</a>.</p>
     pub fn set_action(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.action = input;
         self
     }
     /// <p>The type of pending maintenance action that is available for the resource.</p>
     /// <p>For more information about maintenance actions, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html">Maintaining a DB instance</a>.</p>
-    /// <p>Valid Values:<code> system-update | db-upgrade | hardware-maintenance | ca-certificate-rotation</code></p>
+    /// <p>Valid Values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ca-certificate-rotation</code></p></li>
+    /// <li>
+    /// <p><code>db-upgrade</code></p></li>
+    /// <li>
+    /// <p><code>hardware-maintenance</code></p></li>
+    /// <li>
+    /// <p><code>os-upgrade</code></p></li>
+    /// <li>
+    /// <p><code>system-update</code></p></li>
+    /// </ul>
+    /// <p>For more information about these actions, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_UpgradeDBInstance.Maintenance.html#maintenance-actions-aurora">Maintenance actions for Amazon Aurora</a> or <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#maintenance-actions-rds">Maintenance actions for Amazon RDS</a>.</p>
     pub fn get_action(&self) -> &::std::option::Option<::std::string::String> {
         &self.action
     }

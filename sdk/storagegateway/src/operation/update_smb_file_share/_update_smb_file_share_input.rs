@@ -54,6 +54,7 @@ pub struct UpdateSmbFileShareInput {
     pub case_sensitivity: ::std::option::Option<crate::types::CaseSensitivity>,
     /// <p>The name of the file share. Optional.</p><note>
     /// <p><code>FileShareName</code> must be set if an S3 prefix name is set in <code>LocationARN</code>, or if an access point or access point alias is used.</p>
+    /// <p>A valid SMB file share name cannot contain the following characters: <code>\[</code>,<code>\]</code>,<code>#</code>,<code>;</code>,<code>&lt;</code>,<code>&gt;</code>,<code>:</code>,<code>"</code>,<code>\</code>,<code>/</code>,<code>|</code>,<code>?</code>,<code>*</code>,<code>+</code>, or ASCII control characters <code>1-31</code>.</p>
     /// </note>
     pub file_share_name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies refresh cache information for the file share.</p>
@@ -162,6 +163,7 @@ impl UpdateSmbFileShareInput {
     }
     /// <p>The name of the file share. Optional.</p><note>
     /// <p><code>FileShareName</code> must be set if an S3 prefix name is set in <code>LocationARN</code>, or if an access point or access point alias is used.</p>
+    /// <p>A valid SMB file share name cannot contain the following characters: <code>\[</code>,<code>\]</code>,<code>#</code>,<code>;</code>,<code>&lt;</code>,<code>&gt;</code>,<code>:</code>,<code>"</code>,<code>\</code>,<code>/</code>,<code>|</code>,<code>?</code>,<code>*</code>,<code>+</code>, or ASCII control characters <code>1-31</code>.</p>
     /// </note>
     pub fn file_share_name(&self) -> ::std::option::Option<&str> {
         self.file_share_name.as_deref()
@@ -515,6 +517,7 @@ impl UpdateSmbFileShareInputBuilder {
     }
     /// <p>The name of the file share. Optional.</p><note>
     /// <p><code>FileShareName</code> must be set if an S3 prefix name is set in <code>LocationARN</code>, or if an access point or access point alias is used.</p>
+    /// <p>A valid SMB file share name cannot contain the following characters: <code>\[</code>,<code>\]</code>,<code>#</code>,<code>;</code>,<code>&lt;</code>,<code>&gt;</code>,<code>:</code>,<code>"</code>,<code>\</code>,<code>/</code>,<code>|</code>,<code>?</code>,<code>*</code>,<code>+</code>, or ASCII control characters <code>1-31</code>.</p>
     /// </note>
     pub fn file_share_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_share_name = ::std::option::Option::Some(input.into());
@@ -522,6 +525,7 @@ impl UpdateSmbFileShareInputBuilder {
     }
     /// <p>The name of the file share. Optional.</p><note>
     /// <p><code>FileShareName</code> must be set if an S3 prefix name is set in <code>LocationARN</code>, or if an access point or access point alias is used.</p>
+    /// <p>A valid SMB file share name cannot contain the following characters: <code>\[</code>,<code>\]</code>,<code>#</code>,<code>;</code>,<code>&lt;</code>,<code>&gt;</code>,<code>:</code>,<code>"</code>,<code>\</code>,<code>/</code>,<code>|</code>,<code>?</code>,<code>*</code>,<code>+</code>, or ASCII control characters <code>1-31</code>.</p>
     /// </note>
     pub fn set_file_share_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.file_share_name = input;
@@ -529,6 +533,7 @@ impl UpdateSmbFileShareInputBuilder {
     }
     /// <p>The name of the file share. Optional.</p><note>
     /// <p><code>FileShareName</code> must be set if an S3 prefix name is set in <code>LocationARN</code>, or if an access point or access point alias is used.</p>
+    /// <p>A valid SMB file share name cannot contain the following characters: <code>\[</code>,<code>\]</code>,<code>#</code>,<code>;</code>,<code>&lt;</code>,<code>&gt;</code>,<code>:</code>,<code>"</code>,<code>\</code>,<code>/</code>,<code>|</code>,<code>?</code>,<code>*</code>,<code>+</code>, or ASCII control characters <code>1-31</code>.</p>
     /// </note>
     pub fn get_file_share_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.file_share_name

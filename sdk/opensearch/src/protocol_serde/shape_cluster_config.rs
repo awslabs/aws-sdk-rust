@@ -54,6 +54,18 @@ pub fn ser_cluster_config(
     if let Some(var_14) = &input.multi_az_with_standby_enabled {
         object.key("MultiAZWithStandbyEnabled").boolean(*var_14);
     }
+    if let Some(var_15) = &input.node_options {
+        let mut array_16 = object.key("NodeOptions").start_array();
+        for item_17 in var_15 {
+            {
+                #[allow(unused_mut)]
+                let mut object_18 = array_16.value().start_object();
+                crate::protocol_serde::shape_node_option::ser_node_option(&mut object_18, item_17)?;
+                object_18.finish();
+            }
+        }
+        array_16.finish();
+    }
     Ok(())
 }
 
@@ -138,6 +150,9 @@ where
                         "MultiAZWithStandbyEnabled" => {
                             builder =
                                 builder.set_multi_az_with_standby_enabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
+                        "NodeOptions" => {
+                            builder = builder.set_node_options(crate::protocol_serde::shape_node_options_list::de_node_options_list(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

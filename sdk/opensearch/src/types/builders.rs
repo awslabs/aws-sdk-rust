@@ -107,6 +107,10 @@ pub use crate::types::_cluster_config_status::ClusterConfigStatusBuilder;
 
 pub use crate::types::_cluster_config::ClusterConfigBuilder;
 
+pub use crate::types::_node_option::NodeOptionBuilder;
+
+pub use crate::types::_node_config::NodeConfigBuilder;
+
 pub use crate::types::_cold_storage_options::ColdStorageOptionsBuilder;
 
 pub use crate::types::_zone_awareness_config::ZoneAwarenessConfigBuilder;

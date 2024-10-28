@@ -383,7 +383,9 @@ pub struct CreateDbClusterInput {
     /// <p>If you specify a retention period that isn't valid, such as <code>94</code>, Amazon RDS issues an error.</p>
     pub performance_insights_retention_period: ::std::option::Option<i32>,
     /// <p>Specifies whether to enable Aurora Limitless Database. You must enable Aurora Limitless Database to create a DB shard group.</p>
-    /// <p>Valid for: Aurora DB clusters only</p>
+    /// <p>Valid for: Aurora DB clusters only</p><note>
+    /// <p>This setting is no longer used. Instead use the <code>ClusterScalabilityType</code> setting.</p>
+    /// </note>
     pub enable_limitless_database: ::std::option::Option<bool>,
     /// <p>Contains the scaling configuration of an Aurora Serverless v2 DB cluster.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.html">Using Amazon Aurora Serverless v2</a> in the <i>Amazon Aurora User Guide</i>.</p>
@@ -917,7 +919,9 @@ impl CreateDbClusterInput {
         self.performance_insights_retention_period
     }
     /// <p>Specifies whether to enable Aurora Limitless Database. You must enable Aurora Limitless Database to create a DB shard group.</p>
-    /// <p>Valid for: Aurora DB clusters only</p>
+    /// <p>Valid for: Aurora DB clusters only</p><note>
+    /// <p>This setting is no longer used. Instead use the <code>ClusterScalabilityType</code> setting.</p>
+    /// </note>
     pub fn enable_limitless_database(&self) -> ::std::option::Option<bool> {
         self.enable_limitless_database
     }
@@ -2582,19 +2586,25 @@ impl CreateDbClusterInputBuilder {
         &self.performance_insights_retention_period
     }
     /// <p>Specifies whether to enable Aurora Limitless Database. You must enable Aurora Limitless Database to create a DB shard group.</p>
-    /// <p>Valid for: Aurora DB clusters only</p>
+    /// <p>Valid for: Aurora DB clusters only</p><note>
+    /// <p>This setting is no longer used. Instead use the <code>ClusterScalabilityType</code> setting.</p>
+    /// </note>
     pub fn enable_limitless_database(mut self, input: bool) -> Self {
         self.enable_limitless_database = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies whether to enable Aurora Limitless Database. You must enable Aurora Limitless Database to create a DB shard group.</p>
-    /// <p>Valid for: Aurora DB clusters only</p>
+    /// <p>Valid for: Aurora DB clusters only</p><note>
+    /// <p>This setting is no longer used. Instead use the <code>ClusterScalabilityType</code> setting.</p>
+    /// </note>
     pub fn set_enable_limitless_database(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enable_limitless_database = input;
         self
     }
     /// <p>Specifies whether to enable Aurora Limitless Database. You must enable Aurora Limitless Database to create a DB shard group.</p>
-    /// <p>Valid for: Aurora DB clusters only</p>
+    /// <p>Valid for: Aurora DB clusters only</p><note>
+    /// <p>This setting is no longer used. Instead use the <code>ClusterScalabilityType</code> setting.</p>
+    /// </note>
     pub fn get_enable_limitless_database(&self) -> &::std::option::Option<bool> {
         &self.enable_limitless_database
     }

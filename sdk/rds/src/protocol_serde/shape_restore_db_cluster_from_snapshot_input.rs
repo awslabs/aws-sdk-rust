@@ -184,9 +184,40 @@ pub fn ser_restore_db_cluster_from_snapshot_input_input_input(
         crate::protocol_serde::shape_rds_custom_cluster_configuration::ser_rds_custom_cluster_configuration(scope_69, var_70)?;
     }
     #[allow(unused_mut)]
-    let mut scope_71 = writer.prefix("EngineLifecycleSupport");
-    if let Some(var_72) = &input.engine_lifecycle_support {
-        scope_71.string(var_72);
+    let mut scope_71 = writer.prefix("MonitoringInterval");
+    if let Some(var_72) = &input.monitoring_interval {
+        scope_71.number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_72).into()),
+        );
+    }
+    #[allow(unused_mut)]
+    let mut scope_73 = writer.prefix("MonitoringRoleArn");
+    if let Some(var_74) = &input.monitoring_role_arn {
+        scope_73.string(var_74);
+    }
+    #[allow(unused_mut)]
+    let mut scope_75 = writer.prefix("EnablePerformanceInsights");
+    if let Some(var_76) = &input.enable_performance_insights {
+        scope_75.boolean(*var_76);
+    }
+    #[allow(unused_mut)]
+    let mut scope_77 = writer.prefix("PerformanceInsightsKMSKeyId");
+    if let Some(var_78) = &input.performance_insights_kms_key_id {
+        scope_77.string(var_78);
+    }
+    #[allow(unused_mut)]
+    let mut scope_79 = writer.prefix("PerformanceInsightsRetentionPeriod");
+    if let Some(var_80) = &input.performance_insights_retention_period {
+        scope_79.number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_80).into()),
+        );
+    }
+    #[allow(unused_mut)]
+    let mut scope_81 = writer.prefix("EngineLifecycleSupport");
+    if let Some(var_82) = &input.engine_lifecycle_support {
+        scope_81.string(var_82);
     }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))

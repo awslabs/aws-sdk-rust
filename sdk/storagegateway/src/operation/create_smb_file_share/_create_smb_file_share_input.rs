@@ -27,7 +27,7 @@ pub struct CreateSmbFileShareInput {
     /// <p>A custom ARN for the backend storage used for storing data for file shares. It includes a resource ARN with an optional prefix concatenation. The prefix must end with a forward slash (/).</p><note>
     /// <p>You can specify LocationARN as a bucket ARN, access point ARN or access point alias, as shown in the following examples.</p>
     /// <p>Bucket ARN:</p>
-    /// <p><code>arn:aws:s3:::my-bucket/prefix/</code></p>
+    /// <p><code>arn:aws:s3:::amzn-s3-demo-bucket/prefix/</code></p>
     /// <p>Access point ARN:</p>
     /// <p><code>arn:aws:s3:region:account-id:accesspoint/access-point-name/prefix/</code></p>
     /// <p>If you specify an access point, the bucket policy must be configured to delegate access control to the access point. For information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-policies.html#access-points-delegating-control">Delegating access control to access points</a> in the <i>Amazon S3 User Guide</i>.</p>
@@ -78,6 +78,7 @@ pub struct CreateSmbFileShareInput {
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The name of the file share. Optional.</p><note>
     /// <p><code>FileShareName</code> must be set if an S3 prefix name is set in <code>LocationARN</code>, or if an access point or access point alias is used.</p>
+    /// <p>A valid SMB file share name cannot contain the following characters: <code>\[</code>,<code>\]</code>,<code>#</code>,<code>;</code>,<code>&lt;</code>,<code>&gt;</code>,<code>:</code>,<code>"</code>,<code>\</code>,<code>/</code>,<code>|</code>,<code>?</code>,<code>*</code>,<code>+</code>, or ASCII control characters <code>1-31</code>.</p>
     /// </note>
     pub file_share_name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies refresh cache information for the file share.</p>
@@ -141,7 +142,7 @@ impl CreateSmbFileShareInput {
     /// <p>A custom ARN for the backend storage used for storing data for file shares. It includes a resource ARN with an optional prefix concatenation. The prefix must end with a forward slash (/).</p><note>
     /// <p>You can specify LocationARN as a bucket ARN, access point ARN or access point alias, as shown in the following examples.</p>
     /// <p>Bucket ARN:</p>
-    /// <p><code>arn:aws:s3:::my-bucket/prefix/</code></p>
+    /// <p><code>arn:aws:s3:::amzn-s3-demo-bucket/prefix/</code></p>
     /// <p>Access point ARN:</p>
     /// <p><code>arn:aws:s3:region:account-id:accesspoint/access-point-name/prefix/</code></p>
     /// <p>If you specify an access point, the bucket policy must be configured to delegate access control to the access point. For information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-policies.html#access-points-delegating-control">Delegating access control to access points</a> in the <i>Amazon S3 User Guide</i>.</p>
@@ -230,6 +231,7 @@ impl CreateSmbFileShareInput {
     }
     /// <p>The name of the file share. Optional.</p><note>
     /// <p><code>FileShareName</code> must be set if an S3 prefix name is set in <code>LocationARN</code>, or if an access point or access point alias is used.</p>
+    /// <p>A valid SMB file share name cannot contain the following characters: <code>\[</code>,<code>\]</code>,<code>#</code>,<code>;</code>,<code>&lt;</code>,<code>&gt;</code>,<code>:</code>,<code>"</code>,<code>\</code>,<code>/</code>,<code>|</code>,<code>?</code>,<code>*</code>,<code>+</code>, or ASCII control characters <code>1-31</code>.</p>
     /// </note>
     pub fn file_share_name(&self) -> ::std::option::Option<&str> {
         self.file_share_name.as_deref()
@@ -423,7 +425,7 @@ impl CreateSmbFileShareInputBuilder {
     /// <p>A custom ARN for the backend storage used for storing data for file shares. It includes a resource ARN with an optional prefix concatenation. The prefix must end with a forward slash (/).</p><note>
     /// <p>You can specify LocationARN as a bucket ARN, access point ARN or access point alias, as shown in the following examples.</p>
     /// <p>Bucket ARN:</p>
-    /// <p><code>arn:aws:s3:::my-bucket/prefix/</code></p>
+    /// <p><code>arn:aws:s3:::amzn-s3-demo-bucket/prefix/</code></p>
     /// <p>Access point ARN:</p>
     /// <p><code>arn:aws:s3:region:account-id:accesspoint/access-point-name/prefix/</code></p>
     /// <p>If you specify an access point, the bucket policy must be configured to delegate access control to the access point. For information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-policies.html#access-points-delegating-control">Delegating access control to access points</a> in the <i>Amazon S3 User Guide</i>.</p>
@@ -438,7 +440,7 @@ impl CreateSmbFileShareInputBuilder {
     /// <p>A custom ARN for the backend storage used for storing data for file shares. It includes a resource ARN with an optional prefix concatenation. The prefix must end with a forward slash (/).</p><note>
     /// <p>You can specify LocationARN as a bucket ARN, access point ARN or access point alias, as shown in the following examples.</p>
     /// <p>Bucket ARN:</p>
-    /// <p><code>arn:aws:s3:::my-bucket/prefix/</code></p>
+    /// <p><code>arn:aws:s3:::amzn-s3-demo-bucket/prefix/</code></p>
     /// <p>Access point ARN:</p>
     /// <p><code>arn:aws:s3:region:account-id:accesspoint/access-point-name/prefix/</code></p>
     /// <p>If you specify an access point, the bucket policy must be configured to delegate access control to the access point. For information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-policies.html#access-points-delegating-control">Delegating access control to access points</a> in the <i>Amazon S3 User Guide</i>.</p>
@@ -452,7 +454,7 @@ impl CreateSmbFileShareInputBuilder {
     /// <p>A custom ARN for the backend storage used for storing data for file shares. It includes a resource ARN with an optional prefix concatenation. The prefix must end with a forward slash (/).</p><note>
     /// <p>You can specify LocationARN as a bucket ARN, access point ARN or access point alias, as shown in the following examples.</p>
     /// <p>Bucket ARN:</p>
-    /// <p><code>arn:aws:s3:::my-bucket/prefix/</code></p>
+    /// <p><code>arn:aws:s3:::amzn-s3-demo-bucket/prefix/</code></p>
     /// <p>Access point ARN:</p>
     /// <p><code>arn:aws:s3:region:account-id:accesspoint/access-point-name/prefix/</code></p>
     /// <p>If you specify an access point, the bucket policy must be configured to delegate access control to the access point. For information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-policies.html#access-points-delegating-control">Delegating access control to access points</a> in the <i>Amazon S3 User Guide</i>.</p>
@@ -723,6 +725,7 @@ impl CreateSmbFileShareInputBuilder {
     }
     /// <p>The name of the file share. Optional.</p><note>
     /// <p><code>FileShareName</code> must be set if an S3 prefix name is set in <code>LocationARN</code>, or if an access point or access point alias is used.</p>
+    /// <p>A valid SMB file share name cannot contain the following characters: <code>\[</code>,<code>\]</code>,<code>#</code>,<code>;</code>,<code>&lt;</code>,<code>&gt;</code>,<code>:</code>,<code>"</code>,<code>\</code>,<code>/</code>,<code>|</code>,<code>?</code>,<code>*</code>,<code>+</code>, or ASCII control characters <code>1-31</code>.</p>
     /// </note>
     pub fn file_share_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_share_name = ::std::option::Option::Some(input.into());
@@ -730,6 +733,7 @@ impl CreateSmbFileShareInputBuilder {
     }
     /// <p>The name of the file share. Optional.</p><note>
     /// <p><code>FileShareName</code> must be set if an S3 prefix name is set in <code>LocationARN</code>, or if an access point or access point alias is used.</p>
+    /// <p>A valid SMB file share name cannot contain the following characters: <code>\[</code>,<code>\]</code>,<code>#</code>,<code>;</code>,<code>&lt;</code>,<code>&gt;</code>,<code>:</code>,<code>"</code>,<code>\</code>,<code>/</code>,<code>|</code>,<code>?</code>,<code>*</code>,<code>+</code>, or ASCII control characters <code>1-31</code>.</p>
     /// </note>
     pub fn set_file_share_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.file_share_name = input;
@@ -737,6 +741,7 @@ impl CreateSmbFileShareInputBuilder {
     }
     /// <p>The name of the file share. Optional.</p><note>
     /// <p><code>FileShareName</code> must be set if an S3 prefix name is set in <code>LocationARN</code>, or if an access point or access point alias is used.</p>
+    /// <p>A valid SMB file share name cannot contain the following characters: <code>\[</code>,<code>\]</code>,<code>#</code>,<code>;</code>,<code>&lt;</code>,<code>&gt;</code>,<code>:</code>,<code>"</code>,<code>\</code>,<code>/</code>,<code>|</code>,<code>?</code>,<code>*</code>,<code>+</code>, or ASCII control characters <code>1-31</code>.</p>
     /// </note>
     pub fn get_file_share_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.file_share_name

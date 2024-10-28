@@ -16,7 +16,9 @@ pub struct DescribeGatewayInformationOutput {
     pub gateway_state: ::std::option::Option<::std::string::String>,
     /// <p>A <code>NetworkInterface</code> array that contains descriptions of the gateway network interfaces.</p>
     pub gateway_network_interfaces: ::std::option::Option<::std::vec::Vec<crate::types::NetworkInterface>>,
-    /// <p>The type of the gateway.</p>
+    /// <p>The type of the gateway.</p><important>
+    /// <p>Amazon FSx File Gateway is no longer available to new customers. Existing customers of FSx File Gateway can continue to use the service normally. For capabilities similar to FSx File Gateway, visit <a href="https://aws.amazon.com/blogs/storage/switch-your-file-share-access-from-amazon-fsx-file-gateway-to-amazon-fsx-for-windows-file-server/">this blog post</a>.</p>
+    /// </important>
     pub gateway_type: ::std::option::Option<::std::string::String>,
     /// <p>The date on which an update to the gateway is available. This date is in the time zone of the gateway. If the gateway is not available for an update this field is not returned in the response.</p>
     pub next_update_availability_date: ::std::option::Option<::std::string::String>,
@@ -80,7 +82,9 @@ impl DescribeGatewayInformationOutput {
     pub fn gateway_network_interfaces(&self) -> &[crate::types::NetworkInterface] {
         self.gateway_network_interfaces.as_deref().unwrap_or_default()
     }
-    /// <p>The type of the gateway.</p>
+    /// <p>The type of the gateway.</p><important>
+    /// <p>Amazon FSx File Gateway is no longer available to new customers. Existing customers of FSx File Gateway can continue to use the service normally. For capabilities similar to FSx File Gateway, visit <a href="https://aws.amazon.com/blogs/storage/switch-your-file-share-access-from-amazon-fsx-file-gateway-to-amazon-fsx-for-windows-file-server/">this blog post</a>.</p>
+    /// </important>
     pub fn gateway_type(&self) -> ::std::option::Option<&str> {
         self.gateway_type.as_deref()
     }
@@ -283,17 +287,23 @@ impl DescribeGatewayInformationOutputBuilder {
     pub fn get_gateway_network_interfaces(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NetworkInterface>> {
         &self.gateway_network_interfaces
     }
-    /// <p>The type of the gateway.</p>
+    /// <p>The type of the gateway.</p><important>
+    /// <p>Amazon FSx File Gateway is no longer available to new customers. Existing customers of FSx File Gateway can continue to use the service normally. For capabilities similar to FSx File Gateway, visit <a href="https://aws.amazon.com/blogs/storage/switch-your-file-share-access-from-amazon-fsx-file-gateway-to-amazon-fsx-for-windows-file-server/">this blog post</a>.</p>
+    /// </important>
     pub fn gateway_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.gateway_type = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The type of the gateway.</p>
+    /// <p>The type of the gateway.</p><important>
+    /// <p>Amazon FSx File Gateway is no longer available to new customers. Existing customers of FSx File Gateway can continue to use the service normally. For capabilities similar to FSx File Gateway, visit <a href="https://aws.amazon.com/blogs/storage/switch-your-file-share-access-from-amazon-fsx-file-gateway-to-amazon-fsx-for-windows-file-server/">this blog post</a>.</p>
+    /// </important>
     pub fn set_gateway_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.gateway_type = input;
         self
     }
-    /// <p>The type of the gateway.</p>
+    /// <p>The type of the gateway.</p><important>
+    /// <p>Amazon FSx File Gateway is no longer available to new customers. Existing customers of FSx File Gateway can continue to use the service normally. For capabilities similar to FSx File Gateway, visit <a href="https://aws.amazon.com/blogs/storage/switch-your-file-share-access-from-amazon-fsx-file-gateway-to-amazon-fsx-for-windows-file-server/">this blog post</a>.</p>
+    /// </important>
     pub fn get_gateway_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.gateway_type
     }
