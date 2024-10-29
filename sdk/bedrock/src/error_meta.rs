@@ -215,6 +215,47 @@ impl From<crate::operation::create_guardrail_version::CreateGuardrailVersionErro
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_inference_profile::CreateInferenceProfileError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_inference_profile::CreateInferenceProfileError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_inference_profile::CreateInferenceProfileError> for Error {
+    fn from(err: crate::operation::create_inference_profile::CreateInferenceProfileError) -> Self {
+        match err {
+            crate::operation::create_inference_profile::CreateInferenceProfileError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::create_inference_profile::CreateInferenceProfileError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_inference_profile::CreateInferenceProfileError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::create_inference_profile::CreateInferenceProfileError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::create_inference_profile::CreateInferenceProfileError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::create_inference_profile::CreateInferenceProfileError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_inference_profile::CreateInferenceProfileError::TooManyTagsException(inner) => {
+                Error::TooManyTagsException(inner)
+            }
+            crate::operation::create_inference_profile::CreateInferenceProfileError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_inference_profile::CreateInferenceProfileError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_model_copy_job::CreateModelCopyJobError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -511,6 +552,41 @@ impl From<crate::operation::delete_imported_model::DeleteImportedModelError> for
             crate::operation::delete_imported_model::DeleteImportedModelError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::delete_imported_model::DeleteImportedModelError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::delete_imported_model::DeleteImportedModelError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_inference_profile::DeleteInferenceProfileError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_inference_profile::DeleteInferenceProfileError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_inference_profile::DeleteInferenceProfileError> for Error {
+    fn from(err: crate::operation::delete_inference_profile::DeleteInferenceProfileError) -> Self {
+        match err {
+            crate::operation::delete_inference_profile::DeleteInferenceProfileError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::delete_inference_profile::DeleteInferenceProfileError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::delete_inference_profile::DeleteInferenceProfileError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::delete_inference_profile::DeleteInferenceProfileError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_inference_profile::DeleteInferenceProfileError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_inference_profile::DeleteInferenceProfileError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_inference_profile::DeleteInferenceProfileError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

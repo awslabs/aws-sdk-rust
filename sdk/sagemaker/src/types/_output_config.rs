@@ -92,17 +92,6 @@ pub struct OutputConfig {
     /// <li>
     /// <p><code>class_labels</code>: Specifies the classification labels file name inside input tar.gz file. For example, <code>{"class_labels": "imagenet_labels_1000.txt"}</code>. Labels inside the txt file should be separated by newlines.</p></li>
     /// </ul></li>
-    /// <li>
-    /// <p><code>EIA</code>: Compilation for the Elastic Inference Accelerator supports the following compiler options:</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>precision_mode</code>: Specifies the precision of compiled artifacts. Supported values are <code>"FP16"</code> and <code>"FP32"</code>. Default is <code>"FP32"</code>.</p></li>
-    /// <li>
-    /// <p><code>signature_def_key</code>: Specifies the signature to use for models in SavedModel format. Defaults is TensorFlow's default signature def key.</p></li>
-    /// <li>
-    /// <p><code>output_names</code>: Specifies a list of output tensor names for models in FrozenGraph format. Set at most one API field, either: <code>signature_def_key</code> or <code>output_names</code>.</p></li>
-    /// </ul>
-    /// <p>For example: <code>{"precision_mode": "FP32", "output_names": \["output:0"\]}</code></p></li>
     /// </ul>
     pub compiler_options: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services Key Management Service key (Amazon Web Services KMS) that Amazon SageMaker uses to encrypt your output models with Amazon S3 server-side encryption after compilation job. If you don't provide a KMS key ID, Amazon SageMaker uses the default KMS key for Amazon S3 for your role's account. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingKMSEncryption.html">KMS-Managed Encryption Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i></p>
@@ -214,17 +203,6 @@ impl OutputConfig {
     /// <li>
     /// <p><code>class_labels</code>: Specifies the classification labels file name inside input tar.gz file. For example, <code>{"class_labels": "imagenet_labels_1000.txt"}</code>. Labels inside the txt file should be separated by newlines.</p></li>
     /// </ul></li>
-    /// <li>
-    /// <p><code>EIA</code>: Compilation for the Elastic Inference Accelerator supports the following compiler options:</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>precision_mode</code>: Specifies the precision of compiled artifacts. Supported values are <code>"FP16"</code> and <code>"FP32"</code>. Default is <code>"FP32"</code>.</p></li>
-    /// <li>
-    /// <p><code>signature_def_key</code>: Specifies the signature to use for models in SavedModel format. Defaults is TensorFlow's default signature def key.</p></li>
-    /// <li>
-    /// <p><code>output_names</code>: Specifies a list of output tensor names for models in FrozenGraph format. Set at most one API field, either: <code>signature_def_key</code> or <code>output_names</code>.</p></li>
-    /// </ul>
-    /// <p>For example: <code>{"precision_mode": "FP32", "output_names": \["output:0"\]}</code></p></li>
     /// </ul>
     pub fn compiler_options(&self) -> ::std::option::Option<&str> {
         self.compiler_options.as_deref()
@@ -444,17 +422,6 @@ impl OutputConfigBuilder {
     /// <li>
     /// <p><code>class_labels</code>: Specifies the classification labels file name inside input tar.gz file. For example, <code>{"class_labels": "imagenet_labels_1000.txt"}</code>. Labels inside the txt file should be separated by newlines.</p></li>
     /// </ul></li>
-    /// <li>
-    /// <p><code>EIA</code>: Compilation for the Elastic Inference Accelerator supports the following compiler options:</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>precision_mode</code>: Specifies the precision of compiled artifacts. Supported values are <code>"FP16"</code> and <code>"FP32"</code>. Default is <code>"FP32"</code>.</p></li>
-    /// <li>
-    /// <p><code>signature_def_key</code>: Specifies the signature to use for models in SavedModel format. Defaults is TensorFlow's default signature def key.</p></li>
-    /// <li>
-    /// <p><code>output_names</code>: Specifies a list of output tensor names for models in FrozenGraph format. Set at most one API field, either: <code>signature_def_key</code> or <code>output_names</code>.</p></li>
-    /// </ul>
-    /// <p>For example: <code>{"precision_mode": "FP32", "output_names": \["output:0"\]}</code></p></li>
     /// </ul>
     pub fn compiler_options(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.compiler_options = ::std::option::Option::Some(input.into());
@@ -514,17 +481,6 @@ impl OutputConfigBuilder {
     /// <li>
     /// <p><code>class_labels</code>: Specifies the classification labels file name inside input tar.gz file. For example, <code>{"class_labels": "imagenet_labels_1000.txt"}</code>. Labels inside the txt file should be separated by newlines.</p></li>
     /// </ul></li>
-    /// <li>
-    /// <p><code>EIA</code>: Compilation for the Elastic Inference Accelerator supports the following compiler options:</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>precision_mode</code>: Specifies the precision of compiled artifacts. Supported values are <code>"FP16"</code> and <code>"FP32"</code>. Default is <code>"FP32"</code>.</p></li>
-    /// <li>
-    /// <p><code>signature_def_key</code>: Specifies the signature to use for models in SavedModel format. Defaults is TensorFlow's default signature def key.</p></li>
-    /// <li>
-    /// <p><code>output_names</code>: Specifies a list of output tensor names for models in FrozenGraph format. Set at most one API field, either: <code>signature_def_key</code> or <code>output_names</code>.</p></li>
-    /// </ul>
-    /// <p>For example: <code>{"precision_mode": "FP32", "output_names": \["output:0"\]}</code></p></li>
     /// </ul>
     pub fn set_compiler_options(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.compiler_options = input;
@@ -584,17 +540,6 @@ impl OutputConfigBuilder {
     /// <li>
     /// <p><code>class_labels</code>: Specifies the classification labels file name inside input tar.gz file. For example, <code>{"class_labels": "imagenet_labels_1000.txt"}</code>. Labels inside the txt file should be separated by newlines.</p></li>
     /// </ul></li>
-    /// <li>
-    /// <p><code>EIA</code>: Compilation for the Elastic Inference Accelerator supports the following compiler options:</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>precision_mode</code>: Specifies the precision of compiled artifacts. Supported values are <code>"FP16"</code> and <code>"FP32"</code>. Default is <code>"FP32"</code>.</p></li>
-    /// <li>
-    /// <p><code>signature_def_key</code>: Specifies the signature to use for models in SavedModel format. Defaults is TensorFlow's default signature def key.</p></li>
-    /// <li>
-    /// <p><code>output_names</code>: Specifies a list of output tensor names for models in FrozenGraph format. Set at most one API field, either: <code>signature_def_key</code> or <code>output_names</code>.</p></li>
-    /// </ul>
-    /// <p>For example: <code>{"precision_mode": "FP32", "output_names": \["output:0"\]}</code></p></li>
     /// </ul>
     pub fn get_compiler_options(&self) -> &::std::option::Option<::std::string::String> {
         &self.compiler_options

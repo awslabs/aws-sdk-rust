@@ -286,17 +286,20 @@ impl CreateNotebookInstanceFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_accelerator_types`](Self::set_accelerator_types).
     ///
-    /// <p>A list of Elastic Inference (EI) instance types to associate with this notebook instance. Currently, only one instance type can be associated with a notebook instance. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/ei.html">Using Elastic Inference in Amazon SageMaker</a>.</p>
+    /// <p>This parameter is no longer supported. Elastic Inference (EI) is no longer available.</p>
+    /// <p>This parameter was used to specify a list of EI instance types to associate with this notebook instance.</p>
     pub fn accelerator_types(mut self, input: crate::types::NotebookInstanceAcceleratorType) -> Self {
         self.inner = self.inner.accelerator_types(input);
         self
     }
-    /// <p>A list of Elastic Inference (EI) instance types to associate with this notebook instance. Currently, only one instance type can be associated with a notebook instance. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/ei.html">Using Elastic Inference in Amazon SageMaker</a>.</p>
+    /// <p>This parameter is no longer supported. Elastic Inference (EI) is no longer available.</p>
+    /// <p>This parameter was used to specify a list of EI instance types to associate with this notebook instance.</p>
     pub fn set_accelerator_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NotebookInstanceAcceleratorType>>) -> Self {
         self.inner = self.inner.set_accelerator_types(input);
         self
     }
-    /// <p>A list of Elastic Inference (EI) instance types to associate with this notebook instance. Currently, only one instance type can be associated with a notebook instance. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/ei.html">Using Elastic Inference in Amazon SageMaker</a>.</p>
+    /// <p>This parameter is no longer supported. Elastic Inference (EI) is no longer available.</p>
+    /// <p>This parameter was used to specify a list of EI instance types to associate with this notebook instance.</p>
     pub fn get_accelerator_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NotebookInstanceAcceleratorType>> {
         self.inner.get_accelerator_types()
     }

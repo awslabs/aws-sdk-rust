@@ -21,6 +21,11 @@ where
                                     .transpose()?,
                             );
                         }
+                        "billedResourceUtilization" => {
+                            builder = builder.set_billed_resource_utilization(
+                                crate::protocol_serde::shape_billed_resource_utilization::de_billed_resource_utilization(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

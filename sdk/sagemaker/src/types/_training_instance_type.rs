@@ -78,6 +78,8 @@
 ///     TrainingInstanceType::MlP4D24Xlarge => { /* ... */ },
 ///     TrainingInstanceType::MlP4De24Xlarge => { /* ... */ },
 ///     TrainingInstanceType::MlP548Xlarge => { /* ... */ },
+///     TrainingInstanceType::MlP5E48Xlarge => { /* ... */ },
+///     TrainingInstanceType::MlP5En48Xlarge => { /* ... */ },
 ///     TrainingInstanceType::MlR512Xlarge => { /* ... */ },
 ///     TrainingInstanceType::MlR516Xlarge => { /* ... */ },
 ///     TrainingInstanceType::MlR524Xlarge => { /* ... */ },
@@ -101,6 +103,7 @@
 ///     TrainingInstanceType::MlTrn12Xlarge => { /* ... */ },
 ///     TrainingInstanceType::MlTrn132Xlarge => { /* ... */ },
 ///     TrainingInstanceType::MlTrn1N32Xlarge => { /* ... */ },
+///     TrainingInstanceType::MlTrn248Xlarge => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -261,6 +264,10 @@ pub enum TrainingInstanceType {
     #[allow(missing_docs)] // documentation missing in model
     MlP548Xlarge,
     #[allow(missing_docs)] // documentation missing in model
+    MlP5E48Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlP5En48Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
     MlR512Xlarge,
     #[allow(missing_docs)] // documentation missing in model
     MlR516Xlarge,
@@ -306,6 +313,8 @@ pub enum TrainingInstanceType {
     MlTrn132Xlarge,
     #[allow(missing_docs)] // documentation missing in model
     MlTrn1N32Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlTrn248Xlarge,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -379,6 +388,8 @@ impl ::std::convert::From<&str> for TrainingInstanceType {
             "ml.p4d.24xlarge" => TrainingInstanceType::MlP4D24Xlarge,
             "ml.p4de.24xlarge" => TrainingInstanceType::MlP4De24Xlarge,
             "ml.p5.48xlarge" => TrainingInstanceType::MlP548Xlarge,
+            "ml.p5e.48xlarge" => TrainingInstanceType::MlP5E48Xlarge,
+            "ml.p5en.48xlarge" => TrainingInstanceType::MlP5En48Xlarge,
             "ml.r5.12xlarge" => TrainingInstanceType::MlR512Xlarge,
             "ml.r5.16xlarge" => TrainingInstanceType::MlR516Xlarge,
             "ml.r5.24xlarge" => TrainingInstanceType::MlR524Xlarge,
@@ -402,6 +413,7 @@ impl ::std::convert::From<&str> for TrainingInstanceType {
             "ml.trn1.2xlarge" => TrainingInstanceType::MlTrn12Xlarge,
             "ml.trn1.32xlarge" => TrainingInstanceType::MlTrn132Xlarge,
             "ml.trn1n.32xlarge" => TrainingInstanceType::MlTrn1N32Xlarge,
+            "ml.trn2.48xlarge" => TrainingInstanceType::MlTrn248Xlarge,
             other => TrainingInstanceType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -483,6 +495,8 @@ impl TrainingInstanceType {
             TrainingInstanceType::MlP4D24Xlarge => "ml.p4d.24xlarge",
             TrainingInstanceType::MlP4De24Xlarge => "ml.p4de.24xlarge",
             TrainingInstanceType::MlP548Xlarge => "ml.p5.48xlarge",
+            TrainingInstanceType::MlP5E48Xlarge => "ml.p5e.48xlarge",
+            TrainingInstanceType::MlP5En48Xlarge => "ml.p5en.48xlarge",
             TrainingInstanceType::MlR512Xlarge => "ml.r5.12xlarge",
             TrainingInstanceType::MlR516Xlarge => "ml.r5.16xlarge",
             TrainingInstanceType::MlR524Xlarge => "ml.r5.24xlarge",
@@ -506,6 +520,7 @@ impl TrainingInstanceType {
             TrainingInstanceType::MlTrn12Xlarge => "ml.trn1.2xlarge",
             TrainingInstanceType::MlTrn132Xlarge => "ml.trn1.32xlarge",
             TrainingInstanceType::MlTrn1N32Xlarge => "ml.trn1n.32xlarge",
+            TrainingInstanceType::MlTrn248Xlarge => "ml.trn2.48xlarge",
             TrainingInstanceType::Unknown(value) => value.as_str(),
         }
     }
@@ -578,6 +593,8 @@ impl TrainingInstanceType {
             "ml.p4d.24xlarge",
             "ml.p4de.24xlarge",
             "ml.p5.48xlarge",
+            "ml.p5e.48xlarge",
+            "ml.p5en.48xlarge",
             "ml.r5.12xlarge",
             "ml.r5.16xlarge",
             "ml.r5.24xlarge",
@@ -601,6 +618,7 @@ impl TrainingInstanceType {
             "ml.trn1.2xlarge",
             "ml.trn1.32xlarge",
             "ml.trn1n.32xlarge",
+            "ml.trn2.48xlarge",
         ]
     }
 }
@@ -690,6 +708,8 @@ impl ::std::fmt::Display for TrainingInstanceType {
             TrainingInstanceType::MlP4D24Xlarge => write!(f, "ml.p4d.24xlarge"),
             TrainingInstanceType::MlP4De24Xlarge => write!(f, "ml.p4de.24xlarge"),
             TrainingInstanceType::MlP548Xlarge => write!(f, "ml.p5.48xlarge"),
+            TrainingInstanceType::MlP5E48Xlarge => write!(f, "ml.p5e.48xlarge"),
+            TrainingInstanceType::MlP5En48Xlarge => write!(f, "ml.p5en.48xlarge"),
             TrainingInstanceType::MlR512Xlarge => write!(f, "ml.r5.12xlarge"),
             TrainingInstanceType::MlR516Xlarge => write!(f, "ml.r5.16xlarge"),
             TrainingInstanceType::MlR524Xlarge => write!(f, "ml.r5.24xlarge"),
@@ -713,6 +733,7 @@ impl ::std::fmt::Display for TrainingInstanceType {
             TrainingInstanceType::MlTrn12Xlarge => write!(f, "ml.trn1.2xlarge"),
             TrainingInstanceType::MlTrn132Xlarge => write!(f, "ml.trn1.32xlarge"),
             TrainingInstanceType::MlTrn1N32Xlarge => write!(f, "ml.trn1n.32xlarge"),
+            TrainingInstanceType::MlTrn248Xlarge => write!(f, "ml.trn2.48xlarge"),
             TrainingInstanceType::Unknown(value) => write!(f, "{}", value),
         }
     }

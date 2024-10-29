@@ -19,6 +19,16 @@ pub(crate) fn reflens_get_statement_result_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_get_statement_result_v2_output_output_next_token(
+    input: &crate::operation::get_statement_result_v2::GetStatementResultV2Output,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_databases_output_output_next_token(
     input: &crate::operation::list_databases::ListDatabasesOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -72,6 +82,13 @@ pub(crate) fn lens_describe_table_output_output_column_list(
 pub(crate) fn lens_get_statement_result_output_output_records(
     input: crate::operation::get_statement_result::GetStatementResultOutput,
 ) -> ::std::option::Option<::std::vec::Vec<::std::vec::Vec<crate::types::Field>>> {
+    let input = input.records;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_get_statement_result_v2_output_output_records(
+    input: crate::operation::get_statement_result_v2::GetStatementResultV2Output,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::QueryRecords>> {
     let input = input.records;
     ::std::option::Option::Some(input)
 }

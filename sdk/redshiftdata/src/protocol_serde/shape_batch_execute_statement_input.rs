@@ -45,5 +45,8 @@ pub fn ser_batch_execute_statement_input_input(
     if let Some(var_13) = &input.session_id {
         object.key("SessionId").string(var_13.as_str());
     }
+    if let Some(var_14) = &input.result_format {
+        object.key("ResultFormat").string(var_14.as_str());
+    }
     Ok(())
 }

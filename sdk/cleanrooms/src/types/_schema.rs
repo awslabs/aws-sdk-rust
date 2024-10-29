@@ -4,13 +4,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Schema {
-    /// <p>The columns for the relation this schema represents.</p>
+    /// <p>The columns for the relation that this schema represents.</p>
     pub columns: ::std::vec::Vec<crate::types::Column>,
     /// <p>The partition keys for the dataset underlying this schema.</p>
     pub partition_keys: ::std::vec::Vec<crate::types::Column>,
-    /// <p>The analysis rule types associated with the schema. Currently, only one entry is present.</p>
+    /// <p>The analysis rule types that are associated with the schema. Currently, only one entry is present.</p>
     pub analysis_rule_types: ::std::vec::Vec<crate::types::AnalysisRuleType>,
-    /// <p>The analysis method for the schema. The only valid value is currently DIRECT_QUERY.</p>
+    /// <p>The analysis method for the schema. The only valid value is currently <code>DIRECT_QUERY</code>.</p>
     pub analysis_method: ::std::option::Option<crate::types::AnalysisMethod>,
     /// <p>The unique account ID for the Amazon Web Services account that owns the schema.</p>
     pub creator_account_id: ::std::string::String,
@@ -18,15 +18,15 @@ pub struct Schema {
     pub name: ::std::string::String,
     /// <p>The unique ID for the collaboration that the schema belongs to.</p>
     pub collaboration_id: ::std::string::String,
-    /// <p>The unique ARN for the collaboration that the schema belongs to.</p>
+    /// <p>The unique Amazon Resource Name (ARN) for the collaboration that the schema belongs to.</p>
     pub collaboration_arn: ::std::string::String,
     /// <p>A description for the schema.</p>
     pub description: ::std::string::String,
-    /// <p>The time the schema was created.</p>
+    /// <p>The time at which the schema was created.</p>
     pub create_time: ::aws_smithy_types::DateTime,
-    /// <p>The time the schema was last updated.</p>
+    /// <p>The most recent time at which the schema was updated.</p>
     pub update_time: ::aws_smithy_types::DateTime,
-    /// <p>The type of schema. The only valid value is currently `TABLE`.</p>
+    /// <p>The type of schema.</p>
     pub r#type: crate::types::SchemaType,
     /// <p>Details about the status of the schema. Currently, only one entry is present.</p>
     pub schema_status_details: ::std::vec::Vec<crate::types::SchemaStatusDetail>,
@@ -34,7 +34,7 @@ pub struct Schema {
     pub schema_type_properties: ::std::option::Option<crate::types::SchemaTypeProperties>,
 }
 impl Schema {
-    /// <p>The columns for the relation this schema represents.</p>
+    /// <p>The columns for the relation that this schema represents.</p>
     pub fn columns(&self) -> &[crate::types::Column] {
         use std::ops::Deref;
         self.columns.deref()
@@ -44,12 +44,12 @@ impl Schema {
         use std::ops::Deref;
         self.partition_keys.deref()
     }
-    /// <p>The analysis rule types associated with the schema. Currently, only one entry is present.</p>
+    /// <p>The analysis rule types that are associated with the schema. Currently, only one entry is present.</p>
     pub fn analysis_rule_types(&self) -> &[crate::types::AnalysisRuleType] {
         use std::ops::Deref;
         self.analysis_rule_types.deref()
     }
-    /// <p>The analysis method for the schema. The only valid value is currently DIRECT_QUERY.</p>
+    /// <p>The analysis method for the schema. The only valid value is currently <code>DIRECT_QUERY</code>.</p>
     pub fn analysis_method(&self) -> ::std::option::Option<&crate::types::AnalysisMethod> {
         self.analysis_method.as_ref()
     }
@@ -68,7 +68,7 @@ impl Schema {
         use std::ops::Deref;
         self.collaboration_id.deref()
     }
-    /// <p>The unique ARN for the collaboration that the schema belongs to.</p>
+    /// <p>The unique Amazon Resource Name (ARN) for the collaboration that the schema belongs to.</p>
     pub fn collaboration_arn(&self) -> &str {
         use std::ops::Deref;
         self.collaboration_arn.deref()
@@ -78,15 +78,15 @@ impl Schema {
         use std::ops::Deref;
         self.description.deref()
     }
-    /// <p>The time the schema was created.</p>
+    /// <p>The time at which the schema was created.</p>
     pub fn create_time(&self) -> &::aws_smithy_types::DateTime {
         &self.create_time
     }
-    /// <p>The time the schema was last updated.</p>
+    /// <p>The most recent time at which the schema was updated.</p>
     pub fn update_time(&self) -> &::aws_smithy_types::DateTime {
         &self.update_time
     }
-    /// <p>The type of schema. The only valid value is currently `TABLE`.</p>
+    /// <p>The type of schema.</p>
     pub fn r#type(&self) -> &crate::types::SchemaType {
         &self.r#type
     }
@@ -131,19 +131,19 @@ impl SchemaBuilder {
     ///
     /// To override the contents of this collection use [`set_columns`](Self::set_columns).
     ///
-    /// <p>The columns for the relation this schema represents.</p>
+    /// <p>The columns for the relation that this schema represents.</p>
     pub fn columns(mut self, input: crate::types::Column) -> Self {
         let mut v = self.columns.unwrap_or_default();
         v.push(input);
         self.columns = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The columns for the relation this schema represents.</p>
+    /// <p>The columns for the relation that this schema represents.</p>
     pub fn set_columns(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Column>>) -> Self {
         self.columns = input;
         self
     }
-    /// <p>The columns for the relation this schema represents.</p>
+    /// <p>The columns for the relation that this schema represents.</p>
     pub fn get_columns(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Column>> {
         &self.columns
     }
@@ -171,33 +171,33 @@ impl SchemaBuilder {
     ///
     /// To override the contents of this collection use [`set_analysis_rule_types`](Self::set_analysis_rule_types).
     ///
-    /// <p>The analysis rule types associated with the schema. Currently, only one entry is present.</p>
+    /// <p>The analysis rule types that are associated with the schema. Currently, only one entry is present.</p>
     pub fn analysis_rule_types(mut self, input: crate::types::AnalysisRuleType) -> Self {
         let mut v = self.analysis_rule_types.unwrap_or_default();
         v.push(input);
         self.analysis_rule_types = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The analysis rule types associated with the schema. Currently, only one entry is present.</p>
+    /// <p>The analysis rule types that are associated with the schema. Currently, only one entry is present.</p>
     pub fn set_analysis_rule_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AnalysisRuleType>>) -> Self {
         self.analysis_rule_types = input;
         self
     }
-    /// <p>The analysis rule types associated with the schema. Currently, only one entry is present.</p>
+    /// <p>The analysis rule types that are associated with the schema. Currently, only one entry is present.</p>
     pub fn get_analysis_rule_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AnalysisRuleType>> {
         &self.analysis_rule_types
     }
-    /// <p>The analysis method for the schema. The only valid value is currently DIRECT_QUERY.</p>
+    /// <p>The analysis method for the schema. The only valid value is currently <code>DIRECT_QUERY</code>.</p>
     pub fn analysis_method(mut self, input: crate::types::AnalysisMethod) -> Self {
         self.analysis_method = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The analysis method for the schema. The only valid value is currently DIRECT_QUERY.</p>
+    /// <p>The analysis method for the schema. The only valid value is currently <code>DIRECT_QUERY</code>.</p>
     pub fn set_analysis_method(mut self, input: ::std::option::Option<crate::types::AnalysisMethod>) -> Self {
         self.analysis_method = input;
         self
     }
-    /// <p>The analysis method for the schema. The only valid value is currently DIRECT_QUERY.</p>
+    /// <p>The analysis method for the schema. The only valid value is currently <code>DIRECT_QUERY</code>.</p>
     pub fn get_analysis_method(&self) -> &::std::option::Option<crate::types::AnalysisMethod> {
         &self.analysis_method
     }
@@ -246,18 +246,18 @@ impl SchemaBuilder {
     pub fn get_collaboration_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.collaboration_id
     }
-    /// <p>The unique ARN for the collaboration that the schema belongs to.</p>
+    /// <p>The unique Amazon Resource Name (ARN) for the collaboration that the schema belongs to.</p>
     /// This field is required.
     pub fn collaboration_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.collaboration_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique ARN for the collaboration that the schema belongs to.</p>
+    /// <p>The unique Amazon Resource Name (ARN) for the collaboration that the schema belongs to.</p>
     pub fn set_collaboration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.collaboration_arn = input;
         self
     }
-    /// <p>The unique ARN for the collaboration that the schema belongs to.</p>
+    /// <p>The unique Amazon Resource Name (ARN) for the collaboration that the schema belongs to.</p>
     pub fn get_collaboration_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.collaboration_arn
     }
@@ -276,48 +276,48 @@ impl SchemaBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
-    /// <p>The time the schema was created.</p>
+    /// <p>The time at which the schema was created.</p>
     /// This field is required.
     pub fn create_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.create_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The time the schema was created.</p>
+    /// <p>The time at which the schema was created.</p>
     pub fn set_create_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.create_time = input;
         self
     }
-    /// <p>The time the schema was created.</p>
+    /// <p>The time at which the schema was created.</p>
     pub fn get_create_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.create_time
     }
-    /// <p>The time the schema was last updated.</p>
+    /// <p>The most recent time at which the schema was updated.</p>
     /// This field is required.
     pub fn update_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.update_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The time the schema was last updated.</p>
+    /// <p>The most recent time at which the schema was updated.</p>
     pub fn set_update_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.update_time = input;
         self
     }
-    /// <p>The time the schema was last updated.</p>
+    /// <p>The most recent time at which the schema was updated.</p>
     pub fn get_update_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.update_time
     }
-    /// <p>The type of schema. The only valid value is currently `TABLE`.</p>
+    /// <p>The type of schema.</p>
     /// This field is required.
     pub fn r#type(mut self, input: crate::types::SchemaType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of schema. The only valid value is currently `TABLE`.</p>
+    /// <p>The type of schema.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::SchemaType>) -> Self {
         self.r#type = input;
         self
     }
-    /// <p>The type of schema. The only valid value is currently `TABLE`.</p>
+    /// <p>The type of schema.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::SchemaType> {
         &self.r#type
     }

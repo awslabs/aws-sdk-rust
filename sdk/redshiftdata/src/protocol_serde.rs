@@ -35,6 +35,8 @@ pub(crate) mod shape_execute_statement;
 
 pub(crate) mod shape_get_statement_result;
 
+pub(crate) mod shape_get_statement_result_v2;
+
 pub(crate) mod shape_list_databases;
 
 pub(crate) mod shape_list_schemas;
@@ -73,6 +75,8 @@ pub(crate) mod shape_execute_statement_input;
 
 pub(crate) mod shape_get_statement_result_input;
 
+pub(crate) mod shape_get_statement_result_v2_input;
+
 pub(crate) mod shape_internal_server_exception;
 
 pub(crate) mod shape_list_databases_input;
@@ -97,6 +101,8 @@ pub(crate) mod shape_database_list;
 
 pub(crate) mod shape_db_group_list;
 
+pub(crate) mod shape_formatted_sql_records;
+
 pub(crate) mod shape_schema_list;
 
 pub(crate) mod shape_sql_parameter;
@@ -114,6 +120,8 @@ pub(crate) mod shape_table_list;
 pub(crate) mod shape_column_metadata;
 
 pub(crate) mod shape_field_list;
+
+pub(crate) mod shape_query_records;
 
 pub(crate) mod shape_statement_data;
 

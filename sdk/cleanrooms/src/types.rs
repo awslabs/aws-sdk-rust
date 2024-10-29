@@ -31,6 +31,12 @@ pub use crate::types::_privacy_budget_template_summary::PrivacyBudgetTemplateSum
 
 pub use crate::types::_protected_query::ProtectedQuery;
 
+pub use crate::types::_compute_configuration::ComputeConfiguration;
+
+pub use crate::types::_worker_compute_configuration::WorkerComputeConfiguration;
+
+pub use crate::types::_worker_compute_type::WorkerComputeType;
+
 pub use crate::types::_differential_privacy_parameters::DifferentialPrivacyParameters;
 
 pub use crate::types::_differential_privacy_sensitivity_parameters::DifferentialPrivacySensitivityParameters;
@@ -48,6 +54,8 @@ pub use crate::types::_protected_query_single_member_output::ProtectedQuerySingl
 pub use crate::types::_protected_query_s3_output::ProtectedQueryS3Output;
 
 pub use crate::types::_protected_query_statistics::ProtectedQueryStatistics;
+
+pub use crate::types::_billed_resource_utilization::BilledResourceUtilization;
 
 pub use crate::types::_protected_query_result_configuration::ProtectedQueryResultConfiguration;
 
@@ -293,6 +301,8 @@ pub use crate::types::_batch_get_collaboration_analysis_template_error::BatchGet
 
 pub use crate::types::_collaboration::Collaboration;
 
+pub use crate::types::_analytics_engine::AnalyticsEngine;
+
 pub use crate::types::_collaboration_query_log_status::CollaborationQueryLogStatus;
 
 pub use crate::types::_data_encryption_metadata::DataEncryptionMetadata;
@@ -359,11 +369,15 @@ mod _analysis_template_validation_type;
 
 mod _analysis_type;
 
+mod _analytics_engine;
+
 mod _batch_get_collaboration_analysis_template_error;
 
 mod _batch_get_schema_analysis_rule_error;
 
 mod _batch_get_schema_error;
+
+mod _billed_resource_utilization;
 
 mod _collaboration;
 
@@ -390,6 +404,8 @@ mod _collaboration_query_log_status;
 mod _collaboration_summary;
 
 mod _column;
+
+mod _compute_configuration;
 
 mod _configuration_details;
 
@@ -614,6 +630,10 @@ mod _target_protected_query_status;
 mod _validation_exception_field;
 
 mod _validation_exception_reason;
+
+mod _worker_compute_configuration;
+
+mod _worker_compute_type;
 
 /// Builders
 pub mod builders;

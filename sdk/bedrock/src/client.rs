@@ -126,6 +126,8 @@ mod create_guardrail;
 
 mod create_guardrail_version;
 
+mod create_inference_profile;
+
 mod create_model_copy_job;
 
 mod create_model_customization_job;
@@ -145,6 +147,8 @@ mod delete_custom_model;
 mod delete_guardrail;
 
 mod delete_imported_model;
+
+mod delete_inference_profile;
 
 mod delete_model_invocation_logging_configuration;
 

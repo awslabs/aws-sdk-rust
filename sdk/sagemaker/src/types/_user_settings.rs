@@ -6,11 +6,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UserSettings {
     /// <p>The execution role for the user.</p>
+    /// <p>SageMaker applies this setting only to private spaces that the user creates in the domain. SageMaker doesn't apply this setting to shared spaces.</p>
     pub execution_role: ::std::option::Option<::std::string::String>,
     /// <p>The security groups for the Amazon Virtual Private Cloud (VPC) that the domain uses for communication.</p>
     /// <p>Optional when the <code>CreateDomain.AppNetworkAccessType</code> parameter is set to <code>PublicInternetOnly</code>.</p>
     /// <p>Required when the <code>CreateDomain.AppNetworkAccessType</code> parameter is set to <code>VpcOnly</code>, unless specified as part of the <code>DefaultUserSettings</code> for the domain.</p>
     /// <p>Amazon SageMaker adds a security group to allow NFS traffic from Amazon SageMaker Studio. Therefore, the number of security groups that you can specify is one less than the maximum number shown.</p>
+    /// <p>SageMaker applies these settings only to private spaces that the user creates in the domain. SageMaker doesn't apply these settings to shared spaces.</p>
     pub security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Specifies options for sharing Amazon SageMaker Studio notebooks.</p>
     pub sharing_settings: ::std::option::Option<crate::types::SharingSettings>,
@@ -25,12 +27,16 @@ pub struct UserSettings {
     /// <p>A collection of settings that configure the <code>RSessionGateway</code> app.</p>
     pub r_session_app_settings: ::std::option::Option<crate::types::RSessionAppSettings>,
     /// <p>The Canvas app settings.</p>
+    /// <p>SageMaker applies these settings only to private spaces that SageMaker creates for the Canvas app.</p>
     pub canvas_app_settings: ::std::option::Option<crate::types::CanvasAppSettings>,
     /// <p>The Code Editor application settings.</p>
+    /// <p>SageMaker applies these settings only to private spaces that the user creates in the domain. SageMaker doesn't apply these settings to shared spaces.</p>
     pub code_editor_app_settings: ::std::option::Option<crate::types::CodeEditorAppSettings>,
     /// <p>The settings for the JupyterLab application.</p>
+    /// <p>SageMaker applies these settings only to private spaces that the user creates in the domain. SageMaker doesn't apply these settings to shared spaces.</p>
     pub jupyter_lab_app_settings: ::std::option::Option<crate::types::JupyterLabAppSettings>,
     /// <p>The storage settings for a space.</p>
+    /// <p>SageMaker applies these settings only to private spaces that the user creates in the domain. SageMaker doesn't apply these settings to shared spaces.</p>
     pub space_storage_settings: ::std::option::Option<crate::types::DefaultSpaceStorageSettings>,
     /// <p>The default experience that the user is directed to when accessing the domain. The supported values are:</p>
     /// <ul>
@@ -43,16 +49,20 @@ pub struct UserSettings {
     /// <p>Whether the user can access Studio. If this value is set to <code>DISABLED</code>, the user cannot access Studio, even if that is the default experience for the domain.</p>
     pub studio_web_portal: ::std::option::Option<crate::types::StudioWebPortal>,
     /// <p>Details about the POSIX identity that is used for file system operations.</p>
+    /// <p>SageMaker applies these settings only to private spaces that the user creates in the domain. SageMaker doesn't apply these settings to shared spaces.</p>
     pub custom_posix_user_config: ::std::option::Option<crate::types::CustomPosixUserConfig>,
     /// <p>The settings for assigning a custom file system to a user profile. Permitted users can access this file system in Amazon SageMaker Studio.</p>
+    /// <p>SageMaker applies these settings only to private spaces that the user creates in the domain. SageMaker doesn't apply these settings to shared spaces.</p>
     pub custom_file_system_configs: ::std::option::Option<::std::vec::Vec<crate::types::CustomFileSystemConfig>>,
     /// <p>Studio settings. If these settings are applied on a user level, they take priority over the settings applied on a domain level.</p>
     pub studio_web_portal_settings: ::std::option::Option<crate::types::StudioWebPortalSettings>,
     /// <p>Indicates whether auto-mounting of an EFS volume is supported for the user profile. The <code>DefaultAsDomain</code> value is only supported for user profiles. Do not use the <code>DefaultAsDomain</code> value when setting this parameter for a domain.</p>
+    /// <p>SageMaker applies this setting only to private spaces that the user creates in the domain. SageMaker doesn't apply this setting to shared spaces.</p>
     pub auto_mount_home_efs: ::std::option::Option<crate::types::AutoMountHomeEfs>,
 }
 impl UserSettings {
     /// <p>The execution role for the user.</p>
+    /// <p>SageMaker applies this setting only to private spaces that the user creates in the domain. SageMaker doesn't apply this setting to shared spaces.</p>
     pub fn execution_role(&self) -> ::std::option::Option<&str> {
         self.execution_role.as_deref()
     }
@@ -60,6 +70,7 @@ impl UserSettings {
     /// <p>Optional when the <code>CreateDomain.AppNetworkAccessType</code> parameter is set to <code>PublicInternetOnly</code>.</p>
     /// <p>Required when the <code>CreateDomain.AppNetworkAccessType</code> parameter is set to <code>VpcOnly</code>, unless specified as part of the <code>DefaultUserSettings</code> for the domain.</p>
     /// <p>Amazon SageMaker adds a security group to allow NFS traffic from Amazon SageMaker Studio. Therefore, the number of security groups that you can specify is one less than the maximum number shown.</p>
+    /// <p>SageMaker applies these settings only to private spaces that the user creates in the domain. SageMaker doesn't apply these settings to shared spaces.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_groups.is_none()`.
     pub fn security_groups(&self) -> &[::std::string::String] {
@@ -90,18 +101,22 @@ impl UserSettings {
         self.r_session_app_settings.as_ref()
     }
     /// <p>The Canvas app settings.</p>
+    /// <p>SageMaker applies these settings only to private spaces that SageMaker creates for the Canvas app.</p>
     pub fn canvas_app_settings(&self) -> ::std::option::Option<&crate::types::CanvasAppSettings> {
         self.canvas_app_settings.as_ref()
     }
     /// <p>The Code Editor application settings.</p>
+    /// <p>SageMaker applies these settings only to private spaces that the user creates in the domain. SageMaker doesn't apply these settings to shared spaces.</p>
     pub fn code_editor_app_settings(&self) -> ::std::option::Option<&crate::types::CodeEditorAppSettings> {
         self.code_editor_app_settings.as_ref()
     }
     /// <p>The settings for the JupyterLab application.</p>
+    /// <p>SageMaker applies these settings only to private spaces that the user creates in the domain. SageMaker doesn't apply these settings to shared spaces.</p>
     pub fn jupyter_lab_app_settings(&self) -> ::std::option::Option<&crate::types::JupyterLabAppSettings> {
         self.jupyter_lab_app_settings.as_ref()
     }
     /// <p>The storage settings for a space.</p>
+    /// <p>SageMaker applies these settings only to private spaces that the user creates in the domain. SageMaker doesn't apply these settings to shared spaces.</p>
     pub fn space_storage_settings(&self) -> ::std::option::Option<&crate::types::DefaultSpaceStorageSettings> {
         self.space_storage_settings.as_ref()
     }
@@ -120,10 +135,12 @@ impl UserSettings {
         self.studio_web_portal.as_ref()
     }
     /// <p>Details about the POSIX identity that is used for file system operations.</p>
+    /// <p>SageMaker applies these settings only to private spaces that the user creates in the domain. SageMaker doesn't apply these settings to shared spaces.</p>
     pub fn custom_posix_user_config(&self) -> ::std::option::Option<&crate::types::CustomPosixUserConfig> {
         self.custom_posix_user_config.as_ref()
     }
     /// <p>The settings for assigning a custom file system to a user profile. Permitted users can access this file system in Amazon SageMaker Studio.</p>
+    /// <p>SageMaker applies these settings only to private spaces that the user creates in the domain. SageMaker doesn't apply these settings to shared spaces.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.custom_file_system_configs.is_none()`.
     pub fn custom_file_system_configs(&self) -> &[crate::types::CustomFileSystemConfig] {
@@ -134,6 +151,7 @@ impl UserSettings {
         self.studio_web_portal_settings.as_ref()
     }
     /// <p>Indicates whether auto-mounting of an EFS volume is supported for the user profile. The <code>DefaultAsDomain</code> value is only supported for user profiles. Do not use the <code>DefaultAsDomain</code> value when setting this parameter for a domain.</p>
+    /// <p>SageMaker applies this setting only to private spaces that the user creates in the domain. SageMaker doesn't apply this setting to shared spaces.</p>
     pub fn auto_mount_home_efs(&self) -> ::std::option::Option<&crate::types::AutoMountHomeEfs> {
         self.auto_mount_home_efs.as_ref()
     }
@@ -170,16 +188,19 @@ pub struct UserSettingsBuilder {
 }
 impl UserSettingsBuilder {
     /// <p>The execution role for the user.</p>
+    /// <p>SageMaker applies this setting only to private spaces that the user creates in the domain. SageMaker doesn't apply this setting to shared spaces.</p>
     pub fn execution_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.execution_role = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The execution role for the user.</p>
+    /// <p>SageMaker applies this setting only to private spaces that the user creates in the domain. SageMaker doesn't apply this setting to shared spaces.</p>
     pub fn set_execution_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.execution_role = input;
         self
     }
     /// <p>The execution role for the user.</p>
+    /// <p>SageMaker applies this setting only to private spaces that the user creates in the domain. SageMaker doesn't apply this setting to shared spaces.</p>
     pub fn get_execution_role(&self) -> &::std::option::Option<::std::string::String> {
         &self.execution_role
     }
@@ -191,6 +212,7 @@ impl UserSettingsBuilder {
     /// <p>Optional when the <code>CreateDomain.AppNetworkAccessType</code> parameter is set to <code>PublicInternetOnly</code>.</p>
     /// <p>Required when the <code>CreateDomain.AppNetworkAccessType</code> parameter is set to <code>VpcOnly</code>, unless specified as part of the <code>DefaultUserSettings</code> for the domain.</p>
     /// <p>Amazon SageMaker adds a security group to allow NFS traffic from Amazon SageMaker Studio. Therefore, the number of security groups that you can specify is one less than the maximum number shown.</p>
+    /// <p>SageMaker applies these settings only to private spaces that the user creates in the domain. SageMaker doesn't apply these settings to shared spaces.</p>
     pub fn security_groups(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.security_groups.unwrap_or_default();
         v.push(input.into());
@@ -201,6 +223,7 @@ impl UserSettingsBuilder {
     /// <p>Optional when the <code>CreateDomain.AppNetworkAccessType</code> parameter is set to <code>PublicInternetOnly</code>.</p>
     /// <p>Required when the <code>CreateDomain.AppNetworkAccessType</code> parameter is set to <code>VpcOnly</code>, unless specified as part of the <code>DefaultUserSettings</code> for the domain.</p>
     /// <p>Amazon SageMaker adds a security group to allow NFS traffic from Amazon SageMaker Studio. Therefore, the number of security groups that you can specify is one less than the maximum number shown.</p>
+    /// <p>SageMaker applies these settings only to private spaces that the user creates in the domain. SageMaker doesn't apply these settings to shared spaces.</p>
     pub fn set_security_groups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.security_groups = input;
         self
@@ -209,6 +232,7 @@ impl UserSettingsBuilder {
     /// <p>Optional when the <code>CreateDomain.AppNetworkAccessType</code> parameter is set to <code>PublicInternetOnly</code>.</p>
     /// <p>Required when the <code>CreateDomain.AppNetworkAccessType</code> parameter is set to <code>VpcOnly</code>, unless specified as part of the <code>DefaultUserSettings</code> for the domain.</p>
     /// <p>Amazon SageMaker adds a security group to allow NFS traffic from Amazon SageMaker Studio. Therefore, the number of security groups that you can specify is one less than the maximum number shown.</p>
+    /// <p>SageMaker applies these settings only to private spaces that the user creates in the domain. SageMaker doesn't apply these settings to shared spaces.</p>
     pub fn get_security_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.security_groups
     }
@@ -297,58 +321,70 @@ impl UserSettingsBuilder {
         &self.r_session_app_settings
     }
     /// <p>The Canvas app settings.</p>
+    /// <p>SageMaker applies these settings only to private spaces that SageMaker creates for the Canvas app.</p>
     pub fn canvas_app_settings(mut self, input: crate::types::CanvasAppSettings) -> Self {
         self.canvas_app_settings = ::std::option::Option::Some(input);
         self
     }
     /// <p>The Canvas app settings.</p>
+    /// <p>SageMaker applies these settings only to private spaces that SageMaker creates for the Canvas app.</p>
     pub fn set_canvas_app_settings(mut self, input: ::std::option::Option<crate::types::CanvasAppSettings>) -> Self {
         self.canvas_app_settings = input;
         self
     }
     /// <p>The Canvas app settings.</p>
+    /// <p>SageMaker applies these settings only to private spaces that SageMaker creates for the Canvas app.</p>
     pub fn get_canvas_app_settings(&self) -> &::std::option::Option<crate::types::CanvasAppSettings> {
         &self.canvas_app_settings
     }
     /// <p>The Code Editor application settings.</p>
+    /// <p>SageMaker applies these settings only to private spaces that the user creates in the domain. SageMaker doesn't apply these settings to shared spaces.</p>
     pub fn code_editor_app_settings(mut self, input: crate::types::CodeEditorAppSettings) -> Self {
         self.code_editor_app_settings = ::std::option::Option::Some(input);
         self
     }
     /// <p>The Code Editor application settings.</p>
+    /// <p>SageMaker applies these settings only to private spaces that the user creates in the domain. SageMaker doesn't apply these settings to shared spaces.</p>
     pub fn set_code_editor_app_settings(mut self, input: ::std::option::Option<crate::types::CodeEditorAppSettings>) -> Self {
         self.code_editor_app_settings = input;
         self
     }
     /// <p>The Code Editor application settings.</p>
+    /// <p>SageMaker applies these settings only to private spaces that the user creates in the domain. SageMaker doesn't apply these settings to shared spaces.</p>
     pub fn get_code_editor_app_settings(&self) -> &::std::option::Option<crate::types::CodeEditorAppSettings> {
         &self.code_editor_app_settings
     }
     /// <p>The settings for the JupyterLab application.</p>
+    /// <p>SageMaker applies these settings only to private spaces that the user creates in the domain. SageMaker doesn't apply these settings to shared spaces.</p>
     pub fn jupyter_lab_app_settings(mut self, input: crate::types::JupyterLabAppSettings) -> Self {
         self.jupyter_lab_app_settings = ::std::option::Option::Some(input);
         self
     }
     /// <p>The settings for the JupyterLab application.</p>
+    /// <p>SageMaker applies these settings only to private spaces that the user creates in the domain. SageMaker doesn't apply these settings to shared spaces.</p>
     pub fn set_jupyter_lab_app_settings(mut self, input: ::std::option::Option<crate::types::JupyterLabAppSettings>) -> Self {
         self.jupyter_lab_app_settings = input;
         self
     }
     /// <p>The settings for the JupyterLab application.</p>
+    /// <p>SageMaker applies these settings only to private spaces that the user creates in the domain. SageMaker doesn't apply these settings to shared spaces.</p>
     pub fn get_jupyter_lab_app_settings(&self) -> &::std::option::Option<crate::types::JupyterLabAppSettings> {
         &self.jupyter_lab_app_settings
     }
     /// <p>The storage settings for a space.</p>
+    /// <p>SageMaker applies these settings only to private spaces that the user creates in the domain. SageMaker doesn't apply these settings to shared spaces.</p>
     pub fn space_storage_settings(mut self, input: crate::types::DefaultSpaceStorageSettings) -> Self {
         self.space_storage_settings = ::std::option::Option::Some(input);
         self
     }
     /// <p>The storage settings for a space.</p>
+    /// <p>SageMaker applies these settings only to private spaces that the user creates in the domain. SageMaker doesn't apply these settings to shared spaces.</p>
     pub fn set_space_storage_settings(mut self, input: ::std::option::Option<crate::types::DefaultSpaceStorageSettings>) -> Self {
         self.space_storage_settings = input;
         self
     }
     /// <p>The storage settings for a space.</p>
+    /// <p>SageMaker applies these settings only to private spaces that the user creates in the domain. SageMaker doesn't apply these settings to shared spaces.</p>
     pub fn get_space_storage_settings(&self) -> &::std::option::Option<crate::types::DefaultSpaceStorageSettings> {
         &self.space_storage_settings
     }
@@ -399,16 +435,19 @@ impl UserSettingsBuilder {
         &self.studio_web_portal
     }
     /// <p>Details about the POSIX identity that is used for file system operations.</p>
+    /// <p>SageMaker applies these settings only to private spaces that the user creates in the domain. SageMaker doesn't apply these settings to shared spaces.</p>
     pub fn custom_posix_user_config(mut self, input: crate::types::CustomPosixUserConfig) -> Self {
         self.custom_posix_user_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>Details about the POSIX identity that is used for file system operations.</p>
+    /// <p>SageMaker applies these settings only to private spaces that the user creates in the domain. SageMaker doesn't apply these settings to shared spaces.</p>
     pub fn set_custom_posix_user_config(mut self, input: ::std::option::Option<crate::types::CustomPosixUserConfig>) -> Self {
         self.custom_posix_user_config = input;
         self
     }
     /// <p>Details about the POSIX identity that is used for file system operations.</p>
+    /// <p>SageMaker applies these settings only to private spaces that the user creates in the domain. SageMaker doesn't apply these settings to shared spaces.</p>
     pub fn get_custom_posix_user_config(&self) -> &::std::option::Option<crate::types::CustomPosixUserConfig> {
         &self.custom_posix_user_config
     }
@@ -417,6 +456,7 @@ impl UserSettingsBuilder {
     /// To override the contents of this collection use [`set_custom_file_system_configs`](Self::set_custom_file_system_configs).
     ///
     /// <p>The settings for assigning a custom file system to a user profile. Permitted users can access this file system in Amazon SageMaker Studio.</p>
+    /// <p>SageMaker applies these settings only to private spaces that the user creates in the domain. SageMaker doesn't apply these settings to shared spaces.</p>
     pub fn custom_file_system_configs(mut self, input: crate::types::CustomFileSystemConfig) -> Self {
         let mut v = self.custom_file_system_configs.unwrap_or_default();
         v.push(input);
@@ -424,11 +464,13 @@ impl UserSettingsBuilder {
         self
     }
     /// <p>The settings for assigning a custom file system to a user profile. Permitted users can access this file system in Amazon SageMaker Studio.</p>
+    /// <p>SageMaker applies these settings only to private spaces that the user creates in the domain. SageMaker doesn't apply these settings to shared spaces.</p>
     pub fn set_custom_file_system_configs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CustomFileSystemConfig>>) -> Self {
         self.custom_file_system_configs = input;
         self
     }
     /// <p>The settings for assigning a custom file system to a user profile. Permitted users can access this file system in Amazon SageMaker Studio.</p>
+    /// <p>SageMaker applies these settings only to private spaces that the user creates in the domain. SageMaker doesn't apply these settings to shared spaces.</p>
     pub fn get_custom_file_system_configs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomFileSystemConfig>> {
         &self.custom_file_system_configs
     }
@@ -447,16 +489,19 @@ impl UserSettingsBuilder {
         &self.studio_web_portal_settings
     }
     /// <p>Indicates whether auto-mounting of an EFS volume is supported for the user profile. The <code>DefaultAsDomain</code> value is only supported for user profiles. Do not use the <code>DefaultAsDomain</code> value when setting this parameter for a domain.</p>
+    /// <p>SageMaker applies this setting only to private spaces that the user creates in the domain. SageMaker doesn't apply this setting to shared spaces.</p>
     pub fn auto_mount_home_efs(mut self, input: crate::types::AutoMountHomeEfs) -> Self {
         self.auto_mount_home_efs = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether auto-mounting of an EFS volume is supported for the user profile. The <code>DefaultAsDomain</code> value is only supported for user profiles. Do not use the <code>DefaultAsDomain</code> value when setting this parameter for a domain.</p>
+    /// <p>SageMaker applies this setting only to private spaces that the user creates in the domain. SageMaker doesn't apply this setting to shared spaces.</p>
     pub fn set_auto_mount_home_efs(mut self, input: ::std::option::Option<crate::types::AutoMountHomeEfs>) -> Self {
         self.auto_mount_home_efs = input;
         self
     }
     /// <p>Indicates whether auto-mounting of an EFS volume is supported for the user profile. The <code>DefaultAsDomain</code> value is only supported for user profiles. Do not use the <code>DefaultAsDomain</code> value when setting this parameter for a domain.</p>
+    /// <p>SageMaker applies this setting only to private spaces that the user creates in the domain. SageMaker doesn't apply this setting to shared spaces.</p>
     pub fn get_auto_mount_home_efs(&self) -> &::std::option::Option<crate::types::AutoMountHomeEfs> {
         &self.auto_mount_home_efs
     }

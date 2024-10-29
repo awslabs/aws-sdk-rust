@@ -13,18 +13,31 @@
 /// # let parametertype = unimplemented!();
 /// match parametertype {
 ///     ParameterType::Bigint => { /* ... */ },
+///     ParameterType::Binary => { /* ... */ },
 ///     ParameterType::Boolean => { /* ... */ },
+///     ParameterType::Byte => { /* ... */ },
 ///     ParameterType::Char => { /* ... */ },
+///     ParameterType::Character => { /* ... */ },
 ///     ParameterType::Date => { /* ... */ },
 ///     ParameterType::Decimal => { /* ... */ },
+///     ParameterType::Double => { /* ... */ },
 ///     ParameterType::DoublePrecision => { /* ... */ },
+///     ParameterType::Float => { /* ... */ },
+///     ParameterType::Int => { /* ... */ },
 ///     ParameterType::Integer => { /* ... */ },
+///     ParameterType::Long => { /* ... */ },
+///     ParameterType::Numeric => { /* ... */ },
 ///     ParameterType::Real => { /* ... */ },
+///     ParameterType::Short => { /* ... */ },
 ///     ParameterType::Smallint => { /* ... */ },
+///     ParameterType::String => { /* ... */ },
 ///     ParameterType::Time => { /* ... */ },
 ///     ParameterType::Timestamp => { /* ... */ },
 ///     ParameterType::Timestamptz => { /* ... */ },
+///     ParameterType::TimestampLtz => { /* ... */ },
+///     ParameterType::TimestampNtz => { /* ... */ },
 ///     ParameterType::Timetz => { /* ... */ },
+///     ParameterType::Tinyint => { /* ... */ },
 ///     ParameterType::Varbyte => { /* ... */ },
 ///     ParameterType::Varchar => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -57,21 +70,41 @@ pub enum ParameterType {
     #[allow(missing_docs)] // documentation missing in model
     Bigint,
     #[allow(missing_docs)] // documentation missing in model
+    Binary,
+    #[allow(missing_docs)] // documentation missing in model
     Boolean,
     #[allow(missing_docs)] // documentation missing in model
+    Byte,
+    #[allow(missing_docs)] // documentation missing in model
     Char,
+    #[allow(missing_docs)] // documentation missing in model
+    Character,
     #[allow(missing_docs)] // documentation missing in model
     Date,
     #[allow(missing_docs)] // documentation missing in model
     Decimal,
     #[allow(missing_docs)] // documentation missing in model
+    Double,
+    #[allow(missing_docs)] // documentation missing in model
     DoublePrecision,
+    #[allow(missing_docs)] // documentation missing in model
+    Float,
+    #[allow(missing_docs)] // documentation missing in model
+    Int,
     #[allow(missing_docs)] // documentation missing in model
     Integer,
     #[allow(missing_docs)] // documentation missing in model
+    Long,
+    #[allow(missing_docs)] // documentation missing in model
+    Numeric,
+    #[allow(missing_docs)] // documentation missing in model
     Real,
     #[allow(missing_docs)] // documentation missing in model
+    Short,
+    #[allow(missing_docs)] // documentation missing in model
     Smallint,
+    #[allow(missing_docs)] // documentation missing in model
+    String,
     #[allow(missing_docs)] // documentation missing in model
     Time,
     #[allow(missing_docs)] // documentation missing in model
@@ -79,7 +112,13 @@ pub enum ParameterType {
     #[allow(missing_docs)] // documentation missing in model
     Timestamptz,
     #[allow(missing_docs)] // documentation missing in model
+    TimestampLtz,
+    #[allow(missing_docs)] // documentation missing in model
+    TimestampNtz,
+    #[allow(missing_docs)] // documentation missing in model
     Timetz,
+    #[allow(missing_docs)] // documentation missing in model
+    Tinyint,
     #[allow(missing_docs)] // documentation missing in model
     Varbyte,
     #[allow(missing_docs)] // documentation missing in model
@@ -92,18 +131,31 @@ impl ::std::convert::From<&str> for ParameterType {
     fn from(s: &str) -> Self {
         match s {
             "BIGINT" => ParameterType::Bigint,
+            "BINARY" => ParameterType::Binary,
             "BOOLEAN" => ParameterType::Boolean,
+            "BYTE" => ParameterType::Byte,
             "CHAR" => ParameterType::Char,
+            "CHARACTER" => ParameterType::Character,
             "DATE" => ParameterType::Date,
             "DECIMAL" => ParameterType::Decimal,
+            "DOUBLE" => ParameterType::Double,
             "DOUBLE_PRECISION" => ParameterType::DoublePrecision,
+            "FLOAT" => ParameterType::Float,
+            "INT" => ParameterType::Int,
             "INTEGER" => ParameterType::Integer,
+            "LONG" => ParameterType::Long,
+            "NUMERIC" => ParameterType::Numeric,
             "REAL" => ParameterType::Real,
+            "SHORT" => ParameterType::Short,
             "SMALLINT" => ParameterType::Smallint,
+            "STRING" => ParameterType::String,
             "TIME" => ParameterType::Time,
             "TIMESTAMP" => ParameterType::Timestamp,
             "TIMESTAMPTZ" => ParameterType::Timestamptz,
+            "TIMESTAMP_LTZ" => ParameterType::TimestampLtz,
+            "TIMESTAMP_NTZ" => ParameterType::TimestampNtz,
             "TIMETZ" => ParameterType::Timetz,
+            "TINYINT" => ParameterType::Tinyint,
             "VARBYTE" => ParameterType::Varbyte,
             "VARCHAR" => ParameterType::Varchar,
             other => ParameterType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -122,18 +174,31 @@ impl ParameterType {
     pub fn as_str(&self) -> &str {
         match self {
             ParameterType::Bigint => "BIGINT",
+            ParameterType::Binary => "BINARY",
             ParameterType::Boolean => "BOOLEAN",
+            ParameterType::Byte => "BYTE",
             ParameterType::Char => "CHAR",
+            ParameterType::Character => "CHARACTER",
             ParameterType::Date => "DATE",
             ParameterType::Decimal => "DECIMAL",
+            ParameterType::Double => "DOUBLE",
             ParameterType::DoublePrecision => "DOUBLE_PRECISION",
+            ParameterType::Float => "FLOAT",
+            ParameterType::Int => "INT",
             ParameterType::Integer => "INTEGER",
+            ParameterType::Long => "LONG",
+            ParameterType::Numeric => "NUMERIC",
             ParameterType::Real => "REAL",
+            ParameterType::Short => "SHORT",
             ParameterType::Smallint => "SMALLINT",
+            ParameterType::String => "STRING",
             ParameterType::Time => "TIME",
             ParameterType::Timestamp => "TIMESTAMP",
             ParameterType::Timestamptz => "TIMESTAMPTZ",
+            ParameterType::TimestampLtz => "TIMESTAMP_LTZ",
+            ParameterType::TimestampNtz => "TIMESTAMP_NTZ",
             ParameterType::Timetz => "TIMETZ",
+            ParameterType::Tinyint => "TINYINT",
             ParameterType::Varbyte => "VARBYTE",
             ParameterType::Varchar => "VARCHAR",
             ParameterType::Unknown(value) => value.as_str(),
@@ -143,18 +208,31 @@ impl ParameterType {
     pub const fn values() -> &'static [&'static str] {
         &[
             "BIGINT",
+            "BINARY",
             "BOOLEAN",
+            "BYTE",
             "CHAR",
+            "CHARACTER",
             "DATE",
             "DECIMAL",
+            "DOUBLE",
             "DOUBLE_PRECISION",
+            "FLOAT",
+            "INT",
             "INTEGER",
+            "LONG",
+            "NUMERIC",
             "REAL",
+            "SHORT",
             "SMALLINT",
+            "STRING",
             "TIME",
             "TIMESTAMP",
             "TIMESTAMPTZ",
+            "TIMESTAMP_LTZ",
+            "TIMESTAMP_NTZ",
             "TIMETZ",
+            "TINYINT",
             "VARBYTE",
             "VARCHAR",
         ]
@@ -181,18 +259,31 @@ impl ::std::fmt::Display for ParameterType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ParameterType::Bigint => write!(f, "BIGINT"),
+            ParameterType::Binary => write!(f, "BINARY"),
             ParameterType::Boolean => write!(f, "BOOLEAN"),
+            ParameterType::Byte => write!(f, "BYTE"),
             ParameterType::Char => write!(f, "CHAR"),
+            ParameterType::Character => write!(f, "CHARACTER"),
             ParameterType::Date => write!(f, "DATE"),
             ParameterType::Decimal => write!(f, "DECIMAL"),
+            ParameterType::Double => write!(f, "DOUBLE"),
             ParameterType::DoublePrecision => write!(f, "DOUBLE_PRECISION"),
+            ParameterType::Float => write!(f, "FLOAT"),
+            ParameterType::Int => write!(f, "INT"),
             ParameterType::Integer => write!(f, "INTEGER"),
+            ParameterType::Long => write!(f, "LONG"),
+            ParameterType::Numeric => write!(f, "NUMERIC"),
             ParameterType::Real => write!(f, "REAL"),
+            ParameterType::Short => write!(f, "SHORT"),
             ParameterType::Smallint => write!(f, "SMALLINT"),
+            ParameterType::String => write!(f, "STRING"),
             ParameterType::Time => write!(f, "TIME"),
             ParameterType::Timestamp => write!(f, "TIMESTAMP"),
             ParameterType::Timestamptz => write!(f, "TIMESTAMPTZ"),
+            ParameterType::TimestampLtz => write!(f, "TIMESTAMP_LTZ"),
+            ParameterType::TimestampNtz => write!(f, "TIMESTAMP_NTZ"),
             ParameterType::Timetz => write!(f, "TIMETZ"),
+            ParameterType::Tinyint => write!(f, "TINYINT"),
             ParameterType::Varbyte => write!(f, "VARBYTE"),
             ParameterType::Varchar => write!(f, "VARCHAR"),
             ParameterType::Unknown(value) => write!(f, "{}", value),

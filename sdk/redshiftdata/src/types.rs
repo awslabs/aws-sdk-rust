@@ -3,11 +3,15 @@ pub use crate::types::_table_member::TableMember;
 
 pub use crate::types::_statement_data::StatementData;
 
+pub use crate::types::_result_format_string::ResultFormatString;
+
 pub use crate::types::_sql_parameter::SqlParameter;
 
 pub use crate::types::_status_string::StatusString;
 
 pub use crate::types::_column_metadata::ColumnMetadata;
+
+pub use crate::types::_query_records::QueryRecords;
 
 pub use crate::types::_field::Field;
 
@@ -18,6 +22,10 @@ pub use crate::types::_statement_status_string::StatementStatusString;
 mod _column_metadata;
 
 mod _field;
+
+mod _query_records;
+
+mod _result_format_string;
 
 mod _sql_parameter;
 

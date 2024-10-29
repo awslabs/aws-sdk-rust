@@ -50,6 +50,15 @@ pub(crate) fn create_guardrail_version_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn create_inference_profile_output_output_correct_errors(
+    mut builder: crate::operation::create_inference_profile::builders::CreateInferenceProfileOutputBuilder,
+) -> crate::operation::create_inference_profile::builders::CreateInferenceProfileOutputBuilder {
+    if builder.inference_profile_arn.is_none() {
+        builder.inference_profile_arn = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn create_model_copy_job_output_output_correct_errors(
     mut builder: crate::operation::create_model_copy_job::builders::CreateModelCopyJobOutputBuilder,
 ) -> crate::operation::create_model_copy_job::builders::CreateModelCopyJobOutputBuilder {
@@ -203,11 +212,11 @@ pub(crate) fn get_inference_profile_output_output_correct_errors(
     if builder.inference_profile_name.is_none() {
         builder.inference_profile_name = Some(Default::default())
     }
-    if builder.models.is_none() {
-        builder.models = Some(Default::default())
-    }
     if builder.inference_profile_arn.is_none() {
         builder.inference_profile_arn = Some(Default::default())
+    }
+    if builder.models.is_none() {
+        builder.models = Some(Default::default())
     }
     if builder.inference_profile_id.is_none() {
         builder.inference_profile_id = Some(Default::default())
@@ -624,11 +633,11 @@ pub(crate) fn inference_profile_summary_correct_errors(
     if builder.inference_profile_name.is_none() {
         builder.inference_profile_name = Some(Default::default())
     }
-    if builder.models.is_none() {
-        builder.models = Some(Default::default())
-    }
     if builder.inference_profile_arn.is_none() {
         builder.inference_profile_arn = Some(Default::default())
+    }
+    if builder.models.is_none() {
+        builder.models = Some(Default::default())
     }
     if builder.inference_profile_id.is_none() {
         builder.inference_profile_id = Some(Default::default())

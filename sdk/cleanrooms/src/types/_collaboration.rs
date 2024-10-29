@@ -30,6 +30,8 @@ pub struct Collaboration {
     pub data_encryption_metadata: ::std::option::Option<crate::types::DataEncryptionMetadata>,
     /// <p>An indicator as to whether query logging has been enabled or disabled for the collaboration.</p>
     pub query_log_status: crate::types::CollaborationQueryLogStatus,
+    /// <p>The analytics engine for the collaboration.</p>
+    pub analytics_engine: ::std::option::Option<crate::types::AnalyticsEngine>,
 }
 impl Collaboration {
     /// <p>The unique ID for the collaboration.</p>
@@ -89,6 +91,10 @@ impl Collaboration {
     pub fn query_log_status(&self) -> &crate::types::CollaborationQueryLogStatus {
         &self.query_log_status
     }
+    /// <p>The analytics engine for the collaboration.</p>
+    pub fn analytics_engine(&self) -> ::std::option::Option<&crate::types::AnalyticsEngine> {
+        self.analytics_engine.as_ref()
+    }
 }
 impl Collaboration {
     /// Creates a new builder-style object to manufacture [`Collaboration`](crate::types::Collaboration).
@@ -114,6 +120,7 @@ pub struct CollaborationBuilder {
     pub(crate) membership_arn: ::std::option::Option<::std::string::String>,
     pub(crate) data_encryption_metadata: ::std::option::Option<crate::types::DataEncryptionMetadata>,
     pub(crate) query_log_status: ::std::option::Option<crate::types::CollaborationQueryLogStatus>,
+    pub(crate) analytics_engine: ::std::option::Option<crate::types::AnalyticsEngine>,
 }
 impl CollaborationBuilder {
     /// <p>The unique ID for the collaboration.</p>
@@ -307,6 +314,20 @@ impl CollaborationBuilder {
     pub fn get_query_log_status(&self) -> &::std::option::Option<crate::types::CollaborationQueryLogStatus> {
         &self.query_log_status
     }
+    /// <p>The analytics engine for the collaboration.</p>
+    pub fn analytics_engine(mut self, input: crate::types::AnalyticsEngine) -> Self {
+        self.analytics_engine = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The analytics engine for the collaboration.</p>
+    pub fn set_analytics_engine(mut self, input: ::std::option::Option<crate::types::AnalyticsEngine>) -> Self {
+        self.analytics_engine = input;
+        self
+    }
+    /// <p>The analytics engine for the collaboration.</p>
+    pub fn get_analytics_engine(&self) -> &::std::option::Option<crate::types::AnalyticsEngine> {
+        &self.analytics_engine
+    }
     /// Consumes the builder and constructs a [`Collaboration`](crate::types::Collaboration).
     /// This method will fail if any of the following fields are not set:
     /// - [`id`](crate::types::builders::CollaborationBuilder::id)
@@ -378,6 +399,7 @@ impl CollaborationBuilder {
                     "query_log_status was not specified but it is required when building Collaboration",
                 )
             })?,
+            analytics_engine: self.analytics_engine,
         })
     }
 }

@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetInferenceProfileInput {
-    /// <p>The unique identifier of the inference profile.</p>
+    /// <p>The ID or Amazon Resource Name (ARN) of the inference profile.</p>
     pub inference_profile_identifier: ::std::option::Option<::std::string::String>,
 }
 impl GetInferenceProfileInput {
-    /// <p>The unique identifier of the inference profile.</p>
+    /// <p>The ID or Amazon Resource Name (ARN) of the inference profile.</p>
     pub fn inference_profile_identifier(&self) -> ::std::option::Option<&str> {
         self.inference_profile_identifier.as_deref()
     }
@@ -26,18 +26,18 @@ pub struct GetInferenceProfileInputBuilder {
     pub(crate) inference_profile_identifier: ::std::option::Option<::std::string::String>,
 }
 impl GetInferenceProfileInputBuilder {
-    /// <p>The unique identifier of the inference profile.</p>
+    /// <p>The ID or Amazon Resource Name (ARN) of the inference profile.</p>
     /// This field is required.
     pub fn inference_profile_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inference_profile_identifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier of the inference profile.</p>
+    /// <p>The ID or Amazon Resource Name (ARN) of the inference profile.</p>
     pub fn set_inference_profile_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inference_profile_identifier = input;
         self
     }
-    /// <p>The unique identifier of the inference profile.</p>
+    /// <p>The ID or Amazon Resource Name (ARN) of the inference profile.</p>
     pub fn get_inference_profile_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.inference_profile_identifier
     }

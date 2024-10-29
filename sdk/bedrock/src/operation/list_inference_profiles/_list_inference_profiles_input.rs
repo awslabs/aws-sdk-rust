@@ -7,6 +7,14 @@ pub struct ListInferenceProfilesInput {
     pub max_results: ::std::option::Option<i32>,
     /// <p>If the total number of results is greater than the <code>maxResults</code> value provided in the request, enter the token returned in the <code>nextToken</code> field in the response in this field to return the next batch of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
+    /// <p>Filters for inference profiles that match the type you specify.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>SYSTEM_DEFINED</code> – The inference profile is defined by Amazon Bedrock. You can route inference requests across regions with these inference profiles.</p></li>
+    /// <li>
+    /// <p><code>APPLICATION</code> – The inference profile was created by a user. This type of inference profile can track metrics and costs when invoking the model in it. The inference profile may route requests to one or multiple regions.</p></li>
+    /// </ul>
+    pub type_equals: ::std::option::Option<crate::types::InferenceProfileType>,
 }
 impl ListInferenceProfilesInput {
     /// <p>The maximum number of results to return in the response. If the total number of results is greater than this value, use the token returned in the response in the <code>nextToken</code> field when making another request to return the next batch of results.</p>
@@ -16,6 +24,16 @@ impl ListInferenceProfilesInput {
     /// <p>If the total number of results is greater than the <code>maxResults</code> value provided in the request, enter the token returned in the <code>nextToken</code> field in the response in this field to return the next batch of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
+    }
+    /// <p>Filters for inference profiles that match the type you specify.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>SYSTEM_DEFINED</code> – The inference profile is defined by Amazon Bedrock. You can route inference requests across regions with these inference profiles.</p></li>
+    /// <li>
+    /// <p><code>APPLICATION</code> – The inference profile was created by a user. This type of inference profile can track metrics and costs when invoking the model in it. The inference profile may route requests to one or multiple regions.</p></li>
+    /// </ul>
+    pub fn type_equals(&self) -> ::std::option::Option<&crate::types::InferenceProfileType> {
+        self.type_equals.as_ref()
     }
 }
 impl ListInferenceProfilesInput {
@@ -31,6 +49,7 @@ impl ListInferenceProfilesInput {
 pub struct ListInferenceProfilesInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
+    pub(crate) type_equals: ::std::option::Option<crate::types::InferenceProfileType>,
 }
 impl ListInferenceProfilesInputBuilder {
     /// <p>The maximum number of results to return in the response. If the total number of results is greater than this value, use the token returned in the response in the <code>nextToken</code> field when making another request to return the next batch of results.</p>
@@ -61,6 +80,38 @@ impl ListInferenceProfilesInputBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
+    /// <p>Filters for inference profiles that match the type you specify.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>SYSTEM_DEFINED</code> – The inference profile is defined by Amazon Bedrock. You can route inference requests across regions with these inference profiles.</p></li>
+    /// <li>
+    /// <p><code>APPLICATION</code> – The inference profile was created by a user. This type of inference profile can track metrics and costs when invoking the model in it. The inference profile may route requests to one or multiple regions.</p></li>
+    /// </ul>
+    pub fn type_equals(mut self, input: crate::types::InferenceProfileType) -> Self {
+        self.type_equals = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Filters for inference profiles that match the type you specify.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>SYSTEM_DEFINED</code> – The inference profile is defined by Amazon Bedrock. You can route inference requests across regions with these inference profiles.</p></li>
+    /// <li>
+    /// <p><code>APPLICATION</code> – The inference profile was created by a user. This type of inference profile can track metrics and costs when invoking the model in it. The inference profile may route requests to one or multiple regions.</p></li>
+    /// </ul>
+    pub fn set_type_equals(mut self, input: ::std::option::Option<crate::types::InferenceProfileType>) -> Self {
+        self.type_equals = input;
+        self
+    }
+    /// <p>Filters for inference profiles that match the type you specify.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>SYSTEM_DEFINED</code> – The inference profile is defined by Amazon Bedrock. You can route inference requests across regions with these inference profiles.</p></li>
+    /// <li>
+    /// <p><code>APPLICATION</code> – The inference profile was created by a user. This type of inference profile can track metrics and costs when invoking the model in it. The inference profile may route requests to one or multiple regions.</p></li>
+    /// </ul>
+    pub fn get_type_equals(&self) -> &::std::option::Option<crate::types::InferenceProfileType> {
+        &self.type_equals
+    }
     /// Consumes the builder and constructs a [`ListInferenceProfilesInput`](crate::operation::list_inference_profiles::ListInferenceProfilesInput).
     pub fn build(
         self,
@@ -69,6 +120,7 @@ impl ListInferenceProfilesInputBuilder {
         ::std::result::Result::Ok(crate::operation::list_inference_profiles::ListInferenceProfilesInput {
             max_results: self.max_results,
             next_token: self.next_token,
+            type_equals: self.type_equals,
         })
     }
 }

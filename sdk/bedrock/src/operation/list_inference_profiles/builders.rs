@@ -22,7 +22,7 @@ impl crate::operation::list_inference_profiles::builders::ListInferenceProfilesI
 }
 /// Fluent builder constructing a request to `ListInferenceProfiles`.
 ///
-/// <p>Returns a list of inference profiles that you can use.</p>
+/// <p>Returns a list of inference profiles that you can use. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference.html">Increase throughput and resilience with cross-region inference in Amazon Bedrock</a>. in the Amazon Bedrock User Guide.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListInferenceProfilesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -141,5 +141,37 @@ impl ListInferenceProfilesFluentBuilder {
     /// <p>If the total number of results is greater than the <code>maxResults</code> value provided in the request, enter the token returned in the <code>nextToken</code> field in the response in this field to return the next batch of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
+    }
+    /// <p>Filters for inference profiles that match the type you specify.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>SYSTEM_DEFINED</code> – The inference profile is defined by Amazon Bedrock. You can route inference requests across regions with these inference profiles.</p></li>
+    /// <li>
+    /// <p><code>APPLICATION</code> – The inference profile was created by a user. This type of inference profile can track metrics and costs when invoking the model in it. The inference profile may route requests to one or multiple regions.</p></li>
+    /// </ul>
+    pub fn type_equals(mut self, input: crate::types::InferenceProfileType) -> Self {
+        self.inner = self.inner.type_equals(input);
+        self
+    }
+    /// <p>Filters for inference profiles that match the type you specify.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>SYSTEM_DEFINED</code> – The inference profile is defined by Amazon Bedrock. You can route inference requests across regions with these inference profiles.</p></li>
+    /// <li>
+    /// <p><code>APPLICATION</code> – The inference profile was created by a user. This type of inference profile can track metrics and costs when invoking the model in it. The inference profile may route requests to one or multiple regions.</p></li>
+    /// </ul>
+    pub fn set_type_equals(mut self, input: ::std::option::Option<crate::types::InferenceProfileType>) -> Self {
+        self.inner = self.inner.set_type_equals(input);
+        self
+    }
+    /// <p>Filters for inference profiles that match the type you specify.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>SYSTEM_DEFINED</code> – The inference profile is defined by Amazon Bedrock. You can route inference requests across regions with these inference profiles.</p></li>
+    /// <li>
+    /// <p><code>APPLICATION</code> – The inference profile was created by a user. This type of inference profile can track metrics and costs when invoking the model in it. The inference profile may route requests to one or multiple regions.</p></li>
+    /// </ul>
+    pub fn get_type_equals(&self) -> &::std::option::Option<crate::types::InferenceProfileType> {
+        self.inner.get_type_equals()
     }
 }

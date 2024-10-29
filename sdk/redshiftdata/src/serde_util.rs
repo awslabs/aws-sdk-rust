@@ -71,6 +71,15 @@ pub(crate) fn get_statement_result_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn get_statement_result_v2_output_output_correct_errors(
+    mut builder: crate::operation::get_statement_result_v2::builders::GetStatementResultV2OutputBuilder,
+) -> crate::operation::get_statement_result_v2::builders::GetStatementResultV2OutputBuilder {
+    if builder.records.is_none() {
+        builder.records = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn list_statements_output_output_correct_errors(
     mut builder: crate::operation::list_statements::builders::ListStatementsOutputBuilder,
 ) -> crate::operation::list_statements::builders::ListStatementsOutputBuilder {

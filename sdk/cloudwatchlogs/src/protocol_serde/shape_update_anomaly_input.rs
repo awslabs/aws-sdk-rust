@@ -21,5 +21,8 @@ pub fn ser_update_anomaly_input_input(
         crate::protocol_serde::shape_suppression_period::ser_suppression_period(&mut object_6, var_5)?;
         object_6.finish();
     }
+    if let Some(var_7) = &input.baseline {
+        object.key("baseline").boolean(*var_7);
+    }
     Ok(())
 }

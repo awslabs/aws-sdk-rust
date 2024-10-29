@@ -242,6 +242,36 @@ impl From<crate::operation::get_statement_result::GetStatementResultError> for E
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_statement_result_v2::GetStatementResultV2Error, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_statement_result_v2::GetStatementResultV2Error, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_statement_result_v2::GetStatementResultV2Error> for Error {
+    fn from(err: crate::operation::get_statement_result_v2::GetStatementResultV2Error) -> Self {
+        match err {
+            crate::operation::get_statement_result_v2::GetStatementResultV2Error::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_statement_result_v2::GetStatementResultV2Error::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_statement_result_v2::GetStatementResultV2Error::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_statement_result_v2::GetStatementResultV2Error::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_databases::ListDatabasesError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

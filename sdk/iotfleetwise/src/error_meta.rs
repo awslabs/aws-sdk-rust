@@ -162,6 +162,7 @@ impl From<crate::operation::batch_update_vehicle::BatchUpdateVehicleError> for E
         match err {
             crate::operation::batch_update_vehicle::BatchUpdateVehicleError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::batch_update_vehicle::BatchUpdateVehicleError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::batch_update_vehicle::BatchUpdateVehicleError::LimitExceededException(inner) => Error::LimitExceededException(inner),
             crate::operation::batch_update_vehicle::BatchUpdateVehicleError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::batch_update_vehicle::BatchUpdateVehicleError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::batch_update_vehicle::BatchUpdateVehicleError::Unhandled(inner) => Error::Unhandled(inner),
@@ -1670,6 +1671,7 @@ impl From<crate::operation::update_vehicle::UpdateVehicleError> for Error {
             crate::operation::update_vehicle::UpdateVehicleError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::update_vehicle::UpdateVehicleError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::update_vehicle::UpdateVehicleError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::update_vehicle::UpdateVehicleError::LimitExceededException(inner) => Error::LimitExceededException(inner),
             crate::operation::update_vehicle::UpdateVehicleError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::update_vehicle::UpdateVehicleError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::update_vehicle::UpdateVehicleError::ValidationException(inner) => Error::ValidationException(inner),

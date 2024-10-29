@@ -11,6 +11,8 @@ pub struct StartProtectedQueryInput {
     pub sql_parameters: ::std::option::Option<crate::types::ProtectedQuerySqlParameters>,
     /// <p>The details needed to write the query results.</p>
     pub result_configuration: ::std::option::Option<crate::types::ProtectedQueryResultConfiguration>,
+    /// <p>The compute configuration for the protected query.</p>
+    pub compute_configuration: ::std::option::Option<crate::types::ComputeConfiguration>,
 }
 impl StartProtectedQueryInput {
     /// <p>The type of the protected query to be started.</p>
@@ -29,6 +31,10 @@ impl StartProtectedQueryInput {
     pub fn result_configuration(&self) -> ::std::option::Option<&crate::types::ProtectedQueryResultConfiguration> {
         self.result_configuration.as_ref()
     }
+    /// <p>The compute configuration for the protected query.</p>
+    pub fn compute_configuration(&self) -> ::std::option::Option<&crate::types::ComputeConfiguration> {
+        self.compute_configuration.as_ref()
+    }
 }
 impl ::std::fmt::Debug for StartProtectedQueryInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -37,6 +43,7 @@ impl ::std::fmt::Debug for StartProtectedQueryInput {
         formatter.field("membership_identifier", &self.membership_identifier);
         formatter.field("sql_parameters", &"*** Sensitive Data Redacted ***");
         formatter.field("result_configuration", &self.result_configuration);
+        formatter.field("compute_configuration", &self.compute_configuration);
         formatter.finish()
     }
 }
@@ -55,6 +62,7 @@ pub struct StartProtectedQueryInputBuilder {
     pub(crate) membership_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) sql_parameters: ::std::option::Option<crate::types::ProtectedQuerySqlParameters>,
     pub(crate) result_configuration: ::std::option::Option<crate::types::ProtectedQueryResultConfiguration>,
+    pub(crate) compute_configuration: ::std::option::Option<crate::types::ComputeConfiguration>,
 }
 impl StartProtectedQueryInputBuilder {
     /// <p>The type of the protected query to be started.</p>
@@ -116,6 +124,20 @@ impl StartProtectedQueryInputBuilder {
     pub fn get_result_configuration(&self) -> &::std::option::Option<crate::types::ProtectedQueryResultConfiguration> {
         &self.result_configuration
     }
+    /// <p>The compute configuration for the protected query.</p>
+    pub fn compute_configuration(mut self, input: crate::types::ComputeConfiguration) -> Self {
+        self.compute_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The compute configuration for the protected query.</p>
+    pub fn set_compute_configuration(mut self, input: ::std::option::Option<crate::types::ComputeConfiguration>) -> Self {
+        self.compute_configuration = input;
+        self
+    }
+    /// <p>The compute configuration for the protected query.</p>
+    pub fn get_compute_configuration(&self) -> &::std::option::Option<crate::types::ComputeConfiguration> {
+        &self.compute_configuration
+    }
     /// Consumes the builder and constructs a [`StartProtectedQueryInput`](crate::operation::start_protected_query::StartProtectedQueryInput).
     pub fn build(
         self,
@@ -126,6 +148,7 @@ impl StartProtectedQueryInputBuilder {
             membership_identifier: self.membership_identifier,
             sql_parameters: self.sql_parameters,
             result_configuration: self.result_configuration,
+            compute_configuration: self.compute_configuration,
         })
     }
 }
@@ -136,6 +159,7 @@ impl ::std::fmt::Debug for StartProtectedQueryInputBuilder {
         formatter.field("membership_identifier", &self.membership_identifier);
         formatter.field("sql_parameters", &"*** Sensitive Data Redacted ***");
         formatter.field("result_configuration", &self.result_configuration);
+        formatter.field("compute_configuration", &self.compute_configuration);
         formatter.finish()
     }
 }

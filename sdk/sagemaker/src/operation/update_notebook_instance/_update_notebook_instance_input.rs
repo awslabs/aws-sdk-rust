@@ -21,9 +21,11 @@ pub struct UpdateNotebookInstanceInput {
     pub default_code_repository: ::std::option::Option<::std::string::String>,
     /// <p>An array of up to three Git repositories to associate with the notebook instance. These can be either the names of Git repositories stored as resources in your account, or the URL of Git repositories in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or in any other Git repository. These repositories are cloned at the same level as the default repository of your notebook instance. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with SageMaker Notebook Instances</a>.</p>
     pub additional_code_repositories: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>A list of the Elastic Inference (EI) instance types to associate with this notebook instance. Currently only one EI instance type can be associated with a notebook instance. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/ei.html">Using Elastic Inference in Amazon SageMaker</a>.</p>
+    /// <p>This parameter is no longer supported. Elastic Inference (EI) is no longer available.</p>
+    /// <p>This parameter was used to specify a list of the EI instance types to associate with this notebook instance.</p>
     pub accelerator_types: ::std::option::Option<::std::vec::Vec<crate::types::NotebookInstanceAcceleratorType>>,
-    /// <p>A list of the Elastic Inference (EI) instance types to remove from this notebook instance. This operation is idempotent. If you specify an accelerator type that is not associated with the notebook instance when you call this method, it does not throw an error.</p>
+    /// <p>This parameter is no longer supported. Elastic Inference (EI) is no longer available.</p>
+    /// <p>This parameter was used to specify a list of the EI instance types to remove from this notebook instance.</p>
     pub disassociate_accelerator_types: ::std::option::Option<bool>,
     /// <p>The name or URL of the default Git repository to remove from this notebook instance. This operation is idempotent. If you specify a Git repository that is not associated with the notebook instance when you call this method, it does not throw an error.</p>
     pub disassociate_default_code_repository: ::std::option::Option<bool>,
@@ -73,13 +75,15 @@ impl UpdateNotebookInstanceInput {
     pub fn additional_code_repositories(&self) -> &[::std::string::String] {
         self.additional_code_repositories.as_deref().unwrap_or_default()
     }
-    /// <p>A list of the Elastic Inference (EI) instance types to associate with this notebook instance. Currently only one EI instance type can be associated with a notebook instance. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/ei.html">Using Elastic Inference in Amazon SageMaker</a>.</p>
+    /// <p>This parameter is no longer supported. Elastic Inference (EI) is no longer available.</p>
+    /// <p>This parameter was used to specify a list of the EI instance types to associate with this notebook instance.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.accelerator_types.is_none()`.
     pub fn accelerator_types(&self) -> &[crate::types::NotebookInstanceAcceleratorType] {
         self.accelerator_types.as_deref().unwrap_or_default()
     }
-    /// <p>A list of the Elastic Inference (EI) instance types to remove from this notebook instance. This operation is idempotent. If you specify an accelerator type that is not associated with the notebook instance when you call this method, it does not throw an error.</p>
+    /// <p>This parameter is no longer supported. Elastic Inference (EI) is no longer available.</p>
+    /// <p>This parameter was used to specify a list of the EI instance types to remove from this notebook instance.</p>
     pub fn disassociate_accelerator_types(&self) -> ::std::option::Option<bool> {
         self.disassociate_accelerator_types
     }
@@ -258,33 +262,39 @@ impl UpdateNotebookInstanceInputBuilder {
     ///
     /// To override the contents of this collection use [`set_accelerator_types`](Self::set_accelerator_types).
     ///
-    /// <p>A list of the Elastic Inference (EI) instance types to associate with this notebook instance. Currently only one EI instance type can be associated with a notebook instance. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/ei.html">Using Elastic Inference in Amazon SageMaker</a>.</p>
+    /// <p>This parameter is no longer supported. Elastic Inference (EI) is no longer available.</p>
+    /// <p>This parameter was used to specify a list of the EI instance types to associate with this notebook instance.</p>
     pub fn accelerator_types(mut self, input: crate::types::NotebookInstanceAcceleratorType) -> Self {
         let mut v = self.accelerator_types.unwrap_or_default();
         v.push(input);
         self.accelerator_types = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of the Elastic Inference (EI) instance types to associate with this notebook instance. Currently only one EI instance type can be associated with a notebook instance. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/ei.html">Using Elastic Inference in Amazon SageMaker</a>.</p>
+    /// <p>This parameter is no longer supported. Elastic Inference (EI) is no longer available.</p>
+    /// <p>This parameter was used to specify a list of the EI instance types to associate with this notebook instance.</p>
     pub fn set_accelerator_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NotebookInstanceAcceleratorType>>) -> Self {
         self.accelerator_types = input;
         self
     }
-    /// <p>A list of the Elastic Inference (EI) instance types to associate with this notebook instance. Currently only one EI instance type can be associated with a notebook instance. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/ei.html">Using Elastic Inference in Amazon SageMaker</a>.</p>
+    /// <p>This parameter is no longer supported. Elastic Inference (EI) is no longer available.</p>
+    /// <p>This parameter was used to specify a list of the EI instance types to associate with this notebook instance.</p>
     pub fn get_accelerator_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NotebookInstanceAcceleratorType>> {
         &self.accelerator_types
     }
-    /// <p>A list of the Elastic Inference (EI) instance types to remove from this notebook instance. This operation is idempotent. If you specify an accelerator type that is not associated with the notebook instance when you call this method, it does not throw an error.</p>
+    /// <p>This parameter is no longer supported. Elastic Inference (EI) is no longer available.</p>
+    /// <p>This parameter was used to specify a list of the EI instance types to remove from this notebook instance.</p>
     pub fn disassociate_accelerator_types(mut self, input: bool) -> Self {
         self.disassociate_accelerator_types = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A list of the Elastic Inference (EI) instance types to remove from this notebook instance. This operation is idempotent. If you specify an accelerator type that is not associated with the notebook instance when you call this method, it does not throw an error.</p>
+    /// <p>This parameter is no longer supported. Elastic Inference (EI) is no longer available.</p>
+    /// <p>This parameter was used to specify a list of the EI instance types to remove from this notebook instance.</p>
     pub fn set_disassociate_accelerator_types(mut self, input: ::std::option::Option<bool>) -> Self {
         self.disassociate_accelerator_types = input;
         self
     }
-    /// <p>A list of the Elastic Inference (EI) instance types to remove from this notebook instance. This operation is idempotent. If you specify an accelerator type that is not associated with the notebook instance when you call this method, it does not throw an error.</p>
+    /// <p>This parameter is no longer supported. Elastic Inference (EI) is no longer available.</p>
+    /// <p>This parameter was used to specify a list of the EI instance types to remove from this notebook instance.</p>
     pub fn get_disassociate_accelerator_types(&self) -> &::std::option::Option<bool> {
         &self.disassociate_accelerator_types
     }

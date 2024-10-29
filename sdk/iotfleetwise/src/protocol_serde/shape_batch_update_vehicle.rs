@@ -48,6 +48,20 @@ pub fn de_batch_update_vehicle_http_error(
             };
             tmp
         }),
+        "LimitExceededException" => crate::operation::batch_update_vehicle::BatchUpdateVehicleError::LimitExceededException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::LimitExceededExceptionBuilder::default();
+                output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::batch_update_vehicle::BatchUpdateVehicleError::unhandled)?;
+                let output = output.meta(generic);
+                crate::serde_util::limit_exceeded_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::batch_update_vehicle::BatchUpdateVehicleError::unhandled)?
+            };
+            tmp
+        }),
         "ThrottlingException" => crate::operation::batch_update_vehicle::BatchUpdateVehicleError::ThrottlingException({
             #[allow(unused_mut)]
             let mut tmp = {

@@ -13,6 +13,9 @@ pub struct UpdateAnomalyInput {
     pub suppression_type: ::std::option::Option<crate::types::SuppressionType>,
     /// <p>If you are temporarily suppressing an anomaly or pattern, use this structure to specify how long the suppression is to last.</p>
     pub suppression_period: ::std::option::Option<crate::types::SuppressionPeriod>,
+    /// <p>Set this to <code>true</code> to prevent CloudWatch Logs from displaying this behavior as an anomaly in the future. The behavior is then treated as baseline behavior. However, if similar but more severe occurrences of this behavior occur in the future, those will still be reported as anomalies.</p>
+    /// <p>The default is <code>false</code></p>
+    pub baseline: ::std::option::Option<bool>,
 }
 impl UpdateAnomalyInput {
     /// <p>If you are suppressing or unsuppressing an anomaly, specify its unique ID here. You can find anomaly IDs by using the <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_ListAnomalies.html">ListAnomalies</a> operation.</p>
@@ -35,6 +38,11 @@ impl UpdateAnomalyInput {
     pub fn suppression_period(&self) -> ::std::option::Option<&crate::types::SuppressionPeriod> {
         self.suppression_period.as_ref()
     }
+    /// <p>Set this to <code>true</code> to prevent CloudWatch Logs from displaying this behavior as an anomaly in the future. The behavior is then treated as baseline behavior. However, if similar but more severe occurrences of this behavior occur in the future, those will still be reported as anomalies.</p>
+    /// <p>The default is <code>false</code></p>
+    pub fn baseline(&self) -> ::std::option::Option<bool> {
+        self.baseline
+    }
 }
 impl UpdateAnomalyInput {
     /// Creates a new builder-style object to manufacture [`UpdateAnomalyInput`](crate::operation::update_anomaly::UpdateAnomalyInput).
@@ -52,6 +60,7 @@ pub struct UpdateAnomalyInputBuilder {
     pub(crate) anomaly_detector_arn: ::std::option::Option<::std::string::String>,
     pub(crate) suppression_type: ::std::option::Option<crate::types::SuppressionType>,
     pub(crate) suppression_period: ::std::option::Option<crate::types::SuppressionPeriod>,
+    pub(crate) baseline: ::std::option::Option<bool>,
 }
 impl UpdateAnomalyInputBuilder {
     /// <p>If you are suppressing or unsuppressing an anomaly, specify its unique ID here. You can find anomaly IDs by using the <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_ListAnomalies.html">ListAnomalies</a> operation.</p>
@@ -125,6 +134,23 @@ impl UpdateAnomalyInputBuilder {
     pub fn get_suppression_period(&self) -> &::std::option::Option<crate::types::SuppressionPeriod> {
         &self.suppression_period
     }
+    /// <p>Set this to <code>true</code> to prevent CloudWatch Logs from displaying this behavior as an anomaly in the future. The behavior is then treated as baseline behavior. However, if similar but more severe occurrences of this behavior occur in the future, those will still be reported as anomalies.</p>
+    /// <p>The default is <code>false</code></p>
+    pub fn baseline(mut self, input: bool) -> Self {
+        self.baseline = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Set this to <code>true</code> to prevent CloudWatch Logs from displaying this behavior as an anomaly in the future. The behavior is then treated as baseline behavior. However, if similar but more severe occurrences of this behavior occur in the future, those will still be reported as anomalies.</p>
+    /// <p>The default is <code>false</code></p>
+    pub fn set_baseline(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.baseline = input;
+        self
+    }
+    /// <p>Set this to <code>true</code> to prevent CloudWatch Logs from displaying this behavior as an anomaly in the future. The behavior is then treated as baseline behavior. However, if similar but more severe occurrences of this behavior occur in the future, those will still be reported as anomalies.</p>
+    /// <p>The default is <code>false</code></p>
+    pub fn get_baseline(&self) -> &::std::option::Option<bool> {
+        &self.baseline
+    }
     /// Consumes the builder and constructs a [`UpdateAnomalyInput`](crate::operation::update_anomaly::UpdateAnomalyInput).
     pub fn build(
         self,
@@ -135,6 +161,7 @@ impl UpdateAnomalyInputBuilder {
             anomaly_detector_arn: self.anomaly_detector_arn,
             suppression_type: self.suppression_type,
             suppression_period: self.suppression_period,
+            baseline: self.baseline,
         })
     }
 }

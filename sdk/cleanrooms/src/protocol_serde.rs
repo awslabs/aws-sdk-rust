@@ -303,6 +303,8 @@ pub(crate) mod shape_collaboration_privacy_budget_template_summary_list;
 
 pub(crate) mod shape_collaboration_summary_list;
 
+pub(crate) mod shape_compute_configuration;
+
 pub(crate) mod shape_configured_audience_model_association;
 
 pub(crate) mod shape_configured_audience_model_association_summary_list;
@@ -495,6 +497,8 @@ pub(crate) mod shape_schema_type_properties;
 
 pub(crate) mod shape_validation_exception_field;
 
+pub(crate) mod shape_worker_compute_configuration;
+
 pub(crate) mod shape_analysis_rule_aggregation;
 
 pub(crate) mod shape_analysis_rule_custom;
@@ -504,6 +508,8 @@ pub(crate) mod shape_analysis_rule_list;
 pub(crate) mod shape_analysis_rule_policy_v1;
 
 pub(crate) mod shape_analysis_template_validation_status_detail;
+
+pub(crate) mod shape_billed_resource_utilization;
 
 pub(crate) mod shape_column;
 

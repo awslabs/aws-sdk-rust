@@ -31,6 +31,8 @@ pub(crate) mod shape_create_guardrail;
 
 pub(crate) mod shape_create_guardrail_version;
 
+pub(crate) mod shape_create_inference_profile;
+
 pub(crate) mod shape_create_model_copy_job;
 
 pub(crate) mod shape_create_model_customization_job;
@@ -46,6 +48,8 @@ pub(crate) mod shape_delete_custom_model;
 pub(crate) mod shape_delete_guardrail;
 
 pub(crate) mod shape_delete_imported_model;
+
+pub(crate) mod shape_delete_inference_profile;
 
 pub(crate) mod shape_delete_model_invocation_logging_configuration;
 
@@ -135,6 +139,8 @@ pub(crate) mod shape_create_guardrail_input;
 
 pub(crate) mod shape_create_guardrail_version_input;
 
+pub(crate) mod shape_create_inference_profile_input;
+
 pub(crate) mod shape_create_model_copy_job_input;
 
 pub(crate) mod shape_create_model_customization_job_input;
@@ -216,6 +222,8 @@ pub(crate) mod shape_guardrail_word_policy;
 pub(crate) mod shape_guardrail_word_policy_config;
 
 pub(crate) mod shape_imported_model_summary_list;
+
+pub(crate) mod shape_inference_profile_model_source;
 
 pub(crate) mod shape_inference_profile_models;
 

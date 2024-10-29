@@ -18,7 +18,8 @@ pub struct PendingProductionVariantSummary {
     pub desired_instance_count: ::std::option::Option<i32>,
     /// <p>The type of instances associated with the variant.</p>
     pub instance_type: ::std::option::Option<crate::types::ProductionVariantInstanceType>,
-    /// <p>The size of the Elastic Inference (EI) instance to use for the production variant. EI instances provide on-demand GPU computing for inference. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/ei.html">Using Elastic Inference in Amazon SageMaker</a>.</p>
+    /// <p>This parameter is no longer supported. Elastic Inference (EI) is no longer available.</p>
+    /// <p>This parameter was used to specify the size of the EI instance to use for the production variant.</p>
     pub accelerator_type: ::std::option::Option<crate::types::ProductionVariantAcceleratorType>,
     /// <p>The endpoint variant status which describes the current deployment stage status or operational status.</p>
     pub variant_status: ::std::option::Option<::std::vec::Vec<crate::types::ProductionVariantStatus>>,
@@ -62,7 +63,8 @@ impl PendingProductionVariantSummary {
     pub fn instance_type(&self) -> ::std::option::Option<&crate::types::ProductionVariantInstanceType> {
         self.instance_type.as_ref()
     }
-    /// <p>The size of the Elastic Inference (EI) instance to use for the production variant. EI instances provide on-demand GPU computing for inference. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/ei.html">Using Elastic Inference in Amazon SageMaker</a>.</p>
+    /// <p>This parameter is no longer supported. Elastic Inference (EI) is no longer available.</p>
+    /// <p>This parameter was used to specify the size of the EI instance to use for the production variant.</p>
     pub fn accelerator_type(&self) -> ::std::option::Option<&crate::types::ProductionVariantAcceleratorType> {
         self.accelerator_type.as_ref()
     }
@@ -220,17 +222,20 @@ impl PendingProductionVariantSummaryBuilder {
     pub fn get_instance_type(&self) -> &::std::option::Option<crate::types::ProductionVariantInstanceType> {
         &self.instance_type
     }
-    /// <p>The size of the Elastic Inference (EI) instance to use for the production variant. EI instances provide on-demand GPU computing for inference. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/ei.html">Using Elastic Inference in Amazon SageMaker</a>.</p>
+    /// <p>This parameter is no longer supported. Elastic Inference (EI) is no longer available.</p>
+    /// <p>This parameter was used to specify the size of the EI instance to use for the production variant.</p>
     pub fn accelerator_type(mut self, input: crate::types::ProductionVariantAcceleratorType) -> Self {
         self.accelerator_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The size of the Elastic Inference (EI) instance to use for the production variant. EI instances provide on-demand GPU computing for inference. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/ei.html">Using Elastic Inference in Amazon SageMaker</a>.</p>
+    /// <p>This parameter is no longer supported. Elastic Inference (EI) is no longer available.</p>
+    /// <p>This parameter was used to specify the size of the EI instance to use for the production variant.</p>
     pub fn set_accelerator_type(mut self, input: ::std::option::Option<crate::types::ProductionVariantAcceleratorType>) -> Self {
         self.accelerator_type = input;
         self
     }
-    /// <p>The size of the Elastic Inference (EI) instance to use for the production variant. EI instances provide on-demand GPU computing for inference. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/ei.html">Using Elastic Inference in Amazon SageMaker</a>.</p>
+    /// <p>This parameter is no longer supported. Elastic Inference (EI) is no longer available.</p>
+    /// <p>This parameter was used to specify the size of the EI instance to use for the production variant.</p>
     pub fn get_accelerator_type(&self) -> &::std::option::Option<crate::types::ProductionVariantAcceleratorType> {
         &self.accelerator_type
     }

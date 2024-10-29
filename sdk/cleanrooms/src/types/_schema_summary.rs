@@ -6,7 +6,7 @@
 pub struct SchemaSummary {
     /// <p>The name for the schema object.</p>
     pub name: ::std::string::String,
-    /// <p>The type of schema object. The only valid schema type is currently `TABLE`.</p>
+    /// <p>The type of schema object.</p>
     pub r#type: crate::types::SchemaType,
     /// <p>The unique account ID for the Amazon Web Services account that owns the schema.</p>
     pub creator_account_id: ::std::string::String,
@@ -29,7 +29,7 @@ impl SchemaSummary {
         use std::ops::Deref;
         self.name.deref()
     }
-    /// <p>The type of schema object. The only valid schema type is currently `TABLE`.</p>
+    /// <p>The type of schema object.</p>
     pub fn r#type(&self) -> &crate::types::SchemaType {
         &self.r#type
     }
@@ -103,18 +103,18 @@ impl SchemaSummaryBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>The type of schema object. The only valid schema type is currently `TABLE`.</p>
+    /// <p>The type of schema object.</p>
     /// This field is required.
     pub fn r#type(mut self, input: crate::types::SchemaType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of schema object. The only valid schema type is currently `TABLE`.</p>
+    /// <p>The type of schema object.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::SchemaType>) -> Self {
         self.r#type = input;
         self
     }
-    /// <p>The type of schema object. The only valid schema type is currently `TABLE`.</p>
+    /// <p>The type of schema object.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::SchemaType> {
         &self.r#type
     }

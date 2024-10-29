@@ -22,6 +22,8 @@ pub struct CreateCollaborationInput {
     /// <p>The collaboration creator's payment responsibilities set by the collaboration creator.</p>
     /// <p>If the collaboration creator hasn't specified anyone as the member paying for query compute costs, then the member who can query is the default payer.</p>
     pub creator_payment_configuration: ::std::option::Option<crate::types::PaymentConfiguration>,
+    /// <p>The analytics engine.</p>
+    pub analytics_engine: ::std::option::Option<crate::types::AnalyticsEngine>,
 }
 impl CreateCollaborationInput {
     /// <p>A list of initial members, not including the creator. This list is immutable.</p>
@@ -65,6 +67,10 @@ impl CreateCollaborationInput {
     pub fn creator_payment_configuration(&self) -> ::std::option::Option<&crate::types::PaymentConfiguration> {
         self.creator_payment_configuration.as_ref()
     }
+    /// <p>The analytics engine.</p>
+    pub fn analytics_engine(&self) -> ::std::option::Option<&crate::types::AnalyticsEngine> {
+        self.analytics_engine.as_ref()
+    }
 }
 impl CreateCollaborationInput {
     /// Creates a new builder-style object to manufacture [`CreateCollaborationInput`](crate::operation::create_collaboration::CreateCollaborationInput).
@@ -86,6 +92,7 @@ pub struct CreateCollaborationInputBuilder {
     pub(crate) query_log_status: ::std::option::Option<crate::types::CollaborationQueryLogStatus>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) creator_payment_configuration: ::std::option::Option<crate::types::PaymentConfiguration>,
+    pub(crate) analytics_engine: ::std::option::Option<crate::types::AnalyticsEngine>,
 }
 impl CreateCollaborationInputBuilder {
     /// Appends an item to `members`.
@@ -239,6 +246,20 @@ impl CreateCollaborationInputBuilder {
     pub fn get_creator_payment_configuration(&self) -> &::std::option::Option<crate::types::PaymentConfiguration> {
         &self.creator_payment_configuration
     }
+    /// <p>The analytics engine.</p>
+    pub fn analytics_engine(mut self, input: crate::types::AnalyticsEngine) -> Self {
+        self.analytics_engine = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The analytics engine.</p>
+    pub fn set_analytics_engine(mut self, input: ::std::option::Option<crate::types::AnalyticsEngine>) -> Self {
+        self.analytics_engine = input;
+        self
+    }
+    /// <p>The analytics engine.</p>
+    pub fn get_analytics_engine(&self) -> &::std::option::Option<crate::types::AnalyticsEngine> {
+        &self.analytics_engine
+    }
     /// Consumes the builder and constructs a [`CreateCollaborationInput`](crate::operation::create_collaboration::CreateCollaborationInput).
     pub fn build(
         self,
@@ -254,6 +275,7 @@ impl CreateCollaborationInputBuilder {
             query_log_status: self.query_log_status,
             tags: self.tags,
             creator_payment_configuration: self.creator_payment_configuration,
+            analytics_engine: self.analytics_engine,
         })
     }
 }

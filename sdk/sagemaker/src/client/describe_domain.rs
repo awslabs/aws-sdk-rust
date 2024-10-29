@@ -27,7 +27,7 @@ impl super::Client {
     ///   - [`kms_key_id(Option<String>)`](crate::operation::describe_domain::DescribeDomainOutput::kms_key_id): <p>The Amazon Web Services KMS customer managed key used to encrypt the EFS volume attached to the domain.</p>
     ///   - [`app_security_group_management(Option<AppSecurityGroupManagement>)`](crate::operation::describe_domain::DescribeDomainOutput::app_security_group_management): <p>The entity that creates and manages the required security groups for inter-app communication in <code>VPCOnly</code> mode. Required when <code>CreateDomain.AppNetworkAccessType</code> is <code>VPCOnly</code> and <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code> is provided.</p>
     ///   - [`tag_propagation(Option<TagPropagation>)`](crate::operation::describe_domain::DescribeDomainOutput::tag_propagation): <p>Indicates whether custom tag propagation is supported for the domain.</p>
-    ///   - [`default_space_settings(Option<DefaultSpaceSettings>)`](crate::operation::describe_domain::DescribeDomainOutput::default_space_settings): <p>The default settings used to create a space.</p>
+    ///   - [`default_space_settings(Option<DefaultSpaceSettings>)`](crate::operation::describe_domain::DescribeDomainOutput::default_space_settings): <p>The default settings for shared spaces that users create in the domain.</p>
     /// - On failure, responds with [`SdkError<DescribeDomainError>`](crate::operation::describe_domain::DescribeDomainError)
     pub fn describe_domain(&self) -> crate::operation::describe_domain::builders::DescribeDomainFluentBuilder {
         crate::operation::describe_domain::builders::DescribeDomainFluentBuilder::new(self.handle.clone())

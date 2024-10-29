@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetStatementResultOutput {
-    /// <p>The results of the SQL statement.</p>
+    /// <p>The results of the SQL statement in JSON format.</p>
     pub records: ::std::vec::Vec<::std::vec::Vec<crate::types::Field>>,
     /// <p>The properties (metadata) of a column.</p>
     pub column_metadata: ::std::option::Option<::std::vec::Vec<crate::types::ColumnMetadata>>,
@@ -14,7 +14,7 @@ pub struct GetStatementResultOutput {
     _request_id: Option<String>,
 }
 impl GetStatementResultOutput {
-    /// <p>The results of the SQL statement.</p>
+    /// <p>The results of the SQL statement in JSON format.</p>
     pub fn records(&self) -> &[::std::vec::Vec<crate::types::Field>] {
         use std::ops::Deref;
         self.records.deref()
@@ -61,19 +61,19 @@ impl GetStatementResultOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_records`](Self::set_records).
     ///
-    /// <p>The results of the SQL statement.</p>
+    /// <p>The results of the SQL statement in JSON format.</p>
     pub fn records(mut self, input: ::std::vec::Vec<crate::types::Field>) -> Self {
         let mut v = self.records.unwrap_or_default();
         v.push(input);
         self.records = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The results of the SQL statement.</p>
+    /// <p>The results of the SQL statement in JSON format.</p>
     pub fn set_records(mut self, input: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<crate::types::Field>>>) -> Self {
         self.records = input;
         self
     }
-    /// <p>The results of the SQL statement.</p>
+    /// <p>The results of the SQL statement in JSON format.</p>
     pub fn get_records(&self) -> &::std::option::Option<::std::vec::Vec<::std::vec::Vec<crate::types::Field>>> {
         &self.records
     }

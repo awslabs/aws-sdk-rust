@@ -24,6 +24,8 @@ pub struct CollaborationSummary {
     pub membership_id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of a member in a collaboration.</p>
     pub membership_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The analytics engine.</p>
+    pub analytics_engine: ::std::option::Option<crate::types::AnalyticsEngine>,
 }
 impl CollaborationSummary {
     /// <p>The identifier for the collaboration.</p>
@@ -71,6 +73,10 @@ impl CollaborationSummary {
     pub fn membership_arn(&self) -> ::std::option::Option<&str> {
         self.membership_arn.as_deref()
     }
+    /// <p>The analytics engine.</p>
+    pub fn analytics_engine(&self) -> ::std::option::Option<&crate::types::AnalyticsEngine> {
+        self.analytics_engine.as_ref()
+    }
 }
 impl CollaborationSummary {
     /// Creates a new builder-style object to manufacture [`CollaborationSummary`](crate::types::CollaborationSummary).
@@ -93,6 +99,7 @@ pub struct CollaborationSummaryBuilder {
     pub(crate) member_status: ::std::option::Option<crate::types::MemberStatus>,
     pub(crate) membership_id: ::std::option::Option<::std::string::String>,
     pub(crate) membership_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) analytics_engine: ::std::option::Option<crate::types::AnalyticsEngine>,
 }
 impl CollaborationSummaryBuilder {
     /// <p>The identifier for the collaboration.</p>
@@ -243,6 +250,20 @@ impl CollaborationSummaryBuilder {
     pub fn get_membership_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.membership_arn
     }
+    /// <p>The analytics engine.</p>
+    pub fn analytics_engine(mut self, input: crate::types::AnalyticsEngine) -> Self {
+        self.analytics_engine = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The analytics engine.</p>
+    pub fn set_analytics_engine(mut self, input: ::std::option::Option<crate::types::AnalyticsEngine>) -> Self {
+        self.analytics_engine = input;
+        self
+    }
+    /// <p>The analytics engine.</p>
+    pub fn get_analytics_engine(&self) -> &::std::option::Option<crate::types::AnalyticsEngine> {
+        &self.analytics_engine
+    }
     /// Consumes the builder and constructs a [`CollaborationSummary`](crate::types::CollaborationSummary).
     /// This method will fail if any of the following fields are not set:
     /// - [`id`](crate::types::builders::CollaborationSummaryBuilder::id)
@@ -305,6 +326,7 @@ impl CollaborationSummaryBuilder {
             })?,
             membership_id: self.membership_id,
             membership_arn: self.membership_arn,
+            analytics_engine: self.analytics_engine,
         })
     }
 }

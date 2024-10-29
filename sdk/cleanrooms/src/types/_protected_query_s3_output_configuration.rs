@@ -10,6 +10,8 @@ pub struct ProtectedQueryS3OutputConfiguration {
     pub bucket: ::std::string::String,
     /// <p>The S3 prefix to unload the protected query results.</p>
     pub key_prefix: ::std::option::Option<::std::string::String>,
+    /// <p>Indicates whether files should be output as a single file (<code>TRUE</code>) or output as multiple files (<code>FALSE</code>). This parameter is only supported for analyses with the Spark analytics engine.</p>
+    pub single_file_output: ::std::option::Option<bool>,
 }
 impl ProtectedQueryS3OutputConfiguration {
     /// <p>Intended file format of the result.</p>
@@ -24,6 +26,10 @@ impl ProtectedQueryS3OutputConfiguration {
     /// <p>The S3 prefix to unload the protected query results.</p>
     pub fn key_prefix(&self) -> ::std::option::Option<&str> {
         self.key_prefix.as_deref()
+    }
+    /// <p>Indicates whether files should be output as a single file (<code>TRUE</code>) or output as multiple files (<code>FALSE</code>). This parameter is only supported for analyses with the Spark analytics engine.</p>
+    pub fn single_file_output(&self) -> ::std::option::Option<bool> {
+        self.single_file_output
     }
 }
 impl ProtectedQueryS3OutputConfiguration {
@@ -40,6 +46,7 @@ pub struct ProtectedQueryS3OutputConfigurationBuilder {
     pub(crate) result_format: ::std::option::Option<crate::types::ResultFormat>,
     pub(crate) bucket: ::std::option::Option<::std::string::String>,
     pub(crate) key_prefix: ::std::option::Option<::std::string::String>,
+    pub(crate) single_file_output: ::std::option::Option<bool>,
 }
 impl ProtectedQueryS3OutputConfigurationBuilder {
     /// <p>Intended file format of the result.</p>
@@ -86,6 +93,20 @@ impl ProtectedQueryS3OutputConfigurationBuilder {
     pub fn get_key_prefix(&self) -> &::std::option::Option<::std::string::String> {
         &self.key_prefix
     }
+    /// <p>Indicates whether files should be output as a single file (<code>TRUE</code>) or output as multiple files (<code>FALSE</code>). This parameter is only supported for analyses with the Spark analytics engine.</p>
+    pub fn single_file_output(mut self, input: bool) -> Self {
+        self.single_file_output = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether files should be output as a single file (<code>TRUE</code>) or output as multiple files (<code>FALSE</code>). This parameter is only supported for analyses with the Spark analytics engine.</p>
+    pub fn set_single_file_output(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.single_file_output = input;
+        self
+    }
+    /// <p>Indicates whether files should be output as a single file (<code>TRUE</code>) or output as multiple files (<code>FALSE</code>). This parameter is only supported for analyses with the Spark analytics engine.</p>
+    pub fn get_single_file_output(&self) -> &::std::option::Option<bool> {
+        &self.single_file_output
+    }
     /// Consumes the builder and constructs a [`ProtectedQueryS3OutputConfiguration`](crate::types::ProtectedQueryS3OutputConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`result_format`](crate::types::builders::ProtectedQueryS3OutputConfigurationBuilder::result_format)
@@ -105,6 +126,7 @@ impl ProtectedQueryS3OutputConfigurationBuilder {
                 )
             })?,
             key_prefix: self.key_prefix,
+            single_file_output: self.single_file_output,
         })
     }
 }

@@ -25,6 +25,7 @@ impl super::Client {
     ///   - [`sub_statements(Option<Vec::<SubStatementData>>)`](crate::operation::describe_statement::DescribeStatementOutput::sub_statements): <p>The SQL statements from a multiple statement run.</p>
     ///   - [`workgroup_name(Option<String>)`](crate::operation::describe_statement::DescribeStatementOutput::workgroup_name): <p>The serverless workgroup name or Amazon Resource Name (ARN).</p>
     ///   - [`session_id(Option<String>)`](crate::operation::describe_statement::DescribeStatementOutput::session_id): <p>The session identifier of the query.</p>
+    ///   - [`result_format(Option<ResultFormatString>)`](crate::operation::describe_statement::DescribeStatementOutput::result_format): <p>The data format of the result of the SQL statement.</p>
     /// - On failure, responds with [`SdkError<DescribeStatementError>`](crate::operation::describe_statement::DescribeStatementError)
     pub fn describe_statement(&self) -> crate::operation::describe_statement::builders::DescribeStatementFluentBuilder {
         crate::operation::describe_statement::builders::DescribeStatementFluentBuilder::new(self.handle.clone())

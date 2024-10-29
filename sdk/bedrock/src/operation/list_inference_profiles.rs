@@ -91,6 +91,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListInf
             ::aws_smithy_runtime_api::client::auth::static_resolver::StaticAuthSchemeOptionResolverParams::new(),
         ));
 
+        cfg.store_put(::aws_smithy_runtime_api::client::orchestrator::SensitiveOutput);
         cfg.store_put(::aws_smithy_runtime_api::client::orchestrator::Metadata::new(
             "ListInferenceProfiles",
             "bedrock",
@@ -190,6 +191,11 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListInferenc
                 if let ::std::option::Option::Some(inner_2) = &_input.next_token {
                     {
                         query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(inner_2));
+                    }
+                }
+                if let ::std::option::Option::Some(inner_3) = &_input.type_equals {
+                    {
+                        query.push_kv("type", &::aws_smithy_http::query::fmt_string(inner_3));
                     }
                 }
                 ::std::result::Result::Ok(())

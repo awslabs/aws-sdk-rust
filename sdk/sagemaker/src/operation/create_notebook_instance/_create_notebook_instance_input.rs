@@ -26,7 +26,8 @@ pub struct CreateNotebookInstanceInput {
     pub direct_internet_access: ::std::option::Option<crate::types::DirectInternetAccess>,
     /// <p>The size, in GB, of the ML storage volume to attach to the notebook instance. The default value is 5 GB.</p>
     pub volume_size_in_gb: ::std::option::Option<i32>,
-    /// <p>A list of Elastic Inference (EI) instance types to associate with this notebook instance. Currently, only one instance type can be associated with a notebook instance. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/ei.html">Using Elastic Inference in Amazon SageMaker</a>.</p>
+    /// <p>This parameter is no longer supported. Elastic Inference (EI) is no longer available.</p>
+    /// <p>This parameter was used to specify a list of EI instance types to associate with this notebook instance.</p>
     pub accelerator_types: ::std::option::Option<::std::vec::Vec<crate::types::NotebookInstanceAcceleratorType>>,
     /// <p>A Git repository to associate with the notebook instance as its default code repository. This can be either the name of a Git repository stored as a resource in your account, or the URL of a Git repository in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or in any other Git repository. When you open a notebook instance, it opens in the directory that contains this repository. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with SageMaker Notebook Instances</a>.</p>
     pub default_code_repository: ::std::option::Option<::std::string::String>,
@@ -89,7 +90,8 @@ impl CreateNotebookInstanceInput {
     pub fn volume_size_in_gb(&self) -> ::std::option::Option<i32> {
         self.volume_size_in_gb
     }
-    /// <p>A list of Elastic Inference (EI) instance types to associate with this notebook instance. Currently, only one instance type can be associated with a notebook instance. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/ei.html">Using Elastic Inference in Amazon SageMaker</a>.</p>
+    /// <p>This parameter is no longer supported. Elastic Inference (EI) is no longer available.</p>
+    /// <p>This parameter was used to specify a list of EI instance types to associate with this notebook instance.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.accelerator_types.is_none()`.
     pub fn accelerator_types(&self) -> &[crate::types::NotebookInstanceAcceleratorType] {
@@ -317,19 +319,22 @@ impl CreateNotebookInstanceInputBuilder {
     ///
     /// To override the contents of this collection use [`set_accelerator_types`](Self::set_accelerator_types).
     ///
-    /// <p>A list of Elastic Inference (EI) instance types to associate with this notebook instance. Currently, only one instance type can be associated with a notebook instance. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/ei.html">Using Elastic Inference in Amazon SageMaker</a>.</p>
+    /// <p>This parameter is no longer supported. Elastic Inference (EI) is no longer available.</p>
+    /// <p>This parameter was used to specify a list of EI instance types to associate with this notebook instance.</p>
     pub fn accelerator_types(mut self, input: crate::types::NotebookInstanceAcceleratorType) -> Self {
         let mut v = self.accelerator_types.unwrap_or_default();
         v.push(input);
         self.accelerator_types = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of Elastic Inference (EI) instance types to associate with this notebook instance. Currently, only one instance type can be associated with a notebook instance. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/ei.html">Using Elastic Inference in Amazon SageMaker</a>.</p>
+    /// <p>This parameter is no longer supported. Elastic Inference (EI) is no longer available.</p>
+    /// <p>This parameter was used to specify a list of EI instance types to associate with this notebook instance.</p>
     pub fn set_accelerator_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NotebookInstanceAcceleratorType>>) -> Self {
         self.accelerator_types = input;
         self
     }
-    /// <p>A list of Elastic Inference (EI) instance types to associate with this notebook instance. Currently, only one instance type can be associated with a notebook instance. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/ei.html">Using Elastic Inference in Amazon SageMaker</a>.</p>
+    /// <p>This parameter is no longer supported. Elastic Inference (EI) is no longer available.</p>
+    /// <p>This parameter was used to specify a list of EI instance types to associate with this notebook instance.</p>
     pub fn get_accelerator_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NotebookInstanceAcceleratorType>> {
         &self.accelerator_types
     }

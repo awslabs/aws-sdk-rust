@@ -252,4 +252,18 @@ impl CreateCollaborationFluentBuilder {
     pub fn get_creator_payment_configuration(&self) -> &::std::option::Option<crate::types::PaymentConfiguration> {
         self.inner.get_creator_payment_configuration()
     }
+    /// <p>The analytics engine.</p>
+    pub fn analytics_engine(mut self, input: crate::types::AnalyticsEngine) -> Self {
+        self.inner = self.inner.analytics_engine(input);
+        self
+    }
+    /// <p>The analytics engine.</p>
+    pub fn set_analytics_engine(mut self, input: ::std::option::Option<crate::types::AnalyticsEngine>) -> Self {
+        self.inner = self.inner.set_analytics_engine(input);
+        self
+    }
+    /// <p>The analytics engine.</p>
+    pub fn get_analytics_engine(&self) -> &::std::option::Option<crate::types::AnalyticsEngine> {
+        self.inner.get_analytics_engine()
+    }
 }

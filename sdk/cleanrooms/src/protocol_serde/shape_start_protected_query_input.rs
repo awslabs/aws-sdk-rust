@@ -3,20 +3,26 @@ pub fn ser_start_protected_query_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::start_protected_query::StartProtectedQueryInput,
 ) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.result_configuration {
+    if let Some(var_1) = &input.compute_configuration {
         #[allow(unused_mut)]
-        let mut object_2 = object.key("resultConfiguration").start_object();
-        crate::protocol_serde::shape_protected_query_result_configuration::ser_protected_query_result_configuration(&mut object_2, var_1)?;
+        let mut object_2 = object.key("computeConfiguration").start_object();
+        crate::protocol_serde::shape_compute_configuration::ser_compute_configuration(&mut object_2, var_1)?;
         object_2.finish();
     }
-    if let Some(var_3) = &input.sql_parameters {
+    if let Some(var_3) = &input.result_configuration {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("sqlParameters").start_object();
-        crate::protocol_serde::shape_protected_query_sql_parameters::ser_protected_query_sql_parameters(&mut object_4, var_3)?;
+        let mut object_4 = object.key("resultConfiguration").start_object();
+        crate::protocol_serde::shape_protected_query_result_configuration::ser_protected_query_result_configuration(&mut object_4, var_3)?;
         object_4.finish();
     }
-    if let Some(var_5) = &input.r#type {
-        object.key("type").string(var_5.as_str());
+    if let Some(var_5) = &input.sql_parameters {
+        #[allow(unused_mut)]
+        let mut object_6 = object.key("sqlParameters").start_object();
+        crate::protocol_serde::shape_protected_query_sql_parameters::ser_protected_query_sql_parameters(&mut object_6, var_5)?;
+        object_6.finish();
+    }
+    if let Some(var_7) = &input.r#type {
+        object.key("type").string(var_7.as_str());
     }
     Ok(())
 }

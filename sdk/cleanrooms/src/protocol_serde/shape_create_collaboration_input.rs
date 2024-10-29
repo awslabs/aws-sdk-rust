@@ -3,60 +3,63 @@ pub fn ser_create_collaboration_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_collaboration::CreateCollaborationInput,
 ) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.creator_display_name {
-        object.key("creatorDisplayName").string(var_1.as_str());
+    if let Some(var_1) = &input.analytics_engine {
+        object.key("analyticsEngine").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.creator_member_abilities {
-        let mut array_3 = object.key("creatorMemberAbilities").start_array();
-        for item_4 in var_2 {
+    if let Some(var_2) = &input.creator_display_name {
+        object.key("creatorDisplayName").string(var_2.as_str());
+    }
+    if let Some(var_3) = &input.creator_member_abilities {
+        let mut array_4 = object.key("creatorMemberAbilities").start_array();
+        for item_5 in var_3 {
             {
-                array_3.value().string(item_4.as_str());
+                array_4.value().string(item_5.as_str());
             }
         }
-        array_3.finish();
+        array_4.finish();
     }
-    if let Some(var_5) = &input.creator_payment_configuration {
+    if let Some(var_6) = &input.creator_payment_configuration {
         #[allow(unused_mut)]
-        let mut object_6 = object.key("creatorPaymentConfiguration").start_object();
-        crate::protocol_serde::shape_payment_configuration::ser_payment_configuration(&mut object_6, var_5)?;
-        object_6.finish();
+        let mut object_7 = object.key("creatorPaymentConfiguration").start_object();
+        crate::protocol_serde::shape_payment_configuration::ser_payment_configuration(&mut object_7, var_6)?;
+        object_7.finish();
     }
-    if let Some(var_7) = &input.data_encryption_metadata {
+    if let Some(var_8) = &input.data_encryption_metadata {
         #[allow(unused_mut)]
-        let mut object_8 = object.key("dataEncryptionMetadata").start_object();
-        crate::protocol_serde::shape_data_encryption_metadata::ser_data_encryption_metadata(&mut object_8, var_7)?;
-        object_8.finish();
+        let mut object_9 = object.key("dataEncryptionMetadata").start_object();
+        crate::protocol_serde::shape_data_encryption_metadata::ser_data_encryption_metadata(&mut object_9, var_8)?;
+        object_9.finish();
     }
-    if let Some(var_9) = &input.description {
-        object.key("description").string(var_9.as_str());
+    if let Some(var_10) = &input.description {
+        object.key("description").string(var_10.as_str());
     }
-    if let Some(var_10) = &input.members {
-        let mut array_11 = object.key("members").start_array();
-        for item_12 in var_10 {
+    if let Some(var_11) = &input.members {
+        let mut array_12 = object.key("members").start_array();
+        for item_13 in var_11 {
             {
                 #[allow(unused_mut)]
-                let mut object_13 = array_11.value().start_object();
-                crate::protocol_serde::shape_member_specification::ser_member_specification(&mut object_13, item_12)?;
-                object_13.finish();
+                let mut object_14 = array_12.value().start_object();
+                crate::protocol_serde::shape_member_specification::ser_member_specification(&mut object_14, item_13)?;
+                object_14.finish();
             }
         }
-        array_11.finish();
+        array_12.finish();
     }
-    if let Some(var_14) = &input.name {
-        object.key("name").string(var_14.as_str());
+    if let Some(var_15) = &input.name {
+        object.key("name").string(var_15.as_str());
     }
-    if let Some(var_15) = &input.query_log_status {
-        object.key("queryLogStatus").string(var_15.as_str());
+    if let Some(var_16) = &input.query_log_status {
+        object.key("queryLogStatus").string(var_16.as_str());
     }
-    if let Some(var_16) = &input.tags {
+    if let Some(var_17) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_17 = object.key("tags").start_object();
-        for (key_18, value_19) in var_16 {
+        let mut object_18 = object.key("tags").start_object();
+        for (key_19, value_20) in var_17 {
             {
-                object_17.key(key_18.as_str()).string(value_19.as_str());
+                object_18.key(key_19.as_str()).string(value_20.as_str());
             }
         }
-        object_17.finish();
+        object_18.finish();
     }
     Ok(())
 }

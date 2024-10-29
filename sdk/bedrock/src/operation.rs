@@ -13,6 +13,9 @@ pub mod create_guardrail;
 /// Types for the `CreateGuardrailVersion` operation.
 pub mod create_guardrail_version;
 
+/// Types for the `CreateInferenceProfile` operation.
+pub mod create_inference_profile;
+
 /// Types for the `CreateModelCopyJob` operation.
 pub mod create_model_copy_job;
 
@@ -36,6 +39,9 @@ pub mod delete_guardrail;
 
 /// Types for the `DeleteImportedModel` operation.
 pub mod delete_imported_model;
+
+/// Types for the `DeleteInferenceProfile` operation.
+pub mod delete_inference_profile;
 
 /// Types for the `DeleteModelInvocationLoggingConfiguration` operation.
 pub mod delete_model_invocation_logging_configuration;

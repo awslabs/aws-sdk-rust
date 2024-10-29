@@ -164,17 +164,17 @@ impl UpdateDomainFluentBuilder {
     pub fn get_app_security_group_management(&self) -> &::std::option::Option<crate::types::AppSecurityGroupManagement> {
         self.inner.get_app_security_group_management()
     }
-    /// <p>The default settings used to create a space within the domain.</p>
+    /// <p>The default settings for shared spaces that users create in the domain.</p>
     pub fn default_space_settings(mut self, input: crate::types::DefaultSpaceSettings) -> Self {
         self.inner = self.inner.default_space_settings(input);
         self
     }
-    /// <p>The default settings used to create a space within the domain.</p>
+    /// <p>The default settings for shared spaces that users create in the domain.</p>
     pub fn set_default_space_settings(mut self, input: ::std::option::Option<crate::types::DefaultSpaceSettings>) -> Self {
         self.inner = self.inner.set_default_space_settings(input);
         self
     }
-    /// <p>The default settings used to create a space within the domain.</p>
+    /// <p>The default settings for shared spaces that users create in the domain.</p>
     pub fn get_default_space_settings(&self) -> &::std::option::Option<crate::types::DefaultSpaceSettings> {
         self.inner.get_default_space_settings()
     }

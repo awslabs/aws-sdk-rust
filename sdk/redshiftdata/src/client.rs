@@ -175,6 +175,8 @@ mod execute_statement;
 
 mod get_statement_result;
 
+mod get_statement_result_v2;
+
 mod list_databases;
 
 mod list_schemas;

@@ -19,6 +19,9 @@ pub mod execute_statement;
 /// Types for the `GetStatementResult` operation.
 pub mod get_statement_result;
 
+/// Types for the `GetStatementResultV2` operation.
+pub mod get_statement_result_v2;
+
 /// Types for the `ListDatabases` operation.
 pub mod list_databases;
 

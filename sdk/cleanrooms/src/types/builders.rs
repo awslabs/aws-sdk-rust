@@ -13,6 +13,8 @@ pub use crate::types::_privacy_budget_template_summary::PrivacyBudgetTemplateSum
 
 pub use crate::types::_protected_query::ProtectedQueryBuilder;
 
+pub use crate::types::_worker_compute_configuration::WorkerComputeConfigurationBuilder;
+
 pub use crate::types::_differential_privacy_parameters::DifferentialPrivacyParametersBuilder;
 
 pub use crate::types::_differential_privacy_sensitivity_parameters::DifferentialPrivacySensitivityParametersBuilder;
@@ -26,6 +28,8 @@ pub use crate::types::_protected_query_single_member_output::ProtectedQuerySingl
 pub use crate::types::_protected_query_s3_output::ProtectedQueryS3OutputBuilder;
 
 pub use crate::types::_protected_query_statistics::ProtectedQueryStatisticsBuilder;
+
+pub use crate::types::_billed_resource_utilization::BilledResourceUtilizationBuilder;
 
 pub use crate::types::_protected_query_result_configuration::ProtectedQueryResultConfigurationBuilder;
 

@@ -22,7 +22,7 @@ impl crate::operation::get_inference_profile::builders::GetInferenceProfileInput
 }
 /// Fluent builder constructing a request to `GetInferenceProfile`.
 ///
-/// <p>Gets information about an inference profile. For more information, see the Amazon Bedrock User Guide.</p>
+/// <p>Gets information about an inference profile. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference.html">Increase throughput and resilience with cross-region inference in Amazon Bedrock</a>. in the Amazon Bedrock User Guide.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetInferenceProfileFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl GetInferenceProfileFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The unique identifier of the inference profile.</p>
+    /// <p>The ID or Amazon Resource Name (ARN) of the inference profile.</p>
     pub fn inference_profile_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.inference_profile_identifier(input.into());
         self
     }
-    /// <p>The unique identifier of the inference profile.</p>
+    /// <p>The ID or Amazon Resource Name (ARN) of the inference profile.</p>
     pub fn set_inference_profile_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_inference_profile_identifier(input);
         self
     }
-    /// <p>The unique identifier of the inference profile.</p>
+    /// <p>The ID or Amazon Resource Name (ARN) of the inference profile.</p>
     pub fn get_inference_profile_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_inference_profile_identifier()
     }

@@ -21,11 +21,6 @@ where
                                     .transpose()?,
                             );
                         }
-                        "models" => {
-                            builder = builder.set_models(crate::protocol_serde::shape_inference_profile_models::de_inference_profile_models(
-                                tokens,
-                            )?);
-                        }
                         "description" => {
                             builder = builder.set_description(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
@@ -51,6 +46,11 @@ where
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
                             );
+                        }
+                        "models" => {
+                            builder = builder.set_models(crate::protocol_serde::shape_inference_profile_models::de_inference_profile_models(
+                                tokens,
+                            )?);
                         }
                         "inferenceProfileId" => {
                             builder = builder.set_inference_profile_id(

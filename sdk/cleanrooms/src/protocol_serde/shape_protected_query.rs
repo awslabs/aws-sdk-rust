@@ -74,6 +74,10 @@ where
                                 crate::protocol_serde::shape_differential_privacy_parameters::de_differential_privacy_parameters(tokens)?,
                             );
                         }
+                        "computeConfiguration" => {
+                            builder = builder
+                                .set_compute_configuration(crate::protocol_serde::shape_compute_configuration::de_compute_configuration(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

@@ -180,4 +180,21 @@ impl UpdateAnomalyFluentBuilder {
     pub fn get_suppression_period(&self) -> &::std::option::Option<crate::types::SuppressionPeriod> {
         self.inner.get_suppression_period()
     }
+    /// <p>Set this to <code>true</code> to prevent CloudWatch Logs from displaying this behavior as an anomaly in the future. The behavior is then treated as baseline behavior. However, if similar but more severe occurrences of this behavior occur in the future, those will still be reported as anomalies.</p>
+    /// <p>The default is <code>false</code></p>
+    pub fn baseline(mut self, input: bool) -> Self {
+        self.inner = self.inner.baseline(input);
+        self
+    }
+    /// <p>Set this to <code>true</code> to prevent CloudWatch Logs from displaying this behavior as an anomaly in the future. The behavior is then treated as baseline behavior. However, if similar but more severe occurrences of this behavior occur in the future, those will still be reported as anomalies.</p>
+    /// <p>The default is <code>false</code></p>
+    pub fn set_baseline(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_baseline(input);
+        self
+    }
+    /// <p>Set this to <code>true</code> to prevent CloudWatch Logs from displaying this behavior as an anomaly in the future. The behavior is then treated as baseline behavior. However, if similar but more severe occurrences of this behavior occur in the future, those will still be reported as anomalies.</p>
+    /// <p>The default is <code>false</code></p>
+    pub fn get_baseline(&self) -> &::std::option::Option<bool> {
+        self.inner.get_baseline()
+    }
 }

@@ -12,7 +12,7 @@ pub struct ProtectedQuerySummary {
     pub membership_arn: ::std::string::String,
     /// <p>The time the protected query was created.</p>
     pub create_time: ::aws_smithy_types::DateTime,
-    /// <p>The status of the protected query. Value values are `SUBMITTED`, `STARTED`, `CANCELLED`, `CANCELLING`, `FAILED`, `SUCCESS`, `TIMED_OUT`.</p>
+    /// <p>The status of the protected query.</p>
     pub status: crate::types::ProtectedQueryStatus,
     /// <p>The receiver configuration.</p>
     pub receiver_configurations: ::std::vec::Vec<crate::types::ReceiverConfiguration>,
@@ -37,7 +37,7 @@ impl ProtectedQuerySummary {
     pub fn create_time(&self) -> &::aws_smithy_types::DateTime {
         &self.create_time
     }
-    /// <p>The status of the protected query. Value values are `SUBMITTED`, `STARTED`, `CANCELLED`, `CANCELLING`, `FAILED`, `SUCCESS`, `TIMED_OUT`.</p>
+    /// <p>The status of the protected query.</p>
     pub fn status(&self) -> &crate::types::ProtectedQueryStatus {
         &self.status
     }
@@ -126,18 +126,18 @@ impl ProtectedQuerySummaryBuilder {
     pub fn get_create_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.create_time
     }
-    /// <p>The status of the protected query. Value values are `SUBMITTED`, `STARTED`, `CANCELLED`, `CANCELLING`, `FAILED`, `SUCCESS`, `TIMED_OUT`.</p>
+    /// <p>The status of the protected query.</p>
     /// This field is required.
     pub fn status(mut self, input: crate::types::ProtectedQueryStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The status of the protected query. Value values are `SUBMITTED`, `STARTED`, `CANCELLED`, `CANCELLING`, `FAILED`, `SUCCESS`, `TIMED_OUT`.</p>
+    /// <p>The status of the protected query.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ProtectedQueryStatus>) -> Self {
         self.status = input;
         self
     }
-    /// <p>The status of the protected query. Value values are `SUBMITTED`, `STARTED`, `CANCELLED`, `CANCELLING`, `FAILED`, `SUCCESS`, `TIMED_OUT`.</p>
+    /// <p>The status of the protected query.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ProtectedQueryStatus> {
         &self.status
     }

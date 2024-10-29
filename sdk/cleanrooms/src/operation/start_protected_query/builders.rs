@@ -164,4 +164,18 @@ impl StartProtectedQueryFluentBuilder {
     pub fn get_result_configuration(&self) -> &::std::option::Option<crate::types::ProtectedQueryResultConfiguration> {
         self.inner.get_result_configuration()
     }
+    /// <p>The compute configuration for the protected query.</p>
+    pub fn compute_configuration(mut self, input: crate::types::ComputeConfiguration) -> Self {
+        self.inner = self.inner.compute_configuration(input);
+        self
+    }
+    /// <p>The compute configuration for the protected query.</p>
+    pub fn set_compute_configuration(mut self, input: ::std::option::Option<crate::types::ComputeConfiguration>) -> Self {
+        self.inner = self.inner.set_compute_configuration(input);
+        self
+    }
+    /// <p>The compute configuration for the protected query.</p>
+    pub fn get_compute_configuration(&self) -> &::std::option::Option<crate::types::ComputeConfiguration> {
+        self.inner.get_compute_configuration()
+    }
 }

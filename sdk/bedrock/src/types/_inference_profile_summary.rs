@@ -2,12 +2,10 @@
 
 /// <p>Contains information about an inference profile.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct InferenceProfileSummary {
     /// <p>The name of the inference profile.</p>
     pub inference_profile_name: ::std::string::String,
-    /// <p>A list of information about each model in the inference profile.</p>
-    pub models: ::std::vec::Vec<crate::types::InferenceProfileModel>,
     /// <p>The description of the inference profile.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The time at which the inference profile was created.</p>
@@ -16,11 +14,19 @@ pub struct InferenceProfileSummary {
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Amazon Resource Name (ARN) of the inference profile.</p>
     pub inference_profile_arn: ::std::string::String,
+    /// <p>A list of information about each model in the inference profile.</p>
+    pub models: ::std::vec::Vec<crate::types::InferenceProfileModel>,
     /// <p>The unique identifier of the inference profile.</p>
     pub inference_profile_id: ::std::string::String,
-    /// <p>The status of the inference profile. <code>ACTIVE</code> means that the inference profile is available to use.</p>
+    /// <p>The status of the inference profile. <code>ACTIVE</code> means that the inference profile is ready to be used.</p>
     pub status: crate::types::InferenceProfileStatus,
-    /// <p>The type of the inference profile. <code>SYSTEM_DEFINED</code> means that the inference profile is defined by Amazon Bedrock.</p>
+    /// <p>The type of the inference profile. The following types are possible:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>SYSTEM_DEFINED</code> – The inference profile is defined by Amazon Bedrock. You can route inference requests across regions with these inference profiles.</p></li>
+    /// <li>
+    /// <p><code>APPLICATION</code> – The inference profile was created by a user. This type of inference profile can track metrics and costs when invoking the model in it. The inference profile may route requests to one or multiple regions.</p></li>
+    /// </ul>
     pub r#type: crate::types::InferenceProfileType,
 }
 impl InferenceProfileSummary {
@@ -28,11 +34,6 @@ impl InferenceProfileSummary {
     pub fn inference_profile_name(&self) -> &str {
         use std::ops::Deref;
         self.inference_profile_name.deref()
-    }
-    /// <p>A list of information about each model in the inference profile.</p>
-    pub fn models(&self) -> &[crate::types::InferenceProfileModel] {
-        use std::ops::Deref;
-        self.models.deref()
     }
     /// <p>The description of the inference profile.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
@@ -51,18 +52,44 @@ impl InferenceProfileSummary {
         use std::ops::Deref;
         self.inference_profile_arn.deref()
     }
+    /// <p>A list of information about each model in the inference profile.</p>
+    pub fn models(&self) -> &[crate::types::InferenceProfileModel] {
+        use std::ops::Deref;
+        self.models.deref()
+    }
     /// <p>The unique identifier of the inference profile.</p>
     pub fn inference_profile_id(&self) -> &str {
         use std::ops::Deref;
         self.inference_profile_id.deref()
     }
-    /// <p>The status of the inference profile. <code>ACTIVE</code> means that the inference profile is available to use.</p>
+    /// <p>The status of the inference profile. <code>ACTIVE</code> means that the inference profile is ready to be used.</p>
     pub fn status(&self) -> &crate::types::InferenceProfileStatus {
         &self.status
     }
-    /// <p>The type of the inference profile. <code>SYSTEM_DEFINED</code> means that the inference profile is defined by Amazon Bedrock.</p>
+    /// <p>The type of the inference profile. The following types are possible:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>SYSTEM_DEFINED</code> – The inference profile is defined by Amazon Bedrock. You can route inference requests across regions with these inference profiles.</p></li>
+    /// <li>
+    /// <p><code>APPLICATION</code> – The inference profile was created by a user. This type of inference profile can track metrics and costs when invoking the model in it. The inference profile may route requests to one or multiple regions.</p></li>
+    /// </ul>
     pub fn r#type(&self) -> &crate::types::InferenceProfileType {
         &self.r#type
+    }
+}
+impl ::std::fmt::Debug for InferenceProfileSummary {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("InferenceProfileSummary");
+        formatter.field("inference_profile_name", &self.inference_profile_name);
+        formatter.field("description", &"*** Sensitive Data Redacted ***");
+        formatter.field("created_at", &self.created_at);
+        formatter.field("updated_at", &self.updated_at);
+        formatter.field("inference_profile_arn", &self.inference_profile_arn);
+        formatter.field("models", &self.models);
+        formatter.field("inference_profile_id", &self.inference_profile_id);
+        formatter.field("status", &self.status);
+        formatter.field("r#type", &self.r#type);
+        formatter.finish()
     }
 }
 impl InferenceProfileSummary {
@@ -73,15 +100,15 @@ impl InferenceProfileSummary {
 }
 
 /// A builder for [`InferenceProfileSummary`](crate::types::InferenceProfileSummary).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct InferenceProfileSummaryBuilder {
     pub(crate) inference_profile_name: ::std::option::Option<::std::string::String>,
-    pub(crate) models: ::std::option::Option<::std::vec::Vec<crate::types::InferenceProfileModel>>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) inference_profile_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) models: ::std::option::Option<::std::vec::Vec<crate::types::InferenceProfileModel>>,
     pub(crate) inference_profile_id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::InferenceProfileStatus>,
     pub(crate) r#type: ::std::option::Option<crate::types::InferenceProfileType>,
@@ -101,26 +128,6 @@ impl InferenceProfileSummaryBuilder {
     /// <p>The name of the inference profile.</p>
     pub fn get_inference_profile_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.inference_profile_name
-    }
-    /// Appends an item to `models`.
-    ///
-    /// To override the contents of this collection use [`set_models`](Self::set_models).
-    ///
-    /// <p>A list of information about each model in the inference profile.</p>
-    pub fn models(mut self, input: crate::types::InferenceProfileModel) -> Self {
-        let mut v = self.models.unwrap_or_default();
-        v.push(input);
-        self.models = ::std::option::Option::Some(v);
-        self
-    }
-    /// <p>A list of information about each model in the inference profile.</p>
-    pub fn set_models(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InferenceProfileModel>>) -> Self {
-        self.models = input;
-        self
-    }
-    /// <p>A list of information about each model in the inference profile.</p>
-    pub fn get_models(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InferenceProfileModel>> {
-        &self.models
     }
     /// <p>The description of the inference profile.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -179,6 +186,26 @@ impl InferenceProfileSummaryBuilder {
     pub fn get_inference_profile_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.inference_profile_arn
     }
+    /// Appends an item to `models`.
+    ///
+    /// To override the contents of this collection use [`set_models`](Self::set_models).
+    ///
+    /// <p>A list of information about each model in the inference profile.</p>
+    pub fn models(mut self, input: crate::types::InferenceProfileModel) -> Self {
+        let mut v = self.models.unwrap_or_default();
+        v.push(input);
+        self.models = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of information about each model in the inference profile.</p>
+    pub fn set_models(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InferenceProfileModel>>) -> Self {
+        self.models = input;
+        self
+    }
+    /// <p>A list of information about each model in the inference profile.</p>
+    pub fn get_models(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InferenceProfileModel>> {
+        &self.models
+    }
     /// <p>The unique identifier of the inference profile.</p>
     /// This field is required.
     pub fn inference_profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -194,41 +221,59 @@ impl InferenceProfileSummaryBuilder {
     pub fn get_inference_profile_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.inference_profile_id
     }
-    /// <p>The status of the inference profile. <code>ACTIVE</code> means that the inference profile is available to use.</p>
+    /// <p>The status of the inference profile. <code>ACTIVE</code> means that the inference profile is ready to be used.</p>
     /// This field is required.
     pub fn status(mut self, input: crate::types::InferenceProfileStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The status of the inference profile. <code>ACTIVE</code> means that the inference profile is available to use.</p>
+    /// <p>The status of the inference profile. <code>ACTIVE</code> means that the inference profile is ready to be used.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::InferenceProfileStatus>) -> Self {
         self.status = input;
         self
     }
-    /// <p>The status of the inference profile. <code>ACTIVE</code> means that the inference profile is available to use.</p>
+    /// <p>The status of the inference profile. <code>ACTIVE</code> means that the inference profile is ready to be used.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::InferenceProfileStatus> {
         &self.status
     }
-    /// <p>The type of the inference profile. <code>SYSTEM_DEFINED</code> means that the inference profile is defined by Amazon Bedrock.</p>
+    /// <p>The type of the inference profile. The following types are possible:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>SYSTEM_DEFINED</code> – The inference profile is defined by Amazon Bedrock. You can route inference requests across regions with these inference profiles.</p></li>
+    /// <li>
+    /// <p><code>APPLICATION</code> – The inference profile was created by a user. This type of inference profile can track metrics and costs when invoking the model in it. The inference profile may route requests to one or multiple regions.</p></li>
+    /// </ul>
     /// This field is required.
     pub fn r#type(mut self, input: crate::types::InferenceProfileType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of the inference profile. <code>SYSTEM_DEFINED</code> means that the inference profile is defined by Amazon Bedrock.</p>
+    /// <p>The type of the inference profile. The following types are possible:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>SYSTEM_DEFINED</code> – The inference profile is defined by Amazon Bedrock. You can route inference requests across regions with these inference profiles.</p></li>
+    /// <li>
+    /// <p><code>APPLICATION</code> – The inference profile was created by a user. This type of inference profile can track metrics and costs when invoking the model in it. The inference profile may route requests to one or multiple regions.</p></li>
+    /// </ul>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::InferenceProfileType>) -> Self {
         self.r#type = input;
         self
     }
-    /// <p>The type of the inference profile. <code>SYSTEM_DEFINED</code> means that the inference profile is defined by Amazon Bedrock.</p>
+    /// <p>The type of the inference profile. The following types are possible:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>SYSTEM_DEFINED</code> – The inference profile is defined by Amazon Bedrock. You can route inference requests across regions with these inference profiles.</p></li>
+    /// <li>
+    /// <p><code>APPLICATION</code> – The inference profile was created by a user. This type of inference profile can track metrics and costs when invoking the model in it. The inference profile may route requests to one or multiple regions.</p></li>
+    /// </ul>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::InferenceProfileType> {
         &self.r#type
     }
     /// Consumes the builder and constructs a [`InferenceProfileSummary`](crate::types::InferenceProfileSummary).
     /// This method will fail if any of the following fields are not set:
     /// - [`inference_profile_name`](crate::types::builders::InferenceProfileSummaryBuilder::inference_profile_name)
-    /// - [`models`](crate::types::builders::InferenceProfileSummaryBuilder::models)
     /// - [`inference_profile_arn`](crate::types::builders::InferenceProfileSummaryBuilder::inference_profile_arn)
+    /// - [`models`](crate::types::builders::InferenceProfileSummaryBuilder::models)
     /// - [`inference_profile_id`](crate::types::builders::InferenceProfileSummaryBuilder::inference_profile_id)
     /// - [`status`](crate::types::builders::InferenceProfileSummaryBuilder::status)
     /// - [`r#type`](crate::types::builders::InferenceProfileSummaryBuilder::type)
@@ -240,12 +285,6 @@ impl InferenceProfileSummaryBuilder {
                     "inference_profile_name was not specified but it is required when building InferenceProfileSummary",
                 )
             })?,
-            models: self.models.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "models",
-                    "models was not specified but it is required when building InferenceProfileSummary",
-                )
-            })?,
             description: self.description,
             created_at: self.created_at,
             updated_at: self.updated_at,
@@ -253,6 +292,12 @@ impl InferenceProfileSummaryBuilder {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "inference_profile_arn",
                     "inference_profile_arn was not specified but it is required when building InferenceProfileSummary",
+                )
+            })?,
+            models: self.models.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "models",
+                    "models was not specified but it is required when building InferenceProfileSummary",
                 )
             })?,
             inference_profile_id: self.inference_profile_id.ok_or_else(|| {
@@ -274,5 +319,20 @@ impl InferenceProfileSummaryBuilder {
                 )
             })?,
         })
+    }
+}
+impl ::std::fmt::Debug for InferenceProfileSummaryBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("InferenceProfileSummaryBuilder");
+        formatter.field("inference_profile_name", &self.inference_profile_name);
+        formatter.field("description", &"*** Sensitive Data Redacted ***");
+        formatter.field("created_at", &self.created_at);
+        formatter.field("updated_at", &self.updated_at);
+        formatter.field("inference_profile_arn", &self.inference_profile_arn);
+        formatter.field("models", &self.models);
+        formatter.field("inference_profile_id", &self.inference_profile_id);
+        formatter.field("status", &self.status);
+        formatter.field("r#type", &self.r#type);
+        formatter.finish()
     }
 }

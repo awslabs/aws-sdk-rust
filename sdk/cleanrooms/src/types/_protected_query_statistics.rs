@@ -6,11 +6,17 @@
 pub struct ProtectedQueryStatistics {
     /// <p>The duration of the protected query, from creation until query completion.</p>
     pub total_duration_in_millis: ::std::option::Option<i64>,
+    /// <p>The billed resource utilization.</p>
+    pub billed_resource_utilization: ::std::option::Option<crate::types::BilledResourceUtilization>,
 }
 impl ProtectedQueryStatistics {
     /// <p>The duration of the protected query, from creation until query completion.</p>
     pub fn total_duration_in_millis(&self) -> ::std::option::Option<i64> {
         self.total_duration_in_millis
+    }
+    /// <p>The billed resource utilization.</p>
+    pub fn billed_resource_utilization(&self) -> ::std::option::Option<&crate::types::BilledResourceUtilization> {
+        self.billed_resource_utilization.as_ref()
     }
 }
 impl ProtectedQueryStatistics {
@@ -25,6 +31,7 @@ impl ProtectedQueryStatistics {
 #[non_exhaustive]
 pub struct ProtectedQueryStatisticsBuilder {
     pub(crate) total_duration_in_millis: ::std::option::Option<i64>,
+    pub(crate) billed_resource_utilization: ::std::option::Option<crate::types::BilledResourceUtilization>,
 }
 impl ProtectedQueryStatisticsBuilder {
     /// <p>The duration of the protected query, from creation until query completion.</p>
@@ -41,10 +48,25 @@ impl ProtectedQueryStatisticsBuilder {
     pub fn get_total_duration_in_millis(&self) -> &::std::option::Option<i64> {
         &self.total_duration_in_millis
     }
+    /// <p>The billed resource utilization.</p>
+    pub fn billed_resource_utilization(mut self, input: crate::types::BilledResourceUtilization) -> Self {
+        self.billed_resource_utilization = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The billed resource utilization.</p>
+    pub fn set_billed_resource_utilization(mut self, input: ::std::option::Option<crate::types::BilledResourceUtilization>) -> Self {
+        self.billed_resource_utilization = input;
+        self
+    }
+    /// <p>The billed resource utilization.</p>
+    pub fn get_billed_resource_utilization(&self) -> &::std::option::Option<crate::types::BilledResourceUtilization> {
+        &self.billed_resource_utilization
+    }
     /// Consumes the builder and constructs a [`ProtectedQueryStatistics`](crate::types::ProtectedQueryStatistics).
     pub fn build(self) -> crate::types::ProtectedQueryStatistics {
         crate::types::ProtectedQueryStatistics {
             total_duration_in_millis: self.total_duration_in_millis,
+            billed_resource_utilization: self.billed_resource_utilization,
         }
     }
 }

@@ -25,6 +25,8 @@ pub struct BatchExecuteStatementInput {
     pub session_keep_alive_seconds: ::std::option::Option<i32>,
     /// <p>The session identifier of the query.</p>
     pub session_id: ::std::option::Option<::std::string::String>,
+    /// <p>The data format of the result of the SQL statement. If no format is specified, the default is JSON.</p>
+    pub result_format: ::std::option::Option<crate::types::ResultFormatString>,
 }
 impl BatchExecuteStatementInput {
     /// <p>One or more SQL statements to run. The SQL statements are run as a single transaction. They run serially in the order of the array. Subsequent SQL statements don't start until the previous statement in the array completes. If any SQL statement fails, then because they are run as one transaction, all work is rolled back.</p>
@@ -73,6 +75,10 @@ impl BatchExecuteStatementInput {
     pub fn session_id(&self) -> ::std::option::Option<&str> {
         self.session_id.as_deref()
     }
+    /// <p>The data format of the result of the SQL statement. If no format is specified, the default is JSON.</p>
+    pub fn result_format(&self) -> ::std::option::Option<&crate::types::ResultFormatString> {
+        self.result_format.as_ref()
+    }
 }
 impl BatchExecuteStatementInput {
     /// Creates a new builder-style object to manufacture [`BatchExecuteStatementInput`](crate::operation::batch_execute_statement::BatchExecuteStatementInput).
@@ -96,6 +102,7 @@ pub struct BatchExecuteStatementInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) session_keep_alive_seconds: ::std::option::Option<i32>,
     pub(crate) session_id: ::std::option::Option<::std::string::String>,
+    pub(crate) result_format: ::std::option::Option<crate::types::ResultFormatString>,
 }
 impl BatchExecuteStatementInputBuilder {
     /// Appends an item to `sqls`.
@@ -258,6 +265,20 @@ impl BatchExecuteStatementInputBuilder {
     pub fn get_session_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.session_id
     }
+    /// <p>The data format of the result of the SQL statement. If no format is specified, the default is JSON.</p>
+    pub fn result_format(mut self, input: crate::types::ResultFormatString) -> Self {
+        self.result_format = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The data format of the result of the SQL statement. If no format is specified, the default is JSON.</p>
+    pub fn set_result_format(mut self, input: ::std::option::Option<crate::types::ResultFormatString>) -> Self {
+        self.result_format = input;
+        self
+    }
+    /// <p>The data format of the result of the SQL statement. If no format is specified, the default is JSON.</p>
+    pub fn get_result_format(&self) -> &::std::option::Option<crate::types::ResultFormatString> {
+        &self.result_format
+    }
     /// Consumes the builder and constructs a [`BatchExecuteStatementInput`](crate::operation::batch_execute_statement::BatchExecuteStatementInput).
     pub fn build(
         self,
@@ -275,6 +296,7 @@ impl BatchExecuteStatementInputBuilder {
             client_token: self.client_token,
             session_keep_alive_seconds: self.session_keep_alive_seconds,
             session_id: self.session_id,
+            result_format: self.result_format,
         })
     }
 }

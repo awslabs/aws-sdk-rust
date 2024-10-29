@@ -93,6 +93,8 @@ pub use crate::types::_inference_profile_status::InferenceProfileStatus;
 
 pub use crate::types::_inference_profile_model::InferenceProfileModel;
 
+pub use crate::types::_inference_profile_model_source::InferenceProfileModelSource;
+
 pub use crate::types::_inference_profile_summary::InferenceProfileSummary;
 
 pub use crate::types::_guardrail_contextual_grounding_policy_config::GuardrailContextualGroundingPolicyConfig;
@@ -320,6 +322,8 @@ mod _human_workflow_config;
 mod _imported_model_summary;
 
 mod _inference_profile_model;
+
+mod _inference_profile_model_source;
 
 mod _inference_profile_status;
 

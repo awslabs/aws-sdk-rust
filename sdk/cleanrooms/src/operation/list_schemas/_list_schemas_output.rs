@@ -5,7 +5,7 @@
 pub struct ListSchemasOutput {
     /// <p>The retrieved list of schemas.</p>
     pub schema_summaries: ::std::vec::Vec<crate::types::SchemaSummary>,
-    /// <p>The token value retrieved from a previous call to access the next page of results.</p>
+    /// <p>The pagination token that's used to fetch the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -15,7 +15,7 @@ impl ListSchemasOutput {
         use std::ops::Deref;
         self.schema_summaries.deref()
     }
-    /// <p>The token value retrieved from a previous call to access the next page of results.</p>
+    /// <p>The pagination token that's used to fetch the next set of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -61,17 +61,17 @@ impl ListSchemasOutputBuilder {
     pub fn get_schema_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SchemaSummary>> {
         &self.schema_summaries
     }
-    /// <p>The token value retrieved from a previous call to access the next page of results.</p>
+    /// <p>The pagination token that's used to fetch the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The token value retrieved from a previous call to access the next page of results.</p>
+    /// <p>The pagination token that's used to fetch the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>The token value retrieved from a previous call to access the next page of results.</p>
+    /// <p>The pagination token that's used to fetch the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

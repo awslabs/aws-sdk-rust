@@ -54,7 +54,7 @@ pub struct DescribeDomainOutput {
     pub app_security_group_management: ::std::option::Option<crate::types::AppSecurityGroupManagement>,
     /// <p>Indicates whether custom tag propagation is supported for the domain.</p>
     pub tag_propagation: ::std::option::Option<crate::types::TagPropagation>,
-    /// <p>The default settings used to create a space.</p>
+    /// <p>The default settings for shared spaces that users create in the domain.</p>
     pub default_space_settings: ::std::option::Option<crate::types::DefaultSpaceSettings>,
     _request_id: Option<String>,
 }
@@ -156,7 +156,7 @@ impl DescribeDomainOutput {
     pub fn tag_propagation(&self) -> ::std::option::Option<&crate::types::TagPropagation> {
         self.tag_propagation.as_ref()
     }
-    /// <p>The default settings used to create a space.</p>
+    /// <p>The default settings for shared spaces that users create in the domain.</p>
     pub fn default_space_settings(&self) -> ::std::option::Option<&crate::types::DefaultSpaceSettings> {
         self.default_space_settings.as_ref()
     }
@@ -538,17 +538,17 @@ impl DescribeDomainOutputBuilder {
     pub fn get_tag_propagation(&self) -> &::std::option::Option<crate::types::TagPropagation> {
         &self.tag_propagation
     }
-    /// <p>The default settings used to create a space.</p>
+    /// <p>The default settings for shared spaces that users create in the domain.</p>
     pub fn default_space_settings(mut self, input: crate::types::DefaultSpaceSettings) -> Self {
         self.default_space_settings = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The default settings used to create a space.</p>
+    /// <p>The default settings for shared spaces that users create in the domain.</p>
     pub fn set_default_space_settings(mut self, input: ::std::option::Option<crate::types::DefaultSpaceSettings>) -> Self {
         self.default_space_settings = input;
         self
     }
-    /// <p>The default settings used to create a space.</p>
+    /// <p>The default settings for shared spaces that users create in the domain.</p>
     pub fn get_default_space_settings(&self) -> &::std::option::Option<crate::types::DefaultSpaceSettings> {
         &self.default_space_settings
     }

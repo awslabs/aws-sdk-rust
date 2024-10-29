@@ -12,6 +12,9 @@ pub fn ser_protected_query_s3_output_configuration(
     if let Some(var_1) = &input.key_prefix {
         object.key("keyPrefix").string(var_1.as_str());
     }
+    if let Some(var_2) = &input.single_file_output {
+        object.key("singleFileOutput").boolean(*var_2);
+    }
     Ok(())
 }
 
@@ -50,6 +53,9 @@ where
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
                             );
+                        }
+                        "singleFileOutput" => {
+                            builder = builder.set_single_file_output(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -2421,6 +2421,9 @@ impl From<crate::operation::populate_id_mapping_table::PopulateIdMappingTableErr
             crate::operation::populate_id_mapping_table::PopulateIdMappingTableError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
+            crate::operation::populate_id_mapping_table::PopulateIdMappingTableError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
             crate::operation::populate_id_mapping_table::PopulateIdMappingTableError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::populate_id_mapping_table::PopulateIdMappingTableError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::populate_id_mapping_table::PopulateIdMappingTableError::Unhandled(inner) => Error::Unhandled(inner),

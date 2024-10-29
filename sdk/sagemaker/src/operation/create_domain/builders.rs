@@ -328,17 +328,17 @@ impl CreateDomainFluentBuilder {
     pub fn get_tag_propagation(&self) -> &::std::option::Option<crate::types::TagPropagation> {
         self.inner.get_tag_propagation()
     }
-    /// <p>The default settings used to create a space.</p>
+    /// <p>The default settings for shared spaces that users create in the domain.</p>
     pub fn default_space_settings(mut self, input: crate::types::DefaultSpaceSettings) -> Self {
         self.inner = self.inner.default_space_settings(input);
         self
     }
-    /// <p>The default settings used to create a space.</p>
+    /// <p>The default settings for shared spaces that users create in the domain.</p>
     pub fn set_default_space_settings(mut self, input: ::std::option::Option<crate::types::DefaultSpaceSettings>) -> Self {
         self.inner = self.inner.set_default_space_settings(input);
         self
     }
-    /// <p>The default settings used to create a space.</p>
+    /// <p>The default settings for shared spaces that users create in the domain.</p>
     pub fn get_default_space_settings(&self) -> &::std::option::Option<crate::types::DefaultSpaceSettings> {
         self.inner.get_default_space_settings()
     }

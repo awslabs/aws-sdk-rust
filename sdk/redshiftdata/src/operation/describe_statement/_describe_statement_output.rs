@@ -59,6 +59,8 @@ pub struct DescribeStatementOutput {
     pub workgroup_name: ::std::option::Option<::std::string::String>,
     /// <p>The session identifier of the query.</p>
     pub session_id: ::std::option::Option<::std::string::String>,
+    /// <p>The data format of the result of the SQL statement.</p>
+    pub result_format: ::std::option::Option<crate::types::ResultFormatString>,
     _request_id: Option<String>,
 }
 impl DescribeStatementOutput {
@@ -163,6 +165,10 @@ impl DescribeStatementOutput {
     pub fn session_id(&self) -> ::std::option::Option<&str> {
         self.session_id.as_deref()
     }
+    /// <p>The data format of the result of the SQL statement.</p>
+    pub fn result_format(&self) -> ::std::option::Option<&crate::types::ResultFormatString> {
+        self.result_format.as_ref()
+    }
 }
 impl ::aws_types::request_id::RequestId for DescribeStatementOutput {
     fn request_id(&self) -> Option<&str> {
@@ -200,6 +206,7 @@ pub struct DescribeStatementOutputBuilder {
     pub(crate) sub_statements: ::std::option::Option<::std::vec::Vec<crate::types::SubStatementData>>,
     pub(crate) workgroup_name: ::std::option::Option<::std::string::String>,
     pub(crate) session_id: ::std::option::Option<::std::string::String>,
+    pub(crate) result_format: ::std::option::Option<crate::types::ResultFormatString>,
     _request_id: Option<String>,
 }
 impl DescribeStatementOutputBuilder {
@@ -544,6 +551,20 @@ impl DescribeStatementOutputBuilder {
     pub fn get_session_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.session_id
     }
+    /// <p>The data format of the result of the SQL statement.</p>
+    pub fn result_format(mut self, input: crate::types::ResultFormatString) -> Self {
+        self.result_format = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The data format of the result of the SQL statement.</p>
+    pub fn set_result_format(mut self, input: ::std::option::Option<crate::types::ResultFormatString>) -> Self {
+        self.result_format = input;
+        self
+    }
+    /// <p>The data format of the result of the SQL statement.</p>
+    pub fn get_result_format(&self) -> &::std::option::Option<crate::types::ResultFormatString> {
+        &self.result_format
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -585,6 +606,7 @@ impl DescribeStatementOutputBuilder {
             sub_statements: self.sub_statements,
             workgroup_name: self.workgroup_name,
             session_id: self.session_id,
+            result_format: self.result_format,
             _request_id: self._request_id,
         })
     }
