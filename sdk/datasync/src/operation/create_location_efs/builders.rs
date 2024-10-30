@@ -109,51 +109,48 @@ impl CreateLocationEfsFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>Specifies a mount path for your Amazon EFS file system. This is where DataSync reads or writes data (depending on if this is a source or destination location). By default, DataSync uses the root directory, but you can also include subdirectories.</p><note>
-    /// <p>You must specify a value with forward slashes (for example, <code>/path/to/folder</code>).</p>
-    /// </note>
+    /// <p>Specifies a mount path for your Amazon EFS file system. This is where DataSync reads or writes data (depending on if this is a source or destination location) on your file system.</p>
+    /// <p>By default, DataSync uses the root directory (or <a href="https://docs.aws.amazon.com/efs/latest/ug/efs-access-points.html">access point</a> if you provide one by using <code>AccessPointArn</code>). You can also include subdirectories using forward slashes (for example, <code>/path/to/folder</code>).</p>
     pub fn subdirectory(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.subdirectory(input.into());
         self
     }
-    /// <p>Specifies a mount path for your Amazon EFS file system. This is where DataSync reads or writes data (depending on if this is a source or destination location). By default, DataSync uses the root directory, but you can also include subdirectories.</p><note>
-    /// <p>You must specify a value with forward slashes (for example, <code>/path/to/folder</code>).</p>
-    /// </note>
+    /// <p>Specifies a mount path for your Amazon EFS file system. This is where DataSync reads or writes data (depending on if this is a source or destination location) on your file system.</p>
+    /// <p>By default, DataSync uses the root directory (or <a href="https://docs.aws.amazon.com/efs/latest/ug/efs-access-points.html">access point</a> if you provide one by using <code>AccessPointArn</code>). You can also include subdirectories using forward slashes (for example, <code>/path/to/folder</code>).</p>
     pub fn set_subdirectory(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_subdirectory(input);
         self
     }
-    /// <p>Specifies a mount path for your Amazon EFS file system. This is where DataSync reads or writes data (depending on if this is a source or destination location). By default, DataSync uses the root directory, but you can also include subdirectories.</p><note>
-    /// <p>You must specify a value with forward slashes (for example, <code>/path/to/folder</code>).</p>
-    /// </note>
+    /// <p>Specifies a mount path for your Amazon EFS file system. This is where DataSync reads or writes data (depending on if this is a source or destination location) on your file system.</p>
+    /// <p>By default, DataSync uses the root directory (or <a href="https://docs.aws.amazon.com/efs/latest/ug/efs-access-points.html">access point</a> if you provide one by using <code>AccessPointArn</code>). You can also include subdirectories using forward slashes (for example, <code>/path/to/folder</code>).</p>
     pub fn get_subdirectory(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_subdirectory()
     }
-    /// <p>Specifies the ARN for the Amazon EFS file system.</p>
+    /// <p>Specifies the ARN for your Amazon EFS file system.</p>
     pub fn efs_filesystem_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.efs_filesystem_arn(input.into());
         self
     }
-    /// <p>Specifies the ARN for the Amazon EFS file system.</p>
+    /// <p>Specifies the ARN for your Amazon EFS file system.</p>
     pub fn set_efs_filesystem_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_efs_filesystem_arn(input);
         self
     }
-    /// <p>Specifies the ARN for the Amazon EFS file system.</p>
+    /// <p>Specifies the ARN for your Amazon EFS file system.</p>
     pub fn get_efs_filesystem_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_efs_filesystem_arn()
     }
-    /// <p>Specifies the subnet and security groups DataSync uses to access your Amazon EFS file system.</p>
+    /// <p>Specifies the subnet and security groups DataSync uses to connect to one of your Amazon EFS file system's <a href="https://docs.aws.amazon.com/efs/latest/ug/accessing-fs.html">mount targets</a>.</p>
     pub fn ec2_config(mut self, input: crate::types::Ec2Config) -> Self {
         self.inner = self.inner.ec2_config(input);
         self
     }
-    /// <p>Specifies the subnet and security groups DataSync uses to access your Amazon EFS file system.</p>
+    /// <p>Specifies the subnet and security groups DataSync uses to connect to one of your Amazon EFS file system's <a href="https://docs.aws.amazon.com/efs/latest/ug/accessing-fs.html">mount targets</a>.</p>
     pub fn set_ec2_config(mut self, input: ::std::option::Option<crate::types::Ec2Config>) -> Self {
         self.inner = self.inner.set_ec2_config(input);
         self
     }
-    /// <p>Specifies the subnet and security groups DataSync uses to access your Amazon EFS file system.</p>
+    /// <p>Specifies the subnet and security groups DataSync uses to connect to one of your Amazon EFS file system's <a href="https://docs.aws.amazon.com/efs/latest/ug/accessing-fs.html">mount targets</a>.</p>
     pub fn get_ec2_config(&self) -> &::std::option::Option<crate::types::Ec2Config> {
         self.inner.get_ec2_config()
     }
@@ -176,47 +173,53 @@ impl CreateLocationEfsFluentBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagListEntry>> {
         self.inner.get_tags()
     }
-    /// <p>Specifies the Amazon Resource Name (ARN) of the access point that DataSync uses to access the Amazon EFS file system.</p>
+    /// <p>Specifies the Amazon Resource Name (ARN) of the access point that DataSync uses to mount your Amazon EFS file system.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-efs-location.html#create-efs-location-iam">Accessing restricted file systems</a>.</p>
     pub fn access_point_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.access_point_arn(input.into());
         self
     }
-    /// <p>Specifies the Amazon Resource Name (ARN) of the access point that DataSync uses to access the Amazon EFS file system.</p>
+    /// <p>Specifies the Amazon Resource Name (ARN) of the access point that DataSync uses to mount your Amazon EFS file system.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-efs-location.html#create-efs-location-iam">Accessing restricted file systems</a>.</p>
     pub fn set_access_point_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_access_point_arn(input);
         self
     }
-    /// <p>Specifies the Amazon Resource Name (ARN) of the access point that DataSync uses to access the Amazon EFS file system.</p>
+    /// <p>Specifies the Amazon Resource Name (ARN) of the access point that DataSync uses to mount your Amazon EFS file system.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-efs-location.html#create-efs-location-iam">Accessing restricted file systems</a>.</p>
     pub fn get_access_point_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_access_point_arn()
     }
-    /// <p>Specifies an Identity and Access Management (IAM) role that DataSync assumes when mounting the Amazon EFS file system.</p>
+    /// <p>Specifies an Identity and Access Management (IAM) role that allows DataSync to access your Amazon EFS file system.</p>
+    /// <p>For information on creating this role, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-efs-location.html#create-efs-location-iam-role">Creating a DataSync IAM role for file system access</a>.</p>
     pub fn file_system_access_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.file_system_access_role_arn(input.into());
         self
     }
-    /// <p>Specifies an Identity and Access Management (IAM) role that DataSync assumes when mounting the Amazon EFS file system.</p>
+    /// <p>Specifies an Identity and Access Management (IAM) role that allows DataSync to access your Amazon EFS file system.</p>
+    /// <p>For information on creating this role, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-efs-location.html#create-efs-location-iam-role">Creating a DataSync IAM role for file system access</a>.</p>
     pub fn set_file_system_access_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_file_system_access_role_arn(input);
         self
     }
-    /// <p>Specifies an Identity and Access Management (IAM) role that DataSync assumes when mounting the Amazon EFS file system.</p>
+    /// <p>Specifies an Identity and Access Management (IAM) role that allows DataSync to access your Amazon EFS file system.</p>
+    /// <p>For information on creating this role, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-efs-location.html#create-efs-location-iam-role">Creating a DataSync IAM role for file system access</a>.</p>
     pub fn get_file_system_access_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_file_system_access_role_arn()
     }
-    /// <p>Specifies whether you want DataSync to use Transport Layer Security (TLS) 1.2 encryption when it copies data to or from the Amazon EFS file system.</p>
+    /// <p>Specifies whether you want DataSync to use Transport Layer Security (TLS) 1.2 encryption when it transfers data to or from your Amazon EFS file system.</p>
     /// <p>If you specify an access point using <code>AccessPointArn</code> or an IAM role using <code>FileSystemAccessRoleArn</code>, you must set this parameter to <code>TLS1_2</code>.</p>
     pub fn in_transit_encryption(mut self, input: crate::types::EfsInTransitEncryption) -> Self {
         self.inner = self.inner.in_transit_encryption(input);
         self
     }
-    /// <p>Specifies whether you want DataSync to use Transport Layer Security (TLS) 1.2 encryption when it copies data to or from the Amazon EFS file system.</p>
+    /// <p>Specifies whether you want DataSync to use Transport Layer Security (TLS) 1.2 encryption when it transfers data to or from your Amazon EFS file system.</p>
     /// <p>If you specify an access point using <code>AccessPointArn</code> or an IAM role using <code>FileSystemAccessRoleArn</code>, you must set this parameter to <code>TLS1_2</code>.</p>
     pub fn set_in_transit_encryption(mut self, input: ::std::option::Option<crate::types::EfsInTransitEncryption>) -> Self {
         self.inner = self.inner.set_in_transit_encryption(input);
         self
     }
-    /// <p>Specifies whether you want DataSync to use Transport Layer Security (TLS) 1.2 encryption when it copies data to or from the Amazon EFS file system.</p>
+    /// <p>Specifies whether you want DataSync to use Transport Layer Security (TLS) 1.2 encryption when it transfers data to or from your Amazon EFS file system.</p>
     /// <p>If you specify an access point using <code>AccessPointArn</code> or an IAM role using <code>FileSystemAccessRoleArn</code>, you must set this parameter to <code>TLS1_2</code>.</p>
     pub fn get_in_transit_encryption(&self) -> &::std::option::Option<crate::types::EfsInTransitEncryption> {
         self.inner.get_in_transit_encryption()

@@ -10,7 +10,7 @@ pub struct InstanceTypeInfo {
     pub current_generation: ::std::option::Option<bool>,
     /// <p>Indicates whether the instance type is eligible for the free tier.</p>
     pub free_tier_eligible: ::std::option::Option<bool>,
-    /// <p>Indicates whether the instance type is offered for spot or On-Demand.</p>
+    /// <p>Indicates whether the instance type is offered for spot, On-Demand, or Capacity Blocks.</p>
     pub supported_usage_classes: ::std::option::Option<::std::vec::Vec<crate::types::UsageClassType>>,
     /// <p>The supported root device types.</p>
     pub supported_root_device_types: ::std::option::Option<::std::vec::Vec<crate::types::RootDeviceType>>,
@@ -78,7 +78,7 @@ impl InstanceTypeInfo {
     pub fn free_tier_eligible(&self) -> ::std::option::Option<bool> {
         self.free_tier_eligible
     }
-    /// <p>Indicates whether the instance type is offered for spot or On-Demand.</p>
+    /// <p>Indicates whether the instance type is offered for spot, On-Demand, or Capacity Blocks.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_usage_classes.is_none()`.
     pub fn supported_usage_classes(&self) -> &[crate::types::UsageClassType] {
@@ -284,19 +284,19 @@ impl InstanceTypeInfoBuilder {
     ///
     /// To override the contents of this collection use [`set_supported_usage_classes`](Self::set_supported_usage_classes).
     ///
-    /// <p>Indicates whether the instance type is offered for spot or On-Demand.</p>
+    /// <p>Indicates whether the instance type is offered for spot, On-Demand, or Capacity Blocks.</p>
     pub fn supported_usage_classes(mut self, input: crate::types::UsageClassType) -> Self {
         let mut v = self.supported_usage_classes.unwrap_or_default();
         v.push(input);
         self.supported_usage_classes = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Indicates whether the instance type is offered for spot or On-Demand.</p>
+    /// <p>Indicates whether the instance type is offered for spot, On-Demand, or Capacity Blocks.</p>
     pub fn set_supported_usage_classes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UsageClassType>>) -> Self {
         self.supported_usage_classes = input;
         self
     }
-    /// <p>Indicates whether the instance type is offered for spot or On-Demand.</p>
+    /// <p>Indicates whether the instance type is offered for spot, On-Demand, or Capacity Blocks.</p>
     pub fn get_supported_usage_classes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UsageClassType>> {
         &self.supported_usage_classes
     }

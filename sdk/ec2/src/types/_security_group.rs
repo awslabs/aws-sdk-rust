@@ -12,6 +12,8 @@ pub struct SecurityGroup {
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The ID of the VPC for the security group.</p>
     pub vpc_id: ::std::option::Option<::std::string::String>,
+    /// <p>The ARN of the security group.</p>
+    pub security_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account ID of the owner of the security group.</p>
     pub owner_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the security group.</p>
@@ -41,6 +43,10 @@ impl SecurityGroup {
     /// <p>The ID of the VPC for the security group.</p>
     pub fn vpc_id(&self) -> ::std::option::Option<&str> {
         self.vpc_id.as_deref()
+    }
+    /// <p>The ARN of the security group.</p>
+    pub fn security_group_arn(&self) -> ::std::option::Option<&str> {
+        self.security_group_arn.as_deref()
     }
     /// <p>The Amazon Web Services account ID of the owner of the security group.</p>
     pub fn owner_id(&self) -> ::std::option::Option<&str> {
@@ -76,6 +82,7 @@ pub struct SecurityGroupBuilder {
     pub(crate) ip_permissions_egress: ::std::option::Option<::std::vec::Vec<crate::types::IpPermission>>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) vpc_id: ::std::option::Option<::std::string::String>,
+    pub(crate) security_group_arn: ::std::option::Option<::std::string::String>,
     pub(crate) owner_id: ::std::option::Option<::std::string::String>,
     pub(crate) group_name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -150,6 +157,20 @@ impl SecurityGroupBuilder {
     pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.vpc_id
     }
+    /// <p>The ARN of the security group.</p>
+    pub fn security_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.security_group_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ARN of the security group.</p>
+    pub fn set_security_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.security_group_arn = input;
+        self
+    }
+    /// <p>The ARN of the security group.</p>
+    pub fn get_security_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.security_group_arn
+    }
     /// <p>The Amazon Web Services account ID of the owner of the security group.</p>
     pub fn owner_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.owner_id = ::std::option::Option::Some(input.into());
@@ -219,6 +240,7 @@ impl SecurityGroupBuilder {
             ip_permissions_egress: self.ip_permissions_egress,
             tags: self.tags,
             vpc_id: self.vpc_id,
+            security_group_arn: self.security_group_arn,
             owner_id: self.owner_id,
             group_name: self.group_name,
             description: self.description,

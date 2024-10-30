@@ -208,6 +208,30 @@ pub(crate) fn de_describe_task_execution(
                             .transpose()?,
                     );
                 }
+                "TaskMode" => {
+                    builder = builder.set_task_mode(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::TaskMode::from(u.as_ref())))
+                            .transpose()?,
+                    );
+                }
+                "FilesPrepared" => {
+                    builder = builder.set_files_prepared(
+                        ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                            .map(i64::try_from)
+                            .transpose()?,
+                    );
+                }
+                "FilesListed" => {
+                    builder = builder.set_files_listed(
+                        crate::protocol_serde::shape_task_execution_files_listed_detail::de_task_execution_files_listed_detail(tokens)?,
+                    );
+                }
+                "FilesFailed" => {
+                    builder = builder.set_files_failed(
+                        crate::protocol_serde::shape_task_execution_files_failed_detail::de_task_execution_files_failed_detail(tokens)?,
+                    );
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

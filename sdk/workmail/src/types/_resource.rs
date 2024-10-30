@@ -2,7 +2,7 @@
 
 /// <p>The representation of a resource.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct Resource {
     /// <p>The identifier of the resource.</p>
     pub id: ::std::option::Option<::std::string::String>,
@@ -55,6 +55,20 @@ impl Resource {
         self.description.as_deref()
     }
 }
+impl ::std::fmt::Debug for Resource {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("Resource");
+        formatter.field("id", &self.id);
+        formatter.field("email", &self.email);
+        formatter.field("name", &self.name);
+        formatter.field("r#type", &self.r#type);
+        formatter.field("state", &self.state);
+        formatter.field("enabled_date", &self.enabled_date);
+        formatter.field("disabled_date", &self.disabled_date);
+        formatter.field("description", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl Resource {
     /// Creates a new builder-style object to manufacture [`Resource`](crate::types::Resource).
     pub fn builder() -> crate::types::builders::ResourceBuilder {
@@ -63,7 +77,7 @@ impl Resource {
 }
 
 /// A builder for [`Resource`](crate::types::Resource).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct ResourceBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
@@ -200,5 +214,19 @@ impl ResourceBuilder {
             disabled_date: self.disabled_date,
             description: self.description,
         }
+    }
+}
+impl ::std::fmt::Debug for ResourceBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("ResourceBuilder");
+        formatter.field("id", &self.id);
+        formatter.field("email", &self.email);
+        formatter.field("name", &self.name);
+        formatter.field("r#type", &self.r#type);
+        formatter.field("state", &self.state);
+        formatter.field("enabled_date", &self.enabled_date);
+        formatter.field("disabled_date", &self.disabled_date);
+        formatter.field("description", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

@@ -96,7 +96,7 @@ pub struct DescribeInstanceTypesInput {
     /// <li>
     /// <p><code>supported-root-device-type</code> - The root device type (<code>ebs</code> | <code>instance-store</code>).</p></li>
     /// <li>
-    /// <p><code>supported-usage-class</code> - The usage class (<code>on-demand</code> | <code>spot</code>).</p></li>
+    /// <p><code>supported-usage-class</code> - The usage class (<code>on-demand</code> | <code>spot</code> | <code>capacity-block</code>).</p></li>
     /// <li>
     /// <p><code>supported-virtualization-type</code> - The virtualization type (<code>hvm</code> | <code>paravirtual</code>).</p></li>
     /// <li>
@@ -216,7 +216,7 @@ impl DescribeInstanceTypesInput {
     /// <li>
     /// <p><code>supported-root-device-type</code> - The root device type (<code>ebs</code> | <code>instance-store</code>).</p></li>
     /// <li>
-    /// <p><code>supported-usage-class</code> - The usage class (<code>on-demand</code> | <code>spot</code>).</p></li>
+    /// <p><code>supported-usage-class</code> - The usage class (<code>on-demand</code> | <code>spot</code> | <code>capacity-block</code>).</p></li>
     /// <li>
     /// <p><code>supported-virtualization-type</code> - The virtualization type (<code>hvm</code> | <code>paravirtual</code>).</p></li>
     /// <li>
@@ -389,7 +389,7 @@ impl DescribeInstanceTypesInputBuilder {
     /// <li>
     /// <p><code>supported-root-device-type</code> - The root device type (<code>ebs</code> | <code>instance-store</code>).</p></li>
     /// <li>
-    /// <p><code>supported-usage-class</code> - The usage class (<code>on-demand</code> | <code>spot</code>).</p></li>
+    /// <p><code>supported-usage-class</code> - The usage class (<code>on-demand</code> | <code>spot</code> | <code>capacity-block</code>).</p></li>
     /// <li>
     /// <p><code>supported-virtualization-type</code> - The virtualization type (<code>hvm</code> | <code>paravirtual</code>).</p></li>
     /// <li>
@@ -498,7 +498,7 @@ impl DescribeInstanceTypesInputBuilder {
     /// <li>
     /// <p><code>supported-root-device-type</code> - The root device type (<code>ebs</code> | <code>instance-store</code>).</p></li>
     /// <li>
-    /// <p><code>supported-usage-class</code> - The usage class (<code>on-demand</code> | <code>spot</code>).</p></li>
+    /// <p><code>supported-usage-class</code> - The usage class (<code>on-demand</code> | <code>spot</code> | <code>capacity-block</code>).</p></li>
     /// <li>
     /// <p><code>supported-virtualization-type</code> - The virtualization type (<code>hvm</code> | <code>paravirtual</code>).</p></li>
     /// <li>
@@ -605,7 +605,7 @@ impl DescribeInstanceTypesInputBuilder {
     /// <li>
     /// <p><code>supported-root-device-type</code> - The root device type (<code>ebs</code> | <code>instance-store</code>).</p></li>
     /// <li>
-    /// <p><code>supported-usage-class</code> - The usage class (<code>on-demand</code> | <code>spot</code>).</p></li>
+    /// <p><code>supported-usage-class</code> - The usage class (<code>on-demand</code> | <code>spot</code> | <code>capacity-block</code>).</p></li>
     /// <li>
     /// <p><code>supported-virtualization-type</code> - The virtualization type (<code>hvm</code> | <code>paravirtual</code>).</p></li>
     /// <li>

@@ -6,17 +6,21 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Options {
-    /// <p>Specifies how and when DataSync checks the integrity of your data during a transfer.</p>
+    /// <p>Specifies if and how DataSync checks the integrity of your data at the end of your transfer.</p>
     /// <ul>
     /// <li>
-    /// <p><code>ONLY_FILES_TRANSFERRED</code> (recommended) - DataSync calculates the checksum of transferred files and metadata at the source location. At the end of the transfer, DataSync then compares this checksum to the checksum calculated on those files at the destination.</p>
+    /// <p><code>ONLY_FILES_TRANSFERRED</code> (recommended) - DataSync calculates the checksum of transferred data (including metadata) at the source location. At the end of the transfer, DataSync then compares this checksum to the checksum calculated on that data at the destination.</p><note>
+    /// <p>This is the default option for <a href="https://docs.aws.amazon.com/datasync/latest/userguide/choosing-task-mode.html">Enhanced mode tasks</a>.</p>
+    /// </note>
     /// <p>We recommend this option when transferring to S3 Glacier Flexible Retrieval or S3 Glacier Deep Archive storage classes. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes">Storage class considerations with Amazon S3 locations</a>.</p></li>
     /// <li>
-    /// <p><code>POINT_IN_TIME_CONSISTENT</code> (default) - At the end of the transfer, DataSync scans the entire source and destination to verify that both locations are fully synchronized.</p>
+    /// <p><code>POINT_IN_TIME_CONSISTENT</code> - At the end of the transfer, DataSync checks the entire source and destination to verify that both locations are fully synchronized.</p><note>
+    /// <p>The is the default option for <a href="https://docs.aws.amazon.com/datasync/latest/userguide/choosing-task-mode.html">Basic mode tasks</a> and isn't currently supported with Enhanced mode tasks.</p>
+    /// </note>
     /// <p>If you use a <a href="https://docs.aws.amazon.com/datasync/latest/userguide/transferring-with-manifest.html">manifest</a>, DataSync only scans and verifies what's listed in the manifest.</p>
     /// <p>You can't use this option when transferring to S3 Glacier Flexible Retrieval or S3 Glacier Deep Archive storage classes. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes">Storage class considerations with Amazon S3 locations</a>.</p></li>
     /// <li>
-    /// <p><code>NONE</code> - DataSync doesn't run additional verification at the end of the transfer. All data transmissions are still integrity-checked with checksum verification during the transfer.</p></li>
+    /// <p><code>NONE</code> - DataSync performs data integrity checks only during your transfer. Unlike other options, there's no additional verification at the end of your transfer.</p></li>
     /// </ul>
     pub verify_mode: ::std::option::Option<crate::types::VerifyMode>,
     /// <p>Specifies whether DataSync should modify or preserve data at the destination location.</p>
@@ -33,7 +37,7 @@ pub struct Options {
     /// </note>
     /// <ul>
     /// <li>
-    /// <p><code>BEST_EFFORT</code> (default) - DataSync attempts to preserve the original <code>Atime</code> attribute on all source files (that is, the version before the <code>PREPARING</code> phase of the task execution). This option is recommended.</p></li>
+    /// <p><code>BEST_EFFORT</code> (default) - DataSync attempts to preserve the original <code>Atime</code> attribute on all source files (that is, the version before the <code>PREPARING</code> steps of the task execution). This option is recommended.</p></li>
     /// <li>
     /// <p><code>NONE</code> - Ignores <code>Atime</code>.</p></li>
     /// </ul><note>
@@ -41,7 +45,7 @@ pub struct Options {
     /// <p>If <code>Atime</code> is set to <code>NONE</code>, <code>Mtime</code> must also be <code>NONE</code>.</p>
     /// </note>
     pub atime: ::std::option::Option<crate::types::Atime>,
-    /// <p>Specifies whether to preserve metadata indicating the last time that a file was written to before the <code>PREPARING</code> phase of your task execution. This option is required when you need to run the a task more than once.</p>
+    /// <p>Specifies whether to preserve metadata indicating the last time that a file was written to before the <code>PREPARING</code> step of your task execution. This option is required when you need to run the a task more than once.</p>
     /// <ul>
     /// <li>
     /// <p><code>PRESERVE</code> (default) - Preserves original <code>Mtime</code>, which is recommended.</p></li>
@@ -68,7 +72,7 @@ pub struct Options {
     /// <li>
     /// <p><code>NONE</code> - Ignores UID and GID.</p></li>
     /// </ul>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/special-files.html#metadata-copied">Metadata copied by DataSync</a>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/metadata-copied.html">Understanding how DataSync handles file and object metadata</a>.</p>
     pub gid: ::std::option::Option<crate::types::Gid>,
     /// <p>Specifies whether files in the destination location that don't exist in the source should be preserved. This option can affect your Amazon S3 storage cost. If your task deletes objects, you might incur minimum storage duration charges for certain storage classes. For detailed information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes">Considerations when working with Amazon S3 storage classes in DataSync</a>.</p>
     /// <ul>
@@ -91,7 +95,7 @@ pub struct Options {
     /// </ul>
     pub preserve_devices: ::std::option::Option<crate::types::PreserveDevices>,
     /// <p>Specifies which users or groups can access a file for a specific purpose such as reading, writing, or execution of the file.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/special-files.html#metadata-copied">Metadata copied by DataSync</a>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/metadata-copied.html">Understanding how DataSync handles file and object metadata</a>.</p>
     /// <ul>
     /// <li>
     /// <p><code>PRESERVE</code> (default) - Preserves POSIX-style permissions, which is recommended.</p></li>
@@ -101,7 +105,9 @@ pub struct Options {
     /// <p>DataSync can preserve extant permissions of a source location.</p>
     /// </note>
     pub posix_permissions: ::std::option::Option<crate::types::PosixPermissions>,
-    /// <p>Limits the bandwidth used by a DataSync task. For example, if you want DataSync to use a maximum of 1 MB, set this value to <code>1048576</code> (<code>=1024*1024</code>).</p>
+    /// <p>Limits the bandwidth used by a DataSync task. For example, if you want DataSync to use a maximum of 1 MB, set this value to <code>1048576</code> (<code>=1024*1024</code>).</p><note>
+    /// <p>Not applicable to <a href="https://docs.aws.amazon.com/datasync/latest/userguide/choosing-task-mode.html">Enhanced mode tasks</a>.</p>
+    /// </note>
     pub bytes_per_second: ::std::option::Option<i64>,
     /// <p>Specifies whether your transfer tasks should be put into a queue during certain scenarios when <a href="https://docs.aws.amazon.com/datasync/latest/userguide/run-task.html#running-multiple-tasks">running multiple tasks</a>. This is <code>ENABLED</code> by default.</p>
     pub task_queueing: ::std::option::Option<crate::types::TaskQueueing>,
@@ -115,16 +121,16 @@ pub struct Options {
     /// <p><code>OFF</code> - No logs are published.</p></li>
     /// </ul>
     pub log_level: ::std::option::Option<crate::types::LogLevel>,
-    /// <p>Determines whether DataSync transfers only the data and metadata that differ between the source and the destination location or transfers all the content from the source (without comparing what's in the destination).</p>
+    /// <p>Specifies whether DataSync transfers only the data (including metadata) that differs between locations following an initial copy or transfers all data every time you run the task. If you're planning on recurring transfers, you might only want to transfer what's changed since your previous task execution.</p>
     /// <ul>
     /// <li>
-    /// <p><code>CHANGED</code> (default) - DataSync copies only data or metadata that is new or different content from the source location to the destination location.</p></li>
+    /// <p><code>CHANGED</code> (default) - After your initial full transfer, DataSync copies only the data and metadata that differs between the source and destination location.</p></li>
     /// <li>
     /// <p><code>ALL</code> - DataSync copies everything in the source to the destination without comparing differences between the locations.</p></li>
     /// </ul>
     pub transfer_mode: ::std::option::Option<crate::types::TransferMode>,
     /// <p>Specifies which components of the SMB security descriptor are copied from source to destination objects.</p>
-    /// <p>This value is only used for transfers between SMB and Amazon FSx for Windows File Server locations or between two FSx for Windows File Server locations. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/special-files.html">how DataSync handles metadata</a>.</p>
+    /// <p>This value is only used for transfers between SMB and Amazon FSx for Windows File Server locations or between two FSx for Windows File Server locations. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/metadata-copied.html">Understanding how DataSync handles file and object metadata</a>.</p>
     /// <ul>
     /// <li>
     /// <p><code>OWNER_DACL</code> (default) - For each copied object, DataSync copies the following metadata:</p>
@@ -154,17 +160,21 @@ pub struct Options {
     pub object_tags: ::std::option::Option<crate::types::ObjectTags>,
 }
 impl Options {
-    /// <p>Specifies how and when DataSync checks the integrity of your data during a transfer.</p>
+    /// <p>Specifies if and how DataSync checks the integrity of your data at the end of your transfer.</p>
     /// <ul>
     /// <li>
-    /// <p><code>ONLY_FILES_TRANSFERRED</code> (recommended) - DataSync calculates the checksum of transferred files and metadata at the source location. At the end of the transfer, DataSync then compares this checksum to the checksum calculated on those files at the destination.</p>
+    /// <p><code>ONLY_FILES_TRANSFERRED</code> (recommended) - DataSync calculates the checksum of transferred data (including metadata) at the source location. At the end of the transfer, DataSync then compares this checksum to the checksum calculated on that data at the destination.</p><note>
+    /// <p>This is the default option for <a href="https://docs.aws.amazon.com/datasync/latest/userguide/choosing-task-mode.html">Enhanced mode tasks</a>.</p>
+    /// </note>
     /// <p>We recommend this option when transferring to S3 Glacier Flexible Retrieval or S3 Glacier Deep Archive storage classes. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes">Storage class considerations with Amazon S3 locations</a>.</p></li>
     /// <li>
-    /// <p><code>POINT_IN_TIME_CONSISTENT</code> (default) - At the end of the transfer, DataSync scans the entire source and destination to verify that both locations are fully synchronized.</p>
+    /// <p><code>POINT_IN_TIME_CONSISTENT</code> - At the end of the transfer, DataSync checks the entire source and destination to verify that both locations are fully synchronized.</p><note>
+    /// <p>The is the default option for <a href="https://docs.aws.amazon.com/datasync/latest/userguide/choosing-task-mode.html">Basic mode tasks</a> and isn't currently supported with Enhanced mode tasks.</p>
+    /// </note>
     /// <p>If you use a <a href="https://docs.aws.amazon.com/datasync/latest/userguide/transferring-with-manifest.html">manifest</a>, DataSync only scans and verifies what's listed in the manifest.</p>
     /// <p>You can't use this option when transferring to S3 Glacier Flexible Retrieval or S3 Glacier Deep Archive storage classes. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes">Storage class considerations with Amazon S3 locations</a>.</p></li>
     /// <li>
-    /// <p><code>NONE</code> - DataSync doesn't run additional verification at the end of the transfer. All data transmissions are still integrity-checked with checksum verification during the transfer.</p></li>
+    /// <p><code>NONE</code> - DataSync performs data integrity checks only during your transfer. Unlike other options, there's no additional verification at the end of your transfer.</p></li>
     /// </ul>
     pub fn verify_mode(&self) -> ::std::option::Option<&crate::types::VerifyMode> {
         self.verify_mode.as_ref()
@@ -185,7 +195,7 @@ impl Options {
     /// </note>
     /// <ul>
     /// <li>
-    /// <p><code>BEST_EFFORT</code> (default) - DataSync attempts to preserve the original <code>Atime</code> attribute on all source files (that is, the version before the <code>PREPARING</code> phase of the task execution). This option is recommended.</p></li>
+    /// <p><code>BEST_EFFORT</code> (default) - DataSync attempts to preserve the original <code>Atime</code> attribute on all source files (that is, the version before the <code>PREPARING</code> steps of the task execution). This option is recommended.</p></li>
     /// <li>
     /// <p><code>NONE</code> - Ignores <code>Atime</code>.</p></li>
     /// </ul><note>
@@ -195,7 +205,7 @@ impl Options {
     pub fn atime(&self) -> ::std::option::Option<&crate::types::Atime> {
         self.atime.as_ref()
     }
-    /// <p>Specifies whether to preserve metadata indicating the last time that a file was written to before the <code>PREPARING</code> phase of your task execution. This option is required when you need to run the a task more than once.</p>
+    /// <p>Specifies whether to preserve metadata indicating the last time that a file was written to before the <code>PREPARING</code> step of your task execution. This option is required when you need to run the a task more than once.</p>
     /// <ul>
     /// <li>
     /// <p><code>PRESERVE</code> (default) - Preserves original <code>Mtime</code>, which is recommended.</p></li>
@@ -226,7 +236,7 @@ impl Options {
     /// <li>
     /// <p><code>NONE</code> - Ignores UID and GID.</p></li>
     /// </ul>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/special-files.html#metadata-copied">Metadata copied by DataSync</a>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/metadata-copied.html">Understanding how DataSync handles file and object metadata</a>.</p>
     pub fn gid(&self) -> ::std::option::Option<&crate::types::Gid> {
         self.gid.as_ref()
     }
@@ -255,7 +265,7 @@ impl Options {
         self.preserve_devices.as_ref()
     }
     /// <p>Specifies which users or groups can access a file for a specific purpose such as reading, writing, or execution of the file.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/special-files.html#metadata-copied">Metadata copied by DataSync</a>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/metadata-copied.html">Understanding how DataSync handles file and object metadata</a>.</p>
     /// <ul>
     /// <li>
     /// <p><code>PRESERVE</code> (default) - Preserves POSIX-style permissions, which is recommended.</p></li>
@@ -267,7 +277,9 @@ impl Options {
     pub fn posix_permissions(&self) -> ::std::option::Option<&crate::types::PosixPermissions> {
         self.posix_permissions.as_ref()
     }
-    /// <p>Limits the bandwidth used by a DataSync task. For example, if you want DataSync to use a maximum of 1 MB, set this value to <code>1048576</code> (<code>=1024*1024</code>).</p>
+    /// <p>Limits the bandwidth used by a DataSync task. For example, if you want DataSync to use a maximum of 1 MB, set this value to <code>1048576</code> (<code>=1024*1024</code>).</p><note>
+    /// <p>Not applicable to <a href="https://docs.aws.amazon.com/datasync/latest/userguide/choosing-task-mode.html">Enhanced mode tasks</a>.</p>
+    /// </note>
     pub fn bytes_per_second(&self) -> ::std::option::Option<i64> {
         self.bytes_per_second
     }
@@ -287,10 +299,10 @@ impl Options {
     pub fn log_level(&self) -> ::std::option::Option<&crate::types::LogLevel> {
         self.log_level.as_ref()
     }
-    /// <p>Determines whether DataSync transfers only the data and metadata that differ between the source and the destination location or transfers all the content from the source (without comparing what's in the destination).</p>
+    /// <p>Specifies whether DataSync transfers only the data (including metadata) that differs between locations following an initial copy or transfers all data every time you run the task. If you're planning on recurring transfers, you might only want to transfer what's changed since your previous task execution.</p>
     /// <ul>
     /// <li>
-    /// <p><code>CHANGED</code> (default) - DataSync copies only data or metadata that is new or different content from the source location to the destination location.</p></li>
+    /// <p><code>CHANGED</code> (default) - After your initial full transfer, DataSync copies only the data and metadata that differs between the source and destination location.</p></li>
     /// <li>
     /// <p><code>ALL</code> - DataSync copies everything in the source to the destination without comparing differences between the locations.</p></li>
     /// </ul>
@@ -298,7 +310,7 @@ impl Options {
         self.transfer_mode.as_ref()
     }
     /// <p>Specifies which components of the SMB security descriptor are copied from source to destination objects.</p>
-    /// <p>This value is only used for transfers between SMB and Amazon FSx for Windows File Server locations or between two FSx for Windows File Server locations. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/special-files.html">how DataSync handles metadata</a>.</p>
+    /// <p>This value is only used for transfers between SMB and Amazon FSx for Windows File Server locations or between two FSx for Windows File Server locations. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/metadata-copied.html">Understanding how DataSync handles file and object metadata</a>.</p>
     /// <ul>
     /// <li>
     /// <p><code>OWNER_DACL</code> (default) - For each copied object, DataSync copies the following metadata:</p>
@@ -359,49 +371,61 @@ pub struct OptionsBuilder {
     pub(crate) object_tags: ::std::option::Option<crate::types::ObjectTags>,
 }
 impl OptionsBuilder {
-    /// <p>Specifies how and when DataSync checks the integrity of your data during a transfer.</p>
+    /// <p>Specifies if and how DataSync checks the integrity of your data at the end of your transfer.</p>
     /// <ul>
     /// <li>
-    /// <p><code>ONLY_FILES_TRANSFERRED</code> (recommended) - DataSync calculates the checksum of transferred files and metadata at the source location. At the end of the transfer, DataSync then compares this checksum to the checksum calculated on those files at the destination.</p>
+    /// <p><code>ONLY_FILES_TRANSFERRED</code> (recommended) - DataSync calculates the checksum of transferred data (including metadata) at the source location. At the end of the transfer, DataSync then compares this checksum to the checksum calculated on that data at the destination.</p><note>
+    /// <p>This is the default option for <a href="https://docs.aws.amazon.com/datasync/latest/userguide/choosing-task-mode.html">Enhanced mode tasks</a>.</p>
+    /// </note>
     /// <p>We recommend this option when transferring to S3 Glacier Flexible Retrieval or S3 Glacier Deep Archive storage classes. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes">Storage class considerations with Amazon S3 locations</a>.</p></li>
     /// <li>
-    /// <p><code>POINT_IN_TIME_CONSISTENT</code> (default) - At the end of the transfer, DataSync scans the entire source and destination to verify that both locations are fully synchronized.</p>
+    /// <p><code>POINT_IN_TIME_CONSISTENT</code> - At the end of the transfer, DataSync checks the entire source and destination to verify that both locations are fully synchronized.</p><note>
+    /// <p>The is the default option for <a href="https://docs.aws.amazon.com/datasync/latest/userguide/choosing-task-mode.html">Basic mode tasks</a> and isn't currently supported with Enhanced mode tasks.</p>
+    /// </note>
     /// <p>If you use a <a href="https://docs.aws.amazon.com/datasync/latest/userguide/transferring-with-manifest.html">manifest</a>, DataSync only scans and verifies what's listed in the manifest.</p>
     /// <p>You can't use this option when transferring to S3 Glacier Flexible Retrieval or S3 Glacier Deep Archive storage classes. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes">Storage class considerations with Amazon S3 locations</a>.</p></li>
     /// <li>
-    /// <p><code>NONE</code> - DataSync doesn't run additional verification at the end of the transfer. All data transmissions are still integrity-checked with checksum verification during the transfer.</p></li>
+    /// <p><code>NONE</code> - DataSync performs data integrity checks only during your transfer. Unlike other options, there's no additional verification at the end of your transfer.</p></li>
     /// </ul>
     pub fn verify_mode(mut self, input: crate::types::VerifyMode) -> Self {
         self.verify_mode = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies how and when DataSync checks the integrity of your data during a transfer.</p>
+    /// <p>Specifies if and how DataSync checks the integrity of your data at the end of your transfer.</p>
     /// <ul>
     /// <li>
-    /// <p><code>ONLY_FILES_TRANSFERRED</code> (recommended) - DataSync calculates the checksum of transferred files and metadata at the source location. At the end of the transfer, DataSync then compares this checksum to the checksum calculated on those files at the destination.</p>
+    /// <p><code>ONLY_FILES_TRANSFERRED</code> (recommended) - DataSync calculates the checksum of transferred data (including metadata) at the source location. At the end of the transfer, DataSync then compares this checksum to the checksum calculated on that data at the destination.</p><note>
+    /// <p>This is the default option for <a href="https://docs.aws.amazon.com/datasync/latest/userguide/choosing-task-mode.html">Enhanced mode tasks</a>.</p>
+    /// </note>
     /// <p>We recommend this option when transferring to S3 Glacier Flexible Retrieval or S3 Glacier Deep Archive storage classes. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes">Storage class considerations with Amazon S3 locations</a>.</p></li>
     /// <li>
-    /// <p><code>POINT_IN_TIME_CONSISTENT</code> (default) - At the end of the transfer, DataSync scans the entire source and destination to verify that both locations are fully synchronized.</p>
+    /// <p><code>POINT_IN_TIME_CONSISTENT</code> - At the end of the transfer, DataSync checks the entire source and destination to verify that both locations are fully synchronized.</p><note>
+    /// <p>The is the default option for <a href="https://docs.aws.amazon.com/datasync/latest/userguide/choosing-task-mode.html">Basic mode tasks</a> and isn't currently supported with Enhanced mode tasks.</p>
+    /// </note>
     /// <p>If you use a <a href="https://docs.aws.amazon.com/datasync/latest/userguide/transferring-with-manifest.html">manifest</a>, DataSync only scans and verifies what's listed in the manifest.</p>
     /// <p>You can't use this option when transferring to S3 Glacier Flexible Retrieval or S3 Glacier Deep Archive storage classes. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes">Storage class considerations with Amazon S3 locations</a>.</p></li>
     /// <li>
-    /// <p><code>NONE</code> - DataSync doesn't run additional verification at the end of the transfer. All data transmissions are still integrity-checked with checksum verification during the transfer.</p></li>
+    /// <p><code>NONE</code> - DataSync performs data integrity checks only during your transfer. Unlike other options, there's no additional verification at the end of your transfer.</p></li>
     /// </ul>
     pub fn set_verify_mode(mut self, input: ::std::option::Option<crate::types::VerifyMode>) -> Self {
         self.verify_mode = input;
         self
     }
-    /// <p>Specifies how and when DataSync checks the integrity of your data during a transfer.</p>
+    /// <p>Specifies if and how DataSync checks the integrity of your data at the end of your transfer.</p>
     /// <ul>
     /// <li>
-    /// <p><code>ONLY_FILES_TRANSFERRED</code> (recommended) - DataSync calculates the checksum of transferred files and metadata at the source location. At the end of the transfer, DataSync then compares this checksum to the checksum calculated on those files at the destination.</p>
+    /// <p><code>ONLY_FILES_TRANSFERRED</code> (recommended) - DataSync calculates the checksum of transferred data (including metadata) at the source location. At the end of the transfer, DataSync then compares this checksum to the checksum calculated on that data at the destination.</p><note>
+    /// <p>This is the default option for <a href="https://docs.aws.amazon.com/datasync/latest/userguide/choosing-task-mode.html">Enhanced mode tasks</a>.</p>
+    /// </note>
     /// <p>We recommend this option when transferring to S3 Glacier Flexible Retrieval or S3 Glacier Deep Archive storage classes. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes">Storage class considerations with Amazon S3 locations</a>.</p></li>
     /// <li>
-    /// <p><code>POINT_IN_TIME_CONSISTENT</code> (default) - At the end of the transfer, DataSync scans the entire source and destination to verify that both locations are fully synchronized.</p>
+    /// <p><code>POINT_IN_TIME_CONSISTENT</code> - At the end of the transfer, DataSync checks the entire source and destination to verify that both locations are fully synchronized.</p><note>
+    /// <p>The is the default option for <a href="https://docs.aws.amazon.com/datasync/latest/userguide/choosing-task-mode.html">Basic mode tasks</a> and isn't currently supported with Enhanced mode tasks.</p>
+    /// </note>
     /// <p>If you use a <a href="https://docs.aws.amazon.com/datasync/latest/userguide/transferring-with-manifest.html">manifest</a>, DataSync only scans and verifies what's listed in the manifest.</p>
     /// <p>You can't use this option when transferring to S3 Glacier Flexible Retrieval or S3 Glacier Deep Archive storage classes. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes">Storage class considerations with Amazon S3 locations</a>.</p></li>
     /// <li>
-    /// <p><code>NONE</code> - DataSync doesn't run additional verification at the end of the transfer. All data transmissions are still integrity-checked with checksum verification during the transfer.</p></li>
+    /// <p><code>NONE</code> - DataSync performs data integrity checks only during your transfer. Unlike other options, there's no additional verification at the end of your transfer.</p></li>
     /// </ul>
     pub fn get_verify_mode(&self) -> &::std::option::Option<crate::types::VerifyMode> {
         &self.verify_mode
@@ -446,7 +470,7 @@ impl OptionsBuilder {
     /// </note>
     /// <ul>
     /// <li>
-    /// <p><code>BEST_EFFORT</code> (default) - DataSync attempts to preserve the original <code>Atime</code> attribute on all source files (that is, the version before the <code>PREPARING</code> phase of the task execution). This option is recommended.</p></li>
+    /// <p><code>BEST_EFFORT</code> (default) - DataSync attempts to preserve the original <code>Atime</code> attribute on all source files (that is, the version before the <code>PREPARING</code> steps of the task execution). This option is recommended.</p></li>
     /// <li>
     /// <p><code>NONE</code> - Ignores <code>Atime</code>.</p></li>
     /// </ul><note>
@@ -462,7 +486,7 @@ impl OptionsBuilder {
     /// </note>
     /// <ul>
     /// <li>
-    /// <p><code>BEST_EFFORT</code> (default) - DataSync attempts to preserve the original <code>Atime</code> attribute on all source files (that is, the version before the <code>PREPARING</code> phase of the task execution). This option is recommended.</p></li>
+    /// <p><code>BEST_EFFORT</code> (default) - DataSync attempts to preserve the original <code>Atime</code> attribute on all source files (that is, the version before the <code>PREPARING</code> steps of the task execution). This option is recommended.</p></li>
     /// <li>
     /// <p><code>NONE</code> - Ignores <code>Atime</code>.</p></li>
     /// </ul><note>
@@ -478,7 +502,7 @@ impl OptionsBuilder {
     /// </note>
     /// <ul>
     /// <li>
-    /// <p><code>BEST_EFFORT</code> (default) - DataSync attempts to preserve the original <code>Atime</code> attribute on all source files (that is, the version before the <code>PREPARING</code> phase of the task execution). This option is recommended.</p></li>
+    /// <p><code>BEST_EFFORT</code> (default) - DataSync attempts to preserve the original <code>Atime</code> attribute on all source files (that is, the version before the <code>PREPARING</code> steps of the task execution). This option is recommended.</p></li>
     /// <li>
     /// <p><code>NONE</code> - Ignores <code>Atime</code>.</p></li>
     /// </ul><note>
@@ -488,7 +512,7 @@ impl OptionsBuilder {
     pub fn get_atime(&self) -> &::std::option::Option<crate::types::Atime> {
         &self.atime
     }
-    /// <p>Specifies whether to preserve metadata indicating the last time that a file was written to before the <code>PREPARING</code> phase of your task execution. This option is required when you need to run the a task more than once.</p>
+    /// <p>Specifies whether to preserve metadata indicating the last time that a file was written to before the <code>PREPARING</code> step of your task execution. This option is required when you need to run the a task more than once.</p>
     /// <ul>
     /// <li>
     /// <p><code>PRESERVE</code> (default) - Preserves original <code>Mtime</code>, which is recommended.</p></li>
@@ -502,7 +526,7 @@ impl OptionsBuilder {
         self.mtime = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies whether to preserve metadata indicating the last time that a file was written to before the <code>PREPARING</code> phase of your task execution. This option is required when you need to run the a task more than once.</p>
+    /// <p>Specifies whether to preserve metadata indicating the last time that a file was written to before the <code>PREPARING</code> step of your task execution. This option is required when you need to run the a task more than once.</p>
     /// <ul>
     /// <li>
     /// <p><code>PRESERVE</code> (default) - Preserves original <code>Mtime</code>, which is recommended.</p></li>
@@ -516,7 +540,7 @@ impl OptionsBuilder {
         self.mtime = input;
         self
     }
-    /// <p>Specifies whether to preserve metadata indicating the last time that a file was written to before the <code>PREPARING</code> phase of your task execution. This option is required when you need to run the a task more than once.</p>
+    /// <p>Specifies whether to preserve metadata indicating the last time that a file was written to before the <code>PREPARING</code> step of your task execution. This option is required when you need to run the a task more than once.</p>
     /// <ul>
     /// <li>
     /// <p><code>PRESERVE</code> (default) - Preserves original <code>Mtime</code>, which is recommended.</p></li>
@@ -571,7 +595,7 @@ impl OptionsBuilder {
     /// <li>
     /// <p><code>NONE</code> - Ignores UID and GID.</p></li>
     /// </ul>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/special-files.html#metadata-copied">Metadata copied by DataSync</a>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/metadata-copied.html">Understanding how DataSync handles file and object metadata</a>.</p>
     pub fn gid(mut self, input: crate::types::Gid) -> Self {
         self.gid = ::std::option::Option::Some(input);
         self
@@ -583,7 +607,7 @@ impl OptionsBuilder {
     /// <li>
     /// <p><code>NONE</code> - Ignores UID and GID.</p></li>
     /// </ul>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/special-files.html#metadata-copied">Metadata copied by DataSync</a>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/metadata-copied.html">Understanding how DataSync handles file and object metadata</a>.</p>
     pub fn set_gid(mut self, input: ::std::option::Option<crate::types::Gid>) -> Self {
         self.gid = input;
         self
@@ -595,7 +619,7 @@ impl OptionsBuilder {
     /// <li>
     /// <p><code>NONE</code> - Ignores UID and GID.</p></li>
     /// </ul>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/special-files.html#metadata-copied">Metadata copied by DataSync</a>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/metadata-copied.html">Understanding how DataSync handles file and object metadata</a>.</p>
     pub fn get_gid(&self) -> &::std::option::Option<crate::types::Gid> {
         &self.gid
     }
@@ -676,7 +700,7 @@ impl OptionsBuilder {
         &self.preserve_devices
     }
     /// <p>Specifies which users or groups can access a file for a specific purpose such as reading, writing, or execution of the file.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/special-files.html#metadata-copied">Metadata copied by DataSync</a>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/metadata-copied.html">Understanding how DataSync handles file and object metadata</a>.</p>
     /// <ul>
     /// <li>
     /// <p><code>PRESERVE</code> (default) - Preserves POSIX-style permissions, which is recommended.</p></li>
@@ -690,7 +714,7 @@ impl OptionsBuilder {
         self
     }
     /// <p>Specifies which users or groups can access a file for a specific purpose such as reading, writing, or execution of the file.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/special-files.html#metadata-copied">Metadata copied by DataSync</a>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/metadata-copied.html">Understanding how DataSync handles file and object metadata</a>.</p>
     /// <ul>
     /// <li>
     /// <p><code>PRESERVE</code> (default) - Preserves POSIX-style permissions, which is recommended.</p></li>
@@ -704,7 +728,7 @@ impl OptionsBuilder {
         self
     }
     /// <p>Specifies which users or groups can access a file for a specific purpose such as reading, writing, or execution of the file.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/special-files.html#metadata-copied">Metadata copied by DataSync</a>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/metadata-copied.html">Understanding how DataSync handles file and object metadata</a>.</p>
     /// <ul>
     /// <li>
     /// <p><code>PRESERVE</code> (default) - Preserves POSIX-style permissions, which is recommended.</p></li>
@@ -716,17 +740,23 @@ impl OptionsBuilder {
     pub fn get_posix_permissions(&self) -> &::std::option::Option<crate::types::PosixPermissions> {
         &self.posix_permissions
     }
-    /// <p>Limits the bandwidth used by a DataSync task. For example, if you want DataSync to use a maximum of 1 MB, set this value to <code>1048576</code> (<code>=1024*1024</code>).</p>
+    /// <p>Limits the bandwidth used by a DataSync task. For example, if you want DataSync to use a maximum of 1 MB, set this value to <code>1048576</code> (<code>=1024*1024</code>).</p><note>
+    /// <p>Not applicable to <a href="https://docs.aws.amazon.com/datasync/latest/userguide/choosing-task-mode.html">Enhanced mode tasks</a>.</p>
+    /// </note>
     pub fn bytes_per_second(mut self, input: i64) -> Self {
         self.bytes_per_second = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Limits the bandwidth used by a DataSync task. For example, if you want DataSync to use a maximum of 1 MB, set this value to <code>1048576</code> (<code>=1024*1024</code>).</p>
+    /// <p>Limits the bandwidth used by a DataSync task. For example, if you want DataSync to use a maximum of 1 MB, set this value to <code>1048576</code> (<code>=1024*1024</code>).</p><note>
+    /// <p>Not applicable to <a href="https://docs.aws.amazon.com/datasync/latest/userguide/choosing-task-mode.html">Enhanced mode tasks</a>.</p>
+    /// </note>
     pub fn set_bytes_per_second(mut self, input: ::std::option::Option<i64>) -> Self {
         self.bytes_per_second = input;
         self
     }
-    /// <p>Limits the bandwidth used by a DataSync task. For example, if you want DataSync to use a maximum of 1 MB, set this value to <code>1048576</code> (<code>=1024*1024</code>).</p>
+    /// <p>Limits the bandwidth used by a DataSync task. For example, if you want DataSync to use a maximum of 1 MB, set this value to <code>1048576</code> (<code>=1024*1024</code>).</p><note>
+    /// <p>Not applicable to <a href="https://docs.aws.amazon.com/datasync/latest/userguide/choosing-task-mode.html">Enhanced mode tasks</a>.</p>
+    /// </note>
     pub fn get_bytes_per_second(&self) -> &::std::option::Option<i64> {
         &self.bytes_per_second
     }
@@ -782,10 +812,10 @@ impl OptionsBuilder {
     pub fn get_log_level(&self) -> &::std::option::Option<crate::types::LogLevel> {
         &self.log_level
     }
-    /// <p>Determines whether DataSync transfers only the data and metadata that differ between the source and the destination location or transfers all the content from the source (without comparing what's in the destination).</p>
+    /// <p>Specifies whether DataSync transfers only the data (including metadata) that differs between locations following an initial copy or transfers all data every time you run the task. If you're planning on recurring transfers, you might only want to transfer what's changed since your previous task execution.</p>
     /// <ul>
     /// <li>
-    /// <p><code>CHANGED</code> (default) - DataSync copies only data or metadata that is new or different content from the source location to the destination location.</p></li>
+    /// <p><code>CHANGED</code> (default) - After your initial full transfer, DataSync copies only the data and metadata that differs between the source and destination location.</p></li>
     /// <li>
     /// <p><code>ALL</code> - DataSync copies everything in the source to the destination without comparing differences between the locations.</p></li>
     /// </ul>
@@ -793,10 +823,10 @@ impl OptionsBuilder {
         self.transfer_mode = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Determines whether DataSync transfers only the data and metadata that differ between the source and the destination location or transfers all the content from the source (without comparing what's in the destination).</p>
+    /// <p>Specifies whether DataSync transfers only the data (including metadata) that differs between locations following an initial copy or transfers all data every time you run the task. If you're planning on recurring transfers, you might only want to transfer what's changed since your previous task execution.</p>
     /// <ul>
     /// <li>
-    /// <p><code>CHANGED</code> (default) - DataSync copies only data or metadata that is new or different content from the source location to the destination location.</p></li>
+    /// <p><code>CHANGED</code> (default) - After your initial full transfer, DataSync copies only the data and metadata that differs between the source and destination location.</p></li>
     /// <li>
     /// <p><code>ALL</code> - DataSync copies everything in the source to the destination without comparing differences between the locations.</p></li>
     /// </ul>
@@ -804,10 +834,10 @@ impl OptionsBuilder {
         self.transfer_mode = input;
         self
     }
-    /// <p>Determines whether DataSync transfers only the data and metadata that differ between the source and the destination location or transfers all the content from the source (without comparing what's in the destination).</p>
+    /// <p>Specifies whether DataSync transfers only the data (including metadata) that differs between locations following an initial copy or transfers all data every time you run the task. If you're planning on recurring transfers, you might only want to transfer what's changed since your previous task execution.</p>
     /// <ul>
     /// <li>
-    /// <p><code>CHANGED</code> (default) - DataSync copies only data or metadata that is new or different content from the source location to the destination location.</p></li>
+    /// <p><code>CHANGED</code> (default) - After your initial full transfer, DataSync copies only the data and metadata that differs between the source and destination location.</p></li>
     /// <li>
     /// <p><code>ALL</code> - DataSync copies everything in the source to the destination without comparing differences between the locations.</p></li>
     /// </ul>
@@ -815,7 +845,7 @@ impl OptionsBuilder {
         &self.transfer_mode
     }
     /// <p>Specifies which components of the SMB security descriptor are copied from source to destination objects.</p>
-    /// <p>This value is only used for transfers between SMB and Amazon FSx for Windows File Server locations or between two FSx for Windows File Server locations. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/special-files.html">how DataSync handles metadata</a>.</p>
+    /// <p>This value is only used for transfers between SMB and Amazon FSx for Windows File Server locations or between two FSx for Windows File Server locations. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/metadata-copied.html">Understanding how DataSync handles file and object metadata</a>.</p>
     /// <ul>
     /// <li>
     /// <p><code>OWNER_DACL</code> (default) - For each copied object, DataSync copies the following metadata:</p>
@@ -845,7 +875,7 @@ impl OptionsBuilder {
         self
     }
     /// <p>Specifies which components of the SMB security descriptor are copied from source to destination objects.</p>
-    /// <p>This value is only used for transfers between SMB and Amazon FSx for Windows File Server locations or between two FSx for Windows File Server locations. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/special-files.html">how DataSync handles metadata</a>.</p>
+    /// <p>This value is only used for transfers between SMB and Amazon FSx for Windows File Server locations or between two FSx for Windows File Server locations. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/metadata-copied.html">Understanding how DataSync handles file and object metadata</a>.</p>
     /// <ul>
     /// <li>
     /// <p><code>OWNER_DACL</code> (default) - For each copied object, DataSync copies the following metadata:</p>
@@ -875,7 +905,7 @@ impl OptionsBuilder {
         self
     }
     /// <p>Specifies which components of the SMB security descriptor are copied from source to destination objects.</p>
-    /// <p>This value is only used for transfers between SMB and Amazon FSx for Windows File Server locations or between two FSx for Windows File Server locations. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/special-files.html">how DataSync handles metadata</a>.</p>
+    /// <p>This value is only used for transfers between SMB and Amazon FSx for Windows File Server locations or between two FSx for Windows File Server locations. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/metadata-copied.html">Understanding how DataSync handles file and object metadata</a>.</p>
     /// <ul>
     /// <li>
     /// <p><code>OWNER_DACL</code> (default) - For each copied object, DataSync copies the following metadata:</p>

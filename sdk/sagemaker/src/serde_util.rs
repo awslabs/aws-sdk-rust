@@ -2938,6 +2938,18 @@ pub(crate) fn model_card_export_artifacts_correct_errors(
     builder
 }
 
+pub(crate) fn model_life_cycle_correct_errors(
+    mut builder: crate::types::builders::ModelLifeCycleBuilder,
+) -> crate::types::builders::ModelLifeCycleBuilder {
+    if builder.stage.is_none() {
+        builder.stage = Some(Default::default())
+    }
+    if builder.stage_status.is_none() {
+        builder.stage_status = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn model_package_security_config_correct_errors(
     mut builder: crate::types::builders::ModelPackageSecurityConfigBuilder,
 ) -> crate::types::builders::ModelPackageSecurityConfigBuilder {

@@ -15,6 +15,8 @@ pub enum Error {
     BadRequestException(crate::types::error::BadRequestException),
     /// <p>Another modification is in progress at this time and it must complete before you can make your change.</p>
     ConcurrentModificationException(crate::types::error::ConcurrentModificationException),
+    /// <p>A conflict with a previous successful update is detected. This typically occurs when the previous update did not have time to propagate before the next update was made. A retry (with appropriate backoff logic) is the recommended response to this exception.</p>
+    ConflictException(crate::types::error::ConflictException),
     /// <p>The GraphQL schema is not valid.</p>
     GraphQlSchemaException(crate::types::error::GraphQlSchemaException),
     /// <p>An internal AppSync error occurred. Try your request again.</p>
@@ -23,6 +25,8 @@ pub enum Error {
     LimitExceededException(crate::types::error::LimitExceededException),
     /// <p>The resource specified in the request was not found. Check the resource, and then try again.</p>
     NotFoundException(crate::types::error::NotFoundException),
+    /// <p>The operation exceeded the service quota for this resource.</p>
+    ServiceQuotaExceededException(crate::types::error::ServiceQuotaExceededException),
     /// <p>You aren't authorized to perform this operation.</p>
     UnauthorizedException(crate::types::error::UnauthorizedException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
@@ -43,10 +47,12 @@ impl ::std::fmt::Display for Error {
             Error::ApiLimitExceededException(inner) => inner.fmt(f),
             Error::BadRequestException(inner) => inner.fmt(f),
             Error::ConcurrentModificationException(inner) => inner.fmt(f),
+            Error::ConflictException(inner) => inner.fmt(f),
             Error::GraphQlSchemaException(inner) => inner.fmt(f),
             Error::InternalFailureException(inner) => inner.fmt(f),
             Error::LimitExceededException(inner) => inner.fmt(f),
             Error::NotFoundException(inner) => inner.fmt(f),
+            Error::ServiceQuotaExceededException(inner) => inner.fmt(f),
             Error::UnauthorizedException(inner) => inner.fmt(f),
             Error::Unhandled(_) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
@@ -75,10 +81,12 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::ApiLimitExceededException(inner) => inner.meta(),
             Self::BadRequestException(inner) => inner.meta(),
             Self::ConcurrentModificationException(inner) => inner.meta(),
+            Self::ConflictException(inner) => inner.meta(),
             Self::GraphQlSchemaException(inner) => inner.meta(),
             Self::InternalFailureException(inner) => inner.meta(),
             Self::LimitExceededException(inner) => inner.meta(),
             Self::NotFoundException(inner) => inner.meta(),
+            Self::ServiceQuotaExceededException(inner) => inner.meta(),
             Self::UnauthorizedException(inner) => inner.meta(),
             Self::Unhandled(inner) => &inner.meta,
         }
@@ -193,6 +201,32 @@ impl From<crate::operation::associate_source_graphql_api::AssociateSourceGraphql
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_api::CreateApiError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_api::CreateApiError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_api::CreateApiError> for Error {
+    fn from(err: crate::operation::create_api::CreateApiError) -> Self {
+        match err {
+            crate::operation::create_api::CreateApiError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::create_api::CreateApiError::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
+            crate::operation::create_api::CreateApiError::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::operation::create_api::CreateApiError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::create_api::CreateApiError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::create_api::CreateApiError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_api_cache::CreateApiCacheError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -248,6 +282,44 @@ impl From<crate::operation::create_api_key::CreateApiKeyError> for Error {
             crate::operation::create_api_key::CreateApiKeyError::NotFoundException(inner) => Error::NotFoundException(inner),
             crate::operation::create_api_key::CreateApiKeyError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
             crate::operation::create_api_key::CreateApiKeyError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_channel_namespace::CreateChannelNamespaceError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_channel_namespace::CreateChannelNamespaceError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_channel_namespace::CreateChannelNamespaceError> for Error {
+    fn from(err: crate::operation::create_channel_namespace::CreateChannelNamespaceError) -> Self {
+        match err {
+            crate::operation::create_channel_namespace::CreateChannelNamespaceError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::create_channel_namespace::CreateChannelNamespaceError::ConcurrentModificationException(inner) => {
+                Error::ConcurrentModificationException(inner)
+            }
+            crate::operation::create_channel_namespace::CreateChannelNamespaceError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_channel_namespace::CreateChannelNamespaceError::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
+            crate::operation::create_channel_namespace::CreateChannelNamespaceError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::create_channel_namespace::CreateChannelNamespaceError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::create_channel_namespace::CreateChannelNamespaceError::UnauthorizedException(inner) => {
+                Error::UnauthorizedException(inner)
+            }
+            crate::operation::create_channel_namespace::CreateChannelNamespaceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -414,6 +486,33 @@ impl From<crate::operation::create_type::CreateTypeError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_api::DeleteApiError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_api::DeleteApiError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_api::DeleteApiError> for Error {
+    fn from(err: crate::operation::delete_api::DeleteApiError) -> Self {
+        match err {
+            crate::operation::delete_api::DeleteApiError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_api::DeleteApiError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::delete_api::DeleteApiError::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
+            crate::operation::delete_api::DeleteApiError::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::operation::delete_api::DeleteApiError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::delete_api::DeleteApiError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::delete_api::DeleteApiError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_api_cache::DeleteApiCacheError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -464,6 +563,43 @@ impl From<crate::operation::delete_api_key::DeleteApiKeyError> for Error {
             crate::operation::delete_api_key::DeleteApiKeyError::NotFoundException(inner) => Error::NotFoundException(inner),
             crate::operation::delete_api_key::DeleteApiKeyError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
             crate::operation::delete_api_key::DeleteApiKeyError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_channel_namespace::DeleteChannelNamespaceError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_channel_namespace::DeleteChannelNamespaceError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_channel_namespace::DeleteChannelNamespaceError> for Error {
+    fn from(err: crate::operation::delete_channel_namespace::DeleteChannelNamespaceError) -> Self {
+        match err {
+            crate::operation::delete_channel_namespace::DeleteChannelNamespaceError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::delete_channel_namespace::DeleteChannelNamespaceError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::delete_channel_namespace::DeleteChannelNamespaceError::ConcurrentModificationException(inner) => {
+                Error::ConcurrentModificationException(inner)
+            }
+            crate::operation::delete_channel_namespace::DeleteChannelNamespaceError::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
+            crate::operation::delete_channel_namespace::DeleteChannelNamespaceError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::delete_channel_namespace::DeleteChannelNamespaceError::UnauthorizedException(inner) => {
+                Error::UnauthorizedException(inner)
+            }
+            crate::operation::delete_channel_namespace::DeleteChannelNamespaceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -833,6 +969,32 @@ impl From<crate::operation::flush_api_cache::FlushApiCacheError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_api::GetApiError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_api::GetApiError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_api::GetApiError> for Error {
+    fn from(err: crate::operation::get_api::GetApiError) -> Self {
+        match err {
+            crate::operation::get_api::GetApiError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_api::GetApiError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::get_api::GetApiError::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::operation::get_api::GetApiError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_api::GetApiError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::get_api::GetApiError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_api_association::GetApiAssociationError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -883,6 +1045,34 @@ impl From<crate::operation::get_api_cache::GetApiCacheError> for Error {
             crate::operation::get_api_cache::GetApiCacheError::NotFoundException(inner) => Error::NotFoundException(inner),
             crate::operation::get_api_cache::GetApiCacheError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
             crate::operation::get_api_cache::GetApiCacheError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_channel_namespace::GetChannelNamespaceError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_channel_namespace::GetChannelNamespaceError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_channel_namespace::GetChannelNamespaceError> for Error {
+    fn from(err: crate::operation::get_channel_namespace::GetChannelNamespaceError) -> Self {
+        match err {
+            crate::operation::get_channel_namespace::GetChannelNamespaceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_channel_namespace::GetChannelNamespaceError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::get_channel_namespace::GetChannelNamespaceError::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
+            crate::operation::get_channel_namespace::GetChannelNamespaceError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_channel_namespace::GetChannelNamespaceError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::get_channel_namespace::GetChannelNamespaceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1244,6 +1434,61 @@ impl From<crate::operation::list_api_keys::ListApiKeysError> for Error {
             crate::operation::list_api_keys::ListApiKeysError::NotFoundException(inner) => Error::NotFoundException(inner),
             crate::operation::list_api_keys::ListApiKeysError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
             crate::operation::list_api_keys::ListApiKeysError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_apis::ListApisError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_apis::ListApisError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_apis::ListApisError> for Error {
+    fn from(err: crate::operation::list_apis::ListApisError) -> Self {
+        match err {
+            crate::operation::list_apis::ListApisError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::list_apis::ListApisError::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::operation::list_apis::ListApisError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::list_apis::ListApisError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_channel_namespaces::ListChannelNamespacesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_channel_namespaces::ListChannelNamespacesError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_channel_namespaces::ListChannelNamespacesError> for Error {
+    fn from(err: crate::operation::list_channel_namespaces::ListChannelNamespacesError) -> Self {
+        match err {
+            crate::operation::list_channel_namespaces::ListChannelNamespacesError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::list_channel_namespaces::ListChannelNamespacesError::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
+            crate::operation::list_channel_namespaces::ListChannelNamespacesError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::list_channel_namespaces::ListChannelNamespacesError::UnauthorizedException(inner) => {
+                Error::UnauthorizedException(inner)
+            }
+            crate::operation::list_channel_namespaces::ListChannelNamespacesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1734,6 +1979,33 @@ impl From<crate::operation::untag_resource::UntagResourceError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_api::UpdateApiError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_api::UpdateApiError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_api::UpdateApiError> for Error {
+    fn from(err: crate::operation::update_api::UpdateApiError) -> Self {
+        match err {
+            crate::operation::update_api::UpdateApiError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_api::UpdateApiError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::update_api::UpdateApiError::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
+            crate::operation::update_api::UpdateApiError::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::operation::update_api::UpdateApiError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::update_api::UpdateApiError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::update_api::UpdateApiError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_api_cache::UpdateApiCacheError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1788,6 +2060,43 @@ impl From<crate::operation::update_api_key::UpdateApiKeyError> for Error {
             crate::operation::update_api_key::UpdateApiKeyError::NotFoundException(inner) => Error::NotFoundException(inner),
             crate::operation::update_api_key::UpdateApiKeyError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
             crate::operation::update_api_key::UpdateApiKeyError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_channel_namespace::UpdateChannelNamespaceError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_channel_namespace::UpdateChannelNamespaceError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_channel_namespace::UpdateChannelNamespaceError> for Error {
+    fn from(err: crate::operation::update_channel_namespace::UpdateChannelNamespaceError) -> Self {
+        match err {
+            crate::operation::update_channel_namespace::UpdateChannelNamespaceError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::update_channel_namespace::UpdateChannelNamespaceError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::update_channel_namespace::UpdateChannelNamespaceError::ConcurrentModificationException(inner) => {
+                Error::ConcurrentModificationException(inner)
+            }
+            crate::operation::update_channel_namespace::UpdateChannelNamespaceError::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
+            crate::operation::update_channel_namespace::UpdateChannelNamespaceError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::update_channel_namespace::UpdateChannelNamespaceError::UnauthorizedException(inner) => {
+                Error::UnauthorizedException(inner)
+            }
+            crate::operation::update_channel_namespace::UpdateChannelNamespaceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2006,10 +2315,12 @@ impl ::std::error::Error for Error {
             Error::ApiLimitExceededException(inner) => inner.source(),
             Error::BadRequestException(inner) => inner.source(),
             Error::ConcurrentModificationException(inner) => inner.source(),
+            Error::ConflictException(inner) => inner.source(),
             Error::GraphQlSchemaException(inner) => inner.source(),
             Error::InternalFailureException(inner) => inner.source(),
             Error::LimitExceededException(inner) => inner.source(),
             Error::NotFoundException(inner) => inner.source(),
+            Error::ServiceQuotaExceededException(inner) => inner.source(),
             Error::UnauthorizedException(inner) => inner.source(),
             Error::Unhandled(inner) => ::std::option::Option::Some(&*inner.source),
         }
@@ -2024,10 +2335,12 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::ApiLimitExceededException(e) => e.request_id(),
             Self::BadRequestException(e) => e.request_id(),
             Self::ConcurrentModificationException(e) => e.request_id(),
+            Self::ConflictException(e) => e.request_id(),
             Self::GraphQlSchemaException(e) => e.request_id(),
             Self::InternalFailureException(e) => e.request_id(),
             Self::LimitExceededException(e) => e.request_id(),
             Self::NotFoundException(e) => e.request_id(),
+            Self::ServiceQuotaExceededException(e) => e.request_id(),
             Self::UnauthorizedException(e) => e.request_id(),
             Self::Unhandled(e) => e.meta.request_id(),
         }

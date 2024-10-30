@@ -282,6 +282,20 @@ impl CreateWorkgroupFluentBuilder {
     pub fn get_max_capacity(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_capacity()
     }
+    /// <p>An object that represents the price performance target settings for the workgroup.</p>
+    pub fn price_performance_target(mut self, input: crate::types::PerformanceTarget) -> Self {
+        self.inner = self.inner.price_performance_target(input);
+        self
+    }
+    /// <p>An object that represents the price performance target settings for the workgroup.</p>
+    pub fn set_price_performance_target(mut self, input: ::std::option::Option<crate::types::PerformanceTarget>) -> Self {
+        self.inner = self.inner.set_price_performance_target(input);
+        self
+    }
+    /// <p>An object that represents the price performance target settings for the workgroup.</p>
+    pub fn get_price_performance_target(&self) -> &::std::option::Option<crate::types::PerformanceTarget> {
+        self.inner.get_price_performance_target()
+    }
     /// <p>The IP address type that the workgroup supports. Possible values are <code>ipv4</code> and <code>dualstack</code>.</p>
     pub fn ip_address_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.ip_address_type(input.into());

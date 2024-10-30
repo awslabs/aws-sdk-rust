@@ -22,6 +22,9 @@ pub mod create_availability_configuration;
 /// Types for the `CreateGroup` operation.
 pub mod create_group;
 
+/// Types for the `CreateIdentityCenterApplication` operation.
+pub mod create_identity_center_application;
+
 /// Types for the `CreateImpersonationRole` operation.
 pub mod create_impersonation_role;
 
@@ -52,6 +55,12 @@ pub mod delete_email_monitoring_configuration;
 /// Types for the `DeleteGroup` operation.
 pub mod delete_group;
 
+/// Types for the `DeleteIdentityCenterApplication` operation.
+pub mod delete_identity_center_application;
+
+/// Types for the `DeleteIdentityProviderConfiguration` operation.
+pub mod delete_identity_provider_configuration;
+
 /// Types for the `DeleteImpersonationRole` operation.
 pub mod delete_impersonation_role;
 
@@ -66,6 +75,9 @@ pub mod delete_mobile_device_access_rule;
 
 /// Types for the `DeleteOrganization` operation.
 pub mod delete_organization;
+
+/// Types for the `DeletePersonalAccessToken` operation.
+pub mod delete_personal_access_token;
 
 /// Types for the `DeleteResource` operation.
 pub mod delete_resource;
@@ -90,6 +102,9 @@ pub mod describe_entity;
 
 /// Types for the `DescribeGroup` operation.
 pub mod describe_group;
+
+/// Types for the `DescribeIdentityProviderConfiguration` operation.
+pub mod describe_identity_provider_configuration;
 
 /// Types for the `DescribeInboundDmarcSettings` operation.
 pub mod describe_inbound_dmarc_settings;
@@ -136,6 +151,9 @@ pub mod get_mobile_device_access_effect;
 /// Types for the `GetMobileDeviceAccessOverride` operation.
 pub mod get_mobile_device_access_override;
 
+/// Types for the `GetPersonalAccessTokenMetadata` operation.
+pub mod get_personal_access_token_metadata;
+
 /// Types for the `ListAccessControlRules` operation.
 pub mod list_access_control_rules;
 
@@ -175,6 +193,9 @@ pub mod list_mobile_device_access_rules;
 /// Types for the `ListOrganizations` operation.
 pub mod list_organizations;
 
+/// Types for the `ListPersonalAccessTokens` operation.
+pub mod list_personal_access_tokens;
+
 /// Types for the `ListResourceDelegates` operation.
 pub mod list_resource_delegates;
 
@@ -192,6 +213,9 @@ pub mod put_access_control_rule;
 
 /// Types for the `PutEmailMonitoringConfiguration` operation.
 pub mod put_email_monitoring_configuration;
+
+/// Types for the `PutIdentityProviderConfiguration` operation.
+pub mod put_identity_provider_configuration;
 
 /// Types for the `PutInboundDmarcSettings` operation.
 pub mod put_inbound_dmarc_settings;

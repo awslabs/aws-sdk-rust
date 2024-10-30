@@ -190,16 +190,25 @@ impl UpdateTaskFluentBuilder {
         self.inner.get_name()
     }
     /// <p>Specifies the Amazon Resource Name (ARN) of an Amazon CloudWatch log group for monitoring your task.</p>
+    /// <p>For Enhanced mode tasks, you must use <code>/aws/datasync</code> as your log group name. For example:</p>
+    /// <p><code>arn:aws:logs:us-east-1:111222333444:log-group:/aws/datasync:*</code></p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/configure-logging.html">Monitoring data transfers with CloudWatch Logs</a>.</p>
     pub fn cloud_watch_log_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cloud_watch_log_group_arn(input.into());
         self
     }
     /// <p>Specifies the Amazon Resource Name (ARN) of an Amazon CloudWatch log group for monitoring your task.</p>
+    /// <p>For Enhanced mode tasks, you must use <code>/aws/datasync</code> as your log group name. For example:</p>
+    /// <p><code>arn:aws:logs:us-east-1:111222333444:log-group:/aws/datasync:*</code></p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/configure-logging.html">Monitoring data transfers with CloudWatch Logs</a>.</p>
     pub fn set_cloud_watch_log_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cloud_watch_log_group_arn(input);
         self
     }
     /// <p>Specifies the Amazon Resource Name (ARN) of an Amazon CloudWatch log group for monitoring your task.</p>
+    /// <p>For Enhanced mode tasks, you must use <code>/aws/datasync</code> as your log group name. For example:</p>
+    /// <p><code>arn:aws:logs:us-east-1:111222333444:log-group:/aws/datasync:*</code></p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/configure-logging.html">Monitoring data transfers with CloudWatch Logs</a>.</p>
     pub fn get_cloud_watch_log_group_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_cloud_watch_log_group_arn()
     }

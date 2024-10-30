@@ -7,6 +7,8 @@ pub struct RevokeVpcEndpointAccessInput {
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>The account ID to revoke access from.</p>
     pub account: ::std::option::Option<::std::string::String>,
+    /// <p>The service SP to revoke access from.</p>
+    pub service: ::std::option::Option<crate::types::AwsServicePrincipal>,
 }
 impl RevokeVpcEndpointAccessInput {
     /// <p>The name of the OpenSearch Service domain.</p>
@@ -16,6 +18,10 @@ impl RevokeVpcEndpointAccessInput {
     /// <p>The account ID to revoke access from.</p>
     pub fn account(&self) -> ::std::option::Option<&str> {
         self.account.as_deref()
+    }
+    /// <p>The service SP to revoke access from.</p>
+    pub fn service(&self) -> ::std::option::Option<&crate::types::AwsServicePrincipal> {
+        self.service.as_ref()
     }
 }
 impl RevokeVpcEndpointAccessInput {
@@ -31,6 +37,7 @@ impl RevokeVpcEndpointAccessInput {
 pub struct RevokeVpcEndpointAccessInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) account: ::std::option::Option<::std::string::String>,
+    pub(crate) service: ::std::option::Option<crate::types::AwsServicePrincipal>,
 }
 impl RevokeVpcEndpointAccessInputBuilder {
     /// <p>The name of the OpenSearch Service domain.</p>
@@ -49,7 +56,6 @@ impl RevokeVpcEndpointAccessInputBuilder {
         &self.domain_name
     }
     /// <p>The account ID to revoke access from.</p>
-    /// This field is required.
     pub fn account(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account = ::std::option::Option::Some(input.into());
         self
@@ -63,6 +69,20 @@ impl RevokeVpcEndpointAccessInputBuilder {
     pub fn get_account(&self) -> &::std::option::Option<::std::string::String> {
         &self.account
     }
+    /// <p>The service SP to revoke access from.</p>
+    pub fn service(mut self, input: crate::types::AwsServicePrincipal) -> Self {
+        self.service = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The service SP to revoke access from.</p>
+    pub fn set_service(mut self, input: ::std::option::Option<crate::types::AwsServicePrincipal>) -> Self {
+        self.service = input;
+        self
+    }
+    /// <p>The service SP to revoke access from.</p>
+    pub fn get_service(&self) -> &::std::option::Option<crate::types::AwsServicePrincipal> {
+        &self.service
+    }
     /// Consumes the builder and constructs a [`RevokeVpcEndpointAccessInput`](crate::operation::revoke_vpc_endpoint_access::RevokeVpcEndpointAccessInput).
     pub fn build(
         self,
@@ -73,6 +93,7 @@ impl RevokeVpcEndpointAccessInputBuilder {
         ::std::result::Result::Ok(crate::operation::revoke_vpc_endpoint_access::RevokeVpcEndpointAccessInput {
             domain_name: self.domain_name,
             account: self.account,
+            service: self.service,
         })
     }
 }

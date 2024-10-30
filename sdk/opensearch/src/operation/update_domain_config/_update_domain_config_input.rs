@@ -41,6 +41,8 @@ pub struct UpdateDomainConfigInput {
     pub node_to_node_encryption_options: ::std::option::Option<crate::types::NodeToNodeEncryptionOptions>,
     /// <p>Options for fine-grained access control.</p>
     pub advanced_security_options: ::std::option::Option<crate::types::AdvancedSecurityOptionsInput>,
+    /// <p>Container for IAM Identity Center Options settings.</p>
+    pub identity_center_options: ::std::option::Option<crate::types::IdentityCenterOptionsInput>,
     /// <p>Options for Auto-Tune.</p>
     pub auto_tune_options: ::std::option::Option<crate::types::AutoTuneOptions>,
     /// <p>This flag, when set to True, specifies whether the <code>UpdateDomain</code> request should return the results of a dry run analysis without actually applying the change. A dry run determines what type of deployment the update will cause.</p>
@@ -128,6 +130,10 @@ impl UpdateDomainConfigInput {
     pub fn advanced_security_options(&self) -> ::std::option::Option<&crate::types::AdvancedSecurityOptionsInput> {
         self.advanced_security_options.as_ref()
     }
+    /// <p>Container for IAM Identity Center Options settings.</p>
+    pub fn identity_center_options(&self) -> ::std::option::Option<&crate::types::IdentityCenterOptionsInput> {
+        self.identity_center_options.as_ref()
+    }
     /// <p>Options for Auto-Tune.</p>
     pub fn auto_tune_options(&self) -> ::std::option::Option<&crate::types::AutoTuneOptions> {
         self.auto_tune_options.as_ref()
@@ -184,6 +190,7 @@ pub struct UpdateDomainConfigInputBuilder {
     pub(crate) domain_endpoint_options: ::std::option::Option<crate::types::DomainEndpointOptions>,
     pub(crate) node_to_node_encryption_options: ::std::option::Option<crate::types::NodeToNodeEncryptionOptions>,
     pub(crate) advanced_security_options: ::std::option::Option<crate::types::AdvancedSecurityOptionsInput>,
+    pub(crate) identity_center_options: ::std::option::Option<crate::types::IdentityCenterOptionsInput>,
     pub(crate) auto_tune_options: ::std::option::Option<crate::types::AutoTuneOptions>,
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) dry_run_mode: ::std::option::Option<crate::types::DryRunMode>,
@@ -440,6 +447,20 @@ impl UpdateDomainConfigInputBuilder {
     pub fn get_advanced_security_options(&self) -> &::std::option::Option<crate::types::AdvancedSecurityOptionsInput> {
         &self.advanced_security_options
     }
+    /// <p>Container for IAM Identity Center Options settings.</p>
+    pub fn identity_center_options(mut self, input: crate::types::IdentityCenterOptionsInput) -> Self {
+        self.identity_center_options = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Container for IAM Identity Center Options settings.</p>
+    pub fn set_identity_center_options(mut self, input: ::std::option::Option<crate::types::IdentityCenterOptionsInput>) -> Self {
+        self.identity_center_options = input;
+        self
+    }
+    /// <p>Container for IAM Identity Center Options settings.</p>
+    pub fn get_identity_center_options(&self) -> &::std::option::Option<crate::types::IdentityCenterOptionsInput> {
+        &self.identity_center_options
+    }
     /// <p>Options for Auto-Tune.</p>
     pub fn auto_tune_options(mut self, input: crate::types::AutoTuneOptions) -> Self {
         self.auto_tune_options = ::std::option::Option::Some(input);
@@ -562,6 +583,7 @@ impl UpdateDomainConfigInputBuilder {
             domain_endpoint_options: self.domain_endpoint_options,
             node_to_node_encryption_options: self.node_to_node_encryption_options,
             advanced_security_options: self.advanced_security_options,
+            identity_center_options: self.identity_center_options,
             auto_tune_options: self.auto_tune_options,
             dry_run: self.dry_run,
             dry_run_mode: self.dry_run_mode,

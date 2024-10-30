@@ -9,6 +9,26 @@ pub(crate) fn reflens_list_api_keys_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_apis_output_output_next_token(
+    input: &crate::operation::list_apis::ListApisOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_channel_namespaces_output_output_next_token(
+    input: &crate::operation::list_channel_namespaces::ListChannelNamespacesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_data_sources_output_output_next_token(
     input: &crate::operation::list_data_sources::ListDataSourcesOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -103,6 +123,26 @@ pub(crate) fn lens_list_api_keys_output_output_api_keys(
     input: crate::operation::list_api_keys::ListApiKeysOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ApiKey>> {
     let input = match input.api_keys {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_apis_output_output_apis(
+    input: crate::operation::list_apis::ListApisOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::Api>> {
+    let input = match input.apis {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_channel_namespaces_output_output_channel_namespaces(
+    input: crate::operation::list_channel_namespaces::ListChannelNamespacesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ChannelNamespace>> {
+    let input = match input.channel_namespaces {
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,
     };

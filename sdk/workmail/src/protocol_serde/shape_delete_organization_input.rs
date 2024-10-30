@@ -15,5 +15,8 @@ pub fn ser_delete_organization_input_input(
     if let Some(var_4) = &input.force_delete {
         object.key("ForceDelete").boolean(*var_4);
     }
+    if let Some(var_5) = &input.delete_identity_center_application {
+        object.key("DeleteIdentityCenterApplication").boolean(*var_5);
+    }
     Ok(())
 }

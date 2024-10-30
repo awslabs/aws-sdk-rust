@@ -22,16 +22,8 @@ impl crate::operation::create_agent::builders::CreateAgentInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateAgent`.
 ///
-/// <p>Activates an DataSync agent that you've deployed in your storage environment. The activation process associates the agent with your Amazon Web Services account.</p>
-/// <p>If you haven't deployed an agent yet, see the following topics to learn more:</p>
-/// <ul>
-/// <li>
-/// <p><a href="https://docs.aws.amazon.com/datasync/latest/userguide/agent-requirements.html">Agent requirements</a></p></li>
-/// <li>
-/// <p><a href="https://docs.aws.amazon.com/datasync/latest/userguide/configure-agent.html">Create an agent</a></p></li>
-/// </ul><note>
-/// <p>If you're transferring between Amazon Web Services storage services, you don't need a DataSync agent.</p>
-/// </note>
+/// <p>Activates an DataSync agent that you deploy in your storage environment. The activation process associates the agent with your Amazon Web Services account.</p>
+/// <p>If you haven't deployed an agent yet, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/do-i-need-datasync-agent.html">Do I need a DataSync agent?</a></p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateAgentFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -117,31 +109,31 @@ impl CreateAgentFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>Specifies your DataSync agent's activation key. If you don't have an activation key, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/activate-agent.html">Activate your agent</a>.</p>
+    /// <p>Specifies your DataSync agent's activation key. If you don't have an activation key, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/activate-agent.html">Activating your agent</a>.</p>
     pub fn activation_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.activation_key(input.into());
         self
     }
-    /// <p>Specifies your DataSync agent's activation key. If you don't have an activation key, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/activate-agent.html">Activate your agent</a>.</p>
+    /// <p>Specifies your DataSync agent's activation key. If you don't have an activation key, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/activate-agent.html">Activating your agent</a>.</p>
     pub fn set_activation_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_activation_key(input);
         self
     }
-    /// <p>Specifies your DataSync agent's activation key. If you don't have an activation key, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/activate-agent.html">Activate your agent</a>.</p>
+    /// <p>Specifies your DataSync agent's activation key. If you don't have an activation key, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/activate-agent.html">Activating your agent</a>.</p>
     pub fn get_activation_key(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_activation_key()
     }
-    /// <p>Specifies a name for your agent. You can see this name in the DataSync console.</p>
+    /// <p>Specifies a name for your agent. We recommend specifying a name that you can remember.</p>
     pub fn agent_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.agent_name(input.into());
         self
     }
-    /// <p>Specifies a name for your agent. You can see this name in the DataSync console.</p>
+    /// <p>Specifies a name for your agent. We recommend specifying a name that you can remember.</p>
     pub fn set_agent_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_agent_name(input);
         self
     }
-    /// <p>Specifies a name for your agent. You can see this name in the DataSync console.</p>
+    /// <p>Specifies a name for your agent. We recommend specifying a name that you can remember.</p>
     pub fn get_agent_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_agent_name()
     }
@@ -164,22 +156,22 @@ impl CreateAgentFluentBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagListEntry>> {
         self.inner.get_tags()
     }
-    /// <p>Specifies the ID of the VPC endpoint that you want your agent to connect to. For example, a VPC endpoint ID looks like <code>vpce-01234d5aff67890e1</code>.</p><important>
-    /// <p>The VPC endpoint you use must include the DataSync service name (for example, <code>com.amazonaws.us-east-2.datasync</code>).</p>
+    /// <p>Specifies the ID of the <a href="https://docs.aws.amazon.com/datasync/latest/userguide/choose-service-endpoint.html#datasync-in-vpc">VPC service endpoint</a> that you're using. For example, a VPC endpoint ID looks like <code>vpce-01234d5aff67890e1</code>.</p><important>
+    /// <p>The VPC service endpoint you use must include the DataSync service name (for example, <code>com.amazonaws.us-east-2.datasync</code>).</p>
     /// </important>
     pub fn vpc_endpoint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.vpc_endpoint_id(input.into());
         self
     }
-    /// <p>Specifies the ID of the VPC endpoint that you want your agent to connect to. For example, a VPC endpoint ID looks like <code>vpce-01234d5aff67890e1</code>.</p><important>
-    /// <p>The VPC endpoint you use must include the DataSync service name (for example, <code>com.amazonaws.us-east-2.datasync</code>).</p>
+    /// <p>Specifies the ID of the <a href="https://docs.aws.amazon.com/datasync/latest/userguide/choose-service-endpoint.html#datasync-in-vpc">VPC service endpoint</a> that you're using. For example, a VPC endpoint ID looks like <code>vpce-01234d5aff67890e1</code>.</p><important>
+    /// <p>The VPC service endpoint you use must include the DataSync service name (for example, <code>com.amazonaws.us-east-2.datasync</code>).</p>
     /// </important>
     pub fn set_vpc_endpoint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_vpc_endpoint_id(input);
         self
     }
-    /// <p>Specifies the ID of the VPC endpoint that you want your agent to connect to. For example, a VPC endpoint ID looks like <code>vpce-01234d5aff67890e1</code>.</p><important>
-    /// <p>The VPC endpoint you use must include the DataSync service name (for example, <code>com.amazonaws.us-east-2.datasync</code>).</p>
+    /// <p>Specifies the ID of the <a href="https://docs.aws.amazon.com/datasync/latest/userguide/choose-service-endpoint.html#datasync-in-vpc">VPC service endpoint</a> that you're using. For example, a VPC endpoint ID looks like <code>vpce-01234d5aff67890e1</code>.</p><important>
+    /// <p>The VPC service endpoint you use must include the DataSync service name (for example, <code>com.amazonaws.us-east-2.datasync</code>).</p>
     /// </important>
     pub fn get_vpc_endpoint_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_vpc_endpoint_id()
@@ -189,17 +181,17 @@ impl CreateAgentFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_subnet_arns`](Self::set_subnet_arns).
     ///
-    /// <p>Specifies the ARN of the subnet where you want to run your DataSync task when using a VPC endpoint. This is the subnet where DataSync creates and manages the <a href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces">network interfaces</a> for your transfer. You can only specify one ARN.</p>
+    /// <p>Specifies the ARN of the subnet where your VPC service endpoint is located. You can only specify one ARN.</p>
     pub fn subnet_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.subnet_arns(input.into());
         self
     }
-    /// <p>Specifies the ARN of the subnet where you want to run your DataSync task when using a VPC endpoint. This is the subnet where DataSync creates and manages the <a href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces">network interfaces</a> for your transfer. You can only specify one ARN.</p>
+    /// <p>Specifies the ARN of the subnet where your VPC service endpoint is located. You can only specify one ARN.</p>
     pub fn set_subnet_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_subnet_arns(input);
         self
     }
-    /// <p>Specifies the ARN of the subnet where you want to run your DataSync task when using a VPC endpoint. This is the subnet where DataSync creates and manages the <a href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces">network interfaces</a> for your transfer. You can only specify one ARN.</p>
+    /// <p>Specifies the ARN of the subnet where your VPC service endpoint is located. You can only specify one ARN.</p>
     pub fn get_subnet_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_subnet_arns()
     }
@@ -208,17 +200,17 @@ impl CreateAgentFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_security_group_arns`](Self::set_security_group_arns).
     ///
-    /// <p>Specifies the Amazon Resource Name (ARN) of the security group that protects your task's <a href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces">network interfaces</a> when <a href="https://docs.aws.amazon.com/datasync/latest/userguide/choose-service-endpoint.html#choose-service-endpoint-vpc">using a virtual private cloud (VPC) endpoint</a>. You can only specify one ARN.</p>
+    /// <p>Specifies the Amazon Resource Name (ARN) of the security group that allows traffic between your agent and VPC service endpoint. You can only specify one ARN.</p>
     pub fn security_group_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.security_group_arns(input.into());
         self
     }
-    /// <p>Specifies the Amazon Resource Name (ARN) of the security group that protects your task's <a href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces">network interfaces</a> when <a href="https://docs.aws.amazon.com/datasync/latest/userguide/choose-service-endpoint.html#choose-service-endpoint-vpc">using a virtual private cloud (VPC) endpoint</a>. You can only specify one ARN.</p>
+    /// <p>Specifies the Amazon Resource Name (ARN) of the security group that allows traffic between your agent and VPC service endpoint. You can only specify one ARN.</p>
     pub fn set_security_group_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_security_group_arns(input);
         self
     }
-    /// <p>Specifies the Amazon Resource Name (ARN) of the security group that protects your task's <a href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces">network interfaces</a> when <a href="https://docs.aws.amazon.com/datasync/latest/userguide/choose-service-endpoint.html#choose-service-endpoint-vpc">using a virtual private cloud (VPC) endpoint</a>. You can only specify one ARN.</p>
+    /// <p>Specifies the Amazon Resource Name (ARN) of the security group that allows traffic between your agent and VPC service endpoint. You can only specify one ARN.</p>
     pub fn get_security_group_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_security_group_arns()
     }

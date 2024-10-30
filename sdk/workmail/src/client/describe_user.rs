@@ -29,6 +29,8 @@ impl super::Client {
     ///   - [`department(Option<String>)`](crate::operation::describe_user::DescribeUserOutput::department): <p>Department of the user.</p>
     ///   - [`country(Option<String>)`](crate::operation::describe_user::DescribeUserOutput::country): <p>Country where the user is located.</p>
     ///   - [`office(Option<String>)`](crate::operation::describe_user::DescribeUserOutput::office): <p>Office where the user is located.</p>
+    ///   - [`identity_provider_user_id(Option<String>)`](crate::operation::describe_user::DescribeUserOutput::identity_provider_user_id): <p>User ID from the IAM Identity Center. If this parameter is empty it will be updated automatically when the user logs in for the first time to the mailbox associated with WorkMail.</p>
+    ///   - [`identity_provider_identity_store_id(Option<String>)`](crate::operation::describe_user::DescribeUserOutput::identity_provider_identity_store_id): <p>Identity Store ID from the IAM Identity Center. If this parameter is empty it will be updated automatically when the user logs in for the first time to the mailbox associated with WorkMail.</p>
     /// - On failure, responds with [`SdkError<DescribeUserError>`](crate::operation::describe_user::DescribeUserError)
     pub fn describe_user(&self) -> crate::operation::describe_user::builders::DescribeUserFluentBuilder {
         crate::operation::describe_user::builders::DescribeUserFluentBuilder::new(self.handle.clone())

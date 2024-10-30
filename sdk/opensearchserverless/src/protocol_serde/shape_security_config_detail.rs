@@ -45,6 +45,11 @@ where
                         "samlOptions" => {
                             builder = builder.set_saml_options(crate::protocol_serde::shape_saml_config_options::de_saml_config_options(tokens)?);
                         }
+                        "iamIdentityCenterOptions" => {
+                            builder = builder.set_iam_identity_center_options(
+                                crate::protocol_serde::shape_iam_identity_center_config_options::de_iam_identity_center_config_options(tokens)?,
+                            );
+                        }
                         "createdDate" => {
                             builder = builder.set_created_date(
                                 ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?

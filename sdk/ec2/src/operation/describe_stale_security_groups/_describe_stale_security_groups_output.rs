@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeStaleSecurityGroupsOutput {
-    /// <p>The token to include in another request to get the next page of items. If there are no additional items to return, the string is empty.</p>
+    /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Information about the stale security groups.</p>
     pub stale_security_group_set: ::std::option::Option<::std::vec::Vec<crate::types::StaleSecurityGroup>>,
     _request_id: Option<String>,
 }
 impl DescribeStaleSecurityGroupsOutput {
-    /// <p>The token to include in another request to get the next page of items. If there are no additional items to return, the string is empty.</p>
+    /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -42,17 +42,17 @@ pub struct DescribeStaleSecurityGroupsOutputBuilder {
     _request_id: Option<String>,
 }
 impl DescribeStaleSecurityGroupsOutputBuilder {
-    /// <p>The token to include in another request to get the next page of items. If there are no additional items to return, the string is empty.</p>
+    /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The token to include in another request to get the next page of items. If there are no additional items to return, the string is empty.</p>
+    /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>The token to include in another request to get the next page of items. If there are no additional items to return, the string is empty.</p>
+    /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

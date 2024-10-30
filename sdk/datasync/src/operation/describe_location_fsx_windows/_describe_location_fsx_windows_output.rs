@@ -7,7 +7,8 @@ pub struct DescribeLocationFsxWindowsOutput {
     pub location_arn: ::std::option::Option<::std::string::String>,
     /// <p>The uniform resource identifier (URI) of the FSx for Windows File Server location.</p>
     pub location_uri: ::std::option::Option<::std::string::String>,
-    /// <p>The ARNs of the security groups that are configured for the FSx for Windows File Server file system.</p>
+    /// <p>The ARNs of the Amazon EC2 security groups that provide access to your file system's preferred subnet.</p>
+    /// <p>For information about configuring security groups for file system access, see the <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/limit-access-security-groups.html"> <i>Amazon FSx for Windows File Server User Guide</i> </a>.</p>
     pub security_group_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The time that the FSx for Windows File Server location was created.</p>
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -26,7 +27,8 @@ impl DescribeLocationFsxWindowsOutput {
     pub fn location_uri(&self) -> ::std::option::Option<&str> {
         self.location_uri.as_deref()
     }
-    /// <p>The ARNs of the security groups that are configured for the FSx for Windows File Server file system.</p>
+    /// <p>The ARNs of the Amazon EC2 security groups that provide access to your file system's preferred subnet.</p>
+    /// <p>For information about configuring security groups for file system access, see the <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/limit-access-security-groups.html"> <i>Amazon FSx for Windows File Server User Guide</i> </a>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_group_arns.is_none()`.
     pub fn security_group_arns(&self) -> &[::std::string::String] {
@@ -102,19 +104,22 @@ impl DescribeLocationFsxWindowsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_security_group_arns`](Self::set_security_group_arns).
     ///
-    /// <p>The ARNs of the security groups that are configured for the FSx for Windows File Server file system.</p>
+    /// <p>The ARNs of the Amazon EC2 security groups that provide access to your file system's preferred subnet.</p>
+    /// <p>For information about configuring security groups for file system access, see the <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/limit-access-security-groups.html"> <i>Amazon FSx for Windows File Server User Guide</i> </a>.</p>
     pub fn security_group_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.security_group_arns.unwrap_or_default();
         v.push(input.into());
         self.security_group_arns = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The ARNs of the security groups that are configured for the FSx for Windows File Server file system.</p>
+    /// <p>The ARNs of the Amazon EC2 security groups that provide access to your file system's preferred subnet.</p>
+    /// <p>For information about configuring security groups for file system access, see the <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/limit-access-security-groups.html"> <i>Amazon FSx for Windows File Server User Guide</i> </a>.</p>
     pub fn set_security_group_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.security_group_arns = input;
         self
     }
-    /// <p>The ARNs of the security groups that are configured for the FSx for Windows File Server file system.</p>
+    /// <p>The ARNs of the Amazon EC2 security groups that provide access to your file system's preferred subnet.</p>
+    /// <p>For information about configuring security groups for file system access, see the <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/limit-access-security-groups.html"> <i>Amazon FSx for Windows File Server User Guide</i> </a>.</p>
     pub fn get_security_group_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.security_group_arns
     }

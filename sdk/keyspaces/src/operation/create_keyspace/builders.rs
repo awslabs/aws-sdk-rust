@@ -24,7 +24,7 @@ impl crate::operation::create_keyspace::builders::CreateKeyspaceInputBuilder {
 ///
 /// <p>The <code>CreateKeyspace</code> operation adds a new keyspace to your account. In an Amazon Web Services account, keyspace names must be unique within each Region.</p>
 /// <p><code>CreateKeyspace</code> is an asynchronous operation. You can monitor the creation status of the new keyspace by using the <code>GetKeyspace</code> operation.</p>
-/// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/working-with-keyspaces.html#keyspaces-create">Creating keyspaces</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/getting-started.keyspaces.html">Create a keyspace</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateKeyspaceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

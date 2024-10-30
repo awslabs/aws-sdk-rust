@@ -20,7 +20,7 @@ pub struct CreateLocationSmbInput {
     /// <p>Specifies the password of the user who can mount your SMB file server and has permission to access the files and folders involved in your transfer.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb-permissions">required permissions</a> for SMB locations.</p>
     pub password: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies the DataSync agent (or agents) which you want to connect to your SMB file server. You specify an agent by using its Amazon Resource Name (ARN).</p>
+    /// <p>Specifies the DataSync agent (or agents) that can connect to your SMB file server. You specify an agent by using its Amazon Resource Name (ARN).</p>
     pub agent_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Specifies the version of the SMB protocol that DataSync uses to access your SMB file server.</p>
     pub mount_options: ::std::option::Option<crate::types::SmbMountOptions>,
@@ -54,7 +54,7 @@ impl CreateLocationSmbInput {
     pub fn password(&self) -> ::std::option::Option<&str> {
         self.password.as_deref()
     }
-    /// <p>Specifies the DataSync agent (or agents) which you want to connect to your SMB file server. You specify an agent by using its Amazon Resource Name (ARN).</p>
+    /// <p>Specifies the DataSync agent (or agents) that can connect to your SMB file server. You specify an agent by using its Amazon Resource Name (ARN).</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.agent_arns.is_none()`.
     pub fn agent_arns(&self) -> &[::std::string::String] {
@@ -202,19 +202,19 @@ impl CreateLocationSmbInputBuilder {
     ///
     /// To override the contents of this collection use [`set_agent_arns`](Self::set_agent_arns).
     ///
-    /// <p>Specifies the DataSync agent (or agents) which you want to connect to your SMB file server. You specify an agent by using its Amazon Resource Name (ARN).</p>
+    /// <p>Specifies the DataSync agent (or agents) that can connect to your SMB file server. You specify an agent by using its Amazon Resource Name (ARN).</p>
     pub fn agent_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.agent_arns.unwrap_or_default();
         v.push(input.into());
         self.agent_arns = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Specifies the DataSync agent (or agents) which you want to connect to your SMB file server. You specify an agent by using its Amazon Resource Name (ARN).</p>
+    /// <p>Specifies the DataSync agent (or agents) that can connect to your SMB file server. You specify an agent by using its Amazon Resource Name (ARN).</p>
     pub fn set_agent_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.agent_arns = input;
         self
     }
-    /// <p>Specifies the DataSync agent (or agents) which you want to connect to your SMB file server. You specify an agent by using its Amazon Resource Name (ARN).</p>
+    /// <p>Specifies the DataSync agent (or agents) that can connect to your SMB file server. You specify an agent by using its Amazon Resource Name (ARN).</p>
     pub fn get_agent_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.agent_arns
     }

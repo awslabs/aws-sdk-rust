@@ -342,6 +342,24 @@ pub(crate) fn encryption_at_rest_options_status_correct_errors(
     builder
 }
 
+pub(crate) fn identity_center_options_status_correct_errors(
+    mut builder: crate::types::builders::IdentityCenterOptionsStatusBuilder,
+) -> crate::types::builders::IdentityCenterOptionsStatusBuilder {
+    if builder.options.is_none() {
+        builder.options = {
+            let builder = crate::types::builders::IdentityCenterOptionsBuilder::default();
+            Some(builder.build())
+        }
+    }
+    if builder.status.is_none() {
+        builder.status = {
+            let builder = crate::types::builders::OptionStatusBuilder::default();
+            crate::serde_util::option_status_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
 pub(crate) fn ip_address_type_status_correct_errors(
     mut builder: crate::types::builders::IpAddressTypeStatusBuilder,
 ) -> crate::types::builders::IpAddressTypeStatusBuilder {

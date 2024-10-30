@@ -7,6 +7,8 @@ pub struct RevokeSecurityGroupIngressOutput {
     pub r#return: ::std::option::Option<bool>,
     /// <p>The inbound rules that were unknown to the service. In some cases, <code>unknownIpPermissionSet</code> might be in a different format from the request parameter.</p>
     pub unknown_ip_permissions: ::std::option::Option<::std::vec::Vec<crate::types::IpPermission>>,
+    /// <p>Details about the revoked security group rules.</p>
+    pub revoked_security_group_rules: ::std::option::Option<::std::vec::Vec<crate::types::RevokedSecurityGroupRule>>,
     _request_id: Option<String>,
 }
 impl RevokeSecurityGroupIngressOutput {
@@ -19,6 +21,12 @@ impl RevokeSecurityGroupIngressOutput {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.unknown_ip_permissions.is_none()`.
     pub fn unknown_ip_permissions(&self) -> &[crate::types::IpPermission] {
         self.unknown_ip_permissions.as_deref().unwrap_or_default()
+    }
+    /// <p>Details about the revoked security group rules.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.revoked_security_group_rules.is_none()`.
+    pub fn revoked_security_group_rules(&self) -> &[crate::types::RevokedSecurityGroupRule] {
+        self.revoked_security_group_rules.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for RevokeSecurityGroupIngressOutput {
@@ -39,6 +47,7 @@ impl RevokeSecurityGroupIngressOutput {
 pub struct RevokeSecurityGroupIngressOutputBuilder {
     pub(crate) r#return: ::std::option::Option<bool>,
     pub(crate) unknown_ip_permissions: ::std::option::Option<::std::vec::Vec<crate::types::IpPermission>>,
+    pub(crate) revoked_security_group_rules: ::std::option::Option<::std::vec::Vec<crate::types::RevokedSecurityGroupRule>>,
     _request_id: Option<String>,
 }
 impl RevokeSecurityGroupIngressOutputBuilder {
@@ -76,6 +85,26 @@ impl RevokeSecurityGroupIngressOutputBuilder {
     pub fn get_unknown_ip_permissions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IpPermission>> {
         &self.unknown_ip_permissions
     }
+    /// Appends an item to `revoked_security_group_rules`.
+    ///
+    /// To override the contents of this collection use [`set_revoked_security_group_rules`](Self::set_revoked_security_group_rules).
+    ///
+    /// <p>Details about the revoked security group rules.</p>
+    pub fn revoked_security_group_rules(mut self, input: crate::types::RevokedSecurityGroupRule) -> Self {
+        let mut v = self.revoked_security_group_rules.unwrap_or_default();
+        v.push(input);
+        self.revoked_security_group_rules = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Details about the revoked security group rules.</p>
+    pub fn set_revoked_security_group_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RevokedSecurityGroupRule>>) -> Self {
+        self.revoked_security_group_rules = input;
+        self
+    }
+    /// <p>Details about the revoked security group rules.</p>
+    pub fn get_revoked_security_group_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RevokedSecurityGroupRule>> {
+        &self.revoked_security_group_rules
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -90,6 +119,7 @@ impl RevokeSecurityGroupIngressOutputBuilder {
         crate::operation::revoke_security_group_ingress::RevokeSecurityGroupIngressOutput {
             r#return: self.r#return,
             unknown_ip_permissions: self.unknown_ip_permissions,
+            revoked_security_group_rules: self.revoked_security_group_rules,
             _request_id: self._request_id,
         }
     }

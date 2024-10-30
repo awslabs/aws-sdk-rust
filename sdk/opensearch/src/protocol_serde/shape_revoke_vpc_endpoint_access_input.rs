@@ -6,5 +6,8 @@ pub fn ser_revoke_vpc_endpoint_access_input_input(
     if let Some(var_1) = &input.account {
         object.key("Account").string(var_1.as_str());
     }
+    if let Some(var_2) = &input.service {
+        object.key("Service").string(var_2.as_str());
+    }
     Ok(())
 }

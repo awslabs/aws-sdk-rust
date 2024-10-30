@@ -63,5 +63,11 @@ pub fn ser_update_workgroup_input_input(
     if let Some(var_17) = &input.ip_address_type {
         object.key("ipAddressType").string(var_17.as_str());
     }
+    if let Some(var_18) = &input.price_performance_target {
+        #[allow(unused_mut)]
+        let mut object_19 = object.key("pricePerformanceTarget").start_object();
+        crate::protocol_serde::shape_performance_target::ser_performance_target(&mut object_19, var_18)?;
+        object_19.finish();
+    }
     Ok(())
 }

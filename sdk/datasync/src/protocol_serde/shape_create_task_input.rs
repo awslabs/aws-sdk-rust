@@ -75,5 +75,8 @@ pub fn ser_create_task_input_input(
         crate::protocol_serde::shape_task_report_config::ser_task_report_config(&mut object_24, var_23)?;
         object_24.finish();
     }
+    if let Some(var_25) = &input.task_mode {
+        object.key("TaskMode").string(var_25.as_str());
+    }
     Ok(())
 }

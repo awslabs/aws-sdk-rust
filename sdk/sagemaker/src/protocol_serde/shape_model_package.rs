@@ -163,6 +163,9 @@ where
                                 tokens,
                             )?);
                         }
+                        "ModelLifeCycle" => {
+                            builder = builder.set_model_life_cycle(crate::protocol_serde::shape_model_life_cycle::de_model_life_cycle(tokens)?);
+                        }
                         "Tags" => {
                             builder = builder.set_tags(crate::protocol_serde::shape_tag_list::de_tag_list(tokens)?);
                         }

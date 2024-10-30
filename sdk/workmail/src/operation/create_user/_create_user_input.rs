@@ -20,6 +20,8 @@ pub struct CreateUserInput {
     pub last_name: ::std::option::Option<::std::string::String>,
     /// <p>If this parameter is enabled, the user will be hidden from the address book.</p>
     pub hidden_from_global_address_list: ::std::option::Option<bool>,
+    /// <p>User ID from the IAM Identity Center. If this parameter is empty it will be updated automatically when the user logs in for the first time to the mailbox associated with WorkMail.</p>
+    pub identity_provider_user_id: ::std::option::Option<::std::string::String>,
 }
 impl CreateUserInput {
     /// <p>The identifier of the organization for which the user is created.</p>
@@ -55,6 +57,10 @@ impl CreateUserInput {
     pub fn hidden_from_global_address_list(&self) -> ::std::option::Option<bool> {
         self.hidden_from_global_address_list
     }
+    /// <p>User ID from the IAM Identity Center. If this parameter is empty it will be updated automatically when the user logs in for the first time to the mailbox associated with WorkMail.</p>
+    pub fn identity_provider_user_id(&self) -> ::std::option::Option<&str> {
+        self.identity_provider_user_id.as_deref()
+    }
 }
 impl ::std::fmt::Debug for CreateUserInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -67,6 +73,7 @@ impl ::std::fmt::Debug for CreateUserInput {
         formatter.field("first_name", &"*** Sensitive Data Redacted ***");
         formatter.field("last_name", &"*** Sensitive Data Redacted ***");
         formatter.field("hidden_from_global_address_list", &self.hidden_from_global_address_list);
+        formatter.field("identity_provider_user_id", &self.identity_provider_user_id);
         formatter.finish()
     }
 }
@@ -89,6 +96,7 @@ pub struct CreateUserInputBuilder {
     pub(crate) first_name: ::std::option::Option<::std::string::String>,
     pub(crate) last_name: ::std::option::Option<::std::string::String>,
     pub(crate) hidden_from_global_address_list: ::std::option::Option<bool>,
+    pub(crate) identity_provider_user_id: ::std::option::Option<::std::string::String>,
 }
 impl CreateUserInputBuilder {
     /// <p>The identifier of the organization for which the user is created.</p>
@@ -209,6 +217,20 @@ impl CreateUserInputBuilder {
     pub fn get_hidden_from_global_address_list(&self) -> &::std::option::Option<bool> {
         &self.hidden_from_global_address_list
     }
+    /// <p>User ID from the IAM Identity Center. If this parameter is empty it will be updated automatically when the user logs in for the first time to the mailbox associated with WorkMail.</p>
+    pub fn identity_provider_user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.identity_provider_user_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>User ID from the IAM Identity Center. If this parameter is empty it will be updated automatically when the user logs in for the first time to the mailbox associated with WorkMail.</p>
+    pub fn set_identity_provider_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.identity_provider_user_id = input;
+        self
+    }
+    /// <p>User ID from the IAM Identity Center. If this parameter is empty it will be updated automatically when the user logs in for the first time to the mailbox associated with WorkMail.</p>
+    pub fn get_identity_provider_user_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identity_provider_user_id
+    }
     /// Consumes the builder and constructs a [`CreateUserInput`](crate::operation::create_user::CreateUserInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_user::CreateUserInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_user::CreateUserInput {
@@ -220,6 +242,7 @@ impl CreateUserInputBuilder {
             first_name: self.first_name,
             last_name: self.last_name,
             hidden_from_global_address_list: self.hidden_from_global_address_list,
+            identity_provider_user_id: self.identity_provider_user_id,
         })
     }
 }
@@ -234,6 +257,7 @@ impl ::std::fmt::Debug for CreateUserInputBuilder {
         formatter.field("first_name", &"*** Sensitive Data Redacted ***");
         formatter.field("last_name", &"*** Sensitive Data Redacted ***");
         formatter.field("hidden_from_global_address_list", &self.hidden_from_global_address_list);
+        formatter.field("identity_provider_user_id", &self.identity_provider_user_id);
         formatter.finish()
     }
 }

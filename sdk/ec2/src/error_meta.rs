@@ -778,6 +778,30 @@ impl From<crate::operation::associate_route_table::AssociateRouteTableError> for
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::associate_security_group_vpc::AssociateSecurityGroupVpcError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::associate_security_group_vpc::AssociateSecurityGroupVpcError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::associate_security_group_vpc::AssociateSecurityGroupVpcError> for Error {
+    fn from(err: crate::operation::associate_security_group_vpc::AssociateSecurityGroupVpcError) -> Self {
+        match err {
+            crate::operation::associate_security_group_vpc::AssociateSecurityGroupVpcError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::associate_subnet_cidr_block::AssociateSubnetCidrBlockError, R>>
     for Error
 where
@@ -8557,6 +8581,40 @@ impl From<crate::operation::describe_security_groups::DescribeSecurityGroupsErro
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_security_group_vpc_associations::DescribeSecurityGroupVpcAssociationsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_security_group_vpc_associations::DescribeSecurityGroupVpcAssociationsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_security_group_vpc_associations::DescribeSecurityGroupVpcAssociationsError> for Error {
+    fn from(err: crate::operation::describe_security_group_vpc_associations::DescribeSecurityGroupVpcAssociationsError) -> Self {
+        match err {
+            crate::operation::describe_security_group_vpc_associations::DescribeSecurityGroupVpcAssociationsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_snapshot_attribute::DescribeSnapshotAttributeError, R>>
     for Error
 where
@@ -10869,6 +10927,34 @@ impl From<crate::operation::disassociate_route_table::DisassociateRouteTableErro
     fn from(err: crate::operation::disassociate_route_table::DisassociateRouteTableError) -> Self {
         match err {
             crate::operation::disassociate_route_table::DisassociateRouteTableError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::disassociate_security_group_vpc::DisassociateSecurityGroupVpcError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::disassociate_security_group_vpc::DisassociateSecurityGroupVpcError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::disassociate_security_group_vpc::DisassociateSecurityGroupVpcError> for Error {
+    fn from(err: crate::operation::disassociate_security_group_vpc::DisassociateSecurityGroupVpcError) -> Self {
+        match err {
+            crate::operation::disassociate_security_group_vpc::DisassociateSecurityGroupVpcError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

@@ -82,6 +82,9 @@ pub mod associate_nat_gateway_address;
 /// Types for the `AssociateRouteTable` operation.
 pub mod associate_route_table;
 
+/// Types for the `AssociateSecurityGroupVpc` operation.
+pub mod associate_security_group_vpc;
+
 /// Types for the `AssociateSubnetCidrBlock` operation.
 pub mod associate_subnet_cidr_block;
 
@@ -982,6 +985,9 @@ pub mod describe_security_group_references;
 /// Types for the `DescribeSecurityGroupRules` operation.
 pub mod describe_security_group_rules;
 
+/// Types for the `DescribeSecurityGroupVpcAssociations` operation.
+pub mod describe_security_group_vpc_associations;
+
 /// Types for the `DescribeSecurityGroups` operation.
 pub mod describe_security_groups;
 
@@ -1230,6 +1236,9 @@ pub mod disassociate_nat_gateway_address;
 
 /// Types for the `DisassociateRouteTable` operation.
 pub mod disassociate_route_table;
+
+/// Types for the `DisassociateSecurityGroupVpc` operation.
+pub mod disassociate_security_group_vpc;
 
 /// Types for the `DisassociateSubnetCidrBlock` operation.
 pub mod disassociate_subnet_cidr_block;

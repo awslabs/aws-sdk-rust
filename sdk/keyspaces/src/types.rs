@@ -39,6 +39,10 @@ pub use crate::types::_keyspace_summary::KeyspaceSummary;
 
 pub use crate::types::_rs::Rs;
 
+pub use crate::types::_type_status::TypeStatus;
+
+pub use crate::types::_field_definition::FieldDefinition;
+
 pub use crate::types::_replica_auto_scaling_specification::ReplicaAutoScalingSpecification;
 
 pub use crate::types::_replica_specification_summary::ReplicaSpecificationSummary;
@@ -87,6 +91,8 @@ mod _encryption_specification;
 
 mod _encryption_type;
 
+mod _field_definition;
+
 mod _keyspace_summary;
 
 mod _partition_key;
@@ -126,6 +132,8 @@ mod _throughput_mode;
 mod _time_to_live;
 
 mod _time_to_live_status;
+
+mod _type_status;
 
 /// Builders
 pub mod builders;

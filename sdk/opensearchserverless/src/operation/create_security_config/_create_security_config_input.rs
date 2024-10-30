@@ -11,6 +11,8 @@ pub struct CreateSecurityConfigInput {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Describes SAML options in in the form of a key-value map. This field is required if you specify <code>saml</code> for the <code>type</code> parameter.</p>
     pub saml_options: ::std::option::Option<crate::types::SamlConfigOptions>,
+    /// <p>Describes IAM Identity Center options in the form of a key-value map. This field is required if you specify iamidentitycenter for the type parameter.</p>
+    pub iam_identity_center_options: ::std::option::Option<crate::types::CreateIamIdentityCenterConfigOptions>,
     /// <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
@@ -30,6 +32,10 @@ impl CreateSecurityConfigInput {
     /// <p>Describes SAML options in in the form of a key-value map. This field is required if you specify <code>saml</code> for the <code>type</code> parameter.</p>
     pub fn saml_options(&self) -> ::std::option::Option<&crate::types::SamlConfigOptions> {
         self.saml_options.as_ref()
+    }
+    /// <p>Describes IAM Identity Center options in the form of a key-value map. This field is required if you specify iamidentitycenter for the type parameter.</p>
+    pub fn iam_identity_center_options(&self) -> ::std::option::Option<&crate::types::CreateIamIdentityCenterConfigOptions> {
+        self.iam_identity_center_options.as_ref()
     }
     /// <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
@@ -51,6 +57,7 @@ pub struct CreateSecurityConfigInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) saml_options: ::std::option::Option<crate::types::SamlConfigOptions>,
+    pub(crate) iam_identity_center_options: ::std::option::Option<crate::types::CreateIamIdentityCenterConfigOptions>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl CreateSecurityConfigInputBuilder {
@@ -112,6 +119,20 @@ impl CreateSecurityConfigInputBuilder {
     pub fn get_saml_options(&self) -> &::std::option::Option<crate::types::SamlConfigOptions> {
         &self.saml_options
     }
+    /// <p>Describes IAM Identity Center options in the form of a key-value map. This field is required if you specify iamidentitycenter for the type parameter.</p>
+    pub fn iam_identity_center_options(mut self, input: crate::types::CreateIamIdentityCenterConfigOptions) -> Self {
+        self.iam_identity_center_options = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Describes IAM Identity Center options in the form of a key-value map. This field is required if you specify iamidentitycenter for the type parameter.</p>
+    pub fn set_iam_identity_center_options(mut self, input: ::std::option::Option<crate::types::CreateIamIdentityCenterConfigOptions>) -> Self {
+        self.iam_identity_center_options = input;
+        self
+    }
+    /// <p>Describes IAM Identity Center options in the form of a key-value map. This field is required if you specify iamidentitycenter for the type parameter.</p>
+    pub fn get_iam_identity_center_options(&self) -> &::std::option::Option<crate::types::CreateIamIdentityCenterConfigOptions> {
+        &self.iam_identity_center_options
+    }
     /// <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -136,6 +157,7 @@ impl CreateSecurityConfigInputBuilder {
             name: self.name,
             description: self.description,
             saml_options: self.saml_options,
+            iam_identity_center_options: self.iam_identity_center_options,
             client_token: self.client_token,
         })
     }

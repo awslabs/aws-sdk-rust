@@ -117,7 +117,7 @@ pub enum Error {
     IntegrationConflictStateFault(crate::types::error::IntegrationConflictStateFault),
     /// <p>The integration can't be found.</p>
     IntegrationNotFoundFault(crate::types::error::IntegrationNotFoundFault),
-    /// <p>You can't create any more zero-ETL integrations because the quota has been reached.</p>
+    /// <p>You can't create any more zero-ETL or S3 event integrations because the quota has been reached.</p>
     IntegrationQuotaExceededFault(crate::types::error::IntegrationQuotaExceededFault),
     /// <p>The specified integration source can't be found.</p>
     IntegrationSourceNotFoundFault(crate::types::error::IntegrationSourceNotFoundFault),

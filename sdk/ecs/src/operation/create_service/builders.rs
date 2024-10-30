@@ -22,7 +22,7 @@ impl crate::operation::create_service::builders::CreateServiceInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateService`.
 ///
-/// <p>Runs and maintains your desired number of tasks from a specified task definition. If the number of tasks running in a service drops below the <code>desiredCount</code>, Amazon ECS runs another copy of the task in the specified cluster. To update an existing service, use <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_UpdateService.html">UpdateService</a>.</p><note>
+/// <p>Runs and maintains your desired number of tasks from a specified task definition. If the number of tasks running in a service drops below the <code>desiredCount</code>, Amazon ECS runs another copy of the task in the specified cluster. To update an existing service, see the <code>UpdateService</code> action.</p><note>
 /// <p>On March 21, 2024, a change was made to resolve the task definition revision before authorization. When a task definition revision is not specified, authorization will occur using the latest revision of a task definition.</p>
 /// </note> <note>
 /// <p>Amazon Elastic Inference (EI) is no longer available to customers.</p>
@@ -366,17 +366,17 @@ impl CreateServiceFluentBuilder {
     pub fn get_role(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_role()
     }
-    /// <p>Optional deployment parameters that control how many tasks run during the deployment and the ordering of stopping and starting tasks.</p>
+    /// <p>Optional deployment parameters that control how many tasks run during the deployment and the failure detection methods.</p>
     pub fn deployment_configuration(mut self, input: crate::types::DeploymentConfiguration) -> Self {
         self.inner = self.inner.deployment_configuration(input);
         self
     }
-    /// <p>Optional deployment parameters that control how many tasks run during the deployment and the ordering of stopping and starting tasks.</p>
+    /// <p>Optional deployment parameters that control how many tasks run during the deployment and the failure detection methods.</p>
     pub fn set_deployment_configuration(mut self, input: ::std::option::Option<crate::types::DeploymentConfiguration>) -> Self {
         self.inner = self.inner.set_deployment_configuration(input);
         self
     }
-    /// <p>Optional deployment parameters that control how many tasks run during the deployment and the ordering of stopping and starting tasks.</p>
+    /// <p>Optional deployment parameters that control how many tasks run during the deployment and the failure detection methods.</p>
     pub fn get_deployment_configuration(&self) -> &::std::option::Option<crate::types::DeploymentConfiguration> {
         self.inner.get_deployment_configuration()
     }

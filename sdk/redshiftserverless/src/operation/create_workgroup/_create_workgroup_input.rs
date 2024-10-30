@@ -25,6 +25,8 @@ pub struct CreateWorkgroupInput {
     pub port: ::std::option::Option<i32>,
     /// <p>The maximum data-warehouse capacity Amazon Redshift Serverless uses to serve queries. The max capacity is specified in RPUs.</p>
     pub max_capacity: ::std::option::Option<i32>,
+    /// <p>An object that represents the price performance target settings for the workgroup.</p>
+    pub price_performance_target: ::std::option::Option<crate::types::PerformanceTarget>,
     /// <p>The IP address type that the workgroup supports. Possible values are <code>ipv4</code> and <code>dualstack</code>.</p>
     pub ip_address_type: ::std::option::Option<::std::string::String>,
 }
@@ -81,6 +83,10 @@ impl CreateWorkgroupInput {
     pub fn max_capacity(&self) -> ::std::option::Option<i32> {
         self.max_capacity
     }
+    /// <p>An object that represents the price performance target settings for the workgroup.</p>
+    pub fn price_performance_target(&self) -> ::std::option::Option<&crate::types::PerformanceTarget> {
+        self.price_performance_target.as_ref()
+    }
     /// <p>The IP address type that the workgroup supports. Possible values are <code>ipv4</code> and <code>dualstack</code>.</p>
     pub fn ip_address_type(&self) -> ::std::option::Option<&str> {
         self.ip_address_type.as_deref()
@@ -108,6 +114,7 @@ pub struct CreateWorkgroupInputBuilder {
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) port: ::std::option::Option<i32>,
     pub(crate) max_capacity: ::std::option::Option<i32>,
+    pub(crate) price_performance_target: ::std::option::Option<crate::types::PerformanceTarget>,
     pub(crate) ip_address_type: ::std::option::Option<::std::string::String>,
 }
 impl CreateWorkgroupInputBuilder {
@@ -291,6 +298,20 @@ impl CreateWorkgroupInputBuilder {
     pub fn get_max_capacity(&self) -> &::std::option::Option<i32> {
         &self.max_capacity
     }
+    /// <p>An object that represents the price performance target settings for the workgroup.</p>
+    pub fn price_performance_target(mut self, input: crate::types::PerformanceTarget) -> Self {
+        self.price_performance_target = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>An object that represents the price performance target settings for the workgroup.</p>
+    pub fn set_price_performance_target(mut self, input: ::std::option::Option<crate::types::PerformanceTarget>) -> Self {
+        self.price_performance_target = input;
+        self
+    }
+    /// <p>An object that represents the price performance target settings for the workgroup.</p>
+    pub fn get_price_performance_target(&self) -> &::std::option::Option<crate::types::PerformanceTarget> {
+        &self.price_performance_target
+    }
     /// <p>The IP address type that the workgroup supports. Possible values are <code>ipv4</code> and <code>dualstack</code>.</p>
     pub fn ip_address_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ip_address_type = ::std::option::Option::Some(input.into());
@@ -321,6 +342,7 @@ impl CreateWorkgroupInputBuilder {
             tags: self.tags,
             port: self.port,
             max_capacity: self.max_capacity,
+            price_performance_target: self.price_performance_target,
             ip_address_type: self.ip_address_type,
         })
     }

@@ -131,6 +131,10 @@ pub(crate) mod shape_associate_route_table;
 
 pub(crate) mod shape_associate_route_table_input;
 
+pub(crate) mod shape_associate_security_group_vpc;
+
+pub(crate) mod shape_associate_security_group_vpc_input;
+
 pub(crate) mod shape_associate_subnet_cidr_block;
 
 pub(crate) mod shape_associate_subnet_cidr_block_input;
@@ -1331,6 +1335,10 @@ pub(crate) mod shape_describe_security_group_rules;
 
 pub(crate) mod shape_describe_security_group_rules_input;
 
+pub(crate) mod shape_describe_security_group_vpc_associations;
+
+pub(crate) mod shape_describe_security_group_vpc_associations_input;
+
 pub(crate) mod shape_describe_security_groups;
 
 pub(crate) mod shape_describe_security_groups_input;
@@ -1662,6 +1670,10 @@ pub(crate) mod shape_disassociate_nat_gateway_address_input;
 pub(crate) mod shape_disassociate_route_table;
 
 pub(crate) mod shape_disassociate_route_table_input;
+
+pub(crate) mod shape_disassociate_security_group_vpc;
+
+pub(crate) mod shape_disassociate_security_group_vpc_input;
 
 pub(crate) mod shape_disassociate_subnet_cidr_block;
 
@@ -3363,6 +3375,8 @@ pub(crate) mod shape_response_host_id_list;
 
 pub(crate) mod shape_response_launch_template_data;
 
+pub(crate) mod shape_revoked_security_group_rule_list;
+
 pub(crate) mod shape_route_table;
 
 pub(crate) mod shape_route_table_association_state;
@@ -3394,6 +3408,8 @@ pub(crate) mod shape_security_group_references;
 pub(crate) mod shape_security_group_rule_list;
 
 pub(crate) mod shape_security_group_rule_request;
+
+pub(crate) mod shape_security_group_vpc_association_list;
 
 pub(crate) mod shape_service_configuration;
 
@@ -4001,6 +4017,8 @@ pub(crate) mod shape_reserved_instances_offering;
 
 pub(crate) mod shape_resource_statement_request;
 
+pub(crate) mod shape_revoked_security_group_rule;
+
 pub(crate) mod shape_route_list;
 
 pub(crate) mod shape_route_table_association_list;
@@ -4026,6 +4044,8 @@ pub(crate) mod shape_security_group_id_set;
 pub(crate) mod shape_security_group_reference;
 
 pub(crate) mod shape_security_group_rule;
+
+pub(crate) mod shape_security_group_vpc_association;
 
 pub(crate) mod shape_service_detail;
 

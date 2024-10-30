@@ -140,6 +140,8 @@ mod create_keyspace;
 
 mod create_table;
 
+mod create_type;
+
 /// Operation customization and supporting types.
 ///
 /// The underlying HTTP requests made during an operation can be customized
@@ -171,17 +173,23 @@ mod delete_keyspace;
 
 mod delete_table;
 
+mod delete_type;
+
 mod get_keyspace;
 
 mod get_table;
 
 mod get_table_auto_scaling_settings;
 
+mod get_type;
+
 mod list_keyspaces;
 
 mod list_tables;
 
 mod list_tags_for_resource;
+
+mod list_types;
 
 mod restore_table;
 

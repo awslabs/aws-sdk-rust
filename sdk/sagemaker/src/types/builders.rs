@@ -175,6 +175,8 @@ pub use crate::types::_monitoring_constraints_resource::MonitoringConstraintsRes
 
 pub use crate::types::_schedule_config::ScheduleConfigBuilder;
 
+pub use crate::types::_model_life_cycle::ModelLifeCycleBuilder;
+
 pub use crate::types::_model_package_model_card::ModelPackageModelCardBuilder;
 
 pub use crate::types::_inference_specification::InferenceSpecificationBuilder;

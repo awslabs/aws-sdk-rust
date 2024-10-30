@@ -62,6 +62,8 @@ pub struct CreateModelPackageInput {
     pub security_config: ::std::option::Option<crate::types::ModelPackageSecurityConfig>,
     /// <p>The model card associated with the model package. Since <code>ModelPackageModelCard</code> is tied to a model package, it is a specific usage of a model card and its schema is simplified compared to the schema of <code>ModelCard</code>. The <code>ModelPackageModelCard</code> schema does not include <code>model_package_details</code>, and <code>model_overview</code> is composed of the <code>model_creator</code> and <code>model_artifact</code> properties. For more information about the model package model card schema, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-registry-details.html#model-card-schema">Model package model card schema</a>. For more information about the model card associated with the model package, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-registry-details.html">View the Details of a Model Version</a>.</p>
     pub model_card: ::std::option::Option<crate::types::ModelPackageModelCard>,
+    /// <p>A structure describing the current state of the model in its life cycle.</p>
+    pub model_life_cycle: ::std::option::Option<crate::types::ModelLifeCycle>,
 }
 impl CreateModelPackageInput {
     /// <p>The name of the model package. The name must have 1 to 63 characters. Valid characters are a-z, A-Z, 0-9, and - (hyphen).</p>
@@ -171,6 +173,10 @@ impl CreateModelPackageInput {
     pub fn model_card(&self) -> ::std::option::Option<&crate::types::ModelPackageModelCard> {
         self.model_card.as_ref()
     }
+    /// <p>A structure describing the current state of the model in its life cycle.</p>
+    pub fn model_life_cycle(&self) -> ::std::option::Option<&crate::types::ModelLifeCycle> {
+        self.model_life_cycle.as_ref()
+    }
 }
 impl CreateModelPackageInput {
     /// Creates a new builder-style object to manufacture [`CreateModelPackageInput`](crate::operation::create_model_package::CreateModelPackageInput).
@@ -205,6 +211,7 @@ pub struct CreateModelPackageInputBuilder {
     pub(crate) source_uri: ::std::option::Option<::std::string::String>,
     pub(crate) security_config: ::std::option::Option<crate::types::ModelPackageSecurityConfig>,
     pub(crate) model_card: ::std::option::Option<crate::types::ModelPackageModelCard>,
+    pub(crate) model_life_cycle: ::std::option::Option<crate::types::ModelLifeCycle>,
 }
 impl CreateModelPackageInputBuilder {
     /// <p>The name of the model package. The name must have 1 to 63 characters. Valid characters are a-z, A-Z, 0-9, and - (hyphen).</p>
@@ -592,6 +599,20 @@ impl CreateModelPackageInputBuilder {
     pub fn get_model_card(&self) -> &::std::option::Option<crate::types::ModelPackageModelCard> {
         &self.model_card
     }
+    /// <p>A structure describing the current state of the model in its life cycle.</p>
+    pub fn model_life_cycle(mut self, input: crate::types::ModelLifeCycle) -> Self {
+        self.model_life_cycle = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A structure describing the current state of the model in its life cycle.</p>
+    pub fn set_model_life_cycle(mut self, input: ::std::option::Option<crate::types::ModelLifeCycle>) -> Self {
+        self.model_life_cycle = input;
+        self
+    }
+    /// <p>A structure describing the current state of the model in its life cycle.</p>
+    pub fn get_model_life_cycle(&self) -> &::std::option::Option<crate::types::ModelLifeCycle> {
+        &self.model_life_cycle
+    }
     /// Consumes the builder and constructs a [`CreateModelPackageInput`](crate::operation::create_model_package::CreateModelPackageInput).
     pub fn build(
         self,
@@ -620,6 +641,7 @@ impl CreateModelPackageInputBuilder {
             source_uri: self.source_uri,
             security_config: self.security_config,
             model_card: self.model_card,
+            model_life_cycle: self.model_life_cycle,
         })
     }
 }

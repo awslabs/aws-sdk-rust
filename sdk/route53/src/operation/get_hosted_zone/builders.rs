@@ -23,6 +23,7 @@ impl crate::operation::get_hosted_zone::builders::GetHostedZoneInputBuilder {
 /// Fluent builder constructing a request to `GetHostedZone`.
 ///
 /// <p>Gets information about a specified hosted zone including the four name servers assigned to the hosted zone.</p>
+/// <p><code></code> returns the VPCs associated with the specified hosted zone and does not reflect the VPC associations by Route 53 Profiles. To get the associations to a Profile, call the <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53profiles_ListProfileAssociations.html">ListProfileAssociations</a> API.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetHostedZoneFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -150,6 +150,8 @@ mod create_availability_configuration;
 
 mod create_group;
 
+mod create_identity_center_application;
+
 mod create_impersonation_role;
 
 mod create_mobile_device_access_rule;
@@ -197,6 +199,10 @@ mod delete_email_monitoring_configuration;
 
 mod delete_group;
 
+mod delete_identity_center_application;
+
+mod delete_identity_provider_configuration;
+
 mod delete_impersonation_role;
 
 mod delete_mailbox_permissions;
@@ -206,6 +212,8 @@ mod delete_mobile_device_access_override;
 mod delete_mobile_device_access_rule;
 
 mod delete_organization;
+
+mod delete_personal_access_token;
 
 mod delete_resource;
 
@@ -222,6 +230,8 @@ mod describe_email_monitoring_configuration;
 mod describe_entity;
 
 mod describe_group;
+
+mod describe_identity_provider_configuration;
 
 mod describe_inbound_dmarc_settings;
 
@@ -253,6 +263,8 @@ mod get_mobile_device_access_effect;
 
 mod get_mobile_device_access_override;
 
+mod get_personal_access_token_metadata;
+
 mod list_access_control_rules;
 
 mod list_aliases;
@@ -279,6 +291,8 @@ mod list_mobile_device_access_rules;
 
 mod list_organizations;
 
+mod list_personal_access_tokens;
+
 mod list_resource_delegates;
 
 mod list_resources;
@@ -290,6 +304,8 @@ mod list_users;
 mod put_access_control_rule;
 
 mod put_email_monitoring_configuration;
+
+mod put_identity_provider_configuration;
 
 mod put_inbound_dmarc_settings;
 

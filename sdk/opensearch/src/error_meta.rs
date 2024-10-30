@@ -318,6 +318,35 @@ impl From<crate::operation::cancel_service_software_update::CancelServiceSoftwar
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_application::CreateApplicationError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_application::CreateApplicationError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_application::CreateApplicationError> for Error {
+    fn from(err: crate::operation::create_application::CreateApplicationError) -> Self {
+        match err {
+            crate::operation::create_application::CreateApplicationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_application::CreateApplicationError::BaseException(inner) => Error::BaseException(inner),
+            crate::operation::create_application::CreateApplicationError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_application::CreateApplicationError::DisabledOperationException(inner) => {
+                Error::DisabledOperationException(inner)
+            }
+            crate::operation::create_application::CreateApplicationError::InternalException(inner) => Error::InternalException(inner),
+            crate::operation::create_application::CreateApplicationError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_application::CreateApplicationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_domain::CreateDomainError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -436,6 +465,36 @@ impl From<crate::operation::create_vpc_endpoint::CreateVpcEndpointError> for Err
             crate::operation::create_vpc_endpoint::CreateVpcEndpointError::LimitExceededException(inner) => Error::LimitExceededException(inner),
             crate::operation::create_vpc_endpoint::CreateVpcEndpointError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::create_vpc_endpoint::CreateVpcEndpointError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_application::DeleteApplicationError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_application::DeleteApplicationError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_application::DeleteApplicationError> for Error {
+    fn from(err: crate::operation::delete_application::DeleteApplicationError) -> Self {
+        match err {
+            crate::operation::delete_application::DeleteApplicationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_application::DeleteApplicationError::BaseException(inner) => Error::BaseException(inner),
+            crate::operation::delete_application::DeleteApplicationError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::delete_application::DeleteApplicationError::DisabledOperationException(inner) => {
+                Error::DisabledOperationException(inner)
+            }
+            crate::operation::delete_application::DeleteApplicationError::InternalException(inner) => Error::InternalException(inner),
+            crate::operation::delete_application::DeleteApplicationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_application::DeleteApplicationError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_application::DeleteApplicationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1115,6 +1174,33 @@ impl From<crate::operation::dissociate_package::DissociatePackageError> for Erro
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_application::GetApplicationError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_application::GetApplicationError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_application::GetApplicationError> for Error {
+    fn from(err: crate::operation::get_application::GetApplicationError) -> Self {
+        match err {
+            crate::operation::get_application::GetApplicationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_application::GetApplicationError::BaseException(inner) => Error::BaseException(inner),
+            crate::operation::get_application::GetApplicationError::DisabledOperationException(inner) => Error::DisabledOperationException(inner),
+            crate::operation::get_application::GetApplicationError::InternalException(inner) => Error::InternalException(inner),
+            crate::operation::get_application::GetApplicationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_application::GetApplicationError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_application::GetApplicationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_compatible_versions::GetCompatibleVersionsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1301,6 +1387,33 @@ impl From<crate::operation::get_upgrade_status::GetUpgradeStatusError> for Error
             crate::operation::get_upgrade_status::GetUpgradeStatusError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::get_upgrade_status::GetUpgradeStatusError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_upgrade_status::GetUpgradeStatusError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_applications::ListApplicationsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_applications::ListApplicationsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_applications::ListApplicationsError> for Error {
+    fn from(err: crate::operation::list_applications::ListApplicationsError) -> Self {
+        match err {
+            crate::operation::list_applications::ListApplicationsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_applications::ListApplicationsError::BaseException(inner) => Error::BaseException(inner),
+            crate::operation::list_applications::ListApplicationsError::DisabledOperationException(inner) => Error::DisabledOperationException(inner),
+            crate::operation::list_applications::ListApplicationsError::InternalException(inner) => Error::InternalException(inner),
+            crate::operation::list_applications::ListApplicationsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_applications::ListApplicationsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_applications::ListApplicationsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1855,6 +1968,36 @@ impl From<crate::operation::start_service_software_update::StartServiceSoftwareU
                 Error::ValidationException(inner)
             }
             crate::operation::start_service_software_update::StartServiceSoftwareUpdateError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_application::UpdateApplicationError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_application::UpdateApplicationError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_application::UpdateApplicationError> for Error {
+    fn from(err: crate::operation::update_application::UpdateApplicationError) -> Self {
+        match err {
+            crate::operation::update_application::UpdateApplicationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_application::UpdateApplicationError::BaseException(inner) => Error::BaseException(inner),
+            crate::operation::update_application::UpdateApplicationError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::update_application::UpdateApplicationError::DisabledOperationException(inner) => {
+                Error::DisabledOperationException(inner)
+            }
+            crate::operation::update_application::UpdateApplicationError::InternalException(inner) => Error::InternalException(inner),
+            crate::operation::update_application::UpdateApplicationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_application::UpdateApplicationError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_application::UpdateApplicationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

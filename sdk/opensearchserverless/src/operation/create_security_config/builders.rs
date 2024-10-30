@@ -164,6 +164,20 @@ impl CreateSecurityConfigFluentBuilder {
     pub fn get_saml_options(&self) -> &::std::option::Option<crate::types::SamlConfigOptions> {
         self.inner.get_saml_options()
     }
+    /// <p>Describes IAM Identity Center options in the form of a key-value map. This field is required if you specify iamidentitycenter for the type parameter.</p>
+    pub fn iam_identity_center_options(mut self, input: crate::types::CreateIamIdentityCenterConfigOptions) -> Self {
+        self.inner = self.inner.iam_identity_center_options(input);
+        self
+    }
+    /// <p>Describes IAM Identity Center options in the form of a key-value map. This field is required if you specify iamidentitycenter for the type parameter.</p>
+    pub fn set_iam_identity_center_options(mut self, input: ::std::option::Option<crate::types::CreateIamIdentityCenterConfigOptions>) -> Self {
+        self.inner = self.inner.set_iam_identity_center_options(input);
+        self
+    }
+    /// <p>Describes IAM Identity Center options in the form of a key-value map. This field is required if you specify iamidentitycenter for the type parameter.</p>
+    pub fn get_iam_identity_center_options(&self) -> &::std::option::Option<crate::types::CreateIamIdentityCenterConfigOptions> {
+        self.inner.get_iam_identity_center_options()
+    }
     /// <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());

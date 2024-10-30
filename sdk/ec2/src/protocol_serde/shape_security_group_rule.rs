@@ -176,6 +176,19 @@ pub fn de_security_group_rule(
                 builder = builder.set_tags(var_13);
             }
             ,
+            s if s.matches("securityGroupRuleArn") /* SecurityGroupRuleArn com.amazonaws.ec2#SecurityGroupRule$SecurityGroupRuleArn */ =>  {
+                let var_14 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_security_group_rule_arn(var_14);
+            }
+            ,
             _ => {}
         }
     }

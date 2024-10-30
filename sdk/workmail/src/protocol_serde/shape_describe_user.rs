@@ -17,6 +17,38 @@ pub fn de_describe_user_http_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
+        "DirectoryServiceAuthenticationFailedException" => {
+            crate::operation::describe_user::DescribeUserError::DirectoryServiceAuthenticationFailedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::DirectoryServiceAuthenticationFailedExceptionBuilder::default();
+                    output = crate::protocol_serde::shape_directory_service_authentication_failed_exception::de_directory_service_authentication_failed_exception_json_err(_response_body, output).map_err(crate::operation::describe_user::DescribeUserError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "DirectoryUnavailableException" => crate::operation::describe_user::DescribeUserError::DirectoryUnavailableException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::DirectoryUnavailableExceptionBuilder::default();
+                output =
+                    crate::protocol_serde::shape_directory_unavailable_exception::de_directory_unavailable_exception_json_err(_response_body, output)
+                        .map_err(crate::operation::describe_user::DescribeUserError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "EntityNotFoundException" => crate::operation::describe_user::DescribeUserError::EntityNotFoundException({
             #[allow(unused_mut)]
             let mut tmp = {
@@ -269,6 +301,20 @@ pub(crate) fn de_describe_user(
                 }
                 "Office" => {
                     builder = builder.set_office(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
+                "IdentityProviderUserId" => {
+                    builder = builder.set_identity_provider_user_id(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
+                "IdentityProviderIdentityStoreId" => {
+                    builder = builder.set_identity_provider_identity_store_id(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                             .transpose()?,

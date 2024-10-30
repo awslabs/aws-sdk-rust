@@ -150,6 +150,8 @@ mod cancel_domain_config_change;
 
 mod cancel_service_software_update;
 
+mod create_application;
+
 mod create_domain;
 
 mod create_outbound_connection;
@@ -184,6 +186,8 @@ mod create_vpc_endpoint;
 /// # }
 /// ```
 pub mod customize;
+
+mod delete_application;
 
 mod delete_data_source;
 
@@ -229,6 +233,8 @@ mod describe_vpc_endpoints;
 
 mod dissociate_package;
 
+mod get_application;
+
 mod get_compatible_versions;
 
 mod get_data_source;
@@ -240,6 +246,8 @@ mod get_package_version_history;
 mod get_upgrade_history;
 
 mod get_upgrade_status;
+
+mod list_applications;
 
 mod list_data_sources;
 
@@ -276,6 +284,8 @@ mod revoke_vpc_endpoint_access;
 mod start_domain_maintenance;
 
 mod start_service_software_update;
+
+mod update_application;
 
 mod update_data_source;
 

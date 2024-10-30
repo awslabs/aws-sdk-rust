@@ -23,6 +23,7 @@ impl crate::operation::list_tags_for_resource::builders::ListTagsForResourceInpu
 /// Fluent builder constructing a request to `ListTagsForResource`.
 ///
 /// <p>Returns a list of all tags associated with the specified Amazon Keyspaces resource.</p>
+/// <p>To read keyspace metadata using <code>ListTagsForResource</code>, the IAM principal needs <code>Select</code> action permissions for the specified resource and the system keyspace.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListTagsForResourceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -188,6 +188,13 @@ pub(crate) fn de_describe_task(
                 "ScheduleDetails" => {
                     builder = builder.set_schedule_details(crate::protocol_serde::shape_task_schedule_details::de_task_schedule_details(tokens)?);
                 }
+                "TaskMode" => {
+                    builder = builder.set_task_mode(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::TaskMode::from(u.as_ref())))
+                            .transpose()?,
+                    );
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

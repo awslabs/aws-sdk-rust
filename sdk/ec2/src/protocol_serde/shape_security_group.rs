@@ -53,7 +53,7 @@ pub fn de_security_group(
                 builder = builder.set_vpc_id(var_4);
             }
             ,
-            s if s.matches("ownerId") /* OwnerId com.amazonaws.ec2#SecurityGroup$OwnerId */ =>  {
+            s if s.matches("securityGroupArn") /* SecurityGroupArn com.amazonaws.ec2#SecurityGroup$SecurityGroupArn */ =>  {
                 let var_5 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -63,10 +63,10 @@ pub fn de_security_group(
                         ?
                     )
                 ;
-                builder = builder.set_owner_id(var_5);
+                builder = builder.set_security_group_arn(var_5);
             }
             ,
-            s if s.matches("groupName") /* GroupName com.amazonaws.ec2#SecurityGroup$GroupName */ =>  {
+            s if s.matches("ownerId") /* OwnerId com.amazonaws.ec2#SecurityGroup$OwnerId */ =>  {
                 let var_6 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -76,10 +76,10 @@ pub fn de_security_group(
                         ?
                     )
                 ;
-                builder = builder.set_group_name(var_6);
+                builder = builder.set_owner_id(var_6);
             }
             ,
-            s if s.matches("groupDescription") /* Description com.amazonaws.ec2#SecurityGroup$Description */ =>  {
+            s if s.matches("groupName") /* GroupName com.amazonaws.ec2#SecurityGroup$GroupName */ =>  {
                 let var_7 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -89,17 +89,30 @@ pub fn de_security_group(
                         ?
                     )
                 ;
-                builder = builder.set_description(var_7);
+                builder = builder.set_group_name(var_7);
+            }
+            ,
+            s if s.matches("groupDescription") /* Description com.amazonaws.ec2#SecurityGroup$Description */ =>  {
+                let var_8 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_description(var_8);
             }
             ,
             s if s.matches("ipPermissions") /* IpPermissions com.amazonaws.ec2#SecurityGroup$IpPermissions */ =>  {
-                let var_8 =
+                let var_9 =
                     Some(
                         crate::protocol_serde::shape_ip_permission_list::de_ip_permission_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_ip_permissions(var_8);
+                builder = builder.set_ip_permissions(var_9);
             }
             ,
             _ => {}

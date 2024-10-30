@@ -12,6 +12,7 @@
 /// ```text
 /// # let securityconfigtype = unimplemented!();
 /// match securityconfigtype {
+///     SecurityConfigType::Iamidentitycenter => { /* ... */ },
 ///     SecurityConfigType::Saml => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -40,6 +41,8 @@
     ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum SecurityConfigType {
+    /// iam identity center
+    Iamidentitycenter,
     /// saml provider
     Saml,
     /// `Unknown` contains new variants that have been added since this code was generated.
@@ -49,6 +52,7 @@ pub enum SecurityConfigType {
 impl ::std::convert::From<&str> for SecurityConfigType {
     fn from(s: &str) -> Self {
         match s {
+            "iamidentitycenter" => SecurityConfigType::Iamidentitycenter,
             "saml" => SecurityConfigType::Saml,
             other => SecurityConfigType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -65,13 +69,14 @@ impl SecurityConfigType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            SecurityConfigType::Iamidentitycenter => "iamidentitycenter",
             SecurityConfigType::Saml => "saml",
             SecurityConfigType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["saml"]
+        &["iamidentitycenter", "saml"]
     }
 }
 impl ::std::convert::AsRef<str> for SecurityConfigType {
@@ -94,6 +99,7 @@ impl SecurityConfigType {
 impl ::std::fmt::Display for SecurityConfigType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            SecurityConfigType::Iamidentitycenter => write!(f, "iamidentitycenter"),
             SecurityConfigType::Saml => write!(f, "saml"),
             SecurityConfigType::Unknown(value) => write!(f, "{}", value),
         }

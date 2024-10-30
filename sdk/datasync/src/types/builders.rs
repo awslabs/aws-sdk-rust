@@ -57,6 +57,10 @@ pub use crate::types::_agent_list_entry::AgentListEntryBuilder;
 
 pub use crate::types::_platform::PlatformBuilder;
 
+pub use crate::types::_task_execution_files_failed_detail::TaskExecutionFilesFailedDetailBuilder;
+
+pub use crate::types::_task_execution_files_listed_detail::TaskExecutionFilesListedDetailBuilder;
+
 pub use crate::types::_report_result::ReportResultBuilder;
 
 pub use crate::types::_task_execution_result_detail::TaskExecutionResultDetailBuilder;

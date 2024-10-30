@@ -93,6 +93,14 @@ pub use crate::types::_rollback_on_disable::RollbackOnDisable;
 
 pub use crate::types::_auto_tune_desired_state::AutoTuneDesiredState;
 
+pub use crate::types::_identity_center_options_status::IdentityCenterOptionsStatus;
+
+pub use crate::types::_identity_center_options::IdentityCenterOptions;
+
+pub use crate::types::_roles_key_id_c_option::RolesKeyIdCOption;
+
+pub use crate::types::_subject_key_id_c_option::SubjectKeyIdCOption;
+
 pub use crate::types::_advanced_security_options_status::AdvancedSecurityOptionsStatus;
 
 pub use crate::types::_advanced_security_options::AdvancedSecurityOptions;
@@ -173,6 +181,8 @@ pub use crate::types::_natural_language_query_generation_options_input::NaturalL
 
 pub use crate::types::_dry_run_mode::DryRunMode;
 
+pub use crate::types::_identity_center_options_input::IdentityCenterOptionsInput;
+
 pub use crate::types::_advanced_security_options_input::AdvancedSecurityOptionsInput;
 
 pub use crate::types::_jwt_options_input::JwtOptionsInput;
@@ -187,11 +197,21 @@ pub use crate::types::_data_source_type::DataSourceType;
 
 pub use crate::types::_s3_glue_data_catalog::S3GlueDataCatalog;
 
+pub use crate::types::_app_config::AppConfig;
+
+pub use crate::types::_app_config_type::AppConfigType;
+
+pub use crate::types::_iam_identity_center_options::IamIdentityCenterOptions;
+
+pub use crate::types::_data_source::DataSource;
+
 pub use crate::types::_service_software_options::ServiceSoftwareOptions;
 
 pub use crate::types::_deployment_status::DeploymentStatus;
 
 pub use crate::types::_maintenance_type::MaintenanceType;
+
+pub use crate::types::_aws_service_principal::AwsServicePrincipal;
 
 pub use crate::types::_inbound_connection::InboundConnection;
 
@@ -228,6 +248,10 @@ pub use crate::types::_domain_maintenance_details::DomainMaintenanceDetails;
 pub use crate::types::_maintenance_status::MaintenanceStatus;
 
 pub use crate::types::_data_source_details::DataSourceDetails;
+
+pub use crate::types::_application_summary::ApplicationSummary;
+
+pub use crate::types::_application_status::ApplicationStatus;
 
 pub use crate::types::_upgrade_status::UpgradeStatus;
 
@@ -327,6 +351,8 @@ pub use crate::types::_auto_tune_type::AutoTuneType;
 
 pub use crate::types::_auto_tune_options_input::AutoTuneOptionsInput;
 
+pub use crate::types::_iam_identity_center_options_input::IamIdentityCenterOptionsInput;
+
 pub use crate::types::_cancelled_change_property::CancelledChangeProperty;
 
 mod _access_policies_status;
@@ -352,6 +378,14 @@ mod _aiml_options_input;
 mod _aiml_options_output;
 
 mod _aiml_options_status;
+
+mod _app_config;
+
+mod _app_config_type;
+
+mod _application_status;
+
+mod _application_summary;
 
 mod _authorized_principal;
 
@@ -381,6 +415,8 @@ mod _availability_zone_info;
 
 mod _aws_domain_information;
 
+mod _aws_service_principal;
+
 mod _cancelled_change_property;
 
 mod _change_progress_details;
@@ -408,6 +444,8 @@ mod _connection_mode;
 mod _connection_properties;
 
 mod _cross_cluster_search_connection_properties;
+
+mod _data_source;
 
 mod _data_source_details;
 
@@ -470,6 +508,16 @@ mod _environment_info;
 mod _error_details;
 
 mod _filter;
+
+mod _iam_identity_center_options;
+
+mod _iam_identity_center_options_input;
+
+mod _identity_center_options;
+
+mod _identity_center_options_input;
+
+mod _identity_center_options_status;
 
 mod _inbound_connection;
 
@@ -579,6 +627,8 @@ mod _reserved_instance_offering;
 
 mod _reserved_instance_payment_option;
 
+mod _roles_key_id_c_option;
+
 mod _rollback_on_disable;
 
 mod _s3_glue_data_catalog;
@@ -616,6 +666,8 @@ mod _software_update_options_status;
 mod _storage_type;
 
 mod _storage_type_limit;
+
+mod _subject_key_id_c_option;
 
 mod _tag;
 

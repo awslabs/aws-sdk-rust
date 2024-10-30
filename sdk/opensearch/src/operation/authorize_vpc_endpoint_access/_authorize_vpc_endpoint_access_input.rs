@@ -7,6 +7,8 @@ pub struct AuthorizeVpcEndpointAccessInput {
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account ID to grant access to.</p>
     pub account: ::std::option::Option<::std::string::String>,
+    /// <p>The Amazon Web Services service SP to grant access to.</p>
+    pub service: ::std::option::Option<crate::types::AwsServicePrincipal>,
 }
 impl AuthorizeVpcEndpointAccessInput {
     /// <p>The name of the OpenSearch Service domain to provide access to.</p>
@@ -16,6 +18,10 @@ impl AuthorizeVpcEndpointAccessInput {
     /// <p>The Amazon Web Services account ID to grant access to.</p>
     pub fn account(&self) -> ::std::option::Option<&str> {
         self.account.as_deref()
+    }
+    /// <p>The Amazon Web Services service SP to grant access to.</p>
+    pub fn service(&self) -> ::std::option::Option<&crate::types::AwsServicePrincipal> {
+        self.service.as_ref()
     }
 }
 impl AuthorizeVpcEndpointAccessInput {
@@ -31,6 +37,7 @@ impl AuthorizeVpcEndpointAccessInput {
 pub struct AuthorizeVpcEndpointAccessInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) account: ::std::option::Option<::std::string::String>,
+    pub(crate) service: ::std::option::Option<crate::types::AwsServicePrincipal>,
 }
 impl AuthorizeVpcEndpointAccessInputBuilder {
     /// <p>The name of the OpenSearch Service domain to provide access to.</p>
@@ -49,7 +56,6 @@ impl AuthorizeVpcEndpointAccessInputBuilder {
         &self.domain_name
     }
     /// <p>The Amazon Web Services account ID to grant access to.</p>
-    /// This field is required.
     pub fn account(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account = ::std::option::Option::Some(input.into());
         self
@@ -63,6 +69,20 @@ impl AuthorizeVpcEndpointAccessInputBuilder {
     pub fn get_account(&self) -> &::std::option::Option<::std::string::String> {
         &self.account
     }
+    /// <p>The Amazon Web Services service SP to grant access to.</p>
+    pub fn service(mut self, input: crate::types::AwsServicePrincipal) -> Self {
+        self.service = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The Amazon Web Services service SP to grant access to.</p>
+    pub fn set_service(mut self, input: ::std::option::Option<crate::types::AwsServicePrincipal>) -> Self {
+        self.service = input;
+        self
+    }
+    /// <p>The Amazon Web Services service SP to grant access to.</p>
+    pub fn get_service(&self) -> &::std::option::Option<crate::types::AwsServicePrincipal> {
+        &self.service
+    }
     /// Consumes the builder and constructs a [`AuthorizeVpcEndpointAccessInput`](crate::operation::authorize_vpc_endpoint_access::AuthorizeVpcEndpointAccessInput).
     pub fn build(
         self,
@@ -73,6 +93,7 @@ impl AuthorizeVpcEndpointAccessInputBuilder {
         ::std::result::Result::Ok(crate::operation::authorize_vpc_endpoint_access::AuthorizeVpcEndpointAccessInput {
             domain_name: self.domain_name,
             account: self.account,
+            service: self.service,
         })
     }
 }

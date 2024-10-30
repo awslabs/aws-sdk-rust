@@ -199,4 +199,22 @@ pub use crate::types::_platform_device::PlatformDeviceBuilder;
 
 pub use crate::types::_setting::SettingBuilder;
 
+pub use crate::types::_service_deployment_brief::ServiceDeploymentBriefBuilder;
+
+pub use crate::types::_created_at::CreatedAtBuilder;
+
 pub use crate::types::_session::SessionBuilder;
+
+pub use crate::types::_service_revision::ServiceRevisionBuilder;
+
+pub use crate::types::_container_image::ContainerImageBuilder;
+
+pub use crate::types::_service_deployment::ServiceDeploymentBuilder;
+
+pub use crate::types::_service_deployment_alarms::ServiceDeploymentAlarmsBuilder;
+
+pub use crate::types::_service_deployment_circuit_breaker::ServiceDeploymentCircuitBreakerBuilder;
+
+pub use crate::types::_rollback::RollbackBuilder;
+
+pub use crate::types::_service_revision_summary::ServiceRevisionSummaryBuilder;

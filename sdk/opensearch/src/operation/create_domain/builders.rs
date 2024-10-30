@@ -373,6 +373,20 @@ impl CreateDomainFluentBuilder {
     pub fn get_advanced_security_options(&self) -> &::std::option::Option<crate::types::AdvancedSecurityOptionsInput> {
         self.inner.get_advanced_security_options()
     }
+    /// <p>Options for IAM Identity Center Option control for the domain.</p>
+    pub fn identity_center_options(mut self, input: crate::types::IdentityCenterOptionsInput) -> Self {
+        self.inner = self.inner.identity_center_options(input);
+        self
+    }
+    /// <p>Options for IAM Identity Center Option control for the domain.</p>
+    pub fn set_identity_center_options(mut self, input: ::std::option::Option<crate::types::IdentityCenterOptionsInput>) -> Self {
+        self.inner = self.inner.set_identity_center_options(input);
+        self
+    }
+    /// <p>Options for IAM Identity Center Option control for the domain.</p>
+    pub fn get_identity_center_options(&self) -> &::std::option::Option<crate::types::IdentityCenterOptionsInput> {
+        self.inner.get_identity_center_options()
+    }
     ///
     /// Appends an item to `TagList`.
     ///

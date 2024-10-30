@@ -76,6 +76,8 @@ pub struct ModelPackage {
     pub security_config: ::std::option::Option<crate::types::ModelPackageSecurityConfig>,
     /// <p>The model card associated with the model package. Since <code>ModelPackageModelCard</code> is tied to a model package, it is a specific usage of a model card and its schema is simplified compared to the schema of <code>ModelCard</code>. The <code>ModelPackageModelCard</code> schema does not include <code>model_package_details</code>, and <code>model_overview</code> is composed of the <code>model_creator</code> and <code>model_artifact</code> properties. For more information about the model package model card schema, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-registry-details.html#model-card-schema">Model package model card schema</a>. For more information about the model card associated with the model package, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-registry-details.html">View the Details of a Model Version</a>.</p>
     pub model_card: ::std::option::Option<crate::types::ModelPackageModelCard>,
+    /// <p>A structure describing the current state of the model in its life cycle.</p>
+    pub model_life_cycle: ::std::option::Option<crate::types::ModelLifeCycle>,
     /// <p>A list of the tags associated with the model package. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The metadata properties for the model package.</p>
@@ -212,6 +214,10 @@ impl ModelPackage {
     pub fn model_card(&self) -> ::std::option::Option<&crate::types::ModelPackageModelCard> {
         self.model_card.as_ref()
     }
+    /// <p>A structure describing the current state of the model in its life cycle.</p>
+    pub fn model_life_cycle(&self) -> ::std::option::Option<&crate::types::ModelLifeCycle> {
+        self.model_life_cycle.as_ref()
+    }
     /// <p>A list of the tags associated with the model package. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
@@ -268,6 +274,7 @@ pub struct ModelPackageBuilder {
     pub(crate) source_uri: ::std::option::Option<::std::string::String>,
     pub(crate) security_config: ::std::option::Option<crate::types::ModelPackageSecurityConfig>,
     pub(crate) model_card: ::std::option::Option<crate::types::ModelPackageModelCard>,
+    pub(crate) model_life_cycle: ::std::option::Option<crate::types::ModelLifeCycle>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) customer_metadata_properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) drift_check_baselines: ::std::option::Option<crate::types::DriftCheckBaselines>,
@@ -709,6 +716,20 @@ impl ModelPackageBuilder {
     pub fn get_model_card(&self) -> &::std::option::Option<crate::types::ModelPackageModelCard> {
         &self.model_card
     }
+    /// <p>A structure describing the current state of the model in its life cycle.</p>
+    pub fn model_life_cycle(mut self, input: crate::types::ModelLifeCycle) -> Self {
+        self.model_life_cycle = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A structure describing the current state of the model in its life cycle.</p>
+    pub fn set_model_life_cycle(mut self, input: ::std::option::Option<crate::types::ModelLifeCycle>) -> Self {
+        self.model_life_cycle = input;
+        self
+    }
+    /// <p>A structure describing the current state of the model in its life cycle.</p>
+    pub fn get_model_life_cycle(&self) -> &::std::option::Option<crate::types::ModelLifeCycle> {
+        &self.model_life_cycle
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -815,6 +836,7 @@ impl ModelPackageBuilder {
             source_uri: self.source_uri,
             security_config: self.security_config,
             model_card: self.model_card,
+            model_life_cycle: self.model_life_cycle,
             tags: self.tags,
             customer_metadata_properties: self.customer_metadata_properties,
             drift_check_baselines: self.drift_check_baselines,

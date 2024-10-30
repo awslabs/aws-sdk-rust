@@ -7,6 +7,8 @@ pub struct CreateSecurityGroupOutput {
     pub group_id: ::std::option::Option<::std::string::String>,
     /// <p>The tags assigned to the security group.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    /// <p>The security group ARN.</p>
+    pub security_group_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateSecurityGroupOutput {
@@ -19,6 +21,10 @@ impl CreateSecurityGroupOutput {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
     pub fn tags(&self) -> &[crate::types::Tag] {
         self.tags.as_deref().unwrap_or_default()
+    }
+    /// <p>The security group ARN.</p>
+    pub fn security_group_arn(&self) -> ::std::option::Option<&str> {
+        self.security_group_arn.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateSecurityGroupOutput {
@@ -39,6 +45,7 @@ impl CreateSecurityGroupOutput {
 pub struct CreateSecurityGroupOutputBuilder {
     pub(crate) group_id: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) security_group_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateSecurityGroupOutputBuilder {
@@ -76,6 +83,20 @@ impl CreateSecurityGroupOutputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }
+    /// <p>The security group ARN.</p>
+    pub fn security_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.security_group_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The security group ARN.</p>
+    pub fn set_security_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.security_group_arn = input;
+        self
+    }
+    /// <p>The security group ARN.</p>
+    pub fn get_security_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.security_group_arn
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -90,6 +111,7 @@ impl CreateSecurityGroupOutputBuilder {
         crate::operation::create_security_group::CreateSecurityGroupOutput {
             group_id: self.group_id,
             tags: self.tags,
+            security_group_arn: self.security_group_arn,
             _request_id: self._request_id,
         }
     }

@@ -37,6 +37,8 @@ pub(crate) mod shape_create_availability_configuration;
 
 pub(crate) mod shape_create_group;
 
+pub(crate) mod shape_create_identity_center_application;
+
 pub(crate) mod shape_create_impersonation_role;
 
 pub(crate) mod shape_create_mobile_device_access_rule;
@@ -57,6 +59,10 @@ pub(crate) mod shape_delete_email_monitoring_configuration;
 
 pub(crate) mod shape_delete_group;
 
+pub(crate) mod shape_delete_identity_center_application;
+
+pub(crate) mod shape_delete_identity_provider_configuration;
+
 pub(crate) mod shape_delete_impersonation_role;
 
 pub(crate) mod shape_delete_mailbox_permissions;
@@ -66,6 +72,8 @@ pub(crate) mod shape_delete_mobile_device_access_override;
 pub(crate) mod shape_delete_mobile_device_access_rule;
 
 pub(crate) mod shape_delete_organization;
+
+pub(crate) mod shape_delete_personal_access_token;
 
 pub(crate) mod shape_delete_resource;
 
@@ -82,6 +90,8 @@ pub(crate) mod shape_describe_email_monitoring_configuration;
 pub(crate) mod shape_describe_entity;
 
 pub(crate) mod shape_describe_group;
+
+pub(crate) mod shape_describe_identity_provider_configuration;
 
 pub(crate) mod shape_describe_inbound_dmarc_settings;
 
@@ -113,6 +123,8 @@ pub(crate) mod shape_get_mobile_device_access_effect;
 
 pub(crate) mod shape_get_mobile_device_access_override;
 
+pub(crate) mod shape_get_personal_access_token_metadata;
+
 pub(crate) mod shape_list_access_control_rules;
 
 pub(crate) mod shape_list_aliases;
@@ -139,6 +151,8 @@ pub(crate) mod shape_list_mobile_device_access_rules;
 
 pub(crate) mod shape_list_organizations;
 
+pub(crate) mod shape_list_personal_access_tokens;
+
 pub(crate) mod shape_list_resource_delegates;
 
 pub(crate) mod shape_list_resources;
@@ -150,6 +164,8 @@ pub(crate) mod shape_list_users;
 pub(crate) mod shape_put_access_control_rule;
 
 pub(crate) mod shape_put_email_monitoring_configuration;
+
+pub(crate) mod shape_put_identity_provider_configuration;
 
 pub(crate) mod shape_put_inbound_dmarc_settings;
 
@@ -213,6 +229,8 @@ pub(crate) mod shape_create_availability_configuration_input;
 
 pub(crate) mod shape_create_group_input;
 
+pub(crate) mod shape_create_identity_center_application_input;
+
 pub(crate) mod shape_create_impersonation_role_input;
 
 pub(crate) mod shape_create_mobile_device_access_rule_input;
@@ -233,6 +251,10 @@ pub(crate) mod shape_delete_email_monitoring_configuration_input;
 
 pub(crate) mod shape_delete_group_input;
 
+pub(crate) mod shape_delete_identity_center_application_input;
+
+pub(crate) mod shape_delete_identity_provider_configuration_input;
+
 pub(crate) mod shape_delete_impersonation_role_input;
 
 pub(crate) mod shape_delete_mailbox_permissions_input;
@@ -242,6 +264,8 @@ pub(crate) mod shape_delete_mobile_device_access_override_input;
 pub(crate) mod shape_delete_mobile_device_access_rule_input;
 
 pub(crate) mod shape_delete_organization_input;
+
+pub(crate) mod shape_delete_personal_access_token_input;
 
 pub(crate) mod shape_delete_resource_input;
 
@@ -258,6 +282,8 @@ pub(crate) mod shape_describe_email_monitoring_configuration_input;
 pub(crate) mod shape_describe_entity_input;
 
 pub(crate) mod shape_describe_group_input;
+
+pub(crate) mod shape_describe_identity_provider_configuration_input;
 
 pub(crate) mod shape_describe_inbound_dmarc_settings_input;
 
@@ -303,6 +329,8 @@ pub(crate) mod shape_get_mobile_device_access_effect_input;
 
 pub(crate) mod shape_get_mobile_device_access_override_input;
 
+pub(crate) mod shape_get_personal_access_token_metadata_input;
+
 pub(crate) mod shape_invalid_configuration_exception;
 
 pub(crate) mod shape_invalid_custom_ses_configuration_exception;
@@ -339,6 +367,8 @@ pub(crate) mod shape_list_mobile_device_access_rules_input;
 
 pub(crate) mod shape_list_organizations_input;
 
+pub(crate) mod shape_list_personal_access_tokens_input;
+
 pub(crate) mod shape_list_resource_delegates_input;
 
 pub(crate) mod shape_list_resources_input;
@@ -362,6 +392,8 @@ pub(crate) mod shape_organization_state_exception;
 pub(crate) mod shape_put_access_control_rule_input;
 
 pub(crate) mod shape_put_email_monitoring_configuration_input;
+
+pub(crate) mod shape_put_identity_provider_configuration_input;
 
 pub(crate) mod shape_put_inbound_dmarc_settings_input;
 
@@ -435,6 +467,8 @@ pub(crate) mod shape_group_identifiers;
 
 pub(crate) mod shape_groups;
 
+pub(crate) mod shape_identity_center_configuration;
+
 pub(crate) mod shape_impersonation_matched_rule_list;
 
 pub(crate) mod shape_impersonation_role_list;
@@ -468,6 +502,12 @@ pub(crate) mod shape_mobile_device_access_rules_list;
 pub(crate) mod shape_organization_summaries;
 
 pub(crate) mod shape_permissions;
+
+pub(crate) mod shape_personal_access_token_configuration;
+
+pub(crate) mod shape_personal_access_token_scope_list;
+
+pub(crate) mod shape_personal_access_token_summary_list;
 
 pub(crate) mod shape_resource_delegates;
 
@@ -510,6 +550,8 @@ pub(crate) mod shape_mobile_device_access_rule;
 pub(crate) mod shape_organization_summary;
 
 pub(crate) mod shape_permission;
+
+pub(crate) mod shape_personal_access_token_summary;
 
 pub(crate) mod shape_resource;
 

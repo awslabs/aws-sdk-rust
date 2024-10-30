@@ -239,6 +239,10 @@ mod describe_clusters;
 
 mod describe_container_instances;
 
+mod describe_service_deployments;
+
+mod describe_service_revisions;
+
 mod describe_services;
 
 mod describe_task_definition;
@@ -260,6 +264,8 @@ mod list_attributes;
 mod list_clusters;
 
 mod list_container_instances;
+
+mod list_service_deployments;
 
 mod list_services;
 

@@ -75,6 +75,11 @@ where
                                 crate::protocol_serde::shape_advanced_security_options_status::de_advanced_security_options_status(tokens)?,
                             );
                         }
+                        "IdentityCenterOptions" => {
+                            builder = builder.set_identity_center_options(
+                                crate::protocol_serde::shape_identity_center_options_status::de_identity_center_options_status(tokens)?,
+                            );
+                        }
                         "AutoTuneOptions" => {
                             builder = builder.set_auto_tune_options(
                                 crate::protocol_serde::shape_auto_tune_options_status::de_auto_tune_options_status(tokens)?,

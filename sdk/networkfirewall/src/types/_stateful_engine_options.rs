@@ -16,6 +16,8 @@ pub struct StatefulEngineOptions {
     /// <p><code>REJECT</code> - Network Firewall fails closed and drops all subsequent traffic going to the firewall. Network Firewall also sends a TCP reject packet back to your client so that the client can immediately establish a new session. Network Firewall will have context about the new session and will apply rules to the subsequent traffic.</p></li>
     /// </ul>
     pub stream_exception_policy: ::std::option::Option<crate::types::StreamExceptionPolicy>,
+    /// <p>Configures the amount of time that can pass without any traffic sent through the firewall before the firewall determines that the connection is idle.</p>
+    pub flow_timeouts: ::std::option::Option<crate::types::FlowTimeouts>,
 }
 impl StatefulEngineOptions {
     /// <p>Indicates how to manage the order of stateful rule evaluation for the policy. <code>STRICT_ORDER</code> is the default and recommended option. With <code>STRICT_ORDER</code>, provide your rules in the order that you want them to be evaluated. You can then choose one or more default actions for packets that don't match any rules. Choose <code>STRICT_ORDER</code> to have the stateful rules engine determine the evaluation order of your rules. The default action for this rule order is <code>PASS</code>, followed by <code>DROP</code>, <code>REJECT</code>, and <code>ALERT</code> actions. Stateful rules are provided to the rule engine as Suricata compatible strings, and Suricata evaluates them based on your settings. For more information, see <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-rule-evaluation-order.html">Evaluation order for stateful rules</a> in the <i>Network Firewall Developer Guide</i>.</p>
@@ -34,6 +36,10 @@ impl StatefulEngineOptions {
     pub fn stream_exception_policy(&self) -> ::std::option::Option<&crate::types::StreamExceptionPolicy> {
         self.stream_exception_policy.as_ref()
     }
+    /// <p>Configures the amount of time that can pass without any traffic sent through the firewall before the firewall determines that the connection is idle.</p>
+    pub fn flow_timeouts(&self) -> ::std::option::Option<&crate::types::FlowTimeouts> {
+        self.flow_timeouts.as_ref()
+    }
 }
 impl StatefulEngineOptions {
     /// Creates a new builder-style object to manufacture [`StatefulEngineOptions`](crate::types::StatefulEngineOptions).
@@ -48,6 +54,7 @@ impl StatefulEngineOptions {
 pub struct StatefulEngineOptionsBuilder {
     pub(crate) rule_order: ::std::option::Option<crate::types::RuleOrder>,
     pub(crate) stream_exception_policy: ::std::option::Option<crate::types::StreamExceptionPolicy>,
+    pub(crate) flow_timeouts: ::std::option::Option<crate::types::FlowTimeouts>,
 }
 impl StatefulEngineOptionsBuilder {
     /// <p>Indicates how to manage the order of stateful rule evaluation for the policy. <code>STRICT_ORDER</code> is the default and recommended option. With <code>STRICT_ORDER</code>, provide your rules in the order that you want them to be evaluated. You can then choose one or more default actions for packets that don't match any rules. Choose <code>STRICT_ORDER</code> to have the stateful rules engine determine the evaluation order of your rules. The default action for this rule order is <code>PASS</code>, followed by <code>DROP</code>, <code>REJECT</code>, and <code>ALERT</code> actions. Stateful rules are provided to the rule engine as Suricata compatible strings, and Suricata evaluates them based on your settings. For more information, see <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-rule-evaluation-order.html">Evaluation order for stateful rules</a> in the <i>Network Firewall Developer Guide</i>.</p>
@@ -102,11 +109,26 @@ impl StatefulEngineOptionsBuilder {
     pub fn get_stream_exception_policy(&self) -> &::std::option::Option<crate::types::StreamExceptionPolicy> {
         &self.stream_exception_policy
     }
+    /// <p>Configures the amount of time that can pass without any traffic sent through the firewall before the firewall determines that the connection is idle.</p>
+    pub fn flow_timeouts(mut self, input: crate::types::FlowTimeouts) -> Self {
+        self.flow_timeouts = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Configures the amount of time that can pass without any traffic sent through the firewall before the firewall determines that the connection is idle.</p>
+    pub fn set_flow_timeouts(mut self, input: ::std::option::Option<crate::types::FlowTimeouts>) -> Self {
+        self.flow_timeouts = input;
+        self
+    }
+    /// <p>Configures the amount of time that can pass without any traffic sent through the firewall before the firewall determines that the connection is idle.</p>
+    pub fn get_flow_timeouts(&self) -> &::std::option::Option<crate::types::FlowTimeouts> {
+        &self.flow_timeouts
+    }
     /// Consumes the builder and constructs a [`StatefulEngineOptions`](crate::types::StatefulEngineOptions).
     pub fn build(self) -> crate::types::StatefulEngineOptions {
         crate::types::StatefulEngineOptions {
             rule_order: self.rule_order,
             stream_exception_policy: self.stream_exception_policy,
+            flow_timeouts: self.flow_timeouts,
         }
     }
 }

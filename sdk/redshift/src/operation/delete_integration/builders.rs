@@ -22,7 +22,7 @@ impl crate::operation::delete_integration::builders::DeleteIntegrationInputBuild
 }
 /// Fluent builder constructing a request to `DeleteIntegration`.
 ///
-/// <p>Deletes a zero-ETL integration with Amazon Redshift.</p>
+/// <p>Deletes a zero-ETL integration or S3 event integration with Amazon Redshift.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteIntegrationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

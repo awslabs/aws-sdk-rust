@@ -398,6 +398,8 @@ mod associate_nat_gateway_address;
 
 mod associate_route_table;
 
+mod associate_security_group_vpc;
+
 mod associate_subnet_cidr_block;
 
 mod associate_transit_gateway_multicast_domain;
@@ -1025,6 +1027,8 @@ mod describe_security_group_references;
 
 mod describe_security_group_rules;
 
+mod describe_security_group_vpc_associations;
+
 mod describe_security_groups;
 
 mod describe_snapshot_attribute;
@@ -1190,6 +1194,8 @@ mod disassociate_ipam_resource_discovery;
 mod disassociate_nat_gateway_address;
 
 mod disassociate_route_table;
+
+mod disassociate_security_group_vpc;
 
 mod disassociate_subnet_cidr_block;
 

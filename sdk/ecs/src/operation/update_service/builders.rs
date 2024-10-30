@@ -252,17 +252,17 @@ impl UpdateServiceFluentBuilder {
     pub fn get_capacity_provider_strategy(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CapacityProviderStrategyItem>> {
         self.inner.get_capacity_provider_strategy()
     }
-    /// <p>Optional deployment parameters that control how many tasks run during the deployment and the ordering of stopping and starting tasks.</p>
+    /// <p>Optional deployment parameters that control how many tasks run during the deployment and the failure detection methods.</p>
     pub fn deployment_configuration(mut self, input: crate::types::DeploymentConfiguration) -> Self {
         self.inner = self.inner.deployment_configuration(input);
         self
     }
-    /// <p>Optional deployment parameters that control how many tasks run during the deployment and the ordering of stopping and starting tasks.</p>
+    /// <p>Optional deployment parameters that control how many tasks run during the deployment and the failure detection methods.</p>
     pub fn set_deployment_configuration(mut self, input: ::std::option::Option<crate::types::DeploymentConfiguration>) -> Self {
         self.inner = self.inner.set_deployment_configuration(input);
         self
     }
-    /// <p>Optional deployment parameters that control how many tasks run during the deployment and the ordering of stopping and starting tasks.</p>
+    /// <p>Optional deployment parameters that control how many tasks run during the deployment and the failure detection methods.</p>
     pub fn get_deployment_configuration(&self) -> &::std::option::Option<crate::types::DeploymentConfiguration> {
         self.inner.get_deployment_configuration()
     }

@@ -17,9 +17,19 @@ pub use crate::types::_security_policy_summary::SecurityPolicySummary;
 
 pub use crate::types::_security_config_detail::SecurityConfigDetail;
 
+pub use crate::types::_iam_identity_center_config_options::IamIdentityCenterConfigOptions;
+
+pub use crate::types::_iam_identity_center_group_attribute::IamIdentityCenterGroupAttribute;
+
+pub use crate::types::_iam_identity_center_user_attribute::IamIdentityCenterUserAttribute;
+
 pub use crate::types::_saml_config_options::SamlConfigOptions;
 
 pub use crate::types::_security_config_type::SecurityConfigType;
+
+pub use crate::types::_update_iam_identity_center_config_options::UpdateIamIdentityCenterConfigOptions;
+
+pub use crate::types::_create_iam_identity_center_config_options::CreateIamIdentityCenterConfigOptions;
 
 pub use crate::types::_security_config_summary::SecurityConfigSummary;
 
@@ -113,6 +123,8 @@ mod _collection_type;
 
 mod _create_collection_detail;
 
+mod _create_iam_identity_center_config_options;
+
 mod _create_vpc_endpoint_detail;
 
 mod _delete_collection_detail;
@@ -122,6 +134,12 @@ mod _delete_vpc_endpoint_detail;
 mod _effective_lifecycle_policy_detail;
 
 mod _effective_lifecycle_policy_error_detail;
+
+mod _iam_identity_center_config_options;
+
+mod _iam_identity_center_group_attribute;
+
+mod _iam_identity_center_user_attribute;
 
 mod _lifecycle_policy_detail;
 
@@ -162,6 +180,8 @@ mod _standby_replicas;
 mod _tag;
 
 mod _update_collection_detail;
+
+mod _update_iam_identity_center_config_options;
 
 mod _update_vpc_endpoint_detail;
 

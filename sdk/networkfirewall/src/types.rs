@@ -109,6 +109,8 @@ pub use crate::types::_policy_variables::PolicyVariables;
 
 pub use crate::types::_stateful_engine_options::StatefulEngineOptions;
 
+pub use crate::types::_flow_timeouts::FlowTimeouts;
+
 pub use crate::types::_stream_exception_policy::StreamExceptionPolicy;
 
 pub use crate::types::_stateful_rule_group_reference::StatefulRuleGroupReference;
@@ -198,6 +200,8 @@ mod _firewall_policy_response;
 mod _firewall_status;
 
 mod _firewall_status_value;
+
+mod _flow_timeouts;
 
 mod _generated_rules_type;
 

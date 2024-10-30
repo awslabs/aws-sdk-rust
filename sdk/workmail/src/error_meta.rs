@@ -402,6 +402,41 @@ impl From<crate::operation::create_group::CreateGroupError> for Error {
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_identity_center_application::CreateIdentityCenterApplicationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_identity_center_application::CreateIdentityCenterApplicationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_identity_center_application::CreateIdentityCenterApplicationError> for Error {
+    fn from(err: crate::operation::create_identity_center_application::CreateIdentityCenterApplicationError) -> Self {
+        match err {
+            crate::operation::create_identity_center_application::CreateIdentityCenterApplicationError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::create_identity_center_application::CreateIdentityCenterApplicationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_impersonation_role::CreateImpersonationRoleError, R>>
     for Error
 where
@@ -752,6 +787,87 @@ impl From<crate::operation::delete_group::DeleteGroupError> for Error {
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_identity_center_application::DeleteIdentityCenterApplicationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_identity_center_application::DeleteIdentityCenterApplicationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_identity_center_application::DeleteIdentityCenterApplicationError> for Error {
+    fn from(err: crate::operation::delete_identity_center_application::DeleteIdentityCenterApplicationError) -> Self {
+        match err {
+            crate::operation::delete_identity_center_application::DeleteIdentityCenterApplicationError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::delete_identity_center_application::DeleteIdentityCenterApplicationError::OrganizationStateException(inner) => {
+                Error::OrganizationStateException(inner)
+            }
+            crate::operation::delete_identity_center_application::DeleteIdentityCenterApplicationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_identity_provider_configuration::DeleteIdentityProviderConfigurationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_identity_provider_configuration::DeleteIdentityProviderConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_identity_provider_configuration::DeleteIdentityProviderConfigurationError> for Error {
+    fn from(err: crate::operation::delete_identity_provider_configuration::DeleteIdentityProviderConfigurationError) -> Self {
+        match err {
+            crate::operation::delete_identity_provider_configuration::DeleteIdentityProviderConfigurationError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::delete_identity_provider_configuration::DeleteIdentityProviderConfigurationError::OrganizationNotFoundException(
+                inner,
+            ) => Error::OrganizationNotFoundException(inner),
+            crate::operation::delete_identity_provider_configuration::DeleteIdentityProviderConfigurationError::OrganizationStateException(inner) => {
+                Error::OrganizationStateException(inner)
+            }
+            crate::operation::delete_identity_provider_configuration::DeleteIdentityProviderConfigurationError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_impersonation_role::DeleteImpersonationRoleError, R>>
     for Error
 where
@@ -934,6 +1050,39 @@ impl From<crate::operation::delete_organization::DeleteOrganizationError> for Er
                 Error::OrganizationStateException(inner)
             }
             crate::operation::delete_organization::DeleteOrganizationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_personal_access_token::DeletePersonalAccessTokenError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_personal_access_token::DeletePersonalAccessTokenError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_personal_access_token::DeletePersonalAccessTokenError> for Error {
+    fn from(err: crate::operation::delete_personal_access_token::DeletePersonalAccessTokenError) -> Self {
+        match err {
+            crate::operation::delete_personal_access_token::DeletePersonalAccessTokenError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::delete_personal_access_token::DeletePersonalAccessTokenError::OrganizationNotFoundException(inner) => {
+                Error::OrganizationNotFoundException(inner)
+            }
+            crate::operation::delete_personal_access_token::DeletePersonalAccessTokenError::OrganizationStateException(inner) => {
+                Error::OrganizationStateException(inner)
+            }
+            crate::operation::delete_personal_access_token::DeletePersonalAccessTokenError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1203,6 +1352,52 @@ impl From<crate::operation::describe_group::DescribeGroupError> for Error {
     }
 }
 impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_identity_provider_configuration::DescribeIdentityProviderConfigurationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_identity_provider_configuration::DescribeIdentityProviderConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_identity_provider_configuration::DescribeIdentityProviderConfigurationError> for Error {
+    fn from(err: crate::operation::describe_identity_provider_configuration::DescribeIdentityProviderConfigurationError) -> Self {
+        match err {
+            crate::operation::describe_identity_provider_configuration::DescribeIdentityProviderConfigurationError::InvalidParameterException(
+                inner,
+            ) => Error::InvalidParameterException(inner),
+            crate::operation::describe_identity_provider_configuration::DescribeIdentityProviderConfigurationError::OrganizationNotFoundException(
+                inner,
+            ) => Error::OrganizationNotFoundException(inner),
+            crate::operation::describe_identity_provider_configuration::DescribeIdentityProviderConfigurationError::OrganizationStateException(
+                inner,
+            ) => Error::OrganizationStateException(inner),
+            crate::operation::describe_identity_provider_configuration::DescribeIdentityProviderConfigurationError::ResourceNotFoundException(
+                inner,
+            ) => Error::ResourceNotFoundException(inner),
+            crate::operation::describe_identity_provider_configuration::DescribeIdentityProviderConfigurationError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
     From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_inbound_dmarc_settings::DescribeInboundDmarcSettingsError, R>>
     for Error
 where
@@ -1346,6 +1541,10 @@ where
 impl From<crate::operation::describe_user::DescribeUserError> for Error {
     fn from(err: crate::operation::describe_user::DescribeUserError) -> Self {
         match err {
+            crate::operation::describe_user::DescribeUserError::DirectoryServiceAuthenticationFailedException(inner) => {
+                Error::DirectoryServiceAuthenticationFailedException(inner)
+            }
+            crate::operation::describe_user::DescribeUserError::DirectoryUnavailableException(inner) => Error::DirectoryUnavailableException(inner),
             crate::operation::describe_user::DescribeUserError::EntityNotFoundException(inner) => Error::EntityNotFoundException(inner),
             crate::operation::describe_user::DescribeUserError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
             crate::operation::describe_user::DescribeUserError::OrganizationNotFoundException(inner) => Error::OrganizationNotFoundException(inner),
@@ -1748,6 +1947,50 @@ impl From<crate::operation::get_mobile_device_access_override::GetMobileDeviceAc
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_personal_access_token_metadata::GetPersonalAccessTokenMetadataError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_personal_access_token_metadata::GetPersonalAccessTokenMetadataError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_personal_access_token_metadata::GetPersonalAccessTokenMetadataError> for Error {
+    fn from(err: crate::operation::get_personal_access_token_metadata::GetPersonalAccessTokenMetadataError) -> Self {
+        match err {
+            crate::operation::get_personal_access_token_metadata::GetPersonalAccessTokenMetadataError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::get_personal_access_token_metadata::GetPersonalAccessTokenMetadataError::OrganizationNotFoundException(inner) => {
+                Error::OrganizationNotFoundException(inner)
+            }
+            crate::operation::get_personal_access_token_metadata::GetPersonalAccessTokenMetadataError::OrganizationStateException(inner) => {
+                Error::OrganizationStateException(inner)
+            }
+            crate::operation::get_personal_access_token_metadata::GetPersonalAccessTokenMetadataError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_personal_access_token_metadata::GetPersonalAccessTokenMetadataError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_access_control_rules::ListAccessControlRulesError, R>>
     for Error
 where
@@ -1832,6 +2075,9 @@ where
 impl From<crate::operation::list_availability_configurations::ListAvailabilityConfigurationsError> for Error {
     fn from(err: crate::operation::list_availability_configurations::ListAvailabilityConfigurationsError) -> Self {
         match err {
+            crate::operation::list_availability_configurations::ListAvailabilityConfigurationsError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
             crate::operation::list_availability_configurations::ListAvailabilityConfigurationsError::OrganizationNotFoundException(inner) => {
                 Error::OrganizationNotFoundException(inner)
             }
@@ -2159,6 +2405,45 @@ impl From<crate::operation::list_organizations::ListOrganizationsError> for Erro
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_personal_access_tokens::ListPersonalAccessTokensError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_personal_access_tokens::ListPersonalAccessTokensError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_personal_access_tokens::ListPersonalAccessTokensError> for Error {
+    fn from(err: crate::operation::list_personal_access_tokens::ListPersonalAccessTokensError) -> Self {
+        match err {
+            crate::operation::list_personal_access_tokens::ListPersonalAccessTokensError::EntityNotFoundException(inner) => {
+                Error::EntityNotFoundException(inner)
+            }
+            crate::operation::list_personal_access_tokens::ListPersonalAccessTokensError::EntityStateException(inner) => {
+                Error::EntityStateException(inner)
+            }
+            crate::operation::list_personal_access_tokens::ListPersonalAccessTokensError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::list_personal_access_tokens::ListPersonalAccessTokensError::OrganizationNotFoundException(inner) => {
+                Error::OrganizationNotFoundException(inner)
+            }
+            crate::operation::list_personal_access_tokens::ListPersonalAccessTokensError::OrganizationStateException(inner) => {
+                Error::OrganizationStateException(inner)
+            }
+            crate::operation::list_personal_access_tokens::ListPersonalAccessTokensError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_resource_delegates::ListResourceDelegatesError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -2353,6 +2638,50 @@ impl From<crate::operation::put_email_monitoring_configuration::PutEmailMonitori
                 Error::ResourceNotFoundException(inner)
             }
             crate::operation::put_email_monitoring_configuration::PutEmailMonitoringConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::put_identity_provider_configuration::PutIdentityProviderConfigurationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::put_identity_provider_configuration::PutIdentityProviderConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::put_identity_provider_configuration::PutIdentityProviderConfigurationError> for Error {
+    fn from(err: crate::operation::put_identity_provider_configuration::PutIdentityProviderConfigurationError) -> Self {
+        match err {
+            crate::operation::put_identity_provider_configuration::PutIdentityProviderConfigurationError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::put_identity_provider_configuration::PutIdentityProviderConfigurationError::OrganizationNotFoundException(inner) => {
+                Error::OrganizationNotFoundException(inner)
+            }
+            crate::operation::put_identity_provider_configuration::PutIdentityProviderConfigurationError::OrganizationStateException(inner) => {
+                Error::OrganizationStateException(inner)
+            }
+            crate::operation::put_identity_provider_configuration::PutIdentityProviderConfigurationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::put_identity_provider_configuration::PutIdentityProviderConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

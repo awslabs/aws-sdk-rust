@@ -309,6 +309,12 @@ pub use crate::types::_sort_order::SortOrder;
 
 pub use crate::types::_task_definition_family_status::TaskDefinitionFamilyStatus;
 
+pub use crate::types::_service_deployment_brief::ServiceDeploymentBrief;
+
+pub use crate::types::_service_deployment_status::ServiceDeploymentStatus;
+
+pub use crate::types::_created_at::CreatedAt;
+
 pub use crate::types::_session::Session;
 
 pub use crate::types::_task_set_field::TaskSetField;
@@ -318,6 +324,22 @@ pub use crate::types::_task_field::TaskField;
 pub use crate::types::_task_definition_field::TaskDefinitionField;
 
 pub use crate::types::_service_field::ServiceField;
+
+pub use crate::types::_service_revision::ServiceRevision;
+
+pub use crate::types::_container_image::ContainerImage;
+
+pub use crate::types::_service_deployment::ServiceDeployment;
+
+pub use crate::types::_service_deployment_alarms::ServiceDeploymentAlarms;
+
+pub use crate::types::_service_deployment_rollback_monitors_status::ServiceDeploymentRollbackMonitorsStatus;
+
+pub use crate::types::_service_deployment_circuit_breaker::ServiceDeploymentCircuitBreaker;
+
+pub use crate::types::_rollback::Rollback;
+
+pub use crate::types::_service_revision_summary::ServiceRevisionSummary;
 
 pub use crate::types::_container_instance_field::ContainerInstanceField;
 
@@ -379,6 +401,8 @@ mod _container_definition;
 
 mod _container_dependency;
 
+mod _container_image;
+
 mod _container_instance;
 
 mod _container_instance_field;
@@ -394,6 +418,8 @@ mod _container_restart_policy;
 mod _container_state_change;
 
 mod _cpu_architecture;
+
+mod _created_at;
 
 mod _deployment;
 
@@ -547,6 +573,8 @@ mod _resource_requirement;
 
 mod _resource_type;
 
+mod _rollback;
+
 mod _runtime_platform;
 
 mod _scale;
@@ -573,6 +601,18 @@ mod _service_connect_tls_certificate_authority;
 
 mod _service_connect_tls_configuration;
 
+mod _service_deployment;
+
+mod _service_deployment_alarms;
+
+mod _service_deployment_brief;
+
+mod _service_deployment_circuit_breaker;
+
+mod _service_deployment_rollback_monitors_status;
+
+mod _service_deployment_status;
+
 mod _service_event;
 
 mod _service_field;
@@ -580,6 +620,10 @@ mod _service_field;
 mod _service_managed_ebs_volume_configuration;
 
 mod _service_registry;
+
+mod _service_revision;
+
+mod _service_revision_summary;
 
 mod _service_volume_configuration;
 

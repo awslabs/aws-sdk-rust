@@ -227,6 +227,8 @@ pub use crate::types::_monitoring_constraints_resource::MonitoringConstraintsRes
 
 pub use crate::types::_schedule_config::ScheduleConfig;
 
+pub use crate::types::_model_life_cycle::ModelLifeCycle;
+
 pub use crate::types::_model_package_model_card::ModelPackageModelCard;
 
 pub use crate::types::_model_card_status::ModelCardStatus;
@@ -2738,6 +2740,8 @@ mod _model_infrastructure_type;
 mod _model_input;
 
 mod _model_latency_threshold;
+
+mod _model_life_cycle;
 
 mod _model_metadata_filter;
 

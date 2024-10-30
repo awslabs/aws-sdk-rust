@@ -8,7 +8,7 @@ pub struct DescribeLocationNfsOutput {
     pub location_arn: ::std::option::Option<::std::string::String>,
     /// <p>The URI of the NFS location.</p>
     pub location_uri: ::std::option::Option<::std::string::String>,
-    /// <p>The DataSync agents that are connecting to a Network File System (NFS) location.</p>
+    /// <p>The DataSync agents that can connect to your Network File System (NFS) file server.</p>
     pub on_prem_config: ::std::option::Option<crate::types::OnPremConfig>,
     /// <p>The mount options that DataSync uses to mount your NFS file server.</p>
     pub mount_options: ::std::option::Option<crate::types::NfsMountOptions>,
@@ -25,7 +25,7 @@ impl DescribeLocationNfsOutput {
     pub fn location_uri(&self) -> ::std::option::Option<&str> {
         self.location_uri.as_deref()
     }
-    /// <p>The DataSync agents that are connecting to a Network File System (NFS) location.</p>
+    /// <p>The DataSync agents that can connect to your Network File System (NFS) file server.</p>
     pub fn on_prem_config(&self) -> ::std::option::Option<&crate::types::OnPremConfig> {
         self.on_prem_config.as_ref()
     }
@@ -90,17 +90,17 @@ impl DescribeLocationNfsOutputBuilder {
     pub fn get_location_uri(&self) -> &::std::option::Option<::std::string::String> {
         &self.location_uri
     }
-    /// <p>The DataSync agents that are connecting to a Network File System (NFS) location.</p>
+    /// <p>The DataSync agents that can connect to your Network File System (NFS) file server.</p>
     pub fn on_prem_config(mut self, input: crate::types::OnPremConfig) -> Self {
         self.on_prem_config = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The DataSync agents that are connecting to a Network File System (NFS) location.</p>
+    /// <p>The DataSync agents that can connect to your Network File System (NFS) file server.</p>
     pub fn set_on_prem_config(mut self, input: ::std::option::Option<crate::types::OnPremConfig>) -> Self {
         self.on_prem_config = input;
         self
     }
-    /// <p>The DataSync agents that are connecting to a Network File System (NFS) location.</p>
+    /// <p>The DataSync agents that can connect to your Network File System (NFS) file server.</p>
     pub fn get_on_prem_config(&self) -> &::std::option::Option<crate::types::OnPremConfig> {
         &self.on_prem_config
     }

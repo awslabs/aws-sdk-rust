@@ -10,6 +10,8 @@ pub struct TaskListEntry {
     pub status: ::std::option::Option<crate::types::TaskStatus>,
     /// <p>The name of the task.</p>
     pub name: ::std::option::Option<::std::string::String>,
+    /// <p>The task mode that you're using. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/choosing-task-mode.html">Choosing a task mode for your data transfer</a>.</p>
+    pub task_mode: ::std::option::Option<crate::types::TaskMode>,
 }
 impl TaskListEntry {
     /// <p>The Amazon Resource Name (ARN) of the task.</p>
@@ -23,6 +25,10 @@ impl TaskListEntry {
     /// <p>The name of the task.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
+    }
+    /// <p>The task mode that you're using. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/choosing-task-mode.html">Choosing a task mode for your data transfer</a>.</p>
+    pub fn task_mode(&self) -> ::std::option::Option<&crate::types::TaskMode> {
+        self.task_mode.as_ref()
     }
 }
 impl TaskListEntry {
@@ -39,6 +45,7 @@ pub struct TaskListEntryBuilder {
     pub(crate) task_arn: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::TaskStatus>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) task_mode: ::std::option::Option<crate::types::TaskMode>,
 }
 impl TaskListEntryBuilder {
     /// <p>The Amazon Resource Name (ARN) of the task.</p>
@@ -83,12 +90,27 @@ impl TaskListEntryBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
+    /// <p>The task mode that you're using. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/choosing-task-mode.html">Choosing a task mode for your data transfer</a>.</p>
+    pub fn task_mode(mut self, input: crate::types::TaskMode) -> Self {
+        self.task_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The task mode that you're using. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/choosing-task-mode.html">Choosing a task mode for your data transfer</a>.</p>
+    pub fn set_task_mode(mut self, input: ::std::option::Option<crate::types::TaskMode>) -> Self {
+        self.task_mode = input;
+        self
+    }
+    /// <p>The task mode that you're using. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/choosing-task-mode.html">Choosing a task mode for your data transfer</a>.</p>
+    pub fn get_task_mode(&self) -> &::std::option::Option<crate::types::TaskMode> {
+        &self.task_mode
+    }
     /// Consumes the builder and constructs a [`TaskListEntry`](crate::types::TaskListEntry).
     pub fn build(self) -> crate::types::TaskListEntry {
         crate::types::TaskListEntry {
             task_arn: self.task_arn,
             status: self.status,
             name: self.name,
+            task_mode: self.task_mode,
         }
     }
 }

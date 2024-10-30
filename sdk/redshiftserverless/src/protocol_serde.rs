@@ -285,6 +285,8 @@ pub(crate) mod shape_namespace;
 
 pub(crate) mod shape_namespace_list;
 
+pub(crate) mod shape_performance_target;
+
 pub(crate) mod shape_recovery_point;
 
 pub(crate) mod shape_recovery_point_list;

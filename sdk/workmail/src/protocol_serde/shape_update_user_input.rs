@@ -54,5 +54,8 @@ pub fn ser_update_user_input_input(
     if let Some(var_17) = &input.office {
         object.key("Office").string(var_17.as_str());
     }
+    if let Some(var_18) = &input.identity_provider_user_id {
+        object.key("IdentityProviderUserId").string(var_18.as_str());
+    }
     Ok(())
 }

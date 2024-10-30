@@ -28,7 +28,8 @@ impl crate::operation::list_hosted_zones_by_vpc::builders::ListHostedZonesByVpcI
 /// <p>An <code>OwningAccount</code> element, which contains the account number of either the current Amazon Web Services account or another Amazon Web Services account. Some services, such as Cloud Map, create hosted zones using the current account.</p></li>
 /// <li>
 /// <p>An <code>OwningService</code> element, which identifies the Amazon Web Services service that created and owns the hosted zone. For example, if a hosted zone was created by Amazon Elastic File System (Amazon EFS), the value of <code>Owner</code> is <code>efs.amazonaws.com</code>.</p></li>
-/// </ul><note>
+/// </ul>
+/// <p><code>ListHostedZonesByVPC</code> returns the hosted zones associated with the specified VPC and does not reflect the hosted zone associations to VPCs via Route 53 Profiles. To get the associations to a Profile, call the <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53profiles_ListProfileResourceAssociations.html">ListProfileResourceAssociations</a> API.</p><note>
 /// <p>When listing private hosted zones, the hosted zone and the Amazon VPC must belong to the same partition where the hosted zones were created. A partition is a group of Amazon Web Services Regions. Each Amazon Web Services account is scoped to one partition.</p>
 /// <p>The following are the supported partitions:</p>
 /// <ul>

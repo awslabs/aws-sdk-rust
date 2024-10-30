@@ -68,6 +68,22 @@ pub(crate) fn event_bridge_data_source_config_correct_errors(
     builder
 }
 
+pub(crate) fn event_config_correct_errors(mut builder: crate::types::builders::EventConfigBuilder) -> crate::types::builders::EventConfigBuilder {
+    if builder.auth_providers.is_none() {
+        builder.auth_providers = Some(Default::default())
+    }
+    if builder.connection_auth_modes.is_none() {
+        builder.connection_auth_modes = Some(Default::default())
+    }
+    if builder.default_publish_auth_modes.is_none() {
+        builder.default_publish_auth_modes = Some(Default::default())
+    }
+    if builder.default_subscribe_auth_modes.is_none() {
+        builder.default_subscribe_auth_modes = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn lambda_authorizer_config_correct_errors(
     mut builder: crate::types::builders::LambdaAuthorizerConfigBuilder,
 ) -> crate::types::builders::LambdaAuthorizerConfigBuilder {
@@ -132,6 +148,13 @@ pub(crate) fn user_pool_config_correct_errors(
     builder
 }
 
+pub(crate) fn auth_mode_correct_errors(mut builder: crate::types::builders::AuthModeBuilder) -> crate::types::builders::AuthModeBuilder {
+    if builder.auth_type.is_none() {
+        builder.auth_type = "no value was set".parse::<crate::types::AuthenticationType>().ok()
+    }
+    builder
+}
+
 pub(crate) fn authorization_config_correct_errors(
     mut builder: crate::types::builders::AuthorizationConfigBuilder,
 ) -> crate::types::builders::AuthorizationConfigBuilder {
@@ -141,9 +164,40 @@ pub(crate) fn authorization_config_correct_errors(
     builder
 }
 
+pub(crate) fn event_log_config_correct_errors(
+    mut builder: crate::types::builders::EventLogConfigBuilder,
+) -> crate::types::builders::EventLogConfigBuilder {
+    if builder.log_level.is_none() {
+        builder.log_level = "no value was set".parse::<crate::types::EventLogLevel>().ok()
+    }
+    if builder.cloud_watch_logs_role_arn.is_none() {
+        builder.cloud_watch_logs_role_arn = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn auth_provider_correct_errors(mut builder: crate::types::builders::AuthProviderBuilder) -> crate::types::builders::AuthProviderBuilder {
+    if builder.auth_type.is_none() {
+        builder.auth_type = "no value was set".parse::<crate::types::AuthenticationType>().ok()
+    }
+    builder
+}
+
 pub(crate) fn cognito_user_pool_config_correct_errors(
     mut builder: crate::types::builders::CognitoUserPoolConfigBuilder,
 ) -> crate::types::builders::CognitoUserPoolConfigBuilder {
+    if builder.user_pool_id.is_none() {
+        builder.user_pool_id = Some(Default::default())
+    }
+    if builder.aws_region.is_none() {
+        builder.aws_region = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn cognito_config_correct_errors(
+    mut builder: crate::types::builders::CognitoConfigBuilder,
+) -> crate::types::builders::CognitoConfigBuilder {
     if builder.user_pool_id.is_none() {
         builder.user_pool_id = Some(Default::default())
     }

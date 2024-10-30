@@ -39,7 +39,7 @@ pub struct UpdateUserInput {
     pub city: ::std::option::Option<::std::string::String>,
     /// <p>Updates the user's company.</p>
     pub company: ::std::option::Option<::std::string::String>,
-    /// <p>Updates the user's zipcode.</p>
+    /// <p>Updates the user's zip code.</p>
     pub zip_code: ::std::option::Option<::std::string::String>,
     /// <p>Updates the user's department.</p>
     pub department: ::std::option::Option<::std::string::String>,
@@ -47,6 +47,8 @@ pub struct UpdateUserInput {
     pub country: ::std::option::Option<::std::string::String>,
     /// <p>Updates the user's office.</p>
     pub office: ::std::option::Option<::std::string::String>,
+    /// <p>User ID from the IAM Identity Center. If this parameter is empty it will be updated automatically when the user logs in for the first time to the mailbox associated with WorkMail.</p>
+    pub identity_provider_user_id: ::std::option::Option<::std::string::String>,
 }
 impl UpdateUserInput {
     /// <p>The identifier for the organization under which the user exists.</p>
@@ -111,7 +113,7 @@ impl UpdateUserInput {
     pub fn company(&self) -> ::std::option::Option<&str> {
         self.company.as_deref()
     }
-    /// <p>Updates the user's zipcode.</p>
+    /// <p>Updates the user's zip code.</p>
     pub fn zip_code(&self) -> ::std::option::Option<&str> {
         self.zip_code.as_deref()
     }
@@ -126,6 +128,10 @@ impl UpdateUserInput {
     /// <p>Updates the user's office.</p>
     pub fn office(&self) -> ::std::option::Option<&str> {
         self.office.as_deref()
+    }
+    /// <p>User ID from the IAM Identity Center. If this parameter is empty it will be updated automatically when the user logs in for the first time to the mailbox associated with WorkMail.</p>
+    pub fn identity_provider_user_id(&self) -> ::std::option::Option<&str> {
+        self.identity_provider_user_id.as_deref()
     }
 }
 impl ::std::fmt::Debug for UpdateUserInput {
@@ -148,6 +154,7 @@ impl ::std::fmt::Debug for UpdateUserInput {
         formatter.field("department", &"*** Sensitive Data Redacted ***");
         formatter.field("country", &"*** Sensitive Data Redacted ***");
         formatter.field("office", &"*** Sensitive Data Redacted ***");
+        formatter.field("identity_provider_user_id", &self.identity_provider_user_id);
         formatter.finish()
     }
 }
@@ -179,6 +186,7 @@ pub struct UpdateUserInputBuilder {
     pub(crate) department: ::std::option::Option<::std::string::String>,
     pub(crate) country: ::std::option::Option<::std::string::String>,
     pub(crate) office: ::std::option::Option<::std::string::String>,
+    pub(crate) identity_provider_user_id: ::std::option::Option<::std::string::String>,
 }
 impl UpdateUserInputBuilder {
     /// <p>The identifier for the organization under which the user exists.</p>
@@ -395,17 +403,17 @@ impl UpdateUserInputBuilder {
     pub fn get_company(&self) -> &::std::option::Option<::std::string::String> {
         &self.company
     }
-    /// <p>Updates the user's zipcode.</p>
+    /// <p>Updates the user's zip code.</p>
     pub fn zip_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.zip_code = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Updates the user's zipcode.</p>
+    /// <p>Updates the user's zip code.</p>
     pub fn set_zip_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.zip_code = input;
         self
     }
-    /// <p>Updates the user's zipcode.</p>
+    /// <p>Updates the user's zip code.</p>
     pub fn get_zip_code(&self) -> &::std::option::Option<::std::string::String> {
         &self.zip_code
     }
@@ -451,6 +459,20 @@ impl UpdateUserInputBuilder {
     pub fn get_office(&self) -> &::std::option::Option<::std::string::String> {
         &self.office
     }
+    /// <p>User ID from the IAM Identity Center. If this parameter is empty it will be updated automatically when the user logs in for the first time to the mailbox associated with WorkMail.</p>
+    pub fn identity_provider_user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.identity_provider_user_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>User ID from the IAM Identity Center. If this parameter is empty it will be updated automatically when the user logs in for the first time to the mailbox associated with WorkMail.</p>
+    pub fn set_identity_provider_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.identity_provider_user_id = input;
+        self
+    }
+    /// <p>User ID from the IAM Identity Center. If this parameter is empty it will be updated automatically when the user logs in for the first time to the mailbox associated with WorkMail.</p>
+    pub fn get_identity_provider_user_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identity_provider_user_id
+    }
     /// Consumes the builder and constructs a [`UpdateUserInput`](crate::operation::update_user::UpdateUserInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::update_user::UpdateUserInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_user::UpdateUserInput {
@@ -471,6 +493,7 @@ impl UpdateUserInputBuilder {
             department: self.department,
             country: self.country,
             office: self.office,
+            identity_provider_user_id: self.identity_provider_user_id,
         })
     }
 }
@@ -494,6 +517,7 @@ impl ::std::fmt::Debug for UpdateUserInputBuilder {
         formatter.field("department", &"*** Sensitive Data Redacted ***");
         formatter.field("country", &"*** Sensitive Data Redacted ***");
         formatter.field("office", &"*** Sensitive Data Redacted ***");
+        formatter.field("identity_provider_user_id", &self.identity_provider_user_id);
         formatter.finish()
     }
 }

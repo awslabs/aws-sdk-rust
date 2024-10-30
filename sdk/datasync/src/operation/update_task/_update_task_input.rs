@@ -17,6 +17,9 @@ pub struct UpdateTaskInput {
     /// <p>Specifies the name of your task.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the Amazon Resource Name (ARN) of an Amazon CloudWatch log group for monitoring your task.</p>
+    /// <p>For Enhanced mode tasks, you must use <code>/aws/datasync</code> as your log group name. For example:</p>
+    /// <p><code>arn:aws:logs:us-east-1:111222333444:log-group:/aws/datasync:*</code></p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/configure-logging.html">Monitoring data transfers with CloudWatch Logs</a>.</p>
     pub cloud_watch_log_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies include filters define the files, objects, and folders in your source location that you want DataSync to transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Specifying what DataSync transfers by using filters</a>.</p>
     pub includes: ::std::option::Option<::std::vec::Vec<crate::types::FilterRule>>,
@@ -55,6 +58,9 @@ impl UpdateTaskInput {
         self.name.as_deref()
     }
     /// <p>Specifies the Amazon Resource Name (ARN) of an Amazon CloudWatch log group for monitoring your task.</p>
+    /// <p>For Enhanced mode tasks, you must use <code>/aws/datasync</code> as your log group name. For example:</p>
+    /// <p><code>arn:aws:logs:us-east-1:111222333444:log-group:/aws/datasync:*</code></p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/configure-logging.html">Monitoring data transfers with CloudWatch Logs</a>.</p>
     pub fn cloud_watch_log_group_arn(&self) -> ::std::option::Option<&str> {
         self.cloud_watch_log_group_arn.as_deref()
     }
@@ -183,16 +189,25 @@ impl UpdateTaskInputBuilder {
         &self.name
     }
     /// <p>Specifies the Amazon Resource Name (ARN) of an Amazon CloudWatch log group for monitoring your task.</p>
+    /// <p>For Enhanced mode tasks, you must use <code>/aws/datasync</code> as your log group name. For example:</p>
+    /// <p><code>arn:aws:logs:us-east-1:111222333444:log-group:/aws/datasync:*</code></p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/configure-logging.html">Monitoring data transfers with CloudWatch Logs</a>.</p>
     pub fn cloud_watch_log_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cloud_watch_log_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the Amazon Resource Name (ARN) of an Amazon CloudWatch log group for monitoring your task.</p>
+    /// <p>For Enhanced mode tasks, you must use <code>/aws/datasync</code> as your log group name. For example:</p>
+    /// <p><code>arn:aws:logs:us-east-1:111222333444:log-group:/aws/datasync:*</code></p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/configure-logging.html">Monitoring data transfers with CloudWatch Logs</a>.</p>
     pub fn set_cloud_watch_log_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cloud_watch_log_group_arn = input;
         self
     }
     /// <p>Specifies the Amazon Resource Name (ARN) of an Amazon CloudWatch log group for monitoring your task.</p>
+    /// <p>For Enhanced mode tasks, you must use <code>/aws/datasync</code> as your log group name. For example:</p>
+    /// <p><code>arn:aws:logs:us-east-1:111222333444:log-group:/aws/datasync:*</code></p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/configure-logging.html">Monitoring data transfers with CloudWatch Logs</a>.</p>
     pub fn get_cloud_watch_log_group_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.cloud_watch_log_group_arn
     }

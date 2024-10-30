@@ -16,6 +16,7 @@ impl super::Client {
     /// - On success, responds with [`RevokeSecurityGroupEgressOutput`](crate::operation::revoke_security_group_egress::RevokeSecurityGroupEgressOutput) with field(s):
     ///   - [`r#return(Option<bool>)`](crate::operation::revoke_security_group_egress::RevokeSecurityGroupEgressOutput::return): <p>Returns <code>true</code> if the request succeeds; otherwise, returns an error.</p>
     ///   - [`unknown_ip_permissions(Option<Vec::<IpPermission>>)`](crate::operation::revoke_security_group_egress::RevokeSecurityGroupEgressOutput::unknown_ip_permissions): <p>The outbound rules that were unknown to the service. In some cases, <code>unknownIpPermissionSet</code> might be in a different format from the request parameter.</p>
+    ///   - [`revoked_security_group_rules(Option<Vec::<RevokedSecurityGroupRule>>)`](crate::operation::revoke_security_group_egress::RevokeSecurityGroupEgressOutput::revoked_security_group_rules): <p>Details about the revoked security group rules.</p>
     /// - On failure, responds with [`SdkError<RevokeSecurityGroupEgressError>`](crate::operation::revoke_security_group_egress::RevokeSecurityGroupEgressError)
     pub fn revoke_security_group_egress(&self) -> crate::operation::revoke_security_group_egress::builders::RevokeSecurityGroupEgressFluentBuilder {
         crate::operation::revoke_security_group_egress::builders::RevokeSecurityGroupEgressFluentBuilder::new(self.handle.clone())

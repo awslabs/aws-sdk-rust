@@ -2,7 +2,9 @@
 
 /// <p>Contains information about the identity of a user.</p><note>
 /// <p>For Amazon Connect instances that are created with the <code>EXISTING_DIRECTORY</code> identity management type, <code>FirstName</code>, <code>LastName</code>, and <code>Email</code> cannot be updated from within Amazon Connect because they are managed by the directory.</p>
-/// </note>
+/// </note> <important>
+/// <p>The <code>FirstName</code> and <code>LastName</code> length constraints below apply only to instances using SAML for identity management. If you are using Amazon Connect for identity management, the length constraints are 1-255 for <code>FirstName</code>, and 1-256 for <code>LastName</code>.</p>
+/// </important>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UserIdentityInfo {

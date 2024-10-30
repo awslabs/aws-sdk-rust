@@ -13,10 +13,10 @@ pub fn ser_deployment_alarms(
         array_1.finish();
     }
     {
-        object.key("enable").boolean(input.enable);
+        object.key("rollback").boolean(input.rollback);
     }
     {
-        object.key("rollback").boolean(input.rollback);
+        object.key("enable").boolean(input.enable);
     }
     Ok(())
 }
@@ -39,11 +39,11 @@ where
                         "alarmNames" => {
                             builder = builder.set_alarm_names(crate::protocol_serde::shape_string_list::de_string_list(tokens)?);
                         }
-                        "enable" => {
-                            builder = builder.set_enable(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
-                        }
                         "rollback" => {
                             builder = builder.set_rollback(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
+                        "enable" => {
+                            builder = builder.set_enable(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

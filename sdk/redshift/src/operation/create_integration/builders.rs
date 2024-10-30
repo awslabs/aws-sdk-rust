@@ -22,7 +22,7 @@ impl crate::operation::create_integration::builders::CreateIntegrationInputBuild
 }
 /// Fluent builder constructing a request to `CreateIntegration`.
 ///
-/// <p>Creates a zero-ETL integration with Amazon Redshift.</p>
+/// <p>Creates a zero-ETL integration or S3 event integration with Amazon Redshift.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateIntegrationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

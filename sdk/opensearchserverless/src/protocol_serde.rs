@@ -207,6 +207,8 @@ pub(crate) mod shape_collection_summaries;
 
 pub(crate) mod shape_create_collection_detail;
 
+pub(crate) mod shape_create_iam_identity_center_config_options;
+
 pub(crate) mod shape_create_vpc_endpoint_detail;
 
 pub(crate) mod shape_delete_collection_detail;
@@ -251,6 +253,8 @@ pub(crate) mod shape_tags;
 
 pub(crate) mod shape_update_collection_detail;
 
+pub(crate) mod shape_update_iam_identity_center_config_options;
+
 pub(crate) mod shape_update_vpc_endpoint_detail;
 
 pub(crate) mod shape_vpc_endpoint_details;
@@ -272,6 +276,8 @@ pub(crate) mod shape_collection_summary;
 pub(crate) mod shape_effective_lifecycle_policy_detail;
 
 pub(crate) mod shape_effective_lifecycle_policy_error_detail;
+
+pub(crate) mod shape_iam_identity_center_config_options;
 
 pub(crate) mod shape_lifecycle_policy_error_detail;
 

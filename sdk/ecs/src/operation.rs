@@ -49,6 +49,12 @@ pub mod describe_clusters;
 /// Types for the `DescribeContainerInstances` operation.
 pub mod describe_container_instances;
 
+/// Types for the `DescribeServiceDeployments` operation.
+pub mod describe_service_deployments;
+
+/// Types for the `DescribeServiceRevisions` operation.
+pub mod describe_service_revisions;
+
 /// Types for the `DescribeServices` operation.
 pub mod describe_services;
 
@@ -81,6 +87,9 @@ pub mod list_clusters;
 
 /// Types for the `ListContainerInstances` operation.
 pub mod list_container_instances;
+
+/// Types for the `ListServiceDeployments` operation.
+pub mod list_service_deployments;
 
 /// Types for the `ListServices` operation.
 pub mod list_services;

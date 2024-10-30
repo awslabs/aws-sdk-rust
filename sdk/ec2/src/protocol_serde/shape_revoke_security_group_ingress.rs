@@ -84,6 +84,16 @@ pub fn de_revoke_security_group_ingress(
                 builder = builder.set_unknown_ip_permissions(var_2);
             }
             ,
+            s if s.matches("revokedSecurityGroupRuleSet") /* RevokedSecurityGroupRules com.amazonaws.ec2.synthetic#RevokeSecurityGroupIngressOutput$RevokedSecurityGroupRules */ =>  {
+                let var_3 =
+                    Some(
+                        crate::protocol_serde::shape_revoked_security_group_rule_list::de_revoked_security_group_rule_list(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_revoked_security_group_rules(var_3);
+            }
+            ,
             _ => {}
         }
     }

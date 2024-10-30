@@ -211,6 +211,8 @@ pub use crate::types::_block_device_mapping::BlockDeviceMappingBuilder;
 
 pub use crate::types::_ebs_block_device::EbsBlockDeviceBuilder;
 
+pub use crate::types::_revoked_security_group_rule::RevokedSecurityGroupRuleBuilder;
+
 pub use crate::types::_client_vpn_authorization_rule_status::ClientVpnAuthorizationRuleStatusBuilder;
 
 pub use crate::types::_managed_prefix_list::ManagedPrefixListBuilder;
@@ -962,6 +964,8 @@ pub use crate::types::_spot_datafeed_subscription::SpotDatafeedSubscriptionBuild
 pub use crate::types::_snapshot_tier_status::SnapshotTierStatusBuilder;
 
 pub use crate::types::_snapshot::SnapshotBuilder;
+
+pub use crate::types::_security_group_vpc_association::SecurityGroupVpcAssociationBuilder;
 
 pub use crate::types::_security_group::SecurityGroupBuilder;
 

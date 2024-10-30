@@ -164,6 +164,23 @@ impl UpdateSecurityConfigFluentBuilder {
     pub fn get_saml_options(&self) -> &::std::option::Option<crate::types::SamlConfigOptions> {
         self.inner.get_saml_options()
     }
+    /// <p>Describes IAM Identity Center options in the form of a key-value map.</p>
+    pub fn iam_identity_center_options_updates(mut self, input: crate::types::UpdateIamIdentityCenterConfigOptions) -> Self {
+        self.inner = self.inner.iam_identity_center_options_updates(input);
+        self
+    }
+    /// <p>Describes IAM Identity Center options in the form of a key-value map.</p>
+    pub fn set_iam_identity_center_options_updates(
+        mut self,
+        input: ::std::option::Option<crate::types::UpdateIamIdentityCenterConfigOptions>,
+    ) -> Self {
+        self.inner = self.inner.set_iam_identity_center_options_updates(input);
+        self
+    }
+    /// <p>Describes IAM Identity Center options in the form of a key-value map.</p>
+    pub fn get_iam_identity_center_options_updates(&self) -> &::std::option::Option<crate::types::UpdateIamIdentityCenterConfigOptions> {
+        self.inner.get_iam_identity_center_options_updates()
+    }
     /// <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());

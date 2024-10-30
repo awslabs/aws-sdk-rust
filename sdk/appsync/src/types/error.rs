@@ -19,6 +19,10 @@ pub use crate::types::error::_graph_ql_schema_exception::GraphQlSchemaException;
 
 pub use crate::types::error::_api_limit_exceeded_exception::ApiLimitExceededException;
 
+pub use crate::types::error::_service_quota_exceeded_exception::ServiceQuotaExceededException;
+
+pub use crate::types::error::_conflict_exception::ConflictException;
+
 pub use crate::types::error::_api_key_limit_exceeded_exception::ApiKeyLimitExceededException;
 
 mod _access_denied_exception;
@@ -33,6 +37,8 @@ mod _bad_request_exception;
 
 mod _concurrent_modification_exception;
 
+mod _conflict_exception;
+
 mod _graph_ql_schema_exception;
 
 mod _internal_failure_exception;
@@ -40,6 +46,8 @@ mod _internal_failure_exception;
 mod _limit_exceeded_exception;
 
 mod _not_found_exception;
+
+mod _service_quota_exceeded_exception;
 
 mod _unauthorized_exception;
 

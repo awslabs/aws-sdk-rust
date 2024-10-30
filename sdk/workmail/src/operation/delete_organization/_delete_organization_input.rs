@@ -11,6 +11,8 @@ pub struct DeleteOrganizationInput {
     pub delete_directory: ::std::option::Option<bool>,
     /// <p>Deletes a WorkMail organization even if the organization has enabled users.</p>
     pub force_delete: ::std::option::Option<bool>,
+    /// <p>Deletes IAM Identity Center application for WorkMail. This action does not affect authentication settings for any organization.</p>
+    pub delete_identity_center_application: ::std::option::Option<bool>,
 }
 impl DeleteOrganizationInput {
     /// <p>The idempotency token associated with the request.</p>
@@ -29,6 +31,10 @@ impl DeleteOrganizationInput {
     pub fn force_delete(&self) -> ::std::option::Option<bool> {
         self.force_delete
     }
+    /// <p>Deletes IAM Identity Center application for WorkMail. This action does not affect authentication settings for any organization.</p>
+    pub fn delete_identity_center_application(&self) -> ::std::option::Option<bool> {
+        self.delete_identity_center_application
+    }
 }
 impl DeleteOrganizationInput {
     /// Creates a new builder-style object to manufacture [`DeleteOrganizationInput`](crate::operation::delete_organization::DeleteOrganizationInput).
@@ -45,6 +51,7 @@ pub struct DeleteOrganizationInputBuilder {
     pub(crate) organization_id: ::std::option::Option<::std::string::String>,
     pub(crate) delete_directory: ::std::option::Option<bool>,
     pub(crate) force_delete: ::std::option::Option<bool>,
+    pub(crate) delete_identity_center_application: ::std::option::Option<bool>,
 }
 impl DeleteOrganizationInputBuilder {
     /// <p>The idempotency token associated with the request.</p>
@@ -105,6 +112,20 @@ impl DeleteOrganizationInputBuilder {
     pub fn get_force_delete(&self) -> &::std::option::Option<bool> {
         &self.force_delete
     }
+    /// <p>Deletes IAM Identity Center application for WorkMail. This action does not affect authentication settings for any organization.</p>
+    pub fn delete_identity_center_application(mut self, input: bool) -> Self {
+        self.delete_identity_center_application = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Deletes IAM Identity Center application for WorkMail. This action does not affect authentication settings for any organization.</p>
+    pub fn set_delete_identity_center_application(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.delete_identity_center_application = input;
+        self
+    }
+    /// <p>Deletes IAM Identity Center application for WorkMail. This action does not affect authentication settings for any organization.</p>
+    pub fn get_delete_identity_center_application(&self) -> &::std::option::Option<bool> {
+        &self.delete_identity_center_application
+    }
     /// Consumes the builder and constructs a [`DeleteOrganizationInput`](crate::operation::delete_organization::DeleteOrganizationInput).
     pub fn build(
         self,
@@ -114,6 +135,7 @@ impl DeleteOrganizationInputBuilder {
             organization_id: self.organization_id,
             delete_directory: self.delete_directory,
             force_delete: self.force_delete,
+            delete_identity_center_application: self.delete_identity_center_application,
         })
     }
 }

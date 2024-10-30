@@ -27,5 +27,8 @@ pub fn ser_create_user_input_input(
     if let Some(var_8) = &input.hidden_from_global_address_list {
         object.key("HiddenFromGlobalAddressList").boolean(*var_8);
     }
+    if let Some(var_9) = &input.identity_provider_user_id {
+        object.key("IdentityProviderUserId").string(var_9.as_str());
+    }
     Ok(())
 }

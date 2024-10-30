@@ -31,6 +31,8 @@ pub struct SecurityGroupRule {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The tags applied to the security group rule.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    /// <p>The ARN of the security group rule.</p>
+    pub security_group_rule_arn: ::std::option::Option<::std::string::String>,
 }
 impl SecurityGroupRule {
     /// <p>The ID of the security group rule.</p>
@@ -88,6 +90,10 @@ impl SecurityGroupRule {
     pub fn tags(&self) -> &[crate::types::Tag] {
         self.tags.as_deref().unwrap_or_default()
     }
+    /// <p>The ARN of the security group rule.</p>
+    pub fn security_group_rule_arn(&self) -> ::std::option::Option<&str> {
+        self.security_group_rule_arn.as_deref()
+    }
 }
 impl SecurityGroupRule {
     /// Creates a new builder-style object to manufacture [`SecurityGroupRule`](crate::types::SecurityGroupRule).
@@ -113,6 +119,7 @@ pub struct SecurityGroupRuleBuilder {
     pub(crate) referenced_group_info: ::std::option::Option<crate::types::ReferencedSecurityGroup>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) security_group_rule_arn: ::std::option::Option<::std::string::String>,
 }
 impl SecurityGroupRuleBuilder {
     /// <p>The ID of the security group rule.</p>
@@ -306,6 +313,20 @@ impl SecurityGroupRuleBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }
+    /// <p>The ARN of the security group rule.</p>
+    pub fn security_group_rule_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.security_group_rule_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ARN of the security group rule.</p>
+    pub fn set_security_group_rule_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.security_group_rule_arn = input;
+        self
+    }
+    /// <p>The ARN of the security group rule.</p>
+    pub fn get_security_group_rule_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.security_group_rule_arn
+    }
     /// Consumes the builder and constructs a [`SecurityGroupRule`](crate::types::SecurityGroupRule).
     pub fn build(self) -> crate::types::SecurityGroupRule {
         crate::types::SecurityGroupRule {
@@ -322,6 +343,7 @@ impl SecurityGroupRuleBuilder {
             referenced_group_info: self.referenced_group_info,
             description: self.description,
             tags: self.tags,
+            security_group_rule_arn: self.security_group_rule_arn,
         }
     }
 }

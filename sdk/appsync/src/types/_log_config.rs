@@ -4,12 +4,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LogConfig {
-    /// <p>The field logging level. Values can be NONE, ERROR, INFO, DEBUG, or ALL.</p>
+    /// <p>The field logging level. Values can be NONE, ERROR, or ALL.</p>
     /// <ul>
     /// <li>
     /// <p><b>NONE</b>: No field-level logs are captured.</p></li>
     /// <li>
-    /// <p><b>ERROR</b>: Logs the following information <b>only</b> for the fields that are in the error category:</p>
+    /// <p><b>ERROR</b>: Logs the following information only for the fields that are in error:</p>
     /// <ul>
     /// <li>
     /// <p>The error section in the server response.</p></li>
@@ -19,32 +19,12 @@ pub struct LogConfig {
     /// <p>The generated request/response functions that got resolved for error fields.</p></li>
     /// </ul></li>
     /// <li>
-    /// <p><b>INFO</b>: Logs the following information <b>only</b> for the fields that are in the info and error categories:</p>
-    /// <ul>
-    /// <li>
-    /// <p>Info-level messages.</p></li>
-    /// <li>
-    /// <p>The user messages sent through <code>$util.log.info</code> and <code>console.log</code>.</p></li>
-    /// <li>
-    /// <p>Field-level tracing and mapping logs are not shown.</p></li>
-    /// </ul></li>
-    /// <li>
-    /// <p><b>DEBUG</b>: Logs the following information <b>only</b> for the fields that are in the debug, info, and error categories:</p>
-    /// <ul>
-    /// <li>
-    /// <p>Debug-level messages.</p></li>
-    /// <li>
-    /// <p>The user messages sent through <code>$util.log.info</code>, <code>$util.log.debug</code>, <code>console.log</code>, and <code>console.debug</code>.</p></li>
-    /// <li>
-    /// <p>Field-level tracing and mapping logs are not shown.</p></li>
-    /// </ul></li>
-    /// <li>
     /// <p><b>ALL</b>: The following information is logged for all fields in the query:</p>
     /// <ul>
     /// <li>
     /// <p>Field-level tracing information.</p></li>
     /// <li>
-    /// <p>The generated request/response functions that were resolved for each field.</p></li>
+    /// <p>The generated request/response functions that got resolved for each field.</p></li>
     /// </ul></li>
     /// </ul>
     pub field_log_level: crate::types::FieldLogLevel,
@@ -54,12 +34,12 @@ pub struct LogConfig {
     pub exclude_verbose_content: bool,
 }
 impl LogConfig {
-    /// <p>The field logging level. Values can be NONE, ERROR, INFO, DEBUG, or ALL.</p>
+    /// <p>The field logging level. Values can be NONE, ERROR, or ALL.</p>
     /// <ul>
     /// <li>
     /// <p><b>NONE</b>: No field-level logs are captured.</p></li>
     /// <li>
-    /// <p><b>ERROR</b>: Logs the following information <b>only</b> for the fields that are in the error category:</p>
+    /// <p><b>ERROR</b>: Logs the following information only for the fields that are in error:</p>
     /// <ul>
     /// <li>
     /// <p>The error section in the server response.</p></li>
@@ -69,32 +49,12 @@ impl LogConfig {
     /// <p>The generated request/response functions that got resolved for error fields.</p></li>
     /// </ul></li>
     /// <li>
-    /// <p><b>INFO</b>: Logs the following information <b>only</b> for the fields that are in the info and error categories:</p>
-    /// <ul>
-    /// <li>
-    /// <p>Info-level messages.</p></li>
-    /// <li>
-    /// <p>The user messages sent through <code>$util.log.info</code> and <code>console.log</code>.</p></li>
-    /// <li>
-    /// <p>Field-level tracing and mapping logs are not shown.</p></li>
-    /// </ul></li>
-    /// <li>
-    /// <p><b>DEBUG</b>: Logs the following information <b>only</b> for the fields that are in the debug, info, and error categories:</p>
-    /// <ul>
-    /// <li>
-    /// <p>Debug-level messages.</p></li>
-    /// <li>
-    /// <p>The user messages sent through <code>$util.log.info</code>, <code>$util.log.debug</code>, <code>console.log</code>, and <code>console.debug</code>.</p></li>
-    /// <li>
-    /// <p>Field-level tracing and mapping logs are not shown.</p></li>
-    /// </ul></li>
-    /// <li>
     /// <p><b>ALL</b>: The following information is logged for all fields in the query:</p>
     /// <ul>
     /// <li>
     /// <p>Field-level tracing information.</p></li>
     /// <li>
-    /// <p>The generated request/response functions that were resolved for each field.</p></li>
+    /// <p>The generated request/response functions that got resolved for each field.</p></li>
     /// </ul></li>
     /// </ul>
     pub fn field_log_level(&self) -> &crate::types::FieldLogLevel {
@@ -126,12 +86,12 @@ pub struct LogConfigBuilder {
     pub(crate) exclude_verbose_content: ::std::option::Option<bool>,
 }
 impl LogConfigBuilder {
-    /// <p>The field logging level. Values can be NONE, ERROR, INFO, DEBUG, or ALL.</p>
+    /// <p>The field logging level. Values can be NONE, ERROR, or ALL.</p>
     /// <ul>
     /// <li>
     /// <p><b>NONE</b>: No field-level logs are captured.</p></li>
     /// <li>
-    /// <p><b>ERROR</b>: Logs the following information <b>only</b> for the fields that are in the error category:</p>
+    /// <p><b>ERROR</b>: Logs the following information only for the fields that are in error:</p>
     /// <ul>
     /// <li>
     /// <p>The error section in the server response.</p></li>
@@ -141,32 +101,12 @@ impl LogConfigBuilder {
     /// <p>The generated request/response functions that got resolved for error fields.</p></li>
     /// </ul></li>
     /// <li>
-    /// <p><b>INFO</b>: Logs the following information <b>only</b> for the fields that are in the info and error categories:</p>
-    /// <ul>
-    /// <li>
-    /// <p>Info-level messages.</p></li>
-    /// <li>
-    /// <p>The user messages sent through <code>$util.log.info</code> and <code>console.log</code>.</p></li>
-    /// <li>
-    /// <p>Field-level tracing and mapping logs are not shown.</p></li>
-    /// </ul></li>
-    /// <li>
-    /// <p><b>DEBUG</b>: Logs the following information <b>only</b> for the fields that are in the debug, info, and error categories:</p>
-    /// <ul>
-    /// <li>
-    /// <p>Debug-level messages.</p></li>
-    /// <li>
-    /// <p>The user messages sent through <code>$util.log.info</code>, <code>$util.log.debug</code>, <code>console.log</code>, and <code>console.debug</code>.</p></li>
-    /// <li>
-    /// <p>Field-level tracing and mapping logs are not shown.</p></li>
-    /// </ul></li>
-    /// <li>
     /// <p><b>ALL</b>: The following information is logged for all fields in the query:</p>
     /// <ul>
     /// <li>
     /// <p>Field-level tracing information.</p></li>
     /// <li>
-    /// <p>The generated request/response functions that were resolved for each field.</p></li>
+    /// <p>The generated request/response functions that got resolved for each field.</p></li>
     /// </ul></li>
     /// </ul>
     /// This field is required.
@@ -174,12 +114,12 @@ impl LogConfigBuilder {
         self.field_log_level = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The field logging level. Values can be NONE, ERROR, INFO, DEBUG, or ALL.</p>
+    /// <p>The field logging level. Values can be NONE, ERROR, or ALL.</p>
     /// <ul>
     /// <li>
     /// <p><b>NONE</b>: No field-level logs are captured.</p></li>
     /// <li>
-    /// <p><b>ERROR</b>: Logs the following information <b>only</b> for the fields that are in the error category:</p>
+    /// <p><b>ERROR</b>: Logs the following information only for the fields that are in error:</p>
     /// <ul>
     /// <li>
     /// <p>The error section in the server response.</p></li>
@@ -189,44 +129,24 @@ impl LogConfigBuilder {
     /// <p>The generated request/response functions that got resolved for error fields.</p></li>
     /// </ul></li>
     /// <li>
-    /// <p><b>INFO</b>: Logs the following information <b>only</b> for the fields that are in the info and error categories:</p>
-    /// <ul>
-    /// <li>
-    /// <p>Info-level messages.</p></li>
-    /// <li>
-    /// <p>The user messages sent through <code>$util.log.info</code> and <code>console.log</code>.</p></li>
-    /// <li>
-    /// <p>Field-level tracing and mapping logs are not shown.</p></li>
-    /// </ul></li>
-    /// <li>
-    /// <p><b>DEBUG</b>: Logs the following information <b>only</b> for the fields that are in the debug, info, and error categories:</p>
-    /// <ul>
-    /// <li>
-    /// <p>Debug-level messages.</p></li>
-    /// <li>
-    /// <p>The user messages sent through <code>$util.log.info</code>, <code>$util.log.debug</code>, <code>console.log</code>, and <code>console.debug</code>.</p></li>
-    /// <li>
-    /// <p>Field-level tracing and mapping logs are not shown.</p></li>
-    /// </ul></li>
-    /// <li>
     /// <p><b>ALL</b>: The following information is logged for all fields in the query:</p>
     /// <ul>
     /// <li>
     /// <p>Field-level tracing information.</p></li>
     /// <li>
-    /// <p>The generated request/response functions that were resolved for each field.</p></li>
+    /// <p>The generated request/response functions that got resolved for each field.</p></li>
     /// </ul></li>
     /// </ul>
     pub fn set_field_log_level(mut self, input: ::std::option::Option<crate::types::FieldLogLevel>) -> Self {
         self.field_log_level = input;
         self
     }
-    /// <p>The field logging level. Values can be NONE, ERROR, INFO, DEBUG, or ALL.</p>
+    /// <p>The field logging level. Values can be NONE, ERROR, or ALL.</p>
     /// <ul>
     /// <li>
     /// <p><b>NONE</b>: No field-level logs are captured.</p></li>
     /// <li>
-    /// <p><b>ERROR</b>: Logs the following information <b>only</b> for the fields that are in the error category:</p>
+    /// <p><b>ERROR</b>: Logs the following information only for the fields that are in error:</p>
     /// <ul>
     /// <li>
     /// <p>The error section in the server response.</p></li>
@@ -236,32 +156,12 @@ impl LogConfigBuilder {
     /// <p>The generated request/response functions that got resolved for error fields.</p></li>
     /// </ul></li>
     /// <li>
-    /// <p><b>INFO</b>: Logs the following information <b>only</b> for the fields that are in the info and error categories:</p>
-    /// <ul>
-    /// <li>
-    /// <p>Info-level messages.</p></li>
-    /// <li>
-    /// <p>The user messages sent through <code>$util.log.info</code> and <code>console.log</code>.</p></li>
-    /// <li>
-    /// <p>Field-level tracing and mapping logs are not shown.</p></li>
-    /// </ul></li>
-    /// <li>
-    /// <p><b>DEBUG</b>: Logs the following information <b>only</b> for the fields that are in the debug, info, and error categories:</p>
-    /// <ul>
-    /// <li>
-    /// <p>Debug-level messages.</p></li>
-    /// <li>
-    /// <p>The user messages sent through <code>$util.log.info</code>, <code>$util.log.debug</code>, <code>console.log</code>, and <code>console.debug</code>.</p></li>
-    /// <li>
-    /// <p>Field-level tracing and mapping logs are not shown.</p></li>
-    /// </ul></li>
-    /// <li>
     /// <p><b>ALL</b>: The following information is logged for all fields in the query:</p>
     /// <ul>
     /// <li>
     /// <p>Field-level tracing information.</p></li>
     /// <li>
-    /// <p>The generated request/response functions that were resolved for each field.</p></li>
+    /// <p>The generated request/response functions that got resolved for each field.</p></li>
     /// </ul></li>
     /// </ul>
     pub fn get_field_log_level(&self) -> &::std::option::Option<crate::types::FieldLogLevel> {

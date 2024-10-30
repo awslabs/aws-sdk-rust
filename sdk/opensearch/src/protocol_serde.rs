@@ -37,6 +37,8 @@ pub(crate) mod shape_cancel_domain_config_change;
 
 pub(crate) mod shape_cancel_service_software_update;
 
+pub(crate) mod shape_create_application;
+
 pub(crate) mod shape_create_domain;
 
 pub(crate) mod shape_create_outbound_connection;
@@ -44,6 +46,8 @@ pub(crate) mod shape_create_outbound_connection;
 pub(crate) mod shape_create_package;
 
 pub(crate) mod shape_create_vpc_endpoint;
+
+pub(crate) mod shape_delete_application;
 
 pub(crate) mod shape_delete_data_source;
 
@@ -89,6 +93,8 @@ pub(crate) mod shape_describe_vpc_endpoints;
 
 pub(crate) mod shape_dissociate_package;
 
+pub(crate) mod shape_get_application;
+
 pub(crate) mod shape_get_compatible_versions;
 
 pub(crate) mod shape_get_data_source;
@@ -100,6 +106,8 @@ pub(crate) mod shape_get_package_version_history;
 pub(crate) mod shape_get_upgrade_history;
 
 pub(crate) mod shape_get_upgrade_status;
+
+pub(crate) mod shape_list_applications;
 
 pub(crate) mod shape_list_data_sources;
 
@@ -137,6 +145,8 @@ pub(crate) mod shape_start_domain_maintenance;
 
 pub(crate) mod shape_start_service_software_update;
 
+pub(crate) mod shape_update_application;
+
 pub(crate) mod shape_update_data_source;
 
 pub(crate) mod shape_update_domain_config;
@@ -172,6 +182,8 @@ pub(crate) mod shape_cancel_domain_config_change_input;
 pub(crate) mod shape_cancel_service_software_update_input;
 
 pub(crate) mod shape_conflict_exception;
+
+pub(crate) mod shape_create_application_input;
 
 pub(crate) mod shape_create_domain_input;
 
@@ -221,6 +233,8 @@ pub(crate) mod shape_start_domain_maintenance_input;
 
 pub(crate) mod shape_start_service_software_update_input;
 
+pub(crate) mod shape_update_application_input;
+
 pub(crate) mod shape_update_data_source_input;
 
 pub(crate) mod shape_update_domain_config_input;
@@ -240,6 +254,12 @@ pub(crate) mod shape_advanced_options;
 pub(crate) mod shape_advanced_security_options_input;
 
 pub(crate) mod shape_aiml_options_input;
+
+pub(crate) mod shape_app_config;
+
+pub(crate) mod shape_app_configs;
+
+pub(crate) mod shape_application_summaries;
 
 pub(crate) mod shape_authorized_principal;
 
@@ -265,9 +285,13 @@ pub(crate) mod shape_compatible_versions_list;
 
 pub(crate) mod shape_connection_properties;
 
+pub(crate) mod shape_data_source;
+
 pub(crate) mod shape_data_source_list;
 
 pub(crate) mod shape_data_source_type;
+
+pub(crate) mod shape_data_sources;
 
 pub(crate) mod shape_describe_packages_filter;
 
@@ -304,6 +328,12 @@ pub(crate) mod shape_environment_info_list;
 pub(crate) mod shape_filter;
 
 pub(crate) mod shape_guid_list;
+
+pub(crate) mod shape_iam_identity_center_options;
+
+pub(crate) mod shape_iam_identity_center_options_input;
+
+pub(crate) mod shape_identity_center_options_input;
 
 pub(crate) mod shape_inbound_connection;
 
@@ -381,6 +411,8 @@ pub(crate) mod shape_aiml_options_output;
 
 pub(crate) mod shape_aiml_options_status;
 
+pub(crate) mod shape_application_summary;
+
 pub(crate) mod shape_auto_tune;
 
 pub(crate) mod shape_auto_tune_maintenance_schedule;
@@ -424,6 +456,10 @@ pub(crate) mod shape_endpoints_map;
 pub(crate) mod shape_environment_info;
 
 pub(crate) mod shape_error_details;
+
+pub(crate) mod shape_identity_center_options;
+
+pub(crate) mod shape_identity_center_options_status;
 
 pub(crate) mod shape_inbound_connection_status;
 

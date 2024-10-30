@@ -164,4 +164,18 @@ impl DeleteOrganizationFluentBuilder {
     pub fn get_force_delete(&self) -> &::std::option::Option<bool> {
         self.inner.get_force_delete()
     }
+    /// <p>Deletes IAM Identity Center application for WorkMail. This action does not affect authentication settings for any organization.</p>
+    pub fn delete_identity_center_application(mut self, input: bool) -> Self {
+        self.inner = self.inner.delete_identity_center_application(input);
+        self
+    }
+    /// <p>Deletes IAM Identity Center application for WorkMail. This action does not affect authentication settings for any organization.</p>
+    pub fn set_delete_identity_center_application(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_delete_identity_center_application(input);
+        self
+    }
+    /// <p>Deletes IAM Identity Center application for WorkMail. This action does not affect authentication settings for any organization.</p>
+    pub fn get_delete_identity_center_application(&self) -> &::std::option::Option<bool> {
+        self.inner.get_delete_identity_center_application()
+    }
 }

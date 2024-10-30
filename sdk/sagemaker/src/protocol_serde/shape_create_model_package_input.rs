@@ -121,5 +121,11 @@ pub fn ser_create_model_package_input_input(
         crate::protocol_serde::shape_model_package_model_card::ser_model_package_model_card(&mut object_39, var_38)?;
         object_39.finish();
     }
+    if let Some(var_40) = &input.model_life_cycle {
+        #[allow(unused_mut)]
+        let mut object_41 = object.key("ModelLifeCycle").start_object();
+        crate::protocol_serde::shape_model_life_cycle::ser_model_life_cycle(&mut object_41, var_40)?;
+        object_41.finish();
+    }
     Ok(())
 }

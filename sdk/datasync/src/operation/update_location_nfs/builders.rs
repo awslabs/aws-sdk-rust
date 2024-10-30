@@ -140,17 +140,17 @@ impl UpdateLocationNfsFluentBuilder {
     pub fn get_subdirectory(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_subdirectory()
     }
-    /// <p>The DataSync agents that are connecting to a Network File System (NFS) location.</p>
+    /// <p>The DataSync agents that can connect to your Network File System (NFS) file server.</p>
     pub fn on_prem_config(mut self, input: crate::types::OnPremConfig) -> Self {
         self.inner = self.inner.on_prem_config(input);
         self
     }
-    /// <p>The DataSync agents that are connecting to a Network File System (NFS) location.</p>
+    /// <p>The DataSync agents that can connect to your Network File System (NFS) file server.</p>
     pub fn set_on_prem_config(mut self, input: ::std::option::Option<crate::types::OnPremConfig>) -> Self {
         self.inner = self.inner.set_on_prem_config(input);
         self
     }
-    /// <p>The DataSync agents that are connecting to a Network File System (NFS) location.</p>
+    /// <p>The DataSync agents that can connect to your Network File System (NFS) file server.</p>
     pub fn get_on_prem_config(&self) -> &::std::option::Option<crate::types::OnPremConfig> {
         self.inner.get_on_prem_config()
     }

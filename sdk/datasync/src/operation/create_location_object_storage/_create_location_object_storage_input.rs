@@ -18,7 +18,7 @@ pub struct CreateLocationObjectStorageInput {
     pub access_key: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the secret key (for example, a password) if credentials are required to authenticate with the object storage server.</p>
     pub secret_key: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies the Amazon Resource Names (ARNs) of the DataSync agents that can securely connect with your location.</p>
+    /// <p>Specifies the Amazon Resource Names (ARNs) of the DataSync agents that can connect with your object storage system.</p>
     pub agent_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Specifies the key-value pair that represents a tag that you want to add to the resource. Tags can help you manage, filter, and search for your resources. We recommend creating a name tag for your location.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::TagListEntry>>,
@@ -66,7 +66,7 @@ impl CreateLocationObjectStorageInput {
     pub fn secret_key(&self) -> ::std::option::Option<&str> {
         self.secret_key.as_deref()
     }
-    /// <p>Specifies the Amazon Resource Names (ARNs) of the DataSync agents that can securely connect with your location.</p>
+    /// <p>Specifies the Amazon Resource Names (ARNs) of the DataSync agents that can connect with your object storage system.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.agent_arns.is_none()`.
     pub fn agent_arns(&self) -> &[::std::string::String] {
@@ -238,19 +238,19 @@ impl CreateLocationObjectStorageInputBuilder {
     ///
     /// To override the contents of this collection use [`set_agent_arns`](Self::set_agent_arns).
     ///
-    /// <p>Specifies the Amazon Resource Names (ARNs) of the DataSync agents that can securely connect with your location.</p>
+    /// <p>Specifies the Amazon Resource Names (ARNs) of the DataSync agents that can connect with your object storage system.</p>
     pub fn agent_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.agent_arns.unwrap_or_default();
         v.push(input.into());
         self.agent_arns = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Specifies the Amazon Resource Names (ARNs) of the DataSync agents that can securely connect with your location.</p>
+    /// <p>Specifies the Amazon Resource Names (ARNs) of the DataSync agents that can connect with your object storage system.</p>
     pub fn set_agent_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.agent_arns = input;
         self
     }
-    /// <p>Specifies the Amazon Resource Names (ARNs) of the DataSync agents that can securely connect with your location.</p>
+    /// <p>Specifies the Amazon Resource Names (ARNs) of the DataSync agents that can connect with your object storage system.</p>
     pub fn get_agent_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.agent_arns
     }

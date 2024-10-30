@@ -9,6 +9,12 @@ pub fn ser_stateful_engine_options(
     if let Some(var_2) = &input.stream_exception_policy {
         object.key("StreamExceptionPolicy").string(var_2.as_str());
     }
+    if let Some(var_3) = &input.flow_timeouts {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("FlowTimeouts").start_object();
+        crate::protocol_serde::shape_flow_timeouts::ser_flow_timeouts(&mut object_4, var_3)?;
+        object_4.finish();
+    }
     Ok(())
 }
 
@@ -40,6 +46,9 @@ where
                                     .map(|s| s.to_unescaped().map(|u| crate::types::StreamExceptionPolicy::from(u.as_ref())))
                                     .transpose()?,
                             );
+                        }
+                        "FlowTimeouts" => {
+                            builder = builder.set_flow_timeouts(crate::protocol_serde::shape_flow_timeouts::de_flow_timeouts(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -22,7 +22,8 @@ impl crate::operation::list_tables::builders::ListTablesInputBuilder {
 }
 /// Fluent builder constructing a request to `ListTables`.
 ///
-/// <p>Returns a list of tables for a specified keyspace.</p>
+/// <p>The <code>ListTables</code> operation returns a list of tables for a specified keyspace.</p>
+/// <p>To read keyspace metadata using <code>ListTables</code>, the IAM principal needs <code>Select</code> action permissions for the system keyspace.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListTablesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

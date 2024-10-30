@@ -22,6 +22,9 @@ pub mod cancel_domain_config_change;
 /// Types for the `CancelServiceSoftwareUpdate` operation.
 pub mod cancel_service_software_update;
 
+/// Types for the `CreateApplication` operation.
+pub mod create_application;
+
 /// Types for the `CreateDomain` operation.
 pub mod create_domain;
 
@@ -33,6 +36,9 @@ pub mod create_package;
 
 /// Types for the `CreateVpcEndpoint` operation.
 pub mod create_vpc_endpoint;
+
+/// Types for the `DeleteApplication` operation.
+pub mod delete_application;
 
 /// Types for the `DeleteDataSource` operation.
 pub mod delete_data_source;
@@ -100,6 +106,9 @@ pub mod describe_vpc_endpoints;
 /// Types for the `DissociatePackage` operation.
 pub mod dissociate_package;
 
+/// Types for the `GetApplication` operation.
+pub mod get_application;
+
 /// Types for the `GetCompatibleVersions` operation.
 pub mod get_compatible_versions;
 
@@ -117,6 +126,9 @@ pub mod get_upgrade_history;
 
 /// Types for the `GetUpgradeStatus` operation.
 pub mod get_upgrade_status;
+
+/// Types for the `ListApplications` operation.
+pub mod list_applications;
 
 /// Types for the `ListDataSources` operation.
 pub mod list_data_sources;
@@ -171,6 +183,9 @@ pub mod start_domain_maintenance;
 
 /// Types for the `StartServiceSoftwareUpdate` operation.
 pub mod start_service_software_update;
+
+/// Types for the `UpdateApplication` operation.
+pub mod update_application;
 
 /// Types for the `UpdateDataSource` operation.
 pub mod update_data_source;

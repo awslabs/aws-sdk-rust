@@ -141,6 +141,10 @@ where
                                     .transpose()?,
                             );
                         }
+                        "pricePerformanceTarget" => {
+                            builder =
+                                builder.set_price_performance_target(crate::protocol_serde::shape_performance_target::de_performance_target(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

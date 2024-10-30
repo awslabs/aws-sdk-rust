@@ -320,17 +320,17 @@ impl UpdateUserFluentBuilder {
     pub fn get_company(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_company()
     }
-    /// <p>Updates the user's zipcode.</p>
+    /// <p>Updates the user's zip code.</p>
     pub fn zip_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.zip_code(input.into());
         self
     }
-    /// <p>Updates the user's zipcode.</p>
+    /// <p>Updates the user's zip code.</p>
     pub fn set_zip_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_zip_code(input);
         self
     }
-    /// <p>Updates the user's zipcode.</p>
+    /// <p>Updates the user's zip code.</p>
     pub fn get_zip_code(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_zip_code()
     }
@@ -375,5 +375,19 @@ impl UpdateUserFluentBuilder {
     /// <p>Updates the user's office.</p>
     pub fn get_office(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_office()
+    }
+    /// <p>User ID from the IAM Identity Center. If this parameter is empty it will be updated automatically when the user logs in for the first time to the mailbox associated with WorkMail.</p>
+    pub fn identity_provider_user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.identity_provider_user_id(input.into());
+        self
+    }
+    /// <p>User ID from the IAM Identity Center. If this parameter is empty it will be updated automatically when the user logs in for the first time to the mailbox associated with WorkMail.</p>
+    pub fn set_identity_provider_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_identity_provider_user_id(input);
+        self
+    }
+    /// <p>User ID from the IAM Identity Center. If this parameter is empty it will be updated automatically when the user logs in for the first time to the mailbox associated with WorkMail.</p>
+    pub fn get_identity_provider_user_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_identity_provider_user_id()
     }
 }

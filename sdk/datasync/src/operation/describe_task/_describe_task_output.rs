@@ -17,7 +17,7 @@ pub struct DescribeTaskOutput {
     /// <p>The ARN of your transfer's destination location.</p>
     pub destination_location_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of an Amazon CloudWatch log group for monitoring your task.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/monitor-datasync.html">Monitoring DataSync with Amazon CloudWatch</a>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/configure-logging.html">Monitoring data transfers with CloudWatch Logs</a>.</p>
     pub cloud_watch_log_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARNs of the <a href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces">network interfaces</a> that DataSync created for your source location.</p>
     pub source_network_interface_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -43,6 +43,8 @@ pub struct DescribeTaskOutput {
     pub task_report_config: ::std::option::Option<crate::types::TaskReportConfig>,
     /// <p>The details about your <a href="https://docs.aws.amazon.com/datasync/latest/userguide/task-scheduling.html">task schedule</a>.</p>
     pub schedule_details: ::std::option::Option<crate::types::TaskScheduleDetails>,
+    /// <p>The task mode that you're using. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/choosing-task-mode.html">Choosing a task mode for your data transfer</a>.</p>
+    pub task_mode: ::std::option::Option<crate::types::TaskMode>,
     _request_id: Option<String>,
 }
 impl DescribeTaskOutput {
@@ -71,7 +73,7 @@ impl DescribeTaskOutput {
         self.destination_location_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of an Amazon CloudWatch log group for monitoring your task.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/monitor-datasync.html">Monitoring DataSync with Amazon CloudWatch</a>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/configure-logging.html">Monitoring data transfers with CloudWatch Logs</a>.</p>
     pub fn cloud_watch_log_group_arn(&self) -> ::std::option::Option<&str> {
         self.cloud_watch_log_group_arn.as_deref()
     }
@@ -131,6 +133,10 @@ impl DescribeTaskOutput {
     pub fn schedule_details(&self) -> ::std::option::Option<&crate::types::TaskScheduleDetails> {
         self.schedule_details.as_ref()
     }
+    /// <p>The task mode that you're using. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/choosing-task-mode.html">Choosing a task mode for your data transfer</a>.</p>
+    pub fn task_mode(&self) -> ::std::option::Option<&crate::types::TaskMode> {
+        self.task_mode.as_ref()
+    }
 }
 impl ::aws_types::request_id::RequestId for DescribeTaskOutput {
     fn request_id(&self) -> Option<&str> {
@@ -167,6 +173,7 @@ pub struct DescribeTaskOutputBuilder {
     pub(crate) manifest_config: ::std::option::Option<crate::types::ManifestConfig>,
     pub(crate) task_report_config: ::std::option::Option<crate::types::TaskReportConfig>,
     pub(crate) schedule_details: ::std::option::Option<crate::types::TaskScheduleDetails>,
+    pub(crate) task_mode: ::std::option::Option<crate::types::TaskMode>,
     _request_id: Option<String>,
 }
 impl DescribeTaskOutputBuilder {
@@ -255,19 +262,19 @@ impl DescribeTaskOutputBuilder {
         &self.destination_location_arn
     }
     /// <p>The Amazon Resource Name (ARN) of an Amazon CloudWatch log group for monitoring your task.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/monitor-datasync.html">Monitoring DataSync with Amazon CloudWatch</a>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/configure-logging.html">Monitoring data transfers with CloudWatch Logs</a>.</p>
     pub fn cloud_watch_log_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cloud_watch_log_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of an Amazon CloudWatch log group for monitoring your task.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/monitor-datasync.html">Monitoring DataSync with Amazon CloudWatch</a>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/configure-logging.html">Monitoring data transfers with CloudWatch Logs</a>.</p>
     pub fn set_cloud_watch_log_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cloud_watch_log_group_arn = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of an Amazon CloudWatch log group for monitoring your task.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/monitor-datasync.html">Monitoring DataSync with Amazon CloudWatch</a>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/configure-logging.html">Monitoring data transfers with CloudWatch Logs</a>.</p>
     pub fn get_cloud_watch_log_group_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.cloud_watch_log_group_arn
     }
@@ -463,6 +470,20 @@ impl DescribeTaskOutputBuilder {
     pub fn get_schedule_details(&self) -> &::std::option::Option<crate::types::TaskScheduleDetails> {
         &self.schedule_details
     }
+    /// <p>The task mode that you're using. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/choosing-task-mode.html">Choosing a task mode for your data transfer</a>.</p>
+    pub fn task_mode(mut self, input: crate::types::TaskMode) -> Self {
+        self.task_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The task mode that you're using. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/choosing-task-mode.html">Choosing a task mode for your data transfer</a>.</p>
+    pub fn set_task_mode(mut self, input: ::std::option::Option<crate::types::TaskMode>) -> Self {
+        self.task_mode = input;
+        self
+    }
+    /// <p>The task mode that you're using. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/choosing-task-mode.html">Choosing a task mode for your data transfer</a>.</p>
+    pub fn get_task_mode(&self) -> &::std::option::Option<crate::types::TaskMode> {
+        &self.task_mode
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -494,6 +515,7 @@ impl DescribeTaskOutputBuilder {
             manifest_config: self.manifest_config,
             task_report_config: self.task_report_config,
             schedule_details: self.schedule_details,
+            task_mode: self.task_mode,
             _request_id: self._request_id,
         }
     }

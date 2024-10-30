@@ -111,6 +111,10 @@ pub use crate::types::_delta_sync_config::DeltaSyncConfig;
 
 pub use crate::types::_data_source_type::DataSourceType;
 
+pub use crate::types::_channel_namespace::ChannelNamespace;
+
+pub use crate::types::_auth_mode::AuthMode;
+
 pub use crate::types::_api_key::ApiKey;
 
 pub use crate::types::_api_cache::ApiCache;
@@ -122,6 +126,18 @@ pub use crate::types::_api_cache_status::ApiCacheStatus;
 pub use crate::types::_api_cache_type::ApiCacheType;
 
 pub use crate::types::_api_caching_behavior::ApiCachingBehavior;
+
+pub use crate::types::_api::Api;
+
+pub use crate::types::_event_config::EventConfig;
+
+pub use crate::types::_event_log_config::EventLogConfig;
+
+pub use crate::types::_event_log_level::EventLogLevel;
+
+pub use crate::types::_auth_provider::AuthProvider;
+
+pub use crate::types::_cognito_config::CognitoConfig;
 
 pub use crate::types::_schema_status::SchemaStatus;
 
@@ -155,6 +171,8 @@ pub use crate::types::_evaluate_code_error_detail::EvaluateCodeErrorDetail;
 
 mod _additional_authentication_provider;
 
+mod _api;
+
 mod _api_association;
 
 mod _api_cache;
@@ -170,6 +188,10 @@ mod _api_key;
 mod _app_sync_runtime;
 
 mod _association_status;
+
+mod _auth_mode;
+
+mod _auth_provider;
 
 mod _authentication_type;
 
@@ -187,9 +209,13 @@ mod _cache_health_metrics_config;
 
 mod _caching_config;
 
+mod _channel_namespace;
+
 mod _code_error;
 
 mod _code_error_location;
+
+mod _cognito_config;
 
 mod _cognito_user_pool_config;
 
@@ -234,6 +260,12 @@ mod _error_detail;
 mod _evaluate_code_error_detail;
 
 mod _event_bridge_data_source_config;
+
+mod _event_config;
+
+mod _event_log_config;
+
+mod _event_log_level;
 
 mod _field_log_level;
 

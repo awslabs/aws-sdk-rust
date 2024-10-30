@@ -136,4 +136,18 @@ impl AuthorizeVpcEndpointAccessFluentBuilder {
     pub fn get_account(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_account()
     }
+    /// <p>The Amazon Web Services service SP to grant access to.</p>
+    pub fn service(mut self, input: crate::types::AwsServicePrincipal) -> Self {
+        self.inner = self.inner.service(input);
+        self
+    }
+    /// <p>The Amazon Web Services service SP to grant access to.</p>
+    pub fn set_service(mut self, input: ::std::option::Option<crate::types::AwsServicePrincipal>) -> Self {
+        self.inner = self.inner.set_service(input);
+        self
+    }
+    /// <p>The Amazon Web Services service SP to grant access to.</p>
+    pub fn get_service(&self) -> &::std::option::Option<crate::types::AwsServicePrincipal> {
+        self.inner.get_service()
+    }
 }

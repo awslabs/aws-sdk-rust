@@ -101,6 +101,8 @@ pub use crate::types::_tag_list_entry::TagListEntry;
 
 pub use crate::types::_task_list_entry::TaskListEntry;
 
+pub use crate::types::_task_mode::TaskMode;
+
 pub use crate::types::_task_status::TaskStatus;
 
 pub use crate::types::_task_filter::TaskFilter;
@@ -132,6 +134,10 @@ pub use crate::types::_platform::Platform;
 pub use crate::types::_agent_status::AgentStatus;
 
 pub use crate::types::_discovery_resource_type::DiscoveryResourceType;
+
+pub use crate::types::_task_execution_files_failed_detail::TaskExecutionFilesFailedDetail;
+
+pub use crate::types::_task_execution_files_listed_detail::TaskExecutionFilesListedDetail;
 
 pub use crate::types::_report_result::ReportResult;
 
@@ -357,6 +363,10 @@ mod _storage_system_list_entry;
 
 mod _tag_list_entry;
 
+mod _task_execution_files_failed_detail;
+
+mod _task_execution_files_listed_detail;
+
 mod _task_execution_list_entry;
 
 mod _task_execution_result_detail;
@@ -368,6 +378,8 @@ mod _task_filter;
 mod _task_filter_name;
 
 mod _task_list_entry;
+
+mod _task_mode;
 
 mod _task_queueing;
 

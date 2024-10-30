@@ -7,11 +7,17 @@ pub mod create_keyspace;
 /// Types for the `CreateTable` operation.
 pub mod create_table;
 
+/// Types for the `CreateType` operation.
+pub mod create_type;
+
 /// Types for the `DeleteKeyspace` operation.
 pub mod delete_keyspace;
 
 /// Types for the `DeleteTable` operation.
 pub mod delete_table;
+
+/// Types for the `DeleteType` operation.
+pub mod delete_type;
 
 /// Types for the `GetKeyspace` operation.
 pub mod get_keyspace;
@@ -22,6 +28,9 @@ pub mod get_table;
 /// Types for the `GetTableAutoScalingSettings` operation.
 pub mod get_table_auto_scaling_settings;
 
+/// Types for the `GetType` operation.
+pub mod get_type;
+
 /// Types for the `ListKeyspaces` operation.
 pub mod list_keyspaces;
 
@@ -30,6 +39,9 @@ pub mod list_tables;
 
 /// Types for the `ListTagsForResource` operation.
 pub mod list_tags_for_resource;
+
+/// Types for the `ListTypes` operation.
+pub mod list_types;
 
 /// Types for the `RestoreTable` operation.
 pub mod restore_table;

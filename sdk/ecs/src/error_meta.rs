@@ -638,6 +638,88 @@ impl From<crate::operation::describe_container_instances::DescribeContainerInsta
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_service_deployments::DescribeServiceDeploymentsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_service_deployments::DescribeServiceDeploymentsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_service_deployments::DescribeServiceDeploymentsError> for Error {
+    fn from(err: crate::operation::describe_service_deployments::DescribeServiceDeploymentsError) -> Self {
+        match err {
+            crate::operation::describe_service_deployments::DescribeServiceDeploymentsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::describe_service_deployments::DescribeServiceDeploymentsError::ClientException(inner) => Error::ClientException(inner),
+            crate::operation::describe_service_deployments::DescribeServiceDeploymentsError::ClusterNotFoundException(inner) => {
+                Error::ClusterNotFoundException(inner)
+            }
+            crate::operation::describe_service_deployments::DescribeServiceDeploymentsError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::describe_service_deployments::DescribeServiceDeploymentsError::ServerException(inner) => Error::ServerException(inner),
+            crate::operation::describe_service_deployments::DescribeServiceDeploymentsError::ServiceNotFoundException(inner) => {
+                Error::ServiceNotFoundException(inner)
+            }
+            crate::operation::describe_service_deployments::DescribeServiceDeploymentsError::UnsupportedFeatureException(inner) => {
+                Error::UnsupportedFeatureException(inner)
+            }
+            crate::operation::describe_service_deployments::DescribeServiceDeploymentsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_service_revisions::DescribeServiceRevisionsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_service_revisions::DescribeServiceRevisionsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_service_revisions::DescribeServiceRevisionsError> for Error {
+    fn from(err: crate::operation::describe_service_revisions::DescribeServiceRevisionsError) -> Self {
+        match err {
+            crate::operation::describe_service_revisions::DescribeServiceRevisionsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::describe_service_revisions::DescribeServiceRevisionsError::ClientException(inner) => Error::ClientException(inner),
+            crate::operation::describe_service_revisions::DescribeServiceRevisionsError::ClusterNotFoundException(inner) => {
+                Error::ClusterNotFoundException(inner)
+            }
+            crate::operation::describe_service_revisions::DescribeServiceRevisionsError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::describe_service_revisions::DescribeServiceRevisionsError::ServerException(inner) => Error::ServerException(inner),
+            crate::operation::describe_service_revisions::DescribeServiceRevisionsError::ServiceNotFoundException(inner) => {
+                Error::ServiceNotFoundException(inner)
+            }
+            crate::operation::describe_service_revisions::DescribeServiceRevisionsError::UnsupportedFeatureException(inner) => {
+                Error::UnsupportedFeatureException(inner)
+            }
+            crate::operation::describe_service_revisions::DescribeServiceRevisionsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_services::DescribeServicesError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -932,6 +1014,43 @@ impl From<crate::operation::list_container_instances::ListContainerInstancesErro
             }
             crate::operation::list_container_instances::ListContainerInstancesError::ServerException(inner) => Error::ServerException(inner),
             crate::operation::list_container_instances::ListContainerInstancesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_service_deployments::ListServiceDeploymentsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_service_deployments::ListServiceDeploymentsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_service_deployments::ListServiceDeploymentsError> for Error {
+    fn from(err: crate::operation::list_service_deployments::ListServiceDeploymentsError) -> Self {
+        match err {
+            crate::operation::list_service_deployments::ListServiceDeploymentsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_service_deployments::ListServiceDeploymentsError::ClientException(inner) => Error::ClientException(inner),
+            crate::operation::list_service_deployments::ListServiceDeploymentsError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::list_service_deployments::ListServiceDeploymentsError::ServerException(inner) => Error::ServerException(inner),
+            crate::operation::list_service_deployments::ListServiceDeploymentsError::ServiceNotFoundException(inner) => {
+                Error::ServiceNotFoundException(inner)
+            }
+            crate::operation::list_service_deployments::ListServiceDeploymentsError::UnsupportedFeatureException(inner) => {
+                Error::UnsupportedFeatureException(inner)
+            }
+            crate::operation::list_service_deployments::ListServiceDeploymentsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

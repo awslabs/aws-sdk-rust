@@ -248,7 +248,7 @@ pub enum CreateIntegrationError {
     IntegrationAlreadyExistsFault(crate::types::error::IntegrationAlreadyExistsFault),
     /// <p>A conflicting conditional operation is currently in progress against this resource. This typically occurs when there are multiple requests being made to the same resource at the same time, and these requests conflict with each other.</p>
     IntegrationConflictOperationFault(crate::types::error::IntegrationConflictOperationFault),
-    /// <p>You can't create any more zero-ETL integrations because the quota has been reached.</p>
+    /// <p>You can't create any more zero-ETL or S3 event integrations because the quota has been reached.</p>
     IntegrationQuotaExceededFault(crate::types::error::IntegrationQuotaExceededFault),
     /// <p>The specified integration source can't be found.</p>
     IntegrationSourceNotFoundFault(crate::types::error::IntegrationSourceNotFoundFault),

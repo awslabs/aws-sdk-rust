@@ -139,6 +139,11 @@ where
                                 crate::protocol_serde::shape_advanced_security_options::de_advanced_security_options(tokens)?,
                             );
                         }
+                        "IdentityCenterOptions" => {
+                            builder = builder.set_identity_center_options(
+                                crate::protocol_serde::shape_identity_center_options::de_identity_center_options(tokens)?,
+                            );
+                        }
                         "AutoTuneOptions" => {
                             builder = builder.set_auto_tune_options(
                                 crate::protocol_serde::shape_auto_tune_options_output::de_auto_tune_options_output(tokens)?,

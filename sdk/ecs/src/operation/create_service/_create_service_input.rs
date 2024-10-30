@@ -47,7 +47,7 @@ pub struct CreateServiceInput {
     /// </important>
     /// <p>If your specified role has a path other than <code>/</code>, then you must either specify the full role ARN (this is recommended) or prefix the role name with the path. For example, if a role with the name <code>bar</code> has a path of <code>/foo/</code> then you would specify <code>/foo/bar</code> as the role name. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names">Friendly names and paths</a> in the <i>IAM User Guide</i>.</p>
     pub role: ::std::option::Option<::std::string::String>,
-    /// <p>Optional deployment parameters that control how many tasks run during the deployment and the ordering of stopping and starting tasks.</p>
+    /// <p>Optional deployment parameters that control how many tasks run during the deployment and the failure detection methods.</p>
     pub deployment_configuration: ::std::option::Option<crate::types::DeploymentConfiguration>,
     /// <p>An array of placement constraint objects to use for tasks in your service. You can specify a maximum of 10 constraints for each task. This limit includes constraints in the task definition and those specified at runtime.</p>
     pub placement_constraints: ::std::option::Option<::std::vec::Vec<crate::types::PlacementConstraint>>,
@@ -179,7 +179,7 @@ impl CreateServiceInput {
     pub fn role(&self) -> ::std::option::Option<&str> {
         self.role.as_deref()
     }
-    /// <p>Optional deployment parameters that control how many tasks run during the deployment and the ordering of stopping and starting tasks.</p>
+    /// <p>Optional deployment parameters that control how many tasks run during the deployment and the failure detection methods.</p>
     pub fn deployment_configuration(&self) -> ::std::option::Option<&crate::types::DeploymentConfiguration> {
         self.deployment_configuration.as_ref()
     }
@@ -551,17 +551,17 @@ impl CreateServiceInputBuilder {
     pub fn get_role(&self) -> &::std::option::Option<::std::string::String> {
         &self.role
     }
-    /// <p>Optional deployment parameters that control how many tasks run during the deployment and the ordering of stopping and starting tasks.</p>
+    /// <p>Optional deployment parameters that control how many tasks run during the deployment and the failure detection methods.</p>
     pub fn deployment_configuration(mut self, input: crate::types::DeploymentConfiguration) -> Self {
         self.deployment_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Optional deployment parameters that control how many tasks run during the deployment and the ordering of stopping and starting tasks.</p>
+    /// <p>Optional deployment parameters that control how many tasks run during the deployment and the failure detection methods.</p>
     pub fn set_deployment_configuration(mut self, input: ::std::option::Option<crate::types::DeploymentConfiguration>) -> Self {
         self.deployment_configuration = input;
         self
     }
-    /// <p>Optional deployment parameters that control how many tasks run during the deployment and the ordering of stopping and starting tasks.</p>
+    /// <p>Optional deployment parameters that control how many tasks run during the deployment and the failure detection methods.</p>
     pub fn get_deployment_configuration(&self) -> &::std::option::Option<crate::types::DeploymentConfiguration> {
         &self.deployment_configuration
     }

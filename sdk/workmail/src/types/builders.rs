@@ -11,6 +11,10 @@ pub use crate::types::_tag::TagBuilder;
 
 pub use crate::types::_folder_configuration::FolderConfigurationBuilder;
 
+pub use crate::types::_personal_access_token_configuration::PersonalAccessTokenConfigurationBuilder;
+
+pub use crate::types::_identity_center_configuration::IdentityCenterConfigurationBuilder;
+
 pub use crate::types::_user::UserBuilder;
 
 pub use crate::types::_list_users_filters::ListUsersFiltersBuilder;
@@ -20,6 +24,8 @@ pub use crate::types::_resource::ResourceBuilder;
 pub use crate::types::_list_resources_filters::ListResourcesFiltersBuilder;
 
 pub use crate::types::_delegate::DelegateBuilder;
+
+pub use crate::types::_personal_access_token_summary::PersonalAccessTokenSummaryBuilder;
 
 pub use crate::types::_organization_summary::OrganizationSummaryBuilder;
 

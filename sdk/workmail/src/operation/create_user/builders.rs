@@ -223,4 +223,18 @@ impl CreateUserFluentBuilder {
     pub fn get_hidden_from_global_address_list(&self) -> &::std::option::Option<bool> {
         self.inner.get_hidden_from_global_address_list()
     }
+    /// <p>User ID from the IAM Identity Center. If this parameter is empty it will be updated automatically when the user logs in for the first time to the mailbox associated with WorkMail.</p>
+    pub fn identity_provider_user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.identity_provider_user_id(input.into());
+        self
+    }
+    /// <p>User ID from the IAM Identity Center. If this parameter is empty it will be updated automatically when the user logs in for the first time to the mailbox associated with WorkMail.</p>
+    pub fn set_identity_provider_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_identity_provider_user_id(input);
+        self
+    }
+    /// <p>User ID from the IAM Identity Center. If this parameter is empty it will be updated automatically when the user logs in for the first time to the mailbox associated with WorkMail.</p>
+    pub fn get_identity_provider_user_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_identity_provider_user_id()
+    }
 }

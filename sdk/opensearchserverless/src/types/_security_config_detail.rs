@@ -14,6 +14,8 @@ pub struct SecurityConfigDetail {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>SAML options for the security configuration in the form of a key-value map.</p>
     pub saml_options: ::std::option::Option<crate::types::SamlConfigOptions>,
+    /// <p>Describes IAM Identity Center options in the form of a key-value map.</p>
+    pub iam_identity_center_options: ::std::option::Option<crate::types::IamIdentityCenterConfigOptions>,
     /// <p>The date the configuration was created.</p>
     pub created_date: ::std::option::Option<i64>,
     /// <p>The timestamp of when the configuration was last modified.</p>
@@ -40,6 +42,10 @@ impl SecurityConfigDetail {
     pub fn saml_options(&self) -> ::std::option::Option<&crate::types::SamlConfigOptions> {
         self.saml_options.as_ref()
     }
+    /// <p>Describes IAM Identity Center options in the form of a key-value map.</p>
+    pub fn iam_identity_center_options(&self) -> ::std::option::Option<&crate::types::IamIdentityCenterConfigOptions> {
+        self.iam_identity_center_options.as_ref()
+    }
     /// <p>The date the configuration was created.</p>
     pub fn created_date(&self) -> ::std::option::Option<i64> {
         self.created_date
@@ -65,6 +71,7 @@ pub struct SecurityConfigDetailBuilder {
     pub(crate) config_version: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) saml_options: ::std::option::Option<crate::types::SamlConfigOptions>,
+    pub(crate) iam_identity_center_options: ::std::option::Option<crate::types::IamIdentityCenterConfigOptions>,
     pub(crate) created_date: ::std::option::Option<i64>,
     pub(crate) last_modified_date: ::std::option::Option<i64>,
 }
@@ -139,6 +146,20 @@ impl SecurityConfigDetailBuilder {
     pub fn get_saml_options(&self) -> &::std::option::Option<crate::types::SamlConfigOptions> {
         &self.saml_options
     }
+    /// <p>Describes IAM Identity Center options in the form of a key-value map.</p>
+    pub fn iam_identity_center_options(mut self, input: crate::types::IamIdentityCenterConfigOptions) -> Self {
+        self.iam_identity_center_options = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Describes IAM Identity Center options in the form of a key-value map.</p>
+    pub fn set_iam_identity_center_options(mut self, input: ::std::option::Option<crate::types::IamIdentityCenterConfigOptions>) -> Self {
+        self.iam_identity_center_options = input;
+        self
+    }
+    /// <p>Describes IAM Identity Center options in the form of a key-value map.</p>
+    pub fn get_iam_identity_center_options(&self) -> &::std::option::Option<crate::types::IamIdentityCenterConfigOptions> {
+        &self.iam_identity_center_options
+    }
     /// <p>The date the configuration was created.</p>
     pub fn created_date(mut self, input: i64) -> Self {
         self.created_date = ::std::option::Option::Some(input);
@@ -175,6 +196,7 @@ impl SecurityConfigDetailBuilder {
             config_version: self.config_version,
             description: self.description,
             saml_options: self.saml_options,
+            iam_identity_center_options: self.iam_identity_center_options,
             created_date: self.created_date,
             last_modified_date: self.last_modified_date,
         }

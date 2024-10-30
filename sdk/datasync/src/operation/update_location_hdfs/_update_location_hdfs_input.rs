@@ -27,7 +27,7 @@ pub struct UpdateLocationHdfsInput {
     pub kerberos_keytab: ::std::option::Option<::aws_smithy_types::Blob>,
     /// <p>The <code>krb5.conf</code> file that contains the Kerberos configuration information. You can load the <code>krb5.conf</code> file by providing the file's address. If you're using the CLI, it performs the base64 encoding for you. Otherwise, provide the base64-encoded text.</p>
     pub kerberos_krb5_conf: ::std::option::Option<::aws_smithy_types::Blob>,
-    /// <p>The ARNs of the agents that are used to connect to the HDFS cluster.</p>
+    /// <p>The Amazon Resource Names (ARNs) of the DataSync agents that can connect to your HDFS cluster.</p>
     pub agent_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl UpdateLocationHdfsInput {
@@ -81,7 +81,7 @@ impl UpdateLocationHdfsInput {
     pub fn kerberos_krb5_conf(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
         self.kerberos_krb5_conf.as_ref()
     }
-    /// <p>The ARNs of the agents that are used to connect to the HDFS cluster.</p>
+    /// <p>The Amazon Resource Names (ARNs) of the DataSync agents that can connect to your HDFS cluster.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.agent_arns.is_none()`.
     pub fn agent_arns(&self) -> &[::std::string::String] {
@@ -293,19 +293,19 @@ impl UpdateLocationHdfsInputBuilder {
     ///
     /// To override the contents of this collection use [`set_agent_arns`](Self::set_agent_arns).
     ///
-    /// <p>The ARNs of the agents that are used to connect to the HDFS cluster.</p>
+    /// <p>The Amazon Resource Names (ARNs) of the DataSync agents that can connect to your HDFS cluster.</p>
     pub fn agent_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.agent_arns.unwrap_or_default();
         v.push(input.into());
         self.agent_arns = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The ARNs of the agents that are used to connect to the HDFS cluster.</p>
+    /// <p>The Amazon Resource Names (ARNs) of the DataSync agents that can connect to your HDFS cluster.</p>
     pub fn set_agent_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.agent_arns = input;
         self
     }
-    /// <p>The ARNs of the agents that are used to connect to the HDFS cluster.</p>
+    /// <p>The Amazon Resource Names (ARNs) of the DataSync agents that can connect to your HDFS cluster.</p>
     pub fn get_agent_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.agent_arns
     }

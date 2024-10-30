@@ -9,10 +9,10 @@
 pub struct DeploymentAlarms {
     /// <p>One or more CloudWatch alarm names. Use a "," to separate the alarms.</p>
     pub alarm_names: ::std::vec::Vec<::std::string::String>,
-    /// <p>Determines whether to use the CloudWatch alarm option in the service deployment process.</p>
-    pub enable: bool,
     /// <p>Determines whether to configure Amazon ECS to roll back the service if a service deployment fails. If rollback is used, when a service deployment fails, the service is rolled back to the last deployment that completed successfully.</p>
     pub rollback: bool,
+    /// <p>Determines whether to use the CloudWatch alarm option in the service deployment process.</p>
+    pub enable: bool,
 }
 impl DeploymentAlarms {
     /// <p>One or more CloudWatch alarm names. Use a "," to separate the alarms.</p>
@@ -20,13 +20,13 @@ impl DeploymentAlarms {
         use std::ops::Deref;
         self.alarm_names.deref()
     }
-    /// <p>Determines whether to use the CloudWatch alarm option in the service deployment process.</p>
-    pub fn enable(&self) -> bool {
-        self.enable
-    }
     /// <p>Determines whether to configure Amazon ECS to roll back the service if a service deployment fails. If rollback is used, when a service deployment fails, the service is rolled back to the last deployment that completed successfully.</p>
     pub fn rollback(&self) -> bool {
         self.rollback
+    }
+    /// <p>Determines whether to use the CloudWatch alarm option in the service deployment process.</p>
+    pub fn enable(&self) -> bool {
+        self.enable
     }
 }
 impl DeploymentAlarms {
@@ -41,8 +41,8 @@ impl DeploymentAlarms {
 #[non_exhaustive]
 pub struct DeploymentAlarmsBuilder {
     pub(crate) alarm_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) enable: ::std::option::Option<bool>,
     pub(crate) rollback: ::std::option::Option<bool>,
+    pub(crate) enable: ::std::option::Option<bool>,
 }
 impl DeploymentAlarmsBuilder {
     /// Appends an item to `alarm_names`.
@@ -65,21 +65,6 @@ impl DeploymentAlarmsBuilder {
     pub fn get_alarm_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.alarm_names
     }
-    /// <p>Determines whether to use the CloudWatch alarm option in the service deployment process.</p>
-    /// This field is required.
-    pub fn enable(mut self, input: bool) -> Self {
-        self.enable = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>Determines whether to use the CloudWatch alarm option in the service deployment process.</p>
-    pub fn set_enable(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enable = input;
-        self
-    }
-    /// <p>Determines whether to use the CloudWatch alarm option in the service deployment process.</p>
-    pub fn get_enable(&self) -> &::std::option::Option<bool> {
-        &self.enable
-    }
     /// <p>Determines whether to configure Amazon ECS to roll back the service if a service deployment fails. If rollback is used, when a service deployment fails, the service is rolled back to the last deployment that completed successfully.</p>
     /// This field is required.
     pub fn rollback(mut self, input: bool) -> Self {
@@ -95,6 +80,21 @@ impl DeploymentAlarmsBuilder {
     pub fn get_rollback(&self) -> &::std::option::Option<bool> {
         &self.rollback
     }
+    /// <p>Determines whether to use the CloudWatch alarm option in the service deployment process.</p>
+    /// This field is required.
+    pub fn enable(mut self, input: bool) -> Self {
+        self.enable = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Determines whether to use the CloudWatch alarm option in the service deployment process.</p>
+    pub fn set_enable(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.enable = input;
+        self
+    }
+    /// <p>Determines whether to use the CloudWatch alarm option in the service deployment process.</p>
+    pub fn get_enable(&self) -> &::std::option::Option<bool> {
+        &self.enable
+    }
     /// Consumes the builder and constructs a [`DeploymentAlarms`](crate::types::DeploymentAlarms).
     /// This method will fail if any of the following fields are not set:
     /// - [`alarm_names`](crate::types::builders::DeploymentAlarmsBuilder::alarm_names)
@@ -106,8 +106,8 @@ impl DeploymentAlarmsBuilder {
                     "alarm_names was not specified but it is required when building DeploymentAlarms",
                 )
             })?,
-            enable: self.enable.unwrap_or_default(),
             rollback: self.rollback.unwrap_or_default(),
+            enable: self.enable.unwrap_or_default(),
         })
     }
 }

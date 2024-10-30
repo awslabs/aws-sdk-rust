@@ -499,4 +499,18 @@ impl CreateModelPackageFluentBuilder {
     pub fn get_model_card(&self) -> &::std::option::Option<crate::types::ModelPackageModelCard> {
         self.inner.get_model_card()
     }
+    /// <p>A structure describing the current state of the model in its life cycle.</p>
+    pub fn model_life_cycle(mut self, input: crate::types::ModelLifeCycle) -> Self {
+        self.inner = self.inner.model_life_cycle(input);
+        self
+    }
+    /// <p>A structure describing the current state of the model in its life cycle.</p>
+    pub fn set_model_life_cycle(mut self, input: ::std::option::Option<crate::types::ModelLifeCycle>) -> Self {
+        self.inner = self.inner.set_model_life_cycle(input);
+        self
+    }
+    /// <p>A structure describing the current state of the model in its life cycle.</p>
+    pub fn get_model_life_cycle(&self) -> &::std::option::Option<crate::types::ModelLifeCycle> {
+        self.inner.get_model_life_cycle()
+    }
 }

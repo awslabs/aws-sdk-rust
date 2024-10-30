@@ -10,11 +10,17 @@ pub mod associate_merged_graphql_api;
 /// Types for the `AssociateSourceGraphqlApi` operation.
 pub mod associate_source_graphql_api;
 
+/// Types for the `CreateApi` operation.
+pub mod create_api;
+
 /// Types for the `CreateApiCache` operation.
 pub mod create_api_cache;
 
 /// Types for the `CreateApiKey` operation.
 pub mod create_api_key;
+
+/// Types for the `CreateChannelNamespace` operation.
+pub mod create_channel_namespace;
 
 /// Types for the `CreateDataSource` operation.
 pub mod create_data_source;
@@ -34,11 +40,17 @@ pub mod create_resolver;
 /// Types for the `CreateType` operation.
 pub mod create_type;
 
+/// Types for the `DeleteApi` operation.
+pub mod delete_api;
+
 /// Types for the `DeleteApiCache` operation.
 pub mod delete_api_cache;
 
 /// Types for the `DeleteApiKey` operation.
 pub mod delete_api_key;
+
+/// Types for the `DeleteChannelNamespace` operation.
+pub mod delete_channel_namespace;
 
 /// Types for the `DeleteDataSource` operation.
 pub mod delete_data_source;
@@ -76,11 +88,17 @@ pub mod evaluate_mapping_template;
 /// Types for the `FlushApiCache` operation.
 pub mod flush_api_cache;
 
+/// Types for the `GetApi` operation.
+pub mod get_api;
+
 /// Types for the `GetApiAssociation` operation.
 pub mod get_api_association;
 
 /// Types for the `GetApiCache` operation.
 pub mod get_api_cache;
+
+/// Types for the `GetChannelNamespace` operation.
+pub mod get_channel_namespace;
 
 /// Types for the `GetDataSource` operation.
 pub mod get_data_source;
@@ -117,6 +135,12 @@ pub mod get_type;
 
 /// Types for the `ListApiKeys` operation.
 pub mod list_api_keys;
+
+/// Types for the `ListApis` operation.
+pub mod list_apis;
+
+/// Types for the `ListChannelNamespaces` operation.
+pub mod list_channel_namespaces;
 
 /// Types for the `ListDataSources` operation.
 pub mod list_data_sources;
@@ -166,11 +190,17 @@ pub mod tag_resource;
 /// Types for the `UntagResource` operation.
 pub mod untag_resource;
 
+/// Types for the `UpdateApi` operation.
+pub mod update_api;
+
 /// Types for the `UpdateApiCache` operation.
 pub mod update_api_cache;
 
 /// Types for the `UpdateApiKey` operation.
 pub mod update_api_key;
+
+/// Types for the `UpdateChannelNamespace` operation.
+pub mod update_channel_namespace;
 
 /// Types for the `UpdateDataSource` operation.
 pub mod update_data_source;

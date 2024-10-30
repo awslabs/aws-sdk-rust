@@ -62,6 +62,8 @@ pub struct DomainStatus {
     pub domain_endpoint_options: ::std::option::Option<crate::types::DomainEndpointOptions>,
     /// <p>Settings for fine-grained access control.</p>
     pub advanced_security_options: ::std::option::Option<crate::types::AdvancedSecurityOptions>,
+    /// <p>Container for IAM Identity Center Option control for the domain.</p>
+    pub identity_center_options: ::std::option::Option<crate::types::IdentityCenterOptions>,
     /// <p>Auto-Tune settings for the domain.</p>
     pub auto_tune_options: ::std::option::Option<crate::types::AutoTuneOptionsOutput>,
     /// <p>Information about a configuration change happening on the domain.</p>
@@ -193,6 +195,10 @@ impl DomainStatus {
     pub fn advanced_security_options(&self) -> ::std::option::Option<&crate::types::AdvancedSecurityOptions> {
         self.advanced_security_options.as_ref()
     }
+    /// <p>Container for IAM Identity Center Option control for the domain.</p>
+    pub fn identity_center_options(&self) -> ::std::option::Option<&crate::types::IdentityCenterOptions> {
+        self.identity_center_options.as_ref()
+    }
     /// <p>Auto-Tune settings for the domain.</p>
     pub fn auto_tune_options(&self) -> ::std::option::Option<&crate::types::AutoTuneOptionsOutput> {
         self.auto_tune_options.as_ref()
@@ -261,6 +267,7 @@ pub struct DomainStatusBuilder {
     pub(crate) service_software_options: ::std::option::Option<crate::types::ServiceSoftwareOptions>,
     pub(crate) domain_endpoint_options: ::std::option::Option<crate::types::DomainEndpointOptions>,
     pub(crate) advanced_security_options: ::std::option::Option<crate::types::AdvancedSecurityOptions>,
+    pub(crate) identity_center_options: ::std::option::Option<crate::types::IdentityCenterOptions>,
     pub(crate) auto_tune_options: ::std::option::Option<crate::types::AutoTuneOptionsOutput>,
     pub(crate) change_progress_details: ::std::option::Option<crate::types::ChangeProgressDetails>,
     pub(crate) off_peak_window_options: ::std::option::Option<crate::types::OffPeakWindowOptions>,
@@ -686,6 +693,20 @@ impl DomainStatusBuilder {
     pub fn get_advanced_security_options(&self) -> &::std::option::Option<crate::types::AdvancedSecurityOptions> {
         &self.advanced_security_options
     }
+    /// <p>Container for IAM Identity Center Option control for the domain.</p>
+    pub fn identity_center_options(mut self, input: crate::types::IdentityCenterOptions) -> Self {
+        self.identity_center_options = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Container for IAM Identity Center Option control for the domain.</p>
+    pub fn set_identity_center_options(mut self, input: ::std::option::Option<crate::types::IdentityCenterOptions>) -> Self {
+        self.identity_center_options = input;
+        self
+    }
+    /// <p>Container for IAM Identity Center Option control for the domain.</p>
+    pub fn get_identity_center_options(&self) -> &::std::option::Option<crate::types::IdentityCenterOptions> {
+        &self.identity_center_options
+    }
     /// <p>Auto-Tune settings for the domain.</p>
     pub fn auto_tune_options(mut self, input: crate::types::AutoTuneOptionsOutput) -> Self {
         self.auto_tune_options = ::std::option::Option::Some(input);
@@ -838,6 +859,7 @@ impl DomainStatusBuilder {
             service_software_options: self.service_software_options,
             domain_endpoint_options: self.domain_endpoint_options,
             advanced_security_options: self.advanced_security_options,
+            identity_center_options: self.identity_center_options,
             auto_tune_options: self.auto_tune_options,
             change_progress_details: self.change_progress_details,
             off_peak_window_options: self.off_peak_window_options,

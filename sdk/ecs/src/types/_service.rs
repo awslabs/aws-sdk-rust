@@ -24,7 +24,7 @@ pub struct Service {
     pub pending_count: i32,
     /// <p>The launch type the service is using. When using the DescribeServices API, this field is omitted if the service was created using a capacity provider strategy.</p>
     pub launch_type: ::std::option::Option<crate::types::LaunchType>,
-    /// <p>The capacity provider strategy the service uses. When using the DescribeServices API, this field is omitted if the service was created using a launch type.</p>
+    /// <p>The capacity provider strategy the service uses. When using <code>DescribeServices</code>, this field is omitted if the service was created using a launch type.</p>
     pub capacity_provider_strategy: ::std::option::Option<::std::vec::Vec<crate::types::CapacityProviderStrategyItem>>,
     /// <p>The platform version to run your service on. A platform version is only specified for tasks that are hosted on Fargate. If one isn't specified, the <code>LATEST</code> platform version is used. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     pub platform_version: ::std::option::Option<::std::string::String>,
@@ -66,7 +66,7 @@ pub struct Service {
     pub scheduling_strategy: ::std::option::Option<crate::types::SchedulingStrategy>,
     /// <p>The deployment controller type the service is using.</p>
     pub deployment_controller: ::std::option::Option<crate::types::DeploymentController>,
-    /// <p>The metadata that you apply to the service to help you categorize and organize them. Each tag consists of a key and an optional value. You define bot the key and value.</p>
+    /// <p>The metadata that you apply to the service to help you categorize and organize them. Each tag consists of a key and an optional value. You define both the key and value.</p>
     /// <p>The following basic restrictions apply to tags:</p>
     /// <ul>
     /// <li>
@@ -139,7 +139,7 @@ impl Service {
     pub fn launch_type(&self) -> ::std::option::Option<&crate::types::LaunchType> {
         self.launch_type.as_ref()
     }
-    /// <p>The capacity provider strategy the service uses. When using the DescribeServices API, this field is omitted if the service was created using a launch type.</p>
+    /// <p>The capacity provider strategy the service uses. When using <code>DescribeServices</code>, this field is omitted if the service was created using a launch type.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.capacity_provider_strategy.is_none()`.
     pub fn capacity_provider_strategy(&self) -> &[crate::types::CapacityProviderStrategyItem] {
@@ -225,7 +225,7 @@ impl Service {
     pub fn deployment_controller(&self) -> ::std::option::Option<&crate::types::DeploymentController> {
         self.deployment_controller.as_ref()
     }
-    /// <p>The metadata that you apply to the service to help you categorize and organize them. Each tag consists of a key and an optional value. You define bot the key and value.</p>
+    /// <p>The metadata that you apply to the service to help you categorize and organize them. Each tag consists of a key and an optional value. You define both the key and value.</p>
     /// <p>The following basic restrictions apply to tags:</p>
     /// <ul>
     /// <li>
@@ -465,14 +465,14 @@ impl ServiceBuilder {
     ///
     /// To override the contents of this collection use [`set_capacity_provider_strategy`](Self::set_capacity_provider_strategy).
     ///
-    /// <p>The capacity provider strategy the service uses. When using the DescribeServices API, this field is omitted if the service was created using a launch type.</p>
+    /// <p>The capacity provider strategy the service uses. When using <code>DescribeServices</code>, this field is omitted if the service was created using a launch type.</p>
     pub fn capacity_provider_strategy(mut self, input: crate::types::CapacityProviderStrategyItem) -> Self {
         let mut v = self.capacity_provider_strategy.unwrap_or_default();
         v.push(input);
         self.capacity_provider_strategy = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The capacity provider strategy the service uses. When using the DescribeServices API, this field is omitted if the service was created using a launch type.</p>
+    /// <p>The capacity provider strategy the service uses. When using <code>DescribeServices</code>, this field is omitted if the service was created using a launch type.</p>
     pub fn set_capacity_provider_strategy(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::CapacityProviderStrategyItem>>,
@@ -480,7 +480,7 @@ impl ServiceBuilder {
         self.capacity_provider_strategy = input;
         self
     }
-    /// <p>The capacity provider strategy the service uses. When using the DescribeServices API, this field is omitted if the service was created using a launch type.</p>
+    /// <p>The capacity provider strategy the service uses. When using <code>DescribeServices</code>, this field is omitted if the service was created using a launch type.</p>
     pub fn get_capacity_provider_strategy(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CapacityProviderStrategyItem>> {
         &self.capacity_provider_strategy
     }
@@ -758,7 +758,7 @@ impl ServiceBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>The metadata that you apply to the service to help you categorize and organize them. Each tag consists of a key and an optional value. You define bot the key and value.</p>
+    /// <p>The metadata that you apply to the service to help you categorize and organize them. Each tag consists of a key and an optional value. You define both the key and value.</p>
     /// <p>The following basic restrictions apply to tags:</p>
     /// <ul>
     /// <li>
@@ -782,7 +782,7 @@ impl ServiceBuilder {
         self.tags = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The metadata that you apply to the service to help you categorize and organize them. Each tag consists of a key and an optional value. You define bot the key and value.</p>
+    /// <p>The metadata that you apply to the service to help you categorize and organize them. Each tag consists of a key and an optional value. You define both the key and value.</p>
     /// <p>The following basic restrictions apply to tags:</p>
     /// <ul>
     /// <li>
@@ -804,7 +804,7 @@ impl ServiceBuilder {
         self.tags = input;
         self
     }
-    /// <p>The metadata that you apply to the service to help you categorize and organize them. Each tag consists of a key and an optional value. You define bot the key and value.</p>
+    /// <p>The metadata that you apply to the service to help you categorize and organize them. Each tag consists of a key and an optional value. You define both the key and value.</p>
     /// <p>The following basic restrictions apply to tags:</p>
     /// <ul>
     /// <li>

@@ -286,17 +286,17 @@ impl UpdateLocationHdfsFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_agent_arns`](Self::set_agent_arns).
     ///
-    /// <p>The ARNs of the agents that are used to connect to the HDFS cluster.</p>
+    /// <p>The Amazon Resource Names (ARNs) of the DataSync agents that can connect to your HDFS cluster.</p>
     pub fn agent_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.agent_arns(input.into());
         self
     }
-    /// <p>The ARNs of the agents that are used to connect to the HDFS cluster.</p>
+    /// <p>The Amazon Resource Names (ARNs) of the DataSync agents that can connect to your HDFS cluster.</p>
     pub fn set_agent_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_agent_arns(input);
         self
     }
-    /// <p>The ARNs of the agents that are used to connect to the HDFS cluster.</p>
+    /// <p>The Amazon Resource Names (ARNs) of the DataSync agents that can connect to your HDFS cluster.</p>
     pub fn get_agent_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_agent_arns()
     }

@@ -295,6 +295,8 @@ pub use crate::types::_ebs_block_device::EbsBlockDevice;
 
 pub use crate::types::_volume_type::VolumeType;
 
+pub use crate::types::_revoked_security_group_rule::RevokedSecurityGroupRule;
+
 pub use crate::types::_client_vpn_authorization_rule_status::ClientVpnAuthorizationRuleStatus;
 
 pub use crate::types::_client_vpn_authorization_rule_status_code::ClientVpnAuthorizationRuleStatusCode;
@@ -1237,6 +1239,8 @@ pub use crate::types::_subnet_cidr_block_state::SubnetCidrBlockState;
 
 pub use crate::types::_subnet_cidr_block_state_code::SubnetCidrBlockStateCode;
 
+pub use crate::types::_security_group_vpc_association_state::SecurityGroupVpcAssociationState;
+
 pub use crate::types::_ipam_resource_discovery_association::IpamResourceDiscoveryAssociation;
 
 pub use crate::types::_ipam_resource_discovery_association_state::IpamResourceDiscoveryAssociationState;
@@ -1452,6 +1456,8 @@ pub use crate::types::_tiering_operation_status::TieringOperationStatus;
 pub use crate::types::_storage_tier::StorageTier;
 
 pub use crate::types::_snapshot::Snapshot;
+
+pub use crate::types::_security_group_vpc_association::SecurityGroupVpcAssociation;
 
 pub use crate::types::_security_group::SecurityGroup;
 
@@ -3755,6 +3761,8 @@ mod _response_error;
 
 mod _response_launch_template_data;
 
+mod _revoked_security_group_rule;
+
 mod _ri_product_description;
 
 mod _root_device_type;
@@ -3832,6 +3840,10 @@ mod _security_group_rule_description;
 mod _security_group_rule_request;
 
 mod _security_group_rule_update;
+
+mod _security_group_vpc_association;
+
+mod _security_group_vpc_association_state;
 
 mod _self_service_portal;
 

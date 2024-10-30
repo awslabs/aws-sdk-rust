@@ -759,6 +759,16 @@ pub(crate) fn reflens_describe_security_group_rules_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_describe_security_group_vpc_associations_output_output_next_token(
+    input: &crate::operation::describe_security_group_vpc_associations::DescribeSecurityGroupVpcAssociationsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_describe_security_groups_output_output_next_token(
     input: &crate::operation::describe_security_groups::DescribeSecurityGroupsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -2173,6 +2183,16 @@ pub(crate) fn lens_describe_security_group_rules_output_output_security_group_ru
     input: crate::operation::describe_security_group_rules::DescribeSecurityGroupRulesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::SecurityGroupRule>> {
     let input = match input.security_group_rules {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_describe_security_group_vpc_associations_output_output_security_group_vpc_associations(
+    input: crate::operation::describe_security_group_vpc_associations::DescribeSecurityGroupVpcAssociationsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::SecurityGroupVpcAssociation>> {
+    let input = match input.security_group_vpc_associations {
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,
     };

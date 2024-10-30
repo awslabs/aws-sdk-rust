@@ -17,6 +17,7 @@
 ///     RrType::Caa => { /* ... */ },
 ///     RrType::Cname => { /* ... */ },
 ///     RrType::Ds => { /* ... */ },
+///     RrType::Https => { /* ... */ },
 ///     RrType::Mx => { /* ... */ },
 ///     RrType::Naptr => { /* ... */ },
 ///     RrType::Ns => { /* ... */ },
@@ -24,6 +25,9 @@
 ///     RrType::Soa => { /* ... */ },
 ///     RrType::Spf => { /* ... */ },
 ///     RrType::Srv => { /* ... */ },
+///     RrType::Sshfp => { /* ... */ },
+///     RrType::Svcb => { /* ... */ },
+///     RrType::Tlsa => { /* ... */ },
 ///     RrType::Txt => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -63,6 +67,8 @@ pub enum RrType {
     #[allow(missing_docs)] // documentation missing in model
     Ds,
     #[allow(missing_docs)] // documentation missing in model
+    Https,
+    #[allow(missing_docs)] // documentation missing in model
     Mx,
     #[allow(missing_docs)] // documentation missing in model
     Naptr,
@@ -77,6 +83,12 @@ pub enum RrType {
     #[allow(missing_docs)] // documentation missing in model
     Srv,
     #[allow(missing_docs)] // documentation missing in model
+    Sshfp,
+    #[allow(missing_docs)] // documentation missing in model
+    Svcb,
+    #[allow(missing_docs)] // documentation missing in model
+    Tlsa,
+    #[allow(missing_docs)] // documentation missing in model
     Txt,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -90,6 +102,7 @@ impl ::std::convert::From<&str> for RrType {
             "CAA" => RrType::Caa,
             "CNAME" => RrType::Cname,
             "DS" => RrType::Ds,
+            "HTTPS" => RrType::Https,
             "MX" => RrType::Mx,
             "NAPTR" => RrType::Naptr,
             "NS" => RrType::Ns,
@@ -97,6 +110,9 @@ impl ::std::convert::From<&str> for RrType {
             "SOA" => RrType::Soa,
             "SPF" => RrType::Spf,
             "SRV" => RrType::Srv,
+            "SSHFP" => RrType::Sshfp,
+            "SVCB" => RrType::Svcb,
+            "TLSA" => RrType::Tlsa,
             "TXT" => RrType::Txt,
             other => RrType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -118,6 +134,7 @@ impl RrType {
             RrType::Caa => "CAA",
             RrType::Cname => "CNAME",
             RrType::Ds => "DS",
+            RrType::Https => "HTTPS",
             RrType::Mx => "MX",
             RrType::Naptr => "NAPTR",
             RrType::Ns => "NS",
@@ -125,13 +142,18 @@ impl RrType {
             RrType::Soa => "SOA",
             RrType::Spf => "SPF",
             RrType::Srv => "SRV",
+            RrType::Sshfp => "SSHFP",
+            RrType::Svcb => "SVCB",
+            RrType::Tlsa => "TLSA",
             RrType::Txt => "TXT",
             RrType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["A", "AAAA", "CAA", "CNAME", "DS", "MX", "NAPTR", "NS", "PTR", "SOA", "SPF", "SRV", "TXT"]
+        &[
+            "A", "AAAA", "CAA", "CNAME", "DS", "HTTPS", "MX", "NAPTR", "NS", "PTR", "SOA", "SPF", "SRV", "SSHFP", "SVCB", "TLSA", "TXT",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for RrType {
@@ -159,6 +181,7 @@ impl ::std::fmt::Display for RrType {
             RrType::Caa => write!(f, "CAA"),
             RrType::Cname => write!(f, "CNAME"),
             RrType::Ds => write!(f, "DS"),
+            RrType::Https => write!(f, "HTTPS"),
             RrType::Mx => write!(f, "MX"),
             RrType::Naptr => write!(f, "NAPTR"),
             RrType::Ns => write!(f, "NS"),
@@ -166,6 +189,9 @@ impl ::std::fmt::Display for RrType {
             RrType::Soa => write!(f, "SOA"),
             RrType::Spf => write!(f, "SPF"),
             RrType::Srv => write!(f, "SRV"),
+            RrType::Sshfp => write!(f, "SSHFP"),
+            RrType::Svcb => write!(f, "SVCB"),
+            RrType::Tlsa => write!(f, "TLSA"),
             RrType::Txt => write!(f, "TXT"),
             RrType::Unknown(value) => write!(f, "{}", value),
         }

@@ -77,6 +77,19 @@ pub fn de_create_security_group(
                 builder = builder.set_tags(var_2);
             }
             ,
+            s if s.matches("securityGroupArn") /* SecurityGroupArn com.amazonaws.ec2.synthetic#CreateSecurityGroupOutput$SecurityGroupArn */ =>  {
+                let var_3 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_security_group_arn(var_3);
+            }
+            ,
             _ => {}
         }
     }

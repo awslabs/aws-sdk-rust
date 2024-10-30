@@ -277,6 +277,9 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | Amazon Lex Runtime V2 | [aws-sdk-lexruntimev2](https://crates.io/crates/aws-sdk-lexruntimev2) ([docs](https://docs.rs/aws-sdk-lexruntimev2)) |
 | Amazon Lightsail | [aws-sdk-lightsail](https://crates.io/crates/aws-sdk-lightsail) ([docs](https://docs.rs/aws-sdk-lightsail)) |
 | Amazon Location Service | [aws-sdk-location](https://crates.io/crates/aws-sdk-location) ([docs](https://docs.rs/aws-sdk-location)) |
+| Amazon Location Service Maps V2 | [aws-sdk-geomaps](https://crates.io/crates/aws-sdk-geomaps) ([docs](https://docs.rs/aws-sdk-geomaps)) |
+| Amazon Location Service Places V2 | [aws-sdk-geoplaces](https://crates.io/crates/aws-sdk-geoplaces) ([docs](https://docs.rs/aws-sdk-geoplaces)) |
+| Amazon Location Service Routes V2 | [aws-sdk-georoutes](https://crates.io/crates/aws-sdk-georoutes) ([docs](https://docs.rs/aws-sdk-georoutes)) |
 | Amazon Lookout for Equipment | [aws-sdk-lookoutequipment](https://crates.io/crates/aws-sdk-lookoutequipment) ([docs](https://docs.rs/aws-sdk-lookoutequipment)) |
 | Amazon Lookout for Metrics | [aws-sdk-lookoutmetrics](https://crates.io/crates/aws-sdk-lookoutmetrics) ([docs](https://docs.rs/aws-sdk-lookoutmetrics)) |
 | Amazon Lookout for Vision | [aws-sdk-lookoutvision](https://crates.io/crates/aws-sdk-lookoutvision) ([docs](https://docs.rs/aws-sdk-lookoutvision)) |

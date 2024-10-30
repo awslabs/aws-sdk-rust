@@ -256,6 +256,8 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListAvailabil
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum ListAvailabilityConfigurationsError {
+    /// <p>One or more of the input parameters don't match the service's restrictions.</p>
+    InvalidParameterException(crate::types::error::InvalidParameterException),
     /// <p>An operation received a valid organization identifier that either doesn't belong or exist in the system.</p>
     OrganizationNotFoundException(crate::types::error::OrganizationNotFoundException),
     /// <p>The organization must have a valid state to perform certain operations on the organization or its members.</p>
@@ -293,10 +295,15 @@ impl ListAvailabilityConfigurationsError {
     ///
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::InvalidParameterException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::OrganizationNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::OrganizationStateException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
+    }
+    /// Returns `true` if the error kind is `ListAvailabilityConfigurationsError::InvalidParameterException`.
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(self, Self::InvalidParameterException(_))
     }
     /// Returns `true` if the error kind is `ListAvailabilityConfigurationsError::OrganizationNotFoundException`.
     pub fn is_organization_not_found_exception(&self) -> bool {
@@ -310,6 +317,7 @@ impl ListAvailabilityConfigurationsError {
 impl ::std::error::Error for ListAvailabilityConfigurationsError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
+            Self::InvalidParameterException(_inner) => ::std::option::Option::Some(_inner),
             Self::OrganizationNotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::OrganizationStateException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
@@ -319,6 +327,7 @@ impl ::std::error::Error for ListAvailabilityConfigurationsError {
 impl ::std::fmt::Display for ListAvailabilityConfigurationsError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
+            Self::InvalidParameterException(_inner) => _inner.fmt(f),
             Self::OrganizationNotFoundException(_inner) => _inner.fmt(f),
             Self::OrganizationStateException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
@@ -342,6 +351,7 @@ impl ::aws_smithy_types::retry::ProvideErrorKind for ListAvailabilityConfigurati
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for ListAvailabilityConfigurationsError {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::InvalidParameterException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::OrganizationNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::OrganizationStateException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,

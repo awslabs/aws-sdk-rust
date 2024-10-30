@@ -16,7 +16,8 @@ pub struct CreateNetworkInterfaceInput {
     /// <p>You can't specify a count of IPv6 prefixes if you've specified one of the following: specific IPv6 prefixes, specific IPv6 addresses, or a count of IPv6 addresses.</p>
     pub ipv6_prefix_count: ::std::option::Option<i32>,
     /// <p>The type of network interface. The default is <code>interface</code>.</p>
-    /// <p>The only supported values are <code>interface</code>, <code>efa</code>, and <code>trunk</code>.</p>
+    /// <p>If you specify <code>efa-only</code>, do not assign any IP addresses to the network interface. EFA-only network interfaces do not support IP addresses.</p>
+    /// <p>The only supported values are <code>interface</code>, <code>efa</code>, <code>efa-only</code>, and <code>trunk</code>.</p>
     pub interface_type: ::std::option::Option<crate::types::NetworkInterfaceCreationType>,
     /// <p>The tags to apply to the new network interface.</p>
     pub tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
@@ -76,7 +77,8 @@ impl CreateNetworkInterfaceInput {
         self.ipv6_prefix_count
     }
     /// <p>The type of network interface. The default is <code>interface</code>.</p>
-    /// <p>The only supported values are <code>interface</code>, <code>efa</code>, and <code>trunk</code>.</p>
+    /// <p>If you specify <code>efa-only</code>, do not assign any IP addresses to the network interface. EFA-only network interfaces do not support IP addresses.</p>
+    /// <p>The only supported values are <code>interface</code>, <code>efa</code>, <code>efa-only</code>, and <code>trunk</code>.</p>
     pub fn interface_type(&self) -> ::std::option::Option<&crate::types::NetworkInterfaceCreationType> {
         self.interface_type.as_ref()
     }
@@ -258,19 +260,22 @@ impl CreateNetworkInterfaceInputBuilder {
         &self.ipv6_prefix_count
     }
     /// <p>The type of network interface. The default is <code>interface</code>.</p>
-    /// <p>The only supported values are <code>interface</code>, <code>efa</code>, and <code>trunk</code>.</p>
+    /// <p>If you specify <code>efa-only</code>, do not assign any IP addresses to the network interface. EFA-only network interfaces do not support IP addresses.</p>
+    /// <p>The only supported values are <code>interface</code>, <code>efa</code>, <code>efa-only</code>, and <code>trunk</code>.</p>
     pub fn interface_type(mut self, input: crate::types::NetworkInterfaceCreationType) -> Self {
         self.interface_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of network interface. The default is <code>interface</code>.</p>
-    /// <p>The only supported values are <code>interface</code>, <code>efa</code>, and <code>trunk</code>.</p>
+    /// <p>If you specify <code>efa-only</code>, do not assign any IP addresses to the network interface. EFA-only network interfaces do not support IP addresses.</p>
+    /// <p>The only supported values are <code>interface</code>, <code>efa</code>, <code>efa-only</code>, and <code>trunk</code>.</p>
     pub fn set_interface_type(mut self, input: ::std::option::Option<crate::types::NetworkInterfaceCreationType>) -> Self {
         self.interface_type = input;
         self
     }
     /// <p>The type of network interface. The default is <code>interface</code>.</p>
-    /// <p>The only supported values are <code>interface</code>, <code>efa</code>, and <code>trunk</code>.</p>
+    /// <p>If you specify <code>efa-only</code>, do not assign any IP addresses to the network interface. EFA-only network interfaces do not support IP addresses.</p>
+    /// <p>The only supported values are <code>interface</code>, <code>efa</code>, <code>efa-only</code>, and <code>trunk</code>.</p>
     pub fn get_interface_type(&self) -> &::std::option::Option<crate::types::NetworkInterfaceCreationType> {
         &self.interface_type
     }

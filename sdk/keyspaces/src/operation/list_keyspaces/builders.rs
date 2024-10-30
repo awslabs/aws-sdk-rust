@@ -22,7 +22,7 @@ impl crate::operation::list_keyspaces::builders::ListKeyspacesInputBuilder {
 }
 /// Fluent builder constructing a request to `ListKeyspaces`.
 ///
-/// <p>Returns a list of keyspaces.</p>
+/// <p>The <code>ListKeyspaces</code> operation returns a list of keyspaces.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListKeyspacesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

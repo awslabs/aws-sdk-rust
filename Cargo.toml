@@ -1,10 +1,10 @@
 [workspace]
 resolver = "2"
 exclude = [
+    "examples/cross_service",
     "examples/examples",
     "examples/lambda",
     "examples/webassembly",
-    "examples/cross_service",
     "examples/test-utils",
     "tests/no-default-features",
     "tests/webassembly"
@@ -191,6 +191,9 @@ members = [
     "sdk/freetier",
     "sdk/fsx",
     "sdk/gamelift",
+    "sdk/geomaps",
+    "sdk/geoplaces",
+    "sdk/georoutes",
     "sdk/glacier",
     "sdk/globalaccelerator",
     "sdk/glue",

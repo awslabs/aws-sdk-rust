@@ -7,7 +7,8 @@ pub struct CreateLocationFsxWindowsInput {
     pub subdirectory: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the Amazon Resource Name (ARN) for the FSx for Windows File Server file system.</p>
     pub fsx_filesystem_arn: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies the ARNs of the security groups that provide access to your file system's preferred subnet.</p><note>
+    /// <p>Specifies the ARNs of the Amazon EC2 security groups that provide access to your file system's preferred subnet.</p>
+    /// <p>The security groups that you specify must be able to communicate with your file system's security groups. For information about configuring security groups for file system access, see the <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/limit-access-security-groups.html"> <i>Amazon FSx for Windows File Server User Guide</i> </a>.</p><note>
     /// <p>If you choose a security group that doesn't allow connections from within itself, do one of the following:</p>
     /// <ul>
     /// <li>
@@ -37,7 +38,8 @@ impl CreateLocationFsxWindowsInput {
     pub fn fsx_filesystem_arn(&self) -> ::std::option::Option<&str> {
         self.fsx_filesystem_arn.as_deref()
     }
-    /// <p>Specifies the ARNs of the security groups that provide access to your file system's preferred subnet.</p><note>
+    /// <p>Specifies the ARNs of the Amazon EC2 security groups that provide access to your file system's preferred subnet.</p>
+    /// <p>The security groups that you specify must be able to communicate with your file system's security groups. For information about configuring security groups for file system access, see the <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/limit-access-security-groups.html"> <i>Amazon FSx for Windows File Server User Guide</i> </a>.</p><note>
     /// <p>If you choose a security group that doesn't allow connections from within itself, do one of the following:</p>
     /// <ul>
     /// <li>
@@ -138,7 +140,8 @@ impl CreateLocationFsxWindowsInputBuilder {
     ///
     /// To override the contents of this collection use [`set_security_group_arns`](Self::set_security_group_arns).
     ///
-    /// <p>Specifies the ARNs of the security groups that provide access to your file system's preferred subnet.</p><note>
+    /// <p>Specifies the ARNs of the Amazon EC2 security groups that provide access to your file system's preferred subnet.</p>
+    /// <p>The security groups that you specify must be able to communicate with your file system's security groups. For information about configuring security groups for file system access, see the <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/limit-access-security-groups.html"> <i>Amazon FSx for Windows File Server User Guide</i> </a>.</p><note>
     /// <p>If you choose a security group that doesn't allow connections from within itself, do one of the following:</p>
     /// <ul>
     /// <li>
@@ -153,7 +156,8 @@ impl CreateLocationFsxWindowsInputBuilder {
         self.security_group_arns = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Specifies the ARNs of the security groups that provide access to your file system's preferred subnet.</p><note>
+    /// <p>Specifies the ARNs of the Amazon EC2 security groups that provide access to your file system's preferred subnet.</p>
+    /// <p>The security groups that you specify must be able to communicate with your file system's security groups. For information about configuring security groups for file system access, see the <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/limit-access-security-groups.html"> <i>Amazon FSx for Windows File Server User Guide</i> </a>.</p><note>
     /// <p>If you choose a security group that doesn't allow connections from within itself, do one of the following:</p>
     /// <ul>
     /// <li>
@@ -166,7 +170,8 @@ impl CreateLocationFsxWindowsInputBuilder {
         self.security_group_arns = input;
         self
     }
-    /// <p>Specifies the ARNs of the security groups that provide access to your file system's preferred subnet.</p><note>
+    /// <p>Specifies the ARNs of the Amazon EC2 security groups that provide access to your file system's preferred subnet.</p>
+    /// <p>The security groups that you specify must be able to communicate with your file system's security groups. For information about configuring security groups for file system access, see the <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/limit-access-security-groups.html"> <i>Amazon FSx for Windows File Server User Guide</i> </a>.</p><note>
     /// <p>If you choose a security group that doesn't allow connections from within itself, do one of the following:</p>
     /// <ul>
     /// <li>

@@ -8,15 +8,17 @@ pub struct DescribeLocationEfsOutput {
     pub location_arn: ::std::option::Option<::std::string::String>,
     /// <p>The URL of the Amazon EFS file system location.</p>
     pub location_uri: ::std::option::Option<::std::string::String>,
-    /// <p>The subnet and security groups that DataSync uses to access your Amazon EFS file system.</p>
+    /// <p>The subnet and security groups that DataSync uses to connect to one of your Amazon EFS file system's <a href="https://docs.aws.amazon.com/efs/latest/ug/accessing-fs.html">mount targets</a>.</p>
     pub ec2_config: ::std::option::Option<crate::types::Ec2Config>,
     /// <p>The time that the location was created.</p>
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The ARN of the access point that DataSync uses to access the Amazon EFS file system.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-efs-location.html#create-efs-location-iam">Accessing restricted file systems</a>.</p>
     pub access_point_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The Identity and Access Management (IAM) role that DataSync assumes when mounting the Amazon EFS file system.</p>
+    /// <p>The Identity and Access Management (IAM) role that allows DataSync to access your Amazon EFS file system.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-efs-location.html#create-efs-location-iam-role">Creating a DataSync IAM role for file system access</a>.</p>
     pub file_system_access_role_arn: ::std::option::Option<::std::string::String>,
-    /// <p>Describes whether DataSync uses Transport Layer Security (TLS) encryption when copying data to or from the Amazon EFS file system.</p>
+    /// <p>Indicates whether DataSync uses Transport Layer Security (TLS) encryption when transferring data to or from the Amazon EFS file system.</p>
     pub in_transit_encryption: ::std::option::Option<crate::types::EfsInTransitEncryption>,
     _request_id: Option<String>,
 }
@@ -29,7 +31,7 @@ impl DescribeLocationEfsOutput {
     pub fn location_uri(&self) -> ::std::option::Option<&str> {
         self.location_uri.as_deref()
     }
-    /// <p>The subnet and security groups that DataSync uses to access your Amazon EFS file system.</p>
+    /// <p>The subnet and security groups that DataSync uses to connect to one of your Amazon EFS file system's <a href="https://docs.aws.amazon.com/efs/latest/ug/accessing-fs.html">mount targets</a>.</p>
     pub fn ec2_config(&self) -> ::std::option::Option<&crate::types::Ec2Config> {
         self.ec2_config.as_ref()
     }
@@ -38,14 +40,16 @@ impl DescribeLocationEfsOutput {
         self.creation_time.as_ref()
     }
     /// <p>The ARN of the access point that DataSync uses to access the Amazon EFS file system.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-efs-location.html#create-efs-location-iam">Accessing restricted file systems</a>.</p>
     pub fn access_point_arn(&self) -> ::std::option::Option<&str> {
         self.access_point_arn.as_deref()
     }
-    /// <p>The Identity and Access Management (IAM) role that DataSync assumes when mounting the Amazon EFS file system.</p>
+    /// <p>The Identity and Access Management (IAM) role that allows DataSync to access your Amazon EFS file system.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-efs-location.html#create-efs-location-iam-role">Creating a DataSync IAM role for file system access</a>.</p>
     pub fn file_system_access_role_arn(&self) -> ::std::option::Option<&str> {
         self.file_system_access_role_arn.as_deref()
     }
-    /// <p>Describes whether DataSync uses Transport Layer Security (TLS) encryption when copying data to or from the Amazon EFS file system.</p>
+    /// <p>Indicates whether DataSync uses Transport Layer Security (TLS) encryption when transferring data to or from the Amazon EFS file system.</p>
     pub fn in_transit_encryption(&self) -> ::std::option::Option<&crate::types::EfsInTransitEncryption> {
         self.in_transit_encryption.as_ref()
     }
@@ -104,17 +108,17 @@ impl DescribeLocationEfsOutputBuilder {
     pub fn get_location_uri(&self) -> &::std::option::Option<::std::string::String> {
         &self.location_uri
     }
-    /// <p>The subnet and security groups that DataSync uses to access your Amazon EFS file system.</p>
+    /// <p>The subnet and security groups that DataSync uses to connect to one of your Amazon EFS file system's <a href="https://docs.aws.amazon.com/efs/latest/ug/accessing-fs.html">mount targets</a>.</p>
     pub fn ec2_config(mut self, input: crate::types::Ec2Config) -> Self {
         self.ec2_config = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The subnet and security groups that DataSync uses to access your Amazon EFS file system.</p>
+    /// <p>The subnet and security groups that DataSync uses to connect to one of your Amazon EFS file system's <a href="https://docs.aws.amazon.com/efs/latest/ug/accessing-fs.html">mount targets</a>.</p>
     pub fn set_ec2_config(mut self, input: ::std::option::Option<crate::types::Ec2Config>) -> Self {
         self.ec2_config = input;
         self
     }
-    /// <p>The subnet and security groups that DataSync uses to access your Amazon EFS file system.</p>
+    /// <p>The subnet and security groups that DataSync uses to connect to one of your Amazon EFS file system's <a href="https://docs.aws.amazon.com/efs/latest/ug/accessing-fs.html">mount targets</a>.</p>
     pub fn get_ec2_config(&self) -> &::std::option::Option<crate::types::Ec2Config> {
         &self.ec2_config
     }
@@ -133,44 +137,50 @@ impl DescribeLocationEfsOutputBuilder {
         &self.creation_time
     }
     /// <p>The ARN of the access point that DataSync uses to access the Amazon EFS file system.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-efs-location.html#create-efs-location-iam">Accessing restricted file systems</a>.</p>
     pub fn access_point_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.access_point_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the access point that DataSync uses to access the Amazon EFS file system.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-efs-location.html#create-efs-location-iam">Accessing restricted file systems</a>.</p>
     pub fn set_access_point_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.access_point_arn = input;
         self
     }
     /// <p>The ARN of the access point that DataSync uses to access the Amazon EFS file system.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-efs-location.html#create-efs-location-iam">Accessing restricted file systems</a>.</p>
     pub fn get_access_point_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.access_point_arn
     }
-    /// <p>The Identity and Access Management (IAM) role that DataSync assumes when mounting the Amazon EFS file system.</p>
+    /// <p>The Identity and Access Management (IAM) role that allows DataSync to access your Amazon EFS file system.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-efs-location.html#create-efs-location-iam-role">Creating a DataSync IAM role for file system access</a>.</p>
     pub fn file_system_access_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_system_access_role_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Identity and Access Management (IAM) role that DataSync assumes when mounting the Amazon EFS file system.</p>
+    /// <p>The Identity and Access Management (IAM) role that allows DataSync to access your Amazon EFS file system.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-efs-location.html#create-efs-location-iam-role">Creating a DataSync IAM role for file system access</a>.</p>
     pub fn set_file_system_access_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.file_system_access_role_arn = input;
         self
     }
-    /// <p>The Identity and Access Management (IAM) role that DataSync assumes when mounting the Amazon EFS file system.</p>
+    /// <p>The Identity and Access Management (IAM) role that allows DataSync to access your Amazon EFS file system.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-efs-location.html#create-efs-location-iam-role">Creating a DataSync IAM role for file system access</a>.</p>
     pub fn get_file_system_access_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.file_system_access_role_arn
     }
-    /// <p>Describes whether DataSync uses Transport Layer Security (TLS) encryption when copying data to or from the Amazon EFS file system.</p>
+    /// <p>Indicates whether DataSync uses Transport Layer Security (TLS) encryption when transferring data to or from the Amazon EFS file system.</p>
     pub fn in_transit_encryption(mut self, input: crate::types::EfsInTransitEncryption) -> Self {
         self.in_transit_encryption = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Describes whether DataSync uses Transport Layer Security (TLS) encryption when copying data to or from the Amazon EFS file system.</p>
+    /// <p>Indicates whether DataSync uses Transport Layer Security (TLS) encryption when transferring data to or from the Amazon EFS file system.</p>
     pub fn set_in_transit_encryption(mut self, input: ::std::option::Option<crate::types::EfsInTransitEncryption>) -> Self {
         self.in_transit_encryption = input;
         self
     }
-    /// <p>Describes whether DataSync uses Transport Layer Security (TLS) encryption when copying data to or from the Amazon EFS file system.</p>
+    /// <p>Indicates whether DataSync uses Transport Layer Security (TLS) encryption when transferring data to or from the Amazon EFS file system.</p>
     pub fn get_in_transit_encryption(&self) -> &::std::option::Option<crate::types::EfsInTransitEncryption> {
         &self.in_transit_encryption
     }

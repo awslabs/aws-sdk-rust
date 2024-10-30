@@ -247,20 +247,6 @@ impl CreateGraphqlApiFluentBuilder {
     pub fn get_lambda_authorizer_config(&self) -> &::std::option::Option<crate::types::LambdaAuthorizerConfig> {
         self.inner.get_lambda_authorizer_config()
     }
-    /// <p>Sets the value of the GraphQL API to public (<code>GLOBAL</code>) or private (<code>PRIVATE</code>). If no value is provided, the visibility will be set to <code>GLOBAL</code> by default. This value cannot be changed once the API has been created.</p>
-    pub fn visibility(mut self, input: crate::types::GraphQlApiVisibility) -> Self {
-        self.inner = self.inner.visibility(input);
-        self
-    }
-    /// <p>Sets the value of the GraphQL API to public (<code>GLOBAL</code>) or private (<code>PRIVATE</code>). If no value is provided, the visibility will be set to <code>GLOBAL</code> by default. This value cannot be changed once the API has been created.</p>
-    pub fn set_visibility(mut self, input: ::std::option::Option<crate::types::GraphQlApiVisibility>) -> Self {
-        self.inner = self.inner.set_visibility(input);
-        self
-    }
-    /// <p>Sets the value of the GraphQL API to public (<code>GLOBAL</code>) or private (<code>PRIVATE</code>). If no value is provided, the visibility will be set to <code>GLOBAL</code> by default. This value cannot be changed once the API has been created.</p>
-    pub fn get_visibility(&self) -> &::std::option::Option<crate::types::GraphQlApiVisibility> {
-        self.inner.get_visibility()
-    }
     /// <p>The value that indicates whether the GraphQL API is a standard API (<code>GRAPHQL</code>) or merged API (<code>MERGED</code>).</p>
     pub fn api_type(mut self, input: crate::types::GraphQlApiType) -> Self {
         self.inner = self.inner.api_type(input);
@@ -288,6 +274,20 @@ impl CreateGraphqlApiFluentBuilder {
     /// <p>The Identity and Access Management service role ARN for a merged API. The AppSync service assumes this role on behalf of the Merged API to validate access to source APIs at runtime and to prompt the <code>AUTO_MERGE</code> to update the merged API endpoint with the source API changes automatically.</p>
     pub fn get_merged_api_execution_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_merged_api_execution_role_arn()
+    }
+    /// <p>Sets the value of the GraphQL API to public (<code>GLOBAL</code>) or private (<code>PRIVATE</code>). If no value is provided, the visibility will be set to <code>GLOBAL</code> by default. This value cannot be changed once the API has been created.</p>
+    pub fn visibility(mut self, input: crate::types::GraphQlApiVisibility) -> Self {
+        self.inner = self.inner.visibility(input);
+        self
+    }
+    /// <p>Sets the value of the GraphQL API to public (<code>GLOBAL</code>) or private (<code>PRIVATE</code>). If no value is provided, the visibility will be set to <code>GLOBAL</code> by default. This value cannot be changed once the API has been created.</p>
+    pub fn set_visibility(mut self, input: ::std::option::Option<crate::types::GraphQlApiVisibility>) -> Self {
+        self.inner = self.inner.set_visibility(input);
+        self
+    }
+    /// <p>Sets the value of the GraphQL API to public (<code>GLOBAL</code>) or private (<code>PRIVATE</code>). If no value is provided, the visibility will be set to <code>GLOBAL</code> by default. This value cannot be changed once the API has been created.</p>
+    pub fn get_visibility(&self) -> &::std::option::Option<crate::types::GraphQlApiVisibility> {
+        self.inner.get_visibility()
     }
     /// <p>The owner contact information for an API resource.</p>
     /// <p>This field accepts any string input with a length of 0 - 256 characters.</p>

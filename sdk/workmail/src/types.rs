@@ -27,6 +27,14 @@ pub use crate::types::_folder_name::FolderName;
 
 pub use crate::types::_permission_type::PermissionType;
 
+pub use crate::types::_personal_access_token_configuration::PersonalAccessTokenConfiguration;
+
+pub use crate::types::_personal_access_token_configuration_status::PersonalAccessTokenConfigurationStatus;
+
+pub use crate::types::_identity_center_configuration::IdentityCenterConfiguration;
+
+pub use crate::types::_identity_provider_authentication_mode::IdentityProviderAuthenticationMode;
+
 pub use crate::types::_access_control_rule_effect::AccessControlRuleEffect;
 
 pub use crate::types::_user::User;
@@ -42,6 +50,8 @@ pub use crate::types::_list_resources_filters::ListResourcesFilters;
 pub use crate::types::_delegate::Delegate;
 
 pub use crate::types::_member_type::MemberType;
+
+pub use crate::types::_personal_access_token_summary::PersonalAccessTokenSummary;
 
 pub use crate::types::_organization_summary::OrganizationSummary;
 
@@ -123,6 +133,10 @@ mod _group;
 
 mod _group_identifier;
 
+mod _identity_center_configuration;
+
+mod _identity_provider_authentication_mode;
+
 mod _impersonation_matched_rule;
 
 mod _impersonation_role;
@@ -164,6 +178,12 @@ mod _organization_summary;
 mod _permission;
 
 mod _permission_type;
+
+mod _personal_access_token_configuration;
+
+mod _personal_access_token_configuration_status;
+
+mod _personal_access_token_summary;
 
 mod _redacted_ews_availability_provider;
 

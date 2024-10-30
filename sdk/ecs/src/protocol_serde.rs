@@ -55,6 +55,10 @@ pub(crate) mod shape_describe_clusters;
 
 pub(crate) mod shape_describe_container_instances;
 
+pub(crate) mod shape_describe_service_deployments;
+
+pub(crate) mod shape_describe_service_revisions;
+
 pub(crate) mod shape_describe_services;
 
 pub(crate) mod shape_describe_task_definition;
@@ -76,6 +80,8 @@ pub(crate) mod shape_list_attributes;
 pub(crate) mod shape_list_clusters;
 
 pub(crate) mod shape_list_container_instances;
+
+pub(crate) mod shape_list_service_deployments;
 
 pub(crate) mod shape_list_services;
 
@@ -193,6 +199,10 @@ pub(crate) mod shape_describe_clusters_input;
 
 pub(crate) mod shape_describe_container_instances_input;
 
+pub(crate) mod shape_describe_service_deployments_input;
+
+pub(crate) mod shape_describe_service_revisions_input;
+
 pub(crate) mod shape_describe_services_input;
 
 pub(crate) mod shape_describe_task_definition_input;
@@ -218,6 +228,8 @@ pub(crate) mod shape_list_attributes_input;
 pub(crate) mod shape_list_clusters_input;
 
 pub(crate) mod shape_list_container_instances_input;
+
+pub(crate) mod shape_list_service_deployments_input;
 
 pub(crate) mod shape_list_services_by_namespace_input;
 
@@ -341,6 +353,8 @@ pub(crate) mod shape_container_instances;
 
 pub(crate) mod shape_container_state_change;
 
+pub(crate) mod shape_created_at;
+
 pub(crate) mod shape_deployment_configuration;
 
 pub(crate) mod shape_deployment_controller;
@@ -381,7 +395,13 @@ pub(crate) mod shape_service;
 
 pub(crate) mod shape_service_connect_configuration;
 
+pub(crate) mod shape_service_deployments;
+
+pub(crate) mod shape_service_deployments_brief;
+
 pub(crate) mod shape_service_registry;
+
+pub(crate) mod shape_service_revisions;
 
 pub(crate) mod shape_service_volume_configuration;
 
@@ -511,11 +531,17 @@ pub(crate) mod shape_secret;
 
 pub(crate) mod shape_service_connect_service;
 
+pub(crate) mod shape_service_deployment;
+
+pub(crate) mod shape_service_deployment_brief;
+
 pub(crate) mod shape_service_events;
 
 pub(crate) mod shape_service_managed_ebs_volume_configuration;
 
 pub(crate) mod shape_service_registries;
+
+pub(crate) mod shape_service_revision;
 
 pub(crate) mod shape_statistics;
 
@@ -536,6 +562,8 @@ pub(crate) mod shape_volume_list;
 pub(crate) mod shape_attachment;
 
 pub(crate) mod shape_container;
+
+pub(crate) mod shape_container_images;
 
 pub(crate) mod shape_container_overrides;
 
@@ -559,11 +587,23 @@ pub(crate) mod shape_kernel_capabilities;
 
 pub(crate) mod shape_proxy_configuration_properties;
 
+pub(crate) mod shape_rollback;
+
 pub(crate) mod shape_service_connect_client_alias;
 
 pub(crate) mod shape_service_connect_tls_configuration;
 
+pub(crate) mod shape_service_deployment_alarms;
+
+pub(crate) mod shape_service_deployment_circuit_breaker;
+
 pub(crate) mod shape_service_event;
+
+pub(crate) mod shape_service_revision_summary;
+
+pub(crate) mod shape_service_revisions_summary_list;
+
+pub(crate) mod shape_service_volume_configurations;
 
 pub(crate) mod shape_task_managed_ebs_volume_termination_policy;
 
@@ -574,6 +614,8 @@ pub(crate) mod shape_tmpfs;
 pub(crate) mod shape_attachment_details;
 
 pub(crate) mod shape_container_dependencies;
+
+pub(crate) mod shape_container_image;
 
 pub(crate) mod shape_docker_labels_map;
 
@@ -601,11 +643,11 @@ pub(crate) mod shape_resource_requirements;
 
 pub(crate) mod shape_secret_list;
 
+pub(crate) mod shape_service_connect_service_list;
+
 pub(crate) mod shape_service_connect_service_resource_list;
 
 pub(crate) mod shape_service_connect_tls_certificate_authority;
-
-pub(crate) mod shape_service_volume_configurations;
 
 pub(crate) mod shape_system_controls;
 
@@ -625,16 +667,14 @@ pub(crate) mod shape_managed_agent;
 
 pub(crate) mod shape_network_interface;
 
-pub(crate) mod shape_service_connect_service_list;
-
 pub(crate) mod shape_service_connect_service_resource;
 
 pub(crate) mod shape_string_map;
 
 pub(crate) mod shape_tmpfs_list;
 
-pub(crate) mod shape_device_cgroup_permissions;
-
 pub(crate) mod shape_ebs_tag_specifications;
 
 pub(crate) mod shape_service_connect_client_alias_list;
+
+pub(crate) mod shape_device_cgroup_permissions;

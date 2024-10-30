@@ -6,7 +6,7 @@
 pub struct PrivateLinkConfig {
     /// <p>Specifies the ID of the VPC endpoint that your agent connects to.</p>
     pub vpc_endpoint_id: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies the VPC endpoint provided by <a href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-service.html">Amazon Web Services PrivateLink</a> that your agent connects to.</p>
+    /// <p>Specifies the VPC endpoint provided by <a href="https://docs.aws.amazon.com/vpc/latest/privatelink/privatelink-share-your-services.html">Amazon Web Services PrivateLink</a> that your agent connects to.</p>
     pub private_link_endpoint: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the ARN of the subnet where your VPC endpoint is located. You can only specify one ARN.</p>
     pub subnet_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -18,7 +18,7 @@ impl PrivateLinkConfig {
     pub fn vpc_endpoint_id(&self) -> ::std::option::Option<&str> {
         self.vpc_endpoint_id.as_deref()
     }
-    /// <p>Specifies the VPC endpoint provided by <a href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-service.html">Amazon Web Services PrivateLink</a> that your agent connects to.</p>
+    /// <p>Specifies the VPC endpoint provided by <a href="https://docs.aws.amazon.com/vpc/latest/privatelink/privatelink-share-your-services.html">Amazon Web Services PrivateLink</a> that your agent connects to.</p>
     pub fn private_link_endpoint(&self) -> ::std::option::Option<&str> {
         self.private_link_endpoint.as_deref()
     }
@@ -66,17 +66,17 @@ impl PrivateLinkConfigBuilder {
     pub fn get_vpc_endpoint_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.vpc_endpoint_id
     }
-    /// <p>Specifies the VPC endpoint provided by <a href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-service.html">Amazon Web Services PrivateLink</a> that your agent connects to.</p>
+    /// <p>Specifies the VPC endpoint provided by <a href="https://docs.aws.amazon.com/vpc/latest/privatelink/privatelink-share-your-services.html">Amazon Web Services PrivateLink</a> that your agent connects to.</p>
     pub fn private_link_endpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.private_link_endpoint = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Specifies the VPC endpoint provided by <a href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-service.html">Amazon Web Services PrivateLink</a> that your agent connects to.</p>
+    /// <p>Specifies the VPC endpoint provided by <a href="https://docs.aws.amazon.com/vpc/latest/privatelink/privatelink-share-your-services.html">Amazon Web Services PrivateLink</a> that your agent connects to.</p>
     pub fn set_private_link_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.private_link_endpoint = input;
         self
     }
-    /// <p>Specifies the VPC endpoint provided by <a href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-service.html">Amazon Web Services PrivateLink</a> that your agent connects to.</p>
+    /// <p>Specifies the VPC endpoint provided by <a href="https://docs.aws.amazon.com/vpc/latest/privatelink/privatelink-share-your-services.html">Amazon Web Services PrivateLink</a> that your agent connects to.</p>
     pub fn get_private_link_endpoint(&self) -> &::std::option::Option<::std::string::String> {
         &self.private_link_endpoint
     }

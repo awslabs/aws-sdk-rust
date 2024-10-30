@@ -287,4 +287,32 @@ impl UpdateModelPackageFluentBuilder {
     pub fn get_model_card(&self) -> &::std::option::Option<crate::types::ModelPackageModelCard> {
         self.inner.get_model_card()
     }
+    /// <p>A structure describing the current state of the model in its life cycle.</p>
+    pub fn model_life_cycle(mut self, input: crate::types::ModelLifeCycle) -> Self {
+        self.inner = self.inner.model_life_cycle(input);
+        self
+    }
+    /// <p>A structure describing the current state of the model in its life cycle.</p>
+    pub fn set_model_life_cycle(mut self, input: ::std::option::Option<crate::types::ModelLifeCycle>) -> Self {
+        self.inner = self.inner.set_model_life_cycle(input);
+        self
+    }
+    /// <p>A structure describing the current state of the model in its life cycle.</p>
+    pub fn get_model_life_cycle(&self) -> &::std::option::Option<crate::types::ModelLifeCycle> {
+        self.inner.get_model_life_cycle()
+    }
+    /// <p>A unique token that guarantees that the call to this API is idempotent.</p>
+    pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.client_token(input.into());
+        self
+    }
+    /// <p>A unique token that guarantees that the call to this API is idempotent.</p>
+    pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_client_token(input);
+        self
+    }
+    /// <p>A unique token that guarantees that the call to this API is idempotent.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
+    }
 }

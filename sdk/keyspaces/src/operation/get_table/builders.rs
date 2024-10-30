@@ -23,7 +23,7 @@ impl crate::operation::get_table::builders::GetTableInputBuilder {
 /// Fluent builder constructing a request to `GetTable`.
 ///
 /// <p>Returns information about the table, including the table's name and current status, the keyspace name, configuration settings, and metadata.</p>
-/// <p>To read table metadata using <code>GetTable</code>, <code>Select</code> action permissions for the table and system tables are required to complete the operation.</p>
+/// <p>To read table metadata using <code>GetTable</code>, the IAM principal needs <code>Select</code> action permissions for the table and the system keyspace.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetTableFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

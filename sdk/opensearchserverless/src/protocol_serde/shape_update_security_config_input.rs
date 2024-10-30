@@ -18,8 +18,14 @@ pub fn ser_update_security_config_input_input(
         crate::protocol_serde::shape_saml_config_options::ser_saml_config_options(&mut object_5, var_4)?;
         object_5.finish();
     }
-    if let Some(var_6) = &input.client_token {
-        object.key("clientToken").string(var_6.as_str());
+    if let Some(var_6) = &input.iam_identity_center_options_updates {
+        #[allow(unused_mut)]
+        let mut object_7 = object.key("iamIdentityCenterOptionsUpdates").start_object();
+        crate::protocol_serde::shape_update_iam_identity_center_config_options::ser_update_iam_identity_center_config_options(&mut object_7, var_6)?;
+        object_7.finish();
+    }
+    if let Some(var_8) = &input.client_token {
+        object.key("clientToken").string(var_8.as_str());
     }
     Ok(())
 }

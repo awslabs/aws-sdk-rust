@@ -23,6 +23,8 @@ pub struct UpdateWorkgroupInput {
     pub max_capacity: ::std::option::Option<i32>,
     /// <p>The IP address type that the workgroup supports. Possible values are <code>ipv4</code> and <code>dualstack</code>.</p>
     pub ip_address_type: ::std::option::Option<::std::string::String>,
+    /// <p>An object that represents the price performance target settings for the workgroup.</p>
+    pub price_performance_target: ::std::option::Option<crate::types::PerformanceTarget>,
 }
 impl UpdateWorkgroupInput {
     /// <p>The name of the workgroup to update. You can't update the name of a workgroup once it is created.</p>
@@ -71,6 +73,10 @@ impl UpdateWorkgroupInput {
     pub fn ip_address_type(&self) -> ::std::option::Option<&str> {
         self.ip_address_type.as_deref()
     }
+    /// <p>An object that represents the price performance target settings for the workgroup.</p>
+    pub fn price_performance_target(&self) -> ::std::option::Option<&crate::types::PerformanceTarget> {
+        self.price_performance_target.as_ref()
+    }
 }
 impl UpdateWorkgroupInput {
     /// Creates a new builder-style object to manufacture [`UpdateWorkgroupInput`](crate::operation::update_workgroup::UpdateWorkgroupInput).
@@ -93,6 +99,7 @@ pub struct UpdateWorkgroupInputBuilder {
     pub(crate) port: ::std::option::Option<i32>,
     pub(crate) max_capacity: ::std::option::Option<i32>,
     pub(crate) ip_address_type: ::std::option::Option<::std::string::String>,
+    pub(crate) price_performance_target: ::std::option::Option<crate::types::PerformanceTarget>,
 }
 impl UpdateWorkgroupInputBuilder {
     /// <p>The name of the workgroup to update. You can't update the name of a workgroup once it is created.</p>
@@ -254,6 +261,20 @@ impl UpdateWorkgroupInputBuilder {
     pub fn get_ip_address_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.ip_address_type
     }
+    /// <p>An object that represents the price performance target settings for the workgroup.</p>
+    pub fn price_performance_target(mut self, input: crate::types::PerformanceTarget) -> Self {
+        self.price_performance_target = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>An object that represents the price performance target settings for the workgroup.</p>
+    pub fn set_price_performance_target(mut self, input: ::std::option::Option<crate::types::PerformanceTarget>) -> Self {
+        self.price_performance_target = input;
+        self
+    }
+    /// <p>An object that represents the price performance target settings for the workgroup.</p>
+    pub fn get_price_performance_target(&self) -> &::std::option::Option<crate::types::PerformanceTarget> {
+        &self.price_performance_target
+    }
     /// Consumes the builder and constructs a [`UpdateWorkgroupInput`](crate::operation::update_workgroup::UpdateWorkgroupInput).
     pub fn build(
         self,
@@ -269,6 +290,7 @@ impl UpdateWorkgroupInputBuilder {
             port: self.port,
             max_capacity: self.max_capacity,
             ip_address_type: self.ip_address_type,
+            price_performance_target: self.price_performance_target,
         })
     }
 }

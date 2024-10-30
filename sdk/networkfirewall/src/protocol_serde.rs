@@ -299,6 +299,8 @@ pub(crate) mod shape_check_certificate_revocation_status_actions;
 
 pub(crate) mod shape_cidr_summary;
 
+pub(crate) mod shape_flow_timeouts;
+
 pub(crate) mod shape_ip_set;
 
 pub(crate) mod shape_ip_set_reference;

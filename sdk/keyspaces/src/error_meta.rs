@@ -9,7 +9,7 @@ pub enum Error {
     ConflictException(crate::types::error::ConflictException),
     /// <p>Amazon Keyspaces was unable to fully process this request because of an internal server error.</p>
     InternalServerException(crate::types::error::InternalServerException),
-    /// <p>The operation tried to access a keyspace or table that doesn't exist. The resource might not be specified correctly, or its status might not be <code>ACTIVE</code>.</p>
+    /// <p>The operation tried to access a keyspace, table, or type that doesn't exist. The resource might not be specified correctly, or its status might not be <code>ACTIVE</code>.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>The operation exceeded the service quota for this resource. For more information on service quotas, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/quotas.html">Quotas</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
     ServiceQuotaExceededException(crate::types::error::ServiceQuotaExceededException),
@@ -119,6 +119,33 @@ impl From<crate::operation::create_table::CreateTableError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_type::CreateTypeError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_type::CreateTypeError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_type::CreateTypeError> for Error {
+    fn from(err: crate::operation::create_type::CreateTypeError) -> Self {
+        match err {
+            crate::operation::create_type::CreateTypeError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_type::CreateTypeError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_type::CreateTypeError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::create_type::CreateTypeError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::create_type::CreateTypeError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::create_type::CreateTypeError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_type::CreateTypeError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_keyspace::DeleteKeyspaceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -172,6 +199,33 @@ impl From<crate::operation::delete_table::DeleteTableError> for Error {
             crate::operation::delete_table::DeleteTableError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
             crate::operation::delete_table::DeleteTableError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::delete_table::DeleteTableError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_type::DeleteTypeError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_type::DeleteTypeError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_type::DeleteTypeError> for Error {
+    fn from(err: crate::operation::delete_type::DeleteTypeError) -> Self {
+        match err {
+            crate::operation::delete_type::DeleteTypeError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_type::DeleteTypeError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::delete_type::DeleteTypeError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::delete_type::DeleteTypeError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_type::DeleteTypeError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::delete_type::DeleteTypeError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_type::DeleteTypeError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -270,6 +324,32 @@ impl From<crate::operation::get_table_auto_scaling_settings::GetTableAutoScaling
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_type::GetTypeError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_type::GetTypeError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_type::GetTypeError> for Error {
+    fn from(err: crate::operation::get_type::GetTypeError) -> Self {
+        match err {
+            crate::operation::get_type::GetTypeError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_type::GetTypeError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_type::GetTypeError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_type::GetTypeError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::get_type::GetTypeError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_type::GetTypeError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_keyspaces::ListKeyspacesError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -354,6 +434,32 @@ impl From<crate::operation::list_tags_for_resource::ListTagsForResourceError> fo
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_types::ListTypesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_types::ListTypesError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_types::ListTypesError> for Error {
+    fn from(err: crate::operation::list_types::ListTypesError) -> Self {
+        match err {
+            crate::operation::list_types::ListTypesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_types::ListTypesError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_types::ListTypesError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_types::ListTypesError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::list_types::ListTypesError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_types::ListTypesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::restore_table::RestoreTableError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -399,6 +505,7 @@ impl From<crate::operation::tag_resource::TagResourceError> for Error {
     fn from(err: crate::operation::tag_resource::TagResourceError) -> Self {
         match err {
             crate::operation::tag_resource::TagResourceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::tag_resource::TagResourceError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::tag_resource::TagResourceError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::tag_resource::TagResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::tag_resource::TagResourceError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),

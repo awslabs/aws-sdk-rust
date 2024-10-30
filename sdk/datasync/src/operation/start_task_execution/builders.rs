@@ -23,7 +23,7 @@ impl crate::operation::start_task_execution::builders::StartTaskExecutionInputBu
 /// Fluent builder constructing a request to `StartTaskExecution`.
 ///
 /// <p>Starts an DataSync transfer task. For each task, you can only run one task execution at a time.</p>
-/// <p>There are several phases to a task execution. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/working-with-task-executions.html#understand-task-execution-statuses">Task execution statuses</a>.</p><important>
+/// <p>There are several steps to a task execution. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/working-with-task-executions.html#understand-task-execution-statuses">Task execution statuses</a>.</p><important>
 /// <p>If you're planning to transfer data to or from an Amazon S3 location, review <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#create-s3-location-s3-requests">how DataSync can affect your S3 request charges</a> and the <a href="http://aws.amazon.com/datasync/pricing/">DataSync pricing page</a> before you begin.</p>
 /// </important>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

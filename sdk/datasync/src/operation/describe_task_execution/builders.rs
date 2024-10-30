@@ -22,7 +22,9 @@ impl crate::operation::describe_task_execution::builders::DescribeTaskExecutionI
 }
 /// Fluent builder constructing a request to `DescribeTaskExecution`.
 ///
-/// <p>Provides information about an execution of your DataSync task. You can use this operation to help monitor the progress of an ongoing transfer or check the results of the transfer.</p>
+/// <p>Provides information about an execution of your DataSync task. You can use this operation to help monitor the progress of an ongoing data transfer or check the results of the transfer.</p><note>
+/// <p>Some <code>DescribeTaskExecution</code> response elements are only relevant to a specific task mode. For information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/choosing-task-mode.html#task-mode-differences">Understanding task mode differences</a> and <a href="https://docs.aws.amazon.com/datasync/latest/userguide/transfer-performance-metrics.html">Understanding data transfer performance metrics</a>.</p>
+/// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeTaskExecutionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

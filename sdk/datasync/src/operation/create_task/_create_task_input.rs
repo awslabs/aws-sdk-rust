@@ -9,6 +9,7 @@ pub struct CreateTaskInput {
     /// <p>Specifies the ARN of your transfer's destination location.</p>
     pub destination_location_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the Amazon Resource Name (ARN) of an Amazon CloudWatch log group for monitoring your task.</p>
+    /// <p>For Enhanced mode tasks, you don't need to specify anything. DataSync automatically sends logs to a CloudWatch log group named <code>/aws/datasync</code>.</p>
     pub cloud_watch_log_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the name of your task.</p>
     pub name: ::std::option::Option<::std::string::String>,
@@ -21,7 +22,7 @@ pub struct CreateTaskInput {
     /// <p>Specifies the tags that you want to apply to your task.</p>
     /// <p><i>Tags</i> are key-value pairs that help you manage, filter, and search for your DataSync resources.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::TagListEntry>>,
-    /// <p>Specifies include filters define the files, objects, and folders in your source location that you want DataSync to transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Specifying what DataSync transfers by using filters</a>.</p>
+    /// <p>Specifies include filters that define the files, objects, and folders in your source location that you want DataSync to transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Specifying what DataSync transfers by using filters</a>.</p>
     pub includes: ::std::option::Option<::std::vec::Vec<crate::types::FilterRule>>,
     /// <p>Configures a manifest, which is a list of files or objects that you want DataSync to transfer. For more information and configuration examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/transferring-with-manifest.html">Specifying what DataSync transfers by using a manifest</a>.</p>
     /// <p>When using this parameter, your caller identity (the role that you're using DataSync with) must have the <code>iam:PassRole</code> permission. The <a href="https://docs.aws.amazon.com/datasync/latest/userguide/security-iam-awsmanpol.html#security-iam-awsmanpol-awsdatasyncfullaccess">AWSDataSyncFullAccess</a> policy includes this permission.</p>
@@ -29,6 +30,17 @@ pub struct CreateTaskInput {
     /// <p>Specifies how you want to configure a task report, which provides detailed information about your DataSync transfer. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/task-reports.html">Monitoring your DataSync transfers with task reports</a>.</p>
     /// <p>When using this parameter, your caller identity (the role that you're using DataSync with) must have the <code>iam:PassRole</code> permission. The <a href="https://docs.aws.amazon.com/datasync/latest/userguide/security-iam-awsmanpol.html#security-iam-awsmanpol-awsdatasyncfullaccess">AWSDataSyncFullAccess</a> policy includes this permission.</p>
     pub task_report_config: ::std::option::Option<crate::types::TaskReportConfig>,
+    /// <p>Specifies one of the following task modes for your data transfer:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ENHANCED</code> - Transfer virtually unlimited numbers of objects with enhanced metrics, more detailed logs, and higher performance than Basic mode. Currently available for transfers between Amazon S3 locations.</p><note>
+    /// <p>To create an Enhanced mode task, the IAM role that you use to call the <code>CreateTask</code> operation must have the <code>iam:CreateServiceLinkedRole</code> permission.</p>
+    /// </note></li>
+    /// <li>
+    /// <p><code>BASIC</code> (default) - Transfer files or objects between Amazon Web Services storage and on-premises, edge, or other cloud storage. DataSync <a href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-limits.html">quotas</a> apply.</p></li>
+    /// </ul>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/choosing-task-mode.html#task-mode-differences">Understanding task mode differences</a>.</p>
+    pub task_mode: ::std::option::Option<crate::types::TaskMode>,
 }
 impl CreateTaskInput {
     /// <p>Specifies the ARN of your transfer's source location.</p>
@@ -40,6 +52,7 @@ impl CreateTaskInput {
         self.destination_location_arn.as_deref()
     }
     /// <p>Specifies the Amazon Resource Name (ARN) of an Amazon CloudWatch log group for monitoring your task.</p>
+    /// <p>For Enhanced mode tasks, you don't need to specify anything. DataSync automatically sends logs to a CloudWatch log group named <code>/aws/datasync</code>.</p>
     pub fn cloud_watch_log_group_arn(&self) -> ::std::option::Option<&str> {
         self.cloud_watch_log_group_arn.as_deref()
     }
@@ -68,7 +81,7 @@ impl CreateTaskInput {
     pub fn tags(&self) -> &[crate::types::TagListEntry] {
         self.tags.as_deref().unwrap_or_default()
     }
-    /// <p>Specifies include filters define the files, objects, and folders in your source location that you want DataSync to transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Specifying what DataSync transfers by using filters</a>.</p>
+    /// <p>Specifies include filters that define the files, objects, and folders in your source location that you want DataSync to transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Specifying what DataSync transfers by using filters</a>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.includes.is_none()`.
     pub fn includes(&self) -> &[crate::types::FilterRule] {
@@ -83,6 +96,19 @@ impl CreateTaskInput {
     /// <p>When using this parameter, your caller identity (the role that you're using DataSync with) must have the <code>iam:PassRole</code> permission. The <a href="https://docs.aws.amazon.com/datasync/latest/userguide/security-iam-awsmanpol.html#security-iam-awsmanpol-awsdatasyncfullaccess">AWSDataSyncFullAccess</a> policy includes this permission.</p>
     pub fn task_report_config(&self) -> ::std::option::Option<&crate::types::TaskReportConfig> {
         self.task_report_config.as_ref()
+    }
+    /// <p>Specifies one of the following task modes for your data transfer:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ENHANCED</code> - Transfer virtually unlimited numbers of objects with enhanced metrics, more detailed logs, and higher performance than Basic mode. Currently available for transfers between Amazon S3 locations.</p><note>
+    /// <p>To create an Enhanced mode task, the IAM role that you use to call the <code>CreateTask</code> operation must have the <code>iam:CreateServiceLinkedRole</code> permission.</p>
+    /// </note></li>
+    /// <li>
+    /// <p><code>BASIC</code> (default) - Transfer files or objects between Amazon Web Services storage and on-premises, edge, or other cloud storage. DataSync <a href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-limits.html">quotas</a> apply.</p></li>
+    /// </ul>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/choosing-task-mode.html#task-mode-differences">Understanding task mode differences</a>.</p>
+    pub fn task_mode(&self) -> ::std::option::Option<&crate::types::TaskMode> {
+        self.task_mode.as_ref()
     }
 }
 impl CreateTaskInput {
@@ -107,6 +133,7 @@ pub struct CreateTaskInputBuilder {
     pub(crate) includes: ::std::option::Option<::std::vec::Vec<crate::types::FilterRule>>,
     pub(crate) manifest_config: ::std::option::Option<crate::types::ManifestConfig>,
     pub(crate) task_report_config: ::std::option::Option<crate::types::TaskReportConfig>,
+    pub(crate) task_mode: ::std::option::Option<crate::types::TaskMode>,
 }
 impl CreateTaskInputBuilder {
     /// <p>Specifies the ARN of your transfer's source location.</p>
@@ -140,16 +167,19 @@ impl CreateTaskInputBuilder {
         &self.destination_location_arn
     }
     /// <p>Specifies the Amazon Resource Name (ARN) of an Amazon CloudWatch log group for monitoring your task.</p>
+    /// <p>For Enhanced mode tasks, you don't need to specify anything. DataSync automatically sends logs to a CloudWatch log group named <code>/aws/datasync</code>.</p>
     pub fn cloud_watch_log_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cloud_watch_log_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the Amazon Resource Name (ARN) of an Amazon CloudWatch log group for monitoring your task.</p>
+    /// <p>For Enhanced mode tasks, you don't need to specify anything. DataSync automatically sends logs to a CloudWatch log group named <code>/aws/datasync</code>.</p>
     pub fn set_cloud_watch_log_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cloud_watch_log_group_arn = input;
         self
     }
     /// <p>Specifies the Amazon Resource Name (ARN) of an Amazon CloudWatch log group for monitoring your task.</p>
+    /// <p>For Enhanced mode tasks, you don't need to specify anything. DataSync automatically sends logs to a CloudWatch log group named <code>/aws/datasync</code>.</p>
     pub fn get_cloud_watch_log_group_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.cloud_watch_log_group_arn
     }
@@ -242,19 +272,19 @@ impl CreateTaskInputBuilder {
     ///
     /// To override the contents of this collection use [`set_includes`](Self::set_includes).
     ///
-    /// <p>Specifies include filters define the files, objects, and folders in your source location that you want DataSync to transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Specifying what DataSync transfers by using filters</a>.</p>
+    /// <p>Specifies include filters that define the files, objects, and folders in your source location that you want DataSync to transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Specifying what DataSync transfers by using filters</a>.</p>
     pub fn includes(mut self, input: crate::types::FilterRule) -> Self {
         let mut v = self.includes.unwrap_or_default();
         v.push(input);
         self.includes = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Specifies include filters define the files, objects, and folders in your source location that you want DataSync to transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Specifying what DataSync transfers by using filters</a>.</p>
+    /// <p>Specifies include filters that define the files, objects, and folders in your source location that you want DataSync to transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Specifying what DataSync transfers by using filters</a>.</p>
     pub fn set_includes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FilterRule>>) -> Self {
         self.includes = input;
         self
     }
-    /// <p>Specifies include filters define the files, objects, and folders in your source location that you want DataSync to transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Specifying what DataSync transfers by using filters</a>.</p>
+    /// <p>Specifies include filters that define the files, objects, and folders in your source location that you want DataSync to transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Specifying what DataSync transfers by using filters</a>.</p>
     pub fn get_includes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FilterRule>> {
         &self.includes
     }
@@ -292,6 +322,47 @@ impl CreateTaskInputBuilder {
     pub fn get_task_report_config(&self) -> &::std::option::Option<crate::types::TaskReportConfig> {
         &self.task_report_config
     }
+    /// <p>Specifies one of the following task modes for your data transfer:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ENHANCED</code> - Transfer virtually unlimited numbers of objects with enhanced metrics, more detailed logs, and higher performance than Basic mode. Currently available for transfers between Amazon S3 locations.</p><note>
+    /// <p>To create an Enhanced mode task, the IAM role that you use to call the <code>CreateTask</code> operation must have the <code>iam:CreateServiceLinkedRole</code> permission.</p>
+    /// </note></li>
+    /// <li>
+    /// <p><code>BASIC</code> (default) - Transfer files or objects between Amazon Web Services storage and on-premises, edge, or other cloud storage. DataSync <a href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-limits.html">quotas</a> apply.</p></li>
+    /// </ul>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/choosing-task-mode.html#task-mode-differences">Understanding task mode differences</a>.</p>
+    pub fn task_mode(mut self, input: crate::types::TaskMode) -> Self {
+        self.task_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies one of the following task modes for your data transfer:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ENHANCED</code> - Transfer virtually unlimited numbers of objects with enhanced metrics, more detailed logs, and higher performance than Basic mode. Currently available for transfers between Amazon S3 locations.</p><note>
+    /// <p>To create an Enhanced mode task, the IAM role that you use to call the <code>CreateTask</code> operation must have the <code>iam:CreateServiceLinkedRole</code> permission.</p>
+    /// </note></li>
+    /// <li>
+    /// <p><code>BASIC</code> (default) - Transfer files or objects between Amazon Web Services storage and on-premises, edge, or other cloud storage. DataSync <a href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-limits.html">quotas</a> apply.</p></li>
+    /// </ul>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/choosing-task-mode.html#task-mode-differences">Understanding task mode differences</a>.</p>
+    pub fn set_task_mode(mut self, input: ::std::option::Option<crate::types::TaskMode>) -> Self {
+        self.task_mode = input;
+        self
+    }
+    /// <p>Specifies one of the following task modes for your data transfer:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ENHANCED</code> - Transfer virtually unlimited numbers of objects with enhanced metrics, more detailed logs, and higher performance than Basic mode. Currently available for transfers between Amazon S3 locations.</p><note>
+    /// <p>To create an Enhanced mode task, the IAM role that you use to call the <code>CreateTask</code> operation must have the <code>iam:CreateServiceLinkedRole</code> permission.</p>
+    /// </note></li>
+    /// <li>
+    /// <p><code>BASIC</code> (default) - Transfer files or objects between Amazon Web Services storage and on-premises, edge, or other cloud storage. DataSync <a href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-limits.html">quotas</a> apply.</p></li>
+    /// </ul>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/choosing-task-mode.html#task-mode-differences">Understanding task mode differences</a>.</p>
+    pub fn get_task_mode(&self) -> &::std::option::Option<crate::types::TaskMode> {
+        &self.task_mode
+    }
     /// Consumes the builder and constructs a [`CreateTaskInput`](crate::operation::create_task::CreateTaskInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_task::CreateTaskInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_task::CreateTaskInput {
@@ -306,6 +377,7 @@ impl CreateTaskInputBuilder {
             includes: self.includes,
             manifest_config: self.manifest_config,
             task_report_config: self.task_report_config,
+            task_mode: self.task_mode,
         })
     }
 }

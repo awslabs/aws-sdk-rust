@@ -19,4 +19,8 @@ pub use crate::types::error::_graph_ql_schema_exception::GraphQlSchemaExceptionB
 
 pub use crate::types::error::_api_limit_exceeded_exception::ApiLimitExceededExceptionBuilder;
 
+pub use crate::types::error::_service_quota_exceeded_exception::ServiceQuotaExceededExceptionBuilder;
+
+pub use crate::types::error::_conflict_exception::ConflictExceptionBuilder;
+
 pub use crate::types::error::_api_key_limit_exceeded_exception::ApiKeyLimitExceededExceptionBuilder;

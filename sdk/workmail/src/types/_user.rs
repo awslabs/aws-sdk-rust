@@ -20,6 +20,10 @@ pub struct User {
     pub enabled_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date indicating when the user was disabled from WorkMail use.</p>
     pub disabled_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>User ID from the IAM Identity Center. If this parameter is empty it will be updated automatically when the user logs in for the first time to the mailbox associated with WorkMail.</p>
+    pub identity_provider_user_id: ::std::option::Option<::std::string::String>,
+    /// <p>Identity store ID from the IAM Identity Center. If this parameter is empty it will be updated automatically when the user logs in for the first time to the mailbox associated with WorkMail.</p>
+    pub identity_provider_identity_store_id: ::std::option::Option<::std::string::String>,
 }
 impl User {
     /// <p>The identifier of the user.</p>
@@ -54,6 +58,14 @@ impl User {
     pub fn disabled_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.disabled_date.as_ref()
     }
+    /// <p>User ID from the IAM Identity Center. If this parameter is empty it will be updated automatically when the user logs in for the first time to the mailbox associated with WorkMail.</p>
+    pub fn identity_provider_user_id(&self) -> ::std::option::Option<&str> {
+        self.identity_provider_user_id.as_deref()
+    }
+    /// <p>Identity store ID from the IAM Identity Center. If this parameter is empty it will be updated automatically when the user logs in for the first time to the mailbox associated with WorkMail.</p>
+    pub fn identity_provider_identity_store_id(&self) -> ::std::option::Option<&str> {
+        self.identity_provider_identity_store_id.as_deref()
+    }
 }
 impl User {
     /// Creates a new builder-style object to manufacture [`User`](crate::types::User).
@@ -74,6 +86,8 @@ pub struct UserBuilder {
     pub(crate) user_role: ::std::option::Option<crate::types::UserRole>,
     pub(crate) enabled_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) disabled_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) identity_provider_user_id: ::std::option::Option<::std::string::String>,
+    pub(crate) identity_provider_identity_store_id: ::std::option::Option<::std::string::String>,
 }
 impl UserBuilder {
     /// <p>The identifier of the user.</p>
@@ -188,6 +202,34 @@ impl UserBuilder {
     pub fn get_disabled_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.disabled_date
     }
+    /// <p>User ID from the IAM Identity Center. If this parameter is empty it will be updated automatically when the user logs in for the first time to the mailbox associated with WorkMail.</p>
+    pub fn identity_provider_user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.identity_provider_user_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>User ID from the IAM Identity Center. If this parameter is empty it will be updated automatically when the user logs in for the first time to the mailbox associated with WorkMail.</p>
+    pub fn set_identity_provider_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.identity_provider_user_id = input;
+        self
+    }
+    /// <p>User ID from the IAM Identity Center. If this parameter is empty it will be updated automatically when the user logs in for the first time to the mailbox associated with WorkMail.</p>
+    pub fn get_identity_provider_user_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identity_provider_user_id
+    }
+    /// <p>Identity store ID from the IAM Identity Center. If this parameter is empty it will be updated automatically when the user logs in for the first time to the mailbox associated with WorkMail.</p>
+    pub fn identity_provider_identity_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.identity_provider_identity_store_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Identity store ID from the IAM Identity Center. If this parameter is empty it will be updated automatically when the user logs in for the first time to the mailbox associated with WorkMail.</p>
+    pub fn set_identity_provider_identity_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.identity_provider_identity_store_id = input;
+        self
+    }
+    /// <p>Identity store ID from the IAM Identity Center. If this parameter is empty it will be updated automatically when the user logs in for the first time to the mailbox associated with WorkMail.</p>
+    pub fn get_identity_provider_identity_store_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identity_provider_identity_store_id
+    }
     /// Consumes the builder and constructs a [`User`](crate::types::User).
     pub fn build(self) -> crate::types::User {
         crate::types::User {
@@ -199,6 +241,8 @@ impl UserBuilder {
             user_role: self.user_role,
             enabled_date: self.enabled_date,
             disabled_date: self.disabled_date,
+            identity_provider_user_id: self.identity_provider_user_id,
+            identity_provider_identity_store_id: self.identity_provider_identity_store_id,
         }
     }
 }

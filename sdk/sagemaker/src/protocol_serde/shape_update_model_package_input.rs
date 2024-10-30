@@ -61,5 +61,14 @@ pub fn ser_update_model_package_input_input(
         crate::protocol_serde::shape_model_package_model_card::ser_model_package_model_card(&mut object_19, var_18)?;
         object_19.finish();
     }
+    if let Some(var_20) = &input.model_life_cycle {
+        #[allow(unused_mut)]
+        let mut object_21 = object.key("ModelLifeCycle").start_object();
+        crate::protocol_serde::shape_model_life_cycle::ser_model_life_cycle(&mut object_21, var_20)?;
+        object_21.finish();
+    }
+    if let Some(var_22) = &input.client_token {
+        object.key("ClientToken").string(var_22.as_str());
+    }
     Ok(())
 }

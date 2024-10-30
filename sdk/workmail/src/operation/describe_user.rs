@@ -245,6 +245,10 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DescribeUserE
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum DescribeUserError {
+    /// <p>The directory service doesn't recognize the credentials supplied by WorkMail.</p>
+    DirectoryServiceAuthenticationFailedException(crate::types::error::DirectoryServiceAuthenticationFailedException),
+    /// <p>The directory is unavailable. It might be located in another Region or deleted.</p>
+    DirectoryUnavailableException(crate::types::error::DirectoryUnavailableException),
     /// <p>The identifier supplied for the user, group, or resource does not exist in your organization.</p>
     EntityNotFoundException(crate::types::error::EntityNotFoundException),
     /// <p>One or more of the input parameters don't match the service's restrictions.</p>
@@ -286,12 +290,22 @@ impl DescribeUserError {
     ///
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::DirectoryServiceAuthenticationFailedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::DirectoryUnavailableException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::EntityNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidParameterException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::OrganizationNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::OrganizationStateException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
+    }
+    /// Returns `true` if the error kind is `DescribeUserError::DirectoryServiceAuthenticationFailedException`.
+    pub fn is_directory_service_authentication_failed_exception(&self) -> bool {
+        matches!(self, Self::DirectoryServiceAuthenticationFailedException(_))
+    }
+    /// Returns `true` if the error kind is `DescribeUserError::DirectoryUnavailableException`.
+    pub fn is_directory_unavailable_exception(&self) -> bool {
+        matches!(self, Self::DirectoryUnavailableException(_))
     }
     /// Returns `true` if the error kind is `DescribeUserError::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
@@ -313,6 +327,8 @@ impl DescribeUserError {
 impl ::std::error::Error for DescribeUserError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
+            Self::DirectoryServiceAuthenticationFailedException(_inner) => ::std::option::Option::Some(_inner),
+            Self::DirectoryUnavailableException(_inner) => ::std::option::Option::Some(_inner),
             Self::EntityNotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidParameterException(_inner) => ::std::option::Option::Some(_inner),
             Self::OrganizationNotFoundException(_inner) => ::std::option::Option::Some(_inner),
@@ -324,6 +340,8 @@ impl ::std::error::Error for DescribeUserError {
 impl ::std::fmt::Display for DescribeUserError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
+            Self::DirectoryServiceAuthenticationFailedException(_inner) => _inner.fmt(f),
+            Self::DirectoryUnavailableException(_inner) => _inner.fmt(f),
             Self::EntityNotFoundException(_inner) => _inner.fmt(f),
             Self::InvalidParameterException(_inner) => _inner.fmt(f),
             Self::OrganizationNotFoundException(_inner) => _inner.fmt(f),
@@ -349,6 +367,8 @@ impl ::aws_smithy_types::retry::ProvideErrorKind for DescribeUserError {
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for DescribeUserError {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::DirectoryServiceAuthenticationFailedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::DirectoryUnavailableException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::EntityNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidParameterException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::OrganizationNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

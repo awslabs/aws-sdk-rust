@@ -142,20 +142,20 @@ impl CreateLocationNfsFluentBuilder {
     pub fn get_server_hostname(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_server_hostname()
     }
-    /// <p>Specifies the Amazon Resource Name (ARN) of the DataSync agent that want to connect to your NFS file server.</p>
-    /// <p>You can specify more than one agent. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/multiple-agents.html">Using multiple agents for transfers</a>.</p>
+    /// <p>Specifies the Amazon Resource Name (ARN) of the DataSync agent that can connect to your NFS file server.</p>
+    /// <p>You can specify more than one agent. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/do-i-need-datasync-agent.html#multiple-agents">Using multiple DataSync agents</a>.</p>
     pub fn on_prem_config(mut self, input: crate::types::OnPremConfig) -> Self {
         self.inner = self.inner.on_prem_config(input);
         self
     }
-    /// <p>Specifies the Amazon Resource Name (ARN) of the DataSync agent that want to connect to your NFS file server.</p>
-    /// <p>You can specify more than one agent. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/multiple-agents.html">Using multiple agents for transfers</a>.</p>
+    /// <p>Specifies the Amazon Resource Name (ARN) of the DataSync agent that can connect to your NFS file server.</p>
+    /// <p>You can specify more than one agent. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/do-i-need-datasync-agent.html#multiple-agents">Using multiple DataSync agents</a>.</p>
     pub fn set_on_prem_config(mut self, input: ::std::option::Option<crate::types::OnPremConfig>) -> Self {
         self.inner = self.inner.set_on_prem_config(input);
         self
     }
-    /// <p>Specifies the Amazon Resource Name (ARN) of the DataSync agent that want to connect to your NFS file server.</p>
-    /// <p>You can specify more than one agent. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/multiple-agents.html">Using multiple agents for transfers</a>.</p>
+    /// <p>Specifies the Amazon Resource Name (ARN) of the DataSync agent that can connect to your NFS file server.</p>
+    /// <p>You can specify more than one agent. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/do-i-need-datasync-agent.html#multiple-agents">Using multiple DataSync agents</a>.</p>
     pub fn get_on_prem_config(&self) -> &::std::option::Option<crate::types::OnPremConfig> {
         self.inner.get_on_prem_config()
     }

@@ -21,12 +21,12 @@ pub struct CreateGraphqlApiInput {
     pub xray_enabled: ::std::option::Option<bool>,
     /// <p>Configuration for Lambda function authorization.</p>
     pub lambda_authorizer_config: ::std::option::Option<crate::types::LambdaAuthorizerConfig>,
-    /// <p>Sets the value of the GraphQL API to public (<code>GLOBAL</code>) or private (<code>PRIVATE</code>). If no value is provided, the visibility will be set to <code>GLOBAL</code> by default. This value cannot be changed once the API has been created.</p>
-    pub visibility: ::std::option::Option<crate::types::GraphQlApiVisibility>,
     /// <p>The value that indicates whether the GraphQL API is a standard API (<code>GRAPHQL</code>) or merged API (<code>MERGED</code>).</p>
     pub api_type: ::std::option::Option<crate::types::GraphQlApiType>,
     /// <p>The Identity and Access Management service role ARN for a merged API. The AppSync service assumes this role on behalf of the Merged API to validate access to source APIs at runtime and to prompt the <code>AUTO_MERGE</code> to update the merged API endpoint with the source API changes automatically.</p>
     pub merged_api_execution_role_arn: ::std::option::Option<::std::string::String>,
+    /// <p>Sets the value of the GraphQL API to public (<code>GLOBAL</code>) or private (<code>PRIVATE</code>). If no value is provided, the visibility will be set to <code>GLOBAL</code> by default. This value cannot be changed once the API has been created.</p>
+    pub visibility: ::std::option::Option<crate::types::GraphQlApiVisibility>,
     /// <p>The owner contact information for an API resource.</p>
     /// <p>This field accepts any string input with a length of 0 - 256 characters.</p>
     pub owner_contact: ::std::option::Option<::std::string::String>,
@@ -80,10 +80,6 @@ impl CreateGraphqlApiInput {
     pub fn lambda_authorizer_config(&self) -> ::std::option::Option<&crate::types::LambdaAuthorizerConfig> {
         self.lambda_authorizer_config.as_ref()
     }
-    /// <p>Sets the value of the GraphQL API to public (<code>GLOBAL</code>) or private (<code>PRIVATE</code>). If no value is provided, the visibility will be set to <code>GLOBAL</code> by default. This value cannot be changed once the API has been created.</p>
-    pub fn visibility(&self) -> ::std::option::Option<&crate::types::GraphQlApiVisibility> {
-        self.visibility.as_ref()
-    }
     /// <p>The value that indicates whether the GraphQL API is a standard API (<code>GRAPHQL</code>) or merged API (<code>MERGED</code>).</p>
     pub fn api_type(&self) -> ::std::option::Option<&crate::types::GraphQlApiType> {
         self.api_type.as_ref()
@@ -91,6 +87,10 @@ impl CreateGraphqlApiInput {
     /// <p>The Identity and Access Management service role ARN for a merged API. The AppSync service assumes this role on behalf of the Merged API to validate access to source APIs at runtime and to prompt the <code>AUTO_MERGE</code> to update the merged API endpoint with the source API changes automatically.</p>
     pub fn merged_api_execution_role_arn(&self) -> ::std::option::Option<&str> {
         self.merged_api_execution_role_arn.as_deref()
+    }
+    /// <p>Sets the value of the GraphQL API to public (<code>GLOBAL</code>) or private (<code>PRIVATE</code>). If no value is provided, the visibility will be set to <code>GLOBAL</code> by default. This value cannot be changed once the API has been created.</p>
+    pub fn visibility(&self) -> ::std::option::Option<&crate::types::GraphQlApiVisibility> {
+        self.visibility.as_ref()
     }
     /// <p>The owner contact information for an API resource.</p>
     /// <p>This field accepts any string input with a length of 0 - 256 characters.</p>
@@ -136,9 +136,9 @@ pub struct CreateGraphqlApiInputBuilder {
     pub(crate) additional_authentication_providers: ::std::option::Option<::std::vec::Vec<crate::types::AdditionalAuthenticationProvider>>,
     pub(crate) xray_enabled: ::std::option::Option<bool>,
     pub(crate) lambda_authorizer_config: ::std::option::Option<crate::types::LambdaAuthorizerConfig>,
-    pub(crate) visibility: ::std::option::Option<crate::types::GraphQlApiVisibility>,
     pub(crate) api_type: ::std::option::Option<crate::types::GraphQlApiType>,
     pub(crate) merged_api_execution_role_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) visibility: ::std::option::Option<crate::types::GraphQlApiVisibility>,
     pub(crate) owner_contact: ::std::option::Option<::std::string::String>,
     pub(crate) introspection_config: ::std::option::Option<crate::types::GraphQlApiIntrospectionConfig>,
     pub(crate) query_depth_limit: ::std::option::Option<i32>,
@@ -289,20 +289,6 @@ impl CreateGraphqlApiInputBuilder {
     pub fn get_lambda_authorizer_config(&self) -> &::std::option::Option<crate::types::LambdaAuthorizerConfig> {
         &self.lambda_authorizer_config
     }
-    /// <p>Sets the value of the GraphQL API to public (<code>GLOBAL</code>) or private (<code>PRIVATE</code>). If no value is provided, the visibility will be set to <code>GLOBAL</code> by default. This value cannot be changed once the API has been created.</p>
-    pub fn visibility(mut self, input: crate::types::GraphQlApiVisibility) -> Self {
-        self.visibility = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>Sets the value of the GraphQL API to public (<code>GLOBAL</code>) or private (<code>PRIVATE</code>). If no value is provided, the visibility will be set to <code>GLOBAL</code> by default. This value cannot be changed once the API has been created.</p>
-    pub fn set_visibility(mut self, input: ::std::option::Option<crate::types::GraphQlApiVisibility>) -> Self {
-        self.visibility = input;
-        self
-    }
-    /// <p>Sets the value of the GraphQL API to public (<code>GLOBAL</code>) or private (<code>PRIVATE</code>). If no value is provided, the visibility will be set to <code>GLOBAL</code> by default. This value cannot be changed once the API has been created.</p>
-    pub fn get_visibility(&self) -> &::std::option::Option<crate::types::GraphQlApiVisibility> {
-        &self.visibility
-    }
     /// <p>The value that indicates whether the GraphQL API is a standard API (<code>GRAPHQL</code>) or merged API (<code>MERGED</code>).</p>
     pub fn api_type(mut self, input: crate::types::GraphQlApiType) -> Self {
         self.api_type = ::std::option::Option::Some(input);
@@ -330,6 +316,20 @@ impl CreateGraphqlApiInputBuilder {
     /// <p>The Identity and Access Management service role ARN for a merged API. The AppSync service assumes this role on behalf of the Merged API to validate access to source APIs at runtime and to prompt the <code>AUTO_MERGE</code> to update the merged API endpoint with the source API changes automatically.</p>
     pub fn get_merged_api_execution_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.merged_api_execution_role_arn
+    }
+    /// <p>Sets the value of the GraphQL API to public (<code>GLOBAL</code>) or private (<code>PRIVATE</code>). If no value is provided, the visibility will be set to <code>GLOBAL</code> by default. This value cannot be changed once the API has been created.</p>
+    pub fn visibility(mut self, input: crate::types::GraphQlApiVisibility) -> Self {
+        self.visibility = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Sets the value of the GraphQL API to public (<code>GLOBAL</code>) or private (<code>PRIVATE</code>). If no value is provided, the visibility will be set to <code>GLOBAL</code> by default. This value cannot be changed once the API has been created.</p>
+    pub fn set_visibility(mut self, input: ::std::option::Option<crate::types::GraphQlApiVisibility>) -> Self {
+        self.visibility = input;
+        self
+    }
+    /// <p>Sets the value of the GraphQL API to public (<code>GLOBAL</code>) or private (<code>PRIVATE</code>). If no value is provided, the visibility will be set to <code>GLOBAL</code> by default. This value cannot be changed once the API has been created.</p>
+    pub fn get_visibility(&self) -> &::std::option::Option<crate::types::GraphQlApiVisibility> {
+        &self.visibility
     }
     /// <p>The owner contact information for an API resource.</p>
     /// <p>This field accepts any string input with a length of 0 - 256 characters.</p>
@@ -424,9 +424,9 @@ impl CreateGraphqlApiInputBuilder {
             additional_authentication_providers: self.additional_authentication_providers,
             xray_enabled: self.xray_enabled,
             lambda_authorizer_config: self.lambda_authorizer_config,
-            visibility: self.visibility,
             api_type: self.api_type,
             merged_api_execution_role_arn: self.merged_api_execution_role_arn,
+            visibility: self.visibility,
             owner_contact: self.owner_contact,
             introspection_config: self.introspection_config,
             query_depth_limit: self.query_depth_limit,

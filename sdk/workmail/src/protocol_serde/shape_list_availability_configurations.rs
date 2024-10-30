@@ -20,6 +20,24 @@ pub fn de_list_availability_configurations_http_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
+        "InvalidParameterException" => {
+            crate::operation::list_availability_configurations::ListAvailabilityConfigurationsError::InvalidParameterException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InvalidParameterExceptionBuilder::default();
+                    output =
+                        crate::protocol_serde::shape_invalid_parameter_exception::de_invalid_parameter_exception_json_err(_response_body, output)
+                            .map_err(crate::operation::list_availability_configurations::ListAvailabilityConfigurationsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         "OrganizationNotFoundException" => {
             crate::operation::list_availability_configurations::ListAvailabilityConfigurationsError::OrganizationNotFoundException({
                 #[allow(unused_mut)]

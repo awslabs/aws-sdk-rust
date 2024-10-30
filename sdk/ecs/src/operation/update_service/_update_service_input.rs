@@ -19,7 +19,7 @@ pub struct UpdateServiceInput {
     /// <p>The <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_PutClusterCapacityProviders.html">PutClusterCapacityProviders</a>API operation is used to update the list of available capacity providers for a cluster after the cluster is created.</p>
     /// <p></p>
     pub capacity_provider_strategy: ::std::option::Option<::std::vec::Vec<crate::types::CapacityProviderStrategyItem>>,
-    /// <p>Optional deployment parameters that control how many tasks run during the deployment and the ordering of stopping and starting tasks.</p>
+    /// <p>Optional deployment parameters that control how many tasks run during the deployment and the failure detection methods.</p>
     pub deployment_configuration: ::std::option::Option<crate::types::DeploymentConfiguration>,
     /// <p>An object representing the network configuration for the service.</p>
     pub network_configuration: ::std::option::Option<crate::types::NetworkConfiguration>,
@@ -90,7 +90,7 @@ impl UpdateServiceInput {
     pub fn capacity_provider_strategy(&self) -> &[crate::types::CapacityProviderStrategyItem] {
         self.capacity_provider_strategy.as_deref().unwrap_or_default()
     }
-    /// <p>Optional deployment parameters that control how many tasks run during the deployment and the ordering of stopping and starting tasks.</p>
+    /// <p>Optional deployment parameters that control how many tasks run during the deployment and the failure detection methods.</p>
     pub fn deployment_configuration(&self) -> ::std::option::Option<&crate::types::DeploymentConfiguration> {
         self.deployment_configuration.as_ref()
     }
@@ -300,17 +300,17 @@ impl UpdateServiceInputBuilder {
     pub fn get_capacity_provider_strategy(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CapacityProviderStrategyItem>> {
         &self.capacity_provider_strategy
     }
-    /// <p>Optional deployment parameters that control how many tasks run during the deployment and the ordering of stopping and starting tasks.</p>
+    /// <p>Optional deployment parameters that control how many tasks run during the deployment and the failure detection methods.</p>
     pub fn deployment_configuration(mut self, input: crate::types::DeploymentConfiguration) -> Self {
         self.deployment_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Optional deployment parameters that control how many tasks run during the deployment and the ordering of stopping and starting tasks.</p>
+    /// <p>Optional deployment parameters that control how many tasks run during the deployment and the failure detection methods.</p>
     pub fn set_deployment_configuration(mut self, input: ::std::option::Option<crate::types::DeploymentConfiguration>) -> Self {
         self.deployment_configuration = input;
         self
     }
-    /// <p>Optional deployment parameters that control how many tasks run during the deployment and the ordering of stopping and starting tasks.</p>
+    /// <p>Optional deployment parameters that control how many tasks run during the deployment and the failure detection methods.</p>
     pub fn get_deployment_configuration(&self) -> &::std::option::Option<crate::types::DeploymentConfiguration> {
         &self.deployment_configuration
     }

@@ -22,7 +22,7 @@ impl crate::operation::update_group::builders::UpdateGroupInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateGroup`.
 ///
-/// <p>Updates attibutes in a group.</p>
+/// <p>Updates attributes in a group.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateGroupFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

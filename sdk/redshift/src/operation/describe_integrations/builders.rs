@@ -22,7 +22,7 @@ impl crate::operation::describe_integrations::builders::DescribeIntegrationsInpu
 }
 /// Fluent builder constructing a request to `DescribeIntegrations`.
 ///
-/// <p>Describes one or more zero-ETL integrations with Amazon Redshift.</p>
+/// <p>Describes one or more zero-ETL or S3 event integrations with Amazon Redshift.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeIntegrationsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

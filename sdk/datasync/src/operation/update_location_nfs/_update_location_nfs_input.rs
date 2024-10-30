@@ -8,7 +8,7 @@ pub struct UpdateLocationNfsInput {
     /// <p>Specifies the export path in your NFS file server that you want DataSync to mount.</p>
     /// <p>This path (or a subdirectory of the path) is where DataSync transfers data to or from. For information on configuring an export for DataSync, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#accessing-nfs">Accessing NFS file servers</a>.</p>
     pub subdirectory: ::std::option::Option<::std::string::String>,
-    /// <p>The DataSync agents that are connecting to a Network File System (NFS) location.</p>
+    /// <p>The DataSync agents that can connect to your Network File System (NFS) file server.</p>
     pub on_prem_config: ::std::option::Option<crate::types::OnPremConfig>,
     /// <p>Specifies how DataSync can access a location using the NFS protocol.</p>
     pub mount_options: ::std::option::Option<crate::types::NfsMountOptions>,
@@ -23,7 +23,7 @@ impl UpdateLocationNfsInput {
     pub fn subdirectory(&self) -> ::std::option::Option<&str> {
         self.subdirectory.as_deref()
     }
-    /// <p>The DataSync agents that are connecting to a Network File System (NFS) location.</p>
+    /// <p>The DataSync agents that can connect to your Network File System (NFS) file server.</p>
     pub fn on_prem_config(&self) -> ::std::option::Option<&crate::types::OnPremConfig> {
         self.on_prem_config.as_ref()
     }
@@ -81,17 +81,17 @@ impl UpdateLocationNfsInputBuilder {
     pub fn get_subdirectory(&self) -> &::std::option::Option<::std::string::String> {
         &self.subdirectory
     }
-    /// <p>The DataSync agents that are connecting to a Network File System (NFS) location.</p>
+    /// <p>The DataSync agents that can connect to your Network File System (NFS) file server.</p>
     pub fn on_prem_config(mut self, input: crate::types::OnPremConfig) -> Self {
         self.on_prem_config = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The DataSync agents that are connecting to a Network File System (NFS) location.</p>
+    /// <p>The DataSync agents that can connect to your Network File System (NFS) file server.</p>
     pub fn set_on_prem_config(mut self, input: ::std::option::Option<crate::types::OnPremConfig>) -> Self {
         self.on_prem_config = input;
         self
     }
-    /// <p>The DataSync agents that are connecting to a Network File System (NFS) location.</p>
+    /// <p>The DataSync agents that can connect to your Network File System (NFS) file server.</p>
     pub fn get_on_prem_config(&self) -> &::std::option::Option<crate::types::OnPremConfig> {
         &self.on_prem_config
     }

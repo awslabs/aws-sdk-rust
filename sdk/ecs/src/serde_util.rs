@@ -66,11 +66,11 @@ pub(crate) fn deployment_alarms_correct_errors(
     if builder.alarm_names.is_none() {
         builder.alarm_names = Some(Default::default())
     }
-    if builder.enable.is_none() {
-        builder.enable = Some(Default::default())
-    }
     if builder.rollback.is_none() {
         builder.rollback = Some(Default::default())
+    }
+    if builder.enable.is_none() {
+        builder.enable = Some(Default::default())
     }
     builder
 }
@@ -95,6 +95,15 @@ pub(crate) fn inference_accelerator_correct_errors(
     }
     if builder.device_type.is_none() {
         builder.device_type = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn service_connect_configuration_correct_errors(
+    mut builder: crate::types::builders::ServiceConnectConfigurationBuilder,
+) -> crate::types::builders::ServiceConnectConfigurationBuilder {
+    if builder.enabled.is_none() {
+        builder.enabled = Some(Default::default())
     }
     builder
 }
@@ -171,11 +180,11 @@ pub(crate) fn repository_credentials_correct_errors(
     builder
 }
 
-pub(crate) fn service_connect_configuration_correct_errors(
-    mut builder: crate::types::builders::ServiceConnectConfigurationBuilder,
-) -> crate::types::builders::ServiceConnectConfigurationBuilder {
-    if builder.enabled.is_none() {
-        builder.enabled = Some(Default::default())
+pub(crate) fn service_volume_configuration_correct_errors(
+    mut builder: crate::types::builders::ServiceVolumeConfigurationBuilder,
+) -> crate::types::builders::ServiceVolumeConfigurationBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
     }
     builder
 }
@@ -248,11 +257,20 @@ pub(crate) fn secret_correct_errors(mut builder: crate::types::builders::SecretB
     builder
 }
 
-pub(crate) fn service_volume_configuration_correct_errors(
-    mut builder: crate::types::builders::ServiceVolumeConfigurationBuilder,
-) -> crate::types::builders::ServiceVolumeConfigurationBuilder {
-    if builder.name.is_none() {
-        builder.name = Some(Default::default())
+pub(crate) fn service_connect_service_correct_errors(
+    mut builder: crate::types::builders::ServiceConnectServiceBuilder,
+) -> crate::types::builders::ServiceConnectServiceBuilder {
+    if builder.port_name.is_none() {
+        builder.port_name = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn service_managed_ebs_volume_configuration_correct_errors(
+    mut builder: crate::types::builders::ServiceManagedEbsVolumeConfigurationBuilder,
+) -> crate::types::builders::ServiceManagedEbsVolumeConfigurationBuilder {
+    if builder.role_arn.is_none() {
+        builder.role_arn = Some(Default::default())
     }
     builder
 }
@@ -277,20 +295,14 @@ pub(crate) fn device_correct_errors(mut builder: crate::types::builders::DeviceB
     builder
 }
 
-pub(crate) fn service_connect_service_correct_errors(
-    mut builder: crate::types::builders::ServiceConnectServiceBuilder,
-) -> crate::types::builders::ServiceConnectServiceBuilder {
-    if builder.port_name.is_none() {
-        builder.port_name = Some(Default::default())
-    }
-    builder
-}
-
-pub(crate) fn service_managed_ebs_volume_configuration_correct_errors(
-    mut builder: crate::types::builders::ServiceManagedEbsVolumeConfigurationBuilder,
-) -> crate::types::builders::ServiceManagedEbsVolumeConfigurationBuilder {
-    if builder.role_arn.is_none() {
-        builder.role_arn = Some(Default::default())
+pub(crate) fn service_connect_tls_configuration_correct_errors(
+    mut builder: crate::types::builders::ServiceConnectTlsConfigurationBuilder,
+) -> crate::types::builders::ServiceConnectTlsConfigurationBuilder {
+    if builder.issuer_certificate_authority.is_none() {
+        builder.issuer_certificate_authority = {
+            let builder = crate::types::builders::ServiceConnectTlsCertificateAuthorityBuilder::default();
+            Some(builder.build())
+        }
     }
     builder
 }
@@ -301,18 +313,6 @@ pub(crate) fn tmpfs_correct_errors(mut builder: crate::types::builders::TmpfsBui
     }
     if builder.size.is_none() {
         builder.size = Some(Default::default())
-    }
-    builder
-}
-
-pub(crate) fn service_connect_tls_configuration_correct_errors(
-    mut builder: crate::types::builders::ServiceConnectTlsConfigurationBuilder,
-) -> crate::types::builders::ServiceConnectTlsConfigurationBuilder {
-    if builder.issuer_certificate_authority.is_none() {
-        builder.issuer_certificate_authority = {
-            let builder = crate::types::builders::ServiceConnectTlsCertificateAuthorityBuilder::default();
-            Some(builder.build())
-        }
     }
     builder
 }

@@ -17,6 +17,30 @@ pub(crate) fn create_table_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn create_type_output_output_correct_errors(
+    mut builder: crate::operation::create_type::builders::CreateTypeOutputBuilder,
+) -> crate::operation::create_type::builders::CreateTypeOutputBuilder {
+    if builder.keyspace_arn.is_none() {
+        builder.keyspace_arn = Some(Default::default())
+    }
+    if builder.type_name.is_none() {
+        builder.type_name = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn delete_type_output_output_correct_errors(
+    mut builder: crate::operation::delete_type::builders::DeleteTypeOutputBuilder,
+) -> crate::operation::delete_type::builders::DeleteTypeOutputBuilder {
+    if builder.keyspace_arn.is_none() {
+        builder.keyspace_arn = Some(Default::default())
+    }
+    if builder.type_name.is_none() {
+        builder.type_name = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn get_keyspace_output_output_correct_errors(
     mut builder: crate::operation::get_keyspace::builders::GetKeyspaceOutputBuilder,
 ) -> crate::operation::get_keyspace::builders::GetKeyspaceOutputBuilder {
@@ -62,11 +86,35 @@ pub(crate) fn get_table_auto_scaling_settings_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn get_type_output_output_correct_errors(
+    mut builder: crate::operation::get_type::builders::GetTypeOutputBuilder,
+) -> crate::operation::get_type::builders::GetTypeOutputBuilder {
+    if builder.keyspace_name.is_none() {
+        builder.keyspace_name = Some(Default::default())
+    }
+    if builder.type_name.is_none() {
+        builder.type_name = Some(Default::default())
+    }
+    if builder.keyspace_arn.is_none() {
+        builder.keyspace_arn = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn list_keyspaces_output_output_correct_errors(
     mut builder: crate::operation::list_keyspaces::builders::ListKeyspacesOutputBuilder,
 ) -> crate::operation::list_keyspaces::builders::ListKeyspacesOutputBuilder {
     if builder.keyspaces.is_none() {
         builder.keyspaces = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_types_output_output_correct_errors(
+    mut builder: crate::operation::list_types::builders::ListTypesOutputBuilder,
+) -> crate::operation::list_types::builders::ListTypesOutputBuilder {
+    if builder.types.is_none() {
+        builder.types = Some(Default::default())
     }
     builder
 }
@@ -147,6 +195,18 @@ pub(crate) fn schema_definition_correct_errors(
 pub(crate) fn time_to_live_correct_errors(mut builder: crate::types::builders::TimeToLiveBuilder) -> crate::types::builders::TimeToLiveBuilder {
     if builder.status.is_none() {
         builder.status = "no value was set".parse::<crate::types::TimeToLiveStatus>().ok()
+    }
+    builder
+}
+
+pub(crate) fn field_definition_correct_errors(
+    mut builder: crate::types::builders::FieldDefinitionBuilder,
+) -> crate::types::builders::FieldDefinitionBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.r#type.is_none() {
+        builder.r#type = Some(Default::default())
     }
     builder
 }

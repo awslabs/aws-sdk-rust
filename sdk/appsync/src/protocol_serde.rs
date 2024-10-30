@@ -29,9 +29,13 @@ pub(crate) mod shape_associate_merged_graphql_api;
 
 pub(crate) mod shape_associate_source_graphql_api;
 
+pub(crate) mod shape_create_api;
+
 pub(crate) mod shape_create_api_cache;
 
 pub(crate) mod shape_create_api_key;
+
+pub(crate) mod shape_create_channel_namespace;
 
 pub(crate) mod shape_create_data_source;
 
@@ -45,9 +49,13 @@ pub(crate) mod shape_create_resolver;
 
 pub(crate) mod shape_create_type;
 
+pub(crate) mod shape_delete_api;
+
 pub(crate) mod shape_delete_api_cache;
 
 pub(crate) mod shape_delete_api_key;
+
+pub(crate) mod shape_delete_channel_namespace;
 
 pub(crate) mod shape_delete_data_source;
 
@@ -73,9 +81,13 @@ pub(crate) mod shape_evaluate_mapping_template;
 
 pub(crate) mod shape_flush_api_cache;
 
+pub(crate) mod shape_get_api;
+
 pub(crate) mod shape_get_api_association;
 
 pub(crate) mod shape_get_api_cache;
+
+pub(crate) mod shape_get_channel_namespace;
 
 pub(crate) mod shape_get_data_source;
 
@@ -100,6 +112,10 @@ pub(crate) mod shape_get_source_api_association;
 pub(crate) mod shape_get_type;
 
 pub(crate) mod shape_list_api_keys;
+
+pub(crate) mod shape_list_apis;
+
+pub(crate) mod shape_list_channel_namespaces;
 
 pub(crate) mod shape_list_data_sources;
 
@@ -133,9 +149,13 @@ pub(crate) mod shape_tag_resource;
 
 pub(crate) mod shape_untag_resource;
 
+pub(crate) mod shape_update_api;
+
 pub(crate) mod shape_update_api_cache;
 
 pub(crate) mod shape_update_api_key;
+
+pub(crate) mod shape_update_channel_namespace;
 
 pub(crate) mod shape_update_data_source;
 
@@ -177,9 +197,15 @@ pub(crate) mod shape_bad_request_exception;
 
 pub(crate) mod shape_concurrent_modification_exception;
 
+pub(crate) mod shape_conflict_exception;
+
 pub(crate) mod shape_create_api_cache_input;
 
+pub(crate) mod shape_create_api_input;
+
 pub(crate) mod shape_create_api_key_input;
+
+pub(crate) mod shape_create_channel_namespace_input;
 
 pub(crate) mod shape_create_data_source_input;
 
@@ -209,6 +235,8 @@ pub(crate) mod shape_not_found_exception;
 
 pub(crate) mod shape_put_graphql_api_environment_variables_input;
 
+pub(crate) mod shape_service_quota_exceeded_exception;
+
 pub(crate) mod shape_start_data_source_introspection_input;
 
 pub(crate) mod shape_start_schema_creation_input;
@@ -219,7 +247,11 @@ pub(crate) mod shape_unauthorized_exception;
 
 pub(crate) mod shape_update_api_cache_input;
 
+pub(crate) mod shape_update_api_input;
+
 pub(crate) mod shape_update_api_key_input;
+
+pub(crate) mod shape_update_channel_namespace_input;
 
 pub(crate) mod shape_update_data_source_input;
 
@@ -237,6 +269,8 @@ pub(crate) mod shape_update_type_input;
 
 pub(crate) mod shape_additional_authentication_provider;
 
+pub(crate) mod shape_api;
+
 pub(crate) mod shape_api_association;
 
 pub(crate) mod shape_api_cache;
@@ -245,11 +279,19 @@ pub(crate) mod shape_api_key;
 
 pub(crate) mod shape_api_keys;
 
+pub(crate) mod shape_apis;
+
 pub(crate) mod shape_app_sync_runtime;
+
+pub(crate) mod shape_auth_mode;
 
 pub(crate) mod shape_bad_request_detail;
 
 pub(crate) mod shape_caching_config;
+
+pub(crate) mod shape_channel_namespace;
+
+pub(crate) mod shape_channel_namespaces;
 
 pub(crate) mod shape_data_source;
 
@@ -274,6 +316,8 @@ pub(crate) mod shape_error_detail;
 pub(crate) mod shape_evaluate_code_error_detail;
 
 pub(crate) mod shape_event_bridge_data_source_config;
+
+pub(crate) mod shape_event_config;
 
 pub(crate) mod shape_function_configuration;
 
@@ -325,6 +369,10 @@ pub(crate) mod shape_user_pool_config;
 
 pub(crate) mod shape_additional_authentication_providers;
 
+pub(crate) mod shape_auth_modes;
+
+pub(crate) mod shape_auth_provider;
+
 pub(crate) mod shape_authorization_config;
 
 pub(crate) mod shape_code_errors;
@@ -335,6 +383,8 @@ pub(crate) mod shape_data_source_introspection_models;
 
 pub(crate) mod shape_delta_sync_config;
 
+pub(crate) mod shape_event_log_config;
+
 pub(crate) mod shape_lambda_conflict_handler_config;
 
 pub(crate) mod shape_map_of_string_to_string;
@@ -343,11 +393,15 @@ pub(crate) mod shape_rds_http_endpoint_config;
 
 pub(crate) mod shape_source_api_association_summary;
 
+pub(crate) mod shape_auth_providers;
+
 pub(crate) mod shape_aws_iam_config;
 
 pub(crate) mod shape_caching_keys;
 
 pub(crate) mod shape_code_error;
+
+pub(crate) mod shape_cognito_config;
 
 pub(crate) mod shape_data_source_introspection_model;
 

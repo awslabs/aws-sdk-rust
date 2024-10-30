@@ -27,9 +27,13 @@ pub(crate) mod shape_create_keyspace;
 
 pub(crate) mod shape_create_table;
 
+pub(crate) mod shape_create_type;
+
 pub(crate) mod shape_delete_keyspace;
 
 pub(crate) mod shape_delete_table;
+
+pub(crate) mod shape_delete_type;
 
 pub(crate) mod shape_get_keyspace;
 
@@ -37,11 +41,15 @@ pub(crate) mod shape_get_table;
 
 pub(crate) mod shape_get_table_auto_scaling_settings;
 
+pub(crate) mod shape_get_type;
+
 pub(crate) mod shape_list_keyspaces;
 
 pub(crate) mod shape_list_tables;
 
 pub(crate) mod shape_list_tags_for_resource;
+
+pub(crate) mod shape_list_types;
 
 pub(crate) mod shape_restore_table;
 
@@ -67,15 +75,21 @@ pub(crate) mod shape_create_keyspace_input;
 
 pub(crate) mod shape_create_table_input;
 
+pub(crate) mod shape_create_type_input;
+
 pub(crate) mod shape_delete_keyspace_input;
 
 pub(crate) mod shape_delete_table_input;
+
+pub(crate) mod shape_delete_type_input;
 
 pub(crate) mod shape_get_keyspace_input;
 
 pub(crate) mod shape_get_table_auto_scaling_settings_input;
 
 pub(crate) mod shape_get_table_input;
+
+pub(crate) mod shape_get_type_input;
 
 pub(crate) mod shape_internal_server_exception;
 
@@ -84,6 +98,8 @@ pub(crate) mod shape_list_keyspaces_input;
 pub(crate) mod shape_list_tables_input;
 
 pub(crate) mod shape_list_tags_for_resource_input;
+
+pub(crate) mod shape_list_types_input;
 
 pub(crate) mod shape_resource_not_found_exception;
 
@@ -113,6 +129,10 @@ pub(crate) mod shape_comment;
 
 pub(crate) mod shape_encryption_specification;
 
+pub(crate) mod shape_field_definition;
+
+pub(crate) mod shape_field_list;
+
 pub(crate) mod shape_keyspace_summary_list;
 
 pub(crate) mod shape_point_in_time_recovery;
@@ -131,6 +151,8 @@ pub(crate) mod shape_replication_specification;
 
 pub(crate) mod shape_schema_definition;
 
+pub(crate) mod shape_table_name_list;
+
 pub(crate) mod shape_table_summary_list;
 
 pub(crate) mod shape_tag;
@@ -138,6 +160,8 @@ pub(crate) mod shape_tag;
 pub(crate) mod shape_tag_list;
 
 pub(crate) mod shape_time_to_live;
+
+pub(crate) mod shape_type_name_list;
 
 pub(crate) mod shape_auto_scaling_settings;
 

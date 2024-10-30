@@ -341,6 +341,10 @@ pub(crate) mod shape_storage_system_list;
 
 pub(crate) mod shape_tag_list_entry;
 
+pub(crate) mod shape_task_execution_files_failed_detail;
+
+pub(crate) mod shape_task_execution_files_listed_detail;
+
 pub(crate) mod shape_task_execution_list;
 
 pub(crate) mod shape_task_execution_result_detail;

@@ -27,6 +27,8 @@ pub use crate::types::_table_summary::TableSummaryBuilder;
 
 pub use crate::types::_keyspace_summary::KeyspaceSummaryBuilder;
 
+pub use crate::types::_field_definition::FieldDefinitionBuilder;
+
 pub use crate::types::_replica_auto_scaling_specification::ReplicaAutoScalingSpecificationBuilder;
 
 pub use crate::types::_replica_specification_summary::ReplicaSpecificationSummaryBuilder;

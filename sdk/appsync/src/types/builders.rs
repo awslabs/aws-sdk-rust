@@ -67,9 +67,23 @@ pub use crate::types::_dynamodb_data_source_config::DynamodbDataSourceConfigBuil
 
 pub use crate::types::_delta_sync_config::DeltaSyncConfigBuilder;
 
+pub use crate::types::_channel_namespace::ChannelNamespaceBuilder;
+
+pub use crate::types::_auth_mode::AuthModeBuilder;
+
 pub use crate::types::_api_key::ApiKeyBuilder;
 
 pub use crate::types::_api_cache::ApiCacheBuilder;
+
+pub use crate::types::_api::ApiBuilder;
+
+pub use crate::types::_event_config::EventConfigBuilder;
+
+pub use crate::types::_event_log_config::EventLogConfigBuilder;
+
+pub use crate::types::_auth_provider::AuthProviderBuilder;
+
+pub use crate::types::_cognito_config::CognitoConfigBuilder;
 
 pub use crate::types::_rds_data_api_config::RdsDataApiConfigBuilder;
 

@@ -1733,6 +1733,8 @@ pub(crate) mod shape_model_explainability_baseline_config;
 
 pub(crate) mod shape_model_explainability_job_input;
 
+pub(crate) mod shape_model_life_cycle;
+
 pub(crate) mod shape_model_metadata_search_expression;
 
 pub(crate) mod shape_model_metadata_summaries;

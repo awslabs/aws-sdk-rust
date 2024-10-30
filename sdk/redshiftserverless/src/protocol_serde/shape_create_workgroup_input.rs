@@ -75,8 +75,14 @@ pub fn ser_create_workgroup_input_input(
             ::aws_smithy_types::Number::NegInt((*var_21).into()),
         );
     }
-    if let Some(var_22) = &input.ip_address_type {
-        object.key("ipAddressType").string(var_22.as_str());
+    if let Some(var_22) = &input.price_performance_target {
+        #[allow(unused_mut)]
+        let mut object_23 = object.key("pricePerformanceTarget").start_object();
+        crate::protocol_serde::shape_performance_target::ser_performance_target(&mut object_23, var_22)?;
+        object_23.finish();
+    }
+    if let Some(var_24) = &input.ip_address_type {
+        object.key("ipAddressType").string(var_24.as_str());
     }
     Ok(())
 }

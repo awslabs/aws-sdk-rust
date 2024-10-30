@@ -263,4 +263,18 @@ impl UpdateWorkgroupFluentBuilder {
     pub fn get_ip_address_type(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_ip_address_type()
     }
+    /// <p>An object that represents the price performance target settings for the workgroup.</p>
+    pub fn price_performance_target(mut self, input: crate::types::PerformanceTarget) -> Self {
+        self.inner = self.inner.price_performance_target(input);
+        self
+    }
+    /// <p>An object that represents the price performance target settings for the workgroup.</p>
+    pub fn set_price_performance_target(mut self, input: ::std::option::Option<crate::types::PerformanceTarget>) -> Self {
+        self.inner = self.inner.set_price_performance_target(input);
+        self
+    }
+    /// <p>An object that represents the price performance target settings for the workgroup.</p>
+    pub fn get_price_performance_target(&self) -> &::std::option::Option<crate::types::PerformanceTarget> {
+        self.inner.get_price_performance_target()
+    }
 }

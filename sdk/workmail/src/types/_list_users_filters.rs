@@ -12,6 +12,8 @@ pub struct ListUsersFilters {
     pub primary_email_prefix: ::std::option::Option<::std::string::String>,
     /// <p>Filters only users with the provided state.</p>
     pub state: ::std::option::Option<crate::types::EntityState>,
+    /// <p>Filters only users with the ID from the IAM Identity Center.</p>
+    pub identity_provider_user_id_prefix: ::std::option::Option<::std::string::String>,
 }
 impl ListUsersFilters {
     /// <p>Filters only users with the provided username prefix.</p>
@@ -30,6 +32,10 @@ impl ListUsersFilters {
     pub fn state(&self) -> ::std::option::Option<&crate::types::EntityState> {
         self.state.as_ref()
     }
+    /// <p>Filters only users with the ID from the IAM Identity Center.</p>
+    pub fn identity_provider_user_id_prefix(&self) -> ::std::option::Option<&str> {
+        self.identity_provider_user_id_prefix.as_deref()
+    }
 }
 impl ::std::fmt::Debug for ListUsersFilters {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -38,6 +44,7 @@ impl ::std::fmt::Debug for ListUsersFilters {
         formatter.field("display_name_prefix", &"*** Sensitive Data Redacted ***");
         formatter.field("primary_email_prefix", &self.primary_email_prefix);
         formatter.field("state", &self.state);
+        formatter.field("identity_provider_user_id_prefix", &self.identity_provider_user_id_prefix);
         formatter.finish()
     }
 }
@@ -56,6 +63,7 @@ pub struct ListUsersFiltersBuilder {
     pub(crate) display_name_prefix: ::std::option::Option<::std::string::String>,
     pub(crate) primary_email_prefix: ::std::option::Option<::std::string::String>,
     pub(crate) state: ::std::option::Option<crate::types::EntityState>,
+    pub(crate) identity_provider_user_id_prefix: ::std::option::Option<::std::string::String>,
 }
 impl ListUsersFiltersBuilder {
     /// <p>Filters only users with the provided username prefix.</p>
@@ -114,6 +122,20 @@ impl ListUsersFiltersBuilder {
     pub fn get_state(&self) -> &::std::option::Option<crate::types::EntityState> {
         &self.state
     }
+    /// <p>Filters only users with the ID from the IAM Identity Center.</p>
+    pub fn identity_provider_user_id_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.identity_provider_user_id_prefix = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Filters only users with the ID from the IAM Identity Center.</p>
+    pub fn set_identity_provider_user_id_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.identity_provider_user_id_prefix = input;
+        self
+    }
+    /// <p>Filters only users with the ID from the IAM Identity Center.</p>
+    pub fn get_identity_provider_user_id_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identity_provider_user_id_prefix
+    }
     /// Consumes the builder and constructs a [`ListUsersFilters`](crate::types::ListUsersFilters).
     pub fn build(self) -> crate::types::ListUsersFilters {
         crate::types::ListUsersFilters {
@@ -121,6 +143,7 @@ impl ListUsersFiltersBuilder {
             display_name_prefix: self.display_name_prefix,
             primary_email_prefix: self.primary_email_prefix,
             state: self.state,
+            identity_provider_user_id_prefix: self.identity_provider_user_id_prefix,
         }
     }
 }
@@ -131,6 +154,7 @@ impl ::std::fmt::Debug for ListUsersFiltersBuilder {
         formatter.field("display_name_prefix", &"*** Sensitive Data Redacted ***");
         formatter.field("primary_email_prefix", &self.primary_email_prefix);
         formatter.field("state", &self.state);
+        formatter.field("identity_provider_user_id_prefix", &self.identity_provider_user_id_prefix);
         formatter.finish()
     }
 }

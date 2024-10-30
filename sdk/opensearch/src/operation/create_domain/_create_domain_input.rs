@@ -44,6 +44,8 @@ pub struct CreateDomainInput {
     pub domain_endpoint_options: ::std::option::Option<crate::types::DomainEndpointOptions>,
     /// <p>Options for fine-grained access control.</p>
     pub advanced_security_options: ::std::option::Option<crate::types::AdvancedSecurityOptionsInput>,
+    /// <p>Options for IAM Identity Center Option control for the domain.</p>
+    pub identity_center_options: ::std::option::Option<crate::types::IdentityCenterOptionsInput>,
     /// <p>List of tags to add to the domain upon creation.</p>
     pub tag_list: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>Options for Auto-Tune.</p>
@@ -129,6 +131,10 @@ impl CreateDomainInput {
     pub fn advanced_security_options(&self) -> ::std::option::Option<&crate::types::AdvancedSecurityOptionsInput> {
         self.advanced_security_options.as_ref()
     }
+    /// <p>Options for IAM Identity Center Option control for the domain.</p>
+    pub fn identity_center_options(&self) -> ::std::option::Option<&crate::types::IdentityCenterOptionsInput> {
+        self.identity_center_options.as_ref()
+    }
     /// <p>List of tags to add to the domain upon creation.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_list.is_none()`.
@@ -178,6 +184,7 @@ pub struct CreateDomainInputBuilder {
     pub(crate) log_publishing_options: ::std::option::Option<::std::collections::HashMap<crate::types::LogType, crate::types::LogPublishingOption>>,
     pub(crate) domain_endpoint_options: ::std::option::Option<crate::types::DomainEndpointOptions>,
     pub(crate) advanced_security_options: ::std::option::Option<crate::types::AdvancedSecurityOptionsInput>,
+    pub(crate) identity_center_options: ::std::option::Option<crate::types::IdentityCenterOptionsInput>,
     pub(crate) tag_list: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) auto_tune_options: ::std::option::Option<crate::types::AutoTuneOptionsInput>,
     pub(crate) off_peak_window_options: ::std::option::Option<crate::types::OffPeakWindowOptions>,
@@ -453,6 +460,20 @@ impl CreateDomainInputBuilder {
     pub fn get_advanced_security_options(&self) -> &::std::option::Option<crate::types::AdvancedSecurityOptionsInput> {
         &self.advanced_security_options
     }
+    /// <p>Options for IAM Identity Center Option control for the domain.</p>
+    pub fn identity_center_options(mut self, input: crate::types::IdentityCenterOptionsInput) -> Self {
+        self.identity_center_options = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Options for IAM Identity Center Option control for the domain.</p>
+    pub fn set_identity_center_options(mut self, input: ::std::option::Option<crate::types::IdentityCenterOptionsInput>) -> Self {
+        self.identity_center_options = input;
+        self
+    }
+    /// <p>Options for IAM Identity Center Option control for the domain.</p>
+    pub fn get_identity_center_options(&self) -> &::std::option::Option<crate::types::IdentityCenterOptionsInput> {
+        &self.identity_center_options
+    }
     /// Appends an item to `tag_list`.
     ///
     /// To override the contents of this collection use [`set_tag_list`](Self::set_tag_list).
@@ -549,6 +570,7 @@ impl CreateDomainInputBuilder {
             log_publishing_options: self.log_publishing_options,
             domain_endpoint_options: self.domain_endpoint_options,
             advanced_security_options: self.advanced_security_options,
+            identity_center_options: self.identity_center_options,
             tag_list: self.tag_list,
             auto_tune_options: self.auto_tune_options,
             off_peak_window_options: self.off_peak_window_options,

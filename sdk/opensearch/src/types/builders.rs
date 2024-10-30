@@ -57,6 +57,10 @@ pub use crate::types::_auto_tune_maintenance_schedule::AutoTuneMaintenanceSchedu
 
 pub use crate::types::_duration::DurationBuilder;
 
+pub use crate::types::_identity_center_options_status::IdentityCenterOptionsStatusBuilder;
+
+pub use crate::types::_identity_center_options::IdentityCenterOptionsBuilder;
+
 pub use crate::types::_advanced_security_options_status::AdvancedSecurityOptionsStatusBuilder;
 
 pub use crate::types::_advanced_security_options::AdvancedSecurityOptionsBuilder;
@@ -121,6 +125,8 @@ pub use crate::types::_aiml_options_input::AimlOptionsInputBuilder;
 
 pub use crate::types::_natural_language_query_generation_options_input::NaturalLanguageQueryGenerationOptionsInputBuilder;
 
+pub use crate::types::_identity_center_options_input::IdentityCenterOptionsInputBuilder;
+
 pub use crate::types::_advanced_security_options_input::AdvancedSecurityOptionsInputBuilder;
 
 pub use crate::types::_jwt_options_input::JwtOptionsInputBuilder;
@@ -130,6 +136,12 @@ pub use crate::types::_saml_options_input::SamlOptionsInputBuilder;
 pub use crate::types::_master_user_options::MasterUserOptionsBuilder;
 
 pub use crate::types::_s3_glue_data_catalog::S3GlueDataCatalogBuilder;
+
+pub use crate::types::_app_config::AppConfigBuilder;
+
+pub use crate::types::_iam_identity_center_options::IamIdentityCenterOptionsBuilder;
+
+pub use crate::types::_data_source::DataSourceBuilder;
 
 pub use crate::types::_service_software_options::ServiceSoftwareOptionsBuilder;
 
@@ -156,6 +168,8 @@ pub use crate::types::_domain_info::DomainInfoBuilder;
 pub use crate::types::_domain_maintenance_details::DomainMaintenanceDetailsBuilder;
 
 pub use crate::types::_data_source_details::DataSourceDetailsBuilder;
+
+pub use crate::types::_application_summary::ApplicationSummaryBuilder;
 
 pub use crate::types::_upgrade_history::UpgradeHistoryBuilder;
 
@@ -218,5 +232,7 @@ pub use crate::types::_auto_tune_details::AutoTuneDetailsBuilder;
 pub use crate::types::_scheduled_auto_tune_details::ScheduledAutoTuneDetailsBuilder;
 
 pub use crate::types::_auto_tune_options_input::AutoTuneOptionsInputBuilder;
+
+pub use crate::types::_iam_identity_center_options_input::IamIdentityCenterOptionsInputBuilder;
 
 pub use crate::types::_cancelled_change_property::CancelledChangePropertyBuilder;

@@ -7,7 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeLocationNfsOutput`](crate::operation::describe_location_nfs::DescribeLocationNfsOutput) with field(s):
     ///   - [`location_arn(Option<String>)`](crate::operation::describe_location_nfs::DescribeLocationNfsOutput::location_arn): <p>The ARN of the NFS location.</p>
     ///   - [`location_uri(Option<String>)`](crate::operation::describe_location_nfs::DescribeLocationNfsOutput::location_uri): <p>The URI of the NFS location.</p>
-    ///   - [`on_prem_config(Option<OnPremConfig>)`](crate::operation::describe_location_nfs::DescribeLocationNfsOutput::on_prem_config): <p>The DataSync agents that are connecting to a Network File System (NFS) location.</p>
+    ///   - [`on_prem_config(Option<OnPremConfig>)`](crate::operation::describe_location_nfs::DescribeLocationNfsOutput::on_prem_config): <p>The DataSync agents that can connect to your Network File System (NFS) file server.</p>
     ///   - [`mount_options(Option<NfsMountOptions>)`](crate::operation::describe_location_nfs::DescribeLocationNfsOutput::mount_options): <p>The mount options that DataSync uses to mount your NFS file server.</p>
     ///   - [`creation_time(Option<DateTime>)`](crate::operation::describe_location_nfs::DescribeLocationNfsOutput::creation_time): <p>The time when the NFS location was created.</p>
     /// - On failure, responds with [`SdkError<DescribeLocationNfsError>`](crate::operation::describe_location_nfs::DescribeLocationNfsError)

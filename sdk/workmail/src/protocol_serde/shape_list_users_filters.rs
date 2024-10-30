@@ -15,5 +15,8 @@ pub fn ser_list_users_filters(
     if let Some(var_4) = &input.state {
         object.key("State").string(var_4.as_str());
     }
+    if let Some(var_5) = &input.identity_provider_user_id_prefix {
+        object.key("IdentityProviderUserIdPrefix").string(var_5.as_str());
+    }
     Ok(())
 }

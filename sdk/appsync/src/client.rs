@@ -142,9 +142,13 @@ mod associate_merged_graphql_api;
 
 mod associate_source_graphql_api;
 
+mod create_api;
+
 mod create_api_cache;
 
 mod create_api_key;
+
+mod create_channel_namespace;
 
 mod create_data_source;
 
@@ -185,9 +189,13 @@ mod create_type;
 /// ```
 pub mod customize;
 
+mod delete_api;
+
 mod delete_api_cache;
 
 mod delete_api_key;
+
+mod delete_channel_namespace;
 
 mod delete_data_source;
 
@@ -213,9 +221,13 @@ mod evaluate_mapping_template;
 
 mod flush_api_cache;
 
+mod get_api;
+
 mod get_api_association;
 
 mod get_api_cache;
+
+mod get_channel_namespace;
 
 mod get_data_source;
 
@@ -240,6 +252,10 @@ mod get_source_api_association;
 mod get_type;
 
 mod list_api_keys;
+
+mod list_apis;
+
+mod list_channel_namespaces;
 
 mod list_data_sources;
 
@@ -273,9 +289,13 @@ mod tag_resource;
 
 mod untag_resource;
 
+mod update_api;
+
 mod update_api_cache;
 
 mod update_api_key;
+
+mod update_channel_namespace;
 
 mod update_data_source;
 
