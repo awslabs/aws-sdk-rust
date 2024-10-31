@@ -88,69 +88,59 @@ pub fn ser_create_session_headers(
 ) -> std::result::Result<::http::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
     if let ::std::option::Option::Some(inner_1) = &input.session_mode {
         let formatted_2 = inner_1.as_str();
-        if !formatted_2.is_empty() {
-            let header_value = formatted_2;
-            let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
-                ::aws_smithy_types::error::operation::BuildError::invalid_field(
-                    "session_mode",
-                    format!("`{}` cannot be used as a header value: {}", &header_value, err),
-                )
-            })?;
-            builder = builder.header("x-amz-create-session-mode", header_value);
-        }
+        let header_value = formatted_2;
+        let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+            ::aws_smithy_types::error::operation::BuildError::invalid_field(
+                "session_mode",
+                format!("`{}` cannot be used as a header value: {}", &header_value, err),
+            )
+        })?;
+        builder = builder.header("x-amz-create-session-mode", header_value);
     }
     if let ::std::option::Option::Some(inner_3) = &input.server_side_encryption {
         let formatted_4 = inner_3.as_str();
-        if !formatted_4.is_empty() {
-            let header_value = formatted_4;
-            let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
-                ::aws_smithy_types::error::operation::BuildError::invalid_field(
-                    "server_side_encryption",
-                    format!("`{}` cannot be used as a header value: {}", &header_value, err),
-                )
-            })?;
-            builder = builder.header("x-amz-server-side-encryption", header_value);
-        }
+        let header_value = formatted_4;
+        let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+            ::aws_smithy_types::error::operation::BuildError::invalid_field(
+                "server_side_encryption",
+                format!("`{}` cannot be used as a header value: {}", &header_value, err),
+            )
+        })?;
+        builder = builder.header("x-amz-server-side-encryption", header_value);
     }
     if let ::std::option::Option::Some(inner_5) = &input.ssekms_key_id {
         let formatted_6 = inner_5.as_str();
-        if !formatted_6.is_empty() {
-            let header_value = formatted_6;
-            let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
-                ::aws_smithy_types::error::operation::BuildError::invalid_field(
-                    "ssekms_key_id",
-                    format!("`{}` cannot be used as a header value: {}", &"*** Sensitive Data Redacted ***", err),
-                )
-            })?;
-            builder = builder.header("x-amz-server-side-encryption-aws-kms-key-id", header_value);
-        }
+        let header_value = formatted_6;
+        let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+            ::aws_smithy_types::error::operation::BuildError::invalid_field(
+                "ssekms_key_id",
+                format!("`{}` cannot be used as a header value: {}", &"*** Sensitive Data Redacted ***", err),
+            )
+        })?;
+        builder = builder.header("x-amz-server-side-encryption-aws-kms-key-id", header_value);
     }
     if let ::std::option::Option::Some(inner_7) = &input.ssekms_encryption_context {
         let formatted_8 = inner_7.as_str();
-        if !formatted_8.is_empty() {
-            let header_value = formatted_8;
-            let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
-                ::aws_smithy_types::error::operation::BuildError::invalid_field(
-                    "ssekms_encryption_context",
-                    format!("`{}` cannot be used as a header value: {}", &"*** Sensitive Data Redacted ***", err),
-                )
-            })?;
-            builder = builder.header("x-amz-server-side-encryption-context", header_value);
-        }
+        let header_value = formatted_8;
+        let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+            ::aws_smithy_types::error::operation::BuildError::invalid_field(
+                "ssekms_encryption_context",
+                format!("`{}` cannot be used as a header value: {}", &"*** Sensitive Data Redacted ***", err),
+            )
+        })?;
+        builder = builder.header("x-amz-server-side-encryption-context", header_value);
     }
     if let ::std::option::Option::Some(inner_9) = &input.bucket_key_enabled {
         let mut encoder = ::aws_smithy_types::primitive::Encoder::from(*inner_9);
         let formatted_10 = encoder.encode();
-        if !formatted_10.is_empty() {
-            let header_value = formatted_10;
-            let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
-                ::aws_smithy_types::error::operation::BuildError::invalid_field(
-                    "bucket_key_enabled",
-                    format!("`{}` cannot be used as a header value: {}", &header_value, err),
-                )
-            })?;
-            builder = builder.header("x-amz-server-side-encryption-bucket-key-enabled", header_value);
-        }
+        let header_value = formatted_10;
+        let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+            ::aws_smithy_types::error::operation::BuildError::invalid_field(
+                "bucket_key_enabled",
+                format!("`{}` cannot be used as a header value: {}", &header_value, err),
+            )
+        })?;
+        builder = builder.header("x-amz-server-side-encryption-bucket-key-enabled", header_value);
     }
     Ok(builder)
 }

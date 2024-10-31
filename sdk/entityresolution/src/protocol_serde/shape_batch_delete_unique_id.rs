@@ -96,21 +96,22 @@ pub fn ser_batch_delete_unique_id_headers(
 ) -> std::result::Result<::http::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
     if let ::std::option::Option::Some(inner_1) = &input.input_source {
         let formatted_2 = inner_1.as_str();
-        if !formatted_2.is_empty() {
-            let header_value = formatted_2;
-            let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
-                ::aws_smithy_types::error::operation::BuildError::invalid_field(
-                    "input_source",
-                    format!("`{}` cannot be used as a header value: {}", &header_value, err),
-                )
-            })?;
-            builder = builder.header("inputSource", header_value);
-        }
+        let header_value = formatted_2;
+        let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+            ::aws_smithy_types::error::operation::BuildError::invalid_field(
+                "input_source",
+                format!("`{}` cannot be used as a header value: {}", &header_value, err),
+            )
+        })?;
+        builder = builder.header("inputSource", header_value);
     }
     if let ::std::option::Option::Some(inner_3) = &input.unique_ids {
-        for inner_4 in inner_3 {
-            let formatted_5 = ::aws_smithy_http::header::quote_header_value(inner_4.as_str());
-            if !formatted_5.is_empty() {
+        // Empty vec in header is serialized as an empty string
+        if inner_3.is_empty() {
+            builder = builder.header("uniqueIds", "");
+        } else {
+            for inner_4 in inner_3 {
+                let formatted_5 = ::aws_smithy_http::header::quote_header_value(inner_4.as_str());
                 let header_value = formatted_5;
                 let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                     ::aws_smithy_types::error::operation::BuildError::invalid_field(
