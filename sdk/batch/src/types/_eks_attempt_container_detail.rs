@@ -6,6 +6,8 @@
 pub struct EksAttemptContainerDetail {
     /// <p>The name of a container.</p>
     pub name: ::std::option::Option<::std::string::String>,
+    /// <p>The ID for the container.</p>
+    pub container_id: ::std::option::Option<::std::string::String>,
     /// <p>The exit code returned for the job attempt. A non-zero exit code is considered failed.</p>
     pub exit_code: ::std::option::Option<i32>,
     /// <p>A short (255 max characters) human-readable string to provide additional details for a running or stopped container.</p>
@@ -15,6 +17,10 @@ impl EksAttemptContainerDetail {
     /// <p>The name of a container.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
+    }
+    /// <p>The ID for the container.</p>
+    pub fn container_id(&self) -> ::std::option::Option<&str> {
+        self.container_id.as_deref()
     }
     /// <p>The exit code returned for the job attempt. A non-zero exit code is considered failed.</p>
     pub fn exit_code(&self) -> ::std::option::Option<i32> {
@@ -37,6 +43,7 @@ impl EksAttemptContainerDetail {
 #[non_exhaustive]
 pub struct EksAttemptContainerDetailBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) container_id: ::std::option::Option<::std::string::String>,
     pub(crate) exit_code: ::std::option::Option<i32>,
     pub(crate) reason: ::std::option::Option<::std::string::String>,
 }
@@ -54,6 +61,20 @@ impl EksAttemptContainerDetailBuilder {
     /// <p>The name of a container.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
+    }
+    /// <p>The ID for the container.</p>
+    pub fn container_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.container_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID for the container.</p>
+    pub fn set_container_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.container_id = input;
+        self
+    }
+    /// <p>The ID for the container.</p>
+    pub fn get_container_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.container_id
     }
     /// <p>The exit code returned for the job attempt. A non-zero exit code is considered failed.</p>
     pub fn exit_code(mut self, input: i32) -> Self {
@@ -87,6 +108,7 @@ impl EksAttemptContainerDetailBuilder {
     pub fn build(self) -> crate::types::EksAttemptContainerDetail {
         crate::types::EksAttemptContainerDetail {
             name: self.name,
+            container_id: self.container_id,
             exit_code: self.exit_code,
             reason: self.reason,
         }

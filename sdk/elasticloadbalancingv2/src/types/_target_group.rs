@@ -38,7 +38,7 @@ pub struct TargetGroup {
     pub target_type: ::std::option::Option<crate::types::TargetTypeEnum>,
     /// <p>\[HTTP/HTTPS protocol\] The protocol version. The possible values are GRPC, HTTP1, and HTTP2.</p>
     pub protocol_version: ::std::option::Option<::std::string::String>,
-    /// <p>The type of IP address used for this target group. The possible values are <code>ipv4</code> and <code>ipv6</code>. This is an optional parameter. If not specified, the IP address type defaults to <code>ipv4</code>.</p>
+    /// <p>The IP address type. The default value is <code>ipv4</code>.</p>
     pub ip_address_type: ::std::option::Option<crate::types::TargetGroupIpAddressTypeEnum>,
 }
 impl TargetGroup {
@@ -112,7 +112,7 @@ impl TargetGroup {
     pub fn protocol_version(&self) -> ::std::option::Option<&str> {
         self.protocol_version.as_deref()
     }
-    /// <p>The type of IP address used for this target group. The possible values are <code>ipv4</code> and <code>ipv6</code>. This is an optional parameter. If not specified, the IP address type defaults to <code>ipv4</code>.</p>
+    /// <p>The IP address type. The default value is <code>ipv4</code>.</p>
     pub fn ip_address_type(&self) -> ::std::option::Option<&crate::types::TargetGroupIpAddressTypeEnum> {
         self.ip_address_type.as_ref()
     }
@@ -392,17 +392,17 @@ impl TargetGroupBuilder {
     pub fn get_protocol_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.protocol_version
     }
-    /// <p>The type of IP address used for this target group. The possible values are <code>ipv4</code> and <code>ipv6</code>. This is an optional parameter. If not specified, the IP address type defaults to <code>ipv4</code>.</p>
+    /// <p>The IP address type. The default value is <code>ipv4</code>.</p>
     pub fn ip_address_type(mut self, input: crate::types::TargetGroupIpAddressTypeEnum) -> Self {
         self.ip_address_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of IP address used for this target group. The possible values are <code>ipv4</code> and <code>ipv6</code>. This is an optional parameter. If not specified, the IP address type defaults to <code>ipv4</code>.</p>
+    /// <p>The IP address type. The default value is <code>ipv4</code>.</p>
     pub fn set_ip_address_type(mut self, input: ::std::option::Option<crate::types::TargetGroupIpAddressTypeEnum>) -> Self {
         self.ip_address_type = input;
         self
     }
-    /// <p>The type of IP address used for this target group. The possible values are <code>ipv4</code> and <code>ipv6</code>. This is an optional parameter. If not specified, the IP address type defaults to <code>ipv4</code>.</p>
+    /// <p>The IP address type. The default value is <code>ipv4</code>.</p>
     pub fn get_ip_address_type(&self) -> &::std::option::Option<crate::types::TargetGroupIpAddressTypeEnum> {
         &self.ip_address_type
     }

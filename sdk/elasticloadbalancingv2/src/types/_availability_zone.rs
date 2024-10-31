@@ -12,6 +12,8 @@ pub struct AvailabilityZone {
     pub outpost_id: ::std::option::Option<::std::string::String>,
     /// <p>\[Network Load Balancers\] If you need static IP addresses for your load balancer, you can specify one Elastic IP address per Availability Zone when you create an internal-facing load balancer. For internal load balancers, you can specify a private IP address from the IPv4 range of the subnet.</p>
     pub load_balancer_addresses: ::std::option::Option<::std::vec::Vec<crate::types::LoadBalancerAddress>>,
+    /// <p>\[Network Load Balancers with UDP listeners\] The IPv6 prefixes to use for source NAT. For each subnet, specify an IPv6 prefix (/80 netmask) from the subnet CIDR block or auto_assigned to use an IPv6 prefix selected at random from the subnet CIDR block.</p>
+    pub source_nat_ipv6_prefixes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl AvailabilityZone {
     /// <p>The name of the Availability Zone.</p>
@@ -32,6 +34,12 @@ impl AvailabilityZone {
     pub fn load_balancer_addresses(&self) -> &[crate::types::LoadBalancerAddress] {
         self.load_balancer_addresses.as_deref().unwrap_or_default()
     }
+    /// <p>\[Network Load Balancers with UDP listeners\] The IPv6 prefixes to use for source NAT. For each subnet, specify an IPv6 prefix (/80 netmask) from the subnet CIDR block or auto_assigned to use an IPv6 prefix selected at random from the subnet CIDR block.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.source_nat_ipv6_prefixes.is_none()`.
+    pub fn source_nat_ipv6_prefixes(&self) -> &[::std::string::String] {
+        self.source_nat_ipv6_prefixes.as_deref().unwrap_or_default()
+    }
 }
 impl AvailabilityZone {
     /// Creates a new builder-style object to manufacture [`AvailabilityZone`](crate::types::AvailabilityZone).
@@ -48,6 +56,7 @@ pub struct AvailabilityZoneBuilder {
     pub(crate) subnet_id: ::std::option::Option<::std::string::String>,
     pub(crate) outpost_id: ::std::option::Option<::std::string::String>,
     pub(crate) load_balancer_addresses: ::std::option::Option<::std::vec::Vec<crate::types::LoadBalancerAddress>>,
+    pub(crate) source_nat_ipv6_prefixes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl AvailabilityZoneBuilder {
     /// <p>The name of the Availability Zone.</p>
@@ -112,6 +121,26 @@ impl AvailabilityZoneBuilder {
     pub fn get_load_balancer_addresses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LoadBalancerAddress>> {
         &self.load_balancer_addresses
     }
+    /// Appends an item to `source_nat_ipv6_prefixes`.
+    ///
+    /// To override the contents of this collection use [`set_source_nat_ipv6_prefixes`](Self::set_source_nat_ipv6_prefixes).
+    ///
+    /// <p>\[Network Load Balancers with UDP listeners\] The IPv6 prefixes to use for source NAT. For each subnet, specify an IPv6 prefix (/80 netmask) from the subnet CIDR block or auto_assigned to use an IPv6 prefix selected at random from the subnet CIDR block.</p>
+    pub fn source_nat_ipv6_prefixes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.source_nat_ipv6_prefixes.unwrap_or_default();
+        v.push(input.into());
+        self.source_nat_ipv6_prefixes = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>\[Network Load Balancers with UDP listeners\] The IPv6 prefixes to use for source NAT. For each subnet, specify an IPv6 prefix (/80 netmask) from the subnet CIDR block or auto_assigned to use an IPv6 prefix selected at random from the subnet CIDR block.</p>
+    pub fn set_source_nat_ipv6_prefixes(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.source_nat_ipv6_prefixes = input;
+        self
+    }
+    /// <p>\[Network Load Balancers with UDP listeners\] The IPv6 prefixes to use for source NAT. For each subnet, specify an IPv6 prefix (/80 netmask) from the subnet CIDR block or auto_assigned to use an IPv6 prefix selected at random from the subnet CIDR block.</p>
+    pub fn get_source_nat_ipv6_prefixes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.source_nat_ipv6_prefixes
+    }
     /// Consumes the builder and constructs a [`AvailabilityZone`](crate::types::AvailabilityZone).
     pub fn build(self) -> crate::types::AvailabilityZone {
         crate::types::AvailabilityZone {
@@ -119,6 +148,7 @@ impl AvailabilityZoneBuilder {
             subnet_id: self.subnet_id,
             outpost_id: self.outpost_id,
             load_balancer_addresses: self.load_balancer_addresses,
+            source_nat_ipv6_prefixes: self.source_nat_ipv6_prefixes,
         }
     }
 }

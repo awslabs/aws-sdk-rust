@@ -322,6 +322,24 @@ pub(crate) fn update_logging_configuration_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn update_scraper_output_output_correct_errors(
+    mut builder: crate::operation::update_scraper::builders::UpdateScraperOutputBuilder,
+) -> crate::operation::update_scraper::builders::UpdateScraperOutputBuilder {
+    if builder.scraper_id.is_none() {
+        builder.scraper_id = Some(Default::default())
+    }
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = {
+            let builder = crate::types::builders::ScraperStatusBuilder::default();
+            crate::serde_util::scraper_status_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
 pub(crate) fn alert_manager_definition_status_correct_errors(
     mut builder: crate::types::builders::AlertManagerDefinitionStatusBuilder,
 ) -> crate::types::builders::AlertManagerDefinitionStatusBuilder {

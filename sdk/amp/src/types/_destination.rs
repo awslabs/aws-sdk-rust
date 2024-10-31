@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum Destination {
-    /// <p>The Amazon Managed Service for Prometheusworkspace to send metrics to.</p>
+    /// <p>The Amazon Managed Service for Prometheus workspace to send metrics to.</p>
     AmpConfiguration(crate::types::AmpConfiguration),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant

@@ -13,7 +13,7 @@ pub enum Error {
     CaCertificatesBundleNotFoundException(crate::types::error::CaCertificatesBundleNotFoundException),
     /// <p>The specified certificate does not exist.</p>
     CertificateNotFoundException(crate::types::error::CertificateNotFoundException),
-    /// <p>The specified association cannot be within the same account.</p>
+    /// <p>The specified association can't be within the same account.</p>
     DeleteAssociationSameAccountException(crate::types::error::DeleteAssociationSameAccountException),
     /// <p>A listener with the specified port already exists.</p>
     DuplicateListenerException(crate::types::error::DuplicateListenerException),

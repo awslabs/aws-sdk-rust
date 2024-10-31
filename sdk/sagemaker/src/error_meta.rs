@@ -128,6 +128,31 @@ impl From<crate::operation::associate_trial_component::AssociateTrialComponentEr
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::batch_delete_cluster_nodes::BatchDeleteClusterNodesError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::batch_delete_cluster_nodes::BatchDeleteClusterNodesError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::batch_delete_cluster_nodes::BatchDeleteClusterNodesError> for Error {
+    fn from(err: crate::operation::batch_delete_cluster_nodes::BatchDeleteClusterNodesError) -> Self {
+        match err {
+            crate::operation::batch_delete_cluster_nodes::BatchDeleteClusterNodesError::ResourceNotFound(inner) => Error::ResourceNotFound(inner),
+            crate::operation::batch_delete_cluster_nodes::BatchDeleteClusterNodesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::batch_describe_model_package::BatchDescribeModelPackageError, R>>
     for Error
 where

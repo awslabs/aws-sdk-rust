@@ -10,7 +10,7 @@ pub struct LoadBalancerAttribute {
     /// <li>
     /// <p><code>deletion_protection.enabled</code> - Indicates whether deletion protection is enabled. The value is <code>true</code> or <code>false</code>. The default is <code>false</code>.</p></li>
     /// <li>
-    /// <p><code>load_balancing.cross_zone.enabled</code> - Indicates whether cross-zone load balancing is enabled. The possible values are <code>true</code> and <code>false</code>. The default for Network Load Balancers and Gateway Load Balancers is <code>false</code>. The default for Application Load Balancers is <code>true</code>, and cannot be changed.</p></li>
+    /// <p><code>load_balancing.cross_zone.enabled</code> - Indicates whether cross-zone load balancing is enabled. The possible values are <code>true</code> and <code>false</code>. The default for Network Load Balancers and Gateway Load Balancers is <code>false</code>. The default for Application Load Balancers is <code>true</code>, and can't be changed.</p></li>
     /// </ul>
     /// <p>The following attributes are supported by both Application Load Balancers and Network Load Balancers:</p>
     /// <ul>
@@ -78,7 +78,7 @@ impl LoadBalancerAttribute {
     /// <li>
     /// <p><code>deletion_protection.enabled</code> - Indicates whether deletion protection is enabled. The value is <code>true</code> or <code>false</code>. The default is <code>false</code>.</p></li>
     /// <li>
-    /// <p><code>load_balancing.cross_zone.enabled</code> - Indicates whether cross-zone load balancing is enabled. The possible values are <code>true</code> and <code>false</code>. The default for Network Load Balancers and Gateway Load Balancers is <code>false</code>. The default for Application Load Balancers is <code>true</code>, and cannot be changed.</p></li>
+    /// <p><code>load_balancing.cross_zone.enabled</code> - Indicates whether cross-zone load balancing is enabled. The possible values are <code>true</code> and <code>false</code>. The default for Network Load Balancers and Gateway Load Balancers is <code>false</code>. The default for Application Load Balancers is <code>true</code>, and can't be changed.</p></li>
     /// </ul>
     /// <p>The following attributes are supported by both Application Load Balancers and Network Load Balancers:</p>
     /// <ul>
@@ -164,7 +164,7 @@ impl LoadBalancerAttributeBuilder {
     /// <li>
     /// <p><code>deletion_protection.enabled</code> - Indicates whether deletion protection is enabled. The value is <code>true</code> or <code>false</code>. The default is <code>false</code>.</p></li>
     /// <li>
-    /// <p><code>load_balancing.cross_zone.enabled</code> - Indicates whether cross-zone load balancing is enabled. The possible values are <code>true</code> and <code>false</code>. The default for Network Load Balancers and Gateway Load Balancers is <code>false</code>. The default for Application Load Balancers is <code>true</code>, and cannot be changed.</p></li>
+    /// <p><code>load_balancing.cross_zone.enabled</code> - Indicates whether cross-zone load balancing is enabled. The possible values are <code>true</code> and <code>false</code>. The default for Network Load Balancers and Gateway Load Balancers is <code>false</code>. The default for Application Load Balancers is <code>true</code>, and can't be changed.</p></li>
     /// </ul>
     /// <p>The following attributes are supported by both Application Load Balancers and Network Load Balancers:</p>
     /// <ul>
@@ -231,7 +231,7 @@ impl LoadBalancerAttributeBuilder {
     /// <li>
     /// <p><code>deletion_protection.enabled</code> - Indicates whether deletion protection is enabled. The value is <code>true</code> or <code>false</code>. The default is <code>false</code>.</p></li>
     /// <li>
-    /// <p><code>load_balancing.cross_zone.enabled</code> - Indicates whether cross-zone load balancing is enabled. The possible values are <code>true</code> and <code>false</code>. The default for Network Load Balancers and Gateway Load Balancers is <code>false</code>. The default for Application Load Balancers is <code>true</code>, and cannot be changed.</p></li>
+    /// <p><code>load_balancing.cross_zone.enabled</code> - Indicates whether cross-zone load balancing is enabled. The possible values are <code>true</code> and <code>false</code>. The default for Network Load Balancers and Gateway Load Balancers is <code>false</code>. The default for Application Load Balancers is <code>true</code>, and can't be changed.</p></li>
     /// </ul>
     /// <p>The following attributes are supported by both Application Load Balancers and Network Load Balancers:</p>
     /// <ul>
@@ -298,7 +298,7 @@ impl LoadBalancerAttributeBuilder {
     /// <li>
     /// <p><code>deletion_protection.enabled</code> - Indicates whether deletion protection is enabled. The value is <code>true</code> or <code>false</code>. The default is <code>false</code>.</p></li>
     /// <li>
-    /// <p><code>load_balancing.cross_zone.enabled</code> - Indicates whether cross-zone load balancing is enabled. The possible values are <code>true</code> and <code>false</code>. The default for Network Load Balancers and Gateway Load Balancers is <code>false</code>. The default for Application Load Balancers is <code>true</code>, and cannot be changed.</p></li>
+    /// <p><code>load_balancing.cross_zone.enabled</code> - Indicates whether cross-zone load balancing is enabled. The possible values are <code>true</code> and <code>false</code>. The default for Network Load Balancers and Gateway Load Balancers is <code>false</code>. The default for Application Load Balancers is <code>true</code>, and can't be changed.</p></li>
     /// </ul>
     /// <p>The following attributes are supported by both Application Load Balancers and Network Load Balancers:</p>
     /// <ul>

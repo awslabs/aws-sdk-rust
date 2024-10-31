@@ -12,6 +12,8 @@ pub struct SubnetMapping {
     pub private_ipv4_address: ::std::option::Option<::std::string::String>,
     /// <p>\[Network Load Balancers\] The IPv6 address.</p>
     pub ipv6_address: ::std::option::Option<::std::string::String>,
+    /// <p>\[Network Load Balancers with UDP listeners\] The IPv6 prefix to use for source NAT. Specify an IPv6 prefix (/80 netmask) from the subnet CIDR block or auto_assigned to use an IPv6 prefix selected at random from the subnet CIDR block.</p>
+    pub source_nat_ipv6_prefix: ::std::option::Option<::std::string::String>,
 }
 impl SubnetMapping {
     /// <p>The ID of the subnet.</p>
@@ -30,6 +32,10 @@ impl SubnetMapping {
     pub fn ipv6_address(&self) -> ::std::option::Option<&str> {
         self.ipv6_address.as_deref()
     }
+    /// <p>\[Network Load Balancers with UDP listeners\] The IPv6 prefix to use for source NAT. Specify an IPv6 prefix (/80 netmask) from the subnet CIDR block or auto_assigned to use an IPv6 prefix selected at random from the subnet CIDR block.</p>
+    pub fn source_nat_ipv6_prefix(&self) -> ::std::option::Option<&str> {
+        self.source_nat_ipv6_prefix.as_deref()
+    }
 }
 impl SubnetMapping {
     /// Creates a new builder-style object to manufacture [`SubnetMapping`](crate::types::SubnetMapping).
@@ -46,6 +52,7 @@ pub struct SubnetMappingBuilder {
     pub(crate) allocation_id: ::std::option::Option<::std::string::String>,
     pub(crate) private_ipv4_address: ::std::option::Option<::std::string::String>,
     pub(crate) ipv6_address: ::std::option::Option<::std::string::String>,
+    pub(crate) source_nat_ipv6_prefix: ::std::option::Option<::std::string::String>,
 }
 impl SubnetMappingBuilder {
     /// <p>The ID of the subnet.</p>
@@ -104,6 +111,20 @@ impl SubnetMappingBuilder {
     pub fn get_ipv6_address(&self) -> &::std::option::Option<::std::string::String> {
         &self.ipv6_address
     }
+    /// <p>\[Network Load Balancers with UDP listeners\] The IPv6 prefix to use for source NAT. Specify an IPv6 prefix (/80 netmask) from the subnet CIDR block or auto_assigned to use an IPv6 prefix selected at random from the subnet CIDR block.</p>
+    pub fn source_nat_ipv6_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.source_nat_ipv6_prefix = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>\[Network Load Balancers with UDP listeners\] The IPv6 prefix to use for source NAT. Specify an IPv6 prefix (/80 netmask) from the subnet CIDR block or auto_assigned to use an IPv6 prefix selected at random from the subnet CIDR block.</p>
+    pub fn set_source_nat_ipv6_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.source_nat_ipv6_prefix = input;
+        self
+    }
+    /// <p>\[Network Load Balancers with UDP listeners\] The IPv6 prefix to use for source NAT. Specify an IPv6 prefix (/80 netmask) from the subnet CIDR block or auto_assigned to use an IPv6 prefix selected at random from the subnet CIDR block.</p>
+    pub fn get_source_nat_ipv6_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_nat_ipv6_prefix
+    }
     /// Consumes the builder and constructs a [`SubnetMapping`](crate::types::SubnetMapping).
     pub fn build(self) -> crate::types::SubnetMapping {
         crate::types::SubnetMapping {
@@ -111,6 +132,7 @@ impl SubnetMappingBuilder {
             allocation_id: self.allocation_id,
             private_ipv4_address: self.private_ipv4_address,
             ipv6_address: self.ipv6_address,
+            source_nat_ipv6_prefix: self.source_nat_ipv6_prefix,
         }
     }
 }

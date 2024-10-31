@@ -18,7 +18,7 @@ pub struct CreateTargetGroupInput {
     pub health_check_protocol: ::std::option::Option<crate::types::ProtocolEnum>,
     /// <p>The port the load balancer uses when performing health checks on targets. If the protocol is HTTP, HTTPS, TCP, TLS, UDP, or TCP_UDP, the default is <code>traffic-port</code>, which is the port on which each target receives traffic from the load balancer. If the protocol is GENEVE, the default is port 80.</p>
     pub health_check_port: ::std::option::Option<::std::string::String>,
-    /// <p>Indicates whether health checks are enabled. If the target type is <code>lambda</code>, health checks are disabled by default but can be enabled. If the target type is <code>instance</code>, <code>ip</code>, or <code>alb</code>, health checks are always enabled and cannot be disabled.</p>
+    /// <p>Indicates whether health checks are enabled. If the target type is <code>lambda</code>, health checks are disabled by default but can be enabled. If the target type is <code>instance</code>, <code>ip</code>, or <code>alb</code>, health checks are always enabled and can't be disabled.</p>
     pub health_check_enabled: ::std::option::Option<bool>,
     /// <p>\[HTTP/HTTPS health checks\] The destination for health checks on the targets.</p>
     /// <p>\[HTTP1 or HTTP2 protocol version\] The ping path. The default is /.</p>
@@ -48,7 +48,7 @@ pub struct CreateTargetGroupInput {
     pub target_type: ::std::option::Option<crate::types::TargetTypeEnum>,
     /// <p>The tags to assign to the target group.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    /// <p>The type of IP address used for this target group. The possible values are <code>ipv4</code> and <code>ipv6</code>. This is an optional parameter. If not specified, the IP address type defaults to <code>ipv4</code>.</p>
+    /// <p>The IP address type. The default value is <code>ipv4</code>.</p>
     pub ip_address_type: ::std::option::Option<crate::types::TargetGroupIpAddressTypeEnum>,
 }
 impl CreateTargetGroupInput {
@@ -81,7 +81,7 @@ impl CreateTargetGroupInput {
     pub fn health_check_port(&self) -> ::std::option::Option<&str> {
         self.health_check_port.as_deref()
     }
-    /// <p>Indicates whether health checks are enabled. If the target type is <code>lambda</code>, health checks are disabled by default but can be enabled. If the target type is <code>instance</code>, <code>ip</code>, or <code>alb</code>, health checks are always enabled and cannot be disabled.</p>
+    /// <p>Indicates whether health checks are enabled. If the target type is <code>lambda</code>, health checks are disabled by default but can be enabled. If the target type is <code>instance</code>, <code>ip</code>, or <code>alb</code>, health checks are always enabled and can't be disabled.</p>
     pub fn health_check_enabled(&self) -> ::std::option::Option<bool> {
         self.health_check_enabled
     }
@@ -131,7 +131,7 @@ impl CreateTargetGroupInput {
     pub fn tags(&self) -> &[crate::types::Tag] {
         self.tags.as_deref().unwrap_or_default()
     }
-    /// <p>The type of IP address used for this target group. The possible values are <code>ipv4</code> and <code>ipv6</code>. This is an optional parameter. If not specified, the IP address type defaults to <code>ipv4</code>.</p>
+    /// <p>The IP address type. The default value is <code>ipv4</code>.</p>
     pub fn ip_address_type(&self) -> ::std::option::Option<&crate::types::TargetGroupIpAddressTypeEnum> {
         self.ip_address_type.as_ref()
     }
@@ -268,17 +268,17 @@ impl CreateTargetGroupInputBuilder {
     pub fn get_health_check_port(&self) -> &::std::option::Option<::std::string::String> {
         &self.health_check_port
     }
-    /// <p>Indicates whether health checks are enabled. If the target type is <code>lambda</code>, health checks are disabled by default but can be enabled. If the target type is <code>instance</code>, <code>ip</code>, or <code>alb</code>, health checks are always enabled and cannot be disabled.</p>
+    /// <p>Indicates whether health checks are enabled. If the target type is <code>lambda</code>, health checks are disabled by default but can be enabled. If the target type is <code>instance</code>, <code>ip</code>, or <code>alb</code>, health checks are always enabled and can't be disabled.</p>
     pub fn health_check_enabled(mut self, input: bool) -> Self {
         self.health_check_enabled = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates whether health checks are enabled. If the target type is <code>lambda</code>, health checks are disabled by default but can be enabled. If the target type is <code>instance</code>, <code>ip</code>, or <code>alb</code>, health checks are always enabled and cannot be disabled.</p>
+    /// <p>Indicates whether health checks are enabled. If the target type is <code>lambda</code>, health checks are disabled by default but can be enabled. If the target type is <code>instance</code>, <code>ip</code>, or <code>alb</code>, health checks are always enabled and can't be disabled.</p>
     pub fn set_health_check_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.health_check_enabled = input;
         self
     }
-    /// <p>Indicates whether health checks are enabled. If the target type is <code>lambda</code>, health checks are disabled by default but can be enabled. If the target type is <code>instance</code>, <code>ip</code>, or <code>alb</code>, health checks are always enabled and cannot be disabled.</p>
+    /// <p>Indicates whether health checks are enabled. If the target type is <code>lambda</code>, health checks are disabled by default but can be enabled. If the target type is <code>instance</code>, <code>ip</code>, or <code>alb</code>, health checks are always enabled and can't be disabled.</p>
     pub fn get_health_check_enabled(&self) -> &::std::option::Option<bool> {
         &self.health_check_enabled
     }
@@ -436,17 +436,17 @@ impl CreateTargetGroupInputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }
-    /// <p>The type of IP address used for this target group. The possible values are <code>ipv4</code> and <code>ipv6</code>. This is an optional parameter. If not specified, the IP address type defaults to <code>ipv4</code>.</p>
+    /// <p>The IP address type. The default value is <code>ipv4</code>.</p>
     pub fn ip_address_type(mut self, input: crate::types::TargetGroupIpAddressTypeEnum) -> Self {
         self.ip_address_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of IP address used for this target group. The possible values are <code>ipv4</code> and <code>ipv6</code>. This is an optional parameter. If not specified, the IP address type defaults to <code>ipv4</code>.</p>
+    /// <p>The IP address type. The default value is <code>ipv4</code>.</p>
     pub fn set_ip_address_type(mut self, input: ::std::option::Option<crate::types::TargetGroupIpAddressTypeEnum>) -> Self {
         self.ip_address_type = input;
         self
     }
-    /// <p>The type of IP address used for this target group. The possible values are <code>ipv4</code> and <code>ipv6</code>. This is an optional parameter. If not specified, the IP address type defaults to <code>ipv4</code>.</p>
+    /// <p>The IP address type. The default value is <code>ipv4</code>.</p>
     pub fn get_ip_address_type(&self) -> &::std::option::Option<crate::types::TargetGroupIpAddressTypeEnum> {
         &self.ip_address_type
     }

@@ -35,17 +35,17 @@ pub use crate::types::_scraper_status::ScraperStatus;
 
 pub use crate::types::_scraper_status_code::ScraperStatusCode;
 
-pub use crate::types::_scraper_description::ScraperDescription;
-
 pub use crate::types::_destination::Destination;
 
 pub use crate::types::_amp_configuration::AmpConfiguration;
 
+pub use crate::types::_scrape_configuration::ScrapeConfiguration;
+
+pub use crate::types::_scraper_description::ScraperDescription;
+
 pub use crate::types::_source::Source;
 
 pub use crate::types::_eks_configuration::EksConfiguration;
-
-pub use crate::types::_scrape_configuration::ScrapeConfiguration;
 
 pub use crate::types::_scraper_summary::ScraperSummary;
 

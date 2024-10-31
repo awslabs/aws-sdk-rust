@@ -4,9 +4,9 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateScraperInput {
-    /// <p>(optional) a name to associate with the scraper. This is for your use, and does not need to be unique.</p>
+    /// <p>(optional) An alias to associate with the scraper. This is for your use, and does not need to be unique.</p>
     pub alias: ::std::option::Option<::std::string::String>,
-    /// <p>The configuration file to use in the new scraper. For more information, see <a href="prometheus/latest/userguide/AMP-collector-how-to.html#AMP-collector-configuration">Scraper configuration</a> in the <i>Amazon Managed Service for Prometheus User Guide</i>.</p>
+    /// <p>The configuration file to use in the new scraper. For more information, see <a href="https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-collector-how-to.html#AMP-collector-configuration">Scraper configuration</a> in the <i>Amazon Managed Service for Prometheus User Guide</i>.</p>
     pub scrape_configuration: ::std::option::Option<crate::types::ScrapeConfiguration>,
     /// <p>The Amazon EKS cluster from which the scraper will collect metrics.</p>
     pub source: ::std::option::Option<crate::types::Source>,
@@ -18,11 +18,11 @@ pub struct CreateScraperInput {
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateScraperInput {
-    /// <p>(optional) a name to associate with the scraper. This is for your use, and does not need to be unique.</p>
+    /// <p>(optional) An alias to associate with the scraper. This is for your use, and does not need to be unique.</p>
     pub fn alias(&self) -> ::std::option::Option<&str> {
         self.alias.as_deref()
     }
-    /// <p>The configuration file to use in the new scraper. For more information, see <a href="prometheus/latest/userguide/AMP-collector-how-to.html#AMP-collector-configuration">Scraper configuration</a> in the <i>Amazon Managed Service for Prometheus User Guide</i>.</p>
+    /// <p>The configuration file to use in the new scraper. For more information, see <a href="https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-collector-how-to.html#AMP-collector-configuration">Scraper configuration</a> in the <i>Amazon Managed Service for Prometheus User Guide</i>.</p>
     pub fn scrape_configuration(&self) -> ::std::option::Option<&crate::types::ScrapeConfiguration> {
         self.scrape_configuration.as_ref()
     }
@@ -62,32 +62,32 @@ pub struct CreateScraperInputBuilder {
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateScraperInputBuilder {
-    /// <p>(optional) a name to associate with the scraper. This is for your use, and does not need to be unique.</p>
+    /// <p>(optional) An alias to associate with the scraper. This is for your use, and does not need to be unique.</p>
     pub fn alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.alias = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>(optional) a name to associate with the scraper. This is for your use, and does not need to be unique.</p>
+    /// <p>(optional) An alias to associate with the scraper. This is for your use, and does not need to be unique.</p>
     pub fn set_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.alias = input;
         self
     }
-    /// <p>(optional) a name to associate with the scraper. This is for your use, and does not need to be unique.</p>
+    /// <p>(optional) An alias to associate with the scraper. This is for your use, and does not need to be unique.</p>
     pub fn get_alias(&self) -> &::std::option::Option<::std::string::String> {
         &self.alias
     }
-    /// <p>The configuration file to use in the new scraper. For more information, see <a href="prometheus/latest/userguide/AMP-collector-how-to.html#AMP-collector-configuration">Scraper configuration</a> in the <i>Amazon Managed Service for Prometheus User Guide</i>.</p>
+    /// <p>The configuration file to use in the new scraper. For more information, see <a href="https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-collector-how-to.html#AMP-collector-configuration">Scraper configuration</a> in the <i>Amazon Managed Service for Prometheus User Guide</i>.</p>
     /// This field is required.
     pub fn scrape_configuration(mut self, input: crate::types::ScrapeConfiguration) -> Self {
         self.scrape_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The configuration file to use in the new scraper. For more information, see <a href="prometheus/latest/userguide/AMP-collector-how-to.html#AMP-collector-configuration">Scraper configuration</a> in the <i>Amazon Managed Service for Prometheus User Guide</i>.</p>
+    /// <p>The configuration file to use in the new scraper. For more information, see <a href="https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-collector-how-to.html#AMP-collector-configuration">Scraper configuration</a> in the <i>Amazon Managed Service for Prometheus User Guide</i>.</p>
     pub fn set_scrape_configuration(mut self, input: ::std::option::Option<crate::types::ScrapeConfiguration>) -> Self {
         self.scrape_configuration = input;
         self
     }
-    /// <p>The configuration file to use in the new scraper. For more information, see <a href="prometheus/latest/userguide/AMP-collector-how-to.html#AMP-collector-configuration">Scraper configuration</a> in the <i>Amazon Managed Service for Prometheus User Guide</i>.</p>
+    /// <p>The configuration file to use in the new scraper. For more information, see <a href="https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-collector-how-to.html#AMP-collector-configuration">Scraper configuration</a> in the <i>Amazon Managed Service for Prometheus User Guide</i>.</p>
     pub fn get_scrape_configuration(&self) -> &::std::option::Option<crate::types::ScrapeConfiguration> {
         &self.scrape_configuration
     }

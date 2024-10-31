@@ -5,13 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EcsProperties {
     /// <p>An object that contains the properties for the Amazon ECS task definition of a job.</p><note>
-    /// <p>This object is currently limited to one element.</p>
+    /// <p>This object is currently limited to one task element. However, the task element can run up to 10 containers.</p>
     /// </note>
     pub task_properties: ::std::option::Option<::std::vec::Vec<crate::types::EcsTaskProperties>>,
 }
 impl EcsProperties {
     /// <p>An object that contains the properties for the Amazon ECS task definition of a job.</p><note>
-    /// <p>This object is currently limited to one element.</p>
+    /// <p>This object is currently limited to one task element. However, the task element can run up to 10 containers.</p>
     /// </note>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.task_properties.is_none()`.
@@ -38,7 +38,7 @@ impl EcsPropertiesBuilder {
     /// To override the contents of this collection use [`set_task_properties`](Self::set_task_properties).
     ///
     /// <p>An object that contains the properties for the Amazon ECS task definition of a job.</p><note>
-    /// <p>This object is currently limited to one element.</p>
+    /// <p>This object is currently limited to one task element. However, the task element can run up to 10 containers.</p>
     /// </note>
     pub fn task_properties(mut self, input: crate::types::EcsTaskProperties) -> Self {
         let mut v = self.task_properties.unwrap_or_default();
@@ -47,14 +47,14 @@ impl EcsPropertiesBuilder {
         self
     }
     /// <p>An object that contains the properties for the Amazon ECS task definition of a job.</p><note>
-    /// <p>This object is currently limited to one element.</p>
+    /// <p>This object is currently limited to one task element. However, the task element can run up to 10 containers.</p>
     /// </note>
     pub fn set_task_properties(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EcsTaskProperties>>) -> Self {
         self.task_properties = input;
         self
     }
     /// <p>An object that contains the properties for the Amazon ECS task definition of a job.</p><note>
-    /// <p>This object is currently limited to one element.</p>
+    /// <p>This object is currently limited to one task element. However, the task element can run up to 10 containers.</p>
     /// </note>
     pub fn get_task_properties(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EcsTaskProperties>> {
         &self.task_properties

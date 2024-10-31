@@ -953,6 +953,34 @@ impl From<crate::operation::update_logging_configuration::UpdateLoggingConfigura
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_scraper::UpdateScraperError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_scraper::UpdateScraperError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_scraper::UpdateScraperError> for Error {
+    fn from(err: crate::operation::update_scraper::UpdateScraperError) -> Self {
+        match err {
+            crate::operation::update_scraper::UpdateScraperError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_scraper::UpdateScraperError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::update_scraper::UpdateScraperError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::update_scraper::UpdateScraperError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_scraper::UpdateScraperError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::update_scraper::UpdateScraperError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_scraper::UpdateScraperError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_scraper::UpdateScraperError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_workspace_alias::UpdateWorkspaceAliasError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

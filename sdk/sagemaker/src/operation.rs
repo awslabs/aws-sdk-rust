@@ -10,6 +10,9 @@ pub mod add_tags;
 /// Types for the `AssociateTrialComponent` operation.
 pub mod associate_trial_component;
 
+/// Types for the `BatchDeleteClusterNodes` operation.
+pub mod batch_delete_cluster_nodes;
+
 /// Types for the `BatchDescribeModelPackage` operation.
 pub mod batch_describe_model_package;
 

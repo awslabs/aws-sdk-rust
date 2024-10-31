@@ -219,17 +219,17 @@ impl CreateTargetGroupFluentBuilder {
     pub fn get_health_check_port(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_health_check_port()
     }
-    /// <p>Indicates whether health checks are enabled. If the target type is <code>lambda</code>, health checks are disabled by default but can be enabled. If the target type is <code>instance</code>, <code>ip</code>, or <code>alb</code>, health checks are always enabled and cannot be disabled.</p>
+    /// <p>Indicates whether health checks are enabled. If the target type is <code>lambda</code>, health checks are disabled by default but can be enabled. If the target type is <code>instance</code>, <code>ip</code>, or <code>alb</code>, health checks are always enabled and can't be disabled.</p>
     pub fn health_check_enabled(mut self, input: bool) -> Self {
         self.inner = self.inner.health_check_enabled(input);
         self
     }
-    /// <p>Indicates whether health checks are enabled. If the target type is <code>lambda</code>, health checks are disabled by default but can be enabled. If the target type is <code>instance</code>, <code>ip</code>, or <code>alb</code>, health checks are always enabled and cannot be disabled.</p>
+    /// <p>Indicates whether health checks are enabled. If the target type is <code>lambda</code>, health checks are disabled by default but can be enabled. If the target type is <code>instance</code>, <code>ip</code>, or <code>alb</code>, health checks are always enabled and can't be disabled.</p>
     pub fn set_health_check_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_health_check_enabled(input);
         self
     }
-    /// <p>Indicates whether health checks are enabled. If the target type is <code>lambda</code>, health checks are disabled by default but can be enabled. If the target type is <code>instance</code>, <code>ip</code>, or <code>alb</code>, health checks are always enabled and cannot be disabled.</p>
+    /// <p>Indicates whether health checks are enabled. If the target type is <code>lambda</code>, health checks are disabled by default but can be enabled. If the target type is <code>instance</code>, <code>ip</code>, or <code>alb</code>, health checks are always enabled and can't be disabled.</p>
     pub fn get_health_check_enabled(&self) -> &::std::option::Option<bool> {
         self.inner.get_health_check_enabled()
     }
@@ -386,17 +386,17 @@ impl CreateTargetGroupFluentBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         self.inner.get_tags()
     }
-    /// <p>The type of IP address used for this target group. The possible values are <code>ipv4</code> and <code>ipv6</code>. This is an optional parameter. If not specified, the IP address type defaults to <code>ipv4</code>.</p>
+    /// <p>The IP address type. The default value is <code>ipv4</code>.</p>
     pub fn ip_address_type(mut self, input: crate::types::TargetGroupIpAddressTypeEnum) -> Self {
         self.inner = self.inner.ip_address_type(input);
         self
     }
-    /// <p>The type of IP address used for this target group. The possible values are <code>ipv4</code> and <code>ipv6</code>. This is an optional parameter. If not specified, the IP address type defaults to <code>ipv4</code>.</p>
+    /// <p>The IP address type. The default value is <code>ipv4</code>.</p>
     pub fn set_ip_address_type(mut self, input: ::std::option::Option<crate::types::TargetGroupIpAddressTypeEnum>) -> Self {
         self.inner = self.inner.set_ip_address_type(input);
         self
     }
-    /// <p>The type of IP address used for this target group. The possible values are <code>ipv4</code> and <code>ipv6</code>. This is an optional parameter. If not specified, the IP address type defaults to <code>ipv4</code>.</p>
+    /// <p>The IP address type. The default value is <code>ipv4</code>.</p>
     pub fn get_ip_address_type(&self) -> &::std::option::Option<crate::types::TargetGroupIpAddressTypeEnum> {
         self.inner.get_ip_address_type()
     }

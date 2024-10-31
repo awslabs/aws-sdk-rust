@@ -12,6 +12,8 @@ pub struct EksAttemptDetail {
     pub eks_cluster_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the pod for this job attempt.</p>
     pub pod_name: ::std::option::Option<::std::string::String>,
+    /// <p>The namespace of the Amazon EKS cluster that the pod exists in.</p>
+    pub pod_namespace: ::std::option::Option<::std::string::String>,
     /// <p>The name of the node for this job attempt.</p>
     pub node_name: ::std::option::Option<::std::string::String>,
     /// <p>The Unix timestamp (in milliseconds) for when the attempt was started (when the attempt transitioned from the <code>STARTING</code> state to the <code>RUNNING</code> state).</p>
@@ -41,6 +43,10 @@ impl EksAttemptDetail {
     /// <p>The name of the pod for this job attempt.</p>
     pub fn pod_name(&self) -> ::std::option::Option<&str> {
         self.pod_name.as_deref()
+    }
+    /// <p>The namespace of the Amazon EKS cluster that the pod exists in.</p>
+    pub fn pod_namespace(&self) -> ::std::option::Option<&str> {
+        self.pod_namespace.as_deref()
     }
     /// <p>The name of the node for this job attempt.</p>
     pub fn node_name(&self) -> ::std::option::Option<&str> {
@@ -74,6 +80,7 @@ pub struct EksAttemptDetailBuilder {
     pub(crate) init_containers: ::std::option::Option<::std::vec::Vec<crate::types::EksAttemptContainerDetail>>,
     pub(crate) eks_cluster_arn: ::std::option::Option<::std::string::String>,
     pub(crate) pod_name: ::std::option::Option<::std::string::String>,
+    pub(crate) pod_namespace: ::std::option::Option<::std::string::String>,
     pub(crate) node_name: ::std::option::Option<::std::string::String>,
     pub(crate) started_at: ::std::option::Option<i64>,
     pub(crate) stopped_at: ::std::option::Option<i64>,
@@ -148,6 +155,20 @@ impl EksAttemptDetailBuilder {
     pub fn get_pod_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.pod_name
     }
+    /// <p>The namespace of the Amazon EKS cluster that the pod exists in.</p>
+    pub fn pod_namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.pod_namespace = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The namespace of the Amazon EKS cluster that the pod exists in.</p>
+    pub fn set_pod_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.pod_namespace = input;
+        self
+    }
+    /// <p>The namespace of the Amazon EKS cluster that the pod exists in.</p>
+    pub fn get_pod_namespace(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pod_namespace
+    }
     /// <p>The name of the node for this job attempt.</p>
     pub fn node_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.node_name = ::std::option::Option::Some(input.into());
@@ -211,6 +232,7 @@ impl EksAttemptDetailBuilder {
             init_containers: self.init_containers,
             eks_cluster_arn: self.eks_cluster_arn,
             pod_name: self.pod_name,
+            pod_namespace: self.pod_namespace,
             node_name: self.node_name,
             started_at: self.started_at,
             stopped_at: self.stopped_at,

@@ -73,6 +73,8 @@ pub(crate) mod shape_untag_resource;
 
 pub(crate) mod shape_update_logging_configuration;
 
+pub(crate) mod shape_update_scraper;
+
 pub(crate) mod shape_update_workspace_alias;
 
 pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
@@ -112,6 +114,8 @@ pub(crate) mod shape_tag_resource_input;
 pub(crate) mod shape_throttling_exception;
 
 pub(crate) mod shape_update_logging_configuration_input;
+
+pub(crate) mod shape_update_scraper_input;
 
 pub(crate) mod shape_update_workspace_alias_input;
 

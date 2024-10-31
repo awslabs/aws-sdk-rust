@@ -12,6 +12,7 @@
 /// ```text
 /// # let instancerefreshstatus = unimplemented!();
 /// match instancerefreshstatus {
+///     InstanceRefreshStatus::Baking => { /* ... */ },
 ///     InstanceRefreshStatus::Cancelled => { /* ... */ },
 ///     InstanceRefreshStatus::Cancelling => { /* ... */ },
 ///     InstanceRefreshStatus::Failed => { /* ... */ },
@@ -49,6 +50,8 @@
 )]
 pub enum InstanceRefreshStatus {
     #[allow(missing_docs)] // documentation missing in model
+    Baking,
+    #[allow(missing_docs)] // documentation missing in model
     Cancelled,
     #[allow(missing_docs)] // documentation missing in model
     Cancelling,
@@ -73,6 +76,7 @@ pub enum InstanceRefreshStatus {
 impl ::std::convert::From<&str> for InstanceRefreshStatus {
     fn from(s: &str) -> Self {
         match s {
+            "Baking" => InstanceRefreshStatus::Baking,
             "Cancelled" => InstanceRefreshStatus::Cancelled,
             "Cancelling" => InstanceRefreshStatus::Cancelling,
             "Failed" => InstanceRefreshStatus::Failed,
@@ -97,6 +101,7 @@ impl InstanceRefreshStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            InstanceRefreshStatus::Baking => "Baking",
             InstanceRefreshStatus::Cancelled => "Cancelled",
             InstanceRefreshStatus::Cancelling => "Cancelling",
             InstanceRefreshStatus::Failed => "Failed",
@@ -112,6 +117,7 @@ impl InstanceRefreshStatus {
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
+            "Baking",
             "Cancelled",
             "Cancelling",
             "Failed",
@@ -144,6 +150,7 @@ impl InstanceRefreshStatus {
 impl ::std::fmt::Display for InstanceRefreshStatus {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            InstanceRefreshStatus::Baking => write!(f, "Baking"),
             InstanceRefreshStatus::Cancelled => write!(f, "Cancelled"),
             InstanceRefreshStatus::Cancelling => write!(f, "Cancelling"),
             InstanceRefreshStatus::Failed => write!(f, "Failed"),

@@ -19,7 +19,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RedirectActionConfig {
-    /// <p>The protocol. You can specify HTTP, HTTPS, or #{protocol}. You can redirect HTTP to HTTP, HTTP to HTTPS, and HTTPS to HTTPS. You cannot redirect HTTPS to HTTP.</p>
+    /// <p>The protocol. You can specify HTTP, HTTPS, or #{protocol}. You can redirect HTTP to HTTP, HTTP to HTTPS, and HTTPS to HTTPS. You can't redirect HTTPS to HTTP.</p>
     pub protocol: ::std::option::Option<::std::string::String>,
     /// <p>The port. You can specify a value from 1 to 65535 or #{port}.</p>
     pub port: ::std::option::Option<::std::string::String>,
@@ -33,7 +33,7 @@ pub struct RedirectActionConfig {
     pub status_code: ::std::option::Option<crate::types::RedirectActionStatusCodeEnum>,
 }
 impl RedirectActionConfig {
-    /// <p>The protocol. You can specify HTTP, HTTPS, or #{protocol}. You can redirect HTTP to HTTP, HTTP to HTTPS, and HTTPS to HTTPS. You cannot redirect HTTPS to HTTP.</p>
+    /// <p>The protocol. You can specify HTTP, HTTPS, or #{protocol}. You can redirect HTTP to HTTP, HTTP to HTTPS, and HTTPS to HTTPS. You can't redirect HTTPS to HTTP.</p>
     pub fn protocol(&self) -> ::std::option::Option<&str> {
         self.protocol.as_deref()
     }
@@ -77,17 +77,17 @@ pub struct RedirectActionConfigBuilder {
     pub(crate) status_code: ::std::option::Option<crate::types::RedirectActionStatusCodeEnum>,
 }
 impl RedirectActionConfigBuilder {
-    /// <p>The protocol. You can specify HTTP, HTTPS, or #{protocol}. You can redirect HTTP to HTTP, HTTP to HTTPS, and HTTPS to HTTPS. You cannot redirect HTTPS to HTTP.</p>
+    /// <p>The protocol. You can specify HTTP, HTTPS, or #{protocol}. You can redirect HTTP to HTTP, HTTP to HTTPS, and HTTPS to HTTPS. You can't redirect HTTPS to HTTP.</p>
     pub fn protocol(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.protocol = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The protocol. You can specify HTTP, HTTPS, or #{protocol}. You can redirect HTTP to HTTP, HTTP to HTTPS, and HTTPS to HTTPS. You cannot redirect HTTPS to HTTP.</p>
+    /// <p>The protocol. You can specify HTTP, HTTPS, or #{protocol}. You can redirect HTTP to HTTP, HTTP to HTTPS, and HTTPS to HTTPS. You can't redirect HTTPS to HTTP.</p>
     pub fn set_protocol(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.protocol = input;
         self
     }
-    /// <p>The protocol. You can specify HTTP, HTTPS, or #{protocol}. You can redirect HTTP to HTTP, HTTP to HTTPS, and HTTPS to HTTPS. You cannot redirect HTTPS to HTTP.</p>
+    /// <p>The protocol. You can specify HTTP, HTTPS, or #{protocol}. You can redirect HTTP to HTTP, HTTP to HTTPS, and HTTPS to HTTPS. You can't redirect HTTPS to HTTP.</p>
     pub fn get_protocol(&self) -> &::std::option::Option<::std::string::String> {
         &self.protocol
     }

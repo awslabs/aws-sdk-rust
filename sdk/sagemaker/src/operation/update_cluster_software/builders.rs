@@ -22,7 +22,9 @@ impl crate::operation::update_cluster_software::builders::UpdateClusterSoftwareI
 }
 /// Fluent builder constructing a request to `UpdateClusterSoftware`.
 ///
-/// <p>Updates the platform software of a SageMaker HyperPod cluster for security patching. To learn how to use this API, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-hyperpod-operate.html#sagemaker-hyperpod-operate-cli-command-update-cluster-software">Update the SageMaker HyperPod platform software of a cluster</a>.</p>
+/// <p>Updates the platform software of a SageMaker HyperPod cluster for security patching. To learn how to use this API, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-hyperpod-operate.html#sagemaker-hyperpod-operate-cli-command-update-cluster-software">Update the SageMaker HyperPod platform software of a cluster</a>.</p><important>
+/// <p>The <code>UpgradeClusterSoftware</code> API call may impact your SageMaker HyperPod cluster uptime and availability. Plan accordingly to mitigate potential disruptions to your workloads.</p>
+/// </important>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateClusterSoftwareFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -1775,6 +1775,10 @@ pub use crate::types::_batch_describe_model_package_error::BatchDescribeModelPac
 
 pub use crate::types::_batch_describe_model_package_summary::BatchDescribeModelPackageSummary;
 
+pub use crate::types::_batch_delete_cluster_nodes_error::BatchDeleteClusterNodesError;
+
+pub use crate::types::_batch_delete_cluster_nodes_error_code::BatchDeleteClusterNodesErrorCode;
+
 mod _action_source;
 
 mod _action_status;
@@ -1954,6 +1958,10 @@ mod _autotune_mode;
 mod _aws_managed_human_loop_request_source;
 
 mod _batch_data_capture_config;
+
+mod _batch_delete_cluster_nodes_error;
+
+mod _batch_delete_cluster_nodes_error_code;
 
 mod _batch_describe_model_package_error;
 

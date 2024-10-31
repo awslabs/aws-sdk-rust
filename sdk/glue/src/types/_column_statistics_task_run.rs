@@ -26,6 +26,8 @@ pub struct ColumnStatisticsTaskRun {
     pub number_of_workers: i32,
     /// <p>The type of workers being used for generating stats. The default is <code>g.1x</code>.</p>
     pub worker_type: ::std::option::Option<::std::string::String>,
+    /// <p>The type of column statistics computation.</p>
+    pub computation_type: ::std::option::Option<crate::types::ComputationType>,
     /// <p>The status of the task run.</p>
     pub status: ::std::option::Option<crate::types::ColumnStatisticsState>,
     /// <p>The time that this task was created.</p>
@@ -88,6 +90,10 @@ impl ColumnStatisticsTaskRun {
     pub fn worker_type(&self) -> ::std::option::Option<&str> {
         self.worker_type.as_deref()
     }
+    /// <p>The type of column statistics computation.</p>
+    pub fn computation_type(&self) -> ::std::option::Option<&crate::types::ComputationType> {
+        self.computation_type.as_ref()
+    }
     /// <p>The status of the task run.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::ColumnStatisticsState> {
         self.status.as_ref()
@@ -139,6 +145,7 @@ pub struct ColumnStatisticsTaskRunBuilder {
     pub(crate) security_configuration: ::std::option::Option<::std::string::String>,
     pub(crate) number_of_workers: ::std::option::Option<i32>,
     pub(crate) worker_type: ::std::option::Option<::std::string::String>,
+    pub(crate) computation_type: ::std::option::Option<crate::types::ComputationType>,
     pub(crate) status: ::std::option::Option<crate::types::ColumnStatisticsState>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_updated: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -308,6 +315,20 @@ impl ColumnStatisticsTaskRunBuilder {
     pub fn get_worker_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.worker_type
     }
+    /// <p>The type of column statistics computation.</p>
+    pub fn computation_type(mut self, input: crate::types::ComputationType) -> Self {
+        self.computation_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The type of column statistics computation.</p>
+    pub fn set_computation_type(mut self, input: ::std::option::Option<crate::types::ComputationType>) -> Self {
+        self.computation_type = input;
+        self
+    }
+    /// <p>The type of column statistics computation.</p>
+    pub fn get_computation_type(&self) -> &::std::option::Option<crate::types::ComputationType> {
+        &self.computation_type
+    }
     /// <p>The status of the task run.</p>
     pub fn status(mut self, input: crate::types::ColumnStatisticsState) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -420,6 +441,7 @@ impl ColumnStatisticsTaskRunBuilder {
             security_configuration: self.security_configuration,
             number_of_workers: self.number_of_workers.unwrap_or_default(),
             worker_type: self.worker_type,
+            computation_type: self.computation_type,
             status: self.status,
             creation_time: self.creation_time,
             last_updated: self.last_updated,

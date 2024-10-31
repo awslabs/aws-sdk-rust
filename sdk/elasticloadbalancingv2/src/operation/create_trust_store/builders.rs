@@ -109,19 +109,19 @@ impl CreateTrustStoreFluentBuilder {
         self
     }
     /// <p>The name of the trust store.</p>
-    /// <p>This name must be unique per region and cannot be changed after creation.</p>
+    /// <p>This name must be unique per region and can't be changed after creation.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
     /// <p>The name of the trust store.</p>
-    /// <p>This name must be unique per region and cannot be changed after creation.</p>
+    /// <p>This name must be unique per region and can't be changed after creation.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
     /// <p>The name of the trust store.</p>
-    /// <p>This name must be unique per region and cannot be changed after creation.</p>
+    /// <p>This name must be unique per region and can't be changed after creation.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }

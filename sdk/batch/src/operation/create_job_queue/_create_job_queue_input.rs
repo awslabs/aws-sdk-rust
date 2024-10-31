@@ -8,7 +8,10 @@ pub struct CreateJobQueueInput {
     pub job_queue_name: ::std::option::Option<::std::string::String>,
     /// <p>The state of the job queue. If the job queue state is <code>ENABLED</code>, it is able to accept jobs. If the job queue state is <code>DISABLED</code>, new jobs can't be added to the queue, but jobs already in the queue can finish.</p>
     pub state: ::std::option::Option<crate::types::JqState>,
-    /// <p>The Amazon Resource Name (ARN) of the fair share scheduling policy. If this parameter is specified, the job queue uses a fair share scheduling policy. If this parameter isn't specified, the job queue uses a first in, first out (FIFO) scheduling policy. After a job queue is created, you can replace but can't remove the fair share scheduling policy. The format is <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i> </code>. An example is <code>aws:aws:batch:us-west-2:123456789012:scheduling-policy/MySchedulingPolicy</code>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the fair share scheduling policy. Job queues that don't have a scheduling policy are scheduled in a first-in, first-out (FIFO) model. After a job queue has a scheduling policy, it can be replaced but can't be removed.</p>
+    /// <p>The format is <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i> </code>.</p>
+    /// <p>An example is <code>aws:aws:batch:us-west-2:123456789012:scheduling-policy/MySchedulingPolicy</code>.</p>
+    /// <p>A job queue without a scheduling policy is scheduled as a FIFO job queue and can't have a scheduling policy added. Jobs queues with a scheduling policy can have a maximum of 500 active fair share identifiers. When the limit has been reached, submissions of any jobs that add a new fair share identifier fail.</p>
     pub scheduling_policy_arn: ::std::option::Option<::std::string::String>,
     /// <p>The priority of the job queue. Job queues with a higher priority (or a higher integer value for the <code>priority</code> parameter) are evaluated first when associated with the same compute environment. Priority is determined in descending order. For example, a job queue with a priority value of <code>10</code> is given scheduling preference over a job queue with a priority value of <code>1</code>. All of the compute environments must be either EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or <code>FARGATE_SPOT</code>); EC2 and Fargate compute environments can't be mixed.</p>
     pub priority: ::std::option::Option<i32>,
@@ -18,7 +21,7 @@ pub struct CreateJobQueueInput {
     pub compute_environment_order: ::std::option::Option<::std::vec::Vec<crate::types::ComputeEnvironmentOrder>>,
     /// <p>The tags that you apply to the job queue to help you categorize and organize your resources. Each tag consists of a key and an optional value. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging your Batch resources</a> in <i>Batch User Guide</i>.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    /// <p>The set of actions that Batch performs on jobs that remain at the head of the job queue in the specified state longer than specified times. Batch will perform each action after <code>maxTimeSeconds</code> has passed.</p>
+    /// <p>The set of actions that Batch performs on jobs that remain at the head of the job queue in the specified state longer than specified times. Batch will perform each action after <code>maxTimeSeconds</code> has passed. (<b>Note</b>: The minimum value for maxTimeSeconds is 600 (10 minutes) and its maximum value is 86,400 (24 hours).)</p>
     pub job_state_time_limit_actions: ::std::option::Option<::std::vec::Vec<crate::types::JobStateTimeLimitAction>>,
 }
 impl CreateJobQueueInput {
@@ -30,7 +33,10 @@ impl CreateJobQueueInput {
     pub fn state(&self) -> ::std::option::Option<&crate::types::JqState> {
         self.state.as_ref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the fair share scheduling policy. If this parameter is specified, the job queue uses a fair share scheduling policy. If this parameter isn't specified, the job queue uses a first in, first out (FIFO) scheduling policy. After a job queue is created, you can replace but can't remove the fair share scheduling policy. The format is <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i> </code>. An example is <code>aws:aws:batch:us-west-2:123456789012:scheduling-policy/MySchedulingPolicy</code>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the fair share scheduling policy. Job queues that don't have a scheduling policy are scheduled in a first-in, first-out (FIFO) model. After a job queue has a scheduling policy, it can be replaced but can't be removed.</p>
+    /// <p>The format is <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i> </code>.</p>
+    /// <p>An example is <code>aws:aws:batch:us-west-2:123456789012:scheduling-policy/MySchedulingPolicy</code>.</p>
+    /// <p>A job queue without a scheduling policy is scheduled as a FIFO job queue and can't have a scheduling policy added. Jobs queues with a scheduling policy can have a maximum of 500 active fair share identifiers. When the limit has been reached, submissions of any jobs that add a new fair share identifier fail.</p>
     pub fn scheduling_policy_arn(&self) -> ::std::option::Option<&str> {
         self.scheduling_policy_arn.as_deref()
     }
@@ -50,7 +56,7 @@ impl CreateJobQueueInput {
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
-    /// <p>The set of actions that Batch performs on jobs that remain at the head of the job queue in the specified state longer than specified times. Batch will perform each action after <code>maxTimeSeconds</code> has passed.</p>
+    /// <p>The set of actions that Batch performs on jobs that remain at the head of the job queue in the specified state longer than specified times. Batch will perform each action after <code>maxTimeSeconds</code> has passed. (<b>Note</b>: The minimum value for maxTimeSeconds is 600 (10 minutes) and its maximum value is 86,400 (24 hours).)</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.job_state_time_limit_actions.is_none()`.
     pub fn job_state_time_limit_actions(&self) -> &[crate::types::JobStateTimeLimitAction] {
@@ -106,17 +112,26 @@ impl CreateJobQueueInputBuilder {
     pub fn get_state(&self) -> &::std::option::Option<crate::types::JqState> {
         &self.state
     }
-    /// <p>The Amazon Resource Name (ARN) of the fair share scheduling policy. If this parameter is specified, the job queue uses a fair share scheduling policy. If this parameter isn't specified, the job queue uses a first in, first out (FIFO) scheduling policy. After a job queue is created, you can replace but can't remove the fair share scheduling policy. The format is <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i> </code>. An example is <code>aws:aws:batch:us-west-2:123456789012:scheduling-policy/MySchedulingPolicy</code>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the fair share scheduling policy. Job queues that don't have a scheduling policy are scheduled in a first-in, first-out (FIFO) model. After a job queue has a scheduling policy, it can be replaced but can't be removed.</p>
+    /// <p>The format is <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i> </code>.</p>
+    /// <p>An example is <code>aws:aws:batch:us-west-2:123456789012:scheduling-policy/MySchedulingPolicy</code>.</p>
+    /// <p>A job queue without a scheduling policy is scheduled as a FIFO job queue and can't have a scheduling policy added. Jobs queues with a scheduling policy can have a maximum of 500 active fair share identifiers. When the limit has been reached, submissions of any jobs that add a new fair share identifier fail.</p>
     pub fn scheduling_policy_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.scheduling_policy_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the fair share scheduling policy. If this parameter is specified, the job queue uses a fair share scheduling policy. If this parameter isn't specified, the job queue uses a first in, first out (FIFO) scheduling policy. After a job queue is created, you can replace but can't remove the fair share scheduling policy. The format is <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i> </code>. An example is <code>aws:aws:batch:us-west-2:123456789012:scheduling-policy/MySchedulingPolicy</code>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the fair share scheduling policy. Job queues that don't have a scheduling policy are scheduled in a first-in, first-out (FIFO) model. After a job queue has a scheduling policy, it can be replaced but can't be removed.</p>
+    /// <p>The format is <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i> </code>.</p>
+    /// <p>An example is <code>aws:aws:batch:us-west-2:123456789012:scheduling-policy/MySchedulingPolicy</code>.</p>
+    /// <p>A job queue without a scheduling policy is scheduled as a FIFO job queue and can't have a scheduling policy added. Jobs queues with a scheduling policy can have a maximum of 500 active fair share identifiers. When the limit has been reached, submissions of any jobs that add a new fair share identifier fail.</p>
     pub fn set_scheduling_policy_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.scheduling_policy_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the fair share scheduling policy. If this parameter is specified, the job queue uses a fair share scheduling policy. If this parameter isn't specified, the job queue uses a first in, first out (FIFO) scheduling policy. After a job queue is created, you can replace but can't remove the fair share scheduling policy. The format is <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i> </code>. An example is <code>aws:aws:batch:us-west-2:123456789012:scheduling-policy/MySchedulingPolicy</code>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the fair share scheduling policy. Job queues that don't have a scheduling policy are scheduled in a first-in, first-out (FIFO) model. After a job queue has a scheduling policy, it can be replaced but can't be removed.</p>
+    /// <p>The format is <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i> </code>.</p>
+    /// <p>An example is <code>aws:aws:batch:us-west-2:123456789012:scheduling-policy/MySchedulingPolicy</code>.</p>
+    /// <p>A job queue without a scheduling policy is scheduled as a FIFO job queue and can't have a scheduling policy added. Jobs queues with a scheduling policy can have a maximum of 500 active fair share identifiers. When the limit has been reached, submissions of any jobs that add a new fair share identifier fail.</p>
     pub fn get_scheduling_policy_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.scheduling_policy_arn
     }
@@ -185,19 +200,19 @@ impl CreateJobQueueInputBuilder {
     ///
     /// To override the contents of this collection use [`set_job_state_time_limit_actions`](Self::set_job_state_time_limit_actions).
     ///
-    /// <p>The set of actions that Batch performs on jobs that remain at the head of the job queue in the specified state longer than specified times. Batch will perform each action after <code>maxTimeSeconds</code> has passed.</p>
+    /// <p>The set of actions that Batch performs on jobs that remain at the head of the job queue in the specified state longer than specified times. Batch will perform each action after <code>maxTimeSeconds</code> has passed. (<b>Note</b>: The minimum value for maxTimeSeconds is 600 (10 minutes) and its maximum value is 86,400 (24 hours).)</p>
     pub fn job_state_time_limit_actions(mut self, input: crate::types::JobStateTimeLimitAction) -> Self {
         let mut v = self.job_state_time_limit_actions.unwrap_or_default();
         v.push(input);
         self.job_state_time_limit_actions = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The set of actions that Batch performs on jobs that remain at the head of the job queue in the specified state longer than specified times. Batch will perform each action after <code>maxTimeSeconds</code> has passed.</p>
+    /// <p>The set of actions that Batch performs on jobs that remain at the head of the job queue in the specified state longer than specified times. Batch will perform each action after <code>maxTimeSeconds</code> has passed. (<b>Note</b>: The minimum value for maxTimeSeconds is 600 (10 minutes) and its maximum value is 86,400 (24 hours).)</p>
     pub fn set_job_state_time_limit_actions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::JobStateTimeLimitAction>>) -> Self {
         self.job_state_time_limit_actions = input;
         self
     }
-    /// <p>The set of actions that Batch performs on jobs that remain at the head of the job queue in the specified state longer than specified times. Batch will perform each action after <code>maxTimeSeconds</code> has passed.</p>
+    /// <p>The set of actions that Batch performs on jobs that remain at the head of the job queue in the specified state longer than specified times. Batch will perform each action after <code>maxTimeSeconds</code> has passed. (<b>Note</b>: The minimum value for maxTimeSeconds is 600 (10 minutes) and its maximum value is 86,400 (24 hours).)</p>
     pub fn get_job_state_time_limit_actions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::JobStateTimeLimitAction>> {
         &self.job_state_time_limit_actions
     }

@@ -191,6 +191,20 @@ pub fn de_set_subnets(
                 builder = builder.set_ip_address_type(var_2);
             }
             ,
+            s if s.matches("EnablePrefixForIpv6SourceNat") /* EnablePrefixForIpv6SourceNat com.amazonaws.elasticloadbalancingv2.synthetic#SetSubnetsOutput$EnablePrefixForIpv6SourceNat */ =>  {
+                let var_3 =
+                    Some(
+                        Result::<crate::types::EnablePrefixForIpv6SourceNatEnum, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::EnablePrefixForIpv6SourceNatEnum::from(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_enable_prefix_for_ipv6_source_nat(var_3);
+            }
+            ,
             _ => {}
         }
         }

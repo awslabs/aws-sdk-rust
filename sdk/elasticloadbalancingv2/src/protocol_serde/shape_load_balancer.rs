@@ -184,6 +184,20 @@ pub fn de_load_balancer(
                 builder = builder.set_enforce_security_group_inbound_rules_on_private_link_traffic(var_14);
             }
             ,
+            s if s.matches("EnablePrefixForIpv6SourceNat") /* EnablePrefixForIpv6SourceNat com.amazonaws.elasticloadbalancingv2#LoadBalancer$EnablePrefixForIpv6SourceNat */ =>  {
+                let var_15 =
+                    Some(
+                        Result::<crate::types::EnablePrefixForIpv6SourceNatEnum, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::EnablePrefixForIpv6SourceNatEnum::from(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_enable_prefix_for_ipv6_source_nat(var_15);
+            }
+            ,
             _ => {}
         }
     }

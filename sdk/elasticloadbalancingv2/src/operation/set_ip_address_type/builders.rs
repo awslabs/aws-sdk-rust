@@ -122,29 +122,26 @@ impl SetIpAddressTypeFluentBuilder {
     pub fn get_load_balancer_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_load_balancer_arn()
     }
-    /// <p>Note: Internal load balancers must use the <code>ipv4</code> IP address type.</p>
-    /// <p>\[Application Load Balancers\] The IP address type. The possible values are ipv4 (for only IPv4 addresses), dualstack (for IPv4 and IPv6 addresses), and dualstack-without-public-ipv4 (for IPv6 only public addresses, with private IPv4 and IPv6 addresses).</p>
-    /// <p>Note: Application Load Balancer authentication only supports IPv4 addresses when connecting to an Identity Provider (IdP) or Amazon Cognito endpoint. Without a public IPv4 address the load balancer cannot complete the authentication process, resulting in HTTP 500 errors.</p>
-    /// <p>\[Network Load Balancers\] The IP address type. The possible values are ipv4 (for only IPv4 addresses) and dualstack (for IPv4 and IPv6 addresses). You can’t specify dualstack for a load balancer with a UDP or TCP_UDP listener.</p>
-    /// <p>\[Gateway Load Balancers\] The IP address type. The possible values are ipv4 (for only IPv4 addresses) and dualstack (for IPv4 and IPv6 addresses).</p>
+    /// <p>The IP address type. Internal load balancers must use <code>ipv4</code>.</p>
+    /// <p>\[Application Load Balancers\] The possible values are ipv4 (IPv4 addresses), dualstack (IPv4 and IPv6 addresses), and dualstack-without-public-ipv4 (public IPv6 addresses and private IPv4 and IPv6 addresses).</p>
+    /// <p>Application Load Balancer authentication supports IPv4 addresses only when connecting to an Identity Provider (IdP) or Amazon Cognito endpoint. Without a public IPv4 address the load balancer can't complete the authentication process, resulting in HTTP 500 errors.</p>
+    /// <p>\[Network Load Balancers and Gateway Load Balancers\] The possible values are ipv4 (IPv4 addresses) and dualstack (IPv4 and IPv6 addresses).</p>
     pub fn ip_address_type(mut self, input: crate::types::IpAddressType) -> Self {
         self.inner = self.inner.ip_address_type(input);
         self
     }
-    /// <p>Note: Internal load balancers must use the <code>ipv4</code> IP address type.</p>
-    /// <p>\[Application Load Balancers\] The IP address type. The possible values are ipv4 (for only IPv4 addresses), dualstack (for IPv4 and IPv6 addresses), and dualstack-without-public-ipv4 (for IPv6 only public addresses, with private IPv4 and IPv6 addresses).</p>
-    /// <p>Note: Application Load Balancer authentication only supports IPv4 addresses when connecting to an Identity Provider (IdP) or Amazon Cognito endpoint. Without a public IPv4 address the load balancer cannot complete the authentication process, resulting in HTTP 500 errors.</p>
-    /// <p>\[Network Load Balancers\] The IP address type. The possible values are ipv4 (for only IPv4 addresses) and dualstack (for IPv4 and IPv6 addresses). You can’t specify dualstack for a load balancer with a UDP or TCP_UDP listener.</p>
-    /// <p>\[Gateway Load Balancers\] The IP address type. The possible values are ipv4 (for only IPv4 addresses) and dualstack (for IPv4 and IPv6 addresses).</p>
+    /// <p>The IP address type. Internal load balancers must use <code>ipv4</code>.</p>
+    /// <p>\[Application Load Balancers\] The possible values are ipv4 (IPv4 addresses), dualstack (IPv4 and IPv6 addresses), and dualstack-without-public-ipv4 (public IPv6 addresses and private IPv4 and IPv6 addresses).</p>
+    /// <p>Application Load Balancer authentication supports IPv4 addresses only when connecting to an Identity Provider (IdP) or Amazon Cognito endpoint. Without a public IPv4 address the load balancer can't complete the authentication process, resulting in HTTP 500 errors.</p>
+    /// <p>\[Network Load Balancers and Gateway Load Balancers\] The possible values are ipv4 (IPv4 addresses) and dualstack (IPv4 and IPv6 addresses).</p>
     pub fn set_ip_address_type(mut self, input: ::std::option::Option<crate::types::IpAddressType>) -> Self {
         self.inner = self.inner.set_ip_address_type(input);
         self
     }
-    /// <p>Note: Internal load balancers must use the <code>ipv4</code> IP address type.</p>
-    /// <p>\[Application Load Balancers\] The IP address type. The possible values are ipv4 (for only IPv4 addresses), dualstack (for IPv4 and IPv6 addresses), and dualstack-without-public-ipv4 (for IPv6 only public addresses, with private IPv4 and IPv6 addresses).</p>
-    /// <p>Note: Application Load Balancer authentication only supports IPv4 addresses when connecting to an Identity Provider (IdP) or Amazon Cognito endpoint. Without a public IPv4 address the load balancer cannot complete the authentication process, resulting in HTTP 500 errors.</p>
-    /// <p>\[Network Load Balancers\] The IP address type. The possible values are ipv4 (for only IPv4 addresses) and dualstack (for IPv4 and IPv6 addresses). You can’t specify dualstack for a load balancer with a UDP or TCP_UDP listener.</p>
-    /// <p>\[Gateway Load Balancers\] The IP address type. The possible values are ipv4 (for only IPv4 addresses) and dualstack (for IPv4 and IPv6 addresses).</p>
+    /// <p>The IP address type. Internal load balancers must use <code>ipv4</code>.</p>
+    /// <p>\[Application Load Balancers\] The possible values are ipv4 (IPv4 addresses), dualstack (IPv4 and IPv6 addresses), and dualstack-without-public-ipv4 (public IPv6 addresses and private IPv4 and IPv6 addresses).</p>
+    /// <p>Application Load Balancer authentication supports IPv4 addresses only when connecting to an Identity Provider (IdP) or Amazon Cognito endpoint. Without a public IPv4 address the load balancer can't complete the authentication process, resulting in HTTP 500 errors.</p>
+    /// <p>\[Network Load Balancers and Gateway Load Balancers\] The possible values are ipv4 (IPv4 addresses) and dualstack (IPv4 and IPv6 addresses).</p>
     pub fn get_ip_address_type(&self) -> &::std::option::Option<crate::types::IpAddressType> {
         self.inner.get_ip_address_type()
     }

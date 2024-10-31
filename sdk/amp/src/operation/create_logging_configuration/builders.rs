@@ -122,17 +122,17 @@ impl CreateLoggingConfigurationFluentBuilder {
     pub fn get_workspace_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_workspace_id()
     }
-    /// <p>The ARN of the CloudWatch log group to which the vended log data will be published. This log group must exist prior to calling this API.</p>
+    /// <p>The ARN of the CloudWatch log group to which the vended log data will be published. This log group must exist prior to calling this operation.</p>
     pub fn log_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.log_group_arn(input.into());
         self
     }
-    /// <p>The ARN of the CloudWatch log group to which the vended log data will be published. This log group must exist prior to calling this API.</p>
+    /// <p>The ARN of the CloudWatch log group to which the vended log data will be published. This log group must exist prior to calling this operation.</p>
     pub fn set_log_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_log_group_arn(input);
         self
     }
-    /// <p>The ARN of the CloudWatch log group to which the vended log data will be published. This log group must exist prior to calling this API.</p>
+    /// <p>The ARN of the CloudWatch log group to which the vended log data will be published. This log group must exist prior to calling this operation.</p>
     pub fn get_log_group_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_log_group_arn()
     }

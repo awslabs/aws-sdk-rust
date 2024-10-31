@@ -27,13 +27,16 @@ pub struct LoadBalancer {
     pub availability_zones: ::std::option::Option<::std::vec::Vec<crate::types::AvailabilityZone>>,
     /// <p>The IDs of the security groups for the load balancer.</p>
     pub security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>\[Application Load Balancers\] The type of IP addresses used for public or private connections by the subnets attached to your load balancer. The possible values are ipv4 (for only IPv4 addresses), dualstack (for IPv4 and IPv6 addresses), and dualstack-without-public-ipv4 (for IPv6 only public addresses, with private IPv4 and IPv6 addresses).</p>
-    /// <p>\[Network Load Balancers and Gateway Load Balancers\] The type of IP addresses used for public or private connections by the subnets attached to your load balancer. The possible values are ipv4 (for only IPv4 addresses) and dualstack (for IPv4 and IPv6 addresses).</p>
+    /// <p>The type of IP addresses used for public or private connections by the subnets attached to your load balancer.</p>
+    /// <p>\[Application Load Balancers\] The possible values are ipv4 (IPv4 addresses), dualstack (IPv4 and IPv6 addresses), and dualstack-without-public-ipv4 (public IPv6 addresses and private IPv4 and IPv6 addresses).</p>
+    /// <p>\[Network Load Balancers and Gateway Load Balancers\] The possible values are ipv4 (IPv4 addresses) and dualstack (IPv4 and IPv6 addresses).</p>
     pub ip_address_type: ::std::option::Option<crate::types::IpAddressType>,
     /// <p>\[Application Load Balancers on Outposts\] The ID of the customer-owned address pool.</p>
     pub customer_owned_ipv4_pool: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether to evaluate inbound security group rules for traffic sent to a Network Load Balancer through Amazon Web Services PrivateLink.</p>
     pub enforce_security_group_inbound_rules_on_private_link_traffic: ::std::option::Option<::std::string::String>,
+    /// <p>\[Network Load Balancers with UDP listeners\] Indicates whether to use an IPv6 prefix from each subnet for source NAT. The IP address type must be dualstack. The default value is off.</p>
+    pub enable_prefix_for_ipv6_source_nat: ::std::option::Option<crate::types::EnablePrefixForIpv6SourceNatEnum>,
 }
 impl LoadBalancer {
     /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
@@ -85,8 +88,9 @@ impl LoadBalancer {
     pub fn security_groups(&self) -> &[::std::string::String] {
         self.security_groups.as_deref().unwrap_or_default()
     }
-    /// <p>\[Application Load Balancers\] The type of IP addresses used for public or private connections by the subnets attached to your load balancer. The possible values are ipv4 (for only IPv4 addresses), dualstack (for IPv4 and IPv6 addresses), and dualstack-without-public-ipv4 (for IPv6 only public addresses, with private IPv4 and IPv6 addresses).</p>
-    /// <p>\[Network Load Balancers and Gateway Load Balancers\] The type of IP addresses used for public or private connections by the subnets attached to your load balancer. The possible values are ipv4 (for only IPv4 addresses) and dualstack (for IPv4 and IPv6 addresses).</p>
+    /// <p>The type of IP addresses used for public or private connections by the subnets attached to your load balancer.</p>
+    /// <p>\[Application Load Balancers\] The possible values are ipv4 (IPv4 addresses), dualstack (IPv4 and IPv6 addresses), and dualstack-without-public-ipv4 (public IPv6 addresses and private IPv4 and IPv6 addresses).</p>
+    /// <p>\[Network Load Balancers and Gateway Load Balancers\] The possible values are ipv4 (IPv4 addresses) and dualstack (IPv4 and IPv6 addresses).</p>
     pub fn ip_address_type(&self) -> ::std::option::Option<&crate::types::IpAddressType> {
         self.ip_address_type.as_ref()
     }
@@ -97,6 +101,10 @@ impl LoadBalancer {
     /// <p>Indicates whether to evaluate inbound security group rules for traffic sent to a Network Load Balancer through Amazon Web Services PrivateLink.</p>
     pub fn enforce_security_group_inbound_rules_on_private_link_traffic(&self) -> ::std::option::Option<&str> {
         self.enforce_security_group_inbound_rules_on_private_link_traffic.as_deref()
+    }
+    /// <p>\[Network Load Balancers with UDP listeners\] Indicates whether to use an IPv6 prefix from each subnet for source NAT. The IP address type must be dualstack. The default value is off.</p>
+    pub fn enable_prefix_for_ipv6_source_nat(&self) -> ::std::option::Option<&crate::types::EnablePrefixForIpv6SourceNatEnum> {
+        self.enable_prefix_for_ipv6_source_nat.as_ref()
     }
 }
 impl LoadBalancer {
@@ -124,6 +132,7 @@ pub struct LoadBalancerBuilder {
     pub(crate) ip_address_type: ::std::option::Option<crate::types::IpAddressType>,
     pub(crate) customer_owned_ipv4_pool: ::std::option::Option<::std::string::String>,
     pub(crate) enforce_security_group_inbound_rules_on_private_link_traffic: ::std::option::Option<::std::string::String>,
+    pub(crate) enable_prefix_for_ipv6_source_nat: ::std::option::Option<crate::types::EnablePrefixForIpv6SourceNatEnum>,
 }
 impl LoadBalancerBuilder {
     /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
@@ -295,20 +304,23 @@ impl LoadBalancerBuilder {
     pub fn get_security_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.security_groups
     }
-    /// <p>\[Application Load Balancers\] The type of IP addresses used for public or private connections by the subnets attached to your load balancer. The possible values are ipv4 (for only IPv4 addresses), dualstack (for IPv4 and IPv6 addresses), and dualstack-without-public-ipv4 (for IPv6 only public addresses, with private IPv4 and IPv6 addresses).</p>
-    /// <p>\[Network Load Balancers and Gateway Load Balancers\] The type of IP addresses used for public or private connections by the subnets attached to your load balancer. The possible values are ipv4 (for only IPv4 addresses) and dualstack (for IPv4 and IPv6 addresses).</p>
+    /// <p>The type of IP addresses used for public or private connections by the subnets attached to your load balancer.</p>
+    /// <p>\[Application Load Balancers\] The possible values are ipv4 (IPv4 addresses), dualstack (IPv4 and IPv6 addresses), and dualstack-without-public-ipv4 (public IPv6 addresses and private IPv4 and IPv6 addresses).</p>
+    /// <p>\[Network Load Balancers and Gateway Load Balancers\] The possible values are ipv4 (IPv4 addresses) and dualstack (IPv4 and IPv6 addresses).</p>
     pub fn ip_address_type(mut self, input: crate::types::IpAddressType) -> Self {
         self.ip_address_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>\[Application Load Balancers\] The type of IP addresses used for public or private connections by the subnets attached to your load balancer. The possible values are ipv4 (for only IPv4 addresses), dualstack (for IPv4 and IPv6 addresses), and dualstack-without-public-ipv4 (for IPv6 only public addresses, with private IPv4 and IPv6 addresses).</p>
-    /// <p>\[Network Load Balancers and Gateway Load Balancers\] The type of IP addresses used for public or private connections by the subnets attached to your load balancer. The possible values are ipv4 (for only IPv4 addresses) and dualstack (for IPv4 and IPv6 addresses).</p>
+    /// <p>The type of IP addresses used for public or private connections by the subnets attached to your load balancer.</p>
+    /// <p>\[Application Load Balancers\] The possible values are ipv4 (IPv4 addresses), dualstack (IPv4 and IPv6 addresses), and dualstack-without-public-ipv4 (public IPv6 addresses and private IPv4 and IPv6 addresses).</p>
+    /// <p>\[Network Load Balancers and Gateway Load Balancers\] The possible values are ipv4 (IPv4 addresses) and dualstack (IPv4 and IPv6 addresses).</p>
     pub fn set_ip_address_type(mut self, input: ::std::option::Option<crate::types::IpAddressType>) -> Self {
         self.ip_address_type = input;
         self
     }
-    /// <p>\[Application Load Balancers\] The type of IP addresses used for public or private connections by the subnets attached to your load balancer. The possible values are ipv4 (for only IPv4 addresses), dualstack (for IPv4 and IPv6 addresses), and dualstack-without-public-ipv4 (for IPv6 only public addresses, with private IPv4 and IPv6 addresses).</p>
-    /// <p>\[Network Load Balancers and Gateway Load Balancers\] The type of IP addresses used for public or private connections by the subnets attached to your load balancer. The possible values are ipv4 (for only IPv4 addresses) and dualstack (for IPv4 and IPv6 addresses).</p>
+    /// <p>The type of IP addresses used for public or private connections by the subnets attached to your load balancer.</p>
+    /// <p>\[Application Load Balancers\] The possible values are ipv4 (IPv4 addresses), dualstack (IPv4 and IPv6 addresses), and dualstack-without-public-ipv4 (public IPv6 addresses and private IPv4 and IPv6 addresses).</p>
+    /// <p>\[Network Load Balancers and Gateway Load Balancers\] The possible values are ipv4 (IPv4 addresses) and dualstack (IPv4 and IPv6 addresses).</p>
     pub fn get_ip_address_type(&self) -> &::std::option::Option<crate::types::IpAddressType> {
         &self.ip_address_type
     }
@@ -340,6 +352,20 @@ impl LoadBalancerBuilder {
     pub fn get_enforce_security_group_inbound_rules_on_private_link_traffic(&self) -> &::std::option::Option<::std::string::String> {
         &self.enforce_security_group_inbound_rules_on_private_link_traffic
     }
+    /// <p>\[Network Load Balancers with UDP listeners\] Indicates whether to use an IPv6 prefix from each subnet for source NAT. The IP address type must be dualstack. The default value is off.</p>
+    pub fn enable_prefix_for_ipv6_source_nat(mut self, input: crate::types::EnablePrefixForIpv6SourceNatEnum) -> Self {
+        self.enable_prefix_for_ipv6_source_nat = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>\[Network Load Balancers with UDP listeners\] Indicates whether to use an IPv6 prefix from each subnet for source NAT. The IP address type must be dualstack. The default value is off.</p>
+    pub fn set_enable_prefix_for_ipv6_source_nat(mut self, input: ::std::option::Option<crate::types::EnablePrefixForIpv6SourceNatEnum>) -> Self {
+        self.enable_prefix_for_ipv6_source_nat = input;
+        self
+    }
+    /// <p>\[Network Load Balancers with UDP listeners\] Indicates whether to use an IPv6 prefix from each subnet for source NAT. The IP address type must be dualstack. The default value is off.</p>
+    pub fn get_enable_prefix_for_ipv6_source_nat(&self) -> &::std::option::Option<crate::types::EnablePrefixForIpv6SourceNatEnum> {
+        &self.enable_prefix_for_ipv6_source_nat
+    }
     /// Consumes the builder and constructs a [`LoadBalancer`](crate::types::LoadBalancer).
     pub fn build(self) -> crate::types::LoadBalancer {
         crate::types::LoadBalancer {
@@ -357,6 +383,7 @@ impl LoadBalancerBuilder {
             ip_address_type: self.ip_address_type,
             customer_owned_ipv4_pool: self.customer_owned_ipv4_pool,
             enforce_security_group_inbound_rules_on_private_link_traffic: self.enforce_security_group_inbound_rules_on_private_link_traffic,
+            enable_prefix_for_ipv6_source_nat: self.enable_prefix_for_ipv6_source_nat,
         }
     }
 }

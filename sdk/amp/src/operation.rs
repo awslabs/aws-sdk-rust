@@ -76,5 +76,8 @@ pub mod untag_resource;
 /// Types for the `UpdateLoggingConfiguration` operation.
 pub mod update_logging_configuration;
 
+/// Types for the `UpdateScraper` operation.
+pub mod update_scraper;
+
 /// Types for the `UpdateWorkspaceAlias` operation.
 pub mod update_workspace_alias;

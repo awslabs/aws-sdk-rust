@@ -4,15 +4,15 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WorkspaceDescription {
-    /// <p>The unique ID for the workspace.</p>
+    /// <p>The unique ID for the workspace. For example, <code>ws-example1-1234-abcd-5678-ef90abcd1234</code>.</p>
     pub workspace_id: ::std::string::String,
-    /// <p>The alias that is assigned to this workspace to help identify it. It may not be unique.</p>
+    /// <p>The alias that is assigned to this workspace to help identify it. It does not need to be unique.</p>
     pub alias: ::std::option::Option<::std::string::String>,
-    /// <p>The ARN of the workspace.</p>
+    /// <p>The ARN of the workspace. For example, <code>arn:aws:aps:&lt;region&gt;:123456789012:workspace/ws-example1-1234-abcd-5678-ef90abcd1234</code>.</p>
     pub arn: ::std::string::String,
     /// <p>The current status of the workspace.</p>
     pub status: ::std::option::Option<crate::types::WorkspaceStatus>,
-    /// <p>The Prometheus endpoint available for this workspace.</p>
+    /// <p>The Prometheus endpoint available for this workspace. For example, <code>https://aps-workspaces.&lt;region&gt;.amazonaws.com/workspaces/ws-example1-1234-abcd-5678-ef90abcd1234/api/v1/</code>.</p>
     pub prometheus_endpoint: ::std::option::Option<::std::string::String>,
     /// <p>The date and time that the workspace was created.</p>
     pub created_at: ::aws_smithy_types::DateTime,
@@ -22,16 +22,16 @@ pub struct WorkspaceDescription {
     pub kms_key_arn: ::std::option::Option<::std::string::String>,
 }
 impl WorkspaceDescription {
-    /// <p>The unique ID for the workspace.</p>
+    /// <p>The unique ID for the workspace. For example, <code>ws-example1-1234-abcd-5678-ef90abcd1234</code>.</p>
     pub fn workspace_id(&self) -> &str {
         use std::ops::Deref;
         self.workspace_id.deref()
     }
-    /// <p>The alias that is assigned to this workspace to help identify it. It may not be unique.</p>
+    /// <p>The alias that is assigned to this workspace to help identify it. It does not need to be unique.</p>
     pub fn alias(&self) -> ::std::option::Option<&str> {
         self.alias.as_deref()
     }
-    /// <p>The ARN of the workspace.</p>
+    /// <p>The ARN of the workspace. For example, <code>arn:aws:aps:&lt;region&gt;:123456789012:workspace/ws-example1-1234-abcd-5678-ef90abcd1234</code>.</p>
     pub fn arn(&self) -> &str {
         use std::ops::Deref;
         self.arn.deref()
@@ -40,7 +40,7 @@ impl WorkspaceDescription {
     pub fn status(&self) -> ::std::option::Option<&crate::types::WorkspaceStatus> {
         self.status.as_ref()
     }
-    /// <p>The Prometheus endpoint available for this workspace.</p>
+    /// <p>The Prometheus endpoint available for this workspace. For example, <code>https://aps-workspaces.&lt;region&gt;.amazonaws.com/workspaces/ws-example1-1234-abcd-5678-ef90abcd1234/api/v1/</code>.</p>
     pub fn prometheus_endpoint(&self) -> ::std::option::Option<&str> {
         self.prometheus_endpoint.as_deref()
     }
@@ -78,47 +78,47 @@ pub struct WorkspaceDescriptionBuilder {
     pub(crate) kms_key_arn: ::std::option::Option<::std::string::String>,
 }
 impl WorkspaceDescriptionBuilder {
-    /// <p>The unique ID for the workspace.</p>
+    /// <p>The unique ID for the workspace. For example, <code>ws-example1-1234-abcd-5678-ef90abcd1234</code>.</p>
     /// This field is required.
     pub fn workspace_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workspace_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique ID for the workspace.</p>
+    /// <p>The unique ID for the workspace. For example, <code>ws-example1-1234-abcd-5678-ef90abcd1234</code>.</p>
     pub fn set_workspace_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.workspace_id = input;
         self
     }
-    /// <p>The unique ID for the workspace.</p>
+    /// <p>The unique ID for the workspace. For example, <code>ws-example1-1234-abcd-5678-ef90abcd1234</code>.</p>
     pub fn get_workspace_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.workspace_id
     }
-    /// <p>The alias that is assigned to this workspace to help identify it. It may not be unique.</p>
+    /// <p>The alias that is assigned to this workspace to help identify it. It does not need to be unique.</p>
     pub fn alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.alias = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The alias that is assigned to this workspace to help identify it. It may not be unique.</p>
+    /// <p>The alias that is assigned to this workspace to help identify it. It does not need to be unique.</p>
     pub fn set_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.alias = input;
         self
     }
-    /// <p>The alias that is assigned to this workspace to help identify it. It may not be unique.</p>
+    /// <p>The alias that is assigned to this workspace to help identify it. It does not need to be unique.</p>
     pub fn get_alias(&self) -> &::std::option::Option<::std::string::String> {
         &self.alias
     }
-    /// <p>The ARN of the workspace.</p>
+    /// <p>The ARN of the workspace. For example, <code>arn:aws:aps:&lt;region&gt;:123456789012:workspace/ws-example1-1234-abcd-5678-ef90abcd1234</code>.</p>
     /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the workspace.</p>
+    /// <p>The ARN of the workspace. For example, <code>arn:aws:aps:&lt;region&gt;:123456789012:workspace/ws-example1-1234-abcd-5678-ef90abcd1234</code>.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
-    /// <p>The ARN of the workspace.</p>
+    /// <p>The ARN of the workspace. For example, <code>arn:aws:aps:&lt;region&gt;:123456789012:workspace/ws-example1-1234-abcd-5678-ef90abcd1234</code>.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }
@@ -137,17 +137,17 @@ impl WorkspaceDescriptionBuilder {
     pub fn get_status(&self) -> &::std::option::Option<crate::types::WorkspaceStatus> {
         &self.status
     }
-    /// <p>The Prometheus endpoint available for this workspace.</p>
+    /// <p>The Prometheus endpoint available for this workspace. For example, <code>https://aps-workspaces.&lt;region&gt;.amazonaws.com/workspaces/ws-example1-1234-abcd-5678-ef90abcd1234/api/v1/</code>.</p>
     pub fn prometheus_endpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.prometheus_endpoint = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Prometheus endpoint available for this workspace.</p>
+    /// <p>The Prometheus endpoint available for this workspace. For example, <code>https://aps-workspaces.&lt;region&gt;.amazonaws.com/workspaces/ws-example1-1234-abcd-5678-ef90abcd1234/api/v1/</code>.</p>
     pub fn set_prometheus_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.prometheus_endpoint = input;
         self
     }
-    /// <p>The Prometheus endpoint available for this workspace.</p>
+    /// <p>The Prometheus endpoint available for this workspace. For example, <code>https://aps-workspaces.&lt;region&gt;.amazonaws.com/workspaces/ws-example1-1234-abcd-5678-ef90abcd1234/api/v1/</code>.</p>
     pub fn get_prometheus_endpoint(&self) -> &::std::option::Option<::std::string::String> {
         &self.prometheus_endpoint
     }

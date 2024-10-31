@@ -17,6 +17,8 @@
 ///     ScraperStatusCode::CreationFailed => { /* ... */ },
 ///     ScraperStatusCode::Deleting => { /* ... */ },
 ///     ScraperStatusCode::DeletionFailed => { /* ... */ },
+///     ScraperStatusCode::UpdateFailed => { /* ... */ },
+///     ScraperStatusCode::Updating => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -54,6 +56,10 @@ pub enum ScraperStatusCode {
     Deleting,
     /// Scraper deletion failed.
     DeletionFailed,
+    /// Scraper update failed.
+    UpdateFailed,
+    /// Scraper is being updated. Deletion is disallowed until status is ACTIVE.
+    Updating,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -66,6 +72,8 @@ impl ::std::convert::From<&str> for ScraperStatusCode {
             "CREATION_FAILED" => ScraperStatusCode::CreationFailed,
             "DELETING" => ScraperStatusCode::Deleting,
             "DELETION_FAILED" => ScraperStatusCode::DeletionFailed,
+            "UPDATE_FAILED" => ScraperStatusCode::UpdateFailed,
+            "UPDATING" => ScraperStatusCode::Updating,
             other => ScraperStatusCode::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -86,12 +94,22 @@ impl ScraperStatusCode {
             ScraperStatusCode::CreationFailed => "CREATION_FAILED",
             ScraperStatusCode::Deleting => "DELETING",
             ScraperStatusCode::DeletionFailed => "DELETION_FAILED",
+            ScraperStatusCode::UpdateFailed => "UPDATE_FAILED",
+            ScraperStatusCode::Updating => "UPDATING",
             ScraperStatusCode::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ACTIVE", "CREATING", "CREATION_FAILED", "DELETING", "DELETION_FAILED"]
+        &[
+            "ACTIVE",
+            "CREATING",
+            "CREATION_FAILED",
+            "DELETING",
+            "DELETION_FAILED",
+            "UPDATE_FAILED",
+            "UPDATING",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for ScraperStatusCode {
@@ -119,6 +137,8 @@ impl ::std::fmt::Display for ScraperStatusCode {
             ScraperStatusCode::CreationFailed => write!(f, "CREATION_FAILED"),
             ScraperStatusCode::Deleting => write!(f, "DELETING"),
             ScraperStatusCode::DeletionFailed => write!(f, "DELETION_FAILED"),
+            ScraperStatusCode::UpdateFailed => write!(f, "UPDATE_FAILED"),
+            ScraperStatusCode::Updating => write!(f, "UPDATING"),
             ScraperStatusCode::Unknown(value) => write!(f, "{}", value),
         }
     }

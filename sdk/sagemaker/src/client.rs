@@ -243,6 +243,8 @@ mod add_tags;
 
 mod associate_trial_component;
 
+mod batch_delete_cluster_nodes;
+
 mod batch_describe_model_package;
 
 mod create_action;

@@ -821,9 +821,13 @@ pub use crate::types::_connection_status::ConnectionStatus;
 
 pub use crate::types::_get_connections_filter::GetConnectionsFilter;
 
+pub use crate::types::_column_statistics_task_settings::ColumnStatisticsTaskSettings;
+
 pub use crate::types::_column_statistics_task_run::ColumnStatisticsTaskRun;
 
 pub use crate::types::_column_statistics_state::ColumnStatisticsState;
+
+pub use crate::types::_computation_type::ComputationType;
 
 pub use crate::types::_column_error::ColumnError;
 
@@ -1015,6 +1019,8 @@ mod _column_statistics_state;
 
 mod _column_statistics_task_run;
 
+mod _column_statistics_task_settings;
+
 mod _column_statistics_type;
 
 mod _compaction_metrics;
@@ -1024,6 +1030,8 @@ mod _comparator;
 mod _compatibility;
 
 mod _compression_type;
+
+mod _computation_type;
 
 mod _condition;
 

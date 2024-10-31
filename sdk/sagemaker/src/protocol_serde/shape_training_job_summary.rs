@@ -53,6 +53,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "SecondaryStatus" => {
+                            builder = builder.set_secondary_status(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::SecondaryStatus::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         "WarmPoolStatus" => {
                             builder = builder.set_warm_pool_status(crate::protocol_serde::shape_warm_pool_status::de_warm_pool_status(tokens)?);
                         }

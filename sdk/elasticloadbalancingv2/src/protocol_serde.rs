@@ -453,6 +453,8 @@ pub(crate) mod shape_load_balancer_state;
 
 pub(crate) mod shape_rule_condition_list;
 
+pub(crate) mod shape_source_nat_ipv6_prefixes;
+
 pub(crate) mod shape_ssl_protocols;
 
 pub(crate) mod shape_tag_list;

@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`job_id(impl Into<String>)`](crate::operation::terminate_job::builders::TerminateJobFluentBuilder::job_id) / [`set_job_id(Option<String>)`](crate::operation::terminate_job::builders::TerminateJobFluentBuilder::set_job_id):<br>required: **true**<br><p>The Batch job ID of the job to terminate.</p><br>
-    ///   - [`reason(impl Into<String>)`](crate::operation::terminate_job::builders::TerminateJobFluentBuilder::reason) / [`set_reason(Option<String>)`](crate::operation::terminate_job::builders::TerminateJobFluentBuilder::set_reason):<br>required: **true**<br><p>A message to attach to the job that explains the reason for canceling it. This message is returned by future <code>DescribeJobs</code> operations on the job. This message is also recorded in the Batch activity logs.</p><br>
+    ///   - [`reason(impl Into<String>)`](crate::operation::terminate_job::builders::TerminateJobFluentBuilder::reason) / [`set_reason(Option<String>)`](crate::operation::terminate_job::builders::TerminateJobFluentBuilder::set_reason):<br>required: **true**<br><p>A message to attach to the job that explains the reason for canceling it. This message is returned by future <code>DescribeJobs</code> operations on the job. It is also recorded in the Batch activity logs.</p> <p>This parameter has as limit of 1024 characters.</p><br>
     /// - On success, responds with [`TerminateJobOutput`](crate::operation::terminate_job::TerminateJobOutput)
     /// - On failure, responds with [`SdkError<TerminateJobError>`](crate::operation::terminate_job::TerminateJobError)
     pub fn terminate_job(&self) -> crate::operation::terminate_job::builders::TerminateJobFluentBuilder {

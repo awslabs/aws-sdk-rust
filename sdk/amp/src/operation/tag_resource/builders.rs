@@ -22,8 +22,8 @@ impl crate::operation::tag_resource::builders::TagResourceInputBuilder {
 }
 /// Fluent builder constructing a request to `TagResource`.
 ///
-/// <p>The <code>TagResource</code> operation associates tags with an Amazon Managed Service for Prometheus resource. The only resources that can be tagged are workspaces and rule groups namespaces.</p>
-/// <p>If you specify a new tag key for the resource, this tag is appended to the list of tags associated with the resource. If you specify a tag key that is already associated with the resource, the new tag value that you specify replaces the previous value for that tag.</p>
+/// <p>The <code>TagResource</code> operation associates tags with an Amazon Managed Service for Prometheus resource. The only resources that can be tagged are rule groups namespaces, scrapers, and workspaces.</p>
+/// <p>If you specify a new tag key for the resource, this tag is appended to the list of tags associated with the resource. If you specify a tag key that is already associated with the resource, the new tag value that you specify replaces the previous value for that tag. To remove a tag, use <code>UntagResource</code>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct TagResourceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -109,17 +109,17 @@ impl TagResourceFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The ARN of the workspace or rule groups namespace to apply tags to.</p>
+    /// <p>The ARN of the resource to apply tags to.</p>
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_arn(input.into());
         self
     }
-    /// <p>The ARN of the workspace or rule groups namespace to apply tags to.</p>
+    /// <p>The ARN of the resource to apply tags to.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_arn(input);
         self
     }
-    /// <p>The ARN of the workspace or rule groups namespace to apply tags to.</p>
+    /// <p>The ARN of the resource to apply tags to.</p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_resource_arn()
     }
@@ -129,19 +129,19 @@ impl TagResourceFluentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The list of tag keys and values to associate with the resource.</p>
-    /// <p>Keys may not begin with <code>aws:</code>.</p>
+    /// <p>Keys must not begin with <code>aws:</code>.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>The list of tag keys and values to associate with the resource.</p>
-    /// <p>Keys may not begin with <code>aws:</code>.</p>
+    /// <p>Keys must not begin with <code>aws:</code>.</p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>The list of tag keys and values to associate with the resource.</p>
-    /// <p>Keys may not begin with <code>aws:</code>.</p>
+    /// <p>Keys must not begin with <code>aws:</code>.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }

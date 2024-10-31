@@ -74,6 +74,11 @@ pub fn ser_create_load_balancer_input_input_input(
     if let Some(var_30) = &input.customer_owned_ipv4_pool {
         scope_29.string(var_30);
     }
+    #[allow(unused_mut)]
+    let mut scope_31 = writer.prefix("EnablePrefixForIpv6SourceNat");
+    if let Some(var_32) = &input.enable_prefix_for_ipv6_source_nat {
+        scope_31.string(var_32.as_str());
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

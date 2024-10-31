@@ -6,7 +6,7 @@
 pub struct WorkspaceSummary {
     /// <p>The unique ID for the workspace.</p>
     pub workspace_id: ::std::string::String,
-    /// <p>The alias that is assigned to this workspace to help identify it. It may not be unique.</p>
+    /// <p>The alias that is assigned to this workspace to help identify it. It does not need to be unique.</p>
     pub alias: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the workspace.</p>
     pub arn: ::std::string::String,
@@ -25,7 +25,7 @@ impl WorkspaceSummary {
         use std::ops::Deref;
         self.workspace_id.deref()
     }
-    /// <p>The alias that is assigned to this workspace to help identify it. It may not be unique.</p>
+    /// <p>The alias that is assigned to this workspace to help identify it. It does not need to be unique.</p>
     pub fn alias(&self) -> ::std::option::Option<&str> {
         self.alias.as_deref()
     }
@@ -86,17 +86,17 @@ impl WorkspaceSummaryBuilder {
     pub fn get_workspace_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.workspace_id
     }
-    /// <p>The alias that is assigned to this workspace to help identify it. It may not be unique.</p>
+    /// <p>The alias that is assigned to this workspace to help identify it. It does not need to be unique.</p>
     pub fn alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.alias = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The alias that is assigned to this workspace to help identify it. It may not be unique.</p>
+    /// <p>The alias that is assigned to this workspace to help identify it. It does not need to be unique.</p>
     pub fn set_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.alias = input;
         self
     }
-    /// <p>The alias that is assigned to this workspace to help identify it. It may not be unique.</p>
+    /// <p>The alias that is assigned to this workspace to help identify it. It does not need to be unique.</p>
     pub fn get_alias(&self) -> &::std::option::Option<::std::string::String> {
         &self.alias
     }

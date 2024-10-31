@@ -56,6 +56,16 @@ pub fn de_availability_zone(
                 builder = builder.set_load_balancer_addresses(var_4);
             }
             ,
+            s if s.matches("SourceNatIpv6Prefixes") /* SourceNatIpv6Prefixes com.amazonaws.elasticloadbalancingv2#AvailabilityZone$SourceNatIpv6Prefixes */ =>  {
+                let var_5 =
+                    Some(
+                        crate::protocol_serde::shape_source_nat_ipv6_prefixes::de_source_nat_ipv6_prefixes(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_source_nat_ipv6_prefixes(var_5);
+            }
+            ,
             _ => {}
         }
     }

@@ -186,6 +186,8 @@ mod create_blueprint;
 
 mod create_classifier;
 
+mod create_column_statistics_task_settings;
+
 mod create_connection;
 
 mod create_crawler;
@@ -263,6 +265,8 @@ mod delete_column_statistics_for_partition;
 
 mod delete_column_statistics_for_table;
 
+mod delete_column_statistics_task_settings;
+
 mod delete_connection;
 
 mod delete_crawler;
@@ -328,6 +332,8 @@ mod get_column_statistics_for_table;
 mod get_column_statistics_task_run;
 
 mod get_column_statistics_task_runs;
+
+mod get_column_statistics_task_settings;
 
 mod get_connection;
 
@@ -527,6 +533,8 @@ mod start_blueprint_run;
 
 mod start_column_statistics_task_run;
 
+mod start_column_statistics_task_run_schedule;
+
 mod start_crawler;
 
 mod start_crawler_schedule;
@@ -551,6 +559,8 @@ mod start_workflow_run;
 
 mod stop_column_statistics_task_run;
 
+mod stop_column_statistics_task_run_schedule;
+
 mod stop_crawler;
 
 mod stop_crawler_schedule;
@@ -574,6 +584,8 @@ mod update_classifier;
 mod update_column_statistics_for_partition;
 
 mod update_column_statistics_for_table;
+
+mod update_column_statistics_task_settings;
 
 mod update_connection;
 

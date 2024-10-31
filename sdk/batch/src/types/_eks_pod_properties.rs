@@ -14,10 +14,12 @@ pub struct EksPodProperties {
     /// <p>References a Kubernetes secret resource. It holds a list of secrets. These secrets help to gain access to pull an images from a private registry.</p>
     /// <p><code>ImagePullSecret$name</code> is required when this object is used.</p>
     pub image_pull_secrets: ::std::option::Option<::std::vec::Vec<crate::types::ImagePullSecret>>,
-    /// <p>The properties of the container that's used on the Amazon EKS pod.</p>
+    /// <p>The properties of the container that's used on the Amazon EKS pod.</p><note>
+    /// <p>This object is limited to 10 elements.</p>
+    /// </note>
     pub containers: ::std::option::Option<::std::vec::Vec<crate::types::EksContainer>>,
     /// <p>These containers run before application containers, always runs to completion, and must complete successfully before the next container starts. These containers are registered with the Amazon EKS Connector agent and persists the registration information in the Kubernetes backend data store. For more information, see <a href="https://kubernetes.io/docs/concepts/workloads/pods/init-containers/">Init Containers</a> in the <i>Kubernetes documentation</i>.</p><note>
-    /// <p>This object is limited to 10 elements</p>
+    /// <p>This object is limited to 10 elements.</p>
     /// </note>
     pub init_containers: ::std::option::Option<::std::vec::Vec<crate::types::EksContainer>>,
     /// <p>Specifies the volumes for a job definition that uses Amazon EKS resources.</p>
@@ -48,14 +50,16 @@ impl EksPodProperties {
     pub fn image_pull_secrets(&self) -> &[crate::types::ImagePullSecret] {
         self.image_pull_secrets.as_deref().unwrap_or_default()
     }
-    /// <p>The properties of the container that's used on the Amazon EKS pod.</p>
+    /// <p>The properties of the container that's used on the Amazon EKS pod.</p><note>
+    /// <p>This object is limited to 10 elements.</p>
+    /// </note>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.containers.is_none()`.
     pub fn containers(&self) -> &[crate::types::EksContainer] {
         self.containers.as_deref().unwrap_or_default()
     }
     /// <p>These containers run before application containers, always runs to completion, and must complete successfully before the next container starts. These containers are registered with the Amazon EKS Connector agent and persists the registration information in the Kubernetes backend data store. For more information, see <a href="https://kubernetes.io/docs/concepts/workloads/pods/init-containers/">Init Containers</a> in the <i>Kubernetes documentation</i>.</p><note>
-    /// <p>This object is limited to 10 elements</p>
+    /// <p>This object is limited to 10 elements.</p>
     /// </note>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.init_containers.is_none()`.
@@ -171,19 +175,25 @@ impl EksPodPropertiesBuilder {
     ///
     /// To override the contents of this collection use [`set_containers`](Self::set_containers).
     ///
-    /// <p>The properties of the container that's used on the Amazon EKS pod.</p>
+    /// <p>The properties of the container that's used on the Amazon EKS pod.</p><note>
+    /// <p>This object is limited to 10 elements.</p>
+    /// </note>
     pub fn containers(mut self, input: crate::types::EksContainer) -> Self {
         let mut v = self.containers.unwrap_or_default();
         v.push(input);
         self.containers = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The properties of the container that's used on the Amazon EKS pod.</p>
+    /// <p>The properties of the container that's used on the Amazon EKS pod.</p><note>
+    /// <p>This object is limited to 10 elements.</p>
+    /// </note>
     pub fn set_containers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EksContainer>>) -> Self {
         self.containers = input;
         self
     }
-    /// <p>The properties of the container that's used on the Amazon EKS pod.</p>
+    /// <p>The properties of the container that's used on the Amazon EKS pod.</p><note>
+    /// <p>This object is limited to 10 elements.</p>
+    /// </note>
     pub fn get_containers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EksContainer>> {
         &self.containers
     }
@@ -192,7 +202,7 @@ impl EksPodPropertiesBuilder {
     /// To override the contents of this collection use [`set_init_containers`](Self::set_init_containers).
     ///
     /// <p>These containers run before application containers, always runs to completion, and must complete successfully before the next container starts. These containers are registered with the Amazon EKS Connector agent and persists the registration information in the Kubernetes backend data store. For more information, see <a href="https://kubernetes.io/docs/concepts/workloads/pods/init-containers/">Init Containers</a> in the <i>Kubernetes documentation</i>.</p><note>
-    /// <p>This object is limited to 10 elements</p>
+    /// <p>This object is limited to 10 elements.</p>
     /// </note>
     pub fn init_containers(mut self, input: crate::types::EksContainer) -> Self {
         let mut v = self.init_containers.unwrap_or_default();
@@ -201,14 +211,14 @@ impl EksPodPropertiesBuilder {
         self
     }
     /// <p>These containers run before application containers, always runs to completion, and must complete successfully before the next container starts. These containers are registered with the Amazon EKS Connector agent and persists the registration information in the Kubernetes backend data store. For more information, see <a href="https://kubernetes.io/docs/concepts/workloads/pods/init-containers/">Init Containers</a> in the <i>Kubernetes documentation</i>.</p><note>
-    /// <p>This object is limited to 10 elements</p>
+    /// <p>This object is limited to 10 elements.</p>
     /// </note>
     pub fn set_init_containers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EksContainer>>) -> Self {
         self.init_containers = input;
         self
     }
     /// <p>These containers run before application containers, always runs to completion, and must complete successfully before the next container starts. These containers are registered with the Amazon EKS Connector agent and persists the registration information in the Kubernetes backend data store. For more information, see <a href="https://kubernetes.io/docs/concepts/workloads/pods/init-containers/">Init Containers</a> in the <i>Kubernetes documentation</i>.</p><note>
-    /// <p>This object is limited to 10 elements</p>
+    /// <p>This object is limited to 10 elements.</p>
     /// </note>
     pub fn get_init_containers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EksContainer>> {
         &self.init_containers

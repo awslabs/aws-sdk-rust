@@ -6,7 +6,8 @@
 pub struct CancelJobInput {
     /// <p>The Batch job ID of the job to cancel.</p>
     pub job_id: ::std::option::Option<::std::string::String>,
-    /// <p>A message to attach to the job that explains the reason for canceling it. This message is returned by future <code>DescribeJobs</code> operations on the job. This message is also recorded in the Batch activity logs.</p>
+    /// <p>A message to attach to the job that explains the reason for canceling it. This message is returned by future <code>DescribeJobs</code> operations on the job. It is also recorded in the Batch activity logs.</p>
+    /// <p>This parameter has as limit of 1024 characters.</p>
     pub reason: ::std::option::Option<::std::string::String>,
 }
 impl CancelJobInput {
@@ -14,7 +15,8 @@ impl CancelJobInput {
     pub fn job_id(&self) -> ::std::option::Option<&str> {
         self.job_id.as_deref()
     }
-    /// <p>A message to attach to the job that explains the reason for canceling it. This message is returned by future <code>DescribeJobs</code> operations on the job. This message is also recorded in the Batch activity logs.</p>
+    /// <p>A message to attach to the job that explains the reason for canceling it. This message is returned by future <code>DescribeJobs</code> operations on the job. It is also recorded in the Batch activity logs.</p>
+    /// <p>This parameter has as limit of 1024 characters.</p>
     pub fn reason(&self) -> ::std::option::Option<&str> {
         self.reason.as_deref()
     }
@@ -49,18 +51,21 @@ impl CancelJobInputBuilder {
     pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.job_id
     }
-    /// <p>A message to attach to the job that explains the reason for canceling it. This message is returned by future <code>DescribeJobs</code> operations on the job. This message is also recorded in the Batch activity logs.</p>
+    /// <p>A message to attach to the job that explains the reason for canceling it. This message is returned by future <code>DescribeJobs</code> operations on the job. It is also recorded in the Batch activity logs.</p>
+    /// <p>This parameter has as limit of 1024 characters.</p>
     /// This field is required.
     pub fn reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reason = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A message to attach to the job that explains the reason for canceling it. This message is returned by future <code>DescribeJobs</code> operations on the job. This message is also recorded in the Batch activity logs.</p>
+    /// <p>A message to attach to the job that explains the reason for canceling it. This message is returned by future <code>DescribeJobs</code> operations on the job. It is also recorded in the Batch activity logs.</p>
+    /// <p>This parameter has as limit of 1024 characters.</p>
     pub fn set_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reason = input;
         self
     }
-    /// <p>A message to attach to the job that explains the reason for canceling it. This message is returned by future <code>DescribeJobs</code> operations on the job. This message is also recorded in the Batch activity logs.</p>
+    /// <p>A message to attach to the job that explains the reason for canceling it. This message is returned by future <code>DescribeJobs</code> operations on the job. It is also recorded in the Batch activity logs.</p>
+    /// <p>This parameter has as limit of 1024 characters.</p>
     pub fn get_reason(&self) -> &::std::option::Option<::std::string::String> {
         &self.reason
     }

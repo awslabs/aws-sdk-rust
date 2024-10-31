@@ -37,6 +37,11 @@ pub fn ser_set_subnets_input_input_input(
     if let Some(var_14) = &input.ip_address_type {
         scope_13.string(var_14.as_str());
     }
+    #[allow(unused_mut)]
+    let mut scope_15 = writer.prefix("EnablePrefixForIpv6SourceNat");
+    if let Some(var_16) = &input.enable_prefix_for_ipv6_source_nat {
+        scope_15.string(var_16.as_str());
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

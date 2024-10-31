@@ -3353,6 +3353,21 @@ pub(crate) fn auto_ml_job_summary_correct_errors(
     builder
 }
 
+pub(crate) fn batch_delete_cluster_nodes_error_correct_errors(
+    mut builder: crate::types::builders::BatchDeleteClusterNodesErrorBuilder,
+) -> crate::types::builders::BatchDeleteClusterNodesErrorBuilder {
+    if builder.code.is_none() {
+        builder.code = "no value was set".parse::<crate::types::BatchDeleteClusterNodesErrorCode>().ok()
+    }
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
+    }
+    if builder.node_id.is_none() {
+        builder.node_id = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn batch_describe_model_package_error_correct_errors(
     mut builder: crate::types::builders::BatchDescribeModelPackageErrorBuilder,
 ) -> crate::types::builders::BatchDescribeModelPackageErrorBuilder {

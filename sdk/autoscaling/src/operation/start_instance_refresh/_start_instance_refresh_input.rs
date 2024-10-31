@@ -22,6 +22,8 @@ pub struct StartInstanceRefreshInput {
     /// <p>CloudWatch alarms</p></li>
     /// <li>
     /// <p>Skip matching</p></li>
+    /// <li>
+    /// <p>Bake time</p></li>
     /// </ul>
     pub preferences: ::std::option::Option<crate::types::RefreshPreferences>,
 }
@@ -51,6 +53,8 @@ impl StartInstanceRefreshInput {
     /// <p>CloudWatch alarms</p></li>
     /// <li>
     /// <p>Skip matching</p></li>
+    /// <li>
+    /// <p>Bake time</p></li>
     /// </ul>
     pub fn preferences(&self) -> ::std::option::Option<&crate::types::RefreshPreferences> {
         self.preferences.as_ref()
@@ -135,6 +139,8 @@ impl StartInstanceRefreshInputBuilder {
     /// <p>CloudWatch alarms</p></li>
     /// <li>
     /// <p>Skip matching</p></li>
+    /// <li>
+    /// <p>Bake time</p></li>
     /// </ul>
     pub fn preferences(mut self, input: crate::types::RefreshPreferences) -> Self {
         self.preferences = ::std::option::Option::Some(input);
@@ -150,6 +156,8 @@ impl StartInstanceRefreshInputBuilder {
     /// <p>CloudWatch alarms</p></li>
     /// <li>
     /// <p>Skip matching</p></li>
+    /// <li>
+    /// <p>Bake time</p></li>
     /// </ul>
     pub fn set_preferences(mut self, input: ::std::option::Option<crate::types::RefreshPreferences>) -> Self {
         self.preferences = input;
@@ -165,6 +173,8 @@ impl StartInstanceRefreshInputBuilder {
     /// <p>CloudWatch alarms</p></li>
     /// <li>
     /// <p>Skip matching</p></li>
+    /// <li>
+    /// <p>Bake time</p></li>
     /// </ul>
     pub fn get_preferences(&self) -> &::std::option::Option<crate::types::RefreshPreferences> {
         &self.preferences

@@ -24,5 +24,10 @@ pub fn ser_subnet_mapping(
     if let Some(var_8) = &input.ipv6_address {
         scope_7.string(var_8);
     }
+    #[allow(unused_mut)]
+    let mut scope_9 = writer.prefix("SourceNatIpv6Prefix");
+    if let Some(var_10) = &input.source_nat_ipv6_prefix {
+        scope_9.string(var_10);
+    }
     Ok(())
 }

@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateTrustStoreInput {
     /// <p>The name of the trust store.</p>
-    /// <p>This name must be unique per region and cannot be changed after creation.</p>
+    /// <p>This name must be unique per region and can't be changed after creation.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon S3 bucket for the ca certificates bundle.</p>
     pub ca_certificates_bundle_s3_bucket: ::std::option::Option<::std::string::String>,
@@ -17,7 +17,7 @@ pub struct CreateTrustStoreInput {
 }
 impl CreateTrustStoreInput {
     /// <p>The name of the trust store.</p>
-    /// <p>This name must be unique per region and cannot be changed after creation.</p>
+    /// <p>This name must be unique per region and can't be changed after creation.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -59,20 +59,20 @@ pub struct CreateTrustStoreInputBuilder {
 }
 impl CreateTrustStoreInputBuilder {
     /// <p>The name of the trust store.</p>
-    /// <p>This name must be unique per region and cannot be changed after creation.</p>
+    /// <p>This name must be unique per region and can't be changed after creation.</p>
     /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the trust store.</p>
-    /// <p>This name must be unique per region and cannot be changed after creation.</p>
+    /// <p>This name must be unique per region and can't be changed after creation.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The name of the trust store.</p>
-    /// <p>This name must be unique per region and cannot be changed after creation.</p>
+    /// <p>This name must be unique per region and can't be changed after creation.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }

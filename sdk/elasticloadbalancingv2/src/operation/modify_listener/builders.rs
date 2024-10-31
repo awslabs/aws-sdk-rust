@@ -124,31 +124,31 @@ impl ModifyListenerFluentBuilder {
     pub fn get_listener_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_listener_arn()
     }
-    /// <p>The port for connections from clients to the load balancer. You cannot specify a port for a Gateway Load Balancer.</p>
+    /// <p>The port for connections from clients to the load balancer. You can't specify a port for a Gateway Load Balancer.</p>
     pub fn port(mut self, input: i32) -> Self {
         self.inner = self.inner.port(input);
         self
     }
-    /// <p>The port for connections from clients to the load balancer. You cannot specify a port for a Gateway Load Balancer.</p>
+    /// <p>The port for connections from clients to the load balancer. You can't specify a port for a Gateway Load Balancer.</p>
     pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_port(input);
         self
     }
-    /// <p>The port for connections from clients to the load balancer. You cannot specify a port for a Gateway Load Balancer.</p>
+    /// <p>The port for connections from clients to the load balancer. You can't specify a port for a Gateway Load Balancer.</p>
     pub fn get_port(&self) -> &::std::option::Option<i32> {
         self.inner.get_port()
     }
-    /// <p>The protocol for connections from clients to the load balancer. Application Load Balancers support the HTTP and HTTPS protocols. Network Load Balancers support the TCP, TLS, UDP, and TCP_UDP protocols. You can’t change the protocol to UDP or TCP_UDP if dual-stack mode is enabled. You cannot specify a protocol for a Gateway Load Balancer.</p>
+    /// <p>The protocol for connections from clients to the load balancer. Application Load Balancers support the HTTP and HTTPS protocols. Network Load Balancers support the TCP, TLS, UDP, and TCP_UDP protocols. You can’t change the protocol to UDP or TCP_UDP if dual-stack mode is enabled. You can't specify a protocol for a Gateway Load Balancer.</p>
     pub fn protocol(mut self, input: crate::types::ProtocolEnum) -> Self {
         self.inner = self.inner.protocol(input);
         self
     }
-    /// <p>The protocol for connections from clients to the load balancer. Application Load Balancers support the HTTP and HTTPS protocols. Network Load Balancers support the TCP, TLS, UDP, and TCP_UDP protocols. You can’t change the protocol to UDP or TCP_UDP if dual-stack mode is enabled. You cannot specify a protocol for a Gateway Load Balancer.</p>
+    /// <p>The protocol for connections from clients to the load balancer. Application Load Balancers support the HTTP and HTTPS protocols. Network Load Balancers support the TCP, TLS, UDP, and TCP_UDP protocols. You can’t change the protocol to UDP or TCP_UDP if dual-stack mode is enabled. You can't specify a protocol for a Gateway Load Balancer.</p>
     pub fn set_protocol(mut self, input: ::std::option::Option<crate::types::ProtocolEnum>) -> Self {
         self.inner = self.inner.set_protocol(input);
         self
     }
-    /// <p>The protocol for connections from clients to the load balancer. Application Load Balancers support the HTTP and HTTPS protocols. Network Load Balancers support the TCP, TLS, UDP, and TCP_UDP protocols. You can’t change the protocol to UDP or TCP_UDP if dual-stack mode is enabled. You cannot specify a protocol for a Gateway Load Balancer.</p>
+    /// <p>The protocol for connections from clients to the load balancer. Application Load Balancers support the HTTP and HTTPS protocols. Network Load Balancers support the TCP, TLS, UDP, and TCP_UDP protocols. You can’t change the protocol to UDP or TCP_UDP if dual-stack mode is enabled. You can't specify a protocol for a Gateway Load Balancer.</p>
     pub fn get_protocol(&self) -> &::std::option::Option<crate::types::ProtocolEnum> {
         self.inner.get_protocol()
     }

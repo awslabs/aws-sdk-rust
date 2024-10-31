@@ -6,11 +6,12 @@
 pub struct ScraperDescription {
     /// <p>(Optional) A name associated with the scraper.</p>
     pub alias: ::std::option::Option<::std::string::String>,
-    /// <p>The ID of the scraper.</p>
+    /// <p>The ID of the scraper. For example, <code>s-example1-1234-abcd-5678-ef9012abcd34</code>.</p>
     pub scraper_id: ::std::string::String,
-    /// <p>The Amazon Resource Name (ARN) of the scraper.</p>
+    /// <p>The Amazon Resource Name (ARN) of the scraper. For example, <code>arn:aws:aps:&lt;region&gt;:123456798012:scraper/s-example1-1234-abcd-5678-ef9012abcd34</code>.</p>
     pub arn: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the IAM role that provides permissions for the scraper to discover and collect metrics on your behalf.</p>
+    /// <p>For example, <code>arn:aws:iam::123456789012:role/service-role/AmazonGrafanaServiceRole-12example</code>.</p>
     pub role_arn: ::std::string::String,
     /// <p>A structure that contains the current status of the scraper.</p>
     pub status: ::std::option::Option<crate::types::ScraperStatus>,
@@ -22,7 +23,7 @@ pub struct ScraperDescription {
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>If there is a failure, the reason for the failure.</p>
     pub status_reason: ::std::option::Option<::std::string::String>,
-    /// <p>The configuration file in use by the scraper.</p>
+    /// <p>The configuration in use by the scraper.</p>
     pub scrape_configuration: ::std::option::Option<crate::types::ScrapeConfiguration>,
     /// <p>The Amazon EKS cluster from which the scraper collects metrics.</p>
     pub source: ::std::option::Option<crate::types::Source>,
@@ -34,17 +35,18 @@ impl ScraperDescription {
     pub fn alias(&self) -> ::std::option::Option<&str> {
         self.alias.as_deref()
     }
-    /// <p>The ID of the scraper.</p>
+    /// <p>The ID of the scraper. For example, <code>s-example1-1234-abcd-5678-ef9012abcd34</code>.</p>
     pub fn scraper_id(&self) -> &str {
         use std::ops::Deref;
         self.scraper_id.deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the scraper.</p>
+    /// <p>The Amazon Resource Name (ARN) of the scraper. For example, <code>arn:aws:aps:&lt;region&gt;:123456798012:scraper/s-example1-1234-abcd-5678-ef9012abcd34</code>.</p>
     pub fn arn(&self) -> &str {
         use std::ops::Deref;
         self.arn.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that provides permissions for the scraper to discover and collect metrics on your behalf.</p>
+    /// <p>For example, <code>arn:aws:iam::123456789012:role/service-role/AmazonGrafanaServiceRole-12example</code>.</p>
     pub fn role_arn(&self) -> &str {
         use std::ops::Deref;
         self.role_arn.deref()
@@ -69,7 +71,7 @@ impl ScraperDescription {
     pub fn status_reason(&self) -> ::std::option::Option<&str> {
         self.status_reason.as_deref()
     }
-    /// <p>The configuration file in use by the scraper.</p>
+    /// <p>The configuration in use by the scraper.</p>
     pub fn scrape_configuration(&self) -> ::std::option::Option<&crate::types::ScrapeConfiguration> {
         self.scrape_configuration.as_ref()
     }
@@ -121,48 +123,51 @@ impl ScraperDescriptionBuilder {
     pub fn get_alias(&self) -> &::std::option::Option<::std::string::String> {
         &self.alias
     }
-    /// <p>The ID of the scraper.</p>
+    /// <p>The ID of the scraper. For example, <code>s-example1-1234-abcd-5678-ef9012abcd34</code>.</p>
     /// This field is required.
     pub fn scraper_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.scraper_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the scraper.</p>
+    /// <p>The ID of the scraper. For example, <code>s-example1-1234-abcd-5678-ef9012abcd34</code>.</p>
     pub fn set_scraper_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.scraper_id = input;
         self
     }
-    /// <p>The ID of the scraper.</p>
+    /// <p>The ID of the scraper. For example, <code>s-example1-1234-abcd-5678-ef9012abcd34</code>.</p>
     pub fn get_scraper_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.scraper_id
     }
-    /// <p>The Amazon Resource Name (ARN) of the scraper.</p>
+    /// <p>The Amazon Resource Name (ARN) of the scraper. For example, <code>arn:aws:aps:&lt;region&gt;:123456798012:scraper/s-example1-1234-abcd-5678-ef9012abcd34</code>.</p>
     /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the scraper.</p>
+    /// <p>The Amazon Resource Name (ARN) of the scraper. For example, <code>arn:aws:aps:&lt;region&gt;:123456798012:scraper/s-example1-1234-abcd-5678-ef9012abcd34</code>.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the scraper.</p>
+    /// <p>The Amazon Resource Name (ARN) of the scraper. For example, <code>arn:aws:aps:&lt;region&gt;:123456798012:scraper/s-example1-1234-abcd-5678-ef9012abcd34</code>.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that provides permissions for the scraper to discover and collect metrics on your behalf.</p>
+    /// <p>For example, <code>arn:aws:iam::123456789012:role/service-role/AmazonGrafanaServiceRole-12example</code>.</p>
     /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that provides permissions for the scraper to discover and collect metrics on your behalf.</p>
+    /// <p>For example, <code>arn:aws:iam::123456789012:role/service-role/AmazonGrafanaServiceRole-12example</code>.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that provides permissions for the scraper to discover and collect metrics on your behalf.</p>
+    /// <p>For example, <code>arn:aws:iam::123456789012:role/service-role/AmazonGrafanaServiceRole-12example</code>.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.role_arn
     }
@@ -245,18 +250,18 @@ impl ScraperDescriptionBuilder {
     pub fn get_status_reason(&self) -> &::std::option::Option<::std::string::String> {
         &self.status_reason
     }
-    /// <p>The configuration file in use by the scraper.</p>
+    /// <p>The configuration in use by the scraper.</p>
     /// This field is required.
     pub fn scrape_configuration(mut self, input: crate::types::ScrapeConfiguration) -> Self {
         self.scrape_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The configuration file in use by the scraper.</p>
+    /// <p>The configuration in use by the scraper.</p>
     pub fn set_scrape_configuration(mut self, input: ::std::option::Option<crate::types::ScrapeConfiguration>) -> Self {
         self.scrape_configuration = input;
         self
     }
-    /// <p>The configuration file in use by the scraper.</p>
+    /// <p>The configuration in use by the scraper.</p>
     pub fn get_scrape_configuration(&self) -> &::std::option::Option<crate::types::ScrapeConfiguration> {
         &self.scrape_configuration
     }

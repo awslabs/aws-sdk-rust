@@ -194,17 +194,17 @@ impl UpdateJobQueueFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_job_state_time_limit_actions`](Self::set_job_state_time_limit_actions).
     ///
-    /// <p>The set of actions that Batch perform on jobs that remain at the head of the job queue in the specified state longer than specified times. Batch will perform each action after <code>maxTimeSeconds</code> has passed.</p>
+    /// <p>The set of actions that Batch perform on jobs that remain at the head of the job queue in the specified state longer than specified times. Batch will perform each action after <code>maxTimeSeconds</code> has passed. (<b>Note</b>: The minimum value for maxTimeSeconds is 600 (10 minutes) and its maximum value is 86,400 (24 hours).)</p>
     pub fn job_state_time_limit_actions(mut self, input: crate::types::JobStateTimeLimitAction) -> Self {
         self.inner = self.inner.job_state_time_limit_actions(input);
         self
     }
-    /// <p>The set of actions that Batch perform on jobs that remain at the head of the job queue in the specified state longer than specified times. Batch will perform each action after <code>maxTimeSeconds</code> has passed.</p>
+    /// <p>The set of actions that Batch perform on jobs that remain at the head of the job queue in the specified state longer than specified times. Batch will perform each action after <code>maxTimeSeconds</code> has passed. (<b>Note</b>: The minimum value for maxTimeSeconds is 600 (10 minutes) and its maximum value is 86,400 (24 hours).)</p>
     pub fn set_job_state_time_limit_actions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::JobStateTimeLimitAction>>) -> Self {
         self.inner = self.inner.set_job_state_time_limit_actions(input);
         self
     }
-    /// <p>The set of actions that Batch perform on jobs that remain at the head of the job queue in the specified state longer than specified times. Batch will perform each action after <code>maxTimeSeconds</code> has passed.</p>
+    /// <p>The set of actions that Batch perform on jobs that remain at the head of the job queue in the specified state longer than specified times. Batch will perform each action after <code>maxTimeSeconds</code> has passed. (<b>Note</b>: The minimum value for maxTimeSeconds is 600 (10 minutes) and its maximum value is 86,400 (24 hours).)</p>
     pub fn get_job_state_time_limit_actions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::JobStateTimeLimitAction>> {
         self.inner.get_job_state_time_limit_actions()
     }

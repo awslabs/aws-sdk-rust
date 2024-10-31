@@ -9,20 +9,26 @@ pub fn ser_template(
     if let Some(var_2) = &input.template_arn {
         object.key("TemplateArn").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.template_data {
-        object.key("TemplateData").string(var_3.as_str());
+    if let Some(var_3) = &input.template_content {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("TemplateContent").start_object();
+        crate::protocol_serde::shape_email_template_content::ser_email_template_content(&mut object_4, var_3)?;
+        object_4.finish();
     }
-    if let Some(var_4) = &input.headers {
-        let mut array_5 = object.key("Headers").start_array();
-        for item_6 in var_4 {
+    if let Some(var_5) = &input.template_data {
+        object.key("TemplateData").string(var_5.as_str());
+    }
+    if let Some(var_6) = &input.headers {
+        let mut array_7 = object.key("Headers").start_array();
+        for item_8 in var_6 {
             {
                 #[allow(unused_mut)]
-                let mut object_7 = array_5.value().start_object();
-                crate::protocol_serde::shape_message_header::ser_message_header(&mut object_7, item_6)?;
-                object_7.finish();
+                let mut object_9 = array_7.value().start_object();
+                crate::protocol_serde::shape_message_header::ser_message_header(&mut object_9, item_8)?;
+                object_9.finish();
             }
         }
-        array_5.finish();
+        array_7.finish();
     }
     Ok(())
 }

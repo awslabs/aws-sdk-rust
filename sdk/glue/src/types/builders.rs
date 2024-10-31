@@ -619,6 +619,8 @@ pub use crate::types::_o_auth2_properties::OAuth2PropertiesBuilder;
 
 pub use crate::types::_get_connections_filter::GetConnectionsFilterBuilder;
 
+pub use crate::types::_column_statistics_task_settings::ColumnStatisticsTaskSettingsBuilder;
+
 pub use crate::types::_column_statistics_task_run::ColumnStatisticsTaskRunBuilder;
 
 pub use crate::types::_column_error::ColumnErrorBuilder;

@@ -76,6 +76,9 @@ pub mod create_blueprint;
 /// Types for the `CreateClassifier` operation.
 pub mod create_classifier;
 
+/// Types for the `CreateColumnStatisticsTaskSettings` operation.
+pub mod create_column_statistics_task_settings;
+
 /// Types for the `CreateConnection` operation.
 pub mod create_connection;
 
@@ -150,6 +153,9 @@ pub mod delete_column_statistics_for_partition;
 
 /// Types for the `DeleteColumnStatisticsForTable` operation.
 pub mod delete_column_statistics_for_table;
+
+/// Types for the `DeleteColumnStatisticsTaskSettings` operation.
+pub mod delete_column_statistics_task_settings;
 
 /// Types for the `DeleteConnection` operation.
 pub mod delete_connection;
@@ -249,6 +255,9 @@ pub mod get_column_statistics_task_run;
 
 /// Types for the `GetColumnStatisticsTaskRuns` operation.
 pub mod get_column_statistics_task_runs;
+
+/// Types for the `GetColumnStatisticsTaskSettings` operation.
+pub mod get_column_statistics_task_settings;
 
 /// Types for the `GetConnection` operation.
 pub mod get_connection;
@@ -547,6 +556,9 @@ pub mod start_blueprint_run;
 /// Types for the `StartColumnStatisticsTaskRun` operation.
 pub mod start_column_statistics_task_run;
 
+/// Types for the `StartColumnStatisticsTaskRunSchedule` operation.
+pub mod start_column_statistics_task_run_schedule;
+
 /// Types for the `StartCrawler` operation.
 pub mod start_crawler;
 
@@ -583,6 +595,9 @@ pub mod start_workflow_run;
 /// Types for the `StopColumnStatisticsTaskRun` operation.
 pub mod stop_column_statistics_task_run;
 
+/// Types for the `StopColumnStatisticsTaskRunSchedule` operation.
+pub mod stop_column_statistics_task_run_schedule;
+
 /// Types for the `StopCrawler` operation.
 pub mod stop_crawler;
 
@@ -618,6 +633,9 @@ pub mod update_column_statistics_for_partition;
 
 /// Types for the `UpdateColumnStatisticsForTable` operation.
 pub mod update_column_statistics_for_table;
+
+/// Types for the `UpdateColumnStatisticsTaskSettings` operation.
+pub mod update_column_statistics_task_settings;
 
 /// Types for the `UpdateConnection` operation.
 pub mod update_connection;

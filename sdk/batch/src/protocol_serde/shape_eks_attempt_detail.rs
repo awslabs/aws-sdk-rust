@@ -38,6 +38,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "podNamespace" => {
+                            builder = builder.set_pod_namespace(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "nodeName" => {
                             builder = builder.set_node_name(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

@@ -60,7 +60,7 @@ pub struct TargetGroupAttribute {
     /// <li>
     /// <p><code>deregistration_delay.connection_termination.enabled</code> - Indicates whether the load balancer terminates connections at the end of the deregistration timeout. The value is <code>true</code> or <code>false</code>. For new UDP/TCP_UDP target groups the default is <code>true</code>. Otherwise, the default is <code>false</code>.</p></li>
     /// <li>
-    /// <p><code>preserve_client_ip.enabled</code> - Indicates whether client IP preservation is enabled. The value is <code>true</code> or <code>false</code>. The default is disabled if the target group type is IP address and the target group protocol is TCP or TLS. Otherwise, the default is enabled. Client IP preservation cannot be disabled for UDP and TCP_UDP target groups.</p></li>
+    /// <p><code>preserve_client_ip.enabled</code> - Indicates whether client IP preservation is enabled. The value is <code>true</code> or <code>false</code>. The default is disabled if the target group type is IP address and the target group protocol is TCP or TLS. Otherwise, the default is enabled. Client IP preservation can't be disabled for UDP and TCP_UDP target groups.</p></li>
     /// <li>
     /// <p><code>proxy_protocol_v2.enabled</code> - Indicates whether Proxy Protocol version 2 is enabled. The value is <code>true</code> or <code>false</code>. The default is <code>false</code>.</p></li>
     /// <li>
@@ -74,7 +74,7 @@ pub struct TargetGroupAttribute {
     /// <li>
     /// <p><code>target_failover.on_deregistration</code> - Indicates how the Gateway Load Balancer handles existing flows when a target is deregistered. The possible values are <code>rebalance</code> and <code>no_rebalance</code>. The default is <code>no_rebalance</code>. The two attributes (<code>target_failover.on_deregistration</code> and <code>target_failover.on_unhealthy</code>) can't be set independently. The value you set for both attributes must be the same.</p></li>
     /// <li>
-    /// <p><code>target_failover.on_unhealthy</code> - Indicates how the Gateway Load Balancer handles existing flows when a target is unhealthy. The possible values are <code>rebalance</code> and <code>no_rebalance</code>. The default is <code>no_rebalance</code>. The two attributes (<code>target_failover.on_deregistration</code> and <code>target_failover.on_unhealthy</code>) cannot be set independently. The value you set for both attributes must be the same.</p></li>
+    /// <p><code>target_failover.on_unhealthy</code> - Indicates how the Gateway Load Balancer handles existing flows when a target is unhealthy. The possible values are <code>rebalance</code> and <code>no_rebalance</code>. The default is <code>no_rebalance</code>. The two attributes (<code>target_failover.on_deregistration</code> and <code>target_failover.on_unhealthy</code>) can't be set independently. The value you set for both attributes must be the same.</p></li>
     /// </ul>
     pub key: ::std::option::Option<::std::string::String>,
     /// <p>The value of the attribute.</p>
@@ -137,7 +137,7 @@ impl TargetGroupAttribute {
     /// <li>
     /// <p><code>deregistration_delay.connection_termination.enabled</code> - Indicates whether the load balancer terminates connections at the end of the deregistration timeout. The value is <code>true</code> or <code>false</code>. For new UDP/TCP_UDP target groups the default is <code>true</code>. Otherwise, the default is <code>false</code>.</p></li>
     /// <li>
-    /// <p><code>preserve_client_ip.enabled</code> - Indicates whether client IP preservation is enabled. The value is <code>true</code> or <code>false</code>. The default is disabled if the target group type is IP address and the target group protocol is TCP or TLS. Otherwise, the default is enabled. Client IP preservation cannot be disabled for UDP and TCP_UDP target groups.</p></li>
+    /// <p><code>preserve_client_ip.enabled</code> - Indicates whether client IP preservation is enabled. The value is <code>true</code> or <code>false</code>. The default is disabled if the target group type is IP address and the target group protocol is TCP or TLS. Otherwise, the default is enabled. Client IP preservation can't be disabled for UDP and TCP_UDP target groups.</p></li>
     /// <li>
     /// <p><code>proxy_protocol_v2.enabled</code> - Indicates whether Proxy Protocol version 2 is enabled. The value is <code>true</code> or <code>false</code>. The default is <code>false</code>.</p></li>
     /// <li>
@@ -151,7 +151,7 @@ impl TargetGroupAttribute {
     /// <li>
     /// <p><code>target_failover.on_deregistration</code> - Indicates how the Gateway Load Balancer handles existing flows when a target is deregistered. The possible values are <code>rebalance</code> and <code>no_rebalance</code>. The default is <code>no_rebalance</code>. The two attributes (<code>target_failover.on_deregistration</code> and <code>target_failover.on_unhealthy</code>) can't be set independently. The value you set for both attributes must be the same.</p></li>
     /// <li>
-    /// <p><code>target_failover.on_unhealthy</code> - Indicates how the Gateway Load Balancer handles existing flows when a target is unhealthy. The possible values are <code>rebalance</code> and <code>no_rebalance</code>. The default is <code>no_rebalance</code>. The two attributes (<code>target_failover.on_deregistration</code> and <code>target_failover.on_unhealthy</code>) cannot be set independently. The value you set for both attributes must be the same.</p></li>
+    /// <p><code>target_failover.on_unhealthy</code> - Indicates how the Gateway Load Balancer handles existing flows when a target is unhealthy. The possible values are <code>rebalance</code> and <code>no_rebalance</code>. The default is <code>no_rebalance</code>. The two attributes (<code>target_failover.on_deregistration</code> and <code>target_failover.on_unhealthy</code>) can't be set independently. The value you set for both attributes must be the same.</p></li>
     /// </ul>
     pub fn key(&self) -> ::std::option::Option<&str> {
         self.key.as_deref()
@@ -232,7 +232,7 @@ impl TargetGroupAttributeBuilder {
     /// <li>
     /// <p><code>deregistration_delay.connection_termination.enabled</code> - Indicates whether the load balancer terminates connections at the end of the deregistration timeout. The value is <code>true</code> or <code>false</code>. For new UDP/TCP_UDP target groups the default is <code>true</code>. Otherwise, the default is <code>false</code>.</p></li>
     /// <li>
-    /// <p><code>preserve_client_ip.enabled</code> - Indicates whether client IP preservation is enabled. The value is <code>true</code> or <code>false</code>. The default is disabled if the target group type is IP address and the target group protocol is TCP or TLS. Otherwise, the default is enabled. Client IP preservation cannot be disabled for UDP and TCP_UDP target groups.</p></li>
+    /// <p><code>preserve_client_ip.enabled</code> - Indicates whether client IP preservation is enabled. The value is <code>true</code> or <code>false</code>. The default is disabled if the target group type is IP address and the target group protocol is TCP or TLS. Otherwise, the default is enabled. Client IP preservation can't be disabled for UDP and TCP_UDP target groups.</p></li>
     /// <li>
     /// <p><code>proxy_protocol_v2.enabled</code> - Indicates whether Proxy Protocol version 2 is enabled. The value is <code>true</code> or <code>false</code>. The default is <code>false</code>.</p></li>
     /// <li>
@@ -246,7 +246,7 @@ impl TargetGroupAttributeBuilder {
     /// <li>
     /// <p><code>target_failover.on_deregistration</code> - Indicates how the Gateway Load Balancer handles existing flows when a target is deregistered. The possible values are <code>rebalance</code> and <code>no_rebalance</code>. The default is <code>no_rebalance</code>. The two attributes (<code>target_failover.on_deregistration</code> and <code>target_failover.on_unhealthy</code>) can't be set independently. The value you set for both attributes must be the same.</p></li>
     /// <li>
-    /// <p><code>target_failover.on_unhealthy</code> - Indicates how the Gateway Load Balancer handles existing flows when a target is unhealthy. The possible values are <code>rebalance</code> and <code>no_rebalance</code>. The default is <code>no_rebalance</code>. The two attributes (<code>target_failover.on_deregistration</code> and <code>target_failover.on_unhealthy</code>) cannot be set independently. The value you set for both attributes must be the same.</p></li>
+    /// <p><code>target_failover.on_unhealthy</code> - Indicates how the Gateway Load Balancer handles existing flows when a target is unhealthy. The possible values are <code>rebalance</code> and <code>no_rebalance</code>. The default is <code>no_rebalance</code>. The two attributes (<code>target_failover.on_deregistration</code> and <code>target_failover.on_unhealthy</code>) can't be set independently. The value you set for both attributes must be the same.</p></li>
     /// </ul>
     pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key = ::std::option::Option::Some(input.into());
@@ -308,7 +308,7 @@ impl TargetGroupAttributeBuilder {
     /// <li>
     /// <p><code>deregistration_delay.connection_termination.enabled</code> - Indicates whether the load balancer terminates connections at the end of the deregistration timeout. The value is <code>true</code> or <code>false</code>. For new UDP/TCP_UDP target groups the default is <code>true</code>. Otherwise, the default is <code>false</code>.</p></li>
     /// <li>
-    /// <p><code>preserve_client_ip.enabled</code> - Indicates whether client IP preservation is enabled. The value is <code>true</code> or <code>false</code>. The default is disabled if the target group type is IP address and the target group protocol is TCP or TLS. Otherwise, the default is enabled. Client IP preservation cannot be disabled for UDP and TCP_UDP target groups.</p></li>
+    /// <p><code>preserve_client_ip.enabled</code> - Indicates whether client IP preservation is enabled. The value is <code>true</code> or <code>false</code>. The default is disabled if the target group type is IP address and the target group protocol is TCP or TLS. Otherwise, the default is enabled. Client IP preservation can't be disabled for UDP and TCP_UDP target groups.</p></li>
     /// <li>
     /// <p><code>proxy_protocol_v2.enabled</code> - Indicates whether Proxy Protocol version 2 is enabled. The value is <code>true</code> or <code>false</code>. The default is <code>false</code>.</p></li>
     /// <li>
@@ -322,7 +322,7 @@ impl TargetGroupAttributeBuilder {
     /// <li>
     /// <p><code>target_failover.on_deregistration</code> - Indicates how the Gateway Load Balancer handles existing flows when a target is deregistered. The possible values are <code>rebalance</code> and <code>no_rebalance</code>. The default is <code>no_rebalance</code>. The two attributes (<code>target_failover.on_deregistration</code> and <code>target_failover.on_unhealthy</code>) can't be set independently. The value you set for both attributes must be the same.</p></li>
     /// <li>
-    /// <p><code>target_failover.on_unhealthy</code> - Indicates how the Gateway Load Balancer handles existing flows when a target is unhealthy. The possible values are <code>rebalance</code> and <code>no_rebalance</code>. The default is <code>no_rebalance</code>. The two attributes (<code>target_failover.on_deregistration</code> and <code>target_failover.on_unhealthy</code>) cannot be set independently. The value you set for both attributes must be the same.</p></li>
+    /// <p><code>target_failover.on_unhealthy</code> - Indicates how the Gateway Load Balancer handles existing flows when a target is unhealthy. The possible values are <code>rebalance</code> and <code>no_rebalance</code>. The default is <code>no_rebalance</code>. The two attributes (<code>target_failover.on_deregistration</code> and <code>target_failover.on_unhealthy</code>) can't be set independently. The value you set for both attributes must be the same.</p></li>
     /// </ul>
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key = input;
@@ -384,7 +384,7 @@ impl TargetGroupAttributeBuilder {
     /// <li>
     /// <p><code>deregistration_delay.connection_termination.enabled</code> - Indicates whether the load balancer terminates connections at the end of the deregistration timeout. The value is <code>true</code> or <code>false</code>. For new UDP/TCP_UDP target groups the default is <code>true</code>. Otherwise, the default is <code>false</code>.</p></li>
     /// <li>
-    /// <p><code>preserve_client_ip.enabled</code> - Indicates whether client IP preservation is enabled. The value is <code>true</code> or <code>false</code>. The default is disabled if the target group type is IP address and the target group protocol is TCP or TLS. Otherwise, the default is enabled. Client IP preservation cannot be disabled for UDP and TCP_UDP target groups.</p></li>
+    /// <p><code>preserve_client_ip.enabled</code> - Indicates whether client IP preservation is enabled. The value is <code>true</code> or <code>false</code>. The default is disabled if the target group type is IP address and the target group protocol is TCP or TLS. Otherwise, the default is enabled. Client IP preservation can't be disabled for UDP and TCP_UDP target groups.</p></li>
     /// <li>
     /// <p><code>proxy_protocol_v2.enabled</code> - Indicates whether Proxy Protocol version 2 is enabled. The value is <code>true</code> or <code>false</code>. The default is <code>false</code>.</p></li>
     /// <li>
@@ -398,7 +398,7 @@ impl TargetGroupAttributeBuilder {
     /// <li>
     /// <p><code>target_failover.on_deregistration</code> - Indicates how the Gateway Load Balancer handles existing flows when a target is deregistered. The possible values are <code>rebalance</code> and <code>no_rebalance</code>. The default is <code>no_rebalance</code>. The two attributes (<code>target_failover.on_deregistration</code> and <code>target_failover.on_unhealthy</code>) can't be set independently. The value you set for both attributes must be the same.</p></li>
     /// <li>
-    /// <p><code>target_failover.on_unhealthy</code> - Indicates how the Gateway Load Balancer handles existing flows when a target is unhealthy. The possible values are <code>rebalance</code> and <code>no_rebalance</code>. The default is <code>no_rebalance</code>. The two attributes (<code>target_failover.on_deregistration</code> and <code>target_failover.on_unhealthy</code>) cannot be set independently. The value you set for both attributes must be the same.</p></li>
+    /// <p><code>target_failover.on_unhealthy</code> - Indicates how the Gateway Load Balancer handles existing flows when a target is unhealthy. The possible values are <code>rebalance</code> and <code>no_rebalance</code>. The default is <code>no_rebalance</code>. The two attributes (<code>target_failover.on_deregistration</code> and <code>target_failover.on_unhealthy</code>) can't be set independently. The value you set for both attributes must be the same.</p></li>
     /// </ul>
     pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
         &self.key

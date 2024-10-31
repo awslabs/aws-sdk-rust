@@ -29,6 +29,8 @@ pub(crate) mod shape_add_tags;
 
 pub(crate) mod shape_associate_trial_component;
 
+pub(crate) mod shape_batch_delete_cluster_nodes;
+
 pub(crate) mod shape_batch_describe_model_package;
 
 pub(crate) mod shape_create_action;
@@ -706,6 +708,8 @@ pub(crate) mod shape_add_association_input;
 pub(crate) mod shape_add_tags_input;
 
 pub(crate) mod shape_associate_trial_component_input;
+
+pub(crate) mod shape_batch_delete_cluster_nodes_input;
 
 pub(crate) mod shape_batch_describe_model_package_input;
 
@@ -1445,6 +1449,8 @@ pub(crate) mod shape_autotune;
 
 pub(crate) mod shape_batch_data_capture_config;
 
+pub(crate) mod shape_batch_delete_cluster_nodes_error_list;
+
 pub(crate) mod shape_batch_describe_model_package_error_map;
 
 pub(crate) mod shape_channel;
@@ -1456,6 +1462,8 @@ pub(crate) mod shape_cluster_instance_group_details_list;
 pub(crate) mod shape_cluster_instance_group_specification;
 
 pub(crate) mod shape_cluster_node_details;
+
+pub(crate) mod shape_cluster_node_ids;
 
 pub(crate) mod shape_cluster_node_summaries;
 
@@ -2112,6 +2120,8 @@ pub(crate) mod shape_auto_ml_partial_failure_reason;
 pub(crate) mod shape_auto_ml_problem_type_resolved_attributes;
 
 pub(crate) mod shape_auto_rollback_config;
+
+pub(crate) mod shape_batch_delete_cluster_nodes_error;
 
 pub(crate) mod shape_batch_describe_model_package_error;
 

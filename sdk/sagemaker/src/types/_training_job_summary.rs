@@ -16,6 +16,8 @@ pub struct TrainingJobSummary {
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The status of the training job.</p>
     pub training_job_status: ::std::option::Option<crate::types::TrainingJobStatus>,
+    /// <p>The secondary status of the training job.</p>
+    pub secondary_status: ::std::option::Option<crate::types::SecondaryStatus>,
     /// <p>The status of the warm pool associated with the training job.</p>
     pub warm_pool_status: ::std::option::Option<crate::types::WarmPoolStatus>,
 }
@@ -44,6 +46,10 @@ impl TrainingJobSummary {
     pub fn training_job_status(&self) -> ::std::option::Option<&crate::types::TrainingJobStatus> {
         self.training_job_status.as_ref()
     }
+    /// <p>The secondary status of the training job.</p>
+    pub fn secondary_status(&self) -> ::std::option::Option<&crate::types::SecondaryStatus> {
+        self.secondary_status.as_ref()
+    }
     /// <p>The status of the warm pool associated with the training job.</p>
     pub fn warm_pool_status(&self) -> ::std::option::Option<&crate::types::WarmPoolStatus> {
         self.warm_pool_status.as_ref()
@@ -66,6 +72,7 @@ pub struct TrainingJobSummaryBuilder {
     pub(crate) training_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) training_job_status: ::std::option::Option<crate::types::TrainingJobStatus>,
+    pub(crate) secondary_status: ::std::option::Option<crate::types::SecondaryStatus>,
     pub(crate) warm_pool_status: ::std::option::Option<crate::types::WarmPoolStatus>,
 }
 impl TrainingJobSummaryBuilder {
@@ -157,6 +164,20 @@ impl TrainingJobSummaryBuilder {
     pub fn get_training_job_status(&self) -> &::std::option::Option<crate::types::TrainingJobStatus> {
         &self.training_job_status
     }
+    /// <p>The secondary status of the training job.</p>
+    pub fn secondary_status(mut self, input: crate::types::SecondaryStatus) -> Self {
+        self.secondary_status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The secondary status of the training job.</p>
+    pub fn set_secondary_status(mut self, input: ::std::option::Option<crate::types::SecondaryStatus>) -> Self {
+        self.secondary_status = input;
+        self
+    }
+    /// <p>The secondary status of the training job.</p>
+    pub fn get_secondary_status(&self) -> &::std::option::Option<crate::types::SecondaryStatus> {
+        &self.secondary_status
+    }
     /// <p>The status of the warm pool associated with the training job.</p>
     pub fn warm_pool_status(mut self, input: crate::types::WarmPoolStatus) -> Self {
         self.warm_pool_status = ::std::option::Option::Some(input);
@@ -180,6 +201,7 @@ impl TrainingJobSummaryBuilder {
             training_end_time: self.training_end_time,
             last_modified_time: self.last_modified_time,
             training_job_status: self.training_job_status,
+            secondary_status: self.secondary_status,
             warm_pool_status: self.warm_pool_status,
         }
     }

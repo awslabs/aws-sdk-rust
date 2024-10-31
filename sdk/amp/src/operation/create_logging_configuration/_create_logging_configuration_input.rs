@@ -6,7 +6,7 @@
 pub struct CreateLoggingConfigurationInput {
     /// <p>The ID of the workspace to create the logging configuration for.</p>
     pub workspace_id: ::std::option::Option<::std::string::String>,
-    /// <p>The ARN of the CloudWatch log group to which the vended log data will be published. This log group must exist prior to calling this API.</p>
+    /// <p>The ARN of the CloudWatch log group to which the vended log data will be published. This log group must exist prior to calling this operation.</p>
     pub log_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier that you can provide to ensure the idempotency of the request. Case-sensitive.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
@@ -16,7 +16,7 @@ impl CreateLoggingConfigurationInput {
     pub fn workspace_id(&self) -> ::std::option::Option<&str> {
         self.workspace_id.as_deref()
     }
-    /// <p>The ARN of the CloudWatch log group to which the vended log data will be published. This log group must exist prior to calling this API.</p>
+    /// <p>The ARN of the CloudWatch log group to which the vended log data will be published. This log group must exist prior to calling this operation.</p>
     pub fn log_group_arn(&self) -> ::std::option::Option<&str> {
         self.log_group_arn.as_deref()
     }
@@ -56,18 +56,18 @@ impl CreateLoggingConfigurationInputBuilder {
     pub fn get_workspace_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.workspace_id
     }
-    /// <p>The ARN of the CloudWatch log group to which the vended log data will be published. This log group must exist prior to calling this API.</p>
+    /// <p>The ARN of the CloudWatch log group to which the vended log data will be published. This log group must exist prior to calling this operation.</p>
     /// This field is required.
     pub fn log_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.log_group_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the CloudWatch log group to which the vended log data will be published. This log group must exist prior to calling this API.</p>
+    /// <p>The ARN of the CloudWatch log group to which the vended log data will be published. This log group must exist prior to calling this operation.</p>
     pub fn set_log_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.log_group_arn = input;
         self
     }
-    /// <p>The ARN of the CloudWatch log group to which the vended log data will be published. This log group must exist prior to calling this API.</p>
+    /// <p>The ARN of the CloudWatch log group to which the vended log data will be published. This log group must exist prior to calling this operation.</p>
     pub fn get_log_group_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.log_group_arn
     }

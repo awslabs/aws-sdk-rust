@@ -22,11 +22,10 @@ impl crate::operation::create_scraper::builders::CreateScraperInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateScraper`.
 ///
-/// <p>The <code>CreateScraper</code> operation creates a scraper to collect metrics. A scraper pulls metrics from Prometheus-compatible sources within an Amazon EKS cluster, and sends them to your Amazon Managed Service for Prometheus workspace. You can configure the scraper to control what metrics are collected, and what transformations are applied prior to sending them to your workspace.</p>
-/// <p>If needed, an IAM role will be created for you that gives Amazon Managed Service for Prometheus access to the metrics in your cluster. For more information, see <a href="https://docs.aws.amazon.com/prometheus/latest/userguide/using-service-linked-roles.html#using-service-linked-roles-prom-scraper">Using roles for scraping metrics from EKS</a> in the <i>Amazon Managed Service for Prometheus User Guide</i>.</p>
-/// <p>You cannot update a scraper. If you want to change the configuration of the scraper, create a new scraper and delete the old one.</p>
-/// <p>The <code>scrapeConfiguration</code> parameter contains the base64-encoded version of the YAML configuration file.</p><note>
-/// <p>For more information about collectors, including what metrics are collected, and how to configure the scraper, see <a href="https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-collector.html">Amazon Web Services managed collectors</a> in the <i>Amazon Managed Service for Prometheus User Guide</i>.</p>
+/// <p>The <code>CreateScraper</code> operation creates a scraper to collect metrics. A scraper pulls metrics from Prometheus-compatible sources within an Amazon EKS cluster, and sends them to your Amazon Managed Service for Prometheus workspace. Scrapers are flexible, and can be configured to control what metrics are collected, the frequency of collection, what transformations are applied to the metrics, and more.</p>
+/// <p>An IAM role will be created for you that Amazon Managed Service for Prometheus uses to access the metrics in your cluster. You must configure this role with a policy that allows it to scrape metrics from your cluster. For more information, see <a href="https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-collector-how-to.html#AMP-collector-eks-setup">Configuring your Amazon EKS cluster</a> in the <i>Amazon Managed Service for Prometheus User Guide</i>.</p>
+/// <p>The <code>scrapeConfiguration</code> parameter contains the base-64 encoded YAML configuration for the scraper.</p><note>
+/// <p>For more information about collectors, including what metrics are collected, and how to configure the scraper, see <a href="https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-collector-how-to.html">Using an Amazon Web Services managed collector</a> in the <i>Amazon Managed Service for Prometheus User Guide</i>.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateScraperFluentBuilder {
@@ -113,31 +112,31 @@ impl CreateScraperFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>(optional) a name to associate with the scraper. This is for your use, and does not need to be unique.</p>
+    /// <p>(optional) An alias to associate with the scraper. This is for your use, and does not need to be unique.</p>
     pub fn alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.alias(input.into());
         self
     }
-    /// <p>(optional) a name to associate with the scraper. This is for your use, and does not need to be unique.</p>
+    /// <p>(optional) An alias to associate with the scraper. This is for your use, and does not need to be unique.</p>
     pub fn set_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_alias(input);
         self
     }
-    /// <p>(optional) a name to associate with the scraper. This is for your use, and does not need to be unique.</p>
+    /// <p>(optional) An alias to associate with the scraper. This is for your use, and does not need to be unique.</p>
     pub fn get_alias(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_alias()
     }
-    /// <p>The configuration file to use in the new scraper. For more information, see <a href="prometheus/latest/userguide/AMP-collector-how-to.html#AMP-collector-configuration">Scraper configuration</a> in the <i>Amazon Managed Service for Prometheus User Guide</i>.</p>
+    /// <p>The configuration file to use in the new scraper. For more information, see <a href="https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-collector-how-to.html#AMP-collector-configuration">Scraper configuration</a> in the <i>Amazon Managed Service for Prometheus User Guide</i>.</p>
     pub fn scrape_configuration(mut self, input: crate::types::ScrapeConfiguration) -> Self {
         self.inner = self.inner.scrape_configuration(input);
         self
     }
-    /// <p>The configuration file to use in the new scraper. For more information, see <a href="prometheus/latest/userguide/AMP-collector-how-to.html#AMP-collector-configuration">Scraper configuration</a> in the <i>Amazon Managed Service for Prometheus User Guide</i>.</p>
+    /// <p>The configuration file to use in the new scraper. For more information, see <a href="https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-collector-how-to.html#AMP-collector-configuration">Scraper configuration</a> in the <i>Amazon Managed Service for Prometheus User Guide</i>.</p>
     pub fn set_scrape_configuration(mut self, input: ::std::option::Option<crate::types::ScrapeConfiguration>) -> Self {
         self.inner = self.inner.set_scrape_configuration(input);
         self
     }
-    /// <p>The configuration file to use in the new scraper. For more information, see <a href="prometheus/latest/userguide/AMP-collector-how-to.html#AMP-collector-configuration">Scraper configuration</a> in the <i>Amazon Managed Service for Prometheus User Guide</i>.</p>
+    /// <p>The configuration file to use in the new scraper. For more information, see <a href="https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-collector-how-to.html#AMP-collector-configuration">Scraper configuration</a> in the <i>Amazon Managed Service for Prometheus User Guide</i>.</p>
     pub fn get_scrape_configuration(&self) -> &::std::option::Option<crate::types::ScrapeConfiguration> {
         self.inner.get_scrape_configuration()
     }

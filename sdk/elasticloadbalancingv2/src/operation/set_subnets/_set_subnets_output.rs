@@ -5,10 +5,10 @@
 pub struct SetSubnetsOutput {
     /// <p>Information about the subnets.</p>
     pub availability_zones: ::std::option::Option<::std::vec::Vec<crate::types::AvailabilityZone>>,
-    /// <p>\[Application Load Balancers\] The IP address type.</p>
-    /// <p>\[Network Load Balancers\] The IP address type.</p>
-    /// <p>\[Gateway Load Balancers\] The IP address type.</p>
+    /// <p>The IP address type.</p>
     pub ip_address_type: ::std::option::Option<crate::types::IpAddressType>,
+    /// <p>\[Network Load Balancers\] Indicates whether to use an IPv6 prefix from each subnet for source NAT.</p>
+    pub enable_prefix_for_ipv6_source_nat: ::std::option::Option<crate::types::EnablePrefixForIpv6SourceNatEnum>,
     _request_id: Option<String>,
 }
 impl SetSubnetsOutput {
@@ -18,11 +18,13 @@ impl SetSubnetsOutput {
     pub fn availability_zones(&self) -> &[crate::types::AvailabilityZone] {
         self.availability_zones.as_deref().unwrap_or_default()
     }
-    /// <p>\[Application Load Balancers\] The IP address type.</p>
-    /// <p>\[Network Load Balancers\] The IP address type.</p>
-    /// <p>\[Gateway Load Balancers\] The IP address type.</p>
+    /// <p>The IP address type.</p>
     pub fn ip_address_type(&self) -> ::std::option::Option<&crate::types::IpAddressType> {
         self.ip_address_type.as_ref()
+    }
+    /// <p>\[Network Load Balancers\] Indicates whether to use an IPv6 prefix from each subnet for source NAT.</p>
+    pub fn enable_prefix_for_ipv6_source_nat(&self) -> ::std::option::Option<&crate::types::EnablePrefixForIpv6SourceNatEnum> {
+        self.enable_prefix_for_ipv6_source_nat.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for SetSubnetsOutput {
@@ -43,6 +45,7 @@ impl SetSubnetsOutput {
 pub struct SetSubnetsOutputBuilder {
     pub(crate) availability_zones: ::std::option::Option<::std::vec::Vec<crate::types::AvailabilityZone>>,
     pub(crate) ip_address_type: ::std::option::Option<crate::types::IpAddressType>,
+    pub(crate) enable_prefix_for_ipv6_source_nat: ::std::option::Option<crate::types::EnablePrefixForIpv6SourceNatEnum>,
     _request_id: Option<String>,
 }
 impl SetSubnetsOutputBuilder {
@@ -66,25 +69,33 @@ impl SetSubnetsOutputBuilder {
     pub fn get_availability_zones(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AvailabilityZone>> {
         &self.availability_zones
     }
-    /// <p>\[Application Load Balancers\] The IP address type.</p>
-    /// <p>\[Network Load Balancers\] The IP address type.</p>
-    /// <p>\[Gateway Load Balancers\] The IP address type.</p>
+    /// <p>The IP address type.</p>
     pub fn ip_address_type(mut self, input: crate::types::IpAddressType) -> Self {
         self.ip_address_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>\[Application Load Balancers\] The IP address type.</p>
-    /// <p>\[Network Load Balancers\] The IP address type.</p>
-    /// <p>\[Gateway Load Balancers\] The IP address type.</p>
+    /// <p>The IP address type.</p>
     pub fn set_ip_address_type(mut self, input: ::std::option::Option<crate::types::IpAddressType>) -> Self {
         self.ip_address_type = input;
         self
     }
-    /// <p>\[Application Load Balancers\] The IP address type.</p>
-    /// <p>\[Network Load Balancers\] The IP address type.</p>
-    /// <p>\[Gateway Load Balancers\] The IP address type.</p>
+    /// <p>The IP address type.</p>
     pub fn get_ip_address_type(&self) -> &::std::option::Option<crate::types::IpAddressType> {
         &self.ip_address_type
+    }
+    /// <p>\[Network Load Balancers\] Indicates whether to use an IPv6 prefix from each subnet for source NAT.</p>
+    pub fn enable_prefix_for_ipv6_source_nat(mut self, input: crate::types::EnablePrefixForIpv6SourceNatEnum) -> Self {
+        self.enable_prefix_for_ipv6_source_nat = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>\[Network Load Balancers\] Indicates whether to use an IPv6 prefix from each subnet for source NAT.</p>
+    pub fn set_enable_prefix_for_ipv6_source_nat(mut self, input: ::std::option::Option<crate::types::EnablePrefixForIpv6SourceNatEnum>) -> Self {
+        self.enable_prefix_for_ipv6_source_nat = input;
+        self
+    }
+    /// <p>\[Network Load Balancers\] Indicates whether to use an IPv6 prefix from each subnet for source NAT.</p>
+    pub fn get_enable_prefix_for_ipv6_source_nat(&self) -> &::std::option::Option<crate::types::EnablePrefixForIpv6SourceNatEnum> {
+        &self.enable_prefix_for_ipv6_source_nat
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
@@ -100,6 +111,7 @@ impl SetSubnetsOutputBuilder {
         crate::operation::set_subnets::SetSubnetsOutput {
             availability_zones: self.availability_zones,
             ip_address_type: self.ip_address_type,
+            enable_prefix_for_ipv6_source_nat: self.enable_prefix_for_ipv6_source_nat,
             _request_id: self._request_id,
         }
     }

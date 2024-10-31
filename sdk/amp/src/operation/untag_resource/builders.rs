@@ -22,7 +22,7 @@ impl crate::operation::untag_resource::builders::UntagResourceInputBuilder {
 }
 /// Fluent builder constructing a request to `UntagResource`.
 ///
-/// <p>Removes the specified tags from an Amazon Managed Service for Prometheus resource. The only resources that can be tagged are workspaces and rule groups namespaces.</p>
+/// <p>Removes the specified tags from an Amazon Managed Service for Prometheus resource. The only resources that can be tagged are rule groups namespaces, scrapers, and workspaces.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UntagResourceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl UntagResourceFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The ARN of the workspace or rule groups namespace.</p>
+    /// <p>The ARN of the resource from which to remove a tag.</p>
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_arn(input.into());
         self
     }
-    /// <p>The ARN of the workspace or rule groups namespace.</p>
+    /// <p>The ARN of the resource from which to remove a tag.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_arn(input);
         self
     }
-    /// <p>The ARN of the workspace or rule groups namespace.</p>
+    /// <p>The ARN of the resource from which to remove a tag.</p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_resource_arn()
     }

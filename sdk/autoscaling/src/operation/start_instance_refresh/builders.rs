@@ -173,6 +173,8 @@ impl StartInstanceRefreshFluentBuilder {
     /// <p>CloudWatch alarms</p></li>
     /// <li>
     /// <p>Skip matching</p></li>
+    /// <li>
+    /// <p>Bake time</p></li>
     /// </ul>
     pub fn preferences(mut self, input: crate::types::RefreshPreferences) -> Self {
         self.inner = self.inner.preferences(input);
@@ -188,6 +190,8 @@ impl StartInstanceRefreshFluentBuilder {
     /// <p>CloudWatch alarms</p></li>
     /// <li>
     /// <p>Skip matching</p></li>
+    /// <li>
+    /// <p>Bake time</p></li>
     /// </ul>
     pub fn set_preferences(mut self, input: ::std::option::Option<crate::types::RefreshPreferences>) -> Self {
         self.inner = self.inner.set_preferences(input);
@@ -203,6 +207,8 @@ impl StartInstanceRefreshFluentBuilder {
     /// <p>CloudWatch alarms</p></li>
     /// <li>
     /// <p>Skip matching</p></li>
+    /// <li>
+    /// <p>Bake time</p></li>
     /// </ul>
     pub fn get_preferences(&self) -> &::std::option::Option<crate::types::RefreshPreferences> {
         self.inner.get_preferences()

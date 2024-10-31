@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RuleGroupsNamespaceDescription {
-    /// <p>The ARN of the rule groups namespace.</p>
+    /// <p>The ARN of the rule groups namespace. For example, <code>arn:aws:aps:&lt;region&gt;:123456789012:rulegroupsnamespace/ws-example1-1234-abcd-5678-ef90abcd1234/rulesfile1</code>.</p>
     pub arn: ::std::string::String,
     /// <p>The name of the rule groups namespace.</p>
     pub name: ::std::string::String,
@@ -21,7 +21,7 @@ pub struct RuleGroupsNamespaceDescription {
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl RuleGroupsNamespaceDescription {
-    /// <p>The ARN of the rule groups namespace.</p>
+    /// <p>The ARN of the rule groups namespace. For example, <code>arn:aws:aps:&lt;region&gt;:123456789012:rulegroupsnamespace/ws-example1-1234-abcd-5678-ef90abcd1234/rulesfile1</code>.</p>
     pub fn arn(&self) -> &str {
         use std::ops::Deref;
         self.arn.deref()
@@ -73,18 +73,18 @@ pub struct RuleGroupsNamespaceDescriptionBuilder {
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl RuleGroupsNamespaceDescriptionBuilder {
-    /// <p>The ARN of the rule groups namespace.</p>
+    /// <p>The ARN of the rule groups namespace. For example, <code>arn:aws:aps:&lt;region&gt;:123456789012:rulegroupsnamespace/ws-example1-1234-abcd-5678-ef90abcd1234/rulesfile1</code>.</p>
     /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the rule groups namespace.</p>
+    /// <p>The ARN of the rule groups namespace. For example, <code>arn:aws:aps:&lt;region&gt;:123456789012:rulegroupsnamespace/ws-example1-1234-abcd-5678-ef90abcd1234/rulesfile1</code>.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
-    /// <p>The ARN of the rule groups namespace.</p>
+    /// <p>The ARN of the rule groups namespace. For example, <code>arn:aws:aps:&lt;region&gt;:123456789012:rulegroupsnamespace/ws-example1-1234-abcd-5678-ef90abcd1234/rulesfile1</code>.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }

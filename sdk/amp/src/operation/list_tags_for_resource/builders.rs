@@ -22,7 +22,7 @@ impl crate::operation::list_tags_for_resource::builders::ListTagsForResourceInpu
 }
 /// Fluent builder constructing a request to `ListTagsForResource`.
 ///
-/// <p>The <code>ListTagsForResource</code> operation returns the tags that are associated with an Amazon Managed Service for Prometheus resource. Currently, the only resources that can be tagged are workspaces and rule groups namespaces.</p>
+/// <p>The <code>ListTagsForResource</code> operation returns the tags that are associated with an Amazon Managed Service for Prometheus resource. Currently, the only resources that can be tagged are scrapers, workspaces, and rule groups namespaces.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListTagsForResourceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl ListTagsForResourceFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The ARN of the resource to list tages for. Must be a workspace or rule groups namespace resource.</p>
+    /// <p>The ARN of the resource to list tages for. Must be a workspace, scraper, or rule groups namespace resource.</p>
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_arn(input.into());
         self
     }
-    /// <p>The ARN of the resource to list tages for. Must be a workspace or rule groups namespace resource.</p>
+    /// <p>The ARN of the resource to list tages for. Must be a workspace, scraper, or rule groups namespace resource.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_arn(input);
         self
     }
-    /// <p>The ARN of the resource to list tages for. Must be a workspace or rule groups namespace resource.</p>
+    /// <p>The ARN of the resource to list tages for. Must be a workspace, scraper, or rule groups namespace resource.</p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_resource_arn()
     }

@@ -75,6 +75,14 @@ pub fn ser_refresh_preferences(
             ::aws_smithy_types::Number::NegInt((*var_23).into()),
         );
     }
+    #[allow(unused_mut)]
+    let mut scope_24 = writer.prefix("BakeTime");
+    if let Some(var_25) = &input.bake_time {
+        scope_24.number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_25).into()),
+        );
+    }
     Ok(())
 }
 
@@ -87,7 +95,7 @@ pub fn de_refresh_preferences(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("MinHealthyPercentage") /* MinHealthyPercentage com.amazonaws.autoscaling#RefreshPreferences$MinHealthyPercentage */ =>  {
-                let var_24 =
+                let var_26 =
                     Some(
                          {
                             <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -98,11 +106,11 @@ pub fn de_refresh_preferences(
                         ?
                     )
                 ;
-                builder = builder.set_min_healthy_percentage(var_24);
+                builder = builder.set_min_healthy_percentage(var_26);
             }
             ,
             s if s.matches("InstanceWarmup") /* InstanceWarmup com.amazonaws.autoscaling#RefreshPreferences$InstanceWarmup */ =>  {
-                let var_25 =
+                let var_27 =
                     Some(
                          {
                             <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -113,21 +121,21 @@ pub fn de_refresh_preferences(
                         ?
                     )
                 ;
-                builder = builder.set_instance_warmup(var_25);
+                builder = builder.set_instance_warmup(var_27);
             }
             ,
             s if s.matches("CheckpointPercentages") /* CheckpointPercentages com.amazonaws.autoscaling#RefreshPreferences$CheckpointPercentages */ =>  {
-                let var_26 =
+                let var_28 =
                     Some(
                         crate::protocol_serde::shape_checkpoint_percentages::de_checkpoint_percentages(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_checkpoint_percentages(var_26);
+                builder = builder.set_checkpoint_percentages(var_28);
             }
             ,
             s if s.matches("CheckpointDelay") /* CheckpointDelay com.amazonaws.autoscaling#RefreshPreferences$CheckpointDelay */ =>  {
-                let var_27 =
+                let var_29 =
                     Some(
                          {
                             <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -138,11 +146,11 @@ pub fn de_refresh_preferences(
                         ?
                     )
                 ;
-                builder = builder.set_checkpoint_delay(var_27);
+                builder = builder.set_checkpoint_delay(var_29);
             }
             ,
             s if s.matches("SkipMatching") /* SkipMatching com.amazonaws.autoscaling#RefreshPreferences$SkipMatching */ =>  {
-                let var_28 =
+                let var_30 =
                     Some(
                          {
                             <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -153,11 +161,11 @@ pub fn de_refresh_preferences(
                         ?
                     )
                 ;
-                builder = builder.set_skip_matching(var_28);
+                builder = builder.set_skip_matching(var_30);
             }
             ,
             s if s.matches("AutoRollback") /* AutoRollback com.amazonaws.autoscaling#RefreshPreferences$AutoRollback */ =>  {
-                let var_29 =
+                let var_31 =
                     Some(
                          {
                             <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -168,11 +176,11 @@ pub fn de_refresh_preferences(
                         ?
                     )
                 ;
-                builder = builder.set_auto_rollback(var_29);
+                builder = builder.set_auto_rollback(var_31);
             }
             ,
             s if s.matches("ScaleInProtectedInstances") /* ScaleInProtectedInstances com.amazonaws.autoscaling#RefreshPreferences$ScaleInProtectedInstances */ =>  {
-                let var_30 =
+                let var_32 =
                     Some(
                         Result::<crate::types::ScaleInProtectedInstances, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::ScaleInProtectedInstances::from(
@@ -182,11 +190,11 @@ pub fn de_refresh_preferences(
                         ?
                     )
                 ;
-                builder = builder.set_scale_in_protected_instances(var_30);
+                builder = builder.set_scale_in_protected_instances(var_32);
             }
             ,
             s if s.matches("StandbyInstances") /* StandbyInstances com.amazonaws.autoscaling#RefreshPreferences$StandbyInstances */ =>  {
-                let var_31 =
+                let var_33 =
                     Some(
                         Result::<crate::types::StandbyInstances, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::StandbyInstances::from(
@@ -196,21 +204,21 @@ pub fn de_refresh_preferences(
                         ?
                     )
                 ;
-                builder = builder.set_standby_instances(var_31);
+                builder = builder.set_standby_instances(var_33);
             }
             ,
             s if s.matches("AlarmSpecification") /* AlarmSpecification com.amazonaws.autoscaling#RefreshPreferences$AlarmSpecification */ =>  {
-                let var_32 =
+                let var_34 =
                     Some(
                         crate::protocol_serde::shape_alarm_specification::de_alarm_specification(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_alarm_specification(var_32);
+                builder = builder.set_alarm_specification(var_34);
             }
             ,
             s if s.matches("MaxHealthyPercentage") /* MaxHealthyPercentage com.amazonaws.autoscaling#RefreshPreferences$MaxHealthyPercentage */ =>  {
-                let var_33 =
+                let var_35 =
                     Some(
                          {
                             <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -221,7 +229,22 @@ pub fn de_refresh_preferences(
                         ?
                     )
                 ;
-                builder = builder.set_max_healthy_percentage(var_33);
+                builder = builder.set_max_healthy_percentage(var_35);
+            }
+            ,
+            s if s.matches("BakeTime") /* BakeTime com.amazonaws.autoscaling#RefreshPreferences$BakeTime */ =>  {
+                let var_36 =
+                    Some(
+                         {
+                            <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (integer: `com.amazonaws.autoscaling#BakeTime`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_bake_time(var_36);
             }
             ,
             _ => {}

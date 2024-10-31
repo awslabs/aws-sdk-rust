@@ -83,6 +83,8 @@ pub struct RefreshPreferences {
     /// <p>If you specify <code>MaxHealthyPercentage</code>, you must also specify <code>MinHealthyPercentage</code>, and the difference between them cannot be greater than 100. A larger range increases the number of instances that can be replaced at the same time.</p>
     /// <p>If you do not specify this property, the default is 100 percent, or the percentage set in the instance maintenance policy for the Auto Scaling group, if defined.</p>
     pub max_healthy_percentage: ::std::option::Option<i32>,
+    /// <p>The amount of time, in seconds, to wait at the end of an instance refresh before the instance refresh is considered complete.</p>
+    pub bake_time: ::std::option::Option<i32>,
 }
 impl RefreshPreferences {
     /// <p>Specifies the minimum percentage of the group to keep in service, healthy, and ready to use to support your workload to allow the operation to continue. The value is expressed as a percentage of the desired capacity of the Auto Scaling group. Value range is 0 to 100.</p>
@@ -186,6 +188,10 @@ impl RefreshPreferences {
     pub fn max_healthy_percentage(&self) -> ::std::option::Option<i32> {
         self.max_healthy_percentage
     }
+    /// <p>The amount of time, in seconds, to wait at the end of an instance refresh before the instance refresh is considered complete.</p>
+    pub fn bake_time(&self) -> ::std::option::Option<i32> {
+        self.bake_time
+    }
 }
 impl RefreshPreferences {
     /// Creates a new builder-style object to manufacture [`RefreshPreferences`](crate::types::RefreshPreferences).
@@ -208,6 +214,7 @@ pub struct RefreshPreferencesBuilder {
     pub(crate) standby_instances: ::std::option::Option<crate::types::StandbyInstances>,
     pub(crate) alarm_specification: ::std::option::Option<crate::types::AlarmSpecification>,
     pub(crate) max_healthy_percentage: ::std::option::Option<i32>,
+    pub(crate) bake_time: ::std::option::Option<i32>,
 }
 impl RefreshPreferencesBuilder {
     /// <p>Specifies the minimum percentage of the group to keep in service, healthy, and ready to use to support your workload to allow the operation to continue. The value is expressed as a percentage of the desired capacity of the Auto Scaling group. Value range is 0 to 100.</p>
@@ -533,6 +540,20 @@ impl RefreshPreferencesBuilder {
     pub fn get_max_healthy_percentage(&self) -> &::std::option::Option<i32> {
         &self.max_healthy_percentage
     }
+    /// <p>The amount of time, in seconds, to wait at the end of an instance refresh before the instance refresh is considered complete.</p>
+    pub fn bake_time(mut self, input: i32) -> Self {
+        self.bake_time = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The amount of time, in seconds, to wait at the end of an instance refresh before the instance refresh is considered complete.</p>
+    pub fn set_bake_time(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.bake_time = input;
+        self
+    }
+    /// <p>The amount of time, in seconds, to wait at the end of an instance refresh before the instance refresh is considered complete.</p>
+    pub fn get_bake_time(&self) -> &::std::option::Option<i32> {
+        &self.bake_time
+    }
     /// Consumes the builder and constructs a [`RefreshPreferences`](crate::types::RefreshPreferences).
     pub fn build(self) -> crate::types::RefreshPreferences {
         crate::types::RefreshPreferences {
@@ -546,6 +567,7 @@ impl RefreshPreferencesBuilder {
             standby_instances: self.standby_instances,
             alarm_specification: self.alarm_specification,
             max_healthy_percentage: self.max_healthy_percentage,
+            bake_time: self.bake_time,
         }
     }
 }

@@ -257,7 +257,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DeleteSharedT
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum DeleteSharedTrustStoreAssociationError {
-    /// <p>The specified association cannot be within the same account.</p>
+    /// <p>The specified association can't be within the same account.</p>
     DeleteAssociationSameAccountException(crate::types::error::DeleteAssociationSameAccountException),
     /// <p>The specified association does not exist.</p>
     TrustStoreAssociationNotFoundException(crate::types::error::TrustStoreAssociationNotFoundException),

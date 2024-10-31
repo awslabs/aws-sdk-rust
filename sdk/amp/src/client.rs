@@ -257,4 +257,6 @@ mod untag_resource;
 
 mod update_logging_configuration;
 
+mod update_scraper;
+
 mod update_workspace_alias;
