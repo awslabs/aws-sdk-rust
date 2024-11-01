@@ -59,14 +59,14 @@ pub(crate) struct Handle {
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`CopyClusterSnapshot`](crate::operation::copy_cluster_snapshot) operation has
-/// a [`Client::copy_cluster_snapshot`], function which returns a builder for that operation.
+/// For example, the [`ApplyPendingMaintenanceAction`](crate::operation::apply_pending_maintenance_action) operation has
+/// a [`Client::apply_pending_maintenance_action`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.copy_cluster_snapshot()
-///     .snapshot_arn("example")
+/// let result = client.apply_pending_maintenance_action()
+///     .resource_arn("example")
 ///     .send()
 ///     .await;
 /// ```
@@ -136,6 +136,8 @@ impl Client {
     }
 }
 
+mod apply_pending_maintenance_action;
+
 mod copy_cluster_snapshot;
 
 mod create_cluster;
@@ -153,7 +155,7 @@ mod create_cluster_snapshot;
 /// # let client: aws_sdk_docdbelastic::Client = unimplemented!();
 /// use ::http::header::{HeaderName, HeaderValue};
 ///
-/// let result = client.copy_cluster_snapshot()
+/// let result = client.apply_pending_maintenance_action()
 ///     .customize()
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
@@ -177,9 +179,13 @@ mod get_cluster;
 
 mod get_cluster_snapshot;
 
+mod get_pending_maintenance_action;
+
 mod list_cluster_snapshots;
 
 mod list_clusters;
+
+mod list_pending_maintenance_actions;
 
 mod list_tags_for_resource;
 

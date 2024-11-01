@@ -16,6 +16,7 @@
 ///     Status::Copying => { /* ... */ },
 ///     Status::Creating => { /* ... */ },
 ///     Status::Deleting => { /* ... */ },
+///     Status::InaccessibleEncryptionCredentialsRecoverable => { /* ... */ },
 ///     Status::InaccessibleEncryptionCreds => { /* ... */ },
 ///     Status::InaccessibleSecretArn => { /* ... */ },
 ///     Status::InaccessibleVpcEndpoint => { /* ... */ },
@@ -23,6 +24,7 @@
 ///     Status::InvalidSecurityGroupId => { /* ... */ },
 ///     Status::InvalidSubnetId => { /* ... */ },
 ///     Status::IpAddressLimitExceeded => { /* ... */ },
+///     Status::Maintenance => { /* ... */ },
 ///     Status::Merging => { /* ... */ },
 ///     Status::Modifying => { /* ... */ },
 ///     Status::Splitting => { /* ... */ },
@@ -67,6 +69,8 @@ pub enum Status {
     #[allow(missing_docs)] // documentation missing in model
     Deleting,
     #[allow(missing_docs)] // documentation missing in model
+    InaccessibleEncryptionCredentialsRecoverable,
+    #[allow(missing_docs)] // documentation missing in model
     InaccessibleEncryptionCreds,
     #[allow(missing_docs)] // documentation missing in model
     InaccessibleSecretArn,
@@ -80,6 +84,8 @@ pub enum Status {
     InvalidSubnetId,
     #[allow(missing_docs)] // documentation missing in model
     IpAddressLimitExceeded,
+    #[allow(missing_docs)] // documentation missing in model
+    Maintenance,
     #[allow(missing_docs)] // documentation missing in model
     Merging,
     #[allow(missing_docs)] // documentation missing in model
@@ -107,6 +113,7 @@ impl ::std::convert::From<&str> for Status {
             "COPYING" => Status::Copying,
             "CREATING" => Status::Creating,
             "DELETING" => Status::Deleting,
+            "INACCESSIBLE_ENCRYPTION_CREDENTIALS_RECOVERABLE" => Status::InaccessibleEncryptionCredentialsRecoverable,
             "INACCESSIBLE_ENCRYPTION_CREDS" => Status::InaccessibleEncryptionCreds,
             "INACCESSIBLE_SECRET_ARN" => Status::InaccessibleSecretArn,
             "INACCESSIBLE_VPC_ENDPOINT" => Status::InaccessibleVpcEndpoint,
@@ -114,6 +121,7 @@ impl ::std::convert::From<&str> for Status {
             "INVALID_SECURITY_GROUP_ID" => Status::InvalidSecurityGroupId,
             "INVALID_SUBNET_ID" => Status::InvalidSubnetId,
             "IP_ADDRESS_LIMIT_EXCEEDED" => Status::IpAddressLimitExceeded,
+            "MAINTENANCE" => Status::Maintenance,
             "MERGING" => Status::Merging,
             "MODIFYING" => Status::Modifying,
             "SPLITTING" => Status::Splitting,
@@ -141,6 +149,7 @@ impl Status {
             Status::Copying => "COPYING",
             Status::Creating => "CREATING",
             Status::Deleting => "DELETING",
+            Status::InaccessibleEncryptionCredentialsRecoverable => "INACCESSIBLE_ENCRYPTION_CREDENTIALS_RECOVERABLE",
             Status::InaccessibleEncryptionCreds => "INACCESSIBLE_ENCRYPTION_CREDS",
             Status::InaccessibleSecretArn => "INACCESSIBLE_SECRET_ARN",
             Status::InaccessibleVpcEndpoint => "INACCESSIBLE_VPC_ENDPOINT",
@@ -148,6 +157,7 @@ impl Status {
             Status::InvalidSecurityGroupId => "INVALID_SECURITY_GROUP_ID",
             Status::InvalidSubnetId => "INVALID_SUBNET_ID",
             Status::IpAddressLimitExceeded => "IP_ADDRESS_LIMIT_EXCEEDED",
+            Status::Maintenance => "MAINTENANCE",
             Status::Merging => "MERGING",
             Status::Modifying => "MODIFYING",
             Status::Splitting => "SPLITTING",
@@ -166,6 +176,7 @@ impl Status {
             "COPYING",
             "CREATING",
             "DELETING",
+            "INACCESSIBLE_ENCRYPTION_CREDENTIALS_RECOVERABLE",
             "INACCESSIBLE_ENCRYPTION_CREDS",
             "INACCESSIBLE_SECRET_ARN",
             "INACCESSIBLE_VPC_ENDPOINT",
@@ -173,6 +184,7 @@ impl Status {
             "INVALID_SECURITY_GROUP_ID",
             "INVALID_SUBNET_ID",
             "IP_ADDRESS_LIMIT_EXCEEDED",
+            "MAINTENANCE",
             "MERGING",
             "MODIFYING",
             "SPLITTING",
@@ -208,6 +220,7 @@ impl ::std::fmt::Display for Status {
             Status::Copying => write!(f, "COPYING"),
             Status::Creating => write!(f, "CREATING"),
             Status::Deleting => write!(f, "DELETING"),
+            Status::InaccessibleEncryptionCredentialsRecoverable => write!(f, "INACCESSIBLE_ENCRYPTION_CREDENTIALS_RECOVERABLE"),
             Status::InaccessibleEncryptionCreds => write!(f, "INACCESSIBLE_ENCRYPTION_CREDS"),
             Status::InaccessibleSecretArn => write!(f, "INACCESSIBLE_SECRET_ARN"),
             Status::InaccessibleVpcEndpoint => write!(f, "INACCESSIBLE_VPC_ENDPOINT"),
@@ -215,6 +228,7 @@ impl ::std::fmt::Display for Status {
             Status::InvalidSecurityGroupId => write!(f, "INVALID_SECURITY_GROUP_ID"),
             Status::InvalidSubnetId => write!(f, "INVALID_SUBNET_ID"),
             Status::IpAddressLimitExceeded => write!(f, "IP_ADDRESS_LIMIT_EXCEEDED"),
+            Status::Maintenance => write!(f, "MAINTENANCE"),
             Status::Merging => write!(f, "MERGING"),
             Status::Modifying => write!(f, "MODIFYING"),
             Status::Splitting => write!(f, "SPLITTING"),

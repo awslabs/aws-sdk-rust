@@ -41,6 +41,8 @@ pub use crate::types::_malaysia_additional_info::MalaysiaAdditionalInfoBuilder;
 
 pub use crate::types::_address::AddressBuilder;
 
+pub use crate::types::_supplemental_tax_registration_entry::SupplementalTaxRegistrationEntryBuilder;
+
 pub use crate::types::_account_details::AccountDetailsBuilder;
 
 pub use crate::types::_account_meta_data::AccountMetaDataBuilder;
@@ -58,6 +60,8 @@ pub use crate::types::_india_additional_info::IndiaAdditionalInfoBuilder;
 pub use crate::types::_brazil_additional_info::BrazilAdditionalInfoBuilder;
 
 pub use crate::types::_tax_document_metadata::TaxDocumentMetadataBuilder;
+
+pub use crate::types::_supplemental_tax_registration::SupplementalTaxRegistrationBuilder;
 
 pub use crate::types::_destination_s3_location::DestinationS3LocationBuilder;
 

@@ -120,6 +120,52 @@ impl From<crate::operation::batch_put_tax_registration::BatchPutTaxRegistrationE
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_supplemental_tax_registration::DeleteSupplementalTaxRegistrationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_supplemental_tax_registration::DeleteSupplementalTaxRegistrationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_supplemental_tax_registration::DeleteSupplementalTaxRegistrationError> for Error {
+    fn from(err: crate::operation::delete_supplemental_tax_registration::DeleteSupplementalTaxRegistrationError) -> Self {
+        match err {
+            crate::operation::delete_supplemental_tax_registration::DeleteSupplementalTaxRegistrationError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::delete_supplemental_tax_registration::DeleteSupplementalTaxRegistrationError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::delete_supplemental_tax_registration::DeleteSupplementalTaxRegistrationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_supplemental_tax_registration::DeleteSupplementalTaxRegistrationError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::delete_supplemental_tax_registration::DeleteSupplementalTaxRegistrationError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_tax_registration::DeleteTaxRegistrationError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -207,6 +253,47 @@ impl From<crate::operation::get_tax_registration_document::GetTaxRegistrationDoc
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_supplemental_tax_registrations::ListSupplementalTaxRegistrationsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_supplemental_tax_registrations::ListSupplementalTaxRegistrationsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_supplemental_tax_registrations::ListSupplementalTaxRegistrationsError> for Error {
+    fn from(err: crate::operation::list_supplemental_tax_registrations::ListSupplementalTaxRegistrationsError) -> Self {
+        match err {
+            crate::operation::list_supplemental_tax_registrations::ListSupplementalTaxRegistrationsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_supplemental_tax_registrations::ListSupplementalTaxRegistrationsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_supplemental_tax_registrations::ListSupplementalTaxRegistrationsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_supplemental_tax_registrations::ListSupplementalTaxRegistrationsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_tax_registrations::ListTaxRegistrationsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -232,6 +319,47 @@ impl From<crate::operation::list_tax_registrations::ListTaxRegistrationsError> f
             }
             crate::operation::list_tax_registrations::ListTaxRegistrationsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_tax_registrations::ListTaxRegistrationsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::put_supplemental_tax_registration::PutSupplementalTaxRegistrationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::put_supplemental_tax_registration::PutSupplementalTaxRegistrationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::put_supplemental_tax_registration::PutSupplementalTaxRegistrationError> for Error {
+    fn from(err: crate::operation::put_supplemental_tax_registration::PutSupplementalTaxRegistrationError) -> Self {
+        match err {
+            crate::operation::put_supplemental_tax_registration::PutSupplementalTaxRegistrationError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::put_supplemental_tax_registration::PutSupplementalTaxRegistrationError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::put_supplemental_tax_registration::PutSupplementalTaxRegistrationError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::put_supplemental_tax_registration::PutSupplementalTaxRegistrationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

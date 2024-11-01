@@ -6,12 +6,32 @@
 pub struct MalaysiaAdditionalInfo {
     /// <p>List of service tax codes for your TRN in Malaysia.</p>
     pub service_tax_codes: ::std::vec::Vec<crate::types::MalaysiaServiceTaxCode>,
+    /// <p>The tax information number in Malaysia.</p>
+    /// <p>For individual, you can specify the <code>taxInformationNumber</code> in <code>MalaysiaAdditionalInfo</code> with NRIC type, and a valid MyKad or NRIC number. For business resellers, you must specify a <code>businessRegistrationNumber</code> and <code>taxInformationNumber</code> in <code>MalaysiaAdditionalInfo</code> with a sales and service tax (SST) type and a valid SST number.</p>
+    /// <p>For business resellers with service codes, you must specify <code>businessRegistrationNumber</code>, <code>taxInformationNumber</code>, and distinct <code>serviceTaxCodes</code> in <code>MalaysiaAdditionalInfo</code> with a SST type and valid sales and service tax (SST) number. By using this API operation, Amazon Web Services registers your self-declaration that you’re an authorized business reseller registered with the Royal Malaysia Customs Department (RMCD), and have a valid SST number.</p>
+    pub tax_information_number: ::std::option::Option<::std::string::String>,
+    /// <p>The tax registration number (TRN) in Malaysia.</p>
+    /// <p>For individual, you can specify the <code>taxInformationNumber</code> in <code>MalaysiaAdditionalInfo</code> with NRIC type, and a valid MyKad or NRIC number. For business, you must specify a <code>businessRegistrationNumber</code> in <code>MalaysiaAdditionalInfo</code> with a TIN type and tax identification number. For business resellers, you must specify a <code>businessRegistrationNumber</code> and <code>taxInformationNumber</code> in <code>MalaysiaAdditionalInfo</code> with a sales and service tax (SST) type and a valid SST number.</p>
+    /// <p>For business resellers with service codes, you must specify <code>businessRegistrationNumber</code>, <code>taxInformationNumber</code>, and distinct <code>serviceTaxCodes</code> in <code>MalaysiaAdditionalInfo</code> with a SST type and valid sales and service tax (SST) number. By using this API operation, Amazon Web Services registers your self-declaration that you’re an authorized business reseller registered with the Royal Malaysia Customs Department (RMCD), and have a valid SST number.</p>
+    pub business_registration_number: ::std::option::Option<::std::string::String>,
 }
 impl MalaysiaAdditionalInfo {
     /// <p>List of service tax codes for your TRN in Malaysia.</p>
     pub fn service_tax_codes(&self) -> &[crate::types::MalaysiaServiceTaxCode] {
         use std::ops::Deref;
         self.service_tax_codes.deref()
+    }
+    /// <p>The tax information number in Malaysia.</p>
+    /// <p>For individual, you can specify the <code>taxInformationNumber</code> in <code>MalaysiaAdditionalInfo</code> with NRIC type, and a valid MyKad or NRIC number. For business resellers, you must specify a <code>businessRegistrationNumber</code> and <code>taxInformationNumber</code> in <code>MalaysiaAdditionalInfo</code> with a sales and service tax (SST) type and a valid SST number.</p>
+    /// <p>For business resellers with service codes, you must specify <code>businessRegistrationNumber</code>, <code>taxInformationNumber</code>, and distinct <code>serviceTaxCodes</code> in <code>MalaysiaAdditionalInfo</code> with a SST type and valid sales and service tax (SST) number. By using this API operation, Amazon Web Services registers your self-declaration that you’re an authorized business reseller registered with the Royal Malaysia Customs Department (RMCD), and have a valid SST number.</p>
+    pub fn tax_information_number(&self) -> ::std::option::Option<&str> {
+        self.tax_information_number.as_deref()
+    }
+    /// <p>The tax registration number (TRN) in Malaysia.</p>
+    /// <p>For individual, you can specify the <code>taxInformationNumber</code> in <code>MalaysiaAdditionalInfo</code> with NRIC type, and a valid MyKad or NRIC number. For business, you must specify a <code>businessRegistrationNumber</code> in <code>MalaysiaAdditionalInfo</code> with a TIN type and tax identification number. For business resellers, you must specify a <code>businessRegistrationNumber</code> and <code>taxInformationNumber</code> in <code>MalaysiaAdditionalInfo</code> with a sales and service tax (SST) type and a valid SST number.</p>
+    /// <p>For business resellers with service codes, you must specify <code>businessRegistrationNumber</code>, <code>taxInformationNumber</code>, and distinct <code>serviceTaxCodes</code> in <code>MalaysiaAdditionalInfo</code> with a SST type and valid sales and service tax (SST) number. By using this API operation, Amazon Web Services registers your self-declaration that you’re an authorized business reseller registered with the Royal Malaysia Customs Department (RMCD), and have a valid SST number.</p>
+    pub fn business_registration_number(&self) -> ::std::option::Option<&str> {
+        self.business_registration_number.as_deref()
     }
 }
 impl MalaysiaAdditionalInfo {
@@ -26,6 +46,8 @@ impl MalaysiaAdditionalInfo {
 #[non_exhaustive]
 pub struct MalaysiaAdditionalInfoBuilder {
     pub(crate) service_tax_codes: ::std::option::Option<::std::vec::Vec<crate::types::MalaysiaServiceTaxCode>>,
+    pub(crate) tax_information_number: ::std::option::Option<::std::string::String>,
+    pub(crate) business_registration_number: ::std::option::Option<::std::string::String>,
 }
 impl MalaysiaAdditionalInfoBuilder {
     /// Appends an item to `service_tax_codes`.
@@ -48,17 +70,52 @@ impl MalaysiaAdditionalInfoBuilder {
     pub fn get_service_tax_codes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MalaysiaServiceTaxCode>> {
         &self.service_tax_codes
     }
+    /// <p>The tax information number in Malaysia.</p>
+    /// <p>For individual, you can specify the <code>taxInformationNumber</code> in <code>MalaysiaAdditionalInfo</code> with NRIC type, and a valid MyKad or NRIC number. For business resellers, you must specify a <code>businessRegistrationNumber</code> and <code>taxInformationNumber</code> in <code>MalaysiaAdditionalInfo</code> with a sales and service tax (SST) type and a valid SST number.</p>
+    /// <p>For business resellers with service codes, you must specify <code>businessRegistrationNumber</code>, <code>taxInformationNumber</code>, and distinct <code>serviceTaxCodes</code> in <code>MalaysiaAdditionalInfo</code> with a SST type and valid sales and service tax (SST) number. By using this API operation, Amazon Web Services registers your self-declaration that you’re an authorized business reseller registered with the Royal Malaysia Customs Department (RMCD), and have a valid SST number.</p>
+    pub fn tax_information_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.tax_information_number = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The tax information number in Malaysia.</p>
+    /// <p>For individual, you can specify the <code>taxInformationNumber</code> in <code>MalaysiaAdditionalInfo</code> with NRIC type, and a valid MyKad or NRIC number. For business resellers, you must specify a <code>businessRegistrationNumber</code> and <code>taxInformationNumber</code> in <code>MalaysiaAdditionalInfo</code> with a sales and service tax (SST) type and a valid SST number.</p>
+    /// <p>For business resellers with service codes, you must specify <code>businessRegistrationNumber</code>, <code>taxInformationNumber</code>, and distinct <code>serviceTaxCodes</code> in <code>MalaysiaAdditionalInfo</code> with a SST type and valid sales and service tax (SST) number. By using this API operation, Amazon Web Services registers your self-declaration that you’re an authorized business reseller registered with the Royal Malaysia Customs Department (RMCD), and have a valid SST number.</p>
+    pub fn set_tax_information_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.tax_information_number = input;
+        self
+    }
+    /// <p>The tax information number in Malaysia.</p>
+    /// <p>For individual, you can specify the <code>taxInformationNumber</code> in <code>MalaysiaAdditionalInfo</code> with NRIC type, and a valid MyKad or NRIC number. For business resellers, you must specify a <code>businessRegistrationNumber</code> and <code>taxInformationNumber</code> in <code>MalaysiaAdditionalInfo</code> with a sales and service tax (SST) type and a valid SST number.</p>
+    /// <p>For business resellers with service codes, you must specify <code>businessRegistrationNumber</code>, <code>taxInformationNumber</code>, and distinct <code>serviceTaxCodes</code> in <code>MalaysiaAdditionalInfo</code> with a SST type and valid sales and service tax (SST) number. By using this API operation, Amazon Web Services registers your self-declaration that you’re an authorized business reseller registered with the Royal Malaysia Customs Department (RMCD), and have a valid SST number.</p>
+    pub fn get_tax_information_number(&self) -> &::std::option::Option<::std::string::String> {
+        &self.tax_information_number
+    }
+    /// <p>The tax registration number (TRN) in Malaysia.</p>
+    /// <p>For individual, you can specify the <code>taxInformationNumber</code> in <code>MalaysiaAdditionalInfo</code> with NRIC type, and a valid MyKad or NRIC number. For business, you must specify a <code>businessRegistrationNumber</code> in <code>MalaysiaAdditionalInfo</code> with a TIN type and tax identification number. For business resellers, you must specify a <code>businessRegistrationNumber</code> and <code>taxInformationNumber</code> in <code>MalaysiaAdditionalInfo</code> with a sales and service tax (SST) type and a valid SST number.</p>
+    /// <p>For business resellers with service codes, you must specify <code>businessRegistrationNumber</code>, <code>taxInformationNumber</code>, and distinct <code>serviceTaxCodes</code> in <code>MalaysiaAdditionalInfo</code> with a SST type and valid sales and service tax (SST) number. By using this API operation, Amazon Web Services registers your self-declaration that you’re an authorized business reseller registered with the Royal Malaysia Customs Department (RMCD), and have a valid SST number.</p>
+    pub fn business_registration_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.business_registration_number = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The tax registration number (TRN) in Malaysia.</p>
+    /// <p>For individual, you can specify the <code>taxInformationNumber</code> in <code>MalaysiaAdditionalInfo</code> with NRIC type, and a valid MyKad or NRIC number. For business, you must specify a <code>businessRegistrationNumber</code> in <code>MalaysiaAdditionalInfo</code> with a TIN type and tax identification number. For business resellers, you must specify a <code>businessRegistrationNumber</code> and <code>taxInformationNumber</code> in <code>MalaysiaAdditionalInfo</code> with a sales and service tax (SST) type and a valid SST number.</p>
+    /// <p>For business resellers with service codes, you must specify <code>businessRegistrationNumber</code>, <code>taxInformationNumber</code>, and distinct <code>serviceTaxCodes</code> in <code>MalaysiaAdditionalInfo</code> with a SST type and valid sales and service tax (SST) number. By using this API operation, Amazon Web Services registers your self-declaration that you’re an authorized business reseller registered with the Royal Malaysia Customs Department (RMCD), and have a valid SST number.</p>
+    pub fn set_business_registration_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.business_registration_number = input;
+        self
+    }
+    /// <p>The tax registration number (TRN) in Malaysia.</p>
+    /// <p>For individual, you can specify the <code>taxInformationNumber</code> in <code>MalaysiaAdditionalInfo</code> with NRIC type, and a valid MyKad or NRIC number. For business, you must specify a <code>businessRegistrationNumber</code> in <code>MalaysiaAdditionalInfo</code> with a TIN type and tax identification number. For business resellers, you must specify a <code>businessRegistrationNumber</code> and <code>taxInformationNumber</code> in <code>MalaysiaAdditionalInfo</code> with a sales and service tax (SST) type and a valid SST number.</p>
+    /// <p>For business resellers with service codes, you must specify <code>businessRegistrationNumber</code>, <code>taxInformationNumber</code>, and distinct <code>serviceTaxCodes</code> in <code>MalaysiaAdditionalInfo</code> with a SST type and valid sales and service tax (SST) number. By using this API operation, Amazon Web Services registers your self-declaration that you’re an authorized business reseller registered with the Royal Malaysia Customs Department (RMCD), and have a valid SST number.</p>
+    pub fn get_business_registration_number(&self) -> &::std::option::Option<::std::string::String> {
+        &self.business_registration_number
+    }
     /// Consumes the builder and constructs a [`MalaysiaAdditionalInfo`](crate::types::MalaysiaAdditionalInfo).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`service_tax_codes`](crate::types::builders::MalaysiaAdditionalInfoBuilder::service_tax_codes)
-    pub fn build(self) -> ::std::result::Result<crate::types::MalaysiaAdditionalInfo, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::MalaysiaAdditionalInfo {
-            service_tax_codes: self.service_tax_codes.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "service_tax_codes",
-                    "service_tax_codes was not specified but it is required when building MalaysiaAdditionalInfo",
-                )
-            })?,
-        })
+    pub fn build(self) -> crate::types::MalaysiaAdditionalInfo {
+        crate::types::MalaysiaAdditionalInfo {
+            service_tax_codes: self.service_tax_codes.unwrap_or_default(),
+            tax_information_number: self.tax_information_number,
+            business_registration_number: self.business_registration_number,
+        }
     }
 }

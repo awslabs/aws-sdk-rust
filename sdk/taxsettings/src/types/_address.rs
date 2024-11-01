@@ -16,7 +16,7 @@ pub struct Address {
     pub district_or_county: ::std::option::Option<::std::string::String>,
     /// <p>The city that the address is in.</p>
     pub city: ::std::string::String,
-    /// <p>The state, region, or province that the address is located.</p>
+    /// <p>The state, region, or province that the address is located. This field is only required for Canada, India, United Arab Emirates, Romania, and Brazil (CPF). It is optional for all other countries.</p>
     /// <p>If this is required for tax settings, use the same name as shown on the <b>Tax Settings</b> page.</p>
     pub state_or_region: ::std::option::Option<::std::string::String>,
     /// <p>The postal code associated with the address.</p>
@@ -49,7 +49,7 @@ impl Address {
         use std::ops::Deref;
         self.city.deref()
     }
-    /// <p>The state, region, or province that the address is located.</p>
+    /// <p>The state, region, or province that the address is located. This field is only required for Canada, India, United Arab Emirates, Romania, and Brazil (CPF). It is optional for all other countries.</p>
     /// <p>If this is required for tax settings, use the same name as shown on the <b>Tax Settings</b> page.</p>
     pub fn state_or_region(&self) -> ::std::option::Option<&str> {
         self.state_or_region.as_deref()
@@ -164,19 +164,19 @@ impl AddressBuilder {
     pub fn get_city(&self) -> &::std::option::Option<::std::string::String> {
         &self.city
     }
-    /// <p>The state, region, or province that the address is located.</p>
+    /// <p>The state, region, or province that the address is located. This field is only required for Canada, India, United Arab Emirates, Romania, and Brazil (CPF). It is optional for all other countries.</p>
     /// <p>If this is required for tax settings, use the same name as shown on the <b>Tax Settings</b> page.</p>
     pub fn state_or_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.state_or_region = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The state, region, or province that the address is located.</p>
+    /// <p>The state, region, or province that the address is located. This field is only required for Canada, India, United Arab Emirates, Romania, and Brazil (CPF). It is optional for all other countries.</p>
     /// <p>If this is required for tax settings, use the same name as shown on the <b>Tax Settings</b> page.</p>
     pub fn set_state_or_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.state_or_region = input;
         self
     }
-    /// <p>The state, region, or province that the address is located.</p>
+    /// <p>The state, region, or province that the address is located. This field is only required for Canada, India, United Arab Emirates, Romania, and Brazil (CPF). It is optional for all other countries.</p>
     /// <p>If this is required for tax settings, use the same name as shown on the <b>Tax Settings</b> page.</p>
     pub fn get_state_or_region(&self) -> &::std::option::Option<::std::string::String> {
         &self.state_or_region

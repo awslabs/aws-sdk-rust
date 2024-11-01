@@ -36,7 +36,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-docdbelastic = "1.49.0"
+//! aws-sdk-docdbelastic = "1.50.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
@@ -153,14 +153,14 @@ pub use config::Config;
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`CopyClusterSnapshot`](crate::operation::copy_cluster_snapshot) operation has
-/// a [`Client::copy_cluster_snapshot`], function which returns a builder for that operation.
+/// For example, the [`ApplyPendingMaintenanceAction`](crate::operation::apply_pending_maintenance_action) operation has
+/// a [`Client::apply_pending_maintenance_action`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.copy_cluster_snapshot()
-///     .snapshot_arn("example")
+/// let result = client.apply_pending_maintenance_action()
+///     .resource_arn("example")
 ///     .send()
 ///     .await;
 /// ```

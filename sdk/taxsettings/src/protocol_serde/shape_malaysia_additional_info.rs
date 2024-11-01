@@ -12,6 +12,12 @@ pub fn ser_malaysia_additional_info(
         }
         array_1.finish();
     }
+    if let Some(var_3) = &input.tax_information_number {
+        object.key("taxInformationNumber").string(var_3.as_str());
+    }
+    if let Some(var_4) = &input.business_registration_number {
+        object.key("businessRegistrationNumber").string(var_4.as_str());
+    }
     Ok(())
 }
 
@@ -35,6 +41,20 @@ where
                                 crate::protocol_serde::shape_malaysia_service_tax_codes_list::de_malaysia_service_tax_codes_list(tokens)?,
                             );
                         }
+                        "taxInformationNumber" => {
+                            builder = builder.set_tax_information_number(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "businessRegistrationNumber" => {
+                            builder = builder.set_business_registration_number(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {
@@ -45,11 +65,7 @@ where
                     }
                 }
             }
-            Ok(Some(
-                crate::serde_util::malaysia_additional_info_correct_errors(builder)
-                    .build()
-                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
-            ))
+            Ok(Some(builder.build()))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

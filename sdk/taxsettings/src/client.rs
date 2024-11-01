@@ -59,14 +59,14 @@ pub(crate) struct Handle {
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`DeleteTaxRegistration`](crate::operation::delete_tax_registration) operation has
-/// a [`Client::delete_tax_registration`], function which returns a builder for that operation.
+/// For example, the [`DeleteSupplementalTaxRegistration`](crate::operation::delete_supplemental_tax_registration) operation has
+/// a [`Client::delete_supplemental_tax_registration`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.delete_tax_registration()
-///     .account_id("example")
+/// let result = client.delete_supplemental_tax_registration()
+///     .authority_id("example")
 ///     .send()
 ///     .await;
 /// ```
@@ -167,12 +167,18 @@ mod batch_put_tax_registration;
 /// ```
 pub mod customize;
 
+mod delete_supplemental_tax_registration;
+
 mod delete_tax_registration;
 
 mod get_tax_registration;
 
 mod get_tax_registration_document;
 
+mod list_supplemental_tax_registrations;
+
 mod list_tax_registrations;
+
+mod put_supplemental_tax_registration;
 
 mod put_tax_registration;

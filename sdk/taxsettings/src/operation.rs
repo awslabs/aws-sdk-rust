@@ -7,6 +7,9 @@ pub mod batch_delete_tax_registration;
 /// Types for the `BatchPutTaxRegistration` operation.
 pub mod batch_put_tax_registration;
 
+/// Types for the `DeleteSupplementalTaxRegistration` operation.
+pub mod delete_supplemental_tax_registration;
+
 /// Types for the `DeleteTaxRegistration` operation.
 pub mod delete_tax_registration;
 
@@ -16,8 +19,14 @@ pub mod get_tax_registration;
 /// Types for the `GetTaxRegistrationDocument` operation.
 pub mod get_tax_registration_document;
 
+/// Types for the `ListSupplementalTaxRegistrations` operation.
+pub mod list_supplemental_tax_registrations;
+
 /// Types for the `ListTaxRegistrations` operation.
 pub mod list_tax_registrations;
+
+/// Types for the `PutSupplementalTaxRegistration` operation.
+pub mod put_supplemental_tax_registration;
 
 /// Types for the `PutTaxRegistration` operation.
 pub mod put_tax_registration;

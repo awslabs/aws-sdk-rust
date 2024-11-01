@@ -47,15 +47,6 @@ pub(crate) fn resource_not_found_exception_correct_errors(
     builder
 }
 
-pub(crate) fn service_quota_exceeded_exception_correct_errors(
-    mut builder: crate::types::error::builders::ServiceQuotaExceededExceptionBuilder,
-) -> crate::types::error::builders::ServiceQuotaExceededExceptionBuilder {
-    if builder.message.is_none() {
-        builder.message = Some(Default::default())
-    }
-    builder
-}
-
 pub(crate) fn throttling_exception_correct_errors(
     mut builder: crate::types::error::builders::ThrottlingExceptionBuilder,
 ) -> crate::types::error::builders::ThrottlingExceptionBuilder {
@@ -73,6 +64,27 @@ pub(crate) fn validation_exception_correct_errors(
     }
     if builder.reason.is_none() {
         builder.reason = "no value was set".parse::<crate::types::ValidationExceptionReason>().ok()
+    }
+    builder
+}
+
+pub(crate) fn apply_pending_maintenance_action_output_output_correct_errors(
+    mut builder: crate::operation::apply_pending_maintenance_action::builders::ApplyPendingMaintenanceActionOutputBuilder,
+) -> crate::operation::apply_pending_maintenance_action::builders::ApplyPendingMaintenanceActionOutputBuilder {
+    if builder.resource_pending_maintenance_action.is_none() {
+        builder.resource_pending_maintenance_action = {
+            let builder = crate::types::builders::ResourcePendingMaintenanceActionBuilder::default();
+            Some(builder.build())
+        }
+    }
+    builder
+}
+
+pub(crate) fn service_quota_exceeded_exception_correct_errors(
+    mut builder: crate::types::error::builders::ServiceQuotaExceededExceptionBuilder,
+) -> crate::types::error::builders::ServiceQuotaExceededExceptionBuilder {
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
     }
     builder
 }
@@ -157,6 +169,27 @@ pub(crate) fn get_cluster_snapshot_output_output_correct_errors(
             let builder = crate::types::builders::ClusterSnapshotBuilder::default();
             crate::serde_util::cluster_snapshot_correct_errors(builder).build().ok()
         }
+    }
+    builder
+}
+
+pub(crate) fn get_pending_maintenance_action_output_output_correct_errors(
+    mut builder: crate::operation::get_pending_maintenance_action::builders::GetPendingMaintenanceActionOutputBuilder,
+) -> crate::operation::get_pending_maintenance_action::builders::GetPendingMaintenanceActionOutputBuilder {
+    if builder.resource_pending_maintenance_action.is_none() {
+        builder.resource_pending_maintenance_action = {
+            let builder = crate::types::builders::ResourcePendingMaintenanceActionBuilder::default();
+            Some(builder.build())
+        }
+    }
+    builder
+}
+
+pub(crate) fn list_pending_maintenance_actions_output_output_correct_errors(
+    mut builder: crate::operation::list_pending_maintenance_actions::builders::ListPendingMaintenanceActionsOutputBuilder,
+) -> crate::operation::list_pending_maintenance_actions::builders::ListPendingMaintenanceActionsOutputBuilder {
+    if builder.resource_pending_maintenance_actions.is_none() {
+        builder.resource_pending_maintenance_actions = Some(Default::default())
     }
     builder
 }
@@ -332,6 +365,15 @@ pub(crate) fn validation_exception_field_correct_errors(
     }
     if builder.message.is_none() {
         builder.message = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn pending_maintenance_action_details_correct_errors(
+    mut builder: crate::types::builders::PendingMaintenanceActionDetailsBuilder,
+) -> crate::types::builders::PendingMaintenanceActionDetailsBuilder {
+    if builder.action.is_none() {
+        builder.action = Some(Default::default())
     }
     builder
 }

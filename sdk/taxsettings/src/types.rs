@@ -67,6 +67,10 @@ pub use crate::types::_address::Address;
 
 pub use crate::types::_tax_registration_type::TaxRegistrationType;
 
+pub use crate::types::_supplemental_tax_registration_entry::SupplementalTaxRegistrationEntry;
+
+pub use crate::types::_supplemental_tax_registration_type::SupplementalTaxRegistrationType;
+
 pub use crate::types::_account_details::AccountDetails;
 
 pub use crate::types::_account_meta_data::AccountMetaData;
@@ -86,6 +90,8 @@ pub use crate::types::_india_additional_info::IndiaAdditionalInfo;
 pub use crate::types::_brazil_additional_info::BrazilAdditionalInfo;
 
 pub use crate::types::_tax_document_metadata::TaxDocumentMetadata;
+
+pub use crate::types::_supplemental_tax_registration::SupplementalTaxRegistration;
 
 pub use crate::types::_destination_s3_location::DestinationS3Location;
 
@@ -160,6 +166,12 @@ mod _source_s3_location;
 mod _south_korea_additional_info;
 
 mod _spain_additional_info;
+
+mod _supplemental_tax_registration;
+
+mod _supplemental_tax_registration_entry;
+
+mod _supplemental_tax_registration_type;
 
 mod _tax_document_metadata;
 

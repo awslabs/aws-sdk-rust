@@ -15,7 +15,9 @@
 ///     TaxRegistrationType::Cnpj => { /* ... */ },
 ///     TaxRegistrationType::Cpf => { /* ... */ },
 ///     TaxRegistrationType::Gst => { /* ... */ },
+///     TaxRegistrationType::Nric => { /* ... */ },
 ///     TaxRegistrationType::Sst => { /* ... */ },
+///     TaxRegistrationType::Tin => { /* ... */ },
 ///     TaxRegistrationType::Vat => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -51,7 +53,11 @@ pub enum TaxRegistrationType {
     #[allow(missing_docs)] // documentation missing in model
     Gst,
     #[allow(missing_docs)] // documentation missing in model
+    Nric,
+    #[allow(missing_docs)] // documentation missing in model
     Sst,
+    #[allow(missing_docs)] // documentation missing in model
+    Tin,
     #[allow(missing_docs)] // documentation missing in model
     Vat,
     /// `Unknown` contains new variants that have been added since this code was generated.
@@ -64,7 +70,9 @@ impl ::std::convert::From<&str> for TaxRegistrationType {
             "CNPJ" => TaxRegistrationType::Cnpj,
             "CPF" => TaxRegistrationType::Cpf,
             "GST" => TaxRegistrationType::Gst,
+            "NRIC" => TaxRegistrationType::Nric,
             "SST" => TaxRegistrationType::Sst,
+            "TIN" => TaxRegistrationType::Tin,
             "VAT" => TaxRegistrationType::Vat,
             other => TaxRegistrationType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -84,14 +92,16 @@ impl TaxRegistrationType {
             TaxRegistrationType::Cnpj => "CNPJ",
             TaxRegistrationType::Cpf => "CPF",
             TaxRegistrationType::Gst => "GST",
+            TaxRegistrationType::Nric => "NRIC",
             TaxRegistrationType::Sst => "SST",
+            TaxRegistrationType::Tin => "TIN",
             TaxRegistrationType::Vat => "VAT",
             TaxRegistrationType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CNPJ", "CPF", "GST", "SST", "VAT"]
+        &["CNPJ", "CPF", "GST", "NRIC", "SST", "TIN", "VAT"]
     }
 }
 impl ::std::convert::AsRef<str> for TaxRegistrationType {
@@ -117,7 +127,9 @@ impl ::std::fmt::Display for TaxRegistrationType {
             TaxRegistrationType::Cnpj => write!(f, "CNPJ"),
             TaxRegistrationType::Cpf => write!(f, "CPF"),
             TaxRegistrationType::Gst => write!(f, "GST"),
+            TaxRegistrationType::Nric => write!(f, "NRIC"),
             TaxRegistrationType::Sst => write!(f, "SST"),
+            TaxRegistrationType::Tin => write!(f, "TIN"),
             TaxRegistrationType::Vat => write!(f, "VAT"),
             TaxRegistrationType::Unknown(value) => write!(f, "{}", value),
         }

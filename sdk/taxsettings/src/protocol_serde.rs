@@ -27,13 +27,19 @@ pub(crate) mod shape_batch_delete_tax_registration;
 
 pub(crate) mod shape_batch_put_tax_registration;
 
+pub(crate) mod shape_delete_supplemental_tax_registration;
+
 pub(crate) mod shape_delete_tax_registration;
 
 pub(crate) mod shape_get_tax_registration;
 
 pub(crate) mod shape_get_tax_registration_document;
 
+pub(crate) mod shape_list_supplemental_tax_registrations;
+
 pub(crate) mod shape_list_tax_registrations;
+
+pub(crate) mod shape_put_supplemental_tax_registration;
 
 pub(crate) mod shape_put_tax_registration;
 
@@ -51,6 +57,8 @@ pub(crate) mod shape_batch_put_tax_registration_input;
 
 pub(crate) mod shape_conflict_exception;
 
+pub(crate) mod shape_delete_supplemental_tax_registration_input;
+
 pub(crate) mod shape_delete_tax_registration_input;
 
 pub(crate) mod shape_get_tax_registration_document_input;
@@ -59,7 +67,11 @@ pub(crate) mod shape_get_tax_registration_input;
 
 pub(crate) mod shape_internal_server_exception;
 
+pub(crate) mod shape_list_supplemental_tax_registrations_input;
+
 pub(crate) mod shape_list_tax_registrations_input;
+
+pub(crate) mod shape_put_supplemental_tax_registration_input;
 
 pub(crate) mod shape_put_tax_registration_input;
 
@@ -74,6 +86,10 @@ pub(crate) mod shape_batch_delete_tax_registration_errors;
 pub(crate) mod shape_batch_put_tax_registration_errors;
 
 pub(crate) mod shape_destination_s3_location;
+
+pub(crate) mod shape_supplemental_tax_registration_entry;
+
+pub(crate) mod shape_supplemental_tax_registration_list;
 
 pub(crate) mod shape_tax_document_metadata;
 
@@ -94,6 +110,8 @@ pub(crate) mod shape_address;
 pub(crate) mod shape_batch_delete_tax_registration_error;
 
 pub(crate) mod shape_batch_put_tax_registration_error;
+
+pub(crate) mod shape_supplemental_tax_registration;
 
 pub(crate) mod shape_tax_document_metadatas;
 

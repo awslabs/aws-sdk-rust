@@ -68,6 +68,53 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::apply_pending_maintenance_action::ApplyPendingMaintenanceActionError, R>,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::apply_pending_maintenance_action::ApplyPendingMaintenanceActionError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::apply_pending_maintenance_action::ApplyPendingMaintenanceActionError> for Error {
+    fn from(err: crate::operation::apply_pending_maintenance_action::ApplyPendingMaintenanceActionError) -> Self {
+        match err {
+            crate::operation::apply_pending_maintenance_action::ApplyPendingMaintenanceActionError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::apply_pending_maintenance_action::ApplyPendingMaintenanceActionError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::apply_pending_maintenance_action::ApplyPendingMaintenanceActionError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::apply_pending_maintenance_action::ApplyPendingMaintenanceActionError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::apply_pending_maintenance_action::ApplyPendingMaintenanceActionError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::apply_pending_maintenance_action::ApplyPendingMaintenanceActionError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::apply_pending_maintenance_action::ApplyPendingMaintenanceActionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::copy_cluster_snapshot::CopyClusterSnapshotError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -283,6 +330,52 @@ impl From<crate::operation::get_cluster_snapshot::GetClusterSnapshotError> for E
         }
     }
 }
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_pending_maintenance_action::GetPendingMaintenanceActionError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_pending_maintenance_action::GetPendingMaintenanceActionError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_pending_maintenance_action::GetPendingMaintenanceActionError> for Error {
+    fn from(err: crate::operation::get_pending_maintenance_action::GetPendingMaintenanceActionError) -> Self {
+        match err {
+            crate::operation::get_pending_maintenance_action::GetPendingMaintenanceActionError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_pending_maintenance_action::GetPendingMaintenanceActionError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::get_pending_maintenance_action::GetPendingMaintenanceActionError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_pending_maintenance_action::GetPendingMaintenanceActionError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_pending_maintenance_action::GetPendingMaintenanceActionError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::get_pending_maintenance_action::GetPendingMaintenanceActionError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::get_pending_maintenance_action::GetPendingMaintenanceActionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_clusters::ListClustersError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -332,6 +425,47 @@ impl From<crate::operation::list_cluster_snapshots::ListClusterSnapshotsError> f
             crate::operation::list_cluster_snapshots::ListClusterSnapshotsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_cluster_snapshots::ListClusterSnapshotsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_cluster_snapshots::ListClusterSnapshotsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_pending_maintenance_actions::ListPendingMaintenanceActionsError, R>,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_pending_maintenance_actions::ListPendingMaintenanceActionsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_pending_maintenance_actions::ListPendingMaintenanceActionsError> for Error {
+    fn from(err: crate::operation::list_pending_maintenance_actions::ListPendingMaintenanceActionsError) -> Self {
+        match err {
+            crate::operation::list_pending_maintenance_actions::ListPendingMaintenanceActionsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_pending_maintenance_actions::ListPendingMaintenanceActionsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_pending_maintenance_actions::ListPendingMaintenanceActionsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_pending_maintenance_actions::ListPendingMaintenanceActionsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_pending_maintenance_actions::ListPendingMaintenanceActionsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

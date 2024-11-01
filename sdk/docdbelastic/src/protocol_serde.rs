@@ -23,6 +23,8 @@ pub fn parse_http_error_metadata(
     crate::json_errors::parse_error_metadata(response_body, response_headers)
 }
 
+pub(crate) mod shape_apply_pending_maintenance_action;
+
 pub(crate) mod shape_copy_cluster_snapshot;
 
 pub(crate) mod shape_create_cluster;
@@ -37,9 +39,13 @@ pub(crate) mod shape_get_cluster;
 
 pub(crate) mod shape_get_cluster_snapshot;
 
+pub(crate) mod shape_get_pending_maintenance_action;
+
 pub(crate) mod shape_list_cluster_snapshots;
 
 pub(crate) mod shape_list_clusters;
+
+pub(crate) mod shape_list_pending_maintenance_actions;
 
 pub(crate) mod shape_list_tags_for_resource;
 
@@ -64,6 +70,8 @@ pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
 }
 
 pub(crate) mod shape_access_denied_exception;
+
+pub(crate) mod shape_apply_pending_maintenance_action_input;
 
 pub(crate) mod shape_conflict_exception;
 
@@ -97,6 +105,10 @@ pub(crate) mod shape_cluster_snapshot;
 
 pub(crate) mod shape_cluster_snapshot_list;
 
+pub(crate) mod shape_resource_pending_maintenance_action;
+
+pub(crate) mod shape_resource_pending_maintenance_action_list;
+
 pub(crate) mod shape_tag_map;
 
 pub(crate) mod shape_validation_exception_field_list;
@@ -105,10 +117,14 @@ pub(crate) mod shape_cluster_in_list;
 
 pub(crate) mod shape_cluster_snapshot_in_list;
 
+pub(crate) mod shape_pending_maintenance_action_details_list;
+
 pub(crate) mod shape_shard_list;
 
 pub(crate) mod shape_string_list;
 
 pub(crate) mod shape_validation_exception_field;
+
+pub(crate) mod shape_pending_maintenance_action_details;
 
 pub(crate) mod shape_shard;

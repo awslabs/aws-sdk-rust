@@ -65,11 +65,32 @@ pub(crate) fn resource_not_found_exception_correct_errors(
     builder
 }
 
+pub(crate) fn list_supplemental_tax_registrations_output_output_correct_errors(
+    mut builder: crate::operation::list_supplemental_tax_registrations::builders::ListSupplementalTaxRegistrationsOutputBuilder,
+) -> crate::operation::list_supplemental_tax_registrations::builders::ListSupplementalTaxRegistrationsOutputBuilder {
+    if builder.tax_registrations.is_none() {
+        builder.tax_registrations = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn list_tax_registrations_output_output_correct_errors(
     mut builder: crate::operation::list_tax_registrations::builders::ListTaxRegistrationsOutputBuilder,
 ) -> crate::operation::list_tax_registrations::builders::ListTaxRegistrationsOutputBuilder {
     if builder.account_details.is_none() {
         builder.account_details = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn put_supplemental_tax_registration_output_output_correct_errors(
+    mut builder: crate::operation::put_supplemental_tax_registration::builders::PutSupplementalTaxRegistrationOutputBuilder,
+) -> crate::operation::put_supplemental_tax_registration::builders::PutSupplementalTaxRegistrationOutputBuilder {
+    if builder.authority_id.is_none() {
+        builder.authority_id = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::TaxRegistrationStatus>().ok()
     }
     builder
 }
@@ -138,6 +159,33 @@ pub(crate) fn batch_put_tax_registration_error_correct_errors(
     builder
 }
 
+pub(crate) fn supplemental_tax_registration_correct_errors(
+    mut builder: crate::types::builders::SupplementalTaxRegistrationBuilder,
+) -> crate::types::builders::SupplementalTaxRegistrationBuilder {
+    if builder.registration_id.is_none() {
+        builder.registration_id = Some(Default::default())
+    }
+    if builder.registration_type.is_none() {
+        builder.registration_type = "no value was set".parse::<crate::types::SupplementalTaxRegistrationType>().ok()
+    }
+    if builder.legal_name.is_none() {
+        builder.legal_name = Some(Default::default())
+    }
+    if builder.address.is_none() {
+        builder.address = {
+            let builder = crate::types::builders::AddressBuilder::default();
+            crate::serde_util::address_correct_errors(builder).build().ok()
+        }
+    }
+    if builder.authority_id.is_none() {
+        builder.authority_id = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::TaxRegistrationStatus>().ok()
+    }
+    builder
+}
+
 pub(crate) fn validation_exception_field_correct_errors(
     mut builder: crate::types::builders::ValidationExceptionFieldBuilder,
 ) -> crate::types::builders::ValidationExceptionFieldBuilder {
@@ -182,15 +230,6 @@ pub(crate) fn kenya_additional_info_correct_errors(
 ) -> crate::types::builders::KenyaAdditionalInfoBuilder {
     if builder.person_type.is_none() {
         builder.person_type = "no value was set".parse::<crate::types::PersonType>().ok()
-    }
-    builder
-}
-
-pub(crate) fn malaysia_additional_info_correct_errors(
-    mut builder: crate::types::builders::MalaysiaAdditionalInfoBuilder,
-) -> crate::types::builders::MalaysiaAdditionalInfoBuilder {
-    if builder.service_tax_codes.is_none() {
-        builder.service_tax_codes = Some(Default::default())
     }
     builder
 }

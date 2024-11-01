@@ -19,6 +19,16 @@ pub(crate) fn reflens_list_clusters_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_pending_maintenance_actions_output_output_next_token(
+    input: &crate::operation::list_pending_maintenance_actions::ListPendingMaintenanceActionsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_list_cluster_snapshots_output_output_snapshots(
     input: crate::operation::list_cluster_snapshots::ListClusterSnapshotsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ClusterSnapshotInList>> {
@@ -36,5 +46,12 @@ pub(crate) fn lens_list_clusters_output_output_clusters(
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,
     };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_pending_maintenance_actions_output_output_resource_pending_maintenance_actions(
+    input: crate::operation::list_pending_maintenance_actions::ListPendingMaintenanceActionsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ResourcePendingMaintenanceAction>> {
+    let input = input.resource_pending_maintenance_actions;
     ::std::option::Option::Some(input)
 }

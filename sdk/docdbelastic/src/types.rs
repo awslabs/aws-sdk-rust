@@ -11,6 +11,10 @@ pub use crate::types::_status::Status;
 
 pub use crate::types::_auth::Auth;
 
+pub use crate::types::_resource_pending_maintenance_action::ResourcePendingMaintenanceAction;
+
+pub use crate::types::_pending_maintenance_action_details::PendingMaintenanceActionDetails;
+
 pub use crate::types::_cluster_snapshot_in_list::ClusterSnapshotInList;
 
 pub use crate::types::_cluster_in_list::ClusterInList;
@@ -18,6 +22,8 @@ pub use crate::types::_cluster_in_list::ClusterInList;
 pub use crate::types::_cluster_snapshot::ClusterSnapshot;
 
 pub use crate::types::_snapshot_type::SnapshotType;
+
+pub use crate::types::_opt_in_type::OptInType;
 
 mod _auth;
 
@@ -28,6 +34,12 @@ mod _cluster_in_list;
 mod _cluster_snapshot;
 
 mod _cluster_snapshot_in_list;
+
+mod _opt_in_type;
+
+mod _pending_maintenance_action_details;
+
+mod _resource_pending_maintenance_action;
 
 mod _shard;
 
