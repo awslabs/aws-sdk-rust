@@ -39,6 +39,8 @@ pub use crate::types::_environment_variable::EnvironmentVariableBuilder;
 
 pub use crate::types::_project_fleet::ProjectFleetBuilder;
 
+pub use crate::types::_compute_configuration::ComputeConfigurationBuilder;
+
 pub use crate::types::_project_cache::ProjectCacheBuilder;
 
 pub use crate::types::_project_artifacts::ProjectArtifactsBuilder;

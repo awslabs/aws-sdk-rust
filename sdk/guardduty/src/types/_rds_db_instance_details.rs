@@ -14,7 +14,7 @@ pub struct RdsDbInstanceDetails {
     pub db_cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) that identifies the database instance involved in the finding.</p>
     pub db_instance_arn: ::std::option::Option<::std::string::String>,
-    /// <p>Instance tag key-value pairs associated with the database instance ID.</p>
+    /// <p>Information about the tag key-value pairs.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl RdsDbInstanceDetails {
@@ -38,7 +38,7 @@ impl RdsDbInstanceDetails {
     pub fn db_instance_arn(&self) -> ::std::option::Option<&str> {
         self.db_instance_arn.as_deref()
     }
-    /// <p>Instance tag key-value pairs associated with the database instance ID.</p>
+    /// <p>Information about the tag key-value pairs.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
     pub fn tags(&self) -> &[crate::types::Tag] {
@@ -138,19 +138,19 @@ impl RdsDbInstanceDetailsBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>Instance tag key-value pairs associated with the database instance ID.</p>
+    /// <p>Information about the tag key-value pairs.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
         v.push(input);
         self.tags = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Instance tag key-value pairs associated with the database instance ID.</p>
+    /// <p>Information about the tag key-value pairs.</p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
-    /// <p>Instance tag key-value pairs associated with the database instance ID.</p>
+    /// <p>Information about the tag key-value pairs.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }

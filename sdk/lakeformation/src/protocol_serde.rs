@@ -43,6 +43,8 @@ pub(crate) mod shape_create_lake_formation_opt_in;
 
 pub(crate) mod shape_create_lf_tag;
 
+pub(crate) mod shape_create_lf_tag_expression;
+
 pub(crate) mod shape_delete_data_cells_filter;
 
 pub(crate) mod shape_delete_lake_formation_identity_center_configuration;
@@ -50,6 +52,8 @@ pub(crate) mod shape_delete_lake_formation_identity_center_configuration;
 pub(crate) mod shape_delete_lake_formation_opt_in;
 
 pub(crate) mod shape_delete_lf_tag;
+
+pub(crate) mod shape_delete_lf_tag_expression;
 
 pub(crate) mod shape_delete_objects_on_cancel;
 
@@ -73,6 +77,8 @@ pub(crate) mod shape_get_effective_permissions_for_path;
 
 pub(crate) mod shape_get_lf_tag;
 
+pub(crate) mod shape_get_lf_tag_expression;
+
 pub(crate) mod shape_get_query_state;
 
 pub(crate) mod shape_get_query_statistics;
@@ -94,6 +100,8 @@ pub(crate) mod shape_grant_permissions;
 pub(crate) mod shape_list_data_cells_filter;
 
 pub(crate) mod shape_list_lake_formation_opt_ins;
+
+pub(crate) mod shape_list_lf_tag_expressions;
 
 pub(crate) mod shape_list_lf_tags;
 
@@ -126,6 +134,8 @@ pub(crate) mod shape_update_data_cells_filter;
 pub(crate) mod shape_update_lake_formation_identity_center_configuration;
 
 pub(crate) mod shape_update_lf_tag;
+
+pub(crate) mod shape_update_lf_tag_expression;
 
 pub(crate) mod shape_update_resource;
 
@@ -165,6 +175,8 @@ pub(crate) mod shape_create_lake_formation_identity_center_configuration_input;
 
 pub(crate) mod shape_create_lake_formation_opt_in_input;
 
+pub(crate) mod shape_create_lf_tag_expression_input;
+
 pub(crate) mod shape_create_lf_tag_input;
 
 pub(crate) mod shape_delete_data_cells_filter_input;
@@ -172,6 +184,8 @@ pub(crate) mod shape_delete_data_cells_filter_input;
 pub(crate) mod shape_delete_lake_formation_identity_center_configuration_input;
 
 pub(crate) mod shape_delete_lake_formation_opt_in_input;
+
+pub(crate) mod shape_delete_lf_tag_expression_input;
 
 pub(crate) mod shape_delete_lf_tag_input;
 
@@ -196,6 +210,8 @@ pub(crate) mod shape_get_data_cells_filter_input;
 pub(crate) mod shape_get_data_lake_settings_input;
 
 pub(crate) mod shape_get_effective_permissions_for_path_input;
+
+pub(crate) mod shape_get_lf_tag_expression_input;
 
 pub(crate) mod shape_get_lf_tag_input;
 
@@ -228,6 +244,8 @@ pub(crate) mod shape_invalid_input_exception;
 pub(crate) mod shape_list_data_cells_filter_input;
 
 pub(crate) mod shape_list_lake_formation_opt_ins_input;
+
+pub(crate) mod shape_list_lf_tag_expressions_input;
 
 pub(crate) mod shape_list_lf_tags_input;
 
@@ -277,6 +295,8 @@ pub(crate) mod shape_update_data_cells_filter_input;
 
 pub(crate) mod shape_update_lake_formation_identity_center_configuration_input;
 
+pub(crate) mod shape_update_lf_tag_expression_input;
+
 pub(crate) mod shape_update_lf_tag_input;
 
 pub(crate) mod shape_update_resource_input;
@@ -309,6 +329,8 @@ pub(crate) mod shape_database_lf_tags_list;
 
 pub(crate) mod shape_execution_statistics;
 
+pub(crate) mod shape_expression;
+
 pub(crate) mod shape_external_filtering_configuration;
 
 pub(crate) mod shape_filter_condition;
@@ -318,6 +340,8 @@ pub(crate) mod shape_lake_formation_opt_ins_info_list;
 pub(crate) mod shape_lf_tag;
 
 pub(crate) mod shape_lf_tag_errors;
+
+pub(crate) mod shape_lf_tag_expressions_list;
 
 pub(crate) mod shape_lf_tag_pair;
 
@@ -387,6 +411,10 @@ pub(crate) mod shape_lake_formation_opt_ins_info;
 
 pub(crate) mod shape_lf_tag_error;
 
+pub(crate) mod shape_lf_tag_expression;
+
+pub(crate) mod shape_lf_tag_expression_resource;
+
 pub(crate) mod shape_lf_tag_key_resource;
 
 pub(crate) mod shape_lf_tag_policy_resource;
@@ -436,5 +464,3 @@ pub(crate) mod shape_table_object_list;
 pub(crate) mod shape_resource_share_list;
 
 pub(crate) mod shape_table_object;
-
-pub(crate) mod shape_expression;

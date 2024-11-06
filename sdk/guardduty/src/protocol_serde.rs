@@ -615,6 +615,8 @@ pub(crate) mod shape_rds_db_instance_details;
 
 pub(crate) mod shape_rds_db_user_details;
 
+pub(crate) mod shape_rds_limitless_db_details;
+
 pub(crate) mod shape_runtime_details;
 
 pub(crate) mod shape_s3_bucket_details;

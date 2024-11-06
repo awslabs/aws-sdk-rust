@@ -140,6 +140,12 @@ mod associate_library_item_review;
 
 mod associate_q_app_with_user;
 
+mod batch_create_category;
+
+mod batch_delete_category;
+
+mod batch_update_category;
+
 mod create_library_item;
 
 mod create_q_app;
@@ -186,6 +192,8 @@ mod get_q_app;
 mod get_q_app_session;
 
 mod import_document;
+
+mod list_categories;
 
 mod list_library_items;
 

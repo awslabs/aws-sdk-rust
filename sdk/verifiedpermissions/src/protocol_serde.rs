@@ -23,6 +23,8 @@ pub fn parse_http_error_metadata(
     crate::json_errors::parse_error_metadata(response_body, response_headers)
 }
 
+pub(crate) mod shape_batch_get_policy;
+
 pub(crate) mod shape_batch_is_authorized;
 
 pub(crate) mod shape_batch_is_authorized_with_token;
@@ -84,6 +86,8 @@ pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
 }
 
 pub(crate) mod shape_access_denied_exception;
+
+pub(crate) mod shape_batch_get_policy_input;
 
 pub(crate) mod shape_batch_is_authorized_input;
 
@@ -153,6 +157,12 @@ pub(crate) mod shape_action_identifier;
 
 pub(crate) mod shape_action_identifier_list;
 
+pub(crate) mod shape_batch_get_policy_error_list;
+
+pub(crate) mod shape_batch_get_policy_input_item;
+
+pub(crate) mod shape_batch_get_policy_output_list;
+
 pub(crate) mod shape_batch_is_authorized_input_item;
 
 pub(crate) mod shape_batch_is_authorized_output_list;
@@ -208,6 +218,10 @@ pub(crate) mod shape_validation_exception_field_list;
 pub(crate) mod shape_validation_settings;
 
 pub(crate) mod shape_attribute_value;
+
+pub(crate) mod shape_batch_get_policy_error_item;
+
+pub(crate) mod shape_batch_get_policy_output_item;
 
 pub(crate) mod shape_batch_is_authorized_output_item;
 

@@ -118,6 +118,8 @@ impl Client {
     }
 }
 
+mod batch_get_policy;
+
 mod batch_is_authorized;
 
 mod batch_is_authorized_with_token;

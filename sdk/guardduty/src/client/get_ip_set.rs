@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetIPSet`](crate::operation::get_ip_set::builders::GetIPSetFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`detector_id(impl Into<String>)`](crate::operation::get_ip_set::builders::GetIPSetFluentBuilder::detector_id) / [`set_detector_id(Option<String>)`](crate::operation::get_ip_set::builders::GetIPSetFluentBuilder::set_detector_id):<br>required: **true**<br><p>The unique ID of the detector that is associated with the IPSet.</p><br>
+    ///   - [`detector_id(impl Into<String>)`](crate::operation::get_ip_set::builders::GetIPSetFluentBuilder::detector_id) / [`set_detector_id(Option<String>)`](crate::operation::get_ip_set::builders::GetIPSetFluentBuilder::set_detector_id):<br>required: **true**<br><p>The unique ID of the detector that is associated with the IPSet.</p> <p>To find the <code>detectorId</code> in the current Region, see the Settings page in the GuardDuty console, or run the <a href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_ListDetectors.html">ListDetectors</a> API.</p><br>
     ///   - [`ip_set_id(impl Into<String>)`](crate::operation::get_ip_set::builders::GetIPSetFluentBuilder::ip_set_id) / [`set_ip_set_id(Option<String>)`](crate::operation::get_ip_set::builders::GetIPSetFluentBuilder::set_ip_set_id):<br>required: **true**<br><p>The unique ID of the IPSet to retrieve.</p><br>
     /// - On success, responds with [`GetIpSetOutput`](crate::operation::get_ip_set::GetIpSetOutput) with field(s):
     ///   - [`name(Option<String>)`](crate::operation::get_ip_set::GetIpSetOutput::name): <p>The user-friendly name for the IPSet.</p>

@@ -156,6 +156,8 @@ mod create_lake_formation_opt_in;
 
 mod create_lf_tag;
 
+mod create_lf_tag_expression;
+
 /// Operation customization and supporting types.
 ///
 /// The underlying HTTP requests made during an operation can be customized
@@ -191,6 +193,8 @@ mod delete_lake_formation_opt_in;
 
 mod delete_lf_tag;
 
+mod delete_lf_tag_expression;
+
 mod delete_objects_on_cancel;
 
 mod deregister_resource;
@@ -213,6 +217,8 @@ mod get_effective_permissions_for_path;
 
 mod get_lf_tag;
 
+mod get_lf_tag_expression;
+
 mod get_query_state;
 
 mod get_query_statistics;
@@ -234,6 +240,8 @@ mod grant_permissions;
 mod list_data_cells_filter;
 
 mod list_lake_formation_opt_ins;
+
+mod list_lf_tag_expressions;
 
 mod list_lf_tags;
 
@@ -266,6 +274,8 @@ mod update_data_cells_filter;
 mod update_lake_formation_identity_center_configuration;
 
 mod update_lf_tag;
+
+mod update_lf_tag_expression;
 
 mod update_resource;
 

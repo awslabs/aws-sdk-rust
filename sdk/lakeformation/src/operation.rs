@@ -31,6 +31,9 @@ pub mod create_lake_formation_opt_in;
 /// Types for the `CreateLFTag` operation.
 pub mod create_lf_tag;
 
+/// Types for the `CreateLFTagExpression` operation.
+pub mod create_lf_tag_expression;
+
 /// Types for the `DeleteDataCellsFilter` operation.
 pub mod delete_data_cells_filter;
 
@@ -42,6 +45,9 @@ pub mod delete_lake_formation_opt_in;
 
 /// Types for the `DeleteLFTag` operation.
 pub mod delete_lf_tag;
+
+/// Types for the `DeleteLFTagExpression` operation.
+pub mod delete_lf_tag_expression;
 
 /// Types for the `DeleteObjectsOnCancel` operation.
 pub mod delete_objects_on_cancel;
@@ -76,6 +82,9 @@ pub mod get_effective_permissions_for_path;
 /// Types for the `GetLFTag` operation.
 pub mod get_lf_tag;
 
+/// Types for the `GetLFTagExpression` operation.
+pub mod get_lf_tag_expression;
+
 /// Types for the `GetQueryState` operation.
 pub mod get_query_state;
 
@@ -108,6 +117,9 @@ pub mod list_data_cells_filter;
 
 /// Types for the `ListLakeFormationOptIns` operation.
 pub mod list_lake_formation_opt_ins;
+
+/// Types for the `ListLFTagExpressions` operation.
+pub mod list_lf_tag_expressions;
 
 /// Types for the `ListLFTags` operation.
 pub mod list_lf_tags;
@@ -156,6 +168,9 @@ pub mod update_lake_formation_identity_center_configuration;
 
 /// Types for the `UpdateLFTag` operation.
 pub mod update_lf_tag;
+
+/// Types for the `UpdateLFTagExpression` operation.
+pub mod update_lf_tag_expression;
 
 /// Types for the `UpdateResource` operation.
 pub mod update_resource;

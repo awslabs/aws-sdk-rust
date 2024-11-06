@@ -12,6 +12,7 @@
 /// ```text
 /// # let computetype = unimplemented!();
 /// match computetype {
+///     ComputeType::AttributeBasedCompute => { /* ... */ },
 ///     ComputeType::BuildGeneral12Xlarge => { /* ... */ },
 ///     ComputeType::BuildGeneral1Large => { /* ... */ },
 ///     ComputeType::BuildGeneral1Medium => { /* ... */ },
@@ -50,6 +51,8 @@
 )]
 pub enum ComputeType {
     #[allow(missing_docs)] // documentation missing in model
+    AttributeBasedCompute,
+    #[allow(missing_docs)] // documentation missing in model
     BuildGeneral12Xlarge,
     #[allow(missing_docs)] // documentation missing in model
     BuildGeneral1Large,
@@ -76,6 +79,7 @@ pub enum ComputeType {
 impl ::std::convert::From<&str> for ComputeType {
     fn from(s: &str) -> Self {
         match s {
+            "ATTRIBUTE_BASED_COMPUTE" => ComputeType::AttributeBasedCompute,
             "BUILD_GENERAL1_2XLARGE" => ComputeType::BuildGeneral12Xlarge,
             "BUILD_GENERAL1_LARGE" => ComputeType::BuildGeneral1Large,
             "BUILD_GENERAL1_MEDIUM" => ComputeType::BuildGeneral1Medium,
@@ -101,6 +105,7 @@ impl ComputeType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            ComputeType::AttributeBasedCompute => "ATTRIBUTE_BASED_COMPUTE",
             ComputeType::BuildGeneral12Xlarge => "BUILD_GENERAL1_2XLARGE",
             ComputeType::BuildGeneral1Large => "BUILD_GENERAL1_LARGE",
             ComputeType::BuildGeneral1Medium => "BUILD_GENERAL1_MEDIUM",
@@ -117,6 +122,7 @@ impl ComputeType {
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
+            "ATTRIBUTE_BASED_COMPUTE",
             "BUILD_GENERAL1_2XLARGE",
             "BUILD_GENERAL1_LARGE",
             "BUILD_GENERAL1_MEDIUM",
@@ -150,6 +156,7 @@ impl ComputeType {
 impl ::std::fmt::Display for ComputeType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            ComputeType::AttributeBasedCompute => write!(f, "ATTRIBUTE_BASED_COMPUTE"),
             ComputeType::BuildGeneral12Xlarge => write!(f, "BUILD_GENERAL1_2XLARGE"),
             ComputeType::BuildGeneral1Large => write!(f, "BUILD_GENERAL1_LARGE"),
             ComputeType::BuildGeneral1Medium => write!(f, "BUILD_GENERAL1_MEDIUM"),

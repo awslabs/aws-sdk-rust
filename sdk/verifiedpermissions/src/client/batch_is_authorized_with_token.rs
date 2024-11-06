@@ -10,7 +10,7 @@ impl super::Client {
     ///   - [`requests(BatchIsAuthorizedWithTokenInputItem)`](crate::operation::batch_is_authorized_with_token::builders::BatchIsAuthorizedWithTokenFluentBuilder::requests) / [`set_requests(Option<Vec::<BatchIsAuthorizedWithTokenInputItem>>)`](crate::operation::batch_is_authorized_with_token::builders::BatchIsAuthorizedWithTokenFluentBuilder::set_requests):<br>required: **true**<br><p>An array of up to 30 requests that you want Verified Permissions to evaluate.</p><br>
     /// - On success, responds with [`BatchIsAuthorizedWithTokenOutput`](crate::operation::batch_is_authorized_with_token::BatchIsAuthorizedWithTokenOutput) with field(s):
     ///   - [`principal(Option<EntityIdentifier>)`](crate::operation::batch_is_authorized_with_token::BatchIsAuthorizedWithTokenOutput::principal): <p>The identifier of the principal in the ID or access token.</p>
-    ///   - [`results(Vec::<BatchIsAuthorizedWithTokenOutputItem>)`](crate::operation::batch_is_authorized_with_token::BatchIsAuthorizedWithTokenOutput::results): <p>A series of <code>Allow</code> or <code>Deny</code> decisions for each request, and the policies that produced them.</p>
+    ///   - [`results(Vec::<BatchIsAuthorizedWithTokenOutputItem>)`](crate::operation::batch_is_authorized_with_token::BatchIsAuthorizedWithTokenOutput::results): <p>A series of <code>Allow</code> or <code>Deny</code> decisions for each request, and the policies that produced them. These results are returned in the order they were requested.</p>
     /// - On failure, responds with [`SdkError<BatchIsAuthorizedWithTokenError>`](crate::operation::batch_is_authorized_with_token::BatchIsAuthorizedWithTokenError)
     pub fn batch_is_authorized_with_token(
         &self,

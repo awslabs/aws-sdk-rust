@@ -19,11 +19,11 @@ pub use crate::types::error::_operation_timeout_exception::OperationTimeoutExcep
 
 pub use crate::types::error::_concurrent_modification_exception::ConcurrentModificationException;
 
+pub use crate::types::error::_resource_number_limit_exceeded_exception::ResourceNumberLimitExceededException;
+
 pub use crate::types::error::_throttled_exception::ThrottledException;
 
 pub use crate::types::error::_glue_encryption_exception::GlueEncryptionException;
-
-pub use crate::types::error::_resource_number_limit_exceeded_exception::ResourceNumberLimitExceededException;
 
 pub use crate::types::error::_already_exists_exception::AlreadyExistsException;
 

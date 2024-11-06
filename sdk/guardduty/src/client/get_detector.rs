@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetDetector`](crate::operation::get_detector::builders::GetDetectorFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`detector_id(impl Into<String>)`](crate::operation::get_detector::builders::GetDetectorFluentBuilder::detector_id) / [`set_detector_id(Option<String>)`](crate::operation::get_detector::builders::GetDetectorFluentBuilder::set_detector_id):<br>required: **true**<br><p>The unique ID of the detector that you want to get.</p><br>
+    ///   - [`detector_id(impl Into<String>)`](crate::operation::get_detector::builders::GetDetectorFluentBuilder::detector_id) / [`set_detector_id(Option<String>)`](crate::operation::get_detector::builders::GetDetectorFluentBuilder::set_detector_id):<br>required: **true**<br><p>The unique ID of the detector that you want to get.</p> <p>To find the <code>detectorId</code> in the current Region, see the Settings page in the GuardDuty console, or run the <a href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_ListDetectors.html">ListDetectors</a> API.</p><br>
     /// - On success, responds with [`GetDetectorOutput`](crate::operation::get_detector::GetDetectorOutput) with field(s):
     ///   - [`created_at(Option<String>)`](crate::operation::get_detector::GetDetectorOutput::created_at): <p>The timestamp of when the detector was created.</p>
     ///   - [`finding_publishing_frequency(Option<FindingPublishingFrequency>)`](crate::operation::get_detector::GetDetectorOutput::finding_publishing_frequency): <p>The publishing frequency of the finding.</p>

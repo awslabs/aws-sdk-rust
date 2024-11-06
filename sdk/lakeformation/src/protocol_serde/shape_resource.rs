@@ -51,6 +51,12 @@ pub fn ser_resource(
         crate::protocol_serde::shape_lf_tag_policy_resource::ser_lf_tag_policy_resource(&mut object_16, var_15)?;
         object_16.finish();
     }
+    if let Some(var_17) = &input.lf_tag_expression {
+        #[allow(unused_mut)]
+        let mut object_18 = object.key("LFTagExpression").start_object();
+        crate::protocol_serde::shape_lf_tag_expression_resource::ser_lf_tag_expression_resource(&mut object_18, var_17)?;
+        object_18.finish();
+    }
     Ok(())
 }
 
@@ -98,6 +104,11 @@ where
                         "LFTagPolicy" => {
                             builder =
                                 builder.set_lf_tag_policy(crate::protocol_serde::shape_lf_tag_policy_resource::de_lf_tag_policy_resource(tokens)?);
+                        }
+                        "LFTagExpression" => {
+                            builder = builder.set_lf_tag_expression(
+                                crate::protocol_serde::shape_lf_tag_expression_resource::de_lf_tag_expression_resource(tokens)?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

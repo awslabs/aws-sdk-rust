@@ -4,6 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateIpSetInput {
     /// <p>The unique ID of the detector of the GuardDuty account for which you want to create an IPSet.</p>
+    /// <p>To find the <code>detectorId</code> in the current Region, see the Settings page in the GuardDuty console, or run the <a href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_ListDetectors.html">ListDetectors</a> API.</p>
     pub detector_id: ::std::option::Option<::std::string::String>,
     /// <p>The user-friendly name to identify the IPSet.</p>
     /// <p>Allowed characters are alphanumeric, whitespace, dash (-), and underscores (_).</p>
@@ -21,6 +22,7 @@ pub struct CreateIpSetInput {
 }
 impl CreateIpSetInput {
     /// <p>The unique ID of the detector of the GuardDuty account for which you want to create an IPSet.</p>
+    /// <p>To find the <code>detectorId</code> in the current Region, see the Settings page in the GuardDuty console, or run the <a href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_ListDetectors.html">ListDetectors</a> API.</p>
     pub fn detector_id(&self) -> ::std::option::Option<&str> {
         self.detector_id.as_deref()
     }
@@ -71,17 +73,20 @@ pub struct CreateIpSetInputBuilder {
 }
 impl CreateIpSetInputBuilder {
     /// <p>The unique ID of the detector of the GuardDuty account for which you want to create an IPSet.</p>
+    /// <p>To find the <code>detectorId</code> in the current Region, see the Settings page in the GuardDuty console, or run the <a href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_ListDetectors.html">ListDetectors</a> API.</p>
     /// This field is required.
     pub fn detector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.detector_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique ID of the detector of the GuardDuty account for which you want to create an IPSet.</p>
+    /// <p>To find the <code>detectorId</code> in the current Region, see the Settings page in the GuardDuty console, or run the <a href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_ListDetectors.html">ListDetectors</a> API.</p>
     pub fn set_detector_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.detector_id = input;
         self
     }
     /// <p>The unique ID of the detector of the GuardDuty account for which you want to create an IPSet.</p>
+    /// <p>To find the <code>detectorId</code> in the current Region, see the Settings page in the GuardDuty console, or run the <a href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_ListDetectors.html">ListDetectors</a> API.</p>
     pub fn get_detector_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.detector_id
     }

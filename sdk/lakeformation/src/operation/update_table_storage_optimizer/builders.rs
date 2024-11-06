@@ -155,7 +155,7 @@ impl UpdateTableStorageOptimizerFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_storage_optimizer_config`](Self::set_storage_optimizer_config).
     ///
-    /// <p>Name of the table for which to enable the storage optimizer.</p>
+    /// <p>Name of the configuration for the storage optimizer.</p>
     pub fn storage_optimizer_config(
         mut self,
         k: crate::types::OptimizerType,
@@ -164,7 +164,7 @@ impl UpdateTableStorageOptimizerFluentBuilder {
         self.inner = self.inner.storage_optimizer_config(k, v);
         self
     }
-    /// <p>Name of the table for which to enable the storage optimizer.</p>
+    /// <p>Name of the configuration for the storage optimizer.</p>
     pub fn set_storage_optimizer_config(
         mut self,
         input: ::std::option::Option<
@@ -174,7 +174,7 @@ impl UpdateTableStorageOptimizerFluentBuilder {
         self.inner = self.inner.set_storage_optimizer_config(input);
         self
     }
-    /// <p>Name of the table for which to enable the storage optimizer.</p>
+    /// <p>Name of the configuration for the storage optimizer.</p>
     pub fn get_storage_optimizer_config(
         &self,
     ) -> &::std::option::Option<

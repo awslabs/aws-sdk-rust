@@ -164,6 +164,102 @@ impl From<crate::operation::associate_q_app_with_user::AssociateQAppWithUserErro
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::batch_create_category::BatchCreateCategoryError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::batch_create_category::BatchCreateCategoryError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::batch_create_category::BatchCreateCategoryError> for Error {
+    fn from(err: crate::operation::batch_create_category::BatchCreateCategoryError) -> Self {
+        match err {
+            crate::operation::batch_create_category::BatchCreateCategoryError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::batch_create_category::BatchCreateCategoryError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::batch_create_category::BatchCreateCategoryError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::batch_create_category::BatchCreateCategoryError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::batch_create_category::BatchCreateCategoryError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::batch_create_category::BatchCreateCategoryError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::batch_create_category::BatchCreateCategoryError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::batch_create_category::BatchCreateCategoryError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::batch_delete_category::BatchDeleteCategoryError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::batch_delete_category::BatchDeleteCategoryError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::batch_delete_category::BatchDeleteCategoryError> for Error {
+    fn from(err: crate::operation::batch_delete_category::BatchDeleteCategoryError) -> Self {
+        match err {
+            crate::operation::batch_delete_category::BatchDeleteCategoryError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::batch_delete_category::BatchDeleteCategoryError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::batch_delete_category::BatchDeleteCategoryError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::batch_delete_category::BatchDeleteCategoryError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::batch_delete_category::BatchDeleteCategoryError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::batch_delete_category::BatchDeleteCategoryError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::batch_delete_category::BatchDeleteCategoryError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::batch_delete_category::BatchDeleteCategoryError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::batch_update_category::BatchUpdateCategoryError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::batch_update_category::BatchUpdateCategoryError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::batch_update_category::BatchUpdateCategoryError> for Error {
+    fn from(err: crate::operation::batch_update_category::BatchUpdateCategoryError) -> Self {
+        match err {
+            crate::operation::batch_update_category::BatchUpdateCategoryError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::batch_update_category::BatchUpdateCategoryError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::batch_update_category::BatchUpdateCategoryError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::batch_update_category::BatchUpdateCategoryError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::batch_update_category::BatchUpdateCategoryError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::batch_update_category::BatchUpdateCategoryError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::batch_update_category::BatchUpdateCategoryError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::batch_update_category::BatchUpdateCategoryError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_library_item::CreateLibraryItemError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -491,6 +587,33 @@ impl From<crate::operation::import_document::ImportDocumentError> for Error {
             crate::operation::import_document::ImportDocumentError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
             crate::operation::import_document::ImportDocumentError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::import_document::ImportDocumentError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_categories::ListCategoriesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_categories::ListCategoriesError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_categories::ListCategoriesError> for Error {
+    fn from(err: crate::operation::list_categories::ListCategoriesError) -> Self {
+        match err {
+            crate::operation::list_categories::ListCategoriesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_categories::ListCategoriesError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_categories::ListCategoriesError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_categories::ListCategoriesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_categories::ListCategoriesError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::list_categories::ListCategoriesError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_categories::ListCategoriesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

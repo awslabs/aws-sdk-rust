@@ -466,6 +466,47 @@ impl From<crate::operation::create_lf_tag::CreateLFTagError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_lf_tag_expression::CreateLFTagExpressionError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_lf_tag_expression::CreateLFTagExpressionError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_lf_tag_expression::CreateLFTagExpressionError> for Error {
+    fn from(err: crate::operation::create_lf_tag_expression::CreateLFTagExpressionError) -> Self {
+        match err {
+            crate::operation::create_lf_tag_expression::CreateLFTagExpressionError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::create_lf_tag_expression::CreateLFTagExpressionError::EntityNotFoundException(inner) => {
+                Error::EntityNotFoundException(inner)
+            }
+            crate::operation::create_lf_tag_expression::CreateLFTagExpressionError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::create_lf_tag_expression::CreateLFTagExpressionError::InvalidInputException(inner) => {
+                Error::InvalidInputException(inner)
+            }
+            crate::operation::create_lf_tag_expression::CreateLFTagExpressionError::OperationTimeoutException(inner) => {
+                Error::OperationTimeoutException(inner)
+            }
+            crate::operation::create_lf_tag_expression::CreateLFTagExpressionError::ResourceNumberLimitExceededException(inner) => {
+                Error::ResourceNumberLimitExceededException(inner)
+            }
+            crate::operation::create_lf_tag_expression::CreateLFTagExpressionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_data_cells_filter::DeleteDataCellsFilterError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -607,6 +648,44 @@ impl From<crate::operation::delete_lf_tag::DeleteLFTagError> for Error {
             crate::operation::delete_lf_tag::DeleteLFTagError::InvalidInputException(inner) => Error::InvalidInputException(inner),
             crate::operation::delete_lf_tag::DeleteLFTagError::OperationTimeoutException(inner) => Error::OperationTimeoutException(inner),
             crate::operation::delete_lf_tag::DeleteLFTagError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_lf_tag_expression::DeleteLFTagExpressionError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_lf_tag_expression::DeleteLFTagExpressionError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_lf_tag_expression::DeleteLFTagExpressionError> for Error {
+    fn from(err: crate::operation::delete_lf_tag_expression::DeleteLFTagExpressionError) -> Self {
+        match err {
+            crate::operation::delete_lf_tag_expression::DeleteLFTagExpressionError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::delete_lf_tag_expression::DeleteLFTagExpressionError::EntityNotFoundException(inner) => {
+                Error::EntityNotFoundException(inner)
+            }
+            crate::operation::delete_lf_tag_expression::DeleteLFTagExpressionError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::delete_lf_tag_expression::DeleteLFTagExpressionError::InvalidInputException(inner) => {
+                Error::InvalidInputException(inner)
+            }
+            crate::operation::delete_lf_tag_expression::DeleteLFTagExpressionError::OperationTimeoutException(inner) => {
+                Error::OperationTimeoutException(inner)
+            }
+            crate::operation::delete_lf_tag_expression::DeleteLFTagExpressionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -969,6 +1048,36 @@ impl From<crate::operation::get_lf_tag::GetLFTagError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_lf_tag_expression::GetLFTagExpressionError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_lf_tag_expression::GetLFTagExpressionError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_lf_tag_expression::GetLFTagExpressionError> for Error {
+    fn from(err: crate::operation::get_lf_tag_expression::GetLFTagExpressionError) -> Self {
+        match err {
+            crate::operation::get_lf_tag_expression::GetLFTagExpressionError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_lf_tag_expression::GetLFTagExpressionError::EntityNotFoundException(inner) => Error::EntityNotFoundException(inner),
+            crate::operation::get_lf_tag_expression::GetLFTagExpressionError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::get_lf_tag_expression::GetLFTagExpressionError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::get_lf_tag_expression::GetLFTagExpressionError::OperationTimeoutException(inner) => {
+                Error::OperationTimeoutException(inner)
+            }
+            crate::operation::get_lf_tag_expression::GetLFTagExpressionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_query_state::GetQueryStateError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1317,6 +1426,40 @@ impl From<crate::operation::list_lake_formation_opt_ins::ListLakeFormationOptIns
                 Error::OperationTimeoutException(inner)
             }
             crate::operation::list_lake_formation_opt_ins::ListLakeFormationOptInsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_lf_tag_expressions::ListLFTagExpressionsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_lf_tag_expressions::ListLFTagExpressionsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_lf_tag_expressions::ListLFTagExpressionsError> for Error {
+    fn from(err: crate::operation::list_lf_tag_expressions::ListLFTagExpressionsError) -> Self {
+        match err {
+            crate::operation::list_lf_tag_expressions::ListLFTagExpressionsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_lf_tag_expressions::ListLFTagExpressionsError::EntityNotFoundException(inner) => {
+                Error::EntityNotFoundException(inner)
+            }
+            crate::operation::list_lf_tag_expressions::ListLFTagExpressionsError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::list_lf_tag_expressions::ListLFTagExpressionsError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::list_lf_tag_expressions::ListLFTagExpressionsError::OperationTimeoutException(inner) => {
+                Error::OperationTimeoutException(inner)
+            }
+            crate::operation::list_lf_tag_expressions::ListLFTagExpressionsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1818,6 +1961,47 @@ impl From<crate::operation::update_lf_tag::UpdateLFTagError> for Error {
             crate::operation::update_lf_tag::UpdateLFTagError::InvalidInputException(inner) => Error::InvalidInputException(inner),
             crate::operation::update_lf_tag::UpdateLFTagError::OperationTimeoutException(inner) => Error::OperationTimeoutException(inner),
             crate::operation::update_lf_tag::UpdateLFTagError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_lf_tag_expression::UpdateLFTagExpressionError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_lf_tag_expression::UpdateLFTagExpressionError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_lf_tag_expression::UpdateLFTagExpressionError> for Error {
+    fn from(err: crate::operation::update_lf_tag_expression::UpdateLFTagExpressionError) -> Self {
+        match err {
+            crate::operation::update_lf_tag_expression::UpdateLFTagExpressionError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::update_lf_tag_expression::UpdateLFTagExpressionError::EntityNotFoundException(inner) => {
+                Error::EntityNotFoundException(inner)
+            }
+            crate::operation::update_lf_tag_expression::UpdateLFTagExpressionError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::update_lf_tag_expression::UpdateLFTagExpressionError::InvalidInputException(inner) => {
+                Error::InvalidInputException(inner)
+            }
+            crate::operation::update_lf_tag_expression::UpdateLFTagExpressionError::OperationTimeoutException(inner) => {
+                Error::OperationTimeoutException(inner)
+            }
+            crate::operation::update_lf_tag_expression::UpdateLFTagExpressionError::ResourceNumberLimitExceededException(inner) => {
+                Error::ResourceNumberLimitExceededException(inner)
+            }
+            crate::operation::update_lf_tag_expression::UpdateLFTagExpressionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

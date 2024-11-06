@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchIsAuthorizedOutput {
-    /// <p>A series of <code>Allow</code> or <code>Deny</code> decisions for each request, and the policies that produced them.</p>
+    /// <p>A series of <code>Allow</code> or <code>Deny</code> decisions for each request, and the policies that produced them. These results are returned in the order they were requested.</p>
     pub results: ::std::vec::Vec<crate::types::BatchIsAuthorizedOutputItem>,
     _request_id: Option<String>,
 }
 impl BatchIsAuthorizedOutput {
-    /// <p>A series of <code>Allow</code> or <code>Deny</code> decisions for each request, and the policies that produced them.</p>
+    /// <p>A series of <code>Allow</code> or <code>Deny</code> decisions for each request, and the policies that produced them. These results are returned in the order they were requested.</p>
     pub fn results(&self) -> &[crate::types::BatchIsAuthorizedOutputItem] {
         use std::ops::Deref;
         self.results.deref()
@@ -38,19 +38,19 @@ impl BatchIsAuthorizedOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_results`](Self::set_results).
     ///
-    /// <p>A series of <code>Allow</code> or <code>Deny</code> decisions for each request, and the policies that produced them.</p>
+    /// <p>A series of <code>Allow</code> or <code>Deny</code> decisions for each request, and the policies that produced them. These results are returned in the order they were requested.</p>
     pub fn results(mut self, input: crate::types::BatchIsAuthorizedOutputItem) -> Self {
         let mut v = self.results.unwrap_or_default();
         v.push(input);
         self.results = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A series of <code>Allow</code> or <code>Deny</code> decisions for each request, and the policies that produced them.</p>
+    /// <p>A series of <code>Allow</code> or <code>Deny</code> decisions for each request, and the policies that produced them. These results are returned in the order they were requested.</p>
     pub fn set_results(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BatchIsAuthorizedOutputItem>>) -> Self {
         self.results = input;
         self
     }
-    /// <p>A series of <code>Allow</code> or <code>Deny</code> decisions for each request, and the policies that produced them.</p>
+    /// <p>A series of <code>Allow</code> or <code>Deny</code> decisions for each request, and the policies that produced them. These results are returned in the order they were requested.</p>
     pub fn get_results(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchIsAuthorizedOutputItem>> {
         &self.results
     }

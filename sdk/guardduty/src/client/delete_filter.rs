@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteFilter`](crate::operation::delete_filter::builders::DeleteFilterFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`detector_id(impl Into<String>)`](crate::operation::delete_filter::builders::DeleteFilterFluentBuilder::detector_id) / [`set_detector_id(Option<String>)`](crate::operation::delete_filter::builders::DeleteFilterFluentBuilder::set_detector_id):<br>required: **true**<br><p>The unique ID of the detector that is associated with the filter.</p><br>
+    ///   - [`detector_id(impl Into<String>)`](crate::operation::delete_filter::builders::DeleteFilterFluentBuilder::detector_id) / [`set_detector_id(Option<String>)`](crate::operation::delete_filter::builders::DeleteFilterFluentBuilder::set_detector_id):<br>required: **true**<br><p>The unique ID of the detector that is associated with the filter.</p> <p>To find the <code>detectorId</code> in the current Region, see the Settings page in the GuardDuty console, or run the <a href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_ListDetectors.html">ListDetectors</a> API.</p><br>
     ///   - [`filter_name(impl Into<String>)`](crate::operation::delete_filter::builders::DeleteFilterFluentBuilder::filter_name) / [`set_filter_name(Option<String>)`](crate::operation::delete_filter::builders::DeleteFilterFluentBuilder::set_filter_name):<br>required: **true**<br><p>The name of the filter that you want to delete.</p><br>
     /// - On success, responds with [`DeleteFilterOutput`](crate::operation::delete_filter::DeleteFilterOutput)
     /// - On failure, responds with [`SdkError<DeleteFilterError>`](crate::operation::delete_filter::DeleteFilterError)

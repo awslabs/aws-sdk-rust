@@ -24,6 +24,8 @@ pub struct Resource {
     pub container_details: ::std::option::Option<crate::types::Container>,
     /// <p>Contains information about the database instance to which an anomalous login attempt was made.</p>
     pub rds_db_instance_details: ::std::option::Option<crate::types::RdsDbInstanceDetails>,
+    /// <p>Contains information about the RDS Limitless database that was involved in a GuardDuty finding.</p>
+    pub rds_limitless_db_details: ::std::option::Option<crate::types::RdsLimitlessDbDetails>,
     /// <p>Contains information about the user details through which anomalous login attempt was made.</p>
     pub rds_db_user_details: ::std::option::Option<crate::types::RdsDbUserDetails>,
     /// <p>Contains information about the Lambda function that was involved in a finding.</p>
@@ -72,6 +74,10 @@ impl Resource {
     pub fn rds_db_instance_details(&self) -> ::std::option::Option<&crate::types::RdsDbInstanceDetails> {
         self.rds_db_instance_details.as_ref()
     }
+    /// <p>Contains information about the RDS Limitless database that was involved in a GuardDuty finding.</p>
+    pub fn rds_limitless_db_details(&self) -> ::std::option::Option<&crate::types::RdsLimitlessDbDetails> {
+        self.rds_limitless_db_details.as_ref()
+    }
     /// <p>Contains information about the user details through which anomalous login attempt was made.</p>
     pub fn rds_db_user_details(&self) -> ::std::option::Option<&crate::types::RdsDbUserDetails> {
         self.rds_db_user_details.as_ref()
@@ -102,6 +108,7 @@ pub struct ResourceBuilder {
     pub(crate) ecs_cluster_details: ::std::option::Option<crate::types::EcsClusterDetails>,
     pub(crate) container_details: ::std::option::Option<crate::types::Container>,
     pub(crate) rds_db_instance_details: ::std::option::Option<crate::types::RdsDbInstanceDetails>,
+    pub(crate) rds_limitless_db_details: ::std::option::Option<crate::types::RdsLimitlessDbDetails>,
     pub(crate) rds_db_user_details: ::std::option::Option<crate::types::RdsDbUserDetails>,
     pub(crate) lambda_details: ::std::option::Option<crate::types::LambdaDetails>,
 }
@@ -252,6 +259,20 @@ impl ResourceBuilder {
     pub fn get_rds_db_instance_details(&self) -> &::std::option::Option<crate::types::RdsDbInstanceDetails> {
         &self.rds_db_instance_details
     }
+    /// <p>Contains information about the RDS Limitless database that was involved in a GuardDuty finding.</p>
+    pub fn rds_limitless_db_details(mut self, input: crate::types::RdsLimitlessDbDetails) -> Self {
+        self.rds_limitless_db_details = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Contains information about the RDS Limitless database that was involved in a GuardDuty finding.</p>
+    pub fn set_rds_limitless_db_details(mut self, input: ::std::option::Option<crate::types::RdsLimitlessDbDetails>) -> Self {
+        self.rds_limitless_db_details = input;
+        self
+    }
+    /// <p>Contains information about the RDS Limitless database that was involved in a GuardDuty finding.</p>
+    pub fn get_rds_limitless_db_details(&self) -> &::std::option::Option<crate::types::RdsLimitlessDbDetails> {
+        &self.rds_limitless_db_details
+    }
     /// <p>Contains information about the user details through which anomalous login attempt was made.</p>
     pub fn rds_db_user_details(mut self, input: crate::types::RdsDbUserDetails) -> Self {
         self.rds_db_user_details = ::std::option::Option::Some(input);
@@ -293,6 +314,7 @@ impl ResourceBuilder {
             ecs_cluster_details: self.ecs_cluster_details,
             container_details: self.container_details,
             rds_db_instance_details: self.rds_db_instance_details,
+            rds_limitless_db_details: self.rds_limitless_db_details,
             rds_db_user_details: self.rds_db_user_details,
             lambda_details: self.lambda_details,
         }

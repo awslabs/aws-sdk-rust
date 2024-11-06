@@ -52,6 +52,11 @@ where
                                 crate::protocol_serde::shape_rds_db_instance_details::de_rds_db_instance_details(tokens)?,
                             );
                         }
+                        "rdsLimitlessDbDetails" => {
+                            builder = builder.set_rds_limitless_db_details(
+                                crate::protocol_serde::shape_rds_limitless_db_details::de_rds_limitless_db_details(tokens)?,
+                            );
+                        }
                         "rdsDbUserDetails" => {
                             builder =
                                 builder.set_rds_db_user_details(crate::protocol_serde::shape_rds_db_user_details::de_rds_db_user_details(tokens)?);

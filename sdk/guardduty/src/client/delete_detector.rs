@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteDetector`](crate::operation::delete_detector::builders::DeleteDetectorFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`detector_id(impl Into<String>)`](crate::operation::delete_detector::builders::DeleteDetectorFluentBuilder::detector_id) / [`set_detector_id(Option<String>)`](crate::operation::delete_detector::builders::DeleteDetectorFluentBuilder::set_detector_id):<br>required: **true**<br><p>The unique ID of the detector that you want to delete.</p><br>
+    ///   - [`detector_id(impl Into<String>)`](crate::operation::delete_detector::builders::DeleteDetectorFluentBuilder::detector_id) / [`set_detector_id(Option<String>)`](crate::operation::delete_detector::builders::DeleteDetectorFluentBuilder::set_detector_id):<br>required: **true**<br><p>The unique ID of the detector that you want to delete.</p> <p>To find the <code>detectorId</code> in the current Region, see the Settings page in the GuardDuty console, or run the <a href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_ListDetectors.html">ListDetectors</a> API.</p><br>
     /// - On success, responds with [`DeleteDetectorOutput`](crate::operation::delete_detector::DeleteDetectorOutput)
     /// - On failure, responds with [`SdkError<DeleteDetectorError>`](crate::operation::delete_detector::DeleteDetectorError)
     pub fn delete_detector(&self) -> crate::operation::delete_detector::builders::DeleteDetectorFluentBuilder {

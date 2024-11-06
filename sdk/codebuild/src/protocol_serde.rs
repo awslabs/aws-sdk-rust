@@ -257,6 +257,8 @@ pub(crate) mod shape_builds_not_deleted;
 
 pub(crate) mod shape_code_coverages;
 
+pub(crate) mod shape_compute_configuration;
+
 pub(crate) mod shape_environment_platforms;
 
 pub(crate) mod shape_environment_variable;

@@ -15,6 +15,7 @@
 ///     DataLakeResourceType::Catalog => { /* ... */ },
 ///     DataLakeResourceType::Database => { /* ... */ },
 ///     DataLakeResourceType::DataLocation => { /* ... */ },
+///     DataLakeResourceType::LfNamedTagExpression => { /* ... */ },
 ///     DataLakeResourceType::LfTag => { /* ... */ },
 ///     DataLakeResourceType::LfTagPolicy => { /* ... */ },
 ///     DataLakeResourceType::LfTagPolicyDatabase => { /* ... */ },
@@ -54,6 +55,8 @@ pub enum DataLakeResourceType {
     #[allow(missing_docs)] // documentation missing in model
     DataLocation,
     #[allow(missing_docs)] // documentation missing in model
+    LfNamedTagExpression,
+    #[allow(missing_docs)] // documentation missing in model
     LfTag,
     #[allow(missing_docs)] // documentation missing in model
     LfTagPolicy,
@@ -73,6 +76,7 @@ impl ::std::convert::From<&str> for DataLakeResourceType {
             "CATALOG" => DataLakeResourceType::Catalog,
             "DATABASE" => DataLakeResourceType::Database,
             "DATA_LOCATION" => DataLakeResourceType::DataLocation,
+            "LF_NAMED_TAG_EXPRESSION" => DataLakeResourceType::LfNamedTagExpression,
             "LF_TAG" => DataLakeResourceType::LfTag,
             "LF_TAG_POLICY" => DataLakeResourceType::LfTagPolicy,
             "LF_TAG_POLICY_DATABASE" => DataLakeResourceType::LfTagPolicyDatabase,
@@ -96,6 +100,7 @@ impl DataLakeResourceType {
             DataLakeResourceType::Catalog => "CATALOG",
             DataLakeResourceType::Database => "DATABASE",
             DataLakeResourceType::DataLocation => "DATA_LOCATION",
+            DataLakeResourceType::LfNamedTagExpression => "LF_NAMED_TAG_EXPRESSION",
             DataLakeResourceType::LfTag => "LF_TAG",
             DataLakeResourceType::LfTagPolicy => "LF_TAG_POLICY",
             DataLakeResourceType::LfTagPolicyDatabase => "LF_TAG_POLICY_DATABASE",
@@ -110,6 +115,7 @@ impl DataLakeResourceType {
             "CATALOG",
             "DATABASE",
             "DATA_LOCATION",
+            "LF_NAMED_TAG_EXPRESSION",
             "LF_TAG",
             "LF_TAG_POLICY",
             "LF_TAG_POLICY_DATABASE",
@@ -141,6 +147,7 @@ impl ::std::fmt::Display for DataLakeResourceType {
             DataLakeResourceType::Catalog => write!(f, "CATALOG"),
             DataLakeResourceType::Database => write!(f, "DATABASE"),
             DataLakeResourceType::DataLocation => write!(f, "DATA_LOCATION"),
+            DataLakeResourceType::LfNamedTagExpression => write!(f, "LF_NAMED_TAG_EXPRESSION"),
             DataLakeResourceType::LfTag => write!(f, "LF_TAG"),
             DataLakeResourceType::LfTagPolicy => write!(f, "LF_TAG_POLICY"),
             DataLakeResourceType::LfTagPolicyDatabase => write!(f, "LF_TAG_POLICY_DATABASE"),

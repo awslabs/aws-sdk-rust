@@ -49,6 +49,16 @@ pub(crate) fn reflens_list_lake_formation_opt_ins_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_lf_tag_expressions_output_output_next_token(
+    input: &crate::operation::list_lf_tag_expressions::ListLfTagExpressionsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_lf_tags_output_output_next_token(
     input: &crate::operation::list_lf_tags::ListLfTagsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -130,6 +140,16 @@ pub(crate) fn lens_list_data_cells_filter_output_output_data_cells_filters(
     input: crate::operation::list_data_cells_filter::ListDataCellsFilterOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::DataCellsFilter>> {
     let input = match input.data_cells_filters {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_lf_tag_expressions_output_output_lf_tag_expressions(
+    input: crate::operation::list_lf_tag_expressions::ListLfTagExpressionsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::LfTagExpression>> {
+    let input = match input.lf_tag_expressions {
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,
     };

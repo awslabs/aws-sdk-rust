@@ -69,6 +69,10 @@ pub use crate::types::_environment_variable_type::EnvironmentVariableType;
 
 pub use crate::types::_project_fleet::ProjectFleet;
 
+pub use crate::types::_compute_configuration::ComputeConfiguration;
+
+pub use crate::types::_machine_type::MachineType;
+
 pub use crate::types::_compute_type::ComputeType;
 
 pub use crate::types::_environment_type::EnvironmentType;
@@ -271,6 +275,8 @@ mod _code_coverage;
 
 mod _code_coverage_report_summary;
 
+mod _compute_configuration;
+
 mod _compute_type;
 
 mod _credential_provider_type;
@@ -328,6 +334,8 @@ mod _logs_config;
 mod _logs_config_status_type;
 
 mod _logs_location;
+
+mod _machine_type;
 
 mod _network_interface;
 

@@ -21,6 +21,9 @@ pub fn ser_lf_tag_policy_resource(
         }
         array_2.finish();
     }
+    if let Some(var_5) = &input.expression_name {
+        object.key("ExpressionName").string(var_5.as_str());
+    }
     Ok(())
 }
 
@@ -55,6 +58,13 @@ where
                         }
                         "Expression" => {
                             builder = builder.set_expression(crate::protocol_serde::shape_expression::de_expression(tokens)?);
+                        }
+                        "ExpressionName" => {
+                            builder = builder.set_expression_name(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

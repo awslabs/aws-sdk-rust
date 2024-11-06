@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetFilter`](crate::operation::get_filter::builders::GetFilterFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`detector_id(impl Into<String>)`](crate::operation::get_filter::builders::GetFilterFluentBuilder::detector_id) / [`set_detector_id(Option<String>)`](crate::operation::get_filter::builders::GetFilterFluentBuilder::set_detector_id):<br>required: **true**<br><p>The unique ID of the detector that is associated with this filter.</p><br>
+    ///   - [`detector_id(impl Into<String>)`](crate::operation::get_filter::builders::GetFilterFluentBuilder::detector_id) / [`set_detector_id(Option<String>)`](crate::operation::get_filter::builders::GetFilterFluentBuilder::set_detector_id):<br>required: **true**<br><p>The unique ID of the detector that is associated with this filter.</p> <p>To find the <code>detectorId</code> in the current Region, see the Settings page in the GuardDuty console, or run the <a href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_ListDetectors.html">ListDetectors</a> API.</p><br>
     ///   - [`filter_name(impl Into<String>)`](crate::operation::get_filter::builders::GetFilterFluentBuilder::filter_name) / [`set_filter_name(Option<String>)`](crate::operation::get_filter::builders::GetFilterFluentBuilder::set_filter_name):<br>required: **true**<br><p>The name of the filter you want to get.</p><br>
     /// - On success, responds with [`GetFilterOutput`](crate::operation::get_filter::GetFilterOutput) with field(s):
     ///   - [`name(Option<String>)`](crate::operation::get_filter::GetFilterOutput::name): <p>The name of the filter.</p>

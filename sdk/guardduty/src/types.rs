@@ -361,6 +361,8 @@ pub use crate::types::_security_group::SecurityGroup;
 
 pub use crate::types::_rds_db_user_details::RdsDbUserDetails;
 
+pub use crate::types::_rds_limitless_db_details::RdsLimitlessDbDetails;
+
 pub use crate::types::_rds_db_instance_details::RdsDbInstanceDetails;
 
 pub use crate::types::_container::Container;
@@ -838,6 +840,8 @@ mod _publishing_status;
 mod _rds_db_instance_details;
 
 mod _rds_db_user_details;
+
+mod _rds_limitless_db_details;
 
 mod _rds_login_attempt_action;
 

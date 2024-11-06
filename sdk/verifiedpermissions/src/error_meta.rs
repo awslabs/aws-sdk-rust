@@ -101,6 +101,31 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::batch_get_policy::BatchGetPolicyError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::batch_get_policy::BatchGetPolicyError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::batch_get_policy::BatchGetPolicyError> for Error {
+    fn from(err: crate::operation::batch_get_policy::BatchGetPolicyError) -> Self {
+        match err {
+            crate::operation::batch_get_policy::BatchGetPolicyError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::batch_get_policy::BatchGetPolicyError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::batch_get_policy::BatchGetPolicyError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::batch_get_policy::BatchGetPolicyError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::batch_get_policy::BatchGetPolicyError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::batch_is_authorized::BatchIsAuthorizedError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

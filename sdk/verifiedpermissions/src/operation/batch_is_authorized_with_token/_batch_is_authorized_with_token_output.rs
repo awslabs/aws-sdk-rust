@@ -5,7 +5,7 @@
 pub struct BatchIsAuthorizedWithTokenOutput {
     /// <p>The identifier of the principal in the ID or access token.</p>
     pub principal: ::std::option::Option<crate::types::EntityIdentifier>,
-    /// <p>A series of <code>Allow</code> or <code>Deny</code> decisions for each request, and the policies that produced them.</p>
+    /// <p>A series of <code>Allow</code> or <code>Deny</code> decisions for each request, and the policies that produced them. These results are returned in the order they were requested.</p>
     pub results: ::std::vec::Vec<crate::types::BatchIsAuthorizedWithTokenOutputItem>,
     _request_id: Option<String>,
 }
@@ -14,7 +14,7 @@ impl BatchIsAuthorizedWithTokenOutput {
     pub fn principal(&self) -> ::std::option::Option<&crate::types::EntityIdentifier> {
         self.principal.as_ref()
     }
-    /// <p>A series of <code>Allow</code> or <code>Deny</code> decisions for each request, and the policies that produced them.</p>
+    /// <p>A series of <code>Allow</code> or <code>Deny</code> decisions for each request, and the policies that produced them. These results are returned in the order they were requested.</p>
     pub fn results(&self) -> &[crate::types::BatchIsAuthorizedWithTokenOutputItem] {
         use std::ops::Deref;
         self.results.deref()
@@ -59,19 +59,19 @@ impl BatchIsAuthorizedWithTokenOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_results`](Self::set_results).
     ///
-    /// <p>A series of <code>Allow</code> or <code>Deny</code> decisions for each request, and the policies that produced them.</p>
+    /// <p>A series of <code>Allow</code> or <code>Deny</code> decisions for each request, and the policies that produced them. These results are returned in the order they were requested.</p>
     pub fn results(mut self, input: crate::types::BatchIsAuthorizedWithTokenOutputItem) -> Self {
         let mut v = self.results.unwrap_or_default();
         v.push(input);
         self.results = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A series of <code>Allow</code> or <code>Deny</code> decisions for each request, and the policies that produced them.</p>
+    /// <p>A series of <code>Allow</code> or <code>Deny</code> decisions for each request, and the policies that produced them. These results are returned in the order they were requested.</p>
     pub fn set_results(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BatchIsAuthorizedWithTokenOutputItem>>) -> Self {
         self.results = input;
         self
     }
-    /// <p>A series of <code>Allow</code> or <code>Deny</code> decisions for each request, and the policies that produced them.</p>
+    /// <p>A series of <code>Allow</code> or <code>Deny</code> decisions for each request, and the policies that produced them. These results are returned in the order they were requested.</p>
     pub fn get_results(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchIsAuthorizedWithTokenOutputItem>> {
         &self.results
     }

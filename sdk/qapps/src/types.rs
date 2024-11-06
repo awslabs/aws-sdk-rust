@@ -63,6 +63,10 @@ pub use crate::types::_q_query_card::QQueryCard;
 
 pub use crate::types::_text_input_card::TextInputCard;
 
+pub use crate::types::_category_input::CategoryInput;
+
+pub use crate::types::_batch_create_category_input_category::BatchCreateCategoryInputCategory;
+
 mod _app_definition;
 
 mod _app_definition_input;
@@ -72,6 +76,8 @@ mod _app_required_capability;
 mod _app_status;
 
 mod _attribute_filter;
+
+mod _batch_create_category_input_category;
 
 mod _card;
 
@@ -86,6 +92,8 @@ mod _card_type;
 mod _card_value;
 
 mod _category;
+
+mod _category_input;
 
 mod _conversation_message;
 

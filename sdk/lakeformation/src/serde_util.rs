@@ -59,6 +59,16 @@ pub(crate) fn external_filtering_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn lf_tag_correct_errors(mut builder: crate::types::builders::LfTagBuilder) -> crate::types::builders::LfTagBuilder {
+    if builder.tag_key.is_none() {
+        builder.tag_key = Some(Default::default())
+    }
+    if builder.tag_values.is_none() {
+        builder.tag_values = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn lf_tag_pair_correct_errors(mut builder: crate::types::builders::LfTagPairBuilder) -> crate::types::builders::LfTagPairBuilder {
     if builder.tag_key.is_none() {
         builder.tag_key = Some(Default::default())
@@ -120,6 +130,15 @@ pub(crate) fn data_location_resource_correct_errors(
     builder
 }
 
+pub(crate) fn lf_tag_expression_resource_correct_errors(
+    mut builder: crate::types::builders::LfTagExpressionResourceBuilder,
+) -> crate::types::builders::LfTagExpressionResourceBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn lf_tag_key_resource_correct_errors(
     mut builder: crate::types::builders::LfTagKeyResourceBuilder,
 ) -> crate::types::builders::LfTagKeyResourceBuilder {
@@ -138,9 +157,6 @@ pub(crate) fn lf_tag_policy_resource_correct_errors(
     if builder.resource_type.is_none() {
         builder.resource_type = "no value was set".parse::<crate::types::ResourceType>().ok()
     }
-    if builder.expression.is_none() {
-        builder.expression = Some(Default::default())
-    }
     builder
 }
 
@@ -152,16 +168,6 @@ pub(crate) fn table_with_columns_resource_correct_errors(
     }
     if builder.name.is_none() {
         builder.name = Some(Default::default())
-    }
-    builder
-}
-
-pub(crate) fn lf_tag_correct_errors(mut builder: crate::types::builders::LfTagBuilder) -> crate::types::builders::LfTagBuilder {
-    if builder.tag_key.is_none() {
-        builder.tag_key = Some(Default::default())
-    }
-    if builder.tag_values.is_none() {
-        builder.tag_values = Some(Default::default())
     }
     builder
 }

@@ -27,6 +27,12 @@ pub(crate) mod shape_associate_library_item_review;
 
 pub(crate) mod shape_associate_q_app_with_user;
 
+pub(crate) mod shape_batch_create_category;
+
+pub(crate) mod shape_batch_delete_category;
+
+pub(crate) mod shape_batch_update_category;
+
 pub(crate) mod shape_create_library_item;
 
 pub(crate) mod shape_create_q_app;
@@ -46,6 +52,8 @@ pub(crate) mod shape_get_q_app;
 pub(crate) mod shape_get_q_app_session;
 
 pub(crate) mod shape_import_document;
+
+pub(crate) mod shape_list_categories;
 
 pub(crate) mod shape_list_library_items;
 
@@ -84,6 +92,12 @@ pub(crate) mod shape_access_denied_exception;
 pub(crate) mod shape_associate_library_item_review_input;
 
 pub(crate) mod shape_associate_q_app_with_user_input;
+
+pub(crate) mod shape_batch_create_category_input;
+
+pub(crate) mod shape_batch_delete_category_input;
+
+pub(crate) mod shape_batch_update_category_input;
 
 pub(crate) mod shape_conflict_exception;
 
@@ -137,9 +151,15 @@ pub(crate) mod shape_app_definition_input;
 
 pub(crate) mod shape_app_required_capabilities;
 
+pub(crate) mod shape_batch_create_category_input_category;
+
 pub(crate) mod shape_card_status_map;
 
 pub(crate) mod shape_card_value;
+
+pub(crate) mod shape_categories_list;
+
+pub(crate) mod shape_category_input;
 
 pub(crate) mod shape_category_list;
 

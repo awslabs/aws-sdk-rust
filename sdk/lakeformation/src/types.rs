@@ -7,6 +7,8 @@ pub use crate::types::_delete_object_input::DeleteObjectInput;
 
 pub use crate::types::_add_object_input::AddObjectInput;
 
+pub use crate::types::_lf_tag::LfTag;
+
 pub use crate::types::_external_filtering_configuration::ExternalFilteringConfiguration;
 
 pub use crate::types::_enable_status::EnableStatus;
@@ -37,8 +39,6 @@ pub use crate::types::_table_resource::TableResource;
 
 pub use crate::types::_table_wildcard::TableWildcard;
 
-pub use crate::types::_lf_tag::LfTag;
-
 pub use crate::types::_tagged_database::TaggedDatabase;
 
 pub use crate::types::_database_resource::DatabaseResource;
@@ -46,6 +46,8 @@ pub use crate::types::_database_resource::DatabaseResource;
 pub use crate::types::_permission::Permission;
 
 pub use crate::types::_resource::Resource;
+
+pub use crate::types::_lf_tag_expression_resource::LfTagExpressionResource;
 
 pub use crate::types::_lf_tag_policy_resource::LfTagPolicyResource;
 
@@ -92,6 +94,8 @@ pub use crate::types::_details_map::DetailsMap;
 pub use crate::types::_data_lake_resource_type::DataLakeResourceType;
 
 pub use crate::types::_resource_share_type::ResourceShareType;
+
+pub use crate::types::_lf_tag_expression::LfTagExpression;
 
 pub use crate::types::_lake_formation_opt_ins_info::LakeFormationOptInsInfo;
 
@@ -176,6 +180,10 @@ mod _lake_formation_opt_ins_info;
 mod _lf_tag;
 
 mod _lf_tag_error;
+
+mod _lf_tag_expression;
+
+mod _lf_tag_expression_resource;
 
 mod _lf_tag_key_resource;
 

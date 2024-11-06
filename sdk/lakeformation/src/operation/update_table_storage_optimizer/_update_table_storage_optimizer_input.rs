@@ -9,7 +9,7 @@ pub struct UpdateTableStorageOptimizerInput {
     pub database_name: ::std::option::Option<::std::string::String>,
     /// <p>Name of the table for which to enable the storage optimizer.</p>
     pub table_name: ::std::option::Option<::std::string::String>,
-    /// <p>Name of the table for which to enable the storage optimizer.</p>
+    /// <p>Name of the configuration for the storage optimizer.</p>
     pub storage_optimizer_config: ::std::option::Option<
         ::std::collections::HashMap<crate::types::OptimizerType, ::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     >,
@@ -27,7 +27,7 @@ impl UpdateTableStorageOptimizerInput {
     pub fn table_name(&self) -> ::std::option::Option<&str> {
         self.table_name.as_deref()
     }
-    /// <p>Name of the table for which to enable the storage optimizer.</p>
+    /// <p>Name of the configuration for the storage optimizer.</p>
     pub fn storage_optimizer_config(
         &self,
     ) -> ::std::option::Option<
@@ -103,7 +103,7 @@ impl UpdateTableStorageOptimizerInputBuilder {
     ///
     /// To override the contents of this collection use [`set_storage_optimizer_config`](Self::set_storage_optimizer_config).
     ///
-    /// <p>Name of the table for which to enable the storage optimizer.</p>
+    /// <p>Name of the configuration for the storage optimizer.</p>
     pub fn storage_optimizer_config(
         mut self,
         k: crate::types::OptimizerType,
@@ -114,7 +114,7 @@ impl UpdateTableStorageOptimizerInputBuilder {
         self.storage_optimizer_config = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>Name of the table for which to enable the storage optimizer.</p>
+    /// <p>Name of the configuration for the storage optimizer.</p>
     pub fn set_storage_optimizer_config(
         mut self,
         input: ::std::option::Option<
@@ -124,7 +124,7 @@ impl UpdateTableStorageOptimizerInputBuilder {
         self.storage_optimizer_config = input;
         self
     }
-    /// <p>Name of the table for which to enable the storage optimizer.</p>
+    /// <p>Name of the configuration for the storage optimizer.</p>
     pub fn get_storage_optimizer_config(
         &self,
     ) -> &::std::option::Option<

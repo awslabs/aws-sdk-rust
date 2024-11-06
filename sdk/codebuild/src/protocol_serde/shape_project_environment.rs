@@ -12,38 +12,44 @@ pub fn ser_project_environment(
     {
         object.key("computeType").string(input.compute_type.as_str());
     }
-    if let Some(var_1) = &input.fleet {
+    if let Some(var_1) = &input.compute_configuration {
         #[allow(unused_mut)]
-        let mut object_2 = object.key("fleet").start_object();
-        crate::protocol_serde::shape_project_fleet::ser_project_fleet(&mut object_2, var_1)?;
+        let mut object_2 = object.key("computeConfiguration").start_object();
+        crate::protocol_serde::shape_compute_configuration::ser_compute_configuration(&mut object_2, var_1)?;
         object_2.finish();
     }
-    if let Some(var_3) = &input.environment_variables {
-        let mut array_4 = object.key("environmentVariables").start_array();
-        for item_5 in var_3 {
+    if let Some(var_3) = &input.fleet {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("fleet").start_object();
+        crate::protocol_serde::shape_project_fleet::ser_project_fleet(&mut object_4, var_3)?;
+        object_4.finish();
+    }
+    if let Some(var_5) = &input.environment_variables {
+        let mut array_6 = object.key("environmentVariables").start_array();
+        for item_7 in var_5 {
             {
                 #[allow(unused_mut)]
-                let mut object_6 = array_4.value().start_object();
-                crate::protocol_serde::shape_environment_variable::ser_environment_variable(&mut object_6, item_5)?;
-                object_6.finish();
+                let mut object_8 = array_6.value().start_object();
+                crate::protocol_serde::shape_environment_variable::ser_environment_variable(&mut object_8, item_7)?;
+                object_8.finish();
             }
         }
-        array_4.finish();
+        array_6.finish();
     }
-    if let Some(var_7) = &input.privileged_mode {
-        object.key("privilegedMode").boolean(*var_7);
+    if let Some(var_9) = &input.privileged_mode {
+        object.key("privilegedMode").boolean(*var_9);
     }
-    if let Some(var_8) = &input.certificate {
-        object.key("certificate").string(var_8.as_str());
+    if let Some(var_10) = &input.certificate {
+        object.key("certificate").string(var_10.as_str());
     }
-    if let Some(var_9) = &input.registry_credential {
+    if let Some(var_11) = &input.registry_credential {
         #[allow(unused_mut)]
-        let mut object_10 = object.key("registryCredential").start_object();
-        crate::protocol_serde::shape_registry_credential::ser_registry_credential(&mut object_10, var_9)?;
-        object_10.finish();
+        let mut object_12 = object.key("registryCredential").start_object();
+        crate::protocol_serde::shape_registry_credential::ser_registry_credential(&mut object_12, var_11)?;
+        object_12.finish();
     }
-    if let Some(var_11) = &input.image_pull_credentials_type {
-        object.key("imagePullCredentialsType").string(var_11.as_str());
+    if let Some(var_13) = &input.image_pull_credentials_type {
+        object.key("imagePullCredentialsType").string(var_13.as_str());
     }
     Ok(())
 }
@@ -83,6 +89,10 @@ where
                                     .map(|s| s.to_unescaped().map(|u| crate::types::ComputeType::from(u.as_ref())))
                                     .transpose()?,
                             );
+                        }
+                        "computeConfiguration" => {
+                            builder = builder
+                                .set_compute_configuration(crate::protocol_serde::shape_compute_configuration::de_compute_configuration(tokens)?);
                         }
                         "fleet" => {
                             builder = builder.set_fleet(crate::protocol_serde::shape_project_fleet::de_project_fleet(tokens)?);

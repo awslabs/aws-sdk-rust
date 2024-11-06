@@ -36,3 +36,7 @@ pub use crate::types::_q_plugin_card::QPluginCardBuilder;
 pub use crate::types::_q_query_card::QQueryCardBuilder;
 
 pub use crate::types::_text_input_card::TextInputCardBuilder;
+
+pub use crate::types::_category_input::CategoryInputBuilder;
+
+pub use crate::types::_batch_create_category_input_category::BatchCreateCategoryInputCategoryBuilder;

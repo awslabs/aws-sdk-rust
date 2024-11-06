@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteIPSet`](crate::operation::delete_ip_set::builders::DeleteIPSetFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`detector_id(impl Into<String>)`](crate::operation::delete_ip_set::builders::DeleteIPSetFluentBuilder::detector_id) / [`set_detector_id(Option<String>)`](crate::operation::delete_ip_set::builders::DeleteIPSetFluentBuilder::set_detector_id):<br>required: **true**<br><p>The unique ID of the detector associated with the IPSet.</p><br>
+    ///   - [`detector_id(impl Into<String>)`](crate::operation::delete_ip_set::builders::DeleteIPSetFluentBuilder::detector_id) / [`set_detector_id(Option<String>)`](crate::operation::delete_ip_set::builders::DeleteIPSetFluentBuilder::set_detector_id):<br>required: **true**<br><p>The unique ID of the detector associated with the IPSet.</p> <p>To find the <code>detectorId</code> in the current Region, see the Settings page in the GuardDuty console, or run the <a href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_ListDetectors.html">ListDetectors</a> API.</p><br>
     ///   - [`ip_set_id(impl Into<String>)`](crate::operation::delete_ip_set::builders::DeleteIPSetFluentBuilder::ip_set_id) / [`set_ip_set_id(Option<String>)`](crate::operation::delete_ip_set::builders::DeleteIPSetFluentBuilder::set_ip_set_id):<br>required: **true**<br><p>The unique ID of the IPSet to delete.</p><br>
     /// - On success, responds with [`DeleteIpSetOutput`](crate::operation::delete_ip_set::DeleteIpSetOutput)
     /// - On failure, responds with [`SdkError<DeleteIPSetError>`](crate::operation::delete_ip_set::DeleteIPSetError)

@@ -85,7 +85,7 @@ pub fn de_list_storage_lens_groups(
                 builder = builder.set_next_token(var_3);
             }
             ,
-            s if s.matches("StorageLensGroupList") /* StorageLensGroupList com.amazonaws.s3control.synthetic#ListStorageLensGroupsOutput$StorageLensGroupList */ =>  {
+            s if s.matches("StorageLensGroup") /* StorageLensGroupList com.amazonaws.s3control.synthetic#ListStorageLensGroupsOutput$StorageLensGroupList */ =>  {
                 let var_4 =
                     Some(
                         Result::<::std::vec::Vec::<crate::types::ListStorageLensGroupEntry>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({

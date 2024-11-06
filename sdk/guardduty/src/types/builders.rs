@@ -287,6 +287,8 @@ pub use crate::types::_security_group::SecurityGroupBuilder;
 
 pub use crate::types::_rds_db_user_details::RdsDbUserDetailsBuilder;
 
+pub use crate::types::_rds_limitless_db_details::RdsLimitlessDbDetailsBuilder;
+
 pub use crate::types::_rds_db_instance_details::RdsDbInstanceDetailsBuilder;
 
 pub use crate::types::_container::ContainerBuilder;

@@ -17,6 +17,7 @@
 ///     Permission::Associate => { /* ... */ },
 ///     Permission::CreateDatabase => { /* ... */ },
 ///     Permission::CreateLfTag => { /* ... */ },
+///     Permission::CreateLfTagExpression => { /* ... */ },
 ///     Permission::CreateTable => { /* ... */ },
 ///     Permission::DataLocationAccess => { /* ... */ },
 ///     Permission::Delete => { /* ... */ },
@@ -63,6 +64,8 @@ pub enum Permission {
     #[allow(missing_docs)] // documentation missing in model
     CreateLfTag,
     #[allow(missing_docs)] // documentation missing in model
+    CreateLfTagExpression,
+    #[allow(missing_docs)] // documentation missing in model
     CreateTable,
     #[allow(missing_docs)] // documentation missing in model
     DataLocationAccess,
@@ -90,6 +93,7 @@ impl ::std::convert::From<&str> for Permission {
             "ASSOCIATE" => Permission::Associate,
             "CREATE_DATABASE" => Permission::CreateDatabase,
             "CREATE_LF_TAG" => Permission::CreateLfTag,
+            "CREATE_LF_TAG_EXPRESSION" => Permission::CreateLfTagExpression,
             "CREATE_TABLE" => Permission::CreateTable,
             "DATA_LOCATION_ACCESS" => Permission::DataLocationAccess,
             "DELETE" => Permission::Delete,
@@ -118,6 +122,7 @@ impl Permission {
             Permission::Associate => "ASSOCIATE",
             Permission::CreateDatabase => "CREATE_DATABASE",
             Permission::CreateLfTag => "CREATE_LF_TAG",
+            Permission::CreateLfTagExpression => "CREATE_LF_TAG_EXPRESSION",
             Permission::CreateTable => "CREATE_TABLE",
             Permission::DataLocationAccess => "DATA_LOCATION_ACCESS",
             Permission::Delete => "DELETE",
@@ -137,6 +142,7 @@ impl Permission {
             "ASSOCIATE",
             "CREATE_DATABASE",
             "CREATE_LF_TAG",
+            "CREATE_LF_TAG_EXPRESSION",
             "CREATE_TABLE",
             "DATA_LOCATION_ACCESS",
             "DELETE",
@@ -173,6 +179,7 @@ impl ::std::fmt::Display for Permission {
             Permission::Associate => write!(f, "ASSOCIATE"),
             Permission::CreateDatabase => write!(f, "CREATE_DATABASE"),
             Permission::CreateLfTag => write!(f, "CREATE_LF_TAG"),
+            Permission::CreateLfTagExpression => write!(f, "CREATE_LF_TAG_EXPRESSION"),
             Permission::CreateTable => write!(f, "CREATE_TABLE"),
             Permission::DataLocationAccess => write!(f, "DATA_LOCATION_ACCESS"),
             Permission::Delete => write!(f, "DELETE"),

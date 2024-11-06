@@ -25,7 +25,7 @@ pub struct PublicAccessBlockConfiguration {
     /// <p>Enabling this setting doesn't affect existing bucket policies.</p>
     /// <p>This property is not supported for Amazon S3 on Outposts.</p>
     pub block_public_policy: ::std::option::Option<bool>,
-    /// <p>Specifies whether Amazon S3 should restrict public bucket policies for buckets in this account. Setting this element to <code>TRUE</code> restricts access to buckets with public policies to only Amazon Web Servicesservice principals and authorized users within this account.</p>
+    /// <p>Specifies whether Amazon S3 should restrict public bucket policies for buckets in this account. Setting this element to <code>TRUE</code> restricts access to buckets with public policies to only Amazon Web Services service principals and authorized users within this account.</p>
     /// <p>Enabling this setting doesn't affect previously stored bucket policies, except that public and cross-account access within any public bucket policy, including non-public delegation to specific accounts, is blocked.</p>
     /// <p>This property is not supported for Amazon S3 on Outposts.</p>
     pub restrict_public_buckets: ::std::option::Option<bool>,
@@ -57,7 +57,7 @@ impl PublicAccessBlockConfiguration {
     pub fn block_public_policy(&self) -> ::std::option::Option<bool> {
         self.block_public_policy
     }
-    /// <p>Specifies whether Amazon S3 should restrict public bucket policies for buckets in this account. Setting this element to <code>TRUE</code> restricts access to buckets with public policies to only Amazon Web Servicesservice principals and authorized users within this account.</p>
+    /// <p>Specifies whether Amazon S3 should restrict public bucket policies for buckets in this account. Setting this element to <code>TRUE</code> restricts access to buckets with public policies to only Amazon Web Services service principals and authorized users within this account.</p>
     /// <p>Enabling this setting doesn't affect previously stored bucket policies, except that public and cross-account access within any public bucket policy, including non-public delegation to specific accounts, is blocked.</p>
     /// <p>This property is not supported for Amazon S3 on Outposts.</p>
     pub fn restrict_public_buckets(&self) -> ::std::option::Option<bool> {
@@ -165,21 +165,21 @@ impl PublicAccessBlockConfigurationBuilder {
     pub fn get_block_public_policy(&self) -> &::std::option::Option<bool> {
         &self.block_public_policy
     }
-    /// <p>Specifies whether Amazon S3 should restrict public bucket policies for buckets in this account. Setting this element to <code>TRUE</code> restricts access to buckets with public policies to only Amazon Web Servicesservice principals and authorized users within this account.</p>
+    /// <p>Specifies whether Amazon S3 should restrict public bucket policies for buckets in this account. Setting this element to <code>TRUE</code> restricts access to buckets with public policies to only Amazon Web Services service principals and authorized users within this account.</p>
     /// <p>Enabling this setting doesn't affect previously stored bucket policies, except that public and cross-account access within any public bucket policy, including non-public delegation to specific accounts, is blocked.</p>
     /// <p>This property is not supported for Amazon S3 on Outposts.</p>
     pub fn restrict_public_buckets(mut self, input: bool) -> Self {
         self.restrict_public_buckets = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies whether Amazon S3 should restrict public bucket policies for buckets in this account. Setting this element to <code>TRUE</code> restricts access to buckets with public policies to only Amazon Web Servicesservice principals and authorized users within this account.</p>
+    /// <p>Specifies whether Amazon S3 should restrict public bucket policies for buckets in this account. Setting this element to <code>TRUE</code> restricts access to buckets with public policies to only Amazon Web Services service principals and authorized users within this account.</p>
     /// <p>Enabling this setting doesn't affect previously stored bucket policies, except that public and cross-account access within any public bucket policy, including non-public delegation to specific accounts, is blocked.</p>
     /// <p>This property is not supported for Amazon S3 on Outposts.</p>
     pub fn set_restrict_public_buckets(mut self, input: ::std::option::Option<bool>) -> Self {
         self.restrict_public_buckets = input;
         self
     }
-    /// <p>Specifies whether Amazon S3 should restrict public bucket policies for buckets in this account. Setting this element to <code>TRUE</code> restricts access to buckets with public policies to only Amazon Web Servicesservice principals and authorized users within this account.</p>
+    /// <p>Specifies whether Amazon S3 should restrict public bucket policies for buckets in this account. Setting this element to <code>TRUE</code> restricts access to buckets with public policies to only Amazon Web Services service principals and authorized users within this account.</p>
     /// <p>Enabling this setting doesn't affect previously stored bucket policies, except that public and cross-account access within any public bucket policy, including non-public delegation to specific accounts, is blocked.</p>
     /// <p>This property is not supported for Amazon S3 on Outposts.</p>
     pub fn get_restrict_public_buckets(&self) -> &::std::option::Option<bool> {

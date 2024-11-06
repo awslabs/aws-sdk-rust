@@ -5,6 +5,8 @@ pub use crate::types::_delete_object_input::DeleteObjectInputBuilder;
 
 pub use crate::types::_add_object_input::AddObjectInputBuilder;
 
+pub use crate::types::_lf_tag::LfTagBuilder;
+
 pub use crate::types::_external_filtering_configuration::ExternalFilteringConfigurationBuilder;
 
 pub use crate::types::_data_lake_principal::DataLakePrincipalBuilder;
@@ -29,13 +31,13 @@ pub use crate::types::_table_resource::TableResourceBuilder;
 
 pub use crate::types::_table_wildcard::TableWildcardBuilder;
 
-pub use crate::types::_lf_tag::LfTagBuilder;
-
 pub use crate::types::_tagged_database::TaggedDatabaseBuilder;
 
 pub use crate::types::_database_resource::DatabaseResourceBuilder;
 
 pub use crate::types::_resource::ResourceBuilder;
+
+pub use crate::types::_lf_tag_expression_resource::LfTagExpressionResourceBuilder;
 
 pub use crate::types::_lf_tag_policy_resource::LfTagPolicyResourceBuilder;
 
@@ -68,6 +70,8 @@ pub use crate::types::_filter_condition::FilterConditionBuilder;
 pub use crate::types::_principal_resource_permissions::PrincipalResourcePermissionsBuilder;
 
 pub use crate::types::_details_map::DetailsMapBuilder;
+
+pub use crate::types::_lf_tag_expression::LfTagExpressionBuilder;
 
 pub use crate::types::_lake_formation_opt_ins_info::LakeFormationOptInsInfoBuilder;
 

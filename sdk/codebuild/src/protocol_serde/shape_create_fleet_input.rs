@@ -18,44 +18,50 @@ pub fn ser_create_fleet_input_input(
     if let Some(var_4) = &input.compute_type {
         object.key("computeType").string(var_4.as_str());
     }
-    if let Some(var_5) = &input.scaling_configuration {
+    if let Some(var_5) = &input.compute_configuration {
         #[allow(unused_mut)]
-        let mut object_6 = object.key("scalingConfiguration").start_object();
-        crate::protocol_serde::shape_scaling_configuration_input::ser_scaling_configuration_input(&mut object_6, var_5)?;
+        let mut object_6 = object.key("computeConfiguration").start_object();
+        crate::protocol_serde::shape_compute_configuration::ser_compute_configuration(&mut object_6, var_5)?;
         object_6.finish();
     }
-    if let Some(var_7) = &input.overflow_behavior {
-        object.key("overflowBehavior").string(var_7.as_str());
-    }
-    if let Some(var_8) = &input.vpc_config {
+    if let Some(var_7) = &input.scaling_configuration {
         #[allow(unused_mut)]
-        let mut object_9 = object.key("vpcConfig").start_object();
-        crate::protocol_serde::shape_vpc_config::ser_vpc_config(&mut object_9, var_8)?;
-        object_9.finish();
+        let mut object_8 = object.key("scalingConfiguration").start_object();
+        crate::protocol_serde::shape_scaling_configuration_input::ser_scaling_configuration_input(&mut object_8, var_7)?;
+        object_8.finish();
     }
-    if let Some(var_10) = &input.proxy_configuration {
+    if let Some(var_9) = &input.overflow_behavior {
+        object.key("overflowBehavior").string(var_9.as_str());
+    }
+    if let Some(var_10) = &input.vpc_config {
         #[allow(unused_mut)]
-        let mut object_11 = object.key("proxyConfiguration").start_object();
-        crate::protocol_serde::shape_proxy_configuration::ser_proxy_configuration(&mut object_11, var_10)?;
+        let mut object_11 = object.key("vpcConfig").start_object();
+        crate::protocol_serde::shape_vpc_config::ser_vpc_config(&mut object_11, var_10)?;
         object_11.finish();
     }
-    if let Some(var_12) = &input.image_id {
-        object.key("imageId").string(var_12.as_str());
+    if let Some(var_12) = &input.proxy_configuration {
+        #[allow(unused_mut)]
+        let mut object_13 = object.key("proxyConfiguration").start_object();
+        crate::protocol_serde::shape_proxy_configuration::ser_proxy_configuration(&mut object_13, var_12)?;
+        object_13.finish();
     }
-    if let Some(var_13) = &input.fleet_service_role {
-        object.key("fleetServiceRole").string(var_13.as_str());
+    if let Some(var_14) = &input.image_id {
+        object.key("imageId").string(var_14.as_str());
     }
-    if let Some(var_14) = &input.tags {
-        let mut array_15 = object.key("tags").start_array();
-        for item_16 in var_14 {
+    if let Some(var_15) = &input.fleet_service_role {
+        object.key("fleetServiceRole").string(var_15.as_str());
+    }
+    if let Some(var_16) = &input.tags {
+        let mut array_17 = object.key("tags").start_array();
+        for item_18 in var_16 {
             {
                 #[allow(unused_mut)]
-                let mut object_17 = array_15.value().start_object();
-                crate::protocol_serde::shape_tag::ser_tag(&mut object_17, item_16)?;
-                object_17.finish();
+                let mut object_19 = array_17.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_19, item_18)?;
+                object_19.finish();
             }
         }
-        array_15.finish();
+        array_17.finish();
     }
     Ok(())
 }

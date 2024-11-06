@@ -8,6 +8,10 @@ pub struct Category {
     pub id: ::std::string::String,
     /// <p>The title or name of the category.</p>
     pub title: ::std::string::String,
+    /// <p>The color of the category</p>
+    pub color: ::std::option::Option<::std::string::String>,
+    /// <p>The number of published Amazon Q Apps associated with a category</p>
+    pub app_count: ::std::option::Option<i32>,
 }
 impl Category {
     /// <p>The unique identifier of the category.</p>
@@ -19,6 +23,14 @@ impl Category {
     pub fn title(&self) -> &str {
         use std::ops::Deref;
         self.title.deref()
+    }
+    /// <p>The color of the category</p>
+    pub fn color(&self) -> ::std::option::Option<&str> {
+        self.color.as_deref()
+    }
+    /// <p>The number of published Amazon Q Apps associated with a category</p>
+    pub fn app_count(&self) -> ::std::option::Option<i32> {
+        self.app_count
     }
 }
 impl Category {
@@ -34,6 +46,8 @@ impl Category {
 pub struct CategoryBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) title: ::std::option::Option<::std::string::String>,
+    pub(crate) color: ::std::option::Option<::std::string::String>,
+    pub(crate) app_count: ::std::option::Option<i32>,
 }
 impl CategoryBuilder {
     /// <p>The unique identifier of the category.</p>
@@ -66,6 +80,34 @@ impl CategoryBuilder {
     pub fn get_title(&self) -> &::std::option::Option<::std::string::String> {
         &self.title
     }
+    /// <p>The color of the category</p>
+    pub fn color(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.color = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The color of the category</p>
+    pub fn set_color(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.color = input;
+        self
+    }
+    /// <p>The color of the category</p>
+    pub fn get_color(&self) -> &::std::option::Option<::std::string::String> {
+        &self.color
+    }
+    /// <p>The number of published Amazon Q Apps associated with a category</p>
+    pub fn app_count(mut self, input: i32) -> Self {
+        self.app_count = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The number of published Amazon Q Apps associated with a category</p>
+    pub fn set_app_count(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.app_count = input;
+        self
+    }
+    /// <p>The number of published Amazon Q Apps associated with a category</p>
+    pub fn get_app_count(&self) -> &::std::option::Option<i32> {
+        &self.app_count
+    }
     /// Consumes the builder and constructs a [`Category`](crate::types::Category).
     /// This method will fail if any of the following fields are not set:
     /// - [`id`](crate::types::builders::CategoryBuilder::id)
@@ -84,6 +126,8 @@ impl CategoryBuilder {
                     "title was not specified but it is required when building Category",
                 )
             })?,
+            color: self.color,
+            app_count: self.app_count,
         })
     }
 }

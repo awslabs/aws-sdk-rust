@@ -67,15 +67,15 @@ pub fn de_list_storage_lens_configurations(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
-    if !start_el.matches("ListStorageLensConfigurationsResult") {
+    if !start_el.matches("ListStorageLensConfigurationResult") {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "encountered invalid XML root: expected ListStorageLensConfigurationsResult but got {:?}. This is likely a bug in the SDK.",
+            "encountered invalid XML root: expected ListStorageLensConfigurationResult but got {:?}. This is likely a bug in the SDK.",
             start_el
         )));
     }
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
-            s if s.matches("StorageLensConfigurationList") /* StorageLensConfigurationList com.amazonaws.s3control.synthetic#ListStorageLensConfigurationsOutput$StorageLensConfigurationList */ =>  {
+            s if s.matches("StorageLensConfiguration") /* StorageLensConfigurationList com.amazonaws.s3control.synthetic#ListStorageLensConfigurationsOutput$StorageLensConfigurationList */ =>  {
                 let var_3 =
                     Some(
                         Result::<::std::vec::Vec::<crate::types::ListStorageLensConfigurationEntry>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({

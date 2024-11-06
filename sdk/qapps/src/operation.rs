@@ -7,6 +7,15 @@ pub mod associate_library_item_review;
 /// Types for the `AssociateQAppWithUser` operation.
 pub mod associate_q_app_with_user;
 
+/// Types for the `BatchCreateCategory` operation.
+pub mod batch_create_category;
+
+/// Types for the `BatchDeleteCategory` operation.
+pub mod batch_delete_category;
+
+/// Types for the `BatchUpdateCategory` operation.
+pub mod batch_update_category;
+
 /// Types for the `CreateLibraryItem` operation.
 pub mod create_library_item;
 
@@ -36,6 +45,9 @@ pub mod get_q_app_session;
 
 /// Types for the `ImportDocument` operation.
 pub mod import_document;
+
+/// Types for the `ListCategories` operation.
+pub mod list_categories;
 
 /// Types for the `ListLibraryItems` operation.
 pub mod list_library_items;

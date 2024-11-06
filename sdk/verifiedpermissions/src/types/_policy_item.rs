@@ -5,7 +5,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PolicyItem {
-    /// <p>The identifier of the PolicyStore where the policy you want information about is stored.</p>
+    /// <p>The identifier of the policy store where the policy you want information about is stored.</p>
     pub policy_store_id: ::std::string::String,
     /// <p>The identifier of the policy you want information about.</p>
     pub policy_id: ::std::string::String,
@@ -33,7 +33,7 @@ pub struct PolicyItem {
     pub effect: ::std::option::Option<crate::types::PolicyEffect>,
 }
 impl PolicyItem {
-    /// <p>The identifier of the PolicyStore where the policy you want information about is stored.</p>
+    /// <p>The identifier of the policy store where the policy you want information about is stored.</p>
     pub fn policy_store_id(&self) -> &str {
         use std::ops::Deref;
         self.policy_store_id.deref()
@@ -107,18 +107,18 @@ pub struct PolicyItemBuilder {
     pub(crate) effect: ::std::option::Option<crate::types::PolicyEffect>,
 }
 impl PolicyItemBuilder {
-    /// <p>The identifier of the PolicyStore where the policy you want information about is stored.</p>
+    /// <p>The identifier of the policy store where the policy you want information about is stored.</p>
     /// This field is required.
     pub fn policy_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_store_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier of the PolicyStore where the policy you want information about is stored.</p>
+    /// <p>The identifier of the policy store where the policy you want information about is stored.</p>
     pub fn set_policy_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy_store_id = input;
         self
     }
-    /// <p>The identifier of the PolicyStore where the policy you want information about is stored.</p>
+    /// <p>The identifier of the policy store where the policy you want information about is stored.</p>
     pub fn get_policy_store_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.policy_store_id
     }

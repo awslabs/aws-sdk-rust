@@ -47,6 +47,12 @@ pub fn ser_attribute_value(
             }
             object_5.finish();
         }
+        crate::types::AttributeValue::Ipaddr(inner) => {
+            object_4.key("ipaddr").string(inner.as_str());
+        }
+        crate::types::AttributeValue::Decimal(inner) => {
+            object_4.key("decimal").string(inner.as_str());
+        }
         crate::types::AttributeValue::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "AttributeValue",
@@ -118,6 +124,22 @@ where
                             crate::protocol_serde::shape_record_attribute::de_record_attribute(tokens)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'record' cannot be null")
                             })?,
+                        )),
+                        "ipaddr" => Some(crate::types::AttributeValue::Ipaddr(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                .transpose()?
+                                .ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'ipaddr' cannot be null")
+                                })?,
+                        )),
+                        "decimal" => Some(crate::types::AttributeValue::Decimal(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                .transpose()?
+                                .ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'decimal' cannot be null")
+                                })?,
                         )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;

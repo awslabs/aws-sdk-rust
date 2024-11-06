@@ -18,8 +18,10 @@ pub struct Resource {
     pub data_cells_filter: ::std::option::Option<crate::types::DataCellsFilterResource>,
     /// <p>The LF-tag key and values attached to a resource.</p>
     pub lf_tag: ::std::option::Option<crate::types::LfTagKeyResource>,
-    /// <p>A list of LF-tag conditions that define a resource's LF-tag policy.</p>
+    /// <p>A list of LF-tag conditions or saved LF-Tag expressions that define a resource's LF-tag policy.</p>
     pub lf_tag_policy: ::std::option::Option<crate::types::LfTagPolicyResource>,
+    /// <p>LF-Tag expression resource. A logical expression composed of one or more LF-Tag key:value pairs.</p>
+    pub lf_tag_expression: ::std::option::Option<crate::types::LfTagExpressionResource>,
 }
 impl Resource {
     /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment.</p>
@@ -50,9 +52,13 @@ impl Resource {
     pub fn lf_tag(&self) -> ::std::option::Option<&crate::types::LfTagKeyResource> {
         self.lf_tag.as_ref()
     }
-    /// <p>A list of LF-tag conditions that define a resource's LF-tag policy.</p>
+    /// <p>A list of LF-tag conditions or saved LF-Tag expressions that define a resource's LF-tag policy.</p>
     pub fn lf_tag_policy(&self) -> ::std::option::Option<&crate::types::LfTagPolicyResource> {
         self.lf_tag_policy.as_ref()
+    }
+    /// <p>LF-Tag expression resource. A logical expression composed of one or more LF-Tag key:value pairs.</p>
+    pub fn lf_tag_expression(&self) -> ::std::option::Option<&crate::types::LfTagExpressionResource> {
+        self.lf_tag_expression.as_ref()
     }
 }
 impl Resource {
@@ -74,6 +80,7 @@ pub struct ResourceBuilder {
     pub(crate) data_cells_filter: ::std::option::Option<crate::types::DataCellsFilterResource>,
     pub(crate) lf_tag: ::std::option::Option<crate::types::LfTagKeyResource>,
     pub(crate) lf_tag_policy: ::std::option::Option<crate::types::LfTagPolicyResource>,
+    pub(crate) lf_tag_expression: ::std::option::Option<crate::types::LfTagExpressionResource>,
 }
 impl ResourceBuilder {
     /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment.</p>
@@ -174,19 +181,33 @@ impl ResourceBuilder {
     pub fn get_lf_tag(&self) -> &::std::option::Option<crate::types::LfTagKeyResource> {
         &self.lf_tag
     }
-    /// <p>A list of LF-tag conditions that define a resource's LF-tag policy.</p>
+    /// <p>A list of LF-tag conditions or saved LF-Tag expressions that define a resource's LF-tag policy.</p>
     pub fn lf_tag_policy(mut self, input: crate::types::LfTagPolicyResource) -> Self {
         self.lf_tag_policy = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A list of LF-tag conditions that define a resource's LF-tag policy.</p>
+    /// <p>A list of LF-tag conditions or saved LF-Tag expressions that define a resource's LF-tag policy.</p>
     pub fn set_lf_tag_policy(mut self, input: ::std::option::Option<crate::types::LfTagPolicyResource>) -> Self {
         self.lf_tag_policy = input;
         self
     }
-    /// <p>A list of LF-tag conditions that define a resource's LF-tag policy.</p>
+    /// <p>A list of LF-tag conditions or saved LF-Tag expressions that define a resource's LF-tag policy.</p>
     pub fn get_lf_tag_policy(&self) -> &::std::option::Option<crate::types::LfTagPolicyResource> {
         &self.lf_tag_policy
+    }
+    /// <p>LF-Tag expression resource. A logical expression composed of one or more LF-Tag key:value pairs.</p>
+    pub fn lf_tag_expression(mut self, input: crate::types::LfTagExpressionResource) -> Self {
+        self.lf_tag_expression = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>LF-Tag expression resource. A logical expression composed of one or more LF-Tag key:value pairs.</p>
+    pub fn set_lf_tag_expression(mut self, input: ::std::option::Option<crate::types::LfTagExpressionResource>) -> Self {
+        self.lf_tag_expression = input;
+        self
+    }
+    /// <p>LF-Tag expression resource. A logical expression composed of one or more LF-Tag key:value pairs.</p>
+    pub fn get_lf_tag_expression(&self) -> &::std::option::Option<crate::types::LfTagExpressionResource> {
+        &self.lf_tag_expression
     }
     /// Consumes the builder and constructs a [`Resource`](crate::types::Resource).
     pub fn build(self) -> crate::types::Resource {
@@ -199,6 +220,7 @@ impl ResourceBuilder {
             data_cells_filter: self.data_cells_filter,
             lf_tag: self.lf_tag,
             lf_tag_policy: self.lf_tag_policy,
+            lf_tag_expression: self.lf_tag_expression,
         }
     }
 }

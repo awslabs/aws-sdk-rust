@@ -71,6 +71,10 @@ where
                                     .transpose()?,
                             );
                         }
+                        "computeConfiguration" => {
+                            builder = builder
+                                .set_compute_configuration(crate::protocol_serde::shape_compute_configuration::de_compute_configuration(tokens)?);
+                        }
                         "scalingConfiguration" => {
                             builder = builder.set_scaling_configuration(
                                 crate::protocol_serde::shape_scaling_configuration_output::de_scaling_configuration_output(tokens)?,
