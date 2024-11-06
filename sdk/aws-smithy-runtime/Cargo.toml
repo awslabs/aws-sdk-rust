@@ -51,12 +51,12 @@ version = "0.63.0"
 
 [dependencies.aws-smithy-runtime-api]
 path = "../aws-smithy-runtime-api"
-version = "1.7.2"
+version = "1.7.3"
 
 [dependencies.aws-smithy-types]
 path = "../aws-smithy-types"
 features = ["http-body-0-4-x"]
-version = "1.2.8"
+version = "1.2.9"
 
 [dependencies.h2]
 version = "0.3"
@@ -129,12 +129,12 @@ version = "1.2.1"
 [dev-dependencies.aws-smithy-runtime-api]
 path = "../aws-smithy-runtime-api"
 features = ["test-util"]
-version = "1.7.2"
+version = "1.7.3"
 
 [dev-dependencies.aws-smithy-types]
 path = "../aws-smithy-types"
 features = ["test-util"]
-version = "1.2.8"
+version = "1.2.9"
 
 [dev-dependencies.tokio]
 version = "1.25"

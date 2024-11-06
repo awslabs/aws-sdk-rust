@@ -247,6 +247,7 @@ impl<'b> Decoder<'b> {
     }
 }
 
+#[allow(dead_code)] // to avoid `never constructed` warning
 #[derive(Debug)]
 pub struct ArrayIter<'a, 'b, T> {
     inner: minicbor::decode::ArrayIter<'a, 'b, T>,
@@ -262,6 +263,7 @@ impl<'a, 'b, T: minicbor::Decode<'b, ()>> Iterator for ArrayIter<'a, 'b, T> {
     }
 }
 
+#[allow(dead_code)] // to avoid `never constructed` warning
 #[derive(Debug)]
 pub struct MapIter<'a, 'b, K, V> {
     inner: minicbor::decode::MapIter<'a, 'b, K, V>,

@@ -13,7 +13,7 @@ tmpfile = "0.0.2"
 open = "5.1.2"
 aws-smithy-http= { version = "0.60.11", path = "../../../sdk/aws-smithy-http" }
 aws-smithy-mocks-experimental= { version = "0.2.1", path = "../../../sdk/aws-smithy-mocks-experimental" }
-aws-config= { version = "1.5.9", path = "../../../sdk/aws-config", features = ["behavior-version-latest"] }
+aws-config= { version = "1.5.10", path = "../../../sdk/aws-config", features = ["behavior-version-latest"] }
 aws-sdk-sesv2= { version = "1.54.0", path = "../../../sdk/sesv2", features = ["test-util"] }
 
 [dependencies.tokio]

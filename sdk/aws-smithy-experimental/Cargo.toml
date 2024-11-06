@@ -16,7 +16,7 @@ doc-scrape-examples = true
 
 [package]
 name = "aws-smithy-experimental"
-version = "0.1.4"
+version = "0.1.5"
 authors = ["AWS Rust SDK Team <aws-sdk-rust@amazon.com>"]
 description = "Experiments for the smithy-rs ecosystem"
 edition = "2021"
@@ -48,12 +48,12 @@ tower = "0.4.1"
 [dependencies.aws-smithy-types]
 path = "../aws-smithy-types"
 features = ["http-body-1-x"]
-version = "1.2.8"
+version = "1.2.9"
 
 [dependencies.aws-smithy-runtime-api]
 features = ["client", "http-1x"]
 path = "../aws-smithy-runtime-api"
-version = "1.7.2"
+version = "1.7.3"
 
 [dependencies.aws-smithy-runtime]
 features = ["client"]
@@ -89,3 +89,6 @@ version = "1.7.3"
 [dev-dependencies.tokio]
 version = "1"
 features = ["full", "test-util"]
+[lints.rust.unexpected_cfgs]
+level = "warn"
+check-cfg = ["cfg(crypto_unstable)"]

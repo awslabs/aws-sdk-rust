@@ -868,6 +868,7 @@ impl RuntimeComponentsBuilder {
     pub fn validate_base_client_config(&self, cfg: &ConfigBag) -> Result<(), BoxError> {
         macro_rules! validate {
             ($field:expr) => {
+                #[allow(for_loops_over_fallibles)]
                 for entry in $field {
                     ValidateConfig::validate_base_client_config(&entry.value, self, cfg)?;
                 }

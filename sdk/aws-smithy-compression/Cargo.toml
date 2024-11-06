@@ -26,11 +26,11 @@ tracing = "0.1.40"
 
 [dependencies.aws-smithy-types]
 path = "../aws-smithy-types"
-version = "1.2.8"
+version = "1.2.9"
 
 [dependencies.aws-smithy-runtime-api]
 path = "../aws-smithy-runtime-api"
-version = "1.7.2"
+version = "1.7.3"
 
 [dependencies.http-0-2]
 package = "http"

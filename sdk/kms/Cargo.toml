@@ -42,11 +42,11 @@ version = "1.7.3"
 [dependencies.aws-smithy-runtime-api]
 path = "../aws-smithy-runtime-api"
 features = ["client", "http-02x"]
-version = "1.7.2"
+version = "1.7.3"
 
 [dependencies.aws-smithy-types]
 path = "../aws-smithy-types"
-version = "1.2.8"
+version = "1.2.9"
 
 [dependencies.aws-types]
 path = "../aws-types"
@@ -68,7 +68,7 @@ version = "0.1.5"
 version = "0.1"
 [dev-dependencies.aws-config]
 path = "../aws-config"
-version = "1.5.9"
+version = "1.5.10"
 
 [dev-dependencies.aws-credential-types]
 path = "../aws-credential-types"
@@ -97,12 +97,12 @@ version = "1.7.3"
 [dev-dependencies.aws-smithy-runtime-api]
 path = "../aws-smithy-runtime-api"
 features = ["test-util"]
-version = "1.7.2"
+version = "1.7.3"
 
 [dev-dependencies.aws-smithy-types]
 path = "../aws-smithy-types"
 features = ["test-util"]
-version = "1.2.8"
+version = "1.2.9"
 
 [dev-dependencies.futures-util]
 version = "0.3.25"
@@ -125,4 +125,5 @@ behavior-version-latest = []
 rustls = ["aws-smithy-runtime/tls-rustls"]
 rt-tokio = ["aws-smithy-async/rt-tokio", "aws-smithy-types/rt-tokio"]
 test-util = ["aws-credential-types/test-util", "aws-smithy-runtime/test-util"]
+gated-tests = []
 default = ["rustls", "rt-tokio"]

@@ -56,11 +56,11 @@ version = "1.7.3"
 [dependencies.aws-smithy-runtime-api]
 path = "../aws-smithy-runtime-api"
 features = ["client", "http-02x"]
-version = "1.7.2"
+version = "1.7.3"
 
 [dependencies.aws-smithy-types]
 path = "../aws-smithy-types"
-version = "1.2.8"
+version = "1.2.9"
 
 [dependencies.aws-smithy-xml]
 path = "../aws-smithy-xml"
@@ -124,7 +124,7 @@ version = "1.12.0"
 [dev-dependencies.aws-config]
 path = "../aws-config"
 features = ["behavior-version-latest"]
-version = "1.5.9"
+version = "1.5.10"
 
 [dev-dependencies.aws-credential-types]
 path = "../aws-credential-types"
@@ -144,7 +144,7 @@ version = "1.2.1"
 [dev-dependencies.aws-smithy-experimental]
 path = "../aws-smithy-experimental"
 features = ["crypto-ring"]
-version = "0.1.4"
+version = "0.1.5"
 
 [dev-dependencies.aws-smithy-protocol-test]
 path = "../aws-smithy-protocol-test"
@@ -158,12 +158,12 @@ version = "1.7.3"
 [dev-dependencies.aws-smithy-runtime-api]
 path = "../aws-smithy-runtime-api"
 features = ["test-util", "client", "http-02x"]
-version = "1.7.2"
+version = "1.7.3"
 
 [dev-dependencies.aws-smithy-types]
 path = "../aws-smithy-types"
 features = ["test-util"]
-version = "1.2.8"
+version = "1.2.9"
 
 [dev-dependencies.bytes-utils]
 version = "0.1.0"
@@ -178,6 +178,9 @@ version = "7.5.2"
 
 [dev-dependencies.pretty_assertions]
 version = "1.3.0"
+
+[dev-dependencies.proptest]
+version = "1"
 
 [dev-dependencies.serde_json]
 version = "1.0.0"
@@ -210,4 +213,5 @@ behavior-version-latest = []
 rustls = ["aws-smithy-runtime/tls-rustls"]
 test-util = ["aws-credential-types/test-util", "aws-smithy-runtime/test-util"]
 rt-tokio = ["aws-smithy-async/rt-tokio", "aws-smithy-types/rt-tokio"]
+gated-tests = []
 default = ["sigv4a", "rustls", "rt-tokio"]

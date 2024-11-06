@@ -44,6 +44,8 @@ mod test {
         assert_eq!(substring("hello", 0, 5, false, &mut DiagnosticCollector::new()), Some("hello"));
         assert_eq!(substring("hello", 0, 6, false, &mut DiagnosticCollector::new()), None);
     }
+
+    #[test]
     fn substring_backwards() {
         assert_eq!(substring("hello", 0, 2, true, &mut DiagnosticCollector::new()), Some("lo"));
         assert_eq!(substring("hello", 0, 0, true, &mut DiagnosticCollector::new()), None);
