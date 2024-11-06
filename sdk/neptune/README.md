@@ -16,7 +16,7 @@ your project, add the following to your **Cargo.toml** file:
 ```toml
 [dependencies]
 aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-aws-sdk-neptune = "1.50.0"
+aws-sdk-neptune = "1.51.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

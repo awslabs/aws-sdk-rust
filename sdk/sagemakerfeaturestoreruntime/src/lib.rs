@@ -37,7 +37,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-sagemakerfeaturestoreruntime = "1.49.0"
+//! aws-sdk-sagemakerfeaturestoreruntime = "1.50.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
