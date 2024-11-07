@@ -611,4 +611,18 @@ impl CreateAutoScalingGroupFluentBuilder {
     pub fn get_instance_maintenance_policy(&self) -> &::std::option::Option<crate::types::InstanceMaintenancePolicy> {
         self.inner.get_instance_maintenance_policy()
     }
+    /// <p>The instance capacity distribution across Availability Zones.</p>
+    pub fn availability_zone_distribution(mut self, input: crate::types::AvailabilityZoneDistribution) -> Self {
+        self.inner = self.inner.availability_zone_distribution(input);
+        self
+    }
+    /// <p>The instance capacity distribution across Availability Zones.</p>
+    pub fn set_availability_zone_distribution(mut self, input: ::std::option::Option<crate::types::AvailabilityZoneDistribution>) -> Self {
+        self.inner = self.inner.set_availability_zone_distribution(input);
+        self
+    }
+    /// <p>The instance capacity distribution across Availability Zones.</p>
+    pub fn get_availability_zone_distribution(&self) -> &::std::option::Option<crate::types::AvailabilityZoneDistribution> {
+        self.inner.get_availability_zone_distribution()
+    }
 }

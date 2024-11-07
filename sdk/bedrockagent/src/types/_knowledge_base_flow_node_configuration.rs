@@ -8,6 +8,8 @@ pub struct KnowledgeBaseFlowNodeConfiguration {
     pub knowledge_base_id: ::std::string::String,
     /// <p>The unique identifier of the model or <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference.html">inference profile</a> to use to generate a response from the query results. Omit this field if you want to return the retrieved results as an array.</p>
     pub model_id: ::std::option::Option<::std::string::String>,
+    /// <p>Contains configurations for a guardrail to apply during query and response generation for the knowledge base in this configuration.</p>
+    pub guardrail_configuration: ::std::option::Option<crate::types::GuardrailConfiguration>,
 }
 impl KnowledgeBaseFlowNodeConfiguration {
     /// <p>The unique identifier of the knowledge base to query.</p>
@@ -18,6 +20,10 @@ impl KnowledgeBaseFlowNodeConfiguration {
     /// <p>The unique identifier of the model or <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference.html">inference profile</a> to use to generate a response from the query results. Omit this field if you want to return the retrieved results as an array.</p>
     pub fn model_id(&self) -> ::std::option::Option<&str> {
         self.model_id.as_deref()
+    }
+    /// <p>Contains configurations for a guardrail to apply during query and response generation for the knowledge base in this configuration.</p>
+    pub fn guardrail_configuration(&self) -> ::std::option::Option<&crate::types::GuardrailConfiguration> {
+        self.guardrail_configuration.as_ref()
     }
 }
 impl KnowledgeBaseFlowNodeConfiguration {
@@ -33,6 +39,7 @@ impl KnowledgeBaseFlowNodeConfiguration {
 pub struct KnowledgeBaseFlowNodeConfigurationBuilder {
     pub(crate) knowledge_base_id: ::std::option::Option<::std::string::String>,
     pub(crate) model_id: ::std::option::Option<::std::string::String>,
+    pub(crate) guardrail_configuration: ::std::option::Option<crate::types::GuardrailConfiguration>,
 }
 impl KnowledgeBaseFlowNodeConfigurationBuilder {
     /// <p>The unique identifier of the knowledge base to query.</p>
@@ -64,6 +71,20 @@ impl KnowledgeBaseFlowNodeConfigurationBuilder {
     pub fn get_model_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.model_id
     }
+    /// <p>Contains configurations for a guardrail to apply during query and response generation for the knowledge base in this configuration.</p>
+    pub fn guardrail_configuration(mut self, input: crate::types::GuardrailConfiguration) -> Self {
+        self.guardrail_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Contains configurations for a guardrail to apply during query and response generation for the knowledge base in this configuration.</p>
+    pub fn set_guardrail_configuration(mut self, input: ::std::option::Option<crate::types::GuardrailConfiguration>) -> Self {
+        self.guardrail_configuration = input;
+        self
+    }
+    /// <p>Contains configurations for a guardrail to apply during query and response generation for the knowledge base in this configuration.</p>
+    pub fn get_guardrail_configuration(&self) -> &::std::option::Option<crate::types::GuardrailConfiguration> {
+        &self.guardrail_configuration
+    }
     /// Consumes the builder and constructs a [`KnowledgeBaseFlowNodeConfiguration`](crate::types::KnowledgeBaseFlowNodeConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`knowledge_base_id`](crate::types::builders::KnowledgeBaseFlowNodeConfigurationBuilder::knowledge_base_id)
@@ -76,6 +97,7 @@ impl KnowledgeBaseFlowNodeConfigurationBuilder {
                 )
             })?,
             model_id: self.model_id,
+            guardrail_configuration: self.guardrail_configuration,
         })
     }
 }

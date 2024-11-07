@@ -1200,6 +1200,15 @@ pub(crate) fn manifest_file_location_correct_errors(
     builder
 }
 
+pub(crate) fn o_auth_parameters_correct_errors(
+    mut builder: crate::types::builders::OAuthParametersBuilder,
+) -> crate::types::builders::OAuthParametersBuilder {
+    if builder.token_provider_url.is_none() {
+        builder.token_provider_url = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn redshift_iam_parameters_correct_errors(
     mut builder: crate::types::builders::RedshiftIamParametersBuilder,
 ) -> crate::types::builders::RedshiftIamParametersBuilder {

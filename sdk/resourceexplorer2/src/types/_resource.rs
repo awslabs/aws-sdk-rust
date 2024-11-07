@@ -12,7 +12,7 @@ pub struct Resource {
     pub region: ::std::option::Option<::std::string::String>,
     /// <p>The type of the resource.</p>
     pub resource_type: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Web Servicesservice that owns the resource and is responsible for creating and updating it.</p>
+    /// <p>The Amazon Web Services service that owns the resource and is responsible for creating and updating it.</p>
     pub service: ::std::option::Option<::std::string::String>,
     /// <p>The date and time that Resource Explorer last queried this resource and updated the index with the latest information about the resource.</p>
     pub last_reported_at: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -36,7 +36,7 @@ impl Resource {
     pub fn resource_type(&self) -> ::std::option::Option<&str> {
         self.resource_type.as_deref()
     }
-    /// <p>The Amazon Web Servicesservice that owns the resource and is responsible for creating and updating it.</p>
+    /// <p>The Amazon Web Services service that owns the resource and is responsible for creating and updating it.</p>
     pub fn service(&self) -> ::std::option::Option<&str> {
         self.service.as_deref()
     }
@@ -127,17 +127,17 @@ impl ResourceBuilder {
     pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_type
     }
-    /// <p>The Amazon Web Servicesservice that owns the resource and is responsible for creating and updating it.</p>
+    /// <p>The Amazon Web Services service that owns the resource and is responsible for creating and updating it.</p>
     pub fn service(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Web Servicesservice that owns the resource and is responsible for creating and updating it.</p>
+    /// <p>The Amazon Web Services service that owns the resource and is responsible for creating and updating it.</p>
     pub fn set_service(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service = input;
         self
     }
-    /// <p>The Amazon Web Servicesservice that owns the resource and is responsible for creating and updating it.</p>
+    /// <p>The Amazon Web Services service that owns the resource and is responsible for creating and updating it.</p>
     pub fn get_service(&self) -> &::std::option::Option<::std::string::String> {
         &self.service
     }

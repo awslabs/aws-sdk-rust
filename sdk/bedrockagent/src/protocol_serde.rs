@@ -147,6 +147,8 @@ pub(crate) mod shape_update_knowledge_base;
 
 pub(crate) mod shape_update_prompt;
 
+pub(crate) mod shape_validate_flow_definition;
+
 pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
     if data.is_empty() {
         b"{}"
@@ -226,6 +228,8 @@ pub(crate) mod shape_update_flow_input;
 pub(crate) mod shape_update_knowledge_base_input;
 
 pub(crate) mod shape_update_prompt_input;
+
+pub(crate) mod shape_validate_flow_definition_input;
 
 pub(crate) mod shape_validation_exception;
 
@@ -371,6 +375,8 @@ pub(crate) mod shape_pinecone_configuration;
 
 pub(crate) mod shape_prompt_configuration;
 
+pub(crate) mod shape_prompt_gen_ai_resource;
+
 pub(crate) mod shape_prompt_inference_configuration;
 
 pub(crate) mod shape_prompt_metadata_entry;
@@ -403,6 +409,8 @@ pub(crate) mod shape_agent_alias_history_event;
 
 pub(crate) mod shape_bedrock_foundation_model_configuration;
 
+pub(crate) mod shape_chat_prompt_template_configuration;
+
 pub(crate) mod shape_confluence_crawler_configuration;
 
 pub(crate) mod shape_confluence_source_configuration;
@@ -421,6 +429,8 @@ pub(crate) mod shape_flow_node_input;
 
 pub(crate) mod shape_flow_node_output;
 
+pub(crate) mod shape_flow_validation_details;
+
 pub(crate) mod shape_functions;
 
 pub(crate) mod shape_hierarchical_chunking_configuration;
@@ -436,6 +446,8 @@ pub(crate) mod shape_open_search_serverless_field_mapping;
 pub(crate) mod shape_parameter_detail;
 
 pub(crate) mod shape_pinecone_field_mapping;
+
+pub(crate) mod shape_prompt_agent_resource;
 
 pub(crate) mod shape_prompt_configurations;
 
@@ -475,6 +487,12 @@ pub(crate) mod shape_condition_flow_node_configuration;
 
 pub(crate) mod shape_crawl_filter_configuration;
 
+pub(crate) mod shape_cyclic_connection_flow_validation_details;
+
+pub(crate) mod shape_duplicate_condition_expression_flow_validation_details;
+
+pub(crate) mod shape_duplicate_connections_flow_validation_details;
+
 pub(crate) mod shape_flow_conditional_connection_configuration;
 
 pub(crate) mod shape_flow_data_connection_configuration;
@@ -485,6 +503,8 @@ pub(crate) mod shape_flow_node_outputs;
 
 pub(crate) mod shape_hierarchical_chunking_level_configuration;
 
+pub(crate) mod shape_incompatible_connection_data_type_flow_validation_details;
+
 pub(crate) mod shape_input_flow_node_configuration;
 
 pub(crate) mod shape_iterator_flow_node_configuration;
@@ -494,6 +514,32 @@ pub(crate) mod shape_knowledge_base_flow_node_configuration;
 pub(crate) mod shape_lambda_function_flow_node_configuration;
 
 pub(crate) mod shape_lex_flow_node_configuration;
+
+pub(crate) mod shape_malformed_condition_expression_flow_validation_details;
+
+pub(crate) mod shape_malformed_node_input_expression_flow_validation_details;
+
+pub(crate) mod shape_message;
+
+pub(crate) mod shape_mismatched_node_input_type_flow_validation_details;
+
+pub(crate) mod shape_mismatched_node_output_type_flow_validation_details;
+
+pub(crate) mod shape_missing_connection_configuration_flow_validation_details;
+
+pub(crate) mod shape_missing_default_condition_flow_validation_details;
+
+pub(crate) mod shape_missing_ending_nodes_flow_validation_details;
+
+pub(crate) mod shape_missing_node_configuration_flow_validation_details;
+
+pub(crate) mod shape_missing_node_input_flow_validation_details;
+
+pub(crate) mod shape_missing_node_output_flow_validation_details;
+
+pub(crate) mod shape_missing_starting_nodes_flow_validation_details;
+
+pub(crate) mod shape_multiple_node_input_connections_flow_validation_details;
 
 pub(crate) mod shape_output_flow_node_configuration;
 
@@ -511,19 +557,45 @@ pub(crate) mod shape_s3_prefixes;
 
 pub(crate) mod shape_storage_flow_node_configuration;
 
+pub(crate) mod shape_system_content_block;
+
+pub(crate) mod shape_tool_configuration;
+
 pub(crate) mod shape_transformation_function;
 
 pub(crate) mod shape_transformations;
 
+pub(crate) mod shape_unfulfilled_node_input_flow_validation_details;
+
+pub(crate) mod shape_unknown_connection_condition_flow_validation_details;
+
+pub(crate) mod shape_unknown_connection_source_flow_validation_details;
+
+pub(crate) mod shape_unknown_connection_source_output_flow_validation_details;
+
+pub(crate) mod shape_unknown_connection_target_flow_validation_details;
+
+pub(crate) mod shape_unknown_connection_target_input_flow_validation_details;
+
+pub(crate) mod shape_unreachable_node_flow_validation_details;
+
+pub(crate) mod shape_unsatisfied_connection_conditions_flow_validation_details;
+
+pub(crate) mod shape_unspecified_flow_validation_details;
+
 pub(crate) mod shape_url_configuration;
 
 pub(crate) mod shape_web_crawler_limits;
+
+pub(crate) mod shape_content_block;
 
 pub(crate) mod shape_filter_list;
 
 pub(crate) mod shape_flow_condition;
 
 pub(crate) mod shape_hierarchical_chunking_level_configurations;
+
+pub(crate) mod shape_messages;
 
 pub(crate) mod shape_parameter_map;
 
@@ -543,7 +615,17 @@ pub(crate) mod shape_stop_sequences;
 
 pub(crate) mod shape_storage_flow_node_service_configuration;
 
+pub(crate) mod shape_system_content_blocks;
+
+pub(crate) mod shape_tool;
+
+pub(crate) mod shape_tool_choice;
+
 pub(crate) mod shape_transformation_lambda_configuration;
+
+pub(crate) mod shape_any_tool_choice;
+
+pub(crate) mod shape_auto_tool_choice;
 
 pub(crate) mod shape_flow_conditions;
 
@@ -557,6 +639,16 @@ pub(crate) mod shape_retrieval_flow_node_s3_configuration;
 
 pub(crate) mod shape_seed_urls;
 
+pub(crate) mod shape_specific_tool_choice;
+
 pub(crate) mod shape_storage_flow_node_s3_configuration;
 
+pub(crate) mod shape_tool_specification;
+
+pub(crate) mod shape_tools;
+
+pub(crate) mod shape_content_blocks;
+
 pub(crate) mod shape_pattern_object_filter_list;
+
+pub(crate) mod shape_tool_input_schema;

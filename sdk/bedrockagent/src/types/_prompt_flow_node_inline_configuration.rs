@@ -12,7 +12,7 @@ pub struct PromptFlowNodeInlineConfiguration {
     pub model_id: ::std::string::String,
     /// <p>Contains inference configurations for the prompt.</p>
     pub inference_configuration: ::std::option::Option<crate::types::PromptInferenceConfiguration>,
-    /// <p>Contains model-specific inference configurations that aren't in the <code>inferenceConfiguration</code> field. To see model-specific inference parameters, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters.html">Inference request parameters and response fields for foundation models</a>.</p>
+    /// <p>Additional fields to be included in the model request for the Prompt node.</p>
     pub additional_model_request_fields: ::std::option::Option<::aws_smithy_types::Document>,
 }
 impl PromptFlowNodeInlineConfiguration {
@@ -33,7 +33,7 @@ impl PromptFlowNodeInlineConfiguration {
     pub fn inference_configuration(&self) -> ::std::option::Option<&crate::types::PromptInferenceConfiguration> {
         self.inference_configuration.as_ref()
     }
-    /// <p>Contains model-specific inference configurations that aren't in the <code>inferenceConfiguration</code> field. To see model-specific inference parameters, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters.html">Inference request parameters and response fields for foundation models</a>.</p>
+    /// <p>Additional fields to be included in the model request for the Prompt node.</p>
     pub fn additional_model_request_fields(&self) -> ::std::option::Option<&::aws_smithy_types::Document> {
         self.additional_model_request_fields.as_ref()
     }
@@ -115,17 +115,17 @@ impl PromptFlowNodeInlineConfigurationBuilder {
     pub fn get_inference_configuration(&self) -> &::std::option::Option<crate::types::PromptInferenceConfiguration> {
         &self.inference_configuration
     }
-    /// <p>Contains model-specific inference configurations that aren't in the <code>inferenceConfiguration</code> field. To see model-specific inference parameters, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters.html">Inference request parameters and response fields for foundation models</a>.</p>
+    /// <p>Additional fields to be included in the model request for the Prompt node.</p>
     pub fn additional_model_request_fields(mut self, input: ::aws_smithy_types::Document) -> Self {
         self.additional_model_request_fields = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Contains model-specific inference configurations that aren't in the <code>inferenceConfiguration</code> field. To see model-specific inference parameters, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters.html">Inference request parameters and response fields for foundation models</a>.</p>
+    /// <p>Additional fields to be included in the model request for the Prompt node.</p>
     pub fn set_additional_model_request_fields(mut self, input: ::std::option::Option<::aws_smithy_types::Document>) -> Self {
         self.additional_model_request_fields = input;
         self
     }
-    /// <p>Contains model-specific inference configurations that aren't in the <code>inferenceConfiguration</code> field. To see model-specific inference parameters, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters.html">Inference request parameters and response fields for foundation models</a>.</p>
+    /// <p>Additional fields to be included in the model request for the Prompt node.</p>
     pub fn get_additional_model_request_fields(&self) -> &::std::option::Option<::aws_smithy_types::Document> {
         &self.additional_model_request_fields
     }

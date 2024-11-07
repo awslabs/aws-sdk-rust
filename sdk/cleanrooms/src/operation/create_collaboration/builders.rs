@@ -174,6 +174,23 @@ impl CreateCollaborationFluentBuilder {
     pub fn get_creator_member_abilities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MemberAbility>> {
         self.inner.get_creator_member_abilities()
     }
+    /// <p>The ML abilities granted to the collaboration creator.</p>
+    /// <p>Custom ML modeling is in beta release and is subject to change. For beta terms and conditions, see <i>Betas and Previews</i> in the <a href="https://aws.amazon.com/service-terms/">Amazon Web Services Service Terms</a>.</p>
+    pub fn creator_ml_member_abilities(mut self, input: crate::types::MlMemberAbilities) -> Self {
+        self.inner = self.inner.creator_ml_member_abilities(input);
+        self
+    }
+    /// <p>The ML abilities granted to the collaboration creator.</p>
+    /// <p>Custom ML modeling is in beta release and is subject to change. For beta terms and conditions, see <i>Betas and Previews</i> in the <a href="https://aws.amazon.com/service-terms/">Amazon Web Services Service Terms</a>.</p>
+    pub fn set_creator_ml_member_abilities(mut self, input: ::std::option::Option<crate::types::MlMemberAbilities>) -> Self {
+        self.inner = self.inner.set_creator_ml_member_abilities(input);
+        self
+    }
+    /// <p>The ML abilities granted to the collaboration creator.</p>
+    /// <p>Custom ML modeling is in beta release and is subject to change. For beta terms and conditions, see <i>Betas and Previews</i> in the <a href="https://aws.amazon.com/service-terms/">Amazon Web Services Service Terms</a>.</p>
+    pub fn get_creator_ml_member_abilities(&self) -> &::std::option::Option<crate::types::MlMemberAbilities> {
+        self.inner.get_creator_ml_member_abilities()
+    }
     /// <p>The display name of the collaboration creator.</p>
     pub fn creator_display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.creator_display_name(input.into());

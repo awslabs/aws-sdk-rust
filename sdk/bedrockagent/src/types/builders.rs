@@ -17,13 +17,29 @@ pub use crate::types::_inference_configuration::InferenceConfigurationBuilder;
 
 pub use crate::types::_prompt_variant::PromptVariantBuilder;
 
+pub use crate::types::_prompt_agent_resource::PromptAgentResourceBuilder;
+
 pub use crate::types::_prompt_metadata_entry::PromptMetadataEntryBuilder;
 
 pub use crate::types::_prompt_model_inference_configuration::PromptModelInferenceConfigurationBuilder;
 
-pub use crate::types::_text_prompt_template_configuration::TextPromptTemplateConfigurationBuilder;
+pub use crate::types::_chat_prompt_template_configuration::ChatPromptTemplateConfigurationBuilder;
+
+pub use crate::types::_tool_configuration::ToolConfigurationBuilder;
+
+pub use crate::types::_specific_tool_choice::SpecificToolChoiceBuilder;
+
+pub use crate::types::_any_tool_choice::AnyToolChoiceBuilder;
+
+pub use crate::types::_auto_tool_choice::AutoToolChoiceBuilder;
+
+pub use crate::types::_tool_specification::ToolSpecificationBuilder;
 
 pub use crate::types::_prompt_input_variable::PromptInputVariableBuilder;
+
+pub use crate::types::_message::MessageBuilder;
+
+pub use crate::types::_text_prompt_template_configuration::TextPromptTemplateConfigurationBuilder;
 
 pub use crate::types::_prompt_summary::PromptSummaryBuilder;
 
@@ -124,6 +140,56 @@ pub use crate::types::_output_flow_node_configuration::OutputFlowNodeConfigurati
 pub use crate::types::_input_flow_node_configuration::InputFlowNodeConfigurationBuilder;
 
 pub use crate::types::_flow_validation::FlowValidationBuilder;
+
+pub use crate::types::_unspecified_flow_validation_details::UnspecifiedFlowValidationDetailsBuilder;
+
+pub use crate::types::_unsatisfied_connection_conditions_flow_validation_details::UnsatisfiedConnectionConditionsFlowValidationDetailsBuilder;
+
+pub use crate::types::_unfulfilled_node_input_flow_validation_details::UnfulfilledNodeInputFlowValidationDetailsBuilder;
+
+pub use crate::types::_multiple_node_input_connections_flow_validation_details::MultipleNodeInputConnectionsFlowValidationDetailsBuilder;
+
+pub use crate::types::_missing_starting_nodes_flow_validation_details::MissingStartingNodesFlowValidationDetailsBuilder;
+
+pub use crate::types::_missing_node_output_flow_validation_details::MissingNodeOutputFlowValidationDetailsBuilder;
+
+pub use crate::types::_missing_node_input_flow_validation_details::MissingNodeInputFlowValidationDetailsBuilder;
+
+pub use crate::types::_missing_node_configuration_flow_validation_details::MissingNodeConfigurationFlowValidationDetailsBuilder;
+
+pub use crate::types::_missing_ending_nodes_flow_validation_details::MissingEndingNodesFlowValidationDetailsBuilder;
+
+pub use crate::types::_missing_default_condition_flow_validation_details::MissingDefaultConditionFlowValidationDetailsBuilder;
+
+pub use crate::types::_missing_connection_configuration_flow_validation_details::MissingConnectionConfigurationFlowValidationDetailsBuilder;
+
+pub use crate::types::_incompatible_connection_data_type_flow_validation_details::IncompatibleConnectionDataTypeFlowValidationDetailsBuilder;
+
+pub use crate::types::_mismatched_node_output_type_flow_validation_details::MismatchedNodeOutputTypeFlowValidationDetailsBuilder;
+
+pub use crate::types::_mismatched_node_input_type_flow_validation_details::MismatchedNodeInputTypeFlowValidationDetailsBuilder;
+
+pub use crate::types::_malformed_node_input_expression_flow_validation_details::MalformedNodeInputExpressionFlowValidationDetailsBuilder;
+
+pub use crate::types::_malformed_condition_expression_flow_validation_details::MalformedConditionExpressionFlowValidationDetailsBuilder;
+
+pub use crate::types::_unknown_connection_condition_flow_validation_details::UnknownConnectionConditionFlowValidationDetailsBuilder;
+
+pub use crate::types::_unknown_connection_target_input_flow_validation_details::UnknownConnectionTargetInputFlowValidationDetailsBuilder;
+
+pub use crate::types::_unknown_connection_target_flow_validation_details::UnknownConnectionTargetFlowValidationDetailsBuilder;
+
+pub use crate::types::_unknown_connection_source_output_flow_validation_details::UnknownConnectionSourceOutputFlowValidationDetailsBuilder;
+
+pub use crate::types::_unknown_connection_source_flow_validation_details::UnknownConnectionSourceFlowValidationDetailsBuilder;
+
+pub use crate::types::_unreachable_node_flow_validation_details::UnreachableNodeFlowValidationDetailsBuilder;
+
+pub use crate::types::_duplicate_condition_expression_flow_validation_details::DuplicateConditionExpressionFlowValidationDetailsBuilder;
+
+pub use crate::types::_duplicate_connections_flow_validation_details::DuplicateConnectionsFlowValidationDetailsBuilder;
+
+pub use crate::types::_cyclic_connection_flow_validation_details::CyclicConnectionFlowValidationDetailsBuilder;
 
 pub use crate::types::_flow_summary::FlowSummaryBuilder;
 

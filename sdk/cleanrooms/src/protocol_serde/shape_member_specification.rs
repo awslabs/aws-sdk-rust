@@ -15,14 +15,20 @@ pub fn ser_member_specification(
         }
         array_1.finish();
     }
+    if let Some(var_3) = &input.ml_member_abilities {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("mlMemberAbilities").start_object();
+        crate::protocol_serde::shape_ml_member_abilities::ser_ml_member_abilities(&mut object_4, var_3)?;
+        object_4.finish();
+    }
     {
         object.key("displayName").string(input.display_name.as_str());
     }
-    if let Some(var_3) = &input.payment_configuration {
+    if let Some(var_5) = &input.payment_configuration {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("paymentConfiguration").start_object();
-        crate::protocol_serde::shape_payment_configuration::ser_payment_configuration(&mut object_4, var_3)?;
-        object_4.finish();
+        let mut object_6 = object.key("paymentConfiguration").start_object();
+        crate::protocol_serde::shape_payment_configuration::ser_payment_configuration(&mut object_6, var_5)?;
+        object_6.finish();
     }
     Ok(())
 }

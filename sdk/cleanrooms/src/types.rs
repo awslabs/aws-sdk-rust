@@ -107,6 +107,12 @@ pub use crate::types::_membership::Membership;
 
 pub use crate::types::_membership_payment_configuration::MembershipPaymentConfiguration;
 
+pub use crate::types::_membership_ml_payment_config::MembershipMlPaymentConfig;
+
+pub use crate::types::_membership_model_inference_payment_config::MembershipModelInferencePaymentConfig;
+
+pub use crate::types::_membership_model_training_payment_config::MembershipModelTrainingPaymentConfig;
+
 pub use crate::types::_membership_query_compute_payment_config::MembershipQueryComputePaymentConfig;
 
 pub use crate::types::_membership_protected_query_result_configuration::MembershipProtectedQueryResultConfiguration;
@@ -114,6 +120,10 @@ pub use crate::types::_membership_protected_query_result_configuration::Membersh
 pub use crate::types::_membership_protected_query_output_configuration::MembershipProtectedQueryOutputConfiguration;
 
 pub use crate::types::_membership_query_log_status::MembershipQueryLogStatus;
+
+pub use crate::types::_ml_member_abilities::MlMemberAbilities;
+
+pub use crate::types::_custom_ml_member_ability::CustomMlMemberAbility;
 
 pub use crate::types::_member_ability::MemberAbility;
 
@@ -220,6 +230,12 @@ pub use crate::types::_schema_type::SchemaType;
 pub use crate::types::_member_summary::MemberSummary;
 
 pub use crate::types::_payment_configuration::PaymentConfiguration;
+
+pub use crate::types::_ml_payment_config::MlPaymentConfig;
+
+pub use crate::types::_model_inference_payment_config::ModelInferencePaymentConfig;
+
+pub use crate::types::_model_training_payment_config::ModelTrainingPaymentConfig;
 
 pub use crate::types::_query_compute_payment_config::QueryComputePaymentConfig;
 
@@ -445,6 +461,8 @@ mod _configured_table_summary;
 
 mod _conflict_exception_reason;
 
+mod _custom_ml_member_ability;
+
 mod _data_encryption_metadata;
 
 mod _differential_privacy_aggregation_type;
@@ -519,6 +537,12 @@ mod _member_summary;
 
 mod _membership;
 
+mod _membership_ml_payment_config;
+
+mod _membership_model_inference_payment_config;
+
+mod _membership_model_training_payment_config;
+
 mod _membership_payment_configuration;
 
 mod _membership_protected_query_output_configuration;
@@ -532,6 +556,14 @@ mod _membership_query_log_status;
 mod _membership_status;
 
 mod _membership_summary;
+
+mod _ml_member_abilities;
+
+mod _ml_payment_config;
+
+mod _model_inference_payment_config;
+
+mod _model_training_payment_config;
 
 mod _parameter_type;
 

@@ -23,8 +23,8 @@ impl crate::operation::delete_canary::builders::DeleteCanaryInputBuilder {
 /// Fluent builder constructing a request to `DeleteCanary`.
 ///
 /// <p>Permanently deletes the specified canary.</p>
-/// <p>If you specify <code>DeleteLambda</code> to <code>true</code>, CloudWatch Synthetics also deletes the Lambda functions and layers that are used by the canary.</p>
-/// <p>Other resources used and created by the canary are not automatically deleted. After you delete a canary that you do not intend to use again, you should also delete the following:</p>
+/// <p>If the canary's <code>ProvisionedResourceCleanup</code> field is set to <code>AUTOMATIC</code> or you specify <code>DeleteLambda</code> in this operation as <code>true</code>, CloudWatch Synthetics also deletes the Lambda functions and layers that are used by the canary.</p>
+/// <p>Other resources used and created by the canary are not automatically deleted. After you delete a canary, you should also delete the following:</p>
 /// <ul>
 /// <li>
 /// <p>The CloudWatch alarms created for this canary. These alarms have a name of <code>Synthetics-Alarm-<i>first-198-characters-of-canary-name</i>-<i>canaryId</i>-<i>alarm number</i> </code></p></li>
@@ -135,19 +135,22 @@ impl DeleteCanaryFluentBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
-    /// <p>Specifies whether to also delete the Lambda functions and layers used by this canary. The default is false.</p>
+    /// <p>Specifies whether to also delete the Lambda functions and layers used by this canary. The default is <code>false</code>.</p>
+    /// <p>Your setting for this parameter is used only if the canary doesn't have <code>AUTOMATIC</code> for its <code>ProvisionedResourceCleanup</code> field. If that field is set to <code>AUTOMATIC</code>, then the Lambda functions and layers will be deleted when this canary is deleted.</p>
     /// <p>Type: Boolean</p>
     pub fn delete_lambda(mut self, input: bool) -> Self {
         self.inner = self.inner.delete_lambda(input);
         self
     }
-    /// <p>Specifies whether to also delete the Lambda functions and layers used by this canary. The default is false.</p>
+    /// <p>Specifies whether to also delete the Lambda functions and layers used by this canary. The default is <code>false</code>.</p>
+    /// <p>Your setting for this parameter is used only if the canary doesn't have <code>AUTOMATIC</code> for its <code>ProvisionedResourceCleanup</code> field. If that field is set to <code>AUTOMATIC</code>, then the Lambda functions and layers will be deleted when this canary is deleted.</p>
     /// <p>Type: Boolean</p>
     pub fn set_delete_lambda(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_delete_lambda(input);
         self
     }
-    /// <p>Specifies whether to also delete the Lambda functions and layers used by this canary. The default is false.</p>
+    /// <p>Specifies whether to also delete the Lambda functions and layers used by this canary. The default is <code>false</code>.</p>
+    /// <p>Your setting for this parameter is used only if the canary doesn't have <code>AUTOMATIC</code> for its <code>ProvisionedResourceCleanup</code> field. If that field is set to <code>AUTOMATIC</code>, then the Lambda functions and layers will be deleted when this canary is deleted.</p>
     /// <p>Type: Boolean</p>
     pub fn get_delete_lambda(&self) -> &::std::option::Option<bool> {
         self.inner.get_delete_lambda()

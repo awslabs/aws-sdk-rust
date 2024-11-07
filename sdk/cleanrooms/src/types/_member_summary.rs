@@ -12,6 +12,9 @@ pub struct MemberSummary {
     pub display_name: ::std::string::String,
     /// <p>The abilities granted to the collaboration member.</p>
     pub abilities: ::std::vec::Vec<crate::types::MemberAbility>,
+    /// <p>Provides a summary of the ML abilities for the collaboration member.</p>
+    /// <p>Custom ML modeling is in beta release and is subject to change. For beta terms and conditions, see <i>Betas and Previews</i> in the <a href="https://aws.amazon.com/service-terms/">Amazon Web Services Service Terms</a>.</p>
+    pub ml_abilities: ::std::option::Option<crate::types::MlMemberAbilities>,
     /// <p>The time when the member was created.</p>
     pub create_time: ::aws_smithy_types::DateTime,
     /// <p>The time the member metadata was last updated.</p>
@@ -42,6 +45,11 @@ impl MemberSummary {
     pub fn abilities(&self) -> &[crate::types::MemberAbility] {
         use std::ops::Deref;
         self.abilities.deref()
+    }
+    /// <p>Provides a summary of the ML abilities for the collaboration member.</p>
+    /// <p>Custom ML modeling is in beta release and is subject to change. For beta terms and conditions, see <i>Betas and Previews</i> in the <a href="https://aws.amazon.com/service-terms/">Amazon Web Services Service Terms</a>.</p>
+    pub fn ml_abilities(&self) -> ::std::option::Option<&crate::types::MlMemberAbilities> {
+        self.ml_abilities.as_ref()
     }
     /// <p>The time when the member was created.</p>
     pub fn create_time(&self) -> &::aws_smithy_types::DateTime {
@@ -79,6 +87,7 @@ pub struct MemberSummaryBuilder {
     pub(crate) status: ::std::option::Option<crate::types::MemberStatus>,
     pub(crate) display_name: ::std::option::Option<::std::string::String>,
     pub(crate) abilities: ::std::option::Option<::std::vec::Vec<crate::types::MemberAbility>>,
+    pub(crate) ml_abilities: ::std::option::Option<crate::types::MlMemberAbilities>,
     pub(crate) create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) membership_id: ::std::option::Option<::std::string::String>,
@@ -150,6 +159,23 @@ impl MemberSummaryBuilder {
     /// <p>The abilities granted to the collaboration member.</p>
     pub fn get_abilities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MemberAbility>> {
         &self.abilities
+    }
+    /// <p>Provides a summary of the ML abilities for the collaboration member.</p>
+    /// <p>Custom ML modeling is in beta release and is subject to change. For beta terms and conditions, see <i>Betas and Previews</i> in the <a href="https://aws.amazon.com/service-terms/">Amazon Web Services Service Terms</a>.</p>
+    pub fn ml_abilities(mut self, input: crate::types::MlMemberAbilities) -> Self {
+        self.ml_abilities = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Provides a summary of the ML abilities for the collaboration member.</p>
+    /// <p>Custom ML modeling is in beta release and is subject to change. For beta terms and conditions, see <i>Betas and Previews</i> in the <a href="https://aws.amazon.com/service-terms/">Amazon Web Services Service Terms</a>.</p>
+    pub fn set_ml_abilities(mut self, input: ::std::option::Option<crate::types::MlMemberAbilities>) -> Self {
+        self.ml_abilities = input;
+        self
+    }
+    /// <p>Provides a summary of the ML abilities for the collaboration member.</p>
+    /// <p>Custom ML modeling is in beta release and is subject to change. For beta terms and conditions, see <i>Betas and Previews</i> in the <a href="https://aws.amazon.com/service-terms/">Amazon Web Services Service Terms</a>.</p>
+    pub fn get_ml_abilities(&self) -> &::std::option::Option<crate::types::MlMemberAbilities> {
+        &self.ml_abilities
     }
     /// <p>The time when the member was created.</p>
     /// This field is required.
@@ -258,6 +284,7 @@ impl MemberSummaryBuilder {
                     "abilities was not specified but it is required when building MemberSummary",
                 )
             })?,
+            ml_abilities: self.ml_abilities,
             create_time: self.create_time.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "create_time",

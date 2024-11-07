@@ -61,9 +61,17 @@ pub use crate::types::_membership::MembershipBuilder;
 
 pub use crate::types::_membership_payment_configuration::MembershipPaymentConfigurationBuilder;
 
+pub use crate::types::_membership_ml_payment_config::MembershipMlPaymentConfigBuilder;
+
+pub use crate::types::_membership_model_inference_payment_config::MembershipModelInferencePaymentConfigBuilder;
+
+pub use crate::types::_membership_model_training_payment_config::MembershipModelTrainingPaymentConfigBuilder;
+
 pub use crate::types::_membership_query_compute_payment_config::MembershipQueryComputePaymentConfigBuilder;
 
 pub use crate::types::_membership_protected_query_result_configuration::MembershipProtectedQueryResultConfigurationBuilder;
+
+pub use crate::types::_ml_member_abilities::MlMemberAbilitiesBuilder;
 
 pub use crate::types::_membership_summary::MembershipSummaryBuilder;
 
@@ -132,6 +140,12 @@ pub use crate::types::_schema_summary::SchemaSummaryBuilder;
 pub use crate::types::_member_summary::MemberSummaryBuilder;
 
 pub use crate::types::_payment_configuration::PaymentConfigurationBuilder;
+
+pub use crate::types::_ml_payment_config::MlPaymentConfigBuilder;
+
+pub use crate::types::_model_inference_payment_config::ModelInferencePaymentConfigBuilder;
+
+pub use crate::types::_model_training_payment_config::ModelTrainingPaymentConfigBuilder;
 
 pub use crate::types::_query_compute_payment_config::QueryComputePaymentConfigBuilder;
 

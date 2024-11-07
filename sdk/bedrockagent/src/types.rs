@@ -27,6 +27,10 @@ pub use crate::types::_prompt_type::PromptType;
 
 pub use crate::types::_prompt_variant::PromptVariant;
 
+pub use crate::types::_prompt_gen_ai_resource::PromptGenAiResource;
+
+pub use crate::types::_prompt_agent_resource::PromptAgentResource;
+
 pub use crate::types::_prompt_metadata_entry::PromptMetadataEntry;
 
 pub use crate::types::_prompt_inference_configuration::PromptInferenceConfiguration;
@@ -35,9 +39,35 @@ pub use crate::types::_prompt_model_inference_configuration::PromptModelInferenc
 
 pub use crate::types::_prompt_template_configuration::PromptTemplateConfiguration;
 
-pub use crate::types::_text_prompt_template_configuration::TextPromptTemplateConfiguration;
+pub use crate::types::_chat_prompt_template_configuration::ChatPromptTemplateConfiguration;
+
+pub use crate::types::_tool_configuration::ToolConfiguration;
+
+pub use crate::types::_tool_choice::ToolChoice;
+
+pub use crate::types::_specific_tool_choice::SpecificToolChoice;
+
+pub use crate::types::_any_tool_choice::AnyToolChoice;
+
+pub use crate::types::_auto_tool_choice::AutoToolChoice;
+
+pub use crate::types::_tool::Tool;
+
+pub use crate::types::_tool_specification::ToolSpecification;
+
+pub use crate::types::_tool_input_schema::ToolInputSchema;
 
 pub use crate::types::_prompt_input_variable::PromptInputVariable;
+
+pub use crate::types::_system_content_block::SystemContentBlock;
+
+pub use crate::types::_message::Message;
+
+pub use crate::types::_content_block::ContentBlock;
+
+pub use crate::types::_conversation_role::ConversationRole;
+
+pub use crate::types::_text_prompt_template_configuration::TextPromptTemplateConfiguration;
 
 pub use crate::types::_prompt_template_type::PromptTemplateType;
 
@@ -176,6 +206,60 @@ pub use crate::types::_input_flow_node_configuration::InputFlowNodeConfiguration
 pub use crate::types::_flow_node_type::FlowNodeType;
 
 pub use crate::types::_flow_validation::FlowValidation;
+
+pub use crate::types::_flow_validation_type::FlowValidationType;
+
+pub use crate::types::_flow_validation_details::FlowValidationDetails;
+
+pub use crate::types::_unspecified_flow_validation_details::UnspecifiedFlowValidationDetails;
+
+pub use crate::types::_unsatisfied_connection_conditions_flow_validation_details::UnsatisfiedConnectionConditionsFlowValidationDetails;
+
+pub use crate::types::_unfulfilled_node_input_flow_validation_details::UnfulfilledNodeInputFlowValidationDetails;
+
+pub use crate::types::_multiple_node_input_connections_flow_validation_details::MultipleNodeInputConnectionsFlowValidationDetails;
+
+pub use crate::types::_missing_starting_nodes_flow_validation_details::MissingStartingNodesFlowValidationDetails;
+
+pub use crate::types::_missing_node_output_flow_validation_details::MissingNodeOutputFlowValidationDetails;
+
+pub use crate::types::_missing_node_input_flow_validation_details::MissingNodeInputFlowValidationDetails;
+
+pub use crate::types::_missing_node_configuration_flow_validation_details::MissingNodeConfigurationFlowValidationDetails;
+
+pub use crate::types::_missing_ending_nodes_flow_validation_details::MissingEndingNodesFlowValidationDetails;
+
+pub use crate::types::_missing_default_condition_flow_validation_details::MissingDefaultConditionFlowValidationDetails;
+
+pub use crate::types::_missing_connection_configuration_flow_validation_details::MissingConnectionConfigurationFlowValidationDetails;
+
+pub use crate::types::_incompatible_connection_data_type_flow_validation_details::IncompatibleConnectionDataTypeFlowValidationDetails;
+
+pub use crate::types::_mismatched_node_output_type_flow_validation_details::MismatchedNodeOutputTypeFlowValidationDetails;
+
+pub use crate::types::_mismatched_node_input_type_flow_validation_details::MismatchedNodeInputTypeFlowValidationDetails;
+
+pub use crate::types::_malformed_node_input_expression_flow_validation_details::MalformedNodeInputExpressionFlowValidationDetails;
+
+pub use crate::types::_malformed_condition_expression_flow_validation_details::MalformedConditionExpressionFlowValidationDetails;
+
+pub use crate::types::_unknown_connection_condition_flow_validation_details::UnknownConnectionConditionFlowValidationDetails;
+
+pub use crate::types::_unknown_connection_target_input_flow_validation_details::UnknownConnectionTargetInputFlowValidationDetails;
+
+pub use crate::types::_unknown_connection_target_flow_validation_details::UnknownConnectionTargetFlowValidationDetails;
+
+pub use crate::types::_unknown_connection_source_output_flow_validation_details::UnknownConnectionSourceOutputFlowValidationDetails;
+
+pub use crate::types::_unknown_connection_source_flow_validation_details::UnknownConnectionSourceFlowValidationDetails;
+
+pub use crate::types::_unreachable_node_flow_validation_details::UnreachableNodeFlowValidationDetails;
+
+pub use crate::types::_duplicate_condition_expression_flow_validation_details::DuplicateConditionExpressionFlowValidationDetails;
+
+pub use crate::types::_duplicate_connections_flow_validation_details::DuplicateConnectionsFlowValidationDetails;
+
+pub use crate::types::_cyclic_connection_flow_validation_details::CyclicConnectionFlowValidationDetails;
 
 pub use crate::types::_flow_validation_severity::FlowValidationSeverity;
 
@@ -365,11 +449,17 @@ mod _agent_version;
 
 mod _agent_version_summary;
 
+mod _any_tool_choice;
+
 mod _api_schema;
+
+mod _auto_tool_choice;
 
 mod _bedrock_embedding_model_configuration;
 
 mod _bedrock_foundation_model_configuration;
+
+mod _chat_prompt_template_configuration;
 
 mod _chunking_configuration;
 
@@ -389,6 +479,10 @@ mod _confluence_host_type;
 
 mod _confluence_source_configuration;
 
+mod _content_block;
+
+mod _conversation_role;
+
 mod _crawl_filter_configuration;
 
 mod _crawl_filter_configuration_type;
@@ -398,6 +492,8 @@ mod _creation_mode;
 mod _custom_control_method;
 
 mod _custom_transformation_configuration;
+
+mod _cyclic_connection_flow_validation_details;
 
 mod _data_deletion_policy;
 
@@ -410,6 +506,10 @@ mod _data_source_status;
 mod _data_source_summary;
 
 mod _data_source_type;
+
+mod _duplicate_condition_expression_flow_validation_details;
+
+mod _duplicate_connections_flow_validation_details;
 
 mod _embedding_model_configuration;
 
@@ -451,7 +551,11 @@ mod _flow_summary;
 
 mod _flow_validation;
 
+mod _flow_validation_details;
+
 mod _flow_validation_severity;
+
+mod _flow_validation_type;
 
 mod _flow_version_summary;
 
@@ -464,6 +568,8 @@ mod _guardrail_configuration;
 mod _hierarchical_chunking_configuration;
 
 mod _hierarchical_chunking_level_configuration;
+
+mod _incompatible_connection_data_type_flow_validation_details;
 
 mod _inference_configuration;
 
@@ -511,13 +617,39 @@ mod _lambda_function_flow_node_configuration;
 
 mod _lex_flow_node_configuration;
 
+mod _malformed_condition_expression_flow_validation_details;
+
+mod _malformed_node_input_expression_flow_validation_details;
+
 mod _memory_configuration;
 
 mod _memory_type;
 
+mod _message;
+
+mod _mismatched_node_input_type_flow_validation_details;
+
+mod _mismatched_node_output_type_flow_validation_details;
+
+mod _missing_connection_configuration_flow_validation_details;
+
+mod _missing_default_condition_flow_validation_details;
+
+mod _missing_ending_nodes_flow_validation_details;
+
+mod _missing_node_configuration_flow_validation_details;
+
+mod _missing_node_input_flow_validation_details;
+
+mod _missing_node_output_flow_validation_details;
+
+mod _missing_starting_nodes_flow_validation_details;
+
 mod _mongo_db_atlas_configuration;
 
 mod _mongo_db_atlas_field_mapping;
+
+mod _multiple_node_input_connections_flow_validation_details;
 
 mod _open_search_serverless_configuration;
 
@@ -541,6 +673,8 @@ mod _pinecone_configuration;
 
 mod _pinecone_field_mapping;
 
+mod _prompt_agent_resource;
+
 mod _prompt_configuration;
 
 mod _prompt_flow_node_configuration;
@@ -550,6 +684,8 @@ mod _prompt_flow_node_inline_configuration;
 mod _prompt_flow_node_resource_configuration;
 
 mod _prompt_flow_node_source_configuration;
+
+mod _prompt_gen_ai_resource;
 
 mod _prompt_inference_configuration;
 
@@ -621,6 +757,8 @@ mod _share_point_source_configuration;
 
 mod _sort_order;
 
+mod _specific_tool_choice;
+
 mod _step_type;
 
 mod _storage_configuration;
@@ -631,7 +769,19 @@ mod _storage_flow_node_s3_configuration;
 
 mod _storage_flow_node_service_configuration;
 
+mod _system_content_block;
+
 mod _text_prompt_template_configuration;
+
+mod _tool;
+
+mod _tool_choice;
+
+mod _tool_configuration;
+
+mod _tool_input_schema;
+
+mod _tool_specification;
 
 mod _transformation;
 
@@ -640,6 +790,24 @@ mod _transformation_function;
 mod _transformation_lambda_configuration;
 
 mod _type_;
+
+mod _unfulfilled_node_input_flow_validation_details;
+
+mod _unknown_connection_condition_flow_validation_details;
+
+mod _unknown_connection_source_flow_validation_details;
+
+mod _unknown_connection_source_output_flow_validation_details;
+
+mod _unknown_connection_target_flow_validation_details;
+
+mod _unknown_connection_target_input_flow_validation_details;
+
+mod _unreachable_node_flow_validation_details;
+
+mod _unsatisfied_connection_conditions_flow_validation_details;
+
+mod _unspecified_flow_validation_details;
 
 mod _url_configuration;
 

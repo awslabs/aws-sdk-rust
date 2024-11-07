@@ -1341,6 +1341,8 @@ pub(crate) mod shape_manifest_file_location;
 
 pub(crate) mod shape_network_interface;
 
+pub(crate) mod shape_o_auth_parameters;
+
 pub(crate) mod shape_output_column;
 
 pub(crate) mod shape_override_dataset_parameter_operation;

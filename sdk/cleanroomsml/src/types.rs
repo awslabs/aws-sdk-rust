@@ -17,6 +17,104 @@ pub use crate::types::_dataset_type::DatasetType;
 
 pub use crate::types::_training_dataset_summary::TrainingDatasetSummary;
 
+pub use crate::types::_logs_status::LogsStatus;
+
+pub use crate::types::_metrics_status::MetricsStatus;
+
+pub use crate::types::_status_details::StatusDetails;
+
+pub use crate::types::_inference_container_execution_parameters::InferenceContainerExecutionParameters;
+
+pub use crate::types::_model_inference_data_source::ModelInferenceDataSource;
+
+pub use crate::types::_inference_output_configuration::InferenceOutputConfiguration;
+
+pub use crate::types::_inference_receiver_member::InferenceReceiverMember;
+
+pub use crate::types::_inference_resource_config::InferenceResourceConfig;
+
+pub use crate::types::_inference_instance_type::InferenceInstanceType;
+
+pub use crate::types::_trained_model_inference_job_status::TrainedModelInferenceJobStatus;
+
+pub use crate::types::_trained_model_inference_job_summary::TrainedModelInferenceJobSummary;
+
+pub use crate::types::_trained_model_export_output_configuration::TrainedModelExportOutputConfiguration;
+
+pub use crate::types::_trained_model_export_receiver_member::TrainedModelExportReceiverMember;
+
+pub use crate::types::_stopping_condition::StoppingCondition;
+
+pub use crate::types::_resource_config::ResourceConfig;
+
+pub use crate::types::_instance_type::InstanceType;
+
+pub use crate::types::_trained_model_status::TrainedModelStatus;
+
+pub use crate::types::_model_training_data_channel::ModelTrainingDataChannel;
+
+pub use crate::types::_trained_model_summary::TrainedModelSummary;
+
+pub use crate::types::_ml_input_channel_status::MlInputChannelStatus;
+
+pub use crate::types::_input_channel::InputChannel;
+
+pub use crate::types::_input_channel_data_source::InputChannelDataSource;
+
+pub use crate::types::_protected_query_input_parameters::ProtectedQueryInputParameters;
+
+pub use crate::types::_compute_configuration::ComputeConfiguration;
+
+pub use crate::types::_worker_compute_configuration::WorkerComputeConfiguration;
+
+pub use crate::types::_worker_compute_type::WorkerComputeType;
+
+pub use crate::types::_protected_query_sql_parameters::ProtectedQuerySqlParameters;
+
+pub use crate::types::_ml_input_channel_summary::MlInputChannelSummary;
+
+pub use crate::types::_ml_output_configuration::MlOutputConfiguration;
+
+pub use crate::types::_destination::Destination;
+
+pub use crate::types::_s3_config_map::S3ConfigMap;
+
+pub use crate::types::_privacy_configuration::PrivacyConfiguration;
+
+pub use crate::types::_privacy_configuration_policies::PrivacyConfigurationPolicies;
+
+pub use crate::types::_trained_model_inference_jobs_configuration_policy::TrainedModelInferenceJobsConfigurationPolicy;
+
+pub use crate::types::_trained_model_inference_max_output_size::TrainedModelInferenceMaxOutputSize;
+
+pub use crate::types::_trained_model_inference_max_output_size_unit_type::TrainedModelInferenceMaxOutputSizeUnitType;
+
+pub use crate::types::_logs_configuration_policy::LogsConfigurationPolicy;
+
+pub use crate::types::_trained_model_exports_configuration_policy::TrainedModelExportsConfigurationPolicy;
+
+pub use crate::types::_trained_model_export_file_type::TrainedModelExportFileType;
+
+pub use crate::types::_trained_model_exports_max_size::TrainedModelExportsMaxSize;
+
+pub use crate::types::_trained_model_exports_max_size_unit_type::TrainedModelExportsMaxSizeUnitType;
+
+pub use crate::types::_trained_models_configuration_policy::TrainedModelsConfigurationPolicy;
+
+pub use crate::types::_metrics_configuration_policy::MetricsConfigurationPolicy;
+
+pub use crate::types::_noise_level_type::NoiseLevelType;
+
+pub use crate::types::_configured_model_algorithm_association_summary::ConfiguredModelAlgorithmAssociationSummary;
+
+pub use crate::types::_inference_container_config::InferenceContainerConfig;
+
+pub use crate::types::_container_config::ContainerConfig;
+
+pub use crate::types::_metric_definition::MetricDefinition;
+
+pub use crate::types::_configured_model_algorithm_summary::ConfiguredModelAlgorithmSummary;
+
 pub use crate::types::_policy_existence_condition::PolicyExistenceCondition;
 
 pub use crate::types::_audience_size_config::AudienceSizeConfig;
@@ -29,15 +127,11 @@ pub use crate::types::_configured_audience_model_output_config::ConfiguredAudien
 
 pub use crate::types::_audience_destination::AudienceDestination;
 
-pub use crate::types::_s3_config_map::S3ConfigMap;
-
 pub use crate::types::_tag_on_create_policy::TagOnCreatePolicy;
 
 pub use crate::types::_configured_audience_model_status::ConfiguredAudienceModelStatus;
 
 pub use crate::types::_configured_audience_model_summary::ConfiguredAudienceModelSummary;
-
-pub use crate::types::_status_details::StatusDetails;
 
 pub use crate::types::_audience_model_status::AudienceModelStatus;
 
@@ -51,8 +145,6 @@ pub use crate::types::_audience_size::AudienceSize;
 
 pub use crate::types::_audience_generation_job_data_source::AudienceGenerationJobDataSource;
 
-pub use crate::types::_protected_query_sql_parameters::ProtectedQuerySqlParameters;
-
 pub use crate::types::_audience_generation_job_status::AudienceGenerationJobStatus;
 
 pub use crate::types::_audience_generation_job_summary::AudienceGenerationJobSummary;
@@ -60,6 +152,18 @@ pub use crate::types::_audience_generation_job_summary::AudienceGenerationJobSum
 pub use crate::types::_audience_export_job_summary::AudienceExportJobSummary;
 
 pub use crate::types::_audience_export_job_status::AudienceExportJobStatus;
+
+pub use crate::types::_collaboration_trained_model_summary::CollaborationTrainedModelSummary;
+
+pub use crate::types::_collaboration_trained_model_inference_job_summary::CollaborationTrainedModelInferenceJobSummary;
+
+pub use crate::types::_collaboration_trained_model_export_job_summary::CollaborationTrainedModelExportJobSummary;
+
+pub use crate::types::_trained_model_export_job_status::TrainedModelExportJobStatus;
+
+pub use crate::types::_collaboration_ml_input_channel_summary::CollaborationMlInputChannelSummary;
+
+pub use crate::types::_collaboration_configured_model_algorithm_association_summary::CollaborationConfiguredModelAlgorithmAssociationSummary;
 
 mod _audience_destination;
 
@@ -85,15 +189,33 @@ mod _audience_size_config;
 
 mod _audience_size_type;
 
+mod _collaboration_configured_model_algorithm_association_summary;
+
+mod _collaboration_ml_input_channel_summary;
+
+mod _collaboration_trained_model_export_job_summary;
+
+mod _collaboration_trained_model_inference_job_summary;
+
+mod _collaboration_trained_model_summary;
+
 mod _column_schema;
 
 mod _column_type;
+
+mod _compute_configuration;
 
 mod _configured_audience_model_output_config;
 
 mod _configured_audience_model_status;
 
 mod _configured_audience_model_summary;
+
+mod _configured_model_algorithm_association_summary;
+
+mod _configured_model_algorithm_summary;
+
+mod _container_config;
 
 mod _data_source;
 
@@ -103,13 +225,63 @@ mod _dataset_input_config;
 
 mod _dataset_type;
 
+mod _destination;
+
 mod _glue_data_source;
 
+mod _inference_container_config;
+
+mod _inference_container_execution_parameters;
+
+mod _inference_instance_type;
+
+mod _inference_output_configuration;
+
+mod _inference_receiver_member;
+
+mod _inference_resource_config;
+
+mod _input_channel;
+
+mod _input_channel_data_source;
+
+mod _instance_type;
+
+mod _logs_configuration_policy;
+
+mod _logs_status;
+
+mod _metric_definition;
+
+mod _metrics_configuration_policy;
+
+mod _metrics_status;
+
+mod _ml_input_channel_status;
+
+mod _ml_input_channel_summary;
+
+mod _ml_output_configuration;
+
+mod _model_inference_data_source;
+
+mod _model_training_data_channel;
+
+mod _noise_level_type;
+
 mod _policy_existence_condition;
+
+mod _privacy_configuration;
+
+mod _privacy_configuration_policies;
+
+mod _protected_query_input_parameters;
 
 mod _protected_query_sql_parameters;
 
 mod _relevance_metric;
+
+mod _resource_config;
 
 mod _s3_config_map;
 
@@ -117,11 +289,47 @@ mod _shared_audience_metrics;
 
 mod _status_details;
 
+mod _stopping_condition;
+
 mod _tag_on_create_policy;
+
+mod _trained_model_export_file_type;
+
+mod _trained_model_export_job_status;
+
+mod _trained_model_export_output_configuration;
+
+mod _trained_model_export_receiver_member;
+
+mod _trained_model_exports_configuration_policy;
+
+mod _trained_model_exports_max_size;
+
+mod _trained_model_exports_max_size_unit_type;
+
+mod _trained_model_inference_job_status;
+
+mod _trained_model_inference_job_summary;
+
+mod _trained_model_inference_jobs_configuration_policy;
+
+mod _trained_model_inference_max_output_size;
+
+mod _trained_model_inference_max_output_size_unit_type;
+
+mod _trained_model_status;
+
+mod _trained_model_summary;
+
+mod _trained_models_configuration_policy;
 
 mod _training_dataset_status;
 
 mod _training_dataset_summary;
+
+mod _worker_compute_configuration;
+
+mod _worker_compute_type;
 
 /// Builders
 pub mod builders;

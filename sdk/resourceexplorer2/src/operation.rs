@@ -31,6 +31,9 @@ pub mod get_default_view;
 /// Types for the `GetIndex` operation.
 pub mod get_index;
 
+/// Types for the `GetManagedView` operation.
+pub mod get_managed_view;
+
 /// Types for the `GetView` operation.
 pub mod get_view;
 
@@ -39,6 +42,9 @@ pub mod list_indexes;
 
 /// Types for the `ListIndexesForMembers` operation.
 pub mod list_indexes_for_members;
+
+/// Types for the `ListManagedViews` operation.
+pub mod list_managed_views;
 
 /// Types for the `ListResources` operation.
 pub mod list_resources;

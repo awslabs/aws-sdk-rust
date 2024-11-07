@@ -2088,6 +2088,15 @@ pub(crate) fn membership_summary_correct_errors(
     builder
 }
 
+pub(crate) fn ml_member_abilities_correct_errors(
+    mut builder: crate::types::builders::MlMemberAbilitiesBuilder,
+) -> crate::types::builders::MlMemberAbilitiesBuilder {
+    if builder.custom_ml_member_abilities.is_none() {
+        builder.custom_ml_member_abilities = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn privacy_budget_summary_correct_errors(
     mut builder: crate::types::builders::PrivacyBudgetSummaryBuilder,
 ) -> crate::types::builders::PrivacyBudgetSummaryBuilder {
@@ -2479,6 +2488,24 @@ pub(crate) fn id_mapping_table_input_source_correct_errors(
     builder
 }
 
+pub(crate) fn membership_model_inference_payment_config_correct_errors(
+    mut builder: crate::types::builders::MembershipModelInferencePaymentConfigBuilder,
+) -> crate::types::builders::MembershipModelInferencePaymentConfigBuilder {
+    if builder.is_responsible.is_none() {
+        builder.is_responsible = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn membership_model_training_payment_config_correct_errors(
+    mut builder: crate::types::builders::MembershipModelTrainingPaymentConfigBuilder,
+) -> crate::types::builders::MembershipModelTrainingPaymentConfigBuilder {
+    if builder.is_responsible.is_none() {
+        builder.is_responsible = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn protected_query_member_output_configuration_correct_errors(
     mut builder: crate::types::builders::ProtectedQueryMemberOutputConfigurationBuilder,
 ) -> crate::types::builders::ProtectedQueryMemberOutputConfigurationBuilder {
@@ -2541,6 +2568,24 @@ pub(crate) fn differential_privacy_configuration_correct_errors(
 ) -> crate::types::builders::DifferentialPrivacyConfigurationBuilder {
     if builder.columns.is_none() {
         builder.columns = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn model_inference_payment_config_correct_errors(
+    mut builder: crate::types::builders::ModelInferencePaymentConfigBuilder,
+) -> crate::types::builders::ModelInferencePaymentConfigBuilder {
+    if builder.is_responsible.is_none() {
+        builder.is_responsible = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn model_training_payment_config_correct_errors(
+    mut builder: crate::types::builders::ModelTrainingPaymentConfigBuilder,
+) -> crate::types::builders::ModelTrainingPaymentConfigBuilder {
+    if builder.is_responsible.is_none() {
+        builder.is_responsible = Some(Default::default())
     }
     builder
 }

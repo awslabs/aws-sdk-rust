@@ -142,6 +142,29 @@ mod create_prompt_version;
 
 /// Operation customization and supporting types.
 ///
+/// The underlying HTTP requests made during an operation can be customized
+/// by calling the `customize()` method on the builder returned from a client
+/// operation call. For example, this can be used to add an additional HTTP header:
+///
+/// ```ignore
+/// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_bedrockagent::Error> {
+/// # let client: aws_sdk_bedrockagent::Client = unimplemented!();
+/// use ::http::header::{HeaderName, HeaderValue};
+///
+/// let result = client.validate_flow_definition()
+///     .customize()
+///     .mutate_request(|req| {
+///         // Add `x-example-header` with value
+///         req.headers_mut()
+///             .insert(
+///                 HeaderName::from_static("x-example-header"),
+///                 HeaderValue::from_static("1"),
+///             );
+///     })
+///     .send()
+///     .await;
+/// # }
+/// ```
 pub mod customize;
 
 mod delete_agent;
@@ -245,3 +268,5 @@ mod update_flow_alias;
 mod update_knowledge_base;
 
 mod update_prompt;
+
+mod validate_flow_definition;

@@ -9,6 +9,12 @@ pub fn ser_payment_configuration(
         crate::protocol_serde::shape_query_compute_payment_config::ser_query_compute_payment_config(&mut object_2, var_1)?;
         object_2.finish();
     }
+    if let Some(var_3) = &input.machine_learning {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("machineLearning").start_object();
+        crate::protocol_serde::shape_ml_payment_config::ser_ml_payment_config(&mut object_4, var_3)?;
+        object_4.finish();
+    }
     Ok(())
 }
 
@@ -31,6 +37,9 @@ where
                             builder = builder.set_query_compute(
                                 crate::protocol_serde::shape_query_compute_payment_config::de_query_compute_payment_config(tokens)?,
                             );
+                        }
+                        "machineLearning" => {
+                            builder = builder.set_machine_learning(crate::protocol_serde::shape_ml_payment_config::de_ml_payment_config(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -109,6 +109,8 @@ pub(crate) mod shape_inference_configuration;
 
 pub(crate) mod shape_message;
 
+pub(crate) mod shape_prompt_variable_values;
+
 pub(crate) mod shape_system_content_block;
 
 pub(crate) mod shape_token_usage;

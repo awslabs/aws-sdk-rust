@@ -1413,6 +1413,10 @@ pub use crate::types::_trino_parameters::TrinoParameters;
 
 pub use crate::types::_starburst_parameters::StarburstParameters;
 
+pub use crate::types::_o_auth_parameters::OAuthParameters;
+
+pub use crate::types::_authentication_type::AuthenticationType;
+
 pub use crate::types::_starburst_product_type::StarburstProductType;
 
 pub use crate::types::_databricks_parameters::DatabricksParameters;
@@ -2310,6 +2314,8 @@ mod _aurora_parameters;
 mod _aurora_postgre_sql_parameters;
 
 mod _authentication_method_option;
+
+mod _authentication_type;
 
 mod _author_specified_aggregation;
 
@@ -3322,6 +3328,8 @@ mod _numerical_aggregation_function;
 mod _numerical_dimension_field;
 
 mod _numerical_measure_field;
+
+mod _o_auth_parameters;
 
 mod _oracle_parameters;
 

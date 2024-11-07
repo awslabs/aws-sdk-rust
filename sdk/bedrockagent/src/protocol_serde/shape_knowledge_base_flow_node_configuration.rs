@@ -9,6 +9,12 @@ pub fn ser_knowledge_base_flow_node_configuration(
     if let Some(var_1) = &input.model_id {
         object.key("modelId").string(var_1.as_str());
     }
+    if let Some(var_2) = &input.guardrail_configuration {
+        #[allow(unused_mut)]
+        let mut object_3 = object.key("guardrailConfiguration").start_object();
+        crate::protocol_serde::shape_guardrail_configuration::ser_guardrail_configuration(&mut object_3, var_2)?;
+        object_3.finish();
+    }
     Ok(())
 }
 
@@ -39,6 +45,11 @@ where
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
+                            );
+                        }
+                        "guardrailConfiguration" => {
+                            builder = builder.set_guardrail_configuration(
+                                crate::protocol_serde::shape_guardrail_configuration::de_guardrail_configuration(tokens)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

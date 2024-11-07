@@ -97,6 +97,8 @@ pub use crate::types::_message_start_event::MessageStartEvent;
 
 pub use crate::types::_conversation_role::ConversationRole;
 
+pub use crate::types::_prompt_variable_values::PromptVariableValues;
+
 pub use crate::types::_guardrail_stream_configuration::GuardrailStreamConfiguration;
 
 pub use crate::types::_guardrail_stream_processing_mode::GuardrailStreamProcessingMode;
@@ -312,6 +314,8 @@ mod _message_start_event;
 mod _message_stop_event;
 
 mod _payload_part;
+
+mod _prompt_variable_values;
 
 mod _response_stream;
 

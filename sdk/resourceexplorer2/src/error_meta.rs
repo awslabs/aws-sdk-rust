@@ -374,6 +374,33 @@ impl From<crate::operation::get_index::GetIndexError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_managed_view::GetManagedViewError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_managed_view::GetManagedViewError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_managed_view::GetManagedViewError> for Error {
+    fn from(err: crate::operation::get_managed_view::GetManagedViewError) -> Self {
+        match err {
+            crate::operation::get_managed_view::GetManagedViewError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_managed_view::GetManagedViewError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_managed_view::GetManagedViewError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_managed_view::GetManagedViewError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_managed_view::GetManagedViewError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::get_managed_view::GetManagedViewError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_managed_view::GetManagedViewError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_view::GetViewError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -454,6 +481,32 @@ impl From<crate::operation::list_indexes_for_members::ListIndexesForMembersError
             crate::operation::list_indexes_for_members::ListIndexesForMembersError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_indexes_for_members::ListIndexesForMembersError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_indexes_for_members::ListIndexesForMembersError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_managed_views::ListManagedViewsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_managed_views::ListManagedViewsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_managed_views::ListManagedViewsError> for Error {
+    fn from(err: crate::operation::list_managed_views::ListManagedViewsError) -> Self {
+        match err {
+            crate::operation::list_managed_views::ListManagedViewsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_managed_views::ListManagedViewsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_managed_views::ListManagedViewsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_managed_views::ListManagedViewsError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::list_managed_views::ListManagedViewsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_managed_views::ListManagedViewsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

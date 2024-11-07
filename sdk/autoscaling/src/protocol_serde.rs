@@ -287,6 +287,8 @@ pub(crate) mod shape_active_instance_refresh_not_found_fault;
 
 pub(crate) mod shape_already_exists_fault;
 
+pub(crate) mod shape_availability_zone_distribution;
+
 pub(crate) mod shape_block_device_mapping;
 
 pub(crate) mod shape_desired_configuration;

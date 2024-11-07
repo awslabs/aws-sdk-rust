@@ -29,8 +29,108 @@ pub(crate) fn reflens_list_audience_models_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_collaboration_configured_model_algorithm_associations_output_output_next_token(
+    input: &crate::operation::list_collaboration_configured_model_algorithm_associations::ListCollaborationConfiguredModelAlgorithmAssociationsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_collaboration_ml_input_channels_output_output_next_token(
+    input: &crate::operation::list_collaboration_ml_input_channels::ListCollaborationMlInputChannelsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_collaboration_trained_model_export_jobs_output_output_next_token(
+    input: &crate::operation::list_collaboration_trained_model_export_jobs::ListCollaborationTrainedModelExportJobsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_collaboration_trained_model_inference_jobs_output_output_next_token(
+    input: &crate::operation::list_collaboration_trained_model_inference_jobs::ListCollaborationTrainedModelInferenceJobsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_collaboration_trained_models_output_output_next_token(
+    input: &crate::operation::list_collaboration_trained_models::ListCollaborationTrainedModelsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_configured_audience_models_output_output_next_token(
     input: &crate::operation::list_configured_audience_models::ListConfiguredAudienceModelsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_configured_model_algorithm_associations_output_output_next_token(
+    input: &crate::operation::list_configured_model_algorithm_associations::ListConfiguredModelAlgorithmAssociationsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_configured_model_algorithms_output_output_next_token(
+    input: &crate::operation::list_configured_model_algorithms::ListConfiguredModelAlgorithmsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_ml_input_channels_output_output_next_token(
+    input: &crate::operation::list_ml_input_channels::ListMlInputChannelsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_trained_model_inference_jobs_output_output_next_token(
+    input: &crate::operation::list_trained_model_inference_jobs::ListTrainedModelInferenceJobsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_trained_models_output_output_next_token(
+    input: &crate::operation::list_trained_models::ListTrainedModelsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
     let input = match &input.next_token {
         ::std::option::Option::None => return ::std::option::Option::None,
@@ -70,10 +170,80 @@ pub(crate) fn lens_list_audience_models_output_output_audience_models(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn lens_list_collaboration_configured_model_algorithm_associations_output_output_collaboration_configured_model_algorithm_associations(
+    input: crate::operation::list_collaboration_configured_model_algorithm_associations::ListCollaborationConfiguredModelAlgorithmAssociationsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::CollaborationConfiguredModelAlgorithmAssociationSummary>> {
+    let input = input.collaboration_configured_model_algorithm_associations;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_collaboration_ml_input_channels_output_output_collaboration_ml_input_channels_list(
+    input: crate::operation::list_collaboration_ml_input_channels::ListCollaborationMlInputChannelsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::CollaborationMlInputChannelSummary>> {
+    let input = input.collaboration_ml_input_channels_list;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_collaboration_trained_model_export_jobs_output_output_collaboration_trained_model_export_jobs(
+    input: crate::operation::list_collaboration_trained_model_export_jobs::ListCollaborationTrainedModelExportJobsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::CollaborationTrainedModelExportJobSummary>> {
+    let input = input.collaboration_trained_model_export_jobs;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_collaboration_trained_model_inference_jobs_output_output_collaboration_trained_model_inference_jobs(
+    input: crate::operation::list_collaboration_trained_model_inference_jobs::ListCollaborationTrainedModelInferenceJobsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::CollaborationTrainedModelInferenceJobSummary>> {
+    let input = input.collaboration_trained_model_inference_jobs;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_collaboration_trained_models_output_output_collaboration_trained_models(
+    input: crate::operation::list_collaboration_trained_models::ListCollaborationTrainedModelsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::CollaborationTrainedModelSummary>> {
+    let input = input.collaboration_trained_models;
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_list_configured_audience_models_output_output_configured_audience_models(
     input: crate::operation::list_configured_audience_models::ListConfiguredAudienceModelsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ConfiguredAudienceModelSummary>> {
     let input = input.configured_audience_models;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_configured_model_algorithm_associations_output_output_configured_model_algorithm_associations(
+    input: crate::operation::list_configured_model_algorithm_associations::ListConfiguredModelAlgorithmAssociationsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ConfiguredModelAlgorithmAssociationSummary>> {
+    let input = input.configured_model_algorithm_associations;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_configured_model_algorithms_output_output_configured_model_algorithms(
+    input: crate::operation::list_configured_model_algorithms::ListConfiguredModelAlgorithmsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ConfiguredModelAlgorithmSummary>> {
+    let input = input.configured_model_algorithms;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_ml_input_channels_output_output_ml_input_channels_list(
+    input: crate::operation::list_ml_input_channels::ListMlInputChannelsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::MlInputChannelSummary>> {
+    let input = input.ml_input_channels_list;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_trained_model_inference_jobs_output_output_trained_model_inference_jobs(
+    input: crate::operation::list_trained_model_inference_jobs::ListTrainedModelInferenceJobsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::TrainedModelInferenceJobSummary>> {
+    let input = input.trained_model_inference_jobs;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_trained_models_output_output_trained_models(
+    input: crate::operation::list_trained_models::ListTrainedModelsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::TrainedModelSummary>> {
+    let input = input.trained_models;
     ::std::option::Option::Some(input)
 }
 

@@ -26,18 +26,18 @@ pub(crate) fn resource_not_found_exception_correct_errors(
     builder
 }
 
-pub(crate) fn service_quota_exceeded_exception_correct_errors(
-    mut builder: crate::types::error::builders::ServiceQuotaExceededExceptionBuilder,
-) -> crate::types::error::builders::ServiceQuotaExceededExceptionBuilder {
+pub(crate) fn validation_exception_correct_errors(
+    mut builder: crate::types::error::builders::ValidationExceptionBuilder,
+) -> crate::types::error::builders::ValidationExceptionBuilder {
     if builder.message.is_none() {
         builder.message = Some(Default::default())
     }
     builder
 }
 
-pub(crate) fn validation_exception_correct_errors(
-    mut builder: crate::types::error::builders::ValidationExceptionBuilder,
-) -> crate::types::error::builders::ValidationExceptionBuilder {
+pub(crate) fn service_quota_exceeded_exception_correct_errors(
+    mut builder: crate::types::error::builders::ServiceQuotaExceededExceptionBuilder,
+) -> crate::types::error::builders::ServiceQuotaExceededExceptionBuilder {
     if builder.message.is_none() {
         builder.message = Some(Default::default())
     }
@@ -58,6 +58,42 @@ pub(crate) fn create_configured_audience_model_output_output_correct_errors(
 ) -> crate::operation::create_configured_audience_model::builders::CreateConfiguredAudienceModelOutputBuilder {
     if builder.configured_audience_model_arn.is_none() {
         builder.configured_audience_model_arn = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn create_configured_model_algorithm_output_output_correct_errors(
+    mut builder: crate::operation::create_configured_model_algorithm::builders::CreateConfiguredModelAlgorithmOutputBuilder,
+) -> crate::operation::create_configured_model_algorithm::builders::CreateConfiguredModelAlgorithmOutputBuilder {
+    if builder.configured_model_algorithm_arn.is_none() {
+        builder.configured_model_algorithm_arn = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn create_configured_model_algorithm_association_output_output_correct_errors(
+    mut builder: crate::operation::create_configured_model_algorithm_association::builders::CreateConfiguredModelAlgorithmAssociationOutputBuilder,
+) -> crate::operation::create_configured_model_algorithm_association::builders::CreateConfiguredModelAlgorithmAssociationOutputBuilder {
+    if builder.configured_model_algorithm_association_arn.is_none() {
+        builder.configured_model_algorithm_association_arn = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn create_ml_input_channel_output_output_correct_errors(
+    mut builder: crate::operation::create_ml_input_channel::builders::CreateMlInputChannelOutputBuilder,
+) -> crate::operation::create_ml_input_channel::builders::CreateMlInputChannelOutputBuilder {
+    if builder.ml_input_channel_arn.is_none() {
+        builder.ml_input_channel_arn = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn create_trained_model_output_output_correct_errors(
+    mut builder: crate::operation::create_trained_model::builders::CreateTrainedModelOutputBuilder,
+) -> crate::operation::create_trained_model::builders::CreateTrainedModelOutputBuilder {
+    if builder.trained_model_arn.is_none() {
+        builder.trained_model_arn = Some(Default::default())
     }
     builder
 }
@@ -119,6 +155,103 @@ pub(crate) fn get_audience_model_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn get_collaboration_configured_model_algorithm_association_output_output_correct_errors(mut builder: crate::operation::get_collaboration_configured_model_algorithm_association::builders::GetCollaborationConfiguredModelAlgorithmAssociationOutputBuilder) -> crate::operation::get_collaboration_configured_model_algorithm_association::builders::GetCollaborationConfiguredModelAlgorithmAssociationOutputBuilder{
+    if builder.create_time.is_none() {
+        builder.create_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.update_time.is_none() {
+        builder.update_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.configured_model_algorithm_association_arn.is_none() {
+        builder.configured_model_algorithm_association_arn = Some(Default::default())
+    }
+    if builder.membership_identifier.is_none() {
+        builder.membership_identifier = Some(Default::default())
+    }
+    if builder.collaboration_identifier.is_none() {
+        builder.collaboration_identifier = Some(Default::default())
+    }
+    if builder.configured_model_algorithm_arn.is_none() {
+        builder.configured_model_algorithm_arn = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.creator_account_id.is_none() {
+        builder.creator_account_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn get_collaboration_ml_input_channel_output_output_correct_errors(
+    mut builder: crate::operation::get_collaboration_ml_input_channel::builders::GetCollaborationMlInputChannelOutputBuilder,
+) -> crate::operation::get_collaboration_ml_input_channel::builders::GetCollaborationMlInputChannelOutputBuilder {
+    if builder.create_time.is_none() {
+        builder.create_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.update_time.is_none() {
+        builder.update_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.creator_account_id.is_none() {
+        builder.creator_account_id = Some(Default::default())
+    }
+    if builder.membership_identifier.is_none() {
+        builder.membership_identifier = Some(Default::default())
+    }
+    if builder.collaboration_identifier.is_none() {
+        builder.collaboration_identifier = Some(Default::default())
+    }
+    if builder.ml_input_channel_arn.is_none() {
+        builder.ml_input_channel_arn = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.configured_model_algorithm_associations.is_none() {
+        builder.configured_model_algorithm_associations = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::MlInputChannelStatus>().ok()
+    }
+    if builder.retention_in_days.is_none() {
+        builder.retention_in_days = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn get_collaboration_trained_model_output_output_correct_errors(
+    mut builder: crate::operation::get_collaboration_trained_model::builders::GetCollaborationTrainedModelOutputBuilder,
+) -> crate::operation::get_collaboration_trained_model::builders::GetCollaborationTrainedModelOutputBuilder {
+    if builder.membership_identifier.is_none() {
+        builder.membership_identifier = Some(Default::default())
+    }
+    if builder.collaboration_identifier.is_none() {
+        builder.collaboration_identifier = Some(Default::default())
+    }
+    if builder.trained_model_arn.is_none() {
+        builder.trained_model_arn = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::TrainedModelStatus>().ok()
+    }
+    if builder.configured_model_algorithm_association_arn.is_none() {
+        builder.configured_model_algorithm_association_arn = Some(Default::default())
+    }
+    if builder.create_time.is_none() {
+        builder.create_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.update_time.is_none() {
+        builder.update_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.creator_account_id.is_none() {
+        builder.creator_account_id = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn get_configured_audience_model_output_output_correct_errors(
     mut builder: crate::operation::get_configured_audience_model::builders::GetConfiguredAudienceModelOutputBuilder,
 ) -> crate::operation::get_configured_audience_model::builders::GetConfiguredAudienceModelOutputBuilder {
@@ -165,6 +298,192 @@ pub(crate) fn get_configured_audience_model_policy_output_output_correct_errors(
     }
     if builder.policy_hash.is_none() {
         builder.policy_hash = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn get_configured_model_algorithm_output_output_correct_errors(
+    mut builder: crate::operation::get_configured_model_algorithm::builders::GetConfiguredModelAlgorithmOutputBuilder,
+) -> crate::operation::get_configured_model_algorithm::builders::GetConfiguredModelAlgorithmOutputBuilder {
+    if builder.create_time.is_none() {
+        builder.create_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.update_time.is_none() {
+        builder.update_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.configured_model_algorithm_arn.is_none() {
+        builder.configured_model_algorithm_arn = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.role_arn.is_none() {
+        builder.role_arn = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn get_configured_model_algorithm_association_output_output_correct_errors(
+    mut builder: crate::operation::get_configured_model_algorithm_association::builders::GetConfiguredModelAlgorithmAssociationOutputBuilder,
+) -> crate::operation::get_configured_model_algorithm_association::builders::GetConfiguredModelAlgorithmAssociationOutputBuilder {
+    if builder.create_time.is_none() {
+        builder.create_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.update_time.is_none() {
+        builder.update_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.configured_model_algorithm_association_arn.is_none() {
+        builder.configured_model_algorithm_association_arn = Some(Default::default())
+    }
+    if builder.membership_identifier.is_none() {
+        builder.membership_identifier = Some(Default::default())
+    }
+    if builder.collaboration_identifier.is_none() {
+        builder.collaboration_identifier = Some(Default::default())
+    }
+    if builder.configured_model_algorithm_arn.is_none() {
+        builder.configured_model_algorithm_arn = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn get_ml_configuration_output_output_correct_errors(
+    mut builder: crate::operation::get_ml_configuration::builders::GetMlConfigurationOutputBuilder,
+) -> crate::operation::get_ml_configuration::builders::GetMlConfigurationOutputBuilder {
+    if builder.membership_identifier.is_none() {
+        builder.membership_identifier = Some(Default::default())
+    }
+    if builder.default_output_location.is_none() {
+        builder.default_output_location = {
+            let builder = crate::types::builders::MlOutputConfigurationBuilder::default();
+            crate::serde_util::ml_output_configuration_correct_errors(builder).build().ok()
+        }
+    }
+    if builder.create_time.is_none() {
+        builder.create_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.update_time.is_none() {
+        builder.update_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn get_ml_input_channel_output_output_correct_errors(
+    mut builder: crate::operation::get_ml_input_channel::builders::GetMlInputChannelOutputBuilder,
+) -> crate::operation::get_ml_input_channel::builders::GetMlInputChannelOutputBuilder {
+    if builder.create_time.is_none() {
+        builder.create_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.update_time.is_none() {
+        builder.update_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.membership_identifier.is_none() {
+        builder.membership_identifier = Some(Default::default())
+    }
+    if builder.collaboration_identifier.is_none() {
+        builder.collaboration_identifier = Some(Default::default())
+    }
+    if builder.input_channel.is_none() {
+        builder.input_channel = {
+            let builder = crate::types::builders::InputChannelBuilder::default();
+            crate::serde_util::input_channel_correct_errors(builder).build().ok()
+        }
+    }
+    if builder.ml_input_channel_arn.is_none() {
+        builder.ml_input_channel_arn = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.configured_model_algorithm_associations.is_none() {
+        builder.configured_model_algorithm_associations = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::MlInputChannelStatus>().ok()
+    }
+    if builder.retention_in_days.is_none() {
+        builder.retention_in_days = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn get_trained_model_output_output_correct_errors(
+    mut builder: crate::operation::get_trained_model::builders::GetTrainedModelOutputBuilder,
+) -> crate::operation::get_trained_model::builders::GetTrainedModelOutputBuilder {
+    if builder.membership_identifier.is_none() {
+        builder.membership_identifier = Some(Default::default())
+    }
+    if builder.collaboration_identifier.is_none() {
+        builder.collaboration_identifier = Some(Default::default())
+    }
+    if builder.trained_model_arn.is_none() {
+        builder.trained_model_arn = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::TrainedModelStatus>().ok()
+    }
+    if builder.configured_model_algorithm_association_arn.is_none() {
+        builder.configured_model_algorithm_association_arn = Some(Default::default())
+    }
+    if builder.create_time.is_none() {
+        builder.create_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.update_time.is_none() {
+        builder.update_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.data_channels.is_none() {
+        builder.data_channels = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn get_trained_model_inference_job_output_output_correct_errors(
+    mut builder: crate::operation::get_trained_model_inference_job::builders::GetTrainedModelInferenceJobOutputBuilder,
+) -> crate::operation::get_trained_model_inference_job::builders::GetTrainedModelInferenceJobOutputBuilder {
+    if builder.create_time.is_none() {
+        builder.create_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.update_time.is_none() {
+        builder.update_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.trained_model_inference_job_arn.is_none() {
+        builder.trained_model_inference_job_arn = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::TrainedModelInferenceJobStatus>().ok()
+    }
+    if builder.trained_model_arn.is_none() {
+        builder.trained_model_arn = Some(Default::default())
+    }
+    if builder.resource_config.is_none() {
+        builder.resource_config = {
+            let builder = crate::types::builders::InferenceResourceConfigBuilder::default();
+            crate::serde_util::inference_resource_config_correct_errors(builder).build().ok()
+        }
+    }
+    if builder.output_configuration.is_none() {
+        builder.output_configuration = {
+            let builder = crate::types::builders::InferenceOutputConfigurationBuilder::default();
+            crate::serde_util::inference_output_configuration_correct_errors(builder).build().ok()
+        }
+    }
+    if builder.membership_identifier.is_none() {
+        builder.membership_identifier = Some(Default::default())
+    }
+    if builder.data_source.is_none() {
+        builder.data_source = {
+            let builder = crate::types::builders::ModelInferenceDataSourceBuilder::default();
+            crate::serde_util::model_inference_data_source_correct_errors(builder).build().ok()
+        }
     }
     builder
 }
@@ -223,6 +542,49 @@ pub(crate) fn list_audience_models_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn list_collaboration_configured_model_algorithm_associations_output_output_correct_errors(mut builder: crate::operation::list_collaboration_configured_model_algorithm_associations::builders::ListCollaborationConfiguredModelAlgorithmAssociationsOutputBuilder) -> crate::operation::list_collaboration_configured_model_algorithm_associations::builders::ListCollaborationConfiguredModelAlgorithmAssociationsOutputBuilder{
+    if builder.collaboration_configured_model_algorithm_associations.is_none() {
+        builder.collaboration_configured_model_algorithm_associations = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_collaboration_ml_input_channels_output_output_correct_errors(
+    mut builder: crate::operation::list_collaboration_ml_input_channels::builders::ListCollaborationMlInputChannelsOutputBuilder,
+) -> crate::operation::list_collaboration_ml_input_channels::builders::ListCollaborationMlInputChannelsOutputBuilder {
+    if builder.collaboration_ml_input_channels_list.is_none() {
+        builder.collaboration_ml_input_channels_list = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_collaboration_trained_model_export_jobs_output_output_correct_errors(
+    mut builder: crate::operation::list_collaboration_trained_model_export_jobs::builders::ListCollaborationTrainedModelExportJobsOutputBuilder,
+) -> crate::operation::list_collaboration_trained_model_export_jobs::builders::ListCollaborationTrainedModelExportJobsOutputBuilder {
+    if builder.collaboration_trained_model_export_jobs.is_none() {
+        builder.collaboration_trained_model_export_jobs = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_collaboration_trained_model_inference_jobs_output_output_correct_errors(
+    mut builder: crate::operation::list_collaboration_trained_model_inference_jobs::builders::ListCollaborationTrainedModelInferenceJobsOutputBuilder,
+) -> crate::operation::list_collaboration_trained_model_inference_jobs::builders::ListCollaborationTrainedModelInferenceJobsOutputBuilder {
+    if builder.collaboration_trained_model_inference_jobs.is_none() {
+        builder.collaboration_trained_model_inference_jobs = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_collaboration_trained_models_output_output_correct_errors(
+    mut builder: crate::operation::list_collaboration_trained_models::builders::ListCollaborationTrainedModelsOutputBuilder,
+) -> crate::operation::list_collaboration_trained_models::builders::ListCollaborationTrainedModelsOutputBuilder {
+    if builder.collaboration_trained_models.is_none() {
+        builder.collaboration_trained_models = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn list_configured_audience_models_output_output_correct_errors(
     mut builder: crate::operation::list_configured_audience_models::builders::ListConfiguredAudienceModelsOutputBuilder,
 ) -> crate::operation::list_configured_audience_models::builders::ListConfiguredAudienceModelsOutputBuilder {
@@ -232,11 +594,56 @@ pub(crate) fn list_configured_audience_models_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn list_configured_model_algorithm_associations_output_output_correct_errors(
+    mut builder: crate::operation::list_configured_model_algorithm_associations::builders::ListConfiguredModelAlgorithmAssociationsOutputBuilder,
+) -> crate::operation::list_configured_model_algorithm_associations::builders::ListConfiguredModelAlgorithmAssociationsOutputBuilder {
+    if builder.configured_model_algorithm_associations.is_none() {
+        builder.configured_model_algorithm_associations = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_configured_model_algorithms_output_output_correct_errors(
+    mut builder: crate::operation::list_configured_model_algorithms::builders::ListConfiguredModelAlgorithmsOutputBuilder,
+) -> crate::operation::list_configured_model_algorithms::builders::ListConfiguredModelAlgorithmsOutputBuilder {
+    if builder.configured_model_algorithms.is_none() {
+        builder.configured_model_algorithms = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_ml_input_channels_output_output_correct_errors(
+    mut builder: crate::operation::list_ml_input_channels::builders::ListMlInputChannelsOutputBuilder,
+) -> crate::operation::list_ml_input_channels::builders::ListMlInputChannelsOutputBuilder {
+    if builder.ml_input_channels_list.is_none() {
+        builder.ml_input_channels_list = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn list_tags_for_resource_output_output_correct_errors(
     mut builder: crate::operation::list_tags_for_resource::builders::ListTagsForResourceOutputBuilder,
 ) -> crate::operation::list_tags_for_resource::builders::ListTagsForResourceOutputBuilder {
     if builder.tags.is_none() {
         builder.tags = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_trained_model_inference_jobs_output_output_correct_errors(
+    mut builder: crate::operation::list_trained_model_inference_jobs::builders::ListTrainedModelInferenceJobsOutputBuilder,
+) -> crate::operation::list_trained_model_inference_jobs::builders::ListTrainedModelInferenceJobsOutputBuilder {
+    if builder.trained_model_inference_jobs.is_none() {
+        builder.trained_model_inference_jobs = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_trained_models_output_output_correct_errors(
+    mut builder: crate::operation::list_trained_models::builders::ListTrainedModelsOutputBuilder,
+) -> crate::operation::list_trained_models::builders::ListTrainedModelsOutputBuilder {
+    if builder.trained_models.is_none() {
+        builder.trained_models = Some(Default::default())
     }
     builder
 }
@@ -271,6 +678,15 @@ pub(crate) fn start_audience_generation_job_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn start_trained_model_inference_job_output_output_correct_errors(
+    mut builder: crate::operation::start_trained_model_inference_job::builders::StartTrainedModelInferenceJobOutputBuilder,
+) -> crate::operation::start_trained_model_inference_job::builders::StartTrainedModelInferenceJobOutputBuilder {
+    if builder.trained_model_inference_job_arn.is_none() {
+        builder.trained_model_inference_job_arn = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn update_configured_audience_model_output_output_correct_errors(
     mut builder: crate::operation::update_configured_audience_model::builders::UpdateConfiguredAudienceModelOutputBuilder,
 ) -> crate::operation::update_configured_audience_model::builders::UpdateConfiguredAudienceModelOutputBuilder {
@@ -291,6 +707,52 @@ pub(crate) fn configured_audience_model_output_config_correct_errors(
     }
     if builder.role_arn.is_none() {
         builder.role_arn = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn ml_output_configuration_correct_errors(
+    mut builder: crate::types::builders::MlOutputConfigurationBuilder,
+) -> crate::types::builders::MlOutputConfigurationBuilder {
+    if builder.role_arn.is_none() {
+        builder.role_arn = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn input_channel_correct_errors(mut builder: crate::types::builders::InputChannelBuilder) -> crate::types::builders::InputChannelBuilder {
+    if builder.data_source.is_none() {
+        builder.data_source = Some(crate::types::InputChannelDataSource::Unknown)
+    }
+    if builder.role_arn.is_none() {
+        builder.role_arn = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn inference_resource_config_correct_errors(
+    mut builder: crate::types::builders::InferenceResourceConfigBuilder,
+) -> crate::types::builders::InferenceResourceConfigBuilder {
+    if builder.instance_type.is_none() {
+        builder.instance_type = "no value was set".parse::<crate::types::InferenceInstanceType>().ok()
+    }
+    builder
+}
+
+pub(crate) fn inference_output_configuration_correct_errors(
+    mut builder: crate::types::builders::InferenceOutputConfigurationBuilder,
+) -> crate::types::builders::InferenceOutputConfigurationBuilder {
+    if builder.members.is_none() {
+        builder.members = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn model_inference_data_source_correct_errors(
+    mut builder: crate::types::builders::ModelInferenceDataSourceBuilder,
+) -> crate::types::builders::ModelInferenceDataSourceBuilder {
+    if builder.ml_input_channel_arn.is_none() {
+        builder.ml_input_channel_arn = Some(Default::default())
     }
     builder
 }
@@ -321,6 +783,48 @@ pub(crate) fn audience_size_config_correct_errors(
     }
     if builder.audience_size_bins.is_none() {
         builder.audience_size_bins = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn container_config_correct_errors(
+    mut builder: crate::types::builders::ContainerConfigBuilder,
+) -> crate::types::builders::ContainerConfigBuilder {
+    if builder.image_uri.is_none() {
+        builder.image_uri = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn inference_container_config_correct_errors(
+    mut builder: crate::types::builders::InferenceContainerConfigBuilder,
+) -> crate::types::builders::InferenceContainerConfigBuilder {
+    if builder.image_uri.is_none() {
+        builder.image_uri = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn privacy_configuration_correct_errors(
+    mut builder: crate::types::builders::PrivacyConfigurationBuilder,
+) -> crate::types::builders::PrivacyConfigurationBuilder {
+    if builder.policies.is_none() {
+        builder.policies = {
+            let builder = crate::types::builders::PrivacyConfigurationPoliciesBuilder::default();
+            Some(builder.build())
+        }
+    }
+    builder
+}
+
+pub(crate) fn resource_config_correct_errors(
+    mut builder: crate::types::builders::ResourceConfigBuilder,
+) -> crate::types::builders::ResourceConfigBuilder {
+    if builder.instance_type.is_none() {
+        builder.instance_type = "no value was set".parse::<crate::types::InstanceType>().ok()
+    }
+    if builder.volume_size_in_gb.is_none() {
+        builder.volume_size_in_gb = Some(Default::default())
     }
     builder
 }
@@ -412,6 +916,179 @@ pub(crate) fn audience_model_summary_correct_errors(
     builder
 }
 
+pub(crate) fn collaboration_configured_model_algorithm_association_summary_correct_errors(
+    mut builder: crate::types::builders::CollaborationConfiguredModelAlgorithmAssociationSummaryBuilder,
+) -> crate::types::builders::CollaborationConfiguredModelAlgorithmAssociationSummaryBuilder {
+    if builder.create_time.is_none() {
+        builder.create_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.update_time.is_none() {
+        builder.update_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.configured_model_algorithm_association_arn.is_none() {
+        builder.configured_model_algorithm_association_arn = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.membership_identifier.is_none() {
+        builder.membership_identifier = Some(Default::default())
+    }
+    if builder.collaboration_identifier.is_none() {
+        builder.collaboration_identifier = Some(Default::default())
+    }
+    if builder.configured_model_algorithm_arn.is_none() {
+        builder.configured_model_algorithm_arn = Some(Default::default())
+    }
+    if builder.creator_account_id.is_none() {
+        builder.creator_account_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn collaboration_ml_input_channel_summary_correct_errors(
+    mut builder: crate::types::builders::CollaborationMlInputChannelSummaryBuilder,
+) -> crate::types::builders::CollaborationMlInputChannelSummaryBuilder {
+    if builder.create_time.is_none() {
+        builder.create_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.update_time.is_none() {
+        builder.update_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.membership_identifier.is_none() {
+        builder.membership_identifier = Some(Default::default())
+    }
+    if builder.collaboration_identifier.is_none() {
+        builder.collaboration_identifier = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.configured_model_algorithm_associations.is_none() {
+        builder.configured_model_algorithm_associations = Some(Default::default())
+    }
+    if builder.ml_input_channel_arn.is_none() {
+        builder.ml_input_channel_arn = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::MlInputChannelStatus>().ok()
+    }
+    if builder.creator_account_id.is_none() {
+        builder.creator_account_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn collaboration_trained_model_export_job_summary_correct_errors(
+    mut builder: crate::types::builders::CollaborationTrainedModelExportJobSummaryBuilder,
+) -> crate::types::builders::CollaborationTrainedModelExportJobSummaryBuilder {
+    if builder.create_time.is_none() {
+        builder.create_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.update_time.is_none() {
+        builder.update_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.output_configuration.is_none() {
+        builder.output_configuration = {
+            let builder = crate::types::builders::TrainedModelExportOutputConfigurationBuilder::default();
+            crate::serde_util::trained_model_export_output_configuration_correct_errors(builder)
+                .build()
+                .ok()
+        }
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::TrainedModelExportJobStatus>().ok()
+    }
+    if builder.creator_account_id.is_none() {
+        builder.creator_account_id = Some(Default::default())
+    }
+    if builder.trained_model_arn.is_none() {
+        builder.trained_model_arn = Some(Default::default())
+    }
+    if builder.membership_identifier.is_none() {
+        builder.membership_identifier = Some(Default::default())
+    }
+    if builder.collaboration_identifier.is_none() {
+        builder.collaboration_identifier = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn collaboration_trained_model_inference_job_summary_correct_errors(
+    mut builder: crate::types::builders::CollaborationTrainedModelInferenceJobSummaryBuilder,
+) -> crate::types::builders::CollaborationTrainedModelInferenceJobSummaryBuilder {
+    if builder.trained_model_inference_job_arn.is_none() {
+        builder.trained_model_inference_job_arn = Some(Default::default())
+    }
+    if builder.membership_identifier.is_none() {
+        builder.membership_identifier = Some(Default::default())
+    }
+    if builder.trained_model_arn.is_none() {
+        builder.trained_model_arn = Some(Default::default())
+    }
+    if builder.collaboration_identifier.is_none() {
+        builder.collaboration_identifier = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::TrainedModelInferenceJobStatus>().ok()
+    }
+    if builder.output_configuration.is_none() {
+        builder.output_configuration = {
+            let builder = crate::types::builders::InferenceOutputConfigurationBuilder::default();
+            crate::serde_util::inference_output_configuration_correct_errors(builder).build().ok()
+        }
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.create_time.is_none() {
+        builder.create_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.update_time.is_none() {
+        builder.update_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.creator_account_id.is_none() {
+        builder.creator_account_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn collaboration_trained_model_summary_correct_errors(
+    mut builder: crate::types::builders::CollaborationTrainedModelSummaryBuilder,
+) -> crate::types::builders::CollaborationTrainedModelSummaryBuilder {
+    if builder.create_time.is_none() {
+        builder.create_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.update_time.is_none() {
+        builder.update_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.trained_model_arn.is_none() {
+        builder.trained_model_arn = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.membership_identifier.is_none() {
+        builder.membership_identifier = Some(Default::default())
+    }
+    if builder.collaboration_identifier.is_none() {
+        builder.collaboration_identifier = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::TrainedModelStatus>().ok()
+    }
+    if builder.configured_model_algorithm_association_arn.is_none() {
+        builder.configured_model_algorithm_association_arn = Some(Default::default())
+    }
+    if builder.creator_account_id.is_none() {
+        builder.creator_account_id = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn configured_audience_model_summary_correct_errors(
     mut builder: crate::types::builders::ConfiguredAudienceModelSummaryBuilder,
 ) -> crate::types::builders::ConfiguredAudienceModelSummaryBuilder {
@@ -444,6 +1121,51 @@ pub(crate) fn configured_audience_model_summary_correct_errors(
     builder
 }
 
+pub(crate) fn configured_model_algorithm_association_summary_correct_errors(
+    mut builder: crate::types::builders::ConfiguredModelAlgorithmAssociationSummaryBuilder,
+) -> crate::types::builders::ConfiguredModelAlgorithmAssociationSummaryBuilder {
+    if builder.create_time.is_none() {
+        builder.create_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.update_time.is_none() {
+        builder.update_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.configured_model_algorithm_association_arn.is_none() {
+        builder.configured_model_algorithm_association_arn = Some(Default::default())
+    }
+    if builder.configured_model_algorithm_arn.is_none() {
+        builder.configured_model_algorithm_arn = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.membership_identifier.is_none() {
+        builder.membership_identifier = Some(Default::default())
+    }
+    if builder.collaboration_identifier.is_none() {
+        builder.collaboration_identifier = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn configured_model_algorithm_summary_correct_errors(
+    mut builder: crate::types::builders::ConfiguredModelAlgorithmSummaryBuilder,
+) -> crate::types::builders::ConfiguredModelAlgorithmSummaryBuilder {
+    if builder.create_time.is_none() {
+        builder.create_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.update_time.is_none() {
+        builder.update_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.configured_model_algorithm_arn.is_none() {
+        builder.configured_model_algorithm_arn = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn dataset_correct_errors(mut builder: crate::types::builders::DatasetBuilder) -> crate::types::builders::DatasetBuilder {
     if builder.r#type.is_none() {
         builder.r#type = "no value was set".parse::<crate::types::DatasetType>().ok()
@@ -457,9 +1179,127 @@ pub(crate) fn dataset_correct_errors(mut builder: crate::types::builders::Datase
     builder
 }
 
+pub(crate) fn destination_correct_errors(mut builder: crate::types::builders::DestinationBuilder) -> crate::types::builders::DestinationBuilder {
+    if builder.s3_destination.is_none() {
+        builder.s3_destination = {
+            let builder = crate::types::builders::S3ConfigMapBuilder::default();
+            crate::serde_util::s3_config_map_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
+pub(crate) fn ml_input_channel_summary_correct_errors(
+    mut builder: crate::types::builders::MlInputChannelSummaryBuilder,
+) -> crate::types::builders::MlInputChannelSummaryBuilder {
+    if builder.create_time.is_none() {
+        builder.create_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.update_time.is_none() {
+        builder.update_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.membership_identifier.is_none() {
+        builder.membership_identifier = Some(Default::default())
+    }
+    if builder.collaboration_identifier.is_none() {
+        builder.collaboration_identifier = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.configured_model_algorithm_associations.is_none() {
+        builder.configured_model_algorithm_associations = Some(Default::default())
+    }
+    if builder.ml_input_channel_arn.is_none() {
+        builder.ml_input_channel_arn = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::MlInputChannelStatus>().ok()
+    }
+    builder
+}
+
+pub(crate) fn model_training_data_channel_correct_errors(
+    mut builder: crate::types::builders::ModelTrainingDataChannelBuilder,
+) -> crate::types::builders::ModelTrainingDataChannelBuilder {
+    if builder.ml_input_channel_arn.is_none() {
+        builder.ml_input_channel_arn = Some(Default::default())
+    }
+    if builder.channel_name.is_none() {
+        builder.channel_name = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn s3_config_map_correct_errors(mut builder: crate::types::builders::S3ConfigMapBuilder) -> crate::types::builders::S3ConfigMapBuilder {
     if builder.s3_uri.is_none() {
         builder.s3_uri = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn trained_model_inference_job_summary_correct_errors(
+    mut builder: crate::types::builders::TrainedModelInferenceJobSummaryBuilder,
+) -> crate::types::builders::TrainedModelInferenceJobSummaryBuilder {
+    if builder.trained_model_inference_job_arn.is_none() {
+        builder.trained_model_inference_job_arn = Some(Default::default())
+    }
+    if builder.membership_identifier.is_none() {
+        builder.membership_identifier = Some(Default::default())
+    }
+    if builder.trained_model_arn.is_none() {
+        builder.trained_model_arn = Some(Default::default())
+    }
+    if builder.collaboration_identifier.is_none() {
+        builder.collaboration_identifier = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::TrainedModelInferenceJobStatus>().ok()
+    }
+    if builder.output_configuration.is_none() {
+        builder.output_configuration = {
+            let builder = crate::types::builders::InferenceOutputConfigurationBuilder::default();
+            crate::serde_util::inference_output_configuration_correct_errors(builder).build().ok()
+        }
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.create_time.is_none() {
+        builder.create_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.update_time.is_none() {
+        builder.update_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn trained_model_summary_correct_errors(
+    mut builder: crate::types::builders::TrainedModelSummaryBuilder,
+) -> crate::types::builders::TrainedModelSummaryBuilder {
+    if builder.create_time.is_none() {
+        builder.create_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.update_time.is_none() {
+        builder.update_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.trained_model_arn.is_none() {
+        builder.trained_model_arn = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.membership_identifier.is_none() {
+        builder.membership_identifier = Some(Default::default())
+    }
+    if builder.collaboration_identifier.is_none() {
+        builder.collaboration_identifier = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::TrainedModelStatus>().ok()
+    }
+    if builder.configured_model_algorithm_association_arn.is_none() {
+        builder.configured_model_algorithm_association_arn = Some(Default::default())
     }
     builder
 }
@@ -510,6 +1350,39 @@ pub(crate) fn dataset_input_config_correct_errors(
     builder
 }
 
+pub(crate) fn inference_receiver_member_correct_errors(
+    mut builder: crate::types::builders::InferenceReceiverMemberBuilder,
+) -> crate::types::builders::InferenceReceiverMemberBuilder {
+    if builder.account_id.is_none() {
+        builder.account_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn metric_definition_correct_errors(
+    mut builder: crate::types::builders::MetricDefinitionBuilder,
+) -> crate::types::builders::MetricDefinitionBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.regex.is_none() {
+        builder.regex = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn protected_query_input_parameters_correct_errors(
+    mut builder: crate::types::builders::ProtectedQueryInputParametersBuilder,
+) -> crate::types::builders::ProtectedQueryInputParametersBuilder {
+    if builder.sql_parameters.is_none() {
+        builder.sql_parameters = {
+            let builder = crate::types::builders::ProtectedQuerySqlParametersBuilder::default();
+            Some(builder.build())
+        }
+    }
+    builder
+}
+
 pub(crate) fn relevance_metric_correct_errors(
     mut builder: crate::types::builders::RelevanceMetricBuilder,
 ) -> crate::types::builders::RelevanceMetricBuilder {
@@ -522,12 +1395,71 @@ pub(crate) fn relevance_metric_correct_errors(
     builder
 }
 
+pub(crate) fn trained_model_export_output_configuration_correct_errors(
+    mut builder: crate::types::builders::TrainedModelExportOutputConfigurationBuilder,
+) -> crate::types::builders::TrainedModelExportOutputConfigurationBuilder {
+    if builder.members.is_none() {
+        builder.members = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn trained_model_exports_configuration_policy_correct_errors(
+    mut builder: crate::types::builders::TrainedModelExportsConfigurationPolicyBuilder,
+) -> crate::types::builders::TrainedModelExportsConfigurationPolicyBuilder {
+    if builder.max_size.is_none() {
+        builder.max_size = {
+            let builder = crate::types::builders::TrainedModelExportsMaxSizeBuilder::default();
+            crate::serde_util::trained_model_exports_max_size_correct_errors(builder).build().ok()
+        }
+    }
+    if builder.files_to_export.is_none() {
+        builder.files_to_export = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn data_source_correct_errors(mut builder: crate::types::builders::DataSourceBuilder) -> crate::types::builders::DataSourceBuilder {
     if builder.glue_data_source.is_none() {
         builder.glue_data_source = {
             let builder = crate::types::builders::GlueDataSourceBuilder::default();
             crate::serde_util::glue_data_source_correct_errors(builder).build().ok()
         }
+    }
+    builder
+}
+
+pub(crate) fn metrics_configuration_policy_correct_errors(
+    mut builder: crate::types::builders::MetricsConfigurationPolicyBuilder,
+) -> crate::types::builders::MetricsConfigurationPolicyBuilder {
+    if builder.noise_level.is_none() {
+        builder.noise_level = "no value was set".parse::<crate::types::NoiseLevelType>().ok()
+    }
+    builder
+}
+
+pub(crate) fn trained_model_exports_max_size_correct_errors(
+    mut builder: crate::types::builders::TrainedModelExportsMaxSizeBuilder,
+) -> crate::types::builders::TrainedModelExportsMaxSizeBuilder {
+    if builder.unit.is_none() {
+        builder.unit = "no value was set".parse::<crate::types::TrainedModelExportsMaxSizeUnitType>().ok()
+    }
+    if builder.value.is_none() {
+        builder.value = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn trained_model_inference_max_output_size_correct_errors(
+    mut builder: crate::types::builders::TrainedModelInferenceMaxOutputSizeBuilder,
+) -> crate::types::builders::TrainedModelInferenceMaxOutputSizeBuilder {
+    if builder.unit.is_none() {
+        builder.unit = "no value was set"
+            .parse::<crate::types::TrainedModelInferenceMaxOutputSizeUnitType>()
+            .ok()
+    }
+    if builder.value.is_none() {
+        builder.value = Some(Default::default())
     }
     builder
 }
@@ -550,6 +1482,24 @@ pub(crate) fn glue_data_source_correct_errors(
     }
     if builder.database_name.is_none() {
         builder.database_name = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn logs_configuration_policy_correct_errors(
+    mut builder: crate::types::builders::LogsConfigurationPolicyBuilder,
+) -> crate::types::builders::LogsConfigurationPolicyBuilder {
+    if builder.allowed_account_ids.is_none() {
+        builder.allowed_account_ids = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn trained_model_export_receiver_member_correct_errors(
+    mut builder: crate::types::builders::TrainedModelExportReceiverMemberBuilder,
+) -> crate::types::builders::TrainedModelExportReceiverMemberBuilder {
+    if builder.account_id.is_none() {
+        builder.account_id = Some(Default::default())
     }
     builder
 }

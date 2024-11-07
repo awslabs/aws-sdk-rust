@@ -38,6 +38,9 @@ where
                         "abilities" => {
                             builder = builder.set_abilities(crate::protocol_serde::shape_member_abilities::de_member_abilities(tokens)?);
                         }
+                        "mlAbilities" => {
+                            builder = builder.set_ml_abilities(crate::protocol_serde::shape_ml_member_abilities::de_ml_member_abilities(tokens)?);
+                        }
                         "createTime" => {
                             builder = builder.set_create_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                 tokens.next(),

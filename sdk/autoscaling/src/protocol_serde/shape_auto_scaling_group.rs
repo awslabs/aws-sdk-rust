@@ -446,6 +446,16 @@ pub fn de_auto_scaling_group(
                 builder = builder.set_instance_maintenance_policy(var_35);
             }
             ,
+            s if s.matches("AvailabilityZoneDistribution") /* AvailabilityZoneDistribution com.amazonaws.autoscaling#AutoScalingGroup$AvailabilityZoneDistribution */ =>  {
+                let var_36 =
+                    Some(
+                        crate::protocol_serde::shape_availability_zone_distribution::de_availability_zone_distribution(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_availability_zone_distribution(var_36);
+            }
+            ,
             _ => {}
         }
     }

@@ -45,6 +45,9 @@ pub struct CreateCanaryInput {
     /// <p>To have the tags that you apply to this canary also be applied to the Lambda function that the canary uses, specify this parameter with the value <code>lambda-function</code>.</p>
     /// <p>If you specify this parameter and don't specify any tags in the <code>Tags</code> parameter, the canary creation fails.</p>
     pub resources_to_replicate_tags: ::std::option::Option<::std::vec::Vec<crate::types::ResourceToTag>>,
+    /// <p>Specifies whether to also delete the Lambda functions and layers used by this canary when the canary is deleted. If you omit this parameter, the default of <code>AUTOMATIC</code> is used, which means that the Lambda functions and layers will be deleted when the canary is deleted.</p>
+    /// <p>If the value of this parameter is <code>OFF</code>, then the value of the <code>DeleteLambda</code> parameter of the <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DeleteCanary.html">DeleteCanary</a> operation determines whether the Lambda functions and layers will be deleted.</p>
+    pub provisioned_resource_cleanup: ::std::option::Option<crate::types::ProvisionedResourceCleanupSetting>,
     /// <p>A list of key-value pairs to associate with the canary. You can associate as many as 50 tags with a canary.</p>
     /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions, by granting a user permission to access or change only the resources that have certain tag values.</p>
     /// <p>To have the tags that you apply to this canary also be applied to the Lambda function that the canary uses, specify this parameter with the value <code>lambda-function</code>.</p>
@@ -119,6 +122,11 @@ impl CreateCanaryInput {
     pub fn resources_to_replicate_tags(&self) -> &[crate::types::ResourceToTag] {
         self.resources_to_replicate_tags.as_deref().unwrap_or_default()
     }
+    /// <p>Specifies whether to also delete the Lambda functions and layers used by this canary when the canary is deleted. If you omit this parameter, the default of <code>AUTOMATIC</code> is used, which means that the Lambda functions and layers will be deleted when the canary is deleted.</p>
+    /// <p>If the value of this parameter is <code>OFF</code>, then the value of the <code>DeleteLambda</code> parameter of the <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DeleteCanary.html">DeleteCanary</a> operation determines whether the Lambda functions and layers will be deleted.</p>
+    pub fn provisioned_resource_cleanup(&self) -> ::std::option::Option<&crate::types::ProvisionedResourceCleanupSetting> {
+        self.provisioned_resource_cleanup.as_ref()
+    }
     /// <p>A list of key-value pairs to associate with the canary. You can associate as many as 50 tags with a canary.</p>
     /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions, by granting a user permission to access or change only the resources that have certain tag values.</p>
     /// <p>To have the tags that you apply to this canary also be applied to the Lambda function that the canary uses, specify this parameter with the value <code>lambda-function</code>.</p>
@@ -152,6 +160,7 @@ pub struct CreateCanaryInputBuilder {
     pub(crate) runtime_version: ::std::option::Option<::std::string::String>,
     pub(crate) vpc_config: ::std::option::Option<crate::types::VpcConfigInput>,
     pub(crate) resources_to_replicate_tags: ::std::option::Option<::std::vec::Vec<crate::types::ResourceToTag>>,
+    pub(crate) provisioned_resource_cleanup: ::std::option::Option<crate::types::ProvisionedResourceCleanupSetting>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) artifact_config: ::std::option::Option<crate::types::ArtifactConfigInput>,
 }
@@ -382,6 +391,23 @@ impl CreateCanaryInputBuilder {
     pub fn get_resources_to_replicate_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceToTag>> {
         &self.resources_to_replicate_tags
     }
+    /// <p>Specifies whether to also delete the Lambda functions and layers used by this canary when the canary is deleted. If you omit this parameter, the default of <code>AUTOMATIC</code> is used, which means that the Lambda functions and layers will be deleted when the canary is deleted.</p>
+    /// <p>If the value of this parameter is <code>OFF</code>, then the value of the <code>DeleteLambda</code> parameter of the <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DeleteCanary.html">DeleteCanary</a> operation determines whether the Lambda functions and layers will be deleted.</p>
+    pub fn provisioned_resource_cleanup(mut self, input: crate::types::ProvisionedResourceCleanupSetting) -> Self {
+        self.provisioned_resource_cleanup = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether to also delete the Lambda functions and layers used by this canary when the canary is deleted. If you omit this parameter, the default of <code>AUTOMATIC</code> is used, which means that the Lambda functions and layers will be deleted when the canary is deleted.</p>
+    /// <p>If the value of this parameter is <code>OFF</code>, then the value of the <code>DeleteLambda</code> parameter of the <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DeleteCanary.html">DeleteCanary</a> operation determines whether the Lambda functions and layers will be deleted.</p>
+    pub fn set_provisioned_resource_cleanup(mut self, input: ::std::option::Option<crate::types::ProvisionedResourceCleanupSetting>) -> Self {
+        self.provisioned_resource_cleanup = input;
+        self
+    }
+    /// <p>Specifies whether to also delete the Lambda functions and layers used by this canary when the canary is deleted. If you omit this parameter, the default of <code>AUTOMATIC</code> is used, which means that the Lambda functions and layers will be deleted when the canary is deleted.</p>
+    /// <p>If the value of this parameter is <code>OFF</code>, then the value of the <code>DeleteLambda</code> parameter of the <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DeleteCanary.html">DeleteCanary</a> operation determines whether the Lambda functions and layers will be deleted.</p>
+    pub fn get_provisioned_resource_cleanup(&self) -> &::std::option::Option<crate::types::ProvisionedResourceCleanupSetting> {
+        &self.provisioned_resource_cleanup
+    }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -438,6 +464,7 @@ impl CreateCanaryInputBuilder {
             runtime_version: self.runtime_version,
             vpc_config: self.vpc_config,
             resources_to_replicate_tags: self.resources_to_replicate_tags,
+            provisioned_resource_cleanup: self.provisioned_resource_cleanup,
             tags: self.tags,
             artifact_config: self.artifact_config,
         })

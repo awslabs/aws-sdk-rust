@@ -85,6 +85,10 @@ where
                         "memberAbilities" => {
                             builder = builder.set_member_abilities(crate::protocol_serde::shape_member_abilities::de_member_abilities(tokens)?);
                         }
+                        "mlMemberAbilities" => {
+                            builder =
+                                builder.set_ml_member_abilities(crate::protocol_serde::shape_ml_member_abilities::de_ml_member_abilities(tokens)?);
+                        }
                         "queryLogStatus" => {
                             builder = builder.set_query_log_status(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

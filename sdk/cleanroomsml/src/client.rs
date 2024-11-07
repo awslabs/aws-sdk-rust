@@ -59,14 +59,14 @@ pub(crate) struct Handle {
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`ListTagsForResource`](crate::operation::list_tags_for_resource) operation has
-/// a [`Client::list_tags_for_resource`], function which returns a builder for that operation.
+/// For example, the [`ListCollaborationConfiguredModelAlgorithmAssociations`](crate::operation::list_collaboration_configured_model_algorithm_associations) operation has
+/// a [`Client::list_collaboration_configured_model_algorithm_associations`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.list_tags_for_resource()
-///     .resource_arn("example")
+/// let result = client.list_collaboration_configured_model_algorithm_associations()
+///     .next_token("example")
 ///     .send()
 ///     .await;
 /// ```
@@ -136,9 +136,21 @@ impl Client {
     }
 }
 
+mod cancel_trained_model;
+
+mod cancel_trained_model_inference_job;
+
 mod create_audience_model;
 
 mod create_configured_audience_model;
+
+mod create_configured_model_algorithm;
+
+mod create_configured_model_algorithm_association;
+
+mod create_ml_input_channel;
+
+mod create_trained_model;
 
 mod create_training_dataset;
 
@@ -153,7 +165,7 @@ mod create_training_dataset;
 /// # let client: aws_sdk_cleanroomsml::Client = unimplemented!();
 /// use ::http::header::{HeaderName, HeaderValue};
 ///
-/// let result = client.list_tags_for_resource()
+/// let result = client.list_collaboration_configured_model_algorithm_associations()
 ///     .customize()
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
@@ -177,15 +189,43 @@ mod delete_configured_audience_model;
 
 mod delete_configured_audience_model_policy;
 
+mod delete_configured_model_algorithm;
+
+mod delete_configured_model_algorithm_association;
+
+mod delete_ml_configuration;
+
+mod delete_ml_input_channel_data;
+
+mod delete_trained_model_output;
+
 mod delete_training_dataset;
 
 mod get_audience_generation_job;
 
 mod get_audience_model;
 
+mod get_collaboration_configured_model_algorithm_association;
+
+mod get_collaboration_ml_input_channel;
+
+mod get_collaboration_trained_model;
+
 mod get_configured_audience_model;
 
 mod get_configured_audience_model_policy;
+
+mod get_configured_model_algorithm;
+
+mod get_configured_model_algorithm_association;
+
+mod get_ml_configuration;
+
+mod get_ml_input_channel;
+
+mod get_trained_model;
+
+mod get_trained_model_inference_job;
 
 mod get_training_dataset;
 
@@ -195,17 +235,43 @@ mod list_audience_generation_jobs;
 
 mod list_audience_models;
 
+mod list_collaboration_configured_model_algorithm_associations;
+
+mod list_collaboration_ml_input_channels;
+
+mod list_collaboration_trained_model_export_jobs;
+
+mod list_collaboration_trained_model_inference_jobs;
+
+mod list_collaboration_trained_models;
+
 mod list_configured_audience_models;
 
+mod list_configured_model_algorithm_associations;
+
+mod list_configured_model_algorithms;
+
+mod list_ml_input_channels;
+
 mod list_tags_for_resource;
+
+mod list_trained_model_inference_jobs;
+
+mod list_trained_models;
 
 mod list_training_datasets;
 
 mod put_configured_audience_model_policy;
 
+mod put_ml_configuration;
+
 mod start_audience_export_job;
 
 mod start_audience_generation_job;
+
+mod start_trained_model_export_job;
+
+mod start_trained_model_inference_job;
 
 mod tag_resource;
 

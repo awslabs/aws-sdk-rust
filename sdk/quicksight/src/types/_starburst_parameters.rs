@@ -12,6 +12,12 @@ pub struct StarburstParameters {
     pub catalog: ::std::string::String,
     /// <p>The product type for the Starburst data source.</p>
     pub product_type: ::std::option::Option<crate::types::StarburstProductType>,
+    /// <p>The database access control role.</p>
+    pub database_access_control_role: ::std::option::Option<::std::string::String>,
+    /// <p>The authentication type that you want to use for your connection. This parameter accepts OAuth and non-OAuth authentication types.</p>
+    pub authentication_type: ::std::option::Option<crate::types::AuthenticationType>,
+    /// <p>An object that contains information needed to create a data source connection between an Amazon QuickSight account and Starburst.</p>
+    pub o_auth_parameters: ::std::option::Option<crate::types::OAuthParameters>,
 }
 impl StarburstParameters {
     /// <p>The host name of the Starburst data source.</p>
@@ -32,6 +38,18 @@ impl StarburstParameters {
     pub fn product_type(&self) -> ::std::option::Option<&crate::types::StarburstProductType> {
         self.product_type.as_ref()
     }
+    /// <p>The database access control role.</p>
+    pub fn database_access_control_role(&self) -> ::std::option::Option<&str> {
+        self.database_access_control_role.as_deref()
+    }
+    /// <p>The authentication type that you want to use for your connection. This parameter accepts OAuth and non-OAuth authentication types.</p>
+    pub fn authentication_type(&self) -> ::std::option::Option<&crate::types::AuthenticationType> {
+        self.authentication_type.as_ref()
+    }
+    /// <p>An object that contains information needed to create a data source connection between an Amazon QuickSight account and Starburst.</p>
+    pub fn o_auth_parameters(&self) -> ::std::option::Option<&crate::types::OAuthParameters> {
+        self.o_auth_parameters.as_ref()
+    }
 }
 impl StarburstParameters {
     /// Creates a new builder-style object to manufacture [`StarburstParameters`](crate::types::StarburstParameters).
@@ -48,6 +66,9 @@ pub struct StarburstParametersBuilder {
     pub(crate) port: ::std::option::Option<i32>,
     pub(crate) catalog: ::std::option::Option<::std::string::String>,
     pub(crate) product_type: ::std::option::Option<crate::types::StarburstProductType>,
+    pub(crate) database_access_control_role: ::std::option::Option<::std::string::String>,
+    pub(crate) authentication_type: ::std::option::Option<crate::types::AuthenticationType>,
+    pub(crate) o_auth_parameters: ::std::option::Option<crate::types::OAuthParameters>,
 }
 impl StarburstParametersBuilder {
     /// <p>The host name of the Starburst data source.</p>
@@ -109,6 +130,48 @@ impl StarburstParametersBuilder {
     pub fn get_product_type(&self) -> &::std::option::Option<crate::types::StarburstProductType> {
         &self.product_type
     }
+    /// <p>The database access control role.</p>
+    pub fn database_access_control_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.database_access_control_role = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The database access control role.</p>
+    pub fn set_database_access_control_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.database_access_control_role = input;
+        self
+    }
+    /// <p>The database access control role.</p>
+    pub fn get_database_access_control_role(&self) -> &::std::option::Option<::std::string::String> {
+        &self.database_access_control_role
+    }
+    /// <p>The authentication type that you want to use for your connection. This parameter accepts OAuth and non-OAuth authentication types.</p>
+    pub fn authentication_type(mut self, input: crate::types::AuthenticationType) -> Self {
+        self.authentication_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The authentication type that you want to use for your connection. This parameter accepts OAuth and non-OAuth authentication types.</p>
+    pub fn set_authentication_type(mut self, input: ::std::option::Option<crate::types::AuthenticationType>) -> Self {
+        self.authentication_type = input;
+        self
+    }
+    /// <p>The authentication type that you want to use for your connection. This parameter accepts OAuth and non-OAuth authentication types.</p>
+    pub fn get_authentication_type(&self) -> &::std::option::Option<crate::types::AuthenticationType> {
+        &self.authentication_type
+    }
+    /// <p>An object that contains information needed to create a data source connection between an Amazon QuickSight account and Starburst.</p>
+    pub fn o_auth_parameters(mut self, input: crate::types::OAuthParameters) -> Self {
+        self.o_auth_parameters = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>An object that contains information needed to create a data source connection between an Amazon QuickSight account and Starburst.</p>
+    pub fn set_o_auth_parameters(mut self, input: ::std::option::Option<crate::types::OAuthParameters>) -> Self {
+        self.o_auth_parameters = input;
+        self
+    }
+    /// <p>An object that contains information needed to create a data source connection between an Amazon QuickSight account and Starburst.</p>
+    pub fn get_o_auth_parameters(&self) -> &::std::option::Option<crate::types::OAuthParameters> {
+        &self.o_auth_parameters
+    }
     /// Consumes the builder and constructs a [`StarburstParameters`](crate::types::StarburstParameters).
     /// This method will fail if any of the following fields are not set:
     /// - [`host`](crate::types::builders::StarburstParametersBuilder::host)
@@ -135,6 +198,9 @@ impl StarburstParametersBuilder {
                 )
             })?,
             product_type: self.product_type,
+            database_access_control_role: self.database_access_control_role,
+            authentication_type: self.authentication_type,
+            o_auth_parameters: self.o_auth_parameters,
         })
     }
 }

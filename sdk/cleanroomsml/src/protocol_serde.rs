@@ -23,9 +23,21 @@ pub fn parse_http_error_metadata(
     crate::json_errors::parse_error_metadata(response_body, response_headers)
 }
 
+pub(crate) mod shape_cancel_trained_model;
+
+pub(crate) mod shape_cancel_trained_model_inference_job;
+
 pub(crate) mod shape_create_audience_model;
 
 pub(crate) mod shape_create_configured_audience_model;
+
+pub(crate) mod shape_create_configured_model_algorithm;
+
+pub(crate) mod shape_create_configured_model_algorithm_association;
+
+pub(crate) mod shape_create_ml_input_channel;
+
+pub(crate) mod shape_create_trained_model;
 
 pub(crate) mod shape_create_training_dataset;
 
@@ -37,15 +49,43 @@ pub(crate) mod shape_delete_configured_audience_model;
 
 pub(crate) mod shape_delete_configured_audience_model_policy;
 
+pub(crate) mod shape_delete_configured_model_algorithm;
+
+pub(crate) mod shape_delete_configured_model_algorithm_association;
+
+pub(crate) mod shape_delete_ml_configuration;
+
+pub(crate) mod shape_delete_ml_input_channel_data;
+
+pub(crate) mod shape_delete_trained_model_output;
+
 pub(crate) mod shape_delete_training_dataset;
 
 pub(crate) mod shape_get_audience_generation_job;
 
 pub(crate) mod shape_get_audience_model;
 
+pub(crate) mod shape_get_collaboration_configured_model_algorithm_association;
+
+pub(crate) mod shape_get_collaboration_ml_input_channel;
+
+pub(crate) mod shape_get_collaboration_trained_model;
+
 pub(crate) mod shape_get_configured_audience_model;
 
 pub(crate) mod shape_get_configured_audience_model_policy;
+
+pub(crate) mod shape_get_configured_model_algorithm;
+
+pub(crate) mod shape_get_configured_model_algorithm_association;
+
+pub(crate) mod shape_get_ml_configuration;
+
+pub(crate) mod shape_get_ml_input_channel;
+
+pub(crate) mod shape_get_trained_model;
+
+pub(crate) mod shape_get_trained_model_inference_job;
 
 pub(crate) mod shape_get_training_dataset;
 
@@ -55,17 +95,43 @@ pub(crate) mod shape_list_audience_generation_jobs;
 
 pub(crate) mod shape_list_audience_models;
 
+pub(crate) mod shape_list_collaboration_configured_model_algorithm_associations;
+
+pub(crate) mod shape_list_collaboration_ml_input_channels;
+
+pub(crate) mod shape_list_collaboration_trained_model_export_jobs;
+
+pub(crate) mod shape_list_collaboration_trained_model_inference_jobs;
+
+pub(crate) mod shape_list_collaboration_trained_models;
+
 pub(crate) mod shape_list_configured_audience_models;
 
+pub(crate) mod shape_list_configured_model_algorithm_associations;
+
+pub(crate) mod shape_list_configured_model_algorithms;
+
+pub(crate) mod shape_list_ml_input_channels;
+
 pub(crate) mod shape_list_tags_for_resource;
+
+pub(crate) mod shape_list_trained_model_inference_jobs;
+
+pub(crate) mod shape_list_trained_models;
 
 pub(crate) mod shape_list_training_datasets;
 
 pub(crate) mod shape_put_configured_audience_model_policy;
 
+pub(crate) mod shape_put_ml_configuration;
+
 pub(crate) mod shape_start_audience_export_job;
 
 pub(crate) mod shape_start_audience_generation_job;
+
+pub(crate) mod shape_start_trained_model_export_job;
+
+pub(crate) mod shape_start_trained_model_inference_job;
 
 pub(crate) mod shape_tag_resource;
 
@@ -89,9 +155,19 @@ pub(crate) mod shape_create_audience_model_input;
 
 pub(crate) mod shape_create_configured_audience_model_input;
 
+pub(crate) mod shape_create_configured_model_algorithm_association_input;
+
+pub(crate) mod shape_create_configured_model_algorithm_input;
+
+pub(crate) mod shape_create_ml_input_channel_input;
+
+pub(crate) mod shape_create_trained_model_input;
+
 pub(crate) mod shape_create_training_dataset_input;
 
 pub(crate) mod shape_put_configured_audience_model_policy_input;
+
+pub(crate) mod shape_put_ml_configuration_input;
 
 pub(crate) mod shape_resource_not_found_exception;
 
@@ -100,6 +176,10 @@ pub(crate) mod shape_service_quota_exceeded_exception;
 pub(crate) mod shape_start_audience_export_job_input;
 
 pub(crate) mod shape_start_audience_generation_job_input;
+
+pub(crate) mod shape_start_trained_model_export_job_input;
+
+pub(crate) mod shape_start_trained_model_inference_job_input;
 
 pub(crate) mod shape_tag_resource_input;
 
@@ -121,19 +201,75 @@ pub(crate) mod shape_audience_size;
 
 pub(crate) mod shape_audience_size_config;
 
+pub(crate) mod shape_collaboration_configured_model_algorithm_association_list;
+
+pub(crate) mod shape_collaboration_ml_input_channels_list;
+
+pub(crate) mod shape_collaboration_trained_model_export_job_list;
+
+pub(crate) mod shape_collaboration_trained_model_inference_job_list;
+
+pub(crate) mod shape_collaboration_trained_model_list;
+
 pub(crate) mod shape_configured_audience_model_list;
 
 pub(crate) mod shape_configured_audience_model_output_config;
+
+pub(crate) mod shape_configured_model_algorithm_association_arn_list;
+
+pub(crate) mod shape_configured_model_algorithm_association_list;
+
+pub(crate) mod shape_configured_model_algorithm_list;
+
+pub(crate) mod shape_container_config;
 
 pub(crate) mod shape_dataset;
 
 pub(crate) mod shape_dataset_list;
 
+pub(crate) mod shape_environment;
+
+pub(crate) mod shape_hyper_parameters;
+
+pub(crate) mod shape_inference_container_config;
+
+pub(crate) mod shape_inference_container_execution_parameters;
+
+pub(crate) mod shape_inference_environment_map;
+
+pub(crate) mod shape_inference_output_configuration;
+
+pub(crate) mod shape_inference_resource_config;
+
+pub(crate) mod shape_input_channel;
+
 pub(crate) mod shape_metrics_list;
+
+pub(crate) mod shape_ml_input_channels_list;
+
+pub(crate) mod shape_ml_output_configuration;
+
+pub(crate) mod shape_model_inference_data_source;
+
+pub(crate) mod shape_model_training_data_channel;
+
+pub(crate) mod shape_model_training_data_channels;
+
+pub(crate) mod shape_privacy_configuration;
+
+pub(crate) mod shape_resource_config;
 
 pub(crate) mod shape_status_details;
 
+pub(crate) mod shape_stopping_condition;
+
 pub(crate) mod shape_tag_map;
+
+pub(crate) mod shape_trained_model_export_output_configuration;
+
+pub(crate) mod shape_trained_model_inference_job_list;
+
+pub(crate) mod shape_trained_model_list;
 
 pub(crate) mod shape_training_dataset_list;
 
@@ -147,15 +283,55 @@ pub(crate) mod shape_audience_model_summary;
 
 pub(crate) mod shape_audience_size_bins;
 
+pub(crate) mod shape_collaboration_configured_model_algorithm_association_summary;
+
+pub(crate) mod shape_collaboration_ml_input_channel_summary;
+
+pub(crate) mod shape_collaboration_trained_model_export_job_summary;
+
+pub(crate) mod shape_collaboration_trained_model_inference_job_summary;
+
+pub(crate) mod shape_collaboration_trained_model_summary;
+
 pub(crate) mod shape_configured_audience_model_summary;
 
+pub(crate) mod shape_configured_model_algorithm_association_summary;
+
+pub(crate) mod shape_configured_model_algorithm_summary;
+
+pub(crate) mod shape_container_arguments;
+
+pub(crate) mod shape_container_entrypoint;
+
 pub(crate) mod shape_dataset_input_config;
+
+pub(crate) mod shape_destination;
+
+pub(crate) mod shape_inference_receiver_member;
+
+pub(crate) mod shape_inference_receiver_members;
+
+pub(crate) mod shape_input_channel_data_source;
+
+pub(crate) mod shape_metric_definition;
+
+pub(crate) mod shape_metric_definition_list;
+
+pub(crate) mod shape_ml_input_channel_summary;
+
+pub(crate) mod shape_privacy_configuration_policies;
 
 pub(crate) mod shape_protected_query_sql_parameters;
 
 pub(crate) mod shape_relevance_metrics;
 
 pub(crate) mod shape_s3_config_map;
+
+pub(crate) mod shape_trained_model_export_receiver_member;
+
+pub(crate) mod shape_trained_model_inference_job_summary;
+
+pub(crate) mod shape_trained_model_summary;
 
 pub(crate) mod shape_training_dataset_summary;
 
@@ -165,10 +341,38 @@ pub(crate) mod shape_data_source;
 
 pub(crate) mod shape_parameter_map;
 
+pub(crate) mod shape_protected_query_input_parameters;
+
 pub(crate) mod shape_relevance_metric;
+
+pub(crate) mod shape_trained_model_exports_configuration_policy;
+
+pub(crate) mod shape_trained_model_inference_jobs_configuration_policy;
+
+pub(crate) mod shape_trained_models_configuration_policy;
+
+pub(crate) mod shape_compute_configuration;
 
 pub(crate) mod shape_dataset_schema_list;
 
 pub(crate) mod shape_glue_data_source;
+
+pub(crate) mod shape_logs_configuration_policy;
+
+pub(crate) mod shape_logs_configuration_policy_list;
+
+pub(crate) mod shape_metrics_configuration_policy;
+
+pub(crate) mod shape_trained_model_export_file_type_list;
+
+pub(crate) mod shape_trained_model_export_receiver_members;
+
+pub(crate) mod shape_trained_model_exports_max_size;
+
+pub(crate) mod shape_trained_model_inference_max_output_size;
+
+pub(crate) mod shape_worker_compute_configuration;
+
+pub(crate) mod shape_account_id_list;
 
 pub(crate) mod shape_column_type_list;

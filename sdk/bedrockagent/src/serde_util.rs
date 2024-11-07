@@ -833,6 +833,15 @@ pub(crate) fn update_prompt_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn validate_flow_definition_output_output_correct_errors(
+    mut builder: crate::operation::validate_flow_definition::builders::ValidateFlowDefinitionOutputBuilder,
+) -> crate::operation::validate_flow_definition::builders::ValidateFlowDefinitionOutputBuilder {
+    if builder.validations.is_none() {
+        builder.validations = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn agent_knowledge_base_correct_errors(
     mut builder: crate::types::builders::AgentKnowledgeBaseBuilder,
 ) -> crate::types::builders::AgentKnowledgeBaseBuilder {
@@ -1649,6 +1658,15 @@ pub(crate) fn bedrock_foundation_model_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn chat_prompt_template_configuration_correct_errors(
+    mut builder: crate::types::builders::ChatPromptTemplateConfigurationBuilder,
+) -> crate::types::builders::ChatPromptTemplateConfigurationBuilder {
+    if builder.messages.is_none() {
+        builder.messages = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn confluence_source_configuration_correct_errors(
     mut builder: crate::types::builders::ConfluenceSourceConfigurationBuilder,
 ) -> crate::types::builders::ConfluenceSourceConfigurationBuilder {
@@ -1663,6 +1681,39 @@ pub(crate) fn confluence_source_configuration_correct_errors(
     }
     if builder.credentials_secret_arn.is_none() {
         builder.credentials_secret_arn = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn cyclic_connection_flow_validation_details_correct_errors(
+    mut builder: crate::types::builders::CyclicConnectionFlowValidationDetailsBuilder,
+) -> crate::types::builders::CyclicConnectionFlowValidationDetailsBuilder {
+    if builder.connection.is_none() {
+        builder.connection = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn duplicate_condition_expression_flow_validation_details_correct_errors(
+    mut builder: crate::types::builders::DuplicateConditionExpressionFlowValidationDetailsBuilder,
+) -> crate::types::builders::DuplicateConditionExpressionFlowValidationDetailsBuilder {
+    if builder.node.is_none() {
+        builder.node = Some(Default::default())
+    }
+    if builder.expression.is_none() {
+        builder.expression = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn duplicate_connections_flow_validation_details_correct_errors(
+    mut builder: crate::types::builders::DuplicateConnectionsFlowValidationDetailsBuilder,
+) -> crate::types::builders::DuplicateConnectionsFlowValidationDetailsBuilder {
+    if builder.source.is_none() {
+        builder.source = Some(Default::default())
+    }
+    if builder.target.is_none() {
+        builder.target = Some(Default::default())
     }
     builder
 }
@@ -1698,6 +1749,15 @@ pub(crate) fn hierarchical_chunking_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn incompatible_connection_data_type_flow_validation_details_correct_errors(
+    mut builder: crate::types::builders::IncompatibleConnectionDataTypeFlowValidationDetailsBuilder,
+) -> crate::types::builders::IncompatibleConnectionDataTypeFlowValidationDetailsBuilder {
+    if builder.connection.is_none() {
+        builder.connection = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn intermediate_storage_correct_errors(
     mut builder: crate::types::builders::IntermediateStorageBuilder,
 ) -> crate::types::builders::IntermediateStorageBuilder {
@@ -1706,6 +1766,117 @@ pub(crate) fn intermediate_storage_correct_errors(
             let builder = crate::types::builders::S3LocationBuilder::default();
             crate::serde_util::s3_location_correct_errors(builder).build().ok()
         }
+    }
+    builder
+}
+
+pub(crate) fn malformed_condition_expression_flow_validation_details_correct_errors(
+    mut builder: crate::types::builders::MalformedConditionExpressionFlowValidationDetailsBuilder,
+) -> crate::types::builders::MalformedConditionExpressionFlowValidationDetailsBuilder {
+    if builder.node.is_none() {
+        builder.node = Some(Default::default())
+    }
+    if builder.condition.is_none() {
+        builder.condition = Some(Default::default())
+    }
+    if builder.cause.is_none() {
+        builder.cause = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn malformed_node_input_expression_flow_validation_details_correct_errors(
+    mut builder: crate::types::builders::MalformedNodeInputExpressionFlowValidationDetailsBuilder,
+) -> crate::types::builders::MalformedNodeInputExpressionFlowValidationDetailsBuilder {
+    if builder.node.is_none() {
+        builder.node = Some(Default::default())
+    }
+    if builder.input.is_none() {
+        builder.input = Some(Default::default())
+    }
+    if builder.cause.is_none() {
+        builder.cause = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn mismatched_node_input_type_flow_validation_details_correct_errors(
+    mut builder: crate::types::builders::MismatchedNodeInputTypeFlowValidationDetailsBuilder,
+) -> crate::types::builders::MismatchedNodeInputTypeFlowValidationDetailsBuilder {
+    if builder.node.is_none() {
+        builder.node = Some(Default::default())
+    }
+    if builder.input.is_none() {
+        builder.input = Some(Default::default())
+    }
+    if builder.expected_type.is_none() {
+        builder.expected_type = "no value was set".parse::<crate::types::FlowNodeIoDataType>().ok()
+    }
+    builder
+}
+
+pub(crate) fn mismatched_node_output_type_flow_validation_details_correct_errors(
+    mut builder: crate::types::builders::MismatchedNodeOutputTypeFlowValidationDetailsBuilder,
+) -> crate::types::builders::MismatchedNodeOutputTypeFlowValidationDetailsBuilder {
+    if builder.node.is_none() {
+        builder.node = Some(Default::default())
+    }
+    if builder.output.is_none() {
+        builder.output = Some(Default::default())
+    }
+    if builder.expected_type.is_none() {
+        builder.expected_type = "no value was set".parse::<crate::types::FlowNodeIoDataType>().ok()
+    }
+    builder
+}
+
+pub(crate) fn missing_connection_configuration_flow_validation_details_correct_errors(
+    mut builder: crate::types::builders::MissingConnectionConfigurationFlowValidationDetailsBuilder,
+) -> crate::types::builders::MissingConnectionConfigurationFlowValidationDetailsBuilder {
+    if builder.connection.is_none() {
+        builder.connection = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn missing_default_condition_flow_validation_details_correct_errors(
+    mut builder: crate::types::builders::MissingDefaultConditionFlowValidationDetailsBuilder,
+) -> crate::types::builders::MissingDefaultConditionFlowValidationDetailsBuilder {
+    if builder.node.is_none() {
+        builder.node = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn missing_node_configuration_flow_validation_details_correct_errors(
+    mut builder: crate::types::builders::MissingNodeConfigurationFlowValidationDetailsBuilder,
+) -> crate::types::builders::MissingNodeConfigurationFlowValidationDetailsBuilder {
+    if builder.node.is_none() {
+        builder.node = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn missing_node_input_flow_validation_details_correct_errors(
+    mut builder: crate::types::builders::MissingNodeInputFlowValidationDetailsBuilder,
+) -> crate::types::builders::MissingNodeInputFlowValidationDetailsBuilder {
+    if builder.node.is_none() {
+        builder.node = Some(Default::default())
+    }
+    if builder.input.is_none() {
+        builder.input = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn missing_node_output_flow_validation_details_correct_errors(
+    mut builder: crate::types::builders::MissingNodeOutputFlowValidationDetailsBuilder,
+) -> crate::types::builders::MissingNodeOutputFlowValidationDetailsBuilder {
+    if builder.node.is_none() {
+        builder.node = Some(Default::default())
+    }
+    if builder.output.is_none() {
+        builder.output = Some(Default::default())
     }
     builder
 }
@@ -1721,6 +1892,18 @@ pub(crate) fn mongo_db_atlas_field_mapping_correct_errors(
     }
     if builder.metadata_field.is_none() {
         builder.metadata_field = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn multiple_node_input_connections_flow_validation_details_correct_errors(
+    mut builder: crate::types::builders::MultipleNodeInputConnectionsFlowValidationDetailsBuilder,
+) -> crate::types::builders::MultipleNodeInputConnectionsFlowValidationDetailsBuilder {
+    if builder.node.is_none() {
+        builder.node = Some(Default::default())
+    }
+    if builder.input.is_none() {
+        builder.input = Some(Default::default())
     }
     builder
 }
@@ -1748,6 +1931,15 @@ pub(crate) fn pinecone_field_mapping_correct_errors(
     }
     if builder.metadata_field.is_none() {
         builder.metadata_field = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn prompt_agent_resource_correct_errors(
+    mut builder: crate::types::builders::PromptAgentResourceBuilder,
+) -> crate::types::builders::PromptAgentResourceBuilder {
+    if builder.agent_identifier.is_none() {
+        builder.agent_identifier = Some(Default::default())
     }
     builder
 }
@@ -1853,6 +2045,81 @@ pub(crate) fn text_prompt_template_configuration_correct_errors(
 ) -> crate::types::builders::TextPromptTemplateConfigurationBuilder {
     if builder.text.is_none() {
         builder.text = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn unfulfilled_node_input_flow_validation_details_correct_errors(
+    mut builder: crate::types::builders::UnfulfilledNodeInputFlowValidationDetailsBuilder,
+) -> crate::types::builders::UnfulfilledNodeInputFlowValidationDetailsBuilder {
+    if builder.node.is_none() {
+        builder.node = Some(Default::default())
+    }
+    if builder.input.is_none() {
+        builder.input = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn unknown_connection_condition_flow_validation_details_correct_errors(
+    mut builder: crate::types::builders::UnknownConnectionConditionFlowValidationDetailsBuilder,
+) -> crate::types::builders::UnknownConnectionConditionFlowValidationDetailsBuilder {
+    if builder.connection.is_none() {
+        builder.connection = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn unknown_connection_source_flow_validation_details_correct_errors(
+    mut builder: crate::types::builders::UnknownConnectionSourceFlowValidationDetailsBuilder,
+) -> crate::types::builders::UnknownConnectionSourceFlowValidationDetailsBuilder {
+    if builder.connection.is_none() {
+        builder.connection = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn unknown_connection_source_output_flow_validation_details_correct_errors(
+    mut builder: crate::types::builders::UnknownConnectionSourceOutputFlowValidationDetailsBuilder,
+) -> crate::types::builders::UnknownConnectionSourceOutputFlowValidationDetailsBuilder {
+    if builder.connection.is_none() {
+        builder.connection = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn unknown_connection_target_flow_validation_details_correct_errors(
+    mut builder: crate::types::builders::UnknownConnectionTargetFlowValidationDetailsBuilder,
+) -> crate::types::builders::UnknownConnectionTargetFlowValidationDetailsBuilder {
+    if builder.connection.is_none() {
+        builder.connection = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn unknown_connection_target_input_flow_validation_details_correct_errors(
+    mut builder: crate::types::builders::UnknownConnectionTargetInputFlowValidationDetailsBuilder,
+) -> crate::types::builders::UnknownConnectionTargetInputFlowValidationDetailsBuilder {
+    if builder.connection.is_none() {
+        builder.connection = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn unreachable_node_flow_validation_details_correct_errors(
+    mut builder: crate::types::builders::UnreachableNodeFlowValidationDetailsBuilder,
+) -> crate::types::builders::UnreachableNodeFlowValidationDetailsBuilder {
+    if builder.node.is_none() {
+        builder.node = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn unsatisfied_connection_conditions_flow_validation_details_correct_errors(
+    mut builder: crate::types::builders::UnsatisfiedConnectionConditionsFlowValidationDetailsBuilder,
+) -> crate::types::builders::UnsatisfiedConnectionConditionsFlowValidationDetailsBuilder {
+    if builder.connection.is_none() {
+        builder.connection = Some(Default::default())
     }
     builder
 }
@@ -2017,6 +2284,15 @@ pub(crate) fn storage_flow_node_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn tool_configuration_correct_errors(
+    mut builder: crate::types::builders::ToolConfigurationBuilder,
+) -> crate::types::builders::ToolConfigurationBuilder {
+    if builder.tools.is_none() {
+        builder.tools = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn transformation_correct_errors(
     mut builder: crate::types::builders::TransformationBuilder,
 ) -> crate::types::builders::TransformationBuilder {
@@ -2037,6 +2313,16 @@ pub(crate) fn hierarchical_chunking_level_configuration_correct_errors(
 ) -> crate::types::builders::HierarchicalChunkingLevelConfigurationBuilder {
     if builder.max_tokens.is_none() {
         builder.max_tokens = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn message_correct_errors(mut builder: crate::types::builders::MessageBuilder) -> crate::types::builders::MessageBuilder {
+    if builder.role.is_none() {
+        builder.role = "no value was set".parse::<crate::types::ConversationRole>().ok()
+    }
+    if builder.content.is_none() {
+        builder.content = Some(Default::default())
     }
     builder
 }
@@ -2115,6 +2401,15 @@ pub(crate) fn retrieval_flow_node_s3_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn specific_tool_choice_correct_errors(
+    mut builder: crate::types::builders::SpecificToolChoiceBuilder,
+) -> crate::types::builders::SpecificToolChoiceBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn storage_flow_node_s3_configuration_correct_errors(
     mut builder: crate::types::builders::StorageFlowNodeS3ConfigurationBuilder,
 ) -> crate::types::builders::StorageFlowNodeS3ConfigurationBuilder {
@@ -2138,6 +2433,18 @@ pub(crate) fn pattern_object_filter_correct_errors(
 ) -> crate::types::builders::PatternObjectFilterBuilder {
     if builder.object_type.is_none() {
         builder.object_type = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn tool_specification_correct_errors(
+    mut builder: crate::types::builders::ToolSpecificationBuilder,
+) -> crate::types::builders::ToolSpecificationBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.input_schema.is_none() {
+        builder.input_schema = Some(crate::types::ToolInputSchema::Unknown)
     }
     builder
 }

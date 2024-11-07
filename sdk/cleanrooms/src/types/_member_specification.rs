@@ -8,6 +8,9 @@ pub struct MemberSpecification {
     pub account_id: ::std::string::String,
     /// <p>The abilities granted to the collaboration member.</p>
     pub member_abilities: ::std::vec::Vec<crate::types::MemberAbility>,
+    /// <p>The ML abilities granted to the collaboration member.</p>
+    /// <p>Custom ML modeling is in beta release and is subject to change. For beta terms and conditions, see <i>Betas and Previews</i> in the <a href="https://aws.amazon.com/service-terms/">Amazon Web Services Service Terms</a>.</p>
+    pub ml_member_abilities: ::std::option::Option<crate::types::MlMemberAbilities>,
     /// <p>The member's display name.</p>
     pub display_name: ::std::string::String,
     /// <p>The collaboration member's payment responsibilities set by the collaboration creator.</p>
@@ -24,6 +27,11 @@ impl MemberSpecification {
     pub fn member_abilities(&self) -> &[crate::types::MemberAbility] {
         use std::ops::Deref;
         self.member_abilities.deref()
+    }
+    /// <p>The ML abilities granted to the collaboration member.</p>
+    /// <p>Custom ML modeling is in beta release and is subject to change. For beta terms and conditions, see <i>Betas and Previews</i> in the <a href="https://aws.amazon.com/service-terms/">Amazon Web Services Service Terms</a>.</p>
+    pub fn ml_member_abilities(&self) -> ::std::option::Option<&crate::types::MlMemberAbilities> {
+        self.ml_member_abilities.as_ref()
     }
     /// <p>The member's display name.</p>
     pub fn display_name(&self) -> &str {
@@ -49,6 +57,7 @@ impl MemberSpecification {
 pub struct MemberSpecificationBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) member_abilities: ::std::option::Option<::std::vec::Vec<crate::types::MemberAbility>>,
+    pub(crate) ml_member_abilities: ::std::option::Option<crate::types::MlMemberAbilities>,
     pub(crate) display_name: ::std::option::Option<::std::string::String>,
     pub(crate) payment_configuration: ::std::option::Option<crate::types::PaymentConfiguration>,
 }
@@ -87,6 +96,23 @@ impl MemberSpecificationBuilder {
     /// <p>The abilities granted to the collaboration member.</p>
     pub fn get_member_abilities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MemberAbility>> {
         &self.member_abilities
+    }
+    /// <p>The ML abilities granted to the collaboration member.</p>
+    /// <p>Custom ML modeling is in beta release and is subject to change. For beta terms and conditions, see <i>Betas and Previews</i> in the <a href="https://aws.amazon.com/service-terms/">Amazon Web Services Service Terms</a>.</p>
+    pub fn ml_member_abilities(mut self, input: crate::types::MlMemberAbilities) -> Self {
+        self.ml_member_abilities = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ML abilities granted to the collaboration member.</p>
+    /// <p>Custom ML modeling is in beta release and is subject to change. For beta terms and conditions, see <i>Betas and Previews</i> in the <a href="https://aws.amazon.com/service-terms/">Amazon Web Services Service Terms</a>.</p>
+    pub fn set_ml_member_abilities(mut self, input: ::std::option::Option<crate::types::MlMemberAbilities>) -> Self {
+        self.ml_member_abilities = input;
+        self
+    }
+    /// <p>The ML abilities granted to the collaboration member.</p>
+    /// <p>Custom ML modeling is in beta release and is subject to change. For beta terms and conditions, see <i>Betas and Previews</i> in the <a href="https://aws.amazon.com/service-terms/">Amazon Web Services Service Terms</a>.</p>
+    pub fn get_ml_member_abilities(&self) -> &::std::option::Option<crate::types::MlMemberAbilities> {
+        &self.ml_member_abilities
     }
     /// <p>The member's display name.</p>
     /// This field is required.
@@ -139,6 +165,7 @@ impl MemberSpecificationBuilder {
                     "member_abilities was not specified but it is required when building MemberSpecification",
                 )
             })?,
+            ml_member_abilities: self.ml_member_abilities,
             display_name: self.display_name.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "display_name",

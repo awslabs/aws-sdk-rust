@@ -60,6 +60,77 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::cancel_trained_model::CancelTrainedModelError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::cancel_trained_model::CancelTrainedModelError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::cancel_trained_model::CancelTrainedModelError> for Error {
+    fn from(err: crate::operation::cancel_trained_model::CancelTrainedModelError) -> Self {
+        match err {
+            crate::operation::cancel_trained_model::CancelTrainedModelError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::cancel_trained_model::CancelTrainedModelError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::cancel_trained_model::CancelTrainedModelError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::cancel_trained_model::CancelTrainedModelError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::cancel_trained_model::CancelTrainedModelError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::cancel_trained_model_inference_job::CancelTrainedModelInferenceJobError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::cancel_trained_model_inference_job::CancelTrainedModelInferenceJobError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::cancel_trained_model_inference_job::CancelTrainedModelInferenceJobError> for Error {
+    fn from(err: crate::operation::cancel_trained_model_inference_job::CancelTrainedModelInferenceJobError) -> Self {
+        match err {
+            crate::operation::cancel_trained_model_inference_job::CancelTrainedModelInferenceJobError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::cancel_trained_model_inference_job::CancelTrainedModelInferenceJobError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::cancel_trained_model_inference_job::CancelTrainedModelInferenceJobError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::cancel_trained_model_inference_job::CancelTrainedModelInferenceJobError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::cancel_trained_model_inference_job::CancelTrainedModelInferenceJobError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_audience_model::CreateAudienceModelError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -131,6 +202,149 @@ impl From<crate::operation::create_configured_audience_model::CreateConfiguredAu
                 Error::ValidationException(inner)
             }
             crate::operation::create_configured_audience_model::CreateConfiguredAudienceModelError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_configured_model_algorithm::CreateConfiguredModelAlgorithmError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_configured_model_algorithm::CreateConfiguredModelAlgorithmError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_configured_model_algorithm::CreateConfiguredModelAlgorithmError> for Error {
+    fn from(err: crate::operation::create_configured_model_algorithm::CreateConfiguredModelAlgorithmError) -> Self {
+        match err {
+            crate::operation::create_configured_model_algorithm::CreateConfiguredModelAlgorithmError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::create_configured_model_algorithm::CreateConfiguredModelAlgorithmError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::create_configured_model_algorithm::CreateConfiguredModelAlgorithmError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::create_configured_model_algorithm::CreateConfiguredModelAlgorithmError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::create_configured_model_algorithm::CreateConfiguredModelAlgorithmError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_configured_model_algorithm_association::CreateConfiguredModelAlgorithmAssociationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_configured_model_algorithm_association::CreateConfiguredModelAlgorithmAssociationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_configured_model_algorithm_association::CreateConfiguredModelAlgorithmAssociationError> for Error {
+    fn from(err: crate::operation::create_configured_model_algorithm_association::CreateConfiguredModelAlgorithmAssociationError) -> Self {
+        match err {
+            crate::operation::create_configured_model_algorithm_association::CreateConfiguredModelAlgorithmAssociationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_configured_model_algorithm_association::CreateConfiguredModelAlgorithmAssociationError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_configured_model_algorithm_association::CreateConfiguredModelAlgorithmAssociationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::create_configured_model_algorithm_association::CreateConfiguredModelAlgorithmAssociationError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::create_configured_model_algorithm_association::CreateConfiguredModelAlgorithmAssociationError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_configured_model_algorithm_association::CreateConfiguredModelAlgorithmAssociationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_ml_input_channel::CreateMLInputChannelError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_ml_input_channel::CreateMLInputChannelError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_ml_input_channel::CreateMLInputChannelError> for Error {
+    fn from(err: crate::operation::create_ml_input_channel::CreateMLInputChannelError) -> Self {
+        match err {
+            crate::operation::create_ml_input_channel::CreateMLInputChannelError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_ml_input_channel::CreateMLInputChannelError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_ml_input_channel::CreateMLInputChannelError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::create_ml_input_channel::CreateMLInputChannelError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::create_ml_input_channel::CreateMLInputChannelError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_ml_input_channel::CreateMLInputChannelError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_trained_model::CreateTrainedModelError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_trained_model::CreateTrainedModelError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_trained_model::CreateTrainedModelError> for Error {
+    fn from(err: crate::operation::create_trained_model::CreateTrainedModelError) -> Self {
+        match err {
+            crate::operation::create_trained_model::CreateTrainedModelError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_trained_model::CreateTrainedModelError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_trained_model::CreateTrainedModelError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::create_trained_model::CreateTrainedModelError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::create_trained_model::CreateTrainedModelError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_trained_model::CreateTrainedModelError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -313,6 +527,186 @@ impl From<crate::operation::delete_configured_audience_model_policy::DeleteConfi
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_configured_model_algorithm::DeleteConfiguredModelAlgorithmError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_configured_model_algorithm::DeleteConfiguredModelAlgorithmError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_configured_model_algorithm::DeleteConfiguredModelAlgorithmError> for Error {
+    fn from(err: crate::operation::delete_configured_model_algorithm::DeleteConfiguredModelAlgorithmError) -> Self {
+        match err {
+            crate::operation::delete_configured_model_algorithm::DeleteConfiguredModelAlgorithmError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::delete_configured_model_algorithm::DeleteConfiguredModelAlgorithmError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::delete_configured_model_algorithm::DeleteConfiguredModelAlgorithmError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_configured_model_algorithm::DeleteConfiguredModelAlgorithmError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::delete_configured_model_algorithm::DeleteConfiguredModelAlgorithmError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_configured_model_algorithm_association::DeleteConfiguredModelAlgorithmAssociationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_configured_model_algorithm_association::DeleteConfiguredModelAlgorithmAssociationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_configured_model_algorithm_association::DeleteConfiguredModelAlgorithmAssociationError> for Error {
+    fn from(err: crate::operation::delete_configured_model_algorithm_association::DeleteConfiguredModelAlgorithmAssociationError) -> Self {
+        match err {
+            crate::operation::delete_configured_model_algorithm_association::DeleteConfiguredModelAlgorithmAssociationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_configured_model_algorithm_association::DeleteConfiguredModelAlgorithmAssociationError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::delete_configured_model_algorithm_association::DeleteConfiguredModelAlgorithmAssociationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_configured_model_algorithm_association::DeleteConfiguredModelAlgorithmAssociationError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_configured_model_algorithm_association::DeleteConfiguredModelAlgorithmAssociationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_ml_configuration::DeleteMLConfigurationError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_ml_configuration::DeleteMLConfigurationError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_ml_configuration::DeleteMLConfigurationError> for Error {
+    fn from(err: crate::operation::delete_ml_configuration::DeleteMLConfigurationError) -> Self {
+        match err {
+            crate::operation::delete_ml_configuration::DeleteMLConfigurationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::delete_ml_configuration::DeleteMLConfigurationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_ml_configuration::DeleteMLConfigurationError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_ml_configuration::DeleteMLConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_ml_input_channel_data::DeleteMLInputChannelDataError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_ml_input_channel_data::DeleteMLInputChannelDataError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_ml_input_channel_data::DeleteMLInputChannelDataError> for Error {
+    fn from(err: crate::operation::delete_ml_input_channel_data::DeleteMLInputChannelDataError) -> Self {
+        match err {
+            crate::operation::delete_ml_input_channel_data::DeleteMLInputChannelDataError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::delete_ml_input_channel_data::DeleteMLInputChannelDataError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::delete_ml_input_channel_data::DeleteMLInputChannelDataError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_ml_input_channel_data::DeleteMLInputChannelDataError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::delete_ml_input_channel_data::DeleteMLInputChannelDataError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_trained_model_output::DeleteTrainedModelOutputError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_trained_model_output::DeleteTrainedModelOutputError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_trained_model_output::DeleteTrainedModelOutputError> for Error {
+    fn from(err: crate::operation::delete_trained_model_output::DeleteTrainedModelOutputError) -> Self {
+        match err {
+            crate::operation::delete_trained_model_output::DeleteTrainedModelOutputError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::delete_trained_model_output::DeleteTrainedModelOutputError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::delete_trained_model_output::DeleteTrainedModelOutputError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_trained_model_output::DeleteTrainedModelOutputError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::delete_trained_model_output::DeleteTrainedModelOutputError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_training_dataset::DeleteTrainingDatasetError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -401,6 +795,123 @@ impl From<crate::operation::get_audience_model::GetAudienceModelError> for Error
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_collaboration_configured_model_algorithm_association::GetCollaborationConfiguredModelAlgorithmAssociationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_collaboration_configured_model_algorithm_association::GetCollaborationConfiguredModelAlgorithmAssociationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_collaboration_configured_model_algorithm_association::GetCollaborationConfiguredModelAlgorithmAssociationError>
+    for Error
+{
+    fn from(
+        err: crate::operation::get_collaboration_configured_model_algorithm_association::GetCollaborationConfiguredModelAlgorithmAssociationError,
+    ) -> Self {
+        match err {
+            crate::operation::get_collaboration_configured_model_algorithm_association::GetCollaborationConfiguredModelAlgorithmAssociationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_collaboration_configured_model_algorithm_association::GetCollaborationConfiguredModelAlgorithmAssociationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_collaboration_configured_model_algorithm_association::GetCollaborationConfiguredModelAlgorithmAssociationError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_collaboration_configured_model_algorithm_association::GetCollaborationConfiguredModelAlgorithmAssociationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_collaboration_ml_input_channel::GetCollaborationMLInputChannelError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_collaboration_ml_input_channel::GetCollaborationMLInputChannelError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_collaboration_ml_input_channel::GetCollaborationMLInputChannelError> for Error {
+    fn from(err: crate::operation::get_collaboration_ml_input_channel::GetCollaborationMLInputChannelError) -> Self {
+        match err {
+            crate::operation::get_collaboration_ml_input_channel::GetCollaborationMLInputChannelError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_collaboration_ml_input_channel::GetCollaborationMLInputChannelError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_collaboration_ml_input_channel::GetCollaborationMLInputChannelError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::get_collaboration_ml_input_channel::GetCollaborationMLInputChannelError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_collaboration_trained_model::GetCollaborationTrainedModelError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_collaboration_trained_model::GetCollaborationTrainedModelError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_collaboration_trained_model::GetCollaborationTrainedModelError> for Error {
+    fn from(err: crate::operation::get_collaboration_trained_model::GetCollaborationTrainedModelError) -> Self {
+        match err {
+            crate::operation::get_collaboration_trained_model::GetCollaborationTrainedModelError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_collaboration_trained_model::GetCollaborationTrainedModelError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_collaboration_trained_model::GetCollaborationTrainedModelError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::get_collaboration_trained_model::GetCollaborationTrainedModelError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_configured_audience_model::GetConfiguredAudienceModelError, R>>
     for Error
 where
@@ -474,6 +985,199 @@ impl From<crate::operation::get_configured_audience_model_policy::GetConfiguredA
             crate::operation::get_configured_audience_model_policy::GetConfiguredAudienceModelPolicyError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_configured_model_algorithm::GetConfiguredModelAlgorithmError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_configured_model_algorithm::GetConfiguredModelAlgorithmError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_configured_model_algorithm::GetConfiguredModelAlgorithmError> for Error {
+    fn from(err: crate::operation::get_configured_model_algorithm::GetConfiguredModelAlgorithmError) -> Self {
+        match err {
+            crate::operation::get_configured_model_algorithm::GetConfiguredModelAlgorithmError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_configured_model_algorithm::GetConfiguredModelAlgorithmError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_configured_model_algorithm::GetConfiguredModelAlgorithmError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::get_configured_model_algorithm::GetConfiguredModelAlgorithmError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_configured_model_algorithm_association::GetConfiguredModelAlgorithmAssociationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_configured_model_algorithm_association::GetConfiguredModelAlgorithmAssociationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_configured_model_algorithm_association::GetConfiguredModelAlgorithmAssociationError> for Error {
+    fn from(err: crate::operation::get_configured_model_algorithm_association::GetConfiguredModelAlgorithmAssociationError) -> Self {
+        match err {
+            crate::operation::get_configured_model_algorithm_association::GetConfiguredModelAlgorithmAssociationError::AccessDeniedException(
+                inner,
+            ) => Error::AccessDeniedException(inner),
+            crate::operation::get_configured_model_algorithm_association::GetConfiguredModelAlgorithmAssociationError::ResourceNotFoundException(
+                inner,
+            ) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_configured_model_algorithm_association::GetConfiguredModelAlgorithmAssociationError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::get_configured_model_algorithm_association::GetConfiguredModelAlgorithmAssociationError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_ml_configuration::GetMLConfigurationError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_ml_configuration::GetMLConfigurationError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_ml_configuration::GetMLConfigurationError> for Error {
+    fn from(err: crate::operation::get_ml_configuration::GetMLConfigurationError) -> Self {
+        match err {
+            crate::operation::get_ml_configuration::GetMLConfigurationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_ml_configuration::GetMLConfigurationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_ml_configuration::GetMLConfigurationError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_ml_configuration::GetMLConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_ml_input_channel::GetMLInputChannelError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_ml_input_channel::GetMLInputChannelError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_ml_input_channel::GetMLInputChannelError> for Error {
+    fn from(err: crate::operation::get_ml_input_channel::GetMLInputChannelError) -> Self {
+        match err {
+            crate::operation::get_ml_input_channel::GetMLInputChannelError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_ml_input_channel::GetMLInputChannelError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_ml_input_channel::GetMLInputChannelError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_ml_input_channel::GetMLInputChannelError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_trained_model::GetTrainedModelError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_trained_model::GetTrainedModelError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_trained_model::GetTrainedModelError> for Error {
+    fn from(err: crate::operation::get_trained_model::GetTrainedModelError) -> Self {
+        match err {
+            crate::operation::get_trained_model::GetTrainedModelError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_trained_model::GetTrainedModelError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_trained_model::GetTrainedModelError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_trained_model::GetTrainedModelError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_trained_model_inference_job::GetTrainedModelInferenceJobError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_trained_model_inference_job::GetTrainedModelInferenceJobError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_trained_model_inference_job::GetTrainedModelInferenceJobError> for Error {
+    fn from(err: crate::operation::get_trained_model_inference_job::GetTrainedModelInferenceJobError) -> Self {
+        match err {
+            crate::operation::get_trained_model_inference_job::GetTrainedModelInferenceJobError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_trained_model_inference_job::GetTrainedModelInferenceJobError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_trained_model_inference_job::GetTrainedModelInferenceJobError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::get_trained_model_inference_job::GetTrainedModelInferenceJobError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -585,6 +1289,196 @@ impl From<crate::operation::list_audience_models::ListAudienceModelsError> for E
     }
 }
 impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_collaboration_configured_model_algorithm_associations::ListCollaborationConfiguredModelAlgorithmAssociationsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_collaboration_configured_model_algorithm_associations::ListCollaborationConfiguredModelAlgorithmAssociationsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_collaboration_configured_model_algorithm_associations::ListCollaborationConfiguredModelAlgorithmAssociationsError>
+    for Error
+{
+    fn from(
+        err: crate::operation::list_collaboration_configured_model_algorithm_associations::ListCollaborationConfiguredModelAlgorithmAssociationsError,
+    ) -> Self {
+        match err {
+            crate::operation::list_collaboration_configured_model_algorithm_associations::ListCollaborationConfiguredModelAlgorithmAssociationsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_collaboration_configured_model_algorithm_associations::ListCollaborationConfiguredModelAlgorithmAssociationsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_collaboration_configured_model_algorithm_associations::ListCollaborationConfiguredModelAlgorithmAssociationsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_collaboration_ml_input_channels::ListCollaborationMLInputChannelsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_collaboration_ml_input_channels::ListCollaborationMLInputChannelsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_collaboration_ml_input_channels::ListCollaborationMLInputChannelsError> for Error {
+    fn from(err: crate::operation::list_collaboration_ml_input_channels::ListCollaborationMLInputChannelsError) -> Self {
+        match err {
+            crate::operation::list_collaboration_ml_input_channels::ListCollaborationMLInputChannelsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_collaboration_ml_input_channels::ListCollaborationMLInputChannelsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_collaboration_ml_input_channels::ListCollaborationMLInputChannelsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_collaboration_trained_model_export_jobs::ListCollaborationTrainedModelExportJobsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_collaboration_trained_model_export_jobs::ListCollaborationTrainedModelExportJobsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_collaboration_trained_model_export_jobs::ListCollaborationTrainedModelExportJobsError> for Error {
+    fn from(err: crate::operation::list_collaboration_trained_model_export_jobs::ListCollaborationTrainedModelExportJobsError) -> Self {
+        match err {
+            crate::operation::list_collaboration_trained_model_export_jobs::ListCollaborationTrainedModelExportJobsError::AccessDeniedException(
+                inner,
+            ) => Error::AccessDeniedException(inner),
+            crate::operation::list_collaboration_trained_model_export_jobs::ListCollaborationTrainedModelExportJobsError::ValidationException(
+                inner,
+            ) => Error::ValidationException(inner),
+            crate::operation::list_collaboration_trained_model_export_jobs::ListCollaborationTrainedModelExportJobsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_collaboration_trained_model_inference_jobs::ListCollaborationTrainedModelInferenceJobsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_collaboration_trained_model_inference_jobs::ListCollaborationTrainedModelInferenceJobsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_collaboration_trained_model_inference_jobs::ListCollaborationTrainedModelInferenceJobsError> for Error {
+    fn from(err: crate::operation::list_collaboration_trained_model_inference_jobs::ListCollaborationTrainedModelInferenceJobsError) -> Self {
+        match err {
+            crate::operation::list_collaboration_trained_model_inference_jobs::ListCollaborationTrainedModelInferenceJobsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_collaboration_trained_model_inference_jobs::ListCollaborationTrainedModelInferenceJobsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_collaboration_trained_model_inference_jobs::ListCollaborationTrainedModelInferenceJobsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_collaboration_trained_models::ListCollaborationTrainedModelsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_collaboration_trained_models::ListCollaborationTrainedModelsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_collaboration_trained_models::ListCollaborationTrainedModelsError> for Error {
+    fn from(err: crate::operation::list_collaboration_trained_models::ListCollaborationTrainedModelsError) -> Self {
+        match err {
+            crate::operation::list_collaboration_trained_models::ListCollaborationTrainedModelsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_collaboration_trained_models::ListCollaborationTrainedModelsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_collaboration_trained_models::ListCollaborationTrainedModelsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
     From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_configured_audience_models::ListConfiguredAudienceModelsError, R>>
     for Error
 where
@@ -618,6 +1512,104 @@ impl From<crate::operation::list_configured_audience_models::ListConfiguredAudie
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_configured_model_algorithm_associations::ListConfiguredModelAlgorithmAssociationsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_configured_model_algorithm_associations::ListConfiguredModelAlgorithmAssociationsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_configured_model_algorithm_associations::ListConfiguredModelAlgorithmAssociationsError> for Error {
+    fn from(err: crate::operation::list_configured_model_algorithm_associations::ListConfiguredModelAlgorithmAssociationsError) -> Self {
+        match err {
+            crate::operation::list_configured_model_algorithm_associations::ListConfiguredModelAlgorithmAssociationsError::AccessDeniedException(
+                inner,
+            ) => Error::AccessDeniedException(inner),
+            crate::operation::list_configured_model_algorithm_associations::ListConfiguredModelAlgorithmAssociationsError::ValidationException(
+                inner,
+            ) => Error::ValidationException(inner),
+            crate::operation::list_configured_model_algorithm_associations::ListConfiguredModelAlgorithmAssociationsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_configured_model_algorithms::ListConfiguredModelAlgorithmsError, R>,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_configured_model_algorithms::ListConfiguredModelAlgorithmsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_configured_model_algorithms::ListConfiguredModelAlgorithmsError> for Error {
+    fn from(err: crate::operation::list_configured_model_algorithms::ListConfiguredModelAlgorithmsError) -> Self {
+        match err {
+            crate::operation::list_configured_model_algorithms::ListConfiguredModelAlgorithmsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_configured_model_algorithms::ListConfiguredModelAlgorithmsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_configured_model_algorithms::ListConfiguredModelAlgorithmsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_ml_input_channels::ListMLInputChannelsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_ml_input_channels::ListMLInputChannelsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_ml_input_channels::ListMLInputChannelsError> for Error {
+    fn from(err: crate::operation::list_ml_input_channels::ListMLInputChannelsError) -> Self {
+        match err {
+            crate::operation::list_ml_input_channels::ListMLInputChannelsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_ml_input_channels::ListMLInputChannelsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_ml_input_channels::ListMLInputChannelsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_tags_for_resource::ListTagsForResourceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -641,6 +1633,67 @@ impl From<crate::operation::list_tags_for_resource::ListTagsForResourceError> fo
             }
             crate::operation::list_tags_for_resource::ListTagsForResourceError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_tags_for_resource::ListTagsForResourceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_trained_model_inference_jobs::ListTrainedModelInferenceJobsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_trained_model_inference_jobs::ListTrainedModelInferenceJobsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_trained_model_inference_jobs::ListTrainedModelInferenceJobsError> for Error {
+    fn from(err: crate::operation::list_trained_model_inference_jobs::ListTrainedModelInferenceJobsError) -> Self {
+        match err {
+            crate::operation::list_trained_model_inference_jobs::ListTrainedModelInferenceJobsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_trained_model_inference_jobs::ListTrainedModelInferenceJobsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_trained_model_inference_jobs::ListTrainedModelInferenceJobsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_trained_models::ListTrainedModelsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_trained_models::ListTrainedModelsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_trained_models::ListTrainedModelsError> for Error {
+    fn from(err: crate::operation::list_trained_models::ListTrainedModelsError) -> Self {
+        match err {
+            crate::operation::list_trained_models::ListTrainedModelsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_trained_models::ListTrainedModelsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_trained_models::ListTrainedModelsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -707,6 +1760,29 @@ impl From<crate::operation::put_configured_audience_model_policy::PutConfiguredA
             crate::operation::put_configured_audience_model_policy::PutConfiguredAudienceModelPolicyError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_ml_configuration::PutMLConfigurationError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_ml_configuration::PutMLConfigurationError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::put_ml_configuration::PutMLConfigurationError> for Error {
+    fn from(err: crate::operation::put_ml_configuration::PutMLConfigurationError) -> Self {
+        match err {
+            crate::operation::put_ml_configuration::PutMLConfigurationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::put_ml_configuration::PutMLConfigurationError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::put_ml_configuration::PutMLConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -781,6 +1857,89 @@ impl From<crate::operation::start_audience_generation_job::StartAudienceGenerati
                 Error::ValidationException(inner)
             }
             crate::operation::start_audience_generation_job::StartAudienceGenerationJobError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_trained_model_export_job::StartTrainedModelExportJobError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_trained_model_export_job::StartTrainedModelExportJobError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::start_trained_model_export_job::StartTrainedModelExportJobError> for Error {
+    fn from(err: crate::operation::start_trained_model_export_job::StartTrainedModelExportJobError) -> Self {
+        match err {
+            crate::operation::start_trained_model_export_job::StartTrainedModelExportJobError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::start_trained_model_export_job::StartTrainedModelExportJobError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::start_trained_model_export_job::StartTrainedModelExportJobError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::start_trained_model_export_job::StartTrainedModelExportJobError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::start_trained_model_export_job::StartTrainedModelExportJobError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::start_trained_model_inference_job::StartTrainedModelInferenceJobError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::start_trained_model_inference_job::StartTrainedModelInferenceJobError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::start_trained_model_inference_job::StartTrainedModelInferenceJobError> for Error {
+    fn from(err: crate::operation::start_trained_model_inference_job::StartTrainedModelInferenceJobError) -> Self {
+        match err {
+            crate::operation::start_trained_model_inference_job::StartTrainedModelInferenceJobError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::start_trained_model_inference_job::StartTrainedModelInferenceJobError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::start_trained_model_inference_job::StartTrainedModelInferenceJobError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::start_trained_model_inference_job::StartTrainedModelInferenceJobError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::start_trained_model_inference_job::StartTrainedModelInferenceJobError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::start_trained_model_inference_job::StartTrainedModelInferenceJobError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

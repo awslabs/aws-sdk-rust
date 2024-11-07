@@ -39,6 +39,12 @@ pub fn ser_prompt_variant(
     if let Some(var_10) = &input.additional_model_request_fields {
         object.key("additionalModelRequestFields").document(var_10);
     }
+    if let Some(var_11) = &input.gen_ai_resource {
+        #[allow(unused_mut)]
+        let mut object_12 = object.key("genAiResource").start_object();
+        crate::protocol_serde::shape_prompt_gen_ai_resource::ser_prompt_gen_ai_resource(&mut object_12, var_11)?;
+        object_12.finish();
+    }
     Ok(())
 }
 
@@ -94,6 +100,10 @@ where
                         "additionalModelRequestFields" => {
                             builder =
                                 builder.set_additional_model_request_fields(Some(::aws_smithy_json::deserialize::token::expect_document(tokens)?));
+                        }
+                        "genAiResource" => {
+                            builder =
+                                builder.set_gen_ai_resource(crate::protocol_serde::shape_prompt_gen_ai_resource::de_prompt_gen_ai_resource(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

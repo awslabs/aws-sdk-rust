@@ -19,6 +19,16 @@ pub(crate) fn reflens_list_indexes_for_members_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_managed_views_output_output_next_token(
+    input: &crate::operation::list_managed_views::ListManagedViewsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_resources_output_output_next_token(
     input: &crate::operation::list_resources::ListResourcesOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -73,6 +83,16 @@ pub(crate) fn lens_list_indexes_for_members_output_output_indexes(
     input: crate::operation::list_indexes_for_members::ListIndexesForMembersOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::MemberIndex>> {
     let input = match input.indexes {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_managed_views_output_output_managed_views(
+    input: crate::operation::list_managed_views::ListManagedViewsOutput,
+) -> ::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    let input = match input.managed_views {
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,
     };

@@ -23,6 +23,8 @@ pub use crate::types::_supported_resource_type::SupportedResourceType;
 
 pub use crate::types::_member_index::MemberIndex;
 
+pub use crate::types::_managed_view::ManagedView;
+
 pub use crate::types::_org_configuration::OrgConfiguration;
 
 pub use crate::types::_aws_service_access_status::AwsServiceAccessStatus;
@@ -40,6 +42,8 @@ mod _index;
 mod _index_state;
 
 mod _index_type;
+
+mod _managed_view;
 
 mod _member_index;
 

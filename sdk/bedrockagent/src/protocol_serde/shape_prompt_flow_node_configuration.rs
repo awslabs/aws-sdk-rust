@@ -9,6 +9,12 @@ pub fn ser_prompt_flow_node_configuration(
         crate::protocol_serde::shape_prompt_flow_node_source_configuration::ser_prompt_flow_node_source_configuration(&mut object_2, var_1)?;
         object_2.finish();
     }
+    if let Some(var_3) = &input.guardrail_configuration {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("guardrailConfiguration").start_object();
+        crate::protocol_serde::shape_guardrail_configuration::ser_guardrail_configuration(&mut object_4, var_3)?;
+        object_4.finish();
+    }
     Ok(())
 }
 
@@ -30,6 +36,11 @@ where
                         "sourceConfiguration" => {
                             builder = builder.set_source_configuration(
                                 crate::protocol_serde::shape_prompt_flow_node_source_configuration::de_prompt_flow_node_source_configuration(tokens)?,
+                            );
+                        }
+                        "guardrailConfiguration" => {
+                            builder = builder.set_guardrail_configuration(
+                                crate::protocol_serde::shape_guardrail_configuration::de_guardrail_configuration(tokens)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

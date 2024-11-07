@@ -6,11 +6,17 @@
 pub struct PromptFlowNodeConfiguration {
     /// <p>Specifies whether the prompt is from Prompt management or defined inline.</p>
     pub source_configuration: ::std::option::Option<crate::types::PromptFlowNodeSourceConfiguration>,
+    /// <p>Contains configurations for a guardrail to apply to the prompt in this node and the response generated from it.</p>
+    pub guardrail_configuration: ::std::option::Option<crate::types::GuardrailConfiguration>,
 }
 impl PromptFlowNodeConfiguration {
     /// <p>Specifies whether the prompt is from Prompt management or defined inline.</p>
     pub fn source_configuration(&self) -> ::std::option::Option<&crate::types::PromptFlowNodeSourceConfiguration> {
         self.source_configuration.as_ref()
+    }
+    /// <p>Contains configurations for a guardrail to apply to the prompt in this node and the response generated from it.</p>
+    pub fn guardrail_configuration(&self) -> ::std::option::Option<&crate::types::GuardrailConfiguration> {
+        self.guardrail_configuration.as_ref()
     }
 }
 impl PromptFlowNodeConfiguration {
@@ -25,6 +31,7 @@ impl PromptFlowNodeConfiguration {
 #[non_exhaustive]
 pub struct PromptFlowNodeConfigurationBuilder {
     pub(crate) source_configuration: ::std::option::Option<crate::types::PromptFlowNodeSourceConfiguration>,
+    pub(crate) guardrail_configuration: ::std::option::Option<crate::types::GuardrailConfiguration>,
 }
 impl PromptFlowNodeConfigurationBuilder {
     /// <p>Specifies whether the prompt is from Prompt management or defined inline.</p>
@@ -42,10 +49,25 @@ impl PromptFlowNodeConfigurationBuilder {
     pub fn get_source_configuration(&self) -> &::std::option::Option<crate::types::PromptFlowNodeSourceConfiguration> {
         &self.source_configuration
     }
+    /// <p>Contains configurations for a guardrail to apply to the prompt in this node and the response generated from it.</p>
+    pub fn guardrail_configuration(mut self, input: crate::types::GuardrailConfiguration) -> Self {
+        self.guardrail_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Contains configurations for a guardrail to apply to the prompt in this node and the response generated from it.</p>
+    pub fn set_guardrail_configuration(mut self, input: ::std::option::Option<crate::types::GuardrailConfiguration>) -> Self {
+        self.guardrail_configuration = input;
+        self
+    }
+    /// <p>Contains configurations for a guardrail to apply to the prompt in this node and the response generated from it.</p>
+    pub fn get_guardrail_configuration(&self) -> &::std::option::Option<crate::types::GuardrailConfiguration> {
+        &self.guardrail_configuration
+    }
     /// Consumes the builder and constructs a [`PromptFlowNodeConfiguration`](crate::types::PromptFlowNodeConfiguration).
     pub fn build(self) -> crate::types::PromptFlowNodeConfiguration {
         crate::types::PromptFlowNodeConfiguration {
             source_configuration: self.source_configuration,
+            guardrail_configuration: self.guardrail_configuration,
         }
     }
 }

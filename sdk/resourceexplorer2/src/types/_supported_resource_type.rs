@@ -4,13 +4,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SupportedResourceType {
-    /// <p>The Amazon Web Servicesservice that is associated with the resource type. This is the primary service that lets you create and interact with resources of this type.</p>
+    /// <p>The Amazon Web Services service that is associated with the resource type. This is the primary service that lets you create and interact with resources of this type.</p>
     pub service: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the resource type.</p>
     pub resource_type: ::std::option::Option<::std::string::String>,
 }
 impl SupportedResourceType {
-    /// <p>The Amazon Web Servicesservice that is associated with the resource type. This is the primary service that lets you create and interact with resources of this type.</p>
+    /// <p>The Amazon Web Services service that is associated with the resource type. This is the primary service that lets you create and interact with resources of this type.</p>
     pub fn service(&self) -> ::std::option::Option<&str> {
         self.service.as_deref()
     }
@@ -34,17 +34,17 @@ pub struct SupportedResourceTypeBuilder {
     pub(crate) resource_type: ::std::option::Option<::std::string::String>,
 }
 impl SupportedResourceTypeBuilder {
-    /// <p>The Amazon Web Servicesservice that is associated with the resource type. This is the primary service that lets you create and interact with resources of this type.</p>
+    /// <p>The Amazon Web Services service that is associated with the resource type. This is the primary service that lets you create and interact with resources of this type.</p>
     pub fn service(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Web Servicesservice that is associated with the resource type. This is the primary service that lets you create and interact with resources of this type.</p>
+    /// <p>The Amazon Web Services service that is associated with the resource type. This is the primary service that lets you create and interact with resources of this type.</p>
     pub fn set_service(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service = input;
         self
     }
-    /// <p>The Amazon Web Servicesservice that is associated with the resource type. This is the primary service that lets you create and interact with resources of this type.</p>
+    /// <p>The Amazon Web Services service that is associated with the resource type. This is the primary service that lets you create and interact with resources of this type.</p>
     pub fn get_service(&self) -> &::std::option::Option<::std::string::String> {
         &self.service
     }

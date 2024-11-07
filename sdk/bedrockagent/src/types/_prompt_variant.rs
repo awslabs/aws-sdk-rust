@@ -14,10 +14,12 @@ pub struct PromptVariant {
     pub model_id: ::std::option::Option<::std::string::String>,
     /// <p>Contains inference configurations for the prompt variant.</p>
     pub inference_configuration: ::std::option::Option<crate::types::PromptInferenceConfiguration>,
-    /// <p>An array of objects, each containing a key-value pair that defines a metadata tag and value to attach to a prompt variant. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-management-create.html">Create a prompt using Prompt management</a>.</p>
+    /// <p>An array of objects, each containing a key-value pair that defines a metadata tag and value to attach to a prompt variant.</p>
     pub metadata: ::std::option::Option<::std::vec::Vec<crate::types::PromptMetadataEntry>>,
     /// <p>Contains model-specific inference configurations that aren't in the <code>inferenceConfiguration</code> field. To see model-specific inference parameters, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters.html">Inference request parameters and response fields for foundation models</a>.</p>
     pub additional_model_request_fields: ::std::option::Option<::aws_smithy_types::Document>,
+    /// <p>Specifies a generative AI resource with which to use the prompt.</p>
+    pub gen_ai_resource: ::std::option::Option<crate::types::PromptGenAiResource>,
 }
 impl PromptVariant {
     /// <p>The name of the prompt variant.</p>
@@ -41,7 +43,7 @@ impl PromptVariant {
     pub fn inference_configuration(&self) -> ::std::option::Option<&crate::types::PromptInferenceConfiguration> {
         self.inference_configuration.as_ref()
     }
-    /// <p>An array of objects, each containing a key-value pair that defines a metadata tag and value to attach to a prompt variant. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-management-create.html">Create a prompt using Prompt management</a>.</p>
+    /// <p>An array of objects, each containing a key-value pair that defines a metadata tag and value to attach to a prompt variant.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.metadata.is_none()`.
     pub fn metadata(&self) -> &[crate::types::PromptMetadataEntry] {
@@ -50,6 +52,10 @@ impl PromptVariant {
     /// <p>Contains model-specific inference configurations that aren't in the <code>inferenceConfiguration</code> field. To see model-specific inference parameters, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters.html">Inference request parameters and response fields for foundation models</a>.</p>
     pub fn additional_model_request_fields(&self) -> ::std::option::Option<&::aws_smithy_types::Document> {
         self.additional_model_request_fields.as_ref()
+    }
+    /// <p>Specifies a generative AI resource with which to use the prompt.</p>
+    pub fn gen_ai_resource(&self) -> ::std::option::Option<&crate::types::PromptGenAiResource> {
+        self.gen_ai_resource.as_ref()
     }
 }
 impl ::std::fmt::Debug for PromptVariant {
@@ -62,6 +68,7 @@ impl ::std::fmt::Debug for PromptVariant {
         formatter.field("inference_configuration", &"*** Sensitive Data Redacted ***");
         formatter.field("metadata", &"*** Sensitive Data Redacted ***");
         formatter.field("additional_model_request_fields", &"*** Sensitive Data Redacted ***");
+        formatter.field("gen_ai_resource", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
@@ -83,6 +90,7 @@ pub struct PromptVariantBuilder {
     pub(crate) inference_configuration: ::std::option::Option<crate::types::PromptInferenceConfiguration>,
     pub(crate) metadata: ::std::option::Option<::std::vec::Vec<crate::types::PromptMetadataEntry>>,
     pub(crate) additional_model_request_fields: ::std::option::Option<::aws_smithy_types::Document>,
+    pub(crate) gen_ai_resource: ::std::option::Option<crate::types::PromptGenAiResource>,
 }
 impl PromptVariantBuilder {
     /// <p>The name of the prompt variant.</p>
@@ -162,19 +170,19 @@ impl PromptVariantBuilder {
     ///
     /// To override the contents of this collection use [`set_metadata`](Self::set_metadata).
     ///
-    /// <p>An array of objects, each containing a key-value pair that defines a metadata tag and value to attach to a prompt variant. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-management-create.html">Create a prompt using Prompt management</a>.</p>
+    /// <p>An array of objects, each containing a key-value pair that defines a metadata tag and value to attach to a prompt variant.</p>
     pub fn metadata(mut self, input: crate::types::PromptMetadataEntry) -> Self {
         let mut v = self.metadata.unwrap_or_default();
         v.push(input);
         self.metadata = ::std::option::Option::Some(v);
         self
     }
-    /// <p>An array of objects, each containing a key-value pair that defines a metadata tag and value to attach to a prompt variant. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-management-create.html">Create a prompt using Prompt management</a>.</p>
+    /// <p>An array of objects, each containing a key-value pair that defines a metadata tag and value to attach to a prompt variant.</p>
     pub fn set_metadata(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PromptMetadataEntry>>) -> Self {
         self.metadata = input;
         self
     }
-    /// <p>An array of objects, each containing a key-value pair that defines a metadata tag and value to attach to a prompt variant. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-management-create.html">Create a prompt using Prompt management</a>.</p>
+    /// <p>An array of objects, each containing a key-value pair that defines a metadata tag and value to attach to a prompt variant.</p>
     pub fn get_metadata(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PromptMetadataEntry>> {
         &self.metadata
     }
@@ -191,6 +199,20 @@ impl PromptVariantBuilder {
     /// <p>Contains model-specific inference configurations that aren't in the <code>inferenceConfiguration</code> field. To see model-specific inference parameters, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters.html">Inference request parameters and response fields for foundation models</a>.</p>
     pub fn get_additional_model_request_fields(&self) -> &::std::option::Option<::aws_smithy_types::Document> {
         &self.additional_model_request_fields
+    }
+    /// <p>Specifies a generative AI resource with which to use the prompt.</p>
+    pub fn gen_ai_resource(mut self, input: crate::types::PromptGenAiResource) -> Self {
+        self.gen_ai_resource = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies a generative AI resource with which to use the prompt.</p>
+    pub fn set_gen_ai_resource(mut self, input: ::std::option::Option<crate::types::PromptGenAiResource>) -> Self {
+        self.gen_ai_resource = input;
+        self
+    }
+    /// <p>Specifies a generative AI resource with which to use the prompt.</p>
+    pub fn get_gen_ai_resource(&self) -> &::std::option::Option<crate::types::PromptGenAiResource> {
+        &self.gen_ai_resource
     }
     /// Consumes the builder and constructs a [`PromptVariant`](crate::types::PromptVariant).
     /// This method will fail if any of the following fields are not set:
@@ -215,6 +237,7 @@ impl PromptVariantBuilder {
             inference_configuration: self.inference_configuration,
             metadata: self.metadata,
             additional_model_request_fields: self.additional_model_request_fields,
+            gen_ai_resource: self.gen_ai_resource,
         })
     }
 }
@@ -228,6 +251,7 @@ impl ::std::fmt::Debug for PromptVariantBuilder {
         formatter.field("inference_configuration", &"*** Sensitive Data Redacted ***");
         formatter.field("metadata", &"*** Sensitive Data Redacted ***");
         formatter.field("additional_model_request_fields", &"*** Sensitive Data Redacted ***");
+        formatter.field("gen_ai_resource", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }

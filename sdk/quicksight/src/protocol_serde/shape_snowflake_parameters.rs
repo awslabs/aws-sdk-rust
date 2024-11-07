@@ -12,6 +12,18 @@ pub fn ser_snowflake_parameters(
     {
         object.key("Warehouse").string(input.warehouse.as_str());
     }
+    if let Some(var_1) = &input.authentication_type {
+        object.key("AuthenticationType").string(var_1.as_str());
+    }
+    if let Some(var_2) = &input.database_access_control_role {
+        object.key("DatabaseAccessControlRole").string(var_2.as_str());
+    }
+    if let Some(var_3) = &input.o_auth_parameters {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("OAuthParameters").start_object();
+        crate::protocol_serde::shape_o_auth_parameters::ser_o_auth_parameters(&mut object_4, var_3)?;
+        object_4.finish();
+    }
     Ok(())
 }
 
@@ -50,6 +62,23 @@ where
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
                             );
+                        }
+                        "AuthenticationType" => {
+                            builder = builder.set_authentication_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::AuthenticationType::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "DatabaseAccessControlRole" => {
+                            builder = builder.set_database_access_control_role(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "OAuthParameters" => {
+                            builder = builder.set_o_auth_parameters(crate::protocol_serde::shape_o_auth_parameters::de_o_auth_parameters(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

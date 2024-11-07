@@ -34,6 +34,9 @@ pub struct Canary {
     pub vpc_config: ::std::option::Option<crate::types::VpcConfigOutput>,
     /// <p>If this canary performs visual monitoring by comparing screenshots, this structure contains the ID of the canary run to use as the baseline for screenshots, and the coordinates of any parts of the screen to ignore during the visual monitoring comparison.</p>
     pub visual_reference: ::std::option::Option<crate::types::VisualReferenceOutput>,
+    /// <p>Specifies whether to also delete the Lambda functions and layers used by this canary when the canary is deleted. If it is <code>AUTOMATIC</code>, the Lambda functions and layers will be deleted when the canary is deleted.</p>
+    /// <p>If the value of this parameter is <code>OFF</code>, then the value of the <code>DeleteLambda</code> parameter of the <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DeleteCanary.html">DeleteCanary</a> operation determines whether the Lambda functions and layers will be deleted.</p>
+    pub provisioned_resource_cleanup: ::std::option::Option<crate::types::ProvisionedResourceCleanupSetting>,
     /// <p>The list of key-value pairs that are associated with the canary.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>A structure that contains the configuration for canary artifacts, including the encryption-at-rest settings for artifacts that the canary uploads to Amazon S3.</p>
@@ -100,6 +103,11 @@ impl Canary {
     pub fn visual_reference(&self) -> ::std::option::Option<&crate::types::VisualReferenceOutput> {
         self.visual_reference.as_ref()
     }
+    /// <p>Specifies whether to also delete the Lambda functions and layers used by this canary when the canary is deleted. If it is <code>AUTOMATIC</code>, the Lambda functions and layers will be deleted when the canary is deleted.</p>
+    /// <p>If the value of this parameter is <code>OFF</code>, then the value of the <code>DeleteLambda</code> parameter of the <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DeleteCanary.html">DeleteCanary</a> operation determines whether the Lambda functions and layers will be deleted.</p>
+    pub fn provisioned_resource_cleanup(&self) -> ::std::option::Option<&crate::types::ProvisionedResourceCleanupSetting> {
+        self.provisioned_resource_cleanup.as_ref()
+    }
     /// <p>The list of key-value pairs that are associated with the canary.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
@@ -135,6 +143,7 @@ pub struct CanaryBuilder {
     pub(crate) runtime_version: ::std::option::Option<::std::string::String>,
     pub(crate) vpc_config: ::std::option::Option<crate::types::VpcConfigOutput>,
     pub(crate) visual_reference: ::std::option::Option<crate::types::VisualReferenceOutput>,
+    pub(crate) provisioned_resource_cleanup: ::std::option::Option<crate::types::ProvisionedResourceCleanupSetting>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) artifact_config: ::std::option::Option<crate::types::ArtifactConfigOutput>,
 }
@@ -349,6 +358,23 @@ impl CanaryBuilder {
     pub fn get_visual_reference(&self) -> &::std::option::Option<crate::types::VisualReferenceOutput> {
         &self.visual_reference
     }
+    /// <p>Specifies whether to also delete the Lambda functions and layers used by this canary when the canary is deleted. If it is <code>AUTOMATIC</code>, the Lambda functions and layers will be deleted when the canary is deleted.</p>
+    /// <p>If the value of this parameter is <code>OFF</code>, then the value of the <code>DeleteLambda</code> parameter of the <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DeleteCanary.html">DeleteCanary</a> operation determines whether the Lambda functions and layers will be deleted.</p>
+    pub fn provisioned_resource_cleanup(mut self, input: crate::types::ProvisionedResourceCleanupSetting) -> Self {
+        self.provisioned_resource_cleanup = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether to also delete the Lambda functions and layers used by this canary when the canary is deleted. If it is <code>AUTOMATIC</code>, the Lambda functions and layers will be deleted when the canary is deleted.</p>
+    /// <p>If the value of this parameter is <code>OFF</code>, then the value of the <code>DeleteLambda</code> parameter of the <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DeleteCanary.html">DeleteCanary</a> operation determines whether the Lambda functions and layers will be deleted.</p>
+    pub fn set_provisioned_resource_cleanup(mut self, input: ::std::option::Option<crate::types::ProvisionedResourceCleanupSetting>) -> Self {
+        self.provisioned_resource_cleanup = input;
+        self
+    }
+    /// <p>Specifies whether to also delete the Lambda functions and layers used by this canary when the canary is deleted. If it is <code>AUTOMATIC</code>, the Lambda functions and layers will be deleted when the canary is deleted.</p>
+    /// <p>If the value of this parameter is <code>OFF</code>, then the value of the <code>DeleteLambda</code> parameter of the <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DeleteCanary.html">DeleteCanary</a> operation determines whether the Lambda functions and layers will be deleted.</p>
+    pub fn get_provisioned_resource_cleanup(&self) -> &::std::option::Option<crate::types::ProvisionedResourceCleanupSetting> {
+        &self.provisioned_resource_cleanup
+    }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -401,6 +427,7 @@ impl CanaryBuilder {
             runtime_version: self.runtime_version,
             vpc_config: self.vpc_config,
             visual_reference: self.visual_reference,
+            provisioned_resource_cleanup: self.provisioned_resource_cleanup,
             tags: self.tags,
             artifact_config: self.artifact_config,
         }

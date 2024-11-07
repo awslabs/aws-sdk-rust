@@ -47,6 +47,9 @@ pub struct UpdateCanaryInput {
     pub artifact_s3_location: ::std::option::Option<::std::string::String>,
     /// <p>A structure that contains the configuration for canary artifacts, including the encryption-at-rest settings for artifacts that the canary uploads to Amazon S3.</p>
     pub artifact_config: ::std::option::Option<crate::types::ArtifactConfigInput>,
+    /// <p>Specifies whether to also delete the Lambda functions and layers used by this canary when the canary is deleted.</p>
+    /// <p>If the value of this parameter is <code>OFF</code>, then the value of the <code>DeleteLambda</code> parameter of the <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DeleteCanary.html">DeleteCanary</a> operation determines whether the Lambda functions and layers will be deleted.</p>
+    pub provisioned_resource_cleanup: ::std::option::Option<crate::types::ProvisionedResourceCleanupSetting>,
 }
 impl UpdateCanaryInput {
     /// <p>The name of the canary that you want to update. To find the names of your canaries, use <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DescribeCanaries.html">DescribeCanaries</a>.</p>
@@ -117,6 +120,11 @@ impl UpdateCanaryInput {
     pub fn artifact_config(&self) -> ::std::option::Option<&crate::types::ArtifactConfigInput> {
         self.artifact_config.as_ref()
     }
+    /// <p>Specifies whether to also delete the Lambda functions and layers used by this canary when the canary is deleted.</p>
+    /// <p>If the value of this parameter is <code>OFF</code>, then the value of the <code>DeleteLambda</code> parameter of the <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DeleteCanary.html">DeleteCanary</a> operation determines whether the Lambda functions and layers will be deleted.</p>
+    pub fn provisioned_resource_cleanup(&self) -> ::std::option::Option<&crate::types::ProvisionedResourceCleanupSetting> {
+        self.provisioned_resource_cleanup.as_ref()
+    }
 }
 impl UpdateCanaryInput {
     /// Creates a new builder-style object to manufacture [`UpdateCanaryInput`](crate::operation::update_canary::UpdateCanaryInput).
@@ -141,6 +149,7 @@ pub struct UpdateCanaryInputBuilder {
     pub(crate) visual_reference: ::std::option::Option<crate::types::VisualReferenceInput>,
     pub(crate) artifact_s3_location: ::std::option::Option<::std::string::String>,
     pub(crate) artifact_config: ::std::option::Option<crate::types::ArtifactConfigInput>,
+    pub(crate) provisioned_resource_cleanup: ::std::option::Option<crate::types::ProvisionedResourceCleanupSetting>,
 }
 impl UpdateCanaryInputBuilder {
     /// <p>The name of the canary that you want to update. To find the names of your canaries, use <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DescribeCanaries.html">DescribeCanaries</a>.</p>
@@ -372,6 +381,23 @@ impl UpdateCanaryInputBuilder {
     pub fn get_artifact_config(&self) -> &::std::option::Option<crate::types::ArtifactConfigInput> {
         &self.artifact_config
     }
+    /// <p>Specifies whether to also delete the Lambda functions and layers used by this canary when the canary is deleted.</p>
+    /// <p>If the value of this parameter is <code>OFF</code>, then the value of the <code>DeleteLambda</code> parameter of the <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DeleteCanary.html">DeleteCanary</a> operation determines whether the Lambda functions and layers will be deleted.</p>
+    pub fn provisioned_resource_cleanup(mut self, input: crate::types::ProvisionedResourceCleanupSetting) -> Self {
+        self.provisioned_resource_cleanup = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether to also delete the Lambda functions and layers used by this canary when the canary is deleted.</p>
+    /// <p>If the value of this parameter is <code>OFF</code>, then the value of the <code>DeleteLambda</code> parameter of the <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DeleteCanary.html">DeleteCanary</a> operation determines whether the Lambda functions and layers will be deleted.</p>
+    pub fn set_provisioned_resource_cleanup(mut self, input: ::std::option::Option<crate::types::ProvisionedResourceCleanupSetting>) -> Self {
+        self.provisioned_resource_cleanup = input;
+        self
+    }
+    /// <p>Specifies whether to also delete the Lambda functions and layers used by this canary when the canary is deleted.</p>
+    /// <p>If the value of this parameter is <code>OFF</code>, then the value of the <code>DeleteLambda</code> parameter of the <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DeleteCanary.html">DeleteCanary</a> operation determines whether the Lambda functions and layers will be deleted.</p>
+    pub fn get_provisioned_resource_cleanup(&self) -> &::std::option::Option<crate::types::ProvisionedResourceCleanupSetting> {
+        &self.provisioned_resource_cleanup
+    }
     /// Consumes the builder and constructs a [`UpdateCanaryInput`](crate::operation::update_canary::UpdateCanaryInput).
     pub fn build(
         self,
@@ -389,6 +415,7 @@ impl UpdateCanaryInputBuilder {
             visual_reference: self.visual_reference,
             artifact_s3_location: self.artifact_s3_location,
             artifact_config: self.artifact_config,
+            provisioned_resource_cleanup: self.provisioned_resource_cleanup,
         })
     }
 }

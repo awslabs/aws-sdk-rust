@@ -6,11 +6,17 @@
 pub struct PaymentConfiguration {
     /// <p>The collaboration member's payment responsibilities set by the collaboration creator for query compute costs.</p>
     pub query_compute: ::std::option::Option<crate::types::QueryComputePaymentConfig>,
+    /// <p>An object representing the collaboration member's machine learning payment responsibilities set by the collaboration creator.</p>
+    pub machine_learning: ::std::option::Option<crate::types::MlPaymentConfig>,
 }
 impl PaymentConfiguration {
     /// <p>The collaboration member's payment responsibilities set by the collaboration creator for query compute costs.</p>
     pub fn query_compute(&self) -> ::std::option::Option<&crate::types::QueryComputePaymentConfig> {
         self.query_compute.as_ref()
+    }
+    /// <p>An object representing the collaboration member's machine learning payment responsibilities set by the collaboration creator.</p>
+    pub fn machine_learning(&self) -> ::std::option::Option<&crate::types::MlPaymentConfig> {
+        self.machine_learning.as_ref()
     }
 }
 impl PaymentConfiguration {
@@ -25,6 +31,7 @@ impl PaymentConfiguration {
 #[non_exhaustive]
 pub struct PaymentConfigurationBuilder {
     pub(crate) query_compute: ::std::option::Option<crate::types::QueryComputePaymentConfig>,
+    pub(crate) machine_learning: ::std::option::Option<crate::types::MlPaymentConfig>,
 }
 impl PaymentConfigurationBuilder {
     /// <p>The collaboration member's payment responsibilities set by the collaboration creator for query compute costs.</p>
@@ -42,10 +49,25 @@ impl PaymentConfigurationBuilder {
     pub fn get_query_compute(&self) -> &::std::option::Option<crate::types::QueryComputePaymentConfig> {
         &self.query_compute
     }
+    /// <p>An object representing the collaboration member's machine learning payment responsibilities set by the collaboration creator.</p>
+    pub fn machine_learning(mut self, input: crate::types::MlPaymentConfig) -> Self {
+        self.machine_learning = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>An object representing the collaboration member's machine learning payment responsibilities set by the collaboration creator.</p>
+    pub fn set_machine_learning(mut self, input: ::std::option::Option<crate::types::MlPaymentConfig>) -> Self {
+        self.machine_learning = input;
+        self
+    }
+    /// <p>An object representing the collaboration member's machine learning payment responsibilities set by the collaboration creator.</p>
+    pub fn get_machine_learning(&self) -> &::std::option::Option<crate::types::MlPaymentConfig> {
+        &self.machine_learning
+    }
     /// Consumes the builder and constructs a [`PaymentConfiguration`](crate::types::PaymentConfiguration).
     pub fn build(self) -> crate::types::PaymentConfiguration {
         crate::types::PaymentConfiguration {
             query_compute: self.query_compute,
+            machine_learning: self.machine_learning,
         }
     }
 }

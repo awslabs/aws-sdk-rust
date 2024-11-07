@@ -186,3 +186,6 @@ pub mod update_knowledge_base;
 
 /// Types for the `UpdatePrompt` operation.
 pub mod update_prompt;
+
+/// Types for the `ValidateFlowDefinition` operation.
+pub mod validate_flow_definition;

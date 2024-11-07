@@ -11,17 +11,83 @@ pub use crate::types::_column_schema::ColumnSchemaBuilder;
 
 pub use crate::types::_training_dataset_summary::TrainingDatasetSummaryBuilder;
 
+pub use crate::types::_status_details::StatusDetailsBuilder;
+
+pub use crate::types::_inference_container_execution_parameters::InferenceContainerExecutionParametersBuilder;
+
+pub use crate::types::_model_inference_data_source::ModelInferenceDataSourceBuilder;
+
+pub use crate::types::_inference_output_configuration::InferenceOutputConfigurationBuilder;
+
+pub use crate::types::_inference_receiver_member::InferenceReceiverMemberBuilder;
+
+pub use crate::types::_inference_resource_config::InferenceResourceConfigBuilder;
+
+pub use crate::types::_trained_model_inference_job_summary::TrainedModelInferenceJobSummaryBuilder;
+
+pub use crate::types::_trained_model_export_output_configuration::TrainedModelExportOutputConfigurationBuilder;
+
+pub use crate::types::_trained_model_export_receiver_member::TrainedModelExportReceiverMemberBuilder;
+
+pub use crate::types::_stopping_condition::StoppingConditionBuilder;
+
+pub use crate::types::_resource_config::ResourceConfigBuilder;
+
+pub use crate::types::_model_training_data_channel::ModelTrainingDataChannelBuilder;
+
+pub use crate::types::_trained_model_summary::TrainedModelSummaryBuilder;
+
+pub use crate::types::_input_channel::InputChannelBuilder;
+
+pub use crate::types::_protected_query_input_parameters::ProtectedQueryInputParametersBuilder;
+
+pub use crate::types::_worker_compute_configuration::WorkerComputeConfigurationBuilder;
+
+pub use crate::types::_protected_query_sql_parameters::ProtectedQuerySqlParametersBuilder;
+
+pub use crate::types::_ml_input_channel_summary::MlInputChannelSummaryBuilder;
+
+pub use crate::types::_ml_output_configuration::MlOutputConfigurationBuilder;
+
+pub use crate::types::_destination::DestinationBuilder;
+
+pub use crate::types::_s3_config_map::S3ConfigMapBuilder;
+
+pub use crate::types::_privacy_configuration::PrivacyConfigurationBuilder;
+
+pub use crate::types::_privacy_configuration_policies::PrivacyConfigurationPoliciesBuilder;
+
+pub use crate::types::_trained_model_inference_jobs_configuration_policy::TrainedModelInferenceJobsConfigurationPolicyBuilder;
+
+pub use crate::types::_trained_model_inference_max_output_size::TrainedModelInferenceMaxOutputSizeBuilder;
+
+pub use crate::types::_logs_configuration_policy::LogsConfigurationPolicyBuilder;
+
+pub use crate::types::_trained_model_exports_configuration_policy::TrainedModelExportsConfigurationPolicyBuilder;
+
+pub use crate::types::_trained_model_exports_max_size::TrainedModelExportsMaxSizeBuilder;
+
+pub use crate::types::_trained_models_configuration_policy::TrainedModelsConfigurationPolicyBuilder;
+
+pub use crate::types::_metrics_configuration_policy::MetricsConfigurationPolicyBuilder;
+
+pub use crate::types::_configured_model_algorithm_association_summary::ConfiguredModelAlgorithmAssociationSummaryBuilder;
+
+pub use crate::types::_inference_container_config::InferenceContainerConfigBuilder;
+
+pub use crate::types::_container_config::ContainerConfigBuilder;
+
+pub use crate::types::_metric_definition::MetricDefinitionBuilder;
+
+pub use crate::types::_configured_model_algorithm_summary::ConfiguredModelAlgorithmSummaryBuilder;
+
 pub use crate::types::_audience_size_config::AudienceSizeConfigBuilder;
 
 pub use crate::types::_configured_audience_model_output_config::ConfiguredAudienceModelOutputConfigBuilder;
 
 pub use crate::types::_audience_destination::AudienceDestinationBuilder;
 
-pub use crate::types::_s3_config_map::S3ConfigMapBuilder;
-
 pub use crate::types::_configured_audience_model_summary::ConfiguredAudienceModelSummaryBuilder;
-
-pub use crate::types::_status_details::StatusDetailsBuilder;
 
 pub use crate::types::_audience_model_summary::AudienceModelSummaryBuilder;
 
@@ -33,8 +99,16 @@ pub use crate::types::_audience_size::AudienceSizeBuilder;
 
 pub use crate::types::_audience_generation_job_data_source::AudienceGenerationJobDataSourceBuilder;
 
-pub use crate::types::_protected_query_sql_parameters::ProtectedQuerySqlParametersBuilder;
-
 pub use crate::types::_audience_generation_job_summary::AudienceGenerationJobSummaryBuilder;
 
 pub use crate::types::_audience_export_job_summary::AudienceExportJobSummaryBuilder;
+
+pub use crate::types::_collaboration_trained_model_summary::CollaborationTrainedModelSummaryBuilder;
+
+pub use crate::types::_collaboration_trained_model_inference_job_summary::CollaborationTrainedModelInferenceJobSummaryBuilder;
+
+pub use crate::types::_collaboration_trained_model_export_job_summary::CollaborationTrainedModelExportJobSummaryBuilder;
+
+pub use crate::types::_collaboration_ml_input_channel_summary::CollaborationMlInputChannelSummaryBuilder;
+
+pub use crate::types::_collaboration_configured_model_algorithm_association_summary::CollaborationConfiguredModelAlgorithmAssociationSummaryBuilder;

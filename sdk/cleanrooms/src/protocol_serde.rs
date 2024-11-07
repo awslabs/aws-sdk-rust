@@ -353,6 +353,8 @@ pub(crate) mod shape_membership_protected_query_result_configuration;
 
 pub(crate) mod shape_membership_summary_list;
 
+pub(crate) mod shape_ml_member_abilities;
+
 pub(crate) mod shape_payment_configuration;
 
 pub(crate) mod shape_preview_privacy_impact_parameters_input;
@@ -465,11 +467,15 @@ pub(crate) mod shape_member_abilities;
 
 pub(crate) mod shape_member_summary;
 
+pub(crate) mod shape_membership_ml_payment_config;
+
 pub(crate) mod shape_membership_protected_query_output_configuration;
 
 pub(crate) mod shape_membership_query_compute_payment_config;
 
 pub(crate) mod shape_membership_summary;
+
+pub(crate) mod shape_ml_payment_config;
 
 pub(crate) mod shape_privacy_budget_summary;
 
@@ -519,6 +525,8 @@ pub(crate) mod shape_configured_table_association_analysis_rule_custom;
 
 pub(crate) mod shape_configured_table_association_analysis_rule_list;
 
+pub(crate) mod shape_custom_ml_member_abilities;
+
 pub(crate) mod shape_differential_privacy_preview_aggregation_list;
 
 pub(crate) mod shape_differential_privacy_sensitivity_parameters_list;
@@ -532,6 +540,14 @@ pub(crate) mod shape_id_mapping_table_schema_type_properties;
 pub(crate) mod shape_id_mapping_workflows_supported;
 
 pub(crate) mod shape_id_namespace_association_input_reference_properties_summary;
+
+pub(crate) mod shape_membership_model_inference_payment_config;
+
+pub(crate) mod shape_membership_model_training_payment_config;
+
+pub(crate) mod shape_model_inference_payment_config;
+
+pub(crate) mod shape_model_training_payment_config;
 
 pub(crate) mod shape_parameter_map;
 

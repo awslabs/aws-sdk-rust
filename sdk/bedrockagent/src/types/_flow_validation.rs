@@ -15,6 +15,10 @@ pub struct FlowValidation {
     pub message: ::std::string::String,
     /// <p>The severity of the issue described in the message.</p>
     pub severity: crate::types::FlowValidationSeverity,
+    /// <p>Specific details about the validation issue encountered in the flow.</p>
+    pub details: ::std::option::Option<crate::types::FlowValidationDetails>,
+    /// <p>The type of validation issue encountered in the flow.</p>
+    pub r#type: ::std::option::Option<crate::types::FlowValidationType>,
 }
 impl FlowValidation {
     /// <p>A message describing the validation error.</p>
@@ -25,6 +29,14 @@ impl FlowValidation {
     /// <p>The severity of the issue described in the message.</p>
     pub fn severity(&self) -> &crate::types::FlowValidationSeverity {
         &self.severity
+    }
+    /// <p>Specific details about the validation issue encountered in the flow.</p>
+    pub fn details(&self) -> ::std::option::Option<&crate::types::FlowValidationDetails> {
+        self.details.as_ref()
+    }
+    /// <p>The type of validation issue encountered in the flow.</p>
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::FlowValidationType> {
+        self.r#type.as_ref()
     }
 }
 impl FlowValidation {
@@ -40,6 +52,8 @@ impl FlowValidation {
 pub struct FlowValidationBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     pub(crate) severity: ::std::option::Option<crate::types::FlowValidationSeverity>,
+    pub(crate) details: ::std::option::Option<crate::types::FlowValidationDetails>,
+    pub(crate) r#type: ::std::option::Option<crate::types::FlowValidationType>,
 }
 impl FlowValidationBuilder {
     /// <p>A message describing the validation error.</p>
@@ -72,6 +86,34 @@ impl FlowValidationBuilder {
     pub fn get_severity(&self) -> &::std::option::Option<crate::types::FlowValidationSeverity> {
         &self.severity
     }
+    /// <p>Specific details about the validation issue encountered in the flow.</p>
+    pub fn details(mut self, input: crate::types::FlowValidationDetails) -> Self {
+        self.details = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specific details about the validation issue encountered in the flow.</p>
+    pub fn set_details(mut self, input: ::std::option::Option<crate::types::FlowValidationDetails>) -> Self {
+        self.details = input;
+        self
+    }
+    /// <p>Specific details about the validation issue encountered in the flow.</p>
+    pub fn get_details(&self) -> &::std::option::Option<crate::types::FlowValidationDetails> {
+        &self.details
+    }
+    /// <p>The type of validation issue encountered in the flow.</p>
+    pub fn r#type(mut self, input: crate::types::FlowValidationType) -> Self {
+        self.r#type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The type of validation issue encountered in the flow.</p>
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::FlowValidationType>) -> Self {
+        self.r#type = input;
+        self
+    }
+    /// <p>The type of validation issue encountered in the flow.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::FlowValidationType> {
+        &self.r#type
+    }
     /// Consumes the builder and constructs a [`FlowValidation`](crate::types::FlowValidation).
     /// This method will fail if any of the following fields are not set:
     /// - [`message`](crate::types::builders::FlowValidationBuilder::message)
@@ -90,6 +132,8 @@ impl FlowValidationBuilder {
                     "severity was not specified but it is required when building FlowValidation",
                 )
             })?,
+            details: self.details,
+            r#type: self.r#type,
         })
     }
 }

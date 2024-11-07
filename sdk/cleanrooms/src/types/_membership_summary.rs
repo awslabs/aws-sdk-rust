@@ -26,6 +26,9 @@ pub struct MembershipSummary {
     pub status: crate::types::MembershipStatus,
     /// <p>The abilities granted to the collaboration member.</p>
     pub member_abilities: ::std::vec::Vec<crate::types::MemberAbility>,
+    /// <p>Provides a summary of the ML abilities for the collaboration member.</p>
+    /// <p>Custom ML modeling is in beta release and is subject to change. For beta terms and conditions, see <i>Betas and Previews</i> in the <a href="https://aws.amazon.com/service-terms/">Amazon Web Services Service Terms</a>.</p>
+    pub ml_member_abilities: ::std::option::Option<crate::types::MlMemberAbilities>,
     /// <p>The payment responsibilities accepted by the collaboration member.</p>
     pub payment_configuration: ::std::option::Option<crate::types::MembershipPaymentConfiguration>,
 }
@@ -82,6 +85,11 @@ impl MembershipSummary {
         use std::ops::Deref;
         self.member_abilities.deref()
     }
+    /// <p>Provides a summary of the ML abilities for the collaboration member.</p>
+    /// <p>Custom ML modeling is in beta release and is subject to change. For beta terms and conditions, see <i>Betas and Previews</i> in the <a href="https://aws.amazon.com/service-terms/">Amazon Web Services Service Terms</a>.</p>
+    pub fn ml_member_abilities(&self) -> ::std::option::Option<&crate::types::MlMemberAbilities> {
+        self.ml_member_abilities.as_ref()
+    }
     /// <p>The payment responsibilities accepted by the collaboration member.</p>
     pub fn payment_configuration(&self) -> ::std::option::Option<&crate::types::MembershipPaymentConfiguration> {
         self.payment_configuration.as_ref()
@@ -109,6 +117,7 @@ pub struct MembershipSummaryBuilder {
     pub(crate) update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) status: ::std::option::Option<crate::types::MembershipStatus>,
     pub(crate) member_abilities: ::std::option::Option<::std::vec::Vec<crate::types::MemberAbility>>,
+    pub(crate) ml_member_abilities: ::std::option::Option<crate::types::MlMemberAbilities>,
     pub(crate) payment_configuration: ::std::option::Option<crate::types::MembershipPaymentConfiguration>,
 }
 impl MembershipSummaryBuilder {
@@ -282,6 +291,23 @@ impl MembershipSummaryBuilder {
     pub fn get_member_abilities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MemberAbility>> {
         &self.member_abilities
     }
+    /// <p>Provides a summary of the ML abilities for the collaboration member.</p>
+    /// <p>Custom ML modeling is in beta release and is subject to change. For beta terms and conditions, see <i>Betas and Previews</i> in the <a href="https://aws.amazon.com/service-terms/">Amazon Web Services Service Terms</a>.</p>
+    pub fn ml_member_abilities(mut self, input: crate::types::MlMemberAbilities) -> Self {
+        self.ml_member_abilities = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Provides a summary of the ML abilities for the collaboration member.</p>
+    /// <p>Custom ML modeling is in beta release and is subject to change. For beta terms and conditions, see <i>Betas and Previews</i> in the <a href="https://aws.amazon.com/service-terms/">Amazon Web Services Service Terms</a>.</p>
+    pub fn set_ml_member_abilities(mut self, input: ::std::option::Option<crate::types::MlMemberAbilities>) -> Self {
+        self.ml_member_abilities = input;
+        self
+    }
+    /// <p>Provides a summary of the ML abilities for the collaboration member.</p>
+    /// <p>Custom ML modeling is in beta release and is subject to change. For beta terms and conditions, see <i>Betas and Previews</i> in the <a href="https://aws.amazon.com/service-terms/">Amazon Web Services Service Terms</a>.</p>
+    pub fn get_ml_member_abilities(&self) -> &::std::option::Option<crate::types::MlMemberAbilities> {
+        &self.ml_member_abilities
+    }
     /// <p>The payment responsibilities accepted by the collaboration member.</p>
     /// This field is required.
     pub fn payment_configuration(mut self, input: crate::types::MembershipPaymentConfiguration) -> Self {
@@ -378,6 +404,7 @@ impl MembershipSummaryBuilder {
                     "member_abilities was not specified but it is required when building MembershipSummary",
                 )
             })?,
+            ml_member_abilities: self.ml_member_abilities,
             payment_configuration: self.payment_configuration,
         })
     }

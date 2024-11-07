@@ -27,6 +27,8 @@ impl crate::operation::converse_stream::builders::ConverseStreamInputBuilder {
 /// <p>The CLI doesn't support streaming operations in Amazon Bedrock, including <code>ConverseStream</code>.</p>
 /// </note>
 /// <p>Amazon Bedrock doesn't store any text, images, or documents that you provide as content. The data is only used to generate the response.</p>
+/// <p>You can submit a prompt by including it in the <code>messages</code> field, specifying the <code>modelId</code> of a foundation model or inference profile to run inference on it, and including any other fields that are relevant to your use case.</p>
+/// <p>You can also submit a prompt from Prompt management by specifying the ARN of the prompt version and including a map of variables to values in the <code>promptVariables</code> field. You can append more messages to the prompt by using the <code>messages</code> field. If you use a prompt from Prompt management, you can't include the following fields in the request: <code>additionalModelRequestFields</code>, <code>inferenceConfig</code>, <code>system</code>, or <code>toolConfig</code>. Instead, these fields must be defined through Prompt management. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-management-use.html">Use a prompt from Prompt management</a>.</p>
 /// <p>For information about the Converse API, see <i>Use the Converse API</i> in the <i>Amazon Bedrock User Guide</i>. To use a guardrail, see <i>Use a guardrail with the Converse API</i> in the <i>Amazon Bedrock User Guide</i>. To use a tool with a model, see <i>Tool use (Function calling)</i> in the <i>Amazon Bedrock User Guide</i></p>
 /// <p>For example code, see <i>Conversation streaming example</i> in the <i>Amazon Bedrock User Guide</i>.</p>
 /// <p>This operation requires permission for the <code>bedrock:InvokeModelWithResponseStream</code> action.</p>
@@ -115,8 +117,7 @@ impl ConverseStreamFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The ID for the model.</p>
-    /// <p>The <code>modelId</code> to provide depends on the type of model or throughput that you use:</p>
+    /// <p>Specifies the model or throughput with which to run inference, or the prompt resource to use in inference. The value depends on the resource that you use:</p>
     /// <ul>
     /// <li>
     /// <p>If you use a base model, specify the model ID or its ARN. For a list of model IDs for base models, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-ids.html#model-ids-arns">Amazon Bedrock base model IDs (on-demand throughput)</a> in the Amazon Bedrock User Guide.</p></li>
@@ -126,14 +127,15 @@ impl ConverseStreamFluentBuilder {
     /// <p>If you use a provisioned model, specify the ARN of the Provisioned Throughput. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prov-thru-use.html">Run inference using a Provisioned Throughput</a> in the Amazon Bedrock User Guide.</p></li>
     /// <li>
     /// <p>If you use a custom model, first purchase Provisioned Throughput for it. Then specify the ARN of the resulting provisioned model. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-use.html">Use a custom model in Amazon Bedrock</a> in the Amazon Bedrock User Guide.</p></li>
+    /// <li>
+    /// <p>To include a prompt that was defined in Prompt management, specify the ARN of the prompt version to use.</p></li>
     /// </ul>
     /// <p>The Converse API doesn't support <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-import-model.html">imported models</a>.</p>
     pub fn model_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.model_id(input.into());
         self
     }
-    /// <p>The ID for the model.</p>
-    /// <p>The <code>modelId</code> to provide depends on the type of model or throughput that you use:</p>
+    /// <p>Specifies the model or throughput with which to run inference, or the prompt resource to use in inference. The value depends on the resource that you use:</p>
     /// <ul>
     /// <li>
     /// <p>If you use a base model, specify the model ID or its ARN. For a list of model IDs for base models, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-ids.html#model-ids-arns">Amazon Bedrock base model IDs (on-demand throughput)</a> in the Amazon Bedrock User Guide.</p></li>
@@ -143,14 +145,15 @@ impl ConverseStreamFluentBuilder {
     /// <p>If you use a provisioned model, specify the ARN of the Provisioned Throughput. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prov-thru-use.html">Run inference using a Provisioned Throughput</a> in the Amazon Bedrock User Guide.</p></li>
     /// <li>
     /// <p>If you use a custom model, first purchase Provisioned Throughput for it. Then specify the ARN of the resulting provisioned model. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-use.html">Use a custom model in Amazon Bedrock</a> in the Amazon Bedrock User Guide.</p></li>
+    /// <li>
+    /// <p>To include a prompt that was defined in Prompt management, specify the ARN of the prompt version to use.</p></li>
     /// </ul>
     /// <p>The Converse API doesn't support <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-import-model.html">imported models</a>.</p>
     pub fn set_model_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_model_id(input);
         self
     }
-    /// <p>The ID for the model.</p>
-    /// <p>The <code>modelId</code> to provide depends on the type of model or throughput that you use:</p>
+    /// <p>Specifies the model or throughput with which to run inference, or the prompt resource to use in inference. The value depends on the resource that you use:</p>
     /// <ul>
     /// <li>
     /// <p>If you use a base model, specify the model ID or its ARN. For a list of model IDs for base models, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-ids.html#model-ids-arns">Amazon Bedrock base model IDs (on-demand throughput)</a> in the Amazon Bedrock User Guide.</p></li>
@@ -160,6 +163,8 @@ impl ConverseStreamFluentBuilder {
     /// <p>If you use a provisioned model, specify the ARN of the Provisioned Throughput. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prov-thru-use.html">Run inference using a Provisioned Throughput</a> in the Amazon Bedrock User Guide.</p></li>
     /// <li>
     /// <p>If you use a custom model, first purchase Provisioned Throughput for it. Then specify the ARN of the resulting provisioned model. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-use.html">Use a custom model in Amazon Bedrock</a> in the Amazon Bedrock User Guide.</p></li>
+    /// <li>
+    /// <p>To include a prompt that was defined in Prompt management, specify the ARN of the prompt version to use.</p></li>
     /// </ul>
     /// <p>The Converse API doesn't support <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-import-model.html">imported models</a>.</p>
     pub fn get_model_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -189,31 +194,31 @@ impl ConverseStreamFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_system`](Self::set_system).
     ///
-    /// <p>A system prompt to send to the model.</p>
+    /// <p>A prompt that provides instructions or context to the model about the task it should perform, or the persona it should adopt during the conversation.</p>
     pub fn system(mut self, input: crate::types::SystemContentBlock) -> Self {
         self.inner = self.inner.system(input);
         self
     }
-    /// <p>A system prompt to send to the model.</p>
+    /// <p>A prompt that provides instructions or context to the model about the task it should perform, or the persona it should adopt during the conversation.</p>
     pub fn set_system(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SystemContentBlock>>) -> Self {
         self.inner = self.inner.set_system(input);
         self
     }
-    /// <p>A system prompt to send to the model.</p>
+    /// <p>A prompt that provides instructions or context to the model about the task it should perform, or the persona it should adopt during the conversation.</p>
     pub fn get_system(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SystemContentBlock>> {
         self.inner.get_system()
     }
-    /// <p>Inference parameters to pass to the model. <code>ConverseStream</code> supports a base set of inference parameters. If you need to pass additional parameters that the model supports, use the <code>additionalModelRequestFields</code> request field.</p>
+    /// <p>Inference parameters to pass to the model. <code>Converse</code> and <code>ConverseStream</code> support a base set of inference parameters. If you need to pass additional parameters that the model supports, use the <code>additionalModelRequestFields</code> request field.</p>
     pub fn inference_config(mut self, input: crate::types::InferenceConfiguration) -> Self {
         self.inner = self.inner.inference_config(input);
         self
     }
-    /// <p>Inference parameters to pass to the model. <code>ConverseStream</code> supports a base set of inference parameters. If you need to pass additional parameters that the model supports, use the <code>additionalModelRequestFields</code> request field.</p>
+    /// <p>Inference parameters to pass to the model. <code>Converse</code> and <code>ConverseStream</code> support a base set of inference parameters. If you need to pass additional parameters that the model supports, use the <code>additionalModelRequestFields</code> request field.</p>
     pub fn set_inference_config(mut self, input: ::std::option::Option<crate::types::InferenceConfiguration>) -> Self {
         self.inner = self.inner.set_inference_config(input);
         self
     }
-    /// <p>Inference parameters to pass to the model. <code>ConverseStream</code> supports a base set of inference parameters. If you need to pass additional parameters that the model supports, use the <code>additionalModelRequestFields</code> request field.</p>
+    /// <p>Inference parameters to pass to the model. <code>Converse</code> and <code>ConverseStream</code> support a base set of inference parameters. If you need to pass additional parameters that the model supports, use the <code>additionalModelRequestFields</code> request field.</p>
     pub fn get_inference_config(&self) -> &::std::option::Option<crate::types::InferenceConfiguration> {
         self.inner.get_inference_config()
     }
@@ -237,59 +242,83 @@ impl ConverseStreamFluentBuilder {
     pub fn get_tool_config(&self) -> &::std::option::Option<crate::types::ToolConfiguration> {
         self.inner.get_tool_config()
     }
-    /// <p>Configuration information for a guardrail that you want to use in the request.</p>
+    /// <p>Configuration information for a guardrail that you want to use in the request. If you include <code>guardContent</code> blocks in the <code>content</code> field in the <code>messages</code> field, the guardrail operates only on those messages. If you include no <code>guardContent</code> blocks, the guardrail operates on all messages in the request body and in any included prompt resource.</p>
     pub fn guardrail_config(mut self, input: crate::types::GuardrailStreamConfiguration) -> Self {
         self.inner = self.inner.guardrail_config(input);
         self
     }
-    /// <p>Configuration information for a guardrail that you want to use in the request.</p>
+    /// <p>Configuration information for a guardrail that you want to use in the request. If you include <code>guardContent</code> blocks in the <code>content</code> field in the <code>messages</code> field, the guardrail operates only on those messages. If you include no <code>guardContent</code> blocks, the guardrail operates on all messages in the request body and in any included prompt resource.</p>
     pub fn set_guardrail_config(mut self, input: ::std::option::Option<crate::types::GuardrailStreamConfiguration>) -> Self {
         self.inner = self.inner.set_guardrail_config(input);
         self
     }
-    /// <p>Configuration information for a guardrail that you want to use in the request.</p>
+    /// <p>Configuration information for a guardrail that you want to use in the request. If you include <code>guardContent</code> blocks in the <code>content</code> field in the <code>messages</code> field, the guardrail operates only on those messages. If you include no <code>guardContent</code> blocks, the guardrail operates on all messages in the request body and in any included prompt resource.</p>
     pub fn get_guardrail_config(&self) -> &::std::option::Option<crate::types::GuardrailStreamConfiguration> {
         self.inner.get_guardrail_config()
     }
-    /// <p>Additional inference parameters that the model supports, beyond the base set of inference parameters that <code>ConverseStream</code> supports in the <code>inferenceConfig</code> field.</p>
+    /// <p>Additional inference parameters that the model supports, beyond the base set of inference parameters that <code>Converse</code> and <code>ConverseStream</code> support in the <code>inferenceConfig</code> field. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters.html">Model parameters</a>.</p>
     pub fn additional_model_request_fields(mut self, input: ::aws_smithy_types::Document) -> Self {
         self.inner = self.inner.additional_model_request_fields(input);
         self
     }
-    /// <p>Additional inference parameters that the model supports, beyond the base set of inference parameters that <code>ConverseStream</code> supports in the <code>inferenceConfig</code> field.</p>
+    /// <p>Additional inference parameters that the model supports, beyond the base set of inference parameters that <code>Converse</code> and <code>ConverseStream</code> support in the <code>inferenceConfig</code> field. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters.html">Model parameters</a>.</p>
     pub fn set_additional_model_request_fields(mut self, input: ::std::option::Option<::aws_smithy_types::Document>) -> Self {
         self.inner = self.inner.set_additional_model_request_fields(input);
         self
     }
-    /// <p>Additional inference parameters that the model supports, beyond the base set of inference parameters that <code>ConverseStream</code> supports in the <code>inferenceConfig</code> field.</p>
+    /// <p>Additional inference parameters that the model supports, beyond the base set of inference parameters that <code>Converse</code> and <code>ConverseStream</code> support in the <code>inferenceConfig</code> field. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters.html">Model parameters</a>.</p>
     pub fn get_additional_model_request_fields(&self) -> &::std::option::Option<::aws_smithy_types::Document> {
         self.inner.get_additional_model_request_fields()
+    }
+    ///
+    /// Adds a key-value pair to `promptVariables`.
+    ///
+    /// To override the contents of this collection use [`set_prompt_variables`](Self::set_prompt_variables).
+    ///
+    /// <p>Contains a map of variables in a prompt from Prompt management to objects containing the values to fill in for them when running model invocation. This field is ignored if you don't specify a prompt resource in the <code>modelId</code> field.</p>
+    pub fn prompt_variables(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::PromptVariableValues) -> Self {
+        self.inner = self.inner.prompt_variables(k.into(), v);
+        self
+    }
+    /// <p>Contains a map of variables in a prompt from Prompt management to objects containing the values to fill in for them when running model invocation. This field is ignored if you don't specify a prompt resource in the <code>modelId</code> field.</p>
+    pub fn set_prompt_variables(
+        mut self,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::PromptVariableValues>>,
+    ) -> Self {
+        self.inner = self.inner.set_prompt_variables(input);
+        self
+    }
+    /// <p>Contains a map of variables in a prompt from Prompt management to objects containing the values to fill in for them when running model invocation. This field is ignored if you don't specify a prompt resource in the <code>modelId</code> field.</p>
+    pub fn get_prompt_variables(
+        &self,
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::PromptVariableValues>> {
+        self.inner.get_prompt_variables()
     }
     ///
     /// Appends an item to `additionalModelResponseFieldPaths`.
     ///
     /// To override the contents of this collection use [`set_additional_model_response_field_paths`](Self::set_additional_model_response_field_paths).
     ///
-    /// <p>Additional model parameters field paths to return in the response. <code>ConverseStream</code> returns the requested fields as a JSON Pointer object in the <code>additionalModelResponseFields</code> field. The following is example JSON for <code>additionalModelResponseFieldPaths</code>.</p>
+    /// <p>Additional model parameters field paths to return in the response. <code>Converse</code> and <code>ConverseStream</code> return the requested fields as a JSON Pointer object in the <code>additionalModelResponseFields</code> field. The following is example JSON for <code>additionalModelResponseFieldPaths</code>.</p>
     /// <p><code>\[ "/stop_sequence" \]</code></p>
     /// <p>For information about the JSON Pointer syntax, see the <a href="https://datatracker.ietf.org/doc/html/rfc6901">Internet Engineering Task Force (IETF)</a> documentation.</p>
-    /// <p><code>ConverseStream</code> rejects an empty JSON Pointer or incorrectly structured JSON Pointer with a <code>400</code> error code. if the JSON Pointer is valid, but the requested field is not in the model response, it is ignored by <code>ConverseStream</code>.</p>
+    /// <p><code>Converse</code> and <code>ConverseStream</code> reject an empty JSON Pointer or incorrectly structured JSON Pointer with a <code>400</code> error code. if the JSON Pointer is valid, but the requested field is not in the model response, it is ignored by <code>Converse</code>.</p>
     pub fn additional_model_response_field_paths(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.additional_model_response_field_paths(input.into());
         self
     }
-    /// <p>Additional model parameters field paths to return in the response. <code>ConverseStream</code> returns the requested fields as a JSON Pointer object in the <code>additionalModelResponseFields</code> field. The following is example JSON for <code>additionalModelResponseFieldPaths</code>.</p>
+    /// <p>Additional model parameters field paths to return in the response. <code>Converse</code> and <code>ConverseStream</code> return the requested fields as a JSON Pointer object in the <code>additionalModelResponseFields</code> field. The following is example JSON for <code>additionalModelResponseFieldPaths</code>.</p>
     /// <p><code>\[ "/stop_sequence" \]</code></p>
     /// <p>For information about the JSON Pointer syntax, see the <a href="https://datatracker.ietf.org/doc/html/rfc6901">Internet Engineering Task Force (IETF)</a> documentation.</p>
-    /// <p><code>ConverseStream</code> rejects an empty JSON Pointer or incorrectly structured JSON Pointer with a <code>400</code> error code. if the JSON Pointer is valid, but the requested field is not in the model response, it is ignored by <code>ConverseStream</code>.</p>
+    /// <p><code>Converse</code> and <code>ConverseStream</code> reject an empty JSON Pointer or incorrectly structured JSON Pointer with a <code>400</code> error code. if the JSON Pointer is valid, but the requested field is not in the model response, it is ignored by <code>Converse</code>.</p>
     pub fn set_additional_model_response_field_paths(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_additional_model_response_field_paths(input);
         self
     }
-    /// <p>Additional model parameters field paths to return in the response. <code>ConverseStream</code> returns the requested fields as a JSON Pointer object in the <code>additionalModelResponseFields</code> field. The following is example JSON for <code>additionalModelResponseFieldPaths</code>.</p>
+    /// <p>Additional model parameters field paths to return in the response. <code>Converse</code> and <code>ConverseStream</code> return the requested fields as a JSON Pointer object in the <code>additionalModelResponseFields</code> field. The following is example JSON for <code>additionalModelResponseFieldPaths</code>.</p>
     /// <p><code>\[ "/stop_sequence" \]</code></p>
     /// <p>For information about the JSON Pointer syntax, see the <a href="https://datatracker.ietf.org/doc/html/rfc6901">Internet Engineering Task Force (IETF)</a> documentation.</p>
-    /// <p><code>ConverseStream</code> rejects an empty JSON Pointer or incorrectly structured JSON Pointer with a <code>400</code> error code. if the JSON Pointer is valid, but the requested field is not in the model response, it is ignored by <code>ConverseStream</code>.</p>
+    /// <p><code>Converse</code> and <code>ConverseStream</code> reject an empty JSON Pointer or incorrectly structured JSON Pointer with a <code>400</code> error code. if the JSON Pointer is valid, but the requested field is not in the model response, it is ignored by <code>Converse</code>.</p>
     pub fn get_additional_model_response_field_paths(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_additional_model_response_field_paths()
     }

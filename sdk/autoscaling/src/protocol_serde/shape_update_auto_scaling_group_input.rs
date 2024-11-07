@@ -148,6 +148,11 @@ pub fn ser_update_auto_scaling_group_input_input_input(
     if let Some(var_50) = &input.instance_maintenance_policy {
         crate::protocol_serde::shape_instance_maintenance_policy::ser_instance_maintenance_policy(scope_49, var_50)?;
     }
+    #[allow(unused_mut)]
+    let mut scope_51 = writer.prefix("AvailabilityZoneDistribution");
+    if let Some(var_52) = &input.availability_zone_distribution {
+        crate::protocol_serde::shape_availability_zone_distribution::ser_availability_zone_distribution(scope_51, var_52)?;
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

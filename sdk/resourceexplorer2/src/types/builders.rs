@@ -19,6 +19,8 @@ pub use crate::types::_supported_resource_type::SupportedResourceTypeBuilder;
 
 pub use crate::types::_member_index::MemberIndexBuilder;
 
+pub use crate::types::_managed_view::ManagedViewBuilder;
+
 pub use crate::types::_org_configuration::OrgConfigurationBuilder;
 
 pub use crate::types::_batch_get_view_error::BatchGetViewErrorBuilder;

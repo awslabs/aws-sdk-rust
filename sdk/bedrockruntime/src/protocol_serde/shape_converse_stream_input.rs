@@ -39,23 +39,36 @@ pub fn ser_converse_stream_input_input(
         }
         array_10.finish();
     }
-    if let Some(var_13) = &input.system {
-        let mut array_14 = object.key("system").start_array();
-        for item_15 in var_13 {
+    if let Some(var_13) = &input.prompt_variables {
+        #[allow(unused_mut)]
+        let mut object_14 = object.key("promptVariables").start_object();
+        for (key_15, value_16) in var_13 {
             {
                 #[allow(unused_mut)]
-                let mut object_16 = array_14.value().start_object();
-                crate::protocol_serde::shape_system_content_block::ser_system_content_block(&mut object_16, item_15)?;
-                object_16.finish();
+                let mut object_17 = object_14.key(key_15.as_str()).start_object();
+                crate::protocol_serde::shape_prompt_variable_values::ser_prompt_variable_values(&mut object_17, value_16)?;
+                object_17.finish();
             }
         }
-        array_14.finish();
+        object_14.finish();
     }
-    if let Some(var_17) = &input.tool_config {
+    if let Some(var_18) = &input.system {
+        let mut array_19 = object.key("system").start_array();
+        for item_20 in var_18 {
+            {
+                #[allow(unused_mut)]
+                let mut object_21 = array_19.value().start_object();
+                crate::protocol_serde::shape_system_content_block::ser_system_content_block(&mut object_21, item_20)?;
+                object_21.finish();
+            }
+        }
+        array_19.finish();
+    }
+    if let Some(var_22) = &input.tool_config {
         #[allow(unused_mut)]
-        let mut object_18 = object.key("toolConfig").start_object();
-        crate::protocol_serde::shape_tool_configuration::ser_tool_configuration(&mut object_18, var_17)?;
-        object_18.finish();
+        let mut object_23 = object.key("toolConfig").start_object();
+        crate::protocol_serde::shape_tool_configuration::ser_tool_configuration(&mut object_23, var_22)?;
+        object_23.finish();
     }
     Ok(())
 }

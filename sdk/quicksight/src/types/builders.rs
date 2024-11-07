@@ -1107,6 +1107,8 @@ pub use crate::types::_trino_parameters::TrinoParametersBuilder;
 
 pub use crate::types::_starburst_parameters::StarburstParametersBuilder;
 
+pub use crate::types::_o_auth_parameters::OAuthParametersBuilder;
+
 pub use crate::types::_databricks_parameters::DatabricksParametersBuilder;
 
 pub use crate::types::_exasol_parameters::ExasolParametersBuilder;

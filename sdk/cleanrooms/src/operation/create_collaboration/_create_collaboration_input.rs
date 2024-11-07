@@ -11,6 +11,9 @@ pub struct CreateCollaborationInput {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The abilities granted to the collaboration creator.</p>
     pub creator_member_abilities: ::std::option::Option<::std::vec::Vec<crate::types::MemberAbility>>,
+    /// <p>The ML abilities granted to the collaboration creator.</p>
+    /// <p>Custom ML modeling is in beta release and is subject to change. For beta terms and conditions, see <i>Betas and Previews</i> in the <a href="https://aws.amazon.com/service-terms/">Amazon Web Services Service Terms</a>.</p>
+    pub creator_ml_member_abilities: ::std::option::Option<crate::types::MlMemberAbilities>,
     /// <p>The display name of the collaboration creator.</p>
     pub creator_display_name: ::std::option::Option<::std::string::String>,
     /// <p>The settings for client-side encryption with Cryptographic Computing for Clean Rooms.</p>
@@ -45,6 +48,11 @@ impl CreateCollaborationInput {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.creator_member_abilities.is_none()`.
     pub fn creator_member_abilities(&self) -> &[crate::types::MemberAbility] {
         self.creator_member_abilities.as_deref().unwrap_or_default()
+    }
+    /// <p>The ML abilities granted to the collaboration creator.</p>
+    /// <p>Custom ML modeling is in beta release and is subject to change. For beta terms and conditions, see <i>Betas and Previews</i> in the <a href="https://aws.amazon.com/service-terms/">Amazon Web Services Service Terms</a>.</p>
+    pub fn creator_ml_member_abilities(&self) -> ::std::option::Option<&crate::types::MlMemberAbilities> {
+        self.creator_ml_member_abilities.as_ref()
     }
     /// <p>The display name of the collaboration creator.</p>
     pub fn creator_display_name(&self) -> ::std::option::Option<&str> {
@@ -87,6 +95,7 @@ pub struct CreateCollaborationInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) creator_member_abilities: ::std::option::Option<::std::vec::Vec<crate::types::MemberAbility>>,
+    pub(crate) creator_ml_member_abilities: ::std::option::Option<crate::types::MlMemberAbilities>,
     pub(crate) creator_display_name: ::std::option::Option<::std::string::String>,
     pub(crate) data_encryption_metadata: ::std::option::Option<crate::types::DataEncryptionMetadata>,
     pub(crate) query_log_status: ::std::option::Option<crate::types::CollaborationQueryLogStatus>,
@@ -164,6 +173,23 @@ impl CreateCollaborationInputBuilder {
     /// <p>The abilities granted to the collaboration creator.</p>
     pub fn get_creator_member_abilities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MemberAbility>> {
         &self.creator_member_abilities
+    }
+    /// <p>The ML abilities granted to the collaboration creator.</p>
+    /// <p>Custom ML modeling is in beta release and is subject to change. For beta terms and conditions, see <i>Betas and Previews</i> in the <a href="https://aws.amazon.com/service-terms/">Amazon Web Services Service Terms</a>.</p>
+    pub fn creator_ml_member_abilities(mut self, input: crate::types::MlMemberAbilities) -> Self {
+        self.creator_ml_member_abilities = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ML abilities granted to the collaboration creator.</p>
+    /// <p>Custom ML modeling is in beta release and is subject to change. For beta terms and conditions, see <i>Betas and Previews</i> in the <a href="https://aws.amazon.com/service-terms/">Amazon Web Services Service Terms</a>.</p>
+    pub fn set_creator_ml_member_abilities(mut self, input: ::std::option::Option<crate::types::MlMemberAbilities>) -> Self {
+        self.creator_ml_member_abilities = input;
+        self
+    }
+    /// <p>The ML abilities granted to the collaboration creator.</p>
+    /// <p>Custom ML modeling is in beta release and is subject to change. For beta terms and conditions, see <i>Betas and Previews</i> in the <a href="https://aws.amazon.com/service-terms/">Amazon Web Services Service Terms</a>.</p>
+    pub fn get_creator_ml_member_abilities(&self) -> &::std::option::Option<crate::types::MlMemberAbilities> {
+        &self.creator_ml_member_abilities
     }
     /// <p>The display name of the collaboration creator.</p>
     /// This field is required.
@@ -270,6 +296,7 @@ impl CreateCollaborationInputBuilder {
             name: self.name,
             description: self.description,
             creator_member_abilities: self.creator_member_abilities,
+            creator_ml_member_abilities: self.creator_ml_member_abilities,
             creator_display_name: self.creator_display_name,
             data_encryption_metadata: self.data_encryption_metadata,
             query_log_status: self.query_log_status,

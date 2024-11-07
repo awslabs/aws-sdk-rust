@@ -60,6 +60,8 @@ pub struct UpdateAutoScalingGroupInput {
     pub default_instance_warmup: ::std::option::Option<i32>,
     /// <p>An instance maintenance policy. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-instance-maintenance-policy.html">Set instance maintenance policy</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     pub instance_maintenance_policy: ::std::option::Option<crate::types::InstanceMaintenancePolicy>,
+    /// <p>The instance capacity distribution across Availability Zones.</p>
+    pub availability_zone_distribution: ::std::option::Option<crate::types::AvailabilityZoneDistribution>,
 }
 impl UpdateAutoScalingGroupInput {
     /// <p>The name of the Auto Scaling group.</p>
@@ -167,6 +169,10 @@ impl UpdateAutoScalingGroupInput {
     pub fn instance_maintenance_policy(&self) -> ::std::option::Option<&crate::types::InstanceMaintenancePolicy> {
         self.instance_maintenance_policy.as_ref()
     }
+    /// <p>The instance capacity distribution across Availability Zones.</p>
+    pub fn availability_zone_distribution(&self) -> ::std::option::Option<&crate::types::AvailabilityZoneDistribution> {
+        self.availability_zone_distribution.as_ref()
+    }
 }
 impl UpdateAutoScalingGroupInput {
     /// Creates a new builder-style object to manufacture [`UpdateAutoScalingGroupInput`](crate::operation::update_auto_scaling_group::UpdateAutoScalingGroupInput).
@@ -201,6 +207,7 @@ pub struct UpdateAutoScalingGroupInputBuilder {
     pub(crate) desired_capacity_type: ::std::option::Option<::std::string::String>,
     pub(crate) default_instance_warmup: ::std::option::Option<i32>,
     pub(crate) instance_maintenance_policy: ::std::option::Option<crate::types::InstanceMaintenancePolicy>,
+    pub(crate) availability_zone_distribution: ::std::option::Option<crate::types::AvailabilityZoneDistribution>,
 }
 impl UpdateAutoScalingGroupInputBuilder {
     /// <p>The name of the Auto Scaling group.</p>
@@ -563,6 +570,20 @@ impl UpdateAutoScalingGroupInputBuilder {
     pub fn get_instance_maintenance_policy(&self) -> &::std::option::Option<crate::types::InstanceMaintenancePolicy> {
         &self.instance_maintenance_policy
     }
+    /// <p>The instance capacity distribution across Availability Zones.</p>
+    pub fn availability_zone_distribution(mut self, input: crate::types::AvailabilityZoneDistribution) -> Self {
+        self.availability_zone_distribution = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The instance capacity distribution across Availability Zones.</p>
+    pub fn set_availability_zone_distribution(mut self, input: ::std::option::Option<crate::types::AvailabilityZoneDistribution>) -> Self {
+        self.availability_zone_distribution = input;
+        self
+    }
+    /// <p>The instance capacity distribution across Availability Zones.</p>
+    pub fn get_availability_zone_distribution(&self) -> &::std::option::Option<crate::types::AvailabilityZoneDistribution> {
+        &self.availability_zone_distribution
+    }
     /// Consumes the builder and constructs a [`UpdateAutoScalingGroupInput`](crate::operation::update_auto_scaling_group::UpdateAutoScalingGroupInput).
     pub fn build(
         self,
@@ -593,6 +614,7 @@ impl UpdateAutoScalingGroupInputBuilder {
             desired_capacity_type: self.desired_capacity_type,
             default_instance_warmup: self.default_instance_warmup,
             instance_maintenance_policy: self.instance_maintenance_policy,
+            availability_zone_distribution: self.availability_zone_distribution,
         })
     }
 }

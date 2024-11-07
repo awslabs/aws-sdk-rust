@@ -337,4 +337,21 @@ impl UpdateCanaryFluentBuilder {
     pub fn get_artifact_config(&self) -> &::std::option::Option<crate::types::ArtifactConfigInput> {
         self.inner.get_artifact_config()
     }
+    /// <p>Specifies whether to also delete the Lambda functions and layers used by this canary when the canary is deleted.</p>
+    /// <p>If the value of this parameter is <code>OFF</code>, then the value of the <code>DeleteLambda</code> parameter of the <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DeleteCanary.html">DeleteCanary</a> operation determines whether the Lambda functions and layers will be deleted.</p>
+    pub fn provisioned_resource_cleanup(mut self, input: crate::types::ProvisionedResourceCleanupSetting) -> Self {
+        self.inner = self.inner.provisioned_resource_cleanup(input);
+        self
+    }
+    /// <p>Specifies whether to also delete the Lambda functions and layers used by this canary when the canary is deleted.</p>
+    /// <p>If the value of this parameter is <code>OFF</code>, then the value of the <code>DeleteLambda</code> parameter of the <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DeleteCanary.html">DeleteCanary</a> operation determines whether the Lambda functions and layers will be deleted.</p>
+    pub fn set_provisioned_resource_cleanup(mut self, input: ::std::option::Option<crate::types::ProvisionedResourceCleanupSetting>) -> Self {
+        self.inner = self.inner.set_provisioned_resource_cleanup(input);
+        self
+    }
+    /// <p>Specifies whether to also delete the Lambda functions and layers used by this canary when the canary is deleted.</p>
+    /// <p>If the value of this parameter is <code>OFF</code>, then the value of the <code>DeleteLambda</code> parameter of the <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DeleteCanary.html">DeleteCanary</a> operation determines whether the Lambda functions and layers will be deleted.</p>
+    pub fn get_provisioned_resource_cleanup(&self) -> &::std::option::Option<crate::types::ProvisionedResourceCleanupSetting> {
+        self.inner.get_provisioned_resource_cleanup()
+    }
 }

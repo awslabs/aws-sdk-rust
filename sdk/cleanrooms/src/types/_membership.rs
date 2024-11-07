@@ -26,6 +26,9 @@ pub struct Membership {
     pub status: crate::types::MembershipStatus,
     /// <p>The abilities granted to the collaboration member.</p>
     pub member_abilities: ::std::vec::Vec<crate::types::MemberAbility>,
+    /// <p>Specifies the ML member abilities that are granted to a collaboration member.</p>
+    /// <p>Custom ML modeling is in beta release and is subject to change. For beta terms and conditions, see <i>Betas and Previews</i> in the <a href="https://aws.amazon.com/service-terms/">Amazon Web Services Service Terms</a>.</p>
+    pub ml_member_abilities: ::std::option::Option<crate::types::MlMemberAbilities>,
     /// <p>An indicator as to whether query logging has been enabled or disabled for the membership.</p>
     pub query_log_status: crate::types::MembershipQueryLogStatus,
     /// <p>The default protected query result configuration as specified by the member who can receive results.</p>
@@ -86,6 +89,11 @@ impl Membership {
         use std::ops::Deref;
         self.member_abilities.deref()
     }
+    /// <p>Specifies the ML member abilities that are granted to a collaboration member.</p>
+    /// <p>Custom ML modeling is in beta release and is subject to change. For beta terms and conditions, see <i>Betas and Previews</i> in the <a href="https://aws.amazon.com/service-terms/">Amazon Web Services Service Terms</a>.</p>
+    pub fn ml_member_abilities(&self) -> ::std::option::Option<&crate::types::MlMemberAbilities> {
+        self.ml_member_abilities.as_ref()
+    }
     /// <p>An indicator as to whether query logging has been enabled or disabled for the membership.</p>
     pub fn query_log_status(&self) -> &crate::types::MembershipQueryLogStatus {
         &self.query_log_status
@@ -121,6 +129,7 @@ pub struct MembershipBuilder {
     pub(crate) update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) status: ::std::option::Option<crate::types::MembershipStatus>,
     pub(crate) member_abilities: ::std::option::Option<::std::vec::Vec<crate::types::MemberAbility>>,
+    pub(crate) ml_member_abilities: ::std::option::Option<crate::types::MlMemberAbilities>,
     pub(crate) query_log_status: ::std::option::Option<crate::types::MembershipQueryLogStatus>,
     pub(crate) default_result_configuration: ::std::option::Option<crate::types::MembershipProtectedQueryResultConfiguration>,
     pub(crate) payment_configuration: ::std::option::Option<crate::types::MembershipPaymentConfiguration>,
@@ -296,6 +305,23 @@ impl MembershipBuilder {
     pub fn get_member_abilities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MemberAbility>> {
         &self.member_abilities
     }
+    /// <p>Specifies the ML member abilities that are granted to a collaboration member.</p>
+    /// <p>Custom ML modeling is in beta release and is subject to change. For beta terms and conditions, see <i>Betas and Previews</i> in the <a href="https://aws.amazon.com/service-terms/">Amazon Web Services Service Terms</a>.</p>
+    pub fn ml_member_abilities(mut self, input: crate::types::MlMemberAbilities) -> Self {
+        self.ml_member_abilities = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies the ML member abilities that are granted to a collaboration member.</p>
+    /// <p>Custom ML modeling is in beta release and is subject to change. For beta terms and conditions, see <i>Betas and Previews</i> in the <a href="https://aws.amazon.com/service-terms/">Amazon Web Services Service Terms</a>.</p>
+    pub fn set_ml_member_abilities(mut self, input: ::std::option::Option<crate::types::MlMemberAbilities>) -> Self {
+        self.ml_member_abilities = input;
+        self
+    }
+    /// <p>Specifies the ML member abilities that are granted to a collaboration member.</p>
+    /// <p>Custom ML modeling is in beta release and is subject to change. For beta terms and conditions, see <i>Betas and Previews</i> in the <a href="https://aws.amazon.com/service-terms/">Amazon Web Services Service Terms</a>.</p>
+    pub fn get_ml_member_abilities(&self) -> &::std::option::Option<crate::types::MlMemberAbilities> {
+        &self.ml_member_abilities
+    }
     /// <p>An indicator as to whether query logging has been enabled or disabled for the membership.</p>
     /// This field is required.
     pub fn query_log_status(mut self, input: crate::types::MembershipQueryLogStatus) -> Self {
@@ -425,6 +451,7 @@ impl MembershipBuilder {
                     "member_abilities was not specified but it is required when building Membership",
                 )
             })?,
+            ml_member_abilities: self.ml_member_abilities,
             query_log_status: self.query_log_status.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "query_log_status",

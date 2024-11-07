@@ -27,38 +27,41 @@ pub fn ser_update_canary_input_input(
             ::aws_smithy_types::Number::NegInt((*var_7).into()),
         );
     }
-    if let Some(var_8) = &input.run_config {
+    if let Some(var_8) = &input.provisioned_resource_cleanup {
+        object.key("ProvisionedResourceCleanup").string(var_8.as_str());
+    }
+    if let Some(var_9) = &input.run_config {
         #[allow(unused_mut)]
-        let mut object_9 = object.key("RunConfig").start_object();
-        crate::protocol_serde::shape_canary_run_config_input::ser_canary_run_config_input(&mut object_9, var_8)?;
-        object_9.finish();
+        let mut object_10 = object.key("RunConfig").start_object();
+        crate::protocol_serde::shape_canary_run_config_input::ser_canary_run_config_input(&mut object_10, var_9)?;
+        object_10.finish();
     }
-    if let Some(var_10) = &input.runtime_version {
-        object.key("RuntimeVersion").string(var_10.as_str());
+    if let Some(var_11) = &input.runtime_version {
+        object.key("RuntimeVersion").string(var_11.as_str());
     }
-    if let Some(var_11) = &input.schedule {
+    if let Some(var_12) = &input.schedule {
         #[allow(unused_mut)]
-        let mut object_12 = object.key("Schedule").start_object();
-        crate::protocol_serde::shape_canary_schedule_input::ser_canary_schedule_input(&mut object_12, var_11)?;
-        object_12.finish();
+        let mut object_13 = object.key("Schedule").start_object();
+        crate::protocol_serde::shape_canary_schedule_input::ser_canary_schedule_input(&mut object_13, var_12)?;
+        object_13.finish();
     }
-    if let Some(var_13) = &input.success_retention_period_in_days {
+    if let Some(var_14) = &input.success_retention_period_in_days {
         object.key("SuccessRetentionPeriodInDays").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_13).into()),
+            ::aws_smithy_types::Number::NegInt((*var_14).into()),
         );
     }
-    if let Some(var_14) = &input.visual_reference {
+    if let Some(var_15) = &input.visual_reference {
         #[allow(unused_mut)]
-        let mut object_15 = object.key("VisualReference").start_object();
-        crate::protocol_serde::shape_visual_reference_input::ser_visual_reference_input(&mut object_15, var_14)?;
-        object_15.finish();
+        let mut object_16 = object.key("VisualReference").start_object();
+        crate::protocol_serde::shape_visual_reference_input::ser_visual_reference_input(&mut object_16, var_15)?;
+        object_16.finish();
     }
-    if let Some(var_16) = &input.vpc_config {
+    if let Some(var_17) = &input.vpc_config {
         #[allow(unused_mut)]
-        let mut object_17 = object.key("VpcConfig").start_object();
-        crate::protocol_serde::shape_vpc_config_input::ser_vpc_config_input(&mut object_17, var_16)?;
-        object_17.finish();
+        let mut object_18 = object.key("VpcConfig").start_object();
+        crate::protocol_serde::shape_vpc_config_input::ser_vpc_config_input(&mut object_18, var_17)?;
+        object_18.finish();
     }
     Ok(())
 }

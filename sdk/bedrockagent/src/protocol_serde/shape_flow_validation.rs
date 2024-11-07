@@ -28,6 +28,16 @@ where
                                     .transpose()?,
                             );
                         }
+                        "details" => {
+                            builder = builder.set_details(crate::protocol_serde::shape_flow_validation_details::de_flow_validation_details(tokens)?);
+                        }
+                        "type" => {
+                            builder = builder.set_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::FlowValidationType::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

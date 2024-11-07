@@ -5,7 +5,8 @@
 pub struct DeleteCanaryInput {
     /// <p>The name of the canary that you want to delete. To find the names of your canaries, use <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DescribeCanaries.html">DescribeCanaries</a>.</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies whether to also delete the Lambda functions and layers used by this canary. The default is false.</p>
+    /// <p>Specifies whether to also delete the Lambda functions and layers used by this canary. The default is <code>false</code>.</p>
+    /// <p>Your setting for this parameter is used only if the canary doesn't have <code>AUTOMATIC</code> for its <code>ProvisionedResourceCleanup</code> field. If that field is set to <code>AUTOMATIC</code>, then the Lambda functions and layers will be deleted when this canary is deleted.</p>
     /// <p>Type: Boolean</p>
     pub delete_lambda: ::std::option::Option<bool>,
 }
@@ -14,7 +15,8 @@ impl DeleteCanaryInput {
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>Specifies whether to also delete the Lambda functions and layers used by this canary. The default is false.</p>
+    /// <p>Specifies whether to also delete the Lambda functions and layers used by this canary. The default is <code>false</code>.</p>
+    /// <p>Your setting for this parameter is used only if the canary doesn't have <code>AUTOMATIC</code> for its <code>ProvisionedResourceCleanup</code> field. If that field is set to <code>AUTOMATIC</code>, then the Lambda functions and layers will be deleted when this canary is deleted.</p>
     /// <p>Type: Boolean</p>
     pub fn delete_lambda(&self) -> ::std::option::Option<bool> {
         self.delete_lambda
@@ -50,19 +52,22 @@ impl DeleteCanaryInputBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>Specifies whether to also delete the Lambda functions and layers used by this canary. The default is false.</p>
+    /// <p>Specifies whether to also delete the Lambda functions and layers used by this canary. The default is <code>false</code>.</p>
+    /// <p>Your setting for this parameter is used only if the canary doesn't have <code>AUTOMATIC</code> for its <code>ProvisionedResourceCleanup</code> field. If that field is set to <code>AUTOMATIC</code>, then the Lambda functions and layers will be deleted when this canary is deleted.</p>
     /// <p>Type: Boolean</p>
     pub fn delete_lambda(mut self, input: bool) -> Self {
         self.delete_lambda = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies whether to also delete the Lambda functions and layers used by this canary. The default is false.</p>
+    /// <p>Specifies whether to also delete the Lambda functions and layers used by this canary. The default is <code>false</code>.</p>
+    /// <p>Your setting for this parameter is used only if the canary doesn't have <code>AUTOMATIC</code> for its <code>ProvisionedResourceCleanup</code> field. If that field is set to <code>AUTOMATIC</code>, then the Lambda functions and layers will be deleted when this canary is deleted.</p>
     /// <p>Type: Boolean</p>
     pub fn set_delete_lambda(mut self, input: ::std::option::Option<bool>) -> Self {
         self.delete_lambda = input;
         self
     }
-    /// <p>Specifies whether to also delete the Lambda functions and layers used by this canary. The default is false.</p>
+    /// <p>Specifies whether to also delete the Lambda functions and layers used by this canary. The default is <code>false</code>.</p>
+    /// <p>Your setting for this parameter is used only if the canary doesn't have <code>AUTOMATIC</code> for its <code>ProvisionedResourceCleanup</code> field. If that field is set to <code>AUTOMATIC</code>, then the Lambda functions and layers will be deleted when this canary is deleted.</p>
     /// <p>Type: Boolean</p>
     pub fn get_delete_lambda(&self) -> &::std::option::Option<bool> {
         &self.delete_lambda
