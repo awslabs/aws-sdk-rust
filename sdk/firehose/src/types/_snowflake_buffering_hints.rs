@@ -4,13 +4,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SnowflakeBufferingHints {
-    /// <p>Buffer incoming data to the specified size, in MBs, before delivering it to the destination. The default value is 1.</p>
+    /// <p>Buffer incoming data to the specified size, in MBs, before delivering it to the destination. The default value is 128.</p>
     pub size_in_mbs: ::std::option::Option<i32>,
     /// <p>Buffer incoming data for the specified period of time, in seconds, before delivering it to the destination. The default value is 0.</p>
     pub interval_in_seconds: ::std::option::Option<i32>,
 }
 impl SnowflakeBufferingHints {
-    /// <p>Buffer incoming data to the specified size, in MBs, before delivering it to the destination. The default value is 1.</p>
+    /// <p>Buffer incoming data to the specified size, in MBs, before delivering it to the destination. The default value is 128.</p>
     pub fn size_in_mbs(&self) -> ::std::option::Option<i32> {
         self.size_in_mbs
     }
@@ -34,17 +34,17 @@ pub struct SnowflakeBufferingHintsBuilder {
     pub(crate) interval_in_seconds: ::std::option::Option<i32>,
 }
 impl SnowflakeBufferingHintsBuilder {
-    /// <p>Buffer incoming data to the specified size, in MBs, before delivering it to the destination. The default value is 1.</p>
+    /// <p>Buffer incoming data to the specified size, in MBs, before delivering it to the destination. The default value is 128.</p>
     pub fn size_in_mbs(mut self, input: i32) -> Self {
         self.size_in_mbs = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Buffer incoming data to the specified size, in MBs, before delivering it to the destination. The default value is 1.</p>
+    /// <p>Buffer incoming data to the specified size, in MBs, before delivering it to the destination. The default value is 128.</p>
     pub fn set_size_in_mbs(mut self, input: ::std::option::Option<i32>) -> Self {
         self.size_in_mbs = input;
         self
     }
-    /// <p>Buffer incoming data to the specified size, in MBs, before delivering it to the destination. The default value is 1.</p>
+    /// <p>Buffer incoming data to the specified size, in MBs, before delivering it to the destination. The default value is 128.</p>
     pub fn get_size_in_mbs(&self) -> &::std::option::Option<i32> {
         &self.size_in_mbs
     }

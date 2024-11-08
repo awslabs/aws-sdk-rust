@@ -22,7 +22,7 @@ pub struct RedshiftDestinationDescription {
     pub s3_backup_mode: ::std::option::Option<crate::types::RedshiftS3BackupMode>,
     /// <p>The configuration for backup in Amazon S3.</p>
     pub s3_backup_description: ::std::option::Option<crate::types::S3DestinationDescription>,
-    /// <p>The Amazon CloudWatch logging options for your delivery stream.</p>
+    /// <p>The Amazon CloudWatch logging options for your Firehose stream.</p>
     pub cloud_watch_logging_options: ::std::option::Option<crate::types::CloudWatchLoggingOptions>,
     /// <p>The configuration that defines how you access secrets for Amazon Redshift.</p>
     pub secrets_manager_configuration: ::std::option::Option<crate::types::SecretsManagerConfiguration>,
@@ -66,7 +66,7 @@ impl RedshiftDestinationDescription {
     pub fn s3_backup_description(&self) -> ::std::option::Option<&crate::types::S3DestinationDescription> {
         self.s3_backup_description.as_ref()
     }
-    /// <p>The Amazon CloudWatch logging options for your delivery stream.</p>
+    /// <p>The Amazon CloudWatch logging options for your Firehose stream.</p>
     pub fn cloud_watch_logging_options(&self) -> ::std::option::Option<&crate::types::CloudWatchLoggingOptions> {
         self.cloud_watch_logging_options.as_ref()
     }
@@ -246,17 +246,17 @@ impl RedshiftDestinationDescriptionBuilder {
     pub fn get_s3_backup_description(&self) -> &::std::option::Option<crate::types::S3DestinationDescription> {
         &self.s3_backup_description
     }
-    /// <p>The Amazon CloudWatch logging options for your delivery stream.</p>
+    /// <p>The Amazon CloudWatch logging options for your Firehose stream.</p>
     pub fn cloud_watch_logging_options(mut self, input: crate::types::CloudWatchLoggingOptions) -> Self {
         self.cloud_watch_logging_options = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The Amazon CloudWatch logging options for your delivery stream.</p>
+    /// <p>The Amazon CloudWatch logging options for your Firehose stream.</p>
     pub fn set_cloud_watch_logging_options(mut self, input: ::std::option::Option<crate::types::CloudWatchLoggingOptions>) -> Self {
         self.cloud_watch_logging_options = input;
         self
     }
-    /// <p>The Amazon CloudWatch logging options for your delivery stream.</p>
+    /// <p>The Amazon CloudWatch logging options for your Firehose stream.</p>
     pub fn get_cloud_watch_logging_options(&self) -> &::std::option::Option<crate::types::CloudWatchLoggingOptions> {
         &self.cloud_watch_logging_options
     }

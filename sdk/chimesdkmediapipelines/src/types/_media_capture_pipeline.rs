@@ -24,6 +24,10 @@ pub struct MediaCapturePipeline {
     pub updated_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The configuration for a specified media pipeline. <code>SourceType</code> must be <code>ChimeSdkMeeting</code>.</p>
     pub chime_sdk_meeting_configuration: ::std::option::Option<crate::types::ChimeSdkMeetingConfiguration>,
+    /// <p>An object that contains server side encryption parameters to be used by media capture pipeline. The parameters can also be used by media concatenation pipeline taking media capture pipeline as a media source.</p>
+    pub sse_aws_key_management_params: ::std::option::Option<crate::types::SseAwsKeyManagementParams>,
+    /// <p>The Amazon Resource Name (ARN) of the sink role to be used with <code>AwsKmsKeyId</code> in <code>SseAwsKeyManagementParams</code>.</p>
+    pub sink_iam_role_arn: ::std::option::Option<::std::string::String>,
 }
 impl MediaCapturePipeline {
     /// <p>The ID of a media pipeline.</p>
@@ -66,6 +70,14 @@ impl MediaCapturePipeline {
     pub fn chime_sdk_meeting_configuration(&self) -> ::std::option::Option<&crate::types::ChimeSdkMeetingConfiguration> {
         self.chime_sdk_meeting_configuration.as_ref()
     }
+    /// <p>An object that contains server side encryption parameters to be used by media capture pipeline. The parameters can also be used by media concatenation pipeline taking media capture pipeline as a media source.</p>
+    pub fn sse_aws_key_management_params(&self) -> ::std::option::Option<&crate::types::SseAwsKeyManagementParams> {
+        self.sse_aws_key_management_params.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the sink role to be used with <code>AwsKmsKeyId</code> in <code>SseAwsKeyManagementParams</code>.</p>
+    pub fn sink_iam_role_arn(&self) -> ::std::option::Option<&str> {
+        self.sink_iam_role_arn.as_deref()
+    }
 }
 impl ::std::fmt::Debug for MediaCapturePipeline {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -80,6 +92,8 @@ impl ::std::fmt::Debug for MediaCapturePipeline {
         formatter.field("created_timestamp", &self.created_timestamp);
         formatter.field("updated_timestamp", &self.updated_timestamp);
         formatter.field("chime_sdk_meeting_configuration", &self.chime_sdk_meeting_configuration);
+        formatter.field("sse_aws_key_management_params", &self.sse_aws_key_management_params);
+        formatter.field("sink_iam_role_arn", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
@@ -104,6 +118,8 @@ pub struct MediaCapturePipelineBuilder {
     pub(crate) created_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) chime_sdk_meeting_configuration: ::std::option::Option<crate::types::ChimeSdkMeetingConfiguration>,
+    pub(crate) sse_aws_key_management_params: ::std::option::Option<crate::types::SseAwsKeyManagementParams>,
+    pub(crate) sink_iam_role_arn: ::std::option::Option<::std::string::String>,
 }
 impl MediaCapturePipelineBuilder {
     /// <p>The ID of a media pipeline.</p>
@@ -246,6 +262,34 @@ impl MediaCapturePipelineBuilder {
     pub fn get_chime_sdk_meeting_configuration(&self) -> &::std::option::Option<crate::types::ChimeSdkMeetingConfiguration> {
         &self.chime_sdk_meeting_configuration
     }
+    /// <p>An object that contains server side encryption parameters to be used by media capture pipeline. The parameters can also be used by media concatenation pipeline taking media capture pipeline as a media source.</p>
+    pub fn sse_aws_key_management_params(mut self, input: crate::types::SseAwsKeyManagementParams) -> Self {
+        self.sse_aws_key_management_params = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>An object that contains server side encryption parameters to be used by media capture pipeline. The parameters can also be used by media concatenation pipeline taking media capture pipeline as a media source.</p>
+    pub fn set_sse_aws_key_management_params(mut self, input: ::std::option::Option<crate::types::SseAwsKeyManagementParams>) -> Self {
+        self.sse_aws_key_management_params = input;
+        self
+    }
+    /// <p>An object that contains server side encryption parameters to be used by media capture pipeline. The parameters can also be used by media concatenation pipeline taking media capture pipeline as a media source.</p>
+    pub fn get_sse_aws_key_management_params(&self) -> &::std::option::Option<crate::types::SseAwsKeyManagementParams> {
+        &self.sse_aws_key_management_params
+    }
+    /// <p>The Amazon Resource Name (ARN) of the sink role to be used with <code>AwsKmsKeyId</code> in <code>SseAwsKeyManagementParams</code>.</p>
+    pub fn sink_iam_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.sink_iam_role_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the sink role to be used with <code>AwsKmsKeyId</code> in <code>SseAwsKeyManagementParams</code>.</p>
+    pub fn set_sink_iam_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.sink_iam_role_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the sink role to be used with <code>AwsKmsKeyId</code> in <code>SseAwsKeyManagementParams</code>.</p>
+    pub fn get_sink_iam_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sink_iam_role_arn
+    }
     /// Consumes the builder and constructs a [`MediaCapturePipeline`](crate::types::MediaCapturePipeline).
     pub fn build(self) -> crate::types::MediaCapturePipeline {
         crate::types::MediaCapturePipeline {
@@ -259,6 +303,8 @@ impl MediaCapturePipelineBuilder {
             created_timestamp: self.created_timestamp,
             updated_timestamp: self.updated_timestamp,
             chime_sdk_meeting_configuration: self.chime_sdk_meeting_configuration,
+            sse_aws_key_management_params: self.sse_aws_key_management_params,
+            sink_iam_role_arn: self.sink_iam_role_arn,
         }
     }
 }
@@ -275,6 +321,8 @@ impl ::std::fmt::Debug for MediaCapturePipelineBuilder {
         formatter.field("created_timestamp", &self.created_timestamp);
         formatter.field("updated_timestamp", &self.updated_timestamp);
         formatter.field("chime_sdk_meeting_configuration", &self.chime_sdk_meeting_configuration);
+        formatter.field("sse_aws_key_management_params", &self.sse_aws_key_management_params);
+        formatter.field("sink_iam_role_arn", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }

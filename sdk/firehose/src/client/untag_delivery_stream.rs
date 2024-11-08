@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UntagDeliveryStream`](crate::operation::untag_delivery_stream::builders::UntagDeliveryStreamFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`delivery_stream_name(impl Into<String>)`](crate::operation::untag_delivery_stream::builders::UntagDeliveryStreamFluentBuilder::delivery_stream_name) / [`set_delivery_stream_name(Option<String>)`](crate::operation::untag_delivery_stream::builders::UntagDeliveryStreamFluentBuilder::set_delivery_stream_name):<br>required: **true**<br><p>The name of the delivery stream.</p><br>
+    ///   - [`delivery_stream_name(impl Into<String>)`](crate::operation::untag_delivery_stream::builders::UntagDeliveryStreamFluentBuilder::delivery_stream_name) / [`set_delivery_stream_name(Option<String>)`](crate::operation::untag_delivery_stream::builders::UntagDeliveryStreamFluentBuilder::set_delivery_stream_name):<br>required: **true**<br><p>The name of the Firehose stream.</p><br>
     ///   - [`tag_keys(impl Into<String>)`](crate::operation::untag_delivery_stream::builders::UntagDeliveryStreamFluentBuilder::tag_keys) / [`set_tag_keys(Option<Vec::<String>>)`](crate::operation::untag_delivery_stream::builders::UntagDeliveryStreamFluentBuilder::set_tag_keys):<br>required: **true**<br><p>A list of tag keys. Each corresponding tag is removed from the delivery stream.</p><br>
     /// - On success, responds with [`UntagDeliveryStreamOutput`](crate::operation::untag_delivery_stream::UntagDeliveryStreamOutput)
     /// - On failure, responds with [`SdkError<UntagDeliveryStreamError>`](crate::operation::untag_delivery_stream::UntagDeliveryStreamError)

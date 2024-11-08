@@ -31,7 +31,15 @@ pub use crate::types::_processor_parameter_name::ProcessorParameterName;
 
 pub use crate::types::_processor_type::ProcessorType;
 
+pub use crate::types::_table_creation_configuration::TableCreationConfiguration;
+
+pub use crate::types::_schema_evolution_configuration::SchemaEvolutionConfiguration;
+
 pub use crate::types::_destination_table_configuration::DestinationTableConfiguration;
+
+pub use crate::types::_partition_spec::PartitionSpec;
+
+pub use crate::types::_partition_field::PartitionField;
 
 pub use crate::types::_snowflake_destination_update::SnowflakeDestinationUpdate;
 
@@ -193,6 +201,32 @@ pub use crate::types::_extended_s3_destination_description::ExtendedS3Destinatio
 
 pub use crate::types::_source_description::SourceDescription;
 
+pub use crate::types::_database_source_description::DatabaseSourceDescription;
+
+pub use crate::types::_database_source_vpc_configuration::DatabaseSourceVpcConfiguration;
+
+pub use crate::types::_database_source_authentication_configuration::DatabaseSourceAuthenticationConfiguration;
+
+pub use crate::types::_database_snapshot_info::DatabaseSnapshotInfo;
+
+pub use crate::types::_failure_description::FailureDescription;
+
+pub use crate::types::_delivery_stream_failure_type::DeliveryStreamFailureType;
+
+pub use crate::types::_snapshot_status::SnapshotStatus;
+
+pub use crate::types::_snapshot_requested_by::SnapshotRequestedBy;
+
+pub use crate::types::_database_column_list::DatabaseColumnList;
+
+pub use crate::types::_database_table_list::DatabaseTableList;
+
+pub use crate::types::_database_list::DatabaseList;
+
+pub use crate::types::_ssl_mode::SslMode;
+
+pub use crate::types::_database_type::DatabaseType;
+
 pub use crate::types::_msk_source_description::MskSourceDescription;
 
 pub use crate::types::_authentication_configuration::AuthenticationConfiguration;
@@ -203,13 +237,11 @@ pub use crate::types::_kinesis_stream_source_description::KinesisStreamSourceDes
 
 pub use crate::types::_delivery_stream_encryption_configuration::DeliveryStreamEncryptionConfiguration;
 
-pub use crate::types::_failure_description::FailureDescription;
-
-pub use crate::types::_delivery_stream_failure_type::DeliveryStreamFailureType;
-
 pub use crate::types::_delivery_stream_encryption_status::DeliveryStreamEncryptionStatus;
 
 pub use crate::types::_delivery_stream_status::DeliveryStreamStatus;
+
+pub use crate::types::_database_source_configuration::DatabaseSourceConfiguration;
 
 pub use crate::types::_iceberg_destination_configuration::IcebergDestinationConfiguration;
 
@@ -278,6 +310,24 @@ mod _content_encoding;
 mod _copy_command;
 
 mod _data_format_conversion_configuration;
+
+mod _database_column_list;
+
+mod _database_list;
+
+mod _database_snapshot_info;
+
+mod _database_source_authentication_configuration;
+
+mod _database_source_configuration;
+
+mod _database_source_description;
+
+mod _database_source_vpc_configuration;
+
+mod _database_table_list;
+
+mod _database_type;
 
 mod _default_document_id_format;
 
@@ -393,6 +443,10 @@ mod _parquet_ser_de;
 
 mod _parquet_writer_version;
 
+mod _partition_field;
+
+mod _partition_spec;
+
 mod _processing_configuration;
 
 mod _processor;
@@ -429,9 +483,15 @@ mod _s3_destination_update;
 
 mod _schema_configuration;
 
+mod _schema_evolution_configuration;
+
 mod _secrets_manager_configuration;
 
 mod _serializer;
+
+mod _snapshot_requested_by;
+
+mod _snapshot_status;
 
 mod _snowflake_buffering_hints;
 
@@ -464,6 +524,10 @@ mod _splunk_destination_update;
 mod _splunk_retry_options;
 
 mod _splunk_s3_backup_mode;
+
+mod _ssl_mode;
+
+mod _table_creation_configuration;
 
 mod _tag;
 

@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateDeliveryStreamOutput {
-    /// <p>The ARN of the delivery stream.</p>
+    /// <p>The ARN of the Firehose stream.</p>
     pub delivery_stream_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateDeliveryStreamOutput {
-    /// <p>The ARN of the delivery stream.</p>
+    /// <p>The ARN of the Firehose stream.</p>
     pub fn delivery_stream_arn(&self) -> ::std::option::Option<&str> {
         self.delivery_stream_arn.as_deref()
     }
@@ -33,17 +33,17 @@ pub struct CreateDeliveryStreamOutputBuilder {
     _request_id: Option<String>,
 }
 impl CreateDeliveryStreamOutputBuilder {
-    /// <p>The ARN of the delivery stream.</p>
+    /// <p>The ARN of the Firehose stream.</p>
     pub fn delivery_stream_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.delivery_stream_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the delivery stream.</p>
+    /// <p>The ARN of the Firehose stream.</p>
     pub fn set_delivery_stream_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.delivery_stream_arn = input;
         self
     }
-    /// <p>The ARN of the delivery stream.</p>
+    /// <p>The ARN of the Firehose stream.</p>
     pub fn get_delivery_stream_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.delivery_stream_arn
     }

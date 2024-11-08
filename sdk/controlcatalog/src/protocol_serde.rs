@@ -61,9 +61,13 @@ pub(crate) mod shape_common_control_filter;
 
 pub(crate) mod shape_common_control_summary_list;
 
+pub(crate) mod shape_control_parameters;
+
 pub(crate) mod shape_controls;
 
 pub(crate) mod shape_domain_summary_list;
+
+pub(crate) mod shape_implementation_details;
 
 pub(crate) mod shape_objective_filter;
 
@@ -72,6 +76,8 @@ pub(crate) mod shape_objective_summary_list;
 pub(crate) mod shape_region_configuration;
 
 pub(crate) mod shape_common_control_summary;
+
+pub(crate) mod shape_control_parameter;
 
 pub(crate) mod shape_control_summary;
 

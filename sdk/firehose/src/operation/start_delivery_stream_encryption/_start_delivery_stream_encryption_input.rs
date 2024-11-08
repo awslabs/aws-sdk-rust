@@ -3,13 +3,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartDeliveryStreamEncryptionInput {
-    /// <p>The name of the delivery stream for which you want to enable server-side encryption (SSE).</p>
+    /// <p>The name of the Firehose stream for which you want to enable server-side encryption (SSE).</p>
     pub delivery_stream_name: ::std::option::Option<::std::string::String>,
     /// <p>Used to specify the type and Amazon Resource Name (ARN) of the KMS key needed for Server-Side Encryption (SSE).</p>
     pub delivery_stream_encryption_configuration_input: ::std::option::Option<crate::types::DeliveryStreamEncryptionConfigurationInput>,
 }
 impl StartDeliveryStreamEncryptionInput {
-    /// <p>The name of the delivery stream for which you want to enable server-side encryption (SSE).</p>
+    /// <p>The name of the Firehose stream for which you want to enable server-side encryption (SSE).</p>
     pub fn delivery_stream_name(&self) -> ::std::option::Option<&str> {
         self.delivery_stream_name.as_deref()
     }
@@ -33,18 +33,18 @@ pub struct StartDeliveryStreamEncryptionInputBuilder {
     pub(crate) delivery_stream_encryption_configuration_input: ::std::option::Option<crate::types::DeliveryStreamEncryptionConfigurationInput>,
 }
 impl StartDeliveryStreamEncryptionInputBuilder {
-    /// <p>The name of the delivery stream for which you want to enable server-side encryption (SSE).</p>
+    /// <p>The name of the Firehose stream for which you want to enable server-side encryption (SSE).</p>
     /// This field is required.
     pub fn delivery_stream_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.delivery_stream_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the delivery stream for which you want to enable server-side encryption (SSE).</p>
+    /// <p>The name of the Firehose stream for which you want to enable server-side encryption (SSE).</p>
     pub fn set_delivery_stream_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.delivery_stream_name = input;
         self
     }
-    /// <p>The name of the delivery stream for which you want to enable server-side encryption (SSE).</p>
+    /// <p>The name of the Firehose stream for which you want to enable server-side encryption (SSE).</p>
     pub fn get_delivery_stream_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.delivery_stream_name
     }

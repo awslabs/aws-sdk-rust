@@ -15,8 +15,11 @@ pub fn ser_put_group_input_input(
     if let Some(var_4) = &input.group_name {
         object.key("groupName").string(var_4.as_str());
     }
-    if let Some(var_5) = &input.r#type {
-        object.key("type").string(var_5.as_str());
+    if let Some(var_5) = &input.role_arn {
+        object.key("roleArn").string(var_5.as_str());
+    }
+    if let Some(var_6) = &input.r#type {
+        object.key("type").string(var_6.as_str());
     }
     Ok(())
 }

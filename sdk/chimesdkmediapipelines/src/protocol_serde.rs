@@ -195,6 +195,8 @@ pub(crate) mod shape_s3_recording_sink_runtime_configuration;
 
 pub(crate) mod shape_speaker_search_task;
 
+pub(crate) mod shape_sse_aws_key_management_params;
+
 pub(crate) mod shape_tag;
 
 pub(crate) mod shape_tag_list;

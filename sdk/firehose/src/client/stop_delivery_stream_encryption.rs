@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`StopDeliveryStreamEncryption`](crate::operation::stop_delivery_stream_encryption::builders::StopDeliveryStreamEncryptionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`delivery_stream_name(impl Into<String>)`](crate::operation::stop_delivery_stream_encryption::builders::StopDeliveryStreamEncryptionFluentBuilder::delivery_stream_name) / [`set_delivery_stream_name(Option<String>)`](crate::operation::stop_delivery_stream_encryption::builders::StopDeliveryStreamEncryptionFluentBuilder::set_delivery_stream_name):<br>required: **true**<br><p>The name of the delivery stream for which you want to disable server-side encryption (SSE).</p><br>
+    ///   - [`delivery_stream_name(impl Into<String>)`](crate::operation::stop_delivery_stream_encryption::builders::StopDeliveryStreamEncryptionFluentBuilder::delivery_stream_name) / [`set_delivery_stream_name(Option<String>)`](crate::operation::stop_delivery_stream_encryption::builders::StopDeliveryStreamEncryptionFluentBuilder::set_delivery_stream_name):<br>required: **true**<br><p>The name of the Firehose stream for which you want to disable server-side encryption (SSE).</p><br>
     /// - On success, responds with [`StopDeliveryStreamEncryptionOutput`](crate::operation::stop_delivery_stream_encryption::StopDeliveryStreamEncryptionOutput)
     /// - On failure, responds with [`SdkError<StopDeliveryStreamEncryptionError>`](crate::operation::stop_delivery_stream_encryption::StopDeliveryStreamEncryptionError)
     pub fn stop_delivery_stream_encryption(

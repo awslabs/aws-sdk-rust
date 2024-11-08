@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OrchestrationConfiguration {
-    /// <p>Contains the template for the prompt that's sent to the model for response generation.</p>
+    /// <p>Contains the template for the prompt that's sent to the model. Orchestration prompts must include the <code>$conversation_history$</code> and <code>$output_format_instructions$</code> variables. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-placeholders.html">Use placeholder variables</a> in the user guide.</p>
     pub prompt_template: ::std::option::Option<crate::types::PromptTemplate>,
     /// <p>Configuration settings for inference when using RetrieveAndGenerate to generate responses while using a knowledge base as a source.</p>
     pub inference_config: ::std::option::Option<crate::types::InferenceConfig>,
@@ -14,7 +14,7 @@ pub struct OrchestrationConfiguration {
     pub query_transformation_configuration: ::std::option::Option<crate::types::QueryTransformationConfiguration>,
 }
 impl OrchestrationConfiguration {
-    /// <p>Contains the template for the prompt that's sent to the model for response generation.</p>
+    /// <p>Contains the template for the prompt that's sent to the model. Orchestration prompts must include the <code>$conversation_history$</code> and <code>$output_format_instructions$</code> variables. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-placeholders.html">Use placeholder variables</a> in the user guide.</p>
     pub fn prompt_template(&self) -> ::std::option::Option<&crate::types::PromptTemplate> {
         self.prompt_template.as_ref()
     }
@@ -51,17 +51,17 @@ pub struct OrchestrationConfigurationBuilder {
     pub(crate) query_transformation_configuration: ::std::option::Option<crate::types::QueryTransformationConfiguration>,
 }
 impl OrchestrationConfigurationBuilder {
-    /// <p>Contains the template for the prompt that's sent to the model for response generation.</p>
+    /// <p>Contains the template for the prompt that's sent to the model. Orchestration prompts must include the <code>$conversation_history$</code> and <code>$output_format_instructions$</code> variables. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-placeholders.html">Use placeholder variables</a> in the user guide.</p>
     pub fn prompt_template(mut self, input: crate::types::PromptTemplate) -> Self {
         self.prompt_template = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Contains the template for the prompt that's sent to the model for response generation.</p>
+    /// <p>Contains the template for the prompt that's sent to the model. Orchestration prompts must include the <code>$conversation_history$</code> and <code>$output_format_instructions$</code> variables. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-placeholders.html">Use placeholder variables</a> in the user guide.</p>
     pub fn set_prompt_template(mut self, input: ::std::option::Option<crate::types::PromptTemplate>) -> Self {
         self.prompt_template = input;
         self
     }
-    /// <p>Contains the template for the prompt that's sent to the model for response generation.</p>
+    /// <p>Contains the template for the prompt that's sent to the model. Orchestration prompts must include the <code>$conversation_history$</code> and <code>$output_format_instructions$</code> variables. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-placeholders.html">Use placeholder variables</a> in the user guide.</p>
     pub fn get_prompt_template(&self) -> &::std::option::Option<crate::types::PromptTemplate> {
         &self.prompt_template
     }

@@ -42,6 +42,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "SourceKMSKeyArn" => {
+                            builder = builder.set_source_kms_key_arn(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

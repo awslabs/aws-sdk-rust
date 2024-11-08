@@ -27,5 +27,11 @@ pub fn ser_group_members(
         }
         array_6.finish();
     }
+    if let Some(var_9) = &input.s3_path_for_group_members {
+        #[allow(unused_mut)]
+        let mut object_10 = object.key("s3PathForGroupMembers").start_object();
+        crate::protocol_serde::shape_s3::ser_s3(&mut object_10, var_9)?;
+        object_10.finish();
+    }
     Ok(())
 }

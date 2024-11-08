@@ -11,12 +11,18 @@ pub struct LaunchTemplateSpecification {
     pub launch_template_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the launch template.</p>
     pub launch_template_name: ::std::option::Option<::std::string::String>,
-    /// <p>The version number of the launch template, <code>$Latest</code>, or <code>$Default</code>.</p>
-    /// <p>If the value is <code>$Latest</code>, the latest version of the launch template is used. If the value is <code>$Default</code>, the default version of the launch template is used.</p><important>
-    /// <p>If the AMI ID that's used in a compute environment is from the launch template, the AMI isn't changed when the compute environment is updated. It's only changed if the <code>updateToLatestImageVersion</code> parameter for the compute environment is set to <code>true</code>. During an infrastructure update, if either <code>$Latest</code> or <code>$Default</code> is specified, Batch re-evaluates the launch template version, and it might use a different version of the launch template. This is the case even if the launch template isn't specified in the update. When updating a compute environment, changing the launch template requires an infrastructure update of the compute environment. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute environments</a> in the <i>Batch User Guide</i>.</p>
+    /// <p>The version number of the launch template, <code>$Default</code>, or <code>$Latest</code>.</p>
+    /// <p>If the value is <code>$Default</code>, the default version of the launch template is used. If the value is <code>$Latest</code>, the latest version of the launch template is used.</p><important>
+    /// <p>If the AMI ID that's used in a compute environment is from the launch template, the AMI isn't changed when the compute environment is updated. It's only changed if the <code>updateToLatestImageVersion</code> parameter for the compute environment is set to <code>true</code>. During an infrastructure update, if either <code>$Default</code> or <code>$Latest</code> is specified, Batch re-evaluates the launch template version, and it might use a different version of the launch template. This is the case even if the launch template isn't specified in the update. When updating a compute environment, changing the launch template requires an infrastructure update of the compute environment. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute environments</a> in the <i>Batch User Guide</i>.</p>
     /// </important>
-    /// <p>Default: <code>$Default</code>.</p>
+    /// <p>Default: <code>$Default</code></p>
+    /// <p>Latest: <code>$Latest</code></p>
     pub version: ::std::option::Option<::std::string::String>,
+    /// <p>A launch template to use in place of the default launch template. You must specify either the launch template ID or launch template name in the request, but not both.</p>
+    /// <p>You can specify up to ten (10) launch template overrides that are associated to unique instance types or families for each compute environment.</p><note>
+    /// <p>To unset all override templates for a compute environment, you can pass an empty array to the <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_UpdateComputeEnvironment.html">UpdateComputeEnvironment.overrides</a> parameter, or not include the <code>overrides</code> parameter when submitting the <code>UpdateComputeEnvironment</code> API operation.</p>
+    /// </note>
+    pub overrides: ::std::option::Option<::std::vec::Vec<crate::types::LaunchTemplateSpecificationOverride>>,
 }
 impl LaunchTemplateSpecification {
     /// <p>The ID of the launch template.</p>
@@ -27,13 +33,23 @@ impl LaunchTemplateSpecification {
     pub fn launch_template_name(&self) -> ::std::option::Option<&str> {
         self.launch_template_name.as_deref()
     }
-    /// <p>The version number of the launch template, <code>$Latest</code>, or <code>$Default</code>.</p>
-    /// <p>If the value is <code>$Latest</code>, the latest version of the launch template is used. If the value is <code>$Default</code>, the default version of the launch template is used.</p><important>
-    /// <p>If the AMI ID that's used in a compute environment is from the launch template, the AMI isn't changed when the compute environment is updated. It's only changed if the <code>updateToLatestImageVersion</code> parameter for the compute environment is set to <code>true</code>. During an infrastructure update, if either <code>$Latest</code> or <code>$Default</code> is specified, Batch re-evaluates the launch template version, and it might use a different version of the launch template. This is the case even if the launch template isn't specified in the update. When updating a compute environment, changing the launch template requires an infrastructure update of the compute environment. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute environments</a> in the <i>Batch User Guide</i>.</p>
+    /// <p>The version number of the launch template, <code>$Default</code>, or <code>$Latest</code>.</p>
+    /// <p>If the value is <code>$Default</code>, the default version of the launch template is used. If the value is <code>$Latest</code>, the latest version of the launch template is used.</p><important>
+    /// <p>If the AMI ID that's used in a compute environment is from the launch template, the AMI isn't changed when the compute environment is updated. It's only changed if the <code>updateToLatestImageVersion</code> parameter for the compute environment is set to <code>true</code>. During an infrastructure update, if either <code>$Default</code> or <code>$Latest</code> is specified, Batch re-evaluates the launch template version, and it might use a different version of the launch template. This is the case even if the launch template isn't specified in the update. When updating a compute environment, changing the launch template requires an infrastructure update of the compute environment. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute environments</a> in the <i>Batch User Guide</i>.</p>
     /// </important>
-    /// <p>Default: <code>$Default</code>.</p>
+    /// <p>Default: <code>$Default</code></p>
+    /// <p>Latest: <code>$Latest</code></p>
     pub fn version(&self) -> ::std::option::Option<&str> {
         self.version.as_deref()
+    }
+    /// <p>A launch template to use in place of the default launch template. You must specify either the launch template ID or launch template name in the request, but not both.</p>
+    /// <p>You can specify up to ten (10) launch template overrides that are associated to unique instance types or families for each compute environment.</p><note>
+    /// <p>To unset all override templates for a compute environment, you can pass an empty array to the <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_UpdateComputeEnvironment.html">UpdateComputeEnvironment.overrides</a> parameter, or not include the <code>overrides</code> parameter when submitting the <code>UpdateComputeEnvironment</code> API operation.</p>
+    /// </note>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.overrides.is_none()`.
+    pub fn overrides(&self) -> &[crate::types::LaunchTemplateSpecificationOverride] {
+        self.overrides.as_deref().unwrap_or_default()
     }
 }
 impl LaunchTemplateSpecification {
@@ -50,6 +66,7 @@ pub struct LaunchTemplateSpecificationBuilder {
     pub(crate) launch_template_id: ::std::option::Option<::std::string::String>,
     pub(crate) launch_template_name: ::std::option::Option<::std::string::String>,
     pub(crate) version: ::std::option::Option<::std::string::String>,
+    pub(crate) overrides: ::std::option::Option<::std::vec::Vec<crate::types::LaunchTemplateSpecificationOverride>>,
 }
 impl LaunchTemplateSpecificationBuilder {
     /// <p>The ID of the launch template.</p>
@@ -80,31 +97,63 @@ impl LaunchTemplateSpecificationBuilder {
     pub fn get_launch_template_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.launch_template_name
     }
-    /// <p>The version number of the launch template, <code>$Latest</code>, or <code>$Default</code>.</p>
-    /// <p>If the value is <code>$Latest</code>, the latest version of the launch template is used. If the value is <code>$Default</code>, the default version of the launch template is used.</p><important>
-    /// <p>If the AMI ID that's used in a compute environment is from the launch template, the AMI isn't changed when the compute environment is updated. It's only changed if the <code>updateToLatestImageVersion</code> parameter for the compute environment is set to <code>true</code>. During an infrastructure update, if either <code>$Latest</code> or <code>$Default</code> is specified, Batch re-evaluates the launch template version, and it might use a different version of the launch template. This is the case even if the launch template isn't specified in the update. When updating a compute environment, changing the launch template requires an infrastructure update of the compute environment. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute environments</a> in the <i>Batch User Guide</i>.</p>
+    /// <p>The version number of the launch template, <code>$Default</code>, or <code>$Latest</code>.</p>
+    /// <p>If the value is <code>$Default</code>, the default version of the launch template is used. If the value is <code>$Latest</code>, the latest version of the launch template is used.</p><important>
+    /// <p>If the AMI ID that's used in a compute environment is from the launch template, the AMI isn't changed when the compute environment is updated. It's only changed if the <code>updateToLatestImageVersion</code> parameter for the compute environment is set to <code>true</code>. During an infrastructure update, if either <code>$Default</code> or <code>$Latest</code> is specified, Batch re-evaluates the launch template version, and it might use a different version of the launch template. This is the case even if the launch template isn't specified in the update. When updating a compute environment, changing the launch template requires an infrastructure update of the compute environment. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute environments</a> in the <i>Batch User Guide</i>.</p>
     /// </important>
-    /// <p>Default: <code>$Default</code>.</p>
+    /// <p>Default: <code>$Default</code></p>
+    /// <p>Latest: <code>$Latest</code></p>
     pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The version number of the launch template, <code>$Latest</code>, or <code>$Default</code>.</p>
-    /// <p>If the value is <code>$Latest</code>, the latest version of the launch template is used. If the value is <code>$Default</code>, the default version of the launch template is used.</p><important>
-    /// <p>If the AMI ID that's used in a compute environment is from the launch template, the AMI isn't changed when the compute environment is updated. It's only changed if the <code>updateToLatestImageVersion</code> parameter for the compute environment is set to <code>true</code>. During an infrastructure update, if either <code>$Latest</code> or <code>$Default</code> is specified, Batch re-evaluates the launch template version, and it might use a different version of the launch template. This is the case even if the launch template isn't specified in the update. When updating a compute environment, changing the launch template requires an infrastructure update of the compute environment. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute environments</a> in the <i>Batch User Guide</i>.</p>
+    /// <p>The version number of the launch template, <code>$Default</code>, or <code>$Latest</code>.</p>
+    /// <p>If the value is <code>$Default</code>, the default version of the launch template is used. If the value is <code>$Latest</code>, the latest version of the launch template is used.</p><important>
+    /// <p>If the AMI ID that's used in a compute environment is from the launch template, the AMI isn't changed when the compute environment is updated. It's only changed if the <code>updateToLatestImageVersion</code> parameter for the compute environment is set to <code>true</code>. During an infrastructure update, if either <code>$Default</code> or <code>$Latest</code> is specified, Batch re-evaluates the launch template version, and it might use a different version of the launch template. This is the case even if the launch template isn't specified in the update. When updating a compute environment, changing the launch template requires an infrastructure update of the compute environment. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute environments</a> in the <i>Batch User Guide</i>.</p>
     /// </important>
-    /// <p>Default: <code>$Default</code>.</p>
+    /// <p>Default: <code>$Default</code></p>
+    /// <p>Latest: <code>$Latest</code></p>
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version = input;
         self
     }
-    /// <p>The version number of the launch template, <code>$Latest</code>, or <code>$Default</code>.</p>
-    /// <p>If the value is <code>$Latest</code>, the latest version of the launch template is used. If the value is <code>$Default</code>, the default version of the launch template is used.</p><important>
-    /// <p>If the AMI ID that's used in a compute environment is from the launch template, the AMI isn't changed when the compute environment is updated. It's only changed if the <code>updateToLatestImageVersion</code> parameter for the compute environment is set to <code>true</code>. During an infrastructure update, if either <code>$Latest</code> or <code>$Default</code> is specified, Batch re-evaluates the launch template version, and it might use a different version of the launch template. This is the case even if the launch template isn't specified in the update. When updating a compute environment, changing the launch template requires an infrastructure update of the compute environment. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute environments</a> in the <i>Batch User Guide</i>.</p>
+    /// <p>The version number of the launch template, <code>$Default</code>, or <code>$Latest</code>.</p>
+    /// <p>If the value is <code>$Default</code>, the default version of the launch template is used. If the value is <code>$Latest</code>, the latest version of the launch template is used.</p><important>
+    /// <p>If the AMI ID that's used in a compute environment is from the launch template, the AMI isn't changed when the compute environment is updated. It's only changed if the <code>updateToLatestImageVersion</code> parameter for the compute environment is set to <code>true</code>. During an infrastructure update, if either <code>$Default</code> or <code>$Latest</code> is specified, Batch re-evaluates the launch template version, and it might use a different version of the launch template. This is the case even if the launch template isn't specified in the update. When updating a compute environment, changing the launch template requires an infrastructure update of the compute environment. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute environments</a> in the <i>Batch User Guide</i>.</p>
     /// </important>
-    /// <p>Default: <code>$Default</code>.</p>
+    /// <p>Default: <code>$Default</code></p>
+    /// <p>Latest: <code>$Latest</code></p>
     pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.version
+    }
+    /// Appends an item to `overrides`.
+    ///
+    /// To override the contents of this collection use [`set_overrides`](Self::set_overrides).
+    ///
+    /// <p>A launch template to use in place of the default launch template. You must specify either the launch template ID or launch template name in the request, but not both.</p>
+    /// <p>You can specify up to ten (10) launch template overrides that are associated to unique instance types or families for each compute environment.</p><note>
+    /// <p>To unset all override templates for a compute environment, you can pass an empty array to the <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_UpdateComputeEnvironment.html">UpdateComputeEnvironment.overrides</a> parameter, or not include the <code>overrides</code> parameter when submitting the <code>UpdateComputeEnvironment</code> API operation.</p>
+    /// </note>
+    pub fn overrides(mut self, input: crate::types::LaunchTemplateSpecificationOverride) -> Self {
+        let mut v = self.overrides.unwrap_or_default();
+        v.push(input);
+        self.overrides = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A launch template to use in place of the default launch template. You must specify either the launch template ID or launch template name in the request, but not both.</p>
+    /// <p>You can specify up to ten (10) launch template overrides that are associated to unique instance types or families for each compute environment.</p><note>
+    /// <p>To unset all override templates for a compute environment, you can pass an empty array to the <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_UpdateComputeEnvironment.html">UpdateComputeEnvironment.overrides</a> parameter, or not include the <code>overrides</code> parameter when submitting the <code>UpdateComputeEnvironment</code> API operation.</p>
+    /// </note>
+    pub fn set_overrides(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LaunchTemplateSpecificationOverride>>) -> Self {
+        self.overrides = input;
+        self
+    }
+    /// <p>A launch template to use in place of the default launch template. You must specify either the launch template ID or launch template name in the request, but not both.</p>
+    /// <p>You can specify up to ten (10) launch template overrides that are associated to unique instance types or families for each compute environment.</p><note>
+    /// <p>To unset all override templates for a compute environment, you can pass an empty array to the <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_UpdateComputeEnvironment.html">UpdateComputeEnvironment.overrides</a> parameter, or not include the <code>overrides</code> parameter when submitting the <code>UpdateComputeEnvironment</code> API operation.</p>
+    /// </note>
+    pub fn get_overrides(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LaunchTemplateSpecificationOverride>> {
+        &self.overrides
     }
     /// Consumes the builder and constructs a [`LaunchTemplateSpecification`](crate::types::LaunchTemplateSpecification).
     pub fn build(self) -> crate::types::LaunchTemplateSpecification {
@@ -112,6 +161,7 @@ impl LaunchTemplateSpecificationBuilder {
             launch_template_id: self.launch_template_id,
             launch_template_name: self.launch_template_name,
             version: self.version,
+            overrides: self.overrides,
         }
     }
 }

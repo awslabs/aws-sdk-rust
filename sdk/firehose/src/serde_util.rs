@@ -123,6 +123,27 @@ pub(crate) fn authentication_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn database_source_authentication_configuration_correct_errors(
+    mut builder: crate::types::builders::DatabaseSourceAuthenticationConfigurationBuilder,
+) -> crate::types::builders::DatabaseSourceAuthenticationConfigurationBuilder {
+    if builder.secrets_manager_configuration.is_none() {
+        builder.secrets_manager_configuration = {
+            let builder = crate::types::builders::SecretsManagerConfigurationBuilder::default();
+            crate::serde_util::secrets_manager_configuration_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
+pub(crate) fn database_source_vpc_configuration_correct_errors(
+    mut builder: crate::types::builders::DatabaseSourceVpcConfigurationBuilder,
+) -> crate::types::builders::DatabaseSourceVpcConfigurationBuilder {
+    if builder.vpc_endpoint_service_name.is_none() {
+        builder.vpc_endpoint_service_name = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn extended_s3_destination_description_correct_errors(
     mut builder: crate::types::builders::ExtendedS3DestinationDescriptionBuilder,
 ) -> crate::types::builders::ExtendedS3DestinationDescriptionBuilder {
@@ -208,11 +229,41 @@ pub(crate) fn copy_command_correct_errors(mut builder: crate::types::builders::C
     builder
 }
 
+pub(crate) fn database_snapshot_info_correct_errors(
+    mut builder: crate::types::builders::DatabaseSnapshotInfoBuilder,
+) -> crate::types::builders::DatabaseSnapshotInfoBuilder {
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.table.is_none() {
+        builder.table = Some(Default::default())
+    }
+    if builder.request_timestamp.is_none() {
+        builder.request_timestamp = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.requested_by.is_none() {
+        builder.requested_by = "no value was set".parse::<crate::types::SnapshotRequestedBy>().ok()
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::SnapshotStatus>().ok()
+    }
+    builder
+}
+
 pub(crate) fn document_id_options_correct_errors(
     mut builder: crate::types::builders::DocumentIdOptionsBuilder,
 ) -> crate::types::builders::DocumentIdOptionsBuilder {
     if builder.default_document_id_format.is_none() {
         builder.default_document_id_format = "no value was set".parse::<crate::types::DefaultDocumentIdFormat>().ok()
+    }
+    builder
+}
+
+pub(crate) fn schema_evolution_configuration_correct_errors(
+    mut builder: crate::types::builders::SchemaEvolutionConfigurationBuilder,
+) -> crate::types::builders::SchemaEvolutionConfigurationBuilder {
+    if builder.enabled.is_none() {
+        builder.enabled = Some(Default::default())
     }
     builder
 }
@@ -231,6 +282,15 @@ pub(crate) fn snowflake_vpc_configuration_correct_errors(
 ) -> crate::types::builders::SnowflakeVpcConfigurationBuilder {
     if builder.private_link_vpce_id.is_none() {
         builder.private_link_vpce_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn table_creation_configuration_correct_errors(
+    mut builder: crate::types::builders::TableCreationConfigurationBuilder,
+) -> crate::types::builders::TableCreationConfigurationBuilder {
+    if builder.enabled.is_none() {
+        builder.enabled = Some(Default::default())
     }
     builder
 }
@@ -289,6 +349,15 @@ pub(crate) fn http_endpoint_common_attribute_correct_errors(
 pub(crate) fn processor_correct_errors(mut builder: crate::types::builders::ProcessorBuilder) -> crate::types::builders::ProcessorBuilder {
     if builder.r#type.is_none() {
         builder.r#type = "no value was set".parse::<crate::types::ProcessorType>().ok()
+    }
+    builder
+}
+
+pub(crate) fn partition_field_correct_errors(
+    mut builder: crate::types::builders::PartitionFieldBuilder,
+) -> crate::types::builders::PartitionFieldBuilder {
+    if builder.source_name.is_none() {
+        builder.source_name = Some(Default::default())
     }
     builder
 }

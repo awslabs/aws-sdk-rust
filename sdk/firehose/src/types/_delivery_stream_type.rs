@@ -12,6 +12,7 @@
 /// ```text
 /// # let deliverystreamtype = unimplemented!();
 /// match deliverystreamtype {
+///     DeliveryStreamType::DatabaseAsSource => { /* ... */ },
 ///     DeliveryStreamType::DirectPut => { /* ... */ },
 ///     DeliveryStreamType::KinesisStreamAsSource => { /* ... */ },
 ///     DeliveryStreamType::MskAsSource => { /* ... */ },
@@ -43,6 +44,8 @@
 )]
 pub enum DeliveryStreamType {
     #[allow(missing_docs)] // documentation missing in model
+    DatabaseAsSource,
+    #[allow(missing_docs)] // documentation missing in model
     DirectPut,
     #[allow(missing_docs)] // documentation missing in model
     KinesisStreamAsSource,
@@ -55,6 +58,7 @@ pub enum DeliveryStreamType {
 impl ::std::convert::From<&str> for DeliveryStreamType {
     fn from(s: &str) -> Self {
         match s {
+            "DatabaseAsSource" => DeliveryStreamType::DatabaseAsSource,
             "DirectPut" => DeliveryStreamType::DirectPut,
             "KinesisStreamAsSource" => DeliveryStreamType::KinesisStreamAsSource,
             "MSKAsSource" => DeliveryStreamType::MskAsSource,
@@ -73,6 +77,7 @@ impl DeliveryStreamType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            DeliveryStreamType::DatabaseAsSource => "DatabaseAsSource",
             DeliveryStreamType::DirectPut => "DirectPut",
             DeliveryStreamType::KinesisStreamAsSource => "KinesisStreamAsSource",
             DeliveryStreamType::MskAsSource => "MSKAsSource",
@@ -81,7 +86,7 @@ impl DeliveryStreamType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DirectPut", "KinesisStreamAsSource", "MSKAsSource"]
+        &["DatabaseAsSource", "DirectPut", "KinesisStreamAsSource", "MSKAsSource"]
     }
 }
 impl ::std::convert::AsRef<str> for DeliveryStreamType {
@@ -104,6 +109,7 @@ impl DeliveryStreamType {
 impl ::std::fmt::Display for DeliveryStreamType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            DeliveryStreamType::DatabaseAsSource => write!(f, "DatabaseAsSource"),
             DeliveryStreamType::DirectPut => write!(f, "DirectPut"),
             DeliveryStreamType::KinesisStreamAsSource => write!(f, "KinesisStreamAsSource"),
             DeliveryStreamType::MskAsSource => write!(f, "MSKAsSource"),

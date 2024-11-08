@@ -12,6 +12,21 @@ pub fn ser_launch_template_specification(
     if let Some(var_3) = &input.version {
         object.key("version").string(var_3.as_str());
     }
+    if let Some(var_4) = &input.overrides {
+        let mut array_5 = object.key("overrides").start_array();
+        for item_6 in var_4 {
+            {
+                #[allow(unused_mut)]
+                let mut object_7 = array_5.value().start_object();
+                crate::protocol_serde::shape_launch_template_specification_override::ser_launch_template_specification_override(
+                    &mut object_7,
+                    item_6,
+                )?;
+                object_7.finish();
+            }
+        }
+        array_5.finish();
+    }
     Ok(())
 }
 
@@ -50,6 +65,11 @@ where
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
                             );
+                        }
+                        "overrides" => {
+                            builder = builder.set_overrides(
+                                    crate::protocol_serde::shape_launch_template_specification_override_list::de_launch_template_specification_override_list(tokens)?
+                                );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

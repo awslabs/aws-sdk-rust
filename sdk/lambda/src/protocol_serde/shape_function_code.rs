@@ -18,5 +18,8 @@ pub fn ser_function_code(
     if let Some(var_5) = &input.image_uri {
         object.key("ImageUri").string(var_5.as_str());
     }
+    if let Some(var_6) = &input.source_kms_key_arn {
+        object.key("SourceKMSKeyArn").string(var_6.as_str());
+    }
     Ok(())
 }

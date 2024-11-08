@@ -227,6 +227,8 @@ pub use crate::types::_live_connector_source_type::LiveConnectorSourceType;
 
 pub use crate::types::_media_capture_pipeline::MediaCapturePipeline;
 
+pub use crate::types::_sse_aws_key_management_params::SseAwsKeyManagementParams;
+
 pub use crate::types::_chime_sdk_meeting_configuration::ChimeSdkMeetingConfiguration;
 
 pub use crate::types::_artifacts_configuration::ArtifactsConfiguration;
@@ -458,6 +460,8 @@ mod _source_configuration;
 mod _speaker_search_task;
 
 mod _sqs_queue_sink_configuration;
+
+mod _sse_aws_key_management_params;
 
 mod _stream_channel_definition;
 

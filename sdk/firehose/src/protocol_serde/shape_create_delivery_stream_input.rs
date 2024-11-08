@@ -105,5 +105,11 @@ pub fn ser_create_delivery_stream_input_input(
         crate::protocol_serde::shape_iceberg_destination_configuration::ser_iceberg_destination_configuration(&mut object_32, var_31)?;
         object_32.finish();
     }
+    if let Some(var_33) = &input.database_source_configuration {
+        #[allow(unused_mut)]
+        let mut object_34 = object.key("DatabaseSourceConfiguration").start_object();
+        crate::protocol_serde::shape_database_source_configuration::ser_database_source_configuration(&mut object_34, var_33)?;
+        object_34.finish();
+    }
     Ok(())
 }

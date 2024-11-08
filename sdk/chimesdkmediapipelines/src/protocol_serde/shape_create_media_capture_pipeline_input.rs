@@ -15,26 +15,35 @@ pub fn ser_create_media_capture_pipeline_input_input(
     if let Some(var_4) = &input.sink_arn {
         object.key("SinkArn").string(var_4.as_str());
     }
-    if let Some(var_5) = &input.sink_type {
-        object.key("SinkType").string(var_5.as_str());
+    if let Some(var_5) = &input.sink_iam_role_arn {
+        object.key("SinkIamRoleArn").string(var_5.as_str());
     }
-    if let Some(var_6) = &input.source_arn {
-        object.key("SourceArn").string(var_6.as_str());
+    if let Some(var_6) = &input.sink_type {
+        object.key("SinkType").string(var_6.as_str());
     }
-    if let Some(var_7) = &input.source_type {
-        object.key("SourceType").string(var_7.as_str());
+    if let Some(var_7) = &input.source_arn {
+        object.key("SourceArn").string(var_7.as_str());
     }
-    if let Some(var_8) = &input.tags {
-        let mut array_9 = object.key("Tags").start_array();
-        for item_10 in var_8 {
+    if let Some(var_8) = &input.source_type {
+        object.key("SourceType").string(var_8.as_str());
+    }
+    if let Some(var_9) = &input.sse_aws_key_management_params {
+        #[allow(unused_mut)]
+        let mut object_10 = object.key("SseAwsKeyManagementParams").start_object();
+        crate::protocol_serde::shape_sse_aws_key_management_params::ser_sse_aws_key_management_params(&mut object_10, var_9)?;
+        object_10.finish();
+    }
+    if let Some(var_11) = &input.tags {
+        let mut array_12 = object.key("Tags").start_array();
+        for item_13 in var_11 {
             {
                 #[allow(unused_mut)]
-                let mut object_11 = array_9.value().start_object();
-                crate::protocol_serde::shape_tag::ser_tag(&mut object_11, item_10)?;
-                object_11.finish();
+                let mut object_14 = array_12.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_14, item_13)?;
+                object_14.finish();
             }
         }
-        array_9.finish();
+        array_12.finish();
     }
     Ok(())
 }

@@ -23,6 +23,11 @@ where
                             builder = builder
                                 .set_msk_source_description(crate::protocol_serde::shape_msk_source_description::de_msk_source_description(tokens)?);
                         }
+                        "DatabaseSourceDescription" => {
+                            builder = builder.set_database_source_description(
+                                crate::protocol_serde::shape_database_source_description::de_database_source_description(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

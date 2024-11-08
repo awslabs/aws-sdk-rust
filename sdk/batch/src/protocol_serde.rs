@@ -291,6 +291,8 @@ pub(crate) mod shape_job_dependency_list;
 
 pub(crate) mod shape_job_state_time_limit_actions;
 
+pub(crate) mod shape_launch_template_specification_override;
+
 pub(crate) mod shape_node_details;
 
 pub(crate) mod shape_node_properties_summary;
@@ -376,6 +378,8 @@ pub(crate) mod shape_eks_containers;
 pub(crate) mod shape_eks_volumes;
 
 pub(crate) mod shape_image_pull_secrets;
+
+pub(crate) mod shape_launch_template_specification_override_list;
 
 pub(crate) mod shape_list_attempt_ecs_task_details;
 

@@ -22,8 +22,8 @@ impl crate::operation::describe_delivery_stream::builders::DescribeDeliveryStrea
 }
 /// Fluent builder constructing a request to `DescribeDeliveryStream`.
 ///
-/// <p>Describes the specified delivery stream and its status. For example, after your delivery stream is created, call <code>DescribeDeliveryStream</code> to see whether the delivery stream is <code>ACTIVE</code> and therefore ready for data to be sent to it.</p>
-/// <p>If the status of a delivery stream is <code>CREATING_FAILED</code>, this status doesn't change, and you can't invoke <code>CreateDeliveryStream</code> again on it. However, you can invoke the <code>DeleteDeliveryStream</code> operation to delete it. If the status is <code>DELETING_FAILED</code>, you can force deletion by invoking <code>DeleteDeliveryStream</code> again but with <code>DeleteDeliveryStreamInput$AllowForceDelete</code> set to true.</p>
+/// <p>Describes the specified Firehose stream and its status. For example, after your Firehose stream is created, call <code>DescribeDeliveryStream</code> to see whether the Firehose stream is <code>ACTIVE</code> and therefore ready for data to be sent to it.</p>
+/// <p>If the status of a Firehose stream is <code>CREATING_FAILED</code>, this status doesn't change, and you can't invoke <code>CreateDeliveryStream</code> again on it. However, you can invoke the <code>DeleteDeliveryStream</code> operation to delete it. If the status is <code>DELETING_FAILED</code>, you can force deletion by invoking <code>DeleteDeliveryStream</code> again but with <code>DeleteDeliveryStreamInput$AllowForceDelete</code> set to true.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeDeliveryStreamFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -109,45 +109,45 @@ impl DescribeDeliveryStreamFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name of the delivery stream.</p>
+    /// <p>The name of the Firehose stream.</p>
     pub fn delivery_stream_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.delivery_stream_name(input.into());
         self
     }
-    /// <p>The name of the delivery stream.</p>
+    /// <p>The name of the Firehose stream.</p>
     pub fn set_delivery_stream_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_delivery_stream_name(input);
         self
     }
-    /// <p>The name of the delivery stream.</p>
+    /// <p>The name of the Firehose stream.</p>
     pub fn get_delivery_stream_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_delivery_stream_name()
     }
-    /// <p>The limit on the number of destinations to return. You can have one destination per delivery stream.</p>
+    /// <p>The limit on the number of destinations to return. You can have one destination per Firehose stream.</p>
     pub fn limit(mut self, input: i32) -> Self {
         self.inner = self.inner.limit(input);
         self
     }
-    /// <p>The limit on the number of destinations to return. You can have one destination per delivery stream.</p>
+    /// <p>The limit on the number of destinations to return. You can have one destination per Firehose stream.</p>
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_limit(input);
         self
     }
-    /// <p>The limit on the number of destinations to return. You can have one destination per delivery stream.</p>
+    /// <p>The limit on the number of destinations to return. You can have one destination per Firehose stream.</p>
     pub fn get_limit(&self) -> &::std::option::Option<i32> {
         self.inner.get_limit()
     }
-    /// <p>The ID of the destination to start returning the destination information. Firehose supports one destination per delivery stream.</p>
+    /// <p>The ID of the destination to start returning the destination information. Firehose supports one destination per Firehose stream.</p>
     pub fn exclusive_start_destination_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.exclusive_start_destination_id(input.into());
         self
     }
-    /// <p>The ID of the destination to start returning the destination information. Firehose supports one destination per delivery stream.</p>
+    /// <p>The ID of the destination to start returning the destination information. Firehose supports one destination per Firehose stream.</p>
     pub fn set_exclusive_start_destination_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_exclusive_start_destination_id(input);
         self
     }
-    /// <p>The ID of the destination to start returning the destination information. Firehose supports one destination per delivery stream.</p>
+    /// <p>The ID of the destination to start returning the destination information. Firehose supports one destination per Firehose stream.</p>
     pub fn get_exclusive_start_destination_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_exclusive_start_destination_id()
     }

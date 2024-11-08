@@ -3,13 +3,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutRecordBatchInput {
-    /// <p>The name of the delivery stream.</p>
+    /// <p>The name of the Firehose stream.</p>
     pub delivery_stream_name: ::std::option::Option<::std::string::String>,
     /// <p>One or more records.</p>
     pub records: ::std::option::Option<::std::vec::Vec<crate::types::Record>>,
 }
 impl PutRecordBatchInput {
-    /// <p>The name of the delivery stream.</p>
+    /// <p>The name of the Firehose stream.</p>
     pub fn delivery_stream_name(&self) -> ::std::option::Option<&str> {
         self.delivery_stream_name.as_deref()
     }
@@ -35,18 +35,18 @@ pub struct PutRecordBatchInputBuilder {
     pub(crate) records: ::std::option::Option<::std::vec::Vec<crate::types::Record>>,
 }
 impl PutRecordBatchInputBuilder {
-    /// <p>The name of the delivery stream.</p>
+    /// <p>The name of the Firehose stream.</p>
     /// This field is required.
     pub fn delivery_stream_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.delivery_stream_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the delivery stream.</p>
+    /// <p>The name of the Firehose stream.</p>
     pub fn set_delivery_stream_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.delivery_stream_name = input;
         self
     }
-    /// <p>The name of the delivery stream.</p>
+    /// <p>The name of the Firehose stream.</p>
     pub fn get_delivery_stream_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.delivery_stream_name
     }

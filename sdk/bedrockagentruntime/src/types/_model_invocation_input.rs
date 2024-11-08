@@ -18,12 +18,12 @@ pub struct ModelInvocationInput {
     pub text: ::std::option::Option<::std::string::String>,
     /// <p>The step in the agent sequence.</p>
     pub r#type: ::std::option::Option<crate::types::PromptType>,
-    /// <p>Specifications about the inference parameters that were provided alongside the prompt. These are specified in the <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_PromptOverrideConfiguration.html">PromptOverrideConfiguration</a> object that was set when the agent was created or updated. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters.html">Inference parameters for foundation models</a>.</p>
-    pub inference_configuration: ::std::option::Option<crate::types::InferenceConfiguration>,
     /// <p>The ARN of the Lambda function to use when parsing the raw foundation model output in parts of the agent sequence.</p>
     pub override_lambda: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether the default prompt template was <code>OVERRIDDEN</code>. If it was, the <code>basePromptTemplate</code> that was set in the <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_PromptOverrideConfiguration.html">PromptOverrideConfiguration</a> object when the agent was created or updated is used instead.</p>
     pub prompt_creation_mode: ::std::option::Option<crate::types::CreationMode>,
+    /// <p>Specifications about the inference parameters that were provided alongside the prompt. These are specified in the <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_PromptOverrideConfiguration.html">PromptOverrideConfiguration</a> object that was set when the agent was created or updated. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters.html">Inference parameters for foundation models</a>.</p>
+    pub inference_configuration: ::std::option::Option<crate::types::InferenceConfiguration>,
     /// <p>Specifies whether to override the default parser Lambda function when parsing the raw foundation model output in the part of the agent sequence defined by the <code>promptType</code>.</p>
     pub parser_mode: ::std::option::Option<crate::types::CreationMode>,
 }
@@ -40,10 +40,6 @@ impl ModelInvocationInput {
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::PromptType> {
         self.r#type.as_ref()
     }
-    /// <p>Specifications about the inference parameters that were provided alongside the prompt. These are specified in the <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_PromptOverrideConfiguration.html">PromptOverrideConfiguration</a> object that was set when the agent was created or updated. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters.html">Inference parameters for foundation models</a>.</p>
-    pub fn inference_configuration(&self) -> ::std::option::Option<&crate::types::InferenceConfiguration> {
-        self.inference_configuration.as_ref()
-    }
     /// <p>The ARN of the Lambda function to use when parsing the raw foundation model output in parts of the agent sequence.</p>
     pub fn override_lambda(&self) -> ::std::option::Option<&str> {
         self.override_lambda.as_deref()
@@ -51,6 +47,10 @@ impl ModelInvocationInput {
     /// <p>Specifies whether the default prompt template was <code>OVERRIDDEN</code>. If it was, the <code>basePromptTemplate</code> that was set in the <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_PromptOverrideConfiguration.html">PromptOverrideConfiguration</a> object when the agent was created or updated is used instead.</p>
     pub fn prompt_creation_mode(&self) -> ::std::option::Option<&crate::types::CreationMode> {
         self.prompt_creation_mode.as_ref()
+    }
+    /// <p>Specifications about the inference parameters that were provided alongside the prompt. These are specified in the <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_PromptOverrideConfiguration.html">PromptOverrideConfiguration</a> object that was set when the agent was created or updated. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters.html">Inference parameters for foundation models</a>.</p>
+    pub fn inference_configuration(&self) -> ::std::option::Option<&crate::types::InferenceConfiguration> {
+        self.inference_configuration.as_ref()
     }
     /// <p>Specifies whether to override the default parser Lambda function when parsing the raw foundation model output in the part of the agent sequence defined by the <code>promptType</code>.</p>
     pub fn parser_mode(&self) -> ::std::option::Option<&crate::types::CreationMode> {
@@ -63,9 +63,9 @@ impl ::std::fmt::Debug for ModelInvocationInput {
         formatter.field("trace_id", &"*** Sensitive Data Redacted ***");
         formatter.field("text", &"*** Sensitive Data Redacted ***");
         formatter.field("r#type", &"*** Sensitive Data Redacted ***");
-        formatter.field("inference_configuration", &"*** Sensitive Data Redacted ***");
         formatter.field("override_lambda", &"*** Sensitive Data Redacted ***");
         formatter.field("prompt_creation_mode", &"*** Sensitive Data Redacted ***");
+        formatter.field("inference_configuration", &"*** Sensitive Data Redacted ***");
         formatter.field("parser_mode", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
@@ -84,9 +84,9 @@ pub struct ModelInvocationInputBuilder {
     pub(crate) trace_id: ::std::option::Option<::std::string::String>,
     pub(crate) text: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::PromptType>,
-    pub(crate) inference_configuration: ::std::option::Option<crate::types::InferenceConfiguration>,
     pub(crate) override_lambda: ::std::option::Option<::std::string::String>,
     pub(crate) prompt_creation_mode: ::std::option::Option<crate::types::CreationMode>,
+    pub(crate) inference_configuration: ::std::option::Option<crate::types::InferenceConfiguration>,
     pub(crate) parser_mode: ::std::option::Option<crate::types::CreationMode>,
 }
 impl ModelInvocationInputBuilder {
@@ -132,20 +132,6 @@ impl ModelInvocationInputBuilder {
     pub fn get_type(&self) -> &::std::option::Option<crate::types::PromptType> {
         &self.r#type
     }
-    /// <p>Specifications about the inference parameters that were provided alongside the prompt. These are specified in the <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_PromptOverrideConfiguration.html">PromptOverrideConfiguration</a> object that was set when the agent was created or updated. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters.html">Inference parameters for foundation models</a>.</p>
-    pub fn inference_configuration(mut self, input: crate::types::InferenceConfiguration) -> Self {
-        self.inference_configuration = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>Specifications about the inference parameters that were provided alongside the prompt. These are specified in the <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_PromptOverrideConfiguration.html">PromptOverrideConfiguration</a> object that was set when the agent was created or updated. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters.html">Inference parameters for foundation models</a>.</p>
-    pub fn set_inference_configuration(mut self, input: ::std::option::Option<crate::types::InferenceConfiguration>) -> Self {
-        self.inference_configuration = input;
-        self
-    }
-    /// <p>Specifications about the inference parameters that were provided alongside the prompt. These are specified in the <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_PromptOverrideConfiguration.html">PromptOverrideConfiguration</a> object that was set when the agent was created or updated. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters.html">Inference parameters for foundation models</a>.</p>
-    pub fn get_inference_configuration(&self) -> &::std::option::Option<crate::types::InferenceConfiguration> {
-        &self.inference_configuration
-    }
     /// <p>The ARN of the Lambda function to use when parsing the raw foundation model output in parts of the agent sequence.</p>
     pub fn override_lambda(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.override_lambda = ::std::option::Option::Some(input.into());
@@ -174,6 +160,20 @@ impl ModelInvocationInputBuilder {
     pub fn get_prompt_creation_mode(&self) -> &::std::option::Option<crate::types::CreationMode> {
         &self.prompt_creation_mode
     }
+    /// <p>Specifications about the inference parameters that were provided alongside the prompt. These are specified in the <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_PromptOverrideConfiguration.html">PromptOverrideConfiguration</a> object that was set when the agent was created or updated. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters.html">Inference parameters for foundation models</a>.</p>
+    pub fn inference_configuration(mut self, input: crate::types::InferenceConfiguration) -> Self {
+        self.inference_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifications about the inference parameters that were provided alongside the prompt. These are specified in the <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_PromptOverrideConfiguration.html">PromptOverrideConfiguration</a> object that was set when the agent was created or updated. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters.html">Inference parameters for foundation models</a>.</p>
+    pub fn set_inference_configuration(mut self, input: ::std::option::Option<crate::types::InferenceConfiguration>) -> Self {
+        self.inference_configuration = input;
+        self
+    }
+    /// <p>Specifications about the inference parameters that were provided alongside the prompt. These are specified in the <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_PromptOverrideConfiguration.html">PromptOverrideConfiguration</a> object that was set when the agent was created or updated. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters.html">Inference parameters for foundation models</a>.</p>
+    pub fn get_inference_configuration(&self) -> &::std::option::Option<crate::types::InferenceConfiguration> {
+        &self.inference_configuration
+    }
     /// <p>Specifies whether to override the default parser Lambda function when parsing the raw foundation model output in the part of the agent sequence defined by the <code>promptType</code>.</p>
     pub fn parser_mode(mut self, input: crate::types::CreationMode) -> Self {
         self.parser_mode = ::std::option::Option::Some(input);
@@ -194,9 +194,9 @@ impl ModelInvocationInputBuilder {
             trace_id: self.trace_id,
             text: self.text,
             r#type: self.r#type,
-            inference_configuration: self.inference_configuration,
             override_lambda: self.override_lambda,
             prompt_creation_mode: self.prompt_creation_mode,
+            inference_configuration: self.inference_configuration,
             parser_mode: self.parser_mode,
         }
     }
@@ -207,9 +207,9 @@ impl ::std::fmt::Debug for ModelInvocationInputBuilder {
         formatter.field("trace_id", &"*** Sensitive Data Redacted ***");
         formatter.field("text", &"*** Sensitive Data Redacted ***");
         formatter.field("r#type", &"*** Sensitive Data Redacted ***");
-        formatter.field("inference_configuration", &"*** Sensitive Data Redacted ***");
         formatter.field("override_lambda", &"*** Sensitive Data Redacted ***");
         formatter.field("prompt_creation_mode", &"*** Sensitive Data Redacted ***");
+        formatter.field("inference_configuration", &"*** Sensitive Data Redacted ***");
         formatter.field("parser_mode", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }

@@ -183,6 +183,20 @@ pub use crate::types::_content_body::ContentBodyBuilder;
 
 pub use crate::types::_api_result::ApiResultBuilder;
 
+pub use crate::types::_flow_trace_event::FlowTraceEventBuilder;
+
+pub use crate::types::_flow_trace_condition_node_result_event::FlowTraceConditionNodeResultEventBuilder;
+
+pub use crate::types::_flow_trace_condition::FlowTraceConditionBuilder;
+
+pub use crate::types::_flow_trace_node_output_event::FlowTraceNodeOutputEventBuilder;
+
+pub use crate::types::_flow_trace_node_output_field::FlowTraceNodeOutputFieldBuilder;
+
+pub use crate::types::_flow_trace_node_input_event::FlowTraceNodeInputEventBuilder;
+
+pub use crate::types::_flow_trace_node_input_field::FlowTraceNodeInputFieldBuilder;
+
 pub use crate::types::_flow_completion_event::FlowCompletionEventBuilder;
 
 pub use crate::types::_flow_output_event::FlowOutputEventBuilder;

@@ -80,6 +80,18 @@ where
                                 crate::protocol_serde::shape_chime_sdk_meeting_configuration::de_chime_sdk_meeting_configuration(tokens)?,
                             );
                         }
+                        "SseAwsKeyManagementParams" => {
+                            builder = builder.set_sse_aws_key_management_params(
+                                crate::protocol_serde::shape_sse_aws_key_management_params::de_sse_aws_key_management_params(tokens)?,
+                            );
+                        }
+                        "SinkIamRoleArn" => {
+                            builder = builder.set_sink_iam_role_arn(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

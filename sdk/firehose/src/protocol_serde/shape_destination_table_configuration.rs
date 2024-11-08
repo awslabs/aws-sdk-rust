@@ -18,8 +18,14 @@ pub fn ser_destination_table_configuration(
         }
         array_2.finish();
     }
-    if let Some(var_4) = &input.s3_error_output_prefix {
-        object.key("S3ErrorOutputPrefix").string(var_4.as_str());
+    if let Some(var_4) = &input.partition_spec {
+        #[allow(unused_mut)]
+        let mut object_5 = object.key("PartitionSpec").start_object();
+        crate::protocol_serde::shape_partition_spec::ser_partition_spec(&mut object_5, var_4)?;
+        object_5.finish();
+    }
+    if let Some(var_6) = &input.s3_error_output_prefix {
+        object.key("S3ErrorOutputPrefix").string(var_6.as_str());
     }
     Ok(())
 }
@@ -57,6 +63,9 @@ where
                             builder = builder.set_unique_keys(
                                     crate::protocol_serde::shape_list_of_non_empty_strings_without_whitespace::de_list_of_non_empty_strings_without_whitespace(tokens)?
                                 );
+                        }
+                        "PartitionSpec" => {
+                            builder = builder.set_partition_spec(crate::protocol_serde::shape_partition_spec::de_partition_spec(tokens)?);
                         }
                         "S3ErrorOutputPrefix" => {
                             builder = builder.set_s3_error_output_prefix(

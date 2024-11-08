@@ -15,6 +15,11 @@ pub struct CreateMediaCapturePipelineInput {
     pub client_request_token: ::std::option::Option<::std::string::String>,
     /// <p>The configuration for a specified media pipeline. <code>SourceType</code> must be <code>ChimeSdkMeeting</code>.</p>
     pub chime_sdk_meeting_configuration: ::std::option::Option<crate::types::ChimeSdkMeetingConfiguration>,
+    /// <p>An object that contains server side encryption parameters to be used by media capture pipeline. The parameters can also be used by media concatenation pipeline taking media capture pipeline as a media source.</p>
+    pub sse_aws_key_management_params: ::std::option::Option<crate::types::SseAwsKeyManagementParams>,
+    /// <p>The Amazon Resource Name (ARN) of the sink role to be used with <code>AwsKmsKeyId</code> in <code>SseAwsKeyManagementParams</code>. Can only interact with <code>S3Bucket</code> sink type. The role must belong to the caller’s account and be able to act on behalf of the caller during the API call. All minimum policy permissions requirements for the caller to perform sink-related actions are the same for <code>SinkIamRoleArn</code>.</p>
+    /// <p>Additionally, the role must have permission to <code>kms:GenerateDataKey</code> using KMS key supplied as <code>AwsKmsKeyId</code> in <code>SseAwsKeyManagementParams</code>. If media concatenation will be required later, the role must also have permission to <code>kms:Decrypt</code> for the same KMS key.</p>
+    pub sink_iam_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The tag key-value pairs.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
@@ -43,6 +48,15 @@ impl CreateMediaCapturePipelineInput {
     pub fn chime_sdk_meeting_configuration(&self) -> ::std::option::Option<&crate::types::ChimeSdkMeetingConfiguration> {
         self.chime_sdk_meeting_configuration.as_ref()
     }
+    /// <p>An object that contains server side encryption parameters to be used by media capture pipeline. The parameters can also be used by media concatenation pipeline taking media capture pipeline as a media source.</p>
+    pub fn sse_aws_key_management_params(&self) -> ::std::option::Option<&crate::types::SseAwsKeyManagementParams> {
+        self.sse_aws_key_management_params.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the sink role to be used with <code>AwsKmsKeyId</code> in <code>SseAwsKeyManagementParams</code>. Can only interact with <code>S3Bucket</code> sink type. The role must belong to the caller’s account and be able to act on behalf of the caller during the API call. All minimum policy permissions requirements for the caller to perform sink-related actions are the same for <code>SinkIamRoleArn</code>.</p>
+    /// <p>Additionally, the role must have permission to <code>kms:GenerateDataKey</code> using KMS key supplied as <code>AwsKmsKeyId</code> in <code>SseAwsKeyManagementParams</code>. If media concatenation will be required later, the role must also have permission to <code>kms:Decrypt</code> for the same KMS key.</p>
+    pub fn sink_iam_role_arn(&self) -> ::std::option::Option<&str> {
+        self.sink_iam_role_arn.as_deref()
+    }
     /// <p>The tag key-value pairs.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
@@ -59,6 +73,8 @@ impl ::std::fmt::Debug for CreateMediaCapturePipelineInput {
         formatter.field("sink_arn", &"*** Sensitive Data Redacted ***");
         formatter.field("client_request_token", &"*** Sensitive Data Redacted ***");
         formatter.field("chime_sdk_meeting_configuration", &self.chime_sdk_meeting_configuration);
+        formatter.field("sse_aws_key_management_params", &self.sse_aws_key_management_params);
+        formatter.field("sink_iam_role_arn", &"*** Sensitive Data Redacted ***");
         formatter.field("tags", &self.tags);
         formatter.finish()
     }
@@ -80,6 +96,8 @@ pub struct CreateMediaCapturePipelineInputBuilder {
     pub(crate) sink_arn: ::std::option::Option<::std::string::String>,
     pub(crate) client_request_token: ::std::option::Option<::std::string::String>,
     pub(crate) chime_sdk_meeting_configuration: ::std::option::Option<crate::types::ChimeSdkMeetingConfiguration>,
+    pub(crate) sse_aws_key_management_params: ::std::option::Option<crate::types::SseAwsKeyManagementParams>,
+    pub(crate) sink_iam_role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateMediaCapturePipelineInputBuilder {
@@ -171,6 +189,37 @@ impl CreateMediaCapturePipelineInputBuilder {
     pub fn get_chime_sdk_meeting_configuration(&self) -> &::std::option::Option<crate::types::ChimeSdkMeetingConfiguration> {
         &self.chime_sdk_meeting_configuration
     }
+    /// <p>An object that contains server side encryption parameters to be used by media capture pipeline. The parameters can also be used by media concatenation pipeline taking media capture pipeline as a media source.</p>
+    pub fn sse_aws_key_management_params(mut self, input: crate::types::SseAwsKeyManagementParams) -> Self {
+        self.sse_aws_key_management_params = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>An object that contains server side encryption parameters to be used by media capture pipeline. The parameters can also be used by media concatenation pipeline taking media capture pipeline as a media source.</p>
+    pub fn set_sse_aws_key_management_params(mut self, input: ::std::option::Option<crate::types::SseAwsKeyManagementParams>) -> Self {
+        self.sse_aws_key_management_params = input;
+        self
+    }
+    /// <p>An object that contains server side encryption parameters to be used by media capture pipeline. The parameters can also be used by media concatenation pipeline taking media capture pipeline as a media source.</p>
+    pub fn get_sse_aws_key_management_params(&self) -> &::std::option::Option<crate::types::SseAwsKeyManagementParams> {
+        &self.sse_aws_key_management_params
+    }
+    /// <p>The Amazon Resource Name (ARN) of the sink role to be used with <code>AwsKmsKeyId</code> in <code>SseAwsKeyManagementParams</code>. Can only interact with <code>S3Bucket</code> sink type. The role must belong to the caller’s account and be able to act on behalf of the caller during the API call. All minimum policy permissions requirements for the caller to perform sink-related actions are the same for <code>SinkIamRoleArn</code>.</p>
+    /// <p>Additionally, the role must have permission to <code>kms:GenerateDataKey</code> using KMS key supplied as <code>AwsKmsKeyId</code> in <code>SseAwsKeyManagementParams</code>. If media concatenation will be required later, the role must also have permission to <code>kms:Decrypt</code> for the same KMS key.</p>
+    pub fn sink_iam_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.sink_iam_role_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the sink role to be used with <code>AwsKmsKeyId</code> in <code>SseAwsKeyManagementParams</code>. Can only interact with <code>S3Bucket</code> sink type. The role must belong to the caller’s account and be able to act on behalf of the caller during the API call. All minimum policy permissions requirements for the caller to perform sink-related actions are the same for <code>SinkIamRoleArn</code>.</p>
+    /// <p>Additionally, the role must have permission to <code>kms:GenerateDataKey</code> using KMS key supplied as <code>AwsKmsKeyId</code> in <code>SseAwsKeyManagementParams</code>. If media concatenation will be required later, the role must also have permission to <code>kms:Decrypt</code> for the same KMS key.</p>
+    pub fn set_sink_iam_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.sink_iam_role_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the sink role to be used with <code>AwsKmsKeyId</code> in <code>SseAwsKeyManagementParams</code>. Can only interact with <code>S3Bucket</code> sink type. The role must belong to the caller’s account and be able to act on behalf of the caller during the API call. All minimum policy permissions requirements for the caller to perform sink-related actions are the same for <code>SinkIamRoleArn</code>.</p>
+    /// <p>Additionally, the role must have permission to <code>kms:GenerateDataKey</code> using KMS key supplied as <code>AwsKmsKeyId</code> in <code>SseAwsKeyManagementParams</code>. If media concatenation will be required later, the role must also have permission to <code>kms:Decrypt</code> for the same KMS key.</p>
+    pub fn get_sink_iam_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sink_iam_role_arn
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -205,6 +254,8 @@ impl CreateMediaCapturePipelineInputBuilder {
             sink_arn: self.sink_arn,
             client_request_token: self.client_request_token,
             chime_sdk_meeting_configuration: self.chime_sdk_meeting_configuration,
+            sse_aws_key_management_params: self.sse_aws_key_management_params,
+            sink_iam_role_arn: self.sink_iam_role_arn,
             tags: self.tags,
         })
     }
@@ -218,6 +269,8 @@ impl ::std::fmt::Debug for CreateMediaCapturePipelineInputBuilder {
         formatter.field("sink_arn", &"*** Sensitive Data Redacted ***");
         formatter.field("client_request_token", &"*** Sensitive Data Redacted ***");
         formatter.field("chime_sdk_meeting_configuration", &self.chime_sdk_meeting_configuration);
+        formatter.field("sse_aws_key_management_params", &self.sse_aws_key_management_params);
+        formatter.field("sink_iam_role_arn", &"*** Sensitive Data Redacted ***");
         formatter.field("tags", &self.tags);
         formatter.finish()
     }

@@ -411,6 +411,8 @@ pub(crate) mod shape_retriever;
 
 pub(crate) mod shape_rule;
 
+pub(crate) mod shape_s3;
+
 pub(crate) mod shape_saml_configuration;
 
 pub(crate) mod shape_saml_provider_configuration;
@@ -450,8 +452,6 @@ pub(crate) mod shape_example_chat_messages;
 pub(crate) mod shape_rule_configuration;
 
 pub(crate) mod shape_rules;
-
-pub(crate) mod shape_s3;
 
 pub(crate) mod shape_text_segment_list;
 

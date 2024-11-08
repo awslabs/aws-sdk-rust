@@ -111,6 +111,8 @@ pub(crate) mod shape_flow_input_content;
 
 pub(crate) mod shape_flow_output_event;
 
+pub(crate) mod shape_flow_trace_event;
+
 pub(crate) mod shape_input_file;
 
 pub(crate) mod shape_invocation_result_member;
@@ -171,6 +173,8 @@ pub(crate) mod shape_filter_attribute;
 
 pub(crate) mod shape_flow_output_content;
 
+pub(crate) mod shape_flow_trace;
+
 pub(crate) mod shape_guardrail_configuration;
 
 pub(crate) mod shape_inference_config;
@@ -205,6 +209,12 @@ pub(crate) mod shape_trace;
 
 pub(crate) mod shape_failure_trace;
 
+pub(crate) mod shape_flow_trace_condition_node_result_event;
+
+pub(crate) mod shape_flow_trace_node_input_event;
+
+pub(crate) mod shape_flow_trace_node_output_event;
+
 pub(crate) mod shape_guardrail_trace;
 
 pub(crate) mod shape_invocation_input_member;
@@ -222,6 +232,12 @@ pub(crate) mod shape_span;
 pub(crate) mod shape_text_inference_config;
 
 pub(crate) mod shape_api_invocation_input;
+
+pub(crate) mod shape_flow_trace_conditions;
+
+pub(crate) mod shape_flow_trace_node_input_fields;
+
+pub(crate) mod shape_flow_trace_node_output_fields;
 
 pub(crate) mod shape_function_invocation_input;
 
@@ -255,6 +271,12 @@ pub(crate) mod shape_code_interpreter_invocation_output;
 
 pub(crate) mod shape_final_response;
 
+pub(crate) mod shape_flow_trace_condition;
+
+pub(crate) mod shape_flow_trace_node_input_field;
+
+pub(crate) mod shape_flow_trace_node_output_field;
+
 pub(crate) mod shape_function_parameters;
 
 pub(crate) mod shape_guardrail_assessment;
@@ -280,6 +302,10 @@ pub(crate) mod shape_api_content_map;
 pub(crate) mod shape_api_parameter;
 
 pub(crate) mod shape_files;
+
+pub(crate) mod shape_flow_trace_node_input_content;
+
+pub(crate) mod shape_flow_trace_node_output_content;
 
 pub(crate) mod shape_function_parameter;
 

@@ -33,6 +33,8 @@ pub struct UpdateFunctionCodeInput {
     pub revision_id: ::std::option::Option<::std::string::String>,
     /// <p>The instruction set architecture that the function supports. Enter a string array with one of the valid values (arm64 or x86_64). The default value is <code>x86_64</code>.</p>
     pub architectures: ::std::option::Option<::std::vec::Vec<crate::types::Architecture>>,
+    /// <p>The ARN of the Key Management Service (KMS) customer managed key that's used to encrypt your function's .zip deployment package. If you don't provide a customer managed key, Lambda uses an Amazon Web Services managed key.</p>
+    pub source_kms_key_arn: ::std::option::Option<::std::string::String>,
 }
 impl UpdateFunctionCodeInput {
     /// <p>The name or ARN of the Lambda function.</p>
@@ -87,6 +89,10 @@ impl UpdateFunctionCodeInput {
     pub fn architectures(&self) -> &[crate::types::Architecture] {
         self.architectures.as_deref().unwrap_or_default()
     }
+    /// <p>The ARN of the Key Management Service (KMS) customer managed key that's used to encrypt your function's .zip deployment package. If you don't provide a customer managed key, Lambda uses an Amazon Web Services managed key.</p>
+    pub fn source_kms_key_arn(&self) -> ::std::option::Option<&str> {
+        self.source_kms_key_arn.as_deref()
+    }
 }
 impl ::std::fmt::Debug for UpdateFunctionCodeInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -101,6 +107,7 @@ impl ::std::fmt::Debug for UpdateFunctionCodeInput {
         formatter.field("dry_run", &self.dry_run);
         formatter.field("revision_id", &self.revision_id);
         formatter.field("architectures", &self.architectures);
+        formatter.field("source_kms_key_arn", &self.source_kms_key_arn);
         formatter.finish()
     }
 }
@@ -125,6 +132,7 @@ pub struct UpdateFunctionCodeInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) revision_id: ::std::option::Option<::std::string::String>,
     pub(crate) architectures: ::std::option::Option<::std::vec::Vec<crate::types::Architecture>>,
+    pub(crate) source_kms_key_arn: ::std::option::Option<::std::string::String>,
 }
 impl UpdateFunctionCodeInputBuilder {
     /// <p>The name or ARN of the Lambda function.</p>
@@ -304,6 +312,20 @@ impl UpdateFunctionCodeInputBuilder {
     pub fn get_architectures(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Architecture>> {
         &self.architectures
     }
+    /// <p>The ARN of the Key Management Service (KMS) customer managed key that's used to encrypt your function's .zip deployment package. If you don't provide a customer managed key, Lambda uses an Amazon Web Services managed key.</p>
+    pub fn source_kms_key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.source_kms_key_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ARN of the Key Management Service (KMS) customer managed key that's used to encrypt your function's .zip deployment package. If you don't provide a customer managed key, Lambda uses an Amazon Web Services managed key.</p>
+    pub fn set_source_kms_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.source_kms_key_arn = input;
+        self
+    }
+    /// <p>The ARN of the Key Management Service (KMS) customer managed key that's used to encrypt your function's .zip deployment package. If you don't provide a customer managed key, Lambda uses an Amazon Web Services managed key.</p>
+    pub fn get_source_kms_key_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_kms_key_arn
+    }
     /// Consumes the builder and constructs a [`UpdateFunctionCodeInput`](crate::operation::update_function_code::UpdateFunctionCodeInput).
     pub fn build(
         self,
@@ -320,6 +342,7 @@ impl UpdateFunctionCodeInputBuilder {
             dry_run: self.dry_run,
             revision_id: self.revision_id,
             architectures: self.architectures,
+            source_kms_key_arn: self.source_kms_key_arn,
         })
     }
 }
@@ -336,6 +359,7 @@ impl ::std::fmt::Debug for UpdateFunctionCodeInputBuilder {
         formatter.field("dry_run", &self.dry_run);
         formatter.field("revision_id", &self.revision_id);
         formatter.field("architectures", &self.architectures);
+        formatter.field("source_kms_key_arn", &self.source_kms_key_arn);
         formatter.finish()
     }
 }

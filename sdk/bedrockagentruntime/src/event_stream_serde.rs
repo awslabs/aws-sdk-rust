@@ -246,6 +246,15 @@ impl ::aws_smithy_eventstream::frame::UnmarshallMessage for FlowResponseStreamUn
                         crate::types::FlowResponseStream::FlowCompletionEvent(parsed),
                     ))
                 }
+                "flowTraceEvent" => {
+                    let parsed =
+                        crate::protocol_serde::shape_flow_trace_event::de_flow_trace_event_payload(&message.payload()[..]).map_err(|err| {
+                            ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall FlowTraceEvent: {}", err))
+                        })?;
+                    Ok(::aws_smithy_eventstream::frame::UnmarshalledMessage::Event(
+                        crate::types::FlowResponseStream::FlowTraceEvent(parsed),
+                    ))
+                }
                 _unknown_variant => Ok(::aws_smithy_eventstream::frame::UnmarshalledMessage::Event(
                     crate::types::FlowResponseStream::Unknown,
                 )),

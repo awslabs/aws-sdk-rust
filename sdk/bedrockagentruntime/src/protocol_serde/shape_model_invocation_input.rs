@@ -35,11 +35,6 @@ where
                                     .transpose()?,
                             );
                         }
-                        "inferenceConfiguration" => {
-                            builder = builder.set_inference_configuration(
-                                crate::protocol_serde::shape_inference_configuration::de_inference_configuration(tokens)?,
-                            );
-                        }
                         "overrideLambda" => {
                             builder = builder.set_override_lambda(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
@@ -52,6 +47,11 @@ where
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| crate::types::CreationMode::from(u.as_ref())))
                                     .transpose()?,
+                            );
+                        }
+                        "inferenceConfiguration" => {
+                            builder = builder.set_inference_configuration(
+                                crate::protocol_serde::shape_inference_configuration::de_inference_configuration(tokens)?,
                             );
                         }
                         "parserMode" => {

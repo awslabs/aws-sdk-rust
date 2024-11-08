@@ -143,6 +143,8 @@ pub use crate::types::_presenter_only_configuration::PresenterOnlyConfigurationB
 
 pub use crate::types::_media_capture_pipeline::MediaCapturePipelineBuilder;
 
+pub use crate::types::_sse_aws_key_management_params::SseAwsKeyManagementParamsBuilder;
+
 pub use crate::types::_chime_sdk_meeting_configuration::ChimeSdkMeetingConfigurationBuilder;
 
 pub use crate::types::_artifacts_configuration::ArtifactsConfigurationBuilder;

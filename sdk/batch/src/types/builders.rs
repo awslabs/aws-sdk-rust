@@ -15,6 +15,8 @@ pub use crate::types::_ec2_configuration::Ec2ConfigurationBuilder;
 
 pub use crate::types::_launch_template_specification::LaunchTemplateSpecificationBuilder;
 
+pub use crate::types::_launch_template_specification_override::LaunchTemplateSpecificationOverrideBuilder;
+
 pub use crate::types::_ecs_properties_override::EcsPropertiesOverrideBuilder;
 
 pub use crate::types::_task_properties_override::TaskPropertiesOverrideBuilder;

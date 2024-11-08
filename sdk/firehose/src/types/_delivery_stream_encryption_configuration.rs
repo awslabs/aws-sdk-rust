@@ -8,7 +8,7 @@ pub struct DeliveryStreamEncryptionConfiguration {
     pub key_arn: ::std::option::Option<::std::string::String>,
     /// <p>Indicates the type of customer master key (CMK) that is used for encryption. The default setting is <code>Amazon Web Services_OWNED_CMK</code>. For more information about CMKs, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer Master Keys (CMKs)</a>.</p>
     pub key_type: ::std::option::Option<crate::types::KeyType>,
-    /// <p>This is the server-side encryption (SSE) status for the delivery stream. For a full description of the different values of this status, see <code>StartDeliveryStreamEncryption</code> and <code>StopDeliveryStreamEncryption</code>. If this status is <code>ENABLING_FAILED</code> or <code>DISABLING_FAILED</code>, it is the status of the most recent attempt to enable or disable SSE, respectively.</p>
+    /// <p>This is the server-side encryption (SSE) status for the Firehose stream. For a full description of the different values of this status, see <code>StartDeliveryStreamEncryption</code> and <code>StopDeliveryStreamEncryption</code>. If this status is <code>ENABLING_FAILED</code> or <code>DISABLING_FAILED</code>, it is the status of the most recent attempt to enable or disable SSE, respectively.</p>
     pub status: ::std::option::Option<crate::types::DeliveryStreamEncryptionStatus>,
     /// <p>Provides details in case one of the following operations fails due to an error related to KMS: <code>CreateDeliveryStream</code>, <code>DeleteDeliveryStream</code>, <code>StartDeliveryStreamEncryption</code>, <code>StopDeliveryStreamEncryption</code>.</p>
     pub failure_description: ::std::option::Option<crate::types::FailureDescription>,
@@ -22,7 +22,7 @@ impl DeliveryStreamEncryptionConfiguration {
     pub fn key_type(&self) -> ::std::option::Option<&crate::types::KeyType> {
         self.key_type.as_ref()
     }
-    /// <p>This is the server-side encryption (SSE) status for the delivery stream. For a full description of the different values of this status, see <code>StartDeliveryStreamEncryption</code> and <code>StopDeliveryStreamEncryption</code>. If this status is <code>ENABLING_FAILED</code> or <code>DISABLING_FAILED</code>, it is the status of the most recent attempt to enable or disable SSE, respectively.</p>
+    /// <p>This is the server-side encryption (SSE) status for the Firehose stream. For a full description of the different values of this status, see <code>StartDeliveryStreamEncryption</code> and <code>StopDeliveryStreamEncryption</code>. If this status is <code>ENABLING_FAILED</code> or <code>DISABLING_FAILED</code>, it is the status of the most recent attempt to enable or disable SSE, respectively.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::DeliveryStreamEncryptionStatus> {
         self.status.as_ref()
     }
@@ -76,17 +76,17 @@ impl DeliveryStreamEncryptionConfigurationBuilder {
     pub fn get_key_type(&self) -> &::std::option::Option<crate::types::KeyType> {
         &self.key_type
     }
-    /// <p>This is the server-side encryption (SSE) status for the delivery stream. For a full description of the different values of this status, see <code>StartDeliveryStreamEncryption</code> and <code>StopDeliveryStreamEncryption</code>. If this status is <code>ENABLING_FAILED</code> or <code>DISABLING_FAILED</code>, it is the status of the most recent attempt to enable or disable SSE, respectively.</p>
+    /// <p>This is the server-side encryption (SSE) status for the Firehose stream. For a full description of the different values of this status, see <code>StartDeliveryStreamEncryption</code> and <code>StopDeliveryStreamEncryption</code>. If this status is <code>ENABLING_FAILED</code> or <code>DISABLING_FAILED</code>, it is the status of the most recent attempt to enable or disable SSE, respectively.</p>
     pub fn status(mut self, input: crate::types::DeliveryStreamEncryptionStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>This is the server-side encryption (SSE) status for the delivery stream. For a full description of the different values of this status, see <code>StartDeliveryStreamEncryption</code> and <code>StopDeliveryStreamEncryption</code>. If this status is <code>ENABLING_FAILED</code> or <code>DISABLING_FAILED</code>, it is the status of the most recent attempt to enable or disable SSE, respectively.</p>
+    /// <p>This is the server-side encryption (SSE) status for the Firehose stream. For a full description of the different values of this status, see <code>StartDeliveryStreamEncryption</code> and <code>StopDeliveryStreamEncryption</code>. If this status is <code>ENABLING_FAILED</code> or <code>DISABLING_FAILED</code>, it is the status of the most recent attempt to enable or disable SSE, respectively.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::DeliveryStreamEncryptionStatus>) -> Self {
         self.status = input;
         self
     }
-    /// <p>This is the server-side encryption (SSE) status for the delivery stream. For a full description of the different values of this status, see <code>StartDeliveryStreamEncryption</code> and <code>StopDeliveryStreamEncryption</code>. If this status is <code>ENABLING_FAILED</code> or <code>DISABLING_FAILED</code>, it is the status of the most recent attempt to enable or disable SSE, respectively.</p>
+    /// <p>This is the server-side encryption (SSE) status for the Firehose stream. For a full description of the different values of this status, see <code>StartDeliveryStreamEncryption</code> and <code>StopDeliveryStreamEncryption</code>. If this status is <code>ENABLING_FAILED</code> or <code>DISABLING_FAILED</code>, it is the status of the most recent attempt to enable or disable SSE, respectively.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::DeliveryStreamEncryptionStatus> {
         &self.status
     }

@@ -10,6 +10,8 @@ pub struct RegistrationVersionStatusHistory {
     pub submitted_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time when the registration was in the reviewing state, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
     pub reviewing_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The time when the registration was in the requires authentication state, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
+    pub requires_authentication_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time when the registration was in the approved state, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
     pub approved_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time when the registration was in the discarded state, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
@@ -33,6 +35,10 @@ impl RegistrationVersionStatusHistory {
     /// <p>The time when the registration was in the reviewing state, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
     pub fn reviewing_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.reviewing_timestamp.as_ref()
+    }
+    /// <p>The time when the registration was in the requires authentication state, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
+    pub fn requires_authentication_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.requires_authentication_timestamp.as_ref()
     }
     /// <p>The time when the registration was in the approved state, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
     pub fn approved_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -69,6 +75,7 @@ pub struct RegistrationVersionStatusHistoryBuilder {
     pub(crate) draft_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) submitted_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) reviewing_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) requires_authentication_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) approved_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) discarded_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) denied_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -118,6 +125,20 @@ impl RegistrationVersionStatusHistoryBuilder {
     /// <p>The time when the registration was in the reviewing state, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
     pub fn get_reviewing_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.reviewing_timestamp
+    }
+    /// <p>The time when the registration was in the requires authentication state, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
+    pub fn requires_authentication_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.requires_authentication_timestamp = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The time when the registration was in the requires authentication state, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
+    pub fn set_requires_authentication_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.requires_authentication_timestamp = input;
+        self
+    }
+    /// <p>The time when the registration was in the requires authentication state, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
+    pub fn get_requires_authentication_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.requires_authentication_timestamp
     }
     /// <p>The time when the registration was in the approved state, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
     pub fn approved_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -202,6 +223,7 @@ impl RegistrationVersionStatusHistoryBuilder {
             })?,
             submitted_timestamp: self.submitted_timestamp,
             reviewing_timestamp: self.reviewing_timestamp,
+            requires_authentication_timestamp: self.requires_authentication_timestamp,
             approved_timestamp: self.approved_timestamp,
             discarded_timestamp: self.discarded_timestamp,
             denied_timestamp: self.denied_timestamp,

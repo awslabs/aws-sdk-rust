@@ -8,6 +8,8 @@ pub struct GroupMembers {
     pub member_groups: ::std::option::Option<::std::vec::Vec<crate::types::MemberGroup>>,
     /// <p>A list of users that belong to a group. For example, a list of interns all belong to the "Interns" group.</p>
     pub member_users: ::std::option::Option<::std::vec::Vec<crate::types::MemberUser>>,
+    /// <p>Information required for Amazon Q Business to find a specific file in an Amazon S3 bucket.</p>
+    pub s3_path_for_group_members: ::std::option::Option<crate::types::S3>,
 }
 impl GroupMembers {
     /// <p>A list of sub groups that belong to a group. For example, the sub groups "Research", "Engineering", and "Sales and Marketing" all belong to the group "Company".</p>
@@ -21,6 +23,10 @@ impl GroupMembers {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.member_users.is_none()`.
     pub fn member_users(&self) -> &[crate::types::MemberUser] {
         self.member_users.as_deref().unwrap_or_default()
+    }
+    /// <p>Information required for Amazon Q Business to find a specific file in an Amazon S3 bucket.</p>
+    pub fn s3_path_for_group_members(&self) -> ::std::option::Option<&crate::types::S3> {
+        self.s3_path_for_group_members.as_ref()
     }
 }
 impl GroupMembers {
@@ -36,6 +42,7 @@ impl GroupMembers {
 pub struct GroupMembersBuilder {
     pub(crate) member_groups: ::std::option::Option<::std::vec::Vec<crate::types::MemberGroup>>,
     pub(crate) member_users: ::std::option::Option<::std::vec::Vec<crate::types::MemberUser>>,
+    pub(crate) s3_path_for_group_members: ::std::option::Option<crate::types::S3>,
 }
 impl GroupMembersBuilder {
     /// Appends an item to `member_groups`.
@@ -78,11 +85,26 @@ impl GroupMembersBuilder {
     pub fn get_member_users(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MemberUser>> {
         &self.member_users
     }
+    /// <p>Information required for Amazon Q Business to find a specific file in an Amazon S3 bucket.</p>
+    pub fn s3_path_for_group_members(mut self, input: crate::types::S3) -> Self {
+        self.s3_path_for_group_members = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Information required for Amazon Q Business to find a specific file in an Amazon S3 bucket.</p>
+    pub fn set_s3_path_for_group_members(mut self, input: ::std::option::Option<crate::types::S3>) -> Self {
+        self.s3_path_for_group_members = input;
+        self
+    }
+    /// <p>Information required for Amazon Q Business to find a specific file in an Amazon S3 bucket.</p>
+    pub fn get_s3_path_for_group_members(&self) -> &::std::option::Option<crate::types::S3> {
+        &self.s3_path_for_group_members
+    }
     /// Consumes the builder and constructs a [`GroupMembers`](crate::types::GroupMembers).
     pub fn build(self) -> crate::types::GroupMembers {
         crate::types::GroupMembers {
             member_groups: self.member_groups,
             member_users: self.member_users,
+            s3_path_for_group_members: self.s3_path_for_group_members,
         }
     }
 }

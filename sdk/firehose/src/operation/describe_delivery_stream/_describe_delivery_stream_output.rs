@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeDeliveryStreamOutput {
-    /// <p>Information about the delivery stream.</p>
+    /// <p>Information about the Firehose stream.</p>
     pub delivery_stream_description: ::std::option::Option<crate::types::DeliveryStreamDescription>,
     _request_id: Option<String>,
 }
 impl DescribeDeliveryStreamOutput {
-    /// <p>Information about the delivery stream.</p>
+    /// <p>Information about the Firehose stream.</p>
     pub fn delivery_stream_description(&self) -> ::std::option::Option<&crate::types::DeliveryStreamDescription> {
         self.delivery_stream_description.as_ref()
     }
@@ -33,18 +33,18 @@ pub struct DescribeDeliveryStreamOutputBuilder {
     _request_id: Option<String>,
 }
 impl DescribeDeliveryStreamOutputBuilder {
-    /// <p>Information about the delivery stream.</p>
+    /// <p>Information about the Firehose stream.</p>
     /// This field is required.
     pub fn delivery_stream_description(mut self, input: crate::types::DeliveryStreamDescription) -> Self {
         self.delivery_stream_description = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Information about the delivery stream.</p>
+    /// <p>Information about the Firehose stream.</p>
     pub fn set_delivery_stream_description(mut self, input: ::std::option::Option<crate::types::DeliveryStreamDescription>) -> Self {
         self.delivery_stream_description = input;
         self
     }
-    /// <p>Information about the delivery stream.</p>
+    /// <p>Information about the Firehose stream.</p>
     pub fn get_delivery_stream_description(&self) -> &::std::option::Option<crate::types::DeliveryStreamDescription> {
         &self.delivery_stream_description
     }

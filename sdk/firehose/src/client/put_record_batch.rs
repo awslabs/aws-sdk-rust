@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`PutRecordBatch`](crate::operation::put_record_batch::builders::PutRecordBatchFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`delivery_stream_name(impl Into<String>)`](crate::operation::put_record_batch::builders::PutRecordBatchFluentBuilder::delivery_stream_name) / [`set_delivery_stream_name(Option<String>)`](crate::operation::put_record_batch::builders::PutRecordBatchFluentBuilder::set_delivery_stream_name):<br>required: **true**<br><p>The name of the delivery stream.</p><br>
+    ///   - [`delivery_stream_name(impl Into<String>)`](crate::operation::put_record_batch::builders::PutRecordBatchFluentBuilder::delivery_stream_name) / [`set_delivery_stream_name(Option<String>)`](crate::operation::put_record_batch::builders::PutRecordBatchFluentBuilder::set_delivery_stream_name):<br>required: **true**<br><p>The name of the Firehose stream.</p><br>
     ///   - [`records(Record)`](crate::operation::put_record_batch::builders::PutRecordBatchFluentBuilder::records) / [`set_records(Option<Vec::<Record>>)`](crate::operation::put_record_batch::builders::PutRecordBatchFluentBuilder::set_records):<br>required: **true**<br><p>One or more records.</p><br>
     /// - On success, responds with [`PutRecordBatchOutput`](crate::operation::put_record_batch::PutRecordBatchOutput) with field(s):
     ///   - [`failed_put_count(i32)`](crate::operation::put_record_batch::PutRecordBatchOutput::failed_put_count): <p>The number of records that might have failed processing. This number might be greater than 0 even if the <code>PutRecordBatch</code> call succeeds. Check <code>FailedPutCount</code> to determine whether there are records that you need to resend.</p>

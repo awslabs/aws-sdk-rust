@@ -156,12 +156,18 @@ pub(crate) fn de_get_control(
                             .transpose()?,
                     );
                 }
+                "Implementation" => {
+                    builder = builder.set_implementation(crate::protocol_serde::shape_implementation_details::de_implementation_details(tokens)?);
+                }
                 "Name" => {
                     builder = builder.set_name(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                             .transpose()?,
                     );
+                }
+                "Parameters" => {
+                    builder = builder.set_parameters(crate::protocol_serde::shape_control_parameters::de_control_parameters(tokens)?);
                 }
                 "RegionConfiguration" => {
                     builder = builder.set_region_configuration(crate::protocol_serde::shape_region_configuration::de_region_configuration(tokens)?);

@@ -252,7 +252,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateDeliver
 pub enum CreateDeliveryStreamError {
     /// <p>The specified input parameter has a value that is not valid.</p>
     InvalidArgumentException(crate::types::error::InvalidArgumentException),
-    /// <p>Firehose throws this exception when an attempt to put records or to start or stop delivery stream encryption fails. This happens when the KMS service throws one of the following exception types: <code>AccessDeniedException</code>, <code>InvalidStateException</code>, <code>DisabledException</code>, or <code>NotFoundException</code>.</p>
+    /// <p>Firehose throws this exception when an attempt to put records or to start or stop Firehose stream encryption fails. This happens when the KMS service throws one of the following exception types: <code>AccessDeniedException</code>, <code>InvalidStateException</code>, <code>DisabledException</code>, or <code>NotFoundException</code>.</p>
     InvalidKmsResourceException(crate::types::error::InvalidKmsResourceException),
     /// <p>You have already reached the limit for a requested resource.</p>
     LimitExceededException(crate::types::error::LimitExceededException),

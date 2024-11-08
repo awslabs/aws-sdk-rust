@@ -22,8 +22,8 @@ impl crate::operation::tag_delivery_stream::builders::TagDeliveryStreamInputBuil
 }
 /// Fluent builder constructing a request to `TagDeliveryStream`.
 ///
-/// <p>Adds or updates tags for the specified delivery stream. A tag is a key-value pair that you can define and assign to Amazon Web Services resources. If you specify a tag that already exists, the tag value is replaced with the value that you specify in the request. Tags are metadata. For example, you can add friendly names and descriptions or other types of information that can help you distinguish the delivery stream. For more information about tags, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>.</p>
-/// <p>Each delivery stream can have up to 50 tags.</p>
+/// <p>Adds or updates tags for the specified Firehose stream. A tag is a key-value pair that you can define and assign to Amazon Web Services resources. If you specify a tag that already exists, the tag value is replaced with the value that you specify in the request. Tags are metadata. For example, you can add friendly names and descriptions or other types of information that can help you distinguish the Firehose stream. For more information about tags, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>.</p>
+/// <p>Each Firehose stream can have up to 50 tags.</p>
 /// <p>This operation has a limit of five transactions per second per account.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct TagDeliveryStreamFluentBuilder {
@@ -110,17 +110,17 @@ impl TagDeliveryStreamFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name of the delivery stream to which you want to add the tags.</p>
+    /// <p>The name of the Firehose stream to which you want to add the tags.</p>
     pub fn delivery_stream_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.delivery_stream_name(input.into());
         self
     }
-    /// <p>The name of the delivery stream to which you want to add the tags.</p>
+    /// <p>The name of the Firehose stream to which you want to add the tags.</p>
     pub fn set_delivery_stream_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_delivery_stream_name(input);
         self
     }
-    /// <p>The name of the delivery stream to which you want to add the tags.</p>
+    /// <p>The name of the Firehose stream to which you want to add the tags.</p>
     pub fn get_delivery_stream_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_delivery_stream_name()
     }

@@ -21,7 +21,15 @@ pub use crate::types::_processor::ProcessorBuilder;
 
 pub use crate::types::_processor_parameter::ProcessorParameterBuilder;
 
+pub use crate::types::_table_creation_configuration::TableCreationConfigurationBuilder;
+
+pub use crate::types::_schema_evolution_configuration::SchemaEvolutionConfigurationBuilder;
+
 pub use crate::types::_destination_table_configuration::DestinationTableConfigurationBuilder;
+
+pub use crate::types::_partition_spec::PartitionSpecBuilder;
+
+pub use crate::types::_partition_field::PartitionFieldBuilder;
 
 pub use crate::types::_snowflake_destination_update::SnowflakeDestinationUpdateBuilder;
 
@@ -143,6 +151,22 @@ pub use crate::types::_extended_s3_destination_description::ExtendedS3Destinatio
 
 pub use crate::types::_source_description::SourceDescriptionBuilder;
 
+pub use crate::types::_database_source_description::DatabaseSourceDescriptionBuilder;
+
+pub use crate::types::_database_source_vpc_configuration::DatabaseSourceVpcConfigurationBuilder;
+
+pub use crate::types::_database_source_authentication_configuration::DatabaseSourceAuthenticationConfigurationBuilder;
+
+pub use crate::types::_database_snapshot_info::DatabaseSnapshotInfoBuilder;
+
+pub use crate::types::_failure_description::FailureDescriptionBuilder;
+
+pub use crate::types::_database_column_list::DatabaseColumnListBuilder;
+
+pub use crate::types::_database_table_list::DatabaseTableListBuilder;
+
+pub use crate::types::_database_list::DatabaseListBuilder;
+
 pub use crate::types::_msk_source_description::MskSourceDescriptionBuilder;
 
 pub use crate::types::_authentication_configuration::AuthenticationConfigurationBuilder;
@@ -151,7 +175,7 @@ pub use crate::types::_kinesis_stream_source_description::KinesisStreamSourceDes
 
 pub use crate::types::_delivery_stream_encryption_configuration::DeliveryStreamEncryptionConfigurationBuilder;
 
-pub use crate::types::_failure_description::FailureDescriptionBuilder;
+pub use crate::types::_database_source_configuration::DatabaseSourceConfigurationBuilder;
 
 pub use crate::types::_iceberg_destination_configuration::IcebergDestinationConfigurationBuilder;
 

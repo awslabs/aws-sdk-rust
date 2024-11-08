@@ -27,6 +27,8 @@
 ///     DeliveryStreamFailureType::SubnetAccessDenied => { /* ... */ },
 ///     DeliveryStreamFailureType::SubnetNotFound => { /* ... */ },
 ///     DeliveryStreamFailureType::UnknownError => { /* ... */ },
+///     DeliveryStreamFailureType::VpcEndpointServiceNameNotFound => { /* ... */ },
+///     DeliveryStreamFailureType::VpcInterfaceEndpointServiceAccessDenied => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -84,6 +86,10 @@ pub enum DeliveryStreamFailureType {
     SubnetNotFound,
     #[allow(missing_docs)] // documentation missing in model
     UnknownError,
+    #[allow(missing_docs)] // documentation missing in model
+    VpcEndpointServiceNameNotFound,
+    #[allow(missing_docs)] // documentation missing in model
+    VpcInterfaceEndpointServiceAccessDenied,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -106,6 +112,8 @@ impl ::std::convert::From<&str> for DeliveryStreamFailureType {
             "SUBNET_ACCESS_DENIED" => DeliveryStreamFailureType::SubnetAccessDenied,
             "SUBNET_NOT_FOUND" => DeliveryStreamFailureType::SubnetNotFound,
             "UNKNOWN_ERROR" => DeliveryStreamFailureType::UnknownError,
+            "VPC_ENDPOINT_SERVICE_NAME_NOT_FOUND" => DeliveryStreamFailureType::VpcEndpointServiceNameNotFound,
+            "VPC_INTERFACE_ENDPOINT_SERVICE_ACCESS_DENIED" => DeliveryStreamFailureType::VpcInterfaceEndpointServiceAccessDenied,
             other => DeliveryStreamFailureType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -136,6 +144,8 @@ impl DeliveryStreamFailureType {
             DeliveryStreamFailureType::SubnetAccessDenied => "SUBNET_ACCESS_DENIED",
             DeliveryStreamFailureType::SubnetNotFound => "SUBNET_NOT_FOUND",
             DeliveryStreamFailureType::UnknownError => "UNKNOWN_ERROR",
+            DeliveryStreamFailureType::VpcEndpointServiceNameNotFound => "VPC_ENDPOINT_SERVICE_NAME_NOT_FOUND",
+            DeliveryStreamFailureType::VpcInterfaceEndpointServiceAccessDenied => "VPC_INTERFACE_ENDPOINT_SERVICE_ACCESS_DENIED",
             DeliveryStreamFailureType::Unknown(value) => value.as_str(),
         }
     }
@@ -157,6 +167,8 @@ impl DeliveryStreamFailureType {
             "SUBNET_ACCESS_DENIED",
             "SUBNET_NOT_FOUND",
             "UNKNOWN_ERROR",
+            "VPC_ENDPOINT_SERVICE_NAME_NOT_FOUND",
+            "VPC_INTERFACE_ENDPOINT_SERVICE_ACCESS_DENIED",
         ]
     }
 }
@@ -195,6 +207,8 @@ impl ::std::fmt::Display for DeliveryStreamFailureType {
             DeliveryStreamFailureType::SubnetAccessDenied => write!(f, "SUBNET_ACCESS_DENIED"),
             DeliveryStreamFailureType::SubnetNotFound => write!(f, "SUBNET_NOT_FOUND"),
             DeliveryStreamFailureType::UnknownError => write!(f, "UNKNOWN_ERROR"),
+            DeliveryStreamFailureType::VpcEndpointServiceNameNotFound => write!(f, "VPC_ENDPOINT_SERVICE_NAME_NOT_FOUND"),
+            DeliveryStreamFailureType::VpcInterfaceEndpointServiceAccessDenied => write!(f, "VPC_INTERFACE_ENDPOINT_SERVICE_ACCESS_DENIED"),
             DeliveryStreamFailureType::Unknown(value) => write!(f, "{}", value),
         }
     }

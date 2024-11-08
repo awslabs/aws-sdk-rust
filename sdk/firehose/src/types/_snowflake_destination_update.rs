@@ -26,7 +26,7 @@ pub struct SnowflakeDestinationUpdate {
     pub meta_data_column_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the content metadata column</p>
     pub content_column_name: ::std::option::Option<::std::string::String>,
-    /// <p>Describes the Amazon CloudWatch logging options for your delivery stream.</p>
+    /// <p>Describes the Amazon CloudWatch logging options for your Firehose stream.</p>
     pub cloud_watch_logging_options: ::std::option::Option<crate::types::CloudWatchLoggingOptions>,
     /// <p>Describes a data processing configuration.</p>
     pub processing_configuration: ::std::option::Option<crate::types::ProcessingConfiguration>,
@@ -34,7 +34,7 @@ pub struct SnowflakeDestinationUpdate {
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specify how long Firehose retries sending data to the New Relic HTTP endpoint. After sending data, Firehose first waits for an acknowledgment from the HTTP endpoint. If an error occurs or the acknowledgment doesn’t arrive within the acknowledgment timeout period, Firehose starts the retry duration counter. It keeps retrying until the retry duration expires. After that, Firehose considers it a data delivery failure and backs up the data to your Amazon S3 bucket. Every time that Firehose sends data to the HTTP endpoint (either the initial attempt or a retry), it restarts the acknowledgement timeout counter and waits for an acknowledgement from the HTTP endpoint. Even if the retry duration expires, Firehose still waits for the acknowledgment until it receives it or the acknowledgement timeout period is reached. If the acknowledgment times out, Firehose determines whether there's time left in the retry counter. If there is time left, it retries again and repeats the logic until it receives an acknowledgment or determines that the retry time has expired. If you don't want Firehose to retry sending data, set this value to 0.</p>
     pub retry_options: ::std::option::Option<crate::types::SnowflakeRetryOptions>,
-    /// <p>Choose an S3 backup mode</p>
+    /// <p>Choose an S3 backup mode. Once you set the mode as <code>AllData</code>, you can not change it to <code>FailedDataOnly</code>.</p>
     pub s3_backup_mode: ::std::option::Option<crate::types::SnowflakeS3BackupMode>,
     /// <p>Describes an update for a destination in Amazon S3.</p>
     pub s3_update: ::std::option::Option<crate::types::S3DestinationUpdate>,
@@ -88,7 +88,7 @@ impl SnowflakeDestinationUpdate {
     pub fn content_column_name(&self) -> ::std::option::Option<&str> {
         self.content_column_name.as_deref()
     }
-    /// <p>Describes the Amazon CloudWatch logging options for your delivery stream.</p>
+    /// <p>Describes the Amazon CloudWatch logging options for your Firehose stream.</p>
     pub fn cloud_watch_logging_options(&self) -> ::std::option::Option<&crate::types::CloudWatchLoggingOptions> {
         self.cloud_watch_logging_options.as_ref()
     }
@@ -104,7 +104,7 @@ impl SnowflakeDestinationUpdate {
     pub fn retry_options(&self) -> ::std::option::Option<&crate::types::SnowflakeRetryOptions> {
         self.retry_options.as_ref()
     }
-    /// <p>Choose an S3 backup mode</p>
+    /// <p>Choose an S3 backup mode. Once you set the mode as <code>AllData</code>, you can not change it to <code>FailedDataOnly</code>.</p>
     pub fn s3_backup_mode(&self) -> ::std::option::Option<&crate::types::SnowflakeS3BackupMode> {
         self.s3_backup_mode.as_ref()
     }
@@ -332,17 +332,17 @@ impl SnowflakeDestinationUpdateBuilder {
     pub fn get_content_column_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.content_column_name
     }
-    /// <p>Describes the Amazon CloudWatch logging options for your delivery stream.</p>
+    /// <p>Describes the Amazon CloudWatch logging options for your Firehose stream.</p>
     pub fn cloud_watch_logging_options(mut self, input: crate::types::CloudWatchLoggingOptions) -> Self {
         self.cloud_watch_logging_options = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Describes the Amazon CloudWatch logging options for your delivery stream.</p>
+    /// <p>Describes the Amazon CloudWatch logging options for your Firehose stream.</p>
     pub fn set_cloud_watch_logging_options(mut self, input: ::std::option::Option<crate::types::CloudWatchLoggingOptions>) -> Self {
         self.cloud_watch_logging_options = input;
         self
     }
-    /// <p>Describes the Amazon CloudWatch logging options for your delivery stream.</p>
+    /// <p>Describes the Amazon CloudWatch logging options for your Firehose stream.</p>
     pub fn get_cloud_watch_logging_options(&self) -> &::std::option::Option<crate::types::CloudWatchLoggingOptions> {
         &self.cloud_watch_logging_options
     }
@@ -388,17 +388,17 @@ impl SnowflakeDestinationUpdateBuilder {
     pub fn get_retry_options(&self) -> &::std::option::Option<crate::types::SnowflakeRetryOptions> {
         &self.retry_options
     }
-    /// <p>Choose an S3 backup mode</p>
+    /// <p>Choose an S3 backup mode. Once you set the mode as <code>AllData</code>, you can not change it to <code>FailedDataOnly</code>.</p>
     pub fn s3_backup_mode(mut self, input: crate::types::SnowflakeS3BackupMode) -> Self {
         self.s3_backup_mode = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Choose an S3 backup mode</p>
+    /// <p>Choose an S3 backup mode. Once you set the mode as <code>AllData</code>, you can not change it to <code>FailedDataOnly</code>.</p>
     pub fn set_s3_backup_mode(mut self, input: ::std::option::Option<crate::types::SnowflakeS3BackupMode>) -> Self {
         self.s3_backup_mode = input;
         self
     }
-    /// <p>Choose an S3 backup mode</p>
+    /// <p>Choose an S3 backup mode. Once you set the mode as <code>AllData</code>, you can not change it to <code>FailedDataOnly</code>.</p>
     pub fn get_s3_backup_mode(&self) -> &::std::option::Option<crate::types::SnowflakeS3BackupMode> {
         &self.s3_backup_mode
     }

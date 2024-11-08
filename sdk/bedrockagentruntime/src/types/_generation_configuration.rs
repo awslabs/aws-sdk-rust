@@ -9,7 +9,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GenerationConfiguration {
-    /// <p>Contains the template for the prompt that's sent to the model for response generation.</p>
+    /// <p>Contains the template for the prompt that's sent to the model for response generation. Generation prompts must include the <code>$search_results$</code> variable. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-placeholders.html">Use placeholder variables</a> in the user guide.</p>
     pub prompt_template: ::std::option::Option<crate::types::PromptTemplate>,
     /// <p>The configuration details for the guardrail.</p>
     pub guardrail_configuration: ::std::option::Option<crate::types::GuardrailConfiguration>,
@@ -19,7 +19,7 @@ pub struct GenerationConfiguration {
     pub additional_model_request_fields: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::aws_smithy_types::Document>>,
 }
 impl GenerationConfiguration {
-    /// <p>Contains the template for the prompt that's sent to the model for response generation.</p>
+    /// <p>Contains the template for the prompt that's sent to the model for response generation. Generation prompts must include the <code>$search_results$</code> variable. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-placeholders.html">Use placeholder variables</a> in the user guide.</p>
     pub fn prompt_template(&self) -> ::std::option::Option<&crate::types::PromptTemplate> {
         self.prompt_template.as_ref()
     }
@@ -56,17 +56,17 @@ pub struct GenerationConfigurationBuilder {
         ::std::option::Option<::std::collections::HashMap<::std::string::String, ::aws_smithy_types::Document>>,
 }
 impl GenerationConfigurationBuilder {
-    /// <p>Contains the template for the prompt that's sent to the model for response generation.</p>
+    /// <p>Contains the template for the prompt that's sent to the model for response generation. Generation prompts must include the <code>$search_results$</code> variable. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-placeholders.html">Use placeholder variables</a> in the user guide.</p>
     pub fn prompt_template(mut self, input: crate::types::PromptTemplate) -> Self {
         self.prompt_template = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Contains the template for the prompt that's sent to the model for response generation.</p>
+    /// <p>Contains the template for the prompt that's sent to the model for response generation. Generation prompts must include the <code>$search_results$</code> variable. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-placeholders.html">Use placeholder variables</a> in the user guide.</p>
     pub fn set_prompt_template(mut self, input: ::std::option::Option<crate::types::PromptTemplate>) -> Self {
         self.prompt_template = input;
         self
     }
-    /// <p>Contains the template for the prompt that's sent to the model for response generation.</p>
+    /// <p>Contains the template for the prompt that's sent to the model for response generation. Generation prompts must include the <code>$search_results$</code> variable. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-placeholders.html">Use placeholder variables</a> in the user guide.</p>
     pub fn get_prompt_template(&self) -> &::std::option::Option<crate::types::PromptTemplate> {
         &self.prompt_template
     }

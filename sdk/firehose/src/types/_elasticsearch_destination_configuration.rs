@@ -23,13 +23,13 @@ pub struct ElasticsearchDestinationConfiguration {
     /// <p>The retry behavior in case Firehose is unable to deliver documents to Amazon ES. The default value is 300 (5 minutes).</p>
     pub retry_options: ::std::option::Option<crate::types::ElasticsearchRetryOptions>,
     /// <p>Defines how documents should be delivered to Amazon S3. When it is set to <code>FailedDocumentsOnly</code>, Firehose writes any documents that could not be indexed to the configured Amazon S3 destination, with <code>AmazonOpenSearchService-failed/</code> appended to the key prefix. When set to <code>AllDocuments</code>, Firehose delivers all incoming records to Amazon S3, and also writes failed documents with <code>AmazonOpenSearchService-failed/</code> appended to the prefix. For more information, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-s3-backup">Amazon S3 Backup for the Amazon ES Destination</a>. Default value is <code>FailedDocumentsOnly</code>.</p>
-    /// <p>You can't change this backup mode after you create the delivery stream.</p>
+    /// <p>You can't change this backup mode after you create the Firehose stream.</p>
     pub s3_backup_mode: ::std::option::Option<crate::types::ElasticsearchS3BackupMode>,
     /// <p>The configuration for the backup Amazon S3 location.</p>
     pub s3_configuration: ::std::option::Option<crate::types::S3DestinationConfiguration>,
     /// <p>The data processing configuration.</p>
     pub processing_configuration: ::std::option::Option<crate::types::ProcessingConfiguration>,
-    /// <p>The Amazon CloudWatch logging options for your delivery stream.</p>
+    /// <p>The Amazon CloudWatch logging options for your Firehose stream.</p>
     pub cloud_watch_logging_options: ::std::option::Option<crate::types::CloudWatchLoggingOptions>,
     /// <p>The details of the VPC of the Amazon destination.</p>
     pub vpc_configuration: ::std::option::Option<crate::types::VpcConfiguration>,
@@ -74,7 +74,7 @@ impl ElasticsearchDestinationConfiguration {
         self.retry_options.as_ref()
     }
     /// <p>Defines how documents should be delivered to Amazon S3. When it is set to <code>FailedDocumentsOnly</code>, Firehose writes any documents that could not be indexed to the configured Amazon S3 destination, with <code>AmazonOpenSearchService-failed/</code> appended to the key prefix. When set to <code>AllDocuments</code>, Firehose delivers all incoming records to Amazon S3, and also writes failed documents with <code>AmazonOpenSearchService-failed/</code> appended to the prefix. For more information, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-s3-backup">Amazon S3 Backup for the Amazon ES Destination</a>. Default value is <code>FailedDocumentsOnly</code>.</p>
-    /// <p>You can't change this backup mode after you create the delivery stream.</p>
+    /// <p>You can't change this backup mode after you create the Firehose stream.</p>
     pub fn s3_backup_mode(&self) -> ::std::option::Option<&crate::types::ElasticsearchS3BackupMode> {
         self.s3_backup_mode.as_ref()
     }
@@ -86,7 +86,7 @@ impl ElasticsearchDestinationConfiguration {
     pub fn processing_configuration(&self) -> ::std::option::Option<&crate::types::ProcessingConfiguration> {
         self.processing_configuration.as_ref()
     }
-    /// <p>The Amazon CloudWatch logging options for your delivery stream.</p>
+    /// <p>The Amazon CloudWatch logging options for your Firehose stream.</p>
     pub fn cloud_watch_logging_options(&self) -> ::std::option::Option<&crate::types::CloudWatchLoggingOptions> {
         self.cloud_watch_logging_options.as_ref()
     }
@@ -247,19 +247,19 @@ impl ElasticsearchDestinationConfigurationBuilder {
         &self.retry_options
     }
     /// <p>Defines how documents should be delivered to Amazon S3. When it is set to <code>FailedDocumentsOnly</code>, Firehose writes any documents that could not be indexed to the configured Amazon S3 destination, with <code>AmazonOpenSearchService-failed/</code> appended to the key prefix. When set to <code>AllDocuments</code>, Firehose delivers all incoming records to Amazon S3, and also writes failed documents with <code>AmazonOpenSearchService-failed/</code> appended to the prefix. For more information, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-s3-backup">Amazon S3 Backup for the Amazon ES Destination</a>. Default value is <code>FailedDocumentsOnly</code>.</p>
-    /// <p>You can't change this backup mode after you create the delivery stream.</p>
+    /// <p>You can't change this backup mode after you create the Firehose stream.</p>
     pub fn s3_backup_mode(mut self, input: crate::types::ElasticsearchS3BackupMode) -> Self {
         self.s3_backup_mode = ::std::option::Option::Some(input);
         self
     }
     /// <p>Defines how documents should be delivered to Amazon S3. When it is set to <code>FailedDocumentsOnly</code>, Firehose writes any documents that could not be indexed to the configured Amazon S3 destination, with <code>AmazonOpenSearchService-failed/</code> appended to the key prefix. When set to <code>AllDocuments</code>, Firehose delivers all incoming records to Amazon S3, and also writes failed documents with <code>AmazonOpenSearchService-failed/</code> appended to the prefix. For more information, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-s3-backup">Amazon S3 Backup for the Amazon ES Destination</a>. Default value is <code>FailedDocumentsOnly</code>.</p>
-    /// <p>You can't change this backup mode after you create the delivery stream.</p>
+    /// <p>You can't change this backup mode after you create the Firehose stream.</p>
     pub fn set_s3_backup_mode(mut self, input: ::std::option::Option<crate::types::ElasticsearchS3BackupMode>) -> Self {
         self.s3_backup_mode = input;
         self
     }
     /// <p>Defines how documents should be delivered to Amazon S3. When it is set to <code>FailedDocumentsOnly</code>, Firehose writes any documents that could not be indexed to the configured Amazon S3 destination, with <code>AmazonOpenSearchService-failed/</code> appended to the key prefix. When set to <code>AllDocuments</code>, Firehose delivers all incoming records to Amazon S3, and also writes failed documents with <code>AmazonOpenSearchService-failed/</code> appended to the prefix. For more information, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-s3-backup">Amazon S3 Backup for the Amazon ES Destination</a>. Default value is <code>FailedDocumentsOnly</code>.</p>
-    /// <p>You can't change this backup mode after you create the delivery stream.</p>
+    /// <p>You can't change this backup mode after you create the Firehose stream.</p>
     pub fn get_s3_backup_mode(&self) -> &::std::option::Option<crate::types::ElasticsearchS3BackupMode> {
         &self.s3_backup_mode
     }
@@ -292,17 +292,17 @@ impl ElasticsearchDestinationConfigurationBuilder {
     pub fn get_processing_configuration(&self) -> &::std::option::Option<crate::types::ProcessingConfiguration> {
         &self.processing_configuration
     }
-    /// <p>The Amazon CloudWatch logging options for your delivery stream.</p>
+    /// <p>The Amazon CloudWatch logging options for your Firehose stream.</p>
     pub fn cloud_watch_logging_options(mut self, input: crate::types::CloudWatchLoggingOptions) -> Self {
         self.cloud_watch_logging_options = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The Amazon CloudWatch logging options for your delivery stream.</p>
+    /// <p>The Amazon CloudWatch logging options for your Firehose stream.</p>
     pub fn set_cloud_watch_logging_options(mut self, input: ::std::option::Option<crate::types::CloudWatchLoggingOptions>) -> Self {
         self.cloud_watch_logging_options = input;
         self
     }
-    /// <p>The Amazon CloudWatch logging options for your delivery stream.</p>
+    /// <p>The Amazon CloudWatch logging options for your Firehose stream.</p>
     pub fn get_cloud_watch_logging_options(&self) -> &::std::option::Option<crate::types::CloudWatchLoggingOptions> {
         &self.cloud_watch_logging_options
     }

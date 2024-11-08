@@ -51,7 +51,9 @@ pub struct AmazonTranscribeProcessorConfiguration {
     pub filter_partial_results: bool,
     /// <p>Turns language identification on or off.</p>
     pub identify_language: bool,
-    /// <p>Turns language identification on or off for multiple languages.</p>
+    /// <p>Turns language identification on or off for multiple languages.</p><note>
+    /// <p>Calls to this API must include a <code>LanguageCode</code>, <code>IdentifyLanguage</code>, or <code>IdentifyMultipleLanguages</code> parameter. If you include more than one of those parameters, your transcription job fails.</p>
+    /// </note>
     pub identify_multiple_languages: bool,
     /// <p>The language options for the transcription, such as automatic language detection.</p>
     pub language_options: ::std::option::Option<::std::string::String>,
@@ -134,7 +136,9 @@ impl AmazonTranscribeProcessorConfiguration {
     pub fn identify_language(&self) -> bool {
         self.identify_language
     }
-    /// <p>Turns language identification on or off for multiple languages.</p>
+    /// <p>Turns language identification on or off for multiple languages.</p><note>
+    /// <p>Calls to this API must include a <code>LanguageCode</code>, <code>IdentifyLanguage</code>, or <code>IdentifyMultipleLanguages</code> parameter. If you include more than one of those parameters, your transcription job fails.</p>
+    /// </note>
     pub fn identify_multiple_languages(&self) -> bool {
         self.identify_multiple_languages
     }
@@ -425,17 +429,23 @@ impl AmazonTranscribeProcessorConfigurationBuilder {
     pub fn get_identify_language(&self) -> &::std::option::Option<bool> {
         &self.identify_language
     }
-    /// <p>Turns language identification on or off for multiple languages.</p>
+    /// <p>Turns language identification on or off for multiple languages.</p><note>
+    /// <p>Calls to this API must include a <code>LanguageCode</code>, <code>IdentifyLanguage</code>, or <code>IdentifyMultipleLanguages</code> parameter. If you include more than one of those parameters, your transcription job fails.</p>
+    /// </note>
     pub fn identify_multiple_languages(mut self, input: bool) -> Self {
         self.identify_multiple_languages = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Turns language identification on or off for multiple languages.</p>
+    /// <p>Turns language identification on or off for multiple languages.</p><note>
+    /// <p>Calls to this API must include a <code>LanguageCode</code>, <code>IdentifyLanguage</code>, or <code>IdentifyMultipleLanguages</code> parameter. If you include more than one of those parameters, your transcription job fails.</p>
+    /// </note>
     pub fn set_identify_multiple_languages(mut self, input: ::std::option::Option<bool>) -> Self {
         self.identify_multiple_languages = input;
         self
     }
-    /// <p>Turns language identification on or off for multiple languages.</p>
+    /// <p>Turns language identification on or off for multiple languages.</p><note>
+    /// <p>Calls to this API must include a <code>LanguageCode</code>, <code>IdentifyLanguage</code>, or <code>IdentifyMultipleLanguages</code> parameter. If you include more than one of those parameters, your transcription job fails.</p>
+    /// </note>
     pub fn get_identify_multiple_languages(&self) -> &::std::option::Option<bool> {
         &self.identify_multiple_languages
     }

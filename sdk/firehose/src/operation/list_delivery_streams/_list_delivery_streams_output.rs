@@ -3,19 +3,19 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListDeliveryStreamsOutput {
-    /// <p>The names of the delivery streams.</p>
+    /// <p>The names of the Firehose streams.</p>
     pub delivery_stream_names: ::std::vec::Vec<::std::string::String>,
-    /// <p>Indicates whether there are more delivery streams available to list.</p>
+    /// <p>Indicates whether there are more Firehose streams available to list.</p>
     pub has_more_delivery_streams: bool,
     _request_id: Option<String>,
 }
 impl ListDeliveryStreamsOutput {
-    /// <p>The names of the delivery streams.</p>
+    /// <p>The names of the Firehose streams.</p>
     pub fn delivery_stream_names(&self) -> &[::std::string::String] {
         use std::ops::Deref;
         self.delivery_stream_names.deref()
     }
-    /// <p>Indicates whether there are more delivery streams available to list.</p>
+    /// <p>Indicates whether there are more Firehose streams available to list.</p>
     pub fn has_more_delivery_streams(&self) -> bool {
         self.has_more_delivery_streams
     }
@@ -45,34 +45,34 @@ impl ListDeliveryStreamsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_delivery_stream_names`](Self::set_delivery_stream_names).
     ///
-    /// <p>The names of the delivery streams.</p>
+    /// <p>The names of the Firehose streams.</p>
     pub fn delivery_stream_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.delivery_stream_names.unwrap_or_default();
         v.push(input.into());
         self.delivery_stream_names = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The names of the delivery streams.</p>
+    /// <p>The names of the Firehose streams.</p>
     pub fn set_delivery_stream_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.delivery_stream_names = input;
         self
     }
-    /// <p>The names of the delivery streams.</p>
+    /// <p>The names of the Firehose streams.</p>
     pub fn get_delivery_stream_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.delivery_stream_names
     }
-    /// <p>Indicates whether there are more delivery streams available to list.</p>
+    /// <p>Indicates whether there are more Firehose streams available to list.</p>
     /// This field is required.
     pub fn has_more_delivery_streams(mut self, input: bool) -> Self {
         self.has_more_delivery_streams = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates whether there are more delivery streams available to list.</p>
+    /// <p>Indicates whether there are more Firehose streams available to list.</p>
     pub fn set_has_more_delivery_streams(mut self, input: ::std::option::Option<bool>) -> Self {
         self.has_more_delivery_streams = input;
         self
     }
-    /// <p>Indicates whether there are more delivery streams available to list.</p>
+    /// <p>Indicates whether there are more Firehose streams available to list.</p>
     pub fn get_has_more_delivery_streams(&self) -> &::std::option::Option<bool> {
         &self.has_more_delivery_streams
     }

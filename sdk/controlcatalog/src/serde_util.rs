@@ -68,6 +68,15 @@ pub(crate) fn region_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn implementation_details_correct_errors(
+    mut builder: crate::types::builders::ImplementationDetailsBuilder,
+) -> crate::types::builders::ImplementationDetailsBuilder {
+    if builder.r#type.is_none() {
+        builder.r#type = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn common_control_summary_correct_errors(
     mut builder: crate::types::builders::CommonControlSummaryBuilder,
 ) -> crate::types::builders::CommonControlSummaryBuilder {
@@ -97,6 +106,15 @@ pub(crate) fn common_control_summary_correct_errors(
     }
     if builder.last_update_time.is_none() {
         builder.last_update_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn control_parameter_correct_errors(
+    mut builder: crate::types::builders::ControlParameterBuilder,
+) -> crate::types::builders::ControlParameterBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
     }
     builder
 }

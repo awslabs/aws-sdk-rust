@@ -103,6 +103,8 @@ pub(crate) mod shape_amazonopensearchservice_destination_configuration;
 
 pub(crate) mod shape_amazonopensearchservice_destination_update;
 
+pub(crate) mod shape_database_source_configuration;
+
 pub(crate) mod shape_delivery_stream_description;
 
 pub(crate) mod shape_delivery_stream_encryption_configuration_input;
@@ -173,6 +175,16 @@ pub(crate) mod shape_copy_command;
 
 pub(crate) mod shape_data_format_conversion_configuration;
 
+pub(crate) mod shape_database_column_list;
+
+pub(crate) mod shape_database_list;
+
+pub(crate) mod shape_database_source_authentication_configuration;
+
+pub(crate) mod shape_database_source_vpc_configuration;
+
+pub(crate) mod shape_database_table_list;
+
 pub(crate) mod shape_delivery_stream_encryption_configuration;
 
 pub(crate) mod shape_destination_description_list;
@@ -207,6 +219,8 @@ pub(crate) mod shape_redshift_retry_options;
 
 pub(crate) mod shape_retry_options;
 
+pub(crate) mod shape_schema_evolution_configuration;
+
 pub(crate) mod shape_secrets_manager_configuration;
 
 pub(crate) mod shape_snowflake_buffering_hints;
@@ -223,7 +237,11 @@ pub(crate) mod shape_splunk_buffering_hints;
 
 pub(crate) mod shape_splunk_retry_options;
 
+pub(crate) mod shape_table_creation_configuration;
+
 pub(crate) mod shape_vpc_configuration;
+
+pub(crate) mod shape_database_source_description;
 
 pub(crate) mod shape_destination_description;
 
@@ -239,6 +257,8 @@ pub(crate) mod shape_msk_source_description;
 
 pub(crate) mod shape_output_format_configuration;
 
+pub(crate) mod shape_partition_spec;
+
 pub(crate) mod shape_processor;
 
 pub(crate) mod shape_schema_configuration;
@@ -246,6 +266,10 @@ pub(crate) mod shape_schema_configuration;
 pub(crate) mod shape_amazon_open_search_serverless_destination_description;
 
 pub(crate) mod shape_amazonopensearchservice_destination_description;
+
+pub(crate) mod shape_database_column_include_or_exclude_list;
+
+pub(crate) mod shape_database_snapshot_info_list;
 
 pub(crate) mod shape_deserializer;
 
@@ -256,6 +280,8 @@ pub(crate) mod shape_extended_s3_destination_description;
 pub(crate) mod shape_http_endpoint_destination_description;
 
 pub(crate) mod shape_iceberg_destination_description;
+
+pub(crate) mod shape_partition_field;
 
 pub(crate) mod shape_processor_parameter;
 
@@ -268,6 +294,12 @@ pub(crate) mod shape_serializer;
 pub(crate) mod shape_snowflake_destination_description;
 
 pub(crate) mod shape_splunk_destination_description;
+
+pub(crate) mod shape_database_include_or_exclude_list;
+
+pub(crate) mod shape_database_snapshot_info;
+
+pub(crate) mod shape_database_table_include_or_exclude_list;
 
 pub(crate) mod shape_destination_table_configuration_list;
 
@@ -292,6 +324,8 @@ pub(crate) mod shape_security_group_id_list;
 pub(crate) mod shape_subnet_id_list;
 
 pub(crate) mod shape_list_of_non_empty_strings_without_whitespace;
+
+pub(crate) mod shape_partition_fields;
 
 pub(crate) mod shape_processor_parameter_list;
 

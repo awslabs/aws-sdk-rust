@@ -62,6 +62,15 @@ pub(crate) fn s3_recording_sink_runtime_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn sse_aws_key_management_params_correct_errors(
+    mut builder: crate::types::builders::SseAwsKeyManagementParamsBuilder,
+) -> crate::types::builders::SseAwsKeyManagementParamsBuilder {
+    if builder.aws_kms_key_id.is_none() {
+        builder.aws_kms_key_id = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn tag_correct_errors(mut builder: crate::types::builders::TagBuilder) -> crate::types::builders::TagBuilder {
     if builder.key.is_none() {
         builder.key = Some(Default::default())

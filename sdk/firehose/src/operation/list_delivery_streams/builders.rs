@@ -22,8 +22,8 @@ impl crate::operation::list_delivery_streams::builders::ListDeliveryStreamsInput
 }
 /// Fluent builder constructing a request to `ListDeliveryStreams`.
 ///
-/// <p>Lists your delivery streams in alphabetical order of their names.</p>
-/// <p>The number of delivery streams might be too large to return using a single call to <code>ListDeliveryStreams</code>. You can limit the number of delivery streams returned, using the <code>Limit</code> parameter. To determine whether there are more delivery streams to list, check the value of <code>HasMoreDeliveryStreams</code> in the output. If there are more delivery streams to list, you can request them by calling this operation again and setting the <code>ExclusiveStartDeliveryStreamName</code> parameter to the name of the last delivery stream returned in the last call.</p>
+/// <p>Lists your Firehose streams in alphabetical order of their names.</p>
+/// <p>The number of Firehose streams might be too large to return using a single call to <code>ListDeliveryStreams</code>. You can limit the number of Firehose streams returned, using the <code>Limit</code> parameter. To determine whether there are more delivery streams to list, check the value of <code>HasMoreDeliveryStreams</code> in the output. If there are more Firehose streams to list, you can request them by calling this operation again and setting the <code>ExclusiveStartDeliveryStreamName</code> parameter to the name of the last Firehose stream returned in the last call.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListDeliveryStreamsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -109,66 +109,66 @@ impl ListDeliveryStreamsFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The maximum number of delivery streams to list. The default value is 10.</p>
+    /// <p>The maximum number of Firehose streams to list. The default value is 10.</p>
     pub fn limit(mut self, input: i32) -> Self {
         self.inner = self.inner.limit(input);
         self
     }
-    /// <p>The maximum number of delivery streams to list. The default value is 10.</p>
+    /// <p>The maximum number of Firehose streams to list. The default value is 10.</p>
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_limit(input);
         self
     }
-    /// <p>The maximum number of delivery streams to list. The default value is 10.</p>
+    /// <p>The maximum number of Firehose streams to list. The default value is 10.</p>
     pub fn get_limit(&self) -> &::std::option::Option<i32> {
         self.inner.get_limit()
     }
-    /// <p>The delivery stream type. This can be one of the following values:</p>
+    /// <p>The Firehose stream type. This can be one of the following values:</p>
     /// <ul>
     /// <li>
-    /// <p><code>DirectPut</code>: Provider applications access the delivery stream directly.</p></li>
+    /// <p><code>DirectPut</code>: Provider applications access the Firehose stream directly.</p></li>
     /// <li>
-    /// <p><code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis data stream as a source.</p></li>
+    /// <p><code>KinesisStreamAsSource</code>: The Firehose stream uses a Kinesis data stream as a source.</p></li>
     /// </ul>
-    /// <p>This parameter is optional. If this parameter is omitted, delivery streams of all types are returned.</p>
+    /// <p>This parameter is optional. If this parameter is omitted, Firehose streams of all types are returned.</p>
     pub fn delivery_stream_type(mut self, input: crate::types::DeliveryStreamType) -> Self {
         self.inner = self.inner.delivery_stream_type(input);
         self
     }
-    /// <p>The delivery stream type. This can be one of the following values:</p>
+    /// <p>The Firehose stream type. This can be one of the following values:</p>
     /// <ul>
     /// <li>
-    /// <p><code>DirectPut</code>: Provider applications access the delivery stream directly.</p></li>
+    /// <p><code>DirectPut</code>: Provider applications access the Firehose stream directly.</p></li>
     /// <li>
-    /// <p><code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis data stream as a source.</p></li>
+    /// <p><code>KinesisStreamAsSource</code>: The Firehose stream uses a Kinesis data stream as a source.</p></li>
     /// </ul>
-    /// <p>This parameter is optional. If this parameter is omitted, delivery streams of all types are returned.</p>
+    /// <p>This parameter is optional. If this parameter is omitted, Firehose streams of all types are returned.</p>
     pub fn set_delivery_stream_type(mut self, input: ::std::option::Option<crate::types::DeliveryStreamType>) -> Self {
         self.inner = self.inner.set_delivery_stream_type(input);
         self
     }
-    /// <p>The delivery stream type. This can be one of the following values:</p>
+    /// <p>The Firehose stream type. This can be one of the following values:</p>
     /// <ul>
     /// <li>
-    /// <p><code>DirectPut</code>: Provider applications access the delivery stream directly.</p></li>
+    /// <p><code>DirectPut</code>: Provider applications access the Firehose stream directly.</p></li>
     /// <li>
-    /// <p><code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis data stream as a source.</p></li>
+    /// <p><code>KinesisStreamAsSource</code>: The Firehose stream uses a Kinesis data stream as a source.</p></li>
     /// </ul>
-    /// <p>This parameter is optional. If this parameter is omitted, delivery streams of all types are returned.</p>
+    /// <p>This parameter is optional. If this parameter is omitted, Firehose streams of all types are returned.</p>
     pub fn get_delivery_stream_type(&self) -> &::std::option::Option<crate::types::DeliveryStreamType> {
         self.inner.get_delivery_stream_type()
     }
-    /// <p>The list of delivery streams returned by this call to <code>ListDeliveryStreams</code> will start with the delivery stream whose name comes alphabetically immediately after the name you specify in <code>ExclusiveStartDeliveryStreamName</code>.</p>
+    /// <p>The list of Firehose streams returned by this call to <code>ListDeliveryStreams</code> will start with the Firehose stream whose name comes alphabetically immediately after the name you specify in <code>ExclusiveStartDeliveryStreamName</code>.</p>
     pub fn exclusive_start_delivery_stream_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.exclusive_start_delivery_stream_name(input.into());
         self
     }
-    /// <p>The list of delivery streams returned by this call to <code>ListDeliveryStreams</code> will start with the delivery stream whose name comes alphabetically immediately after the name you specify in <code>ExclusiveStartDeliveryStreamName</code>.</p>
+    /// <p>The list of Firehose streams returned by this call to <code>ListDeliveryStreams</code> will start with the Firehose stream whose name comes alphabetically immediately after the name you specify in <code>ExclusiveStartDeliveryStreamName</code>.</p>
     pub fn set_exclusive_start_delivery_stream_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_exclusive_start_delivery_stream_name(input);
         self
     }
-    /// <p>The list of delivery streams returned by this call to <code>ListDeliveryStreams</code> will start with the delivery stream whose name comes alphabetically immediately after the name you specify in <code>ExclusiveStartDeliveryStreamName</code>.</p>
+    /// <p>The list of Firehose streams returned by this call to <code>ListDeliveryStreams</code> will start with the Firehose stream whose name comes alphabetically immediately after the name you specify in <code>ExclusiveStartDeliveryStreamName</code>.</p>
     pub fn get_exclusive_start_delivery_stream_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_exclusive_start_delivery_stream_name()
     }

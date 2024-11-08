@@ -259,6 +259,26 @@ pub use crate::types::_api_result::ApiResult;
 
 pub use crate::types::_flow_response_stream::FlowResponseStream;
 
+pub use crate::types::_flow_trace_event::FlowTraceEvent;
+
+pub use crate::types::_flow_trace::FlowTrace;
+
+pub use crate::types::_flow_trace_condition_node_result_event::FlowTraceConditionNodeResultEvent;
+
+pub use crate::types::_flow_trace_condition::FlowTraceCondition;
+
+pub use crate::types::_flow_trace_node_output_event::FlowTraceNodeOutputEvent;
+
+pub use crate::types::_flow_trace_node_output_field::FlowTraceNodeOutputField;
+
+pub use crate::types::_flow_trace_node_output_content::FlowTraceNodeOutputContent;
+
+pub use crate::types::_flow_trace_node_input_event::FlowTraceNodeInputEvent;
+
+pub use crate::types::_flow_trace_node_input_field::FlowTraceNodeInputField;
+
+pub use crate::types::_flow_trace_node_input_content::FlowTraceNodeInputContent;
+
 pub use crate::types::_flow_completion_event::FlowCompletionEvent;
 
 pub use crate::types::_flow_completion_reason::FlowCompletionReason;
@@ -342,6 +362,26 @@ mod _flow_output_content;
 mod _flow_output_event;
 
 mod _flow_response_stream;
+
+mod _flow_trace;
+
+mod _flow_trace_condition;
+
+mod _flow_trace_condition_node_result_event;
+
+mod _flow_trace_event;
+
+mod _flow_trace_node_input_content;
+
+mod _flow_trace_node_input_event;
+
+mod _flow_trace_node_input_field;
+
+mod _flow_trace_node_output_content;
+
+mod _flow_trace_node_output_event;
+
+mod _flow_trace_node_output_field;
 
 mod _function_invocation_input;
 

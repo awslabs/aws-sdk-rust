@@ -22,8 +22,8 @@ impl crate::operation::update_destination::builders::UpdateDestinationInputBuild
 }
 /// Fluent builder constructing a request to `UpdateDestination`.
 ///
-/// <p>Updates the specified destination of the specified delivery stream.</p>
-/// <p>Use this operation to change the destination type (for example, to replace the Amazon S3 destination with Amazon Redshift) or change the parameters associated with a destination (for example, to change the bucket name of the Amazon S3 destination). The update might not occur immediately. The target delivery stream remains active while the configurations are updated, so data writes to the delivery stream can continue during this process. The updated configurations are usually effective within a few minutes.</p>
+/// <p>Updates the specified destination of the specified Firehose stream.</p>
+/// <p>Use this operation to change the destination type (for example, to replace the Amazon S3 destination with Amazon Redshift) or change the parameters associated with a destination (for example, to change the bucket name of the Amazon S3 destination). The update might not occur immediately. The target Firehose stream remains active while the configurations are updated, so data writes to the Firehose stream can continue during this process. The updated configurations are usually effective within a few minutes.</p>
 /// <p>Switching between Amazon OpenSearch Service and other services is not supported. For an Amazon OpenSearch Service destination, you can only update to another Amazon OpenSearch Service destination.</p>
 /// <p>If the destination type is the same, Firehose merges the configuration parameters specified with the destination configuration that already exists on the delivery stream. If any of the parameters are not specified in the call, the existing values are retained. For example, in the Amazon S3 destination, if <code>EncryptionConfiguration</code> is not specified, then the existing <code>EncryptionConfiguration</code> is maintained on the destination.</p>
 /// <p>If the destination type is not the same, for example, changing the destination from Amazon S3 to Amazon Redshift, Firehose does not merge any parameters. In this case, all parameters must be specified.</p>
@@ -113,17 +113,17 @@ impl UpdateDestinationFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name of the delivery stream.</p>
+    /// <p>The name of the Firehose stream.</p>
     pub fn delivery_stream_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.delivery_stream_name(input.into());
         self
     }
-    /// <p>The name of the delivery stream.</p>
+    /// <p>The name of the Firehose stream.</p>
     pub fn set_delivery_stream_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_delivery_stream_name(input);
         self
     }
-    /// <p>The name of the delivery stream.</p>
+    /// <p>The name of the Firehose stream.</p>
     pub fn get_delivery_stream_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_delivery_stream_name()
     }
@@ -293,19 +293,16 @@ impl UpdateDestinationFluentBuilder {
         self.inner.get_snowflake_destination_update()
     }
     /// <p>Describes an update for a destination in Apache Iceberg Tables.</p>
-    /// <p>Amazon Data Firehose is in preview release and is subject to change.</p>
     pub fn iceberg_destination_update(mut self, input: crate::types::IcebergDestinationUpdate) -> Self {
         self.inner = self.inner.iceberg_destination_update(input);
         self
     }
     /// <p>Describes an update for a destination in Apache Iceberg Tables.</p>
-    /// <p>Amazon Data Firehose is in preview release and is subject to change.</p>
     pub fn set_iceberg_destination_update(mut self, input: ::std::option::Option<crate::types::IcebergDestinationUpdate>) -> Self {
         self.inner = self.inner.set_iceberg_destination_update(input);
         self
     }
     /// <p>Describes an update for a destination in Apache Iceberg Tables.</p>
-    /// <p>Amazon Data Firehose is in preview release and is subject to change.</p>
     pub fn get_iceberg_destination_update(&self) -> &::std::option::Option<crate::types::IcebergDestinationUpdate> {
         self.inner.get_iceberg_destination_update()
     }

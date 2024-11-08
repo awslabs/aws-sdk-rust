@@ -157,4 +157,18 @@ impl InvokeFlowFluentBuilder {
     pub fn get_inputs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FlowInput>> {
         self.inner.get_inputs()
     }
+    /// <p>Specifies whether to return the trace for the flow or not. Traces track inputs and outputs for nodes in the flow. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/flows-trace.html">Track each step in your prompt flow by viewing its trace in Amazon Bedrock</a>.</p>
+    pub fn enable_trace(mut self, input: bool) -> Self {
+        self.inner = self.inner.enable_trace(input);
+        self
+    }
+    /// <p>Specifies whether to return the trace for the flow or not. Traces track inputs and outputs for nodes in the flow. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/flows-trace.html">Track each step in your prompt flow by viewing its trace in Amazon Bedrock</a>.</p>
+    pub fn set_enable_trace(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_enable_trace(input);
+        self
+    }
+    /// <p>Specifies whether to return the trace for the flow or not. Traces track inputs and outputs for nodes in the flow. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/flows-trace.html">Track each step in your prompt flow by viewing its trace in Amazon Bedrock</a>.</p>
+    pub fn get_enable_trace(&self) -> &::std::option::Option<bool> {
+        self.inner.get_enable_trace()
+    }
 }

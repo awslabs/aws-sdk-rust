@@ -14,6 +14,8 @@ pub struct FunctionCode {
     pub s3_object_version: ::std::option::Option<::std::string::String>,
     /// <p>URI of a <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-images.html">container image</a> in the Amazon ECR registry.</p>
     pub image_uri: ::std::option::Option<::std::string::String>,
+    /// <p>The ARN of the Key Management Service (KMS) customer managed key that's used to encrypt your function's .zip deployment package. If you don't provide a customer managed key, Lambda uses an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-owned-cmk">Amazon Web Services owned key</a>.</p>
+    pub source_kms_key_arn: ::std::option::Option<::std::string::String>,
 }
 impl FunctionCode {
     /// <p>The base64-encoded contents of the deployment package. Amazon Web Services SDK and CLI clients handle the encoding for you.</p>
@@ -36,6 +38,10 @@ impl FunctionCode {
     pub fn image_uri(&self) -> ::std::option::Option<&str> {
         self.image_uri.as_deref()
     }
+    /// <p>The ARN of the Key Management Service (KMS) customer managed key that's used to encrypt your function's .zip deployment package. If you don't provide a customer managed key, Lambda uses an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-owned-cmk">Amazon Web Services owned key</a>.</p>
+    pub fn source_kms_key_arn(&self) -> ::std::option::Option<&str> {
+        self.source_kms_key_arn.as_deref()
+    }
 }
 impl ::std::fmt::Debug for FunctionCode {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -45,6 +51,7 @@ impl ::std::fmt::Debug for FunctionCode {
         formatter.field("s3_key", &self.s3_key);
         formatter.field("s3_object_version", &self.s3_object_version);
         formatter.field("image_uri", &self.image_uri);
+        formatter.field("source_kms_key_arn", &self.source_kms_key_arn);
         formatter.finish()
     }
 }
@@ -64,6 +71,7 @@ pub struct FunctionCodeBuilder {
     pub(crate) s3_key: ::std::option::Option<::std::string::String>,
     pub(crate) s3_object_version: ::std::option::Option<::std::string::String>,
     pub(crate) image_uri: ::std::option::Option<::std::string::String>,
+    pub(crate) source_kms_key_arn: ::std::option::Option<::std::string::String>,
 }
 impl FunctionCodeBuilder {
     /// <p>The base64-encoded contents of the deployment package. Amazon Web Services SDK and CLI clients handle the encoding for you.</p>
@@ -136,6 +144,20 @@ impl FunctionCodeBuilder {
     pub fn get_image_uri(&self) -> &::std::option::Option<::std::string::String> {
         &self.image_uri
     }
+    /// <p>The ARN of the Key Management Service (KMS) customer managed key that's used to encrypt your function's .zip deployment package. If you don't provide a customer managed key, Lambda uses an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-owned-cmk">Amazon Web Services owned key</a>.</p>
+    pub fn source_kms_key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.source_kms_key_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ARN of the Key Management Service (KMS) customer managed key that's used to encrypt your function's .zip deployment package. If you don't provide a customer managed key, Lambda uses an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-owned-cmk">Amazon Web Services owned key</a>.</p>
+    pub fn set_source_kms_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.source_kms_key_arn = input;
+        self
+    }
+    /// <p>The ARN of the Key Management Service (KMS) customer managed key that's used to encrypt your function's .zip deployment package. If you don't provide a customer managed key, Lambda uses an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-owned-cmk">Amazon Web Services owned key</a>.</p>
+    pub fn get_source_kms_key_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_kms_key_arn
+    }
     /// Consumes the builder and constructs a [`FunctionCode`](crate::types::FunctionCode).
     pub fn build(self) -> crate::types::FunctionCode {
         crate::types::FunctionCode {
@@ -144,6 +166,7 @@ impl FunctionCodeBuilder {
             s3_key: self.s3_key,
             s3_object_version: self.s3_object_version,
             image_uri: self.image_uri,
+            source_kms_key_arn: self.source_kms_key_arn,
         }
     }
 }
@@ -155,6 +178,7 @@ impl ::std::fmt::Debug for FunctionCodeBuilder {
         formatter.field("s3_key", &self.s3_key);
         formatter.field("s3_object_version", &self.s3_object_version);
         formatter.field("image_uri", &self.image_uri);
+        formatter.field("source_kms_key_arn", &self.source_kms_key_arn);
         formatter.finish()
     }
 }

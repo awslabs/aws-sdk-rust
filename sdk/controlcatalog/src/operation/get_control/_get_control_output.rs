@@ -9,11 +9,15 @@ pub struct GetControlOutput {
     pub name: ::std::string::String,
     /// <p>A description of what the control does.</p>
     pub description: ::std::string::String,
-    /// <p>A term that identifies the control's functional behavior. One of <code>Preventive</code>, <code>Deteictive</code>, <code>Proactive</code></p>
+    /// <p>A term that identifies the control's functional behavior. One of <code>Preventive</code>, <code>Detective</code>, <code>Proactive</code></p>
     pub behavior: crate::types::ControlBehavior,
-    /// <p>Returns information about the control, including the scope of the control, if enabled, and the Regions in which the control currently is available for deployment.</p>
+    /// <p>Returns information about the control, including the scope of the control, if enabled, and the Regions in which the control currently is available for deployment. For more information about scope, see <a href="https://docs.aws.amazon.com/whitepapers/latest/aws-fault-isolation-boundaries/global-services.html">Global services</a>.</p>
     /// <p>If you are applying controls through an Amazon Web Services Control Tower landing zone environment, remember that the values returned in the <code>RegionConfiguration</code> API operation are not related to the governed Regions in your landing zone. For example, if you are governing Regions <code>A</code>,<code>B</code>,and <code>C</code> while the control is available in Regions <code>A</code>, <code>B</code>, C<code>,</code> and <code>D</code>, you'd see a response with <code>DeployableRegions</code> of <code>A</code>, <code>B</code>, <code>C</code>, and <code>D</code> for a control with <code>REGIONAL</code> scope, even though you may not intend to deploy the control in Region <code>D</code>, because you do not govern it through your landing zone.</p>
     pub region_configuration: ::std::option::Option<crate::types::RegionConfiguration>,
+    /// <p>Returns information about the control, as an <code>ImplementationDetails</code> object that shows the underlying implementation type for a control.</p>
+    pub implementation: ::std::option::Option<crate::types::ImplementationDetails>,
+    /// <p>Returns an array of <code>ControlParameter</code> objects that specify the parameters a control supports. An empty list is returned for controls that don’t support parameters.</p>
+    pub parameters: ::std::option::Option<::std::vec::Vec<crate::types::ControlParameter>>,
     _request_id: Option<String>,
 }
 impl GetControlOutput {
@@ -32,14 +36,24 @@ impl GetControlOutput {
         use std::ops::Deref;
         self.description.deref()
     }
-    /// <p>A term that identifies the control's functional behavior. One of <code>Preventive</code>, <code>Deteictive</code>, <code>Proactive</code></p>
+    /// <p>A term that identifies the control's functional behavior. One of <code>Preventive</code>, <code>Detective</code>, <code>Proactive</code></p>
     pub fn behavior(&self) -> &crate::types::ControlBehavior {
         &self.behavior
     }
-    /// <p>Returns information about the control, including the scope of the control, if enabled, and the Regions in which the control currently is available for deployment.</p>
+    /// <p>Returns information about the control, including the scope of the control, if enabled, and the Regions in which the control currently is available for deployment. For more information about scope, see <a href="https://docs.aws.amazon.com/whitepapers/latest/aws-fault-isolation-boundaries/global-services.html">Global services</a>.</p>
     /// <p>If you are applying controls through an Amazon Web Services Control Tower landing zone environment, remember that the values returned in the <code>RegionConfiguration</code> API operation are not related to the governed Regions in your landing zone. For example, if you are governing Regions <code>A</code>,<code>B</code>,and <code>C</code> while the control is available in Regions <code>A</code>, <code>B</code>, C<code>,</code> and <code>D</code>, you'd see a response with <code>DeployableRegions</code> of <code>A</code>, <code>B</code>, <code>C</code>, and <code>D</code> for a control with <code>REGIONAL</code> scope, even though you may not intend to deploy the control in Region <code>D</code>, because you do not govern it through your landing zone.</p>
     pub fn region_configuration(&self) -> ::std::option::Option<&crate::types::RegionConfiguration> {
         self.region_configuration.as_ref()
+    }
+    /// <p>Returns information about the control, as an <code>ImplementationDetails</code> object that shows the underlying implementation type for a control.</p>
+    pub fn implementation(&self) -> ::std::option::Option<&crate::types::ImplementationDetails> {
+        self.implementation.as_ref()
+    }
+    /// <p>Returns an array of <code>ControlParameter</code> objects that specify the parameters a control supports. An empty list is returned for controls that don’t support parameters.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.parameters.is_none()`.
+    pub fn parameters(&self) -> &[crate::types::ControlParameter] {
+        self.parameters.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for GetControlOutput {
@@ -63,6 +77,8 @@ pub struct GetControlOutputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) behavior: ::std::option::Option<crate::types::ControlBehavior>,
     pub(crate) region_configuration: ::std::option::Option<crate::types::RegionConfiguration>,
+    pub(crate) implementation: ::std::option::Option<crate::types::ImplementationDetails>,
+    pub(crate) parameters: ::std::option::Option<::std::vec::Vec<crate::types::ControlParameter>>,
     _request_id: Option<String>,
 }
 impl GetControlOutputBuilder {
@@ -111,38 +127,72 @@ impl GetControlOutputBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
-    /// <p>A term that identifies the control's functional behavior. One of <code>Preventive</code>, <code>Deteictive</code>, <code>Proactive</code></p>
+    /// <p>A term that identifies the control's functional behavior. One of <code>Preventive</code>, <code>Detective</code>, <code>Proactive</code></p>
     /// This field is required.
     pub fn behavior(mut self, input: crate::types::ControlBehavior) -> Self {
         self.behavior = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A term that identifies the control's functional behavior. One of <code>Preventive</code>, <code>Deteictive</code>, <code>Proactive</code></p>
+    /// <p>A term that identifies the control's functional behavior. One of <code>Preventive</code>, <code>Detective</code>, <code>Proactive</code></p>
     pub fn set_behavior(mut self, input: ::std::option::Option<crate::types::ControlBehavior>) -> Self {
         self.behavior = input;
         self
     }
-    /// <p>A term that identifies the control's functional behavior. One of <code>Preventive</code>, <code>Deteictive</code>, <code>Proactive</code></p>
+    /// <p>A term that identifies the control's functional behavior. One of <code>Preventive</code>, <code>Detective</code>, <code>Proactive</code></p>
     pub fn get_behavior(&self) -> &::std::option::Option<crate::types::ControlBehavior> {
         &self.behavior
     }
-    /// <p>Returns information about the control, including the scope of the control, if enabled, and the Regions in which the control currently is available for deployment.</p>
+    /// <p>Returns information about the control, including the scope of the control, if enabled, and the Regions in which the control currently is available for deployment. For more information about scope, see <a href="https://docs.aws.amazon.com/whitepapers/latest/aws-fault-isolation-boundaries/global-services.html">Global services</a>.</p>
     /// <p>If you are applying controls through an Amazon Web Services Control Tower landing zone environment, remember that the values returned in the <code>RegionConfiguration</code> API operation are not related to the governed Regions in your landing zone. For example, if you are governing Regions <code>A</code>,<code>B</code>,and <code>C</code> while the control is available in Regions <code>A</code>, <code>B</code>, C<code>,</code> and <code>D</code>, you'd see a response with <code>DeployableRegions</code> of <code>A</code>, <code>B</code>, <code>C</code>, and <code>D</code> for a control with <code>REGIONAL</code> scope, even though you may not intend to deploy the control in Region <code>D</code>, because you do not govern it through your landing zone.</p>
     /// This field is required.
     pub fn region_configuration(mut self, input: crate::types::RegionConfiguration) -> Self {
         self.region_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Returns information about the control, including the scope of the control, if enabled, and the Regions in which the control currently is available for deployment.</p>
+    /// <p>Returns information about the control, including the scope of the control, if enabled, and the Regions in which the control currently is available for deployment. For more information about scope, see <a href="https://docs.aws.amazon.com/whitepapers/latest/aws-fault-isolation-boundaries/global-services.html">Global services</a>.</p>
     /// <p>If you are applying controls through an Amazon Web Services Control Tower landing zone environment, remember that the values returned in the <code>RegionConfiguration</code> API operation are not related to the governed Regions in your landing zone. For example, if you are governing Regions <code>A</code>,<code>B</code>,and <code>C</code> while the control is available in Regions <code>A</code>, <code>B</code>, C<code>,</code> and <code>D</code>, you'd see a response with <code>DeployableRegions</code> of <code>A</code>, <code>B</code>, <code>C</code>, and <code>D</code> for a control with <code>REGIONAL</code> scope, even though you may not intend to deploy the control in Region <code>D</code>, because you do not govern it through your landing zone.</p>
     pub fn set_region_configuration(mut self, input: ::std::option::Option<crate::types::RegionConfiguration>) -> Self {
         self.region_configuration = input;
         self
     }
-    /// <p>Returns information about the control, including the scope of the control, if enabled, and the Regions in which the control currently is available for deployment.</p>
+    /// <p>Returns information about the control, including the scope of the control, if enabled, and the Regions in which the control currently is available for deployment. For more information about scope, see <a href="https://docs.aws.amazon.com/whitepapers/latest/aws-fault-isolation-boundaries/global-services.html">Global services</a>.</p>
     /// <p>If you are applying controls through an Amazon Web Services Control Tower landing zone environment, remember that the values returned in the <code>RegionConfiguration</code> API operation are not related to the governed Regions in your landing zone. For example, if you are governing Regions <code>A</code>,<code>B</code>,and <code>C</code> while the control is available in Regions <code>A</code>, <code>B</code>, C<code>,</code> and <code>D</code>, you'd see a response with <code>DeployableRegions</code> of <code>A</code>, <code>B</code>, <code>C</code>, and <code>D</code> for a control with <code>REGIONAL</code> scope, even though you may not intend to deploy the control in Region <code>D</code>, because you do not govern it through your landing zone.</p>
     pub fn get_region_configuration(&self) -> &::std::option::Option<crate::types::RegionConfiguration> {
         &self.region_configuration
+    }
+    /// <p>Returns information about the control, as an <code>ImplementationDetails</code> object that shows the underlying implementation type for a control.</p>
+    pub fn implementation(mut self, input: crate::types::ImplementationDetails) -> Self {
+        self.implementation = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Returns information about the control, as an <code>ImplementationDetails</code> object that shows the underlying implementation type for a control.</p>
+    pub fn set_implementation(mut self, input: ::std::option::Option<crate::types::ImplementationDetails>) -> Self {
+        self.implementation = input;
+        self
+    }
+    /// <p>Returns information about the control, as an <code>ImplementationDetails</code> object that shows the underlying implementation type for a control.</p>
+    pub fn get_implementation(&self) -> &::std::option::Option<crate::types::ImplementationDetails> {
+        &self.implementation
+    }
+    /// Appends an item to `parameters`.
+    ///
+    /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
+    ///
+    /// <p>Returns an array of <code>ControlParameter</code> objects that specify the parameters a control supports. An empty list is returned for controls that don’t support parameters.</p>
+    pub fn parameters(mut self, input: crate::types::ControlParameter) -> Self {
+        let mut v = self.parameters.unwrap_or_default();
+        v.push(input);
+        self.parameters = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Returns an array of <code>ControlParameter</code> objects that specify the parameters a control supports. An empty list is returned for controls that don’t support parameters.</p>
+    pub fn set_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ControlParameter>>) -> Self {
+        self.parameters = input;
+        self
+    }
+    /// <p>Returns an array of <code>ControlParameter</code> objects that specify the parameters a control supports. An empty list is returned for controls that don’t support parameters.</p>
+    pub fn get_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ControlParameter>> {
+        &self.parameters
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
@@ -186,6 +236,8 @@ impl GetControlOutputBuilder {
                 )
             })?,
             region_configuration: self.region_configuration,
+            implementation: self.implementation,
+            parameters: self.parameters,
             _request_id: self._request_id,
         })
     }

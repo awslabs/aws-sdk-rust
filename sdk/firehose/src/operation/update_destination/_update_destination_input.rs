@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateDestinationInput {
-    /// <p>The name of the delivery stream.</p>
+    /// <p>The name of the Firehose stream.</p>
     pub delivery_stream_name: ::std::option::Option<::std::string::String>,
     /// <p>Obtain this value from the <code>VersionId</code> result of <code>DeliveryStreamDescription</code>. This value is required, and helps the service perform conditional operations. For example, if there is an interleaving update and this value is null, then the update destination fails. After the update is successful, the <code>VersionId</code> value is updated. The service then performs a merge of the old configuration with the new configuration.</p>
     pub current_delivery_stream_version_id: ::std::option::Option<::std::string::String>,
@@ -29,11 +29,10 @@ pub struct UpdateDestinationInput {
     /// <p>Update to the Snowflake destination configuration settings.</p>
     pub snowflake_destination_update: ::std::option::Option<crate::types::SnowflakeDestinationUpdate>,
     /// <p>Describes an update for a destination in Apache Iceberg Tables.</p>
-    /// <p>Amazon Data Firehose is in preview release and is subject to change.</p>
     pub iceberg_destination_update: ::std::option::Option<crate::types::IcebergDestinationUpdate>,
 }
 impl UpdateDestinationInput {
-    /// <p>The name of the delivery stream.</p>
+    /// <p>The name of the Firehose stream.</p>
     pub fn delivery_stream_name(&self) -> ::std::option::Option<&str> {
         self.delivery_stream_name.as_deref()
     }
@@ -85,7 +84,6 @@ impl UpdateDestinationInput {
         self.snowflake_destination_update.as_ref()
     }
     /// <p>Describes an update for a destination in Apache Iceberg Tables.</p>
-    /// <p>Amazon Data Firehose is in preview release and is subject to change.</p>
     pub fn iceberg_destination_update(&self) -> ::std::option::Option<&crate::types::IcebergDestinationUpdate> {
         self.iceberg_destination_update.as_ref()
     }
@@ -116,18 +114,18 @@ pub struct UpdateDestinationInputBuilder {
     pub(crate) iceberg_destination_update: ::std::option::Option<crate::types::IcebergDestinationUpdate>,
 }
 impl UpdateDestinationInputBuilder {
-    /// <p>The name of the delivery stream.</p>
+    /// <p>The name of the Firehose stream.</p>
     /// This field is required.
     pub fn delivery_stream_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.delivery_stream_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the delivery stream.</p>
+    /// <p>The name of the Firehose stream.</p>
     pub fn set_delivery_stream_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.delivery_stream_name = input;
         self
     }
-    /// <p>The name of the delivery stream.</p>
+    /// <p>The name of the Firehose stream.</p>
     pub fn get_delivery_stream_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.delivery_stream_name
     }
@@ -299,19 +297,16 @@ impl UpdateDestinationInputBuilder {
         &self.snowflake_destination_update
     }
     /// <p>Describes an update for a destination in Apache Iceberg Tables.</p>
-    /// <p>Amazon Data Firehose is in preview release and is subject to change.</p>
     pub fn iceberg_destination_update(mut self, input: crate::types::IcebergDestinationUpdate) -> Self {
         self.iceberg_destination_update = ::std::option::Option::Some(input);
         self
     }
     /// <p>Describes an update for a destination in Apache Iceberg Tables.</p>
-    /// <p>Amazon Data Firehose is in preview release and is subject to change.</p>
     pub fn set_iceberg_destination_update(mut self, input: ::std::option::Option<crate::types::IcebergDestinationUpdate>) -> Self {
         self.iceberg_destination_update = input;
         self
     }
     /// <p>Describes an update for a destination in Apache Iceberg Tables.</p>
-    /// <p>Amazon Data Firehose is in preview release and is subject to change.</p>
     pub fn get_iceberg_destination_update(&self) -> &::std::option::Option<crate::types::IcebergDestinationUpdate> {
         &self.iceberg_destination_update
     }

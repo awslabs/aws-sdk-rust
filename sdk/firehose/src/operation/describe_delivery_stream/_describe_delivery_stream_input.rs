@@ -3,23 +3,23 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeDeliveryStreamInput {
-    /// <p>The name of the delivery stream.</p>
+    /// <p>The name of the Firehose stream.</p>
     pub delivery_stream_name: ::std::option::Option<::std::string::String>,
-    /// <p>The limit on the number of destinations to return. You can have one destination per delivery stream.</p>
+    /// <p>The limit on the number of destinations to return. You can have one destination per Firehose stream.</p>
     pub limit: ::std::option::Option<i32>,
-    /// <p>The ID of the destination to start returning the destination information. Firehose supports one destination per delivery stream.</p>
+    /// <p>The ID of the destination to start returning the destination information. Firehose supports one destination per Firehose stream.</p>
     pub exclusive_start_destination_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeDeliveryStreamInput {
-    /// <p>The name of the delivery stream.</p>
+    /// <p>The name of the Firehose stream.</p>
     pub fn delivery_stream_name(&self) -> ::std::option::Option<&str> {
         self.delivery_stream_name.as_deref()
     }
-    /// <p>The limit on the number of destinations to return. You can have one destination per delivery stream.</p>
+    /// <p>The limit on the number of destinations to return. You can have one destination per Firehose stream.</p>
     pub fn limit(&self) -> ::std::option::Option<i32> {
         self.limit
     }
-    /// <p>The ID of the destination to start returning the destination information. Firehose supports one destination per delivery stream.</p>
+    /// <p>The ID of the destination to start returning the destination information. Firehose supports one destination per Firehose stream.</p>
     pub fn exclusive_start_destination_id(&self) -> ::std::option::Option<&str> {
         self.exclusive_start_destination_id.as_deref()
     }
@@ -40,46 +40,46 @@ pub struct DescribeDeliveryStreamInputBuilder {
     pub(crate) exclusive_start_destination_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeDeliveryStreamInputBuilder {
-    /// <p>The name of the delivery stream.</p>
+    /// <p>The name of the Firehose stream.</p>
     /// This field is required.
     pub fn delivery_stream_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.delivery_stream_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the delivery stream.</p>
+    /// <p>The name of the Firehose stream.</p>
     pub fn set_delivery_stream_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.delivery_stream_name = input;
         self
     }
-    /// <p>The name of the delivery stream.</p>
+    /// <p>The name of the Firehose stream.</p>
     pub fn get_delivery_stream_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.delivery_stream_name
     }
-    /// <p>The limit on the number of destinations to return. You can have one destination per delivery stream.</p>
+    /// <p>The limit on the number of destinations to return. You can have one destination per Firehose stream.</p>
     pub fn limit(mut self, input: i32) -> Self {
         self.limit = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The limit on the number of destinations to return. You can have one destination per delivery stream.</p>
+    /// <p>The limit on the number of destinations to return. You can have one destination per Firehose stream.</p>
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.limit = input;
         self
     }
-    /// <p>The limit on the number of destinations to return. You can have one destination per delivery stream.</p>
+    /// <p>The limit on the number of destinations to return. You can have one destination per Firehose stream.</p>
     pub fn get_limit(&self) -> &::std::option::Option<i32> {
         &self.limit
     }
-    /// <p>The ID of the destination to start returning the destination information. Firehose supports one destination per delivery stream.</p>
+    /// <p>The ID of the destination to start returning the destination information. Firehose supports one destination per Firehose stream.</p>
     pub fn exclusive_start_destination_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.exclusive_start_destination_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the destination to start returning the destination information. Firehose supports one destination per delivery stream.</p>
+    /// <p>The ID of the destination to start returning the destination information. Firehose supports one destination per Firehose stream.</p>
     pub fn set_exclusive_start_destination_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.exclusive_start_destination_id = input;
         self
     }
-    /// <p>The ID of the destination to start returning the destination information. Firehose supports one destination per delivery stream.</p>
+    /// <p>The ID of the destination to start returning the destination information. Firehose supports one destination per Firehose stream.</p>
     pub fn get_exclusive_start_destination_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.exclusive_start_destination_id
     }

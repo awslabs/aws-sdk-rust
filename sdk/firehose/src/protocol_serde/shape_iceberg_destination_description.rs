@@ -19,6 +19,16 @@ where
                                 crate::protocol_serde::shape_destination_table_configuration_list::de_destination_table_configuration_list(tokens)?,
                             );
                         }
+                        "SchemaEvolutionConfiguration" => {
+                            builder = builder.set_schema_evolution_configuration(
+                                crate::protocol_serde::shape_schema_evolution_configuration::de_schema_evolution_configuration(tokens)?,
+                            );
+                        }
+                        "TableCreationConfiguration" => {
+                            builder = builder.set_table_creation_configuration(
+                                crate::protocol_serde::shape_table_creation_configuration::de_table_creation_configuration(tokens)?,
+                            );
+                        }
                         "BufferingHints" => {
                             builder = builder.set_buffering_hints(crate::protocol_serde::shape_buffering_hints::de_buffering_hints(tokens)?);
                         }

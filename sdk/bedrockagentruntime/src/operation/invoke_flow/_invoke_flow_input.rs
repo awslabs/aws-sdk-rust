@@ -9,6 +9,8 @@ pub struct InvokeFlowInput {
     pub flow_alias_identifier: ::std::option::Option<::std::string::String>,
     /// <p>A list of objects, each containing information about an input into the flow.</p>
     pub inputs: ::std::option::Option<::std::vec::Vec<crate::types::FlowInput>>,
+    /// <p>Specifies whether to return the trace for the flow or not. Traces track inputs and outputs for nodes in the flow. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/flows-trace.html">Track each step in your prompt flow by viewing its trace in Amazon Bedrock</a>.</p>
+    pub enable_trace: ::std::option::Option<bool>,
 }
 impl InvokeFlowInput {
     /// <p>The unique identifier of the flow.</p>
@@ -25,6 +27,10 @@ impl InvokeFlowInput {
     pub fn inputs(&self) -> &[crate::types::FlowInput] {
         self.inputs.as_deref().unwrap_or_default()
     }
+    /// <p>Specifies whether to return the trace for the flow or not. Traces track inputs and outputs for nodes in the flow. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/flows-trace.html">Track each step in your prompt flow by viewing its trace in Amazon Bedrock</a>.</p>
+    pub fn enable_trace(&self) -> ::std::option::Option<bool> {
+        self.enable_trace
+    }
 }
 impl InvokeFlowInput {
     /// Creates a new builder-style object to manufacture [`InvokeFlowInput`](crate::operation::invoke_flow::InvokeFlowInput).
@@ -40,6 +46,7 @@ pub struct InvokeFlowInputBuilder {
     pub(crate) flow_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) flow_alias_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) inputs: ::std::option::Option<::std::vec::Vec<crate::types::FlowInput>>,
+    pub(crate) enable_trace: ::std::option::Option<bool>,
 }
 impl InvokeFlowInputBuilder {
     /// <p>The unique identifier of the flow.</p>
@@ -92,12 +99,27 @@ impl InvokeFlowInputBuilder {
     pub fn get_inputs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FlowInput>> {
         &self.inputs
     }
+    /// <p>Specifies whether to return the trace for the flow or not. Traces track inputs and outputs for nodes in the flow. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/flows-trace.html">Track each step in your prompt flow by viewing its trace in Amazon Bedrock</a>.</p>
+    pub fn enable_trace(mut self, input: bool) -> Self {
+        self.enable_trace = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether to return the trace for the flow or not. Traces track inputs and outputs for nodes in the flow. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/flows-trace.html">Track each step in your prompt flow by viewing its trace in Amazon Bedrock</a>.</p>
+    pub fn set_enable_trace(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.enable_trace = input;
+        self
+    }
+    /// <p>Specifies whether to return the trace for the flow or not. Traces track inputs and outputs for nodes in the flow. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/flows-trace.html">Track each step in your prompt flow by viewing its trace in Amazon Bedrock</a>.</p>
+    pub fn get_enable_trace(&self) -> &::std::option::Option<bool> {
+        &self.enable_trace
+    }
     /// Consumes the builder and constructs a [`InvokeFlowInput`](crate::operation::invoke_flow::InvokeFlowInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::invoke_flow::InvokeFlowInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::invoke_flow::InvokeFlowInput {
             flow_identifier: self.flow_identifier,
             flow_alias_identifier: self.flow_alias_identifier,
             inputs: self.inputs,
+            enable_trace: self.enable_trace,
         })
     }
 }

@@ -33,8 +33,11 @@ pub fn ser_update_function_code_input_input(
     if let Some(var_10) = &input.s3_object_version {
         object.key("S3ObjectVersion").string(var_10.as_str());
     }
-    if let Some(var_11) = &input.zip_file {
-        object.key("ZipFile").string_unchecked(&::aws_smithy_types::base64::encode(var_11));
+    if let Some(var_11) = &input.source_kms_key_arn {
+        object.key("SourceKMSKeyArn").string(var_11.as_str());
+    }
+    if let Some(var_12) = &input.zip_file {
+        object.key("ZipFile").string_unchecked(&::aws_smithy_types::base64::encode(var_12));
     }
     Ok(())
 }

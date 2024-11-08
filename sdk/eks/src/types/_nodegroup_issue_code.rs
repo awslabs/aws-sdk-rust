@@ -21,6 +21,7 @@
 ///     NodegroupIssueCode::AutoScalingGroupOptInRequired => { /* ... */ },
 ///     NodegroupIssueCode::AutoScalingGroupRateLimitExceeded => { /* ... */ },
 ///     NodegroupIssueCode::ClusterUnreachable => { /* ... */ },
+///     NodegroupIssueCode::Ec2InstanceTypeDoesNotExist => { /* ... */ },
 ///     NodegroupIssueCode::Ec2LaunchTemplateDeletionFailure => { /* ... */ },
 ///     NodegroupIssueCode::Ec2LaunchTemplateInvalidConfiguration => { /* ... */ },
 ///     NodegroupIssueCode::Ec2LaunchTemplateMaxLimitExceeded => { /* ... */ },
@@ -93,6 +94,8 @@ pub enum NodegroupIssueCode {
     #[allow(missing_docs)] // documentation missing in model
     ClusterUnreachable,
     #[allow(missing_docs)] // documentation missing in model
+    Ec2InstanceTypeDoesNotExist,
+    #[allow(missing_docs)] // documentation missing in model
     Ec2LaunchTemplateDeletionFailure,
     #[allow(missing_docs)] // documentation missing in model
     Ec2LaunchTemplateInvalidConfiguration,
@@ -160,6 +163,7 @@ impl ::std::convert::From<&str> for NodegroupIssueCode {
             "AutoScalingGroupOptInRequired" => NodegroupIssueCode::AutoScalingGroupOptInRequired,
             "AutoScalingGroupRateLimitExceeded" => NodegroupIssueCode::AutoScalingGroupRateLimitExceeded,
             "ClusterUnreachable" => NodegroupIssueCode::ClusterUnreachable,
+            "Ec2InstanceTypeDoesNotExist" => NodegroupIssueCode::Ec2InstanceTypeDoesNotExist,
             "Ec2LaunchTemplateDeletionFailure" => NodegroupIssueCode::Ec2LaunchTemplateDeletionFailure,
             "Ec2LaunchTemplateInvalidConfiguration" => NodegroupIssueCode::Ec2LaunchTemplateInvalidConfiguration,
             "Ec2LaunchTemplateMaxLimitExceeded" => NodegroupIssueCode::Ec2LaunchTemplateMaxLimitExceeded,
@@ -210,6 +214,7 @@ impl NodegroupIssueCode {
             NodegroupIssueCode::AutoScalingGroupOptInRequired => "AutoScalingGroupOptInRequired",
             NodegroupIssueCode::AutoScalingGroupRateLimitExceeded => "AutoScalingGroupRateLimitExceeded",
             NodegroupIssueCode::ClusterUnreachable => "ClusterUnreachable",
+            NodegroupIssueCode::Ec2InstanceTypeDoesNotExist => "Ec2InstanceTypeDoesNotExist",
             NodegroupIssueCode::Ec2LaunchTemplateDeletionFailure => "Ec2LaunchTemplateDeletionFailure",
             NodegroupIssueCode::Ec2LaunchTemplateInvalidConfiguration => "Ec2LaunchTemplateInvalidConfiguration",
             NodegroupIssueCode::Ec2LaunchTemplateMaxLimitExceeded => "Ec2LaunchTemplateMaxLimitExceeded",
@@ -251,6 +256,7 @@ impl NodegroupIssueCode {
             "AutoScalingGroupOptInRequired",
             "AutoScalingGroupRateLimitExceeded",
             "ClusterUnreachable",
+            "Ec2InstanceTypeDoesNotExist",
             "Ec2LaunchTemplateDeletionFailure",
             "Ec2LaunchTemplateInvalidConfiguration",
             "Ec2LaunchTemplateMaxLimitExceeded",
@@ -309,6 +315,7 @@ impl ::std::fmt::Display for NodegroupIssueCode {
             NodegroupIssueCode::AutoScalingGroupOptInRequired => write!(f, "AutoScalingGroupOptInRequired"),
             NodegroupIssueCode::AutoScalingGroupRateLimitExceeded => write!(f, "AutoScalingGroupRateLimitExceeded"),
             NodegroupIssueCode::ClusterUnreachable => write!(f, "ClusterUnreachable"),
+            NodegroupIssueCode::Ec2InstanceTypeDoesNotExist => write!(f, "Ec2InstanceTypeDoesNotExist"),
             NodegroupIssueCode::Ec2LaunchTemplateDeletionFailure => write!(f, "Ec2LaunchTemplateDeletionFailure"),
             NodegroupIssueCode::Ec2LaunchTemplateInvalidConfiguration => write!(f, "Ec2LaunchTemplateInvalidConfiguration"),
             NodegroupIssueCode::Ec2LaunchTemplateMaxLimitExceeded => write!(f, "Ec2LaunchTemplateMaxLimitExceeded"),

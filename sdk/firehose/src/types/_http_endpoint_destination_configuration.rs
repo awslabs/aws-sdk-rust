@@ -8,7 +8,7 @@ pub struct HttpEndpointDestinationConfiguration {
     pub endpoint_configuration: ::std::option::Option<crate::types::HttpEndpointConfiguration>,
     /// <p>The buffering options that can be used before data is delivered to the specified destination. Firehose treats these options as hints, and it might choose to use more optimal values. The <code>SizeInMBs</code> and <code>IntervalInSeconds</code> parameters are optional. However, if you specify a value for one of them, you must also provide a value for the other.</p>
     pub buffering_hints: ::std::option::Option<crate::types::HttpEndpointBufferingHints>,
-    /// <p>Describes the Amazon CloudWatch logging options for your delivery stream.</p>
+    /// <p>Describes the Amazon CloudWatch logging options for your Firehose stream.</p>
     pub cloud_watch_logging_options: ::std::option::Option<crate::types::CloudWatchLoggingOptions>,
     /// <p>The configuration of the request sent to the HTTP endpoint that is specified as the destination.</p>
     pub request_configuration: ::std::option::Option<crate::types::HttpEndpointRequestConfiguration>,
@@ -34,7 +34,7 @@ impl HttpEndpointDestinationConfiguration {
     pub fn buffering_hints(&self) -> ::std::option::Option<&crate::types::HttpEndpointBufferingHints> {
         self.buffering_hints.as_ref()
     }
-    /// <p>Describes the Amazon CloudWatch logging options for your delivery stream.</p>
+    /// <p>Describes the Amazon CloudWatch logging options for your Firehose stream.</p>
     pub fn cloud_watch_logging_options(&self) -> ::std::option::Option<&crate::types::CloudWatchLoggingOptions> {
         self.cloud_watch_logging_options.as_ref()
     }
@@ -119,17 +119,17 @@ impl HttpEndpointDestinationConfigurationBuilder {
     pub fn get_buffering_hints(&self) -> &::std::option::Option<crate::types::HttpEndpointBufferingHints> {
         &self.buffering_hints
     }
-    /// <p>Describes the Amazon CloudWatch logging options for your delivery stream.</p>
+    /// <p>Describes the Amazon CloudWatch logging options for your Firehose stream.</p>
     pub fn cloud_watch_logging_options(mut self, input: crate::types::CloudWatchLoggingOptions) -> Self {
         self.cloud_watch_logging_options = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Describes the Amazon CloudWatch logging options for your delivery stream.</p>
+    /// <p>Describes the Amazon CloudWatch logging options for your Firehose stream.</p>
     pub fn set_cloud_watch_logging_options(mut self, input: ::std::option::Option<crate::types::CloudWatchLoggingOptions>) -> Self {
         self.cloud_watch_logging_options = input;
         self
     }
-    /// <p>Describes the Amazon CloudWatch logging options for your delivery stream.</p>
+    /// <p>Describes the Amazon CloudWatch logging options for your Firehose stream.</p>
     pub fn get_cloud_watch_logging_options(&self) -> &::std::option::Option<crate::types::CloudWatchLoggingOptions> {
         &self.cloud_watch_logging_options
     }

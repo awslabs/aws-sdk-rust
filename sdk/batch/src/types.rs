@@ -23,6 +23,8 @@ pub use crate::types::_ec2_configuration::Ec2Configuration;
 
 pub use crate::types::_launch_template_specification::LaunchTemplateSpecification;
 
+pub use crate::types::_launch_template_specification_override::LaunchTemplateSpecificationOverride;
+
 pub use crate::types::_cr_update_allocation_strategy::CrUpdateAllocationStrategy;
 
 pub use crate::types::_ce_state::CeState;
@@ -384,6 +386,8 @@ mod _key_value_pair;
 mod _key_values_pair;
 
 mod _launch_template_specification;
+
+mod _launch_template_specification_override;
 
 mod _linux_parameters;
 

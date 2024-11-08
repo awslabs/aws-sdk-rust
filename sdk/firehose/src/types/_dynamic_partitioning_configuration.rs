@@ -6,7 +6,7 @@
 pub struct DynamicPartitioningConfiguration {
     /// <p>The retry behavior in case Firehose is unable to deliver data to an Amazon S3 prefix.</p>
     pub retry_options: ::std::option::Option<crate::types::RetryOptions>,
-    /// <p>Specifies that the dynamic partitioning is enabled for this Firehose delivery stream.</p>
+    /// <p>Specifies that the dynamic partitioning is enabled for this Firehose Firehose stream.</p>
     pub enabled: ::std::option::Option<bool>,
 }
 impl DynamicPartitioningConfiguration {
@@ -14,7 +14,7 @@ impl DynamicPartitioningConfiguration {
     pub fn retry_options(&self) -> ::std::option::Option<&crate::types::RetryOptions> {
         self.retry_options.as_ref()
     }
-    /// <p>Specifies that the dynamic partitioning is enabled for this Firehose delivery stream.</p>
+    /// <p>Specifies that the dynamic partitioning is enabled for this Firehose Firehose stream.</p>
     pub fn enabled(&self) -> ::std::option::Option<bool> {
         self.enabled
     }
@@ -48,17 +48,17 @@ impl DynamicPartitioningConfigurationBuilder {
     pub fn get_retry_options(&self) -> &::std::option::Option<crate::types::RetryOptions> {
         &self.retry_options
     }
-    /// <p>Specifies that the dynamic partitioning is enabled for this Firehose delivery stream.</p>
+    /// <p>Specifies that the dynamic partitioning is enabled for this Firehose Firehose stream.</p>
     pub fn enabled(mut self, input: bool) -> Self {
         self.enabled = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies that the dynamic partitioning is enabled for this Firehose delivery stream.</p>
+    /// <p>Specifies that the dynamic partitioning is enabled for this Firehose Firehose stream.</p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enabled = input;
         self
     }
-    /// <p>Specifies that the dynamic partitioning is enabled for this Firehose delivery stream.</p>
+    /// <p>Specifies that the dynamic partitioning is enabled for this Firehose Firehose stream.</p>
     pub fn get_enabled(&self) -> &::std::option::Option<bool> {
         &self.enabled
     }

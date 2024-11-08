@@ -15,6 +15,8 @@ pub struct PutGroupInput {
     pub r#type: ::std::option::Option<crate::types::MembershipType>,
     /// <p>A list of users or sub groups that belong to a group. This is for generating Amazon Q Business chat results only from document a user has access to.</p>
     pub group_members: ::std::option::Option<crate::types::GroupMembers>,
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that has access to the S3 file that contains your list of users that belong to a group.The Amazon Resource Name (ARN) of an IAM role that has access to the S3 file that contains your list of users that belong to a group.</p>
+    pub role_arn: ::std::option::Option<::std::string::String>,
 }
 impl PutGroupInput {
     /// <p>The identifier of the application in which the user and group mapping belongs.</p>
@@ -41,6 +43,10 @@ impl PutGroupInput {
     pub fn group_members(&self) -> ::std::option::Option<&crate::types::GroupMembers> {
         self.group_members.as_ref()
     }
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that has access to the S3 file that contains your list of users that belong to a group.The Amazon Resource Name (ARN) of an IAM role that has access to the S3 file that contains your list of users that belong to a group.</p>
+    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
 }
 impl PutGroupInput {
     /// Creates a new builder-style object to manufacture [`PutGroupInput`](crate::operation::put_group::PutGroupInput).
@@ -59,6 +65,7 @@ pub struct PutGroupInputBuilder {
     pub(crate) data_source_id: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::MembershipType>,
     pub(crate) group_members: ::std::option::Option<crate::types::GroupMembers>,
+    pub(crate) role_arn: ::std::option::Option<::std::string::String>,
 }
 impl PutGroupInputBuilder {
     /// <p>The identifier of the application in which the user and group mapping belongs.</p>
@@ -150,6 +157,20 @@ impl PutGroupInputBuilder {
     pub fn get_group_members(&self) -> &::std::option::Option<crate::types::GroupMembers> {
         &self.group_members
     }
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that has access to the S3 file that contains your list of users that belong to a group.The Amazon Resource Name (ARN) of an IAM role that has access to the S3 file that contains your list of users that belong to a group.</p>
+    pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.role_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that has access to the S3 file that contains your list of users that belong to a group.The Amazon Resource Name (ARN) of an IAM role that has access to the S3 file that contains your list of users that belong to a group.</p>
+    pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.role_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that has access to the S3 file that contains your list of users that belong to a group.The Amazon Resource Name (ARN) of an IAM role that has access to the S3 file that contains your list of users that belong to a group.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
+    }
     /// Consumes the builder and constructs a [`PutGroupInput`](crate::operation::put_group::PutGroupInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::put_group::PutGroupInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_group::PutGroupInput {
@@ -159,6 +180,7 @@ impl PutGroupInputBuilder {
             data_source_id: self.data_source_id,
             r#type: self.r#type,
             group_members: self.group_members,
+            role_arn: self.role_arn,
         })
     }
 }

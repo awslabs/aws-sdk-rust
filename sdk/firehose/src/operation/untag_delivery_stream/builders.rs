@@ -22,7 +22,7 @@ impl crate::operation::untag_delivery_stream::builders::UntagDeliveryStreamInput
 }
 /// Fluent builder constructing a request to `UntagDeliveryStream`.
 ///
-/// <p>Removes tags from the specified delivery stream. Removed tags are deleted, and you can't recover them after this operation successfully completes.</p>
+/// <p>Removes tags from the specified Firehose stream. Removed tags are deleted, and you can't recover them after this operation successfully completes.</p>
 /// <p>If you specify a tag that doesn't exist, the operation ignores it.</p>
 /// <p>This operation has a limit of five transactions per second per account.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -110,17 +110,17 @@ impl UntagDeliveryStreamFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name of the delivery stream.</p>
+    /// <p>The name of the Firehose stream.</p>
     pub fn delivery_stream_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.delivery_stream_name(input.into());
         self
     }
-    /// <p>The name of the delivery stream.</p>
+    /// <p>The name of the Firehose stream.</p>
     pub fn set_delivery_stream_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_delivery_stream_name(input);
         self
     }
-    /// <p>The name of the delivery stream.</p>
+    /// <p>The name of the Firehose stream.</p>
     pub fn get_delivery_stream_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_delivery_stream_name()
     }

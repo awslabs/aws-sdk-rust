@@ -192,6 +192,37 @@ impl CreateMediaCapturePipelineFluentBuilder {
     pub fn get_chime_sdk_meeting_configuration(&self) -> &::std::option::Option<crate::types::ChimeSdkMeetingConfiguration> {
         self.inner.get_chime_sdk_meeting_configuration()
     }
+    /// <p>An object that contains server side encryption parameters to be used by media capture pipeline. The parameters can also be used by media concatenation pipeline taking media capture pipeline as a media source.</p>
+    pub fn sse_aws_key_management_params(mut self, input: crate::types::SseAwsKeyManagementParams) -> Self {
+        self.inner = self.inner.sse_aws_key_management_params(input);
+        self
+    }
+    /// <p>An object that contains server side encryption parameters to be used by media capture pipeline. The parameters can also be used by media concatenation pipeline taking media capture pipeline as a media source.</p>
+    pub fn set_sse_aws_key_management_params(mut self, input: ::std::option::Option<crate::types::SseAwsKeyManagementParams>) -> Self {
+        self.inner = self.inner.set_sse_aws_key_management_params(input);
+        self
+    }
+    /// <p>An object that contains server side encryption parameters to be used by media capture pipeline. The parameters can also be used by media concatenation pipeline taking media capture pipeline as a media source.</p>
+    pub fn get_sse_aws_key_management_params(&self) -> &::std::option::Option<crate::types::SseAwsKeyManagementParams> {
+        self.inner.get_sse_aws_key_management_params()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the sink role to be used with <code>AwsKmsKeyId</code> in <code>SseAwsKeyManagementParams</code>. Can only interact with <code>S3Bucket</code> sink type. The role must belong to the caller’s account and be able to act on behalf of the caller during the API call. All minimum policy permissions requirements for the caller to perform sink-related actions are the same for <code>SinkIamRoleArn</code>.</p>
+    /// <p>Additionally, the role must have permission to <code>kms:GenerateDataKey</code> using KMS key supplied as <code>AwsKmsKeyId</code> in <code>SseAwsKeyManagementParams</code>. If media concatenation will be required later, the role must also have permission to <code>kms:Decrypt</code> for the same KMS key.</p>
+    pub fn sink_iam_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.sink_iam_role_arn(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the sink role to be used with <code>AwsKmsKeyId</code> in <code>SseAwsKeyManagementParams</code>. Can only interact with <code>S3Bucket</code> sink type. The role must belong to the caller’s account and be able to act on behalf of the caller during the API call. All minimum policy permissions requirements for the caller to perform sink-related actions are the same for <code>SinkIamRoleArn</code>.</p>
+    /// <p>Additionally, the role must have permission to <code>kms:GenerateDataKey</code> using KMS key supplied as <code>AwsKmsKeyId</code> in <code>SseAwsKeyManagementParams</code>. If media concatenation will be required later, the role must also have permission to <code>kms:Decrypt</code> for the same KMS key.</p>
+    pub fn set_sink_iam_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_sink_iam_role_arn(input);
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the sink role to be used with <code>AwsKmsKeyId</code> in <code>SseAwsKeyManagementParams</code>. Can only interact with <code>S3Bucket</code> sink type. The role must belong to the caller’s account and be able to act on behalf of the caller during the API call. All minimum policy permissions requirements for the caller to perform sink-related actions are the same for <code>SinkIamRoleArn</code>.</p>
+    /// <p>Additionally, the role must have permission to <code>kms:GenerateDataKey</code> using KMS key supplied as <code>AwsKmsKeyId</code> in <code>SseAwsKeyManagementParams</code>. If media concatenation will be required later, the role must also have permission to <code>kms:Decrypt</code> for the same KMS key.</p>
+    pub fn get_sink_iam_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_sink_iam_role_arn()
+    }
     ///
     /// Appends an item to `Tags`.
     ///
