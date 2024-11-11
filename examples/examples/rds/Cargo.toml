@@ -19,7 +19,7 @@ aws-smithy-runtime-api= { version = "1.7.3", path = "../../../sdk/aws-smithy-run
 aws-sdk-rds= { version = "1.65.0", path = "../../../sdk/rds" }
 
 [dependencies.clap]
-version = "~4.4"
+version = "4.4"
 features = ["derive"]
 
 [dependencies.phf]

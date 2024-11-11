@@ -14,7 +14,7 @@ aws-config= { version = "1.5.10", path = "../../../sdk/aws-config", features = [
 aws-sdk-transcribestreaming= { version = "1.50.0", path = "../../../sdk/transcribestreaming" }
 
 [dependencies.clap]
-version = "~4.4"
+version = "4.4"
 features = ["derive"]
 
 [dependencies.tokio]

@@ -7,21 +7,27 @@ edition = "2021"
 publish = false
 
 [dependencies]
-http = "0.2.6"
-hyper = "0.14"
-reqwest = "0.11"
-hyper-tls = "0.5.0"
+hyper-tls = "0.6.0"
+reqwest = "0.12.9"
 aws-config= { version = "1.5.10", path = "../../../sdk/aws-config", features = ["behavior-version-latest"] }
-aws-sdk-s3= { version = "1.60.0", path = "../../../sdk/s3" }
+aws-sdk-s3= { version = "1.60.0", path = "../../../sdk/s3", features = ["http-1x"] }
 
 [dependencies.clap]
-version = "~4.4"
+version = "4.5.20"
 features = ["derive"]
 
+[dependencies.hyper]
+version = "1.5.0"
+features = ["client", "full"]
+
+[dependencies.hyper-util]
+version = "0.1.10"
+features = ["client-legacy", "tokio"]
+
 [dependencies.tokio]
-version = "1.20.1"
+version = "1.41.0"
 features = ["full"]
 
 [dependencies.tracing-subscriber]
-version = "0.3.15"
+version = "0.3.18"
 features = ["env-filter"]

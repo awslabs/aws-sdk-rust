@@ -20,7 +20,7 @@ version = "1.20.1"
 features = ["full"]
 
 [dependencies.clap]
-version = "~4.4"
+version = "4.4"
 features = ["derive"]
 
 [dependencies.tracing-subscriber]
@@ -32,4 +32,4 @@ path = "../../test-utils"
 version = "0.1.0"
 
 [dev-dependencies]
-aws-smithy-mocks-experimental= { version = "0.2.1", path = "../../../sdk/aws-smithy-mocks-experimental" }
+aws-smithy-mocks-experimental = { version = "0.2.1", path = "../../../sdk/aws-smithy-mocks-experimental" }

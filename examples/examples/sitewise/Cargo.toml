@@ -13,7 +13,7 @@ aws-sdk-iotsitewise= { version = "1.51.0", path = "../../../sdk/iotsitewise" }
 aws-smithy-types-convert= { version = "0.60.8", path = "../../../sdk/aws-smithy-types-convert", features = ["convert-chrono"] }
 
 [dependencies.clap]
-version = "~4.4"
+version = "4.4"
 features = ["derive"]
 
 [dependencies.tokio]
