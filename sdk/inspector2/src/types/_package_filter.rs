@@ -18,6 +18,8 @@ pub struct PackageFilter {
     pub source_layer_hash: ::std::option::Option<crate::types::StringFilter>,
     /// <p>An object that describes the details of a string filter.</p>
     pub source_lambda_layer_arn: ::std::option::Option<crate::types::StringFilter>,
+    /// <p>An object that contains details on the package file path to filter on.</p>
+    pub file_path: ::std::option::Option<crate::types::StringFilter>,
 }
 impl PackageFilter {
     /// <p>An object that contains details on the name of the package to filter on.</p>
@@ -48,6 +50,10 @@ impl PackageFilter {
     pub fn source_lambda_layer_arn(&self) -> ::std::option::Option<&crate::types::StringFilter> {
         self.source_lambda_layer_arn.as_ref()
     }
+    /// <p>An object that contains details on the package file path to filter on.</p>
+    pub fn file_path(&self) -> ::std::option::Option<&crate::types::StringFilter> {
+        self.file_path.as_ref()
+    }
 }
 impl PackageFilter {
     /// Creates a new builder-style object to manufacture [`PackageFilter`](crate::types::PackageFilter).
@@ -67,6 +73,7 @@ pub struct PackageFilterBuilder {
     pub(crate) architecture: ::std::option::Option<crate::types::StringFilter>,
     pub(crate) source_layer_hash: ::std::option::Option<crate::types::StringFilter>,
     pub(crate) source_lambda_layer_arn: ::std::option::Option<crate::types::StringFilter>,
+    pub(crate) file_path: ::std::option::Option<crate::types::StringFilter>,
 }
 impl PackageFilterBuilder {
     /// <p>An object that contains details on the name of the package to filter on.</p>
@@ -167,6 +174,20 @@ impl PackageFilterBuilder {
     pub fn get_source_lambda_layer_arn(&self) -> &::std::option::Option<crate::types::StringFilter> {
         &self.source_lambda_layer_arn
     }
+    /// <p>An object that contains details on the package file path to filter on.</p>
+    pub fn file_path(mut self, input: crate::types::StringFilter) -> Self {
+        self.file_path = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>An object that contains details on the package file path to filter on.</p>
+    pub fn set_file_path(mut self, input: ::std::option::Option<crate::types::StringFilter>) -> Self {
+        self.file_path = input;
+        self
+    }
+    /// <p>An object that contains details on the package file path to filter on.</p>
+    pub fn get_file_path(&self) -> &::std::option::Option<crate::types::StringFilter> {
+        &self.file_path
+    }
     /// Consumes the builder and constructs a [`PackageFilter`](crate::types::PackageFilter).
     pub fn build(self) -> crate::types::PackageFilter {
         crate::types::PackageFilter {
@@ -177,6 +198,7 @@ impl PackageFilterBuilder {
             architecture: self.architecture,
             source_layer_hash: self.source_layer_hash,
             source_lambda_layer_arn: self.source_lambda_layer_arn,
+            file_path: self.file_path,
         }
     }
 }

@@ -164,4 +164,32 @@ impl UpdatePackageFluentBuilder {
     pub fn get_commit_message(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_commit_message()
     }
+    /// <p>The updated configuration details for a package.</p>
+    pub fn package_configuration(mut self, input: crate::types::PackageConfiguration) -> Self {
+        self.inner = self.inner.package_configuration(input);
+        self
+    }
+    /// <p>The updated configuration details for a package.</p>
+    pub fn set_package_configuration(mut self, input: ::std::option::Option<crate::types::PackageConfiguration>) -> Self {
+        self.inner = self.inner.set_package_configuration(input);
+        self
+    }
+    /// <p>The updated configuration details for a package.</p>
+    pub fn get_package_configuration(&self) -> &::std::option::Option<crate::types::PackageConfiguration> {
+        self.inner.get_package_configuration()
+    }
+    /// <p>Encryption options for a package.</p>
+    pub fn package_encryption_options(mut self, input: crate::types::PackageEncryptionOptions) -> Self {
+        self.inner = self.inner.package_encryption_options(input);
+        self
+    }
+    /// <p>Encryption options for a package.</p>
+    pub fn set_package_encryption_options(mut self, input: ::std::option::Option<crate::types::PackageEncryptionOptions>) -> Self {
+        self.inner = self.inner.set_package_encryption_options(input);
+        self
+    }
+    /// <p>Encryption options for a package.</p>
+    pub fn get_package_encryption_options(&self) -> &::std::option::Option<crate::types::PackageEncryptionOptions> {
+        self.inner.get_package_encryption_options()
+    }
 }

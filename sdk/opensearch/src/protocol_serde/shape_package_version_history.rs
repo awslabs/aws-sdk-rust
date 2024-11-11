@@ -37,6 +37,10 @@ where
                         "PluginProperties" => {
                             builder = builder.set_plugin_properties(crate::protocol_serde::shape_plugin_properties::de_plugin_properties(tokens)?);
                         }
+                        "PackageConfiguration" => {
+                            builder = builder
+                                .set_package_configuration(crate::protocol_serde::shape_package_configuration::de_package_configuration(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

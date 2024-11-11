@@ -42,6 +42,7 @@
 ///     Runtime::Python310 => { /* ... */ },
 ///     Runtime::Python311 => { /* ... */ },
 ///     Runtime::Python312 => { /* ... */ },
+///     Runtime::Python313 => { /* ... */ },
 ///     Runtime::Python36 => { /* ... */ },
 ///     Runtime::Python37 => { /* ... */ },
 ///     Runtime::Python38 => { /* ... */ },
@@ -138,6 +139,8 @@ pub enum Runtime {
     #[allow(missing_docs)] // documentation missing in model
     Python312,
     #[allow(missing_docs)] // documentation missing in model
+    Python313,
+    #[allow(missing_docs)] // documentation missing in model
     Python36,
     #[allow(missing_docs)] // documentation missing in model
     Python37,
@@ -190,6 +193,7 @@ impl ::std::convert::From<&str> for Runtime {
             "python3.10" => Runtime::Python310,
             "python3.11" => Runtime::Python311,
             "python3.12" => Runtime::Python312,
+            "python3.13" => Runtime::Python313,
             "python3.6" => Runtime::Python36,
             "python3.7" => Runtime::Python37,
             "python3.8" => Runtime::Python38,
@@ -243,6 +247,7 @@ impl Runtime {
             Runtime::Python310 => "python3.10",
             Runtime::Python311 => "python3.11",
             Runtime::Python312 => "python3.12",
+            Runtime::Python313 => "python3.13",
             Runtime::Python36 => "python3.6",
             Runtime::Python37 => "python3.7",
             Runtime::Python38 => "python3.8",
@@ -287,6 +292,7 @@ impl Runtime {
             "python3.10",
             "python3.11",
             "python3.12",
+            "python3.13",
             "python3.6",
             "python3.7",
             "python3.8",
@@ -348,6 +354,7 @@ impl ::std::fmt::Display for Runtime {
             Runtime::Python310 => write!(f, "python3.10"),
             Runtime::Python311 => write!(f, "python3.11"),
             Runtime::Python312 => write!(f, "python3.12"),
+            Runtime::Python313 => write!(f, "python3.13"),
             Runtime::Python36 => write!(f, "python3.6"),
             Runtime::Python37 => write!(f, "python3.7"),
             Runtime::Python38 => write!(f, "python3.8"),

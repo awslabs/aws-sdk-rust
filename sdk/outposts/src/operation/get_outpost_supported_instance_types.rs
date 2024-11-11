@@ -208,17 +208,11 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetOutpostSu
                 mut output: &mut ::std::string::String,
             ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
-                let inner_2 = &_input.order_id;
-                let inner_2 = inner_2
-                    .as_ref()
-                    .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("order_id", "cannot be empty or unset"))?;
-                if inner_2.is_empty() {
-                    return ::std::result::Result::Err(::aws_smithy_types::error::operation::BuildError::missing_field(
-                        "order_id",
-                        "cannot be empty or unset",
-                    ));
+                if let ::std::option::Option::Some(inner_2) = &_input.order_id {
+                    {
+                        query.push_kv("OrderId", &::aws_smithy_http::query::fmt_string(inner_2));
+                    }
                 }
-                query.push_kv("OrderId", &::aws_smithy_http::query::fmt_string(inner_2));
                 if let ::std::option::Option::Some(inner_3) = &_input.max_results {
                     {
                         query.push_kv("MaxResults", ::aws_smithy_types::primitive::Encoder::from(*inner_3).encode());

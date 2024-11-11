@@ -11,6 +11,8 @@ pub struct GetCapacityTaskOutput {
     pub order_id: ::std::option::Option<::std::string::String>,
     /// <p>List of instance pools requested in the capacity task.</p>
     pub requested_instance_pools: ::std::option::Option<::std::vec::Vec<crate::types::InstanceTypeCapacity>>,
+    /// <p>Instances that the user specified they cannot stop in order to free up the capacity needed to run the capacity task.</p>
+    pub instances_to_exclude: ::std::option::Option<crate::types::InstancesToExclude>,
     /// <p>Performs a dry run to determine if you are above or below instance capacity.</p>
     pub dry_run: bool,
     /// <p>Status of the capacity task.</p>
@@ -32,6 +34,14 @@ pub struct GetCapacityTaskOutput {
     pub completion_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date the capacity task was last modified.</p>
     pub last_modified_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>User-specified option in case an instance is blocking the capacity task from running. Shows one of the following options:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>WAIT_FOR_EVACUATION</code> - Checks every 10 minutes over 48 hours to determine if instances have stopped and capacity is available to complete the task.</p></li>
+    /// <li>
+    /// <p><code>FAIL_TASK</code> - The capacity task fails.</p></li>
+    /// </ul>
+    pub task_action_on_blocking_instances: ::std::option::Option<crate::types::TaskActionOnBlockingInstances>,
     _request_id: Option<String>,
 }
 impl GetCapacityTaskOutput {
@@ -52,6 +62,10 @@ impl GetCapacityTaskOutput {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.requested_instance_pools.is_none()`.
     pub fn requested_instance_pools(&self) -> &[crate::types::InstanceTypeCapacity] {
         self.requested_instance_pools.as_deref().unwrap_or_default()
+    }
+    /// <p>Instances that the user specified they cannot stop in order to free up the capacity needed to run the capacity task.</p>
+    pub fn instances_to_exclude(&self) -> ::std::option::Option<&crate::types::InstancesToExclude> {
+        self.instances_to_exclude.as_ref()
     }
     /// <p>Performs a dry run to determine if you are above or below instance capacity.</p>
     pub fn dry_run(&self) -> bool {
@@ -86,6 +100,16 @@ impl GetCapacityTaskOutput {
     pub fn last_modified_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_modified_date.as_ref()
     }
+    /// <p>User-specified option in case an instance is blocking the capacity task from running. Shows one of the following options:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>WAIT_FOR_EVACUATION</code> - Checks every 10 minutes over 48 hours to determine if instances have stopped and capacity is available to complete the task.</p></li>
+    /// <li>
+    /// <p><code>FAIL_TASK</code> - The capacity task fails.</p></li>
+    /// </ul>
+    pub fn task_action_on_blocking_instances(&self) -> ::std::option::Option<&crate::types::TaskActionOnBlockingInstances> {
+        self.task_action_on_blocking_instances.as_ref()
+    }
 }
 impl ::aws_types::request_id::RequestId for GetCapacityTaskOutput {
     fn request_id(&self) -> Option<&str> {
@@ -107,12 +131,14 @@ pub struct GetCapacityTaskOutputBuilder {
     pub(crate) outpost_id: ::std::option::Option<::std::string::String>,
     pub(crate) order_id: ::std::option::Option<::std::string::String>,
     pub(crate) requested_instance_pools: ::std::option::Option<::std::vec::Vec<crate::types::InstanceTypeCapacity>>,
+    pub(crate) instances_to_exclude: ::std::option::Option<crate::types::InstancesToExclude>,
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) capacity_task_status: ::std::option::Option<crate::types::CapacityTaskStatus>,
     pub(crate) failed: ::std::option::Option<crate::types::CapacityTaskFailure>,
     pub(crate) creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) completion_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_modified_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) task_action_on_blocking_instances: ::std::option::Option<crate::types::TaskActionOnBlockingInstances>,
     _request_id: Option<String>,
 }
 impl GetCapacityTaskOutputBuilder {
@@ -177,6 +203,20 @@ impl GetCapacityTaskOutputBuilder {
     /// <p>List of instance pools requested in the capacity task.</p>
     pub fn get_requested_instance_pools(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceTypeCapacity>> {
         &self.requested_instance_pools
+    }
+    /// <p>Instances that the user specified they cannot stop in order to free up the capacity needed to run the capacity task.</p>
+    pub fn instances_to_exclude(mut self, input: crate::types::InstancesToExclude) -> Self {
+        self.instances_to_exclude = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Instances that the user specified they cannot stop in order to free up the capacity needed to run the capacity task.</p>
+    pub fn set_instances_to_exclude(mut self, input: ::std::option::Option<crate::types::InstancesToExclude>) -> Self {
+        self.instances_to_exclude = input;
+        self
+    }
+    /// <p>Instances that the user specified they cannot stop in order to free up the capacity needed to run the capacity task.</p>
+    pub fn get_instances_to_exclude(&self) -> &::std::option::Option<crate::types::InstancesToExclude> {
+        &self.instances_to_exclude
     }
     /// <p>Performs a dry run to determine if you are above or below instance capacity.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
@@ -289,6 +329,38 @@ impl GetCapacityTaskOutputBuilder {
     pub fn get_last_modified_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_modified_date
     }
+    /// <p>User-specified option in case an instance is blocking the capacity task from running. Shows one of the following options:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>WAIT_FOR_EVACUATION</code> - Checks every 10 minutes over 48 hours to determine if instances have stopped and capacity is available to complete the task.</p></li>
+    /// <li>
+    /// <p><code>FAIL_TASK</code> - The capacity task fails.</p></li>
+    /// </ul>
+    pub fn task_action_on_blocking_instances(mut self, input: crate::types::TaskActionOnBlockingInstances) -> Self {
+        self.task_action_on_blocking_instances = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>User-specified option in case an instance is blocking the capacity task from running. Shows one of the following options:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>WAIT_FOR_EVACUATION</code> - Checks every 10 minutes over 48 hours to determine if instances have stopped and capacity is available to complete the task.</p></li>
+    /// <li>
+    /// <p><code>FAIL_TASK</code> - The capacity task fails.</p></li>
+    /// </ul>
+    pub fn set_task_action_on_blocking_instances(mut self, input: ::std::option::Option<crate::types::TaskActionOnBlockingInstances>) -> Self {
+        self.task_action_on_blocking_instances = input;
+        self
+    }
+    /// <p>User-specified option in case an instance is blocking the capacity task from running. Shows one of the following options:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>WAIT_FOR_EVACUATION</code> - Checks every 10 minutes over 48 hours to determine if instances have stopped and capacity is available to complete the task.</p></li>
+    /// <li>
+    /// <p><code>FAIL_TASK</code> - The capacity task fails.</p></li>
+    /// </ul>
+    pub fn get_task_action_on_blocking_instances(&self) -> &::std::option::Option<crate::types::TaskActionOnBlockingInstances> {
+        &self.task_action_on_blocking_instances
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -305,12 +377,14 @@ impl GetCapacityTaskOutputBuilder {
             outpost_id: self.outpost_id,
             order_id: self.order_id,
             requested_instance_pools: self.requested_instance_pools,
+            instances_to_exclude: self.instances_to_exclude,
             dry_run: self.dry_run.unwrap_or_default(),
             capacity_task_status: self.capacity_task_status,
             failed: self.failed,
             creation_date: self.creation_date,
             completion_date: self.completion_date,
             last_modified_date: self.last_modified_date,
+            task_action_on_blocking_instances: self.task_action_on_blocking_instances,
             _request_id: self._request_id,
         }
     }

@@ -22,7 +22,7 @@ impl crate::operation::stop_cis_session::builders::StopCisSessionInputBuilder {
 }
 /// Fluent builder constructing a request to `StopCisSession`.
 ///
-/// <p>Stops a CIS session. This API is used by the Amazon Inspector SSM plugin to communicate with the Amazon Inspector service. The Amazon Inspector SSM plugin calls this API to start a CIS scan session for the scan ID supplied by the service.</p>
+/// <p>Stops a CIS session. This API is used by the Amazon Inspector SSM plugin to communicate with the Amazon Inspector service. The Amazon Inspector SSM plugin calls this API to stop a CIS scan session for the scan ID supplied by the service.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StopCisSessionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

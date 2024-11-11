@@ -31,6 +31,8 @@ pub(crate) mod shape_add_tags;
 
 pub(crate) mod shape_associate_package;
 
+pub(crate) mod shape_associate_packages;
+
 pub(crate) mod shape_authorize_vpc_endpoint_access;
 
 pub(crate) mod shape_cancel_domain_config_change;
@@ -93,6 +95,8 @@ pub(crate) mod shape_describe_vpc_endpoints;
 
 pub(crate) mod shape_dissociate_package;
 
+pub(crate) mod shape_dissociate_packages;
+
 pub(crate) mod shape_get_application;
 
 pub(crate) mod shape_get_compatible_versions;
@@ -153,6 +157,8 @@ pub(crate) mod shape_update_domain_config;
 
 pub(crate) mod shape_update_package;
 
+pub(crate) mod shape_update_package_scope;
+
 pub(crate) mod shape_update_scheduled_action;
 
 pub(crate) mod shape_update_vpc_endpoint;
@@ -172,6 +178,10 @@ pub(crate) mod shape_access_denied_exception;
 pub(crate) mod shape_add_data_source_input;
 
 pub(crate) mod shape_add_tags_input;
+
+pub(crate) mod shape_associate_package_input;
+
+pub(crate) mod shape_associate_packages_input;
 
 pub(crate) mod shape_authorize_vpc_endpoint_access_input;
 
@@ -209,6 +219,8 @@ pub(crate) mod shape_describe_vpc_endpoints_input;
 
 pub(crate) mod shape_disabled_operation_exception;
 
+pub(crate) mod shape_dissociate_packages_input;
+
 pub(crate) mod shape_internal_exception;
 
 pub(crate) mod shape_invalid_pagination_token_exception;
@@ -240,6 +252,8 @@ pub(crate) mod shape_update_data_source_input;
 pub(crate) mod shape_update_domain_config_input;
 
 pub(crate) mod shape_update_package_input;
+
+pub(crate) mod shape_update_package_scope_input;
 
 pub(crate) mod shape_update_scheduled_action_input;
 
@@ -355,11 +369,23 @@ pub(crate) mod shape_outbound_connection_status;
 
 pub(crate) mod shape_outbound_connections;
 
+pub(crate) mod shape_package_association_configuration;
+
+pub(crate) mod shape_package_configuration;
+
 pub(crate) mod shape_package_details;
+
+pub(crate) mod shape_package_details_for_association;
 
 pub(crate) mod shape_package_details_list;
 
+pub(crate) mod shape_package_encryption_options;
+
 pub(crate) mod shape_package_source;
+
+pub(crate) mod shape_package_user_list;
+
+pub(crate) mod shape_package_vending_options;
 
 pub(crate) mod shape_package_version_history_list;
 
@@ -469,6 +495,8 @@ pub(crate) mod shape_ip_address_type_status;
 
 pub(crate) mod shape_jwt_options_input;
 
+pub(crate) mod shape_key_store_access_option;
+
 pub(crate) mod shape_limits;
 
 pub(crate) mod shape_log_publishing_options;
@@ -488,6 +516,8 @@ pub(crate) mod shape_node_to_node_encryption_options_status;
 pub(crate) mod shape_off_peak_window;
 
 pub(crate) mod shape_off_peak_window_options_status;
+
+pub(crate) mod shape_package_id_list;
 
 pub(crate) mod shape_package_version_history;
 

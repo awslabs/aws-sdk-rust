@@ -164,4 +164,60 @@ impl CreatePackageFluentBuilder {
     pub fn get_package_source(&self) -> &::std::option::Option<crate::types::PackageSource> {
         self.inner.get_package_source()
     }
+    /// <p>The configuration parameters for the package being created.</p>
+    pub fn package_configuration(mut self, input: crate::types::PackageConfiguration) -> Self {
+        self.inner = self.inner.package_configuration(input);
+        self
+    }
+    /// <p>The configuration parameters for the package being created.</p>
+    pub fn set_package_configuration(mut self, input: ::std::option::Option<crate::types::PackageConfiguration>) -> Self {
+        self.inner = self.inner.set_package_configuration(input);
+        self
+    }
+    /// <p>The configuration parameters for the package being created.</p>
+    pub fn get_package_configuration(&self) -> &::std::option::Option<crate::types::PackageConfiguration> {
+        self.inner.get_package_configuration()
+    }
+    /// <p>The version of the Amazon OpenSearch Service engine for which is compatible with the package. This can only be specified for package type <code>ZIP-PLUGIN</code></p>
+    pub fn engine_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.engine_version(input.into());
+        self
+    }
+    /// <p>The version of the Amazon OpenSearch Service engine for which is compatible with the package. This can only be specified for package type <code>ZIP-PLUGIN</code></p>
+    pub fn set_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_engine_version(input);
+        self
+    }
+    /// <p>The version of the Amazon OpenSearch Service engine for which is compatible with the package. This can only be specified for package type <code>ZIP-PLUGIN</code></p>
+    pub fn get_engine_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_engine_version()
+    }
+    /// <p>The vending options for the package being created. They determine if the package can be vended to other users.</p>
+    pub fn package_vending_options(mut self, input: crate::types::PackageVendingOptions) -> Self {
+        self.inner = self.inner.package_vending_options(input);
+        self
+    }
+    /// <p>The vending options for the package being created. They determine if the package can be vended to other users.</p>
+    pub fn set_package_vending_options(mut self, input: ::std::option::Option<crate::types::PackageVendingOptions>) -> Self {
+        self.inner = self.inner.set_package_vending_options(input);
+        self
+    }
+    /// <p>The vending options for the package being created. They determine if the package can be vended to other users.</p>
+    pub fn get_package_vending_options(&self) -> &::std::option::Option<crate::types::PackageVendingOptions> {
+        self.inner.get_package_vending_options()
+    }
+    /// <p>The encryption parameters for the package being created.</p>
+    pub fn package_encryption_options(mut self, input: crate::types::PackageEncryptionOptions) -> Self {
+        self.inner = self.inner.package_encryption_options(input);
+        self
+    }
+    /// <p>The encryption parameters for the package being created.</p>
+    pub fn set_package_encryption_options(mut self, input: ::std::option::Option<crate::types::PackageEncryptionOptions>) -> Self {
+        self.inner = self.inner.set_package_encryption_options(input);
+        self
+    }
+    /// <p>The encryption parameters for the package being created.</p>
+    pub fn get_package_encryption_options(&self) -> &::std::option::Option<crate::types::PackageEncryptionOptions> {
+        self.inner.get_package_encryption_options()
+    }
 }

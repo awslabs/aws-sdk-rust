@@ -393,6 +393,36 @@ pub(crate) fn node_to_node_encryption_options_status_correct_errors(
     builder
 }
 
+pub(crate) fn package_configuration_correct_errors(
+    mut builder: crate::types::builders::PackageConfigurationBuilder,
+) -> crate::types::builders::PackageConfigurationBuilder {
+    if builder.license_requirement.is_none() {
+        builder.license_requirement = "no value was set".parse::<crate::types::RequirementLevel>().ok()
+    }
+    if builder.configuration_requirement.is_none() {
+        builder.configuration_requirement = "no value was set".parse::<crate::types::RequirementLevel>().ok()
+    }
+    builder
+}
+
+pub(crate) fn package_encryption_options_correct_errors(
+    mut builder: crate::types::builders::PackageEncryptionOptionsBuilder,
+) -> crate::types::builders::PackageEncryptionOptionsBuilder {
+    if builder.encryption_enabled.is_none() {
+        builder.encryption_enabled = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn package_vending_options_correct_errors(
+    mut builder: crate::types::builders::PackageVendingOptionsBuilder,
+) -> crate::types::builders::PackageVendingOptionsBuilder {
+    if builder.vending_enabled.is_none() {
+        builder.vending_enabled = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn snapshot_options_status_correct_errors(
     mut builder: crate::types::builders::SnapshotOptionsStatusBuilder,
 ) -> crate::types::builders::SnapshotOptionsStatusBuilder {
@@ -474,6 +504,15 @@ pub(crate) fn cold_storage_options_correct_errors(
 ) -> crate::types::builders::ColdStorageOptionsBuilder {
     if builder.enabled.is_none() {
         builder.enabled = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn key_store_access_option_correct_errors(
+    mut builder: crate::types::builders::KeyStoreAccessOptionBuilder,
+) -> crate::types::builders::KeyStoreAccessOptionBuilder {
+    if builder.key_store_access_enabled.is_none() {
+        builder.key_store_access_enabled = Some(Default::default())
     }
     builder
 }

@@ -11,6 +11,12 @@ pub use crate::types::_scheduled_action::ScheduledActionBuilder;
 
 pub use crate::types::_package_details::PackageDetailsBuilder;
 
+pub use crate::types::_package_encryption_options::PackageEncryptionOptionsBuilder;
+
+pub use crate::types::_package_vending_options::PackageVendingOptionsBuilder;
+
+pub use crate::types::_package_configuration::PackageConfigurationBuilder;
+
 pub use crate::types::_plugin_properties::PluginPropertiesBuilder;
 
 pub use crate::types::_error_details::ErrorDetailsBuilder;
@@ -161,6 +167,10 @@ pub use crate::types::_tag::TagBuilder;
 
 pub use crate::types::_domain_package_details::DomainPackageDetailsBuilder;
 
+pub use crate::types::_package_association_configuration::PackageAssociationConfigurationBuilder;
+
+pub use crate::types::_key_store_access_option::KeyStoreAccessOptionBuilder;
+
 pub use crate::types::_instance_type_details::InstanceTypeDetailsBuilder;
 
 pub use crate::types::_domain_info::DomainInfoBuilder;
@@ -236,3 +246,5 @@ pub use crate::types::_auto_tune_options_input::AutoTuneOptionsInputBuilder;
 pub use crate::types::_iam_identity_center_options_input::IamIdentityCenterOptionsInputBuilder;
 
 pub use crate::types::_cancelled_change_property::CancelledChangePropertyBuilder;
+
+pub use crate::types::_package_details_for_association::PackageDetailsForAssociationBuilder;

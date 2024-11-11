@@ -63,7 +63,6 @@ impl GetOutpostSupportedInstanceTypesInputBuilder {
         &self.outpost_identifier
     }
     /// <p>The ID for the Amazon Web Services Outposts order.</p>
-    /// This field is required.
     pub fn order_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.order_id = ::std::option::Option::Some(input.into());
         self

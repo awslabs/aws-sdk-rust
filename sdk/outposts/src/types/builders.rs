@@ -9,6 +9,8 @@ pub use crate::types::_outpost::OutpostBuilder;
 
 pub use crate::types::_capacity_task_failure::CapacityTaskFailureBuilder;
 
+pub use crate::types::_instances_to_exclude::InstancesToExcludeBuilder;
+
 pub use crate::types::_instance_type_capacity::InstanceTypeCapacityBuilder;
 
 pub use crate::types::_order_summary::OrderSummaryBuilder;
@@ -19,11 +21,17 @@ pub use crate::types::_ec2_capacity::Ec2CapacityBuilder;
 
 pub use crate::types::_capacity_task_summary::CapacityTaskSummaryBuilder;
 
+pub use crate::types::_blocking_instance::BlockingInstanceBuilder;
+
 pub use crate::types::_asset_info::AssetInfoBuilder;
 
 pub use crate::types::_asset_location::AssetLocationBuilder;
 
 pub use crate::types::_compute_attributes::ComputeAttributesBuilder;
+
+pub use crate::types::_asset_instance_type_capacity::AssetInstanceTypeCapacityBuilder;
+
+pub use crate::types::_asset_instance::AssetInstanceBuilder;
 
 pub use crate::types::_instance_type_item::InstanceTypeItemBuilder;
 

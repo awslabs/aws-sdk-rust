@@ -55,6 +55,20 @@ pub(crate) fn reflens_list_key_value_stores_output_output_key_value_store_list_n
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_public_keys_output_output_public_key_list_next_marker(
+    input: &crate::operation::list_public_keys::ListPublicKeysOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.public_key_list {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    let input = match &input.next_marker {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_streaming_distributions_output_output_streaming_distribution_list_next_marker(
     input: &crate::operation::list_streaming_distributions::ListStreamingDistributionsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -115,6 +129,20 @@ pub(crate) fn lens_list_key_value_stores_output_output_key_value_store_list_item
     input: crate::operation::list_key_value_stores::ListKeyValueStoresOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::KeyValueStore>> {
     let input = match input.key_value_store_list {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    let input = match input.items {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_public_keys_output_output_public_key_list_items(
+    input: crate::operation::list_public_keys::ListPublicKeysOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::PublicKeySummary>> {
+    let input = match input.public_key_list {
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,
     };

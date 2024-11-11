@@ -136,4 +136,37 @@ impl AssociatePackageFluentBuilder {
     pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_domain_name()
     }
+    ///
+    /// Appends an item to `PrerequisitePackageIDList`.
+    ///
+    /// To override the contents of this collection use [`set_prerequisite_package_id_list`](Self::set_prerequisite_package_id_list).
+    ///
+    /// <p>A list of package IDs that must be associated with the domain before the package specified in the request can be associated.</p>
+    pub fn prerequisite_package_id_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.prerequisite_package_id_list(input.into());
+        self
+    }
+    /// <p>A list of package IDs that must be associated with the domain before the package specified in the request can be associated.</p>
+    pub fn set_prerequisite_package_id_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.inner = self.inner.set_prerequisite_package_id_list(input);
+        self
+    }
+    /// <p>A list of package IDs that must be associated with the domain before the package specified in the request can be associated.</p>
+    pub fn get_prerequisite_package_id_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_prerequisite_package_id_list()
+    }
+    /// <p>The configuration for associating a package with an Amazon OpenSearch Service domain.</p>
+    pub fn association_configuration(mut self, input: crate::types::PackageAssociationConfiguration) -> Self {
+        self.inner = self.inner.association_configuration(input);
+        self
+    }
+    /// <p>The configuration for associating a package with an Amazon OpenSearch Service domain.</p>
+    pub fn set_association_configuration(mut self, input: ::std::option::Option<crate::types::PackageAssociationConfiguration>) -> Self {
+        self.inner = self.inner.set_association_configuration(input);
+        self
+    }
+    /// <p>The configuration for associating a package with an Amazon OpenSearch Service domain.</p>
+    pub fn get_association_configuration(&self) -> &::std::option::Option<crate::types::PackageAssociationConfiguration> {
+        self.inner.get_association_configuration()
+    }
 }

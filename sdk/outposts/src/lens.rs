@@ -19,8 +19,28 @@ pub(crate) fn reflens_get_outpost_supported_instance_types_output_output_next_to
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_asset_instances_output_output_next_token(
+    input: &crate::operation::list_asset_instances::ListAssetInstancesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_assets_output_output_next_token(
     input: &crate::operation::list_assets::ListAssetsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_blocking_instances_for_capacity_task_output_output_next_token(
+    input: &crate::operation::list_blocking_instances_for_capacity_task::ListBlockingInstancesForCapacityTaskOutput,
 ) -> ::std::option::Option<&::std::string::String> {
     let input = match &input.next_token {
         ::std::option::Option::None => return ::std::option::Option::None,
@@ -99,10 +119,30 @@ pub(crate) fn lens_get_outpost_supported_instance_types_output_output_instance_t
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn lens_list_asset_instances_output_output_asset_instances(
+    input: crate::operation::list_asset_instances::ListAssetInstancesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::AssetInstance>> {
+    let input = match input.asset_instances {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_list_assets_output_output_assets(
     input: crate::operation::list_assets::ListAssetsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::AssetInfo>> {
     let input = match input.assets {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_blocking_instances_for_capacity_task_output_output_blocking_instances(
+    input: crate::operation::list_blocking_instances_for_capacity_task::ListBlockingInstancesForCapacityTaskOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::BlockingInstance>> {
+    let input = match input.blocking_instances {
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,
     };

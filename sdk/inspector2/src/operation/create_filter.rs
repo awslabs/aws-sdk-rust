@@ -243,7 +243,6 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateFilterE
 #[derive(::std::fmt::Debug)]
 pub enum CreateFilterError {
     /// <p>You do not have sufficient access to perform this action.</p>
-    /// <p>For <code>Enable</code>, you receive this error if you attempt to use a feature in an unsupported Amazon Web Services Region.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>One or more tags submitted as part of the request is not valid.</p>
     BadRequestException(crate::types::error::BadRequestException),

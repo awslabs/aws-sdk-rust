@@ -62,6 +62,10 @@ where
                                     .transpose()?,
                             );
                         }
+                        "PrerequisitePackageIDList" => {
+                            builder =
+                                builder.set_prerequisite_package_id_list(crate::protocol_serde::shape_package_id_list::de_package_id_list(tokens)?);
+                        }
                         "ReferencePath" => {
                             builder = builder.set_reference_path(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
@@ -71,6 +75,11 @@ where
                         }
                         "ErrorDetails" => {
                             builder = builder.set_error_details(crate::protocol_serde::shape_error_details::de_error_details(tokens)?);
+                        }
+                        "AssociationConfiguration" => {
+                            builder = builder.set_association_configuration(
+                                crate::protocol_serde::shape_package_association_configuration::de_package_association_configuration(tokens)?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

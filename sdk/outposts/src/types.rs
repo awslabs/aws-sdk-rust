@@ -31,11 +31,17 @@ pub use crate::types::_outpost::Outpost;
 
 pub use crate::types::_supported_hardware_type::SupportedHardwareType;
 
+pub use crate::types::_task_action_on_blocking_instances::TaskActionOnBlockingInstances;
+
 pub use crate::types::_capacity_task_failure::CapacityTaskFailure;
 
 pub use crate::types::_capacity_task_failure_type::CapacityTaskFailureType;
 
 pub use crate::types::_capacity_task_status::CapacityTaskStatus;
+
+pub use crate::types::_instances_to_exclude::InstancesToExclude;
+
+pub use crate::types::_aws_service_name::AwsServiceName;
 
 pub use crate::types::_instance_type_capacity::InstanceTypeCapacity;
 
@@ -59,17 +65,23 @@ pub use crate::types::_catalog_item_class::CatalogItemClass;
 
 pub use crate::types::_capacity_task_summary::CapacityTaskSummary;
 
+pub use crate::types::_blocking_instance::BlockingInstance;
+
 pub use crate::types::_asset_info::AssetInfo;
 
 pub use crate::types::_asset_location::AssetLocation;
 
 pub use crate::types::_compute_attributes::ComputeAttributes;
 
+pub use crate::types::_asset_instance_type_capacity::AssetInstanceTypeCapacity;
+
 pub use crate::types::_compute_asset_state::ComputeAssetState;
 
 pub use crate::types::_asset_type::AssetType;
 
 pub use crate::types::_asset_state::AssetState;
+
+pub use crate::types::_asset_instance::AssetInstance;
 
 pub use crate::types::_instance_type_item::InstanceTypeItem;
 
@@ -97,11 +109,19 @@ mod _address_type;
 
 mod _asset_info;
 
+mod _asset_instance;
+
+mod _asset_instance_type_capacity;
+
 mod _asset_location;
 
 mod _asset_state;
 
 mod _asset_type;
+
+mod _aws_service_name;
+
+mod _blocking_instance;
 
 mod _capacity_task_failure;
 
@@ -130,6 +150,8 @@ mod _fiber_optic_cable_type;
 mod _instance_type_capacity;
 
 mod _instance_type_item;
+
+mod _instances_to_exclude;
 
 mod _line_item;
 
@@ -178,6 +200,8 @@ mod _site;
 mod _supported_hardware_type;
 
 mod _supported_storage_enum;
+
+mod _task_action_on_blocking_instances;
 
 mod _uplink_count;
 

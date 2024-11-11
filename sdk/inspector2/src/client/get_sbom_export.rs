@@ -10,7 +10,7 @@ impl super::Client {
     ///   - [`status(Option<ExternalReportStatus>)`](crate::operation::get_sbom_export::GetSbomExportOutput::status): <p>The status of the software bill of materials (SBOM) report.</p>
     ///   - [`error_code(Option<ReportingErrorCode>)`](crate::operation::get_sbom_export::GetSbomExportOutput::error_code): <p>An error code.</p>
     ///   - [`error_message(Option<String>)`](crate::operation::get_sbom_export::GetSbomExportOutput::error_message): <p>An error message.</p>
-    ///   - [`s3_destination(Option<Destination>)`](crate::operation::get_sbom_export::GetSbomExportOutput::s3_destination): <p>Contains details of the Amazon S3 bucket and KMS key used to export findings.</p>
+    ///   - [`s3_destination(Option<Destination>)`](crate::operation::get_sbom_export::GetSbomExportOutput::s3_destination): <p>Contains details of the Amazon S3 bucket and KMS key used to export findings</p>
     ///   - [`filter_criteria(Option<ResourceFilterCriteria>)`](crate::operation::get_sbom_export::GetSbomExportOutput::filter_criteria): <p>Contains details about the resource filter criteria used for the software bill of materials (SBOM) report.</p>
     /// - On failure, responds with [`SdkError<GetSbomExportError>`](crate::operation::get_sbom_export::GetSbomExportError)
     pub fn get_sbom_export(&self) -> crate::operation::get_sbom_export::builders::GetSbomExportFluentBuilder {

@@ -55,7 +55,11 @@ pub(crate) mod shape_get_site;
 
 pub(crate) mod shape_get_site_address;
 
+pub(crate) mod shape_list_asset_instances;
+
 pub(crate) mod shape_list_assets;
+
+pub(crate) mod shape_list_blocking_instances_for_capacity_task;
 
 pub(crate) mod shape_list_capacity_tasks;
 
@@ -127,7 +131,11 @@ pub(crate) mod shape_validation_exception;
 
 pub(crate) mod shape_address;
 
+pub(crate) mod shape_asset_instance_list;
+
 pub(crate) mod shape_asset_list_definition;
+
+pub(crate) mod shape_blocking_instances_list;
 
 pub(crate) mod shape_capacity_task_failure;
 
@@ -142,6 +150,8 @@ pub(crate) mod shape_connection_details;
 pub(crate) mod shape_instance_type_capacity;
 
 pub(crate) mod shape_instance_type_list_definition;
+
+pub(crate) mod shape_instances_to_exclude;
 
 pub(crate) mod shape_line_item_request;
 
@@ -163,13 +173,23 @@ pub(crate) mod shape_site_list_definition;
 
 pub(crate) mod shape_tag_map;
 
+pub(crate) mod shape_account_id_list;
+
 pub(crate) mod shape_asset_info;
+
+pub(crate) mod shape_asset_instance;
+
+pub(crate) mod shape_aws_service_name_list;
+
+pub(crate) mod shape_blocking_instance;
 
 pub(crate) mod shape_capacity_task_summary;
 
 pub(crate) mod shape_cidr_list;
 
 pub(crate) mod shape_ec2_capacity_list_definition;
+
+pub(crate) mod shape_instance_id_list;
 
 pub(crate) mod shape_instance_type_item;
 
@@ -191,11 +211,15 @@ pub(crate) mod shape_line_item;
 
 pub(crate) mod shape_line_item_status_counts;
 
+pub(crate) mod shape_asset_instance_capacity_list;
+
 pub(crate) mod shape_instance_families;
 
 pub(crate) mod shape_line_item_asset_information_list;
 
 pub(crate) mod shape_shipment_information;
+
+pub(crate) mod shape_asset_instance_type_capacity;
 
 pub(crate) mod shape_line_item_asset_information;
 

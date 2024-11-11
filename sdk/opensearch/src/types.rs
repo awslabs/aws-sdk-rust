@@ -25,7 +25,17 @@ pub use crate::types::_action_type::ActionType;
 
 pub use crate::types::_schedule_at::ScheduleAt;
 
+pub use crate::types::_package_scope_operation_enum::PackageScopeOperationEnum;
+
 pub use crate::types::_package_details::PackageDetails;
+
+pub use crate::types::_package_encryption_options::PackageEncryptionOptions;
+
+pub use crate::types::_package_vending_options::PackageVendingOptions;
+
+pub use crate::types::_package_configuration::PackageConfiguration;
+
+pub use crate::types::_requirement_level::RequirementLevel;
 
 pub use crate::types::_plugin_properties::PluginProperties;
 
@@ -235,6 +245,10 @@ pub use crate::types::_tag::Tag;
 
 pub use crate::types::_domain_package_details::DomainPackageDetails;
 
+pub use crate::types::_package_association_configuration::PackageAssociationConfiguration;
+
+pub use crate::types::_key_store_access_option::KeyStoreAccessOption;
+
 pub use crate::types::_domain_package_status::DomainPackageStatus;
 
 pub use crate::types::_instance_type_details::InstanceTypeDetails;
@@ -354,6 +368,8 @@ pub use crate::types::_auto_tune_options_input::AutoTuneOptionsInput;
 pub use crate::types::_iam_identity_center_options_input::IamIdentityCenterOptionsInput;
 
 pub use crate::types::_cancelled_change_property::CancelledChangeProperty;
+
+pub use crate::types::_package_details_for_association::PackageDetailsForAssociation;
 
 mod _access_policies_status;
 
@@ -541,6 +557,8 @@ mod _jwt_options_input;
 
 mod _jwt_options_output;
 
+mod _key_store_access_option;
+
 mod _limits;
 
 mod _log_publishing_option;
@@ -603,13 +621,25 @@ mod _outbound_connection_status_code;
 
 mod _overall_change_status;
 
+mod _package_association_configuration;
+
+mod _package_configuration;
+
 mod _package_details;
+
+mod _package_details_for_association;
+
+mod _package_encryption_options;
+
+mod _package_scope_operation_enum;
 
 mod _package_source;
 
 mod _package_status;
 
 mod _package_type;
+
+mod _package_vending_options;
 
 mod _package_version_history;
 
@@ -620,6 +650,8 @@ mod _principal_type;
 mod _property_value_type;
 
 mod _recurring_charge;
+
+mod _requirement_level;
 
 mod _reserved_instance;
 

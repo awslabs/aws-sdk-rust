@@ -205,6 +205,35 @@ impl From<crate::operation::associate_package::AssociatePackageError> for Error 
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::associate_packages::AssociatePackagesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::associate_packages::AssociatePackagesError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::associate_packages::AssociatePackagesError> for Error {
+    fn from(err: crate::operation::associate_packages::AssociatePackagesError) -> Self {
+        match err {
+            crate::operation::associate_packages::AssociatePackagesError::BaseException(inner) => Error::BaseException(inner),
+            crate::operation::associate_packages::AssociatePackagesError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::associate_packages::AssociatePackagesError::DisabledOperationException(inner) => {
+                Error::DisabledOperationException(inner)
+            }
+            crate::operation::associate_packages::AssociatePackagesError::InternalException(inner) => Error::InternalException(inner),
+            crate::operation::associate_packages::AssociatePackagesError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::associate_packages::AssociatePackagesError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::associate_packages::AssociatePackagesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::authorize_vpc_endpoint_access::AuthorizeVpcEndpointAccessError, R>>
     for Error
 where
@@ -1174,6 +1203,37 @@ impl From<crate::operation::dissociate_package::DissociatePackageError> for Erro
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::dissociate_packages::DissociatePackagesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::dissociate_packages::DissociatePackagesError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::dissociate_packages::DissociatePackagesError> for Error {
+    fn from(err: crate::operation::dissociate_packages::DissociatePackagesError) -> Self {
+        match err {
+            crate::operation::dissociate_packages::DissociatePackagesError::BaseException(inner) => Error::BaseException(inner),
+            crate::operation::dissociate_packages::DissociatePackagesError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::dissociate_packages::DissociatePackagesError::DisabledOperationException(inner) => {
+                Error::DisabledOperationException(inner)
+            }
+            crate::operation::dissociate_packages::DissociatePackagesError::InternalException(inner) => Error::InternalException(inner),
+            crate::operation::dissociate_packages::DissociatePackagesError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::dissociate_packages::DissociatePackagesError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::dissociate_packages::DissociatePackagesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_application::GetApplicationError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -2085,6 +2145,36 @@ impl From<crate::operation::update_package::UpdatePackageError> for Error {
             crate::operation::update_package::UpdatePackageError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::update_package::UpdatePackageError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::update_package::UpdatePackageError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_package_scope::UpdatePackageScopeError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_package_scope::UpdatePackageScopeError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_package_scope::UpdatePackageScopeError> for Error {
+    fn from(err: crate::operation::update_package_scope::UpdatePackageScopeError) -> Self {
+        match err {
+            crate::operation::update_package_scope::UpdatePackageScopeError::BaseException(inner) => Error::BaseException(inner),
+            crate::operation::update_package_scope::UpdatePackageScopeError::DisabledOperationException(inner) => {
+                Error::DisabledOperationException(inner)
+            }
+            crate::operation::update_package_scope::UpdatePackageScopeError::InternalException(inner) => Error::InternalException(inner),
+            crate::operation::update_package_scope::UpdatePackageScopeError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_package_scope::UpdatePackageScopeError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_package_scope::UpdatePackageScopeError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

@@ -82,6 +82,32 @@ where
                             builder = builder
                                 .set_available_plugin_properties(crate::protocol_serde::shape_plugin_properties::de_plugin_properties(tokens)?);
                         }
+                        "AvailablePackageConfiguration" => {
+                            builder = builder.set_available_package_configuration(
+                                crate::protocol_serde::shape_package_configuration::de_package_configuration(tokens)?,
+                            );
+                        }
+                        "AllowListedUserList" => {
+                            builder =
+                                builder.set_allow_listed_user_list(crate::protocol_serde::shape_package_user_list::de_package_user_list(tokens)?);
+                        }
+                        "PackageOwner" => {
+                            builder = builder.set_package_owner(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "PackageVendingOptions" => {
+                            builder = builder.set_package_vending_options(
+                                crate::protocol_serde::shape_package_vending_options::de_package_vending_options(tokens)?,
+                            );
+                        }
+                        "PackageEncryptionOptions" => {
+                            builder = builder.set_package_encryption_options(
+                                crate::protocol_serde::shape_package_encryption_options::de_package_encryption_options(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

@@ -12,11 +12,13 @@
 /// ```text
 /// # let capacitytaskstatus = unimplemented!();
 /// match capacitytaskstatus {
+///     CapacityTaskStatus::CancellationInProgress => { /* ... */ },
 ///     CapacityTaskStatus::Cancelled => { /* ... */ },
 ///     CapacityTaskStatus::Completed => { /* ... */ },
 ///     CapacityTaskStatus::Failed => { /* ... */ },
 ///     CapacityTaskStatus::InProgress => { /* ... */ },
 ///     CapacityTaskStatus::Requested => { /* ... */ },
+///     CapacityTaskStatus::WaitingForEvacuation => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -45,6 +47,8 @@
 )]
 pub enum CapacityTaskStatus {
     #[allow(missing_docs)] // documentation missing in model
+    CancellationInProgress,
+    #[allow(missing_docs)] // documentation missing in model
     Cancelled,
     #[allow(missing_docs)] // documentation missing in model
     Completed,
@@ -54,6 +58,8 @@ pub enum CapacityTaskStatus {
     InProgress,
     #[allow(missing_docs)] // documentation missing in model
     Requested,
+    #[allow(missing_docs)] // documentation missing in model
+    WaitingForEvacuation,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -61,11 +67,13 @@ pub enum CapacityTaskStatus {
 impl ::std::convert::From<&str> for CapacityTaskStatus {
     fn from(s: &str) -> Self {
         match s {
+            "CANCELLATION_IN_PROGRESS" => CapacityTaskStatus::CancellationInProgress,
             "CANCELLED" => CapacityTaskStatus::Cancelled,
             "COMPLETED" => CapacityTaskStatus::Completed,
             "FAILED" => CapacityTaskStatus::Failed,
             "IN_PROGRESS" => CapacityTaskStatus::InProgress,
             "REQUESTED" => CapacityTaskStatus::Requested,
+            "WAITING_FOR_EVACUATION" => CapacityTaskStatus::WaitingForEvacuation,
             other => CapacityTaskStatus::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -81,17 +89,27 @@ impl CapacityTaskStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            CapacityTaskStatus::CancellationInProgress => "CANCELLATION_IN_PROGRESS",
             CapacityTaskStatus::Cancelled => "CANCELLED",
             CapacityTaskStatus::Completed => "COMPLETED",
             CapacityTaskStatus::Failed => "FAILED",
             CapacityTaskStatus::InProgress => "IN_PROGRESS",
             CapacityTaskStatus::Requested => "REQUESTED",
+            CapacityTaskStatus::WaitingForEvacuation => "WAITING_FOR_EVACUATION",
             CapacityTaskStatus::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CANCELLED", "COMPLETED", "FAILED", "IN_PROGRESS", "REQUESTED"]
+        &[
+            "CANCELLATION_IN_PROGRESS",
+            "CANCELLED",
+            "COMPLETED",
+            "FAILED",
+            "IN_PROGRESS",
+            "REQUESTED",
+            "WAITING_FOR_EVACUATION",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for CapacityTaskStatus {
@@ -114,11 +132,13 @@ impl CapacityTaskStatus {
 impl ::std::fmt::Display for CapacityTaskStatus {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            CapacityTaskStatus::CancellationInProgress => write!(f, "CANCELLATION_IN_PROGRESS"),
             CapacityTaskStatus::Cancelled => write!(f, "CANCELLED"),
             CapacityTaskStatus::Completed => write!(f, "COMPLETED"),
             CapacityTaskStatus::Failed => write!(f, "FAILED"),
             CapacityTaskStatus::InProgress => write!(f, "IN_PROGRESS"),
             CapacityTaskStatus::Requested => write!(f, "REQUESTED"),
+            CapacityTaskStatus::WaitingForEvacuation => write!(f, "WAITING_FOR_EVACUATION"),
             CapacityTaskStatus::Unknown(value) => write!(f, "{}", value),
         }
     }

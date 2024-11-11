@@ -9,8 +9,18 @@ pub struct StartCapacityTaskInput {
     pub order_id: ::std::option::Option<::std::string::String>,
     /// <p>The instance pools specified in the capacity task.</p>
     pub instance_pools: ::std::option::Option<::std::vec::Vec<crate::types::InstanceTypeCapacity>>,
+    /// <p>List of user-specified running instances that must not be stopped in order to free up the capacity needed to run the capacity task.</p>
+    pub instances_to_exclude: ::std::option::Option<crate::types::InstancesToExclude>,
     /// <p>You can request a dry run to determine if the instance type and instance size changes is above or below available instance capacity. Requesting a dry run does not make any changes to your plan.</p>
     pub dry_run: ::std::option::Option<bool>,
+    /// <p>Specify one of the following options in case an instance is blocking the capacity task from running.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>WAIT_FOR_EVACUATION</code> - Checks every 10 minutes over 48 hours to determine if instances have stopped and capacity is available to complete the task.</p></li>
+    /// <li>
+    /// <p><code>FAIL_TASK</code> - The capacity task fails.</p></li>
+    /// </ul>
+    pub task_action_on_blocking_instances: ::std::option::Option<crate::types::TaskActionOnBlockingInstances>,
 }
 impl StartCapacityTaskInput {
     /// <p>The ID or ARN of the Outposts associated with the specified capacity task.</p>
@@ -27,9 +37,23 @@ impl StartCapacityTaskInput {
     pub fn instance_pools(&self) -> &[crate::types::InstanceTypeCapacity] {
         self.instance_pools.as_deref().unwrap_or_default()
     }
+    /// <p>List of user-specified running instances that must not be stopped in order to free up the capacity needed to run the capacity task.</p>
+    pub fn instances_to_exclude(&self) -> ::std::option::Option<&crate::types::InstancesToExclude> {
+        self.instances_to_exclude.as_ref()
+    }
     /// <p>You can request a dry run to determine if the instance type and instance size changes is above or below available instance capacity. Requesting a dry run does not make any changes to your plan.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
         self.dry_run
+    }
+    /// <p>Specify one of the following options in case an instance is blocking the capacity task from running.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>WAIT_FOR_EVACUATION</code> - Checks every 10 minutes over 48 hours to determine if instances have stopped and capacity is available to complete the task.</p></li>
+    /// <li>
+    /// <p><code>FAIL_TASK</code> - The capacity task fails.</p></li>
+    /// </ul>
+    pub fn task_action_on_blocking_instances(&self) -> ::std::option::Option<&crate::types::TaskActionOnBlockingInstances> {
+        self.task_action_on_blocking_instances.as_ref()
     }
 }
 impl StartCapacityTaskInput {
@@ -46,7 +70,9 @@ pub struct StartCapacityTaskInputBuilder {
     pub(crate) outpost_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) order_id: ::std::option::Option<::std::string::String>,
     pub(crate) instance_pools: ::std::option::Option<::std::vec::Vec<crate::types::InstanceTypeCapacity>>,
+    pub(crate) instances_to_exclude: ::std::option::Option<crate::types::InstancesToExclude>,
     pub(crate) dry_run: ::std::option::Option<bool>,
+    pub(crate) task_action_on_blocking_instances: ::std::option::Option<crate::types::TaskActionOnBlockingInstances>,
 }
 impl StartCapacityTaskInputBuilder {
     /// <p>The ID or ARN of the Outposts associated with the specified capacity task.</p>
@@ -65,7 +91,6 @@ impl StartCapacityTaskInputBuilder {
         &self.outpost_identifier
     }
     /// <p>The ID of the Amazon Web Services Outposts order associated with the specified capacity task.</p>
-    /// This field is required.
     pub fn order_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.order_id = ::std::option::Option::Some(input.into());
         self
@@ -99,6 +124,20 @@ impl StartCapacityTaskInputBuilder {
     pub fn get_instance_pools(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceTypeCapacity>> {
         &self.instance_pools
     }
+    /// <p>List of user-specified running instances that must not be stopped in order to free up the capacity needed to run the capacity task.</p>
+    pub fn instances_to_exclude(mut self, input: crate::types::InstancesToExclude) -> Self {
+        self.instances_to_exclude = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>List of user-specified running instances that must not be stopped in order to free up the capacity needed to run the capacity task.</p>
+    pub fn set_instances_to_exclude(mut self, input: ::std::option::Option<crate::types::InstancesToExclude>) -> Self {
+        self.instances_to_exclude = input;
+        self
+    }
+    /// <p>List of user-specified running instances that must not be stopped in order to free up the capacity needed to run the capacity task.</p>
+    pub fn get_instances_to_exclude(&self) -> &::std::option::Option<crate::types::InstancesToExclude> {
+        &self.instances_to_exclude
+    }
     /// <p>You can request a dry run to determine if the instance type and instance size changes is above or below available instance capacity. Requesting a dry run does not make any changes to your plan.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.dry_run = ::std::option::Option::Some(input);
@@ -113,6 +152,38 @@ impl StartCapacityTaskInputBuilder {
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
         &self.dry_run
     }
+    /// <p>Specify one of the following options in case an instance is blocking the capacity task from running.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>WAIT_FOR_EVACUATION</code> - Checks every 10 minutes over 48 hours to determine if instances have stopped and capacity is available to complete the task.</p></li>
+    /// <li>
+    /// <p><code>FAIL_TASK</code> - The capacity task fails.</p></li>
+    /// </ul>
+    pub fn task_action_on_blocking_instances(mut self, input: crate::types::TaskActionOnBlockingInstances) -> Self {
+        self.task_action_on_blocking_instances = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specify one of the following options in case an instance is blocking the capacity task from running.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>WAIT_FOR_EVACUATION</code> - Checks every 10 minutes over 48 hours to determine if instances have stopped and capacity is available to complete the task.</p></li>
+    /// <li>
+    /// <p><code>FAIL_TASK</code> - The capacity task fails.</p></li>
+    /// </ul>
+    pub fn set_task_action_on_blocking_instances(mut self, input: ::std::option::Option<crate::types::TaskActionOnBlockingInstances>) -> Self {
+        self.task_action_on_blocking_instances = input;
+        self
+    }
+    /// <p>Specify one of the following options in case an instance is blocking the capacity task from running.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>WAIT_FOR_EVACUATION</code> - Checks every 10 minutes over 48 hours to determine if instances have stopped and capacity is available to complete the task.</p></li>
+    /// <li>
+    /// <p><code>FAIL_TASK</code> - The capacity task fails.</p></li>
+    /// </ul>
+    pub fn get_task_action_on_blocking_instances(&self) -> &::std::option::Option<crate::types::TaskActionOnBlockingInstances> {
+        &self.task_action_on_blocking_instances
+    }
     /// Consumes the builder and constructs a [`StartCapacityTaskInput`](crate::operation::start_capacity_task::StartCapacityTaskInput).
     pub fn build(
         self,
@@ -121,7 +192,9 @@ impl StartCapacityTaskInputBuilder {
             outpost_identifier: self.outpost_identifier,
             order_id: self.order_id,
             instance_pools: self.instance_pools,
+            instances_to_exclude: self.instances_to_exclude,
             dry_run: self.dry_run,
+            task_action_on_blocking_instances: self.task_action_on_blocking_instances,
         })
     }
 }

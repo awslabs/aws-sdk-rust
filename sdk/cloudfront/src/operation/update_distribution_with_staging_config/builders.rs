@@ -146,28 +146,19 @@ impl UpdateDistributionWithStagingConfigFluentBuilder {
         self.inner.get_staging_distribution_id()
     }
     /// <p>The current versions (<code>ETag</code> values) of both primary and staging distributions. Provide these in the following format:</p>
-    /// <p><code><primary etag>
-    /// ,
-    /// <staging etag></staging>
-    /// </primary></code></p>
+    /// <p><code>&lt;primary ETag&gt;, &lt;staging ETag&gt;</code></p>
     pub fn if_match(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.if_match(input.into());
         self
     }
     /// <p>The current versions (<code>ETag</code> values) of both primary and staging distributions. Provide these in the following format:</p>
-    /// <p><code><primary etag>
-    /// ,
-    /// <staging etag></staging>
-    /// </primary></code></p>
+    /// <p><code>&lt;primary ETag&gt;, &lt;staging ETag&gt;</code></p>
     pub fn set_if_match(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_if_match(input);
         self
     }
     /// <p>The current versions (<code>ETag</code> values) of both primary and staging distributions. Provide these in the following format:</p>
-    /// <p><code><primary etag>
-    /// ,
-    /// <staging etag></staging>
-    /// </primary></code></p>
+    /// <p><code>&lt;primary ETag&gt;, &lt;staging ETag&gt;</code></p>
     pub fn get_if_match(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_if_match()
     }

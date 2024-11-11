@@ -127,6 +127,16 @@ pub fn de_associate_package_http_response(
     })
 }
 
+pub fn ser_associate_package_input(
+    input: &crate::operation::associate_package::AssociatePackageInput,
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+    let mut out = String::new();
+    let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::protocol_serde::shape_associate_package_input::ser_associate_package_input_input(&mut object, input)?;
+    object.finish();
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
+}
+
 pub(crate) fn de_associate_package(
     value: &[u8],
     mut builder: crate::operation::associate_package::builders::AssociatePackageOutputBuilder,

@@ -195,7 +195,11 @@ mod get_site;
 
 mod get_site_address;
 
+mod list_asset_instances;
+
 mod list_assets;
+
+mod list_blocking_instances_for_capacity_task;
 
 mod list_capacity_tasks;
 

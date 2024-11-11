@@ -140,6 +140,9 @@ pub(crate) fn de_get_capacity_task(
                 "Failed" => {
                     builder = builder.set_failed(crate::protocol_serde::shape_capacity_task_failure::de_capacity_task_failure(tokens)?);
                 }
+                "InstancesToExclude" => {
+                    builder = builder.set_instances_to_exclude(crate::protocol_serde::shape_instances_to_exclude::de_instances_to_exclude(tokens)?);
+                }
                 "LastModifiedDate" => {
                     builder = builder.set_last_modified_date(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                         tokens.next(),
@@ -163,6 +166,13 @@ pub(crate) fn de_get_capacity_task(
                 "RequestedInstancePools" => {
                     builder = builder.set_requested_instance_pools(
                         crate::protocol_serde::shape_requested_instance_pools::de_requested_instance_pools(tokens)?,
+                    );
+                }
+                "TaskActionOnBlockingInstances" => {
+                    builder = builder.set_task_action_on_blocking_instances(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::TaskActionOnBlockingInstances::from(u.as_ref())))
+                            .transpose()?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

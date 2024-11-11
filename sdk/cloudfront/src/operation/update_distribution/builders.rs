@@ -32,12 +32,12 @@ impl crate::operation::update_distribution::builders::UpdateDistributionInputBui
 /// <p>Update the distribution configuration that was returned in the response. Note the following important requirements and restrictions:</p>
 /// <ul>
 /// <li>
-/// <p>You must rename the <code>ETag</code> field to <code>IfMatch</code>, leaving the value unchanged. (Set the value of <code>IfMatch</code> to the value of <code>ETag</code>, then remove the <code>ETag</code> field.)</p></li>
+/// <p>You must copy the <code>ETag</code> field value from the response. (You'll use it for the <code>IfMatch</code> parameter in your request.) Then, remove the <code>ETag</code> field from the distribution configuration.</p></li>
 /// <li>
 /// <p>You can't change the value of <code>CallerReference</code>.</p></li>
 /// </ul></li>
 /// <li>
-/// <p>Submit an <code>UpdateDistribution</code> request, providing the distribution configuration. The new configuration replaces the existing configuration. The values that you specify in an <code>UpdateDistribution</code> request are not merged into your existing configuration. Make sure to include all fields: the ones that you modified and also the ones that you didn't.</p></li>
+/// <p>Submit an <code>UpdateDistribution</code> request, providing the updated distribution configuration. The new configuration replaces the existing configuration. The values that you specify in an <code>UpdateDistribution</code> request are not merged into your existing configuration. Make sure to include all fields: the ones that you modified and also the ones that you didn't.</p></li>
 /// </ol>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateDistributionFluentBuilder {

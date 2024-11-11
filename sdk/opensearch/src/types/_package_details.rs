@@ -26,6 +26,16 @@ pub struct PackageDetails {
     pub engine_version: ::std::option::Option<::std::string::String>,
     /// <p>If the package is a <code>ZIP-PLUGIN</code> package, additional information about plugin properties.</p>
     pub available_plugin_properties: ::std::option::Option<crate::types::PluginProperties>,
+    /// <p>This represents the available configuration parameters for the package.</p>
+    pub available_package_configuration: ::std::option::Option<crate::types::PackageConfiguration>,
+    /// <p>A list of users who are allowed to view and associate the package. This field is only visible to the owner of a package.</p>
+    pub allow_listed_user_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The owner of the package who is allowed to create/update a package and add users to the package scope.</p>
+    pub package_owner: ::std::option::Option<::std::string::String>,
+    /// <p>Package Vending Options for a package.</p>
+    pub package_vending_options: ::std::option::Option<crate::types::PackageVendingOptions>,
+    /// <p>Package Encryption Options for a package.</p>
+    pub package_encryption_options: ::std::option::Option<crate::types::PackageEncryptionOptions>,
 }
 impl PackageDetails {
     /// <p>The unique identifier of the package.</p>
@@ -72,6 +82,28 @@ impl PackageDetails {
     pub fn available_plugin_properties(&self) -> ::std::option::Option<&crate::types::PluginProperties> {
         self.available_plugin_properties.as_ref()
     }
+    /// <p>This represents the available configuration parameters for the package.</p>
+    pub fn available_package_configuration(&self) -> ::std::option::Option<&crate::types::PackageConfiguration> {
+        self.available_package_configuration.as_ref()
+    }
+    /// <p>A list of users who are allowed to view and associate the package. This field is only visible to the owner of a package.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.allow_listed_user_list.is_none()`.
+    pub fn allow_listed_user_list(&self) -> &[::std::string::String] {
+        self.allow_listed_user_list.as_deref().unwrap_or_default()
+    }
+    /// <p>The owner of the package who is allowed to create/update a package and add users to the package scope.</p>
+    pub fn package_owner(&self) -> ::std::option::Option<&str> {
+        self.package_owner.as_deref()
+    }
+    /// <p>Package Vending Options for a package.</p>
+    pub fn package_vending_options(&self) -> ::std::option::Option<&crate::types::PackageVendingOptions> {
+        self.package_vending_options.as_ref()
+    }
+    /// <p>Package Encryption Options for a package.</p>
+    pub fn package_encryption_options(&self) -> ::std::option::Option<&crate::types::PackageEncryptionOptions> {
+        self.package_encryption_options.as_ref()
+    }
 }
 impl PackageDetails {
     /// Creates a new builder-style object to manufacture [`PackageDetails`](crate::types::PackageDetails).
@@ -95,6 +127,11 @@ pub struct PackageDetailsBuilder {
     pub(crate) error_details: ::std::option::Option<crate::types::ErrorDetails>,
     pub(crate) engine_version: ::std::option::Option<::std::string::String>,
     pub(crate) available_plugin_properties: ::std::option::Option<crate::types::PluginProperties>,
+    pub(crate) available_package_configuration: ::std::option::Option<crate::types::PackageConfiguration>,
+    pub(crate) allow_listed_user_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) package_owner: ::std::option::Option<::std::string::String>,
+    pub(crate) package_vending_options: ::std::option::Option<crate::types::PackageVendingOptions>,
+    pub(crate) package_encryption_options: ::std::option::Option<crate::types::PackageEncryptionOptions>,
 }
 impl PackageDetailsBuilder {
     /// <p>The unique identifier of the package.</p>
@@ -251,6 +288,82 @@ impl PackageDetailsBuilder {
     pub fn get_available_plugin_properties(&self) -> &::std::option::Option<crate::types::PluginProperties> {
         &self.available_plugin_properties
     }
+    /// <p>This represents the available configuration parameters for the package.</p>
+    pub fn available_package_configuration(mut self, input: crate::types::PackageConfiguration) -> Self {
+        self.available_package_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>This represents the available configuration parameters for the package.</p>
+    pub fn set_available_package_configuration(mut self, input: ::std::option::Option<crate::types::PackageConfiguration>) -> Self {
+        self.available_package_configuration = input;
+        self
+    }
+    /// <p>This represents the available configuration parameters for the package.</p>
+    pub fn get_available_package_configuration(&self) -> &::std::option::Option<crate::types::PackageConfiguration> {
+        &self.available_package_configuration
+    }
+    /// Appends an item to `allow_listed_user_list`.
+    ///
+    /// To override the contents of this collection use [`set_allow_listed_user_list`](Self::set_allow_listed_user_list).
+    ///
+    /// <p>A list of users who are allowed to view and associate the package. This field is only visible to the owner of a package.</p>
+    pub fn allow_listed_user_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.allow_listed_user_list.unwrap_or_default();
+        v.push(input.into());
+        self.allow_listed_user_list = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of users who are allowed to view and associate the package. This field is only visible to the owner of a package.</p>
+    pub fn set_allow_listed_user_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.allow_listed_user_list = input;
+        self
+    }
+    /// <p>A list of users who are allowed to view and associate the package. This field is only visible to the owner of a package.</p>
+    pub fn get_allow_listed_user_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.allow_listed_user_list
+    }
+    /// <p>The owner of the package who is allowed to create/update a package and add users to the package scope.</p>
+    pub fn package_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.package_owner = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The owner of the package who is allowed to create/update a package and add users to the package scope.</p>
+    pub fn set_package_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.package_owner = input;
+        self
+    }
+    /// <p>The owner of the package who is allowed to create/update a package and add users to the package scope.</p>
+    pub fn get_package_owner(&self) -> &::std::option::Option<::std::string::String> {
+        &self.package_owner
+    }
+    /// <p>Package Vending Options for a package.</p>
+    pub fn package_vending_options(mut self, input: crate::types::PackageVendingOptions) -> Self {
+        self.package_vending_options = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Package Vending Options for a package.</p>
+    pub fn set_package_vending_options(mut self, input: ::std::option::Option<crate::types::PackageVendingOptions>) -> Self {
+        self.package_vending_options = input;
+        self
+    }
+    /// <p>Package Vending Options for a package.</p>
+    pub fn get_package_vending_options(&self) -> &::std::option::Option<crate::types::PackageVendingOptions> {
+        &self.package_vending_options
+    }
+    /// <p>Package Encryption Options for a package.</p>
+    pub fn package_encryption_options(mut self, input: crate::types::PackageEncryptionOptions) -> Self {
+        self.package_encryption_options = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Package Encryption Options for a package.</p>
+    pub fn set_package_encryption_options(mut self, input: ::std::option::Option<crate::types::PackageEncryptionOptions>) -> Self {
+        self.package_encryption_options = input;
+        self
+    }
+    /// <p>Package Encryption Options for a package.</p>
+    pub fn get_package_encryption_options(&self) -> &::std::option::Option<crate::types::PackageEncryptionOptions> {
+        &self.package_encryption_options
+    }
     /// Consumes the builder and constructs a [`PackageDetails`](crate::types::PackageDetails).
     pub fn build(self) -> crate::types::PackageDetails {
         crate::types::PackageDetails {
@@ -265,6 +378,11 @@ impl PackageDetailsBuilder {
             error_details: self.error_details,
             engine_version: self.engine_version,
             available_plugin_properties: self.available_plugin_properties,
+            available_package_configuration: self.available_package_configuration,
+            allow_listed_user_list: self.allow_listed_user_list,
+            package_owner: self.package_owner,
+            package_vending_options: self.package_vending_options,
+            package_encryption_options: self.package_encryption_options,
         }
     }
 }

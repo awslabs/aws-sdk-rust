@@ -12,6 +12,8 @@ pub struct PackageVersionHistory {
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Additional information about plugin properties if the package is a <code>ZIP-PLUGIN</code> package.</p>
     pub plugin_properties: ::std::option::Option<crate::types::PluginProperties>,
+    /// <p>The configuration details for a specific version of a package.</p>
+    pub package_configuration: ::std::option::Option<crate::types::PackageConfiguration>,
 }
 impl PackageVersionHistory {
     /// <p>The package version.</p>
@@ -30,6 +32,10 @@ impl PackageVersionHistory {
     pub fn plugin_properties(&self) -> ::std::option::Option<&crate::types::PluginProperties> {
         self.plugin_properties.as_ref()
     }
+    /// <p>The configuration details for a specific version of a package.</p>
+    pub fn package_configuration(&self) -> ::std::option::Option<&crate::types::PackageConfiguration> {
+        self.package_configuration.as_ref()
+    }
 }
 impl PackageVersionHistory {
     /// Creates a new builder-style object to manufacture [`PackageVersionHistory`](crate::types::PackageVersionHistory).
@@ -46,6 +52,7 @@ pub struct PackageVersionHistoryBuilder {
     pub(crate) commit_message: ::std::option::Option<::std::string::String>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) plugin_properties: ::std::option::Option<crate::types::PluginProperties>,
+    pub(crate) package_configuration: ::std::option::Option<crate::types::PackageConfiguration>,
 }
 impl PackageVersionHistoryBuilder {
     /// <p>The package version.</p>
@@ -104,6 +111,20 @@ impl PackageVersionHistoryBuilder {
     pub fn get_plugin_properties(&self) -> &::std::option::Option<crate::types::PluginProperties> {
         &self.plugin_properties
     }
+    /// <p>The configuration details for a specific version of a package.</p>
+    pub fn package_configuration(mut self, input: crate::types::PackageConfiguration) -> Self {
+        self.package_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration details for a specific version of a package.</p>
+    pub fn set_package_configuration(mut self, input: ::std::option::Option<crate::types::PackageConfiguration>) -> Self {
+        self.package_configuration = input;
+        self
+    }
+    /// <p>The configuration details for a specific version of a package.</p>
+    pub fn get_package_configuration(&self) -> &::std::option::Option<crate::types::PackageConfiguration> {
+        &self.package_configuration
+    }
     /// Consumes the builder and constructs a [`PackageVersionHistory`](crate::types::PackageVersionHistory).
     pub fn build(self) -> crate::types::PackageVersionHistory {
         crate::types::PackageVersionHistory {
@@ -111,6 +132,7 @@ impl PackageVersionHistoryBuilder {
             commit_message: self.commit_message,
             created_at: self.created_at,
             plugin_properties: self.plugin_properties,
+            package_configuration: self.package_configuration,
         }
     }
 }

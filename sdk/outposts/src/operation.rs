@@ -49,8 +49,14 @@ pub mod get_site;
 /// Types for the `GetSiteAddress` operation.
 pub mod get_site_address;
 
+/// Types for the `ListAssetInstances` operation.
+pub mod list_asset_instances;
+
 /// Types for the `ListAssets` operation.
 pub mod list_assets;
+
+/// Types for the `ListBlockingInstancesForCapacityTask` operation.
+pub mod list_blocking_instances_for_capacity_task;
 
 /// Types for the `ListCapacityTasks` operation.
 pub mod list_capacity_tasks;

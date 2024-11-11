@@ -38,3 +38,15 @@ pub(crate) fn instance_type_capacity_correct_errors(
     }
     builder
 }
+
+pub(crate) fn asset_instance_type_capacity_correct_errors(
+    mut builder: crate::types::builders::AssetInstanceTypeCapacityBuilder,
+) -> crate::types::builders::AssetInstanceTypeCapacityBuilder {
+    if builder.instance_type.is_none() {
+        builder.instance_type = Some(Default::default())
+    }
+    if builder.count.is_none() {
+        builder.count = Some(Default::default())
+    }
+    builder
+}

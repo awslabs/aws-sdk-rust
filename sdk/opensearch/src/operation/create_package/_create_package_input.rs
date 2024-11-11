@@ -12,6 +12,14 @@ pub struct CreatePackageInput {
     pub package_description: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon S3 location from which to import the package.</p>
     pub package_source: ::std::option::Option<crate::types::PackageSource>,
+    /// <p>The configuration parameters for the package being created.</p>
+    pub package_configuration: ::std::option::Option<crate::types::PackageConfiguration>,
+    /// <p>The version of the Amazon OpenSearch Service engine for which is compatible with the package. This can only be specified for package type <code>ZIP-PLUGIN</code></p>
+    pub engine_version: ::std::option::Option<::std::string::String>,
+    /// <p>The vending options for the package being created. They determine if the package can be vended to other users.</p>
+    pub package_vending_options: ::std::option::Option<crate::types::PackageVendingOptions>,
+    /// <p>The encryption parameters for the package being created.</p>
+    pub package_encryption_options: ::std::option::Option<crate::types::PackageEncryptionOptions>,
 }
 impl CreatePackageInput {
     /// <p>Unique name for the package.</p>
@@ -30,6 +38,22 @@ impl CreatePackageInput {
     pub fn package_source(&self) -> ::std::option::Option<&crate::types::PackageSource> {
         self.package_source.as_ref()
     }
+    /// <p>The configuration parameters for the package being created.</p>
+    pub fn package_configuration(&self) -> ::std::option::Option<&crate::types::PackageConfiguration> {
+        self.package_configuration.as_ref()
+    }
+    /// <p>The version of the Amazon OpenSearch Service engine for which is compatible with the package. This can only be specified for package type <code>ZIP-PLUGIN</code></p>
+    pub fn engine_version(&self) -> ::std::option::Option<&str> {
+        self.engine_version.as_deref()
+    }
+    /// <p>The vending options for the package being created. They determine if the package can be vended to other users.</p>
+    pub fn package_vending_options(&self) -> ::std::option::Option<&crate::types::PackageVendingOptions> {
+        self.package_vending_options.as_ref()
+    }
+    /// <p>The encryption parameters for the package being created.</p>
+    pub fn package_encryption_options(&self) -> ::std::option::Option<&crate::types::PackageEncryptionOptions> {
+        self.package_encryption_options.as_ref()
+    }
 }
 impl CreatePackageInput {
     /// Creates a new builder-style object to manufacture [`CreatePackageInput`](crate::operation::create_package::CreatePackageInput).
@@ -46,6 +70,10 @@ pub struct CreatePackageInputBuilder {
     pub(crate) package_type: ::std::option::Option<crate::types::PackageType>,
     pub(crate) package_description: ::std::option::Option<::std::string::String>,
     pub(crate) package_source: ::std::option::Option<crate::types::PackageSource>,
+    pub(crate) package_configuration: ::std::option::Option<crate::types::PackageConfiguration>,
+    pub(crate) engine_version: ::std::option::Option<::std::string::String>,
+    pub(crate) package_vending_options: ::std::option::Option<crate::types::PackageVendingOptions>,
+    pub(crate) package_encryption_options: ::std::option::Option<crate::types::PackageEncryptionOptions>,
 }
 impl CreatePackageInputBuilder {
     /// <p>Unique name for the package.</p>
@@ -107,6 +135,62 @@ impl CreatePackageInputBuilder {
     pub fn get_package_source(&self) -> &::std::option::Option<crate::types::PackageSource> {
         &self.package_source
     }
+    /// <p>The configuration parameters for the package being created.</p>
+    pub fn package_configuration(mut self, input: crate::types::PackageConfiguration) -> Self {
+        self.package_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration parameters for the package being created.</p>
+    pub fn set_package_configuration(mut self, input: ::std::option::Option<crate::types::PackageConfiguration>) -> Self {
+        self.package_configuration = input;
+        self
+    }
+    /// <p>The configuration parameters for the package being created.</p>
+    pub fn get_package_configuration(&self) -> &::std::option::Option<crate::types::PackageConfiguration> {
+        &self.package_configuration
+    }
+    /// <p>The version of the Amazon OpenSearch Service engine for which is compatible with the package. This can only be specified for package type <code>ZIP-PLUGIN</code></p>
+    pub fn engine_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.engine_version = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The version of the Amazon OpenSearch Service engine for which is compatible with the package. This can only be specified for package type <code>ZIP-PLUGIN</code></p>
+    pub fn set_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.engine_version = input;
+        self
+    }
+    /// <p>The version of the Amazon OpenSearch Service engine for which is compatible with the package. This can only be specified for package type <code>ZIP-PLUGIN</code></p>
+    pub fn get_engine_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.engine_version
+    }
+    /// <p>The vending options for the package being created. They determine if the package can be vended to other users.</p>
+    pub fn package_vending_options(mut self, input: crate::types::PackageVendingOptions) -> Self {
+        self.package_vending_options = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The vending options for the package being created. They determine if the package can be vended to other users.</p>
+    pub fn set_package_vending_options(mut self, input: ::std::option::Option<crate::types::PackageVendingOptions>) -> Self {
+        self.package_vending_options = input;
+        self
+    }
+    /// <p>The vending options for the package being created. They determine if the package can be vended to other users.</p>
+    pub fn get_package_vending_options(&self) -> &::std::option::Option<crate::types::PackageVendingOptions> {
+        &self.package_vending_options
+    }
+    /// <p>The encryption parameters for the package being created.</p>
+    pub fn package_encryption_options(mut self, input: crate::types::PackageEncryptionOptions) -> Self {
+        self.package_encryption_options = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The encryption parameters for the package being created.</p>
+    pub fn set_package_encryption_options(mut self, input: ::std::option::Option<crate::types::PackageEncryptionOptions>) -> Self {
+        self.package_encryption_options = input;
+        self
+    }
+    /// <p>The encryption parameters for the package being created.</p>
+    pub fn get_package_encryption_options(&self) -> &::std::option::Option<crate::types::PackageEncryptionOptions> {
+        &self.package_encryption_options
+    }
     /// Consumes the builder and constructs a [`CreatePackageInput`](crate::operation::create_package::CreatePackageInput).
     pub fn build(
         self,
@@ -116,6 +200,10 @@ impl CreatePackageInputBuilder {
             package_type: self.package_type,
             package_description: self.package_description,
             package_source: self.package_source,
+            package_configuration: self.package_configuration,
+            engine_version: self.engine_version,
+            package_vending_options: self.package_vending_options,
+            package_encryption_options: self.package_encryption_options,
         })
     }
 }

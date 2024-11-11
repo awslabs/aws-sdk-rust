@@ -12,6 +12,10 @@
 /// ```text
 /// # let capacitytaskfailuretype = unimplemented!();
 /// match capacitytaskfailuretype {
+///     CapacityTaskFailureType::BlockingInstancesNotEvacuated => { /* ... */ },
+///     CapacityTaskFailureType::InternalServerError => { /* ... */ },
+///     CapacityTaskFailureType::ResourceNotFound => { /* ... */ },
+///     CapacityTaskFailureType::UnexpectedAssetState => { /* ... */ },
 ///     CapacityTaskFailureType::UnsupportedCapacityConfiguration => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -41,6 +45,14 @@
 )]
 pub enum CapacityTaskFailureType {
     #[allow(missing_docs)] // documentation missing in model
+    BlockingInstancesNotEvacuated,
+    #[allow(missing_docs)] // documentation missing in model
+    InternalServerError,
+    #[allow(missing_docs)] // documentation missing in model
+    ResourceNotFound,
+    #[allow(missing_docs)] // documentation missing in model
+    UnexpectedAssetState,
+    #[allow(missing_docs)] // documentation missing in model
     UnsupportedCapacityConfiguration,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -49,6 +61,10 @@ pub enum CapacityTaskFailureType {
 impl ::std::convert::From<&str> for CapacityTaskFailureType {
     fn from(s: &str) -> Self {
         match s {
+            "BLOCKING_INSTANCES_NOT_EVACUATED" => CapacityTaskFailureType::BlockingInstancesNotEvacuated,
+            "INTERNAL_SERVER_ERROR" => CapacityTaskFailureType::InternalServerError,
+            "RESOURCE_NOT_FOUND" => CapacityTaskFailureType::ResourceNotFound,
+            "UNEXPECTED_ASSET_STATE" => CapacityTaskFailureType::UnexpectedAssetState,
             "UNSUPPORTED_CAPACITY_CONFIGURATION" => CapacityTaskFailureType::UnsupportedCapacityConfiguration,
             other => CapacityTaskFailureType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -65,13 +81,23 @@ impl CapacityTaskFailureType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            CapacityTaskFailureType::BlockingInstancesNotEvacuated => "BLOCKING_INSTANCES_NOT_EVACUATED",
+            CapacityTaskFailureType::InternalServerError => "INTERNAL_SERVER_ERROR",
+            CapacityTaskFailureType::ResourceNotFound => "RESOURCE_NOT_FOUND",
+            CapacityTaskFailureType::UnexpectedAssetState => "UNEXPECTED_ASSET_STATE",
             CapacityTaskFailureType::UnsupportedCapacityConfiguration => "UNSUPPORTED_CAPACITY_CONFIGURATION",
             CapacityTaskFailureType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["UNSUPPORTED_CAPACITY_CONFIGURATION"]
+        &[
+            "BLOCKING_INSTANCES_NOT_EVACUATED",
+            "INTERNAL_SERVER_ERROR",
+            "RESOURCE_NOT_FOUND",
+            "UNEXPECTED_ASSET_STATE",
+            "UNSUPPORTED_CAPACITY_CONFIGURATION",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for CapacityTaskFailureType {
@@ -94,6 +120,10 @@ impl CapacityTaskFailureType {
 impl ::std::fmt::Display for CapacityTaskFailureType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            CapacityTaskFailureType::BlockingInstancesNotEvacuated => write!(f, "BLOCKING_INSTANCES_NOT_EVACUATED"),
+            CapacityTaskFailureType::InternalServerError => write!(f, "INTERNAL_SERVER_ERROR"),
+            CapacityTaskFailureType::ResourceNotFound => write!(f, "RESOURCE_NOT_FOUND"),
+            CapacityTaskFailureType::UnexpectedAssetState => write!(f, "UNEXPECTED_ASSET_STATE"),
             CapacityTaskFailureType::UnsupportedCapacityConfiguration => write!(f, "UNSUPPORTED_CAPACITY_CONFIGURATION"),
             CapacityTaskFailureType::Unknown(value) => write!(f, "{}", value),
         }

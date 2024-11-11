@@ -12,6 +12,10 @@ pub struct UpdatePackageInput {
     pub package_description: ::std::option::Option<::std::string::String>,
     /// <p>Commit message for the updated file, which is shown as part of <code>GetPackageVersionHistoryResponse</code>.</p>
     pub commit_message: ::std::option::Option<::std::string::String>,
+    /// <p>The updated configuration details for a package.</p>
+    pub package_configuration: ::std::option::Option<crate::types::PackageConfiguration>,
+    /// <p>Encryption options for a package.</p>
+    pub package_encryption_options: ::std::option::Option<crate::types::PackageEncryptionOptions>,
 }
 impl UpdatePackageInput {
     /// <p>The unique identifier for the package.</p>
@@ -30,6 +34,14 @@ impl UpdatePackageInput {
     pub fn commit_message(&self) -> ::std::option::Option<&str> {
         self.commit_message.as_deref()
     }
+    /// <p>The updated configuration details for a package.</p>
+    pub fn package_configuration(&self) -> ::std::option::Option<&crate::types::PackageConfiguration> {
+        self.package_configuration.as_ref()
+    }
+    /// <p>Encryption options for a package.</p>
+    pub fn package_encryption_options(&self) -> ::std::option::Option<&crate::types::PackageEncryptionOptions> {
+        self.package_encryption_options.as_ref()
+    }
 }
 impl UpdatePackageInput {
     /// Creates a new builder-style object to manufacture [`UpdatePackageInput`](crate::operation::update_package::UpdatePackageInput).
@@ -46,6 +58,8 @@ pub struct UpdatePackageInputBuilder {
     pub(crate) package_source: ::std::option::Option<crate::types::PackageSource>,
     pub(crate) package_description: ::std::option::Option<::std::string::String>,
     pub(crate) commit_message: ::std::option::Option<::std::string::String>,
+    pub(crate) package_configuration: ::std::option::Option<crate::types::PackageConfiguration>,
+    pub(crate) package_encryption_options: ::std::option::Option<crate::types::PackageEncryptionOptions>,
 }
 impl UpdatePackageInputBuilder {
     /// <p>The unique identifier for the package.</p>
@@ -106,6 +120,34 @@ impl UpdatePackageInputBuilder {
     pub fn get_commit_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.commit_message
     }
+    /// <p>The updated configuration details for a package.</p>
+    pub fn package_configuration(mut self, input: crate::types::PackageConfiguration) -> Self {
+        self.package_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The updated configuration details for a package.</p>
+    pub fn set_package_configuration(mut self, input: ::std::option::Option<crate::types::PackageConfiguration>) -> Self {
+        self.package_configuration = input;
+        self
+    }
+    /// <p>The updated configuration details for a package.</p>
+    pub fn get_package_configuration(&self) -> &::std::option::Option<crate::types::PackageConfiguration> {
+        &self.package_configuration
+    }
+    /// <p>Encryption options for a package.</p>
+    pub fn package_encryption_options(mut self, input: crate::types::PackageEncryptionOptions) -> Self {
+        self.package_encryption_options = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Encryption options for a package.</p>
+    pub fn set_package_encryption_options(mut self, input: ::std::option::Option<crate::types::PackageEncryptionOptions>) -> Self {
+        self.package_encryption_options = input;
+        self
+    }
+    /// <p>Encryption options for a package.</p>
+    pub fn get_package_encryption_options(&self) -> &::std::option::Option<crate::types::PackageEncryptionOptions> {
+        &self.package_encryption_options
+    }
     /// Consumes the builder and constructs a [`UpdatePackageInput`](crate::operation::update_package::UpdatePackageInput).
     pub fn build(
         self,
@@ -115,6 +157,8 @@ impl UpdatePackageInputBuilder {
             package_source: self.package_source,
             package_description: self.package_description,
             commit_message: self.commit_message,
+            package_configuration: self.package_configuration,
+            package_encryption_options: self.package_encryption_options,
         })
     }
 }

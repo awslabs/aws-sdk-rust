@@ -144,6 +144,8 @@ mod add_tags;
 
 mod associate_package;
 
+mod associate_packages;
+
 mod authorize_vpc_endpoint_access;
 
 mod cancel_domain_config_change;
@@ -233,6 +235,8 @@ mod describe_vpc_endpoints;
 
 mod dissociate_package;
 
+mod dissociate_packages;
+
 mod get_application;
 
 mod get_compatible_versions;
@@ -292,6 +296,8 @@ mod update_data_source;
 mod update_domain_config;
 
 mod update_package;
+
+mod update_package_scope;
 
 mod update_scheduled_action;
 

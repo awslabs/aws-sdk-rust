@@ -12,6 +12,9 @@
 /// ```text
 /// # let runtime = unimplemented!();
 /// match runtime {
+///     Runtime::Dotnetcore31 => { /* ... */ },
+///     Runtime::Dotnet6 => { /* ... */ },
+///     Runtime::Dotnet7 => { /* ... */ },
 ///     Runtime::Go1X => { /* ... */ },
 ///     Runtime::Java11 => { /* ... */ },
 ///     Runtime::Java17 => { /* ... */ },
@@ -23,9 +26,12 @@
 ///     Runtime::Nodejs16X => { /* ... */ },
 ///     Runtime::Nodejs18X => { /* ... */ },
 ///     Runtime::Python310 => { /* ... */ },
+///     Runtime::Python311 => { /* ... */ },
 ///     Runtime::Python37 => { /* ... */ },
 ///     Runtime::Python38 => { /* ... */ },
 ///     Runtime::Python39 => { /* ... */ },
+///     Runtime::Ruby27 => { /* ... */ },
+///     Runtime::Ruby32 => { /* ... */ },
 ///     Runtime::Unsupported => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -55,6 +61,12 @@
 )]
 pub enum Runtime {
     #[allow(missing_docs)] // documentation missing in model
+    Dotnetcore31,
+    #[allow(missing_docs)] // documentation missing in model
+    Dotnet6,
+    #[allow(missing_docs)] // documentation missing in model
+    Dotnet7,
+    #[allow(missing_docs)] // documentation missing in model
     Go1X,
     #[allow(missing_docs)] // documentation missing in model
     Java11,
@@ -77,11 +89,17 @@ pub enum Runtime {
     #[allow(missing_docs)] // documentation missing in model
     Python310,
     #[allow(missing_docs)] // documentation missing in model
+    Python311,
+    #[allow(missing_docs)] // documentation missing in model
     Python37,
     #[allow(missing_docs)] // documentation missing in model
     Python38,
     #[allow(missing_docs)] // documentation missing in model
     Python39,
+    #[allow(missing_docs)] // documentation missing in model
+    Ruby27,
+    #[allow(missing_docs)] // documentation missing in model
+    Ruby32,
     #[allow(missing_docs)] // documentation missing in model
     Unsupported,
     /// `Unknown` contains new variants that have been added since this code was generated.
@@ -91,6 +109,9 @@ pub enum Runtime {
 impl ::std::convert::From<&str> for Runtime {
     fn from(s: &str) -> Self {
         match s {
+            "DOTNETCORE_3_1" => Runtime::Dotnetcore31,
+            "DOTNET_6" => Runtime::Dotnet6,
+            "DOTNET_7" => Runtime::Dotnet7,
             "GO_1_X" => Runtime::Go1X,
             "JAVA_11" => Runtime::Java11,
             "JAVA_17" => Runtime::Java17,
@@ -102,9 +123,12 @@ impl ::std::convert::From<&str> for Runtime {
             "NODEJS_16_X" => Runtime::Nodejs16X,
             "NODEJS_18_X" => Runtime::Nodejs18X,
             "PYTHON_3_10" => Runtime::Python310,
+            "PYTHON_3_11" => Runtime::Python311,
             "PYTHON_3_7" => Runtime::Python37,
             "PYTHON_3_8" => Runtime::Python38,
             "PYTHON_3_9" => Runtime::Python39,
+            "RUBY_2_7" => Runtime::Ruby27,
+            "RUBY_3_2" => Runtime::Ruby32,
             "UNSUPPORTED" => Runtime::Unsupported,
             other => Runtime::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -121,6 +145,9 @@ impl Runtime {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            Runtime::Dotnetcore31 => "DOTNETCORE_3_1",
+            Runtime::Dotnet6 => "DOTNET_6",
+            Runtime::Dotnet7 => "DOTNET_7",
             Runtime::Go1X => "GO_1_X",
             Runtime::Java11 => "JAVA_11",
             Runtime::Java17 => "JAVA_17",
@@ -132,9 +159,12 @@ impl Runtime {
             Runtime::Nodejs16X => "NODEJS_16_X",
             Runtime::Nodejs18X => "NODEJS_18_X",
             Runtime::Python310 => "PYTHON_3_10",
+            Runtime::Python311 => "PYTHON_3_11",
             Runtime::Python37 => "PYTHON_3_7",
             Runtime::Python38 => "PYTHON_3_8",
             Runtime::Python39 => "PYTHON_3_9",
+            Runtime::Ruby27 => "RUBY_2_7",
+            Runtime::Ruby32 => "RUBY_3_2",
             Runtime::Unsupported => "UNSUPPORTED",
             Runtime::Unknown(value) => value.as_str(),
         }
@@ -142,6 +172,9 @@ impl Runtime {
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
+            "DOTNETCORE_3_1",
+            "DOTNET_6",
+            "DOTNET_7",
             "GO_1_X",
             "JAVA_11",
             "JAVA_17",
@@ -153,9 +186,12 @@ impl Runtime {
             "NODEJS_16_X",
             "NODEJS_18_X",
             "PYTHON_3_10",
+            "PYTHON_3_11",
             "PYTHON_3_7",
             "PYTHON_3_8",
             "PYTHON_3_9",
+            "RUBY_2_7",
+            "RUBY_3_2",
             "UNSUPPORTED",
         ]
     }
@@ -180,6 +216,9 @@ impl Runtime {
 impl ::std::fmt::Display for Runtime {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            Runtime::Dotnetcore31 => write!(f, "DOTNETCORE_3_1"),
+            Runtime::Dotnet6 => write!(f, "DOTNET_6"),
+            Runtime::Dotnet7 => write!(f, "DOTNET_7"),
             Runtime::Go1X => write!(f, "GO_1_X"),
             Runtime::Java11 => write!(f, "JAVA_11"),
             Runtime::Java17 => write!(f, "JAVA_17"),
@@ -191,9 +230,12 @@ impl ::std::fmt::Display for Runtime {
             Runtime::Nodejs16X => write!(f, "NODEJS_16_X"),
             Runtime::Nodejs18X => write!(f, "NODEJS_18_X"),
             Runtime::Python310 => write!(f, "PYTHON_3_10"),
+            Runtime::Python311 => write!(f, "PYTHON_3_11"),
             Runtime::Python37 => write!(f, "PYTHON_3_7"),
             Runtime::Python38 => write!(f, "PYTHON_3_8"),
             Runtime::Python39 => write!(f, "PYTHON_3_9"),
+            Runtime::Ruby27 => write!(f, "RUBY_2_7"),
+            Runtime::Ruby32 => write!(f, "RUBY_3_2"),
             Runtime::Unsupported => write!(f, "UNSUPPORTED"),
             Runtime::Unknown(value) => write!(f, "{}", value),
         }

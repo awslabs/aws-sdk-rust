@@ -15,6 +15,7 @@
 ///     PackageManager::Bundler => { /* ... */ },
 ///     PackageManager::Cargo => { /* ... */ },
 ///     PackageManager::Composer => { /* ... */ },
+///     PackageManager::DotnetCore => { /* ... */ },
 ///     PackageManager::Gemspec => { /* ... */ },
 ///     PackageManager::Gobinary => { /* ... */ },
 ///     PackageManager::Gomod => { /* ... */ },
@@ -63,6 +64,8 @@ pub enum PackageManager {
     #[allow(missing_docs)] // documentation missing in model
     Composer,
     #[allow(missing_docs)] // documentation missing in model
+    DotnetCore,
+    #[allow(missing_docs)] // documentation missing in model
     Gemspec,
     #[allow(missing_docs)] // documentation missing in model
     Gobinary,
@@ -100,6 +103,7 @@ impl ::std::convert::From<&str> for PackageManager {
             "BUNDLER" => PackageManager::Bundler,
             "CARGO" => PackageManager::Cargo,
             "COMPOSER" => PackageManager::Composer,
+            "DOTNET_CORE" => PackageManager::DotnetCore,
             "GEMSPEC" => PackageManager::Gemspec,
             "GOBINARY" => PackageManager::Gobinary,
             "GOMOD" => PackageManager::Gomod,
@@ -132,6 +136,7 @@ impl PackageManager {
             PackageManager::Bundler => "BUNDLER",
             PackageManager::Cargo => "CARGO",
             PackageManager::Composer => "COMPOSER",
+            PackageManager::DotnetCore => "DOTNET_CORE",
             PackageManager::Gemspec => "GEMSPEC",
             PackageManager::Gobinary => "GOBINARY",
             PackageManager::Gomod => "GOMOD",
@@ -155,6 +160,7 @@ impl PackageManager {
             "BUNDLER",
             "CARGO",
             "COMPOSER",
+            "DOTNET_CORE",
             "GEMSPEC",
             "GOBINARY",
             "GOMOD",
@@ -195,6 +201,7 @@ impl ::std::fmt::Display for PackageManager {
             PackageManager::Bundler => write!(f, "BUNDLER"),
             PackageManager::Cargo => write!(f, "CARGO"),
             PackageManager::Composer => write!(f, "COMPOSER"),
+            PackageManager::DotnetCore => write!(f, "DOTNET_CORE"),
             PackageManager::Gemspec => write!(f, "GEMSPEC"),
             PackageManager::Gobinary => write!(f, "GOBINARY"),
             PackageManager::Gomod => write!(f, "GOMOD"),

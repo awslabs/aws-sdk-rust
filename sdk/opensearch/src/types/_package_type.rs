@@ -12,6 +12,8 @@
 /// ```text
 /// # let packagetype = unimplemented!();
 /// match packagetype {
+///     PackageType::PackageConfig => { /* ... */ },
+///     PackageType::PackageLicense => { /* ... */ },
 ///     PackageType::TxtDictionary => { /* ... */ },
 ///     PackageType::ZipPlugin => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -42,6 +44,10 @@
 )]
 pub enum PackageType {
     #[allow(missing_docs)] // documentation missing in model
+    PackageConfig,
+    #[allow(missing_docs)] // documentation missing in model
+    PackageLicense,
+    #[allow(missing_docs)] // documentation missing in model
     TxtDictionary,
     #[allow(missing_docs)] // documentation missing in model
     ZipPlugin,
@@ -52,6 +58,8 @@ pub enum PackageType {
 impl ::std::convert::From<&str> for PackageType {
     fn from(s: &str) -> Self {
         match s {
+            "PACKAGE-CONFIG" => PackageType::PackageConfig,
+            "PACKAGE-LICENSE" => PackageType::PackageLicense,
             "TXT-DICTIONARY" => PackageType::TxtDictionary,
             "ZIP-PLUGIN" => PackageType::ZipPlugin,
             other => PackageType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -69,6 +77,8 @@ impl PackageType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            PackageType::PackageConfig => "PACKAGE-CONFIG",
+            PackageType::PackageLicense => "PACKAGE-LICENSE",
             PackageType::TxtDictionary => "TXT-DICTIONARY",
             PackageType::ZipPlugin => "ZIP-PLUGIN",
             PackageType::Unknown(value) => value.as_str(),
@@ -76,7 +86,7 @@ impl PackageType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["TXT-DICTIONARY", "ZIP-PLUGIN"]
+        &["PACKAGE-CONFIG", "PACKAGE-LICENSE", "TXT-DICTIONARY", "ZIP-PLUGIN"]
     }
 }
 impl ::std::convert::AsRef<str> for PackageType {
@@ -99,6 +109,8 @@ impl PackageType {
 impl ::std::fmt::Display for PackageType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            PackageType::PackageConfig => write!(f, "PACKAGE-CONFIG"),
+            PackageType::PackageLicense => write!(f, "PACKAGE-LICENSE"),
             PackageType::TxtDictionary => write!(f, "TXT-DICTIONARY"),
             PackageType::ZipPlugin => write!(f, "ZIP-PLUGIN"),
             PackageType::Unknown(value) => write!(f, "{}", value),

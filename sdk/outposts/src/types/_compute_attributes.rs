@@ -18,6 +18,10 @@ pub struct ComputeAttributes {
     pub state: ::std::option::Option<crate::types::ComputeAssetState>,
     /// <p>A list of the names of instance families that are currently associated with a given asset.</p>
     pub instance_families: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The instance type capacities configured for this asset. This can be changed through a capacity task.</p>
+    pub instance_type_capacities: ::std::option::Option<::std::vec::Vec<crate::types::AssetInstanceTypeCapacity>>,
+    /// <p>The maximum number of vCPUs possible for the specified asset.</p>
+    pub max_vcpus: ::std::option::Option<i32>,
 }
 impl ComputeAttributes {
     /// <p>The host ID of the Dedicated Host on the asset.</p>
@@ -42,6 +46,16 @@ impl ComputeAttributes {
     pub fn instance_families(&self) -> &[::std::string::String] {
         self.instance_families.as_deref().unwrap_or_default()
     }
+    /// <p>The instance type capacities configured for this asset. This can be changed through a capacity task.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_type_capacities.is_none()`.
+    pub fn instance_type_capacities(&self) -> &[crate::types::AssetInstanceTypeCapacity] {
+        self.instance_type_capacities.as_deref().unwrap_or_default()
+    }
+    /// <p>The maximum number of vCPUs possible for the specified asset.</p>
+    pub fn max_vcpus(&self) -> ::std::option::Option<i32> {
+        self.max_vcpus
+    }
 }
 impl ComputeAttributes {
     /// Creates a new builder-style object to manufacture [`ComputeAttributes`](crate::types::ComputeAttributes).
@@ -57,6 +71,8 @@ pub struct ComputeAttributesBuilder {
     pub(crate) host_id: ::std::option::Option<::std::string::String>,
     pub(crate) state: ::std::option::Option<crate::types::ComputeAssetState>,
     pub(crate) instance_families: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) instance_type_capacities: ::std::option::Option<::std::vec::Vec<crate::types::AssetInstanceTypeCapacity>>,
+    pub(crate) max_vcpus: ::std::option::Option<i32>,
 }
 impl ComputeAttributesBuilder {
     /// <p>The host ID of the Dedicated Host on the asset.</p>
@@ -131,12 +147,48 @@ impl ComputeAttributesBuilder {
     pub fn get_instance_families(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.instance_families
     }
+    /// Appends an item to `instance_type_capacities`.
+    ///
+    /// To override the contents of this collection use [`set_instance_type_capacities`](Self::set_instance_type_capacities).
+    ///
+    /// <p>The instance type capacities configured for this asset. This can be changed through a capacity task.</p>
+    pub fn instance_type_capacities(mut self, input: crate::types::AssetInstanceTypeCapacity) -> Self {
+        let mut v = self.instance_type_capacities.unwrap_or_default();
+        v.push(input);
+        self.instance_type_capacities = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The instance type capacities configured for this asset. This can be changed through a capacity task.</p>
+    pub fn set_instance_type_capacities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AssetInstanceTypeCapacity>>) -> Self {
+        self.instance_type_capacities = input;
+        self
+    }
+    /// <p>The instance type capacities configured for this asset. This can be changed through a capacity task.</p>
+    pub fn get_instance_type_capacities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetInstanceTypeCapacity>> {
+        &self.instance_type_capacities
+    }
+    /// <p>The maximum number of vCPUs possible for the specified asset.</p>
+    pub fn max_vcpus(mut self, input: i32) -> Self {
+        self.max_vcpus = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The maximum number of vCPUs possible for the specified asset.</p>
+    pub fn set_max_vcpus(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.max_vcpus = input;
+        self
+    }
+    /// <p>The maximum number of vCPUs possible for the specified asset.</p>
+    pub fn get_max_vcpus(&self) -> &::std::option::Option<i32> {
+        &self.max_vcpus
+    }
     /// Consumes the builder and constructs a [`ComputeAttributes`](crate::types::ComputeAttributes).
     pub fn build(self) -> crate::types::ComputeAttributes {
         crate::types::ComputeAttributes {
             host_id: self.host_id,
             state: self.state,
             instance_families: self.instance_families,
+            instance_type_capacities: self.instance_type_capacities,
+            max_vcpus: self.max_vcpus,
         }
     }
 }

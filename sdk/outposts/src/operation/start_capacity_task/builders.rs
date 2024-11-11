@@ -22,7 +22,7 @@ impl crate::operation::start_capacity_task::builders::StartCapacityTaskInputBuil
 }
 /// Fluent builder constructing a request to `StartCapacityTask`.
 ///
-/// <p>Starts the specified capacity task. You can have one active capacity task for an order.</p>
+/// <p>Starts the specified capacity task. You can have one active capacity task per order or Outpost.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartCapacityTaskFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -155,6 +155,20 @@ impl StartCapacityTaskFluentBuilder {
     pub fn get_instance_pools(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceTypeCapacity>> {
         self.inner.get_instance_pools()
     }
+    /// <p>List of user-specified running instances that must not be stopped in order to free up the capacity needed to run the capacity task.</p>
+    pub fn instances_to_exclude(mut self, input: crate::types::InstancesToExclude) -> Self {
+        self.inner = self.inner.instances_to_exclude(input);
+        self
+    }
+    /// <p>List of user-specified running instances that must not be stopped in order to free up the capacity needed to run the capacity task.</p>
+    pub fn set_instances_to_exclude(mut self, input: ::std::option::Option<crate::types::InstancesToExclude>) -> Self {
+        self.inner = self.inner.set_instances_to_exclude(input);
+        self
+    }
+    /// <p>List of user-specified running instances that must not be stopped in order to free up the capacity needed to run the capacity task.</p>
+    pub fn get_instances_to_exclude(&self) -> &::std::option::Option<crate::types::InstancesToExclude> {
+        self.inner.get_instances_to_exclude()
+    }
     /// <p>You can request a dry run to determine if the instance type and instance size changes is above or below available instance capacity. Requesting a dry run does not make any changes to your plan.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.inner = self.inner.dry_run(input);
@@ -168,5 +182,37 @@ impl StartCapacityTaskFluentBuilder {
     /// <p>You can request a dry run to determine if the instance type and instance size changes is above or below available instance capacity. Requesting a dry run does not make any changes to your plan.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
         self.inner.get_dry_run()
+    }
+    /// <p>Specify one of the following options in case an instance is blocking the capacity task from running.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>WAIT_FOR_EVACUATION</code> - Checks every 10 minutes over 48 hours to determine if instances have stopped and capacity is available to complete the task.</p></li>
+    /// <li>
+    /// <p><code>FAIL_TASK</code> - The capacity task fails.</p></li>
+    /// </ul>
+    pub fn task_action_on_blocking_instances(mut self, input: crate::types::TaskActionOnBlockingInstances) -> Self {
+        self.inner = self.inner.task_action_on_blocking_instances(input);
+        self
+    }
+    /// <p>Specify one of the following options in case an instance is blocking the capacity task from running.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>WAIT_FOR_EVACUATION</code> - Checks every 10 minutes over 48 hours to determine if instances have stopped and capacity is available to complete the task.</p></li>
+    /// <li>
+    /// <p><code>FAIL_TASK</code> - The capacity task fails.</p></li>
+    /// </ul>
+    pub fn set_task_action_on_blocking_instances(mut self, input: ::std::option::Option<crate::types::TaskActionOnBlockingInstances>) -> Self {
+        self.inner = self.inner.set_task_action_on_blocking_instances(input);
+        self
+    }
+    /// <p>Specify one of the following options in case an instance is blocking the capacity task from running.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>WAIT_FOR_EVACUATION</code> - Checks every 10 minutes over 48 hours to determine if instances have stopped and capacity is available to complete the task.</p></li>
+    /// <li>
+    /// <p><code>FAIL_TASK</code> - The capacity task fails.</p></li>
+    /// </ul>
+    pub fn get_task_action_on_blocking_instances(&self) -> &::std::option::Option<crate::types::TaskActionOnBlockingInstances> {
+        self.inner.get_task_action_on_blocking_instances()
     }
 }

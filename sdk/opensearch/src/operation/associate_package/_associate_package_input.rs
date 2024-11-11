@@ -8,6 +8,10 @@ pub struct AssociatePackageInput {
     pub package_id: ::std::option::Option<::std::string::String>,
     /// <p>Name of the domain to associate the package with.</p>
     pub domain_name: ::std::option::Option<::std::string::String>,
+    /// <p>A list of package IDs that must be associated with the domain before the package specified in the request can be associated.</p>
+    pub prerequisite_package_id_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The configuration for associating a package with an Amazon OpenSearch Service domain.</p>
+    pub association_configuration: ::std::option::Option<crate::types::PackageAssociationConfiguration>,
 }
 impl AssociatePackageInput {
     /// <p>Internal ID of the package to associate with a domain. Use <code>DescribePackages</code> to find this value.</p>
@@ -17,6 +21,16 @@ impl AssociatePackageInput {
     /// <p>Name of the domain to associate the package with.</p>
     pub fn domain_name(&self) -> ::std::option::Option<&str> {
         self.domain_name.as_deref()
+    }
+    /// <p>A list of package IDs that must be associated with the domain before the package specified in the request can be associated.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.prerequisite_package_id_list.is_none()`.
+    pub fn prerequisite_package_id_list(&self) -> &[::std::string::String] {
+        self.prerequisite_package_id_list.as_deref().unwrap_or_default()
+    }
+    /// <p>The configuration for associating a package with an Amazon OpenSearch Service domain.</p>
+    pub fn association_configuration(&self) -> ::std::option::Option<&crate::types::PackageAssociationConfiguration> {
+        self.association_configuration.as_ref()
     }
 }
 impl AssociatePackageInput {
@@ -32,6 +46,8 @@ impl AssociatePackageInput {
 pub struct AssociatePackageInputBuilder {
     pub(crate) package_id: ::std::option::Option<::std::string::String>,
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
+    pub(crate) prerequisite_package_id_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) association_configuration: ::std::option::Option<crate::types::PackageAssociationConfiguration>,
 }
 impl AssociatePackageInputBuilder {
     /// <p>Internal ID of the package to associate with a domain. Use <code>DescribePackages</code> to find this value.</p>
@@ -64,6 +80,40 @@ impl AssociatePackageInputBuilder {
     pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.domain_name
     }
+    /// Appends an item to `prerequisite_package_id_list`.
+    ///
+    /// To override the contents of this collection use [`set_prerequisite_package_id_list`](Self::set_prerequisite_package_id_list).
+    ///
+    /// <p>A list of package IDs that must be associated with the domain before the package specified in the request can be associated.</p>
+    pub fn prerequisite_package_id_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.prerequisite_package_id_list.unwrap_or_default();
+        v.push(input.into());
+        self.prerequisite_package_id_list = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of package IDs that must be associated with the domain before the package specified in the request can be associated.</p>
+    pub fn set_prerequisite_package_id_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.prerequisite_package_id_list = input;
+        self
+    }
+    /// <p>A list of package IDs that must be associated with the domain before the package specified in the request can be associated.</p>
+    pub fn get_prerequisite_package_id_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.prerequisite_package_id_list
+    }
+    /// <p>The configuration for associating a package with an Amazon OpenSearch Service domain.</p>
+    pub fn association_configuration(mut self, input: crate::types::PackageAssociationConfiguration) -> Self {
+        self.association_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration for associating a package with an Amazon OpenSearch Service domain.</p>
+    pub fn set_association_configuration(mut self, input: ::std::option::Option<crate::types::PackageAssociationConfiguration>) -> Self {
+        self.association_configuration = input;
+        self
+    }
+    /// <p>The configuration for associating a package with an Amazon OpenSearch Service domain.</p>
+    pub fn get_association_configuration(&self) -> &::std::option::Option<crate::types::PackageAssociationConfiguration> {
+        &self.association_configuration
+    }
     /// Consumes the builder and constructs a [`AssociatePackageInput`](crate::operation::associate_package::AssociatePackageInput).
     pub fn build(
         self,
@@ -71,6 +121,8 @@ impl AssociatePackageInputBuilder {
         ::std::result::Result::Ok(crate::operation::associate_package::AssociatePackageInput {
             package_id: self.package_id,
             domain_name: self.domain_name,
+            prerequisite_package_id_list: self.prerequisite_package_id_list,
+            association_configuration: self.association_configuration,
         })
     }
 }

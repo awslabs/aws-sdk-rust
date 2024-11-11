@@ -13,6 +13,9 @@ pub mod add_tags;
 /// Types for the `AssociatePackage` operation.
 pub mod associate_package;
 
+/// Types for the `AssociatePackages` operation.
+pub mod associate_packages;
+
 /// Types for the `AuthorizeVpcEndpointAccess` operation.
 pub mod authorize_vpc_endpoint_access;
 
@@ -106,6 +109,9 @@ pub mod describe_vpc_endpoints;
 /// Types for the `DissociatePackage` operation.
 pub mod dissociate_package;
 
+/// Types for the `DissociatePackages` operation.
+pub mod dissociate_packages;
+
 /// Types for the `GetApplication` operation.
 pub mod get_application;
 
@@ -195,6 +201,9 @@ pub mod update_domain_config;
 
 /// Types for the `UpdatePackage` operation.
 pub mod update_package;
+
+/// Types for the `UpdatePackageScope` operation.
+pub mod update_package_scope;
 
 /// Types for the `UpdateScheduledAction` operation.
 pub mod update_scheduled_action;

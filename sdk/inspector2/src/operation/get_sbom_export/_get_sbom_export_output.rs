@@ -13,7 +13,7 @@ pub struct GetSbomExportOutput {
     pub error_code: ::std::option::Option<crate::types::ReportingErrorCode>,
     /// <p>An error message.</p>
     pub error_message: ::std::option::Option<::std::string::String>,
-    /// <p>Contains details of the Amazon S3 bucket and KMS key used to export findings.</p>
+    /// <p>Contains details of the Amazon S3 bucket and KMS key used to export findings</p>
     pub s3_destination: ::std::option::Option<crate::types::Destination>,
     /// <p>Contains details about the resource filter criteria used for the software bill of materials (SBOM) report.</p>
     pub filter_criteria: ::std::option::Option<crate::types::ResourceFilterCriteria>,
@@ -40,7 +40,7 @@ impl GetSbomExportOutput {
     pub fn error_message(&self) -> ::std::option::Option<&str> {
         self.error_message.as_deref()
     }
-    /// <p>Contains details of the Amazon S3 bucket and KMS key used to export findings.</p>
+    /// <p>Contains details of the Amazon S3 bucket and KMS key used to export findings</p>
     pub fn s3_destination(&self) -> ::std::option::Option<&crate::types::Destination> {
         self.s3_destination.as_ref()
     }
@@ -145,17 +145,17 @@ impl GetSbomExportOutputBuilder {
     pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.error_message
     }
-    /// <p>Contains details of the Amazon S3 bucket and KMS key used to export findings.</p>
+    /// <p>Contains details of the Amazon S3 bucket and KMS key used to export findings</p>
     pub fn s3_destination(mut self, input: crate::types::Destination) -> Self {
         self.s3_destination = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Contains details of the Amazon S3 bucket and KMS key used to export findings.</p>
+    /// <p>Contains details of the Amazon S3 bucket and KMS key used to export findings</p>
     pub fn set_s3_destination(mut self, input: ::std::option::Option<crate::types::Destination>) -> Self {
         self.s3_destination = input;
         self
     }
-    /// <p>Contains details of the Amazon S3 bucket and KMS key used to export findings.</p>
+    /// <p>Contains details of the Amazon S3 bucket and KMS key used to export findings</p>
     pub fn get_s3_destination(&self) -> &::std::option::Option<crate::types::Destination> {
         &self.s3_destination
     }

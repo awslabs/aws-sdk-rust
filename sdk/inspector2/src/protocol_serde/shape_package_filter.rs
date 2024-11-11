@@ -45,6 +45,12 @@ pub fn ser_package_filter(
         crate::protocol_serde::shape_string_filter::ser_string_filter(&mut object_14, var_13)?;
         object_14.finish();
     }
+    if let Some(var_15) = &input.file_path {
+        #[allow(unused_mut)]
+        let mut object_16 = object.key("filePath").start_object();
+        crate::protocol_serde::shape_string_filter::ser_string_filter(&mut object_16, var_15)?;
+        object_16.finish();
+    }
     Ok(())
 }
 
@@ -83,6 +89,9 @@ where
                         }
                         "sourceLambdaLayerArn" => {
                             builder = builder.set_source_lambda_layer_arn(crate::protocol_serde::shape_string_filter::de_string_filter(tokens)?);
+                        }
+                        "filePath" => {
+                            builder = builder.set_file_path(crate::protocol_serde::shape_string_filter::de_string_filter(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

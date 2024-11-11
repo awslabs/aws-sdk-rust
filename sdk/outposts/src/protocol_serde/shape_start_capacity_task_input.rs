@@ -18,8 +18,17 @@ pub fn ser_start_capacity_task_input_input(
         }
         array_3.finish();
     }
-    if let Some(var_6) = &input.order_id {
-        object.key("OrderId").string(var_6.as_str());
+    if let Some(var_6) = &input.instances_to_exclude {
+        #[allow(unused_mut)]
+        let mut object_7 = object.key("InstancesToExclude").start_object();
+        crate::protocol_serde::shape_instances_to_exclude::ser_instances_to_exclude(&mut object_7, var_6)?;
+        object_7.finish();
+    }
+    if let Some(var_8) = &input.order_id {
+        object.key("OrderId").string(var_8.as_str());
+    }
+    if let Some(var_9) = &input.task_action_on_blocking_instances {
+        object.key("TaskActionOnBlockingInstances").string(var_9.as_str());
     }
     Ok(())
 }

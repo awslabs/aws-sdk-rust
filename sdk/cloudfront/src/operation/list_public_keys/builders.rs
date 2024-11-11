@@ -108,6 +108,12 @@ impl ListPublicKeysFluentBuilder {
         self.config_override = config_override;
         self
     }
+    /// Create a paginator for this request
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::list_public_keys::paginator::ListPublicKeysPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
+    pub fn into_paginator(self) -> crate::operation::list_public_keys::paginator::ListPublicKeysPaginator {
+        crate::operation::list_public_keys::paginator::ListPublicKeysPaginator::new(self.handle, self.inner)
+    }
     /// <p>Use this when paginating results to indicate where to begin in your list of public keys. The results include public keys in the list that occur after the marker. To get the next page of results, set the <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response (which is also the ID of the last public key on that page).</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.marker(input.into());

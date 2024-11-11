@@ -18,10 +18,14 @@ pub struct DomainPackageDetails {
     pub domain_package_status: ::std::option::Option<crate::types::DomainPackageStatus>,
     /// <p>The current version of the package.</p>
     pub package_version: ::std::option::Option<::std::string::String>,
+    /// <p>A list of package IDs that must be associated with the domain before or with the package can be associated.</p>
+    pub prerequisite_package_id_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The relative path of the package on the OpenSearch Service cluster nodes. This is <code>synonym_path</code> when the package is for synonym files.</p>
     pub reference_path: ::std::option::Option<::std::string::String>,
     /// <p>Additional information if the package is in an error state. Null otherwise.</p>
     pub error_details: ::std::option::Option<crate::types::ErrorDetails>,
+    /// <p>The configuration for associating a package with an Amazon OpenSearch Service domain.</p>
+    pub association_configuration: ::std::option::Option<crate::types::PackageAssociationConfiguration>,
 }
 impl DomainPackageDetails {
     /// <p>Internal ID of the package.</p>
@@ -52,6 +56,12 @@ impl DomainPackageDetails {
     pub fn package_version(&self) -> ::std::option::Option<&str> {
         self.package_version.as_deref()
     }
+    /// <p>A list of package IDs that must be associated with the domain before or with the package can be associated.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.prerequisite_package_id_list.is_none()`.
+    pub fn prerequisite_package_id_list(&self) -> &[::std::string::String] {
+        self.prerequisite_package_id_list.as_deref().unwrap_or_default()
+    }
     /// <p>The relative path of the package on the OpenSearch Service cluster nodes. This is <code>synonym_path</code> when the package is for synonym files.</p>
     pub fn reference_path(&self) -> ::std::option::Option<&str> {
         self.reference_path.as_deref()
@@ -59,6 +69,10 @@ impl DomainPackageDetails {
     /// <p>Additional information if the package is in an error state. Null otherwise.</p>
     pub fn error_details(&self) -> ::std::option::Option<&crate::types::ErrorDetails> {
         self.error_details.as_ref()
+    }
+    /// <p>The configuration for associating a package with an Amazon OpenSearch Service domain.</p>
+    pub fn association_configuration(&self) -> ::std::option::Option<&crate::types::PackageAssociationConfiguration> {
+        self.association_configuration.as_ref()
     }
 }
 impl DomainPackageDetails {
@@ -79,8 +93,10 @@ pub struct DomainPackageDetailsBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) domain_package_status: ::std::option::Option<crate::types::DomainPackageStatus>,
     pub(crate) package_version: ::std::option::Option<::std::string::String>,
+    pub(crate) prerequisite_package_id_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) reference_path: ::std::option::Option<::std::string::String>,
     pub(crate) error_details: ::std::option::Option<crate::types::ErrorDetails>,
+    pub(crate) association_configuration: ::std::option::Option<crate::types::PackageAssociationConfiguration>,
 }
 impl DomainPackageDetailsBuilder {
     /// <p>Internal ID of the package.</p>
@@ -181,6 +197,26 @@ impl DomainPackageDetailsBuilder {
     pub fn get_package_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.package_version
     }
+    /// Appends an item to `prerequisite_package_id_list`.
+    ///
+    /// To override the contents of this collection use [`set_prerequisite_package_id_list`](Self::set_prerequisite_package_id_list).
+    ///
+    /// <p>A list of package IDs that must be associated with the domain before or with the package can be associated.</p>
+    pub fn prerequisite_package_id_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.prerequisite_package_id_list.unwrap_or_default();
+        v.push(input.into());
+        self.prerequisite_package_id_list = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of package IDs that must be associated with the domain before or with the package can be associated.</p>
+    pub fn set_prerequisite_package_id_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.prerequisite_package_id_list = input;
+        self
+    }
+    /// <p>A list of package IDs that must be associated with the domain before or with the package can be associated.</p>
+    pub fn get_prerequisite_package_id_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.prerequisite_package_id_list
+    }
     /// <p>The relative path of the package on the OpenSearch Service cluster nodes. This is <code>synonym_path</code> when the package is for synonym files.</p>
     pub fn reference_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reference_path = ::std::option::Option::Some(input.into());
@@ -209,6 +245,20 @@ impl DomainPackageDetailsBuilder {
     pub fn get_error_details(&self) -> &::std::option::Option<crate::types::ErrorDetails> {
         &self.error_details
     }
+    /// <p>The configuration for associating a package with an Amazon OpenSearch Service domain.</p>
+    pub fn association_configuration(mut self, input: crate::types::PackageAssociationConfiguration) -> Self {
+        self.association_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration for associating a package with an Amazon OpenSearch Service domain.</p>
+    pub fn set_association_configuration(mut self, input: ::std::option::Option<crate::types::PackageAssociationConfiguration>) -> Self {
+        self.association_configuration = input;
+        self
+    }
+    /// <p>The configuration for associating a package with an Amazon OpenSearch Service domain.</p>
+    pub fn get_association_configuration(&self) -> &::std::option::Option<crate::types::PackageAssociationConfiguration> {
+        &self.association_configuration
+    }
     /// Consumes the builder and constructs a [`DomainPackageDetails`](crate::types::DomainPackageDetails).
     pub fn build(self) -> crate::types::DomainPackageDetails {
         crate::types::DomainPackageDetails {
@@ -219,8 +269,10 @@ impl DomainPackageDetailsBuilder {
             domain_name: self.domain_name,
             domain_package_status: self.domain_package_status,
             package_version: self.package_version,
+            prerequisite_package_id_list: self.prerequisite_package_id_list,
             reference_path: self.reference_path,
             error_details: self.error_details,
+            association_configuration: self.association_configuration,
         }
     }
 }

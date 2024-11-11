@@ -501,6 +501,31 @@ impl From<crate::operation::get_site_address::GetSiteAddressError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_asset_instances::ListAssetInstancesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_asset_instances::ListAssetInstancesError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_asset_instances::ListAssetInstancesError> for Error {
+    fn from(err: crate::operation::list_asset_instances::ListAssetInstancesError) -> Self {
+        match err {
+            crate::operation::list_asset_instances::ListAssetInstancesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_asset_instances::ListAssetInstancesError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_asset_instances::ListAssetInstancesError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::list_asset_instances::ListAssetInstancesError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_asset_instances::ListAssetInstancesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_assets::ListAssetsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -523,6 +548,52 @@ impl From<crate::operation::list_assets::ListAssetsError> for Error {
             crate::operation::list_assets::ListAssetsError::NotFoundException(inner) => Error::NotFoundException(inner),
             crate::operation::list_assets::ListAssetsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_assets::ListAssetsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_blocking_instances_for_capacity_task::ListBlockingInstancesForCapacityTaskError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_blocking_instances_for_capacity_task::ListBlockingInstancesForCapacityTaskError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_blocking_instances_for_capacity_task::ListBlockingInstancesForCapacityTaskError> for Error {
+    fn from(err: crate::operation::list_blocking_instances_for_capacity_task::ListBlockingInstancesForCapacityTaskError) -> Self {
+        match err {
+            crate::operation::list_blocking_instances_for_capacity_task::ListBlockingInstancesForCapacityTaskError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_blocking_instances_for_capacity_task::ListBlockingInstancesForCapacityTaskError::InternalServerException(
+                inner,
+            ) => Error::InternalServerException(inner),
+            crate::operation::list_blocking_instances_for_capacity_task::ListBlockingInstancesForCapacityTaskError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::list_blocking_instances_for_capacity_task::ListBlockingInstancesForCapacityTaskError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_blocking_instances_for_capacity_task::ListBlockingInstancesForCapacityTaskError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
