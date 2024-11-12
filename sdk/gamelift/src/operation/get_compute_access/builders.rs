@@ -22,19 +22,14 @@ impl crate::operation::get_compute_access::builders::GetComputeAccessInputBuilde
 }
 /// Fluent builder constructing a request to `GetComputeAccess`.
 ///
-/// <p><b>This operation has been expanded to use with the Amazon GameLift containers feature, which is currently in public preview.</b></p>
-/// <p>Requests authorization to remotely connect to a hosting resource in a Amazon GameLift managed fleet. This operation is not used with Amazon GameLift Anywhere fleets</p>
-/// <p>To request access, specify the compute name and the fleet ID. If successful, this operation returns a set of temporary Amazon Web Services credentials, including a two-part access key and a session token.</p>
-/// <p><b>EC2 fleets</b></p>
-/// <p>With an EC2 fleet (where compute type is <code>EC2</code>), use these credentials with Amazon EC2 Systems Manager (SSM) to start a session with the compute. For more details, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-working-with-sessions-start.html#sessions-start-cli"> Starting a session (CLI)</a> in the <i>Amazon EC2 Systems Manager User Guide</i>.</p>
-/// <p><b>Container fleets</b></p>
-/// <p>With a container fleet (where compute type is <code>CONTAINER</code>), use these credentials and the target value with SSM to connect to the fleet instance where the container is running. After you're connected to the instance, use Docker commands to interact with the container.</p>
-/// <p><b>Learn more</b></p>
+/// <p>Requests authorization to remotely connect to a hosting resource in a Amazon GameLift managed fleet. This operation is not used with Amazon GameLift Anywhere fleets.</p>
+/// <p><b>Request options</b></p>
+/// <p>To request access to a compute, specify the compute name and the fleet ID.</p>
+/// <p><b>Results</b></p>
+/// <p>If successful, this operation returns a set of temporary Amazon Web Services credentials, including a two-part access key and a session token.</p>
 /// <ul>
 /// <li>
-/// <p><a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-remote-access.html">Remotely connect to fleet instances</a></p></li>
-/// <li>
-/// <p><a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-creating-debug.html">Debug fleet issues</a></p></li>
+/// <p>With a managed EC2 fleet (where compute type is <code>EC2</code>), use these credentials with Amazon EC2 Systems Manager (SSM) to start a session with the compute. For more details, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-working-with-sessions-start.html#sessions-start-cli"> Starting a session (CLI)</a> in the <i>Amazon EC2 Systems Manager User Guide</i>.</p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetComputeAccessFluentBuilder {
@@ -135,17 +130,17 @@ impl GetComputeAccessFluentBuilder {
     pub fn get_fleet_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_fleet_id()
     }
-    /// <p>A unique identifier for the compute resource that you want to connect to. For an EC2 fleet compute, use the instance ID. For a container fleet, use the compute name (for example, <code>a123b456c789012d3e4567f8a901b23c/1a234b56-7cd8-9e0f-a1b2-c34d567ef8a9</code>) or the compute ARN.</p>
+    /// <p>A unique identifier for the compute resource that you want to connect to. For an EC2 fleet compute, use the instance ID. Use <code>ListCompute</code> to retrieve compute identifiers.</p>
     pub fn compute_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.compute_name(input.into());
         self
     }
-    /// <p>A unique identifier for the compute resource that you want to connect to. For an EC2 fleet compute, use the instance ID. For a container fleet, use the compute name (for example, <code>a123b456c789012d3e4567f8a901b23c/1a234b56-7cd8-9e0f-a1b2-c34d567ef8a9</code>) or the compute ARN.</p>
+    /// <p>A unique identifier for the compute resource that you want to connect to. For an EC2 fleet compute, use the instance ID. Use <code>ListCompute</code> to retrieve compute identifiers.</p>
     pub fn set_compute_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_compute_name(input);
         self
     }
-    /// <p>A unique identifier for the compute resource that you want to connect to. For an EC2 fleet compute, use the instance ID. For a container fleet, use the compute name (for example, <code>a123b456c789012d3e4567f8a901b23c/1a234b56-7cd8-9e0f-a1b2-c34d567ef8a9</code>) or the compute ARN.</p>
+    /// <p>A unique identifier for the compute resource that you want to connect to. For an EC2 fleet compute, use the instance ID. Use <code>ListCompute</code> to retrieve compute identifiers.</p>
     pub fn get_compute_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_compute_name()
     }

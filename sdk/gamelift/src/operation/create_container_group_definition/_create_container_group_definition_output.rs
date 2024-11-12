@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateContainerGroupDefinitionOutput {
-    /// <p>The properties of the newly created container group definition resource. You use this resource to create a container fleet.</p>
+    /// <p>The properties of the new container group definition resource. You can use this resource to create a container fleet.</p>
     pub container_group_definition: ::std::option::Option<crate::types::ContainerGroupDefinition>,
     _request_id: Option<String>,
 }
 impl CreateContainerGroupDefinitionOutput {
-    /// <p>The properties of the newly created container group definition resource. You use this resource to create a container fleet.</p>
+    /// <p>The properties of the new container group definition resource. You can use this resource to create a container fleet.</p>
     pub fn container_group_definition(&self) -> ::std::option::Option<&crate::types::ContainerGroupDefinition> {
         self.container_group_definition.as_ref()
     }
@@ -33,17 +33,17 @@ pub struct CreateContainerGroupDefinitionOutputBuilder {
     _request_id: Option<String>,
 }
 impl CreateContainerGroupDefinitionOutputBuilder {
-    /// <p>The properties of the newly created container group definition resource. You use this resource to create a container fleet.</p>
+    /// <p>The properties of the new container group definition resource. You can use this resource to create a container fleet.</p>
     pub fn container_group_definition(mut self, input: crate::types::ContainerGroupDefinition) -> Self {
         self.container_group_definition = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The properties of the newly created container group definition resource. You use this resource to create a container fleet.</p>
+    /// <p>The properties of the new container group definition resource. You can use this resource to create a container fleet.</p>
     pub fn set_container_group_definition(mut self, input: ::std::option::Option<crate::types::ContainerGroupDefinition>) -> Self {
         self.container_group_definition = input;
         self
     }
-    /// <p>The properties of the newly created container group definition resource. You use this resource to create a container fleet.</p>
+    /// <p>The properties of the new container group definition resource. You can use this resource to create a container fleet.</p>
     pub fn get_container_group_definition(&self) -> &::std::option::Option<crate::types::ContainerGroupDefinition> {
         &self.container_group_definition
     }

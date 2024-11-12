@@ -14,6 +14,7 @@
 /// match controloperationtype {
 ///     ControlOperationType::DisableControl => { /* ... */ },
 ///     ControlOperationType::EnableControl => { /* ... */ },
+///     ControlOperationType::ResetEnabledControl => { /* ... */ },
 ///     ControlOperationType::UpdateEnabledControl => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -47,6 +48,8 @@ pub enum ControlOperationType {
     #[allow(missing_docs)] // documentation missing in model
     EnableControl,
     #[allow(missing_docs)] // documentation missing in model
+    ResetEnabledControl,
+    #[allow(missing_docs)] // documentation missing in model
     UpdateEnabledControl,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -57,6 +60,7 @@ impl ::std::convert::From<&str> for ControlOperationType {
         match s {
             "DISABLE_CONTROL" => ControlOperationType::DisableControl,
             "ENABLE_CONTROL" => ControlOperationType::EnableControl,
+            "RESET_ENABLED_CONTROL" => ControlOperationType::ResetEnabledControl,
             "UPDATE_ENABLED_CONTROL" => ControlOperationType::UpdateEnabledControl,
             other => ControlOperationType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -75,13 +79,14 @@ impl ControlOperationType {
         match self {
             ControlOperationType::DisableControl => "DISABLE_CONTROL",
             ControlOperationType::EnableControl => "ENABLE_CONTROL",
+            ControlOperationType::ResetEnabledControl => "RESET_ENABLED_CONTROL",
             ControlOperationType::UpdateEnabledControl => "UPDATE_ENABLED_CONTROL",
             ControlOperationType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DISABLE_CONTROL", "ENABLE_CONTROL", "UPDATE_ENABLED_CONTROL"]
+        &["DISABLE_CONTROL", "ENABLE_CONTROL", "RESET_ENABLED_CONTROL", "UPDATE_ENABLED_CONTROL"]
     }
 }
 impl ::std::convert::AsRef<str> for ControlOperationType {
@@ -106,6 +111,7 @@ impl ::std::fmt::Display for ControlOperationType {
         match self {
             ControlOperationType::DisableControl => write!(f, "DISABLE_CONTROL"),
             ControlOperationType::EnableControl => write!(f, "ENABLE_CONTROL"),
+            ControlOperationType::ResetEnabledControl => write!(f, "RESET_ENABLED_CONTROL"),
             ControlOperationType::UpdateEnabledControl => write!(f, "UPDATE_ENABLED_CONTROL"),
             ControlOperationType::Unknown(value) => write!(f, "{}", value),
         }

@@ -38,7 +38,7 @@ impl crate::operation::start_game_session_placement::builders::StartGameSessionP
 /// <p>Latency data for all players (if you want to optimize game play for the players)</p></li>
 /// </ul>
 /// <p>If successful, a new game session placement is created.</p>
-/// <p>To track the status of a placement request, call <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeGameSessionPlacement.html">DescribeGameSessionPlacement</a> and check the request's status. If the status is <code>FULFILLED</code>, a new game session has been created and a game session ARN and Region are referenced. If the placement request times out, you can resubmit the request or retry it with a different queue.</p>
+/// <p>To track the status of a placement request, call <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeGameSessionPlacement.html">DescribeGameSessionPlacement</a> and check the request's status. If the status is <code>FULFILLED</code>, a new game session has been created and a game session ARN and Region are referenced. If the placement request times out, submit a new request to the same queue or a different queue.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartGameSessionPlacementFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -204,17 +204,17 @@ impl StartGameSessionPlacementFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_player_latencies`](Self::set_player_latencies).
     ///
-    /// <p>A set of values, expressed in milliseconds, that indicates the amount of latency that a player experiences when connected to Amazon Web Services Regions. This information is used to try to place the new game session where it can offer the best possible gameplay experience for the players.</p>
+    /// <p>A set of values, expressed in milliseconds, that indicates the amount of latency that a player experiences when connected to @aws; Regions. This information is used to try to place the new game session where it can offer the best possible gameplay experience for the players.</p>
     pub fn player_latencies(mut self, input: crate::types::PlayerLatency) -> Self {
         self.inner = self.inner.player_latencies(input);
         self
     }
-    /// <p>A set of values, expressed in milliseconds, that indicates the amount of latency that a player experiences when connected to Amazon Web Services Regions. This information is used to try to place the new game session where it can offer the best possible gameplay experience for the players.</p>
+    /// <p>A set of values, expressed in milliseconds, that indicates the amount of latency that a player experiences when connected to @aws; Regions. This information is used to try to place the new game session where it can offer the best possible gameplay experience for the players.</p>
     pub fn set_player_latencies(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PlayerLatency>>) -> Self {
         self.inner = self.inner.set_player_latencies(input);
         self
     }
-    /// <p>A set of values, expressed in milliseconds, that indicates the amount of latency that a player experiences when connected to Amazon Web Services Regions. This information is used to try to place the new game session where it can offer the best possible gameplay experience for the players.</p>
+    /// <p>A set of values, expressed in milliseconds, that indicates the amount of latency that a player experiences when connected to @aws; Regions. This information is used to try to place the new game session where it can offer the best possible gameplay experience for the players.</p>
     pub fn get_player_latencies(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PlayerLatency>> {
         self.inner.get_player_latencies()
     }
@@ -237,17 +237,17 @@ impl StartGameSessionPlacementFluentBuilder {
     pub fn get_desired_player_sessions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DesiredPlayerSession>> {
         self.inner.get_desired_player_sessions()
     }
-    /// <p>A set of custom game session properties, formatted as a single string value. This data is passed to a game server process in the <code>GameSession</code> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>).</p>
+    /// <p>A set of custom game session properties, formatted as a single string value. This data is passed to a game server process with a request to start a new game session. For more information, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a game session</a>.</p>
     pub fn game_session_data(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.game_session_data(input.into());
         self
     }
-    /// <p>A set of custom game session properties, formatted as a single string value. This data is passed to a game server process in the <code>GameSession</code> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>).</p>
+    /// <p>A set of custom game session properties, formatted as a single string value. This data is passed to a game server process with a request to start a new game session. For more information, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a game session</a>.</p>
     pub fn set_game_session_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_game_session_data(input);
         self
     }
-    /// <p>A set of custom game session properties, formatted as a single string value. This data is passed to a game server process in the <code>GameSession</code> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>).</p>
+    /// <p>A set of custom game session properties, formatted as a single string value. This data is passed to a game server process with a request to start a new game session. For more information, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a game session</a>.</p>
     pub fn get_game_session_data(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_game_session_data()
     }

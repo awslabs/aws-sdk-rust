@@ -169,8 +169,38 @@ pub(crate) fn reflens_list_compute_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_container_fleets_output_output_next_token(
+    input: &crate::operation::list_container_fleets::ListContainerFleetsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_container_group_definition_versions_output_output_next_token(
+    input: &crate::operation::list_container_group_definition_versions::ListContainerGroupDefinitionVersionsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_container_group_definitions_output_output_next_token(
     input: &crate::operation::list_container_group_definitions::ListContainerGroupDefinitionsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_fleet_deployments_output_output_next_token(
+    input: &crate::operation::list_fleet_deployments::ListFleetDeploymentsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
     let input = match &input.next_token {
         ::std::option::Option::None => return ::std::option::Option::None,
@@ -399,10 +429,40 @@ pub(crate) fn lens_list_compute_output_output_compute_list(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn lens_list_container_fleets_output_output_container_fleets(
+    input: crate::operation::list_container_fleets::ListContainerFleetsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ContainerFleet>> {
+    let input = match input.container_fleets {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_container_group_definition_versions_output_output_container_group_definitions(
+    input: crate::operation::list_container_group_definition_versions::ListContainerGroupDefinitionVersionsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ContainerGroupDefinition>> {
+    let input = match input.container_group_definitions {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_list_container_group_definitions_output_output_container_group_definitions(
     input: crate::operation::list_container_group_definitions::ListContainerGroupDefinitionsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ContainerGroupDefinition>> {
     let input = match input.container_group_definitions {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_fleet_deployments_output_output_fleet_deployments(
+    input: crate::operation::list_fleet_deployments::ListFleetDeploymentsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::FleetDeployment>> {
+    let input = match input.fleet_deployments {
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,
     };

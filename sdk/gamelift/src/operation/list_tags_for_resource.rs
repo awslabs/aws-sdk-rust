@@ -258,6 +258,8 @@ pub enum ListTagsForResourceError {
     NotFoundException(crate::types::error::NotFoundException),
     /// <p>The requested tagging operation did not succeed. This may be due to invalid tag format or the maximum tag limit may have been exceeded. Resolve the issue before retrying.</p>
     TaggingFailedException(crate::types::error::TaggingFailedException),
+    /// <p>The requested operation is not supported in the Region specified.</p>
+    UnsupportedRegionException(crate::types::error::UnsupportedRegionException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \
     variable wildcard pattern and check `.code()`:
@@ -295,6 +297,7 @@ impl ListTagsForResourceError {
             Self::InvalidRequestException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::NotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::TaggingFailedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::UnsupportedRegionException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
     }
@@ -314,6 +317,10 @@ impl ListTagsForResourceError {
     pub fn is_tagging_failed_exception(&self) -> bool {
         matches!(self, Self::TaggingFailedException(_))
     }
+    /// Returns `true` if the error kind is `ListTagsForResourceError::UnsupportedRegionException`.
+    pub fn is_unsupported_region_exception(&self) -> bool {
+        matches!(self, Self::UnsupportedRegionException(_))
+    }
 }
 impl ::std::error::Error for ListTagsForResourceError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
@@ -322,6 +329,7 @@ impl ::std::error::Error for ListTagsForResourceError {
             Self::InvalidRequestException(_inner) => ::std::option::Option::Some(_inner),
             Self::NotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::TaggingFailedException(_inner) => ::std::option::Option::Some(_inner),
+            Self::UnsupportedRegionException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
         }
     }
@@ -333,6 +341,7 @@ impl ::std::fmt::Display for ListTagsForResourceError {
             Self::InvalidRequestException(_inner) => _inner.fmt(f),
             Self::NotFoundException(_inner) => _inner.fmt(f),
             Self::TaggingFailedException(_inner) => _inner.fmt(f),
+            Self::UnsupportedRegionException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
                     write!(f, "unhandled error ({code})")
@@ -358,6 +367,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for ListTagsForRe
             Self::InvalidRequestException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::NotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::TaggingFailedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::UnsupportedRegionException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,
         }
     }

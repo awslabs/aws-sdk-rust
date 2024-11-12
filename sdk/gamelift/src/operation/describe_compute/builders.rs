@@ -22,17 +22,14 @@ impl crate::operation::describe_compute::builders::DescribeComputeInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeCompute`.
 ///
-/// <p><b>This operation has been expanded to use with the Amazon GameLift containers feature, which is currently in public preview.</b></p>
 /// <p>Retrieves properties for a compute resource in an Amazon GameLift fleet. To get a list of all computes in a fleet, call <code>ListCompute</code>.</p>
 /// <p>To request information on a specific compute, provide the fleet ID and compute name.</p>
 /// <p>If successful, this operation returns details for the requested compute resource. Depending on the fleet's compute type, the result includes the following information:</p>
 /// <ul>
 /// <li>
-/// <p>For <code>EC2</code> fleets, this operation returns information about the EC2 instance.</p></li>
+/// <p>For managed EC2 fleets, this operation returns information about the EC2 instance.</p></li>
 /// <li>
-/// <p>For <code>ANYWHERE</code> fleets, this operation returns information about the registered compute.</p></li>
-/// <li>
-/// <p>For <code>CONTAINER</code> fleets, this operation returns information about the container that's registered as a compute, and the instance it's running on. The compute name is the container name.</p></li>
+/// <p>For Anywhere fleets, this operation returns information about the registered compute.</p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeComputeFluentBuilder {
@@ -133,17 +130,17 @@ impl DescribeComputeFluentBuilder {
     pub fn get_fleet_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_fleet_id()
     }
-    /// <p>The unique identifier of the compute resource to retrieve properties for. For an Anywhere fleet compute, use the registered compute name. For an EC2 fleet instance, use the instance ID. For a container fleet, use the compute name (for example, <code>a123b456c789012d3e4567f8a901b23c/1a234b56-7cd8-9e0f-a1b2-c34d567ef8a9</code>) or the compute ARN.</p>
+    /// <p>The unique identifier of the compute resource to retrieve properties for. For an Anywhere fleet compute, use the registered compute name. For an EC2 fleet instance, use the instance ID.</p>
     pub fn compute_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.compute_name(input.into());
         self
     }
-    /// <p>The unique identifier of the compute resource to retrieve properties for. For an Anywhere fleet compute, use the registered compute name. For an EC2 fleet instance, use the instance ID. For a container fleet, use the compute name (for example, <code>a123b456c789012d3e4567f8a901b23c/1a234b56-7cd8-9e0f-a1b2-c34d567ef8a9</code>) or the compute ARN.</p>
+    /// <p>The unique identifier of the compute resource to retrieve properties for. For an Anywhere fleet compute, use the registered compute name. For an EC2 fleet instance, use the instance ID.</p>
     pub fn set_compute_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_compute_name(input);
         self
     }
-    /// <p>The unique identifier of the compute resource to retrieve properties for. For an Anywhere fleet compute, use the registered compute name. For an EC2 fleet instance, use the instance ID. For a container fleet, use the compute name (for example, <code>a123b456c789012d3e4567f8a901b23c/1a234b56-7cd8-9e0f-a1b2-c34d567ef8a9</code>) or the compute ARN.</p>
+    /// <p>The unique identifier of the compute resource to retrieve properties for. For an Anywhere fleet compute, use the registered compute name. For an EC2 fleet instance, use the instance ID.</p>
     pub fn get_compute_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_compute_name()
     }

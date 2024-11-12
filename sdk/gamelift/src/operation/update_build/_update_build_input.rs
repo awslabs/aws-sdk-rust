@@ -5,9 +5,9 @@
 pub struct UpdateBuildInput {
     /// <p>A unique identifier for the build to update. You can use either the build ID or ARN value.</p>
     pub build_id: ::std::option::Option<::std::string::String>,
-    /// <p>A descriptive label associated with a build. Build names don't need to be unique.</p>
+    /// <p>A descriptive label that is associated with a build. Build names do not need to be unique.</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>Version information associated with a build or script. Version strings don't need to be unique.</p>
+    /// <p>Version information that is associated with a build or script. Version strings do not need to be unique.</p>
     pub version: ::std::option::Option<::std::string::String>,
 }
 impl UpdateBuildInput {
@@ -15,11 +15,11 @@ impl UpdateBuildInput {
     pub fn build_id(&self) -> ::std::option::Option<&str> {
         self.build_id.as_deref()
     }
-    /// <p>A descriptive label associated with a build. Build names don't need to be unique.</p>
+    /// <p>A descriptive label that is associated with a build. Build names do not need to be unique.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>Version information associated with a build or script. Version strings don't need to be unique.</p>
+    /// <p>Version information that is associated with a build or script. Version strings do not need to be unique.</p>
     pub fn version(&self) -> ::std::option::Option<&str> {
         self.version.as_deref()
     }
@@ -55,31 +55,31 @@ impl UpdateBuildInputBuilder {
     pub fn get_build_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.build_id
     }
-    /// <p>A descriptive label associated with a build. Build names don't need to be unique.</p>
+    /// <p>A descriptive label that is associated with a build. Build names do not need to be unique.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A descriptive label associated with a build. Build names don't need to be unique.</p>
+    /// <p>A descriptive label that is associated with a build. Build names do not need to be unique.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p>A descriptive label associated with a build. Build names don't need to be unique.</p>
+    /// <p>A descriptive label that is associated with a build. Build names do not need to be unique.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>Version information associated with a build or script. Version strings don't need to be unique.</p>
+    /// <p>Version information that is associated with a build or script. Version strings do not need to be unique.</p>
     pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Version information associated with a build or script. Version strings don't need to be unique.</p>
+    /// <p>Version information that is associated with a build or script. Version strings do not need to be unique.</p>
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version = input;
         self
     }
-    /// <p>Version information associated with a build or script. Version strings don't need to be unique.</p>
+    /// <p>Version information that is associated with a build or script. Version strings do not need to be unique.</p>
     pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.version
     }

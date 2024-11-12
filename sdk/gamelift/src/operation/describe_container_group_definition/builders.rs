@@ -22,9 +22,16 @@ impl crate::operation::describe_container_group_definition::builders::DescribeCo
 }
 /// Fluent builder constructing a request to `DescribeContainerGroupDefinition`.
 ///
-/// <p><b>This operation is used with the Amazon GameLift containers feature, which is currently in public preview. </b></p>
 /// <p>Retrieves the properties of a container group definition, including all container definitions in the group.</p>
-/// <p>To retrieve a container group definition, provide a resource identifier. If successful, this operation returns the complete properties of the container group definition.</p>
+/// <p><b>Request options:</b></p>
+/// <ul>
+/// <li>
+/// <p>Retrieve the latest version of a container group definition. Specify the container group definition name only, or use an ARN value without a version number.</p></li>
+/// <li>
+/// <p>Retrieve a particular version. Specify the container group definition name and a version number, or use an ARN value that includes the version number.</p></li>
+/// </ul>
+/// <p><b>Results:</b></p>
+/// <p>If successful, this operation returns the complete properties of a container group definition version.</p>
 /// <p><b>Learn more</b></p>
 /// <ul>
 /// <li>
@@ -128,5 +135,19 @@ impl DescribeContainerGroupDefinitionFluentBuilder {
     /// <p>The unique identifier for the container group definition to retrieve properties for. You can use either the <code>Name</code> or <code>ARN</code> value.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
+    }
+    /// <p>The specific version to retrieve.</p>
+    pub fn version_number(mut self, input: i32) -> Self {
+        self.inner = self.inner.version_number(input);
+        self
+    }
+    /// <p>The specific version to retrieve.</p>
+    pub fn set_version_number(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.inner = self.inner.set_version_number(input);
+        self
+    }
+    /// <p>The specific version to retrieve.</p>
+    pub fn get_version_number(&self) -> &::std::option::Option<i32> {
+        self.inner.get_version_number()
     }
 }

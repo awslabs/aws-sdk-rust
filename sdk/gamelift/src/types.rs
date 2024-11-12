@@ -67,6 +67,66 @@ pub use crate::types::_anywhere_configuration::AnywhereConfiguration;
 
 pub use crate::types::_resource_creation_limit_policy::ResourceCreationLimitPolicy;
 
+pub use crate::types::_container_group_definition::ContainerGroupDefinition;
+
+pub use crate::types::_container_group_definition_status::ContainerGroupDefinitionStatus;
+
+pub use crate::types::_support_container_definition::SupportContainerDefinition;
+
+pub use crate::types::_container_port_configuration::ContainerPortConfiguration;
+
+pub use crate::types::_container_port_range::ContainerPortRange;
+
+pub use crate::types::_container_health_check::ContainerHealthCheck;
+
+pub use crate::types::_container_environment::ContainerEnvironment;
+
+pub use crate::types::_container_mount_point::ContainerMountPoint;
+
+pub use crate::types::_container_mount_point_access_level::ContainerMountPointAccessLevel;
+
+pub use crate::types::_container_dependency::ContainerDependency;
+
+pub use crate::types::_container_dependency_condition::ContainerDependencyCondition;
+
+pub use crate::types::_game_server_container_definition::GameServerContainerDefinition;
+
+pub use crate::types::_container_group_type::ContainerGroupType;
+
+pub use crate::types::_container_operating_system::ContainerOperatingSystem;
+
+pub use crate::types::_support_container_definition_input::SupportContainerDefinitionInput;
+
+pub use crate::types::_game_server_container_definition_input::GameServerContainerDefinitionInput;
+
+pub use crate::types::_container_fleet::ContainerFleet;
+
+pub use crate::types::_container_fleet_location_attributes::ContainerFleetLocationAttributes;
+
+pub use crate::types::_container_fleet_location_status::ContainerFleetLocationStatus;
+
+pub use crate::types::_log_configuration::LogConfiguration;
+
+pub use crate::types::_log_destination::LogDestination;
+
+pub use crate::types::_deployment_details::DeploymentDetails;
+
+pub use crate::types::_container_fleet_status::ContainerFleetStatus;
+
+pub use crate::types::_game_session_creation_limit_policy::GameSessionCreationLimitPolicy;
+
+pub use crate::types::_container_fleet_billing_type::ContainerFleetBillingType;
+
+pub use crate::types::_connection_port_range::ConnectionPortRange;
+
+pub use crate::types::_container_fleet_remove_attribute::ContainerFleetRemoveAttribute;
+
+pub use crate::types::_deployment_configuration::DeploymentConfiguration;
+
+pub use crate::types::_deployment_impairment_strategy::DeploymentImpairmentStrategy;
+
+pub use crate::types::_deployment_protection_strategy::DeploymentProtectionStrategy;
+
 pub use crate::types::_build::Build;
 
 pub use crate::types::_operating_system::OperatingSystem;
@@ -109,9 +169,7 @@ pub use crate::types::_aws_credentials::AwsCredentials;
 
 pub use crate::types::_compute::Compute;
 
-pub use crate::types::_container_attributes::ContainerAttributes;
-
-pub use crate::types::_container_port_mapping::ContainerPortMapping;
+pub use crate::types::_container_attribute::ContainerAttribute;
 
 pub use crate::types::_ec2_instance_type::Ec2InstanceType;
 
@@ -133,33 +191,17 @@ pub use crate::types::_location_filter::LocationFilter;
 
 pub use crate::types::_sort_order::SortOrder;
 
-pub use crate::types::_container_group_definition::ContainerGroupDefinition;
+pub use crate::types::_fleet_deployment::FleetDeployment;
 
-pub use crate::types::_container_group_definition_status::ContainerGroupDefinitionStatus;
+pub use crate::types::_deployment_status::DeploymentStatus;
 
-pub use crate::types::_container_definition::ContainerDefinition;
-
-pub use crate::types::_container_dependency::ContainerDependency;
-
-pub use crate::types::_container_dependency_condition::ContainerDependencyCondition;
-
-pub use crate::types::_container_environment::ContainerEnvironment;
-
-pub use crate::types::_container_health_check::ContainerHealthCheck;
-
-pub use crate::types::_container_port_configuration::ContainerPortConfiguration;
-
-pub use crate::types::_container_port_range::ContainerPortRange;
-
-pub use crate::types::_container_memory_limits::ContainerMemoryLimits;
-
-pub use crate::types::_container_scheduling_strategy::ContainerSchedulingStrategy;
-
-pub use crate::types::_container_operating_system::ContainerOperatingSystem;
+pub use crate::types::_list_compute_input_status::ListComputeInputStatus;
 
 pub use crate::types::_instance_access::InstanceAccess;
 
 pub use crate::types::_instance_credentials::InstanceCredentials;
+
+pub use crate::types::_container_identifier::ContainerIdentifier;
 
 pub use crate::types::_vpc_peering_connection::VpcPeeringConnection;
 
@@ -193,7 +235,7 @@ pub use crate::types::_fleet_utilization::FleetUtilization;
 
 pub use crate::types::_fleet_capacity::FleetCapacity;
 
-pub use crate::types::_replica_container_group_counts::ReplicaContainerGroupCounts;
+pub use crate::types::_game_server_container_group_counts::GameServerContainerGroupCounts;
 
 pub use crate::types::_ec2_instance_counts::Ec2InstanceCounts;
 
@@ -207,15 +249,9 @@ pub use crate::types::_event::Event;
 
 pub use crate::types::_event_code::EventCode;
 
+pub use crate::types::_locational_deployment::LocationalDeployment;
+
 pub use crate::types::_fleet_attributes::FleetAttributes;
-
-pub use crate::types::_container_groups_attributes::ContainerGroupsAttributes;
-
-pub use crate::types::_container_groups_per_instance::ContainerGroupsPerInstance;
-
-pub use crate::types::_connection_port_range::ConnectionPortRange;
-
-pub use crate::types::_container_group_definition_property::ContainerGroupDefinitionProperty;
 
 pub use crate::types::_instance_role_credentials_provider::InstanceRoleCredentialsProvider;
 
@@ -238,10 +274,6 @@ pub use crate::types::_target_tracking_configuration::TargetTrackingConfiguratio
 pub use crate::types::_launch_template_specification::LaunchTemplateSpecification;
 
 pub use crate::types::_location_configuration::LocationConfiguration;
-
-pub use crate::types::_container_groups_configuration::ContainerGroupsConfiguration;
-
-pub use crate::types::_container_definition_input::ContainerDefinitionInput;
 
 pub use crate::types::_claim_filter_option::ClaimFilterOption;
 
@@ -283,11 +315,7 @@ mod _compute_type;
 
 mod _connection_port_range;
 
-mod _container_attributes;
-
-mod _container_definition;
-
-mod _container_definition_input;
+mod _container_attribute;
 
 mod _container_dependency;
 
@@ -295,31 +323,47 @@ mod _container_dependency_condition;
 
 mod _container_environment;
 
-mod _container_group_definition;
+mod _container_fleet;
 
-mod _container_group_definition_property;
+mod _container_fleet_billing_type;
+
+mod _container_fleet_location_attributes;
+
+mod _container_fleet_location_status;
+
+mod _container_fleet_remove_attribute;
+
+mod _container_fleet_status;
+
+mod _container_group_definition;
 
 mod _container_group_definition_status;
 
-mod _container_groups_attributes;
-
-mod _container_groups_configuration;
-
-mod _container_groups_per_instance;
+mod _container_group_type;
 
 mod _container_health_check;
 
-mod _container_memory_limits;
+mod _container_identifier;
+
+mod _container_mount_point;
+
+mod _container_mount_point_access_level;
 
 mod _container_operating_system;
 
 mod _container_port_configuration;
 
-mod _container_port_mapping;
-
 mod _container_port_range;
 
-mod _container_scheduling_strategy;
+mod _deployment_configuration;
+
+mod _deployment_details;
+
+mod _deployment_impairment_strategy;
+
+mod _deployment_protection_strategy;
+
+mod _deployment_status;
 
 mod _desired_player_session;
 
@@ -343,6 +387,8 @@ mod _fleet_attributes;
 
 mod _fleet_capacity;
 
+mod _fleet_deployment;
+
 mod _fleet_status;
 
 mod _fleet_type;
@@ -356,6 +402,12 @@ mod _game_property;
 mod _game_server;
 
 mod _game_server_claim_status;
+
+mod _game_server_container_definition;
+
+mod _game_server_container_definition_input;
+
+mod _game_server_container_group_counts;
 
 mod _game_server_group;
 
@@ -382,6 +434,8 @@ mod _game_server_utilization_status;
 mod _game_session;
 
 mod _game_session_connection_info;
+
+mod _game_session_creation_limit_policy;
 
 mod _game_session_detail;
 
@@ -415,6 +469,8 @@ mod _ip_protocol;
 
 mod _launch_template_specification;
 
+mod _list_compute_input_status;
+
 mod _location_attributes;
 
 mod _location_configuration;
@@ -426,6 +482,12 @@ mod _location_model;
 mod _location_state;
 
 mod _location_update_status;
+
+mod _locational_deployment;
+
+mod _log_configuration;
+
+mod _log_destination;
 
 mod _matched_player_session;
 
@@ -463,8 +525,6 @@ mod _priority_type;
 
 mod _protection_policy;
 
-mod _replica_container_group_counts;
-
 mod _resource_creation_limit_policy;
 
 mod _routing_strategy;
@@ -486,6 +546,10 @@ mod _script;
 mod _server_process;
 
 mod _sort_order;
+
+mod _support_container_definition;
+
+mod _support_container_definition_input;
 
 mod _tag;
 

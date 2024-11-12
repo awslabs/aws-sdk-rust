@@ -22,8 +22,17 @@ impl crate::operation::list_container_group_definitions::builders::ListContainer
 }
 /// Fluent builder constructing a request to `ListContainerGroupDefinitions`.
 ///
-/// <p><b>This operation is used with the Amazon GameLift containers feature, which is currently in public preview. </b></p>
-/// <p>Retrieves all container group definitions for the Amazon Web Services account and Amazon Web Services Region that are currently in use. You can filter the result set by the container groups' scheduling strategy. Use the pagination parameters to retrieve results in a set of sequential pages.</p><note>
+/// <p>Retrieves container group definitions for the Amazon Web Services account and Amazon Web Services Region. Use the pagination parameters to retrieve results in a set of sequential pages.</p>
+/// <p>This operation returns only the latest version of each definition. To retrieve all versions of a container group definition, use <code>ListContainerGroupDefinitionVersions</code>.</p>
+/// <p><b>Request options:</b></p>
+/// <ul>
+/// <li>
+/// <p>Retrieve the most recent versions of all container group definitions.</p></li>
+/// <li>
+/// <p>Retrieve the most recent versions of all container group definitions, filtered by type. Specify the container group type to filter on.</p></li>
+/// </ul>
+/// <p><b>Results:</b></p>
+/// <p>If successful, this operation returns the complete properties of a set of container group definition versions that match the request.</p><note>
 /// <p>This operation returns the list of container group definitions in no particular order.</p>
 /// </note>
 /// <p><b>Learn more</b></p>
@@ -122,37 +131,19 @@ impl ListContainerGroupDefinitionsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_container_group_definitions::paginator::ListContainerGroupDefinitionsPaginator {
         crate::operation::list_container_group_definitions::paginator::ListContainerGroupDefinitionsPaginator::new(self.handle, self.inner)
     }
-    /// <p>The type of container group definitions to retrieve.</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>DAEMON</code> -- Daemon container groups run background processes and are deployed once per fleet instance.</p></li>
-    /// <li>
-    /// <p><code>REPLICA</code> -- Replica container groups run your game server application and supporting software. Replica groups might be deployed multiple times per fleet instance.</p></li>
-    /// </ul>
-    pub fn scheduling_strategy(mut self, input: crate::types::ContainerSchedulingStrategy) -> Self {
-        self.inner = self.inner.scheduling_strategy(input);
+    /// <p>The type of container group to retrieve. Container group type determines how Amazon GameLift deploys the container group on each fleet instance.</p>
+    pub fn container_group_type(mut self, input: crate::types::ContainerGroupType) -> Self {
+        self.inner = self.inner.container_group_type(input);
         self
     }
-    /// <p>The type of container group definitions to retrieve.</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>DAEMON</code> -- Daemon container groups run background processes and are deployed once per fleet instance.</p></li>
-    /// <li>
-    /// <p><code>REPLICA</code> -- Replica container groups run your game server application and supporting software. Replica groups might be deployed multiple times per fleet instance.</p></li>
-    /// </ul>
-    pub fn set_scheduling_strategy(mut self, input: ::std::option::Option<crate::types::ContainerSchedulingStrategy>) -> Self {
-        self.inner = self.inner.set_scheduling_strategy(input);
+    /// <p>The type of container group to retrieve. Container group type determines how Amazon GameLift deploys the container group on each fleet instance.</p>
+    pub fn set_container_group_type(mut self, input: ::std::option::Option<crate::types::ContainerGroupType>) -> Self {
+        self.inner = self.inner.set_container_group_type(input);
         self
     }
-    /// <p>The type of container group definitions to retrieve.</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>DAEMON</code> -- Daemon container groups run background processes and are deployed once per fleet instance.</p></li>
-    /// <li>
-    /// <p><code>REPLICA</code> -- Replica container groups run your game server application and supporting software. Replica groups might be deployed multiple times per fleet instance.</p></li>
-    /// </ul>
-    pub fn get_scheduling_strategy(&self) -> &::std::option::Option<crate::types::ContainerSchedulingStrategy> {
-        self.inner.get_scheduling_strategy()
+    /// <p>The type of container group to retrieve. Container group type determines how Amazon GameLift deploys the container group on each fleet instance.</p>
+    pub fn get_container_group_type(&self) -> &::std::option::Option<crate::types::ContainerGroupType> {
+        self.inner.get_container_group_type()
     }
     /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
     pub fn limit(mut self, input: i32) -> Self {

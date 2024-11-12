@@ -210,6 +210,44 @@ impl From<crate::operation::create_build::CreateBuildError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_container_fleet::CreateContainerFleetError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_container_fleet::CreateContainerFleetError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_container_fleet::CreateContainerFleetError> for Error {
+    fn from(err: crate::operation::create_container_fleet::CreateContainerFleetError) -> Self {
+        match err {
+            crate::operation::create_container_fleet::CreateContainerFleetError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_container_fleet::CreateContainerFleetError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::create_container_fleet::CreateContainerFleetError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::create_container_fleet::CreateContainerFleetError::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::operation::create_container_fleet::CreateContainerFleetError::TaggingFailedException(inner) => {
+                Error::TaggingFailedException(inner)
+            }
+            crate::operation::create_container_fleet::CreateContainerFleetError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::create_container_fleet::CreateContainerFleetError::UnsupportedRegionException(inner) => {
+                Error::UnsupportedRegionException(inner)
+            }
+            crate::operation::create_container_fleet::CreateContainerFleetError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<
@@ -798,6 +836,41 @@ impl From<crate::operation::delete_build::DeleteBuildError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_container_fleet::DeleteContainerFleetError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_container_fleet::DeleteContainerFleetError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_container_fleet::DeleteContainerFleetError> for Error {
+    fn from(err: crate::operation::delete_container_fleet::DeleteContainerFleetError) -> Self {
+        match err {
+            crate::operation::delete_container_fleet::DeleteContainerFleetError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::delete_container_fleet::DeleteContainerFleetError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::delete_container_fleet::DeleteContainerFleetError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::delete_container_fleet::DeleteContainerFleetError::TaggingFailedException(inner) => {
+                Error::TaggingFailedException(inner)
+            }
+            crate::operation::delete_container_fleet::DeleteContainerFleetError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::delete_container_fleet::DeleteContainerFleetError::UnsupportedRegionException(inner) => {
+                Error::UnsupportedRegionException(inner)
+            }
+            crate::operation::delete_container_fleet::DeleteContainerFleetError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<
@@ -1111,6 +1184,9 @@ impl From<crate::operation::delete_scaling_policy::DeleteScalingPolicyError> for
             }
             crate::operation::delete_scaling_policy::DeleteScalingPolicyError::NotFoundException(inner) => Error::NotFoundException(inner),
             crate::operation::delete_scaling_policy::DeleteScalingPolicyError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::delete_scaling_policy::DeleteScalingPolicyError::UnsupportedRegionException(inner) => {
+                Error::UnsupportedRegionException(inner)
+            }
             crate::operation::delete_scaling_policy::DeleteScalingPolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -1343,7 +1419,44 @@ impl From<crate::operation::describe_compute::DescribeComputeError> for Error {
             crate::operation::describe_compute::DescribeComputeError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
             crate::operation::describe_compute::DescribeComputeError::NotFoundException(inner) => Error::NotFoundException(inner),
             crate::operation::describe_compute::DescribeComputeError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::describe_compute::DescribeComputeError::UnsupportedRegionException(inner) => Error::UnsupportedRegionException(inner),
             crate::operation::describe_compute::DescribeComputeError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_container_fleet::DescribeContainerFleetError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_container_fleet::DescribeContainerFleetError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_container_fleet::DescribeContainerFleetError> for Error {
+    fn from(err: crate::operation::describe_container_fleet::DescribeContainerFleetError) -> Self {
+        match err {
+            crate::operation::describe_container_fleet::DescribeContainerFleetError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::describe_container_fleet::DescribeContainerFleetError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::describe_container_fleet::DescribeContainerFleetError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::describe_container_fleet::DescribeContainerFleetError::UnauthorizedException(inner) => {
+                Error::UnauthorizedException(inner)
+            }
+            crate::operation::describe_container_fleet::DescribeContainerFleetError::UnsupportedRegionException(inner) => {
+                Error::UnsupportedRegionException(inner)
+            }
+            crate::operation::describe_container_fleet::DescribeContainerFleetError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1493,7 +1606,47 @@ impl From<crate::operation::describe_fleet_capacity::DescribeFleetCapacityError>
             crate::operation::describe_fleet_capacity::DescribeFleetCapacityError::UnauthorizedException(inner) => {
                 Error::UnauthorizedException(inner)
             }
+            crate::operation::describe_fleet_capacity::DescribeFleetCapacityError::UnsupportedRegionException(inner) => {
+                Error::UnsupportedRegionException(inner)
+            }
             crate::operation::describe_fleet_capacity::DescribeFleetCapacityError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_fleet_deployment::DescribeFleetDeploymentError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_fleet_deployment::DescribeFleetDeploymentError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_fleet_deployment::DescribeFleetDeploymentError> for Error {
+    fn from(err: crate::operation::describe_fleet_deployment::DescribeFleetDeploymentError) -> Self {
+        match err {
+            crate::operation::describe_fleet_deployment::DescribeFleetDeploymentError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::describe_fleet_deployment::DescribeFleetDeploymentError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::describe_fleet_deployment::DescribeFleetDeploymentError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::describe_fleet_deployment::DescribeFleetDeploymentError::UnauthorizedException(inner) => {
+                Error::UnauthorizedException(inner)
+            }
+            crate::operation::describe_fleet_deployment::DescribeFleetDeploymentError::UnsupportedRegionException(inner) => {
+                Error::UnsupportedRegionException(inner)
+            }
+            crate::operation::describe_fleet_deployment::DescribeFleetDeploymentError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1522,6 +1675,9 @@ impl From<crate::operation::describe_fleet_events::DescribeFleetEventsError> for
             }
             crate::operation::describe_fleet_events::DescribeFleetEventsError::NotFoundException(inner) => Error::NotFoundException(inner),
             crate::operation::describe_fleet_events::DescribeFleetEventsError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::describe_fleet_events::DescribeFleetEventsError::UnsupportedRegionException(inner) => {
+                Error::UnsupportedRegionException(inner)
+            }
             crate::operation::describe_fleet_events::DescribeFleetEventsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -2368,6 +2524,9 @@ impl From<crate::operation::get_compute_access::GetComputeAccessError> for Error
             crate::operation::get_compute_access::GetComputeAccessError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
             crate::operation::get_compute_access::GetComputeAccessError::NotFoundException(inner) => Error::NotFoundException(inner),
             crate::operation::get_compute_access::GetComputeAccessError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::get_compute_access::GetComputeAccessError::UnsupportedRegionException(inner) => {
+                Error::UnsupportedRegionException(inner)
+            }
             crate::operation::get_compute_access::GetComputeAccessError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -2397,6 +2556,9 @@ impl From<crate::operation::get_compute_auth_token::GetComputeAuthTokenError> fo
             }
             crate::operation::get_compute_auth_token::GetComputeAuthTokenError::NotFoundException(inner) => Error::NotFoundException(inner),
             crate::operation::get_compute_auth_token::GetComputeAuthTokenError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::get_compute_auth_token::GetComputeAuthTokenError::UnsupportedRegionException(inner) => {
+                Error::UnsupportedRegionException(inner)
+            }
             crate::operation::get_compute_auth_token::GetComputeAuthTokenError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -2527,7 +2689,39 @@ impl From<crate::operation::list_compute::ListComputeError> for Error {
             crate::operation::list_compute::ListComputeError::InternalServiceException(inner) => Error::InternalServiceException(inner),
             crate::operation::list_compute::ListComputeError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
             crate::operation::list_compute::ListComputeError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::list_compute::ListComputeError::UnsupportedRegionException(inner) => Error::UnsupportedRegionException(inner),
             crate::operation::list_compute::ListComputeError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_container_fleets::ListContainerFleetsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_container_fleets::ListContainerFleetsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_container_fleets::ListContainerFleetsError> for Error {
+    fn from(err: crate::operation::list_container_fleets::ListContainerFleetsError) -> Self {
+        match err {
+            crate::operation::list_container_fleets::ListContainerFleetsError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::list_container_fleets::ListContainerFleetsError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::list_container_fleets::ListContainerFleetsError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::list_container_fleets::ListContainerFleetsError::UnsupportedRegionException(inner) => {
+                Error::UnsupportedRegionException(inner)
+            }
+            crate::operation::list_container_fleets::ListContainerFleetsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2569,6 +2763,87 @@ impl From<crate::operation::list_container_group_definitions::ListContainerGroup
                 Error::UnsupportedRegionException(inner)
             }
             crate::operation::list_container_group_definitions::ListContainerGroupDefinitionsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_container_group_definition_versions::ListContainerGroupDefinitionVersionsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_container_group_definition_versions::ListContainerGroupDefinitionVersionsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_container_group_definition_versions::ListContainerGroupDefinitionVersionsError> for Error {
+    fn from(err: crate::operation::list_container_group_definition_versions::ListContainerGroupDefinitionVersionsError) -> Self {
+        match err {
+            crate::operation::list_container_group_definition_versions::ListContainerGroupDefinitionVersionsError::InternalServiceException(
+                inner,
+            ) => Error::InternalServiceException(inner),
+            crate::operation::list_container_group_definition_versions::ListContainerGroupDefinitionVersionsError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::list_container_group_definition_versions::ListContainerGroupDefinitionVersionsError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::list_container_group_definition_versions::ListContainerGroupDefinitionVersionsError::UnauthorizedException(inner) => {
+                Error::UnauthorizedException(inner)
+            }
+            crate::operation::list_container_group_definition_versions::ListContainerGroupDefinitionVersionsError::UnsupportedRegionException(
+                inner,
+            ) => Error::UnsupportedRegionException(inner),
+            crate::operation::list_container_group_definition_versions::ListContainerGroupDefinitionVersionsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_fleet_deployments::ListFleetDeploymentsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_fleet_deployments::ListFleetDeploymentsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_fleet_deployments::ListFleetDeploymentsError> for Error {
+    fn from(err: crate::operation::list_fleet_deployments::ListFleetDeploymentsError) -> Self {
+        match err {
+            crate::operation::list_fleet_deployments::ListFleetDeploymentsError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::list_fleet_deployments::ListFleetDeploymentsError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::list_fleet_deployments::ListFleetDeploymentsError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::list_fleet_deployments::ListFleetDeploymentsError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::list_fleet_deployments::ListFleetDeploymentsError::UnsupportedRegionException(inner) => {
+                Error::UnsupportedRegionException(inner)
+            }
+            crate::operation::list_fleet_deployments::ListFleetDeploymentsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2724,6 +2999,9 @@ impl From<crate::operation::list_tags_for_resource::ListTagsForResourceError> fo
             }
             crate::operation::list_tags_for_resource::ListTagsForResourceError::NotFoundException(inner) => Error::NotFoundException(inner),
             crate::operation::list_tags_for_resource::ListTagsForResourceError::TaggingFailedException(inner) => Error::TaggingFailedException(inner),
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::UnsupportedRegionException(inner) => {
+                Error::UnsupportedRegionException(inner)
+            }
             crate::operation::list_tags_for_resource::ListTagsForResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -2749,6 +3027,9 @@ impl From<crate::operation::put_scaling_policy::PutScalingPolicyError> for Error
             crate::operation::put_scaling_policy::PutScalingPolicyError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
             crate::operation::put_scaling_policy::PutScalingPolicyError::NotFoundException(inner) => Error::NotFoundException(inner),
             crate::operation::put_scaling_policy::PutScalingPolicyError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::put_scaling_policy::PutScalingPolicyError::UnsupportedRegionException(inner) => {
+                Error::UnsupportedRegionException(inner)
+            }
             crate::operation::put_scaling_policy::PutScalingPolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -3196,6 +3477,7 @@ impl From<crate::operation::tag_resource::TagResourceError> for Error {
             crate::operation::tag_resource::TagResourceError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
             crate::operation::tag_resource::TagResourceError::NotFoundException(inner) => Error::NotFoundException(inner),
             crate::operation::tag_resource::TagResourceError::TaggingFailedException(inner) => Error::TaggingFailedException(inner),
+            crate::operation::tag_resource::TagResourceError::UnsupportedRegionException(inner) => Error::UnsupportedRegionException(inner),
             crate::operation::tag_resource::TagResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -3221,6 +3503,7 @@ impl From<crate::operation::untag_resource::UntagResourceError> for Error {
             crate::operation::untag_resource::UntagResourceError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
             crate::operation::untag_resource::UntagResourceError::NotFoundException(inner) => Error::NotFoundException(inner),
             crate::operation::untag_resource::UntagResourceError::TaggingFailedException(inner) => Error::TaggingFailedException(inner),
+            crate::operation::untag_resource::UntagResourceError::UnsupportedRegionException(inner) => Error::UnsupportedRegionException(inner),
             crate::operation::untag_resource::UntagResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -3272,6 +3555,92 @@ impl From<crate::operation::update_build::UpdateBuildError> for Error {
             crate::operation::update_build::UpdateBuildError::NotFoundException(inner) => Error::NotFoundException(inner),
             crate::operation::update_build::UpdateBuildError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
             crate::operation::update_build::UpdateBuildError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_container_fleet::UpdateContainerFleetError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_container_fleet::UpdateContainerFleetError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_container_fleet::UpdateContainerFleetError> for Error {
+    fn from(err: crate::operation::update_container_fleet::UpdateContainerFleetError) -> Self {
+        match err {
+            crate::operation::update_container_fleet::UpdateContainerFleetError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::update_container_fleet::UpdateContainerFleetError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::update_container_fleet::UpdateContainerFleetError::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::operation::update_container_fleet::UpdateContainerFleetError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::update_container_fleet::UpdateContainerFleetError::NotReadyException(inner) => Error::NotReadyException(inner),
+            crate::operation::update_container_fleet::UpdateContainerFleetError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::update_container_fleet::UpdateContainerFleetError::UnsupportedRegionException(inner) => {
+                Error::UnsupportedRegionException(inner)
+            }
+            crate::operation::update_container_fleet::UpdateContainerFleetError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_container_group_definition::UpdateContainerGroupDefinitionError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_container_group_definition::UpdateContainerGroupDefinitionError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_container_group_definition::UpdateContainerGroupDefinitionError> for Error {
+    fn from(err: crate::operation::update_container_group_definition::UpdateContainerGroupDefinitionError) -> Self {
+        match err {
+            crate::operation::update_container_group_definition::UpdateContainerGroupDefinitionError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::update_container_group_definition::UpdateContainerGroupDefinitionError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::update_container_group_definition::UpdateContainerGroupDefinitionError::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::operation::update_container_group_definition::UpdateContainerGroupDefinitionError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::update_container_group_definition::UpdateContainerGroupDefinitionError::UnauthorizedException(inner) => {
+                Error::UnauthorizedException(inner)
+            }
+            crate::operation::update_container_group_definition::UpdateContainerGroupDefinitionError::UnsupportedRegionException(inner) => {
+                Error::UnsupportedRegionException(inner)
+            }
+            crate::operation::update_container_group_definition::UpdateContainerGroupDefinitionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

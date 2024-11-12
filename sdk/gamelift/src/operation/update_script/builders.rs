@@ -129,31 +129,31 @@ impl UpdateScriptFluentBuilder {
     pub fn get_script_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_script_id()
     }
-    /// <p>A descriptive label that is associated with a script. Script names don't need to be unique.</p>
+    /// <p>A descriptive label that is associated with a script. Script names do not need to be unique.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
-    /// <p>A descriptive label that is associated with a script. Script names don't need to be unique.</p>
+    /// <p>A descriptive label that is associated with a script. Script names do not need to be unique.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
-    /// <p>A descriptive label that is associated with a script. Script names don't need to be unique.</p>
+    /// <p>A descriptive label that is associated with a script. Script names do not need to be unique.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
-    /// <p>Version information associated with a build or script. Version strings don't need to be unique.</p>
+    /// <p>Version information that is associated with a build or script. Version strings do not need to be unique.</p>
     pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.version(input.into());
         self
     }
-    /// <p>Version information associated with a build or script. Version strings don't need to be unique.</p>
+    /// <p>Version information that is associated with a build or script. Version strings do not need to be unique.</p>
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_version(input);
         self
     }
-    /// <p>Version information associated with a build or script. Version strings don't need to be unique.</p>
+    /// <p>Version information that is associated with a build or script. Version strings do not need to be unique.</p>
     pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_version()
     }

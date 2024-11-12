@@ -31,6 +31,8 @@ pub(crate) mod shape_create_alias;
 
 pub(crate) mod shape_create_build;
 
+pub(crate) mod shape_create_container_fleet;
+
 pub(crate) mod shape_create_container_group_definition;
 
 pub(crate) mod shape_create_fleet;
@@ -62,6 +64,8 @@ pub(crate) mod shape_create_vpc_peering_connection;
 pub(crate) mod shape_delete_alias;
 
 pub(crate) mod shape_delete_build;
+
+pub(crate) mod shape_delete_container_fleet;
 
 pub(crate) mod shape_delete_container_group_definition;
 
@@ -97,6 +101,8 @@ pub(crate) mod shape_describe_build;
 
 pub(crate) mod shape_describe_compute;
 
+pub(crate) mod shape_describe_container_fleet;
+
 pub(crate) mod shape_describe_container_group_definition;
 
 pub(crate) mod shape_describe_ec2_instance_limits;
@@ -104,6 +110,8 @@ pub(crate) mod shape_describe_ec2_instance_limits;
 pub(crate) mod shape_describe_fleet_attributes;
 
 pub(crate) mod shape_describe_fleet_capacity;
+
+pub(crate) mod shape_describe_fleet_deployment;
 
 pub(crate) mod shape_describe_fleet_events;
 
@@ -165,7 +173,13 @@ pub(crate) mod shape_list_builds;
 
 pub(crate) mod shape_list_compute;
 
+pub(crate) mod shape_list_container_fleets;
+
+pub(crate) mod shape_list_container_group_definition_versions;
+
 pub(crate) mod shape_list_container_group_definitions;
+
+pub(crate) mod shape_list_fleet_deployments;
 
 pub(crate) mod shape_list_fleets;
 
@@ -217,6 +231,10 @@ pub(crate) mod shape_update_alias;
 
 pub(crate) mod shape_update_build;
 
+pub(crate) mod shape_update_container_fleet;
+
+pub(crate) mod shape_update_container_group_definition;
+
 pub(crate) mod shape_update_fleet_attributes;
 
 pub(crate) mod shape_update_fleet_capacity;
@@ -257,6 +275,8 @@ pub(crate) mod shape_create_alias_input;
 
 pub(crate) mod shape_create_build_input;
 
+pub(crate) mod shape_create_container_fleet_input;
+
 pub(crate) mod shape_create_container_group_definition_input;
 
 pub(crate) mod shape_create_fleet_input;
@@ -288,6 +308,8 @@ pub(crate) mod shape_create_vpc_peering_connection_input;
 pub(crate) mod shape_delete_alias_input;
 
 pub(crate) mod shape_delete_build_input;
+
+pub(crate) mod shape_delete_container_fleet_input;
 
 pub(crate) mod shape_delete_container_group_definition_input;
 
@@ -323,6 +345,8 @@ pub(crate) mod shape_describe_build_input;
 
 pub(crate) mod shape_describe_compute_input;
 
+pub(crate) mod shape_describe_container_fleet_input;
+
 pub(crate) mod shape_describe_container_group_definition_input;
 
 pub(crate) mod shape_describe_ec2_instance_limits_input;
@@ -330,6 +354,8 @@ pub(crate) mod shape_describe_ec2_instance_limits_input;
 pub(crate) mod shape_describe_fleet_attributes_input;
 
 pub(crate) mod shape_describe_fleet_capacity_input;
+
+pub(crate) mod shape_describe_fleet_deployment_input;
 
 pub(crate) mod shape_describe_fleet_events_input;
 
@@ -405,7 +431,13 @@ pub(crate) mod shape_list_builds_input;
 
 pub(crate) mod shape_list_compute_input;
 
+pub(crate) mod shape_list_container_fleets_input;
+
+pub(crate) mod shape_list_container_group_definition_versions_input;
+
 pub(crate) mod shape_list_container_group_definitions_input;
+
+pub(crate) mod shape_list_fleet_deployments_input;
 
 pub(crate) mod shape_list_fleets_input;
 
@@ -471,6 +503,10 @@ pub(crate) mod shape_update_alias_input;
 
 pub(crate) mod shape_update_build_input;
 
+pub(crate) mod shape_update_container_fleet_input;
+
+pub(crate) mod shape_update_container_group_definition_input;
+
 pub(crate) mod shape_update_fleet_attributes_input;
 
 pub(crate) mod shape_update_fleet_capacity_input;
@@ -513,13 +549,19 @@ pub(crate) mod shape_compute;
 
 pub(crate) mod shape_compute_list;
 
-pub(crate) mod shape_container_definition_input;
+pub(crate) mod shape_connection_port_range;
+
+pub(crate) mod shape_container_fleet;
+
+pub(crate) mod shape_container_fleet_list;
 
 pub(crate) mod shape_container_group_definition;
 
 pub(crate) mod shape_container_group_definition_list;
 
-pub(crate) mod shape_container_groups_configuration;
+pub(crate) mod shape_container_identifier_list;
+
+pub(crate) mod shape_deployment_configuration;
 
 pub(crate) mod shape_desired_player_session;
 
@@ -537,6 +579,10 @@ pub(crate) mod shape_fleet_capacity;
 
 pub(crate) mod shape_fleet_capacity_list;
 
+pub(crate) mod shape_fleet_deployment;
+
+pub(crate) mod shape_fleet_deployments;
+
 pub(crate) mod shape_fleet_id_list;
 
 pub(crate) mod shape_fleet_utilization;
@@ -546,6 +592,8 @@ pub(crate) mod shape_fleet_utilization_list;
 pub(crate) mod shape_game_property;
 
 pub(crate) mod shape_game_server;
+
+pub(crate) mod shape_game_server_container_definition_input;
 
 pub(crate) mod shape_game_server_group;
 
@@ -558,6 +606,8 @@ pub(crate) mod shape_game_server_instances;
 pub(crate) mod shape_game_servers;
 
 pub(crate) mod shape_game_session;
+
+pub(crate) mod shape_game_session_creation_limit_policy;
 
 pub(crate) mod shape_game_session_detail_list;
 
@@ -592,6 +642,10 @@ pub(crate) mod shape_location_model;
 pub(crate) mod shape_location_model_list;
 
 pub(crate) mod shape_location_state_list;
+
+pub(crate) mod shape_locational_deployments;
+
+pub(crate) mod shape_log_configuration;
 
 pub(crate) mod shape_matchmaking_configuration;
 
@@ -631,6 +685,8 @@ pub(crate) mod shape_script;
 
 pub(crate) mod shape_script_list;
 
+pub(crate) mod shape_support_container_definition_input;
+
 pub(crate) mod shape_tag;
 
 pub(crate) mod shape_tag_list;
@@ -645,23 +701,23 @@ pub(crate) mod shape_vpc_peering_connection_list;
 
 pub(crate) mod shape_attribute_value;
 
-pub(crate) mod shape_connection_port_range;
-
 pub(crate) mod shape_container_attributes;
-
-pub(crate) mod shape_container_definition_list;
 
 pub(crate) mod shape_container_dependency;
 
 pub(crate) mod shape_container_environment;
 
-pub(crate) mod shape_container_groups_attributes;
+pub(crate) mod shape_container_fleet_location_attributes_list;
 
 pub(crate) mod shape_container_health_check;
 
-pub(crate) mod shape_container_memory_limits;
+pub(crate) mod shape_container_identifier;
+
+pub(crate) mod shape_container_mount_point;
 
 pub(crate) mod shape_container_port_configuration;
+
+pub(crate) mod shape_deployment_details;
 
 pub(crate) mod shape_ec2_instance_counts;
 
@@ -672,6 +728,10 @@ pub(crate) mod shape_event;
 pub(crate) mod shape_fleet_action_list;
 
 pub(crate) mod shape_game_property_list;
+
+pub(crate) mod shape_game_server_container_definition;
+
+pub(crate) mod shape_game_server_container_group_counts;
 
 pub(crate) mod shape_game_server_group_actions;
 
@@ -693,6 +753,8 @@ pub(crate) mod shape_location_attributes;
 
 pub(crate) mod shape_location_state;
 
+pub(crate) mod shape_locational_deployment;
+
 pub(crate) mod shape_metric_group_list;
 
 pub(crate) mod shape_placed_player_session_list;
@@ -705,8 +767,6 @@ pub(crate) mod shape_player_list;
 
 pub(crate) mod shape_queue_arns_list;
 
-pub(crate) mod shape_replica_container_group_counts;
-
 pub(crate) mod shape_scaling_policy;
 
 pub(crate) mod shape_server_process;
@@ -715,17 +775,21 @@ pub(crate) mod shape_server_process_list;
 
 pub(crate) mod shape_string_list;
 
+pub(crate) mod shape_support_container_definition_list;
+
 pub(crate) mod shape_target_tracking_configuration;
 
 pub(crate) mod shape_vpc_peering_connection;
 
-pub(crate) mod shape_container_definition;
+pub(crate) mod shape_container_attribute;
 
-pub(crate) mod shape_container_group_definition_properties_list;
+pub(crate) mod shape_container_dependency_list;
 
-pub(crate) mod shape_container_groups_per_instance;
+pub(crate) mod shape_container_environment_list;
 
-pub(crate) mod shape_container_port_mapping_list;
+pub(crate) mod shape_container_fleet_location_attributes;
+
+pub(crate) mod shape_container_mount_point_list;
 
 pub(crate) mod shape_container_port_range;
 
@@ -737,19 +801,11 @@ pub(crate) mod shape_placed_player_session;
 
 pub(crate) mod shape_priority_type_list;
 
+pub(crate) mod shape_support_container_definition;
+
 pub(crate) mod shape_vpc_peering_connection_status;
 
-pub(crate) mod shape_container_command_string_list;
-
-pub(crate) mod shape_container_dependency_list;
-
-pub(crate) mod shape_container_entry_point_list;
-
-pub(crate) mod shape_container_environment_list;
-
-pub(crate) mod shape_container_group_definition_property;
-
-pub(crate) mod shape_container_port_mapping;
+pub(crate) mod shape_container_port_range_list;
 
 pub(crate) mod shape_latency_map;
 
@@ -757,7 +813,7 @@ pub(crate) mod shape_matched_player_session;
 
 pub(crate) mod shape_player_attribute_map;
 
-pub(crate) mod shape_container_port_range_list;
+pub(crate) mod shape_container_command_string_list;
 
 pub(crate) mod shape_player_attribute_string_double_map;
 

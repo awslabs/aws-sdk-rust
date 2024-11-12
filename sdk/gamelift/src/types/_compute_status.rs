@@ -13,6 +13,7 @@
 /// # let computestatus = unimplemented!();
 /// match computestatus {
 ///     ComputeStatus::Active => { /* ... */ },
+///     ComputeStatus::Impaired => { /* ... */ },
 ///     ComputeStatus::Pending => { /* ... */ },
 ///     ComputeStatus::Terminating => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -45,6 +46,8 @@ pub enum ComputeStatus {
     #[allow(missing_docs)] // documentation missing in model
     Active,
     #[allow(missing_docs)] // documentation missing in model
+    Impaired,
+    #[allow(missing_docs)] // documentation missing in model
     Pending,
     #[allow(missing_docs)] // documentation missing in model
     Terminating,
@@ -56,6 +59,7 @@ impl ::std::convert::From<&str> for ComputeStatus {
     fn from(s: &str) -> Self {
         match s {
             "ACTIVE" => ComputeStatus::Active,
+            "IMPAIRED" => ComputeStatus::Impaired,
             "PENDING" => ComputeStatus::Pending,
             "TERMINATING" => ComputeStatus::Terminating,
             other => ComputeStatus::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -74,6 +78,7 @@ impl ComputeStatus {
     pub fn as_str(&self) -> &str {
         match self {
             ComputeStatus::Active => "ACTIVE",
+            ComputeStatus::Impaired => "IMPAIRED",
             ComputeStatus::Pending => "PENDING",
             ComputeStatus::Terminating => "TERMINATING",
             ComputeStatus::Unknown(value) => value.as_str(),
@@ -81,7 +86,7 @@ impl ComputeStatus {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ACTIVE", "PENDING", "TERMINATING"]
+        &["ACTIVE", "IMPAIRED", "PENDING", "TERMINATING"]
     }
 }
 impl ::std::convert::AsRef<str> for ComputeStatus {
@@ -105,6 +110,7 @@ impl ::std::fmt::Display for ComputeStatus {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ComputeStatus::Active => write!(f, "ACTIVE"),
+            ComputeStatus::Impaired => write!(f, "IMPAIRED"),
             ComputeStatus::Pending => write!(f, "PENDING"),
             ComputeStatus::Terminating => write!(f, "TERMINATING"),
             ComputeStatus::Unknown(value) => write!(f, "{}", value),

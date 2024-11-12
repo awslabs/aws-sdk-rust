@@ -684,6 +684,40 @@ impl From<crate::operation::reset_enabled_baseline::ResetEnabledBaselineError> f
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::reset_enabled_control::ResetEnabledControlError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::reset_enabled_control::ResetEnabledControlError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::reset_enabled_control::ResetEnabledControlError> for Error {
+    fn from(err: crate::operation::reset_enabled_control::ResetEnabledControlError) -> Self {
+        match err {
+            crate::operation::reset_enabled_control::ResetEnabledControlError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::reset_enabled_control::ResetEnabledControlError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::reset_enabled_control::ResetEnabledControlError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::reset_enabled_control::ResetEnabledControlError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::reset_enabled_control::ResetEnabledControlError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::reset_enabled_control::ResetEnabledControlError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::reset_enabled_control::ResetEnabledControlError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::reset_enabled_control::ResetEnabledControlError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::reset_landing_zone::ResetLandingZoneError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

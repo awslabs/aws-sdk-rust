@@ -65,6 +65,8 @@ pub(crate) mod shape_list_tags_for_resource;
 
 pub(crate) mod shape_reset_enabled_baseline;
 
+pub(crate) mod shape_reset_enabled_control;
+
 pub(crate) mod shape_reset_landing_zone;
 
 pub(crate) mod shape_tag_resource;
@@ -130,6 +132,8 @@ pub(crate) mod shape_list_landing_zone_operations_input;
 pub(crate) mod shape_list_landing_zones_input;
 
 pub(crate) mod shape_reset_enabled_baseline_input;
+
+pub(crate) mod shape_reset_enabled_control_input;
 
 pub(crate) mod shape_reset_landing_zone_input;
 

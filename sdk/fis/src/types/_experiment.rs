@@ -34,6 +34,10 @@ pub struct Experiment {
     pub experiment_options: ::std::option::Option<crate::types::ExperimentOptions>,
     /// <p>The count of target account configurations for the experiment.</p>
     pub target_account_configurations_count: ::std::option::Option<i64>,
+    /// <p>The experiment report configuration for the experiment.</p>
+    pub experiment_report_configuration: ::std::option::Option<crate::types::ExperimentReportConfiguration>,
+    /// <p>The experiment report for the experiment.</p>
+    pub experiment_report: ::std::option::Option<crate::types::ExperimentReport>,
 }
 impl Experiment {
     /// <p>The ID of the experiment.</p>
@@ -98,6 +102,14 @@ impl Experiment {
     pub fn target_account_configurations_count(&self) -> ::std::option::Option<i64> {
         self.target_account_configurations_count
     }
+    /// <p>The experiment report configuration for the experiment.</p>
+    pub fn experiment_report_configuration(&self) -> ::std::option::Option<&crate::types::ExperimentReportConfiguration> {
+        self.experiment_report_configuration.as_ref()
+    }
+    /// <p>The experiment report for the experiment.</p>
+    pub fn experiment_report(&self) -> ::std::option::Option<&crate::types::ExperimentReport> {
+        self.experiment_report.as_ref()
+    }
 }
 impl Experiment {
     /// Creates a new builder-style object to manufacture [`Experiment`](crate::types::Experiment).
@@ -125,6 +137,8 @@ pub struct ExperimentBuilder {
     pub(crate) log_configuration: ::std::option::Option<crate::types::ExperimentLogConfiguration>,
     pub(crate) experiment_options: ::std::option::Option<crate::types::ExperimentOptions>,
     pub(crate) target_account_configurations_count: ::std::option::Option<i64>,
+    pub(crate) experiment_report_configuration: ::std::option::Option<crate::types::ExperimentReportConfiguration>,
+    pub(crate) experiment_report: ::std::option::Option<crate::types::ExperimentReport>,
 }
 impl ExperimentBuilder {
     /// <p>The ID of the experiment.</p>
@@ -367,6 +381,34 @@ impl ExperimentBuilder {
     pub fn get_target_account_configurations_count(&self) -> &::std::option::Option<i64> {
         &self.target_account_configurations_count
     }
+    /// <p>The experiment report configuration for the experiment.</p>
+    pub fn experiment_report_configuration(mut self, input: crate::types::ExperimentReportConfiguration) -> Self {
+        self.experiment_report_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The experiment report configuration for the experiment.</p>
+    pub fn set_experiment_report_configuration(mut self, input: ::std::option::Option<crate::types::ExperimentReportConfiguration>) -> Self {
+        self.experiment_report_configuration = input;
+        self
+    }
+    /// <p>The experiment report configuration for the experiment.</p>
+    pub fn get_experiment_report_configuration(&self) -> &::std::option::Option<crate::types::ExperimentReportConfiguration> {
+        &self.experiment_report_configuration
+    }
+    /// <p>The experiment report for the experiment.</p>
+    pub fn experiment_report(mut self, input: crate::types::ExperimentReport) -> Self {
+        self.experiment_report = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The experiment report for the experiment.</p>
+    pub fn set_experiment_report(mut self, input: ::std::option::Option<crate::types::ExperimentReport>) -> Self {
+        self.experiment_report = input;
+        self
+    }
+    /// <p>The experiment report for the experiment.</p>
+    pub fn get_experiment_report(&self) -> &::std::option::Option<crate::types::ExperimentReport> {
+        &self.experiment_report
+    }
     /// Consumes the builder and constructs a [`Experiment`](crate::types::Experiment).
     pub fn build(self) -> crate::types::Experiment {
         crate::types::Experiment {
@@ -385,6 +427,8 @@ impl ExperimentBuilder {
             log_configuration: self.log_configuration,
             experiment_options: self.experiment_options,
             target_account_configurations_count: self.target_account_configurations_count,
+            experiment_report_configuration: self.experiment_report_configuration,
+            experiment_report: self.experiment_report,
         }
     }
 }

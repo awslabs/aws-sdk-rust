@@ -77,6 +77,21 @@ pub fn de_untag_resource_http_error(
             }
             tmp
         }),
+        "UnsupportedRegionException" => crate::operation::untag_resource::UntagResourceError::UnsupportedRegionException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::UnsupportedRegionExceptionBuilder::default();
+                output = crate::protocol_serde::shape_unsupported_region_exception::de_unsupported_region_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::untag_resource::UntagResourceError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::operation::untag_resource::UntagResourceError::generic(generic),
     })
 }

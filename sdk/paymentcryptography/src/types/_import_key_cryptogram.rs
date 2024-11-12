@@ -2,7 +2,7 @@
 
 /// <p>Parameter information for key material import using asymmetric RSA wrap and unwrap key exchange method.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ImportKeyCryptogram {
     /// <p>The role of the key, the algorithm it supports, and the cryptographic operations allowed with the key. This data is immutable after the key is created.</p>
     pub key_attributes: ::std::option::Option<crate::types::KeyAttributes>,
@@ -39,6 +39,17 @@ impl ImportKeyCryptogram {
         self.wrapping_spec.as_ref()
     }
 }
+impl ::std::fmt::Debug for ImportKeyCryptogram {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("ImportKeyCryptogram");
+        formatter.field("key_attributes", &self.key_attributes);
+        formatter.field("exportable", &self.exportable);
+        formatter.field("wrapped_key_cryptogram", &"*** Sensitive Data Redacted ***");
+        formatter.field("import_token", &self.import_token);
+        formatter.field("wrapping_spec", &self.wrapping_spec);
+        formatter.finish()
+    }
+}
 impl ImportKeyCryptogram {
     /// Creates a new builder-style object to manufacture [`ImportKeyCryptogram`](crate::types::ImportKeyCryptogram).
     pub fn builder() -> crate::types::builders::ImportKeyCryptogramBuilder {
@@ -47,7 +58,7 @@ impl ImportKeyCryptogram {
 }
 
 /// A builder for [`ImportKeyCryptogram`](crate::types::ImportKeyCryptogram).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct ImportKeyCryptogramBuilder {
     pub(crate) key_attributes: ::std::option::Option<crate::types::KeyAttributes>,
@@ -159,5 +170,16 @@ impl ImportKeyCryptogramBuilder {
             })?,
             wrapping_spec: self.wrapping_spec,
         })
+    }
+}
+impl ::std::fmt::Debug for ImportKeyCryptogramBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("ImportKeyCryptogramBuilder");
+        formatter.field("key_attributes", &self.key_attributes);
+        formatter.field("exportable", &self.exportable);
+        formatter.field("wrapped_key_cryptogram", &"*** Sensitive Data Redacted ***");
+        formatter.field("import_token", &self.import_token);
+        formatter.field("wrapping_spec", &self.wrapping_spec);
+        formatter.finish()
     }
 }

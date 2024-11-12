@@ -16,7 +16,7 @@ pub struct ServerProcess {
     pub launch_path: ::std::option::Option<::std::string::String>,
     /// <p>An optional list of parameters to pass to the server executable or Realtime script on launch.</p>
     pub parameters: ::std::option::Option<::std::string::String>,
-    /// <p>The number of server processes using this configuration that run concurrently on each instance or container..</p>
+    /// <p>The number of server processes using this configuration that run concurrently on each instance or compute.</p>
     pub concurrent_executions: ::std::option::Option<i32>,
 }
 impl ServerProcess {
@@ -36,7 +36,7 @@ impl ServerProcess {
     pub fn parameters(&self) -> ::std::option::Option<&str> {
         self.parameters.as_deref()
     }
-    /// <p>The number of server processes using this configuration that run concurrently on each instance or container..</p>
+    /// <p>The number of server processes using this configuration that run concurrently on each instance or compute.</p>
     pub fn concurrent_executions(&self) -> ::std::option::Option<i32> {
         self.concurrent_executions
     }
@@ -110,18 +110,18 @@ impl ServerProcessBuilder {
     pub fn get_parameters(&self) -> &::std::option::Option<::std::string::String> {
         &self.parameters
     }
-    /// <p>The number of server processes using this configuration that run concurrently on each instance or container..</p>
+    /// <p>The number of server processes using this configuration that run concurrently on each instance or compute.</p>
     /// This field is required.
     pub fn concurrent_executions(mut self, input: i32) -> Self {
         self.concurrent_executions = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of server processes using this configuration that run concurrently on each instance or container..</p>
+    /// <p>The number of server processes using this configuration that run concurrently on each instance or compute.</p>
     pub fn set_concurrent_executions(mut self, input: ::std::option::Option<i32>) -> Self {
         self.concurrent_executions = input;
         self
     }
-    /// <p>The number of server processes using this configuration that run concurrently on each instance or container..</p>
+    /// <p>The number of server processes using this configuration that run concurrently on each instance or compute.</p>
     pub fn get_concurrent_executions(&self) -> &::std::option::Option<i32> {
         &self.concurrent_executions
     }

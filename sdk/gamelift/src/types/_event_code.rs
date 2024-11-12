@@ -12,6 +12,7 @@
 /// ```text
 /// # let eventcode = unimplemented!();
 /// match eventcode {
+///     EventCode::ComputeLogUploadFailed => { /* ... */ },
 ///     EventCode::FleetActivationFailed => { /* ... */ },
 ///     EventCode::FleetActivationFailedNoInstances => { /* ... */ },
 ///     EventCode::FleetBinaryDownloadFailed => { /* ... */ },
@@ -28,8 +29,12 @@
 ///     EventCode::FleetStateActivating => { /* ... */ },
 ///     EventCode::FleetStateActive => { /* ... */ },
 ///     EventCode::FleetStateBuilding => { /* ... */ },
+///     EventCode::FleetStateCreated => { /* ... */ },
+///     EventCode::FleetStateCreating => { /* ... */ },
 ///     EventCode::FleetStateDownloading => { /* ... */ },
 ///     EventCode::FleetStateError => { /* ... */ },
+///     EventCode::FleetStatePending => { /* ... */ },
+///     EventCode::FleetStateUpdating => { /* ... */ },
 ///     EventCode::FleetStateValidating => { /* ... */ },
 ///     EventCode::FleetValidationExecutableRuntimeFailure => { /* ... */ },
 ///     EventCode::FleetValidationLaunchPathNotFound => { /* ... */ },
@@ -37,15 +42,30 @@
 ///     EventCode::FleetVpcPeeringDeleted => { /* ... */ },
 ///     EventCode::FleetVpcPeeringFailed => { /* ... */ },
 ///     EventCode::FleetVpcPeeringSucceeded => { /* ... */ },
+///     EventCode::GameServerContainerGroupCrashed => { /* ... */ },
+///     EventCode::GameServerContainerGroupReplacedUnhealthy => { /* ... */ },
 ///     EventCode::GameSessionActivationTimeout => { /* ... */ },
 ///     EventCode::GenericEvent => { /* ... */ },
 ///     EventCode::InstanceInterrupted => { /* ... */ },
 ///     EventCode::InstanceRecycled => { /* ... */ },
+///     EventCode::InstanceReplacedUnhealthy => { /* ... */ },
+///     EventCode::LocationStateActivating => { /* ... */ },
+///     EventCode::LocationStateActive => { /* ... */ },
+///     EventCode::LocationStateCreated => { /* ... */ },
+///     EventCode::LocationStateCreating => { /* ... */ },
+///     EventCode::LocationStateDeleted => { /* ... */ },
+///     EventCode::LocationStateDeleting => { /* ... */ },
+///     EventCode::LocationStateError => { /* ... */ },
+///     EventCode::LocationStatePending => { /* ... */ },
+///     EventCode::LocationStateUpdating => { /* ... */ },
+///     EventCode::PerInstanceContainerGroupCrashed => { /* ... */ },
 ///     EventCode::ServerProcessCrashed => { /* ... */ },
 ///     EventCode::ServerProcessForceTerminated => { /* ... */ },
 ///     EventCode::ServerProcessInvalidPath => { /* ... */ },
+///     EventCode::ServerProcessMisconfiguredContainerPort => { /* ... */ },
 ///     EventCode::ServerProcessProcessExitTimeout => { /* ... */ },
 ///     EventCode::ServerProcessProcessReadyTimeout => { /* ... */ },
+///     EventCode::ServerProcessSdkInitializationFailed => { /* ... */ },
 ///     EventCode::ServerProcessSdkInitializationTimeout => { /* ... */ },
 ///     EventCode::ServerProcessTerminatedUnhealthy => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -75,6 +95,8 @@
     ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum EventCode {
+    #[allow(missing_docs)] // documentation missing in model
+    ComputeLogUploadFailed,
     #[allow(missing_docs)] // documentation missing in model
     FleetActivationFailed,
     #[allow(missing_docs)] // documentation missing in model
@@ -108,9 +130,17 @@ pub enum EventCode {
     #[allow(missing_docs)] // documentation missing in model
     FleetStateBuilding,
     #[allow(missing_docs)] // documentation missing in model
+    FleetStateCreated,
+    #[allow(missing_docs)] // documentation missing in model
+    FleetStateCreating,
+    #[allow(missing_docs)] // documentation missing in model
     FleetStateDownloading,
     #[allow(missing_docs)] // documentation missing in model
     FleetStateError,
+    #[allow(missing_docs)] // documentation missing in model
+    FleetStatePending,
+    #[allow(missing_docs)] // documentation missing in model
+    FleetStateUpdating,
     #[allow(missing_docs)] // documentation missing in model
     FleetStateValidating,
     #[allow(missing_docs)] // documentation missing in model
@@ -126,6 +156,10 @@ pub enum EventCode {
     #[allow(missing_docs)] // documentation missing in model
     FleetVpcPeeringSucceeded,
     #[allow(missing_docs)] // documentation missing in model
+    GameServerContainerGroupCrashed,
+    #[allow(missing_docs)] // documentation missing in model
+    GameServerContainerGroupReplacedUnhealthy,
+    #[allow(missing_docs)] // documentation missing in model
     GameSessionActivationTimeout,
     #[allow(missing_docs)] // documentation missing in model
     GenericEvent,
@@ -134,15 +168,41 @@ pub enum EventCode {
     #[allow(missing_docs)] // documentation missing in model
     InstanceRecycled,
     #[allow(missing_docs)] // documentation missing in model
+    InstanceReplacedUnhealthy,
+    #[allow(missing_docs)] // documentation missing in model
+    LocationStateActivating,
+    #[allow(missing_docs)] // documentation missing in model
+    LocationStateActive,
+    #[allow(missing_docs)] // documentation missing in model
+    LocationStateCreated,
+    #[allow(missing_docs)] // documentation missing in model
+    LocationStateCreating,
+    #[allow(missing_docs)] // documentation missing in model
+    LocationStateDeleted,
+    #[allow(missing_docs)] // documentation missing in model
+    LocationStateDeleting,
+    #[allow(missing_docs)] // documentation missing in model
+    LocationStateError,
+    #[allow(missing_docs)] // documentation missing in model
+    LocationStatePending,
+    #[allow(missing_docs)] // documentation missing in model
+    LocationStateUpdating,
+    #[allow(missing_docs)] // documentation missing in model
+    PerInstanceContainerGroupCrashed,
+    #[allow(missing_docs)] // documentation missing in model
     ServerProcessCrashed,
     #[allow(missing_docs)] // documentation missing in model
     ServerProcessForceTerminated,
     #[allow(missing_docs)] // documentation missing in model
     ServerProcessInvalidPath,
     #[allow(missing_docs)] // documentation missing in model
+    ServerProcessMisconfiguredContainerPort,
+    #[allow(missing_docs)] // documentation missing in model
     ServerProcessProcessExitTimeout,
     #[allow(missing_docs)] // documentation missing in model
     ServerProcessProcessReadyTimeout,
+    #[allow(missing_docs)] // documentation missing in model
+    ServerProcessSdkInitializationFailed,
     #[allow(missing_docs)] // documentation missing in model
     ServerProcessSdkInitializationTimeout,
     #[allow(missing_docs)] // documentation missing in model
@@ -154,6 +214,7 @@ pub enum EventCode {
 impl ::std::convert::From<&str> for EventCode {
     fn from(s: &str) -> Self {
         match s {
+            "COMPUTE_LOG_UPLOAD_FAILED" => EventCode::ComputeLogUploadFailed,
             "FLEET_ACTIVATION_FAILED" => EventCode::FleetActivationFailed,
             "FLEET_ACTIVATION_FAILED_NO_INSTANCES" => EventCode::FleetActivationFailedNoInstances,
             "FLEET_BINARY_DOWNLOAD_FAILED" => EventCode::FleetBinaryDownloadFailed,
@@ -170,8 +231,12 @@ impl ::std::convert::From<&str> for EventCode {
             "FLEET_STATE_ACTIVATING" => EventCode::FleetStateActivating,
             "FLEET_STATE_ACTIVE" => EventCode::FleetStateActive,
             "FLEET_STATE_BUILDING" => EventCode::FleetStateBuilding,
+            "FLEET_STATE_CREATED" => EventCode::FleetStateCreated,
+            "FLEET_STATE_CREATING" => EventCode::FleetStateCreating,
             "FLEET_STATE_DOWNLOADING" => EventCode::FleetStateDownloading,
             "FLEET_STATE_ERROR" => EventCode::FleetStateError,
+            "FLEET_STATE_PENDING" => EventCode::FleetStatePending,
+            "FLEET_STATE_UPDATING" => EventCode::FleetStateUpdating,
             "FLEET_STATE_VALIDATING" => EventCode::FleetStateValidating,
             "FLEET_VALIDATION_EXECUTABLE_RUNTIME_FAILURE" => EventCode::FleetValidationExecutableRuntimeFailure,
             "FLEET_VALIDATION_LAUNCH_PATH_NOT_FOUND" => EventCode::FleetValidationLaunchPathNotFound,
@@ -179,15 +244,30 @@ impl ::std::convert::From<&str> for EventCode {
             "FLEET_VPC_PEERING_DELETED" => EventCode::FleetVpcPeeringDeleted,
             "FLEET_VPC_PEERING_FAILED" => EventCode::FleetVpcPeeringFailed,
             "FLEET_VPC_PEERING_SUCCEEDED" => EventCode::FleetVpcPeeringSucceeded,
+            "GAME_SERVER_CONTAINER_GROUP_CRASHED" => EventCode::GameServerContainerGroupCrashed,
+            "GAME_SERVER_CONTAINER_GROUP_REPLACED_UNHEALTHY" => EventCode::GameServerContainerGroupReplacedUnhealthy,
             "GAME_SESSION_ACTIVATION_TIMEOUT" => EventCode::GameSessionActivationTimeout,
             "GENERIC_EVENT" => EventCode::GenericEvent,
             "INSTANCE_INTERRUPTED" => EventCode::InstanceInterrupted,
             "INSTANCE_RECYCLED" => EventCode::InstanceRecycled,
+            "INSTANCE_REPLACED_UNHEALTHY" => EventCode::InstanceReplacedUnhealthy,
+            "LOCATION_STATE_ACTIVATING" => EventCode::LocationStateActivating,
+            "LOCATION_STATE_ACTIVE" => EventCode::LocationStateActive,
+            "LOCATION_STATE_CREATED" => EventCode::LocationStateCreated,
+            "LOCATION_STATE_CREATING" => EventCode::LocationStateCreating,
+            "LOCATION_STATE_DELETED" => EventCode::LocationStateDeleted,
+            "LOCATION_STATE_DELETING" => EventCode::LocationStateDeleting,
+            "LOCATION_STATE_ERROR" => EventCode::LocationStateError,
+            "LOCATION_STATE_PENDING" => EventCode::LocationStatePending,
+            "LOCATION_STATE_UPDATING" => EventCode::LocationStateUpdating,
+            "PER_INSTANCE_CONTAINER_GROUP_CRASHED" => EventCode::PerInstanceContainerGroupCrashed,
             "SERVER_PROCESS_CRASHED" => EventCode::ServerProcessCrashed,
             "SERVER_PROCESS_FORCE_TERMINATED" => EventCode::ServerProcessForceTerminated,
             "SERVER_PROCESS_INVALID_PATH" => EventCode::ServerProcessInvalidPath,
+            "SERVER_PROCESS_MISCONFIGURED_CONTAINER_PORT" => EventCode::ServerProcessMisconfiguredContainerPort,
             "SERVER_PROCESS_PROCESS_EXIT_TIMEOUT" => EventCode::ServerProcessProcessExitTimeout,
             "SERVER_PROCESS_PROCESS_READY_TIMEOUT" => EventCode::ServerProcessProcessReadyTimeout,
+            "SERVER_PROCESS_SDK_INITIALIZATION_FAILED" => EventCode::ServerProcessSdkInitializationFailed,
             "SERVER_PROCESS_SDK_INITIALIZATION_TIMEOUT" => EventCode::ServerProcessSdkInitializationTimeout,
             "SERVER_PROCESS_TERMINATED_UNHEALTHY" => EventCode::ServerProcessTerminatedUnhealthy,
             other => EventCode::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -205,6 +285,7 @@ impl EventCode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            EventCode::ComputeLogUploadFailed => "COMPUTE_LOG_UPLOAD_FAILED",
             EventCode::FleetActivationFailed => "FLEET_ACTIVATION_FAILED",
             EventCode::FleetActivationFailedNoInstances => "FLEET_ACTIVATION_FAILED_NO_INSTANCES",
             EventCode::FleetBinaryDownloadFailed => "FLEET_BINARY_DOWNLOAD_FAILED",
@@ -221,8 +302,12 @@ impl EventCode {
             EventCode::FleetStateActivating => "FLEET_STATE_ACTIVATING",
             EventCode::FleetStateActive => "FLEET_STATE_ACTIVE",
             EventCode::FleetStateBuilding => "FLEET_STATE_BUILDING",
+            EventCode::FleetStateCreated => "FLEET_STATE_CREATED",
+            EventCode::FleetStateCreating => "FLEET_STATE_CREATING",
             EventCode::FleetStateDownloading => "FLEET_STATE_DOWNLOADING",
             EventCode::FleetStateError => "FLEET_STATE_ERROR",
+            EventCode::FleetStatePending => "FLEET_STATE_PENDING",
+            EventCode::FleetStateUpdating => "FLEET_STATE_UPDATING",
             EventCode::FleetStateValidating => "FLEET_STATE_VALIDATING",
             EventCode::FleetValidationExecutableRuntimeFailure => "FLEET_VALIDATION_EXECUTABLE_RUNTIME_FAILURE",
             EventCode::FleetValidationLaunchPathNotFound => "FLEET_VALIDATION_LAUNCH_PATH_NOT_FOUND",
@@ -230,15 +315,30 @@ impl EventCode {
             EventCode::FleetVpcPeeringDeleted => "FLEET_VPC_PEERING_DELETED",
             EventCode::FleetVpcPeeringFailed => "FLEET_VPC_PEERING_FAILED",
             EventCode::FleetVpcPeeringSucceeded => "FLEET_VPC_PEERING_SUCCEEDED",
+            EventCode::GameServerContainerGroupCrashed => "GAME_SERVER_CONTAINER_GROUP_CRASHED",
+            EventCode::GameServerContainerGroupReplacedUnhealthy => "GAME_SERVER_CONTAINER_GROUP_REPLACED_UNHEALTHY",
             EventCode::GameSessionActivationTimeout => "GAME_SESSION_ACTIVATION_TIMEOUT",
             EventCode::GenericEvent => "GENERIC_EVENT",
             EventCode::InstanceInterrupted => "INSTANCE_INTERRUPTED",
             EventCode::InstanceRecycled => "INSTANCE_RECYCLED",
+            EventCode::InstanceReplacedUnhealthy => "INSTANCE_REPLACED_UNHEALTHY",
+            EventCode::LocationStateActivating => "LOCATION_STATE_ACTIVATING",
+            EventCode::LocationStateActive => "LOCATION_STATE_ACTIVE",
+            EventCode::LocationStateCreated => "LOCATION_STATE_CREATED",
+            EventCode::LocationStateCreating => "LOCATION_STATE_CREATING",
+            EventCode::LocationStateDeleted => "LOCATION_STATE_DELETED",
+            EventCode::LocationStateDeleting => "LOCATION_STATE_DELETING",
+            EventCode::LocationStateError => "LOCATION_STATE_ERROR",
+            EventCode::LocationStatePending => "LOCATION_STATE_PENDING",
+            EventCode::LocationStateUpdating => "LOCATION_STATE_UPDATING",
+            EventCode::PerInstanceContainerGroupCrashed => "PER_INSTANCE_CONTAINER_GROUP_CRASHED",
             EventCode::ServerProcessCrashed => "SERVER_PROCESS_CRASHED",
             EventCode::ServerProcessForceTerminated => "SERVER_PROCESS_FORCE_TERMINATED",
             EventCode::ServerProcessInvalidPath => "SERVER_PROCESS_INVALID_PATH",
+            EventCode::ServerProcessMisconfiguredContainerPort => "SERVER_PROCESS_MISCONFIGURED_CONTAINER_PORT",
             EventCode::ServerProcessProcessExitTimeout => "SERVER_PROCESS_PROCESS_EXIT_TIMEOUT",
             EventCode::ServerProcessProcessReadyTimeout => "SERVER_PROCESS_PROCESS_READY_TIMEOUT",
+            EventCode::ServerProcessSdkInitializationFailed => "SERVER_PROCESS_SDK_INITIALIZATION_FAILED",
             EventCode::ServerProcessSdkInitializationTimeout => "SERVER_PROCESS_SDK_INITIALIZATION_TIMEOUT",
             EventCode::ServerProcessTerminatedUnhealthy => "SERVER_PROCESS_TERMINATED_UNHEALTHY",
             EventCode::Unknown(value) => value.as_str(),
@@ -247,6 +347,7 @@ impl EventCode {
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
+            "COMPUTE_LOG_UPLOAD_FAILED",
             "FLEET_ACTIVATION_FAILED",
             "FLEET_ACTIVATION_FAILED_NO_INSTANCES",
             "FLEET_BINARY_DOWNLOAD_FAILED",
@@ -263,8 +364,12 @@ impl EventCode {
             "FLEET_STATE_ACTIVATING",
             "FLEET_STATE_ACTIVE",
             "FLEET_STATE_BUILDING",
+            "FLEET_STATE_CREATED",
+            "FLEET_STATE_CREATING",
             "FLEET_STATE_DOWNLOADING",
             "FLEET_STATE_ERROR",
+            "FLEET_STATE_PENDING",
+            "FLEET_STATE_UPDATING",
             "FLEET_STATE_VALIDATING",
             "FLEET_VALIDATION_EXECUTABLE_RUNTIME_FAILURE",
             "FLEET_VALIDATION_LAUNCH_PATH_NOT_FOUND",
@@ -272,15 +377,30 @@ impl EventCode {
             "FLEET_VPC_PEERING_DELETED",
             "FLEET_VPC_PEERING_FAILED",
             "FLEET_VPC_PEERING_SUCCEEDED",
+            "GAME_SERVER_CONTAINER_GROUP_CRASHED",
+            "GAME_SERVER_CONTAINER_GROUP_REPLACED_UNHEALTHY",
             "GAME_SESSION_ACTIVATION_TIMEOUT",
             "GENERIC_EVENT",
             "INSTANCE_INTERRUPTED",
             "INSTANCE_RECYCLED",
+            "INSTANCE_REPLACED_UNHEALTHY",
+            "LOCATION_STATE_ACTIVATING",
+            "LOCATION_STATE_ACTIVE",
+            "LOCATION_STATE_CREATED",
+            "LOCATION_STATE_CREATING",
+            "LOCATION_STATE_DELETED",
+            "LOCATION_STATE_DELETING",
+            "LOCATION_STATE_ERROR",
+            "LOCATION_STATE_PENDING",
+            "LOCATION_STATE_UPDATING",
+            "PER_INSTANCE_CONTAINER_GROUP_CRASHED",
             "SERVER_PROCESS_CRASHED",
             "SERVER_PROCESS_FORCE_TERMINATED",
             "SERVER_PROCESS_INVALID_PATH",
+            "SERVER_PROCESS_MISCONFIGURED_CONTAINER_PORT",
             "SERVER_PROCESS_PROCESS_EXIT_TIMEOUT",
             "SERVER_PROCESS_PROCESS_READY_TIMEOUT",
+            "SERVER_PROCESS_SDK_INITIALIZATION_FAILED",
             "SERVER_PROCESS_SDK_INITIALIZATION_TIMEOUT",
             "SERVER_PROCESS_TERMINATED_UNHEALTHY",
         ]
@@ -306,6 +426,7 @@ impl EventCode {
 impl ::std::fmt::Display for EventCode {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            EventCode::ComputeLogUploadFailed => write!(f, "COMPUTE_LOG_UPLOAD_FAILED"),
             EventCode::FleetActivationFailed => write!(f, "FLEET_ACTIVATION_FAILED"),
             EventCode::FleetActivationFailedNoInstances => write!(f, "FLEET_ACTIVATION_FAILED_NO_INSTANCES"),
             EventCode::FleetBinaryDownloadFailed => write!(f, "FLEET_BINARY_DOWNLOAD_FAILED"),
@@ -322,8 +443,12 @@ impl ::std::fmt::Display for EventCode {
             EventCode::FleetStateActivating => write!(f, "FLEET_STATE_ACTIVATING"),
             EventCode::FleetStateActive => write!(f, "FLEET_STATE_ACTIVE"),
             EventCode::FleetStateBuilding => write!(f, "FLEET_STATE_BUILDING"),
+            EventCode::FleetStateCreated => write!(f, "FLEET_STATE_CREATED"),
+            EventCode::FleetStateCreating => write!(f, "FLEET_STATE_CREATING"),
             EventCode::FleetStateDownloading => write!(f, "FLEET_STATE_DOWNLOADING"),
             EventCode::FleetStateError => write!(f, "FLEET_STATE_ERROR"),
+            EventCode::FleetStatePending => write!(f, "FLEET_STATE_PENDING"),
+            EventCode::FleetStateUpdating => write!(f, "FLEET_STATE_UPDATING"),
             EventCode::FleetStateValidating => write!(f, "FLEET_STATE_VALIDATING"),
             EventCode::FleetValidationExecutableRuntimeFailure => write!(f, "FLEET_VALIDATION_EXECUTABLE_RUNTIME_FAILURE"),
             EventCode::FleetValidationLaunchPathNotFound => write!(f, "FLEET_VALIDATION_LAUNCH_PATH_NOT_FOUND"),
@@ -331,15 +456,30 @@ impl ::std::fmt::Display for EventCode {
             EventCode::FleetVpcPeeringDeleted => write!(f, "FLEET_VPC_PEERING_DELETED"),
             EventCode::FleetVpcPeeringFailed => write!(f, "FLEET_VPC_PEERING_FAILED"),
             EventCode::FleetVpcPeeringSucceeded => write!(f, "FLEET_VPC_PEERING_SUCCEEDED"),
+            EventCode::GameServerContainerGroupCrashed => write!(f, "GAME_SERVER_CONTAINER_GROUP_CRASHED"),
+            EventCode::GameServerContainerGroupReplacedUnhealthy => write!(f, "GAME_SERVER_CONTAINER_GROUP_REPLACED_UNHEALTHY"),
             EventCode::GameSessionActivationTimeout => write!(f, "GAME_SESSION_ACTIVATION_TIMEOUT"),
             EventCode::GenericEvent => write!(f, "GENERIC_EVENT"),
             EventCode::InstanceInterrupted => write!(f, "INSTANCE_INTERRUPTED"),
             EventCode::InstanceRecycled => write!(f, "INSTANCE_RECYCLED"),
+            EventCode::InstanceReplacedUnhealthy => write!(f, "INSTANCE_REPLACED_UNHEALTHY"),
+            EventCode::LocationStateActivating => write!(f, "LOCATION_STATE_ACTIVATING"),
+            EventCode::LocationStateActive => write!(f, "LOCATION_STATE_ACTIVE"),
+            EventCode::LocationStateCreated => write!(f, "LOCATION_STATE_CREATED"),
+            EventCode::LocationStateCreating => write!(f, "LOCATION_STATE_CREATING"),
+            EventCode::LocationStateDeleted => write!(f, "LOCATION_STATE_DELETED"),
+            EventCode::LocationStateDeleting => write!(f, "LOCATION_STATE_DELETING"),
+            EventCode::LocationStateError => write!(f, "LOCATION_STATE_ERROR"),
+            EventCode::LocationStatePending => write!(f, "LOCATION_STATE_PENDING"),
+            EventCode::LocationStateUpdating => write!(f, "LOCATION_STATE_UPDATING"),
+            EventCode::PerInstanceContainerGroupCrashed => write!(f, "PER_INSTANCE_CONTAINER_GROUP_CRASHED"),
             EventCode::ServerProcessCrashed => write!(f, "SERVER_PROCESS_CRASHED"),
             EventCode::ServerProcessForceTerminated => write!(f, "SERVER_PROCESS_FORCE_TERMINATED"),
             EventCode::ServerProcessInvalidPath => write!(f, "SERVER_PROCESS_INVALID_PATH"),
+            EventCode::ServerProcessMisconfiguredContainerPort => write!(f, "SERVER_PROCESS_MISCONFIGURED_CONTAINER_PORT"),
             EventCode::ServerProcessProcessExitTimeout => write!(f, "SERVER_PROCESS_PROCESS_EXIT_TIMEOUT"),
             EventCode::ServerProcessProcessReadyTimeout => write!(f, "SERVER_PROCESS_PROCESS_READY_TIMEOUT"),
+            EventCode::ServerProcessSdkInitializationFailed => write!(f, "SERVER_PROCESS_SDK_INITIALIZATION_FAILED"),
             EventCode::ServerProcessSdkInitializationTimeout => write!(f, "SERVER_PROCESS_SDK_INITIALIZATION_TIMEOUT"),
             EventCode::ServerProcessTerminatedUnhealthy => write!(f, "SERVER_PROCESS_TERMINATED_UNHEALTHY"),
             EventCode::Unknown(value) => write!(f, "{}", value),

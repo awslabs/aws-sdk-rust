@@ -5,18 +5,26 @@
 pub struct CreateContainerGroupDefinitionInput {
     /// <p>A descriptive identifier for the container group definition. The name value must be unique in an Amazon Web Services Region.</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>The method for deploying the container group across fleet instances. A replica container group might have multiple copies on each fleet instance. A daemon container group has one copy per fleet instance. Default value is <code>REPLICA</code>.</p>
-    pub scheduling_strategy: ::std::option::Option<crate::types::ContainerSchedulingStrategy>,
-    /// <p>The maximum amount of memory (in MiB) to allocate to the container group. All containers in the group share this memory. If you specify memory limits for individual containers, set this parameter based on the following guidelines. The value must be (1) greater than the sum of the soft memory limits for all containers in the group, and (2) greater than any individual container's hard memory limit.</p>
-    pub total_memory_limit: ::std::option::Option<i32>,
-    /// <p>The maximum amount of CPU units to allocate to the container group. Set this parameter to an integer value in CPU units (1 vCPU is equal to 1024 CPU units). All containers in the group share this memory. If you specify CPU limits for individual containers, set this parameter based on the following guidelines. The value must be equal to or greater than the sum of the CPU limits for all containers in the group.</p>
-    pub total_cpu_limit: ::std::option::Option<i32>,
-    /// <p>Definitions for all containers in this group. Each container definition identifies the container image and specifies configuration settings for the container. See the <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/containers-design-fleet.html"> Container fleet design guide</a> for container guidelines.</p>
-    pub container_definitions: ::std::option::Option<::std::vec::Vec<crate::types::ContainerDefinitionInput>>,
-    /// <p>The platform that is used by containers in the container group definition. All containers in a group must run on the same operating system.</p><note>
-    /// <p>Amazon Linux 2 (AL2) will reach end of support on 6/30/2025. See more details in the <a href="https://aws.amazon.com/amazon-linux-2/faqs/">Amazon Linux 2 FAQs</a>. For game servers that are hosted on AL2 and use Amazon GameLift server SDK 4.x., first update the game server build to server SDK 5.x, and then deploy to AL2023 instances. See <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-serversdk5-migration.html"> Migrate to Amazon GameLift server SDK version 5.</a></p>
+    /// <p>The type of container group being defined. Container group type determines how Amazon GameLift deploys the container group on each fleet instance.</p>
+    /// <p>Default value: <code>GAME_SERVER</code></p>
+    pub container_group_type: ::std::option::Option<crate::types::ContainerGroupType>,
+    /// <p>The maximum amount of memory (in MiB) to allocate to the container group. All containers in the group share this memory. If you specify memory limits for an individual container, the total value must be greater than any individual container's memory limit.</p>
+    /// <p>Default value: 1024</p>
+    pub total_memory_limit_mebibytes: ::std::option::Option<i32>,
+    /// <p>The maximum amount of vCPU units to allocate to the container group (1 vCPU is equal to 1024 CPU units). All containers in the group share this memory. If you specify vCPU limits for individual containers, the total value must be equal to or greater than the sum of the CPU limits for all containers in the group.</p>
+    /// <p>Default value: 1</p>
+    pub total_vcpu_limit: ::std::option::Option<f64>,
+    /// <p>The definition for the game server container in this group. Define a game server container only when the container group type is <code>GAME_SERVER</code>. Game server containers specify a container image with your game server build. You can pass in your container definitions as a JSON file.</p>
+    pub game_server_container_definition: ::std::option::Option<crate::types::GameServerContainerDefinitionInput>,
+    /// <p>One or more definition for support containers in this group. You can define a support container in any type of container group. You can pass in your container definitions as a JSON file.</p>
+    pub support_container_definitions: ::std::option::Option<::std::vec::Vec<crate::types::SupportContainerDefinitionInput>>,
+    /// <p>The platform that all containers in the group use. Containers in a group must run on the same operating system.</p>
+    /// <p>Default value: <code>AMAZON_LINUX_2023</code></p><note>
+    /// <p>Amazon Linux 2 (AL2) will reach end of support on 6/30/2025. See more details in the <a href="https://aws.amazon.com/amazon-linux-2/faqs/">Amazon Linux 2 FAQs</a>. For game servers that are hosted on AL2 and use Amazon GameLift server SDK 4.x, first update the game server build to server SDK 5.x, and then deploy to AL2023 instances. See <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-serversdk5-migration.html"> Migrate to Amazon GameLift server SDK version 5.</a></p>
     /// </note>
     pub operating_system: ::std::option::Option<crate::types::ContainerOperatingSystem>,
+    /// <p>A description for the initial version of this container group definition.</p>
+    pub version_description: ::std::option::Option<::std::string::String>,
     /// <p>A list of labels to assign to the container group definition resource. Tags are developer-defined key-value pairs. Tagging Amazon Web Services resources are useful for resource management, access management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
@@ -25,29 +33,41 @@ impl CreateContainerGroupDefinitionInput {
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The method for deploying the container group across fleet instances. A replica container group might have multiple copies on each fleet instance. A daemon container group has one copy per fleet instance. Default value is <code>REPLICA</code>.</p>
-    pub fn scheduling_strategy(&self) -> ::std::option::Option<&crate::types::ContainerSchedulingStrategy> {
-        self.scheduling_strategy.as_ref()
+    /// <p>The type of container group being defined. Container group type determines how Amazon GameLift deploys the container group on each fleet instance.</p>
+    /// <p>Default value: <code>GAME_SERVER</code></p>
+    pub fn container_group_type(&self) -> ::std::option::Option<&crate::types::ContainerGroupType> {
+        self.container_group_type.as_ref()
     }
-    /// <p>The maximum amount of memory (in MiB) to allocate to the container group. All containers in the group share this memory. If you specify memory limits for individual containers, set this parameter based on the following guidelines. The value must be (1) greater than the sum of the soft memory limits for all containers in the group, and (2) greater than any individual container's hard memory limit.</p>
-    pub fn total_memory_limit(&self) -> ::std::option::Option<i32> {
-        self.total_memory_limit
+    /// <p>The maximum amount of memory (in MiB) to allocate to the container group. All containers in the group share this memory. If you specify memory limits for an individual container, the total value must be greater than any individual container's memory limit.</p>
+    /// <p>Default value: 1024</p>
+    pub fn total_memory_limit_mebibytes(&self) -> ::std::option::Option<i32> {
+        self.total_memory_limit_mebibytes
     }
-    /// <p>The maximum amount of CPU units to allocate to the container group. Set this parameter to an integer value in CPU units (1 vCPU is equal to 1024 CPU units). All containers in the group share this memory. If you specify CPU limits for individual containers, set this parameter based on the following guidelines. The value must be equal to or greater than the sum of the CPU limits for all containers in the group.</p>
-    pub fn total_cpu_limit(&self) -> ::std::option::Option<i32> {
-        self.total_cpu_limit
+    /// <p>The maximum amount of vCPU units to allocate to the container group (1 vCPU is equal to 1024 CPU units). All containers in the group share this memory. If you specify vCPU limits for individual containers, the total value must be equal to or greater than the sum of the CPU limits for all containers in the group.</p>
+    /// <p>Default value: 1</p>
+    pub fn total_vcpu_limit(&self) -> ::std::option::Option<f64> {
+        self.total_vcpu_limit
     }
-    /// <p>Definitions for all containers in this group. Each container definition identifies the container image and specifies configuration settings for the container. See the <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/containers-design-fleet.html"> Container fleet design guide</a> for container guidelines.</p>
+    /// <p>The definition for the game server container in this group. Define a game server container only when the container group type is <code>GAME_SERVER</code>. Game server containers specify a container image with your game server build. You can pass in your container definitions as a JSON file.</p>
+    pub fn game_server_container_definition(&self) -> ::std::option::Option<&crate::types::GameServerContainerDefinitionInput> {
+        self.game_server_container_definition.as_ref()
+    }
+    /// <p>One or more definition for support containers in this group. You can define a support container in any type of container group. You can pass in your container definitions as a JSON file.</p>
     ///
-    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.container_definitions.is_none()`.
-    pub fn container_definitions(&self) -> &[crate::types::ContainerDefinitionInput] {
-        self.container_definitions.as_deref().unwrap_or_default()
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.support_container_definitions.is_none()`.
+    pub fn support_container_definitions(&self) -> &[crate::types::SupportContainerDefinitionInput] {
+        self.support_container_definitions.as_deref().unwrap_or_default()
     }
-    /// <p>The platform that is used by containers in the container group definition. All containers in a group must run on the same operating system.</p><note>
-    /// <p>Amazon Linux 2 (AL2) will reach end of support on 6/30/2025. See more details in the <a href="https://aws.amazon.com/amazon-linux-2/faqs/">Amazon Linux 2 FAQs</a>. For game servers that are hosted on AL2 and use Amazon GameLift server SDK 4.x., first update the game server build to server SDK 5.x, and then deploy to AL2023 instances. See <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-serversdk5-migration.html"> Migrate to Amazon GameLift server SDK version 5.</a></p>
+    /// <p>The platform that all containers in the group use. Containers in a group must run on the same operating system.</p>
+    /// <p>Default value: <code>AMAZON_LINUX_2023</code></p><note>
+    /// <p>Amazon Linux 2 (AL2) will reach end of support on 6/30/2025. See more details in the <a href="https://aws.amazon.com/amazon-linux-2/faqs/">Amazon Linux 2 FAQs</a>. For game servers that are hosted on AL2 and use Amazon GameLift server SDK 4.x, first update the game server build to server SDK 5.x, and then deploy to AL2023 instances. See <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-serversdk5-migration.html"> Migrate to Amazon GameLift server SDK version 5.</a></p>
     /// </note>
     pub fn operating_system(&self) -> ::std::option::Option<&crate::types::ContainerOperatingSystem> {
         self.operating_system.as_ref()
+    }
+    /// <p>A description for the initial version of this container group definition.</p>
+    pub fn version_description(&self) -> ::std::option::Option<&str> {
+        self.version_description.as_deref()
     }
     /// <p>A list of labels to assign to the container group definition resource. Tags are developer-defined key-value pairs. Tagging Amazon Web Services resources are useful for resource management, access management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i>.</p>
     ///
@@ -68,11 +88,13 @@ impl CreateContainerGroupDefinitionInput {
 #[non_exhaustive]
 pub struct CreateContainerGroupDefinitionInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) scheduling_strategy: ::std::option::Option<crate::types::ContainerSchedulingStrategy>,
-    pub(crate) total_memory_limit: ::std::option::Option<i32>,
-    pub(crate) total_cpu_limit: ::std::option::Option<i32>,
-    pub(crate) container_definitions: ::std::option::Option<::std::vec::Vec<crate::types::ContainerDefinitionInput>>,
+    pub(crate) container_group_type: ::std::option::Option<crate::types::ContainerGroupType>,
+    pub(crate) total_memory_limit_mebibytes: ::std::option::Option<i32>,
+    pub(crate) total_vcpu_limit: ::std::option::Option<f64>,
+    pub(crate) game_server_container_definition: ::std::option::Option<crate::types::GameServerContainerDefinitionInput>,
+    pub(crate) support_container_definitions: ::std::option::Option<::std::vec::Vec<crate::types::SupportContainerDefinitionInput>>,
     pub(crate) operating_system: ::std::option::Option<crate::types::ContainerOperatingSystem>,
+    pub(crate) version_description: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateContainerGroupDefinitionInputBuilder {
@@ -91,90 +113,133 @@ impl CreateContainerGroupDefinitionInputBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>The method for deploying the container group across fleet instances. A replica container group might have multiple copies on each fleet instance. A daemon container group has one copy per fleet instance. Default value is <code>REPLICA</code>.</p>
-    pub fn scheduling_strategy(mut self, input: crate::types::ContainerSchedulingStrategy) -> Self {
-        self.scheduling_strategy = ::std::option::Option::Some(input);
+    /// <p>The type of container group being defined. Container group type determines how Amazon GameLift deploys the container group on each fleet instance.</p>
+    /// <p>Default value: <code>GAME_SERVER</code></p>
+    pub fn container_group_type(mut self, input: crate::types::ContainerGroupType) -> Self {
+        self.container_group_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The method for deploying the container group across fleet instances. A replica container group might have multiple copies on each fleet instance. A daemon container group has one copy per fleet instance. Default value is <code>REPLICA</code>.</p>
-    pub fn set_scheduling_strategy(mut self, input: ::std::option::Option<crate::types::ContainerSchedulingStrategy>) -> Self {
-        self.scheduling_strategy = input;
+    /// <p>The type of container group being defined. Container group type determines how Amazon GameLift deploys the container group on each fleet instance.</p>
+    /// <p>Default value: <code>GAME_SERVER</code></p>
+    pub fn set_container_group_type(mut self, input: ::std::option::Option<crate::types::ContainerGroupType>) -> Self {
+        self.container_group_type = input;
         self
     }
-    /// <p>The method for deploying the container group across fleet instances. A replica container group might have multiple copies on each fleet instance. A daemon container group has one copy per fleet instance. Default value is <code>REPLICA</code>.</p>
-    pub fn get_scheduling_strategy(&self) -> &::std::option::Option<crate::types::ContainerSchedulingStrategy> {
-        &self.scheduling_strategy
+    /// <p>The type of container group being defined. Container group type determines how Amazon GameLift deploys the container group on each fleet instance.</p>
+    /// <p>Default value: <code>GAME_SERVER</code></p>
+    pub fn get_container_group_type(&self) -> &::std::option::Option<crate::types::ContainerGroupType> {
+        &self.container_group_type
     }
-    /// <p>The maximum amount of memory (in MiB) to allocate to the container group. All containers in the group share this memory. If you specify memory limits for individual containers, set this parameter based on the following guidelines. The value must be (1) greater than the sum of the soft memory limits for all containers in the group, and (2) greater than any individual container's hard memory limit.</p>
+    /// <p>The maximum amount of memory (in MiB) to allocate to the container group. All containers in the group share this memory. If you specify memory limits for an individual container, the total value must be greater than any individual container's memory limit.</p>
+    /// <p>Default value: 1024</p>
     /// This field is required.
-    pub fn total_memory_limit(mut self, input: i32) -> Self {
-        self.total_memory_limit = ::std::option::Option::Some(input);
+    pub fn total_memory_limit_mebibytes(mut self, input: i32) -> Self {
+        self.total_memory_limit_mebibytes = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The maximum amount of memory (in MiB) to allocate to the container group. All containers in the group share this memory. If you specify memory limits for individual containers, set this parameter based on the following guidelines. The value must be (1) greater than the sum of the soft memory limits for all containers in the group, and (2) greater than any individual container's hard memory limit.</p>
-    pub fn set_total_memory_limit(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.total_memory_limit = input;
+    /// <p>The maximum amount of memory (in MiB) to allocate to the container group. All containers in the group share this memory. If you specify memory limits for an individual container, the total value must be greater than any individual container's memory limit.</p>
+    /// <p>Default value: 1024</p>
+    pub fn set_total_memory_limit_mebibytes(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.total_memory_limit_mebibytes = input;
         self
     }
-    /// <p>The maximum amount of memory (in MiB) to allocate to the container group. All containers in the group share this memory. If you specify memory limits for individual containers, set this parameter based on the following guidelines. The value must be (1) greater than the sum of the soft memory limits for all containers in the group, and (2) greater than any individual container's hard memory limit.</p>
-    pub fn get_total_memory_limit(&self) -> &::std::option::Option<i32> {
-        &self.total_memory_limit
+    /// <p>The maximum amount of memory (in MiB) to allocate to the container group. All containers in the group share this memory. If you specify memory limits for an individual container, the total value must be greater than any individual container's memory limit.</p>
+    /// <p>Default value: 1024</p>
+    pub fn get_total_memory_limit_mebibytes(&self) -> &::std::option::Option<i32> {
+        &self.total_memory_limit_mebibytes
     }
-    /// <p>The maximum amount of CPU units to allocate to the container group. Set this parameter to an integer value in CPU units (1 vCPU is equal to 1024 CPU units). All containers in the group share this memory. If you specify CPU limits for individual containers, set this parameter based on the following guidelines. The value must be equal to or greater than the sum of the CPU limits for all containers in the group.</p>
+    /// <p>The maximum amount of vCPU units to allocate to the container group (1 vCPU is equal to 1024 CPU units). All containers in the group share this memory. If you specify vCPU limits for individual containers, the total value must be equal to or greater than the sum of the CPU limits for all containers in the group.</p>
+    /// <p>Default value: 1</p>
     /// This field is required.
-    pub fn total_cpu_limit(mut self, input: i32) -> Self {
-        self.total_cpu_limit = ::std::option::Option::Some(input);
+    pub fn total_vcpu_limit(mut self, input: f64) -> Self {
+        self.total_vcpu_limit = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The maximum amount of CPU units to allocate to the container group. Set this parameter to an integer value in CPU units (1 vCPU is equal to 1024 CPU units). All containers in the group share this memory. If you specify CPU limits for individual containers, set this parameter based on the following guidelines. The value must be equal to or greater than the sum of the CPU limits for all containers in the group.</p>
-    pub fn set_total_cpu_limit(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.total_cpu_limit = input;
+    /// <p>The maximum amount of vCPU units to allocate to the container group (1 vCPU is equal to 1024 CPU units). All containers in the group share this memory. If you specify vCPU limits for individual containers, the total value must be equal to or greater than the sum of the CPU limits for all containers in the group.</p>
+    /// <p>Default value: 1</p>
+    pub fn set_total_vcpu_limit(mut self, input: ::std::option::Option<f64>) -> Self {
+        self.total_vcpu_limit = input;
         self
     }
-    /// <p>The maximum amount of CPU units to allocate to the container group. Set this parameter to an integer value in CPU units (1 vCPU is equal to 1024 CPU units). All containers in the group share this memory. If you specify CPU limits for individual containers, set this parameter based on the following guidelines. The value must be equal to or greater than the sum of the CPU limits for all containers in the group.</p>
-    pub fn get_total_cpu_limit(&self) -> &::std::option::Option<i32> {
-        &self.total_cpu_limit
+    /// <p>The maximum amount of vCPU units to allocate to the container group (1 vCPU is equal to 1024 CPU units). All containers in the group share this memory. If you specify vCPU limits for individual containers, the total value must be equal to or greater than the sum of the CPU limits for all containers in the group.</p>
+    /// <p>Default value: 1</p>
+    pub fn get_total_vcpu_limit(&self) -> &::std::option::Option<f64> {
+        &self.total_vcpu_limit
     }
-    /// Appends an item to `container_definitions`.
+    /// <p>The definition for the game server container in this group. Define a game server container only when the container group type is <code>GAME_SERVER</code>. Game server containers specify a container image with your game server build. You can pass in your container definitions as a JSON file.</p>
+    pub fn game_server_container_definition(mut self, input: crate::types::GameServerContainerDefinitionInput) -> Self {
+        self.game_server_container_definition = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The definition for the game server container in this group. Define a game server container only when the container group type is <code>GAME_SERVER</code>. Game server containers specify a container image with your game server build. You can pass in your container definitions as a JSON file.</p>
+    pub fn set_game_server_container_definition(mut self, input: ::std::option::Option<crate::types::GameServerContainerDefinitionInput>) -> Self {
+        self.game_server_container_definition = input;
+        self
+    }
+    /// <p>The definition for the game server container in this group. Define a game server container only when the container group type is <code>GAME_SERVER</code>. Game server containers specify a container image with your game server build. You can pass in your container definitions as a JSON file.</p>
+    pub fn get_game_server_container_definition(&self) -> &::std::option::Option<crate::types::GameServerContainerDefinitionInput> {
+        &self.game_server_container_definition
+    }
+    /// Appends an item to `support_container_definitions`.
     ///
-    /// To override the contents of this collection use [`set_container_definitions`](Self::set_container_definitions).
+    /// To override the contents of this collection use [`set_support_container_definitions`](Self::set_support_container_definitions).
     ///
-    /// <p>Definitions for all containers in this group. Each container definition identifies the container image and specifies configuration settings for the container. See the <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/containers-design-fleet.html"> Container fleet design guide</a> for container guidelines.</p>
-    pub fn container_definitions(mut self, input: crate::types::ContainerDefinitionInput) -> Self {
-        let mut v = self.container_definitions.unwrap_or_default();
+    /// <p>One or more definition for support containers in this group. You can define a support container in any type of container group. You can pass in your container definitions as a JSON file.</p>
+    pub fn support_container_definitions(mut self, input: crate::types::SupportContainerDefinitionInput) -> Self {
+        let mut v = self.support_container_definitions.unwrap_or_default();
         v.push(input);
-        self.container_definitions = ::std::option::Option::Some(v);
+        self.support_container_definitions = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Definitions for all containers in this group. Each container definition identifies the container image and specifies configuration settings for the container. See the <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/containers-design-fleet.html"> Container fleet design guide</a> for container guidelines.</p>
-    pub fn set_container_definitions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ContainerDefinitionInput>>) -> Self {
-        self.container_definitions = input;
+    /// <p>One or more definition for support containers in this group. You can define a support container in any type of container group. You can pass in your container definitions as a JSON file.</p>
+    pub fn set_support_container_definitions(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::SupportContainerDefinitionInput>>,
+    ) -> Self {
+        self.support_container_definitions = input;
         self
     }
-    /// <p>Definitions for all containers in this group. Each container definition identifies the container image and specifies configuration settings for the container. See the <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/containers-design-fleet.html"> Container fleet design guide</a> for container guidelines.</p>
-    pub fn get_container_definitions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ContainerDefinitionInput>> {
-        &self.container_definitions
+    /// <p>One or more definition for support containers in this group. You can define a support container in any type of container group. You can pass in your container definitions as a JSON file.</p>
+    pub fn get_support_container_definitions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SupportContainerDefinitionInput>> {
+        &self.support_container_definitions
     }
-    /// <p>The platform that is used by containers in the container group definition. All containers in a group must run on the same operating system.</p><note>
-    /// <p>Amazon Linux 2 (AL2) will reach end of support on 6/30/2025. See more details in the <a href="https://aws.amazon.com/amazon-linux-2/faqs/">Amazon Linux 2 FAQs</a>. For game servers that are hosted on AL2 and use Amazon GameLift server SDK 4.x., first update the game server build to server SDK 5.x, and then deploy to AL2023 instances. See <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-serversdk5-migration.html"> Migrate to Amazon GameLift server SDK version 5.</a></p>
+    /// <p>The platform that all containers in the group use. Containers in a group must run on the same operating system.</p>
+    /// <p>Default value: <code>AMAZON_LINUX_2023</code></p><note>
+    /// <p>Amazon Linux 2 (AL2) will reach end of support on 6/30/2025. See more details in the <a href="https://aws.amazon.com/amazon-linux-2/faqs/">Amazon Linux 2 FAQs</a>. For game servers that are hosted on AL2 and use Amazon GameLift server SDK 4.x, first update the game server build to server SDK 5.x, and then deploy to AL2023 instances. See <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-serversdk5-migration.html"> Migrate to Amazon GameLift server SDK version 5.</a></p>
     /// </note>
     /// This field is required.
     pub fn operating_system(mut self, input: crate::types::ContainerOperatingSystem) -> Self {
         self.operating_system = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The platform that is used by containers in the container group definition. All containers in a group must run on the same operating system.</p><note>
-    /// <p>Amazon Linux 2 (AL2) will reach end of support on 6/30/2025. See more details in the <a href="https://aws.amazon.com/amazon-linux-2/faqs/">Amazon Linux 2 FAQs</a>. For game servers that are hosted on AL2 and use Amazon GameLift server SDK 4.x., first update the game server build to server SDK 5.x, and then deploy to AL2023 instances. See <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-serversdk5-migration.html"> Migrate to Amazon GameLift server SDK version 5.</a></p>
+    /// <p>The platform that all containers in the group use. Containers in a group must run on the same operating system.</p>
+    /// <p>Default value: <code>AMAZON_LINUX_2023</code></p><note>
+    /// <p>Amazon Linux 2 (AL2) will reach end of support on 6/30/2025. See more details in the <a href="https://aws.amazon.com/amazon-linux-2/faqs/">Amazon Linux 2 FAQs</a>. For game servers that are hosted on AL2 and use Amazon GameLift server SDK 4.x, first update the game server build to server SDK 5.x, and then deploy to AL2023 instances. See <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-serversdk5-migration.html"> Migrate to Amazon GameLift server SDK version 5.</a></p>
     /// </note>
     pub fn set_operating_system(mut self, input: ::std::option::Option<crate::types::ContainerOperatingSystem>) -> Self {
         self.operating_system = input;
         self
     }
-    /// <p>The platform that is used by containers in the container group definition. All containers in a group must run on the same operating system.</p><note>
-    /// <p>Amazon Linux 2 (AL2) will reach end of support on 6/30/2025. See more details in the <a href="https://aws.amazon.com/amazon-linux-2/faqs/">Amazon Linux 2 FAQs</a>. For game servers that are hosted on AL2 and use Amazon GameLift server SDK 4.x., first update the game server build to server SDK 5.x, and then deploy to AL2023 instances. See <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-serversdk5-migration.html"> Migrate to Amazon GameLift server SDK version 5.</a></p>
+    /// <p>The platform that all containers in the group use. Containers in a group must run on the same operating system.</p>
+    /// <p>Default value: <code>AMAZON_LINUX_2023</code></p><note>
+    /// <p>Amazon Linux 2 (AL2) will reach end of support on 6/30/2025. See more details in the <a href="https://aws.amazon.com/amazon-linux-2/faqs/">Amazon Linux 2 FAQs</a>. For game servers that are hosted on AL2 and use Amazon GameLift server SDK 4.x, first update the game server build to server SDK 5.x, and then deploy to AL2023 instances. See <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-serversdk5-migration.html"> Migrate to Amazon GameLift server SDK version 5.</a></p>
     /// </note>
     pub fn get_operating_system(&self) -> &::std::option::Option<crate::types::ContainerOperatingSystem> {
         &self.operating_system
+    }
+    /// <p>A description for the initial version of this container group definition.</p>
+    pub fn version_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.version_description = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>A description for the initial version of this container group definition.</p>
+    pub fn set_version_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.version_description = input;
+        self
+    }
+    /// <p>A description for the initial version of this container group definition.</p>
+    pub fn get_version_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version_description
     }
     /// Appends an item to `tags`.
     ///
@@ -205,11 +270,13 @@ impl CreateContainerGroupDefinitionInputBuilder {
     > {
         ::std::result::Result::Ok(crate::operation::create_container_group_definition::CreateContainerGroupDefinitionInput {
             name: self.name,
-            scheduling_strategy: self.scheduling_strategy,
-            total_memory_limit: self.total_memory_limit,
-            total_cpu_limit: self.total_cpu_limit,
-            container_definitions: self.container_definitions,
+            container_group_type: self.container_group_type,
+            total_memory_limit_mebibytes: self.total_memory_limit_mebibytes,
+            total_vcpu_limit: self.total_vcpu_limit,
+            game_server_container_definition: self.game_server_container_definition,
+            support_container_definitions: self.support_container_definitions,
             operating_system: self.operating_system,
+            version_description: self.version_description,
             tags: self.tags,
         })
     }

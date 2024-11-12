@@ -22,9 +22,16 @@ impl crate::operation::delete_container_group_definition::builders::DeleteContai
 }
 /// Fluent builder constructing a request to `DeleteContainerGroupDefinition`.
 ///
-/// <p><b>This operation is used with the Amazon GameLift containers feature, which is currently in public preview. </b></p>
-/// <p>Deletes a container group definition resource. You can delete a container group definition if there are no fleets using the definition.</p>
-/// <p>To delete a container group definition, identify the resource to delete.</p>
+/// <p>Deletes a container group definition. You can delete a container group definition if there are no fleets using the definition.</p>
+/// <p><b>Request options:</b></p>
+/// <ul>
+/// <li>
+/// <p>Delete an entire container group definition, including all versions. Specify the container group definition name, or use an ARN value without the version number.</p></li>
+/// <li>
+/// <p>Delete a particular version. Specify the container group definition name and a version number, or use an ARN value that includes the version number.</p></li>
+/// <li>
+/// <p>Keep the newest versions and delete all older versions. Specify the container group definition name and the number of versions to retain. For example, set <code>VersionCountToRetain</code> to 5 to delete all but the five most recent versions.</p></li>
+/// </ul>
 /// <p><b>Learn more</b></p>
 /// <ul>
 /// <li>
@@ -128,5 +135,33 @@ impl DeleteContainerGroupDefinitionFluentBuilder {
     /// <p>The unique identifier for the container group definition to delete. You can use either the <code>Name</code> or <code>ARN</code> value.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
+    }
+    /// <p>The specific version to delete.</p>
+    pub fn version_number(mut self, input: i32) -> Self {
+        self.inner = self.inner.version_number(input);
+        self
+    }
+    /// <p>The specific version to delete.</p>
+    pub fn set_version_number(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.inner = self.inner.set_version_number(input);
+        self
+    }
+    /// <p>The specific version to delete.</p>
+    pub fn get_version_number(&self) -> &::std::option::Option<i32> {
+        self.inner.get_version_number()
+    }
+    /// <p>The number of most recent versions to keep while deleting all older versions.</p>
+    pub fn version_count_to_retain(mut self, input: i32) -> Self {
+        self.inner = self.inner.version_count_to_retain(input);
+        self
+    }
+    /// <p>The number of most recent versions to keep while deleting all older versions.</p>
+    pub fn set_version_count_to_retain(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.inner = self.inner.set_version_count_to_retain(input);
+        self
+    }
+    /// <p>The number of most recent versions to keep while deleting all older versions.</p>
+    pub fn get_version_count_to_retain(&self) -> &::std::option::Option<i32> {
+        self.inner.get_version_count_to_retain()
     }
 }

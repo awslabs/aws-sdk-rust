@@ -22,8 +22,7 @@ impl crate::operation::create_fleet_locations::builders::CreateFleetLocationsInp
 }
 /// Fluent builder constructing a request to `CreateFleetLocations`.
 ///
-/// <p><b>This operation has been expanded to use with the Amazon GameLift containers feature, which is currently in public preview.</b></p>
-/// <p>Adds remote locations to an EC2 or container fleet and begins populating the new locations with instances. The new instances conform to the fleet's instance type, auto-scaling, and other configuration settings.</p><note>
+/// <p>Adds remote locations to a managed EC2 fleet or managed container fleet and begins populating the new locations with instances. The new instances conform to the fleet's instance type, auto-scaling, and other configuration settings.</p><note>
 /// <p>You can't add remote locations to a fleet that resides in an Amazon Web Services Region that doesn't support multiple locations. Fleets created prior to March 2021 can't support multiple locations.</p>
 /// </note>
 /// <p>To add fleet locations, specify the fleet to be updated and provide a list of one or more locations.</p>

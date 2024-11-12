@@ -18,20 +18,20 @@ pub fn ser_container_health_check(
             ::aws_smithy_types::Number::NegInt((*var_4).into()),
         );
     }
-    if let Some(var_5) = &input.timeout {
-        object.key("Timeout").number(
+    if let Some(var_5) = &input.retries {
+        object.key("Retries").number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((*var_5).into()),
         );
     }
-    if let Some(var_6) = &input.retries {
-        object.key("Retries").number(
+    if let Some(var_6) = &input.start_period {
+        object.key("StartPeriod").number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((*var_6).into()),
         );
     }
-    if let Some(var_7) = &input.start_period {
-        object.key("StartPeriod").number(
+    if let Some(var_7) = &input.timeout {
+        object.key("Timeout").number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((*var_7).into()),
         );
@@ -65,13 +65,6 @@ where
                                     .transpose()?,
                             );
                         }
-                        "Timeout" => {
-                            builder = builder.set_timeout(
-                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
-                                    .map(i32::try_from)
-                                    .transpose()?,
-                            );
-                        }
                         "Retries" => {
                             builder = builder.set_retries(
                                 ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
@@ -81,6 +74,13 @@ where
                         }
                         "StartPeriod" => {
                             builder = builder.set_start_period(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "Timeout" => {
+                            builder = builder.set_timeout(
                                 ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
                                     .map(i32::try_from)
                                     .transpose()?,

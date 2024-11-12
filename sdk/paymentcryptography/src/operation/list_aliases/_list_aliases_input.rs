@@ -3,6 +3,8 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAliasesInput {
+    /// <p>The <code>keyARN</code> for which you want to list all aliases.</p>
+    pub key_arn: ::std::option::Option<::std::string::String>,
     /// <p>Use this parameter in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextToken</code> from the truncated response you just received.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Use this parameter to specify the maximum number of items to return. When this value is present, Amazon Web Services Payment Cryptography does not return more than the specified number of items, but it might return fewer.</p>
@@ -10,6 +12,10 @@ pub struct ListAliasesInput {
     pub max_results: ::std::option::Option<i32>,
 }
 impl ListAliasesInput {
+    /// <p>The <code>keyARN</code> for which you want to list all aliases.</p>
+    pub fn key_arn(&self) -> ::std::option::Option<&str> {
+        self.key_arn.as_deref()
+    }
     /// <p>Use this parameter in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextToken</code> from the truncated response you just received.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
@@ -31,10 +37,25 @@ impl ListAliasesInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct ListAliasesInputBuilder {
+    pub(crate) key_arn: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
 }
 impl ListAliasesInputBuilder {
+    /// <p>The <code>keyARN</code> for which you want to list all aliases.</p>
+    pub fn key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.key_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The <code>keyARN</code> for which you want to list all aliases.</p>
+    pub fn set_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.key_arn = input;
+        self
+    }
+    /// <p>The <code>keyARN</code> for which you want to list all aliases.</p>
+    pub fn get_key_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key_arn
+    }
     /// <p>Use this parameter in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextToken</code> from the truncated response you just received.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -69,6 +90,7 @@ impl ListAliasesInputBuilder {
     /// Consumes the builder and constructs a [`ListAliasesInput`](crate::operation::list_aliases::ListAliasesInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::list_aliases::ListAliasesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_aliases::ListAliasesInput {
+            key_arn: self.key_arn,
             next_token: self.next_token,
             max_results: self.max_results,
         })

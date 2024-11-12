@@ -277,4 +277,21 @@ impl CreateExperimentTemplateFluentBuilder {
     pub fn get_experiment_options(&self) -> &::std::option::Option<crate::types::CreateExperimentTemplateExperimentOptionsInput> {
         self.inner.get_experiment_options()
     }
+    /// <p>The experiment report configuration for the experiment template.</p>
+    pub fn experiment_report_configuration(mut self, input: crate::types::CreateExperimentTemplateReportConfigurationInput) -> Self {
+        self.inner = self.inner.experiment_report_configuration(input);
+        self
+    }
+    /// <p>The experiment report configuration for the experiment template.</p>
+    pub fn set_experiment_report_configuration(
+        mut self,
+        input: ::std::option::Option<crate::types::CreateExperimentTemplateReportConfigurationInput>,
+    ) -> Self {
+        self.inner = self.inner.set_experiment_report_configuration(input);
+        self
+    }
+    /// <p>The experiment report configuration for the experiment template.</p>
+    pub fn get_experiment_report_configuration(&self) -> &::std::option::Option<crate::types::CreateExperimentTemplateReportConfigurationInput> {
+        self.inner.get_experiment_report_configuration()
+    }
 }

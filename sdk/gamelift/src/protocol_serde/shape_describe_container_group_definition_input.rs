@@ -6,5 +6,11 @@ pub fn ser_describe_container_group_definition_input_input(
     if let Some(var_1) = &input.name {
         object.key("Name").string(var_1.as_str());
     }
+    if let Some(var_2) = &input.version_number {
+        object.key("VersionNumber").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_2).into()),
+        );
+    }
     Ok(())
 }

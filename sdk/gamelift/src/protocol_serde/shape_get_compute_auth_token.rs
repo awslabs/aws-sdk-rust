@@ -80,6 +80,21 @@ pub fn de_get_compute_auth_token_http_error(
             }
             tmp
         }),
+        "UnsupportedRegionException" => crate::operation::get_compute_auth_token::GetComputeAuthTokenError::UnsupportedRegionException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::UnsupportedRegionExceptionBuilder::default();
+                output = crate::protocol_serde::shape_unsupported_region_exception::de_unsupported_region_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::get_compute_auth_token::GetComputeAuthTokenError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::operation::get_compute_auth_token::GetComputeAuthTokenError::generic(generic),
     })
 }

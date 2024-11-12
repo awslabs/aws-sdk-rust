@@ -21,6 +21,8 @@ pub struct CreateExperimentTemplateInput {
     pub log_configuration: ::std::option::Option<crate::types::CreateExperimentTemplateLogConfigurationInput>,
     /// <p>The experiment options for the experiment template.</p>
     pub experiment_options: ::std::option::Option<crate::types::CreateExperimentTemplateExperimentOptionsInput>,
+    /// <p>The experiment report configuration for the experiment template.</p>
+    pub experiment_report_configuration: ::std::option::Option<crate::types::CreateExperimentTemplateReportConfigurationInput>,
 }
 impl CreateExperimentTemplateInput {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
@@ -65,6 +67,10 @@ impl CreateExperimentTemplateInput {
     pub fn experiment_options(&self) -> ::std::option::Option<&crate::types::CreateExperimentTemplateExperimentOptionsInput> {
         self.experiment_options.as_ref()
     }
+    /// <p>The experiment report configuration for the experiment template.</p>
+    pub fn experiment_report_configuration(&self) -> ::std::option::Option<&crate::types::CreateExperimentTemplateReportConfigurationInput> {
+        self.experiment_report_configuration.as_ref()
+    }
 }
 impl CreateExperimentTemplateInput {
     /// Creates a new builder-style object to manufacture [`CreateExperimentTemplateInput`](crate::operation::create_experiment_template::CreateExperimentTemplateInput).
@@ -86,6 +92,7 @@ pub struct CreateExperimentTemplateInputBuilder {
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) log_configuration: ::std::option::Option<crate::types::CreateExperimentTemplateLogConfigurationInput>,
     pub(crate) experiment_options: ::std::option::Option<crate::types::CreateExperimentTemplateExperimentOptionsInput>,
+    pub(crate) experiment_report_configuration: ::std::option::Option<crate::types::CreateExperimentTemplateReportConfigurationInput>,
 }
 impl CreateExperimentTemplateInputBuilder {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
@@ -254,6 +261,23 @@ impl CreateExperimentTemplateInputBuilder {
     pub fn get_experiment_options(&self) -> &::std::option::Option<crate::types::CreateExperimentTemplateExperimentOptionsInput> {
         &self.experiment_options
     }
+    /// <p>The experiment report configuration for the experiment template.</p>
+    pub fn experiment_report_configuration(mut self, input: crate::types::CreateExperimentTemplateReportConfigurationInput) -> Self {
+        self.experiment_report_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The experiment report configuration for the experiment template.</p>
+    pub fn set_experiment_report_configuration(
+        mut self,
+        input: ::std::option::Option<crate::types::CreateExperimentTemplateReportConfigurationInput>,
+    ) -> Self {
+        self.experiment_report_configuration = input;
+        self
+    }
+    /// <p>The experiment report configuration for the experiment template.</p>
+    pub fn get_experiment_report_configuration(&self) -> &::std::option::Option<crate::types::CreateExperimentTemplateReportConfigurationInput> {
+        &self.experiment_report_configuration
+    }
     /// Consumes the builder and constructs a [`CreateExperimentTemplateInput`](crate::operation::create_experiment_template::CreateExperimentTemplateInput).
     pub fn build(
         self,
@@ -271,6 +295,7 @@ impl CreateExperimentTemplateInputBuilder {
             tags: self.tags,
             log_configuration: self.log_configuration,
             experiment_options: self.experiment_options,
+            experiment_report_configuration: self.experiment_report_configuration,
         })
     }
 }

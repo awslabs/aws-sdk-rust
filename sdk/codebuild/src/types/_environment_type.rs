@@ -13,12 +13,15 @@
 /// # let environmenttype = unimplemented!();
 /// match environmenttype {
 ///     EnvironmentType::ArmContainer => { /* ... */ },
+///     EnvironmentType::ArmEc2 => { /* ... */ },
 ///     EnvironmentType::ArmLambdaContainer => { /* ... */ },
 ///     EnvironmentType::LinuxContainer => { /* ... */ },
+///     EnvironmentType::LinuxEc2 => { /* ... */ },
 ///     EnvironmentType::LinuxGpuContainer => { /* ... */ },
 ///     EnvironmentType::LinuxLambdaContainer => { /* ... */ },
 ///     EnvironmentType::MacArm => { /* ... */ },
 ///     EnvironmentType::WindowsContainer => { /* ... */ },
+///     EnvironmentType::WindowsEc2 => { /* ... */ },
 ///     EnvironmentType::WindowsServer2019Container => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -50,9 +53,13 @@ pub enum EnvironmentType {
     #[allow(missing_docs)] // documentation missing in model
     ArmContainer,
     #[allow(missing_docs)] // documentation missing in model
+    ArmEc2,
+    #[allow(missing_docs)] // documentation missing in model
     ArmLambdaContainer,
     #[allow(missing_docs)] // documentation missing in model
     LinuxContainer,
+    #[allow(missing_docs)] // documentation missing in model
+    LinuxEc2,
     #[allow(missing_docs)] // documentation missing in model
     LinuxGpuContainer,
     #[allow(missing_docs)] // documentation missing in model
@@ -61,6 +68,8 @@ pub enum EnvironmentType {
     MacArm,
     #[allow(missing_docs)] // documentation missing in model
     WindowsContainer,
+    #[allow(missing_docs)] // documentation missing in model
+    WindowsEc2,
     #[allow(missing_docs)] // documentation missing in model
     WindowsServer2019Container,
     /// `Unknown` contains new variants that have been added since this code was generated.
@@ -71,12 +80,15 @@ impl ::std::convert::From<&str> for EnvironmentType {
     fn from(s: &str) -> Self {
         match s {
             "ARM_CONTAINER" => EnvironmentType::ArmContainer,
+            "ARM_EC2" => EnvironmentType::ArmEc2,
             "ARM_LAMBDA_CONTAINER" => EnvironmentType::ArmLambdaContainer,
             "LINUX_CONTAINER" => EnvironmentType::LinuxContainer,
+            "LINUX_EC2" => EnvironmentType::LinuxEc2,
             "LINUX_GPU_CONTAINER" => EnvironmentType::LinuxGpuContainer,
             "LINUX_LAMBDA_CONTAINER" => EnvironmentType::LinuxLambdaContainer,
             "MAC_ARM" => EnvironmentType::MacArm,
             "WINDOWS_CONTAINER" => EnvironmentType::WindowsContainer,
+            "WINDOWS_EC2" => EnvironmentType::WindowsEc2,
             "WINDOWS_SERVER_2019_CONTAINER" => EnvironmentType::WindowsServer2019Container,
             other => EnvironmentType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -94,12 +106,15 @@ impl EnvironmentType {
     pub fn as_str(&self) -> &str {
         match self {
             EnvironmentType::ArmContainer => "ARM_CONTAINER",
+            EnvironmentType::ArmEc2 => "ARM_EC2",
             EnvironmentType::ArmLambdaContainer => "ARM_LAMBDA_CONTAINER",
             EnvironmentType::LinuxContainer => "LINUX_CONTAINER",
+            EnvironmentType::LinuxEc2 => "LINUX_EC2",
             EnvironmentType::LinuxGpuContainer => "LINUX_GPU_CONTAINER",
             EnvironmentType::LinuxLambdaContainer => "LINUX_LAMBDA_CONTAINER",
             EnvironmentType::MacArm => "MAC_ARM",
             EnvironmentType::WindowsContainer => "WINDOWS_CONTAINER",
+            EnvironmentType::WindowsEc2 => "WINDOWS_EC2",
             EnvironmentType::WindowsServer2019Container => "WINDOWS_SERVER_2019_CONTAINER",
             EnvironmentType::Unknown(value) => value.as_str(),
         }
@@ -108,12 +123,15 @@ impl EnvironmentType {
     pub const fn values() -> &'static [&'static str] {
         &[
             "ARM_CONTAINER",
+            "ARM_EC2",
             "ARM_LAMBDA_CONTAINER",
             "LINUX_CONTAINER",
+            "LINUX_EC2",
             "LINUX_GPU_CONTAINER",
             "LINUX_LAMBDA_CONTAINER",
             "MAC_ARM",
             "WINDOWS_CONTAINER",
+            "WINDOWS_EC2",
             "WINDOWS_SERVER_2019_CONTAINER",
         ]
     }
@@ -139,12 +157,15 @@ impl ::std::fmt::Display for EnvironmentType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             EnvironmentType::ArmContainer => write!(f, "ARM_CONTAINER"),
+            EnvironmentType::ArmEc2 => write!(f, "ARM_EC2"),
             EnvironmentType::ArmLambdaContainer => write!(f, "ARM_LAMBDA_CONTAINER"),
             EnvironmentType::LinuxContainer => write!(f, "LINUX_CONTAINER"),
+            EnvironmentType::LinuxEc2 => write!(f, "LINUX_EC2"),
             EnvironmentType::LinuxGpuContainer => write!(f, "LINUX_GPU_CONTAINER"),
             EnvironmentType::LinuxLambdaContainer => write!(f, "LINUX_LAMBDA_CONTAINER"),
             EnvironmentType::MacArm => write!(f, "MAC_ARM"),
             EnvironmentType::WindowsContainer => write!(f, "WINDOWS_CONTAINER"),
+            EnvironmentType::WindowsEc2 => write!(f, "WINDOWS_EC2"),
             EnvironmentType::WindowsServer2019Container => write!(f, "WINDOWS_SERVER_2019_CONTAINER"),
             EnvironmentType::Unknown(value) => write!(f, "{}", value),
         }

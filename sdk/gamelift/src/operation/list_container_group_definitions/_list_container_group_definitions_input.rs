@@ -3,29 +3,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListContainerGroupDefinitionsInput {
-    /// <p>The type of container group definitions to retrieve.</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>DAEMON</code> -- Daemon container groups run background processes and are deployed once per fleet instance.</p></li>
-    /// <li>
-    /// <p><code>REPLICA</code> -- Replica container groups run your game server application and supporting software. Replica groups might be deployed multiple times per fleet instance.</p></li>
-    /// </ul>
-    pub scheduling_strategy: ::std::option::Option<crate::types::ContainerSchedulingStrategy>,
+    /// <p>The type of container group to retrieve. Container group type determines how Amazon GameLift deploys the container group on each fleet instance.</p>
+    pub container_group_type: ::std::option::Option<crate::types::ContainerGroupType>,
     /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
     pub limit: ::std::option::Option<i32>,
     /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListContainerGroupDefinitionsInput {
-    /// <p>The type of container group definitions to retrieve.</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>DAEMON</code> -- Daemon container groups run background processes and are deployed once per fleet instance.</p></li>
-    /// <li>
-    /// <p><code>REPLICA</code> -- Replica container groups run your game server application and supporting software. Replica groups might be deployed multiple times per fleet instance.</p></li>
-    /// </ul>
-    pub fn scheduling_strategy(&self) -> ::std::option::Option<&crate::types::ContainerSchedulingStrategy> {
-        self.scheduling_strategy.as_ref()
+    /// <p>The type of container group to retrieve. Container group type determines how Amazon GameLift deploys the container group on each fleet instance.</p>
+    pub fn container_group_type(&self) -> ::std::option::Option<&crate::types::ContainerGroupType> {
+        self.container_group_type.as_ref()
     }
     /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
     pub fn limit(&self) -> ::std::option::Option<i32> {
@@ -47,42 +35,24 @@ impl ListContainerGroupDefinitionsInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct ListContainerGroupDefinitionsInputBuilder {
-    pub(crate) scheduling_strategy: ::std::option::Option<crate::types::ContainerSchedulingStrategy>,
+    pub(crate) container_group_type: ::std::option::Option<crate::types::ContainerGroupType>,
     pub(crate) limit: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListContainerGroupDefinitionsInputBuilder {
-    /// <p>The type of container group definitions to retrieve.</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>DAEMON</code> -- Daemon container groups run background processes and are deployed once per fleet instance.</p></li>
-    /// <li>
-    /// <p><code>REPLICA</code> -- Replica container groups run your game server application and supporting software. Replica groups might be deployed multiple times per fleet instance.</p></li>
-    /// </ul>
-    pub fn scheduling_strategy(mut self, input: crate::types::ContainerSchedulingStrategy) -> Self {
-        self.scheduling_strategy = ::std::option::Option::Some(input);
+    /// <p>The type of container group to retrieve. Container group type determines how Amazon GameLift deploys the container group on each fleet instance.</p>
+    pub fn container_group_type(mut self, input: crate::types::ContainerGroupType) -> Self {
+        self.container_group_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of container group definitions to retrieve.</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>DAEMON</code> -- Daemon container groups run background processes and are deployed once per fleet instance.</p></li>
-    /// <li>
-    /// <p><code>REPLICA</code> -- Replica container groups run your game server application and supporting software. Replica groups might be deployed multiple times per fleet instance.</p></li>
-    /// </ul>
-    pub fn set_scheduling_strategy(mut self, input: ::std::option::Option<crate::types::ContainerSchedulingStrategy>) -> Self {
-        self.scheduling_strategy = input;
+    /// <p>The type of container group to retrieve. Container group type determines how Amazon GameLift deploys the container group on each fleet instance.</p>
+    pub fn set_container_group_type(mut self, input: ::std::option::Option<crate::types::ContainerGroupType>) -> Self {
+        self.container_group_type = input;
         self
     }
-    /// <p>The type of container group definitions to retrieve.</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>DAEMON</code> -- Daemon container groups run background processes and are deployed once per fleet instance.</p></li>
-    /// <li>
-    /// <p><code>REPLICA</code> -- Replica container groups run your game server application and supporting software. Replica groups might be deployed multiple times per fleet instance.</p></li>
-    /// </ul>
-    pub fn get_scheduling_strategy(&self) -> &::std::option::Option<crate::types::ContainerSchedulingStrategy> {
-        &self.scheduling_strategy
+    /// <p>The type of container group to retrieve. Container group type determines how Amazon GameLift deploys the container group on each fleet instance.</p>
+    pub fn get_container_group_type(&self) -> &::std::option::Option<crate::types::ContainerGroupType> {
+        &self.container_group_type
     }
     /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
     pub fn limit(mut self, input: i32) -> Self {
@@ -120,7 +90,7 @@ impl ListContainerGroupDefinitionsInputBuilder {
         ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_container_group_definitions::ListContainerGroupDefinitionsInput {
-            scheduling_strategy: self.scheduling_strategy,
+            container_group_type: self.container_group_type,
             limit: self.limit,
             next_token: self.next_token,
         })

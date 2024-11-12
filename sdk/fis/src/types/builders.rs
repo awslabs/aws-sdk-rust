@@ -9,6 +9,16 @@ pub use crate::types::_update_safety_lever_state_input::UpdateSafetyLeverStateIn
 
 pub use crate::types::_experiment_template::ExperimentTemplateBuilder;
 
+pub use crate::types::_experiment_template_report_configuration::ExperimentTemplateReportConfigurationBuilder;
+
+pub use crate::types::_experiment_template_report_configuration_data_sources::ExperimentTemplateReportConfigurationDataSourcesBuilder;
+
+pub use crate::types::_experiment_template_report_configuration_cloud_watch_dashboard::ExperimentTemplateReportConfigurationCloudWatchDashboardBuilder;
+
+pub use crate::types::_experiment_template_report_configuration_outputs::ExperimentTemplateReportConfigurationOutputsBuilder;
+
+pub use crate::types::_report_configuration_s3_output::ReportConfigurationS3OutputBuilder;
+
 pub use crate::types::_experiment_template_experiment_options::ExperimentTemplateExperimentOptionsBuilder;
 
 pub use crate::types::_experiment_template_log_configuration::ExperimentTemplateLogConfigurationBuilder;
@@ -24,6 +34,16 @@ pub use crate::types::_experiment_template_action::ExperimentTemplateActionBuild
 pub use crate::types::_experiment_template_target::ExperimentTemplateTargetBuilder;
 
 pub use crate::types::_experiment_template_target_filter::ExperimentTemplateTargetFilterBuilder;
+
+pub use crate::types::_update_experiment_template_report_configuration_input::UpdateExperimentTemplateReportConfigurationInputBuilder;
+
+pub use crate::types::_experiment_template_report_configuration_data_sources_input::ExperimentTemplateReportConfigurationDataSourcesInputBuilder;
+
+pub use crate::types::_report_configuration_cloud_watch_dashboard_input::ReportConfigurationCloudWatchDashboardInputBuilder;
+
+pub use crate::types::_experiment_template_report_configuration_outputs_input::ExperimentTemplateReportConfigurationOutputsInputBuilder;
+
+pub use crate::types::_report_configuration_s3_output_input::ReportConfigurationS3OutputInputBuilder;
 
 pub use crate::types::_update_experiment_template_experiment_options_input::UpdateExperimentTemplateExperimentOptionsInputBuilder;
 
@@ -42,6 +62,24 @@ pub use crate::types::_experiment_template_target_input_filter::ExperimentTempla
 pub use crate::types::_update_experiment_template_stop_condition_input::UpdateExperimentTemplateStopConditionInputBuilder;
 
 pub use crate::types::_experiment::ExperimentBuilder;
+
+pub use crate::types::_experiment_report::ExperimentReportBuilder;
+
+pub use crate::types::_experiment_report_s3_report::ExperimentReportS3ReportBuilder;
+
+pub use crate::types::_experiment_report_state::ExperimentReportStateBuilder;
+
+pub use crate::types::_experiment_report_error::ExperimentReportErrorBuilder;
+
+pub use crate::types::_experiment_report_configuration::ExperimentReportConfigurationBuilder;
+
+pub use crate::types::_experiment_report_configuration_data_sources::ExperimentReportConfigurationDataSourcesBuilder;
+
+pub use crate::types::_experiment_report_configuration_cloud_watch_dashboard::ExperimentReportConfigurationCloudWatchDashboardBuilder;
+
+pub use crate::types::_experiment_report_configuration_outputs::ExperimentReportConfigurationOutputsBuilder;
+
+pub use crate::types::_experiment_report_configuration_outputs_s3_configuration::ExperimentReportConfigurationOutputsS3ConfigurationBuilder;
 
 pub use crate::types::_experiment_options::ExperimentOptionsBuilder;
 
@@ -92,6 +130,8 @@ pub use crate::types::_experiment_target_account_configuration::ExperimentTarget
 pub use crate::types::_action::ActionBuilder;
 
 pub use crate::types::_action_parameter::ActionParameterBuilder;
+
+pub use crate::types::_create_experiment_template_report_configuration_input::CreateExperimentTemplateReportConfigurationInputBuilder;
 
 pub use crate::types::_create_experiment_template_experiment_options_input::CreateExperimentTemplateExperimentOptionsInputBuilder;
 

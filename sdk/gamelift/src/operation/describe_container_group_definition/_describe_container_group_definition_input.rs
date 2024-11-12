@@ -5,11 +5,17 @@
 pub struct DescribeContainerGroupDefinitionInput {
     /// <p>The unique identifier for the container group definition to retrieve properties for. You can use either the <code>Name</code> or <code>ARN</code> value.</p>
     pub name: ::std::option::Option<::std::string::String>,
+    /// <p>The specific version to retrieve.</p>
+    pub version_number: ::std::option::Option<i32>,
 }
 impl DescribeContainerGroupDefinitionInput {
     /// <p>The unique identifier for the container group definition to retrieve properties for. You can use either the <code>Name</code> or <code>ARN</code> value.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
+    }
+    /// <p>The specific version to retrieve.</p>
+    pub fn version_number(&self) -> ::std::option::Option<i32> {
+        self.version_number
     }
 }
 impl DescribeContainerGroupDefinitionInput {
@@ -24,6 +30,7 @@ impl DescribeContainerGroupDefinitionInput {
 #[non_exhaustive]
 pub struct DescribeContainerGroupDefinitionInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) version_number: ::std::option::Option<i32>,
 }
 impl DescribeContainerGroupDefinitionInputBuilder {
     /// <p>The unique identifier for the container group definition to retrieve properties for. You can use either the <code>Name</code> or <code>ARN</code> value.</p>
@@ -41,6 +48,20 @@ impl DescribeContainerGroupDefinitionInputBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
+    /// <p>The specific version to retrieve.</p>
+    pub fn version_number(mut self, input: i32) -> Self {
+        self.version_number = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The specific version to retrieve.</p>
+    pub fn set_version_number(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.version_number = input;
+        self
+    }
+    /// <p>The specific version to retrieve.</p>
+    pub fn get_version_number(&self) -> &::std::option::Option<i32> {
+        &self.version_number
+    }
     /// Consumes the builder and constructs a [`DescribeContainerGroupDefinitionInput`](crate::operation::describe_container_group_definition::DescribeContainerGroupDefinitionInput).
     pub fn build(
         self,
@@ -48,6 +69,11 @@ impl DescribeContainerGroupDefinitionInputBuilder {
         crate::operation::describe_container_group_definition::DescribeContainerGroupDefinitionInput,
         ::aws_smithy_types::error::operation::BuildError,
     > {
-        ::std::result::Result::Ok(crate::operation::describe_container_group_definition::DescribeContainerGroupDefinitionInput { name: self.name })
+        ::std::result::Result::Ok(
+            crate::operation::describe_container_group_definition::DescribeContainerGroupDefinitionInput {
+                name: self.name,
+                version_number: self.version_number,
+            },
+        )
     }
 }

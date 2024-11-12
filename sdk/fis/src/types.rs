@@ -13,6 +13,16 @@ pub use crate::types::_safety_lever_status_input::SafetyLeverStatusInput;
 
 pub use crate::types::_experiment_template::ExperimentTemplate;
 
+pub use crate::types::_experiment_template_report_configuration::ExperimentTemplateReportConfiguration;
+
+pub use crate::types::_experiment_template_report_configuration_data_sources::ExperimentTemplateReportConfigurationDataSources;
+
+pub use crate::types::_experiment_template_report_configuration_cloud_watch_dashboard::ExperimentTemplateReportConfigurationCloudWatchDashboard;
+
+pub use crate::types::_experiment_template_report_configuration_outputs::ExperimentTemplateReportConfigurationOutputs;
+
+pub use crate::types::_report_configuration_s3_output::ReportConfigurationS3Output;
+
 pub use crate::types::_experiment_template_experiment_options::ExperimentTemplateExperimentOptions;
 
 pub use crate::types::_empty_target_resolution_mode::EmptyTargetResolutionMode;
@@ -33,6 +43,16 @@ pub use crate::types::_experiment_template_target::ExperimentTemplateTarget;
 
 pub use crate::types::_experiment_template_target_filter::ExperimentTemplateTargetFilter;
 
+pub use crate::types::_update_experiment_template_report_configuration_input::UpdateExperimentTemplateReportConfigurationInput;
+
+pub use crate::types::_experiment_template_report_configuration_data_sources_input::ExperimentTemplateReportConfigurationDataSourcesInput;
+
+pub use crate::types::_report_configuration_cloud_watch_dashboard_input::ReportConfigurationCloudWatchDashboardInput;
+
+pub use crate::types::_experiment_template_report_configuration_outputs_input::ExperimentTemplateReportConfigurationOutputsInput;
+
+pub use crate::types::_report_configuration_s3_output_input::ReportConfigurationS3OutputInput;
+
 pub use crate::types::_update_experiment_template_experiment_options_input::UpdateExperimentTemplateExperimentOptionsInput;
 
 pub use crate::types::_update_experiment_template_log_configuration_input::UpdateExperimentTemplateLogConfigurationInput;
@@ -50,6 +70,26 @@ pub use crate::types::_experiment_template_target_input_filter::ExperimentTempla
 pub use crate::types::_update_experiment_template_stop_condition_input::UpdateExperimentTemplateStopConditionInput;
 
 pub use crate::types::_experiment::Experiment;
+
+pub use crate::types::_experiment_report::ExperimentReport;
+
+pub use crate::types::_experiment_report_s3_report::ExperimentReportS3Report;
+
+pub use crate::types::_experiment_report_state::ExperimentReportState;
+
+pub use crate::types::_experiment_report_error::ExperimentReportError;
+
+pub use crate::types::_experiment_report_status::ExperimentReportStatus;
+
+pub use crate::types::_experiment_report_configuration::ExperimentReportConfiguration;
+
+pub use crate::types::_experiment_report_configuration_data_sources::ExperimentReportConfigurationDataSources;
+
+pub use crate::types::_experiment_report_configuration_cloud_watch_dashboard::ExperimentReportConfigurationCloudWatchDashboard;
+
+pub use crate::types::_experiment_report_configuration_outputs::ExperimentReportConfigurationOutputs;
+
+pub use crate::types::_experiment_report_configuration_outputs_s3_configuration::ExperimentReportConfigurationOutputsS3Configuration;
 
 pub use crate::types::_experiment_options::ExperimentOptions;
 
@@ -107,6 +147,8 @@ pub use crate::types::_action::Action;
 
 pub use crate::types::_action_parameter::ActionParameter;
 
+pub use crate::types::_create_experiment_template_report_configuration_input::CreateExperimentTemplateReportConfigurationInput;
+
 pub use crate::types::_create_experiment_template_experiment_options_input::CreateExperimentTemplateExperimentOptionsInput;
 
 pub use crate::types::_create_experiment_template_log_configuration_input::CreateExperimentTemplateLogConfigurationInput;
@@ -135,6 +177,8 @@ mod _create_experiment_template_experiment_options_input;
 
 mod _create_experiment_template_log_configuration_input;
 
+mod _create_experiment_template_report_configuration_input;
+
 mod _create_experiment_template_stop_condition_input;
 
 mod _create_experiment_template_target_input;
@@ -156,6 +200,26 @@ mod _experiment_error;
 mod _experiment_log_configuration;
 
 mod _experiment_options;
+
+mod _experiment_report;
+
+mod _experiment_report_configuration;
+
+mod _experiment_report_configuration_cloud_watch_dashboard;
+
+mod _experiment_report_configuration_data_sources;
+
+mod _experiment_report_configuration_outputs;
+
+mod _experiment_report_configuration_outputs_s3_configuration;
+
+mod _experiment_report_error;
+
+mod _experiment_report_s3_report;
+
+mod _experiment_report_state;
+
+mod _experiment_report_status;
 
 mod _experiment_s3_log_configuration;
 
@@ -187,6 +251,18 @@ mod _experiment_template_experiment_options;
 
 mod _experiment_template_log_configuration;
 
+mod _experiment_template_report_configuration;
+
+mod _experiment_template_report_configuration_cloud_watch_dashboard;
+
+mod _experiment_template_report_configuration_data_sources;
+
+mod _experiment_template_report_configuration_data_sources_input;
+
+mod _experiment_template_report_configuration_outputs;
+
+mod _experiment_template_report_configuration_outputs_input;
+
 mod _experiment_template_s3_log_configuration;
 
 mod _experiment_template_s3_log_configuration_input;
@@ -200,6 +276,12 @@ mod _experiment_template_target;
 mod _experiment_template_target_filter;
 
 mod _experiment_template_target_input_filter;
+
+mod _report_configuration_cloud_watch_dashboard_input;
+
+mod _report_configuration_s3_output;
+
+mod _report_configuration_s3_output_input;
 
 mod _resolved_target;
 
@@ -228,6 +310,8 @@ mod _update_experiment_template_action_input_item;
 mod _update_experiment_template_experiment_options_input;
 
 mod _update_experiment_template_log_configuration_input;
+
+mod _update_experiment_template_report_configuration_input;
 
 mod _update_experiment_template_stop_condition_input;
 

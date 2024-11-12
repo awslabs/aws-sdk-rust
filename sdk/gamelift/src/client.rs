@@ -144,6 +144,8 @@ mod create_alias;
 
 mod create_build;
 
+mod create_container_fleet;
+
 mod create_container_group_definition;
 
 mod create_fleet;
@@ -203,6 +205,8 @@ mod delete_alias;
 
 mod delete_build;
 
+mod delete_container_fleet;
+
 mod delete_container_group_definition;
 
 mod delete_fleet;
@@ -237,6 +241,8 @@ mod describe_build;
 
 mod describe_compute;
 
+mod describe_container_fleet;
+
 mod describe_container_group_definition;
 
 mod describe_ec2_instance_limits;
@@ -244,6 +250,8 @@ mod describe_ec2_instance_limits;
 mod describe_fleet_attributes;
 
 mod describe_fleet_capacity;
+
+mod describe_fleet_deployment;
 
 mod describe_fleet_events;
 
@@ -305,7 +313,13 @@ mod list_builds;
 
 mod list_compute;
 
+mod list_container_fleets;
+
+mod list_container_group_definition_versions;
+
 mod list_container_group_definitions;
+
+mod list_fleet_deployments;
 
 mod list_fleets;
 
@@ -356,6 +370,10 @@ mod untag_resource;
 mod update_alias;
 
 mod update_build;
+
+mod update_container_fleet;
+
+mod update_container_group_definition;
 
 mod update_fleet_attributes;
 

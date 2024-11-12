@@ -17,11 +17,11 @@ pub use crate::types::error::_invalid_game_session_status_exception::InvalidGame
 
 pub use crate::types::error::_conflict_exception::ConflictException;
 
+pub use crate::types::error::_not_ready_exception::NotReadyException;
+
 pub use crate::types::error::_tagging_failed_exception::TaggingFailedException;
 
 pub use crate::types::error::_terminal_routing_strategy_exception::TerminalRoutingStrategyException;
-
-pub use crate::types::error::_not_ready_exception::NotReadyException;
 
 pub use crate::types::error::_game_session_full_exception::GameSessionFullException;
 

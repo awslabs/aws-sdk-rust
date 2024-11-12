@@ -13,6 +13,9 @@ pub mod create_alias;
 /// Types for the `CreateBuild` operation.
 pub mod create_build;
 
+/// Types for the `CreateContainerFleet` operation.
+pub mod create_container_fleet;
+
 /// Types for the `CreateContainerGroupDefinition` operation.
 pub mod create_container_group_definition;
 
@@ -60,6 +63,9 @@ pub mod delete_alias;
 
 /// Types for the `DeleteBuild` operation.
 pub mod delete_build;
+
+/// Types for the `DeleteContainerFleet` operation.
+pub mod delete_container_fleet;
 
 /// Types for the `DeleteContainerGroupDefinition` operation.
 pub mod delete_container_group_definition;
@@ -112,6 +118,9 @@ pub mod describe_build;
 /// Types for the `DescribeCompute` operation.
 pub mod describe_compute;
 
+/// Types for the `DescribeContainerFleet` operation.
+pub mod describe_container_fleet;
+
 /// Types for the `DescribeContainerGroupDefinition` operation.
 pub mod describe_container_group_definition;
 
@@ -123,6 +132,9 @@ pub mod describe_fleet_attributes;
 
 /// Types for the `DescribeFleetCapacity` operation.
 pub mod describe_fleet_capacity;
+
+/// Types for the `DescribeFleetDeployment` operation.
+pub mod describe_fleet_deployment;
 
 /// Types for the `DescribeFleetEvents` operation.
 pub mod describe_fleet_events;
@@ -214,8 +226,17 @@ pub mod list_builds;
 /// Types for the `ListCompute` operation.
 pub mod list_compute;
 
+/// Types for the `ListContainerFleets` operation.
+pub mod list_container_fleets;
+
+/// Types for the `ListContainerGroupDefinitionVersions` operation.
+pub mod list_container_group_definition_versions;
+
 /// Types for the `ListContainerGroupDefinitions` operation.
 pub mod list_container_group_definitions;
+
+/// Types for the `ListFleetDeployments` operation.
+pub mod list_fleet_deployments;
 
 /// Types for the `ListFleets` operation.
 pub mod list_fleets;
@@ -291,6 +312,12 @@ pub mod update_alias;
 
 /// Types for the `UpdateBuild` operation.
 pub mod update_build;
+
+/// Types for the `UpdateContainerFleet` operation.
+pub mod update_container_fleet;
+
+/// Types for the `UpdateContainerGroupDefinition` operation.
+pub mod update_container_group_definition;
 
 /// Types for the `UpdateFleetAttributes` operation.
 pub mod update_fleet_attributes;

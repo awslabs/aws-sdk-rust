@@ -3,8 +3,8 @@ pub fn ser_list_container_group_definitions_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_container_group_definitions::ListContainerGroupDefinitionsInput,
 ) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.scheduling_strategy {
-        object.key("SchedulingStrategy").string(var_1.as_str());
+    if let Some(var_1) = &input.container_group_type {
+        object.key("ContainerGroupType").string(var_1.as_str());
     }
     if let Some(var_2) = &input.limit {
         object.key("Limit").number(

@@ -22,7 +22,6 @@ impl crate::operation::describe_fleet_attributes::builders::DescribeFleetAttribu
 }
 /// Fluent builder constructing a request to `DescribeFleetAttributes`.
 ///
-/// <p><b>This operation has been expanded to use with the Amazon GameLift containers feature, which is currently in public preview.</b></p>
 /// <p>Retrieves core fleet-wide properties for fleets in an Amazon Web Services Region. Properties include the computing hardware and deployment configuration for instances in the fleet.</p>
 /// <p>You can use this operation in the following ways:</p>
 /// <ul>

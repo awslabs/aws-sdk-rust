@@ -5,8 +5,18 @@
 pub struct ListComputeInput {
     /// <p>A unique identifier for the fleet to retrieve compute resources for.</p>
     pub fleet_id: ::std::option::Option<::std::string::String>,
-    /// <p>The name of a location to retrieve compute resources for. For an Amazon GameLift Anywhere fleet, use a custom location. For a multi-location EC2 or container fleet, provide a Amazon Web Services Region or Local Zone code (for example: <code>us-west-2</code> or <code>us-west-2-lax-1</code>).</p>
+    /// <p>The name of a location to retrieve compute resources for. For an Amazon GameLift Anywhere fleet, use a custom location. For a managed fleet, provide a Amazon Web Services Region or Local Zone code (for example: <code>us-west-2</code> or <code>us-west-2-lax-1</code>).</p>
     pub location: ::std::option::Option<::std::string::String>,
+    /// <p>For computes in a managed container fleet, the name of the deployed container group definition.</p>
+    pub container_group_definition_name: ::std::option::Option<::std::string::String>,
+    /// <p>The status of computes in a managed container fleet, based on the success of the latest update deployment.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ACTIVE</code> -- The compute is deployed with the correct container definitions. It is ready to process game servers and host game sessions.</p></li>
+    /// <li>
+    /// <p><code>IMPAIRED</code> -- An update deployment to the compute failed, and the compute is deployed with incorrect container definitions.</p></li>
+    /// </ul>
+    pub compute_status: ::std::option::Option<crate::types::ListComputeInputStatus>,
     /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
     pub limit: ::std::option::Option<i32>,
     /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p>
@@ -17,9 +27,23 @@ impl ListComputeInput {
     pub fn fleet_id(&self) -> ::std::option::Option<&str> {
         self.fleet_id.as_deref()
     }
-    /// <p>The name of a location to retrieve compute resources for. For an Amazon GameLift Anywhere fleet, use a custom location. For a multi-location EC2 or container fleet, provide a Amazon Web Services Region or Local Zone code (for example: <code>us-west-2</code> or <code>us-west-2-lax-1</code>).</p>
+    /// <p>The name of a location to retrieve compute resources for. For an Amazon GameLift Anywhere fleet, use a custom location. For a managed fleet, provide a Amazon Web Services Region or Local Zone code (for example: <code>us-west-2</code> or <code>us-west-2-lax-1</code>).</p>
     pub fn location(&self) -> ::std::option::Option<&str> {
         self.location.as_deref()
+    }
+    /// <p>For computes in a managed container fleet, the name of the deployed container group definition.</p>
+    pub fn container_group_definition_name(&self) -> ::std::option::Option<&str> {
+        self.container_group_definition_name.as_deref()
+    }
+    /// <p>The status of computes in a managed container fleet, based on the success of the latest update deployment.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ACTIVE</code> -- The compute is deployed with the correct container definitions. It is ready to process game servers and host game sessions.</p></li>
+    /// <li>
+    /// <p><code>IMPAIRED</code> -- An update deployment to the compute failed, and the compute is deployed with incorrect container definitions.</p></li>
+    /// </ul>
+    pub fn compute_status(&self) -> ::std::option::Option<&crate::types::ListComputeInputStatus> {
+        self.compute_status.as_ref()
     }
     /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
     pub fn limit(&self) -> ::std::option::Option<i32> {
@@ -43,6 +67,8 @@ impl ListComputeInput {
 pub struct ListComputeInputBuilder {
     pub(crate) fleet_id: ::std::option::Option<::std::string::String>,
     pub(crate) location: ::std::option::Option<::std::string::String>,
+    pub(crate) container_group_definition_name: ::std::option::Option<::std::string::String>,
+    pub(crate) compute_status: ::std::option::Option<crate::types::ListComputeInputStatus>,
     pub(crate) limit: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
@@ -62,19 +88,65 @@ impl ListComputeInputBuilder {
     pub fn get_fleet_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.fleet_id
     }
-    /// <p>The name of a location to retrieve compute resources for. For an Amazon GameLift Anywhere fleet, use a custom location. For a multi-location EC2 or container fleet, provide a Amazon Web Services Region or Local Zone code (for example: <code>us-west-2</code> or <code>us-west-2-lax-1</code>).</p>
+    /// <p>The name of a location to retrieve compute resources for. For an Amazon GameLift Anywhere fleet, use a custom location. For a managed fleet, provide a Amazon Web Services Region or Local Zone code (for example: <code>us-west-2</code> or <code>us-west-2-lax-1</code>).</p>
     pub fn location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.location = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of a location to retrieve compute resources for. For an Amazon GameLift Anywhere fleet, use a custom location. For a multi-location EC2 or container fleet, provide a Amazon Web Services Region or Local Zone code (for example: <code>us-west-2</code> or <code>us-west-2-lax-1</code>).</p>
+    /// <p>The name of a location to retrieve compute resources for. For an Amazon GameLift Anywhere fleet, use a custom location. For a managed fleet, provide a Amazon Web Services Region or Local Zone code (for example: <code>us-west-2</code> or <code>us-west-2-lax-1</code>).</p>
     pub fn set_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.location = input;
         self
     }
-    /// <p>The name of a location to retrieve compute resources for. For an Amazon GameLift Anywhere fleet, use a custom location. For a multi-location EC2 or container fleet, provide a Amazon Web Services Region or Local Zone code (for example: <code>us-west-2</code> or <code>us-west-2-lax-1</code>).</p>
+    /// <p>The name of a location to retrieve compute resources for. For an Amazon GameLift Anywhere fleet, use a custom location. For a managed fleet, provide a Amazon Web Services Region or Local Zone code (for example: <code>us-west-2</code> or <code>us-west-2-lax-1</code>).</p>
     pub fn get_location(&self) -> &::std::option::Option<::std::string::String> {
         &self.location
+    }
+    /// <p>For computes in a managed container fleet, the name of the deployed container group definition.</p>
+    pub fn container_group_definition_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.container_group_definition_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>For computes in a managed container fleet, the name of the deployed container group definition.</p>
+    pub fn set_container_group_definition_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.container_group_definition_name = input;
+        self
+    }
+    /// <p>For computes in a managed container fleet, the name of the deployed container group definition.</p>
+    pub fn get_container_group_definition_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.container_group_definition_name
+    }
+    /// <p>The status of computes in a managed container fleet, based on the success of the latest update deployment.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ACTIVE</code> -- The compute is deployed with the correct container definitions. It is ready to process game servers and host game sessions.</p></li>
+    /// <li>
+    /// <p><code>IMPAIRED</code> -- An update deployment to the compute failed, and the compute is deployed with incorrect container definitions.</p></li>
+    /// </ul>
+    pub fn compute_status(mut self, input: crate::types::ListComputeInputStatus) -> Self {
+        self.compute_status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The status of computes in a managed container fleet, based on the success of the latest update deployment.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ACTIVE</code> -- The compute is deployed with the correct container definitions. It is ready to process game servers and host game sessions.</p></li>
+    /// <li>
+    /// <p><code>IMPAIRED</code> -- An update deployment to the compute failed, and the compute is deployed with incorrect container definitions.</p></li>
+    /// </ul>
+    pub fn set_compute_status(mut self, input: ::std::option::Option<crate::types::ListComputeInputStatus>) -> Self {
+        self.compute_status = input;
+        self
+    }
+    /// <p>The status of computes in a managed container fleet, based on the success of the latest update deployment.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ACTIVE</code> -- The compute is deployed with the correct container definitions. It is ready to process game servers and host game sessions.</p></li>
+    /// <li>
+    /// <p><code>IMPAIRED</code> -- An update deployment to the compute failed, and the compute is deployed with incorrect container definitions.</p></li>
+    /// </ul>
+    pub fn get_compute_status(&self) -> &::std::option::Option<crate::types::ListComputeInputStatus> {
+        &self.compute_status
     }
     /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
     pub fn limit(mut self, input: i32) -> Self {
@@ -109,6 +181,8 @@ impl ListComputeInputBuilder {
         ::std::result::Result::Ok(crate::operation::list_compute::ListComputeInput {
             fleet_id: self.fleet_id,
             location: self.location,
+            container_group_definition_name: self.container_group_definition_name,
+            compute_status: self.compute_status,
             limit: self.limit,
             next_token: self.next_token,
         })

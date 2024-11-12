@@ -115,6 +115,8 @@ pub(crate) mod shape_create_experiment_template_experiment_options_input;
 
 pub(crate) mod shape_create_experiment_template_log_configuration_input;
 
+pub(crate) mod shape_create_experiment_template_report_configuration_input;
+
 pub(crate) mod shape_create_experiment_template_stop_condition_input;
 
 pub(crate) mod shape_create_experiment_template_target_input;
@@ -153,6 +155,8 @@ pub(crate) mod shape_update_experiment_template_experiment_options_input;
 
 pub(crate) mod shape_update_experiment_template_log_configuration_input;
 
+pub(crate) mod shape_update_experiment_template_report_configuration_input;
+
 pub(crate) mod shape_update_experiment_template_stop_condition_input;
 
 pub(crate) mod shape_update_experiment_template_target_input;
@@ -168,6 +172,10 @@ pub(crate) mod shape_experiment_action_map;
 pub(crate) mod shape_experiment_log_configuration;
 
 pub(crate) mod shape_experiment_options;
+
+pub(crate) mod shape_experiment_report;
+
+pub(crate) mod shape_experiment_report_configuration;
 
 pub(crate) mod shape_experiment_state;
 
@@ -186,6 +194,12 @@ pub(crate) mod shape_experiment_template_cloud_watch_logs_log_configuration_inpu
 pub(crate) mod shape_experiment_template_experiment_options;
 
 pub(crate) mod shape_experiment_template_log_configuration;
+
+pub(crate) mod shape_experiment_template_report_configuration;
+
+pub(crate) mod shape_experiment_template_report_configuration_data_sources_input;
+
+pub(crate) mod shape_experiment_template_report_configuration_outputs_input;
 
 pub(crate) mod shape_experiment_template_s3_log_configuration_input;
 
@@ -217,6 +231,14 @@ pub(crate) mod shape_experiment_cloud_watch_logs_log_configuration;
 
 pub(crate) mod shape_experiment_error;
 
+pub(crate) mod shape_experiment_report_configuration_data_sources;
+
+pub(crate) mod shape_experiment_report_configuration_outputs;
+
+pub(crate) mod shape_experiment_report_s3_report_list;
+
+pub(crate) mod shape_experiment_report_state;
+
 pub(crate) mod shape_experiment_s3_log_configuration;
 
 pub(crate) mod shape_experiment_stop_condition;
@@ -227,11 +249,19 @@ pub(crate) mod shape_experiment_template_action;
 
 pub(crate) mod shape_experiment_template_cloud_watch_logs_log_configuration;
 
+pub(crate) mod shape_experiment_template_report_configuration_data_sources;
+
+pub(crate) mod shape_experiment_template_report_configuration_outputs;
+
 pub(crate) mod shape_experiment_template_s3_log_configuration;
 
 pub(crate) mod shape_experiment_template_stop_condition;
 
 pub(crate) mod shape_experiment_template_target;
+
+pub(crate) mod shape_report_configuration_cloud_watch_dashboard_input;
+
+pub(crate) mod shape_report_configuration_s3_output_input;
 
 pub(crate) mod shape_target_information_map;
 
@@ -245,6 +275,14 @@ pub(crate) mod shape_experiment_action_state;
 
 pub(crate) mod shape_experiment_action_target_map;
 
+pub(crate) mod shape_experiment_report_configuration_cloud_watch_dashboard_list;
+
+pub(crate) mod shape_experiment_report_configuration_outputs_s3_configuration;
+
+pub(crate) mod shape_experiment_report_error;
+
+pub(crate) mod shape_experiment_report_s3_report;
+
 pub(crate) mod shape_experiment_target_filter_list;
 
 pub(crate) mod shape_experiment_target_parameter_map;
@@ -255,13 +293,21 @@ pub(crate) mod shape_experiment_template_action_start_after_list;
 
 pub(crate) mod shape_experiment_template_action_target_map;
 
+pub(crate) mod shape_experiment_template_report_configuration_cloud_watch_dashboard_list;
+
 pub(crate) mod shape_experiment_template_target_filter_list;
 
 pub(crate) mod shape_experiment_template_target_parameter_map;
 
+pub(crate) mod shape_report_configuration_s3_output;
+
 pub(crate) mod shape_resource_arn_list;
 
+pub(crate) mod shape_experiment_report_configuration_cloud_watch_dashboard;
+
 pub(crate) mod shape_experiment_target_filter;
+
+pub(crate) mod shape_experiment_template_report_configuration_cloud_watch_dashboard;
 
 pub(crate) mod shape_experiment_template_target_filter;
 

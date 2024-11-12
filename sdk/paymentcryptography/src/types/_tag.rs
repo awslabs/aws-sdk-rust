@@ -51,6 +51,7 @@ impl TagBuilder {
         &self.key
     }
     /// <p>The value of the tag.</p>
+    /// This field is required.
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
         self

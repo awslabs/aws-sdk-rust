@@ -266,6 +266,15 @@ pub(crate) fn reset_enabled_baseline_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn reset_enabled_control_output_output_correct_errors(
+    mut builder: crate::operation::reset_enabled_control::builders::ResetEnabledControlOutputBuilder,
+) -> crate::operation::reset_enabled_control::builders::ResetEnabledControlOutputBuilder {
+    if builder.operation_identifier.is_none() {
+        builder.operation_identifier = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn reset_landing_zone_output_output_correct_errors(
     mut builder: crate::operation::reset_landing_zone::builders::ResetLandingZoneOutputBuilder,
 ) -> crate::operation::reset_landing_zone::builders::ResetLandingZoneOutputBuilder {

@@ -22,7 +22,7 @@ impl crate::operation::list_aliases::builders::ListAliasesInputBuilder {
 }
 /// Fluent builder constructing a request to `ListAliases`.
 ///
-/// <p>Lists the aliases for all keys in the caller's Amazon Web Services account and Amazon Web Services Region. You can filter the list of aliases. For more information, see <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/keys-managealias.html">Using aliases</a> in the <i>Amazon Web Services Payment Cryptography User Guide</i>.</p>
+/// <p>Lists the aliases for all keys in the caller's Amazon Web Services account and Amazon Web Services Region. You can filter the aliases by <code>keyARN</code>. For more information, see <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/keys-managealias.html">Using aliases</a> in the <i>Amazon Web Services Payment Cryptography User Guide</i>.</p>
 /// <p>This is a paginated operation, which means that each response might contain only a subset of all the aliases. When the response contains only a subset of aliases, it includes a <code>NextToken</code> value. Use this value in a subsequent <code>ListAliases</code> request to get more aliases. When you receive a response with no NextToken (or an empty or null value), that means there are no more aliases to get.</p>
 /// <p><b>Cross-account use:</b> This operation can't be used across different Amazon Web Services accounts.</p>
 /// <p><b>Related operations:</b></p>
@@ -126,6 +126,20 @@ impl ListAliasesFluentBuilder {
     /// Paginators are used by calling [`send().await`](crate::operation::list_aliases::paginator::ListAliasesPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
     pub fn into_paginator(self) -> crate::operation::list_aliases::paginator::ListAliasesPaginator {
         crate::operation::list_aliases::paginator::ListAliasesPaginator::new(self.handle, self.inner)
+    }
+    /// <p>The <code>keyARN</code> for which you want to list all aliases.</p>
+    pub fn key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.key_arn(input.into());
+        self
+    }
+    /// <p>The <code>keyARN</code> for which you want to list all aliases.</p>
+    pub fn set_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_key_arn(input);
+        self
+    }
+    /// <p>The <code>keyARN</code> for which you want to list all aliases.</p>
+    pub fn get_key_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_key_arn()
     }
     /// <p>Use this parameter in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextToken</code> from the truncated response you just received.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

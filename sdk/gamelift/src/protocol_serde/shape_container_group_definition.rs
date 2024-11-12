@@ -41,30 +41,47 @@ where
                                     .transpose()?,
                             );
                         }
-                        "SchedulingStrategy" => {
-                            builder = builder.set_scheduling_strategy(
+                        "ContainerGroupType" => {
+                            builder = builder.set_container_group_type(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| crate::types::ContainerSchedulingStrategy::from(u.as_ref())))
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::ContainerGroupType::from(u.as_ref())))
                                     .transpose()?,
                             );
                         }
-                        "TotalMemoryLimit" => {
-                            builder = builder.set_total_memory_limit(
+                        "TotalMemoryLimitMebibytes" => {
+                            builder = builder.set_total_memory_limit_mebibytes(
                                 ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
                                     .map(i32::try_from)
                                     .transpose()?,
                             );
                         }
-                        "TotalCpuLimit" => {
-                            builder = builder.set_total_cpu_limit(
+                        "TotalVcpuLimit" => {
+                            builder = builder.set_total_vcpu_limit(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?.map(|v| v.to_f64_lossy()),
+                            );
+                        }
+                        "GameServerContainerDefinition" => {
+                            builder = builder.set_game_server_container_definition(
+                                crate::protocol_serde::shape_game_server_container_definition::de_game_server_container_definition(tokens)?,
+                            );
+                        }
+                        "SupportContainerDefinitions" => {
+                            builder = builder.set_support_container_definitions(
+                                crate::protocol_serde::shape_support_container_definition_list::de_support_container_definition_list(tokens)?,
+                            );
+                        }
+                        "VersionNumber" => {
+                            builder = builder.set_version_number(
                                 ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
                                     .map(i32::try_from)
                                     .transpose()?,
                             );
                         }
-                        "ContainerDefinitions" => {
-                            builder = builder.set_container_definitions(
-                                crate::protocol_serde::shape_container_definition_list::de_container_definition_list(tokens)?,
+                        "VersionDescription" => {
+                            builder = builder.set_version_description(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
                             );
                         }
                         "Status" => {
@@ -91,7 +108,7 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::container_group_definition_correct_errors(builder).build()))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

@@ -77,6 +77,21 @@ pub fn de_get_compute_access_http_error(
             }
             tmp
         }),
+        "UnsupportedRegionException" => crate::operation::get_compute_access::GetComputeAccessError::UnsupportedRegionException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::UnsupportedRegionExceptionBuilder::default();
+                output = crate::protocol_serde::shape_unsupported_region_exception::de_unsupported_region_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::get_compute_access::GetComputeAccessError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::operation::get_compute_access::GetComputeAccessError::generic(generic),
     })
 }
@@ -154,6 +169,11 @@ pub(crate) fn de_get_compute_access(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                             .transpose()?,
+                    );
+                }
+                "ContainerIdentifiers" => {
+                    builder = builder.set_container_identifiers(
+                        crate::protocol_serde::shape_container_identifier_list::de_container_identifier_list(tokens)?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

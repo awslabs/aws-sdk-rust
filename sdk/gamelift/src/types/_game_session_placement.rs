@@ -19,7 +19,7 @@ pub struct GameSessionPlacement {
     /// <li>
     /// <p><b>CANCELLED</b> -- The placement request was canceled.</p></li>
     /// <li>
-    /// <p><b>TIMED_OUT</b> -- A new game session was not successfully created before the time limit expired. You can resubmit the placement request as needed.</p></li>
+    /// <p><b>TIMED_OUT</b> -- A new game session was not successfully created before the time limit expired. You can resubmit as a new placement request as needed.</p></li>
     /// <li>
     /// <p><b>FAILED</b> -- Amazon GameLift is not able to complete the process of placing the game session. Common reasons are the game session terminated before the placement process was completed, or an unexpected internal error.</p></li>
     /// </ul>
@@ -36,7 +36,7 @@ pub struct GameSessionPlacement {
     pub game_session_arn: ::std::option::Option<::std::string::String>,
     /// <p>Name of the Region where the game session created by this placement request is running. This value isn't final until placement status is <code>FULFILLED</code>.</p>
     pub game_session_region: ::std::option::Option<::std::string::String>,
-    /// <p>A set of values, expressed in milliseconds, that indicates the amount of latency that a player experiences when connected to Amazon Web Services Regions.</p>
+    /// <p>A set of values, expressed in milliseconds, that indicates the amount of latency that a player experiences when connected to @aws; Regions.</p>
     pub player_latencies: ::std::option::Option<::std::vec::Vec<crate::types::PlayerLatency>>,
     /// <p>Time stamp indicating when this request was placed in the queue. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -64,7 +64,7 @@ pub struct GameSessionPlacement {
     pub port: ::std::option::Option<i32>,
     /// <p>A collection of information on player sessions created in response to the game session placement request. These player sessions are created only after a new game session is successfully placed (placement status is <code>FULFILLED</code>). This information includes the player ID, provided in the placement request, and a corresponding player session ID.</p>
     pub placed_player_sessions: ::std::option::Option<::std::vec::Vec<crate::types::PlacedPlayerSession>>,
-    /// <p>A set of custom game session properties, formatted as a single string value. This data is passed to a game server process in the <code>GameSession</code> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>).</p>
+    /// <p>A set of custom game session properties, formatted as a single string value. This data is passed to a game server process with a request to start a new game session. For more information, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a game session</a>.</p>
     pub game_session_data: ::std::option::Option<::std::string::String>,
     /// <p>Information on the matchmaking process for this game. Data is in JSON syntax, formatted as a string. It identifies the matchmaking configuration used to create the match, and contains data on all players assigned to the match, including player attributes and team assignments. For more details on matchmaker data, see <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-server.html#match-server-data">Match Data</a>.</p>
     pub matchmaker_data: ::std::option::Option<::std::string::String>,
@@ -87,7 +87,7 @@ impl GameSessionPlacement {
     /// <li>
     /// <p><b>CANCELLED</b> -- The placement request was canceled.</p></li>
     /// <li>
-    /// <p><b>TIMED_OUT</b> -- A new game session was not successfully created before the time limit expired. You can resubmit the placement request as needed.</p></li>
+    /// <p><b>TIMED_OUT</b> -- A new game session was not successfully created before the time limit expired. You can resubmit as a new placement request as needed.</p></li>
     /// <li>
     /// <p><b>FAILED</b> -- Amazon GameLift is not able to complete the process of placing the game session. Common reasons are the game session terminated before the placement process was completed, or an unexpected internal error.</p></li>
     /// </ul>
@@ -120,7 +120,7 @@ impl GameSessionPlacement {
     pub fn game_session_region(&self) -> ::std::option::Option<&str> {
         self.game_session_region.as_deref()
     }
-    /// <p>A set of values, expressed in milliseconds, that indicates the amount of latency that a player experiences when connected to Amazon Web Services Regions.</p>
+    /// <p>A set of values, expressed in milliseconds, that indicates the amount of latency that a player experiences when connected to @aws; Regions.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.player_latencies.is_none()`.
     pub fn player_latencies(&self) -> &[crate::types::PlayerLatency] {
@@ -166,7 +166,7 @@ impl GameSessionPlacement {
     pub fn placed_player_sessions(&self) -> &[crate::types::PlacedPlayerSession] {
         self.placed_player_sessions.as_deref().unwrap_or_default()
     }
-    /// <p>A set of custom game session properties, formatted as a single string value. This data is passed to a game server process in the <code>GameSession</code> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>).</p>
+    /// <p>A set of custom game session properties, formatted as a single string value. This data is passed to a game server process with a request to start a new game session. For more information, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a game session</a>.</p>
     pub fn game_session_data(&self) -> ::std::option::Option<&str> {
         self.game_session_data.as_deref()
     }
@@ -267,7 +267,7 @@ impl GameSessionPlacementBuilder {
     /// <li>
     /// <p><b>CANCELLED</b> -- The placement request was canceled.</p></li>
     /// <li>
-    /// <p><b>TIMED_OUT</b> -- A new game session was not successfully created before the time limit expired. You can resubmit the placement request as needed.</p></li>
+    /// <p><b>TIMED_OUT</b> -- A new game session was not successfully created before the time limit expired. You can resubmit as a new placement request as needed.</p></li>
     /// <li>
     /// <p><b>FAILED</b> -- Amazon GameLift is not able to complete the process of placing the game session. Common reasons are the game session terminated before the placement process was completed, or an unexpected internal error.</p></li>
     /// </ul>
@@ -284,7 +284,7 @@ impl GameSessionPlacementBuilder {
     /// <li>
     /// <p><b>CANCELLED</b> -- The placement request was canceled.</p></li>
     /// <li>
-    /// <p><b>TIMED_OUT</b> -- A new game session was not successfully created before the time limit expired. You can resubmit the placement request as needed.</p></li>
+    /// <p><b>TIMED_OUT</b> -- A new game session was not successfully created before the time limit expired. You can resubmit as a new placement request as needed.</p></li>
     /// <li>
     /// <p><b>FAILED</b> -- Amazon GameLift is not able to complete the process of placing the game session. Common reasons are the game session terminated before the placement process was completed, or an unexpected internal error.</p></li>
     /// </ul>
@@ -301,7 +301,7 @@ impl GameSessionPlacementBuilder {
     /// <li>
     /// <p><b>CANCELLED</b> -- The placement request was canceled.</p></li>
     /// <li>
-    /// <p><b>TIMED_OUT</b> -- A new game session was not successfully created before the time limit expired. You can resubmit the placement request as needed.</p></li>
+    /// <p><b>TIMED_OUT</b> -- A new game session was not successfully created before the time limit expired. You can resubmit as a new placement request as needed.</p></li>
     /// <li>
     /// <p><b>FAILED</b> -- Amazon GameLift is not able to complete the process of placing the game session. Common reasons are the game session terminated before the placement process was completed, or an unexpected internal error.</p></li>
     /// </ul>
@@ -402,19 +402,19 @@ impl GameSessionPlacementBuilder {
     ///
     /// To override the contents of this collection use [`set_player_latencies`](Self::set_player_latencies).
     ///
-    /// <p>A set of values, expressed in milliseconds, that indicates the amount of latency that a player experiences when connected to Amazon Web Services Regions.</p>
+    /// <p>A set of values, expressed in milliseconds, that indicates the amount of latency that a player experiences when connected to @aws; Regions.</p>
     pub fn player_latencies(mut self, input: crate::types::PlayerLatency) -> Self {
         let mut v = self.player_latencies.unwrap_or_default();
         v.push(input);
         self.player_latencies = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A set of values, expressed in milliseconds, that indicates the amount of latency that a player experiences when connected to Amazon Web Services Regions.</p>
+    /// <p>A set of values, expressed in milliseconds, that indicates the amount of latency that a player experiences when connected to @aws; Regions.</p>
     pub fn set_player_latencies(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PlayerLatency>>) -> Self {
         self.player_latencies = input;
         self
     }
-    /// <p>A set of values, expressed in milliseconds, that indicates the amount of latency that a player experiences when connected to Amazon Web Services Regions.</p>
+    /// <p>A set of values, expressed in milliseconds, that indicates the amount of latency that a player experiences when connected to @aws; Regions.</p>
     pub fn get_player_latencies(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PlayerLatency>> {
         &self.player_latencies
     }
@@ -550,17 +550,17 @@ impl GameSessionPlacementBuilder {
     pub fn get_placed_player_sessions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PlacedPlayerSession>> {
         &self.placed_player_sessions
     }
-    /// <p>A set of custom game session properties, formatted as a single string value. This data is passed to a game server process in the <code>GameSession</code> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>).</p>
+    /// <p>A set of custom game session properties, formatted as a single string value. This data is passed to a game server process with a request to start a new game session. For more information, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a game session</a>.</p>
     pub fn game_session_data(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.game_session_data = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A set of custom game session properties, formatted as a single string value. This data is passed to a game server process in the <code>GameSession</code> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>).</p>
+    /// <p>A set of custom game session properties, formatted as a single string value. This data is passed to a game server process with a request to start a new game session. For more information, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a game session</a>.</p>
     pub fn set_game_session_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.game_session_data = input;
         self
     }
-    /// <p>A set of custom game session properties, formatted as a single string value. This data is passed to a game server process in the <code>GameSession</code> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>).</p>
+    /// <p>A set of custom game session properties, formatted as a single string value. This data is passed to a game server process with a request to start a new game session. For more information, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a game session</a>.</p>
     pub fn get_game_session_data(&self) -> &::std::option::Option<::std::string::String> {
         &self.game_session_data
     }

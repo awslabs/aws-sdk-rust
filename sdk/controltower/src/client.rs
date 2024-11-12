@@ -205,6 +205,8 @@ mod list_tags_for_resource;
 
 mod reset_enabled_baseline;
 
+mod reset_enabled_control;
+
 mod reset_landing_zone;
 
 mod tag_resource;

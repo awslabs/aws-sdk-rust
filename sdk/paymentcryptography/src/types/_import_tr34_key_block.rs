@@ -56,7 +56,7 @@ impl ::std::fmt::Debug for ImportTr34KeyBlock {
         );
         formatter.field("signing_key_certificate", &"*** Sensitive Data Redacted ***");
         formatter.field("import_token", &self.import_token);
-        formatter.field("wrapped_key_block", &self.wrapped_key_block);
+        formatter.field("wrapped_key_block", &"*** Sensitive Data Redacted ***");
         formatter.field("key_block_format", &self.key_block_format);
         formatter.field("random_nonce", &self.random_nonce);
         formatter.finish()
@@ -222,7 +222,7 @@ impl ::std::fmt::Debug for ImportTr34KeyBlockBuilder {
         );
         formatter.field("signing_key_certificate", &"*** Sensitive Data Redacted ***");
         formatter.field("import_token", &self.import_token);
-        formatter.field("wrapped_key_block", &self.wrapped_key_block);
+        formatter.field("wrapped_key_block", &"*** Sensitive Data Redacted ***");
         formatter.field("key_block_format", &self.key_block_format);
         formatter.field("random_nonce", &self.random_nonce);
         formatter.finish()

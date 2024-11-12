@@ -64,6 +64,9 @@ pub mod list_tags_for_resource;
 /// Types for the `ResetEnabledBaseline` operation.
 pub mod reset_enabled_baseline;
 
+/// Types for the `ResetEnabledControl` operation.
+pub mod reset_enabled_control;
+
 /// Types for the `ResetLandingZone` operation.
 pub mod reset_landing_zone;
 

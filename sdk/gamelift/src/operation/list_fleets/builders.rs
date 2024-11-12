@@ -22,7 +22,6 @@ impl crate::operation::list_fleets::builders::ListFleetsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListFleets`.
 ///
-/// <p><b>This operation has been expanded to use with the Amazon GameLift containers feature, which is currently in public preview.</b></p>
 /// <p>Retrieves a collection of fleet resources in an Amazon Web Services Region. You can filter the result set to find only those fleets that are deployed with a specific build or script. For fleets that have multiple locations, this operation retrieves fleets based on their home Region only.</p>
 /// <p>You can use operation in the following ways:</p>
 /// <ul>
@@ -32,8 +31,6 @@ impl crate::operation::list_fleets::builders::ListFleetsInputBuilder {
 /// <p>To get a list of all fleets where a specific game build is deployed, provide the build ID.</p></li>
 /// <li>
 /// <p>To get a list of all Realtime Servers fleets with a specific configuration script, provide the script ID.</p></li>
-/// <li>
-/// <p>To get a list of all fleets with a specific container group definition, provide the <code>ContainerGroupDefinition</code> ID.</p></li>
 /// </ul>
 /// <p>Use the pagination parameters to retrieve results as a set of sequential pages.</p>
 /// <p>If successful, this operation returns a list of fleet IDs that match the request parameters. A NextToken value is also returned if there are more result pages to retrieve.</p><note>
@@ -157,20 +154,6 @@ impl ListFleetsFluentBuilder {
     /// <p>A unique identifier for the Realtime script to request fleets for. Use this parameter to return only fleets using a specified script. Use either the script ID or ARN value.</p>
     pub fn get_script_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_script_id()
-    }
-    /// <p>The container group definition name to request fleets for. Use this parameter to return only fleets that are deployed with the specified container group definition.</p>
-    pub fn container_group_definition_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.inner = self.inner.container_group_definition_name(input.into());
-        self
-    }
-    /// <p>The container group definition name to request fleets for. Use this parameter to return only fleets that are deployed with the specified container group definition.</p>
-    pub fn set_container_group_definition_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.inner = self.inner.set_container_group_definition_name(input);
-        self
-    }
-    /// <p>The container group definition name to request fleets for. Use this parameter to return only fleets that are deployed with the specified container group definition.</p>
-    pub fn get_container_group_definition_name(&self) -> &::std::option::Option<::std::string::String> {
-        self.inner.get_container_group_definition_name()
     }
     /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
     pub fn limit(mut self, input: i32) -> Self {

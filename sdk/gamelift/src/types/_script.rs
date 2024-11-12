@@ -10,9 +10,9 @@ pub struct Script {
     pub script_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a Amazon GameLift script resource and uniquely identifies it. ARNs are unique across all Regions. In a GameLift script ARN, the resource ID matches the <i>ScriptId</i> value.</p>
     pub script_arn: ::std::option::Option<::std::string::String>,
-    /// <p>A descriptive label that is associated with a script. Script names don't need to be unique.</p>
+    /// <p>A descriptive label that is associated with a script. Script names do not need to be unique.</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>Version information associated with a build or script. Version strings don't need to be unique.</p>
+    /// <p>Version information that is associated with a build or script. Version strings do not need to be unique.</p>
     pub version: ::std::option::Option<::std::string::String>,
     /// <p>The file size of the uploaded Realtime script, expressed in bytes. When files are uploaded from an S3 location, this value remains at "0".</p>
     pub size_on_disk: ::std::option::Option<i64>,
@@ -30,11 +30,11 @@ impl Script {
     pub fn script_arn(&self) -> ::std::option::Option<&str> {
         self.script_arn.as_deref()
     }
-    /// <p>A descriptive label that is associated with a script. Script names don't need to be unique.</p>
+    /// <p>A descriptive label that is associated with a script. Script names do not need to be unique.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>Version information associated with a build or script. Version strings don't need to be unique.</p>
+    /// <p>Version information that is associated with a build or script. Version strings do not need to be unique.</p>
     pub fn version(&self) -> ::std::option::Option<&str> {
         self.version.as_deref()
     }
@@ -99,31 +99,31 @@ impl ScriptBuilder {
     pub fn get_script_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.script_arn
     }
-    /// <p>A descriptive label that is associated with a script. Script names don't need to be unique.</p>
+    /// <p>A descriptive label that is associated with a script. Script names do not need to be unique.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A descriptive label that is associated with a script. Script names don't need to be unique.</p>
+    /// <p>A descriptive label that is associated with a script. Script names do not need to be unique.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p>A descriptive label that is associated with a script. Script names don't need to be unique.</p>
+    /// <p>A descriptive label that is associated with a script. Script names do not need to be unique.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>Version information associated with a build or script. Version strings don't need to be unique.</p>
+    /// <p>Version information that is associated with a build or script. Version strings do not need to be unique.</p>
     pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Version information associated with a build or script. Version strings don't need to be unique.</p>
+    /// <p>Version information that is associated with a build or script. Version strings do not need to be unique.</p>
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version = input;
         self
     }
-    /// <p>Version information associated with a build or script. Version strings don't need to be unique.</p>
+    /// <p>Version information that is associated with a build or script. Version strings do not need to be unique.</p>
     pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.version
     }

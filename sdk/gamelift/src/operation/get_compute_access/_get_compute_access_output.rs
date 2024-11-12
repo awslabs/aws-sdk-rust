@@ -17,8 +17,10 @@ pub struct GetComputeAccessOutput {
     pub compute_arn: ::std::option::Option<::std::string::String>,
     /// <p>A set of temporary Amazon Web Services credentials for use when connecting to the compute resource with Amazon EC2 Systems Manager (SSM).</p>
     pub credentials: ::std::option::Option<crate::types::AwsCredentials>,
-    /// <p>(For container fleets only) The instance ID where the compute resource is running.</p>
+    /// <p>The instance ID where the compute resource is running.</p>
     pub target: ::std::option::Option<::std::string::String>,
+    /// <p>For a managed container fleet, a list of containers on the compute. Use the container runtime ID with Docker commands to connect to a specific container.</p>
+    pub container_identifiers: ::std::option::Option<::std::vec::Vec<crate::types::ContainerIdentifier>>,
     _request_id: Option<String>,
 }
 impl GetComputeAccessOutput {
@@ -46,9 +48,15 @@ impl GetComputeAccessOutput {
     pub fn credentials(&self) -> ::std::option::Option<&crate::types::AwsCredentials> {
         self.credentials.as_ref()
     }
-    /// <p>(For container fleets only) The instance ID where the compute resource is running.</p>
+    /// <p>The instance ID where the compute resource is running.</p>
     pub fn target(&self) -> ::std::option::Option<&str> {
         self.target.as_deref()
+    }
+    /// <p>For a managed container fleet, a list of containers on the compute. Use the container runtime ID with Docker commands to connect to a specific container.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.container_identifiers.is_none()`.
+    pub fn container_identifiers(&self) -> &[crate::types::ContainerIdentifier] {
+        self.container_identifiers.as_deref().unwrap_or_default()
     }
 }
 impl ::std::fmt::Debug for GetComputeAccessOutput {
@@ -60,6 +68,7 @@ impl ::std::fmt::Debug for GetComputeAccessOutput {
         formatter.field("compute_arn", &self.compute_arn);
         formatter.field("credentials", &"*** Sensitive Data Redacted ***");
         formatter.field("target", &self.target);
+        formatter.field("container_identifiers", &self.container_identifiers);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
@@ -86,6 +95,7 @@ pub struct GetComputeAccessOutputBuilder {
     pub(crate) compute_arn: ::std::option::Option<::std::string::String>,
     pub(crate) credentials: ::std::option::Option<crate::types::AwsCredentials>,
     pub(crate) target: ::std::option::Option<::std::string::String>,
+    pub(crate) container_identifiers: ::std::option::Option<::std::vec::Vec<crate::types::ContainerIdentifier>>,
     _request_id: Option<String>,
 }
 impl GetComputeAccessOutputBuilder {
@@ -171,19 +181,39 @@ impl GetComputeAccessOutputBuilder {
     pub fn get_credentials(&self) -> &::std::option::Option<crate::types::AwsCredentials> {
         &self.credentials
     }
-    /// <p>(For container fleets only) The instance ID where the compute resource is running.</p>
+    /// <p>The instance ID where the compute resource is running.</p>
     pub fn target(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>(For container fleets only) The instance ID where the compute resource is running.</p>
+    /// <p>The instance ID where the compute resource is running.</p>
     pub fn set_target(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target = input;
         self
     }
-    /// <p>(For container fleets only) The instance ID where the compute resource is running.</p>
+    /// <p>The instance ID where the compute resource is running.</p>
     pub fn get_target(&self) -> &::std::option::Option<::std::string::String> {
         &self.target
+    }
+    /// Appends an item to `container_identifiers`.
+    ///
+    /// To override the contents of this collection use [`set_container_identifiers`](Self::set_container_identifiers).
+    ///
+    /// <p>For a managed container fleet, a list of containers on the compute. Use the container runtime ID with Docker commands to connect to a specific container.</p>
+    pub fn container_identifiers(mut self, input: crate::types::ContainerIdentifier) -> Self {
+        let mut v = self.container_identifiers.unwrap_or_default();
+        v.push(input);
+        self.container_identifiers = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>For a managed container fleet, a list of containers on the compute. Use the container runtime ID with Docker commands to connect to a specific container.</p>
+    pub fn set_container_identifiers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ContainerIdentifier>>) -> Self {
+        self.container_identifiers = input;
+        self
+    }
+    /// <p>For a managed container fleet, a list of containers on the compute. Use the container runtime ID with Docker commands to connect to a specific container.</p>
+    pub fn get_container_identifiers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ContainerIdentifier>> {
+        &self.container_identifiers
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
@@ -203,6 +233,7 @@ impl GetComputeAccessOutputBuilder {
             compute_arn: self.compute_arn,
             credentials: self.credentials,
             target: self.target,
+            container_identifiers: self.container_identifiers,
             _request_id: self._request_id,
         }
     }
@@ -216,6 +247,7 @@ impl ::std::fmt::Debug for GetComputeAccessOutputBuilder {
         formatter.field("compute_arn", &self.compute_arn);
         formatter.field("credentials", &"*** Sensitive Data Redacted ***");
         formatter.field("target", &self.target);
+        formatter.field("container_identifiers", &self.container_identifiers);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }

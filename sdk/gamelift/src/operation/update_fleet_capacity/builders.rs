@@ -22,8 +22,7 @@ impl crate::operation::update_fleet_capacity::builders::UpdateFleetCapacityInput
 }
 /// Fluent builder constructing a request to `UpdateFleetCapacity`.
 ///
-/// <p><b>This operation has been expanded to use with the Amazon GameLift containers feature, which is currently in public preview.</b></p>
-/// <p>Updates capacity settings for a managed EC2 fleet or container fleet. For these fleets, you adjust capacity by changing the number of instances in the fleet. Fleet capacity determines the number of game sessions and players that the fleet can host based on its configuration. For fleets with multiple locations, use this operation to manage capacity settings in each location individually.</p>
+/// <p>Updates capacity settings for a managed EC2 fleet or managed container fleet. For these fleets, you adjust capacity by changing the number of instances in the fleet. Fleet capacity determines the number of game sessions and players that the fleet can host based on its configuration. For fleets with multiple locations, use this operation to manage capacity settings in each location individually.</p>
 /// <p>Use this operation to set these fleet capacity properties:</p>
 /// <ul>
 /// <li>

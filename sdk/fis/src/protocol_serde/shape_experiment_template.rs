@@ -91,6 +91,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "experimentReportConfiguration" => {
+                            builder = builder.set_experiment_report_configuration(
+                                crate::protocol_serde::shape_experiment_template_report_configuration::de_experiment_template_report_configuration(
+                                    tokens,
+                                )?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

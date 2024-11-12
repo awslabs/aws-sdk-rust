@@ -22,8 +22,7 @@ impl crate::operation::describe_fleet_capacity::builders::DescribeFleetCapacityI
 }
 /// Fluent builder constructing a request to `DescribeFleetCapacity`.
 ///
-/// <p><b>This operation has been expanded to use with the Amazon GameLift containers feature, which is currently in public preview.</b></p>
-/// <p>Retrieves the resource capacity settings for one or more fleets. For a container fleet, this operation also returns counts for replica container groups.</p>
+/// <p>Retrieves the resource capacity settings for one or more fleets. For a container fleet, this operation also returns counts for game server container groups.</p>
 /// <p>With multi-location fleets, this operation retrieves data for the fleet's home Region only. To retrieve capacity for remote locations, see <code>DescribeFleetLocationCapacity</code>.</p>
 /// <p>This operation can be used in the following ways:</p>
 /// <ul>

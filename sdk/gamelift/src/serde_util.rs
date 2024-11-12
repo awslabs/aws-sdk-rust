@@ -29,6 +29,15 @@ pub(crate) fn matchmaking_rule_set_correct_errors(
     builder
 }
 
+pub(crate) fn container_group_definition_correct_errors(
+    mut builder: crate::types::builders::ContainerGroupDefinitionBuilder,
+) -> crate::types::builders::ContainerGroupDefinitionBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn anywhere_configuration_correct_errors(
     mut builder: crate::types::builders::AnywhereConfigurationBuilder,
 ) -> crate::types::builders::AnywhereConfigurationBuilder {
@@ -43,6 +52,18 @@ pub(crate) fn certificate_configuration_correct_errors(
 ) -> crate::types::builders::CertificateConfigurationBuilder {
     if builder.certificate_type.is_none() {
         builder.certificate_type = "no value was set".parse::<crate::types::CertificateType>().ok()
+    }
+    builder
+}
+
+pub(crate) fn connection_port_range_correct_errors(
+    mut builder: crate::types::builders::ConnectionPortRangeBuilder,
+) -> crate::types::builders::ConnectionPortRangeBuilder {
+    if builder.from_port.is_none() {
+        builder.from_port = Some(Default::default())
+    }
+    if builder.to_port.is_none() {
+        builder.to_port = Some(Default::default())
     }
     builder
 }
@@ -73,26 +94,11 @@ pub(crate) fn tag_correct_errors(mut builder: crate::types::builders::TagBuilder
     builder
 }
 
-pub(crate) fn connection_port_range_correct_errors(
-    mut builder: crate::types::builders::ConnectionPortRangeBuilder,
-) -> crate::types::builders::ConnectionPortRangeBuilder {
-    if builder.from_port.is_none() {
-        builder.from_port = Some(Default::default())
-    }
-    if builder.to_port.is_none() {
-        builder.to_port = Some(Default::default())
-    }
-    builder
-}
-
-pub(crate) fn container_definition_correct_errors(
-    mut builder: crate::types::builders::ContainerDefinitionBuilder,
-) -> crate::types::builders::ContainerDefinitionBuilder {
-    if builder.container_name.is_none() {
-        builder.container_name = Some(Default::default())
-    }
-    if builder.image_uri.is_none() {
-        builder.image_uri = Some(Default::default())
+pub(crate) fn container_port_configuration_correct_errors(
+    mut builder: crate::types::builders::ContainerPortConfigurationBuilder,
+) -> crate::types::builders::ContainerPortConfigurationBuilder {
+    if builder.container_port_ranges.is_none() {
+        builder.container_port_ranges = Some(Default::default())
     }
     builder
 }
@@ -137,24 +143,6 @@ pub(crate) fn target_configuration_correct_errors(
     builder
 }
 
-pub(crate) fn container_health_check_correct_errors(
-    mut builder: crate::types::builders::ContainerHealthCheckBuilder,
-) -> crate::types::builders::ContainerHealthCheckBuilder {
-    if builder.command.is_none() {
-        builder.command = Some(Default::default())
-    }
-    builder
-}
-
-pub(crate) fn container_port_configuration_correct_errors(
-    mut builder: crate::types::builders::ContainerPortConfigurationBuilder,
-) -> crate::types::builders::ContainerPortConfigurationBuilder {
-    if builder.container_port_ranges.is_none() {
-        builder.container_port_ranges = Some(Default::default())
-    }
-    builder
-}
-
 pub(crate) fn container_dependency_correct_errors(
     mut builder: crate::types::builders::ContainerDependencyBuilder,
 ) -> crate::types::builders::ContainerDependencyBuilder {
@@ -175,6 +163,24 @@ pub(crate) fn container_environment_correct_errors(
     }
     if builder.value.is_none() {
         builder.value = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn container_health_check_correct_errors(
+    mut builder: crate::types::builders::ContainerHealthCheckBuilder,
+) -> crate::types::builders::ContainerHealthCheckBuilder {
+    if builder.command.is_none() {
+        builder.command = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn container_mount_point_correct_errors(
+    mut builder: crate::types::builders::ContainerMountPointBuilder,
+) -> crate::types::builders::ContainerMountPointBuilder {
+    if builder.instance_path.is_none() {
+        builder.instance_path = Some(Default::default())
     }
     builder
 }
