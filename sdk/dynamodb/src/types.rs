@@ -33,6 +33,8 @@ pub use crate::types::_global_secondary_index_auto_scaling_update::GlobalSeconda
 
 pub use crate::types::_table_description::TableDescription;
 
+pub use crate::types::_table_warm_throughput_description::TableWarmThroughputDescription;
+
 pub use crate::types::_on_demand_throughput::OnDemandThroughput;
 
 pub use crate::types::_table_class_summary::TableClassSummary;
@@ -52,6 +54,8 @@ pub use crate::types::_restore_summary::RestoreSummary;
 pub use crate::types::_replica_description::ReplicaDescription;
 
 pub use crate::types::_replica_global_secondary_index_description::ReplicaGlobalSecondaryIndexDescription;
+
+pub use crate::types::_global_secondary_index_warm_throughput_description::GlobalSecondaryIndexWarmThroughputDescription;
 
 pub use crate::types::_on_demand_throughput_override::OnDemandThroughputOverride;
 
@@ -82,6 +86,8 @@ pub use crate::types::_billing_mode::BillingMode;
 pub use crate::types::_attribute_definition::AttributeDefinition;
 
 pub use crate::types::_scalar_attribute_type::ScalarAttributeType;
+
+pub use crate::types::_warm_throughput::WarmThroughput;
 
 pub use crate::types::_replication_group_update::ReplicationGroupUpdate;
 
@@ -413,6 +419,8 @@ mod _global_secondary_index_info;
 
 mod _global_secondary_index_update;
 
+mod _global_secondary_index_warm_throughput_description;
+
 mod _global_table;
 
 mod _global_table_description;
@@ -557,6 +565,8 @@ mod _table_description;
 
 mod _table_status;
 
+mod _table_warm_throughput_description;
+
 mod _tag;
 
 mod _time_to_live_description;
@@ -576,6 +586,8 @@ mod _update_global_secondary_index_action;
 mod _update_kinesis_streaming_configuration;
 
 mod _update_replication_group_member_action;
+
+mod _warm_throughput;
 
 mod _write_request;
 

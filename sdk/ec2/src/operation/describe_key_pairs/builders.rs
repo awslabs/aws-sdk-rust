@@ -23,7 +23,7 @@ impl crate::operation::describe_key_pairs::builders::DescribeKeyPairsInputBuilde
 /// Fluent builder constructing a request to `DescribeKeyPairs`.
 ///
 /// <p>Describes the specified key pairs or all of your key pairs.</p>
-/// <p>For more information about key pairs, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Amazon EC2 key pairs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+/// <p>For more information about key pairs, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Amazon EC2 key pairs</a> in the <i>Amazon EC2 User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeKeyPairsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

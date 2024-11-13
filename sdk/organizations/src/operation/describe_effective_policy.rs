@@ -370,6 +370,8 @@ pub enum DescribeEffectivePolicyError {
     /// <li>
     /// <p>INVALID_PATTERN_TARGET_ID: You specified a policy target ID that doesn't match the required pattern.</p></li>
     /// <li>
+    /// <p>INVALID_PRINCIPAL: You specified an invalid principal element in the policy.</p></li>
+    /// <li>
     /// <p>INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin with the reserved prefix <code>AWSServiceRoleFor</code>.</p></li>
     /// <li>
     /// <p>INVALID_SYNTAX_ORGANIZATION_ARN: You specified an invalid Amazon Resource Name (ARN) for the organization.</p></li>
@@ -389,6 +391,8 @@ pub enum DescribeEffectivePolicyError {
     /// <p>MIN_VALUE_EXCEEDED: You provided a numeric parameter that has a smaller value than allowed.</p></li>
     /// <li>
     /// <p>MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities in the same root.</p></li>
+    /// <li>
+    /// <p>NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.</p></li>
     /// <li>
     /// <p>TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.</p></li>
     /// <li>

@@ -22,8 +22,8 @@ impl crate::operation::import_key_pair::builders::ImportKeyPairInputBuilder {
 }
 /// Fluent builder constructing a request to `ImportKeyPair`.
 ///
-/// <p>Imports the public key from an RSA or ED25519 key pair that you created with a third-party tool. Compare this with <code>CreateKeyPair</code>, in which Amazon Web Services creates the key pair and gives the keys to you (Amazon Web Services keeps a copy of the public key). With ImportKeyPair, you create the key pair and give Amazon Web Services just the public key. The private key is never transferred between you and Amazon Web Services.</p>
-/// <p>For more information about key pairs, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Amazon EC2 key pairs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+/// <p>Imports the public key from an RSA or ED25519 key pair that you created using a third-party tool. You give Amazon Web Services only the public key. The private key is never transferred between you and Amazon Web Services.</p>
+/// <p>For more information about the requirements for importing a key pair, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/create-key-pairs.html#how-to-generate-your-own-key-and-import-it-to-aws">Create a key pair and import the public key to Amazon EC2</a> in the <i>Amazon EC2 User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ImportKeyPairFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -156,17 +156,17 @@ impl ImportKeyPairFluentBuilder {
     pub fn get_key_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_key_name()
     }
-    /// <p>The public key. For API calls, the text must be base64-encoded. For command line tools, base64 encoding is performed for you.</p>
+    /// <p>The public key.</p>
     pub fn public_key_material(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.inner = self.inner.public_key_material(input);
         self
     }
-    /// <p>The public key. For API calls, the text must be base64-encoded. For command line tools, base64 encoding is performed for you.</p>
+    /// <p>The public key.</p>
     pub fn set_public_key_material(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.inner = self.inner.set_public_key_material(input);
         self
     }
-    /// <p>The public key. For API calls, the text must be base64-encoded. For command line tools, base64 encoding is performed for you.</p>
+    /// <p>The public key.</p>
     pub fn get_public_key_material(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
         self.inner.get_public_key_material()
     }

@@ -181,6 +181,8 @@ mod delete_profile;
 
 mod delete_transformer;
 
+mod generate_mapping;
+
 mod get_capability;
 
 mod get_partnership;

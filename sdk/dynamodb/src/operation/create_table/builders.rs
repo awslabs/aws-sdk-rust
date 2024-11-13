@@ -580,6 +580,20 @@ impl CreateTableFluentBuilder {
     pub fn get_deletion_protection_enabled(&self) -> &::std::option::Option<bool> {
         self.inner.get_deletion_protection_enabled()
     }
+    /// <p>Represents the warm throughput (in read units per second and write units per second) for creating a table.</p>
+    pub fn warm_throughput(mut self, input: crate::types::WarmThroughput) -> Self {
+        self.inner = self.inner.warm_throughput(input);
+        self
+    }
+    /// <p>Represents the warm throughput (in read units per second and write units per second) for creating a table.</p>
+    pub fn set_warm_throughput(mut self, input: ::std::option::Option<crate::types::WarmThroughput>) -> Self {
+        self.inner = self.inner.set_warm_throughput(input);
+        self
+    }
+    /// <p>Represents the warm throughput (in read units per second and write units per second) for creating a table.</p>
+    pub fn get_warm_throughput(&self) -> &::std::option::Option<crate::types::WarmThroughput> {
+        self.inner.get_warm_throughput()
+    }
     /// <p>An Amazon Web Services resource-based policy document in JSON format that will be attached to the table.</p>
     /// <p>When you attach a resource-based policy while creating a table, the policy application is <i>strongly consistent</i>.</p>
     /// <p>The maximum size supported for a resource-based policy document is 20 KB. DynamoDB counts whitespaces when calculating the size of a policy against this limit. For a full list of all considerations that apply for resource-based policies, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/rbac-considerations.html">Resource-based policy considerations</a>.</p><note>

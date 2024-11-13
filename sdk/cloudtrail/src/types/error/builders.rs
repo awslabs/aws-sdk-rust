@@ -141,6 +141,8 @@ pub use crate::types::error::_query_id_not_found_exception::QueryIdNotFoundExcep
 
 pub use crate::types::error::_insight_not_enabled_exception::InsightNotEnabledExceptionBuilder;
 
+pub use crate::types::error::_generate_response_exception::GenerateResponseExceptionBuilder;
+
 pub use crate::types::error::_event_data_store_federation_enabled_exception::EventDataStoreFederationEnabledExceptionBuilder;
 
 pub use crate::types::error::_concurrent_modification_exception::ConcurrentModificationExceptionBuilder;

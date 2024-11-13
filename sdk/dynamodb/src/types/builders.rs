@@ -27,6 +27,8 @@ pub use crate::types::_global_secondary_index_auto_scaling_update::GlobalSeconda
 
 pub use crate::types::_table_description::TableDescriptionBuilder;
 
+pub use crate::types::_table_warm_throughput_description::TableWarmThroughputDescriptionBuilder;
+
 pub use crate::types::_on_demand_throughput::OnDemandThroughputBuilder;
 
 pub use crate::types::_table_class_summary::TableClassSummaryBuilder;
@@ -40,6 +42,8 @@ pub use crate::types::_restore_summary::RestoreSummaryBuilder;
 pub use crate::types::_replica_description::ReplicaDescriptionBuilder;
 
 pub use crate::types::_replica_global_secondary_index_description::ReplicaGlobalSecondaryIndexDescriptionBuilder;
+
+pub use crate::types::_global_secondary_index_warm_throughput_description::GlobalSecondaryIndexWarmThroughputDescriptionBuilder;
 
 pub use crate::types::_on_demand_throughput_override::OnDemandThroughputOverrideBuilder;
 
@@ -60,6 +64,8 @@ pub use crate::types::_local_secondary_index_description::LocalSecondaryIndexDes
 pub use crate::types::_billing_mode_summary::BillingModeSummaryBuilder;
 
 pub use crate::types::_attribute_definition::AttributeDefinitionBuilder;
+
+pub use crate::types::_warm_throughput::WarmThroughputBuilder;
 
 pub use crate::types::_replication_group_update::ReplicationGroupUpdateBuilder;
 

@@ -81,9 +81,9 @@ pub use crate::types::_conversion_source_format::ConversionSourceFormat;
 
 pub use crate::types::_transformer_job_status::TransformerJobStatus;
 
-pub use crate::types::_template_details::TemplateDetails;
-
 pub use crate::types::_mapping_type::MappingType;
+
+pub use crate::types::_template_details::TemplateDetails;
 
 mod _capability_configuration;
 

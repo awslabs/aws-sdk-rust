@@ -7,7 +7,7 @@ pub struct CreateCapacityReservationBySplittingInput {
     pub dry_run: ::std::option::Option<bool>,
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensure Idempotency</a>.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
-    /// <p>The ID of the Capacity Reservation from which you want to split the available capacity.</p>
+    /// <p>The ID of the Capacity Reservation from which you want to split the capacity.</p>
     pub source_capacity_reservation_id: ::std::option::Option<::std::string::String>,
     /// <p>The number of instances to split from the source Capacity Reservation.</p>
     pub instance_count: ::std::option::Option<i32>,
@@ -23,7 +23,7 @@ impl CreateCapacityReservationBySplittingInput {
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
     }
-    /// <p>The ID of the Capacity Reservation from which you want to split the available capacity.</p>
+    /// <p>The ID of the Capacity Reservation from which you want to split the capacity.</p>
     pub fn source_capacity_reservation_id(&self) -> ::std::option::Option<&str> {
         self.source_capacity_reservation_id.as_deref()
     }
@@ -84,18 +84,18 @@ impl CreateCapacityReservationBySplittingInputBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
-    /// <p>The ID of the Capacity Reservation from which you want to split the available capacity.</p>
+    /// <p>The ID of the Capacity Reservation from which you want to split the capacity.</p>
     /// This field is required.
     pub fn source_capacity_reservation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_capacity_reservation_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the Capacity Reservation from which you want to split the available capacity.</p>
+    /// <p>The ID of the Capacity Reservation from which you want to split the capacity.</p>
     pub fn set_source_capacity_reservation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_capacity_reservation_id = input;
         self
     }
-    /// <p>The ID of the Capacity Reservation from which you want to split the available capacity.</p>
+    /// <p>The ID of the Capacity Reservation from which you want to split the capacity.</p>
     pub fn get_source_capacity_reservation_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.source_capacity_reservation_id
     }

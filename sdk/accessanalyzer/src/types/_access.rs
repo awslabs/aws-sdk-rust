@@ -6,7 +6,7 @@
 pub struct Access {
     /// <p>A list of actions for the access permissions. Any strings that can be used as an action in an IAM policy can be used in the list of actions to check.</p>
     pub actions: ::std::vec::Vec<::std::string::String>,
-    /// <p>A list of resources for the access permissions. Any strings that can be used as a resource in an IAM policy can be used in the list of resources to check.</p>
+    /// <p>A list of resources for the access permissions. Any strings that can be used as an Amazon Resource Name (ARN) in an IAM policy can be used in the list of resources to check. You can only use a wildcard in the portion of the ARN that specifies the resource ID.</p>
     pub resources: ::std::vec::Vec<::std::string::String>,
 }
 impl Access {
@@ -15,7 +15,7 @@ impl Access {
         use std::ops::Deref;
         self.actions.deref()
     }
-    /// <p>A list of resources for the access permissions. Any strings that can be used as a resource in an IAM policy can be used in the list of resources to check.</p>
+    /// <p>A list of resources for the access permissions. Any strings that can be used as an Amazon Resource Name (ARN) in an IAM policy can be used in the list of resources to check. You can only use a wildcard in the portion of the ARN that specifies the resource ID.</p>
     pub fn resources(&self) -> &[::std::string::String] {
         use std::ops::Deref;
         self.resources.deref()
@@ -60,19 +60,19 @@ impl AccessBuilder {
     ///
     /// To override the contents of this collection use [`set_resources`](Self::set_resources).
     ///
-    /// <p>A list of resources for the access permissions. Any strings that can be used as a resource in an IAM policy can be used in the list of resources to check.</p>
+    /// <p>A list of resources for the access permissions. Any strings that can be used as an Amazon Resource Name (ARN) in an IAM policy can be used in the list of resources to check. You can only use a wildcard in the portion of the ARN that specifies the resource ID.</p>
     pub fn resources(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.resources.unwrap_or_default();
         v.push(input.into());
         self.resources = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of resources for the access permissions. Any strings that can be used as a resource in an IAM policy can be used in the list of resources to check.</p>
+    /// <p>A list of resources for the access permissions. Any strings that can be used as an Amazon Resource Name (ARN) in an IAM policy can be used in the list of resources to check. You can only use a wildcard in the portion of the ARN that specifies the resource ID.</p>
     pub fn set_resources(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.resources = input;
         self
     }
-    /// <p>A list of resources for the access permissions. Any strings that can be used as a resource in an IAM policy can be used in the list of resources to check.</p>
+    /// <p>A list of resources for the access permissions. Any strings that can be used as an Amazon Resource Name (ARN) in an IAM policy can be used in the list of resources to check. You can only use a wildcard in the portion of the ARN that specifies the resource ID.</p>
     pub fn get_resources(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.resources
     }

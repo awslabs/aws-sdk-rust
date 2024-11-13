@@ -191,6 +191,8 @@ mod disable_federation;
 
 mod enable_federation;
 
+mod generate_query;
+
 mod get_channel;
 
 mod get_event_data_store;

@@ -150,17 +150,17 @@ impl RevokeClientVpnIngressFluentBuilder {
     pub fn get_access_group_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_access_group_id()
     }
-    /// <p>Indicates whether access should be revoked for all clients.</p>
+    /// <p>Indicates whether access should be revoked for all groups for a single <code>TargetNetworkCidr</code> that earlier authorized ingress for all groups using <code>AuthorizeAllGroups</code>. This does not impact other authorization rules that allowed ingress to the same <code>TargetNetworkCidr</code> with a specific <code>AccessGroupId</code>.</p>
     pub fn revoke_all_groups(mut self, input: bool) -> Self {
         self.inner = self.inner.revoke_all_groups(input);
         self
     }
-    /// <p>Indicates whether access should be revoked for all clients.</p>
+    /// <p>Indicates whether access should be revoked for all groups for a single <code>TargetNetworkCidr</code> that earlier authorized ingress for all groups using <code>AuthorizeAllGroups</code>. This does not impact other authorization rules that allowed ingress to the same <code>TargetNetworkCidr</code> with a specific <code>AccessGroupId</code>.</p>
     pub fn set_revoke_all_groups(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_revoke_all_groups(input);
         self
     }
-    /// <p>Indicates whether access should be revoked for all clients.</p>
+    /// <p>Indicates whether access should be revoked for all groups for a single <code>TargetNetworkCidr</code> that earlier authorized ingress for all groups using <code>AuthorizeAllGroups</code>. This does not impact other authorization rules that allowed ingress to the same <code>TargetNetworkCidr</code> with a specific <code>AccessGroupId</code>.</p>
     pub fn get_revoke_all_groups(&self) -> &::std::option::Option<bool> {
         self.inner.get_revoke_all_groups()
     }

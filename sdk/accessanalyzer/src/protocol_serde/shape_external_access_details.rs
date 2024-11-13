@@ -29,6 +29,13 @@ where
                         "sources" => {
                             builder = builder.set_sources(crate::protocol_serde::shape_finding_source_list::de_finding_source_list(tokens)?);
                         }
+                        "resourceControlPolicyRestriction" => {
+                            builder = builder.set_resource_control_policy_restriction(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::ResourceControlPolicyRestriction::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

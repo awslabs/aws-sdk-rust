@@ -345,6 +345,15 @@ pub(crate) fn tag_correct_errors(mut builder: crate::types::builders::TagBuilder
     builder
 }
 
+pub(crate) fn burn_rate_configuration_correct_errors(
+    mut builder: crate::types::builders::BurnRateConfigurationBuilder,
+) -> crate::types::builders::BurnRateConfigurationBuilder {
+    if builder.look_back_window_minutes.is_none() {
+        builder.look_back_window_minutes = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn metric_reference_correct_errors(
     mut builder: crate::types::builders::MetricReferenceBuilder,
 ) -> crate::types::builders::MetricReferenceBuilder {

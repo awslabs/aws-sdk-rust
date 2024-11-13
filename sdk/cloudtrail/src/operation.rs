@@ -43,6 +43,9 @@ pub mod disable_federation;
 /// Types for the `EnableFederation` operation.
 pub mod enable_federation;
 
+/// Types for the `GenerateQuery` operation.
+pub mod generate_query;
+
 /// Types for the `GetChannel` operation.
 pub mod get_channel;
 

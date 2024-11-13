@@ -15,6 +15,7 @@
 ///     QueryType::Measurements => { /* ... */ },
 ///     QueryType::OverallTrafficSuggestions => { /* ... */ },
 ///     QueryType::OverallTrafficSuggestionsDetails => { /* ... */ },
+///     QueryType::RoutingSuggestions => { /* ... */ },
 ///     QueryType::TopLocations => { /* ... */ },
 ///     QueryType::TopLocationDetails => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -51,6 +52,8 @@ pub enum QueryType {
     #[allow(missing_docs)] // documentation missing in model
     OverallTrafficSuggestionsDetails,
     #[allow(missing_docs)] // documentation missing in model
+    RoutingSuggestions,
+    #[allow(missing_docs)] // documentation missing in model
     TopLocations,
     #[allow(missing_docs)] // documentation missing in model
     TopLocationDetails,
@@ -64,6 +67,7 @@ impl ::std::convert::From<&str> for QueryType {
             "MEASUREMENTS" => QueryType::Measurements,
             "OVERALL_TRAFFIC_SUGGESTIONS" => QueryType::OverallTrafficSuggestions,
             "OVERALL_TRAFFIC_SUGGESTIONS_DETAILS" => QueryType::OverallTrafficSuggestionsDetails,
+            "ROUTING_SUGGESTIONS" => QueryType::RoutingSuggestions,
             "TOP_LOCATIONS" => QueryType::TopLocations,
             "TOP_LOCATION_DETAILS" => QueryType::TopLocationDetails,
             other => QueryType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -84,6 +88,7 @@ impl QueryType {
             QueryType::Measurements => "MEASUREMENTS",
             QueryType::OverallTrafficSuggestions => "OVERALL_TRAFFIC_SUGGESTIONS",
             QueryType::OverallTrafficSuggestionsDetails => "OVERALL_TRAFFIC_SUGGESTIONS_DETAILS",
+            QueryType::RoutingSuggestions => "ROUTING_SUGGESTIONS",
             QueryType::TopLocations => "TOP_LOCATIONS",
             QueryType::TopLocationDetails => "TOP_LOCATION_DETAILS",
             QueryType::Unknown(value) => value.as_str(),
@@ -95,6 +100,7 @@ impl QueryType {
             "MEASUREMENTS",
             "OVERALL_TRAFFIC_SUGGESTIONS",
             "OVERALL_TRAFFIC_SUGGESTIONS_DETAILS",
+            "ROUTING_SUGGESTIONS",
             "TOP_LOCATIONS",
             "TOP_LOCATION_DETAILS",
         ]
@@ -123,6 +129,7 @@ impl ::std::fmt::Display for QueryType {
             QueryType::Measurements => write!(f, "MEASUREMENTS"),
             QueryType::OverallTrafficSuggestions => write!(f, "OVERALL_TRAFFIC_SUGGESTIONS"),
             QueryType::OverallTrafficSuggestionsDetails => write!(f, "OVERALL_TRAFFIC_SUGGESTIONS_DETAILS"),
+            QueryType::RoutingSuggestions => write!(f, "ROUTING_SUGGESTIONS"),
             QueryType::TopLocations => write!(f, "TOP_LOCATIONS"),
             QueryType::TopLocationDetails => write!(f, "TOP_LOCATION_DETAILS"),
             QueryType::Unknown(value) => write!(f, "{}", value),

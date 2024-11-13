@@ -46,6 +46,8 @@ pub struct UpdateTableInput {
     pub deletion_protection_enabled: ::std::option::Option<bool>,
     /// <p>Updates the maximum number of read and write units for the specified table in on-demand capacity mode. If you use this parameter, you must specify <code>MaxReadRequestUnits</code>, <code>MaxWriteRequestUnits</code>, or both.</p>
     pub on_demand_throughput: ::std::option::Option<crate::types::OnDemandThroughput>,
+    /// <p>Represents the warm throughput (in read units per second and write units per second) for updating a table.</p>
+    pub warm_throughput: ::std::option::Option<crate::types::WarmThroughput>,
 }
 impl UpdateTableInput {
     /// <p>An array of attributes that describe the key schema for the table and indexes. If you are adding a new global secondary index to the table, <code>AttributeDefinitions</code> must include the key element(s) of the new index.</p>
@@ -118,6 +120,10 @@ impl UpdateTableInput {
     pub fn on_demand_throughput(&self) -> ::std::option::Option<&crate::types::OnDemandThroughput> {
         self.on_demand_throughput.as_ref()
     }
+    /// <p>Represents the warm throughput (in read units per second and write units per second) for updating a table.</p>
+    pub fn warm_throughput(&self) -> ::std::option::Option<&crate::types::WarmThroughput> {
+        self.warm_throughput.as_ref()
+    }
 }
 impl UpdateTableInput {
     /// Creates a new builder-style object to manufacture [`UpdateTableInput`](crate::operation::update_table::UpdateTableInput).
@@ -141,6 +147,7 @@ pub struct UpdateTableInputBuilder {
     pub(crate) table_class: ::std::option::Option<crate::types::TableClass>,
     pub(crate) deletion_protection_enabled: ::std::option::Option<bool>,
     pub(crate) on_demand_throughput: ::std::option::Option<crate::types::OnDemandThroughput>,
+    pub(crate) warm_throughput: ::std::option::Option<crate::types::WarmThroughput>,
 }
 impl UpdateTableInputBuilder {
     /// Appends an item to `attribute_definitions`.
@@ -379,6 +386,20 @@ impl UpdateTableInputBuilder {
     pub fn get_on_demand_throughput(&self) -> &::std::option::Option<crate::types::OnDemandThroughput> {
         &self.on_demand_throughput
     }
+    /// <p>Represents the warm throughput (in read units per second and write units per second) for updating a table.</p>
+    pub fn warm_throughput(mut self, input: crate::types::WarmThroughput) -> Self {
+        self.warm_throughput = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Represents the warm throughput (in read units per second and write units per second) for updating a table.</p>
+    pub fn set_warm_throughput(mut self, input: ::std::option::Option<crate::types::WarmThroughput>) -> Self {
+        self.warm_throughput = input;
+        self
+    }
+    /// <p>Represents the warm throughput (in read units per second and write units per second) for updating a table.</p>
+    pub fn get_warm_throughput(&self) -> &::std::option::Option<crate::types::WarmThroughput> {
+        &self.warm_throughput
+    }
     /// Consumes the builder and constructs a [`UpdateTableInput`](crate::operation::update_table::UpdateTableInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::update_table::UpdateTableInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_table::UpdateTableInput {
@@ -393,6 +414,7 @@ impl UpdateTableInputBuilder {
             table_class: self.table_class,
             deletion_protection_enabled: self.deletion_protection_enabled,
             on_demand_throughput: self.on_demand_throughput,
+            warm_throughput: self.warm_throughput,
         })
     }
 }

@@ -13,7 +13,7 @@ pub struct ImageMetadata {
     /// <p>The current state of the AMI. If the state is <code>available</code>, the AMI is successfully registered and can be used to launch an instance.</p>
     pub state: ::std::option::Option<crate::types::ImageState>,
     /// <p>The alias of the AMI owner.</p>
-    /// <p>Valid values: <code>amazon</code> | <code>aws-marketplace</code></p>
+    /// <p>Valid values: <code>amazon</code> | <code>aws-backup-vault</code> | <code>aws-marketplace</code></p>
     pub image_owner_alias: ::std::option::Option<::std::string::String>,
     /// <p>The date and time the AMI was created.</p>
     pub creation_date: ::std::option::Option<::std::string::String>,
@@ -40,7 +40,7 @@ impl ImageMetadata {
         self.state.as_ref()
     }
     /// <p>The alias of the AMI owner.</p>
-    /// <p>Valid values: <code>amazon</code> | <code>aws-marketplace</code></p>
+    /// <p>Valid values: <code>amazon</code> | <code>aws-backup-vault</code> | <code>aws-marketplace</code></p>
     pub fn image_owner_alias(&self) -> ::std::option::Option<&str> {
         self.image_owner_alias.as_deref()
     }
@@ -135,19 +135,19 @@ impl ImageMetadataBuilder {
         &self.state
     }
     /// <p>The alias of the AMI owner.</p>
-    /// <p>Valid values: <code>amazon</code> | <code>aws-marketplace</code></p>
+    /// <p>Valid values: <code>amazon</code> | <code>aws-backup-vault</code> | <code>aws-marketplace</code></p>
     pub fn image_owner_alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_owner_alias = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The alias of the AMI owner.</p>
-    /// <p>Valid values: <code>amazon</code> | <code>aws-marketplace</code></p>
+    /// <p>Valid values: <code>amazon</code> | <code>aws-backup-vault</code> | <code>aws-marketplace</code></p>
     pub fn set_image_owner_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.image_owner_alias = input;
         self
     }
     /// <p>The alias of the AMI owner.</p>
-    /// <p>Valid values: <code>amazon</code> | <code>aws-marketplace</code></p>
+    /// <p>Valid values: <code>amazon</code> | <code>aws-backup-vault</code> | <code>aws-marketplace</code></p>
     pub fn get_image_owner_alias(&self) -> &::std::option::Option<::std::string::String> {
         &self.image_owner_alias
     }

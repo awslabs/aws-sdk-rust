@@ -75,5 +75,11 @@ pub fn ser_update_table_input_input(
         crate::protocol_serde::shape_on_demand_throughput::ser_on_demand_throughput(&mut object_24, var_23)?;
         object_24.finish();
     }
+    if let Some(var_25) = &input.warm_throughput {
+        #[allow(unused_mut)]
+        let mut object_26 = object.key("WarmThroughput").start_object();
+        crate::protocol_serde::shape_warm_throughput::ser_warm_throughput(&mut object_26, var_25)?;
+        object_26.finish();
+    }
     Ok(())
 }

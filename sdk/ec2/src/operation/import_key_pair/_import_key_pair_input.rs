@@ -9,7 +9,7 @@ pub struct ImportKeyPairInput {
     pub dry_run: ::std::option::Option<bool>,
     /// <p>A unique name for the key pair.</p>
     pub key_name: ::std::option::Option<::std::string::String>,
-    /// <p>The public key. For API calls, the text must be base64-encoded. For command line tools, base64 encoding is performed for you.</p>
+    /// <p>The public key.</p>
     pub public_key_material: ::std::option::Option<::aws_smithy_types::Blob>,
 }
 impl ImportKeyPairInput {
@@ -27,7 +27,7 @@ impl ImportKeyPairInput {
     pub fn key_name(&self) -> ::std::option::Option<&str> {
         self.key_name.as_deref()
     }
-    /// <p>The public key. For API calls, the text must be base64-encoded. For command line tools, base64 encoding is performed for you.</p>
+    /// <p>The public key.</p>
     pub fn public_key_material(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
         self.public_key_material.as_ref()
     }
@@ -98,18 +98,18 @@ impl ImportKeyPairInputBuilder {
     pub fn get_key_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.key_name
     }
-    /// <p>The public key. For API calls, the text must be base64-encoded. For command line tools, base64 encoding is performed for you.</p>
+    /// <p>The public key.</p>
     /// This field is required.
     pub fn public_key_material(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.public_key_material = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The public key. For API calls, the text must be base64-encoded. For command line tools, base64 encoding is performed for you.</p>
+    /// <p>The public key.</p>
     pub fn set_public_key_material(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.public_key_material = input;
         self
     }
-    /// <p>The public key. For API calls, the text must be base64-encoded. For command line tools, base64 encoding is performed for you.</p>
+    /// <p>The public key.</p>
     pub fn get_public_key_material(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
         &self.public_key_material
     }

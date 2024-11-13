@@ -22,6 +22,8 @@ pub struct ServiceLevelObjective {
     pub evaluation_type: ::std::option::Option<crate::types::EvaluationType>,
     /// <p>This structure contains the attributes that determine the goal of an SLO. This includes the time period for evaluation and the attainment threshold.</p>
     pub goal: ::std::option::Option<crate::types::Goal>,
+    /// <p>Each object in this array defines the length of the look-back window used to calculate one burn rate metric for this SLO. The burn rate measures how fast the service is consuming the error budget, relative to the attainment goal of the SLO.</p>
+    pub burn_rate_configurations: ::std::option::Option<::std::vec::Vec<crate::types::BurnRateConfiguration>>,
 }
 impl ServiceLevelObjective {
     /// <p>The ARN of this SLO.</p>
@@ -62,6 +64,12 @@ impl ServiceLevelObjective {
     pub fn goal(&self) -> ::std::option::Option<&crate::types::Goal> {
         self.goal.as_ref()
     }
+    /// <p>Each object in this array defines the length of the look-back window used to calculate one burn rate metric for this SLO. The burn rate measures how fast the service is consuming the error budget, relative to the attainment goal of the SLO.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.burn_rate_configurations.is_none()`.
+    pub fn burn_rate_configurations(&self) -> &[crate::types::BurnRateConfiguration] {
+        self.burn_rate_configurations.as_deref().unwrap_or_default()
+    }
 }
 impl ServiceLevelObjective {
     /// Creates a new builder-style object to manufacture [`ServiceLevelObjective`](crate::types::ServiceLevelObjective).
@@ -83,6 +91,7 @@ pub struct ServiceLevelObjectiveBuilder {
     pub(crate) request_based_sli: ::std::option::Option<crate::types::RequestBasedServiceLevelIndicator>,
     pub(crate) evaluation_type: ::std::option::Option<crate::types::EvaluationType>,
     pub(crate) goal: ::std::option::Option<crate::types::Goal>,
+    pub(crate) burn_rate_configurations: ::std::option::Option<::std::vec::Vec<crate::types::BurnRateConfiguration>>,
 }
 impl ServiceLevelObjectiveBuilder {
     /// <p>The ARN of this SLO.</p>
@@ -216,6 +225,26 @@ impl ServiceLevelObjectiveBuilder {
     pub fn get_goal(&self) -> &::std::option::Option<crate::types::Goal> {
         &self.goal
     }
+    /// Appends an item to `burn_rate_configurations`.
+    ///
+    /// To override the contents of this collection use [`set_burn_rate_configurations`](Self::set_burn_rate_configurations).
+    ///
+    /// <p>Each object in this array defines the length of the look-back window used to calculate one burn rate metric for this SLO. The burn rate measures how fast the service is consuming the error budget, relative to the attainment goal of the SLO.</p>
+    pub fn burn_rate_configurations(mut self, input: crate::types::BurnRateConfiguration) -> Self {
+        let mut v = self.burn_rate_configurations.unwrap_or_default();
+        v.push(input);
+        self.burn_rate_configurations = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Each object in this array defines the length of the look-back window used to calculate one burn rate metric for this SLO. The burn rate measures how fast the service is consuming the error budget, relative to the attainment goal of the SLO.</p>
+    pub fn set_burn_rate_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BurnRateConfiguration>>) -> Self {
+        self.burn_rate_configurations = input;
+        self
+    }
+    /// <p>Each object in this array defines the length of the look-back window used to calculate one burn rate metric for this SLO. The burn rate measures how fast the service is consuming the error budget, relative to the attainment goal of the SLO.</p>
+    pub fn get_burn_rate_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BurnRateConfiguration>> {
+        &self.burn_rate_configurations
+    }
     /// Consumes the builder and constructs a [`ServiceLevelObjective`](crate::types::ServiceLevelObjective).
     /// This method will fail if any of the following fields are not set:
     /// - [`arn`](crate::types::builders::ServiceLevelObjectiveBuilder::arn)
@@ -253,6 +282,7 @@ impl ServiceLevelObjectiveBuilder {
             request_based_sli: self.request_based_sli,
             evaluation_type: self.evaluation_type,
             goal: self.goal,
+            burn_rate_configurations: self.burn_rate_configurations,
         })
     }
 }

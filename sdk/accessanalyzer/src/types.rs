@@ -69,6 +69,8 @@ pub use crate::types::_order_by::OrderBy;
 
 pub use crate::types::_finding_summary::FindingSummary;
 
+pub use crate::types::_resource_control_policy_restriction::ResourceControlPolicyRestriction;
+
 pub use crate::types::_finding_source::FindingSource;
 
 pub use crate::types::_finding_source_detail::FindingSourceDetail;
@@ -354,6 +356,8 @@ mod _recommendation_type;
 mod _recommended_remediation_action;
 
 mod _recommended_step;
+
+mod _resource_control_policy_restriction;
 
 mod _resource_type;
 

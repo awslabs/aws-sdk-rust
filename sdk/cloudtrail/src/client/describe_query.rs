@@ -14,6 +14,7 @@ impl super::Client {
     ///   - [`error_message(Option<String>)`](crate::operation::describe_query::DescribeQueryOutput::error_message): <p>The error message returned if a query failed.</p>
     ///   - [`delivery_s3_uri(Option<String>)`](crate::operation::describe_query::DescribeQueryOutput::delivery_s3_uri): <p>The URI for the S3 bucket where CloudTrail delivered query results, if applicable.</p>
     ///   - [`delivery_status(Option<DeliveryStatus>)`](crate::operation::describe_query::DescribeQueryOutput::delivery_status): <p>The delivery status.</p>
+    ///   - [`prompt(Option<String>)`](crate::operation::describe_query::DescribeQueryOutput::prompt): <p>The prompt used for a generated query. For information about generated queries, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/lake-query-generator.html">Create CloudTrail Lake queries from natural language prompts</a> in the <i>CloudTrail </i> user guide.</p>
     /// - On failure, responds with [`SdkError<DescribeQueryError>`](crate::operation::describe_query::DescribeQueryError)
     pub fn describe_query(&self) -> crate::operation::describe_query::builders::DescribeQueryFluentBuilder {
         crate::operation::describe_query::builders::DescribeQueryFluentBuilder::new(self.handle.clone())

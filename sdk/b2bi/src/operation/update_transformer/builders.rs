@@ -136,17 +136,17 @@ impl UpdateTransformerFluentBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
-    /// <p>Specifies the transformer's status. You can update the state of the transformer, from <code>active</code> to <code>inactive</code>, or <code>inactive</code> to <code>active</code>.</p>
+    /// <p>Specifies the transformer's status. You can update the state of the transformer from <code>inactive</code> to <code>active</code>.</p>
     pub fn status(mut self, input: crate::types::TransformerStatus) -> Self {
         self.inner = self.inner.status(input);
         self
     }
-    /// <p>Specifies the transformer's status. You can update the state of the transformer, from <code>active</code> to <code>inactive</code>, or <code>inactive</code> to <code>active</code>.</p>
+    /// <p>Specifies the transformer's status. You can update the state of the transformer from <code>inactive</code> to <code>active</code>.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::TransformerStatus>) -> Self {
         self.inner = self.inner.set_status(input);
         self
     }
-    /// <p>Specifies the transformer's status. You can update the state of the transformer, from <code>active</code> to <code>inactive</code>, or <code>inactive</code> to <code>active</code>.</p>
+    /// <p>Specifies the transformer's status. You can update the state of the transformer from <code>inactive</code> to <code>active</code>.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::TransformerStatus> {
         self.inner.get_status()
     }

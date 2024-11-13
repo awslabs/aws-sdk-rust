@@ -106,7 +106,7 @@ pub struct Instance {
     pub product_codes: ::std::option::Option<::std::vec::Vec<crate::types::ProductCode>>,
     /// <p>The instance type.</p>
     pub instance_type: ::std::option::Option<crate::types::InstanceType>,
-    /// <p>The time the instance was launched.</p>
+    /// <p>The time that the instance was last launched. To determine the time that instance was first launched, see the attachment time for the primary network interface.</p>
     pub launch_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The location where the instance launched, if applicable.</p>
     pub placement: ::std::option::Option<crate::types::Placement>,
@@ -341,7 +341,7 @@ impl Instance {
     pub fn instance_type(&self) -> ::std::option::Option<&crate::types::InstanceType> {
         self.instance_type.as_ref()
     }
-    /// <p>The time the instance was launched.</p>
+    /// <p>The time that the instance was last launched. To determine the time that instance was first launched, see the attachment time for the primary network interface.</p>
     pub fn launch_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.launch_time.as_ref()
     }
@@ -1192,17 +1192,17 @@ impl InstanceBuilder {
     pub fn get_instance_type(&self) -> &::std::option::Option<crate::types::InstanceType> {
         &self.instance_type
     }
-    /// <p>The time the instance was launched.</p>
+    /// <p>The time that the instance was last launched. To determine the time that instance was first launched, see the attachment time for the primary network interface.</p>
     pub fn launch_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.launch_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The time the instance was launched.</p>
+    /// <p>The time that the instance was last launched. To determine the time that instance was first launched, see the attachment time for the primary network interface.</p>
     pub fn set_launch_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.launch_time = input;
         self
     }
-    /// <p>The time the instance was launched.</p>
+    /// <p>The time that the instance was last launched. To determine the time that instance was first launched, see the attachment time for the primary network interface.</p>
     pub fn get_launch_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.launch_time
     }

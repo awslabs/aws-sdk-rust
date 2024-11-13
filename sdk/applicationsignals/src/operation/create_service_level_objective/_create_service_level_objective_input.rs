@@ -18,6 +18,8 @@ pub struct CreateServiceLevelObjectiveInput {
     /// <p>A list of key-value pairs to associate with the SLO. You can associate as many as 50 tags with an SLO. To be able to associate tags with the SLO when you create the SLO, you must have the <code>cloudwatch:TagResource</code> permission.</p>
     /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    /// <p>Use this array to create <i>burn rates</i> for this SLO. Each burn rate is a metric that indicates how fast the service is consuming the error budget, relative to the attainment goal of the SLO.</p>
+    pub burn_rate_configurations: ::std::option::Option<::std::vec::Vec<crate::types::BurnRateConfiguration>>,
 }
 impl CreateServiceLevelObjectiveInput {
     /// <p>A name for this SLO.</p>
@@ -49,6 +51,12 @@ impl CreateServiceLevelObjectiveInput {
     pub fn tags(&self) -> &[crate::types::Tag] {
         self.tags.as_deref().unwrap_or_default()
     }
+    /// <p>Use this array to create <i>burn rates</i> for this SLO. Each burn rate is a metric that indicates how fast the service is consuming the error budget, relative to the attainment goal of the SLO.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.burn_rate_configurations.is_none()`.
+    pub fn burn_rate_configurations(&self) -> &[crate::types::BurnRateConfiguration] {
+        self.burn_rate_configurations.as_deref().unwrap_or_default()
+    }
 }
 impl CreateServiceLevelObjectiveInput {
     /// Creates a new builder-style object to manufacture [`CreateServiceLevelObjectiveInput`](crate::operation::create_service_level_objective::CreateServiceLevelObjectiveInput).
@@ -67,6 +75,7 @@ pub struct CreateServiceLevelObjectiveInputBuilder {
     pub(crate) request_based_sli_config: ::std::option::Option<crate::types::RequestBasedServiceLevelIndicatorConfig>,
     pub(crate) goal: ::std::option::Option<crate::types::Goal>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) burn_rate_configurations: ::std::option::Option<::std::vec::Vec<crate::types::BurnRateConfiguration>>,
 }
 impl CreateServiceLevelObjectiveInputBuilder {
     /// <p>A name for this SLO.</p>
@@ -169,6 +178,26 @@ impl CreateServiceLevelObjectiveInputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }
+    /// Appends an item to `burn_rate_configurations`.
+    ///
+    /// To override the contents of this collection use [`set_burn_rate_configurations`](Self::set_burn_rate_configurations).
+    ///
+    /// <p>Use this array to create <i>burn rates</i> for this SLO. Each burn rate is a metric that indicates how fast the service is consuming the error budget, relative to the attainment goal of the SLO.</p>
+    pub fn burn_rate_configurations(mut self, input: crate::types::BurnRateConfiguration) -> Self {
+        let mut v = self.burn_rate_configurations.unwrap_or_default();
+        v.push(input);
+        self.burn_rate_configurations = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Use this array to create <i>burn rates</i> for this SLO. Each burn rate is a metric that indicates how fast the service is consuming the error budget, relative to the attainment goal of the SLO.</p>
+    pub fn set_burn_rate_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BurnRateConfiguration>>) -> Self {
+        self.burn_rate_configurations = input;
+        self
+    }
+    /// <p>Use this array to create <i>burn rates</i> for this SLO. Each burn rate is a metric that indicates how fast the service is consuming the error budget, relative to the attainment goal of the SLO.</p>
+    pub fn get_burn_rate_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BurnRateConfiguration>> {
+        &self.burn_rate_configurations
+    }
     /// Consumes the builder and constructs a [`CreateServiceLevelObjectiveInput`](crate::operation::create_service_level_objective::CreateServiceLevelObjectiveInput).
     pub fn build(
         self,
@@ -183,6 +212,7 @@ impl CreateServiceLevelObjectiveInputBuilder {
             request_based_sli_config: self.request_based_sli_config,
             goal: self.goal,
             tags: self.tags,
+            burn_rate_configurations: self.burn_rate_configurations,
         })
     }
 }

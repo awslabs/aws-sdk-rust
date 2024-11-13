@@ -18,5 +18,11 @@ pub fn ser_update_global_secondary_index_action(
         crate::protocol_serde::shape_on_demand_throughput::ser_on_demand_throughput(&mut object_4, var_3)?;
         object_4.finish();
     }
+    if let Some(var_5) = &input.warm_throughput {
+        #[allow(unused_mut)]
+        let mut object_6 = object.key("WarmThroughput").start_object();
+        crate::protocol_serde::shape_warm_throughput::ser_warm_throughput(&mut object_6, var_5)?;
+        object_6.finish();
+    }
     Ok(())
 }

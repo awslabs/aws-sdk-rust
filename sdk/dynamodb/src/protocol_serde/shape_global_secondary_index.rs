@@ -36,6 +36,12 @@ pub fn ser_global_secondary_index(
         crate::protocol_serde::shape_on_demand_throughput::ser_on_demand_throughput(&mut object_9, var_8)?;
         object_9.finish();
     }
+    if let Some(var_10) = &input.warm_throughput {
+        #[allow(unused_mut)]
+        let mut object_11 = object.key("WarmThroughput").start_object();
+        crate::protocol_serde::shape_warm_throughput::ser_warm_throughput(&mut object_11, var_10)?;
+        object_11.finish();
+    }
     Ok(())
 }
 
@@ -74,6 +80,9 @@ where
                         "OnDemandThroughput" => {
                             builder =
                                 builder.set_on_demand_throughput(crate::protocol_serde::shape_on_demand_throughput::de_on_demand_throughput(tokens)?);
+                        }
+                        "WarmThroughput" => {
+                            builder = builder.set_warm_throughput(crate::protocol_serde::shape_warm_throughput::de_warm_throughput(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

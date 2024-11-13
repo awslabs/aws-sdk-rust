@@ -17,6 +17,8 @@ pub struct DescribeQueryOutput {
     pub delivery_s3_uri: ::std::option::Option<::std::string::String>,
     /// <p>The delivery status.</p>
     pub delivery_status: ::std::option::Option<crate::types::DeliveryStatus>,
+    /// <p>The prompt used for a generated query. For information about generated queries, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/lake-query-generator.html">Create CloudTrail Lake queries from natural language prompts</a> in the <i>CloudTrail </i> user guide.</p>
+    pub prompt: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeQueryOutput {
@@ -48,6 +50,10 @@ impl DescribeQueryOutput {
     pub fn delivery_status(&self) -> ::std::option::Option<&crate::types::DeliveryStatus> {
         self.delivery_status.as_ref()
     }
+    /// <p>The prompt used for a generated query. For information about generated queries, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/lake-query-generator.html">Create CloudTrail Lake queries from natural language prompts</a> in the <i>CloudTrail </i> user guide.</p>
+    pub fn prompt(&self) -> ::std::option::Option<&str> {
+        self.prompt.as_deref()
+    }
 }
 impl ::aws_types::request_id::RequestId for DescribeQueryOutput {
     fn request_id(&self) -> Option<&str> {
@@ -72,6 +78,7 @@ pub struct DescribeQueryOutputBuilder {
     pub(crate) error_message: ::std::option::Option<::std::string::String>,
     pub(crate) delivery_s3_uri: ::std::option::Option<::std::string::String>,
     pub(crate) delivery_status: ::std::option::Option<crate::types::DeliveryStatus>,
+    pub(crate) prompt: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeQueryOutputBuilder {
@@ -173,6 +180,20 @@ impl DescribeQueryOutputBuilder {
     pub fn get_delivery_status(&self) -> &::std::option::Option<crate::types::DeliveryStatus> {
         &self.delivery_status
     }
+    /// <p>The prompt used for a generated query. For information about generated queries, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/lake-query-generator.html">Create CloudTrail Lake queries from natural language prompts</a> in the <i>CloudTrail </i> user guide.</p>
+    pub fn prompt(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.prompt = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The prompt used for a generated query. For information about generated queries, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/lake-query-generator.html">Create CloudTrail Lake queries from natural language prompts</a> in the <i>CloudTrail </i> user guide.</p>
+    pub fn set_prompt(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.prompt = input;
+        self
+    }
+    /// <p>The prompt used for a generated query. For information about generated queries, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/lake-query-generator.html">Create CloudTrail Lake queries from natural language prompts</a> in the <i>CloudTrail </i> user guide.</p>
+    pub fn get_prompt(&self) -> &::std::option::Option<::std::string::String> {
+        &self.prompt
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -192,6 +213,7 @@ impl DescribeQueryOutputBuilder {
             error_message: self.error_message,
             delivery_s3_uri: self.delivery_s3_uri,
             delivery_status: self.delivery_status,
+            prompt: self.prompt,
             _request_id: self._request_id,
         }
     }

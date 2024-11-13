@@ -352,4 +352,18 @@ impl UpdateTableFluentBuilder {
     pub fn get_on_demand_throughput(&self) -> &::std::option::Option<crate::types::OnDemandThroughput> {
         self.inner.get_on_demand_throughput()
     }
+    /// <p>Represents the warm throughput (in read units per second and write units per second) for updating a table.</p>
+    pub fn warm_throughput(mut self, input: crate::types::WarmThroughput) -> Self {
+        self.inner = self.inner.warm_throughput(input);
+        self
+    }
+    /// <p>Represents the warm throughput (in read units per second and write units per second) for updating a table.</p>
+    pub fn set_warm_throughput(mut self, input: ::std::option::Option<crate::types::WarmThroughput>) -> Self {
+        self.inner = self.inner.set_warm_throughput(input);
+        self
+    }
+    /// <p>Represents the warm throughput (in read units per second and write units per second) for updating a table.</p>
+    pub fn get_warm_throughput(&self) -> &::std::option::Option<crate::types::WarmThroughput> {
+        self.inner.get_warm_throughput()
+    }
 }

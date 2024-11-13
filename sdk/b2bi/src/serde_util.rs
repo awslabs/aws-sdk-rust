@@ -170,6 +170,15 @@ pub(crate) fn create_transformer_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn generate_mapping_output_output_correct_errors(
+    mut builder: crate::operation::generate_mapping::builders::GenerateMappingOutputBuilder,
+) -> crate::operation::generate_mapping::builders::GenerateMappingOutputBuilder {
+    if builder.mapping_template.is_none() {
+        builder.mapping_template = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn get_capability_output_output_correct_errors(
     mut builder: crate::operation::get_capability::builders::GetCapabilityOutputBuilder,
 ) -> crate::operation::get_capability::builders::GetCapabilityOutputBuilder {

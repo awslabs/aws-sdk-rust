@@ -24,6 +24,7 @@
 ///     InvalidInputExceptionReason::InvalidPartyTypeTarget => { /* ... */ },
 ///     InvalidInputExceptionReason::InvalidPattern => { /* ... */ },
 ///     InvalidInputExceptionReason::InvalidPatternTargetId => { /* ... */ },
+///     InvalidInputExceptionReason::InvalidPrincipal => { /* ... */ },
 ///     InvalidInputExceptionReason::InvalidResourcePolicyJson => { /* ... */ },
 ///     InvalidInputExceptionReason::InvalidRoleName => { /* ... */ },
 ///     InvalidInputExceptionReason::InvalidSyntaxOrganization => { /* ... */ },
@@ -35,6 +36,7 @@
 ///     InvalidInputExceptionReason::MinLengthExceeded => { /* ... */ },
 ///     InvalidInputExceptionReason::MinValueExceeded => { /* ... */ },
 ///     InvalidInputExceptionReason::MovingAccountBetweenDifferentRoots => { /* ... */ },
+///     InvalidInputExceptionReason::NonDetachablePolicy => { /* ... */ },
 ///     InvalidInputExceptionReason::TargetNotSupported => { /* ... */ },
 ///     InvalidInputExceptionReason::UnrecognizedServicePrincipal => { /* ... */ },
 ///     InvalidInputExceptionReason::UnsupportedActionInResourcePolicy => { /* ... */ },
@@ -92,6 +94,8 @@ pub enum InvalidInputExceptionReason {
     #[allow(missing_docs)] // documentation missing in model
     InvalidPatternTargetId,
     #[allow(missing_docs)] // documentation missing in model
+    InvalidPrincipal,
+    #[allow(missing_docs)] // documentation missing in model
     InvalidResourcePolicyJson,
     #[allow(missing_docs)] // documentation missing in model
     InvalidRoleName,
@@ -113,6 +117,8 @@ pub enum InvalidInputExceptionReason {
     MinValueExceeded,
     #[allow(missing_docs)] // documentation missing in model
     MovingAccountBetweenDifferentRoots,
+    #[allow(missing_docs)] // documentation missing in model
+    NonDetachablePolicy,
     #[allow(missing_docs)] // documentation missing in model
     TargetNotSupported,
     #[allow(missing_docs)] // documentation missing in model
@@ -142,6 +148,7 @@ impl ::std::convert::From<&str> for InvalidInputExceptionReason {
             "INVALID_PARTY_TYPE_TARGET" => InvalidInputExceptionReason::InvalidPartyTypeTarget,
             "INVALID_PATTERN" => InvalidInputExceptionReason::InvalidPattern,
             "INVALID_PATTERN_TARGET_ID" => InvalidInputExceptionReason::InvalidPatternTargetId,
+            "INVALID_PRINCIPAL" => InvalidInputExceptionReason::InvalidPrincipal,
             "INVALID_RESOURCE_POLICY_JSON" => InvalidInputExceptionReason::InvalidResourcePolicyJson,
             "INVALID_ROLE_NAME" => InvalidInputExceptionReason::InvalidRoleName,
             "INVALID_SYNTAX_ORGANIZATION_ARN" => InvalidInputExceptionReason::InvalidSyntaxOrganization,
@@ -153,6 +160,7 @@ impl ::std::convert::From<&str> for InvalidInputExceptionReason {
             "MIN_LENGTH_EXCEEDED" => InvalidInputExceptionReason::MinLengthExceeded,
             "MIN_VALUE_EXCEEDED" => InvalidInputExceptionReason::MinValueExceeded,
             "MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS" => InvalidInputExceptionReason::MovingAccountBetweenDifferentRoots,
+            "NON_DETACHABLE_POLICY" => InvalidInputExceptionReason::NonDetachablePolicy,
             "TARGET_NOT_SUPPORTED" => InvalidInputExceptionReason::TargetNotSupported,
             "UNRECOGNIZED_SERVICE_PRINCIPAL" => InvalidInputExceptionReason::UnrecognizedServicePrincipal,
             "UNSUPPORTED_ACTION_IN_RESOURCE_POLICY" => InvalidInputExceptionReason::UnsupportedActionInResourcePolicy,
@@ -185,6 +193,7 @@ impl InvalidInputExceptionReason {
             InvalidInputExceptionReason::InvalidPartyTypeTarget => "INVALID_PARTY_TYPE_TARGET",
             InvalidInputExceptionReason::InvalidPattern => "INVALID_PATTERN",
             InvalidInputExceptionReason::InvalidPatternTargetId => "INVALID_PATTERN_TARGET_ID",
+            InvalidInputExceptionReason::InvalidPrincipal => "INVALID_PRINCIPAL",
             InvalidInputExceptionReason::InvalidResourcePolicyJson => "INVALID_RESOURCE_POLICY_JSON",
             InvalidInputExceptionReason::InvalidRoleName => "INVALID_ROLE_NAME",
             InvalidInputExceptionReason::InvalidSyntaxOrganization => "INVALID_SYNTAX_ORGANIZATION_ARN",
@@ -196,6 +205,7 @@ impl InvalidInputExceptionReason {
             InvalidInputExceptionReason::MinLengthExceeded => "MIN_LENGTH_EXCEEDED",
             InvalidInputExceptionReason::MinValueExceeded => "MIN_VALUE_EXCEEDED",
             InvalidInputExceptionReason::MovingAccountBetweenDifferentRoots => "MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS",
+            InvalidInputExceptionReason::NonDetachablePolicy => "NON_DETACHABLE_POLICY",
             InvalidInputExceptionReason::TargetNotSupported => "TARGET_NOT_SUPPORTED",
             InvalidInputExceptionReason::UnrecognizedServicePrincipal => "UNRECOGNIZED_SERVICE_PRINCIPAL",
             InvalidInputExceptionReason::UnsupportedActionInResourcePolicy => "UNSUPPORTED_ACTION_IN_RESOURCE_POLICY",
@@ -219,6 +229,7 @@ impl InvalidInputExceptionReason {
             "INVALID_PARTY_TYPE_TARGET",
             "INVALID_PATTERN",
             "INVALID_PATTERN_TARGET_ID",
+            "INVALID_PRINCIPAL",
             "INVALID_RESOURCE_POLICY_JSON",
             "INVALID_ROLE_NAME",
             "INVALID_SYNTAX_ORGANIZATION_ARN",
@@ -230,6 +241,7 @@ impl InvalidInputExceptionReason {
             "MIN_LENGTH_EXCEEDED",
             "MIN_VALUE_EXCEEDED",
             "MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS",
+            "NON_DETACHABLE_POLICY",
             "TARGET_NOT_SUPPORTED",
             "UNRECOGNIZED_SERVICE_PRINCIPAL",
             "UNSUPPORTED_ACTION_IN_RESOURCE_POLICY",
@@ -270,6 +282,7 @@ impl ::std::fmt::Display for InvalidInputExceptionReason {
             InvalidInputExceptionReason::InvalidPartyTypeTarget => write!(f, "INVALID_PARTY_TYPE_TARGET"),
             InvalidInputExceptionReason::InvalidPattern => write!(f, "INVALID_PATTERN"),
             InvalidInputExceptionReason::InvalidPatternTargetId => write!(f, "INVALID_PATTERN_TARGET_ID"),
+            InvalidInputExceptionReason::InvalidPrincipal => write!(f, "INVALID_PRINCIPAL"),
             InvalidInputExceptionReason::InvalidResourcePolicyJson => write!(f, "INVALID_RESOURCE_POLICY_JSON"),
             InvalidInputExceptionReason::InvalidRoleName => write!(f, "INVALID_ROLE_NAME"),
             InvalidInputExceptionReason::InvalidSyntaxOrganization => write!(f, "INVALID_SYNTAX_ORGANIZATION_ARN"),
@@ -281,6 +294,7 @@ impl ::std::fmt::Display for InvalidInputExceptionReason {
             InvalidInputExceptionReason::MinLengthExceeded => write!(f, "MIN_LENGTH_EXCEEDED"),
             InvalidInputExceptionReason::MinValueExceeded => write!(f, "MIN_VALUE_EXCEEDED"),
             InvalidInputExceptionReason::MovingAccountBetweenDifferentRoots => write!(f, "MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS"),
+            InvalidInputExceptionReason::NonDetachablePolicy => write!(f, "NON_DETACHABLE_POLICY"),
             InvalidInputExceptionReason::TargetNotSupported => write!(f, "TARGET_NOT_SUPPORTED"),
             InvalidInputExceptionReason::UnrecognizedServicePrincipal => write!(f, "UNRECOGNIZED_SERVICE_PRINCIPAL"),
             InvalidInputExceptionReason::UnsupportedActionInResourcePolicy => write!(f, "UNSUPPORTED_ACTION_IN_RESOURCE_POLICY"),

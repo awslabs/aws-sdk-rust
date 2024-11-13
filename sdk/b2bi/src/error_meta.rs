@@ -334,6 +334,31 @@ impl From<crate::operation::delete_transformer::DeleteTransformerError> for Erro
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::generate_mapping::GenerateMappingError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::generate_mapping::GenerateMappingError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::generate_mapping::GenerateMappingError> for Error {
+    fn from(err: crate::operation::generate_mapping::GenerateMappingError) -> Self {
+        match err {
+            crate::operation::generate_mapping::GenerateMappingError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::generate_mapping::GenerateMappingError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::generate_mapping::GenerateMappingError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::generate_mapping::GenerateMappingError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::generate_mapping::GenerateMappingError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_capability::GetCapabilityError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

@@ -141,6 +141,8 @@ pub use crate::types::error::_query_id_not_found_exception::QueryIdNotFoundExcep
 
 pub use crate::types::error::_insight_not_enabled_exception::InsightNotEnabledException;
 
+pub use crate::types::error::_generate_response_exception::GenerateResponseException;
+
 pub use crate::types::error::_event_data_store_federation_enabled_exception::EventDataStoreFederationEnabledException;
 
 pub use crate::types::error::_concurrent_modification_exception::ConcurrentModificationException;
@@ -214,6 +216,8 @@ mod _event_data_store_max_limit_exceeded_exception;
 mod _event_data_store_not_found_exception;
 
 mod _event_data_store_termination_protected_exception;
+
+mod _generate_response_exception;
 
 mod _import_not_found_exception;
 

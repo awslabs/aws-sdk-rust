@@ -7,7 +7,7 @@ pub struct UpdateTransformerInput {
     pub transformer_id: ::std::option::Option<::std::string::String>,
     /// <p>Specify a new name for the transformer, if you want to update it.</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies the transformer's status. You can update the state of the transformer, from <code>active</code> to <code>inactive</code>, or <code>inactive</code> to <code>active</code>.</p>
+    /// <p>Specifies the transformer's status. You can update the state of the transformer from <code>inactive</code> to <code>active</code>.</p>
     pub status: ::std::option::Option<crate::types::TransformerStatus>,
     /// <p>Specifies that the currently supported file formats for EDI transformations are <code>JSON</code> and <code>XML</code>.</p>
     #[deprecated(note = "This is a legacy trait. Please use input-conversion or output-conversion.")]
@@ -41,7 +41,7 @@ impl UpdateTransformerInput {
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>Specifies the transformer's status. You can update the state of the transformer, from <code>active</code> to <code>inactive</code>, or <code>inactive</code> to <code>active</code>.</p>
+    /// <p>Specifies the transformer's status. You can update the state of the transformer from <code>inactive</code> to <code>active</code>.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::TransformerStatus> {
         self.status.as_ref()
     }
@@ -137,17 +137,17 @@ impl UpdateTransformerInputBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>Specifies the transformer's status. You can update the state of the transformer, from <code>active</code> to <code>inactive</code>, or <code>inactive</code> to <code>active</code>.</p>
+    /// <p>Specifies the transformer's status. You can update the state of the transformer from <code>inactive</code> to <code>active</code>.</p>
     pub fn status(mut self, input: crate::types::TransformerStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies the transformer's status. You can update the state of the transformer, from <code>active</code> to <code>inactive</code>, or <code>inactive</code> to <code>active</code>.</p>
+    /// <p>Specifies the transformer's status. You can update the state of the transformer from <code>inactive</code> to <code>active</code>.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::TransformerStatus>) -> Self {
         self.status = input;
         self
     }
-    /// <p>Specifies the transformer's status. You can update the state of the transformer, from <code>active</code> to <code>inactive</code>, or <code>inactive</code> to <code>active</code>.</p>
+    /// <p>Specifies the transformer's status. You can update the state of the transformer from <code>inactive</code> to <code>active</code>.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::TransformerStatus> {
         &self.status
     }

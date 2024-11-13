@@ -41,6 +41,8 @@ pub(crate) mod shape_delete_profile;
 
 pub(crate) mod shape_delete_transformer;
 
+pub(crate) mod shape_generate_mapping;
+
 pub(crate) mod shape_get_capability;
 
 pub(crate) mod shape_get_partnership;
@@ -110,6 +112,8 @@ pub(crate) mod shape_delete_partnership_input;
 pub(crate) mod shape_delete_profile_input;
 
 pub(crate) mod shape_delete_transformer_input;
+
+pub(crate) mod shape_generate_mapping_input;
 
 pub(crate) mod shape_get_capability_input;
 

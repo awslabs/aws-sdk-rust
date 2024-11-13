@@ -32,6 +32,8 @@ pub struct Finding {
     pub error: ::std::option::Option<::std::string::String>,
     /// <p>The sources of the finding. This indicates how the access that generated the finding is granted. It is populated for Amazon S3 bucket findings.</p>
     pub sources: ::std::option::Option<::std::vec::Vec<crate::types::FindingSource>>,
+    /// <p>The type of restriction applied to the finding by the resource owner with an Organizations resource control policy (RCP).</p>
+    pub resource_control_policy_restriction: ::std::option::Option<crate::types::ResourceControlPolicyRestriction>,
 }
 impl Finding {
     /// <p>The ID of the finding.</p>
@@ -96,6 +98,10 @@ impl Finding {
     pub fn sources(&self) -> &[crate::types::FindingSource] {
         self.sources.as_deref().unwrap_or_default()
     }
+    /// <p>The type of restriction applied to the finding by the resource owner with an Organizations resource control policy (RCP).</p>
+    pub fn resource_control_policy_restriction(&self) -> ::std::option::Option<&crate::types::ResourceControlPolicyRestriction> {
+        self.resource_control_policy_restriction.as_ref()
+    }
 }
 impl Finding {
     /// Creates a new builder-style object to manufacture [`Finding`](crate::types::Finding).
@@ -122,6 +128,7 @@ pub struct FindingBuilder {
     pub(crate) resource_owner_account: ::std::option::Option<::std::string::String>,
     pub(crate) error: ::std::option::Option<::std::string::String>,
     pub(crate) sources: ::std::option::Option<::std::vec::Vec<crate::types::FindingSource>>,
+    pub(crate) resource_control_policy_restriction: ::std::option::Option<crate::types::ResourceControlPolicyRestriction>,
 }
 impl FindingBuilder {
     /// <p>The ID of the finding.</p>
@@ -351,6 +358,20 @@ impl FindingBuilder {
     pub fn get_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FindingSource>> {
         &self.sources
     }
+    /// <p>The type of restriction applied to the finding by the resource owner with an Organizations resource control policy (RCP).</p>
+    pub fn resource_control_policy_restriction(mut self, input: crate::types::ResourceControlPolicyRestriction) -> Self {
+        self.resource_control_policy_restriction = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The type of restriction applied to the finding by the resource owner with an Organizations resource control policy (RCP).</p>
+    pub fn set_resource_control_policy_restriction(mut self, input: ::std::option::Option<crate::types::ResourceControlPolicyRestriction>) -> Self {
+        self.resource_control_policy_restriction = input;
+        self
+    }
+    /// <p>The type of restriction applied to the finding by the resource owner with an Organizations resource control policy (RCP).</p>
+    pub fn get_resource_control_policy_restriction(&self) -> &::std::option::Option<crate::types::ResourceControlPolicyRestriction> {
+        &self.resource_control_policy_restriction
+    }
     /// Consumes the builder and constructs a [`Finding`](crate::types::Finding).
     /// This method will fail if any of the following fields are not set:
     /// - [`id`](crate::types::builders::FindingBuilder::id)
@@ -414,6 +435,7 @@ impl FindingBuilder {
             })?,
             error: self.error,
             sources: self.sources,
+            resource_control_policy_restriction: self.resource_control_policy_restriction,
         })
     }
 }

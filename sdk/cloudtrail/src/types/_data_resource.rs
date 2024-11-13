@@ -45,7 +45,7 @@ pub struct DataResource {
     /// <li>
     /// <p><code>AWS::S3::Object</code></p></li>
     /// </ul>
-    /// <p>Additional resource types are available through <i>advanced</i> event selectors. For more information about these additional resource types, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_AdvancedFieldSelector.html">AdvancedFieldSelector</a>.</p>
+    /// <p>Additional resource types are available through <i>advanced</i> event selectors. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_AdvancedEventSelector.html">AdvancedEventSelector</a>.</p>
     pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>An array of Amazon Resource Name (ARN) strings or partial ARN strings for the specified resource type.</p>
     /// <ul>
@@ -80,7 +80,7 @@ impl DataResource {
     /// <li>
     /// <p><code>AWS::S3::Object</code></p></li>
     /// </ul>
-    /// <p>Additional resource types are available through <i>advanced</i> event selectors. For more information about these additional resource types, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_AdvancedFieldSelector.html">AdvancedFieldSelector</a>.</p>
+    /// <p>Additional resource types are available through <i>advanced</i> event selectors. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_AdvancedEventSelector.html">AdvancedEventSelector</a>.</p>
     pub fn r#type(&self) -> ::std::option::Option<&str> {
         self.r#type.as_deref()
     }
@@ -135,7 +135,7 @@ impl DataResourceBuilder {
     /// <li>
     /// <p><code>AWS::S3::Object</code></p></li>
     /// </ul>
-    /// <p>Additional resource types are available through <i>advanced</i> event selectors. For more information about these additional resource types, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_AdvancedFieldSelector.html">AdvancedFieldSelector</a>.</p>
+    /// <p>Additional resource types are available through <i>advanced</i> event selectors. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_AdvancedEventSelector.html">AdvancedEventSelector</a>.</p>
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.r#type = ::std::option::Option::Some(input.into());
         self
@@ -149,7 +149,7 @@ impl DataResourceBuilder {
     /// <li>
     /// <p><code>AWS::S3::Object</code></p></li>
     /// </ul>
-    /// <p>Additional resource types are available through <i>advanced</i> event selectors. For more information about these additional resource types, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_AdvancedFieldSelector.html">AdvancedFieldSelector</a>.</p>
+    /// <p>Additional resource types are available through <i>advanced</i> event selectors. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_AdvancedEventSelector.html">AdvancedEventSelector</a>.</p>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.r#type = input;
         self
@@ -163,7 +163,7 @@ impl DataResourceBuilder {
     /// <li>
     /// <p><code>AWS::S3::Object</code></p></li>
     /// </ul>
-    /// <p>Additional resource types are available through <i>advanced</i> event selectors. For more information about these additional resource types, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_AdvancedFieldSelector.html">AdvancedFieldSelector</a>.</p>
+    /// <p>Additional resource types are available through <i>advanced</i> event selectors. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_AdvancedEventSelector.html">AdvancedEventSelector</a>.</p>
     pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.r#type
     }

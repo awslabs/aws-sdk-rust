@@ -93,14 +93,20 @@ pub fn ser_create_table_input_input(
     if let Some(var_30) = &input.deletion_protection_enabled {
         object.key("DeletionProtectionEnabled").boolean(*var_30);
     }
-    if let Some(var_31) = &input.resource_policy {
-        object.key("ResourcePolicy").string(var_31.as_str());
-    }
-    if let Some(var_32) = &input.on_demand_throughput {
+    if let Some(var_31) = &input.warm_throughput {
         #[allow(unused_mut)]
-        let mut object_33 = object.key("OnDemandThroughput").start_object();
-        crate::protocol_serde::shape_on_demand_throughput::ser_on_demand_throughput(&mut object_33, var_32)?;
-        object_33.finish();
+        let mut object_32 = object.key("WarmThroughput").start_object();
+        crate::protocol_serde::shape_warm_throughput::ser_warm_throughput(&mut object_32, var_31)?;
+        object_32.finish();
+    }
+    if let Some(var_33) = &input.resource_policy {
+        object.key("ResourcePolicy").string(var_33.as_str());
+    }
+    if let Some(var_34) = &input.on_demand_throughput {
+        #[allow(unused_mut)]
+        let mut object_35 = object.key("OnDemandThroughput").start_object();
+        crate::protocol_serde::shape_on_demand_throughput::ser_on_demand_throughput(&mut object_35, var_34)?;
+        object_35.finish();
     }
     Ok(())
 }

@@ -24,6 +24,8 @@ pub struct GlobalSecondaryIndex {
     pub provisioned_throughput: ::std::option::Option<crate::types::ProvisionedThroughput>,
     /// <p>The maximum number of read and write units for the specified global secondary index. If you use this parameter, you must specify <code>MaxReadRequestUnits</code>, <code>MaxWriteRequestUnits</code>, or both.</p>
     pub on_demand_throughput: ::std::option::Option<crate::types::OnDemandThroughput>,
+    /// <p>Represents the warm throughput value (in read units per second and write units per second) for the specified secondary index. If you use this parameter, you must specify <code>ReadUnitsPerSecond</code>, <code>WriteUnitsPerSecond</code>, or both.</p>
+    pub warm_throughput: ::std::option::Option<crate::types::WarmThroughput>,
 }
 impl GlobalSecondaryIndex {
     /// <p>The name of the global secondary index. The name must be unique among all other indexes on this table.</p>
@@ -58,6 +60,10 @@ impl GlobalSecondaryIndex {
     pub fn on_demand_throughput(&self) -> ::std::option::Option<&crate::types::OnDemandThroughput> {
         self.on_demand_throughput.as_ref()
     }
+    /// <p>Represents the warm throughput value (in read units per second and write units per second) for the specified secondary index. If you use this parameter, you must specify <code>ReadUnitsPerSecond</code>, <code>WriteUnitsPerSecond</code>, or both.</p>
+    pub fn warm_throughput(&self) -> ::std::option::Option<&crate::types::WarmThroughput> {
+        self.warm_throughput.as_ref()
+    }
 }
 impl GlobalSecondaryIndex {
     /// Creates a new builder-style object to manufacture [`GlobalSecondaryIndex`](crate::types::GlobalSecondaryIndex).
@@ -75,6 +81,7 @@ pub struct GlobalSecondaryIndexBuilder {
     pub(crate) projection: ::std::option::Option<crate::types::Projection>,
     pub(crate) provisioned_throughput: ::std::option::Option<crate::types::ProvisionedThroughput>,
     pub(crate) on_demand_throughput: ::std::option::Option<crate::types::OnDemandThroughput>,
+    pub(crate) warm_throughput: ::std::option::Option<crate::types::WarmThroughput>,
 }
 impl GlobalSecondaryIndexBuilder {
     /// <p>The name of the global secondary index. The name must be unique among all other indexes on this table.</p>
@@ -185,6 +192,20 @@ impl GlobalSecondaryIndexBuilder {
     pub fn get_on_demand_throughput(&self) -> &::std::option::Option<crate::types::OnDemandThroughput> {
         &self.on_demand_throughput
     }
+    /// <p>Represents the warm throughput value (in read units per second and write units per second) for the specified secondary index. If you use this parameter, you must specify <code>ReadUnitsPerSecond</code>, <code>WriteUnitsPerSecond</code>, or both.</p>
+    pub fn warm_throughput(mut self, input: crate::types::WarmThroughput) -> Self {
+        self.warm_throughput = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Represents the warm throughput value (in read units per second and write units per second) for the specified secondary index. If you use this parameter, you must specify <code>ReadUnitsPerSecond</code>, <code>WriteUnitsPerSecond</code>, or both.</p>
+    pub fn set_warm_throughput(mut self, input: ::std::option::Option<crate::types::WarmThroughput>) -> Self {
+        self.warm_throughput = input;
+        self
+    }
+    /// <p>Represents the warm throughput value (in read units per second and write units per second) for the specified secondary index. If you use this parameter, you must specify <code>ReadUnitsPerSecond</code>, <code>WriteUnitsPerSecond</code>, or both.</p>
+    pub fn get_warm_throughput(&self) -> &::std::option::Option<crate::types::WarmThroughput> {
+        &self.warm_throughput
+    }
     /// Consumes the builder and constructs a [`GlobalSecondaryIndex`](crate::types::GlobalSecondaryIndex).
     /// This method will fail if any of the following fields are not set:
     /// - [`index_name`](crate::types::builders::GlobalSecondaryIndexBuilder::index_name)
@@ -206,6 +227,7 @@ impl GlobalSecondaryIndexBuilder {
             projection: self.projection,
             provisioned_throughput: self.provisioned_throughput,
             on_demand_throughput: self.on_demand_throughput,
+            warm_throughput: self.warm_throughput,
         })
     }
 }

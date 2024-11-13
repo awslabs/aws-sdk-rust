@@ -15,6 +15,8 @@ pub struct CreateGlobalSecondaryIndexAction {
     pub provisioned_throughput: ::std::option::Option<crate::types::ProvisionedThroughput>,
     /// <p>The maximum number of read and write units for the global secondary index being created. If you use this parameter, you must specify <code>MaxReadRequestUnits</code>, <code>MaxWriteRequestUnits</code>, or both.</p>
     pub on_demand_throughput: ::std::option::Option<crate::types::OnDemandThroughput>,
+    /// <p>Represents the warm throughput value (in read units per second and write units per second) when creating a secondary index.</p>
+    pub warm_throughput: ::std::option::Option<crate::types::WarmThroughput>,
 }
 impl CreateGlobalSecondaryIndexAction {
     /// <p>The name of the global secondary index to be created.</p>
@@ -40,6 +42,10 @@ impl CreateGlobalSecondaryIndexAction {
     pub fn on_demand_throughput(&self) -> ::std::option::Option<&crate::types::OnDemandThroughput> {
         self.on_demand_throughput.as_ref()
     }
+    /// <p>Represents the warm throughput value (in read units per second and write units per second) when creating a secondary index.</p>
+    pub fn warm_throughput(&self) -> ::std::option::Option<&crate::types::WarmThroughput> {
+        self.warm_throughput.as_ref()
+    }
 }
 impl CreateGlobalSecondaryIndexAction {
     /// Creates a new builder-style object to manufacture [`CreateGlobalSecondaryIndexAction`](crate::types::CreateGlobalSecondaryIndexAction).
@@ -57,6 +63,7 @@ pub struct CreateGlobalSecondaryIndexActionBuilder {
     pub(crate) projection: ::std::option::Option<crate::types::Projection>,
     pub(crate) provisioned_throughput: ::std::option::Option<crate::types::ProvisionedThroughput>,
     pub(crate) on_demand_throughput: ::std::option::Option<crate::types::OnDemandThroughput>,
+    pub(crate) warm_throughput: ::std::option::Option<crate::types::WarmThroughput>,
 }
 impl CreateGlobalSecondaryIndexActionBuilder {
     /// <p>The name of the global secondary index to be created.</p>
@@ -140,6 +147,20 @@ impl CreateGlobalSecondaryIndexActionBuilder {
     pub fn get_on_demand_throughput(&self) -> &::std::option::Option<crate::types::OnDemandThroughput> {
         &self.on_demand_throughput
     }
+    /// <p>Represents the warm throughput value (in read units per second and write units per second) when creating a secondary index.</p>
+    pub fn warm_throughput(mut self, input: crate::types::WarmThroughput) -> Self {
+        self.warm_throughput = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Represents the warm throughput value (in read units per second and write units per second) when creating a secondary index.</p>
+    pub fn set_warm_throughput(mut self, input: ::std::option::Option<crate::types::WarmThroughput>) -> Self {
+        self.warm_throughput = input;
+        self
+    }
+    /// <p>Represents the warm throughput value (in read units per second and write units per second) when creating a secondary index.</p>
+    pub fn get_warm_throughput(&self) -> &::std::option::Option<crate::types::WarmThroughput> {
+        &self.warm_throughput
+    }
     /// Consumes the builder and constructs a [`CreateGlobalSecondaryIndexAction`](crate::types::CreateGlobalSecondaryIndexAction).
     /// This method will fail if any of the following fields are not set:
     /// - [`index_name`](crate::types::builders::CreateGlobalSecondaryIndexActionBuilder::index_name)
@@ -161,6 +182,7 @@ impl CreateGlobalSecondaryIndexActionBuilder {
             projection: self.projection,
             provisioned_throughput: self.provisioned_throughput,
             on_demand_throughput: self.on_demand_throughput,
+            warm_throughput: self.warm_throughput,
         })
     }
 }

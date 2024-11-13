@@ -65,6 +65,11 @@ where
                         "Goal" => {
                             builder = builder.set_goal(crate::protocol_serde::shape_goal::de_goal(tokens)?);
                         }
+                        "BurnRateConfigurations" => {
+                            builder = builder.set_burn_rate_configurations(
+                                crate::protocol_serde::shape_burn_rate_configurations::de_burn_rate_configurations(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

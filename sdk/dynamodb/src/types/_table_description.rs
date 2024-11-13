@@ -171,6 +171,8 @@ pub struct TableDescription {
     pub deletion_protection_enabled: ::std::option::Option<bool>,
     /// <p>The maximum number of read and write units for the specified on-demand table. If you use this parameter, you must specify <code>MaxReadRequestUnits</code>, <code>MaxWriteRequestUnits</code>, or both.</p>
     pub on_demand_throughput: ::std::option::Option<crate::types::OnDemandThroughput>,
+    /// <p>Describes the warm throughput value of the base table.</p>
+    pub warm_throughput: ::std::option::Option<crate::types::TableWarmThroughputDescription>,
 }
 impl TableDescription {
     /// <p>An array of <code>AttributeDefinition</code> objects. Each of these objects describes one attribute in the table and index key schema.</p>
@@ -398,6 +400,10 @@ impl TableDescription {
     pub fn on_demand_throughput(&self) -> ::std::option::Option<&crate::types::OnDemandThroughput> {
         self.on_demand_throughput.as_ref()
     }
+    /// <p>Describes the warm throughput value of the base table.</p>
+    pub fn warm_throughput(&self) -> ::std::option::Option<&crate::types::TableWarmThroughputDescription> {
+        self.warm_throughput.as_ref()
+    }
 }
 impl TableDescription {
     /// Creates a new builder-style object to manufacture [`TableDescription`](crate::types::TableDescription).
@@ -434,6 +440,7 @@ pub struct TableDescriptionBuilder {
     pub(crate) table_class_summary: ::std::option::Option<crate::types::TableClassSummary>,
     pub(crate) deletion_protection_enabled: ::std::option::Option<bool>,
     pub(crate) on_demand_throughput: ::std::option::Option<crate::types::OnDemandThroughput>,
+    pub(crate) warm_throughput: ::std::option::Option<crate::types::TableWarmThroughputDescription>,
 }
 impl TableDescriptionBuilder {
     /// Appends an item to `attribute_definitions`.
@@ -1165,6 +1172,20 @@ impl TableDescriptionBuilder {
     pub fn get_on_demand_throughput(&self) -> &::std::option::Option<crate::types::OnDemandThroughput> {
         &self.on_demand_throughput
     }
+    /// <p>Describes the warm throughput value of the base table.</p>
+    pub fn warm_throughput(mut self, input: crate::types::TableWarmThroughputDescription) -> Self {
+        self.warm_throughput = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Describes the warm throughput value of the base table.</p>
+    pub fn set_warm_throughput(mut self, input: ::std::option::Option<crate::types::TableWarmThroughputDescription>) -> Self {
+        self.warm_throughput = input;
+        self
+    }
+    /// <p>Describes the warm throughput value of the base table.</p>
+    pub fn get_warm_throughput(&self) -> &::std::option::Option<crate::types::TableWarmThroughputDescription> {
+        &self.warm_throughput
+    }
     /// Consumes the builder and constructs a [`TableDescription`](crate::types::TableDescription).
     pub fn build(self) -> crate::types::TableDescription {
         crate::types::TableDescription {
@@ -1192,6 +1213,7 @@ impl TableDescriptionBuilder {
             table_class_summary: self.table_class_summary,
             deletion_protection_enabled: self.deletion_protection_enabled,
             on_demand_throughput: self.on_demand_throughput,
+            warm_throughput: self.warm_throughput,
         }
     }
 }

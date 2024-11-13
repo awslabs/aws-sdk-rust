@@ -31,6 +31,11 @@ where
                                 crate::protocol_serde::shape_on_demand_throughput_override::de_on_demand_throughput_override(tokens)?,
                             );
                         }
+                        "WarmThroughput" => {
+                            builder = builder.set_warm_throughput(
+                                    crate::protocol_serde::shape_global_secondary_index_warm_throughput_description::de_global_secondary_index_warm_throughput_description(tokens)?
+                                );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

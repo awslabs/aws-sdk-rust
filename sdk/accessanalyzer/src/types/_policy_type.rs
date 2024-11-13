@@ -13,6 +13,7 @@
 /// # let policytype = unimplemented!();
 /// match policytype {
 ///     PolicyType::IdentityPolicy => { /* ... */ },
+///     PolicyType::ResourceControlPolicy => { /* ... */ },
 ///     PolicyType::ResourcePolicy => { /* ... */ },
 ///     PolicyType::ServiceControlPolicy => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -45,6 +46,8 @@ pub enum PolicyType {
     #[allow(missing_docs)] // documentation missing in model
     IdentityPolicy,
     #[allow(missing_docs)] // documentation missing in model
+    ResourceControlPolicy,
+    #[allow(missing_docs)] // documentation missing in model
     ResourcePolicy,
     #[allow(missing_docs)] // documentation missing in model
     ServiceControlPolicy,
@@ -56,6 +59,7 @@ impl ::std::convert::From<&str> for PolicyType {
     fn from(s: &str) -> Self {
         match s {
             "IDENTITY_POLICY" => PolicyType::IdentityPolicy,
+            "RESOURCE_CONTROL_POLICY" => PolicyType::ResourceControlPolicy,
             "RESOURCE_POLICY" => PolicyType::ResourcePolicy,
             "SERVICE_CONTROL_POLICY" => PolicyType::ServiceControlPolicy,
             other => PolicyType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -74,6 +78,7 @@ impl PolicyType {
     pub fn as_str(&self) -> &str {
         match self {
             PolicyType::IdentityPolicy => "IDENTITY_POLICY",
+            PolicyType::ResourceControlPolicy => "RESOURCE_CONTROL_POLICY",
             PolicyType::ResourcePolicy => "RESOURCE_POLICY",
             PolicyType::ServiceControlPolicy => "SERVICE_CONTROL_POLICY",
             PolicyType::Unknown(value) => value.as_str(),
@@ -81,7 +86,7 @@ impl PolicyType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["IDENTITY_POLICY", "RESOURCE_POLICY", "SERVICE_CONTROL_POLICY"]
+        &["IDENTITY_POLICY", "RESOURCE_CONTROL_POLICY", "RESOURCE_POLICY", "SERVICE_CONTROL_POLICY"]
     }
 }
 impl ::std::convert::AsRef<str> for PolicyType {
@@ -105,6 +110,7 @@ impl ::std::fmt::Display for PolicyType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             PolicyType::IdentityPolicy => write!(f, "IDENTITY_POLICY"),
+            PolicyType::ResourceControlPolicy => write!(f, "RESOURCE_CONTROL_POLICY"),
             PolicyType::ResourcePolicy => write!(f, "RESOURCE_POLICY"),
             PolicyType::ServiceControlPolicy => write!(f, "SERVICE_CONTROL_POLICY"),
             PolicyType::Unknown(value) => write!(f, "{}", value),

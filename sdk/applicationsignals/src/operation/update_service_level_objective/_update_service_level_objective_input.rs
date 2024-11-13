@@ -14,6 +14,8 @@ pub struct UpdateServiceLevelObjectiveInput {
     pub request_based_sli_config: ::std::option::Option<crate::types::RequestBasedServiceLevelIndicatorConfig>,
     /// <p>A structure that contains the attributes that determine the goal of the SLO. This includes the time period for evaluation and the attainment threshold.</p>
     pub goal: ::std::option::Option<crate::types::Goal>,
+    /// <p>Use this array to create <i>burn rates</i> for this SLO. Each burn rate is a metric that indicates how fast the service is consuming the error budget, relative to the attainment goal of the SLO.</p>
+    pub burn_rate_configurations: ::std::option::Option<::std::vec::Vec<crate::types::BurnRateConfiguration>>,
 }
 impl UpdateServiceLevelObjectiveInput {
     /// <p>The Amazon Resource Name (ARN) or name of the service level objective that you want to update.</p>
@@ -37,6 +39,12 @@ impl UpdateServiceLevelObjectiveInput {
     pub fn goal(&self) -> ::std::option::Option<&crate::types::Goal> {
         self.goal.as_ref()
     }
+    /// <p>Use this array to create <i>burn rates</i> for this SLO. Each burn rate is a metric that indicates how fast the service is consuming the error budget, relative to the attainment goal of the SLO.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.burn_rate_configurations.is_none()`.
+    pub fn burn_rate_configurations(&self) -> &[crate::types::BurnRateConfiguration] {
+        self.burn_rate_configurations.as_deref().unwrap_or_default()
+    }
 }
 impl UpdateServiceLevelObjectiveInput {
     /// Creates a new builder-style object to manufacture [`UpdateServiceLevelObjectiveInput`](crate::operation::update_service_level_objective::UpdateServiceLevelObjectiveInput).
@@ -54,6 +62,7 @@ pub struct UpdateServiceLevelObjectiveInputBuilder {
     pub(crate) sli_config: ::std::option::Option<crate::types::ServiceLevelIndicatorConfig>,
     pub(crate) request_based_sli_config: ::std::option::Option<crate::types::RequestBasedServiceLevelIndicatorConfig>,
     pub(crate) goal: ::std::option::Option<crate::types::Goal>,
+    pub(crate) burn_rate_configurations: ::std::option::Option<::std::vec::Vec<crate::types::BurnRateConfiguration>>,
 }
 impl UpdateServiceLevelObjectiveInputBuilder {
     /// <p>The Amazon Resource Name (ARN) or name of the service level objective that you want to update.</p>
@@ -130,6 +139,26 @@ impl UpdateServiceLevelObjectiveInputBuilder {
     pub fn get_goal(&self) -> &::std::option::Option<crate::types::Goal> {
         &self.goal
     }
+    /// Appends an item to `burn_rate_configurations`.
+    ///
+    /// To override the contents of this collection use [`set_burn_rate_configurations`](Self::set_burn_rate_configurations).
+    ///
+    /// <p>Use this array to create <i>burn rates</i> for this SLO. Each burn rate is a metric that indicates how fast the service is consuming the error budget, relative to the attainment goal of the SLO.</p>
+    pub fn burn_rate_configurations(mut self, input: crate::types::BurnRateConfiguration) -> Self {
+        let mut v = self.burn_rate_configurations.unwrap_or_default();
+        v.push(input);
+        self.burn_rate_configurations = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Use this array to create <i>burn rates</i> for this SLO. Each burn rate is a metric that indicates how fast the service is consuming the error budget, relative to the attainment goal of the SLO.</p>
+    pub fn set_burn_rate_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BurnRateConfiguration>>) -> Self {
+        self.burn_rate_configurations = input;
+        self
+    }
+    /// <p>Use this array to create <i>burn rates</i> for this SLO. Each burn rate is a metric that indicates how fast the service is consuming the error budget, relative to the attainment goal of the SLO.</p>
+    pub fn get_burn_rate_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BurnRateConfiguration>> {
+        &self.burn_rate_configurations
+    }
     /// Consumes the builder and constructs a [`UpdateServiceLevelObjectiveInput`](crate::operation::update_service_level_objective::UpdateServiceLevelObjectiveInput).
     pub fn build(
         self,
@@ -143,6 +172,7 @@ impl UpdateServiceLevelObjectiveInputBuilder {
             sli_config: self.sli_config,
             request_based_sli_config: self.request_based_sli_config,
             goal: self.goal,
+            burn_rate_configurations: self.burn_rate_configurations,
         })
     }
 }

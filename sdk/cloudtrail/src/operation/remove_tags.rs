@@ -251,6 +251,8 @@ pub enum RemoveTagsError {
     /// <p>The following is the format of an event data store ARN: <code>arn:aws:cloudtrail:us-east-2:123456789012:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code></p>
     /// <p>The following is the format of a channel ARN: <code>arn:aws:cloudtrail:us-east-2:123456789012:channel/01234567890</code></p>
     CloudTrailArnInvalidException(crate::types::error::CloudTrailArnInvalidException),
+    /// <p>This exception is thrown when the specified resource is not ready for an operation. This can occur when you try to run an operation on a resource before CloudTrail has time to fully load the resource, or because another operation is modifying the resource. If this exception occurs, wait a few minutes, and then try the operation again.</p>
+    ConflictException(crate::types::error::ConflictException),
     /// <p>The specified event data store ARN is not valid or does not map to an event data store in your account.</p>
     EventDataStoreArnInvalidException(crate::types::error::EventDataStoreArnInvalidException),
     /// <p>The specified event data store was not found.</p>
@@ -321,6 +323,7 @@ impl RemoveTagsError {
             Self::ChannelArnInvalidException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ChannelNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::CloudTrailArnInvalidException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::ConflictException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::EventDataStoreArnInvalidException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::EventDataStoreNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InactiveEventDataStoreException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -346,6 +349,10 @@ impl RemoveTagsError {
     /// Returns `true` if the error kind is `RemoveTagsError::CloudTrailArnInvalidException`.
     pub fn is_cloud_trail_arn_invalid_exception(&self) -> bool {
         matches!(self, Self::CloudTrailArnInvalidException(_))
+    }
+    /// Returns `true` if the error kind is `RemoveTagsError::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(self, Self::ConflictException(_))
     }
     /// Returns `true` if the error kind is `RemoveTagsError::EventDataStoreArnInvalidException`.
     pub fn is_event_data_store_arn_invalid_exception(&self) -> bool {
@@ -398,6 +405,7 @@ impl ::std::error::Error for RemoveTagsError {
             Self::ChannelArnInvalidException(_inner) => ::std::option::Option::Some(_inner),
             Self::ChannelNotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::CloudTrailArnInvalidException(_inner) => ::std::option::Option::Some(_inner),
+            Self::ConflictException(_inner) => ::std::option::Option::Some(_inner),
             Self::EventDataStoreArnInvalidException(_inner) => ::std::option::Option::Some(_inner),
             Self::EventDataStoreNotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::InactiveEventDataStoreException(_inner) => ::std::option::Option::Some(_inner),
@@ -419,6 +427,7 @@ impl ::std::fmt::Display for RemoveTagsError {
             Self::ChannelArnInvalidException(_inner) => _inner.fmt(f),
             Self::ChannelNotFoundException(_inner) => _inner.fmt(f),
             Self::CloudTrailArnInvalidException(_inner) => _inner.fmt(f),
+            Self::ConflictException(_inner) => _inner.fmt(f),
             Self::EventDataStoreArnInvalidException(_inner) => _inner.fmt(f),
             Self::EventDataStoreNotFoundException(_inner) => _inner.fmt(f),
             Self::InactiveEventDataStoreException(_inner) => _inner.fmt(f),
@@ -454,6 +463,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for RemoveTagsErr
             Self::ChannelArnInvalidException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ChannelNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::CloudTrailArnInvalidException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ConflictException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::EventDataStoreArnInvalidException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::EventDataStoreNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InactiveEventDataStoreException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

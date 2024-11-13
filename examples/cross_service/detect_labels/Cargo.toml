@@ -8,7 +8,7 @@ publish = false
 [dependencies]
 kamadak-exif = "0.5.4"
 aws-config= { version = "1.5.10", path = "../../../sdk/aws-config" }
-aws-sdk-dynamodb= { version = "1.53.0", path = "../../../sdk/dynamodb" }
+aws-sdk-dynamodb= { version = "1.54.0", path = "../../../sdk/dynamodb" }
 aws-sdk-rekognition= { version = "1.52.0", path = "../../../sdk/rekognition" }
 aws-sdk-s3= { version = "1.60.0", path = "../../../sdk/s3" }
 aws-smithy-types= { version = "1.2.9", path = "../../../sdk/aws-smithy-types", features = ["rt-tokio"] }

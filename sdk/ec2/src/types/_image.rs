@@ -16,7 +16,7 @@ pub struct Image {
     pub ena_support: ::std::option::Option<bool>,
     /// <p>The hypervisor type of the image. Only <code>xen</code> is supported. <code>ovm</code> is not supported.</p>
     pub hypervisor: ::std::option::Option<crate::types::HypervisorType>,
-    /// <p>The owner alias (<code>amazon</code> | <code>aws-marketplace</code>).</p>
+    /// <p>The owner alias (<code>amazon</code> | <code>aws-backup-vault</code> | <code>aws-marketplace</code>).</p>
     pub image_owner_alias: ::std::option::Option<::std::string::String>,
     /// <p>The name of the AMI that was provided during image creation.</p>
     pub name: ::std::option::Option<::std::string::String>,
@@ -48,6 +48,12 @@ pub struct Image {
     /// <p><code>lastLaunchedTime</code> data is available starting April 2017.</p>
     /// </note>
     pub last_launched_time: ::std::option::Option<::std::string::String>,
+    /// <p>The ID of the source AMI from which the AMI was created.</p>
+    /// <p>The ID only appears if the AMI was created using <code>CreateImage</code>, <code>CopyImage</code>, or <code>CreateRestoreImageTask</code>. The ID does not appear if the AMI was created using any other API. For some older AMIs, the ID might not be available. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/identify-source-ami-used-to-create-new-ami.html">Identify the source AMI used to create a new AMI</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    pub source_image_id: ::std::option::Option<::std::string::String>,
+    /// <p>The Region of the source AMI.</p>
+    /// <p>The Region only appears if the AMI was created using <code>CreateImage</code>, <code>CopyImage</code>, or <code>CreateRestoreImageTask</code>. The Region does not appear if the AMI was created using any other API. For some older AMIs, the Region might not be available. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/identify-source-ami-used-to-create-new-ami.html">Identify the source AMI used to create a new AMI</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    pub source_image_region: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the AMI.</p>
     pub image_id: ::std::option::Option<::std::string::String>,
     /// <p>The location of the AMI.</p>
@@ -100,7 +106,7 @@ impl Image {
     pub fn hypervisor(&self) -> ::std::option::Option<&crate::types::HypervisorType> {
         self.hypervisor.as_ref()
     }
-    /// <p>The owner alias (<code>amazon</code> | <code>aws-marketplace</code>).</p>
+    /// <p>The owner alias (<code>amazon</code> | <code>aws-backup-vault</code> | <code>aws-marketplace</code>).</p>
     pub fn image_owner_alias(&self) -> ::std::option::Option<&str> {
         self.image_owner_alias.as_deref()
     }
@@ -163,6 +169,16 @@ impl Image {
     /// </note>
     pub fn last_launched_time(&self) -> ::std::option::Option<&str> {
         self.last_launched_time.as_deref()
+    }
+    /// <p>The ID of the source AMI from which the AMI was created.</p>
+    /// <p>The ID only appears if the AMI was created using <code>CreateImage</code>, <code>CopyImage</code>, or <code>CreateRestoreImageTask</code>. The ID does not appear if the AMI was created using any other API. For some older AMIs, the ID might not be available. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/identify-source-ami-used-to-create-new-ami.html">Identify the source AMI used to create a new AMI</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    pub fn source_image_id(&self) -> ::std::option::Option<&str> {
+        self.source_image_id.as_deref()
+    }
+    /// <p>The Region of the source AMI.</p>
+    /// <p>The Region only appears if the AMI was created using <code>CreateImage</code>, <code>CopyImage</code>, or <code>CreateRestoreImageTask</code>. The Region does not appear if the AMI was created using any other API. For some older AMIs, the Region might not be available. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/identify-source-ami-used-to-create-new-ami.html">Identify the source AMI used to create a new AMI</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    pub fn source_image_region(&self) -> ::std::option::Option<&str> {
+        self.source_image_region.as_deref()
     }
     /// <p>The ID of the AMI.</p>
     pub fn image_id(&self) -> ::std::option::Option<&str> {
@@ -247,6 +263,8 @@ pub struct ImageBuilder {
     pub(crate) source_instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) deregistration_protection: ::std::option::Option<::std::string::String>,
     pub(crate) last_launched_time: ::std::option::Option<::std::string::String>,
+    pub(crate) source_image_id: ::std::option::Option<::std::string::String>,
+    pub(crate) source_image_region: ::std::option::Option<::std::string::String>,
     pub(crate) image_id: ::std::option::Option<::std::string::String>,
     pub(crate) image_location: ::std::option::Option<::std::string::String>,
     pub(crate) state: ::std::option::Option<crate::types::ImageState>,
@@ -351,17 +369,17 @@ impl ImageBuilder {
     pub fn get_hypervisor(&self) -> &::std::option::Option<crate::types::HypervisorType> {
         &self.hypervisor
     }
-    /// <p>The owner alias (<code>amazon</code> | <code>aws-marketplace</code>).</p>
+    /// <p>The owner alias (<code>amazon</code> | <code>aws-backup-vault</code> | <code>aws-marketplace</code>).</p>
     pub fn image_owner_alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_owner_alias = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The owner alias (<code>amazon</code> | <code>aws-marketplace</code>).</p>
+    /// <p>The owner alias (<code>amazon</code> | <code>aws-backup-vault</code> | <code>aws-marketplace</code>).</p>
     pub fn set_image_owner_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.image_owner_alias = input;
         self
     }
-    /// <p>The owner alias (<code>amazon</code> | <code>aws-marketplace</code>).</p>
+    /// <p>The owner alias (<code>amazon</code> | <code>aws-backup-vault</code> | <code>aws-marketplace</code>).</p>
     pub fn get_image_owner_alias(&self) -> &::std::option::Option<::std::string::String> {
         &self.image_owner_alias
     }
@@ -573,6 +591,40 @@ impl ImageBuilder {
     pub fn get_last_launched_time(&self) -> &::std::option::Option<::std::string::String> {
         &self.last_launched_time
     }
+    /// <p>The ID of the source AMI from which the AMI was created.</p>
+    /// <p>The ID only appears if the AMI was created using <code>CreateImage</code>, <code>CopyImage</code>, or <code>CreateRestoreImageTask</code>. The ID does not appear if the AMI was created using any other API. For some older AMIs, the ID might not be available. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/identify-source-ami-used-to-create-new-ami.html">Identify the source AMI used to create a new AMI</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    pub fn source_image_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.source_image_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the source AMI from which the AMI was created.</p>
+    /// <p>The ID only appears if the AMI was created using <code>CreateImage</code>, <code>CopyImage</code>, or <code>CreateRestoreImageTask</code>. The ID does not appear if the AMI was created using any other API. For some older AMIs, the ID might not be available. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/identify-source-ami-used-to-create-new-ami.html">Identify the source AMI used to create a new AMI</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    pub fn set_source_image_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.source_image_id = input;
+        self
+    }
+    /// <p>The ID of the source AMI from which the AMI was created.</p>
+    /// <p>The ID only appears if the AMI was created using <code>CreateImage</code>, <code>CopyImage</code>, or <code>CreateRestoreImageTask</code>. The ID does not appear if the AMI was created using any other API. For some older AMIs, the ID might not be available. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/identify-source-ami-used-to-create-new-ami.html">Identify the source AMI used to create a new AMI</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    pub fn get_source_image_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_image_id
+    }
+    /// <p>The Region of the source AMI.</p>
+    /// <p>The Region only appears if the AMI was created using <code>CreateImage</code>, <code>CopyImage</code>, or <code>CreateRestoreImageTask</code>. The Region does not appear if the AMI was created using any other API. For some older AMIs, the Region might not be available. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/identify-source-ami-used-to-create-new-ami.html">Identify the source AMI used to create a new AMI</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    pub fn source_image_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.source_image_region = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Region of the source AMI.</p>
+    /// <p>The Region only appears if the AMI was created using <code>CreateImage</code>, <code>CopyImage</code>, or <code>CreateRestoreImageTask</code>. The Region does not appear if the AMI was created using any other API. For some older AMIs, the Region might not be available. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/identify-source-ami-used-to-create-new-ami.html">Identify the source AMI used to create a new AMI</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    pub fn set_source_image_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.source_image_region = input;
+        self
+    }
+    /// <p>The Region of the source AMI.</p>
+    /// <p>The Region only appears if the AMI was created using <code>CreateImage</code>, <code>CopyImage</code>, or <code>CreateRestoreImageTask</code>. The Region does not appear if the AMI was created using any other API. For some older AMIs, the Region might not be available. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/identify-source-ami-used-to-create-new-ami.html">Identify the source AMI used to create a new AMI</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    pub fn get_source_image_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_image_region
+    }
     /// <p>The ID of the AMI.</p>
     pub fn image_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_id = ::std::option::Option::Some(input.into());
@@ -771,6 +823,8 @@ impl ImageBuilder {
             source_instance_id: self.source_instance_id,
             deregistration_protection: self.deregistration_protection,
             last_launched_time: self.last_launched_time,
+            source_image_id: self.source_image_id,
+            source_image_region: self.source_image_region,
             image_id: self.image_id,
             image_location: self.image_location,
             state: self.state,

@@ -56,6 +56,8 @@ pub enum Error {
     EventDataStoreNotFoundException(crate::types::error::EventDataStoreNotFoundException),
     /// <p>The event data store cannot be deleted because termination protection is enabled for it.</p>
     EventDataStoreTerminationProtectedException(crate::types::error::EventDataStoreTerminationProtectedException),
+    /// <p>This exception is thrown when a valid query could not be generated for the provided prompt.</p>
+    GenerateResponseException(crate::types::error::GenerateResponseException),
     /// <p>The specified import was not found.</p>
     ImportNotFoundException(crate::types::error::ImportNotFoundException),
     /// <p>The event data store is inactive.</p>
@@ -243,6 +245,7 @@ impl ::std::fmt::Display for Error {
             Error::EventDataStoreMaxLimitExceededException(inner) => inner.fmt(f),
             Error::EventDataStoreNotFoundException(inner) => inner.fmt(f),
             Error::EventDataStoreTerminationProtectedException(inner) => inner.fmt(f),
+            Error::GenerateResponseException(inner) => inner.fmt(f),
             Error::ImportNotFoundException(inner) => inner.fmt(f),
             Error::InactiveEventDataStoreException(inner) => inner.fmt(f),
             Error::InactiveQueryException(inner) => inner.fmt(f),
@@ -347,6 +350,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::EventDataStoreMaxLimitExceededException(inner) => inner.meta(),
             Self::EventDataStoreNotFoundException(inner) => inner.meta(),
             Self::EventDataStoreTerminationProtectedException(inner) => inner.meta(),
+            Self::GenerateResponseException(inner) => inner.meta(),
             Self::ImportNotFoundException(inner) => inner.meta(),
             Self::InactiveEventDataStoreException(inner) => inner.meta(),
             Self::InactiveQueryException(inner) => inner.meta(),
@@ -1086,6 +1090,45 @@ impl From<crate::operation::enable_federation::EnableFederationError> for Error 
                 Error::UnsupportedOperationException(inner)
             }
             crate::operation::enable_federation::EnableFederationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::generate_query::GenerateQueryError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::generate_query::GenerateQueryError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::generate_query::GenerateQueryError> for Error {
+    fn from(err: crate::operation::generate_query::GenerateQueryError) -> Self {
+        match err {
+            crate::operation::generate_query::GenerateQueryError::EventDataStoreArnInvalidException(inner) => {
+                Error::EventDataStoreArnInvalidException(inner)
+            }
+            crate::operation::generate_query::GenerateQueryError::EventDataStoreNotFoundException(inner) => {
+                Error::EventDataStoreNotFoundException(inner)
+            }
+            crate::operation::generate_query::GenerateQueryError::GenerateResponseException(inner) => Error::GenerateResponseException(inner),
+            crate::operation::generate_query::GenerateQueryError::InactiveEventDataStoreException(inner) => {
+                Error::InactiveEventDataStoreException(inner)
+            }
+            crate::operation::generate_query::GenerateQueryError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::generate_query::GenerateQueryError::NoManagementAccountSlrExistsException(inner) => {
+                Error::NoManagementAccountSlrExistsException(inner)
+            }
+            crate::operation::generate_query::GenerateQueryError::OperationNotPermittedException(inner) => {
+                Error::OperationNotPermittedException(inner)
+            }
+            crate::operation::generate_query::GenerateQueryError::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
+            crate::operation::generate_query::GenerateQueryError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1930,6 +1973,7 @@ impl From<crate::operation::remove_tags::RemoveTagsError> for Error {
             crate::operation::remove_tags::RemoveTagsError::ChannelArnInvalidException(inner) => Error::ChannelArnInvalidException(inner),
             crate::operation::remove_tags::RemoveTagsError::ChannelNotFoundException(inner) => Error::ChannelNotFoundException(inner),
             crate::operation::remove_tags::RemoveTagsError::CloudTrailArnInvalidException(inner) => Error::CloudTrailArnInvalidException(inner),
+            crate::operation::remove_tags::RemoveTagsError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::remove_tags::RemoveTagsError::EventDataStoreArnInvalidException(inner) => {
                 Error::EventDataStoreArnInvalidException(inner)
             }
@@ -2508,6 +2552,7 @@ impl ::std::error::Error for Error {
             Error::EventDataStoreMaxLimitExceededException(inner) => inner.source(),
             Error::EventDataStoreNotFoundException(inner) => inner.source(),
             Error::EventDataStoreTerminationProtectedException(inner) => inner.source(),
+            Error::GenerateResponseException(inner) => inner.source(),
             Error::ImportNotFoundException(inner) => inner.source(),
             Error::InactiveEventDataStoreException(inner) => inner.source(),
             Error::InactiveQueryException(inner) => inner.source(),
@@ -2598,6 +2643,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::EventDataStoreMaxLimitExceededException(e) => e.request_id(),
             Self::EventDataStoreNotFoundException(e) => e.request_id(),
             Self::EventDataStoreTerminationProtectedException(e) => e.request_id(),
+            Self::GenerateResponseException(e) => e.request_id(),
             Self::ImportNotFoundException(e) => e.request_id(),
             Self::InactiveEventDataStoreException(e) => e.request_id(),
             Self::InactiveQueryException(e) => e.request_id(),

@@ -51,6 +51,8 @@ pub(crate) mod shape_disable_federation;
 
 pub(crate) mod shape_enable_federation;
 
+pub(crate) mod shape_generate_query;
+
 pub(crate) mod shape_get_channel;
 
 pub(crate) mod shape_get_event_data_store;
@@ -206,6 +208,10 @@ pub(crate) mod shape_event_data_store_max_limit_exceeded_exception;
 pub(crate) mod shape_event_data_store_not_found_exception;
 
 pub(crate) mod shape_event_data_store_termination_protected_exception;
+
+pub(crate) mod shape_generate_query_input;
+
+pub(crate) mod shape_generate_response_exception;
 
 pub(crate) mod shape_get_channel_input;
 

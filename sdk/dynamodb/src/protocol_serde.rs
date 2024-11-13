@@ -459,6 +459,8 @@ pub(crate) mod shape_transact_write_item;
 
 pub(crate) mod shape_update_kinesis_streaming_configuration;
 
+pub(crate) mod shape_warm_throughput;
+
 pub(crate) mod shape_write_request;
 
 pub(crate) mod shape_archival_summary;
@@ -557,6 +559,8 @@ pub(crate) mod shape_sse_description;
 
 pub(crate) mod shape_table_class_summary;
 
+pub(crate) mod shape_table_warm_throughput_description;
+
 pub(crate) mod shape_update;
 
 pub(crate) mod shape_update_global_secondary_index_action;
@@ -616,6 +620,8 @@ pub(crate) mod shape_auto_scaling_policy_description_list;
 pub(crate) mod shape_csv_header_list;
 
 pub(crate) mod shape_global_secondary_index_info;
+
+pub(crate) mod shape_global_secondary_index_warm_throughput_description;
 
 pub(crate) mod shape_local_secondary_index_info;
 

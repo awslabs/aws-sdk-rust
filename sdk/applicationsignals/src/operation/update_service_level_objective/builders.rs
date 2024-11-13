@@ -182,4 +182,23 @@ impl UpdateServiceLevelObjectiveFluentBuilder {
     pub fn get_goal(&self) -> &::std::option::Option<crate::types::Goal> {
         self.inner.get_goal()
     }
+    ///
+    /// Appends an item to `BurnRateConfigurations`.
+    ///
+    /// To override the contents of this collection use [`set_burn_rate_configurations`](Self::set_burn_rate_configurations).
+    ///
+    /// <p>Use this array to create <i>burn rates</i> for this SLO. Each burn rate is a metric that indicates how fast the service is consuming the error budget, relative to the attainment goal of the SLO.</p>
+    pub fn burn_rate_configurations(mut self, input: crate::types::BurnRateConfiguration) -> Self {
+        self.inner = self.inner.burn_rate_configurations(input);
+        self
+    }
+    /// <p>Use this array to create <i>burn rates</i> for this SLO. Each burn rate is a metric that indicates how fast the service is consuming the error budget, relative to the attainment goal of the SLO.</p>
+    pub fn set_burn_rate_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BurnRateConfiguration>>) -> Self {
+        self.inner = self.inner.set_burn_rate_configurations(input);
+        self
+    }
+    /// <p>Use this array to create <i>burn rates</i> for this SLO. Each burn rate is a metric that indicates how fast the service is consuming the error budget, relative to the attainment goal of the SLO.</p>
+    pub fn get_burn_rate_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BurnRateConfiguration>> {
+        self.inner.get_burn_rate_configurations()
+    }
 }

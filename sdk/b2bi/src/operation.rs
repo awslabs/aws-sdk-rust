@@ -28,6 +28,9 @@ pub mod delete_profile;
 /// Types for the `DeleteTransformer` operation.
 pub mod delete_transformer;
 
+/// Types for the `GenerateMapping` operation.
+pub mod generate_mapping;
+
 /// Types for the `GetCapability` operation.
 pub mod get_capability;
 

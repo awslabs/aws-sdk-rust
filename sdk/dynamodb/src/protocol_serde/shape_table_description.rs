@@ -143,6 +143,11 @@ where
                             builder =
                                 builder.set_on_demand_throughput(crate::protocol_serde::shape_on_demand_throughput::de_on_demand_throughput(tokens)?);
                         }
+                        "WarmThroughput" => {
+                            builder = builder.set_warm_throughput(
+                                crate::protocol_serde::shape_table_warm_throughput_description::de_table_warm_throughput_description(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

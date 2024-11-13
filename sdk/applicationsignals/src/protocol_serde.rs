@@ -93,6 +93,8 @@ pub(crate) mod shape_update_service_level_objective_input;
 
 pub(crate) mod shape_validation_exception;
 
+pub(crate) mod shape_burn_rate_configuration;
+
 pub(crate) mod shape_goal;
 
 pub(crate) mod shape_log_group_references;
@@ -126,6 +128,8 @@ pub(crate) mod shape_tag_list;
 pub(crate) mod shape_attribute_maps;
 
 pub(crate) mod shape_attributes;
+
+pub(crate) mod shape_burn_rate_configurations;
 
 pub(crate) mod shape_interval;
 

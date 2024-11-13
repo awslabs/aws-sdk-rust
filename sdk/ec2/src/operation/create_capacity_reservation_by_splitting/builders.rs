@@ -22,7 +22,7 @@ impl crate::operation::create_capacity_reservation_by_splitting::builders::Creat
 }
 /// Fluent builder constructing a request to `CreateCapacityReservationBySplitting`.
 ///
-/// <p>Create a new Capacity Reservation by splitting the available capacity of the source Capacity Reservation. The new Capacity Reservation will have the same attributes as the source Capacity Reservation except for tags. The source Capacity Reservation must be <code>active</code> and owned by your Amazon Web Services account.</p>
+/// <p>Create a new Capacity Reservation by splitting the capacity of the source Capacity Reservation. The new Capacity Reservation will have the same attributes as the source Capacity Reservation except for tags. The source Capacity Reservation must be <code>active</code> and owned by your Amazon Web Services account.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateCapacityReservationBySplittingFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -139,17 +139,17 @@ impl CreateCapacityReservationBySplittingFluentBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }
-    /// <p>The ID of the Capacity Reservation from which you want to split the available capacity.</p>
+    /// <p>The ID of the Capacity Reservation from which you want to split the capacity.</p>
     pub fn source_capacity_reservation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_capacity_reservation_id(input.into());
         self
     }
-    /// <p>The ID of the Capacity Reservation from which you want to split the available capacity.</p>
+    /// <p>The ID of the Capacity Reservation from which you want to split the capacity.</p>
     pub fn set_source_capacity_reservation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source_capacity_reservation_id(input);
         self
     }
-    /// <p>The ID of the Capacity Reservation from which you want to split the available capacity.</p>
+    /// <p>The ID of the Capacity Reservation from which you want to split the capacity.</p>
     pub fn get_source_capacity_reservation_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_source_capacity_reservation_id()
     }
