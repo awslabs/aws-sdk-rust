@@ -122,17 +122,17 @@ impl PutResourceLogLevelFluentBuilder {
     pub fn get_resource_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_resource_identifier()
     }
-    /// <p>The type of the resource, which can be <code>WirelessDevice</code> or <code>WirelessGateway</code>.</p>
+    /// <p>The type of the resource, which can be <code>WirelessDevice</code>, <code>WirelessGateway</code>, or <code>FuotaTask</code>.</p>
     pub fn resource_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_type(input.into());
         self
     }
-    /// <p>The type of the resource, which can be <code>WirelessDevice</code> or <code>WirelessGateway</code>.</p>
+    /// <p>The type of the resource, which can be <code>WirelessDevice</code>, <code>WirelessGateway</code>, or <code>FuotaTask</code>.</p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_type(input);
         self
     }
-    /// <p>The type of the resource, which can be <code>WirelessDevice</code> or <code>WirelessGateway</code>.</p>
+    /// <p>The type of the resource, which can be <code>WirelessDevice</code>, <code>WirelessGateway</code>, or <code>FuotaTask</code>.</p>
     pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_resource_type()
     }

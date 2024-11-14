@@ -12,8 +12,11 @@ pub struct StreamSession {
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The properties of the channel at the time of going live.</p>
     pub channel: ::std::option::Option<crate::types::Channel>,
-    /// <p>The properties of the incoming RTMP stream for the stream.</p>
+    /// <p>The properties of the incoming RTMP stream.</p>
+    /// <p><b>Note:</b> <code>ingestConfiguration</code> is deprecated in favor of <code>ingestConfigurations</code> but retained to ensure backward compatibility. If multitrack is not enabled, <code>ingestConfiguration</code> and <code>ingestConfigurations</code> contain the same data, namely information about track0 (the sole track). If multitrack is enabled, <code>ingestConfiguration</code> contains data for only the first track (track0) and <code>ingestConfigurations</code> contains data for all tracks.</p>
     pub ingest_configuration: ::std::option::Option<crate::types::IngestConfiguration>,
+    /// <p>The properties of the incoming RTMP stream. If multitrack is enabled, <code>ingestConfigurations</code> contains data for all tracks; otherwise, it contains data only for track0 (the sole track).</p>
+    pub ingest_configurations: ::std::option::Option<crate::types::IngestConfigurations>,
     /// <p>The properties of recording the live stream.</p>
     pub recording_configuration: ::std::option::Option<crate::types::RecordingConfiguration>,
     /// <p>List of Amazon IVS events that the stream encountered. The list is sorted by most recent events and contains up to 500 events. For Amazon IVS events, see <a href="https://docs.aws.amazon.com/ivs/latest/userguide/eventbridge.html">Using Amazon EventBridge with Amazon IVS</a>.</p>
@@ -36,9 +39,14 @@ impl StreamSession {
     pub fn channel(&self) -> ::std::option::Option<&crate::types::Channel> {
         self.channel.as_ref()
     }
-    /// <p>The properties of the incoming RTMP stream for the stream.</p>
+    /// <p>The properties of the incoming RTMP stream.</p>
+    /// <p><b>Note:</b> <code>ingestConfiguration</code> is deprecated in favor of <code>ingestConfigurations</code> but retained to ensure backward compatibility. If multitrack is not enabled, <code>ingestConfiguration</code> and <code>ingestConfigurations</code> contain the same data, namely information about track0 (the sole track). If multitrack is enabled, <code>ingestConfiguration</code> contains data for only the first track (track0) and <code>ingestConfigurations</code> contains data for all tracks.</p>
     pub fn ingest_configuration(&self) -> ::std::option::Option<&crate::types::IngestConfiguration> {
         self.ingest_configuration.as_ref()
+    }
+    /// <p>The properties of the incoming RTMP stream. If multitrack is enabled, <code>ingestConfigurations</code> contains data for all tracks; otherwise, it contains data only for track0 (the sole track).</p>
+    pub fn ingest_configurations(&self) -> ::std::option::Option<&crate::types::IngestConfigurations> {
+        self.ingest_configurations.as_ref()
     }
     /// <p>The properties of recording the live stream.</p>
     pub fn recording_configuration(&self) -> ::std::option::Option<&crate::types::RecordingConfiguration> {
@@ -67,6 +75,7 @@ pub struct StreamSessionBuilder {
     pub(crate) end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) channel: ::std::option::Option<crate::types::Channel>,
     pub(crate) ingest_configuration: ::std::option::Option<crate::types::IngestConfiguration>,
+    pub(crate) ingest_configurations: ::std::option::Option<crate::types::IngestConfigurations>,
     pub(crate) recording_configuration: ::std::option::Option<crate::types::RecordingConfiguration>,
     pub(crate) truncated_events: ::std::option::Option<::std::vec::Vec<crate::types::StreamEvent>>,
 }
@@ -127,19 +136,36 @@ impl StreamSessionBuilder {
     pub fn get_channel(&self) -> &::std::option::Option<crate::types::Channel> {
         &self.channel
     }
-    /// <p>The properties of the incoming RTMP stream for the stream.</p>
+    /// <p>The properties of the incoming RTMP stream.</p>
+    /// <p><b>Note:</b> <code>ingestConfiguration</code> is deprecated in favor of <code>ingestConfigurations</code> but retained to ensure backward compatibility. If multitrack is not enabled, <code>ingestConfiguration</code> and <code>ingestConfigurations</code> contain the same data, namely information about track0 (the sole track). If multitrack is enabled, <code>ingestConfiguration</code> contains data for only the first track (track0) and <code>ingestConfigurations</code> contains data for all tracks.</p>
     pub fn ingest_configuration(mut self, input: crate::types::IngestConfiguration) -> Self {
         self.ingest_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The properties of the incoming RTMP stream for the stream.</p>
+    /// <p>The properties of the incoming RTMP stream.</p>
+    /// <p><b>Note:</b> <code>ingestConfiguration</code> is deprecated in favor of <code>ingestConfigurations</code> but retained to ensure backward compatibility. If multitrack is not enabled, <code>ingestConfiguration</code> and <code>ingestConfigurations</code> contain the same data, namely information about track0 (the sole track). If multitrack is enabled, <code>ingestConfiguration</code> contains data for only the first track (track0) and <code>ingestConfigurations</code> contains data for all tracks.</p>
     pub fn set_ingest_configuration(mut self, input: ::std::option::Option<crate::types::IngestConfiguration>) -> Self {
         self.ingest_configuration = input;
         self
     }
-    /// <p>The properties of the incoming RTMP stream for the stream.</p>
+    /// <p>The properties of the incoming RTMP stream.</p>
+    /// <p><b>Note:</b> <code>ingestConfiguration</code> is deprecated in favor of <code>ingestConfigurations</code> but retained to ensure backward compatibility. If multitrack is not enabled, <code>ingestConfiguration</code> and <code>ingestConfigurations</code> contain the same data, namely information about track0 (the sole track). If multitrack is enabled, <code>ingestConfiguration</code> contains data for only the first track (track0) and <code>ingestConfigurations</code> contains data for all tracks.</p>
     pub fn get_ingest_configuration(&self) -> &::std::option::Option<crate::types::IngestConfiguration> {
         &self.ingest_configuration
+    }
+    /// <p>The properties of the incoming RTMP stream. If multitrack is enabled, <code>ingestConfigurations</code> contains data for all tracks; otherwise, it contains data only for track0 (the sole track).</p>
+    pub fn ingest_configurations(mut self, input: crate::types::IngestConfigurations) -> Self {
+        self.ingest_configurations = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The properties of the incoming RTMP stream. If multitrack is enabled, <code>ingestConfigurations</code> contains data for all tracks; otherwise, it contains data only for track0 (the sole track).</p>
+    pub fn set_ingest_configurations(mut self, input: ::std::option::Option<crate::types::IngestConfigurations>) -> Self {
+        self.ingest_configurations = input;
+        self
+    }
+    /// <p>The properties of the incoming RTMP stream. If multitrack is enabled, <code>ingestConfigurations</code> contains data for all tracks; otherwise, it contains data only for track0 (the sole track).</p>
+    pub fn get_ingest_configurations(&self) -> &::std::option::Option<crate::types::IngestConfigurations> {
+        &self.ingest_configurations
     }
     /// <p>The properties of recording the live stream.</p>
     pub fn recording_configuration(mut self, input: crate::types::RecordingConfiguration) -> Self {
@@ -183,6 +209,7 @@ impl StreamSessionBuilder {
             end_time: self.end_time,
             channel: self.channel,
             ingest_configuration: self.ingest_configuration,
+            ingest_configurations: self.ingest_configurations,
             recording_configuration: self.recording_configuration,
             truncated_events: self.truncated_events,
         }

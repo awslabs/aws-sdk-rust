@@ -17,6 +17,8 @@ pub enum Error {
     IdentityTypeNotSupportedException(crate::types::error::IdentityTypeNotSupportedException),
     /// <p>An internal failure occurred.</p>
     InternalFailureException(crate::types::error::InternalFailureException),
+    /// <p>An internal service exception.</p>
+    InternalServerException(crate::types::error::InternalServerException),
     /// <p>The <code>NextToken</code> value isn't valid.</p>
     InvalidNextTokenException(crate::types::error::InvalidNextTokenException),
     /// <p>One or more parameters has a value that isn't valid.</p>
@@ -63,6 +65,7 @@ impl ::std::fmt::Display for Error {
             Error::DomainNotWhitelistedException(inner) => inner.fmt(f),
             Error::IdentityTypeNotSupportedException(inner) => inner.fmt(f),
             Error::InternalFailureException(inner) => inner.fmt(f),
+            Error::InternalServerException(inner) => inner.fmt(f),
             Error::InvalidNextTokenException(inner) => inner.fmt(f),
             Error::InvalidParameterValueException(inner) => inner.fmt(f),
             Error::InvalidRequestException(inner) => inner.fmt(f),
@@ -104,6 +107,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::DomainNotWhitelistedException(inner) => inner.meta(),
             Self::IdentityTypeNotSupportedException(inner) => inner.meta(),
             Self::InternalFailureException(inner) => inner.meta(),
+            Self::InternalServerException(inner) => inner.meta(),
             Self::InvalidNextTokenException(inner) => inner.meta(),
             Self::InvalidParameterValueException(inner) => inner.meta(),
             Self::InvalidRequestException(inner) => inner.meta(),
@@ -376,6 +380,85 @@ impl From<crate::operation::create_analysis::CreateAnalysisError> for Error {
                 Error::UnsupportedUserEditionException(inner)
             }
             crate::operation::create_analysis::CreateAnalysisError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_brand::CreateBrandError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_brand::CreateBrandError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_brand::CreateBrandError> for Error {
+    fn from(err: crate::operation::create_brand::CreateBrandError) -> Self {
+        match err {
+            crate::operation::create_brand::CreateBrandError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_brand::CreateBrandError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_brand::CreateBrandError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::create_brand::CreateBrandError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::create_brand::CreateBrandError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::create_brand::CreateBrandError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_brand::CreateBrandError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_custom_permissions::CreateCustomPermissionsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_custom_permissions::CreateCustomPermissionsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_custom_permissions::CreateCustomPermissionsError> for Error {
+    fn from(err: crate::operation::create_custom_permissions::CreateCustomPermissionsError) -> Self {
+        match err {
+            crate::operation::create_custom_permissions::CreateCustomPermissionsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::create_custom_permissions::CreateCustomPermissionsError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_custom_permissions::CreateCustomPermissionsError::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
+            crate::operation::create_custom_permissions::CreateCustomPermissionsError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::create_custom_permissions::CreateCustomPermissionsError::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::operation::create_custom_permissions::CreateCustomPermissionsError::PreconditionNotMetException(inner) => {
+                Error::PreconditionNotMetException(inner)
+            }
+            crate::operation::create_custom_permissions::CreateCustomPermissionsError::ResourceExistsException(inner) => {
+                Error::ResourceExistsException(inner)
+            }
+            crate::operation::create_custom_permissions::CreateCustomPermissionsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::create_custom_permissions::CreateCustomPermissionsError::ResourceUnavailableException(inner) => {
+                Error::ResourceUnavailableException(inner)
+            }
+            crate::operation::create_custom_permissions::CreateCustomPermissionsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::create_custom_permissions::CreateCustomPermissionsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1195,6 +1278,119 @@ impl From<crate::operation::delete_analysis::DeleteAnalysisError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_brand::DeleteBrandError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_brand::DeleteBrandError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_brand::DeleteBrandError> for Error {
+    fn from(err: crate::operation::delete_brand::DeleteBrandError) -> Self {
+        match err {
+            crate::operation::delete_brand::DeleteBrandError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_brand::DeleteBrandError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::delete_brand::DeleteBrandError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::delete_brand::DeleteBrandError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::delete_brand::DeleteBrandError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_brand::DeleteBrandError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_brand::DeleteBrandError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_brand_assignment::DeleteBrandAssignmentError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_brand_assignment::DeleteBrandAssignmentError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_brand_assignment::DeleteBrandAssignmentError> for Error {
+    fn from(err: crate::operation::delete_brand_assignment::DeleteBrandAssignmentError) -> Self {
+        match err {
+            crate::operation::delete_brand_assignment::DeleteBrandAssignmentError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::delete_brand_assignment::DeleteBrandAssignmentError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::delete_brand_assignment::DeleteBrandAssignmentError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::delete_brand_assignment::DeleteBrandAssignmentError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::delete_brand_assignment::DeleteBrandAssignmentError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_brand_assignment::DeleteBrandAssignmentError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_brand_assignment::DeleteBrandAssignmentError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_custom_permissions::DeleteCustomPermissionsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_custom_permissions::DeleteCustomPermissionsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_custom_permissions::DeleteCustomPermissionsError> for Error {
+    fn from(err: crate::operation::delete_custom_permissions::DeleteCustomPermissionsError) -> Self {
+        match err {
+            crate::operation::delete_custom_permissions::DeleteCustomPermissionsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::delete_custom_permissions::DeleteCustomPermissionsError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::delete_custom_permissions::DeleteCustomPermissionsError::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
+            crate::operation::delete_custom_permissions::DeleteCustomPermissionsError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::delete_custom_permissions::DeleteCustomPermissionsError::PreconditionNotMetException(inner) => {
+                Error::PreconditionNotMetException(inner)
+            }
+            crate::operation::delete_custom_permissions::DeleteCustomPermissionsError::ResourceExistsException(inner) => {
+                Error::ResourceExistsException(inner)
+            }
+            crate::operation::delete_custom_permissions::DeleteCustomPermissionsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_custom_permissions::DeleteCustomPermissionsError::ResourceUnavailableException(inner) => {
+                Error::ResourceUnavailableException(inner)
+            }
+            crate::operation::delete_custom_permissions::DeleteCustomPermissionsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::delete_custom_permissions::DeleteCustomPermissionsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_dashboard::DeleteDashboardError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1992,6 +2188,54 @@ impl From<crate::operation::delete_user_by_principal_id::DeleteUserByPrincipalId
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_user_custom_permission::DeleteUserCustomPermissionError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_user_custom_permission::DeleteUserCustomPermissionError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_user_custom_permission::DeleteUserCustomPermissionError> for Error {
+    fn from(err: crate::operation::delete_user_custom_permission::DeleteUserCustomPermissionError) -> Self {
+        match err {
+            crate::operation::delete_user_custom_permission::DeleteUserCustomPermissionError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::delete_user_custom_permission::DeleteUserCustomPermissionError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::delete_user_custom_permission::DeleteUserCustomPermissionError::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
+            crate::operation::delete_user_custom_permission::DeleteUserCustomPermissionError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::delete_user_custom_permission::DeleteUserCustomPermissionError::PreconditionNotMetException(inner) => {
+                Error::PreconditionNotMetException(inner)
+            }
+            crate::operation::delete_user_custom_permission::DeleteUserCustomPermissionError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_user_custom_permission::DeleteUserCustomPermissionError::ResourceUnavailableException(inner) => {
+                Error::ResourceUnavailableException(inner)
+            }
+            crate::operation::delete_user_custom_permission::DeleteUserCustomPermissionError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::delete_user_custom_permission::DeleteUserCustomPermissionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_vpc_connection::DeleteVPCConnectionError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -2347,6 +2591,165 @@ impl From<crate::operation::describe_asset_bundle_import_job::DescribeAssetBundl
                 Error::UnsupportedUserEditionException(inner)
             }
             crate::operation::describe_asset_bundle_import_job::DescribeAssetBundleImportJobError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_brand::DescribeBrandError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_brand::DescribeBrandError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_brand::DescribeBrandError> for Error {
+    fn from(err: crate::operation::describe_brand::DescribeBrandError) -> Self {
+        match err {
+            crate::operation::describe_brand::DescribeBrandError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::describe_brand::DescribeBrandError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::describe_brand::DescribeBrandError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::describe_brand::DescribeBrandError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::describe_brand::DescribeBrandError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::describe_brand::DescribeBrandError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::describe_brand::DescribeBrandError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_brand_assignment::DescribeBrandAssignmentError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_brand_assignment::DescribeBrandAssignmentError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_brand_assignment::DescribeBrandAssignmentError> for Error {
+    fn from(err: crate::operation::describe_brand_assignment::DescribeBrandAssignmentError) -> Self {
+        match err {
+            crate::operation::describe_brand_assignment::DescribeBrandAssignmentError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::describe_brand_assignment::DescribeBrandAssignmentError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::describe_brand_assignment::DescribeBrandAssignmentError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::describe_brand_assignment::DescribeBrandAssignmentError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::describe_brand_assignment::DescribeBrandAssignmentError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::describe_brand_assignment::DescribeBrandAssignmentError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::describe_brand_assignment::DescribeBrandAssignmentError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_brand_published_version::DescribeBrandPublishedVersionError, R>,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_brand_published_version::DescribeBrandPublishedVersionError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_brand_published_version::DescribeBrandPublishedVersionError> for Error {
+    fn from(err: crate::operation::describe_brand_published_version::DescribeBrandPublishedVersionError) -> Self {
+        match err {
+            crate::operation::describe_brand_published_version::DescribeBrandPublishedVersionError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::describe_brand_published_version::DescribeBrandPublishedVersionError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::describe_brand_published_version::DescribeBrandPublishedVersionError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::describe_brand_published_version::DescribeBrandPublishedVersionError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::describe_brand_published_version::DescribeBrandPublishedVersionError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::describe_brand_published_version::DescribeBrandPublishedVersionError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::describe_brand_published_version::DescribeBrandPublishedVersionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_custom_permissions::DescribeCustomPermissionsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_custom_permissions::DescribeCustomPermissionsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_custom_permissions::DescribeCustomPermissionsError> for Error {
+    fn from(err: crate::operation::describe_custom_permissions::DescribeCustomPermissionsError) -> Self {
+        match err {
+            crate::operation::describe_custom_permissions::DescribeCustomPermissionsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::describe_custom_permissions::DescribeCustomPermissionsError::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
+            crate::operation::describe_custom_permissions::DescribeCustomPermissionsError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::describe_custom_permissions::DescribeCustomPermissionsError::PreconditionNotMetException(inner) => {
+                Error::PreconditionNotMetException(inner)
+            }
+            crate::operation::describe_custom_permissions::DescribeCustomPermissionsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::describe_custom_permissions::DescribeCustomPermissionsError::ResourceUnavailableException(inner) => {
+                Error::ResourceUnavailableException(inner)
+            }
+            crate::operation::describe_custom_permissions::DescribeCustomPermissionsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::describe_custom_permissions::DescribeCustomPermissionsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -4044,6 +4447,73 @@ impl From<crate::operation::list_asset_bundle_import_jobs::ListAssetBundleImport
                 Error::UnsupportedUserEditionException(inner)
             }
             crate::operation::list_asset_bundle_import_jobs::ListAssetBundleImportJobsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_brands::ListBrandsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_brands::ListBrandsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_brands::ListBrandsError> for Error {
+    fn from(err: crate::operation::list_brands::ListBrandsError) -> Self {
+        match err {
+            crate::operation::list_brands::ListBrandsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_brands::ListBrandsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_brands::ListBrandsError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::list_brands::ListBrandsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_brands::ListBrandsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_custom_permissions::ListCustomPermissionsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_custom_permissions::ListCustomPermissionsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_custom_permissions::ListCustomPermissionsError> for Error {
+    fn from(err: crate::operation::list_custom_permissions::ListCustomPermissionsError) -> Self {
+        match err {
+            crate::operation::list_custom_permissions::ListCustomPermissionsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_custom_permissions::ListCustomPermissionsError::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
+            crate::operation::list_custom_permissions::ListCustomPermissionsError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::list_custom_permissions::ListCustomPermissionsError::PreconditionNotMetException(inner) => {
+                Error::PreconditionNotMetException(inner)
+            }
+            crate::operation::list_custom_permissions::ListCustomPermissionsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_custom_permissions::ListCustomPermissionsError::ResourceUnavailableException(inner) => {
+                Error::ResourceUnavailableException(inner)
+            }
+            crate::operation::list_custom_permissions::ListCustomPermissionsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_custom_permissions::ListCustomPermissionsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -5778,6 +6248,162 @@ impl From<crate::operation::update_analysis_permissions::UpdateAnalysisPermissio
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_brand::UpdateBrandError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_brand::UpdateBrandError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_brand::UpdateBrandError> for Error {
+    fn from(err: crate::operation::update_brand::UpdateBrandError) -> Self {
+        match err {
+            crate::operation::update_brand::UpdateBrandError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_brand::UpdateBrandError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::update_brand::UpdateBrandError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::update_brand::UpdateBrandError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::update_brand::UpdateBrandError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_brand::UpdateBrandError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_brand::UpdateBrandError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_brand_assignment::UpdateBrandAssignmentError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_brand_assignment::UpdateBrandAssignmentError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_brand_assignment::UpdateBrandAssignmentError> for Error {
+    fn from(err: crate::operation::update_brand_assignment::UpdateBrandAssignmentError) -> Self {
+        match err {
+            crate::operation::update_brand_assignment::UpdateBrandAssignmentError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::update_brand_assignment::UpdateBrandAssignmentError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::update_brand_assignment::UpdateBrandAssignmentError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::update_brand_assignment::UpdateBrandAssignmentError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::update_brand_assignment::UpdateBrandAssignmentError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_brand_assignment::UpdateBrandAssignmentError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_brand_assignment::UpdateBrandAssignmentError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_brand_published_version::UpdateBrandPublishedVersionError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_brand_published_version::UpdateBrandPublishedVersionError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_brand_published_version::UpdateBrandPublishedVersionError> for Error {
+    fn from(err: crate::operation::update_brand_published_version::UpdateBrandPublishedVersionError) -> Self {
+        match err {
+            crate::operation::update_brand_published_version::UpdateBrandPublishedVersionError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::update_brand_published_version::UpdateBrandPublishedVersionError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::update_brand_published_version::UpdateBrandPublishedVersionError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::update_brand_published_version::UpdateBrandPublishedVersionError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::update_brand_published_version::UpdateBrandPublishedVersionError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_brand_published_version::UpdateBrandPublishedVersionError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::update_brand_published_version::UpdateBrandPublishedVersionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_custom_permissions::UpdateCustomPermissionsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_custom_permissions::UpdateCustomPermissionsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_custom_permissions::UpdateCustomPermissionsError> for Error {
+    fn from(err: crate::operation::update_custom_permissions::UpdateCustomPermissionsError) -> Self {
+        match err {
+            crate::operation::update_custom_permissions::UpdateCustomPermissionsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::update_custom_permissions::UpdateCustomPermissionsError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::update_custom_permissions::UpdateCustomPermissionsError::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
+            crate::operation::update_custom_permissions::UpdateCustomPermissionsError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::update_custom_permissions::UpdateCustomPermissionsError::PreconditionNotMetException(inner) => {
+                Error::PreconditionNotMetException(inner)
+            }
+            crate::operation::update_custom_permissions::UpdateCustomPermissionsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_custom_permissions::UpdateCustomPermissionsError::ResourceUnavailableException(inner) => {
+                Error::ResourceUnavailableException(inner)
+            }
+            crate::operation::update_custom_permissions::UpdateCustomPermissionsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::update_custom_permissions::UpdateCustomPermissionsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_dashboard::UpdateDashboardError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -6950,6 +7576,54 @@ impl From<crate::operation::update_user::UpdateUserError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_user_custom_permission::UpdateUserCustomPermissionError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_user_custom_permission::UpdateUserCustomPermissionError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_user_custom_permission::UpdateUserCustomPermissionError> for Error {
+    fn from(err: crate::operation::update_user_custom_permission::UpdateUserCustomPermissionError) -> Self {
+        match err {
+            crate::operation::update_user_custom_permission::UpdateUserCustomPermissionError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::update_user_custom_permission::UpdateUserCustomPermissionError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::update_user_custom_permission::UpdateUserCustomPermissionError::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
+            crate::operation::update_user_custom_permission::UpdateUserCustomPermissionError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::update_user_custom_permission::UpdateUserCustomPermissionError::PreconditionNotMetException(inner) => {
+                Error::PreconditionNotMetException(inner)
+            }
+            crate::operation::update_user_custom_permission::UpdateUserCustomPermissionError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_user_custom_permission::UpdateUserCustomPermissionError::ResourceUnavailableException(inner) => {
+                Error::ResourceUnavailableException(inner)
+            }
+            crate::operation::update_user_custom_permission::UpdateUserCustomPermissionError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::update_user_custom_permission::UpdateUserCustomPermissionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_vpc_connection::UpdateVPCConnectionError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -6997,6 +7671,7 @@ impl ::std::error::Error for Error {
             Error::DomainNotWhitelistedException(inner) => inner.source(),
             Error::IdentityTypeNotSupportedException(inner) => inner.source(),
             Error::InternalFailureException(inner) => inner.source(),
+            Error::InternalServerException(inner) => inner.source(),
             Error::InvalidNextTokenException(inner) => inner.source(),
             Error::InvalidParameterValueException(inner) => inner.source(),
             Error::InvalidRequestException(inner) => inner.source(),
@@ -7024,6 +7699,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::DomainNotWhitelistedException(e) => e.request_id(),
             Self::IdentityTypeNotSupportedException(e) => e.request_id(),
             Self::InternalFailureException(e) => e.request_id(),
+            Self::InternalServerException(e) => e.request_id(),
             Self::InvalidNextTokenException(e) => e.request_id(),
             Self::InvalidParameterValueException(e) => e.request_id(),
             Self::InvalidRequestException(e) => e.request_id(),

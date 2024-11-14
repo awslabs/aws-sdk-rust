@@ -1281,6 +1281,38 @@ pub use crate::types::_dashboard_source_entity::DashboardSourceEntityBuilder;
 
 pub use crate::types::_dashboard_source_template::DashboardSourceTemplateBuilder;
 
+pub use crate::types::_capabilities::CapabilitiesBuilder;
+
+pub use crate::types::_brand_definition::BrandDefinitionBuilder;
+
+pub use crate::types::_logo_configuration::LogoConfigurationBuilder;
+
+pub use crate::types::_logo_set_configuration::LogoSetConfigurationBuilder;
+
+pub use crate::types::_image_set_configuration::ImageSetConfigurationBuilder;
+
+pub use crate::types::_image_configuration::ImageConfigurationBuilder;
+
+pub use crate::types::_application_theme::ApplicationThemeBuilder;
+
+pub use crate::types::_brand_element_style::BrandElementStyleBuilder;
+
+pub use crate::types::_navbar_style::NavbarStyleBuilder;
+
+pub use crate::types::_palette::PaletteBuilder;
+
+pub use crate::types::_brand_color_palette::BrandColorPaletteBuilder;
+
+pub use crate::types::_brand_detail::BrandDetailBuilder;
+
+pub use crate::types::_logo::LogoBuilder;
+
+pub use crate::types::_logo_set::LogoSetBuilder;
+
+pub use crate::types::_image_set::ImageSetBuilder;
+
+pub use crate::types::_image::ImageBuilder;
+
 pub use crate::types::_analysis_definition::AnalysisDefinitionBuilder;
 
 pub use crate::types::_analysis_source_entity::AnalysisSourceEntityBuilder;
@@ -1512,6 +1544,10 @@ pub use crate::types::_data_source::DataSourceBuilder;
 pub use crate::types::_data_source_error_info::DataSourceErrorInfoBuilder;
 
 pub use crate::types::_dashboard_version_summary::DashboardVersionSummaryBuilder;
+
+pub use crate::types::_custom_permissions::CustomPermissionsBuilder;
+
+pub use crate::types::_brand_summary::BrandSummaryBuilder;
 
 pub use crate::types::_asset_bundle_import_job_summary::AssetBundleImportJobSummaryBuilder;
 

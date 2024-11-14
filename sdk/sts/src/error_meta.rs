@@ -10,7 +10,7 @@ pub enum Error {
     /// <p>The identity provider (IdP) reported that authentication failed. This might be because the claim is invalid.</p>
     /// <p>If this error is returned for the <code>AssumeRoleWithWebIdentity</code> operation, it can also mean that the claim has expired or has been explicitly revoked.</p>
     IdpRejectedClaimException(crate::types::error::IdpRejectedClaimException),
-    /// <p>The error returned if the message passed to <code>DecodeAuthorizationMessage</code> was invalid. This can happen if the token contains invalid characters, such as linebreaks.</p>
+    /// <p>The error returned if the message passed to <code>DecodeAuthorizationMessage</code> was invalid. This can happen if the token contains invalid characters, such as line breaks, or if the message has expired.</p>
     InvalidAuthorizationMessageException(crate::types::error::InvalidAuthorizationMessageException),
     /// <p>The web identity token that was passed could not be validated by Amazon Web Services. Get a new identity token from the identity provider and then retry the request.</p>
     InvalidIdentityTokenException(crate::types::error::InvalidIdentityTokenException),
@@ -19,7 +19,7 @@ pub enum Error {
     /// <p>The request was rejected because the total packed size of the session policies and session tags combined was too large. An Amazon Web Services conversion compresses the session policy document, session policy ARNs, and session tags into a packed binary format that has a separate limit. The error message indicates by percentage how close the policies and tags are to the upper size limit. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Passing Session Tags in STS</a> in the <i>IAM User Guide</i>.</p>
     /// <p>You could receive this error even though you meet other defined session policy and session tag limits. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-limits-entity-length">IAM and STS Entity Character Limits</a> in the <i>IAM User Guide</i>.</p>
     PackedPolicyTooLargeException(crate::types::error::PackedPolicyTooLargeException),
-    /// <p>STS is not activated in the requested region for the account that is being asked to generate credentials. The account administrator must use the IAM console to activate STS in that region. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating and Deactivating Amazon Web Services STS in an Amazon Web Services Region</a> in the <i>IAM User Guide</i>.</p>
+    /// <p>STS is not activated in the requested region for the account that is being asked to generate credentials. The account administrator must use the IAM console to activate STS in that region. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating and Deactivating STS in an Amazon Web Services Region</a> in the <i>IAM User Guide</i>.</p>
     RegionDisabledException(crate::types::error::RegionDisabledException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \
@@ -176,6 +176,29 @@ impl From<crate::operation::assume_role_with_web_identity::AssumeRoleWithWebIden
                 Error::RegionDisabledException(inner)
             }
             crate::operation::assume_role_with_web_identity::AssumeRoleWithWebIdentityError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::assume_root::AssumeRootError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::assume_root::AssumeRootError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::assume_root::AssumeRootError> for Error {
+    fn from(err: crate::operation::assume_root::AssumeRootError) -> Self {
+        match err {
+            crate::operation::assume_root::AssumeRootError::ExpiredTokenException(inner) => Error::ExpiredTokenException(inner),
+            crate::operation::assume_root::AssumeRootError::RegionDisabledException(inner) => Error::RegionDisabledException(inner),
+            crate::operation::assume_root::AssumeRootError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

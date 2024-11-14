@@ -259,4 +259,18 @@ impl CreateFuotaTaskFluentBuilder {
     pub fn get_fragment_interval_ms(&self) -> &::std::option::Option<i32> {
         self.inner.get_fragment_interval_ms()
     }
+    /// <p>The Descriptor specifies some metadata about the File being transferred using FUOTA e.g. the software version. It is sent transparently to the device. It is a binary field encoded in base64</p>
+    pub fn descriptor(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.descriptor(input.into());
+        self
+    }
+    /// <p>The Descriptor specifies some metadata about the File being transferred using FUOTA e.g. the software version. It is sent transparently to the device. It is a binary field encoded in base64</p>
+    pub fn set_descriptor(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_descriptor(input);
+        self
+    }
+    /// <p>The Descriptor specifies some metadata about the File being transferred using FUOTA e.g. the software version. It is sent transparently to the device. It is a binary field encoded in base64</p>
+    pub fn get_descriptor(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_descriptor()
+    }
 }

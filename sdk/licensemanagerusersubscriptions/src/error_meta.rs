@@ -96,6 +96,104 @@ impl From<crate::operation::associate_user::AssociateUserError> for Error {
         }
     }
 }
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_license_server_endpoint::CreateLicenseServerEndpointError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_license_server_endpoint::CreateLicenseServerEndpointError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_license_server_endpoint::CreateLicenseServerEndpointError> for Error {
+    fn from(err: crate::operation::create_license_server_endpoint::CreateLicenseServerEndpointError) -> Self {
+        match err {
+            crate::operation::create_license_server_endpoint::CreateLicenseServerEndpointError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::create_license_server_endpoint::CreateLicenseServerEndpointError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::create_license_server_endpoint::CreateLicenseServerEndpointError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::create_license_server_endpoint::CreateLicenseServerEndpointError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::create_license_server_endpoint::CreateLicenseServerEndpointError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::create_license_server_endpoint::CreateLicenseServerEndpointError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::create_license_server_endpoint::CreateLicenseServerEndpointError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::create_license_server_endpoint::CreateLicenseServerEndpointError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_license_server_endpoint::DeleteLicenseServerEndpointError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_license_server_endpoint::DeleteLicenseServerEndpointError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_license_server_endpoint::DeleteLicenseServerEndpointError> for Error {
+    fn from(err: crate::operation::delete_license_server_endpoint::DeleteLicenseServerEndpointError) -> Self {
+        match err {
+            crate::operation::delete_license_server_endpoint::DeleteLicenseServerEndpointError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::delete_license_server_endpoint::DeleteLicenseServerEndpointError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::delete_license_server_endpoint::DeleteLicenseServerEndpointError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::delete_license_server_endpoint::DeleteLicenseServerEndpointError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_license_server_endpoint::DeleteLicenseServerEndpointError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::delete_license_server_endpoint::DeleteLicenseServerEndpointError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::delete_license_server_endpoint::DeleteLicenseServerEndpointError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::delete_license_server_endpoint::DeleteLicenseServerEndpointError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::deregister_identity_provider::DeregisterIdentityProviderError, R>>
     for Error
 where
@@ -237,6 +335,48 @@ impl From<crate::operation::list_instances::ListInstancesError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_license_server_endpoints::ListLicenseServerEndpointsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_license_server_endpoints::ListLicenseServerEndpointsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_license_server_endpoints::ListLicenseServerEndpointsError> for Error {
+    fn from(err: crate::operation::list_license_server_endpoints::ListLicenseServerEndpointsError) -> Self {
+        match err {
+            crate::operation::list_license_server_endpoints::ListLicenseServerEndpointsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_license_server_endpoints::ListLicenseServerEndpointsError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::list_license_server_endpoints::ListLicenseServerEndpointsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_license_server_endpoints::ListLicenseServerEndpointsError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::list_license_server_endpoints::ListLicenseServerEndpointsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_license_server_endpoints::ListLicenseServerEndpointsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_license_server_endpoints::ListLicenseServerEndpointsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_product_subscriptions::ListProductSubscriptionsError, R>>
     for Error
 where
@@ -277,6 +417,34 @@ impl From<crate::operation::list_product_subscriptions::ListProductSubscriptions
                 Error::ValidationException(inner)
             }
             crate::operation::list_product_subscriptions::ListProductSubscriptionsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_tags_for_resource::ListTagsForResourceError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_tags_for_resource::ListTagsForResourceError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_tags_for_resource::ListTagsForResourceError> for Error {
+    fn from(err: crate::operation::list_tags_for_resource::ListTagsForResourceError) -> Self {
+        match err {
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -440,6 +608,53 @@ impl From<crate::operation::stop_product_subscription::StopProductSubscriptionEr
                 Error::ValidationException(inner)
             }
             crate::operation::stop_product_subscription::StopProductSubscriptionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::tag_resource::TagResourceError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::tag_resource::TagResourceError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::tag_resource::TagResourceError> for Error {
+    fn from(err: crate::operation::tag_resource::TagResourceError) -> Self {
+        match err {
+            crate::operation::tag_resource::TagResourceError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::tag_resource::TagResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::tag_resource::TagResourceError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::tag_resource::TagResourceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::untag_resource::UntagResourceError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::untag_resource::UntagResourceError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::untag_resource::UntagResourceError> for Error {
+    fn from(err: crate::operation::untag_resource::UntagResourceError) -> Self {
+        match err {
+            crate::operation::untag_resource::UntagResourceError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::untag_resource::UntagResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::untag_resource::UntagResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

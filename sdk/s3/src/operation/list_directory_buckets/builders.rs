@@ -38,7 +38,9 @@ impl crate::operation::list_directory_buckets::builders::ListDirectoryBucketsInp
 /// <dd>
 /// <p><b>Directory buckets </b> - The HTTP Host header syntax is <code>s3express-control.<i>region</i>.amazonaws.com</code>.</p>
 /// </dd>
-/// </dl>
+/// </dl><note>
+/// <p>The <code>BucketRegion</code> response element is not part of the <code>ListDirectoryBuckets</code> Response Syntax.</p>
+/// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListDirectoryBucketsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

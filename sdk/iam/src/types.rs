@@ -69,6 +69,8 @@ pub use crate::types::_policy_usage_type::PolicyUsageType;
 
 pub use crate::types::_policy_scope_type::PolicyScopeType;
 
+pub use crate::types::_feature_type::FeatureType;
+
 pub use crate::types::_open_id_connect_provider_list_entry::OpenIdConnectProviderListEntry;
 
 pub use crate::types::_mfa_device::MfaDevice;
@@ -176,6 +178,8 @@ mod _entity_type;
 mod _error_details;
 
 mod _evaluation_result;
+
+mod _feature_type;
 
 mod _global_endpoint_token_version;
 

@@ -77,6 +77,8 @@ pub use crate::types::_resize_cluster_message::ResizeClusterMessageBuilder;
 
 pub use crate::types::_redshift_idc_application::RedshiftIdcApplicationBuilder;
 
+pub use crate::types::_read_write_access::ReadWriteAccessBuilder;
+
 pub use crate::types::_lake_formation_query::LakeFormationQueryBuilder;
 
 pub use crate::types::_authorized_token_issuer::AuthorizedTokenIssuerBuilder;

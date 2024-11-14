@@ -3,10 +3,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateIdentityProviderSettingsInput {
-    /// <p>Details about an identity provider.</p>
+    /// <p>Refers to an identity provider.</p>
     pub identity_provider: ::std::option::Option<crate::types::IdentityProvider>,
     /// <p>The name of the user-based subscription product.</p>
+    /// <p>Valid values: <code>VISUAL_STUDIO_ENTERPRISE</code> | <code>VISUAL_STUDIO_PROFESSIONAL</code> | <code>OFFICE_PROFESSIONAL_PLUS</code></p>
     pub product: ::std::option::Option<::std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the identity provider to update.</p>
+    pub identity_provider_arn: ::std::option::Option<::std::string::String>,
     /// <p>Updates the registered identity provider’s product related configuration settings. You can update any combination of settings in a single operation such as the:</p>
     /// <ul>
     /// <li>
@@ -19,13 +22,18 @@ pub struct UpdateIdentityProviderSettingsInput {
     pub update_settings: ::std::option::Option<crate::types::UpdateSettings>,
 }
 impl UpdateIdentityProviderSettingsInput {
-    /// <p>Details about an identity provider.</p>
+    /// <p>Refers to an identity provider.</p>
     pub fn identity_provider(&self) -> ::std::option::Option<&crate::types::IdentityProvider> {
         self.identity_provider.as_ref()
     }
     /// <p>The name of the user-based subscription product.</p>
+    /// <p>Valid values: <code>VISUAL_STUDIO_ENTERPRISE</code> | <code>VISUAL_STUDIO_PROFESSIONAL</code> | <code>OFFICE_PROFESSIONAL_PLUS</code></p>
     pub fn product(&self) -> ::std::option::Option<&str> {
         self.product.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the identity provider to update.</p>
+    pub fn identity_provider_arn(&self) -> ::std::option::Option<&str> {
+        self.identity_provider_arn.as_deref()
     }
     /// <p>Updates the registered identity provider’s product related configuration settings. You can update any combination of settings in a single operation such as the:</p>
     /// <ul>
@@ -53,38 +61,54 @@ impl UpdateIdentityProviderSettingsInput {
 pub struct UpdateIdentityProviderSettingsInputBuilder {
     pub(crate) identity_provider: ::std::option::Option<crate::types::IdentityProvider>,
     pub(crate) product: ::std::option::Option<::std::string::String>,
+    pub(crate) identity_provider_arn: ::std::option::Option<::std::string::String>,
     pub(crate) update_settings: ::std::option::Option<crate::types::UpdateSettings>,
 }
 impl UpdateIdentityProviderSettingsInputBuilder {
-    /// <p>Details about an identity provider.</p>
-    /// This field is required.
+    /// <p>Refers to an identity provider.</p>
     pub fn identity_provider(mut self, input: crate::types::IdentityProvider) -> Self {
         self.identity_provider = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Details about an identity provider.</p>
+    /// <p>Refers to an identity provider.</p>
     pub fn set_identity_provider(mut self, input: ::std::option::Option<crate::types::IdentityProvider>) -> Self {
         self.identity_provider = input;
         self
     }
-    /// <p>Details about an identity provider.</p>
+    /// <p>Refers to an identity provider.</p>
     pub fn get_identity_provider(&self) -> &::std::option::Option<crate::types::IdentityProvider> {
         &self.identity_provider
     }
     /// <p>The name of the user-based subscription product.</p>
-    /// This field is required.
+    /// <p>Valid values: <code>VISUAL_STUDIO_ENTERPRISE</code> | <code>VISUAL_STUDIO_PROFESSIONAL</code> | <code>OFFICE_PROFESSIONAL_PLUS</code></p>
     pub fn product(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.product = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the user-based subscription product.</p>
+    /// <p>Valid values: <code>VISUAL_STUDIO_ENTERPRISE</code> | <code>VISUAL_STUDIO_PROFESSIONAL</code> | <code>OFFICE_PROFESSIONAL_PLUS</code></p>
     pub fn set_product(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.product = input;
         self
     }
     /// <p>The name of the user-based subscription product.</p>
+    /// <p>Valid values: <code>VISUAL_STUDIO_ENTERPRISE</code> | <code>VISUAL_STUDIO_PROFESSIONAL</code> | <code>OFFICE_PROFESSIONAL_PLUS</code></p>
     pub fn get_product(&self) -> &::std::option::Option<::std::string::String> {
         &self.product
+    }
+    /// <p>The Amazon Resource Name (ARN) of the identity provider to update.</p>
+    pub fn identity_provider_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.identity_provider_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the identity provider to update.</p>
+    pub fn set_identity_provider_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.identity_provider_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the identity provider to update.</p>
+    pub fn get_identity_provider_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identity_provider_arn
     }
     /// <p>Updates the registered identity provider’s product related configuration settings. You can update any combination of settings in a single operation such as the:</p>
     /// <ul>
@@ -135,6 +159,7 @@ impl UpdateIdentityProviderSettingsInputBuilder {
         ::std::result::Result::Ok(crate::operation::update_identity_provider_settings::UpdateIdentityProviderSettingsInput {
             identity_provider: self.identity_provider,
             product: self.product,
+            identity_provider_arn: self.identity_provider_arn,
             update_settings: self.update_settings,
         })
     }

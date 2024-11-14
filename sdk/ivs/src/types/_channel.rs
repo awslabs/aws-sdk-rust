@@ -30,6 +30,10 @@ pub struct Channel {
     pub srt: ::std::option::Option<crate::types::Srt>,
     /// <p>Playback-restriction-policy ARN. A valid ARN value here both specifies the ARN and enables playback restriction. Default: "" (empty string, no playback restriction policy is applied).</p>
     pub playback_restriction_policy_arn: ::std::option::Option<::std::string::String>,
+    /// <p>Object specifying multitrack input configuration. Default: no multitrack input configuration is specified.</p>
+    pub multitrack_input_configuration: ::std::option::Option<crate::types::MultitrackInputConfiguration>,
+    /// <p>Indicates which content-packaging format is used (MPEG-TS or fMP4). If <code>multitrackInputConfiguration</code> is specified and <code>enabled</code> is <code>true</code>, then <code>containerFormat</code> is required and must be set to <code>FRAGMENTED_MP4</code>. Otherwise, <code>containerFormat</code> may be set to <code>TS</code> or <code>FRAGMENTED_MP4</code>. Default: <code>TS</code>.</p>
+    pub container_format: ::std::option::Option<crate::types::ContainerFormat>,
 }
 impl Channel {
     /// <p>Channel ARN.</p>
@@ -84,6 +88,14 @@ impl Channel {
     pub fn playback_restriction_policy_arn(&self) -> ::std::option::Option<&str> {
         self.playback_restriction_policy_arn.as_deref()
     }
+    /// <p>Object specifying multitrack input configuration. Default: no multitrack input configuration is specified.</p>
+    pub fn multitrack_input_configuration(&self) -> ::std::option::Option<&crate::types::MultitrackInputConfiguration> {
+        self.multitrack_input_configuration.as_ref()
+    }
+    /// <p>Indicates which content-packaging format is used (MPEG-TS or fMP4). If <code>multitrackInputConfiguration</code> is specified and <code>enabled</code> is <code>true</code>, then <code>containerFormat</code> is required and must be set to <code>FRAGMENTED_MP4</code>. Otherwise, <code>containerFormat</code> may be set to <code>TS</code> or <code>FRAGMENTED_MP4</code>. Default: <code>TS</code>.</p>
+    pub fn container_format(&self) -> ::std::option::Option<&crate::types::ContainerFormat> {
+        self.container_format.as_ref()
+    }
 }
 impl Channel {
     /// Creates a new builder-style object to manufacture [`Channel`](crate::types::Channel).
@@ -109,6 +121,8 @@ pub struct ChannelBuilder {
     pub(crate) preset: ::std::option::Option<crate::types::TranscodePreset>,
     pub(crate) srt: ::std::option::Option<crate::types::Srt>,
     pub(crate) playback_restriction_policy_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) multitrack_input_configuration: ::std::option::Option<crate::types::MultitrackInputConfiguration>,
+    pub(crate) container_format: ::std::option::Option<crate::types::ContainerFormat>,
 }
 impl ChannelBuilder {
     /// <p>Channel ARN.</p>
@@ -299,6 +313,34 @@ impl ChannelBuilder {
     pub fn get_playback_restriction_policy_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.playback_restriction_policy_arn
     }
+    /// <p>Object specifying multitrack input configuration. Default: no multitrack input configuration is specified.</p>
+    pub fn multitrack_input_configuration(mut self, input: crate::types::MultitrackInputConfiguration) -> Self {
+        self.multitrack_input_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Object specifying multitrack input configuration. Default: no multitrack input configuration is specified.</p>
+    pub fn set_multitrack_input_configuration(mut self, input: ::std::option::Option<crate::types::MultitrackInputConfiguration>) -> Self {
+        self.multitrack_input_configuration = input;
+        self
+    }
+    /// <p>Object specifying multitrack input configuration. Default: no multitrack input configuration is specified.</p>
+    pub fn get_multitrack_input_configuration(&self) -> &::std::option::Option<crate::types::MultitrackInputConfiguration> {
+        &self.multitrack_input_configuration
+    }
+    /// <p>Indicates which content-packaging format is used (MPEG-TS or fMP4). If <code>multitrackInputConfiguration</code> is specified and <code>enabled</code> is <code>true</code>, then <code>containerFormat</code> is required and must be set to <code>FRAGMENTED_MP4</code>. Otherwise, <code>containerFormat</code> may be set to <code>TS</code> or <code>FRAGMENTED_MP4</code>. Default: <code>TS</code>.</p>
+    pub fn container_format(mut self, input: crate::types::ContainerFormat) -> Self {
+        self.container_format = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates which content-packaging format is used (MPEG-TS or fMP4). If <code>multitrackInputConfiguration</code> is specified and <code>enabled</code> is <code>true</code>, then <code>containerFormat</code> is required and must be set to <code>FRAGMENTED_MP4</code>. Otherwise, <code>containerFormat</code> may be set to <code>TS</code> or <code>FRAGMENTED_MP4</code>. Default: <code>TS</code>.</p>
+    pub fn set_container_format(mut self, input: ::std::option::Option<crate::types::ContainerFormat>) -> Self {
+        self.container_format = input;
+        self
+    }
+    /// <p>Indicates which content-packaging format is used (MPEG-TS or fMP4). If <code>multitrackInputConfiguration</code> is specified and <code>enabled</code> is <code>true</code>, then <code>containerFormat</code> is required and must be set to <code>FRAGMENTED_MP4</code>. Otherwise, <code>containerFormat</code> may be set to <code>TS</code> or <code>FRAGMENTED_MP4</code>. Default: <code>TS</code>.</p>
+    pub fn get_container_format(&self) -> &::std::option::Option<crate::types::ContainerFormat> {
+        &self.container_format
+    }
     /// Consumes the builder and constructs a [`Channel`](crate::types::Channel).
     pub fn build(self) -> crate::types::Channel {
         crate::types::Channel {
@@ -315,6 +357,8 @@ impl ChannelBuilder {
             preset: self.preset,
             srt: self.srt,
             playback_restriction_policy_arn: self.playback_restriction_policy_arn,
+            multitrack_input_configuration: self.multitrack_input_configuration,
+            container_format: self.container_format,
         }
     }
 }

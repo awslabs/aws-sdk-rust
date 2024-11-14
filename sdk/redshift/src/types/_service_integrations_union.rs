@@ -6,6 +6,8 @@
 pub enum ServiceIntegrationsUnion {
     /// <p>A list of scopes set up for Lake Formation integration.</p>
     LakeFormation(::std::vec::Vec<crate::types::LakeFormationScopeUnion>),
+    /// <p>A list of scopes set up for S3 Access Grants integration.</p>
+    S3AccessGrants(::std::vec::Vec<crate::types::S3AccessGrantsScopeUnion>),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
     ///
@@ -17,7 +19,6 @@ pub enum ServiceIntegrationsUnion {
     Unknown,
 }
 impl ServiceIntegrationsUnion {
-    #[allow(irrefutable_let_patterns)]
     /// Tries to convert the enum instance into [`LakeFormation`](crate::types::ServiceIntegrationsUnion::LakeFormation), extracting the inner [`Vec`](::std::vec::Vec).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_lake_formation(&self) -> ::std::result::Result<&::std::vec::Vec<crate::types::LakeFormationScopeUnion>, &Self> {
@@ -30,6 +31,19 @@ impl ServiceIntegrationsUnion {
     /// Returns true if this is a [`LakeFormation`](crate::types::ServiceIntegrationsUnion::LakeFormation).
     pub fn is_lake_formation(&self) -> bool {
         self.as_lake_formation().is_ok()
+    }
+    /// Tries to convert the enum instance into [`S3AccessGrants`](crate::types::ServiceIntegrationsUnion::S3AccessGrants), extracting the inner [`Vec`](::std::vec::Vec).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_s3_access_grants(&self) -> ::std::result::Result<&::std::vec::Vec<crate::types::S3AccessGrantsScopeUnion>, &Self> {
+        if let ServiceIntegrationsUnion::S3AccessGrants(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`S3AccessGrants`](crate::types::ServiceIntegrationsUnion::S3AccessGrants).
+    pub fn is_s3_access_grants(&self) -> bool {
+        self.as_s3_access_grants().is_ok()
     }
     /// Returns true if the enum instance is the `Unknown` variant.
     pub fn is_unknown(&self) -> bool {

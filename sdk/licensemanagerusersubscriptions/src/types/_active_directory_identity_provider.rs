@@ -6,11 +6,23 @@
 pub struct ActiveDirectoryIdentityProvider {
     /// <p>The directory ID for an Active Directory identity provider.</p>
     pub directory_id: ::std::option::Option<::std::string::String>,
+    /// <p>The <code>ActiveDirectorySettings</code> resource contains details about the Active Directory, including network access details such as domain name and IP addresses, and the credential provider for user administration.</p>
+    pub active_directory_settings: ::std::option::Option<crate::types::ActiveDirectorySettings>,
+    /// <p>The type of Active Directory – either a self-managed Active Directory or an Amazon Web Services Managed Active Directory.</p>
+    pub active_directory_type: ::std::option::Option<crate::types::ActiveDirectoryType>,
 }
 impl ActiveDirectoryIdentityProvider {
     /// <p>The directory ID for an Active Directory identity provider.</p>
     pub fn directory_id(&self) -> ::std::option::Option<&str> {
         self.directory_id.as_deref()
+    }
+    /// <p>The <code>ActiveDirectorySettings</code> resource contains details about the Active Directory, including network access details such as domain name and IP addresses, and the credential provider for user administration.</p>
+    pub fn active_directory_settings(&self) -> ::std::option::Option<&crate::types::ActiveDirectorySettings> {
+        self.active_directory_settings.as_ref()
+    }
+    /// <p>The type of Active Directory – either a self-managed Active Directory or an Amazon Web Services Managed Active Directory.</p>
+    pub fn active_directory_type(&self) -> ::std::option::Option<&crate::types::ActiveDirectoryType> {
+        self.active_directory_type.as_ref()
     }
 }
 impl ActiveDirectoryIdentityProvider {
@@ -25,6 +37,8 @@ impl ActiveDirectoryIdentityProvider {
 #[non_exhaustive]
 pub struct ActiveDirectoryIdentityProviderBuilder {
     pub(crate) directory_id: ::std::option::Option<::std::string::String>,
+    pub(crate) active_directory_settings: ::std::option::Option<crate::types::ActiveDirectorySettings>,
+    pub(crate) active_directory_type: ::std::option::Option<crate::types::ActiveDirectoryType>,
 }
 impl ActiveDirectoryIdentityProviderBuilder {
     /// <p>The directory ID for an Active Directory identity provider.</p>
@@ -41,10 +55,40 @@ impl ActiveDirectoryIdentityProviderBuilder {
     pub fn get_directory_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.directory_id
     }
+    /// <p>The <code>ActiveDirectorySettings</code> resource contains details about the Active Directory, including network access details such as domain name and IP addresses, and the credential provider for user administration.</p>
+    pub fn active_directory_settings(mut self, input: crate::types::ActiveDirectorySettings) -> Self {
+        self.active_directory_settings = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The <code>ActiveDirectorySettings</code> resource contains details about the Active Directory, including network access details such as domain name and IP addresses, and the credential provider for user administration.</p>
+    pub fn set_active_directory_settings(mut self, input: ::std::option::Option<crate::types::ActiveDirectorySettings>) -> Self {
+        self.active_directory_settings = input;
+        self
+    }
+    /// <p>The <code>ActiveDirectorySettings</code> resource contains details about the Active Directory, including network access details such as domain name and IP addresses, and the credential provider for user administration.</p>
+    pub fn get_active_directory_settings(&self) -> &::std::option::Option<crate::types::ActiveDirectorySettings> {
+        &self.active_directory_settings
+    }
+    /// <p>The type of Active Directory – either a self-managed Active Directory or an Amazon Web Services Managed Active Directory.</p>
+    pub fn active_directory_type(mut self, input: crate::types::ActiveDirectoryType) -> Self {
+        self.active_directory_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The type of Active Directory – either a self-managed Active Directory or an Amazon Web Services Managed Active Directory.</p>
+    pub fn set_active_directory_type(mut self, input: ::std::option::Option<crate::types::ActiveDirectoryType>) -> Self {
+        self.active_directory_type = input;
+        self
+    }
+    /// <p>The type of Active Directory – either a self-managed Active Directory or an Amazon Web Services Managed Active Directory.</p>
+    pub fn get_active_directory_type(&self) -> &::std::option::Option<crate::types::ActiveDirectoryType> {
+        &self.active_directory_type
+    }
     /// Consumes the builder and constructs a [`ActiveDirectoryIdentityProvider`](crate::types::ActiveDirectoryIdentityProvider).
     pub fn build(self) -> crate::types::ActiveDirectoryIdentityProvider {
         crate::types::ActiveDirectoryIdentityProvider {
             directory_id: self.directory_id,
+            active_directory_settings: self.active_directory_settings,
+            active_directory_type: self.active_directory_type,
         }
     }
 }

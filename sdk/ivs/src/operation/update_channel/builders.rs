@@ -234,4 +234,32 @@ impl UpdateChannelFluentBuilder {
     pub fn get_playback_restriction_policy_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_playback_restriction_policy_arn()
     }
+    /// <p>Object specifying multitrack input configuration. Default: no multitrack input configuration is specified.</p>
+    pub fn multitrack_input_configuration(mut self, input: crate::types::MultitrackInputConfiguration) -> Self {
+        self.inner = self.inner.multitrack_input_configuration(input);
+        self
+    }
+    /// <p>Object specifying multitrack input configuration. Default: no multitrack input configuration is specified.</p>
+    pub fn set_multitrack_input_configuration(mut self, input: ::std::option::Option<crate::types::MultitrackInputConfiguration>) -> Self {
+        self.inner = self.inner.set_multitrack_input_configuration(input);
+        self
+    }
+    /// <p>Object specifying multitrack input configuration. Default: no multitrack input configuration is specified.</p>
+    pub fn get_multitrack_input_configuration(&self) -> &::std::option::Option<crate::types::MultitrackInputConfiguration> {
+        self.inner.get_multitrack_input_configuration()
+    }
+    /// <p>Indicates which content-packaging format is used (MPEG-TS or fMP4). If <code>multitrackInputConfiguration</code> is specified and <code>enabled</code> is <code>true</code>, then <code>containerFormat</code> is required and must be set to <code>FRAGMENTED_MP4</code>. Otherwise, <code>containerFormat</code> may be set to <code>TS</code> or <code>FRAGMENTED_MP4</code>. Default: <code>TS</code>.</p>
+    pub fn container_format(mut self, input: crate::types::ContainerFormat) -> Self {
+        self.inner = self.inner.container_format(input);
+        self
+    }
+    /// <p>Indicates which content-packaging format is used (MPEG-TS or fMP4). If <code>multitrackInputConfiguration</code> is specified and <code>enabled</code> is <code>true</code>, then <code>containerFormat</code> is required and must be set to <code>FRAGMENTED_MP4</code>. Otherwise, <code>containerFormat</code> may be set to <code>TS</code> or <code>FRAGMENTED_MP4</code>. Default: <code>TS</code>.</p>
+    pub fn set_container_format(mut self, input: ::std::option::Option<crate::types::ContainerFormat>) -> Self {
+        self.inner = self.inner.set_container_format(input);
+        self
+    }
+    /// <p>Indicates which content-packaging format is used (MPEG-TS or fMP4). If <code>multitrackInputConfiguration</code> is specified and <code>enabled</code> is <code>true</code>, then <code>containerFormat</code> is required and must be set to <code>FRAGMENTED_MP4</code>. Otherwise, <code>containerFormat</code> may be set to <code>TS</code> or <code>FRAGMENTED_MP4</code>. Default: <code>TS</code>.</p>
+    pub fn get_container_format(&self) -> &::std::option::Option<crate::types::ContainerFormat> {
+        self.inner.get_container_format()
+    }
 }

@@ -3,11 +3,15 @@ pub use crate::types::_validation_exception_field::ValidationExceptionField;
 
 pub use crate::types::_validation_exception_reason::ValidationExceptionReason;
 
-pub use crate::types::_analyzer_summary::AnalyzerSummary;
-
 pub use crate::types::_analyzer_configuration::AnalyzerConfiguration;
 
 pub use crate::types::_unused_access_configuration::UnusedAccessConfiguration;
+
+pub use crate::types::_analysis_rule::AnalysisRule;
+
+pub use crate::types::_analysis_rule_criteria::AnalysisRuleCriteria;
+
+pub use crate::types::_analyzer_summary::AnalyzerSummary;
 
 pub use crate::types::_status_reason::StatusReason;
 
@@ -230,6 +234,10 @@ mod _access_preview_summary;
 mod _acl_grantee;
 
 mod _acl_permission;
+
+mod _analysis_rule;
+
+mod _analysis_rule_criteria;
 
 mod _analyzed_resource;
 

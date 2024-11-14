@@ -201,6 +201,8 @@ pub(crate) mod shape_channels;
 
 pub(crate) mod shape_destination_configuration;
 
+pub(crate) mod shape_multitrack_input_configuration;
+
 pub(crate) mod shape_playback_key_pair;
 
 pub(crate) mod shape_playback_key_pair_list;
@@ -243,6 +245,8 @@ pub(crate) mod shape_channel_summary;
 
 pub(crate) mod shape_ingest_configuration;
 
+pub(crate) mod shape_ingest_configurations;
+
 pub(crate) mod shape_playback_key_pair_summary;
 
 pub(crate) mod shape_playback_restriction_policy_allowed_country_list;
@@ -267,6 +271,8 @@ pub(crate) mod shape_stream_summary;
 
 pub(crate) mod shape_audio_configuration;
 
+pub(crate) mod shape_audio_configuration_list;
+
 pub(crate) mod shape_rendition_configuration_rendition_list;
 
 pub(crate) mod shape_stream_event;
@@ -274,3 +280,5 @@ pub(crate) mod shape_stream_event;
 pub(crate) mod shape_thumbnail_configuration_storage_list;
 
 pub(crate) mod shape_video_configuration;
+
+pub(crate) mod shape_video_configuration_list;

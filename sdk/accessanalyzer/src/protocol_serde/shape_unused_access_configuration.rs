@@ -9,6 +9,12 @@ pub fn ser_unused_access_configuration(
             ::aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
+    if let Some(var_2) = &input.analysis_rule {
+        #[allow(unused_mut)]
+        let mut object_3 = object.key("analysisRule").start_object();
+        crate::protocol_serde::shape_analysis_rule::ser_analysis_rule(&mut object_3, var_2)?;
+        object_3.finish();
+    }
     Ok(())
 }
 
@@ -33,6 +39,9 @@ where
                                     .map(i32::try_from)
                                     .transpose()?,
                             );
+                        }
+                        "analysisRule" => {
+                            builder = builder.set_analysis_rule(crate::protocol_serde::shape_analysis_rule::de_analysis_rule(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

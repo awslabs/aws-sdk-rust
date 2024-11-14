@@ -108,33 +108,50 @@ impl UpdateIdentityProviderSettingsFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>Details about an identity provider.</p>
+    /// <p>Refers to an identity provider.</p>
     pub fn identity_provider(mut self, input: crate::types::IdentityProvider) -> Self {
         self.inner = self.inner.identity_provider(input);
         self
     }
-    /// <p>Details about an identity provider.</p>
+    /// <p>Refers to an identity provider.</p>
     pub fn set_identity_provider(mut self, input: ::std::option::Option<crate::types::IdentityProvider>) -> Self {
         self.inner = self.inner.set_identity_provider(input);
         self
     }
-    /// <p>Details about an identity provider.</p>
+    /// <p>Refers to an identity provider.</p>
     pub fn get_identity_provider(&self) -> &::std::option::Option<crate::types::IdentityProvider> {
         self.inner.get_identity_provider()
     }
     /// <p>The name of the user-based subscription product.</p>
+    /// <p>Valid values: <code>VISUAL_STUDIO_ENTERPRISE</code> | <code>VISUAL_STUDIO_PROFESSIONAL</code> | <code>OFFICE_PROFESSIONAL_PLUS</code></p>
     pub fn product(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.product(input.into());
         self
     }
     /// <p>The name of the user-based subscription product.</p>
+    /// <p>Valid values: <code>VISUAL_STUDIO_ENTERPRISE</code> | <code>VISUAL_STUDIO_PROFESSIONAL</code> | <code>OFFICE_PROFESSIONAL_PLUS</code></p>
     pub fn set_product(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_product(input);
         self
     }
     /// <p>The name of the user-based subscription product.</p>
+    /// <p>Valid values: <code>VISUAL_STUDIO_ENTERPRISE</code> | <code>VISUAL_STUDIO_PROFESSIONAL</code> | <code>OFFICE_PROFESSIONAL_PLUS</code></p>
     pub fn get_product(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_product()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the identity provider to update.</p>
+    pub fn identity_provider_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.identity_provider_arn(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the identity provider to update.</p>
+    pub fn set_identity_provider_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_identity_provider_arn(input);
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the identity provider to update.</p>
+    pub fn get_identity_provider_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_identity_provider_arn()
     }
     /// <p>Updates the registered identity provider’s product related configuration settings. You can update any combination of settings in a single operation such as the:</p>
     /// <ul>

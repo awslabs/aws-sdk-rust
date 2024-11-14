@@ -27,47 +27,53 @@ pub fn ser_service_managed_ec2_instance_capabilities(
         crate::protocol_serde::shape_ec2_ebs_volume::ser_ec2_ebs_volume(&mut object_6, var_5)?;
         object_6.finish();
     }
-    if let Some(var_7) = &input.allowed_instance_types {
-        let mut array_8 = object.key("allowedInstanceTypes").start_array();
-        for item_9 in var_7 {
+    if let Some(var_7) = &input.accelerator_capabilities {
+        #[allow(unused_mut)]
+        let mut object_8 = object.key("acceleratorCapabilities").start_object();
+        crate::protocol_serde::shape_accelerator_capabilities::ser_accelerator_capabilities(&mut object_8, var_7)?;
+        object_8.finish();
+    }
+    if let Some(var_9) = &input.allowed_instance_types {
+        let mut array_10 = object.key("allowedInstanceTypes").start_array();
+        for item_11 in var_9 {
             {
-                array_8.value().string(item_9.as_str());
+                array_10.value().string(item_11.as_str());
             }
         }
-        array_8.finish();
+        array_10.finish();
     }
-    if let Some(var_10) = &input.excluded_instance_types {
-        let mut array_11 = object.key("excludedInstanceTypes").start_array();
-        for item_12 in var_10 {
+    if let Some(var_12) = &input.excluded_instance_types {
+        let mut array_13 = object.key("excludedInstanceTypes").start_array();
+        for item_14 in var_12 {
             {
-                array_11.value().string(item_12.as_str());
+                array_13.value().string(item_14.as_str());
             }
         }
-        array_11.finish();
+        array_13.finish();
     }
-    if let Some(var_13) = &input.custom_amounts {
-        let mut array_14 = object.key("customAmounts").start_array();
-        for item_15 in var_13 {
+    if let Some(var_15) = &input.custom_amounts {
+        let mut array_16 = object.key("customAmounts").start_array();
+        for item_17 in var_15 {
             {
                 #[allow(unused_mut)]
-                let mut object_16 = array_14.value().start_object();
-                crate::protocol_serde::shape_fleet_amount_capability::ser_fleet_amount_capability(&mut object_16, item_15)?;
-                object_16.finish();
+                let mut object_18 = array_16.value().start_object();
+                crate::protocol_serde::shape_fleet_amount_capability::ser_fleet_amount_capability(&mut object_18, item_17)?;
+                object_18.finish();
             }
         }
-        array_14.finish();
+        array_16.finish();
     }
-    if let Some(var_17) = &input.custom_attributes {
-        let mut array_18 = object.key("customAttributes").start_array();
-        for item_19 in var_17 {
+    if let Some(var_19) = &input.custom_attributes {
+        let mut array_20 = object.key("customAttributes").start_array();
+        for item_21 in var_19 {
             {
                 #[allow(unused_mut)]
-                let mut object_20 = array_18.value().start_object();
-                crate::protocol_serde::shape_fleet_attribute_capability::ser_fleet_attribute_capability(&mut object_20, item_19)?;
-                object_20.finish();
+                let mut object_22 = array_20.value().start_object();
+                crate::protocol_serde::shape_fleet_attribute_capability::ser_fleet_attribute_capability(&mut object_22, item_21)?;
+                object_22.finish();
             }
         }
-        array_18.finish();
+        array_20.finish();
     }
     Ok(())
 }
@@ -112,6 +118,11 @@ where
                         }
                         "rootEbsVolume" => {
                             builder = builder.set_root_ebs_volume(crate::protocol_serde::shape_ec2_ebs_volume::de_ec2_ebs_volume(tokens)?);
+                        }
+                        "acceleratorCapabilities" => {
+                            builder = builder.set_accelerator_capabilities(
+                                crate::protocol_serde::shape_accelerator_capabilities::de_accelerator_capabilities(tokens)?,
+                            );
                         }
                         "allowedInstanceTypes" => {
                             builder = builder.set_allowed_instance_types(crate::protocol_serde::shape_instance_types::de_instance_types(tokens)?);

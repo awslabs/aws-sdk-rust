@@ -1979,6 +1979,15 @@ pub(crate) fn step_parameter_correct_errors(
     builder
 }
 
+pub(crate) fn accelerator_capabilities_correct_errors(
+    mut builder: crate::types::builders::AcceleratorCapabilitiesBuilder,
+) -> crate::types::builders::AcceleratorCapabilitiesBuilder {
+    if builder.selections.is_none() {
+        builder.selections = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn accelerator_count_range_correct_errors(
     mut builder: crate::types::builders::AcceleratorCountRangeBuilder,
 ) -> crate::types::builders::AcceleratorCountRangeBuilder {
@@ -2068,6 +2077,15 @@ pub(crate) fn path_mapping_rule_correct_errors(
     }
     if builder.destination_path.is_none() {
         builder.destination_path = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn accelerator_selection_correct_errors(
+    mut builder: crate::types::builders::AcceleratorSelectionBuilder,
+) -> crate::types::builders::AcceleratorSelectionBuilder {
+    if builder.name.is_none() {
+        builder.name = "no value was set".parse::<crate::types::AcceleratorName>().ok()
     }
     builder
 }

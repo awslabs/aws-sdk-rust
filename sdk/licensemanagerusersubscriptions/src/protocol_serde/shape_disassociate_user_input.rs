@@ -15,8 +15,11 @@ pub fn ser_disassociate_user_input_input(
     if let Some(var_4) = &input.instance_id {
         object.key("InstanceId").string(var_4.as_str());
     }
-    if let Some(var_5) = &input.username {
-        object.key("Username").string(var_5.as_str());
+    if let Some(var_5) = &input.instance_user_arn {
+        object.key("InstanceUserArn").string(var_5.as_str());
+    }
+    if let Some(var_6) = &input.username {
+        object.key("Username").string(var_6.as_str());
     }
     Ok(())
 }

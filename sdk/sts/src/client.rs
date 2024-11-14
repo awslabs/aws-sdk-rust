@@ -96,6 +96,8 @@ mod assume_role_with_saml;
 
 mod assume_role_with_web_identity;
 
+mod assume_root;
+
 /// Operation customization and supporting types.
 ///
 /// The underlying HTTP requests made during an operation can be customized

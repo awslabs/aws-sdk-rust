@@ -173,3 +173,12 @@ pub(crate) fn instance_summary_correct_errors(
     }
     builder
 }
+
+pub(crate) fn domain_network_settings_correct_errors(
+    mut builder: crate::types::builders::DomainNetworkSettingsBuilder,
+) -> crate::types::builders::DomainNetworkSettingsBuilder {
+    if builder.subnets.is_none() {
+        builder.subnets = Some(Default::default())
+    }
+    builder
+}

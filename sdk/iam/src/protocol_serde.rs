@@ -215,9 +215,25 @@ pub(crate) mod shape_detach_user_policy;
 
 pub(crate) mod shape_detach_user_policy_input;
 
+pub(crate) mod shape_disable_organizations_root_credentials_management;
+
+pub(crate) mod shape_disable_organizations_root_credentials_management_input;
+
+pub(crate) mod shape_disable_organizations_root_sessions;
+
+pub(crate) mod shape_disable_organizations_root_sessions_input;
+
 pub(crate) mod shape_enable_mfa_device;
 
 pub(crate) mod shape_enable_mfa_device_input;
+
+pub(crate) mod shape_enable_organizations_root_credentials_management;
+
+pub(crate) mod shape_enable_organizations_root_credentials_management_input;
+
+pub(crate) mod shape_enable_organizations_root_sessions;
+
+pub(crate) mod shape_enable_organizations_root_sessions_input;
 
 pub(crate) mod shape_generate_credential_report;
 
@@ -398,6 +414,10 @@ pub(crate) mod shape_list_open_id_connect_provider_tags_input;
 pub(crate) mod shape_list_open_id_connect_providers;
 
 pub(crate) mod shape_list_open_id_connect_providers_input;
+
+pub(crate) mod shape_list_organizations_features;
+
+pub(crate) mod shape_list_organizations_features_input;
 
 pub(crate) mod shape_list_policies;
 
@@ -659,6 +679,10 @@ pub(crate) mod shape_upload_ssh_public_key;
 
 pub(crate) mod shape_upload_ssh_public_key_input;
 
+pub(crate) mod shape_account_not_management_or_delegated_administrator_exception;
+
+pub(crate) mod shape_caller_is_not_management_account_exception;
+
 pub(crate) mod shape_concurrent_modification_exception;
 
 pub(crate) mod shape_context_entry;
@@ -701,6 +725,10 @@ pub(crate) mod shape_no_such_entity_exception;
 
 pub(crate) mod shape_open_id_idp_communication_error_exception;
 
+pub(crate) mod shape_organization_not_found_exception;
+
+pub(crate) mod shape_organization_not_in_all_features_mode_exception;
+
 pub(crate) mod shape_password_policy_violation_exception;
 
 pub(crate) mod shape_policy_evaluation_exception;
@@ -708,6 +736,8 @@ pub(crate) mod shape_policy_evaluation_exception;
 pub(crate) mod shape_policy_not_attachable_exception;
 
 pub(crate) mod shape_report_generation_limit_exceeded_exception;
+
+pub(crate) mod shape_service_access_not_enabled_exception;
 
 pub(crate) mod shape_service_failure_exception;
 
@@ -746,6 +776,8 @@ pub(crate) mod shape_entity_details_list_type;
 pub(crate) mod shape_error_details;
 
 pub(crate) mod shape_evaluation_results_list_type;
+
+pub(crate) mod shape_features_list_type;
 
 pub(crate) mod shape_group;
 

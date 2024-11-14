@@ -5,12 +5,20 @@
 pub struct GetResourceRequestStatusOutput {
     /// <p>Represents the current status of the resource operation request.</p>
     pub progress_event: ::std::option::Option<crate::types::ProgressEvent>,
+    /// <p>Lists Hook invocations for the specified target in the request. This is a list since the same target can invoke multiple Hooks.</p>
+    pub hooks_progress_event: ::std::option::Option<::std::vec::Vec<crate::types::HookProgressEvent>>,
     _request_id: Option<String>,
 }
 impl GetResourceRequestStatusOutput {
     /// <p>Represents the current status of the resource operation request.</p>
     pub fn progress_event(&self) -> ::std::option::Option<&crate::types::ProgressEvent> {
         self.progress_event.as_ref()
+    }
+    /// <p>Lists Hook invocations for the specified target in the request. This is a list since the same target can invoke multiple Hooks.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.hooks_progress_event.is_none()`.
+    pub fn hooks_progress_event(&self) -> &[crate::types::HookProgressEvent] {
+        self.hooks_progress_event.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for GetResourceRequestStatusOutput {
@@ -30,6 +38,7 @@ impl GetResourceRequestStatusOutput {
 #[non_exhaustive]
 pub struct GetResourceRequestStatusOutputBuilder {
     pub(crate) progress_event: ::std::option::Option<crate::types::ProgressEvent>,
+    pub(crate) hooks_progress_event: ::std::option::Option<::std::vec::Vec<crate::types::HookProgressEvent>>,
     _request_id: Option<String>,
 }
 impl GetResourceRequestStatusOutputBuilder {
@@ -47,6 +56,26 @@ impl GetResourceRequestStatusOutputBuilder {
     pub fn get_progress_event(&self) -> &::std::option::Option<crate::types::ProgressEvent> {
         &self.progress_event
     }
+    /// Appends an item to `hooks_progress_event`.
+    ///
+    /// To override the contents of this collection use [`set_hooks_progress_event`](Self::set_hooks_progress_event).
+    ///
+    /// <p>Lists Hook invocations for the specified target in the request. This is a list since the same target can invoke multiple Hooks.</p>
+    pub fn hooks_progress_event(mut self, input: crate::types::HookProgressEvent) -> Self {
+        let mut v = self.hooks_progress_event.unwrap_or_default();
+        v.push(input);
+        self.hooks_progress_event = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Lists Hook invocations for the specified target in the request. This is a list since the same target can invoke multiple Hooks.</p>
+    pub fn set_hooks_progress_event(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::HookProgressEvent>>) -> Self {
+        self.hooks_progress_event = input;
+        self
+    }
+    /// <p>Lists Hook invocations for the specified target in the request. This is a list since the same target can invoke multiple Hooks.</p>
+    pub fn get_hooks_progress_event(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::HookProgressEvent>> {
+        &self.hooks_progress_event
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -60,6 +89,7 @@ impl GetResourceRequestStatusOutputBuilder {
     pub fn build(self) -> crate::operation::get_resource_request_status::GetResourceRequestStatusOutput {
         crate::operation::get_resource_request_status::GetResourceRequestStatusOutput {
             progress_event: self.progress_event,
+            hooks_progress_event: self.hooks_progress_event,
             _request_id: self._request_id,
         }
     }

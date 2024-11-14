@@ -12,6 +12,8 @@ pub struct LoRaWanMulticastGet {
     pub number_of_devices_requested: ::std::option::Option<i32>,
     /// <p>Number of devices that are associated to the multicast group.</p>
     pub number_of_devices_in_group: ::std::option::Option<i32>,
+    /// <p>Specify the list of gateways to which you want to send the multicast downlink messages. The multicast message will be sent to each gateway in the sequence provided in the list.</p>
+    pub participating_gateways: ::std::option::Option<crate::types::ParticipatingGatewaysMulticast>,
 }
 impl LoRaWanMulticastGet {
     /// <p>Supported RfRegions</p>
@@ -30,6 +32,10 @@ impl LoRaWanMulticastGet {
     pub fn number_of_devices_in_group(&self) -> ::std::option::Option<i32> {
         self.number_of_devices_in_group
     }
+    /// <p>Specify the list of gateways to which you want to send the multicast downlink messages. The multicast message will be sent to each gateway in the sequence provided in the list.</p>
+    pub fn participating_gateways(&self) -> ::std::option::Option<&crate::types::ParticipatingGatewaysMulticast> {
+        self.participating_gateways.as_ref()
+    }
 }
 impl LoRaWanMulticastGet {
     /// Creates a new builder-style object to manufacture [`LoRaWanMulticastGet`](crate::types::LoRaWanMulticastGet).
@@ -46,6 +52,7 @@ pub struct LoRaWanMulticastGetBuilder {
     pub(crate) dl_class: ::std::option::Option<crate::types::DlClass>,
     pub(crate) number_of_devices_requested: ::std::option::Option<i32>,
     pub(crate) number_of_devices_in_group: ::std::option::Option<i32>,
+    pub(crate) participating_gateways: ::std::option::Option<crate::types::ParticipatingGatewaysMulticast>,
 }
 impl LoRaWanMulticastGetBuilder {
     /// <p>Supported RfRegions</p>
@@ -104,6 +111,20 @@ impl LoRaWanMulticastGetBuilder {
     pub fn get_number_of_devices_in_group(&self) -> &::std::option::Option<i32> {
         &self.number_of_devices_in_group
     }
+    /// <p>Specify the list of gateways to which you want to send the multicast downlink messages. The multicast message will be sent to each gateway in the sequence provided in the list.</p>
+    pub fn participating_gateways(mut self, input: crate::types::ParticipatingGatewaysMulticast) -> Self {
+        self.participating_gateways = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specify the list of gateways to which you want to send the multicast downlink messages. The multicast message will be sent to each gateway in the sequence provided in the list.</p>
+    pub fn set_participating_gateways(mut self, input: ::std::option::Option<crate::types::ParticipatingGatewaysMulticast>) -> Self {
+        self.participating_gateways = input;
+        self
+    }
+    /// <p>Specify the list of gateways to which you want to send the multicast downlink messages. The multicast message will be sent to each gateway in the sequence provided in the list.</p>
+    pub fn get_participating_gateways(&self) -> &::std::option::Option<crate::types::ParticipatingGatewaysMulticast> {
+        &self.participating_gateways
+    }
     /// Consumes the builder and constructs a [`LoRaWanMulticastGet`](crate::types::LoRaWanMulticastGet).
     pub fn build(self) -> crate::types::LoRaWanMulticastGet {
         crate::types::LoRaWanMulticastGet {
@@ -111,6 +132,7 @@ impl LoRaWanMulticastGetBuilder {
             dl_class: self.dl_class,
             number_of_devices_requested: self.number_of_devices_requested,
             number_of_devices_in_group: self.number_of_devices_in_group,
+            participating_gateways: self.participating_gateways,
         }
     }
 }

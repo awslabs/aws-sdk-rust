@@ -5,6 +5,12 @@ pub use crate::types::_settings::SettingsBuilder;
 
 pub use crate::types::_active_directory_identity_provider::ActiveDirectoryIdentityProviderBuilder;
 
+pub use crate::types::_active_directory_settings::ActiveDirectorySettingsBuilder;
+
+pub use crate::types::_domain_network_settings::DomainNetworkSettingsBuilder;
+
+pub use crate::types::_secrets_manager_credentials_provider::SecretsManagerCredentialsProviderBuilder;
+
 pub use crate::types::_update_settings::UpdateSettingsBuilder;
 
 pub use crate::types::_product_user_summary::ProductUserSummaryBuilder;
@@ -13,4 +19,14 @@ pub use crate::types::_instance_user_summary::InstanceUserSummaryBuilder;
 
 pub use crate::types::_filter::FilterBuilder;
 
+pub use crate::types::_license_server_endpoint::LicenseServerEndpointBuilder;
+
+pub use crate::types::_license_server::LicenseServerBuilder;
+
+pub use crate::types::_server_endpoint::ServerEndpointBuilder;
+
 pub use crate::types::_instance_summary::InstanceSummaryBuilder;
+
+pub use crate::types::_license_server_settings::LicenseServerSettingsBuilder;
+
+pub use crate::types::_rds_sal_settings::RdsSalSettingsBuilder;

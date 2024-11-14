@@ -10,6 +10,9 @@ pub mod assume_role_with_saml;
 /// Types for the `AssumeRoleWithWebIdentity` operation.
 pub mod assume_role_with_web_identity;
 
+/// Types for the `AssumeRoot` operation.
+pub mod assume_root;
+
 /// Types for the `DecodeAuthorizationMessage` operation.
 pub mod decode_authorization_message;
 

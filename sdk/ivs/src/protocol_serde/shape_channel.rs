@@ -89,6 +89,18 @@ where
                                     .transpose()?,
                             );
                         }
+                        "multitrackInputConfiguration" => {
+                            builder = builder.set_multitrack_input_configuration(
+                                crate::protocol_serde::shape_multitrack_input_configuration::de_multitrack_input_configuration(tokens)?,
+                            );
+                        }
+                        "containerFormat" => {
+                            builder = builder.set_container_format(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::ContainerFormat::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

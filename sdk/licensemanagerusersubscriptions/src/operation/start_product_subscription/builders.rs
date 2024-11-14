@@ -139,31 +139,53 @@ impl StartProductSubscriptionFluentBuilder {
         self.inner.get_identity_provider()
     }
     /// <p>The name of the user-based subscription product.</p>
+    /// <p>Valid values: <code>VISUAL_STUDIO_ENTERPRISE</code> | <code>VISUAL_STUDIO_PROFESSIONAL</code> | <code>OFFICE_PROFESSIONAL_PLUS</code></p>
     pub fn product(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.product(input.into());
         self
     }
     /// <p>The name of the user-based subscription product.</p>
+    /// <p>Valid values: <code>VISUAL_STUDIO_ENTERPRISE</code> | <code>VISUAL_STUDIO_PROFESSIONAL</code> | <code>OFFICE_PROFESSIONAL_PLUS</code></p>
     pub fn set_product(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_product(input);
         self
     }
     /// <p>The name of the user-based subscription product.</p>
+    /// <p>Valid values: <code>VISUAL_STUDIO_ENTERPRISE</code> | <code>VISUAL_STUDIO_PROFESSIONAL</code> | <code>OFFICE_PROFESSIONAL_PLUS</code></p>
     pub fn get_product(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_product()
     }
-    /// <p>The domain name of the user.</p>
+    /// <p>The domain name of the Active Directory that contains the user for whom to start the product subscription.</p>
     pub fn domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.domain(input.into());
         self
     }
-    /// <p>The domain name of the user.</p>
+    /// <p>The domain name of the Active Directory that contains the user for whom to start the product subscription.</p>
     pub fn set_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_domain(input);
         self
     }
-    /// <p>The domain name of the user.</p>
+    /// <p>The domain name of the Active Directory that contains the user for whom to start the product subscription.</p>
     pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_domain()
+    }
+    ///
+    /// Adds a key-value pair to `Tags`.
+    ///
+    /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+    ///
+    /// <p>The tags that apply to the product subscription.</p>
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.tags(k.into(), v.into());
+        self
+    }
+    /// <p>The tags that apply to the product subscription.</p>
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
+        self.inner = self.inner.set_tags(input);
+        self
+    }
+    /// <p>The tags that apply to the product subscription.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.inner.get_tags()
     }
 }

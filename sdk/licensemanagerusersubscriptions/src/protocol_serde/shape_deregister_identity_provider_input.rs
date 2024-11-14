@@ -9,8 +9,11 @@ pub fn ser_deregister_identity_provider_input_input(
         crate::protocol_serde::shape_identity_provider::ser_identity_provider(&mut object_2, var_1)?;
         object_2.finish();
     }
-    if let Some(var_3) = &input.product {
-        object.key("Product").string(var_3.as_str());
+    if let Some(var_3) = &input.identity_provider_arn {
+        object.key("IdentityProviderArn").string(var_3.as_str());
+    }
+    if let Some(var_4) = &input.product {
+        object.key("Product").string(var_4.as_str());
     }
     Ok(())
 }

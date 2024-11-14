@@ -25,6 +25,10 @@ pub fn parse_http_error_metadata(
 
 pub(crate) mod shape_associate_user;
 
+pub(crate) mod shape_create_license_server_endpoint;
+
+pub(crate) mod shape_delete_license_server_endpoint;
+
 pub(crate) mod shape_deregister_identity_provider;
 
 pub(crate) mod shape_disassociate_user;
@@ -33,7 +37,11 @@ pub(crate) mod shape_list_identity_providers;
 
 pub(crate) mod shape_list_instances;
 
+pub(crate) mod shape_list_license_server_endpoints;
+
 pub(crate) mod shape_list_product_subscriptions;
+
+pub(crate) mod shape_list_tags_for_resource;
 
 pub(crate) mod shape_list_user_associations;
 
@@ -42,6 +50,10 @@ pub(crate) mod shape_register_identity_provider;
 pub(crate) mod shape_start_product_subscription;
 
 pub(crate) mod shape_stop_product_subscription;
+
+pub(crate) mod shape_tag_resource;
+
+pub(crate) mod shape_untag_resource;
 
 pub(crate) mod shape_update_identity_provider_settings;
 
@@ -59,6 +71,10 @@ pub(crate) mod shape_associate_user_input;
 
 pub(crate) mod shape_conflict_exception;
 
+pub(crate) mod shape_create_license_server_endpoint_input;
+
+pub(crate) mod shape_delete_license_server_endpoint_input;
+
 pub(crate) mod shape_deregister_identity_provider_input;
 
 pub(crate) mod shape_disassociate_user_input;
@@ -68,6 +84,8 @@ pub(crate) mod shape_internal_server_exception;
 pub(crate) mod shape_list_identity_providers_input;
 
 pub(crate) mod shape_list_instances_input;
+
+pub(crate) mod shape_list_license_server_endpoints_input;
 
 pub(crate) mod shape_list_product_subscriptions_input;
 
@@ -82,6 +100,8 @@ pub(crate) mod shape_service_quota_exceeded_exception;
 pub(crate) mod shape_start_product_subscription_input;
 
 pub(crate) mod shape_stop_product_subscription_input;
+
+pub(crate) mod shape_tag_resource_input;
 
 pub(crate) mod shape_throttling_exception;
 
@@ -103,11 +123,19 @@ pub(crate) mod shape_instance_user_summary;
 
 pub(crate) mod shape_instance_user_summary_list;
 
+pub(crate) mod shape_license_server_endpoint;
+
+pub(crate) mod shape_license_server_endpoint_list;
+
+pub(crate) mod shape_license_server_settings;
+
 pub(crate) mod shape_product_user_summary;
 
 pub(crate) mod shape_product_user_summary_list;
 
 pub(crate) mod shape_settings;
+
+pub(crate) mod shape_tags;
 
 pub(crate) mod shape_update_settings;
 
@@ -115,6 +143,26 @@ pub(crate) mod shape_active_directory_identity_provider;
 
 pub(crate) mod shape_instance_summary;
 
+pub(crate) mod shape_license_server_list;
+
+pub(crate) mod shape_server_endpoint;
+
+pub(crate) mod shape_server_settings;
+
+pub(crate) mod shape_active_directory_settings;
+
+pub(crate) mod shape_license_server;
+
+pub(crate) mod shape_rds_sal_settings;
+
 pub(crate) mod shape_string_list;
 
 pub(crate) mod shape_subnets;
+
+pub(crate) mod shape_credentials_provider;
+
+pub(crate) mod shape_domain_network_settings;
+
+pub(crate) mod shape_ipv4_list;
+
+pub(crate) mod shape_secrets_manager_credentials_provider;

@@ -109,11 +109,15 @@ pub use crate::types::_redshift_idc_application::RedshiftIdcApplication;
 
 pub use crate::types::_service_integrations_union::ServiceIntegrationsUnion;
 
+pub use crate::types::_s3_access_grants_scope_union::S3AccessGrantsScopeUnion;
+
+pub use crate::types::_read_write_access::ReadWriteAccess;
+
+pub use crate::types::_service_authorization::ServiceAuthorization;
+
 pub use crate::types::_lake_formation_scope_union::LakeFormationScopeUnion;
 
 pub use crate::types::_lake_formation_query::LakeFormationQuery;
-
-pub use crate::types::_service_authorization::ServiceAuthorization;
 
 pub use crate::types::_authorized_token_issuer::AuthorizedTokenIssuer;
 
@@ -389,6 +393,8 @@ mod _pause_cluster_message;
 
 mod _pending_modified_values;
 
+mod _read_write_access;
+
 mod _recommendation;
 
 mod _recommended_action;
@@ -426,6 +432,8 @@ mod _restore_status;
 mod _resume_cluster_message;
 
 mod _revision_target;
+
+mod _s3_access_grants_scope_union;
 
 mod _schedule_state;
 

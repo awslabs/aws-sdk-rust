@@ -3,6 +3,14 @@ pub use crate::types::_playback_restriction_policy::PlaybackRestrictionPolicy;
 
 pub use crate::types::_channel::Channel;
 
+pub use crate::types::_container_format::ContainerFormat;
+
+pub use crate::types::_multitrack_input_configuration::MultitrackInputConfiguration;
+
+pub use crate::types::_multitrack_maximum_resolution::MultitrackMaximumResolution;
+
+pub use crate::types::_multitrack_policy::MultitrackPolicy;
+
 pub use crate::types::_srt::Srt;
 
 pub use crate::types::_transcode_preset::TranscodePreset;
@@ -59,11 +67,13 @@ pub use crate::types::_thumbnail_configuration_resolution::ThumbnailConfiguratio
 
 pub use crate::types::_recording_mode::RecordingMode;
 
-pub use crate::types::_ingest_configuration::IngestConfiguration;
+pub use crate::types::_ingest_configurations::IngestConfigurations;
 
 pub use crate::types::_audio_configuration::AudioConfiguration;
 
 pub use crate::types::_video_configuration::VideoConfiguration;
+
+pub use crate::types::_ingest_configuration::IngestConfiguration;
 
 pub use crate::types::_stream_key::StreamKey;
 
@@ -91,9 +101,19 @@ mod _channel_summary;
 
 mod _channel_type;
 
+mod _container_format;
+
 mod _destination_configuration;
 
 mod _ingest_configuration;
+
+mod _ingest_configurations;
+
+mod _multitrack_input_configuration;
+
+mod _multitrack_maximum_resolution;
+
+mod _multitrack_policy;
 
 mod _playback_key_pair;
 

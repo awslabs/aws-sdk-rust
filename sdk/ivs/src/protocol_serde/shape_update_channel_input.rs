@@ -9,26 +9,35 @@ pub fn ser_update_channel_input_input(
     if let Some(var_2) = &input.authorized {
         object.key("authorized").boolean(*var_2);
     }
-    if let Some(var_3) = &input.insecure_ingest {
-        object.key("insecureIngest").boolean(*var_3);
+    if let Some(var_3) = &input.container_format {
+        object.key("containerFormat").string(var_3.as_str());
     }
-    if let Some(var_4) = &input.latency_mode {
-        object.key("latencyMode").string(var_4.as_str());
+    if let Some(var_4) = &input.insecure_ingest {
+        object.key("insecureIngest").boolean(*var_4);
     }
-    if let Some(var_5) = &input.name {
-        object.key("name").string(var_5.as_str());
+    if let Some(var_5) = &input.latency_mode {
+        object.key("latencyMode").string(var_5.as_str());
     }
-    if let Some(var_6) = &input.playback_restriction_policy_arn {
-        object.key("playbackRestrictionPolicyArn").string(var_6.as_str());
+    if let Some(var_6) = &input.multitrack_input_configuration {
+        #[allow(unused_mut)]
+        let mut object_7 = object.key("multitrackInputConfiguration").start_object();
+        crate::protocol_serde::shape_multitrack_input_configuration::ser_multitrack_input_configuration(&mut object_7, var_6)?;
+        object_7.finish();
     }
-    if let Some(var_7) = &input.preset {
-        object.key("preset").string(var_7.as_str());
+    if let Some(var_8) = &input.name {
+        object.key("name").string(var_8.as_str());
     }
-    if let Some(var_8) = &input.recording_configuration_arn {
-        object.key("recordingConfigurationArn").string(var_8.as_str());
+    if let Some(var_9) = &input.playback_restriction_policy_arn {
+        object.key("playbackRestrictionPolicyArn").string(var_9.as_str());
     }
-    if let Some(var_9) = &input.r#type {
-        object.key("type").string(var_9.as_str());
+    if let Some(var_10) = &input.preset {
+        object.key("preset").string(var_10.as_str());
+    }
+    if let Some(var_11) = &input.recording_configuration_arn {
+        object.key("recordingConfigurationArn").string(var_11.as_str());
+    }
+    if let Some(var_12) = &input.r#type {
+        object.key("type").string(var_12.as_str());
     }
     Ok(())
 }

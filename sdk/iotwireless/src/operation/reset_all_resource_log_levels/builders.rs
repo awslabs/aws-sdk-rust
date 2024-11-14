@@ -22,7 +22,7 @@ impl crate::operation::reset_all_resource_log_levels::builders::ResetAllResource
 }
 /// Fluent builder constructing a request to `ResetAllResourceLogLevels`.
 ///
-/// <p>Removes the log-level overrides for all resources; both wireless devices and wireless gateways.</p>
+/// <p>Removes the log-level overrides for all resources; wireless devices, wireless gateways, and fuota tasks.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ResetAllResourceLogLevelsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -985,6 +985,8 @@ pub(crate) mod shape_resource_policy;
 
 pub(crate) mod shape_resume_cluster_message;
 
+pub(crate) mod shape_s3_access_grants_scope_union;
+
 pub(crate) mod shape_schedule_definition_list;
 
 pub(crate) mod shape_scheduled_action_list;
@@ -1099,6 +1101,8 @@ pub(crate) mod shape_pending_actions_list;
 
 pub(crate) mod shape_pending_modified_values;
 
+pub(crate) mod shape_read_write_access;
+
 pub(crate) mod shape_recommendation;
 
 pub(crate) mod shape_recurring_charge_list;
@@ -1196,6 +1200,8 @@ pub(crate) mod shape_recommended_action;
 pub(crate) mod shape_reference_link;
 
 pub(crate) mod shape_revision_target;
+
+pub(crate) mod shape_s3_access_grants_service_integrations;
 
 pub(crate) mod shape_update_target;
 

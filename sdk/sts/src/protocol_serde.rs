@@ -35,6 +35,10 @@ pub(crate) mod shape_assume_role_with_web_identity;
 
 pub(crate) mod shape_assume_role_with_web_identity_input;
 
+pub(crate) mod shape_assume_root;
+
+pub(crate) mod shape_assume_root_input;
+
 pub(crate) mod shape_decode_authorization_message;
 
 pub(crate) mod shape_decode_authorization_message_input;

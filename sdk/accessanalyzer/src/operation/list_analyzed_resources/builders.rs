@@ -22,7 +22,7 @@ impl crate::operation::list_analyzed_resources::builders::ListAnalyzedResourcesI
 }
 /// Fluent builder constructing a request to `ListAnalyzedResources`.
 ///
-/// <p>Retrieves a list of resources of the specified type that have been analyzed by the specified external access analyzer. This action is not supported for unused access analyzers.</p>
+/// <p>Retrieves a list of resources of the specified type that have been analyzed by the specified analyzer.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListAnalyzedResourcesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

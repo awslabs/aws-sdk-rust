@@ -7,13 +7,13 @@ pub use crate::types::error::_malformed_policy_document_exception::MalformedPoli
 
 pub use crate::types::error::_invalid_authorization_message_exception::InvalidAuthorizationMessageException;
 
+pub use crate::types::error::_expired_token_exception::ExpiredTokenException;
+
 pub use crate::types::error::_invalid_identity_token_exception::InvalidIdentityTokenException;
 
 pub use crate::types::error::_idp_rejected_claim_exception::IdpRejectedClaimException;
 
 pub use crate::types::error::_idp_communication_error_exception::IdpCommunicationErrorException;
-
-pub use crate::types::error::_expired_token_exception::ExpiredTokenException;
 
 mod _expired_token_exception;
 

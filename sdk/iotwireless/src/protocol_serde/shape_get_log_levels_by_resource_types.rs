@@ -142,6 +142,11 @@ pub(crate) fn de_get_log_levels_by_resource_types(
                             .transpose()?,
                     );
                 }
+                "FuotaTaskLogOptions" => {
+                    builder = builder.set_fuota_task_log_options(
+                        crate::protocol_serde::shape_fuota_task_log_option_list::de_fuota_task_log_option_list(tokens)?,
+                    );
+                }
                 "WirelessDeviceLogOptions" => {
                     builder = builder.set_wireless_device_log_options(
                         crate::protocol_serde::shape_wireless_device_log_option_list::de_wireless_device_log_option_list(tokens)?,

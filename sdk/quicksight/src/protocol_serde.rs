@@ -35,6 +35,10 @@ pub(crate) mod shape_create_account_subscription;
 
 pub(crate) mod shape_create_analysis;
 
+pub(crate) mod shape_create_brand;
+
+pub(crate) mod shape_create_custom_permissions;
+
 pub(crate) mod shape_create_dashboard;
 
 pub(crate) mod shape_create_data_set;
@@ -78,6 +82,12 @@ pub(crate) mod shape_delete_account_customization;
 pub(crate) mod shape_delete_account_subscription;
 
 pub(crate) mod shape_delete_analysis;
+
+pub(crate) mod shape_delete_brand;
+
+pub(crate) mod shape_delete_brand_assignment;
+
+pub(crate) mod shape_delete_custom_permissions;
 
 pub(crate) mod shape_delete_dashboard;
 
@@ -123,6 +133,8 @@ pub(crate) mod shape_delete_user;
 
 pub(crate) mod shape_delete_user_by_principal_id;
 
+pub(crate) mod shape_delete_user_custom_permission;
+
 pub(crate) mod shape_delete_vpc_connection;
 
 pub(crate) mod shape_describe_account_customization;
@@ -140,6 +152,14 @@ pub(crate) mod shape_describe_analysis_permissions;
 pub(crate) mod shape_describe_asset_bundle_export_job;
 
 pub(crate) mod shape_describe_asset_bundle_import_job;
+
+pub(crate) mod shape_describe_brand;
+
+pub(crate) mod shape_describe_brand_assignment;
+
+pub(crate) mod shape_describe_brand_published_version;
+
+pub(crate) mod shape_describe_custom_permissions;
 
 pub(crate) mod shape_describe_dashboard;
 
@@ -226,6 +246,10 @@ pub(crate) mod shape_list_analyses;
 pub(crate) mod shape_list_asset_bundle_export_jobs;
 
 pub(crate) mod shape_list_asset_bundle_import_jobs;
+
+pub(crate) mod shape_list_brands;
+
+pub(crate) mod shape_list_custom_permissions;
 
 pub(crate) mod shape_list_dashboard_versions;
 
@@ -323,6 +347,14 @@ pub(crate) mod shape_update_analysis;
 
 pub(crate) mod shape_update_analysis_permissions;
 
+pub(crate) mod shape_update_brand;
+
+pub(crate) mod shape_update_brand_assignment;
+
+pub(crate) mod shape_update_brand_published_version;
+
+pub(crate) mod shape_update_custom_permissions;
+
 pub(crate) mod shape_update_dashboard;
 
 pub(crate) mod shape_update_dashboard_links;
@@ -383,6 +415,8 @@ pub(crate) mod shape_update_topic_refresh_schedule;
 
 pub(crate) mod shape_update_user;
 
+pub(crate) mod shape_update_user_custom_permission;
+
 pub(crate) mod shape_update_vpc_connection;
 
 pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
@@ -408,6 +442,10 @@ pub(crate) mod shape_create_account_customization_input;
 pub(crate) mod shape_create_account_subscription_input;
 
 pub(crate) mod shape_create_analysis_input;
+
+pub(crate) mod shape_create_brand_input;
+
+pub(crate) mod shape_create_custom_permissions_input;
 
 pub(crate) mod shape_create_dashboard_input;
 
@@ -452,6 +490,8 @@ pub(crate) mod shape_generate_embed_url_for_registered_user_input;
 pub(crate) mod shape_identity_type_not_supported_exception;
 
 pub(crate) mod shape_internal_failure_exception;
+
+pub(crate) mod shape_internal_server_exception;
 
 pub(crate) mod shape_invalid_next_token_exception;
 
@@ -511,6 +551,14 @@ pub(crate) mod shape_update_analysis_input;
 
 pub(crate) mod shape_update_analysis_permissions_input;
 
+pub(crate) mod shape_update_brand_assignment_input;
+
+pub(crate) mod shape_update_brand_input;
+
+pub(crate) mod shape_update_brand_published_version_input;
+
+pub(crate) mod shape_update_custom_permissions_input;
+
 pub(crate) mod shape_update_dashboard_input;
 
 pub(crate) mod shape_update_dashboard_links_input;
@@ -566,6 +614,8 @@ pub(crate) mod shape_update_topic_input;
 pub(crate) mod shape_update_topic_permissions_input;
 
 pub(crate) mod shape_update_topic_refresh_schedule_input;
+
+pub(crate) mod shape_update_user_custom_permission_input;
 
 pub(crate) mod shape_update_user_input;
 
@@ -625,11 +675,23 @@ pub(crate) mod shape_asset_bundle_resource_arns;
 
 pub(crate) mod shape_authorized_targets_by_services;
 
+pub(crate) mod shape_brand_definition;
+
+pub(crate) mod shape_brand_detail;
+
+pub(crate) mod shape_brand_summary_list;
+
+pub(crate) mod shape_capabilities;
+
 pub(crate) mod shape_column_group;
 
 pub(crate) mod shape_column_level_permission_rule;
 
 pub(crate) mod shape_create_topic_reviewed_answer;
+
+pub(crate) mod shape_custom_permissions;
+
+pub(crate) mod shape_custom_permissions_list;
 
 pub(crate) mod shape_dashboard;
 
@@ -855,6 +917,8 @@ pub(crate) mod shape_anonymous_user_q_search_bar_embedding_configuration;
 
 pub(crate) mod shape_anonymous_user_snapshot_job_result_list;
 
+pub(crate) mod shape_application_theme;
+
 pub(crate) mod shape_asset_bundle_export_job_analysis_override_properties;
 
 pub(crate) mod shape_asset_bundle_export_job_analysis_override_properties_list;
@@ -1001,6 +1065,8 @@ pub(crate) mod shape_aws_iot_analytics_parameters;
 
 pub(crate) mod shape_big_query_parameters;
 
+pub(crate) mod shape_brand_summary;
+
 pub(crate) mod shape_calculated_field;
 
 pub(crate) mod shape_calculated_fields;
@@ -1073,6 +1139,8 @@ pub(crate) mod shape_decimal_parameter;
 
 pub(crate) mod shape_error_info;
 
+pub(crate) mod shape_error_list;
+
 pub(crate) mod shape_exasol_parameters;
 
 pub(crate) mod shape_export_to_csv_option;
@@ -1106,6 +1174,10 @@ pub(crate) mod shape_jira_parameters;
 pub(crate) mod shape_logical_table_map;
 
 pub(crate) mod shape_logical_table_source;
+
+pub(crate) mod shape_logo;
+
+pub(crate) mod shape_logo_configuration;
 
 pub(crate) mod shape_maria_db_parameters;
 
@@ -1273,6 +1345,10 @@ pub(crate) mod shape_asset_bundle_resource_permissions;
 
 pub(crate) mod shape_authorized_targets_list;
 
+pub(crate) mod shape_brand_color_palette;
+
+pub(crate) mod shape_brand_element_style;
+
 pub(crate) mod shape_cast_column_type_operation;
 
 pub(crate) mod shape_colors_configuration;
@@ -1336,6 +1412,10 @@ pub(crate) mod shape_integer_parameter_list;
 pub(crate) mod shape_join_instruction;
 
 pub(crate) mod shape_layout;
+
+pub(crate) mod shape_logo_set;
+
+pub(crate) mod shape_logo_set_configuration;
 
 pub(crate) mod shape_manifest_file_location;
 
@@ -1549,6 +1629,10 @@ pub(crate) mod shape_histogram_visual;
 
 pub(crate) mod shape_identifier;
 
+pub(crate) mod shape_image_set;
+
+pub(crate) mod shape_image_set_configuration;
+
 pub(crate) mod shape_insight_visual;
 
 pub(crate) mod shape_integer_default_values;
@@ -1575,6 +1659,8 @@ pub(crate) mod shape_named_entity_definition;
 
 pub(crate) mod shape_named_entity_ref;
 
+pub(crate) mod shape_navbar_style;
+
 pub(crate) mod shape_nested_filter;
 
 pub(crate) mod shape_new_default_values;
@@ -1584,6 +1670,8 @@ pub(crate) mod shape_number_format_configuration;
 pub(crate) mod shape_numeric_equality_filter;
 
 pub(crate) mod shape_numeric_range_filter;
+
+pub(crate) mod shape_palette;
 
 pub(crate) mod shape_parameter_control_list;
 
@@ -1778,6 +1866,10 @@ pub(crate) mod shape_grid_layout_configuration;
 pub(crate) mod shape_heat_map_configuration;
 
 pub(crate) mod shape_histogram_configuration;
+
+pub(crate) mod shape_image;
+
+pub(crate) mod shape_image_configuration;
 
 pub(crate) mod shape_inner_filter;
 
@@ -1986,6 +2078,8 @@ pub(crate) mod shape_heat_map_sort_configuration;
 pub(crate) mod shape_histogram_bin_options;
 
 pub(crate) mod shape_histogram_field_wells;
+
+pub(crate) mod shape_image_source;
 
 pub(crate) mod shape_integer_dataset_parameter_value_list;
 

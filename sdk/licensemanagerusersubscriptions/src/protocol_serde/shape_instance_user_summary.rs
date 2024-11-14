@@ -38,6 +38,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "InstanceUserArn" => {
+                            builder = builder.set_instance_user_arn(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "StatusMessage" => {
                             builder = builder.set_status_message(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

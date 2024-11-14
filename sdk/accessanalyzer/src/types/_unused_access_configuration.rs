@@ -4,13 +4,19 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UnusedAccessConfiguration {
-    /// <p>The specified access age in days for which to generate findings for unused access. For example, if you specify 90 days, the analyzer will generate findings for IAM entities within the accounts of the selected organization for any access that hasn't been used in 90 or more days since the analyzer's last scan. You can choose a value between 1 and 180 days.</p>
+    /// <p>The specified access age in days for which to generate findings for unused access. For example, if you specify 90 days, the analyzer will generate findings for IAM entities within the accounts of the selected organization for any access that hasn't been used in 90 or more days since the analyzer's last scan. You can choose a value between 1 and 365 days.</p>
     pub unused_access_age: ::std::option::Option<i32>,
+    /// <p>Contains information about analysis rules for the analyzer. Analysis rules determine which entities will generate findings based on the criteria you define when you create the rule.</p>
+    pub analysis_rule: ::std::option::Option<crate::types::AnalysisRule>,
 }
 impl UnusedAccessConfiguration {
-    /// <p>The specified access age in days for which to generate findings for unused access. For example, if you specify 90 days, the analyzer will generate findings for IAM entities within the accounts of the selected organization for any access that hasn't been used in 90 or more days since the analyzer's last scan. You can choose a value between 1 and 180 days.</p>
+    /// <p>The specified access age in days for which to generate findings for unused access. For example, if you specify 90 days, the analyzer will generate findings for IAM entities within the accounts of the selected organization for any access that hasn't been used in 90 or more days since the analyzer's last scan. You can choose a value between 1 and 365 days.</p>
     pub fn unused_access_age(&self) -> ::std::option::Option<i32> {
         self.unused_access_age
+    }
+    /// <p>Contains information about analysis rules for the analyzer. Analysis rules determine which entities will generate findings based on the criteria you define when you create the rule.</p>
+    pub fn analysis_rule(&self) -> ::std::option::Option<&crate::types::AnalysisRule> {
+        self.analysis_rule.as_ref()
     }
 }
 impl UnusedAccessConfiguration {
@@ -25,26 +31,42 @@ impl UnusedAccessConfiguration {
 #[non_exhaustive]
 pub struct UnusedAccessConfigurationBuilder {
     pub(crate) unused_access_age: ::std::option::Option<i32>,
+    pub(crate) analysis_rule: ::std::option::Option<crate::types::AnalysisRule>,
 }
 impl UnusedAccessConfigurationBuilder {
-    /// <p>The specified access age in days for which to generate findings for unused access. For example, if you specify 90 days, the analyzer will generate findings for IAM entities within the accounts of the selected organization for any access that hasn't been used in 90 or more days since the analyzer's last scan. You can choose a value between 1 and 180 days.</p>
+    /// <p>The specified access age in days for which to generate findings for unused access. For example, if you specify 90 days, the analyzer will generate findings for IAM entities within the accounts of the selected organization for any access that hasn't been used in 90 or more days since the analyzer's last scan. You can choose a value between 1 and 365 days.</p>
     pub fn unused_access_age(mut self, input: i32) -> Self {
         self.unused_access_age = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The specified access age in days for which to generate findings for unused access. For example, if you specify 90 days, the analyzer will generate findings for IAM entities within the accounts of the selected organization for any access that hasn't been used in 90 or more days since the analyzer's last scan. You can choose a value between 1 and 180 days.</p>
+    /// <p>The specified access age in days for which to generate findings for unused access. For example, if you specify 90 days, the analyzer will generate findings for IAM entities within the accounts of the selected organization for any access that hasn't been used in 90 or more days since the analyzer's last scan. You can choose a value between 1 and 365 days.</p>
     pub fn set_unused_access_age(mut self, input: ::std::option::Option<i32>) -> Self {
         self.unused_access_age = input;
         self
     }
-    /// <p>The specified access age in days for which to generate findings for unused access. For example, if you specify 90 days, the analyzer will generate findings for IAM entities within the accounts of the selected organization for any access that hasn't been used in 90 or more days since the analyzer's last scan. You can choose a value between 1 and 180 days.</p>
+    /// <p>The specified access age in days for which to generate findings for unused access. For example, if you specify 90 days, the analyzer will generate findings for IAM entities within the accounts of the selected organization for any access that hasn't been used in 90 or more days since the analyzer's last scan. You can choose a value between 1 and 365 days.</p>
     pub fn get_unused_access_age(&self) -> &::std::option::Option<i32> {
         &self.unused_access_age
+    }
+    /// <p>Contains information about analysis rules for the analyzer. Analysis rules determine which entities will generate findings based on the criteria you define when you create the rule.</p>
+    pub fn analysis_rule(mut self, input: crate::types::AnalysisRule) -> Self {
+        self.analysis_rule = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Contains information about analysis rules for the analyzer. Analysis rules determine which entities will generate findings based on the criteria you define when you create the rule.</p>
+    pub fn set_analysis_rule(mut self, input: ::std::option::Option<crate::types::AnalysisRule>) -> Self {
+        self.analysis_rule = input;
+        self
+    }
+    /// <p>Contains information about analysis rules for the analyzer. Analysis rules determine which entities will generate findings based on the criteria you define when you create the rule.</p>
+    pub fn get_analysis_rule(&self) -> &::std::option::Option<crate::types::AnalysisRule> {
+        &self.analysis_rule
     }
     /// Consumes the builder and constructs a [`UnusedAccessConfiguration`](crate::types::UnusedAccessConfiguration).
     pub fn build(self) -> crate::types::UnusedAccessConfiguration {
         crate::types::UnusedAccessConfiguration {
             unused_access_age: self.unused_access_age,
+            analysis_rule: self.analysis_rule,
         }
     }
 }

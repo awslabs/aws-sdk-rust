@@ -22,7 +22,7 @@ impl crate::operation::deregister_identity_provider::builders::DeregisterIdentit
 }
 /// Fluent builder constructing a request to `DeregisterIdentityProvider`.
 ///
-/// <p>Deregisters the identity provider from providing user-based subscriptions.</p>
+/// <p>Deregisters the Active Directory identity provider from License Manager user-based subscriptions.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeregisterIdentityProviderFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,32 +108,49 @@ impl DeregisterIdentityProviderFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>An object that specifies details for the identity provider.</p>
+    /// <p>An object that specifies details for the Active Directory identity provider.</p>
     pub fn identity_provider(mut self, input: crate::types::IdentityProvider) -> Self {
         self.inner = self.inner.identity_provider(input);
         self
     }
-    /// <p>An object that specifies details for the identity provider.</p>
+    /// <p>An object that specifies details for the Active Directory identity provider.</p>
     pub fn set_identity_provider(mut self, input: ::std::option::Option<crate::types::IdentityProvider>) -> Self {
         self.inner = self.inner.set_identity_provider(input);
         self
     }
-    /// <p>An object that specifies details for the identity provider.</p>
+    /// <p>An object that specifies details for the Active Directory identity provider.</p>
     pub fn get_identity_provider(&self) -> &::std::option::Option<crate::types::IdentityProvider> {
         self.inner.get_identity_provider()
     }
     /// <p>The name of the user-based subscription product.</p>
+    /// <p>Valid values: <code>VISUAL_STUDIO_ENTERPRISE</code> | <code>VISUAL_STUDIO_PROFESSIONAL</code> | <code>OFFICE_PROFESSIONAL_PLUS</code></p>
     pub fn product(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.product(input.into());
         self
     }
     /// <p>The name of the user-based subscription product.</p>
+    /// <p>Valid values: <code>VISUAL_STUDIO_ENTERPRISE</code> | <code>VISUAL_STUDIO_PROFESSIONAL</code> | <code>OFFICE_PROFESSIONAL_PLUS</code></p>
     pub fn set_product(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_product(input);
         self
     }
     /// <p>The name of the user-based subscription product.</p>
+    /// <p>Valid values: <code>VISUAL_STUDIO_ENTERPRISE</code> | <code>VISUAL_STUDIO_PROFESSIONAL</code> | <code>OFFICE_PROFESSIONAL_PLUS</code></p>
     pub fn get_product(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_product()
+    }
+    /// <p>The Amazon Resource Name (ARN) that identifies the identity provider to deregister.</p>
+    pub fn identity_provider_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.identity_provider_arn(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) that identifies the identity provider to deregister.</p>
+    pub fn set_identity_provider_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_identity_provider_arn(input);
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) that identifies the identity provider to deregister.</p>
+    pub fn get_identity_provider_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_identity_provider_arn()
     }
 }

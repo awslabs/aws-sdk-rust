@@ -1625,6 +1625,46 @@ pub use crate::types::_dashboard_source_entity::DashboardSourceEntity;
 
 pub use crate::types::_dashboard_source_template::DashboardSourceTemplate;
 
+pub use crate::types::_capabilities::Capabilities;
+
+pub use crate::types::_capability_state::CapabilityState;
+
+pub use crate::types::_brand_definition::BrandDefinition;
+
+pub use crate::types::_logo_configuration::LogoConfiguration;
+
+pub use crate::types::_logo_set_configuration::LogoSetConfiguration;
+
+pub use crate::types::_image_set_configuration::ImageSetConfiguration;
+
+pub use crate::types::_image_configuration::ImageConfiguration;
+
+pub use crate::types::_image_source::ImageSource;
+
+pub use crate::types::_application_theme::ApplicationTheme;
+
+pub use crate::types::_brand_element_style::BrandElementStyle;
+
+pub use crate::types::_navbar_style::NavbarStyle;
+
+pub use crate::types::_palette::Palette;
+
+pub use crate::types::_brand_color_palette::BrandColorPalette;
+
+pub use crate::types::_brand_detail::BrandDetail;
+
+pub use crate::types::_logo::Logo;
+
+pub use crate::types::_logo_set::LogoSet;
+
+pub use crate::types::_image_set::ImageSet;
+
+pub use crate::types::_image::Image;
+
+pub use crate::types::_brand_version_status::BrandVersionStatus;
+
+pub use crate::types::_brand_status::BrandStatus;
+
 pub use crate::types::_analysis_definition::AnalysisDefinition;
 
 pub use crate::types::_analysis_source_entity::AnalysisSourceEntity;
@@ -1947,6 +1987,10 @@ pub use crate::types::_data_source_error_info_type::DataSourceErrorInfoType;
 
 pub use crate::types::_dashboard_version_summary::DashboardVersionSummary;
 
+pub use crate::types::_custom_permissions::CustomPermissions;
+
+pub use crate::types::_brand_summary::BrandSummary;
+
 pub use crate::types::_asset_bundle_import_job_summary::AssetBundleImportJobSummary;
 
 pub use crate::types::_asset_bundle_import_job_status::AssetBundleImportJobStatus;
@@ -2166,6 +2210,8 @@ mod _anonymous_user_generative_qn_a_embedding_configuration;
 mod _anonymous_user_q_search_bar_embedding_configuration;
 
 mod _anonymous_user_snapshot_job_result;
+
+mod _application_theme;
 
 mod _arc_axis_configuration;
 
@@ -2403,11 +2449,29 @@ mod _box_plot_style_options;
 
 mod _box_plot_visual;
 
+mod _brand_color_palette;
+
+mod _brand_definition;
+
+mod _brand_detail;
+
+mod _brand_element_style;
+
+mod _brand_status;
+
+mod _brand_summary;
+
+mod _brand_version_status;
+
 mod _calculated_column;
 
 mod _calculated_field;
 
 mod _calculated_measure_field;
+
+mod _capabilities;
+
+mod _capability_state;
 
 mod _cascading_control_configuration;
 
@@ -2584,6 +2648,8 @@ mod _custom_filter_list_configuration;
 mod _custom_narrative_options;
 
 mod _custom_parameter_values;
+
+mod _custom_permissions;
 
 mod _custom_sql;
 
@@ -3083,6 +3149,16 @@ mod _identity_store;
 
 mod _identity_type;
 
+mod _image;
+
+mod _image_configuration;
+
+mod _image_set;
+
+mod _image_set_configuration;
+
+mod _image_source;
+
 mod _include_folder_members;
 
 mod _incremental_refresh;
@@ -3221,6 +3297,14 @@ mod _logical_table;
 
 mod _logical_table_source;
 
+mod _logo;
+
+mod _logo_configuration;
+
+mod _logo_set;
+
+mod _logo_set_configuration;
+
 mod _long_format_text;
 
 mod _lookback_window;
@@ -3278,6 +3362,8 @@ mod _namespace_error_type;
 mod _namespace_info_v2;
 
 mod _namespace_status;
+
+mod _navbar_style;
 
 mod _negative_format;
 
@@ -3340,6 +3426,8 @@ mod _output_column;
 mod _override_dataset_parameter_operation;
 
 mod _pagination_configuration;
+
+mod _palette;
 
 mod _panel_border_style;
 

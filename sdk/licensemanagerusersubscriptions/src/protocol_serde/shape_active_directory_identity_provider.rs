@@ -6,6 +6,15 @@ pub fn ser_active_directory_identity_provider(
     if let Some(var_1) = &input.directory_id {
         object.key("DirectoryId").string(var_1.as_str());
     }
+    if let Some(var_2) = &input.active_directory_settings {
+        #[allow(unused_mut)]
+        let mut object_3 = object.key("ActiveDirectorySettings").start_object();
+        crate::protocol_serde::shape_active_directory_settings::ser_active_directory_settings(&mut object_3, var_2)?;
+        object_3.finish();
+    }
+    if let Some(var_4) = &input.active_directory_type {
+        object.key("ActiveDirectoryType").string(var_4.as_str());
+    }
     Ok(())
 }
 
@@ -28,6 +37,18 @@ where
                             builder = builder.set_directory_id(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "ActiveDirectorySettings" => {
+                            builder = builder.set_active_directory_settings(
+                                crate::protocol_serde::shape_active_directory_settings::de_active_directory_settings(tokens)?,
+                            );
+                        }
+                        "ActiveDirectoryType" => {
+                            builder = builder.set_active_directory_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::ActiveDirectoryType::from(u.as_ref())))
                                     .transpose()?,
                             );
                         }

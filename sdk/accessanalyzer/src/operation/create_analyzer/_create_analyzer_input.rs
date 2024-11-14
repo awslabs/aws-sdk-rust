@@ -10,11 +10,13 @@ pub struct CreateAnalyzerInput {
     pub r#type: ::std::option::Option<crate::types::Type>,
     /// <p>Specifies the archive rules to add for the analyzer. Archive rules automatically archive findings that meet the criteria you define for the rule.</p>
     pub archive_rules: ::std::option::Option<::std::vec::Vec<crate::types::InlineArchiveRule>>,
-    /// <p>An array of key-value pairs to apply to the analyzer.</p>
+    /// <p>An array of key-value pairs to apply to the analyzer. You can use the set of Unicode letters, digits, whitespace, <code>_</code>, <code>.</code>, <code>/</code>, <code>=</code>, <code>+</code>, and <code>-</code>.</p>
+    /// <p>For the tag key, you can specify a value that is 1 to 128 characters in length and cannot be prefixed with <code>aws:</code>.</p>
+    /// <p>For the tag value, you can specify a value that is 0 to 256 characters in length.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>A client token.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies the configuration of the analyzer. If the analyzer is an unused access analyzer, the specified scope of unused access is used for the configuration. If the analyzer is an external access analyzer, this field is not used.</p>
+    /// <p>Specifies the configuration of the analyzer. If the analyzer is an unused access analyzer, the specified scope of unused access is used for the configuration.</p>
     pub configuration: ::std::option::Option<crate::types::AnalyzerConfiguration>,
 }
 impl CreateAnalyzerInput {
@@ -32,7 +34,9 @@ impl CreateAnalyzerInput {
     pub fn archive_rules(&self) -> &[crate::types::InlineArchiveRule] {
         self.archive_rules.as_deref().unwrap_or_default()
     }
-    /// <p>An array of key-value pairs to apply to the analyzer.</p>
+    /// <p>An array of key-value pairs to apply to the analyzer. You can use the set of Unicode letters, digits, whitespace, <code>_</code>, <code>.</code>, <code>/</code>, <code>=</code>, <code>+</code>, and <code>-</code>.</p>
+    /// <p>For the tag key, you can specify a value that is 1 to 128 characters in length and cannot be prefixed with <code>aws:</code>.</p>
+    /// <p>For the tag value, you can specify a value that is 0 to 256 characters in length.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
@@ -40,7 +44,7 @@ impl CreateAnalyzerInput {
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
     }
-    /// <p>Specifies the configuration of the analyzer. If the analyzer is an unused access analyzer, the specified scope of unused access is used for the configuration. If the analyzer is an external access analyzer, this field is not used.</p>
+    /// <p>Specifies the configuration of the analyzer. If the analyzer is an unused access analyzer, the specified scope of unused access is used for the configuration.</p>
     pub fn configuration(&self) -> ::std::option::Option<&crate::types::AnalyzerConfiguration> {
         self.configuration.as_ref()
     }
@@ -118,19 +122,25 @@ impl CreateAnalyzerInputBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>An array of key-value pairs to apply to the analyzer.</p>
+    /// <p>An array of key-value pairs to apply to the analyzer. You can use the set of Unicode letters, digits, whitespace, <code>_</code>, <code>.</code>, <code>/</code>, <code>=</code>, <code>+</code>, and <code>-</code>.</p>
+    /// <p>For the tag key, you can specify a value that is 1 to 128 characters in length and cannot be prefixed with <code>aws:</code>.</p>
+    /// <p>For the tag value, you can specify a value that is 0 to 256 characters in length.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>An array of key-value pairs to apply to the analyzer.</p>
+    /// <p>An array of key-value pairs to apply to the analyzer. You can use the set of Unicode letters, digits, whitespace, <code>_</code>, <code>.</code>, <code>/</code>, <code>=</code>, <code>+</code>, and <code>-</code>.</p>
+    /// <p>For the tag key, you can specify a value that is 1 to 128 characters in length and cannot be prefixed with <code>aws:</code>.</p>
+    /// <p>For the tag value, you can specify a value that is 0 to 256 characters in length.</p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
-    /// <p>An array of key-value pairs to apply to the analyzer.</p>
+    /// <p>An array of key-value pairs to apply to the analyzer. You can use the set of Unicode letters, digits, whitespace, <code>_</code>, <code>.</code>, <code>/</code>, <code>=</code>, <code>+</code>, and <code>-</code>.</p>
+    /// <p>For the tag key, you can specify a value that is 1 to 128 characters in length and cannot be prefixed with <code>aws:</code>.</p>
+    /// <p>For the tag value, you can specify a value that is 0 to 256 characters in length.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
@@ -148,17 +158,17 @@ impl CreateAnalyzerInputBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
-    /// <p>Specifies the configuration of the analyzer. If the analyzer is an unused access analyzer, the specified scope of unused access is used for the configuration. If the analyzer is an external access analyzer, this field is not used.</p>
+    /// <p>Specifies the configuration of the analyzer. If the analyzer is an unused access analyzer, the specified scope of unused access is used for the configuration.</p>
     pub fn configuration(mut self, input: crate::types::AnalyzerConfiguration) -> Self {
         self.configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies the configuration of the analyzer. If the analyzer is an unused access analyzer, the specified scope of unused access is used for the configuration. If the analyzer is an external access analyzer, this field is not used.</p>
+    /// <p>Specifies the configuration of the analyzer. If the analyzer is an unused access analyzer, the specified scope of unused access is used for the configuration.</p>
     pub fn set_configuration(mut self, input: ::std::option::Option<crate::types::AnalyzerConfiguration>) -> Self {
         self.configuration = input;
         self
     }
-    /// <p>Specifies the configuration of the analyzer. If the analyzer is an unused access analyzer, the specified scope of unused access is used for the configuration. If the analyzer is an external access analyzer, this field is not used.</p>
+    /// <p>Specifies the configuration of the analyzer. If the analyzer is an unused access analyzer, the specified scope of unused access is used for the configuration.</p>
     pub fn get_configuration(&self) -> &::std::option::Option<crate::types::AnalyzerConfiguration> {
         &self.configuration
     }

@@ -19,6 +19,12 @@ pub mod create_account_subscription;
 /// Types for the `CreateAnalysis` operation.
 pub mod create_analysis;
 
+/// Types for the `CreateBrand` operation.
+pub mod create_brand;
+
+/// Types for the `CreateCustomPermissions` operation.
+pub mod create_custom_permissions;
+
 /// Types for the `CreateDashboard` operation.
 pub mod create_dashboard;
 
@@ -84,6 +90,15 @@ pub mod delete_account_subscription;
 
 /// Types for the `DeleteAnalysis` operation.
 pub mod delete_analysis;
+
+/// Types for the `DeleteBrand` operation.
+pub mod delete_brand;
+
+/// Types for the `DeleteBrandAssignment` operation.
+pub mod delete_brand_assignment;
+
+/// Types for the `DeleteCustomPermissions` operation.
+pub mod delete_custom_permissions;
 
 /// Types for the `DeleteDashboard` operation.
 pub mod delete_dashboard;
@@ -151,6 +166,9 @@ pub mod delete_user;
 /// Types for the `DeleteUserByPrincipalId` operation.
 pub mod delete_user_by_principal_id;
 
+/// Types for the `DeleteUserCustomPermission` operation.
+pub mod delete_user_custom_permission;
+
 /// Types for the `DeleteVPCConnection` operation.
 pub mod delete_vpc_connection;
 
@@ -177,6 +195,18 @@ pub mod describe_asset_bundle_export_job;
 
 /// Types for the `DescribeAssetBundleImportJob` operation.
 pub mod describe_asset_bundle_import_job;
+
+/// Types for the `DescribeBrand` operation.
+pub mod describe_brand;
+
+/// Types for the `DescribeBrandAssignment` operation.
+pub mod describe_brand_assignment;
+
+/// Types for the `DescribeBrandPublishedVersion` operation.
+pub mod describe_brand_published_version;
+
+/// Types for the `DescribeCustomPermissions` operation.
+pub mod describe_custom_permissions;
 
 /// Types for the `DescribeDashboard` operation.
 pub mod describe_dashboard;
@@ -306,6 +336,12 @@ pub mod list_asset_bundle_export_jobs;
 
 /// Types for the `ListAssetBundleImportJobs` operation.
 pub mod list_asset_bundle_import_jobs;
+
+/// Types for the `ListBrands` operation.
+pub mod list_brands;
+
+/// Types for the `ListCustomPermissions` operation.
+pub mod list_custom_permissions;
 
 /// Types for the `ListDashboardVersions` operation.
 pub mod list_dashboard_versions;
@@ -451,6 +487,18 @@ pub mod update_analysis;
 /// Types for the `UpdateAnalysisPermissions` operation.
 pub mod update_analysis_permissions;
 
+/// Types for the `UpdateBrand` operation.
+pub mod update_brand;
+
+/// Types for the `UpdateBrandAssignment` operation.
+pub mod update_brand_assignment;
+
+/// Types for the `UpdateBrandPublishedVersion` operation.
+pub mod update_brand_published_version;
+
+/// Types for the `UpdateCustomPermissions` operation.
+pub mod update_custom_permissions;
+
 /// Types for the `UpdateDashboard` operation.
 pub mod update_dashboard;
 
@@ -540,6 +588,9 @@ pub mod update_topic_refresh_schedule;
 
 /// Types for the `UpdateUser` operation.
 pub mod update_user;
+
+/// Types for the `UpdateUserCustomPermission` operation.
+pub mod update_user_custom_permission;
 
 /// Types for the `UpdateVPCConnection` operation.
 pub mod update_vpc_connection;

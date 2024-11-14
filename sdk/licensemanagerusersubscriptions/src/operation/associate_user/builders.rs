@@ -110,60 +110,79 @@ impl AssociateUserFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The user name from the identity provider for the user.</p>
+    /// <p>The user name from the identity provider.</p>
     pub fn username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.username(input.into());
         self
     }
-    /// <p>The user name from the identity provider for the user.</p>
+    /// <p>The user name from the identity provider.</p>
     pub fn set_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_username(input);
         self
     }
-    /// <p>The user name from the identity provider for the user.</p>
+    /// <p>The user name from the identity provider.</p>
     pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_username()
     }
-    /// <p>The ID of the EC2 instance, which provides user-based subscriptions.</p>
+    /// <p>The ID of the EC2 instance that provides the user-based subscription.</p>
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.instance_id(input.into());
         self
     }
-    /// <p>The ID of the EC2 instance, which provides user-based subscriptions.</p>
+    /// <p>The ID of the EC2 instance that provides the user-based subscription.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_instance_id(input);
         self
     }
-    /// <p>The ID of the EC2 instance, which provides user-based subscriptions.</p>
+    /// <p>The ID of the EC2 instance that provides the user-based subscription.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_instance_id()
     }
-    /// <p>The identity provider of the user.</p>
+    /// <p>The identity provider for the user.</p>
     pub fn identity_provider(mut self, input: crate::types::IdentityProvider) -> Self {
         self.inner = self.inner.identity_provider(input);
         self
     }
-    /// <p>The identity provider of the user.</p>
+    /// <p>The identity provider for the user.</p>
     pub fn set_identity_provider(mut self, input: ::std::option::Option<crate::types::IdentityProvider>) -> Self {
         self.inner = self.inner.set_identity_provider(input);
         self
     }
-    /// <p>The identity provider of the user.</p>
+    /// <p>The identity provider for the user.</p>
     pub fn get_identity_provider(&self) -> &::std::option::Option<crate::types::IdentityProvider> {
         self.inner.get_identity_provider()
     }
-    /// <p>The domain name of the user.</p>
+    /// <p>The domain name of the Active Directory that contains information for the user to associate.</p>
     pub fn domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.domain(input.into());
         self
     }
-    /// <p>The domain name of the user.</p>
+    /// <p>The domain name of the Active Directory that contains information for the user to associate.</p>
     pub fn set_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_domain(input);
         self
     }
-    /// <p>The domain name of the user.</p>
+    /// <p>The domain name of the Active Directory that contains information for the user to associate.</p>
     pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_domain()
+    }
+    ///
+    /// Adds a key-value pair to `Tags`.
+    ///
+    /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+    ///
+    /// <p>The tags that apply for the user association.</p>
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.tags(k.into(), v.into());
+        self
+    }
+    /// <p>The tags that apply for the user association.</p>
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
+        self.inner = self.inner.set_tags(input);
+        self
+    }
+    /// <p>The tags that apply for the user association.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.inner.get_tags()
     }
 }

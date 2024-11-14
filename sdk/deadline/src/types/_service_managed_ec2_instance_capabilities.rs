@@ -14,6 +14,8 @@ pub struct ServiceManagedEc2InstanceCapabilities {
     pub cpu_architecture_type: crate::types::CpuArchitectureType,
     /// <p>The root EBS volume.</p>
     pub root_ebs_volume: ::std::option::Option<crate::types::Ec2EbsVolume>,
+    /// <p>The GPU accelerator capabilities required for the Amazon EC2 instances. If you include the <code>acceleratorCapabilities</code> property in the <a href="https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_ServiceManagedEc2InstanceCapabilities">ServiceManagedEc2InstanceCapabilities</a> object, all of the Amazon EC2 instances will have at least one accelerator.</p>
+    pub accelerator_capabilities: ::std::option::Option<crate::types::AcceleratorCapabilities>,
     /// <p>The allowable Amazon EC2 instance types.</p>
     pub allowed_instance_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The instance types to exclude from the fleet.</p>
@@ -43,6 +45,10 @@ impl ServiceManagedEc2InstanceCapabilities {
     /// <p>The root EBS volume.</p>
     pub fn root_ebs_volume(&self) -> ::std::option::Option<&crate::types::Ec2EbsVolume> {
         self.root_ebs_volume.as_ref()
+    }
+    /// <p>The GPU accelerator capabilities required for the Amazon EC2 instances. If you include the <code>acceleratorCapabilities</code> property in the <a href="https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_ServiceManagedEc2InstanceCapabilities">ServiceManagedEc2InstanceCapabilities</a> object, all of the Amazon EC2 instances will have at least one accelerator.</p>
+    pub fn accelerator_capabilities(&self) -> ::std::option::Option<&crate::types::AcceleratorCapabilities> {
+        self.accelerator_capabilities.as_ref()
     }
     /// <p>The allowable Amazon EC2 instance types.</p>
     ///
@@ -85,6 +91,7 @@ pub struct ServiceManagedEc2InstanceCapabilitiesBuilder {
     pub(crate) os_family: ::std::option::Option<crate::types::ServiceManagedFleetOperatingSystemFamily>,
     pub(crate) cpu_architecture_type: ::std::option::Option<crate::types::CpuArchitectureType>,
     pub(crate) root_ebs_volume: ::std::option::Option<crate::types::Ec2EbsVolume>,
+    pub(crate) accelerator_capabilities: ::std::option::Option<crate::types::AcceleratorCapabilities>,
     pub(crate) allowed_instance_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) excluded_instance_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) custom_amounts: ::std::option::Option<::std::vec::Vec<crate::types::FleetAmountCapability>>,
@@ -164,6 +171,20 @@ impl ServiceManagedEc2InstanceCapabilitiesBuilder {
     /// <p>The root EBS volume.</p>
     pub fn get_root_ebs_volume(&self) -> &::std::option::Option<crate::types::Ec2EbsVolume> {
         &self.root_ebs_volume
+    }
+    /// <p>The GPU accelerator capabilities required for the Amazon EC2 instances. If you include the <code>acceleratorCapabilities</code> property in the <a href="https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_ServiceManagedEc2InstanceCapabilities">ServiceManagedEc2InstanceCapabilities</a> object, all of the Amazon EC2 instances will have at least one accelerator.</p>
+    pub fn accelerator_capabilities(mut self, input: crate::types::AcceleratorCapabilities) -> Self {
+        self.accelerator_capabilities = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The GPU accelerator capabilities required for the Amazon EC2 instances. If you include the <code>acceleratorCapabilities</code> property in the <a href="https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_ServiceManagedEc2InstanceCapabilities">ServiceManagedEc2InstanceCapabilities</a> object, all of the Amazon EC2 instances will have at least one accelerator.</p>
+    pub fn set_accelerator_capabilities(mut self, input: ::std::option::Option<crate::types::AcceleratorCapabilities>) -> Self {
+        self.accelerator_capabilities = input;
+        self
+    }
+    /// <p>The GPU accelerator capabilities required for the Amazon EC2 instances. If you include the <code>acceleratorCapabilities</code> property in the <a href="https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_ServiceManagedEc2InstanceCapabilities">ServiceManagedEc2InstanceCapabilities</a> object, all of the Amazon EC2 instances will have at least one accelerator.</p>
+    pub fn get_accelerator_capabilities(&self) -> &::std::option::Option<crate::types::AcceleratorCapabilities> {
+        &self.accelerator_capabilities
     }
     /// Appends an item to `allowed_instance_types`.
     ///
@@ -268,6 +289,7 @@ impl ServiceManagedEc2InstanceCapabilitiesBuilder {
                 )
             })?,
             root_ebs_volume: self.root_ebs_volume,
+            accelerator_capabilities: self.accelerator_capabilities,
             allowed_instance_types: self.allowed_instance_types,
             excluded_instance_types: self.excluded_instance_types,
             custom_amounts: self.custom_amounts,

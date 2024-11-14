@@ -23,6 +23,8 @@ pub struct UpdateFuotaTaskInput {
     /// <p>This interval only determines the timing for when the Cloud sends down the fragments to yor device. There can be a delay for when your device will receive these fragments. This delay depends on the device's class and the communication delay with the cloud.</p>
     /// </note>
     pub fragment_interval_ms: ::std::option::Option<i32>,
+    /// <p>The Descriptor specifies some metadata about the File being transferred using FUOTA e.g. the software version. It is sent transparently to the device. It is a binary field encoded in base64</p>
+    pub descriptor: ::std::option::Option<::std::string::String>,
 }
 impl UpdateFuotaTaskInput {
     /// <p>The ID of a FUOTA task.</p>
@@ -63,6 +65,10 @@ impl UpdateFuotaTaskInput {
     pub fn fragment_interval_ms(&self) -> ::std::option::Option<i32> {
         self.fragment_interval_ms
     }
+    /// <p>The Descriptor specifies some metadata about the File being transferred using FUOTA e.g. the software version. It is sent transparently to the device. It is a binary field encoded in base64</p>
+    pub fn descriptor(&self) -> ::std::option::Option<&str> {
+        self.descriptor.as_deref()
+    }
 }
 impl UpdateFuotaTaskInput {
     /// Creates a new builder-style object to manufacture [`UpdateFuotaTaskInput`](crate::operation::update_fuota_task::UpdateFuotaTaskInput).
@@ -84,6 +90,7 @@ pub struct UpdateFuotaTaskInputBuilder {
     pub(crate) redundancy_percent: ::std::option::Option<i32>,
     pub(crate) fragment_size_bytes: ::std::option::Option<i32>,
     pub(crate) fragment_interval_ms: ::std::option::Option<i32>,
+    pub(crate) descriptor: ::std::option::Option<::std::string::String>,
 }
 impl UpdateFuotaTaskInputBuilder {
     /// <p>The ID of a FUOTA task.</p>
@@ -219,6 +226,20 @@ impl UpdateFuotaTaskInputBuilder {
     pub fn get_fragment_interval_ms(&self) -> &::std::option::Option<i32> {
         &self.fragment_interval_ms
     }
+    /// <p>The Descriptor specifies some metadata about the File being transferred using FUOTA e.g. the software version. It is sent transparently to the device. It is a binary field encoded in base64</p>
+    pub fn descriptor(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.descriptor = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Descriptor specifies some metadata about the File being transferred using FUOTA e.g. the software version. It is sent transparently to the device. It is a binary field encoded in base64</p>
+    pub fn set_descriptor(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.descriptor = input;
+        self
+    }
+    /// <p>The Descriptor specifies some metadata about the File being transferred using FUOTA e.g. the software version. It is sent transparently to the device. It is a binary field encoded in base64</p>
+    pub fn get_descriptor(&self) -> &::std::option::Option<::std::string::String> {
+        &self.descriptor
+    }
     /// Consumes the builder and constructs a [`UpdateFuotaTaskInput`](crate::operation::update_fuota_task::UpdateFuotaTaskInput).
     pub fn build(
         self,
@@ -233,6 +254,7 @@ impl UpdateFuotaTaskInputBuilder {
             redundancy_percent: self.redundancy_percent,
             fragment_size_bytes: self.fragment_size_bytes,
             fragment_interval_ms: self.fragment_interval_ms,
+            descriptor: self.descriptor,
         })
     }
 }

@@ -6,36 +6,45 @@ pub fn ser_create_channel_input_input(
     if let Some(var_1) = &input.authorized {
         object.key("authorized").boolean(*var_1);
     }
-    if let Some(var_2) = &input.insecure_ingest {
-        object.key("insecureIngest").boolean(*var_2);
+    if let Some(var_2) = &input.container_format {
+        object.key("containerFormat").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.latency_mode {
-        object.key("latencyMode").string(var_3.as_str());
+    if let Some(var_3) = &input.insecure_ingest {
+        object.key("insecureIngest").boolean(*var_3);
     }
-    if let Some(var_4) = &input.name {
-        object.key("name").string(var_4.as_str());
+    if let Some(var_4) = &input.latency_mode {
+        object.key("latencyMode").string(var_4.as_str());
     }
-    if let Some(var_5) = &input.playback_restriction_policy_arn {
-        object.key("playbackRestrictionPolicyArn").string(var_5.as_str());
-    }
-    if let Some(var_6) = &input.preset {
-        object.key("preset").string(var_6.as_str());
-    }
-    if let Some(var_7) = &input.recording_configuration_arn {
-        object.key("recordingConfigurationArn").string(var_7.as_str());
-    }
-    if let Some(var_8) = &input.tags {
+    if let Some(var_5) = &input.multitrack_input_configuration {
         #[allow(unused_mut)]
-        let mut object_9 = object.key("tags").start_object();
-        for (key_10, value_11) in var_8 {
+        let mut object_6 = object.key("multitrackInputConfiguration").start_object();
+        crate::protocol_serde::shape_multitrack_input_configuration::ser_multitrack_input_configuration(&mut object_6, var_5)?;
+        object_6.finish();
+    }
+    if let Some(var_7) = &input.name {
+        object.key("name").string(var_7.as_str());
+    }
+    if let Some(var_8) = &input.playback_restriction_policy_arn {
+        object.key("playbackRestrictionPolicyArn").string(var_8.as_str());
+    }
+    if let Some(var_9) = &input.preset {
+        object.key("preset").string(var_9.as_str());
+    }
+    if let Some(var_10) = &input.recording_configuration_arn {
+        object.key("recordingConfigurationArn").string(var_10.as_str());
+    }
+    if let Some(var_11) = &input.tags {
+        #[allow(unused_mut)]
+        let mut object_12 = object.key("tags").start_object();
+        for (key_13, value_14) in var_11 {
             {
-                object_9.key(key_10.as_str()).string(value_11.as_str());
+                object_12.key(key_13.as_str()).string(value_14.as_str());
             }
         }
-        object_9.finish();
+        object_12.finish();
     }
-    if let Some(var_12) = &input.r#type {
-        object.key("type").string(var_12.as_str());
+    if let Some(var_15) = &input.r#type {
+        object.key("type").string(var_15.as_str());
     }
     Ok(())
 }

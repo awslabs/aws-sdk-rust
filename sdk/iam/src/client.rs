@@ -303,7 +303,15 @@ mod detach_role_policy;
 
 mod detach_user_policy;
 
+mod disable_organizations_root_credentials_management;
+
+mod disable_organizations_root_sessions;
+
 mod enable_mfa_device;
+
+mod enable_organizations_root_credentials_management;
+
+mod enable_organizations_root_sessions;
 
 mod generate_credential_report;
 
@@ -394,6 +402,8 @@ mod list_mfa_devices;
 mod list_open_id_connect_provider_tags;
 
 mod list_open_id_connect_providers;
+
+mod list_organizations_features;
 
 mod list_policies;
 

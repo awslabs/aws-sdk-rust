@@ -1027,6 +1027,33 @@ impl From<crate::operation::untag_resource::UntagResourceError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_analyzer::UpdateAnalyzerError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_analyzer::UpdateAnalyzerError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_analyzer::UpdateAnalyzerError> for Error {
+    fn from(err: crate::operation::update_analyzer::UpdateAnalyzerError) -> Self {
+        match err {
+            crate::operation::update_analyzer::UpdateAnalyzerError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_analyzer::UpdateAnalyzerError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::update_analyzer::UpdateAnalyzerError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::update_analyzer::UpdateAnalyzerError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_analyzer::UpdateAnalyzerError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_analyzer::UpdateAnalyzerError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_analyzer::UpdateAnalyzerError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_archive_rule::UpdateArchiveRuleError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

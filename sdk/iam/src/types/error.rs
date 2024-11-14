@@ -41,6 +41,14 @@ pub use crate::types::error::_policy_not_attachable_exception::PolicyNotAttachab
 
 pub use crate::types::error::_service_not_supported_exception::ServiceNotSupportedException;
 
+pub use crate::types::error::_service_access_not_enabled_exception::ServiceAccessNotEnabledException;
+
+pub use crate::types::error::_organization_not_in_all_features_mode_exception::OrganizationNotInAllFeaturesModeException;
+
+pub use crate::types::error::_organization_not_found_exception::OrganizationNotFoundException;
+
+pub use crate::types::error::_account_not_management_or_delegated_administrator_exception::AccountNotManagementOrDelegatedAdministratorException;
+
 pub use crate::types::error::_credential_report_not_ready_exception::CredentialReportNotReadyException;
 
 pub use crate::types::error::_credential_report_not_present_exception::CredentialReportNotPresentException;
@@ -49,11 +57,17 @@ pub use crate::types::error::_credential_report_expired_exception::CredentialRep
 
 pub use crate::types::error::_report_generation_limit_exceeded_exception::ReportGenerationLimitExceededException;
 
+pub use crate::types::error::_caller_is_not_management_account_exception::CallerIsNotManagementAccountException;
+
 pub use crate::types::error::_delete_conflict_exception::DeleteConflictException;
 
 pub use crate::types::error::_open_id_idp_communication_error_exception::OpenIdIdpCommunicationErrorException;
 
 pub use crate::types::error::_invalid_user_type_exception::InvalidUserTypeException;
+
+mod _account_not_management_or_delegated_administrator_exception;
+
+mod _caller_is_not_management_account_exception;
 
 mod _concurrent_modification_exception;
 
@@ -95,6 +109,10 @@ mod _no_such_entity_exception;
 
 mod _open_id_idp_communication_error_exception;
 
+mod _organization_not_found_exception;
+
+mod _organization_not_in_all_features_mode_exception;
+
 mod _password_policy_violation_exception;
 
 mod _policy_evaluation_exception;
@@ -102,6 +120,8 @@ mod _policy_evaluation_exception;
 mod _policy_not_attachable_exception;
 
 mod _report_generation_limit_exceeded_exception;
+
+mod _service_access_not_enabled_exception;
 
 mod _service_failure_exception;
 

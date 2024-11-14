@@ -6,7 +6,7 @@ impl super::Client {
     ///   - [`analyzer_name(impl Into<String>)`](crate::operation::get_archive_rule::builders::GetArchiveRuleFluentBuilder::analyzer_name) / [`set_analyzer_name(Option<String>)`](crate::operation::get_archive_rule::builders::GetArchiveRuleFluentBuilder::set_analyzer_name):<br>required: **true**<br><p>The name of the analyzer to retrieve rules from.</p><br>
     ///   - [`rule_name(impl Into<String>)`](crate::operation::get_archive_rule::builders::GetArchiveRuleFluentBuilder::rule_name) / [`set_rule_name(Option<String>)`](crate::operation::get_archive_rule::builders::GetArchiveRuleFluentBuilder::set_rule_name):<br>required: **true**<br><p>The name of the rule to retrieve.</p><br>
     /// - On success, responds with [`GetArchiveRuleOutput`](crate::operation::get_archive_rule::GetArchiveRuleOutput) with field(s):
-    ///   - [`archive_rule(Option<ArchiveRuleSummary>)`](crate::operation::get_archive_rule::GetArchiveRuleOutput::archive_rule): <p>Contains information about an archive rule.</p>
+    ///   - [`archive_rule(Option<ArchiveRuleSummary>)`](crate::operation::get_archive_rule::GetArchiveRuleOutput::archive_rule): <p>Contains information about an archive rule. Archive rules automatically archive new findings that meet the criteria you define when you create the rule.</p>
     /// - On failure, responds with [`SdkError<GetArchiveRuleError>`](crate::operation::get_archive_rule::GetArchiveRuleError)
     pub fn get_archive_rule(&self) -> crate::operation::get_archive_rule::builders::GetArchiveRuleFluentBuilder {
         crate::operation::get_archive_rule::builders::GetArchiveRuleFluentBuilder::new(self.handle.clone())

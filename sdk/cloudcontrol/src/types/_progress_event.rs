@@ -13,6 +13,8 @@ pub struct ProgressEvent {
     /// <p>The unique token representing this resource operation request.</p>
     /// <p>Use the <code>RequestToken</code> with <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/APIReference/API_GetResourceRequestStatus.html">GetResourceRequestStatus</a> to return the current status of a resource operation request.</p>
     pub request_token: ::std::option::Option<::std::string::String>,
+    /// <p>The unique token representing the Hooks operation for the request.</p>
+    pub hooks_request_token: ::std::option::Option<::std::string::String>,
     /// <p>The resource operation type.</p>
     pub operation: ::std::option::Option<crate::types::Operation>,
     /// <p>The current status of the resource operation request.</p>
@@ -58,6 +60,10 @@ impl ProgressEvent {
     /// <p>Use the <code>RequestToken</code> with <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/APIReference/API_GetResourceRequestStatus.html">GetResourceRequestStatus</a> to return the current status of a resource operation request.</p>
     pub fn request_token(&self) -> ::std::option::Option<&str> {
         self.request_token.as_deref()
+    }
+    /// <p>The unique token representing the Hooks operation for the request.</p>
+    pub fn hooks_request_token(&self) -> ::std::option::Option<&str> {
+        self.hooks_request_token.as_deref()
     }
     /// <p>The resource operation type.</p>
     pub fn operation(&self) -> ::std::option::Option<&crate::types::Operation> {
@@ -109,6 +115,7 @@ impl ::std::fmt::Debug for ProgressEvent {
         formatter.field("type_name", &self.type_name);
         formatter.field("identifier", &self.identifier);
         formatter.field("request_token", &self.request_token);
+        formatter.field("hooks_request_token", &self.hooks_request_token);
         formatter.field("operation", &self.operation);
         formatter.field("operation_status", &self.operation_status);
         formatter.field("event_time", &self.event_time);
@@ -133,6 +140,7 @@ pub struct ProgressEventBuilder {
     pub(crate) type_name: ::std::option::Option<::std::string::String>,
     pub(crate) identifier: ::std::option::Option<::std::string::String>,
     pub(crate) request_token: ::std::option::Option<::std::string::String>,
+    pub(crate) hooks_request_token: ::std::option::Option<::std::string::String>,
     pub(crate) operation: ::std::option::Option<crate::types::Operation>,
     pub(crate) operation_status: ::std::option::Option<crate::types::OperationStatus>,
     pub(crate) event_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -192,6 +200,20 @@ impl ProgressEventBuilder {
     /// <p>Use the <code>RequestToken</code> with <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/APIReference/API_GetResourceRequestStatus.html">GetResourceRequestStatus</a> to return the current status of a resource operation request.</p>
     pub fn get_request_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.request_token
+    }
+    /// <p>The unique token representing the Hooks operation for the request.</p>
+    pub fn hooks_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.hooks_request_token = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The unique token representing the Hooks operation for the request.</p>
+    pub fn set_hooks_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.hooks_request_token = input;
+        self
+    }
+    /// <p>The unique token representing the Hooks operation for the request.</p>
+    pub fn get_hooks_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hooks_request_token
     }
     /// <p>The resource operation type.</p>
     pub fn operation(mut self, input: crate::types::Operation) -> Self {
@@ -342,6 +364,7 @@ impl ProgressEventBuilder {
             type_name: self.type_name,
             identifier: self.identifier,
             request_token: self.request_token,
+            hooks_request_token: self.hooks_request_token,
             operation: self.operation,
             operation_status: self.operation_status,
             event_time: self.event_time,
@@ -358,6 +381,7 @@ impl ::std::fmt::Debug for ProgressEventBuilder {
         formatter.field("type_name", &self.type_name);
         formatter.field("identifier", &self.identifier);
         formatter.field("request_token", &self.request_token);
+        formatter.field("hooks_request_token", &self.hooks_request_token);
         formatter.field("operation", &self.operation);
         formatter.field("operation_status", &self.operation_status);
         formatter.field("event_time", &self.event_time);

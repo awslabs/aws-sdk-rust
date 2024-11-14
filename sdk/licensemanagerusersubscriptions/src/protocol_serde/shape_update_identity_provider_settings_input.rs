@@ -9,14 +9,17 @@ pub fn ser_update_identity_provider_settings_input_input(
         crate::protocol_serde::shape_identity_provider::ser_identity_provider(&mut object_2, var_1)?;
         object_2.finish();
     }
-    if let Some(var_3) = &input.product {
-        object.key("Product").string(var_3.as_str());
+    if let Some(var_3) = &input.identity_provider_arn {
+        object.key("IdentityProviderArn").string(var_3.as_str());
     }
-    if let Some(var_4) = &input.update_settings {
+    if let Some(var_4) = &input.product {
+        object.key("Product").string(var_4.as_str());
+    }
+    if let Some(var_5) = &input.update_settings {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("UpdateSettings").start_object();
-        crate::protocol_serde::shape_update_settings::ser_update_settings(&mut object_5, var_4)?;
-        object_5.finish();
+        let mut object_6 = object.key("UpdateSettings").start_object();
+        crate::protocol_serde::shape_update_settings::ser_update_settings(&mut object_6, var_5)?;
+        object_6.finish();
     }
     Ok(())
 }

@@ -7,7 +7,7 @@ publish = false
 
 [dependencies]
 aws-config= { version = "1.5.10", path = "../../../sdk/aws-config", features = ["behavior-version-latest"] }
-aws-sdk-s3= { version = "1.60.0", path = "../../../sdk/s3" }
+aws-sdk-s3= { version = "1.61.0", path = "../../../sdk/s3" }
 
 [dependencies.tokio]
 version = "1"

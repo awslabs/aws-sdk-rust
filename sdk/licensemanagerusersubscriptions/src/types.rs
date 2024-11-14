@@ -7,6 +7,16 @@ pub use crate::types::_identity_provider::IdentityProvider;
 
 pub use crate::types::_active_directory_identity_provider::ActiveDirectoryIdentityProvider;
 
+pub use crate::types::_active_directory_type::ActiveDirectoryType;
+
+pub use crate::types::_active_directory_settings::ActiveDirectorySettings;
+
+pub use crate::types::_domain_network_settings::DomainNetworkSettings;
+
+pub use crate::types::_credentials_provider::CredentialsProvider;
+
+pub use crate::types::_secrets_manager_credentials_provider::SecretsManagerCredentialsProvider;
+
 pub use crate::types::_update_settings::UpdateSettings;
 
 pub use crate::types::_product_user_summary::ProductUserSummary;
@@ -15,9 +25,35 @@ pub use crate::types::_instance_user_summary::InstanceUserSummary;
 
 pub use crate::types::_filter::Filter;
 
+pub use crate::types::_license_server_endpoint::LicenseServerEndpoint;
+
+pub use crate::types::_license_server::LicenseServer;
+
+pub use crate::types::_license_server_health_status::LicenseServerHealthStatus;
+
+pub use crate::types::_license_server_endpoint_provisioning_status::LicenseServerEndpointProvisioningStatus;
+
+pub use crate::types::_server_endpoint::ServerEndpoint;
+
+pub use crate::types::_server_type::ServerType;
+
 pub use crate::types::_instance_summary::InstanceSummary;
 
+pub use crate::types::_license_server_settings::LicenseServerSettings;
+
+pub use crate::types::_server_settings::ServerSettings;
+
+pub use crate::types::_rds_sal_settings::RdsSalSettings;
+
 mod _active_directory_identity_provider;
+
+mod _active_directory_settings;
+
+mod _active_directory_type;
+
+mod _credentials_provider;
+
+mod _domain_network_settings;
 
 mod _filter;
 
@@ -29,7 +65,27 @@ mod _instance_summary;
 
 mod _instance_user_summary;
 
+mod _license_server;
+
+mod _license_server_endpoint;
+
+mod _license_server_endpoint_provisioning_status;
+
+mod _license_server_health_status;
+
+mod _license_server_settings;
+
 mod _product_user_summary;
+
+mod _rds_sal_settings;
+
+mod _secrets_manager_credentials_provider;
+
+mod _server_endpoint;
+
+mod _server_settings;
+
+mod _server_type;
 
 mod _settings;
 

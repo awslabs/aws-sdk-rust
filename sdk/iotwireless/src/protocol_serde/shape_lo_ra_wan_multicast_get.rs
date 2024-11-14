@@ -42,6 +42,11 @@ where
                                     .transpose()?,
                             );
                         }
+                        "ParticipatingGateways" => {
+                            builder = builder.set_participating_gateways(
+                                crate::protocol_serde::shape_participating_gateways_multicast::de_participating_gateways_multicast(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

@@ -12,6 +12,7 @@
 /// ```text
 /// # let eventnotificationresourcetype = unimplemented!();
 /// match eventnotificationresourcetype {
+///     EventNotificationResourceType::FuotaTask => { /* ... */ },
 ///     EventNotificationResourceType::SidewalkAccount => { /* ... */ },
 ///     EventNotificationResourceType::WirelessDevice => { /* ... */ },
 ///     EventNotificationResourceType::WirelessGateway => { /* ... */ },
@@ -43,6 +44,8 @@
 )]
 pub enum EventNotificationResourceType {
     #[allow(missing_docs)] // documentation missing in model
+    FuotaTask,
+    #[allow(missing_docs)] // documentation missing in model
     SidewalkAccount,
     #[allow(missing_docs)] // documentation missing in model
     WirelessDevice,
@@ -55,6 +58,7 @@ pub enum EventNotificationResourceType {
 impl ::std::convert::From<&str> for EventNotificationResourceType {
     fn from(s: &str) -> Self {
         match s {
+            "FuotaTask" => EventNotificationResourceType::FuotaTask,
             "SidewalkAccount" => EventNotificationResourceType::SidewalkAccount,
             "WirelessDevice" => EventNotificationResourceType::WirelessDevice,
             "WirelessGateway" => EventNotificationResourceType::WirelessGateway,
@@ -73,6 +77,7 @@ impl EventNotificationResourceType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            EventNotificationResourceType::FuotaTask => "FuotaTask",
             EventNotificationResourceType::SidewalkAccount => "SidewalkAccount",
             EventNotificationResourceType::WirelessDevice => "WirelessDevice",
             EventNotificationResourceType::WirelessGateway => "WirelessGateway",
@@ -81,7 +86,7 @@ impl EventNotificationResourceType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["SidewalkAccount", "WirelessDevice", "WirelessGateway"]
+        &["FuotaTask", "SidewalkAccount", "WirelessDevice", "WirelessGateway"]
     }
 }
 impl ::std::convert::AsRef<str> for EventNotificationResourceType {
@@ -104,6 +109,7 @@ impl EventNotificationResourceType {
 impl ::std::fmt::Display for EventNotificationResourceType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            EventNotificationResourceType::FuotaTask => write!(f, "FuotaTask"),
             EventNotificationResourceType::SidewalkAccount => write!(f, "SidewalkAccount"),
             EventNotificationResourceType::WirelessDevice => write!(f, "WirelessDevice"),
             EventNotificationResourceType::WirelessGateway => write!(f, "WirelessGateway"),

@@ -143,6 +143,13 @@ pub(crate) fn de_get_fuota_task(
                             .transpose()?,
                     );
                 }
+                "Descriptor" => {
+                    builder = builder.set_descriptor(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
                 "FirmwareUpdateImage" => {
                     builder = builder.set_firmware_update_image(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

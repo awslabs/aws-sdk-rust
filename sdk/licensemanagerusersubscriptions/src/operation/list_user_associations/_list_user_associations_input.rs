@@ -7,11 +7,19 @@ pub struct ListUserAssociationsInput {
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>An object that specifies details for the identity provider.</p>
     pub identity_provider: ::std::option::Option<crate::types::IdentityProvider>,
-    /// <p>Maximum number of results to return in a single call.</p>
+    /// <p>The maximum number of results to return from a single request.</p>
     pub max_results: ::std::option::Option<i32>,
-    /// <p>An array of structures that you can use to filter the results to those that match one or more sets of key-value pairs that you specify.</p>
+    /// <p>You can use the following filters to streamline results:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Status</p></li>
+    /// <li>
+    /// <p>Username</p></li>
+    /// <li>
+    /// <p>Domain</p></li>
+    /// </ul>
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    /// <p>Token for the next set of results.</p>
+    /// <p>A token to specify where to start paginating. This is the nextToken from a previously truncated response.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListUserAssociationsInput {
@@ -23,17 +31,25 @@ impl ListUserAssociationsInput {
     pub fn identity_provider(&self) -> ::std::option::Option<&crate::types::IdentityProvider> {
         self.identity_provider.as_ref()
     }
-    /// <p>Maximum number of results to return in a single call.</p>
+    /// <p>The maximum number of results to return from a single request.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
-    /// <p>An array of structures that you can use to filter the results to those that match one or more sets of key-value pairs that you specify.</p>
+    /// <p>You can use the following filters to streamline results:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Status</p></li>
+    /// <li>
+    /// <p>Username</p></li>
+    /// <li>
+    /// <p>Domain</p></li>
+    /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
     pub fn filters(&self) -> &[crate::types::Filter] {
         self.filters.as_deref().unwrap_or_default()
     }
-    /// <p>Token for the next set of results.</p>
+    /// <p>A token to specify where to start paginating. This is the nextToken from a previously truncated response.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -86,17 +102,17 @@ impl ListUserAssociationsInputBuilder {
     pub fn get_identity_provider(&self) -> &::std::option::Option<crate::types::IdentityProvider> {
         &self.identity_provider
     }
-    /// <p>Maximum number of results to return in a single call.</p>
+    /// <p>The maximum number of results to return from a single request.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Maximum number of results to return in a single call.</p>
+    /// <p>The maximum number of results to return from a single request.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
     }
-    /// <p>Maximum number of results to return in a single call.</p>
+    /// <p>The maximum number of results to return from a single request.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
@@ -104,33 +120,57 @@ impl ListUserAssociationsInputBuilder {
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>An array of structures that you can use to filter the results to those that match one or more sets of key-value pairs that you specify.</p>
+    /// <p>You can use the following filters to streamline results:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Status</p></li>
+    /// <li>
+    /// <p>Username</p></li>
+    /// <li>
+    /// <p>Domain</p></li>
+    /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
         v.push(input);
         self.filters = ::std::option::Option::Some(v);
         self
     }
-    /// <p>An array of structures that you can use to filter the results to those that match one or more sets of key-value pairs that you specify.</p>
+    /// <p>You can use the following filters to streamline results:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Status</p></li>
+    /// <li>
+    /// <p>Username</p></li>
+    /// <li>
+    /// <p>Domain</p></li>
+    /// </ul>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
-    /// <p>An array of structures that you can use to filter the results to those that match one or more sets of key-value pairs that you specify.</p>
+    /// <p>You can use the following filters to streamline results:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Status</p></li>
+    /// <li>
+    /// <p>Username</p></li>
+    /// <li>
+    /// <p>Domain</p></li>
+    /// </ul>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         &self.filters
     }
-    /// <p>Token for the next set of results.</p>
+    /// <p>A token to specify where to start paginating. This is the nextToken from a previously truncated response.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Token for the next set of results.</p>
+    /// <p>A token to specify where to start paginating. This is the nextToken from a previously truncated response.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>Token for the next set of results.</p>
+    /// <p>A token to specify where to start paginating. This is the nextToken from a previously truncated response.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

@@ -3,6 +3,10 @@
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum Error {
+    /// <p>The request was rejected because the account making the request is not the management account or delegated administrator account for <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_root-user.html#id_root-user-access-management">centralized root access</a>.</p>
+    AccountNotManagementOrDelegatedAdministratorException(crate::types::error::AccountNotManagementOrDelegatedAdministratorException),
+    /// <p>The request was rejected because the account making the request is not the management account for the organization.</p>
+    CallerIsNotManagementAccountException(crate::types::error::CallerIsNotManagementAccountException),
     /// <p>The request was rejected because multiple requests to change this object were submitted simultaneously. Wait a few minutes and submit your request again.</p>
     ConcurrentModificationException(crate::types::error::ConcurrentModificationException),
     /// <p>The request was rejected because the most recent credential report has expired. To generate a new credential report, use <code>GenerateCredentialReport</code>. For more information about credential report expiration, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Getting credential reports</a> in the <i>IAM User Guide</i>.</p>
@@ -43,6 +47,10 @@ pub enum Error {
     NoSuchEntityException(crate::types::error::NoSuchEntityException),
     /// <p>The request failed because IAM cannot connect to the OpenID Connect identity provider URL.</p>
     OpenIdIdpCommunicationErrorException(crate::types::error::OpenIdIdpCommunicationErrorException),
+    /// <p>The request was rejected because no organization is associated with your account.</p>
+    OrganizationNotFoundException(crate::types::error::OrganizationNotFoundException),
+    /// <p>The request was rejected because your organization does not have All features enabled. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#feature-set">Available feature sets</a> in the <i>Organizations User Guide</i>.</p>
+    OrganizationNotInAllFeaturesModeException(crate::types::error::OrganizationNotInAllFeaturesModeException),
     /// <p>The request was rejected because the provided password did not meet the requirements imposed by the account password policy.</p>
     PasswordPolicyViolationException(crate::types::error::PasswordPolicyViolationException),
     /// <p>The request failed because a provided policy could not be successfully evaluated. An additional detailed message indicates the source of the failure.</p>
@@ -51,6 +59,8 @@ pub enum Error {
     PolicyNotAttachableException(crate::types::error::PolicyNotAttachableException),
     /// <p>The request failed because the maximum number of concurrent requests for this account are already running.</p>
     ReportGenerationLimitExceededException(crate::types::error::ReportGenerationLimitExceededException),
+    /// <p>The request was rejected because trusted access is not enabled for IAM in Organizations. For details, see IAM and Organizations in the <i>Organizations User Guide</i>.</p>
+    ServiceAccessNotEnabledException(crate::types::error::ServiceAccessNotEnabledException),
     /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     ServiceFailureException(crate::types::error::ServiceFailureException),
     /// <p>The specified service does not support service-specific credentials.</p>
@@ -71,6 +81,8 @@ pub enum Error {
 impl ::std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
+            Error::AccountNotManagementOrDelegatedAdministratorException(inner) => inner.fmt(f),
+            Error::CallerIsNotManagementAccountException(inner) => inner.fmt(f),
             Error::ConcurrentModificationException(inner) => inner.fmt(f),
             Error::CredentialReportExpiredException(inner) => inner.fmt(f),
             Error::CredentialReportNotPresentException(inner) => inner.fmt(f),
@@ -91,10 +103,13 @@ impl ::std::fmt::Display for Error {
             Error::MalformedPolicyDocumentException(inner) => inner.fmt(f),
             Error::NoSuchEntityException(inner) => inner.fmt(f),
             Error::OpenIdIdpCommunicationErrorException(inner) => inner.fmt(f),
+            Error::OrganizationNotFoundException(inner) => inner.fmt(f),
+            Error::OrganizationNotInAllFeaturesModeException(inner) => inner.fmt(f),
             Error::PasswordPolicyViolationException(inner) => inner.fmt(f),
             Error::PolicyEvaluationException(inner) => inner.fmt(f),
             Error::PolicyNotAttachableException(inner) => inner.fmt(f),
             Error::ReportGenerationLimitExceededException(inner) => inner.fmt(f),
+            Error::ServiceAccessNotEnabledException(inner) => inner.fmt(f),
             Error::ServiceFailureException(inner) => inner.fmt(f),
             Error::ServiceNotSupportedException(inner) => inner.fmt(f),
             Error::UnmodifiableEntityException(inner) => inner.fmt(f),
@@ -120,6 +135,8 @@ impl From<::aws_smithy_types::error::operation::BuildError> for Error {
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
     fn meta(&self) -> &::aws_smithy_types::error::metadata::ErrorMetadata {
         match self {
+            Self::AccountNotManagementOrDelegatedAdministratorException(inner) => inner.meta(),
+            Self::CallerIsNotManagementAccountException(inner) => inner.meta(),
             Self::ConcurrentModificationException(inner) => inner.meta(),
             Self::CredentialReportExpiredException(inner) => inner.meta(),
             Self::CredentialReportNotPresentException(inner) => inner.meta(),
@@ -140,10 +157,13 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::MalformedPolicyDocumentException(inner) => inner.meta(),
             Self::NoSuchEntityException(inner) => inner.meta(),
             Self::OpenIdIdpCommunicationErrorException(inner) => inner.meta(),
+            Self::OrganizationNotFoundException(inner) => inner.meta(),
+            Self::OrganizationNotInAllFeaturesModeException(inner) => inner.meta(),
             Self::PasswordPolicyViolationException(inner) => inner.meta(),
             Self::PolicyEvaluationException(inner) => inner.meta(),
             Self::PolicyNotAttachableException(inner) => inner.meta(),
             Self::ReportGenerationLimitExceededException(inner) => inner.meta(),
+            Self::ServiceAccessNotEnabledException(inner) => inner.meta(),
             Self::ServiceFailureException(inner) => inner.meta(),
             Self::ServiceNotSupportedException(inner) => inner.meta(),
             Self::UnmodifiableEntityException(inner) => inner.meta(),
@@ -1637,6 +1657,78 @@ impl From<crate::operation::detach_user_policy::DetachUserPolicyError> for Error
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::disable_organizations_root_credentials_management::DisableOrganizationsRootCredentialsManagementError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::disable_organizations_root_credentials_management::DisableOrganizationsRootCredentialsManagementError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::disable_organizations_root_credentials_management::DisableOrganizationsRootCredentialsManagementError> for Error {
+    fn from(err: crate::operation::disable_organizations_root_credentials_management::DisableOrganizationsRootCredentialsManagementError) -> Self {
+        match err {
+            crate::operation::disable_organizations_root_credentials_management::DisableOrganizationsRootCredentialsManagementError::AccountNotManagementOrDelegatedAdministratorException(inner) => Error::AccountNotManagementOrDelegatedAdministratorException(inner),
+            crate::operation::disable_organizations_root_credentials_management::DisableOrganizationsRootCredentialsManagementError::OrganizationNotFoundException(inner) => Error::OrganizationNotFoundException(inner),
+            crate::operation::disable_organizations_root_credentials_management::DisableOrganizationsRootCredentialsManagementError::OrganizationNotInAllFeaturesModeException(inner) => Error::OrganizationNotInAllFeaturesModeException(inner),
+            crate::operation::disable_organizations_root_credentials_management::DisableOrganizationsRootCredentialsManagementError::ServiceAccessNotEnabledException(inner) => Error::ServiceAccessNotEnabledException(inner),
+            crate::operation::disable_organizations_root_credentials_management::DisableOrganizationsRootCredentialsManagementError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::disable_organizations_root_sessions::DisableOrganizationsRootSessionsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::disable_organizations_root_sessions::DisableOrganizationsRootSessionsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::disable_organizations_root_sessions::DisableOrganizationsRootSessionsError> for Error {
+    fn from(err: crate::operation::disable_organizations_root_sessions::DisableOrganizationsRootSessionsError) -> Self {
+        match err {
+            crate::operation::disable_organizations_root_sessions::DisableOrganizationsRootSessionsError::AccountNotManagementOrDelegatedAdministratorException(inner) => Error::AccountNotManagementOrDelegatedAdministratorException(inner),
+            crate::operation::disable_organizations_root_sessions::DisableOrganizationsRootSessionsError::OrganizationNotFoundException(inner) => Error::OrganizationNotFoundException(inner),
+            crate::operation::disable_organizations_root_sessions::DisableOrganizationsRootSessionsError::OrganizationNotInAllFeaturesModeException(inner) => Error::OrganizationNotInAllFeaturesModeException(inner),
+            crate::operation::disable_organizations_root_sessions::DisableOrganizationsRootSessionsError::ServiceAccessNotEnabledException(inner) => Error::ServiceAccessNotEnabledException(inner),
+            crate::operation::disable_organizations_root_sessions::DisableOrganizationsRootSessionsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::enable_mfa_device::EnableMFADeviceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1670,6 +1762,80 @@ impl From<crate::operation::enable_mfa_device::EnableMFADeviceError> for Error {
             crate::operation::enable_mfa_device::EnableMFADeviceError::NoSuchEntityException(inner) => Error::NoSuchEntityException(inner),
             crate::operation::enable_mfa_device::EnableMFADeviceError::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
             crate::operation::enable_mfa_device::EnableMFADeviceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::enable_organizations_root_credentials_management::EnableOrganizationsRootCredentialsManagementError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::enable_organizations_root_credentials_management::EnableOrganizationsRootCredentialsManagementError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::enable_organizations_root_credentials_management::EnableOrganizationsRootCredentialsManagementError> for Error {
+    fn from(err: crate::operation::enable_organizations_root_credentials_management::EnableOrganizationsRootCredentialsManagementError) -> Self {
+        match err {
+            crate::operation::enable_organizations_root_credentials_management::EnableOrganizationsRootCredentialsManagementError::AccountNotManagementOrDelegatedAdministratorException(inner) => Error::AccountNotManagementOrDelegatedAdministratorException(inner),
+            crate::operation::enable_organizations_root_credentials_management::EnableOrganizationsRootCredentialsManagementError::CallerIsNotManagementAccountException(inner) => Error::CallerIsNotManagementAccountException(inner),
+            crate::operation::enable_organizations_root_credentials_management::EnableOrganizationsRootCredentialsManagementError::OrganizationNotFoundException(inner) => Error::OrganizationNotFoundException(inner),
+            crate::operation::enable_organizations_root_credentials_management::EnableOrganizationsRootCredentialsManagementError::OrganizationNotInAllFeaturesModeException(inner) => Error::OrganizationNotInAllFeaturesModeException(inner),
+            crate::operation::enable_organizations_root_credentials_management::EnableOrganizationsRootCredentialsManagementError::ServiceAccessNotEnabledException(inner) => Error::ServiceAccessNotEnabledException(inner),
+            crate::operation::enable_organizations_root_credentials_management::EnableOrganizationsRootCredentialsManagementError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::enable_organizations_root_sessions::EnableOrganizationsRootSessionsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::enable_organizations_root_sessions::EnableOrganizationsRootSessionsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::enable_organizations_root_sessions::EnableOrganizationsRootSessionsError> for Error {
+    fn from(err: crate::operation::enable_organizations_root_sessions::EnableOrganizationsRootSessionsError) -> Self {
+        match err {
+            crate::operation::enable_organizations_root_sessions::EnableOrganizationsRootSessionsError::AccountNotManagementOrDelegatedAdministratorException(inner) => Error::AccountNotManagementOrDelegatedAdministratorException(inner),
+            crate::operation::enable_organizations_root_sessions::EnableOrganizationsRootSessionsError::CallerIsNotManagementAccountException(inner) => Error::CallerIsNotManagementAccountException(inner),
+            crate::operation::enable_organizations_root_sessions::EnableOrganizationsRootSessionsError::OrganizationNotFoundException(inner) => Error::OrganizationNotFoundException(inner),
+            crate::operation::enable_organizations_root_sessions::EnableOrganizationsRootSessionsError::OrganizationNotInAllFeaturesModeException(inner) => Error::OrganizationNotInAllFeaturesModeException(inner),
+            crate::operation::enable_organizations_root_sessions::EnableOrganizationsRootSessionsError::ServiceAccessNotEnabledException(inner) => Error::ServiceAccessNotEnabledException(inner),
+            crate::operation::enable_organizations_root_sessions::EnableOrganizationsRootSessionsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2946,6 +3112,42 @@ impl From<crate::operation::list_open_id_connect_provider_tags::ListOpenIDConnec
                 Error::ServiceFailureException(inner)
             }
             crate::operation::list_open_id_connect_provider_tags::ListOpenIDConnectProviderTagsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_organizations_features::ListOrganizationsFeaturesError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_organizations_features::ListOrganizationsFeaturesError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_organizations_features::ListOrganizationsFeaturesError> for Error {
+    fn from(err: crate::operation::list_organizations_features::ListOrganizationsFeaturesError) -> Self {
+        match err {
+            crate::operation::list_organizations_features::ListOrganizationsFeaturesError::AccountNotManagementOrDelegatedAdministratorException(
+                inner,
+            ) => Error::AccountNotManagementOrDelegatedAdministratorException(inner),
+            crate::operation::list_organizations_features::ListOrganizationsFeaturesError::OrganizationNotFoundException(inner) => {
+                Error::OrganizationNotFoundException(inner)
+            }
+            crate::operation::list_organizations_features::ListOrganizationsFeaturesError::OrganizationNotInAllFeaturesModeException(inner) => {
+                Error::OrganizationNotInAllFeaturesModeException(inner)
+            }
+            crate::operation::list_organizations_features::ListOrganizationsFeaturesError::ServiceAccessNotEnabledException(inner) => {
+                Error::ServiceAccessNotEnabledException(inner)
+            }
+            crate::operation::list_organizations_features::ListOrganizationsFeaturesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -4909,6 +5111,8 @@ where
 impl ::std::error::Error for Error {
     fn source(&self) -> std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
+            Error::AccountNotManagementOrDelegatedAdministratorException(inner) => inner.source(),
+            Error::CallerIsNotManagementAccountException(inner) => inner.source(),
             Error::ConcurrentModificationException(inner) => inner.source(),
             Error::CredentialReportExpiredException(inner) => inner.source(),
             Error::CredentialReportNotPresentException(inner) => inner.source(),
@@ -4929,10 +5133,13 @@ impl ::std::error::Error for Error {
             Error::MalformedPolicyDocumentException(inner) => inner.source(),
             Error::NoSuchEntityException(inner) => inner.source(),
             Error::OpenIdIdpCommunicationErrorException(inner) => inner.source(),
+            Error::OrganizationNotFoundException(inner) => inner.source(),
+            Error::OrganizationNotInAllFeaturesModeException(inner) => inner.source(),
             Error::PasswordPolicyViolationException(inner) => inner.source(),
             Error::PolicyEvaluationException(inner) => inner.source(),
             Error::PolicyNotAttachableException(inner) => inner.source(),
             Error::ReportGenerationLimitExceededException(inner) => inner.source(),
+            Error::ServiceAccessNotEnabledException(inner) => inner.source(),
             Error::ServiceFailureException(inner) => inner.source(),
             Error::ServiceNotSupportedException(inner) => inner.source(),
             Error::UnmodifiableEntityException(inner) => inner.source(),
@@ -4944,6 +5151,8 @@ impl ::std::error::Error for Error {
 impl ::aws_types::request_id::RequestId for Error {
     fn request_id(&self) -> Option<&str> {
         match self {
+            Self::AccountNotManagementOrDelegatedAdministratorException(e) => e.request_id(),
+            Self::CallerIsNotManagementAccountException(e) => e.request_id(),
             Self::ConcurrentModificationException(e) => e.request_id(),
             Self::CredentialReportExpiredException(e) => e.request_id(),
             Self::CredentialReportNotPresentException(e) => e.request_id(),
@@ -4964,10 +5173,13 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::MalformedPolicyDocumentException(e) => e.request_id(),
             Self::NoSuchEntityException(e) => e.request_id(),
             Self::OpenIdIdpCommunicationErrorException(e) => e.request_id(),
+            Self::OrganizationNotFoundException(e) => e.request_id(),
+            Self::OrganizationNotInAllFeaturesModeException(e) => e.request_id(),
             Self::PasswordPolicyViolationException(e) => e.request_id(),
             Self::PolicyEvaluationException(e) => e.request_id(),
             Self::PolicyNotAttachableException(e) => e.request_id(),
             Self::ReportGenerationLimitExceededException(e) => e.request_id(),
+            Self::ServiceAccessNotEnabledException(e) => e.request_id(),
             Self::ServiceFailureException(e) => e.request_id(),
             Self::ServiceNotSupportedException(e) => e.request_id(),
             Self::UnmodifiableEntityException(e) => e.request_id(),

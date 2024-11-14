@@ -116,6 +116,18 @@ pub(crate) fn batch_start_viewer_session_revocation_error_correct_errors(
     builder
 }
 
+pub(crate) fn ingest_configurations_correct_errors(
+    mut builder: crate::types::builders::IngestConfigurationsBuilder,
+) -> crate::types::builders::IngestConfigurationsBuilder {
+    if builder.video_configurations.is_none() {
+        builder.video_configurations = Some(Default::default())
+    }
+    if builder.audio_configurations.is_none() {
+        builder.audio_configurations = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn playback_restriction_policy_summary_correct_errors(
     mut builder: crate::types::builders::PlaybackRestrictionPolicySummaryBuilder,
 ) -> crate::types::builders::PlaybackRestrictionPolicySummaryBuilder {

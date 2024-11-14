@@ -227,6 +227,8 @@ mod tag_resource;
 
 mod untag_resource;
 
+mod update_analyzer;
+
 mod update_archive_rule;
 
 mod update_findings;

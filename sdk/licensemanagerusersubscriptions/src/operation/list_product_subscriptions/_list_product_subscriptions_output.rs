@@ -5,7 +5,7 @@
 pub struct ListProductSubscriptionsOutput {
     /// <p>Metadata that describes the list product subscriptions operation.</p>
     pub product_user_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ProductUserSummary>>,
-    /// <p>Token for the next set of results.</p>
+    /// <p>The next token used for paginated responses. When this field isn't empty, there are additional elements that the service hasn't included in this request. Use this token with the next request to retrieve additional objects.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -16,7 +16,7 @@ impl ListProductSubscriptionsOutput {
     pub fn product_user_summaries(&self) -> &[crate::types::ProductUserSummary] {
         self.product_user_summaries.as_deref().unwrap_or_default()
     }
-    /// <p>Token for the next set of results.</p>
+    /// <p>The next token used for paginated responses. When this field isn't empty, there are additional elements that the service hasn't included in this request. Use this token with the next request to retrieve additional objects.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -62,17 +62,17 @@ impl ListProductSubscriptionsOutputBuilder {
     pub fn get_product_user_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProductUserSummary>> {
         &self.product_user_summaries
     }
-    /// <p>Token for the next set of results.</p>
+    /// <p>The next token used for paginated responses. When this field isn't empty, there are additional elements that the service hasn't included in this request. Use this token with the next request to retrieve additional objects.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Token for the next set of results.</p>
+    /// <p>The next token used for paginated responses. When this field isn't empty, there are additional elements that the service hasn't included in this request. Use this token with the next request to retrieve additional objects.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>Token for the next set of results.</p>
+    /// <p>The next token used for paginated responses. When this field isn't empty, there are additional elements that the service hasn't included in this request. Use this token with the next request to retrieve additional objects.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

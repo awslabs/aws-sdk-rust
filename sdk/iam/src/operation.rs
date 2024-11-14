@@ -145,8 +145,20 @@ pub mod detach_role_policy;
 /// Types for the `DetachUserPolicy` operation.
 pub mod detach_user_policy;
 
+/// Types for the `DisableOrganizationsRootCredentialsManagement` operation.
+pub mod disable_organizations_root_credentials_management;
+
+/// Types for the `DisableOrganizationsRootSessions` operation.
+pub mod disable_organizations_root_sessions;
+
 /// Types for the `EnableMFADevice` operation.
 pub mod enable_mfa_device;
+
+/// Types for the `EnableOrganizationsRootCredentialsManagement` operation.
+pub mod enable_organizations_root_credentials_management;
+
+/// Types for the `EnableOrganizationsRootSessions` operation.
+pub mod enable_organizations_root_sessions;
 
 /// Types for the `GenerateCredentialReport` operation.
 pub mod generate_credential_report;
@@ -282,6 +294,9 @@ pub mod list_open_id_connect_provider_tags;
 
 /// Types for the `ListOpenIDConnectProviders` operation.
 pub mod list_open_id_connect_providers;
+
+/// Types for the `ListOrganizationsFeatures` operation.
+pub mod list_organizations_features;
 
 /// Types for the `ListPolicies` operation.
 pub mod list_policies;

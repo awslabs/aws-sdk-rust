@@ -4,17 +4,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AcceleratorCountRange {
-    /// <p>The minimum GPU for the accelerator.</p>
+    /// <p>The minimum number of GPUs for the accelerator. If you set the value to 0, a worker will still have 1 GPU.</p>
     pub min: i32,
-    /// <p>The maximum GPU for the accelerator.</p>
+    /// <p>The maximum number of GPUs for the accelerator.</p>
     pub max: ::std::option::Option<i32>,
 }
 impl AcceleratorCountRange {
-    /// <p>The minimum GPU for the accelerator.</p>
+    /// <p>The minimum number of GPUs for the accelerator. If you set the value to 0, a worker will still have 1 GPU.</p>
     pub fn min(&self) -> i32 {
         self.min
     }
-    /// <p>The maximum GPU for the accelerator.</p>
+    /// <p>The maximum number of GPUs for the accelerator.</p>
     pub fn max(&self) -> ::std::option::Option<i32> {
         self.max
     }
@@ -34,32 +34,32 @@ pub struct AcceleratorCountRangeBuilder {
     pub(crate) max: ::std::option::Option<i32>,
 }
 impl AcceleratorCountRangeBuilder {
-    /// <p>The minimum GPU for the accelerator.</p>
+    /// <p>The minimum number of GPUs for the accelerator. If you set the value to 0, a worker will still have 1 GPU.</p>
     /// This field is required.
     pub fn min(mut self, input: i32) -> Self {
         self.min = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The minimum GPU for the accelerator.</p>
+    /// <p>The minimum number of GPUs for the accelerator. If you set the value to 0, a worker will still have 1 GPU.</p>
     pub fn set_min(mut self, input: ::std::option::Option<i32>) -> Self {
         self.min = input;
         self
     }
-    /// <p>The minimum GPU for the accelerator.</p>
+    /// <p>The minimum number of GPUs for the accelerator. If you set the value to 0, a worker will still have 1 GPU.</p>
     pub fn get_min(&self) -> &::std::option::Option<i32> {
         &self.min
     }
-    /// <p>The maximum GPU for the accelerator.</p>
+    /// <p>The maximum number of GPUs for the accelerator.</p>
     pub fn max(mut self, input: i32) -> Self {
         self.max = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The maximum GPU for the accelerator.</p>
+    /// <p>The maximum number of GPUs for the accelerator.</p>
     pub fn set_max(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max = input;
         self
     }
-    /// <p>The maximum GPU for the accelerator.</p>
+    /// <p>The maximum number of GPUs for the accelerator.</p>
     pub fn get_max(&self) -> &::std::option::Option<i32> {
         &self.max
     }

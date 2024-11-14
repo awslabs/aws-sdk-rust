@@ -15,6 +15,7 @@
 ///     SummaryKeyType::AccessKeysPerUserQuota => { /* ... */ },
 ///     SummaryKeyType::AccountAccessKeysPresent => { /* ... */ },
 ///     SummaryKeyType::AccountMfaEnabled => { /* ... */ },
+///     SummaryKeyType::AccountPasswordPresent => { /* ... */ },
 ///     SummaryKeyType::AccountSigningCertificatesPresent => { /* ... */ },
 ///     SummaryKeyType::AttachedPoliciesPerGroupQuota => { /* ... */ },
 ///     SummaryKeyType::AttachedPoliciesPerRoleQuota => { /* ... */ },
@@ -72,6 +73,8 @@ pub enum SummaryKeyType {
     #[allow(missing_docs)] // documentation missing in model
     AccountMfaEnabled,
     #[allow(missing_docs)] // documentation missing in model
+    AccountPasswordPresent,
+    #[allow(missing_docs)] // documentation missing in model
     AccountSigningCertificatesPresent,
     #[allow(missing_docs)] // documentation missing in model
     AttachedPoliciesPerGroupQuota,
@@ -127,6 +130,7 @@ impl ::std::convert::From<&str> for SummaryKeyType {
             "AccessKeysPerUserQuota" => SummaryKeyType::AccessKeysPerUserQuota,
             "AccountAccessKeysPresent" => SummaryKeyType::AccountAccessKeysPresent,
             "AccountMFAEnabled" => SummaryKeyType::AccountMfaEnabled,
+            "AccountPasswordPresent" => SummaryKeyType::AccountPasswordPresent,
             "AccountSigningCertificatesPresent" => SummaryKeyType::AccountSigningCertificatesPresent,
             "AttachedPoliciesPerGroupQuota" => SummaryKeyType::AttachedPoliciesPerGroupQuota,
             "AttachedPoliciesPerRoleQuota" => SummaryKeyType::AttachedPoliciesPerRoleQuota,
@@ -168,6 +172,7 @@ impl SummaryKeyType {
             SummaryKeyType::AccessKeysPerUserQuota => "AccessKeysPerUserQuota",
             SummaryKeyType::AccountAccessKeysPresent => "AccountAccessKeysPresent",
             SummaryKeyType::AccountMfaEnabled => "AccountMFAEnabled",
+            SummaryKeyType::AccountPasswordPresent => "AccountPasswordPresent",
             SummaryKeyType::AccountSigningCertificatesPresent => "AccountSigningCertificatesPresent",
             SummaryKeyType::AttachedPoliciesPerGroupQuota => "AttachedPoliciesPerGroupQuota",
             SummaryKeyType::AttachedPoliciesPerRoleQuota => "AttachedPoliciesPerRoleQuota",
@@ -200,6 +205,7 @@ impl SummaryKeyType {
             "AccessKeysPerUserQuota",
             "AccountAccessKeysPresent",
             "AccountMFAEnabled",
+            "AccountPasswordPresent",
             "AccountSigningCertificatesPresent",
             "AttachedPoliciesPerGroupQuota",
             "AttachedPoliciesPerRoleQuota",
@@ -249,6 +255,7 @@ impl ::std::fmt::Display for SummaryKeyType {
             SummaryKeyType::AccessKeysPerUserQuota => write!(f, "AccessKeysPerUserQuota"),
             SummaryKeyType::AccountAccessKeysPresent => write!(f, "AccountAccessKeysPresent"),
             SummaryKeyType::AccountMfaEnabled => write!(f, "AccountMFAEnabled"),
+            SummaryKeyType::AccountPasswordPresent => write!(f, "AccountPasswordPresent"),
             SummaryKeyType::AccountSigningCertificatesPresent => write!(f, "AccountSigningCertificatesPresent"),
             SummaryKeyType::AttachedPoliciesPerGroupQuota => write!(f, "AttachedPoliciesPerGroupQuota"),
             SummaryKeyType::AttachedPoliciesPerRoleQuota => write!(f, "AttachedPoliciesPerRoleQuota"),

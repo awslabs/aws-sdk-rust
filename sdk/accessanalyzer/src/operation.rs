@@ -97,6 +97,9 @@ pub mod tag_resource;
 /// Types for the `UntagResource` operation.
 pub mod untag_resource;
 
+/// Types for the `UpdateAnalyzer` operation.
+pub mod update_analyzer;
+
 /// Types for the `UpdateArchiveRule` operation.
 pub mod update_archive_rule;
 

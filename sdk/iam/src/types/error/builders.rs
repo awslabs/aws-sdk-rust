@@ -41,6 +41,14 @@ pub use crate::types::error::_policy_not_attachable_exception::PolicyNotAttachab
 
 pub use crate::types::error::_service_not_supported_exception::ServiceNotSupportedExceptionBuilder;
 
+pub use crate::types::error::_service_access_not_enabled_exception::ServiceAccessNotEnabledExceptionBuilder;
+
+pub use crate::types::error::_organization_not_in_all_features_mode_exception::OrganizationNotInAllFeaturesModeExceptionBuilder;
+
+pub use crate::types::error::_organization_not_found_exception::OrganizationNotFoundExceptionBuilder;
+
+pub use crate::types::error::_account_not_management_or_delegated_administrator_exception::AccountNotManagementOrDelegatedAdministratorExceptionBuilder;
+
 pub use crate::types::error::_credential_report_not_ready_exception::CredentialReportNotReadyExceptionBuilder;
 
 pub use crate::types::error::_credential_report_not_present_exception::CredentialReportNotPresentExceptionBuilder;
@@ -48,6 +56,8 @@ pub use crate::types::error::_credential_report_not_present_exception::Credentia
 pub use crate::types::error::_credential_report_expired_exception::CredentialReportExpiredExceptionBuilder;
 
 pub use crate::types::error::_report_generation_limit_exceeded_exception::ReportGenerationLimitExceededExceptionBuilder;
+
+pub use crate::types::error::_caller_is_not_management_account_exception::CallerIsNotManagementAccountExceptionBuilder;
 
 pub use crate::types::error::_delete_conflict_exception::DeleteConflictExceptionBuilder;
 

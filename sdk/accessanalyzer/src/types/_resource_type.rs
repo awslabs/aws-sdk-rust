@@ -18,6 +18,7 @@
 ///     ResourceType::AwsEcrRepository => { /* ... */ },
 ///     ResourceType::AwsEfsFilesystem => { /* ... */ },
 ///     ResourceType::AwsIamRole => { /* ... */ },
+///     ResourceType::AwsIamUser => { /* ... */ },
 ///     ResourceType::AwsKmsKey => { /* ... */ },
 ///     ResourceType::AwsLambdaFunction => { /* ... */ },
 ///     ResourceType::AwsLambdaLayerversion => { /* ... */ },
@@ -68,6 +69,8 @@ pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     AwsIamRole,
     #[allow(missing_docs)] // documentation missing in model
+    AwsIamUser,
+    #[allow(missing_docs)] // documentation missing in model
     AwsKmsKey,
     #[allow(missing_docs)] // documentation missing in model
     AwsLambdaFunction,
@@ -100,6 +103,7 @@ impl ::std::convert::From<&str> for ResourceType {
             "AWS::ECR::Repository" => ResourceType::AwsEcrRepository,
             "AWS::EFS::FileSystem" => ResourceType::AwsEfsFilesystem,
             "AWS::IAM::Role" => ResourceType::AwsIamRole,
+            "AWS::IAM::User" => ResourceType::AwsIamUser,
             "AWS::KMS::Key" => ResourceType::AwsKmsKey,
             "AWS::Lambda::Function" => ResourceType::AwsLambdaFunction,
             "AWS::Lambda::LayerVersion" => ResourceType::AwsLambdaLayerversion,
@@ -131,6 +135,7 @@ impl ResourceType {
             ResourceType::AwsEcrRepository => "AWS::ECR::Repository",
             ResourceType::AwsEfsFilesystem => "AWS::EFS::FileSystem",
             ResourceType::AwsIamRole => "AWS::IAM::Role",
+            ResourceType::AwsIamUser => "AWS::IAM::User",
             ResourceType::AwsKmsKey => "AWS::KMS::Key",
             ResourceType::AwsLambdaFunction => "AWS::Lambda::Function",
             ResourceType::AwsLambdaLayerversion => "AWS::Lambda::LayerVersion",
@@ -153,6 +158,7 @@ impl ResourceType {
             "AWS::ECR::Repository",
             "AWS::EFS::FileSystem",
             "AWS::IAM::Role",
+            "AWS::IAM::User",
             "AWS::KMS::Key",
             "AWS::Lambda::Function",
             "AWS::Lambda::LayerVersion",
@@ -192,6 +198,7 @@ impl ::std::fmt::Display for ResourceType {
             ResourceType::AwsEcrRepository => write!(f, "AWS::ECR::Repository"),
             ResourceType::AwsEfsFilesystem => write!(f, "AWS::EFS::FileSystem"),
             ResourceType::AwsIamRole => write!(f, "AWS::IAM::Role"),
+            ResourceType::AwsIamUser => write!(f, "AWS::IAM::User"),
             ResourceType::AwsKmsKey => write!(f, "AWS::KMS::Key"),
             ResourceType::AwsLambdaFunction => write!(f, "AWS::Lambda::Function"),
             ResourceType::AwsLambdaLayerversion => write!(f, "AWS::Lambda::LayerVersion"),

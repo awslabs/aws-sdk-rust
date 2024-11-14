@@ -1,0 +1,203 @@
+#![allow(deprecated)]
+#![allow(unknown_lints)]
+#![allow(clippy::module_inception)]
+#![allow(clippy::upper_case_acronyms)]
+#![allow(clippy::large_enum_variant)]
+#![allow(clippy::wrong_self_convention)]
+#![allow(clippy::should_implement_trait)]
+#![allow(clippy::disallowed_names)]
+#![allow(clippy::vec_init_then_push)]
+#![allow(clippy::type_complexity)]
+#![allow(clippy::needless_return)]
+#![allow(clippy::derive_partial_eq_without_eq)]
+#![allow(clippy::result_large_err)]
+#![allow(clippy::unnecessary_map_on_constructor)]
+#![allow(rustdoc::bare_urls)]
+#![allow(rustdoc::redundant_explicit_links)]
+#![forbid(unsafe_code)]
+#![warn(missing_docs)]
+#![cfg_attr(docsrs, feature(doc_auto_cfg))]
+//! __AWS Partner Central API for Selling Reference Guide__
+//!
+//! Amazon Web Services (AWS) Partner Central API reference guide is designed to help [AWS Partners](https://docs.aws.amazon.com/partners/programs/) programmatically integrate their Customer Relationship Management (CRM) systems with AWS Partner Central. Through the Partner Central APIs, partners can automate and streamline their interactions with AWS Partner Central, ensuring a more efficient and effective engagement in joint business activities.
+//!
+//! The AWS Partner Central API service provides standard AWS API functionality. You can directly use the API [Actions](https://docs.aws.amazon.com/partner-central/latest/selling-api/API_Operations.html), or you can use an AWS SDK to access an API that's tailored to the programming language or platform that you're using. For more information about AWS application development, see [Getting Started with AWS](https://docs.aws.amazon.com/getting-started). For more information about using AWS SDKs, see [AWS SDKs](https://docs.aws.amazon.com/aws-sdk).
+//!
+//! __Features offered by AWS Partner Central API__
+//!   1. __Opportunity management:__ Facilitates the management of co-selling opportunities with AWS using API actions such as CreateOpportunity, UpdateOpportunity, ListOpportunities, GetOpportunity, and AssignOpportunity.
+//!   1. __AWS referral management:__ Facilitates receiving referrals shared by AWS using actions like ListEngagementInvitations, GetEngagementInvitation, StartEngagementByAcceptingInvitation, and RejectEngagementInvitation.
+//!   1. __Entity association:__ Associate related entities such as _AWS Products_, _Partner Solutions_, and _AWS Marketplace Private Offers_ with opportunities using the actions AssociateOpportunity and DisassociateOpportunity.
+//!   1. __View AWS opportunity details:__ Use the GetAWSOpportunitySummary action to retrieve real-time summaries of AWS opportunities that are linked to your opportunities.
+//!   1. __List solutions:__ Provides list APIs for listing solutions partners offer using ListSolutions.
+//!   1. __Event subscription:__ Partners can subscribe to real-time updates on opportunities by listening to events such as _Opportunity Created_, _Opportunity Updated_, _Engagement Invitation Accepted_, _Engagement Invitation Rejected_ and _Engagement Invitation Created_ using AWS EventBridge.
+//!
+//! ## Getting Started
+//!
+//! > Examples are available for many services and operations, check out the
+//! > [examples folder in GitHub](https://github.com/awslabs/aws-sdk-rust/tree/main/examples).
+//!
+//! The SDK provides one crate per AWS service. You must add [Tokio](https://crates.io/crates/tokio)
+//! as a dependency within your Rust project to execute asynchronous code. To add `aws-sdk-partnercentralselling` to
+//! your project, add the following to your **Cargo.toml** file:
+//!
+//! ```toml
+//! [dependencies]
+//! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
+//! aws-sdk-partnercentralselling = "1.0.0"
+//! tokio = { version = "1", features = ["full"] }
+//! ```
+//!
+//! Then in code, a client can be created with the following:
+//!
+//! ```rust,no_run
+//! use aws_sdk_partnercentralselling as partnercentralselling;
+//!
+//! #[::tokio::main]
+//! async fn main() -> Result<(), partnercentralselling::Error> {
+//!     let config = aws_config::load_from_env().await;
+//!     let client = aws_sdk_partnercentralselling::Client::new(&config);
+//!
+//!     // ... make some calls with the client
+//!
+//!     Ok(())
+//! }
+//! ```
+//!
+//! See the [client documentation](https://docs.rs/aws-sdk-partnercentralselling/latest/aws_sdk_partnercentralselling/client/struct.Client.html)
+//! for information on what calls can be made, and the inputs and outputs for each of those calls.
+//!
+//! ## Using the SDK
+//!
+//! Until the SDK is released, we will be adding information about using the SDK to the
+//! [Developer Guide](https://docs.aws.amazon.com/sdk-for-rust/latest/dg/welcome.html). Feel free to suggest
+//! additional sections for the guide by opening an issue and describing what you are trying to do.
+//!
+//! ## Getting Help
+//!
+//! * [GitHub discussions](https://github.com/awslabs/aws-sdk-rust/discussions) - For ideas, RFCs & general questions
+//! * [GitHub issues](https://github.com/awslabs/aws-sdk-rust/issues/new/choose) - For bug reports & feature requests
+//! * [Generated Docs (latest version)](https://awslabs.github.io/aws-sdk-rust/)
+//! * [Usage examples](https://github.com/awslabs/aws-sdk-rust/tree/main/examples)
+//!
+//!
+//! # Crate Organization
+//!
+//! The entry point for most customers will be [`Client`], which exposes one method for each API
+//! offered by Partner Central Selling API. The return value of each of these methods is a "fluent builder",
+//! where the different inputs for that API are added by builder-style function call chaining,
+//! followed by calling `send()` to get a [`Future`](std::future::Future) that will result in
+//! either a successful output or a [`SdkError`](crate::error::SdkError).
+//!
+//! Some of these API inputs may be structs or enums to provide more complex structured information.
+//! These structs and enums live in [`types`](crate::types). There are some simpler types for
+//! representing data such as date times or binary blobs that live in [`primitives`](crate::primitives).
+//!
+//! All types required to configure a client via the [`Config`](crate::Config) struct live
+//! in [`config`](crate::config).
+//!
+//! The [`operation`](crate::operation) module has a submodule for every API, and in each submodule
+//! is the input, output, and error type for that API, as well as builders to construct each of those.
+//!
+//! There is a top-level [`Error`](crate::Error) type that encompasses all the errors that the
+//! client can return. Any other error type can be converted to this `Error` type via the
+//! [`From`](std::convert::From) trait.
+//!
+//! The other modules within this crate are not required for normal usage.
+
+// Code generated by software.amazon.smithy.rust.codegen.smithy-rs. DO NOT EDIT.
+pub use error_meta::Error;
+
+#[doc(inline)]
+pub use config::Config;
+
+/// Client for calling Partner Central Selling API.
+/// ## Constructing a `Client`
+///
+/// A [`Config`] is required to construct a client. For most use cases, the [`aws-config`]
+/// crate should be used to automatically resolve this config using
+/// [`aws_config::load_from_env()`], since this will resolve an [`SdkConfig`] which can be shared
+/// across multiple different AWS SDK clients. This config resolution process can be customized
+/// by calling [`aws_config::from_env()`] instead, which returns a [`ConfigLoader`] that uses
+/// the [builder pattern] to customize the default config.
+///
+/// In the simplest case, creating a client looks as follows:
+/// ```rust,no_run
+/// # async fn wrapper() {
+/// let config = aws_config::load_from_env().await;
+/// let client = aws_sdk_partnercentralselling::Client::new(&config);
+/// # }
+/// ```
+///
+/// Occasionally, SDKs may have additional service-specific values that can be set on the [`Config`] that
+/// is absent from [`SdkConfig`], or slightly different settings for a specific client may be desired.
+/// The [`Builder`](crate::config::Builder) struct implements `From<&SdkConfig>`, so setting these specific settings can be
+/// done as follows:
+///
+/// ```rust,no_run
+/// # async fn wrapper() {
+/// let sdk_config = ::aws_config::load_from_env().await;
+/// let config = aws_sdk_partnercentralselling::config::Builder::from(&sdk_config)
+/// # /*
+///     .some_service_specific_setting("value")
+/// # */
+///     .build();
+/// # }
+/// ```
+///
+/// See the [`aws-config` docs] and [`Config`] for more information on customizing configuration.
+///
+/// _Note:_ Client construction is expensive due to connection thread pool initialization, and should
+/// be done once at application start-up.
+///
+/// [`Config`]: crate::Config
+/// [`ConfigLoader`]: https://docs.rs/aws-config/*/aws_config/struct.ConfigLoader.html
+/// [`SdkConfig`]: https://docs.rs/aws-config/*/aws_config/struct.SdkConfig.html
+/// [`aws-config` docs]: https://docs.rs/aws-config/*
+/// [`aws-config`]: https://crates.io/crates/aws-config
+/// [`aws_config::from_env()`]: https://docs.rs/aws-config/*/aws_config/fn.from_env.html
+/// [`aws_config::load_from_env()`]: https://docs.rs/aws-config/*/aws_config/fn.load_from_env.html
+/// [builder pattern]: https://rust-lang.github.io/api-guidelines/type-safety.html#builders-enable-construction-of-complex-values-c-builder
+pub mod client;
+
+/// Configuration for Partner Central Selling API.
+pub mod config;
+
+/// Common errors and error handling utilities.
+pub mod error;
+
+mod error_meta;
+
+/// Information about this crate.
+pub mod meta;
+
+/// All operations that this crate can perform.
+pub mod operation;
+
+/// Primitives such as `Blob` or `DateTime` used by other types.
+pub mod primitives;
+
+/// Data structures used by operation inputs/outputs.
+pub mod types;
+
+mod auth_plugin;
+
+pub(crate) mod client_idempotency_token;
+
+mod idempotency_token;
+
+pub(crate) mod protocol_serde;
+
+mod serialization_settings;
+
+mod endpoint_lib;
+
+mod lens;
+
+mod sdk_feature_tracker;
+
+mod serde_util;
+
+mod json_errors;
+
+#[doc(inline)]
+pub use client::Client;

@@ -55,6 +55,8 @@ pub use crate::types::_wireless_device_frame_info::WirelessDeviceFrameInfo;
 
 pub use crate::types::_lo_ra_wan_multicast::LoRaWanMulticast;
 
+pub use crate::types::_participating_gateways_multicast::ParticipatingGatewaysMulticast;
+
 pub use crate::types::_dl_class::DlClass;
 
 pub use crate::types::_supported_rf_region::SupportedRfRegion;
@@ -78,6 +80,14 @@ pub use crate::types::_wireless_device_event_log_option::WirelessDeviceEventLogO
 pub use crate::types::_wireless_device_event::WirelessDeviceEvent;
 
 pub use crate::types::_wireless_device_type::WirelessDeviceType;
+
+pub use crate::types::_fuota_task_log_option::FuotaTaskLogOption;
+
+pub use crate::types::_fuota_task_event_log_option::FuotaTaskEventLogOption;
+
+pub use crate::types::_fuota_task_event::FuotaTaskEvent;
+
+pub use crate::types::_fuota_task_type::FuotaTaskType;
 
 pub use crate::types::_lo_ra_wan_fuota_task::LoRaWanFuotaTask;
 
@@ -415,7 +425,15 @@ mod _fuota_device_status;
 
 mod _fuota_task;
 
+mod _fuota_task_event;
+
+mod _fuota_task_event_log_option;
+
+mod _fuota_task_log_option;
+
 mod _fuota_task_status;
+
+mod _fuota_task_type;
 
 mod _gateway_list_item;
 
@@ -532,6 +550,8 @@ mod _otaa_v1_0_x;
 mod _otaa_v1_1;
 
 mod _participating_gateways;
+
+mod _participating_gateways_multicast;
 
 mod _partner_type;
 

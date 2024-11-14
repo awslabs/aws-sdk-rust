@@ -6,37 +6,40 @@ pub fn ser_update_fuota_task_input_input(
     if let Some(var_1) = &input.description {
         object.key("Description").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.firmware_update_image {
-        object.key("FirmwareUpdateImage").string(var_2.as_str());
+    if let Some(var_2) = &input.descriptor {
+        object.key("Descriptor").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.firmware_update_role {
-        object.key("FirmwareUpdateRole").string(var_3.as_str());
+    if let Some(var_3) = &input.firmware_update_image {
+        object.key("FirmwareUpdateImage").string(var_3.as_str());
     }
-    if let Some(var_4) = &input.fragment_interval_ms {
+    if let Some(var_4) = &input.firmware_update_role {
+        object.key("FirmwareUpdateRole").string(var_4.as_str());
+    }
+    if let Some(var_5) = &input.fragment_interval_ms {
         object.key("FragmentIntervalMS").number(
-            #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_4).into()),
-        );
-    }
-    if let Some(var_5) = &input.fragment_size_bytes {
-        object.key("FragmentSizeBytes").number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((*var_5).into()),
         );
     }
-    if let Some(var_6) = &input.lo_ra_wan {
+    if let Some(var_6) = &input.fragment_size_bytes {
+        object.key("FragmentSizeBytes").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_6).into()),
+        );
+    }
+    if let Some(var_7) = &input.lo_ra_wan {
         #[allow(unused_mut)]
-        let mut object_7 = object.key("LoRaWAN").start_object();
-        crate::protocol_serde::shape_lo_ra_wan_fuota_task::ser_lo_ra_wan_fuota_task(&mut object_7, var_6)?;
-        object_7.finish();
+        let mut object_8 = object.key("LoRaWAN").start_object();
+        crate::protocol_serde::shape_lo_ra_wan_fuota_task::ser_lo_ra_wan_fuota_task(&mut object_8, var_7)?;
+        object_8.finish();
     }
-    if let Some(var_8) = &input.name {
-        object.key("Name").string(var_8.as_str());
+    if let Some(var_9) = &input.name {
+        object.key("Name").string(var_9.as_str());
     }
-    if let Some(var_9) = &input.redundancy_percent {
+    if let Some(var_10) = &input.redundancy_percent {
         object.key("RedundancyPercent").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_9).into()),
+            ::aws_smithy_types::Number::NegInt((*var_10).into()),
         );
     }
     Ok(())

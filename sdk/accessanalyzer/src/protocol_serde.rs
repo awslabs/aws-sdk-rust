@@ -87,6 +87,8 @@ pub(crate) mod shape_tag_resource;
 
 pub(crate) mod shape_untag_resource;
 
+pub(crate) mod shape_update_analyzer;
+
 pub(crate) mod shape_update_archive_rule;
 
 pub(crate) mod shape_update_findings;
@@ -144,6 +146,8 @@ pub(crate) mod shape_tag_resource_input;
 pub(crate) mod shape_throttling_exception;
 
 pub(crate) mod shape_unprocessable_entity_exception;
+
+pub(crate) mod shape_update_analyzer_input;
 
 pub(crate) mod shape_update_archive_rule_input;
 
@@ -291,6 +295,8 @@ pub(crate) mod shape_validate_policy_finding;
 
 pub(crate) mod shape_validation_exception_field;
 
+pub(crate) mod shape_analysis_rule;
+
 pub(crate) mod shape_cloud_trail_properties;
 
 pub(crate) mod shape_external_access_details;
@@ -324,6 +330,10 @@ pub(crate) mod shape_unused_permission_details;
 pub(crate) mod shape_unused_permissions_recommended_step;
 
 pub(crate) mod shape_acl_grantee;
+
+pub(crate) mod shape_analysis_rule_criteria;
+
+pub(crate) mod shape_analysis_rule_criteria_list;
 
 pub(crate) mod shape_finding_source_detail;
 
@@ -367,11 +377,15 @@ pub(crate) mod shape_unused_action;
 
 pub(crate) mod shape_vpc_configuration;
 
+pub(crate) mod shape_account_ids_list;
+
 pub(crate) mod shape_path_element;
 
 pub(crate) mod shape_position;
 
 pub(crate) mod shape_region_list;
+
+pub(crate) mod shape_tags_list;
 
 pub(crate) mod shape_kms_grant_operations_list;
 

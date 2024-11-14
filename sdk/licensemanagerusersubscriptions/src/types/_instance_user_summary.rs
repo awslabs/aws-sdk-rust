@@ -6,15 +6,17 @@
 pub struct InstanceUserSummary {
     /// <p>The user name from the identity provider for the user.</p>
     pub username: ::std::string::String,
-    /// <p>The ID of the EC2 instance, which provides user-based subscriptions.</p>
+    /// <p>The ID of the EC2 instance that provides user-based subscriptions.</p>
     pub instance_id: ::std::string::String,
-    /// <p>An object that specifies details for the identity provider.</p>
+    /// <p>The <code>IdentityProvider</code> resource specifies details about the identity provider.</p>
     pub identity_provider: ::std::option::Option<crate::types::IdentityProvider>,
     /// <p>The status of a user associated with an EC2 instance.</p>
     pub status: ::std::string::String,
+    /// <p>The Amazon Resource Name (ARN) that identifies the instance user.</p>
+    pub instance_user_arn: ::std::option::Option<::std::string::String>,
     /// <p>The status message for users of an EC2 instance.</p>
     pub status_message: ::std::option::Option<::std::string::String>,
-    /// <p>The domain name of the user.</p>
+    /// <p>The domain name of the Active Directory that contains the user information for the product subscription.</p>
     pub domain: ::std::option::Option<::std::string::String>,
     /// <p>The date a user was associated with an EC2 instance.</p>
     pub association_date: ::std::option::Option<::std::string::String>,
@@ -27,12 +29,12 @@ impl InstanceUserSummary {
         use std::ops::Deref;
         self.username.deref()
     }
-    /// <p>The ID of the EC2 instance, which provides user-based subscriptions.</p>
+    /// <p>The ID of the EC2 instance that provides user-based subscriptions.</p>
     pub fn instance_id(&self) -> &str {
         use std::ops::Deref;
         self.instance_id.deref()
     }
-    /// <p>An object that specifies details for the identity provider.</p>
+    /// <p>The <code>IdentityProvider</code> resource specifies details about the identity provider.</p>
     pub fn identity_provider(&self) -> ::std::option::Option<&crate::types::IdentityProvider> {
         self.identity_provider.as_ref()
     }
@@ -41,11 +43,15 @@ impl InstanceUserSummary {
         use std::ops::Deref;
         self.status.deref()
     }
+    /// <p>The Amazon Resource Name (ARN) that identifies the instance user.</p>
+    pub fn instance_user_arn(&self) -> ::std::option::Option<&str> {
+        self.instance_user_arn.as_deref()
+    }
     /// <p>The status message for users of an EC2 instance.</p>
     pub fn status_message(&self) -> ::std::option::Option<&str> {
         self.status_message.as_deref()
     }
-    /// <p>The domain name of the user.</p>
+    /// <p>The domain name of the Active Directory that contains the user information for the product subscription.</p>
     pub fn domain(&self) -> ::std::option::Option<&str> {
         self.domain.as_deref()
     }
@@ -73,6 +79,7 @@ pub struct InstanceUserSummaryBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) identity_provider: ::std::option::Option<crate::types::IdentityProvider>,
     pub(crate) status: ::std::option::Option<::std::string::String>,
+    pub(crate) instance_user_arn: ::std::option::Option<::std::string::String>,
     pub(crate) status_message: ::std::option::Option<::std::string::String>,
     pub(crate) domain: ::std::option::Option<::std::string::String>,
     pub(crate) association_date: ::std::option::Option<::std::string::String>,
@@ -94,33 +101,33 @@ impl InstanceUserSummaryBuilder {
     pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
         &self.username
     }
-    /// <p>The ID of the EC2 instance, which provides user-based subscriptions.</p>
+    /// <p>The ID of the EC2 instance that provides user-based subscriptions.</p>
     /// This field is required.
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the EC2 instance, which provides user-based subscriptions.</p>
+    /// <p>The ID of the EC2 instance that provides user-based subscriptions.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_id = input;
         self
     }
-    /// <p>The ID of the EC2 instance, which provides user-based subscriptions.</p>
+    /// <p>The ID of the EC2 instance that provides user-based subscriptions.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.instance_id
     }
-    /// <p>An object that specifies details for the identity provider.</p>
+    /// <p>The <code>IdentityProvider</code> resource specifies details about the identity provider.</p>
     /// This field is required.
     pub fn identity_provider(mut self, input: crate::types::IdentityProvider) -> Self {
         self.identity_provider = ::std::option::Option::Some(input);
         self
     }
-    /// <p>An object that specifies details for the identity provider.</p>
+    /// <p>The <code>IdentityProvider</code> resource specifies details about the identity provider.</p>
     pub fn set_identity_provider(mut self, input: ::std::option::Option<crate::types::IdentityProvider>) -> Self {
         self.identity_provider = input;
         self
     }
-    /// <p>An object that specifies details for the identity provider.</p>
+    /// <p>The <code>IdentityProvider</code> resource specifies details about the identity provider.</p>
     pub fn get_identity_provider(&self) -> &::std::option::Option<crate::types::IdentityProvider> {
         &self.identity_provider
     }
@@ -139,6 +146,20 @@ impl InstanceUserSummaryBuilder {
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.status
     }
+    /// <p>The Amazon Resource Name (ARN) that identifies the instance user.</p>
+    pub fn instance_user_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.instance_user_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) that identifies the instance user.</p>
+    pub fn set_instance_user_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.instance_user_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) that identifies the instance user.</p>
+    pub fn get_instance_user_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_user_arn
+    }
     /// <p>The status message for users of an EC2 instance.</p>
     pub fn status_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_message = ::std::option::Option::Some(input.into());
@@ -153,17 +174,17 @@ impl InstanceUserSummaryBuilder {
     pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.status_message
     }
-    /// <p>The domain name of the user.</p>
+    /// <p>The domain name of the Active Directory that contains the user information for the product subscription.</p>
     pub fn domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The domain name of the user.</p>
+    /// <p>The domain name of the Active Directory that contains the user information for the product subscription.</p>
     pub fn set_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain = input;
         self
     }
-    /// <p>The domain name of the user.</p>
+    /// <p>The domain name of the Active Directory that contains the user information for the product subscription.</p>
     pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
         &self.domain
     }
@@ -221,6 +242,7 @@ impl InstanceUserSummaryBuilder {
                     "status was not specified but it is required when building InstanceUserSummary",
                 )
             })?,
+            instance_user_arn: self.instance_user_arn,
             status_message: self.status_message,
             domain: self.domain,
             association_date: self.association_date,

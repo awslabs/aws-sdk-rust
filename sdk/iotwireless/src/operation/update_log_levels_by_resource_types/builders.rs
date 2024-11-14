@@ -123,6 +123,25 @@ impl UpdateLogLevelsByResourceTypesFluentBuilder {
         self.inner.get_default_log_level()
     }
     ///
+    /// Appends an item to `FuotaTaskLogOptions`.
+    ///
+    /// To override the contents of this collection use [`set_fuota_task_log_options`](Self::set_fuota_task_log_options).
+    ///
+    /// <p>The list of fuota task log options.</p>
+    pub fn fuota_task_log_options(mut self, input: crate::types::FuotaTaskLogOption) -> Self {
+        self.inner = self.inner.fuota_task_log_options(input);
+        self
+    }
+    /// <p>The list of fuota task log options.</p>
+    pub fn set_fuota_task_log_options(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FuotaTaskLogOption>>) -> Self {
+        self.inner = self.inner.set_fuota_task_log_options(input);
+        self
+    }
+    /// <p>The list of fuota task log options.</p>
+    pub fn get_fuota_task_log_options(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FuotaTaskLogOption>> {
+        self.inner.get_fuota_task_log_options()
+    }
+    ///
     /// Appends an item to `WirelessDeviceLogOptions`.
     ///
     /// To override the contents of this collection use [`set_wireless_device_log_options`](Self::set_wireless_device_log_options).

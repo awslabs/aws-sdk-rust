@@ -19,6 +19,16 @@ pub(crate) fn reflens_list_instances_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_license_server_endpoints_output_output_next_token(
+    input: &crate::operation::list_license_server_endpoints::ListLicenseServerEndpointsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_product_subscriptions_output_output_next_token(
     input: &crate::operation::list_product_subscriptions::ListProductSubscriptionsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -50,6 +60,16 @@ pub(crate) fn lens_list_instances_output_output_instance_summaries(
     input: crate::operation::list_instances::ListInstancesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::InstanceSummary>> {
     let input = match input.instance_summaries {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_license_server_endpoints_output_output_license_server_endpoints(
+    input: crate::operation::list_license_server_endpoints::ListLicenseServerEndpointsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::LicenseServerEndpoint>> {
+    let input = match input.license_server_endpoints {
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,
     };

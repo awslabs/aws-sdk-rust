@@ -4,23 +4,25 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IdentityProviderSummary {
-    /// <p>An object that specifies details for the identity provider.</p>
+    /// <p>The <code>IdentityProvider</code> resource contains information about an identity provider.</p>
     pub identity_provider: ::std::option::Option<crate::types::IdentityProvider>,
-    /// <p>An object that details the registered identity provider’s product related configuration settings such as the subnets to provision VPC endpoints.</p>
+    /// <p>The <code>Settings</code> resource contains details about the registered identity provider’s product related configuration settings, such as the subnets to provision VPC endpoints.</p>
     pub settings: ::std::option::Option<crate::types::Settings>,
     /// <p>The name of the user-based subscription product.</p>
     pub product: ::std::string::String,
-    /// <p>The status of an identity provider.</p>
+    /// <p>The status of the identity provider.</p>
     pub status: ::std::string::String,
+    /// <p>The Amazon Resource Name (ARN) of the identity provider.</p>
+    pub identity_provider_arn: ::std::option::Option<::std::string::String>,
     /// <p>The failure message associated with an identity provider.</p>
     pub failure_message: ::std::option::Option<::std::string::String>,
 }
 impl IdentityProviderSummary {
-    /// <p>An object that specifies details for the identity provider.</p>
+    /// <p>The <code>IdentityProvider</code> resource contains information about an identity provider.</p>
     pub fn identity_provider(&self) -> ::std::option::Option<&crate::types::IdentityProvider> {
         self.identity_provider.as_ref()
     }
-    /// <p>An object that details the registered identity provider’s product related configuration settings such as the subnets to provision VPC endpoints.</p>
+    /// <p>The <code>Settings</code> resource contains details about the registered identity provider’s product related configuration settings, such as the subnets to provision VPC endpoints.</p>
     pub fn settings(&self) -> ::std::option::Option<&crate::types::Settings> {
         self.settings.as_ref()
     }
@@ -29,10 +31,14 @@ impl IdentityProviderSummary {
         use std::ops::Deref;
         self.product.deref()
     }
-    /// <p>The status of an identity provider.</p>
+    /// <p>The status of the identity provider.</p>
     pub fn status(&self) -> &str {
         use std::ops::Deref;
         self.status.deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the identity provider.</p>
+    pub fn identity_provider_arn(&self) -> ::std::option::Option<&str> {
+        self.identity_provider_arn.as_deref()
     }
     /// <p>The failure message associated with an identity provider.</p>
     pub fn failure_message(&self) -> ::std::option::Option<&str> {
@@ -54,36 +60,37 @@ pub struct IdentityProviderSummaryBuilder {
     pub(crate) settings: ::std::option::Option<crate::types::Settings>,
     pub(crate) product: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<::std::string::String>,
+    pub(crate) identity_provider_arn: ::std::option::Option<::std::string::String>,
     pub(crate) failure_message: ::std::option::Option<::std::string::String>,
 }
 impl IdentityProviderSummaryBuilder {
-    /// <p>An object that specifies details for the identity provider.</p>
+    /// <p>The <code>IdentityProvider</code> resource contains information about an identity provider.</p>
     /// This field is required.
     pub fn identity_provider(mut self, input: crate::types::IdentityProvider) -> Self {
         self.identity_provider = ::std::option::Option::Some(input);
         self
     }
-    /// <p>An object that specifies details for the identity provider.</p>
+    /// <p>The <code>IdentityProvider</code> resource contains information about an identity provider.</p>
     pub fn set_identity_provider(mut self, input: ::std::option::Option<crate::types::IdentityProvider>) -> Self {
         self.identity_provider = input;
         self
     }
-    /// <p>An object that specifies details for the identity provider.</p>
+    /// <p>The <code>IdentityProvider</code> resource contains information about an identity provider.</p>
     pub fn get_identity_provider(&self) -> &::std::option::Option<crate::types::IdentityProvider> {
         &self.identity_provider
     }
-    /// <p>An object that details the registered identity provider’s product related configuration settings such as the subnets to provision VPC endpoints.</p>
+    /// <p>The <code>Settings</code> resource contains details about the registered identity provider’s product related configuration settings, such as the subnets to provision VPC endpoints.</p>
     /// This field is required.
     pub fn settings(mut self, input: crate::types::Settings) -> Self {
         self.settings = ::std::option::Option::Some(input);
         self
     }
-    /// <p>An object that details the registered identity provider’s product related configuration settings such as the subnets to provision VPC endpoints.</p>
+    /// <p>The <code>Settings</code> resource contains details about the registered identity provider’s product related configuration settings, such as the subnets to provision VPC endpoints.</p>
     pub fn set_settings(mut self, input: ::std::option::Option<crate::types::Settings>) -> Self {
         self.settings = input;
         self
     }
-    /// <p>An object that details the registered identity provider’s product related configuration settings such as the subnets to provision VPC endpoints.</p>
+    /// <p>The <code>Settings</code> resource contains details about the registered identity provider’s product related configuration settings, such as the subnets to provision VPC endpoints.</p>
     pub fn get_settings(&self) -> &::std::option::Option<crate::types::Settings> {
         &self.settings
     }
@@ -102,20 +109,34 @@ impl IdentityProviderSummaryBuilder {
     pub fn get_product(&self) -> &::std::option::Option<::std::string::String> {
         &self.product
     }
-    /// <p>The status of an identity provider.</p>
+    /// <p>The status of the identity provider.</p>
     /// This field is required.
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The status of an identity provider.</p>
+    /// <p>The status of the identity provider.</p>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
     }
-    /// <p>The status of an identity provider.</p>
+    /// <p>The status of the identity provider.</p>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.status
+    }
+    /// <p>The Amazon Resource Name (ARN) of the identity provider.</p>
+    pub fn identity_provider_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.identity_provider_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the identity provider.</p>
+    pub fn set_identity_provider_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.identity_provider_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the identity provider.</p>
+    pub fn get_identity_provider_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identity_provider_arn
     }
     /// <p>The failure message associated with an identity provider.</p>
     pub fn failure_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -151,6 +172,7 @@ impl IdentityProviderSummaryBuilder {
                     "status was not specified but it is required when building IdentityProviderSummary",
                 )
             })?,
+            identity_provider_arn: self.identity_provider_arn,
             failure_message: self.failure_message,
         })
     }

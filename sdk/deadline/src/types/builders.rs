@@ -99,6 +99,12 @@ pub use crate::types::_fleet_attribute_capability::FleetAttributeCapabilityBuild
 
 pub use crate::types::_fleet_amount_capability::FleetAmountCapabilityBuilder;
 
+pub use crate::types::_accelerator_capabilities::AcceleratorCapabilitiesBuilder;
+
+pub use crate::types::_accelerator_count_range::AcceleratorCountRangeBuilder;
+
+pub use crate::types::_accelerator_selection::AcceleratorSelectionBuilder;
+
 pub use crate::types::_ec2_ebs_volume::Ec2EbsVolumeBuilder;
 
 pub use crate::types::_memory_mib_range::MemoryMiBRangeBuilder;
@@ -110,8 +116,6 @@ pub use crate::types::_customer_managed_fleet_configuration::CustomerManagedFlee
 pub use crate::types::_customer_managed_worker_capabilities::CustomerManagedWorkerCapabilitiesBuilder;
 
 pub use crate::types::_accelerator_total_memory_mib_range::AcceleratorTotalMemoryMiBRangeBuilder;
-
-pub use crate::types::_accelerator_count_range::AcceleratorCountRangeBuilder;
 
 pub use crate::types::_fleet_capabilities::FleetCapabilitiesBuilder;
 

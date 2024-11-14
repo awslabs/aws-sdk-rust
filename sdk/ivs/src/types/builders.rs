@@ -3,6 +3,8 @@ pub use crate::types::_playback_restriction_policy::PlaybackRestrictionPolicyBui
 
 pub use crate::types::_channel::ChannelBuilder;
 
+pub use crate::types::_multitrack_input_configuration::MultitrackInputConfigurationBuilder;
+
 pub use crate::types::_srt::SrtBuilder;
 
 pub use crate::types::_stream_session_summary::StreamSessionSummaryBuilder;
@@ -37,11 +39,13 @@ pub use crate::types::_rendition_configuration::RenditionConfigurationBuilder;
 
 pub use crate::types::_thumbnail_configuration::ThumbnailConfigurationBuilder;
 
-pub use crate::types::_ingest_configuration::IngestConfigurationBuilder;
+pub use crate::types::_ingest_configurations::IngestConfigurationsBuilder;
 
 pub use crate::types::_audio_configuration::AudioConfigurationBuilder;
 
 pub use crate::types::_video_configuration::VideoConfigurationBuilder;
+
+pub use crate::types::_ingest_configuration::IngestConfigurationBuilder;
 
 pub use crate::types::_stream_key::StreamKeyBuilder;
 

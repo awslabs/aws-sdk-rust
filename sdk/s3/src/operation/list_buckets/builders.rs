@@ -26,7 +26,9 @@ impl crate::operation::list_buckets::builders::ListBucketsInputBuilder {
 /// <p>This operation is not supported by directory buckets.</p>
 /// </note>
 /// <p>Returns a list of all buckets owned by the authenticated sender of the request. To use this operation, you must have the <code>s3:ListAllMyBuckets</code> permission.</p>
-/// <p>For information about Amazon S3 buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/creating-buckets-s3.html">Creating, configuring, and working with Amazon S3 buckets</a>.</p>
+/// <p>For information about Amazon S3 buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/creating-buckets-s3.html">Creating, configuring, and working with Amazon S3 buckets</a>.</p><important>
+/// <p>We strongly recommend using only paginated requests. Unpaginated requests are only supported for Amazon Web Services accounts set to the default general purpose bucket quota of 10,000. If you have an approved general purpose bucket quota above 10,000, you must send paginated requests to list your account’s buckets. All unpaginated ListBuckets requests will be rejected for Amazon Web Services accounts with a general purpose bucket quota greater than 10,000.</p>
+/// </important>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListBucketsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -134,21 +136,27 @@ impl ListBucketsFluentBuilder {
     }
     /// <p><code>ContinuationToken</code> indicates to Amazon S3 that the list is being continued on this bucket with a token. <code>ContinuationToken</code> is obfuscated and is not a real key. You can use this <code>ContinuationToken</code> for pagination of the list results.</p>
     /// <p>Length Constraints: Minimum length of 0. Maximum length of 1024.</p>
-    /// <p>Required: No.</p>
+    /// <p>Required: No.</p><note>
+    /// <p>If you specify the <code>bucket-region</code>, <code>prefix</code>, or <code>continuation-token</code> query parameters without using <code>max-buckets</code> to set the maximum number of buckets returned in the response, Amazon S3 applies a default page size of 10,000 and provides a continuation token if there are more buckets.</p>
+    /// </note>
     pub fn continuation_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.continuation_token(input.into());
         self
     }
     /// <p><code>ContinuationToken</code> indicates to Amazon S3 that the list is being continued on this bucket with a token. <code>ContinuationToken</code> is obfuscated and is not a real key. You can use this <code>ContinuationToken</code> for pagination of the list results.</p>
     /// <p>Length Constraints: Minimum length of 0. Maximum length of 1024.</p>
-    /// <p>Required: No.</p>
+    /// <p>Required: No.</p><note>
+    /// <p>If you specify the <code>bucket-region</code>, <code>prefix</code>, or <code>continuation-token</code> query parameters without using <code>max-buckets</code> to set the maximum number of buckets returned in the response, Amazon S3 applies a default page size of 10,000 and provides a continuation token if there are more buckets.</p>
+    /// </note>
     pub fn set_continuation_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_continuation_token(input);
         self
     }
     /// <p><code>ContinuationToken</code> indicates to Amazon S3 that the list is being continued on this bucket with a token. <code>ContinuationToken</code> is obfuscated and is not a real key. You can use this <code>ContinuationToken</code> for pagination of the list results.</p>
     /// <p>Length Constraints: Minimum length of 0. Maximum length of 1024.</p>
-    /// <p>Required: No.</p>
+    /// <p>Required: No.</p><note>
+    /// <p>If you specify the <code>bucket-region</code>, <code>prefix</code>, or <code>continuation-token</code> query parameters without using <code>max-buckets</code> to set the maximum number of buckets returned in the response, Amazon S3 applies a default page size of 10,000 and provides a continuation token if there are more buckets.</p>
+    /// </note>
     pub fn get_continuation_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_continuation_token()
     }

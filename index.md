@@ -378,6 +378,7 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | Managed Streaming for Kafka Connect | [aws-sdk-kafkaconnect](https://crates.io/crates/aws-sdk-kafkaconnect) ([docs](https://docs.rs/aws-sdk-kafkaconnect)) |
 | Migration Hub Strategy Recommendations | [aws-sdk-migrationhubstrategy](https://crates.io/crates/aws-sdk-migrationhubstrategy) ([docs](https://docs.rs/aws-sdk-migrationhubstrategy)) |
 | OpenSearch Service Serverless | [aws-sdk-opensearchserverless](https://crates.io/crates/aws-sdk-opensearchserverless) ([docs](https://docs.rs/aws-sdk-opensearchserverless)) |
+| Partner Central Selling API | [aws-sdk-partnercentralselling](https://crates.io/crates/aws-sdk-partnercentralselling) ([docs](https://docs.rs/aws-sdk-partnercentralselling)) |
 | Payment Cryptography Control Plane | [aws-sdk-paymentcryptography](https://crates.io/crates/aws-sdk-paymentcryptography) ([docs](https://docs.rs/aws-sdk-paymentcryptography)) |
 | Payment Cryptography Data Plane | [aws-sdk-paymentcryptographydata](https://crates.io/crates/aws-sdk-paymentcryptographydata) ([docs](https://docs.rs/aws-sdk-paymentcryptographydata)) |
 | PcaConnectorAd | [aws-sdk-pcaconnectorad](https://crates.io/crates/aws-sdk-pcaconnectorad) ([docs](https://docs.rs/aws-sdk-pcaconnectorad)) |

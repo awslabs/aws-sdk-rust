@@ -383,6 +383,10 @@ pub(crate) mod shape_event_configurations_list;
 
 pub(crate) mod shape_fuota_task_list;
 
+pub(crate) mod shape_fuota_task_log_option;
+
+pub(crate) mod shape_fuota_task_log_option_list;
+
 pub(crate) mod shape_gnss;
 
 pub(crate) mod shape_imported_wireless_device_list;
@@ -543,6 +547,8 @@ pub(crate) mod shape_factory_preset_freqs_list;
 
 pub(crate) mod shape_fuota_task;
 
+pub(crate) mod shape_fuota_task_event_log_option;
+
 pub(crate) mod shape_gsm_obj;
 
 pub(crate) mod shape_imported_wireless_device;
@@ -582,6 +588,8 @@ pub(crate) mod shape_network_analyzer_configurations;
 pub(crate) mod shape_otaa_v1_0_x;
 
 pub(crate) mod shape_otaa_v1_1;
+
+pub(crate) mod shape_participating_gateways_multicast;
 
 pub(crate) mod shape_position_configuration_item;
 
@@ -642,6 +650,10 @@ pub(crate) mod shape_dak_certificate_metadata;
 pub(crate) mod shape_dimensions;
 
 pub(crate) mod shape_event_notification_item_configurations;
+
+pub(crate) mod shape_fuota_task_event_log_option_list;
+
+pub(crate) mod shape_gateway_list_multicast;
 
 pub(crate) mod shape_gsm_local_id;
 

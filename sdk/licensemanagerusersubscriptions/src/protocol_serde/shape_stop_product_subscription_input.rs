@@ -15,8 +15,11 @@ pub fn ser_stop_product_subscription_input_input(
     if let Some(var_4) = &input.product {
         object.key("Product").string(var_4.as_str());
     }
-    if let Some(var_5) = &input.username {
-        object.key("Username").string(var_5.as_str());
+    if let Some(var_5) = &input.product_user_arn {
+        object.key("ProductUserArn").string(var_5.as_str());
+    }
+    if let Some(var_6) = &input.username {
+        object.key("Username").string(var_6.as_str());
     }
     Ok(())
 }

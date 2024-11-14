@@ -105,6 +105,8 @@ pub(crate) mod shape_unsupported_action_exception;
 
 pub(crate) mod shape_update_resource_input;
 
+pub(crate) mod shape_hooks_progress_event;
+
 pub(crate) mod shape_progress_event;
 
 pub(crate) mod shape_resource_description;
@@ -114,3 +116,5 @@ pub(crate) mod shape_resource_descriptions;
 pub(crate) mod shape_resource_request_status_filter;
 
 pub(crate) mod shape_resource_request_status_summaries;
+
+pub(crate) mod shape_hook_progress_event;

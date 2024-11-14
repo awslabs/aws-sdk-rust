@@ -137,30 +137,47 @@ impl StopProductSubscriptionFluentBuilder {
         self.inner.get_identity_provider()
     }
     /// <p>The name of the user-based subscription product.</p>
+    /// <p>Valid values: <code>VISUAL_STUDIO_ENTERPRISE</code> | <code>VISUAL_STUDIO_PROFESSIONAL</code> | <code>OFFICE_PROFESSIONAL_PLUS</code></p>
     pub fn product(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.product(input.into());
         self
     }
     /// <p>The name of the user-based subscription product.</p>
+    /// <p>Valid values: <code>VISUAL_STUDIO_ENTERPRISE</code> | <code>VISUAL_STUDIO_PROFESSIONAL</code> | <code>OFFICE_PROFESSIONAL_PLUS</code></p>
     pub fn set_product(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_product(input);
         self
     }
     /// <p>The name of the user-based subscription product.</p>
+    /// <p>Valid values: <code>VISUAL_STUDIO_ENTERPRISE</code> | <code>VISUAL_STUDIO_PROFESSIONAL</code> | <code>OFFICE_PROFESSIONAL_PLUS</code></p>
     pub fn get_product(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_product()
     }
-    /// <p>The domain name of the user.</p>
+    /// <p>The Amazon Resource Name (ARN) of the product user.</p>
+    pub fn product_user_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.product_user_arn(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the product user.</p>
+    pub fn set_product_user_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_product_user_arn(input);
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the product user.</p>
+    pub fn get_product_user_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_product_user_arn()
+    }
+    /// <p>The domain name of the Active Directory that contains the user for whom to stop the product subscription.</p>
     pub fn domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.domain(input.into());
         self
     }
-    /// <p>The domain name of the user.</p>
+    /// <p>The domain name of the Active Directory that contains the user for whom to stop the product subscription.</p>
     pub fn set_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_domain(input);
         self
     }
-    /// <p>The domain name of the user.</p>
+    /// <p>The domain name of the Active Directory that contains the user for whom to stop the product subscription.</p>
     pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_domain()
     }

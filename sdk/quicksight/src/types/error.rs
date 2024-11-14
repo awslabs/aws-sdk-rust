@@ -27,9 +27,11 @@ pub use crate::types::error::_concurrent_updating_exception::ConcurrentUpdatingE
 
 pub use crate::types::error::_customer_managed_key_unavailable_exception::CustomerManagedKeyUnavailableException;
 
-pub use crate::types::error::_invalid_next_token_exception::InvalidNextTokenException;
-
 pub use crate::types::error::_invalid_request_exception::InvalidRequestException;
+
+pub use crate::types::error::_internal_server_exception::InternalServerException;
+
+pub use crate::types::error::_invalid_next_token_exception::InvalidNextTokenException;
 
 pub use crate::types::error::_session_lifetime_in_minutes_invalid_exception::SessionLifetimeInMinutesInvalidException;
 
@@ -52,6 +54,8 @@ mod _domain_not_whitelisted_exception;
 mod _identity_type_not_supported_exception;
 
 mod _internal_failure_exception;
+
+mod _internal_server_exception;
 
 mod _invalid_next_token_exception;
 

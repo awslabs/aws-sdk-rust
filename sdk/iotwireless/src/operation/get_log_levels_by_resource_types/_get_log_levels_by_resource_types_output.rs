@@ -9,6 +9,8 @@ pub struct GetLogLevelsByResourceTypesOutput {
     pub wireless_gateway_log_options: ::std::option::Option<::std::vec::Vec<crate::types::WirelessGatewayLogOption>>,
     /// <p>The list of wireless device log options.</p>
     pub wireless_device_log_options: ::std::option::Option<::std::vec::Vec<crate::types::WirelessDeviceLogOption>>,
+    /// <p>The list of fuota task log options.</p>
+    pub fuota_task_log_options: ::std::option::Option<::std::vec::Vec<crate::types::FuotaTaskLogOption>>,
     _request_id: Option<String>,
 }
 impl GetLogLevelsByResourceTypesOutput {
@@ -27,6 +29,12 @@ impl GetLogLevelsByResourceTypesOutput {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.wireless_device_log_options.is_none()`.
     pub fn wireless_device_log_options(&self) -> &[crate::types::WirelessDeviceLogOption] {
         self.wireless_device_log_options.as_deref().unwrap_or_default()
+    }
+    /// <p>The list of fuota task log options.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.fuota_task_log_options.is_none()`.
+    pub fn fuota_task_log_options(&self) -> &[crate::types::FuotaTaskLogOption] {
+        self.fuota_task_log_options.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for GetLogLevelsByResourceTypesOutput {
@@ -48,6 +56,7 @@ pub struct GetLogLevelsByResourceTypesOutputBuilder {
     pub(crate) default_log_level: ::std::option::Option<crate::types::LogLevel>,
     pub(crate) wireless_gateway_log_options: ::std::option::Option<::std::vec::Vec<crate::types::WirelessGatewayLogOption>>,
     pub(crate) wireless_device_log_options: ::std::option::Option<::std::vec::Vec<crate::types::WirelessDeviceLogOption>>,
+    pub(crate) fuota_task_log_options: ::std::option::Option<::std::vec::Vec<crate::types::FuotaTaskLogOption>>,
     _request_id: Option<String>,
 }
 impl GetLogLevelsByResourceTypesOutputBuilder {
@@ -105,6 +114,26 @@ impl GetLogLevelsByResourceTypesOutputBuilder {
     pub fn get_wireless_device_log_options(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::WirelessDeviceLogOption>> {
         &self.wireless_device_log_options
     }
+    /// Appends an item to `fuota_task_log_options`.
+    ///
+    /// To override the contents of this collection use [`set_fuota_task_log_options`](Self::set_fuota_task_log_options).
+    ///
+    /// <p>The list of fuota task log options.</p>
+    pub fn fuota_task_log_options(mut self, input: crate::types::FuotaTaskLogOption) -> Self {
+        let mut v = self.fuota_task_log_options.unwrap_or_default();
+        v.push(input);
+        self.fuota_task_log_options = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The list of fuota task log options.</p>
+    pub fn set_fuota_task_log_options(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FuotaTaskLogOption>>) -> Self {
+        self.fuota_task_log_options = input;
+        self
+    }
+    /// <p>The list of fuota task log options.</p>
+    pub fn get_fuota_task_log_options(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FuotaTaskLogOption>> {
+        &self.fuota_task_log_options
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -120,6 +149,7 @@ impl GetLogLevelsByResourceTypesOutputBuilder {
             default_log_level: self.default_log_level,
             wireless_gateway_log_options: self.wireless_gateway_log_options,
             wireless_device_log_options: self.wireless_device_log_options,
+            fuota_task_log_options: self.fuota_task_log_options,
             _request_id: self._request_id,
         }
     }

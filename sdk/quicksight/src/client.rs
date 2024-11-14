@@ -148,6 +148,10 @@ mod create_account_subscription;
 
 mod create_analysis;
 
+mod create_brand;
+
+mod create_custom_permissions;
+
 mod create_dashboard;
 
 mod create_data_set;
@@ -219,6 +223,12 @@ mod delete_account_subscription;
 
 mod delete_analysis;
 
+mod delete_brand;
+
+mod delete_brand_assignment;
+
+mod delete_custom_permissions;
+
 mod delete_dashboard;
 
 mod delete_data_set;
@@ -263,6 +273,8 @@ mod delete_user;
 
 mod delete_user_by_principal_id;
 
+mod delete_user_custom_permission;
+
 mod delete_vpc_connection;
 
 mod describe_account_customization;
@@ -280,6 +292,14 @@ mod describe_analysis_permissions;
 mod describe_asset_bundle_export_job;
 
 mod describe_asset_bundle_import_job;
+
+mod describe_brand;
+
+mod describe_brand_assignment;
+
+mod describe_brand_published_version;
+
+mod describe_custom_permissions;
 
 mod describe_dashboard;
 
@@ -366,6 +386,10 @@ mod list_analyses;
 mod list_asset_bundle_export_jobs;
 
 mod list_asset_bundle_import_jobs;
+
+mod list_brands;
+
+mod list_custom_permissions;
 
 mod list_dashboard_versions;
 
@@ -463,6 +487,14 @@ mod update_analysis;
 
 mod update_analysis_permissions;
 
+mod update_brand;
+
+mod update_brand_assignment;
+
+mod update_brand_published_version;
+
+mod update_custom_permissions;
+
 mod update_dashboard;
 
 mod update_dashboard_links;
@@ -522,5 +554,7 @@ mod update_topic_permissions;
 mod update_topic_refresh_schedule;
 
 mod update_user;
+
+mod update_user_custom_permission;
 
 mod update_vpc_connection;

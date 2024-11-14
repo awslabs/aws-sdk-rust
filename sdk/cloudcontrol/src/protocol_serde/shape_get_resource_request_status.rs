@@ -94,6 +94,9 @@ pub(crate) fn de_get_resource_request_status(
                 "ProgressEvent" => {
                     builder = builder.set_progress_event(crate::protocol_serde::shape_progress_event::de_progress_event(tokens)?);
                 }
+                "HooksProgressEvent" => {
+                    builder = builder.set_hooks_progress_event(crate::protocol_serde::shape_hooks_progress_event::de_hooks_progress_event(tokens)?);
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

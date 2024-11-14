@@ -27,9 +27,11 @@ pub use crate::types::error::_concurrent_updating_exception::ConcurrentUpdatingE
 
 pub use crate::types::error::_customer_managed_key_unavailable_exception::CustomerManagedKeyUnavailableExceptionBuilder;
 
-pub use crate::types::error::_invalid_next_token_exception::InvalidNextTokenExceptionBuilder;
-
 pub use crate::types::error::_invalid_request_exception::InvalidRequestExceptionBuilder;
+
+pub use crate::types::error::_internal_server_exception::InternalServerExceptionBuilder;
+
+pub use crate::types::error::_invalid_next_token_exception::InvalidNextTokenExceptionBuilder;
 
 pub use crate::types::error::_session_lifetime_in_minutes_invalid_exception::SessionLifetimeInMinutesInvalidExceptionBuilder;
 

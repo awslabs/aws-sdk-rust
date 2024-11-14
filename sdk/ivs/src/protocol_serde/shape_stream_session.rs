@@ -40,6 +40,10 @@ where
                             builder =
                                 builder.set_ingest_configuration(crate::protocol_serde::shape_ingest_configuration::de_ingest_configuration(tokens)?);
                         }
+                        "ingestConfigurations" => {
+                            builder = builder
+                                .set_ingest_configurations(crate::protocol_serde::shape_ingest_configurations::de_ingest_configurations(tokens)?);
+                        }
                         "recordingConfiguration" => {
                             builder = builder.set_recording_configuration(
                                 crate::protocol_serde::shape_recording_configuration::de_recording_configuration(tokens)?,

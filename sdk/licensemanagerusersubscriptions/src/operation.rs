@@ -4,6 +4,12 @@ pub use ::aws_types::request_id::RequestId;
 /// Types for the `AssociateUser` operation.
 pub mod associate_user;
 
+/// Types for the `CreateLicenseServerEndpoint` operation.
+pub mod create_license_server_endpoint;
+
+/// Types for the `DeleteLicenseServerEndpoint` operation.
+pub mod delete_license_server_endpoint;
+
 /// Types for the `DeregisterIdentityProvider` operation.
 pub mod deregister_identity_provider;
 
@@ -16,8 +22,14 @@ pub mod list_identity_providers;
 /// Types for the `ListInstances` operation.
 pub mod list_instances;
 
+/// Types for the `ListLicenseServerEndpoints` operation.
+pub mod list_license_server_endpoints;
+
 /// Types for the `ListProductSubscriptions` operation.
 pub mod list_product_subscriptions;
+
+/// Types for the `ListTagsForResource` operation.
+pub mod list_tags_for_resource;
 
 /// Types for the `ListUserAssociations` operation.
 pub mod list_user_associations;
@@ -30,6 +42,12 @@ pub mod start_product_subscription;
 
 /// Types for the `StopProductSubscription` operation.
 pub mod stop_product_subscription;
+
+/// Types for the `TagResource` operation.
+pub mod tag_resource;
+
+/// Types for the `UntagResource` operation.
+pub mod untag_resource;
 
 /// Types for the `UpdateIdentityProviderSettings` operation.
 pub mod update_identity_provider_settings;

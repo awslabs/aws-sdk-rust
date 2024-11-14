@@ -11,7 +11,11 @@ pub use crate::types::_resource_description::ResourceDescription;
 
 pub use crate::types::_resource_request_status_filter::ResourceRequestStatusFilter;
 
+pub use crate::types::_hook_progress_event::HookProgressEvent;
+
 mod _handler_error_code;
+
+mod _hook_progress_event;
 
 mod _operation;
 

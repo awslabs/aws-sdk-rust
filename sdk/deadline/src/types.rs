@@ -169,6 +169,14 @@ pub use crate::types::_fleet_attribute_capability::FleetAttributeCapability;
 
 pub use crate::types::_fleet_amount_capability::FleetAmountCapability;
 
+pub use crate::types::_accelerator_capabilities::AcceleratorCapabilities;
+
+pub use crate::types::_accelerator_count_range::AcceleratorCountRange;
+
+pub use crate::types::_accelerator_selection::AcceleratorSelection;
+
+pub use crate::types::_accelerator_name::AcceleratorName;
+
 pub use crate::types::_ec2_ebs_volume::Ec2EbsVolume;
 
 pub use crate::types::_cpu_architecture_type::CpuArchitectureType;
@@ -186,8 +194,6 @@ pub use crate::types::_customer_managed_worker_capabilities::CustomerManagedWork
 pub use crate::types::_customer_managed_fleet_operating_system_family::CustomerManagedFleetOperatingSystemFamily;
 
 pub use crate::types::_accelerator_total_memory_mib_range::AcceleratorTotalMemoryMiBRange;
-
-pub use crate::types::_accelerator_count_range::AcceleratorCountRange;
 
 pub use crate::types::_accelerator_type::AcceleratorType;
 
@@ -347,7 +353,13 @@ pub use crate::types::_stats::Stats;
 
 pub use crate::types::_usage_type::UsageType;
 
+mod _accelerator_capabilities;
+
 mod _accelerator_count_range;
+
+mod _accelerator_name;
+
+mod _accelerator_selection;
 
 mod _accelerator_total_memory_mib_range;
 

@@ -49,6 +49,26 @@ pub(crate) fn reflens_list_asset_bundle_import_jobs_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_brands_output_output_next_token(
+    input: &crate::operation::list_brands::ListBrandsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_custom_permissions_output_output_next_token(
+    input: &crate::operation::list_custom_permissions::ListCustomPermissionsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_dashboard_versions_output_output_next_token(
     input: &crate::operation::list_dashboard_versions::ListDashboardVersionsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -383,6 +403,26 @@ pub(crate) fn lens_list_asset_bundle_import_jobs_output_output_asset_bundle_impo
     input: crate::operation::list_asset_bundle_import_jobs::ListAssetBundleImportJobsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleImportJobSummary>> {
     let input = match input.asset_bundle_import_job_summary_list {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_brands_output_output_brands(
+    input: crate::operation::list_brands::ListBrandsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::BrandSummary>> {
+    let input = match input.brands {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_custom_permissions_output_output_custom_permissions_list(
+    input: crate::operation::list_custom_permissions::ListCustomPermissionsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::CustomPermissions>> {
+    let input = match input.custom_permissions_list {
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,
     };

@@ -43,3 +43,12 @@ pub(crate) fn lake_formation_query_correct_errors(
     }
     builder
 }
+
+pub(crate) fn read_write_access_correct_errors(
+    mut builder: crate::types::builders::ReadWriteAccessBuilder,
+) -> crate::types::builders::ReadWriteAccessBuilder {
+    if builder.authorization.is_none() {
+        builder.authorization = "no value was set".parse::<crate::types::ServiceAuthorization>().ok()
+    }
+    builder
+}

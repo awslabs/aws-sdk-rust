@@ -9,5 +9,11 @@ pub fn ser_lo_ra_wan_multicast(
     if let Some(var_2) = &input.dl_class {
         object.key("DlClass").string(var_2.as_str());
     }
+    if let Some(var_3) = &input.participating_gateways {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("ParticipatingGateways").start_object();
+        crate::protocol_serde::shape_participating_gateways_multicast::ser_participating_gateways_multicast(&mut object_4, var_3)?;
+        object_4.finish();
+    }
     Ok(())
 }

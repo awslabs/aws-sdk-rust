@@ -4,12 +4,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetArchiveRuleOutput {
-    /// <p>Contains information about an archive rule.</p>
+    /// <p>Contains information about an archive rule. Archive rules automatically archive new findings that meet the criteria you define when you create the rule.</p>
     pub archive_rule: ::std::option::Option<crate::types::ArchiveRuleSummary>,
     _request_id: Option<String>,
 }
 impl GetArchiveRuleOutput {
-    /// <p>Contains information about an archive rule.</p>
+    /// <p>Contains information about an archive rule. Archive rules automatically archive new findings that meet the criteria you define when you create the rule.</p>
     pub fn archive_rule(&self) -> ::std::option::Option<&crate::types::ArchiveRuleSummary> {
         self.archive_rule.as_ref()
     }
@@ -34,18 +34,18 @@ pub struct GetArchiveRuleOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetArchiveRuleOutputBuilder {
-    /// <p>Contains information about an archive rule.</p>
+    /// <p>Contains information about an archive rule. Archive rules automatically archive new findings that meet the criteria you define when you create the rule.</p>
     /// This field is required.
     pub fn archive_rule(mut self, input: crate::types::ArchiveRuleSummary) -> Self {
         self.archive_rule = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Contains information about an archive rule.</p>
+    /// <p>Contains information about an archive rule. Archive rules automatically archive new findings that meet the criteria you define when you create the rule.</p>
     pub fn set_archive_rule(mut self, input: ::std::option::Option<crate::types::ArchiveRuleSummary>) -> Self {
         self.archive_rule = input;
         self
     }
-    /// <p>Contains information about an archive rule.</p>
+    /// <p>Contains information about an archive rule. Archive rules automatically archive new findings that meet the criteria you define when you create the rule.</p>
     pub fn get_archive_rule(&self) -> &::std::option::Option<crate::types::ArchiveRuleSummary> {
         &self.archive_rule
     }

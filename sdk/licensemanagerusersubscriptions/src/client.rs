@@ -138,6 +138,8 @@ impl Client {
 
 mod associate_user;
 
+mod create_license_server_endpoint;
+
 /// Operation customization and supporting types.
 ///
 /// The underlying HTTP requests made during an operation can be customized
@@ -165,6 +167,8 @@ mod associate_user;
 /// ```
 pub mod customize;
 
+mod delete_license_server_endpoint;
+
 mod deregister_identity_provider;
 
 mod disassociate_user;
@@ -173,7 +177,11 @@ mod list_identity_providers;
 
 mod list_instances;
 
+mod list_license_server_endpoints;
+
 mod list_product_subscriptions;
+
+mod list_tags_for_resource;
 
 mod list_user_associations;
 
@@ -182,5 +190,9 @@ mod register_identity_provider;
 mod start_product_subscription;
 
 mod stop_product_subscription;
+
+mod tag_resource;
+
+mod untag_resource;
 
 mod update_identity_provider_settings;
