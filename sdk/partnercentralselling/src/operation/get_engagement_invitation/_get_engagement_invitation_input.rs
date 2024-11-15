@@ -5,7 +5,7 @@
 pub struct GetEngagementInvitationInput {
     /// <p>Specifies the catalog associated with the request. The field accepts values from the predefined set: <code>AWS</code> for live operations or <code>Sandbox</code> for testing environments.</p>
     pub catalog: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies the unique identifier for the engagement invitation being retrieved.</p>
+    /// <p>Specifies the unique identifier for the retrieved engagement invitation.</p>
     pub identifier: ::std::option::Option<::std::string::String>,
 }
 impl GetEngagementInvitationInput {
@@ -13,7 +13,7 @@ impl GetEngagementInvitationInput {
     pub fn catalog(&self) -> ::std::option::Option<&str> {
         self.catalog.as_deref()
     }
-    /// <p>Specifies the unique identifier for the engagement invitation being retrieved.</p>
+    /// <p>Specifies the unique identifier for the retrieved engagement invitation.</p>
     pub fn identifier(&self) -> ::std::option::Option<&str> {
         self.identifier.as_deref()
     }
@@ -48,18 +48,18 @@ impl GetEngagementInvitationInputBuilder {
     pub fn get_catalog(&self) -> &::std::option::Option<::std::string::String> {
         &self.catalog
     }
-    /// <p>Specifies the unique identifier for the engagement invitation being retrieved.</p>
+    /// <p>Specifies the unique identifier for the retrieved engagement invitation.</p>
     /// This field is required.
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Specifies the unique identifier for the engagement invitation being retrieved.</p>
+    /// <p>Specifies the unique identifier for the retrieved engagement invitation.</p>
     pub fn set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.identifier = input;
         self
     }
-    /// <p>Specifies the unique identifier for the engagement invitation being retrieved.</p>
+    /// <p>Specifies the unique identifier for the retrieved engagement invitation.</p>
     pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.identifier
     }

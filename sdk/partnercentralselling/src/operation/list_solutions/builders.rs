@@ -178,17 +178,17 @@ impl ListSolutionsFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_status`](Self::set_status).
     ///
-    /// <p>Filters the solutions based on their status. This filter helps retrieve solutions with statuses such as <code>Active</code>, <code>Inactive</code>, or <code>Pending Approval</code>, allowing partners to manage their solution portfolios effectively.</p>
+    /// <p>Filters solutions based on their status. This filter helps partners manage their solution portfolios effectively.</p>
     pub fn status(mut self, input: crate::types::SolutionStatus) -> Self {
         self.inner = self.inner.status(input);
         self
     }
-    /// <p>Filters the solutions based on their status. This filter helps retrieve solutions with statuses such as <code>Active</code>, <code>Inactive</code>, or <code>Pending Approval</code>, allowing partners to manage their solution portfolios effectively.</p>
+    /// <p>Filters solutions based on their status. This filter helps partners manage their solution portfolios effectively.</p>
     pub fn set_status(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SolutionStatus>>) -> Self {
         self.inner = self.inner.set_status(input);
         self
     }
-    /// <p>Filters the solutions based on their status. This filter helps retrieve solutions with statuses such as <code>Active</code>, <code>Inactive</code>, or <code>Pending Approval</code>, allowing partners to manage their solution portfolios effectively.</p>
+    /// <p>Filters solutions based on their status. This filter helps partners manage their solution portfolios effectively.</p>
     pub fn get_status(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SolutionStatus>> {
         self.inner.get_status()
     }

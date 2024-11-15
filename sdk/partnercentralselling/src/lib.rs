@@ -19,17 +19,17 @@
 #![cfg_attr(docsrs, feature(doc_auto_cfg))]
 //! __AWS Partner Central API for Selling Reference Guide__
 //!
-//! Amazon Web Services (AWS) Partner Central API reference guide is designed to help [AWS Partners](https://docs.aws.amazon.com/partners/programs/) programmatically integrate their Customer Relationship Management (CRM) systems with AWS Partner Central. Through the Partner Central APIs, partners can automate and streamline their interactions with AWS Partner Central, ensuring a more efficient and effective engagement in joint business activities.
+//! This Amazon Web Services (AWS) Partner Central API reference is designed to help [AWS Partners](http://aws.amazon.com/partners/programs/) integrate Customer Relationship Management (CRM) systems with AWS Partner Central. Partners can automate interactions with AWS Partner Central, which helps to ensure effective engagements in joint business activities.
 //!
-//! The AWS Partner Central API service provides standard AWS API functionality. You can directly use the API [Actions](https://docs.aws.amazon.com/partner-central/latest/selling-api/API_Operations.html), or you can use an AWS SDK to access an API that's tailored to the programming language or platform that you're using. For more information about AWS application development, see [Getting Started with AWS](https://docs.aws.amazon.com/getting-started). For more information about using AWS SDKs, see [AWS SDKs](https://docs.aws.amazon.com/aws-sdk).
+//! The API provides standard AWS API functionality. Access it by either using API [Actions](https://docs.aws.amazon.com/partner-central/latest/selling-api/API_Operations.html) or by using an AWS SDK that's tailored to your programming language or platform. For more information, see [Getting Started with AWS](http://aws.amazon.com/getting-started) and [Tools to Build on AWS](http://aws.amazon.com/developer/tools/).
 //!
 //! __Features offered by AWS Partner Central API__
-//!   1. __Opportunity management:__ Facilitates the management of co-selling opportunities with AWS using API actions such as CreateOpportunity, UpdateOpportunity, ListOpportunities, GetOpportunity, and AssignOpportunity.
-//!   1. __AWS referral management:__ Facilitates receiving referrals shared by AWS using actions like ListEngagementInvitations, GetEngagementInvitation, StartEngagementByAcceptingInvitation, and RejectEngagementInvitation.
-//!   1. __Entity association:__ Associate related entities such as _AWS Products_, _Partner Solutions_, and _AWS Marketplace Private Offers_ with opportunities using the actions AssociateOpportunity and DisassociateOpportunity.
-//!   1. __View AWS opportunity details:__ Use the GetAWSOpportunitySummary action to retrieve real-time summaries of AWS opportunities that are linked to your opportunities.
-//!   1. __List solutions:__ Provides list APIs for listing solutions partners offer using ListSolutions.
-//!   1. __Event subscription:__ Partners can subscribe to real-time updates on opportunities by listening to events such as _Opportunity Created_, _Opportunity Updated_, _Engagement Invitation Accepted_, _Engagement Invitation Rejected_ and _Engagement Invitation Created_ using AWS EventBridge.
+//!   1. __Opportunity management:__ Manages coselling opportunities through API actions such as CreateOpportunity, UpdateOpportunity, ListOpportunities, GetOpportunity, and AssignOpportunity.
+//!   1. __AWS referral management:__ Manages referrals shared by AWS using actions such as ListEngagementInvitations, GetEngagementInvitation, StartEngagementByAcceptingInvitation, and RejectEngagementInvitation.
+//!   1. __Entity association:__ Associates related entities such as _AWS Products_, _Partner Solutions_, and _AWS Marketplace Private Offers_ with opportunities using the actions AssociateOpportunity, and DisassociateOpportunity.
+//!   1. __View AWS opportunity details:__ Retrieves real-time summaries of AWS opportunities using the GetAWSOpportunitySummary action.
+//!   1. __List solutions:__ Provides list APIs for listing partner offers using ListSolutions.
+//!   1. __Event subscription:__ Subscribe to real-time opportunity updates through AWS EventBridge by using actions such as _Opportunity Created_, _Opportunity Updated_, _Engagement Invitation Accepted_, _Engagement Invitation Rejected_, and _Engagement Invitation Created_.
 //!
 //! ## Getting Started
 //!
@@ -43,7 +43,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-partnercentralselling = "1.0.0"
+//! aws-sdk-partnercentralselling = "1.1.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

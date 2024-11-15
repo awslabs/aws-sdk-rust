@@ -22,18 +22,18 @@ impl crate::operation::create_opportunity::builders::CreateOpportunityInputBuild
 }
 /// Fluent builder constructing a request to `CreateOpportunity`.
 ///
-/// <p>Creates an <code>Opportunity</code> record in Partner Central. Use this operation to create a potential business opportunity intended to be submitted to Amazon Web Services. Creating an opportunity sets its <code>Lifecycle.ReviewStatus</code> to <code>Pending Submission</code>.</p>
-/// <p>To fully submit an opportunity, follow these steps:</p>
+/// <p>Creates an <code>Opportunity</code> record in Partner Central. Use this operation to create a potential business opportunity for submission to Amazon Web Services. Creating an opportunity sets <code>Lifecycle.ReviewStatus</code> to <code>Pending Submission</code>.</p>
+/// <p>To submit an opportunity, follow these steps:</p>
 /// <ol>
 /// <li>
 /// <p>To create the opportunity, use <code>CreateOpportunity</code>.</p></li>
 /// <li>
 /// <p>To associate a solution with the opportunity, use <code>AssociateOpportunity</code>.</p></li>
 /// <li>
-/// <p>To submit the opportunity, use <code>SubmitOpportunity</code>.</p></li>
+/// <p>To submit the opportunity, use <code>StartEngagementFromOpportunityTask</code>.</p></li>
 /// </ol>
-/// <p>After submission, you can't edit the opportunity until the review is complete. However, opportunities in the <code>Pending Submission</code> state still need all details completed. You can update the opportunity while it's in the <code>Pending Submission</code> state.</p>
-/// <p>There's a set of mandatory fields required to create opportunities, but consider providing optional fields to enrich the opportunity record.</p>
+/// <p>After submission, you can't edit the opportunity until the review is complete. But opportunities in the <code>Pending Submission</code> state must have complete details. You can update the opportunity while it's in the <code>Pending Submission</code> state.</p>
+/// <p>There's a set of mandatory fields to create opportunities, but consider providing optional fields to enrich the opportunity record.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateOpportunityFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -119,17 +119,17 @@ impl CreateOpportunityFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>Specifies the catalog associated with the request. This field takes a string value from a predefined list: <code>AWS</code> or <code>Sandbox</code>. The catalog determines which environment the opportunity is created in. Use <code>AWS</code> to create opportunities in the Amazon Web Services catalog, and <code>Sandbox</code> to test in a secure and isolated environment.</p>
+    /// <p>Specifies the catalog associated with the request. This field takes a string value from a predefined list: <code>AWS</code> or <code>Sandbox</code>. The catalog determines which environment the opportunity is created in. Use <code>AWS</code> to create opportunities in the Amazon Web Services catalog, and <code>Sandbox</code> for testing in secure, isolated environments.</p>
     pub fn catalog(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.catalog(input.into());
         self
     }
-    /// <p>Specifies the catalog associated with the request. This field takes a string value from a predefined list: <code>AWS</code> or <code>Sandbox</code>. The catalog determines which environment the opportunity is created in. Use <code>AWS</code> to create opportunities in the Amazon Web Services catalog, and <code>Sandbox</code> to test in a secure and isolated environment.</p>
+    /// <p>Specifies the catalog associated with the request. This field takes a string value from a predefined list: <code>AWS</code> or <code>Sandbox</code>. The catalog determines which environment the opportunity is created in. Use <code>AWS</code> to create opportunities in the Amazon Web Services catalog, and <code>Sandbox</code> for testing in secure, isolated environments.</p>
     pub fn set_catalog(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_catalog(input);
         self
     }
-    /// <p>Specifies the catalog associated with the request. This field takes a string value from a predefined list: <code>AWS</code> or <code>Sandbox</code>. The catalog determines which environment the opportunity is created in. Use <code>AWS</code> to create opportunities in the Amazon Web Services catalog, and <code>Sandbox</code> to test in a secure and isolated environment.</p>
+    /// <p>Specifies the catalog associated with the request. This field takes a string value from a predefined list: <code>AWS</code> or <code>Sandbox</code>. The catalog determines which environment the opportunity is created in. Use <code>AWS</code> to create opportunities in the Amazon Web Services catalog, and <code>Sandbox</code> for testing in secure, isolated environments.</p>
     pub fn get_catalog(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_catalog()
     }
@@ -142,23 +142,23 @@ impl CreateOpportunityFluentBuilder {
     /// <p>Valid values:</p>
     /// <ul>
     /// <li>
-    /// <p>Co-Sell - Architectural Validation: Confirmation from Amazon Web Services that the partner's proposed solution architecture is aligned with Amazon Web Services best practices and poses minimal architectural risks.</p></li>
+    /// <p>Cosell—Architectural Validation: Confirmation from Amazon Web Services that the partner's proposed solution architecture is aligned with Amazon Web Services best practices and poses minimal architectural risks.</p></li>
     /// <li>
-    /// <p>Co-Sell - Business Presentation: Request Amazon Web Services seller's participation in a joint customer presentation.</p></li>
+    /// <p>Cosell—Business Presentation: Request Amazon Web Services seller's participation in a joint customer presentation.</p></li>
     /// <li>
-    /// <p>Co-Sell - Competitive Information: Access to Amazon Web Services competitive resources and support for the partner's proposed solution.</p></li>
+    /// <p>Cosell—Competitive Information: Access to Amazon Web Services competitive resources and support for the partner's proposed solution.</p></li>
     /// <li>
-    /// <p>Co-Sell - Pricing Assistance: Connect with an Amazon Web Services seller for support situations where a partner may be receiving an upfront discount on a service (for example: EDP deals).</p></li>
+    /// <p>Cosell—Pricing Assistance: Connect with an Amazon Web Services seller for support situations where a partner may be receiving an upfront discount on a service (for example: EDP deals).</p></li>
     /// <li>
-    /// <p>Co-Sell - Technical Consultation: Connect with an Amazon Web Services Solutions Architect to address the partner's questions about the proposed solution.</p></li>
+    /// <p>Cosell—Technical Consultation: Connect with an Amazon Web Services Solutions Architect to address the partner's questions about the proposed solution.</p></li>
     /// <li>
-    /// <p>Co-Sell - Total Cost of Ownership Evaluation: Assistance with quoting different cost savings of proposed solutions on Amazon Web Services versus on-premises or a traditional hosting environment.</p></li>
+    /// <p>Cosell—Total Cost of Ownership Evaluation: Assistance with quoting different cost savings of proposed solutions on Amazon Web Services versus on-premises or a traditional hosting environment.</p></li>
     /// <li>
-    /// <p>Co-Sell - Deal Support: Request Amazon Web Services seller's support to progress the opportunity (for example: joint customer call, strategic positioning).</p></li>
+    /// <p>Cosell—Deal Support: Request Amazon Web Services seller's support to progress the opportunity (for example: joint customer call, strategic positioning).</p></li>
     /// <li>
-    /// <p>Co-Sell - Support for Public Tender / RFx: Opportunity related to the public sector where the partner needs Amazon Web Services RFx support.</p></li>
+    /// <p>Cosell—Support for Public Tender/RFx: Opportunity related to the public sector where the partner needs Amazon Web Services RFx support.</p></li>
     /// <li>
-    /// <p>Do Not Need Support from AWS Sales Rep: Indicates that a partner doesn't need support from an Amazon Web Services sales representative, and the partner solely manages the opportunity. It's possible to request co-selling support on these opportunities at any stage during their lifecycle. Also known as, for-visibility-only (FVO) opportunity.</p></li>
+    /// <p>Do Not Need Support from AWS Sales Rep: Indicates that a partner doesn't need support from an Amazon Web Services sales representative, and the partner solely manages the opportunity. It's possible to request coselling support on these opportunities at any stage during their lifecycles. This is also known as a for-visibility-only (FVO) opportunity.</p></li>
     /// </ul>
     pub fn primary_needs_from_aws(mut self, input: crate::types::PrimaryNeedFromAws) -> Self {
         self.inner = self.inner.primary_needs_from_aws(input);
@@ -168,23 +168,23 @@ impl CreateOpportunityFluentBuilder {
     /// <p>Valid values:</p>
     /// <ul>
     /// <li>
-    /// <p>Co-Sell - Architectural Validation: Confirmation from Amazon Web Services that the partner's proposed solution architecture is aligned with Amazon Web Services best practices and poses minimal architectural risks.</p></li>
+    /// <p>Cosell—Architectural Validation: Confirmation from Amazon Web Services that the partner's proposed solution architecture is aligned with Amazon Web Services best practices and poses minimal architectural risks.</p></li>
     /// <li>
-    /// <p>Co-Sell - Business Presentation: Request Amazon Web Services seller's participation in a joint customer presentation.</p></li>
+    /// <p>Cosell—Business Presentation: Request Amazon Web Services seller's participation in a joint customer presentation.</p></li>
     /// <li>
-    /// <p>Co-Sell - Competitive Information: Access to Amazon Web Services competitive resources and support for the partner's proposed solution.</p></li>
+    /// <p>Cosell—Competitive Information: Access to Amazon Web Services competitive resources and support for the partner's proposed solution.</p></li>
     /// <li>
-    /// <p>Co-Sell - Pricing Assistance: Connect with an Amazon Web Services seller for support situations where a partner may be receiving an upfront discount on a service (for example: EDP deals).</p></li>
+    /// <p>Cosell—Pricing Assistance: Connect with an Amazon Web Services seller for support situations where a partner may be receiving an upfront discount on a service (for example: EDP deals).</p></li>
     /// <li>
-    /// <p>Co-Sell - Technical Consultation: Connect with an Amazon Web Services Solutions Architect to address the partner's questions about the proposed solution.</p></li>
+    /// <p>Cosell—Technical Consultation: Connect with an Amazon Web Services Solutions Architect to address the partner's questions about the proposed solution.</p></li>
     /// <li>
-    /// <p>Co-Sell - Total Cost of Ownership Evaluation: Assistance with quoting different cost savings of proposed solutions on Amazon Web Services versus on-premises or a traditional hosting environment.</p></li>
+    /// <p>Cosell—Total Cost of Ownership Evaluation: Assistance with quoting different cost savings of proposed solutions on Amazon Web Services versus on-premises or a traditional hosting environment.</p></li>
     /// <li>
-    /// <p>Co-Sell - Deal Support: Request Amazon Web Services seller's support to progress the opportunity (for example: joint customer call, strategic positioning).</p></li>
+    /// <p>Cosell—Deal Support: Request Amazon Web Services seller's support to progress the opportunity (for example: joint customer call, strategic positioning).</p></li>
     /// <li>
-    /// <p>Co-Sell - Support for Public Tender / RFx: Opportunity related to the public sector where the partner needs Amazon Web Services RFx support.</p></li>
+    /// <p>Cosell—Support for Public Tender/RFx: Opportunity related to the public sector where the partner needs Amazon Web Services RFx support.</p></li>
     /// <li>
-    /// <p>Do Not Need Support from AWS Sales Rep: Indicates that a partner doesn't need support from an Amazon Web Services sales representative, and the partner solely manages the opportunity. It's possible to request co-selling support on these opportunities at any stage during their lifecycle. Also known as, for-visibility-only (FVO) opportunity.</p></li>
+    /// <p>Do Not Need Support from AWS Sales Rep: Indicates that a partner doesn't need support from an Amazon Web Services sales representative, and the partner solely manages the opportunity. It's possible to request coselling support on these opportunities at any stage during their lifecycles. This is also known as a for-visibility-only (FVO) opportunity.</p></li>
     /// </ul>
     pub fn set_primary_needs_from_aws(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PrimaryNeedFromAws>>) -> Self {
         self.inner = self.inner.set_primary_needs_from_aws(input);
@@ -194,23 +194,23 @@ impl CreateOpportunityFluentBuilder {
     /// <p>Valid values:</p>
     /// <ul>
     /// <li>
-    /// <p>Co-Sell - Architectural Validation: Confirmation from Amazon Web Services that the partner's proposed solution architecture is aligned with Amazon Web Services best practices and poses minimal architectural risks.</p></li>
+    /// <p>Cosell—Architectural Validation: Confirmation from Amazon Web Services that the partner's proposed solution architecture is aligned with Amazon Web Services best practices and poses minimal architectural risks.</p></li>
     /// <li>
-    /// <p>Co-Sell - Business Presentation: Request Amazon Web Services seller's participation in a joint customer presentation.</p></li>
+    /// <p>Cosell—Business Presentation: Request Amazon Web Services seller's participation in a joint customer presentation.</p></li>
     /// <li>
-    /// <p>Co-Sell - Competitive Information: Access to Amazon Web Services competitive resources and support for the partner's proposed solution.</p></li>
+    /// <p>Cosell—Competitive Information: Access to Amazon Web Services competitive resources and support for the partner's proposed solution.</p></li>
     /// <li>
-    /// <p>Co-Sell - Pricing Assistance: Connect with an Amazon Web Services seller for support situations where a partner may be receiving an upfront discount on a service (for example: EDP deals).</p></li>
+    /// <p>Cosell—Pricing Assistance: Connect with an Amazon Web Services seller for support situations where a partner may be receiving an upfront discount on a service (for example: EDP deals).</p></li>
     /// <li>
-    /// <p>Co-Sell - Technical Consultation: Connect with an Amazon Web Services Solutions Architect to address the partner's questions about the proposed solution.</p></li>
+    /// <p>Cosell—Technical Consultation: Connect with an Amazon Web Services Solutions Architect to address the partner's questions about the proposed solution.</p></li>
     /// <li>
-    /// <p>Co-Sell - Total Cost of Ownership Evaluation: Assistance with quoting different cost savings of proposed solutions on Amazon Web Services versus on-premises or a traditional hosting environment.</p></li>
+    /// <p>Cosell—Total Cost of Ownership Evaluation: Assistance with quoting different cost savings of proposed solutions on Amazon Web Services versus on-premises or a traditional hosting environment.</p></li>
     /// <li>
-    /// <p>Co-Sell - Deal Support: Request Amazon Web Services seller's support to progress the opportunity (for example: joint customer call, strategic positioning).</p></li>
+    /// <p>Cosell—Deal Support: Request Amazon Web Services seller's support to progress the opportunity (for example: joint customer call, strategic positioning).</p></li>
     /// <li>
-    /// <p>Co-Sell - Support for Public Tender / RFx: Opportunity related to the public sector where the partner needs Amazon Web Services RFx support.</p></li>
+    /// <p>Cosell—Support for Public Tender/RFx: Opportunity related to the public sector where the partner needs Amazon Web Services RFx support.</p></li>
     /// <li>
-    /// <p>Do Not Need Support from AWS Sales Rep: Indicates that a partner doesn't need support from an Amazon Web Services sales representative, and the partner solely manages the opportunity. It's possible to request co-selling support on these opportunities at any stage during their lifecycle. Also known as, for-visibility-only (FVO) opportunity.</p></li>
+    /// <p>Do Not Need Support from AWS Sales Rep: Indicates that a partner doesn't need support from an Amazon Web Services sales representative, and the partner solely manages the opportunity. It's possible to request coselling support on these opportunities at any stage during their lifecycles. This is also known as a for-visibility-only (FVO) opportunity.</p></li>
     /// </ul>
     pub fn get_primary_needs_from_aws(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PrimaryNeedFromAws>> {
         self.inner.get_primary_needs_from_aws()
@@ -229,20 +229,20 @@ impl CreateOpportunityFluentBuilder {
     pub fn get_national_security(&self) -> &::std::option::Option<crate::types::NationalSecurity> {
         self.inner.get_national_security()
     }
-    /// <p>Specifies the opportunity's unique identifier in the partner's CRM system. This value is essential to track and reconcile because it's included in the outbound payload sent back to the partner.</p>
-    /// <p>This field allows partners to link an opportunity to their CRM, to ensure seamless integration and accurate synchronization between the Partner Central API and the partner's internal systems.</p>
+    /// <p>Specifies the opportunity's unique identifier in the partner's CRM system. This value is essential to track and reconcile because it's included in the outbound payload to the partner.</p>
+    /// <p>This field allows partners to link an opportunity to their CRM, which helps to ensure seamless integration and accurate synchronization between the Partner Central API and the partner's internal systems.</p>
     pub fn partner_opportunity_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.partner_opportunity_identifier(input.into());
         self
     }
-    /// <p>Specifies the opportunity's unique identifier in the partner's CRM system. This value is essential to track and reconcile because it's included in the outbound payload sent back to the partner.</p>
-    /// <p>This field allows partners to link an opportunity to their CRM, to ensure seamless integration and accurate synchronization between the Partner Central API and the partner's internal systems.</p>
+    /// <p>Specifies the opportunity's unique identifier in the partner's CRM system. This value is essential to track and reconcile because it's included in the outbound payload to the partner.</p>
+    /// <p>This field allows partners to link an opportunity to their CRM, which helps to ensure seamless integration and accurate synchronization between the Partner Central API and the partner's internal systems.</p>
     pub fn set_partner_opportunity_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_partner_opportunity_identifier(input);
         self
     }
-    /// <p>Specifies the opportunity's unique identifier in the partner's CRM system. This value is essential to track and reconcile because it's included in the outbound payload sent back to the partner.</p>
-    /// <p>This field allows partners to link an opportunity to their CRM, to ensure seamless integration and accurate synchronization between the Partner Central API and the partner's internal systems.</p>
+    /// <p>Specifies the opportunity's unique identifier in the partner's CRM system. This value is essential to track and reconcile because it's included in the outbound payload to the partner.</p>
+    /// <p>This field allows partners to link an opportunity to their CRM, which helps to ensure seamless integration and accurate synchronization between the Partner Central API and the partner's internal systems.</p>
     pub fn get_partner_opportunity_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_partner_opportunity_identifier()
     }
@@ -329,37 +329,37 @@ impl CreateOpportunityFluentBuilder {
     pub fn get_marketing(&self) -> &::std::option::Option<crate::types::Marketing> {
         self.inner.get_marketing()
     }
-    /// <p>Specifies details of a customer's procurement terms. Required only for partners in eligible programs.</p>
+    /// <p>Specifies details of a customer's procurement terms. This is required only for partners in eligible programs.</p>
     pub fn software_revenue(mut self, input: crate::types::SoftwareRevenue) -> Self {
         self.inner = self.inner.software_revenue(input);
         self
     }
-    /// <p>Specifies details of a customer's procurement terms. Required only for partners in eligible programs.</p>
+    /// <p>Specifies details of a customer's procurement terms. This is required only for partners in eligible programs.</p>
     pub fn set_software_revenue(mut self, input: ::std::option::Option<crate::types::SoftwareRevenue>) -> Self {
         self.inner = self.inner.set_software_revenue(input);
         self
     }
-    /// <p>Specifies details of a customer's procurement terms. Required only for partners in eligible programs.</p>
+    /// <p>Specifies details of a customer's procurement terms. This is required only for partners in eligible programs.</p>
     pub fn get_software_revenue(&self) -> &::std::option::Option<crate::types::SoftwareRevenue> {
         self.inner.get_software_revenue()
     }
     /// <p>Required to be unique, and should be unchanging, it can be randomly generated or a meaningful string.</p>
     /// <p>Default: None</p>
-    /// <p>Best practice: To ensure uniqueness and avoid collisions, we recommend you use a UUID (Universally Unique Identifier) as the <code>ClientToken</code>. You can use standard libraries available in most programming languages to generated this. If you use the same client token, the API throws this error: "Conflicting client token submitted for a new request body".</p>
+    /// <p>Best practice: To help ensure uniqueness and avoid conflicts, use a Universally Unique Identifier (UUID) as the <code>ClientToken</code>. You can use standard libraries from most programming languages to generate this. If you use the same client token, the API returns the following error: "Conflicting client token submitted for a new request body."</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
         self
     }
     /// <p>Required to be unique, and should be unchanging, it can be randomly generated or a meaningful string.</p>
     /// <p>Default: None</p>
-    /// <p>Best practice: To ensure uniqueness and avoid collisions, we recommend you use a UUID (Universally Unique Identifier) as the <code>ClientToken</code>. You can use standard libraries available in most programming languages to generated this. If you use the same client token, the API throws this error: "Conflicting client token submitted for a new request body".</p>
+    /// <p>Best practice: To help ensure uniqueness and avoid conflicts, use a Universally Unique Identifier (UUID) as the <code>ClientToken</code>. You can use standard libraries from most programming languages to generate this. If you use the same client token, the API returns the following error: "Conflicting client token submitted for a new request body."</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
     }
     /// <p>Required to be unique, and should be unchanging, it can be randomly generated or a meaningful string.</p>
     /// <p>Default: None</p>
-    /// <p>Best practice: To ensure uniqueness and avoid collisions, we recommend you use a UUID (Universally Unique Identifier) as the <code>ClientToken</code>. You can use standard libraries available in most programming languages to generated this. If you use the same client token, the API throws this error: "Conflicting client token submitted for a new request body".</p>
+    /// <p>Best practice: To help ensure uniqueness and avoid conflicts, use a Universally Unique Identifier (UUID) as the <code>ClientToken</code>. You can use standard libraries from most programming languages to generate this. If you use the same client token, the API returns the following error: "Conflicting client token submitted for a new request body."</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }
@@ -396,17 +396,17 @@ impl CreateOpportunityFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_opportunity_team`](Self::set_opportunity_team).
     ///
-    /// <p>Represents the internal team handling the opportunity. Specify the members involved in collaborating on this opportunity within the partner's organization.</p>
+    /// <p>Represents the internal team handling the opportunity. Specify collaborating members of this opportunity who are within the partner's organization.</p>
     pub fn opportunity_team(mut self, input: crate::types::Contact) -> Self {
         self.inner = self.inner.opportunity_team(input);
         self
     }
-    /// <p>Represents the internal team handling the opportunity. Specify the members involved in collaborating on this opportunity within the partner's organization.</p>
+    /// <p>Represents the internal team handling the opportunity. Specify collaborating members of this opportunity who are within the partner's organization.</p>
     pub fn set_opportunity_team(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Contact>>) -> Self {
         self.inner = self.inner.set_opportunity_team(input);
         self
     }
-    /// <p>Represents the internal team handling the opportunity. Specify the members involved in collaborating on this opportunity within the partner's organization.</p>
+    /// <p>Represents the internal team handling the opportunity. Specify collaborating members of this opportunity who are within the partner's organization.</p>
     pub fn get_opportunity_team(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Contact>> {
         self.inner.get_opportunity_team()
     }

@@ -236,10 +236,9 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetEngagement
             .ok_or("failed to downcast to GetEngagementInvitationInput")?;
 
         let params = crate::config::endpoint::Params::builder()
-            .set_region(cfg.load::<::aws_types::region::Region>().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(cfg.load::<::aws_types::endpoint_config::UseDualStack>().map(|ty| ty.0))
             .set_use_fips(cfg.load::<::aws_types::endpoint_config::UseFips>().map(|ty| ty.0))
             .set_endpoint(cfg.load::<::aws_types::endpoint_config::EndpointUrl>().map(|ty| ty.0.clone()))
+            .set_region(cfg.load::<::aws_types::region::Region>().map(|r| r.as_ref().to_owned()))
             .build()
             .map_err(|err| {
                 ::aws_smithy_runtime_api::client::interceptors::error::ContextAttachedError::new("endpoint params could not be built", err)
@@ -267,7 +266,7 @@ pub enum GetEngagementInvitationError {
     /// <p>Suggested action: Verify that the resource ID is correct and the resource is in the expected AWS region. Check IAM permissions for accessing the resource.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>This error occurs when there are too many requests sent. Review the provided quotas and adapt your usage to avoid throttling.</p>
-    /// <p>This error occurs when there are too many requests sent. Review the provided <a href="https://docs.aws.amazon.com/partner-central/latest/selling-api/quotas.html">quotas</a> and retry after the provided delay.</p>
+    /// <p>This error occurs when there are too many requests sent. Review the provided <a href="https://docs.aws.amazon.com/partner-central/latest/selling-api/quotas.html">Quotas</a> and retry after the provided delay.</p>
     ThrottlingException(crate::types::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints specified by the service or business validation rules.</p>
     /// <p>Suggested action: Review the error message, including the failed fields and reasons, to correct the request payload.</p>

@@ -21,6 +21,7 @@
 ///     ReasonCode::OpportunityConflict => { /* ... */ },
 ///     ReasonCode::OpportunitySubmissionFailed => { /* ... */ },
 ///     ReasonCode::OpportunityValidationFailed => { /* ... */ },
+///     ReasonCode::ResourceSnapshotAccessDenied => { /* ... */ },
 ///     ReasonCode::ResourceSnapshotJobAccessDenied => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -68,6 +69,8 @@ pub enum ReasonCode {
     #[allow(missing_docs)] // documentation missing in model
     OpportunityValidationFailed,
     #[allow(missing_docs)] // documentation missing in model
+    ResourceSnapshotAccessDenied,
+    #[allow(missing_docs)] // documentation missing in model
     ResourceSnapshotJobAccessDenied,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -85,6 +88,7 @@ impl ::std::convert::From<&str> for ReasonCode {
             "OpportunityConflict" => ReasonCode::OpportunityConflict,
             "OpportunitySubmissionFailed" => ReasonCode::OpportunitySubmissionFailed,
             "OpportunityValidationFailed" => ReasonCode::OpportunityValidationFailed,
+            "ResourceSnapshotAccessDenied" => ReasonCode::ResourceSnapshotAccessDenied,
             "ResourceSnapshotJobAccessDenied" => ReasonCode::ResourceSnapshotJobAccessDenied,
             other => ReasonCode::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -110,6 +114,7 @@ impl ReasonCode {
             ReasonCode::OpportunityConflict => "OpportunityConflict",
             ReasonCode::OpportunitySubmissionFailed => "OpportunitySubmissionFailed",
             ReasonCode::OpportunityValidationFailed => "OpportunityValidationFailed",
+            ReasonCode::ResourceSnapshotAccessDenied => "ResourceSnapshotAccessDenied",
             ReasonCode::ResourceSnapshotJobAccessDenied => "ResourceSnapshotJobAccessDenied",
             ReasonCode::Unknown(value) => value.as_str(),
         }
@@ -126,6 +131,7 @@ impl ReasonCode {
             "OpportunityConflict",
             "OpportunitySubmissionFailed",
             "OpportunityValidationFailed",
+            "ResourceSnapshotAccessDenied",
             "ResourceSnapshotJobAccessDenied",
         ]
     }
@@ -159,6 +165,7 @@ impl ::std::fmt::Display for ReasonCode {
             ReasonCode::OpportunityConflict => write!(f, "OpportunityConflict"),
             ReasonCode::OpportunitySubmissionFailed => write!(f, "OpportunitySubmissionFailed"),
             ReasonCode::OpportunityValidationFailed => write!(f, "OpportunityValidationFailed"),
+            ReasonCode::ResourceSnapshotAccessDenied => write!(f, "ResourceSnapshotAccessDenied"),
             ReasonCode::ResourceSnapshotJobAccessDenied => write!(f, "ResourceSnapshotJobAccessDenied"),
             ReasonCode::Unknown(value) => write!(f, "{}", value),
         }

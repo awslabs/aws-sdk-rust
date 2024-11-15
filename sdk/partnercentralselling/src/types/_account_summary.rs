@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct AccountSummary {
-    /// <p>Specifies which industry the end <code>Customer</code> belongs to associated with the <code>Opportunity</code> . It refers to the category or sector that the customer's business operates in.</p>
+    /// <p>Specifies which industry the end <code>Customer</code> belongs to associated with the <code>Opportunity</code>. It refers to the category or sector that the customer's business operates in.</p>
     /// <p>To submit a value outside the picklist, use <code>Other</code>.</p>
     /// <p>Conditionally mandatory if <code>Other</code> is selected for Industry Vertical in LOVs.</p>
     pub industry: ::std::option::Option<crate::types::Industry>,
@@ -18,7 +18,7 @@ pub struct AccountSummary {
     pub address: ::std::option::Option<crate::types::AddressSummary>,
 }
 impl AccountSummary {
-    /// <p>Specifies which industry the end <code>Customer</code> belongs to associated with the <code>Opportunity</code> . It refers to the category or sector that the customer's business operates in.</p>
+    /// <p>Specifies which industry the end <code>Customer</code> belongs to associated with the <code>Opportunity</code>. It refers to the category or sector that the customer's business operates in.</p>
     /// <p>To submit a value outside the picklist, use <code>Other</code>.</p>
     /// <p>Conditionally mandatory if <code>Other</code> is selected for Industry Vertical in LOVs.</p>
     pub fn industry(&self) -> ::std::option::Option<&crate::types::Industry> {
@@ -71,21 +71,21 @@ pub struct AccountSummaryBuilder {
     pub(crate) address: ::std::option::Option<crate::types::AddressSummary>,
 }
 impl AccountSummaryBuilder {
-    /// <p>Specifies which industry the end <code>Customer</code> belongs to associated with the <code>Opportunity</code> . It refers to the category or sector that the customer's business operates in.</p>
+    /// <p>Specifies which industry the end <code>Customer</code> belongs to associated with the <code>Opportunity</code>. It refers to the category or sector that the customer's business operates in.</p>
     /// <p>To submit a value outside the picklist, use <code>Other</code>.</p>
     /// <p>Conditionally mandatory if <code>Other</code> is selected for Industry Vertical in LOVs.</p>
     pub fn industry(mut self, input: crate::types::Industry) -> Self {
         self.industry = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies which industry the end <code>Customer</code> belongs to associated with the <code>Opportunity</code> . It refers to the category or sector that the customer's business operates in.</p>
+    /// <p>Specifies which industry the end <code>Customer</code> belongs to associated with the <code>Opportunity</code>. It refers to the category or sector that the customer's business operates in.</p>
     /// <p>To submit a value outside the picklist, use <code>Other</code>.</p>
     /// <p>Conditionally mandatory if <code>Other</code> is selected for Industry Vertical in LOVs.</p>
     pub fn set_industry(mut self, input: ::std::option::Option<crate::types::Industry>) -> Self {
         self.industry = input;
         self
     }
-    /// <p>Specifies which industry the end <code>Customer</code> belongs to associated with the <code>Opportunity</code> . It refers to the category or sector that the customer's business operates in.</p>
+    /// <p>Specifies which industry the end <code>Customer</code> belongs to associated with the <code>Opportunity</code>. It refers to the category or sector that the customer's business operates in.</p>
     /// <p>To submit a value outside the picklist, use <code>Other</code>.</p>
     /// <p>Conditionally mandatory if <code>Other</code> is selected for Industry Vertical in LOVs.</p>
     pub fn get_industry(&self) -> &::std::option::Option<crate::types::Industry> {

@@ -22,7 +22,7 @@ impl crate::operation::list_opportunities::builders::ListOpportunitiesInputBuild
 }
 /// Fluent builder constructing a request to `ListOpportunities`.
 ///
-/// <p>This request accepts a list of filters to use to retrieve a specific subset of opportunities, as well as sort options. This feature is available to partners from <a href="https://partnercentral.awspartner.com/">Partner Central</a> using the <code>ListOpportunities</code> API action.</p>
+/// <p>This request accepts a list of filters that retrieve opportunity subsets as well as sort options. This feature is available to partners from <a href="https://partnercentral.awspartner.com/">Partner Central</a> using the <code>ListOpportunities</code> API action.</p>
 /// <p>To synchronize your system with Amazon Web Services, only list the opportunities that were newly created or updated. We recommend you rely on events emitted by the service into your Amazon Web Services account’s Amazon EventBridge default event bus, you can also use the <code>ListOpportunities</code> action.</p>
 /// <p>We recommend the following approach:</p>
 /// <ol>
@@ -124,33 +124,33 @@ impl ListOpportunitiesFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_opportunities::paginator::ListOpportunitiesPaginator {
         crate::operation::list_opportunities::paginator::ListOpportunitiesPaginator::new(self.handle, self.inner)
     }
-    /// <p>Specifies the catalog associated with the request. This field takes a string value from a predefined list: <code>AWS</code> or <code>Sandbox</code>. The catalog determines which environment the opportunities are listed in. Use <code>AWS</code> for listing real opportunities in the Amazon Web Services catalog, and <code>Sandbox</code> for to test in a secure and isolated environment.</p>
+    /// <p>Specifies the catalog associated with the request. This field takes a string value from a predefined list: <code>AWS</code> or <code>Sandbox</code>. The catalog determines which environment the opportunities are listed in. Use <code>AWS</code> for listing real opportunities in the Amazon Web Services catalog, and <code>Sandbox</code> for testing in secure, isolated environments.</p>
     pub fn catalog(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.catalog(input.into());
         self
     }
-    /// <p>Specifies the catalog associated with the request. This field takes a string value from a predefined list: <code>AWS</code> or <code>Sandbox</code>. The catalog determines which environment the opportunities are listed in. Use <code>AWS</code> for listing real opportunities in the Amazon Web Services catalog, and <code>Sandbox</code> for to test in a secure and isolated environment.</p>
+    /// <p>Specifies the catalog associated with the request. This field takes a string value from a predefined list: <code>AWS</code> or <code>Sandbox</code>. The catalog determines which environment the opportunities are listed in. Use <code>AWS</code> for listing real opportunities in the Amazon Web Services catalog, and <code>Sandbox</code> for testing in secure, isolated environments.</p>
     pub fn set_catalog(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_catalog(input);
         self
     }
-    /// <p>Specifies the catalog associated with the request. This field takes a string value from a predefined list: <code>AWS</code> or <code>Sandbox</code>. The catalog determines which environment the opportunities are listed in. Use <code>AWS</code> for listing real opportunities in the Amazon Web Services catalog, and <code>Sandbox</code> for to test in a secure and isolated environment.</p>
+    /// <p>Specifies the catalog associated with the request. This field takes a string value from a predefined list: <code>AWS</code> or <code>Sandbox</code>. The catalog determines which environment the opportunities are listed in. Use <code>AWS</code> for listing real opportunities in the Amazon Web Services catalog, and <code>Sandbox</code> for testing in secure, isolated environments.</p>
     pub fn get_catalog(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_catalog()
     }
-    /// <p>Specifies the maximum number of results to return in a single call. This limits the number of opportunities returned in the response to avoid overloading with too many results at once.</p>
+    /// <p>Specifies the maximum number of results to return in a single call. This limits the number of opportunities returned in the response to avoid providing too many results at once.</p>
     /// <p>Default: 20</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
-    /// <p>Specifies the maximum number of results to return in a single call. This limits the number of opportunities returned in the response to avoid overloading with too many results at once.</p>
+    /// <p>Specifies the maximum number of results to return in a single call. This limits the number of opportunities returned in the response to avoid providing too many results at once.</p>
     /// <p>Default: 20</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
-    /// <p>Specifies the maximum number of results to return in a single call. This limits the number of opportunities returned in the response to avoid overloading with too many results at once.</p>
+    /// <p>Specifies the maximum number of results to return in a single call. This limits the number of opportunities returned in the response to avoid providing too many results at once.</p>
     /// <p>Default: 20</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()

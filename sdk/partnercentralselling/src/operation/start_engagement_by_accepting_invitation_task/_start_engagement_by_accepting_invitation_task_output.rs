@@ -3,17 +3,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartEngagementByAcceptingInvitationTaskOutput {
-    /// <p>The unique identifier of the task, used to track the task’s progress. This value follows a specific pattern: <code>^oit-\[0-9a-z\]{13}$</code>.</p>
+    /// <p>The unique identifier of the task, used to track the task’s progress.</p>
     pub task_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the task, used for tracking and managing the task within AWS.</p>
     pub task_arn: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp indicating when the task was initiated. The format follows RFC 3339 section 5.6.</p>
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>Indicates the current status of the task. Valid values include <code>IN_PROGRESS</code>, <code>COMPLETE</code>, and <code>FAILED</code>.</p>
+    /// <p>Indicates the current status of the task.</p>
     pub task_status: ::std::option::Option<crate::types::TaskStatus>,
     /// <p>If the task fails, this field contains a detailed message describing the failure and possible recovery steps.</p>
     pub message: ::std::option::Option<::std::string::String>,
-    /// <p>Indicates the reason for task failure using an enumerated code. Possible values are: <code>ACCEPT_ENGAGEMENT_INVITATION_FAILED</code>, <code>GET_ENGAGEMENT_INVITATION_FAILED</code>, <code>CREATE_OPPORTUNITY_FAILED</code>, <code>CREATE_RESOURCE_VIEW_AUTOMATION_FAILED</code>, <code>SUBMIT_OPPORTUNITY_FAILED</code>.</p>
+    /// <p>Indicates the reason for task failure using an enumerated code.</p>
     pub reason_code: ::std::option::Option<crate::types::ReasonCode>,
     /// <p>Returns the original opportunity identifier passed in the request. This is the unique identifier for the opportunity.</p>
     pub opportunity_id: ::std::option::Option<::std::string::String>,
@@ -22,7 +22,7 @@ pub struct StartEngagementByAcceptingInvitationTaskOutput {
     _request_id: Option<String>,
 }
 impl StartEngagementByAcceptingInvitationTaskOutput {
-    /// <p>The unique identifier of the task, used to track the task’s progress. This value follows a specific pattern: <code>^oit-\[0-9a-z\]{13}$</code>.</p>
+    /// <p>The unique identifier of the task, used to track the task’s progress.</p>
     pub fn task_id(&self) -> ::std::option::Option<&str> {
         self.task_id.as_deref()
     }
@@ -34,7 +34,7 @@ impl StartEngagementByAcceptingInvitationTaskOutput {
     pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
-    /// <p>Indicates the current status of the task. Valid values include <code>IN_PROGRESS</code>, <code>COMPLETE</code>, and <code>FAILED</code>.</p>
+    /// <p>Indicates the current status of the task.</p>
     pub fn task_status(&self) -> ::std::option::Option<&crate::types::TaskStatus> {
         self.task_status.as_ref()
     }
@@ -42,7 +42,7 @@ impl StartEngagementByAcceptingInvitationTaskOutput {
     pub fn message(&self) -> ::std::option::Option<&str> {
         self.message.as_deref()
     }
-    /// <p>Indicates the reason for task failure using an enumerated code. Possible values are: <code>ACCEPT_ENGAGEMENT_INVITATION_FAILED</code>, <code>GET_ENGAGEMENT_INVITATION_FAILED</code>, <code>CREATE_OPPORTUNITY_FAILED</code>, <code>CREATE_RESOURCE_VIEW_AUTOMATION_FAILED</code>, <code>SUBMIT_OPPORTUNITY_FAILED</code>.</p>
+    /// <p>Indicates the reason for task failure using an enumerated code.</p>
     pub fn reason_code(&self) -> ::std::option::Option<&crate::types::ReasonCode> {
         self.reason_code.as_ref()
     }
@@ -83,17 +83,17 @@ pub struct StartEngagementByAcceptingInvitationTaskOutputBuilder {
     _request_id: Option<String>,
 }
 impl StartEngagementByAcceptingInvitationTaskOutputBuilder {
-    /// <p>The unique identifier of the task, used to track the task’s progress. This value follows a specific pattern: <code>^oit-\[0-9a-z\]{13}$</code>.</p>
+    /// <p>The unique identifier of the task, used to track the task’s progress.</p>
     pub fn task_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.task_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier of the task, used to track the task’s progress. This value follows a specific pattern: <code>^oit-\[0-9a-z\]{13}$</code>.</p>
+    /// <p>The unique identifier of the task, used to track the task’s progress.</p>
     pub fn set_task_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.task_id = input;
         self
     }
-    /// <p>The unique identifier of the task, used to track the task’s progress. This value follows a specific pattern: <code>^oit-\[0-9a-z\]{13}$</code>.</p>
+    /// <p>The unique identifier of the task, used to track the task’s progress.</p>
     pub fn get_task_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.task_id
     }
@@ -125,17 +125,17 @@ impl StartEngagementByAcceptingInvitationTaskOutputBuilder {
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.start_time
     }
-    /// <p>Indicates the current status of the task. Valid values include <code>IN_PROGRESS</code>, <code>COMPLETE</code>, and <code>FAILED</code>.</p>
+    /// <p>Indicates the current status of the task.</p>
     pub fn task_status(mut self, input: crate::types::TaskStatus) -> Self {
         self.task_status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates the current status of the task. Valid values include <code>IN_PROGRESS</code>, <code>COMPLETE</code>, and <code>FAILED</code>.</p>
+    /// <p>Indicates the current status of the task.</p>
     pub fn set_task_status(mut self, input: ::std::option::Option<crate::types::TaskStatus>) -> Self {
         self.task_status = input;
         self
     }
-    /// <p>Indicates the current status of the task. Valid values include <code>IN_PROGRESS</code>, <code>COMPLETE</code>, and <code>FAILED</code>.</p>
+    /// <p>Indicates the current status of the task.</p>
     pub fn get_task_status(&self) -> &::std::option::Option<crate::types::TaskStatus> {
         &self.task_status
     }
@@ -153,17 +153,17 @@ impl StartEngagementByAcceptingInvitationTaskOutputBuilder {
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.message
     }
-    /// <p>Indicates the reason for task failure using an enumerated code. Possible values are: <code>ACCEPT_ENGAGEMENT_INVITATION_FAILED</code>, <code>GET_ENGAGEMENT_INVITATION_FAILED</code>, <code>CREATE_OPPORTUNITY_FAILED</code>, <code>CREATE_RESOURCE_VIEW_AUTOMATION_FAILED</code>, <code>SUBMIT_OPPORTUNITY_FAILED</code>.</p>
+    /// <p>Indicates the reason for task failure using an enumerated code.</p>
     pub fn reason_code(mut self, input: crate::types::ReasonCode) -> Self {
         self.reason_code = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates the reason for task failure using an enumerated code. Possible values are: <code>ACCEPT_ENGAGEMENT_INVITATION_FAILED</code>, <code>GET_ENGAGEMENT_INVITATION_FAILED</code>, <code>CREATE_OPPORTUNITY_FAILED</code>, <code>CREATE_RESOURCE_VIEW_AUTOMATION_FAILED</code>, <code>SUBMIT_OPPORTUNITY_FAILED</code>.</p>
+    /// <p>Indicates the reason for task failure using an enumerated code.</p>
     pub fn set_reason_code(mut self, input: ::std::option::Option<crate::types::ReasonCode>) -> Self {
         self.reason_code = input;
         self
     }
-    /// <p>Indicates the reason for task failure using an enumerated code. Possible values are: <code>ACCEPT_ENGAGEMENT_INVITATION_FAILED</code>, <code>GET_ENGAGEMENT_INVITATION_FAILED</code>, <code>CREATE_OPPORTUNITY_FAILED</code>, <code>CREATE_RESOURCE_VIEW_AUTOMATION_FAILED</code>, <code>SUBMIT_OPPORTUNITY_FAILED</code>.</p>
+    /// <p>Indicates the reason for task failure using an enumerated code.</p>
     pub fn get_reason_code(&self) -> &::std::option::Option<crate::types::ReasonCode> {
         &self.reason_code
     }

@@ -1654,9 +1654,9 @@ model_hash = 'febaa3d19e9d98c7c7888395b77777d20b9914187a054b1443a86e9a0a5ab35f'
 
 [crates.aws-sdk-partnercentralselling]
 category = 'AwsSdk'
-version = '1.0.0'
-source_hash = '4de8964aad8989ac0d0a18a3397ebdca92c163e1092084068704945665a5d3a8'
-model_hash = '44984fdc5fcb9de3d07f218f13dc8881cbb8cb57dd1e56d69ade386e7d4b1a94'
+version = '1.1.0'
+source_hash = '35635f472821e9dd478e0c99a1d28f8b00229928ef327ae9f73f9916d563957c'
+model_hash = '4aa49717be7a5ae3a582e272a5c6855cba351fd5d8ae5c7a16e347dc9da7bb72'
 
 [crates.aws-sdk-paymentcryptography]
 category = 'AwsSdk'
@@ -2523,21 +2523,5 @@ source_hash = 'f926d3a7deb08a19ecbde8ed9516c47a27d4a3db2cf6b2f2532791634565b05e'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = '340172f38639aeb06ccd407828639e840caf6a7109c4eac3c6c78a9e06c1ef06'
-
-[release]
-tag = 'release-2024-11-14'
-
 [release.crates]
-aws-sdk-accessanalyzer = '1.54.0'
-aws-sdk-cloudcontrol = '1.50.0'
-aws-sdk-deadline = '1.34.0'
-aws-sdk-iam = '1.52.0'
-aws-sdk-iotwireless = '1.53.0'
-aws-sdk-ivs = '1.55.0'
-aws-sdk-licensemanagerusersubscriptions = '1.50.0'
-aws-sdk-partnercentralselling = '1.0.0'
-aws-sdk-quicksight = '1.64.0'
-aws-sdk-redshift = '1.54.0'
-aws-sdk-s3 = '1.61.0'
-aws-sdk-sagemaker = '1.86.0'
-aws-sdk-sts = '1.50.0'
+aws-sdk-partnercentralselling = '1.1.0'

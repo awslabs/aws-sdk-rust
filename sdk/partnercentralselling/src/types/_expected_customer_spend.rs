@@ -2,7 +2,7 @@
 
 /// <p>Provides an estimate of the revenue that the partner is expected to generate from the opportunity. This information helps partners assess the financial value of the project.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ExpectedCustomerSpend {
     /// <p>Represents the estimated monthly revenue that the partner expects to earn from the opportunity. This helps in forecasting financial returns.</p>
     pub amount: ::std::string::String,
@@ -33,6 +33,16 @@ impl ExpectedCustomerSpend {
         self.target_company.deref()
     }
 }
+impl ::std::fmt::Debug for ExpectedCustomerSpend {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("ExpectedCustomerSpend");
+        formatter.field("amount", &self.amount);
+        formatter.field("currency_code", &"*** Sensitive Data Redacted ***");
+        formatter.field("frequency", &self.frequency);
+        formatter.field("target_company", &self.target_company);
+        formatter.finish()
+    }
+}
 impl ExpectedCustomerSpend {
     /// Creates a new builder-style object to manufacture [`ExpectedCustomerSpend`](crate::types::ExpectedCustomerSpend).
     pub fn builder() -> crate::types::builders::ExpectedCustomerSpendBuilder {
@@ -41,7 +51,7 @@ impl ExpectedCustomerSpend {
 }
 
 /// A builder for [`ExpectedCustomerSpend`](crate::types::ExpectedCustomerSpend).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct ExpectedCustomerSpendBuilder {
     pub(crate) amount: ::std::option::Option<::std::string::String>,
@@ -143,5 +153,15 @@ impl ExpectedCustomerSpendBuilder {
                 )
             })?,
         })
+    }
+}
+impl ::std::fmt::Debug for ExpectedCustomerSpendBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("ExpectedCustomerSpendBuilder");
+        formatter.field("amount", &self.amount);
+        formatter.field("currency_code", &"*** Sensitive Data Redacted ***");
+        formatter.field("frequency", &self.frequency);
+        formatter.field("target_company", &self.target_company);
+        formatter.finish()
     }
 }

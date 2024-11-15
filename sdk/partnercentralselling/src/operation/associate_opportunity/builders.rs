@@ -22,23 +22,23 @@ impl crate::operation::associate_opportunity::builders::AssociateOpportunityInpu
 }
 /// Fluent builder constructing a request to `AssociateOpportunity`.
 ///
-/// <p>Enables you to create a formal association between an <code>Opportunity</code> and various related entities, enriching the context and details of the opportunity for better collaboration and decision-making. You can associate an opportunity with the following types of entities:</p>
+/// <p>Enables you to create a formal association between an <code>Opportunity</code> and various related entities, enriching the context and details of the opportunity for better collaboration and decision making. You can associate an opportunity with the following entity types:</p>
 /// <ul>
 /// <li>
-/// <p>Partner Solution: A software product or consulting practice created and delivered by Partners. Partner Solutions help customers address specific business challenges or achieve particular goals using Amazon Web Services services.</p></li>
+/// <p>Partner Solution: A software product or consulting practice created and delivered by Partners. Partner Solutions help customers address business challenges using Amazon Web Services services.</p></li>
 /// <li>
-/// <p>Amazon Web Services Product: Amazon Web Services offers a wide range of products and services designed to provide scalable, reliable, and cost-effective infrastructure solutions. For the latest list of Amazon Web Services products, refer to <a href="https://github.com/aws-samples/partner-crm-integration-samples/blob/main/resources/aws_products.json">Amazon Web Services products</a>.</p></li>
+/// <p>Amazon Web Services Products: Amazon Web Services offers many products and services that provide scalable, reliable, and cost-effective infrastructure solutions. For the latest list of Amazon Web Services products, see <a href="https://github.com/aws-samples/partner-crm-integration-samples/blob/main/resources/aws_products.json">Amazon Web Services products</a>.</p></li>
 /// <li>
-/// <p>Amazon Web Services Marketplace private offer: Allows Amazon Web Services Marketplace sellers to extend custom pricing and terms to individual Amazon Web Services customers. Sellers can negotiate custom prices, payment schedules, and end user license terms through private offers, enabling Amazon Web Services customers to acquire software solutions tailored to their specific needs. For more information, refer to <a href="https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-private-offers.html">Private offers in Amazon Web Services Marketplace</a>.</p></li>
+/// <p>Amazon Web Services Marketplace private offer: Allows Amazon Web Services Marketplace sellers to extend custom pricing and terms to individual Amazon Web Services customers. Sellers can negotiate custom prices, payment schedules, and end user license terms through private offers, enabling Amazon Web Services customers to acquire software solutions tailored to their specific needs. For more information, see <a href="https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-private-offers.html">Private offers in Amazon Web Services Marketplace</a>.</p></li>
 /// </ul>
 /// <p>To obtain identifiers for these entities, use the following methods:</p>
 /// <ul>
 /// <li>
 /// <p>Solution: Use the <code>ListSolutions</code> operation.</p></li>
 /// <li>
-/// <p>AWS products: For the latest list of Amazon Web Services products, refer to the Amazon Web Services products list.</p></li>
+/// <p>AWS Products: For the latest list of Amazon Web Services products, see <a href="https://github.com/aws-samples/partner-crm-integration-samples/blob/main/resources/aws_products.json">Amazon Web Services products</a>.</p></li>
 /// <li>
-/// <p>Amazon Web Services Marketplace private offer: Use the <a href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/welcome.html">AWS Marketplace Catalog API</a> to list entities. Specifically, use the <code>ListEntities</code> operation to retrieve a list of private offers. The request to the <code>ListEntities</code> API returns the details of the private offers available to you. For more information, refer to <a href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/API_ListEntities.html">ListEntities</a>.</p></li>
+/// <p>Amazon Web Services Marketplace private offer: Use the <a href="https://docs.aws.amazon.com/marketplace/latest/APIReference/catalog-apis.html">Using the Amazon Web Services Marketplace Catalog API</a> to list entities. Specifically, use the <code>ListEntities</code> operation to retrieve a list of private offers. The request returns the details of available private offers. For more information, see <a href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/API_ListEntities.html">ListEntities</a>.</p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AssociateOpportunityFluentBuilder {
@@ -125,17 +125,17 @@ impl AssociateOpportunityFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>Specifies the catalog associated with the request. This field takes a string value from a predefined list: <code>AWS</code> or <code>Sandbox</code>. The catalog determines whichenvironment the opportunity association is made in. Use <code>AWS</code> to associate opportunities in the Amazon Web Services catalog, and <code>Sandbox</code> to test in a secure and isolated environment.</p>
+    /// <p>Specifies the catalog associated with the request. This field takes a string value from a predefined list: <code>AWS</code> or <code>Sandbox</code>. The catalog determines which environment the opportunity association is made in. Use <code>AWS</code> to associate opportunities in the Amazon Web Services catalog, and <code>Sandbox</code> for testing in secure, isolated environments.</p>
     pub fn catalog(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.catalog(input.into());
         self
     }
-    /// <p>Specifies the catalog associated with the request. This field takes a string value from a predefined list: <code>AWS</code> or <code>Sandbox</code>. The catalog determines whichenvironment the opportunity association is made in. Use <code>AWS</code> to associate opportunities in the Amazon Web Services catalog, and <code>Sandbox</code> to test in a secure and isolated environment.</p>
+    /// <p>Specifies the catalog associated with the request. This field takes a string value from a predefined list: <code>AWS</code> or <code>Sandbox</code>. The catalog determines which environment the opportunity association is made in. Use <code>AWS</code> to associate opportunities in the Amazon Web Services catalog, and <code>Sandbox</code> for testing in secure, isolated environments.</p>
     pub fn set_catalog(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_catalog(input);
         self
     }
-    /// <p>Specifies the catalog associated with the request. This field takes a string value from a predefined list: <code>AWS</code> or <code>Sandbox</code>. The catalog determines whichenvironment the opportunity association is made in. Use <code>AWS</code> to associate opportunities in the Amazon Web Services catalog, and <code>Sandbox</code> to test in a secure and isolated environment.</p>
+    /// <p>Specifies the catalog associated with the request. This field takes a string value from a predefined list: <code>AWS</code> or <code>Sandbox</code>. The catalog determines which environment the opportunity association is made in. Use <code>AWS</code> to associate opportunities in the Amazon Web Services catalog, and <code>Sandbox</code> for testing in secure, isolated environments.</p>
     pub fn get_catalog(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_catalog()
     }
@@ -153,17 +153,17 @@ impl AssociateOpportunityFluentBuilder {
     pub fn get_opportunity_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_opportunity_identifier()
     }
-    /// <p>Specifies the type of the related entity you're associating with the <code> Opportunity</code>. This helps to categorize and properly process the association.</p>
+    /// <p>Specifies the entity type that you're associating with the <code> Opportunity</code>. This helps to categorize and properly process the association.</p>
     pub fn related_entity_type(mut self, input: crate::types::RelatedEntityType) -> Self {
         self.inner = self.inner.related_entity_type(input);
         self
     }
-    /// <p>Specifies the type of the related entity you're associating with the <code> Opportunity</code>. This helps to categorize and properly process the association.</p>
+    /// <p>Specifies the entity type that you're associating with the <code> Opportunity</code>. This helps to categorize and properly process the association.</p>
     pub fn set_related_entity_type(mut self, input: ::std::option::Option<crate::types::RelatedEntityType>) -> Self {
         self.inner = self.inner.set_related_entity_type(input);
         self
     }
-    /// <p>Specifies the type of the related entity you're associating with the <code> Opportunity</code>. This helps to categorize and properly process the association.</p>
+    /// <p>Specifies the entity type that you're associating with the <code> Opportunity</code>. This helps to categorize and properly process the association.</p>
     pub fn get_related_entity_type(&self) -> &::std::option::Option<crate::types::RelatedEntityType> {
         self.inner.get_related_entity_type()
     }

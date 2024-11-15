@@ -22,7 +22,7 @@ impl crate::operation::start_engagement_by_accepting_invitation_task::builders::
 }
 /// Fluent builder constructing a request to `StartEngagementByAcceptingInvitationTask`.
 ///
-/// <p>This action starts the engagement by accepting an <code>EngagementInvitation</code>. The task is asynchronous and involves several steps: accepting the invitation, creating an opportunity in the partner’s account from the AWS Opportunity, and copying over key details for tracking. Once completed, an <code>Opportunity Created</code> event is generated, indicating that the opportunity has been successfully created in the partner's account.</p>
+/// <p>This action starts the engagement by accepting an <code>EngagementInvitation</code>. The task is asynchronous and involves the following steps: accepting the invitation, creating an opportunity in the partner’s account from the AWS opportunity, and copying details for tracking. When completed, an <code>Opportunity Created</code> event is generated, indicating that the opportunity has been successfully created in the partner's account.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartEngagementByAcceptingInvitationTaskFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -129,31 +129,31 @@ impl StartEngagementByAcceptingInvitationTaskFluentBuilder {
     pub fn get_catalog(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_catalog()
     }
-    /// <p>A unique, case-sensitive identifier provided by the client to ensure the idempotency of the request. Can be a random or meaningful string, but must be unique for each request.</p>
+    /// <p>A unique, case-sensitive identifier provided by the client that helps to ensure the idempotency of the request. This can be a random or meaningful string but must be unique for each request.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
         self
     }
-    /// <p>A unique, case-sensitive identifier provided by the client to ensure the idempotency of the request. Can be a random or meaningful string, but must be unique for each request.</p>
+    /// <p>A unique, case-sensitive identifier provided by the client that helps to ensure the idempotency of the request. This can be a random or meaningful string but must be unique for each request.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
     }
-    /// <p>A unique, case-sensitive identifier provided by the client to ensure the idempotency of the request. Can be a random or meaningful string, but must be unique for each request.</p>
+    /// <p>A unique, case-sensitive identifier provided by the client that helps to ensure the idempotency of the request. This can be a random or meaningful string but must be unique for each request.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }
-    /// <p>Specifies the unique identifier of the <code>EngagementInvitation</code> to be accepted. Providing the correct identifier ensures the right engagement invitation is processed.</p>
+    /// <p>Specifies the unique identifier of the <code>EngagementInvitation</code> to be accepted. Providing the correct identifier helps ensure that the correct engagement is processed.</p>
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.identifier(input.into());
         self
     }
-    /// <p>Specifies the unique identifier of the <code>EngagementInvitation</code> to be accepted. Providing the correct identifier ensures the right engagement invitation is processed.</p>
+    /// <p>Specifies the unique identifier of the <code>EngagementInvitation</code> to be accepted. Providing the correct identifier helps ensure that the correct engagement is processed.</p>
     pub fn set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_identifier(input);
         self
     }
-    /// <p>Specifies the unique identifier of the <code>EngagementInvitation</code> to be accepted. Providing the correct identifier ensures the right engagement invitation is processed.</p>
+    /// <p>Specifies the unique identifier of the <code>EngagementInvitation</code> to be accepted. Providing the correct identifier helps ensure that the correct engagement is processed.</p>
     pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_identifier()
     }

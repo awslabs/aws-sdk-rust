@@ -4,11 +4,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsOpportunityCustomer {
-    /// <p>Provides a list of customer contacts involved in the opportunity. These contacts may include decision-makers, influencers, and other key stakeholders within the customer's organization.</p>
+    /// <p>Provides a list of customer contacts involved in the opportunity. These contacts may include decision makers, influencers, and other stakeholders within the customer's organization.</p>
     pub contacts: ::std::option::Option<::std::vec::Vec<crate::types::Contact>>,
 }
 impl AwsOpportunityCustomer {
-    /// <p>Provides a list of customer contacts involved in the opportunity. These contacts may include decision-makers, influencers, and other key stakeholders within the customer's organization.</p>
+    /// <p>Provides a list of customer contacts involved in the opportunity. These contacts may include decision makers, influencers, and other stakeholders within the customer's organization.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.contacts.is_none()`.
     pub fn contacts(&self) -> &[crate::types::Contact] {
@@ -33,19 +33,19 @@ impl AwsOpportunityCustomerBuilder {
     ///
     /// To override the contents of this collection use [`set_contacts`](Self::set_contacts).
     ///
-    /// <p>Provides a list of customer contacts involved in the opportunity. These contacts may include decision-makers, influencers, and other key stakeholders within the customer's organization.</p>
+    /// <p>Provides a list of customer contacts involved in the opportunity. These contacts may include decision makers, influencers, and other stakeholders within the customer's organization.</p>
     pub fn contacts(mut self, input: crate::types::Contact) -> Self {
         let mut v = self.contacts.unwrap_or_default();
         v.push(input);
         self.contacts = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Provides a list of customer contacts involved in the opportunity. These contacts may include decision-makers, influencers, and other key stakeholders within the customer's organization.</p>
+    /// <p>Provides a list of customer contacts involved in the opportunity. These contacts may include decision makers, influencers, and other stakeholders within the customer's organization.</p>
     pub fn set_contacts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Contact>>) -> Self {
         self.contacts = input;
         self
     }
-    /// <p>Provides a list of customer contacts involved in the opportunity. These contacts may include decision-makers, influencers, and other key stakeholders within the customer's organization.</p>
+    /// <p>Provides a list of customer contacts involved in the opportunity. These contacts may include decision makers, influencers, and other stakeholders within the customer's organization.</p>
     pub fn get_contacts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Contact>> {
         &self.contacts
     }

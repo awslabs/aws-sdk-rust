@@ -13,7 +13,7 @@ pub struct StartEngagementFromOpportunityTaskOutput {
     pub task_status: ::std::option::Option<crate::types::TaskStatus>,
     /// <p>If the task fails, this field contains a detailed message describing the failure and possible recovery steps.</p>
     pub message: ::std::option::Option<::std::string::String>,
-    /// <p>Indicates the reason for task failure using an enumerated code. Possible values are: <code>ACCEPT_ENGAGEMENT_INVITATION_FAILED</code>, <code>GET_ENGAGEMENT_INVITATION_FAILED</code>, <code>CREATE_OPPORTUNITY_FAILED</code>, <code>CREATE_RESOURCE_VIEW_AUTOMATION_FAILED</code>, <code>SUBMIT_OPPORTUNITY_FAILED</code>.</p>
+    /// <p>Indicates the reason for task failure using an enumerated code.</p>
     pub reason_code: ::std::option::Option<crate::types::ReasonCode>,
     /// <p>Returns the original opportunity identifier passed in the request, which is the unique identifier for the opportunity created in the partner’s system.</p>
     pub opportunity_id: ::std::option::Option<::std::string::String>,
@@ -40,7 +40,7 @@ impl StartEngagementFromOpportunityTaskOutput {
     pub fn message(&self) -> ::std::option::Option<&str> {
         self.message.as_deref()
     }
-    /// <p>Indicates the reason for task failure using an enumerated code. Possible values are: <code>ACCEPT_ENGAGEMENT_INVITATION_FAILED</code>, <code>GET_ENGAGEMENT_INVITATION_FAILED</code>, <code>CREATE_OPPORTUNITY_FAILED</code>, <code>CREATE_RESOURCE_VIEW_AUTOMATION_FAILED</code>, <code>SUBMIT_OPPORTUNITY_FAILED</code>.</p>
+    /// <p>Indicates the reason for task failure using an enumerated code.</p>
     pub fn reason_code(&self) -> ::std::option::Option<&crate::types::ReasonCode> {
         self.reason_code.as_ref()
     }
@@ -145,17 +145,17 @@ impl StartEngagementFromOpportunityTaskOutputBuilder {
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.message
     }
-    /// <p>Indicates the reason for task failure using an enumerated code. Possible values are: <code>ACCEPT_ENGAGEMENT_INVITATION_FAILED</code>, <code>GET_ENGAGEMENT_INVITATION_FAILED</code>, <code>CREATE_OPPORTUNITY_FAILED</code>, <code>CREATE_RESOURCE_VIEW_AUTOMATION_FAILED</code>, <code>SUBMIT_OPPORTUNITY_FAILED</code>.</p>
+    /// <p>Indicates the reason for task failure using an enumerated code.</p>
     pub fn reason_code(mut self, input: crate::types::ReasonCode) -> Self {
         self.reason_code = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates the reason for task failure using an enumerated code. Possible values are: <code>ACCEPT_ENGAGEMENT_INVITATION_FAILED</code>, <code>GET_ENGAGEMENT_INVITATION_FAILED</code>, <code>CREATE_OPPORTUNITY_FAILED</code>, <code>CREATE_RESOURCE_VIEW_AUTOMATION_FAILED</code>, <code>SUBMIT_OPPORTUNITY_FAILED</code>.</p>
+    /// <p>Indicates the reason for task failure using an enumerated code.</p>
     pub fn set_reason_code(mut self, input: ::std::option::Option<crate::types::ReasonCode>) -> Self {
         self.reason_code = input;
         self
     }
-    /// <p>Indicates the reason for task failure using an enumerated code. Possible values are: <code>ACCEPT_ENGAGEMENT_INVITATION_FAILED</code>, <code>GET_ENGAGEMENT_INVITATION_FAILED</code>, <code>CREATE_OPPORTUNITY_FAILED</code>, <code>CREATE_RESOURCE_VIEW_AUTOMATION_FAILED</code>, <code>SUBMIT_OPPORTUNITY_FAILED</code>.</p>
+    /// <p>Indicates the reason for task failure using an enumerated code.</p>
     pub fn get_reason_code(&self) -> &::std::option::Option<crate::types::ReasonCode> {
         &self.reason_code
     }

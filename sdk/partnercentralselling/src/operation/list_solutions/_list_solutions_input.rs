@@ -12,7 +12,7 @@ pub struct ListSolutionsInput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Object that configures sorting done on the response. Default <code>Sort.SortBy</code> is <code>Identifier</code>.</p>
     pub sort: ::std::option::Option<crate::types::SolutionSort>,
-    /// <p>Filters the solutions based on their status. This filter helps retrieve solutions with statuses such as <code>Active</code>, <code>Inactive</code>, or <code>Pending Approval</code>, allowing partners to manage their solution portfolios effectively.</p>
+    /// <p>Filters solutions based on their status. This filter helps partners manage their solution portfolios effectively.</p>
     pub status: ::std::option::Option<::std::vec::Vec<crate::types::SolutionStatus>>,
     /// <p>Filters the solutions based on their unique identifier. Use this filter to retrieve specific solutions by providing the solution's identifier for accurate results.</p>
     pub identifier: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -37,7 +37,7 @@ impl ListSolutionsInput {
     pub fn sort(&self) -> ::std::option::Option<&crate::types::SolutionSort> {
         self.sort.as_ref()
     }
-    /// <p>Filters the solutions based on their status. This filter helps retrieve solutions with statuses such as <code>Active</code>, <code>Inactive</code>, or <code>Pending Approval</code>, allowing partners to manage their solution portfolios effectively.</p>
+    /// <p>Filters solutions based on their status. This filter helps partners manage their solution portfolios effectively.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.status.is_none()`.
     pub fn status(&self) -> &[crate::types::SolutionStatus] {
@@ -140,19 +140,19 @@ impl ListSolutionsInputBuilder {
     ///
     /// To override the contents of this collection use [`set_status`](Self::set_status).
     ///
-    /// <p>Filters the solutions based on their status. This filter helps retrieve solutions with statuses such as <code>Active</code>, <code>Inactive</code>, or <code>Pending Approval</code>, allowing partners to manage their solution portfolios effectively.</p>
+    /// <p>Filters solutions based on their status. This filter helps partners manage their solution portfolios effectively.</p>
     pub fn status(mut self, input: crate::types::SolutionStatus) -> Self {
         let mut v = self.status.unwrap_or_default();
         v.push(input);
         self.status = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Filters the solutions based on their status. This filter helps retrieve solutions with statuses such as <code>Active</code>, <code>Inactive</code>, or <code>Pending Approval</code>, allowing partners to manage their solution portfolios effectively.</p>
+    /// <p>Filters solutions based on their status. This filter helps partners manage their solution portfolios effectively.</p>
     pub fn set_status(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SolutionStatus>>) -> Self {
         self.status = input;
         self
     }
-    /// <p>Filters the solutions based on their status. This filter helps retrieve solutions with statuses such as <code>Active</code>, <code>Inactive</code>, or <code>Pending Approval</code>, allowing partners to manage their solution portfolios effectively.</p>
+    /// <p>Filters solutions based on their status. This filter helps partners manage their solution portfolios effectively.</p>
     pub fn get_status(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SolutionStatus>> {
         &self.status
     }

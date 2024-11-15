@@ -10,7 +10,7 @@ pub struct AwsOpportunityLifeCycle {
     pub closed_lost_reason: ::std::option::Option<crate::types::AwsClosedLostReason>,
     /// <p>Represents the current stage of the opportunity in its lifecycle, such as <code>Qualification</code>, <code>Validation</code>, or <code>Closed Won</code>. This helps in understanding the opportunity's progress.</p>
     pub stage: ::std::option::Option<crate::types::AwsOpportunityStage>,
-    /// <p>Specifies the immediate next steps required to progress the opportunity. These steps are based on AWS's guidance and the current stage of the opportunity.</p>
+    /// <p>Specifies the immediate next steps required to progress the opportunity. These steps are based on AWS guidance and the current stage of the opportunity.</p>
     pub next_steps: ::std::option::Option<::std::string::String>,
     /// <p>Provides a historical log of previous next steps that were taken to move the opportunity forward. This helps in tracking the decision-making process and identifying any delays or obstacles encountered.</p>
     pub next_steps_history: ::std::option::Option<::std::vec::Vec<crate::types::ProfileNextStepsHistory>>,
@@ -28,7 +28,7 @@ impl AwsOpportunityLifeCycle {
     pub fn stage(&self) -> ::std::option::Option<&crate::types::AwsOpportunityStage> {
         self.stage.as_ref()
     }
-    /// <p>Specifies the immediate next steps required to progress the opportunity. These steps are based on AWS's guidance and the current stage of the opportunity.</p>
+    /// <p>Specifies the immediate next steps required to progress the opportunity. These steps are based on AWS guidance and the current stage of the opportunity.</p>
     pub fn next_steps(&self) -> ::std::option::Option<&str> {
         self.next_steps.as_deref()
     }
@@ -110,17 +110,17 @@ impl AwsOpportunityLifeCycleBuilder {
     pub fn get_stage(&self) -> &::std::option::Option<crate::types::AwsOpportunityStage> {
         &self.stage
     }
-    /// <p>Specifies the immediate next steps required to progress the opportunity. These steps are based on AWS's guidance and the current stage of the opportunity.</p>
+    /// <p>Specifies the immediate next steps required to progress the opportunity. These steps are based on AWS guidance and the current stage of the opportunity.</p>
     pub fn next_steps(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_steps = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Specifies the immediate next steps required to progress the opportunity. These steps are based on AWS's guidance and the current stage of the opportunity.</p>
+    /// <p>Specifies the immediate next steps required to progress the opportunity. These steps are based on AWS guidance and the current stage of the opportunity.</p>
     pub fn set_next_steps(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_steps = input;
         self
     }
-    /// <p>Specifies the immediate next steps required to progress the opportunity. These steps are based on AWS's guidance and the current stage of the opportunity.</p>
+    /// <p>Specifies the immediate next steps required to progress the opportunity. These steps are based on AWS guidance and the current stage of the opportunity.</p>
     pub fn get_next_steps(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_steps
     }

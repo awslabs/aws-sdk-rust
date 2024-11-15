@@ -12,11 +12,11 @@ pub struct LifeCycleSummary {
     /// <li>
     /// <p>Prospect: Amazon Web Services identifies the opportunity. It can be active (Comes directly from the end customer through a lead) or latent (Your account team believes it exists based on research, account plans, sales plays).</p></li>
     /// <li>
-    /// <p>Qualified: Your account team engaged with the prospect/end customer to discuss viability and understand requirements. The prospect/end customer agreed that the opportunity is real, of interest, and may solve key business/technical needs.</p></li>
+    /// <p>Qualified: Your account team engaged with the customer to discuss viability and understand requirements. The customer agreed that the opportunity is real, of interest, and may solve business/technical needs.</p></li>
     /// <li>
     /// <p>Technical Validation: All parties understand the implementation plan.</p></li>
     /// <li>
-    /// <p>Business Validation: Pricing has been proposed, Pricing was proposed, and all parties agree to the steps to close.</p></li>
+    /// <p>Business Validation: Pricing was proposed, and all parties agree to the steps to close.</p></li>
     /// <li>
     /// <p>Committed: The customer signed the contract, but Amazon Web Services hasn't started billing.</p></li>
     /// <li>
@@ -73,7 +73,7 @@ pub struct LifeCycleSummary {
     /// <p>Rejected: Disqualified (read-only).</p></li>
     /// </ul>
     pub review_status: ::std::option::Option<crate::types::ReviewStatus>,
-    /// <p>Indicates why an opportuntiy was sent back for further details. Partners must take corrective action based on the <code>ReviewComments</code>.</p>
+    /// <p>Indicates why an opportunity was sent back for further details. Partners must take corrective action based on the <code>ReviewComments</code>.</p>
     pub review_comments: ::std::option::Option<::std::string::String>,
     /// <p>Indicates the reason a specific decision was taken during the opportunity review process. This field combines the reasons for both disqualified and action required statuses, and provides clarity for why an opportunity was disqualified or required further action.</p>
     pub review_status_reason: ::std::option::Option<::std::string::String>,
@@ -87,11 +87,11 @@ impl LifeCycleSummary {
     /// <li>
     /// <p>Prospect: Amazon Web Services identifies the opportunity. It can be active (Comes directly from the end customer through a lead) or latent (Your account team believes it exists based on research, account plans, sales plays).</p></li>
     /// <li>
-    /// <p>Qualified: Your account team engaged with the prospect/end customer to discuss viability and understand requirements. The prospect/end customer agreed that the opportunity is real, of interest, and may solve key business/technical needs.</p></li>
+    /// <p>Qualified: Your account team engaged with the customer to discuss viability and understand requirements. The customer agreed that the opportunity is real, of interest, and may solve business/technical needs.</p></li>
     /// <li>
     /// <p>Technical Validation: All parties understand the implementation plan.</p></li>
     /// <li>
-    /// <p>Business Validation: Pricing has been proposed, Pricing was proposed, and all parties agree to the steps to close.</p></li>
+    /// <p>Business Validation: Pricing was proposed, and all parties agree to the steps to close.</p></li>
     /// <li>
     /// <p>Committed: The customer signed the contract, but Amazon Web Services hasn't started billing.</p></li>
     /// <li>
@@ -158,7 +158,7 @@ impl LifeCycleSummary {
     pub fn review_status(&self) -> ::std::option::Option<&crate::types::ReviewStatus> {
         self.review_status.as_ref()
     }
-    /// <p>Indicates why an opportuntiy was sent back for further details. Partners must take corrective action based on the <code>ReviewComments</code>.</p>
+    /// <p>Indicates why an opportunity was sent back for further details. Partners must take corrective action based on the <code>ReviewComments</code>.</p>
     pub fn review_comments(&self) -> ::std::option::Option<&str> {
         self.review_comments.as_deref()
     }
@@ -208,11 +208,11 @@ impl LifeCycleSummaryBuilder {
     /// <li>
     /// <p>Prospect: Amazon Web Services identifies the opportunity. It can be active (Comes directly from the end customer through a lead) or latent (Your account team believes it exists based on research, account plans, sales plays).</p></li>
     /// <li>
-    /// <p>Qualified: Your account team engaged with the prospect/end customer to discuss viability and understand requirements. The prospect/end customer agreed that the opportunity is real, of interest, and may solve key business/technical needs.</p></li>
+    /// <p>Qualified: Your account team engaged with the customer to discuss viability and understand requirements. The customer agreed that the opportunity is real, of interest, and may solve business/technical needs.</p></li>
     /// <li>
     /// <p>Technical Validation: All parties understand the implementation plan.</p></li>
     /// <li>
-    /// <p>Business Validation: Pricing has been proposed, Pricing was proposed, and all parties agree to the steps to close.</p></li>
+    /// <p>Business Validation: Pricing was proposed, and all parties agree to the steps to close.</p></li>
     /// <li>
     /// <p>Committed: The customer signed the contract, but Amazon Web Services hasn't started billing.</p></li>
     /// <li>
@@ -232,11 +232,11 @@ impl LifeCycleSummaryBuilder {
     /// <li>
     /// <p>Prospect: Amazon Web Services identifies the opportunity. It can be active (Comes directly from the end customer through a lead) or latent (Your account team believes it exists based on research, account plans, sales plays).</p></li>
     /// <li>
-    /// <p>Qualified: Your account team engaged with the prospect/end customer to discuss viability and understand requirements. The prospect/end customer agreed that the opportunity is real, of interest, and may solve key business/technical needs.</p></li>
+    /// <p>Qualified: Your account team engaged with the customer to discuss viability and understand requirements. The customer agreed that the opportunity is real, of interest, and may solve business/technical needs.</p></li>
     /// <li>
     /// <p>Technical Validation: All parties understand the implementation plan.</p></li>
     /// <li>
-    /// <p>Business Validation: Pricing has been proposed, Pricing was proposed, and all parties agree to the steps to close.</p></li>
+    /// <p>Business Validation: Pricing was proposed, and all parties agree to the steps to close.</p></li>
     /// <li>
     /// <p>Committed: The customer signed the contract, but Amazon Web Services hasn't started billing.</p></li>
     /// <li>
@@ -256,11 +256,11 @@ impl LifeCycleSummaryBuilder {
     /// <li>
     /// <p>Prospect: Amazon Web Services identifies the opportunity. It can be active (Comes directly from the end customer through a lead) or latent (Your account team believes it exists based on research, account plans, sales plays).</p></li>
     /// <li>
-    /// <p>Qualified: Your account team engaged with the prospect/end customer to discuss viability and understand requirements. The prospect/end customer agreed that the opportunity is real, of interest, and may solve key business/technical needs.</p></li>
+    /// <p>Qualified: Your account team engaged with the customer to discuss viability and understand requirements. The customer agreed that the opportunity is real, of interest, and may solve business/technical needs.</p></li>
     /// <li>
     /// <p>Technical Validation: All parties understand the implementation plan.</p></li>
     /// <li>
-    /// <p>Business Validation: Pricing has been proposed, Pricing was proposed, and all parties agree to the steps to close.</p></li>
+    /// <p>Business Validation: Pricing was proposed, and all parties agree to the steps to close.</p></li>
     /// <li>
     /// <p>Committed: The customer signed the contract, but Amazon Web Services hasn't started billing.</p></li>
     /// <li>
@@ -447,17 +447,17 @@ impl LifeCycleSummaryBuilder {
     pub fn get_review_status(&self) -> &::std::option::Option<crate::types::ReviewStatus> {
         &self.review_status
     }
-    /// <p>Indicates why an opportuntiy was sent back for further details. Partners must take corrective action based on the <code>ReviewComments</code>.</p>
+    /// <p>Indicates why an opportunity was sent back for further details. Partners must take corrective action based on the <code>ReviewComments</code>.</p>
     pub fn review_comments(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.review_comments = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Indicates why an opportuntiy was sent back for further details. Partners must take corrective action based on the <code>ReviewComments</code>.</p>
+    /// <p>Indicates why an opportunity was sent back for further details. Partners must take corrective action based on the <code>ReviewComments</code>.</p>
     pub fn set_review_comments(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.review_comments = input;
         self
     }
-    /// <p>Indicates why an opportuntiy was sent back for further details. Partners must take corrective action based on the <code>ReviewComments</code>.</p>
+    /// <p>Indicates why an opportunity was sent back for further details. Partners must take corrective action based on the <code>ReviewComments</code>.</p>
     pub fn get_review_comments(&self) -> &::std::option::Option<::std::string::String> {
         &self.review_comments
     }

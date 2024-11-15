@@ -9,13 +9,13 @@ pub struct GetAwsOpportunitySummaryOutput {
     pub related_opportunity_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether the AWS Opportunity originated from AWS or the partner. This helps distinguish between opportunities that were sourced by AWS and those referred by the partner.</p>
     pub origin: ::std::option::Option<crate::types::OpportunityOrigin>,
-    /// <p>Specifies the type of involvement AWS has in the opportunity, such as direct co-sell or advisory support. This field helps partners understand the role AWS will play in advancing the opportunity.</p>
+    /// <p>Specifies the type of involvement AWS has in the opportunity, such as direct cosell or advisory support. This field helps partners understand the role AWS plays in advancing the opportunity.</p>
     pub involvement_type: ::std::option::Option<crate::types::SalesInvolvementType>,
     /// <p>Defines the visibility level for the AWS Opportunity. Use <code>Full</code> visibility for most cases, while <code>Limited</code> visibility is reserved for special programs or sensitive opportunities.</p>
     pub visibility: ::std::option::Option<crate::types::Visibility>,
     /// <p>Contains lifecycle information for the AWS Opportunity, including review status, stage, and target close date. This field is crucial for partners to monitor the progression of the opportunity.</p>
     pub life_cycle: ::std::option::Option<crate::types::AwsOpportunityLifeCycle>,
-    /// <p>Details the AWS Opportunity team, including key members involved in the opportunity. This information helps partners know who from AWS is engaged and their roles in the opportunity.</p>
+    /// <p>Details the AWS opportunity team, including members involved. This information helps partners know who from AWS is engaged and what their role is.</p>
     pub opportunity_team: ::std::option::Option<::std::vec::Vec<crate::types::AwsTeamMember>>,
     /// <p>Provides insights into the AWS Opportunity, including engagement score and recommended actions that AWS suggests for the partner.</p>
     pub insights: ::std::option::Option<crate::types::AwsOpportunityInsights>,
@@ -23,7 +23,7 @@ pub struct GetAwsOpportunitySummaryOutput {
     pub involvement_type_change_reason: ::std::option::Option<crate::types::InvolvementTypeChangeReason>,
     /// <p>Lists related entity identifiers, such as AWS products or partner solutions, associated with the AWS Opportunity. These identifiers provide additional context and help partners understand which AWS services are involved.</p>
     pub related_entity_ids: ::std::option::Option<crate::types::AwsOpportunityRelatedEntities>,
-    /// <p>Provides details about the customer associated with the AWS Opportunity, including account information, industry, and other key customer data. These details help partners understand the business context of the opportunity.</p>
+    /// <p>Provides details about the customer associated with the AWS Opportunity, including account information, industry, and other customer data. These details help partners understand the business context of the opportunity.</p>
     pub customer: ::std::option::Option<crate::types::AwsOpportunityCustomer>,
     /// <p>Provides details about the project associated with the AWS Opportunity, including the customer’s business problem, expected outcomes, and project scope. This information is crucial for understanding the broader context of the opportunity.</p>
     pub project: ::std::option::Option<crate::types::AwsOpportunityProject>,
@@ -43,7 +43,7 @@ impl GetAwsOpportunitySummaryOutput {
     pub fn origin(&self) -> ::std::option::Option<&crate::types::OpportunityOrigin> {
         self.origin.as_ref()
     }
-    /// <p>Specifies the type of involvement AWS has in the opportunity, such as direct co-sell or advisory support. This field helps partners understand the role AWS will play in advancing the opportunity.</p>
+    /// <p>Specifies the type of involvement AWS has in the opportunity, such as direct cosell or advisory support. This field helps partners understand the role AWS plays in advancing the opportunity.</p>
     pub fn involvement_type(&self) -> ::std::option::Option<&crate::types::SalesInvolvementType> {
         self.involvement_type.as_ref()
     }
@@ -55,7 +55,7 @@ impl GetAwsOpportunitySummaryOutput {
     pub fn life_cycle(&self) -> ::std::option::Option<&crate::types::AwsOpportunityLifeCycle> {
         self.life_cycle.as_ref()
     }
-    /// <p>Details the AWS Opportunity team, including key members involved in the opportunity. This information helps partners know who from AWS is engaged and their roles in the opportunity.</p>
+    /// <p>Details the AWS opportunity team, including members involved. This information helps partners know who from AWS is engaged and what their role is.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.opportunity_team.is_none()`.
     pub fn opportunity_team(&self) -> &[crate::types::AwsTeamMember] {
@@ -73,7 +73,7 @@ impl GetAwsOpportunitySummaryOutput {
     pub fn related_entity_ids(&self) -> ::std::option::Option<&crate::types::AwsOpportunityRelatedEntities> {
         self.related_entity_ids.as_ref()
     }
-    /// <p>Provides details about the customer associated with the AWS Opportunity, including account information, industry, and other key customer data. These details help partners understand the business context of the opportunity.</p>
+    /// <p>Provides details about the customer associated with the AWS Opportunity, including account information, industry, and other customer data. These details help partners understand the business context of the opportunity.</p>
     pub fn customer(&self) -> ::std::option::Option<&crate::types::AwsOpportunityCustomer> {
         self.customer.as_ref()
     }
@@ -156,17 +156,17 @@ impl GetAwsOpportunitySummaryOutputBuilder {
     pub fn get_origin(&self) -> &::std::option::Option<crate::types::OpportunityOrigin> {
         &self.origin
     }
-    /// <p>Specifies the type of involvement AWS has in the opportunity, such as direct co-sell or advisory support. This field helps partners understand the role AWS will play in advancing the opportunity.</p>
+    /// <p>Specifies the type of involvement AWS has in the opportunity, such as direct cosell or advisory support. This field helps partners understand the role AWS plays in advancing the opportunity.</p>
     pub fn involvement_type(mut self, input: crate::types::SalesInvolvementType) -> Self {
         self.involvement_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies the type of involvement AWS has in the opportunity, such as direct co-sell or advisory support. This field helps partners understand the role AWS will play in advancing the opportunity.</p>
+    /// <p>Specifies the type of involvement AWS has in the opportunity, such as direct cosell or advisory support. This field helps partners understand the role AWS plays in advancing the opportunity.</p>
     pub fn set_involvement_type(mut self, input: ::std::option::Option<crate::types::SalesInvolvementType>) -> Self {
         self.involvement_type = input;
         self
     }
-    /// <p>Specifies the type of involvement AWS has in the opportunity, such as direct co-sell or advisory support. This field helps partners understand the role AWS will play in advancing the opportunity.</p>
+    /// <p>Specifies the type of involvement AWS has in the opportunity, such as direct cosell or advisory support. This field helps partners understand the role AWS plays in advancing the opportunity.</p>
     pub fn get_involvement_type(&self) -> &::std::option::Option<crate::types::SalesInvolvementType> {
         &self.involvement_type
     }
@@ -202,19 +202,19 @@ impl GetAwsOpportunitySummaryOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_opportunity_team`](Self::set_opportunity_team).
     ///
-    /// <p>Details the AWS Opportunity team, including key members involved in the opportunity. This information helps partners know who from AWS is engaged and their roles in the opportunity.</p>
+    /// <p>Details the AWS opportunity team, including members involved. This information helps partners know who from AWS is engaged and what their role is.</p>
     pub fn opportunity_team(mut self, input: crate::types::AwsTeamMember) -> Self {
         let mut v = self.opportunity_team.unwrap_or_default();
         v.push(input);
         self.opportunity_team = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Details the AWS Opportunity team, including key members involved in the opportunity. This information helps partners know who from AWS is engaged and their roles in the opportunity.</p>
+    /// <p>Details the AWS opportunity team, including members involved. This information helps partners know who from AWS is engaged and what their role is.</p>
     pub fn set_opportunity_team(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AwsTeamMember>>) -> Self {
         self.opportunity_team = input;
         self
     }
-    /// <p>Details the AWS Opportunity team, including key members involved in the opportunity. This information helps partners know who from AWS is engaged and their roles in the opportunity.</p>
+    /// <p>Details the AWS opportunity team, including members involved. This information helps partners know who from AWS is engaged and what their role is.</p>
     pub fn get_opportunity_team(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsTeamMember>> {
         &self.opportunity_team
     }
@@ -260,17 +260,17 @@ impl GetAwsOpportunitySummaryOutputBuilder {
     pub fn get_related_entity_ids(&self) -> &::std::option::Option<crate::types::AwsOpportunityRelatedEntities> {
         &self.related_entity_ids
     }
-    /// <p>Provides details about the customer associated with the AWS Opportunity, including account information, industry, and other key customer data. These details help partners understand the business context of the opportunity.</p>
+    /// <p>Provides details about the customer associated with the AWS Opportunity, including account information, industry, and other customer data. These details help partners understand the business context of the opportunity.</p>
     pub fn customer(mut self, input: crate::types::AwsOpportunityCustomer) -> Self {
         self.customer = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Provides details about the customer associated with the AWS Opportunity, including account information, industry, and other key customer data. These details help partners understand the business context of the opportunity.</p>
+    /// <p>Provides details about the customer associated with the AWS Opportunity, including account information, industry, and other customer data. These details help partners understand the business context of the opportunity.</p>
     pub fn set_customer(mut self, input: ::std::option::Option<crate::types::AwsOpportunityCustomer>) -> Self {
         self.customer = input;
         self
     }
-    /// <p>Provides details about the customer associated with the AWS Opportunity, including account information, industry, and other key customer data. These details help partners understand the business context of the opportunity.</p>
+    /// <p>Provides details about the customer associated with the AWS Opportunity, including account information, industry, and other customer data. These details help partners understand the business context of the opportunity.</p>
     pub fn get_customer(&self) -> &::std::option::Option<crate::types::AwsOpportunityCustomer> {
         &self.customer
     }

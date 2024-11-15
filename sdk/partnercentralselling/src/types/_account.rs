@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct Account {
-    /// <p>Specifies the industry the end <code>Customer</code> belongs to that's associated with the <code>Opportunity</code> . It refers to the category or sector where the customer's business operates. This is a required field.</p>
+    /// <p>Specifies the industry the end <code>Customer</code> belongs to that's associated with the <code>Opportunity</code>. It refers to the category or sector where the customer's business operates. This is a required field.</p>
     pub industry: ::std::option::Option<crate::types::Industry>,
     /// <p>Specifies the end <code>Customer</code>'s industry associated with the <code>Opportunity</code>, when the selected value in the <code>Industry</code> field is <code>Other</code>.</p>
     pub other_industry: ::std::option::Option<::std::string::String>,
@@ -20,7 +20,7 @@ pub struct Account {
     pub duns: ::std::option::Option<::std::string::String>,
 }
 impl Account {
-    /// <p>Specifies the industry the end <code>Customer</code> belongs to that's associated with the <code>Opportunity</code> . It refers to the category or sector where the customer's business operates. This is a required field.</p>
+    /// <p>Specifies the industry the end <code>Customer</code> belongs to that's associated with the <code>Opportunity</code>. It refers to the category or sector where the customer's business operates. This is a required field.</p>
     pub fn industry(&self) -> ::std::option::Option<&crate::types::Industry> {
         self.industry.as_ref()
     }
@@ -83,17 +83,17 @@ pub struct AccountBuilder {
     pub(crate) duns: ::std::option::Option<::std::string::String>,
 }
 impl AccountBuilder {
-    /// <p>Specifies the industry the end <code>Customer</code> belongs to that's associated with the <code>Opportunity</code> . It refers to the category or sector where the customer's business operates. This is a required field.</p>
+    /// <p>Specifies the industry the end <code>Customer</code> belongs to that's associated with the <code>Opportunity</code>. It refers to the category or sector where the customer's business operates. This is a required field.</p>
     pub fn industry(mut self, input: crate::types::Industry) -> Self {
         self.industry = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies the industry the end <code>Customer</code> belongs to that's associated with the <code>Opportunity</code> . It refers to the category or sector where the customer's business operates. This is a required field.</p>
+    /// <p>Specifies the industry the end <code>Customer</code> belongs to that's associated with the <code>Opportunity</code>. It refers to the category or sector where the customer's business operates. This is a required field.</p>
     pub fn set_industry(mut self, input: ::std::option::Option<crate::types::Industry>) -> Self {
         self.industry = input;
         self
     }
-    /// <p>Specifies the industry the end <code>Customer</code> belongs to that's associated with the <code>Opportunity</code> . It refers to the category or sector where the customer's business operates. This is a required field.</p>
+    /// <p>Specifies the industry the end <code>Customer</code> belongs to that's associated with the <code>Opportunity</code>. It refers to the category or sector where the customer's business operates. This is a required field.</p>
     pub fn get_industry(&self) -> &::std::option::Option<crate::types::Industry> {
         &self.industry
     }

@@ -16,10 +16,10 @@ pub enum Error {
     /// <p>Suggested action: Verify that the resource ID is correct and the resource is in the expected AWS region. Check IAM permissions for accessing the resource.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>This error occurs when the request would cause a service quota to be exceeded. Service quotas represent the maximum allowed use of a specific resource, and this error indicates that the request would surpass that limit.</p>
-    /// <p>Suggested action: Review the <a href="https://docs.aws.amazon.com/partner-central/latest/selling-api/quotas.html">service quotas</a> for the specific resource, and reduce the usage or request a quota increase through support if necessary.</p>
+    /// <p>Suggested action: Review the <a href="https://docs.aws.amazon.com/partner-central/latest/selling-api/quotas.html">Quotas</a> for the resource, and either reduce usage or request a quota increase.</p>
     ServiceQuotaExceededException(crate::types::error::ServiceQuotaExceededException),
     /// <p>This error occurs when there are too many requests sent. Review the provided quotas and adapt your usage to avoid throttling.</p>
-    /// <p>This error occurs when there are too many requests sent. Review the provided <a href="https://docs.aws.amazon.com/partner-central/latest/selling-api/quotas.html">quotas</a> and retry after the provided delay.</p>
+    /// <p>This error occurs when there are too many requests sent. Review the provided <a href="https://docs.aws.amazon.com/partner-central/latest/selling-api/quotas.html">Quotas</a> and retry after the provided delay.</p>
     ThrottlingException(crate::types::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints specified by the service or business validation rules.</p>
     /// <p>Suggested action: Review the error message, including the failed fields and reasons, to correct the request payload.</p>

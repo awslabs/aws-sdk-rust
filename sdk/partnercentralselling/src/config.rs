@@ -161,7 +161,6 @@ impl Builder {
         builder.set_retry_partition(config_bag.load::<::aws_smithy_runtime::client::retries::RetryPartition>().cloned());
         builder.set_app_name(config_bag.load::<::aws_types::app_name::AppName>().cloned());
         builder.set_endpoint_url(config_bag.load::<::aws_types::endpoint_config::EndpointUrl>().map(|ty| ty.0.clone()));
-        builder.set_use_dual_stack(config_bag.load::<::aws_types::endpoint_config::UseDualStack>().map(|ty| ty.0));
         builder.set_use_fips(config_bag.load::<::aws_types::endpoint_config::UseFips>().map(|ty| ty.0));
         builder.set_region(config_bag.load::<crate::config::Region>().cloned());
         builder
@@ -922,16 +921,6 @@ impl Builder {
         self.config.store_or_unset(endpoint_url.map(::aws_types::endpoint_config::EndpointUrl));
         self
     }
-    /// When true, use the dual-stack endpoint. If the configured endpoint does not support dual-stack, dispatching the request MAY return an error.
-    pub fn use_dual_stack(mut self, use_dual_stack: impl Into<bool>) -> Self {
-        self.set_use_dual_stack(Some(use_dual_stack.into()));
-        self
-    }
-    /// When true, use the dual-stack endpoint. If the configured endpoint does not support dual-stack, dispatching the request MAY return an error.
-    pub fn set_use_dual_stack(&mut self, use_dual_stack: Option<bool>) -> &mut Self {
-        self.config.store_or_unset(use_dual_stack.map(::aws_types::endpoint_config::UseDualStack));
-        self
-    }
     /// When true, send this request to the FIPS-compliant regional endpoint. If the configured endpoint does not have a FIPS compliant endpoint, dispatching the request will return an error.
     pub fn use_fips(mut self, use_fips: impl Into<bool>) -> Self {
         self.set_use_fips(Some(use_fips.into()));
@@ -1228,7 +1217,6 @@ impl From<&::aws_types::sdk_config::SdkConfig> for Builder {
         builder.set_credentials_provider(input.credentials_provider());
         builder = builder.region(input.region().cloned());
         builder.set_use_fips(input.use_fips());
-        builder.set_use_dual_stack(input.use_dual_stack());
         if input.get_origin("endpoint_url").is_client_config() {
             builder.set_endpoint_url(input.endpoint_url().map(|s| s.to_string()));
         } else {

@@ -3,16 +3,16 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateOpportunityOutput {
-    /// <p>Read-only, system-generated <code>Opportunity</code> unique identifier. Amazon Web Services creates this identifier, and it's used for all subsequent actions on the opportunity, such as updates, associations, and submissions. It ensures that each opportunity can be accurately tracked and managed within the system.</p>
+    /// <p>Read-only, system-generated <code>Opportunity</code> unique identifier. Amazon Web Services creates this identifier, and it's used for all subsequent opportunity actions, such as updates, associations, and submissions. It helps to ensure that each opportunity is accurately tracked and managed.</p>
     pub id: ::std::string::String,
     /// <p>Specifies the opportunity's unique identifier in the partner's CRM system. This value is essential to track and reconcile because it's included in the outbound payload sent back to the partner.</p>
     pub partner_opportunity_identifier: ::std::option::Option<::std::string::String>,
-    /// <p><code>DateTime</code> when the opportunity was last modified. When the <code>Opportunity</code> is created, its value is equal to <code>CreatedDate</code>.</p>
+    /// <p><code>DateTime</code> when the opportunity was last modified. When the <code>Opportunity</code> is created, its value is <code>CreatedDate</code>.</p>
     pub last_modified_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
 impl CreateOpportunityOutput {
-    /// <p>Read-only, system-generated <code>Opportunity</code> unique identifier. Amazon Web Services creates this identifier, and it's used for all subsequent actions on the opportunity, such as updates, associations, and submissions. It ensures that each opportunity can be accurately tracked and managed within the system.</p>
+    /// <p>Read-only, system-generated <code>Opportunity</code> unique identifier. Amazon Web Services creates this identifier, and it's used for all subsequent opportunity actions, such as updates, associations, and submissions. It helps to ensure that each opportunity is accurately tracked and managed.</p>
     pub fn id(&self) -> &str {
         use std::ops::Deref;
         self.id.deref()
@@ -21,7 +21,7 @@ impl CreateOpportunityOutput {
     pub fn partner_opportunity_identifier(&self) -> ::std::option::Option<&str> {
         self.partner_opportunity_identifier.as_deref()
     }
-    /// <p><code>DateTime</code> when the opportunity was last modified. When the <code>Opportunity</code> is created, its value is equal to <code>CreatedDate</code>.</p>
+    /// <p><code>DateTime</code> when the opportunity was last modified. When the <code>Opportunity</code> is created, its value is <code>CreatedDate</code>.</p>
     pub fn last_modified_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_modified_date.as_ref()
     }
@@ -48,18 +48,18 @@ pub struct CreateOpportunityOutputBuilder {
     _request_id: Option<String>,
 }
 impl CreateOpportunityOutputBuilder {
-    /// <p>Read-only, system-generated <code>Opportunity</code> unique identifier. Amazon Web Services creates this identifier, and it's used for all subsequent actions on the opportunity, such as updates, associations, and submissions. It ensures that each opportunity can be accurately tracked and managed within the system.</p>
+    /// <p>Read-only, system-generated <code>Opportunity</code> unique identifier. Amazon Web Services creates this identifier, and it's used for all subsequent opportunity actions, such as updates, associations, and submissions. It helps to ensure that each opportunity is accurately tracked and managed.</p>
     /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Read-only, system-generated <code>Opportunity</code> unique identifier. Amazon Web Services creates this identifier, and it's used for all subsequent actions on the opportunity, such as updates, associations, and submissions. It ensures that each opportunity can be accurately tracked and managed within the system.</p>
+    /// <p>Read-only, system-generated <code>Opportunity</code> unique identifier. Amazon Web Services creates this identifier, and it's used for all subsequent opportunity actions, such as updates, associations, and submissions. It helps to ensure that each opportunity is accurately tracked and managed.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
-    /// <p>Read-only, system-generated <code>Opportunity</code> unique identifier. Amazon Web Services creates this identifier, and it's used for all subsequent actions on the opportunity, such as updates, associations, and submissions. It ensures that each opportunity can be accurately tracked and managed within the system.</p>
+    /// <p>Read-only, system-generated <code>Opportunity</code> unique identifier. Amazon Web Services creates this identifier, and it's used for all subsequent opportunity actions, such as updates, associations, and submissions. It helps to ensure that each opportunity is accurately tracked and managed.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
     }
@@ -77,17 +77,17 @@ impl CreateOpportunityOutputBuilder {
     pub fn get_partner_opportunity_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.partner_opportunity_identifier
     }
-    /// <p><code>DateTime</code> when the opportunity was last modified. When the <code>Opportunity</code> is created, its value is equal to <code>CreatedDate</code>.</p>
+    /// <p><code>DateTime</code> when the opportunity was last modified. When the <code>Opportunity</code> is created, its value is <code>CreatedDate</code>.</p>
     pub fn last_modified_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_date = ::std::option::Option::Some(input);
         self
     }
-    /// <p><code>DateTime</code> when the opportunity was last modified. When the <code>Opportunity</code> is created, its value is equal to <code>CreatedDate</code>.</p>
+    /// <p><code>DateTime</code> when the opportunity was last modified. When the <code>Opportunity</code> is created, its value is <code>CreatedDate</code>.</p>
     pub fn set_last_modified_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_date = input;
         self
     }
-    /// <p><code>DateTime</code> when the opportunity was last modified. When the <code>Opportunity</code> is created, its value is equal to <code>CreatedDate</code>.</p>
+    /// <p><code>DateTime</code> when the opportunity was last modified. When the <code>Opportunity</code> is created, its value is <code>CreatedDate</code>.</p>
     pub fn get_last_modified_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_modified_date
     }

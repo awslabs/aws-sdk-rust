@@ -122,45 +122,45 @@ impl StartEngagementFromOpportunityTaskFluentBuilder {
     pub fn get_catalog(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_catalog()
     }
-    /// <p>A unique token provided by the client to ensure the idempotency of the request. It helps prevent the same task from being performed multiple times.</p>
+    /// <p>A unique token provided by the client to help ensure the idempotency of the request. It helps prevent the same task from being performed multiple times.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
         self
     }
-    /// <p>A unique token provided by the client to ensure the idempotency of the request. It helps prevent the same task from being performed multiple times.</p>
+    /// <p>A unique token provided by the client to help ensure the idempotency of the request. It helps prevent the same task from being performed multiple times.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
     }
-    /// <p>A unique token provided by the client to ensure the idempotency of the request. It helps prevent the same task from being performed multiple times.</p>
+    /// <p>A unique token provided by the client to help ensure the idempotency of the request. It helps prevent the same task from being performed multiple times.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }
-    /// <p>The unique identifier of the opportunity from which the engagement task is to be initiated. This ensures the task is applied to the correct opportunity.</p>
+    /// <p>The unique identifier of the opportunity from which the engagement task is to be initiated. This helps ensure that the task is applied to the correct opportunity.</p>
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.identifier(input.into());
         self
     }
-    /// <p>The unique identifier of the opportunity from which the engagement task is to be initiated. This ensures the task is applied to the correct opportunity.</p>
+    /// <p>The unique identifier of the opportunity from which the engagement task is to be initiated. This helps ensure that the task is applied to the correct opportunity.</p>
     pub fn set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_identifier(input);
         self
     }
-    /// <p>The unique identifier of the opportunity from which the engagement task is to be initiated. This ensures the task is applied to the correct opportunity.</p>
+    /// <p>The unique identifier of the opportunity from which the engagement task is to be initiated. This helps ensure that the task is applied to the correct opportunity.</p>
     pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_identifier()
     }
-    /// <p>Indicates the level of AWS involvement in the opportunity. This field helps track AWS's role and participation throughout the engagement, such as providing technical support, deal assistance, or sales support.</p>
+    /// <p>Indicates the level of AWS involvement in the opportunity. This field helps track AWS participation throughout the engagement, such as providing technical support, deal assistance, and sales support.</p>
     pub fn aws_submission(mut self, input: crate::types::AwsSubmission) -> Self {
         self.inner = self.inner.aws_submission(input);
         self
     }
-    /// <p>Indicates the level of AWS involvement in the opportunity. This field helps track AWS's role and participation throughout the engagement, such as providing technical support, deal assistance, or sales support.</p>
+    /// <p>Indicates the level of AWS involvement in the opportunity. This field helps track AWS participation throughout the engagement, such as providing technical support, deal assistance, and sales support.</p>
     pub fn set_aws_submission(mut self, input: ::std::option::Option<crate::types::AwsSubmission>) -> Self {
         self.inner = self.inner.set_aws_submission(input);
         self
     }
-    /// <p>Indicates the level of AWS involvement in the opportunity. This field helps track AWS's role and participation throughout the engagement, such as providing technical support, deal assistance, or sales support.</p>
+    /// <p>Indicates the level of AWS involvement in the opportunity. This field helps track AWS participation throughout the engagement, such as providing technical support, deal assistance, and sales support.</p>
     pub fn get_aws_submission(&self) -> &::std::option::Option<crate::types::AwsSubmission> {
         self.inner.get_aws_submission()
     }

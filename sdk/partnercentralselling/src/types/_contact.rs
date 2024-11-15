@@ -10,7 +10,7 @@ pub struct Contact {
     pub first_name: ::std::option::Option<::std::string::String>,
     /// <p>The contact's last name associated with the <code>Opportunity</code>.</p>
     pub last_name: ::std::option::Option<::std::string::String>,
-    /// <p>The partner contact's title (job title or role) associated with the <code>Opportunity</code>.</p>
+    /// <p>The partner contact's title (job title or role) associated with the <code>Opportunity</code>. <code>BusinessTitle</code> supports either <code>PartnerAccountManager</code> or <code>OpportunityOwner</code>.</p>
     pub business_title: ::std::option::Option<::std::string::String>,
     /// <p>The contact's phone number associated with the <code>Opportunity</code>.</p>
     pub phone: ::std::option::Option<::std::string::String>,
@@ -28,7 +28,7 @@ impl Contact {
     pub fn last_name(&self) -> ::std::option::Option<&str> {
         self.last_name.as_deref()
     }
-    /// <p>The partner contact's title (job title or role) associated with the <code>Opportunity</code>.</p>
+    /// <p>The partner contact's title (job title or role) associated with the <code>Opportunity</code>. <code>BusinessTitle</code> supports either <code>PartnerAccountManager</code> or <code>OpportunityOwner</code>.</p>
     pub fn business_title(&self) -> ::std::option::Option<&str> {
         self.business_title.as_deref()
     }
@@ -108,17 +108,17 @@ impl ContactBuilder {
     pub fn get_last_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.last_name
     }
-    /// <p>The partner contact's title (job title or role) associated with the <code>Opportunity</code>.</p>
+    /// <p>The partner contact's title (job title or role) associated with the <code>Opportunity</code>. <code>BusinessTitle</code> supports either <code>PartnerAccountManager</code> or <code>OpportunityOwner</code>.</p>
     pub fn business_title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.business_title = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The partner contact's title (job title or role) associated with the <code>Opportunity</code>.</p>
+    /// <p>The partner contact's title (job title or role) associated with the <code>Opportunity</code>. <code>BusinessTitle</code> supports either <code>PartnerAccountManager</code> or <code>OpportunityOwner</code>.</p>
     pub fn set_business_title(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.business_title = input;
         self
     }
-    /// <p>The partner contact's title (job title or role) associated with the <code>Opportunity</code>.</p>
+    /// <p>The partner contact's title (job title or role) associated with the <code>Opportunity</code>. <code>BusinessTitle</code> supports either <code>PartnerAccountManager</code> or <code>OpportunityOwner</code>.</p>
     pub fn get_business_title(&self) -> &::std::option::Option<::std::string::String> {
         &self.business_title
     }

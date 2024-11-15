@@ -22,7 +22,7 @@ impl crate::operation::get_engagement_invitation::builders::GetEngagementInvitat
 }
 /// Fluent builder constructing a request to `GetEngagementInvitation`.
 ///
-/// <p>Retrieves the details of an engagement invitation shared by AWS with a partner. The information includes key aspects such as the customer, project details, and lifecycle information related to the engagement.</p>
+/// <p>Retrieves the details of an engagement invitation shared by AWS with a partner. The information includes aspects such as customer, project details, and lifecycle information. To connect an engagement invitation with an opportunity, match the invitation’s <code>Payload.Project.Title</code> with opportunity <code>Project.Title</code>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetEngagementInvitationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -122,17 +122,17 @@ impl GetEngagementInvitationFluentBuilder {
     pub fn get_catalog(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_catalog()
     }
-    /// <p>Specifies the unique identifier for the engagement invitation being retrieved.</p>
+    /// <p>Specifies the unique identifier for the retrieved engagement invitation.</p>
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.identifier(input.into());
         self
     }
-    /// <p>Specifies the unique identifier for the engagement invitation being retrieved.</p>
+    /// <p>Specifies the unique identifier for the retrieved engagement invitation.</p>
     pub fn set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_identifier(input);
         self
     }
-    /// <p>Specifies the unique identifier for the engagement invitation being retrieved.</p>
+    /// <p>Specifies the unique identifier for the retrieved engagement invitation.</p>
     pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_identifier()
     }

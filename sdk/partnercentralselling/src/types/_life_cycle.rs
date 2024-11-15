@@ -12,7 +12,7 @@ pub struct LifeCycle {
     /// <li>
     /// <p>Prospect: Amazon Web Services identifies the opportunity. It can be active (Comes directly from the end customer through a lead) or latent (Your account team believes it exists based on research, account plans, sales plays).</p></li>
     /// <li>
-    /// <p>Qualified: Your account team engaged with the prospect/end customer to discuss viability and understand requirements. The prospect/end customer agreed that the opportunity is real, of interest, and may solve key business/technical needs.</p></li>
+    /// <p>Qualified: Your account team engaged with the customer to discuss viability and requirements. The customer agreed that the opportunity is real, of interest, and may solve business/technical needs.</p></li>
     /// <li>
     /// <p>Technical Validation: All parties understand the implementation plan.</p></li>
     /// <li>
@@ -34,15 +34,15 @@ pub struct LifeCycle {
     /// <li>
     /// <p>Legal/Tax/Regulatory: Legal, tax, or regulatory issues prevented progress.</p></li>
     /// <li>
-    /// <p>Lost to Competitor - Google: The opportunity was lost to Google.</p></li>
+    /// <p>Lost to Competitor—Google: The opportunity was lost to Google.</p></li>
     /// <li>
-    /// <p>Lost to Competitor - Microsoft: The opportunity was lost to Microsoft.</p></li>
+    /// <p>Lost to Competitor—Microsoft: The opportunity was lost to Microsoft.</p></li>
     /// <li>
-    /// <p>Lost to Competitor - SoftLayer: The opportunity was lost to SoftLayer.</p></li>
+    /// <p>Lost to Competitor—SoftLayer: The opportunity was lost to SoftLayer.</p></li>
     /// <li>
-    /// <p>Lost to Competitor - VMWare: The opportunity was lost to VMWare.</p></li>
+    /// <p>Lost to Competitor—VMWare: The opportunity was lost to VMWare.</p></li>
     /// <li>
-    /// <p>Lost to Competitor - Other: The opportunity was lost to a competitor not listed above.</p></li>
+    /// <p>Lost to Competitor—Other: The opportunity was lost to a competitor not listed above.</p></li>
     /// <li>
     /// <p>No Opportunity: There was no opportunity to pursue.</p></li>
     /// <li>
@@ -67,7 +67,7 @@ pub struct LifeCycle {
     /// <p>Financial/Commercial: Financial or commercial issues impacted the decision.</p></li>
     /// </ul>
     pub closed_lost_reason: ::std::option::Option<crate::types::ClosedLostReason>,
-    /// <p>Specifies the upcoming actions or tasks for the <code>Opportunity</code>. This field is utilized to communicate to Amazon Web Services the next actions required for the <code>Opportunity</code>.</p>
+    /// <p>Specifies the upcoming actions or tasks for the <code>Opportunity</code>. Use this field to communicate with Amazon Web Services about the next actions required for the <code>Opportunity</code>.</p>
     pub next_steps: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the date when Amazon Web Services expects to start significant billing, when the project finishes, and when it moves into production. This field informs the Amazon Web Services seller about when the opportunity launches and starts to incur Amazon Web Services usage.</p>
     /// <p>Ensure the <code>Target Close Date</code> isn't in the past.</p>
@@ -81,7 +81,7 @@ pub struct LifeCycle {
     /// <li>
     /// <p>In Review: Amazon Web Services is validating (read-only).</p></li>
     /// <li>
-    /// <p>Action Required: Issues that Amazon Web Services highlights need to be addressed. Partners should use the <code>UpdateOpportunity</code> API action to update the opportunity, and ensure all required changes are made. Only these fields are editable when the <code>Lifecycle.ReviewStatus</code> is <code>Action Required</code>:</p>
+    /// <p>Action Required: Issues that Amazon Web Services highlights need to be addressed. Partners should use the <code>UpdateOpportunity</code> API action to update the opportunity and helps to ensure that all required changes are made. Only the following fields are editable when the <code>Lifecycle.ReviewStatus</code> is <code>Action Required</code>:</p>
     /// <ul>
     /// <li>
     /// <p>Customer.Account.Address.City</p></li>
@@ -113,7 +113,7 @@ pub struct LifeCycle {
     /// <p>Rejected: Disqualified (read-only).</p></li>
     /// </ul>
     pub review_status: ::std::option::Option<crate::types::ReviewStatus>,
-    /// <p>Indicates why an opportuntiy was sent back for further details. Partners must take corrective action based on the <code>ReviewComments</code>.</p>
+    /// <p>Indicates why an opportunity was sent back for further details. Partners must take corrective action based on the <code>ReviewComments</code>.</p>
     pub review_comments: ::std::option::Option<::std::string::String>,
     /// <p>Indicates the reason a decision was made during the opportunity review process. This field combines the reasons for both disqualified and action required statuses, and provide clarity for why an opportunity was disqualified or requires further action.</p>
     pub review_status_reason: ::std::option::Option<::std::string::String>,
@@ -129,7 +129,7 @@ impl LifeCycle {
     /// <li>
     /// <p>Prospect: Amazon Web Services identifies the opportunity. It can be active (Comes directly from the end customer through a lead) or latent (Your account team believes it exists based on research, account plans, sales plays).</p></li>
     /// <li>
-    /// <p>Qualified: Your account team engaged with the prospect/end customer to discuss viability and understand requirements. The prospect/end customer agreed that the opportunity is real, of interest, and may solve key business/technical needs.</p></li>
+    /// <p>Qualified: Your account team engaged with the customer to discuss viability and requirements. The customer agreed that the opportunity is real, of interest, and may solve business/technical needs.</p></li>
     /// <li>
     /// <p>Technical Validation: All parties understand the implementation plan.</p></li>
     /// <li>
@@ -153,15 +153,15 @@ impl LifeCycle {
     /// <li>
     /// <p>Legal/Tax/Regulatory: Legal, tax, or regulatory issues prevented progress.</p></li>
     /// <li>
-    /// <p>Lost to Competitor - Google: The opportunity was lost to Google.</p></li>
+    /// <p>Lost to Competitor—Google: The opportunity was lost to Google.</p></li>
     /// <li>
-    /// <p>Lost to Competitor - Microsoft: The opportunity was lost to Microsoft.</p></li>
+    /// <p>Lost to Competitor—Microsoft: The opportunity was lost to Microsoft.</p></li>
     /// <li>
-    /// <p>Lost to Competitor - SoftLayer: The opportunity was lost to SoftLayer.</p></li>
+    /// <p>Lost to Competitor—SoftLayer: The opportunity was lost to SoftLayer.</p></li>
     /// <li>
-    /// <p>Lost to Competitor - VMWare: The opportunity was lost to VMWare.</p></li>
+    /// <p>Lost to Competitor—VMWare: The opportunity was lost to VMWare.</p></li>
     /// <li>
-    /// <p>Lost to Competitor - Other: The opportunity was lost to a competitor not listed above.</p></li>
+    /// <p>Lost to Competitor—Other: The opportunity was lost to a competitor not listed above.</p></li>
     /// <li>
     /// <p>No Opportunity: There was no opportunity to pursue.</p></li>
     /// <li>
@@ -188,7 +188,7 @@ impl LifeCycle {
     pub fn closed_lost_reason(&self) -> ::std::option::Option<&crate::types::ClosedLostReason> {
         self.closed_lost_reason.as_ref()
     }
-    /// <p>Specifies the upcoming actions or tasks for the <code>Opportunity</code>. This field is utilized to communicate to Amazon Web Services the next actions required for the <code>Opportunity</code>.</p>
+    /// <p>Specifies the upcoming actions or tasks for the <code>Opportunity</code>. Use this field to communicate with Amazon Web Services about the next actions required for the <code>Opportunity</code>.</p>
     pub fn next_steps(&self) -> ::std::option::Option<&str> {
         self.next_steps.as_deref()
     }
@@ -206,7 +206,7 @@ impl LifeCycle {
     /// <li>
     /// <p>In Review: Amazon Web Services is validating (read-only).</p></li>
     /// <li>
-    /// <p>Action Required: Issues that Amazon Web Services highlights need to be addressed. Partners should use the <code>UpdateOpportunity</code> API action to update the opportunity, and ensure all required changes are made. Only these fields are editable when the <code>Lifecycle.ReviewStatus</code> is <code>Action Required</code>:</p>
+    /// <p>Action Required: Issues that Amazon Web Services highlights need to be addressed. Partners should use the <code>UpdateOpportunity</code> API action to update the opportunity and helps to ensure that all required changes are made. Only the following fields are editable when the <code>Lifecycle.ReviewStatus</code> is <code>Action Required</code>:</p>
     /// <ul>
     /// <li>
     /// <p>Customer.Account.Address.City</p></li>
@@ -240,7 +240,7 @@ impl LifeCycle {
     pub fn review_status(&self) -> ::std::option::Option<&crate::types::ReviewStatus> {
         self.review_status.as_ref()
     }
-    /// <p>Indicates why an opportuntiy was sent back for further details. Partners must take corrective action based on the <code>ReviewComments</code>.</p>
+    /// <p>Indicates why an opportunity was sent back for further details. Partners must take corrective action based on the <code>ReviewComments</code>.</p>
     pub fn review_comments(&self) -> ::std::option::Option<&str> {
         self.review_comments.as_deref()
     }
@@ -298,7 +298,7 @@ impl LifeCycleBuilder {
     /// <li>
     /// <p>Prospect: Amazon Web Services identifies the opportunity. It can be active (Comes directly from the end customer through a lead) or latent (Your account team believes it exists based on research, account plans, sales plays).</p></li>
     /// <li>
-    /// <p>Qualified: Your account team engaged with the prospect/end customer to discuss viability and understand requirements. The prospect/end customer agreed that the opportunity is real, of interest, and may solve key business/technical needs.</p></li>
+    /// <p>Qualified: Your account team engaged with the customer to discuss viability and requirements. The customer agreed that the opportunity is real, of interest, and may solve business/technical needs.</p></li>
     /// <li>
     /// <p>Technical Validation: All parties understand the implementation plan.</p></li>
     /// <li>
@@ -322,7 +322,7 @@ impl LifeCycleBuilder {
     /// <li>
     /// <p>Prospect: Amazon Web Services identifies the opportunity. It can be active (Comes directly from the end customer through a lead) or latent (Your account team believes it exists based on research, account plans, sales plays).</p></li>
     /// <li>
-    /// <p>Qualified: Your account team engaged with the prospect/end customer to discuss viability and understand requirements. The prospect/end customer agreed that the opportunity is real, of interest, and may solve key business/technical needs.</p></li>
+    /// <p>Qualified: Your account team engaged with the customer to discuss viability and requirements. The customer agreed that the opportunity is real, of interest, and may solve business/technical needs.</p></li>
     /// <li>
     /// <p>Technical Validation: All parties understand the implementation plan.</p></li>
     /// <li>
@@ -346,7 +346,7 @@ impl LifeCycleBuilder {
     /// <li>
     /// <p>Prospect: Amazon Web Services identifies the opportunity. It can be active (Comes directly from the end customer through a lead) or latent (Your account team believes it exists based on research, account plans, sales plays).</p></li>
     /// <li>
-    /// <p>Qualified: Your account team engaged with the prospect/end customer to discuss viability and understand requirements. The prospect/end customer agreed that the opportunity is real, of interest, and may solve key business/technical needs.</p></li>
+    /// <p>Qualified: Your account team engaged with the customer to discuss viability and requirements. The customer agreed that the opportunity is real, of interest, and may solve business/technical needs.</p></li>
     /// <li>
     /// <p>Technical Validation: All parties understand the implementation plan.</p></li>
     /// <li>
@@ -370,15 +370,15 @@ impl LifeCycleBuilder {
     /// <li>
     /// <p>Legal/Tax/Regulatory: Legal, tax, or regulatory issues prevented progress.</p></li>
     /// <li>
-    /// <p>Lost to Competitor - Google: The opportunity was lost to Google.</p></li>
+    /// <p>Lost to Competitor—Google: The opportunity was lost to Google.</p></li>
     /// <li>
-    /// <p>Lost to Competitor - Microsoft: The opportunity was lost to Microsoft.</p></li>
+    /// <p>Lost to Competitor—Microsoft: The opportunity was lost to Microsoft.</p></li>
     /// <li>
-    /// <p>Lost to Competitor - SoftLayer: The opportunity was lost to SoftLayer.</p></li>
+    /// <p>Lost to Competitor—SoftLayer: The opportunity was lost to SoftLayer.</p></li>
     /// <li>
-    /// <p>Lost to Competitor - VMWare: The opportunity was lost to VMWare.</p></li>
+    /// <p>Lost to Competitor—VMWare: The opportunity was lost to VMWare.</p></li>
     /// <li>
-    /// <p>Lost to Competitor - Other: The opportunity was lost to a competitor not listed above.</p></li>
+    /// <p>Lost to Competitor—Other: The opportunity was lost to a competitor not listed above.</p></li>
     /// <li>
     /// <p>No Opportunity: There was no opportunity to pursue.</p></li>
     /// <li>
@@ -415,15 +415,15 @@ impl LifeCycleBuilder {
     /// <li>
     /// <p>Legal/Tax/Regulatory: Legal, tax, or regulatory issues prevented progress.</p></li>
     /// <li>
-    /// <p>Lost to Competitor - Google: The opportunity was lost to Google.</p></li>
+    /// <p>Lost to Competitor—Google: The opportunity was lost to Google.</p></li>
     /// <li>
-    /// <p>Lost to Competitor - Microsoft: The opportunity was lost to Microsoft.</p></li>
+    /// <p>Lost to Competitor—Microsoft: The opportunity was lost to Microsoft.</p></li>
     /// <li>
-    /// <p>Lost to Competitor - SoftLayer: The opportunity was lost to SoftLayer.</p></li>
+    /// <p>Lost to Competitor—SoftLayer: The opportunity was lost to SoftLayer.</p></li>
     /// <li>
-    /// <p>Lost to Competitor - VMWare: The opportunity was lost to VMWare.</p></li>
+    /// <p>Lost to Competitor—VMWare: The opportunity was lost to VMWare.</p></li>
     /// <li>
-    /// <p>Lost to Competitor - Other: The opportunity was lost to a competitor not listed above.</p></li>
+    /// <p>Lost to Competitor—Other: The opportunity was lost to a competitor not listed above.</p></li>
     /// <li>
     /// <p>No Opportunity: There was no opportunity to pursue.</p></li>
     /// <li>
@@ -460,15 +460,15 @@ impl LifeCycleBuilder {
     /// <li>
     /// <p>Legal/Tax/Regulatory: Legal, tax, or regulatory issues prevented progress.</p></li>
     /// <li>
-    /// <p>Lost to Competitor - Google: The opportunity was lost to Google.</p></li>
+    /// <p>Lost to Competitor—Google: The opportunity was lost to Google.</p></li>
     /// <li>
-    /// <p>Lost to Competitor - Microsoft: The opportunity was lost to Microsoft.</p></li>
+    /// <p>Lost to Competitor—Microsoft: The opportunity was lost to Microsoft.</p></li>
     /// <li>
-    /// <p>Lost to Competitor - SoftLayer: The opportunity was lost to SoftLayer.</p></li>
+    /// <p>Lost to Competitor—SoftLayer: The opportunity was lost to SoftLayer.</p></li>
     /// <li>
-    /// <p>Lost to Competitor - VMWare: The opportunity was lost to VMWare.</p></li>
+    /// <p>Lost to Competitor—VMWare: The opportunity was lost to VMWare.</p></li>
     /// <li>
-    /// <p>Lost to Competitor - Other: The opportunity was lost to a competitor not listed above.</p></li>
+    /// <p>Lost to Competitor—Other: The opportunity was lost to a competitor not listed above.</p></li>
     /// <li>
     /// <p>No Opportunity: There was no opportunity to pursue.</p></li>
     /// <li>
@@ -495,17 +495,17 @@ impl LifeCycleBuilder {
     pub fn get_closed_lost_reason(&self) -> &::std::option::Option<crate::types::ClosedLostReason> {
         &self.closed_lost_reason
     }
-    /// <p>Specifies the upcoming actions or tasks for the <code>Opportunity</code>. This field is utilized to communicate to Amazon Web Services the next actions required for the <code>Opportunity</code>.</p>
+    /// <p>Specifies the upcoming actions or tasks for the <code>Opportunity</code>. Use this field to communicate with Amazon Web Services about the next actions required for the <code>Opportunity</code>.</p>
     pub fn next_steps(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_steps = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Specifies the upcoming actions or tasks for the <code>Opportunity</code>. This field is utilized to communicate to Amazon Web Services the next actions required for the <code>Opportunity</code>.</p>
+    /// <p>Specifies the upcoming actions or tasks for the <code>Opportunity</code>. Use this field to communicate with Amazon Web Services about the next actions required for the <code>Opportunity</code>.</p>
     pub fn set_next_steps(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_steps = input;
         self
     }
-    /// <p>Specifies the upcoming actions or tasks for the <code>Opportunity</code>. This field is utilized to communicate to Amazon Web Services the next actions required for the <code>Opportunity</code>.</p>
+    /// <p>Specifies the upcoming actions or tasks for the <code>Opportunity</code>. Use this field to communicate with Amazon Web Services about the next actions required for the <code>Opportunity</code>.</p>
     pub fn get_next_steps(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_steps
     }
@@ -535,7 +535,7 @@ impl LifeCycleBuilder {
     /// <li>
     /// <p>In Review: Amazon Web Services is validating (read-only).</p></li>
     /// <li>
-    /// <p>Action Required: Issues that Amazon Web Services highlights need to be addressed. Partners should use the <code>UpdateOpportunity</code> API action to update the opportunity, and ensure all required changes are made. Only these fields are editable when the <code>Lifecycle.ReviewStatus</code> is <code>Action Required</code>:</p>
+    /// <p>Action Required: Issues that Amazon Web Services highlights need to be addressed. Partners should use the <code>UpdateOpportunity</code> API action to update the opportunity and helps to ensure that all required changes are made. Only the following fields are editable when the <code>Lifecycle.ReviewStatus</code> is <code>Action Required</code>:</p>
     /// <ul>
     /// <li>
     /// <p>Customer.Account.Address.City</p></li>
@@ -579,7 +579,7 @@ impl LifeCycleBuilder {
     /// <li>
     /// <p>In Review: Amazon Web Services is validating (read-only).</p></li>
     /// <li>
-    /// <p>Action Required: Issues that Amazon Web Services highlights need to be addressed. Partners should use the <code>UpdateOpportunity</code> API action to update the opportunity, and ensure all required changes are made. Only these fields are editable when the <code>Lifecycle.ReviewStatus</code> is <code>Action Required</code>:</p>
+    /// <p>Action Required: Issues that Amazon Web Services highlights need to be addressed. Partners should use the <code>UpdateOpportunity</code> API action to update the opportunity and helps to ensure that all required changes are made. Only the following fields are editable when the <code>Lifecycle.ReviewStatus</code> is <code>Action Required</code>:</p>
     /// <ul>
     /// <li>
     /// <p>Customer.Account.Address.City</p></li>
@@ -623,7 +623,7 @@ impl LifeCycleBuilder {
     /// <li>
     /// <p>In Review: Amazon Web Services is validating (read-only).</p></li>
     /// <li>
-    /// <p>Action Required: Issues that Amazon Web Services highlights need to be addressed. Partners should use the <code>UpdateOpportunity</code> API action to update the opportunity, and ensure all required changes are made. Only these fields are editable when the <code>Lifecycle.ReviewStatus</code> is <code>Action Required</code>:</p>
+    /// <p>Action Required: Issues that Amazon Web Services highlights need to be addressed. Partners should use the <code>UpdateOpportunity</code> API action to update the opportunity and helps to ensure that all required changes are made. Only the following fields are editable when the <code>Lifecycle.ReviewStatus</code> is <code>Action Required</code>:</p>
     /// <ul>
     /// <li>
     /// <p>Customer.Account.Address.City</p></li>
@@ -657,17 +657,17 @@ impl LifeCycleBuilder {
     pub fn get_review_status(&self) -> &::std::option::Option<crate::types::ReviewStatus> {
         &self.review_status
     }
-    /// <p>Indicates why an opportuntiy was sent back for further details. Partners must take corrective action based on the <code>ReviewComments</code>.</p>
+    /// <p>Indicates why an opportunity was sent back for further details. Partners must take corrective action based on the <code>ReviewComments</code>.</p>
     pub fn review_comments(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.review_comments = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Indicates why an opportuntiy was sent back for further details. Partners must take corrective action based on the <code>ReviewComments</code>.</p>
+    /// <p>Indicates why an opportunity was sent back for further details. Partners must take corrective action based on the <code>ReviewComments</code>.</p>
     pub fn set_review_comments(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.review_comments = input;
         self
     }
-    /// <p>Indicates why an opportuntiy was sent back for further details. Partners must take corrective action based on the <code>ReviewComments</code>.</p>
+    /// <p>Indicates why an opportunity was sent back for further details. Partners must take corrective action based on the <code>ReviewComments</code>.</p>
     pub fn get_review_comments(&self) -> &::std::option::Option<::std::string::String> {
         &self.review_comments
     }

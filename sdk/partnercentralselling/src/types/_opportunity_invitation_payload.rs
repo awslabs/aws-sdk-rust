@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OpportunityInvitationPayload {
-    /// <p>Represents the contact details of the AWS representatives involved in sending the Engagement Invitation. These contacts are key stakeholders for the opportunity.</p>
+    /// <p>Represents the contact details of the AWS representatives involved in sending the Engagement Invitation. These contacts are opportunity stakeholders.</p>
     pub sender_contacts: ::std::option::Option<::std::vec::Vec<crate::types::SenderContact>>,
     /// <p>Outlines the responsibilities or expectations of the receiver in the context of the invitation.</p>
     pub receiver_responsibilities: ::std::vec::Vec<crate::types::ReceiverResponsibility>,
@@ -14,7 +14,7 @@ pub struct OpportunityInvitationPayload {
     pub project: ::std::option::Option<crate::types::ProjectDetails>,
 }
 impl OpportunityInvitationPayload {
-    /// <p>Represents the contact details of the AWS representatives involved in sending the Engagement Invitation. These contacts are key stakeholders for the opportunity.</p>
+    /// <p>Represents the contact details of the AWS representatives involved in sending the Engagement Invitation. These contacts are opportunity stakeholders.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sender_contacts.is_none()`.
     pub fn sender_contacts(&self) -> &[crate::types::SenderContact] {
@@ -55,19 +55,19 @@ impl OpportunityInvitationPayloadBuilder {
     ///
     /// To override the contents of this collection use [`set_sender_contacts`](Self::set_sender_contacts).
     ///
-    /// <p>Represents the contact details of the AWS representatives involved in sending the Engagement Invitation. These contacts are key stakeholders for the opportunity.</p>
+    /// <p>Represents the contact details of the AWS representatives involved in sending the Engagement Invitation. These contacts are opportunity stakeholders.</p>
     pub fn sender_contacts(mut self, input: crate::types::SenderContact) -> Self {
         let mut v = self.sender_contacts.unwrap_or_default();
         v.push(input);
         self.sender_contacts = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Represents the contact details of the AWS representatives involved in sending the Engagement Invitation. These contacts are key stakeholders for the opportunity.</p>
+    /// <p>Represents the contact details of the AWS representatives involved in sending the Engagement Invitation. These contacts are opportunity stakeholders.</p>
     pub fn set_sender_contacts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SenderContact>>) -> Self {
         self.sender_contacts = input;
         self
     }
-    /// <p>Represents the contact details of the AWS representatives involved in sending the Engagement Invitation. These contacts are key stakeholders for the opportunity.</p>
+    /// <p>Represents the contact details of the AWS representatives involved in sending the Engagement Invitation. These contacts are opportunity stakeholders.</p>
     pub fn get_sender_contacts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SenderContact>> {
         &self.sender_contacts
     }

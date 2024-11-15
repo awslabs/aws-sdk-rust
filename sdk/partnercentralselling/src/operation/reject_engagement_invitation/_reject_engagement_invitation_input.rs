@@ -3,46 +3,46 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RejectEngagementInvitationInput {
-    /// <p>Specifies the catalog related to the engagement invitation. Accepted values are <code>AWS</code> and <code>Sandbox</code>, which determine the environment in which the opportunity is managed.</p>
+    /// <p>This is the catalog that's associated with the engagement invitation. Acceptable values are <code>AWS</code> or <code>Sandbox</code>, and these values determine the environment in which the opportunity is managed.</p>
     pub catalog: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies the unique identifier of the <code>EngagementInvitation</code> to be rejected. Providing the correct identifier ensures that the intended invitation is rejected.</p>
+    /// <p>This is the unique identifier of the rejected <code>EngagementInvitation</code>. Providing the correct identifier helps to ensure that the intended invitation is rejected.</p>
     pub identifier: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies the reason for rejecting the engagement invitation. Providing a reason helps document the rationale behind the rejection and assists AWS in tracking patterns or issues. Possible values include:</p>
+    /// <p>This describes the reason for rejecting the engagement invitation, which helps AWS track usage patterns. Acceptable values include the following:</p>
     /// <ul>
     /// <li>
-    /// <p><i>Customer problem unclear:</i> The customer's problem is not clearly defined.</p></li>
+    /// <p><i>Customer problem unclear:</i> The customer's problem isn't understood.</p></li>
     /// <li>
-    /// <p><i>Next steps unclear:</i> The next steps required to proceed are not clear.</p></li>
+    /// <p><i>Next steps unclear:</i> The next steps required to proceed aren't understood.</p></li>
     /// <li>
     /// <p><i>Unable to support:</i> The partner is unable to provide support due to resource or capability constraints.</p></li>
     /// <li>
-    /// <p><i>Duplicate of Partner Referral:</i> The opportunity is a duplicate of an existing referral.</p></li>
+    /// <p><i>Duplicate of partner referral:</i> The opportunity is a duplicate of an existing referral.</p></li>
     /// <li>
-    /// <p><i>Other:</i> Any other reason not covered by the specified values.</p></li>
+    /// <p><i>Other:</i> Any reason not covered by other values.</p></li>
     /// </ul>
     pub rejection_reason: ::std::option::Option<::std::string::String>,
 }
 impl RejectEngagementInvitationInput {
-    /// <p>Specifies the catalog related to the engagement invitation. Accepted values are <code>AWS</code> and <code>Sandbox</code>, which determine the environment in which the opportunity is managed.</p>
+    /// <p>This is the catalog that's associated with the engagement invitation. Acceptable values are <code>AWS</code> or <code>Sandbox</code>, and these values determine the environment in which the opportunity is managed.</p>
     pub fn catalog(&self) -> ::std::option::Option<&str> {
         self.catalog.as_deref()
     }
-    /// <p>Specifies the unique identifier of the <code>EngagementInvitation</code> to be rejected. Providing the correct identifier ensures that the intended invitation is rejected.</p>
+    /// <p>This is the unique identifier of the rejected <code>EngagementInvitation</code>. Providing the correct identifier helps to ensure that the intended invitation is rejected.</p>
     pub fn identifier(&self) -> ::std::option::Option<&str> {
         self.identifier.as_deref()
     }
-    /// <p>Specifies the reason for rejecting the engagement invitation. Providing a reason helps document the rationale behind the rejection and assists AWS in tracking patterns or issues. Possible values include:</p>
+    /// <p>This describes the reason for rejecting the engagement invitation, which helps AWS track usage patterns. Acceptable values include the following:</p>
     /// <ul>
     /// <li>
-    /// <p><i>Customer problem unclear:</i> The customer's problem is not clearly defined.</p></li>
+    /// <p><i>Customer problem unclear:</i> The customer's problem isn't understood.</p></li>
     /// <li>
-    /// <p><i>Next steps unclear:</i> The next steps required to proceed are not clear.</p></li>
+    /// <p><i>Next steps unclear:</i> The next steps required to proceed aren't understood.</p></li>
     /// <li>
     /// <p><i>Unable to support:</i> The partner is unable to provide support due to resource or capability constraints.</p></li>
     /// <li>
-    /// <p><i>Duplicate of Partner Referral:</i> The opportunity is a duplicate of an existing referral.</p></li>
+    /// <p><i>Duplicate of partner referral:</i> The opportunity is a duplicate of an existing referral.</p></li>
     /// <li>
-    /// <p><i>Other:</i> Any other reason not covered by the specified values.</p></li>
+    /// <p><i>Other:</i> Any reason not covered by other values.</p></li>
     /// </ul>
     pub fn rejection_reason(&self) -> ::std::option::Option<&str> {
         self.rejection_reason.as_deref()
@@ -64,82 +64,82 @@ pub struct RejectEngagementInvitationInputBuilder {
     pub(crate) rejection_reason: ::std::option::Option<::std::string::String>,
 }
 impl RejectEngagementInvitationInputBuilder {
-    /// <p>Specifies the catalog related to the engagement invitation. Accepted values are <code>AWS</code> and <code>Sandbox</code>, which determine the environment in which the opportunity is managed.</p>
+    /// <p>This is the catalog that's associated with the engagement invitation. Acceptable values are <code>AWS</code> or <code>Sandbox</code>, and these values determine the environment in which the opportunity is managed.</p>
     /// This field is required.
     pub fn catalog(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.catalog = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Specifies the catalog related to the engagement invitation. Accepted values are <code>AWS</code> and <code>Sandbox</code>, which determine the environment in which the opportunity is managed.</p>
+    /// <p>This is the catalog that's associated with the engagement invitation. Acceptable values are <code>AWS</code> or <code>Sandbox</code>, and these values determine the environment in which the opportunity is managed.</p>
     pub fn set_catalog(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.catalog = input;
         self
     }
-    /// <p>Specifies the catalog related to the engagement invitation. Accepted values are <code>AWS</code> and <code>Sandbox</code>, which determine the environment in which the opportunity is managed.</p>
+    /// <p>This is the catalog that's associated with the engagement invitation. Acceptable values are <code>AWS</code> or <code>Sandbox</code>, and these values determine the environment in which the opportunity is managed.</p>
     pub fn get_catalog(&self) -> &::std::option::Option<::std::string::String> {
         &self.catalog
     }
-    /// <p>Specifies the unique identifier of the <code>EngagementInvitation</code> to be rejected. Providing the correct identifier ensures that the intended invitation is rejected.</p>
+    /// <p>This is the unique identifier of the rejected <code>EngagementInvitation</code>. Providing the correct identifier helps to ensure that the intended invitation is rejected.</p>
     /// This field is required.
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Specifies the unique identifier of the <code>EngagementInvitation</code> to be rejected. Providing the correct identifier ensures that the intended invitation is rejected.</p>
+    /// <p>This is the unique identifier of the rejected <code>EngagementInvitation</code>. Providing the correct identifier helps to ensure that the intended invitation is rejected.</p>
     pub fn set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.identifier = input;
         self
     }
-    /// <p>Specifies the unique identifier of the <code>EngagementInvitation</code> to be rejected. Providing the correct identifier ensures that the intended invitation is rejected.</p>
+    /// <p>This is the unique identifier of the rejected <code>EngagementInvitation</code>. Providing the correct identifier helps to ensure that the intended invitation is rejected.</p>
     pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.identifier
     }
-    /// <p>Specifies the reason for rejecting the engagement invitation. Providing a reason helps document the rationale behind the rejection and assists AWS in tracking patterns or issues. Possible values include:</p>
+    /// <p>This describes the reason for rejecting the engagement invitation, which helps AWS track usage patterns. Acceptable values include the following:</p>
     /// <ul>
     /// <li>
-    /// <p><i>Customer problem unclear:</i> The customer's problem is not clearly defined.</p></li>
+    /// <p><i>Customer problem unclear:</i> The customer's problem isn't understood.</p></li>
     /// <li>
-    /// <p><i>Next steps unclear:</i> The next steps required to proceed are not clear.</p></li>
+    /// <p><i>Next steps unclear:</i> The next steps required to proceed aren't understood.</p></li>
     /// <li>
     /// <p><i>Unable to support:</i> The partner is unable to provide support due to resource or capability constraints.</p></li>
     /// <li>
-    /// <p><i>Duplicate of Partner Referral:</i> The opportunity is a duplicate of an existing referral.</p></li>
+    /// <p><i>Duplicate of partner referral:</i> The opportunity is a duplicate of an existing referral.</p></li>
     /// <li>
-    /// <p><i>Other:</i> Any other reason not covered by the specified values.</p></li>
+    /// <p><i>Other:</i> Any reason not covered by other values.</p></li>
     /// </ul>
     pub fn rejection_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rejection_reason = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Specifies the reason for rejecting the engagement invitation. Providing a reason helps document the rationale behind the rejection and assists AWS in tracking patterns or issues. Possible values include:</p>
+    /// <p>This describes the reason for rejecting the engagement invitation, which helps AWS track usage patterns. Acceptable values include the following:</p>
     /// <ul>
     /// <li>
-    /// <p><i>Customer problem unclear:</i> The customer's problem is not clearly defined.</p></li>
+    /// <p><i>Customer problem unclear:</i> The customer's problem isn't understood.</p></li>
     /// <li>
-    /// <p><i>Next steps unclear:</i> The next steps required to proceed are not clear.</p></li>
+    /// <p><i>Next steps unclear:</i> The next steps required to proceed aren't understood.</p></li>
     /// <li>
     /// <p><i>Unable to support:</i> The partner is unable to provide support due to resource or capability constraints.</p></li>
     /// <li>
-    /// <p><i>Duplicate of Partner Referral:</i> The opportunity is a duplicate of an existing referral.</p></li>
+    /// <p><i>Duplicate of partner referral:</i> The opportunity is a duplicate of an existing referral.</p></li>
     /// <li>
-    /// <p><i>Other:</i> Any other reason not covered by the specified values.</p></li>
+    /// <p><i>Other:</i> Any reason not covered by other values.</p></li>
     /// </ul>
     pub fn set_rejection_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.rejection_reason = input;
         self
     }
-    /// <p>Specifies the reason for rejecting the engagement invitation. Providing a reason helps document the rationale behind the rejection and assists AWS in tracking patterns or issues. Possible values include:</p>
+    /// <p>This describes the reason for rejecting the engagement invitation, which helps AWS track usage patterns. Acceptable values include the following:</p>
     /// <ul>
     /// <li>
-    /// <p><i>Customer problem unclear:</i> The customer's problem is not clearly defined.</p></li>
+    /// <p><i>Customer problem unclear:</i> The customer's problem isn't understood.</p></li>
     /// <li>
-    /// <p><i>Next steps unclear:</i> The next steps required to proceed are not clear.</p></li>
+    /// <p><i>Next steps unclear:</i> The next steps required to proceed aren't understood.</p></li>
     /// <li>
     /// <p><i>Unable to support:</i> The partner is unable to provide support due to resource or capability constraints.</p></li>
     /// <li>
-    /// <p><i>Duplicate of Partner Referral:</i> The opportunity is a duplicate of an existing referral.</p></li>
+    /// <p><i>Duplicate of partner referral:</i> The opportunity is a duplicate of an existing referral.</p></li>
     /// <li>
-    /// <p><i>Other:</i> Any other reason not covered by the specified values.</p></li>
+    /// <p><i>Other:</i> Any reason not covered by other values.</p></li>
     /// </ul>
     pub fn get_rejection_reason(&self) -> &::std::option::Option<::std::string::String> {
         &self.rejection_reason

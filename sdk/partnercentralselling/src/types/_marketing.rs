@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Marketing {
-    /// <p>Specifies the <code>Opportunity</code>'s unique marketing campaign name. The Amazon Web Services campaign name serves as a reference to specific marketing initiatives, promotions, or activities related to the <code>Opportunity</code>. This field captures the identifier used to track and categorize the <code>Opportunity</code> within Amazon Web Services's marketing campaigns. If you don't have a campaign name, reach out to your Amazon Web Services point of contact to obtain one.</p>
+    /// <p>Specifies the <code>Opportunity</code> marketing campaign code. The Amazon Web Services campaign code is a reference to specific marketing initiatives, promotions, or activities. This field captures the identifier used to track and categorize the <code>Opportunity</code> within marketing campaigns. If you don't have a campaign code, contact your Amazon Web Services point of contact to obtain one.</p>
     pub campaign_name: ::std::option::Option<::std::string::String>,
     /// <p>Indicates if the <code>Opportunity</code> was sourced from an Amazon Web Services marketing activity. Use the value <code>Marketing Activity</code>. Use <code>None</code> if it's not associated with an Amazon Web Services marketing activity. This field helps Amazon Web Services track the return on marketing investments and enables better distribution of marketing budgets among partners.</p>
     pub source: ::std::option::Option<crate::types::MarketingSource>,
@@ -17,7 +17,7 @@ pub struct Marketing {
     pub aws_funding_used: ::std::option::Option<crate::types::AwsFundingUsed>,
 }
 impl Marketing {
-    /// <p>Specifies the <code>Opportunity</code>'s unique marketing campaign name. The Amazon Web Services campaign name serves as a reference to specific marketing initiatives, promotions, or activities related to the <code>Opportunity</code>. This field captures the identifier used to track and categorize the <code>Opportunity</code> within Amazon Web Services's marketing campaigns. If you don't have a campaign name, reach out to your Amazon Web Services point of contact to obtain one.</p>
+    /// <p>Specifies the <code>Opportunity</code> marketing campaign code. The Amazon Web Services campaign code is a reference to specific marketing initiatives, promotions, or activities. This field captures the identifier used to track and categorize the <code>Opportunity</code> within marketing campaigns. If you don't have a campaign code, contact your Amazon Web Services point of contact to obtain one.</p>
     pub fn campaign_name(&self) -> ::std::option::Option<&str> {
         self.campaign_name.as_deref()
     }
@@ -61,17 +61,17 @@ pub struct MarketingBuilder {
     pub(crate) aws_funding_used: ::std::option::Option<crate::types::AwsFundingUsed>,
 }
 impl MarketingBuilder {
-    /// <p>Specifies the <code>Opportunity</code>'s unique marketing campaign name. The Amazon Web Services campaign name serves as a reference to specific marketing initiatives, promotions, or activities related to the <code>Opportunity</code>. This field captures the identifier used to track and categorize the <code>Opportunity</code> within Amazon Web Services's marketing campaigns. If you don't have a campaign name, reach out to your Amazon Web Services point of contact to obtain one.</p>
+    /// <p>Specifies the <code>Opportunity</code> marketing campaign code. The Amazon Web Services campaign code is a reference to specific marketing initiatives, promotions, or activities. This field captures the identifier used to track and categorize the <code>Opportunity</code> within marketing campaigns. If you don't have a campaign code, contact your Amazon Web Services point of contact to obtain one.</p>
     pub fn campaign_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.campaign_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Specifies the <code>Opportunity</code>'s unique marketing campaign name. The Amazon Web Services campaign name serves as a reference to specific marketing initiatives, promotions, or activities related to the <code>Opportunity</code>. This field captures the identifier used to track and categorize the <code>Opportunity</code> within Amazon Web Services's marketing campaigns. If you don't have a campaign name, reach out to your Amazon Web Services point of contact to obtain one.</p>
+    /// <p>Specifies the <code>Opportunity</code> marketing campaign code. The Amazon Web Services campaign code is a reference to specific marketing initiatives, promotions, or activities. This field captures the identifier used to track and categorize the <code>Opportunity</code> within marketing campaigns. If you don't have a campaign code, contact your Amazon Web Services point of contact to obtain one.</p>
     pub fn set_campaign_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.campaign_name = input;
         self
     }
-    /// <p>Specifies the <code>Opportunity</code>'s unique marketing campaign name. The Amazon Web Services campaign name serves as a reference to specific marketing initiatives, promotions, or activities related to the <code>Opportunity</code>. This field captures the identifier used to track and categorize the <code>Opportunity</code> within Amazon Web Services's marketing campaigns. If you don't have a campaign name, reach out to your Amazon Web Services point of contact to obtain one.</p>
+    /// <p>Specifies the <code>Opportunity</code> marketing campaign code. The Amazon Web Services campaign code is a reference to specific marketing initiatives, promotions, or activities. This field captures the identifier used to track and categorize the <code>Opportunity</code> within marketing campaigns. If you don't have a campaign code, contact your Amazon Web Services point of contact to obtain one.</p>
     pub fn get_campaign_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.campaign_name
     }

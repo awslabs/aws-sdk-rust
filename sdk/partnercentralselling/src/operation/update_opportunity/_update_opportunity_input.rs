@@ -3,36 +3,36 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateOpportunityInput {
-    /// <p>Specifies the catalog associated with the request. This field takes a string value from a predefined list: <code>AWS</code> or <code>Sandbox</code>. The catalog determines which environment the opportunity is updated in. Use <code>AWS</code> to update real opportunities in the production environment, and <code>Sandbox</code> to test in a secure and isolated environment. When you use the <code>Sandbox</code> catalog, it allows you to simulate and validate your interactions with Amazon Web Services services without affecting live data or operations.</p>
+    /// <p>Specifies the catalog associated with the request. This field takes a string value from a predefined list: <code>AWS</code> or <code>Sandbox</code>. The catalog determines which environment the opportunity is updated in. Use <code>AWS</code> to update real opportunities in the production environment, and <code>Sandbox</code> for testing in secure, isolated environments. When you use the <code>Sandbox</code> catalog, it allows you to simulate and validate your interactions with Amazon Web Services services without affecting live data or operations.</p>
     pub catalog: ::std::option::Option<::std::string::String>,
     /// <p>Identifies the type of support the partner needs from Amazon Web Services.</p>
     /// <p>Valid values:</p>
     /// <ul>
     /// <li>
-    /// <p>Co-Sell - Architectural Validation: Confirmation from Amazon Web Services that the partner's proposed solution architecture is aligned with Amazon Web Services best practices and poses minimal architectural risks.</p></li>
+    /// <p>Cosell—Architectural Validation: Confirmation from Amazon Web Services that the partner's proposed solution architecture is aligned with Amazon Web Services best practices and poses minimal architectural risks.</p></li>
     /// <li>
-    /// <p>Co-Sell - Business Presentation: Request Amazon Web Services seller's participation in a joint customer presentation.</p></li>
+    /// <p>Cosell—Business Presentation: Request Amazon Web Services seller's participation in a joint customer presentation.</p></li>
     /// <li>
-    /// <p>Co-Sell - Competitive Information: Access to Amazon Web Services competitive resources and support for the partner's proposed solution.</p></li>
+    /// <p>Cosell—Competitive Information: Access to Amazon Web Services competitive resources and support for the partner's proposed solution.</p></li>
     /// <li>
-    /// <p>Co-Sell - Pricing Assistance: Connect with an AWS seller for support situations where a partner may be receiving an upfront discount on a service (for example: EDP deals).</p></li>
+    /// <p>Cosell—Pricing Assistance: Connect with an AWS seller for support situations where a partner may be receiving an upfront discount on a service (for example: EDP deals).</p></li>
     /// <li>
-    /// <p>Co-Sell - Technical Consultation: Connection with an Amazon Web Services Solutions Architect to address the partner's questions about the proposed solution.</p></li>
+    /// <p>Cosell—Technical Consultation: Connection with an Amazon Web Services Solutions Architect to address the partner's questions about the proposed solution.</p></li>
     /// <li>
-    /// <p>Co-Sell - Total Cost of Ownership Evaluation: Assistance with quoting different cost savings of proposed solutions on Amazon Web Services versus on-premises or a traditional hosting environment.</p></li>
+    /// <p>Cosell—Total Cost of Ownership Evaluation: Assistance with quoting different cost savings of proposed solutions on Amazon Web Services versus on-premises or a traditional hosting environment.</p></li>
     /// <li>
-    /// <p>Co-Sell - Deal Support: Request Amazon Web Services seller's support to progress the opportunity (for example: joint customer call, strategic positioning).</p></li>
+    /// <p>Cosell—Deal Support: Request Amazon Web Services seller's support to progress the opportunity (for example: joint customer call, strategic positioning).</p></li>
     /// <li>
-    /// <p>Co-Sell - Support for Public Tender / RFx: Opportunity related to the public sector where the partner needs RFx support from Amazon Web Services.</p></li>
+    /// <p>Cosell—Support for Public Tender/RFx: Opportunity related to the public sector where the partner needs RFx support from Amazon Web Services.</p></li>
     /// <li>
-    /// <p>Do Not Need Support from AWS Sales Rep: Indicates that a partner doesn't need support from an Amazon Web Services Sales representative. The opportunity is managed solely by the partner. It's possible to request co-selling support on these opportunities at any stage during their lifecycle. Also known as, for-visibility-only (FVO) opportunity.</p></li>
+    /// <p>Do Not Need Support from AWS Sales Rep: Indicates that a partner doesn't need support from an Amazon Web Services Sales representative. The opportunity is managed solely by the partner. It's possible to request coselling support on these opportunities at any stage during their lifecycle. Also known as, for-visibility-only (FVO) opportunity.</p></li>
     /// </ul>
     pub primary_needs_from_aws: ::std::option::Option<::std::vec::Vec<crate::types::PrimaryNeedFromAws>>,
-    /// <p>Specifies if the opportunity is associated with national security concerns. This flag is only applicable when the industry is <code>Government</code>. For national security-related opportunities, specific validation and compliance rules may apply, impacting the opportunity's visibility and processing.</p>
+    /// <p>Specifies if the opportunity is associated with national security concerns. This flag is only applicable when the industry is <code>Government</code>. For national-security-related opportunities, validation and compliance rules may apply, impacting the opportunity's visibility and processing.</p>
     pub national_security: ::std::option::Option<crate::types::NationalSecurity>,
     /// <p>Specifies the opportunity's unique identifier in the partner's CRM system. This value is essential to track and reconcile because it's included in the outbound payload sent back to the partner.</p>
     pub partner_opportunity_identifier: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies details of the customer associated with the <code>Opportunity</code> .</p>
+    /// <p>Specifies details of the customer associated with the <code>Opportunity</code>.</p>
     pub customer: ::std::option::Option<crate::types::Customer>,
     /// <p>An object that contains project details summary for the <code>Opportunity</code>.</p>
     pub project: ::std::option::Option<crate::types::Project>,
@@ -59,7 +59,7 @@ pub struct UpdateOpportunityInput {
     pub life_cycle: ::std::option::Option<crate::types::LifeCycle>,
 }
 impl UpdateOpportunityInput {
-    /// <p>Specifies the catalog associated with the request. This field takes a string value from a predefined list: <code>AWS</code> or <code>Sandbox</code>. The catalog determines which environment the opportunity is updated in. Use <code>AWS</code> to update real opportunities in the production environment, and <code>Sandbox</code> to test in a secure and isolated environment. When you use the <code>Sandbox</code> catalog, it allows you to simulate and validate your interactions with Amazon Web Services services without affecting live data or operations.</p>
+    /// <p>Specifies the catalog associated with the request. This field takes a string value from a predefined list: <code>AWS</code> or <code>Sandbox</code>. The catalog determines which environment the opportunity is updated in. Use <code>AWS</code> to update real opportunities in the production environment, and <code>Sandbox</code> for testing in secure, isolated environments. When you use the <code>Sandbox</code> catalog, it allows you to simulate and validate your interactions with Amazon Web Services services without affecting live data or operations.</p>
     pub fn catalog(&self) -> ::std::option::Option<&str> {
         self.catalog.as_deref()
     }
@@ -67,30 +67,30 @@ impl UpdateOpportunityInput {
     /// <p>Valid values:</p>
     /// <ul>
     /// <li>
-    /// <p>Co-Sell - Architectural Validation: Confirmation from Amazon Web Services that the partner's proposed solution architecture is aligned with Amazon Web Services best practices and poses minimal architectural risks.</p></li>
+    /// <p>Cosell—Architectural Validation: Confirmation from Amazon Web Services that the partner's proposed solution architecture is aligned with Amazon Web Services best practices and poses minimal architectural risks.</p></li>
     /// <li>
-    /// <p>Co-Sell - Business Presentation: Request Amazon Web Services seller's participation in a joint customer presentation.</p></li>
+    /// <p>Cosell—Business Presentation: Request Amazon Web Services seller's participation in a joint customer presentation.</p></li>
     /// <li>
-    /// <p>Co-Sell - Competitive Information: Access to Amazon Web Services competitive resources and support for the partner's proposed solution.</p></li>
+    /// <p>Cosell—Competitive Information: Access to Amazon Web Services competitive resources and support for the partner's proposed solution.</p></li>
     /// <li>
-    /// <p>Co-Sell - Pricing Assistance: Connect with an AWS seller for support situations where a partner may be receiving an upfront discount on a service (for example: EDP deals).</p></li>
+    /// <p>Cosell—Pricing Assistance: Connect with an AWS seller for support situations where a partner may be receiving an upfront discount on a service (for example: EDP deals).</p></li>
     /// <li>
-    /// <p>Co-Sell - Technical Consultation: Connection with an Amazon Web Services Solutions Architect to address the partner's questions about the proposed solution.</p></li>
+    /// <p>Cosell—Technical Consultation: Connection with an Amazon Web Services Solutions Architect to address the partner's questions about the proposed solution.</p></li>
     /// <li>
-    /// <p>Co-Sell - Total Cost of Ownership Evaluation: Assistance with quoting different cost savings of proposed solutions on Amazon Web Services versus on-premises or a traditional hosting environment.</p></li>
+    /// <p>Cosell—Total Cost of Ownership Evaluation: Assistance with quoting different cost savings of proposed solutions on Amazon Web Services versus on-premises or a traditional hosting environment.</p></li>
     /// <li>
-    /// <p>Co-Sell - Deal Support: Request Amazon Web Services seller's support to progress the opportunity (for example: joint customer call, strategic positioning).</p></li>
+    /// <p>Cosell—Deal Support: Request Amazon Web Services seller's support to progress the opportunity (for example: joint customer call, strategic positioning).</p></li>
     /// <li>
-    /// <p>Co-Sell - Support for Public Tender / RFx: Opportunity related to the public sector where the partner needs RFx support from Amazon Web Services.</p></li>
+    /// <p>Cosell—Support for Public Tender/RFx: Opportunity related to the public sector where the partner needs RFx support from Amazon Web Services.</p></li>
     /// <li>
-    /// <p>Do Not Need Support from AWS Sales Rep: Indicates that a partner doesn't need support from an Amazon Web Services Sales representative. The opportunity is managed solely by the partner. It's possible to request co-selling support on these opportunities at any stage during their lifecycle. Also known as, for-visibility-only (FVO) opportunity.</p></li>
+    /// <p>Do Not Need Support from AWS Sales Rep: Indicates that a partner doesn't need support from an Amazon Web Services Sales representative. The opportunity is managed solely by the partner. It's possible to request coselling support on these opportunities at any stage during their lifecycle. Also known as, for-visibility-only (FVO) opportunity.</p></li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.primary_needs_from_aws.is_none()`.
     pub fn primary_needs_from_aws(&self) -> &[crate::types::PrimaryNeedFromAws] {
         self.primary_needs_from_aws.as_deref().unwrap_or_default()
     }
-    /// <p>Specifies if the opportunity is associated with national security concerns. This flag is only applicable when the industry is <code>Government</code>. For national security-related opportunities, specific validation and compliance rules may apply, impacting the opportunity's visibility and processing.</p>
+    /// <p>Specifies if the opportunity is associated with national security concerns. This flag is only applicable when the industry is <code>Government</code>. For national-security-related opportunities, validation and compliance rules may apply, impacting the opportunity's visibility and processing.</p>
     pub fn national_security(&self) -> ::std::option::Option<&crate::types::NationalSecurity> {
         self.national_security.as_ref()
     }
@@ -98,7 +98,7 @@ impl UpdateOpportunityInput {
     pub fn partner_opportunity_identifier(&self) -> ::std::option::Option<&str> {
         self.partner_opportunity_identifier.as_deref()
     }
-    /// <p>Specifies details of the customer associated with the <code>Opportunity</code> .</p>
+    /// <p>Specifies details of the customer associated with the <code>Opportunity</code>.</p>
     pub fn customer(&self) -> ::std::option::Option<&crate::types::Customer> {
         self.customer.as_ref()
     }
@@ -165,18 +165,18 @@ pub struct UpdateOpportunityInputBuilder {
     pub(crate) life_cycle: ::std::option::Option<crate::types::LifeCycle>,
 }
 impl UpdateOpportunityInputBuilder {
-    /// <p>Specifies the catalog associated with the request. This field takes a string value from a predefined list: <code>AWS</code> or <code>Sandbox</code>. The catalog determines which environment the opportunity is updated in. Use <code>AWS</code> to update real opportunities in the production environment, and <code>Sandbox</code> to test in a secure and isolated environment. When you use the <code>Sandbox</code> catalog, it allows you to simulate and validate your interactions with Amazon Web Services services without affecting live data or operations.</p>
+    /// <p>Specifies the catalog associated with the request. This field takes a string value from a predefined list: <code>AWS</code> or <code>Sandbox</code>. The catalog determines which environment the opportunity is updated in. Use <code>AWS</code> to update real opportunities in the production environment, and <code>Sandbox</code> for testing in secure, isolated environments. When you use the <code>Sandbox</code> catalog, it allows you to simulate and validate your interactions with Amazon Web Services services without affecting live data or operations.</p>
     /// This field is required.
     pub fn catalog(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.catalog = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Specifies the catalog associated with the request. This field takes a string value from a predefined list: <code>AWS</code> or <code>Sandbox</code>. The catalog determines which environment the opportunity is updated in. Use <code>AWS</code> to update real opportunities in the production environment, and <code>Sandbox</code> to test in a secure and isolated environment. When you use the <code>Sandbox</code> catalog, it allows you to simulate and validate your interactions with Amazon Web Services services without affecting live data or operations.</p>
+    /// <p>Specifies the catalog associated with the request. This field takes a string value from a predefined list: <code>AWS</code> or <code>Sandbox</code>. The catalog determines which environment the opportunity is updated in. Use <code>AWS</code> to update real opportunities in the production environment, and <code>Sandbox</code> for testing in secure, isolated environments. When you use the <code>Sandbox</code> catalog, it allows you to simulate and validate your interactions with Amazon Web Services services without affecting live data or operations.</p>
     pub fn set_catalog(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.catalog = input;
         self
     }
-    /// <p>Specifies the catalog associated with the request. This field takes a string value from a predefined list: <code>AWS</code> or <code>Sandbox</code>. The catalog determines which environment the opportunity is updated in. Use <code>AWS</code> to update real opportunities in the production environment, and <code>Sandbox</code> to test in a secure and isolated environment. When you use the <code>Sandbox</code> catalog, it allows you to simulate and validate your interactions with Amazon Web Services services without affecting live data or operations.</p>
+    /// <p>Specifies the catalog associated with the request. This field takes a string value from a predefined list: <code>AWS</code> or <code>Sandbox</code>. The catalog determines which environment the opportunity is updated in. Use <code>AWS</code> to update real opportunities in the production environment, and <code>Sandbox</code> for testing in secure, isolated environments. When you use the <code>Sandbox</code> catalog, it allows you to simulate and validate your interactions with Amazon Web Services services without affecting live data or operations.</p>
     pub fn get_catalog(&self) -> &::std::option::Option<::std::string::String> {
         &self.catalog
     }
@@ -188,23 +188,23 @@ impl UpdateOpportunityInputBuilder {
     /// <p>Valid values:</p>
     /// <ul>
     /// <li>
-    /// <p>Co-Sell - Architectural Validation: Confirmation from Amazon Web Services that the partner's proposed solution architecture is aligned with Amazon Web Services best practices and poses minimal architectural risks.</p></li>
+    /// <p>Cosell—Architectural Validation: Confirmation from Amazon Web Services that the partner's proposed solution architecture is aligned with Amazon Web Services best practices and poses minimal architectural risks.</p></li>
     /// <li>
-    /// <p>Co-Sell - Business Presentation: Request Amazon Web Services seller's participation in a joint customer presentation.</p></li>
+    /// <p>Cosell—Business Presentation: Request Amazon Web Services seller's participation in a joint customer presentation.</p></li>
     /// <li>
-    /// <p>Co-Sell - Competitive Information: Access to Amazon Web Services competitive resources and support for the partner's proposed solution.</p></li>
+    /// <p>Cosell—Competitive Information: Access to Amazon Web Services competitive resources and support for the partner's proposed solution.</p></li>
     /// <li>
-    /// <p>Co-Sell - Pricing Assistance: Connect with an AWS seller for support situations where a partner may be receiving an upfront discount on a service (for example: EDP deals).</p></li>
+    /// <p>Cosell—Pricing Assistance: Connect with an AWS seller for support situations where a partner may be receiving an upfront discount on a service (for example: EDP deals).</p></li>
     /// <li>
-    /// <p>Co-Sell - Technical Consultation: Connection with an Amazon Web Services Solutions Architect to address the partner's questions about the proposed solution.</p></li>
+    /// <p>Cosell—Technical Consultation: Connection with an Amazon Web Services Solutions Architect to address the partner's questions about the proposed solution.</p></li>
     /// <li>
-    /// <p>Co-Sell - Total Cost of Ownership Evaluation: Assistance with quoting different cost savings of proposed solutions on Amazon Web Services versus on-premises or a traditional hosting environment.</p></li>
+    /// <p>Cosell—Total Cost of Ownership Evaluation: Assistance with quoting different cost savings of proposed solutions on Amazon Web Services versus on-premises or a traditional hosting environment.</p></li>
     /// <li>
-    /// <p>Co-Sell - Deal Support: Request Amazon Web Services seller's support to progress the opportunity (for example: joint customer call, strategic positioning).</p></li>
+    /// <p>Cosell—Deal Support: Request Amazon Web Services seller's support to progress the opportunity (for example: joint customer call, strategic positioning).</p></li>
     /// <li>
-    /// <p>Co-Sell - Support for Public Tender / RFx: Opportunity related to the public sector where the partner needs RFx support from Amazon Web Services.</p></li>
+    /// <p>Cosell—Support for Public Tender/RFx: Opportunity related to the public sector where the partner needs RFx support from Amazon Web Services.</p></li>
     /// <li>
-    /// <p>Do Not Need Support from AWS Sales Rep: Indicates that a partner doesn't need support from an Amazon Web Services Sales representative. The opportunity is managed solely by the partner. It's possible to request co-selling support on these opportunities at any stage during their lifecycle. Also known as, for-visibility-only (FVO) opportunity.</p></li>
+    /// <p>Do Not Need Support from AWS Sales Rep: Indicates that a partner doesn't need support from an Amazon Web Services Sales representative. The opportunity is managed solely by the partner. It's possible to request coselling support on these opportunities at any stage during their lifecycle. Also known as, for-visibility-only (FVO) opportunity.</p></li>
     /// </ul>
     pub fn primary_needs_from_aws(mut self, input: crate::types::PrimaryNeedFromAws) -> Self {
         let mut v = self.primary_needs_from_aws.unwrap_or_default();
@@ -216,23 +216,23 @@ impl UpdateOpportunityInputBuilder {
     /// <p>Valid values:</p>
     /// <ul>
     /// <li>
-    /// <p>Co-Sell - Architectural Validation: Confirmation from Amazon Web Services that the partner's proposed solution architecture is aligned with Amazon Web Services best practices and poses minimal architectural risks.</p></li>
+    /// <p>Cosell—Architectural Validation: Confirmation from Amazon Web Services that the partner's proposed solution architecture is aligned with Amazon Web Services best practices and poses minimal architectural risks.</p></li>
     /// <li>
-    /// <p>Co-Sell - Business Presentation: Request Amazon Web Services seller's participation in a joint customer presentation.</p></li>
+    /// <p>Cosell—Business Presentation: Request Amazon Web Services seller's participation in a joint customer presentation.</p></li>
     /// <li>
-    /// <p>Co-Sell - Competitive Information: Access to Amazon Web Services competitive resources and support for the partner's proposed solution.</p></li>
+    /// <p>Cosell—Competitive Information: Access to Amazon Web Services competitive resources and support for the partner's proposed solution.</p></li>
     /// <li>
-    /// <p>Co-Sell - Pricing Assistance: Connect with an AWS seller for support situations where a partner may be receiving an upfront discount on a service (for example: EDP deals).</p></li>
+    /// <p>Cosell—Pricing Assistance: Connect with an AWS seller for support situations where a partner may be receiving an upfront discount on a service (for example: EDP deals).</p></li>
     /// <li>
-    /// <p>Co-Sell - Technical Consultation: Connection with an Amazon Web Services Solutions Architect to address the partner's questions about the proposed solution.</p></li>
+    /// <p>Cosell—Technical Consultation: Connection with an Amazon Web Services Solutions Architect to address the partner's questions about the proposed solution.</p></li>
     /// <li>
-    /// <p>Co-Sell - Total Cost of Ownership Evaluation: Assistance with quoting different cost savings of proposed solutions on Amazon Web Services versus on-premises or a traditional hosting environment.</p></li>
+    /// <p>Cosell—Total Cost of Ownership Evaluation: Assistance with quoting different cost savings of proposed solutions on Amazon Web Services versus on-premises or a traditional hosting environment.</p></li>
     /// <li>
-    /// <p>Co-Sell - Deal Support: Request Amazon Web Services seller's support to progress the opportunity (for example: joint customer call, strategic positioning).</p></li>
+    /// <p>Cosell—Deal Support: Request Amazon Web Services seller's support to progress the opportunity (for example: joint customer call, strategic positioning).</p></li>
     /// <li>
-    /// <p>Co-Sell - Support for Public Tender / RFx: Opportunity related to the public sector where the partner needs RFx support from Amazon Web Services.</p></li>
+    /// <p>Cosell—Support for Public Tender/RFx: Opportunity related to the public sector where the partner needs RFx support from Amazon Web Services.</p></li>
     /// <li>
-    /// <p>Do Not Need Support from AWS Sales Rep: Indicates that a partner doesn't need support from an Amazon Web Services Sales representative. The opportunity is managed solely by the partner. It's possible to request co-selling support on these opportunities at any stage during their lifecycle. Also known as, for-visibility-only (FVO) opportunity.</p></li>
+    /// <p>Do Not Need Support from AWS Sales Rep: Indicates that a partner doesn't need support from an Amazon Web Services Sales representative. The opportunity is managed solely by the partner. It's possible to request coselling support on these opportunities at any stage during their lifecycle. Also known as, for-visibility-only (FVO) opportunity.</p></li>
     /// </ul>
     pub fn set_primary_needs_from_aws(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PrimaryNeedFromAws>>) -> Self {
         self.primary_needs_from_aws = input;
@@ -242,38 +242,38 @@ impl UpdateOpportunityInputBuilder {
     /// <p>Valid values:</p>
     /// <ul>
     /// <li>
-    /// <p>Co-Sell - Architectural Validation: Confirmation from Amazon Web Services that the partner's proposed solution architecture is aligned with Amazon Web Services best practices and poses minimal architectural risks.</p></li>
+    /// <p>Cosell—Architectural Validation: Confirmation from Amazon Web Services that the partner's proposed solution architecture is aligned with Amazon Web Services best practices and poses minimal architectural risks.</p></li>
     /// <li>
-    /// <p>Co-Sell - Business Presentation: Request Amazon Web Services seller's participation in a joint customer presentation.</p></li>
+    /// <p>Cosell—Business Presentation: Request Amazon Web Services seller's participation in a joint customer presentation.</p></li>
     /// <li>
-    /// <p>Co-Sell - Competitive Information: Access to Amazon Web Services competitive resources and support for the partner's proposed solution.</p></li>
+    /// <p>Cosell—Competitive Information: Access to Amazon Web Services competitive resources and support for the partner's proposed solution.</p></li>
     /// <li>
-    /// <p>Co-Sell - Pricing Assistance: Connect with an AWS seller for support situations where a partner may be receiving an upfront discount on a service (for example: EDP deals).</p></li>
+    /// <p>Cosell—Pricing Assistance: Connect with an AWS seller for support situations where a partner may be receiving an upfront discount on a service (for example: EDP deals).</p></li>
     /// <li>
-    /// <p>Co-Sell - Technical Consultation: Connection with an Amazon Web Services Solutions Architect to address the partner's questions about the proposed solution.</p></li>
+    /// <p>Cosell—Technical Consultation: Connection with an Amazon Web Services Solutions Architect to address the partner's questions about the proposed solution.</p></li>
     /// <li>
-    /// <p>Co-Sell - Total Cost of Ownership Evaluation: Assistance with quoting different cost savings of proposed solutions on Amazon Web Services versus on-premises or a traditional hosting environment.</p></li>
+    /// <p>Cosell—Total Cost of Ownership Evaluation: Assistance with quoting different cost savings of proposed solutions on Amazon Web Services versus on-premises or a traditional hosting environment.</p></li>
     /// <li>
-    /// <p>Co-Sell - Deal Support: Request Amazon Web Services seller's support to progress the opportunity (for example: joint customer call, strategic positioning).</p></li>
+    /// <p>Cosell—Deal Support: Request Amazon Web Services seller's support to progress the opportunity (for example: joint customer call, strategic positioning).</p></li>
     /// <li>
-    /// <p>Co-Sell - Support for Public Tender / RFx: Opportunity related to the public sector where the partner needs RFx support from Amazon Web Services.</p></li>
+    /// <p>Cosell—Support for Public Tender/RFx: Opportunity related to the public sector where the partner needs RFx support from Amazon Web Services.</p></li>
     /// <li>
-    /// <p>Do Not Need Support from AWS Sales Rep: Indicates that a partner doesn't need support from an Amazon Web Services Sales representative. The opportunity is managed solely by the partner. It's possible to request co-selling support on these opportunities at any stage during their lifecycle. Also known as, for-visibility-only (FVO) opportunity.</p></li>
+    /// <p>Do Not Need Support from AWS Sales Rep: Indicates that a partner doesn't need support from an Amazon Web Services Sales representative. The opportunity is managed solely by the partner. It's possible to request coselling support on these opportunities at any stage during their lifecycle. Also known as, for-visibility-only (FVO) opportunity.</p></li>
     /// </ul>
     pub fn get_primary_needs_from_aws(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PrimaryNeedFromAws>> {
         &self.primary_needs_from_aws
     }
-    /// <p>Specifies if the opportunity is associated with national security concerns. This flag is only applicable when the industry is <code>Government</code>. For national security-related opportunities, specific validation and compliance rules may apply, impacting the opportunity's visibility and processing.</p>
+    /// <p>Specifies if the opportunity is associated with national security concerns. This flag is only applicable when the industry is <code>Government</code>. For national-security-related opportunities, validation and compliance rules may apply, impacting the opportunity's visibility and processing.</p>
     pub fn national_security(mut self, input: crate::types::NationalSecurity) -> Self {
         self.national_security = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies if the opportunity is associated with national security concerns. This flag is only applicable when the industry is <code>Government</code>. For national security-related opportunities, specific validation and compliance rules may apply, impacting the opportunity's visibility and processing.</p>
+    /// <p>Specifies if the opportunity is associated with national security concerns. This flag is only applicable when the industry is <code>Government</code>. For national-security-related opportunities, validation and compliance rules may apply, impacting the opportunity's visibility and processing.</p>
     pub fn set_national_security(mut self, input: ::std::option::Option<crate::types::NationalSecurity>) -> Self {
         self.national_security = input;
         self
     }
-    /// <p>Specifies if the opportunity is associated with national security concerns. This flag is only applicable when the industry is <code>Government</code>. For national security-related opportunities, specific validation and compliance rules may apply, impacting the opportunity's visibility and processing.</p>
+    /// <p>Specifies if the opportunity is associated with national security concerns. This flag is only applicable when the industry is <code>Government</code>. For national-security-related opportunities, validation and compliance rules may apply, impacting the opportunity's visibility and processing.</p>
     pub fn get_national_security(&self) -> &::std::option::Option<crate::types::NationalSecurity> {
         &self.national_security
     }
@@ -291,17 +291,17 @@ impl UpdateOpportunityInputBuilder {
     pub fn get_partner_opportunity_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.partner_opportunity_identifier
     }
-    /// <p>Specifies details of the customer associated with the <code>Opportunity</code> .</p>
+    /// <p>Specifies details of the customer associated with the <code>Opportunity</code>.</p>
     pub fn customer(mut self, input: crate::types::Customer) -> Self {
         self.customer = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies details of the customer associated with the <code>Opportunity</code> .</p>
+    /// <p>Specifies details of the customer associated with the <code>Opportunity</code>.</p>
     pub fn set_customer(mut self, input: ::std::option::Option<crate::types::Customer>) -> Self {
         self.customer = input;
         self
     }
-    /// <p>Specifies details of the customer associated with the <code>Opportunity</code> .</p>
+    /// <p>Specifies details of the customer associated with the <code>Opportunity</code>.</p>
     pub fn get_customer(&self) -> &::std::option::Option<crate::types::Customer> {
         &self.customer
     }

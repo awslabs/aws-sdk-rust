@@ -5,7 +5,7 @@
 pub struct GetAwsOpportunitySummaryInput {
     /// <p>Specifies the catalog in which the AWS Opportunity is located. Accepted values include <code>AWS</code> for production opportunities or <code>Sandbox</code> for testing purposes. The catalog determines which environment the opportunity data is pulled from.</p>
     pub catalog: ::std::option::Option<::std::string::String>,
-    /// <p>The unique identifier for the related partner opportunity. Use this field to correlate an AWS opportunity with its corresponding partner opportunity in your CRM system.</p>
+    /// <p>The unique identifier for the related partner opportunity. Use this field to correlate an AWS opportunity with its corresponding partner opportunity.</p>
     pub related_opportunity_identifier: ::std::option::Option<::std::string::String>,
 }
 impl GetAwsOpportunitySummaryInput {
@@ -13,7 +13,7 @@ impl GetAwsOpportunitySummaryInput {
     pub fn catalog(&self) -> ::std::option::Option<&str> {
         self.catalog.as_deref()
     }
-    /// <p>The unique identifier for the related partner opportunity. Use this field to correlate an AWS opportunity with its corresponding partner opportunity in your CRM system.</p>
+    /// <p>The unique identifier for the related partner opportunity. Use this field to correlate an AWS opportunity with its corresponding partner opportunity.</p>
     pub fn related_opportunity_identifier(&self) -> ::std::option::Option<&str> {
         self.related_opportunity_identifier.as_deref()
     }
@@ -48,18 +48,18 @@ impl GetAwsOpportunitySummaryInputBuilder {
     pub fn get_catalog(&self) -> &::std::option::Option<::std::string::String> {
         &self.catalog
     }
-    /// <p>The unique identifier for the related partner opportunity. Use this field to correlate an AWS opportunity with its corresponding partner opportunity in your CRM system.</p>
+    /// <p>The unique identifier for the related partner opportunity. Use this field to correlate an AWS opportunity with its corresponding partner opportunity.</p>
     /// This field is required.
     pub fn related_opportunity_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.related_opportunity_identifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier for the related partner opportunity. Use this field to correlate an AWS opportunity with its corresponding partner opportunity in your CRM system.</p>
+    /// <p>The unique identifier for the related partner opportunity. Use this field to correlate an AWS opportunity with its corresponding partner opportunity.</p>
     pub fn set_related_opportunity_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.related_opportunity_identifier = input;
         self
     }
-    /// <p>The unique identifier for the related partner opportunity. Use this field to correlate an AWS opportunity with its corresponding partner opportunity in your CRM system.</p>
+    /// <p>The unique identifier for the related partner opportunity. Use this field to correlate an AWS opportunity with its corresponding partner opportunity.</p>
     pub fn get_related_opportunity_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.related_opportunity_identifier
     }

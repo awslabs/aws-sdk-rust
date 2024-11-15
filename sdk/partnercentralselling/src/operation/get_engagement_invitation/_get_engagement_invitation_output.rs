@@ -3,15 +3,15 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct GetEngagementInvitationOutput {
-    /// <p>The Amazon Resource Name (ARN) that uniquely identifies the engagement invitation.</p>
+    /// <p>The Amazon Resource Name (ARN) that identifies the engagement invitation.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The type of payload contained in the engagement invitation, indicating what data or context the payload covers.</p>
     pub payload_type: ::std::option::Option<crate::types::EngagementInvitationPayloadType>,
     /// <p>Unique identifier assigned to the engagement invitation being retrieved.</p>
     pub id: ::std::string::String,
-    /// <p>The title of the engagement invitation, summarizing the purpose or key objectives of the opportunity shared by AWS.</p>
+    /// <p>The title of the engagement invitation, summarizing the purpose or objectives of the opportunity shared by AWS.</p>
     pub engagement_title: ::std::option::Option<::std::string::String>,
-    /// <p>The current status of the engagement invitation (e.g., <code>Accepted</code>, <code>Pending</code>, or <code>Rejected</code>).</p>
+    /// <p>The current status of the engagement invitation.</p>
     pub status: ::std::option::Option<crate::types::InvitationStatus>,
     /// <p>The date when the engagement invitation was sent to the partner.</p>
     pub invitation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -32,7 +32,7 @@ pub struct GetEngagementInvitationOutput {
     _request_id: Option<String>,
 }
 impl GetEngagementInvitationOutput {
-    /// <p>The Amazon Resource Name (ARN) that uniquely identifies the engagement invitation.</p>
+    /// <p>The Amazon Resource Name (ARN) that identifies the engagement invitation.</p>
     pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
@@ -45,11 +45,11 @@ impl GetEngagementInvitationOutput {
         use std::ops::Deref;
         self.id.deref()
     }
-    /// <p>The title of the engagement invitation, summarizing the purpose or key objectives of the opportunity shared by AWS.</p>
+    /// <p>The title of the engagement invitation, summarizing the purpose or objectives of the opportunity shared by AWS.</p>
     pub fn engagement_title(&self) -> ::std::option::Option<&str> {
         self.engagement_title.as_deref()
     }
-    /// <p>The current status of the engagement invitation (e.g., <code>Accepted</code>, <code>Pending</code>, or <code>Rejected</code>).</p>
+    /// <p>The current status of the engagement invitation.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::InvitationStatus> {
         self.status.as_ref()
     }
@@ -139,17 +139,17 @@ pub struct GetEngagementInvitationOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetEngagementInvitationOutputBuilder {
-    /// <p>The Amazon Resource Name (ARN) that uniquely identifies the engagement invitation.</p>
+    /// <p>The Amazon Resource Name (ARN) that identifies the engagement invitation.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) that uniquely identifies the engagement invitation.</p>
+    /// <p>The Amazon Resource Name (ARN) that identifies the engagement invitation.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) that uniquely identifies the engagement invitation.</p>
+    /// <p>The Amazon Resource Name (ARN) that identifies the engagement invitation.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }
@@ -182,31 +182,31 @@ impl GetEngagementInvitationOutputBuilder {
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
     }
-    /// <p>The title of the engagement invitation, summarizing the purpose or key objectives of the opportunity shared by AWS.</p>
+    /// <p>The title of the engagement invitation, summarizing the purpose or objectives of the opportunity shared by AWS.</p>
     pub fn engagement_title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engagement_title = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The title of the engagement invitation, summarizing the purpose or key objectives of the opportunity shared by AWS.</p>
+    /// <p>The title of the engagement invitation, summarizing the purpose or objectives of the opportunity shared by AWS.</p>
     pub fn set_engagement_title(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.engagement_title = input;
         self
     }
-    /// <p>The title of the engagement invitation, summarizing the purpose or key objectives of the opportunity shared by AWS.</p>
+    /// <p>The title of the engagement invitation, summarizing the purpose or objectives of the opportunity shared by AWS.</p>
     pub fn get_engagement_title(&self) -> &::std::option::Option<::std::string::String> {
         &self.engagement_title
     }
-    /// <p>The current status of the engagement invitation (e.g., <code>Accepted</code>, <code>Pending</code>, or <code>Rejected</code>).</p>
+    /// <p>The current status of the engagement invitation.</p>
     pub fn status(mut self, input: crate::types::InvitationStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The current status of the engagement invitation (e.g., <code>Accepted</code>, <code>Pending</code>, or <code>Rejected</code>).</p>
+    /// <p>The current status of the engagement invitation.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::InvitationStatus>) -> Self {
         self.status = input;
         self
     }
-    /// <p>The current status of the engagement invitation (e.g., <code>Accepted</code>, <code>Pending</code>, or <code>Rejected</code>).</p>
+    /// <p>The current status of the engagement invitation.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::InvitationStatus> {
         &self.status
     }

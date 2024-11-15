@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListEngagementInvitationsOutput {
-    /// <p>An array containing summaries of engagement invitations. Each summary includes key information such as the invitation title, invitation date, and the current status of the invitation.</p>
+    /// <p>An array containing summaries of engagement invitations. Each summary includes information such as the invitation title, invitation date, and the current status of the invitation.</p>
     pub engagement_invitation_summaries: ::std::option::Option<::std::vec::Vec<crate::types::EngagementInvitationSummary>>,
     /// <p>A pagination token returned when there are more results available than can be returned in a single call. Use this token to retrieve additional pages of engagement invitation summaries.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListEngagementInvitationsOutput {
-    /// <p>An array containing summaries of engagement invitations. Each summary includes key information such as the invitation title, invitation date, and the current status of the invitation.</p>
+    /// <p>An array containing summaries of engagement invitations. Each summary includes information such as the invitation title, invitation date, and the current status of the invitation.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.engagement_invitation_summaries.is_none()`.
     pub fn engagement_invitation_summaries(&self) -> &[crate::types::EngagementInvitationSummary] {
@@ -46,14 +46,14 @@ impl ListEngagementInvitationsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_engagement_invitation_summaries`](Self::set_engagement_invitation_summaries).
     ///
-    /// <p>An array containing summaries of engagement invitations. Each summary includes key information such as the invitation title, invitation date, and the current status of the invitation.</p>
+    /// <p>An array containing summaries of engagement invitations. Each summary includes information such as the invitation title, invitation date, and the current status of the invitation.</p>
     pub fn engagement_invitation_summaries(mut self, input: crate::types::EngagementInvitationSummary) -> Self {
         let mut v = self.engagement_invitation_summaries.unwrap_or_default();
         v.push(input);
         self.engagement_invitation_summaries = ::std::option::Option::Some(v);
         self
     }
-    /// <p>An array containing summaries of engagement invitations. Each summary includes key information such as the invitation title, invitation date, and the current status of the invitation.</p>
+    /// <p>An array containing summaries of engagement invitations. Each summary includes information such as the invitation title, invitation date, and the current status of the invitation.</p>
     pub fn set_engagement_invitation_summaries(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::EngagementInvitationSummary>>,
@@ -61,7 +61,7 @@ impl ListEngagementInvitationsOutputBuilder {
         self.engagement_invitation_summaries = input;
         self
     }
-    /// <p>An array containing summaries of engagement invitations. Each summary includes key information such as the invitation title, invitation date, and the current status of the invitation.</p>
+    /// <p>An array containing summaries of engagement invitations. Each summary includes information such as the invitation title, invitation date, and the current status of the invitation.</p>
     pub fn get_engagement_invitation_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EngagementInvitationSummary>> {
         &self.engagement_invitation_summaries
     }

@@ -122,17 +122,17 @@ impl GetAwsOpportunitySummaryFluentBuilder {
     pub fn get_catalog(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_catalog()
     }
-    /// <p>The unique identifier for the related partner opportunity. Use this field to correlate an AWS opportunity with its corresponding partner opportunity in your CRM system.</p>
+    /// <p>The unique identifier for the related partner opportunity. Use this field to correlate an AWS opportunity with its corresponding partner opportunity.</p>
     pub fn related_opportunity_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.related_opportunity_identifier(input.into());
         self
     }
-    /// <p>The unique identifier for the related partner opportunity. Use this field to correlate an AWS opportunity with its corresponding partner opportunity in your CRM system.</p>
+    /// <p>The unique identifier for the related partner opportunity. Use this field to correlate an AWS opportunity with its corresponding partner opportunity.</p>
     pub fn set_related_opportunity_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_related_opportunity_identifier(input);
         self
     }
-    /// <p>The unique identifier for the related partner opportunity. Use this field to correlate an AWS opportunity with its corresponding partner opportunity in your CRM system.</p>
+    /// <p>The unique identifier for the related partner opportunity. Use this field to correlate an AWS opportunity with its corresponding partner opportunity.</p>
     pub fn get_related_opportunity_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_related_opportunity_identifier()
     }

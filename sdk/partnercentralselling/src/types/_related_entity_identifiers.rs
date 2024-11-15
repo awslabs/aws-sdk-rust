@@ -8,8 +8,8 @@ pub struct RelatedEntityIdentifiers {
     /// <p>Use the <a href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/API_ListEntities.html">ListEntities</a> action in the Marketplace Catalog APIs for a list of offers in the associated Marketplace seller account.</p>
     pub aws_marketplace_offers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Enables partner solutions or offerings' association with an opportunity. To associate a solution, provide the solution's unique identifier, which you can obtain with the <code>ListSolutions</code> operation.</p>
-    /// <p>If the specific solution identifier is not available, you can use the value <code>Other</code> and provide details about the solution in the <code>otherSolutionOffered</code> field. However, once the opportunity reaches the <code>Committed</code> stage or beyond, the <code>Other</code> value cannot be used, and a valid solution identifier must be provided.</p>
-    /// <p>By associating the relevant solutions with the opportunity, you can clearly communicate the offerings that are being considered or implemented to address the customer's business problem.</p>
+    /// <p>If the specific solution identifier is not available, you can use the value <code>Other</code> and provide details about the solution in the <code>otherSolutionOffered</code> field. But when the opportunity reaches the <code>Committed</code> stage or beyond, the <code>Other</code> value cannot be used, and a valid solution identifier must be provided.</p>
+    /// <p>By associating the relevant solutions with the opportunity, you can communicate the offerings that are being considered or implemented to address the customer's business problem.</p>
     pub solutions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Enables the association of specific Amazon Web Services products with the <code>Opportunity</code>. Partners can indicate the relevant Amazon Web Services products for the <code>Opportunity</code>'s solution and align with the customer's needs. Returns multiple values separated by commas. For example, <code>"AWSProducts" : \["AmazonRedshift", "AWSAppFabric", "AWSCleanRooms"\]</code>.</p>
     /// <p>Use the file with the list of Amazon Web Services products hosted on GitHub: <a href="https://github.com/aws-samples/partner-crm-integration-samples/blob/main/resources/aws_products.json"> Amazon Web Services products</a>.</p>
@@ -24,8 +24,8 @@ impl RelatedEntityIdentifiers {
         self.aws_marketplace_offers.as_deref().unwrap_or_default()
     }
     /// <p>Enables partner solutions or offerings' association with an opportunity. To associate a solution, provide the solution's unique identifier, which you can obtain with the <code>ListSolutions</code> operation.</p>
-    /// <p>If the specific solution identifier is not available, you can use the value <code>Other</code> and provide details about the solution in the <code>otherSolutionOffered</code> field. However, once the opportunity reaches the <code>Committed</code> stage or beyond, the <code>Other</code> value cannot be used, and a valid solution identifier must be provided.</p>
-    /// <p>By associating the relevant solutions with the opportunity, you can clearly communicate the offerings that are being considered or implemented to address the customer's business problem.</p>
+    /// <p>If the specific solution identifier is not available, you can use the value <code>Other</code> and provide details about the solution in the <code>otherSolutionOffered</code> field. But when the opportunity reaches the <code>Committed</code> stage or beyond, the <code>Other</code> value cannot be used, and a valid solution identifier must be provided.</p>
+    /// <p>By associating the relevant solutions with the opportunity, you can communicate the offerings that are being considered or implemented to address the customer's business problem.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.solutions.is_none()`.
     pub fn solutions(&self) -> &[::std::string::String] {
@@ -83,8 +83,8 @@ impl RelatedEntityIdentifiersBuilder {
     /// To override the contents of this collection use [`set_solutions`](Self::set_solutions).
     ///
     /// <p>Enables partner solutions or offerings' association with an opportunity. To associate a solution, provide the solution's unique identifier, which you can obtain with the <code>ListSolutions</code> operation.</p>
-    /// <p>If the specific solution identifier is not available, you can use the value <code>Other</code> and provide details about the solution in the <code>otherSolutionOffered</code> field. However, once the opportunity reaches the <code>Committed</code> stage or beyond, the <code>Other</code> value cannot be used, and a valid solution identifier must be provided.</p>
-    /// <p>By associating the relevant solutions with the opportunity, you can clearly communicate the offerings that are being considered or implemented to address the customer's business problem.</p>
+    /// <p>If the specific solution identifier is not available, you can use the value <code>Other</code> and provide details about the solution in the <code>otherSolutionOffered</code> field. But when the opportunity reaches the <code>Committed</code> stage or beyond, the <code>Other</code> value cannot be used, and a valid solution identifier must be provided.</p>
+    /// <p>By associating the relevant solutions with the opportunity, you can communicate the offerings that are being considered or implemented to address the customer's business problem.</p>
     pub fn solutions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.solutions.unwrap_or_default();
         v.push(input.into());
@@ -92,15 +92,15 @@ impl RelatedEntityIdentifiersBuilder {
         self
     }
     /// <p>Enables partner solutions or offerings' association with an opportunity. To associate a solution, provide the solution's unique identifier, which you can obtain with the <code>ListSolutions</code> operation.</p>
-    /// <p>If the specific solution identifier is not available, you can use the value <code>Other</code> and provide details about the solution in the <code>otherSolutionOffered</code> field. However, once the opportunity reaches the <code>Committed</code> stage or beyond, the <code>Other</code> value cannot be used, and a valid solution identifier must be provided.</p>
-    /// <p>By associating the relevant solutions with the opportunity, you can clearly communicate the offerings that are being considered or implemented to address the customer's business problem.</p>
+    /// <p>If the specific solution identifier is not available, you can use the value <code>Other</code> and provide details about the solution in the <code>otherSolutionOffered</code> field. But when the opportunity reaches the <code>Committed</code> stage or beyond, the <code>Other</code> value cannot be used, and a valid solution identifier must be provided.</p>
+    /// <p>By associating the relevant solutions with the opportunity, you can communicate the offerings that are being considered or implemented to address the customer's business problem.</p>
     pub fn set_solutions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.solutions = input;
         self
     }
     /// <p>Enables partner solutions or offerings' association with an opportunity. To associate a solution, provide the solution's unique identifier, which you can obtain with the <code>ListSolutions</code> operation.</p>
-    /// <p>If the specific solution identifier is not available, you can use the value <code>Other</code> and provide details about the solution in the <code>otherSolutionOffered</code> field. However, once the opportunity reaches the <code>Committed</code> stage or beyond, the <code>Other</code> value cannot be used, and a valid solution identifier must be provided.</p>
-    /// <p>By associating the relevant solutions with the opportunity, you can clearly communicate the offerings that are being considered or implemented to address the customer's business problem.</p>
+    /// <p>If the specific solution identifier is not available, you can use the value <code>Other</code> and provide details about the solution in the <code>otherSolutionOffered</code> field. But when the opportunity reaches the <code>Committed</code> stage or beyond, the <code>Other</code> value cannot be used, and a valid solution identifier must be provided.</p>
+    /// <p>By associating the relevant solutions with the opportunity, you can communicate the offerings that are being considered or implemented to address the customer's business problem.</p>
     pub fn get_solutions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.solutions
     }
