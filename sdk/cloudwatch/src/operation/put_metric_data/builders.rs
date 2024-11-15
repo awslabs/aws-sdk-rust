@@ -22,13 +22,14 @@ impl crate::operation::put_metric_data::builders::PutMetricDataInputBuilder {
 }
 /// Fluent builder constructing a request to `PutMetricData`.
 ///
-/// <p>Publishes metric data points to Amazon CloudWatch. CloudWatch associates the data points with the specified metric. If the specified metric does not exist, CloudWatch creates the metric. When CloudWatch creates a metric, it can take up to fifteen minutes for the metric to appear in calls to <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_ListMetrics.html">ListMetrics</a>.</p>
-/// <p>You can publish either individual data points in the <code>Value</code> field, or arrays of values and the number of times each value occurred during the period by using the <code>Values</code> and <code>Counts</code> fields in the <code>MetricData</code> structure. Using the <code>Values</code> and <code>Counts</code> method enables you to publish up to 150 values per metric with one <code>PutMetricData</code> request, and supports retrieving percentile statistics on this data.</p>
-/// <p>Each <code>PutMetricData</code> request is limited to 1 MB in size for HTTP POST requests. You can send a payload compressed by gzip. Each request is also limited to no more than 1000 different metrics.</p>
+/// <p>Publishes metric data to Amazon CloudWatch. CloudWatch associates the data with the specified metric. If the specified metric does not exist, CloudWatch creates the metric. When CloudWatch creates a metric, it can take up to fifteen minutes for the metric to appear in calls to <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_ListMetrics.html">ListMetrics</a>.</p>
+/// <p>You can publish metrics with associated entity data (so that related telemetry can be found and viewed together), or publish metric data by itself. To send entity data with your metrics, use the <code>EntityMetricData</code> parameter. To send metrics without entity data, use the <code>MetricData</code> parameter. The <code>EntityMetricData</code> structure includes <code>MetricData</code> structures for the metric data.</p>
+/// <p>You can publish either individual values in the <code>Value</code> field, or arrays of values and the number of times each value occurred during the period by using the <code>Values</code> and <code>Counts</code> fields in the <code>MetricData</code> structure. Using the <code>Values</code> and <code>Counts</code> method enables you to publish up to 150 values per metric with one <code>PutMetricData</code> request, and supports retrieving percentile statistics on this data.</p>
+/// <p>Each <code>PutMetricData</code> request is limited to 1 MB in size for HTTP POST requests. You can send a payload compressed by gzip. Each request is also limited to no more than 1000 different metrics (across both the <code>MetricData</code> and <code>EntityMetricData</code> properties).</p>
 /// <p>Although the <code>Value</code> parameter accepts numbers of type <code>Double</code>, CloudWatch rejects values that are either too small or too large. Values must be in the range of -2^360 to 2^360. In addition, special values (for example, NaN, +Infinity, -Infinity) are not supported.</p>
 /// <p>You can use up to 30 dimensions per metric to further clarify what data the metric collects. Each dimension consists of a Name and Value pair. For more information about specifying dimensions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html">Publishing Metrics</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
 /// <p>You specify the time stamp to be associated with each data point. You can specify time stamps that are as much as two weeks before the current date, and as much as 2 hours after the current day and time.</p>
-/// <p>Data points with time stamps from 24 hours ago or longer can take at least 48 hours to become available for <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricData.html">GetMetricData</a> or <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricStatistics.html">GetMetricStatistics</a> from the time they are submitted. Data points with time stamps between 3 and 24 hours ago can take as much as 2 hours to become available for for <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricData.html">GetMetricData</a> or <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricStatistics.html">GetMetricStatistics</a>.</p>
+/// <p>Data points with time stamps from 24 hours ago or longer can take at least 48 hours to become available for <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricData.html">GetMetricData</a> or <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricStatistics.html">GetMetricStatistics</a> from the time they are submitted. Data points with time stamps between 3 and 24 hours ago can take as much as 2 hours to become available for <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricData.html">GetMetricData</a> or <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricStatistics.html">GetMetricStatistics</a>.</p>
 /// <p>CloudWatch needs raw data points to calculate percentile statistics. If you publish data using a statistic set instead, you can only retrieve percentile statistics for this data if one of the following conditions is true:</p>
 /// <ul>
 /// <li>
@@ -143,18 +144,126 @@ impl PutMetricDataFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_metric_data`](Self::set_metric_data).
     ///
-    /// <p>The data for the metric. The array can include no more than 1000 metrics per call.</p>
+    /// <p>The data for the metrics. Use this parameter if your metrics do not contain associated entities. The array can include no more than 1000 metrics per call.</p>
+    /// <p>The limit of metrics allowed, 1000, is the sum of both <code>EntityMetricData</code> and <code>MetricData</code> metrics.</p>
     pub fn metric_data(mut self, input: crate::types::MetricDatum) -> Self {
         self.inner = self.inner.metric_data(input);
         self
     }
-    /// <p>The data for the metric. The array can include no more than 1000 metrics per call.</p>
+    /// <p>The data for the metrics. Use this parameter if your metrics do not contain associated entities. The array can include no more than 1000 metrics per call.</p>
+    /// <p>The limit of metrics allowed, 1000, is the sum of both <code>EntityMetricData</code> and <code>MetricData</code> metrics.</p>
     pub fn set_metric_data(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MetricDatum>>) -> Self {
         self.inner = self.inner.set_metric_data(input);
         self
     }
-    /// <p>The data for the metric. The array can include no more than 1000 metrics per call.</p>
+    /// <p>The data for the metrics. Use this parameter if your metrics do not contain associated entities. The array can include no more than 1000 metrics per call.</p>
+    /// <p>The limit of metrics allowed, 1000, is the sum of both <code>EntityMetricData</code> and <code>MetricData</code> metrics.</p>
     pub fn get_metric_data(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricDatum>> {
         self.inner.get_metric_data()
+    }
+    ///
+    /// Appends an item to `EntityMetricData`.
+    ///
+    /// To override the contents of this collection use [`set_entity_metric_data`](Self::set_entity_metric_data).
+    ///
+    /// <p>Data for metrics that contain associated entity information. You can include up to two <code>EntityMetricData</code> objects, each of which can contain a single <code>Entity</code> and associated metrics.</p>
+    /// <p>The limit of metrics allowed, 1000, is the sum of both <code>EntityMetricData</code> and <code>MetricData</code> metrics.</p>
+    pub fn entity_metric_data(mut self, input: crate::types::EntityMetricData) -> Self {
+        self.inner = self.inner.entity_metric_data(input);
+        self
+    }
+    /// <p>Data for metrics that contain associated entity information. You can include up to two <code>EntityMetricData</code> objects, each of which can contain a single <code>Entity</code> and associated metrics.</p>
+    /// <p>The limit of metrics allowed, 1000, is the sum of both <code>EntityMetricData</code> and <code>MetricData</code> metrics.</p>
+    pub fn set_entity_metric_data(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EntityMetricData>>) -> Self {
+        self.inner = self.inner.set_entity_metric_data(input);
+        self
+    }
+    /// <p>Data for metrics that contain associated entity information. You can include up to two <code>EntityMetricData</code> objects, each of which can contain a single <code>Entity</code> and associated metrics.</p>
+    /// <p>The limit of metrics allowed, 1000, is the sum of both <code>EntityMetricData</code> and <code>MetricData</code> metrics.</p>
+    pub fn get_entity_metric_data(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EntityMetricData>> {
+        self.inner.get_entity_metric_data()
+    }
+    /// <p>Whether to accept valid metric data when an invalid entity is sent.</p>
+    /// <ul>
+    /// <li>
+    /// <p>When set to <code>true</code>: Any validation error (for entity or metric data) will fail the entire request, and no data will be ingested. The failed operation will return a 400 result with the error.</p></li>
+    /// <li>
+    /// <p>When set to <code>false</code>: Validation errors in the entity will not associate the metric with the entity, but the metric data will still be accepted and ingested. Validation errors in the metric data will fail the entire request, and no data will be ingested.</p>
+    /// <p>In the case of an invalid entity, the operation will return a <code>200</code> status, but an additional response header will contain information about the validation errors. The new header, <code>X-Amzn-Failure-Message</code> is an enumeration of the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>InvalidEntity</code> - The provided entity is invalid.</p></li>
+    /// <li>
+    /// <p><code>InvalidKeyAttributes</code> - The provided <code>KeyAttributes</code> of an entity is invalid.</p></li>
+    /// <li>
+    /// <p><code>InvalidAttributes</code> - The provided <code>Attributes</code> of an entity is invalid.</p></li>
+    /// <li>
+    /// <p><code>InvalidTypeValue</code> - The provided <code>Type</code> in the <code>KeyAttributes</code> of an entity is invalid.</p></li>
+    /// <li>
+    /// <p><code>EntitySizeTooLarge</code> - The number of <code>EntityMetricData</code> objects allowed is 2.</p></li>
+    /// <li>
+    /// <p><code>MissingRequiredFields</code> - There are missing required fields in the <code>KeyAttributes</code> for the provided <code>Type</code>.</p></li>
+    /// </ul>
+    /// <p>For details of the requirements for specifying an entity, see <a href="https://docs.aws.amazon.com/adding-your-own-related-telemetry.html">How to add related information to telemetry</a> in the <i>CloudWatch User Guide</i>.</p></li>
+    /// </ul>
+    /// <p>This parameter is <i>required</i> when <code>EntityMetricData</code> is included.</p>
+    pub fn strict_entity_validation(mut self, input: bool) -> Self {
+        self.inner = self.inner.strict_entity_validation(input);
+        self
+    }
+    /// <p>Whether to accept valid metric data when an invalid entity is sent.</p>
+    /// <ul>
+    /// <li>
+    /// <p>When set to <code>true</code>: Any validation error (for entity or metric data) will fail the entire request, and no data will be ingested. The failed operation will return a 400 result with the error.</p></li>
+    /// <li>
+    /// <p>When set to <code>false</code>: Validation errors in the entity will not associate the metric with the entity, but the metric data will still be accepted and ingested. Validation errors in the metric data will fail the entire request, and no data will be ingested.</p>
+    /// <p>In the case of an invalid entity, the operation will return a <code>200</code> status, but an additional response header will contain information about the validation errors. The new header, <code>X-Amzn-Failure-Message</code> is an enumeration of the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>InvalidEntity</code> - The provided entity is invalid.</p></li>
+    /// <li>
+    /// <p><code>InvalidKeyAttributes</code> - The provided <code>KeyAttributes</code> of an entity is invalid.</p></li>
+    /// <li>
+    /// <p><code>InvalidAttributes</code> - The provided <code>Attributes</code> of an entity is invalid.</p></li>
+    /// <li>
+    /// <p><code>InvalidTypeValue</code> - The provided <code>Type</code> in the <code>KeyAttributes</code> of an entity is invalid.</p></li>
+    /// <li>
+    /// <p><code>EntitySizeTooLarge</code> - The number of <code>EntityMetricData</code> objects allowed is 2.</p></li>
+    /// <li>
+    /// <p><code>MissingRequiredFields</code> - There are missing required fields in the <code>KeyAttributes</code> for the provided <code>Type</code>.</p></li>
+    /// </ul>
+    /// <p>For details of the requirements for specifying an entity, see <a href="https://docs.aws.amazon.com/adding-your-own-related-telemetry.html">How to add related information to telemetry</a> in the <i>CloudWatch User Guide</i>.</p></li>
+    /// </ul>
+    /// <p>This parameter is <i>required</i> when <code>EntityMetricData</code> is included.</p>
+    pub fn set_strict_entity_validation(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_strict_entity_validation(input);
+        self
+    }
+    /// <p>Whether to accept valid metric data when an invalid entity is sent.</p>
+    /// <ul>
+    /// <li>
+    /// <p>When set to <code>true</code>: Any validation error (for entity or metric data) will fail the entire request, and no data will be ingested. The failed operation will return a 400 result with the error.</p></li>
+    /// <li>
+    /// <p>When set to <code>false</code>: Validation errors in the entity will not associate the metric with the entity, but the metric data will still be accepted and ingested. Validation errors in the metric data will fail the entire request, and no data will be ingested.</p>
+    /// <p>In the case of an invalid entity, the operation will return a <code>200</code> status, but an additional response header will contain information about the validation errors. The new header, <code>X-Amzn-Failure-Message</code> is an enumeration of the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>InvalidEntity</code> - The provided entity is invalid.</p></li>
+    /// <li>
+    /// <p><code>InvalidKeyAttributes</code> - The provided <code>KeyAttributes</code> of an entity is invalid.</p></li>
+    /// <li>
+    /// <p><code>InvalidAttributes</code> - The provided <code>Attributes</code> of an entity is invalid.</p></li>
+    /// <li>
+    /// <p><code>InvalidTypeValue</code> - The provided <code>Type</code> in the <code>KeyAttributes</code> of an entity is invalid.</p></li>
+    /// <li>
+    /// <p><code>EntitySizeTooLarge</code> - The number of <code>EntityMetricData</code> objects allowed is 2.</p></li>
+    /// <li>
+    /// <p><code>MissingRequiredFields</code> - There are missing required fields in the <code>KeyAttributes</code> for the provided <code>Type</code>.</p></li>
+    /// </ul>
+    /// <p>For details of the requirements for specifying an entity, see <a href="https://docs.aws.amazon.com/adding-your-own-related-telemetry.html">How to add related information to telemetry</a> in the <i>CloudWatch User Guide</i>.</p></li>
+    /// </ul>
+    /// <p>This parameter is <i>required</i> when <code>EntityMetricData</code> is included.</p>
+    pub fn get_strict_entity_validation(&self) -> &::std::option::Option<bool> {
+        self.inner.get_strict_entity_validation()
     }
 }

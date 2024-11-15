@@ -521,6 +521,8 @@ mod list_principal_policies;
 
 mod list_principal_things;
 
+mod list_principal_things_v2;
+
 mod list_provisioning_template_versions;
 
 mod list_provisioning_templates;
@@ -550,6 +552,8 @@ mod list_thing_groups;
 mod list_thing_groups_for_thing;
 
 mod list_thing_principals;
+
+mod list_thing_principals_v2;
 
 mod list_thing_registration_task_reports;
 
@@ -674,6 +678,8 @@ mod update_thing;
 mod update_thing_group;
 
 mod update_thing_groups_for_thing;
+
+mod update_thing_type;
 
 mod update_topic_rule_destination;
 

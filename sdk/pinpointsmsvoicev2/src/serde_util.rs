@@ -184,6 +184,27 @@ pub(crate) fn delete_protect_configuration_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn delete_protect_configuration_rule_set_number_override_output_output_correct_errors(
+    mut builder: crate::operation::delete_protect_configuration_rule_set_number_override::builders::DeleteProtectConfigurationRuleSetNumberOverrideOutputBuilder,
+) -> crate::operation::delete_protect_configuration_rule_set_number_override::builders::DeleteProtectConfigurationRuleSetNumberOverrideOutputBuilder {
+    if builder.protect_configuration_arn.is_none() {
+        builder.protect_configuration_arn = Some(Default::default())
+    }
+    if builder.protect_configuration_id.is_none() {
+        builder.protect_configuration_id = Some(Default::default())
+    }
+    if builder.destination_phone_number.is_none() {
+        builder.destination_phone_number = Some(Default::default())
+    }
+    if builder.created_timestamp.is_none() {
+        builder.created_timestamp = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.action.is_none() {
+        builder.action = "no value was set".parse::<crate::types::ProtectConfigurationRuleOverrideAction>().ok()
+    }
+    builder
+}
+
 pub(crate) fn delete_registration_output_output_correct_errors(
     mut builder: crate::operation::delete_registration::builders::DeleteRegistrationOutputBuilder,
 ) -> crate::operation::delete_registration::builders::DeleteRegistrationOutputBuilder {
@@ -417,6 +438,18 @@ pub(crate) fn get_protect_configuration_country_rule_set_output_output_correct_e
     builder
 }
 
+pub(crate) fn list_protect_configuration_rule_set_number_overrides_output_output_correct_errors(
+    mut builder: crate::operation::list_protect_configuration_rule_set_number_overrides::builders::ListProtectConfigurationRuleSetNumberOverridesOutputBuilder,
+) -> crate::operation::list_protect_configuration_rule_set_number_overrides::builders::ListProtectConfigurationRuleSetNumberOverridesOutputBuilder {
+    if builder.protect_configuration_arn.is_none() {
+        builder.protect_configuration_arn = Some(Default::default())
+    }
+    if builder.protect_configuration_id.is_none() {
+        builder.protect_configuration_id = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn list_registration_associations_output_output_correct_errors(
     mut builder: crate::operation::list_registration_associations::builders::ListRegistrationAssociationsOutputBuilder,
 ) -> crate::operation::list_registration_associations::builders::ListRegistrationAssociationsOutputBuilder {
@@ -431,6 +464,39 @@ pub(crate) fn list_registration_associations_output_output_correct_errors(
     }
     if builder.registration_associations.is_none() {
         builder.registration_associations = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn put_message_feedback_output_output_correct_errors(
+    mut builder: crate::operation::put_message_feedback::builders::PutMessageFeedbackOutputBuilder,
+) -> crate::operation::put_message_feedback::builders::PutMessageFeedbackOutputBuilder {
+    if builder.message_id.is_none() {
+        builder.message_id = Some(Default::default())
+    }
+    if builder.message_feedback_status.is_none() {
+        builder.message_feedback_status = "no value was set".parse::<crate::types::MessageFeedbackStatus>().ok()
+    }
+    builder
+}
+
+pub(crate) fn put_protect_configuration_rule_set_number_override_output_output_correct_errors(
+    mut builder: crate::operation::put_protect_configuration_rule_set_number_override::builders::PutProtectConfigurationRuleSetNumberOverrideOutputBuilder,
+) -> crate::operation::put_protect_configuration_rule_set_number_override::builders::PutProtectConfigurationRuleSetNumberOverrideOutputBuilder {
+    if builder.protect_configuration_arn.is_none() {
+        builder.protect_configuration_arn = Some(Default::default())
+    }
+    if builder.protect_configuration_id.is_none() {
+        builder.protect_configuration_id = Some(Default::default())
+    }
+    if builder.destination_phone_number.is_none() {
+        builder.destination_phone_number = Some(Default::default())
+    }
+    if builder.created_timestamp.is_none() {
+        builder.created_timestamp = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.action.is_none() {
+        builder.action = "no value was set".parse::<crate::types::ProtectConfigurationRuleOverrideAction>().ok()
     }
     builder
 }
@@ -899,6 +965,21 @@ pub(crate) fn protect_configuration_information_correct_errors(
     }
     if builder.deletion_protection_enabled.is_none() {
         builder.deletion_protection_enabled = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn protect_configuration_rule_set_number_override_correct_errors(
+    mut builder: crate::types::builders::ProtectConfigurationRuleSetNumberOverrideBuilder,
+) -> crate::types::builders::ProtectConfigurationRuleSetNumberOverrideBuilder {
+    if builder.destination_phone_number.is_none() {
+        builder.destination_phone_number = Some(Default::default())
+    }
+    if builder.created_timestamp.is_none() {
+        builder.created_timestamp = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.action.is_none() {
+        builder.action = "no value was set".parse::<crate::types::ProtectConfigurationRuleOverrideAction>().ok()
     }
     builder
 }

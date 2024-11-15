@@ -22,7 +22,7 @@ impl crate::operation::list_registration_associations::builders::ListRegistratio
 }
 /// Fluent builder constructing a request to `ListRegistrationAssociations`.
 ///
-/// <p>Retreive all of the origination identies that are associated with a registration.</p>
+/// <p>Retrieve all of the origination identities that are associated with a registration.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListRegistrationAssociationsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

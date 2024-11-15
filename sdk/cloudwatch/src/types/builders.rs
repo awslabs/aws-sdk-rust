@@ -7,11 +7,15 @@ pub use crate::types::_metric_stream_statistics_metric::MetricStreamStatisticsMe
 
 pub use crate::types::_metric_stream_filter::MetricStreamFilterBuilder;
 
+pub use crate::types::_entity_metric_data::EntityMetricDataBuilder;
+
 pub use crate::types::_metric_datum::MetricDatumBuilder;
 
 pub use crate::types::_statistic_set::StatisticSetBuilder;
 
 pub use crate::types::_dimension::DimensionBuilder;
+
+pub use crate::types::_entity::EntityBuilder;
 
 pub use crate::types::_metric_data_query::MetricDataQueryBuilder;
 

@@ -47,6 +47,10 @@ pub use crate::types::_mutation_protection_status::MutationProtectionStatus;
 
 pub use crate::types::_firewall_rule::FirewallRule;
 
+pub use crate::types::_confidence_threshold::ConfidenceThreshold;
+
+pub use crate::types::_dns_threat_protection::DnsThreatProtection;
+
 pub use crate::types::_firewall_domain_redirection_action::FirewallDomainRedirectionAction;
 
 pub use crate::types::_block_override_dns_type::BlockOverrideDnsType;
@@ -110,6 +114,10 @@ mod _autodefined_reverse_flag;
 mod _block_override_dns_type;
 
 mod _block_response;
+
+mod _confidence_threshold;
+
+mod _dns_threat_protection;
 
 mod _filter;
 

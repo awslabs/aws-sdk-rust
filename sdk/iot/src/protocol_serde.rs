@@ -387,6 +387,8 @@ pub(crate) mod shape_list_principal_policies;
 
 pub(crate) mod shape_list_principal_things;
 
+pub(crate) mod shape_list_principal_things_v2;
+
 pub(crate) mod shape_list_provisioning_template_versions;
 
 pub(crate) mod shape_list_provisioning_templates;
@@ -416,6 +418,8 @@ pub(crate) mod shape_list_thing_groups;
 pub(crate) mod shape_list_thing_groups_for_thing;
 
 pub(crate) mod shape_list_thing_principals;
+
+pub(crate) mod shape_list_thing_principals_v2;
 
 pub(crate) mod shape_list_thing_registration_task_reports;
 
@@ -544,6 +548,8 @@ pub(crate) mod shape_update_thing;
 pub(crate) mod shape_update_thing_group;
 
 pub(crate) mod shape_update_thing_groups_for_thing;
+
+pub(crate) mod shape_update_thing_type;
 
 pub(crate) mod shape_update_topic_rule_destination;
 
@@ -803,6 +809,8 @@ pub(crate) mod shape_update_thing_groups_for_thing_input;
 
 pub(crate) mod shape_update_thing_input;
 
+pub(crate) mod shape_update_thing_type_input;
+
 pub(crate) mod shape_update_topic_rule_destination_input;
 
 pub(crate) mod shape_validate_security_profile_behaviors_input;
@@ -1011,6 +1019,8 @@ pub(crate) mod shape_policy_versions;
 
 pub(crate) mod shape_presigned_url_config;
 
+pub(crate) mod shape_principal_thing_objects;
+
 pub(crate) mod shape_principals;
 
 pub(crate) mod shape_provisioning_hook;
@@ -1088,6 +1098,8 @@ pub(crate) mod shape_thing_group_properties;
 pub(crate) mod shape_thing_indexing_configuration;
 
 pub(crate) mod shape_thing_name_list;
+
+pub(crate) mod shape_thing_principal_objects;
 
 pub(crate) mod shape_thing_type_list;
 
@@ -1237,6 +1249,8 @@ pub(crate) mod shape_mitigation_action_identifier;
 
 pub(crate) mod shape_mitigation_action_name_list;
 
+pub(crate) mod shape_mqtt5_configuration;
+
 pub(crate) mod shape_non_compliant_resource;
 
 pub(crate) mod shape_ota_update_files;
@@ -1258,6 +1272,8 @@ pub(crate) mod shape_policy;
 pub(crate) mod shape_policy_version;
 
 pub(crate) mod shape_policy_version_identifier;
+
+pub(crate) mod shape_principal_thing_object;
 
 pub(crate) mod shape_protocols;
 
@@ -1310,6 +1326,8 @@ pub(crate) mod shape_thing_attribute;
 pub(crate) mod shape_thing_document;
 
 pub(crate) mod shape_thing_group_document;
+
+pub(crate) mod shape_thing_principal_object;
 
 pub(crate) mod shape_thing_type_definition;
 
@@ -1390,6 +1408,10 @@ pub(crate) mod shape_named_shadow_names_filter;
 pub(crate) mod shape_open_search_action;
 
 pub(crate) mod shape_processing_target_name_list;
+
+pub(crate) mod shape_propagating_attribute;
+
+pub(crate) mod shape_propagating_attribute_list;
 
 pub(crate) mod shape_rate_increase_criteria;
 

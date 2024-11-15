@@ -653,6 +653,7 @@ impl From<crate::operation::delete_firewall_rule::DeleteFirewallRuleError> for E
                 Error::ResourceNotFoundException(inner)
             }
             crate::operation::delete_firewall_rule::DeleteFirewallRuleError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_firewall_rule::DeleteFirewallRuleError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::delete_firewall_rule::DeleteFirewallRuleError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }

@@ -155,6 +155,15 @@ pub(crate) fn metric_to_retain_correct_errors(
     builder
 }
 
+pub(crate) fn principal_thing_object_correct_errors(
+    mut builder: crate::types::builders::PrincipalThingObjectBuilder,
+) -> crate::types::builders::PrincipalThingObjectBuilder {
+    if builder.thing_name.is_none() {
+        builder.thing_name = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn publish_finding_to_sns_params_correct_errors(
     mut builder: crate::types::builders::PublishFindingToSnsParamsBuilder,
 ) -> crate::types::builders::PublishFindingToSnsParamsBuilder {
@@ -197,6 +206,15 @@ pub(crate) fn security_profile_target_correct_errors(
 pub(crate) fn tag_correct_errors(mut builder: crate::types::builders::TagBuilder) -> crate::types::builders::TagBuilder {
     if builder.key.is_none() {
         builder.key = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn thing_principal_object_correct_errors(
+    mut builder: crate::types::builders::ThingPrincipalObjectBuilder,
+) -> crate::types::builders::ThingPrincipalObjectBuilder {
+    if builder.principal.is_none() {
+        builder.principal = Some(Default::default())
     }
     builder
 }

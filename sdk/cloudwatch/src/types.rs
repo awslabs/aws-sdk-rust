@@ -11,6 +11,8 @@ pub use crate::types::_metric_stream_output_format::MetricStreamOutputFormat;
 
 pub use crate::types::_metric_stream_filter::MetricStreamFilter;
 
+pub use crate::types::_entity_metric_data::EntityMetricData;
+
 pub use crate::types::_metric_datum::MetricDatum;
 
 pub use crate::types::_standard_unit::StandardUnit;
@@ -18,6 +20,8 @@ pub use crate::types::_standard_unit::StandardUnit;
 pub use crate::types::_statistic_set::StatisticSet;
 
 pub use crate::types::_dimension::Dimension;
+
+pub use crate::types::_entity::Entity;
 
 pub use crate::types::_metric_data_query::MetricDataQuery;
 
@@ -124,6 +128,10 @@ mod _datapoint;
 mod _dimension;
 
 mod _dimension_filter;
+
+mod _entity;
+
+mod _entity_metric_data;
 
 mod _evaluation_state;
 

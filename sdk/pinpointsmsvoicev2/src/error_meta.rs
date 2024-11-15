@@ -931,6 +931,45 @@ impl From<crate::operation::delete_protect_configuration::DeleteProtectConfigura
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_protect_configuration_rule_set_number_override::DeleteProtectConfigurationRuleSetNumberOverrideError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_protect_configuration_rule_set_number_override::DeleteProtectConfigurationRuleSetNumberOverrideError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_protect_configuration_rule_set_number_override::DeleteProtectConfigurationRuleSetNumberOverrideError> for Error {
+    fn from(
+        err: crate::operation::delete_protect_configuration_rule_set_number_override::DeleteProtectConfigurationRuleSetNumberOverrideError,
+    ) -> Self {
+        match err {
+            crate::operation::delete_protect_configuration_rule_set_number_override::DeleteProtectConfigurationRuleSetNumberOverrideError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_protect_configuration_rule_set_number_override::DeleteProtectConfigurationRuleSetNumberOverrideError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::delete_protect_configuration_rule_set_number_override::DeleteProtectConfigurationRuleSetNumberOverrideError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_protect_configuration_rule_set_number_override::DeleteProtectConfigurationRuleSetNumberOverrideError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_protect_configuration_rule_set_number_override::DeleteProtectConfigurationRuleSetNumberOverrideError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_protect_configuration_rule_set_number_override::DeleteProtectConfigurationRuleSetNumberOverrideError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_registration::DeleteRegistrationError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -2199,6 +2238,45 @@ impl From<crate::operation::list_pool_origination_identities::ListPoolOriginatio
     }
 }
 impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_protect_configuration_rule_set_number_overrides::ListProtectConfigurationRuleSetNumberOverridesError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_protect_configuration_rule_set_number_overrides::ListProtectConfigurationRuleSetNumberOverridesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_protect_configuration_rule_set_number_overrides::ListProtectConfigurationRuleSetNumberOverridesError> for Error {
+    fn from(
+        err: crate::operation::list_protect_configuration_rule_set_number_overrides::ListProtectConfigurationRuleSetNumberOverridesError,
+    ) -> Self {
+        match err {
+            crate::operation::list_protect_configuration_rule_set_number_overrides::ListProtectConfigurationRuleSetNumberOverridesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_protect_configuration_rule_set_number_overrides::ListProtectConfigurationRuleSetNumberOverridesError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_protect_configuration_rule_set_number_overrides::ListProtectConfigurationRuleSetNumberOverridesError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_protect_configuration_rule_set_number_overrides::ListProtectConfigurationRuleSetNumberOverridesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_protect_configuration_rule_set_number_overrides::ListProtectConfigurationRuleSetNumberOverridesError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_protect_configuration_rule_set_number_overrides::ListProtectConfigurationRuleSetNumberOverridesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
     From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_registration_associations::ListRegistrationAssociationsError, R>>
     for Error
 where
@@ -2299,6 +2377,34 @@ impl From<crate::operation::put_keyword::PutKeywordError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_message_feedback::PutMessageFeedbackError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_message_feedback::PutMessageFeedbackError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::put_message_feedback::PutMessageFeedbackError> for Error {
+    fn from(err: crate::operation::put_message_feedback::PutMessageFeedbackError) -> Self {
+        match err {
+            crate::operation::put_message_feedback::PutMessageFeedbackError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::put_message_feedback::PutMessageFeedbackError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::put_message_feedback::PutMessageFeedbackError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::put_message_feedback::PutMessageFeedbackError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::put_message_feedback::PutMessageFeedbackError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::put_message_feedback::PutMessageFeedbackError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_opted_out_number::PutOptedOutNumberError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -2324,6 +2430,44 @@ impl From<crate::operation::put_opted_out_number::PutOptedOutNumberError> for Er
             crate::operation::put_opted_out_number::PutOptedOutNumberError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::put_opted_out_number::PutOptedOutNumberError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::put_opted_out_number::PutOptedOutNumberError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::put_protect_configuration_rule_set_number_override::PutProtectConfigurationRuleSetNumberOverrideError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::put_protect_configuration_rule_set_number_override::PutProtectConfigurationRuleSetNumberOverrideError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::put_protect_configuration_rule_set_number_override::PutProtectConfigurationRuleSetNumberOverrideError> for Error {
+    fn from(err: crate::operation::put_protect_configuration_rule_set_number_override::PutProtectConfigurationRuleSetNumberOverrideError) -> Self {
+        match err {
+            crate::operation::put_protect_configuration_rule_set_number_override::PutProtectConfigurationRuleSetNumberOverrideError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::put_protect_configuration_rule_set_number_override::PutProtectConfigurationRuleSetNumberOverrideError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::put_protect_configuration_rule_set_number_override::PutProtectConfigurationRuleSetNumberOverrideError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::put_protect_configuration_rule_set_number_override::PutProtectConfigurationRuleSetNumberOverrideError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::put_protect_configuration_rule_set_number_override::PutProtectConfigurationRuleSetNumberOverrideError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::put_protect_configuration_rule_set_number_override::PutProtectConfigurationRuleSetNumberOverrideError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::put_protect_configuration_rule_set_number_override::PutProtectConfigurationRuleSetNumberOverrideError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2687,6 +2831,55 @@ impl From<crate::operation::set_account_default_protect_configuration::SetAccoun
                 Error::ValidationException(inner)
             }
             crate::operation::set_account_default_protect_configuration::SetAccountDefaultProtectConfigurationError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::set_default_message_feedback_enabled::SetDefaultMessageFeedbackEnabledError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::set_default_message_feedback_enabled::SetDefaultMessageFeedbackEnabledError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::set_default_message_feedback_enabled::SetDefaultMessageFeedbackEnabledError> for Error {
+    fn from(err: crate::operation::set_default_message_feedback_enabled::SetDefaultMessageFeedbackEnabledError) -> Self {
+        match err {
+            crate::operation::set_default_message_feedback_enabled::SetDefaultMessageFeedbackEnabledError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::set_default_message_feedback_enabled::SetDefaultMessageFeedbackEnabledError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::set_default_message_feedback_enabled::SetDefaultMessageFeedbackEnabledError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::set_default_message_feedback_enabled::SetDefaultMessageFeedbackEnabledError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::set_default_message_feedback_enabled::SetDefaultMessageFeedbackEnabledError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::set_default_message_feedback_enabled::SetDefaultMessageFeedbackEnabledError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
         }

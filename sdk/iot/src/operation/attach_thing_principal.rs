@@ -187,6 +187,18 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for AttachThingP
                 ::std::write!(output, "/things/{thingName}/principals", thingName = thing_name).expect("formatting should succeed");
                 ::std::result::Result::Ok(())
             }
+            fn uri_query(
+                _input: &crate::operation::attach_thing_principal::AttachThingPrincipalInput,
+                mut output: &mut ::std::string::String,
+            ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
+                let mut query = ::aws_smithy_http::query::Writer::new(output);
+                if let ::std::option::Option::Some(inner_2) = &_input.thing_principal_type {
+                    {
+                        query.push_kv("thingPrincipalType", &::aws_smithy_http::query::fmt_string(inner_2));
+                    }
+                }
+                ::std::result::Result::Ok(())
+            }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
                 input: &crate::operation::attach_thing_principal::AttachThingPrincipalInput,
@@ -194,6 +206,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for AttachThingP
             ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
                 let mut uri = ::std::string::String::new();
                 uri_base(input, &mut uri)?;
+                uri_query(input, &mut uri)?;
                 let builder = crate::protocol_serde::shape_attach_thing_principal::ser_attach_thing_principal_headers(input, builder)?;
                 ::std::result::Result::Ok(builder.method("PUT").uri(uri))
             }

@@ -6,6 +6,12 @@ pub fn ser_server_certificate_config(
     if let Some(var_1) = &input.enable_ocsp_check {
         object.key("enableOCSPCheck").boolean(*var_1);
     }
+    if let Some(var_2) = &input.ocsp_lambda_arn {
+        object.key("ocspLambdaArn").string(var_2.as_str());
+    }
+    if let Some(var_3) = &input.ocsp_authorized_responder_arn {
+        object.key("ocspAuthorizedResponderArn").string(var_3.as_str());
+    }
     Ok(())
 }
 
@@ -26,6 +32,20 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "enableOCSPCheck" => {
                             builder = builder.set_enable_ocsp_check(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
+                        "ocspLambdaArn" => {
+                            builder = builder.set_ocsp_lambda_arn(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "ocspAuthorizedResponderArn" => {
+                            builder = builder.set_ocsp_authorized_responder_arn(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -350,6 +350,7 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | AmazonApiGatewayManagementApi | [aws-sdk-apigatewaymanagement](https://crates.io/crates/aws-sdk-apigatewaymanagement) ([docs](https://docs.rs/aws-sdk-apigatewaymanagement)) |
 | AmazonApiGatewayV2 | [aws-sdk-apigatewayv2](https://crates.io/crates/aws-sdk-apigatewayv2) ([docs](https://docs.rs/aws-sdk-apigatewayv2)) |
 | AmazonConnectCampaignService | [aws-sdk-connectcampaigns](https://crates.io/crates/aws-sdk-connectcampaigns) ([docs](https://docs.rs/aws-sdk-connectcampaigns)) |
+| AmazonConnectCampaignServiceV2 | [aws-sdk-connectcampaignsv2](https://crates.io/crates/aws-sdk-connectcampaignsv2) ([docs](https://docs.rs/aws-sdk-connectcampaignsv2)) |
 | AmazonMQ | [aws-sdk-mq](https://crates.io/crates/aws-sdk-mq) ([docs](https://docs.rs/aws-sdk-mq)) |
 | AmazonMWAA | [aws-sdk-mwaa](https://crates.io/crates/aws-sdk-mwaa) ([docs](https://docs.rs/aws-sdk-mwaa)) |
 | AmplifyBackend | [aws-sdk-amplifybackend](https://crates.io/crates/aws-sdk-amplifybackend) ([docs](https://docs.rs/aws-sdk-amplifybackend)) |

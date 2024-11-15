@@ -16,7 +16,7 @@ pub struct TaskExecutionFilesListedDetail {
     /// <p>With an exclude filter, DataSync lists everything at your source location before applying the filter.</p></li>
     /// </ul>
     pub at_source: i64,
-    /// <p>The number of objects that DataSync finds at your destination location. This metric is only applicable if you <a href="https://docs.aws.amazon.com/datasync/latest/userguide/configure-metadata.html#task-option-file-object-handling">configure your task</a> to delete data in the destination that isn't in the source.</p>
+    /// <p>The number of objects that DataSync finds at your destination location. This counter is only applicable if you <a href="https://docs.aws.amazon.com/datasync/latest/userguide/configure-metadata.html#task-option-file-object-handling">configure your task</a> to delete data in the destination that isn't in the source.</p>
     pub at_destination_for_delete: i64,
 }
 impl TaskExecutionFilesListedDetail {
@@ -32,7 +32,7 @@ impl TaskExecutionFilesListedDetail {
     pub fn at_source(&self) -> i64 {
         self.at_source
     }
-    /// <p>The number of objects that DataSync finds at your destination location. This metric is only applicable if you <a href="https://docs.aws.amazon.com/datasync/latest/userguide/configure-metadata.html#task-option-file-object-handling">configure your task</a> to delete data in the destination that isn't in the source.</p>
+    /// <p>The number of objects that DataSync finds at your destination location. This counter is only applicable if you <a href="https://docs.aws.amazon.com/datasync/latest/userguide/configure-metadata.html#task-option-file-object-handling">configure your task</a> to delete data in the destination that isn't in the source.</p>
     pub fn at_destination_for_delete(&self) -> i64 {
         self.at_destination_for_delete
     }
@@ -90,17 +90,17 @@ impl TaskExecutionFilesListedDetailBuilder {
     pub fn get_at_source(&self) -> &::std::option::Option<i64> {
         &self.at_source
     }
-    /// <p>The number of objects that DataSync finds at your destination location. This metric is only applicable if you <a href="https://docs.aws.amazon.com/datasync/latest/userguide/configure-metadata.html#task-option-file-object-handling">configure your task</a> to delete data in the destination that isn't in the source.</p>
+    /// <p>The number of objects that DataSync finds at your destination location. This counter is only applicable if you <a href="https://docs.aws.amazon.com/datasync/latest/userguide/configure-metadata.html#task-option-file-object-handling">configure your task</a> to delete data in the destination that isn't in the source.</p>
     pub fn at_destination_for_delete(mut self, input: i64) -> Self {
         self.at_destination_for_delete = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of objects that DataSync finds at your destination location. This metric is only applicable if you <a href="https://docs.aws.amazon.com/datasync/latest/userguide/configure-metadata.html#task-option-file-object-handling">configure your task</a> to delete data in the destination that isn't in the source.</p>
+    /// <p>The number of objects that DataSync finds at your destination location. This counter is only applicable if you <a href="https://docs.aws.amazon.com/datasync/latest/userguide/configure-metadata.html#task-option-file-object-handling">configure your task</a> to delete data in the destination that isn't in the source.</p>
     pub fn set_at_destination_for_delete(mut self, input: ::std::option::Option<i64>) -> Self {
         self.at_destination_for_delete = input;
         self
     }
-    /// <p>The number of objects that DataSync finds at your destination location. This metric is only applicable if you <a href="https://docs.aws.amazon.com/datasync/latest/userguide/configure-metadata.html#task-option-file-object-handling">configure your task</a> to delete data in the destination that isn't in the source.</p>
+    /// <p>The number of objects that DataSync finds at your destination location. This counter is only applicable if you <a href="https://docs.aws.amazon.com/datasync/latest/userguide/configure-metadata.html#task-option-file-object-handling">configure your task</a> to delete data in the destination that isn't in the source.</p>
     pub fn get_at_destination_for_delete(&self) -> &::std::option::Option<i64> {
         &self.at_destination_for_delete
     }

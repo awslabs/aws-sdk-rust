@@ -38,6 +38,7 @@
 ///     EventType::TextInvalid => { /* ... */ },
 ///     EventType::TextInvalidMessage => { /* ... */ },
 ///     EventType::TextPending => { /* ... */ },
+///     EventType::TextProtectBlocked => { /* ... */ },
 ///     EventType::TextQueued => { /* ... */ },
 ///     EventType::TextSent => { /* ... */ },
 ///     EventType::TextSpam => { /* ... */ },
@@ -134,6 +135,8 @@ pub enum EventType {
     #[allow(missing_docs)] // documentation missing in model
     TextPending,
     #[allow(missing_docs)] // documentation missing in model
+    TextProtectBlocked,
+    #[allow(missing_docs)] // documentation missing in model
     TextQueued,
     #[allow(missing_docs)] // documentation missing in model
     TextSent,
@@ -198,6 +201,7 @@ impl ::std::convert::From<&str> for EventType {
             "TEXT_INVALID" => EventType::TextInvalid,
             "TEXT_INVALID_MESSAGE" => EventType::TextInvalidMessage,
             "TEXT_PENDING" => EventType::TextPending,
+            "TEXT_PROTECT_BLOCKED" => EventType::TextProtectBlocked,
             "TEXT_QUEUED" => EventType::TextQueued,
             "TEXT_SENT" => EventType::TextSent,
             "TEXT_SPAM" => EventType::TextSpam,
@@ -255,6 +259,7 @@ impl EventType {
             EventType::TextInvalid => "TEXT_INVALID",
             EventType::TextInvalidMessage => "TEXT_INVALID_MESSAGE",
             EventType::TextPending => "TEXT_PENDING",
+            EventType::TextProtectBlocked => "TEXT_PROTECT_BLOCKED",
             EventType::TextQueued => "TEXT_QUEUED",
             EventType::TextSent => "TEXT_SENT",
             EventType::TextSpam => "TEXT_SPAM",
@@ -303,6 +308,7 @@ impl EventType {
             "TEXT_INVALID",
             "TEXT_INVALID_MESSAGE",
             "TEXT_PENDING",
+            "TEXT_PROTECT_BLOCKED",
             "TEXT_QUEUED",
             "TEXT_SENT",
             "TEXT_SPAM",
@@ -368,6 +374,7 @@ impl ::std::fmt::Display for EventType {
             EventType::TextInvalid => write!(f, "TEXT_INVALID"),
             EventType::TextInvalidMessage => write!(f, "TEXT_INVALID_MESSAGE"),
             EventType::TextPending => write!(f, "TEXT_PENDING"),
+            EventType::TextProtectBlocked => write!(f, "TEXT_PROTECT_BLOCKED"),
             EventType::TextQueued => write!(f, "TEXT_QUEUED"),
             EventType::TextSent => write!(f, "TEXT_SENT"),
             EventType::TextSpam => write!(f, "TEXT_SPAM"),

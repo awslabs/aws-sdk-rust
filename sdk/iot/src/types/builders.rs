@@ -13,6 +13,12 @@ pub use crate::types::_metric_value::MetricValueBuilder;
 
 pub use crate::types::_metric_dimension::MetricDimensionBuilder;
 
+pub use crate::types::_thing_type_properties::ThingTypePropertiesBuilder;
+
+pub use crate::types::_mqtt5_configuration::Mqtt5ConfigurationBuilder;
+
+pub use crate::types::_propagating_attribute::PropagatingAttributeBuilder;
+
 pub use crate::types::_thing_group_properties::ThingGroupPropertiesBuilder;
 
 pub use crate::types::_attribute_payload::AttributePayloadBuilder;
@@ -233,9 +239,9 @@ pub use crate::types::_thing_type_definition::ThingTypeDefinitionBuilder;
 
 pub use crate::types::_thing_type_metadata::ThingTypeMetadataBuilder;
 
-pub use crate::types::_thing_type_properties::ThingTypePropertiesBuilder;
-
 pub use crate::types::_thing_attribute::ThingAttributeBuilder;
+
+pub use crate::types::_thing_principal_object::ThingPrincipalObjectBuilder;
 
 pub use crate::types::_group_name_and_arn::GroupNameAndArnBuilder;
 
@@ -256,6 +262,8 @@ pub use crate::types::_related_resource::RelatedResourceBuilder;
 pub use crate::types::_provisioning_template_version_summary::ProvisioningTemplateVersionSummaryBuilder;
 
 pub use crate::types::_provisioning_template_summary::ProvisioningTemplateSummaryBuilder;
+
+pub use crate::types::_principal_thing_object::PrincipalThingObjectBuilder;
 
 pub use crate::types::_policy_version::PolicyVersionBuilder;
 

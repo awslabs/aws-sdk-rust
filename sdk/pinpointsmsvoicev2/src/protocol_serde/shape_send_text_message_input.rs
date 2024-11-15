@@ -56,5 +56,8 @@ pub fn ser_send_text_message_input_input(
     if let Some(var_18) = &input.protect_configuration_id {
         object.key("ProtectConfigurationId").string(var_18.as_str());
     }
+    if let Some(var_19) = &input.message_feedback_enabled {
+        object.key("MessageFeedbackEnabled").boolean(*var_19);
+    }
     Ok(())
 }

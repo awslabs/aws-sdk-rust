@@ -8,6 +8,16 @@ pub struct AttachThingPrincipalInput {
     pub thing_name: ::std::option::Option<::std::string::String>,
     /// <p>The principal, which can be a certificate ARN (as returned from the CreateCertificate operation) or an Amazon Cognito ID.</p>
     pub principal: ::std::option::Option<::std::string::String>,
+    /// <p>The type of the relation you want to specify when you attach a principal to a thing.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>EXCLUSIVE_THING</code> - Attaches the specified principal to the specified thing, exclusively. The thing will be the only thing that’s attached to the principal.</p></li>
+    /// </ul>
+    /// <ul>
+    /// <li>
+    /// <p><code>NON_EXCLUSIVE_THING</code> - Attaches the specified principal to the specified thing. Multiple things can be attached to the principal.</p></li>
+    /// </ul>
+    pub thing_principal_type: ::std::option::Option<crate::types::ThingPrincipalType>,
 }
 impl AttachThingPrincipalInput {
     /// <p>The name of the thing.</p>
@@ -17,6 +27,18 @@ impl AttachThingPrincipalInput {
     /// <p>The principal, which can be a certificate ARN (as returned from the CreateCertificate operation) or an Amazon Cognito ID.</p>
     pub fn principal(&self) -> ::std::option::Option<&str> {
         self.principal.as_deref()
+    }
+    /// <p>The type of the relation you want to specify when you attach a principal to a thing.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>EXCLUSIVE_THING</code> - Attaches the specified principal to the specified thing, exclusively. The thing will be the only thing that’s attached to the principal.</p></li>
+    /// </ul>
+    /// <ul>
+    /// <li>
+    /// <p><code>NON_EXCLUSIVE_THING</code> - Attaches the specified principal to the specified thing. Multiple things can be attached to the principal.</p></li>
+    /// </ul>
+    pub fn thing_principal_type(&self) -> ::std::option::Option<&crate::types::ThingPrincipalType> {
+        self.thing_principal_type.as_ref()
     }
 }
 impl AttachThingPrincipalInput {
@@ -32,6 +54,7 @@ impl AttachThingPrincipalInput {
 pub struct AttachThingPrincipalInputBuilder {
     pub(crate) thing_name: ::std::option::Option<::std::string::String>,
     pub(crate) principal: ::std::option::Option<::std::string::String>,
+    pub(crate) thing_principal_type: ::std::option::Option<crate::types::ThingPrincipalType>,
 }
 impl AttachThingPrincipalInputBuilder {
     /// <p>The name of the thing.</p>
@@ -64,6 +87,44 @@ impl AttachThingPrincipalInputBuilder {
     pub fn get_principal(&self) -> &::std::option::Option<::std::string::String> {
         &self.principal
     }
+    /// <p>The type of the relation you want to specify when you attach a principal to a thing.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>EXCLUSIVE_THING</code> - Attaches the specified principal to the specified thing, exclusively. The thing will be the only thing that’s attached to the principal.</p></li>
+    /// </ul>
+    /// <ul>
+    /// <li>
+    /// <p><code>NON_EXCLUSIVE_THING</code> - Attaches the specified principal to the specified thing. Multiple things can be attached to the principal.</p></li>
+    /// </ul>
+    pub fn thing_principal_type(mut self, input: crate::types::ThingPrincipalType) -> Self {
+        self.thing_principal_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The type of the relation you want to specify when you attach a principal to a thing.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>EXCLUSIVE_THING</code> - Attaches the specified principal to the specified thing, exclusively. The thing will be the only thing that’s attached to the principal.</p></li>
+    /// </ul>
+    /// <ul>
+    /// <li>
+    /// <p><code>NON_EXCLUSIVE_THING</code> - Attaches the specified principal to the specified thing. Multiple things can be attached to the principal.</p></li>
+    /// </ul>
+    pub fn set_thing_principal_type(mut self, input: ::std::option::Option<crate::types::ThingPrincipalType>) -> Self {
+        self.thing_principal_type = input;
+        self
+    }
+    /// <p>The type of the relation you want to specify when you attach a principal to a thing.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>EXCLUSIVE_THING</code> - Attaches the specified principal to the specified thing, exclusively. The thing will be the only thing that’s attached to the principal.</p></li>
+    /// </ul>
+    /// <ul>
+    /// <li>
+    /// <p><code>NON_EXCLUSIVE_THING</code> - Attaches the specified principal to the specified thing. Multiple things can be attached to the principal.</p></li>
+    /// </ul>
+    pub fn get_thing_principal_type(&self) -> &::std::option::Option<crate::types::ThingPrincipalType> {
+        &self.thing_principal_type
+    }
     /// Consumes the builder and constructs a [`AttachThingPrincipalInput`](crate::operation::attach_thing_principal::AttachThingPrincipalInput).
     pub fn build(
         self,
@@ -72,6 +133,7 @@ impl AttachThingPrincipalInputBuilder {
         ::std::result::Result::Ok(crate::operation::attach_thing_principal::AttachThingPrincipalInput {
             thing_name: self.thing_name,
             principal: self.principal,
+            thing_principal_type: self.thing_principal_type,
         })
     }
 }

@@ -136,6 +136,20 @@ impl DeleteFirewallRuleFluentBuilder {
     pub fn get_firewall_domain_list_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_firewall_domain_list_id()
     }
+    /// <p>The ID that is created for a DNS Firewall Advanced rule.</p>
+    pub fn firewall_threat_protection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.firewall_threat_protection_id(input.into());
+        self
+    }
+    /// <p>The ID that is created for a DNS Firewall Advanced rule.</p>
+    pub fn set_firewall_threat_protection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_firewall_threat_protection_id(input);
+        self
+    }
+    /// <p>The ID that is created for a DNS Firewall Advanced rule.</p>
+    pub fn get_firewall_threat_protection_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_firewall_threat_protection_id()
+    }
     /// <p>The DNS query type that the rule you are deleting evaluates. Allowed values are;</p>
     /// <ul>
     /// <li>

@@ -70,6 +70,9 @@ pub mod delete_pool;
 /// Types for the `DeleteProtectConfiguration` operation.
 pub mod delete_protect_configuration;
 
+/// Types for the `DeleteProtectConfigurationRuleSetNumberOverride` operation.
+pub mod delete_protect_configuration_rule_set_number_override;
+
 /// Types for the `DeleteRegistration` operation.
 pub mod delete_registration;
 
@@ -166,6 +169,9 @@ pub mod get_resource_policy;
 /// Types for the `ListPoolOriginationIdentities` operation.
 pub mod list_pool_origination_identities;
 
+/// Types for the `ListProtectConfigurationRuleSetNumberOverrides` operation.
+pub mod list_protect_configuration_rule_set_number_overrides;
+
 /// Types for the `ListRegistrationAssociations` operation.
 pub mod list_registration_associations;
 
@@ -175,8 +181,14 @@ pub mod list_tags_for_resource;
 /// Types for the `PutKeyword` operation.
 pub mod put_keyword;
 
+/// Types for the `PutMessageFeedback` operation.
+pub mod put_message_feedback;
+
 /// Types for the `PutOptedOutNumber` operation.
 pub mod put_opted_out_number;
+
+/// Types for the `PutProtectConfigurationRuleSetNumberOverride` operation.
+pub mod put_protect_configuration_rule_set_number_override;
 
 /// Types for the `PutRegistrationFieldValue` operation.
 pub mod put_registration_field_value;
@@ -210,6 +222,9 @@ pub mod send_voice_message;
 
 /// Types for the `SetAccountDefaultProtectConfiguration` operation.
 pub mod set_account_default_protect_configuration;
+
+/// Types for the `SetDefaultMessageFeedbackEnabled` operation.
+pub mod set_default_message_feedback_enabled;
 
 /// Types for the `SetDefaultMessageType` operation.
 pub mod set_default_message_type;

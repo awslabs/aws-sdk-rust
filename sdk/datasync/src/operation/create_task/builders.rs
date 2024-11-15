@@ -295,11 +295,11 @@ impl CreateTaskFluentBuilder {
     /// <p>Specifies one of the following task modes for your data transfer:</p>
     /// <ul>
     /// <li>
-    /// <p><code>ENHANCED</code> - Transfer virtually unlimited numbers of objects with enhanced metrics, more detailed logs, and higher performance than Basic mode. Currently available for transfers between Amazon S3 locations.</p><note>
+    /// <p><code>ENHANCED</code> - Transfer virtually unlimited numbers of objects with higher performance than Basic mode. Enhanced mode tasks optimize the data transfer process by listing, preparing, transferring, and verifying data in parallel. Enhanced mode is currently available for transfers between Amazon S3 locations.</p><note>
     /// <p>To create an Enhanced mode task, the IAM role that you use to call the <code>CreateTask</code> operation must have the <code>iam:CreateServiceLinkedRole</code> permission.</p>
     /// </note></li>
     /// <li>
-    /// <p><code>BASIC</code> (default) - Transfer files or objects between Amazon Web Services storage and on-premises, edge, or other cloud storage. DataSync <a href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-limits.html">quotas</a> apply.</p></li>
+    /// <p><code>BASIC</code> (default) - Transfer files or objects between Amazon Web Services storage and all other supported DataSync locations. Basic mode tasks are subject to <a href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-limits.html">quotas</a> on the number of files, objects, and directories in a dataset. Basic mode sequentially prepares, transfers, and verifies data, making it slower than Enhanced mode for most workloads.</p></li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/choosing-task-mode.html#task-mode-differences">Understanding task mode differences</a>.</p>
     pub fn task_mode(mut self, input: crate::types::TaskMode) -> Self {
@@ -309,11 +309,11 @@ impl CreateTaskFluentBuilder {
     /// <p>Specifies one of the following task modes for your data transfer:</p>
     /// <ul>
     /// <li>
-    /// <p><code>ENHANCED</code> - Transfer virtually unlimited numbers of objects with enhanced metrics, more detailed logs, and higher performance than Basic mode. Currently available for transfers between Amazon S3 locations.</p><note>
+    /// <p><code>ENHANCED</code> - Transfer virtually unlimited numbers of objects with higher performance than Basic mode. Enhanced mode tasks optimize the data transfer process by listing, preparing, transferring, and verifying data in parallel. Enhanced mode is currently available for transfers between Amazon S3 locations.</p><note>
     /// <p>To create an Enhanced mode task, the IAM role that you use to call the <code>CreateTask</code> operation must have the <code>iam:CreateServiceLinkedRole</code> permission.</p>
     /// </note></li>
     /// <li>
-    /// <p><code>BASIC</code> (default) - Transfer files or objects between Amazon Web Services storage and on-premises, edge, or other cloud storage. DataSync <a href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-limits.html">quotas</a> apply.</p></li>
+    /// <p><code>BASIC</code> (default) - Transfer files or objects between Amazon Web Services storage and all other supported DataSync locations. Basic mode tasks are subject to <a href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-limits.html">quotas</a> on the number of files, objects, and directories in a dataset. Basic mode sequentially prepares, transfers, and verifies data, making it slower than Enhanced mode for most workloads.</p></li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/choosing-task-mode.html#task-mode-differences">Understanding task mode differences</a>.</p>
     pub fn set_task_mode(mut self, input: ::std::option::Option<crate::types::TaskMode>) -> Self {
@@ -323,11 +323,11 @@ impl CreateTaskFluentBuilder {
     /// <p>Specifies one of the following task modes for your data transfer:</p>
     /// <ul>
     /// <li>
-    /// <p><code>ENHANCED</code> - Transfer virtually unlimited numbers of objects with enhanced metrics, more detailed logs, and higher performance than Basic mode. Currently available for transfers between Amazon S3 locations.</p><note>
+    /// <p><code>ENHANCED</code> - Transfer virtually unlimited numbers of objects with higher performance than Basic mode. Enhanced mode tasks optimize the data transfer process by listing, preparing, transferring, and verifying data in parallel. Enhanced mode is currently available for transfers between Amazon S3 locations.</p><note>
     /// <p>To create an Enhanced mode task, the IAM role that you use to call the <code>CreateTask</code> operation must have the <code>iam:CreateServiceLinkedRole</code> permission.</p>
     /// </note></li>
     /// <li>
-    /// <p><code>BASIC</code> (default) - Transfer files or objects between Amazon Web Services storage and on-premises, edge, or other cloud storage. DataSync <a href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-limits.html">quotas</a> apply.</p></li>
+    /// <p><code>BASIC</code> (default) - Transfer files or objects between Amazon Web Services storage and all other supported DataSync locations. Basic mode tasks are subject to <a href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-limits.html">quotas</a> on the number of files, objects, and directories in a dataset. Basic mode sequentially prepares, transfers, and verifies data, making it slower than Enhanced mode for most workloads.</p></li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/choosing-task-mode.html#task-mode-differences">Understanding task mode differences</a>.</p>
     pub fn get_task_mode(&self) -> &::std::option::Option<crate::types::TaskMode> {

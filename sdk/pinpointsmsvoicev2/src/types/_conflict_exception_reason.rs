@@ -15,6 +15,7 @@
 ///     ConflictExceptionReason::CreateRegistrationVersionNotAllowed => { /* ... */ },
 ///     ConflictExceptionReason::DeletionProtectionEnabled => { /* ... */ },
 ///     ConflictExceptionReason::DestinationCountryBlockedByProtectConfiguration => { /* ... */ },
+///     ConflictExceptionReason::DestinationPhoneNumberBlockedByProtectNumberOverride => { /* ... */ },
 ///     ConflictExceptionReason::DestinationPhoneNumberNotVerified => { /* ... */ },
 ///     ConflictExceptionReason::DestinationPhoneNumberOptedOut => { /* ... */ },
 ///     ConflictExceptionReason::DisassociateRegistrationNotAllowed => { /* ... */ },
@@ -80,6 +81,8 @@ pub enum ConflictExceptionReason {
     DeletionProtectionEnabled,
     #[allow(missing_docs)] // documentation missing in model
     DestinationCountryBlockedByProtectConfiguration,
+    #[allow(missing_docs)] // documentation missing in model
+    DestinationPhoneNumberBlockedByProtectNumberOverride,
     #[allow(missing_docs)] // documentation missing in model
     DestinationPhoneNumberNotVerified,
     #[allow(missing_docs)] // documentation missing in model
@@ -154,6 +157,9 @@ impl ::std::convert::From<&str> for ConflictExceptionReason {
             "CREATE_REGISTRATION_VERSION_NOT_ALLOWED" => ConflictExceptionReason::CreateRegistrationVersionNotAllowed,
             "DELETION_PROTECTION_ENABLED" => ConflictExceptionReason::DeletionProtectionEnabled,
             "DESTINATION_COUNTRY_BLOCKED_BY_PROTECT_CONFIGURATION" => ConflictExceptionReason::DestinationCountryBlockedByProtectConfiguration,
+            "DESTINATION_PHONE_NUMBER_BLOCKED_BY_PROTECT_NUMBER_OVERRIDE" => {
+                ConflictExceptionReason::DestinationPhoneNumberBlockedByProtectNumberOverride
+            }
             "DESTINATION_PHONE_NUMBER_NOT_VERIFIED" => ConflictExceptionReason::DestinationPhoneNumberNotVerified,
             "DESTINATION_PHONE_NUMBER_OPTED_OUT" => ConflictExceptionReason::DestinationPhoneNumberOptedOut,
             "DISASSOCIATE_REGISTRATION_NOT_ALLOWED" => ConflictExceptionReason::DisassociateRegistrationNotAllowed,
@@ -206,6 +212,9 @@ impl ConflictExceptionReason {
             ConflictExceptionReason::CreateRegistrationVersionNotAllowed => "CREATE_REGISTRATION_VERSION_NOT_ALLOWED",
             ConflictExceptionReason::DeletionProtectionEnabled => "DELETION_PROTECTION_ENABLED",
             ConflictExceptionReason::DestinationCountryBlockedByProtectConfiguration => "DESTINATION_COUNTRY_BLOCKED_BY_PROTECT_CONFIGURATION",
+            ConflictExceptionReason::DestinationPhoneNumberBlockedByProtectNumberOverride => {
+                "DESTINATION_PHONE_NUMBER_BLOCKED_BY_PROTECT_NUMBER_OVERRIDE"
+            }
             ConflictExceptionReason::DestinationPhoneNumberNotVerified => "DESTINATION_PHONE_NUMBER_NOT_VERIFIED",
             ConflictExceptionReason::DestinationPhoneNumberOptedOut => "DESTINATION_PHONE_NUMBER_OPTED_OUT",
             ConflictExceptionReason::DisassociateRegistrationNotAllowed => "DISASSOCIATE_REGISTRATION_NOT_ALLOWED",
@@ -249,6 +258,7 @@ impl ConflictExceptionReason {
             "CREATE_REGISTRATION_VERSION_NOT_ALLOWED",
             "DELETION_PROTECTION_ENABLED",
             "DESTINATION_COUNTRY_BLOCKED_BY_PROTECT_CONFIGURATION",
+            "DESTINATION_PHONE_NUMBER_BLOCKED_BY_PROTECT_NUMBER_OVERRIDE",
             "DESTINATION_PHONE_NUMBER_NOT_VERIFIED",
             "DESTINATION_PHONE_NUMBER_OPTED_OUT",
             "DISASSOCIATE_REGISTRATION_NOT_ALLOWED",
@@ -308,6 +318,9 @@ impl ::std::fmt::Display for ConflictExceptionReason {
             ConflictExceptionReason::DeletionProtectionEnabled => write!(f, "DELETION_PROTECTION_ENABLED"),
             ConflictExceptionReason::DestinationCountryBlockedByProtectConfiguration => {
                 write!(f, "DESTINATION_COUNTRY_BLOCKED_BY_PROTECT_CONFIGURATION")
+            }
+            ConflictExceptionReason::DestinationPhoneNumberBlockedByProtectNumberOverride => {
+                write!(f, "DESTINATION_PHONE_NUMBER_BLOCKED_BY_PROTECT_NUMBER_OVERRIDE")
             }
             ConflictExceptionReason::DestinationPhoneNumberNotVerified => write!(f, "DESTINATION_PHONE_NUMBER_NOT_VERIFIED"),
             ConflictExceptionReason::DestinationPhoneNumberOptedOut => write!(f, "DESTINATION_PHONE_NUMBER_OPTED_OUT"),

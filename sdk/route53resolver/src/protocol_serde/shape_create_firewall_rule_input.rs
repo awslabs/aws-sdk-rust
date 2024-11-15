@@ -45,5 +45,11 @@ pub fn ser_create_firewall_rule_input_input(
     if let Some(var_12) = &input.qtype {
         object.key("Qtype").string(var_12.as_str());
     }
+    if let Some(var_13) = &input.dns_threat_protection {
+        object.key("DnsThreatProtection").string(var_13.as_str());
+    }
+    if let Some(var_14) = &input.confidence_threshold {
+        object.key("ConfidenceThreshold").string(var_14.as_str());
+    }
     Ok(())
 }

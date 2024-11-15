@@ -136,6 +136,20 @@ impl UpdateFirewallRuleFluentBuilder {
     pub fn get_firewall_domain_list_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_firewall_domain_list_id()
     }
+    /// <p>The DNS Firewall Advanced rule ID.</p>
+    pub fn firewall_threat_protection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.firewall_threat_protection_id(input.into());
+        self
+    }
+    /// <p>The DNS Firewall Advanced rule ID.</p>
+    pub fn set_firewall_threat_protection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_firewall_threat_protection_id(input);
+        self
+    }
+    /// <p>The DNS Firewall Advanced rule ID.</p>
+    pub fn get_firewall_threat_protection_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_firewall_threat_protection_id()
+    }
     /// <p>The setting that determines the processing order of the rule in the rule group. DNS Firewall processes the rules in a rule group by order of priority, starting from the lowest setting.</p>
     /// <p>You must specify a unique priority for each rule in a rule group. To make it easier to insert rules later, leave space between the numbers, for example, use 100, 200, and so on. You can change the priority setting for the rules in a rule group at any time.</p>
     pub fn priority(mut self, input: i32) -> Self {
@@ -153,10 +167,10 @@ impl UpdateFirewallRuleFluentBuilder {
     pub fn get_priority(&self) -> &::std::option::Option<i32> {
         self.inner.get_priority()
     }
-    /// <p>The action that DNS Firewall should take on a DNS query when it matches one of the domains in the rule's domain list:</p>
+    /// <p>The action that DNS Firewall should take on a DNS query when it matches one of the domains in the rule's domain list, or a threat in a DNS Firewall Advanced rule:</p>
     /// <ul>
     /// <li>
-    /// <p><code>ALLOW</code> - Permit the request to go through.</p></li>
+    /// <p><code>ALLOW</code> - Permit the request to go through. Not available for DNS Firewall Advanced rules.</p></li>
     /// <li>
     /// <p><code>ALERT</code> - Permit the request to go through but send an alert to the logs.</p></li>
     /// <li>
@@ -166,10 +180,10 @@ impl UpdateFirewallRuleFluentBuilder {
         self.inner = self.inner.action(input);
         self
     }
-    /// <p>The action that DNS Firewall should take on a DNS query when it matches one of the domains in the rule's domain list:</p>
+    /// <p>The action that DNS Firewall should take on a DNS query when it matches one of the domains in the rule's domain list, or a threat in a DNS Firewall Advanced rule:</p>
     /// <ul>
     /// <li>
-    /// <p><code>ALLOW</code> - Permit the request to go through.</p></li>
+    /// <p><code>ALLOW</code> - Permit the request to go through. Not available for DNS Firewall Advanced rules.</p></li>
     /// <li>
     /// <p><code>ALERT</code> - Permit the request to go through but send an alert to the logs.</p></li>
     /// <li>
@@ -179,10 +193,10 @@ impl UpdateFirewallRuleFluentBuilder {
         self.inner = self.inner.set_action(input);
         self
     }
-    /// <p>The action that DNS Firewall should take on a DNS query when it matches one of the domains in the rule's domain list:</p>
+    /// <p>The action that DNS Firewall should take on a DNS query when it matches one of the domains in the rule's domain list, or a threat in a DNS Firewall Advanced rule:</p>
     /// <ul>
     /// <li>
-    /// <p><code>ALLOW</code> - Permit the request to go through.</p></li>
+    /// <p><code>ALLOW</code> - Permit the request to go through. Not available for DNS Firewall Advanced rules.</p></li>
     /// <li>
     /// <p><code>ALERT</code> - Permit the request to go through but send an alert to the logs.</p></li>
     /// <li>
@@ -286,22 +300,22 @@ impl UpdateFirewallRuleFluentBuilder {
         self.inner.get_name()
     }
     /// <p>How you want the the rule to evaluate DNS redirection in the DNS redirection chain, such as CNAME or DNAME.</p>
-    /// <p><code>Inspect_Redirection_Domain </code>(Default) inspects all domains in the redirection chain. The individual domains in the redirection chain must be added to the domain list.</p>
-    /// <p><code>Trust_Redirection_Domain </code> inspects only the first domain in the redirection chain. You don't need to add the subsequent domains in the domain in the redirection list to the domain list.</p>
+    /// <p><code>INSPECT_REDIRECTION_DOMAIN</code>: (Default) inspects all domains in the redirection chain. The individual domains in the redirection chain must be added to the domain list.</p>
+    /// <p><code>TRUST_REDIRECTION_DOMAIN</code>: Inspects only the first domain in the redirection chain. You don't need to add the subsequent domains in the domain in the redirection list to the domain list.</p>
     pub fn firewall_domain_redirection_action(mut self, input: crate::types::FirewallDomainRedirectionAction) -> Self {
         self.inner = self.inner.firewall_domain_redirection_action(input);
         self
     }
     /// <p>How you want the the rule to evaluate DNS redirection in the DNS redirection chain, such as CNAME or DNAME.</p>
-    /// <p><code>Inspect_Redirection_Domain </code>(Default) inspects all domains in the redirection chain. The individual domains in the redirection chain must be added to the domain list.</p>
-    /// <p><code>Trust_Redirection_Domain </code> inspects only the first domain in the redirection chain. You don't need to add the subsequent domains in the domain in the redirection list to the domain list.</p>
+    /// <p><code>INSPECT_REDIRECTION_DOMAIN</code>: (Default) inspects all domains in the redirection chain. The individual domains in the redirection chain must be added to the domain list.</p>
+    /// <p><code>TRUST_REDIRECTION_DOMAIN</code>: Inspects only the first domain in the redirection chain. You don't need to add the subsequent domains in the domain in the redirection list to the domain list.</p>
     pub fn set_firewall_domain_redirection_action(mut self, input: ::std::option::Option<crate::types::FirewallDomainRedirectionAction>) -> Self {
         self.inner = self.inner.set_firewall_domain_redirection_action(input);
         self
     }
     /// <p>How you want the the rule to evaluate DNS redirection in the DNS redirection chain, such as CNAME or DNAME.</p>
-    /// <p><code>Inspect_Redirection_Domain </code>(Default) inspects all domains in the redirection chain. The individual domains in the redirection chain must be added to the domain list.</p>
-    /// <p><code>Trust_Redirection_Domain </code> inspects only the first domain in the redirection chain. You don't need to add the subsequent domains in the domain in the redirection list to the domain list.</p>
+    /// <p><code>INSPECT_REDIRECTION_DOMAIN</code>: (Default) inspects all domains in the redirection chain. The individual domains in the redirection chain must be added to the domain list.</p>
+    /// <p><code>TRUST_REDIRECTION_DOMAIN</code>: Inspects only the first domain in the redirection chain. You don't need to add the subsequent domains in the domain in the redirection list to the domain list.</p>
     pub fn get_firewall_domain_redirection_action(&self) -> &::std::option::Option<crate::types::FirewallDomainRedirectionAction> {
         self.inner.get_firewall_domain_redirection_action()
     }
@@ -414,5 +428,75 @@ impl UpdateFirewallRuleFluentBuilder {
     /// </ul>
     pub fn get_qtype(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_qtype()
+    }
+    /// <p>The type of the DNS Firewall Advanced rule. Valid values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DGA</code>: Domain generation algorithms detection. DGAs are used by attackers to generate a large number of domains to to launch malware attacks.</p></li>
+    /// <li>
+    /// <p><code>DNS_TUNNELING</code>: DNS tunneling detection. DNS tunneling is used by attackers to exfiltrate data from the client by using the DNS tunnel without making a network connection to the client.</p></li>
+    /// </ul>
+    pub fn dns_threat_protection(mut self, input: crate::types::DnsThreatProtection) -> Self {
+        self.inner = self.inner.dns_threat_protection(input);
+        self
+    }
+    /// <p>The type of the DNS Firewall Advanced rule. Valid values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DGA</code>: Domain generation algorithms detection. DGAs are used by attackers to generate a large number of domains to to launch malware attacks.</p></li>
+    /// <li>
+    /// <p><code>DNS_TUNNELING</code>: DNS tunneling detection. DNS tunneling is used by attackers to exfiltrate data from the client by using the DNS tunnel without making a network connection to the client.</p></li>
+    /// </ul>
+    pub fn set_dns_threat_protection(mut self, input: ::std::option::Option<crate::types::DnsThreatProtection>) -> Self {
+        self.inner = self.inner.set_dns_threat_protection(input);
+        self
+    }
+    /// <p>The type of the DNS Firewall Advanced rule. Valid values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DGA</code>: Domain generation algorithms detection. DGAs are used by attackers to generate a large number of domains to to launch malware attacks.</p></li>
+    /// <li>
+    /// <p><code>DNS_TUNNELING</code>: DNS tunneling detection. DNS tunneling is used by attackers to exfiltrate data from the client by using the DNS tunnel without making a network connection to the client.</p></li>
+    /// </ul>
+    pub fn get_dns_threat_protection(&self) -> &::std::option::Option<crate::types::DnsThreatProtection> {
+        self.inner.get_dns_threat_protection()
+    }
+    /// <p>The confidence threshold for DNS Firewall Advanced. You must provide this value when you create a DNS Firewall Advanced rule. The confidence level values mean:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>LOW</code>: Provides the highest detection rate for threats, but also increases false positives.</p></li>
+    /// <li>
+    /// <p><code>MEDIUM</code>: Provides a balance between detecting threats and false positives.</p></li>
+    /// <li>
+    /// <p><code>HIGH</code>: Detects only the most well corroborated threats with a low rate of false positives.</p></li>
+    /// </ul>
+    pub fn confidence_threshold(mut self, input: crate::types::ConfidenceThreshold) -> Self {
+        self.inner = self.inner.confidence_threshold(input);
+        self
+    }
+    /// <p>The confidence threshold for DNS Firewall Advanced. You must provide this value when you create a DNS Firewall Advanced rule. The confidence level values mean:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>LOW</code>: Provides the highest detection rate for threats, but also increases false positives.</p></li>
+    /// <li>
+    /// <p><code>MEDIUM</code>: Provides a balance between detecting threats and false positives.</p></li>
+    /// <li>
+    /// <p><code>HIGH</code>: Detects only the most well corroborated threats with a low rate of false positives.</p></li>
+    /// </ul>
+    pub fn set_confidence_threshold(mut self, input: ::std::option::Option<crate::types::ConfidenceThreshold>) -> Self {
+        self.inner = self.inner.set_confidence_threshold(input);
+        self
+    }
+    /// <p>The confidence threshold for DNS Firewall Advanced. You must provide this value when you create a DNS Firewall Advanced rule. The confidence level values mean:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>LOW</code>: Provides the highest detection rate for threats, but also increases false positives.</p></li>
+    /// <li>
+    /// <p><code>MEDIUM</code>: Provides a balance between detecting threats and false positives.</p></li>
+    /// <li>
+    /// <p><code>HIGH</code>: Detects only the most well corroborated threats with a low rate of false positives.</p></li>
+    /// </ul>
+    pub fn get_confidence_threshold(&self) -> &::std::option::Option<crate::types::ConfidenceThreshold> {
+        self.inner.get_confidence_threshold()
     }
 }

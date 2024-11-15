@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`thing_type_name(Option<String>)`](crate::operation::describe_thing_type::DescribeThingTypeOutput::thing_type_name): <p>The name of the thing type.</p>
     ///   - [`thing_type_id(Option<String>)`](crate::operation::describe_thing_type::DescribeThingTypeOutput::thing_type_id): <p>The thing type ID.</p>
     ///   - [`thing_type_arn(Option<String>)`](crate::operation::describe_thing_type::DescribeThingTypeOutput::thing_type_arn): <p>The thing type ARN.</p>
-    ///   - [`thing_type_properties(Option<ThingTypeProperties>)`](crate::operation::describe_thing_type::DescribeThingTypeOutput::thing_type_properties): <p>The ThingTypeProperties contains information about the thing type including description, and a list of searchable thing attribute names.</p>
+    ///   - [`thing_type_properties(Option<ThingTypeProperties>)`](crate::operation::describe_thing_type::DescribeThingTypeOutput::thing_type_properties): <p>The ThingTypeProperties contains information about the thing type including description, a list of searchable thing attribute names, and MQTT5 configuration.</p>
     ///   - [`thing_type_metadata(Option<ThingTypeMetadata>)`](crate::operation::describe_thing_type::DescribeThingTypeOutput::thing_type_metadata): <p>The ThingTypeMetadata contains additional information about the thing type including: creation date and time, a value indicating whether the thing type is deprecated, and a date and time when it was deprecated.</p>
     /// - On failure, responds with [`SdkError<DescribeThingTypeError>`](crate::operation::describe_thing_type::DescribeThingTypeError)
     pub fn describe_thing_type(&self) -> crate::operation::describe_thing_type::builders::DescribeThingTypeFluentBuilder {

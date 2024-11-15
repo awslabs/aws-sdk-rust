@@ -69,6 +69,8 @@ pub(crate) mod shape_delete_pool;
 
 pub(crate) mod shape_delete_protect_configuration;
 
+pub(crate) mod shape_delete_protect_configuration_rule_set_number_override;
+
 pub(crate) mod shape_delete_registration;
 
 pub(crate) mod shape_delete_registration_attachment;
@@ -133,13 +135,19 @@ pub(crate) mod shape_get_resource_policy;
 
 pub(crate) mod shape_list_pool_origination_identities;
 
+pub(crate) mod shape_list_protect_configuration_rule_set_number_overrides;
+
 pub(crate) mod shape_list_registration_associations;
 
 pub(crate) mod shape_list_tags_for_resource;
 
 pub(crate) mod shape_put_keyword;
 
+pub(crate) mod shape_put_message_feedback;
+
 pub(crate) mod shape_put_opted_out_number;
+
+pub(crate) mod shape_put_protect_configuration_rule_set_number_override;
 
 pub(crate) mod shape_put_registration_field_value;
 
@@ -162,6 +170,8 @@ pub(crate) mod shape_send_text_message;
 pub(crate) mod shape_send_voice_message;
 
 pub(crate) mod shape_set_account_default_protect_configuration;
+
+pub(crate) mod shape_set_default_message_feedback_enabled;
 
 pub(crate) mod shape_set_default_message_type;
 
@@ -247,6 +257,8 @@ pub(crate) mod shape_delete_pool_input;
 
 pub(crate) mod shape_delete_protect_configuration_input;
 
+pub(crate) mod shape_delete_protect_configuration_rule_set_number_override_input;
+
 pub(crate) mod shape_delete_registration_attachment_input;
 
 pub(crate) mod shape_delete_registration_field_value_input;
@@ -309,13 +321,19 @@ pub(crate) mod shape_internal_server_exception;
 
 pub(crate) mod shape_list_pool_origination_identities_input;
 
+pub(crate) mod shape_list_protect_configuration_rule_set_number_overrides_input;
+
 pub(crate) mod shape_list_registration_associations_input;
 
 pub(crate) mod shape_list_tags_for_resource_input;
 
 pub(crate) mod shape_put_keyword_input;
 
+pub(crate) mod shape_put_message_feedback_input;
+
 pub(crate) mod shape_put_opted_out_number_input;
+
+pub(crate) mod shape_put_protect_configuration_rule_set_number_override_input;
 
 pub(crate) mod shape_put_registration_field_value_input;
 
@@ -342,6 +360,8 @@ pub(crate) mod shape_send_voice_message_input;
 pub(crate) mod shape_service_quota_exceeded_exception;
 
 pub(crate) mod shape_set_account_default_protect_configuration_input;
+
+pub(crate) mod shape_set_default_message_feedback_enabled_input;
 
 pub(crate) mod shape_set_default_message_type_input;
 
@@ -427,6 +447,10 @@ pub(crate) mod shape_protect_configuration_filter;
 
 pub(crate) mod shape_protect_configuration_information_list;
 
+pub(crate) mod shape_protect_configuration_rule_set_number_override_filter_item;
+
+pub(crate) mod shape_protect_configuration_rule_set_number_override_list;
+
 pub(crate) mod shape_registration_association_filter;
 
 pub(crate) mod shape_registration_association_metadata_list;
@@ -500,6 +524,8 @@ pub(crate) mod shape_phone_number_information;
 pub(crate) mod shape_pool_information;
 
 pub(crate) mod shape_protect_configuration_information;
+
+pub(crate) mod shape_protect_configuration_rule_set_number_override;
 
 pub(crate) mod shape_registration_association_metadata;
 

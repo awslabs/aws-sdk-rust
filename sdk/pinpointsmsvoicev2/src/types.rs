@@ -55,6 +55,10 @@ pub use crate::types::_verification_channel::VerificationChannel;
 
 pub use crate::types::_requestable_number_type::RequestableNumberType;
 
+pub use crate::types::_protect_configuration_rule_override_action::ProtectConfigurationRuleOverrideAction;
+
+pub use crate::types::_message_feedback_status::MessageFeedbackStatus;
+
 pub use crate::types::_keyword_action::KeywordAction;
 
 pub use crate::types::_registration_association_metadata::RegistrationAssociationMetadata;
@@ -62,6 +66,12 @@ pub use crate::types::_registration_association_metadata::RegistrationAssociatio
 pub use crate::types::_registration_association_filter::RegistrationAssociationFilter;
 
 pub use crate::types::_registration_association_filter_name::RegistrationAssociationFilterName;
+
+pub use crate::types::_protect_configuration_rule_set_number_override::ProtectConfigurationRuleSetNumberOverride;
+
+pub use crate::types::_protect_configuration_rule_set_number_override_filter_item::ProtectConfigurationRuleSetNumberOverrideFilterItem;
+
+pub use crate::types::_protect_configuration_rule_set_number_override_filter_name::ProtectConfigurationRuleSetNumberOverrideFilterName;
 
 pub use crate::types::_origination_identity_metadata::OriginationIdentityMetadata;
 
@@ -241,6 +251,8 @@ mod _kinesis_firehose_destination;
 
 mod _language_code;
 
+mod _message_feedback_status;
+
 mod _message_type;
 
 mod _number_capability;
@@ -286,6 +298,14 @@ mod _protect_configuration_filter;
 mod _protect_configuration_filter_name;
 
 mod _protect_configuration_information;
+
+mod _protect_configuration_rule_override_action;
+
+mod _protect_configuration_rule_set_number_override;
+
+mod _protect_configuration_rule_set_number_override_filter_item;
+
+mod _protect_configuration_rule_set_number_override_filter_name;
 
 mod _protect_status;
 

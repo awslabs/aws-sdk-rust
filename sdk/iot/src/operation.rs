@@ -538,6 +538,9 @@ pub mod list_principal_policies;
 /// Types for the `ListPrincipalThings` operation.
 pub mod list_principal_things;
 
+/// Types for the `ListPrincipalThingsV2` operation.
+pub mod list_principal_things_v2;
+
 /// Types for the `ListProvisioningTemplateVersions` operation.
 pub mod list_provisioning_template_versions;
 
@@ -582,6 +585,9 @@ pub mod list_thing_groups_for_thing;
 
 /// Types for the `ListThingPrincipals` operation.
 pub mod list_thing_principals;
+
+/// Types for the `ListThingPrincipalsV2` operation.
+pub mod list_thing_principals_v2;
 
 /// Types for the `ListThingRegistrationTaskReports` operation.
 pub mod list_thing_registration_task_reports;
@@ -768,6 +774,9 @@ pub mod update_thing_group;
 
 /// Types for the `UpdateThingGroupsForThing` operation.
 pub mod update_thing_groups_for_thing;
+
+/// Types for the `UpdateThingType` operation.
+pub mod update_thing_type;
 
 /// Types for the `UpdateTopicRuleDestination` operation.
 pub mod update_topic_rule_destination;

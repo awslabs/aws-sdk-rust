@@ -349,6 +349,16 @@ pub(crate) fn reflens_list_principal_things_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_principal_things_v2_output_output_next_token(
+    input: &crate::operation::list_principal_things_v2::ListPrincipalThingsV2Output,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_provisioning_template_versions_output_output_next_token(
     input: &crate::operation::list_provisioning_template_versions::ListProvisioningTemplateVersionsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -491,6 +501,16 @@ pub(crate) fn reflens_list_thing_groups_for_thing_output_output_next_token(
 
 pub(crate) fn reflens_list_thing_principals_output_output_next_token(
     input: &crate::operation::list_thing_principals::ListThingPrincipalsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_thing_principals_v2_output_output_next_token(
+    input: &crate::operation::list_thing_principals_v2::ListThingPrincipalsV2Output,
 ) -> ::std::option::Option<&::std::string::String> {
     let input = match &input.next_token {
         ::std::option::Option::None => return ::std::option::Option::None,
@@ -949,6 +969,16 @@ pub(crate) fn lens_list_principal_things_output_output_things(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn lens_list_principal_things_v2_output_output_principal_thing_objects(
+    input: crate::operation::list_principal_things_v2::ListPrincipalThingsV2Output,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::PrincipalThingObject>> {
+    let input = match input.principal_thing_objects {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_list_provisioning_template_versions_output_output_versions(
     input: crate::operation::list_provisioning_template_versions::ListProvisioningTemplateVersionsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ProvisioningTemplateVersionSummary>> {
@@ -1093,6 +1123,16 @@ pub(crate) fn lens_list_thing_principals_output_output_principals(
     input: crate::operation::list_thing_principals::ListThingPrincipalsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<::std::string::String>> {
     let input = match input.principals {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_thing_principals_v2_output_output_thing_principal_objects(
+    input: crate::operation::list_thing_principals_v2::ListThingPrincipalsV2Output,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ThingPrincipalObject>> {
+    let input = match input.thing_principal_objects {
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,
     };

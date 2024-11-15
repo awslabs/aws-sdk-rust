@@ -28,6 +28,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "FirewallThreatProtectionId" => {
+                            builder = builder.set_firewall_threat_protection_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "Name" => {
                             builder = builder.set_name(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
@@ -109,6 +116,20 @@ where
                             builder = builder.set_qtype(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "DnsThreatProtection" => {
+                            builder = builder.set_dns_threat_protection(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::DnsThreatProtection::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "ConfidenceThreshold" => {
+                            builder = builder.set_confidence_threshold(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::ConfidenceThreshold::from(u.as_ref())))
                                     .transpose()?,
                             );
                         }

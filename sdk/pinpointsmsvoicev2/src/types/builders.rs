@@ -19,6 +19,10 @@ pub use crate::types::_registration_association_metadata::RegistrationAssociatio
 
 pub use crate::types::_registration_association_filter::RegistrationAssociationFilterBuilder;
 
+pub use crate::types::_protect_configuration_rule_set_number_override::ProtectConfigurationRuleSetNumberOverrideBuilder;
+
+pub use crate::types::_protect_configuration_rule_set_number_override_filter_item::ProtectConfigurationRuleSetNumberOverrideFilterItemBuilder;
+
 pub use crate::types::_origination_identity_metadata::OriginationIdentityMetadataBuilder;
 
 pub use crate::types::_pool_origination_identities_filter::PoolOriginationIdentitiesFilterBuilder;

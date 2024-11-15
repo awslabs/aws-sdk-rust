@@ -39,6 +39,8 @@ pub struct SendTextMessageInput {
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The unique identifier for the protect configuration.</p>
     pub protect_configuration_id: ::std::option::Option<::std::string::String>,
+    /// <p>Set to true to enable message feedback for the message. When a user receives the message you need to update the message status using <code>PutMessageFeedback</code>.</p>
+    pub message_feedback_enabled: ::std::option::Option<bool>,
 }
 impl SendTextMessageInput {
     /// <p>The destination phone number in E.164 format.</p>
@@ -102,6 +104,10 @@ impl SendTextMessageInput {
     pub fn protect_configuration_id(&self) -> ::std::option::Option<&str> {
         self.protect_configuration_id.as_deref()
     }
+    /// <p>Set to true to enable message feedback for the message. When a user receives the message you need to update the message status using <code>PutMessageFeedback</code>.</p>
+    pub fn message_feedback_enabled(&self) -> ::std::option::Option<bool> {
+        self.message_feedback_enabled
+    }
 }
 impl SendTextMessageInput {
     /// Creates a new builder-style object to manufacture [`SendTextMessageInput`](crate::operation::send_text_message::SendTextMessageInput).
@@ -127,6 +133,7 @@ pub struct SendTextMessageInputBuilder {
         ::std::option::Option<::std::collections::HashMap<crate::types::DestinationCountryParameterKey, ::std::string::String>>,
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) protect_configuration_id: ::std::option::Option<::std::string::String>,
+    pub(crate) message_feedback_enabled: ::std::option::Option<bool>,
 }
 impl SendTextMessageInputBuilder {
     /// <p>The destination phone number in E.164 format.</p>
@@ -352,6 +359,20 @@ impl SendTextMessageInputBuilder {
     pub fn get_protect_configuration_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.protect_configuration_id
     }
+    /// <p>Set to true to enable message feedback for the message. When a user receives the message you need to update the message status using <code>PutMessageFeedback</code>.</p>
+    pub fn message_feedback_enabled(mut self, input: bool) -> Self {
+        self.message_feedback_enabled = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Set to true to enable message feedback for the message. When a user receives the message you need to update the message status using <code>PutMessageFeedback</code>.</p>
+    pub fn set_message_feedback_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.message_feedback_enabled = input;
+        self
+    }
+    /// <p>Set to true to enable message feedback for the message. When a user receives the message you need to update the message status using <code>PutMessageFeedback</code>.</p>
+    pub fn get_message_feedback_enabled(&self) -> &::std::option::Option<bool> {
+        &self.message_feedback_enabled
+    }
     /// Consumes the builder and constructs a [`SendTextMessageInput`](crate::operation::send_text_message::SendTextMessageInput).
     pub fn build(
         self,
@@ -369,6 +390,7 @@ impl SendTextMessageInputBuilder {
             destination_country_parameters: self.destination_country_parameters,
             dry_run: self.dry_run,
             protect_configuration_id: self.protect_configuration_id,
+            message_feedback_enabled: self.message_feedback_enabled,
         })
     }
 }

@@ -147,10 +147,10 @@ impl ListFirewallRulesFluentBuilder {
         self.inner.get_priority()
     }
     /// <p>Optional additional filter for the rules to retrieve.</p>
-    /// <p>The action that DNS Firewall should take on a DNS query when it matches one of the domains in the rule's domain list:</p>
+    /// <p>The action that DNS Firewall should take on a DNS query when it matches one of the domains in the rule's domain list, or a threat in a DNS Firewall Advanced rule:</p>
     /// <ul>
     /// <li>
-    /// <p><code>ALLOW</code> - Permit the request to go through.</p></li>
+    /// <p><code>ALLOW</code> - Permit the request to go through. Not availabe for DNS Firewall Advanced rules.</p></li>
     /// <li>
     /// <p><code>ALERT</code> - Permit the request to go through but send an alert to the logs.</p></li>
     /// <li>
@@ -161,10 +161,10 @@ impl ListFirewallRulesFluentBuilder {
         self
     }
     /// <p>Optional additional filter for the rules to retrieve.</p>
-    /// <p>The action that DNS Firewall should take on a DNS query when it matches one of the domains in the rule's domain list:</p>
+    /// <p>The action that DNS Firewall should take on a DNS query when it matches one of the domains in the rule's domain list, or a threat in a DNS Firewall Advanced rule:</p>
     /// <ul>
     /// <li>
-    /// <p><code>ALLOW</code> - Permit the request to go through.</p></li>
+    /// <p><code>ALLOW</code> - Permit the request to go through. Not availabe for DNS Firewall Advanced rules.</p></li>
     /// <li>
     /// <p><code>ALERT</code> - Permit the request to go through but send an alert to the logs.</p></li>
     /// <li>
@@ -175,10 +175,10 @@ impl ListFirewallRulesFluentBuilder {
         self
     }
     /// <p>Optional additional filter for the rules to retrieve.</p>
-    /// <p>The action that DNS Firewall should take on a DNS query when it matches one of the domains in the rule's domain list:</p>
+    /// <p>The action that DNS Firewall should take on a DNS query when it matches one of the domains in the rule's domain list, or a threat in a DNS Firewall Advanced rule:</p>
     /// <ul>
     /// <li>
-    /// <p><code>ALLOW</code> - Permit the request to go through.</p></li>
+    /// <p><code>ALLOW</code> - Permit the request to go through. Not availabe for DNS Firewall Advanced rules.</p></li>
     /// <li>
     /// <p><code>ALERT</code> - Permit the request to go through but send an alert to the logs.</p></li>
     /// <li>

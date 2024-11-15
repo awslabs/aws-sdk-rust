@@ -6190,6 +6190,45 @@ impl From<crate::operation::list_principal_things::ListPrincipalThingsError> for
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_principal_things_v2::ListPrincipalThingsV2Error, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_principal_things_v2::ListPrincipalThingsV2Error, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_principal_things_v2::ListPrincipalThingsV2Error> for Error {
+    fn from(err: crate::operation::list_principal_things_v2::ListPrincipalThingsV2Error) -> Self {
+        match err {
+            crate::operation::list_principal_things_v2::ListPrincipalThingsV2Error::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
+            crate::operation::list_principal_things_v2::ListPrincipalThingsV2Error::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::list_principal_things_v2::ListPrincipalThingsV2Error::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_principal_things_v2::ListPrincipalThingsV2Error::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::list_principal_things_v2::ListPrincipalThingsV2Error::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_principal_things_v2::ListPrincipalThingsV2Error::UnauthorizedException(inner) => {
+                Error::UnauthorizedException(inner)
+            }
+            crate::operation::list_principal_things_v2::ListPrincipalThingsV2Error::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_provisioning_templates::ListProvisioningTemplatesError, R>>
     for Error
 where
@@ -6720,6 +6759,45 @@ impl From<crate::operation::list_thing_principals::ListThingPrincipalsError> for
             crate::operation::list_thing_principals::ListThingPrincipalsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_thing_principals::ListThingPrincipalsError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
             crate::operation::list_thing_principals::ListThingPrincipalsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_thing_principals_v2::ListThingPrincipalsV2Error, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_thing_principals_v2::ListThingPrincipalsV2Error, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_thing_principals_v2::ListThingPrincipalsV2Error> for Error {
+    fn from(err: crate::operation::list_thing_principals_v2::ListThingPrincipalsV2Error) -> Self {
+        match err {
+            crate::operation::list_thing_principals_v2::ListThingPrincipalsV2Error::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
+            crate::operation::list_thing_principals_v2::ListThingPrincipalsV2Error::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::list_thing_principals_v2::ListThingPrincipalsV2Error::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_thing_principals_v2::ListThingPrincipalsV2Error::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::list_thing_principals_v2::ListThingPrincipalsV2Error::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_thing_principals_v2::ListThingPrincipalsV2Error::UnauthorizedException(inner) => {
+                Error::UnauthorizedException(inner)
+            }
+            crate::operation::list_thing_principals_v2::ListThingPrincipalsV2Error::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -8865,6 +8943,35 @@ impl From<crate::operation::update_thing_groups_for_thing::UpdateThingGroupsForT
                 Error::ThrottlingException(inner)
             }
             crate::operation::update_thing_groups_for_thing::UpdateThingGroupsForThingError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_thing_type::UpdateThingTypeError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_thing_type::UpdateThingTypeError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_thing_type::UpdateThingTypeError> for Error {
+    fn from(err: crate::operation::update_thing_type::UpdateThingTypeError) -> Self {
+        match err {
+            crate::operation::update_thing_type::UpdateThingTypeError::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::operation::update_thing_type::UpdateThingTypeError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::update_thing_type::UpdateThingTypeError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_thing_type::UpdateThingTypeError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::update_thing_type::UpdateThingTypeError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_thing_type::UpdateThingTypeError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::update_thing_type::UpdateThingTypeError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

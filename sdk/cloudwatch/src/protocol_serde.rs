@@ -187,6 +187,8 @@ pub(crate) mod shape_dimension;
 
 pub(crate) mod shape_dimension_filter;
 
+pub(crate) mod shape_entity_metric_data;
+
 pub(crate) mod shape_internal_service_fault;
 
 pub(crate) mod shape_invalid_format_fault;
@@ -240,6 +242,8 @@ pub(crate) mod shape_dashboard_entries;
 pub(crate) mod shape_dashboard_validation_messages;
 
 pub(crate) mod shape_datapoints;
+
+pub(crate) mod shape_entity;
 
 pub(crate) mod shape_insight_rule_contributor_key_labels;
 

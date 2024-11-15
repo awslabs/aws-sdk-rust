@@ -18,7 +18,7 @@ pub struct SendMediaMessageInput {
     pub configuration_set_name: ::std::option::Option<::std::string::String>,
     /// <p>The maximum amount that you want to spend, in US dollars, per each MMS message.</p>
     pub max_price: ::std::option::Option<::std::string::String>,
-    /// <p>How long the text message is valid for. By default this is 72 hours.</p>
+    /// <p>How long the media message is valid for. By default this is 72 hours.</p>
     pub time_to_live: ::std::option::Option<i32>,
     /// <p>You can specify custom data in this field. If you do, that data is logged to the event destination.</p>
     pub context: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -26,6 +26,8 @@ pub struct SendMediaMessageInput {
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The unique identifier of the protect configuration to use.</p>
     pub protect_configuration_id: ::std::option::Option<::std::string::String>,
+    /// <p>Set to true to enable message feedback for the message. When a user receives the message you need to update the message status using <code>PutMessageFeedback</code>.</p>
+    pub message_feedback_enabled: ::std::option::Option<bool>,
 }
 impl SendMediaMessageInput {
     /// <p>The destination phone number in E.164 format.</p>
@@ -57,7 +59,7 @@ impl SendMediaMessageInput {
     pub fn max_price(&self) -> ::std::option::Option<&str> {
         self.max_price.as_deref()
     }
-    /// <p>How long the text message is valid for. By default this is 72 hours.</p>
+    /// <p>How long the media message is valid for. By default this is 72 hours.</p>
     pub fn time_to_live(&self) -> ::std::option::Option<i32> {
         self.time_to_live
     }
@@ -72,6 +74,10 @@ impl SendMediaMessageInput {
     /// <p>The unique identifier of the protect configuration to use.</p>
     pub fn protect_configuration_id(&self) -> ::std::option::Option<&str> {
         self.protect_configuration_id.as_deref()
+    }
+    /// <p>Set to true to enable message feedback for the message. When a user receives the message you need to update the message status using <code>PutMessageFeedback</code>.</p>
+    pub fn message_feedback_enabled(&self) -> ::std::option::Option<bool> {
+        self.message_feedback_enabled
     }
 }
 impl SendMediaMessageInput {
@@ -95,6 +101,7 @@ pub struct SendMediaMessageInputBuilder {
     pub(crate) context: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) protect_configuration_id: ::std::option::Option<::std::string::String>,
+    pub(crate) message_feedback_enabled: ::std::option::Option<bool>,
 }
 impl SendMediaMessageInputBuilder {
     /// <p>The destination phone number in E.164 format.</p>
@@ -198,17 +205,17 @@ impl SendMediaMessageInputBuilder {
     pub fn get_max_price(&self) -> &::std::option::Option<::std::string::String> {
         &self.max_price
     }
-    /// <p>How long the text message is valid for. By default this is 72 hours.</p>
+    /// <p>How long the media message is valid for. By default this is 72 hours.</p>
     pub fn time_to_live(mut self, input: i32) -> Self {
         self.time_to_live = ::std::option::Option::Some(input);
         self
     }
-    /// <p>How long the text message is valid for. By default this is 72 hours.</p>
+    /// <p>How long the media message is valid for. By default this is 72 hours.</p>
     pub fn set_time_to_live(mut self, input: ::std::option::Option<i32>) -> Self {
         self.time_to_live = input;
         self
     }
-    /// <p>How long the text message is valid for. By default this is 72 hours.</p>
+    /// <p>How long the media message is valid for. By default this is 72 hours.</p>
     pub fn get_time_to_live(&self) -> &::std::option::Option<i32> {
         &self.time_to_live
     }
@@ -260,6 +267,20 @@ impl SendMediaMessageInputBuilder {
     pub fn get_protect_configuration_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.protect_configuration_id
     }
+    /// <p>Set to true to enable message feedback for the message. When a user receives the message you need to update the message status using <code>PutMessageFeedback</code>.</p>
+    pub fn message_feedback_enabled(mut self, input: bool) -> Self {
+        self.message_feedback_enabled = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Set to true to enable message feedback for the message. When a user receives the message you need to update the message status using <code>PutMessageFeedback</code>.</p>
+    pub fn set_message_feedback_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.message_feedback_enabled = input;
+        self
+    }
+    /// <p>Set to true to enable message feedback for the message. When a user receives the message you need to update the message status using <code>PutMessageFeedback</code>.</p>
+    pub fn get_message_feedback_enabled(&self) -> &::std::option::Option<bool> {
+        &self.message_feedback_enabled
+    }
     /// Consumes the builder and constructs a [`SendMediaMessageInput`](crate::operation::send_media_message::SendMediaMessageInput).
     pub fn build(
         self,
@@ -275,6 +296,7 @@ impl SendMediaMessageInputBuilder {
             context: self.context,
             dry_run: self.dry_run,
             protect_configuration_id: self.protect_configuration_id,
+            message_feedback_enabled: self.message_feedback_enabled,
         })
     }
 }

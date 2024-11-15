@@ -15,6 +15,12 @@ pub fn ser_thing_type_properties(
         }
         array_3.finish();
     }
+    if let Some(var_5) = &input.mqtt5_configuration {
+        #[allow(unused_mut)]
+        let mut object_6 = object.key("mqtt5Configuration").start_object();
+        crate::protocol_serde::shape_mqtt5_configuration::ser_mqtt5_configuration(&mut object_6, var_5)?;
+        object_6.finish();
+    }
     Ok(())
 }
 
@@ -43,6 +49,10 @@ where
                         "searchableAttributes" => {
                             builder = builder
                                 .set_searchable_attributes(crate::protocol_serde::shape_searchable_attributes::de_searchable_attributes(tokens)?);
+                        }
+                        "mqtt5Configuration" => {
+                            builder =
+                                builder.set_mqtt5_configuration(crate::protocol_serde::shape_mqtt5_configuration::de_mqtt5_configuration(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

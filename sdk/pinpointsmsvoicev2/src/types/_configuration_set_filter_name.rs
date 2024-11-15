@@ -12,6 +12,7 @@
 /// ```text
 /// # let configurationsetfiltername = unimplemented!();
 /// match configurationsetfiltername {
+///     ConfigurationSetFilterName::DefaultMessageFeedbackEnabled => { /* ... */ },
 ///     ConfigurationSetFilterName::DefaultMessageType => { /* ... */ },
 ///     ConfigurationSetFilterName::DefaultSenderId => { /* ... */ },
 ///     ConfigurationSetFilterName::EventDestinationName => { /* ... */ },
@@ -45,6 +46,8 @@
 )]
 pub enum ConfigurationSetFilterName {
     #[allow(missing_docs)] // documentation missing in model
+    DefaultMessageFeedbackEnabled,
+    #[allow(missing_docs)] // documentation missing in model
     DefaultMessageType,
     #[allow(missing_docs)] // documentation missing in model
     DefaultSenderId,
@@ -61,6 +64,7 @@ pub enum ConfigurationSetFilterName {
 impl ::std::convert::From<&str> for ConfigurationSetFilterName {
     fn from(s: &str) -> Self {
         match s {
+            "default-message-feedback-enabled" => ConfigurationSetFilterName::DefaultMessageFeedbackEnabled,
             "default-message-type" => ConfigurationSetFilterName::DefaultMessageType,
             "default-sender-id" => ConfigurationSetFilterName::DefaultSenderId,
             "event-destination-name" => ConfigurationSetFilterName::EventDestinationName,
@@ -81,6 +85,7 @@ impl ConfigurationSetFilterName {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            ConfigurationSetFilterName::DefaultMessageFeedbackEnabled => "default-message-feedback-enabled",
             ConfigurationSetFilterName::DefaultMessageType => "default-message-type",
             ConfigurationSetFilterName::DefaultSenderId => "default-sender-id",
             ConfigurationSetFilterName::EventDestinationName => "event-destination-name",
@@ -92,6 +97,7 @@ impl ConfigurationSetFilterName {
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
+            "default-message-feedback-enabled",
             "default-message-type",
             "default-sender-id",
             "event-destination-name",
@@ -120,6 +126,7 @@ impl ConfigurationSetFilterName {
 impl ::std::fmt::Display for ConfigurationSetFilterName {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            ConfigurationSetFilterName::DefaultMessageFeedbackEnabled => write!(f, "default-message-feedback-enabled"),
             ConfigurationSetFilterName::DefaultMessageType => write!(f, "default-message-type"),
             ConfigurationSetFilterName::DefaultSenderId => write!(f, "default-sender-id"),
             ConfigurationSetFilterName::EventDestinationName => write!(f, "event-destination-name"),

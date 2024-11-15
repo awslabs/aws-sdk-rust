@@ -9,38 +9,47 @@ pub fn ser_update_firewall_rule_input_input(
     if let Some(var_2) = &input.firewall_domain_list_id {
         object.key("FirewallDomainListId").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.priority {
+    if let Some(var_3) = &input.firewall_threat_protection_id {
+        object.key("FirewallThreatProtectionId").string(var_3.as_str());
+    }
+    if let Some(var_4) = &input.priority {
         object.key("Priority").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_3).into()),
+            ::aws_smithy_types::Number::NegInt((*var_4).into()),
         );
     }
-    if let Some(var_4) = &input.action {
-        object.key("Action").string(var_4.as_str());
+    if let Some(var_5) = &input.action {
+        object.key("Action").string(var_5.as_str());
     }
-    if let Some(var_5) = &input.block_response {
-        object.key("BlockResponse").string(var_5.as_str());
+    if let Some(var_6) = &input.block_response {
+        object.key("BlockResponse").string(var_6.as_str());
     }
-    if let Some(var_6) = &input.block_override_domain {
-        object.key("BlockOverrideDomain").string(var_6.as_str());
+    if let Some(var_7) = &input.block_override_domain {
+        object.key("BlockOverrideDomain").string(var_7.as_str());
     }
-    if let Some(var_7) = &input.block_override_dns_type {
-        object.key("BlockOverrideDnsType").string(var_7.as_str());
+    if let Some(var_8) = &input.block_override_dns_type {
+        object.key("BlockOverrideDnsType").string(var_8.as_str());
     }
-    if let Some(var_8) = &input.block_override_ttl {
+    if let Some(var_9) = &input.block_override_ttl {
         object.key("BlockOverrideTtl").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_8).into()),
+            ::aws_smithy_types::Number::NegInt((*var_9).into()),
         );
     }
-    if let Some(var_9) = &input.name {
-        object.key("Name").string(var_9.as_str());
+    if let Some(var_10) = &input.name {
+        object.key("Name").string(var_10.as_str());
     }
-    if let Some(var_10) = &input.firewall_domain_redirection_action {
-        object.key("FirewallDomainRedirectionAction").string(var_10.as_str());
+    if let Some(var_11) = &input.firewall_domain_redirection_action {
+        object.key("FirewallDomainRedirectionAction").string(var_11.as_str());
     }
-    if let Some(var_11) = &input.qtype {
-        object.key("Qtype").string(var_11.as_str());
+    if let Some(var_12) = &input.qtype {
+        object.key("Qtype").string(var_12.as_str());
+    }
+    if let Some(var_13) = &input.dns_threat_protection {
+        object.key("DnsThreatProtection").string(var_13.as_str());
+    }
+    if let Some(var_14) = &input.confidence_threshold {
+        object.key("ConfidenceThreshold").string(var_14.as_str());
     }
     Ok(())
 }

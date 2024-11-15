@@ -22,7 +22,7 @@ impl crate::operation::describe_verified_destination_numbers::builders::Describe
 }
 /// Fluent builder constructing a request to `DescribeVerifiedDestinationNumbers`.
 ///
-/// <p>Retrieves the specified verified destiona numbers.</p>
+/// <p>Retrieves the specified verified destination numbers.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeVerifiedDestinationNumbersFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -119,17 +119,17 @@ impl DescribeVerifiedDestinationNumbersFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_verified_destination_number_ids`](Self::set_verified_destination_number_ids).
     ///
-    /// <p>An array of VerifiedDestinationNumberid to retreive.</p>
+    /// <p>An array of VerifiedDestinationNumberid to retrieve.</p>
     pub fn verified_destination_number_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.verified_destination_number_ids(input.into());
         self
     }
-    /// <p>An array of VerifiedDestinationNumberid to retreive.</p>
+    /// <p>An array of VerifiedDestinationNumberid to retrieve.</p>
     pub fn set_verified_destination_number_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_verified_destination_number_ids(input);
         self
     }
-    /// <p>An array of VerifiedDestinationNumberid to retreive.</p>
+    /// <p>An array of VerifiedDestinationNumberid to retrieve.</p>
     pub fn get_verified_destination_number_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_verified_destination_number_ids()
     }

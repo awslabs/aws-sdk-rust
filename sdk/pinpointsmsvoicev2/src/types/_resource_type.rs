@@ -16,6 +16,7 @@
 ///     ResourceType::ConfigurationSet => { /* ... */ },
 ///     ResourceType::EventDestination => { /* ... */ },
 ///     ResourceType::Keyword => { /* ... */ },
+///     ResourceType::Message => { /* ... */ },
 ///     ResourceType::OptOutList => { /* ... */ },
 ///     ResourceType::OptedOutNumber => { /* ... */ },
 ///     ResourceType::PhoneNumber => { /* ... */ },
@@ -62,6 +63,8 @@ pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     Keyword,
     #[allow(missing_docs)] // documentation missing in model
+    Message,
+    #[allow(missing_docs)] // documentation missing in model
     OptOutList,
     #[allow(missing_docs)] // documentation missing in model
     OptedOutNumber,
@@ -92,6 +95,7 @@ impl ::std::convert::From<&str> for ResourceType {
             "configuration-set" => ResourceType::ConfigurationSet,
             "event-destination" => ResourceType::EventDestination,
             "keyword" => ResourceType::Keyword,
+            "message" => ResourceType::Message,
             "opt-out-list" => ResourceType::OptOutList,
             "opted-out-number" => ResourceType::OptedOutNumber,
             "phone-number" => ResourceType::PhoneNumber,
@@ -121,6 +125,7 @@ impl ResourceType {
             ResourceType::ConfigurationSet => "configuration-set",
             ResourceType::EventDestination => "event-destination",
             ResourceType::Keyword => "keyword",
+            ResourceType::Message => "message",
             ResourceType::OptOutList => "opt-out-list",
             ResourceType::OptedOutNumber => "opted-out-number",
             ResourceType::PhoneNumber => "phone-number",
@@ -141,6 +146,7 @@ impl ResourceType {
             "configuration-set",
             "event-destination",
             "keyword",
+            "message",
             "opt-out-list",
             "opted-out-number",
             "phone-number",
@@ -178,6 +184,7 @@ impl ::std::fmt::Display for ResourceType {
             ResourceType::ConfigurationSet => write!(f, "configuration-set"),
             ResourceType::EventDestination => write!(f, "event-destination"),
             ResourceType::Keyword => write!(f, "keyword"),
+            ResourceType::Message => write!(f, "message"),
             ResourceType::OptOutList => write!(f, "opt-out-list"),
             ResourceType::OptedOutNumber => write!(f, "opted-out-number"),
             ResourceType::PhoneNumber => write!(f, "phone-number"),

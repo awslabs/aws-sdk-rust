@@ -5,14 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ServerCertificateConfig {
     /// <p>A Boolean value that indicates whether Online Certificate Status Protocol (OCSP) server certificate check is enabled or not.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-custom-endpoints-cert-config.html">Configuring OCSP server-certificate stapling in domain configuration</a> from Amazon Web Services IoT Core Developer Guide.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-custom-endpoints-cert-config.html"> Server certificate configuration for OCSP stapling</a> from Amazon Web Services IoT Core Developer Guide.</p>
     pub enable_ocsp_check: ::std::option::Option<bool>,
+    /// <p>The Amazon Resource Name (ARN) for a Lambda function that acts as a Request for Comments (RFC) 6960-compliant Online Certificate Status Protocol (OCSP) responder, supporting basic OCSP responses. The Lambda function accepts a JSON string that's Base64-encoded. Therefore, you must convert your OCSP response, which is typically in the Distinguished Encoding Rules (DER) format, into a JSON string that's Base64-encoded. The Lambda function's response is also a Base64-encoded JSON string and the response payload must not exceed 8 kilobytes (KiB) in size. The Lambda function must be in the same Amazon Web Services region and account as the domain configuration.</p>
+    pub ocsp_lambda_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) for an X.509 certificate stored in Amazon Web Services Certificate Manager (ACM). If provided, Amazon Web Services IoT Core will use this certificate to validate the signature of the received OCSP response. The OCSP responder must sign responses using either this authorized responder certificate or the issuing certificate, depending on whether the ARN is provided or not. The certificate must be in the same Amazon Web Services region and account as the domain configuration.</p>
+    pub ocsp_authorized_responder_arn: ::std::option::Option<::std::string::String>,
 }
 impl ServerCertificateConfig {
     /// <p>A Boolean value that indicates whether Online Certificate Status Protocol (OCSP) server certificate check is enabled or not.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-custom-endpoints-cert-config.html">Configuring OCSP server-certificate stapling in domain configuration</a> from Amazon Web Services IoT Core Developer Guide.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-custom-endpoints-cert-config.html"> Server certificate configuration for OCSP stapling</a> from Amazon Web Services IoT Core Developer Guide.</p>
     pub fn enable_ocsp_check(&self) -> ::std::option::Option<bool> {
         self.enable_ocsp_check
+    }
+    /// <p>The Amazon Resource Name (ARN) for a Lambda function that acts as a Request for Comments (RFC) 6960-compliant Online Certificate Status Protocol (OCSP) responder, supporting basic OCSP responses. The Lambda function accepts a JSON string that's Base64-encoded. Therefore, you must convert your OCSP response, which is typically in the Distinguished Encoding Rules (DER) format, into a JSON string that's Base64-encoded. The Lambda function's response is also a Base64-encoded JSON string and the response payload must not exceed 8 kilobytes (KiB) in size. The Lambda function must be in the same Amazon Web Services region and account as the domain configuration.</p>
+    pub fn ocsp_lambda_arn(&self) -> ::std::option::Option<&str> {
+        self.ocsp_lambda_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) for an X.509 certificate stored in Amazon Web Services Certificate Manager (ACM). If provided, Amazon Web Services IoT Core will use this certificate to validate the signature of the received OCSP response. The OCSP responder must sign responses using either this authorized responder certificate or the issuing certificate, depending on whether the ARN is provided or not. The certificate must be in the same Amazon Web Services region and account as the domain configuration.</p>
+    pub fn ocsp_authorized_responder_arn(&self) -> ::std::option::Option<&str> {
+        self.ocsp_authorized_responder_arn.as_deref()
     }
 }
 impl ServerCertificateConfig {
@@ -27,29 +39,61 @@ impl ServerCertificateConfig {
 #[non_exhaustive]
 pub struct ServerCertificateConfigBuilder {
     pub(crate) enable_ocsp_check: ::std::option::Option<bool>,
+    pub(crate) ocsp_lambda_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) ocsp_authorized_responder_arn: ::std::option::Option<::std::string::String>,
 }
 impl ServerCertificateConfigBuilder {
     /// <p>A Boolean value that indicates whether Online Certificate Status Protocol (OCSP) server certificate check is enabled or not.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-custom-endpoints-cert-config.html">Configuring OCSP server-certificate stapling in domain configuration</a> from Amazon Web Services IoT Core Developer Guide.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-custom-endpoints-cert-config.html"> Server certificate configuration for OCSP stapling</a> from Amazon Web Services IoT Core Developer Guide.</p>
     pub fn enable_ocsp_check(mut self, input: bool) -> Self {
         self.enable_ocsp_check = ::std::option::Option::Some(input);
         self
     }
     /// <p>A Boolean value that indicates whether Online Certificate Status Protocol (OCSP) server certificate check is enabled or not.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-custom-endpoints-cert-config.html">Configuring OCSP server-certificate stapling in domain configuration</a> from Amazon Web Services IoT Core Developer Guide.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-custom-endpoints-cert-config.html"> Server certificate configuration for OCSP stapling</a> from Amazon Web Services IoT Core Developer Guide.</p>
     pub fn set_enable_ocsp_check(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enable_ocsp_check = input;
         self
     }
     /// <p>A Boolean value that indicates whether Online Certificate Status Protocol (OCSP) server certificate check is enabled or not.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-custom-endpoints-cert-config.html">Configuring OCSP server-certificate stapling in domain configuration</a> from Amazon Web Services IoT Core Developer Guide.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-custom-endpoints-cert-config.html"> Server certificate configuration for OCSP stapling</a> from Amazon Web Services IoT Core Developer Guide.</p>
     pub fn get_enable_ocsp_check(&self) -> &::std::option::Option<bool> {
         &self.enable_ocsp_check
+    }
+    /// <p>The Amazon Resource Name (ARN) for a Lambda function that acts as a Request for Comments (RFC) 6960-compliant Online Certificate Status Protocol (OCSP) responder, supporting basic OCSP responses. The Lambda function accepts a JSON string that's Base64-encoded. Therefore, you must convert your OCSP response, which is typically in the Distinguished Encoding Rules (DER) format, into a JSON string that's Base64-encoded. The Lambda function's response is also a Base64-encoded JSON string and the response payload must not exceed 8 kilobytes (KiB) in size. The Lambda function must be in the same Amazon Web Services region and account as the domain configuration.</p>
+    pub fn ocsp_lambda_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.ocsp_lambda_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) for a Lambda function that acts as a Request for Comments (RFC) 6960-compliant Online Certificate Status Protocol (OCSP) responder, supporting basic OCSP responses. The Lambda function accepts a JSON string that's Base64-encoded. Therefore, you must convert your OCSP response, which is typically in the Distinguished Encoding Rules (DER) format, into a JSON string that's Base64-encoded. The Lambda function's response is also a Base64-encoded JSON string and the response payload must not exceed 8 kilobytes (KiB) in size. The Lambda function must be in the same Amazon Web Services region and account as the domain configuration.</p>
+    pub fn set_ocsp_lambda_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.ocsp_lambda_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) for a Lambda function that acts as a Request for Comments (RFC) 6960-compliant Online Certificate Status Protocol (OCSP) responder, supporting basic OCSP responses. The Lambda function accepts a JSON string that's Base64-encoded. Therefore, you must convert your OCSP response, which is typically in the Distinguished Encoding Rules (DER) format, into a JSON string that's Base64-encoded. The Lambda function's response is also a Base64-encoded JSON string and the response payload must not exceed 8 kilobytes (KiB) in size. The Lambda function must be in the same Amazon Web Services region and account as the domain configuration.</p>
+    pub fn get_ocsp_lambda_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ocsp_lambda_arn
+    }
+    /// <p>The Amazon Resource Name (ARN) for an X.509 certificate stored in Amazon Web Services Certificate Manager (ACM). If provided, Amazon Web Services IoT Core will use this certificate to validate the signature of the received OCSP response. The OCSP responder must sign responses using either this authorized responder certificate or the issuing certificate, depending on whether the ARN is provided or not. The certificate must be in the same Amazon Web Services region and account as the domain configuration.</p>
+    pub fn ocsp_authorized_responder_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.ocsp_authorized_responder_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) for an X.509 certificate stored in Amazon Web Services Certificate Manager (ACM). If provided, Amazon Web Services IoT Core will use this certificate to validate the signature of the received OCSP response. The OCSP responder must sign responses using either this authorized responder certificate or the issuing certificate, depending on whether the ARN is provided or not. The certificate must be in the same Amazon Web Services region and account as the domain configuration.</p>
+    pub fn set_ocsp_authorized_responder_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.ocsp_authorized_responder_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) for an X.509 certificate stored in Amazon Web Services Certificate Manager (ACM). If provided, Amazon Web Services IoT Core will use this certificate to validate the signature of the received OCSP response. The OCSP responder must sign responses using either this authorized responder certificate or the issuing certificate, depending on whether the ARN is provided or not. The certificate must be in the same Amazon Web Services region and account as the domain configuration.</p>
+    pub fn get_ocsp_authorized_responder_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ocsp_authorized_responder_arn
     }
     /// Consumes the builder and constructs a [`ServerCertificateConfig`](crate::types::ServerCertificateConfig).
     pub fn build(self) -> crate::types::ServerCertificateConfig {
         crate::types::ServerCertificateConfig {
             enable_ocsp_check: self.enable_ocsp_check,
+            ocsp_lambda_arn: self.ocsp_lambda_arn,
+            ocsp_authorized_responder_arn: self.ocsp_authorized_responder_arn,
         }
     }
 }

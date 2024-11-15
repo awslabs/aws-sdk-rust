@@ -8,6 +8,8 @@ pub struct ThingTypeProperties {
     pub thing_type_description: ::std::option::Option<::std::string::String>,
     /// <p>A list of searchable thing attribute names.</p>
     pub searchable_attributes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The configuration to add user-defined properties to enrich MQTT 5 messages.</p>
+    pub mqtt5_configuration: ::std::option::Option<crate::types::Mqtt5Configuration>,
 }
 impl ThingTypeProperties {
     /// <p>The description of the thing type.</p>
@@ -19,6 +21,10 @@ impl ThingTypeProperties {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.searchable_attributes.is_none()`.
     pub fn searchable_attributes(&self) -> &[::std::string::String] {
         self.searchable_attributes.as_deref().unwrap_or_default()
+    }
+    /// <p>The configuration to add user-defined properties to enrich MQTT 5 messages.</p>
+    pub fn mqtt5_configuration(&self) -> ::std::option::Option<&crate::types::Mqtt5Configuration> {
+        self.mqtt5_configuration.as_ref()
     }
 }
 impl ThingTypeProperties {
@@ -34,6 +40,7 @@ impl ThingTypeProperties {
 pub struct ThingTypePropertiesBuilder {
     pub(crate) thing_type_description: ::std::option::Option<::std::string::String>,
     pub(crate) searchable_attributes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) mqtt5_configuration: ::std::option::Option<crate::types::Mqtt5Configuration>,
 }
 impl ThingTypePropertiesBuilder {
     /// <p>The description of the thing type.</p>
@@ -70,11 +77,26 @@ impl ThingTypePropertiesBuilder {
     pub fn get_searchable_attributes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.searchable_attributes
     }
+    /// <p>The configuration to add user-defined properties to enrich MQTT 5 messages.</p>
+    pub fn mqtt5_configuration(mut self, input: crate::types::Mqtt5Configuration) -> Self {
+        self.mqtt5_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration to add user-defined properties to enrich MQTT 5 messages.</p>
+    pub fn set_mqtt5_configuration(mut self, input: ::std::option::Option<crate::types::Mqtt5Configuration>) -> Self {
+        self.mqtt5_configuration = input;
+        self
+    }
+    /// <p>The configuration to add user-defined properties to enrich MQTT 5 messages.</p>
+    pub fn get_mqtt5_configuration(&self) -> &::std::option::Option<crate::types::Mqtt5Configuration> {
+        &self.mqtt5_configuration
+    }
     /// Consumes the builder and constructs a [`ThingTypeProperties`](crate::types::ThingTypeProperties).
     pub fn build(self) -> crate::types::ThingTypeProperties {
         crate::types::ThingTypeProperties {
             thing_type_description: self.thing_type_description,
             searchable_attributes: self.searchable_attributes,
+            mqtt5_configuration: self.mqtt5_configuration,
         }
     }
 }

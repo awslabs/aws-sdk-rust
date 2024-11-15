@@ -7,6 +7,8 @@ pub struct DeleteFirewallRuleInput {
     pub firewall_rule_group_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the domain list that's used in the rule.</p>
     pub firewall_domain_list_id: ::std::option::Option<::std::string::String>,
+    /// <p>The ID that is created for a DNS Firewall Advanced rule.</p>
+    pub firewall_threat_protection_id: ::std::option::Option<::std::string::String>,
     /// <p>The DNS query type that the rule you are deleting evaluates. Allowed values are;</p>
     /// <ul>
     /// <li>
@@ -48,6 +50,10 @@ impl DeleteFirewallRuleInput {
     /// <p>The ID of the domain list that's used in the rule.</p>
     pub fn firewall_domain_list_id(&self) -> ::std::option::Option<&str> {
         self.firewall_domain_list_id.as_deref()
+    }
+    /// <p>The ID that is created for a DNS Firewall Advanced rule.</p>
+    pub fn firewall_threat_protection_id(&self) -> ::std::option::Option<&str> {
+        self.firewall_threat_protection_id.as_deref()
     }
     /// <p>The DNS query type that the rule you are deleting evaluates. Allowed values are;</p>
     /// <ul>
@@ -97,6 +103,7 @@ impl DeleteFirewallRuleInput {
 pub struct DeleteFirewallRuleInputBuilder {
     pub(crate) firewall_rule_group_id: ::std::option::Option<::std::string::String>,
     pub(crate) firewall_domain_list_id: ::std::option::Option<::std::string::String>,
+    pub(crate) firewall_threat_protection_id: ::std::option::Option<::std::string::String>,
     pub(crate) qtype: ::std::option::Option<::std::string::String>,
 }
 impl DeleteFirewallRuleInputBuilder {
@@ -116,7 +123,6 @@ impl DeleteFirewallRuleInputBuilder {
         &self.firewall_rule_group_id
     }
     /// <p>The ID of the domain list that's used in the rule.</p>
-    /// This field is required.
     pub fn firewall_domain_list_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.firewall_domain_list_id = ::std::option::Option::Some(input.into());
         self
@@ -129,6 +135,20 @@ impl DeleteFirewallRuleInputBuilder {
     /// <p>The ID of the domain list that's used in the rule.</p>
     pub fn get_firewall_domain_list_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.firewall_domain_list_id
+    }
+    /// <p>The ID that is created for a DNS Firewall Advanced rule.</p>
+    pub fn firewall_threat_protection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.firewall_threat_protection_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID that is created for a DNS Firewall Advanced rule.</p>
+    pub fn set_firewall_threat_protection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.firewall_threat_protection_id = input;
+        self
+    }
+    /// <p>The ID that is created for a DNS Firewall Advanced rule.</p>
+    pub fn get_firewall_threat_protection_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.firewall_threat_protection_id
     }
     /// <p>The DNS query type that the rule you are deleting evaluates. Allowed values are;</p>
     /// <ul>
@@ -242,6 +262,7 @@ impl DeleteFirewallRuleInputBuilder {
         ::std::result::Result::Ok(crate::operation::delete_firewall_rule::DeleteFirewallRuleInput {
             firewall_rule_group_id: self.firewall_rule_group_id,
             firewall_domain_list_id: self.firewall_domain_list_id,
+            firewall_threat_protection_id: self.firewall_threat_protection_id,
             qtype: self.qtype,
         })
     }

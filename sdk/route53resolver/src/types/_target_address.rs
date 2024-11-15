@@ -10,33 +10,7 @@ pub struct TargetAddress {
     pub port: ::std::option::Option<i32>,
     /// <p>One IPv6 address that you want to forward DNS queries to.</p>
     pub ipv6: ::std::option::Option<::std::string::String>,
-    /// <p>The protocols for the Resolver endpoints. DoH-FIPS is applicable for inbound endpoints only.</p>
-    /// <p>For an inbound endpoint you can apply the protocols as follows:</p>
-    /// <ul>
-    /// <li>
-    /// <p>Do53 and DoH in combination.</p></li>
-    /// <li>
-    /// <p>Do53 and DoH-FIPS in combination.</p></li>
-    /// <li>
-    /// <p>Do53 alone.</p></li>
-    /// <li>
-    /// <p>DoH alone.</p></li>
-    /// <li>
-    /// <p>DoH-FIPS alone.</p></li>
-    /// <li>
-    /// <p>None, which is treated as Do53.</p></li>
-    /// </ul>
-    /// <p>For an outbound endpoint you can apply the protocols as follows:</p>
-    /// <ul>
-    /// <li>
-    /// <p>Do53 and DoH in combination.</p></li>
-    /// <li>
-    /// <p>Do53 alone.</p></li>
-    /// <li>
-    /// <p>DoH alone.</p></li>
-    /// <li>
-    /// <p>None, which is treated as Do53.</p></li>
-    /// </ul>
+    /// <p>The protocols for the target address. The protocol you choose needs to be supported by the outbound endpoint of the Resolver rule.</p>
     pub protocol: ::std::option::Option<crate::types::Protocol>,
     /// <p>The Server Name Indication of the DoH server that you want to forward queries to. This is only used if the Protocol of the <code>TargetAddress</code> is <code>DoH</code>.</p>
     pub server_name_indication: ::std::option::Option<::std::string::String>,
@@ -54,33 +28,7 @@ impl TargetAddress {
     pub fn ipv6(&self) -> ::std::option::Option<&str> {
         self.ipv6.as_deref()
     }
-    /// <p>The protocols for the Resolver endpoints. DoH-FIPS is applicable for inbound endpoints only.</p>
-    /// <p>For an inbound endpoint you can apply the protocols as follows:</p>
-    /// <ul>
-    /// <li>
-    /// <p>Do53 and DoH in combination.</p></li>
-    /// <li>
-    /// <p>Do53 and DoH-FIPS in combination.</p></li>
-    /// <li>
-    /// <p>Do53 alone.</p></li>
-    /// <li>
-    /// <p>DoH alone.</p></li>
-    /// <li>
-    /// <p>DoH-FIPS alone.</p></li>
-    /// <li>
-    /// <p>None, which is treated as Do53.</p></li>
-    /// </ul>
-    /// <p>For an outbound endpoint you can apply the protocols as follows:</p>
-    /// <ul>
-    /// <li>
-    /// <p>Do53 and DoH in combination.</p></li>
-    /// <li>
-    /// <p>Do53 alone.</p></li>
-    /// <li>
-    /// <p>DoH alone.</p></li>
-    /// <li>
-    /// <p>None, which is treated as Do53.</p></li>
-    /// </ul>
+    /// <p>The protocols for the target address. The protocol you choose needs to be supported by the outbound endpoint of the Resolver rule.</p>
     pub fn protocol(&self) -> ::std::option::Option<&crate::types::Protocol> {
         self.protocol.as_ref()
     }
@@ -149,95 +97,17 @@ impl TargetAddressBuilder {
     pub fn get_ipv6(&self) -> &::std::option::Option<::std::string::String> {
         &self.ipv6
     }
-    /// <p>The protocols for the Resolver endpoints. DoH-FIPS is applicable for inbound endpoints only.</p>
-    /// <p>For an inbound endpoint you can apply the protocols as follows:</p>
-    /// <ul>
-    /// <li>
-    /// <p>Do53 and DoH in combination.</p></li>
-    /// <li>
-    /// <p>Do53 and DoH-FIPS in combination.</p></li>
-    /// <li>
-    /// <p>Do53 alone.</p></li>
-    /// <li>
-    /// <p>DoH alone.</p></li>
-    /// <li>
-    /// <p>DoH-FIPS alone.</p></li>
-    /// <li>
-    /// <p>None, which is treated as Do53.</p></li>
-    /// </ul>
-    /// <p>For an outbound endpoint you can apply the protocols as follows:</p>
-    /// <ul>
-    /// <li>
-    /// <p>Do53 and DoH in combination.</p></li>
-    /// <li>
-    /// <p>Do53 alone.</p></li>
-    /// <li>
-    /// <p>DoH alone.</p></li>
-    /// <li>
-    /// <p>None, which is treated as Do53.</p></li>
-    /// </ul>
+    /// <p>The protocols for the target address. The protocol you choose needs to be supported by the outbound endpoint of the Resolver rule.</p>
     pub fn protocol(mut self, input: crate::types::Protocol) -> Self {
         self.protocol = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The protocols for the Resolver endpoints. DoH-FIPS is applicable for inbound endpoints only.</p>
-    /// <p>For an inbound endpoint you can apply the protocols as follows:</p>
-    /// <ul>
-    /// <li>
-    /// <p>Do53 and DoH in combination.</p></li>
-    /// <li>
-    /// <p>Do53 and DoH-FIPS in combination.</p></li>
-    /// <li>
-    /// <p>Do53 alone.</p></li>
-    /// <li>
-    /// <p>DoH alone.</p></li>
-    /// <li>
-    /// <p>DoH-FIPS alone.</p></li>
-    /// <li>
-    /// <p>None, which is treated as Do53.</p></li>
-    /// </ul>
-    /// <p>For an outbound endpoint you can apply the protocols as follows:</p>
-    /// <ul>
-    /// <li>
-    /// <p>Do53 and DoH in combination.</p></li>
-    /// <li>
-    /// <p>Do53 alone.</p></li>
-    /// <li>
-    /// <p>DoH alone.</p></li>
-    /// <li>
-    /// <p>None, which is treated as Do53.</p></li>
-    /// </ul>
+    /// <p>The protocols for the target address. The protocol you choose needs to be supported by the outbound endpoint of the Resolver rule.</p>
     pub fn set_protocol(mut self, input: ::std::option::Option<crate::types::Protocol>) -> Self {
         self.protocol = input;
         self
     }
-    /// <p>The protocols for the Resolver endpoints. DoH-FIPS is applicable for inbound endpoints only.</p>
-    /// <p>For an inbound endpoint you can apply the protocols as follows:</p>
-    /// <ul>
-    /// <li>
-    /// <p>Do53 and DoH in combination.</p></li>
-    /// <li>
-    /// <p>Do53 and DoH-FIPS in combination.</p></li>
-    /// <li>
-    /// <p>Do53 alone.</p></li>
-    /// <li>
-    /// <p>DoH alone.</p></li>
-    /// <li>
-    /// <p>DoH-FIPS alone.</p></li>
-    /// <li>
-    /// <p>None, which is treated as Do53.</p></li>
-    /// </ul>
-    /// <p>For an outbound endpoint you can apply the protocols as follows:</p>
-    /// <ul>
-    /// <li>
-    /// <p>Do53 and DoH in combination.</p></li>
-    /// <li>
-    /// <p>Do53 alone.</p></li>
-    /// <li>
-    /// <p>DoH alone.</p></li>
-    /// <li>
-    /// <p>None, which is treated as Do53.</p></li>
-    /// </ul>
+    /// <p>The protocols for the target address. The protocol you choose needs to be supported by the outbound endpoint of the Resolver rule.</p>
     pub fn get_protocol(&self) -> &::std::option::Option<crate::types::Protocol> {
         &self.protocol
     }

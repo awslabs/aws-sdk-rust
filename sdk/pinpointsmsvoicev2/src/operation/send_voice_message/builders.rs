@@ -291,4 +291,18 @@ impl SendVoiceMessageFluentBuilder {
     pub fn get_protect_configuration_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_protect_configuration_id()
     }
+    /// <p>Set to true to enable message feedback for the message. When a user receives the message you need to update the message status using <code>PutMessageFeedback</code>.</p>
+    pub fn message_feedback_enabled(mut self, input: bool) -> Self {
+        self.inner = self.inner.message_feedback_enabled(input);
+        self
+    }
+    /// <p>Set to true to enable message feedback for the message. When a user receives the message you need to update the message status using <code>PutMessageFeedback</code>.</p>
+    pub fn set_message_feedback_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_message_feedback_enabled(input);
+        self
+    }
+    /// <p>Set to true to enable message feedback for the message. When a user receives the message you need to update the message status using <code>PutMessageFeedback</code>.</p>
+    pub fn get_message_feedback_enabled(&self) -> &::std::option::Option<bool> {
+        self.inner.get_message_feedback_enabled()
+    }
 }

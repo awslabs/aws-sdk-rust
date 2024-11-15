@@ -10,7 +10,7 @@ pub struct DescribeThingTypeOutput {
     pub thing_type_id: ::std::option::Option<::std::string::String>,
     /// <p>The thing type ARN.</p>
     pub thing_type_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The ThingTypeProperties contains information about the thing type including description, and a list of searchable thing attribute names.</p>
+    /// <p>The ThingTypeProperties contains information about the thing type including description, a list of searchable thing attribute names, and MQTT5 configuration.</p>
     pub thing_type_properties: ::std::option::Option<crate::types::ThingTypeProperties>,
     /// <p>The ThingTypeMetadata contains additional information about the thing type including: creation date and time, a value indicating whether the thing type is deprecated, and a date and time when it was deprecated.</p>
     pub thing_type_metadata: ::std::option::Option<crate::types::ThingTypeMetadata>,
@@ -29,7 +29,7 @@ impl DescribeThingTypeOutput {
     pub fn thing_type_arn(&self) -> ::std::option::Option<&str> {
         self.thing_type_arn.as_deref()
     }
-    /// <p>The ThingTypeProperties contains information about the thing type including description, and a list of searchable thing attribute names.</p>
+    /// <p>The ThingTypeProperties contains information about the thing type including description, a list of searchable thing attribute names, and MQTT5 configuration.</p>
     pub fn thing_type_properties(&self) -> ::std::option::Option<&crate::types::ThingTypeProperties> {
         self.thing_type_properties.as_ref()
     }
@@ -104,17 +104,17 @@ impl DescribeThingTypeOutputBuilder {
     pub fn get_thing_type_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.thing_type_arn
     }
-    /// <p>The ThingTypeProperties contains information about the thing type including description, and a list of searchable thing attribute names.</p>
+    /// <p>The ThingTypeProperties contains information about the thing type including description, a list of searchable thing attribute names, and MQTT5 configuration.</p>
     pub fn thing_type_properties(mut self, input: crate::types::ThingTypeProperties) -> Self {
         self.thing_type_properties = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The ThingTypeProperties contains information about the thing type including description, and a list of searchable thing attribute names.</p>
+    /// <p>The ThingTypeProperties contains information about the thing type including description, a list of searchable thing attribute names, and MQTT5 configuration.</p>
     pub fn set_thing_type_properties(mut self, input: ::std::option::Option<crate::types::ThingTypeProperties>) -> Self {
         self.thing_type_properties = input;
         self
     }
-    /// <p>The ThingTypeProperties contains information about the thing type including description, and a list of searchable thing attribute names.</p>
+    /// <p>The ThingTypeProperties contains information about the thing type including description, a list of searchable thing attribute names, and MQTT5 configuration.</p>
     pub fn get_thing_type_properties(&self) -> &::std::option::Option<crate::types::ThingTypeProperties> {
         &self.thing_type_properties
     }

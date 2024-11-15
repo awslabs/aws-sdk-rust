@@ -21,6 +21,22 @@ pub fn ser_put_metric_data_input_input_input(
         }
         list_6.finish();
     }
+    #[allow(unused_mut)]
+    let mut scope_8 = writer.prefix("EntityMetricData");
+    if let Some(var_9) = &input.entity_metric_data {
+        let mut list_11 = scope_8.start_list(false, None);
+        for item_10 in var_9 {
+            #[allow(unused_mut)]
+            let mut entry_12 = list_11.entry();
+            crate::protocol_serde::shape_entity_metric_data::ser_entity_metric_data(entry_12, item_10)?;
+        }
+        list_11.finish();
+    }
+    #[allow(unused_mut)]
+    let mut scope_13 = writer.prefix("StrictEntityValidation");
+    if let Some(var_14) = &input.strict_entity_validation {
+        scope_13.boolean(*var_14);
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

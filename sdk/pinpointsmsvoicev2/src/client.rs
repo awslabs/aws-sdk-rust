@@ -209,6 +209,8 @@ mod delete_pool;
 
 mod delete_protect_configuration;
 
+mod delete_protect_configuration_rule_set_number_override;
+
 mod delete_registration;
 
 mod delete_registration_attachment;
@@ -273,13 +275,19 @@ mod get_resource_policy;
 
 mod list_pool_origination_identities;
 
+mod list_protect_configuration_rule_set_number_overrides;
+
 mod list_registration_associations;
 
 mod list_tags_for_resource;
 
 mod put_keyword;
 
+mod put_message_feedback;
+
 mod put_opted_out_number;
+
+mod put_protect_configuration_rule_set_number_override;
 
 mod put_registration_field_value;
 
@@ -302,6 +310,8 @@ mod send_text_message;
 mod send_voice_message;
 
 mod set_account_default_protect_configuration;
+
+mod set_default_message_feedback_enabled;
 
 mod set_default_message_type;
 

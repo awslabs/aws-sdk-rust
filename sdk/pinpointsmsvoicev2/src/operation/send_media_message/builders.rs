@@ -206,17 +206,17 @@ impl SendMediaMessageFluentBuilder {
     pub fn get_max_price(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_max_price()
     }
-    /// <p>How long the text message is valid for. By default this is 72 hours.</p>
+    /// <p>How long the media message is valid for. By default this is 72 hours.</p>
     pub fn time_to_live(mut self, input: i32) -> Self {
         self.inner = self.inner.time_to_live(input);
         self
     }
-    /// <p>How long the text message is valid for. By default this is 72 hours.</p>
+    /// <p>How long the media message is valid for. By default this is 72 hours.</p>
     pub fn set_time_to_live(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_time_to_live(input);
         self
     }
-    /// <p>How long the text message is valid for. By default this is 72 hours.</p>
+    /// <p>How long the media message is valid for. By default this is 72 hours.</p>
     pub fn get_time_to_live(&self) -> &::std::option::Option<i32> {
         self.inner.get_time_to_live()
     }
@@ -266,5 +266,19 @@ impl SendMediaMessageFluentBuilder {
     /// <p>The unique identifier of the protect configuration to use.</p>
     pub fn get_protect_configuration_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_protect_configuration_id()
+    }
+    /// <p>Set to true to enable message feedback for the message. When a user receives the message you need to update the message status using <code>PutMessageFeedback</code>.</p>
+    pub fn message_feedback_enabled(mut self, input: bool) -> Self {
+        self.inner = self.inner.message_feedback_enabled(input);
+        self
+    }
+    /// <p>Set to true to enable message feedback for the message. When a user receives the message you need to update the message status using <code>PutMessageFeedback</code>.</p>
+    pub fn set_message_feedback_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_message_feedback_enabled(input);
+        self
+    }
+    /// <p>Set to true to enable message feedback for the message. When a user receives the message you need to update the message status using <code>PutMessageFeedback</code>.</p>
+    pub fn get_message_feedback_enabled(&self) -> &::std::option::Option<bool> {
+        self.inner.get_message_feedback_enabled()
     }
 }

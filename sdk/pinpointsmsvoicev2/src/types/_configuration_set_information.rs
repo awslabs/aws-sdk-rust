@@ -14,6 +14,8 @@ pub struct ConfigurationSetInformation {
     pub default_message_type: ::std::option::Option<crate::types::MessageType>,
     /// <p>The default sender ID used by the ConfigurationSet.</p>
     pub default_sender_id: ::std::option::Option<::std::string::String>,
+    /// <p>True if message feedback is enabled.</p>
+    pub default_message_feedback_enabled: ::std::option::Option<bool>,
     /// <p>The time when the ConfigurationSet was created, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
     pub created_timestamp: ::aws_smithy_types::DateTime,
     /// <p>The unique identifier for the protect configuration.</p>
@@ -43,6 +45,10 @@ impl ConfigurationSetInformation {
     pub fn default_sender_id(&self) -> ::std::option::Option<&str> {
         self.default_sender_id.as_deref()
     }
+    /// <p>True if message feedback is enabled.</p>
+    pub fn default_message_feedback_enabled(&self) -> ::std::option::Option<bool> {
+        self.default_message_feedback_enabled
+    }
     /// <p>The time when the ConfigurationSet was created, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
     pub fn created_timestamp(&self) -> &::aws_smithy_types::DateTime {
         &self.created_timestamp
@@ -68,6 +74,7 @@ pub struct ConfigurationSetInformationBuilder {
     pub(crate) event_destinations: ::std::option::Option<::std::vec::Vec<crate::types::EventDestination>>,
     pub(crate) default_message_type: ::std::option::Option<crate::types::MessageType>,
     pub(crate) default_sender_id: ::std::option::Option<::std::string::String>,
+    pub(crate) default_message_feedback_enabled: ::std::option::Option<bool>,
     pub(crate) created_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) protect_configuration_id: ::std::option::Option<::std::string::String>,
 }
@@ -150,6 +157,20 @@ impl ConfigurationSetInformationBuilder {
     pub fn get_default_sender_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.default_sender_id
     }
+    /// <p>True if message feedback is enabled.</p>
+    pub fn default_message_feedback_enabled(mut self, input: bool) -> Self {
+        self.default_message_feedback_enabled = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>True if message feedback is enabled.</p>
+    pub fn set_default_message_feedback_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.default_message_feedback_enabled = input;
+        self
+    }
+    /// <p>True if message feedback is enabled.</p>
+    pub fn get_default_message_feedback_enabled(&self) -> &::std::option::Option<bool> {
+        &self.default_message_feedback_enabled
+    }
     /// <p>The time when the ConfigurationSet was created, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
     /// This field is required.
     pub fn created_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -207,6 +228,7 @@ impl ConfigurationSetInformationBuilder {
             })?,
             default_message_type: self.default_message_type,
             default_sender_id: self.default_sender_id,
+            default_message_feedback_enabled: self.default_message_feedback_enabled,
             created_timestamp: self.created_timestamp.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "created_timestamp",

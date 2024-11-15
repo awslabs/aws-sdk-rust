@@ -6,8 +6,37 @@ pub struct PutMetricDataInput {
     /// <p>The namespace for the metric data. You can use ASCII characters for the namespace, except for control characters which are not supported.</p>
     /// <p>To avoid conflicts with Amazon Web Services service namespaces, you should not specify a namespace that begins with <code>AWS/</code></p>
     pub namespace: ::std::option::Option<::std::string::String>,
-    /// <p>The data for the metric. The array can include no more than 1000 metrics per call.</p>
+    /// <p>The data for the metrics. Use this parameter if your metrics do not contain associated entities. The array can include no more than 1000 metrics per call.</p>
+    /// <p>The limit of metrics allowed, 1000, is the sum of both <code>EntityMetricData</code> and <code>MetricData</code> metrics.</p>
     pub metric_data: ::std::option::Option<::std::vec::Vec<crate::types::MetricDatum>>,
+    /// <p>Data for metrics that contain associated entity information. You can include up to two <code>EntityMetricData</code> objects, each of which can contain a single <code>Entity</code> and associated metrics.</p>
+    /// <p>The limit of metrics allowed, 1000, is the sum of both <code>EntityMetricData</code> and <code>MetricData</code> metrics.</p>
+    pub entity_metric_data: ::std::option::Option<::std::vec::Vec<crate::types::EntityMetricData>>,
+    /// <p>Whether to accept valid metric data when an invalid entity is sent.</p>
+    /// <ul>
+    /// <li>
+    /// <p>When set to <code>true</code>: Any validation error (for entity or metric data) will fail the entire request, and no data will be ingested. The failed operation will return a 400 result with the error.</p></li>
+    /// <li>
+    /// <p>When set to <code>false</code>: Validation errors in the entity will not associate the metric with the entity, but the metric data will still be accepted and ingested. Validation errors in the metric data will fail the entire request, and no data will be ingested.</p>
+    /// <p>In the case of an invalid entity, the operation will return a <code>200</code> status, but an additional response header will contain information about the validation errors. The new header, <code>X-Amzn-Failure-Message</code> is an enumeration of the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>InvalidEntity</code> - The provided entity is invalid.</p></li>
+    /// <li>
+    /// <p><code>InvalidKeyAttributes</code> - The provided <code>KeyAttributes</code> of an entity is invalid.</p></li>
+    /// <li>
+    /// <p><code>InvalidAttributes</code> - The provided <code>Attributes</code> of an entity is invalid.</p></li>
+    /// <li>
+    /// <p><code>InvalidTypeValue</code> - The provided <code>Type</code> in the <code>KeyAttributes</code> of an entity is invalid.</p></li>
+    /// <li>
+    /// <p><code>EntitySizeTooLarge</code> - The number of <code>EntityMetricData</code> objects allowed is 2.</p></li>
+    /// <li>
+    /// <p><code>MissingRequiredFields</code> - There are missing required fields in the <code>KeyAttributes</code> for the provided <code>Type</code>.</p></li>
+    /// </ul>
+    /// <p>For details of the requirements for specifying an entity, see <a href="https://docs.aws.amazon.com/adding-your-own-related-telemetry.html">How to add related information to telemetry</a> in the <i>CloudWatch User Guide</i>.</p></li>
+    /// </ul>
+    /// <p>This parameter is <i>required</i> when <code>EntityMetricData</code> is included.</p>
+    pub strict_entity_validation: ::std::option::Option<bool>,
 }
 impl PutMetricDataInput {
     /// <p>The namespace for the metric data. You can use ASCII characters for the namespace, except for control characters which are not supported.</p>
@@ -15,11 +44,46 @@ impl PutMetricDataInput {
     pub fn namespace(&self) -> ::std::option::Option<&str> {
         self.namespace.as_deref()
     }
-    /// <p>The data for the metric. The array can include no more than 1000 metrics per call.</p>
+    /// <p>The data for the metrics. Use this parameter if your metrics do not contain associated entities. The array can include no more than 1000 metrics per call.</p>
+    /// <p>The limit of metrics allowed, 1000, is the sum of both <code>EntityMetricData</code> and <code>MetricData</code> metrics.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.metric_data.is_none()`.
     pub fn metric_data(&self) -> &[crate::types::MetricDatum] {
         self.metric_data.as_deref().unwrap_or_default()
+    }
+    /// <p>Data for metrics that contain associated entity information. You can include up to two <code>EntityMetricData</code> objects, each of which can contain a single <code>Entity</code> and associated metrics.</p>
+    /// <p>The limit of metrics allowed, 1000, is the sum of both <code>EntityMetricData</code> and <code>MetricData</code> metrics.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.entity_metric_data.is_none()`.
+    pub fn entity_metric_data(&self) -> &[crate::types::EntityMetricData] {
+        self.entity_metric_data.as_deref().unwrap_or_default()
+    }
+    /// <p>Whether to accept valid metric data when an invalid entity is sent.</p>
+    /// <ul>
+    /// <li>
+    /// <p>When set to <code>true</code>: Any validation error (for entity or metric data) will fail the entire request, and no data will be ingested. The failed operation will return a 400 result with the error.</p></li>
+    /// <li>
+    /// <p>When set to <code>false</code>: Validation errors in the entity will not associate the metric with the entity, but the metric data will still be accepted and ingested. Validation errors in the metric data will fail the entire request, and no data will be ingested.</p>
+    /// <p>In the case of an invalid entity, the operation will return a <code>200</code> status, but an additional response header will contain information about the validation errors. The new header, <code>X-Amzn-Failure-Message</code> is an enumeration of the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>InvalidEntity</code> - The provided entity is invalid.</p></li>
+    /// <li>
+    /// <p><code>InvalidKeyAttributes</code> - The provided <code>KeyAttributes</code> of an entity is invalid.</p></li>
+    /// <li>
+    /// <p><code>InvalidAttributes</code> - The provided <code>Attributes</code> of an entity is invalid.</p></li>
+    /// <li>
+    /// <p><code>InvalidTypeValue</code> - The provided <code>Type</code> in the <code>KeyAttributes</code> of an entity is invalid.</p></li>
+    /// <li>
+    /// <p><code>EntitySizeTooLarge</code> - The number of <code>EntityMetricData</code> objects allowed is 2.</p></li>
+    /// <li>
+    /// <p><code>MissingRequiredFields</code> - There are missing required fields in the <code>KeyAttributes</code> for the provided <code>Type</code>.</p></li>
+    /// </ul>
+    /// <p>For details of the requirements for specifying an entity, see <a href="https://docs.aws.amazon.com/adding-your-own-related-telemetry.html">How to add related information to telemetry</a> in the <i>CloudWatch User Guide</i>.</p></li>
+    /// </ul>
+    /// <p>This parameter is <i>required</i> when <code>EntityMetricData</code> is included.</p>
+    pub fn strict_entity_validation(&self) -> ::std::option::Option<bool> {
+        self.strict_entity_validation
     }
 }
 impl PutMetricDataInput {
@@ -35,6 +99,8 @@ impl PutMetricDataInput {
 pub struct PutMetricDataInputBuilder {
     pub(crate) namespace: ::std::option::Option<::std::string::String>,
     pub(crate) metric_data: ::std::option::Option<::std::vec::Vec<crate::types::MetricDatum>>,
+    pub(crate) entity_metric_data: ::std::option::Option<::std::vec::Vec<crate::types::EntityMetricData>>,
+    pub(crate) strict_entity_validation: ::std::option::Option<bool>,
 }
 impl PutMetricDataInputBuilder {
     /// <p>The namespace for the metric data. You can use ASCII characters for the namespace, except for control characters which are not supported.</p>
@@ -59,21 +125,130 @@ impl PutMetricDataInputBuilder {
     ///
     /// To override the contents of this collection use [`set_metric_data`](Self::set_metric_data).
     ///
-    /// <p>The data for the metric. The array can include no more than 1000 metrics per call.</p>
+    /// <p>The data for the metrics. Use this parameter if your metrics do not contain associated entities. The array can include no more than 1000 metrics per call.</p>
+    /// <p>The limit of metrics allowed, 1000, is the sum of both <code>EntityMetricData</code> and <code>MetricData</code> metrics.</p>
     pub fn metric_data(mut self, input: crate::types::MetricDatum) -> Self {
         let mut v = self.metric_data.unwrap_or_default();
         v.push(input);
         self.metric_data = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The data for the metric. The array can include no more than 1000 metrics per call.</p>
+    /// <p>The data for the metrics. Use this parameter if your metrics do not contain associated entities. The array can include no more than 1000 metrics per call.</p>
+    /// <p>The limit of metrics allowed, 1000, is the sum of both <code>EntityMetricData</code> and <code>MetricData</code> metrics.</p>
     pub fn set_metric_data(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MetricDatum>>) -> Self {
         self.metric_data = input;
         self
     }
-    /// <p>The data for the metric. The array can include no more than 1000 metrics per call.</p>
+    /// <p>The data for the metrics. Use this parameter if your metrics do not contain associated entities. The array can include no more than 1000 metrics per call.</p>
+    /// <p>The limit of metrics allowed, 1000, is the sum of both <code>EntityMetricData</code> and <code>MetricData</code> metrics.</p>
     pub fn get_metric_data(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricDatum>> {
         &self.metric_data
+    }
+    /// Appends an item to `entity_metric_data`.
+    ///
+    /// To override the contents of this collection use [`set_entity_metric_data`](Self::set_entity_metric_data).
+    ///
+    /// <p>Data for metrics that contain associated entity information. You can include up to two <code>EntityMetricData</code> objects, each of which can contain a single <code>Entity</code> and associated metrics.</p>
+    /// <p>The limit of metrics allowed, 1000, is the sum of both <code>EntityMetricData</code> and <code>MetricData</code> metrics.</p>
+    pub fn entity_metric_data(mut self, input: crate::types::EntityMetricData) -> Self {
+        let mut v = self.entity_metric_data.unwrap_or_default();
+        v.push(input);
+        self.entity_metric_data = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Data for metrics that contain associated entity information. You can include up to two <code>EntityMetricData</code> objects, each of which can contain a single <code>Entity</code> and associated metrics.</p>
+    /// <p>The limit of metrics allowed, 1000, is the sum of both <code>EntityMetricData</code> and <code>MetricData</code> metrics.</p>
+    pub fn set_entity_metric_data(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EntityMetricData>>) -> Self {
+        self.entity_metric_data = input;
+        self
+    }
+    /// <p>Data for metrics that contain associated entity information. You can include up to two <code>EntityMetricData</code> objects, each of which can contain a single <code>Entity</code> and associated metrics.</p>
+    /// <p>The limit of metrics allowed, 1000, is the sum of both <code>EntityMetricData</code> and <code>MetricData</code> metrics.</p>
+    pub fn get_entity_metric_data(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EntityMetricData>> {
+        &self.entity_metric_data
+    }
+    /// <p>Whether to accept valid metric data when an invalid entity is sent.</p>
+    /// <ul>
+    /// <li>
+    /// <p>When set to <code>true</code>: Any validation error (for entity or metric data) will fail the entire request, and no data will be ingested. The failed operation will return a 400 result with the error.</p></li>
+    /// <li>
+    /// <p>When set to <code>false</code>: Validation errors in the entity will not associate the metric with the entity, but the metric data will still be accepted and ingested. Validation errors in the metric data will fail the entire request, and no data will be ingested.</p>
+    /// <p>In the case of an invalid entity, the operation will return a <code>200</code> status, but an additional response header will contain information about the validation errors. The new header, <code>X-Amzn-Failure-Message</code> is an enumeration of the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>InvalidEntity</code> - The provided entity is invalid.</p></li>
+    /// <li>
+    /// <p><code>InvalidKeyAttributes</code> - The provided <code>KeyAttributes</code> of an entity is invalid.</p></li>
+    /// <li>
+    /// <p><code>InvalidAttributes</code> - The provided <code>Attributes</code> of an entity is invalid.</p></li>
+    /// <li>
+    /// <p><code>InvalidTypeValue</code> - The provided <code>Type</code> in the <code>KeyAttributes</code> of an entity is invalid.</p></li>
+    /// <li>
+    /// <p><code>EntitySizeTooLarge</code> - The number of <code>EntityMetricData</code> objects allowed is 2.</p></li>
+    /// <li>
+    /// <p><code>MissingRequiredFields</code> - There are missing required fields in the <code>KeyAttributes</code> for the provided <code>Type</code>.</p></li>
+    /// </ul>
+    /// <p>For details of the requirements for specifying an entity, see <a href="https://docs.aws.amazon.com/adding-your-own-related-telemetry.html">How to add related information to telemetry</a> in the <i>CloudWatch User Guide</i>.</p></li>
+    /// </ul>
+    /// <p>This parameter is <i>required</i> when <code>EntityMetricData</code> is included.</p>
+    pub fn strict_entity_validation(mut self, input: bool) -> Self {
+        self.strict_entity_validation = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Whether to accept valid metric data when an invalid entity is sent.</p>
+    /// <ul>
+    /// <li>
+    /// <p>When set to <code>true</code>: Any validation error (for entity or metric data) will fail the entire request, and no data will be ingested. The failed operation will return a 400 result with the error.</p></li>
+    /// <li>
+    /// <p>When set to <code>false</code>: Validation errors in the entity will not associate the metric with the entity, but the metric data will still be accepted and ingested. Validation errors in the metric data will fail the entire request, and no data will be ingested.</p>
+    /// <p>In the case of an invalid entity, the operation will return a <code>200</code> status, but an additional response header will contain information about the validation errors. The new header, <code>X-Amzn-Failure-Message</code> is an enumeration of the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>InvalidEntity</code> - The provided entity is invalid.</p></li>
+    /// <li>
+    /// <p><code>InvalidKeyAttributes</code> - The provided <code>KeyAttributes</code> of an entity is invalid.</p></li>
+    /// <li>
+    /// <p><code>InvalidAttributes</code> - The provided <code>Attributes</code> of an entity is invalid.</p></li>
+    /// <li>
+    /// <p><code>InvalidTypeValue</code> - The provided <code>Type</code> in the <code>KeyAttributes</code> of an entity is invalid.</p></li>
+    /// <li>
+    /// <p><code>EntitySizeTooLarge</code> - The number of <code>EntityMetricData</code> objects allowed is 2.</p></li>
+    /// <li>
+    /// <p><code>MissingRequiredFields</code> - There are missing required fields in the <code>KeyAttributes</code> for the provided <code>Type</code>.</p></li>
+    /// </ul>
+    /// <p>For details of the requirements for specifying an entity, see <a href="https://docs.aws.amazon.com/adding-your-own-related-telemetry.html">How to add related information to telemetry</a> in the <i>CloudWatch User Guide</i>.</p></li>
+    /// </ul>
+    /// <p>This parameter is <i>required</i> when <code>EntityMetricData</code> is included.</p>
+    pub fn set_strict_entity_validation(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.strict_entity_validation = input;
+        self
+    }
+    /// <p>Whether to accept valid metric data when an invalid entity is sent.</p>
+    /// <ul>
+    /// <li>
+    /// <p>When set to <code>true</code>: Any validation error (for entity or metric data) will fail the entire request, and no data will be ingested. The failed operation will return a 400 result with the error.</p></li>
+    /// <li>
+    /// <p>When set to <code>false</code>: Validation errors in the entity will not associate the metric with the entity, but the metric data will still be accepted and ingested. Validation errors in the metric data will fail the entire request, and no data will be ingested.</p>
+    /// <p>In the case of an invalid entity, the operation will return a <code>200</code> status, but an additional response header will contain information about the validation errors. The new header, <code>X-Amzn-Failure-Message</code> is an enumeration of the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>InvalidEntity</code> - The provided entity is invalid.</p></li>
+    /// <li>
+    /// <p><code>InvalidKeyAttributes</code> - The provided <code>KeyAttributes</code> of an entity is invalid.</p></li>
+    /// <li>
+    /// <p><code>InvalidAttributes</code> - The provided <code>Attributes</code> of an entity is invalid.</p></li>
+    /// <li>
+    /// <p><code>InvalidTypeValue</code> - The provided <code>Type</code> in the <code>KeyAttributes</code> of an entity is invalid.</p></li>
+    /// <li>
+    /// <p><code>EntitySizeTooLarge</code> - The number of <code>EntityMetricData</code> objects allowed is 2.</p></li>
+    /// <li>
+    /// <p><code>MissingRequiredFields</code> - There are missing required fields in the <code>KeyAttributes</code> for the provided <code>Type</code>.</p></li>
+    /// </ul>
+    /// <p>For details of the requirements for specifying an entity, see <a href="https://docs.aws.amazon.com/adding-your-own-related-telemetry.html">How to add related information to telemetry</a> in the <i>CloudWatch User Guide</i>.</p></li>
+    /// </ul>
+    /// <p>This parameter is <i>required</i> when <code>EntityMetricData</code> is included.</p>
+    pub fn get_strict_entity_validation(&self) -> &::std::option::Option<bool> {
+        &self.strict_entity_validation
     }
     /// Consumes the builder and constructs a [`PutMetricDataInput`](crate::operation::put_metric_data::PutMetricDataInput).
     pub fn build(
@@ -82,6 +257,8 @@ impl PutMetricDataInputBuilder {
         ::std::result::Result::Ok(crate::operation::put_metric_data::PutMetricDataInput {
             namespace: self.namespace,
             metric_data: self.metric_data,
+            entity_metric_data: self.entity_metric_data,
+            strict_entity_validation: self.strict_entity_validation,
         })
     }
 }

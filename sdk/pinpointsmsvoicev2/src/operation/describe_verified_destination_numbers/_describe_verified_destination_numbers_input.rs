@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeVerifiedDestinationNumbersInput {
-    /// <p>An array of VerifiedDestinationNumberid to retreive.</p>
+    /// <p>An array of VerifiedDestinationNumberid to retrieve.</p>
     pub verified_destination_number_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>An array of verified destination phone number, in E.164 format.</p>
     pub destination_phone_numbers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -15,7 +15,7 @@ pub struct DescribeVerifiedDestinationNumbersInput {
     pub max_results: ::std::option::Option<i32>,
 }
 impl DescribeVerifiedDestinationNumbersInput {
-    /// <p>An array of VerifiedDestinationNumberid to retreive.</p>
+    /// <p>An array of VerifiedDestinationNumberid to retrieve.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.verified_destination_number_ids.is_none()`.
     pub fn verified_destination_number_ids(&self) -> &[::std::string::String] {
@@ -64,19 +64,19 @@ impl DescribeVerifiedDestinationNumbersInputBuilder {
     ///
     /// To override the contents of this collection use [`set_verified_destination_number_ids`](Self::set_verified_destination_number_ids).
     ///
-    /// <p>An array of VerifiedDestinationNumberid to retreive.</p>
+    /// <p>An array of VerifiedDestinationNumberid to retrieve.</p>
     pub fn verified_destination_number_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.verified_destination_number_ids.unwrap_or_default();
         v.push(input.into());
         self.verified_destination_number_ids = ::std::option::Option::Some(v);
         self
     }
-    /// <p>An array of VerifiedDestinationNumberid to retreive.</p>
+    /// <p>An array of VerifiedDestinationNumberid to retrieve.</p>
     pub fn set_verified_destination_number_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.verified_destination_number_ids = input;
         self
     }
-    /// <p>An array of VerifiedDestinationNumberid to retreive.</p>
+    /// <p>An array of VerifiedDestinationNumberid to retrieve.</p>
     pub fn get_verified_destination_number_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.verified_destination_number_ids
     }

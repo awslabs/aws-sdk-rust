@@ -46,6 +46,10 @@ where
                                     .transpose()?,
                             );
                         }
+                        "DefaultMessageFeedbackEnabled" => {
+                            builder = builder
+                                .set_default_message_feedback_enabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
                         "CreatedTimestamp" => {
                             builder = builder.set_created_timestamp(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                 tokens.next(),

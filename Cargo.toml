@@ -2,12 +2,12 @@
 resolver = "2"
 exclude = [
     "examples/test-utils",
-    "examples/cross_service",
     "examples/examples",
     "examples/webassembly",
+    "examples/cross_service",
     "examples/lambda",
-    "tests/no-default-features",
-    "tests/webassembly"
+    "tests/webassembly",
+    "tests/no-default-features"
 ]
 members = [
     "sdk/accessanalyzer",
@@ -130,6 +130,7 @@ members = [
     "sdk/config",
     "sdk/connect",
     "sdk/connectcampaigns",
+    "sdk/connectcampaignsv2",
     "sdk/connectcases",
     "sdk/connectcontactlens",
     "sdk/connectparticipant",

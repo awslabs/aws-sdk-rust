@@ -199,6 +199,16 @@ pub(crate) fn reflens_list_pool_origination_identities_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_protect_configuration_rule_set_number_overrides_output_output_next_token(
+    input: &crate::operation::list_protect_configuration_rule_set_number_overrides::ListProtectConfigurationRuleSetNumberOverridesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_registration_associations_output_output_next_token(
     input: &crate::operation::list_registration_associations::ListRegistrationAssociationsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -379,6 +389,16 @@ pub(crate) fn lens_list_pool_origination_identities_output_output_origination_id
     input: crate::operation::list_pool_origination_identities::ListPoolOriginationIdentitiesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::OriginationIdentityMetadata>> {
     let input = match input.origination_identities {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_protect_configuration_rule_set_number_overrides_output_output_rule_set_number_overrides(
+    input: crate::operation::list_protect_configuration_rule_set_number_overrides::ListProtectConfigurationRuleSetNumberOverridesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ProtectConfigurationRuleSetNumberOverride>> {
+    let input = match input.rule_set_number_overrides {
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,
     };

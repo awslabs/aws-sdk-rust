@@ -21,6 +21,12 @@ pub use crate::types::_dimension_value_operator::DimensionValueOperator;
 
 pub use crate::types::_topic_rule_destination_status::TopicRuleDestinationStatus;
 
+pub use crate::types::_thing_type_properties::ThingTypeProperties;
+
+pub use crate::types::_mqtt5_configuration::Mqtt5Configuration;
+
+pub use crate::types::_propagating_attribute::PropagatingAttribute;
+
 pub use crate::types::_thing_group_properties::ThingGroupProperties;
 
 pub use crate::types::_attribute_payload::AttributePayload;
@@ -327,13 +333,15 @@ pub use crate::types::_thing_type_definition::ThingTypeDefinition;
 
 pub use crate::types::_thing_type_metadata::ThingTypeMetadata;
 
-pub use crate::types::_thing_type_properties::ThingTypeProperties;
-
 pub use crate::types::_thing_attribute::ThingAttribute;
 
 pub use crate::types::_status::Status;
 
 pub use crate::types::_report_type::ReportType;
+
+pub use crate::types::_thing_principal_object::ThingPrincipalObject;
+
+pub use crate::types::_thing_principal_type::ThingPrincipalType;
 
 pub use crate::types::_group_name_and_arn::GroupNameAndArn;
 
@@ -362,6 +370,8 @@ pub use crate::types::_provisioning_template_version_summary::ProvisioningTempla
 pub use crate::types::_provisioning_template_summary::ProvisioningTemplateSummary;
 
 pub use crate::types::_template_type::TemplateType;
+
+pub use crate::types::_principal_thing_object::PrincipalThingObject;
 
 pub use crate::types::_policy_version::PolicyVersion;
 
@@ -937,6 +947,8 @@ mod _mitigation_action_type;
 
 mod _model_status;
 
+mod _mqtt5_configuration;
+
 mod _mqtt_context;
 
 mod _mqtt_headers;
@@ -978,6 +990,10 @@ mod _policy_version;
 mod _policy_version_identifier;
 
 mod _presigned_url_config;
+
+mod _principal_thing_object;
+
+mod _propagating_attribute;
 
 mod _protocol;
 
@@ -1114,6 +1130,10 @@ mod _thing_group_properties;
 mod _thing_indexing_configuration;
 
 mod _thing_indexing_mode;
+
+mod _thing_principal_object;
+
+mod _thing_principal_type;
 
 mod _thing_type_definition;
 

@@ -12,6 +12,7 @@
 /// ```text
 /// # let paymentterm = unimplemented!();
 /// match paymentterm {
+///     PaymentTerm::FiveYears => { /* ... */ },
 ///     PaymentTerm::OneYear => { /* ... */ },
 ///     PaymentTerm::ThreeYears => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -42,6 +43,8 @@
 )]
 pub enum PaymentTerm {
     #[allow(missing_docs)] // documentation missing in model
+    FiveYears,
+    #[allow(missing_docs)] // documentation missing in model
     OneYear,
     #[allow(missing_docs)] // documentation missing in model
     ThreeYears,
@@ -52,6 +55,7 @@ pub enum PaymentTerm {
 impl ::std::convert::From<&str> for PaymentTerm {
     fn from(s: &str) -> Self {
         match s {
+            "FIVE_YEARS" => PaymentTerm::FiveYears,
             "ONE_YEAR" => PaymentTerm::OneYear,
             "THREE_YEARS" => PaymentTerm::ThreeYears,
             other => PaymentTerm::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -69,6 +73,7 @@ impl PaymentTerm {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            PaymentTerm::FiveYears => "FIVE_YEARS",
             PaymentTerm::OneYear => "ONE_YEAR",
             PaymentTerm::ThreeYears => "THREE_YEARS",
             PaymentTerm::Unknown(value) => value.as_str(),
@@ -76,7 +81,7 @@ impl PaymentTerm {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ONE_YEAR", "THREE_YEARS"]
+        &["FIVE_YEARS", "ONE_YEAR", "THREE_YEARS"]
     }
 }
 impl ::std::convert::AsRef<str> for PaymentTerm {
@@ -99,6 +104,7 @@ impl PaymentTerm {
 impl ::std::fmt::Display for PaymentTerm {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            PaymentTerm::FiveYears => write!(f, "FIVE_YEARS"),
             PaymentTerm::OneYear => write!(f, "ONE_YEAR"),
             PaymentTerm::ThreeYears => write!(f, "THREE_YEARS"),
             PaymentTerm::Unknown(value) => write!(f, "{}", value),
