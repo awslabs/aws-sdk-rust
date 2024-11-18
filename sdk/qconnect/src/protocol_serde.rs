@@ -23,6 +23,8 @@ pub fn parse_http_error_metadata(
     crate::json_errors::parse_error_metadata(response_body, response_headers)
 }
 
+pub(crate) mod shape_activate_message_template;
+
 pub(crate) mod shape_create_ai_agent;
 
 pub(crate) mod shape_create_ai_agent_version;
@@ -41,9 +43,17 @@ pub(crate) mod shape_create_content_association;
 
 pub(crate) mod shape_create_knowledge_base;
 
+pub(crate) mod shape_create_message_template;
+
+pub(crate) mod shape_create_message_template_attachment;
+
+pub(crate) mod shape_create_message_template_version;
+
 pub(crate) mod shape_create_quick_response;
 
 pub(crate) mod shape_create_session;
+
+pub(crate) mod shape_deactivate_message_template;
 
 pub(crate) mod shape_delete_ai_agent;
 
@@ -65,6 +75,10 @@ pub(crate) mod shape_delete_import_job;
 
 pub(crate) mod shape_delete_knowledge_base;
 
+pub(crate) mod shape_delete_message_template;
+
+pub(crate) mod shape_delete_message_template_attachment;
+
 pub(crate) mod shape_delete_quick_response;
 
 pub(crate) mod shape_get_ai_agent;
@@ -84,6 +98,8 @@ pub(crate) mod shape_get_content_summary;
 pub(crate) mod shape_get_import_job;
 
 pub(crate) mod shape_get_knowledge_base;
+
+pub(crate) mod shape_get_message_template;
 
 pub(crate) mod shape_get_quick_response;
 
@@ -111,6 +127,10 @@ pub(crate) mod shape_list_import_jobs;
 
 pub(crate) mod shape_list_knowledge_bases;
 
+pub(crate) mod shape_list_message_template_versions;
+
+pub(crate) mod shape_list_message_templates;
+
 pub(crate) mod shape_list_quick_responses;
 
 pub(crate) mod shape_list_tags_for_resource;
@@ -125,7 +145,11 @@ pub(crate) mod shape_remove_assistant_ai_agent;
 
 pub(crate) mod shape_remove_knowledge_base_template_uri;
 
+pub(crate) mod shape_render_message_template;
+
 pub(crate) mod shape_search_content;
+
+pub(crate) mod shape_search_message_templates;
 
 pub(crate) mod shape_search_quick_responses;
 
@@ -149,6 +173,10 @@ pub(crate) mod shape_update_content;
 
 pub(crate) mod shape_update_knowledge_base_template_uri;
 
+pub(crate) mod shape_update_message_template;
+
+pub(crate) mod shape_update_message_template_metadata;
+
 pub(crate) mod shape_update_quick_response;
 
 pub(crate) mod shape_update_session;
@@ -164,6 +192,8 @@ pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
 }
 
 pub(crate) mod shape_access_denied_exception;
+
+pub(crate) mod shape_activate_message_template_input;
 
 pub(crate) mod shape_conflict_exception;
 
@@ -185,9 +215,17 @@ pub(crate) mod shape_create_content_input;
 
 pub(crate) mod shape_create_knowledge_base_input;
 
+pub(crate) mod shape_create_message_template_attachment_input;
+
+pub(crate) mod shape_create_message_template_input;
+
+pub(crate) mod shape_create_message_template_version_input;
+
 pub(crate) mod shape_create_quick_response_input;
 
 pub(crate) mod shape_create_session_input;
+
+pub(crate) mod shape_deactivate_message_template_input;
 
 pub(crate) mod shape_notify_recommendations_received_input;
 
@@ -197,11 +235,15 @@ pub(crate) mod shape_put_feedback_input;
 
 pub(crate) mod shape_query_assistant_input;
 
+pub(crate) mod shape_render_message_template_input;
+
 pub(crate) mod shape_request_timeout_exception;
 
 pub(crate) mod shape_resource_not_found_exception;
 
 pub(crate) mod shape_search_content_input;
+
+pub(crate) mod shape_search_message_templates_input;
 
 pub(crate) mod shape_search_quick_responses_input;
 
@@ -228,6 +270,10 @@ pub(crate) mod shape_update_assistant_ai_agent_input;
 pub(crate) mod shape_update_content_input;
 
 pub(crate) mod shape_update_knowledge_base_template_uri_input;
+
+pub(crate) mod shape_update_message_template_input;
+
+pub(crate) mod shape_update_message_template_metadata_input;
 
 pub(crate) mod shape_update_quick_response_input;
 
@@ -279,6 +325,8 @@ pub(crate) mod shape_content_summary;
 
 pub(crate) mod shape_content_summary_list;
 
+pub(crate) mod shape_extended_message_template_data;
+
 pub(crate) mod shape_external_source_configuration;
 
 pub(crate) mod shape_grouping_configuration;
@@ -292,6 +340,26 @@ pub(crate) mod shape_import_job_list;
 pub(crate) mod shape_knowledge_base_data;
 
 pub(crate) mod shape_knowledge_base_list;
+
+pub(crate) mod shape_message_template_attachment;
+
+pub(crate) mod shape_message_template_attachment_list;
+
+pub(crate) mod shape_message_template_attribute_key_list;
+
+pub(crate) mod shape_message_template_attributes;
+
+pub(crate) mod shape_message_template_content_provider;
+
+pub(crate) mod shape_message_template_data;
+
+pub(crate) mod shape_message_template_search_expression;
+
+pub(crate) mod shape_message_template_search_results_list;
+
+pub(crate) mod shape_message_template_summary_list;
+
+pub(crate) mod shape_message_template_version_summary_list;
 
 pub(crate) mod shape_notify_recommendations_received_error_list;
 
@@ -339,6 +407,8 @@ pub(crate) mod shape_tags;
 
 pub(crate) mod shape_vector_ingestion_configuration;
 
+pub(crate) mod shape_agent_attributes;
+
 pub(crate) mod shape_ai_agent_configuration_map;
 
 pub(crate) mod shape_ai_agent_summary;
@@ -375,6 +445,10 @@ pub(crate) mod shape_content_association_summary;
 
 pub(crate) mod shape_content_metadata;
 
+pub(crate) mod shape_customer_profile_attributes;
+
+pub(crate) mod shape_email_message_template_content;
+
 pub(crate) mod shape_failure_reason;
 
 pub(crate) mod shape_filter;
@@ -390,6 +464,20 @@ pub(crate) mod shape_knowledge_base_summary;
 pub(crate) mod shape_managed_source_configuration;
 
 pub(crate) mod shape_manual_search_ai_agent_configuration;
+
+pub(crate) mod shape_message_template_attribute_type_list;
+
+pub(crate) mod shape_message_template_filter_field;
+
+pub(crate) mod shape_message_template_order_field;
+
+pub(crate) mod shape_message_template_query_field;
+
+pub(crate) mod shape_message_template_search_result_data;
+
+pub(crate) mod shape_message_template_summary;
+
+pub(crate) mod shape_message_template_version_summary;
 
 pub(crate) mod shape_notify_recommendations_received_error;
 
@@ -425,6 +513,10 @@ pub(crate) mod shape_session_integration_configuration;
 
 pub(crate) mod shape_session_summary;
 
+pub(crate) mod shape_sms_message_template_content;
+
+pub(crate) mod shape_system_attributes;
+
 pub(crate) mod shape_tag_condition;
 
 pub(crate) mod shape_text_full_ai_prompt_edit_template_configuration;
@@ -439,9 +531,17 @@ pub(crate) mod shape_connect_configuration;
 
 pub(crate) mod shape_contact_attribute_keys;
 
+pub(crate) mod shape_custom_attributes;
+
 pub(crate) mod shape_data_summary;
 
 pub(crate) mod shape_document;
+
+pub(crate) mod shape_email_header;
+
+pub(crate) mod shape_email_headers;
+
+pub(crate) mod shape_email_message_template_content_body;
 
 pub(crate) mod shape_fixed_size_chunking_configuration;
 
@@ -459,6 +559,10 @@ pub(crate) mod shape_recommendation_trigger_data;
 
 pub(crate) mod shape_semantic_chunking_configuration;
 
+pub(crate) mod shape_sms_message_template_content_body;
+
+pub(crate) mod shape_system_endpoint_attributes;
+
 pub(crate) mod shape_web_crawler_configuration;
 
 pub(crate) mod shape_association_configuration_data;
@@ -474,6 +578,8 @@ pub(crate) mod shape_data_reference;
 pub(crate) mod shape_document_text;
 
 pub(crate) mod shape_hierarchical_chunking_level_configuration;
+
+pub(crate) mod shape_message_template_body_content_provider;
 
 pub(crate) mod shape_object_fields_list;
 

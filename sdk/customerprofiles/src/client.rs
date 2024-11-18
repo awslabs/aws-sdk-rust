@@ -138,6 +138,10 @@ impl Client {
 
 mod add_profile_key;
 
+mod batch_get_calculated_attribute_for_profile;
+
+mod batch_get_profile;
+
 mod create_calculated_attribute_definition;
 
 mod create_domain;
@@ -147,6 +151,12 @@ mod create_event_stream;
 mod create_integration_workflow;
 
 mod create_profile;
+
+mod create_segment_definition;
+
+mod create_segment_estimate;
+
+mod create_segment_snapshot;
 
 /// Operation customization and supporting types.
 ///
@@ -191,6 +201,8 @@ mod delete_profile_object;
 
 mod delete_profile_object_type;
 
+mod delete_segment_definition;
+
 mod delete_workflow;
 
 mod detect_profile_object_type;
@@ -215,6 +227,14 @@ mod get_profile_object_type;
 
 mod get_profile_object_type_template;
 
+mod get_segment_definition;
+
+mod get_segment_estimate;
+
+mod get_segment_membership;
+
+mod get_segment_snapshot;
+
 mod get_similar_profiles;
 
 mod get_workflow;
@@ -235,6 +255,10 @@ mod list_identity_resolution_jobs;
 
 mod list_integrations;
 
+mod list_object_type_attributes;
+
+mod list_profile_attribute_values;
+
 mod list_profile_object_type_templates;
 
 mod list_profile_object_types;
@@ -242,6 +266,8 @@ mod list_profile_object_types;
 mod list_profile_objects;
 
 mod list_rule_based_matches;
+
+mod list_segment_definitions;
 
 mod list_tags_for_resource;
 

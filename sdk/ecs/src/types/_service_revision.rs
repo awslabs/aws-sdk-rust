@@ -40,6 +40,8 @@ pub struct ServiceRevision {
     pub fargate_ephemeral_storage: ::std::option::Option<crate::types::DeploymentEphemeralStorage>,
     /// <p>The time that the service revision was created. The format is yyyy-mm-dd HH:mm:ss.SSSSS.</p>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The VPC Lattice configuration for the service revision.</p>
+    pub vpc_lattice_configurations: ::std::option::Option<::std::vec::Vec<crate::types::VpcLatticeConfiguration>>,
 }
 impl ServiceRevision {
     /// <p>The ARN of the service revision.</p>
@@ -121,6 +123,12 @@ impl ServiceRevision {
     pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
+    /// <p>The VPC Lattice configuration for the service revision.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vpc_lattice_configurations.is_none()`.
+    pub fn vpc_lattice_configurations(&self) -> &[crate::types::VpcLatticeConfiguration] {
+        self.vpc_lattice_configurations.as_deref().unwrap_or_default()
+    }
 }
 impl ServiceRevision {
     /// Creates a new builder-style object to manufacture [`ServiceRevision`](crate::types::ServiceRevision).
@@ -150,6 +158,7 @@ pub struct ServiceRevisionBuilder {
     pub(crate) volume_configurations: ::std::option::Option<::std::vec::Vec<crate::types::ServiceVolumeConfiguration>>,
     pub(crate) fargate_ephemeral_storage: ::std::option::Option<crate::types::DeploymentEphemeralStorage>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) vpc_lattice_configurations: ::std::option::Option<::std::vec::Vec<crate::types::VpcLatticeConfiguration>>,
 }
 impl ServiceRevisionBuilder {
     /// <p>The ARN of the service revision.</p>
@@ -426,6 +435,26 @@ impl ServiceRevisionBuilder {
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.created_at
     }
+    /// Appends an item to `vpc_lattice_configurations`.
+    ///
+    /// To override the contents of this collection use [`set_vpc_lattice_configurations`](Self::set_vpc_lattice_configurations).
+    ///
+    /// <p>The VPC Lattice configuration for the service revision.</p>
+    pub fn vpc_lattice_configurations(mut self, input: crate::types::VpcLatticeConfiguration) -> Self {
+        let mut v = self.vpc_lattice_configurations.unwrap_or_default();
+        v.push(input);
+        self.vpc_lattice_configurations = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The VPC Lattice configuration for the service revision.</p>
+    pub fn set_vpc_lattice_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VpcLatticeConfiguration>>) -> Self {
+        self.vpc_lattice_configurations = input;
+        self
+    }
+    /// <p>The VPC Lattice configuration for the service revision.</p>
+    pub fn get_vpc_lattice_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VpcLatticeConfiguration>> {
+        &self.vpc_lattice_configurations
+    }
     /// Consumes the builder and constructs a [`ServiceRevision`](crate::types::ServiceRevision).
     pub fn build(self) -> crate::types::ServiceRevision {
         crate::types::ServiceRevision {
@@ -446,6 +475,7 @@ impl ServiceRevisionBuilder {
             volume_configurations: self.volume_configurations,
             fargate_ephemeral_storage: self.fargate_ephemeral_storage,
             created_at: self.created_at,
+            vpc_lattice_configurations: self.vpc_lattice_configurations,
         }
     }
 }

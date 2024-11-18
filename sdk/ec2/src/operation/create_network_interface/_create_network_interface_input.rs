@@ -27,6 +27,8 @@ pub struct CreateNetworkInterfaceInput {
     pub enable_primary_ipv6: ::std::option::Option<bool>,
     /// <p>A connection tracking specification for the network interface.</p>
     pub connection_tracking_specification: ::std::option::Option<crate::types::ConnectionTrackingSpecificationRequest>,
+    /// <p>Reserved for internal use.</p>
+    pub operator: ::std::option::Option<crate::types::OperatorRequest>,
     /// <p>The ID of the subnet to associate with the network interface.</p>
     pub subnet_id: ::std::option::Option<::std::string::String>,
     /// <p>A description for the network interface.</p>
@@ -100,6 +102,10 @@ impl CreateNetworkInterfaceInput {
     pub fn connection_tracking_specification(&self) -> ::std::option::Option<&crate::types::ConnectionTrackingSpecificationRequest> {
         self.connection_tracking_specification.as_ref()
     }
+    /// <p>Reserved for internal use.</p>
+    pub fn operator(&self) -> ::std::option::Option<&crate::types::OperatorRequest> {
+        self.operator.as_ref()
+    }
     /// <p>The ID of the subnet to associate with the network interface.</p>
     pub fn subnet_id(&self) -> ::std::option::Option<&str> {
         self.subnet_id.as_deref()
@@ -168,6 +174,7 @@ pub struct CreateNetworkInterfaceInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) enable_primary_ipv6: ::std::option::Option<bool>,
     pub(crate) connection_tracking_specification: ::std::option::Option<crate::types::ConnectionTrackingSpecificationRequest>,
+    pub(crate) operator: ::std::option::Option<crate::types::OperatorRequest>,
     pub(crate) subnet_id: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) private_ip_address: ::std::option::Option<::std::string::String>,
@@ -343,6 +350,20 @@ impl CreateNetworkInterfaceInputBuilder {
     /// <p>A connection tracking specification for the network interface.</p>
     pub fn get_connection_tracking_specification(&self) -> &::std::option::Option<crate::types::ConnectionTrackingSpecificationRequest> {
         &self.connection_tracking_specification
+    }
+    /// <p>Reserved for internal use.</p>
+    pub fn operator(mut self, input: crate::types::OperatorRequest) -> Self {
+        self.operator = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Reserved for internal use.</p>
+    pub fn set_operator(mut self, input: ::std::option::Option<crate::types::OperatorRequest>) -> Self {
+        self.operator = input;
+        self
+    }
+    /// <p>Reserved for internal use.</p>
+    pub fn get_operator(&self) -> &::std::option::Option<crate::types::OperatorRequest> {
+        &self.operator
     }
     /// <p>The ID of the subnet to associate with the network interface.</p>
     /// This field is required.
@@ -521,6 +542,7 @@ impl CreateNetworkInterfaceInputBuilder {
             client_token: self.client_token,
             enable_primary_ipv6: self.enable_primary_ipv6,
             connection_tracking_specification: self.connection_tracking_specification,
+            operator: self.operator,
             subnet_id: self.subnet_id,
             description: self.description,
             private_ip_address: self.private_ip_address,

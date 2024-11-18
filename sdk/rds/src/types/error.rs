@@ -195,6 +195,8 @@ pub use crate::types::error::_invalid_resource_state_fault::InvalidResourceState
 
 pub use crate::types::error::_db_log_file_not_found_fault::DbLogFileNotFoundFault;
 
+pub use crate::types::error::_db_instance_not_ready_fault::DbInstanceNotReadyFault;
+
 pub use crate::types::error::_reserved_db_instance_not_found_fault::ReservedDbInstanceNotFoundFault;
 
 pub use crate::types::error::_export_task_not_found_fault::ExportTaskNotFoundFault;
@@ -348,6 +350,8 @@ mod _db_instance_automated_backup_not_found_fault;
 mod _db_instance_automated_backup_quota_exceeded_fault;
 
 mod _db_instance_not_found_fault;
+
+mod _db_instance_not_ready_fault;
 
 mod _db_instance_role_already_exists_fault;
 

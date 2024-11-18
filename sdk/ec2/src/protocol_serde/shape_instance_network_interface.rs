@@ -233,6 +233,16 @@ pub fn de_instance_network_interface(
                 builder = builder.set_connection_tracking_configuration(var_19);
             }
             ,
+            s if s.matches("operator") /* Operator com.amazonaws.ec2#InstanceNetworkInterface$Operator */ =>  {
+                let var_20 =
+                    Some(
+                        crate::protocol_serde::shape_operator_response::de_operator_response(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_operator(var_20);
+            }
+            ,
             _ => {}
         }
     }

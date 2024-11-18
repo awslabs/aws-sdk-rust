@@ -341,6 +341,16 @@ pub fn de_network_interface(
                 builder = builder.set_ipv6_address(var_27);
             }
             ,
+            s if s.matches("operator") /* Operator com.amazonaws.ec2#NetworkInterface$Operator */ =>  {
+                let var_28 =
+                    Some(
+                        crate::protocol_serde::shape_operator_response::de_operator_response(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_operator(var_28);
+            }
+            ,
             _ => {}
         }
     }

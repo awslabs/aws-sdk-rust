@@ -83,9 +83,14 @@ pub fn ser_create_volume_input_input_input(
         scope_26.string(var_27);
     }
     #[allow(unused_mut)]
-    let mut scope_28 = writer.prefix("DryRun");
-    if let Some(var_29) = &input.dry_run {
-        scope_28.boolean(*var_29);
+    let mut scope_28 = writer.prefix("Operator");
+    if let Some(var_29) = &input.operator {
+        crate::protocol_serde::shape_operator_request::ser_operator_request(scope_28, var_29)?;
+    }
+    #[allow(unused_mut)]
+    let mut scope_30 = writer.prefix("DryRun");
+    if let Some(var_31) = &input.dry_run {
+        scope_30.boolean(*var_31);
     }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))

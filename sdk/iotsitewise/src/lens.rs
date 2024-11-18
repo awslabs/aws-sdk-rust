@@ -29,16 +29,6 @@ pub(crate) fn reflens_batch_get_asset_property_value_history_output_output_next_
     ::std::option::Option::Some(input)
 }
 
-pub(crate) fn reflens_execute_query_output_output_next_token(
-    input: &crate::operation::execute_query::ExecuteQueryOutput,
-) -> ::std::option::Option<&::std::string::String> {
-    let input = match &input.next_token {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
-    ::std::option::Option::Some(input)
-}
-
 pub(crate) fn reflens_get_asset_property_aggregates_output_output_next_token(
     input: &crate::operation::get_asset_property_aggregates::GetAssetPropertyAggregatesOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -179,6 +169,16 @@ pub(crate) fn reflens_list_dashboards_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_datasets_output_output_next_token(
+    input: &crate::operation::list_datasets::ListDatasetsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_gateways_output_output_next_token(
     input: &crate::operation::list_gateways::ListGatewaysOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -223,16 +223,6 @@ pub(crate) fn reflens_list_time_series_output_output_next_token(
     input: &crate::operation::list_time_series::ListTimeSeriesOutput,
 ) -> ::std::option::Option<&::std::string::String> {
     let input = match &input.next_token {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
-    ::std::option::Option::Some(input)
-}
-
-pub(crate) fn lens_execute_query_output_output_rows(
-    input: crate::operation::execute_query::ExecuteQueryOutput,
-) -> ::std::option::Option<::std::vec::Vec<crate::types::Row>> {
-    let input = match input.rows {
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,
     };
@@ -334,6 +324,13 @@ pub(crate) fn lens_list_dashboards_output_output_dashboard_summaries(
     input: crate::operation::list_dashboards::ListDashboardsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::DashboardSummary>> {
     let input = input.dashboard_summaries;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_datasets_output_output_dataset_summaries(
+    input: crate::operation::list_datasets::ListDatasetsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::DatasetSummary>> {
+    let input = input.dataset_summaries;
     ::std::option::Option::Some(input)
 }
 

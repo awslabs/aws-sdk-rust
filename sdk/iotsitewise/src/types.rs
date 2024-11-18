@@ -7,6 +7,10 @@ pub use crate::types::_monitor_error_code::MonitorErrorCode;
 
 pub use crate::types::_portal_state::PortalState;
 
+pub use crate::types::_portal_type_entry::PortalTypeEntry;
+
+pub use crate::types::_portal_type::PortalType;
+
 pub use crate::types::_alarms::Alarms;
 
 pub use crate::types::_image::Image;
@@ -17,9 +21,7 @@ pub use crate::types::_image_file_type::ImageFileType;
 
 pub use crate::types::_capability_sync_status::CapabilitySyncStatus;
 
-pub use crate::types::_property_notification_state::PropertyNotificationState;
-
-pub use crate::types::_asset_model_status::AssetModelStatus;
+pub use crate::types::_dataset_status::DatasetStatus;
 
 pub use crate::types::_error_details::ErrorDetails;
 
@@ -28,6 +30,22 @@ pub use crate::types::_detailed_error::DetailedError;
 pub use crate::types::_detailed_error_code::DetailedErrorCode;
 
 pub use crate::types::_error_code::ErrorCode;
+
+pub use crate::types::_dataset_state::DatasetState;
+
+pub use crate::types::_dataset_source::DatasetSource;
+
+pub use crate::types::_source_detail::SourceDetail;
+
+pub use crate::types::_kendra_source_detail::KendraSourceDetail;
+
+pub use crate::types::_dataset_source_format::DatasetSourceFormat;
+
+pub use crate::types::_dataset_source_type::DatasetSourceType;
+
+pub use crate::types::_property_notification_state::PropertyNotificationState;
+
+pub use crate::types::_asset_model_status::AssetModelStatus;
 
 pub use crate::types::_asset_model_state::AssetModelState;
 
@@ -143,6 +161,8 @@ pub use crate::types::_greengrass_v2::GreengrassV2;
 
 pub use crate::types::_greengrass::Greengrass;
 
+pub use crate::types::_dataset_summary::DatasetSummary;
+
 pub use crate::types::_dashboard_summary::DashboardSummary;
 
 pub use crate::types::_composition_relationship_summary::CompositionRelationshipSummary;
@@ -200,6 +220,24 @@ pub use crate::types::_access_policy_summary::AccessPolicySummary;
 pub use crate::types::_resource_type::ResourceType;
 
 pub use crate::types::_identity_type::IdentityType;
+
+pub use crate::types::_response_stream::ResponseStream;
+
+pub use crate::types::_invocation_output::InvocationOutput;
+
+pub use crate::types::_citation::Citation;
+
+pub use crate::types::_content::Content;
+
+pub use crate::types::_reference::Reference;
+
+pub use crate::types::_data_set_reference::DataSetReference;
+
+pub use crate::types::_source::Source;
+
+pub use crate::types::_location::Location;
+
+pub use crate::types::_trace::Trace;
 
 pub use crate::types::_interpolated_asset_property_value::InterpolatedAssetPropertyValue;
 
@@ -453,6 +491,8 @@ mod _batch_put_asset_property_value_error_code;
 
 mod _capability_sync_status;
 
+mod _citation;
+
 mod _column_info;
 
 mod _column_name;
@@ -475,11 +515,27 @@ mod _configuration_state;
 
 mod _configuration_status;
 
+mod _content;
+
 mod _csv;
 
 mod _customer_managed_s3_storage;
 
 mod _dashboard_summary;
+
+mod _data_set_reference;
+
+mod _dataset_source;
+
+mod _dataset_source_format;
+
+mod _dataset_source_type;
+
+mod _dataset_state;
+
+mod _dataset_status;
+
+mod _dataset_summary;
 
 mod _datum;
 
@@ -537,11 +593,15 @@ mod _image_location;
 
 mod _interpolated_asset_property_value;
 
+mod _invocation_output;
+
 mod _job_configuration;
 
 mod _job_status;
 
 mod _job_summary;
+
+mod _kendra_source_detail;
 
 mod _list_asset_model_properties_filter;
 
@@ -552,6 +612,8 @@ mod _list_assets_filter;
 mod _list_bulk_import_jobs_filter;
 
 mod _list_time_series_type;
+
+mod _location;
 
 mod _logging_level;
 
@@ -585,6 +647,10 @@ mod _portal_status;
 
 mod _portal_summary;
 
+mod _portal_type;
+
+mod _portal_type_entry;
+
 mod _project_resource;
 
 mod _project_summary;
@@ -603,9 +669,13 @@ mod _put_asset_property_value_entry;
 
 mod _quality;
 
+mod _reference;
+
 mod _resource;
 
 mod _resource_type;
+
+mod _response_stream;
 
 mod _retention_period;
 
@@ -614,6 +684,10 @@ mod _row;
 mod _scalar_type;
 
 mod _siemens_ie;
+
+mod _source;
+
+mod _source_detail;
 
 mod _storage_type;
 
@@ -626,6 +700,8 @@ mod _time_in_nanos;
 mod _time_ordering;
 
 mod _time_series_summary;
+
+mod _trace;
 
 mod _transform;
 

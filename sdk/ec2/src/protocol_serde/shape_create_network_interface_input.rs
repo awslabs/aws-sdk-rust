@@ -81,79 +81,84 @@ pub fn ser_create_network_interface_input_input_input(
         crate::protocol_serde::shape_connection_tracking_specification_request::ser_connection_tracking_specification_request(scope_26, var_27)?;
     }
     #[allow(unused_mut)]
-    let mut scope_28 = writer.prefix("SubnetId");
-    if let Some(var_29) = &input.subnet_id {
-        scope_28.string(var_29);
+    let mut scope_28 = writer.prefix("Operator");
+    if let Some(var_29) = &input.operator {
+        crate::protocol_serde::shape_operator_request::ser_operator_request(scope_28, var_29)?;
     }
     #[allow(unused_mut)]
-    let mut scope_30 = writer.prefix("Description");
-    if let Some(var_31) = &input.description {
+    let mut scope_30 = writer.prefix("SubnetId");
+    if let Some(var_31) = &input.subnet_id {
         scope_30.string(var_31);
     }
     #[allow(unused_mut)]
-    let mut scope_32 = writer.prefix("PrivateIpAddress");
-    if let Some(var_33) = &input.private_ip_address {
+    let mut scope_32 = writer.prefix("Description");
+    if let Some(var_33) = &input.description {
         scope_32.string(var_33);
     }
     #[allow(unused_mut)]
-    let mut scope_34 = writer.prefix("SecurityGroupId");
-    if let Some(var_35) = &input.groups {
-        if !var_35.is_empty() {
-            let mut list_37 = scope_34.start_list(true, Some("SecurityGroupId"));
-            for item_36 in var_35 {
+    let mut scope_34 = writer.prefix("PrivateIpAddress");
+    if let Some(var_35) = &input.private_ip_address {
+        scope_34.string(var_35);
+    }
+    #[allow(unused_mut)]
+    let mut scope_36 = writer.prefix("SecurityGroupId");
+    if let Some(var_37) = &input.groups {
+        if !var_37.is_empty() {
+            let mut list_39 = scope_36.start_list(true, Some("SecurityGroupId"));
+            for item_38 in var_37 {
                 #[allow(unused_mut)]
-                let mut entry_38 = list_37.entry();
-                entry_38.string(item_36);
+                let mut entry_40 = list_39.entry();
+                entry_40.string(item_38);
             }
-            list_37.finish();
+            list_39.finish();
         }
     }
     #[allow(unused_mut)]
-    let mut scope_39 = writer.prefix("PrivateIpAddresses");
-    if let Some(var_40) = &input.private_ip_addresses {
-        if !var_40.is_empty() {
-            let mut list_42 = scope_39.start_list(true, Some("item"));
-            for item_41 in var_40 {
+    let mut scope_41 = writer.prefix("PrivateIpAddresses");
+    if let Some(var_42) = &input.private_ip_addresses {
+        if !var_42.is_empty() {
+            let mut list_44 = scope_41.start_list(true, Some("item"));
+            for item_43 in var_42 {
                 #[allow(unused_mut)]
-                let mut entry_43 = list_42.entry();
-                crate::protocol_serde::shape_private_ip_address_specification::ser_private_ip_address_specification(entry_43, item_41)?;
+                let mut entry_45 = list_44.entry();
+                crate::protocol_serde::shape_private_ip_address_specification::ser_private_ip_address_specification(entry_45, item_43)?;
             }
-            list_42.finish();
+            list_44.finish();
         }
     }
     #[allow(unused_mut)]
-    let mut scope_44 = writer.prefix("SecondaryPrivateIpAddressCount");
-    if let Some(var_45) = &input.secondary_private_ip_address_count {
-        scope_44.number(
+    let mut scope_46 = writer.prefix("SecondaryPrivateIpAddressCount");
+    if let Some(var_47) = &input.secondary_private_ip_address_count {
+        scope_46.number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_45).into()),
+            ::aws_smithy_types::Number::NegInt((*var_47).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_46 = writer.prefix("Ipv6Addresses");
-    if let Some(var_47) = &input.ipv6_addresses {
-        if !var_47.is_empty() {
-            let mut list_49 = scope_46.start_list(true, Some("item"));
-            for item_48 in var_47 {
+    let mut scope_48 = writer.prefix("Ipv6Addresses");
+    if let Some(var_49) = &input.ipv6_addresses {
+        if !var_49.is_empty() {
+            let mut list_51 = scope_48.start_list(true, Some("item"));
+            for item_50 in var_49 {
                 #[allow(unused_mut)]
-                let mut entry_50 = list_49.entry();
-                crate::protocol_serde::shape_instance_ipv6_address::ser_instance_ipv6_address(entry_50, item_48)?;
+                let mut entry_52 = list_51.entry();
+                crate::protocol_serde::shape_instance_ipv6_address::ser_instance_ipv6_address(entry_52, item_50)?;
             }
-            list_49.finish();
+            list_51.finish();
         }
     }
     #[allow(unused_mut)]
-    let mut scope_51 = writer.prefix("Ipv6AddressCount");
-    if let Some(var_52) = &input.ipv6_address_count {
-        scope_51.number(
+    let mut scope_53 = writer.prefix("Ipv6AddressCount");
+    if let Some(var_54) = &input.ipv6_address_count {
+        scope_53.number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_52).into()),
+            ::aws_smithy_types::Number::NegInt((*var_54).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_53 = writer.prefix("DryRun");
-    if let Some(var_54) = &input.dry_run {
-        scope_53.boolean(*var_54);
+    let mut scope_55 = writer.prefix("DryRun");
+    if let Some(var_56) = &input.dry_run {
+        scope_55.boolean(*var_56);
     }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))

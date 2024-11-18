@@ -36,7 +36,7 @@ pub struct ServiceDeployment {
     pub status: ::std::option::Option<crate::types::ServiceDeploymentStatus>,
     /// <p>Information about why the service deployment is in the current status. For example, the circuit breaker detected a failure.</p>
     pub status_reason: ::std::option::Option<::std::string::String>,
-    /// <p>Optional deployment parameters that control how many tasks run during the deployment and the failure detection methods.</p>
+    /// <p>Optional deployment parameters that control how many tasks run during a deployment and the ordering of stopping and starting tasks.</p>
     pub deployment_configuration: ::std::option::Option<crate::types::DeploymentConfiguration>,
     /// <p>The rollback options the service deployment uses when the deployment fails.</p>
     pub rollback: ::std::option::Option<crate::types::Rollback>,
@@ -103,7 +103,7 @@ impl ServiceDeployment {
     pub fn status_reason(&self) -> ::std::option::Option<&str> {
         self.status_reason.as_deref()
     }
-    /// <p>Optional deployment parameters that control how many tasks run during the deployment and the failure detection methods.</p>
+    /// <p>Optional deployment parameters that control how many tasks run during a deployment and the ordering of stopping and starting tasks.</p>
     pub fn deployment_configuration(&self) -> ::std::option::Option<&crate::types::DeploymentConfiguration> {
         self.deployment_configuration.as_ref()
     }
@@ -344,17 +344,17 @@ impl ServiceDeploymentBuilder {
     pub fn get_status_reason(&self) -> &::std::option::Option<::std::string::String> {
         &self.status_reason
     }
-    /// <p>Optional deployment parameters that control how many tasks run during the deployment and the failure detection methods.</p>
+    /// <p>Optional deployment parameters that control how many tasks run during a deployment and the ordering of stopping and starting tasks.</p>
     pub fn deployment_configuration(mut self, input: crate::types::DeploymentConfiguration) -> Self {
         self.deployment_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Optional deployment parameters that control how many tasks run during the deployment and the failure detection methods.</p>
+    /// <p>Optional deployment parameters that control how many tasks run during a deployment and the ordering of stopping and starting tasks.</p>
     pub fn set_deployment_configuration(mut self, input: ::std::option::Option<crate::types::DeploymentConfiguration>) -> Self {
         self.deployment_configuration = input;
         self
     }
-    /// <p>Optional deployment parameters that control how many tasks run during the deployment and the failure detection methods.</p>
+    /// <p>Optional deployment parameters that control how many tasks run during a deployment and the ordering of stopping and starting tasks.</p>
     pub fn get_deployment_configuration(&self) -> &::std::option::Option<crate::types::DeploymentConfiguration> {
         &self.deployment_configuration
     }

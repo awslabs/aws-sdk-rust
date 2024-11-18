@@ -43,6 +43,8 @@ pub struct InstanceNetworkInterface {
     pub ipv6_prefixes: ::std::option::Option<::std::vec::Vec<crate::types::InstanceIpv6Prefix>>,
     /// <p>A security group connection tracking configuration that enables you to set the timeout for connection tracking on an Elastic network interface. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/security-group-connection-tracking.html#connection-tracking-timeouts">Connection tracking timeouts</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub connection_tracking_configuration: ::std::option::Option<crate::types::ConnectionTrackingSpecificationResponse>,
+    /// <p>The entity that manages the network interface.</p>
+    pub operator: ::std::option::Option<crate::types::OperatorResponse>,
 }
 impl InstanceNetworkInterface {
     /// <p>The association information for an Elastic IPv4 associated with the network interface.</p>
@@ -132,6 +134,10 @@ impl InstanceNetworkInterface {
     pub fn connection_tracking_configuration(&self) -> ::std::option::Option<&crate::types::ConnectionTrackingSpecificationResponse> {
         self.connection_tracking_configuration.as_ref()
     }
+    /// <p>The entity that manages the network interface.</p>
+    pub fn operator(&self) -> ::std::option::Option<&crate::types::OperatorResponse> {
+        self.operator.as_ref()
+    }
 }
 impl InstanceNetworkInterface {
     /// Creates a new builder-style object to manufacture [`InstanceNetworkInterface`](crate::types::InstanceNetworkInterface).
@@ -163,6 +169,7 @@ pub struct InstanceNetworkInterfaceBuilder {
     pub(crate) ipv4_prefixes: ::std::option::Option<::std::vec::Vec<crate::types::InstanceIpv4Prefix>>,
     pub(crate) ipv6_prefixes: ::std::option::Option<::std::vec::Vec<crate::types::InstanceIpv6Prefix>>,
     pub(crate) connection_tracking_configuration: ::std::option::Option<crate::types::ConnectionTrackingSpecificationResponse>,
+    pub(crate) operator: ::std::option::Option<crate::types::OperatorResponse>,
 }
 impl InstanceNetworkInterfaceBuilder {
     /// <p>The association information for an Elastic IPv4 associated with the network interface.</p>
@@ -467,6 +474,20 @@ impl InstanceNetworkInterfaceBuilder {
     pub fn get_connection_tracking_configuration(&self) -> &::std::option::Option<crate::types::ConnectionTrackingSpecificationResponse> {
         &self.connection_tracking_configuration
     }
+    /// <p>The entity that manages the network interface.</p>
+    pub fn operator(mut self, input: crate::types::OperatorResponse) -> Self {
+        self.operator = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The entity that manages the network interface.</p>
+    pub fn set_operator(mut self, input: ::std::option::Option<crate::types::OperatorResponse>) -> Self {
+        self.operator = input;
+        self
+    }
+    /// <p>The entity that manages the network interface.</p>
+    pub fn get_operator(&self) -> &::std::option::Option<crate::types::OperatorResponse> {
+        &self.operator
+    }
     /// Consumes the builder and constructs a [`InstanceNetworkInterface`](crate::types::InstanceNetworkInterface).
     pub fn build(self) -> crate::types::InstanceNetworkInterface {
         crate::types::InstanceNetworkInterface {
@@ -489,6 +510,7 @@ impl InstanceNetworkInterfaceBuilder {
             ipv4_prefixes: self.ipv4_prefixes,
             ipv6_prefixes: self.ipv6_prefixes,
             connection_tracking_configuration: self.connection_tracking_configuration,
+            operator: self.operator,
         }
     }
 }

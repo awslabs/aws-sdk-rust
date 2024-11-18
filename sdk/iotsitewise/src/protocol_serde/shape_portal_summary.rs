@@ -64,6 +64,13 @@ where
                         "status" => {
                             builder = builder.set_status(crate::protocol_serde::shape_portal_status::de_portal_status(tokens)?);
                         }
+                        "portalType" => {
+                            builder = builder.set_portal_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::PortalType::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

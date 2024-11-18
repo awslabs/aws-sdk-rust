@@ -33,6 +33,8 @@ pub use crate::types::_service_event::ServiceEventBuilder;
 
 pub use crate::types::_deployment::DeploymentBuilder;
 
+pub use crate::types::_vpc_lattice_configuration::VpcLatticeConfigurationBuilder;
+
 pub use crate::types::_service_volume_configuration::ServiceVolumeConfigurationBuilder;
 
 pub use crate::types::_service_managed_ebs_volume_configuration::ServiceManagedEbsVolumeConfigurationBuilder;

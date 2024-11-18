@@ -4,6 +4,12 @@ pub use ::aws_types::request_id::RequestId;
 /// Types for the `AddProfileKey` operation.
 pub mod add_profile_key;
 
+/// Types for the `BatchGetCalculatedAttributeForProfile` operation.
+pub mod batch_get_calculated_attribute_for_profile;
+
+/// Types for the `BatchGetProfile` operation.
+pub mod batch_get_profile;
+
 /// Types for the `CreateCalculatedAttributeDefinition` operation.
 pub mod create_calculated_attribute_definition;
 
@@ -18,6 +24,15 @@ pub mod create_integration_workflow;
 
 /// Types for the `CreateProfile` operation.
 pub mod create_profile;
+
+/// Types for the `CreateSegmentDefinition` operation.
+pub mod create_segment_definition;
+
+/// Types for the `CreateSegmentEstimate` operation.
+pub mod create_segment_estimate;
+
+/// Types for the `CreateSegmentSnapshot` operation.
+pub mod create_segment_snapshot;
 
 /// Types for the `DeleteCalculatedAttributeDefinition` operation.
 pub mod delete_calculated_attribute_definition;
@@ -42,6 +57,9 @@ pub mod delete_profile_object;
 
 /// Types for the `DeleteProfileObjectType` operation.
 pub mod delete_profile_object_type;
+
+/// Types for the `DeleteSegmentDefinition` operation.
+pub mod delete_segment_definition;
 
 /// Types for the `DeleteWorkflow` operation.
 pub mod delete_workflow;
@@ -79,6 +97,18 @@ pub mod get_profile_object_type;
 /// Types for the `GetProfileObjectTypeTemplate` operation.
 pub mod get_profile_object_type_template;
 
+/// Types for the `GetSegmentDefinition` operation.
+pub mod get_segment_definition;
+
+/// Types for the `GetSegmentEstimate` operation.
+pub mod get_segment_estimate;
+
+/// Types for the `GetSegmentMembership` operation.
+pub mod get_segment_membership;
+
+/// Types for the `GetSegmentSnapshot` operation.
+pub mod get_segment_snapshot;
+
 /// Types for the `GetSimilarProfiles` operation.
 pub mod get_similar_profiles;
 
@@ -109,6 +139,12 @@ pub mod list_identity_resolution_jobs;
 /// Types for the `ListIntegrations` operation.
 pub mod list_integrations;
 
+/// Types for the `ListObjectTypeAttributes` operation.
+pub mod list_object_type_attributes;
+
+/// Types for the `ListProfileAttributeValues` operation.
+pub mod list_profile_attribute_values;
+
 /// Types for the `ListProfileObjectTypeTemplates` operation.
 pub mod list_profile_object_type_templates;
 
@@ -120,6 +156,9 @@ pub mod list_profile_objects;
 
 /// Types for the `ListRuleBasedMatches` operation.
 pub mod list_rule_based_matches;
+
+/// Types for the `ListSegmentDefinitions` operation.
+pub mod list_segment_definitions;
 
 /// Types for the `ListTagsForResource` operation.
 pub mod list_tags_for_resource;

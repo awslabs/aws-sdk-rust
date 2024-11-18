@@ -16,6 +16,8 @@ pub struct CreateDbInstanceInput {
     /// <li>
     /// <p>Must contain 1 to 64 alphanumeric characters.</p></li>
     /// <li>
+    /// <p>Must begin with a letter. Subsequent characters can be letters, underscores, or digits (0-9).</p></li>
+    /// <li>
     /// <p>Can't be a word reserved by the database engine.</p></li>
     /// </ul>
     /// </dd>
@@ -853,6 +855,8 @@ impl CreateDbInstanceInput {
     /// <ul>
     /// <li>
     /// <p>Must contain 1 to 64 alphanumeric characters.</p></li>
+    /// <li>
+    /// <p>Must begin with a letter. Subsequent characters can be letters, underscores, or digits (0-9).</p></li>
     /// <li>
     /// <p>Can't be a word reserved by the database engine.</p></li>
     /// </ul>
@@ -1905,6 +1909,8 @@ impl CreateDbInstanceInputBuilder {
     /// <li>
     /// <p>Must contain 1 to 64 alphanumeric characters.</p></li>
     /// <li>
+    /// <p>Must begin with a letter. Subsequent characters can be letters, underscores, or digits (0-9).</p></li>
+    /// <li>
     /// <p>Can't be a word reserved by the database engine.</p></li>
     /// </ul>
     /// </dd>
@@ -2040,6 +2046,8 @@ impl CreateDbInstanceInputBuilder {
     /// <li>
     /// <p>Must contain 1 to 64 alphanumeric characters.</p></li>
     /// <li>
+    /// <p>Must begin with a letter. Subsequent characters can be letters, underscores, or digits (0-9).</p></li>
+    /// <li>
     /// <p>Can't be a word reserved by the database engine.</p></li>
     /// </ul>
     /// </dd>
@@ -2174,6 +2182,8 @@ impl CreateDbInstanceInputBuilder {
     /// <ul>
     /// <li>
     /// <p>Must contain 1 to 64 alphanumeric characters.</p></li>
+    /// <li>
+    /// <p>Must begin with a letter. Subsequent characters can be letters, underscores, or digits (0-9).</p></li>
     /// <li>
     /// <p>Can't be a word reserved by the database engine.</p></li>
     /// </ul>

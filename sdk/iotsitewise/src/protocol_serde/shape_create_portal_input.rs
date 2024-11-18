@@ -33,18 +33,34 @@ pub fn ser_create_portal_input_input(
     if let Some(var_10) = &input.portal_name {
         object.key("portalName").string(var_10.as_str());
     }
-    if let Some(var_11) = &input.role_arn {
-        object.key("roleArn").string(var_11.as_str());
+    if let Some(var_11) = &input.portal_type {
+        object.key("portalType").string(var_11.as_str());
     }
-    if let Some(var_12) = &input.tags {
+    if let Some(var_12) = &input.portal_type_configuration {
         #[allow(unused_mut)]
-        let mut object_13 = object.key("tags").start_object();
+        let mut object_13 = object.key("portalTypeConfiguration").start_object();
         for (key_14, value_15) in var_12 {
             {
-                object_13.key(key_14.as_str()).string(value_15.as_str());
+                #[allow(unused_mut)]
+                let mut object_16 = object_13.key(key_14.as_str()).start_object();
+                crate::protocol_serde::shape_portal_type_entry::ser_portal_type_entry(&mut object_16, value_15)?;
+                object_16.finish();
             }
         }
         object_13.finish();
+    }
+    if let Some(var_17) = &input.role_arn {
+        object.key("roleArn").string(var_17.as_str());
+    }
+    if let Some(var_18) = &input.tags {
+        #[allow(unused_mut)]
+        let mut object_19 = object.key("tags").start_object();
+        for (key_20, value_21) in var_18 {
+            {
+                object_19.key(key_20.as_str()).string(value_21.as_str());
+            }
+        }
+        object_19.finish();
     }
     Ok(())
 }

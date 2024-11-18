@@ -8,6 +8,8 @@ pub struct InstanceStatus {
     pub availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Outpost.</p>
     pub outpost_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The entity that manages the instance.</p>
+    pub operator: ::std::option::Option<crate::types::OperatorResponse>,
     /// <p>Any scheduled events associated with the instance.</p>
     pub events: ::std::option::Option<::std::vec::Vec<crate::types::InstanceStatusEvent>>,
     /// <p>The ID of the instance.</p>
@@ -29,6 +31,10 @@ impl InstanceStatus {
     /// <p>The Amazon Resource Name (ARN) of the Outpost.</p>
     pub fn outpost_arn(&self) -> ::std::option::Option<&str> {
         self.outpost_arn.as_deref()
+    }
+    /// <p>The entity that manages the instance.</p>
+    pub fn operator(&self) -> ::std::option::Option<&crate::types::OperatorResponse> {
+        self.operator.as_ref()
     }
     /// <p>Any scheduled events associated with the instance.</p>
     ///
@@ -70,6 +76,7 @@ impl InstanceStatus {
 pub struct InstanceStatusBuilder {
     pub(crate) availability_zone: ::std::option::Option<::std::string::String>,
     pub(crate) outpost_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) operator: ::std::option::Option<crate::types::OperatorResponse>,
     pub(crate) events: ::std::option::Option<::std::vec::Vec<crate::types::InstanceStatusEvent>>,
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) instance_state: ::std::option::Option<crate::types::InstanceState>,
@@ -105,6 +112,20 @@ impl InstanceStatusBuilder {
     /// <p>The Amazon Resource Name (ARN) of the Outpost.</p>
     pub fn get_outpost_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.outpost_arn
+    }
+    /// <p>The entity that manages the instance.</p>
+    pub fn operator(mut self, input: crate::types::OperatorResponse) -> Self {
+        self.operator = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The entity that manages the instance.</p>
+    pub fn set_operator(mut self, input: ::std::option::Option<crate::types::OperatorResponse>) -> Self {
+        self.operator = input;
+        self
+    }
+    /// <p>The entity that manages the instance.</p>
+    pub fn get_operator(&self) -> &::std::option::Option<crate::types::OperatorResponse> {
+        &self.operator
     }
     /// Appends an item to `events`.
     ///
@@ -201,6 +222,7 @@ impl InstanceStatusBuilder {
         crate::types::InstanceStatus {
             availability_zone: self.availability_zone,
             outpost_arn: self.outpost_arn,
+            operator: self.operator,
             events: self.events,
             instance_id: self.instance_id,
             instance_state: self.instance_state,

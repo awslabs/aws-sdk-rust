@@ -30,8 +30,24 @@ pub fn ser_update_portal_input_input(
     if let Some(var_9) = &input.portal_name {
         object.key("portalName").string(var_9.as_str());
     }
-    if let Some(var_10) = &input.role_arn {
-        object.key("roleArn").string(var_10.as_str());
+    if let Some(var_10) = &input.portal_type {
+        object.key("portalType").string(var_10.as_str());
+    }
+    if let Some(var_11) = &input.portal_type_configuration {
+        #[allow(unused_mut)]
+        let mut object_12 = object.key("portalTypeConfiguration").start_object();
+        for (key_13, value_14) in var_11 {
+            {
+                #[allow(unused_mut)]
+                let mut object_15 = object_12.key(key_13.as_str()).start_object();
+                crate::protocol_serde::shape_portal_type_entry::ser_portal_type_entry(&mut object_15, value_14)?;
+                object_15.finish();
+            }
+        }
+        object_12.finish();
+    }
+    if let Some(var_16) = &input.role_arn {
+        object.key("roleArn").string(var_16.as_str());
     }
     Ok(())
 }

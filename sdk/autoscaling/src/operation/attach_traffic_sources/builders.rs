@@ -156,4 +156,18 @@ impl AttachTrafficSourcesFluentBuilder {
     pub fn get_traffic_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TrafficSourceIdentifier>> {
         self.inner.get_traffic_sources()
     }
+    /// <p>If you enable zonal shift with cross-zone disabled load balancers, capacity could become imbalanced across Availability Zones. To skip the validation, specify <code>true</code>. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-zonal-shift.html">Auto Scaling group zonal shift</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+    pub fn skip_zonal_shift_validation(mut self, input: bool) -> Self {
+        self.inner = self.inner.skip_zonal_shift_validation(input);
+        self
+    }
+    /// <p>If you enable zonal shift with cross-zone disabled load balancers, capacity could become imbalanced across Availability Zones. To skip the validation, specify <code>true</code>. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-zonal-shift.html">Auto Scaling group zonal shift</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+    pub fn set_skip_zonal_shift_validation(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_skip_zonal_shift_validation(input);
+        self
+    }
+    /// <p>If you enable zonal shift with cross-zone disabled load balancers, capacity could become imbalanced across Availability Zones. To skip the validation, specify <code>true</code>. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-zonal-shift.html">Auto Scaling group zonal shift</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+    pub fn get_skip_zonal_shift_validation(&self) -> &::std::option::Option<bool> {
+        self.inner.get_skip_zonal_shift_validation()
+    }
 }

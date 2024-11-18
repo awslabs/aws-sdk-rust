@@ -9,6 +9,8 @@ pub struct ExecuteQueryInput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return at one time. The default is 25.</p>
     pub max_results: ::std::option::Option<i32>,
+    /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
+    pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl ExecuteQueryInput {
     /// <p>The IoT SiteWise query statement.</p>
@@ -22,6 +24,10 @@ impl ExecuteQueryInput {
     /// <p>The maximum number of results to return at one time. The default is 25.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
+    }
+    /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
+    pub fn client_token(&self) -> ::std::option::Option<&str> {
+        self.client_token.as_deref()
     }
 }
 impl ExecuteQueryInput {
@@ -38,6 +44,7 @@ pub struct ExecuteQueryInputBuilder {
     pub(crate) query_statement: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
+    pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl ExecuteQueryInputBuilder {
     /// <p>The IoT SiteWise query statement.</p>
@@ -83,6 +90,20 @@ impl ExecuteQueryInputBuilder {
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
+    /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
+    pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.client_token = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
+    pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.client_token = input;
+        self
+    }
+    /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
+    }
     /// Consumes the builder and constructs a [`ExecuteQueryInput`](crate::operation::execute_query::ExecuteQueryInput).
     pub fn build(
         self,
@@ -91,6 +112,7 @@ impl ExecuteQueryInputBuilder {
             query_statement: self.query_statement,
             next_token: self.next_token,
             max_results: self.max_results,
+            client_token: self.client_token,
         })
     }
 }

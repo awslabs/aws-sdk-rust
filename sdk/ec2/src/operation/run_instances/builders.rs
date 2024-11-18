@@ -723,6 +723,20 @@ impl RunInstancesFluentBuilder {
     pub fn get_enable_primary_ipv6(&self) -> &::std::option::Option<bool> {
         self.inner.get_enable_primary_ipv6()
     }
+    /// <p>Reserved for internal use.</p>
+    pub fn operator(mut self, input: crate::types::OperatorRequest) -> Self {
+        self.inner = self.inner.operator(input);
+        self
+    }
+    /// <p>Reserved for internal use.</p>
+    pub fn set_operator(mut self, input: ::std::option::Option<crate::types::OperatorRequest>) -> Self {
+        self.inner = self.inner.set_operator(input);
+        self
+    }
+    /// <p>Reserved for internal use.</p>
+    pub fn get_operator(&self) -> &::std::option::Option<crate::types::OperatorRequest> {
+        self.inner.get_operator()
+    }
     /// <p>Checks whether you have the required permissions for the operation, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.inner = self.inner.dry_run(input);

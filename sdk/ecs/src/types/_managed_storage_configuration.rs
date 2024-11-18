@@ -4,13 +4,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ManagedStorageConfiguration {
-    /// <p>Specify a Amazon Web Services Key Management Service key ID to encrypt the managed storage.</p>
+    /// <p>Specify a Key Management Service key ID to encrypt the managed storage.</p>
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>Specify the Key Management Service key ID for the Fargate ephemeral storage.</p>
     pub fargate_ephemeral_storage_kms_key_id: ::std::option::Option<::std::string::String>,
 }
 impl ManagedStorageConfiguration {
-    /// <p>Specify a Amazon Web Services Key Management Service key ID to encrypt the managed storage.</p>
+    /// <p>Specify a Key Management Service key ID to encrypt the managed storage.</p>
     pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
@@ -34,17 +34,17 @@ pub struct ManagedStorageConfigurationBuilder {
     pub(crate) fargate_ephemeral_storage_kms_key_id: ::std::option::Option<::std::string::String>,
 }
 impl ManagedStorageConfigurationBuilder {
-    /// <p>Specify a Amazon Web Services Key Management Service key ID to encrypt the managed storage.</p>
+    /// <p>Specify a Key Management Service key ID to encrypt the managed storage.</p>
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Specify a Amazon Web Services Key Management Service key ID to encrypt the managed storage.</p>
+    /// <p>Specify a Key Management Service key ID to encrypt the managed storage.</p>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_id = input;
         self
     }
-    /// <p>Specify a Amazon Web Services Key Management Service key ID to encrypt the managed storage.</p>
+    /// <p>Specify a Key Management Service key ID to encrypt the managed storage.</p>
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.kms_key_id
     }

@@ -145,6 +145,8 @@ pub use crate::types::_product_code::ProductCode;
 
 pub use crate::types::_product_code_values::ProductCodeValues;
 
+pub use crate::types::_operator_response::OperatorResponse;
+
 pub use crate::types::_instance_boot_mode_values::InstanceBootModeValues;
 
 pub use crate::types::_instance_maintenance_options::InstanceMaintenanceOptions;
@@ -250,6 +252,8 @@ pub use crate::types::_ipv4_prefix_specification_request::Ipv4PrefixSpecificatio
 pub use crate::types::_private_ip_address_specification::PrivateIpAddressSpecification;
 
 pub use crate::types::_shutdown_behavior::ShutdownBehavior;
+
+pub use crate::types::_operator_request::OperatorRequest;
 
 pub use crate::types::_instance_maintenance_options_request::InstanceMaintenanceOptionsRequest;
 
@@ -3550,6 +3554,10 @@ mod _on_demand_options;
 mod _on_demand_options_request;
 
 mod _operation_type;
+
+mod _operator_request;
+
+mod _operator_response;
 
 mod _packet_header_statement;
 

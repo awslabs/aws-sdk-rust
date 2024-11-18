@@ -253,6 +253,8 @@ pub enum BatchExecuteStatementError {
     DatabaseErrorException(crate::types::error::DatabaseErrorException),
     /// <p>The DB cluster doesn't have a DB instance.</p>
     DatabaseNotFoundException(crate::types::error::DatabaseNotFoundException),
+    /// <p>A request was canceled because the Aurora Serverless v2 DB instance was in a paused state. The Data API request automatically causes the DB instance to begin resuming. Wait a few seconds and try again.</p>
+    DatabaseResumingException(crate::types::error::DatabaseResumingException),
     /// <p>The writer instance in the DB cluster isn't available.</p>
     DatabaseUnavailableException(crate::types::error::DatabaseUnavailableException),
     /// <p>There are insufficient privileges to make the call.</p>
@@ -316,6 +318,7 @@ impl BatchExecuteStatementError {
             Self::BadRequestException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::DatabaseErrorException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::DatabaseNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::DatabaseResumingException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::DatabaseUnavailableException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ForbiddenException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::HttpEndpointNotEnabledException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -343,6 +346,10 @@ impl BatchExecuteStatementError {
     /// Returns `true` if the error kind is `BatchExecuteStatementError::DatabaseNotFoundException`.
     pub fn is_database_not_found_exception(&self) -> bool {
         matches!(self, Self::DatabaseNotFoundException(_))
+    }
+    /// Returns `true` if the error kind is `BatchExecuteStatementError::DatabaseResumingException`.
+    pub fn is_database_resuming_exception(&self) -> bool {
+        matches!(self, Self::DatabaseResumingException(_))
     }
     /// Returns `true` if the error kind is `BatchExecuteStatementError::DatabaseUnavailableException`.
     pub fn is_database_unavailable_exception(&self) -> bool {
@@ -388,6 +395,7 @@ impl ::std::error::Error for BatchExecuteStatementError {
             Self::BadRequestException(_inner) => ::std::option::Option::Some(_inner),
             Self::DatabaseErrorException(_inner) => ::std::option::Option::Some(_inner),
             Self::DatabaseNotFoundException(_inner) => ::std::option::Option::Some(_inner),
+            Self::DatabaseResumingException(_inner) => ::std::option::Option::Some(_inner),
             Self::DatabaseUnavailableException(_inner) => ::std::option::Option::Some(_inner),
             Self::ForbiddenException(_inner) => ::std::option::Option::Some(_inner),
             Self::HttpEndpointNotEnabledException(_inner) => ::std::option::Option::Some(_inner),
@@ -408,6 +416,7 @@ impl ::std::fmt::Display for BatchExecuteStatementError {
             Self::BadRequestException(_inner) => _inner.fmt(f),
             Self::DatabaseErrorException(_inner) => _inner.fmt(f),
             Self::DatabaseNotFoundException(_inner) => _inner.fmt(f),
+            Self::DatabaseResumingException(_inner) => _inner.fmt(f),
             Self::DatabaseUnavailableException(_inner) => _inner.fmt(f),
             Self::ForbiddenException(_inner) => _inner.fmt(f),
             Self::HttpEndpointNotEnabledException(_inner) => _inner.fmt(f),
@@ -442,6 +451,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for BatchExecuteS
             Self::BadRequestException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::DatabaseErrorException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::DatabaseNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::DatabaseResumingException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::DatabaseUnavailableException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ForbiddenException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::HttpEndpointNotEnabledException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

@@ -89,6 +89,22 @@ pub use crate::types::_priority::Priority;
 
 pub use crate::types::_quick_response_query_operator::QuickResponseQueryOperator;
 
+pub use crate::types::_message_template_search_result_data::MessageTemplateSearchResultData;
+
+pub use crate::types::_channel_subtype::ChannelSubtype;
+
+pub use crate::types::_message_template_search_expression::MessageTemplateSearchExpression;
+
+pub use crate::types::_message_template_order_field::MessageTemplateOrderField;
+
+pub use crate::types::_message_template_filter_field::MessageTemplateFilterField;
+
+pub use crate::types::_message_template_filter_operator::MessageTemplateFilterOperator;
+
+pub use crate::types::_message_template_query_field::MessageTemplateQueryField;
+
+pub use crate::types::_message_template_query_operator::MessageTemplateQueryOperator;
+
 pub use crate::types::_content_summary::ContentSummary;
 
 pub use crate::types::_content_status::ContentStatus;
@@ -110,6 +126,44 @@ pub use crate::types::_quick_response_data::QuickResponseData;
 pub use crate::types::_quick_response_data_provider::QuickResponseDataProvider;
 
 pub use crate::types::_quick_response_summary::QuickResponseSummary;
+
+pub use crate::types::_message_template_data::MessageTemplateData;
+
+pub use crate::types::_message_template_attribute_type::MessageTemplateAttributeType;
+
+pub use crate::types::_message_template_attributes::MessageTemplateAttributes;
+
+pub use crate::types::_customer_profile_attributes::CustomerProfileAttributes;
+
+pub use crate::types::_agent_attributes::AgentAttributes;
+
+pub use crate::types::_system_attributes::SystemAttributes;
+
+pub use crate::types::_system_endpoint_attributes::SystemEndpointAttributes;
+
+pub use crate::types::_message_template_content_provider::MessageTemplateContentProvider;
+
+pub use crate::types::_sms_message_template_content::SmsMessageTemplateContent;
+
+pub use crate::types::_sms_message_template_content_body::SmsMessageTemplateContentBody;
+
+pub use crate::types::_message_template_body_content_provider::MessageTemplateBodyContentProvider;
+
+pub use crate::types::_email_message_template_content::EmailMessageTemplateContent;
+
+pub use crate::types::_email_header::EmailHeader;
+
+pub use crate::types::_email_message_template_content_body::EmailMessageTemplateContentBody;
+
+pub use crate::types::_message_template_attachment::MessageTemplateAttachment;
+
+pub use crate::types::_content_disposition::ContentDisposition;
+
+pub use crate::types::_message_template_version_summary::MessageTemplateVersionSummary;
+
+pub use crate::types::_extended_message_template_data::ExtendedMessageTemplateData;
+
+pub use crate::types::_message_template_summary::MessageTemplateSummary;
 
 pub use crate::types::_content_data::ContentData;
 
@@ -293,6 +347,8 @@ pub use crate::types::_manual_search_ai_agent_configuration::ManualSearchAiAgent
 
 pub use crate::types::_ai_agent_data::AiAgentData;
 
+mod _agent_attributes;
+
 mod _ai_agent_association_configuration_type;
 
 mod _ai_agent_configuration;
@@ -357,6 +413,8 @@ mod _association_type;
 
 mod _bedrock_foundation_model_configuration_for_parsing;
 
+mod _channel_subtype;
+
 mod _chunking_configuration;
 
 mod _chunking_strategy;
@@ -379,6 +437,8 @@ mod _content_data;
 
 mod _content_data_details;
 
+mod _content_disposition;
+
 mod _content_feedback_data;
 
 mod _content_reference;
@@ -386,6 +446,8 @@ mod _content_reference;
 mod _content_status;
 
 mod _content_summary;
+
+mod _customer_profile_attributes;
 
 mod _data_details;
 
@@ -396,6 +458,14 @@ mod _data_summary;
 mod _document;
 
 mod _document_text;
+
+mod _email_header;
+
+mod _email_message_template_content;
+
+mod _email_message_template_content_body;
+
+mod _extended_message_template_data;
 
 mod _external_source;
 
@@ -452,6 +522,36 @@ mod _knowledge_base_type;
 mod _managed_source_configuration;
 
 mod _manual_search_ai_agent_configuration;
+
+mod _message_template_attachment;
+
+mod _message_template_attribute_type;
+
+mod _message_template_attributes;
+
+mod _message_template_body_content_provider;
+
+mod _message_template_content_provider;
+
+mod _message_template_data;
+
+mod _message_template_filter_field;
+
+mod _message_template_filter_operator;
+
+mod _message_template_order_field;
+
+mod _message_template_query_field;
+
+mod _message_template_query_operator;
+
+mod _message_template_search_expression;
+
+mod _message_template_search_result_data;
+
+mod _message_template_summary;
+
+mod _message_template_version_summary;
 
 mod _notify_recommendations_received_error;
 
@@ -555,6 +655,10 @@ mod _session_integration_configuration;
 
 mod _session_summary;
 
+mod _sms_message_template_content;
+
+mod _sms_message_template_content_body;
+
 mod _source_configuration;
 
 mod _source_content_data_details;
@@ -564,6 +668,10 @@ mod _source_content_type;
 mod _status;
 
 mod _sync_status;
+
+mod _system_attributes;
+
+mod _system_endpoint_attributes;
 
 mod _tag_condition;
 

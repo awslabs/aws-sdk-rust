@@ -134,6 +134,8 @@ pub struct RequestLaunchTemplateData {
     pub maintenance_options: ::std::option::Option<crate::types::LaunchTemplateInstanceMaintenanceOptionsRequest>,
     /// <p>Indicates whether to enable the instance for stop protection. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-stop-protection.html">Enable stop protection for your instance</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub disable_api_stop: ::std::option::Option<bool>,
+    /// <p>The entity that manages the launch template.</p>
+    pub operator: ::std::option::Option<crate::types::OperatorRequest>,
 }
 impl RequestLaunchTemplateData {
     /// <p>The ID of the kernel.</p><important>
@@ -342,6 +344,10 @@ impl RequestLaunchTemplateData {
     pub fn disable_api_stop(&self) -> ::std::option::Option<bool> {
         self.disable_api_stop
     }
+    /// <p>The entity that manages the launch template.</p>
+    pub fn operator(&self) -> ::std::option::Option<&crate::types::OperatorRequest> {
+        self.operator.as_ref()
+    }
 }
 impl ::std::fmt::Debug for RequestLaunchTemplateData {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -377,6 +383,7 @@ impl ::std::fmt::Debug for RequestLaunchTemplateData {
         formatter.field("private_dns_name_options", &self.private_dns_name_options);
         formatter.field("maintenance_options", &self.maintenance_options);
         formatter.field("disable_api_stop", &self.disable_api_stop);
+        formatter.field("operator", &self.operator);
         formatter.finish()
     }
 }
@@ -422,6 +429,7 @@ pub struct RequestLaunchTemplateDataBuilder {
     pub(crate) private_dns_name_options: ::std::option::Option<crate::types::LaunchTemplatePrivateDnsNameOptionsRequest>,
     pub(crate) maintenance_options: ::std::option::Option<crate::types::LaunchTemplateInstanceMaintenanceOptionsRequest>,
     pub(crate) disable_api_stop: ::std::option::Option<bool>,
+    pub(crate) operator: ::std::option::Option<crate::types::OperatorRequest>,
 }
 impl RequestLaunchTemplateDataBuilder {
     /// <p>The ID of the kernel.</p><important>
@@ -1131,6 +1139,20 @@ impl RequestLaunchTemplateDataBuilder {
     pub fn get_disable_api_stop(&self) -> &::std::option::Option<bool> {
         &self.disable_api_stop
     }
+    /// <p>The entity that manages the launch template.</p>
+    pub fn operator(mut self, input: crate::types::OperatorRequest) -> Self {
+        self.operator = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The entity that manages the launch template.</p>
+    pub fn set_operator(mut self, input: ::std::option::Option<crate::types::OperatorRequest>) -> Self {
+        self.operator = input;
+        self
+    }
+    /// <p>The entity that manages the launch template.</p>
+    pub fn get_operator(&self) -> &::std::option::Option<crate::types::OperatorRequest> {
+        &self.operator
+    }
     /// Consumes the builder and constructs a [`RequestLaunchTemplateData`](crate::types::RequestLaunchTemplateData).
     pub fn build(self) -> crate::types::RequestLaunchTemplateData {
         crate::types::RequestLaunchTemplateData {
@@ -1165,6 +1187,7 @@ impl RequestLaunchTemplateDataBuilder {
             private_dns_name_options: self.private_dns_name_options,
             maintenance_options: self.maintenance_options,
             disable_api_stop: self.disable_api_stop,
+            operator: self.operator,
         }
     }
 }
@@ -1202,6 +1225,7 @@ impl ::std::fmt::Debug for RequestLaunchTemplateDataBuilder {
         formatter.field("private_dns_name_options", &self.private_dns_name_options);
         formatter.field("maintenance_options", &self.maintenance_options);
         formatter.field("disable_api_stop", &self.disable_api_stop);
+        formatter.field("operator", &self.operator);
         formatter.finish()
     }
 }

@@ -84,6 +84,8 @@ pub struct DbEngineVersion {
     pub supports_local_write_forwarding: ::std::option::Option<bool>,
     /// <p>Indicates whether the DB engine version supports zero-ETL integrations with Amazon Redshift.</p>
     pub supports_integrations: ::std::option::Option<bool>,
+    /// <p>Specifies any Aurora Serverless v2 properties or limits that differ between Aurora engine versions. You can test the values of this attribute when deciding which Aurora version to use in a new or upgraded DB cluster. You can also retrieve the version of an existing DB cluster and check whether that version supports certain Aurora Serverless v2 features before you attempt to use those features.</p>
+    pub serverless_v2_features_support: ::std::option::Option<crate::types::ServerlessV2FeaturesSupport>,
 }
 impl DbEngineVersion {
     /// <p>The name of the database engine.</p>
@@ -252,6 +254,10 @@ impl DbEngineVersion {
     pub fn supports_integrations(&self) -> ::std::option::Option<bool> {
         self.supports_integrations
     }
+    /// <p>Specifies any Aurora Serverless v2 properties or limits that differ between Aurora engine versions. You can test the values of this attribute when deciding which Aurora version to use in a new or upgraded DB cluster. You can also retrieve the version of an existing DB cluster and check whether that version supports certain Aurora Serverless v2 features before you attempt to use those features.</p>
+    pub fn serverless_v2_features_support(&self) -> ::std::option::Option<&crate::types::ServerlessV2FeaturesSupport> {
+        self.serverless_v2_features_support.as_ref()
+    }
 }
 impl DbEngineVersion {
     /// Creates a new builder-style object to manufacture [`DbEngineVersion`](crate::types::DbEngineVersion).
@@ -298,6 +304,7 @@ pub struct DbEngineVersionBuilder {
     pub(crate) supported_ca_certificate_identifiers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) supports_local_write_forwarding: ::std::option::Option<bool>,
     pub(crate) supports_integrations: ::std::option::Option<bool>,
+    pub(crate) serverless_v2_features_support: ::std::option::Option<crate::types::ServerlessV2FeaturesSupport>,
 }
 impl DbEngineVersionBuilder {
     /// <p>The name of the database engine.</p>
@@ -866,6 +873,20 @@ impl DbEngineVersionBuilder {
     pub fn get_supports_integrations(&self) -> &::std::option::Option<bool> {
         &self.supports_integrations
     }
+    /// <p>Specifies any Aurora Serverless v2 properties or limits that differ between Aurora engine versions. You can test the values of this attribute when deciding which Aurora version to use in a new or upgraded DB cluster. You can also retrieve the version of an existing DB cluster and check whether that version supports certain Aurora Serverless v2 features before you attempt to use those features.</p>
+    pub fn serverless_v2_features_support(mut self, input: crate::types::ServerlessV2FeaturesSupport) -> Self {
+        self.serverless_v2_features_support = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies any Aurora Serverless v2 properties or limits that differ between Aurora engine versions. You can test the values of this attribute when deciding which Aurora version to use in a new or upgraded DB cluster. You can also retrieve the version of an existing DB cluster and check whether that version supports certain Aurora Serverless v2 features before you attempt to use those features.</p>
+    pub fn set_serverless_v2_features_support(mut self, input: ::std::option::Option<crate::types::ServerlessV2FeaturesSupport>) -> Self {
+        self.serverless_v2_features_support = input;
+        self
+    }
+    /// <p>Specifies any Aurora Serverless v2 properties or limits that differ between Aurora engine versions. You can test the values of this attribute when deciding which Aurora version to use in a new or upgraded DB cluster. You can also retrieve the version of an existing DB cluster and check whether that version supports certain Aurora Serverless v2 features before you attempt to use those features.</p>
+    pub fn get_serverless_v2_features_support(&self) -> &::std::option::Option<crate::types::ServerlessV2FeaturesSupport> {
+        &self.serverless_v2_features_support
+    }
     /// Consumes the builder and constructs a [`DbEngineVersion`](crate::types::DbEngineVersion).
     pub fn build(self) -> crate::types::DbEngineVersion {
         crate::types::DbEngineVersion {
@@ -903,6 +924,7 @@ impl DbEngineVersionBuilder {
             supported_ca_certificate_identifiers: self.supported_ca_certificate_identifiers,
             supports_local_write_forwarding: self.supports_local_write_forwarding,
             supports_integrations: self.supports_integrations,
+            serverless_v2_features_support: self.serverless_v2_features_support,
         }
     }
 }

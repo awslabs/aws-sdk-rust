@@ -37,6 +37,21 @@ pub fn de_serverless_v2_scaling_configuration_info(
                 builder = builder.set_max_capacity(var_2);
             }
             ,
+            s if s.matches("SecondsUntilAutoPause") /* SecondsUntilAutoPause com.amazonaws.rds#ServerlessV2ScalingConfigurationInfo$SecondsUntilAutoPause */ =>  {
+                let var_3 =
+                    Some(
+                         {
+                            <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (integer: `com.amazonaws.rds#IntegerOptional`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_seconds_until_auto_pause(var_3);
+            }
+            ,
             _ => {}
         }
     }

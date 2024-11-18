@@ -215,6 +215,8 @@ pub use crate::types::_db_cluster_snapshot_attributes_result::DbClusterSnapshotA
 
 pub use crate::types::_db_cluster_snapshot_attribute::DbClusterSnapshotAttribute;
 
+pub use crate::types::_serverless_v2_features_support::ServerlessV2FeaturesSupport;
+
 pub use crate::types::_timezone::Timezone;
 
 pub use crate::types::_upgrade_target::UpgradeTarget;
@@ -546,6 +548,8 @@ mod _scalar_reference_details;
 mod _scaling_configuration;
 
 mod _scaling_configuration_info;
+
+mod _serverless_v2_features_support;
 
 mod _serverless_v2_scaling_configuration;
 

@@ -127,6 +127,8 @@ pub use crate::types::_status::Status;
 
 pub use crate::types::_workflow_type::WorkflowType;
 
+pub use crate::types::_segment_definition_item::SegmentDefinitionItem;
+
 pub use crate::types::_list_profile_object_type_template_item::ListProfileObjectTypeTemplateItem;
 
 pub use crate::types::_list_profile_object_type_item::ListProfileObjectTypeItem;
@@ -134,6 +136,10 @@ pub use crate::types::_list_profile_object_type_item::ListProfileObjectTypeItem;
 pub use crate::types::_list_profile_objects_item::ListProfileObjectsItem;
 
 pub use crate::types::_object_filter::ObjectFilter;
+
+pub use crate::types::_attribute_value_item::AttributeValueItem;
+
+pub use crate::types::_list_object_type_attribute_item::ListObjectTypeAttributeItem;
 
 pub use crate::types::_list_integration_item::ListIntegrationItem;
 
@@ -175,13 +181,77 @@ pub use crate::types::_appflow_integration_workflow_attributes::AppflowIntegrati
 
 pub use crate::types::_match_type::MatchType;
 
+pub use crate::types::_data_format::DataFormat;
+
+pub use crate::types::_segment_snapshot_status::SegmentSnapshotStatus;
+
+pub use crate::types::_profile_query_failures::ProfileQueryFailures;
+
+pub use crate::types::_profile_query_result::ProfileQueryResult;
+
+pub use crate::types::_query_result::QueryResult;
+
+pub use crate::types::_estimate_status::EstimateStatus;
+
+pub use crate::types::_segment_group::SegmentGroup;
+
+pub use crate::types::_include_options::IncludeOptions;
+
+pub use crate::types::_group::Group;
+
+pub use crate::types::_source_segment::SourceSegment;
+
+pub use crate::types::_dimension::Dimension;
+
+pub use crate::types::_calculated_attribute_dimension::CalculatedAttributeDimension;
+
+pub use crate::types::_condition_overrides::ConditionOverrides;
+
+pub use crate::types::_range_override::RangeOverride;
+
+pub use crate::types::_range_unit::RangeUnit;
+
+pub use crate::types::_attribute_dimension_type::AttributeDimensionType;
+
+pub use crate::types::_profile_attributes::ProfileAttributes;
+
+pub use crate::types::_attribute_dimension::AttributeDimension;
+
+pub use crate::types::_address_dimension::AddressDimension;
+
+pub use crate::types::_profile_dimension::ProfileDimension;
+
+pub use crate::types::_string_dimension_type::StringDimensionType;
+
+pub use crate::types::_date_dimension::DateDimension;
+
+pub use crate::types::_date_dimension_type::DateDimensionType;
+
+pub use crate::types::_extra_length_value_profile_dimension::ExtraLengthValueProfileDimension;
+
 pub use crate::types::_match_item::MatchItem;
 
 pub use crate::types::_event_stream_destination_details::EventStreamDestinationDetails;
 
 pub use crate::types::_domain_stats::DomainStats;
 
+pub use crate::types::_filter::Filter;
+
+pub use crate::types::_filter_group::FilterGroup;
+
+pub use crate::types::_filter_dimension::FilterDimension;
+
+pub use crate::types::_filter_attribute_dimension::FilterAttributeDimension;
+
+pub use crate::types::_filter_dimension_type::FilterDimensionType;
+
+pub use crate::types::_type_::Type;
+
+pub use crate::types::_include::Include;
+
 pub use crate::types::_detected_profile_object_type::DetectedProfileObjectType;
+
+pub use crate::types::_segment_group_structure::SegmentGroupStructure;
 
 pub use crate::types::_integration_config::IntegrationConfig;
 
@@ -189,9 +259,17 @@ pub use crate::types::_appflow_integration::AppflowIntegration;
 
 pub use crate::types::_batch::Batch;
 
+pub use crate::types::_batch_get_profile_error::BatchGetProfileError;
+
+pub use crate::types::_calculated_attribute_value::CalculatedAttributeValue;
+
+pub use crate::types::_batch_get_calculated_attribute_for_profile_error::BatchGetCalculatedAttributeForProfileError;
+
 mod _additional_search_key;
 
 mod _address;
+
+mod _address_dimension;
 
 mod _appflow_integration;
 
@@ -203,15 +281,31 @@ mod _appflow_integration_workflow_step;
 
 mod _attribute_details;
 
+mod _attribute_dimension;
+
+mod _attribute_dimension_type;
+
 mod _attribute_item;
 
 mod _attribute_matching_model;
 
 mod _attribute_types_selector;
 
+mod _attribute_value_item;
+
 mod _auto_merging;
 
 mod _batch;
+
+mod _batch_get_calculated_attribute_for_profile_error;
+
+mod _batch_get_profile_error;
+
+mod _calculated_attribute_dimension;
+
+mod _calculated_attribute_value;
+
+mod _condition_overrides;
 
 mod _conditions;
 
@@ -223,13 +317,23 @@ mod _connector_operator;
 
 mod _consolidation;
 
+mod _data_format;
+
 mod _data_pull_mode;
+
+mod _date_dimension;
+
+mod _date_dimension_type;
 
 mod _destination_summary;
 
 mod _detected_profile_object_type;
 
+mod _dimension;
+
 mod _domain_stats;
+
+mod _estimate_status;
 
 mod _event_stream_destination_details;
 
@@ -243,9 +347,21 @@ mod _exporting_config;
 
 mod _exporting_location;
 
+mod _extra_length_value_profile_dimension;
+
 mod _field_content_type;
 
 mod _field_source_profile_ids;
+
+mod _filter;
+
+mod _filter_attribute_dimension;
+
+mod _filter_dimension;
+
+mod _filter_dimension_type;
+
+mod _filter_group;
 
 mod _flow_definition;
 
@@ -253,9 +369,15 @@ mod _found_by_key_value;
 
 mod _gender;
 
+mod _group;
+
 mod _identity_resolution_job;
 
 mod _identity_resolution_job_status;
+
+mod _include;
+
+mod _include_options;
 
 mod _incremental_pull_config;
 
@@ -274,6 +396,8 @@ mod _list_calculated_attribute_for_profile_item;
 mod _list_domain_item;
 
 mod _list_integration_item;
+
+mod _list_object_type_attribute_item;
 
 mod _list_profile_object_type_item;
 
@@ -313,7 +437,21 @@ mod _party_type;
 
 mod _profile;
 
+mod _profile_attributes;
+
+mod _profile_dimension;
+
+mod _profile_query_failures;
+
+mod _profile_query_result;
+
+mod _query_result;
+
 mod _range;
+
+mod _range_override;
+
+mod _range_unit;
 
 mod _rule_based_matching_request;
 
@@ -335,6 +473,14 @@ mod _salesforce_source_properties;
 
 mod _scheduled_trigger_properties;
 
+mod _segment_definition_item;
+
+mod _segment_group;
+
+mod _segment_group_structure;
+
+mod _segment_snapshot_status;
+
 mod _service_now_connector_operator;
 
 mod _service_now_source_properties;
@@ -345,11 +491,15 @@ mod _source_connector_type;
 
 mod _source_flow_config;
 
+mod _source_segment;
+
 mod _standard_identifier;
 
 mod _statistic;
 
 mod _status;
+
+mod _string_dimension_type;
 
 mod _task;
 
@@ -362,6 +512,8 @@ mod _trigger_config;
 mod _trigger_properties;
 
 mod _trigger_type;
+
+mod _type_;
 
 mod _unit;
 

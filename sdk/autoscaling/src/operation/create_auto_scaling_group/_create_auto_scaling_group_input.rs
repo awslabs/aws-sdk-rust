@@ -84,6 +84,10 @@ pub struct CreateAutoScalingGroupInput {
     pub instance_maintenance_policy: ::std::option::Option<crate::types::InstanceMaintenancePolicy>,
     /// <p>The instance capacity distribution across Availability Zones.</p>
     pub availability_zone_distribution: ::std::option::Option<crate::types::AvailabilityZoneDistribution>,
+    /// <p>The policy for Availability Zone impairment.</p>
+    pub availability_zone_impairment_policy: ::std::option::Option<crate::types::AvailabilityZoneImpairmentPolicy>,
+    /// <p>If you enable zonal shift with cross-zone disabled load balancers, capacity could become imbalanced across Availability Zones. To skip the validation, specify <code>true</code>. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-zonal-shift.html">Auto Scaling group zonal shift</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+    pub skip_zonal_shift_validation: ::std::option::Option<bool>,
 }
 impl CreateAutoScalingGroupInput {
     /// <p>The name of the Auto Scaling group. This name must be unique per Region per account.</p>
@@ -239,6 +243,14 @@ impl CreateAutoScalingGroupInput {
     pub fn availability_zone_distribution(&self) -> ::std::option::Option<&crate::types::AvailabilityZoneDistribution> {
         self.availability_zone_distribution.as_ref()
     }
+    /// <p>The policy for Availability Zone impairment.</p>
+    pub fn availability_zone_impairment_policy(&self) -> ::std::option::Option<&crate::types::AvailabilityZoneImpairmentPolicy> {
+        self.availability_zone_impairment_policy.as_ref()
+    }
+    /// <p>If you enable zonal shift with cross-zone disabled load balancers, capacity could become imbalanced across Availability Zones. To skip the validation, specify <code>true</code>. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-zonal-shift.html">Auto Scaling group zonal shift</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+    pub fn skip_zonal_shift_validation(&self) -> ::std::option::Option<bool> {
+        self.skip_zonal_shift_validation
+    }
 }
 impl CreateAutoScalingGroupInput {
     /// Creates a new builder-style object to manufacture [`CreateAutoScalingGroupInput`](crate::operation::create_auto_scaling_group::CreateAutoScalingGroupInput).
@@ -280,6 +292,8 @@ pub struct CreateAutoScalingGroupInputBuilder {
     pub(crate) traffic_sources: ::std::option::Option<::std::vec::Vec<crate::types::TrafficSourceIdentifier>>,
     pub(crate) instance_maintenance_policy: ::std::option::Option<crate::types::InstanceMaintenancePolicy>,
     pub(crate) availability_zone_distribution: ::std::option::Option<crate::types::AvailabilityZoneDistribution>,
+    pub(crate) availability_zone_impairment_policy: ::std::option::Option<crate::types::AvailabilityZoneImpairmentPolicy>,
+    pub(crate) skip_zonal_shift_validation: ::std::option::Option<bool>,
 }
 impl CreateAutoScalingGroupInputBuilder {
     /// <p>The name of the Auto Scaling group. This name must be unique per Region per account.</p>
@@ -805,6 +819,34 @@ impl CreateAutoScalingGroupInputBuilder {
     pub fn get_availability_zone_distribution(&self) -> &::std::option::Option<crate::types::AvailabilityZoneDistribution> {
         &self.availability_zone_distribution
     }
+    /// <p>The policy for Availability Zone impairment.</p>
+    pub fn availability_zone_impairment_policy(mut self, input: crate::types::AvailabilityZoneImpairmentPolicy) -> Self {
+        self.availability_zone_impairment_policy = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The policy for Availability Zone impairment.</p>
+    pub fn set_availability_zone_impairment_policy(mut self, input: ::std::option::Option<crate::types::AvailabilityZoneImpairmentPolicy>) -> Self {
+        self.availability_zone_impairment_policy = input;
+        self
+    }
+    /// <p>The policy for Availability Zone impairment.</p>
+    pub fn get_availability_zone_impairment_policy(&self) -> &::std::option::Option<crate::types::AvailabilityZoneImpairmentPolicy> {
+        &self.availability_zone_impairment_policy
+    }
+    /// <p>If you enable zonal shift with cross-zone disabled load balancers, capacity could become imbalanced across Availability Zones. To skip the validation, specify <code>true</code>. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-zonal-shift.html">Auto Scaling group zonal shift</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+    pub fn skip_zonal_shift_validation(mut self, input: bool) -> Self {
+        self.skip_zonal_shift_validation = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>If you enable zonal shift with cross-zone disabled load balancers, capacity could become imbalanced across Availability Zones. To skip the validation, specify <code>true</code>. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-zonal-shift.html">Auto Scaling group zonal shift</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+    pub fn set_skip_zonal_shift_validation(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.skip_zonal_shift_validation = input;
+        self
+    }
+    /// <p>If you enable zonal shift with cross-zone disabled load balancers, capacity could become imbalanced across Availability Zones. To skip the validation, specify <code>true</code>. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-zonal-shift.html">Auto Scaling group zonal shift</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+    pub fn get_skip_zonal_shift_validation(&self) -> &::std::option::Option<bool> {
+        &self.skip_zonal_shift_validation
+    }
     /// Consumes the builder and constructs a [`CreateAutoScalingGroupInput`](crate::operation::create_auto_scaling_group::CreateAutoScalingGroupInput).
     pub fn build(
         self,
@@ -842,6 +884,8 @@ impl CreateAutoScalingGroupInputBuilder {
             traffic_sources: self.traffic_sources,
             instance_maintenance_policy: self.instance_maintenance_policy,
             availability_zone_distribution: self.availability_zone_distribution,
+            availability_zone_impairment_policy: self.availability_zone_impairment_policy,
+            skip_zonal_shift_validation: self.skip_zonal_shift_validation,
         })
     }
 }

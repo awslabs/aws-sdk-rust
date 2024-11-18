@@ -14,6 +14,7 @@
 /// match standardidentifier {
 ///     StandardIdentifier::Asset => { /* ... */ },
 ///     StandardIdentifier::Case => { /* ... */ },
+///     StandardIdentifier::CommunicationRecord => { /* ... */ },
 ///     StandardIdentifier::LookupOnly => { /* ... */ },
 ///     StandardIdentifier::NewOnly => { /* ... */ },
 ///     StandardIdentifier::Order => { /* ... */ },
@@ -52,6 +53,8 @@ pub enum StandardIdentifier {
     #[allow(missing_docs)] // documentation missing in model
     Case,
     #[allow(missing_docs)] // documentation missing in model
+    CommunicationRecord,
+    #[allow(missing_docs)] // documentation missing in model
     LookupOnly,
     #[allow(missing_docs)] // documentation missing in model
     NewOnly,
@@ -72,6 +75,7 @@ impl ::std::convert::From<&str> for StandardIdentifier {
         match s {
             "ASSET" => StandardIdentifier::Asset,
             "CASE" => StandardIdentifier::Case,
+            "COMMUNICATION_RECORD" => StandardIdentifier::CommunicationRecord,
             "LOOKUP_ONLY" => StandardIdentifier::LookupOnly,
             "NEW_ONLY" => StandardIdentifier::NewOnly,
             "ORDER" => StandardIdentifier::Order,
@@ -95,6 +99,7 @@ impl StandardIdentifier {
         match self {
             StandardIdentifier::Asset => "ASSET",
             StandardIdentifier::Case => "CASE",
+            StandardIdentifier::CommunicationRecord => "COMMUNICATION_RECORD",
             StandardIdentifier::LookupOnly => "LOOKUP_ONLY",
             StandardIdentifier::NewOnly => "NEW_ONLY",
             StandardIdentifier::Order => "ORDER",
@@ -106,7 +111,17 @@ impl StandardIdentifier {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ASSET", "CASE", "LOOKUP_ONLY", "NEW_ONLY", "ORDER", "PROFILE", "SECONDARY", "UNIQUE"]
+        &[
+            "ASSET",
+            "CASE",
+            "COMMUNICATION_RECORD",
+            "LOOKUP_ONLY",
+            "NEW_ONLY",
+            "ORDER",
+            "PROFILE",
+            "SECONDARY",
+            "UNIQUE",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for StandardIdentifier {
@@ -131,6 +146,7 @@ impl ::std::fmt::Display for StandardIdentifier {
         match self {
             StandardIdentifier::Asset => write!(f, "ASSET"),
             StandardIdentifier::Case => write!(f, "CASE"),
+            StandardIdentifier::CommunicationRecord => write!(f, "COMMUNICATION_RECORD"),
             StandardIdentifier::LookupOnly => write!(f, "LOOKUP_ONLY"),
             StandardIdentifier::NewOnly => write!(f, "NEW_ONLY"),
             StandardIdentifier::Order => write!(f, "ORDER"),

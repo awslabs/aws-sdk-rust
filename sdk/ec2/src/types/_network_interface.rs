@@ -58,6 +58,8 @@ pub struct NetworkInterface {
     pub ipv6_native: ::std::option::Option<bool>,
     /// <p>The IPv6 globally unique address associated with the network interface.</p>
     pub ipv6_address: ::std::option::Option<::std::string::String>,
+    /// <p>The entity that manages the network interface.</p>
+    pub operator: ::std::option::Option<crate::types::OperatorResponse>,
 }
 impl NetworkInterface {
     /// <p>The association information for an Elastic IP address (IPv4) associated with the network interface.</p>
@@ -180,6 +182,10 @@ impl NetworkInterface {
     pub fn ipv6_address(&self) -> ::std::option::Option<&str> {
         self.ipv6_address.as_deref()
     }
+    /// <p>The entity that manages the network interface.</p>
+    pub fn operator(&self) -> ::std::option::Option<&crate::types::OperatorResponse> {
+        self.operator.as_ref()
+    }
 }
 impl NetworkInterface {
     /// Creates a new builder-style object to manufacture [`NetworkInterface`](crate::types::NetworkInterface).
@@ -219,6 +225,7 @@ pub struct NetworkInterfaceBuilder {
     pub(crate) deny_all_igw_traffic: ::std::option::Option<bool>,
     pub(crate) ipv6_native: ::std::option::Option<bool>,
     pub(crate) ipv6_address: ::std::option::Option<::std::string::String>,
+    pub(crate) operator: ::std::option::Option<crate::types::OperatorResponse>,
 }
 impl NetworkInterfaceBuilder {
     /// <p>The association information for an Elastic IP address (IPv4) associated with the network interface.</p>
@@ -635,6 +642,20 @@ impl NetworkInterfaceBuilder {
     pub fn get_ipv6_address(&self) -> &::std::option::Option<::std::string::String> {
         &self.ipv6_address
     }
+    /// <p>The entity that manages the network interface.</p>
+    pub fn operator(mut self, input: crate::types::OperatorResponse) -> Self {
+        self.operator = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The entity that manages the network interface.</p>
+    pub fn set_operator(mut self, input: ::std::option::Option<crate::types::OperatorResponse>) -> Self {
+        self.operator = input;
+        self
+    }
+    /// <p>The entity that manages the network interface.</p>
+    pub fn get_operator(&self) -> &::std::option::Option<crate::types::OperatorResponse> {
+        &self.operator
+    }
     /// Consumes the builder and constructs a [`NetworkInterface`](crate::types::NetworkInterface).
     pub fn build(self) -> crate::types::NetworkInterface {
         crate::types::NetworkInterface {
@@ -665,6 +686,7 @@ impl NetworkInterfaceBuilder {
             deny_all_igw_traffic: self.deny_all_igw_traffic,
             ipv6_native: self.ipv6_native,
             ipv6_address: self.ipv6_address,
+            operator: self.operator,
         }
     }
 }

@@ -17,33 +17,33 @@ pub fn de_tag_resource_http_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ConflictingOperationException" => crate::operation::tag_resource::TagResourceError::ConflictingOperationException({
+        "UnauthorizedException" => crate::operation::tag_resource::TagResourceError::UnauthorizedException({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::ConflictingOperationExceptionBuilder::default();
-                output =
-                    crate::protocol_serde::shape_conflicting_operation_exception::de_conflicting_operation_exception_json_err(_response_body, output)
-                        .map_err(crate::operation::tag_resource::TagResourceError::unhandled)?;
+                let mut output = crate::types::error::builders::UnauthorizedExceptionBuilder::default();
+                output = crate::protocol_serde::shape_unauthorized_exception::de_unauthorized_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::tag_resource::TagResourceError::unhandled)?;
                 let output = output.meta(generic);
-                crate::serde_util::conflicting_operation_exception_correct_errors(output)
+                crate::serde_util::unauthorized_exception_correct_errors(output)
                     .build()
                     .map_err(crate::operation::tag_resource::TagResourceError::unhandled)?
             };
             tmp
         }),
-        "InternalFailureException" => crate::operation::tag_resource::TagResourceError::InternalFailureException({
+        "TooManyTagsException" => crate::operation::tag_resource::TagResourceError::TooManyTagsException({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::InternalFailureExceptionBuilder::default();
-                output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(_response_body, output)
+                let mut output = crate::types::error::builders::TooManyTagsExceptionBuilder::default();
+                output = crate::protocol_serde::shape_too_many_tags_exception::de_too_many_tags_exception_json_err(_response_body, output)
                     .map_err(crate::operation::tag_resource::TagResourceError::unhandled)?;
                 let output = output.meta(generic);
-                crate::serde_util::internal_failure_exception_correct_errors(output)
-                    .build()
-                    .map_err(crate::operation::tag_resource::TagResourceError::unhandled)?
+                output.build()
             };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "InvalidRequestException" => crate::operation::tag_resource::TagResourceError::InvalidRequestException({
@@ -55,6 +55,21 @@ pub fn de_tag_resource_http_error(
                     .map_err(crate::operation::tag_resource::TagResourceError::unhandled)?;
                 let output = output.meta(generic);
                 crate::serde_util::invalid_request_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::tag_resource::TagResourceError::unhandled)?
+            };
+            tmp
+        }),
+        "ConflictingOperationException" => crate::operation::tag_resource::TagResourceError::ConflictingOperationException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ConflictingOperationExceptionBuilder::default();
+                output =
+                    crate::protocol_serde::shape_conflicting_operation_exception::de_conflicting_operation_exception_json_err(_response_body, output)
+                        .map_err(crate::operation::tag_resource::TagResourceError::unhandled)?;
+                let output = output.meta(generic);
+                crate::serde_util::conflicting_operation_exception_correct_errors(output)
                     .build()
                     .map_err(crate::operation::tag_resource::TagResourceError::unhandled)?
             };
@@ -102,30 +117,15 @@ pub fn de_tag_resource_http_error(
             };
             tmp
         }),
-        "TooManyTagsException" => crate::operation::tag_resource::TagResourceError::TooManyTagsException({
+        "InternalFailureException" => crate::operation::tag_resource::TagResourceError::InternalFailureException({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::TooManyTagsExceptionBuilder::default();
-                output = crate::protocol_serde::shape_too_many_tags_exception::de_too_many_tags_exception_json_err(_response_body, output)
+                let mut output = crate::types::error::builders::InternalFailureExceptionBuilder::default();
+                output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(_response_body, output)
                     .map_err(crate::operation::tag_resource::TagResourceError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "UnauthorizedException" => crate::operation::tag_resource::TagResourceError::UnauthorizedException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::UnauthorizedExceptionBuilder::default();
-                output = crate::protocol_serde::shape_unauthorized_exception::de_unauthorized_exception_json_err(_response_body, output)
-                    .map_err(crate::operation::tag_resource::TagResourceError::unhandled)?;
-                let output = output.meta(generic);
-                crate::serde_util::unauthorized_exception_correct_errors(output)
+                crate::serde_util::internal_failure_exception_correct_errors(output)
                     .build()
                     .map_err(crate::operation::tag_resource::TagResourceError::unhandled)?
             };

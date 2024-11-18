@@ -85,6 +85,8 @@ pub struct Instance {
     pub maintenance_options: ::std::option::Option<crate::types::InstanceMaintenanceOptions>,
     /// <p>The boot mode that is used to boot the instance at launch or start. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot modes</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub current_instance_boot_mode: ::std::option::Option<crate::types::InstanceBootModeValues>,
+    /// <p>The entity that manages the instance.</p>
+    pub operator: ::std::option::Option<crate::types::OperatorResponse>,
     /// <p>The ID of the instance.</p>
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the AMI used to launch the instance.</p>
@@ -298,6 +300,10 @@ impl Instance {
     pub fn current_instance_boot_mode(&self) -> ::std::option::Option<&crate::types::InstanceBootModeValues> {
         self.current_instance_boot_mode.as_ref()
     }
+    /// <p>The entity that manages the instance.</p>
+    pub fn operator(&self) -> ::std::option::Option<&crate::types::OperatorResponse> {
+        self.operator.as_ref()
+    }
     /// <p>The ID of the instance.</p>
     pub fn instance_id(&self) -> ::std::option::Option<&str> {
         self.instance_id.as_deref()
@@ -432,6 +438,7 @@ pub struct InstanceBuilder {
     pub(crate) tpm_support: ::std::option::Option<::std::string::String>,
     pub(crate) maintenance_options: ::std::option::Option<crate::types::InstanceMaintenanceOptions>,
     pub(crate) current_instance_boot_mode: ::std::option::Option<crate::types::InstanceBootModeValues>,
+    pub(crate) operator: ::std::option::Option<crate::types::OperatorResponse>,
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) image_id: ::std::option::Option<::std::string::String>,
     pub(crate) state: ::std::option::Option<crate::types::InstanceState>,
@@ -1043,6 +1050,20 @@ impl InstanceBuilder {
     pub fn get_current_instance_boot_mode(&self) -> &::std::option::Option<crate::types::InstanceBootModeValues> {
         &self.current_instance_boot_mode
     }
+    /// <p>The entity that manages the instance.</p>
+    pub fn operator(mut self, input: crate::types::OperatorResponse) -> Self {
+        self.operator = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The entity that manages the instance.</p>
+    pub fn set_operator(mut self, input: ::std::option::Option<crate::types::OperatorResponse>) -> Self {
+        self.operator = input;
+        self
+    }
+    /// <p>The entity that manages the instance.</p>
+    pub fn get_operator(&self) -> &::std::option::Option<crate::types::OperatorResponse> {
+        &self.operator
+    }
     /// <p>The ID of the instance.</p>
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
@@ -1375,6 +1396,7 @@ impl InstanceBuilder {
             tpm_support: self.tpm_support,
             maintenance_options: self.maintenance_options,
             current_instance_boot_mode: self.current_instance_boot_mode,
+            operator: self.operator,
             instance_id: self.instance_id,
             image_id: self.image_id,
             state: self.state,

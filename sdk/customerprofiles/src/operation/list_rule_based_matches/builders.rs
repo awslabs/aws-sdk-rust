@@ -108,6 +108,12 @@ impl ListRuleBasedMatchesFluentBuilder {
         self.config_override = config_override;
         self
     }
+    /// Create a paginator for this request
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::list_rule_based_matches::paginator::ListRuleBasedMatchesPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
+    pub fn into_paginator(self) -> crate::operation::list_rule_based_matches::paginator::ListRuleBasedMatchesPaginator {
+        crate::operation::list_rule_based_matches::paginator::ListRuleBasedMatchesPaginator::new(self.handle, self.inner)
+    }
     /// <p>The pagination token from the previous <code>ListRuleBasedMatches</code> API call.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());

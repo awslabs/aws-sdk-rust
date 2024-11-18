@@ -76,6 +76,9 @@ pub mod create_contact_flow;
 /// Types for the `CreateContactFlowModule` operation.
 pub mod create_contact_flow_module;
 
+/// Types for the `CreateContactFlowVersion` operation.
+pub mod create_contact_flow_version;
+
 /// Types for the `CreateEvaluationForm` operation.
 pub mod create_evaluation_form;
 
@@ -384,6 +387,9 @@ pub mod list_contact_evaluations;
 
 /// Types for the `ListContactFlowModules` operation.
 pub mod list_contact_flow_modules;
+
+/// Types for the `ListContactFlowVersions` operation.
+pub mod list_contact_flow_versions;
 
 /// Types for the `ListContactFlows` operation.
 pub mod list_contact_flows;

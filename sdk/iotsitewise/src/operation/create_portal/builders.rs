@@ -285,4 +285,42 @@ impl CreatePortalFluentBuilder {
     pub fn get_alarms(&self) -> &::std::option::Option<crate::types::Alarms> {
         self.inner.get_alarms()
     }
+    /// <p>Define the type of portal. The value for IoT SiteWise Monitor (Classic) is <code>SITEWISE_PORTAL_V1</code>. The value for IoT SiteWise Monitor (AI-aware) is <code>SITEWISE_PORTAL_V2</code>.</p>
+    pub fn portal_type(mut self, input: crate::types::PortalType) -> Self {
+        self.inner = self.inner.portal_type(input);
+        self
+    }
+    /// <p>Define the type of portal. The value for IoT SiteWise Monitor (Classic) is <code>SITEWISE_PORTAL_V1</code>. The value for IoT SiteWise Monitor (AI-aware) is <code>SITEWISE_PORTAL_V2</code>.</p>
+    pub fn set_portal_type(mut self, input: ::std::option::Option<crate::types::PortalType>) -> Self {
+        self.inner = self.inner.set_portal_type(input);
+        self
+    }
+    /// <p>Define the type of portal. The value for IoT SiteWise Monitor (Classic) is <code>SITEWISE_PORTAL_V1</code>. The value for IoT SiteWise Monitor (AI-aware) is <code>SITEWISE_PORTAL_V2</code>.</p>
+    pub fn get_portal_type(&self) -> &::std::option::Option<crate::types::PortalType> {
+        self.inner.get_portal_type()
+    }
+    ///
+    /// Adds a key-value pair to `portalTypeConfiguration`.
+    ///
+    /// To override the contents of this collection use [`set_portal_type_configuration`](Self::set_portal_type_configuration).
+    ///
+    /// <p>The configuration entry associated with the specific portal type. The value for IoT SiteWise Monitor (Classic) is <code>SITEWISE_PORTAL_V1</code>. The value for IoT SiteWise Monitor (AI-aware) is <code>SITEWISE_PORTAL_V2</code>.</p>
+    pub fn portal_type_configuration(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::PortalTypeEntry) -> Self {
+        self.inner = self.inner.portal_type_configuration(k.into(), v);
+        self
+    }
+    /// <p>The configuration entry associated with the specific portal type. The value for IoT SiteWise Monitor (Classic) is <code>SITEWISE_PORTAL_V1</code>. The value for IoT SiteWise Monitor (AI-aware) is <code>SITEWISE_PORTAL_V2</code>.</p>
+    pub fn set_portal_type_configuration(
+        mut self,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::PortalTypeEntry>>,
+    ) -> Self {
+        self.inner = self.inner.set_portal_type_configuration(input);
+        self
+    }
+    /// <p>The configuration entry associated with the specific portal type. The value for IoT SiteWise Monitor (Classic) is <code>SITEWISE_PORTAL_V1</code>. The value for IoT SiteWise Monitor (AI-aware) is <code>SITEWISE_PORTAL_V2</code>.</p>
+    pub fn get_portal_type_configuration(
+        &self,
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::PortalTypeEntry>> {
+        self.inner.get_portal_type_configuration()
+    }
 }

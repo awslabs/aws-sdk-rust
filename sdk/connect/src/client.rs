@@ -186,6 +186,8 @@ mod create_contact_flow;
 
 mod create_contact_flow_module;
 
+mod create_contact_flow_version;
+
 mod create_evaluation_form;
 
 mod create_hours_of_operation;
@@ -418,6 +420,8 @@ mod list_bots;
 mod list_contact_evaluations;
 
 mod list_contact_flow_modules;
+
+mod list_contact_flow_versions;
 
 mod list_contact_flows;
 

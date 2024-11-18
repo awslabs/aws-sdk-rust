@@ -613,6 +613,8 @@ pub use crate::types::_reference_status::ReferenceStatus;
 
 pub use crate::types::_url_reference::UrlReference;
 
+pub use crate::types::_contact_flow_version_summary::ContactFlowVersionSummary;
+
 pub use crate::types::_contact_flow_summary::ContactFlowSummary;
 
 pub use crate::types::_contact_flow_module_summary::ContactFlowModuleSummary;
@@ -950,6 +952,8 @@ mod _contact_flow_status;
 mod _contact_flow_summary;
 
 mod _contact_flow_type;
+
+mod _contact_flow_version_summary;
 
 mod _contact_initiation_method;
 

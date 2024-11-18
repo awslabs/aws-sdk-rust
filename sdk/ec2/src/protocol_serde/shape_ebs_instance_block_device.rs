@@ -89,6 +89,16 @@ pub fn de_ebs_instance_block_device(
                 builder = builder.set_volume_owner_id(var_6);
             }
             ,
+            s if s.matches("operator") /* Operator com.amazonaws.ec2#EbsInstanceBlockDevice$Operator */ =>  {
+                let var_7 =
+                    Some(
+                        crate::protocol_serde::shape_operator_response::de_operator_response(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_operator(var_7);
+            }
+            ,
             _ => {}
         }
     }

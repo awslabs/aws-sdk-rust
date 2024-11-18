@@ -2739,6 +2739,8 @@ pub(crate) mod shape_new_dhcp_configuration;
 
 pub(crate) mod shape_on_demand_options_request;
 
+pub(crate) mod shape_operator_request;
+
 pub(crate) mod shape_path_request_filter;
 
 pub(crate) mod shape_peering_connection_options_request;
@@ -3308,6 +3310,8 @@ pub(crate) mod shape_network_interface_list;
 pub(crate) mod shape_network_interface_permission;
 
 pub(crate) mod shape_network_interface_permission_list;
+
+pub(crate) mod shape_operator_response;
 
 pub(crate) mod shape_path_statement_request;
 

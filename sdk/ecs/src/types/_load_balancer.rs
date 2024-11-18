@@ -14,7 +14,7 @@ pub struct LoadBalancer {
     /// <p>If your service's task definition uses the <code>awsvpc</code> network mode, you must choose <code>ip</code> as the target type, not <code>instance</code>. Do this when creating your target groups because tasks that use the <code>awsvpc</code> network mode are associated with an elastic network interface, not an Amazon EC2 instance. This network mode is required for the Fargate launch type.</p>
     /// </important>
     pub target_group_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The name of the load balancer to associate with the service or task set.</p>
+    /// <p>The name of the load balancer to associate with the Amazon ECS service or task set.</p>
     /// <p>If you are using an Application Load Balancer or a Network Load Balancer the load balancer name parameter should be omitted.</p>
     pub load_balancer_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the container (as it appears in a container definition) to associate with the load balancer.</p>
@@ -33,7 +33,7 @@ impl LoadBalancer {
     pub fn target_group_arn(&self) -> ::std::option::Option<&str> {
         self.target_group_arn.as_deref()
     }
-    /// <p>The name of the load balancer to associate with the service or task set.</p>
+    /// <p>The name of the load balancer to associate with the Amazon ECS service or task set.</p>
     /// <p>If you are using an Application Load Balancer or a Network Load Balancer the load balancer name parameter should be omitted.</p>
     pub fn load_balancer_name(&self) -> ::std::option::Option<&str> {
         self.load_balancer_name.as_deref()
@@ -94,19 +94,19 @@ impl LoadBalancerBuilder {
     pub fn get_target_group_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.target_group_arn
     }
-    /// <p>The name of the load balancer to associate with the service or task set.</p>
+    /// <p>The name of the load balancer to associate with the Amazon ECS service or task set.</p>
     /// <p>If you are using an Application Load Balancer or a Network Load Balancer the load balancer name parameter should be omitted.</p>
     pub fn load_balancer_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.load_balancer_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the load balancer to associate with the service or task set.</p>
+    /// <p>The name of the load balancer to associate with the Amazon ECS service or task set.</p>
     /// <p>If you are using an Application Load Balancer or a Network Load Balancer the load balancer name parameter should be omitted.</p>
     pub fn set_load_balancer_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.load_balancer_name = input;
         self
     }
-    /// <p>The name of the load balancer to associate with the service or task set.</p>
+    /// <p>The name of the load balancer to associate with the Amazon ECS service or task set.</p>
     /// <p>If you are using an Application Load Balancer or a Network Load Balancer the load balancer name parameter should be omitted.</p>
     pub fn get_load_balancer_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.load_balancer_name

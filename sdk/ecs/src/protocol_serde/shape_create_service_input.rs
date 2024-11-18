@@ -156,5 +156,17 @@ pub fn ser_create_service_input_input(
         }
         array_47.finish();
     }
+    if let Some(var_50) = &input.vpc_lattice_configurations {
+        let mut array_51 = object.key("vpcLatticeConfigurations").start_array();
+        for item_52 in var_50 {
+            {
+                #[allow(unused_mut)]
+                let mut object_53 = array_51.value().start_object();
+                crate::protocol_serde::shape_vpc_lattice_configuration::ser_vpc_lattice_configuration(&mut object_53, item_52)?;
+                object_53.finish();
+            }
+        }
+        array_51.finish();
+    }
     Ok(())
 }

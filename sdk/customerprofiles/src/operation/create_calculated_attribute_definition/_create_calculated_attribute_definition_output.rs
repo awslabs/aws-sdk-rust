@@ -13,6 +13,8 @@ pub struct CreateCalculatedAttributeDefinitionOutput {
     pub attribute_details: ::std::option::Option<crate::types::AttributeDetails>,
     /// <p>The conditions including range, object count, and threshold for the calculated attribute.</p>
     pub conditions: ::std::option::Option<crate::types::Conditions>,
+    /// <p>The filter that was used as part of the request.</p>
+    pub filter: ::std::option::Option<crate::types::Filter>,
     /// <p>The aggregation operation to perform for the calculated attribute.</p>
     pub statistic: ::std::option::Option<crate::types::Statistic>,
     /// <p>The timestamp of when the calculated attribute definition was created.</p>
@@ -44,6 +46,10 @@ impl CreateCalculatedAttributeDefinitionOutput {
     pub fn conditions(&self) -> ::std::option::Option<&crate::types::Conditions> {
         self.conditions.as_ref()
     }
+    /// <p>The filter that was used as part of the request.</p>
+    pub fn filter(&self) -> ::std::option::Option<&crate::types::Filter> {
+        self.filter.as_ref()
+    }
     /// <p>The aggregation operation to perform for the calculated attribute.</p>
     pub fn statistic(&self) -> ::std::option::Option<&crate::types::Statistic> {
         self.statistic.as_ref()
@@ -69,6 +75,7 @@ impl ::std::fmt::Debug for CreateCalculatedAttributeDefinitionOutput {
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("attribute_details", &"*** Sensitive Data Redacted ***");
         formatter.field("conditions", &"*** Sensitive Data Redacted ***");
+        formatter.field("filter", &self.filter);
         formatter.field("statistic", &"*** Sensitive Data Redacted ***");
         formatter.field("created_at", &self.created_at);
         formatter.field("last_updated_at", &self.last_updated_at);
@@ -98,6 +105,7 @@ pub struct CreateCalculatedAttributeDefinitionOutputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) attribute_details: ::std::option::Option<crate::types::AttributeDetails>,
     pub(crate) conditions: ::std::option::Option<crate::types::Conditions>,
+    pub(crate) filter: ::std::option::Option<crate::types::Filter>,
     pub(crate) statistic: ::std::option::Option<crate::types::Statistic>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -174,6 +182,20 @@ impl CreateCalculatedAttributeDefinitionOutputBuilder {
     /// <p>The conditions including range, object count, and threshold for the calculated attribute.</p>
     pub fn get_conditions(&self) -> &::std::option::Option<crate::types::Conditions> {
         &self.conditions
+    }
+    /// <p>The filter that was used as part of the request.</p>
+    pub fn filter(mut self, input: crate::types::Filter) -> Self {
+        self.filter = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The filter that was used as part of the request.</p>
+    pub fn set_filter(mut self, input: ::std::option::Option<crate::types::Filter>) -> Self {
+        self.filter = input;
+        self
+    }
+    /// <p>The filter that was used as part of the request.</p>
+    pub fn get_filter(&self) -> &::std::option::Option<crate::types::Filter> {
+        &self.filter
     }
     /// <p>The aggregation operation to perform for the calculated attribute.</p>
     pub fn statistic(mut self, input: crate::types::Statistic) -> Self {
@@ -254,6 +276,7 @@ impl CreateCalculatedAttributeDefinitionOutputBuilder {
             description: self.description,
             attribute_details: self.attribute_details,
             conditions: self.conditions,
+            filter: self.filter,
             statistic: self.statistic,
             created_at: self.created_at,
             last_updated_at: self.last_updated_at,
@@ -270,6 +293,7 @@ impl ::std::fmt::Debug for CreateCalculatedAttributeDefinitionOutputBuilder {
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("attribute_details", &"*** Sensitive Data Redacted ***");
         formatter.field("conditions", &"*** Sensitive Data Redacted ***");
+        formatter.field("filter", &self.filter);
         formatter.field("statistic", &"*** Sensitive Data Redacted ***");
         formatter.field("created_at", &self.created_at);
         formatter.field("last_updated_at", &self.last_updated_at);

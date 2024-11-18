@@ -172,6 +172,9 @@ pub(crate) fn de_get_calculated_attribute_definition(
                             .transpose()?,
                     );
                 }
+                "Filter" => {
+                    builder = builder.set_filter(crate::protocol_serde::shape_filter::de_filter(tokens)?);
+                }
                 "LastUpdatedAt" => {
                     builder = builder.set_last_updated_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                         tokens.next(),

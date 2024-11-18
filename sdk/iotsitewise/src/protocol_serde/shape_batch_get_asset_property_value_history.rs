@@ -20,22 +20,6 @@ pub fn de_batch_get_asset_property_value_history_http_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalFailureException" => {
-            crate::operation::batch_get_asset_property_value_history::BatchGetAssetPropertyValueHistoryError::InternalFailureException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::InternalFailureExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(_response_body, output)
-                        .map_err(crate::operation::batch_get_asset_property_value_history::BatchGetAssetPropertyValueHistoryError::unhandled)?;
-                    let output = output.meta(generic);
-                    crate::serde_util::internal_failure_exception_correct_errors(output)
-                        .build()
-                        .map_err(crate::operation::batch_get_asset_property_value_history::BatchGetAssetPropertyValueHistoryError::unhandled)?
-                };
-                tmp
-            })
-        }
         "InvalidRequestException" => {
             crate::operation::batch_get_asset_property_value_history::BatchGetAssetPropertyValueHistoryError::InvalidRequestException({
                 #[allow(unused_mut)]
@@ -46,6 +30,22 @@ pub fn de_batch_get_asset_property_value_history_http_error(
                         .map_err(crate::operation::batch_get_asset_property_value_history::BatchGetAssetPropertyValueHistoryError::unhandled)?;
                     let output = output.meta(generic);
                     crate::serde_util::invalid_request_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::batch_get_asset_property_value_history::BatchGetAssetPropertyValueHistoryError::unhandled)?
+                };
+                tmp
+            })
+        }
+        "ThrottlingException" => {
+            crate::operation::batch_get_asset_property_value_history::BatchGetAssetPropertyValueHistoryError::ThrottlingException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ThrottlingExceptionBuilder::default();
+                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output)
+                        .map_err(crate::operation::batch_get_asset_property_value_history::BatchGetAssetPropertyValueHistoryError::unhandled)?;
+                    let output = output.meta(generic);
+                    crate::serde_util::throttling_exception_correct_errors(output)
                         .build()
                         .map_err(crate::operation::batch_get_asset_property_value_history::BatchGetAssetPropertyValueHistoryError::unhandled)?
                 };
@@ -69,16 +69,16 @@ pub fn de_batch_get_asset_property_value_history_http_error(
                 tmp
             })
         }
-        "ThrottlingException" => {
-            crate::operation::batch_get_asset_property_value_history::BatchGetAssetPropertyValueHistoryError::ThrottlingException({
+        "InternalFailureException" => {
+            crate::operation::batch_get_asset_property_value_history::BatchGetAssetPropertyValueHistoryError::InternalFailureException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::ThrottlingExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output)
+                    let mut output = crate::types::error::builders::InternalFailureExceptionBuilder::default();
+                    output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(_response_body, output)
                         .map_err(crate::operation::batch_get_asset_property_value_history::BatchGetAssetPropertyValueHistoryError::unhandled)?;
                     let output = output.meta(generic);
-                    crate::serde_util::throttling_exception_correct_errors(output)
+                    crate::serde_util::internal_failure_exception_correct_errors(output)
                         .build()
                         .map_err(crate::operation::batch_get_asset_property_value_history::BatchGetAssetPropertyValueHistoryError::unhandled)?
                 };

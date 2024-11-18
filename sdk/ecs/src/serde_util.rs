@@ -189,6 +189,21 @@ pub(crate) fn service_volume_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn vpc_lattice_configuration_correct_errors(
+    mut builder: crate::types::builders::VpcLatticeConfigurationBuilder,
+) -> crate::types::builders::VpcLatticeConfigurationBuilder {
+    if builder.role_arn.is_none() {
+        builder.role_arn = Some(Default::default())
+    }
+    if builder.target_group_arn.is_none() {
+        builder.target_group_arn = Some(Default::default())
+    }
+    if builder.port_name.is_none() {
+        builder.port_name = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn container_dependency_correct_errors(
     mut builder: crate::types::builders::ContainerDependencyBuilder,
 ) -> crate::types::builders::ContainerDependencyBuilder {

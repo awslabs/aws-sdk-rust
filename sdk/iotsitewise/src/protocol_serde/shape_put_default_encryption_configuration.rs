@@ -20,6 +20,22 @@ pub fn de_put_default_encryption_configuration_http_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
+        "InvalidRequestException" => {
+            crate::operation::put_default_encryption_configuration::PutDefaultEncryptionConfigurationError::InvalidRequestException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InvalidRequestExceptionBuilder::default();
+                    output = crate::protocol_serde::shape_invalid_request_exception::de_invalid_request_exception_json_err(_response_body, output)
+                        .map_err(crate::operation::put_default_encryption_configuration::PutDefaultEncryptionConfigurationError::unhandled)?;
+                    let output = output.meta(generic);
+                    crate::serde_util::invalid_request_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::put_default_encryption_configuration::PutDefaultEncryptionConfigurationError::unhandled)?
+                };
+                tmp
+            })
+        }
         "ConflictingOperationException" => {
             crate::operation::put_default_encryption_configuration::PutDefaultEncryptionConfigurationError::ConflictingOperationException({
                 #[allow(unused_mut)]
@@ -33,38 +49,6 @@ pub fn de_put_default_encryption_configuration_http_error(
                     .map_err(crate::operation::put_default_encryption_configuration::PutDefaultEncryptionConfigurationError::unhandled)?;
                     let output = output.meta(generic);
                     crate::serde_util::conflicting_operation_exception_correct_errors(output)
-                        .build()
-                        .map_err(crate::operation::put_default_encryption_configuration::PutDefaultEncryptionConfigurationError::unhandled)?
-                };
-                tmp
-            })
-        }
-        "InternalFailureException" => {
-            crate::operation::put_default_encryption_configuration::PutDefaultEncryptionConfigurationError::InternalFailureException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::InternalFailureExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(_response_body, output)
-                        .map_err(crate::operation::put_default_encryption_configuration::PutDefaultEncryptionConfigurationError::unhandled)?;
-                    let output = output.meta(generic);
-                    crate::serde_util::internal_failure_exception_correct_errors(output)
-                        .build()
-                        .map_err(crate::operation::put_default_encryption_configuration::PutDefaultEncryptionConfigurationError::unhandled)?
-                };
-                tmp
-            })
-        }
-        "InvalidRequestException" => {
-            crate::operation::put_default_encryption_configuration::PutDefaultEncryptionConfigurationError::InvalidRequestException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::InvalidRequestExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_invalid_request_exception::de_invalid_request_exception_json_err(_response_body, output)
-                        .map_err(crate::operation::put_default_encryption_configuration::PutDefaultEncryptionConfigurationError::unhandled)?;
-                    let output = output.meta(generic);
-                    crate::serde_util::invalid_request_exception_correct_errors(output)
                         .build()
                         .map_err(crate::operation::put_default_encryption_configuration::PutDefaultEncryptionConfigurationError::unhandled)?
                 };
@@ -97,6 +81,22 @@ pub fn de_put_default_encryption_configuration_http_error(
                         .map_err(crate::operation::put_default_encryption_configuration::PutDefaultEncryptionConfigurationError::unhandled)?;
                     let output = output.meta(generic);
                     crate::serde_util::throttling_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::put_default_encryption_configuration::PutDefaultEncryptionConfigurationError::unhandled)?
+                };
+                tmp
+            })
+        }
+        "InternalFailureException" => {
+            crate::operation::put_default_encryption_configuration::PutDefaultEncryptionConfigurationError::InternalFailureException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InternalFailureExceptionBuilder::default();
+                    output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(_response_body, output)
+                        .map_err(crate::operation::put_default_encryption_configuration::PutDefaultEncryptionConfigurationError::unhandled)?;
+                    let output = output.meta(generic);
+                    crate::serde_util::internal_failure_exception_correct_errors(output)
                         .build()
                         .map_err(crate::operation::put_default_encryption_configuration::PutDefaultEncryptionConfigurationError::unhandled)?
                 };

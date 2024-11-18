@@ -11,6 +11,8 @@ pub enum Error {
     DatabaseErrorException(crate::types::error::DatabaseErrorException),
     /// <p>The DB cluster doesn't have a DB instance.</p>
     DatabaseNotFoundException(crate::types::error::DatabaseNotFoundException),
+    /// <p>A request was canceled because the Aurora Serverless v2 DB instance was in a paused state. The Data API request automatically causes the DB instance to begin resuming. Wait a few seconds and try again.</p>
+    DatabaseResumingException(crate::types::error::DatabaseResumingException),
     /// <p>The writer instance in the DB cluster isn't available.</p>
     DatabaseUnavailableException(crate::types::error::DatabaseUnavailableException),
     /// <p>There are insufficient privileges to make the call.</p>
@@ -65,6 +67,7 @@ impl ::std::fmt::Display for Error {
             Error::BadRequestException(inner) => inner.fmt(f),
             Error::DatabaseErrorException(inner) => inner.fmt(f),
             Error::DatabaseNotFoundException(inner) => inner.fmt(f),
+            Error::DatabaseResumingException(inner) => inner.fmt(f),
             Error::DatabaseUnavailableException(inner) => inner.fmt(f),
             Error::ForbiddenException(inner) => inner.fmt(f),
             Error::HttpEndpointNotEnabledException(inner) => inner.fmt(f),
@@ -101,6 +104,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::BadRequestException(inner) => inner.meta(),
             Self::DatabaseErrorException(inner) => inner.meta(),
             Self::DatabaseNotFoundException(inner) => inner.meta(),
+            Self::DatabaseResumingException(inner) => inner.meta(),
             Self::DatabaseUnavailableException(inner) => inner.meta(),
             Self::ForbiddenException(inner) => inner.meta(),
             Self::HttpEndpointNotEnabledException(inner) => inner.meta(),
@@ -144,6 +148,9 @@ impl From<crate::operation::batch_execute_statement::BatchExecuteStatementError>
             }
             crate::operation::batch_execute_statement::BatchExecuteStatementError::DatabaseNotFoundException(inner) => {
                 Error::DatabaseNotFoundException(inner)
+            }
+            crate::operation::batch_execute_statement::BatchExecuteStatementError::DatabaseResumingException(inner) => {
+                Error::DatabaseResumingException(inner)
             }
             crate::operation::batch_execute_statement::BatchExecuteStatementError::DatabaseUnavailableException(inner) => {
                 Error::DatabaseUnavailableException(inner)
@@ -195,6 +202,7 @@ impl From<crate::operation::begin_transaction::BeginTransactionError> for Error 
             crate::operation::begin_transaction::BeginTransactionError::BadRequestException(inner) => Error::BadRequestException(inner),
             crate::operation::begin_transaction::BeginTransactionError::DatabaseErrorException(inner) => Error::DatabaseErrorException(inner),
             crate::operation::begin_transaction::BeginTransactionError::DatabaseNotFoundException(inner) => Error::DatabaseNotFoundException(inner),
+            crate::operation::begin_transaction::BeginTransactionError::DatabaseResumingException(inner) => Error::DatabaseResumingException(inner),
             crate::operation::begin_transaction::BeginTransactionError::DatabaseUnavailableException(inner) => {
                 Error::DatabaseUnavailableException(inner)
             }
@@ -306,6 +314,7 @@ impl From<crate::operation::execute_statement::ExecuteStatementError> for Error 
             crate::operation::execute_statement::ExecuteStatementError::BadRequestException(inner) => Error::BadRequestException(inner),
             crate::operation::execute_statement::ExecuteStatementError::DatabaseErrorException(inner) => Error::DatabaseErrorException(inner),
             crate::operation::execute_statement::ExecuteStatementError::DatabaseNotFoundException(inner) => Error::DatabaseNotFoundException(inner),
+            crate::operation::execute_statement::ExecuteStatementError::DatabaseResumingException(inner) => Error::DatabaseResumingException(inner),
             crate::operation::execute_statement::ExecuteStatementError::DatabaseUnavailableException(inner) => {
                 Error::DatabaseUnavailableException(inner)
             }
@@ -382,6 +391,7 @@ impl ::std::error::Error for Error {
             Error::BadRequestException(inner) => inner.source(),
             Error::DatabaseErrorException(inner) => inner.source(),
             Error::DatabaseNotFoundException(inner) => inner.source(),
+            Error::DatabaseResumingException(inner) => inner.source(),
             Error::DatabaseUnavailableException(inner) => inner.source(),
             Error::ForbiddenException(inner) => inner.source(),
             Error::HttpEndpointNotEnabledException(inner) => inner.source(),
@@ -404,6 +414,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::BadRequestException(e) => e.request_id(),
             Self::DatabaseErrorException(e) => e.request_id(),
             Self::DatabaseNotFoundException(e) => e.request_id(),
+            Self::DatabaseResumingException(e) => e.request_id(),
             Self::DatabaseUnavailableException(e) => e.request_id(),
             Self::ForbiddenException(e) => e.request_id(),
             Self::HttpEndpointNotEnabledException(e) => e.request_id(),

@@ -325,6 +325,8 @@ mod list_exports;
 
 mod list_generated_templates;
 
+mod list_hook_results;
+
 mod list_imports;
 
 mod list_resource_scan_related_resources;

@@ -31,16 +31,21 @@ pub fn ser_create_launch_template_input_input_input(
         crate::protocol_serde::shape_request_launch_template_data::ser_request_launch_template_data(scope_9, var_10)?;
     }
     #[allow(unused_mut)]
-    let mut scope_11 = writer.prefix("TagSpecification");
-    if let Some(var_12) = &input.tag_specifications {
-        if !var_12.is_empty() {
-            let mut list_14 = scope_11.start_list(true, Some("item"));
-            for item_13 in var_12 {
+    let mut scope_11 = writer.prefix("Operator");
+    if let Some(var_12) = &input.operator {
+        crate::protocol_serde::shape_operator_request::ser_operator_request(scope_11, var_12)?;
+    }
+    #[allow(unused_mut)]
+    let mut scope_13 = writer.prefix("TagSpecification");
+    if let Some(var_14) = &input.tag_specifications {
+        if !var_14.is_empty() {
+            let mut list_16 = scope_13.start_list(true, Some("item"));
+            for item_15 in var_14 {
                 #[allow(unused_mut)]
-                let mut entry_15 = list_14.entry();
-                crate::protocol_serde::shape_tag_specification::ser_tag_specification(entry_15, item_13)?;
+                let mut entry_17 = list_16.entry();
+                crate::protocol_serde::shape_tag_specification::ser_tag_specification(entry_17, item_15)?;
             }
-            list_14.finish();
+            list_16.finish();
         }
     }
     writer.finish();

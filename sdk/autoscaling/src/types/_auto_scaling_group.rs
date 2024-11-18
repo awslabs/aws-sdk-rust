@@ -77,6 +77,8 @@ pub struct AutoScalingGroup {
     pub instance_maintenance_policy: ::std::option::Option<crate::types::InstanceMaintenancePolicy>,
     /// <p>The instance capacity distribution across Availability Zones.</p>
     pub availability_zone_distribution: ::std::option::Option<crate::types::AvailabilityZoneDistribution>,
+    /// <p>The Availability Zone impairment policy.</p>
+    pub availability_zone_impairment_policy: ::std::option::Option<crate::types::AvailabilityZoneImpairmentPolicy>,
 }
 impl AutoScalingGroup {
     /// <p>The name of the Auto Scaling group.</p>
@@ -242,6 +244,10 @@ impl AutoScalingGroup {
     pub fn availability_zone_distribution(&self) -> ::std::option::Option<&crate::types::AvailabilityZoneDistribution> {
         self.availability_zone_distribution.as_ref()
     }
+    /// <p>The Availability Zone impairment policy.</p>
+    pub fn availability_zone_impairment_policy(&self) -> ::std::option::Option<&crate::types::AvailabilityZoneImpairmentPolicy> {
+        self.availability_zone_impairment_policy.as_ref()
+    }
 }
 impl AutoScalingGroup {
     /// Creates a new builder-style object to manufacture [`AutoScalingGroup`](crate::types::AutoScalingGroup).
@@ -290,6 +296,7 @@ pub struct AutoScalingGroupBuilder {
     pub(crate) traffic_sources: ::std::option::Option<::std::vec::Vec<crate::types::TrafficSourceIdentifier>>,
     pub(crate) instance_maintenance_policy: ::std::option::Option<crate::types::InstanceMaintenancePolicy>,
     pub(crate) availability_zone_distribution: ::std::option::Option<crate::types::AvailabilityZoneDistribution>,
+    pub(crate) availability_zone_impairment_policy: ::std::option::Option<crate::types::AvailabilityZoneImpairmentPolicy>,
 }
 impl AutoScalingGroupBuilder {
     /// <p>The name of the Auto Scaling group.</p>
@@ -860,6 +867,20 @@ impl AutoScalingGroupBuilder {
     pub fn get_availability_zone_distribution(&self) -> &::std::option::Option<crate::types::AvailabilityZoneDistribution> {
         &self.availability_zone_distribution
     }
+    /// <p>The Availability Zone impairment policy.</p>
+    pub fn availability_zone_impairment_policy(mut self, input: crate::types::AvailabilityZoneImpairmentPolicy) -> Self {
+        self.availability_zone_impairment_policy = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The Availability Zone impairment policy.</p>
+    pub fn set_availability_zone_impairment_policy(mut self, input: ::std::option::Option<crate::types::AvailabilityZoneImpairmentPolicy>) -> Self {
+        self.availability_zone_impairment_policy = input;
+        self
+    }
+    /// <p>The Availability Zone impairment policy.</p>
+    pub fn get_availability_zone_impairment_policy(&self) -> &::std::option::Option<crate::types::AvailabilityZoneImpairmentPolicy> {
+        &self.availability_zone_impairment_policy
+    }
     /// Consumes the builder and constructs a [`AutoScalingGroup`](crate::types::AutoScalingGroup).
     pub fn build(self) -> crate::types::AutoScalingGroup {
         crate::types::AutoScalingGroup {
@@ -899,6 +920,7 @@ impl AutoScalingGroupBuilder {
             traffic_sources: self.traffic_sources,
             instance_maintenance_policy: self.instance_maintenance_policy,
             availability_zone_distribution: self.availability_zone_distribution,
+            availability_zone_impairment_policy: self.availability_zone_impairment_policy,
         }
     }
 }

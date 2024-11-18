@@ -37,6 +37,8 @@ pub use crate::types::error::_invalid_state_transition_exception::InvalidStateTr
 
 pub use crate::types::error::_resource_scan_not_found_exception::ResourceScanNotFoundException;
 
+pub use crate::types::error::_hook_result_not_found_exception::HookResultNotFoundException;
+
 pub use crate::types::error::_stack_not_found_exception::StackNotFoundException;
 
 pub use crate::types::error::_change_set_not_found_exception::ChangeSetNotFoundException;
@@ -64,6 +66,8 @@ mod _concurrent_resources_limit_exceeded_exception;
 mod _created_but_modified_exception;
 
 mod _generated_template_not_found_exception;
+
+mod _hook_result_not_found_exception;
 
 mod _insufficient_capabilities_exception;
 

@@ -26,6 +26,8 @@ pub struct CreateVolumeOutput {
     /// </note>
     /// <p>Reserved for future use.</p>
     pub sse_type: ::std::option::Option<crate::types::SseType>,
+    /// <p>The entity that manages the volume.</p>
+    pub operator: ::std::option::Option<crate::types::OperatorResponse>,
     /// <p>The ID of the volume.</p>
     pub volume_id: ::std::option::Option<::std::string::String>,
     /// <p>The size of the volume, in GiBs.</p>
@@ -89,6 +91,10 @@ impl CreateVolumeOutput {
     /// <p>Reserved for future use.</p>
     pub fn sse_type(&self) -> ::std::option::Option<&crate::types::SseType> {
         self.sse_type.as_ref()
+    }
+    /// <p>The entity that manages the volume.</p>
+    pub fn operator(&self) -> ::std::option::Option<&crate::types::OperatorResponse> {
+        self.operator.as_ref()
     }
     /// <p>The ID of the volume.</p>
     pub fn volume_id(&self) -> ::std::option::Option<&str> {
@@ -156,6 +162,7 @@ pub struct CreateVolumeOutputBuilder {
     pub(crate) multi_attach_enabled: ::std::option::Option<bool>,
     pub(crate) throughput: ::std::option::Option<i32>,
     pub(crate) sse_type: ::std::option::Option<crate::types::SseType>,
+    pub(crate) operator: ::std::option::Option<crate::types::OperatorResponse>,
     pub(crate) volume_id: ::std::option::Option<::std::string::String>,
     pub(crate) size: ::std::option::Option<i32>,
     pub(crate) snapshot_id: ::std::option::Option<::std::string::String>,
@@ -303,6 +310,20 @@ impl CreateVolumeOutputBuilder {
     /// <p>Reserved for future use.</p>
     pub fn get_sse_type(&self) -> &::std::option::Option<crate::types::SseType> {
         &self.sse_type
+    }
+    /// <p>The entity that manages the volume.</p>
+    pub fn operator(mut self, input: crate::types::OperatorResponse) -> Self {
+        self.operator = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The entity that manages the volume.</p>
+    pub fn set_operator(mut self, input: ::std::option::Option<crate::types::OperatorResponse>) -> Self {
+        self.operator = input;
+        self
+    }
+    /// <p>The entity that manages the volume.</p>
+    pub fn get_operator(&self) -> &::std::option::Option<crate::types::OperatorResponse> {
+        &self.operator
     }
     /// <p>The ID of the volume.</p>
     pub fn volume_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -465,6 +486,7 @@ impl CreateVolumeOutputBuilder {
             multi_attach_enabled: self.multi_attach_enabled,
             throughput: self.throughput,
             sse_type: self.sse_type,
+            operator: self.operator,
             volume_id: self.volume_id,
             size: self.size,
             snapshot_id: self.snapshot_id,

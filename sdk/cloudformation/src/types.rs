@@ -139,6 +139,16 @@ pub use crate::types::_scanned_resource::ScannedResource;
 
 pub use crate::types::_scanned_resource_identifier::ScannedResourceIdentifier;
 
+pub use crate::types::_hook_result_summary::HookResultSummary;
+
+pub use crate::types::_hook_status::HookStatus;
+
+pub use crate::types::_hook_failure_mode::HookFailureMode;
+
+pub use crate::types::_hook_invocation_point::HookInvocationPoint;
+
+pub use crate::types::_list_hook_results_target_type::ListHookResultsTargetType;
+
 pub use crate::types::_template_summary::TemplateSummary;
 
 pub use crate::types::_generated_template_status::GeneratedTemplateStatus;
@@ -200,12 +210,6 @@ pub use crate::types::_stack_resource_detail::StackResourceDetail;
 pub use crate::types::_stack_instance::StackInstance;
 
 pub use crate::types::_stack_event::StackEvent;
-
-pub use crate::types::_hook_failure_mode::HookFailureMode;
-
-pub use crate::types::_hook_invocation_point::HookInvocationPoint;
-
-pub use crate::types::_hook_status::HookStatus;
 
 pub use crate::types::_stack_drift_detection_status::StackDriftDetectionStatus;
 
@@ -353,11 +357,15 @@ mod _hook_failure_mode;
 
 mod _hook_invocation_point;
 
+mod _hook_result_summary;
+
 mod _hook_status;
 
 mod _hook_target_type;
 
 mod _identity_provider;
+
+mod _list_hook_results_target_type;
 
 mod _logging_config;
 

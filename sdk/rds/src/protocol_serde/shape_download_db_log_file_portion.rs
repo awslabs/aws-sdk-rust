@@ -39,6 +39,21 @@ pub fn de_download_db_log_file_portion_http_error(
             }
             tmp
         }),
+        "DBInstanceNotReady" => crate::operation::download_db_log_file_portion::DownloadDBLogFilePortionError::DbInstanceNotReadyFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::DbInstanceNotReadyFaultBuilder::default();
+                output = crate::protocol_serde::shape_db_instance_not_ready_fault::de_db_instance_not_ready_fault_xml_err(_response_body, output)
+                    .map_err(crate::operation::download_db_log_file_portion::DownloadDBLogFilePortionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "DBLogFileNotFoundFault" => crate::operation::download_db_log_file_portion::DownloadDBLogFilePortionError::DbLogFileNotFoundFault({
             #[allow(unused_mut)]
             let mut tmp = {

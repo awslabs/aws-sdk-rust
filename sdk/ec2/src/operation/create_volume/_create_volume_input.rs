@@ -83,6 +83,8 @@ pub struct CreateVolumeInput {
     pub throughput: ::std::option::Option<i32>,
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html">Ensure Idempotency</a>.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
+    /// <p>Reserved for internal use.</p>
+    pub operator: ::std::option::Option<crate::types::OperatorRequest>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
 }
@@ -193,6 +195,10 @@ impl CreateVolumeInput {
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
     }
+    /// <p>Reserved for internal use.</p>
+    pub fn operator(&self) -> ::std::option::Option<&crate::types::OperatorRequest> {
+        self.operator.as_ref()
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
         self.dry_run
@@ -221,6 +227,7 @@ pub struct CreateVolumeInputBuilder {
     pub(crate) multi_attach_enabled: ::std::option::Option<bool>,
     pub(crate) throughput: ::std::option::Option<i32>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
+    pub(crate) operator: ::std::option::Option<crate::types::OperatorRequest>,
     pub(crate) dry_run: ::std::option::Option<bool>,
 }
 impl CreateVolumeInputBuilder {
@@ -567,6 +574,20 @@ impl CreateVolumeInputBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
+    /// <p>Reserved for internal use.</p>
+    pub fn operator(mut self, input: crate::types::OperatorRequest) -> Self {
+        self.operator = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Reserved for internal use.</p>
+    pub fn set_operator(mut self, input: ::std::option::Option<crate::types::OperatorRequest>) -> Self {
+        self.operator = input;
+        self
+    }
+    /// <p>Reserved for internal use.</p>
+    pub fn get_operator(&self) -> &::std::option::Option<crate::types::OperatorRequest> {
+        &self.operator
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.dry_run = ::std::option::Option::Some(input);
@@ -598,6 +619,7 @@ impl CreateVolumeInputBuilder {
             multi_attach_enabled: self.multi_attach_enabled,
             throughput: self.throughput,
             client_token: self.client_token,
+            operator: self.operator,
             dry_run: self.dry_run,
         })
     }

@@ -108,12 +108,6 @@ impl ExecuteQueryFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::execute_query::paginator::ExecuteQueryPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
-    pub fn into_paginator(self) -> crate::operation::execute_query::paginator::ExecuteQueryPaginator {
-        crate::operation::execute_query::paginator::ExecuteQueryPaginator::new(self.handle, self.inner)
-    }
     /// <p>The IoT SiteWise query statement.</p>
     pub fn query_statement(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.query_statement(input.into());
@@ -155,5 +149,19 @@ impl ExecuteQueryFluentBuilder {
     /// <p>The maximum number of results to return at one time. The default is 25.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
+    }
+    /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
+    pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.client_token(input.into());
+        self
+    }
+    /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
+    pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_client_token(input);
+        self
+    }
+    /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
 }

@@ -136,6 +136,8 @@ impl Client {
     }
 }
 
+mod activate_message_template;
+
 mod create_ai_agent;
 
 mod create_ai_agent_version;
@@ -153,6 +155,12 @@ mod create_content;
 mod create_content_association;
 
 mod create_knowledge_base;
+
+mod create_message_template;
+
+mod create_message_template_attachment;
+
+mod create_message_template_version;
 
 mod create_quick_response;
 
@@ -185,6 +193,8 @@ mod create_session;
 /// ```
 pub mod customize;
 
+mod deactivate_message_template;
+
 mod delete_ai_agent;
 
 mod delete_ai_agent_version;
@@ -205,6 +215,10 @@ mod delete_import_job;
 
 mod delete_knowledge_base;
 
+mod delete_message_template;
+
+mod delete_message_template_attachment;
+
 mod delete_quick_response;
 
 mod get_ai_agent;
@@ -224,6 +238,8 @@ mod get_content_summary;
 mod get_import_job;
 
 mod get_knowledge_base;
+
+mod get_message_template;
 
 mod get_quick_response;
 
@@ -251,6 +267,10 @@ mod list_import_jobs;
 
 mod list_knowledge_bases;
 
+mod list_message_template_versions;
+
+mod list_message_templates;
+
 mod list_quick_responses;
 
 mod list_tags_for_resource;
@@ -265,7 +285,11 @@ mod remove_assistant_ai_agent;
 
 mod remove_knowledge_base_template_uri;
 
+mod render_message_template;
+
 mod search_content;
+
+mod search_message_templates;
 
 mod search_quick_responses;
 
@@ -288,6 +312,10 @@ mod update_assistant_ai_agent;
 mod update_content;
 
 mod update_knowledge_base_template_uri;
+
+mod update_message_template;
+
+mod update_message_template_metadata;
 
 mod update_quick_response;
 

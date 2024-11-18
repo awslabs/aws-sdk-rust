@@ -355,6 +355,16 @@ pub fn de_response_launch_template_data(
                 builder = builder.set_disable_api_stop(var_31);
             }
             ,
+            s if s.matches("operator") /* Operator com.amazonaws.ec2#ResponseLaunchTemplateData$Operator */ =>  {
+                let var_32 =
+                    Some(
+                        crate::protocol_serde::shape_operator_response::de_operator_response(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_operator(var_32);
+            }
+            ,
             _ => {}
         }
     }

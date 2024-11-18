@@ -37,6 +37,8 @@ pub use crate::types::error::_invalid_state_transition_exception::InvalidStateTr
 
 pub use crate::types::error::_resource_scan_not_found_exception::ResourceScanNotFoundExceptionBuilder;
 
+pub use crate::types::error::_hook_result_not_found_exception::HookResultNotFoundExceptionBuilder;
+
 pub use crate::types::error::_stack_not_found_exception::StackNotFoundExceptionBuilder;
 
 pub use crate::types::error::_change_set_not_found_exception::ChangeSetNotFoundExceptionBuilder;

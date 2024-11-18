@@ -35,6 +35,21 @@ pub fn de_describe_db_log_files_http_error(
             }
             tmp
         }),
+        "DBInstanceNotReady" => crate::operation::describe_db_log_files::DescribeDBLogFilesError::DbInstanceNotReadyFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::DbInstanceNotReadyFaultBuilder::default();
+                output = crate::protocol_serde::shape_db_instance_not_ready_fault::de_db_instance_not_ready_fault_xml_err(_response_body, output)
+                    .map_err(crate::operation::describe_db_log_files::DescribeDBLogFilesError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::operation::describe_db_log_files::DescribeDBLogFilesError::generic(generic),
     })
 }

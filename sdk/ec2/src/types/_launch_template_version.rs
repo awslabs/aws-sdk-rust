@@ -20,6 +20,8 @@ pub struct LaunchTemplateVersion {
     pub default_version: ::std::option::Option<bool>,
     /// <p>Information about the launch template.</p>
     pub launch_template_data: ::std::option::Option<crate::types::ResponseLaunchTemplateData>,
+    /// <p>The entity that manages the launch template.</p>
+    pub operator: ::std::option::Option<crate::types::OperatorResponse>,
 }
 impl LaunchTemplateVersion {
     /// <p>The ID of the launch template.</p>
@@ -54,6 +56,10 @@ impl LaunchTemplateVersion {
     pub fn launch_template_data(&self) -> ::std::option::Option<&crate::types::ResponseLaunchTemplateData> {
         self.launch_template_data.as_ref()
     }
+    /// <p>The entity that manages the launch template.</p>
+    pub fn operator(&self) -> ::std::option::Option<&crate::types::OperatorResponse> {
+        self.operator.as_ref()
+    }
 }
 impl LaunchTemplateVersion {
     /// Creates a new builder-style object to manufacture [`LaunchTemplateVersion`](crate::types::LaunchTemplateVersion).
@@ -74,6 +80,7 @@ pub struct LaunchTemplateVersionBuilder {
     pub(crate) created_by: ::std::option::Option<::std::string::String>,
     pub(crate) default_version: ::std::option::Option<bool>,
     pub(crate) launch_template_data: ::std::option::Option<crate::types::ResponseLaunchTemplateData>,
+    pub(crate) operator: ::std::option::Option<crate::types::OperatorResponse>,
 }
 impl LaunchTemplateVersionBuilder {
     /// <p>The ID of the launch template.</p>
@@ -188,6 +195,20 @@ impl LaunchTemplateVersionBuilder {
     pub fn get_launch_template_data(&self) -> &::std::option::Option<crate::types::ResponseLaunchTemplateData> {
         &self.launch_template_data
     }
+    /// <p>The entity that manages the launch template.</p>
+    pub fn operator(mut self, input: crate::types::OperatorResponse) -> Self {
+        self.operator = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The entity that manages the launch template.</p>
+    pub fn set_operator(mut self, input: ::std::option::Option<crate::types::OperatorResponse>) -> Self {
+        self.operator = input;
+        self
+    }
+    /// <p>The entity that manages the launch template.</p>
+    pub fn get_operator(&self) -> &::std::option::Option<crate::types::OperatorResponse> {
+        &self.operator
+    }
     /// Consumes the builder and constructs a [`LaunchTemplateVersion`](crate::types::LaunchTemplateVersion).
     pub fn build(self) -> crate::types::LaunchTemplateVersion {
         crate::types::LaunchTemplateVersion {
@@ -199,6 +220,7 @@ impl LaunchTemplateVersionBuilder {
             created_by: self.created_by,
             default_version: self.default_version,
             launch_template_data: self.launch_template_data,
+            operator: self.operator,
         }
     }
 }

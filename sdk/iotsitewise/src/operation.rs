@@ -43,6 +43,9 @@ pub mod create_bulk_import_job;
 /// Types for the `CreateDashboard` operation.
 pub mod create_dashboard;
 
+/// Types for the `CreateDataset` operation.
+pub mod create_dataset;
+
 /// Types for the `CreateGateway` operation.
 pub mod create_gateway;
 
@@ -66,6 +69,9 @@ pub mod delete_asset_model_composite_model;
 
 /// Types for the `DeleteDashboard` operation.
 pub mod delete_dashboard;
+
+/// Types for the `DeleteDataset` operation.
+pub mod delete_dataset;
 
 /// Types for the `DeleteGateway` operation.
 pub mod delete_gateway;
@@ -105,6 +111,9 @@ pub mod describe_bulk_import_job;
 
 /// Types for the `DescribeDashboard` operation.
 pub mod describe_dashboard;
+
+/// Types for the `DescribeDataset` operation.
+pub mod describe_dataset;
 
 /// Types for the `DescribeDefaultEncryptionConfiguration` operation.
 pub mod describe_default_encryption_configuration;
@@ -154,6 +163,9 @@ pub mod get_asset_property_value_history;
 /// Types for the `GetInterpolatedAssetPropertyValues` operation.
 pub mod get_interpolated_asset_property_values;
 
+/// Types for the `InvokeAssistant` operation.
+pub mod invoke_assistant;
+
 /// Types for the `ListAccessPolicies` operation.
 pub mod list_access_policies;
 
@@ -189,6 +201,9 @@ pub mod list_composition_relationships;
 
 /// Types for the `ListDashboards` operation.
 pub mod list_dashboards;
+
+/// Types for the `ListDatasets` operation.
+pub mod list_datasets;
 
 /// Types for the `ListGateways` operation.
 pub mod list_gateways;
@@ -240,6 +255,9 @@ pub mod update_asset_property;
 
 /// Types for the `UpdateDashboard` operation.
 pub mod update_dashboard;
+
+/// Types for the `UpdateDataset` operation.
+pub mod update_dataset;
 
 /// Types for the `UpdateGateway` operation.
 pub mod update_gateway;

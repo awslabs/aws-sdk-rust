@@ -77,6 +77,21 @@ pub fn de_begin_transaction_http_error(
             }
             tmp
         }),
+        "DatabaseResumingException" => crate::operation::begin_transaction::BeginTransactionError::DatabaseResumingException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::DatabaseResumingExceptionBuilder::default();
+                output = crate::protocol_serde::shape_database_resuming_exception::de_database_resuming_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::begin_transaction::BeginTransactionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "DatabaseUnavailableException" => crate::operation::begin_transaction::BeginTransactionError::DatabaseUnavailableException({
             #[allow(unused_mut)]
             let mut tmp = {

@@ -20,6 +20,8 @@ pub struct PortalSummary {
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Contains information about the current status of a portal.</p>
     pub status: ::std::option::Option<crate::types::PortalStatus>,
+    /// <p>Define the type of portal. The value for IoT SiteWise Monitor (Classic) is <code>SITEWISE_PORTAL_V1</code>. The value for IoT SiteWise Monitor (AI-aware) is <code>SITEWISE_PORTAL_V2</code>.</p>
+    pub portal_type: ::std::option::Option<crate::types::PortalType>,
 }
 impl PortalSummary {
     /// <p>The ID of the portal.</p>
@@ -57,6 +59,10 @@ impl PortalSummary {
     pub fn status(&self) -> ::std::option::Option<&crate::types::PortalStatus> {
         self.status.as_ref()
     }
+    /// <p>Define the type of portal. The value for IoT SiteWise Monitor (Classic) is <code>SITEWISE_PORTAL_V1</code>. The value for IoT SiteWise Monitor (AI-aware) is <code>SITEWISE_PORTAL_V2</code>.</p>
+    pub fn portal_type(&self) -> ::std::option::Option<&crate::types::PortalType> {
+        self.portal_type.as_ref()
+    }
 }
 impl PortalSummary {
     /// Creates a new builder-style object to manufacture [`PortalSummary`](crate::types::PortalSummary).
@@ -77,6 +83,7 @@ pub struct PortalSummaryBuilder {
     pub(crate) last_update_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::PortalStatus>,
+    pub(crate) portal_type: ::std::option::Option<crate::types::PortalType>,
 }
 impl PortalSummaryBuilder {
     /// <p>The ID of the portal.</p>
@@ -195,6 +202,20 @@ impl PortalSummaryBuilder {
     pub fn get_status(&self) -> &::std::option::Option<crate::types::PortalStatus> {
         &self.status
     }
+    /// <p>Define the type of portal. The value for IoT SiteWise Monitor (Classic) is <code>SITEWISE_PORTAL_V1</code>. The value for IoT SiteWise Monitor (AI-aware) is <code>SITEWISE_PORTAL_V2</code>.</p>
+    pub fn portal_type(mut self, input: crate::types::PortalType) -> Self {
+        self.portal_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Define the type of portal. The value for IoT SiteWise Monitor (Classic) is <code>SITEWISE_PORTAL_V1</code>. The value for IoT SiteWise Monitor (AI-aware) is <code>SITEWISE_PORTAL_V2</code>.</p>
+    pub fn set_portal_type(mut self, input: ::std::option::Option<crate::types::PortalType>) -> Self {
+        self.portal_type = input;
+        self
+    }
+    /// <p>Define the type of portal. The value for IoT SiteWise Monitor (Classic) is <code>SITEWISE_PORTAL_V1</code>. The value for IoT SiteWise Monitor (AI-aware) is <code>SITEWISE_PORTAL_V2</code>.</p>
+    pub fn get_portal_type(&self) -> &::std::option::Option<crate::types::PortalType> {
+        &self.portal_type
+    }
     /// Consumes the builder and constructs a [`PortalSummary`](crate::types::PortalSummary).
     /// This method will fail if any of the following fields are not set:
     /// - [`id`](crate::types::builders::PortalSummaryBuilder::id)
@@ -225,6 +246,7 @@ impl PortalSummaryBuilder {
             last_update_date: self.last_update_date,
             role_arn: self.role_arn,
             status: self.status,
+            portal_type: self.portal_type,
         })
     }
 }

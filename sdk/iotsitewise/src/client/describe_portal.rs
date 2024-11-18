@@ -20,6 +20,8 @@ impl super::Client {
     ///   - [`portal_auth_mode(Option<AuthMode>)`](crate::operation::describe_portal::DescribePortalOutput::portal_auth_mode): <p>The service to use to authenticate users to the portal.</p>
     ///   - [`notification_sender_email(Option<String>)`](crate::operation::describe_portal::DescribePortalOutput::notification_sender_email): <p>The email address that sends alarm notifications.</p>
     ///   - [`alarms(Option<Alarms>)`](crate::operation::describe_portal::DescribePortalOutput::alarms): <p>Contains the configuration information of an alarm created in an IoT SiteWise Monitor portal.</p>
+    ///   - [`portal_type(Option<PortalType>)`](crate::operation::describe_portal::DescribePortalOutput::portal_type): <p>Define the type of portal. The value for IoT SiteWise Monitor (Classic) is <code>SITEWISE_PORTAL_V1</code>. The value for IoT SiteWise Monitor (AI-aware) is <code>SITEWISE_PORTAL_V2</code>.</p>
+    ///   - [`portal_type_configuration(Option<HashMap::<String, PortalTypeEntry>>)`](crate::operation::describe_portal::DescribePortalOutput::portal_type_configuration): <p>The configuration entry associated with the specific portal type. The value for IoT SiteWise Monitor (Classic) is <code>SITEWISE_PORTAL_V1</code>. The value for IoT SiteWise Monitor (AI-aware) is <code>SITEWISE_PORTAL_V2</code>.</p>
     /// - On failure, responds with [`SdkError<DescribePortalError>`](crate::operation::describe_portal::DescribePortalError)
     pub fn describe_portal(&self) -> crate::operation::describe_portal::builders::DescribePortalFluentBuilder {
         crate::operation::describe_portal::builders::DescribePortalFluentBuilder::new(self.handle.clone())

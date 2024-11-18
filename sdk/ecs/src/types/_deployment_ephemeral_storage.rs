@@ -4,11 +4,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeploymentEphemeralStorage {
-    /// <p>Specify an Amazon Web Services Key Management Service key ID to encrypt the ephemeral storage for deployment.</p>
+    /// <p>Specify an Key Management Service key ID to encrypt the ephemeral storage for deployment.</p>
     pub kms_key_id: ::std::option::Option<::std::string::String>,
 }
 impl DeploymentEphemeralStorage {
-    /// <p>Specify an Amazon Web Services Key Management Service key ID to encrypt the ephemeral storage for deployment.</p>
+    /// <p>Specify an Key Management Service key ID to encrypt the ephemeral storage for deployment.</p>
     pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
@@ -27,17 +27,17 @@ pub struct DeploymentEphemeralStorageBuilder {
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
 }
 impl DeploymentEphemeralStorageBuilder {
-    /// <p>Specify an Amazon Web Services Key Management Service key ID to encrypt the ephemeral storage for deployment.</p>
+    /// <p>Specify an Key Management Service key ID to encrypt the ephemeral storage for deployment.</p>
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Specify an Amazon Web Services Key Management Service key ID to encrypt the ephemeral storage for deployment.</p>
+    /// <p>Specify an Key Management Service key ID to encrypt the ephemeral storage for deployment.</p>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_id = input;
         self
     }
-    /// <p>Specify an Amazon Web Services Key Management Service key ID to encrypt the ephemeral storage for deployment.</p>
+    /// <p>Specify an Key Management Service key ID to encrypt the ephemeral storage for deployment.</p>
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.kms_key_id
     }

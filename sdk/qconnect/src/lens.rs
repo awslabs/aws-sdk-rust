@@ -99,6 +99,26 @@ pub(crate) fn reflens_list_knowledge_bases_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_message_template_versions_output_output_next_token(
+    input: &crate::operation::list_message_template_versions::ListMessageTemplateVersionsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_message_templates_output_output_next_token(
+    input: &crate::operation::list_message_templates::ListMessageTemplatesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_quick_responses_output_output_next_token(
     input: &crate::operation::list_quick_responses::ListQuickResponsesOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -121,6 +141,16 @@ pub(crate) fn reflens_query_assistant_output_output_next_token(
 
 pub(crate) fn reflens_search_content_output_output_next_token(
     input: &crate::operation::search_content::SearchContentOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_search_message_templates_output_output_next_token(
+    input: &crate::operation::search_message_templates::SearchMessageTemplatesOutput,
 ) -> ::std::option::Option<&::std::string::String> {
     let input = match &input.next_token {
         ::std::option::Option::None => return ::std::option::Option::None,
@@ -219,6 +249,20 @@ pub(crate) fn lens_list_knowledge_bases_output_output_knowledge_base_summaries(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn lens_list_message_template_versions_output_output_message_template_version_summaries(
+    input: crate::operation::list_message_template_versions::ListMessageTemplateVersionsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::MessageTemplateVersionSummary>> {
+    let input = input.message_template_version_summaries;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_message_templates_output_output_message_template_summaries(
+    input: crate::operation::list_message_templates::ListMessageTemplatesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::MessageTemplateSummary>> {
+    let input = input.message_template_summaries;
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_list_quick_responses_output_output_quick_response_summaries(
     input: crate::operation::list_quick_responses::ListQuickResponsesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::QuickResponseSummary>> {
@@ -237,6 +281,13 @@ pub(crate) fn lens_search_content_output_output_content_summaries(
     input: crate::operation::search_content::SearchContentOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ContentSummary>> {
     let input = input.content_summaries;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_search_message_templates_output_output_results(
+    input: crate::operation::search_message_templates::SearchMessageTemplatesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::MessageTemplateSearchResultData>> {
+    let input = input.results;
     ::std::option::Option::Some(input)
 }
 

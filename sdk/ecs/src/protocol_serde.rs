@@ -441,6 +441,8 @@ pub(crate) mod shape_version_info;
 
 pub(crate) mod shape_volume;
 
+pub(crate) mod shape_vpc_lattice_configuration;
+
 pub(crate) mod shape_attachments;
 
 pub(crate) mod shape_aws_vpc_configuration;
@@ -610,6 +612,8 @@ pub(crate) mod shape_task_managed_ebs_volume_termination_policy;
 pub(crate) mod shape_timeout_configuration;
 
 pub(crate) mod shape_tmpfs;
+
+pub(crate) mod shape_vpc_lattice_configurations;
 
 pub(crate) mod shape_attachment_details;
 

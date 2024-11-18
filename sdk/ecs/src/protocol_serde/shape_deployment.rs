@@ -139,6 +139,11 @@ where
                                 crate::protocol_serde::shape_deployment_ephemeral_storage::de_deployment_ephemeral_storage(tokens)?,
                             );
                         }
+                        "vpcLatticeConfigurations" => {
+                            builder = builder.set_vpc_lattice_configurations(
+                                crate::protocol_serde::shape_vpc_lattice_configurations::de_vpc_lattice_configurations(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

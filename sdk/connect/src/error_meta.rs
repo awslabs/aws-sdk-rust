@@ -1146,6 +1146,51 @@ impl From<crate::operation::create_contact_flow_module::CreateContactFlowModuleE
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_contact_flow_version::CreateContactFlowVersionError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_contact_flow_version::CreateContactFlowVersionError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_contact_flow_version::CreateContactFlowVersionError> for Error {
+    fn from(err: crate::operation::create_contact_flow_version::CreateContactFlowVersionError) -> Self {
+        match err {
+            crate::operation::create_contact_flow_version::CreateContactFlowVersionError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::create_contact_flow_version::CreateContactFlowVersionError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::create_contact_flow_version::CreateContactFlowVersionError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::create_contact_flow_version::CreateContactFlowVersionError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::create_contact_flow_version::CreateContactFlowVersionError::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::operation::create_contact_flow_version::CreateContactFlowVersionError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::create_contact_flow_version::CreateContactFlowVersionError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::create_contact_flow_version::CreateContactFlowVersionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_evaluation_form::CreateEvaluationFormError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -4767,6 +4812,48 @@ impl From<crate::operation::list_contact_flows::ListContactFlowsError> for Error
             crate::operation::list_contact_flows::ListContactFlowsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::list_contact_flows::ListContactFlowsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_contact_flows::ListContactFlowsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_contact_flow_versions::ListContactFlowVersionsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_contact_flow_versions::ListContactFlowVersionsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_contact_flow_versions::ListContactFlowVersionsError> for Error {
+    fn from(err: crate::operation::list_contact_flow_versions::ListContactFlowVersionsError) -> Self {
+        match err {
+            crate::operation::list_contact_flow_versions::ListContactFlowVersionsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_contact_flow_versions::ListContactFlowVersionsError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::list_contact_flow_versions::ListContactFlowVersionsError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::list_contact_flow_versions::ListContactFlowVersionsError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::list_contact_flow_versions::ListContactFlowVersionsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_contact_flow_versions::ListContactFlowVersionsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_contact_flow_versions::ListContactFlowVersionsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

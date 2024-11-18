@@ -89,6 +89,81 @@ impl From<crate::operation::add_profile_key::AddProfileKeyError> for Error {
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::batch_get_calculated_attribute_for_profile::BatchGetCalculatedAttributeForProfileError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::batch_get_calculated_attribute_for_profile::BatchGetCalculatedAttributeForProfileError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::batch_get_calculated_attribute_for_profile::BatchGetCalculatedAttributeForProfileError> for Error {
+    fn from(err: crate::operation::batch_get_calculated_attribute_for_profile::BatchGetCalculatedAttributeForProfileError) -> Self {
+        match err {
+            crate::operation::batch_get_calculated_attribute_for_profile::BatchGetCalculatedAttributeForProfileError::AccessDeniedException(
+                inner,
+            ) => Error::AccessDeniedException(inner),
+            crate::operation::batch_get_calculated_attribute_for_profile::BatchGetCalculatedAttributeForProfileError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::batch_get_calculated_attribute_for_profile::BatchGetCalculatedAttributeForProfileError::InternalServerException(
+                inner,
+            ) => Error::InternalServerException(inner),
+            crate::operation::batch_get_calculated_attribute_for_profile::BatchGetCalculatedAttributeForProfileError::ResourceNotFoundException(
+                inner,
+            ) => Error::ResourceNotFoundException(inner),
+            crate::operation::batch_get_calculated_attribute_for_profile::BatchGetCalculatedAttributeForProfileError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::batch_get_calculated_attribute_for_profile::BatchGetCalculatedAttributeForProfileError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::batch_get_profile::BatchGetProfileError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::batch_get_profile::BatchGetProfileError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::batch_get_profile::BatchGetProfileError> for Error {
+    fn from(err: crate::operation::batch_get_profile::BatchGetProfileError) -> Self {
+        match err {
+            crate::operation::batch_get_profile::BatchGetProfileError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::batch_get_profile::BatchGetProfileError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::batch_get_profile::BatchGetProfileError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::batch_get_profile::BatchGetProfileError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::batch_get_profile::BatchGetProfileError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::batch_get_profile::BatchGetProfileError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::create_calculated_attribute_definition::CreateCalculatedAttributeDefinitionError,
             R,
         >,
@@ -251,6 +326,113 @@ impl From<crate::operation::create_profile::CreateProfileError> for Error {
             crate::operation::create_profile::CreateProfileError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::create_profile::CreateProfileError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::create_profile::CreateProfileError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_segment_definition::CreateSegmentDefinitionError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_segment_definition::CreateSegmentDefinitionError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_segment_definition::CreateSegmentDefinitionError> for Error {
+    fn from(err: crate::operation::create_segment_definition::CreateSegmentDefinitionError) -> Self {
+        match err {
+            crate::operation::create_segment_definition::CreateSegmentDefinitionError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::create_segment_definition::CreateSegmentDefinitionError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::create_segment_definition::CreateSegmentDefinitionError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::create_segment_definition::CreateSegmentDefinitionError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::create_segment_definition::CreateSegmentDefinitionError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::create_segment_definition::CreateSegmentDefinitionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_segment_estimate::CreateSegmentEstimateError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_segment_estimate::CreateSegmentEstimateError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_segment_estimate::CreateSegmentEstimateError> for Error {
+    fn from(err: crate::operation::create_segment_estimate::CreateSegmentEstimateError) -> Self {
+        match err {
+            crate::operation::create_segment_estimate::CreateSegmentEstimateError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::create_segment_estimate::CreateSegmentEstimateError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::create_segment_estimate::CreateSegmentEstimateError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::create_segment_estimate::CreateSegmentEstimateError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::create_segment_estimate::CreateSegmentEstimateError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_segment_estimate::CreateSegmentEstimateError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_segment_snapshot::CreateSegmentSnapshotError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_segment_snapshot::CreateSegmentSnapshotError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_segment_snapshot::CreateSegmentSnapshotError> for Error {
+    fn from(err: crate::operation::create_segment_snapshot::CreateSegmentSnapshotError) -> Self {
+        match err {
+            crate::operation::create_segment_snapshot::CreateSegmentSnapshotError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::create_segment_snapshot::CreateSegmentSnapshotError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::create_segment_snapshot::CreateSegmentSnapshotError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::create_segment_snapshot::CreateSegmentSnapshotError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::create_segment_snapshot::CreateSegmentSnapshotError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_segment_snapshot::CreateSegmentSnapshotError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -501,6 +683,45 @@ impl From<crate::operation::delete_profile_object_type::DeleteProfileObjectTypeE
                 Error::ThrottlingException(inner)
             }
             crate::operation::delete_profile_object_type::DeleteProfileObjectTypeError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_segment_definition::DeleteSegmentDefinitionError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_segment_definition::DeleteSegmentDefinitionError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_segment_definition::DeleteSegmentDefinitionError> for Error {
+    fn from(err: crate::operation::delete_segment_definition::DeleteSegmentDefinitionError) -> Self {
+        match err {
+            crate::operation::delete_segment_definition::DeleteSegmentDefinitionError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::delete_segment_definition::DeleteSegmentDefinitionError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::delete_segment_definition::DeleteSegmentDefinitionError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::delete_segment_definition::DeleteSegmentDefinitionError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_segment_definition::DeleteSegmentDefinitionError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::delete_segment_definition::DeleteSegmentDefinitionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -917,6 +1138,122 @@ impl From<crate::operation::get_profile_object_type_template::GetProfileObjectTy
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_segment_definition::GetSegmentDefinitionError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_segment_definition::GetSegmentDefinitionError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_segment_definition::GetSegmentDefinitionError> for Error {
+    fn from(err: crate::operation::get_segment_definition::GetSegmentDefinitionError) -> Self {
+        match err {
+            crate::operation::get_segment_definition::GetSegmentDefinitionError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_segment_definition::GetSegmentDefinitionError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::get_segment_definition::GetSegmentDefinitionError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_segment_definition::GetSegmentDefinitionError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_segment_definition::GetSegmentDefinitionError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_segment_definition::GetSegmentDefinitionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_segment_estimate::GetSegmentEstimateError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_segment_estimate::GetSegmentEstimateError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_segment_estimate::GetSegmentEstimateError> for Error {
+    fn from(err: crate::operation::get_segment_estimate::GetSegmentEstimateError) -> Self {
+        match err {
+            crate::operation::get_segment_estimate::GetSegmentEstimateError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_segment_estimate::GetSegmentEstimateError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::get_segment_estimate::GetSegmentEstimateError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_segment_estimate::GetSegmentEstimateError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_segment_estimate::GetSegmentEstimateError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_segment_estimate::GetSegmentEstimateError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_segment_membership::GetSegmentMembershipError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_segment_membership::GetSegmentMembershipError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_segment_membership::GetSegmentMembershipError> for Error {
+    fn from(err: crate::operation::get_segment_membership::GetSegmentMembershipError) -> Self {
+        match err {
+            crate::operation::get_segment_membership::GetSegmentMembershipError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_segment_membership::GetSegmentMembershipError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::get_segment_membership::GetSegmentMembershipError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_segment_membership::GetSegmentMembershipError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_segment_membership::GetSegmentMembershipError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_segment_membership::GetSegmentMembershipError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_segment_snapshot::GetSegmentSnapshotError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_segment_snapshot::GetSegmentSnapshotError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_segment_snapshot::GetSegmentSnapshotError> for Error {
+    fn from(err: crate::operation::get_segment_snapshot::GetSegmentSnapshotError) -> Self {
+        match err {
+            crate::operation::get_segment_snapshot::GetSegmentSnapshotError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_segment_snapshot::GetSegmentSnapshotError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::get_segment_snapshot::GetSegmentSnapshotError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_segment_snapshot::GetSegmentSnapshotError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_segment_snapshot::GetSegmentSnapshotError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_segment_snapshot::GetSegmentSnapshotError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_similar_profiles::GetSimilarProfilesError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1251,6 +1588,84 @@ impl From<crate::operation::list_integrations::ListIntegrationsError> for Error 
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_object_type_attributes::ListObjectTypeAttributesError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_object_type_attributes::ListObjectTypeAttributesError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_object_type_attributes::ListObjectTypeAttributesError> for Error {
+    fn from(err: crate::operation::list_object_type_attributes::ListObjectTypeAttributesError) -> Self {
+        match err {
+            crate::operation::list_object_type_attributes::ListObjectTypeAttributesError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_object_type_attributes::ListObjectTypeAttributesError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::list_object_type_attributes::ListObjectTypeAttributesError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_object_type_attributes::ListObjectTypeAttributesError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_object_type_attributes::ListObjectTypeAttributesError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_object_type_attributes::ListObjectTypeAttributesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_profile_attribute_values::ListProfileAttributeValuesError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_profile_attribute_values::ListProfileAttributeValuesError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_profile_attribute_values::ListProfileAttributeValuesError> for Error {
+    fn from(err: crate::operation::list_profile_attribute_values::ListProfileAttributeValuesError) -> Self {
+        match err {
+            crate::operation::list_profile_attribute_values::ListProfileAttributeValuesError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_profile_attribute_values::ListProfileAttributeValuesError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::list_profile_attribute_values::ListProfileAttributeValuesError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_profile_attribute_values::ListProfileAttributeValuesError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_profile_attribute_values::ListProfileAttributeValuesError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_profile_attribute_values::ListProfileAttributeValuesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_profile_objects::ListProfileObjectsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1390,6 +1805,40 @@ impl From<crate::operation::list_rule_based_matches::ListRuleBasedMatchesError> 
             }
             crate::operation::list_rule_based_matches::ListRuleBasedMatchesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_rule_based_matches::ListRuleBasedMatchesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_segment_definitions::ListSegmentDefinitionsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_segment_definitions::ListSegmentDefinitionsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_segment_definitions::ListSegmentDefinitionsError> for Error {
+    fn from(err: crate::operation::list_segment_definitions::ListSegmentDefinitionsError) -> Self {
+        match err {
+            crate::operation::list_segment_definitions::ListSegmentDefinitionsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_segment_definitions::ListSegmentDefinitionsError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::list_segment_definitions::ListSegmentDefinitionsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_segment_definitions::ListSegmentDefinitionsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_segment_definitions::ListSegmentDefinitionsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_segment_definitions::ListSegmentDefinitionsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

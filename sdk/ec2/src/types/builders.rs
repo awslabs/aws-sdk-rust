@@ -107,6 +107,8 @@ pub use crate::types::_placement::PlacementBuilder;
 
 pub use crate::types::_product_code::ProductCodeBuilder;
 
+pub use crate::types::_operator_response::OperatorResponseBuilder;
+
 pub use crate::types::_instance_maintenance_options::InstanceMaintenanceOptionsBuilder;
 
 pub use crate::types::_private_dns_name_options_response::PrivateDnsNameOptionsResponseBuilder;
@@ -174,6 +176,8 @@ pub use crate::types::_ipv6_prefix_specification_request::Ipv6PrefixSpecificatio
 pub use crate::types::_ipv4_prefix_specification_request::Ipv4PrefixSpecificationRequestBuilder;
 
 pub use crate::types::_private_ip_address_specification::PrivateIpAddressSpecificationBuilder;
+
+pub use crate::types::_operator_request::OperatorRequestBuilder;
 
 pub use crate::types::_instance_maintenance_options_request::InstanceMaintenanceOptionsRequestBuilder;
 

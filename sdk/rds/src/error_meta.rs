@@ -67,6 +67,8 @@ pub enum Error {
     DbInstanceAutomatedBackupQuotaExceededFault(crate::types::error::DbInstanceAutomatedBackupQuotaExceededFault),
     /// <p><code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.</p>
     DbInstanceNotFoundFault(crate::types::error::DbInstanceNotFoundFault),
+    /// <p>An attempt to download or examine log files didn't succeed because an Aurora Serverless v2 instance was paused.</p>
+    DbInstanceNotReadyFault(crate::types::error::DbInstanceNotReadyFault),
     /// <p>The specified <code>RoleArn</code> or <code>FeatureName</code> value is already associated with the DB instance.</p>
     DbInstanceRoleAlreadyExistsFault(crate::types::error::DbInstanceRoleAlreadyExistsFault),
     /// <p>The specified <code>RoleArn</code> value doesn't match the specified feature for the DB instance.</p>
@@ -336,6 +338,7 @@ impl ::std::fmt::Display for Error {
             Error::DbInstanceAutomatedBackupNotFoundFault(inner) => inner.fmt(f),
             Error::DbInstanceAutomatedBackupQuotaExceededFault(inner) => inner.fmt(f),
             Error::DbInstanceNotFoundFault(inner) => inner.fmt(f),
+            Error::DbInstanceNotReadyFault(inner) => inner.fmt(f),
             Error::DbInstanceRoleAlreadyExistsFault(inner) => inner.fmt(f),
             Error::DbInstanceRoleNotFoundFault(inner) => inner.fmt(f),
             Error::DbInstanceRoleQuotaExceededFault(inner) => inner.fmt(f),
@@ -501,6 +504,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::DbInstanceAutomatedBackupNotFoundFault(inner) => inner.meta(),
             Self::DbInstanceAutomatedBackupQuotaExceededFault(inner) => inner.meta(),
             Self::DbInstanceNotFoundFault(inner) => inner.meta(),
+            Self::DbInstanceNotReadyFault(inner) => inner.meta(),
             Self::DbInstanceRoleAlreadyExistsFault(inner) => inner.meta(),
             Self::DbInstanceRoleNotFoundFault(inner) => inner.meta(),
             Self::DbInstanceRoleQuotaExceededFault(inner) => inner.meta(),
@@ -3006,6 +3010,7 @@ impl From<crate::operation::describe_db_log_files::DescribeDBLogFilesError> for 
     fn from(err: crate::operation::describe_db_log_files::DescribeDBLogFilesError) -> Self {
         match err {
             crate::operation::describe_db_log_files::DescribeDBLogFilesError::DbInstanceNotFoundFault(inner) => Error::DbInstanceNotFoundFault(inner),
+            crate::operation::describe_db_log_files::DescribeDBLogFilesError::DbInstanceNotReadyFault(inner) => Error::DbInstanceNotReadyFault(inner),
             crate::operation::describe_db_log_files::DescribeDBLogFilesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -3917,6 +3922,9 @@ impl From<crate::operation::download_db_log_file_portion::DownloadDBLogFilePorti
         match err {
             crate::operation::download_db_log_file_portion::DownloadDBLogFilePortionError::DbInstanceNotFoundFault(inner) => {
                 Error::DbInstanceNotFoundFault(inner)
+            }
+            crate::operation::download_db_log_file_portion::DownloadDBLogFilePortionError::DbInstanceNotReadyFault(inner) => {
+                Error::DbInstanceNotReadyFault(inner)
             }
             crate::operation::download_db_log_file_portion::DownloadDBLogFilePortionError::DbLogFileNotFoundFault(inner) => {
                 Error::DbLogFileNotFoundFault(inner)
@@ -6335,6 +6343,7 @@ impl ::std::error::Error for Error {
             Error::DbInstanceAutomatedBackupNotFoundFault(inner) => inner.source(),
             Error::DbInstanceAutomatedBackupQuotaExceededFault(inner) => inner.source(),
             Error::DbInstanceNotFoundFault(inner) => inner.source(),
+            Error::DbInstanceNotReadyFault(inner) => inner.source(),
             Error::DbInstanceRoleAlreadyExistsFault(inner) => inner.source(),
             Error::DbInstanceRoleNotFoundFault(inner) => inner.source(),
             Error::DbInstanceRoleQuotaExceededFault(inner) => inner.source(),
@@ -6486,6 +6495,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::DbInstanceAutomatedBackupNotFoundFault(e) => e.request_id(),
             Self::DbInstanceAutomatedBackupQuotaExceededFault(e) => e.request_id(),
             Self::DbInstanceNotFoundFault(e) => e.request_id(),
+            Self::DbInstanceNotReadyFault(e) => e.request_id(),
             Self::DbInstanceRoleAlreadyExistsFault(e) => e.request_id(),
             Self::DbInstanceRoleNotFoundFault(e) => e.request_id(),
             Self::DbInstanceRoleQuotaExceededFault(e) => e.request_id(),

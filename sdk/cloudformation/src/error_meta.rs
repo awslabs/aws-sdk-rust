@@ -15,6 +15,8 @@ pub enum Error {
     CreatedButModifiedException(crate::types::error::CreatedButModifiedException),
     /// <p>The generated template was not found.</p>
     GeneratedTemplateNotFoundException(crate::types::error::GeneratedTemplateNotFoundException),
+    /// <p>The specified target doesn't have any requested Hook invocations.</p>
+    HookResultNotFoundException(crate::types::error::HookResultNotFoundException),
     /// <p>The template contains resources with capabilities that weren't specified in the Capabilities parameter.</p>
     InsufficientCapabilitiesException(crate::types::error::InsufficientCapabilitiesException),
     /// <p>The specified change set can't be used to update the stack. For example, the change set status might be <code>CREATE_IN_PROGRESS</code>, or the stack status might be <code>UPDATE_IN_PROGRESS</code>.</p>
@@ -84,6 +86,7 @@ impl ::std::fmt::Display for Error {
             Error::ConcurrentResourcesLimitExceededException(inner) => inner.fmt(f),
             Error::CreatedButModifiedException(inner) => inner.fmt(f),
             Error::GeneratedTemplateNotFoundException(inner) => inner.fmt(f),
+            Error::HookResultNotFoundException(inner) => inner.fmt(f),
             Error::InsufficientCapabilitiesException(inner) => inner.fmt(f),
             Error::InvalidChangeSetStatusException(inner) => inner.fmt(f),
             Error::InvalidOperationException(inner) => inner.fmt(f),
@@ -132,6 +135,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::ConcurrentResourcesLimitExceededException(inner) => inner.meta(),
             Self::CreatedButModifiedException(inner) => inner.meta(),
             Self::GeneratedTemplateNotFoundException(inner) => inner.meta(),
+            Self::HookResultNotFoundException(inner) => inner.meta(),
             Self::InsufficientCapabilitiesException(inner) => inner.meta(),
             Self::InvalidChangeSetStatusException(inner) => inner.meta(),
             Self::InvalidOperationException(inner) => inner.meta(),
@@ -1448,6 +1452,30 @@ impl From<crate::operation::list_generated_templates::ListGeneratedTemplatesErro
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_hook_results::ListHookResultsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_hook_results::ListHookResultsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_hook_results::ListHookResultsError> for Error {
+    fn from(err: crate::operation::list_hook_results::ListHookResultsError) -> Self {
+        match err {
+            crate::operation::list_hook_results::ListHookResultsError::HookResultNotFoundException(inner) => {
+                Error::HookResultNotFoundException(inner)
+            }
+            crate::operation::list_hook_results::ListHookResultsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_imports::ListImportsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -2340,6 +2368,7 @@ impl ::std::error::Error for Error {
             Error::ConcurrentResourcesLimitExceededException(inner) => inner.source(),
             Error::CreatedButModifiedException(inner) => inner.source(),
             Error::GeneratedTemplateNotFoundException(inner) => inner.source(),
+            Error::HookResultNotFoundException(inner) => inner.source(),
             Error::InsufficientCapabilitiesException(inner) => inner.source(),
             Error::InvalidChangeSetStatusException(inner) => inner.source(),
             Error::InvalidOperationException(inner) => inner.source(),
@@ -2374,6 +2403,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::ConcurrentResourcesLimitExceededException(e) => e.request_id(),
             Self::CreatedButModifiedException(e) => e.request_id(),
             Self::GeneratedTemplateNotFoundException(e) => e.request_id(),
+            Self::HookResultNotFoundException(e) => e.request_id(),
             Self::InsufficientCapabilitiesException(e) => e.request_id(),
             Self::InvalidChangeSetStatusException(e) => e.request_id(),
             Self::InvalidOperationException(e) => e.request_id(),

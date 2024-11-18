@@ -76,6 +76,43 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::activate_message_template::ActivateMessageTemplateError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::activate_message_template::ActivateMessageTemplateError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::activate_message_template::ActivateMessageTemplateError> for Error {
+    fn from(err: crate::operation::activate_message_template::ActivateMessageTemplateError) -> Self {
+        match err {
+            crate::operation::activate_message_template::ActivateMessageTemplateError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::activate_message_template::ActivateMessageTemplateError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::activate_message_template::ActivateMessageTemplateError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::activate_message_template::ActivateMessageTemplateError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::activate_message_template::ActivateMessageTemplateError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::activate_message_template::ActivateMessageTemplateError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_ai_agent::CreateAIAgentError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -361,6 +398,137 @@ impl From<crate::operation::create_knowledge_base::CreateKnowledgeBaseError> for
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_message_template::CreateMessageTemplateError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_message_template::CreateMessageTemplateError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_message_template::CreateMessageTemplateError> for Error {
+    fn from(err: crate::operation::create_message_template::CreateMessageTemplateError) -> Self {
+        match err {
+            crate::operation::create_message_template::CreateMessageTemplateError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::create_message_template::CreateMessageTemplateError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_message_template::CreateMessageTemplateError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::create_message_template::CreateMessageTemplateError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::create_message_template::CreateMessageTemplateError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_message_template::CreateMessageTemplateError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_message_template::CreateMessageTemplateError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_message_template_attachment::CreateMessageTemplateAttachmentError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_message_template_attachment::CreateMessageTemplateAttachmentError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_message_template_attachment::CreateMessageTemplateAttachmentError> for Error {
+    fn from(err: crate::operation::create_message_template_attachment::CreateMessageTemplateAttachmentError) -> Self {
+        match err {
+            crate::operation::create_message_template_attachment::CreateMessageTemplateAttachmentError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::create_message_template_attachment::CreateMessageTemplateAttachmentError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::create_message_template_attachment::CreateMessageTemplateAttachmentError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::create_message_template_attachment::CreateMessageTemplateAttachmentError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::create_message_template_attachment::CreateMessageTemplateAttachmentError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::create_message_template_attachment::CreateMessageTemplateAttachmentError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::create_message_template_attachment::CreateMessageTemplateAttachmentError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_message_template_version::CreateMessageTemplateVersionError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_message_template_version::CreateMessageTemplateVersionError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_message_template_version::CreateMessageTemplateVersionError> for Error {
+    fn from(err: crate::operation::create_message_template_version::CreateMessageTemplateVersionError) -> Self {
+        match err {
+            crate::operation::create_message_template_version::CreateMessageTemplateVersionError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::create_message_template_version::CreateMessageTemplateVersionError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::create_message_template_version::CreateMessageTemplateVersionError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::create_message_template_version::CreateMessageTemplateVersionError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::create_message_template_version::CreateMessageTemplateVersionError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::create_message_template_version::CreateMessageTemplateVersionError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::create_message_template_version::CreateMessageTemplateVersionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_quick_response::CreateQuickResponseError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -413,6 +581,45 @@ impl From<crate::operation::create_session::CreateSessionError> for Error {
             crate::operation::create_session::CreateSessionError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::create_session::CreateSessionError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::create_session::CreateSessionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::deactivate_message_template::DeactivateMessageTemplateError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::deactivate_message_template::DeactivateMessageTemplateError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::deactivate_message_template::DeactivateMessageTemplateError> for Error {
+    fn from(err: crate::operation::deactivate_message_template::DeactivateMessageTemplateError) -> Self {
+        match err {
+            crate::operation::deactivate_message_template::DeactivateMessageTemplateError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::deactivate_message_template::DeactivateMessageTemplateError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::deactivate_message_template::DeactivateMessageTemplateError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::deactivate_message_template::DeactivateMessageTemplateError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::deactivate_message_template::DeactivateMessageTemplateError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::deactivate_message_template::DeactivateMessageTemplateError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -694,6 +901,85 @@ impl From<crate::operation::delete_knowledge_base::DeleteKnowledgeBaseError> for
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_message_template::DeleteMessageTemplateError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_message_template::DeleteMessageTemplateError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_message_template::DeleteMessageTemplateError> for Error {
+    fn from(err: crate::operation::delete_message_template::DeleteMessageTemplateError) -> Self {
+        match err {
+            crate::operation::delete_message_template::DeleteMessageTemplateError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::delete_message_template::DeleteMessageTemplateError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::delete_message_template::DeleteMessageTemplateError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_message_template::DeleteMessageTemplateError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_message_template::DeleteMessageTemplateError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_message_template::DeleteMessageTemplateError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_message_template_attachment::DeleteMessageTemplateAttachmentError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_message_template_attachment::DeleteMessageTemplateAttachmentError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_message_template_attachment::DeleteMessageTemplateAttachmentError> for Error {
+    fn from(err: crate::operation::delete_message_template_attachment::DeleteMessageTemplateAttachmentError) -> Self {
+        match err {
+            crate::operation::delete_message_template_attachment::DeleteMessageTemplateAttachmentError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::delete_message_template_attachment::DeleteMessageTemplateAttachmentError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::delete_message_template_attachment::DeleteMessageTemplateAttachmentError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_message_template_attachment::DeleteMessageTemplateAttachmentError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::delete_message_template_attachment::DeleteMessageTemplateAttachmentError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::delete_message_template_attachment::DeleteMessageTemplateAttachmentError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_quick_response::DeleteQuickResponseError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -952,6 +1238,33 @@ impl From<crate::operation::get_knowledge_base::GetKnowledgeBaseError> for Error
             crate::operation::get_knowledge_base::GetKnowledgeBaseError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::get_knowledge_base::GetKnowledgeBaseError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_knowledge_base::GetKnowledgeBaseError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_message_template::GetMessageTemplateError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_message_template::GetMessageTemplateError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_message_template::GetMessageTemplateError> for Error {
+    fn from(err: crate::operation::get_message_template::GetMessageTemplateError) -> Self {
+        match err {
+            crate::operation::get_message_template::GetMessageTemplateError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_message_template::GetMessageTemplateError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_message_template::GetMessageTemplateError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_message_template::GetMessageTemplateError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_message_template::GetMessageTemplateError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1294,6 +1607,73 @@ impl From<crate::operation::list_knowledge_bases::ListKnowledgeBasesError> for E
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_message_templates::ListMessageTemplatesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_message_templates::ListMessageTemplatesError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_message_templates::ListMessageTemplatesError> for Error {
+    fn from(err: crate::operation::list_message_templates::ListMessageTemplatesError) -> Self {
+        match err {
+            crate::operation::list_message_templates::ListMessageTemplatesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_message_templates::ListMessageTemplatesError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_message_templates::ListMessageTemplatesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_message_templates::ListMessageTemplatesError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_message_templates::ListMessageTemplatesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_message_template_versions::ListMessageTemplateVersionsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_message_template_versions::ListMessageTemplateVersionsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_message_template_versions::ListMessageTemplateVersionsError> for Error {
+    fn from(err: crate::operation::list_message_template_versions::ListMessageTemplateVersionsError) -> Self {
+        match err {
+            crate::operation::list_message_template_versions::ListMessageTemplateVersionsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_message_template_versions::ListMessageTemplateVersionsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_message_template_versions::ListMessageTemplateVersionsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_message_template_versions::ListMessageTemplateVersionsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_message_template_versions::ListMessageTemplateVersionsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_quick_responses::ListQuickResponsesError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1503,6 +1883,37 @@ impl From<crate::operation::remove_knowledge_base_template_uri::RemoveKnowledgeB
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::render_message_template::RenderMessageTemplateError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::render_message_template::RenderMessageTemplateError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::render_message_template::RenderMessageTemplateError> for Error {
+    fn from(err: crate::operation::render_message_template::RenderMessageTemplateError) -> Self {
+        match err {
+            crate::operation::render_message_template::RenderMessageTemplateError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::render_message_template::RenderMessageTemplateError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::render_message_template::RenderMessageTemplateError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::render_message_template::RenderMessageTemplateError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::render_message_template::RenderMessageTemplateError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::search_content::SearchContentError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1524,6 +1935,37 @@ impl From<crate::operation::search_content::SearchContentError> for Error {
             crate::operation::search_content::SearchContentError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::search_content::SearchContentError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::search_content::SearchContentError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::search_message_templates::SearchMessageTemplatesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::search_message_templates::SearchMessageTemplatesError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::search_message_templates::SearchMessageTemplatesError> for Error {
+    fn from(err: crate::operation::search_message_templates::SearchMessageTemplatesError) -> Self {
+        match err {
+            crate::operation::search_message_templates::SearchMessageTemplatesError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::search_message_templates::SearchMessageTemplatesError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::search_message_templates::SearchMessageTemplatesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::search_message_templates::SearchMessageTemplatesError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::search_message_templates::SearchMessageTemplatesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1826,6 +2268,82 @@ impl From<crate::operation::update_knowledge_base_template_uri::UpdateKnowledgeB
                 Error::ValidationException(inner)
             }
             crate::operation::update_knowledge_base_template_uri::UpdateKnowledgeBaseTemplateUriError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_message_template::UpdateMessageTemplateError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_message_template::UpdateMessageTemplateError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_message_template::UpdateMessageTemplateError> for Error {
+    fn from(err: crate::operation::update_message_template::UpdateMessageTemplateError) -> Self {
+        match err {
+            crate::operation::update_message_template::UpdateMessageTemplateError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::update_message_template::UpdateMessageTemplateError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::update_message_template::UpdateMessageTemplateError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_message_template::UpdateMessageTemplateError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_message_template::UpdateMessageTemplateError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_message_template::UpdateMessageTemplateError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_message_template_metadata::UpdateMessageTemplateMetadataError, R>,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_message_template_metadata::UpdateMessageTemplateMetadataError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_message_template_metadata::UpdateMessageTemplateMetadataError> for Error {
+    fn from(err: crate::operation::update_message_template_metadata::UpdateMessageTemplateMetadataError) -> Self {
+        match err {
+            crate::operation::update_message_template_metadata::UpdateMessageTemplateMetadataError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::update_message_template_metadata::UpdateMessageTemplateMetadataError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::update_message_template_metadata::UpdateMessageTemplateMetadataError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_message_template_metadata::UpdateMessageTemplateMetadataError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::update_message_template_metadata::UpdateMessageTemplateMetadataError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::update_message_template_metadata::UpdateMessageTemplateMetadataError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

@@ -7,6 +7,8 @@ pub struct CreateContactFlowOutput {
     pub contact_flow_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the flow.</p>
     pub contact_flow_arn: ::std::option::Option<::std::string::String>,
+    /// <p>Indicates the checksum value of the flow content.</p>
+    pub flow_content_sha256: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateContactFlowOutput {
@@ -17,6 +19,10 @@ impl CreateContactFlowOutput {
     /// <p>The Amazon Resource Name (ARN) of the flow.</p>
     pub fn contact_flow_arn(&self) -> ::std::option::Option<&str> {
         self.contact_flow_arn.as_deref()
+    }
+    /// <p>Indicates the checksum value of the flow content.</p>
+    pub fn flow_content_sha256(&self) -> ::std::option::Option<&str> {
+        self.flow_content_sha256.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateContactFlowOutput {
@@ -37,6 +43,7 @@ impl CreateContactFlowOutput {
 pub struct CreateContactFlowOutputBuilder {
     pub(crate) contact_flow_id: ::std::option::Option<::std::string::String>,
     pub(crate) contact_flow_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) flow_content_sha256: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateContactFlowOutputBuilder {
@@ -68,6 +75,20 @@ impl CreateContactFlowOutputBuilder {
     pub fn get_contact_flow_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.contact_flow_arn
     }
+    /// <p>Indicates the checksum value of the flow content.</p>
+    pub fn flow_content_sha256(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.flow_content_sha256 = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Indicates the checksum value of the flow content.</p>
+    pub fn set_flow_content_sha256(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.flow_content_sha256 = input;
+        self
+    }
+    /// <p>Indicates the checksum value of the flow content.</p>
+    pub fn get_flow_content_sha256(&self) -> &::std::option::Option<::std::string::String> {
+        &self.flow_content_sha256
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -82,6 +103,7 @@ impl CreateContactFlowOutputBuilder {
         crate::operation::create_contact_flow::CreateContactFlowOutput {
             contact_flow_id: self.contact_flow_id,
             contact_flow_arn: self.contact_flow_arn,
+            flow_content_sha256: self.flow_content_sha256,
             _request_id: self._request_id,
         }
     }

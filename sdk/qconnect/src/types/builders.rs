@@ -53,6 +53,16 @@ pub use crate::types::_quick_response_filter_field::QuickResponseFilterFieldBuil
 
 pub use crate::types::_quick_response_query_field::QuickResponseQueryFieldBuilder;
 
+pub use crate::types::_message_template_search_result_data::MessageTemplateSearchResultDataBuilder;
+
+pub use crate::types::_message_template_search_expression::MessageTemplateSearchExpressionBuilder;
+
+pub use crate::types::_message_template_order_field::MessageTemplateOrderFieldBuilder;
+
+pub use crate::types::_message_template_filter_field::MessageTemplateFilterFieldBuilder;
+
+pub use crate::types::_message_template_query_field::MessageTemplateQueryFieldBuilder;
+
 pub use crate::types::_content_summary::ContentSummaryBuilder;
 
 pub use crate::types::_search_expression::SearchExpressionBuilder;
@@ -66,6 +76,36 @@ pub use crate::types::_knowledge_base_summary::KnowledgeBaseSummaryBuilder;
 pub use crate::types::_quick_response_data::QuickResponseDataBuilder;
 
 pub use crate::types::_quick_response_summary::QuickResponseSummaryBuilder;
+
+pub use crate::types::_message_template_data::MessageTemplateDataBuilder;
+
+pub use crate::types::_message_template_attributes::MessageTemplateAttributesBuilder;
+
+pub use crate::types::_customer_profile_attributes::CustomerProfileAttributesBuilder;
+
+pub use crate::types::_agent_attributes::AgentAttributesBuilder;
+
+pub use crate::types::_system_attributes::SystemAttributesBuilder;
+
+pub use crate::types::_system_endpoint_attributes::SystemEndpointAttributesBuilder;
+
+pub use crate::types::_sms_message_template_content::SmsMessageTemplateContentBuilder;
+
+pub use crate::types::_sms_message_template_content_body::SmsMessageTemplateContentBodyBuilder;
+
+pub use crate::types::_email_message_template_content::EmailMessageTemplateContentBuilder;
+
+pub use crate::types::_email_header::EmailHeaderBuilder;
+
+pub use crate::types::_email_message_template_content_body::EmailMessageTemplateContentBodyBuilder;
+
+pub use crate::types::_message_template_attachment::MessageTemplateAttachmentBuilder;
+
+pub use crate::types::_message_template_version_summary::MessageTemplateVersionSummaryBuilder;
+
+pub use crate::types::_extended_message_template_data::ExtendedMessageTemplateDataBuilder;
+
+pub use crate::types::_message_template_summary::MessageTemplateSummaryBuilder;
 
 pub use crate::types::_content_data::ContentDataBuilder;
 

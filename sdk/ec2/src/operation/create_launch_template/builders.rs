@@ -183,6 +183,20 @@ impl CreateLaunchTemplateFluentBuilder {
     pub fn get_launch_template_data(&self) -> &::std::option::Option<crate::types::RequestLaunchTemplateData> {
         self.inner.get_launch_template_data()
     }
+    /// <p>Reserved for internal use.</p>
+    pub fn operator(mut self, input: crate::types::OperatorRequest) -> Self {
+        self.inner = self.inner.operator(input);
+        self
+    }
+    /// <p>Reserved for internal use.</p>
+    pub fn set_operator(mut self, input: ::std::option::Option<crate::types::OperatorRequest>) -> Self {
+        self.inner = self.inner.set_operator(input);
+        self
+    }
+    /// <p>Reserved for internal use.</p>
+    pub fn get_operator(&self) -> &::std::option::Option<crate::types::OperatorRequest> {
+        self.inner.get_operator()
+    }
     ///
     /// Appends an item to `TagSpecifications`.
     ///

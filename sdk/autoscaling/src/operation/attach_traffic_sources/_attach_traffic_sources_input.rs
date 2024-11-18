@@ -7,6 +7,8 @@ pub struct AttachTrafficSourcesInput {
     pub auto_scaling_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifiers of one or more traffic sources. You can specify up to 10 traffic sources.</p>
     pub traffic_sources: ::std::option::Option<::std::vec::Vec<crate::types::TrafficSourceIdentifier>>,
+    /// <p>If you enable zonal shift with cross-zone disabled load balancers, capacity could become imbalanced across Availability Zones. To skip the validation, specify <code>true</code>. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-zonal-shift.html">Auto Scaling group zonal shift</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+    pub skip_zonal_shift_validation: ::std::option::Option<bool>,
 }
 impl AttachTrafficSourcesInput {
     /// <p>The name of the Auto Scaling group.</p>
@@ -18,6 +20,10 @@ impl AttachTrafficSourcesInput {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.traffic_sources.is_none()`.
     pub fn traffic_sources(&self) -> &[crate::types::TrafficSourceIdentifier] {
         self.traffic_sources.as_deref().unwrap_or_default()
+    }
+    /// <p>If you enable zonal shift with cross-zone disabled load balancers, capacity could become imbalanced across Availability Zones. To skip the validation, specify <code>true</code>. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-zonal-shift.html">Auto Scaling group zonal shift</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+    pub fn skip_zonal_shift_validation(&self) -> ::std::option::Option<bool> {
+        self.skip_zonal_shift_validation
     }
 }
 impl AttachTrafficSourcesInput {
@@ -33,6 +39,7 @@ impl AttachTrafficSourcesInput {
 pub struct AttachTrafficSourcesInputBuilder {
     pub(crate) auto_scaling_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) traffic_sources: ::std::option::Option<::std::vec::Vec<crate::types::TrafficSourceIdentifier>>,
+    pub(crate) skip_zonal_shift_validation: ::std::option::Option<bool>,
 }
 impl AttachTrafficSourcesInputBuilder {
     /// <p>The name of the Auto Scaling group.</p>
@@ -70,6 +77,20 @@ impl AttachTrafficSourcesInputBuilder {
     pub fn get_traffic_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TrafficSourceIdentifier>> {
         &self.traffic_sources
     }
+    /// <p>If you enable zonal shift with cross-zone disabled load balancers, capacity could become imbalanced across Availability Zones. To skip the validation, specify <code>true</code>. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-zonal-shift.html">Auto Scaling group zonal shift</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+    pub fn skip_zonal_shift_validation(mut self, input: bool) -> Self {
+        self.skip_zonal_shift_validation = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>If you enable zonal shift with cross-zone disabled load balancers, capacity could become imbalanced across Availability Zones. To skip the validation, specify <code>true</code>. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-zonal-shift.html">Auto Scaling group zonal shift</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+    pub fn set_skip_zonal_shift_validation(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.skip_zonal_shift_validation = input;
+        self
+    }
+    /// <p>If you enable zonal shift with cross-zone disabled load balancers, capacity could become imbalanced across Availability Zones. To skip the validation, specify <code>true</code>. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-zonal-shift.html">Auto Scaling group zonal shift</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+    pub fn get_skip_zonal_shift_validation(&self) -> &::std::option::Option<bool> {
+        &self.skip_zonal_shift_validation
+    }
     /// Consumes the builder and constructs a [`AttachTrafficSourcesInput`](crate::operation::attach_traffic_sources::AttachTrafficSourcesInput).
     pub fn build(
         self,
@@ -78,6 +99,7 @@ impl AttachTrafficSourcesInputBuilder {
         ::std::result::Result::Ok(crate::operation::attach_traffic_sources::AttachTrafficSourcesInput {
             auto_scaling_group_name: self.auto_scaling_group_name,
             traffic_sources: self.traffic_sources,
+            skip_zonal_shift_validation: self.skip_zonal_shift_validation,
         })
     }
 }

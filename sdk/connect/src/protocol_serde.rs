@@ -73,6 +73,8 @@ pub(crate) mod shape_create_contact_flow;
 
 pub(crate) mod shape_create_contact_flow_module;
 
+pub(crate) mod shape_create_contact_flow_version;
+
 pub(crate) mod shape_create_evaluation_form;
 
 pub(crate) mod shape_create_hours_of_operation;
@@ -278,6 +280,8 @@ pub(crate) mod shape_list_bots;
 pub(crate) mod shape_list_contact_evaluations;
 
 pub(crate) mod shape_list_contact_flow_modules;
+
+pub(crate) mod shape_list_contact_flow_versions;
 
 pub(crate) mod shape_list_contact_flows;
 
@@ -600,6 +604,8 @@ pub(crate) mod shape_create_agent_status_input;
 pub(crate) mod shape_create_contact_flow_input;
 
 pub(crate) mod shape_create_contact_flow_module_input;
+
+pub(crate) mod shape_create_contact_flow_version_input;
 
 pub(crate) mod shape_create_evaluation_form_input;
 
@@ -963,6 +969,8 @@ pub(crate) mod shape_contact_flow_search_summary_list;
 
 pub(crate) mod shape_contact_flow_summary_list;
 
+pub(crate) mod shape_contact_flow_version_summary_list;
+
 pub(crate) mod shape_contacts;
 
 pub(crate) mod shape_created_by_info;
@@ -1302,6 +1310,8 @@ pub(crate) mod shape_contact_filter;
 pub(crate) mod shape_contact_flow_module_summary;
 
 pub(crate) mod shape_contact_flow_summary;
+
+pub(crate) mod shape_contact_flow_version_summary;
 
 pub(crate) mod shape_contact_search_summary;
 

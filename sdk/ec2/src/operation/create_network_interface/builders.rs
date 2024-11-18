@@ -272,6 +272,20 @@ impl CreateNetworkInterfaceFluentBuilder {
     pub fn get_connection_tracking_specification(&self) -> &::std::option::Option<crate::types::ConnectionTrackingSpecificationRequest> {
         self.inner.get_connection_tracking_specification()
     }
+    /// <p>Reserved for internal use.</p>
+    pub fn operator(mut self, input: crate::types::OperatorRequest) -> Self {
+        self.inner = self.inner.operator(input);
+        self
+    }
+    /// <p>Reserved for internal use.</p>
+    pub fn set_operator(mut self, input: ::std::option::Option<crate::types::OperatorRequest>) -> Self {
+        self.inner = self.inner.set_operator(input);
+        self
+    }
+    /// <p>Reserved for internal use.</p>
+    pub fn get_operator(&self) -> &::std::option::Option<crate::types::OperatorRequest> {
+        self.inner.get_operator()
+    }
     /// <p>The ID of the subnet to associate with the network interface.</p>
     pub fn subnet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.subnet_id(input.into());

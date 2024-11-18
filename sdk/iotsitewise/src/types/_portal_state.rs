@@ -16,6 +16,7 @@
 ///     PortalState::Creating => { /* ... */ },
 ///     PortalState::Deleting => { /* ... */ },
 ///     PortalState::Failed => { /* ... */ },
+///     PortalState::Pending => { /* ... */ },
 ///     PortalState::Updating => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -53,6 +54,8 @@ pub enum PortalState {
     #[allow(missing_docs)] // documentation missing in model
     Failed,
     #[allow(missing_docs)] // documentation missing in model
+    Pending,
+    #[allow(missing_docs)] // documentation missing in model
     Updating,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -65,6 +68,7 @@ impl ::std::convert::From<&str> for PortalState {
             "CREATING" => PortalState::Creating,
             "DELETING" => PortalState::Deleting,
             "FAILED" => PortalState::Failed,
+            "PENDING" => PortalState::Pending,
             "UPDATING" => PortalState::Updating,
             other => PortalState::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -85,13 +89,14 @@ impl PortalState {
             PortalState::Creating => "CREATING",
             PortalState::Deleting => "DELETING",
             PortalState::Failed => "FAILED",
+            PortalState::Pending => "PENDING",
             PortalState::Updating => "UPDATING",
             PortalState::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ACTIVE", "CREATING", "DELETING", "FAILED", "UPDATING"]
+        &["ACTIVE", "CREATING", "DELETING", "FAILED", "PENDING", "UPDATING"]
     }
 }
 impl ::std::convert::AsRef<str> for PortalState {
@@ -118,6 +123,7 @@ impl ::std::fmt::Display for PortalState {
             PortalState::Creating => write!(f, "CREATING"),
             PortalState::Deleting => write!(f, "DELETING"),
             PortalState::Failed => write!(f, "FAILED"),
+            PortalState::Pending => write!(f, "PENDING"),
             PortalState::Updating => write!(f, "UPDATING"),
             PortalState::Unknown(value) => write!(f, "{}", value),
         }

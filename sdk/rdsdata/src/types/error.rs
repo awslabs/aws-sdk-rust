@@ -29,6 +29,8 @@ pub use crate::types::error::_access_denied_exception::AccessDeniedException;
 
 pub use crate::types::error::_unsupported_result_exception::UnsupportedResultException;
 
+pub use crate::types::error::_database_resuming_exception::DatabaseResumingException;
+
 mod _access_denied_exception;
 
 mod _bad_request_exception;
@@ -36,6 +38,8 @@ mod _bad_request_exception;
 mod _database_error_exception;
 
 mod _database_not_found_exception;
+
+mod _database_resuming_exception;
 
 mod _database_unavailable_exception;
 

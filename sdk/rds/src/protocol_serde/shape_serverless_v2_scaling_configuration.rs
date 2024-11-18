@@ -20,5 +20,13 @@ pub fn ser_serverless_v2_scaling_configuration(
             ::aws_smithy_types::Number::Float((*var_4).into()),
         );
     }
+    #[allow(unused_mut)]
+    let mut scope_5 = writer.prefix("SecondsUntilAutoPause");
+    if let Some(var_6) = &input.seconds_until_auto_pause {
+        scope_5.number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_6).into()),
+        );
+    }
     Ok(())
 }

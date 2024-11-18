@@ -239,5 +239,10 @@ pub fn ser_request_launch_template_data(
     if let Some(var_86) = &input.disable_api_stop {
         scope_85.boolean(*var_86);
     }
+    #[allow(unused_mut)]
+    let mut scope_87 = writer.prefix("Operator");
+    if let Some(var_88) = &input.operator {
+        crate::protocol_serde::shape_operator_request::ser_operator_request(scope_87, var_88)?;
+    }
     Ok(())
 }

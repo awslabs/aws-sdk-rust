@@ -17,20 +17,6 @@ pub fn de_describe_portal_http_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalFailureException" => crate::operation::describe_portal::DescribePortalError::InternalFailureException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::InternalFailureExceptionBuilder::default();
-                output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(_response_body, output)
-                    .map_err(crate::operation::describe_portal::DescribePortalError::unhandled)?;
-                let output = output.meta(generic);
-                crate::serde_util::internal_failure_exception_correct_errors(output)
-                    .build()
-                    .map_err(crate::operation::describe_portal::DescribePortalError::unhandled)?
-            };
-            tmp
-        }),
         "InvalidRequestException" => crate::operation::describe_portal::DescribePortalError::InvalidRequestException({
             #[allow(unused_mut)]
             let mut tmp = {
@@ -68,6 +54,20 @@ pub fn de_describe_portal_http_error(
                     .map_err(crate::operation::describe_portal::DescribePortalError::unhandled)?;
                 let output = output.meta(generic);
                 crate::serde_util::throttling_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::describe_portal::DescribePortalError::unhandled)?
+            };
+            tmp
+        }),
+        "InternalFailureException" => crate::operation::describe_portal::DescribePortalError::InternalFailureException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InternalFailureExceptionBuilder::default();
+                output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::describe_portal::DescribePortalError::unhandled)?;
+                let output = output.meta(generic);
+                crate::serde_util::internal_failure_exception_correct_errors(output)
                     .build()
                     .map_err(crate::operation::describe_portal::DescribePortalError::unhandled)?
             };
@@ -189,6 +189,18 @@ pub(crate) fn de_describe_portal(
                 }
                 "portalStatus" => {
                     builder = builder.set_portal_status(crate::protocol_serde::shape_portal_status::de_portal_status(tokens)?);
+                }
+                "portalType" => {
+                    builder = builder.set_portal_type(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::PortalType::from(u.as_ref())))
+                            .transpose()?,
+                    );
+                }
+                "portalTypeConfiguration" => {
+                    builder = builder.set_portal_type_configuration(
+                        crate::protocol_serde::shape_portal_type_configuration::de_portal_type_configuration(tokens)?,
+                    );
                 }
                 "roleArn" => {
                     builder = builder.set_role_arn(

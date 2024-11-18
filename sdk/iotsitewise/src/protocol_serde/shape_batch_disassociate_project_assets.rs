@@ -20,22 +20,6 @@ pub fn de_batch_disassociate_project_assets_http_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalFailureException" => {
-            crate::operation::batch_disassociate_project_assets::BatchDisassociateProjectAssetsError::InternalFailureException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::InternalFailureExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(_response_body, output)
-                        .map_err(crate::operation::batch_disassociate_project_assets::BatchDisassociateProjectAssetsError::unhandled)?;
-                    let output = output.meta(generic);
-                    crate::serde_util::internal_failure_exception_correct_errors(output)
-                        .build()
-                        .map_err(crate::operation::batch_disassociate_project_assets::BatchDisassociateProjectAssetsError::unhandled)?
-                };
-                tmp
-            })
-        }
         "InvalidRequestException" => {
             crate::operation::batch_disassociate_project_assets::BatchDisassociateProjectAssetsError::InvalidRequestException({
                 #[allow(unused_mut)]
@@ -83,6 +67,22 @@ pub fn de_batch_disassociate_project_assets_http_error(
             };
             tmp
         }),
+        "InternalFailureException" => {
+            crate::operation::batch_disassociate_project_assets::BatchDisassociateProjectAssetsError::InternalFailureException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InternalFailureExceptionBuilder::default();
+                    output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(_response_body, output)
+                        .map_err(crate::operation::batch_disassociate_project_assets::BatchDisassociateProjectAssetsError::unhandled)?;
+                    let output = output.meta(generic);
+                    crate::serde_util::internal_failure_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::batch_disassociate_project_assets::BatchDisassociateProjectAssetsError::unhandled)?
+                };
+                tmp
+            })
+        }
         _ => crate::operation::batch_disassociate_project_assets::BatchDisassociateProjectAssetsError::generic(generic),
     })
 }

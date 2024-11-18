@@ -3,13 +3,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateKnowledgeBaseInput {
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="http://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The name of the knowledge base.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The type of knowledge base. Only CUSTOM knowledge bases allow you to upload your own content. EXTERNAL knowledge bases support integrations with third-party systems whose content is synchronized automatically.</p>
     pub knowledge_base_type: ::std::option::Option<crate::types::KnowledgeBaseType>,
-    /// <p>The source of the knowledge base content. Only set this argument for EXTERNAL knowledge bases.</p>
+    /// <p>The source of the knowledge base content. Only set this argument for EXTERNAL or Managed knowledge bases.</p>
     pub source_configuration: ::std::option::Option<crate::types::SourceConfiguration>,
     /// <p>Information about how to render the content.</p>
     pub rendering_configuration: ::std::option::Option<crate::types::RenderingConfiguration>,
@@ -25,7 +25,7 @@ pub struct CreateKnowledgeBaseInput {
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateKnowledgeBaseInput {
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="http://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -37,7 +37,7 @@ impl CreateKnowledgeBaseInput {
     pub fn knowledge_base_type(&self) -> ::std::option::Option<&crate::types::KnowledgeBaseType> {
         self.knowledge_base_type.as_ref()
     }
-    /// <p>The source of the knowledge base content. Only set this argument for EXTERNAL knowledge bases.</p>
+    /// <p>The source of the knowledge base content. Only set this argument for EXTERNAL or Managed knowledge bases.</p>
     pub fn source_configuration(&self) -> ::std::option::Option<&crate::types::SourceConfiguration> {
         self.source_configuration.as_ref()
     }
@@ -86,17 +86,17 @@ pub struct CreateKnowledgeBaseInputBuilder {
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateKnowledgeBaseInputBuilder {
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="http://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="http://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
     }
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="http://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
@@ -130,17 +130,17 @@ impl CreateKnowledgeBaseInputBuilder {
     pub fn get_knowledge_base_type(&self) -> &::std::option::Option<crate::types::KnowledgeBaseType> {
         &self.knowledge_base_type
     }
-    /// <p>The source of the knowledge base content. Only set this argument for EXTERNAL knowledge bases.</p>
+    /// <p>The source of the knowledge base content. Only set this argument for EXTERNAL or Managed knowledge bases.</p>
     pub fn source_configuration(mut self, input: crate::types::SourceConfiguration) -> Self {
         self.source_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The source of the knowledge base content. Only set this argument for EXTERNAL knowledge bases.</p>
+    /// <p>The source of the knowledge base content. Only set this argument for EXTERNAL or Managed knowledge bases.</p>
     pub fn set_source_configuration(mut self, input: ::std::option::Option<crate::types::SourceConfiguration>) -> Self {
         self.source_configuration = input;
         self
     }
-    /// <p>The source of the knowledge base content. Only set this argument for EXTERNAL knowledge bases.</p>
+    /// <p>The source of the knowledge base content. Only set this argument for EXTERNAL or Managed knowledge bases.</p>
     pub fn get_source_configuration(&self) -> &::std::option::Option<crate::types::SourceConfiguration> {
         &self.source_configuration
     }

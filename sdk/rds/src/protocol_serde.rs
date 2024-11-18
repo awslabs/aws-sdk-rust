@@ -737,6 +737,8 @@ pub(crate) mod shape_db_instance_automated_backup_quota_exceeded_fault;
 
 pub(crate) mod shape_db_instance_not_found_fault;
 
+pub(crate) mod shape_db_instance_not_ready_fault;
+
 pub(crate) mod shape_db_instance_role_already_exists_fault;
 
 pub(crate) mod shape_db_instance_role_not_found_fault;
@@ -1118,6 +1120,8 @@ pub(crate) mod shape_reserved_db_instance_list;
 pub(crate) mod shape_reserved_db_instances_offering_list;
 
 pub(crate) mod shape_resource_pending_maintenance_actions;
+
+pub(crate) mod shape_serverless_v2_features_support;
 
 pub(crate) mod shape_source_region_list;
 

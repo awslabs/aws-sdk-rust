@@ -3,17 +3,27 @@ pub use crate::types::_portal_status::PortalStatusBuilder;
 
 pub use crate::types::_monitor_error_details::MonitorErrorDetailsBuilder;
 
+pub use crate::types::_portal_type_entry::PortalTypeEntryBuilder;
+
 pub use crate::types::_alarms::AlarmsBuilder;
 
 pub use crate::types::_image::ImageBuilder;
 
 pub use crate::types::_image_file::ImageFileBuilder;
 
-pub use crate::types::_asset_model_status::AssetModelStatusBuilder;
+pub use crate::types::_dataset_status::DatasetStatusBuilder;
 
 pub use crate::types::_error_details::ErrorDetailsBuilder;
 
 pub use crate::types::_detailed_error::DetailedErrorBuilder;
+
+pub use crate::types::_dataset_source::DatasetSourceBuilder;
+
+pub use crate::types::_source_detail::SourceDetailBuilder;
+
+pub use crate::types::_kendra_source_detail::KendraSourceDetailBuilder;
+
+pub use crate::types::_asset_model_status::AssetModelStatusBuilder;
 
 pub use crate::types::_asset_model_composite_model_path_segment::AssetModelCompositeModelPathSegmentBuilder;
 
@@ -101,6 +111,8 @@ pub use crate::types::_greengrass_v2::GreengrassV2Builder;
 
 pub use crate::types::_greengrass::GreengrassBuilder;
 
+pub use crate::types::_dataset_summary::DatasetSummaryBuilder;
+
 pub use crate::types::_dashboard_summary::DashboardSummaryBuilder;
 
 pub use crate::types::_composition_relationship_summary::CompositionRelationshipSummaryBuilder;
@@ -134,6 +146,22 @@ pub use crate::types::_action_summary::ActionSummaryBuilder;
 pub use crate::types::_target_resource::TargetResourceBuilder;
 
 pub use crate::types::_access_policy_summary::AccessPolicySummaryBuilder;
+
+pub use crate::types::_invocation_output::InvocationOutputBuilder;
+
+pub use crate::types::_citation::CitationBuilder;
+
+pub use crate::types::_content::ContentBuilder;
+
+pub use crate::types::_reference::ReferenceBuilder;
+
+pub use crate::types::_data_set_reference::DataSetReferenceBuilder;
+
+pub use crate::types::_source::SourceBuilder;
+
+pub use crate::types::_location::LocationBuilder;
+
+pub use crate::types::_trace::TraceBuilder;
 
 pub use crate::types::_interpolated_asset_property_value::InterpolatedAssetPropertyValueBuilder;
 

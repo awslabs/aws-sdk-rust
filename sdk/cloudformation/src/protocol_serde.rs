@@ -219,6 +219,10 @@ pub(crate) mod shape_list_generated_templates;
 
 pub(crate) mod shape_list_generated_templates_input;
 
+pub(crate) mod shape_list_hook_results;
+
+pub(crate) mod shape_list_hook_results_input;
+
 pub(crate) mod shape_list_imports;
 
 pub(crate) mod shape_list_imports_input;
@@ -367,6 +371,8 @@ pub(crate) mod shape_deployment_targets;
 
 pub(crate) mod shape_generated_template_not_found_exception;
 
+pub(crate) mod shape_hook_result_not_found_exception;
+
 pub(crate) mod shape_insufficient_capabilities_exception;
 
 pub(crate) mod shape_invalid_change_set_status_exception;
@@ -452,6 +458,8 @@ pub(crate) mod shape_change_set_summaries;
 pub(crate) mod shape_changes;
 
 pub(crate) mod shape_exports;
+
+pub(crate) mod shape_hook_result_summaries;
 
 pub(crate) mod shape_imports;
 
@@ -546,6 +554,8 @@ pub(crate) mod shape_change_set_hook;
 pub(crate) mod shape_change_set_summary;
 
 pub(crate) mod shape_export;
+
+pub(crate) mod shape_hook_result_summary;
 
 pub(crate) mod shape_module_info;
 

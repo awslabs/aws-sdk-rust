@@ -79,6 +79,8 @@ pub use crate::types::_field_source_profile_ids::FieldSourceProfileIdsBuilder;
 
 pub use crate::types::_list_workflows_item::ListWorkflowsItemBuilder;
 
+pub use crate::types::_segment_definition_item::SegmentDefinitionItemBuilder;
+
 pub use crate::types::_list_profile_object_type_template_item::ListProfileObjectTypeTemplateItemBuilder;
 
 pub use crate::types::_list_profile_object_type_item::ListProfileObjectTypeItemBuilder;
@@ -86,6 +88,10 @@ pub use crate::types::_list_profile_object_type_item::ListProfileObjectTypeItemB
 pub use crate::types::_list_profile_objects_item::ListProfileObjectsItemBuilder;
 
 pub use crate::types::_object_filter::ObjectFilterBuilder;
+
+pub use crate::types::_attribute_value_item::AttributeValueItemBuilder;
+
+pub use crate::types::_list_object_type_attribute_item::ListObjectTypeAttributeItemBuilder;
 
 pub use crate::types::_list_integration_item::ListIntegrationItemBuilder;
 
@@ -119,16 +125,60 @@ pub use crate::types::_workflow_attributes::WorkflowAttributesBuilder;
 
 pub use crate::types::_appflow_integration_workflow_attributes::AppflowIntegrationWorkflowAttributesBuilder;
 
+pub use crate::types::_profile_query_failures::ProfileQueryFailuresBuilder;
+
+pub use crate::types::_profile_query_result::ProfileQueryResultBuilder;
+
+pub use crate::types::_segment_group::SegmentGroupBuilder;
+
+pub use crate::types::_group::GroupBuilder;
+
+pub use crate::types::_source_segment::SourceSegmentBuilder;
+
+pub use crate::types::_calculated_attribute_dimension::CalculatedAttributeDimensionBuilder;
+
+pub use crate::types::_condition_overrides::ConditionOverridesBuilder;
+
+pub use crate::types::_range_override::RangeOverrideBuilder;
+
+pub use crate::types::_profile_attributes::ProfileAttributesBuilder;
+
+pub use crate::types::_attribute_dimension::AttributeDimensionBuilder;
+
+pub use crate::types::_address_dimension::AddressDimensionBuilder;
+
+pub use crate::types::_profile_dimension::ProfileDimensionBuilder;
+
+pub use crate::types::_date_dimension::DateDimensionBuilder;
+
+pub use crate::types::_extra_length_value_profile_dimension::ExtraLengthValueProfileDimensionBuilder;
+
 pub use crate::types::_match_item::MatchItemBuilder;
 
 pub use crate::types::_event_stream_destination_details::EventStreamDestinationDetailsBuilder;
 
 pub use crate::types::_domain_stats::DomainStatsBuilder;
 
+pub use crate::types::_filter::FilterBuilder;
+
+pub use crate::types::_filter_group::FilterGroupBuilder;
+
+pub use crate::types::_filter_dimension::FilterDimensionBuilder;
+
+pub use crate::types::_filter_attribute_dimension::FilterAttributeDimensionBuilder;
+
 pub use crate::types::_detected_profile_object_type::DetectedProfileObjectTypeBuilder;
+
+pub use crate::types::_segment_group_structure::SegmentGroupStructureBuilder;
 
 pub use crate::types::_integration_config::IntegrationConfigBuilder;
 
 pub use crate::types::_appflow_integration::AppflowIntegrationBuilder;
 
 pub use crate::types::_batch::BatchBuilder;
+
+pub use crate::types::_batch_get_profile_error::BatchGetProfileErrorBuilder;
+
+pub use crate::types::_calculated_attribute_value::CalculatedAttributeValueBuilder;
+
+pub use crate::types::_batch_get_calculated_attribute_for_profile_error::BatchGetCalculatedAttributeForProfileErrorBuilder;

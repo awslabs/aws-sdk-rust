@@ -100,6 +100,16 @@ pub fn de_launch_template(
                 builder = builder.set_tags(var_7);
             }
             ,
+            s if s.matches("operator") /* Operator com.amazonaws.ec2#LaunchTemplate$Operator */ =>  {
+                let var_8 =
+                    Some(
+                        crate::protocol_serde::shape_operator_response::de_operator_response(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_operator(var_8);
+            }
+            ,
             _ => {}
         }
     }

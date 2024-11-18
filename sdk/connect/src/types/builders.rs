@@ -419,6 +419,8 @@ pub use crate::types::_attachment_reference::AttachmentReferenceBuilder;
 
 pub use crate::types::_url_reference::UrlReferenceBuilder;
 
+pub use crate::types::_contact_flow_version_summary::ContactFlowVersionSummaryBuilder;
+
 pub use crate::types::_contact_flow_summary::ContactFlowSummaryBuilder;
 
 pub use crate::types::_contact_flow_module_summary::ContactFlowModuleSummaryBuilder;

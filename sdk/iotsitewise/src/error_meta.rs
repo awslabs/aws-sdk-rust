@@ -115,17 +115,17 @@ where
 impl From<crate::operation::associate_assets::AssociateAssetsError> for Error {
     fn from(err: crate::operation::associate_assets::AssociateAssetsError) -> Self {
         match err {
-            crate::operation::associate_assets::AssociateAssetsError::ConflictingOperationException(inner) => {
-                Error::ConflictingOperationException(inner)
-            }
-            crate::operation::associate_assets::AssociateAssetsError::InternalFailureException(inner) => Error::InternalFailureException(inner),
-            crate::operation::associate_assets::AssociateAssetsError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
-            crate::operation::associate_assets::AssociateAssetsError::LimitExceededException(inner) => Error::LimitExceededException(inner),
             crate::operation::associate_assets::AssociateAssetsError::ResourceAlreadyExistsException(inner) => {
                 Error::ResourceAlreadyExistsException(inner)
             }
+            crate::operation::associate_assets::AssociateAssetsError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::associate_assets::AssociateAssetsError::ConflictingOperationException(inner) => {
+                Error::ConflictingOperationException(inner)
+            }
+            crate::operation::associate_assets::AssociateAssetsError::LimitExceededException(inner) => Error::LimitExceededException(inner),
             crate::operation::associate_assets::AssociateAssetsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::associate_assets::AssociateAssetsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::associate_assets::AssociateAssetsError::InternalFailureException(inner) => Error::InternalFailureException(inner),
             crate::operation::associate_assets::AssociateAssetsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -158,20 +158,20 @@ where
 impl From<crate::operation::associate_time_series_to_asset_property::AssociateTimeSeriesToAssetPropertyError> for Error {
     fn from(err: crate::operation::associate_time_series_to_asset_property::AssociateTimeSeriesToAssetPropertyError) -> Self {
         match err {
-            crate::operation::associate_time_series_to_asset_property::AssociateTimeSeriesToAssetPropertyError::ConflictingOperationException(
-                inner,
-            ) => Error::ConflictingOperationException(inner),
-            crate::operation::associate_time_series_to_asset_property::AssociateTimeSeriesToAssetPropertyError::InternalFailureException(inner) => {
-                Error::InternalFailureException(inner)
-            }
             crate::operation::associate_time_series_to_asset_property::AssociateTimeSeriesToAssetPropertyError::InvalidRequestException(inner) => {
                 Error::InvalidRequestException(inner)
             }
+            crate::operation::associate_time_series_to_asset_property::AssociateTimeSeriesToAssetPropertyError::ConflictingOperationException(
+                inner,
+            ) => Error::ConflictingOperationException(inner),
             crate::operation::associate_time_series_to_asset_property::AssociateTimeSeriesToAssetPropertyError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
             crate::operation::associate_time_series_to_asset_property::AssociateTimeSeriesToAssetPropertyError::ThrottlingException(inner) => {
                 Error::ThrottlingException(inner)
+            }
+            crate::operation::associate_time_series_to_asset_property::AssociateTimeSeriesToAssetPropertyError::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
             }
             crate::operation::associate_time_series_to_asset_property::AssociateTimeSeriesToAssetPropertyError::Unhandled(inner) => {
                 Error::Unhandled(inner)
@@ -203,9 +203,6 @@ where
 impl From<crate::operation::batch_associate_project_assets::BatchAssociateProjectAssetsError> for Error {
     fn from(err: crate::operation::batch_associate_project_assets::BatchAssociateProjectAssetsError) -> Self {
         match err {
-            crate::operation::batch_associate_project_assets::BatchAssociateProjectAssetsError::InternalFailureException(inner) => {
-                Error::InternalFailureException(inner)
-            }
             crate::operation::batch_associate_project_assets::BatchAssociateProjectAssetsError::InvalidRequestException(inner) => {
                 Error::InvalidRequestException(inner)
             }
@@ -217,6 +214,9 @@ impl From<crate::operation::batch_associate_project_assets::BatchAssociateProjec
             }
             crate::operation::batch_associate_project_assets::BatchAssociateProjectAssetsError::ThrottlingException(inner) => {
                 Error::ThrottlingException(inner)
+            }
+            crate::operation::batch_associate_project_assets::BatchAssociateProjectAssetsError::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
             }
             crate::operation::batch_associate_project_assets::BatchAssociateProjectAssetsError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -250,9 +250,6 @@ where
 impl From<crate::operation::batch_disassociate_project_assets::BatchDisassociateProjectAssetsError> for Error {
     fn from(err: crate::operation::batch_disassociate_project_assets::BatchDisassociateProjectAssetsError) -> Self {
         match err {
-            crate::operation::batch_disassociate_project_assets::BatchDisassociateProjectAssetsError::InternalFailureException(inner) => {
-                Error::InternalFailureException(inner)
-            }
             crate::operation::batch_disassociate_project_assets::BatchDisassociateProjectAssetsError::InvalidRequestException(inner) => {
                 Error::InvalidRequestException(inner)
             }
@@ -261,6 +258,9 @@ impl From<crate::operation::batch_disassociate_project_assets::BatchDisassociate
             }
             crate::operation::batch_disassociate_project_assets::BatchDisassociateProjectAssetsError::ThrottlingException(inner) => {
                 Error::ThrottlingException(inner)
+            }
+            crate::operation::batch_disassociate_project_assets::BatchDisassociateProjectAssetsError::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
             }
             crate::operation::batch_disassociate_project_assets::BatchDisassociateProjectAssetsError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -294,17 +294,17 @@ where
 impl From<crate::operation::batch_get_asset_property_aggregates::BatchGetAssetPropertyAggregatesError> for Error {
     fn from(err: crate::operation::batch_get_asset_property_aggregates::BatchGetAssetPropertyAggregatesError) -> Self {
         match err {
-            crate::operation::batch_get_asset_property_aggregates::BatchGetAssetPropertyAggregatesError::InternalFailureException(inner) => {
-                Error::InternalFailureException(inner)
-            }
             crate::operation::batch_get_asset_property_aggregates::BatchGetAssetPropertyAggregatesError::InvalidRequestException(inner) => {
                 Error::InvalidRequestException(inner)
+            }
+            crate::operation::batch_get_asset_property_aggregates::BatchGetAssetPropertyAggregatesError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
             }
             crate::operation::batch_get_asset_property_aggregates::BatchGetAssetPropertyAggregatesError::ServiceUnavailableException(inner) => {
                 Error::ServiceUnavailableException(inner)
             }
-            crate::operation::batch_get_asset_property_aggregates::BatchGetAssetPropertyAggregatesError::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
+            crate::operation::batch_get_asset_property_aggregates::BatchGetAssetPropertyAggregatesError::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
             }
             crate::operation::batch_get_asset_property_aggregates::BatchGetAssetPropertyAggregatesError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -330,17 +330,17 @@ where
 impl From<crate::operation::batch_get_asset_property_value::BatchGetAssetPropertyValueError> for Error {
     fn from(err: crate::operation::batch_get_asset_property_value::BatchGetAssetPropertyValueError) -> Self {
         match err {
-            crate::operation::batch_get_asset_property_value::BatchGetAssetPropertyValueError::InternalFailureException(inner) => {
-                Error::InternalFailureException(inner)
-            }
             crate::operation::batch_get_asset_property_value::BatchGetAssetPropertyValueError::InvalidRequestException(inner) => {
                 Error::InvalidRequestException(inner)
+            }
+            crate::operation::batch_get_asset_property_value::BatchGetAssetPropertyValueError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
             }
             crate::operation::batch_get_asset_property_value::BatchGetAssetPropertyValueError::ServiceUnavailableException(inner) => {
                 Error::ServiceUnavailableException(inner)
             }
-            crate::operation::batch_get_asset_property_value::BatchGetAssetPropertyValueError::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
+            crate::operation::batch_get_asset_property_value::BatchGetAssetPropertyValueError::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
             }
             crate::operation::batch_get_asset_property_value::BatchGetAssetPropertyValueError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -374,17 +374,17 @@ where
 impl From<crate::operation::batch_get_asset_property_value_history::BatchGetAssetPropertyValueHistoryError> for Error {
     fn from(err: crate::operation::batch_get_asset_property_value_history::BatchGetAssetPropertyValueHistoryError) -> Self {
         match err {
-            crate::operation::batch_get_asset_property_value_history::BatchGetAssetPropertyValueHistoryError::InternalFailureException(inner) => {
-                Error::InternalFailureException(inner)
-            }
             crate::operation::batch_get_asset_property_value_history::BatchGetAssetPropertyValueHistoryError::InvalidRequestException(inner) => {
                 Error::InvalidRequestException(inner)
+            }
+            crate::operation::batch_get_asset_property_value_history::BatchGetAssetPropertyValueHistoryError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
             }
             crate::operation::batch_get_asset_property_value_history::BatchGetAssetPropertyValueHistoryError::ServiceUnavailableException(inner) => {
                 Error::ServiceUnavailableException(inner)
             }
-            crate::operation::batch_get_asset_property_value_history::BatchGetAssetPropertyValueHistoryError::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
+            crate::operation::batch_get_asset_property_value_history::BatchGetAssetPropertyValueHistoryError::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
             }
             crate::operation::batch_get_asset_property_value_history::BatchGetAssetPropertyValueHistoryError::Unhandled(inner) => {
                 Error::Unhandled(inner)
@@ -412,14 +412,11 @@ where
 impl From<crate::operation::batch_put_asset_property_value::BatchPutAssetPropertyValueError> for Error {
     fn from(err: crate::operation::batch_put_asset_property_value::BatchPutAssetPropertyValueError) -> Self {
         match err {
-            crate::operation::batch_put_asset_property_value::BatchPutAssetPropertyValueError::ConflictingOperationException(inner) => {
-                Error::ConflictingOperationException(inner)
-            }
-            crate::operation::batch_put_asset_property_value::BatchPutAssetPropertyValueError::InternalFailureException(inner) => {
-                Error::InternalFailureException(inner)
-            }
             crate::operation::batch_put_asset_property_value::BatchPutAssetPropertyValueError::InvalidRequestException(inner) => {
                 Error::InvalidRequestException(inner)
+            }
+            crate::operation::batch_put_asset_property_value::BatchPutAssetPropertyValueError::ConflictingOperationException(inner) => {
+                Error::ConflictingOperationException(inner)
             }
             crate::operation::batch_put_asset_property_value::BatchPutAssetPropertyValueError::LimitExceededException(inner) => {
                 Error::LimitExceededException(inner)
@@ -427,11 +424,14 @@ impl From<crate::operation::batch_put_asset_property_value::BatchPutAssetPropert
             crate::operation::batch_put_asset_property_value::BatchPutAssetPropertyValueError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
+            crate::operation::batch_put_asset_property_value::BatchPutAssetPropertyValueError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
             crate::operation::batch_put_asset_property_value::BatchPutAssetPropertyValueError::ServiceUnavailableException(inner) => {
                 Error::ServiceUnavailableException(inner)
             }
-            crate::operation::batch_put_asset_property_value::BatchPutAssetPropertyValueError::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
+            crate::operation::batch_put_asset_property_value::BatchPutAssetPropertyValueError::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
             }
             crate::operation::batch_put_asset_property_value::BatchPutAssetPropertyValueError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -454,15 +454,15 @@ where
 impl From<crate::operation::create_access_policy::CreateAccessPolicyError> for Error {
     fn from(err: crate::operation::create_access_policy::CreateAccessPolicyError) -> Self {
         match err {
-            crate::operation::create_access_policy::CreateAccessPolicyError::InternalFailureException(inner) => {
-                Error::InternalFailureException(inner)
-            }
             crate::operation::create_access_policy::CreateAccessPolicyError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
             crate::operation::create_access_policy::CreateAccessPolicyError::LimitExceededException(inner) => Error::LimitExceededException(inner),
             crate::operation::create_access_policy::CreateAccessPolicyError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
             crate::operation::create_access_policy::CreateAccessPolicyError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_access_policy::CreateAccessPolicyError::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
             crate::operation::create_access_policy::CreateAccessPolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -484,13 +484,13 @@ where
 impl From<crate::operation::create_asset::CreateAssetError> for Error {
     fn from(err: crate::operation::create_asset::CreateAssetError) -> Self {
         match err {
-            crate::operation::create_asset::CreateAssetError::ConflictingOperationException(inner) => Error::ConflictingOperationException(inner),
-            crate::operation::create_asset::CreateAssetError::InternalFailureException(inner) => Error::InternalFailureException(inner),
-            crate::operation::create_asset::CreateAssetError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
-            crate::operation::create_asset::CreateAssetError::LimitExceededException(inner) => Error::LimitExceededException(inner),
             crate::operation::create_asset::CreateAssetError::ResourceAlreadyExistsException(inner) => Error::ResourceAlreadyExistsException(inner),
+            crate::operation::create_asset::CreateAssetError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::create_asset::CreateAssetError::ConflictingOperationException(inner) => Error::ConflictingOperationException(inner),
+            crate::operation::create_asset::CreateAssetError::LimitExceededException(inner) => Error::LimitExceededException(inner),
             crate::operation::create_asset::CreateAssetError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::create_asset::CreateAssetError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_asset::CreateAssetError::InternalFailureException(inner) => Error::InternalFailureException(inner),
             crate::operation::create_asset::CreateAssetError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -512,17 +512,17 @@ where
 impl From<crate::operation::create_asset_model::CreateAssetModelError> for Error {
     fn from(err: crate::operation::create_asset_model::CreateAssetModelError) -> Self {
         match err {
-            crate::operation::create_asset_model::CreateAssetModelError::ConflictingOperationException(inner) => {
-                Error::ConflictingOperationException(inner)
-            }
-            crate::operation::create_asset_model::CreateAssetModelError::InternalFailureException(inner) => Error::InternalFailureException(inner),
-            crate::operation::create_asset_model::CreateAssetModelError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
-            crate::operation::create_asset_model::CreateAssetModelError::LimitExceededException(inner) => Error::LimitExceededException(inner),
             crate::operation::create_asset_model::CreateAssetModelError::ResourceAlreadyExistsException(inner) => {
                 Error::ResourceAlreadyExistsException(inner)
             }
+            crate::operation::create_asset_model::CreateAssetModelError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::create_asset_model::CreateAssetModelError::ConflictingOperationException(inner) => {
+                Error::ConflictingOperationException(inner)
+            }
+            crate::operation::create_asset_model::CreateAssetModelError::LimitExceededException(inner) => Error::LimitExceededException(inner),
             crate::operation::create_asset_model::CreateAssetModelError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::create_asset_model::CreateAssetModelError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_asset_model::CreateAssetModelError::InternalFailureException(inner) => Error::InternalFailureException(inner),
             crate::operation::create_asset_model::CreateAssetModelError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -555,29 +555,29 @@ where
 impl From<crate::operation::create_asset_model_composite_model::CreateAssetModelCompositeModelError> for Error {
     fn from(err: crate::operation::create_asset_model_composite_model::CreateAssetModelCompositeModelError) -> Self {
         match err {
-            crate::operation::create_asset_model_composite_model::CreateAssetModelCompositeModelError::ConflictingOperationException(inner) => {
-                Error::ConflictingOperationException(inner)
-            }
-            crate::operation::create_asset_model_composite_model::CreateAssetModelCompositeModelError::InternalFailureException(inner) => {
-                Error::InternalFailureException(inner)
+            crate::operation::create_asset_model_composite_model::CreateAssetModelCompositeModelError::ResourceAlreadyExistsException(inner) => {
+                Error::ResourceAlreadyExistsException(inner)
             }
             crate::operation::create_asset_model_composite_model::CreateAssetModelCompositeModelError::InvalidRequestException(inner) => {
                 Error::InvalidRequestException(inner)
             }
+            crate::operation::create_asset_model_composite_model::CreateAssetModelCompositeModelError::ConflictingOperationException(inner) => {
+                Error::ConflictingOperationException(inner)
+            }
             crate::operation::create_asset_model_composite_model::CreateAssetModelCompositeModelError::LimitExceededException(inner) => {
                 Error::LimitExceededException(inner)
-            }
-            crate::operation::create_asset_model_composite_model::CreateAssetModelCompositeModelError::PreconditionFailedException(inner) => {
-                Error::PreconditionFailedException(inner)
-            }
-            crate::operation::create_asset_model_composite_model::CreateAssetModelCompositeModelError::ResourceAlreadyExistsException(inner) => {
-                Error::ResourceAlreadyExistsException(inner)
             }
             crate::operation::create_asset_model_composite_model::CreateAssetModelCompositeModelError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
             crate::operation::create_asset_model_composite_model::CreateAssetModelCompositeModelError::ThrottlingException(inner) => {
                 Error::ThrottlingException(inner)
+            }
+            crate::operation::create_asset_model_composite_model::CreateAssetModelCompositeModelError::PreconditionFailedException(inner) => {
+                Error::PreconditionFailedException(inner)
+            }
+            crate::operation::create_asset_model_composite_model::CreateAssetModelCompositeModelError::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
             }
             crate::operation::create_asset_model_composite_model::CreateAssetModelCompositeModelError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -600,23 +600,23 @@ where
 impl From<crate::operation::create_bulk_import_job::CreateBulkImportJobError> for Error {
     fn from(err: crate::operation::create_bulk_import_job::CreateBulkImportJobError) -> Self {
         match err {
-            crate::operation::create_bulk_import_job::CreateBulkImportJobError::ConflictingOperationException(inner) => {
-                Error::ConflictingOperationException(inner)
-            }
-            crate::operation::create_bulk_import_job::CreateBulkImportJobError::InternalFailureException(inner) => {
-                Error::InternalFailureException(inner)
+            crate::operation::create_bulk_import_job::CreateBulkImportJobError::ResourceAlreadyExistsException(inner) => {
+                Error::ResourceAlreadyExistsException(inner)
             }
             crate::operation::create_bulk_import_job::CreateBulkImportJobError::InvalidRequestException(inner) => {
                 Error::InvalidRequestException(inner)
             }
-            crate::operation::create_bulk_import_job::CreateBulkImportJobError::LimitExceededException(inner) => Error::LimitExceededException(inner),
-            crate::operation::create_bulk_import_job::CreateBulkImportJobError::ResourceAlreadyExistsException(inner) => {
-                Error::ResourceAlreadyExistsException(inner)
+            crate::operation::create_bulk_import_job::CreateBulkImportJobError::ConflictingOperationException(inner) => {
+                Error::ConflictingOperationException(inner)
             }
+            crate::operation::create_bulk_import_job::CreateBulkImportJobError::LimitExceededException(inner) => Error::LimitExceededException(inner),
             crate::operation::create_bulk_import_job::CreateBulkImportJobError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
             crate::operation::create_bulk_import_job::CreateBulkImportJobError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_bulk_import_job::CreateBulkImportJobError::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
             crate::operation::create_bulk_import_job::CreateBulkImportJobError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -638,12 +638,42 @@ where
 impl From<crate::operation::create_dashboard::CreateDashboardError> for Error {
     fn from(err: crate::operation::create_dashboard::CreateDashboardError) -> Self {
         match err {
-            crate::operation::create_dashboard::CreateDashboardError::InternalFailureException(inner) => Error::InternalFailureException(inner),
             crate::operation::create_dashboard::CreateDashboardError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
             crate::operation::create_dashboard::CreateDashboardError::LimitExceededException(inner) => Error::LimitExceededException(inner),
             crate::operation::create_dashboard::CreateDashboardError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::create_dashboard::CreateDashboardError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_dashboard::CreateDashboardError::InternalFailureException(inner) => Error::InternalFailureException(inner),
             crate::operation::create_dashboard::CreateDashboardError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_dataset::CreateDatasetError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_dataset::CreateDatasetError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_dataset::CreateDatasetError> for Error {
+    fn from(err: crate::operation::create_dataset::CreateDatasetError) -> Self {
+        match err {
+            crate::operation::create_dataset::CreateDatasetError::ResourceAlreadyExistsException(inner) => {
+                Error::ResourceAlreadyExistsException(inner)
+            }
+            crate::operation::create_dataset::CreateDatasetError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::create_dataset::CreateDatasetError::ConflictingOperationException(inner) => Error::ConflictingOperationException(inner),
+            crate::operation::create_dataset::CreateDatasetError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::create_dataset::CreateDatasetError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::create_dataset::CreateDatasetError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_dataset::CreateDatasetError::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::operation::create_dataset::CreateDatasetError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -664,13 +694,13 @@ where
 impl From<crate::operation::create_gateway::CreateGatewayError> for Error {
     fn from(err: crate::operation::create_gateway::CreateGatewayError) -> Self {
         match err {
-            crate::operation::create_gateway::CreateGatewayError::InternalFailureException(inner) => Error::InternalFailureException(inner),
-            crate::operation::create_gateway::CreateGatewayError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
-            crate::operation::create_gateway::CreateGatewayError::LimitExceededException(inner) => Error::LimitExceededException(inner),
             crate::operation::create_gateway::CreateGatewayError::ResourceAlreadyExistsException(inner) => {
                 Error::ResourceAlreadyExistsException(inner)
             }
+            crate::operation::create_gateway::CreateGatewayError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::create_gateway::CreateGatewayError::LimitExceededException(inner) => Error::LimitExceededException(inner),
             crate::operation::create_gateway::CreateGatewayError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_gateway::CreateGatewayError::InternalFailureException(inner) => Error::InternalFailureException(inner),
             crate::operation::create_gateway::CreateGatewayError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -692,11 +722,11 @@ where
 impl From<crate::operation::create_portal::CreatePortalError> for Error {
     fn from(err: crate::operation::create_portal::CreatePortalError) -> Self {
         match err {
-            crate::operation::create_portal::CreatePortalError::InternalFailureException(inner) => Error::InternalFailureException(inner),
             crate::operation::create_portal::CreatePortalError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
             crate::operation::create_portal::CreatePortalError::LimitExceededException(inner) => Error::LimitExceededException(inner),
             crate::operation::create_portal::CreatePortalError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::create_portal::CreatePortalError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_portal::CreatePortalError::InternalFailureException(inner) => Error::InternalFailureException(inner),
             crate::operation::create_portal::CreatePortalError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -718,11 +748,11 @@ where
 impl From<crate::operation::create_project::CreateProjectError> for Error {
     fn from(err: crate::operation::create_project::CreateProjectError) -> Self {
         match err {
-            crate::operation::create_project::CreateProjectError::InternalFailureException(inner) => Error::InternalFailureException(inner),
             crate::operation::create_project::CreateProjectError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
             crate::operation::create_project::CreateProjectError::LimitExceededException(inner) => Error::LimitExceededException(inner),
             crate::operation::create_project::CreateProjectError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::create_project::CreateProjectError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_project::CreateProjectError::InternalFailureException(inner) => Error::InternalFailureException(inner),
             crate::operation::create_project::CreateProjectError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -744,14 +774,14 @@ where
 impl From<crate::operation::delete_access_policy::DeleteAccessPolicyError> for Error {
     fn from(err: crate::operation::delete_access_policy::DeleteAccessPolicyError) -> Self {
         match err {
-            crate::operation::delete_access_policy::DeleteAccessPolicyError::InternalFailureException(inner) => {
-                Error::InternalFailureException(inner)
-            }
             crate::operation::delete_access_policy::DeleteAccessPolicyError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
             crate::operation::delete_access_policy::DeleteAccessPolicyError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
             crate::operation::delete_access_policy::DeleteAccessPolicyError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_access_policy::DeleteAccessPolicyError::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
             crate::operation::delete_access_policy::DeleteAccessPolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -773,11 +803,11 @@ where
 impl From<crate::operation::delete_asset::DeleteAssetError> for Error {
     fn from(err: crate::operation::delete_asset::DeleteAssetError) -> Self {
         match err {
-            crate::operation::delete_asset::DeleteAssetError::ConflictingOperationException(inner) => Error::ConflictingOperationException(inner),
-            crate::operation::delete_asset::DeleteAssetError::InternalFailureException(inner) => Error::InternalFailureException(inner),
             crate::operation::delete_asset::DeleteAssetError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::delete_asset::DeleteAssetError::ConflictingOperationException(inner) => Error::ConflictingOperationException(inner),
             crate::operation::delete_asset::DeleteAssetError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::delete_asset::DeleteAssetError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_asset::DeleteAssetError::InternalFailureException(inner) => Error::InternalFailureException(inner),
             crate::operation::delete_asset::DeleteAssetError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -799,16 +829,16 @@ where
 impl From<crate::operation::delete_asset_model::DeleteAssetModelError> for Error {
     fn from(err: crate::operation::delete_asset_model::DeleteAssetModelError) -> Self {
         match err {
+            crate::operation::delete_asset_model::DeleteAssetModelError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
             crate::operation::delete_asset_model::DeleteAssetModelError::ConflictingOperationException(inner) => {
                 Error::ConflictingOperationException(inner)
             }
-            crate::operation::delete_asset_model::DeleteAssetModelError::InternalFailureException(inner) => Error::InternalFailureException(inner),
-            crate::operation::delete_asset_model::DeleteAssetModelError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::delete_asset_model::DeleteAssetModelError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_asset_model::DeleteAssetModelError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::delete_asset_model::DeleteAssetModelError::PreconditionFailedException(inner) => {
                 Error::PreconditionFailedException(inner)
             }
-            crate::operation::delete_asset_model::DeleteAssetModelError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::delete_asset_model::DeleteAssetModelError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_asset_model::DeleteAssetModelError::InternalFailureException(inner) => Error::InternalFailureException(inner),
             crate::operation::delete_asset_model::DeleteAssetModelError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -841,23 +871,23 @@ where
 impl From<crate::operation::delete_asset_model_composite_model::DeleteAssetModelCompositeModelError> for Error {
     fn from(err: crate::operation::delete_asset_model_composite_model::DeleteAssetModelCompositeModelError) -> Self {
         match err {
-            crate::operation::delete_asset_model_composite_model::DeleteAssetModelCompositeModelError::ConflictingOperationException(inner) => {
-                Error::ConflictingOperationException(inner)
-            }
-            crate::operation::delete_asset_model_composite_model::DeleteAssetModelCompositeModelError::InternalFailureException(inner) => {
-                Error::InternalFailureException(inner)
-            }
             crate::operation::delete_asset_model_composite_model::DeleteAssetModelCompositeModelError::InvalidRequestException(inner) => {
                 Error::InvalidRequestException(inner)
             }
-            crate::operation::delete_asset_model_composite_model::DeleteAssetModelCompositeModelError::PreconditionFailedException(inner) => {
-                Error::PreconditionFailedException(inner)
+            crate::operation::delete_asset_model_composite_model::DeleteAssetModelCompositeModelError::ConflictingOperationException(inner) => {
+                Error::ConflictingOperationException(inner)
             }
             crate::operation::delete_asset_model_composite_model::DeleteAssetModelCompositeModelError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
             crate::operation::delete_asset_model_composite_model::DeleteAssetModelCompositeModelError::ThrottlingException(inner) => {
                 Error::ThrottlingException(inner)
+            }
+            crate::operation::delete_asset_model_composite_model::DeleteAssetModelCompositeModelError::PreconditionFailedException(inner) => {
+                Error::PreconditionFailedException(inner)
+            }
+            crate::operation::delete_asset_model_composite_model::DeleteAssetModelCompositeModelError::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
             }
             crate::operation::delete_asset_model_composite_model::DeleteAssetModelCompositeModelError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -880,11 +910,37 @@ where
 impl From<crate::operation::delete_dashboard::DeleteDashboardError> for Error {
     fn from(err: crate::operation::delete_dashboard::DeleteDashboardError) -> Self {
         match err {
-            crate::operation::delete_dashboard::DeleteDashboardError::InternalFailureException(inner) => Error::InternalFailureException(inner),
             crate::operation::delete_dashboard::DeleteDashboardError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
             crate::operation::delete_dashboard::DeleteDashboardError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::delete_dashboard::DeleteDashboardError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_dashboard::DeleteDashboardError::InternalFailureException(inner) => Error::InternalFailureException(inner),
             crate::operation::delete_dashboard::DeleteDashboardError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_dataset::DeleteDatasetError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_dataset::DeleteDatasetError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_dataset::DeleteDatasetError> for Error {
+    fn from(err: crate::operation::delete_dataset::DeleteDatasetError) -> Self {
+        match err {
+            crate::operation::delete_dataset::DeleteDatasetError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::delete_dataset::DeleteDatasetError::ConflictingOperationException(inner) => Error::ConflictingOperationException(inner),
+            crate::operation::delete_dataset::DeleteDatasetError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_dataset::DeleteDatasetError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_dataset::DeleteDatasetError::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::operation::delete_dataset::DeleteDatasetError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -905,11 +961,11 @@ where
 impl From<crate::operation::delete_gateway::DeleteGatewayError> for Error {
     fn from(err: crate::operation::delete_gateway::DeleteGatewayError) -> Self {
         match err {
-            crate::operation::delete_gateway::DeleteGatewayError::ConflictingOperationException(inner) => Error::ConflictingOperationException(inner),
-            crate::operation::delete_gateway::DeleteGatewayError::InternalFailureException(inner) => Error::InternalFailureException(inner),
             crate::operation::delete_gateway::DeleteGatewayError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::delete_gateway::DeleteGatewayError::ConflictingOperationException(inner) => Error::ConflictingOperationException(inner),
             crate::operation::delete_gateway::DeleteGatewayError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::delete_gateway::DeleteGatewayError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_gateway::DeleteGatewayError::InternalFailureException(inner) => Error::InternalFailureException(inner),
             crate::operation::delete_gateway::DeleteGatewayError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -931,11 +987,11 @@ where
 impl From<crate::operation::delete_portal::DeletePortalError> for Error {
     fn from(err: crate::operation::delete_portal::DeletePortalError) -> Self {
         match err {
-            crate::operation::delete_portal::DeletePortalError::ConflictingOperationException(inner) => Error::ConflictingOperationException(inner),
-            crate::operation::delete_portal::DeletePortalError::InternalFailureException(inner) => Error::InternalFailureException(inner),
             crate::operation::delete_portal::DeletePortalError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::delete_portal::DeletePortalError::ConflictingOperationException(inner) => Error::ConflictingOperationException(inner),
             crate::operation::delete_portal::DeletePortalError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::delete_portal::DeletePortalError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_portal::DeletePortalError::InternalFailureException(inner) => Error::InternalFailureException(inner),
             crate::operation::delete_portal::DeletePortalError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -957,10 +1013,10 @@ where
 impl From<crate::operation::delete_project::DeleteProjectError> for Error {
     fn from(err: crate::operation::delete_project::DeleteProjectError) -> Self {
         match err {
-            crate::operation::delete_project::DeleteProjectError::InternalFailureException(inner) => Error::InternalFailureException(inner),
             crate::operation::delete_project::DeleteProjectError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
             crate::operation::delete_project::DeleteProjectError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::delete_project::DeleteProjectError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_project::DeleteProjectError::InternalFailureException(inner) => Error::InternalFailureException(inner),
             crate::operation::delete_project::DeleteProjectError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -982,13 +1038,13 @@ where
 impl From<crate::operation::delete_time_series::DeleteTimeSeriesError> for Error {
     fn from(err: crate::operation::delete_time_series::DeleteTimeSeriesError) -> Self {
         match err {
+            crate::operation::delete_time_series::DeleteTimeSeriesError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
             crate::operation::delete_time_series::DeleteTimeSeriesError::ConflictingOperationException(inner) => {
                 Error::ConflictingOperationException(inner)
             }
-            crate::operation::delete_time_series::DeleteTimeSeriesError::InternalFailureException(inner) => Error::InternalFailureException(inner),
-            crate::operation::delete_time_series::DeleteTimeSeriesError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
             crate::operation::delete_time_series::DeleteTimeSeriesError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::delete_time_series::DeleteTimeSeriesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_time_series::DeleteTimeSeriesError::InternalFailureException(inner) => Error::InternalFailureException(inner),
             crate::operation::delete_time_series::DeleteTimeSeriesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -1010,9 +1066,6 @@ where
 impl From<crate::operation::describe_access_policy::DescribeAccessPolicyError> for Error {
     fn from(err: crate::operation::describe_access_policy::DescribeAccessPolicyError) -> Self {
         match err {
-            crate::operation::describe_access_policy::DescribeAccessPolicyError::InternalFailureException(inner) => {
-                Error::InternalFailureException(inner)
-            }
             crate::operation::describe_access_policy::DescribeAccessPolicyError::InvalidRequestException(inner) => {
                 Error::InvalidRequestException(inner)
             }
@@ -1020,6 +1073,9 @@ impl From<crate::operation::describe_access_policy::DescribeAccessPolicyError> f
                 Error::ResourceNotFoundException(inner)
             }
             crate::operation::describe_access_policy::DescribeAccessPolicyError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::describe_access_policy::DescribeAccessPolicyError::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
             crate::operation::describe_access_policy::DescribeAccessPolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -1041,10 +1097,10 @@ where
 impl From<crate::operation::describe_action::DescribeActionError> for Error {
     fn from(err: crate::operation::describe_action::DescribeActionError) -> Self {
         match err {
-            crate::operation::describe_action::DescribeActionError::InternalFailureException(inner) => Error::InternalFailureException(inner),
             crate::operation::describe_action::DescribeActionError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
             crate::operation::describe_action::DescribeActionError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::describe_action::DescribeActionError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::describe_action::DescribeActionError::InternalFailureException(inner) => Error::InternalFailureException(inner),
             crate::operation::describe_action::DescribeActionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -1066,10 +1122,10 @@ where
 impl From<crate::operation::describe_asset::DescribeAssetError> for Error {
     fn from(err: crate::operation::describe_asset::DescribeAssetError) -> Self {
         match err {
-            crate::operation::describe_asset::DescribeAssetError::InternalFailureException(inner) => Error::InternalFailureException(inner),
             crate::operation::describe_asset::DescribeAssetError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
             crate::operation::describe_asset::DescribeAssetError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::describe_asset::DescribeAssetError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::describe_asset::DescribeAssetError::InternalFailureException(inner) => Error::InternalFailureException(inner),
             crate::operation::describe_asset::DescribeAssetError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -1098,9 +1154,6 @@ where
 impl From<crate::operation::describe_asset_composite_model::DescribeAssetCompositeModelError> for Error {
     fn from(err: crate::operation::describe_asset_composite_model::DescribeAssetCompositeModelError) -> Self {
         match err {
-            crate::operation::describe_asset_composite_model::DescribeAssetCompositeModelError::InternalFailureException(inner) => {
-                Error::InternalFailureException(inner)
-            }
             crate::operation::describe_asset_composite_model::DescribeAssetCompositeModelError::InvalidRequestException(inner) => {
                 Error::InvalidRequestException(inner)
             }
@@ -1109,6 +1162,9 @@ impl From<crate::operation::describe_asset_composite_model::DescribeAssetComposi
             }
             crate::operation::describe_asset_composite_model::DescribeAssetCompositeModelError::ThrottlingException(inner) => {
                 Error::ThrottlingException(inner)
+            }
+            crate::operation::describe_asset_composite_model::DescribeAssetCompositeModelError::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
             }
             crate::operation::describe_asset_composite_model::DescribeAssetCompositeModelError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -1131,14 +1187,14 @@ where
 impl From<crate::operation::describe_asset_model::DescribeAssetModelError> for Error {
     fn from(err: crate::operation::describe_asset_model::DescribeAssetModelError) -> Self {
         match err {
-            crate::operation::describe_asset_model::DescribeAssetModelError::InternalFailureException(inner) => {
-                Error::InternalFailureException(inner)
-            }
             crate::operation::describe_asset_model::DescribeAssetModelError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
             crate::operation::describe_asset_model::DescribeAssetModelError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
             crate::operation::describe_asset_model::DescribeAssetModelError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::describe_asset_model::DescribeAssetModelError::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
             crate::operation::describe_asset_model::DescribeAssetModelError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -1171,9 +1227,6 @@ where
 impl From<crate::operation::describe_asset_model_composite_model::DescribeAssetModelCompositeModelError> for Error {
     fn from(err: crate::operation::describe_asset_model_composite_model::DescribeAssetModelCompositeModelError) -> Self {
         match err {
-            crate::operation::describe_asset_model_composite_model::DescribeAssetModelCompositeModelError::InternalFailureException(inner) => {
-                Error::InternalFailureException(inner)
-            }
             crate::operation::describe_asset_model_composite_model::DescribeAssetModelCompositeModelError::InvalidRequestException(inner) => {
                 Error::InvalidRequestException(inner)
             }
@@ -1182,6 +1235,9 @@ impl From<crate::operation::describe_asset_model_composite_model::DescribeAssetM
             }
             crate::operation::describe_asset_model_composite_model::DescribeAssetModelCompositeModelError::ThrottlingException(inner) => {
                 Error::ThrottlingException(inner)
+            }
+            crate::operation::describe_asset_model_composite_model::DescribeAssetModelCompositeModelError::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
             }
             crate::operation::describe_asset_model_composite_model::DescribeAssetModelCompositeModelError::Unhandled(inner) => {
                 Error::Unhandled(inner)
@@ -1208,9 +1264,6 @@ where
 impl From<crate::operation::describe_asset_property::DescribeAssetPropertyError> for Error {
     fn from(err: crate::operation::describe_asset_property::DescribeAssetPropertyError) -> Self {
         match err {
-            crate::operation::describe_asset_property::DescribeAssetPropertyError::InternalFailureException(inner) => {
-                Error::InternalFailureException(inner)
-            }
             crate::operation::describe_asset_property::DescribeAssetPropertyError::InvalidRequestException(inner) => {
                 Error::InvalidRequestException(inner)
             }
@@ -1218,6 +1271,9 @@ impl From<crate::operation::describe_asset_property::DescribeAssetPropertyError>
                 Error::ResourceNotFoundException(inner)
             }
             crate::operation::describe_asset_property::DescribeAssetPropertyError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::describe_asset_property::DescribeAssetPropertyError::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
             crate::operation::describe_asset_property::DescribeAssetPropertyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -1241,9 +1297,6 @@ where
 impl From<crate::operation::describe_bulk_import_job::DescribeBulkImportJobError> for Error {
     fn from(err: crate::operation::describe_bulk_import_job::DescribeBulkImportJobError) -> Self {
         match err {
-            crate::operation::describe_bulk_import_job::DescribeBulkImportJobError::InternalFailureException(inner) => {
-                Error::InternalFailureException(inner)
-            }
             crate::operation::describe_bulk_import_job::DescribeBulkImportJobError::InvalidRequestException(inner) => {
                 Error::InvalidRequestException(inner)
             }
@@ -1251,6 +1304,9 @@ impl From<crate::operation::describe_bulk_import_job::DescribeBulkImportJobError
                 Error::ResourceNotFoundException(inner)
             }
             crate::operation::describe_bulk_import_job::DescribeBulkImportJobError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::describe_bulk_import_job::DescribeBulkImportJobError::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
             crate::operation::describe_bulk_import_job::DescribeBulkImportJobError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -1272,11 +1328,36 @@ where
 impl From<crate::operation::describe_dashboard::DescribeDashboardError> for Error {
     fn from(err: crate::operation::describe_dashboard::DescribeDashboardError) -> Self {
         match err {
-            crate::operation::describe_dashboard::DescribeDashboardError::InternalFailureException(inner) => Error::InternalFailureException(inner),
             crate::operation::describe_dashboard::DescribeDashboardError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
             crate::operation::describe_dashboard::DescribeDashboardError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::describe_dashboard::DescribeDashboardError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::describe_dashboard::DescribeDashboardError::InternalFailureException(inner) => Error::InternalFailureException(inner),
             crate::operation::describe_dashboard::DescribeDashboardError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_dataset::DescribeDatasetError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_dataset::DescribeDatasetError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_dataset::DescribeDatasetError> for Error {
+    fn from(err: crate::operation::describe_dataset::DescribeDatasetError) -> Self {
+        match err {
+            crate::operation::describe_dataset::DescribeDatasetError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::describe_dataset::DescribeDatasetError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::describe_dataset::DescribeDatasetError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::describe_dataset::DescribeDatasetError::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::operation::describe_dataset::DescribeDatasetError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1308,15 +1389,15 @@ where
 impl From<crate::operation::describe_default_encryption_configuration::DescribeDefaultEncryptionConfigurationError> for Error {
     fn from(err: crate::operation::describe_default_encryption_configuration::DescribeDefaultEncryptionConfigurationError) -> Self {
         match err {
-            crate::operation::describe_default_encryption_configuration::DescribeDefaultEncryptionConfigurationError::InternalFailureException(
-                inner,
-            ) => Error::InternalFailureException(inner),
             crate::operation::describe_default_encryption_configuration::DescribeDefaultEncryptionConfigurationError::InvalidRequestException(
                 inner,
             ) => Error::InvalidRequestException(inner),
             crate::operation::describe_default_encryption_configuration::DescribeDefaultEncryptionConfigurationError::ThrottlingException(inner) => {
                 Error::ThrottlingException(inner)
             }
+            crate::operation::describe_default_encryption_configuration::DescribeDefaultEncryptionConfigurationError::InternalFailureException(
+                inner,
+            ) => Error::InternalFailureException(inner),
             crate::operation::describe_default_encryption_configuration::DescribeDefaultEncryptionConfigurationError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
@@ -1340,10 +1421,10 @@ where
 impl From<crate::operation::describe_gateway::DescribeGatewayError> for Error {
     fn from(err: crate::operation::describe_gateway::DescribeGatewayError) -> Self {
         match err {
-            crate::operation::describe_gateway::DescribeGatewayError::InternalFailureException(inner) => Error::InternalFailureException(inner),
             crate::operation::describe_gateway::DescribeGatewayError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
             crate::operation::describe_gateway::DescribeGatewayError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::describe_gateway::DescribeGatewayError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::describe_gateway::DescribeGatewayError::InternalFailureException(inner) => Error::InternalFailureException(inner),
             crate::operation::describe_gateway::DescribeGatewayError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -1376,9 +1457,6 @@ where
 impl From<crate::operation::describe_gateway_capability_configuration::DescribeGatewayCapabilityConfigurationError> for Error {
     fn from(err: crate::operation::describe_gateway_capability_configuration::DescribeGatewayCapabilityConfigurationError) -> Self {
         match err {
-            crate::operation::describe_gateway_capability_configuration::DescribeGatewayCapabilityConfigurationError::InternalFailureException(
-                inner,
-            ) => Error::InternalFailureException(inner),
             crate::operation::describe_gateway_capability_configuration::DescribeGatewayCapabilityConfigurationError::InvalidRequestException(
                 inner,
             ) => Error::InvalidRequestException(inner),
@@ -1388,6 +1466,9 @@ impl From<crate::operation::describe_gateway_capability_configuration::DescribeG
             crate::operation::describe_gateway_capability_configuration::DescribeGatewayCapabilityConfigurationError::ThrottlingException(inner) => {
                 Error::ThrottlingException(inner)
             }
+            crate::operation::describe_gateway_capability_configuration::DescribeGatewayCapabilityConfigurationError::InternalFailureException(
+                inner,
+            ) => Error::InternalFailureException(inner),
             crate::operation::describe_gateway_capability_configuration::DescribeGatewayCapabilityConfigurationError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
@@ -1413,9 +1494,6 @@ where
 impl From<crate::operation::describe_logging_options::DescribeLoggingOptionsError> for Error {
     fn from(err: crate::operation::describe_logging_options::DescribeLoggingOptionsError) -> Self {
         match err {
-            crate::operation::describe_logging_options::DescribeLoggingOptionsError::InternalFailureException(inner) => {
-                Error::InternalFailureException(inner)
-            }
             crate::operation::describe_logging_options::DescribeLoggingOptionsError::InvalidRequestException(inner) => {
                 Error::InvalidRequestException(inner)
             }
@@ -1423,6 +1501,9 @@ impl From<crate::operation::describe_logging_options::DescribeLoggingOptionsErro
                 Error::ResourceNotFoundException(inner)
             }
             crate::operation::describe_logging_options::DescribeLoggingOptionsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::describe_logging_options::DescribeLoggingOptionsError::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
             crate::operation::describe_logging_options::DescribeLoggingOptionsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -1444,10 +1525,10 @@ where
 impl From<crate::operation::describe_portal::DescribePortalError> for Error {
     fn from(err: crate::operation::describe_portal::DescribePortalError) -> Self {
         match err {
-            crate::operation::describe_portal::DescribePortalError::InternalFailureException(inner) => Error::InternalFailureException(inner),
             crate::operation::describe_portal::DescribePortalError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
             crate::operation::describe_portal::DescribePortalError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::describe_portal::DescribePortalError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::describe_portal::DescribePortalError::InternalFailureException(inner) => Error::InternalFailureException(inner),
             crate::operation::describe_portal::DescribePortalError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -1469,10 +1550,10 @@ where
 impl From<crate::operation::describe_project::DescribeProjectError> for Error {
     fn from(err: crate::operation::describe_project::DescribeProjectError) -> Self {
         match err {
-            crate::operation::describe_project::DescribeProjectError::InternalFailureException(inner) => Error::InternalFailureException(inner),
             crate::operation::describe_project::DescribeProjectError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
             crate::operation::describe_project::DescribeProjectError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::describe_project::DescribeProjectError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::describe_project::DescribeProjectError::InternalFailureException(inner) => Error::InternalFailureException(inner),
             crate::operation::describe_project::DescribeProjectError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -1501,14 +1582,11 @@ where
 impl From<crate::operation::describe_storage_configuration::DescribeStorageConfigurationError> for Error {
     fn from(err: crate::operation::describe_storage_configuration::DescribeStorageConfigurationError) -> Self {
         match err {
-            crate::operation::describe_storage_configuration::DescribeStorageConfigurationError::ConflictingOperationException(inner) => {
-                Error::ConflictingOperationException(inner)
-            }
-            crate::operation::describe_storage_configuration::DescribeStorageConfigurationError::InternalFailureException(inner) => {
-                Error::InternalFailureException(inner)
-            }
             crate::operation::describe_storage_configuration::DescribeStorageConfigurationError::InvalidRequestException(inner) => {
                 Error::InvalidRequestException(inner)
+            }
+            crate::operation::describe_storage_configuration::DescribeStorageConfigurationError::ConflictingOperationException(inner) => {
+                Error::ConflictingOperationException(inner)
             }
             crate::operation::describe_storage_configuration::DescribeStorageConfigurationError::LimitExceededException(inner) => {
                 Error::LimitExceededException(inner)
@@ -1518,6 +1596,9 @@ impl From<crate::operation::describe_storage_configuration::DescribeStorageConfi
             }
             crate::operation::describe_storage_configuration::DescribeStorageConfigurationError::ThrottlingException(inner) => {
                 Error::ThrottlingException(inner)
+            }
+            crate::operation::describe_storage_configuration::DescribeStorageConfigurationError::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
             }
             crate::operation::describe_storage_configuration::DescribeStorageConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -1540,14 +1621,14 @@ where
 impl From<crate::operation::describe_time_series::DescribeTimeSeriesError> for Error {
     fn from(err: crate::operation::describe_time_series::DescribeTimeSeriesError) -> Self {
         match err {
-            crate::operation::describe_time_series::DescribeTimeSeriesError::InternalFailureException(inner) => {
-                Error::InternalFailureException(inner)
-            }
             crate::operation::describe_time_series::DescribeTimeSeriesError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
             crate::operation::describe_time_series::DescribeTimeSeriesError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
             crate::operation::describe_time_series::DescribeTimeSeriesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::describe_time_series::DescribeTimeSeriesError::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
             crate::operation::describe_time_series::DescribeTimeSeriesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -1569,15 +1650,15 @@ where
 impl From<crate::operation::disassociate_assets::DisassociateAssetsError> for Error {
     fn from(err: crate::operation::disassociate_assets::DisassociateAssetsError) -> Self {
         match err {
+            crate::operation::disassociate_assets::DisassociateAssetsError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
             crate::operation::disassociate_assets::DisassociateAssetsError::ConflictingOperationException(inner) => {
                 Error::ConflictingOperationException(inner)
             }
-            crate::operation::disassociate_assets::DisassociateAssetsError::InternalFailureException(inner) => Error::InternalFailureException(inner),
-            crate::operation::disassociate_assets::DisassociateAssetsError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
             crate::operation::disassociate_assets::DisassociateAssetsError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
             crate::operation::disassociate_assets::DisassociateAssetsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::disassociate_assets::DisassociateAssetsError::InternalFailureException(inner) => Error::InternalFailureException(inner),
             crate::operation::disassociate_assets::DisassociateAssetsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -1610,11 +1691,11 @@ where
 impl From<crate::operation::disassociate_time_series_from_asset_property::DisassociateTimeSeriesFromAssetPropertyError> for Error {
     fn from(err: crate::operation::disassociate_time_series_from_asset_property::DisassociateTimeSeriesFromAssetPropertyError) -> Self {
         match err {
-            crate::operation::disassociate_time_series_from_asset_property::DisassociateTimeSeriesFromAssetPropertyError::ConflictingOperationException(inner) => Error::ConflictingOperationException(inner),
-            crate::operation::disassociate_time_series_from_asset_property::DisassociateTimeSeriesFromAssetPropertyError::InternalFailureException(inner) => Error::InternalFailureException(inner),
             crate::operation::disassociate_time_series_from_asset_property::DisassociateTimeSeriesFromAssetPropertyError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::disassociate_time_series_from_asset_property::DisassociateTimeSeriesFromAssetPropertyError::ConflictingOperationException(inner) => Error::ConflictingOperationException(inner),
             crate::operation::disassociate_time_series_from_asset_property::DisassociateTimeSeriesFromAssetPropertyError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::disassociate_time_series_from_asset_property::DisassociateTimeSeriesFromAssetPropertyError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::disassociate_time_series_from_asset_property::DisassociateTimeSeriesFromAssetPropertyError::InternalFailureException(inner) => Error::InternalFailureException(inner),
             crate::operation::disassociate_time_series_from_asset_property::DisassociateTimeSeriesFromAssetPropertyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -1636,12 +1717,12 @@ where
 impl From<crate::operation::execute_action::ExecuteActionError> for Error {
     fn from(err: crate::operation::execute_action::ExecuteActionError) -> Self {
         match err {
-            crate::operation::execute_action::ExecuteActionError::ConflictingOperationException(inner) => Error::ConflictingOperationException(inner),
-            crate::operation::execute_action::ExecuteActionError::InternalFailureException(inner) => Error::InternalFailureException(inner),
             crate::operation::execute_action::ExecuteActionError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::execute_action::ExecuteActionError::ConflictingOperationException(inner) => Error::ConflictingOperationException(inner),
             crate::operation::execute_action::ExecuteActionError::LimitExceededException(inner) => Error::LimitExceededException(inner),
             crate::operation::execute_action::ExecuteActionError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::execute_action::ExecuteActionError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::execute_action::ExecuteActionError::InternalFailureException(inner) => Error::InternalFailureException(inner),
             crate::operation::execute_action::ExecuteActionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -1663,13 +1744,13 @@ where
 impl From<crate::operation::execute_query::ExecuteQueryError> for Error {
     fn from(err: crate::operation::execute_query::ExecuteQueryError) -> Self {
         match err {
-            crate::operation::execute_query::ExecuteQueryError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::execute_query::ExecuteQueryError::InternalFailureException(inner) => Error::InternalFailureException(inner),
-            crate::operation::execute_query::ExecuteQueryError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
             crate::operation::execute_query::ExecuteQueryError::QueryTimeoutException(inner) => Error::QueryTimeoutException(inner),
-            crate::operation::execute_query::ExecuteQueryError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-            crate::operation::execute_query::ExecuteQueryError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::execute_query::ExecuteQueryError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
             crate::operation::execute_query::ExecuteQueryError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::execute_query::ExecuteQueryError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::execute_query::ExecuteQueryError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::execute_query::ExecuteQueryError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::execute_query::ExecuteQueryError::InternalFailureException(inner) => Error::InternalFailureException(inner),
             crate::operation::execute_query::ExecuteQueryError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -1694,20 +1775,20 @@ where
 impl From<crate::operation::get_asset_property_aggregates::GetAssetPropertyAggregatesError> for Error {
     fn from(err: crate::operation::get_asset_property_aggregates::GetAssetPropertyAggregatesError) -> Self {
         match err {
-            crate::operation::get_asset_property_aggregates::GetAssetPropertyAggregatesError::InternalFailureException(inner) => {
-                Error::InternalFailureException(inner)
-            }
             crate::operation::get_asset_property_aggregates::GetAssetPropertyAggregatesError::InvalidRequestException(inner) => {
                 Error::InvalidRequestException(inner)
             }
             crate::operation::get_asset_property_aggregates::GetAssetPropertyAggregatesError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
+            crate::operation::get_asset_property_aggregates::GetAssetPropertyAggregatesError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
             crate::operation::get_asset_property_aggregates::GetAssetPropertyAggregatesError::ServiceUnavailableException(inner) => {
                 Error::ServiceUnavailableException(inner)
             }
-            crate::operation::get_asset_property_aggregates::GetAssetPropertyAggregatesError::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
+            crate::operation::get_asset_property_aggregates::GetAssetPropertyAggregatesError::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
             }
             crate::operation::get_asset_property_aggregates::GetAssetPropertyAggregatesError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -1732,19 +1813,19 @@ where
 impl From<crate::operation::get_asset_property_value::GetAssetPropertyValueError> for Error {
     fn from(err: crate::operation::get_asset_property_value::GetAssetPropertyValueError) -> Self {
         match err {
-            crate::operation::get_asset_property_value::GetAssetPropertyValueError::InternalFailureException(inner) => {
-                Error::InternalFailureException(inner)
-            }
             crate::operation::get_asset_property_value::GetAssetPropertyValueError::InvalidRequestException(inner) => {
                 Error::InvalidRequestException(inner)
             }
             crate::operation::get_asset_property_value::GetAssetPropertyValueError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
+            crate::operation::get_asset_property_value::GetAssetPropertyValueError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::get_asset_property_value::GetAssetPropertyValueError::ServiceUnavailableException(inner) => {
                 Error::ServiceUnavailableException(inner)
             }
-            crate::operation::get_asset_property_value::GetAssetPropertyValueError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_asset_property_value::GetAssetPropertyValueError::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
             crate::operation::get_asset_property_value::GetAssetPropertyValueError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -1773,20 +1854,20 @@ where
 impl From<crate::operation::get_asset_property_value_history::GetAssetPropertyValueHistoryError> for Error {
     fn from(err: crate::operation::get_asset_property_value_history::GetAssetPropertyValueHistoryError) -> Self {
         match err {
-            crate::operation::get_asset_property_value_history::GetAssetPropertyValueHistoryError::InternalFailureException(inner) => {
-                Error::InternalFailureException(inner)
-            }
             crate::operation::get_asset_property_value_history::GetAssetPropertyValueHistoryError::InvalidRequestException(inner) => {
                 Error::InvalidRequestException(inner)
             }
             crate::operation::get_asset_property_value_history::GetAssetPropertyValueHistoryError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
+            crate::operation::get_asset_property_value_history::GetAssetPropertyValueHistoryError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
             crate::operation::get_asset_property_value_history::GetAssetPropertyValueHistoryError::ServiceUnavailableException(inner) => {
                 Error::ServiceUnavailableException(inner)
             }
-            crate::operation::get_asset_property_value_history::GetAssetPropertyValueHistoryError::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
+            crate::operation::get_asset_property_value_history::GetAssetPropertyValueHistoryError::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
             }
             crate::operation::get_asset_property_value_history::GetAssetPropertyValueHistoryError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -1820,24 +1901,54 @@ where
 impl From<crate::operation::get_interpolated_asset_property_values::GetInterpolatedAssetPropertyValuesError> for Error {
     fn from(err: crate::operation::get_interpolated_asset_property_values::GetInterpolatedAssetPropertyValuesError) -> Self {
         match err {
-            crate::operation::get_interpolated_asset_property_values::GetInterpolatedAssetPropertyValuesError::InternalFailureException(inner) => {
-                Error::InternalFailureException(inner)
-            }
             crate::operation::get_interpolated_asset_property_values::GetInterpolatedAssetPropertyValuesError::InvalidRequestException(inner) => {
                 Error::InvalidRequestException(inner)
             }
             crate::operation::get_interpolated_asset_property_values::GetInterpolatedAssetPropertyValuesError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
+            crate::operation::get_interpolated_asset_property_values::GetInterpolatedAssetPropertyValuesError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
             crate::operation::get_interpolated_asset_property_values::GetInterpolatedAssetPropertyValuesError::ServiceUnavailableException(inner) => {
                 Error::ServiceUnavailableException(inner)
             }
-            crate::operation::get_interpolated_asset_property_values::GetInterpolatedAssetPropertyValuesError::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
+            crate::operation::get_interpolated_asset_property_values::GetInterpolatedAssetPropertyValuesError::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
             }
             crate::operation::get_interpolated_asset_property_values::GetInterpolatedAssetPropertyValuesError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::invoke_assistant::InvokeAssistantError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::invoke_assistant::InvokeAssistantError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::invoke_assistant::InvokeAssistantError> for Error {
+    fn from(err: crate::operation::invoke_assistant::InvokeAssistantError) -> Self {
+        match err {
+            crate::operation::invoke_assistant::InvokeAssistantError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::invoke_assistant::InvokeAssistantError::ConflictingOperationException(inner) => {
+                Error::ConflictingOperationException(inner)
+            }
+            crate::operation::invoke_assistant::InvokeAssistantError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::invoke_assistant::InvokeAssistantError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::invoke_assistant::InvokeAssistantError::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::operation::invoke_assistant::InvokeAssistantError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::invoke_assistant::InvokeAssistantError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::invoke_assistant::InvokeAssistantError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1858,11 +1969,11 @@ where
 impl From<crate::operation::list_access_policies::ListAccessPoliciesError> for Error {
     fn from(err: crate::operation::list_access_policies::ListAccessPoliciesError) -> Self {
         match err {
+            crate::operation::list_access_policies::ListAccessPoliciesError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::list_access_policies::ListAccessPoliciesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_access_policies::ListAccessPoliciesError::InternalFailureException(inner) => {
                 Error::InternalFailureException(inner)
             }
-            crate::operation::list_access_policies::ListAccessPoliciesError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
-            crate::operation::list_access_policies::ListAccessPoliciesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_access_policies::ListAccessPoliciesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -1884,10 +1995,10 @@ where
 impl From<crate::operation::list_actions::ListActionsError> for Error {
     fn from(err: crate::operation::list_actions::ListActionsError) -> Self {
         match err {
-            crate::operation::list_actions::ListActionsError::InternalFailureException(inner) => Error::InternalFailureException(inner),
             crate::operation::list_actions::ListActionsError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
             crate::operation::list_actions::ListActionsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::list_actions::ListActionsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_actions::ListActionsError::InternalFailureException(inner) => Error::InternalFailureException(inner),
             crate::operation::list_actions::ListActionsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -1920,9 +2031,6 @@ where
 impl From<crate::operation::list_asset_model_composite_models::ListAssetModelCompositeModelsError> for Error {
     fn from(err: crate::operation::list_asset_model_composite_models::ListAssetModelCompositeModelsError) -> Self {
         match err {
-            crate::operation::list_asset_model_composite_models::ListAssetModelCompositeModelsError::InternalFailureException(inner) => {
-                Error::InternalFailureException(inner)
-            }
             crate::operation::list_asset_model_composite_models::ListAssetModelCompositeModelsError::InvalidRequestException(inner) => {
                 Error::InvalidRequestException(inner)
             }
@@ -1931,6 +2039,9 @@ impl From<crate::operation::list_asset_model_composite_models::ListAssetModelCom
             }
             crate::operation::list_asset_model_composite_models::ListAssetModelCompositeModelsError::ThrottlingException(inner) => {
                 Error::ThrottlingException(inner)
+            }
+            crate::operation::list_asset_model_composite_models::ListAssetModelCompositeModelsError::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
             }
             crate::operation::list_asset_model_composite_models::ListAssetModelCompositeModelsError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -1956,9 +2067,6 @@ where
 impl From<crate::operation::list_asset_model_properties::ListAssetModelPropertiesError> for Error {
     fn from(err: crate::operation::list_asset_model_properties::ListAssetModelPropertiesError) -> Self {
         match err {
-            crate::operation::list_asset_model_properties::ListAssetModelPropertiesError::InternalFailureException(inner) => {
-                Error::InternalFailureException(inner)
-            }
             crate::operation::list_asset_model_properties::ListAssetModelPropertiesError::InvalidRequestException(inner) => {
                 Error::InvalidRequestException(inner)
             }
@@ -1967,6 +2075,9 @@ impl From<crate::operation::list_asset_model_properties::ListAssetModelPropertie
             }
             crate::operation::list_asset_model_properties::ListAssetModelPropertiesError::ThrottlingException(inner) => {
                 Error::ThrottlingException(inner)
+            }
+            crate::operation::list_asset_model_properties::ListAssetModelPropertiesError::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
             }
             crate::operation::list_asset_model_properties::ListAssetModelPropertiesError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -1989,9 +2100,9 @@ where
 impl From<crate::operation::list_asset_models::ListAssetModelsError> for Error {
     fn from(err: crate::operation::list_asset_models::ListAssetModelsError) -> Self {
         match err {
-            crate::operation::list_asset_models::ListAssetModelsError::InternalFailureException(inner) => Error::InternalFailureException(inner),
             crate::operation::list_asset_models::ListAssetModelsError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
             crate::operation::list_asset_models::ListAssetModelsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_asset_models::ListAssetModelsError::InternalFailureException(inner) => Error::InternalFailureException(inner),
             crate::operation::list_asset_models::ListAssetModelsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -2013,9 +2124,6 @@ where
 impl From<crate::operation::list_asset_properties::ListAssetPropertiesError> for Error {
     fn from(err: crate::operation::list_asset_properties::ListAssetPropertiesError) -> Self {
         match err {
-            crate::operation::list_asset_properties::ListAssetPropertiesError::InternalFailureException(inner) => {
-                Error::InternalFailureException(inner)
-            }
             crate::operation::list_asset_properties::ListAssetPropertiesError::InvalidRequestException(inner) => {
                 Error::InvalidRequestException(inner)
             }
@@ -2023,6 +2131,9 @@ impl From<crate::operation::list_asset_properties::ListAssetPropertiesError> for
                 Error::ResourceNotFoundException(inner)
             }
             crate::operation::list_asset_properties::ListAssetPropertiesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_asset_properties::ListAssetPropertiesError::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
             crate::operation::list_asset_properties::ListAssetPropertiesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -2046,9 +2157,6 @@ where
 impl From<crate::operation::list_asset_relationships::ListAssetRelationshipsError> for Error {
     fn from(err: crate::operation::list_asset_relationships::ListAssetRelationshipsError) -> Self {
         match err {
-            crate::operation::list_asset_relationships::ListAssetRelationshipsError::InternalFailureException(inner) => {
-                Error::InternalFailureException(inner)
-            }
             crate::operation::list_asset_relationships::ListAssetRelationshipsError::InvalidRequestException(inner) => {
                 Error::InvalidRequestException(inner)
             }
@@ -2056,6 +2164,9 @@ impl From<crate::operation::list_asset_relationships::ListAssetRelationshipsErro
                 Error::ResourceNotFoundException(inner)
             }
             crate::operation::list_asset_relationships::ListAssetRelationshipsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_asset_relationships::ListAssetRelationshipsError::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
             crate::operation::list_asset_relationships::ListAssetRelationshipsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -2077,10 +2188,10 @@ where
 impl From<crate::operation::list_assets::ListAssetsError> for Error {
     fn from(err: crate::operation::list_assets::ListAssetsError) -> Self {
         match err {
-            crate::operation::list_assets::ListAssetsError::InternalFailureException(inner) => Error::InternalFailureException(inner),
             crate::operation::list_assets::ListAssetsError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
             crate::operation::list_assets::ListAssetsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::list_assets::ListAssetsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_assets::ListAssetsError::InternalFailureException(inner) => Error::InternalFailureException(inner),
             crate::operation::list_assets::ListAssetsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -2102,9 +2213,6 @@ where
 impl From<crate::operation::list_associated_assets::ListAssociatedAssetsError> for Error {
     fn from(err: crate::operation::list_associated_assets::ListAssociatedAssetsError) -> Self {
         match err {
-            crate::operation::list_associated_assets::ListAssociatedAssetsError::InternalFailureException(inner) => {
-                Error::InternalFailureException(inner)
-            }
             crate::operation::list_associated_assets::ListAssociatedAssetsError::InvalidRequestException(inner) => {
                 Error::InvalidRequestException(inner)
             }
@@ -2112,6 +2220,9 @@ impl From<crate::operation::list_associated_assets::ListAssociatedAssetsError> f
                 Error::ResourceNotFoundException(inner)
             }
             crate::operation::list_associated_assets::ListAssociatedAssetsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_associated_assets::ListAssociatedAssetsError::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
             crate::operation::list_associated_assets::ListAssociatedAssetsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -2133,14 +2244,14 @@ where
 impl From<crate::operation::list_bulk_import_jobs::ListBulkImportJobsError> for Error {
     fn from(err: crate::operation::list_bulk_import_jobs::ListBulkImportJobsError) -> Self {
         match err {
-            crate::operation::list_bulk_import_jobs::ListBulkImportJobsError::InternalFailureException(inner) => {
-                Error::InternalFailureException(inner)
-            }
             crate::operation::list_bulk_import_jobs::ListBulkImportJobsError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
             crate::operation::list_bulk_import_jobs::ListBulkImportJobsError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
             crate::operation::list_bulk_import_jobs::ListBulkImportJobsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_bulk_import_jobs::ListBulkImportJobsError::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
             crate::operation::list_bulk_import_jobs::ListBulkImportJobsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -2169,9 +2280,6 @@ where
 impl From<crate::operation::list_composition_relationships::ListCompositionRelationshipsError> for Error {
     fn from(err: crate::operation::list_composition_relationships::ListCompositionRelationshipsError) -> Self {
         match err {
-            crate::operation::list_composition_relationships::ListCompositionRelationshipsError::InternalFailureException(inner) => {
-                Error::InternalFailureException(inner)
-            }
             crate::operation::list_composition_relationships::ListCompositionRelationshipsError::InvalidRequestException(inner) => {
                 Error::InvalidRequestException(inner)
             }
@@ -2180,6 +2288,9 @@ impl From<crate::operation::list_composition_relationships::ListCompositionRelat
             }
             crate::operation::list_composition_relationships::ListCompositionRelationshipsError::ThrottlingException(inner) => {
                 Error::ThrottlingException(inner)
+            }
+            crate::operation::list_composition_relationships::ListCompositionRelationshipsError::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
             }
             crate::operation::list_composition_relationships::ListCompositionRelationshipsError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -2202,10 +2313,34 @@ where
 impl From<crate::operation::list_dashboards::ListDashboardsError> for Error {
     fn from(err: crate::operation::list_dashboards::ListDashboardsError) -> Self {
         match err {
-            crate::operation::list_dashboards::ListDashboardsError::InternalFailureException(inner) => Error::InternalFailureException(inner),
             crate::operation::list_dashboards::ListDashboardsError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
             crate::operation::list_dashboards::ListDashboardsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_dashboards::ListDashboardsError::InternalFailureException(inner) => Error::InternalFailureException(inner),
             crate::operation::list_dashboards::ListDashboardsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_datasets::ListDatasetsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_datasets::ListDatasetsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_datasets::ListDatasetsError> for Error {
+    fn from(err: crate::operation::list_datasets::ListDatasetsError) -> Self {
+        match err {
+            crate::operation::list_datasets::ListDatasetsError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::list_datasets::ListDatasetsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_datasets::ListDatasetsError::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::operation::list_datasets::ListDatasetsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2226,9 +2361,9 @@ where
 impl From<crate::operation::list_gateways::ListGatewaysError> for Error {
     fn from(err: crate::operation::list_gateways::ListGatewaysError) -> Self {
         match err {
-            crate::operation::list_gateways::ListGatewaysError::InternalFailureException(inner) => Error::InternalFailureException(inner),
             crate::operation::list_gateways::ListGatewaysError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
             crate::operation::list_gateways::ListGatewaysError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_gateways::ListGatewaysError::InternalFailureException(inner) => Error::InternalFailureException(inner),
             crate::operation::list_gateways::ListGatewaysError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -2250,9 +2385,9 @@ where
 impl From<crate::operation::list_portals::ListPortalsError> for Error {
     fn from(err: crate::operation::list_portals::ListPortalsError) -> Self {
         match err {
-            crate::operation::list_portals::ListPortalsError::InternalFailureException(inner) => Error::InternalFailureException(inner),
             crate::operation::list_portals::ListPortalsError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
             crate::operation::list_portals::ListPortalsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_portals::ListPortalsError::InternalFailureException(inner) => Error::InternalFailureException(inner),
             crate::operation::list_portals::ListPortalsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -2274,9 +2409,9 @@ where
 impl From<crate::operation::list_project_assets::ListProjectAssetsError> for Error {
     fn from(err: crate::operation::list_project_assets::ListProjectAssetsError) -> Self {
         match err {
-            crate::operation::list_project_assets::ListProjectAssetsError::InternalFailureException(inner) => Error::InternalFailureException(inner),
             crate::operation::list_project_assets::ListProjectAssetsError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
             crate::operation::list_project_assets::ListProjectAssetsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_project_assets::ListProjectAssetsError::InternalFailureException(inner) => Error::InternalFailureException(inner),
             crate::operation::list_project_assets::ListProjectAssetsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -2298,9 +2433,9 @@ where
 impl From<crate::operation::list_projects::ListProjectsError> for Error {
     fn from(err: crate::operation::list_projects::ListProjectsError) -> Self {
         match err {
-            crate::operation::list_projects::ListProjectsError::InternalFailureException(inner) => Error::InternalFailureException(inner),
             crate::operation::list_projects::ListProjectsError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
             crate::operation::list_projects::ListProjectsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_projects::ListProjectsError::InternalFailureException(inner) => Error::InternalFailureException(inner),
             crate::operation::list_projects::ListProjectsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -2322,21 +2457,21 @@ where
 impl From<crate::operation::list_tags_for_resource::ListTagsForResourceError> for Error {
     fn from(err: crate::operation::list_tags_for_resource::ListTagsForResourceError) -> Self {
         match err {
-            crate::operation::list_tags_for_resource::ListTagsForResourceError::ConflictingOperationException(inner) => {
-                Error::ConflictingOperationException(inner)
-            }
-            crate::operation::list_tags_for_resource::ListTagsForResourceError::InternalFailureException(inner) => {
-                Error::InternalFailureException(inner)
-            }
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
             crate::operation::list_tags_for_resource::ListTagsForResourceError::InvalidRequestException(inner) => {
                 Error::InvalidRequestException(inner)
+            }
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::ConflictingOperationException(inner) => {
+                Error::ConflictingOperationException(inner)
             }
             crate::operation::list_tags_for_resource::ListTagsForResourceError::LimitExceededException(inner) => Error::LimitExceededException(inner),
             crate::operation::list_tags_for_resource::ListTagsForResourceError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
             crate::operation::list_tags_for_resource::ListTagsForResourceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::operation::list_tags_for_resource::ListTagsForResourceError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
             crate::operation::list_tags_for_resource::ListTagsForResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -2358,10 +2493,10 @@ where
 impl From<crate::operation::list_time_series::ListTimeSeriesError> for Error {
     fn from(err: crate::operation::list_time_series::ListTimeSeriesError) -> Self {
         match err {
-            crate::operation::list_time_series::ListTimeSeriesError::InternalFailureException(inner) => Error::InternalFailureException(inner),
             crate::operation::list_time_series::ListTimeSeriesError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
             crate::operation::list_time_series::ListTimeSeriesError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::list_time_series::ListTimeSeriesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_time_series::ListTimeSeriesError::InternalFailureException(inner) => Error::InternalFailureException(inner),
             crate::operation::list_time_series::ListTimeSeriesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -2394,20 +2529,20 @@ where
 impl From<crate::operation::put_default_encryption_configuration::PutDefaultEncryptionConfigurationError> for Error {
     fn from(err: crate::operation::put_default_encryption_configuration::PutDefaultEncryptionConfigurationError) -> Self {
         match err {
-            crate::operation::put_default_encryption_configuration::PutDefaultEncryptionConfigurationError::ConflictingOperationException(inner) => {
-                Error::ConflictingOperationException(inner)
-            }
-            crate::operation::put_default_encryption_configuration::PutDefaultEncryptionConfigurationError::InternalFailureException(inner) => {
-                Error::InternalFailureException(inner)
-            }
             crate::operation::put_default_encryption_configuration::PutDefaultEncryptionConfigurationError::InvalidRequestException(inner) => {
                 Error::InvalidRequestException(inner)
+            }
+            crate::operation::put_default_encryption_configuration::PutDefaultEncryptionConfigurationError::ConflictingOperationException(inner) => {
+                Error::ConflictingOperationException(inner)
             }
             crate::operation::put_default_encryption_configuration::PutDefaultEncryptionConfigurationError::LimitExceededException(inner) => {
                 Error::LimitExceededException(inner)
             }
             crate::operation::put_default_encryption_configuration::PutDefaultEncryptionConfigurationError::ThrottlingException(inner) => {
                 Error::ThrottlingException(inner)
+            }
+            crate::operation::put_default_encryption_configuration::PutDefaultEncryptionConfigurationError::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
             }
             crate::operation::put_default_encryption_configuration::PutDefaultEncryptionConfigurationError::Unhandled(inner) => {
                 Error::Unhandled(inner)
@@ -2432,15 +2567,15 @@ where
 impl From<crate::operation::put_logging_options::PutLoggingOptionsError> for Error {
     fn from(err: crate::operation::put_logging_options::PutLoggingOptionsError) -> Self {
         match err {
+            crate::operation::put_logging_options::PutLoggingOptionsError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
             crate::operation::put_logging_options::PutLoggingOptionsError::ConflictingOperationException(inner) => {
                 Error::ConflictingOperationException(inner)
             }
-            crate::operation::put_logging_options::PutLoggingOptionsError::InternalFailureException(inner) => Error::InternalFailureException(inner),
-            crate::operation::put_logging_options::PutLoggingOptionsError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
             crate::operation::put_logging_options::PutLoggingOptionsError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
             crate::operation::put_logging_options::PutLoggingOptionsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::put_logging_options::PutLoggingOptionsError::InternalFailureException(inner) => Error::InternalFailureException(inner),
             crate::operation::put_logging_options::PutLoggingOptionsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -2465,26 +2600,26 @@ where
 impl From<crate::operation::put_storage_configuration::PutStorageConfigurationError> for Error {
     fn from(err: crate::operation::put_storage_configuration::PutStorageConfigurationError) -> Self {
         match err {
-            crate::operation::put_storage_configuration::PutStorageConfigurationError::ConflictingOperationException(inner) => {
-                Error::ConflictingOperationException(inner)
-            }
-            crate::operation::put_storage_configuration::PutStorageConfigurationError::InternalFailureException(inner) => {
-                Error::InternalFailureException(inner)
+            crate::operation::put_storage_configuration::PutStorageConfigurationError::ResourceAlreadyExistsException(inner) => {
+                Error::ResourceAlreadyExistsException(inner)
             }
             crate::operation::put_storage_configuration::PutStorageConfigurationError::InvalidRequestException(inner) => {
                 Error::InvalidRequestException(inner)
             }
+            crate::operation::put_storage_configuration::PutStorageConfigurationError::ConflictingOperationException(inner) => {
+                Error::ConflictingOperationException(inner)
+            }
             crate::operation::put_storage_configuration::PutStorageConfigurationError::LimitExceededException(inner) => {
                 Error::LimitExceededException(inner)
-            }
-            crate::operation::put_storage_configuration::PutStorageConfigurationError::ResourceAlreadyExistsException(inner) => {
-                Error::ResourceAlreadyExistsException(inner)
             }
             crate::operation::put_storage_configuration::PutStorageConfigurationError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
             crate::operation::put_storage_configuration::PutStorageConfigurationError::ThrottlingException(inner) => {
                 Error::ThrottlingException(inner)
+            }
+            crate::operation::put_storage_configuration::PutStorageConfigurationError::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
             }
             crate::operation::put_storage_configuration::PutStorageConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -2507,14 +2642,14 @@ where
 impl From<crate::operation::tag_resource::TagResourceError> for Error {
     fn from(err: crate::operation::tag_resource::TagResourceError) -> Self {
         match err {
-            crate::operation::tag_resource::TagResourceError::ConflictingOperationException(inner) => Error::ConflictingOperationException(inner),
-            crate::operation::tag_resource::TagResourceError::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::operation::tag_resource::TagResourceError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::tag_resource::TagResourceError::TooManyTagsException(inner) => Error::TooManyTagsException(inner),
             crate::operation::tag_resource::TagResourceError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::tag_resource::TagResourceError::ConflictingOperationException(inner) => Error::ConflictingOperationException(inner),
             crate::operation::tag_resource::TagResourceError::LimitExceededException(inner) => Error::LimitExceededException(inner),
             crate::operation::tag_resource::TagResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::tag_resource::TagResourceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::operation::tag_resource::TagResourceError::TooManyTagsException(inner) => Error::TooManyTagsException(inner),
-            crate::operation::tag_resource::TagResourceError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::tag_resource::TagResourceError::InternalFailureException(inner) => Error::InternalFailureException(inner),
             crate::operation::tag_resource::TagResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -2536,13 +2671,13 @@ where
 impl From<crate::operation::untag_resource::UntagResourceError> for Error {
     fn from(err: crate::operation::untag_resource::UntagResourceError) -> Self {
         match err {
-            crate::operation::untag_resource::UntagResourceError::ConflictingOperationException(inner) => Error::ConflictingOperationException(inner),
-            crate::operation::untag_resource::UntagResourceError::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::operation::untag_resource::UntagResourceError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
             crate::operation::untag_resource::UntagResourceError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::untag_resource::UntagResourceError::ConflictingOperationException(inner) => Error::ConflictingOperationException(inner),
             crate::operation::untag_resource::UntagResourceError::LimitExceededException(inner) => Error::LimitExceededException(inner),
             crate::operation::untag_resource::UntagResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::untag_resource::UntagResourceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::operation::untag_resource::UntagResourceError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::untag_resource::UntagResourceError::InternalFailureException(inner) => Error::InternalFailureException(inner),
             crate::operation::untag_resource::UntagResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -2564,14 +2699,14 @@ where
 impl From<crate::operation::update_access_policy::UpdateAccessPolicyError> for Error {
     fn from(err: crate::operation::update_access_policy::UpdateAccessPolicyError) -> Self {
         match err {
-            crate::operation::update_access_policy::UpdateAccessPolicyError::InternalFailureException(inner) => {
-                Error::InternalFailureException(inner)
-            }
             crate::operation::update_access_policy::UpdateAccessPolicyError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
             crate::operation::update_access_policy::UpdateAccessPolicyError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
             crate::operation::update_access_policy::UpdateAccessPolicyError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_access_policy::UpdateAccessPolicyError::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
             crate::operation::update_access_policy::UpdateAccessPolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -2593,12 +2728,12 @@ where
 impl From<crate::operation::update_asset::UpdateAssetError> for Error {
     fn from(err: crate::operation::update_asset::UpdateAssetError) -> Self {
         match err {
-            crate::operation::update_asset::UpdateAssetError::ConflictingOperationException(inner) => Error::ConflictingOperationException(inner),
-            crate::operation::update_asset::UpdateAssetError::InternalFailureException(inner) => Error::InternalFailureException(inner),
-            crate::operation::update_asset::UpdateAssetError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
             crate::operation::update_asset::UpdateAssetError::ResourceAlreadyExistsException(inner) => Error::ResourceAlreadyExistsException(inner),
+            crate::operation::update_asset::UpdateAssetError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::update_asset::UpdateAssetError::ConflictingOperationException(inner) => Error::ConflictingOperationException(inner),
             crate::operation::update_asset::UpdateAssetError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::update_asset::UpdateAssetError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_asset::UpdateAssetError::InternalFailureException(inner) => Error::InternalFailureException(inner),
             crate::operation::update_asset::UpdateAssetError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -2620,20 +2755,20 @@ where
 impl From<crate::operation::update_asset_model::UpdateAssetModelError> for Error {
     fn from(err: crate::operation::update_asset_model::UpdateAssetModelError) -> Self {
         match err {
-            crate::operation::update_asset_model::UpdateAssetModelError::ConflictingOperationException(inner) => {
-                Error::ConflictingOperationException(inner)
-            }
-            crate::operation::update_asset_model::UpdateAssetModelError::InternalFailureException(inner) => Error::InternalFailureException(inner),
-            crate::operation::update_asset_model::UpdateAssetModelError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
-            crate::operation::update_asset_model::UpdateAssetModelError::LimitExceededException(inner) => Error::LimitExceededException(inner),
-            crate::operation::update_asset_model::UpdateAssetModelError::PreconditionFailedException(inner) => {
-                Error::PreconditionFailedException(inner)
-            }
             crate::operation::update_asset_model::UpdateAssetModelError::ResourceAlreadyExistsException(inner) => {
                 Error::ResourceAlreadyExistsException(inner)
             }
+            crate::operation::update_asset_model::UpdateAssetModelError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::update_asset_model::UpdateAssetModelError::ConflictingOperationException(inner) => {
+                Error::ConflictingOperationException(inner)
+            }
+            crate::operation::update_asset_model::UpdateAssetModelError::LimitExceededException(inner) => Error::LimitExceededException(inner),
             crate::operation::update_asset_model::UpdateAssetModelError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::update_asset_model::UpdateAssetModelError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_asset_model::UpdateAssetModelError::PreconditionFailedException(inner) => {
+                Error::PreconditionFailedException(inner)
+            }
+            crate::operation::update_asset_model::UpdateAssetModelError::InternalFailureException(inner) => Error::InternalFailureException(inner),
             crate::operation::update_asset_model::UpdateAssetModelError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -2666,29 +2801,29 @@ where
 impl From<crate::operation::update_asset_model_composite_model::UpdateAssetModelCompositeModelError> for Error {
     fn from(err: crate::operation::update_asset_model_composite_model::UpdateAssetModelCompositeModelError) -> Self {
         match err {
-            crate::operation::update_asset_model_composite_model::UpdateAssetModelCompositeModelError::ConflictingOperationException(inner) => {
-                Error::ConflictingOperationException(inner)
-            }
-            crate::operation::update_asset_model_composite_model::UpdateAssetModelCompositeModelError::InternalFailureException(inner) => {
-                Error::InternalFailureException(inner)
+            crate::operation::update_asset_model_composite_model::UpdateAssetModelCompositeModelError::ResourceAlreadyExistsException(inner) => {
+                Error::ResourceAlreadyExistsException(inner)
             }
             crate::operation::update_asset_model_composite_model::UpdateAssetModelCompositeModelError::InvalidRequestException(inner) => {
                 Error::InvalidRequestException(inner)
             }
+            crate::operation::update_asset_model_composite_model::UpdateAssetModelCompositeModelError::ConflictingOperationException(inner) => {
+                Error::ConflictingOperationException(inner)
+            }
             crate::operation::update_asset_model_composite_model::UpdateAssetModelCompositeModelError::LimitExceededException(inner) => {
                 Error::LimitExceededException(inner)
-            }
-            crate::operation::update_asset_model_composite_model::UpdateAssetModelCompositeModelError::PreconditionFailedException(inner) => {
-                Error::PreconditionFailedException(inner)
-            }
-            crate::operation::update_asset_model_composite_model::UpdateAssetModelCompositeModelError::ResourceAlreadyExistsException(inner) => {
-                Error::ResourceAlreadyExistsException(inner)
             }
             crate::operation::update_asset_model_composite_model::UpdateAssetModelCompositeModelError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
             crate::operation::update_asset_model_composite_model::UpdateAssetModelCompositeModelError::ThrottlingException(inner) => {
                 Error::ThrottlingException(inner)
+            }
+            crate::operation::update_asset_model_composite_model::UpdateAssetModelCompositeModelError::PreconditionFailedException(inner) => {
+                Error::PreconditionFailedException(inner)
+            }
+            crate::operation::update_asset_model_composite_model::UpdateAssetModelCompositeModelError::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
             }
             crate::operation::update_asset_model_composite_model::UpdateAssetModelCompositeModelError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -2711,19 +2846,19 @@ where
 impl From<crate::operation::update_asset_property::UpdateAssetPropertyError> for Error {
     fn from(err: crate::operation::update_asset_property::UpdateAssetPropertyError) -> Self {
         match err {
-            crate::operation::update_asset_property::UpdateAssetPropertyError::ConflictingOperationException(inner) => {
-                Error::ConflictingOperationException(inner)
-            }
-            crate::operation::update_asset_property::UpdateAssetPropertyError::InternalFailureException(inner) => {
-                Error::InternalFailureException(inner)
-            }
             crate::operation::update_asset_property::UpdateAssetPropertyError::InvalidRequestException(inner) => {
                 Error::InvalidRequestException(inner)
+            }
+            crate::operation::update_asset_property::UpdateAssetPropertyError::ConflictingOperationException(inner) => {
+                Error::ConflictingOperationException(inner)
             }
             crate::operation::update_asset_property::UpdateAssetPropertyError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
             crate::operation::update_asset_property::UpdateAssetPropertyError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_asset_property::UpdateAssetPropertyError::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
             crate::operation::update_asset_property::UpdateAssetPropertyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -2745,11 +2880,38 @@ where
 impl From<crate::operation::update_dashboard::UpdateDashboardError> for Error {
     fn from(err: crate::operation::update_dashboard::UpdateDashboardError) -> Self {
         match err {
-            crate::operation::update_dashboard::UpdateDashboardError::InternalFailureException(inner) => Error::InternalFailureException(inner),
             crate::operation::update_dashboard::UpdateDashboardError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
             crate::operation::update_dashboard::UpdateDashboardError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::update_dashboard::UpdateDashboardError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_dashboard::UpdateDashboardError::InternalFailureException(inner) => Error::InternalFailureException(inner),
             crate::operation::update_dashboard::UpdateDashboardError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_dataset::UpdateDatasetError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_dataset::UpdateDatasetError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_dataset::UpdateDatasetError> for Error {
+    fn from(err: crate::operation::update_dataset::UpdateDatasetError) -> Self {
+        match err {
+            crate::operation::update_dataset::UpdateDatasetError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::update_dataset::UpdateDatasetError::ConflictingOperationException(inner) => Error::ConflictingOperationException(inner),
+            crate::operation::update_dataset::UpdateDatasetError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::update_dataset::UpdateDatasetError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_dataset::UpdateDatasetError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_dataset::UpdateDatasetError::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::operation::update_dataset::UpdateDatasetError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2770,11 +2932,11 @@ where
 impl From<crate::operation::update_gateway::UpdateGatewayError> for Error {
     fn from(err: crate::operation::update_gateway::UpdateGatewayError) -> Self {
         match err {
-            crate::operation::update_gateway::UpdateGatewayError::ConflictingOperationException(inner) => Error::ConflictingOperationException(inner),
-            crate::operation::update_gateway::UpdateGatewayError::InternalFailureException(inner) => Error::InternalFailureException(inner),
             crate::operation::update_gateway::UpdateGatewayError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::update_gateway::UpdateGatewayError::ConflictingOperationException(inner) => Error::ConflictingOperationException(inner),
             crate::operation::update_gateway::UpdateGatewayError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::update_gateway::UpdateGatewayError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_gateway::UpdateGatewayError::InternalFailureException(inner) => Error::InternalFailureException(inner),
             crate::operation::update_gateway::UpdateGatewayError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -2807,15 +2969,12 @@ where
 impl From<crate::operation::update_gateway_capability_configuration::UpdateGatewayCapabilityConfigurationError> for Error {
     fn from(err: crate::operation::update_gateway_capability_configuration::UpdateGatewayCapabilityConfigurationError) -> Self {
         match err {
-            crate::operation::update_gateway_capability_configuration::UpdateGatewayCapabilityConfigurationError::ConflictingOperationException(
-                inner,
-            ) => Error::ConflictingOperationException(inner),
-            crate::operation::update_gateway_capability_configuration::UpdateGatewayCapabilityConfigurationError::InternalFailureException(inner) => {
-                Error::InternalFailureException(inner)
-            }
             crate::operation::update_gateway_capability_configuration::UpdateGatewayCapabilityConfigurationError::InvalidRequestException(inner) => {
                 Error::InvalidRequestException(inner)
             }
+            crate::operation::update_gateway_capability_configuration::UpdateGatewayCapabilityConfigurationError::ConflictingOperationException(
+                inner,
+            ) => Error::ConflictingOperationException(inner),
             crate::operation::update_gateway_capability_configuration::UpdateGatewayCapabilityConfigurationError::LimitExceededException(inner) => {
                 Error::LimitExceededException(inner)
             }
@@ -2824,6 +2983,9 @@ impl From<crate::operation::update_gateway_capability_configuration::UpdateGatew
             ) => Error::ResourceNotFoundException(inner),
             crate::operation::update_gateway_capability_configuration::UpdateGatewayCapabilityConfigurationError::ThrottlingException(inner) => {
                 Error::ThrottlingException(inner)
+            }
+            crate::operation::update_gateway_capability_configuration::UpdateGatewayCapabilityConfigurationError::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
             }
             crate::operation::update_gateway_capability_configuration::UpdateGatewayCapabilityConfigurationError::Unhandled(inner) => {
                 Error::Unhandled(inner)
@@ -2848,11 +3010,11 @@ where
 impl From<crate::operation::update_portal::UpdatePortalError> for Error {
     fn from(err: crate::operation::update_portal::UpdatePortalError) -> Self {
         match err {
-            crate::operation::update_portal::UpdatePortalError::ConflictingOperationException(inner) => Error::ConflictingOperationException(inner),
-            crate::operation::update_portal::UpdatePortalError::InternalFailureException(inner) => Error::InternalFailureException(inner),
             crate::operation::update_portal::UpdatePortalError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::update_portal::UpdatePortalError::ConflictingOperationException(inner) => Error::ConflictingOperationException(inner),
             crate::operation::update_portal::UpdatePortalError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::update_portal::UpdatePortalError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_portal::UpdatePortalError::InternalFailureException(inner) => Error::InternalFailureException(inner),
             crate::operation::update_portal::UpdatePortalError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -2874,10 +3036,10 @@ where
 impl From<crate::operation::update_project::UpdateProjectError> for Error {
     fn from(err: crate::operation::update_project::UpdateProjectError) -> Self {
         match err {
-            crate::operation::update_project::UpdateProjectError::InternalFailureException(inner) => Error::InternalFailureException(inner),
             crate::operation::update_project::UpdateProjectError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
             crate::operation::update_project::UpdateProjectError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::update_project::UpdateProjectError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_project::UpdateProjectError::InternalFailureException(inner) => Error::InternalFailureException(inner),
             crate::operation::update_project::UpdateProjectError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -2892,6 +3054,34 @@ where
             meta: ::std::default::Default::default(),
             source: err.into(),
         })
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::types::error::ResponseStreamError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::types::error::ResponseStreamError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::types::error::ResponseStreamError> for Error {
+    fn from(err: crate::types::error::ResponseStreamError) -> Self {
+        match err {
+            crate::types::error::ResponseStreamError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::types::error::ResponseStreamError::ConflictingOperationException(inner) => Error::ConflictingOperationException(inner),
+            crate::types::error::ResponseStreamError::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::types::error::ResponseStreamError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::types::error::ResponseStreamError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::types::error::ResponseStreamError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::types::error::ResponseStreamError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::types::error::ResponseStreamError::Unhandled(inner) => Error::Unhandled(inner),
+        }
     }
 }
 impl ::std::error::Error for Error {

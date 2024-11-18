@@ -22,6 +22,8 @@ pub struct InstanceImageMetadata {
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>Information about the AMI used to launch the instance.</p>
     pub image_metadata: ::std::option::Option<crate::types::ImageMetadata>,
+    /// <p>The entity that manages the instance.</p>
+    pub operator: ::std::option::Option<crate::types::OperatorResponse>,
 }
 impl InstanceImageMetadata {
     /// <p>The ID of the instance.</p>
@@ -62,6 +64,10 @@ impl InstanceImageMetadata {
     pub fn image_metadata(&self) -> ::std::option::Option<&crate::types::ImageMetadata> {
         self.image_metadata.as_ref()
     }
+    /// <p>The entity that manages the instance.</p>
+    pub fn operator(&self) -> ::std::option::Option<&crate::types::OperatorResponse> {
+        self.operator.as_ref()
+    }
 }
 impl InstanceImageMetadata {
     /// Creates a new builder-style object to manufacture [`InstanceImageMetadata`](crate::types::InstanceImageMetadata).
@@ -83,6 +89,7 @@ pub struct InstanceImageMetadataBuilder {
     pub(crate) owner_id: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) image_metadata: ::std::option::Option<crate::types::ImageMetadata>,
+    pub(crate) operator: ::std::option::Option<crate::types::OperatorResponse>,
 }
 impl InstanceImageMetadataBuilder {
     /// <p>The ID of the instance.</p>
@@ -217,6 +224,20 @@ impl InstanceImageMetadataBuilder {
     pub fn get_image_metadata(&self) -> &::std::option::Option<crate::types::ImageMetadata> {
         &self.image_metadata
     }
+    /// <p>The entity that manages the instance.</p>
+    pub fn operator(mut self, input: crate::types::OperatorResponse) -> Self {
+        self.operator = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The entity that manages the instance.</p>
+    pub fn set_operator(mut self, input: ::std::option::Option<crate::types::OperatorResponse>) -> Self {
+        self.operator = input;
+        self
+    }
+    /// <p>The entity that manages the instance.</p>
+    pub fn get_operator(&self) -> &::std::option::Option<crate::types::OperatorResponse> {
+        &self.operator
+    }
     /// Consumes the builder and constructs a [`InstanceImageMetadata`](crate::types::InstanceImageMetadata).
     pub fn build(self) -> crate::types::InstanceImageMetadata {
         crate::types::InstanceImageMetadata {
@@ -229,6 +250,7 @@ impl InstanceImageMetadataBuilder {
             owner_id: self.owner_id,
             tags: self.tags,
             image_metadata: self.image_metadata,
+            operator: self.operator,
         }
     }
 }

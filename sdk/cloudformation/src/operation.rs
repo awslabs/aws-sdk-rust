@@ -148,6 +148,9 @@ pub mod list_exports;
 /// Types for the `ListGeneratedTemplates` operation.
 pub mod list_generated_templates;
 
+/// Types for the `ListHookResults` operation.
+pub mod list_hook_results;
+
 /// Types for the `ListImports` operation.
 pub mod list_imports;
 

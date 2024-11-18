@@ -193,6 +193,20 @@ impl CreateCalculatedAttributeDefinitionFluentBuilder {
     pub fn get_conditions(&self) -> &::std::option::Option<crate::types::Conditions> {
         self.inner.get_conditions()
     }
+    /// <p>Defines how to filter incoming objects to include part of the Calculated Attribute.</p>
+    pub fn filter(mut self, input: crate::types::Filter) -> Self {
+        self.inner = self.inner.filter(input);
+        self
+    }
+    /// <p>Defines how to filter incoming objects to include part of the Calculated Attribute.</p>
+    pub fn set_filter(mut self, input: ::std::option::Option<crate::types::Filter>) -> Self {
+        self.inner = self.inner.set_filter(input);
+        self
+    }
+    /// <p>Defines how to filter incoming objects to include part of the Calculated Attribute.</p>
+    pub fn get_filter(&self) -> &::std::option::Option<crate::types::Filter> {
+        self.inner.get_filter()
+    }
     /// <p>The aggregation operation to perform for the calculated attribute.</p>
     pub fn statistic(mut self, input: crate::types::Statistic) -> Self {
         self.inner = self.inner.statistic(input);

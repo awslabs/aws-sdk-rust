@@ -17,6 +17,20 @@ pub fn de_update_portal_http_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
+        "InvalidRequestException" => crate::operation::update_portal::UpdatePortalError::InvalidRequestException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidRequestExceptionBuilder::default();
+                output = crate::protocol_serde::shape_invalid_request_exception::de_invalid_request_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::update_portal::UpdatePortalError::unhandled)?;
+                let output = output.meta(generic);
+                crate::serde_util::invalid_request_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::update_portal::UpdatePortalError::unhandled)?
+            };
+            tmp
+        }),
         "ConflictingOperationException" => crate::operation::update_portal::UpdatePortalError::ConflictingOperationException({
             #[allow(unused_mut)]
             let mut tmp = {
@@ -27,34 +41,6 @@ pub fn de_update_portal_http_error(
                         .map_err(crate::operation::update_portal::UpdatePortalError::unhandled)?;
                 let output = output.meta(generic);
                 crate::serde_util::conflicting_operation_exception_correct_errors(output)
-                    .build()
-                    .map_err(crate::operation::update_portal::UpdatePortalError::unhandled)?
-            };
-            tmp
-        }),
-        "InternalFailureException" => crate::operation::update_portal::UpdatePortalError::InternalFailureException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::InternalFailureExceptionBuilder::default();
-                output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(_response_body, output)
-                    .map_err(crate::operation::update_portal::UpdatePortalError::unhandled)?;
-                let output = output.meta(generic);
-                crate::serde_util::internal_failure_exception_correct_errors(output)
-                    .build()
-                    .map_err(crate::operation::update_portal::UpdatePortalError::unhandled)?
-            };
-            tmp
-        }),
-        "InvalidRequestException" => crate::operation::update_portal::UpdatePortalError::InvalidRequestException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::InvalidRequestExceptionBuilder::default();
-                output = crate::protocol_serde::shape_invalid_request_exception::de_invalid_request_exception_json_err(_response_body, output)
-                    .map_err(crate::operation::update_portal::UpdatePortalError::unhandled)?;
-                let output = output.meta(generic);
-                crate::serde_util::invalid_request_exception_correct_errors(output)
                     .build()
                     .map_err(crate::operation::update_portal::UpdatePortalError::unhandled)?
             };
@@ -83,6 +69,20 @@ pub fn de_update_portal_http_error(
                     .map_err(crate::operation::update_portal::UpdatePortalError::unhandled)?;
                 let output = output.meta(generic);
                 crate::serde_util::throttling_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::update_portal::UpdatePortalError::unhandled)?
+            };
+            tmp
+        }),
+        "InternalFailureException" => crate::operation::update_portal::UpdatePortalError::InternalFailureException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InternalFailureExceptionBuilder::default();
+                output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::update_portal::UpdatePortalError::unhandled)?;
+                let output = output.meta(generic);
+                crate::serde_util::internal_failure_exception_correct_errors(output)
                     .build()
                     .map_err(crate::operation::update_portal::UpdatePortalError::unhandled)?
             };

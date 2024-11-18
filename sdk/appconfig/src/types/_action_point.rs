@@ -12,6 +12,7 @@
 /// ```text
 /// # let actionpoint = unimplemented!();
 /// match actionpoint {
+///     ActionPoint::AtDeploymentTick => { /* ... */ },
 ///     ActionPoint::OnDeploymentBaking => { /* ... */ },
 ///     ActionPoint::OnDeploymentComplete => { /* ... */ },
 ///     ActionPoint::OnDeploymentRolledBack => { /* ... */ },
@@ -47,6 +48,8 @@
 )]
 pub enum ActionPoint {
     #[allow(missing_docs)] // documentation missing in model
+    AtDeploymentTick,
+    #[allow(missing_docs)] // documentation missing in model
     OnDeploymentBaking,
     #[allow(missing_docs)] // documentation missing in model
     OnDeploymentComplete,
@@ -67,6 +70,7 @@ pub enum ActionPoint {
 impl ::std::convert::From<&str> for ActionPoint {
     fn from(s: &str) -> Self {
         match s {
+            "AT_DEPLOYMENT_TICK" => ActionPoint::AtDeploymentTick,
             "ON_DEPLOYMENT_BAKING" => ActionPoint::OnDeploymentBaking,
             "ON_DEPLOYMENT_COMPLETE" => ActionPoint::OnDeploymentComplete,
             "ON_DEPLOYMENT_ROLLED_BACK" => ActionPoint::OnDeploymentRolledBack,
@@ -89,6 +93,7 @@ impl ActionPoint {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            ActionPoint::AtDeploymentTick => "AT_DEPLOYMENT_TICK",
             ActionPoint::OnDeploymentBaking => "ON_DEPLOYMENT_BAKING",
             ActionPoint::OnDeploymentComplete => "ON_DEPLOYMENT_COMPLETE",
             ActionPoint::OnDeploymentRolledBack => "ON_DEPLOYMENT_ROLLED_BACK",
@@ -102,6 +107,7 @@ impl ActionPoint {
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
+            "AT_DEPLOYMENT_TICK",
             "ON_DEPLOYMENT_BAKING",
             "ON_DEPLOYMENT_COMPLETE",
             "ON_DEPLOYMENT_ROLLED_BACK",
@@ -132,6 +138,7 @@ impl ActionPoint {
 impl ::std::fmt::Display for ActionPoint {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            ActionPoint::AtDeploymentTick => write!(f, "AT_DEPLOYMENT_TICK"),
             ActionPoint::OnDeploymentBaking => write!(f, "ON_DEPLOYMENT_BAKING"),
             ActionPoint::OnDeploymentComplete => write!(f, "ON_DEPLOYMENT_COMPLETE"),
             ActionPoint::OnDeploymentRolledBack => write!(f, "ON_DEPLOYMENT_ROLLED_BACK"),

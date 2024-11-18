@@ -57,6 +57,8 @@ pub(crate) mod shape_database_error_exception;
 
 pub(crate) mod shape_database_not_found_exception;
 
+pub(crate) mod shape_database_resuming_exception;
+
 pub(crate) mod shape_database_unavailable_exception;
 
 pub(crate) mod shape_execute_sql_input;

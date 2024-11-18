@@ -117,6 +117,16 @@ pub fn de_instance_image_metadata(
                 builder = builder.set_image_metadata(var_9);
             }
             ,
+            s if s.matches("operator") /* Operator com.amazonaws.ec2#InstanceImageMetadata$Operator */ =>  {
+                let var_10 =
+                    Some(
+                        crate::protocol_serde::shape_operator_response::de_operator_response(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_operator(var_10);
+            }
+            ,
             _ => {}
         }
     }

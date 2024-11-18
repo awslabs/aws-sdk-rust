@@ -21,6 +21,11 @@ pub fn ser_attach_traffic_sources_input_input_input(
         }
         list_6.finish();
     }
+    #[allow(unused_mut)]
+    let mut scope_8 = writer.prefix("SkipZonalShiftValidation");
+    if let Some(var_9) = &input.skip_zonal_shift_validation {
+        scope_8.boolean(*var_9);
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

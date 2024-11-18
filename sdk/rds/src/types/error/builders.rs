@@ -195,6 +195,8 @@ pub use crate::types::error::_invalid_resource_state_fault::InvalidResourceState
 
 pub use crate::types::error::_db_log_file_not_found_fault::DbLogFileNotFoundFaultBuilder;
 
+pub use crate::types::error::_db_instance_not_ready_fault::DbInstanceNotReadyFaultBuilder;
+
 pub use crate::types::error::_reserved_db_instance_not_found_fault::ReservedDbInstanceNotFoundFaultBuilder;
 
 pub use crate::types::error::_export_task_not_found_fault::ExportTaskNotFoundFaultBuilder;

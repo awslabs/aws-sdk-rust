@@ -243,6 +243,8 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DescribeDBLog
 pub enum DescribeDBLogFilesError {
     /// <p><code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.</p>
     DbInstanceNotFoundFault(crate::types::error::DbInstanceNotFoundFault),
+    /// <p>An attempt to download or examine log files didn't succeed because an Aurora Serverless v2 instance was paused.</p>
+    DbInstanceNotReadyFault(crate::types::error::DbInstanceNotReadyFault),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \
     variable wildcard pattern and check `.code()`:
@@ -277,6 +279,7 @@ impl DescribeDBLogFilesError {
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::DbInstanceNotFoundFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::DbInstanceNotReadyFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
     }
@@ -284,11 +287,16 @@ impl DescribeDBLogFilesError {
     pub fn is_db_instance_not_found_fault(&self) -> bool {
         matches!(self, Self::DbInstanceNotFoundFault(_))
     }
+    /// Returns `true` if the error kind is `DescribeDBLogFilesError::DbInstanceNotReadyFault`.
+    pub fn is_db_instance_not_ready_fault(&self) -> bool {
+        matches!(self, Self::DbInstanceNotReadyFault(_))
+    }
 }
 impl ::std::error::Error for DescribeDBLogFilesError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
             Self::DbInstanceNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
+            Self::DbInstanceNotReadyFault(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
         }
     }
@@ -297,6 +305,7 @@ impl ::std::fmt::Display for DescribeDBLogFilesError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
             Self::DbInstanceNotFoundFault(_inner) => _inner.fmt(f),
+            Self::DbInstanceNotReadyFault(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
                     write!(f, "unhandled error ({code})")
@@ -319,6 +328,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for DescribeDBLog
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::DbInstanceNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::DbInstanceNotReadyFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,
         }
     }

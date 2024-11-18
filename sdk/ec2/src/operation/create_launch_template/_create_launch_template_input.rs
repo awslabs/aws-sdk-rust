@@ -14,6 +14,8 @@ pub struct CreateLaunchTemplateInput {
     pub version_description: ::std::option::Option<::std::string::String>,
     /// <p>The information for the launch template.</p>
     pub launch_template_data: ::std::option::Option<crate::types::RequestLaunchTemplateData>,
+    /// <p>Reserved for internal use.</p>
+    pub operator: ::std::option::Option<crate::types::OperatorRequest>,
     /// <p>The tags to apply to the launch template on creation. To tag the launch template, the resource type must be <code>launch-template</code>.</p>
     /// <p>To specify the tags for the resources that are created when an instance is launched, you must use the <code>TagSpecifications</code> parameter in the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestLaunchTemplateData.html">launch template data</a> structure.</p>
     pub tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
@@ -40,6 +42,10 @@ impl CreateLaunchTemplateInput {
     pub fn launch_template_data(&self) -> ::std::option::Option<&crate::types::RequestLaunchTemplateData> {
         self.launch_template_data.as_ref()
     }
+    /// <p>Reserved for internal use.</p>
+    pub fn operator(&self) -> ::std::option::Option<&crate::types::OperatorRequest> {
+        self.operator.as_ref()
+    }
     /// <p>The tags to apply to the launch template on creation. To tag the launch template, the resource type must be <code>launch-template</code>.</p>
     /// <p>To specify the tags for the resources that are created when an instance is launched, you must use the <code>TagSpecifications</code> parameter in the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestLaunchTemplateData.html">launch template data</a> structure.</p>
     ///
@@ -64,6 +70,7 @@ pub struct CreateLaunchTemplateInputBuilder {
     pub(crate) launch_template_name: ::std::option::Option<::std::string::String>,
     pub(crate) version_description: ::std::option::Option<::std::string::String>,
     pub(crate) launch_template_data: ::std::option::Option<crate::types::RequestLaunchTemplateData>,
+    pub(crate) operator: ::std::option::Option<crate::types::OperatorRequest>,
     pub(crate) tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
 }
 impl CreateLaunchTemplateInputBuilder {
@@ -142,6 +149,20 @@ impl CreateLaunchTemplateInputBuilder {
     pub fn get_launch_template_data(&self) -> &::std::option::Option<crate::types::RequestLaunchTemplateData> {
         &self.launch_template_data
     }
+    /// <p>Reserved for internal use.</p>
+    pub fn operator(mut self, input: crate::types::OperatorRequest) -> Self {
+        self.operator = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Reserved for internal use.</p>
+    pub fn set_operator(mut self, input: ::std::option::Option<crate::types::OperatorRequest>) -> Self {
+        self.operator = input;
+        self
+    }
+    /// <p>Reserved for internal use.</p>
+    pub fn get_operator(&self) -> &::std::option::Option<crate::types::OperatorRequest> {
+        &self.operator
+    }
     /// Appends an item to `tag_specifications`.
     ///
     /// To override the contents of this collection use [`set_tag_specifications`](Self::set_tag_specifications).
@@ -176,6 +197,7 @@ impl CreateLaunchTemplateInputBuilder {
             launch_template_name: self.launch_template_name,
             version_description: self.version_description,
             launch_template_data: self.launch_template_data,
+            operator: self.operator,
             tag_specifications: self.tag_specifications,
         })
     }

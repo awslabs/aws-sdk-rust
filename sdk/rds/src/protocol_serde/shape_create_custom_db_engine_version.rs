@@ -592,6 +592,16 @@ pub fn de_create_custom_db_engine_version(
                 builder = builder.set_supports_integrations(var_34);
             }
             ,
+            s if s.matches("ServerlessV2FeaturesSupport") /* ServerlessV2FeaturesSupport com.amazonaws.rds.synthetic#CreateCustomDBEngineVersionOutput$ServerlessV2FeaturesSupport */ =>  {
+                let var_35 =
+                    Some(
+                        crate::protocol_serde::shape_serverless_v2_features_support::de_serverless_v2_features_support(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_serverless_v2_features_support(var_35);
+            }
+            ,
             _ => {}
         }
         }

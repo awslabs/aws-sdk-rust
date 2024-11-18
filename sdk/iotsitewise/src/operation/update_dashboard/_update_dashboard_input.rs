@@ -9,7 +9,14 @@ pub struct UpdateDashboardInput {
     pub dashboard_name: ::std::option::Option<::std::string::String>,
     /// <p>A new description for the dashboard.</p>
     pub dashboard_description: ::std::option::Option<::std::string::String>,
-    /// <p>The new dashboard definition, as specified in a JSON literal. For detailed information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-dashboards-using-aws-cli.html">Creating dashboards (CLI)</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    /// <p>The new dashboard definition, as specified in a JSON literal.</p>
+    /// <ul>
+    /// <li>
+    /// <p>IoT SiteWise Monitor (Classic) see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-dashboards-using-aws-cli.html">Create dashboards (CLI)</a></p></li>
+    /// <li>
+    /// <p>IoT SiteWise Monitor (AI-aware) see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-dashboards-ai-dashboard-cli.html">Create dashboards (CLI)</a></p></li>
+    /// </ul>
+    /// <p>in the <i>IoT SiteWise User Guide</i></p>
     pub dashboard_definition: ::std::option::Option<::std::string::String>,
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
@@ -27,7 +34,14 @@ impl UpdateDashboardInput {
     pub fn dashboard_description(&self) -> ::std::option::Option<&str> {
         self.dashboard_description.as_deref()
     }
-    /// <p>The new dashboard definition, as specified in a JSON literal. For detailed information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-dashboards-using-aws-cli.html">Creating dashboards (CLI)</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    /// <p>The new dashboard definition, as specified in a JSON literal.</p>
+    /// <ul>
+    /// <li>
+    /// <p>IoT SiteWise Monitor (Classic) see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-dashboards-using-aws-cli.html">Create dashboards (CLI)</a></p></li>
+    /// <li>
+    /// <p>IoT SiteWise Monitor (AI-aware) see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-dashboards-ai-dashboard-cli.html">Create dashboards (CLI)</a></p></li>
+    /// </ul>
+    /// <p>in the <i>IoT SiteWise User Guide</i></p>
     pub fn dashboard_definition(&self) -> ::std::option::Option<&str> {
         self.dashboard_definition.as_deref()
     }
@@ -98,18 +112,39 @@ impl UpdateDashboardInputBuilder {
     pub fn get_dashboard_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.dashboard_description
     }
-    /// <p>The new dashboard definition, as specified in a JSON literal. For detailed information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-dashboards-using-aws-cli.html">Creating dashboards (CLI)</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    /// <p>The new dashboard definition, as specified in a JSON literal.</p>
+    /// <ul>
+    /// <li>
+    /// <p>IoT SiteWise Monitor (Classic) see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-dashboards-using-aws-cli.html">Create dashboards (CLI)</a></p></li>
+    /// <li>
+    /// <p>IoT SiteWise Monitor (AI-aware) see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-dashboards-ai-dashboard-cli.html">Create dashboards (CLI)</a></p></li>
+    /// </ul>
+    /// <p>in the <i>IoT SiteWise User Guide</i></p>
     /// This field is required.
     pub fn dashboard_definition(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dashboard_definition = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The new dashboard definition, as specified in a JSON literal. For detailed information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-dashboards-using-aws-cli.html">Creating dashboards (CLI)</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    /// <p>The new dashboard definition, as specified in a JSON literal.</p>
+    /// <ul>
+    /// <li>
+    /// <p>IoT SiteWise Monitor (Classic) see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-dashboards-using-aws-cli.html">Create dashboards (CLI)</a></p></li>
+    /// <li>
+    /// <p>IoT SiteWise Monitor (AI-aware) see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-dashboards-ai-dashboard-cli.html">Create dashboards (CLI)</a></p></li>
+    /// </ul>
+    /// <p>in the <i>IoT SiteWise User Guide</i></p>
     pub fn set_dashboard_definition(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dashboard_definition = input;
         self
     }
-    /// <p>The new dashboard definition, as specified in a JSON literal. For detailed information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-dashboards-using-aws-cli.html">Creating dashboards (CLI)</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    /// <p>The new dashboard definition, as specified in a JSON literal.</p>
+    /// <ul>
+    /// <li>
+    /// <p>IoT SiteWise Monitor (Classic) see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-dashboards-using-aws-cli.html">Create dashboards (CLI)</a></p></li>
+    /// <li>
+    /// <p>IoT SiteWise Monitor (AI-aware) see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-dashboards-ai-dashboard-cli.html">Create dashboards (CLI)</a></p></li>
+    /// </ul>
+    /// <p>in the <i>IoT SiteWise User Guide</i></p>
     pub fn get_dashboard_definition(&self) -> &::std::option::Option<::std::string::String> {
         &self.dashboard_definition
     }

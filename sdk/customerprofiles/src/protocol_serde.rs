@@ -25,6 +25,10 @@ pub fn parse_http_error_metadata(
 
 pub(crate) mod shape_add_profile_key;
 
+pub(crate) mod shape_batch_get_calculated_attribute_for_profile;
+
+pub(crate) mod shape_batch_get_profile;
+
 pub(crate) mod shape_create_calculated_attribute_definition;
 
 pub(crate) mod shape_create_domain;
@@ -34,6 +38,12 @@ pub(crate) mod shape_create_event_stream;
 pub(crate) mod shape_create_integration_workflow;
 
 pub(crate) mod shape_create_profile;
+
+pub(crate) mod shape_create_segment_definition;
+
+pub(crate) mod shape_create_segment_estimate;
+
+pub(crate) mod shape_create_segment_snapshot;
 
 pub(crate) mod shape_delete_calculated_attribute_definition;
 
@@ -50,6 +60,8 @@ pub(crate) mod shape_delete_profile_key;
 pub(crate) mod shape_delete_profile_object;
 
 pub(crate) mod shape_delete_profile_object_type;
+
+pub(crate) mod shape_delete_segment_definition;
 
 pub(crate) mod shape_delete_workflow;
 
@@ -75,6 +87,14 @@ pub(crate) mod shape_get_profile_object_type;
 
 pub(crate) mod shape_get_profile_object_type_template;
 
+pub(crate) mod shape_get_segment_definition;
+
+pub(crate) mod shape_get_segment_estimate;
+
+pub(crate) mod shape_get_segment_membership;
+
+pub(crate) mod shape_get_segment_snapshot;
+
 pub(crate) mod shape_get_similar_profiles;
 
 pub(crate) mod shape_get_workflow;
@@ -95,6 +115,10 @@ pub(crate) mod shape_list_identity_resolution_jobs;
 
 pub(crate) mod shape_list_integrations;
 
+pub(crate) mod shape_list_object_type_attributes;
+
+pub(crate) mod shape_list_profile_attribute_values;
+
 pub(crate) mod shape_list_profile_object_type_templates;
 
 pub(crate) mod shape_list_profile_object_types;
@@ -102,6 +126,8 @@ pub(crate) mod shape_list_profile_object_types;
 pub(crate) mod shape_list_profile_objects;
 
 pub(crate) mod shape_list_rule_based_matches;
+
+pub(crate) mod shape_list_segment_definitions;
 
 pub(crate) mod shape_list_tags_for_resource;
 
@@ -141,6 +167,10 @@ pub(crate) mod shape_add_profile_key_input;
 
 pub(crate) mod shape_bad_request_exception;
 
+pub(crate) mod shape_batch_get_calculated_attribute_for_profile_input;
+
+pub(crate) mod shape_batch_get_profile_input;
+
 pub(crate) mod shape_create_calculated_attribute_definition_input;
 
 pub(crate) mod shape_create_domain_input;
@@ -150,6 +180,12 @@ pub(crate) mod shape_create_event_stream_input;
 pub(crate) mod shape_create_integration_workflow_input;
 
 pub(crate) mod shape_create_profile_input;
+
+pub(crate) mod shape_create_segment_definition_input;
+
+pub(crate) mod shape_create_segment_estimate_input;
+
+pub(crate) mod shape_create_segment_snapshot_input;
 
 pub(crate) mod shape_delete_integration_input;
 
@@ -164,6 +200,8 @@ pub(crate) mod shape_detect_profile_object_type_input;
 pub(crate) mod shape_get_auto_merging_preview_input;
 
 pub(crate) mod shape_get_integration_input;
+
+pub(crate) mod shape_get_segment_membership_input;
 
 pub(crate) mod shape_get_similar_profiles_input;
 
@@ -203,11 +241,21 @@ pub(crate) mod shape_address;
 
 pub(crate) mod shape_attribute_details;
 
+pub(crate) mod shape_attribute_value_item_list;
+
 pub(crate) mod shape_auto_merging;
+
+pub(crate) mod shape_batch_get_calculated_attribute_for_profile_error_list;
+
+pub(crate) mod shape_batch_get_profile_error_list;
 
 pub(crate) mod shape_calculated_attribute_definitions_list;
 
+pub(crate) mod shape_calculated_attribute_value_list;
+
 pub(crate) mod shape_calculated_attributes_for_profile_list;
+
+pub(crate) mod shape_condition_overrides;
 
 pub(crate) mod shape_conditions;
 
@@ -227,9 +275,13 @@ pub(crate) mod shape_event_stream_summary_list;
 
 pub(crate) mod shape_exporting_location;
 
+pub(crate) mod shape_failures;
+
 pub(crate) mod shape_field_map;
 
 pub(crate) mod shape_field_source_profile_ids;
+
+pub(crate) mod shape_filter;
 
 pub(crate) mod shape_flow_definition;
 
@@ -242,6 +294,8 @@ pub(crate) mod shape_integration_list;
 pub(crate) mod shape_job_stats;
 
 pub(crate) mod shape_key_map;
+
+pub(crate) mod shape_list_object_type_attributes_list;
 
 pub(crate) mod shape_match_id_list;
 
@@ -269,11 +323,19 @@ pub(crate) mod shape_profile_object_type_list;
 
 pub(crate) mod shape_profile_object_type_template_list;
 
+pub(crate) mod shape_profiles;
+
 pub(crate) mod shape_request_value_list;
 
 pub(crate) mod shape_rule_based_matching_request;
 
 pub(crate) mod shape_rule_based_matching_response;
+
+pub(crate) mod shape_segment_definitions_list;
+
+pub(crate) mod shape_segment_group;
+
+pub(crate) mod shape_segment_group_structure;
 
 pub(crate) mod shape_tag_map;
 
@@ -299,11 +361,25 @@ pub(crate) mod shape_attribute_list;
 
 pub(crate) mod shape_attribute_types_selector;
 
+pub(crate) mod shape_attribute_value_item;
+
+pub(crate) mod shape_batch_get_calculated_attribute_for_profile_error;
+
+pub(crate) mod shape_batch_get_profile_error;
+
+pub(crate) mod shape_calculated_attribute_value;
+
 pub(crate) mod shape_detected_profile_object_type;
 
 pub(crate) mod shape_event_stream_summary;
 
 pub(crate) mod shape_exporting_config;
+
+pub(crate) mod shape_filter_group;
+
+pub(crate) mod shape_group;
+
+pub(crate) mod shape_group_list;
 
 pub(crate) mod shape_identity_resolution_job;
 
@@ -316,6 +392,8 @@ pub(crate) mod shape_list_calculated_attribute_for_profile_item;
 pub(crate) mod shape_list_domain_item;
 
 pub(crate) mod shape_list_integration_item;
+
+pub(crate) mod shape_list_object_type_attribute_item;
 
 pub(crate) mod shape_list_profile_object_type_item;
 
@@ -335,9 +413,19 @@ pub(crate) mod shape_object_type_key_list;
 
 pub(crate) mod shape_profile;
 
+pub(crate) mod shape_profile_query_failures;
+
+pub(crate) mod shape_profile_query_result;
+
 pub(crate) mod shape_range;
 
+pub(crate) mod shape_range_override;
+
 pub(crate) mod shape_s3_exporting_location;
+
+pub(crate) mod shape_segment_definition_item;
+
+pub(crate) mod shape_segment_group_list;
 
 pub(crate) mod shape_source_flow_config;
 
@@ -361,7 +449,11 @@ pub(crate) mod shape_connector_operator;
 
 pub(crate) mod shape_destination_summary;
 
+pub(crate) mod shape_dimension;
+
 pub(crate) mod shape_email_list;
+
+pub(crate) mod shape_filter_dimension;
 
 pub(crate) mod shape_found_by_list;
 
@@ -375,9 +467,19 @@ pub(crate) mod shape_s3_exporting_config;
 
 pub(crate) mod shape_source_connector_properties;
 
+pub(crate) mod shape_source_segment;
+
 pub(crate) mod shape_trigger_properties;
 
+pub(crate) mod shape_calculated_attribute_dimension;
+
+pub(crate) mod shape_dimension_list;
+
 pub(crate) mod shape_field_name_list;
+
+pub(crate) mod shape_filter_attribute_dimension;
+
+pub(crate) mod shape_filter_dimension_list;
 
 pub(crate) mod shape_found_by_key_value;
 
@@ -387,6 +489,8 @@ pub(crate) mod shape_matching_attributes;
 
 pub(crate) mod shape_matching_rule_attribute_list;
 
+pub(crate) mod shape_profile_attributes;
+
 pub(crate) mod shape_s3_source_properties;
 
 pub(crate) mod shape_salesforce_source_properties;
@@ -395,6 +499,32 @@ pub(crate) mod shape_scheduled_trigger_properties;
 
 pub(crate) mod shape_service_now_source_properties;
 
+pub(crate) mod shape_source_segment_list;
+
 pub(crate) mod shape_standard_identifier_list;
 
 pub(crate) mod shape_zendesk_source_properties;
+
+pub(crate) mod shape_address_dimension;
+
+pub(crate) mod shape_attribute_dimension;
+
+pub(crate) mod shape_date_dimension;
+
+pub(crate) mod shape_extra_length_value_profile_dimension;
+
+pub(crate) mod shape_profile_dimension;
+
+pub(crate) mod shape_attribute_map;
+
+pub(crate) mod shape_calculated_custom_attributes;
+
+pub(crate) mod shape_custom_attributes;
+
+pub(crate) mod shape_date_values;
+
+pub(crate) mod shape_extra_length_values;
+
+pub(crate) mod shape_value_list;
+
+pub(crate) mod shape_values;

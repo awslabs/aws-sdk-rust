@@ -28,7 +28,7 @@ pub struct CreateConfigurationProfileInput {
     /// /
     /// <objectkey>
     /// </objectkey>
-    /// </bucket></code>. Here is an example: <code>s3://my-bucket/my-app/us-east-1/my-config.json</code></p></li>
+    /// </bucket></code>. Here is an example: <code>s3://amzn-s3-demo-bucket/my-app/us-east-1/my-config.json</code></p></li>
     /// <li>
     /// <p>For an SSM document, specify either the document name in the format <code>ssm-document://<document name></document></code> or the Amazon Resource Name (ARN).</p></li>
     /// </ul>
@@ -80,7 +80,7 @@ impl CreateConfigurationProfileInput {
     /// /
     /// <objectkey>
     /// </objectkey>
-    /// </bucket></code>. Here is an example: <code>s3://my-bucket/my-app/us-east-1/my-config.json</code></p></li>
+    /// </bucket></code>. Here is an example: <code>s3://amzn-s3-demo-bucket/my-app/us-east-1/my-config.json</code></p></li>
     /// <li>
     /// <p>For an SSM document, specify either the document name in the format <code>ssm-document://<document name></document></code> or the Amazon Resource Name (ARN).</p></li>
     /// </ul>
@@ -199,7 +199,7 @@ impl CreateConfigurationProfileInputBuilder {
     /// /
     /// <objectkey>
     /// </objectkey>
-    /// </bucket></code>. Here is an example: <code>s3://my-bucket/my-app/us-east-1/my-config.json</code></p></li>
+    /// </bucket></code>. Here is an example: <code>s3://amzn-s3-demo-bucket/my-app/us-east-1/my-config.json</code></p></li>
     /// <li>
     /// <p>For an SSM document, specify either the document name in the format <code>ssm-document://<document name></document></code> or the Amazon Resource Name (ARN).</p></li>
     /// </ul>
@@ -227,7 +227,7 @@ impl CreateConfigurationProfileInputBuilder {
     /// /
     /// <objectkey>
     /// </objectkey>
-    /// </bucket></code>. Here is an example: <code>s3://my-bucket/my-app/us-east-1/my-config.json</code></p></li>
+    /// </bucket></code>. Here is an example: <code>s3://amzn-s3-demo-bucket/my-app/us-east-1/my-config.json</code></p></li>
     /// <li>
     /// <p>For an SSM document, specify either the document name in the format <code>ssm-document://<document name></document></code> or the Amazon Resource Name (ARN).</p></li>
     /// </ul>
@@ -254,7 +254,7 @@ impl CreateConfigurationProfileInputBuilder {
     /// /
     /// <objectkey>
     /// </objectkey>
-    /// </bucket></code>. Here is an example: <code>s3://my-bucket/my-app/us-east-1/my-config.json</code></p></li>
+    /// </bucket></code>. Here is an example: <code>s3://amzn-s3-demo-bucket/my-app/us-east-1/my-config.json</code></p></li>
     /// <li>
     /// <p>For an SSM document, specify either the document name in the format <code>ssm-document://<document name></document></code> or the Amazon Resource Name (ARN).</p></li>
     /// </ul>

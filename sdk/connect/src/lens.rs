@@ -99,6 +99,16 @@ pub(crate) fn reflens_list_contact_flow_modules_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_contact_flow_versions_output_output_next_token(
+    input: &crate::operation::list_contact_flow_versions::ListContactFlowVersionsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_contact_flows_output_output_next_token(
     input: &crate::operation::list_contact_flows::ListContactFlowsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -680,6 +690,16 @@ pub(crate) fn lens_list_contact_flow_modules_output_output_contact_flow_modules_
     input: crate::operation::list_contact_flow_modules::ListContactFlowModulesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ContactFlowModuleSummary>> {
     let input = match input.contact_flow_modules_summary_list {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_contact_flow_versions_output_output_contact_flow_version_summary_list(
+    input: crate::operation::list_contact_flow_versions::ListContactFlowVersionsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ContactFlowVersionSummary>> {
+    let input = match input.contact_flow_version_summary_list {
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,
     };

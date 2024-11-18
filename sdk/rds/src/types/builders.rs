@@ -167,6 +167,8 @@ pub use crate::types::_db_cluster_snapshot_attributes_result::DbClusterSnapshotA
 
 pub use crate::types::_db_cluster_snapshot_attribute::DbClusterSnapshotAttributeBuilder;
 
+pub use crate::types::_serverless_v2_features_support::ServerlessV2FeaturesSupportBuilder;
+
 pub use crate::types::_timezone::TimezoneBuilder;
 
 pub use crate::types::_upgrade_target::UpgradeTargetBuilder;

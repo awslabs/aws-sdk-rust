@@ -218,6 +218,8 @@ mod create_bulk_import_job;
 
 mod create_dashboard;
 
+mod create_dataset;
+
 mod create_gateway;
 
 mod create_portal;
@@ -261,6 +263,8 @@ mod delete_asset_model_composite_model;
 
 mod delete_dashboard;
 
+mod delete_dataset;
+
 mod delete_gateway;
 
 mod delete_portal;
@@ -286,6 +290,8 @@ mod describe_asset_property;
 mod describe_bulk_import_job;
 
 mod describe_dashboard;
+
+mod describe_dataset;
 
 mod describe_default_encryption_configuration;
 
@@ -319,6 +325,8 @@ mod get_asset_property_value_history;
 
 mod get_interpolated_asset_property_values;
 
+mod invoke_assistant;
+
 mod list_access_policies;
 
 mod list_actions;
@@ -342,6 +350,8 @@ mod list_bulk_import_jobs;
 mod list_composition_relationships;
 
 mod list_dashboards;
+
+mod list_datasets;
 
 mod list_gateways;
 
@@ -376,6 +386,8 @@ mod update_asset_model_composite_model;
 mod update_asset_property;
 
 mod update_dashboard;
+
+mod update_dataset;
 
 mod update_gateway;
 

@@ -17,49 +17,6 @@ pub fn de_execute_query_http_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AccessDeniedException" => crate::operation::execute_query::ExecuteQueryError::AccessDeniedException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::AccessDeniedExceptionBuilder::default();
-                output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(_response_body, output)
-                    .map_err(crate::operation::execute_query::ExecuteQueryError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "InternalFailureException" => crate::operation::execute_query::ExecuteQueryError::InternalFailureException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::InternalFailureExceptionBuilder::default();
-                output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(_response_body, output)
-                    .map_err(crate::operation::execute_query::ExecuteQueryError::unhandled)?;
-                let output = output.meta(generic);
-                crate::serde_util::internal_failure_exception_correct_errors(output)
-                    .build()
-                    .map_err(crate::operation::execute_query::ExecuteQueryError::unhandled)?
-            };
-            tmp
-        }),
-        "InvalidRequestException" => crate::operation::execute_query::ExecuteQueryError::InvalidRequestException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::InvalidRequestExceptionBuilder::default();
-                output = crate::protocol_serde::shape_invalid_request_exception::de_invalid_request_exception_json_err(_response_body, output)
-                    .map_err(crate::operation::execute_query::ExecuteQueryError::unhandled)?;
-                let output = output.meta(generic);
-                crate::serde_util::invalid_request_exception_correct_errors(output)
-                    .build()
-                    .map_err(crate::operation::execute_query::ExecuteQueryError::unhandled)?
-            };
-            tmp
-        }),
         "QueryTimeoutException" => crate::operation::execute_query::ExecuteQueryError::QueryTimeoutException({
             #[allow(unused_mut)]
             let mut tmp = {
@@ -75,30 +32,15 @@ pub fn de_execute_query_http_error(
             }
             tmp
         }),
-        "ServiceUnavailableException" => crate::operation::execute_query::ExecuteQueryError::ServiceUnavailableException({
+        "InvalidRequestException" => crate::operation::execute_query::ExecuteQueryError::InvalidRequestException({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::ServiceUnavailableExceptionBuilder::default();
-                output =
-                    crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(_response_body, output)
-                        .map_err(crate::operation::execute_query::ExecuteQueryError::unhandled)?;
-                let output = output.meta(generic);
-                crate::serde_util::service_unavailable_exception_correct_errors(output)
-                    .build()
-                    .map_err(crate::operation::execute_query::ExecuteQueryError::unhandled)?
-            };
-            tmp
-        }),
-        "ThrottlingException" => crate::operation::execute_query::ExecuteQueryError::ThrottlingException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::ThrottlingExceptionBuilder::default();
-                output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output)
+                let mut output = crate::types::error::builders::InvalidRequestExceptionBuilder::default();
+                output = crate::protocol_serde::shape_invalid_request_exception::de_invalid_request_exception_json_err(_response_body, output)
                     .map_err(crate::operation::execute_query::ExecuteQueryError::unhandled)?;
                 let output = output.meta(generic);
-                crate::serde_util::throttling_exception_correct_errors(output)
+                crate::serde_util::invalid_request_exception_correct_errors(output)
                     .build()
                     .map_err(crate::operation::execute_query::ExecuteQueryError::unhandled)?
             };
@@ -117,6 +59,64 @@ pub fn de_execute_query_http_error(
             if tmp.message.is_none() {
                 tmp.message = _error_message;
             }
+            tmp
+        }),
+        "AccessDeniedException" => crate::operation::execute_query::ExecuteQueryError::AccessDeniedException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::AccessDeniedExceptionBuilder::default();
+                output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::execute_query::ExecuteQueryError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ThrottlingException" => crate::operation::execute_query::ExecuteQueryError::ThrottlingException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ThrottlingExceptionBuilder::default();
+                output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::execute_query::ExecuteQueryError::unhandled)?;
+                let output = output.meta(generic);
+                crate::serde_util::throttling_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::execute_query::ExecuteQueryError::unhandled)?
+            };
+            tmp
+        }),
+        "ServiceUnavailableException" => crate::operation::execute_query::ExecuteQueryError::ServiceUnavailableException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ServiceUnavailableExceptionBuilder::default();
+                output =
+                    crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(_response_body, output)
+                        .map_err(crate::operation::execute_query::ExecuteQueryError::unhandled)?;
+                let output = output.meta(generic);
+                crate::serde_util::service_unavailable_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::execute_query::ExecuteQueryError::unhandled)?
+            };
+            tmp
+        }),
+        "InternalFailureException" => crate::operation::execute_query::ExecuteQueryError::InternalFailureException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InternalFailureExceptionBuilder::default();
+                output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::execute_query::ExecuteQueryError::unhandled)?;
+                let output = output.meta(generic);
+                crate::serde_util::internal_failure_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::execute_query::ExecuteQueryError::unhandled)?
+            };
             tmp
         }),
         _ => crate::operation::execute_query::ExecuteQueryError::generic(generic),

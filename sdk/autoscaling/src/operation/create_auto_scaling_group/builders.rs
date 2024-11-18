@@ -625,4 +625,32 @@ impl CreateAutoScalingGroupFluentBuilder {
     pub fn get_availability_zone_distribution(&self) -> &::std::option::Option<crate::types::AvailabilityZoneDistribution> {
         self.inner.get_availability_zone_distribution()
     }
+    /// <p>The policy for Availability Zone impairment.</p>
+    pub fn availability_zone_impairment_policy(mut self, input: crate::types::AvailabilityZoneImpairmentPolicy) -> Self {
+        self.inner = self.inner.availability_zone_impairment_policy(input);
+        self
+    }
+    /// <p>The policy for Availability Zone impairment.</p>
+    pub fn set_availability_zone_impairment_policy(mut self, input: ::std::option::Option<crate::types::AvailabilityZoneImpairmentPolicy>) -> Self {
+        self.inner = self.inner.set_availability_zone_impairment_policy(input);
+        self
+    }
+    /// <p>The policy for Availability Zone impairment.</p>
+    pub fn get_availability_zone_impairment_policy(&self) -> &::std::option::Option<crate::types::AvailabilityZoneImpairmentPolicy> {
+        self.inner.get_availability_zone_impairment_policy()
+    }
+    /// <p>If you enable zonal shift with cross-zone disabled load balancers, capacity could become imbalanced across Availability Zones. To skip the validation, specify <code>true</code>. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-zonal-shift.html">Auto Scaling group zonal shift</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+    pub fn skip_zonal_shift_validation(mut self, input: bool) -> Self {
+        self.inner = self.inner.skip_zonal_shift_validation(input);
+        self
+    }
+    /// <p>If you enable zonal shift with cross-zone disabled load balancers, capacity could become imbalanced across Availability Zones. To skip the validation, specify <code>true</code>. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-zonal-shift.html">Auto Scaling group zonal shift</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+    pub fn set_skip_zonal_shift_validation(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_skip_zonal_shift_validation(input);
+        self
+    }
+    /// <p>If you enable zonal shift with cross-zone disabled load balancers, capacity could become imbalanced across Availability Zones. To skip the validation, specify <code>true</code>. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-zonal-shift.html">Auto Scaling group zonal shift</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+    pub fn get_skip_zonal_shift_validation(&self) -> &::std::option::Option<bool> {
+        self.inner.get_skip_zonal_shift_validation()
+    }
 }

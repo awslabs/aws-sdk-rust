@@ -153,6 +153,16 @@ pub fn ser_update_auto_scaling_group_input_input_input(
     if let Some(var_52) = &input.availability_zone_distribution {
         crate::protocol_serde::shape_availability_zone_distribution::ser_availability_zone_distribution(scope_51, var_52)?;
     }
+    #[allow(unused_mut)]
+    let mut scope_53 = writer.prefix("AvailabilityZoneImpairmentPolicy");
+    if let Some(var_54) = &input.availability_zone_impairment_policy {
+        crate::protocol_serde::shape_availability_zone_impairment_policy::ser_availability_zone_impairment_policy(scope_53, var_54)?;
+    }
+    #[allow(unused_mut)]
+    let mut scope_55 = writer.prefix("SkipZonalShiftValidation");
+    if let Some(var_56) = &input.skip_zonal_shift_validation {
+        scope_55.boolean(*var_56);
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

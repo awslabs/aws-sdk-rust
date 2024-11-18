@@ -47,6 +47,24 @@ pub(crate) fn create_profile_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn create_segment_definition_output_output_correct_errors(
+    mut builder: crate::operation::create_segment_definition::builders::CreateSegmentDefinitionOutputBuilder,
+) -> crate::operation::create_segment_definition::builders::CreateSegmentDefinitionOutputBuilder {
+    if builder.segment_definition_name.is_none() {
+        builder.segment_definition_name = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn create_segment_snapshot_output_output_correct_errors(
+    mut builder: crate::operation::create_segment_snapshot::builders::CreateSegmentSnapshotOutputBuilder,
+) -> crate::operation::create_segment_snapshot::builders::CreateSegmentSnapshotOutputBuilder {
+    if builder.snapshot_id.is_none() {
+        builder.snapshot_id = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn delete_domain_output_output_correct_errors(
     mut builder: crate::operation::delete_domain::builders::DeleteDomainOutputBuilder,
 ) -> crate::operation::delete_domain::builders::DeleteDomainOutputBuilder {
@@ -152,6 +170,30 @@ pub(crate) fn get_profile_object_type_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn get_segment_definition_output_output_correct_errors(
+    mut builder: crate::operation::get_segment_definition::builders::GetSegmentDefinitionOutputBuilder,
+) -> crate::operation::get_segment_definition::builders::GetSegmentDefinitionOutputBuilder {
+    if builder.segment_definition_arn.is_none() {
+        builder.segment_definition_arn = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn get_segment_snapshot_output_output_correct_errors(
+    mut builder: crate::operation::get_segment_snapshot::builders::GetSegmentSnapshotOutputBuilder,
+) -> crate::operation::get_segment_snapshot::builders::GetSegmentSnapshotOutputBuilder {
+    if builder.snapshot_id.is_none() {
+        builder.snapshot_id = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::SegmentSnapshotStatus>().ok()
+    }
+    if builder.data_format.is_none() {
+        builder.data_format = "no value was set".parse::<crate::types::DataFormat>().ok()
+    }
+    builder
+}
+
 pub(crate) fn put_integration_output_output_correct_errors(
     mut builder: crate::operation::put_integration::builders::PutIntegrationOutputBuilder,
 ) -> crate::operation::put_integration::builders::PutIntegrationOutputBuilder {
@@ -237,6 +279,16 @@ pub(crate) fn auto_merging_correct_errors(mut builder: crate::types::builders::A
     builder
 }
 
+pub(crate) fn filter_correct_errors(mut builder: crate::types::builders::FilterBuilder) -> crate::types::builders::FilterBuilder {
+    if builder.include.is_none() {
+        builder.include = "no value was set".parse::<crate::types::Include>().ok()
+    }
+    if builder.groups.is_none() {
+        builder.groups = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn appflow_integration_workflow_attributes_correct_errors(
     mut builder: crate::types::builders::AppflowIntegrationWorkflowAttributesBuilder,
 ) -> crate::types::builders::AppflowIntegrationWorkflowAttributesBuilder {
@@ -269,6 +321,36 @@ pub(crate) fn attribute_types_selector_correct_errors(
 ) -> crate::types::builders::AttributeTypesSelectorBuilder {
     if builder.attribute_matching_model.is_none() {
         builder.attribute_matching_model = "no value was set".parse::<crate::types::AttributeMatchingModel>().ok()
+    }
+    builder
+}
+
+pub(crate) fn batch_get_calculated_attribute_for_profile_error_correct_errors(
+    mut builder: crate::types::builders::BatchGetCalculatedAttributeForProfileErrorBuilder,
+) -> crate::types::builders::BatchGetCalculatedAttributeForProfileErrorBuilder {
+    if builder.code.is_none() {
+        builder.code = Some(Default::default())
+    }
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
+    }
+    if builder.profile_id.is_none() {
+        builder.profile_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn batch_get_profile_error_correct_errors(
+    mut builder: crate::types::builders::BatchGetProfileErrorBuilder,
+) -> crate::types::builders::BatchGetProfileErrorBuilder {
+    if builder.code.is_none() {
+        builder.code = Some(Default::default())
+    }
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
+    }
+    if builder.profile_id.is_none() {
+        builder.profile_id = Some(Default::default())
     }
     builder
 }
@@ -352,6 +434,18 @@ pub(crate) fn list_integration_item_correct_errors(
     builder
 }
 
+pub(crate) fn list_object_type_attribute_item_correct_errors(
+    mut builder: crate::types::builders::ListObjectTypeAttributeItemBuilder,
+) -> crate::types::builders::ListObjectTypeAttributeItemBuilder {
+    if builder.attribute_name.is_none() {
+        builder.attribute_name = Some(Default::default())
+    }
+    if builder.last_updated_at.is_none() {
+        builder.last_updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
 pub(crate) fn list_profile_object_type_item_correct_errors(
     mut builder: crate::types::builders::ListProfileObjectTypeItemBuilder,
 ) -> crate::types::builders::ListProfileObjectTypeItemBuilder {
@@ -388,12 +482,48 @@ pub(crate) fn list_workflows_item_correct_errors(
     builder
 }
 
+pub(crate) fn profile_query_failures_correct_errors(
+    mut builder: crate::types::builders::ProfileQueryFailuresBuilder,
+) -> crate::types::builders::ProfileQueryFailuresBuilder {
+    if builder.profile_id.is_none() {
+        builder.profile_id = Some(Default::default())
+    }
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn profile_query_result_correct_errors(
+    mut builder: crate::types::builders::ProfileQueryResultBuilder,
+) -> crate::types::builders::ProfileQueryResultBuilder {
+    if builder.profile_id.is_none() {
+        builder.profile_id = Some(Default::default())
+    }
+    if builder.query_result.is_none() {
+        builder.query_result = "no value was set".parse::<crate::types::QueryResult>().ok()
+    }
+    builder
+}
+
 pub(crate) fn range_correct_errors(mut builder: crate::types::builders::RangeBuilder) -> crate::types::builders::RangeBuilder {
     if builder.value.is_none() {
         builder.value = Some(Default::default())
     }
     if builder.unit.is_none() {
         builder.unit = "no value was set".parse::<crate::types::Unit>().ok()
+    }
+    builder
+}
+
+pub(crate) fn range_override_correct_errors(
+    mut builder: crate::types::builders::RangeOverrideBuilder,
+) -> crate::types::builders::RangeOverrideBuilder {
+    if builder.start.is_none() {
+        builder.start = Some(Default::default())
+    }
+    if builder.unit.is_none() {
+        builder.unit = "no value was set".parse::<crate::types::RangeUnit>().ok()
     }
     builder
 }
@@ -459,6 +589,16 @@ pub(crate) fn destination_summary_correct_errors(
     builder
 }
 
+pub(crate) fn filter_group_correct_errors(mut builder: crate::types::builders::FilterGroupBuilder) -> crate::types::builders::FilterGroupBuilder {
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::Type>().ok()
+    }
+    if builder.dimensions.is_none() {
+        builder.dimensions = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn matching_rule_correct_errors(mut builder: crate::types::builders::MatchingRuleBuilder) -> crate::types::builders::MatchingRuleBuilder {
     if builder.rule.is_none() {
         builder.rule = Some(Default::default())
@@ -471,6 +611,87 @@ pub(crate) fn s3_exporting_config_correct_errors(
 ) -> crate::types::builders::S3ExportingConfigBuilder {
     if builder.s3_bucket_name.is_none() {
         builder.s3_bucket_name = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn filter_dimension_correct_errors(
+    mut builder: crate::types::builders::FilterDimensionBuilder,
+) -> crate::types::builders::FilterDimensionBuilder {
+    if builder.attributes.is_none() {
+        builder.attributes = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn calculated_attribute_dimension_correct_errors(
+    mut builder: crate::types::builders::CalculatedAttributeDimensionBuilder,
+) -> crate::types::builders::CalculatedAttributeDimensionBuilder {
+    if builder.dimension_type.is_none() {
+        builder.dimension_type = "no value was set".parse::<crate::types::AttributeDimensionType>().ok()
+    }
+    if builder.values.is_none() {
+        builder.values = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn date_dimension_correct_errors(
+    mut builder: crate::types::builders::DateDimensionBuilder,
+) -> crate::types::builders::DateDimensionBuilder {
+    if builder.dimension_type.is_none() {
+        builder.dimension_type = "no value was set".parse::<crate::types::DateDimensionType>().ok()
+    }
+    if builder.values.is_none() {
+        builder.values = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn extra_length_value_profile_dimension_correct_errors(
+    mut builder: crate::types::builders::ExtraLengthValueProfileDimensionBuilder,
+) -> crate::types::builders::ExtraLengthValueProfileDimensionBuilder {
+    if builder.dimension_type.is_none() {
+        builder.dimension_type = "no value was set".parse::<crate::types::StringDimensionType>().ok()
+    }
+    if builder.values.is_none() {
+        builder.values = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn filter_attribute_dimension_correct_errors(
+    mut builder: crate::types::builders::FilterAttributeDimensionBuilder,
+) -> crate::types::builders::FilterAttributeDimensionBuilder {
+    if builder.dimension_type.is_none() {
+        builder.dimension_type = "no value was set".parse::<crate::types::FilterDimensionType>().ok()
+    }
+    if builder.values.is_none() {
+        builder.values = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn profile_dimension_correct_errors(
+    mut builder: crate::types::builders::ProfileDimensionBuilder,
+) -> crate::types::builders::ProfileDimensionBuilder {
+    if builder.dimension_type.is_none() {
+        builder.dimension_type = "no value was set".parse::<crate::types::StringDimensionType>().ok()
+    }
+    if builder.values.is_none() {
+        builder.values = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn attribute_dimension_correct_errors(
+    mut builder: crate::types::builders::AttributeDimensionBuilder,
+) -> crate::types::builders::AttributeDimensionBuilder {
+    if builder.dimension_type.is_none() {
+        builder.dimension_type = "no value was set".parse::<crate::types::AttributeDimensionType>().ok()
+    }
+    if builder.values.is_none() {
+        builder.values = Some(Default::default())
     }
     builder
 }

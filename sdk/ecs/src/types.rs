@@ -51,6 +51,8 @@ pub use crate::types::_service_event::ServiceEvent;
 
 pub use crate::types::_deployment::Deployment;
 
+pub use crate::types::_vpc_lattice_configuration::VpcLatticeConfiguration;
+
 pub use crate::types::_service_volume_configuration::ServiceVolumeConfiguration;
 
 pub use crate::types::_service_managed_ebs_volume_configuration::ServiceManagedEbsVolumeConfiguration;
@@ -694,6 +696,8 @@ mod _version_info;
 mod _volume;
 
 mod _volume_from;
+
+mod _vpc_lattice_configuration;
 
 /// Builders
 pub mod builders;

@@ -51,6 +51,8 @@ pub(crate) mod shape_create_bulk_import_job;
 
 pub(crate) mod shape_create_dashboard;
 
+pub(crate) mod shape_create_dataset;
+
 pub(crate) mod shape_create_gateway;
 
 pub(crate) mod shape_create_portal;
@@ -66,6 +68,8 @@ pub(crate) mod shape_delete_asset_model;
 pub(crate) mod shape_delete_asset_model_composite_model;
 
 pub(crate) mod shape_delete_dashboard;
+
+pub(crate) mod shape_delete_dataset;
 
 pub(crate) mod shape_delete_gateway;
 
@@ -92,6 +96,8 @@ pub(crate) mod shape_describe_asset_property;
 pub(crate) mod shape_describe_bulk_import_job;
 
 pub(crate) mod shape_describe_dashboard;
+
+pub(crate) mod shape_describe_dataset;
 
 pub(crate) mod shape_describe_default_encryption_configuration;
 
@@ -125,6 +131,8 @@ pub(crate) mod shape_get_asset_property_value_history;
 
 pub(crate) mod shape_get_interpolated_asset_property_values;
 
+pub(crate) mod shape_invoke_assistant;
+
 pub(crate) mod shape_list_access_policies;
 
 pub(crate) mod shape_list_actions;
@@ -148,6 +156,8 @@ pub(crate) mod shape_list_bulk_import_jobs;
 pub(crate) mod shape_list_composition_relationships;
 
 pub(crate) mod shape_list_dashboards;
+
+pub(crate) mod shape_list_datasets;
 
 pub(crate) mod shape_list_gateways;
 
@@ -182,6 +192,8 @@ pub(crate) mod shape_update_asset_model_composite_model;
 pub(crate) mod shape_update_asset_property;
 
 pub(crate) mod shape_update_dashboard;
+
+pub(crate) mod shape_update_dataset;
 
 pub(crate) mod shape_update_gateway;
 
@@ -231,6 +243,8 @@ pub(crate) mod shape_create_bulk_import_job_input;
 
 pub(crate) mod shape_create_dashboard_input;
 
+pub(crate) mod shape_create_dataset_input;
+
 pub(crate) mod shape_create_gateway_input;
 
 pub(crate) mod shape_create_portal_input;
@@ -252,6 +266,10 @@ pub(crate) mod shape_execute_query_input;
 pub(crate) mod shape_internal_failure_exception;
 
 pub(crate) mod shape_invalid_request_exception;
+
+pub(crate) mod shape_invoke_assistant_input;
+
+pub(crate) mod shape_invoke_assistant_output;
 
 pub(crate) mod shape_limit_exceeded_exception;
 
@@ -291,6 +309,8 @@ pub(crate) mod shape_update_asset_property_input;
 
 pub(crate) mod shape_update_dashboard_input;
 
+pub(crate) mod shape_update_dataset_input;
+
 pub(crate) mod shape_update_gateway_capability_configuration_input;
 
 pub(crate) mod shape_update_gateway_input;
@@ -300,6 +320,12 @@ pub(crate) mod shape_update_portal_input;
 pub(crate) mod shape_update_project_input;
 
 pub(crate) mod shape_validation_exception;
+
+pub fn parse_event_stream_error_metadata(
+    payload: &::bytes::Bytes,
+) -> Result<::aws_smithy_types::error::metadata::Builder, ::aws_smithy_json::deserialize::error::DeserializeError> {
+    crate::json_errors::parse_error_metadata(payload, &::aws_smithy_runtime_api::http::Headers::new())
+}
 
 pub(crate) mod shape_access_policy_summaries;
 
@@ -409,6 +435,12 @@ pub(crate) mod shape_configuration_status;
 
 pub(crate) mod shape_dashboard_summaries;
 
+pub(crate) mod shape_dataset_source;
+
+pub(crate) mod shape_dataset_status;
+
+pub(crate) mod shape_dataset_summaries;
+
 pub(crate) mod shape_error_report_location;
 
 pub(crate) mod shape_file;
@@ -442,6 +474,10 @@ pub(crate) mod shape_multi_layer_storage;
 pub(crate) mod shape_portal_status;
 
 pub(crate) mod shape_portal_summaries;
+
+pub(crate) mod shape_portal_type_configuration;
+
+pub(crate) mod shape_portal_type_entry;
 
 pub(crate) mod shape_project_summaries;
 
@@ -535,6 +571,8 @@ pub(crate) mod shape_customer_managed_s3_storage;
 
 pub(crate) mod shape_dashboard_summary;
 
+pub(crate) mod shape_dataset_summary;
+
 pub(crate) mod shape_error_details;
 
 pub(crate) mod shape_file_format;
@@ -554,6 +592,8 @@ pub(crate) mod shape_iam_role_identity;
 pub(crate) mod shape_iam_user_identity;
 
 pub(crate) mod shape_interpolated_asset_property_value;
+
+pub(crate) mod shape_invocation_output;
 
 pub(crate) mod shape_job_summary;
 
@@ -575,9 +615,13 @@ pub(crate) mod shape_row;
 
 pub(crate) mod shape_siemens_ie;
 
+pub(crate) mod shape_source_detail;
+
 pub(crate) mod shape_time_in_nanos;
 
 pub(crate) mod shape_time_series_summary;
+
+pub(crate) mod shape_trace;
 
 pub(crate) mod shape_user_identity;
 
@@ -611,15 +655,21 @@ pub(crate) mod shape_datum_list;
 
 pub(crate) mod shape_detailed_errors;
 
+pub(crate) mod shape_kendra_source_detail;
+
 pub(crate) mod shape_measurement;
 
 pub(crate) mod shape_metric;
 
 pub(crate) mod shape_parquet;
 
+pub(crate) mod shape_portal_tools;
+
 pub(crate) mod shape_transform;
 
 pub(crate) mod shape_batch_put_asset_property_error;
+
+pub(crate) mod shape_citations;
 
 pub(crate) mod shape_column_names;
 
@@ -639,6 +689,8 @@ pub(crate) mod shape_metric_window;
 
 pub(crate) mod shape_transform_processing_config;
 
+pub(crate) mod shape_citation;
+
 pub(crate) mod shape_forwarding_config;
 
 pub(crate) mod shape_timestamps;
@@ -646,3 +698,13 @@ pub(crate) mod shape_timestamps;
 pub(crate) mod shape_tumbling_window;
 
 pub(crate) mod shape_variable_value;
+
+pub(crate) mod shape_content;
+
+pub(crate) mod shape_reference;
+
+pub(crate) mod shape_data_set_reference;
+
+pub(crate) mod shape_source;
+
+pub(crate) mod shape_location;

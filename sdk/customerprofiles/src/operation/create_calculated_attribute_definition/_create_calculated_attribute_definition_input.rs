@@ -15,6 +15,8 @@ pub struct CreateCalculatedAttributeDefinitionInput {
     pub attribute_details: ::std::option::Option<crate::types::AttributeDetails>,
     /// <p>The conditions including range, object count, and threshold for the calculated attribute.</p>
     pub conditions: ::std::option::Option<crate::types::Conditions>,
+    /// <p>Defines how to filter incoming objects to include part of the Calculated Attribute.</p>
+    pub filter: ::std::option::Option<crate::types::Filter>,
     /// <p>The aggregation operation to perform for the calculated attribute.</p>
     pub statistic: ::std::option::Option<crate::types::Statistic>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
@@ -45,6 +47,10 @@ impl CreateCalculatedAttributeDefinitionInput {
     pub fn conditions(&self) -> ::std::option::Option<&crate::types::Conditions> {
         self.conditions.as_ref()
     }
+    /// <p>Defines how to filter incoming objects to include part of the Calculated Attribute.</p>
+    pub fn filter(&self) -> ::std::option::Option<&crate::types::Filter> {
+        self.filter.as_ref()
+    }
     /// <p>The aggregation operation to perform for the calculated attribute.</p>
     pub fn statistic(&self) -> ::std::option::Option<&crate::types::Statistic> {
         self.statistic.as_ref()
@@ -63,6 +69,7 @@ impl ::std::fmt::Debug for CreateCalculatedAttributeDefinitionInput {
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("attribute_details", &"*** Sensitive Data Redacted ***");
         formatter.field("conditions", &"*** Sensitive Data Redacted ***");
+        formatter.field("filter", &self.filter);
         formatter.field("statistic", &"*** Sensitive Data Redacted ***");
         formatter.field("tags", &self.tags);
         formatter.finish()
@@ -85,6 +92,7 @@ pub struct CreateCalculatedAttributeDefinitionInputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) attribute_details: ::std::option::Option<crate::types::AttributeDetails>,
     pub(crate) conditions: ::std::option::Option<crate::types::Conditions>,
+    pub(crate) filter: ::std::option::Option<crate::types::Filter>,
     pub(crate) statistic: ::std::option::Option<crate::types::Statistic>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
@@ -176,6 +184,20 @@ impl CreateCalculatedAttributeDefinitionInputBuilder {
     pub fn get_conditions(&self) -> &::std::option::Option<crate::types::Conditions> {
         &self.conditions
     }
+    /// <p>Defines how to filter incoming objects to include part of the Calculated Attribute.</p>
+    pub fn filter(mut self, input: crate::types::Filter) -> Self {
+        self.filter = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Defines how to filter incoming objects to include part of the Calculated Attribute.</p>
+    pub fn set_filter(mut self, input: ::std::option::Option<crate::types::Filter>) -> Self {
+        self.filter = input;
+        self
+    }
+    /// <p>Defines how to filter incoming objects to include part of the Calculated Attribute.</p>
+    pub fn get_filter(&self) -> &::std::option::Option<crate::types::Filter> {
+        &self.filter
+    }
     /// <p>The aggregation operation to perform for the calculated attribute.</p>
     /// This field is required.
     pub fn statistic(mut self, input: crate::types::Statistic) -> Self {
@@ -226,6 +248,7 @@ impl CreateCalculatedAttributeDefinitionInputBuilder {
                 description: self.description,
                 attribute_details: self.attribute_details,
                 conditions: self.conditions,
+                filter: self.filter,
                 statistic: self.statistic,
                 tags: self.tags,
             },
@@ -241,6 +264,7 @@ impl ::std::fmt::Debug for CreateCalculatedAttributeDefinitionInputBuilder {
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("attribute_details", &"*** Sensitive Data Redacted ***");
         formatter.field("conditions", &"*** Sensitive Data Redacted ***");
+        formatter.field("filter", &self.filter);
         formatter.field("statistic", &"*** Sensitive Data Redacted ***");
         formatter.field("tags", &self.tags);
         formatter.finish()

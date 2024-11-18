@@ -71,6 +71,8 @@ pub use crate::types::_scanned_resource::ScannedResourceBuilder;
 
 pub use crate::types::_scanned_resource_identifier::ScannedResourceIdentifierBuilder;
 
+pub use crate::types::_hook_result_summary::HookResultSummaryBuilder;
+
 pub use crate::types::_template_summary::TemplateSummaryBuilder;
 
 pub use crate::types::_export::ExportBuilder;
