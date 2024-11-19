@@ -140,6 +140,8 @@ pub struct ContainerDefinition {
     /// <p>For tasks that use the EC2 launch type, if the <code>stopTimeout</code> parameter isn't specified, the value set for the Amazon ECS container agent configuration variable <code>ECS_CONTAINER_STOP_TIMEOUT</code> is used. If neither the <code>stopTimeout</code> parameter or the <code>ECS_CONTAINER_STOP_TIMEOUT</code> agent configuration variable are set, then the default values of 30 seconds for Linux containers and 30 seconds on Windows containers are used. Your container instances require at least version 1.26.0 of the container agent to use a container stop timeout value. However, we recommend using the latest container agent version. For information about checking your agent version and updating to the latest version, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. If you're using an Amazon ECS-optimized Linux AMI, your instance needs at least version 1.26.0-1 of the <code>ecs-init</code> package. If your container instances are launched from version <code>20190301</code> or later, then they contain the required versions of the container agent and <code>ecs-init</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     /// <p>The valid values for Fargate are 2-120 seconds.</p>
     pub stop_timeout: ::std::option::Option<i32>,
+    /// <p>Specifies whether Amazon ECS will resolve the container image tag provided in the container definition to an image digest. By default, the value is <code>enabled</code>. If you set the value for a container as <code>disabled</code>, Amazon ECS will not resolve the provided container image tag to a digest and will use the original image URI specified in the container definition for deployment. For more information about container image resolution, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-type-ecs.html#deployment-container-image-stability">Container image resolution</a> in the <i>Amazon ECS Developer Guide</i>.</p>
+    pub version_consistency: ::std::option::Option<crate::types::VersionConsistency>,
     /// <p>The hostname to use for your container. This parameter maps to <code>Hostname</code> in the docker container create command and the <code>--hostname</code> option to docker run.</p><note>
     /// <p>The <code>hostname</code> parameter is not supported if you're using the <code>awsvpc</code> network mode.</p>
     /// </note>
@@ -449,6 +451,10 @@ impl ContainerDefinition {
     pub fn stop_timeout(&self) -> ::std::option::Option<i32> {
         self.stop_timeout
     }
+    /// <p>Specifies whether Amazon ECS will resolve the container image tag provided in the container definition to an image digest. By default, the value is <code>enabled</code>. If you set the value for a container as <code>disabled</code>, Amazon ECS will not resolve the provided container image tag to a digest and will use the original image URI specified in the container definition for deployment. For more information about container image resolution, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-type-ecs.html#deployment-container-image-stability">Container image resolution</a> in the <i>Amazon ECS Developer Guide</i>.</p>
+    pub fn version_consistency(&self) -> ::std::option::Option<&crate::types::VersionConsistency> {
+        self.version_consistency.as_ref()
+    }
     /// <p>The hostname to use for your container. This parameter maps to <code>Hostname</code> in the docker container create command and the <code>--hostname</code> option to docker run.</p><note>
     /// <p>The <code>hostname</code> parameter is not supported if you're using the <code>awsvpc</code> network mode.</p>
     /// </note>
@@ -647,6 +653,7 @@ pub struct ContainerDefinitionBuilder {
     pub(crate) depends_on: ::std::option::Option<::std::vec::Vec<crate::types::ContainerDependency>>,
     pub(crate) start_timeout: ::std::option::Option<i32>,
     pub(crate) stop_timeout: ::std::option::Option<i32>,
+    pub(crate) version_consistency: ::std::option::Option<crate::types::VersionConsistency>,
     pub(crate) hostname: ::std::option::Option<::std::string::String>,
     pub(crate) user: ::std::option::Option<::std::string::String>,
     pub(crate) working_directory: ::std::option::Option<::std::string::String>,
@@ -1305,6 +1312,20 @@ impl ContainerDefinitionBuilder {
     pub fn get_stop_timeout(&self) -> &::std::option::Option<i32> {
         &self.stop_timeout
     }
+    /// <p>Specifies whether Amazon ECS will resolve the container image tag provided in the container definition to an image digest. By default, the value is <code>enabled</code>. If you set the value for a container as <code>disabled</code>, Amazon ECS will not resolve the provided container image tag to a digest and will use the original image URI specified in the container definition for deployment. For more information about container image resolution, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-type-ecs.html#deployment-container-image-stability">Container image resolution</a> in the <i>Amazon ECS Developer Guide</i>.</p>
+    pub fn version_consistency(mut self, input: crate::types::VersionConsistency) -> Self {
+        self.version_consistency = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether Amazon ECS will resolve the container image tag provided in the container definition to an image digest. By default, the value is <code>enabled</code>. If you set the value for a container as <code>disabled</code>, Amazon ECS will not resolve the provided container image tag to a digest and will use the original image URI specified in the container definition for deployment. For more information about container image resolution, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-type-ecs.html#deployment-container-image-stability">Container image resolution</a> in the <i>Amazon ECS Developer Guide</i>.</p>
+    pub fn set_version_consistency(mut self, input: ::std::option::Option<crate::types::VersionConsistency>) -> Self {
+        self.version_consistency = input;
+        self
+    }
+    /// <p>Specifies whether Amazon ECS will resolve the container image tag provided in the container definition to an image digest. By default, the value is <code>enabled</code>. If you set the value for a container as <code>disabled</code>, Amazon ECS will not resolve the provided container image tag to a digest and will use the original image URI specified in the container definition for deployment. For more information about container image resolution, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-type-ecs.html#deployment-container-image-stability">Container image resolution</a> in the <i>Amazon ECS Developer Guide</i>.</p>
+    pub fn get_version_consistency(&self) -> &::std::option::Option<crate::types::VersionConsistency> {
+        &self.version_consistency
+    }
     /// <p>The hostname to use for your container. This parameter maps to <code>Hostname</code> in the docker container create command and the <code>--hostname</code> option to docker run.</p><note>
     /// <p>The <code>hostname</code> parameter is not supported if you're using the <code>awsvpc</code> network mode.</p>
     /// </note>
@@ -1873,6 +1894,7 @@ impl ContainerDefinitionBuilder {
             depends_on: self.depends_on,
             start_timeout: self.start_timeout,
             stop_timeout: self.stop_timeout,
+            version_consistency: self.version_consistency,
             hostname: self.hostname,
             user: self.user,
             working_directory: self.working_directory,

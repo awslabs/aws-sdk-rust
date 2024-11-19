@@ -128,6 +128,15 @@ pub(crate) fn restore_table_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn update_keyspace_output_output_correct_errors(
+    mut builder: crate::operation::update_keyspace::builders::UpdateKeyspaceOutputBuilder,
+) -> crate::operation::update_keyspace::builders::UpdateKeyspaceOutputBuilder {
+    if builder.resource_arn.is_none() {
+        builder.resource_arn = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn update_table_output_output_correct_errors(
     mut builder: crate::operation::update_table::builders::UpdateTableOutputBuilder,
 ) -> crate::operation::update_table::builders::UpdateTableOutputBuilder {
@@ -222,6 +231,18 @@ pub(crate) fn keyspace_summary_correct_errors(
     }
     if builder.replication_strategy.is_none() {
         builder.replication_strategy = "no value was set".parse::<crate::types::Rs>().ok()
+    }
+    builder
+}
+
+pub(crate) fn replication_group_status_correct_errors(
+    mut builder: crate::types::builders::ReplicationGroupStatusBuilder,
+) -> crate::types::builders::ReplicationGroupStatusBuilder {
+    if builder.region.is_none() {
+        builder.region = Some(Default::default())
+    }
+    if builder.keyspace_status.is_none() {
+        builder.keyspace_status = "no value was set".parse::<crate::types::KeyspaceStatus>().ok()
     }
     builder
 }

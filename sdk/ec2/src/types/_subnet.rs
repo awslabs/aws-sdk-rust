@@ -30,6 +30,8 @@ pub struct Subnet {
     pub ipv6_native: ::std::option::Option<bool>,
     /// <p>The type of hostnames to assign to instances in the subnet at launch. An instance hostname is based on the IPv4 address or ID of the instance.</p>
     pub private_dns_name_options_on_launch: ::std::option::Option<crate::types::PrivateDnsNameOptionsOnLaunch>,
+    /// <p>The state of VPC Block Public Access (BPA).</p>
+    pub block_public_access_states: ::std::option::Option<crate::types::BlockPublicAccessStates>,
     /// <p>The ID of the subnet.</p>
     pub subnet_id: ::std::option::Option<::std::string::String>,
     /// <p>The current state of the subnet.</p>
@@ -105,6 +107,10 @@ impl Subnet {
     pub fn private_dns_name_options_on_launch(&self) -> ::std::option::Option<&crate::types::PrivateDnsNameOptionsOnLaunch> {
         self.private_dns_name_options_on_launch.as_ref()
     }
+    /// <p>The state of VPC Block Public Access (BPA).</p>
+    pub fn block_public_access_states(&self) -> ::std::option::Option<&crate::types::BlockPublicAccessStates> {
+        self.block_public_access_states.as_ref()
+    }
     /// <p>The ID of the subnet.</p>
     pub fn subnet_id(&self) -> ::std::option::Option<&str> {
         self.subnet_id.as_deref()
@@ -163,6 +169,7 @@ pub struct SubnetBuilder {
     pub(crate) enable_dns64: ::std::option::Option<bool>,
     pub(crate) ipv6_native: ::std::option::Option<bool>,
     pub(crate) private_dns_name_options_on_launch: ::std::option::Option<crate::types::PrivateDnsNameOptionsOnLaunch>,
+    pub(crate) block_public_access_states: ::std::option::Option<crate::types::BlockPublicAccessStates>,
     pub(crate) subnet_id: ::std::option::Option<::std::string::String>,
     pub(crate) state: ::std::option::Option<crate::types::SubnetState>,
     pub(crate) vpc_id: ::std::option::Option<::std::string::String>,
@@ -370,6 +377,20 @@ impl SubnetBuilder {
     pub fn get_private_dns_name_options_on_launch(&self) -> &::std::option::Option<crate::types::PrivateDnsNameOptionsOnLaunch> {
         &self.private_dns_name_options_on_launch
     }
+    /// <p>The state of VPC Block Public Access (BPA).</p>
+    pub fn block_public_access_states(mut self, input: crate::types::BlockPublicAccessStates) -> Self {
+        self.block_public_access_states = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The state of VPC Block Public Access (BPA).</p>
+    pub fn set_block_public_access_states(mut self, input: ::std::option::Option<crate::types::BlockPublicAccessStates>) -> Self {
+        self.block_public_access_states = input;
+        self
+    }
+    /// <p>The state of VPC Block Public Access (BPA).</p>
+    pub fn get_block_public_access_states(&self) -> &::std::option::Option<crate::types::BlockPublicAccessStates> {
+        &self.block_public_access_states
+    }
     /// <p>The ID of the subnet.</p>
     pub fn subnet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subnet_id = ::std::option::Option::Some(input.into());
@@ -501,6 +522,7 @@ impl SubnetBuilder {
             enable_dns64: self.enable_dns64,
             ipv6_native: self.ipv6_native,
             private_dns_name_options_on_launch: self.private_dns_name_options_on_launch,
+            block_public_access_states: self.block_public_access_states,
             subnet_id: self.subnet_id,
             state: self.state,
             vpc_id: self.vpc_id,

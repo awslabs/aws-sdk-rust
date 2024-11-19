@@ -3,6 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum Error {
+    /// <p>The access is denied for the Amazon Web Services Support API.</p>
+    AccessDeniedException(crate::types::error::AccessDeniedException),
+    /// <p>Failed to upload the tax exemption document to Amazon Web Services Support case.</p>
+    AttachmentUploadException(crate::types::error::AttachmentUploadException),
+    /// <p>You've exceeded the Amazon Web Services Support case creation limit for your account.</p>
+    CaseCreationLimitExceededException(crate::types::error::CaseCreationLimitExceededException),
     /// <p>The exception when the input is creating conflict with the given state.</p>
     ConflictException(crate::types::error::ConflictException),
     /// <p>The exception thrown when an unexpected error occurs when processing a request.</p>
@@ -23,6 +29,9 @@ pub enum Error {
 impl ::std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
+            Error::AccessDeniedException(inner) => inner.fmt(f),
+            Error::AttachmentUploadException(inner) => inner.fmt(f),
+            Error::CaseCreationLimitExceededException(inner) => inner.fmt(f),
             Error::ConflictException(inner) => inner.fmt(f),
             Error::InternalServerException(inner) => inner.fmt(f),
             Error::ResourceNotFoundException(inner) => inner.fmt(f),
@@ -48,6 +57,9 @@ impl From<::aws_smithy_types::error::operation::BuildError> for Error {
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
     fn meta(&self) -> &::aws_smithy_types::error::metadata::ErrorMetadata {
         match self {
+            Self::AccessDeniedException(inner) => inner.meta(),
+            Self::AttachmentUploadException(inner) => inner.meta(),
+            Self::CaseCreationLimitExceededException(inner) => inner.meta(),
             Self::ConflictException(inner) => inner.meta(),
             Self::InternalServerException(inner) => inner.meta(),
             Self::ResourceNotFoundException(inner) => inner.meta(),
@@ -86,6 +98,36 @@ impl From<crate::operation::batch_delete_tax_registration::BatchDeleteTaxRegistr
                 Error::ValidationException(inner)
             }
             crate::operation::batch_delete_tax_registration::BatchDeleteTaxRegistrationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::batch_get_tax_exemptions::BatchGetTaxExemptionsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::batch_get_tax_exemptions::BatchGetTaxExemptionsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::batch_get_tax_exemptions::BatchGetTaxExemptionsError> for Error {
+    fn from(err: crate::operation::batch_get_tax_exemptions::BatchGetTaxExemptionsError) -> Self {
+        match err {
+            crate::operation::batch_get_tax_exemptions::BatchGetTaxExemptionsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::batch_get_tax_exemptions::BatchGetTaxExemptionsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::batch_get_tax_exemptions::BatchGetTaxExemptionsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::batch_get_tax_exemptions::BatchGetTaxExemptionsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -197,6 +239,62 @@ impl From<crate::operation::delete_tax_registration::DeleteTaxRegistrationError>
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_tax_exemption_types::GetTaxExemptionTypesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_tax_exemption_types::GetTaxExemptionTypesError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_tax_exemption_types::GetTaxExemptionTypesError> for Error {
+    fn from(err: crate::operation::get_tax_exemption_types::GetTaxExemptionTypesError) -> Self {
+        match err {
+            crate::operation::get_tax_exemption_types::GetTaxExemptionTypesError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_tax_exemption_types::GetTaxExemptionTypesError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_tax_exemption_types::GetTaxExemptionTypesError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_tax_exemption_types::GetTaxExemptionTypesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_tax_inheritance::GetTaxInheritanceError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_tax_inheritance::GetTaxInheritanceError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_tax_inheritance::GetTaxInheritanceError> for Error {
+    fn from(err: crate::operation::get_tax_inheritance::GetTaxInheritanceError) -> Self {
+        match err {
+            crate::operation::get_tax_inheritance::GetTaxInheritanceError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_tax_inheritance::GetTaxInheritanceError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_tax_inheritance::GetTaxInheritanceError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_tax_inheritance::GetTaxInheritanceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_tax_registration::GetTaxRegistrationError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -294,6 +392,32 @@ impl From<crate::operation::list_supplemental_tax_registrations::ListSupplementa
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_tax_exemptions::ListTaxExemptionsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_tax_exemptions::ListTaxExemptionsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_tax_exemptions::ListTaxExemptionsError> for Error {
+    fn from(err: crate::operation::list_tax_exemptions::ListTaxExemptionsError) -> Self {
+        match err {
+            crate::operation::list_tax_exemptions::ListTaxExemptionsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_tax_exemptions::ListTaxExemptionsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_tax_exemptions::ListTaxExemptionsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_tax_exemptions::ListTaxExemptionsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_tax_registrations::ListTaxRegistrationsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -363,6 +487,62 @@ impl From<crate::operation::put_supplemental_tax_registration::PutSupplementalTa
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_tax_exemption::PutTaxExemptionError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_tax_exemption::PutTaxExemptionError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::put_tax_exemption::PutTaxExemptionError> for Error {
+    fn from(err: crate::operation::put_tax_exemption::PutTaxExemptionError) -> Self {
+        match err {
+            crate::operation::put_tax_exemption::PutTaxExemptionError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::put_tax_exemption::PutTaxExemptionError::AttachmentUploadException(inner) => Error::AttachmentUploadException(inner),
+            crate::operation::put_tax_exemption::PutTaxExemptionError::CaseCreationLimitExceededException(inner) => {
+                Error::CaseCreationLimitExceededException(inner)
+            }
+            crate::operation::put_tax_exemption::PutTaxExemptionError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::put_tax_exemption::PutTaxExemptionError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::put_tax_exemption::PutTaxExemptionError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::put_tax_exemption::PutTaxExemptionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_tax_inheritance::PutTaxInheritanceError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_tax_inheritance::PutTaxInheritanceError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::put_tax_inheritance::PutTaxInheritanceError> for Error {
+    fn from(err: crate::operation::put_tax_inheritance::PutTaxInheritanceError) -> Self {
+        match err {
+            crate::operation::put_tax_inheritance::PutTaxInheritanceError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::put_tax_inheritance::PutTaxInheritanceError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::put_tax_inheritance::PutTaxInheritanceError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::put_tax_inheritance::PutTaxInheritanceError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::put_tax_inheritance::PutTaxInheritanceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_tax_registration::PutTaxRegistrationError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -390,6 +570,9 @@ impl From<crate::operation::put_tax_registration::PutTaxRegistrationError> for E
 impl ::std::error::Error for Error {
     fn source(&self) -> std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
+            Error::AccessDeniedException(inner) => inner.source(),
+            Error::AttachmentUploadException(inner) => inner.source(),
+            Error::CaseCreationLimitExceededException(inner) => inner.source(),
             Error::ConflictException(inner) => inner.source(),
             Error::InternalServerException(inner) => inner.source(),
             Error::ResourceNotFoundException(inner) => inner.source(),
@@ -401,6 +584,9 @@ impl ::std::error::Error for Error {
 impl ::aws_types::request_id::RequestId for Error {
     fn request_id(&self) -> Option<&str> {
         match self {
+            Self::AccessDeniedException(e) => e.request_id(),
+            Self::AttachmentUploadException(e) => e.request_id(),
+            Self::CaseCreationLimitExceededException(e) => e.request_id(),
             Self::ConflictException(e) => e.request_id(),
             Self::InternalServerException(e) => e.request_id(),
             Self::ResourceNotFoundException(e) => e.request_id(),

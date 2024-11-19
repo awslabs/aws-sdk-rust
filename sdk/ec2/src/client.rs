@@ -614,6 +614,8 @@ mod create_volume;
 
 mod create_vpc;
 
+mod create_vpc_block_public_access_exclusion;
+
 mod create_vpc_endpoint;
 
 mod create_vpc_endpoint_connection_notification;
@@ -790,6 +792,8 @@ mod delete_verified_access_trust_provider;
 mod delete_volume;
 
 mod delete_vpc;
+
+mod delete_vpc_block_public_access_exclusion;
 
 mod delete_vpc_endpoint_connection_notifications;
 
@@ -1106,6 +1110,10 @@ mod describe_volumes;
 mod describe_volumes_modifications;
 
 mod describe_vpc_attribute;
+
+mod describe_vpc_block_public_access_exclusions;
+
+mod describe_vpc_block_public_access_options;
 
 mod describe_vpc_classic_link;
 
@@ -1478,6 +1486,10 @@ mod modify_volume;
 mod modify_volume_attribute;
 
 mod modify_vpc_attribute;
+
+mod modify_vpc_block_public_access_exclusion;
+
+mod modify_vpc_block_public_access_options;
 
 mod modify_vpc_endpoint;
 

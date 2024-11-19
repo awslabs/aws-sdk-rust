@@ -11,6 +11,8 @@ pub struct GetKeyspaceOutput {
     pub replication_strategy: crate::types::Rs,
     /// <p>If the <code>replicationStrategy</code> of the keyspace is <code>MULTI_REGION</code>, a list of replication Regions is returned.</p>
     pub replication_regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>A list of all Regions the keyspace is replicated in after the update keyspace operation and their status.</p>
+    pub replication_group_statuses: ::std::option::Option<::std::vec::Vec<crate::types::ReplicationGroupStatus>>,
     _request_id: Option<String>,
 }
 impl GetKeyspaceOutput {
@@ -34,6 +36,12 @@ impl GetKeyspaceOutput {
     pub fn replication_regions(&self) -> &[::std::string::String] {
         self.replication_regions.as_deref().unwrap_or_default()
     }
+    /// <p>A list of all Regions the keyspace is replicated in after the update keyspace operation and their status.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.replication_group_statuses.is_none()`.
+    pub fn replication_group_statuses(&self) -> &[crate::types::ReplicationGroupStatus] {
+        self.replication_group_statuses.as_deref().unwrap_or_default()
+    }
 }
 impl ::aws_types::request_id::RequestId for GetKeyspaceOutput {
     fn request_id(&self) -> Option<&str> {
@@ -55,6 +63,7 @@ pub struct GetKeyspaceOutputBuilder {
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
     pub(crate) replication_strategy: ::std::option::Option<crate::types::Rs>,
     pub(crate) replication_regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) replication_group_statuses: ::std::option::Option<::std::vec::Vec<crate::types::ReplicationGroupStatus>>,
     _request_id: Option<String>,
 }
 impl GetKeyspaceOutputBuilder {
@@ -123,6 +132,26 @@ impl GetKeyspaceOutputBuilder {
     pub fn get_replication_regions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.replication_regions
     }
+    /// Appends an item to `replication_group_statuses`.
+    ///
+    /// To override the contents of this collection use [`set_replication_group_statuses`](Self::set_replication_group_statuses).
+    ///
+    /// <p>A list of all Regions the keyspace is replicated in after the update keyspace operation and their status.</p>
+    pub fn replication_group_statuses(mut self, input: crate::types::ReplicationGroupStatus) -> Self {
+        let mut v = self.replication_group_statuses.unwrap_or_default();
+        v.push(input);
+        self.replication_group_statuses = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of all Regions the keyspace is replicated in after the update keyspace operation and their status.</p>
+    pub fn set_replication_group_statuses(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ReplicationGroupStatus>>) -> Self {
+        self.replication_group_statuses = input;
+        self
+    }
+    /// <p>A list of all Regions the keyspace is replicated in after the update keyspace operation and their status.</p>
+    pub fn get_replication_group_statuses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReplicationGroupStatus>> {
+        &self.replication_group_statuses
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -158,6 +187,7 @@ impl GetKeyspaceOutputBuilder {
                 )
             })?,
             replication_regions: self.replication_regions,
+            replication_group_statuses: self.replication_group_statuses,
             _request_id: self._request_id,
         })
     }

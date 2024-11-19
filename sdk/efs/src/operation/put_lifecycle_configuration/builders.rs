@@ -29,7 +29,7 @@ impl crate::operation::put_lifecycle_configuration::builders::PutLifecycleConfig
 /// <li>
 /// <p><b> <code>TransitionToArchive</code> </b> – When to move files in the file system from their current storage class (either IA or Standard storage) into the Archive storage.</p>
 /// <p>File systems cannot transition into Archive storage before transitioning into IA storage. Therefore, TransitionToArchive must either not be set or must be later than TransitionToIA.</p><note>
-/// <p>The Archive storage class is available only for file systems that use the Elastic Throughput mode and the General Purpose Performance mode.</p>
+/// <p>The Archive storage class is available only for file systems that use the Elastic throughput mode and the General Purpose performance mode.</p>
 /// </note></li>
 /// </ul>
 /// <ul>
@@ -40,7 +40,7 @@ impl crate::operation::put_lifecycle_configuration::builders::PutLifecycleConfig
 /// <p>Each Amazon EFS file system supports one lifecycle configuration, which applies to all files in the file system. If a <code>LifecycleConfiguration</code> object already exists for the specified file system, a <code>PutLifecycleConfiguration</code> call modifies the existing configuration. A <code>PutLifecycleConfiguration</code> call with an empty <code>LifecyclePolicies</code> array in the request body deletes any existing <code>LifecycleConfiguration</code>. In the request, specify the following:</p>
 /// <ul>
 /// <li>
-/// <p>The ID for the file system for which you are enabling, disabling, or modifying Lifecycle management.</p></li>
+/// <p>The ID for the file system for which you are enabling, disabling, or modifying lifecycle management.</p></li>
 /// <li>
 /// <p>A <code>LifecyclePolicies</code> array of <code>LifecyclePolicy</code> objects that define when to move files to IA storage, to Archive storage, and back to primary storage.</p><note>
 /// <p>Amazon EFS requires that each <code>LifecyclePolicy</code> object have only have a single transition, so the <code>LifecyclePolicies</code> array needs to be structured with separate <code>LifecyclePolicy</code> objects. See the example requests in the following section for more information.</p>
@@ -152,14 +152,14 @@ impl PutLifecycleConfigurationFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_lifecycle_policies`](Self::set_lifecycle_policies).
     ///
-    /// <p>An array of <code>LifecyclePolicy</code> objects that define the file system's <code>LifecycleConfiguration</code> object. A <code>LifecycleConfiguration</code> object informs EFS Lifecycle management of the following:</p>
+    /// <p>An array of <code>LifecyclePolicy</code> objects that define the file system's <code>LifecycleConfiguration</code> object. A <code>LifecycleConfiguration</code> object informs lifecycle management of the following:</p>
     /// <ul>
     /// <li>
     /// <p><b> <code>TransitionToIA</code> </b> – When to move files in the file system from primary storage (Standard storage class) into the Infrequent Access (IA) storage.</p></li>
     /// <li>
     /// <p><b> <code>TransitionToArchive</code> </b> – When to move files in the file system from their current storage class (either IA or Standard storage) into the Archive storage.</p>
     /// <p>File systems cannot transition into Archive storage before transitioning into IA storage. Therefore, TransitionToArchive must either not be set or must be later than TransitionToIA.</p><note>
-    /// <p>The Archive storage class is available only for file systems that use the Elastic Throughput mode and the General Purpose Performance mode.</p>
+    /// <p>The Archive storage class is available only for file systems that use the Elastic throughput mode and the General Purpose performance mode.</p>
     /// </note></li>
     /// <li>
     /// <p><b> <code>TransitionToPrimaryStorageClass</code> </b> – Whether to move files in the file system back to primary storage (Standard storage class) after they are accessed in IA or Archive storage.</p></li>
@@ -170,14 +170,14 @@ impl PutLifecycleConfigurationFluentBuilder {
         self.inner = self.inner.lifecycle_policies(input);
         self
     }
-    /// <p>An array of <code>LifecyclePolicy</code> objects that define the file system's <code>LifecycleConfiguration</code> object. A <code>LifecycleConfiguration</code> object informs EFS Lifecycle management of the following:</p>
+    /// <p>An array of <code>LifecyclePolicy</code> objects that define the file system's <code>LifecycleConfiguration</code> object. A <code>LifecycleConfiguration</code> object informs lifecycle management of the following:</p>
     /// <ul>
     /// <li>
     /// <p><b> <code>TransitionToIA</code> </b> – When to move files in the file system from primary storage (Standard storage class) into the Infrequent Access (IA) storage.</p></li>
     /// <li>
     /// <p><b> <code>TransitionToArchive</code> </b> – When to move files in the file system from their current storage class (either IA or Standard storage) into the Archive storage.</p>
     /// <p>File systems cannot transition into Archive storage before transitioning into IA storage. Therefore, TransitionToArchive must either not be set or must be later than TransitionToIA.</p><note>
-    /// <p>The Archive storage class is available only for file systems that use the Elastic Throughput mode and the General Purpose Performance mode.</p>
+    /// <p>The Archive storage class is available only for file systems that use the Elastic throughput mode and the General Purpose performance mode.</p>
     /// </note></li>
     /// <li>
     /// <p><b> <code>TransitionToPrimaryStorageClass</code> </b> – Whether to move files in the file system back to primary storage (Standard storage class) after they are accessed in IA or Archive storage.</p></li>
@@ -188,14 +188,14 @@ impl PutLifecycleConfigurationFluentBuilder {
         self.inner = self.inner.set_lifecycle_policies(input);
         self
     }
-    /// <p>An array of <code>LifecyclePolicy</code> objects that define the file system's <code>LifecycleConfiguration</code> object. A <code>LifecycleConfiguration</code> object informs EFS Lifecycle management of the following:</p>
+    /// <p>An array of <code>LifecyclePolicy</code> objects that define the file system's <code>LifecycleConfiguration</code> object. A <code>LifecycleConfiguration</code> object informs lifecycle management of the following:</p>
     /// <ul>
     /// <li>
     /// <p><b> <code>TransitionToIA</code> </b> – When to move files in the file system from primary storage (Standard storage class) into the Infrequent Access (IA) storage.</p></li>
     /// <li>
     /// <p><b> <code>TransitionToArchive</code> </b> – When to move files in the file system from their current storage class (either IA or Standard storage) into the Archive storage.</p>
     /// <p>File systems cannot transition into Archive storage before transitioning into IA storage. Therefore, TransitionToArchive must either not be set or must be later than TransitionToIA.</p><note>
-    /// <p>The Archive storage class is available only for file systems that use the Elastic Throughput mode and the General Purpose Performance mode.</p>
+    /// <p>The Archive storage class is available only for file systems that use the Elastic throughput mode and the General Purpose performance mode.</p>
     /// </note></li>
     /// <li>
     /// <p><b> <code>TransitionToPrimaryStorageClass</code> </b> – Whether to move files in the file system back to primary storage (Standard storage class) after they are accessed in IA or Archive storage.</p></li>

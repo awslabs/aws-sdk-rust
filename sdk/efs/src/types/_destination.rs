@@ -4,13 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Destination {
-    /// <p>Describes the status of the destination EFS file system.</p>
-    /// <ul>
-    /// <li>
-    /// <p>The <code>Paused</code> state occurs as a result of opting out of the source or destination Region after the replication configuration was created. To resume replication for the file system, you need to again opt in to the Amazon Web Services Region. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande-manage.html#rande-manage-enable">Managing Amazon Web Services Regions</a> in the <i>Amazon Web Services General Reference Guide</i>.</p></li>
-    /// <li>
-    /// <p>The <code>Error</code> state occurs when either the source or the destination file system (or both) is in a failed state and is unrecoverable. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/awsbackup.html#restoring-backup-efsmonitoring-replication-status.html">Monitoring replication status</a> in the <i>Amazon EFS User Guide</i>. You must delete the replication configuration, and then restore the most recent backup of the failed file system (either the source or the destination) to a new file system.</p></li>
-    /// </ul>
+    /// <p>Describes the status of the replication configuration. For more information about replication status, see <a href="https://docs.aws.amazon.com/efs/latest/ug/awsbackup.html#restoring-backup-efsmonitoring-replication-status.html">Viewing replication details</a> in the <i>Amazon EFS User Guide</i>.</p>
     pub status: crate::types::ReplicationStatus,
     /// <p>The ID of the destination Amazon EFS file system.</p>
     pub file_system_id: ::std::string::String,
@@ -18,15 +12,15 @@ pub struct Destination {
     pub region: ::std::string::String,
     /// <p>The time when the most recent sync was successfully completed on the destination file system. Any changes to data on the source file system that occurred before this time have been successfully replicated to the destination file system. Any changes that occurred after this time might not be fully replicated.</p>
     pub last_replicated_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>ID of the Amazon Web Services account in which the destination file system resides.</p>
+    pub owner_id: ::std::option::Option<::std::string::String>,
+    /// <p>Message that provides details about the <code>PAUSED</code> or <code>ERRROR</code> state of the replication destination configuration. For more information about replication status messages, see <a href="https://docs.aws.amazon.com/efs/latest/ug/awsbackup.html#restoring-backup-efsmonitoring-replication-status.html">Viewing replication details</a> in the <i>Amazon EFS User Guide</i>.</p>
+    pub status_message: ::std::option::Option<::std::string::String>,
+    /// <p>Amazon Resource Name (ARN) of the IAM role in the source account that allows Amazon EFS to perform replication on its behalf. This is optional for same-account replication and required for cross-account replication.</p>
+    pub role_arn: ::std::option::Option<::std::string::String>,
 }
 impl Destination {
-    /// <p>Describes the status of the destination EFS file system.</p>
-    /// <ul>
-    /// <li>
-    /// <p>The <code>Paused</code> state occurs as a result of opting out of the source or destination Region after the replication configuration was created. To resume replication for the file system, you need to again opt in to the Amazon Web Services Region. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande-manage.html#rande-manage-enable">Managing Amazon Web Services Regions</a> in the <i>Amazon Web Services General Reference Guide</i>.</p></li>
-    /// <li>
-    /// <p>The <code>Error</code> state occurs when either the source or the destination file system (or both) is in a failed state and is unrecoverable. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/awsbackup.html#restoring-backup-efsmonitoring-replication-status.html">Monitoring replication status</a> in the <i>Amazon EFS User Guide</i>. You must delete the replication configuration, and then restore the most recent backup of the failed file system (either the source or the destination) to a new file system.</p></li>
-    /// </ul>
+    /// <p>Describes the status of the replication configuration. For more information about replication status, see <a href="https://docs.aws.amazon.com/efs/latest/ug/awsbackup.html#restoring-backup-efsmonitoring-replication-status.html">Viewing replication details</a> in the <i>Amazon EFS User Guide</i>.</p>
     pub fn status(&self) -> &crate::types::ReplicationStatus {
         &self.status
     }
@@ -44,6 +38,18 @@ impl Destination {
     pub fn last_replicated_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_replicated_timestamp.as_ref()
     }
+    /// <p>ID of the Amazon Web Services account in which the destination file system resides.</p>
+    pub fn owner_id(&self) -> ::std::option::Option<&str> {
+        self.owner_id.as_deref()
+    }
+    /// <p>Message that provides details about the <code>PAUSED</code> or <code>ERRROR</code> state of the replication destination configuration. For more information about replication status messages, see <a href="https://docs.aws.amazon.com/efs/latest/ug/awsbackup.html#restoring-backup-efsmonitoring-replication-status.html">Viewing replication details</a> in the <i>Amazon EFS User Guide</i>.</p>
+    pub fn status_message(&self) -> ::std::option::Option<&str> {
+        self.status_message.as_deref()
+    }
+    /// <p>Amazon Resource Name (ARN) of the IAM role in the source account that allows Amazon EFS to perform replication on its behalf. This is optional for same-account replication and required for cross-account replication.</p>
+    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
 }
 impl Destination {
     /// Creates a new builder-style object to manufacture [`Destination`](crate::types::Destination).
@@ -60,38 +66,23 @@ pub struct DestinationBuilder {
     pub(crate) file_system_id: ::std::option::Option<::std::string::String>,
     pub(crate) region: ::std::option::Option<::std::string::String>,
     pub(crate) last_replicated_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) owner_id: ::std::option::Option<::std::string::String>,
+    pub(crate) status_message: ::std::option::Option<::std::string::String>,
+    pub(crate) role_arn: ::std::option::Option<::std::string::String>,
 }
 impl DestinationBuilder {
-    /// <p>Describes the status of the destination EFS file system.</p>
-    /// <ul>
-    /// <li>
-    /// <p>The <code>Paused</code> state occurs as a result of opting out of the source or destination Region after the replication configuration was created. To resume replication for the file system, you need to again opt in to the Amazon Web Services Region. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande-manage.html#rande-manage-enable">Managing Amazon Web Services Regions</a> in the <i>Amazon Web Services General Reference Guide</i>.</p></li>
-    /// <li>
-    /// <p>The <code>Error</code> state occurs when either the source or the destination file system (or both) is in a failed state and is unrecoverable. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/awsbackup.html#restoring-backup-efsmonitoring-replication-status.html">Monitoring replication status</a> in the <i>Amazon EFS User Guide</i>. You must delete the replication configuration, and then restore the most recent backup of the failed file system (either the source or the destination) to a new file system.</p></li>
-    /// </ul>
+    /// <p>Describes the status of the replication configuration. For more information about replication status, see <a href="https://docs.aws.amazon.com/efs/latest/ug/awsbackup.html#restoring-backup-efsmonitoring-replication-status.html">Viewing replication details</a> in the <i>Amazon EFS User Guide</i>.</p>
     /// This field is required.
     pub fn status(mut self, input: crate::types::ReplicationStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Describes the status of the destination EFS file system.</p>
-    /// <ul>
-    /// <li>
-    /// <p>The <code>Paused</code> state occurs as a result of opting out of the source or destination Region after the replication configuration was created. To resume replication for the file system, you need to again opt in to the Amazon Web Services Region. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande-manage.html#rande-manage-enable">Managing Amazon Web Services Regions</a> in the <i>Amazon Web Services General Reference Guide</i>.</p></li>
-    /// <li>
-    /// <p>The <code>Error</code> state occurs when either the source or the destination file system (or both) is in a failed state and is unrecoverable. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/awsbackup.html#restoring-backup-efsmonitoring-replication-status.html">Monitoring replication status</a> in the <i>Amazon EFS User Guide</i>. You must delete the replication configuration, and then restore the most recent backup of the failed file system (either the source or the destination) to a new file system.</p></li>
-    /// </ul>
+    /// <p>Describes the status of the replication configuration. For more information about replication status, see <a href="https://docs.aws.amazon.com/efs/latest/ug/awsbackup.html#restoring-backup-efsmonitoring-replication-status.html">Viewing replication details</a> in the <i>Amazon EFS User Guide</i>.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ReplicationStatus>) -> Self {
         self.status = input;
         self
     }
-    /// <p>Describes the status of the destination EFS file system.</p>
-    /// <ul>
-    /// <li>
-    /// <p>The <code>Paused</code> state occurs as a result of opting out of the source or destination Region after the replication configuration was created. To resume replication for the file system, you need to again opt in to the Amazon Web Services Region. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande-manage.html#rande-manage-enable">Managing Amazon Web Services Regions</a> in the <i>Amazon Web Services General Reference Guide</i>.</p></li>
-    /// <li>
-    /// <p>The <code>Error</code> state occurs when either the source or the destination file system (or both) is in a failed state and is unrecoverable. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/awsbackup.html#restoring-backup-efsmonitoring-replication-status.html">Monitoring replication status</a> in the <i>Amazon EFS User Guide</i>. You must delete the replication configuration, and then restore the most recent backup of the failed file system (either the source or the destination) to a new file system.</p></li>
-    /// </ul>
+    /// <p>Describes the status of the replication configuration. For more information about replication status, see <a href="https://docs.aws.amazon.com/efs/latest/ug/awsbackup.html#restoring-backup-efsmonitoring-replication-status.html">Viewing replication details</a> in the <i>Amazon EFS User Guide</i>.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ReplicationStatus> {
         &self.status
     }
@@ -139,6 +130,48 @@ impl DestinationBuilder {
     pub fn get_last_replicated_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_replicated_timestamp
     }
+    /// <p>ID of the Amazon Web Services account in which the destination file system resides.</p>
+    pub fn owner_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.owner_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>ID of the Amazon Web Services account in which the destination file system resides.</p>
+    pub fn set_owner_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.owner_id = input;
+        self
+    }
+    /// <p>ID of the Amazon Web Services account in which the destination file system resides.</p>
+    pub fn get_owner_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owner_id
+    }
+    /// <p>Message that provides details about the <code>PAUSED</code> or <code>ERRROR</code> state of the replication destination configuration. For more information about replication status messages, see <a href="https://docs.aws.amazon.com/efs/latest/ug/awsbackup.html#restoring-backup-efsmonitoring-replication-status.html">Viewing replication details</a> in the <i>Amazon EFS User Guide</i>.</p>
+    pub fn status_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.status_message = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Message that provides details about the <code>PAUSED</code> or <code>ERRROR</code> state of the replication destination configuration. For more information about replication status messages, see <a href="https://docs.aws.amazon.com/efs/latest/ug/awsbackup.html#restoring-backup-efsmonitoring-replication-status.html">Viewing replication details</a> in the <i>Amazon EFS User Guide</i>.</p>
+    pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.status_message = input;
+        self
+    }
+    /// <p>Message that provides details about the <code>PAUSED</code> or <code>ERRROR</code> state of the replication destination configuration. For more information about replication status messages, see <a href="https://docs.aws.amazon.com/efs/latest/ug/awsbackup.html#restoring-backup-efsmonitoring-replication-status.html">Viewing replication details</a> in the <i>Amazon EFS User Guide</i>.</p>
+    pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_message
+    }
+    /// <p>Amazon Resource Name (ARN) of the IAM role in the source account that allows Amazon EFS to perform replication on its behalf. This is optional for same-account replication and required for cross-account replication.</p>
+    pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.role_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Amazon Resource Name (ARN) of the IAM role in the source account that allows Amazon EFS to perform replication on its behalf. This is optional for same-account replication and required for cross-account replication.</p>
+    pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.role_arn = input;
+        self
+    }
+    /// <p>Amazon Resource Name (ARN) of the IAM role in the source account that allows Amazon EFS to perform replication on its behalf. This is optional for same-account replication and required for cross-account replication.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
+    }
     /// Consumes the builder and constructs a [`Destination`](crate::types::Destination).
     /// This method will fail if any of the following fields are not set:
     /// - [`status`](crate::types::builders::DestinationBuilder::status)
@@ -165,6 +198,9 @@ impl DestinationBuilder {
                 )
             })?,
             last_replicated_timestamp: self.last_replicated_timestamp,
+            owner_id: self.owner_id,
+            status_message: self.status_message,
+            role_arn: self.role_arn,
         })
     }
 }

@@ -30,13 +30,7 @@ pub struct DescribeVpcsInput {
     /// <li>
     /// <p><code>state</code> - The state of the VPC (<code>pending</code> | <code>available</code>).</p></li>
     /// <li>
-    /// <p><code>tag</code>:<key>
-    /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key
-    /// <code>Owner</code> and the value
-    /// <code>TeamA</code>, specify
-    /// <code>tag:Owner</code> for the filter name and
-    /// <code>TeamA</code> for the filter value.
-    /// </key></p></li>
+    /// <p><code>tag</code> - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter value.</p></li>
     /// <li>
     /// <p><code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p></li>
     /// <li>
@@ -80,13 +74,7 @@ impl DescribeVpcsInput {
     /// <li>
     /// <p><code>state</code> - The state of the VPC (<code>pending</code> | <code>available</code>).</p></li>
     /// <li>
-    /// <p><code>tag</code>:<key>
-    /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key
-    /// <code>Owner</code> and the value
-    /// <code>TeamA</code>, specify
-    /// <code>tag:Owner</code> for the filter name and
-    /// <code>TeamA</code> for the filter value.
-    /// </key></p></li>
+    /// <p><code>tag</code> - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter value.</p></li>
     /// <li>
     /// <p><code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p></li>
     /// <li>
@@ -165,13 +153,7 @@ impl DescribeVpcsInputBuilder {
     /// <li>
     /// <p><code>state</code> - The state of the VPC (<code>pending</code> | <code>available</code>).</p></li>
     /// <li>
-    /// <p><code>tag</code>:<key>
-    /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key
-    /// <code>Owner</code> and the value
-    /// <code>TeamA</code>, specify
-    /// <code>tag:Owner</code> for the filter name and
-    /// <code>TeamA</code> for the filter value.
-    /// </key></p></li>
+    /// <p><code>tag</code> - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter value.</p></li>
     /// <li>
     /// <p><code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p></li>
     /// <li>
@@ -210,13 +192,7 @@ impl DescribeVpcsInputBuilder {
     /// <li>
     /// <p><code>state</code> - The state of the VPC (<code>pending</code> | <code>available</code>).</p></li>
     /// <li>
-    /// <p><code>tag</code>:<key>
-    /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key
-    /// <code>Owner</code> and the value
-    /// <code>TeamA</code>, specify
-    /// <code>tag:Owner</code> for the filter name and
-    /// <code>TeamA</code> for the filter value.
-    /// </key></p></li>
+    /// <p><code>tag</code> - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter value.</p></li>
     /// <li>
     /// <p><code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p></li>
     /// <li>
@@ -253,13 +229,7 @@ impl DescribeVpcsInputBuilder {
     /// <li>
     /// <p><code>state</code> - The state of the VPC (<code>pending</code> | <code>available</code>).</p></li>
     /// <li>
-    /// <p><code>tag</code>:<key>
-    /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key
-    /// <code>Owner</code> and the value
-    /// <code>TeamA</code>, specify
-    /// <code>tag:Owner</code> for the filter name and
-    /// <code>TeamA</code> for the filter value.
-    /// </key></p></li>
+    /// <p><code>tag</code> - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter value.</p></li>
     /// <li>
     /// <p><code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p></li>
     /// <li>

@@ -123,4 +123,27 @@ impl DeleteReplicationConfigurationFluentBuilder {
     pub fn get_source_file_system_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_source_file_system_id()
     }
+    /// <p>When replicating across Amazon Web Services accounts or across Amazon Web Services Regions, Amazon EFS deletes the replication configuration from both the source and destination account or Region (<code>ALL_CONFIGURATIONS</code>) by default. If there's a configuration or permissions issue that prevents Amazon EFS from deleting the replication configuration from both sides, you can use the <code>LOCAL_CONFIGURATION_ONLY</code> mode to delete the replication configuration from only the local side (the account or Region from which the delete is performed).</p><note>
+    /// <p>Only use the <code>LOCAL_CONFIGURATION_ONLY</code> mode in the case that Amazon EFS is unable to delete the replication configuration in both the source and destination account or Region. Deleting the local configuration leaves the configuration in the other account or Region unrecoverable.</p>
+    /// <p>Additionally, do not use this mode for same-account, same-region replication as doing so results in a BadRequest exception error.</p>
+    /// </note>
+    pub fn deletion_mode(mut self, input: crate::types::DeletionMode) -> Self {
+        self.inner = self.inner.deletion_mode(input);
+        self
+    }
+    /// <p>When replicating across Amazon Web Services accounts or across Amazon Web Services Regions, Amazon EFS deletes the replication configuration from both the source and destination account or Region (<code>ALL_CONFIGURATIONS</code>) by default. If there's a configuration or permissions issue that prevents Amazon EFS from deleting the replication configuration from both sides, you can use the <code>LOCAL_CONFIGURATION_ONLY</code> mode to delete the replication configuration from only the local side (the account or Region from which the delete is performed).</p><note>
+    /// <p>Only use the <code>LOCAL_CONFIGURATION_ONLY</code> mode in the case that Amazon EFS is unable to delete the replication configuration in both the source and destination account or Region. Deleting the local configuration leaves the configuration in the other account or Region unrecoverable.</p>
+    /// <p>Additionally, do not use this mode for same-account, same-region replication as doing so results in a BadRequest exception error.</p>
+    /// </note>
+    pub fn set_deletion_mode(mut self, input: ::std::option::Option<crate::types::DeletionMode>) -> Self {
+        self.inner = self.inner.set_deletion_mode(input);
+        self
+    }
+    /// <p>When replicating across Amazon Web Services accounts or across Amazon Web Services Regions, Amazon EFS deletes the replication configuration from both the source and destination account or Region (<code>ALL_CONFIGURATIONS</code>) by default. If there's a configuration or permissions issue that prevents Amazon EFS from deleting the replication configuration from both sides, you can use the <code>LOCAL_CONFIGURATION_ONLY</code> mode to delete the replication configuration from only the local side (the account or Region from which the delete is performed).</p><note>
+    /// <p>Only use the <code>LOCAL_CONFIGURATION_ONLY</code> mode in the case that Amazon EFS is unable to delete the replication configuration in both the source and destination account or Region. Deleting the local configuration leaves the configuration in the other account or Region unrecoverable.</p>
+    /// <p>Additionally, do not use this mode for same-account, same-region replication as doing so results in a BadRequest exception error.</p>
+    /// </note>
+    pub fn get_deletion_mode(&self) -> &::std::option::Option<crate::types::DeletionMode> {
+        self.inner.get_deletion_mode()
+    }
 }

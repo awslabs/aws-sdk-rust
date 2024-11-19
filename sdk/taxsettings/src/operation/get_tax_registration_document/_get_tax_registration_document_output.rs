@@ -5,12 +5,18 @@
 pub struct GetTaxRegistrationDocumentOutput {
     /// <p>The file path of the Amazon S3 bucket where you want to download your tax document to.</p>
     pub destination_file_path: ::std::option::Option<::std::string::String>,
+    /// <p>The Amazon S3 presigned URL of the tax registration document.</p>
+    pub presigned_s3_url: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetTaxRegistrationDocumentOutput {
     /// <p>The file path of the Amazon S3 bucket where you want to download your tax document to.</p>
     pub fn destination_file_path(&self) -> ::std::option::Option<&str> {
         self.destination_file_path.as_deref()
+    }
+    /// <p>The Amazon S3 presigned URL of the tax registration document.</p>
+    pub fn presigned_s3_url(&self) -> ::std::option::Option<&str> {
+        self.presigned_s3_url.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetTaxRegistrationDocumentOutput {
@@ -30,6 +36,7 @@ impl GetTaxRegistrationDocumentOutput {
 #[non_exhaustive]
 pub struct GetTaxRegistrationDocumentOutputBuilder {
     pub(crate) destination_file_path: ::std::option::Option<::std::string::String>,
+    pub(crate) presigned_s3_url: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetTaxRegistrationDocumentOutputBuilder {
@@ -47,6 +54,20 @@ impl GetTaxRegistrationDocumentOutputBuilder {
     pub fn get_destination_file_path(&self) -> &::std::option::Option<::std::string::String> {
         &self.destination_file_path
     }
+    /// <p>The Amazon S3 presigned URL of the tax registration document.</p>
+    pub fn presigned_s3_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.presigned_s3_url = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon S3 presigned URL of the tax registration document.</p>
+    pub fn set_presigned_s3_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.presigned_s3_url = input;
+        self
+    }
+    /// <p>The Amazon S3 presigned URL of the tax registration document.</p>
+    pub fn get_presigned_s3_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.presigned_s3_url
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -60,6 +81,7 @@ impl GetTaxRegistrationDocumentOutputBuilder {
     pub fn build(self) -> crate::operation::get_tax_registration_document::GetTaxRegistrationDocumentOutput {
         crate::operation::get_tax_registration_document::GetTaxRegistrationDocumentOutput {
             destination_file_path: self.destination_file_path,
+            presigned_s3_url: self.presigned_s3_url,
             _request_id: self._request_id,
         }
     }

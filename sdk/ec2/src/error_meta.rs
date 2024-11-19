@@ -3518,6 +3518,40 @@ impl From<crate::operation::create_vpc::CreateVpcError> for Error {
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_vpc_block_public_access_exclusion::CreateVpcBlockPublicAccessExclusionError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_vpc_block_public_access_exclusion::CreateVpcBlockPublicAccessExclusionError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_vpc_block_public_access_exclusion::CreateVpcBlockPublicAccessExclusionError> for Error {
+    fn from(err: crate::operation::create_vpc_block_public_access_exclusion::CreateVpcBlockPublicAccessExclusionError) -> Self {
+        match err {
+            crate::operation::create_vpc_block_public_access_exclusion::CreateVpcBlockPublicAccessExclusionError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_vpc_endpoint::CreateVpcEndpointError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -5443,6 +5477,40 @@ impl From<crate::operation::delete_vpc::DeleteVpcError> for Error {
     fn from(err: crate::operation::delete_vpc::DeleteVpcError) -> Self {
         match err {
             crate::operation::delete_vpc::DeleteVpcError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_vpc_block_public_access_exclusion::DeleteVpcBlockPublicAccessExclusionError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_vpc_block_public_access_exclusion::DeleteVpcBlockPublicAccessExclusionError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_vpc_block_public_access_exclusion::DeleteVpcBlockPublicAccessExclusionError> for Error {
+    fn from(err: crate::operation::delete_vpc_block_public_access_exclusion::DeleteVpcBlockPublicAccessExclusionError) -> Self {
+        match err {
+            crate::operation::delete_vpc_block_public_access_exclusion::DeleteVpcBlockPublicAccessExclusionError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
@@ -9697,6 +9765,74 @@ impl From<crate::operation::describe_vpc_attribute::DescribeVpcAttributeError> f
     fn from(err: crate::operation::describe_vpc_attribute::DescribeVpcAttributeError) -> Self {
         match err {
             crate::operation::describe_vpc_attribute::DescribeVpcAttributeError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_vpc_block_public_access_exclusions::DescribeVpcBlockPublicAccessExclusionsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_vpc_block_public_access_exclusions::DescribeVpcBlockPublicAccessExclusionsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_vpc_block_public_access_exclusions::DescribeVpcBlockPublicAccessExclusionsError> for Error {
+    fn from(err: crate::operation::describe_vpc_block_public_access_exclusions::DescribeVpcBlockPublicAccessExclusionsError) -> Self {
+        match err {
+            crate::operation::describe_vpc_block_public_access_exclusions::DescribeVpcBlockPublicAccessExclusionsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_vpc_block_public_access_options::DescribeVpcBlockPublicAccessOptionsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_vpc_block_public_access_options::DescribeVpcBlockPublicAccessOptionsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_vpc_block_public_access_options::DescribeVpcBlockPublicAccessOptionsError> for Error {
+    fn from(err: crate::operation::describe_vpc_block_public_access_options::DescribeVpcBlockPublicAccessOptionsError) -> Self {
+        match err {
+            crate::operation::describe_vpc_block_public_access_options::DescribeVpcBlockPublicAccessOptionsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
@@ -14797,6 +14933,74 @@ impl From<crate::operation::modify_vpc_attribute::ModifyVpcAttributeError> for E
     fn from(err: crate::operation::modify_vpc_attribute::ModifyVpcAttributeError) -> Self {
         match err {
             crate::operation::modify_vpc_attribute::ModifyVpcAttributeError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::modify_vpc_block_public_access_exclusion::ModifyVpcBlockPublicAccessExclusionError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::modify_vpc_block_public_access_exclusion::ModifyVpcBlockPublicAccessExclusionError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::modify_vpc_block_public_access_exclusion::ModifyVpcBlockPublicAccessExclusionError> for Error {
+    fn from(err: crate::operation::modify_vpc_block_public_access_exclusion::ModifyVpcBlockPublicAccessExclusionError) -> Self {
+        match err {
+            crate::operation::modify_vpc_block_public_access_exclusion::ModifyVpcBlockPublicAccessExclusionError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::modify_vpc_block_public_access_options::ModifyVpcBlockPublicAccessOptionsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::modify_vpc_block_public_access_options::ModifyVpcBlockPublicAccessOptionsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::modify_vpc_block_public_access_options::ModifyVpcBlockPublicAccessOptionsError> for Error {
+    fn from(err: crate::operation::modify_vpc_block_public_access_options::ModifyVpcBlockPublicAccessOptionsError) -> Self {
+        match err {
+            crate::operation::modify_vpc_block_public_access_options::ModifyVpcBlockPublicAccessOptionsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }

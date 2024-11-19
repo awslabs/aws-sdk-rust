@@ -269,6 +269,8 @@ pub use crate::types::_ulimit_name::UlimitName;
 
 pub use crate::types::_host_entry::HostEntry;
 
+pub use crate::types::_version_consistency::VersionConsistency;
+
 pub use crate::types::_container_dependency::ContainerDependency;
 
 pub use crate::types::_container_condition::ContainerCondition;
@@ -690,6 +692,8 @@ mod _transport_protocol;
 mod _ulimit;
 
 mod _ulimit_name;
+
+mod _version_consistency;
 
 mod _version_info;
 

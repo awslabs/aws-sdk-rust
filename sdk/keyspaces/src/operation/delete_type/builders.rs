@@ -23,6 +23,7 @@ impl crate::operation::delete_type::builders::DeleteTypeInputBuilder {
 /// Fluent builder constructing a request to `DeleteType`.
 ///
 /// <p>The <code>DeleteType</code> operation deletes a user-defined type (UDT). You can only delete a type that is not used in a table or another UDT.</p>
+/// <p>To configure the required permissions, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/configure-udt-permissions.html#udt-permissions-drop">Permissions to delete a UDT</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteTypeFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

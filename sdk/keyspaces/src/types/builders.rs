@@ -21,6 +21,8 @@ pub use crate::types::_capacity_specification::CapacitySpecificationBuilder;
 
 pub use crate::types::_column_definition::ColumnDefinitionBuilder;
 
+pub use crate::types::_replication_specification::ReplicationSpecificationBuilder;
+
 pub use crate::types::_tag::TagBuilder;
 
 pub use crate::types::_table_summary::TableSummaryBuilder;
@@ -47,4 +49,4 @@ pub use crate::types::_clustering_key::ClusteringKeyBuilder;
 
 pub use crate::types::_partition_key::PartitionKeyBuilder;
 
-pub use crate::types::_replication_specification::ReplicationSpecificationBuilder;
+pub use crate::types::_replication_group_status::ReplicationGroupStatusBuilder;

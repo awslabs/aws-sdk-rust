@@ -15,5 +15,8 @@ pub fn ser_destination_to_create(
     if let Some(var_4) = &input.file_system_id {
         object.key("FileSystemId").string(var_4.as_str());
     }
+    if let Some(var_5) = &input.role_arn {
+        object.key("RoleArn").string(var_5.as_str());
+    }
     Ok(())
 }

@@ -156,17 +156,17 @@ impl ListTableOptimizerRunsFluentBuilder {
     pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_table_name()
     }
-    /// <p>The type of table optimizer. Currently, the only valid value is <code>compaction</code>.</p>
+    /// <p>The type of table optimizer.</p>
     pub fn r#type(mut self, input: crate::types::TableOptimizerType) -> Self {
         self.inner = self.inner.r#type(input);
         self
     }
-    /// <p>The type of table optimizer. Currently, the only valid value is <code>compaction</code>.</p>
+    /// <p>The type of table optimizer.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::TableOptimizerType>) -> Self {
         self.inner = self.inner.set_type(input);
         self
     }
-    /// <p>The type of table optimizer. Currently, the only valid value is <code>compaction</code>.</p>
+    /// <p>The type of table optimizer.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::TableOptimizerType> {
         self.inner.get_type()
     }

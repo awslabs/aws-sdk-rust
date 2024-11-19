@@ -22,7 +22,7 @@ impl crate::operation::get_keyspace::builders::GetKeyspaceInputBuilder {
 }
 /// Fluent builder constructing a request to `GetKeyspace`.
 ///
-/// <p>Returns the name and the Amazon Resource Name (ARN) of the specified table.</p>
+/// <p>Returns the name of the specified keyspace, the Amazon Resource Name (ARN), the replication strategy, the Amazon Web Services Regions of a multi-Region keyspace, and the status of newly added Regions after an <code>UpdateKeyspace</code> operation.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetKeyspaceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

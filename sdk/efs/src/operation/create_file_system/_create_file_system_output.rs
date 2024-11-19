@@ -22,7 +22,7 @@ pub struct CreateFileSystemOutput {
     pub number_of_mount_targets: i32,
     /// <p>The latest known metered size (in bytes) of data stored in the file system, in its <code>Value</code> field, and the time at which that size was determined in its <code>Timestamp</code> field. The <code>Timestamp</code> value is the integer number of seconds since 1970-01-01T00:00:00Z. The <code>SizeInBytes</code> value doesn't represent the size of a consistent snapshot of the file system, but it is eventually consistent when there are no writes to the file system. That is, <code>SizeInBytes</code> represents actual size only if the file system is not modified for a period longer than a couple of hours. Otherwise, the value is not the exact size that the file system was at any point in time.</p>
     pub size_in_bytes: ::std::option::Option<crate::types::FileSystemSize>,
-    /// <p>The Performance mode of the file system.</p>
+    /// <p>The performance mode of the file system.</p>
     pub performance_mode: crate::types::PerformanceMode,
     /// <p>A Boolean value that, if true, indicates that the file system is encrypted.</p>
     pub encrypted: ::std::option::Option<bool>,
@@ -82,7 +82,7 @@ impl CreateFileSystemOutput {
     pub fn size_in_bytes(&self) -> ::std::option::Option<&crate::types::FileSystemSize> {
         self.size_in_bytes.as_ref()
     }
-    /// <p>The Performance mode of the file system.</p>
+    /// <p>The performance mode of the file system.</p>
     pub fn performance_mode(&self) -> &crate::types::PerformanceMode {
         &self.performance_mode
     }
@@ -290,18 +290,18 @@ impl CreateFileSystemOutputBuilder {
     pub fn get_size_in_bytes(&self) -> &::std::option::Option<crate::types::FileSystemSize> {
         &self.size_in_bytes
     }
-    /// <p>The Performance mode of the file system.</p>
+    /// <p>The performance mode of the file system.</p>
     /// This field is required.
     pub fn performance_mode(mut self, input: crate::types::PerformanceMode) -> Self {
         self.performance_mode = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The Performance mode of the file system.</p>
+    /// <p>The performance mode of the file system.</p>
     pub fn set_performance_mode(mut self, input: ::std::option::Option<crate::types::PerformanceMode>) -> Self {
         self.performance_mode = input;
         self
     }
-    /// <p>The Performance mode of the file system.</p>
+    /// <p>The performance mode of the file system.</p>
     pub fn get_performance_mode(&self) -> &::std::option::Option<crate::types::PerformanceMode> {
         &self.performance_mode
     }

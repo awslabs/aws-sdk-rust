@@ -8,6 +8,9 @@ pub struct TableOptimizerConfiguration {
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Whether table optimization is enabled.</p>
     pub enabled: ::std::option::Option<bool>,
+    /// <p>A <code>TableOptimizerVpcConfiguration</code> object representing the VPC configuration for a table optimizer.</p>
+    /// <p>This configuration is necessary to perform optimization on tables that are in a customer VPC.</p>
+    pub vpc_configuration: ::std::option::Option<crate::types::TableOptimizerVpcConfiguration>,
     /// <p>The configuration for a snapshot retention optimizer.</p>
     pub retention_configuration: ::std::option::Option<crate::types::RetentionConfiguration>,
     /// <p>The configuration for an orphan file deletion optimizer.</p>
@@ -21,6 +24,11 @@ impl TableOptimizerConfiguration {
     /// <p>Whether table optimization is enabled.</p>
     pub fn enabled(&self) -> ::std::option::Option<bool> {
         self.enabled
+    }
+    /// <p>A <code>TableOptimizerVpcConfiguration</code> object representing the VPC configuration for a table optimizer.</p>
+    /// <p>This configuration is necessary to perform optimization on tables that are in a customer VPC.</p>
+    pub fn vpc_configuration(&self) -> ::std::option::Option<&crate::types::TableOptimizerVpcConfiguration> {
+        self.vpc_configuration.as_ref()
     }
     /// <p>The configuration for a snapshot retention optimizer.</p>
     pub fn retention_configuration(&self) -> ::std::option::Option<&crate::types::RetentionConfiguration> {
@@ -44,6 +52,7 @@ impl TableOptimizerConfiguration {
 pub struct TableOptimizerConfigurationBuilder {
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) enabled: ::std::option::Option<bool>,
+    pub(crate) vpc_configuration: ::std::option::Option<crate::types::TableOptimizerVpcConfiguration>,
     pub(crate) retention_configuration: ::std::option::Option<crate::types::RetentionConfiguration>,
     pub(crate) orphan_file_deletion_configuration: ::std::option::Option<crate::types::OrphanFileDeletionConfiguration>,
 }
@@ -75,6 +84,23 @@ impl TableOptimizerConfigurationBuilder {
     /// <p>Whether table optimization is enabled.</p>
     pub fn get_enabled(&self) -> &::std::option::Option<bool> {
         &self.enabled
+    }
+    /// <p>A <code>TableOptimizerVpcConfiguration</code> object representing the VPC configuration for a table optimizer.</p>
+    /// <p>This configuration is necessary to perform optimization on tables that are in a customer VPC.</p>
+    pub fn vpc_configuration(mut self, input: crate::types::TableOptimizerVpcConfiguration) -> Self {
+        self.vpc_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A <code>TableOptimizerVpcConfiguration</code> object representing the VPC configuration for a table optimizer.</p>
+    /// <p>This configuration is necessary to perform optimization on tables that are in a customer VPC.</p>
+    pub fn set_vpc_configuration(mut self, input: ::std::option::Option<crate::types::TableOptimizerVpcConfiguration>) -> Self {
+        self.vpc_configuration = input;
+        self
+    }
+    /// <p>A <code>TableOptimizerVpcConfiguration</code> object representing the VPC configuration for a table optimizer.</p>
+    /// <p>This configuration is necessary to perform optimization on tables that are in a customer VPC.</p>
+    pub fn get_vpc_configuration(&self) -> &::std::option::Option<crate::types::TableOptimizerVpcConfiguration> {
+        &self.vpc_configuration
     }
     /// <p>The configuration for a snapshot retention optimizer.</p>
     pub fn retention_configuration(mut self, input: crate::types::RetentionConfiguration) -> Self {
@@ -109,6 +135,7 @@ impl TableOptimizerConfigurationBuilder {
         crate::types::TableOptimizerConfiguration {
             role_arn: self.role_arn,
             enabled: self.enabled,
+            vpc_configuration: self.vpc_configuration,
             retention_configuration: self.retention_configuration,
             orphan_file_deletion_configuration: self.orphan_file_deletion_configuration,
         }

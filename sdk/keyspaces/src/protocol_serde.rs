@@ -57,6 +57,8 @@ pub(crate) mod shape_tag_resource;
 
 pub(crate) mod shape_untag_resource;
 
+pub(crate) mod shape_update_keyspace;
+
 pub(crate) mod shape_update_table;
 
 pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
@@ -111,6 +113,8 @@ pub(crate) mod shape_tag_resource_input;
 
 pub(crate) mod shape_untag_resource_input;
 
+pub(crate) mod shape_update_keyspace_input;
+
 pub(crate) mod shape_update_table_input;
 
 pub(crate) mod shape_validation_exception;
@@ -147,6 +151,8 @@ pub(crate) mod shape_replica_specification;
 
 pub(crate) mod shape_replica_specification_summary_list;
 
+pub(crate) mod shape_replication_group_status_list;
+
 pub(crate) mod shape_replication_specification;
 
 pub(crate) mod shape_schema_definition;
@@ -180,6 +186,8 @@ pub(crate) mod shape_partition_key_list;
 pub(crate) mod shape_replica_auto_scaling_specification;
 
 pub(crate) mod shape_replica_specification_summary;
+
+pub(crate) mod shape_replication_group_status;
 
 pub(crate) mod shape_static_column;
 

@@ -16,6 +16,8 @@ pub struct Vpc {
     pub is_default: ::std::option::Option<bool>,
     /// <p>Any tags assigned to the VPC.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    /// <p>The state of VPC Block Public Access (BPA).</p>
+    pub block_public_access_states: ::std::option::Option<crate::types::BlockPublicAccessStates>,
     /// <p>The ID of the VPC.</p>
     pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>The current state of the VPC.</p>
@@ -56,6 +58,10 @@ impl Vpc {
     pub fn tags(&self) -> &[crate::types::Tag] {
         self.tags.as_deref().unwrap_or_default()
     }
+    /// <p>The state of VPC Block Public Access (BPA).</p>
+    pub fn block_public_access_states(&self) -> ::std::option::Option<&crate::types::BlockPublicAccessStates> {
+        self.block_public_access_states.as_ref()
+    }
     /// <p>The ID of the VPC.</p>
     pub fn vpc_id(&self) -> ::std::option::Option<&str> {
         self.vpc_id.as_deref()
@@ -90,6 +96,7 @@ pub struct VpcBuilder {
     pub(crate) cidr_block_association_set: ::std::option::Option<::std::vec::Vec<crate::types::VpcCidrBlockAssociation>>,
     pub(crate) is_default: ::std::option::Option<bool>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) block_public_access_states: ::std::option::Option<crate::types::BlockPublicAccessStates>,
     pub(crate) vpc_id: ::std::option::Option<::std::string::String>,
     pub(crate) state: ::std::option::Option<crate::types::VpcState>,
     pub(crate) cidr_block: ::std::option::Option<::std::string::String>,
@@ -201,6 +208,20 @@ impl VpcBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }
+    /// <p>The state of VPC Block Public Access (BPA).</p>
+    pub fn block_public_access_states(mut self, input: crate::types::BlockPublicAccessStates) -> Self {
+        self.block_public_access_states = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The state of VPC Block Public Access (BPA).</p>
+    pub fn set_block_public_access_states(mut self, input: ::std::option::Option<crate::types::BlockPublicAccessStates>) -> Self {
+        self.block_public_access_states = input;
+        self
+    }
+    /// <p>The state of VPC Block Public Access (BPA).</p>
+    pub fn get_block_public_access_states(&self) -> &::std::option::Option<crate::types::BlockPublicAccessStates> {
+        &self.block_public_access_states
+    }
     /// <p>The ID of the VPC.</p>
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_id = ::std::option::Option::Some(input.into());
@@ -266,6 +287,7 @@ impl VpcBuilder {
             cidr_block_association_set: self.cidr_block_association_set,
             is_default: self.is_default,
             tags: self.tags,
+            block_public_access_states: self.block_public_access_states,
             vpc_id: self.vpc_id,
             state: self.state,
             cidr_block: self.cidr_block,

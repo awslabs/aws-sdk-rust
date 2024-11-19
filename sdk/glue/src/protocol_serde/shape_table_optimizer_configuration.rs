@@ -9,17 +9,23 @@ pub fn ser_table_optimizer_configuration(
     if let Some(var_2) = &input.enabled {
         object.key("enabled").boolean(*var_2);
     }
-    if let Some(var_3) = &input.retention_configuration {
+    if let Some(var_3) = &input.vpc_configuration {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("retentionConfiguration").start_object();
-        crate::protocol_serde::shape_retention_configuration::ser_retention_configuration(&mut object_4, var_3)?;
+        let mut object_4 = object.key("vpcConfiguration").start_object();
+        crate::protocol_serde::shape_table_optimizer_vpc_configuration::ser_table_optimizer_vpc_configuration(&mut object_4, var_3)?;
         object_4.finish();
     }
-    if let Some(var_5) = &input.orphan_file_deletion_configuration {
+    if let Some(var_5) = &input.retention_configuration {
         #[allow(unused_mut)]
-        let mut object_6 = object.key("orphanFileDeletionConfiguration").start_object();
-        crate::protocol_serde::shape_orphan_file_deletion_configuration::ser_orphan_file_deletion_configuration(&mut object_6, var_5)?;
+        let mut object_6 = object.key("retentionConfiguration").start_object();
+        crate::protocol_serde::shape_retention_configuration::ser_retention_configuration(&mut object_6, var_5)?;
         object_6.finish();
+    }
+    if let Some(var_7) = &input.orphan_file_deletion_configuration {
+        #[allow(unused_mut)]
+        let mut object_8 = object.key("orphanFileDeletionConfiguration").start_object();
+        crate::protocol_serde::shape_orphan_file_deletion_configuration::ser_orphan_file_deletion_configuration(&mut object_8, var_7)?;
+        object_8.finish();
     }
     Ok(())
 }
@@ -48,6 +54,11 @@ where
                         }
                         "enabled" => {
                             builder = builder.set_enabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
+                        "vpcConfiguration" => {
+                            builder = builder.set_vpc_configuration(
+                                crate::protocol_serde::shape_table_optimizer_vpc_configuration::de_table_optimizer_vpc_configuration(tokens)?,
+                            );
                         }
                         "retentionConfiguration" => {
                             builder = builder.set_retention_configuration(

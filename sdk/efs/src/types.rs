@@ -49,6 +49,8 @@ pub use crate::types::_creation_info::CreationInfo;
 
 pub use crate::types::_posix_user::PosixUser;
 
+pub use crate::types::_deletion_mode::DeletionMode;
+
 pub use crate::types::_destination_to_create::DestinationToCreate;
 
 mod _access_point_description;
@@ -56,6 +58,8 @@ mod _access_point_description;
 mod _backup_policy;
 
 mod _creation_info;
+
+mod _deletion_mode;
 
 mod _destination;
 

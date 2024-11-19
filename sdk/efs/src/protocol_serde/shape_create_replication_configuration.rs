@@ -299,6 +299,13 @@ pub(crate) fn de_create_replication_configuration(
                             .transpose()?,
                     );
                 }
+                "SourceFileSystemOwnerId" => {
+                    builder = builder.set_source_file_system_owner_id(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
                 "SourceFileSystemRegion" => {
                     builder = builder.set_source_file_system_region(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

@@ -561,6 +561,10 @@ pub(crate) mod shape_create_volume_input;
 
 pub(crate) mod shape_create_vpc;
 
+pub(crate) mod shape_create_vpc_block_public_access_exclusion;
+
+pub(crate) mod shape_create_vpc_block_public_access_exclusion_input;
+
 pub(crate) mod shape_create_vpc_endpoint;
 
 pub(crate) mod shape_create_vpc_endpoint_connection_notification;
@@ -860,6 +864,10 @@ pub(crate) mod shape_delete_volume;
 pub(crate) mod shape_delete_volume_input;
 
 pub(crate) mod shape_delete_vpc;
+
+pub(crate) mod shape_delete_vpc_block_public_access_exclusion;
+
+pub(crate) mod shape_delete_vpc_block_public_access_exclusion_input;
 
 pub(crate) mod shape_delete_vpc_endpoint_connection_notifications;
 
@@ -1494,6 +1502,14 @@ pub(crate) mod shape_describe_volumes_modifications_input;
 pub(crate) mod shape_describe_vpc_attribute;
 
 pub(crate) mod shape_describe_vpc_attribute_input;
+
+pub(crate) mod shape_describe_vpc_block_public_access_exclusions;
+
+pub(crate) mod shape_describe_vpc_block_public_access_exclusions_input;
+
+pub(crate) mod shape_describe_vpc_block_public_access_options;
+
+pub(crate) mod shape_describe_vpc_block_public_access_options_input;
 
 pub(crate) mod shape_describe_vpc_classic_link;
 
@@ -2238,6 +2254,14 @@ pub(crate) mod shape_modify_volume_input;
 pub(crate) mod shape_modify_vpc_attribute;
 
 pub(crate) mod shape_modify_vpc_attribute_input;
+
+pub(crate) mod shape_modify_vpc_block_public_access_exclusion;
+
+pub(crate) mod shape_modify_vpc_block_public_access_exclusion_input;
+
+pub(crate) mod shape_modify_vpc_block_public_access_options;
+
+pub(crate) mod shape_modify_vpc_block_public_access_options_input;
 
 pub(crate) mod shape_modify_vpc_endpoint;
 
@@ -3641,6 +3665,12 @@ pub(crate) mod shape_vpc;
 
 pub(crate) mod shape_vpc_attachment;
 
+pub(crate) mod shape_vpc_block_public_access_exclusion;
+
+pub(crate) mod shape_vpc_block_public_access_exclusion_list;
+
+pub(crate) mod shape_vpc_block_public_access_options;
+
 pub(crate) mod shape_vpc_cidr_block_association;
 
 pub(crate) mod shape_vpc_classic_link_list;
@@ -3702,6 +3732,8 @@ pub(crate) mod shape_attachment_ena_srd_specification;
 pub(crate) mod shape_authorization_rule;
 
 pub(crate) mod shape_availability_zone;
+
+pub(crate) mod shape_block_public_access_states;
 
 pub(crate) mod shape_bundle_task_error;
 

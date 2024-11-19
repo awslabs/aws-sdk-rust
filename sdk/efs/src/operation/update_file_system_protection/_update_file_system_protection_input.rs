@@ -14,7 +14,7 @@ pub struct UpdateFileSystemProtectionInput {
     /// <li>
     /// <p><code>REPLICATING</code> – The file system is being used as the destination file system in a replication configuration. The file system is read-only and is only modified only by EFS replication.</p></li>
     /// </ul>
-    /// <p>If the replication configuration is deleted, the file system's replication overwrite protection is re-enabled, the file system becomes writeable.</p>
+    /// <p>If the replication configuration is deleted, the file system's replication overwrite protection is re-enabled and the file system becomes writeable.</p>
     pub replication_overwrite_protection: ::std::option::Option<crate::types::ReplicationOverwriteProtection>,
 }
 impl UpdateFileSystemProtectionInput {
@@ -31,7 +31,7 @@ impl UpdateFileSystemProtectionInput {
     /// <li>
     /// <p><code>REPLICATING</code> – The file system is being used as the destination file system in a replication configuration. The file system is read-only and is only modified only by EFS replication.</p></li>
     /// </ul>
-    /// <p>If the replication configuration is deleted, the file system's replication overwrite protection is re-enabled, the file system becomes writeable.</p>
+    /// <p>If the replication configuration is deleted, the file system's replication overwrite protection is re-enabled and the file system becomes writeable.</p>
     pub fn replication_overwrite_protection(&self) -> ::std::option::Option<&crate::types::ReplicationOverwriteProtection> {
         self.replication_overwrite_protection.as_ref()
     }
@@ -75,7 +75,7 @@ impl UpdateFileSystemProtectionInputBuilder {
     /// <li>
     /// <p><code>REPLICATING</code> – The file system is being used as the destination file system in a replication configuration. The file system is read-only and is only modified only by EFS replication.</p></li>
     /// </ul>
-    /// <p>If the replication configuration is deleted, the file system's replication overwrite protection is re-enabled, the file system becomes writeable.</p>
+    /// <p>If the replication configuration is deleted, the file system's replication overwrite protection is re-enabled and the file system becomes writeable.</p>
     pub fn replication_overwrite_protection(mut self, input: crate::types::ReplicationOverwriteProtection) -> Self {
         self.replication_overwrite_protection = ::std::option::Option::Some(input);
         self
@@ -89,7 +89,7 @@ impl UpdateFileSystemProtectionInputBuilder {
     /// <li>
     /// <p><code>REPLICATING</code> – The file system is being used as the destination file system in a replication configuration. The file system is read-only and is only modified only by EFS replication.</p></li>
     /// </ul>
-    /// <p>If the replication configuration is deleted, the file system's replication overwrite protection is re-enabled, the file system becomes writeable.</p>
+    /// <p>If the replication configuration is deleted, the file system's replication overwrite protection is re-enabled and the file system becomes writeable.</p>
     pub fn set_replication_overwrite_protection(mut self, input: ::std::option::Option<crate::types::ReplicationOverwriteProtection>) -> Self {
         self.replication_overwrite_protection = input;
         self
@@ -103,7 +103,7 @@ impl UpdateFileSystemProtectionInputBuilder {
     /// <li>
     /// <p><code>REPLICATING</code> – The file system is being used as the destination file system in a replication configuration. The file system is read-only and is only modified only by EFS replication.</p></li>
     /// </ul>
-    /// <p>If the replication configuration is deleted, the file system's replication overwrite protection is re-enabled, the file system becomes writeable.</p>
+    /// <p>If the replication configuration is deleted, the file system's replication overwrite protection is re-enabled and the file system becomes writeable.</p>
     pub fn get_replication_overwrite_protection(&self) -> &::std::option::Option<crate::types::ReplicationOverwriteProtection> {
         &self.replication_overwrite_protection
     }

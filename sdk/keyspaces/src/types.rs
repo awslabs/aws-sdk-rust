@@ -31,13 +31,15 @@ pub use crate::types::_throughput_mode::ThroughputMode;
 
 pub use crate::types::_column_definition::ColumnDefinition;
 
+pub use crate::types::_replication_specification::ReplicationSpecification;
+
+pub use crate::types::_rs::Rs;
+
 pub use crate::types::_tag::Tag;
 
 pub use crate::types::_table_summary::TableSummary;
 
 pub use crate::types::_keyspace_summary::KeyspaceSummary;
-
-pub use crate::types::_rs::Rs;
 
 pub use crate::types::_type_status::TypeStatus;
 
@@ -65,7 +67,9 @@ pub use crate::types::_sort_order::SortOrder;
 
 pub use crate::types::_partition_key::PartitionKey;
 
-pub use crate::types::_replication_specification::ReplicationSpecification;
+pub use crate::types::_replication_group_status::ReplicationGroupStatus;
+
+pub use crate::types::_keyspace_status::KeyspaceStatus;
 
 mod _auto_scaling_policy;
 
@@ -93,6 +97,8 @@ mod _encryption_type;
 
 mod _field_definition;
 
+mod _keyspace_status;
+
 mod _keyspace_summary;
 
 mod _partition_key;
@@ -108,6 +114,8 @@ mod _replica_auto_scaling_specification;
 mod _replica_specification;
 
 mod _replica_specification_summary;
+
+mod _replication_group_status;
 
 mod _replication_specification;
 

@@ -6,11 +6,17 @@
 pub struct TaxRegistrationDocument {
     /// <p>The Amazon S3 location where your tax registration document is stored.</p>
     pub s3_location: ::std::option::Option<crate::types::SourceS3Location>,
+    /// <p>The tax registration document.</p>
+    pub file: ::std::option::Option<crate::types::TaxRegistrationDocFile>,
 }
 impl TaxRegistrationDocument {
     /// <p>The Amazon S3 location where your tax registration document is stored.</p>
     pub fn s3_location(&self) -> ::std::option::Option<&crate::types::SourceS3Location> {
         self.s3_location.as_ref()
+    }
+    /// <p>The tax registration document.</p>
+    pub fn file(&self) -> ::std::option::Option<&crate::types::TaxRegistrationDocFile> {
+        self.file.as_ref()
     }
 }
 impl TaxRegistrationDocument {
@@ -25,10 +31,10 @@ impl TaxRegistrationDocument {
 #[non_exhaustive]
 pub struct TaxRegistrationDocumentBuilder {
     pub(crate) s3_location: ::std::option::Option<crate::types::SourceS3Location>,
+    pub(crate) file: ::std::option::Option<crate::types::TaxRegistrationDocFile>,
 }
 impl TaxRegistrationDocumentBuilder {
     /// <p>The Amazon S3 location where your tax registration document is stored.</p>
-    /// This field is required.
     pub fn s3_location(mut self, input: crate::types::SourceS3Location) -> Self {
         self.s3_location = ::std::option::Option::Some(input);
         self
@@ -42,10 +48,25 @@ impl TaxRegistrationDocumentBuilder {
     pub fn get_s3_location(&self) -> &::std::option::Option<crate::types::SourceS3Location> {
         &self.s3_location
     }
+    /// <p>The tax registration document.</p>
+    pub fn file(mut self, input: crate::types::TaxRegistrationDocFile) -> Self {
+        self.file = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The tax registration document.</p>
+    pub fn set_file(mut self, input: ::std::option::Option<crate::types::TaxRegistrationDocFile>) -> Self {
+        self.file = input;
+        self
+    }
+    /// <p>The tax registration document.</p>
+    pub fn get_file(&self) -> &::std::option::Option<crate::types::TaxRegistrationDocFile> {
+        &self.file
+    }
     /// Consumes the builder and constructs a [`TaxRegistrationDocument`](crate::types::TaxRegistrationDocument).
     pub fn build(self) -> crate::types::TaxRegistrationDocument {
         crate::types::TaxRegistrationDocument {
             s3_location: self.s3_location,
+            file: self.file,
         }
     }
 }

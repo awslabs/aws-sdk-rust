@@ -138,6 +138,8 @@ impl Client {
 
 mod batch_delete_tax_registration;
 
+mod batch_get_tax_exemptions;
+
 mod batch_put_tax_registration;
 
 /// Operation customization and supporting types.
@@ -171,14 +173,24 @@ mod delete_supplemental_tax_registration;
 
 mod delete_tax_registration;
 
+mod get_tax_exemption_types;
+
+mod get_tax_inheritance;
+
 mod get_tax_registration;
 
 mod get_tax_registration_document;
 
 mod list_supplemental_tax_registrations;
 
+mod list_tax_exemptions;
+
 mod list_tax_registrations;
 
 mod put_supplemental_tax_registration;
+
+mod put_tax_exemption;
+
+mod put_tax_inheritance;
 
 mod put_tax_registration;

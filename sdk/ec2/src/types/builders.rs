@@ -405,6 +405,10 @@ pub use crate::types::_subnet_configuration::SubnetConfigurationBuilder;
 
 pub use crate::types::_dns_options_specification::DnsOptionsSpecificationBuilder;
 
+pub use crate::types::_vpc_block_public_access_options::VpcBlockPublicAccessOptionsBuilder;
+
+pub use crate::types::_vpc_block_public_access_exclusion::VpcBlockPublicAccessExclusionBuilder;
+
 pub use crate::types::_attribute_boolean_value::AttributeBooleanValueBuilder;
 
 pub use crate::types::_volume_modification::VolumeModificationBuilder;
@@ -854,6 +858,8 @@ pub use crate::types::_vpn_gateway::VpnGatewayBuilder;
 pub use crate::types::_vpc_attachment::VpcAttachmentBuilder;
 
 pub use crate::types::_vpc::VpcBuilder;
+
+pub use crate::types::_block_public_access_states::BlockPublicAccessStatesBuilder;
 
 pub use crate::types::_vpc_peering_connection::VpcPeeringConnectionBuilder;
 

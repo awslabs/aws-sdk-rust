@@ -9,5 +9,11 @@ pub fn ser_tax_registration_document(
         crate::protocol_serde::shape_source_s3_location::ser_source_s3_location(&mut object_2, var_1)?;
         object_2.finish();
     }
+    if let Some(var_3) = &input.file {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("file").start_object();
+        crate::protocol_serde::shape_tax_registration_doc_file::ser_tax_registration_doc_file(&mut object_4, var_3)?;
+        object_4.finish();
+    }
     Ok(())
 }

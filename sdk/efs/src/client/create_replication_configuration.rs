@@ -12,6 +12,7 @@ impl super::Client {
     ///   - [`original_source_file_system_arn(String)`](crate::operation::create_replication_configuration::CreateReplicationConfigurationOutput::original_source_file_system_arn): <p>The Amazon Resource Name (ARN) of the original source EFS file system in the replication configuration.</p>
     ///   - [`creation_time(DateTime)`](crate::operation::create_replication_configuration::CreateReplicationConfigurationOutput::creation_time): <p>Describes when the replication configuration was created.</p>
     ///   - [`destinations(Vec::<Destination>)`](crate::operation::create_replication_configuration::CreateReplicationConfigurationOutput::destinations): <p>An array of destination objects. Only one destination object is supported.</p>
+    ///   - [`source_file_system_owner_id(Option<String>)`](crate::operation::create_replication_configuration::CreateReplicationConfigurationOutput::source_file_system_owner_id): <p>ID of the Amazon Web Services account in which the source file system resides.</p>
     /// - On failure, responds with [`SdkError<CreateReplicationConfigurationError>`](crate::operation::create_replication_configuration::CreateReplicationConfigurationError)
     pub fn create_replication_configuration(
         &self,

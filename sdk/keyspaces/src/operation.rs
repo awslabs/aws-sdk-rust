@@ -52,5 +52,8 @@ pub mod tag_resource;
 /// Types for the `UntagResource` operation.
 pub mod untag_resource;
 
+/// Types for the `UpdateKeyspace` operation.
+pub mod update_keyspace;
+
 /// Types for the `UpdateTable` operation.
 pub mod update_table;

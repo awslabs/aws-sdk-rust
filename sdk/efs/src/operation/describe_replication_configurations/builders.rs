@@ -114,17 +114,17 @@ impl DescribeReplicationConfigurationsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::describe_replication_configurations::paginator::DescribeReplicationConfigurationsPaginator {
         crate::operation::describe_replication_configurations::paginator::DescribeReplicationConfigurationsPaginator::new(self.handle, self.inner)
     }
-    /// <p>You can retrieve the replication configuration for a specific file system by providing its file system ID.</p>
+    /// <p>You can retrieve the replication configuration for a specific file system by providing its file system ID. For cross-account,cross-region replication, an account can only describe the replication configuration for a file system in its own Region.</p>
     pub fn file_system_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.file_system_id(input.into());
         self
     }
-    /// <p>You can retrieve the replication configuration for a specific file system by providing its file system ID.</p>
+    /// <p>You can retrieve the replication configuration for a specific file system by providing its file system ID. For cross-account,cross-region replication, an account can only describe the replication configuration for a file system in its own Region.</p>
     pub fn set_file_system_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_file_system_id(input);
         self
     }
-    /// <p>You can retrieve the replication configuration for a specific file system by providing its file system ID.</p>
+    /// <p>You can retrieve the replication configuration for a specific file system by providing its file system ID. For cross-account,cross-region replication, an account can only describe the replication configuration for a file system in its own Region.</p>
     pub fn get_file_system_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_file_system_id()
     }

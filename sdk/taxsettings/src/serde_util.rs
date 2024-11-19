@@ -44,15 +44,6 @@ pub(crate) fn batch_delete_tax_registration_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn batch_put_tax_registration_output_output_correct_errors(
-    mut builder: crate::operation::batch_put_tax_registration::builders::BatchPutTaxRegistrationOutputBuilder,
-) -> crate::operation::batch_put_tax_registration::builders::BatchPutTaxRegistrationOutputBuilder {
-    if builder.errors.is_none() {
-        builder.errors = Some(Default::default())
-    }
-    builder
-}
-
 pub(crate) fn resource_not_found_exception_correct_errors(
     mut builder: crate::types::error::builders::ResourceNotFoundExceptionBuilder,
 ) -> crate::types::error::builders::ResourceNotFoundExceptionBuilder {
@@ -61,6 +52,15 @@ pub(crate) fn resource_not_found_exception_correct_errors(
     }
     if builder.error_code.is_none() {
         builder.error_code = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn batch_put_tax_registration_output_output_correct_errors(
+    mut builder: crate::operation::batch_put_tax_registration::builders::BatchPutTaxRegistrationOutputBuilder,
+) -> crate::operation::batch_put_tax_registration::builders::BatchPutTaxRegistrationOutputBuilder {
+    if builder.errors.is_none() {
+        builder.errors = Some(Default::default())
     }
     builder
 }
@@ -91,6 +91,33 @@ pub(crate) fn put_supplemental_tax_registration_output_output_correct_errors(
     }
     if builder.status.is_none() {
         builder.status = "no value was set".parse::<crate::types::TaxRegistrationStatus>().ok()
+    }
+    builder
+}
+
+pub(crate) fn access_denied_exception_correct_errors(
+    mut builder: crate::types::error::builders::AccessDeniedExceptionBuilder,
+) -> crate::types::error::builders::AccessDeniedExceptionBuilder {
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn attachment_upload_exception_correct_errors(
+    mut builder: crate::types::error::builders::AttachmentUploadExceptionBuilder,
+) -> crate::types::error::builders::AttachmentUploadExceptionBuilder {
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn case_creation_limit_exceeded_exception_correct_errors(
+    mut builder: crate::types::error::builders::CaseCreationLimitExceededExceptionBuilder,
+) -> crate::types::error::builders::CaseCreationLimitExceededExceptionBuilder {
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
     }
     builder
 }
@@ -312,9 +339,32 @@ pub(crate) fn ukraine_additional_info_correct_errors(
     builder
 }
 
+pub(crate) fn authority_correct_errors(mut builder: crate::types::builders::AuthorityBuilder) -> crate::types::builders::AuthorityBuilder {
+    if builder.country.is_none() {
+        builder.country = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn jurisdiction_correct_errors(mut builder: crate::types::builders::JurisdictionBuilder) -> crate::types::builders::JurisdictionBuilder {
     if builder.country_code.is_none() {
         builder.country_code = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn tax_exemption_correct_errors(mut builder: crate::types::builders::TaxExemptionBuilder) -> crate::types::builders::TaxExemptionBuilder {
+    if builder.authority.is_none() {
+        builder.authority = {
+            let builder = crate::types::builders::AuthorityBuilder::default();
+            crate::serde_util::authority_correct_errors(builder).build().ok()
+        }
+    }
+    if builder.tax_exemption_type.is_none() {
+        builder.tax_exemption_type = {
+            let builder = crate::types::builders::TaxExemptionTypeBuilder::default();
+            Some(builder.build())
+        }
     }
     builder
 }

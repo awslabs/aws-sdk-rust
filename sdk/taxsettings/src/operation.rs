@@ -4,6 +4,9 @@ pub use ::aws_types::request_id::RequestId;
 /// Types for the `BatchDeleteTaxRegistration` operation.
 pub mod batch_delete_tax_registration;
 
+/// Types for the `BatchGetTaxExemptions` operation.
+pub mod batch_get_tax_exemptions;
+
 /// Types for the `BatchPutTaxRegistration` operation.
 pub mod batch_put_tax_registration;
 
@@ -12,6 +15,12 @@ pub mod delete_supplemental_tax_registration;
 
 /// Types for the `DeleteTaxRegistration` operation.
 pub mod delete_tax_registration;
+
+/// Types for the `GetTaxExemptionTypes` operation.
+pub mod get_tax_exemption_types;
+
+/// Types for the `GetTaxInheritance` operation.
+pub mod get_tax_inheritance;
 
 /// Types for the `GetTaxRegistration` operation.
 pub mod get_tax_registration;
@@ -22,11 +31,20 @@ pub mod get_tax_registration_document;
 /// Types for the `ListSupplementalTaxRegistrations` operation.
 pub mod list_supplemental_tax_registrations;
 
+/// Types for the `ListTaxExemptions` operation.
+pub mod list_tax_exemptions;
+
 /// Types for the `ListTaxRegistrations` operation.
 pub mod list_tax_registrations;
 
 /// Types for the `PutSupplementalTaxRegistration` operation.
 pub mod put_supplemental_tax_registration;
+
+/// Types for the `PutTaxExemption` operation.
+pub mod put_tax_exemption;
+
+/// Types for the `PutTaxInheritance` operation.
+pub mod put_tax_inheritance;
 
 /// Types for the `PutTaxRegistration` operation.
 pub mod put_tax_registration;

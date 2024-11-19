@@ -162,6 +162,11 @@ pub(crate) fn de_get_keyspace(
                 "replicationRegions" => {
                     builder = builder.set_replication_regions(crate::protocol_serde::shape_region_list::de_region_list(tokens)?);
                 }
+                "replicationGroupStatuses" => {
+                    builder = builder.set_replication_group_statuses(
+                        crate::protocol_serde::shape_replication_group_status_list::de_replication_group_status_list(tokens)?,
+                    );
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

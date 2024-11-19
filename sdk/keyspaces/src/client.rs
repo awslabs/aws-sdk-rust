@@ -197,4 +197,6 @@ mod tag_resource;
 
 mod untag_resource;
 
+mod update_keyspace;
+
 mod update_table;

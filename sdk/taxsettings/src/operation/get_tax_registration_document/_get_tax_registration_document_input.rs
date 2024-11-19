@@ -34,7 +34,6 @@ pub struct GetTaxRegistrationDocumentInputBuilder {
 }
 impl GetTaxRegistrationDocumentInputBuilder {
     /// <p>The Amazon S3 bucket that you specify to download your tax documents to.</p>
-    /// This field is required.
     pub fn destination_s3_location(mut self, input: crate::types::DestinationS3Location) -> Self {
         self.destination_s3_location = ::std::option::Option::Some(input);
         self

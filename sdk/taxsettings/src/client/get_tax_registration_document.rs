@@ -3,10 +3,11 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetTaxRegistrationDocument`](crate::operation::get_tax_registration_document::builders::GetTaxRegistrationDocumentFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`destination_s3_location(DestinationS3Location)`](crate::operation::get_tax_registration_document::builders::GetTaxRegistrationDocumentFluentBuilder::destination_s3_location) / [`set_destination_s3_location(Option<DestinationS3Location>)`](crate::operation::get_tax_registration_document::builders::GetTaxRegistrationDocumentFluentBuilder::set_destination_s3_location):<br>required: **true**<br><p>The Amazon S3 bucket that you specify to download your tax documents to.</p><br>
+    ///   - [`destination_s3_location(DestinationS3Location)`](crate::operation::get_tax_registration_document::builders::GetTaxRegistrationDocumentFluentBuilder::destination_s3_location) / [`set_destination_s3_location(Option<DestinationS3Location>)`](crate::operation::get_tax_registration_document::builders::GetTaxRegistrationDocumentFluentBuilder::set_destination_s3_location):<br>required: **false**<br><p>The Amazon S3 bucket that you specify to download your tax documents to.</p><br>
     ///   - [`tax_document_metadata(TaxDocumentMetadata)`](crate::operation::get_tax_registration_document::builders::GetTaxRegistrationDocumentFluentBuilder::tax_document_metadata) / [`set_tax_document_metadata(Option<TaxDocumentMetadata>)`](crate::operation::get_tax_registration_document::builders::GetTaxRegistrationDocumentFluentBuilder::set_tax_document_metadata):<br>required: **true**<br><p>The metadata for your tax document.</p><br>
     /// - On success, responds with [`GetTaxRegistrationDocumentOutput`](crate::operation::get_tax_registration_document::GetTaxRegistrationDocumentOutput) with field(s):
     ///   - [`destination_file_path(Option<String>)`](crate::operation::get_tax_registration_document::GetTaxRegistrationDocumentOutput::destination_file_path): <p>The file path of the Amazon S3 bucket where you want to download your tax document to.</p>
+    ///   - [`presigned_s3_url(Option<String>)`](crate::operation::get_tax_registration_document::GetTaxRegistrationDocumentOutput::presigned_s3_url): <p>The Amazon S3 presigned URL of the tax registration document.</p>
     /// - On failure, responds with [`SdkError<GetTaxRegistrationDocumentError>`](crate::operation::get_tax_registration_document::GetTaxRegistrationDocumentError)
     pub fn get_tax_registration_document(
         &self,

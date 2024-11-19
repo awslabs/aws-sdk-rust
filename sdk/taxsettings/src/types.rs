@@ -11,6 +11,8 @@ pub use crate::types::_verification_details::VerificationDetails;
 
 pub use crate::types::_tax_registration_document::TaxRegistrationDocument;
 
+pub use crate::types::_tax_registration_doc_file::TaxRegistrationDocFile;
+
 pub use crate::types::_source_s3_location::SourceS3Location;
 
 pub use crate::types::_additional_info_request::AdditionalInfoRequest;
@@ -67,6 +69,12 @@ pub use crate::types::_address::Address;
 
 pub use crate::types::_tax_registration_type::TaxRegistrationType;
 
+pub use crate::types::_heritage_status::HeritageStatus;
+
+pub use crate::types::_exemption_certificate::ExemptionCertificate;
+
+pub use crate::types::_authority::Authority;
+
 pub use crate::types::_supplemental_tax_registration_entry::SupplementalTaxRegistrationEntry;
 
 pub use crate::types::_supplemental_tax_registration_type::SupplementalTaxRegistrationType;
@@ -91,6 +99,14 @@ pub use crate::types::_brazil_additional_info::BrazilAdditionalInfo;
 
 pub use crate::types::_tax_document_metadata::TaxDocumentMetadata;
 
+pub use crate::types::_tax_exemption_details::TaxExemptionDetails;
+
+pub use crate::types::_tax_exemption::TaxExemption;
+
+pub use crate::types::_entity_exemption_account_status::EntityExemptionAccountStatus;
+
+pub use crate::types::_tax_exemption_type::TaxExemptionType;
+
 pub use crate::types::_supplemental_tax_registration::SupplementalTaxRegistration;
 
 pub use crate::types::_destination_s3_location::DestinationS3Location;
@@ -113,6 +129,8 @@ mod _address;
 
 mod _address_role_type;
 
+mod _authority;
+
 mod _batch_delete_tax_registration_error;
 
 mod _batch_put_tax_registration_error;
@@ -123,9 +141,15 @@ mod _canada_additional_info;
 
 mod _destination_s3_location;
 
+mod _entity_exemption_account_status;
+
 mod _estonia_additional_info;
 
+mod _exemption_certificate;
+
 mod _georgia_additional_info;
+
+mod _heritage_status;
 
 mod _india_additional_info;
 
@@ -175,9 +199,17 @@ mod _supplemental_tax_registration_type;
 
 mod _tax_document_metadata;
 
+mod _tax_exemption;
+
+mod _tax_exemption_details;
+
+mod _tax_exemption_type;
+
 mod _tax_inheritance_details;
 
 mod _tax_registration;
+
+mod _tax_registration_doc_file;
 
 mod _tax_registration_document;
 

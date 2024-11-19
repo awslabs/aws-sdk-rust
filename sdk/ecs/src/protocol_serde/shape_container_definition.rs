@@ -171,141 +171,144 @@ pub fn ser_container_definition(
             ::aws_smithy_types::Number::NegInt((*var_50).into()),
         );
     }
-    if let Some(var_51) = &input.hostname {
-        object.key("hostname").string(var_51.as_str());
+    if let Some(var_51) = &input.version_consistency {
+        object.key("versionConsistency").string(var_51.as_str());
     }
-    if let Some(var_52) = &input.user {
-        object.key("user").string(var_52.as_str());
+    if let Some(var_52) = &input.hostname {
+        object.key("hostname").string(var_52.as_str());
     }
-    if let Some(var_53) = &input.working_directory {
-        object.key("workingDirectory").string(var_53.as_str());
+    if let Some(var_53) = &input.user {
+        object.key("user").string(var_53.as_str());
     }
-    if let Some(var_54) = &input.disable_networking {
-        object.key("disableNetworking").boolean(*var_54);
+    if let Some(var_54) = &input.working_directory {
+        object.key("workingDirectory").string(var_54.as_str());
     }
-    if let Some(var_55) = &input.privileged {
-        object.key("privileged").boolean(*var_55);
+    if let Some(var_55) = &input.disable_networking {
+        object.key("disableNetworking").boolean(*var_55);
     }
-    if let Some(var_56) = &input.readonly_root_filesystem {
-        object.key("readonlyRootFilesystem").boolean(*var_56);
+    if let Some(var_56) = &input.privileged {
+        object.key("privileged").boolean(*var_56);
     }
-    if let Some(var_57) = &input.dns_servers {
-        let mut array_58 = object.key("dnsServers").start_array();
-        for item_59 in var_57 {
+    if let Some(var_57) = &input.readonly_root_filesystem {
+        object.key("readonlyRootFilesystem").boolean(*var_57);
+    }
+    if let Some(var_58) = &input.dns_servers {
+        let mut array_59 = object.key("dnsServers").start_array();
+        for item_60 in var_58 {
             {
-                array_58.value().string(item_59.as_str());
+                array_59.value().string(item_60.as_str());
             }
         }
-        array_58.finish();
+        array_59.finish();
     }
-    if let Some(var_60) = &input.dns_search_domains {
-        let mut array_61 = object.key("dnsSearchDomains").start_array();
-        for item_62 in var_60 {
+    if let Some(var_61) = &input.dns_search_domains {
+        let mut array_62 = object.key("dnsSearchDomains").start_array();
+        for item_63 in var_61 {
             {
-                array_61.value().string(item_62.as_str());
+                array_62.value().string(item_63.as_str());
             }
         }
-        array_61.finish();
+        array_62.finish();
     }
-    if let Some(var_63) = &input.extra_hosts {
-        let mut array_64 = object.key("extraHosts").start_array();
-        for item_65 in var_63 {
-            {
-                #[allow(unused_mut)]
-                let mut object_66 = array_64.value().start_object();
-                crate::protocol_serde::shape_host_entry::ser_host_entry(&mut object_66, item_65)?;
-                object_66.finish();
-            }
-        }
-        array_64.finish();
-    }
-    if let Some(var_67) = &input.docker_security_options {
-        let mut array_68 = object.key("dockerSecurityOptions").start_array();
-        for item_69 in var_67 {
-            {
-                array_68.value().string(item_69.as_str());
-            }
-        }
-        array_68.finish();
-    }
-    if let Some(var_70) = &input.interactive {
-        object.key("interactive").boolean(*var_70);
-    }
-    if let Some(var_71) = &input.pseudo_terminal {
-        object.key("pseudoTerminal").boolean(*var_71);
-    }
-    if let Some(var_72) = &input.docker_labels {
-        #[allow(unused_mut)]
-        let mut object_73 = object.key("dockerLabels").start_object();
-        for (key_74, value_75) in var_72 {
-            {
-                object_73.key(key_74.as_str()).string(value_75.as_str());
-            }
-        }
-        object_73.finish();
-    }
-    if let Some(var_76) = &input.ulimits {
-        let mut array_77 = object.key("ulimits").start_array();
-        for item_78 in var_76 {
+    if let Some(var_64) = &input.extra_hosts {
+        let mut array_65 = object.key("extraHosts").start_array();
+        for item_66 in var_64 {
             {
                 #[allow(unused_mut)]
-                let mut object_79 = array_77.value().start_object();
-                crate::protocol_serde::shape_ulimit::ser_ulimit(&mut object_79, item_78)?;
-                object_79.finish();
+                let mut object_67 = array_65.value().start_object();
+                crate::protocol_serde::shape_host_entry::ser_host_entry(&mut object_67, item_66)?;
+                object_67.finish();
             }
         }
-        array_77.finish();
+        array_65.finish();
     }
-    if let Some(var_80) = &input.log_configuration {
+    if let Some(var_68) = &input.docker_security_options {
+        let mut array_69 = object.key("dockerSecurityOptions").start_array();
+        for item_70 in var_68 {
+            {
+                array_69.value().string(item_70.as_str());
+            }
+        }
+        array_69.finish();
+    }
+    if let Some(var_71) = &input.interactive {
+        object.key("interactive").boolean(*var_71);
+    }
+    if let Some(var_72) = &input.pseudo_terminal {
+        object.key("pseudoTerminal").boolean(*var_72);
+    }
+    if let Some(var_73) = &input.docker_labels {
         #[allow(unused_mut)]
-        let mut object_81 = object.key("logConfiguration").start_object();
-        crate::protocol_serde::shape_log_configuration::ser_log_configuration(&mut object_81, var_80)?;
-        object_81.finish();
+        let mut object_74 = object.key("dockerLabels").start_object();
+        for (key_75, value_76) in var_73 {
+            {
+                object_74.key(key_75.as_str()).string(value_76.as_str());
+            }
+        }
+        object_74.finish();
     }
-    if let Some(var_82) = &input.health_check {
-        #[allow(unused_mut)]
-        let mut object_83 = object.key("healthCheck").start_object();
-        crate::protocol_serde::shape_health_check::ser_health_check(&mut object_83, var_82)?;
-        object_83.finish();
-    }
-    if let Some(var_84) = &input.system_controls {
-        let mut array_85 = object.key("systemControls").start_array();
-        for item_86 in var_84 {
+    if let Some(var_77) = &input.ulimits {
+        let mut array_78 = object.key("ulimits").start_array();
+        for item_79 in var_77 {
             {
                 #[allow(unused_mut)]
-                let mut object_87 = array_85.value().start_object();
-                crate::protocol_serde::shape_system_control::ser_system_control(&mut object_87, item_86)?;
-                object_87.finish();
+                let mut object_80 = array_78.value().start_object();
+                crate::protocol_serde::shape_ulimit::ser_ulimit(&mut object_80, item_79)?;
+                object_80.finish();
             }
         }
-        array_85.finish();
+        array_78.finish();
     }
-    if let Some(var_88) = &input.resource_requirements {
-        let mut array_89 = object.key("resourceRequirements").start_array();
-        for item_90 in var_88 {
+    if let Some(var_81) = &input.log_configuration {
+        #[allow(unused_mut)]
+        let mut object_82 = object.key("logConfiguration").start_object();
+        crate::protocol_serde::shape_log_configuration::ser_log_configuration(&mut object_82, var_81)?;
+        object_82.finish();
+    }
+    if let Some(var_83) = &input.health_check {
+        #[allow(unused_mut)]
+        let mut object_84 = object.key("healthCheck").start_object();
+        crate::protocol_serde::shape_health_check::ser_health_check(&mut object_84, var_83)?;
+        object_84.finish();
+    }
+    if let Some(var_85) = &input.system_controls {
+        let mut array_86 = object.key("systemControls").start_array();
+        for item_87 in var_85 {
             {
                 #[allow(unused_mut)]
-                let mut object_91 = array_89.value().start_object();
-                crate::protocol_serde::shape_resource_requirement::ser_resource_requirement(&mut object_91, item_90)?;
-                object_91.finish();
+                let mut object_88 = array_86.value().start_object();
+                crate::protocol_serde::shape_system_control::ser_system_control(&mut object_88, item_87)?;
+                object_88.finish();
             }
         }
-        array_89.finish();
+        array_86.finish();
     }
-    if let Some(var_92) = &input.firelens_configuration {
-        #[allow(unused_mut)]
-        let mut object_93 = object.key("firelensConfiguration").start_object();
-        crate::protocol_serde::shape_firelens_configuration::ser_firelens_configuration(&mut object_93, var_92)?;
-        object_93.finish();
-    }
-    if let Some(var_94) = &input.credential_specs {
-        let mut array_95 = object.key("credentialSpecs").start_array();
-        for item_96 in var_94 {
+    if let Some(var_89) = &input.resource_requirements {
+        let mut array_90 = object.key("resourceRequirements").start_array();
+        for item_91 in var_89 {
             {
-                array_95.value().string(item_96.as_str());
+                #[allow(unused_mut)]
+                let mut object_92 = array_90.value().start_object();
+                crate::protocol_serde::shape_resource_requirement::ser_resource_requirement(&mut object_92, item_91)?;
+                object_92.finish();
             }
         }
-        array_95.finish();
+        array_90.finish();
+    }
+    if let Some(var_93) = &input.firelens_configuration {
+        #[allow(unused_mut)]
+        let mut object_94 = object.key("firelensConfiguration").start_object();
+        crate::protocol_serde::shape_firelens_configuration::ser_firelens_configuration(&mut object_94, var_93)?;
+        object_94.finish();
+    }
+    if let Some(var_95) = &input.credential_specs {
+        let mut array_96 = object.key("credentialSpecs").start_array();
+        for item_97 in var_95 {
+            {
+                array_96.value().string(item_97.as_str());
+            }
+        }
+        array_96.finish();
     }
     Ok(())
 }
@@ -416,6 +419,13 @@ where
                             builder = builder.set_stop_timeout(
                                 ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
                                     .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "versionConsistency" => {
+                            builder = builder.set_version_consistency(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::VersionConsistency::from(u.as_ref())))
                                     .transpose()?,
                             );
                         }

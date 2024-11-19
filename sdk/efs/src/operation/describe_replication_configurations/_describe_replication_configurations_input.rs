@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeReplicationConfigurationsInput {
-    /// <p>You can retrieve the replication configuration for a specific file system by providing its file system ID.</p>
+    /// <p>You can retrieve the replication configuration for a specific file system by providing its file system ID. For cross-account,cross-region replication, an account can only describe the replication configuration for a file system in its own Region.</p>
     pub file_system_id: ::std::option::Option<::std::string::String>,
     /// <p><code>NextToken</code> is present if the response is paginated. You can use <code>NextToken</code> in a subsequent request to fetch the next page of output.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -11,7 +11,7 @@ pub struct DescribeReplicationConfigurationsInput {
     pub max_results: ::std::option::Option<i32>,
 }
 impl DescribeReplicationConfigurationsInput {
-    /// <p>You can retrieve the replication configuration for a specific file system by providing its file system ID.</p>
+    /// <p>You can retrieve the replication configuration for a specific file system by providing its file system ID. For cross-account,cross-region replication, an account can only describe the replication configuration for a file system in its own Region.</p>
     pub fn file_system_id(&self) -> ::std::option::Option<&str> {
         self.file_system_id.as_deref()
     }
@@ -40,17 +40,17 @@ pub struct DescribeReplicationConfigurationsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
 }
 impl DescribeReplicationConfigurationsInputBuilder {
-    /// <p>You can retrieve the replication configuration for a specific file system by providing its file system ID.</p>
+    /// <p>You can retrieve the replication configuration for a specific file system by providing its file system ID. For cross-account,cross-region replication, an account can only describe the replication configuration for a file system in its own Region.</p>
     pub fn file_system_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_system_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>You can retrieve the replication configuration for a specific file system by providing its file system ID.</p>
+    /// <p>You can retrieve the replication configuration for a specific file system by providing its file system ID. For cross-account,cross-region replication, an account can only describe the replication configuration for a file system in its own Region.</p>
     pub fn set_file_system_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.file_system_id = input;
         self
     }
-    /// <p>You can retrieve the replication configuration for a specific file system by providing its file system ID.</p>
+    /// <p>You can retrieve the replication configuration for a specific file system by providing its file system ID. For cross-account,cross-region replication, an account can only describe the replication configuration for a file system in its own Region.</p>
     pub fn get_file_system_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.file_system_id
     }

@@ -25,11 +25,17 @@ pub fn parse_http_error_metadata(
 
 pub(crate) mod shape_batch_delete_tax_registration;
 
+pub(crate) mod shape_batch_get_tax_exemptions;
+
 pub(crate) mod shape_batch_put_tax_registration;
 
 pub(crate) mod shape_delete_supplemental_tax_registration;
 
 pub(crate) mod shape_delete_tax_registration;
+
+pub(crate) mod shape_get_tax_exemption_types;
+
+pub(crate) mod shape_get_tax_inheritance;
 
 pub(crate) mod shape_get_tax_registration;
 
@@ -37,9 +43,15 @@ pub(crate) mod shape_get_tax_registration_document;
 
 pub(crate) mod shape_list_supplemental_tax_registrations;
 
+pub(crate) mod shape_list_tax_exemptions;
+
 pub(crate) mod shape_list_tax_registrations;
 
 pub(crate) mod shape_put_supplemental_tax_registration;
+
+pub(crate) mod shape_put_tax_exemption;
+
+pub(crate) mod shape_put_tax_inheritance;
 
 pub(crate) mod shape_put_tax_registration;
 
@@ -51,9 +63,17 @@ pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
     }
 }
 
+pub(crate) mod shape_access_denied_exception;
+
+pub(crate) mod shape_attachment_upload_exception;
+
 pub(crate) mod shape_batch_delete_tax_registration_input;
 
+pub(crate) mod shape_batch_get_tax_exemptions_input;
+
 pub(crate) mod shape_batch_put_tax_registration_input;
+
+pub(crate) mod shape_case_creation_limit_exceeded_exception;
 
 pub(crate) mod shape_conflict_exception;
 
@@ -69,9 +89,15 @@ pub(crate) mod shape_internal_server_exception;
 
 pub(crate) mod shape_list_supplemental_tax_registrations_input;
 
+pub(crate) mod shape_list_tax_exemptions_input;
+
 pub(crate) mod shape_list_tax_registrations_input;
 
 pub(crate) mod shape_put_supplemental_tax_registration_input;
+
+pub(crate) mod shape_put_tax_exemption_input;
+
+pub(crate) mod shape_put_tax_inheritance_input;
 
 pub(crate) mod shape_put_tax_registration_input;
 
@@ -81,17 +107,27 @@ pub(crate) mod shape_validation_exception;
 
 pub(crate) mod shape_account_details_list;
 
+pub(crate) mod shape_account_ids;
+
+pub(crate) mod shape_authority;
+
 pub(crate) mod shape_batch_delete_tax_registration_errors;
 
 pub(crate) mod shape_batch_put_tax_registration_errors;
 
 pub(crate) mod shape_destination_s3_location;
 
+pub(crate) mod shape_exemption_certificate;
+
 pub(crate) mod shape_supplemental_tax_registration_entry;
 
 pub(crate) mod shape_supplemental_tax_registration_list;
 
 pub(crate) mod shape_tax_document_metadata;
+
+pub(crate) mod shape_tax_exemption_details_map;
+
+pub(crate) mod shape_tax_exemption_types;
 
 pub(crate) mod shape_tax_registration;
 
@@ -115,11 +151,17 @@ pub(crate) mod shape_supplemental_tax_registration;
 
 pub(crate) mod shape_tax_document_metadatas;
 
+pub(crate) mod shape_tax_exemption_details;
+
+pub(crate) mod shape_tax_exemption_type;
+
 pub(crate) mod shape_validation_exception_field;
 
 pub(crate) mod shape_verification_details;
 
 pub(crate) mod shape_account_meta_data;
+
+pub(crate) mod shape_authorities;
 
 pub(crate) mod shape_brazil_additional_info;
 
@@ -149,6 +191,8 @@ pub(crate) mod shape_south_korea_additional_info;
 
 pub(crate) mod shape_spain_additional_info;
 
+pub(crate) mod shape_tax_exemptions;
+
 pub(crate) mod shape_tax_inheritance_details;
 
 pub(crate) mod shape_tax_registration_document;
@@ -166,3 +210,7 @@ pub(crate) mod shape_jurisdiction;
 pub(crate) mod shape_malaysia_service_tax_codes_list;
 
 pub(crate) mod shape_source_s3_location;
+
+pub(crate) mod shape_tax_exemption;
+
+pub(crate) mod shape_tax_registration_doc_file;

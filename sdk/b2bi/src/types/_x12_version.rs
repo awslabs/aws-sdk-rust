@@ -14,6 +14,8 @@
 /// match x12version {
 ///     X12Version::Version4010 => { /* ... */ },
 ///     X12Version::Version4030 => { /* ... */ },
+///     X12Version::Version4050 => { /* ... */ },
+///     X12Version::Version4060 => { /* ... */ },
 ///     X12Version::Version5010 => { /* ... */ },
 ///     X12Version::Version5010Hipaa => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -48,6 +50,10 @@ pub enum X12Version {
     #[allow(missing_docs)] // documentation missing in model
     Version4030,
     #[allow(missing_docs)] // documentation missing in model
+    Version4050,
+    #[allow(missing_docs)] // documentation missing in model
+    Version4060,
+    #[allow(missing_docs)] // documentation missing in model
     Version5010,
     #[allow(missing_docs)] // documentation missing in model
     Version5010Hipaa,
@@ -60,6 +66,8 @@ impl ::std::convert::From<&str> for X12Version {
         match s {
             "VERSION_4010" => X12Version::Version4010,
             "VERSION_4030" => X12Version::Version4030,
+            "VERSION_4050" => X12Version::Version4050,
+            "VERSION_4060" => X12Version::Version4060,
             "VERSION_5010" => X12Version::Version5010,
             "VERSION_5010_HIPAA" => X12Version::Version5010Hipaa,
             other => X12Version::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -79,6 +87,8 @@ impl X12Version {
         match self {
             X12Version::Version4010 => "VERSION_4010",
             X12Version::Version4030 => "VERSION_4030",
+            X12Version::Version4050 => "VERSION_4050",
+            X12Version::Version4060 => "VERSION_4060",
             X12Version::Version5010 => "VERSION_5010",
             X12Version::Version5010Hipaa => "VERSION_5010_HIPAA",
             X12Version::Unknown(value) => value.as_str(),
@@ -86,7 +96,14 @@ impl X12Version {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["VERSION_4010", "VERSION_4030", "VERSION_5010", "VERSION_5010_HIPAA"]
+        &[
+            "VERSION_4010",
+            "VERSION_4030",
+            "VERSION_4050",
+            "VERSION_4060",
+            "VERSION_5010",
+            "VERSION_5010_HIPAA",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for X12Version {
@@ -111,6 +128,8 @@ impl ::std::fmt::Display for X12Version {
         match self {
             X12Version::Version4010 => write!(f, "VERSION_4010"),
             X12Version::Version4030 => write!(f, "VERSION_4030"),
+            X12Version::Version4050 => write!(f, "VERSION_4050"),
+            X12Version::Version4060 => write!(f, "VERSION_4060"),
             X12Version::Version5010 => write!(f, "VERSION_5010"),
             X12Version::Version5010Hipaa => write!(f, "VERSION_5010_HIPAA"),
             X12Version::Unknown(value) => write!(f, "{}", value),

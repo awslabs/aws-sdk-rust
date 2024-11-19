@@ -1745,6 +1745,8 @@ pub(crate) mod shape_table_identifier;
 
 pub(crate) mod shape_table_optimizer_run;
 
+pub(crate) mod shape_table_optimizer_vpc_configuration;
+
 pub(crate) mod shape_table_status;
 
 pub(crate) mod shape_table_version_error;

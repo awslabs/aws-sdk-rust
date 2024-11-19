@@ -7,6 +7,8 @@ pub use crate::types::_verification_details::VerificationDetailsBuilder;
 
 pub use crate::types::_tax_registration_document::TaxRegistrationDocumentBuilder;
 
+pub use crate::types::_tax_registration_doc_file::TaxRegistrationDocFileBuilder;
+
 pub use crate::types::_source_s3_location::SourceS3LocationBuilder;
 
 pub use crate::types::_additional_info_request::AdditionalInfoRequestBuilder;
@@ -41,6 +43,10 @@ pub use crate::types::_malaysia_additional_info::MalaysiaAdditionalInfoBuilder;
 
 pub use crate::types::_address::AddressBuilder;
 
+pub use crate::types::_exemption_certificate::ExemptionCertificateBuilder;
+
+pub use crate::types::_authority::AuthorityBuilder;
+
 pub use crate::types::_supplemental_tax_registration_entry::SupplementalTaxRegistrationEntryBuilder;
 
 pub use crate::types::_account_details::AccountDetailsBuilder;
@@ -60,6 +66,12 @@ pub use crate::types::_india_additional_info::IndiaAdditionalInfoBuilder;
 pub use crate::types::_brazil_additional_info::BrazilAdditionalInfoBuilder;
 
 pub use crate::types::_tax_document_metadata::TaxDocumentMetadataBuilder;
+
+pub use crate::types::_tax_exemption_details::TaxExemptionDetailsBuilder;
+
+pub use crate::types::_tax_exemption::TaxExemptionBuilder;
+
+pub use crate::types::_tax_exemption_type::TaxExemptionTypeBuilder;
 
 pub use crate::types::_supplemental_tax_registration::SupplementalTaxRegistrationBuilder;
 

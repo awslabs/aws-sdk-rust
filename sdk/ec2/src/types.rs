@@ -619,6 +619,18 @@ pub use crate::types::_dns_record_ip_type::DnsRecordIpType;
 
 pub use crate::types::_ip_address_type::IpAddressType;
 
+pub use crate::types::_vpc_block_public_access_options::VpcBlockPublicAccessOptions;
+
+pub use crate::types::_internet_gateway_block_mode::InternetGatewayBlockMode;
+
+pub use crate::types::_vpc_block_public_access_state::VpcBlockPublicAccessState;
+
+pub use crate::types::_vpc_block_public_access_exclusion::VpcBlockPublicAccessExclusion;
+
+pub use crate::types::_vpc_block_public_access_exclusion_state::VpcBlockPublicAccessExclusionState;
+
+pub use crate::types::_internet_gateway_exclusion_mode::InternetGatewayExclusionMode;
+
 pub use crate::types::_attribute_boolean_value::AttributeBooleanValue;
 
 pub use crate::types::_volume_modification::VolumeModification;
@@ -1276,6 +1288,10 @@ pub use crate::types::_vpc_attachment::VpcAttachment;
 pub use crate::types::_vpc::Vpc;
 
 pub use crate::types::_vpc_state::VpcState;
+
+pub use crate::types::_block_public_access_states::BlockPublicAccessStates;
+
+pub use crate::types::_block_public_access_mode::BlockPublicAccessMode;
 
 pub use crate::types::_vpc_peering_connection::VpcPeeringConnection;
 
@@ -2339,6 +2355,10 @@ mod _blob_attribute_value;
 
 mod _block_device_mapping;
 
+mod _block_public_access_mode;
+
+mod _block_public_access_states;
+
 mod _boot_mode_type;
 
 mod _boot_mode_values;
@@ -3108,6 +3128,10 @@ mod _interface_protocol_type;
 mod _internet_gateway;
 
 mod _internet_gateway_attachment;
+
+mod _internet_gateway_block_mode;
+
+mod _internet_gateway_exclusion_mode;
 
 mod _ip_address_type;
 
@@ -4316,6 +4340,14 @@ mod _vpc;
 mod _vpc_attachment;
 
 mod _vpc_attribute_name;
+
+mod _vpc_block_public_access_exclusion;
+
+mod _vpc_block_public_access_exclusion_state;
+
+mod _vpc_block_public_access_options;
+
+mod _vpc_block_public_access_state;
 
 mod _vpc_cidr_block_association;
 

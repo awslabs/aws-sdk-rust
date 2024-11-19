@@ -9,7 +9,7 @@ pub struct UpdateTableOptimizerInput {
     pub database_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the table.</p>
     pub table_name: ::std::option::Option<::std::string::String>,
-    /// <p>The type of table optimizer. Currently, the only valid value is <code>compaction</code>.</p>
+    /// <p>The type of table optimizer.</p>
     pub r#type: ::std::option::Option<crate::types::TableOptimizerType>,
     /// <p>A <code>TableOptimizerConfiguration</code> object representing the configuration of a table optimizer.</p>
     pub table_optimizer_configuration: ::std::option::Option<crate::types::TableOptimizerConfiguration>,
@@ -27,7 +27,7 @@ impl UpdateTableOptimizerInput {
     pub fn table_name(&self) -> ::std::option::Option<&str> {
         self.table_name.as_deref()
     }
-    /// <p>The type of table optimizer. Currently, the only valid value is <code>compaction</code>.</p>
+    /// <p>The type of table optimizer.</p>
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::TableOptimizerType> {
         self.r#type.as_ref()
     }
@@ -99,18 +99,18 @@ impl UpdateTableOptimizerInputBuilder {
     pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.table_name
     }
-    /// <p>The type of table optimizer. Currently, the only valid value is <code>compaction</code>.</p>
+    /// <p>The type of table optimizer.</p>
     /// This field is required.
     pub fn r#type(mut self, input: crate::types::TableOptimizerType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of table optimizer. Currently, the only valid value is <code>compaction</code>.</p>
+    /// <p>The type of table optimizer.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::TableOptimizerType>) -> Self {
         self.r#type = input;
         self
     }
-    /// <p>The type of table optimizer. Currently, the only valid value is <code>compaction</code>.</p>
+    /// <p>The type of table optimizer.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::TableOptimizerType> {
         &self.r#type
     }

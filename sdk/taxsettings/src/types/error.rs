@@ -7,6 +7,18 @@ pub use crate::types::error::_conflict_exception::ConflictException;
 
 pub use crate::types::error::_resource_not_found_exception::ResourceNotFoundException;
 
+pub use crate::types::error::_case_creation_limit_exceeded_exception::CaseCreationLimitExceededException;
+
+pub use crate::types::error::_attachment_upload_exception::AttachmentUploadException;
+
+pub use crate::types::error::_access_denied_exception::AccessDeniedException;
+
+mod _access_denied_exception;
+
+mod _attachment_upload_exception;
+
+mod _case_creation_limit_exceeded_exception;
+
 mod _conflict_exception;
 
 mod _internal_server_exception;

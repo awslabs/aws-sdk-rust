@@ -9,6 +9,16 @@ pub(crate) fn reflens_list_supplemental_tax_registrations_output_output_next_tok
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_tax_exemptions_output_output_next_token(
+    input: &crate::operation::list_tax_exemptions::ListTaxExemptionsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_tax_registrations_output_output_next_token(
     input: &crate::operation::list_tax_registrations::ListTaxRegistrationsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -23,6 +33,16 @@ pub(crate) fn lens_list_supplemental_tax_registrations_output_output_tax_registr
     input: crate::operation::list_supplemental_tax_registrations::ListSupplementalTaxRegistrationsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::SupplementalTaxRegistration>> {
     let input = input.tax_registrations;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_tax_exemptions_output_output_tax_exemption_details_map(
+    input: crate::operation::list_tax_exemptions::ListTaxExemptionsOutput,
+) -> ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::TaxExemptionDetails>> {
+    let input = match input.tax_exemption_details_map {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
     ::std::option::Option::Some(input)
 }
 

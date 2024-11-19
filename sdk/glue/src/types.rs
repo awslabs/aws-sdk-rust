@@ -47,6 +47,8 @@ pub use crate::types::_retention_configuration::RetentionConfiguration;
 
 pub use crate::types::_iceberg_retention_configuration::IcebergRetentionConfiguration;
 
+pub use crate::types::_table_optimizer_vpc_configuration::TableOptimizerVpcConfiguration;
+
 pub use crate::types::_table_optimizer_type::TableOptimizerType;
 
 pub use crate::types::_view_update_action::ViewUpdateAction;
@@ -1690,6 +1692,8 @@ mod _table_optimizer_event_type;
 mod _table_optimizer_run;
 
 mod _table_optimizer_type;
+
+mod _table_optimizer_vpc_configuration;
 
 mod _table_status;
 

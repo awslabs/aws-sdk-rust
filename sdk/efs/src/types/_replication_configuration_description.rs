@@ -16,6 +16,8 @@ pub struct ReplicationConfigurationDescription {
     pub creation_time: ::aws_smithy_types::DateTime,
     /// <p>An array of destination objects. Only one destination object is supported.</p>
     pub destinations: ::std::vec::Vec<crate::types::Destination>,
+    /// <p>ID of the Amazon Web Services account in which the source file system resides.</p>
+    pub source_file_system_owner_id: ::std::option::Option<::std::string::String>,
 }
 impl ReplicationConfigurationDescription {
     /// <p>The ID of the source Amazon EFS file system that is being replicated.</p>
@@ -47,6 +49,10 @@ impl ReplicationConfigurationDescription {
         use std::ops::Deref;
         self.destinations.deref()
     }
+    /// <p>ID of the Amazon Web Services account in which the source file system resides.</p>
+    pub fn source_file_system_owner_id(&self) -> ::std::option::Option<&str> {
+        self.source_file_system_owner_id.as_deref()
+    }
 }
 impl ReplicationConfigurationDescription {
     /// Creates a new builder-style object to manufacture [`ReplicationConfigurationDescription`](crate::types::ReplicationConfigurationDescription).
@@ -65,6 +71,7 @@ pub struct ReplicationConfigurationDescriptionBuilder {
     pub(crate) original_source_file_system_arn: ::std::option::Option<::std::string::String>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) destinations: ::std::option::Option<::std::vec::Vec<crate::types::Destination>>,
+    pub(crate) source_file_system_owner_id: ::std::option::Option<::std::string::String>,
 }
 impl ReplicationConfigurationDescriptionBuilder {
     /// <p>The ID of the source Amazon EFS file system that is being replicated.</p>
@@ -162,6 +169,20 @@ impl ReplicationConfigurationDescriptionBuilder {
     pub fn get_destinations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Destination>> {
         &self.destinations
     }
+    /// <p>ID of the Amazon Web Services account in which the source file system resides.</p>
+    pub fn source_file_system_owner_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.source_file_system_owner_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>ID of the Amazon Web Services account in which the source file system resides.</p>
+    pub fn set_source_file_system_owner_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.source_file_system_owner_id = input;
+        self
+    }
+    /// <p>ID of the Amazon Web Services account in which the source file system resides.</p>
+    pub fn get_source_file_system_owner_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_file_system_owner_id
+    }
     /// Consumes the builder and constructs a [`ReplicationConfigurationDescription`](crate::types::ReplicationConfigurationDescription).
     /// This method will fail if any of the following fields are not set:
     /// - [`source_file_system_id`](crate::types::builders::ReplicationConfigurationDescriptionBuilder::source_file_system_id)
@@ -208,6 +229,7 @@ impl ReplicationConfigurationDescriptionBuilder {
                     "destinations was not specified but it is required when building ReplicationConfigurationDescription",
                 )
             })?,
+            source_file_system_owner_id: self.source_file_system_owner_id,
         })
     }
 }

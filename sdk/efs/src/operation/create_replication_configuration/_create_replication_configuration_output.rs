@@ -16,6 +16,8 @@ pub struct CreateReplicationConfigurationOutput {
     pub creation_time: ::aws_smithy_types::DateTime,
     /// <p>An array of destination objects. Only one destination object is supported.</p>
     pub destinations: ::std::vec::Vec<crate::types::Destination>,
+    /// <p>ID of the Amazon Web Services account in which the source file system resides.</p>
+    pub source_file_system_owner_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateReplicationConfigurationOutput {
@@ -48,6 +50,10 @@ impl CreateReplicationConfigurationOutput {
         use std::ops::Deref;
         self.destinations.deref()
     }
+    /// <p>ID of the Amazon Web Services account in which the source file system resides.</p>
+    pub fn source_file_system_owner_id(&self) -> ::std::option::Option<&str> {
+        self.source_file_system_owner_id.as_deref()
+    }
 }
 impl ::aws_types::request_id::RequestId for CreateReplicationConfigurationOutput {
     fn request_id(&self) -> Option<&str> {
@@ -71,6 +77,7 @@ pub struct CreateReplicationConfigurationOutputBuilder {
     pub(crate) original_source_file_system_arn: ::std::option::Option<::std::string::String>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) destinations: ::std::option::Option<::std::vec::Vec<crate::types::Destination>>,
+    pub(crate) source_file_system_owner_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateReplicationConfigurationOutputBuilder {
@@ -169,6 +176,20 @@ impl CreateReplicationConfigurationOutputBuilder {
     pub fn get_destinations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Destination>> {
         &self.destinations
     }
+    /// <p>ID of the Amazon Web Services account in which the source file system resides.</p>
+    pub fn source_file_system_owner_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.source_file_system_owner_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>ID of the Amazon Web Services account in which the source file system resides.</p>
+    pub fn set_source_file_system_owner_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.source_file_system_owner_id = input;
+        self
+    }
+    /// <p>ID of the Amazon Web Services account in which the source file system resides.</p>
+    pub fn get_source_file_system_owner_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_file_system_owner_id
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -229,6 +250,7 @@ impl CreateReplicationConfigurationOutputBuilder {
                     "destinations was not specified but it is required when building CreateReplicationConfigurationOutput",
                 )
             })?,
+            source_file_system_owner_id: self.source_file_system_owner_id,
             _request_id: self._request_id,
         })
     }

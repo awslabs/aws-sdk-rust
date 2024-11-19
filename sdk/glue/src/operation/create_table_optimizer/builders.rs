@@ -22,7 +22,7 @@ impl crate::operation::create_table_optimizer::builders::CreateTableOptimizerInp
 }
 /// Fluent builder constructing a request to `CreateTableOptimizer`.
 ///
-/// <p>Creates a new table optimizer for a specific function. <code>compaction</code> is the only currently supported optimizer type.</p>
+/// <p>Creates a new table optimizer for a specific function.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateTableOptimizerFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -150,17 +150,17 @@ impl CreateTableOptimizerFluentBuilder {
     pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_table_name()
     }
-    /// <p>The type of table optimizer. Currently, the only valid value is <code>compaction</code>.</p>
+    /// <p>The type of table optimizer.</p>
     pub fn r#type(mut self, input: crate::types::TableOptimizerType) -> Self {
         self.inner = self.inner.r#type(input);
         self
     }
-    /// <p>The type of table optimizer. Currently, the only valid value is <code>compaction</code>.</p>
+    /// <p>The type of table optimizer.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::TableOptimizerType>) -> Self {
         self.inner = self.inner.set_type(input);
         self
     }
-    /// <p>The type of table optimizer. Currently, the only valid value is <code>compaction</code>.</p>
+    /// <p>The type of table optimizer.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::TableOptimizerType> {
         self.inner.get_type()
     }

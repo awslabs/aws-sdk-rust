@@ -406,6 +406,9 @@ pub mod create_volume;
 /// Types for the `CreateVpc` operation.
 pub mod create_vpc;
 
+/// Types for the `CreateVpcBlockPublicAccessExclusion` operation.
+pub mod create_vpc_block_public_access_exclusion;
+
 /// Types for the `CreateVpcEndpoint` operation.
 pub mod create_vpc_endpoint;
 
@@ -630,6 +633,9 @@ pub mod delete_volume;
 
 /// Types for the `DeleteVpc` operation.
 pub mod delete_vpc;
+
+/// Types for the `DeleteVpcBlockPublicAccessExclusion` operation.
+pub mod delete_vpc_block_public_access_exclusion;
 
 /// Types for the `DeleteVpcEndpointConnectionNotifications` operation.
 pub mod delete_vpc_endpoint_connection_notifications;
@@ -1104,6 +1110,12 @@ pub mod describe_volumes_modifications;
 
 /// Types for the `DescribeVpcAttribute` operation.
 pub mod describe_vpc_attribute;
+
+/// Types for the `DescribeVpcBlockPublicAccessExclusions` operation.
+pub mod describe_vpc_block_public_access_exclusions;
+
+/// Types for the `DescribeVpcBlockPublicAccessOptions` operation.
+pub mod describe_vpc_block_public_access_options;
 
 /// Types for the `DescribeVpcClassicLink` operation.
 pub mod describe_vpc_classic_link;
@@ -1662,6 +1674,12 @@ pub mod modify_volume_attribute;
 
 /// Types for the `ModifyVpcAttribute` operation.
 pub mod modify_vpc_attribute;
+
+/// Types for the `ModifyVpcBlockPublicAccessExclusion` operation.
+pub mod modify_vpc_block_public_access_exclusion;
+
+/// Types for the `ModifyVpcBlockPublicAccessOptions` operation.
+pub mod modify_vpc_block_public_access_options;
 
 /// Types for the `ModifyVpcEndpoint` operation.
 pub mod modify_vpc_endpoint;
